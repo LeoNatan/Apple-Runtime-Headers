@@ -63,6 +63,7 @@
     FCTopStoriesStyleConfiguration *_storyStyle;
     long long _minimumNewsVersion;
     FCCoverArt *_coverArt;
+    long long _bodyTextLength;
     FCAssetManager *_assetManager;
     NSDictionary *_articlePayload;
     NSString *_flintDocumentUrlString;
@@ -78,6 +79,7 @@
 @property(retain, nonatomic) NSString *flintDocumentUrlString; // @synthesize flintDocumentUrlString=_flintDocumentUrlString;
 @property(retain, nonatomic) NSDictionary *articlePayload; // @synthesize articlePayload=_articlePayload;
 @property(retain, nonatomic) FCAssetManager *assetManager; // @synthesize assetManager=_assetManager;
+- (long long)bodyTextLength;
 - (_Bool)webEmbedsEnabled;
 - (id)coverArt;
 - (void)setPaid:(_Bool)arg1;

@@ -6,118 +6,59 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreSpeech/CSAssetManagerDelegate-Protocol.h>
 #import <CoreSpeech/CSEndpointAnalyzerImpl-Protocol.h>
 
-@class CSAsset, CSServerEndpointFeatures, NSDate, NSDictionary, NSMutableArray, NSString;
-@protocol CSEndpointAnalyzerDelegate, OS_dispatch_queue;
+@class NSString;
+@protocol CSEndpointAnalyzerDelegate, CSEndpointAnalyzerImplDelegate;
 
-@interface CSHybridEndpointAnalyzer : NSObject <CSAssetManagerDelegate, CSEndpointAnalyzerImpl>
+@interface CSHybridEndpointAnalyzer : NSObject <CSEndpointAnalyzerImpl>
 {
-    _Bool _saveSamplesSeenInReset;
     _Bool _canProcessCurrentRequest;
-    _Bool _didReceiveServerFeatures;
-    _Bool _useDefaultServerFeaturesOnClientLag;
-    _Bool _didCommunicateEndpoint;
-    _Bool _didTimestampFirstAudioPacket;
-    _Bool _recordingDidStop;
-    _Bool _didDetectSpeech;
-    id <CSEndpointAnalyzerDelegate> _delegate;
-    unsigned int _activeChannel;
-    int _endpointStyle;
-    int _endpointMode;
-    CSAsset *_currentAsset;
-    NSObject<OS_dispatch_queue> *_serverFeaturesQueue;
-    CSServerEndpointFeatures *_lastKnownServerEPFeatures;
-    NSMutableArray *_serverFeatureLatencies;
-    NSDate *_lastServerFeatureTimestamp;
-    NSObject<OS_dispatch_queue> *_hybridClassifierQueue;
-    NSObject<OS_dispatch_queue> *_stateSerialQueue;
-    unsigned int _currentRequestSampleRate;
-    unsigned int _vtEndInSampleCount;
-    NSDictionary *_recordContext;
-    NSDate *_firstAudioPacketTimestamp;
-    NSObject<OS_dispatch_queue> *_silencePosteriorGeneratorQueue;
-    double _startWaitTime;
-    double _endWaitTime;
-    double _interspeechWaitTime;
-    double _delay;
-    double _automaticEndpointingSuspensionEndTime;
-    double _minimumDurationForEndpointer;
-    double _serverFeaturesWarmupLatency;
-    double _clientLagThresholdMs;
-    double _clampedSFLatencyMsForClientLag;
-    double _lastReportedEndpointTimeMs;
-    double _vtExtraAudioAtStartInMs;
-    double _hepAudioOriginInMs;
-    double _elapsedTimeWithNoSpeech;
+    unsigned int activeChannel;
+    id <CSEndpointAnalyzerDelegate> delegate;
+    int endpointStyle;
+    id <CSEndpointAnalyzerImplDelegate> implDelegate;
+    NSString *_endpointerModelVersion;
+    double automaticEndpointingSuspensionEndTime;
+    double delay;
+    double lastEndOfVoiceActivityTime;
+    double lastStartOfVoiceActivityTime;
+    double minimumDurationForEndpointer;
+    double startWaitTime;
 }
 
-@property(nonatomic) double elapsedTimeWithNoSpeech; // @synthesize elapsedTimeWithNoSpeech=_elapsedTimeWithNoSpeech;
-@property(nonatomic) _Bool didDetectSpeech; // @synthesize didDetectSpeech=_didDetectSpeech;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *silencePosteriorGeneratorQueue; // @synthesize silencePosteriorGeneratorQueue=_silencePosteriorGeneratorQueue;
-@property(nonatomic) _Bool recordingDidStop; // @synthesize recordingDidStop=_recordingDidStop;
-@property(nonatomic) _Bool didTimestampFirstAudioPacket; // @synthesize didTimestampFirstAudioPacket=_didTimestampFirstAudioPacket;
-@property(retain, nonatomic) NSDate *firstAudioPacketTimestamp; // @synthesize firstAudioPacketTimestamp=_firstAudioPacketTimestamp;
-@property(retain, nonatomic) NSDictionary *recordContext; // @synthesize recordContext=_recordContext;
-@property(nonatomic) double hepAudioOriginInMs; // @synthesize hepAudioOriginInMs=_hepAudioOriginInMs;
-@property(nonatomic) unsigned int vtEndInSampleCount; // @synthesize vtEndInSampleCount=_vtEndInSampleCount;
-@property(nonatomic) double vtExtraAudioAtStartInMs; // @synthesize vtExtraAudioAtStartInMs=_vtExtraAudioAtStartInMs;
-@property(nonatomic) unsigned int currentRequestSampleRate; // @synthesize currentRequestSampleRate=_currentRequestSampleRate;
-@property(nonatomic) _Bool didCommunicateEndpoint; // @synthesize didCommunicateEndpoint=_didCommunicateEndpoint;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *stateSerialQueue; // @synthesize stateSerialQueue=_stateSerialQueue;
-@property(nonatomic) double lastReportedEndpointTimeMs; // @synthesize lastReportedEndpointTimeMs=_lastReportedEndpointTimeMs;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *hybridClassifierQueue; // @synthesize hybridClassifierQueue=_hybridClassifierQueue;
-@property(nonatomic) _Bool useDefaultServerFeaturesOnClientLag; // @synthesize useDefaultServerFeaturesOnClientLag=_useDefaultServerFeaturesOnClientLag;
-@property(nonatomic) double clampedSFLatencyMsForClientLag; // @synthesize clampedSFLatencyMsForClientLag=_clampedSFLatencyMsForClientLag;
-@property(nonatomic) double clientLagThresholdMs; // @synthesize clientLagThresholdMs=_clientLagThresholdMs;
-@property(nonatomic) _Bool didReceiveServerFeatures; // @synthesize didReceiveServerFeatures=_didReceiveServerFeatures;
-@property(retain, nonatomic) NSDate *lastServerFeatureTimestamp; // @synthesize lastServerFeatureTimestamp=_lastServerFeatureTimestamp;
-@property(nonatomic) double serverFeaturesWarmupLatency; // @synthesize serverFeaturesWarmupLatency=_serverFeaturesWarmupLatency;
-@property(retain, nonatomic) NSMutableArray *serverFeatureLatencies; // @synthesize serverFeatureLatencies=_serverFeatureLatencies;
-@property(retain, nonatomic) CSServerEndpointFeatures *lastKnownServerEPFeatures; // @synthesize lastKnownServerEPFeatures=_lastKnownServerEPFeatures;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *serverFeaturesQueue; // @synthesize serverFeaturesQueue=_serverFeaturesQueue;
-@property(retain, nonatomic) CSAsset *currentAsset; // @synthesize currentAsset=_currentAsset;
+@property(retain, nonatomic) NSString *endpointerModelVersion; // @synthesize endpointerModelVersion=_endpointerModelVersion;
 @property(readonly, nonatomic) _Bool canProcessCurrentRequest; // @synthesize canProcessCurrentRequest=_canProcessCurrentRequest;
-@property(nonatomic) _Bool saveSamplesSeenInReset; // @synthesize saveSamplesSeenInReset=_saveSamplesSeenInReset;
-@property(nonatomic) double minimumDurationForEndpointer; // @synthesize minimumDurationForEndpointer=_minimumDurationForEndpointer;
-@property(nonatomic) double automaticEndpointingSuspensionEndTime; // @synthesize automaticEndpointingSuspensionEndTime=_automaticEndpointingSuspensionEndTime;
-@property(nonatomic) double delay; // @synthesize delay=_delay;
-@property(nonatomic) double interspeechWaitTime; // @synthesize interspeechWaitTime=_interspeechWaitTime;
-@property(nonatomic) double endWaitTime; // @synthesize endWaitTime=_endWaitTime;
-@property(nonatomic) double startWaitTime; // @synthesize startWaitTime=_startWaitTime;
-@property(nonatomic) int endpointMode; // @synthesize endpointMode=_endpointMode;
-@property(nonatomic) int endpointStyle; // @synthesize endpointStyle=_endpointStyle;
-@property(nonatomic) unsigned int activeChannel; // @synthesize activeChannel=_activeChannel;
-@property(nonatomic) __weak id <CSEndpointAnalyzerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <CSEndpointAnalyzerImplDelegate> implDelegate; // @synthesize implDelegate;
+@property(nonatomic) double startWaitTime; // @synthesize startWaitTime;
+@property(nonatomic) double minimumDurationForEndpointer; // @synthesize minimumDurationForEndpointer;
+@property(readonly, nonatomic) double lastStartOfVoiceActivityTime; // @synthesize lastStartOfVoiceActivityTime;
+@property(readonly, nonatomic) double lastEndOfVoiceActivityTime; // @synthesize lastEndOfVoiceActivityTime;
+@property(nonatomic) int endpointStyle; // @synthesize endpointStyle;
+@property(nonatomic) __weak id <CSEndpointAnalyzerDelegate> delegate; // @synthesize delegate;
+@property(nonatomic) double delay; // @synthesize delay;
+@property(nonatomic) double automaticEndpointingSuspensionEndTime; // @synthesize automaticEndpointingSuspensionEndTime;
+@property(nonatomic) unsigned int activeChannel; // @synthesize activeChannel;
 - (void).cxx_destruct;
-- (id)_getCSHybridEndpointerConfigForAsset:(id)arg1;
-- (void)_updateAssetWithCurrentLanguage;
-- (void)_updateAssetWithLanguage:(id)arg1;
-- (void)CSAssetManagerDidDownloadNewAsset:(id)arg1;
-- (void)CSLanguageCodeUpdateMonitor:(id)arg1 didReceiveLanguageCodeChanged:(id)arg2;
-@property(readonly, nonatomic) double lastStartOfVoiceActivityTime;
-@property(readonly, nonatomic) double lastEndOfVoiceActivityTime;
+- (void)resetForNewRequestWithSampleRate:(unsigned int)arg1 recordContext:(id)arg2 recordSettings:(id)arg3;
+- (void)recordingStoppedForReason:(int)arg1;
+- (void)processAudioSamplesAsynchronously:(id)arg1;
 - (void)reset;
-- (void)_readClientLagParametersFromHEPAsset:(id)arg1;
-- (void)resetForNewRequestWithSampleRate:(unsigned int)arg1 recordContext:(id)arg2;
-- (void)recordingStoppedForReason:(unsigned int)arg1;
 - (void)preheat;
-- (void)handleVoiceTriggerWithActivationInfo:(id)arg1;
-- (id)serverFeaturesLatencyDistributionDictionary;
-- (void)shouldAcceptEagerResultForDuration:(double)arg1 resultsCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)processServerEndpointFeatures:(id)arg1;
 - (void)updateEndpointerDelayedTrigger:(_Bool)arg1;
 - (void)updateEndpointerThreshold:(float)arg1;
-- (void)processAudioSamplesAsynchronously:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(nonatomic) double bypassSamples;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) NSString *endpointerModelVersion;
+@property(readonly, nonatomic) double elapsedTimeWithNoSpeech;
+@property(nonatomic) double endWaitTime;
+@property(nonatomic) int endpointMode;
 @property(readonly) unsigned int hash;
+@property(nonatomic) double interspeechWaitTime;
+@property(nonatomic) _Bool saveSamplesSeenInReset;
 @property(readonly) Class superclass;
 
 @end

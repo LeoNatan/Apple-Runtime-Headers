@@ -11,8 +11,6 @@
 @protocol MFContactsSearchConsumer <NSObject>
 
 @optional
-- (void)finishedSearchingForType:(unsigned long long)arg1;
-- (void)consumeSearchResults:(NSArray *)arg1 type:(unsigned long long)arg2 taskID:(NSNumber *)arg3;
 - (void)endedNetworkActivity;
 - (void)beganNetworkActivity;
 - (void)finishedTaskWithID:(NSNumber *)arg1;

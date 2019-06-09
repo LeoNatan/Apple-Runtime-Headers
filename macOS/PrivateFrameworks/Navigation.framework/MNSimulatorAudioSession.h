@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 @interface MNSimulatorAudioSession : NSObject <MNAudioSession>
 {
     id _delegate;
+    BOOL _isSpeaking;
     unsigned long long _voiceGuidanceLevel;
     MNTraceRouteSimulator *_simulator;
 }
@@ -25,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)clearAllAnnouncements;
 - (void)stop;
 - (BOOL)vibrateForPrompt:(unsigned long long)arg1;
+- (BOOL)isSpeaking;
 - (void)speak:(id)arg1 shortPromptType:(unsigned long long)arg2 ignorePromptStyle:(BOOL)arg3 minimumRequiredLevel:(unsigned long long)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)speak:(id)arg1 shortPromptType:(unsigned long long)arg2 ignorePromptStyle:(BOOL)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)prepareToAnnounce;

@@ -6,20 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class QTMovieView;
-
 @interface QTMovieUndoOperation : NSObject
 {
-    QTMovieView *_target;
-    SEL _selector;
-    unsigned int _op;
-    int _editStateProxy;
 }
 
-- (void)undoEdit;
-- (void)registerUndoOperation;
-- (void)dealloc;
-- (void)finalize;
+- (id)init;
 - (id)initWithMovieView:(id)arg1 selector:(SEL)arg2 operation:(unsigned int)arg3;
 
 @end

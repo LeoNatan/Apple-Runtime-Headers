@@ -8,10 +8,12 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, PBUnknownFields;
+@class NSMutableArray, PBDataReader, PBUnknownFields;
 
 @interface GEORegionalResourceTile : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_attributions;
     NSMutableArray *_childrens;
@@ -20,20 +22,30 @@
     unsigned int _x;
     unsigned int _y;
     unsigned int _z;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_attributions:1;
+        unsigned int read_childrens:1;
+        unsigned int read_iconChecksums:1;
+        unsigned int read_icons:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_attributions:1;
+        unsigned int wrote_childrens:1;
+        unsigned int wrote_iconChecksums:1;
+        unsigned int wrote_icons:1;
+        unsigned int wrote_x:1;
+        unsigned int wrote_y:1;
+        unsigned int wrote_z:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)iconChecksumType;
 + (Class)attributionType;
 + (Class)iconType;
 + (Class)childrenType;
-@property(retain, nonatomic) NSMutableArray *iconChecksums; // @synthesize iconChecksums=_iconChecksums;
-@property(retain, nonatomic) NSMutableArray *attributions; // @synthesize attributions=_attributions;
-@property(retain, nonatomic) NSMutableArray *icons; // @synthesize icons=_icons;
-@property(retain, nonatomic) NSMutableArray *childrens; // @synthesize childrens=_childrens;
-@property(nonatomic) unsigned int z; // @synthesize z=_z;
-@property(nonatomic) unsigned int y; // @synthesize y=_y;
-@property(nonatomic) unsigned int x; // @synthesize x=_x;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -42,24 +54,40 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)iconChecksumAtIndex:(unsigned long long)arg1;
 - (unsigned long long)iconChecksumsCount;
+- (void)_addNoFlagsIconChecksum:(id)arg1;
 - (void)addIconChecksum:(id)arg1;
 - (void)clearIconChecksums;
+@property(retain, nonatomic) NSMutableArray *iconChecksums;
+- (void)_readIconChecksums;
 - (id)attributionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)attributionsCount;
+- (void)_addNoFlagsAttribution:(id)arg1;
 - (void)addAttribution:(id)arg1;
 - (void)clearAttributions;
+@property(retain, nonatomic) NSMutableArray *attributions;
+- (void)_readAttributions;
 - (id)iconAtIndex:(unsigned long long)arg1;
 - (unsigned long long)iconsCount;
+- (void)_addNoFlagsIcon:(id)arg1;
 - (void)addIcon:(id)arg1;
 - (void)clearIcons;
+@property(retain, nonatomic) NSMutableArray *icons;
+- (void)_readIcons;
 - (id)childrenAtIndex:(unsigned long long)arg1;
 - (unsigned long long)childrensCount;
+- (void)_addNoFlagsChildren:(id)arg1;
 - (void)addChildren:(id)arg1;
 - (void)clearChildrens;
+@property(retain, nonatomic) NSMutableArray *childrens;
+- (void)_readChildrens;
+@property(nonatomic) unsigned int z;
+@property(nonatomic) unsigned int y;
+@property(nonatomic) unsigned int x;
 - (_Bool)containsTileKey:(const struct _GEOTileKey *)arg1;
 
 @end

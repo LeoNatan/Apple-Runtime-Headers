@@ -60,10 +60,6 @@ struct NSMutableDictionary {
     Class _field1;
 };
 
-struct NSMutableSet {
-    Class _field1;
-};
-
 struct NSSet {
     Class _field1;
 };

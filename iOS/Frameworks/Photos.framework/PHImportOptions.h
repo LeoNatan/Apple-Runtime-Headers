@@ -6,14 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class NSSortDescriptor, NSString, PHAssetCollection, PHImportSource, PHPhotoLibrary;
+@class NSMutableDictionary, NSSortDescriptor, NSString, PHAssetCollection, PHCollectionList, PHImportSource, PHPhotoLibrary;
 
 @interface PHImportOptions : NSObject
 {
     struct options_bits _options_bits;
-    NSString *_rootSourcePath;
     PHAssetCollection *_destinationAlbum;
+    PHCollectionList *_destinationFolder;
     NSSortDescriptor *_sortDescriptor;
+    NSMutableDictionary *_userIptcMetadata;
     NSString *_personId;
     PHImportSource *_importSource;
     PHPhotoLibrary *_library;
@@ -22,27 +23,26 @@
 @property(retain, nonatomic) PHPhotoLibrary *library; // @synthesize library=_library;
 @property(retain, nonatomic) PHImportSource *importSource; // @synthesize importSource=_importSource;
 @property(retain, nonatomic) NSString *personId; // @synthesize personId=_personId;
+@property(retain, nonatomic) NSMutableDictionary *userIptcMetadata; // @synthesize userIptcMetadata=_userIptcMetadata;
 @property(retain, nonatomic) NSSortDescriptor *sortDescriptor; // @synthesize sortDescriptor=_sortDescriptor;
+@property(retain, nonatomic) PHCollectionList *destinationFolder; // @synthesize destinationFolder=_destinationFolder;
 @property(retain, nonatomic) PHAssetCollection *destinationAlbum; // @synthesize destinationAlbum=_destinationAlbum;
-@property(retain, nonatomic) NSString *rootSourcePath; // @synthesize rootSourcePath=_rootSourcePath;
 - (void).cxx_destruct;
 - (void)setAllowUnsupported:(_Bool)arg1;
 - (_Bool)allowUnsupported;
 - (void)setOmitImportComplete:(_Bool)arg1;
 - (_Bool)omitImportComplete;
-- (void)setMetadataAddMode:(unsigned char)arg1;
-- (unsigned char)metadataAddMode;
+@property(nonatomic) unsigned char metadataAddMode;
 @property(nonatomic) _Bool deleteAfterImport;
 @property(nonatomic) _Bool skipDiskSpaceCheck;
 @property(nonatomic) _Bool allowDuplicates;
-@property(nonatomic) _Bool referencedImport;
+@property(nonatomic) _Bool shouldImportAsReferenced;
 @property(nonatomic) unsigned char fileOperation;
 @property(nonatomic) _Bool skipAlertWhenFinished;
 @property(nonatomic) _Bool hideProgress;
 - (void)setImportedBy:(short)arg1;
 - (short)importedBy;
 @property(nonatomic) _Bool preserveFolderStructure;
-- (id)initWithLibrary:(id)arg1 importSource:(id)arg2;
 - (id)init;
 
 @end

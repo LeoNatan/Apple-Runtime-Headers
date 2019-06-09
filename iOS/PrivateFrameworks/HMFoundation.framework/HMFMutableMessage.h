@@ -21,6 +21,7 @@
 @property(copy, nonatomic) NSDictionary *userInfo; // @dynamic userInfo;
 @property(retain, nonatomic) HMFActivity *activity; // @dynamic activity;
 @property(nonatomic) long long qualityOfService; // @dynamic qualityOfService;
+@property(nonatomic) double timeout; // @dynamic timeout;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
 
 // Remaining properties

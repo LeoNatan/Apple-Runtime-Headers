@@ -8,6 +8,7 @@
 
 @class NSMutableData, WDBorder, WDShading, WDStyle;
 
+__attribute__((visibility("hidden")))
 @interface WDParagraphPropertiesValues : NSObject
 {
     unsigned int mBaseStyleOverridden:1;

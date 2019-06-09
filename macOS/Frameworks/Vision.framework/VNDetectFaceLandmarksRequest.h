@@ -14,6 +14,7 @@
 {
 }
 
++ (BOOL)revision:(unsigned long long)arg1 supportsConstellation:(unsigned long long)arg2;
 + (id)defaultProcessingDeviceForRevision:(unsigned long long)arg1;
 + (const CDStruct_d47b9615 *)dependentRequestCompatability;
 + (Class)configurationClass;
@@ -25,15 +26,17 @@
 - (long long)dependencyProcessingOrdinality;
 - (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 - (BOOL)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
+- (void)setRevision:(unsigned long long)arg1;
+@property unsigned long long constellation;
 @property(nonatomic) BOOL performBlinkDetection;
 @property(nonatomic) BOOL refineRightEyeRegion;
 @property(nonatomic) BOOL refineLeftEyeRegion;
 @property(nonatomic) BOOL refineMouthRegion;
 @property(retain, nonatomic) NSNumber *cascadeStepCount;
+@property(readonly, copy) NSString *description;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(copy, nonatomic) NSArray *inputFaceObservations;
 @property(readonly) Class superclass;

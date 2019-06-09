@@ -15,7 +15,7 @@
     GEOWiFiConnectionQuality *_wifiConnectionQuality;
 }
 
-@property(retain, nonatomic) GEOWiFiConnectionQuality *wifiConnectionQuality; // @synthesize wifiConnectionQuality=_wifiConnectionQuality;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -24,8 +24,10 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOWiFiConnectionQuality *wifiConnectionQuality;
 @property(readonly, nonatomic) BOOL hasWifiConnectionQuality;
 
 @end

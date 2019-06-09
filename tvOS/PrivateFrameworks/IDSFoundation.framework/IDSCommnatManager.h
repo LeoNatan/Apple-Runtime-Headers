@@ -21,7 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)_getCommNATServerAddress;
-- (void)processCommnatResponse:(CDStruct_c4cff10b *)arg1 arrivalTime:(double)arg2;
+- (void)processCommnatResponse:(CDStruct_12676517 *)arg1 arrivalTime:(double)arg2;
 - (void)sendCommnatRequest:(id)arg1 candidate:(id)arg2;
 - (_Bool)isCommnatDiscoveryDone;
 - (void)startCommnatDiscoveryForHostCandidates:(id)arg1;

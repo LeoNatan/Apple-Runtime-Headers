@@ -13,10 +13,12 @@
 #import <Safari/BookmarksViewControllerDelegate-Protocol.h>
 #import <Safari/BrowserViewControllerLoading-Protocol.h>
 #import <Safari/BrowserViewIconLoadingDelegate-Protocol.h>
+#import <Safari/DigitalHealthOverlayViewControllerDelegate-Protocol.h>
 #import <Safari/DimmingViewDelegate-Protocol.h>
 #import <Safari/ExtensionGalleryCertificateHandler-Protocol.h>
 #import <Safari/FormAutoFillCompletionControllerObserver-Protocol.h>
 #import <Safari/FormMetadataObserver-Protocol.h>
+#import <Safari/MutableMediaSource-Protocol.h>
 #import <Safari/PagePreviewAnimationControllerDelegate-Protocol.h>
 #import <Safari/ReaderActivationDelegate-Protocol.h>
 #import <Safari/ReaderAvailabilityDelegate-Protocol.h>
@@ -29,13 +31,12 @@
 #import <Safari/TabDialogPresenter-Protocol.h>
 #import <Safari/WBSCertificateWarningPageHandler-Protocol.h>
 #import <Safari/WBSFluidProgressStateSource-Protocol.h>
-#import <Safari/WebClipBannerDelegate-Protocol.h>
 
-@class AutoFillFunctionBarProvider, BackgroundLoad, BookmarksViewController, BrowserDocument, BrowserNavigationDelegate, BrowserTabPersistentState, BrowserTabViewItem, BrowserWKView, BrowserWindowController, CKContextCompleter, CKContextResponse, ContinuousReadingListPageItem, ContinuousReadingListViewController, DefaultBrowserBanner, FullscreenUnifiedFieldWindowController, JavaScriptDialogSuppressionManager, NSArray, NSData, NSDictionary, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSTimer, NSURL, NSView, NSWindow, PagePreviewAnimationController, PointerLockBanner, PrintSheetSuppressionManager, PrivateBrowsingExplanationBanner, ReadingListItem, ResponsiveDesignViewController, SearchableWKView, SecIdentitiesCache, StartPageViewController, StatusMessage, TabContentView, TabDialogPresentationManager, TabDialogViewController, TextFieldInformation, UnresponsiveWebProcessHandler, WBSCreditCardData, WBSFluidProgressState, WBSFormMetadata, WBSHistoryContextController, WBSHistoryVisit, WBSMultiRoundAutoFillManager, WBSMutableOrderedSet, WBSSameDocumentNavigationToHistoryVisitCorrelator, WebClipBanner, WebCrashBanner, _WKRemoteObjectInterface;
-@protocol AppExtensionMessageReceiver, AuthenticationSessionNavigationHandling, BrowserContentLoaderDelegate, FormAutoFiller, RemoteNotificationStateObserver, WBSCertificateWarningPagePresenter, WBSSandboxExtensionToken, WKUIDelegate;
+@class AppLinkBannerController, AutoFillFunctionBarProvider, BackgroundLoad, Banner, BookmarksViewController, BrowserDiagnosticLoggingDelegate, BrowserDocument, BrowserNavigationDelegate, BrowserTabPersistentState, BrowserTabViewItem, BrowserWKView, BrowserWindowController, CKContextCompleter, CKContextResponse, ContinuousReadingListPageItem, ContinuousReadingListViewController, DefaultBrowserBanner, FullscreenUnifiedFieldWindowController, JavaScriptDialogSuppressionManager, NSArray, NSData, NSDictionary, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSTimer, NSURL, NSView, NSWindow, PagePreviewAnimationController, PassDownloadSuppressionManager, PointerLockBanner, PrintSheetSuppressionManager, PrivateBrowsingExplanationBanner, ReadingListItem, ResponsiveDesignViewController, SearchableWKView, SecIdentitiesCache, StartPageViewController, StatusMessage, TabContentView, TabDialogPresentationManager, TabDialogViewController, TextFieldInformation, UnresponsiveWebProcessHandler, WBSCreditCardData, WBSFluidProgressState, WBSFormMetadata, WBSHistoryContextController, WBSHistoryVisit, WBSMultiRoundAutoFillManager, WBSMutableOrderedSet, WBSSameDocumentNavigationToHistoryVisitCorrelator, WebCrashBanner, _WKRemoteObjectInterface;
+@protocol AppExtensionMessageReceiver, AuthenticationSessionNavigationHandling, BrowserContentLoaderDelegate, FormAutoFiller, PrintHelper, RemoteNotificationStateObserver, WBSCertificateWarningPagePresenter, WBSSandboxExtensionToken, WKUIDelegate;
 
 __attribute__((visibility("hidden")))
-@interface BrowserViewController : WebViewController <AppExtensionContentScriptMessageReceiver, AutomaticBugCaptureObserver, BookmarksViewControllerDelegate, BrowserViewControllerLoading, ExtensionGalleryCertificateHandler, FormAutoFillCompletionControllerObserver, FormMetadataObserver, PagePreviewAnimationControllerDelegate, ReaderStateObserver, RemoteNotificationControllerClient, RemoteNotificationPermissionHandler, BrowserViewIconLoadingDelegate, TabDialogPresentationManagerDelegate, WebClipBannerDelegate, SandboxExtensionPresentationDelegate, WBSCertificateWarningPageHandler, AutoFillFunctionBarProviderDelegate, AuthenticationSheetRequestDelegate, DimmingViewDelegate, ReaderActivationDelegate, ReaderAvailabilityDelegate, SearchableWKViewCancelDelegate, TabDialogPresenter, WBSFluidProgressStateSource>
+@interface BrowserViewController : WebViewController <AppExtensionContentScriptMessageReceiver, AutoFillFunctionBarProviderDelegate, AutomaticBugCaptureObserver, BookmarksViewControllerDelegate, BrowserViewControllerLoading, BrowserViewIconLoadingDelegate, ExtensionGalleryCertificateHandler, FormAutoFillCompletionControllerObserver, FormMetadataObserver, PagePreviewAnimationControllerDelegate, ReaderStateObserver, RemoteNotificationControllerClient, RemoteNotificationPermissionHandler, TabDialogPresentationManagerDelegate, WBSCertificateWarningPageHandler, DigitalHealthOverlayViewControllerDelegate, SandboxExtensionPresentationDelegate, AuthenticationSheetRequestDelegate, DimmingViewDelegate, MutableMediaSource, ReaderActivationDelegate, ReaderAvailabilityDelegate, SearchableWKViewCancelDelegate, TabDialogPresenter, WBSFluidProgressStateSource>
 {
     struct URLRequest _initialContents;
     BOOL _isBetweenSidebarAnimationInformationGatheringSteps;
@@ -47,7 +48,7 @@ __attribute__((visibility("hidden")))
     BOOL _alwaysInitiateLoadsInContinuousModeUsingCurrentController;
     BOOL _shouldStayInContinuousModeOnNextNavigationToBackForwardListItem;
     unique_ptr_60e845e1 _queuedNavigation;
-    struct unique_ptr<Safari::BrowserPageDiagnosticLoggingClient, std::__1::default_delete<Safari::BrowserPageDiagnosticLoggingClient>> _pageDiagnosticLoggingClient;
+    BrowserDiagnosticLoggingDelegate *_diagnosticLoggingDelegate;
     struct unique_ptr<Safari::BrowserPageFindClient, std::__1::default_delete<Safari::BrowserPageFindClient>> _pageFindClient;
     struct unique_ptr<Safari::BrowserPageFormClient, std::__1::default_delete<Safari::BrowserPageFormClient>> _pageFormClient;
     BOOL _hasDisplayedValidURL;
@@ -93,7 +94,8 @@ __attribute__((visibility("hidden")))
     PrivateBrowsingExplanationBanner *_privateBrowsingExplanationBanner;
     DefaultBrowserBanner *_defaultBrowserBanner;
     WebCrashBanner *_webCrashBanner;
-    WebClipBanner *_webClipBanner;
+    AppLinkBannerController *_appLinkBannerController;
+    Banner *_appLinkBanner;
     BookmarksViewController *_bookmarksViewController;
     FullscreenUnifiedFieldWindowController *_fullscreenWindowController;
     NSURL *_openSearchURLToProcessAfterBackgroundLoadIsCommitted;
@@ -122,6 +124,7 @@ __attribute__((visibility("hidden")))
     _WKRemoteObjectInterface *_remoteNotificationStateObserverInterface;
     _WKRemoteObjectInterface *_remoteNotificationPermissionHandlerInterface;
     _WKRemoteObjectInterface *_readerStateObserverInterface;
+    id <PrintHelper> _printHelperProxy;
     struct unique_ptr<Safari::PerformanceCollector, std::__1::default_delete<Safari::PerformanceCollector>> _performanceCollector;
     struct RefPtr<Safari::PerformanceTesting, WTF::DumbPtrTraits<Safari::PerformanceTesting>> _performanceTesting;
     _WKRemoteObjectInterface *_certicateWarningPageHandlerInterface;
@@ -137,15 +140,23 @@ __attribute__((visibility("hidden")))
     _WKRemoteObjectInterface *_automaticBugCaptureObserver;
     SecIdentitiesCache *_secIdentitiesCache;
     BOOL _provisionalExtendedValidationCertificateOrganizationNameHasBeenDetermined;
+    NSMutableSet *_sheetsToDismissOnNavigation;
     CKContextCompleter *_cachedContextCompleter;
     WBSHistoryContextController *_contextController;
     struct Optional<SearchSuggestionNavigation> _searchSuggestionNavigation;
     NSString *_domainWhereUserDeclinedAutomaticStrongPassword;
+    NSMutableSet *_downloadURLs;
+    NSMutableDictionary *_downloadDomainsToPendingPermissionDecisionHandlers;
     NSMutableArray *_blockedPopUpWindowConfigurations;
     WBSMutableOrderedSet *_allowedPopUpWindowDomainCache;
     BOOL _isObservingKeyValueChanges;
     unsigned long long _clientsWaitingOnSandboxPresentationControllerBeforeFileLoadBegins;
     _WKRemoteObjectInterface *_extensionGalleryCertificateHandler;
+    BOOL _mediaSuspendedForScreenTime;
+    NSURL *_urlAssociatedWithScreenTimeShield;
+    BOOL _playingMutableMedia;
+    BOOL _mediaCaptureMuted;
+    BOOL _screenCapturePaused;
     BOOL _tryingToClose;
     BOOL _webPageIsUnresponsive;
     BOOL _mainDocumentDidFirstLayout;
@@ -157,6 +168,7 @@ __attribute__((visibility("hidden")))
     BOOL _waitingForSamplingProfilerOutput;
     BOOL _mainFrameLoadEndedInError;
     BOOL _shouldDownloadNextPage;
+    BOOL _handlingExternalNavigation;
     BOOL _tryingToCloseBeforeCommittingToBackgroundLoad;
     BOOL _hasEverBeenVisible;
     BOOL _sensitiveFormFieldHasEverHadFocus;
@@ -176,8 +188,7 @@ __attribute__((visibility("hidden")))
     BOOL _suppressingBeforeUnloadPrompts;
     BOOL _readerShouldBeShownIfPossible;
     BOOL _readerViewStale;
-    BOOL _playingMutableMedia;
-    BOOL _mediaCaptureMuted;
+    BOOL _isObscuredForDigitalHealth;
     BOOL _showingWebGLPolicyDialog;
     BOOL _inContinuousMode;
     BOOL _blockedFromKeyViewLoop;
@@ -197,6 +208,8 @@ __attribute__((visibility("hidden")))
     int _lastUsedStartPageMode;
     StartPageViewController *_startPageViewController;
     NSString *_authenticationHost;
+    unsigned long long _mutableMediaState;
+    long long _mutedState;
     BrowserDocument *_document;
     BrowserViewController *_originatingContentViewControllerWithPossibleJavaScriptAccess;
     BrowserNavigationDelegate *_navigationDelegate;
@@ -212,6 +225,7 @@ __attribute__((visibility("hidden")))
     NSURL *_originalRequestURL;
     long long _lastBackgroundTerminationReason;
     BackgroundLoad *_backgroundNavigationBackgroundLoad;
+    PassDownloadSuppressionManager *_passDownloadSuppressionManager;
     BrowserTabPersistentState *_pendingTabStateToRestore;
     NSURL *_unifiedFieldFallbackURLForAboutBlank;
     WBSFluidProgressState *_fluidProgressState;
@@ -228,8 +242,6 @@ __attribute__((visibility("hidden")))
     NSString *_requestedTabLabel;
     NSString *_provisionalTabLabel;
     NSString *_committedTabLabel;
-    unsigned long long _mutableMediaState;
-    long long _mutedState;
     BrowserTabViewItem *_parentTab;
     struct BackForwardListItem _backForwardListItemForReturningToParentTab;
     ReadingListItem *_currentlyLoadedReadingListItem;
@@ -247,9 +259,11 @@ __attribute__((visibility("hidden")))
     Vector_81153489 _ancestorTabIdentifiers;
 }
 
++ (id)resourceDirectoryURLForToken:(id)arg1 developMenuController:(id)arg2;
 + (id)resourceDirectoryURLForToken:(id)arg1;
 + (id)test_javaScriptDialogTitleForSecurityOrigin:(const struct SecurityOrigin *)arg1;
 + (id)javaScriptDialogTitleForURL:(id)arg1;
++ (id)browserViewControllersWithMutableMediaState:(unsigned long long)arg1;
 + (void)enumerateBrowserContentViewControllersSharingWebProcessWithPID:(int)arg1 skippingContentViewController:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;
 + (void)enumerateBrowserViewControllersUsingBlock:(CDUnknownBlockType)arg1;
 + (id)findBrowserViewControllerForSafariPage:(id)arg1;
@@ -265,7 +279,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak BrowserViewController *originatingModalDialogContentViewController; // @synthesize originatingModalDialogContentViewController=_originatingModalDialogContentViewController;
 @property(nonatomic) BOOL suppressJavaScriptDialogPresentation; // @synthesize suppressJavaScriptDialogPresentation=_suppressJavaScriptDialogPresentation;
 @property(nonatomic) BOOL overrideMaintainsInactiveSelectionForVoiceOver; // @synthesize overrideMaintainsInactiveSelectionForVoiceOver=_overrideMaintainsInactiveSelectionForVoiceOver;
-@property(readonly, nonatomic) WebClipBanner *webClipBanner; // @synthesize webClipBanner=_webClipBanner;
 @property(nonatomic) BOOL preservePlugInInitializationErrorsOnNextCommittedLoad; // @synthesize preservePlugInInitializationErrorsOnNextCommittedLoad=_preservePlugInInitializationErrorsOnNextCommittedLoad;
 @property(nonatomic, getter=isWaitingToContinueUserActivity) BOOL waitingToContinueUserActivity; // @synthesize waitingToContinueUserActivity=_waitingToContinueUserActivity;
 @property(readonly, nonatomic) PrivateBrowsingExplanationBanner *privateBrowsingExplanationBanner; // @synthesize privateBrowsingExplanationBanner=_privateBrowsingExplanationBanner;
@@ -287,14 +300,11 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isShowingWebGLPolicyDialog) BOOL showingWebGLPolicyDialog; // @synthesize showingWebGLPolicyDialog=_showingWebGLPolicyDialog;
 @property(nonatomic) struct BackForwardListItem backForwardListItemForReturningToParentTab; // @synthesize backForwardListItemForReturningToParentTab=_backForwardListItemForReturningToParentTab;
 @property(readonly, nonatomic) __weak BrowserTabViewItem *parentTab; // @synthesize parentTab=_parentTab;
-@property(nonatomic, getter=isMediaCaptureMuted) BOOL mediaCaptureMuted; // @synthesize mediaCaptureMuted=_mediaCaptureMuted;
-@property(nonatomic) long long mutedState; // @synthesize mutedState=_mutedState;
-@property(readonly, nonatomic, getter=isPlayingMutableMedia) BOOL playingMutableMedia; // @synthesize playingMutableMedia=_playingMutableMedia;
-@property(readonly, nonatomic) unsigned long long mutableMediaState; // @synthesize mutableMediaState=_mutableMediaState;
 @property(copy, nonatomic, setter=_setCommittedTabLabel:) NSString *committedTabLabel; // @synthesize committedTabLabel=_committedTabLabel;
 @property(copy, nonatomic) NSString *provisionalTabLabel; // @synthesize provisionalTabLabel=_provisionalTabLabel;
 @property(copy, nonatomic) NSString *requestedTabLabel; // @synthesize requestedTabLabel=_requestedTabLabel;
 @property(nonatomic) __weak PagePreviewAnimationController *parentPagePreviewAnimationController; // @synthesize parentPagePreviewAnimationController=_parentPagePreviewAnimationController;
+@property(nonatomic) BOOL isObscuredForDigitalHealth; // @synthesize isObscuredForDigitalHealth=_isObscuredForDigitalHealth;
 @property(nonatomic, getter=isReaderViewStale) BOOL readerViewStale; // @synthesize readerViewStale=_readerViewStale;
 @property(copy, nonatomic) NSDictionary *initialReaderArticleScrollPositionAsDictionary; // @synthesize initialReaderArticleScrollPositionAsDictionary=_initialReaderArticleScrollPositionAsDictionary;
 @property(nonatomic) BOOL readerShouldBeShownIfPossible; // @synthesize readerShouldBeShownIfPossible=_readerShouldBeShownIfPossible;
@@ -323,12 +333,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL shouldStartEmpty; // @synthesize shouldStartEmpty=_shouldStartEmpty;
 @property(readonly, nonatomic) BrowserTabPersistentState *pendingTabStateToRestore; // @synthesize pendingTabStateToRestore=_pendingTabStateToRestore;
 @property(nonatomic, getter=isRestoringFromSessionStateData) BOOL restoringFromSessionStateData; // @synthesize restoringFromSessionStateData=_restoringFromSessionStateData;
+@property(readonly, nonatomic) PassDownloadSuppressionManager *passDownloadSuppressionManager; // @synthesize passDownloadSuppressionManager=_passDownloadSuppressionManager;
 @property(readonly, nonatomic) BOOL committedExtendedValidationCertificateOrganizationNameHasBeenDetermined; // @synthesize committedExtendedValidationCertificateOrganizationNameHasBeenDetermined=_committedExtendedValidationCertificateOrganizationNameHasBeenDetermined;
 @property(readonly, nonatomic) BOOL sensitiveFormFieldHasEverHadFocus; // @synthesize sensitiveFormFieldHasEverHadFocus=_sensitiveFormFieldHasEverHadFocus;
 @property(readonly, nonatomic) __weak BackgroundLoad *backgroundNavigationBackgroundLoad; // @synthesize backgroundNavigationBackgroundLoad=_backgroundNavigationBackgroundLoad;
 @property(nonatomic) BOOL hasEverBeenVisible; // @synthesize hasEverBeenVisible=_hasEverBeenVisible;
 @property(nonatomic) long long lastBackgroundTerminationReason; // @synthesize lastBackgroundTerminationReason=_lastBackgroundTerminationReason;
 @property(nonatomic, getter=isTryingToCloseBeforeCommittingToBackgroundLoad) BOOL tryingToCloseBeforeCommittingToBackgroundLoad; // @synthesize tryingToCloseBeforeCommittingToBackgroundLoad=_tryingToCloseBeforeCommittingToBackgroundLoad;
+@property(nonatomic, getter=isHandlingExternalNavigation) BOOL handlingExternalNavigation; // @synthesize handlingExternalNavigation=_handlingExternalNavigation;
 @property(readonly, nonatomic) NSURL *originalRequestURL; // @synthesize originalRequestURL=_originalRequestURL;
 @property(retain, nonatomic) id <WBSSandboxExtensionToken> sandboxExtensionToken; // @synthesize sandboxExtensionToken=_sandboxExtensionToken;
 @property(nonatomic, setter=_setShouldDownloadNextPage:) BOOL shouldDownloadNextPage; // @synthesize shouldDownloadNextPage=_shouldDownloadNextPage;
@@ -356,6 +368,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int tabIdentifier; // @synthesize tabIdentifier=_tabIdentifier;
 @property(readonly, nonatomic) __weak BrowserDocument *document; // @synthesize document=_document;
 @property(nonatomic, getter=isTryingToClose) BOOL tryingToClose; // @synthesize tryingToClose=_tryingToClose;
+@property(nonatomic, getter=isScreenCapturePaused) BOOL screenCapturePaused; // @synthesize screenCapturePaused=_screenCapturePaused;
+@property(nonatomic, getter=isMediaCaptureMuted) BOOL mediaCaptureMuted; // @synthesize mediaCaptureMuted=_mediaCaptureMuted;
+@property(nonatomic) long long mutedState; // @synthesize mutedState=_mutedState;
+@property(readonly, nonatomic, getter=isPlayingMutableMedia) BOOL playingMutableMedia; // @synthesize playingMutableMedia=_playingMutableMedia;
+@property(readonly, nonatomic) unsigned long long mutableMediaState; // @synthesize mutableMediaState=_mutableMediaState;
 @property(readonly, copy, nonatomic) NSString *authenticationHost; // @synthesize authenticationHost=_authenticationHost;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -391,7 +408,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long currentTabDialogType;
 @property(readonly, nonatomic, getter=isShowingTabDialog) BOOL showingTabDialog;
 - (void)dismissTabDialog;
-- (void)presentTabDialogWithConfiguration:(id)arg1 dismissalBlock:(CDUnknownBlockType)arg2 blocksWebProcessUntilDismissed:(BOOL)arg3;
+- (void)presentTabDialogWithConfiguration:(id)arg1 dismissalBlock:(CDUnknownBlockType)arg2 blocksWebProcessUntilDismissed:(BOOL)arg3 cancellationExemptions:(id)arg4;
 - (void)browserView:(id)arg1 didFindIconWithParameters:(id)arg2 downloadHandler:(CDUnknownBlockType)arg3;
 - (void)searchableWKViewDidReturnFromFullscreenWindow:(id)arg1;
 - (void)searchableWKViewDidEnterFullscreenWindow:(id)arg1;
@@ -405,6 +422,7 @@ __attribute__((visibility("hidden")))
 - (void)_didDismissTabDialogs;
 - (void)_willPresentTabDialog;
 - (void)_prepareToCancelOwnDialogs;
+- (void)_dismissAllDialogsOnCommit;
 - (void)dismissAllDialogs;
 - (void)dismissDialogsBlockingNavigation;
 - (void)dismissDialogsBlockingActivation;
@@ -423,14 +441,6 @@ __attribute__((visibility("hidden")))
 - (void)setSearchResultsForSnapBackToCurrentPage;
 - (void)snapBackToSearchResults;
 @property(readonly, nonatomic) BOOL canSnapBackToSearchResults;
-- (void)createWebClipForBanner:(id)arg1;
-- (void)hideWebClipOverlayForBanner:(id)arg1;
-- (void)showWebClipOverlayForBanner:(id)arg1;
-- (void)didCollectWebClipPageSize:(struct CGSize)arg1 clipRect:(struct CGRect)arg2 clipSignature:(const struct Dictionary *)arg3;
-- (void)hideWebClipBannerAnimated:(BOOL)arg1;
-- (void)showWebClipBannerAnimated:(BOOL)arg1;
-@property(readonly, nonatomic, getter=isShowingWebClipBanner) BOOL showingWebClipBanner;
-@property(readonly, nonatomic) BOOL canCreateWebClip;
 - (void)hideDefaultBrowserBannerAnimated:(BOOL)arg1;
 - (void)showDefaultBrowserBannerAnimated:(BOOL)arg1;
 @property(readonly, nonatomic, getter=isShowingDefaultBrowserBanner) BOOL showingDefaultBrowserBanner;
@@ -470,6 +480,8 @@ __attribute__((visibility("hidden")))
 - (void)handleNextPlugInInitializationError;
 - (void)didBlockInsecurePluginVersionWithInformation:(id)arg1;
 @property(readonly, nonatomic) BOOL canShowBlockedPageContentDialog;
+- (void)hideAppLinkBanner;
+- (void)showBannerForAppLink:(id)arg1;
 - (void)_hidePrivateBrowsingExplanationBannerAnimated:(BOOL)arg1;
 - (void)showPrivateBrowsingExplanationBannerAnimated:(BOOL)arg1;
 @property(readonly, nonatomic, getter=isShowingPrivateBrowsingExplanationBanner) BOOL showingPrivateBrowsingExplanationBanner;
@@ -542,7 +554,7 @@ __attribute__((visibility("hidden")))
 - (void)transferStateFromBrowserContentViewControllerSpawnedFromPinnedTab:(id)arg1;
 @property(readonly, nonatomic, getter=isDisposableAfterNavigation) BOOL disposableAfterNavigation;
 - (void)pagePinnedStateDidChange;
-- (void)setUpSpawnedTabFromParentTab:(id)arg1 parentTabSnapshot:(id)arg2 snapshotImageScale:(double)arg3;
+- (void)setUpSpawnedTabFromParentTab:(id)arg1;
 - (void)restoreParentTabSessionState;
 - (void)_addSpawnedTabBrowserViewController:(id)arg1;
 - (void)_invalidatedBackForwardItemsDidChange;
@@ -567,10 +579,11 @@ __attribute__((visibility("hidden")))
 - (void)_updateAudioUINow:(id)arg1;
 - (void)_invalidateUpdateAudioUITimer;
 - (void)notifyContentMediaPlayingStateChanged;
-- (void)mutableMediaPlayingStateDidChange;
 @property(readonly, nonatomic, getter=isMuted) BOOL muted;
 - (void)_setPageMutedState;
+- (void)mutableMediaPlayingStateDidChange;
 - (void)updatePageMutedState;
+@property(readonly, copy, nonatomic) NSString *userVisibleMediaOrigin;
 - (void)_autoplayPreferenceDidChange:(id)arg1;
 - (void)_perSiteContentBlockersPreferenceDidChange:(id)arg1;
 - (void)_perSiteAutomaticReaderActivationPreferenceDidChange:(id)arg1;
@@ -624,6 +637,7 @@ __attribute__((visibility("hidden")))
 - (void)_requestQueryResultsForText:(id)arg1 contentType:(long long)arg2 pageMetadata:(id)arg3;
 - (void)didExtractReaderText:(id)arg1 pageMetadata:(id)arg2 wasDeterminingAvailability:(BOOL)arg3;
 - (void)didDetermineReaderAvailability:(BOOL)arg1 dueToSameDocumentNavigation:(BOOL)arg2;
+- (void)applyCloudTabReaderPropertiesIfNeeded:(id)arg1;
 - (void)createReaderControllerIfNeeded;
 @property(readonly, nonatomic) struct ReaderController *readerController;
 @property(readonly, nonatomic, getter=isShowingReader) BOOL showingReader;
@@ -640,6 +654,7 @@ __attribute__((visibility("hidden")))
 - (void)_installStartPageWithMode:(int)arg1;
 - (void)goToStartPageWithMode:(int)arg1;
 - (id)_startPageView;
+@property(readonly, nonatomic) BOOL lastStartPageModeWasTopSitesOrFavorites;
 @property(readonly, nonatomic, getter=isLoadingStartPage) BOOL loadingStartPage;
 @property(readonly, nonatomic, getter=isShowingOrWillShowStartPageView) BOOL showingOrWillShowStartPageView;
 @property(readonly, nonatomic, getter=isShowingStartPage) BOOL showingStartPage;
@@ -672,6 +687,7 @@ __attribute__((visibility("hidden")))
 - (RetainPtr_fae59704)generateSnapshotFromWindowBackingStore;
 - (void)clearAllStatus;
 - (void)setStatusForMouseoverWithUserData:(id)arg1 modifiers:(unsigned long long)arg2 forPage:(const struct Page *)arg3;
+- (BOOL)_shouldTrackFormMetadataForUnsubmittedFormData:(id)arg1;
 - (void)_updateUnsubmittedFormDataInFrame:(const struct Frame *)arg1 formMetadata:(id)arg2;
 - (void)_autocompleteInTextFieldInFrame:(const struct Frame *)arg1 textFieldMetaData:(id)arg2 formMetaData:(id)arg3;
 - (void)formAutoFillController:(id)arg1 didRefreshCompletionListItems:(const Vector_9c080eda *)arg2;
@@ -680,12 +696,11 @@ __attribute__((visibility("hidden")))
 - (void)functionBarProvider:(id)arg1 didSelectCompletionListItem:(struct CompletionListItem *)arg2;
 - (void)showFunctionBarForProvider:(id)arg1;
 - (void)hideFunctionBarForProvider:(id)arg1;
-- (struct TabPlacementHint)tabPlacementHintForBookmarksViewController:(id)arg1;
 - (id)bookmarksUndoControllerForBookmarksViewController:(id)arg1;
 - (void)bookmarksViewControllerDidChangePageTitle:(id)arg1;
 - (BOOL)shouldUsePrivateBrowsingInBookmarksViewController:(id)arg1;
 - (void)_simulateCarriageReturnKeyEventInBrowserView;
-- (void)_createFormCompletionControllerAndFunctionBarProviderIfNeededForFrame:(const struct Frame *)arg1 textFieldMetadata:(id)arg2 formMetadata:(id)arg3;
+- (BOOL)_createFormCompletionControllerAndFunctionBarProviderIfNeededForFrame:(const struct Frame *)arg1 textFieldMetadata:(id)arg2 formMetadata:(id)arg3;
 - (void)_createAutoFillFunctionBarProviderIfNeeded;
 - (void)_uninstallAlternativeWebViewFunctionBarProvider;
 - (void)_installAlternativeWebViewFunctionBarProvider:(id)arg1;
@@ -770,16 +785,18 @@ __attribute__((visibility("hidden")))
 - (void)animateProgressForPreloadedDocument;
 - (void)_allowUserToPickCertificateForAuthenticationChallengeInfo:(id)arg1;
 - (void)_useClientCertificatesForAuthenticationChallengeInfo:(id)arg1;
-- (void)_cacheSecIdentityIfNeeded:(struct OpaqueSecIdentityRef *)arg1 forURL:(id)arg2;
-- (RetainPtr_45e7c27d)_preferredIdentityForURL:(id)arg1;
+- (void)_cacheSecIdentityIfNeeded:(struct __SecIdentity *)arg1 forURL:(id)arg2;
+- (RetainPtr_6b1fd32a)_preferredIdentityForURL:(id)arg1;
 - (BOOL)_shouldPersistIdentityPreferencesToKeychain;
 - (void)_showHTTPAuthenticationDialogForChallenge:(id)arg1;
 - (void)_handleNextAuthenticationChallenge;
-- (void)_continueAuthenticationChallenge:(id)arg1 withCertificateIdentity:(struct OpaqueSecIdentityRef *)arg2;
+- (void)_continueAuthenticationChallenge:(id)arg1 withCertificateIdentity:(struct __SecIdentity *)arg2;
 - (void)forgetAllAuthenticationChallenges;
 - (void)didReceiveAuthenticationChallenge:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)canAuthenticateAgainstProtectionSpace:(id)arg1;
-- (void)clearModalSheetAlerts;
+- (void)clearSheetsToDismissOnNavigation;
+- (void)removeSheetToDismissOnNavigation:(id)arg1;
+- (void)addSheetToDismissOnNavigation:(id)arg1;
 - (void)browserViewDidMoveToWindow;
 - (void)browserViewVisibilityChanged;
 - (void)browserViewWillMoveToWindow:(id)arg1;
@@ -799,7 +816,11 @@ __attribute__((visibility("hidden")))
 - (struct Frame)_printingMailingFrame;
 - (void)printPage;
 - (void)_printOperationDidRun:(id)arg1 success:(BOOL)arg2 contextInfo:(void *)arg3;
+- (void)_printFrame:(const struct Frame *)arg1 withPrintInfo:(id)arg2 waitUntilDone:(BOOL)arg3;
 - (void)_printFrame:(const struct Frame *)arg1 waitUntilDone:(BOOL)arg2;
+- (void)_getPrintInfoForFrame:(const struct Frame *)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)_isHTMLPage;
+- (id)_printHelper;
 - (void)_showPrintSheetBlockedDialogForFrame:(const struct Frame *)arg1 waitUntilDone:(BOOL)arg2;
 - (void)_handleNextPrintRequest;
 - (void)printFrameHandle:(id)arg1 waitUntilDone:(BOOL)arg2 isUserInitiated:(BOOL)arg3;
@@ -808,7 +829,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)_isCurrentPageSearchable;
 - (void)focusContentSearchField;
 - (BOOL)canFocusContentSearchField;
-- (void)showFindInPageBannerAnimated:(BOOL)arg1;
 - (void)clearIgnoredNavigationURL;
 - (BOOL)historyClientShouldIgnoreNavigationToURL:(id)arg1;
 - (BOOL)_isBackForwardListItemDisposable:(const struct BackForwardListItem *)arg1;
@@ -835,6 +855,16 @@ __attribute__((visibility("hidden")))
 - (void)addBlockedPopUpWindowConfiguration:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfBlockedPopUpWindows;
 - (BOOL)didAllowPopUpWindowsForDomain:(id)arg1;
+- (void)promptToAllowDownloadFileOnDomain:(id)arg1 originatingURLString:(id)arg2 withDecisionHandler:(CDUnknownBlockType)arg3;
+- (void)_fulfillDownloadsPendingPermissionDecisionHandlerForDomain:(id)arg1 permitted:(BOOL)arg2;
+- (void)_enqueueDownloadsDecisionHandler:(CDUnknownBlockType)arg1 forDomain:(id)arg2;
+- (BOOL)didWantToDownloadURL:(id)arg1;
+- (void)wantsDownloadURL:(id)arg1;
+- (void)_suspendMediaForScreenTimeIfNecessary;
+- (void)digitalHealthOverlayViewController:(id)arg1 didFinishDismissingLockOutViewController:(id)arg2;
+- (void)hideDigitalHealthOverlayAnimated:(BOOL)arg1;
+- (void)showDigitalHealthOverlayAnimated:(BOOL)arg1;
+- (void)_requestDigitalHealthPoliciesForCurrentOrExpectedURL;
 - (BOOL)_shouldDisplayRequestedSheet;
 - (BOOL)_displayRequestedSheetNowIfAppropriate;
 - (void)_setSheetRequest:(RefPtr_55cde54d *)arg1;
@@ -878,10 +908,10 @@ __attribute__((visibility("hidden")))
 - (void)beginPendingNavigation;
 @property(readonly, nonatomic) BOOL shouldDeferRestorationUntilSelected;
 @property(readonly, nonatomic, getter=isSuppressingDownloads) BOOL suppressingDownloads;
+- (void)showPassBlockedDialogForDownload:(id)arg1;
 - (void)_loadCertificateWarningPageForError:(id)arg1 failingTrust:(struct __SecTrust *)arg2 failingURL:(id)arg3 certificateWarningContext:(const struct Dictionary *)arg4;
 - (id)_certificateWarningPagePresenterProxy;
 @property(readonly, nonatomic, getter=isShowingCertificateWarning) BOOL showingCertificateWarning;
-- (BOOL)_getCertificateErrorTitle:(id *)arg1 andMessage:(id *)arg2 forErrorCode:(int)arg3 host:(id)arg4 trustIncludesRevokedCertificate:(BOOL)arg5;
 - (void)_logInvalidCertificateErrorWithErrorCode:(long long)arg1 trustIncludesRevokedCertificate:(BOOL)arg2;
 - (BOOL)_handleCertificateError:(id)arg1 forWebViewInProcessPool:(id)arg2 frameType:(long long)arg3;
 - (id)_computeExtendedValidationCertificateOrganizationName;
@@ -903,7 +933,6 @@ __attribute__((visibility("hidden")))
 - (void)_requestVisibleContentsWithRequestIdentifier:(unsigned long long)arg1;
 - (void)getVisibleContentsSnapshotWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getVisibleContentsAsDataURLStringWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (BOOL)dispatchBeforeNavigateEventForURL:(id)arg1;
 - (void)generatePDFDataForExport;
 - (void)_presentSaveDialog;
 - (BOOL)_isSavingAsWebArchive;
@@ -965,8 +994,9 @@ __attribute__((visibility("hidden")))
 - (void)sessionStateDidChange;
 - (void)loadingStatusHasChanged;
 - (void)reloadWithOption:(long long)arg1;
-- (void)performReloadWithoutContentBlockers;
-- (void)reloadWithoutContentBlockers;
+- (void)_performReloadWithInvertedContentBlockersEnabledSetting;
+- (void)_reloadWithInvertedContentBlockersEnabledSetting;
+@property(readonly, nonatomic) BOOL didLoadCurrentURLWithContentBlockersEnabled;
 - (void)reloadFromOrigin;
 - (void)reloadIfShowingErrorPage;
 - (void)reload;
@@ -1026,7 +1056,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSURL *expectedOrCurrentURL;
 @property(readonly, nonatomic) NSURL *expectedURL;
 @property(readonly, nonatomic) NSString *expectedOrCurrentOriginalURLString;
-@property(readonly, nonatomic) NSString *mediaMenuItemTitle;
+@property(readonly, copy, nonatomic) NSString *mediaMenuItemTitle;
 @property(readonly, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) NSString *pageName;
 @property(readonly, nonatomic) NSString *currentPageTitle;
@@ -1039,6 +1069,7 @@ __attribute__((visibility("hidden")))
 - (void)updateWKViewLayoutMode;
 - (void)disableFrameSizeUpdates;
 - (void)enableFrameSizeUpdates;
+@property(readonly, nonatomic, getter=isControlledByAutomation) BOOL controlledByAutomation;
 @property(readonly, nonatomic) BOOL usesPrivateBrowsing;
 @property(readonly, nonatomic) unsigned long long browsingMode;
 @property(readonly, nonatomic) SearchableWKView *frontmostContentView;
@@ -1050,9 +1081,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL isDisposable;
 @property(readonly, nonatomic) NSWindow *hostWindow;
 - (BOOL)hasAncestorWithTabIdentifier:(unsigned int)arg1;
-- (void)setAncestorTabIdentifiersWithParent:(id)arg1;
+- (void)setAncestorTabIdentifiersWithRelatedTab:(id)arg1 relationType:(unsigned long long)arg2;
 - (void)didMoveToDocument:(id)arg1;
 @property(readonly, nonatomic) BrowserWKView *browserView;
+- (void)viewDidChangeEffectiveAppearance;
 - (BOOL)contentIsCapableOfZoom;
 - (void)terminateWithoutReloadingPageDueToUnresponsiveWebProcess;
 - (void)terminateAndReloadPageDueToUnresponsiveWebProcess;

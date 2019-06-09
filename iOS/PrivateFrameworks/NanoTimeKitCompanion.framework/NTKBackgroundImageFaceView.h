@@ -8,7 +8,7 @@
 
 #import <NanoTimeKitCompanion/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, NTKDigitalTimeLabel, NTKEditOption, UIImageView, UIView;
+@class NSString, NTKEditOption, UIImageView, UIView;
 
 @interface NTKBackgroundImageFaceView : NTKDigitalFaceView <UIGestureRecognizerDelegate>
 {
@@ -16,13 +16,13 @@
     UIView *_transitionViewFrom;
     NTKEditOption *_editOptionTo;
     UIView *_transitionViewTo;
+    UIView *_zoomingContainerView;
     UIView *_transitionDimmingView;
     _Bool _shouldAdjustLayoutForTimeTravel;
     UIView *_timeTravelDimmingOverlayView;
     UIView *_selectedContentView;
     double _breathScaleModifier;
     double _rubberBandScaleModifier;
-    NTKDigitalTimeLabel *_timeLabel;
     UIView *_backgroundContainerView;
     UIView *_zoomMaskView;
     UIImageView *_zoomVignette;
@@ -41,7 +41,6 @@
 @property(retain, nonatomic) UIImageView *zoomVignette; // @synthesize zoomVignette=_zoomVignette;
 @property(retain, nonatomic) UIView *zoomMaskView; // @synthesize zoomMaskView=_zoomMaskView;
 @property(readonly, nonatomic) UIView *backgroundContainerView; // @synthesize backgroundContainerView=_backgroundContainerView;
-@property(retain, nonatomic) NTKDigitalTimeLabel *timeLabel; // @synthesize timeLabel=_timeLabel;
 - (void).cxx_destruct;
 - (void)_removeAllSubviewsFrom:(id)arg1;
 - (void)_applyShowContentForUnadornedSnapshot;
@@ -87,12 +86,10 @@
 - (_Bool)_fadesComplicationSlot:(id)arg1 inEditMode:(long long)arg2;
 - (unsigned long long)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
 - (double)_keylineCornerRadiusForComplicationSlot:(id)arg1;
-- (id)_digitalTimeLabelStyle;
 - (id)_updateFontInStyle:(id)arg1 monospace:(_Bool)arg2;
+- (id)_digitalTimeLabelStyleFromViewMode:(long long)arg1 faceBounds:(struct CGRect)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)_bringForegroundViewsToFront;
-- (void)_layoutForegroundContainerView;
 - (_Bool)_needsForegroundContainerView;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;

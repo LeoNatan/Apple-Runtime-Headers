@@ -8,18 +8,23 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBUnknownFields;
+
 @interface GEOUserPreferences : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
     _Bool _avoidHighways;
     _Bool _avoidTolls;
     struct {
-        unsigned int avoidHighways:1;
-        unsigned int avoidTolls:1;
-    } _has;
+        unsigned int has_avoidHighways:1;
+        unsigned int has_avoidTolls:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool avoidHighways; // @synthesize avoidHighways=_avoidHighways;
-@property(nonatomic) _Bool avoidTolls; // @synthesize avoidTolls=_avoidTolls;
++ (_Bool)isValid:(id)arg1;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -27,10 +32,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasAvoidHighways;
+@property(nonatomic) _Bool avoidHighways;
 @property(nonatomic) _Bool hasAvoidTolls;
+@property(nonatomic) _Bool avoidTolls;
 
 @end
 

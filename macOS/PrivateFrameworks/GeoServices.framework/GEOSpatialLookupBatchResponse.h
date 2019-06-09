@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
 {
     NSMutableArray *_responses;
     int _statusCode;
-    CDStruct_bcb1eac0 _has;
+    CDStruct_ade9d5f7 _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)responseType;
-@property(retain, nonatomic) NSMutableArray *responses; // @synthesize responses=_responses;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,16 +28,18 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)responseAtIndex:(unsigned long long)arg1;
 - (unsigned long long)responsesCount;
 - (void)addResponse:(id)arg1;
 - (void)clearResponses;
+@property(retain, nonatomic) NSMutableArray *responses;
 - (int)StringAsStatusCode:(id)arg1;
 - (id)statusCodeAsString:(int)arg1;
 @property(nonatomic) BOOL hasStatusCode;
-@property(nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
+@property(nonatomic) int statusCode;
 
 @end
 

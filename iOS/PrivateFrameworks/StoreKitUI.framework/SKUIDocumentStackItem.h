@@ -8,6 +8,7 @@
 
 @class IKAppDocument, NSDictionary, NSString, SKUINavigationDocumentController, UIPopoverPresentationController, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDocumentStackItem : NSObject
 {
     IKAppDocument *_document;

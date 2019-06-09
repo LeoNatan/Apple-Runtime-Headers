@@ -17,6 +17,7 @@
     UIColor *_minuteHandColor;
     UIColor *_hourHandColor;
     UIColor *_handInlayColor;
+    UIColor *_minuteHandDotColor;
     UIColor *_backgroundColor;
     double _secondHandAlpha;
     unsigned long long _bleed;
@@ -48,6 +49,7 @@
 @property(readonly, nonatomic) unsigned long long bleed; // @synthesize bleed=_bleed;
 @property(readonly, nonatomic) double secondHandAlpha; // @synthesize secondHandAlpha=_secondHandAlpha;
 @property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(readonly, nonatomic) UIColor *minuteHandDotColor; // @synthesize minuteHandDotColor=_minuteHandDotColor;
 @property(readonly, nonatomic) UIColor *handInlayColor; // @synthesize handInlayColor=_handInlayColor;
 @property(readonly, nonatomic) UIColor *hourHandColor; // @synthesize hourHandColor=_hourHandColor;
 @property(readonly, nonatomic) UIColor *minuteHandColor; // @synthesize minuteHandColor=_minuteHandColor;

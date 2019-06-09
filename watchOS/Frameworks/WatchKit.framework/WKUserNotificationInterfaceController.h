@@ -32,6 +32,7 @@
 - (void)performDismissAction;
 - (void)performNotificationDefaultAction;
 - (void)didReceiveNotification:(id)arg1;
+- (void)_didReceiveNotification:(id)arg1;
 - (void)_didReceiveNotification:(id)arg1 remoteNotification:(id)arg2 localNotification:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (id)init;
 

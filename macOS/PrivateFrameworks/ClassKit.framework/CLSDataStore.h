@@ -33,6 +33,8 @@
     CLSGraph *_graph;
 }
 
++ (BOOL)isSearchAPIEnabled;
++ (BOOL)isPrivateSearchAPIEnabled;
 + (BOOL)isDashboardApp;
 + (BOOL)isPDTool;
 + (id)newDatastore;
@@ -44,6 +46,7 @@
 @property(retain, nonatomic) CLSContext *mainAppContext; // @synthesize mainAppContext=_mainAppContext;
 @property(nonatomic) __weak id <CLSDataStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)featureIsEnabled:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)syncFetchWithCompletion:(CDUnknownBlockType)arg1;
 - (void)pruneDeletedObjectsWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)faultProcessor:(id)arg1 shouldFaultRelation:(id)arg2 fromObject:(struct NSObject *)arg3;
@@ -116,7 +119,11 @@
 - (id)initWithEndpoint:(id)arg1;
 - (id)init;
 - (BOOL)isAllowedToInsertObject:(id)arg1;
+- (BOOL)isPrivateSearchAPIEnabled;
+- (BOOL)isSearchAPIEnabled;
 - (BOOL)isDashboardAPIEnabled;
+- (void)removeClass:(id)arg1;
+- (void)saveClass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)classesForPersonID:(id)arg1 role:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)personsInClassWithClassID:(id)arg1 role:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)instructedClassesWithCompletion:(CDUnknownBlockType)arg1;
@@ -128,6 +135,11 @@
 - (void)removeHandout:(id)arg1;
 - (void)addHandout:(id)arg1;
 - (void)enrolledClassesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)membersOfGroupWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)objectsMatching:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)shouldPerformSearchAPIOperation:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)isSearchAllowed;
+- (void)canSearchRostersWithCompletion:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

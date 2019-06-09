@@ -8,6 +8,7 @@
 
 @class OADSubBlip;
 
+__attribute__((visibility("hidden")))
 @interface OADBlip : NSObject
 {
     unsigned int mReferenceCount;

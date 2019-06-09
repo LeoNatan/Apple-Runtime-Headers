@@ -9,8 +9,6 @@
 @class AVPictureInPictureViewController;
 
 @protocol AVPictureInPictureViewControllerDelegate <NSObject>
-
-@optional
 - (void)pictureInPictureViewControllerViewWillDisappear:(AVPictureInPictureViewController *)arg1;
 - (void)pictureInPictureViewControllerViewDidAppear:(AVPictureInPictureViewController *)arg1;
 @end

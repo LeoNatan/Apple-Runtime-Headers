@@ -8,40 +8,54 @@
 
 #import <AXMediaUtilities/NSSecureCoding-Protocol.h>
 
-@class AXMDiagnostics, AXMLanguage, AXMVisionFeature, CIImage, NSArray, NSNumber, NSString;
+@class AXMDiagnostics, AXMLanguage, AXMVisionFeature, CIImage, NSArray, NSNumber, NSSet, NSString;
+@protocol NSSecureCoding;
 
 @interface AXMVisionResult : NSObject <NSSecureCoding>
 {
     CIImage *_image;
     NSArray *_features;
+    NSSet *_evaluatedFeatureTypes;
     NSNumber *_appliedImageOrientation;
     AXMDiagnostics *_diagnostics;
+    long long _imageRegistrationState;
+    NSObject<NSSecureCoding> *_userContext;
     NSString *_detectedFeatureDescription;
     NSString *_detectedTextDescription;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)resultWithFeatures:(id)arg1 orientation:(id)arg2 diagnostics:(id)arg3;
++ (id)resultWithImage:(id)arg1 features:(id)arg2 orientation:(id)arg3 diagnostics:(id)arg4 userContext:(id)arg5;
 + (id)resultWithImage:(id)arg1 features:(id)arg2 orientation:(id)arg3 diagnostics:(id)arg4;
 @property(retain, nonatomic) NSString *detectedTextDescription; // @synthesize detectedTextDescription=_detectedTextDescription;
 @property(retain, nonatomic) NSString *detectedFeatureDescription; // @synthesize detectedFeatureDescription=_detectedFeatureDescription;
+@property(retain, nonatomic) NSObject<NSSecureCoding> *userContext; // @synthesize userContext=_userContext;
+@property(nonatomic) long long imageRegistrationState; // @synthesize imageRegistrationState=_imageRegistrationState;
 @property(retain, nonatomic) AXMDiagnostics *diagnostics; // @synthesize diagnostics=_diagnostics;
 @property(retain, nonatomic) NSNumber *appliedImageOrientation; // @synthesize appliedImageOrientation=_appliedImageOrientation;
+@property(retain, nonatomic) NSSet *evaluatedFeatureTypes; // @synthesize evaluatedFeatureTypes=_evaluatedFeatureTypes;
 @property(retain, nonatomic) NSArray *features; // @synthesize features=_features;
 @property(retain, nonatomic) CIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
-- (_Bool)speakableDescriptionContainsDiscoveredText;
-- (id)speakableDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) NSString *localizedDetectedIconHint;
 @property(readonly, nonatomic) NSString *localizedDetectedTextHint;
 @property(readonly, nonatomic) AXMLanguage *detectedTextLanguage;
-- (id)localizedStringFormatterForExpression:(id)arg1;
 @property(readonly, nonatomic) AXMVisionFeature *assetMetadataFeature;
 @property(readonly, nonatomic) AXMVisionFeature *colorInfoFeature;
 - (id)sortedFeatures;
 - (id)_init;
+@property(readonly, nonatomic) NSArray *iconClassFeatures;
+@property(readonly, nonatomic) NSArray *brightnessFeatures;
+@property(readonly, nonatomic) NSArray *blurFeatures;
+@property(readonly, nonatomic) NSArray *ocrFeatures;
+@property(readonly, nonatomic) NSArray *modelClassificationFeatures;
+@property(readonly, nonatomic) NSArray *captionFeatures;
+@property(readonly, nonatomic) NSArray *objectClassificationFeatures;
+@property(readonly, nonatomic) NSArray *sceneClassificationFeatures;
+@property(readonly, nonatomic) NSArray *faceFeatures;
 
 @end
 

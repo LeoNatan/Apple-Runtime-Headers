@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString;
 @protocol CUISBulletinClientFactoryDelegate;
 
 @interface CUISBulletinClientFactory : NSObject
@@ -15,12 +15,18 @@
     NSObject *_attachment;
     NSMutableArray *_mutableNotifications;
     NSMutableArray *_mutableBulletins;
+    NSMutableDictionary *_notificationToBulletin;
+    _Bool _playedSound;
     id <CUISBulletinClientFactoryDelegate> _delegate;
+    unsigned int _requestedDefaultActionMenu;
 }
 
++ (id)appBundleIdentifierForBulletin:(id)arg1;
++ (id)appBundleIdentifierOverrideForBulletin:(id)arg1;
 + (_Bool)sendBulletinsToApp:(id)arg1;
 + (id)missedBulletinObserver;
 + (void)prepareForBulletins;
+@property(nonatomic) unsigned int requestedDefaultActionMenu; // @synthesize requestedDefaultActionMenu=_requestedDefaultActionMenu;
 @property(nonatomic) __weak id <CUISBulletinClientFactoryDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)alertSuppressionContexts;
@@ -33,13 +39,23 @@
 - (id)userActivity;
 - (id)actionItems;
 - (id)clientViewController;
+- (id)synthesizeBBResponseForAction:(id)arg1;
+- (_Bool)csl_stopPlayingSound;
+- (_Bool)stopPlayingSound;
+- (_Bool)csl_playCustomBulletinSound;
 - (_Bool)playCustomBulletinSound;
 - (_Bool)shouldDismissExistingPresentationWithModifiedBulletin:(id)arg1;
 - (_Bool)shouldClearBulletinsAfterDismissalForReason:(unsigned int)arg1;
 - (_Bool)shouldPresentActionMenu;
+- (void)_handleAction:(id)arg1;
+- (id)bbActions;
 - (id)actionMenuPresentation;
 - (id)primaryPagePresentation;
+- (_Bool)isPlayingContinuousAudioFeedback;
+- (_Bool)preventAutoDismiss;
 - (_Bool)supportsCreatePrimaryPagePresentationAsychronously;
+@property(readonly, copy, nonatomic) NSString *bundleIdentifier;
+- (unsigned int)originForNotification:(id)arg1;
 @property(readonly, nonatomic) NSArray *notifications;
 - (id)_mutableNotifications;
 - (id)initWithBulletins:(id)arg1;

@@ -7,10 +7,12 @@
 #import <CardKit/CRFeedbackListener-Protocol.h>
 
 @class UIViewController;
+@protocol CRCard;
 
 @protocol CRKFeedbackDelegate <CRFeedbackListener>
 
 @optional
+- (void)presentViewControllerForCard:(id <CRCard>)arg1 animate:(_Bool)arg2;
 - (void)willDismissViewController:(UIViewController *)arg1;
 - (void)presentViewController:(UIViewController *)arg1;
 @end

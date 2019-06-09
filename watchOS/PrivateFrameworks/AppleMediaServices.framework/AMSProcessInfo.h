@@ -6,31 +6,54 @@
 
 #import <objc/NSObject.h>
 
+#import <AppleMediaServices/NSCopying-Protocol.h>
+#import <AppleMediaServices/NSSecureCoding-Protocol.h>
+
 @class NSData, NSString;
 @protocol OS_dispatch_queue;
 
-@interface AMSProcessInfo : NSObject
+@interface AMSProcessInfo : NSObject <NSCopying, NSSecureCoding>
 {
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSString *_partnerHeader;
+    NSString *_accountMediaType;
     NSData *_auditTokenData;
     NSString *_bundleIdentifier;
     NSString *_clientVersion;
+    NSString *_executableName;
     NSString *_proxyAppBundleID;
 }
 
++ (id)_currentProcessBundleIdentifier;
++ (void)_accessProcessInfoCache:(CDUnknownBlockType)arg1;
++ (id)_cachedProcessInfoForIdentifier:(id)arg1;
++ (void)_cacheProcessInfo:(id)arg1;
++ (_Bool)supportsSecureCoding;
++ (void)copyPropertiesFrom:(id)arg1 to:(id)arg2;
++ (id)valueForEntitlement:(id)arg1;
 + (id)stringForEntitlement:(id)arg1;
++ (void)setDefaultMediaTypeForCurrentProcess:(id)arg1;
++ (id)bundleForIdentifier:(id)arg1;
++ (id)defaultMediaTypeForCurrentProcess;
++ (id)defaultMediaTypeAccessQueue;
 + (_Bool)boolForMachLookupAccess:(id)arg1;
 + (_Bool)boolForEntitlement:(id)arg1;
 + (_Bool)isBuddyRunning;
 + (id)currentProcess;
 @property(retain, nonatomic) NSString *proxyAppBundleID; // @synthesize proxyAppBundleID=_proxyAppBundleID;
+@property(retain, nonatomic) NSString *executableName; // @synthesize executableName=_executableName;
 @property(retain, nonatomic) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
 @property(retain, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain, nonatomic) NSData *auditTokenData; // @synthesize auditTokenData=_auditTokenData;
+@property(retain, nonatomic) NSString *accountMediaType; // @synthesize accountMediaType=_accountMediaType;
 - (void).cxx_destruct;
 - (id)generateConfigurationFromBagContract:(id)arg1;
+- (id)generateConfigurationFromBag:(id)arg1;
 - (id)generateConfiguration;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)description;
 @property(retain, nonatomic) NSString *partnerHeader;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)init;

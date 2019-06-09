@@ -6,69 +6,56 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSString, NSURL, _DKObjectType;
 
 @interface _CDEventStreamProperties : NSObject
 {
-    NSString *name;
-    NSString *knowledgeBaseName;
-    NSString *descriptionString;
-    int valueType;
-    _Bool futureEvent;
+    _Bool isAvailable;
+    _Bool dataCollectionEnabled;
     _Bool setupOnDemand;
-    _Bool canBeSpeculative;
-    double timeToLive;
-    _Bool canPersistOnStorage;
-    double temporalPrecision;
-    int deResolitionPolicy;
-    NSString *dataProtectionClass;
-    int totalSizeLimit;
-    int eventsPerPeriod;
-    double period;
-    _Bool canBeShared;
-    int sharingPolicy;
-    double maxLatency;
-    _Bool canSendToServer;
-    _Bool hasStats;
-    int statisticsType;
     _Bool isInstant;
     _Bool isHistorical;
-    int pollingPeriod;
     _Bool shouldSaveCurrentEventOnShutdown;
+    NSString *name;
+    NSString *knowledgeBaseName;
     NSString *knowledgeBaseMetadataClass;
-    NSString *_keyPathString;
+    NSString *descriptionString;
+    unsigned int domainAvailability;
+    NSString *monitorClass;
+    NSURL *contentProviderBundleURL;
+    _DKObjectType *valueType;
+    int eventCountLimit;
+    int eventsPerPeriod;
+    int pollingPeriod;
+    double timeToLive;
+    double temporalPrecision;
+    double period;
 }
 
++ (id)eventStreamPropertiesFromDictionary:(id)arg1 defaultProperties:(id)arg2;
 + (id)eventStreamPropertiesFromDictionary:(id)arg1;
-@property(readonly, nonatomic) NSString *keyPathString; // @synthesize keyPathString=_keyPathString;
 @property(readonly, nonatomic) int pollingPeriod; // @synthesize pollingPeriod;
 @property(readonly, nonatomic) _Bool shouldSaveCurrentEventOnShutdown; // @synthesize shouldSaveCurrentEventOnShutdown;
 @property(readonly, nonatomic) _Bool isHistorical; // @synthesize isHistorical;
 @property(readonly, nonatomic) _Bool isInstant; // @synthesize isInstant;
-@property(readonly, nonatomic) int statisticsType; // @synthesize statisticsType;
-@property(readonly, nonatomic) _Bool hasStats; // @synthesize hasStats;
-@property(readonly, nonatomic) _Bool canSendToServer; // @synthesize canSendToServer;
-@property(readonly, nonatomic) double maxLatency; // @synthesize maxLatency;
-@property(readonly, nonatomic) int sharingPolicy; // @synthesize sharingPolicy;
-@property(readonly, nonatomic) _Bool canBeShared; // @synthesize canBeShared;
 @property(readonly, nonatomic) int eventsPerPeriod; // @synthesize eventsPerPeriod;
 @property(readonly, nonatomic) double period; // @synthesize period;
-@property(readonly, nonatomic) int totalSizeLimit; // @synthesize totalSizeLimit;
-@property(readonly, nonatomic) NSString *dataProtectionClass; // @synthesize dataProtectionClass;
-@property(readonly, nonatomic) int deResolitionPolicy; // @synthesize deResolitionPolicy;
+@property(readonly, nonatomic) int eventCountLimit; // @synthesize eventCountLimit;
 @property(readonly, nonatomic) double temporalPrecision; // @synthesize temporalPrecision;
-@property(readonly, nonatomic) _Bool canPersistOnStorage; // @synthesize canPersistOnStorage;
 @property(readonly, nonatomic) double timeToLive; // @synthesize timeToLive;
-@property(readonly, nonatomic) _Bool canBeSpeculative; // @synthesize canBeSpeculative;
 @property(readonly, nonatomic) _Bool setupOnDemand; // @synthesize setupOnDemand;
-@property(readonly, nonatomic) _Bool futureEvent; // @synthesize futureEvent;
-@property(readonly, nonatomic) int valueType; // @synthesize valueType;
+@property(readonly, nonatomic) _DKObjectType *valueType; // @synthesize valueType;
+@property(readonly, nonatomic) NSURL *contentProviderBundleURL; // @synthesize contentProviderBundleURL;
+@property(readonly, nonatomic) NSString *monitorClass; // @synthesize monitorClass;
+@property(readonly, nonatomic) _Bool dataCollectionEnabled; // @synthesize dataCollectionEnabled;
+@property(readonly, nonatomic) unsigned int domainAvailability; // @synthesize domainAvailability;
+@property(readonly, nonatomic) _Bool isAvailable; // @synthesize isAvailable;
 @property(readonly, nonatomic) NSString *descriptionString; // @synthesize descriptionString;
 @property(readonly, nonatomic) NSString *knowledgeBaseMetadataClass; // @synthesize knowledgeBaseMetadataClass;
 @property(readonly, nonatomic) NSString *knowledgeBaseName; // @synthesize knowledgeBaseName;
 @property(readonly, nonatomic) NSString *name; // @synthesize name;
 - (void).cxx_destruct;
-- (id)initFromDictionary:(id)arg1;
+- (id)initFromDictionary:(id)arg1 defaultProperties:(id)arg2;
 - (id)description;
 
 @end

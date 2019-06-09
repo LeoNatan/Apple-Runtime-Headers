@@ -6,20 +6,56 @@
 
 #import <ClassKit/CLSObject.h>
 
-@class NSString;
+#import <ClassKit/CLSContactsSearchable-Protocol.h>
+#import <ClassKit/CLSRelationable-Protocol.h>
 
-@interface CLSClass : CLSObject
+@class NSArray, NSPersonNameComponents, NSString;
+
+@interface CLSClass : CLSObject <CLSRelationable, CLSContactsSearchable>
 {
+    BOOL _isEditable;
     NSString *_className;
+    long long _source;
+    NSString *_iconID;
+    NSString *_locationID;
+    long long _originatingSource;
+    NSString *_customClassName;
+    NSString *_tempObjectID;
+    NSString *_searchText;
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)relations;
+@property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
+@property(copy, nonatomic) NSString *tempObjectID; // @synthesize tempObjectID=_tempObjectID;
+@property BOOL isEditable; // @synthesize isEditable=_isEditable;
+@property(copy, nonatomic) NSString *customClassName; // @synthesize customClassName=_customClassName;
+@property(nonatomic) long long originatingSource; // @synthesize originatingSource=_originatingSource;
+@property(copy, nonatomic) NSString *locationID; // @synthesize locationID=_locationID;
+@property(copy, nonatomic) NSString *iconID; // @synthesize iconID=_iconID;
+@property(nonatomic) long long source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *className; // @synthesize className=_className;
 - (void).cxx_destruct;
+- (void)removePerson:(id)arg1 withRole:(unsigned long long)arg2;
+- (void)addPerson:(id)arg1 withRole:(unsigned long long)arg2;
 - (id)dictionaryRepresentation;
+@property(readonly, copy) NSString *description;
+- (void)setDisplayName:(id)arg1;
+@property(readonly, nonatomic) NSString *groupIdentifier;
+@property(readonly, nonatomic) NSString *displayName;
+@property(readonly, nonatomic) NSArray *classMembers;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)validateObject:(id *)arg1;
+- (id)initWithLocation:(id)arg1 customName:(id)arg2;
 - (id)_init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) NSString *emailAddress;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSPersonNameComponents *nameComponents;
+@property(readonly) Class superclass;
 
 @end
 

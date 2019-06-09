@@ -8,20 +8,22 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, PBDataReader;
 
 @interface LOGMSGEVENTLogMsgEventTableBookingSession : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     long long _blurredBookingTimestamp;
     long long _blurredReservationTimestamp;
-    double _durationOfSessionInSeconds;
-    unsigned long long _muid;
     NSString *_bookTableAppId;
     NSString *_bookTableSessionId;
-    int _endState;
-    int _endView;
+    double _durationOfSessionInSeconds;
     NSMutableArray *_errorMessages;
     NSString *_installNeededTappedAppId;
+    unsigned long long _muid;
+    int _endState;
+    int _endView;
     unsigned int _tableSize;
     BOOL _addedSpecialRequest;
     BOOL _installCompleted;
@@ -29,36 +31,43 @@
     BOOL _swipedAvailableTimes;
     BOOL _tappedDatePicker;
     struct {
-        unsigned int blurredBookingTimestamp:1;
-        unsigned int blurredReservationTimestamp:1;
-        unsigned int durationOfSessionInSeconds:1;
-        unsigned int muid:1;
-        unsigned int endState:1;
-        unsigned int endView:1;
-        unsigned int tableSize:1;
-        unsigned int addedSpecialRequest:1;
-        unsigned int installCompleted:1;
-        unsigned int installNeeded:1;
-        unsigned int swipedAvailableTimes:1;
-        unsigned int tappedDatePicker:1;
-    } _has;
+        unsigned int has_blurredBookingTimestamp:1;
+        unsigned int has_blurredReservationTimestamp:1;
+        unsigned int has_durationOfSessionInSeconds:1;
+        unsigned int has_muid:1;
+        unsigned int has_endState:1;
+        unsigned int has_endView:1;
+        unsigned int has_tableSize:1;
+        unsigned int has_addedSpecialRequest:1;
+        unsigned int has_installCompleted:1;
+        unsigned int has_installNeeded:1;
+        unsigned int has_swipedAvailableTimes:1;
+        unsigned int has_tappedDatePicker:1;
+        unsigned int read_bookTableAppId:1;
+        unsigned int read_bookTableSessionId:1;
+        unsigned int read_errorMessages:1;
+        unsigned int read_installNeededTappedAppId:1;
+        unsigned int wrote_blurredBookingTimestamp:1;
+        unsigned int wrote_blurredReservationTimestamp:1;
+        unsigned int wrote_bookTableAppId:1;
+        unsigned int wrote_bookTableSessionId:1;
+        unsigned int wrote_durationOfSessionInSeconds:1;
+        unsigned int wrote_errorMessages:1;
+        unsigned int wrote_installNeededTappedAppId:1;
+        unsigned int wrote_muid:1;
+        unsigned int wrote_endState:1;
+        unsigned int wrote_endView:1;
+        unsigned int wrote_tableSize:1;
+        unsigned int wrote_addedSpecialRequest:1;
+        unsigned int wrote_installCompleted:1;
+        unsigned int wrote_installNeeded:1;
+        unsigned int wrote_swipedAvailableTimes:1;
+        unsigned int wrote_tappedDatePicker:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)errorMessageType;
-@property(retain, nonatomic) NSMutableArray *errorMessages; // @synthesize errorMessages=_errorMessages;
-@property(nonatomic) BOOL tappedDatePicker; // @synthesize tappedDatePicker=_tappedDatePicker;
-@property(nonatomic) BOOL swipedAvailableTimes; // @synthesize swipedAvailableTimes=_swipedAvailableTimes;
-@property(nonatomic) BOOL addedSpecialRequest; // @synthesize addedSpecialRequest=_addedSpecialRequest;
-@property(nonatomic) unsigned int tableSize; // @synthesize tableSize=_tableSize;
-@property(nonatomic) BOOL installCompleted; // @synthesize installCompleted=_installCompleted;
-@property(retain, nonatomic) NSString *installNeededTappedAppId; // @synthesize installNeededTappedAppId=_installNeededTappedAppId;
-@property(nonatomic) BOOL installNeeded; // @synthesize installNeeded=_installNeeded;
-@property(nonatomic) double durationOfSessionInSeconds; // @synthesize durationOfSessionInSeconds=_durationOfSessionInSeconds;
-@property(nonatomic) long long blurredBookingTimestamp; // @synthesize blurredBookingTimestamp=_blurredBookingTimestamp;
-@property(nonatomic) long long blurredReservationTimestamp; // @synthesize blurredReservationTimestamp=_blurredReservationTimestamp;
-@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
-@property(retain, nonatomic) NSString *bookTableAppId; // @synthesize bookTableAppId=_bookTableAppId;
-@property(retain, nonatomic) NSString *bookTableSessionId; // @synthesize bookTableSessionId=_bookTableSessionId;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -67,33 +76,53 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)errorMessageAtIndex:(unsigned long long)arg1;
 - (unsigned long long)errorMessagesCount;
+- (void)_addNoFlagsErrorMessage:(id)arg1;
 - (void)addErrorMessage:(id)arg1;
 - (void)clearErrorMessages;
+@property(retain, nonatomic) NSMutableArray *errorMessages;
+- (void)_readErrorMessages;
 @property(nonatomic) BOOL hasTappedDatePicker;
+@property(nonatomic) BOOL tappedDatePicker;
 @property(nonatomic) BOOL hasSwipedAvailableTimes;
+@property(nonatomic) BOOL swipedAvailableTimes;
 @property(nonatomic) BOOL hasAddedSpecialRequest;
+@property(nonatomic) BOOL addedSpecialRequest;
 @property(nonatomic) BOOL hasTableSize;
+@property(nonatomic) unsigned int tableSize;
 @property(nonatomic) BOOL hasInstallCompleted;
+@property(nonatomic) BOOL installCompleted;
+@property(retain, nonatomic) NSString *installNeededTappedAppId;
 @property(readonly, nonatomic) BOOL hasInstallNeededTappedAppId;
+- (void)_readInstallNeededTappedAppId;
 @property(nonatomic) BOOL hasInstallNeeded;
+@property(nonatomic) BOOL installNeeded;
 @property(nonatomic) BOOL hasDurationOfSessionInSeconds;
+@property(nonatomic) double durationOfSessionInSeconds;
 @property(nonatomic) BOOL hasBlurredBookingTimestamp;
+@property(nonatomic) long long blurredBookingTimestamp;
 @property(nonatomic) BOOL hasBlurredReservationTimestamp;
+@property(nonatomic) long long blurredReservationTimestamp;
 @property(nonatomic) BOOL hasMuid;
+@property(nonatomic) unsigned long long muid;
+@property(retain, nonatomic) NSString *bookTableAppId;
 @property(readonly, nonatomic) BOOL hasBookTableAppId;
+- (void)_readBookTableAppId;
 - (int)StringAsEndView:(id)arg1;
 - (id)endViewAsString:(int)arg1;
 @property(nonatomic) BOOL hasEndView;
-@property(nonatomic) int endView; // @synthesize endView=_endView;
+@property(nonatomic) int endView;
 - (int)StringAsEndState:(id)arg1;
 - (id)endStateAsString:(int)arg1;
 @property(nonatomic) BOOL hasEndState;
-@property(nonatomic) int endState; // @synthesize endState=_endState;
+@property(nonatomic) int endState;
+@property(retain, nonatomic) NSString *bookTableSessionId;
 @property(readonly, nonatomic) BOOL hasBookTableSessionId;
+- (void)_readBookTableSessionId;
 
 @end
 

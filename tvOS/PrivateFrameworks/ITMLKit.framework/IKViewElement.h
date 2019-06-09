@@ -8,7 +8,7 @@
 
 #import <ITMLKit/IKStyleableElement-Protocol.h>
 
-@class IKAppDocument, IKDOMBindingController, IKElementChangeSet, IKViewElementStyle, IKViewElementStyleComposer, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSString;
+@class IKAppDocument, IKChangeSet, IKDOMBindingController, IKDataBinding, IKViewElementStyle, IKViewElementStyleComposer, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSString;
 @protocol IKStyleableElement;
 
 @interface IKViewElement : NSObject <IKStyleableElement>
@@ -24,6 +24,7 @@
     _Bool _prototypesUpdated;
     IKAppDocument *_appDocument;
     IKViewElementStyleComposer *_styleComposer;
+    IKViewElementStyle *_style;
     id <IKStyleableElement> _parentStyleableElement;
     NSString *_elementID;
     unsigned long long _elementType;
@@ -34,30 +35,41 @@
     NSString *_autoHighlightIdentifier;
     NSDictionary *_impressionableAttributes;
     unsigned long long _updateType;
-    IKElementChangeSet *_unfilteredChildrenChangeset;
+    IKChangeSet *_unfilteredChildrenChangeSet;
     NSArray *_features;
+    NSDictionary *_dataDictionary;
+    NSString *_classSelector;
     NSMutableDictionary *_metadataDict;
     NSMutableSet *_activeSingularEvents;
     NSString *_itmlID;
+    IKDataBinding *_binding;
     IKDOMBindingController *_bindingController;
+    NSArray *_aliases;
+    unsigned long long _implicitUpdateType;
 }
 
 + (unsigned long long)evaluateElementUpdateType:(id)arg1;
 + (unsigned long long)updateTypeForChangeInAttribute:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
++ (id)supportedFeaturesForElementName:(id)arg1;
 + (id)supportedFeatures;
 + (_Bool)shouldParseChildDOMElement:(id)arg1;
 + (_Bool)shouldParseChildDOMElements;
 + (id)effectiveChildDOMElementsForDOMElement:(id)arg1;
 + (void)willParseDOMElement:(id)arg1;
+@property(readonly, nonatomic) unsigned long long implicitUpdateType; // @synthesize implicitUpdateType=_implicitUpdateType;
+@property(readonly, copy, nonatomic) NSArray *aliases; // @synthesize aliases=_aliases;
 @property(readonly, nonatomic) _Bool prototypesUpdated; // @synthesize prototypesUpdated=_prototypesUpdated;
 @property(readonly, nonatomic) _Bool areChildrenBound; // @synthesize areChildrenBound=_areChildrenBound;
 @property(readonly, nonatomic) IKDOMBindingController *bindingController; // @synthesize bindingController=_bindingController;
+@property(readonly, nonatomic) IKDataBinding *binding; // @synthesize binding=_binding;
 @property(readonly, retain, nonatomic) NSString *itmlID; // @synthesize itmlID=_itmlID;
 @property(retain, nonatomic) NSMutableSet *activeSingularEvents; // @synthesize activeSingularEvents=_activeSingularEvents;
 @property(retain, nonatomic) NSMutableDictionary *metadataDict; // @synthesize metadataDict=_metadataDict;
 @property(nonatomic) _Bool didUpdateAutoHighlightIdentifier; // @synthesize didUpdateAutoHighlightIdentifier=_didUpdateAutoHighlightIdentifier;
+@property(readonly, copy, nonatomic) NSString *classSelector; // @synthesize classSelector=_classSelector;
+@property(retain, nonatomic) NSDictionary *dataDictionary; // @synthesize dataDictionary=_dataDictionary;
 @property(readonly, copy, nonatomic) NSArray *features; // @synthesize features=_features;
-@property(readonly, nonatomic) IKElementChangeSet *unfilteredChildrenChangeset; // @synthesize unfilteredChildrenChangeset=_unfilteredChildrenChangeset;
+@property(readonly, nonatomic) IKChangeSet *unfilteredChildrenChangeSet; // @synthesize unfilteredChildrenChangeSet=_unfilteredChildrenChangeSet;
 @property(nonatomic) unsigned long long updateType; // @synthesize updateType=_updateType;
 @property(readonly, nonatomic) NSDictionary *impressionableAttributes; // @synthesize impressionableAttributes=_impressionableAttributes;
 @property(nonatomic, getter=isImpressionable) _Bool impressionable; // @synthesize impressionable=_impressionable;
@@ -73,8 +85,11 @@
 @property(readonly, nonatomic) _Bool isPartOfPrototypeElement; // @synthesize isPartOfPrototypeElement=_isPartOfPrototypeElement;
 @property(retain, nonatomic) IKViewElementStyleComposer *styleComposer; // @synthesize styleComposer=_styleComposer;
 - (void).cxx_destruct;
-- (void)_updateSubtreeWithElement:(id)arg1;
+- (_Bool)_elevateToImplicitUpdateType:(unsigned long long)arg1;
+- (unsigned long long)_updateSubtreeWithElement:(id)arg1;
 - (void)appDocumentDidMarkStylesDirty;
+- (void)adoptElement:(id)arg1;
+- (void)resetImplicitUpdates;
 @property(readonly, nonatomic) __weak id <IKStyleableElement> parentStyleableElement; // @synthesize parentStyleableElement=_parentStyleableElement;
 - (void)resetUpdates;
 - (void)disperseUpdateType:(unsigned long long)arg1;
@@ -82,23 +97,24 @@
 - (id)childTextElementWithStyle:(unsigned long long)arg1;
 - (id)childElementsWithType:(unsigned long long)arg1;
 - (id)childElementWithType:(unsigned long long)arg1;
-- (id)actualElementForProxyElement:(id)arg1 jsContext:(id)arg2;
+- (_Bool)canProxyUnloadedChildElement:(id)arg1;
+- (id)proxyElementForLoadedChildElement:(id)arg1;
 @property(readonly, retain, nonatomic) NSArray *children;
 @property(readonly, nonatomic, getter=isHidden) _Bool hidden;
 @property(readonly, nonatomic) _Bool isProxyElement; // @synthesize isProxyElement=_isProxyElement;
-- (_Bool)shouldResolveDataForDOMBindingController:(id)arg1;
 - (void)dispatchEvent:(id)arg1 eventAttribute:(id)arg2 canBubble:(_Bool)arg3 isCancelable:(_Bool)arg4 extraInfo:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (void)dispatchEventOfType:(unsigned long long)arg1 canBubble:(_Bool)arg2 isCancelable:(_Bool)arg3 extraInfo:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
-- (void)retrievePresentationDocument:(CDUnknownBlockType)arg1;
 - (void)resetProperty:(unsigned long long)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 @property(nonatomic) __weak IKAppDocument *appDocument; // @synthesize appDocument=_appDocument;
-@property(readonly, retain, nonatomic) IKViewElementStyle *style;
+@property(readonly, retain, nonatomic) IKViewElementStyle *style; // @synthesize style=_style;
 @property(readonly, copy) NSString *debugDescription;
+- (void)updateWithActualElement:(id)arg1;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (void)configureUpdatesWithElement:(id)arg1;
 - (void)dealloc;
+- (id)initWithOriginalElement:(id)arg1;
 - (id)initWithPrototypeElement:(id)arg1 parent:(id)arg2 appDataItem:(id)arg3;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)init;

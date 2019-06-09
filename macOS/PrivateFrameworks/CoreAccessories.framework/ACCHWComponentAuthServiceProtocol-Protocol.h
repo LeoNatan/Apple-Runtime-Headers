@@ -4,9 +4,6 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSData;
-
 @protocol ACCHWComponentAuthServiceProtocol
-- (void)authenticateBatteryWithChallenge:(NSData *)arg1 completionHandler:(void (^)(BOOL, NSData *, NSData *, BOOL, int))arg2;
 @end
 

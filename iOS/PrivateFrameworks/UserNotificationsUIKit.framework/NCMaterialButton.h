@@ -6,10 +6,13 @@
 
 #import <UIKit/UIButton.h>
 
-@class NSMutableDictionary;
+#import <UserNotificationsUIKit/MTVisualStylingRequiring-Protocol.h>
 
-@interface NCMaterialButton : UIButton
+@class MTVisualStylingProvider, NSArray, NSMutableDictionary, NSString;
+
+@interface NCMaterialButton : UIButton <MTVisualStylingRequiring>
 {
+    MTVisualStylingProvider *_visualStylingProvider;
     NSMutableDictionary *_styling;
     NSMutableDictionary *_imageViewStyling;
 }
@@ -17,16 +20,26 @@
 @property(retain, nonatomic) NSMutableDictionary *imageViewStyling; // @synthesize imageViewStyling=_imageViewStyling;
 @property(retain, nonatomic) NSMutableDictionary *styling; // @synthesize styling=_styling;
 - (void).cxx_destruct;
+- (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
+@property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
+- (id)visualStylingProviderForCategory:(long long)arg1;
 - (void)_applyImageViewStyling;
 - (void)_applyButtonStyling;
 - (void)_applyStyling;
 - (void)_setFlagsRelatedToState:(unsigned long long)arg1 to:(_Bool)arg2;
-- (void)setImageViewStyling:(id)arg1 forState:(unsigned long long)arg2;
-- (void)setStyling:(id)arg1 forState:(unsigned long long)arg2;
+- (void)setImageViewStyle:(long long)arg1 forState:(unsigned long long)arg2;
+- (void)setStyle:(long long)arg1 forState:(unsigned long long)arg2;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setEnabled:(_Bool)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

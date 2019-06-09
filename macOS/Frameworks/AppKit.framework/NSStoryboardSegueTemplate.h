@@ -18,8 +18,10 @@
     id _controller;
     NSString *_destinationControllerIdentifier;
     BOOL _performOnViewLoad;
+    NSString *_destinationControllerCreationSelectorName;
 }
 
+@property(readonly) NSString *destinationControllerCreationSelectorName; // @synthesize destinationControllerCreationSelectorName=_destinationControllerCreationSelectorName;
 @property(readonly) NSString *destinationControllerIdentifier; // @synthesize destinationControllerIdentifier=_destinationControllerIdentifier;
 @property BOOL performOnViewLoad; // @synthesize performOnViewLoad=_performOnViewLoad;
 @property id controller; // @synthesize controller=_controller;

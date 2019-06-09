@@ -33,7 +33,7 @@
 - (void)deselectChatItem:(id)arg1;
 - (void)selectChatItem:(id)arg1;
 - (id)parseMessageText:(id)arg1 chatItem:(id)arg2 messageElement:(id)arg3;
-- (BOOL)_appendBigEmojiDivIfNeeded:(id)arg1 chatItem:(id)arg2 messageTextElement:(id)arg3;
+- (BOOL)_appendBigEmojiDivIfNeededForText:(id)arg1 chatItem:(id)arg2 messageTextElement:(id)arg3;
 - (id)parseMessageSubject:(id)arg1;
 - (id)errorElementForMessageGuid:(id)arg1;
 - (void)_appendFaceTimeCallMessageItem:(id)arg1 toElement:(id)arg2 withChat:(id)arg3;

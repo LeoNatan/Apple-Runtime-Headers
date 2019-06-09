@@ -7,6 +7,7 @@
 #import <DeviceCheck/NSObject-Protocol.h>
 
 @protocol DCDeviceMetadataProtocol <NSObject>
+- (void)isSupportedDeviceWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)fetchOpaqueBlobWithCompletion:(void (^)(NSData *, NSError *))arg1;
 @end
 

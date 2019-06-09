@@ -19,7 +19,6 @@
     unsigned long long _style;
     BOOL _incrementalEnabled;
     BOOL _shouldDim;
-    id _private;
 }
 
 + (void)drawIncrementalMatchHighlightInRect:(struct CGRect)arg1;

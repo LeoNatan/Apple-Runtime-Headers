@@ -6,7 +6,7 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class HMFTimer, NSString, NSUUID;
+@class HAPAccessoryConfiguration, HMFTimer, NSData, NSString, NSUUID;
 
 @interface HMDUnpairedHAPAccessoryPairingInformation : HMFObject
 {
@@ -21,18 +21,22 @@
     CDUnknownBlockType _setupCodeProviderCompletionHandler;
     HMFTimer *_pairingRetryTimer;
     HMFTimer *_reconfirmTimer;
+    HAPAccessoryConfiguration *_hapAccessoryConfiguration;
     NSString *_accessoryName;
     NSUUID *_accessoryUUID;
     NSString *_homeName;
     NSString *_setupCode;
     NSString *_setupID;
+    NSData *_ownershipProof;
 }
 
+@property(retain, nonatomic) NSData *ownershipProof; // @synthesize ownershipProof=_ownershipProof;
 @property(retain, nonatomic) NSString *setupID; // @synthesize setupID=_setupID;
 @property(retain, nonatomic) NSString *setupCode; // @synthesize setupCode=_setupCode;
 @property(retain, nonatomic) NSString *homeName; // @synthesize homeName=_homeName;
 @property(retain, nonatomic) NSUUID *accessoryUUID; // @synthesize accessoryUUID=_accessoryUUID;
 @property(retain, nonatomic) NSString *accessoryName; // @synthesize accessoryName=_accessoryName;
+@property(readonly, nonatomic) HAPAccessoryConfiguration *hapAccessoryConfiguration; // @synthesize hapAccessoryConfiguration=_hapAccessoryConfiguration;
 @property(nonatomic) _Bool needsUserConsent; // @synthesize needsUserConsent=_needsUserConsent;
 @property(nonatomic) _Bool setupCodeProvided; // @synthesize setupCodeProvided=_setupCodeProvided;
 @property(nonatomic) _Bool provideNetworkCredentialsToAccessory; // @synthesize provideNetworkCredentialsToAccessory=_provideNetworkCredentialsToAccessory;
@@ -46,8 +50,8 @@
 @property(nonatomic) int linkType; // @synthesize linkType=_linkType;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithAccessoryDescription:(id)arg1 linkType:(int)arg2 needsUserConsent:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4 progressHandler:(CDUnknownBlockType)arg5;
-- (id)initWithAccessoryUUID:(id)arg1 accessoryName:(id)arg2 linkType:(int)arg3 homeName:(id)arg4 setupCode:(id)arg5 completionHandler:(CDUnknownBlockType)arg6 setupCodeProvider:(CDUnknownBlockType)arg7;
+- (id)initWithAccessoryDescription:(id)arg1 linkType:(int)arg2 needsUserConsent:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4 progressHandler:(CDUnknownBlockType)arg5 wiFiPSK:(id)arg6 country:(id)arg7;
+- (id)initWithAccessoryUUID:(id)arg1 accessoryName:(id)arg2 linkType:(int)arg3 homeName:(id)arg4 setupCode:(id)arg5 completionHandler:(CDUnknownBlockType)arg6 setupCodeProvider:(CDUnknownBlockType)arg7 wiFiPSK:(id)arg8 country:(id)arg9;
 
 @end
 

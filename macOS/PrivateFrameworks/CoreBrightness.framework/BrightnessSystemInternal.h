@@ -9,6 +9,7 @@
 #import <CoreBrightness/NSXPCListenerDelegate-Protocol.h>
 
 @class BLControl, NSMutableDictionary, NSString, NSXPCListener;
+@protocol OS_os_log;
 
 __attribute__((visibility("hidden")))
 @interface BrightnessSystemInternal : NSObject <NSXPCListenerDelegate>
@@ -20,6 +21,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_clients;
     NSMutableDictionary *_clientsProps;
     NSMutableDictionary *_ownedProps;
+    NSObject<OS_os_log> *_logHandle;
 }
 
 - (void)undoOwnedPropertiesForClient:(id)arg1;

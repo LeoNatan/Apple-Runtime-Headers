@@ -15,9 +15,11 @@
     MKMapView *_internalMapView;
     struct CGRect _lastLaidBounds;
     _Bool _showsMerchantName;
+    _Bool _usesDarkAppearance;
     PKPaymentTransaction *_transaction;
 }
 
+@property(nonatomic) _Bool usesDarkAppearance; // @synthesize usesDarkAppearance=_usesDarkAppearance;
 @property(retain, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 @property(nonatomic) _Bool showsMerchantName; // @synthesize showsMerchantName=_showsMerchantName;
 - (void).cxx_destruct;

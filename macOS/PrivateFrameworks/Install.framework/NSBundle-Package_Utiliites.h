@@ -8,5 +8,6 @@
 
 @interface NSBundle (Package_Utiliites)
 - (id)pathForResource:(id)arg1 ofTypes:(id *)arg2 count:(unsigned int)arg3;
+- (void)loadStringTable:(id)arg1 forLanguage:(id)arg2 fromTable:(id)arg3;
 @end
 

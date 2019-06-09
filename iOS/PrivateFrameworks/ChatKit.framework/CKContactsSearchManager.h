@@ -6,18 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <ChatKit/MFContactsSearchConsumer-Protocol.h>
+#import <ChatKit/CNAutocompleteSearchConsumer-Protocol.h>
+#import <ChatKit/CNAutocompleteUIFetchDelegate-Protocol.h>
 
-@class MFContactsSearchManager, NSArray, NSCharacterSet, NSMutableArray, NSNumber, NSString;
+@class CNAutocompleteSearchManager, NSArray, NSCharacterSet, NSMutableArray, NSNumber, NSString;
 @protocol CKContactsSearchManagerDelegate;
 
-@interface CKContactsSearchManager : NSObject <MFContactsSearchConsumer>
+@interface CKContactsSearchManager : NSObject <CNAutocompleteSearchConsumer, CNAutocompleteUIFetchDelegate>
 {
     _Bool _suppressGroupSuggestions;
     _Bool _biasForOutgoingInteraction;
     id <CKContactsSearchManagerDelegate> _delegate;
     NSArray *_enteredRecipients;
-    MFContactsSearchManager *_searchManager;
+    CNAutocompleteSearchManager *_searchManager;
     NSCharacterSet *_emojiCharacterSet;
     NSMutableArray *_searchResults;
     NSNumber *_currentSearchTaskID;
@@ -28,12 +29,19 @@
 @property(retain, nonatomic) NSNumber *currentSearchTaskID; // @synthesize currentSearchTaskID=_currentSearchTaskID;
 @property(retain, nonatomic) NSMutableArray *searchResults; // @synthesize searchResults=_searchResults;
 @property(retain, nonatomic) NSCharacterSet *emojiCharacterSet; // @synthesize emojiCharacterSet=_emojiCharacterSet;
-@property(retain, nonatomic) MFContactsSearchManager *searchManager; // @synthesize searchManager=_searchManager;
+@property(retain, nonatomic) CNAutocompleteSearchManager *searchManager; // @synthesize searchManager=_searchManager;
 @property(nonatomic) _Bool biasForOutgoingInteraction; // @synthesize biasForOutgoingInteraction=_biasForOutgoingInteraction;
 @property(nonatomic) _Bool suppressGroupSuggestions; // @synthesize suppressGroupSuggestions=_suppressGroupSuggestions;
 @property(retain, nonatomic) NSArray *enteredRecipients; // @synthesize enteredRecipients=_enteredRecipients;
 @property(nonatomic) __weak id <CKContactsSearchManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)getSupplementalGroupsForSearchQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)createAutocompelteGroupMembersFromParticipants:(id)arg1;
+- (id)participantMatchResultsForSearchTerm:(id)arg1;
+- (id)participantMatchGroupResults;
+- (_Bool)shouldIncludeGroupInResults:(id)arg1;
+- (id)matchingConversationWithGuid:(id)arg1;
+- (id)nameGroupSearchResults;
 - (void)endedNetworkActivity;
 - (void)beganNetworkActivity;
 - (void)finishedTaskWithID:(id)arg1;

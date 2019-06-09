@@ -13,7 +13,7 @@
 + (_Bool)_eventDidCrossScheduledThreshold:(id)arg1 withModel:(id)arg2 evaluationDelegate:(id)arg3;
 + (id)_nextFireDateForEvent:(id)arg1 model:(id)arg2;
 + (_Bool)anyEventsShouldFireForGoalProgress:(id)arg1 withModel:(id)arg2 evaluationDelegate:(id)arg3;
-+ (id)evaluateEvents:(id)arg1 forScheduledDayProgress:(_Bool)arg2 goalProgress:(_Bool)arg3 withModel:(id)arg4 evaluationDelegate:(id)arg5;
++ (id)evaluateEvents:(id)arg1 withModel:(id)arg2 evaluationDelegate:(id)arg3;
 + (id)nextScheduledDatesByEventIdentifiersForEvents:(id)arg1 model:(id)arg2 evaluationDelegate:(id)arg3;
 
 @end

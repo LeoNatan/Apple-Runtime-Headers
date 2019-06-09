@@ -8,35 +8,45 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEORating : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
+    NSString *_uRL;
     double _maxScore;
+    NSString *_provider;
+    NSMutableArray *_reviews;
     double _score;
     int _numberOfRatings;
     int _numberOfReviews;
-    NSString *_provider;
-    NSMutableArray *_reviews;
-    NSString *_uRL;
     struct {
-        unsigned int maxScore:1;
-        unsigned int score:1;
-        unsigned int numberOfRatings:1;
-        unsigned int numberOfReviews:1;
-    } _has;
+        unsigned int has_maxScore:1;
+        unsigned int has_score:1;
+        unsigned int has_numberOfRatings:1;
+        unsigned int has_numberOfReviews:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_uRL:1;
+        unsigned int read_provider:1;
+        unsigned int read_reviews:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_uRL:1;
+        unsigned int wrote_maxScore:1;
+        unsigned int wrote_provider:1;
+        unsigned int wrote_reviews:1;
+        unsigned int wrote_score:1;
+        unsigned int wrote_numberOfRatings:1;
+        unsigned int wrote_numberOfReviews:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)reviewType;
-@property(nonatomic) int numberOfReviews; // @synthesize numberOfReviews=_numberOfReviews;
-@property(retain, nonatomic) NSMutableArray *reviews; // @synthesize reviews=_reviews;
-@property(retain, nonatomic) NSString *uRL; // @synthesize uRL=_uRL;
-@property(retain, nonatomic) NSString *provider; // @synthesize provider=_provider;
-@property(nonatomic) int numberOfRatings; // @synthesize numberOfRatings=_numberOfRatings;
-@property(nonatomic) double score; // @synthesize score=_score;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -45,19 +55,30 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasNumberOfReviews;
+@property(nonatomic) int numberOfReviews;
 - (id)reviewAtIndex:(unsigned long long)arg1;
 - (unsigned long long)reviewsCount;
+- (void)_addNoFlagsReview:(id)arg1;
 - (void)addReview:(id)arg1;
 - (void)clearReviews;
+@property(retain, nonatomic) NSMutableArray *reviews;
+- (void)_readReviews;
+@property(retain, nonatomic) NSString *uRL;
 @property(readonly, nonatomic) _Bool hasURL;
+- (void)_readURL;
+@property(retain, nonatomic) NSString *provider;
 @property(readonly, nonatomic) _Bool hasProvider;
+- (void)_readProvider;
 @property(nonatomic) _Bool hasNumberOfRatings;
+@property(nonatomic) int numberOfRatings;
 @property(nonatomic) _Bool hasMaxScore;
-@property(nonatomic) double maxScore; // @synthesize maxScore=_maxScore;
+@property(nonatomic) double maxScore;
 @property(nonatomic) _Bool hasScore;
+@property(nonatomic) double score;
 - (id)initWithSampleSizeForUserRatingScore:(unsigned int)arg1 normalizedUserRatingScore:(float)arg2;
 
 @end

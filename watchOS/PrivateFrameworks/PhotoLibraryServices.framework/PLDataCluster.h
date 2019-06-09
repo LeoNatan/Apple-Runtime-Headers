@@ -27,6 +27,7 @@
 - (id)init;
 - (id)meanUniversalDate;
 - (id)meanRegion:(double)arg1;
+- (id)approximateRegionWithMaximumRadius:(double)arg1;
 - (id)universalDates;
 - (id)locations;
 

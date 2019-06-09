@@ -6,27 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue;
-
 @interface RTKeychainManager : NSObject
 {
-    NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
-- (BOOL)statusToError:(int)arg1 error:(id *)arg2;
-- (id)saltString:(id)arg1 withSaltData:(id)arg2 error:(id *)arg3;
-- (BOOL)_deleteValueWithKey:(id)arg1 error:(id *)arg2;
-- (BOOL)_setObject:(id)arg1 forKey:(id)arg2 existence:(BOOL)arg3 error:(id *)arg4;
-- (BOOL)setObject:(id)arg1 forKey:(id)arg2;
-- (id)_objectForKey:(id)arg1 error:(id *)arg2;
-- (id)objectForKey:(id)arg1 defaultHandler:(CDUnknownBlockType)arg2;
+- (BOOL)updateKeyWithIdentifier:(id)arg1 keyData:(id)arg2 keySize:(long long)arg3 error:(id *)arg4;
 - (id)encryptionKeyWithSize:(long long)arg1 identifier:(id)arg2 error:(id *)arg3;
 - (BOOL)removeEncryptionKeyWithIdentifier:(id)arg1 error:(id *)arg2;
 - (id)createSymmetricKeyWithSize:(long long)arg1 identifier:(id)arg2 storeInKeychain:(BOOL)arg3 error:(id *)arg4;
-- (id)defaultSymmetricKeyAttributes;
-- (id)init;
+- (BOOL)_updateKey:(id)arg1 forIdentifier:(id)arg2 error:(id *)arg3;
+- (BOOL)_removeItemWithIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)_setKey:(id)arg1 forIdentifier:(id)arg2 error:(id *)arg3;
+- (id)_keyForIdentifier:(id)arg1 error:(id *)arg2;
+- (id)_randomKeyWithSpecifier:(id)arg1 error:(id *)arg2;
+- (id)_keySpecifierWithBitSize:(long long)arg1;
+- (int)_deleteSecItemMatchingQuery:(id)arg1;
+- (int)_addSecItemWithAttributes:(id)arg1 result:(id *)arg2;
+- (int)_updateSecItemMatchingQuery:(id)arg1 attributes:(id)arg2;
+- (int)_copySecItemMatchingQuery:(id)arg1 result:(id *)arg2;
 
 @end
 

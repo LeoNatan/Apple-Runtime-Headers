@@ -11,18 +11,21 @@
 @interface NMRPlaceholderNowPlayingState : NMRNowPlayingState
 {
     _Bool explicitTrack;
+    _Bool alwaysLive;
     _Bool playbackRateCommandSupported;
+    _Bool nextTrackCommandEnabled;
+    _Bool previousTrackCommandEnabled;
     _Bool skipForwardCommandEnabled;
     _Bool skipBackwardCommandEnabled;
     NSNumber *itemPersistentID;
     NSString *title;
     NSString *artist;
     NSString *album;
+    NSString *collectionTitle;
     float playbackRate;
     float preferredPlaybackRate;
     unsigned int playbackState;
-    NSNumber *nextTrackCommandEnabled;
-    NSNumber *previousTrackCommandEnabled;
+    NSString *radioStationName;
     double fastForwardTimeInterval;
     double rewindTimeInterval;
 }
@@ -31,13 +34,16 @@
 @property(nonatomic) double fastForwardTimeInterval; // @synthesize fastForwardTimeInterval;
 @property(nonatomic, getter=isSkipBackwardCommandEnabled) _Bool skipBackwardCommandEnabled; // @synthesize skipBackwardCommandEnabled;
 @property(nonatomic, getter=isSkipForwardCommandEnabled) _Bool skipForwardCommandEnabled; // @synthesize skipForwardCommandEnabled;
-@property(retain, nonatomic) NSNumber *previousTrackCommandEnabled; // @synthesize previousTrackCommandEnabled;
-@property(retain, nonatomic) NSNumber *nextTrackCommandEnabled; // @synthesize nextTrackCommandEnabled;
+@property(nonatomic, getter=isPreviousTrackCommandEnabled) _Bool previousTrackCommandEnabled; // @synthesize previousTrackCommandEnabled;
+@property(nonatomic, getter=isNextTrackCommandEnabled) _Bool nextTrackCommandEnabled; // @synthesize nextTrackCommandEnabled;
 @property(nonatomic, getter=isPlaybackRateCommandSupported) _Bool playbackRateCommandSupported; // @synthesize playbackRateCommandSupported;
+@property(nonatomic, getter=isAlwaysLive) _Bool alwaysLive; // @synthesize alwaysLive;
+@property(retain, nonatomic) NSString *radioStationName; // @synthesize radioStationName;
 @property(nonatomic, getter=isExplicitTrack) _Bool explicitTrack; // @synthesize explicitTrack;
 @property(nonatomic) unsigned int playbackState; // @synthesize playbackState;
 @property(nonatomic) float preferredPlaybackRate; // @synthesize preferredPlaybackRate;
 @property(nonatomic) float playbackRate; // @synthesize playbackRate;
+@property(copy, nonatomic) NSString *collectionTitle; // @synthesize collectionTitle;
 @property(copy, nonatomic) NSString *album; // @synthesize album;
 @property(copy, nonatomic) NSString *artist; // @synthesize artist;
 @property(copy, nonatomic) NSString *title; // @synthesize title;

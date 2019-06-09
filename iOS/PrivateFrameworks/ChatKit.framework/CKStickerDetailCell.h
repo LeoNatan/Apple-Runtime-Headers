@@ -8,6 +8,7 @@
 
 @class CKAnimatedImageView, NSDate, NSString, SKUIItemOfferButton, UIDateLabel, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface CKStickerDetailCell : UITableViewCell
 {
     id _stickerPreview;

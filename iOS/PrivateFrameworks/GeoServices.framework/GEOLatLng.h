@@ -17,13 +17,15 @@
     double _lng;
     _Bool _gtLog;
     struct {
-        unsigned int gtLog:1;
-    } _has;
+        unsigned int has_gtLog:1;
+    } _flags;
 }
 
-@property(nonatomic) double lng; // @synthesize lng=_lng;
-@property(nonatomic) double lat; // @synthesize lat=_lat;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool hasGtLog;
+@property(nonatomic) _Bool gtLog;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,10 +34,11 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(nonatomic) _Bool hasGtLog;
-@property(nonatomic) _Bool gtLog;
+@property(nonatomic) double lng;
+@property(nonatomic) double lat;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate;
 - (id)initWithCoordinate:(CDStruct_c3b9c2ee)arg1;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;

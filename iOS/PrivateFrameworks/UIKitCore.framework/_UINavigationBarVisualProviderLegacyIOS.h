@@ -9,13 +9,14 @@
 #import <UIKitCore/_UIBasicAnimationFactory-Protocol.h>
 #import <UIKitCore/_UINavigationBarGestureHandlerDelegate-Protocol.h>
 
-@class NSArray, NSLayoutConstraint, NSMutableArray, NSString, UIFocusContainerGuide, UIImageView, UILayoutGuide, UIView, _UIBarBackground, _UINavBarPrompt, _UINavigationBarGestureHandler, _UINavigationBarLegacyContentView;
+@class NSArray, NSLayoutConstraint, NSMutableArray, NSString, UIFocusContainerGuide, UIImageView, UILayoutGuide, UIView, _UIBarBackground, _UIBarBackgroundLayoutLegacy, _UINavBarPrompt, _UINavigationBarGestureHandler, _UINavigationBarLegacyContentView;
 @protocol UIViewControllerTransitionCoordinator;
 
 __attribute__((visibility("hidden")))
 @interface _UINavigationBarVisualProviderLegacyIOS : _UINavigationBarVisualProvider <_UIBasicAnimationFactory, _UINavigationBarGestureHandlerDelegate>
 {
     _UIBarBackground *_backgroundView;
+    _UIBarBackgroundLayoutLegacy *_backgroundViewLayout;
     UIView *_customBackgroundView;
     UIView *_currentCanvasView;
     UIView *_titleView;
@@ -63,8 +64,6 @@ __attribute__((visibility("hidden")))
 - (double)_shim_backgroundHeight;
 - (void)_shim_setDisableBlurTinting:(_Bool)arg1;
 - (_Bool)_shim_disableBlurTinting;
-- (void)_shim_setBackdropGroupName:(id)arg1;
-- (id)_shim_backdropGroupName;
 - (void)_shim_setUseContentView:(_Bool)arg1;
 - (void)_shim_setShadowAlpha:(double)arg1;
 - (double)_shim_shadowAlpha;
@@ -75,6 +74,7 @@ __attribute__((visibility("hidden")))
 - (id)_shim_contentView;
 - (void)_setUpContentFocusContainerGuide;
 - (void)provideViewsForContents:(id)arg1 topItem:(id)arg2 backItem:(id)arg3;
+- (void)updateBackgroundGroupName;
 - (void)_updateBackground;
 - (void)_completeTopItemTransitionWithIncomingViews:(id)arg1 outgoingViews:(id)arg2 previousLeftViews:(id)arg3 previousRightViews:(id)arg4 enableUserInteraction:(id)arg5 transitionAssistant:(id)arg6;
 - (void)_setViewsAnimated:(_Bool)arg1 forTopNavigationItem:(id)arg2 backNavigationItem:(id)arg3 previousTopItem:(id)arg4;

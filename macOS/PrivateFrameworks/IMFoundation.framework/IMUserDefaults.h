@@ -16,11 +16,6 @@
 
 + (BOOL)isLiveDeliveryWarmUpEnabled;
 + (void)setEnableLiveDeliveryWarmUp:(BOOL)arg1;
-+ (BOOL)isDebugPiscoLoggingEnabled;
-+ (BOOL)isDeviceScoringEnabled;
-+ (BOOL)isBAACertDisabled;
-+ (BOOL)isAbsintheV4Enabled;
-+ (BOOL)isPiscoDisabled;
 + (id)phoneNumberValidationPreflightTestData;
 + (void)setPhoneNumberValidationPreflightTestData:(id)arg1;
 + (long long)phoneNumberValidationMode;

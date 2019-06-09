@@ -8,5 +8,6 @@
 
 @interface UIView (ViewExtensions)
 - (id)PDFKitEnclosingScrollView;
+- (id)_PDFViewParentViewController;
 @end
 

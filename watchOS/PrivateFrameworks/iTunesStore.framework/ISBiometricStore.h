@@ -15,6 +15,7 @@
 }
 
 + (_Bool)shouldUseX509;
++ (_Bool)shouldUseUpsellEnrollment;
 + (_Bool)shouldUseExtendedEnrollment;
 + (_Bool)shouldUseAutoEnrollment;
 + (id)keychainLabelForCertWithAccountID:(id)arg1 purpose:(int)arg2;

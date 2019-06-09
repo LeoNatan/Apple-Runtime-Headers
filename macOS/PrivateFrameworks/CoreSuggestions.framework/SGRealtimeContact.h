@@ -10,36 +10,38 @@
 #import <CoreSuggestions/NSSecureCoding-Protocol.h>
 #import <CoreSuggestions/SGRealtimeSuggestion-Protocol.h>
 
-@class NSString, SGContact;
+@class NSString, SGContact, SGExtractionInfo;
 
 @interface SGRealtimeContact : NSObject <NSSecureCoding, NSCopying, SGRealtimeSuggestion>
 {
     BOOL _isHarvested;
     int _state;
+    int _updatedFields;
     SGContact *_contact;
     NSString *_cnContactIdentifier;
-    unsigned long long _extractionType;
+    SGExtractionInfo *_extractionInfo;
 }
 
-+ (id)realtimeContactForFields:(id)arg1 addedToCuratedContact:(id)arg2;
++ (id)realtimeContactForFields:(id)arg1 updatedFields:(int)arg2 addedToCuratedContact:(id)arg3;
 + (id)realtimeContactForNewContact:(id)arg1;
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) BOOL isHarvested; // @synthesize isHarvested=_isHarvested;
-@property(readonly, nonatomic) unsigned long long extractionType; // @synthesize extractionType=_extractionType;
+@property(readonly, nonatomic) SGExtractionInfo *extractionInfo; // @synthesize extractionInfo=_extractionInfo;
 @property(readonly, nonatomic) NSString *cnContactIdentifier; // @synthesize cnContactIdentifier=_cnContactIdentifier;
 @property(readonly, nonatomic) SGContact *contact; // @synthesize contact=_contact;
+@property(readonly, nonatomic) int updatedFields; // @synthesize updatedFields=_updatedFields;
 @property(readonly, nonatomic) int state; // @synthesize state=_state;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setCnContactIdentifier:(id)arg1;
-- (void)setExtractionType;
+- (void)setExtractionInfo;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToRealtimeContact:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)markedAsHarvested;
-- (id)initWithState:(int)arg1 contact:(id)arg2 identifier:(id)arg3;
+- (id)initWithState:(int)arg1 updatedFields:(int)arg2 contact:(id)arg3 identifier:(id)arg4;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 // Remaining properties

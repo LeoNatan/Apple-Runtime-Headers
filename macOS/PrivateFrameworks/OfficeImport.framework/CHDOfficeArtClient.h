@@ -10,6 +10,7 @@
 
 @class CHDAnchor, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CHDOfficeArtClient : NSObject <OADClient>
 {
     CHDAnchor *mAnchor;

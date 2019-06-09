@@ -25,6 +25,7 @@
 + (id)conditionImageWithConditionIndex:(long long)arg1;
 + (void)cacheImageIfNecessary:(id)arg1;
 + (id)sharedImageLoader;
++ (void)preloadImages;
 @property(retain, nonatomic) NSCache *conditionImagesCache; // @synthesize conditionImagesCache=_conditionImagesCache;
 @property(retain, nonatomic) CPBitmapStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;

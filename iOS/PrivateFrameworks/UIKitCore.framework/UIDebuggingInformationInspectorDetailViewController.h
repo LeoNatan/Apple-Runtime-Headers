@@ -14,22 +14,18 @@
 __attribute__((visibility("hidden")))
 @interface UIDebuggingInformationInspectorDetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 {
-    UITableView *_tableView;
-    UIView *_inspectedView;
     NSArray *_data;
+    UIView *_inspectedView;
+    UITableView *_tableView;
 }
 
-@property(retain, nonatomic) NSArray *data; // @synthesize data=_data;
-@property(retain, nonatomic) UIView *inspectedView; // @synthesize inspectedView=_inspectedView;
-@property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 - (void).cxx_destruct;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (void)_visibleSwitchValueChanged:(id)arg1;
-- (void)_sliderValueChanged:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)createDataItems;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)inspectView:(id)arg1;
+- (void)_updateData;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (void)_forceViewLayout;
 - (void)_flush;

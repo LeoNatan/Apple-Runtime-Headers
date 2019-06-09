@@ -41,6 +41,8 @@
 - (void)extensionConnection:(id)arg1 interfaceViewControllerDismissViewController:(id)arg2;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 presentNotificationWithType:(id)arg3 bulletinUniqueID:(id)arg4;
 - (id)extensionConnection:(id)arg1 redirectClientIDForSelector:(SEL)arg2;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setupDynamicInterfaceObject:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setTimerSupportVC:(id)arg3;
 - (void)extensionConnection:(id)arg1 openSystemURL:(id)arg2;
 - (void)extensionConnection:(id)arg1 handleActivityReply:(id)arg2;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setValue:(id)arg3 forKey:(id)arg4 property:(id)arg5;

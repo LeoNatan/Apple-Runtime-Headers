@@ -8,6 +8,7 @@
 
 @class WDDocument, WDText;
 
+__attribute__((visibility("hidden")))
 @interface WDSection : NSObject
 {
     unsigned int mOriginal:1;

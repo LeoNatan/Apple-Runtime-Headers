@@ -24,7 +24,7 @@
 @property(readonly, nonatomic) _Bool forInstallTonight;
 @property(readonly, retain, nonatomic) SUAutoInstallOperation *autoInstallOperation;
 @property(readonly, retain, nonatomic) SUDownload *download;
-- (id)initWithDownload:(id)arg1 autoInstallOperation:(id)arg2 forInstallTonight:(_Bool)arg3 canDeferInstallation:(_Bool)arg4 completionBlock:(CDUnknownBlockType)arg5;
+- (id)initWithDownload:(id)arg1 autoInstallOperation:(id)arg2 forInstallTonight:(_Bool)arg3 canDeferInstallation:(_Bool)arg4 completionQueue:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;
 
 @end
 

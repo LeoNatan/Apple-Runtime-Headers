@@ -25,3 +25,11 @@ struct CGSize {
     double height;
 };
 
+struct NSDictionary {
+    Class _field1;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+

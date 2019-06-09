@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (id)migrateStoreAtURL:(id)arg1 withManager:(id)arg2 metadata:(id)arg3 options:(id)arg4 error:(id *)arg5;
 - (id)createMigrationManagerForSourceModel:(id)arg1 destinationModel:(id)arg2 error:(id *)arg3;
 - (id)sourceModelForStoreAtURL:(id)arg1 metadata:(id)arg2 error:(id *)arg3;
+- (id)_sourceModelForVersionHashes:(id)arg1 withMetadata:(id)arg2 inBundles:(id)arg3 outPaths:(id)arg4;
 - (void)dealloc;
 - (id)_gatherDataAndPerformMigration:(id *)arg1;
 - (id)resourceBundles;

@@ -12,18 +12,18 @@
 
 @interface GEOWiFiAP : PBCodable <NSCopying>
 {
-    unsigned int _channel;
-    int _rssi;
     NSString *_uniqueID;
+    unsigned int _channel;
+    int _origin;
+    int _rssi;
     struct {
-        unsigned int channel:1;
-        unsigned int rssi:1;
-    } _has;
+        unsigned int has_channel:1;
+        unsigned int has_origin:1;
+        unsigned int has_rssi:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int channel; // @synthesize channel=_channel;
-@property(nonatomic) int rssi; // @synthesize rssi=_rssi;
-@property(retain, nonatomic) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,10 +32,18 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsOrigin:(id)arg1;
+- (id)originAsString:(int)arg1;
+@property(nonatomic) BOOL hasOrigin;
+@property(nonatomic) int origin;
 @property(nonatomic) BOOL hasChannel;
+@property(nonatomic) unsigned int channel;
 @property(nonatomic) BOOL hasRssi;
+@property(nonatomic) int rssi;
+@property(retain, nonatomic) NSString *uniqueID;
 @property(readonly, nonatomic) BOOL hasUniqueID;
 
 @end

@@ -15,6 +15,7 @@
 
 + (void)initialize;
 - (int)configureAudioSplitter:(int)arg1 mixer:(int)arg2 converter:(int)arg3 forGraph:(struct OpaqueCMIOGraph *)arg4 connection:(id)arg5 withSettings:(id)arg6 audioFileType:(unsigned int)arg7 forceConverterToPassThru:(BOOL)arg8 setClientSequenceID:(BOOL)arg9;
+- (void)_updateMetadataTransformForConnection:(id)arg1;
 - (void)_updateVideoDecompressorNodeForConnection:(id)arg1;
 - (void)_updateCompressorNodesForConnection:(id)arg1;
 - (void)inputPortFormatDescriptionDidChange:(id)arg1;
@@ -33,7 +34,7 @@
 - (long long)h264BitRateForConnection:(id)arg1;
 - (id)_preferredInputPixelBufferAttributesForConnection:(id)arg1;
 - (id)_vtCompressionPropertiesForConnection:(id)arg1;
-- (struct CGSize)_videoOutputSettingsSizeForConnection:(id)arg1;
+- (CDStruct_79c71658)_videoOutputSettingsSizeForConnection:(id)arg1;
 - (id)avCaptureOutputSettingsForConnection:(id)arg1 fileType:(id)arg2;
 - (void)graphWillStopForSession:(id)arg1 error:(id)arg2;
 - (void)graphWillStartForSession:(id)arg1;
@@ -49,6 +50,11 @@
 - (id)insertConnection:(id)arg1 atIndex:(unsigned long long)arg2 error:(id *)arg3;
 - (id)addConnection:(id)arg1 error:(id *)arg2;
 - (id)firstEnabledConnectionForMediaType:(id)arg1;
+- (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
+- (BOOL)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
+- (struct CGRect)rectForMetadataOutputRectOfInterest:(struct CGRect)arg1;
+- (struct CGRect)metadataOutputRectOfInterestForRect:(struct CGRect)arg1;
+- (id)transformedMetadataObjectForMetadataObject:(id)arg1 connection:(id)arg2;
 - (id)notReadyError;
 - (BOOL)prefersMixedAudio;
 - (id)connectionWithMediaType:(id)arg1;

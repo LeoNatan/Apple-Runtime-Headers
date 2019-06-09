@@ -18,11 +18,10 @@
     NSArray *_reviewsLabelConstraints;
 }
 
-+ (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(BOOL)arg4 ratingStyle:(long long)arg5 theme:(id)arg6;
++ (id)starRatingAndProviderForCarPlayAsAttributedStringForMapItem:(id)arg1 font:(id)arg2 textColor:(id)arg3 showNumberOfReviews:(BOOL)arg4 isFocused:(BOOL)arg5;
++ (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(BOOL)arg4 showNumberOfReviews:(BOOL)arg5 ratingStyle:(long long)arg6 theme:(id)arg7;
 + (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(BOOL)arg4 theme:(id)arg5;
-+ (id)starRatingAndProviderAsAttributedStringForMapItem:(id)arg1 textColor:(id)arg2 font:(id)arg3 showReviewsOrTips:(BOOL)arg4;
 + (id)ratingAndReviewsAsAttributedString:(double)arg1 style:(long long)arg2 font:(id)arg3 numberOfReviews:(unsigned long long)arg4 textColor:(id)arg5 theme:(id)arg6;
-+ (id)ratingAndReviewsAsAttributedString:(double)arg1 style:(long long)arg2 font:(id)arg3 numberOfReviews:(unsigned long long)arg4 textColor:(id)arg5;
 + (id)reviewsString:(unsigned long long)arg1 providerName:(id)arg2;
 @property(retain, nonatomic) NSString *sourceName; // @synthesize sourceName=_sourceName;
 @property(nonatomic) unsigned long long numberOfReviews; // @synthesize numberOfReviews=_numberOfReviews;

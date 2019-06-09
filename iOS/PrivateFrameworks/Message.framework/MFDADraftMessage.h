@@ -15,6 +15,7 @@
     NSString *_bodyData;
 }
 
+- (void).cxx_destruct;
 - (int)bodyType;
 - (id)serverID;
 - (void)setClientID:(unsigned long long)arg1;
@@ -28,7 +29,6 @@
 - (id)cc;
 - (id)to;
 - (id)messageIDHeader;
-- (void)dealloc;
 - (id)initWithMailMessage:(id)arg1 clientID:(unsigned long long)arg2;
 
 @end

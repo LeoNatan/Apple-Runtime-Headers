@@ -24,6 +24,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)contextWithServiceDescriptor:(id)arg1;
 + (id)contextWithUUID:(id)arg1;
 + (id)contextWithSlot:(long long)arg1;
 @property(nonatomic) BOOL isSimPresent; // @synthesize isSimPresent=_isSimPresent;

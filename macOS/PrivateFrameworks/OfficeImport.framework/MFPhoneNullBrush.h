@@ -6,6 +6,7 @@
 
 #import <OfficeImport/MFPhoneBrush.h>
 
+__attribute__((visibility("hidden")))
 @interface MFPhoneNullBrush : MFPhoneBrush
 {
 }

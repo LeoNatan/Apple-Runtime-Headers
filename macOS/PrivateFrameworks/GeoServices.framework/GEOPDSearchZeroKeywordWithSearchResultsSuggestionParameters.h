@@ -19,18 +19,16 @@ __attribute__((visibility("hidden")))
     unsigned int _maxCategories;
     unsigned int _maxResultsPerCategory;
     struct {
-        unsigned int blurredHourOfDay:1;
-        unsigned int dayOfWeek:1;
-        unsigned int maxCategories:1;
-        unsigned int maxResultsPerCategory:1;
-    } _has;
+        unsigned int has_blurredHourOfDay:1;
+        unsigned int has_dayOfWeek:1;
+        unsigned int has_maxCategories:1;
+        unsigned int has_maxResultsPerCategory:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int dayOfWeek; // @synthesize dayOfWeek=_dayOfWeek;
-@property(nonatomic) unsigned int blurredHourOfDay; // @synthesize blurredHourOfDay=_blurredHourOfDay;
-@property(nonatomic) unsigned int maxResultsPerCategory; // @synthesize maxResultsPerCategory=_maxResultsPerCategory;
-@property(nonatomic) unsigned int maxCategories; // @synthesize maxCategories=_maxCategories;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -39,12 +37,17 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasDayOfWeek;
+@property(nonatomic) unsigned int dayOfWeek;
 @property(nonatomic) BOOL hasBlurredHourOfDay;
+@property(nonatomic) unsigned int blurredHourOfDay;
 @property(nonatomic) BOOL hasMaxResultsPerCategory;
+@property(nonatomic) unsigned int maxResultsPerCategory;
 @property(nonatomic) BOOL hasMaxCategories;
+@property(nonatomic) unsigned int maxCategories;
 
 @end
 

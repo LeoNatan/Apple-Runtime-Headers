@@ -4,12 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Photos/NSObject-Protocol.h>
+#import <Photos/PHMediaRequestDelegate-Protocol.h>
 
-@class NSDictionary, NSError, PHAdjustmentDataRequest;
+@class NSError, PHAdjustmentDataRequest;
 
-@protocol PHAdjustmentDataRequestDelegate <NSObject>
+@protocol PHAdjustmentDataRequestDelegate <PHMediaRequestDelegate>
 - (void)adjustmentDataRequest:(PHAdjustmentDataRequest *)arg1 didReportProgress:(double)arg2 completed:(_Bool)arg3 error:(NSError *)arg4;
-- (void)adjustmentDataRequest:(PHAdjustmentDataRequest *)arg1 didFinishWithResultInfo:(NSDictionary *)arg2 error:(NSError *)arg3;
 @end
 

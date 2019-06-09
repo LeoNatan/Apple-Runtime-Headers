@@ -11,7 +11,7 @@
 #import <ContactsUI/CNUIUserActionListConsumer-Protocol.h>
 
 @class NSArray, NSDictionary, NSString, UIViewController;
-@protocol CNContactActionsControllerDelegate, CNUIUserActionListDataSource;
+@protocol CNContactActionsControllerDelegate, CNUINavigationListStyle, CNUIUserActionListDataSource;
 
 @interface CNContactActionsController : NSObject <CNAvatarCardActionListController, CNUINavigationListViewControllerDelegate, CNUIUserActionListConsumer>
 {
@@ -21,12 +21,14 @@
     NSArray *_modelCancelables;
     UIViewController *_viewController;
     id <CNContactActionsControllerDelegate> _delegate;
+    id <CNUINavigationListStyle> _navigationListStyle;
     long long _actionsOrder;
 }
 
-+ (id)descriptorForRequiredKeysForActionTypes:(id)arg1;
++ (id)descriptorForRequiredKeys;
 + (id)supportedActionTypes;
 @property(nonatomic) long long actionsOrder; // @synthesize actionsOrder=_actionsOrder;
+@property(nonatomic) __weak id <CNUINavigationListStyle> navigationListStyle; // @synthesize navigationListStyle=_navigationListStyle;
 @property(nonatomic) __weak id <CNContactActionsControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) NSArray *modelCancelables; // @synthesize modelCancelables=_modelCancelables;
@@ -42,6 +44,7 @@
 - (void)cancelModels;
 - (void)retrieveModels;
 - (id)displayedController;
+- (void)styleUpdated;
 - (void)dealloc;
 - (id)initWithDataSource:(id)arg1 actionTypes:(id)arg2;
 - (id)initWithContact:(id)arg1 actionTypes:(id)arg2;

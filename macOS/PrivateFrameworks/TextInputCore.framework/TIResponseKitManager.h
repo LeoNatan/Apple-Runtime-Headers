@@ -8,23 +8,14 @@
 
 #import <TextInputCore/TIResponseKitManaging-Protocol.h>
 
-@class NSMutableArray, NSString;
-@protocol OS_dispatch_queue;
+@class NSString;
 
 @interface TIResponseKitManager : NSObject <TIResponseKitManaging>
 {
-    NSObject<OS_dispatch_queue> *_queue;
-    NSMutableArray *_conversationTurns;
 }
 
-+ (id)rewriteMoneyAttributes:(id)arg1;
 + (id)singletonInstance;
 + (id)sharedTIResponseKitManager;
-- (void).cxx_destruct;
-- (id)cannedResponsesForString:(id)arg1 withLanguageID:(id)arg2 withClientID:(id)arg3 withRecipientID:(id)arg4 withAdditionalPredictions:(id)arg5 desiredCandidateCount:(unsigned long long)arg6 shouldDisableAutoCaps:(BOOL)arg7 isBlacklisted:(BOOL)arg8;
-- (id)indexesOfDuplicatesInCandidates:(id)arg1;
-- (id)responseKitResponseCandidatesForString:(id)arg1 withLanguageID:(id)arg2 withClientID:(id)arg3 withRecipientID:(id)arg4 shouldDisableAutoCaps:(BOOL)arg5;
-- (void)addNewConversationTurnToHistory:(id)arg1;
 - (void)persistResponseKitDynamicDataToDisk;
 - (void)resetResponseKit;
 - (void)resetResponseKitConversationHistory;

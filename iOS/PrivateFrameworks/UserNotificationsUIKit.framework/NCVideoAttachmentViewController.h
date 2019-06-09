@@ -27,6 +27,7 @@
 - (void)_mediaPlayPauseButtonTapped:(id)arg1;
 - (void)_mediaPlayPauseButtonUpdateSize;
 - (struct CGSize)_sizeForVideoAsset:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)dealloc;

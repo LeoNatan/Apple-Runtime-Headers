@@ -37,6 +37,7 @@
 - (void)_beginWithRequestID:(unsigned long long)arg1;
 - (void)_decrementTouchesBy:(unsigned long long)arg1;
 - (void)_incrementTouchesBy:(unsigned long long)arg1;
+- (struct CGPoint)initialLocationInView:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 
 @end

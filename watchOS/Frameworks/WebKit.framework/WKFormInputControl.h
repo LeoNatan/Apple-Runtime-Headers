@@ -4,23 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
-
-#import <WebKit/WKFormPeripheral-Protocol.h>
+#import <WebKit/WKFormPeripheralBase.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WKFormInputControl : NSObject <WKFormPeripheral>
+@interface WKFormInputControl : WKFormPeripheralBase
 {
-    struct RetainPtr<id<WKFormControl>> _control;
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (id)assistantView;
-- (void)endEditing;
-- (void)beginEditing;
 - (id)initWithView:(id)arg1;
 @property(readonly, nonatomic) NSString *dateTimePickerCalendarType;
 

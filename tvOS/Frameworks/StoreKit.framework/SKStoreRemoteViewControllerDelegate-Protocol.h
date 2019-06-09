@@ -14,5 +14,6 @@
 
 @optional
 - (void)storeRemoteViewControllerTerminatedWithError:(NSError *)arg1;
+- (void)storeRemoteViewControllerDidDismiss;
 @end
 

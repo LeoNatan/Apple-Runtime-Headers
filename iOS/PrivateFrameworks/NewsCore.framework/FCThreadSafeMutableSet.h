@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NFUnfairLock, NSMutableSet, NSSet;
+@class NFUnfairLock, NSArray, NSMutableSet, NSSet;
 
 @interface FCThreadSafeMutableSet : NSObject
 {
@@ -16,8 +16,14 @@
 
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSSet *readOnlySet;
+@property(readonly, copy) NSArray *allObjects;
+@property(readonly) _Bool isEmpty;
+@property(readonly) unsigned long long count;
+- (void)readWriteWithAccessor:(CDUnknownBlockType)arg1;
+- (void)readWithAccessor:(CDUnknownBlockType)arg1;
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (_Bool)containsObject:(id)arg1;
+- (void)removeObjectsInArray:(id)arg1;
 - (void)removeObjectsInSet:(id)arg1;
 - (void)removeObject:(id)arg1;
 - (void)addObjectsFromArray:(id)arg1;

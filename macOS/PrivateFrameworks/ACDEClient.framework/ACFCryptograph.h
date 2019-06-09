@@ -41,8 +41,8 @@ __attribute__((visibility("hidden")))
 - (id)decodeBase16:(id)arg1;
 - (id)encodeBase64:(id)arg1;
 - (id)decodeBase64:(id)arg1;
-- (id)signatureForData:(id)arg1 withKey:(struct OpaqueSecKeyRef *)arg2;
-- (id)encryptData:(id)arg1 withKey:(struct OpaqueSecKeyRef *)arg2;
+-     // Error parsing type: @32@0:8@16^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24, name: signatureForData:withKey:
+-     // Error parsing type: @32@0:8@16^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24, name: encryptData:withKey:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <PassKitCore/NSCopying-Protocol.h>
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@interface PKBankAccountInformation : NSObject <NSSecureCoding>
+@interface PKBankAccountInformation : NSObject <NSSecureCoding, NSCopying>
 {
     NSString *_accountNumber;
     NSString *_routingNumber;
@@ -27,11 +28,14 @@
 @property(copy, nonatomic) NSString *routingNumber; // @synthesize routingNumber=_routingNumber;
 @property(copy, nonatomic) NSString *accountNumber; // @synthesize accountNumber=_accountNumber;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;
 - (id)maskedAccountNumber;
 - (id)accountSuffix;
 - (BOOL)isValid;
+- (void)deleteAllLocalBankInformation;
 - (void)deleteAllBankInformation;
+- (void)_commonDeleteAllBankInformation;
 - (void)updateToLatestKeychainData;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

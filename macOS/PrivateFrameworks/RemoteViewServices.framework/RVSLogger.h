@@ -15,9 +15,9 @@
 
 + (id)loggerWithName:(id)arg1;
 + (id)defaultLogger;
+- (void).cxx_destruct;
 - (void)debug:(id)arg1;
 - (void)_logMessage:(id)arg1 values:(struct __va_list_tag [1])arg2;
-- (void)dealloc;
 - (id)_initWithName:(id)arg1;
 
 @end

@@ -8,6 +8,7 @@
 
 @class OADTable, OADTableProperties, OADTableStyle;
 
+__attribute__((visibility("hidden")))
 @interface OADTableStyleResolver : NSObject
 {
     OADTable *mTable;

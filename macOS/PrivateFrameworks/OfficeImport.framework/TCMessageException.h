@@ -8,6 +8,7 @@
 
 @class TCMessageEntry;
 
+__attribute__((visibility("hidden")))
 @interface TCMessageException : NSException
 {
     TCMessageEntry *m_entry;

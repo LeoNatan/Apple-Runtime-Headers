@@ -34,8 +34,12 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) id <MTLDevice> device;
 @property(readonly) unsigned long long hash;
+@property(readonly) unsigned long long hazardTrackingMode;
 @property(readonly) id <MTLHeap> heap;
+@property(readonly) unsigned long long heapOffset;
 @property(copy) NSString *label;
+@property(nonatomic) unsigned long long resourceIndex; // @dynamic resourceIndex;
+@property(readonly) unsigned long long resourceOptions;
 @property(readonly) Class superclass;
 
 @end

@@ -43,6 +43,7 @@
 - (void)_attachToToken:(id)arg1 withDoneBlock:(CDUnknownBlockType)arg2;
 - (BOOL)removeTokenIfPossible:(id)arg1;
 - (void)startNextInstallIfNeeded;
+- (void)_requestMeetsPolicyForInstallation:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)_currentClients;
 - (void)purgeableSpaceForOrphanedSandboxesOnVolume:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)startPurgeOfSandboxesOnVolume:(id)arg1 purgeAmountNeeded:(unsigned long long)arg2 systemSandboxes:(BOOL)arg3 reply:(CDUnknownBlockType)arg4;
@@ -54,6 +55,7 @@
 - (void)displayNamesForToken:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)installStatusForToken:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)addToken:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)_queueInstallationForToken:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)tokenForInstallRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
 @property(readonly, copy) NSString *description;
 - (id)_descriptionForToken:(id)arg1;
@@ -66,6 +68,7 @@
 - (void)_installDidEnd;
 - (void)installWillFinish:(id)arg1;
 - (void)installDidBegin:(id)arg1;
+- (void)operationControllerDidChangeInstallState:(int)arg1 withSandbox:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

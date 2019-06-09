@@ -15,8 +15,6 @@ __attribute__((visibility("hidden")))
 + (unsigned long long)indexOfUnifiedIdentifier:(id)arg1 onNonUnifiedMultiValue:(id)arg2 withIdentifierMap:(id)arg3;
 + (id)unifiedIdentifiersForValue:(id)arg1 inUnifiedMap:(id)arg2 forProperty:(id)arg3;
 + (_Bool)canUnifyLabel:(id)arg1 withLabel:(id)arg2 forProperty:(id)arg3;
-+ (_Bool)canUnifyLabeledValuePair:(id)arg1 withLabeledValuePair:(id)arg2 forProperty:(id)arg3;
-+ (CDUnknownBlockType)equivalentLabeledValueFilterForLabeledValue:(id)arg1 property:(id)arg2;
 + (id)unifiedIdentifiersForLabeledValue:(id)arg1 inUnifiedMap:(id)arg2 forProperty:(id)arg3;
 + (void)correlateIdentifiersOfUnifiedMap:(id)arg1 toIdentifiersOfMultiValueMap:(id)arg2 intoMap:(id)arg3 forProperty:(id)arg4;
 + (void)identifierMapForUnifiedMultiValue:(id)arg1 backingMultiValues:(id)arg2 intoMap:(id)arg3 forProperty:(id)arg4;

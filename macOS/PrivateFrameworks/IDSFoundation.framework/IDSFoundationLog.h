@@ -10,26 +10,36 @@
 {
 }
 
++ (id)interface;
++ (id)IDSUDPLink;
++ (id)CrossLayerLogging;
++ (id)KeyTransparency;
++ (id)IDSMessageStore;
 + (id)RealTimeEncryptionController;
-+ (id)QRAllocator_oversized;
 + (id)SessionController;
 + (id)GlobalLinkZUDP;
 + (id)GlobalLink;
 + (id)Stun;
++ (id)QRAllocator_oversized;
 + (id)QRAllocator;
 + (id)IDSDSession;
 + (id)IDSSession;
 + (id)xpc;
++ (id)IPsecLink;
 + (id)utilities;
 + (id)bonjourDeliveryController;
++ (id)opportunistic;
 + (id)deliveryController;
++ (id)utunController;
 + (id)BTLink;
 + (id)encryptionController;
 + (id)OTRController;
 + (id)socketPairConnection;
 + (id)localDeliveryQueue;
 + (id)UTunConnection;
++ (id)UTunPeer;
 + (id)query;
++ (id)delivery_oversized;
 + (id)delivery;
 + (id)groupCrypto;
 + (id)accountIdentity;

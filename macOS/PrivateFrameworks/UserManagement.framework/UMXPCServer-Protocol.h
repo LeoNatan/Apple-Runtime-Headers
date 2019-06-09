@@ -6,9 +6,20 @@
 
 #import <UserManagement/NSObject-Protocol.h>
 
-@class NSData, NSDictionary, NSString;
+@class NSArray, NSData, NSDictionary, NSString;
 
 @protocol UMXPCServer <NSObject>
+- (void)registerUserPersonaStakeholderForPID:(int)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)personaLogoutWithPid:(int)arg1 WithUserODuuid:(NSString *)arg2 withUid:(unsigned int)arg3 completionHandler:(void (^)(NSError *))arg4;
+- (void)personaLoginWithPid:(int)arg1 WithUserODuuid:(NSString *)arg2 withUid:(unsigned int)arg3 completionHandler:(void (^)(NSError *))arg4;
+- (void)fetchMultiPersonaBundleIdentifiersforPid:(int)arg1 withCompletionHandler:(void (^)(NSArray *, NSError *))arg2;
+- (void)fetchBundleIdentifiersForPersona:(NSDictionary *)arg1 forPid:(int)arg2 completionHandler:(void (^)(NSArray *, NSError *))arg3;
+- (void)setMultiPersonaBundlesIdentifiers:(NSArray *)arg1 forPid:(int)arg2 WithcompletionHandler:(void (^)(NSError *))arg3;
+- (void)setSinglePersonaBundlesIdentifiers:(NSArray *)arg1 forPersona:(NSDictionary *)arg2 forPid:(int)arg3 completionHandler:(void (^)(NSError *))arg4;
+- (void)fetchPersona:(NSDictionary *)arg1 forPid:(int)arg2 completionHandler:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)fetchPersonaListforPid:(int)arg1 withCompletionHandler:(void (^)(NSArray *, NSError *))arg2;
+- (void)deletePersona:(NSDictionary *)arg1 forPid:(int)arg2 completionHandler:(void (^)(NSError *))arg3;
+- (void)createPersona:(NSDictionary *)arg1 passcodeData:(NSData *)arg2 forPid:(int)arg3 completionHandler:(void (^)(NSDictionary *, NSError *))arg4;
 - (void)loginComplete;
 - (void)reengageUserQuotaForPID:(int)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)suspendUserQuotaForPID:(int)arg1 completionHandler:(void (^)(NSError *))arg2;

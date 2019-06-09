@@ -21,6 +21,7 @@
 + (id)containerForApplicationAtURL:(id)arg1 withHomeDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 + (id)containerForCodeIdentity:(id)arg1 withHomeDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 + (id)containerForApplicationAtURL:(id)arg1 withHomeDirectory:(id)arg2 error:(id *)arg3;
++ (id)containerForApplicationAtURL:(id)arg1 error:(id *)arg2;
 + (id)containerForCodeIdentity:(id)arg1 withHomeDirectory:(id)arg2 error:(id *)arg3;
 + (void)synchronizedContainerForCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 options:(unsigned long long)arg3 usingBlock:(CDUnknownBlockType)arg4;
 @property(readonly) BOOL isNewlyCreatedContainer; // @synthesize isNewlyCreatedContainer=_created;

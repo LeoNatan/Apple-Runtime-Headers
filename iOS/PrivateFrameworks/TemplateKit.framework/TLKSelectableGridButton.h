@@ -6,29 +6,31 @@
 
 #import <UIKit/UIButton.h>
 
-@class TLKStackView, TLKVibrantLabel;
+@class TLKLabel, TLKStackView;
 
+__attribute__((visibility("hidden")))
 @interface TLKSelectableGridButton : UIButton
 {
-    unsigned long long _style;
-    TLKVibrantLabel *_topLabel;
-    TLKVibrantLabel *_bottomLabel;
+    _Bool _customHighlight;
+    TLKLabel *_topLabel;
+    TLKLabel *_bottomLabel;
     TLKStackView *_stackView;
 }
 
 + (id)selectableGridButton;
-@property(retain) TLKStackView *stackView; // @synthesize stackView=_stackView;
-@property(retain) TLKVibrantLabel *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
-@property(retain) TLKVibrantLabel *topLabel; // @synthesize topLabel=_topLabel;
-@property(nonatomic) unsigned long long style; // @synthesize style=_style;
+@property(retain, nonatomic) TLKStackView *stackView; // @synthesize stackView=_stackView;
+@property(retain, nonatomic) TLKLabel *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
+@property(retain, nonatomic) TLKLabel *topLabel; // @synthesize topLabel=_topLabel;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setTitle:(id)arg1 subtitle:(id)arg2;
-- (void)setSelected:(_Bool)arg1;
-- (id)_selectionColor;
+@property(nonatomic) _Bool customHighlight;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 
 @end
 

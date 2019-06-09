@@ -6,7 +6,7 @@
 
 #import <SAObjects/SABaseClientBoundCommand.h>
 
-@class NSArray, SAIntentGroupProtobufMessage;
+@class NSArray, NSString, SAIntentGroupProtobufMessage;
 
 @interface SAIntentGroupResolveAppForIntent : SABaseClientBoundCommand
 {
@@ -15,6 +15,7 @@
 + (id)resolveAppForIntentWithDictionary:(id)arg1 context:(id)arg2;
 + (id)resolveAppForIntent;
 - (BOOL)requiresResponse;
+@property(copy, nonatomic) NSString *jsonEncodedIntent;
 @property(retain, nonatomic) SAIntentGroupProtobufMessage *intent;
 @property(copy, nonatomic) NSArray *appsList;
 - (id)encodedClassName;

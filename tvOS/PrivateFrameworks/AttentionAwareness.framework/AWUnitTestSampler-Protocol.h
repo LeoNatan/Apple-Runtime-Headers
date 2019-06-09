@@ -9,6 +9,7 @@
 - (void)setSmartCoverClosed:(_Bool)arg1;
 - (void)setDisplayCallback:(void (^)(_Bool))arg1;
 - (void)setDisplayState:(_Bool)arg1;
+- (void)setSampleState:(_Bool)arg1 deliverEvent:(_Bool)arg2;
 - (void)setSampleState:(_Bool)arg1;
 - (void)resetStats;
 - (void)getStatsWithBlock:(void (^)(struct))arg1;

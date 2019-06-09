@@ -13,8 +13,8 @@
     MM_Account *_account;
     NSProgressIndicator *_spinner;
     unsigned long long _currentState;
-    CastlePlugin *_plugin;
     BOOL _nibLoadingCompleted;
+    CastlePlugin *_plugin;
     iCloudSetupTopLevelViews *_topLevelViews;
     NSView *_setupViewHolder;
     NSView *_setupView;
@@ -22,14 +22,15 @@
     NSButton *_buttonTwo;
 }
 
-@property(retain, nonatomic) NSButton *buttonTwo; // @synthesize buttonTwo=_buttonTwo;
-@property(retain, nonatomic) NSButton *buttonOne; // @synthesize buttonOne=_buttonOne;
+@property(nonatomic) __weak NSButton *buttonTwo; // @synthesize buttonTwo=_buttonTwo;
+@property(nonatomic) __weak NSButton *buttonOne; // @synthesize buttonOne=_buttonOne;
 @property(retain, nonatomic) NSView *setupView; // @synthesize setupView=_setupView;
-@property(retain, nonatomic) NSView *setupViewHolder; // @synthesize setupViewHolder=_setupViewHolder;
+@property(nonatomic) __weak NSView *setupViewHolder; // @synthesize setupViewHolder=_setupViewHolder;
 @property BOOL nibLoadingCompleted; // @synthesize nibLoadingCompleted=_nibLoadingCompleted;
 @property(retain) iCloudSetupTopLevelViews *topLevelViews; // @synthesize topLevelViews=_topLevelViews;
 @property(retain) MM_Account *account; // @synthesize account=_account;
 @property CastlePlugin *plugin; // @synthesize plugin=_plugin;
+- (void).cxx_destruct;
 - (void)reset;
 - (BOOL)sendQuit;
 - (BOOL)_quitWithSendMode:(int)arg1 timeout:(long long)arg2;

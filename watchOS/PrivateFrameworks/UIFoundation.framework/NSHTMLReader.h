@@ -61,6 +61,8 @@
     } _flags;
 }
 
++ (_Bool)allowsAttributedStringAgentForOptions:(id)arg1;
++ (_Bool)_usesLibXML2ForOptions:(id)arg1;
 + (id)defaultParagraphStyle;
 + (void)initialize;
 - (void)setMutableAttributedString:(id)arg1;

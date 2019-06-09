@@ -20,13 +20,15 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) UIBlurEffect *effect; // @synthesize effect=_effect;
 - (void).cxx_destruct;
 - (void)appendDescriptionTo:(id)arg1;
-- (_Bool)_needsUpdateForTransitionFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
-- (void)_updateEffectNode:(id)arg1 forTraitCollection:(id)arg2;
+- (_Bool)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(long long)arg3;
+- (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(long long)arg3;
 - (id)implementationForUserInterfaceStyle:(long long)arg1;
 - (_Bool)canProvideVibrancyEffect;
 - (_Bool)invertAutomaticStyle;
 - (id)tintColor;
 - (long long)style;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithStyle:(long long)arg1 tintColor:(id)arg2 invertAutomaticStyle:(_Bool)arg3;
 

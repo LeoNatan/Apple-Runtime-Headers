@@ -6,15 +6,22 @@
 
 #import <objc/NSObject.h>
 
+#import <PackageKit/NSCopying-Protocol.h>
+#import <PackageKit/NSSecureCoding-Protocol.h>
+
 @class NSArray, NSDictionary, NSString, NSURL;
 
-@interface PKProductInfo : NSObject
+@interface PKProductInfo : NSObject <NSSecureCoding, NSCopying>
 {
     NSDictionary *_productInfoDictionary;
     NSURL *_baseURL;
     NSArray *_cachedPackageReferences;
 }
 
++ (BOOL)supportsSecureCoding;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 @property(readonly) NSURL *baseURL;
 @property(readonly) NSDictionary *dictionaryRepresentation;
 @property(readonly) NSArray *packageReferences;

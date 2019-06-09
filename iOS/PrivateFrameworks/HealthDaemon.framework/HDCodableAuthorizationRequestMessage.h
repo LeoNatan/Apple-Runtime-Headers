@@ -18,6 +18,7 @@
     NSData *_requestIdentifier;
 }
 
++ (id)codableAuthorizationRequestWithRecord:(id)arg1;
 @property(retain, nonatomic) NSData *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property(retain, nonatomic) NSString *appBundleIdentifier; // @synthesize appBundleIdentifier=_appBundleIdentifier;
 - (void).cxx_destruct;
@@ -45,6 +46,9 @@
 @property(readonly, nonatomic) _Bool hasRequestIdentifier;
 @property(readonly, nonatomic) _Bool hasAppBundleIdentifier;
 - (void)dealloc;
+- (id)_objectTypeForCode:(long long)arg1;
+- (id)decodedWriteTypes;
+- (id)decodedReadTypes;
 
 @end
 

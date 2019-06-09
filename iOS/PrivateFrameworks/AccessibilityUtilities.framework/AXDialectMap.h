@@ -18,6 +18,8 @@
     NSCharacterSet *_secondaryLanguageRange;
 }
 
++ (id)_hanjaCharacterSet;
++ (id)_hanjaToHangulMap;
 @property(retain, nonatomic) NSCharacterSet *secondaryLanguageRange; // @synthesize secondaryLanguageRange=_secondaryLanguageRange;
 @property(retain, nonatomic) NSCharacterSet *speakableCharacters; // @synthesize speakableCharacters=_speakableCharacters;
 @property(copy, nonatomic) NSString *specificLanguageID; // @synthesize specificLanguageID=_specificLanguageID;
@@ -25,6 +27,11 @@
 @property(copy, nonatomic) NSString *voiceName; // @synthesize voiceName=_voiceName;
 @property(nonatomic) __weak AXLangMap *langMap; // @synthesize langMap=_langMap;
 - (void).cxx_destruct;
+- (id)_stringByTransliterationHanjaToHangul:(id)arg1;
+- (id)_transliteratedSpeechCharacters;
+- (id)transliteratedStringForString:(id)arg1;
+- (_Bool)speakingRequiresTransliteration;
+- (_Bool)_languageIsKorean;
 - (_Bool)canSpeakString:(id)arg1;
 - (_Bool)canSpeakLongCharacter:(unsigned int)arg1;
 - (_Bool)canSpeakCharacter:(unsigned short)arg1;

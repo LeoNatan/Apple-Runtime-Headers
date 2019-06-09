@@ -159,6 +159,7 @@
 - (void)_scrollViewDidChangeBounds:(id)arg1;
 - (void)viewWillDraw;
 - (void)prepareContentInRect:(struct CGRect)arg1;
+- (Class)_documentViewClassForScrollableSections;
 - (void)_ensureVisibleItemsLoaded;
 - (void)_addItemViewAsSubview:(id)arg1;
 - (void)awakeFromNib;
@@ -217,6 +218,8 @@
 - (BOOL)_writeItemsAtIndexes:(id)arg1 toPasteboard:(id)arg2;
 - (id)_pasteboardWriterForItemAtIndexPath:(id)arg1;
 - (BOOL)_canGetPasteboardWritersFromDelegate;
+- (id)_draggingItemsForCollectionViewItemAtIndexPath:(id)arg1;
+- (BOOL)_canGetDraggingItemsFromDelegate;
 - (BOOL)_canDragItemsAtIndexes:(id)arg1 withEvent:(id)arg2;
 - (BOOL)_canDragItemsAtIndexPaths:(id)arg1 withEvent:(id)arg2;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
@@ -364,12 +367,16 @@
 - (void)setItemPrototype:(id)arg1;
 - (void)reloadItemsAtIndexes:(id)arg1 inSectionObject:(id)arg2;
 - (void)deleteItemsAtIndexes:(id)arg1 inSectionObject:(id)arg2;
+- (void)_fulfillInsertItemsAtIndexPaths:(id)arg1;
 - (void)insertItemsAtIndexes:(id)arg1 inSectionObject:(id)arg2;
-- (id)_indexPathsFromItemIndexes:(id)arg1 inSectionObject:(id)arg2;
+- (id)_indexPathsFromItemIndexes:(id)arg1 inSectionObject:(id)arg2 inBatchUpdateAfterState:(BOOL)arg3;
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_setFinishesBatchUpdateBeforeInvokingCompletionHandler:(BOOL)arg1;
 - (BOOL)_finishesBatchUpdateBeforeInvokingCompletionHandler;
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_setBatchUpdateDepth:(long long)arg1;
+- (long long)_batchUpdateDepth;
+- (BOOL)_inBatchUpdate;
 - (void)moveItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
 - (void)reloadItemsAtIndexPaths:(id)arg1;
 - (void)deleteItemsAtIndexPaths:(id)arg1;
@@ -395,6 +402,8 @@
 @property __weak id <NSCollectionViewDataSource> dataSource;
 - (id)_dataSourceAdapter;
 - (id)_itemForRepresentedObjectAtIndexPath:(id)arg1;
+- (void)_finishBatchUpdateWithUpdateItems:(id)arg1 newSectionCount:(long long)arg2 newSectionSourceIndexes:(long long *)arg3 newSectionItemCounts:(long long *)arg4 newGlobalItemCount:(long long)arg5 newGlobalItemSourceIndexes:(long long *)arg6;
+- (void)_beginReportingPostBatchUpdateState;
 - (void)_createDataSourceAdapterForDataSource:(id)arg1;
 - (void)reloadData;
 - (void)_restoreFrameBeforeRestoringScrollPosition:(struct CGRect)arg1;

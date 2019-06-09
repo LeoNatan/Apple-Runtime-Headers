@@ -40,6 +40,8 @@
 @property(nonatomic) _Bool forceDefaultDictationInfo;
 @property(nonatomic) _Bool forceDisableDictation;
 @property(nonatomic) _Bool forceEnableDictation;
+@property(nonatomic) _Bool showDictationButton;
+@property(nonatomic) _Bool useAutomaticEndpointing;
 @property(nonatomic) _Bool acceptsDictationSearchResults;
 @property(nonatomic) _Bool acceptsEmoji;
 @property(nonatomic) _Bool acceptsPayloads;

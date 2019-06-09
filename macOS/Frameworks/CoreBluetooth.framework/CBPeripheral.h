@@ -30,6 +30,7 @@
     } _delegateFlags;
     NSMutableDictionary *_attributes;
     BOOL _canSendWriteWithoutResponse;
+    BOOL _ancsAuthorized;
     BOOL _isConnectedToSystem;
     BOOL _connectedToSystem;
     unsigned int _writesPending;
@@ -50,6 +51,7 @@
 @property(retain) NSString *BDAddress; // @synthesize BDAddress=_BDAddress;
 @property(readonly, retain, nonatomic) NSHashTable *l2capChannels; // @synthesize l2capChannels=_l2capChannels;
 @property unsigned int writesPending; // @synthesize writesPending=_writesPending;
+@property BOOL ancsAuthorized; // @synthesize ancsAuthorized=_ancsAuthorized;
 @property BOOL canSendWriteWithoutResponse; // @synthesize canSendWriteWithoutResponse=_canSendWriteWithoutResponse;
 @property(retain) NSArray *services; // @synthesize services=_services;
 @property long long state; // @synthesize state=_state;
@@ -83,9 +85,6 @@
 - (void)setHighPriorityStream:(BOOL)arg1 duration:(id)arg2;
 - (void)getTimeSyncData;
 - (void)setPeripheralName:(id)arg1;
-- (BOOL)hasTag:(id)arg1;
-- (void)untag:(id)arg1;
-- (void)tag:(id)arg1;
 - (void)writeValue:(id)arg1 forDescriptor:(id)arg2;
 - (void)readValueForDescriptor:(id)arg1;
 - (void)discoverDescriptorsForCharacteristic:(id)arg1;

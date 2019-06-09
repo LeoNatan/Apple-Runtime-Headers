@@ -8,6 +8,7 @@
 
 @class NSArray, SSWishlist;
 
+__attribute__((visibility("hidden")))
 @interface SKUIWishlist : NSObject
 {
     SSWishlist *_database;

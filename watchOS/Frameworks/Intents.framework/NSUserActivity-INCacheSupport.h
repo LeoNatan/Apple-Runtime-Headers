@@ -7,13 +7,34 @@
 #import <CoreServices/NSUserActivity.h>
 
 #import <Intents/INCacheableObject-Protocol.h>
+#import <Intents/INJSONSerializable-Protocol.h>
 
-@class NSString;
+@class INInteraction, NSString;
 
-@interface NSUserActivity (INCacheSupport) <INCacheableObject>
+@interface NSUserActivity (INCacheSupport) <INCacheableObject, INJSONSerializable>
 + (void)buildFromCachePayload:(id)arg1 identifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)deleteInteractionsWithGroupIdentifier:(id)arg1;
++ (void)deleteInteractionsWithIdentifiers:(id)arg1;
++ (void)deleteAllInteractions;
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *cacheIdentifier;
 - (void)generateCachePayloadWithCompletion:(CDUnknownBlockType)arg1;
+- (int)_executionContext;
+- (void)_setExecutionContext:(int)arg1;
+- (_Bool)_isEligibleForPrediction;
+- (void)_setEligibleForPrediction:(_Bool)arg1;
+- (id)_intentsIdentifier;
+@property(copy, nonatomic) NSString *suggestedInvocationPhrase;
+- (void)setInteraction:(id)arg1;
+- (void)_setAccessedInteraction:(_Bool)arg1;
+- (_Bool)_accessedInteraction;
+- (_Bool)_hasInteraction;
+- (void)_setInteraction:(id)arg1 donate:(_Bool)arg2;
+@property(readonly, nonatomic) INInteraction *interaction;
+- (id)_initWithIntent:(id)arg1;
+- (void)setInInteraction:(id)arg1;
+- (id)inInteraction;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

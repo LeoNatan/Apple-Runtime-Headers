@@ -20,6 +20,7 @@
 + (Class)classForMimePart;
 + (Class)headersClass;
 @property(readonly, retain, nonatomic) MFMessageStoreObjectCache *objectCache; // @synthesize objectCache=_objectCache;
+- (void).cxx_destruct;
 - (id)additionalHeadersForForwardOfMessage:(id)arg1;
 - (id)additionalHeadersForReplyOfMessage:(id)arg1;
 - (void)setMessageClass:(Class)arg1;
@@ -56,7 +57,6 @@
 - (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(_Bool)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_flushAllMessageData;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -8,6 +8,7 @@
 
 @class SKUIShapeView, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPreviewProgressIndicator : UIControl
 {
     SKUIShapeView *_backgroundView;

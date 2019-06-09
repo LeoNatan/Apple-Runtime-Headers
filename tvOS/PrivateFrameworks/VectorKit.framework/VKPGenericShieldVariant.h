@@ -71,8 +71,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasNumberOfLines;
 @property(nonatomic) unsigned int numberOfLines; // @synthesize numberOfLines=_numberOfLines;
 - (void)dealloc;
-- (struct CGImage *)newImageWithBackgroundColor:(struct CGColor *)arg1 borderColor:(struct CGColor *)arg2 textureAtlases:(id)arg3 contentScale:(double)arg4;
-- (struct CGSize)_imageSizeWithTextureAtlases:(id)arg1;
 
 @end
 

@@ -22,7 +22,7 @@
     NSObject<OS_dispatch_queue> *_calendarEventQueue;
 }
 
-@property(nonatomic) NSObject<OS_dispatch_queue> *calendarEventQueue; // @synthesize calendarEventQueue=_calendarEventQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *calendarEventQueue; // @synthesize calendarEventQueue=_calendarEventQueue;
 @property(retain, nonatomic) EKRecurrenceRule *recurrence; // @synthesize recurrence=_recurrence;
 @property(nonatomic) _Bool allDay; // @synthesize allDay=_allDay;
 @property(retain, nonatomic) NSDate *end; // @synthesize end=_end;
@@ -31,12 +31,12 @@
 @property(copy, nonatomic) NSString *summary; // @synthesize summary=_summary;
 @property(copy, nonatomic) NSString *location; // @synthesize location=_location;
 @property(copy, nonatomic) NSString *eventDescription; // @synthesize eventDescription=_eventDescription;
+- (void).cxx_destruct;
 - (id)_recurrenceRuleFromDictionary:(id)arg1;
 - (_Bool)_eventIsEqualToCalendarEvent:(id)arg1;
 - (void)retrieveEventInEventStore:(id)arg1 byIdentifier:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)EKEventInEventStore:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
-- (void)dealloc;
 
 @end
 

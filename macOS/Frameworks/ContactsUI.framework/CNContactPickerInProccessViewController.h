@@ -10,31 +10,43 @@
 #import <ContactsUI/CNContactPickerViewController-Protocol.h>
 #import <ContactsUI/CNContactPickerViewControllerSearch-Protocol.h>
 
-@class ABAddressBook, ABBookSearchField, ABGroupEntriesList, ABPersonEntriesList, ABPersonListSearchController, CNContactListController, CNContactListView, CNContactPickerNotificationWatcher, CNContactPickerSearchController, CNGroupListController, CNGroupListEntriesFactory, CNGroupListView, NSString;
+@class ABAddressBook, ABBookSearchField, ABGroupEntriesList, ABPersonEntriesList, ABPersonListSearchController, CNContact, CNContactCardViewController, CNContactListController, CNContactListView, CNContactPickerFamilyMemberScope, CNContactPickerNotificationWatcher, CNContactPickerSearchController, CNContactStore, CNGroupListController, CNGroupListEntriesFactory, CNGroupListView, NSString;
 @protocol CNContactPickerInternalResponseDelegate;
 
 @interface CNContactPickerInProccessViewController : NSViewController <CNContactPickerViewController, CNContactPickerInternalSetup, CNContactPickerViewControllerSearch>
 {
     ABAddressBook *_addressBook;
+    CNContactStore *_contactStore;
     CNContactPickerNotificationWatcher *_notificationWatcher;
     CNContactPickerSearchController *_contactSearchController;
+    CNContactCardViewController *_contactCardViewController;
     ABPersonEntriesList *_personEntriesList;
     CNContactListController *_contactListController;
     CNGroupListController *_groupListController;
     CNGroupListEntriesFactory *_groupEntriesFactory;
     ABGroupEntriesList *_groupEntriesList;
     id <CNContactPickerInternalResponseDelegate> _responseDelegate;
+    BOOL _editingSelectedContact;
+    BOOL _highlightSelectedContact;
+    BOOL _showSelectedContact;
     ABPersonListSearchController *_searchController;
     CNGroupListView *_groupListView;
     CNContactListView *_contactListView;
     ABBookSearchField *_searchField;
+    CNContactPickerFamilyMemberScope *_familyMemberScope;
 }
 
+@property(readonly, nonatomic, getter=shouldShowSelectedContact) BOOL showSelectedContact; // @synthesize showSelectedContact=_showSelectedContact;
+@property(retain) CNContactPickerFamilyMemberScope *familyMemberScope; // @synthesize familyMemberScope=_familyMemberScope;
+@property(retain) CNContactCardViewController *contactCardViewController; // @synthesize contactCardViewController=_contactCardViewController;
 @property __weak ABBookSearchField *searchField; // @synthesize searchField=_searchField;
 @property __weak CNContactListView *contactListView; // @synthesize contactListView=_contactListView;
 @property __weak CNGroupListView *groupListView; // @synthesize groupListView=_groupListView;
+@property(nonatomic, getter=shouldHighlightSelectedContact) BOOL highlightSelectedContact; // @synthesize highlightSelectedContact=_highlightSelectedContact;
+@property(nonatomic, getter=isEditingSelectedContact) BOOL editingSelectedContact; // @synthesize editingSelectedContact=_editingSelectedContact;
+@property(retain) CNGroupListController *groupListController; // @synthesize groupListController=_groupListController;
 @property(readonly) ABPersonListSearchController *searchController; // @synthesize searchController=_searchController;
-@property(readonly) CNContactListController *contactListController; // @synthesize contactListController=_contactListController;
+@property(retain) CNContactListController *contactListController; // @synthesize contactListController=_contactListController;
 - (void).cxx_destruct;
 - (void)resetUsageStatistics;
 - (unsigned long long)countOfServerSearchesPerformed;
@@ -51,8 +63,12 @@
 - (id)pickerView;
 - (void)setAccounts:(id)arg1;
 - (id)browsingHeadliner;
-@property __weak id <CNContactPickerInternalResponseDelegate> responseDelegate;
+@property __weak id <CNContactPickerInternalResponseDelegate> responseDelegate; // @synthesize responseDelegate=_responseDelegate;
+- (void)prepareForDisplay;
+@property(readonly, nonatomic) CNContact *refetchedSelectedContact;
+@property(readonly, nonatomic) CNContact *selectedContact;
 - (void)pickerDidCreate;
+- (void)finalizePickerCreation;
 - (void)awakeFromNib;
 - (id)nibName;
 - (id)makePersonListUIReflector;
@@ -61,8 +77,11 @@
 - (void)setupSearchController;
 - (void)setupGroupListController;
 - (void)setupContactListController;
-- (void)setInitialSelection;
+- (void)setupContactCardViewController;
+- (void)performInitialSelection;
+- (void)commonInitWithAddressBook:(id)arg1 contactStore:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithFAFamilyMember:(id)arg1;
 - (id)init;
 
 // Remaining properties

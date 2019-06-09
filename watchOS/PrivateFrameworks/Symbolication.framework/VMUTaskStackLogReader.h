@@ -14,10 +14,15 @@
 {
     VMUTaskMemoryScanner *_scanner;
     struct _CSTypeRef _symbolicator;
+    unsigned long long _msl_payload_version;
 }
 
 @property(nonatomic) __weak VMUTaskMemoryScanner *scanner; // @synthesize scanner=_scanner;
 - (void).cxx_destruct;
+- (unsigned long long)liteModeStackIDforVMregionAddress:(unsigned long long)arg1;
+- (unsigned long long)liteModeStackIDforAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
+- (int)enumerateRecords:(CDUnknownBlockType)arg1;
+@property(readonly) unsigned int nodesInUniquingTable;
 - (id)sourceFileNameAndLineNumberForPCaddress:(unsigned long long)arg1 fullPath:(_Bool)arg2;
 - (unsigned int)sourceLineNumberForPCaddress:(unsigned long long)arg1;
 - (id)sourceFileNameForPCaddress:(unsigned long long)arg1;
@@ -27,12 +32,12 @@
 - (id)functionNameForPCaddress:(unsigned long long)arg1;
 - (struct _VMURange)binaryImageRangeForPCaddress:(unsigned long long)arg1;
 - (id)binaryImagePathForPCaddress:(unsigned long long)arg1;
-- (int)enumerateRecords:(CDUnknownBlockType)arg1;
+- (int)enumerateMSLRecordsAndPayloads:(CDUnknownBlockType)arg1;
 - (int)getFramesForStackID:(unsigned long long)arg1 stackFramesBuffer:(unsigned long long *)arg2;
 - (int)getFramesForAddress:(unsigned long long)arg1 size:(unsigned long long)arg2 inLiteZone:(_Bool)arg3 stackFramesBuffer:(unsigned long long *)arg4;
 - (int)getFramesForNode:(unsigned int)arg1 inLiteZone:(_Bool)arg2 stackFramesBuffer:(unsigned long long *)arg3;
-- (unsigned long long)liteModeStackIDforVMregionAddress:(unsigned long long)arg1;
-- (unsigned long long)liteModeStackIDforAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
+- (CDStruct_69d7cc99)liteMSLPayloadforVMregionAddress:(unsigned long long)arg1;
+- (CDStruct_69d7cc99)liteMSLPayloadforMallocAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
 @property(readonly) VMUVMRegionTracker *regionTracker;
 @property(readonly) _Bool inspectingLiveProcess;
 @property(readonly) _Bool is64bit;
@@ -41,6 +46,7 @@
 - (id)initWithTask:(unsigned int)arg1;
 
 // Remaining properties
+@property(readonly) _Bool coldestFrameIsNotThreadId;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(retain, nonatomic) NSSet *excludedFrames;

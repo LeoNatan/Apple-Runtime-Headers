@@ -18,9 +18,13 @@
     struct CGSize _minSize;
     _Bool _userCanResize;
     _Bool _playing;
+    _Bool _muted;
     _Bool _animateDismissal;
     _Bool _pipping;
     unsigned int _activeFencePort;
+    unsigned long long _controls;
+    struct CGRect _customControlsFrame;
+    id _customControlsFrameObserver;
     _Bool _useAutoLayout;
     _Bool _presentOnResize;
     id <PIPViewControllerDelegate> _delegate;
@@ -30,10 +34,12 @@
     CAContext *_context;
     id _accessibility;
     NSWindow *_replacementWindow;
+    NSViewController *_customControlsViewController;
     struct CGRect _bounds;
     struct CGRect _replacementRect;
 }
 
+@property(nonatomic) __weak NSViewController *customControlsViewController; // @synthesize customControlsViewController=_customControlsViewController;
 @property(nonatomic) struct CGRect replacementRect; // @synthesize replacementRect=_replacementRect;
 @property(nonatomic) __weak NSWindow *replacementWindow; // @synthesize replacementWindow=_replacementWindow;
 @property(nonatomic) _Bool presentOnResize; // @synthesize presentOnResize=_presentOnResize;
@@ -46,17 +52,27 @@
 @property(nonatomic) __weak NSView *replacementView; // @synthesize replacementView=_replacementView;
 @property(nonatomic) __weak id <PIPViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)dismissViewControllerWithFlyback:(id)arg1;
+- (void)_dismissViewControllerWithFlyback;
 - (unsigned int)copyActiveFencePort;
 - (void)animateDismissalOfViewController:(id)arg1 fromViewController:(id)arg2;
 - (void)animatePresentationOfViewController:(id)arg1 fromViewController:(id)arg2;
 - (void)presentViewControllerAsPictureInPicture:(id)arg1;
 - (void)performWindowDragWithEvent:(id)arg1;
+- (void)updateCustomControlsFrame;
+@property(nonatomic) _Bool observingCustomControlsFrame;
+@property(nonatomic) struct CGRect customControlsFrame;
+@property(nonatomic) _Bool customControlsHidden;
+- (void)setMuted:(_Bool)arg1;
+- (_Bool)muted;
 - (void)setPlaying:(_Bool)arg1;
 - (_Bool)playing;
 @property(nonatomic) _Bool userCanResize;
 @property(nonatomic) struct CGSize maxSize;
 @property(nonatomic) struct CGSize minSize;
 @property(nonatomic) struct CGSize aspectRatio;
+- (void)setControls:(unsigned long long)arg1;
+- (unsigned long long)controls;
 - (void)setRepresentedObject:(id)arg1;
 - (id)representedObject;
 - (void)loadView;

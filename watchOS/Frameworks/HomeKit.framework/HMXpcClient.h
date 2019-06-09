@@ -11,6 +11,7 @@
 @class NSObject, NSString, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface HMXPCClient : HMFMessageTransport <HMXPCMessageTransport>
 {
     _Bool _connectionValid;

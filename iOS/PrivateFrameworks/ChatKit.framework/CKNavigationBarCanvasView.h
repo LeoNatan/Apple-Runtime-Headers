@@ -7,16 +7,17 @@
 #import <UIKit/UIView.h>
 
 @class CKNavigationButtonView, UIImageView;
+@protocol CKNavigationBarCanvasViewDelegate;
 
 @interface CKNavigationBarCanvasView : UIView
 {
     _Bool _enforceLeftItemViewsAlignmentToCenter;
     _Bool _keepTitleViewCentered;
     _Bool _isBusinessChat;
-    _Bool _isShowingContactPhotos;
     _Bool _isShowingControls;
     _Bool _multiwayAudioButtonHidden;
     _Bool _isTearingDownButtonViews;
+    id <CKNavigationBarCanvasViewDelegate> _delegate;
     UIView *_titleView;
     UIView *_leftItemView;
     UIView *_rightItemView;
@@ -46,7 +47,6 @@
 @property(nonatomic) long long statusIndicatorType; // @synthesize statusIndicatorType=_statusIndicatorType;
 @property(nonatomic) _Bool multiwayAudioButtonHidden; // @synthesize multiwayAudioButtonHidden=_multiwayAudioButtonHidden;
 @property(nonatomic) _Bool isShowingControls; // @synthesize isShowingControls=_isShowingControls;
-@property(nonatomic) _Bool isShowingContactPhotos; // @synthesize isShowingContactPhotos=_isShowingContactPhotos;
 @property(nonatomic) _Bool isBusinessChat; // @synthesize isBusinessChat=_isBusinessChat;
 @property(nonatomic) _Bool keepTitleViewCentered; // @synthesize keepTitleViewCentered=_keepTitleViewCentered;
 @property(nonatomic) _Bool enforceLeftItemViewsAlignmentToCenter; // @synthesize enforceLeftItemViewsAlignmentToCenter=_enforceLeftItemViewsAlignmentToCenter;
@@ -54,9 +54,11 @@
 @property(retain, nonatomic) UIView *rightItemView; // @synthesize rightItemView=_rightItemView;
 @property(retain, nonatomic) UIView *leftItemView; // @synthesize leftItemView=_leftItemView;
 @property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
+@property(nonatomic) __weak id <CKNavigationBarCanvasViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (struct CGRect)_calculateFrameForButtonPositionType:(long long)arg1 shouldOffset:(_Bool)arg2;
 - (void)layoutSubviews;
+- (struct UIEdgeInsets)systemMinimumLayoutMarginsFromDelegate;
 - (struct UIEdgeInsets)safeAreaInsets;
 - (_Bool)_canShowAvatarView;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

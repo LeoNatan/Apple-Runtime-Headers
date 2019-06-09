@@ -51,6 +51,7 @@
         unsigned int suspendedForQWS:1;
     } _flags;
     NSString *_peerID;
+    int _sendingBufferCap;
     int _engineType;
     NSString *_generationID;
     double _defaultMessageTimeout;
@@ -60,6 +61,7 @@
 @property(readonly, nonatomic) NSString *generationID; // @synthesize generationID=_generationID;
 @property(nonatomic) int engineType; // @synthesize engineType=_engineType;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(nonatomic) int sendingBufferCap; // @synthesize sendingBufferCap=_sendingBufferCap;
 @property(nonatomic) double sessionStalenessInterval; // @synthesize sessionStalenessInterval=_sessionStalenessInterval;
 @property(nonatomic) double defaultMessageTimeout; // @synthesize defaultMessageTimeout=_defaultMessageTimeout;
 @property(readonly, nonatomic) _SYMultiSuspendableQueue *sessionQueue; // @synthesize sessionQueue=_sessionQueue;
@@ -86,6 +88,7 @@
 - (_Bool)_request:(id)arg1 hasValidSessionIDForSession:(id)arg2 response:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_enqueueIncomingStartSessionRequest:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_sessionFromIncomingStartRequest:(id)arg1;
+- (void)currentDeviceConnectionChanged:(_Bool)arg1;
 - (void)currentDeviceProximityChanged:(_Bool)arg1;
 - (void)serializeForIncomingSession:(CDUnknownBlockType)arg1;
 - (void)deliveredMessageWithID:(id)arg1 context:(id)arg2;
@@ -127,6 +130,7 @@
 - (_Bool)resume:(id *)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 @property(readonly) SYSession *currentSession;
+@property(readonly, nonatomic) _Bool targetIsConnected;
 @property(readonly, nonatomic) _Bool targetIsInProximity;
 @property(readonly, nonatomic) _Bool isMasterStore;
 - (void)_whenSessionEnds:(CDUnknownBlockType)arg1;

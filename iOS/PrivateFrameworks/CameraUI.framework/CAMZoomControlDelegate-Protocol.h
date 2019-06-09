@@ -11,8 +11,8 @@
 @protocol CAMZoomControlDelegate <NSObject>
 
 @optional
-- (void)toggleBetweenWideAndTelephotoForZoomControl:(CAMZoomControl *)arg1;
-- (_Bool)canToggleBetweenWideAndTelephotoForZoomControl:(CAMZoomControl *)arg1;
+- (void)toggleBetweenZoomFactorsForZoomControl:(CAMZoomControl *)arg1;
+- (_Bool)canToggleBetweenZoomFactorsForZoomControl:(CAMZoomControl *)arg1;
 - (void)zoomControl:(CAMZoomControl *)arg1 didChangeZoomFactor:(double)arg2 interactionType:(long long)arg3;
 @end
 

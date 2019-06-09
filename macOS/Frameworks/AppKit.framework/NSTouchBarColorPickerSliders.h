@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     NSArray *_allowedColorSpaces;
     NSColor *_currentColor;
     id _autounbinder;
-    unsigned int _allowsAlpha:1;
+    BOOL _allowsAlpha;
 }
 
 + (id)thumbnailWithSize:(struct CGSize)arg1 inView:(id)arg2;

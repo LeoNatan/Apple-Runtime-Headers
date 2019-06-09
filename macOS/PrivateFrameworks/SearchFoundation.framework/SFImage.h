@@ -58,14 +58,15 @@
 - (BOOL)hasCornerRadius;
 - (BOOL)hasShouldCropToCircle;
 - (BOOL)hasIsTemplate;
-- (id)initWithProtobuf:(id)arg1;
 - (void)loadImageDataWithCompletionAndErrorHandler:(CDUnknownBlockType)arg1;
 - (void)loadImageDataWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)initWithProtobuf:(id)arg1;
+@property(readonly) unsigned long long hash;
+- (BOOL)isEqual:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

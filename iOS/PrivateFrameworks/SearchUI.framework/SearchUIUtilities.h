@@ -10,11 +10,15 @@
 {
 }
 
++ (void)presentViewController:(id)arg1 withFeedbackDelegate:(id)arg2 fromView:(id)arg3;
++ (void)fetchURLForFileResult:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (id)bundleIdentifierForApp:(unsigned long long)arg1;
 + (void)openApplicationWithBundleIdentifier:(id)arg1;
-+ (id)richTextForBlockedAppName:(id)arg1 style:(unsigned long long)arg2;
++ (id)richTextForBlockedAppName:(id)arg1;
 + (_Bool)bundleIdentifierIsBlockedForScreenTimeExpiration:(id)arg1;
 + (_Bool)resultIsSiriAction:(id)arg1;
 + (_Bool)appIsValidForBundleIdentifier:(id)arg1;
++ (id)pointerKeyMapTable;
 + (id)stringForSFRichTextArray:(id)arg1;
 + (id)stringForSFRichText:(id)arg1;
 + (id)localizedStringForKey:(id)arg1;
@@ -33,32 +37,16 @@
 + (void)performAnimatableChanges:(CDUnknownBlockType)arg1;
 + (void)dispatchAsyncIfNecessary:(CDUnknownBlockType)arg1;
 + (void)dispatchMainIfNecessary:(CDUnknownBlockType)arg1;
-+ (struct CGRect)absoluteFrameForView:(id)arg1;
-+ (_Bool)isPortrait;
++ (_Bool)isPortraitForWindow:(id)arg1;
 + (_Bool)deviceSupportsRotation;
 + (_Bool)isWideScreen;
 + (id)addAspectRatioConstraintForImageView:(id)arg1;
-+ (id)imageWithColor:(id)arg1 size:(struct CGSize)arg2 cornersToRound:(unsigned long long)arg3 cornerRadius:(double)arg4;
-+ (id)imageWithColor:(id)arg1 size:(struct CGSize)arg2;
-+ (id)horizontalAppNameFont;
-+ (id)footnoteFont;
-+ (id)captionFont;
-+ (id)shortFontForFontStyle:(id)arg1;
-+ (id)boldBodyFont;
-+ (id)shortBodyFont;
-+ (id)shortFootnoteFont;
-+ (id)shortSubheadFont;
-+ (id)shortSubheadBoldFont;
-+ (id)shortTitle1Font;
 + (id)hyphenatableStringForString:(id)arg1;
 + (_Bool)isLargeIpad;
 + (double)standardTableCellContentInset;
 + (double)onePixelForCurrentScreenResolution;
 + (_Bool)backgroundColorPrefersWhiteForegroundText:(id)arg1;
 + (id)uiColorForSFColor:(id)arg1;
-+ (id)vibrantButtonColorForStyle:(unsigned long long)arg1;
-+ (id)buttonColorForStyle:(unsigned long long)arg1;
-+ (id)textColorForSearchUIStyle:(unsigned long long)arg1;
 + (struct CGSize)maxThumbnailSize;
 + (void)initialize;
 

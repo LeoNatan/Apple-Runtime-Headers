@@ -8,26 +8,25 @@
 
 @interface QTHUDBackgroundView : NSView
 {
-    struct QTHUDBackgroundViewInternal *_QTHUDBackgroundViewInternal;
 }
 
-+ (id)defaultAnimationForKey:(id)arg1;
 + (void)initialize;
-- (unsigned long long)QTHUD_backgroundTintForRect:(struct CGRect)arg1;
-- (id)hitTest:(struct CGPoint)arg1;
-- (BOOL)mouseDownCanMoveWindow;
-- (void)drawRect:(struct CGRect)arg1;
-- (id)_QTUIDrawingOptions;
++ (id)defaultAnimationForKey:(id)arg1;
 - (void)setContentBorderPosition:(double)arg1;
+- (id)_QTUIDrawingOptions;
+- (unsigned long long)QTHUD_backgroundTintForRect:(struct CGRect)arg1;
 - (double)contentBorderPosition;
 - (void)setBackgroundStyle:(unsigned long long)arg1;
 - (unsigned long long)backgroundStyle;
-- (void)setControlSize:(unsigned long long)arg1;
+- (BOOL)mouseDownCanMoveWindow;
+- (void)drawRect:(struct CGRect)arg1;
 - (unsigned long long)controlSize;
-- (void)dealloc;
+- (id)hitTest:(struct CGPoint)arg1;
+- (void)setControlSize:(unsigned long long)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)dealloc;
 
 @end
 

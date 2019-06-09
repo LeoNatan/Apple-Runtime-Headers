@@ -9,6 +9,7 @@
 @class NSArray, NSString, NSURL, SFSafariViewControllerConfiguration, UIColor;
 
 @protocol SFServiceViewControllerProtocol <NSObject>
+- (void)startResolveRedirectionForURL:(NSURL *)arg1;
 - (void)updateScrollViewIndicatorVerticalInsets:(struct UIEdgeInsets)arg1 horizontalInsets:(struct UIEdgeInsets)arg2;
 - (void)openCurrentURLInSafari;
 - (void)decideCookieSharingForURL:(NSURL *)arg1 callbackURLScheme:(NSString *)arg2;
@@ -19,6 +20,7 @@
 - (void)repostNotificationInViewService:(NSString *)arg1;
 - (void)setConfiguration:(SFSafariViewControllerConfiguration *)arg1;
 - (void)setDismissButtonStyle:(long long)arg1;
+- (void)setHostAppModalPresentationStyle:(long long)arg1;
 - (void)setPreferredControlTintColor:(UIColor *)arg1;
 - (void)setPreferredBarTintColor:(UIColor *)arg1;
 - (void)setDisplayMode:(long long)arg1;

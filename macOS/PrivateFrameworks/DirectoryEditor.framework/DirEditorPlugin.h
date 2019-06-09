@@ -8,6 +8,7 @@
 
 @class DirectoryEditorViewController, NSTabView;
 
+__attribute__((visibility("hidden")))
 @interface DirEditorPlugin : NSObject
 {
     NSTabView *_mainTabView;

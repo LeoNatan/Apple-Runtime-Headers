@@ -10,7 +10,7 @@
 #import <ContactsUI/NSOutlineViewDelegate-Protocol.h>
 #import <ContactsUI/NSTextFieldDelegate-Protocol.h>
 
-@class CALayer, CNPhotoLikenessBuddyControlsViewController, CNPhotoLikenessEditorViewController, CNPhotoLikenessEditorZoomSliderController, CNPhotoLikenessMaskView, IKImageBrowserView, NSLayoutConstraint, NSMutableDictionary, NSOutlineView, NSString, NSTableColumn;
+@class CALayer, CNPhotoLikenessBuddyControlsViewController, CNPhotoLikenessEditorViewController, CNPhotoLikenessEditorZoomSliderController, CNPhotoLikenessMaskView, CNUIDeprecatedIKImageBrowserView, NSLayoutConstraint, NSMutableDictionary, NSOutlineView, NSString, NSTableColumn;
 
 @interface CNPhotoLikenessEditorView : NSView <NSOutlineViewDelegate, CNPhotoLikenessEditorZoomDelegate, NSTextFieldDelegate>
 {
@@ -43,6 +43,7 @@
 }
 
 + (id)viewControllerForSourceType:(long long)arg1;
++ (id)os_log;
 @property(retain) CNPhotoLikenessMaskView *maskView; // @synthesize maskView=_maskView;
 @property double viewFinderCornerRadius; // @synthesize viewFinderCornerRadius=_viewFinderCornerRadius;
 @property double viewFinderOffset; // @synthesize viewFinderOffset=_viewFinderOffset;
@@ -78,8 +79,8 @@
 - (BOOL)outlineView:(id)arg1 shouldShowOutlineCellForItem:(id)arg2;
 - (BOOL)itemHasChildren:(id)arg1;
 - (void)setZoomPosition:(double)arg1;
-@property(readonly) IKImageBrowserView *defaultPhotosLibraryView;
-@property(readonly) IKImageBrowserView *mediaLibraryView;
+@property(readonly) CNUIDeprecatedIKImageBrowserView *defaultPhotosLibraryView;
+@property(readonly) CNUIDeprecatedIKImageBrowserView *mediaLibraryView;
 - (id)cameraViewController;
 - (id)croppingViewController;
 - (id)defaultsLibraryViewController;

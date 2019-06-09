@@ -8,61 +8,11 @@
 
 #import <GameController/NSSecureCoding-Protocol.h>
 
-@class NSMutableArray, NSObject, NSString;
-@protocol GCNamedProfile, OS_dispatch_queue;
-
 @interface _GCController : GCController <NSSecureCoding>
 {
-    CDUnknownBlockType _controllerPausedHandler;
-    NSString *_vendorName;
-    long long _playerIndex;
-    id <GCNamedProfile> _profile;
-    NSMutableArray *_hidServices;
-    unsigned int _service;
-    unsigned long long _deviceHash;
-    NSObject<OS_dispatch_queue> *_handlerQueue;
-    _Bool physicalDeviceUsesCompass;
-    _Bool _allHIDDevicesConnected;
-    _Bool _published;
-    NSString *physicalDeviceUniqueID;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(getter=isPublished) _Bool published; // @synthesize published=_published;
-- (void)setPhysicalDeviceUsesCompass:(_Bool)arg1;
-- (_Bool)physicalDeviceUsesCompass;
-- (void)setPhysicalDeviceUniqueID:(id)arg1;
-- (id)physicalDeviceUniqueID;
-- (unsigned int)service;
-- (void)setProfile:(id)arg1;
-- (id)profile;
-- (void)setControllerPausedHandler:(CDUnknownBlockType)arg1;
-- (CDUnknownBlockType)controllerPausedHandler;
-- (void).cxx_destruct;
-- (id)motion;
-- (id)extendedGamepad;
-- (id)microGamepad;
-- (id)gamepad;
-- (id)description;
-- (void)setPlayerIndex:(long long)arg1;
-- (long long)playerIndex;
-- (_Bool)isAttachedToDevice;
-- (id)vendorName;
-- (_Bool)displayTrueSiriRemoteName;
-- (id)handlerQueue;
-- (void)setHandlerQueue:(id)arg1;
-- (void)clearServiceRef;
-- (id)initWithServiceRef:(struct __IOHIDServiceClient *)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithProfile:(id)arg1;
-- (unsigned long long)deviceHash;
-- (_Bool)hasServiceRef:(struct __IOHIDServiceClient *)arg1;
-- (void)removeServiceRef:(struct __IOHIDServiceClient *)arg1;
-- (void)addServiceRefs:(id)arg1;
-- (_Bool)isEqualToController:(id)arg1;
-@property(getter=areAllHIDDevicesConnected) _Bool allHIDDevicesConnected; // @synthesize allHIDDevicesConnected=_allHIDDevicesConnected;
 
 @end
 

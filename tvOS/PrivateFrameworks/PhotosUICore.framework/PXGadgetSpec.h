@@ -6,37 +6,49 @@
 
 #import <objc/NSObject.h>
 
-@class UIImage;
+@class UIColor;
 
 @interface PXGadgetSpec : NSObject
 {
     _Bool _shouldInsetAllContent;
-    _Bool _forceTouchCapabilityAvailable;
-    long long _scrollDirection;
+    _Bool _shouldUseAccessibilityLayout;
+    long long _scrollAxis;
     double _interItemSpacing;
     long long _layoutSizeClass;
     long long _layoutOrientation;
+    double _displayScale;
     double _layoutReferenceWidth;
+    UIColor *_backgroundColor;
     struct UIEdgeInsets _contentInsets;
+    struct UIEdgeInsets _layoutInsets;
     struct UIEdgeInsets _accessoryViewInset;
 }
 
-+ (void)initialize;
++ (double)sectionHeaderTitleBottomSpacingForStyle:(unsigned long long)arg1;
++ (double)sectionHeaderTopSpacingForStyle:(unsigned long long)arg1;
++ (double)sectionHeaderTitleHeightForStyle:(unsigned long long)arg1 dividerHidden:(_Bool)arg2;
++ (double)sectionHeaderHeightForStyle:(unsigned long long)arg1 dividerHidden:(_Bool)arg2;
++ (id)horizontalContentInsetsInterpolator;
 @property(readonly, nonatomic) struct UIEdgeInsets accessoryViewInset; // @synthesize accessoryViewInset=_accessoryViewInset;
-@property(readonly, nonatomic) _Bool forceTouchCapabilityAvailable; // @synthesize forceTouchCapabilityAvailable=_forceTouchCapabilityAvailable;
+@property(readonly, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(readonly, nonatomic) _Bool shouldUseAccessibilityLayout; // @synthesize shouldUseAccessibilityLayout=_shouldUseAccessibilityLayout;
+@property(readonly, nonatomic) struct UIEdgeInsets layoutInsets; // @synthesize layoutInsets=_layoutInsets;
 @property(readonly, nonatomic) double layoutReferenceWidth; // @synthesize layoutReferenceWidth=_layoutReferenceWidth;
+@property(readonly, nonatomic) double displayScale; // @synthesize displayScale=_displayScale;
 @property(readonly, nonatomic) long long layoutOrientation; // @synthesize layoutOrientation=_layoutOrientation;
 @property(readonly, nonatomic) long long layoutSizeClass; // @synthesize layoutSizeClass=_layoutSizeClass;
 @property(readonly, nonatomic) double interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 @property(readonly, nonatomic) _Bool shouldInsetAllContent; // @synthesize shouldInsetAllContent=_shouldInsetAllContent;
-@property(readonly, nonatomic) long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
+@property(readonly, nonatomic) long long scrollAxis; // @synthesize scrollAxis=_scrollAxis;
 @property(readonly, nonatomic) struct UIEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
+- (void).cxx_destruct;
 - (double)columnSpacingForColumnSpan:(long long)arg1;
 - (double)columnWidthForColumnSpan:(long long)arg1;
 - (_Bool)isEqualToGadgetSpec:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-@property(readonly, nonatomic) UIImage *accessoryImage;
-- (id)initWithTraitCollection:(id)arg1 scrollDirection:(long long)arg2;
+- (id)initWithTraitCollection:(id)arg1 scrollAxis:(long long)arg2;
+- (struct UIEdgeInsets)acccessoryViewInsetForTraitCollection:(id)arg1;
+- (_Bool)shouldInsetContentForTraitCollection:(id)arg1;
 
 @end
 

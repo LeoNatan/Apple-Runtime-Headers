@@ -6,9 +6,11 @@
 
 #import <BulletinDistributorCompanion/NSObject-Protocol.h>
 
-@class BLTSectionInfoList, NSString;
+@class BLTSectionInfoList, NSDictionary, NSString;
 
 @protocol BLTSectionInfoListDelegate <NSObject>
+- (_Bool)sectionInfoList:(BLTSectionInfoList *)arg1 override:(NSDictionary *)arg2 shouldApplyToSectionInfoForSectionID:(NSString *)arg3;
+- (_Bool)sectionInfoListSectionIDHadDisplayedCriticalBulletins:(NSString *)arg1;
 - (void)sectionInfoList:(BLTSectionInfoList *)arg1 receivedRemoveSectionWithSectionID:(NSString *)arg2;
 - (void)sectionInfoList:(BLTSectionInfoList *)arg1 receivedUpdatedSectionInfoForSectionID:(NSString *)arg2;
 @end

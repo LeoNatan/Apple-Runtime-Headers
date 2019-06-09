@@ -6,23 +6,18 @@
 
 #import <SystemMigrationNetworking/SMNAction.h>
 
-@class NSDictionary;
-
 @interface SMNWirelessDisconnectAction : SMNAction
 {
-    NSDictionary *_result;
 }
 
 + (id)actionWithPayload:(id)arg1;
 + (int)actionID;
-@property(retain) NSDictionary *result; // @synthesize result=_result;
-- (void).cxx_destruct;
 - (BOOL)success;
 - (BOOL)returnsData;
 - (BOOL)expectsAResult;
-- (BOOL)setResultFromData:(id)arg1;
 - (id)resultData;
 - (id)description;
+- (id)requestPayload;
 
 @end
 

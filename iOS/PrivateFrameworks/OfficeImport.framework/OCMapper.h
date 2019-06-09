@@ -16,13 +16,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)mapperForCurrentThread;
+- (void).cxx_destruct;
 - (id)temporaryDirectoryPath;
 - (void)teardown;
 - (void)setup;
 - (void)quit;
 - (_Bool)isCancelled;
 - (void)cancel;
-- (void)dealloc;
 - (id)init;
 
 @end

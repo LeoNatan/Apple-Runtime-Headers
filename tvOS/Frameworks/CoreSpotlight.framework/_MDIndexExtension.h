@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSExtension, NSSet, NSString;
+@class NSDictionary, NSExtension, NSSet, NSString;
 @protocol OS_dispatch_queue;
 
 @interface _MDIndexExtension : NSObject
@@ -33,6 +33,7 @@
 - (_Bool)_verifyIntegrityWithHostContext:(id)arg1;
 @property(readonly) _Bool dontRunDuringMigration;
 @property(readonly) _Bool isInternal;
+@property(readonly) NSDictionary *infoDictionary;
 @property(readonly) _Bool isEnabled;
 - (id)description;
 - (id)initWithExtension:(id)arg1 queue:(id)arg2 containerPath:(id)arg3 containerID:(id)arg4;

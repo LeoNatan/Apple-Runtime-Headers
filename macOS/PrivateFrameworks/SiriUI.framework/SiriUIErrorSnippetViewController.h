@@ -8,7 +8,6 @@
 
 @class NSError;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIErrorSnippetViewController : SiriUISnippetViewController
 {
     NSError *_error;

@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class PXBasicTileUserData, PXBasicUIViewTileAnimator, PXTitleSubtitleUILabelTile, PXUIImageTile, PXViewLayoutHelper, UILabel;
+@class PXBasicTileUserData, PXBasicUIViewTileAnimator, PXTitleSubtitleUILabelTile, PXUIImageTile, UILabel;
 
 @interface PXPhotosDetailsHeaderPlaceholderView : UIView
 {
@@ -19,10 +19,8 @@
     PXTitleSubtitleUILabelTile *_textTile;
     PXBasicTileUserData *_textTileUserData;
     UILabel *_labelForLastBaselineLayout;
-    PXViewLayoutHelper *_layoutHelper;
 }
 
-@property(readonly, nonatomic) PXViewLayoutHelper *layoutHelper; // @synthesize layoutHelper=_layoutHelper;
 - (void).cxx_destruct;
 - (void)_layoutLabelForLastBaselineLayout;
 - (void)_layoutTile:(id)arg1 withGeometry:(struct PXTileGeometry)arg2 userData:(id)arg3;

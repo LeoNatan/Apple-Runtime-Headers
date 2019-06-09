@@ -8,6 +8,7 @@
 
 @class OITSUColor;
 
+__attribute__((visibility("hidden")))
 @interface MFPhoneSolidBrush : MFPhoneBrush
 {
     OITSUColor *m_colour;

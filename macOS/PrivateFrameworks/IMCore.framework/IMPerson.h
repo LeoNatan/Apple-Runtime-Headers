@@ -83,6 +83,8 @@
 @property(readonly, nonatomic) NSString *companyName;
 @property(readonly, nonatomic) BOOL isCompany;
 - (void)dealloc;
+- (void)updateCNContact:(id)arg1;
+- (id)cnContactWithKeys:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *cnContactID;
 @property(readonly, nonatomic) ABPerson *abPerson;
 - (id)initWithABPerson:(id)arg1;

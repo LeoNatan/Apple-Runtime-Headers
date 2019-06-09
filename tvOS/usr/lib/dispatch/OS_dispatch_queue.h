@@ -14,9 +14,9 @@
 {
 }
 
-+ (void)load;
 - (void)_xref_dispose;
 @property(readonly, copy) NSString *description;
+- (oneway void)release;
 - (id)init;
 
 // Remaining properties

@@ -50,7 +50,7 @@
 - (void)rebuildLibrary:(CDUnknownBlockType)arg1;
 - (void)moveLibrary:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)applyPendingUpdates:(CDUnknownBlockType)arg1;
-- (void)migrateBook:(id)arg1 withMetadata:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)migrateBook:(id)arg1 withMetadata:(id)arg2 withCopy:(BOOL)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)evictBook:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)trashBook:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)removeBook:(id)arg1 withReply:(CDUnknownBlockType)arg2;
@@ -59,8 +59,11 @@
 - (void)importBook:(id)arg1 withMetadata:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)importBook:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)fetchImportingBooks:(CDUnknownBlockType)arg1;
+- (void)fetchBooksPartsWithAssetID:(id)arg1 result:(CDUnknownBlockType)arg2;
+- (void)fetchCompleteBooksWithAssetIDs:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)fetchBooksWithAssetIDs:(id)arg1 result:(CDUnknownBlockType)arg2;
 - (void)fetchBookAssetIDs:(CDUnknownBlockType)arg1;
+- (void)fetchCompleteBooks:(CDUnknownBlockType)arg1;
 - (void)fetchBooks:(CDUnknownBlockType)arg1;
 - (void)removeInterruptionHandler:(CDUnknownBlockType)arg1;
 - (void)addInterruptionHandler:(CDUnknownBlockType)arg1;

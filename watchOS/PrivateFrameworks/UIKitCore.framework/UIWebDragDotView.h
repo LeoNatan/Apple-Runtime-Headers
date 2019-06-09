@@ -6,20 +6,17 @@
 
 #import <UIKitCore/UIView.h>
 
-@class UIColor, UIImageView;
+@class UIColor;
 
 __attribute__((visibility("hidden")))
 @interface UIWebDragDotView : UIView
 {
-    UIColor *m_insertionPointColor;
     UIColor *m_selectionBarColor;
-    UIImageView *m_dot;
     int m_orientation;
     struct CGRect m_stickFrame;
     struct CGRect m_dotFrame;
 }
 
-@property(nonatomic) _Bool showsBall;
 - (void)drawRect:(struct CGRect)arg1;
 - (void)setEdge:(struct CGRect)arg1;
 - (struct CGRect)stickFrameForEdge:(struct CGRect)arg1 withOverlap:(float)arg2;

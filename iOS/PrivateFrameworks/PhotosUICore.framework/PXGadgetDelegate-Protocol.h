@@ -6,13 +6,12 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class PXOneUpPresentation;
-@protocol PXGadget, PXGadgetDelegate, PXGridPresentation;
+@class PXGadgetNavigationHelper;
+@protocol PXGadget, PXGadgetDelegate, PXGadgetTransition;
 
 @protocol PXGadgetDelegate <NSObject>
-- (_Bool)scrollGadgetToVisible:(id <PXGadget>)arg1 animated:(_Bool)arg2;
-- (id <PXGridPresentation>)gridPresentation;
-- (PXOneUpPresentation *)oneUpPresentation;
+@property(readonly, nonatomic) PXGadgetNavigationHelper *rootNavigationHelper;
+@property(readonly, nonatomic) id <PXGadgetTransition> gadgetTransition;
 - (void)dismissGadgetViewController:(struct NSObject *)arg1 animated:(_Bool)arg2 completion:(void (^)(void))arg3;
 - (void)presentGadgetViewController:(struct NSObject *)arg1 animated:(_Bool)arg2 completion:(void (^)(void))arg3;
 - (_Bool)gadget:(id <PXGadget>)arg1 transitionToViewController:(struct NSObject *)arg2 animated:(_Bool)arg3 completion:(void (^)(void))arg4;

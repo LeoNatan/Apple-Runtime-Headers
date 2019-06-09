@@ -8,6 +8,7 @@
 
 @class NSString, UIColor, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIQuicklinksView : UIView
 {
     UIView *_borderView;

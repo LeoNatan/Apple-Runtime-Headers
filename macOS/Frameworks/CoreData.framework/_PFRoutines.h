@@ -16,10 +16,12 @@ __attribute__((visibility("hidden")))
 + (BOOL)isUbiquitousURLDownloaded:(id)arg1 error:(id *)arg2;
 + (BOOL)isUbiquitousURLUploaded:(id)arg1 error:(id *)arg2;
 + (BOOL)isUbiquitousItemAtURL:(id)arg1;
-+ (struct __CFDictionary *)createDictionaryPartitioningObjectsIntoHierarchies:(id)arg1;
++ (struct __CFDictionary *)createDictionaryPartitioningObjectsIDByRootEntity:(id)arg1;
++ (struct __CFDictionary *)createDictionaryPartitioningObjectsIDByEntity:(id)arg1;
 + (struct __CFDictionary *)createDictionaryPartitioningObjectsByRootEntity:(id)arg1;
 + (struct __CFDictionary *)createDictionaryPartitioningObjectsByEntity:(id)arg1;
 + (id)fetchHeterogeneousCollectionByObjectIDs:(id)arg1 intoContext:(id)arg2;
++ (struct __CFDictionary *)_createDictionaryPartitioningObjectIDs:(id)arg1 intoHierarchies:(BOOL)arg2;
 + (struct __CFDictionary *)_createDictionaryPartitioningObjects:(id)arg1 intoHierarchies:(BOOL)arg2;
 + (BOOL)_expressionIsCompoundIndexCompatible:(id)arg1;
 + (id)_replaceBaseline:(id)arg1 inOrderedSet:(id)arg2 withOrderedSet:(id)arg3;
@@ -45,6 +47,8 @@ __attribute__((visibility("hidden")))
 + (void)getIndexes:(unsigned int *)arg1 fromCollection:(id)arg2 forObjectsInCollection:(id)arg3;
 + (id)encodeObjectValue:(id)arg1 forTransformableAttribute:(id)arg2;
 + (id)decodeValue:(id)arg1 forTransformableAttribute:(id)arg2;
++ (id)transformEncodeValue:(id)arg1 forTransformerNamed:(id)arg2;
++ (id)transformDecodeValue:(id)arg1 forTransformerNamed:(id)arg2;
 + (id)simpleNodesFromXMLDocument:(id)arg1 atPath:(id)arg2;
 + (id)_convert:(id)arg1 toValueClassUsing:(id)arg2;
 + (id)revertInvalidXMLEscapedString:(id)arg1;
@@ -57,6 +61,7 @@ __attribute__((visibility("hidden")))
 + (id)_base64StringFromData:(id)arg1;
 + (id)_createNicksBase64EncodedStringFromData:(id)arg1;
 + (void)setOrRemoveValue:(id)arg1 forKey:(id)arg2 inDictionary:(id)arg3;
++ (BOOL)_isInMemoryStore:(id)arg1;
 + (BOOL)_isInMemoryStoreURL:(id)arg1;
 + (void)attemptToUpdatePermissionsForFileAtPath:(const char *)arg1 toLevel:(int)arg2;
 + (void)cleanupExternalReferenceLink:(const char *)arg1;
@@ -68,6 +73,9 @@ __attribute__((visibility("hidden")))
 + (void *)readExternalReferenceDataFromFile:(id)arg1;
 + (BOOL)moveInterimFileToPermanentLocation:(id)arg1;
 + (id)writePFExternalReferenceDataToInterimFile:(id)arg1;
++ (BOOL)boolValueForOverride:(id)arg1;
++ (long long)integerValueForOverride:(id)arg1;
++ (id)stringValueForOverride:(id)arg1;
 + (id)valueForProcessArgument:(id)arg1;
 + (id)plistClassesForSecureCoding;
 + (id)attributeClassesForSecureCoding;
@@ -84,7 +92,6 @@ __attribute__((visibility("hidden")))
 + (id)_newObjectIDsArrayWithMapping:(id)arg1 andEntries:(id)arg2 andCoordinator:(id)arg3;
 + (BOOL)_generateObjectIDMaptableForArray:(id)arg1 withMapping:(id *)arg2 andEntries:(id *)arg3;
 + (void)initialize;
-- (id)_groupObjectsWithUniqueAttributesByRootEntity:(id)arg1;
 
 @end
 

@@ -37,9 +37,8 @@
 - (_Bool)wantsOutputGeometry;
 - (id)extentPolicy;
 - (id)scalePolicy;
-- (id)newRenderPipelineStateForEvaluationMode:(long long)arg1;
 - (id)imageRequest;
-- (id)imageAccumulationNodeWithImageSize:(CDStruct_912cb5d2)arg1 tileSize:(CDStruct_912cb5d2)arg2 format:(id)arg3 colorSpace:(id)arg4;
+- (id)imageAccumulationNodeWithImageSize:(CDStruct_912cb5d2)arg1 tileSize:(CDStruct_912cb5d2)arg2 borderSize:(CDStruct_912cb5d2)arg3 format:(id)arg4 colorSpace:(id)arg5;
 - (id)initWithRequest:(id)arg1;
 - (id)initWithImageRequest:(id)arg1;
 

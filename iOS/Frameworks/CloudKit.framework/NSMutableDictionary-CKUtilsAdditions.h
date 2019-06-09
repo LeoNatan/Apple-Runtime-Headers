@@ -9,5 +9,6 @@
 @interface NSMutableDictionary (CKUtilsAdditions)
 - (void)CKSynchronizedRemoveObjectForKey:(id)arg1;
 - (_Bool)CKSynchronizedSetIfAbsentObject:(id)arg1 forKey:(id)arg2;
+- (void)CKAddPropertySafelyForKey:(id)arg1 value:(id)arg2;
 @end
 

@@ -6,12 +6,12 @@
 
 #import <CoreMotion/CLIntersiloServiceProtocol-Protocol.h>
 
-@class CLNotifierData;
+@class CLCppContainer;
 @protocol CLNotifierServiceClientProtocol;
 
 @protocol CLNotifierServiceProtocol <CLIntersiloServiceProtocol>
 - (void)forget:(byref id <CLNotifierServiceClientProtocol>)arg1;
 - (void)unregister:(byref id <CLNotifierServiceClientProtocol>)arg1 forNotification:(int)arg2;
-- (void)register:(byref id <CLNotifierServiceClientProtocol>)arg1 forNotification:(int)arg2 registrationInfo:(CLNotifierData *)arg3;
+- (void)register:(byref id <CLNotifierServiceClientProtocol>)arg1 forNotification:(int)arg2 registrationInfo:(CLCppContainer *)arg3;
 @end
 

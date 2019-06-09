@@ -32,6 +32,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) CDStruct_73a5d3ca timeRange;
+- (id)segmentsIntersectingTimeRange:(CDStruct_73a5d3ca)arg1;
 - (id)segmentsByClippingToTimeRange:(CDStruct_73a5d3ca)arg1;
 - (_Bool)saveContentsToURL:(id)arg1;
 @property(readonly, nonatomic) unsigned long long averagePowerLevelsRate;

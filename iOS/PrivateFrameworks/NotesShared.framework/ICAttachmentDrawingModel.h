@@ -14,6 +14,7 @@
     _Bool _observingAttachment;
 }
 
++ (id)sharedDrawingController;
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
 @property(nonatomic) _Bool observingAttachment; // @synthesize observingAttachment=_observingAttachment;
 - (void).cxx_destruct;
@@ -31,7 +32,6 @@
 - (_Bool)hasPreviews;
 - (void)writeMergeableData;
 - (_Bool)mergeWithMergeableData:(id)arg1;
-- (id)sharedDrawingController;
 - (id)drawingDocument;
 @property(readonly, nonatomic) ICDrawing *drawing;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

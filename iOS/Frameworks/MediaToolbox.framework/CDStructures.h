@@ -12,6 +12,8 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct CGImage;
+
 struct CGPoint {
     double _field1;
     double _field2;
@@ -46,7 +48,27 @@ struct OpaqueFigCDSCALayerOutputNodeLayerInternal {
     id _field1;
 };
 
-struct OpaqueFigCDSSession;
+struct OpaqueFigCaptionRendererCALayerInternal {
+    id _field1;
+    struct CGRect _field2;
+    void *_field3;
+    CDUnknownFunctionPointerType _field4;
+    CDUnknownFunctionPointerType _field5;
+    CDUnknownFunctionPointerType _field6;
+    id _field7;
+};
+
+struct OpaqueFigCaptionRendererCALayerOutputNodeContentLayerInternal {
+    id _field1;
+    struct CGImage *_field2;
+};
+
+struct OpaqueFigCaptionRendererCALayerOutputNodeLayerInternal {
+    id _field1;
+    struct CGImage *_field2;
+};
+
+struct OpaqueFigCaptionRendererSession;
 
 struct OpaqueFigPlayer;
 
@@ -75,7 +97,7 @@ struct OpaqueFigSubtitleCALayerInternal {
     id _field10;
     unsigned int _field11;
     struct __CFString *_field12;
-    struct OpaqueFigCDSSession *_field13;
+    struct OpaqueFigCaptionRendererSession *_field13;
     struct OpaqueFigSubtitleRenderer *_field14;
     struct __CFDictionary *_field15;
     unsigned char _field16;

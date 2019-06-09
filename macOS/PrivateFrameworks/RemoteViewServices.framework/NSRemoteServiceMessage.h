@@ -19,6 +19,7 @@
 }
 
 @property(readonly) NSObject<OS_xpc_object> *message; // @synthesize message=_message;
+- (void).cxx_destruct;
 - (id)_unarchiveArguments:(id)arg1;
 - (id)_archiveArguments:(id)arg1;
 - (id)serializedMessage;
@@ -28,7 +29,6 @@
 - (void)setConnection:(id)arg1 forKey:(id)arg2;
 - (id)argumentForKey:(id)arg1;
 - (void)setArgument:(id)arg1 forKey:(id)arg2;
-- (void)dealloc;
 - (id)initWithMessage:(id)arg1;
 
 @end

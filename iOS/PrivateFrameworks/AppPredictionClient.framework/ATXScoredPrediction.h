@@ -15,13 +15,11 @@
     id _predictedItem;
 }
 
-+ (id)bundleIdsFrom:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)predictionsFrom:(id)arg1;
 @property(readonly, nonatomic) float score; // @synthesize score=_score;
 @property(readonly, nonatomic) id predictedItem; // @synthesize predictedItem=_predictedItem;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) id bundleId;
 - (void)setScore:(float)arg1;
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;

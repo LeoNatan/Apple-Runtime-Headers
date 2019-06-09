@@ -11,6 +11,7 @@
 @class BKSAccelerometer, NSMutableSet, NSString;
 @protocol CKDeviceOrientationManagerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKDeviceOrientationManager : NSObject <BKSAccelerometerDelegate>
 {
     id <CKDeviceOrientationManagerDelegate> _delegate;

@@ -11,5 +11,8 @@
 - (id)_unarchiveNotificationRequestFromData:(id)arg1;
 - (id)_unNotificationFromNSData:(id)arg1;
 - (id)_unarchiveNotificationFromData:(id)arg1;
+- (id)mtTimer;
+- (id)_firedDateWithNotificationRequest:(id)arg1;
+- (id)mtAlarm;
 @end
 

@@ -8,5 +8,7 @@
 
 @interface ABAddressBook (MessagesSPI)
 + (BOOL)forMessages_prefersNicknames;
+- (id)allSmartGroup;
+- (id)lastImportGroup;
 @end
 

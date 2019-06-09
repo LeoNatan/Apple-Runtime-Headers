@@ -17,21 +17,31 @@
     UINavigationController *_navigationController;
     UITableViewController *_tableViewController;
     NSMutableArray *_enabledTodayItemIDs;
-    NSMutableArray *_enabledWidgetItemIDs;
+    NSMutableArray *_favoriteItemIDs;
     NSMutableArray *_disabledItemIDs;
     NSArray *_groupIDs;
     double _contentMinY;
+    NSArray *_originalFavoriteItemIDs;
     _Bool _dismissingDueToInterfaceAction;
+    _Bool _showsPinSection;
+    _Bool _showsFavorites;
+    _Bool _widgetsPinnedOriginally;
+    _Bool _widgetsPinned;
     id <WGWidgetListEditViewControllerDataSource> _dataSource;
     id <WGWidgetListEditViewControllerDelegate> _delegate;
     id _statusBarColorAssertion;
 }
 
+@property(nonatomic, getter=areWidgetsPinned) _Bool widgetsPinned; // @synthesize widgetsPinned=_widgetsPinned;
+@property(nonatomic, getter=wereWidgetsPinnedOriginally) _Bool widgetsPinnedOriginally; // @synthesize widgetsPinnedOriginally=_widgetsPinnedOriginally;
+@property(nonatomic) _Bool showsFavorites; // @synthesize showsFavorites=_showsFavorites;
+@property(nonatomic) _Bool showsPinSection; // @synthesize showsPinSection=_showsPinSection;
 @property(retain, nonatomic, getter=_statusBarColorAssertion, setter=_setStatusBarColorAssertion:) id statusBarColorAssertion; // @synthesize statusBarColorAssertion=_statusBarColorAssertion;
 @property(nonatomic, getter=_isDismissingDueToInterfaceAction, setter=_setDismissingDueToInterfaceAction:) _Bool dismissingDueToInterfaceAction; // @synthesize dismissingDueToInterfaceAction=_dismissingDueToInterfaceAction;
 @property(nonatomic) __weak id <WGWidgetListEditViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <WGWidgetListEditViewControllerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (void)pinSwitchChanaged:(id)arg1;
 - (id)_widgetListEditViewTableHeaderView;
 - (long long)_compareItemWithIdentifier:(id)arg1 andItemWithIdentifierConsideringIsNew:(id)arg2;
 - (_Bool)_isNewItem:(id)arg1;
@@ -63,11 +73,19 @@
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (_Bool)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForFooterInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (long long)disabledWidgetsSection;
+- (long long)favoritesSection;
+- (long long)todaySection;
+- (long long)pinSection;
+- (_Bool)showsFavoritesSection;
+- (_Bool)alwaysShowsFavorites;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
@@ -75,7 +93,6 @@
 - (void)viewWillLayoutSubviews;
 - (long long)_layoutMode;
 - (void)viewDidLoad;
-- (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 
 // Remaining properties

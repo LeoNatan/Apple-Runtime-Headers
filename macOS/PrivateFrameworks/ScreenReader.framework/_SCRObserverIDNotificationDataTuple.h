@@ -21,10 +21,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSDictionary *data; // @synthesize data=_data;
 @property(readonly, copy, nonatomic) NSString *notification; // @synthesize notification=_notification;
 @property(readonly, nonatomic) unsigned long long observerID; // @synthesize observerID=_observerID;
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithObserverID:(unsigned long long)arg1 notification:(id)arg2 data:(id)arg3;
 
 @end

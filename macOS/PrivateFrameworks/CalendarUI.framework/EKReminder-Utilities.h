@@ -6,7 +6,11 @@
 
 #import <EventKit/EKReminder.h>
 
-@interface EKReminder (Utilities)
+#import <CalendarUI/EKUIAlertable-Protocol.h>
+
+@class NSDate, NSString;
+
+@interface EKReminder (Utilities) <EKUIAlertable>
 + (id)reminderFromString:(id)arg1 referenceDate:(id)arg2 eventStore:(id)arg3 requireDetectedDate:(BOOL)arg4;
 - (BOOL)updateWithDataDetectionForUserString:(id)arg1 referenceDate:(id)arg2;
 - (void)setSingleAlarm:(id)arg1;
@@ -18,8 +22,7 @@
 - (void)setDueDateAndSyncAlarm:(id)arg1;
 - (void)setRecurrenceEndDate:(id)arg1;
 - (id)recurrenceEndDate;
-- (void)setAlarmTime:(id)arg1;
-- (id)alarmTime;
+@property(retain) NSDate *alarmTime;
 - (id)remindMeTime;
 - (BOOL)supportsLocation;
 - (BOOL)hasData;
@@ -30,5 +33,23 @@
 - (id)sortFriendlyDueDate;
 - (id)groupFriendlyDueDate;
 - (id)groupFriendlyCompletionDate;
+@property(retain) NSString *personIdentifier;
+- (BOOL)locationIsEqualTo:(id)arg1;
+- (long long)proximity;
+- (void)setProximity:(long long)arg1;
+- (void)setLocation:(id)arg1 addressString:(id)arg2 label:(id)arg3 radius:(double)arg4;
+- (void)removeStructuredLocation;
+- (BOOL)alarmIsOnlyLocationBased;
+- (id)completeLocationString;
+- (id)preferredLocationString;
+- (id)locationAddress;
+- (id)geoLocation;
+- (id)structuredLocation;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

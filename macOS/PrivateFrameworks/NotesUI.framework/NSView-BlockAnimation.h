@@ -9,6 +9,12 @@
 @interface NSView (BlockAnimation)
 + (void)ic_animateWithDuration:(double)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)ic_animateWithDuration:(double)arg1 animations:(CDUnknownBlockType)arg2;
++ (void)ic_performWithoutAnimation:(CDUnknownBlockType)arg1;
 - (id)ic_animator;
+- (void)ic_insertSubview:(struct NSView *)arg1 belowSubview:(struct NSView *)arg2;
+- (void)ic_setAlpha:(double)arg1;
+- (void)ic_setNeedsLayout;
+- (void)ic_setNeedsDisplay;
+- (double)ic_backingScaleFactor;
 @end
 

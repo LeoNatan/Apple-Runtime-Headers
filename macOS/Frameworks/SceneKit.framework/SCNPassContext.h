@@ -10,7 +10,17 @@
 
 @interface SCNPassContext : NSObject
 {
-    CDStruct_b9d91b93 *_context;
+    struct {
+        struct __C3DFXPass *_field1;
+        struct __C3DFXTechnique *_field2;
+        void *_field3;
+        struct __C3DEngineContext *_field4;
+        struct __C3DFXProgramObject *_field5;
+        double _field6;
+        void *_field7;
+        struct __C3DRendererElement *_field8;
+        long long _field9;
+    } *_context;
 }
 
 - (id)outputTextureWithName:(id)arg1;

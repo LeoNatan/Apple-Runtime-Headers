@@ -8,20 +8,33 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 @interface GEODownloadMetadata : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    double _timestamp;
+    NSString *_environment;
     NSString *_etag;
+    double _timestamp;
     NSString *_url;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_environment:1;
+        unsigned int read_etag:1;
+        unsigned int read_url:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_environment:1;
+        unsigned int wrote_etag:1;
+        unsigned int wrote_timestamp:1;
+        unsigned int wrote_url:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *url; // @synthesize url=_url;
-@property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
-@property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,10 +43,19 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *environment;
+@property(readonly, nonatomic) _Bool hasEnvironment;
+- (void)_readEnvironment;
+@property(retain, nonatomic) NSString *url;
 @property(readonly, nonatomic) _Bool hasUrl;
+- (void)_readUrl;
+@property(retain, nonatomic) NSString *etag;
 @property(readonly, nonatomic) _Bool hasEtag;
+- (void)_readEtag;
+@property(nonatomic) double timestamp;
 
 @end
 

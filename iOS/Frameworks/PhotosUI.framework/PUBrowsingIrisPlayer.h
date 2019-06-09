@@ -28,7 +28,6 @@
     _Bool _activated;
     _Bool _playing;
     int __livePhotoRequestID;
-    int __currentFrameCuratorRequstID;
     ISLivePhotoPlayer *_player;
     CDUnknownBlockType durationChangeHandler;
     CDUnknownBlockType statusChangeHandler;
@@ -48,7 +47,6 @@
 }
 
 @property(copy, nonatomic, setter=_setSeekCompletionHandler:) CDUnknownBlockType _seekCompletionHandler; // @synthesize _seekCompletionHandler=__seekCompletionHandler;
-@property(nonatomic, setter=_setCurrentFrameCuratorRequestID:) int _currentFrameCuratorRequstID; // @synthesize _currentFrameCuratorRequstID=__currentFrameCuratorRequstID;
 @property(nonatomic, setter=_setLivePhotoRequestID:) int _livePhotoRequestID; // @synthesize _livePhotoRequestID=__livePhotoRequestID;
 @property(nonatomic, setter=_setLivePhotoRequestState:) long long _livePhotoRequestState; // @synthesize _livePhotoRequestState=__livePhotoRequestState;
 @property(retain, nonatomic, setter=_setLivePhoto:) PHLivePhoto *_livePhoto; // @synthesize _livePhoto=__livePhoto;

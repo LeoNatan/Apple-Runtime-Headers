@@ -10,6 +10,7 @@
 @property(readonly, nonatomic) _Bool isEnabled;
 @property(readonly, nonatomic) _Bool isLocalStore;
 @property(readonly, nonatomic) int rowID;
+- (NSString *)delegatedAccountOwnerAccountIdentifier;
 - (NSString *)accountIdentifier;
 - (NSString *)storeName;
 @end

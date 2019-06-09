@@ -6,34 +6,97 @@
 
 #import <objc/NSObject.h>
 
+#import <coreroutine/RTDiagnosticProvider-Protocol.h>
 #import <coreroutine/RTPersistenceMirroringDelegate-Protocol.h>
+#import <coreroutine/RTPersistenceMirroringMetricsDelegate-Protocol.h>
+#import <coreroutine/RTPersistenceMirroringRequestDelegate-Protocol.h>
+#import <coreroutine/RTPurgable-Protocol.h>
 
-@class NSString, RTDefaultsManager, RTInvocationDispatcher, RTKeepAliveTransaction, RTMemoryTransaction, RTPersistenceManager, RTPersistenceMirroringPolicy, RTPowerAssertion, RTXPCActivityManager;
-@protocol OS_dispatch_queue;
+@class NSMutableArray, NSMutableDictionary, NSString, RTAccountManager, RTAuthorizationManager, RTDefaultsManager, RTInvocationDispatcher, RTPersistenceCloudDeletionEnforcer, RTPersistenceManager, RTPersistenceMirroringRequest, RTPowerAssertion, RTReachabilityManager, RTTimerManager, RTXPCActivityManager;
+@protocol OS_dispatch_queue, OS_os_transaction, RTPersistenceMirroringMetricsDelegate;
 
-@interface RTPersistenceMirroringManager : NSObject <RTPersistenceMirroringDelegate>
+@interface RTPersistenceMirroringManager : NSObject <RTPersistenceMirroringMetricsDelegate, RTPersistenceMirroringRequestDelegate, RTPersistenceMirroringDelegate, RTPurgable, RTDiagnosticProvider>
 {
-    NSObject<OS_dispatch_queue> *_queue;
-    RTPersistenceManager *_persistenceManager;
     RTDefaultsManager *_defaultsManager;
-    RTPowerAssertion *_powerAssertion;
-    RTMemoryTransaction *_memoryTransaction;
-    RTKeepAliveTransaction *_keepAliveTransaction;
     RTInvocationDispatcher *_dispatcher;
-    RTPersistenceMirroringPolicy *_mirroringPolicy;
+    RTTimerManager *_timerManager;
+    RTAuthorizationManager *_authorizationManager;
+    RTAccountManager *_accountManager;
+    RTReachabilityManager *_reachabilityManager;
+    _Bool _routineEnabled;
+    long long _cloudSyncAuthorizationState;
+    long long _currentReachability;
+    id <RTPersistenceMirroringMetricsDelegate> _metricsDelegate;
+    RTPersistenceManager *_persistenceManager;
+    RTPowerAssertion *_powerAssertion;
+    NSObject<OS_os_transaction> *_setupTransaction;
+    NSMutableDictionary *_mirroringPolicies;
+    NSMutableDictionary *_retryTimers;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableArray *_pendingMirroringRequests;
+    RTPersistenceMirroringRequest *_activeMirroringRequest;
     RTXPCActivityManager *_xpcActivityManager;
+    RTPersistenceCloudDeletionEnforcer *_persistenceCloudDeletionEnforcer;
 }
 
++ (id)allocWithZone:(struct _NSZone *)arg1;
+@property(retain, nonatomic) RTPersistenceCloudDeletionEnforcer *persistenceCloudDeletionEnforcer; // @synthesize persistenceCloudDeletionEnforcer=_persistenceCloudDeletionEnforcer;
+@property(retain, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
+@property(retain, nonatomic) RTPersistenceMirroringRequest *activeMirroringRequest; // @synthesize activeMirroringRequest=_activeMirroringRequest;
+@property(retain, nonatomic) NSMutableArray *pendingMirroringRequests; // @synthesize pendingMirroringRequests=_pendingMirroringRequests;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(retain, nonatomic) NSMutableDictionary *retryTimers; // @synthesize retryTimers=_retryTimers;
+@property(retain, nonatomic) NSMutableDictionary *mirroringPolicies; // @synthesize mirroringPolicies=_mirroringPolicies;
+@property(retain, nonatomic) NSObject<OS_os_transaction> *setupTransaction; // @synthesize setupTransaction=_setupTransaction;
+@property(retain, nonatomic) RTPowerAssertion *powerAssertion; // @synthesize powerAssertion=_powerAssertion;
+@property(retain, nonatomic) RTPersistenceManager *persistenceManager; // @synthesize persistenceManager=_persistenceManager;
+@property __weak id <RTPersistenceMirroringMetricsDelegate> metricsDelegate; // @synthesize metricsDelegate=_metricsDelegate;
 - (void).cxx_destruct;
+- (void)_onMirroringDelegateInitialization:(id)arg1;
+- (void)onMirroringDelegateInitialization:(id)arg1;
+- (_Bool)_fetchZoneChangesForDatabase:(id)arg1 outputURL:(id)arg2 error:(id *)arg3;
+- (_Bool)_fetchDatabaseChangesForDatabase:(id)arg1 outputURL:(id)arg2 error:(id *)arg3;
+- (_Bool)_generateDiagnosticFilesAtURL:(id)arg1 error:(id *)arg2;
+- (void)sendDiagnosticsToURL:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)optionsForQualityOfService:(long long)arg1;
+- (void)_updateMirroringDelegateState;
+- (long long)_mirroringDelegateState;
+- (void)_onReachabilityChange:(id)arg1;
+- (void)onReachabilityChange:(id)arg1;
+- (void)_onCloudSyncAuthorizationChange:(id)arg1;
+- (void)onCloudSyncAuthorizationChange:(id)arg1;
+- (void)_onAuthorizationChange:(id)arg1;
+- (void)onAuthorizationChange:(id)arg1;
 - (void)_persistenceAvailabilityDidChange:(id)arg1;
 - (void)persistenceAvailabilityDidChange:(id)arg1;
+- (void)_scheduleRetryAttemptForRequest:(id)arg1 referenceDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_prepareRequestForRetryAttempt:(id)arg1 retryInterval:(double)arg2;
+- (void)_dequeueNextMirroringRequest;
+- (void)_finalizeMirroringRequest:(id)arg1;
+- (void)mirroringRequestDidSucceed:(id)arg1;
+- (_Bool)mirroringRequest:(id)arg1 didFailWithError:(id)arg2;
+- (void)mirroringRequestDidBegin:(id)arg1;
+- (void)_startMirroringRequest:(id)arg1 context:(id)arg2;
+- (void)_enqueueMirroringRequest:(id)arg1 context:(id)arg2;
 - (void)_performMirroringRequestWithType:(long long)arg1 affectedStore:(id)arg2 qualityOfService:(long long)arg3 managedObjectContext:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)performMirroringRequestWithType:(long long)arg1 affectedStore:(id)arg2 qualityOfService:(long long)arg3 managedObjectContext:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)performMirroringRequestWithType:(long long)arg1 affectedStore:(id)arg2 qualityOfService:(long long)arg3 handler:(CDUnknownBlockType)arg4;
+- (void)_performPeriodicExportWithHandler:(CDUnknownBlockType)arg1;
+- (void)_performPeriodicImportWithHandler:(CDUnknownBlockType)arg1;
+- (void)performPeriodicSyncWithHandler:(CDUnknownBlockType)arg1;
+- (_Bool)_authorizedToMirror;
+- (_Bool)_dataAvailableToMirror;
 - (void)dealloc;
 - (void)shutdown;
-- (id)initWithPersistenceManager:(id)arg1 defaultsManager:(id)arg2 xpcActivityManager:(id)arg3;
+- (void)unregisterForXPCActivities;
+- (void)registerForXPCActivities;
+- (id)initWithAccountManager:(id)arg1 authorizationManager:(id)arg2 persistenceCloudDeletionEnforcer:(id)arg3 persistenceManager:(id)arg4 defaultsManager:(id)arg5 mirroringPolicies:(id)arg6 reachabilityManager:(id)arg7 timerManager:(id)arg8 xpcActivityManager:(id)arg9;
+- (id)initWithAccountManager:(id)arg1 authorizationManager:(id)arg2 defaultsManager:(id)arg3 persistenceManager:(id)arg4 reachabilityManager:(id)arg5 xpcActivityManager:(id)arg6;
 - (id)init;
+- (void)collectMetricsFromMirroringRequest:(id)arg1 error:(id)arg2;
+- (void)mirroringManager:(id)arg1 mirroringRequest:(id)arg2 didFailWithError:(id)arg3;
+- (void)mirroringManager:(id)arg1 mirroringRequestDidSucceed:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

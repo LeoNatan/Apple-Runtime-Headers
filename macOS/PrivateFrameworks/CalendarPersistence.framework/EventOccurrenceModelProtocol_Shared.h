@@ -14,7 +14,6 @@
 + (BOOL)_userAddressesRepresentsInvitedAttendee:(id)arg1 forOccurrence:(id)arg2;
 + (BOOL)_userAddresses:(id)arg1 representAttendee:(id)arg2;
 + (id)durationForEvent:(id)arg1;
-+ (id)birthdayTitleForEvent:(id)arg1 date:(id)arg2;
 + (BOOL)isCurrentUserInvitedAttendeeForOccurrence:(id)arg1 inCalendar:(id)arg2;
 + (BOOL)isCurrentUserInvitedAttendeeForOccurrence:(id)arg1;
 + (BOOL)isCalendarOwnerRepresentedByAttendee:(id)arg1 inCalendar:(id)arg2;

@@ -9,5 +9,10 @@
 @interface NSDictionary (UIStringDrawingKeyCompatibility)
 - (id)_ui_attributesForDictionaryContainingUIStringDrawingKeys;
 - (_Bool)_ui_dictionaryContainsUIStringDrawingKeys;
+- (_Bool)_boolForKey:(id)arg1;
+- (int)_web_messageType;
+- (id)_web_messageSourceURL;
+- (int)_web_messageLineNumber;
+- (id)_web_messageText;
 @end
 

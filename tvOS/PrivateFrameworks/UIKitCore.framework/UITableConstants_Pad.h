@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 - (struct UIEdgeInsets)defaultLayoutMarginsForCell:(id)arg1 inTableView:(id)arg2;
 - (double)defaultRowHeightForTableView:(id)arg1;
 - (double)defaultRowHeightForTableView:(id)arg1 cellStyle:(long long)arg2;
-- (_Bool)useOffWhiteEtchedLook;
 - (_Bool)supportsUserInterfaceStyles;
 
 @end

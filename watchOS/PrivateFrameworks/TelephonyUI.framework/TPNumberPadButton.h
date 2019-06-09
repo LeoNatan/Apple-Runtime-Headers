@@ -21,6 +21,7 @@
     TPRevealingRingView *_revealingRingView;
 }
 
++ (id)disabledImageForCharacter:(unsigned int)arg1;
 + (float)highlightedCircleViewAlpha;
 + (float)unhighlightedCircleViewAlpha;
 + (float)horizontalPadding;
@@ -31,6 +32,7 @@
 + (void)loadNumberPadKeyPrototypeView;
 + (id)imageForCharacter:(unsigned int)arg1 highlighted:(_Bool)arg2 whiteVersion:(_Bool)arg3;
 + (id)localizedLettersForCharacter:(unsigned int)arg1;
++ (_Bool)isCarPlay;
 + (_Bool)usesBoldAssets;
 + (_Bool)usesButtonSaturationFilters;
 + (_Bool)usesTelephonyGlyphsWhereAvailable;
@@ -56,7 +58,8 @@
 - (void)setHighlighted:(_Bool)arg1;
 - (void)highlightCircleView:(_Bool)arg1 animated:(_Bool)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (void)loadImagesForCurrentCharacter;
+- (void)setGreyedOut:(_Bool)arg1;
+- (void)reloadImagesForCurrentCharacter;
 - (id)initForCharacter:(unsigned int)arg1;
 
 // Remaining properties

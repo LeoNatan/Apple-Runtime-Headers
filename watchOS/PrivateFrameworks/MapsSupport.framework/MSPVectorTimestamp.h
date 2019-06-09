@@ -24,6 +24,7 @@
 - (unsigned int)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)timestampIncreasingClientIdentifier:(id)arg1;
+- (int)compare:(id)arg1 isComparable:(out _Bool *)arg2;
 - (_Bool)_compare:(id)arg1 comparisonResult:(out int *)arg2 isOppositeCheck:(_Bool)arg3;
 - (_Bool)compare:(id)arg1 comparisonResult:(out int *)arg2;
 @property(readonly, nonatomic, getter=_timestampValues) NSDictionary *timestampValues;

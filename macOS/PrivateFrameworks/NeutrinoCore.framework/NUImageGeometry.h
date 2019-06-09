@@ -6,19 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <NeutrinoCore/NUSpaceMapping-Protocol.h>
+#import <NeutrinoCore/NUTaggedSpaceMapping-Protocol.h>
 
-@protocol NUSpaceMapping;
+@protocol NUTaggedSpaceMapping;
 
-@interface NUImageGeometry : NSObject <NUSpaceMapping>
+@interface NUImageGeometry : NSObject <NUTaggedSpaceMapping>
 {
     long long _orientation;
-    id <NUSpaceMapping> _spaceMap;
+    id <NUTaggedSpaceMapping> _spaceMap;
     CDStruct_1e2b2e48 _renderScale;
     CDStruct_996ac03c _extent;
 }
 
-@property(readonly, nonatomic) id <NUSpaceMapping> spaceMap; // @synthesize spaceMap=_spaceMap;
+@property(readonly, nonatomic) id <NUTaggedSpaceMapping> spaceMap; // @synthesize spaceMap=_spaceMap;
 @property(readonly, nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(readonly, nonatomic) CDStruct_912cb5d2 renderScale; // @synthesize renderScale=_renderScale;
 @property(readonly, nonatomic) CDStruct_996ac03c extent; // @synthesize extent=_extent;

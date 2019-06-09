@@ -13,7 +13,6 @@
 - (void)clickInteractionDidClickUp:(_UIClickInteraction *)arg1;
 
 @optional
-- (void)clickInteraction:(_UIClickInteraction *)arg1 didObserveForce:(double)arg2;
 - (void)clickInteractionDidEnd:(_UIClickInteraction *)arg1;
 - (id <UIInteractionEffect>)highlightEffectForClickInteraction:(_UIClickInteraction *)arg1;
 - (void)clickInteractionDidClickDown:(_UIClickInteraction *)arg1;

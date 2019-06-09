@@ -9,5 +9,6 @@
 @interface NSValue (CPLArchiver)
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
+- (id)cplFullDescription;
 @end
 

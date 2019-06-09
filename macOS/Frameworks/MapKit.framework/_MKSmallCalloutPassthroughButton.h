@@ -6,6 +6,7 @@
 
 #import <AppKit/NSControl.h>
 
+__attribute__((visibility("hidden")))
 @interface _MKSmallCalloutPassthroughButton : NSControl
 {
     NSControl *_targetControl;

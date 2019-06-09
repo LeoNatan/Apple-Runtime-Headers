@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class NSObject, NSString;
+@class NSObject, NSString, NSValue;
 
 __attribute__((visibility("hidden")))
 @interface SCNUIBindableView : NSView
@@ -15,8 +15,10 @@ __attribute__((visibility("hidden")))
     NSString *observedKeyPath;
     id target;
     SEL action;
+    NSValue *_value;
 }
 
+@property(readonly, nonatomic) NSValue *value; // @synthesize value=_value;
 @property(nonatomic) SEL action; // @synthesize action;
 @property(nonatomic) __weak id target; // @synthesize target;
 - (void).cxx_destruct;

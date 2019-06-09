@@ -6,7 +6,7 @@
 
 #import <PowerlogCore/PLAgent.h>
 
-@class NSDate, PLNSNotificationOperatorComposition, PLXPCListenerOperatorComposition, PLXPCResponderOperatorComposition;
+@class NSDate, PLEntry, PLEntryNotificationOperatorComposition, PLNSNotificationOperatorComposition, PLXPCListenerOperatorComposition, PLXPCResponderOperatorComposition;
 
 @interface PLXPCAgent : PLAgent
 {
@@ -14,6 +14,7 @@
     PLXPCListenerOperatorComposition *_UIKitKeyboardXPCListener;
     PLXPCListenerOperatorComposition *_UIKitActivityXPCListener;
     PLXPCListenerOperatorComposition *_UIKitAlertXPCListener;
+    PLXPCListenerOperatorComposition *_UIKitEclipseXPCListener;
     PLXPCListenerOperatorComposition *_DASyncStartXPCListener;
     PLXPCListenerOperatorComposition *_DACalendarItemsDownloadedXPCListener;
     PLXPCListenerOperatorComposition *_DACalendarItemsUploadedXPCListener;
@@ -58,6 +59,8 @@
     PLXPCListenerOperatorComposition *_CommuteRefreshXPCListener;
     PLXPCListenerOperatorComposition *_SecItemXPCListener;
     PLXPCListenerOperatorComposition *_SOSKVSRateLimitingEventXPCListener;
+    PLXPCListenerOperatorComposition *_CKKSSyncingEventXPCListener;
+    PLXPCListenerOperatorComposition *_OctagonTrustEventXPCListener;
     long long _SOSKVSEntries;
     long long _peekpopProcessID;
     NSDate *_peekStartTime;
@@ -72,6 +75,11 @@
     PLXPCListenerOperatorComposition *_ODHNXPCListener;
     PLXPCListenerOperatorComposition *_AirTrafficAssetDownloadXPCListener;
     PLXPCListenerOperatorComposition *_CoreDuetKnowledgeSyncXPCListener;
+    PLXPCListenerOperatorComposition *_AppleBacklightBrightnessXPCListener;
+    PLXPCListenerOperatorComposition *_ShortcutsTriggerFiredXPCListener;
+    PLEntryNotificationOperatorComposition *_SBCXPCListener;
+    PLXPCListenerOperatorComposition *_sensitiveUISettingXPCListener;
+    PLEntry *_lastSensitiveUISettingEntry;
 }
 
 + (id)entryAggregateDefinitions;
@@ -79,6 +87,7 @@
 + (id)entryEventIntervalDefinitionCoreDuetKnowledgeSync;
 + (id)entryEventIntervalDefinitionAirTrafficAssetDownload;
 + (id)entryEventIntervalDefinitions;
++ (id)entryEventBackwardDefinitionCKKSSyncing;
 + (id)entryEventBackwardDefinitionUbiquityAccountStatistics;
 + (id)entryEventBackwardDefinitionMediaServerdRTC;
 + (id)entryEventBackwardDefinitionODHN;
@@ -92,6 +101,9 @@
 + (id)entryEventBackwardDefinitionPeekPop;
 + (id)entryEventBackwardDefinitionSiriFalseAlarm;
 + (id)entryEventBackwardDefinitions;
++ (id)entryEventForwardDefinitionsSensitiveUISetting;
++ (BOOL)shouldLogSensitiveUISetting;
++ (id)entryEventForwardDefinitionAppleBacklightBrightness;
 + (id)entryEventForwardDefinitionSOSKVSRateLimitingEvent;
 + (id)entryEventForwardDefinitionThermalHiP;
 + (id)entryEventForwardDefinitionThermalLevel;
@@ -104,11 +116,15 @@
 + (id)entryEventForwardDefinitionSafariFetcher;
 + (id)entryEventForwardDefinitionUIKitAlert;
 + (id)entryEventForwardDefinitionUIKitActivity;
++ (id)entryEventForwardDefinitionUIKitEclipse;
 + (id)entryEventForwardDefinitionUIKitKeyboard;
 + (id)entryEventForwardDefinitions;
++ (id)entryEventPointDefinitionShortcutsTriggerFired;
 + (id)entryEventPointDefinitionSpotlightWatchdogFired;
 + (id)entryEventPointDefinitionSiriActivication;
 + (id)entryEventPointDefinitionDeepScanReasons;
++ (id)entryEventPointDefinitionCKKSSyncingRateLimit;
++ (id)entryEventPointDefinitionOctagonTrust;
 + (id)entryEventPointDefinitionSecItem;
 + (id)entryEventPointDefinitionCacheDelete;
 + (id)entryEventPointDefinitionCommuteRefresh;
@@ -141,6 +157,11 @@
 + (BOOL)shouldLogiOSWatchOSOnly;
 + (id)defaults;
 + (void)load;
+@property(retain) PLEntry *lastSensitiveUISettingEntry; // @synthesize lastSensitiveUISettingEntry=_lastSensitiveUISettingEntry;
+@property(retain) PLXPCListenerOperatorComposition *sensitiveUISettingXPCListener; // @synthesize sensitiveUISettingXPCListener=_sensitiveUISettingXPCListener;
+@property(retain) PLEntryNotificationOperatorComposition *SBCXPCListener; // @synthesize SBCXPCListener=_SBCXPCListener;
+@property(retain) PLXPCListenerOperatorComposition *ShortcutsTriggerFiredXPCListener; // @synthesize ShortcutsTriggerFiredXPCListener=_ShortcutsTriggerFiredXPCListener;
+@property(retain) PLXPCListenerOperatorComposition *AppleBacklightBrightnessXPCListener; // @synthesize AppleBacklightBrightnessXPCListener=_AppleBacklightBrightnessXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *CoreDuetKnowledgeSyncXPCListener; // @synthesize CoreDuetKnowledgeSyncXPCListener=_CoreDuetKnowledgeSyncXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *AirTrafficAssetDownloadXPCListener; // @synthesize AirTrafficAssetDownloadXPCListener=_AirTrafficAssetDownloadXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *ODHNXPCListener; // @synthesize ODHNXPCListener=_ODHNXPCListener;
@@ -155,6 +176,8 @@
 @property(retain) NSDate *peekStartTime; // @synthesize peekStartTime=_peekStartTime;
 @property long long peekpopProcessID; // @synthesize peekpopProcessID=_peekpopProcessID;
 @property long long SOSKVSEntries; // @synthesize SOSKVSEntries=_SOSKVSEntries;
+@property(retain) PLXPCListenerOperatorComposition *OctagonTrustEventXPCListener; // @synthesize OctagonTrustEventXPCListener=_OctagonTrustEventXPCListener;
+@property(retain) PLXPCListenerOperatorComposition *CKKSSyncingEventXPCListener; // @synthesize CKKSSyncingEventXPCListener=_CKKSSyncingEventXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *SOSKVSRateLimitingEventXPCListener; // @synthesize SOSKVSRateLimitingEventXPCListener=_SOSKVSRateLimitingEventXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *SecItemXPCListener; // @synthesize SecItemXPCListener=_SecItemXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *CommuteRefreshXPCListener; // @synthesize CommuteRefreshXPCListener=_CommuteRefreshXPCListener;
@@ -199,6 +222,7 @@
 @property(retain) PLXPCListenerOperatorComposition *DACalendarItemsUploadedXPCListener; // @synthesize DACalendarItemsUploadedXPCListener=_DACalendarItemsUploadedXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *DACalendarItemsDownloadedXPCListener; // @synthesize DACalendarItemsDownloadedXPCListener=_DACalendarItemsDownloadedXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *DASyncStartXPCListener; // @synthesize DASyncStartXPCListener=_DASyncStartXPCListener;
+@property(retain) PLXPCListenerOperatorComposition *UIKitEclipseXPCListener; // @synthesize UIKitEclipseXPCListener=_UIKitEclipseXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *UIKitAlertXPCListener; // @synthesize UIKitAlertXPCListener=_UIKitAlertXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *UIKitActivityXPCListener; // @synthesize UIKitActivityXPCListener=_UIKitActivityXPCListener;
 @property(retain) PLXPCListenerOperatorComposition *UIKitKeyboardXPCListener; // @synthesize UIKitKeyboardXPCListener=_UIKitKeyboardXPCListener;
@@ -224,16 +248,22 @@
 - (void)logEventBackwardNameSpotlightQos:(id)arg1;
 - (void)logEventBackwardNameSpotlight:(id)arg1;
 - (void)logEventBackwardNameMediaServerdRTC:(id)arg1;
+- (void)logEventForwardSensitiveUISetting:(id)arg1;
 - (void)logEventForwardThermalLevel:(id)arg1;
 - (void)logEventForwardWebApp:(id)arg1;
 - (void)logEventForwardInCallService:(id)arg1;
 - (void)logEventForwardSiri:(id)arg1;
 - (void)logEventForwardAirDrop:(id)arg1;
+- (void)logEventForwardAppleBackklightBrightness:(id)arg1;
 - (void)logEventForwardSafariFetcherStatus:(id)arg1;
 - (void)logEventForwardUIKitAlert:(id)arg1;
 - (void)logEventForwardUIKitActivity:(id)arg1;
+- (void)logEventForwardUIKitEclipse:(id)arg1;
 - (void)logEventForwardUIKitKeyboard:(id)arg1;
+- (void)handleCKKSSyncingEvent:(id)arg1;
+- (void)logEventPointOctagonTrustEvent:(id)arg1;
 - (void)logEventForwardSOSKVSRateLimitingEvent:(id)arg1;
+- (void)logEventPointShortcutsTriggerFired:(id)arg1;
 - (void)logEventPointSiriActivation:(id)arg1;
 - (void)logEventPointSecItemSession:(id)arg1;
 - (void)logEventPointCommuteRefreshSession:(id)arg1;

@@ -13,7 +13,7 @@
     MFMessage *_message;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)textHtmlPart;
 - (id)attachmentURLs;
 - (id)attachments;

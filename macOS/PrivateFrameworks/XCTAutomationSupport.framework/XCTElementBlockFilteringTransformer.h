@@ -25,7 +25,9 @@
 - (id)requiredKeyPathsOrError:(id *)arg1;
 @property(readonly) BOOL supportsAttributeKeyPathAnalysis;
 @property(readonly) BOOL supportsRemoteEvaluation;
+- (BOOL)canBeRemotelyEvaluatedWithCapabilities:(id)arg1;
 - (id)transform:(id)arg1 relatedElements:(id *)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBlockFilter:(CDUnknownBlockType)arg1;
 
 // Remaining properties

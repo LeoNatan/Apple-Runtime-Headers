@@ -60,6 +60,7 @@
 - (void)performTapAction;
 - (_Bool)hasTapAction;
 - (void)_updateComplicationDimState;
+- (id)privacyTemplate;
 - (id)_currentEntry;
 - (void)_startExtendLeftOperationFromDate:(id)arg1;
 - (void)_startExtendRightOperationFromDate:(id)arg1;
@@ -82,6 +83,7 @@
 - (void)_completeSetupOperationWithDirections:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 privacyBehavior:(unsigned int)arg4 timelineAnimationBehavior:(unsigned int)arg5 currentEntry:(id)arg6;
 - (void)complicationCollection:(id)arg1 didRemoveSampleTemplatesForClient:(id)arg2;
 - (void)complicationCollection:(id)arg1 didUpdateSampleTemplateForClient:(id)arg2;
+- (void)entriesDidChangeInTimeline:(id)arg1;
 - (void)timeTravelEntryDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)_queueAnimationForNextUpdate:(unsigned int)arg1;
 - (void)nowEntryDidChangeFrom:(id)arg1 to:(id)arg2;
@@ -89,6 +91,7 @@
 - (void)setTimelineStartDate:(id)arg1;
 - (void)_reloadTimeline;
 - (id)_sampleTemplateIfExists;
+- (id)activeDisplayTemplate;
 - (void)_updateCurrentTemplate;
 - (void)_updateTimeTravelBoundaries;
 - (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;

@@ -41,6 +41,7 @@
 @property(retain) NSTouchBarItem *rotateLeftItem; // @synthesize rotateLeftItem=_rotateLeftItem;
 @property(retain) NSTouchBarItem *markupItem; // @synthesize markupItem=_markupItem;
 @property(retain) NSTouchBarItem *shareItem; // @synthesize shareItem=_shareItem;
+@property(retain) NSTouchBarItem *openItem; // @synthesize openItem=_openItem;
 @property(retain, nonatomic) NSTouchBar *touchBar; // @synthesize touchBar=_touchBar;
 @property __weak id <QLPreviewTouchBarDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

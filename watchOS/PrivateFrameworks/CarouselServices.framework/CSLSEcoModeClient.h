@@ -23,6 +23,7 @@
 - (void)set24hMode:(_Bool)arg1;
 - (void)setInfo24hMode:(_Bool)arg1 deviceRotatedUp:(_Bool)arg2 utcOffset:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setEcoMode:(_Bool)arg1 thermalTrap:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)remoteObjectProxyWithRetryHandler:(CDUnknownBlockType)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (id)init;
 
 @end

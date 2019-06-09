@@ -6,14 +6,15 @@
 
 #import <ContactsUICore/NSObject-Protocol.h>
 
-@class CNContact, CNObservable, NSArray;
-@protocol CNCancelable, CNKeyDescriptor, CNUIPlaceholderProviderFactory;
+@class CNContact, CNObservable, CNUIPRLikenessResolverOptions, NSArray, PRMonogramColor;
+@protocol CNCancelable, CNKeyDescriptor, CNScheduler, CNUIPlaceholderProviderFactory;
 
 @protocol CNUIPRLikenessResolver <NSObject>
 + (id <CNKeyDescriptor>)descriptorForRequiredKeys;
 - (id <CNUIPlaceholderProviderFactory>)placeholderProviderFactory;
-- (CNObservable *)basicMonogramObservableFromString:(CNObservable *)arg1;
-- (CNObservable *)likenessesForContact:(CNContact *)arg1;
-- (id <CNCancelable>)resolveLikenessesForContacts:(NSArray *)arg1 withContentHandler:(void (^)(NSArray *))arg2;
+- (CNObservable *)basicMonogramObservableFromString:(CNObservable *)arg1 color:(PRMonogramColor *)arg2;
+- (CNObservable *)likenessesForContact:(CNContact *)arg1 options:(CNUIPRLikenessResolverOptions *)arg2 workScheduler:(id <CNScheduler>)arg3;
+- (CNObservable *)likenessesForContact:(CNContact *)arg1 workScheduler:(id <CNScheduler>)arg2;
+- (id <CNCancelable>)resolveLikenessesForContacts:(NSArray *)arg1 workScheduler:(id <CNScheduler>)arg2 withContentHandler:(void (^)(NSArray *))arg3;
 @end
 

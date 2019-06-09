@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 + (id)viewControllerProviderClass;
 + (_Bool)handlesUrl:(id)arg1 result:(struct __DDResult *)arg2;
 - (void).cxx_destruct;
+- (id)menuActionClasses;
 - (id)previewActions;
 - (id)commitURL;
 - (id)platterTitle;

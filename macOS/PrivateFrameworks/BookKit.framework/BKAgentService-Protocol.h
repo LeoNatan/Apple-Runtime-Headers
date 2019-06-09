@@ -33,7 +33,7 @@
 - (void)redactBook:(NSDictionary *)arg1 withReply:(void (^)(id, NSError *))arg2;
 - (void)examineBook:(NSURL *)arg1 withToken:(NSData *)arg2 includeCover:(BOOL)arg3 results:(void (^)(id, NSError *))arg4;
 - (void)uncompressBook:(NSDictionary *)arg1 results:(void (^)(id, NSError *))arg2;
-- (void)migrateBook:(NSURL *)arg1 withToken:(NSData *)arg2 withMetadata:(NSDictionary *)arg3 results:(void (^)(id, NSError *))arg4;
+- (void)migrateBook:(NSURL *)arg1 withToken:(NSData *)arg2 withMetadata:(NSDictionary *)arg3 withCopy:(BOOL)arg4 results:(void (^)(id, NSError *))arg5;
 - (void)prioritizeImport:(NSString *)arg1 results:(void (^)(id, NSError *))arg2;
 - (void)evictBook:(NSURL *)arg1 withToken:(NSData *)arg2 results:(void (^)(id, NSError *))arg3;
 - (void)trashBook:(NSDictionary *)arg1 results:(void (^)(id, NSError *))arg2;
@@ -42,8 +42,11 @@
 - (void)importBook:(NSURL *)arg1 withToken:(NSData *)arg2 withMetadata:(NSDictionary *)arg3 results:(void (^)(id, NSError *))arg4;
 - (void)importBook:(NSURL *)arg1 withToken:(NSData *)arg2 results:(void (^)(id, NSError *))arg3;
 - (void)fetchImportingBooks:(void (^)(id, NSError *))arg1;
+- (void)fetchBooksPartsWithAssetID:(NSString *)arg1 result:(void (^)(id, NSError *))arg2;
+- (void)fetchCompleteBooksWithAssetIDs:(NSArray *)arg1 results:(void (^)(id, NSError *))arg2;
 - (void)fetchBooksWithAssetIDs:(NSArray *)arg1 results:(void (^)(id, NSError *))arg2;
 - (void)fetchBookAssetIDs:(void (^)(id, NSError *))arg1;
+- (void)fetchCompleteBooks:(void (^)(id, NSError *))arg1;
 - (void)fetchBooks:(void (^)(id, NSError *))arg1;
 - (void)fetchBookLibraryTokens:(void (^)(id, NSError *))arg1;
 @end

@@ -15,6 +15,7 @@
 
 @property(retain) NSArray *systemDNSSettings; // @synthesize systemDNSSettings=_systemDNSSettings;
 - (void).cxx_destruct;
+- (BOOL)handleNewUDPFlow:(id)arg1 initialRemoteEndpoint:(id)arg2;
 - (BOOL)handleNewFlow:(id)arg1;
 - (void)cancelProxyWithError:(id)arg1;
 - (void)stopProxyWithReason:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -6,18 +6,21 @@
 
 #import <objc/NSObject.h>
 
-#import <AccountsDaemon/ACDAccountStoreProtocol-Protocol.h>
+#import <AccountsDaemon/ACRemoteAccountStoreProtocol-Protocol.h>
 
 @class ACDAccountStore, NSString;
 
-@interface ACDAccountStoreFilter : NSObject <ACDAccountStoreProtocol>
+__attribute__((visibility("hidden")))
+@interface ACDAccountStoreFilter : NSObject <ACRemoteAccountStoreProtocol>
 {
     ACDAccountStore *_backingAccountStore;
 }
 
 + (id)_whiteList;
-@property(retain, nonatomic) ACDAccountStore *backingAccountStore; // @synthesize backingAccountStore=_backingAccountStore;
++ (id)new;
+@property(readonly, nonatomic) ACDAccountStore *backingAccountStore; // @synthesize backingAccountStore=_backingAccountStore;
 - (void).cxx_destruct;
+- (void)scheduleBackupIfNonexistent:(CDUnknownBlockType)arg1;
 - (void)reportTelemetryForLandmarkEvent:(CDUnknownBlockType)arg1;
 - (void)triggerKeychainMigrationIfNecessary:(CDUnknownBlockType)arg1;
 - (void)removeAccountsFromPairedDeviceWithCompletion:(CDUnknownBlockType)arg1;
@@ -96,6 +99,8 @@
 - (_Bool)_isClientPermittedToAccessAccountTypeWithIdentifier:(id)arg1;
 - (_Bool)_accessGrantedForBundleID:(id)arg1 onAccountTypeID:(id)arg2;
 - (_Bool)_accessGrantedForClient:(id)arg1 onAccountTypeID:(id)arg2;
+- (id)initWithBackingAccountStore:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -11,6 +11,7 @@
 - (void)didSelect;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
+@property(nonatomic, getter=isPreviewPaused) _Bool previewPaused;
 
 // Remaining properties
 @property(nonatomic) double highlightProgress;

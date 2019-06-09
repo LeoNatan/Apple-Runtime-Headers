@@ -6,7 +6,19 @@
 
 #import <Foundation/NSArray.h>
 
-@interface NSArray (CKPropertiesDescription)
+#import <CloudKit/CKRecordValue-Protocol.h>
+
+@class NSString;
+
+@interface NSArray (CKPropertiesDescription) <CKRecordValue>
 - (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
+- (void)CKAssignToContainerWithID:(id)arg1;
+- (id)CKComponentsAndSubcomponentsJoinedByString:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

@@ -6,12 +6,13 @@
 
 #import <Home/NSObject-Protocol.h>
 
-@class HMAssistantAccessControl, HMFPairingIdentity, HMHome, HMUser;
+@class HMAssistantAccessControl, HMFPairingIdentity, HMHome, HMMediaContentProfileAccessControl, HMUser;
 
 @protocol HMUserDelegatePrivate <NSObject>
 
 @optional
 - (void)user:(HMUser *)arg1 didUpdatePairingIdentity:(HMFPairingIdentity *)arg2;
+- (void)user:(HMUser *)arg1 didUpdateMediaContentProfileAccessControl:(HMMediaContentProfileAccessControl *)arg2 forHome:(HMHome *)arg3;
 - (void)user:(HMUser *)arg1 didUpdateAssistantAccessControl:(HMAssistantAccessControl *)arg2 forHome:(HMHome *)arg3;
 @end
 

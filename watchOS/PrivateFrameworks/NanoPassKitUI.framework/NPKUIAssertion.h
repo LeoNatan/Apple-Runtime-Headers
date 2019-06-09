@@ -43,7 +43,8 @@
 - (void).cxx_destruct;
 - (void)_buildAssertionObjects;
 - (_Bool)_currentDisplayBacklightMinimumNitsIsEqualTo:(id)arg1;
-- (void)_raiseDeviceBrightnessForPass;
+- (void)_backlightMinimumNitsEnabled:(_Bool)arg1;
+- (void)_raiseDeviceBrightnessForPassIfNecessary;
 - (void)_handleApplicationWillEnterForeground:(id)arg1;
 - (void)_handleApplicationDidEnterBackground:(id)arg1;
 - (void)_handleInvalidationTimerFired;

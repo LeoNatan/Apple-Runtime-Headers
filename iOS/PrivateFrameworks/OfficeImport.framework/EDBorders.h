@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (id)bordersWithLeft:(id)arg1 right:(id)arg2 top:(id)arg3 bottom:(id)arg4 diagonal:(id)arg5 vertical:(id)arg6 horizontal:(id)arg7 resources:(id)arg8;
 + (id)bordersWithLeft:(id)arg1 right:(id)arg2 top:(id)arg3 bottom:(id)arg4 diagonal:(id)arg5 resources:(id)arg6;
 + (id)bordersWithResources:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (id)horizontalBorder;
 - (id)verticalBorder;

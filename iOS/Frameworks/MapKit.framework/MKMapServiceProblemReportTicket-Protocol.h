@@ -11,6 +11,6 @@
 @protocol MKMapServiceProblemReportTicket <NSObject>
 @property(readonly, nonatomic) GEOMapServiceTraits *traits;
 - (void)cancel;
-- (void)submitWithHandler:(void (^)(NSString *, _Bool, NSData *, NSError *))arg1 networkActivity:(void (^)(_Bool))arg2;
+- (void)submitWithHandler:(void (^)(NSString *, NSData *, NSError *))arg1 networkActivity:(void (^)(_Bool))arg2;
 @end
 

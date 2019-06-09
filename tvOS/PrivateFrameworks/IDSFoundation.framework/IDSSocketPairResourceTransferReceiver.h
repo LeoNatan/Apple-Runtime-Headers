@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSDictionary, NSString;
+#import <IDSFoundation/IDSSocketPairMessage-Protocol.h>
 
-@interface IDSSocketPairResourceTransferReceiver : NSObject
+@class NSData, NSDate, NSDictionary, NSString;
+
+@interface IDSSocketPairResourceTransferReceiver : NSObject <IDSSocketPairMessage>
 {
     NSString *_resourcePath;
     NSDictionary *_metadata;
@@ -30,7 +32,7 @@
 
 + (id)incomingFilePath;
 + (id)incomingFilePathForMessageUUID:(id)arg1;
-@property(readonly, nonatomic) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
+@property(retain, nonatomic) NSDate *expiryDate; // @synthesize expiryDate=_expiryDate;
 @property(readonly, nonatomic) NSString *messageUUID; // @synthesize messageUUID=_messageUUID;
 @property(readonly, nonatomic) unsigned long long totalBytesReceived; // @synthesize totalBytesReceived=_totalBytesReceived;
 - (void).cxx_destruct;
@@ -41,6 +43,14 @@
 - (void)dealloc;
 - (void)abortTransfer;
 - (id)initWithMessage:(id)arg1 resumeResourceTransfers:(_Bool)arg2 receiverError:(unsigned char *)arg3;
+
+// Remaining properties
+@property(readonly, nonatomic) NSData *data;
+@property(readonly, nonatomic) _Bool expectsPeerResponse;
+@property(readonly, nonatomic) NSString *peerResponseIdentifier;
+@property(nonatomic) unsigned int sequenceNumber;
+@property(nonatomic) unsigned short streamID;
+@property(readonly, nonatomic) _Bool wantsAppAck;
 
 @end
 

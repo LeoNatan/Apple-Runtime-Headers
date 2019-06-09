@@ -10,13 +10,13 @@
 
 @class NSDictionary, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMetricsAppLaunchEvent : SSMetricsBaseEvent <SKUIInspectableObject>
 {
     NSMutableDictionary *_templateMetrics;
 }
 
 + (double)processStartTime;
-+ (void)load;
 + (id)consumePendingLaunchEvent;
 + (void)withPendingLaunchEvent:(CDUnknownBlockType)arg1;
 + (void)createPendingLaunchEvent;

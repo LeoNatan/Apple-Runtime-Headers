@@ -19,7 +19,7 @@
     double _startTime;
     double _endTime;
     BOOL _backingTaskNeedsResume;
-    int _requestKind;
+    CDStruct_d1a7ebee _requestKind;
 }
 
 + (const char *)decoderType;

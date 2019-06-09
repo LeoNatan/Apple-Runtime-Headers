@@ -8,6 +8,7 @@
 
 #import <BiometricSupport/NSCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface AWDBiometricKitEventLog : PBCodable <NSCopying>
 {
     struct {

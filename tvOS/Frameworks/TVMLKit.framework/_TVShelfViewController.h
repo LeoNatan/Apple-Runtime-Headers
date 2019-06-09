@@ -6,13 +6,14 @@
 
 #import <TVMLKit/_TVMLCollectionViewController.h>
 
+#import <TVMLKit/TVBrowserProviding-Protocol.h>
 #import <TVMLKit/TVShelfViewLayoutDelegate-Protocol.h>
 #import <TVMLKit/UICollectionViewDelegateFlowLayout-Protocol.h>
 
-@class NSIndexPath, NSString;
+@class NSIndexPath, NSString, _TVMLBrowserViewController, _TVSuperShelfFeature;
 @protocol __TVShelfViewControllerDelegate;
 
-@interface _TVShelfViewController : _TVMLCollectionViewController <TVShelfViewLayoutDelegate, UICollectionViewDelegateFlowLayout>
+@interface _TVShelfViewController : _TVMLCollectionViewController <TVShelfViewLayoutDelegate, TVBrowserProviding, UICollectionViewDelegateFlowLayout>
 {
     NSIndexPath *_pendingPreviewedIndexPath;
     NSIndexPath *_lastPreviewedIndexPath;
@@ -20,18 +21,31 @@
     unsigned long long _autohighlightScrollPosition;
     _Bool _configureForListTemplate;
     long long _listTemplateAlignment;
+    struct {
+        _Bool hasUpdateRelatedView;
+        _Bool hasDidSelectItemAtIndexPath;
+        _Bool hasDidPlayItemAtIndexPath;
+        _Bool hasDidSettleOnItemAtIndexPath;
+        _Bool hasFocusDependentMethods;
+    } _delegateFlags;
     _Bool _centered;
+    _TVSuperShelfFeature *_superShelfFeature;
     id <__TVShelfViewControllerDelegate> _delegate;
     unsigned long long _speedBumpEdges;
     long long _prominentSectionIndex;
+    _TVMLBrowserViewController *_presentedSuperShelfViewController;
 }
 
++ (void)_contentForCell:(id)arg1 shouldHide:(_Bool)arg2;
+@property(nonatomic) _TVMLBrowserViewController *presentedSuperShelfViewController; // @synthesize presentedSuperShelfViewController=_presentedSuperShelfViewController;
 @property(nonatomic) long long prominentSectionIndex; // @synthesize prominentSectionIndex=_prominentSectionIndex;
 @property(nonatomic, getter=isCentered) _Bool centered; // @synthesize centered=_centered;
 @property(nonatomic) unsigned long long speedBumpEdges; // @synthesize speedBumpEdges=_speedBumpEdges;
 @property(nonatomic) __weak id <__TVShelfViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_updatedPreviewWithItemAtIndexPath:(id)arg1;
+- (void)updateWithViewElement:(id)arg1;
+- (_Bool)_areCellsExported;
+- (void)_didSettleOnItemAtIndexPath:(id)arg1;
 - (void)_delayedUpdatePreview;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
@@ -39,13 +53,23 @@
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 @property(nonatomic) _Bool hideHeader;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)dispatchEvent:(id)arg1 forItemAtIndexPath:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)updateViewLayoutAnimated:(_Bool)arg1 relayout:(_Bool)arg2;
 - (struct CGSize)expectedCellSizeForElement:(id)arg1 atIndexPath:(id)arg2;
+- (unsigned long long)preferredScrollPosition;
 - (_Bool)contentFlowsVertically;
 - (id)makeCollectionViewWithFrame:(struct CGRect)arg1;
 - (void)updateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (void)_scrollToIndexPath:(id)arg1;
+- (id)_lockupImageElementForItemAtIndexPath:(id)arg1;
+- (void)browserViewController:(id)arg1 didUpdatePreferredIndexPath:(id)arg2;
+- (id)browserViewController:(id)arg1 lockupImageProxyForItemAtIndexPath:(id)arg2;
+- (void)didTransitionBackFromBrowserViewController:(id)arg1;
+- (void)willTransitionToBrowserViewController:(id)arg1;
+- (id)browserViewController:(id)arg1 transitionLayoutAttributesInWindow:(id)arg2;
+@property(readonly, nonatomic) _TVSuperShelfFeature *superShelfFeature; // @synthesize superShelfFeature=_superShelfFeature;
 - (id)preferredFocusEnvironments;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)updateWithViewElement:(id)arg1 cellMetrics:(struct TVCellMetrics)arg2;
 - (void)didMoveToParentViewController:(id)arg1;

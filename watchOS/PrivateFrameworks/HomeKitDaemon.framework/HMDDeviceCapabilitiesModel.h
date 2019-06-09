@@ -15,18 +15,20 @@
 + (id)properties;
 
 // Remaining properties
-@property(retain, nonatomic) NSNumber *remoteGatewayCapable; // @dynamic remoteGatewayCapable;
-@property(retain, nonatomic) NSNumber *residentCapable; // @dynamic residentCapable;
-@property(retain, nonatomic) NSNumber *supportsAssistantAccessControl; // @dynamic supportsAssistantAccessControl;
-@property(retain, nonatomic) NSNumber *supportsCloudDataSync; // @dynamic supportsCloudDataSync;
-@property(retain, nonatomic) NSNumber *supportsDeviceSetup; // @dynamic supportsDeviceSetup;
-@property(retain, nonatomic) NSNumber *supportsHomeInvitation; // @dynamic supportsHomeInvitation;
-@property(retain, nonatomic) NSNumber *supportsKeyTransferClient; // @dynamic supportsKeyTransferClient;
-@property(retain, nonatomic) NSNumber *supportsKeyTransferServer; // @dynamic supportsKeyTransferServer;
-@property(retain, nonatomic) NSNumber *supportsKeychainSync; // @dynamic supportsKeychainSync;
-@property(retain, nonatomic) NSNumber *supportsStandaloneMode; // @dynamic supportsStandaloneMode;
-@property(retain, nonatomic) NSNumber *supportsTargetControl; // @dynamic supportsTargetControl;
-@property(retain, nonatomic) NSNumber *supportsWholeHouseAudio; // @dynamic supportsWholeHouseAudio;
+@property(copy, nonatomic) NSNumber *remoteGatewayCapable; // @dynamic remoteGatewayCapable;
+@property(copy, nonatomic) NSNumber *residentCapable; // @dynamic residentCapable;
+@property(copy, nonatomic) NSNumber *supportsAssistantAccessControl; // @dynamic supportsAssistantAccessControl;
+@property(copy, nonatomic) NSNumber *supportsCameraRecording; // @dynamic supportsCameraRecording;
+@property(copy, nonatomic) NSNumber *supportsCloudDataSync; // @dynamic supportsCloudDataSync;
+@property(copy, nonatomic) NSNumber *supportsDeviceSetup; // @dynamic supportsDeviceSetup;
+@property(copy, nonatomic) NSNumber *supportsHomeInvitation; // @dynamic supportsHomeInvitation;
+@property(copy, nonatomic) NSNumber *supportsKeyTransferClient; // @dynamic supportsKeyTransferClient;
+@property(copy, nonatomic) NSNumber *supportsKeyTransferServer; // @dynamic supportsKeyTransferServer;
+@property(copy, nonatomic) NSNumber *supportsKeychainSync; // @dynamic supportsKeychainSync;
+@property(copy, nonatomic) NSNumber *supportsMultiUser; // @dynamic supportsMultiUser;
+@property(copy, nonatomic) NSNumber *supportsStandaloneMode; // @dynamic supportsStandaloneMode;
+@property(copy, nonatomic) NSNumber *supportsTargetControl; // @dynamic supportsTargetControl;
+@property(copy, nonatomic) NSNumber *supportsWholeHouseAudio; // @dynamic supportsWholeHouseAudio;
 
 @end
 

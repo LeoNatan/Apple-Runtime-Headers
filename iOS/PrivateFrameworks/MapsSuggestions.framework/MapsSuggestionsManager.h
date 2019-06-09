@@ -10,7 +10,7 @@
 #import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
 #import <MapsSuggestions/MapsSuggestionsSourceDelegate-Protocol.h>
 
-@class CLLocation, GEOAutomobileOptions, MapsSuggestionsCanKicker, MapsSuggestionsFakeSource, MapsSuggestionsTracker, NSDate, NSHashTable, NSString;
+@class GEOAutomobileOptions, MapsSuggestionsCanKicker, MapsSuggestionsFakePullSource, MapsSuggestionsTracker, NSDate, NSHashTable, NSString;
 @protocol MapsSuggestionsLocationUpdater, MapsSuggestionsStrategy, OS_dispatch_queue;
 
 @interface MapsSuggestionsManager : NSObject <MapsSuggestionsObject, MapsSuggestionsSourceDelegate, MapsSuggestionsLocationUpdaterDelegate>
@@ -35,12 +35,10 @@
     long long _style;
     GEOAutomobileOptions *_automobileOptions;
     id <MapsSuggestionsLocationUpdater> _locationUpdater;
-    CLLocation *_currentLocation;
-    MapsSuggestionsFakeSource *_fakeSource;
+    MapsSuggestionsFakePullSource *_fakeSource;
 }
 
-@property(retain, nonatomic) MapsSuggestionsFakeSource *fakeSource; // @synthesize fakeSource=_fakeSource;
-@property(retain) CLLocation *currentLocation; // @synthesize currentLocation=_currentLocation;
+@property(retain, nonatomic) MapsSuggestionsFakePullSource *fakeSource; // @synthesize fakeSource=_fakeSource;
 @property(nonatomic) __weak id <MapsSuggestionsLocationUpdater> locationUpdater; // @synthesize locationUpdater=_locationUpdater;
 @property(retain, nonatomic) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;
 @property(nonatomic) int mapType; // @synthesize mapType=_mapType;
@@ -57,6 +55,9 @@
 - (struct NSArray *)storageForSource:(id)arg1;
 - (id)dumpStorage;
 - (struct NSDictionary *)storage;
+- (void)feedbackForContact:(id)arg1 action:(long long)arg2;
+- (void)feedbackForMapItem:(id)arg1 action:(long long)arg2;
+- (void)feedbackForEntry:(id)arg1 action:(long long)arg2;
 - (_Bool)removeEntry:(id)arg1 behavior:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)setTitleFormatter:(id)arg1 forType:(long long)arg2;
 - (void)trackerRefreshedETAsUntil:(id)arg1;
@@ -65,10 +66,8 @@
 - (unsigned long long)deleteEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2;
 - (_Bool)_removeEntry:(id)arg1 sourceName:(struct NSString *)arg2;
 - (_Bool)_removeEntry:(id)arg1;
-- (unsigned long long)addOrUpdateSuggestionEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2 deleteMissing:(_Bool)arg3;
-- (unsigned long long)_addOrUpdateSuggestionEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2;
 - (unsigned long long)addOrUpdateSuggestionEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2;
-- (id)currentBestLocation;
+- (unsigned long long)_addOrUpdateSuggestionEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2;
 - (_Bool)_loadStorageFromFile:(id)arg1;
 - (_Bool)loadStorageFromFile:(id)arg1 callback:(CDUnknownBlockType)arg2 callbackQueue:(id)arg3;
 - (_Bool)loadStorageFromFile:(id)arg1;

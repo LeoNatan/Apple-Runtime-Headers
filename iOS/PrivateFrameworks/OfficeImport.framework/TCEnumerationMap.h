@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     _Bool m_caseSensitive;
 }
 
+- (void)enumerateValuesAndStringsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)stringForValue:(int)arg1;
 - (long long)valueForString:(id)arg1;
 - (void)dealloc;

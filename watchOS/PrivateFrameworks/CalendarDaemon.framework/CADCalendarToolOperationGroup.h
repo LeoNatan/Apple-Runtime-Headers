@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 + (_Bool)requiresEventOrReminderAccess;
 + (_Bool)requiresReminderAccess;
 + (_Bool)requiresEventAccess;
+- (void)CADPostSyntheticRouteHypothesis:(id)arg1 forEventWithExternalURL:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)CADPurgeChangeTrackingReply:(CDUnknownBlockType)arg1;
 - (_Bool)accessGrantedToPerformSelector:(SEL)arg1;
 

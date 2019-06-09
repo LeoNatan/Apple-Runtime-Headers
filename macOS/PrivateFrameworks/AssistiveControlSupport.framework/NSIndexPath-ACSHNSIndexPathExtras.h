@@ -11,7 +11,7 @@
 + (id)emptyIndexPath;
 - (id)debugDescription;
 - (BOOL)containsIndexPath:(id)arg1;
-@property(nonatomic) long long trailingPosition; // @dynamic trailingPosition;
+@property(nonatomic) unsigned long long trailingPosition; // @dynamic trailingPosition;
 @property(nonatomic) int positionType; // @dynamic positionType;
 - (void)iterateWithBlock:(CDUnknownBlockType)arg1;
 - (BOOL)isEqual:(id)arg1 forLength:(unsigned long long)arg2;

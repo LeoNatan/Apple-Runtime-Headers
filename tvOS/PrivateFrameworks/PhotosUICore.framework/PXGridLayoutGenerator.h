@@ -25,10 +25,9 @@
 - (unsigned long long)numberOfGeometriesWithKind:(long long)arg1;
 - (id)geometryKinds;
 - (id)initWithMetrics:(id)arg1;
-- (id)init;
 
 // Remaining properties
-@property(readonly, copy, nonatomic) PXGridLayoutMetrics *metrics; // @dynamic metrics;
+@property(copy, nonatomic) PXGridLayoutMetrics *metrics; // @dynamic metrics;
 
 @end
 

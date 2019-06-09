@@ -13,6 +13,9 @@
     _Bool _isFromPhraseDictionary;
     _Bool _isFromTextChecker;
     _Bool _isSecureContentCandidate;
+    _Bool _continuousPathConversion;
+    _Bool _shouldAccept;
+    _Bool _shouldInsertSpaceAfterSelection;
     unsigned int _wordOriginFeedbackID;
     unsigned int _usageTrackingMask;
     TIProactiveTrigger *_proactiveTrigger;
@@ -20,12 +23,19 @@
     NSString *_fromBundleId;
     unsigned int _ageForConnectionsMetrics;
     _ICPredictedItem *_proactivePredictedItem;
+    int _confidence;
     NSString *_label;
+    double _excessPathRatio;
 }
 
 + (int)type;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic, getter=confidence) int confidence; // @synthesize confidence=_confidence;
+@property(nonatomic, getter=shouldInsertSpaceAfterSelection) _Bool shouldInsertSpaceAfterSelection; // @synthesize shouldInsertSpaceAfterSelection=_shouldInsertSpaceAfterSelection;
+@property(nonatomic, getter=shouldAccept) _Bool shouldAccept; // @synthesize shouldAccept=_shouldAccept;
 @property(copy, nonatomic) _ICPredictedItem *proactivePredictedItem; // @synthesize proactivePredictedItem=_proactivePredictedItem;
+@property(nonatomic) double excessPathRatio; // @synthesize excessPathRatio=_excessPathRatio;
+@property(nonatomic, getter=isContinuousPathConversion) _Bool continuousPathConversion; // @synthesize continuousPathConversion=_continuousPathConversion;
 @property(nonatomic) unsigned int ageForConnectionsMetrics; // @synthesize ageForConnectionsMetrics=_ageForConnectionsMetrics;
 @property(copy, nonatomic) NSString *fromBundleId; // @synthesize fromBundleId=_fromBundleId;
 - (id)responseKitCategory;
@@ -39,6 +49,7 @@
 - (id)initWithCandidateResultSetCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)candidateByReplacingWithCandidate:(id)arg1 input:(id)arg2 label:(id)arg3;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isAutocorrection;
 - (unsigned int)wordOriginFeedbackID;

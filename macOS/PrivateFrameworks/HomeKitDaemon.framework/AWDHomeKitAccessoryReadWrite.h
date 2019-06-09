@@ -21,7 +21,10 @@
     NSString *_transaction;
     NSString *_transportProtocolVersion;
     int _transportType;
+    unsigned int _underlyingErrorCode;
+    NSString *_underlyingErrorDomain;
     AWDHomeKitVendorInformation *_vendorDetails;
+    BOOL _isCached;
     BOOL _isRemote;
     BOOL _isTimedWrite;
     BOOL _isWrite;
@@ -32,6 +35,8 @@
         unsigned int errorCode:1;
         unsigned int source:1;
         unsigned int transportType:1;
+        unsigned int underlyingErrorCode:1;
+        unsigned int isCached:1;
         unsigned int isRemote:1;
         unsigned int isTimedWrite:1;
         unsigned int isWrite:1;
@@ -39,6 +44,9 @@
 }
 
 + (Class)characteristicsType;
+@property(nonatomic) unsigned int underlyingErrorCode; // @synthesize underlyingErrorCode=_underlyingErrorCode;
+@property(retain, nonatomic) NSString *underlyingErrorDomain; // @synthesize underlyingErrorDomain=_underlyingErrorDomain;
+@property(nonatomic) BOOL isCached; // @synthesize isCached=_isCached;
 @property(retain, nonatomic) NSString *transportProtocolVersion; // @synthesize transportProtocolVersion=_transportProtocolVersion;
 @property(nonatomic) BOOL isTimedWrite; // @synthesize isTimedWrite=_isTimedWrite;
 @property(retain, nonatomic) NSString *transaction; // @synthesize transaction=_transaction;
@@ -59,6 +67,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasUnderlyingErrorCode;
+@property(readonly, nonatomic) BOOL hasUnderlyingErrorDomain;
+@property(nonatomic) BOOL hasIsCached;
 - (int)StringAsCertified:(id)arg1;
 - (id)certifiedAsString:(int)arg1;
 @property(nonatomic) BOOL hasCertified;

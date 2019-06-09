@@ -8,6 +8,7 @@
 
 @class AVDisplayCriteria;
 
+__attribute__((visibility("hidden")))
 @interface AVSecondScreenContentViewConnection : AVSecondScreenConnection
 {
 }

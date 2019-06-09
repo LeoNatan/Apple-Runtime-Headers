@@ -10,6 +10,7 @@
 
 @class NSString, SKUIDonationAmountView, SKUIGiftPurchaseRequest, SKUIGiftValidationResponse, SKUIGiftValidator;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDonationAmountViewController : SKUIDonationStepViewController <SKUIDonationConfigurationObserver>
 {
     SKUIDonationAmountView *_amountView;

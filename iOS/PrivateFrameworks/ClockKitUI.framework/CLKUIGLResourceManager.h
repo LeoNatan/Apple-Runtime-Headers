@@ -6,16 +6,14 @@
 
 #import <ClockKitUI/CLKUIResourceManager.h>
 
-@class EAGLContext, EAGLSharegroup, NSMutableDictionary;
+@class EAGLContext, EAGLSharegroup;
 
 @interface CLKUIGLResourceManager : CLKUIResourceManager
 {
-    NSMutableDictionary *_programsByName;
     EAGLContext *_context;
     EAGLSharegroup *_shareGroup;
 }
 
-+ (id)programWithName:(id)arg1;
 + (id)context;
 + (id)shareGroup;
 + (id)sharedGLInstance;

@@ -35,6 +35,9 @@
 + (id)prelaunchApplicationIdentifiers;
 + (void)prewarmForDevice:(id)arg1;
 + (void)_purgeGLContexts;
++ (void)unregisterRingsView:(id)arg1;
++ (void)registerRingsView:(id)arg1;
++ (id)registeredRingsViews;
 + (void)initialize;
 @property(nonatomic) long long dataMode; // @synthesize dataMode=_dataMode;
 @property(nonatomic) __weak id <NTKActivityFaceViewFactoryDelegate> delegate; // @synthesize delegate=_delegate;

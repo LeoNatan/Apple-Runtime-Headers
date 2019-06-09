@@ -59,6 +59,7 @@
 - (void)_updateMaterialNumber:(id)arg1;
 - (void)_updateMaterialImage:(id)arg1;
 - (void)_updateMaterialProceduralContents:(id)arg1;
+- (void)_updateMaterialTextureProvider:(id)arg1;
 - (void)_updateMaterialLayer:(id)arg1;
 - (void)_updateMaterialSKTexture:(id)arg1;
 - (void)_updateMaterialMTLTexture:(id)arg1;
@@ -104,7 +105,7 @@
 - (const void *)__CFObject;
 - (id)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 -     // Error parsing type: ^{__C3DTextureSampler={__CFRuntimeBase=IAI}llllll{C3DColor4=(?=[4f]{?=ffff})}fClI}8@0:4, name: textureSampler
--     // Error parsing type: ^{__C3DEffectCommonProfile={__CFRuntimeBase=IAI}^{__C3DMaterial}l^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}fffffCiBBb1b1b1b1b1b1b1b1b1b13}8@0:4, name: commonProfile
+-     // Error parsing type: ^{__C3DEffectCommonProfile={__CFRuntimeBase=IAI}^{__C3DMaterial}l^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}fffffCiBBb1b1b1b1b1b1b1b1b1b13}8@0:4, name: commonProfile
 -     // Error parsing type: ^{__C3DEffectSlot={__CFRuntimeBase=IAI}{C3DColor4=(?=[4f]{?=ffff})}^v(?=^{__C3DImage}^v^{__C3DImageProxy}^{__C3DTexture})b8b1b1b1b4c^{__C3DTextureSampler}^(C3DMatrix4x4)fi^v}8@0:4, name: effectSlot
 - (id)parent;
 - (void)parentWillDie:(id)arg1;
@@ -126,6 +127,8 @@
 - (id)UIView;
 - (void)setUIView:(id)arg1;
 - (void)_updateMaterialUIComponent:(id)arg1;
+- (id)textureProvider;
+- (void)setTextureProvider:(id)arg1;
 - (id)layer;
 - (void)setLayer:(id)arg1;
 - (id)skTexture;
@@ -143,7 +146,8 @@
 - (_Bool)sRGBTexture;
 @property(nonatomic) int wrapT;
 @property(nonatomic) int wrapS;
-@property(retain, nonatomic) id borderColor;
+- (void)setBorderColor:(id)arg1;
+- (id)borderColor;
 @property(nonatomic) float intensity;
 @property(nonatomic) int textureComponents;
 @property(nonatomic) int mappingChannel;
@@ -167,6 +171,7 @@
 - (void)linkCustomPropertyWithParent:(id)arg1 andCustomName:(id)arg2;
 - (void)unlinkCustomPropertyWithParent:(id)arg1;
 - (void)_setParent:(id)arg1;
+- (id)__runtimeResolvedPath;
 - (void)dealloc;
 - (void)__allocateContentTransformIfNeeded;
 - (id)initPresentationMaterialPropertyWithModelProperty:(id)arg1;

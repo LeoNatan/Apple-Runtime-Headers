@@ -25,16 +25,20 @@
     MTLToolsPointerArray *_blitCommandEncoders;
     MTLToolsPointerArray *_parallelRenderCommandEncoders;
     MTLToolsPointerArray *_videoCommandEncoders;
+    MTLToolsPointerArray *_resourceStateCommandEncoders;
     struct ILayerLockingPolicy *_retainedObjectsLock;
 }
 
 @property(nonatomic) struct ILayerLockingPolicy *retainedObjectsLock; // @synthesize retainedObjectsLock=_retainedObjectsLock;
+@property(readonly, nonatomic) MTLToolsPointerArray *resourceStateCommandEncoders; // @synthesize resourceStateCommandEncoders=_resourceStateCommandEncoders;
 @property(readonly, nonatomic) MTLToolsPointerArray *videoCommandEncoders; // @synthesize videoCommandEncoders=_videoCommandEncoders;
 @property(readonly, nonatomic) MTLToolsPointerArray *parallelRenderCommandEncoders; // @synthesize parallelRenderCommandEncoders=_parallelRenderCommandEncoders;
 @property(readonly, nonatomic) MTLToolsPointerArray *blitCommandEncoders; // @synthesize blitCommandEncoders=_blitCommandEncoders;
 @property(readonly, nonatomic) MTLToolsPointerArray *computeCommandEncoders; // @synthesize computeCommandEncoders=_computeCommandEncoders;
 @property(readonly, nonatomic) MTLToolsPointerArray *renderCommandEncoders; // @synthesize renderCommandEncoders=_renderCommandEncoders;
 @property(readonly, nonatomic) NSMutableSet *retainedObjects; // @synthesize retainedObjects=_retainedObjects;
+- (unsigned long long)protectionOptions;
+- (void)setProtectionOptions:(unsigned long long)arg1;
 - (void)executeSynchronizationNotifications:(int)arg1 scope:(unsigned long long)arg2 resources:(const id *)arg3 count:(unsigned long long)arg4;
 - (void)executeSynchronizationNotifications:(int)arg1;
 - (void)addSynchronizationNotification:(CDUnknownBlockType)arg1;
@@ -46,6 +50,7 @@
 - (id)sampledComputeCommandEncoderWithDispatchType:(unsigned long long)arg1 programInfoBuffer:(CDStruct_4af8c268 *)arg2 capacity:(unsigned long long)arg3;
 - (void)addPurgedHeap:(id)arg1;
 - (void)addPurgedResource:(id)arg1;
+- (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2 timeout:(unsigned int)arg3;
 - (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2;
 - (void)encodeSignalEvent:(id)arg1 value:(unsigned long long)arg2;
 - (void)willEncodeSignalEvent:(id)arg1 value:(unsigned long long)arg2 writeableResources:(id)arg3;
@@ -59,6 +64,7 @@
 - (id)unwrapMTLRenderPassDescriptor:(id)arg1;
 - (void)popDebugGroup;
 - (void)pushDebugGroup:(id)arg1;
+- (void *)debugBufferContentsWithLength:(unsigned long long *)arg1;
 @property(readonly) double kernelEndTime;
 @property(readonly) double kernelStartTime;
 - (id)computeCommandEncoder;
@@ -71,6 +77,7 @@
 - (void)presentDrawable:(id)arg1;
 - (void)enqueue;
 @property(copy) NSString *label;
+@property(readonly) unsigned long long globalTraceObjectID;
 @property(readonly) double GPUEndTime;
 @property(readonly) double GPUStartTime;
 @property(readonly) BOOL retainedReferences;

@@ -6,9 +6,11 @@
 
 #import <NanoTimeKitCompanion/NTKUpNextBaseCell.h>
 
-@class NTKColoringLabel, NTKUpNextImageView, UILayoutGuide;
+#import <NanoTimeKitCompanion/CLKMonochromeFilterProvider-Protocol.h>
 
-@interface NTKUpNextLargeWithDetailTextCell : NTKUpNextBaseCell
+@class NSString, NTKColoringLabel, NTKUpNextImageView, UILayoutGuide;
+
+@interface NTKUpNextLargeWithDetailTextCell : NTKUpNextBaseCell <CLKMonochromeFilterProvider>
 {
     UILayoutGuide *_contentLayoutGuide;
     NTKUpNextImageView *_bodyImage;
@@ -19,9 +21,21 @@
 }
 
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
+- (void)prepareForReuse;
+- (id)colorForView:(id)arg1 accented:(_Bool)arg2;
+- (id)filterForView:(id)arg1 style:(long long)arg2 fraction:(double)arg3;
+- (id)filterForView:(id)arg1 style:(long long)arg2;
 - (void)setPaused:(_Bool)arg1;
 - (void)configureWithContent:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

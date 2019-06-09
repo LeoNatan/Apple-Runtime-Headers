@@ -4,11 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class HKDataMetadataDetailSection, NSDate, NSDictionary;
+#import <HealthUI/HKDataMetadataProvider-Protocol.h>
 
-@protocol HKDataMetadataObject
+@class NSDate, NSDictionary;
+
+@protocol HKDataMetadataObject <HKDataMetadataProvider>
 @property(readonly, nonatomic) NSDictionary *metadata;
 - (NSDate *)startDate;
-- (void)addDetailValuesToSection:(HKDataMetadataDetailSection *)arg1;
 @end
 

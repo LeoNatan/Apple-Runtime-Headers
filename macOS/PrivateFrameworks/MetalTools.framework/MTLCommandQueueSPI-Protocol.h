@@ -11,10 +11,13 @@
 
 @protocol MTLCommandQueueSPI <MTLCommandQueue>
 @property(getter=isProfilingEnabled) BOOL profilingEnabled;
+@property BOOL isOpenGLQueue;
 @property BOOL executionEnabled;
 @property BOOL skipRender;
-@property(readonly) long long qosRelativePriority;
-@property(readonly) unsigned long long qosClass;
+@property(readonly) NSObject<OS_dispatch_queue> *completionQueue;
+@property(readonly) BOOL commitSynchronously;
+@property(readonly) NSObject<OS_dispatch_queue> *commitQueue;
+@property(readonly) unsigned long long qosLevel;
 @property(readonly) unsigned long long maxCommandBufferCount;
 @property int backgroundTrackingPID;
 - (void)finish;

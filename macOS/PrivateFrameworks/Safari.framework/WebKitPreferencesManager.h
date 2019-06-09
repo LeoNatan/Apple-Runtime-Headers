@@ -13,14 +13,16 @@ __attribute__((visibility("hidden")))
 {
     long long _preferencesType;
     BOOL _shouldPersistPreferences;
+    BOOL _intelligentTrackingPreventionDebugModeEnabledIsForced;
     WKPreferences *__wkPreferences;
 }
 
-+ (id)_webViewConfigurationForBrowsingMode:(unsigned long long)arg1 pageGroup:(struct OpaqueWKPageGroup *)arg2 preferencesManager:(id)arg3;
-+ (id)readerWebViewConfigurationForBrowsingMode:(unsigned long long)arg1;
++ (id)_webViewConfigurationForBrowsingMode:(unsigned long long)arg1 relatedWebView:(id)arg2 pageGroup:(struct OpaqueWKPageGroup *)arg3 preferencesManager:(id)arg4;
++ (id)readerWebViewConfigurationForBrowsingMode:(unsigned long long)arg1 relatedWebView:(id)arg2;
 + (id)contentWebViewConfigurationForBrowsingMode:(unsigned long long)arg1;
 + (void)toggleInternalDebugFeatureInContentPageGroupPreferences:(id)arg1;
 + (BOOL)isInternalDebugFeatureEnabled:(id)arg1;
++ (void)resetAllExperimentalFeaturesToDefaultValues;
 + (void)toggleExperimentalFeatureInContentPageGroupPreferences:(id)arg1;
 + (BOOL)isExperimentalFeatureEnabled:(id)arg1;
 + (id)automationPreferencesWithConfiguration:(id)arg1;
@@ -32,6 +34,7 @@ __attribute__((visibility("hidden")))
 + (id)readerPageGroupPreferencesManager;
 + (id)contentPageGroupPreferencesManager;
 @property(readonly, copy, nonatomic) WKPreferences *_wkPreferences; // @synthesize _wkPreferences=__wkPreferences;
+@property(readonly, nonatomic) BOOL intelligentTrackingPreventionDebugModeEnabledIsForced; // @synthesize intelligentTrackingPreventionDebugModeEnabledIsForced=_intelligentTrackingPreventionDebugModeEnabledIsForced;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL webSecurityEnabledIsForced;
 @property(readonly, nonatomic) BOOL webGLEnabledIsForced;
@@ -167,6 +170,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL javaScriptCanOpenWindowsAutomatically;
 @property(nonatomic) BOOL javaEnabledForLocalFiles;
 @property(nonatomic) BOOL javaEnabled;
+@property(nonatomic) BOOL intelligentTrackingPreventionDebugModeEnabled;
 @property(nonatomic) BOOL invisibleMediaAutoplayNotPermitted;
 @property(nonatomic) BOOL inlineMediaPlaybackRequiresPlaysInlineAttribute;
 @property(nonatomic) BOOL iceCandidateFilteringEnabled;

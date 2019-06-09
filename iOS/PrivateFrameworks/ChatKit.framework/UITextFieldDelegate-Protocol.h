@@ -13,6 +13,7 @@
 @optional
 - (_Bool)textFieldShouldReturn:(UITextField *)arg1;
 - (_Bool)textFieldShouldClear:(UITextField *)arg1;
+- (void)textFieldDidChangeSelection:(UITextField *)arg1;
 - (_Bool)textField:(UITextField *)arg1 shouldChangeCharactersInRange:(struct _NSRange)arg2 replacementString:(NSString *)arg3;
 - (void)textFieldDidEndEditing:(UITextField *)arg1 reason:(long long)arg2;
 - (void)textFieldDidEndEditing:(UITextField *)arg1;

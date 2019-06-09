@@ -45,9 +45,9 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) NUPixelFormat *format;
+@property(readonly, nonatomic) NUPixelFormat *format;
 @property(readonly) unsigned long long hash;
-@property(readonly) CDStruct_912cb5d2 size;
+@property(readonly, nonatomic) CDStruct_912cb5d2 size;
 @property(readonly) Class superclass;
 @property(readonly) NURegion *validRegion;
 

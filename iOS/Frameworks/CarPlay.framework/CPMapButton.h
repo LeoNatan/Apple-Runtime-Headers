@@ -9,7 +9,7 @@
 #import <CarPlay/CPControl-Protocol.h>
 #import <CarPlay/NSSecureCoding-Protocol.h>
 
-@class NSString, NSUUID, UIImage;
+@class CPImageSet, NSString, NSUUID, UIImage;
 @protocol CPMapButtonDelegate;
 
 @interface CPMapButton : NSObject <CPControl, NSSecureCoding>
@@ -17,22 +17,24 @@
     _Bool _enabled;
     _Bool _hidden;
     NSUUID *_identifier;
-    UIImage *_image;
     UIImage *_focusedImage;
     CDUnknownBlockType _handler;
+    CPImageSet *_imageSet;
     id <CPMapButtonDelegate> _controlDelegate;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) __weak id <CPMapButtonDelegate> controlDelegate; // @synthesize controlDelegate=_controlDelegate;
+@property(retain, nonatomic) CPImageSet *imageSet; // @synthesize imageSet=_imageSet;
 @property(copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 @property(retain, nonatomic) UIImage *focusedImage; // @synthesize focusedImage=_focusedImage;
-@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (void)handlePrimaryAction;
+@property(retain, nonatomic) UIImage *image;
+@property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHandler:(CDUnknownBlockType)arg1;
@@ -40,7 +42,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

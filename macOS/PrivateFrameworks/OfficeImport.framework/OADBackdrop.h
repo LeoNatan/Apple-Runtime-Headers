@@ -10,6 +10,7 @@
 
 @class OADPoint3D, OADVector3D;
 
+__attribute__((visibility("hidden")))
 @interface OADBackdrop : NSObject <NSCopying>
 {
     OADPoint3D *mAnchor;

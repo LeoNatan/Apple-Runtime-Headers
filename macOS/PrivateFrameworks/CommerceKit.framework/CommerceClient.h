@@ -23,6 +23,7 @@
 @property(retain) NSMutableDictionary *purchaseObservers; // @synthesize purchaseObservers=_purchaseObservers;
 @property(retain) NSMutableDictionary *accountObservers; // @synthesize accountObservers=_accountObservers;
 - (void).cxx_destruct;
+- (void)shouldContinueTransaction:(id)arg1 withNewStorefront:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)promptTouchIDEnableForTransaction:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)signChallenge:(id)arg1 forTransaction:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)authenticateWithDialog:(id)arg1 settings:(id)arg2 forTransaction:(id)arg3 reply:(CDUnknownBlockType)arg4;

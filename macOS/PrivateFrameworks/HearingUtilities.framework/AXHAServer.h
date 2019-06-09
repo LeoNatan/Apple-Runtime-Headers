@@ -18,15 +18,16 @@
     BOOL _hearingAidConnectedOrReachable;
     NSArray *_availableHearingAids;
     NSArray *_availableControllers;
+    NSString *_hearingDeviceName;
     NSMutableDictionary *_updates;
 }
 
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableDictionary *updates; // @synthesize updates=_updates;
 @property(nonatomic) BOOL hearingAidConnectedOrReachable; // @synthesize hearingAidConnectedOrReachable=_hearingAidConnectedOrReachable;
+@property(retain, nonatomic) NSString *hearingDeviceName; // @synthesize hearingDeviceName=_hearingDeviceName;
 @property(nonatomic) BOOL hearingAidReachableForAudioTransfer; // @synthesize hearingAidReachableForAudioTransfer=_hearingAidReachableForAudioTransfer;
 @property(retain, nonatomic) NSArray *availableControllers; // @synthesize availableControllers=_availableControllers;
-@property(retain, nonatomic) NSArray *availableHearingAids; // @synthesize availableHearingAids=_availableHearingAids;
 - (void).cxx_destruct;
 - (void)stopLiveListen;
 - (void)startLiveListen;
@@ -36,7 +37,7 @@
 - (void)cancelHearingAidConnectionRequest;
 - (void)requestHearingAidConnectionWithReason:(long long)arg1;
 - (void)connectToControllerWithID:(id)arg1;
-- (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 forDeviceID:(id)arg3;
+- (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 andDeviceID:(id)arg3;
 - (void)updateProperty:(unsigned long long)arg1 forDeviceID:(id)arg2;
 - (void)registerListener:(id)arg1 forPropertyUpdateHandler:(CDUnknownBlockType)arg2;
 - (void)registerListener:(id)arg1 forAvailableDeviceHandler:(CDUnknownBlockType)arg2;
@@ -49,7 +50,7 @@
 - (void)handleMessageWithPayload:(id)arg1 forIdentifier:(unsigned long long)arg2;
 - (void)resetConnection;
 - (void)startServerWithDelegate:(id)arg1;
-- (void)dealloc;
+@property(copy, nonatomic) NSArray *availableHearingAids; // @synthesize availableHearingAids=_availableHearingAids;
 - (id)init;
 
 // Remaining properties

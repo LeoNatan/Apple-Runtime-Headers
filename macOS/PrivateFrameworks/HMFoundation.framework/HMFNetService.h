@@ -14,6 +14,7 @@
 
 @interface HMFNetService : HMFObject <HMFLogging, NSNetServiceDelegate>
 {
+    NSNetService *_internal;
     HMFUnfairLock *_lock;
     NSString *_type;
     NSString *_name;
@@ -21,9 +22,9 @@
     unsigned long long _port;
     NSArray *_addresses;
     NSMutableDictionary *_TXTRecord;
-    NSNetService *_internal;
-    BOOL _resolving;
+    BOOL _publishing;
     HMFNetAddress *_hostName;
+    long long _state;
     id <HMFNetServiceDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_clientQueue;
     NSMutableArray *_resolveBlocks;
@@ -32,12 +33,12 @@
 + (id)logCategory;
 + (id)shortDescription;
 + (id)errorFromNetServiceErrorDict:(id)arg1;
-@property(nonatomic, getter=isResolving) BOOL resolving; // @synthesize resolving=_resolving;
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 @property(readonly, nonatomic) NSMutableArray *resolveBlocks; // @synthesize resolveBlocks=_resolveBlocks;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(readonly, copy, nonatomic) NSString *domain; // @synthesize domain=_domain;
-@property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
-@property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
+@property(readonly, copy) NSString *domain; // @synthesize domain=_domain;
+@property(readonly, copy) NSString *name; // @synthesize name=_name;
+@property(readonly, copy) NSString *type; // @synthesize type=_type;
 @property __weak id <HMFNetServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSNetService *internal; // @synthesize internal=_internal;
 - (void).cxx_destruct;
@@ -54,13 +55,15 @@
 - (void)updateTXTRecordWithData:(id)arg1;
 - (void)removeAllTXTRecordObjects;
 - (void)setTXTRecord:(id)arg1;
-@property(readonly, copy, nonatomic) NSDictionary *TXTRecord;
+@property(readonly, copy) NSDictionary *TXTRecord;
 - (void)notifyUpdatedAddresses:(id)arg1;
 - (void)setAddresses:(id)arg1;
 @property(readonly, copy) NSArray *addresses;
 - (void)setHostname:(id)arg1;
 @property(readonly, copy) HMFNetAddress *hostName; // @synthesize hostName=_hostName;
-@property(readonly, nonatomic) unsigned long long port;
+@property(nonatomic) long long state; // @synthesize state=_state;
+@property(getter=isPublishing) BOOL publishing; // @synthesize publishing=_publishing;
+@property(readonly) unsigned long long port;
 - (void)startMonitoring;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;

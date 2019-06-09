@@ -10,6 +10,7 @@
 
 @class NSString, NSURL, NSURLSession, NSURLSessionDataTask;
 
+__attribute__((visibility("hidden")))
 @interface TestHTTPProbe : TestProbe <NSURLSessionDelegate>
 {
     NSURLSession *_urlSession;

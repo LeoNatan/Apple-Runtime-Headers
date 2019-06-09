@@ -8,7 +8,6 @@
 
 @class NSMutableArray, NSMutableDictionary, NSNumber, NSURLSessionTaskDependencyDescription;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFURLSessionTaskDependencyTreeNode : NSObject
 {
     NSURLSessionTaskDependencyDescription *dependencyDescription;

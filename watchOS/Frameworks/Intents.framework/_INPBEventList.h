@@ -19,6 +19,7 @@
     NSArray *_events;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)eventType;
 @property(copy, nonatomic) NSArray *events; // @synthesize events=_events;
 @property(retain, nonatomic) _INPBCondition *condition; // @synthesize condition=_condition;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)eventAtIndex:(unsigned int)arg1;

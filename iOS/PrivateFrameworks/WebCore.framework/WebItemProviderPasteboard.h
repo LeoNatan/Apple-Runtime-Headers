@@ -46,7 +46,6 @@
 - (id)_preLoadedDataConformingToType:(id)arg1 forItemProviderAtIndex:(unsigned long long)arg2;
 @property(copy, nonatomic) NSArray *itemProviders;
 - (id)pasteboardTypes;
-- (id)pasteboardTypesByFidelityForItemAtIndex:(unsigned long long)arg1;
 - (void)updateSupportedTypeIdentifiers:(id)arg1;
 - (id)init;
 

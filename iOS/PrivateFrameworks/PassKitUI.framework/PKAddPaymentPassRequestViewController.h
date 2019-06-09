@@ -35,6 +35,7 @@
     PKPaymentWebService *_webService;
 }
 
++ (id)backgroundColor;
 @property(readonly, nonatomic) PKPaymentWebService *webService; // @synthesize webService=_webService;
 @property(nonatomic) __weak id <PKAddPaymentPassRequestViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool singleTarget; // @synthesize singleTarget=_singleTarget;

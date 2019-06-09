@@ -35,7 +35,6 @@
 - (id)asset;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)_weakReference;
 - (id)init;

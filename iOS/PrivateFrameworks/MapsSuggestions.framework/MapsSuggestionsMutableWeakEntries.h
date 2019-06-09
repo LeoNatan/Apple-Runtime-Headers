@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSPointerArray;
+@class NSArray, NSPointerArray;
 
 @interface MapsSuggestionsMutableWeakEntries : NSObject
 {
@@ -15,7 +15,7 @@
 }
 
 - (void).cxx_destruct;
-- (struct NSArray *)strongArray;
+@property(readonly, nonatomic) NSArray *strongArray;
 @property(readonly, nonatomic) unsigned long long count;
 - (id)weakObjectAtIndex:(unsigned long long)arg1;
 - (void)addWeakObject:(id)arg1;

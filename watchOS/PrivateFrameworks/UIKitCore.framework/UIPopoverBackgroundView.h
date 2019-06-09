@@ -34,8 +34,6 @@
 - (struct UIEdgeInsets)_shadowInsets;
 - (id)_shadowPathForRect:(struct CGRect)arg1 arrowDirection:(unsigned int)arg2;
 - (void)_updateChrome;
-- (_Bool)_needsSeperateBlending;
-- (_Bool)_wantsDefaultContentAppearance;
 - (struct UIEdgeInsets)_contentViewInsetsForArrowDirection:(unsigned int)arg1;
 - (struct UIEdgeInsets)_contentViewInsets;
 @property(nonatomic) unsigned int arrowDirection;

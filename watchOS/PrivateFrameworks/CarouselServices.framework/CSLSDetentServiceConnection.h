@@ -15,6 +15,8 @@
 @interface CSLSDetentServiceConnection : NSObject <CSLSDetentService, CSLSDetentClient>
 {
     NSXPCConnection *_connection;
+    struct os_unfair_recursive_lock_s _lock;
+    _Bool _assertionTaken;
     id <CSLSDetentClient> _delegate;
 }
 
@@ -22,6 +24,7 @@
 + (id)exportedInterface;
 + (id)serverInterface;
 + (id)serviceName;
+@property(nonatomic) _Bool assertionTaken; // @synthesize assertionTaken=_assertionTaken;
 @property(readonly, nonatomic) __weak id <CSLSDetentClient> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)recordMetrics:(id)arg1;
@@ -32,8 +35,9 @@
 - (void)getPreferences:(CDUnknownBlockType)arg1;
 - (void)releaseDetentAssertion:(CDUnknownBlockType)arg1;
 - (void)takeDetentAssertion:(CDUnknownBlockType)arg1;
-- (id)_synchronousRemoteObjectProxy;
-- (id)_remoteObjectProxy;
+- (void)_retakeAssertionIfNecessary;
+- (void)_withLock:(CDUnknownBlockType)arg1;
+- (id)_remoteObjectProxy:(CDUnknownBlockType)arg1;
 - (id)init;
 - (id)initWithQueue:(id)arg1 delegate:(id)arg2;
 

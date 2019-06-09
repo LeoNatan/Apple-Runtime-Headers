@@ -6,7 +6,7 @@
 
 #import <PackageKit/NSObject-Protocol.h>
 
-@class NSString, NSURL;
+@class NSDictionary, NSString, NSURL;
 
 @protocol PKPackageReferable <NSObject>
 @property(readonly) NSURL *URL;
@@ -15,6 +15,9 @@
 
 @optional
 @property(readonly) NSString *digest;
+@property(readonly) NSDictionary *additionalInfo;
+@property(readonly) long long fileDigestType;
+@property(readonly) NSString *fileDigest;
 @property(readonly) NSString *MD5;
 @property(readonly) unsigned long long fileSize;
 @end

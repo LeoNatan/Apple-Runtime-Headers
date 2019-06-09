@@ -24,6 +24,7 @@
 + (id)objectForKey:(id)arg1;
 + (void)removeObjectForKey:(id)arg1;
 + (void)removeAllKeys;
++ (id)keysWhitelistedForProcessEnvironmentOverride;
 + (id)defaultValues;
 
 @end

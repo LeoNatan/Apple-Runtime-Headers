@@ -8,6 +8,7 @@
 
 @class SKUIShareTemplateViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIShareTemplateURLItemProvider : UIActivityItemProvider
 {
     SKUIShareTemplateViewElement *_templateElement;

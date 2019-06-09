@@ -28,11 +28,15 @@
     int _rscp;
     int _rssi;
     int _serverHash;
+    NSString *_serviceProviderName;
     int _transmit;
-    CDStruct_3769fefd _has;
+    BOOL _isLimitedService;
+    CDStruct_648273eb _has;
 }
 
 + (Class)neighborType;
+@property(retain, nonatomic) NSString *serviceProviderName; // @synthesize serviceProviderName=_serviceProviderName;
+@property(nonatomic) BOOL isLimitedService; // @synthesize isLimitedService=_isLimitedService;
 @property(retain, nonatomic) CLPCellNeighborsGroup *neighborGroup; // @synthesize neighborGroup=_neighborGroup;
 @property(retain, nonatomic) NSMutableArray *neighbors; // @synthesize neighbors=_neighbors;
 @property(nonatomic) int rat; // @synthesize rat=_rat;
@@ -60,6 +64,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasServiceProviderName;
+@property(nonatomic) BOOL hasIsLimitedService;
 @property(readonly, nonatomic) BOOL hasNeighborGroup;
 - (id)neighborAtIndex:(unsigned long long)arg1;
 - (unsigned long long)neighborsCount;

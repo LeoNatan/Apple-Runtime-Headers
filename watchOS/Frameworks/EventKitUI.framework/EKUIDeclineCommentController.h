@@ -6,21 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class UIAlertView;
+@class UIAlertController, UITextField;
 
 @interface EKUIDeclineCommentController : NSObject
 {
-    UIAlertView *_alertView;
+    UIAlertController *_alertController;
+    UITextField *_alertTextField;
     CDUnknownBlockType _completionBlock;
 }
 
-+ (id)presentDeclineCommentAlertWithOrganizer:(id)arg1 currentComment:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
++ (id)presentDeclineCommentAlertWithOrganizer:(id)arg1 currentComment:(id)arg2 viewController:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 + (id)_newDeclineCommentControllerWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void).cxx_destruct;
 - (void)dismissAnimated:(_Bool)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)_completeWithButtonIndex:(int)arg1 animated:(_Bool)arg2;
-- (void)_presentAlertWithOrganizer:(id)arg1 currentComment:(id)arg2;
+- (void)_completeWithButton:(unsigned int)arg1;
+- (void)_presentAlertWithOrganizer:(id)arg1 currentComment:(id)arg2 viewController:(id)arg3;
 - (void)dealloc;
 
 @end

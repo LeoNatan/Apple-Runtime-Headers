@@ -6,15 +6,16 @@
 
 #import <PepperUICore/PUICTableViewController.h>
 
+#import <NanoPassKitUI/NPKAccountPassManagerDelegate-Protocol.h>
 #import <NanoPassKitUI/NPKTransitRenewalTableViewControllerDelegate-Protocol.h>
 #import <NanoPassKitUI/NPKTransitTopUpValueSelectionViewControllerDelegate-Protocol.h>
 #import <NanoPassKitUI/PKPaymentAuthorizationControllerDelegate-Protocol.h>
 #import <NanoPassKitUI/PKPaymentAuthorizationControllerPrivateDelegate-Protocol.h>
 
-@class NPKPassView, NPKTransitPassInfo, NPKTransitTopUpValueSelectionViewController, NPSDomainAccessor, NSArray, NSDecimalNumber, NSString, PKPass, PKPaymentAuthorizationController;
+@class NPKAccountPassManager, NPKPassView, NPKTransitPassInfo, NPKTransitTopUpValueSelectionViewController, NPSDomainAccessor, NSArray, NSDecimalNumber, NSString, PKPass, PKPaymentAuthorizationController;
 @protocol UIScrollViewDelegate;
 
-@interface NPKPassDetailTableViewController : PUICTableViewController <NPKTransitTopUpValueSelectionViewControllerDelegate, NPKTransitRenewalTableViewControllerDelegate, PKPaymentAuthorizationControllerDelegate, PKPaymentAuthorizationControllerPrivateDelegate>
+@interface NPKPassDetailTableViewController : PUICTableViewController <NPKAccountPassManagerDelegate, NPKTransitTopUpValueSelectionViewControllerDelegate, NPKTransitRenewalTableViewControllerDelegate, PKPaymentAuthorizationControllerDelegate, PKPaymentAuthorizationControllerPrivateDelegate>
 {
     _Bool _hidePassActions;
     _Bool _hideCellBackgrounds;
@@ -23,7 +24,10 @@
     NPKTransitPassInfo *_transitPassinfo;
     id <UIScrollViewDelegate> _scrollViewDelegate;
     NPKPassView *_passView;
+    NPKAccountPassManager *_accountPassManager;
     NSArray *_transitDetails;
+    NSArray *_transitBalances;
+    NSArray *_transitCommutePlans;
     NSArray *_topUpActions;
     NSArray *_renewalActions;
     PKPaymentAuthorizationController *_presentingPaymentAuthorizationController;
@@ -44,7 +48,10 @@
 @property(retain, nonatomic) PKPaymentAuthorizationController *presentingPaymentAuthorizationController; // @synthesize presentingPaymentAuthorizationController=_presentingPaymentAuthorizationController;
 @property(retain, nonatomic) NSArray *renewalActions; // @synthesize renewalActions=_renewalActions;
 @property(retain, nonatomic) NSArray *topUpActions; // @synthesize topUpActions=_topUpActions;
+@property(retain, nonatomic) NSArray *transitCommutePlans; // @synthesize transitCommutePlans=_transitCommutePlans;
+@property(retain, nonatomic) NSArray *transitBalances; // @synthesize transitBalances=_transitBalances;
 @property(retain, nonatomic) NSArray *transitDetails; // @synthesize transitDetails=_transitDetails;
+@property(retain, nonatomic) NPKAccountPassManager *accountPassManager; // @synthesize accountPassManager=_accountPassManager;
 @property(retain, nonatomic) NPKPassView *passView; // @synthesize passView=_passView;
 @property(nonatomic) __weak id <UIScrollViewDelegate> scrollViewDelegate; // @synthesize scrollViewDelegate=_scrollViewDelegate;
 @property(readonly, nonatomic) NPKTransitPassInfo *transitPassinfo; // @synthesize transitPassinfo=_transitPassinfo;
@@ -60,15 +67,21 @@
 - (void)_presentPaymentAuthorizationControllerWithAction:(id)arg1 serviceProviderData:(id)arg2 currency:(id)arg3 amount:(id)arg4;
 - (void)transitRenewalTableViewControllerDidFailToLoadRemoteActions:(id)arg1;
 - (void)transitRenewalTableViewController:(id)arg1 didSelectItem:(id)arg2;
+- (void)accountPassManager:(id)arg1 didUpdateAccount:(id)arg2;
 - (void)topUpValueSelectionViewController:(id)arg1 didEnterAmount:(id)arg2;
+- (void)_updateTransitDetailsDataSource;
 - (id)_reusableTransitPropertyCellForTableView:(id)arg1;
 - (id)_topUpActions;
 - (id)_renewalActions;
-- (id)_transitDetails;
+- (id)_transitCommutePlans;
+- (id)_transitBalances;
 - (int)_renewalActionsSection;
 - (int)_topUpActionsSection;
+- (int)_transitCommutePlansSection;
+- (int)_transitBalancesSection;
 - (int)_transitDetailsSection;
 - (int)_passViewSection;
+- (id)_tableView:(id)arg1 cellForTransitBalancesOrCommutePlansWithIndexPath:(id)arg2;
 - (_Bool)_showPassActions;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
@@ -81,6 +94,8 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)_updateTransitDetailsSection;
 - (void)_updatePeerAccountBalance:(id)arg1;
+- (void)prepareForHiding;
+- (void)handlePaymentPassActionType:(unsigned int)arg1;
 - (void)setPass:(id)arg1 transitPassInfo:(id)arg2;
 - (_Bool)canProvideActionController;
 - (id)actionController;

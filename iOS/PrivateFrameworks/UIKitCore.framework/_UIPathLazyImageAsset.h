@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (_Bool)_containsImagesInPath:(id)arg1;
 - (void)_clearResolvedImageResources;
-- (id)imageWithTraitCollection:(id)arg1;
+- (id)imageWithConfiguration:(id)arg1;
 
 @end
 

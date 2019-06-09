@@ -7,6 +7,9 @@
 #import <WebKit/WKWebsiteDataStore.h>
 
 @interface WKWebsiteDataStore (SafariSharedExtras)
++ (id)safari_dataStoreWithConfiguration:(id)arg1;
++ (id)safari_defaultDataStoreDisallowingTLSFallback;
++ (id)safari_nonPersistentDataStore;
 + (void)safari_clearHSTSSuperCookies;
 + (id)safari_allDataTypes;
 @end

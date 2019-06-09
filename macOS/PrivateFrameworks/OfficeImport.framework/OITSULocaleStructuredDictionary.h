@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSLocale, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface OITSULocaleStructuredDictionary : NSObject
 {
     NSDictionary *_dictionary;

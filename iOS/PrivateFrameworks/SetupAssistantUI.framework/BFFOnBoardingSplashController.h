@@ -6,21 +6,25 @@
 
 #import <SetupAssistantUI/BFFSplashController.h>
 
-@class NSDate, NSString;
+#import <SetupAssistantUI/BYEnvironmentDependencyReceiver-Protocol.h>
 
-@interface BFFOnBoardingSplashController : BFFSplashController
+@class NSDate, NSString;
+@protocol BYDeviceProvider;
+
+@interface BFFOnBoardingSplashController : BFFSplashController <BYEnvironmentDependencyReceiver>
 {
     _Bool _extendBackgroundColorToNavigationBar;
     _Bool _movieShowing;
     long long _feature;
     CDUnknownBlockType _completion;
+    id <BYDeviceProvider> _deviceProvider;
     NSString *_preferenceKey;
     NSDate *_placeholderStartDate;
     double _placeholderDuration;
     NSDate *_videoStartDate;
 }
 
-+ (void)needsToRunForFeature:(long long)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)needsToRunForFeature:(long long)arg1 usingDeviceProvider:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)cloudConfigSkipKey;
 @property(retain) NSDate *videoStartDate; // @synthesize videoStartDate=_videoStartDate;
 @property double placeholderDuration; // @synthesize placeholderDuration=_placeholderDuration;
@@ -28,6 +32,7 @@
 @property(retain) NSDate *placeholderStartDate; // @synthesize placeholderStartDate=_placeholderStartDate;
 @property _Bool extendBackgroundColorToNavigationBar; // @synthesize extendBackgroundColorToNavigationBar=_extendBackgroundColorToNavigationBar;
 @property(retain) NSString *preferenceKey; // @synthesize preferenceKey=_preferenceKey;
+@property(retain, nonatomic) id <BYDeviceProvider> deviceProvider; // @synthesize deviceProvider=_deviceProvider;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(nonatomic) long long feature; // @synthesize feature=_feature;
 - (void).cxx_destruct;
@@ -38,6 +43,12 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithFeature:(long long)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -13,17 +13,18 @@
     UIView *_selectedView;
     unsigned long long _selectionStyle;
     UIView *_separatorView;
-    MFModernAtomView *_hostAtomView;
     int _separatorStyle;
     _Bool _selected;
     double _scalingFactor;
+    MFModernAtomView *_hostAtomView;
 }
 
 @property(nonatomic) int separatorStyle; // @synthesize separatorStyle=_separatorStyle;
 @property(readonly, nonatomic) UIView *selectedView; // @synthesize selectedView=_selectedView;
-@property(nonatomic) MFModernAtomView *hostAtomView; // @synthesize hostAtomView=_hostAtomView;
+@property(nonatomic) __weak MFModernAtomView *hostAtomView; // @synthesize hostAtomView=_hostAtomView;
 @property(readonly, nonatomic) UIView *separatorView; // @synthesize separatorView=_separatorView;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
+- (void).cxx_destruct;
 - (void)invalidateIntrinsicContentSize;
 - (id)_chevronImage;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 style:(unsigned long long)arg3;
@@ -34,7 +35,6 @@
 - (double)separatorWidth;
 - (void)tintColorDidChange;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)dealloc;
 
 @end
 

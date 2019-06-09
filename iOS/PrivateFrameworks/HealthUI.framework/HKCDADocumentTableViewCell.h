@@ -27,7 +27,7 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_selectedCheckbox:(id)arg1;
 - (void)_setDocumentLabelWithTag:(long long)arg1 text:(id)arg2 view:(id)arg3;
-- (id)_createDocumentCellLabelWithTag:(long long)arg1 fontSizePts:(double)arg2 whiteLevel:(double)arg3 flexibleHeight:(_Bool)arg4;
+- (id)_createDocumentCellLabelWithTag:(long long)arg1 fontSizePts:(double)arg2 flexibleHeight:(_Bool)arg3;
 - (void)_updateForCurrentSizeCategory;
 - (void)_setupCellStructure;
 @property(nonatomic, getter=isChecked) _Bool checked;

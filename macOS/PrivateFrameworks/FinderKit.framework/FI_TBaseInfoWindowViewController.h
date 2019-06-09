@@ -14,13 +14,13 @@ __attribute__((visibility("hidden")))
 @interface FI_TBaseInfoWindowViewController : FI_TViewController <TMarkTornDown>
 {
     struct TFENodeVector _targetNodes;
-    struct TNSRef<NSArray<IPropertyValueControllers *>, void> _valueControllers;
+    struct TNSRef<NSArray<FI_IPropertyValueController *>, void> _valueControllers;
     struct TRef<NSObject<OS_dispatch_queue>*, TRetainReleasePolicy<dispatch_queue_t>> _prefetchValuesQueue;
     _Bool _isTornDown;
 }
 
 + (id)controller;
-@property(readonly, getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)nodeMDAttributeChanged:(const struct TFENode *)arg1 attributes:(id)arg2 isDisplayAttributes:(_Bool)arg3;

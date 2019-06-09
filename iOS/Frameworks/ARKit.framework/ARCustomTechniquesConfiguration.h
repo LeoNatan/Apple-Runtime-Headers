@@ -31,7 +31,9 @@
 @property(readonly, nonatomic) ARWorldMap *initialWorldMap;
 - (_Bool)isLightEstimationEnabled;
 - (long long)worldAlignment;
+- (id)imageSensorSettings;
 - (void)setVideoFormat:(id)arg1;
+- (id)initPrivate;
 - (id)init;
 
 @end

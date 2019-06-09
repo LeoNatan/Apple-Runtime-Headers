@@ -9,6 +9,7 @@
 @protocol DDParsecServiceVCInterface
 - (void)appDidEnterBackground;
 - (void)appWillEnterForeground;
+- (void)setDDViewScale:(double)arg1;
 - (void)setDDViewStyle:(long long)arg1;
 - (void)setTitle:(NSString *)arg1;
 - (void)setSheetMode:(_Bool)arg1;

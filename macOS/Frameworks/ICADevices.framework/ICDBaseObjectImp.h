@@ -6,21 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock, NSMutableDictionary, NSString, _ICDDirectoryObject;
+@class NSMutableDictionary, NSString, _ICDDirectoryObject;
 
+__attribute__((visibility("hidden")))
 @interface ICDBaseObjectImp : NSObject
 {
     void *m_ObjectInformation;
     _ICDDirectoryObject *m_parent;
     NSString *m_savePath;
-    struct FSRef m_saveFSRef;
     unsigned int m_ICAObject;
     int m_ObjectInfoSize;
     BOOL m_cleanUpCalled;
     NSMutableDictionary *m_ObjectDict;
     BOOL _gotMetadata;
     NSMutableDictionary *_metadata;
-    NSLock *_lockObject;
+    struct os_unfair_lock_s _lockObject;
 }
 
 - (short)uploadFile:(id)arg1;

@@ -15,9 +15,11 @@
 @interface _INPBDateTimeRangeValue : PBCodable <_INPBDateTimeRangeValue, NSSecureCoding, NSCopying>
 {
     struct {
+        unsigned int allDay:1;
         unsigned int endCalendar:1;
         unsigned int startCalendar:1;
     } _has;
+    BOOL _allDay;
     long long _endCalendar;
     _INPBDateTime *_endDateTime;
     _INPBRecurrenceValue *_recurrence;
@@ -26,17 +28,21 @@
     _INPBValueMetadata *_valueMetadata;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) _INPBValueMetadata *valueMetadata; // @synthesize valueMetadata=_valueMetadata;
 @property(retain, nonatomic) _INPBDateTime *startDateTime; // @synthesize startDateTime=_startDateTime;
 @property(nonatomic) long long startCalendar; // @synthesize startCalendar=_startCalendar;
 @property(retain, nonatomic) _INPBRecurrenceValue *recurrence; // @synthesize recurrence=_recurrence;
 @property(retain, nonatomic) _INPBDateTime *endDateTime; // @synthesize endDateTime=_endDateTime;
 @property(nonatomic) long long endCalendar; // @synthesize endCalendar=_endCalendar;
+@property(nonatomic) BOOL allDay; // @synthesize allDay=_allDay;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 @property(readonly, nonatomic) BOOL hasValueMetadata;
@@ -45,6 +51,7 @@
 @property(readonly, nonatomic) BOOL hasRecurrence;
 @property(readonly, nonatomic) BOOL hasEndDateTime;
 @property(nonatomic) BOOL hasEndCalendar;
+@property(nonatomic) BOOL hasAllDay;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

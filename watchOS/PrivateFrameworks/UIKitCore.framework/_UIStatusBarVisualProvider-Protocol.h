@@ -11,8 +11,8 @@
 
 @protocol _UIStatusBarVisualProvider <NSObject>
 + (struct CGSize)intrinsicContentSizeForOrientation:(int)arg1;
-@property(readonly, nonatomic) _UIStatusBarStyleAttributes *styleAttributes;
 @property(nonatomic) __weak _UIStatusBar *statusBar;
+- (_UIStatusBarStyleAttributes *)styleAttributesForStyle:(int)arg1;
 - (NSArray *)orderedDisplayItemPlacementsInRegionWithIdentifier:(NSString *)arg1;
 - (NSArray *)setupInContainerView:(UIView *)arg1;
 

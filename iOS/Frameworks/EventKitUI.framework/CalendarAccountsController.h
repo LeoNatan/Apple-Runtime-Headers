@@ -22,14 +22,13 @@
 - (void).cxx_destruct;
 - (void)refreshListingForSource:(id)arg1 isUserRequested:(_Bool)arg2;
 - (_Bool)sourceListingNeedsRefresh:(id)arg1;
-- (int)sortOrderForStoreType:(int)arg1;
+- (int)sortOrderForStoreType:(long long)arg1;
 - (int)sortOrderForSourceType:(long long)arg1;
 - (int)sortOrderForSource:(id)arg1;
 - (_Bool)sourceIsManaged:(id)arg1;
 - (id)accountTypeTitleForSource:(id)arg1;
 - (id)accountTypeTitleForSourceWithExternalId:(id)arg1;
 - (id)titleForSource:(id)arg1 forBeginningOfSentence:(_Bool)arg2;
-- (id)_localizedTitleForLocalSourceUsedAtBeginningOfSentence:(_Bool)arg1;
 - (id)_displayAccountForAccountWithIdentifier:(id)arg1;
 - (id)_accountForAccountIdentifier:(id)arg1;
 - (void)_localeDidChange:(id)arg1;

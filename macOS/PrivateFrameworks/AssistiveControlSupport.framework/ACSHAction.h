@@ -24,6 +24,7 @@
 
 + (id)descriptionForActionType:(unsigned long long)arg1;
 + (id)titleForActionType:(unsigned long long)arg1;
++ (id)titleForPlaceholderActionType:(unsigned long long)arg1;
 + (Class)classForActionType:(unsigned long long)arg1;
 + (Class)classForDict:(id)arg1;
 @property(nonatomic) int actionStage; // @synthesize actionStage=_actionStage;

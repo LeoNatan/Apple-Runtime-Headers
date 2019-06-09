@@ -16,8 +16,6 @@
 + (id)sharedInstance;
 @property(retain) NSMutableDictionary *_runningQueries; // @synthesize _runningQueries;
 - (void).cxx_destruct;
-- (void)databaseNoLongerFull;
-- (void)databaseFull;
 - (void)messageQuery:(id)arg1 finishedWithResult:(id)arg2 chatGUIDs:(id)arg3;
 - (void)loadMessageWithGUID:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)dealloc;

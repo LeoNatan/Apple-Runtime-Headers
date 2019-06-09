@@ -11,8 +11,10 @@
 }
 
 + (id)actionTypeToPETString:(unsigned int)arg1;
++ (id)inverseActionFeedbackTypeMapping;
 + (unsigned int)stringToActionFeedbackStage:(id)arg1 found:(_Bool *)arg2;
 + (unsigned int)stringToActionExperience:(id)arg1 found:(_Bool *)arg2;
++ (id)actionFeedbackTypeToString:(unsigned int)arg1;
 + (id)actionFeedbackStageToString:(unsigned int)arg1;
 + (id)actionTypeToString:(unsigned int)arg1;
 + (id)actionExperienceToString:(unsigned int)arg1;

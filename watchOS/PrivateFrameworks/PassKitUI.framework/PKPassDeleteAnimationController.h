@@ -17,7 +17,7 @@
     PKPassGroupView *_groupView;
 }
 
-+ (void)performPassbookDeleteWithView:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)performPassbookDeleteWithView:(id)arg1 inSuperview:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, retain, nonatomic) PKPassGroupView *groupView; // @synthesize groupView=_groupView;
 @property(readonly, retain, nonatomic) PKPassView *passView; // @synthesize passView=_passView;
 @property(nonatomic) __weak id <PKPassDeleteAnimationControllerDelegate> delegate; // @synthesize delegate=_delegate;

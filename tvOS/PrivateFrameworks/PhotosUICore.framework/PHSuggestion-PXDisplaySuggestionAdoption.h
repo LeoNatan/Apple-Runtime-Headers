@@ -11,11 +11,11 @@
 @class NSDate, NSDictionary, NSString;
 
 @interface PHSuggestion (PXDisplaySuggestionAdoption) <PXDisplaySuggestion>
++ (id)px_keyAssetFilteringPredicate;
 - (id)fetchKeyAssets;
 
 // Remaining properties
 @property(readonly, nonatomic) NSDictionary *actionProperties;
-@property(readonly, nonatomic) NSDate *creationDate;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) NSDate *endDate;

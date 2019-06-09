@@ -23,6 +23,8 @@
 - (void)writeToKeychain;
 - (id)secItemFormatToDictionary:(id)arg1;
 - (id)dictionaryToSecItemFormat:(id)arg1;
+- (void)_resetKeychainItem:(BOOL)arg1;
+- (void)resetLocalKeychainItem;
 - (void)resetKeychainItem;
 - (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

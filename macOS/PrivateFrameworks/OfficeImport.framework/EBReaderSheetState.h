@@ -8,6 +8,7 @@
 
 @class EBReaderState, EDSheet;
 
+__attribute__((visibility("hidden")))
 @interface EBReaderSheetState : NSObject
 {
     EBReaderState *mReaderState;

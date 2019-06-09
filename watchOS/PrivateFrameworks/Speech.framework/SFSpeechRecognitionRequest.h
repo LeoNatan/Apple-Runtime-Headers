@@ -38,6 +38,7 @@
 - (id)_speechRequestOptions;
 - (id)_dictationOptionsWithTaskHint:(int)arg1 requestIdentifier:(id)arg2;
 - (id)_startedConnectionWithLanguageCode:(id)arg1 delegate:(id)arg2 taskHint:(int)arg3 requestIdentifier:(id)arg4;
+@property(nonatomic) _Bool requiresOnDeviceRecognition;
 - (_Bool)_powerMeteringAvailable;
 - (_Bool)automaticallyEndpoint;
 - (id)init;

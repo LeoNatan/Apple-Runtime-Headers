@@ -6,7 +6,6 @@
 
 #import <ConversationKit/_TtC15ConversationKit22PlatformViewController.h>
 
-__attribute__((visibility("hidden")))
 @interface CNKMostActiveParticipantViewController : _TtC15ConversationKit22PlatformViewController
 {
     // Error parsing type: , name: participants

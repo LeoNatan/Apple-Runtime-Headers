@@ -7,8 +7,10 @@
 @class NSArray, NSDictionary, NSString, NSURL, NSURLCredential;
 
 @protocol SUHelperDProtocol
+- (BOOL)rebootForPostLogoutUpdatesAfterSuccess:(BOOL)arg1 nightInstall:(BOOL)arg2 shouldShutDown:(BOOL)arg3;
 - (NSURLCredential *)lookupURLCredentialInSystemKeychainForHost:(NSString *)arg1 port:(long long)arg2;
 - (BOOL)configureProgressPhasesAll:(NSDictionary *)arg1;
+- (BOOL)setAppleUpgradeShouldFLORun:(BOOL)arg1;
 - (BOOL)setAppleStagedUpgradeShouldFLORun:(BOOL)arg1;
 - (BOOL)stashAndCommitAPFSFDEKey;
 - (BOOL)commitLoginCredentialsDisablingFLO:(BOOL)arg1 hasBaseSystemUpdates:(BOOL)arg2;
@@ -18,7 +20,6 @@
 - (BOOL)deletePref:(NSString *)arg1 inDomain:(NSString *)arg2;
 - (BOOL)setMacOSAutoUpdate:(BOOL)arg1;
 - (BOOL)setAppStoreAutoUpdate:(BOOL)arg1;
-- (BOOL)clearCriticalUpdateNotificationDate;
 - (BOOL)removeUpdatesAvailableCookie;
 - (BOOL)createUpdatesAvailableCookie;
 - (BOOL)updateAnyUserPreferences;

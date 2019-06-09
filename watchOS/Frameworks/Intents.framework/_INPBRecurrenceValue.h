@@ -24,6 +24,7 @@
     long long _ordinal;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) long long ordinal; // @synthesize ordinal=_ordinal;
 @property(nonatomic) unsigned long long interval; // @synthesize interval=_interval;
 @property(nonatomic) int frequency; // @synthesize frequency=_frequency;
@@ -31,6 +32,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(nonatomic) _Bool hasOrdinal;

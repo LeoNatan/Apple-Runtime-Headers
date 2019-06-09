@@ -14,16 +14,15 @@ __attribute__((visibility("hidden")))
     double _timeout;
     unsigned long long _urlType;
     NSNumber *_requestPriority;
+    unsigned long long _multipathServiceType;
 }
 
 - (void).cxx_destruct;
+- (unsigned long long)multipathServiceType;
 - (double)timeout;
 - (unsigned char)requestCounterInfoTypeForRequest:(id)arg1;
-- (int)dataRequestKindForRequest:(id)arg1;
-- (int)experimentDispatcherRequestTypeForRequest:(id)arg1;
-- (long long)experimentType;
+- (CDStruct_d1a7ebee)dataRequestKindForRequest:(id)arg1 traits:(id)arg2;
 - (id)serviceTypeNumber;
-- (_Bool)shouldThrottleRequests;
 - (unsigned long long)urlType;
 - (id)additionalHTTPHeaders;
 - (id)initWithTimeout:(double)arg1 request:(id)arg2 traits:(id)arg3;

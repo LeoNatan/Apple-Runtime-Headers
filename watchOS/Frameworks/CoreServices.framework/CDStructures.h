@@ -4,21 +4,77 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSError, NSString, _LSDatabase;
+
 #pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
 #pragma mark Named Structures
 
-struct Data {
+struct BindingEvaluator {
+    id _field1;
+    id _field2;
+    id _field3;
+    id _field4;
+    _Bool _field5;
+    id _field6;
+    struct LSVersionNumber _field7;
+    _Bool _field8;
+    unsigned int _field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    struct vector<LSBundleClass, std::__1::allocator<LSBundleClass>> _field12;
+    CDUnknownBlockType _field13;
+    id _field14;
+    CDUnknownBlockType _field15;
+    id _field16;
+};
+
+struct CSMap {
+    unsigned int table;
+    struct CSMapCallbacks cb;
+    struct CSMapContext *context;
+    struct os_unfair_lock_s _lock;
+    unsigned int _generation;
+    struct _CSMapHeader *_header;
+    unsigned int *_keys;
+    unsigned int *_values;
+};
+
+struct CSMapCallbacks {
+    CDUnknownFunctionPointerType retainKey;
+    CDUnknownFunctionPointerType releaseKey;
+    CDUnknownFunctionPointerType getKeyHash;
+    CDUnknownFunctionPointerType keyMatchesData;
+    CDUnknownFunctionPointerType retainValue;
+    CDUnknownFunctionPointerType releaseValue;
+};
+
+struct CSMapContext;
+
+struct Context {
+    struct LSContext *_contextPointer;
+    struct LSContext _contextStorage;
+    unsigned char _created;
+    NSError *_error;
+};
+
+struct ExtendedBinding {
     unsigned int _field1;
-    unsigned char _field2;
-    unsigned char _field3;
-    unsigned short _field4;
-    unsigned int _field5;
-    unsigned int _field6;
-    unsigned int _field7;
-    struct Table _field8;
+    struct LSBundleData *_field2;
+    unsigned int _field3;
+    CDStruct_183601bc *_field4;
+    id _field5;
+    id _field6;
+    _Bool _field7;
+    _Bool _field8;
+    id _field9;
+    id _field10;
+    char _field11;
+    id _field12;
+    struct optional<bool> _field13;
+    struct optional<bool> _field14;
 };
 
 struct FileInfo {
@@ -36,11 +92,81 @@ struct FolderInfo {
     unsigned short _field4;
 };
 
-struct LSContext {
-    struct LSDatabase *db;
+struct LSBinding {
+    unsigned int bundle;
+    struct LSBundleData *bundleData;
+    unsigned int claim;
+    CDStruct_183601bc *claimData;
+    id userInfo;
+    NSString *reason;
 };
 
-struct LSDatabase;
+struct LSContext {
+    _LSDatabase *db;
+};
+
+struct LSExtensionPointData;
+
+struct LSPluginData {
+    int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    struct LSVersionNumber _field4;
+    unsigned int _field5;
+    unsigned int _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    unsigned int _field12;
+    unsigned int _field13;
+    unsigned int _field14;
+    unsigned int _field15;
+    unsigned int _field16;
+    unsigned int _field17;
+    unsigned int _field18;
+    struct LSVersionNumber _field19;
+    struct LSVersionNumber _field20;
+    unsigned int _field21;
+    unsigned int _field22;
+    unsigned int _field23;
+    unsigned int _field24;
+    unsigned int _field25;
+    unsigned char _field26;
+    unsigned int _field27;
+    unsigned int _field28;
+};
+
+struct LSSchema {
+    unsigned int headerTable;
+    unsigned int bundleTable;
+    unsigned int claimTable;
+    unsigned int serviceTable;
+    unsigned int utypeTable;
+    struct {
+        struct CSMap map;
+    } bindableKeyMap;
+    struct {
+        struct CSMap map;
+        unsigned int bindingClass;
+        unsigned char isCaseInsensitive;
+    } bindingMaps[13];
+    unsigned int handlerPrefTable;
+    unsigned int containerTable;
+    unsigned int aliasTable;
+    unsigned int pluginTable;
+    unsigned int extensionPointTable;
+    unsigned int bindingListTable;
+    unsigned int propertyListTable;
+    unsigned int localizedStringTable;
+    unsigned int canonicalStringTable;
+    struct _LSSchemaCache *_cache;
+};
+
+struct LSVersionNumber {
+    unsigned char _opaque[32];
+};
 
 struct NSDictionary {
     Class _field1;
@@ -62,65 +188,105 @@ struct Rect {
     short _field4;
 };
 
-struct Store;
+struct _CSMapHeader;
 
-struct Table {
-    struct Unit _field1;
-    char _field2[64];
-    unsigned int _field3;
-    unsigned int _field4;
-};
-
-struct Unit {
-    unsigned int :30;
-    unsigned int :2;
-    unsigned int _field1;
-    char _field2[0];
-};
+struct _LSSchemaCache;
 
 struct _NSRange {
     unsigned int _field1;
     unsigned int _field2;
 };
 
+struct optional<LaunchServices::BindingEvaluator> {
+    union {
+        char _field1;
+        struct BindingEvaluator _field2;
+    } _field1;
+    _Bool _field2;
+};
+
+struct optional<bool> {
+    union {
+        char _field1;
+        _Bool _field2;
+    } _field1;
+    _Bool _field2;
+};
+
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
 };
 
-struct unique_ptr<CSStore2::Store, std::__1::default_delete<CSStore2::Store>> {
-    struct __compressed_pair<CSStore2::Store *, std::__1::default_delete<CSStore2::Store>> {
-        struct Store *__value_;
-    } __ptr_;
+struct vector<LSBundleClass, std::__1::allocator<LSBundleClass>> {
+    unsigned long *_field1;
+    unsigned long *_field2;
+    struct __compressed_pair<LSBundleClass *, std::__1::allocator<LSBundleClass>> {
+        unsigned long *_field1;
+    } _field3;
+};
+
+struct vector<LaunchServices::BindingEvaluation::ExtendedBinding, std::__1::allocator<LaunchServices::BindingEvaluation::ExtendedBinding>> {
+    struct ExtendedBinding *_field1;
+    struct ExtendedBinding *_field2;
+    struct __compressed_pair<LaunchServices::BindingEvaluation::ExtendedBinding *, std::__1::allocator<LaunchServices::BindingEvaluation::ExtendedBinding>> {
+        struct ExtendedBinding *_field1;
+    } _field3;
+};
+
+struct vector<const LSExtensionPointData *, std::__1::allocator<const LSExtensionPointData *>> {
+    struct LSExtensionPointData **__begin_;
+    struct LSExtensionPointData **__end_;
+    struct __compressed_pair<const LSExtensionPointData **, std::__1::allocator<const LSExtensionPointData *>> {
+        struct LSExtensionPointData **__value_;
+    } __end_cap_;
+};
+
+struct vector<unsigned int, std::__1::allocator<unsigned int>> {
+    unsigned int *__begin_;
+    unsigned int *__end_;
+    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
+        unsigned int *__value_;
+    } __end_cap_;
 };
 
 #if 0
 // Names with conflicting types:
+typedef struct {
+    id _field1;
+    _Bool _field2;
+    _Bool _field3;
+    _Bool _field4;
+    _Bool _field5;
+    _Bool _field6;
+    _Bool _field7;
+} State_0f18e2a3;
+
 typedef struct {
     unsigned long _field1;
     unsigned long long _field2;
     unsigned int _field3;
     unsigned int _field4;
     unsigned char _field5;
-    unsigned char _field6;
-    unsigned char _field7;
-    unsigned char _field8;
-    unsigned short _field9;
-    unsigned int _field10;
-    unsigned int _field11;
-    unsigned long long _field12;
-    unsigned long long _field13;
-    int _field14;
-    int _field15;
-    unsigned long long _field16;
+    unsigned short _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    int _field9;
+    int _field10;
+    struct LSVersionNumber _field11;
+    struct LSVersionNumber _field12;
+    struct LSVersionNumber _field13;
+    struct LSVersionNumber _field14;
+    unsigned int _field15;
+    unsigned int _field16;
     unsigned long long _field17;
     unsigned long long _field18;
     unsigned long long _field19;
     unsigned int _field20;
-    unsigned int _field21[4];
-    unsigned long long _field22;
-    unsigned long long _field23;
-    unsigned long long _field24;
-    unsigned long long _field25;
+    unsigned int _field21;
+    unsigned int _field22;
+    unsigned int _field23;
+    unsigned int _field24;
+    unsigned int _field25;
     unsigned int _field26;
     unsigned int _field27;
     unsigned int _field28;
@@ -130,27 +296,27 @@ typedef struct {
     unsigned int _field32;
     unsigned int _field33;
     unsigned int _field34;
-    unsigned int _field35;
+    unsigned long long _field35;
     unsigned int _field36;
     unsigned int _field37;
     unsigned int _field38;
     unsigned int _field39;
-    unsigned int _field40;
-    unsigned int _field41;
-    unsigned int _field42;
-    unsigned int _field43;
+    unsigned long long _field40;
+    unsigned long long _field41;
+    unsigned long long _field42;
+    unsigned long long _field43;
     unsigned int _field44;
-    unsigned long long _field45;
+    unsigned int _field45;
     unsigned long long _field46;
     unsigned long long _field47;
-    unsigned long long _field48;
+    unsigned int _field48;
     unsigned int _field49;
-    unsigned int _field50;
-    unsigned long long _field51;
+    unsigned long long _field50;
+    unsigned int _field51;
     unsigned long long _field52;
-    unsigned long long _field53;
+    unsigned int _field53;
     unsigned int _field54;
-    unsigned long long _field55;
+    unsigned int _field55;
     unsigned int _field56;
     unsigned int _field57;
     unsigned int _field58;
@@ -165,24 +331,21 @@ typedef struct {
     unsigned int _field67;
     unsigned int _field68;
     unsigned int _field69;
-    unsigned int _field70;
-    unsigned int _field71;
-    unsigned int _field72;
-    unsigned int _field73;
+    unsigned char _field70;
+    unsigned char _field71;
+    unsigned char _field72;
+    unsigned char _field73;
     unsigned int _field74;
     unsigned int _field75;
-    unsigned char _field76;
-    unsigned char _field77;
-    unsigned char _field78;
-    unsigned char _field79;
+    unsigned int _field76;
+    unsigned int _field77;
+    unsigned int _field78;
+    unsigned int _field79;
     unsigned int _field80;
     unsigned int _field81;
-    unsigned int _field82;
+    unsigned int _field82[0];
     unsigned int _field83;
-    unsigned int _field84;
-    unsigned int _field85;
-    unsigned int _field86;
-} LSBundleData_7942beea;
+} LSBundleData_ce246170;
 
 #endif
 
@@ -202,11 +365,39 @@ typedef struct {
     unsigned int _field11;
     unsigned int _field12;
     unsigned int _field13;
-} CDStruct_b8194125;
+    unsigned int _field14;
+    unsigned int _field15;
+} CDStruct_d2548575;
+
+typedef struct {
+    unsigned long _field1;
+    id *_field2;
+    unsigned long *_field3;
+    unsigned long _field4[5];
+} CDStruct_11f37819;
 
 typedef struct {
     unsigned int val[8];
 } CDStruct_4c969caf;
+
+typedef struct CDStruct_183601bc;
+
+// Template types
+typedef struct optional<LaunchServices::BindingEvaluator> {
+    union {
+        char _field1;
+        struct BindingEvaluator _field2;
+    } _field1;
+    _Bool _field2;
+} optional_5f4daf83;
+
+typedef struct vector<unsigned int, std::__1::allocator<unsigned int>> {
+    unsigned int *__begin_;
+    unsigned int *__end_;
+    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
+        unsigned int *__value_;
+    } __end_cap_;
+} vector_12da65de;
 
 #pragma mark Typedef'd Unions
 

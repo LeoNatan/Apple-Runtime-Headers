@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableSet;
 
+__attribute__((visibility("hidden")))
 @interface OITSUDateFormatCategoryEntry : NSObject
 {
     unsigned short _separator;

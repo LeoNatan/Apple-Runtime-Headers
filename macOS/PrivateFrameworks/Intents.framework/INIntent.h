@@ -16,13 +16,16 @@
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class INImage, NSArray, NSDictionary, NSMutableDictionary, NSOrderedSet, NSString, PBCodable, _INPBIntentMetadata;
+@class INImage, INIntentCodableDescription, INIntentKeyParameter, INParameterContexts, NSArray, NSDictionary, NSMutableDictionary, NSOrderedSet, NSString, PBCodable, _INPBIntentMetadata;
 
 @interface INIntent : NSObject <INImageProxyInjecting, INIntentSlotComposing, INFileURLEnumerable, INKeyImageProducing, INIntentExport, INGenericIntent, INRuntimeObject, NSCopying, NSSecureCoding>
 {
     NSMutableDictionary *_intentInstanceDescriptionMapping;
     NSArray *_parameterImages;
+    BOOL _shouldForwardToAppOnSucccess;
     NSDictionary *_parameterCombinations;
+    NSDictionary *_configurableParameterCombinations;
+    INParameterContexts *_parameterContexts;
     unsigned long long _indexingHash;
     NSString *_identifier;
     PBCodable *_backingStore;
@@ -35,9 +38,14 @@
 + (id)typeName;
 + (void)initialize;
 + (id)_ignoredParameters;
++ (void)_setSharedExtensionContextUUID:(id)arg1 forIntentClassName:(id)arg2;
++ (id)_sharedExtensionContextUUIDForIntentClassName:(id)arg1;
 @property(retain, nonatomic, setter=_setAirPlayRouteIds:) NSArray *airPlayRouteIds; // @synthesize airPlayRouteIds=_airPlayRouteIds;
 @property(copy, nonatomic) PBCodable *backingStore; // @synthesize backingStore=_backingStore;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic, setter=_setShouldForwardToAppOnSuccess:) BOOL _shouldForwardToAppOnSucccess; // @synthesize _shouldForwardToAppOnSucccess;
+@property(retain, nonatomic, setter=_setParameterContexts:) INParameterContexts *_parameterContexts; // @synthesize _parameterContexts;
+@property(retain, nonatomic, setter=_setConfigurableParameterCombinations:) NSDictionary *_configurableParameterCombinations; // @synthesize _configurableParameterCombinations;
 @property(retain, nonatomic, setter=_setParameterCombinations:) NSDictionary *_parameterCombinations; // @synthesize _parameterCombinations;
 - (void).cxx_destruct;
 - (id)_spotlightContentType;
@@ -47,19 +55,23 @@
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)valueForKey:(id)arg1;
-@property(readonly, nonatomic) NSOrderedSet *_displayOrderedAttributes;
-@property(readonly, nonatomic) NSArray *_codableAttributes;
 - (id)_inCodable;
+- (BOOL)_isValueValidForKey:(id)arg1 unsupportedReason:(id *)arg2;
+- (BOOL)_isValidKey:(id)arg1;
+@property(readonly, nonatomic) INIntentKeyParameter *_keyParameter;
 - (id)_className;
 - (id)_intentInstanceDescription;
+@property(readonly, nonatomic) INIntentCodableDescription *_codableDescription;
+- (void)_updateWithJSONDictionary:(id)arg1;
+@property(readonly, nonatomic) NSDictionary *_JSONDictionaryRepresentation;
 - (BOOL)isGenericIntent;
 @property(copy) NSDictionary *parametersByName;
 @property(copy) NSString *verb;
 @property(copy) NSString *domain;
 - (id)initWithDomain:(id)arg1 verb:(id)arg2 parametersByName:(id)arg3;
 - (id)_typedBackingStore;
-- (id)protoData;
-- (id)_impl;
+@property(readonly, nonatomic) NSOrderedSet *_displayOrderedAttributes;
+@property(readonly, nonatomic) NSArray *_codableAttributes;
 - (id)_dictionaryRepresentation;
 @property(readonly, copy) NSString *debugDescription;
 - (id)_redactedDictionaryRepresentation;
@@ -73,22 +85,33 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (void)trimDataAgainstTCCForAuditToken:(CDStruct_6ad76789)arg1 bundle:(id)arg2;
 @property(nonatomic, getter=_isUserConfirmationRequired, setter=_setUserConfirmationRequired:) BOOL _userConfirmationRequired;
-@property(readonly) unsigned long long _indexingHash; // @synthesize _indexingHash;
+@property(readonly, nonatomic) unsigned long long _indexingHash; // @synthesize _indexingHash;
 @property(readonly, nonatomic) long long _type;
 - (id)_emptyCopy;
+- (id)_displayOrderedNonNilParameters;
 - (id)_nonNilParameters;
+@property(readonly, nonatomic, getter=_isEligibleForSuggestions) BOOL _eligibleForSuggestions;
+@property(readonly, nonatomic, getter=_isConfigurable) BOOL _configurable;
 @property(readonly, nonatomic) BOOL _supportsBackgroundExecution;
 - (id)_validParameterCombinationsWithSchema:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *_validParameterCombinations;
+@property(readonly, nonatomic) NSDictionary *_resolvableParameterCombinations;
+- (id)_querySchemaWithBlock:(CDUnknownBlockType)arg1 contentOptions:(unsigned long long)arg2;
 @property(copy, nonatomic, getter=_parameterImages, setter=_setParameterImages:) NSArray *parameterImages;
 @property(readonly, copy, nonatomic, getter=_sortedParameterImages) NSArray *sortedParameterImages;
 - (id)_imageForParameter:(id)arg1;
 - (void)_setImage:(id)arg1 forParameter:(id)arg2;
+- (id)_keyCodableAttributes;
 - (id)keyImage;
 - (id)imageForParameterNamed:(id)arg1;
 - (void)setImage:(id)arg1 forParameterNamed:(id)arg2;
 @property(readonly, copy) NSString *intentDescription;
 @property(copy) NSString *suggestedInvocationPhrase;
+@property(retain, nonatomic, setter=_setOriginatingDeviceRapportEffectiveIdentifier:) NSString *_originatingDeviceRapportEffectiveIdentifier;
+@property(retain, nonatomic, setter=_setOriginatingDeviceRapportMediaSystemIdentifier:) NSString *_originatingDeviceRapportMediaSystemIdentifier;
+@property(retain, nonatomic, setter=_setOriginatingDeviceIdsIdentifier:) NSString *_originatingDeviceIDSIdentifier;
+@property(nonatomic, getter=_isPrimaryDisplayDisabled, setter=_setPrimaryDisplayDisabled:) BOOL _primaryDisplayDisabled;
+@property(nonatomic, setter=_setIdiom:) long long _idiom;
 @property(readonly, nonatomic) long long triggerMethod;
 @property(nonatomic, setter=_setExecutionContext:) long long _executionContext;
 @property(retain, nonatomic, setter=_setNanoLaunchId:) NSString *_nanoLaunchId;

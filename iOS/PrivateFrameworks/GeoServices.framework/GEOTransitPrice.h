@@ -8,22 +8,24 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBUnknownFields;
 
 @interface GEOTransitPrice : PBCodable <NSCopying>
 {
-    int _amountInCents;
+    PBUnknownFields *_unknownFields;
     NSString *_currencyCode;
+    int _amountInCents;
     unsigned int _subunit;
     struct {
-        unsigned int amountInCents:1;
-        unsigned int subunit:1;
-    } _has;
+        unsigned int has_amountInCents:1;
+        unsigned int has_subunit:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *currencyCode; // @synthesize currencyCode=_currencyCode;
-@property(nonatomic) int amountInCents; // @synthesize amountInCents=_amountInCents;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -31,12 +33,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasSubunit;
-@property(nonatomic) unsigned int subunit; // @synthesize subunit=_subunit;
+@property(nonatomic) unsigned int subunit;
+@property(retain, nonatomic) NSString *currencyCode;
 @property(readonly, nonatomic) _Bool hasCurrencyCode;
 @property(nonatomic) _Bool hasAmountInCents;
+@property(nonatomic) int amountInCents;
 
 @end
 

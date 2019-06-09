@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CAEAGLLayer, NSData, NSMapTable, NSMutableDictionary, NSObject, SKDisplayLink, SKScene, SKTransition;
+@class CAEAGLLayer, CAMetalLayer, NSData, NSMapTable, NSMutableDictionary, NSObject, SKDisplayLink, SKScene, SKTransition;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore, SKViewDelegate;
 
 @interface SKView : UIView
@@ -23,6 +23,7 @@
     unsigned int _colorRenderBuffer;
     unsigned int _depthStencilRenderBuffer;
     struct shared_ptr<jet_fence> _renderFence;
+    CAMetalLayer *_metalLayer;
     CAEAGLLayer *_eaglLayer;
     _Bool _needsInitialUpdate;
     _Bool _didRunOnce;

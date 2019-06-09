@@ -11,8 +11,8 @@
 @protocol NMUNowPlayingViewControllerDelegate <NSObject>
 
 @optional
-- (void)nowPlayingViewControllerDidTapTrackListButton:(NMUNowPlayingViewController *)arg1;
 - (void)nowPlayingViewControllerReceivedTapOnApplicationIcon:(NMUNowPlayingViewController *)arg1;
 - (void)nowPlayingViewControllerReceivedTapOnTrackTitles:(NMUNowPlayingViewController *)arg1;
+- (_Bool)nowPlayingViewControllerShouldEnableActions:(NMUNowPlayingViewController *)arg1;
 @end
 

@@ -22,9 +22,6 @@
 + (id)_internalDebugFeatures;
 @property(readonly) struct Object *_apiObject;
 @property(nonatomic) BOOL tabFocusesLinks;
-@property(nonatomic) BOOL plugInsEnabled;
-@property(nonatomic) BOOL javaEnabled;
-@property(nonatomic, setter=_setStorageAccessPromptsEnabled:) BOOL _storageAccessPromptsEnabled;
 @property(nonatomic) BOOL javaScriptCanOpenWindowsAutomatically;
 @property(nonatomic) BOOL javaScriptEnabled;
 @property(nonatomic) double minimumFontSize;
@@ -64,7 +61,6 @@
 @property(nonatomic, setter=_setNotificationsEnabled:) BOOL _notificationsEnabled;
 @property(nonatomic, setter=_setStandardFontFamily:) NSString *_standardFontFamily;
 @property(nonatomic, setter=_setViewGestureDebuggingEnabled:) BOOL _viewGestureDebuggingEnabled;
-@property(nonatomic, setter=_setMediaSourceEnabled:) BOOL _mediaSourceEnabled;
 @property(nonatomic, setter=_setSubpixelCSSOMElementMetricsEnabled:) BOOL _subpixelCSSOMElementMetricsEnabled;
 @property(nonatomic, setter=_setPlugInSnapshottingEnabled:) BOOL _plugInSnapshottingEnabled;
 @property(nonatomic, setter=_setCookieEnabled:) BOOL _cookieEnabled;
@@ -81,11 +77,13 @@
 @property(nonatomic, setter=_setWebArchiveDebugModeEnabled:) BOOL _webArchiveDebugModeEnabled;
 @property(nonatomic, setter=_setDOMTimersThrottlingEnabled:) BOOL _domTimersThrottlingEnabled;
 @property(nonatomic, setter=_setAuthorAndUserStylesEnabled:) BOOL _authorAndUserStylesEnabled;
-@property(nonatomic, setter=_setNeedsSiteSpecificQuirks:) BOOL _needsSiteSpecificQuirks;
 @property(nonatomic, setter=_setDefaultTextEncodingName:) NSString *_defaultTextEncodingName;
 @property(nonatomic, setter=_setAcceleratedCompositingEnabled:) BOOL _acceleratedCompositingEnabled;
 @property(nonatomic, setter=_setCanvasUsesAcceleratedDrawing:) BOOL _canvasUsesAcceleratedDrawing;
 @property(nonatomic, setter=_setJavaEnabledForLocalFiles:) BOOL _javaEnabledForLocalFiles;
+@property(nonatomic, setter=_setMediaSourceEnabled:) BOOL _mediaSourceEnabled;
+@property(nonatomic, setter=_setItpDebugModeEnabled:) BOOL _itpDebugModeEnabled;
+@property(nonatomic, setter=_setNeedsSiteSpecificQuirks:) BOOL _needsSiteSpecificQuirks;
 @property(nonatomic, setter=_setShouldIgnoreMetaViewport:) BOOL _shouldIgnoreMetaViewport;
 @property(nonatomic, setter=_setLowPowerVideoAudioBufferSizeEnabled:) BOOL _lowPowerVideoAudioBufferSizeEnabled;
 @property(nonatomic, setter=_setPunchOutWhiteBackgroundsInDarkMode:) BOOL _punchOutWhiteBackgroundsInDarkMode;
@@ -128,9 +126,9 @@
 @property(nonatomic, setter=_setTextAutosizingEnabled:) BOOL _textAutosizingEnabled;
 @property(nonatomic, setter=_setAnimatedImageAsyncDecodingEnabled:) BOOL _animatedImageAsyncDecodingEnabled;
 @property(nonatomic, setter=_setLargeImageAsyncDecodingEnabled:) BOOL _largeImageAsyncDecodingEnabled;
-@property(nonatomic, setter=_setVisualViewportEnabled:) BOOL _visualViewportEnabled;
 @property(nonatomic, setter=_setDisplayListDrawingEnabled:) BOOL _displayListDrawingEnabled;
 @property(nonatomic, setter=_setAcceleratedDrawingEnabled:) BOOL _acceleratedDrawingEnabled;
+@property(nonatomic, setter=_setContentChangeObserverEnabled:) BOOL _contentChangeObserverEnabled;
 @property(nonatomic, setter=_setSimpleLineLayoutDebugBordersEnabled:) BOOL _simpleLineLayoutDebugBordersEnabled;
 @property(nonatomic, setter=_setSimpleLineLayoutEnabled:) BOOL _simpleLineLayoutEnabled;
 @property(nonatomic, setter=_setVisibleDebugOverlayRegions:) unsigned long long _visibleDebugOverlayRegions;
@@ -143,6 +141,8 @@
 @property(nonatomic, setter=_setOfflineApplicationCacheIsEnabled:) BOOL _offlineApplicationCacheIsEnabled;
 @property(nonatomic, setter=_setStorageBlockingPolicy:) long long _storageBlockingPolicy;
 @property(nonatomic, setter=_setTelephoneNumberDetectionIsEnabled:) BOOL _telephoneNumberDetectionIsEnabled;
+@property(nonatomic) BOOL plugInsEnabled;
+@property(nonatomic) BOOL javaEnabled;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

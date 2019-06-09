@@ -28,8 +28,6 @@
 - (long long)offsetFromGMTForTimeZone:(id)arg1;
 - (long long)offsetFromGMT;
 - (double)timeIntervalSinceNow;
-- (id)initWithString:(id)arg1;
-- (id)initWithString:(id)arg1 calendarFormat:(id)arg2;
 - (id)initAsTimeOnlyWithHour:(unsigned long long)arg1 minute:(unsigned long long)arg2 second:(unsigned long long)arg3 timeZone:(id)arg4;
 - (id)initWithYear:(long long)arg1 month:(unsigned long long)arg2 day:(unsigned long long)arg3 hour:(unsigned long long)arg4 minute:(unsigned long long)arg5 second:(unsigned long long)arg6 timeZone:(id)arg7;
 - (id)initWithTimeInterval:(double)arg1 sinceDate:(id)arg2;

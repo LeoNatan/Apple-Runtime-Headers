@@ -39,6 +39,7 @@
 - (struct NSNumber *)waitForClientWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)enumerateClientsWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSDictionary *clientsByIdentifier;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

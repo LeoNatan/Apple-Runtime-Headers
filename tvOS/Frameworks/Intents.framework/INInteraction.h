@@ -12,14 +12,15 @@
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class CSSearchableItem, INImage, INIntent, INIntentResponse, NSDate, NSDateInterval, NSString, SAUISnippet;
+@class CSSearchableItem, INImage, INIntent, INIntentResponse, NSDate, NSDateInterval, NSString, NSUUID, SAUISnippet;
 
 @interface INInteraction : NSObject <INInteractionExport, INImageProxyInjecting, INKeyImageProducing, NSSecureCoding, NSCopying>
 {
-    _Bool _donatedBySiri;
-    SAUISnippet *_snippet;
     INIntent *_intent;
     INIntentResponse *_intentResponse;
+    _Bool _donatedBySiri;
+    SAUISnippet *_snippet;
+    NSUUID *_contextExtensionUUID;
     long long _intentHandlingStatus;
     long long _direction;
     NSDateInterval *_dateInterval;
@@ -39,6 +40,7 @@
 @property(nonatomic) long long intentHandlingStatus; // @synthesize intentHandlingStatus=_intentHandlingStatus;
 @property(copy, nonatomic, setter=_setIntentResponse:) INIntentResponse *intentResponse; // @synthesize intentResponse=_intentResponse;
 @property(copy, nonatomic, setter=_setIntent:) INIntent *intent; // @synthesize intent=_intent;
+@property(copy, nonatomic, setter=_setContextExtensionUUID:) NSUUID *_contextExtensionUUID; // @synthesize _contextExtensionUUID;
 @property(readonly, nonatomic) _Bool _donatedBySiri; // @synthesize _donatedBySiri;
 @property(retain, nonatomic, setter=_setSnippet:) SAUISnippet *_snippet; // @synthesize _snippet;
 - (void).cxx_destruct;

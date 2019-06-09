@@ -6,11 +6,12 @@
 
 #import <NanoTimeKit/NTKAnalogFaceView.h>
 
+#import <NanoTimeKit/CLKMonochromeFilterProvider-Protocol.h>
 #import <NanoTimeKit/NTKRichComplicationBezelViewDelegate-Protocol.h>
 
 @class NSString, NTKWhistlerAnalogColorPalette, NTKWhistlerAnalogDialView, NTKWhistlerAnalogFaceViewComplicationFactory;
 
-@interface NTKWhistlerAnalogFaceView : NTKAnalogFaceView <NTKRichComplicationBezelViewDelegate>
+@interface NTKWhistlerAnalogFaceView : NTKAnalogFaceView <NTKRichComplicationBezelViewDelegate, CLKMonochromeFilterProvider>
 {
     NTKWhistlerAnalogFaceViewComplicationFactory *_faceViewComplicationFactory;
     NTKWhistlerAnalogDialView *_dialView;
@@ -20,23 +21,27 @@
     unsigned int _dateStyle;
 }
 
++ (float)curvedRadiusForDevice:(id)arg1 dark:(_Bool)arg2;
 @property(nonatomic) unsigned int dateStyle; // @synthesize dateStyle=_dateStyle;
 @property(nonatomic) unsigned int color; // @synthesize color=_color;
 - (void).cxx_destruct;
 - (void)_setupDialView;
-- (id)_snapshotContainerView;
+- (void)_reorderSwitcherSnapshotView;
 - (void)_prepareForSnapshotting;
+- (void)bezelViewDidEndInteractive:(id)arg1;
+- (void)bezelViewDidBecomeInteractive:(id)arg1;
 - (void)didUpdateBezelTextForRichComplicationBezelView:(id)arg1;
-- (void)complicationDisplayWrapperView:(id)arg1 startCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 completionBlock:(CDUnknownBlockType)arg5;
-- (_Bool)complicationDisplayWrapperView:(id)arg1 shouldStartCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4;
+- (void)complicationDisplayWrapperView:(id)arg1 updateCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5 animationDuration:(double)arg6 animationFraction:(float)arg7;
+- (void)complicationDisplayWrapperView:(id)arg1 prepareCustomDataAnimation:(id)arg2 fromEarlierView:(id)arg3 laterView:(id)arg4 isForward:(_Bool)arg5 animationType:(unsigned int)arg6;
+- (_Bool)complicationDisplayWrapperView:(id)arg1 shouldStartCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5;
 - (void)_updateDialTicksForBezelText;
 - (float)_bezelLabelCurvedRadiusForColor:(unsigned int)arg1;
 - (float)_bezelCircularBackgroundFromComplication:(id)arg1;
+- (id)_platterTextColorForEditMode:(int)arg1 color:(unsigned int)arg2;
 - (id)_bezelTextColorForEditMode:(int)arg1 color:(unsigned int)arg2;
 - (int)_editMode;
 - (int)_richComplicationViewThemeFromFaceColor:(unsigned int)arg1;
 - (float)_dialTextBackgroundAlphaForEditMode:(int)arg1;
-- (float)_complicationAlphaForEditMode:(int)arg1;
 - (float)_contentScaleForEditMode:(int)arg1;
 - (float)_contentAlphaForEditMode:(int)arg1;
 - (float)_handAlphaForEditMode:(int)arg1;
@@ -48,6 +53,10 @@
 - (void)applyToForegroundZoomFraction:(float)arg1 faceScale:(float)arg2;
 - (void)_cleanupAfterZoom;
 - (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(float)arg2 maxDiameter:(float)arg3;
+- (_Bool)viewShouldIgnoreTwoPieceImage:(id)arg1;
+- (id)colorForView:(id)arg1 accented:(_Bool)arg2;
+- (id)filterForView:(id)arg1 style:(int)arg2 fraction:(float)arg3;
+- (id)filterForView:(id)arg1 style:(int)arg2;
 - (id)_customEditOptionContainerViewForSlot:(id)arg1;
 - (id)_curvedPickerMaskForSlot:(id)arg1;
 - (int)_complicationPickerStyleForSlot:(id)arg1;
@@ -74,8 +83,7 @@
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
-- (void)_prepareTimeViewForReuse:(id)arg1;
-- (void)_configureReusableTimeView:(id)arg1;
+- (void)_configureTimeView:(id)arg1;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (_Bool)_supportsTimeScrubbing;

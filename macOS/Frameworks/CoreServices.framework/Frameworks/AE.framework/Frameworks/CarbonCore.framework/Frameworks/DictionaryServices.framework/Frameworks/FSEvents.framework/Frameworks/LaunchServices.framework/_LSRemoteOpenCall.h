@@ -9,10 +9,12 @@
 #import <LaunchServices/NSSecureCoding-Protocol.h>
 
 @class _LSRemoteOpenCallInputs, _LSRemoteOpenCallOutputs;
+@protocol OS_xpc_object;
 
 __attribute__((visibility("hidden")))
 @interface _LSRemoteOpenCall : NSObject <NSSecureCoding>
 {
+    NSObject<OS_xpc_object> *_connection;
     _LSRemoteOpenCallInputs *_inputs;
     _LSRemoteOpenCallOutputs *_outputs;
 }
@@ -35,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)setInAEParam:(const struct AEKeyDesc *)arg1;
 - (void)setInRoleMask:(unsigned int)arg1;
 - (void)setInURLs:(struct __CFArray *)arg1;
+- (id)initWithXPCConnection:(id)arg1;
 - (id)init;
 
 @end

@@ -10,7 +10,6 @@
 
 @protocol OS_nw_path;
 
-__attribute__((visibility("hidden")))
 @interface PathHolder : NSObject <NSCopying>
 {
     NSObject<OS_nw_path> *_path;

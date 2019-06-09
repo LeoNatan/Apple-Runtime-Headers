@@ -35,7 +35,7 @@
     NSString *_remoteUserName;
     int _audioQuality;
     BOOL _useEncryption;
-    struct OpaqueSecIdentityRef *_localSecIdentityRef;
+    struct __SecIdentity *_localSecIdentityRef;
     BOOL _autoDetectBandwidth;
     NSMutableDictionary *_statsDictionary;
     VCNotificationGateway *_notificationGateway;

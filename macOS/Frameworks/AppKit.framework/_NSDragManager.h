@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
 
 + (id)sharedDragManager;
 + (double)_autoscrollDelay;
-+ (void)initialize;
 - (void)_enumerateDraggingItemsForDrag:(void *)arg1 pasteboard:(id)arg2 withOptions:(unsigned long long)arg3 view:(id)arg4 classes:(id)arg5 searchOptions:(id)arg6 isSource:(BOOL)arg7 usingBlock:(CDUnknownBlockType)arg8;
 - (void)_enumerateDraggingItemsForDrag:(void *)arg1 pasteboard:(id)arg2 class:(Class)arg3 view:(id)arg4 isSource:(BOOL)arg5 usingBlock:(CDUnknownBlockType)arg6;
 - (id)draggingSessionWithSequenceNumber:(long long)arg1;
@@ -33,6 +32,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)unregisterDragTypesForWindow:(id)arg1;
 - (BOOL)switchWindow:(id)arg1 dragRegistrationToRemoteContext:(unsigned int)arg2;
 - (int)registerDragTypes:(id)arg1 forWindow:(id)arg2;
+- (void)unregisterWindow:(id)arg1 foriOSMacContext:(unsigned int)arg2;
+- (void)registerWindow:(id)arg1 foriOSMacContext:(unsigned int)arg2;
 
 @end
 

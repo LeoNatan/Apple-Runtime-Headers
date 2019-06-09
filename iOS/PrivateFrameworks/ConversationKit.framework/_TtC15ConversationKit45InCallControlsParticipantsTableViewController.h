@@ -6,7 +6,6 @@
 
 #import <UIKit/UITableViewController.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit45InCallControlsParticipantsTableViewController : UITableViewController
 {
     // Error parsing type: , name: capabilitiesChecker
@@ -21,12 +20,15 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(long long)arg1;
+- (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLoad;
 - (id)initWithCoder:(id)arg1;
+- (void)handleContentSizeCategoryDidChange:(id)arg1;
 
 @end
 

@@ -10,8 +10,8 @@
 #import <SpringBoardUI/SBSceneHandleObserver-Protocol.h>
 #import <SpringBoardUI/SBScenePlaceholderContentViewProviderDelegate-Protocol.h>
 
-@class NSString, SBSceneHandle;
-@protocol FBSceneHostView, SBScenePlaceholderContentContext, SBScenePlaceholderContentView, SBScenePlaceholderContentViewProvider, SBSceneViewDelegate;
+@class NSCountedSet, NSString, SBSceneHandle;
+@protocol SBScenePlaceholderContentContext, SBScenePlaceholderContentView, SBScenePlaceholderContentViewProvider, SBSceneViewDelegate, UIScenePresentation, UIScenePresenter, UISceneSnapshotPresentation;
 
 @interface SBSceneView : UIView <SBSceneHandleObserver, SBScenePlaceholderContentViewProviderDelegate, BSInvalidatable>
 {
@@ -21,15 +21,17 @@
     long long _requestedDisplayMode;
     long long _effectiveDisplayMode;
     _Bool _invalidated;
+    id <UIScenePresenter> _presenter;
     long long _hostingPriority;
-    NSString *_hostingRequester;
+    NSString *_hostingIdentifier;
     id <SBScenePlaceholderContentContext> _placeholderContentContext;
     UIView *_customContentView;
     UIView<SBScenePlaceholderContentView> *_placeholderContentView;
-    UIView *_liveSnapshotView;
-    UIView<FBSceneHostView> *_hostView;
+    UIView<UISceneSnapshotPresentation> *_liveSnapshotView;
+    UIView<UIScenePresentation> *_hostView;
     UIView *_crossfadeView;
     UIView *_backgroundView;
+    NSCountedSet *_liveContentDisableReasons;
     _Bool _placeholderContentEnabled;
     id <SBScenePlaceholderContentViewProvider> _placeholderContentProvider;
     id <SBSceneViewDelegate> _delegate;
@@ -37,8 +39,7 @@
 
 + (id)defaultDisplayModeAnimationFactory;
 @property(nonatomic) __weak id <SBSceneViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) long long hostingPriority; // @synthesize hostingPriority=_hostingPriority;
-@property(readonly, copy, nonatomic) NSString *hostingRequester; // @synthesize hostingRequester=_hostingRequester;
+@property(readonly, nonatomic) id <UIScenePresenter> presenter; // @synthesize presenter=_presenter;
 @property(nonatomic) _Bool placeholderContentEnabled; // @synthesize placeholderContentEnabled=_placeholderContentEnabled;
 @property(retain, nonatomic) id <SBScenePlaceholderContentContext> placeholderContentContext; // @synthesize placeholderContentContext=_placeholderContentContext;
 @property(retain, nonatomic) id <SBScenePlaceholderContentViewProvider> placeholderContentProvider; // @synthesize placeholderContentProvider=_placeholderContentProvider;
@@ -60,13 +61,14 @@
 - (void)_configureLiveSnapshotView;
 - (void)_configurePlaceholderContentView;
 - (void)_configureViewForEffectiveDisplayMode:(long long)arg1;
-- (_Bool)_addContentLikeViewToHeierarchyForTransitionIfPossible:(id)arg1;
-- (_Bool)_shouldViewBeInHeirarchyForTransition:(id)arg1;
+- (_Bool)_addContentLikeViewToHierarchyForTransitionIfPossible:(id)arg1;
+- (_Bool)_shouldViewBeInHierarchyForTransition:(id)arg1;
 - (void)_transitionFromDisplayMode:(long long)arg1 showingView:(id)arg2 toDisplayMode:(long long)arg3 showingView:(id)arg4 withAnimationFactory:(id)arg5 completion:(CDUnknownBlockType)arg6;
+- (id)_wrappedIfNecessaryViewForCrossfading:(id)arg1;
 - (id)_viewForDisplayMode:(long long)arg1;
 - (long long)_bestDisplayModeLessThanMode:(long long)arg1;
 - (void)_evaluateEffectiveDisplayModeWithAnimationFactory:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_disableHosting;
+- (void)_invalidateHostPresenter;
 - (void)_enableHostingIfPossible;
 - (_Bool)_shouldObserveSceneHostContentState;
 - (void)placeholderContentViewProviderContentDidUpdate:(id)arg1;
@@ -75,23 +77,24 @@
 - (void)sceneHandle:(id)arg1 didCreateScene:(id)arg2;
 - (void)_containerContentWrapperInterfaceOrientationChangedTo:(long long)arg1;
 - (void)_updateReferenceSize:(struct CGSize)arg1 andOrientation:(long long)arg2;
+- (void)_layoutLiveHostView:(id)arg1;
 - (_Bool)_representsTranslucentContent;
 - (void)_configureSceneLiveHostView:(id)arg1;
 - (void)_configureSceneSnapshotContext:(id)arg1;
 - (void)_refresh;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
+- (struct CGRect)_frameForHostView;
+- (struct CGAffineTransform)_transformForHostView;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)invalidate;
+- (id)acquireLiveContentDisableAssertionForReason:(id)arg1;
 - (id)newSnapshot;
 - (void)setDisplayMode:(long long)arg1 animationFactory:(id)arg2 completion:(CDUnknownBlockType)arg3;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithSceneHandle:(id)arg1 referenceSize:(struct CGSize)arg2 orientation:(long long)arg3 hostRequester:(id)arg4;
 - (id)initWithSceneHandle:(id)arg1 referenceSize:(struct CGSize)arg2 orientation:(long long)arg3;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

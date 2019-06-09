@@ -22,7 +22,6 @@
 - (CDStruct_1b6d18a9)itemTimeForMachAbsoluteTime:(long long)arg1;
 - (CDStruct_1b6d18a9)itemTimeForHostTime:(double)arg1;
 - (CDStruct_1b6d18a9)_itemTimeForHostTimeAsCMTime:(CDStruct_1b6d18a9)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

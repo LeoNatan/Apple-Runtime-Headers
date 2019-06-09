@@ -18,6 +18,9 @@
     unsigned int _origin;
 }
 
++ (id)_momentLocalIdentifierByAssetLocalIdentifiersForAssets:(id)arg1;
++ (id)_textFeaturesByMomentLocalIdentifierForMomentLocalIdentifiers:(id)arg1 inPhotoLibrary:(id)arg2;
++ (id)fetchTextFeaturesByAssetLocalIdentifierForAssets:(id)arg1;
 + (id)stringForOrigin:(unsigned int)arg1;
 + (id)stringForType:(int)arg1;
 + (_Bool)supportsSecureCoding;

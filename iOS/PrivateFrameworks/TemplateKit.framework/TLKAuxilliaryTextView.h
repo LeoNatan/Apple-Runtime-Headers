@@ -6,29 +6,27 @@
 
 #import <TemplateKit/TLKView.h>
 
-#import <TemplateKit/NUIContainerStackViewDelegate-Protocol.h>
+#import <TemplateKit/NUIContainerViewDelegate-Protocol.h>
 
-@class NSString, TLKFormattedText, TLKStackView, TLKTextAreaView, TLKVibrantLabel;
+@class NSString, TLKFormattedText, TLKLabel, TLKStackView, TLKTextAreaView;
 
-@interface TLKAuxilliaryTextView : TLKView <NUIContainerStackViewDelegate>
+@interface TLKAuxilliaryTextView : TLKView <NUIContainerViewDelegate>
 {
     TLKFormattedText *_topText;
     TLKFormattedText *_middleText;
     TLKFormattedText *_bottomText;
-    TLKVibrantLabel *_topLabel;
-    TLKVibrantLabel *_middleLabel;
-    TLKVibrantLabel *_bottomLabel;
-    TLKStackView *_stackView;
+    TLKLabel *_topLabel;
+    TLKLabel *_middleLabel;
+    TLKLabel *_bottomLabel;
     TLKTextAreaView *_textAreaViewForAlignment;
 }
 
 + (_Bool)formattedTextHasTextContent:(id)arg1;
 + (id)largeMiddleTextFont;
-@property(retain) TLKTextAreaView *textAreaViewForAlignment; // @synthesize textAreaViewForAlignment=_textAreaViewForAlignment;
-@property(retain) TLKStackView *stackView; // @synthesize stackView=_stackView;
-@property(retain) TLKVibrantLabel *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
-@property(retain) TLKVibrantLabel *middleLabel; // @synthesize middleLabel=_middleLabel;
-@property(retain) TLKVibrantLabel *topLabel; // @synthesize topLabel=_topLabel;
+@property(retain, nonatomic) TLKTextAreaView *textAreaViewForAlignment; // @synthesize textAreaViewForAlignment=_textAreaViewForAlignment;
+@property(retain, nonatomic) TLKLabel *bottomLabel; // @synthesize bottomLabel=_bottomLabel;
+@property(retain, nonatomic) TLKLabel *middleLabel; // @synthesize middleLabel=_middleLabel;
+@property(retain, nonatomic) TLKLabel *topLabel; // @synthesize topLabel=_topLabel;
 @property(retain, nonatomic) TLKFormattedText *bottomText; // @synthesize bottomText=_bottomText;
 @property(retain, nonatomic) TLKFormattedText *middleText; // @synthesize middleText=_middleText;
 @property(retain, nonatomic) TLKFormattedText *topText; // @synthesize topText=_topText;
@@ -38,15 +36,14 @@
 - (id)topLabelString;
 - (id)bottomLabelFont;
 - (id)middleLabelFont;
-- (struct UIEdgeInsets)containerStackView:(id)arg1 minimumSpacingAdjecentToArrangedSubview:(id)arg2;
 - (void)generateAndSizeTextAreaViewIfNeeded;
 - (void)matchBaselineOfLabel:(id)arg1 toView:(id)arg2;
 - (void)containerViewDidLayoutArrangedSubviews:(id)arg1;
 - (void)observedPropertiesChanged;
-- (void)styleDidChange:(unsigned long long)arg1;
-- (id)init;
+- (id)setupContentView;
 
 // Remaining properties
+@property(retain, nonatomic) TLKStackView *contentView; // @dynamic contentView;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

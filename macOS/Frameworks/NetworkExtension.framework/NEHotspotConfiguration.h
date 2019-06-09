@@ -14,6 +14,7 @@
 @interface NEHotspotConfiguration : NSObject <NSCopying, NSSecureCoding>
 {
     BOOL _joinOnce;
+    BOOL _hidden;
     NSString *_SSID;
     NSNumber *_lifeTimeInDays;
     long long _securityType;
@@ -27,6 +28,7 @@
 @property(copy) NEHotspotEAPSettings *eapSettings; // @synthesize eapSettings=_eapSettings;
 @property(copy) NSString *passphrase; // @synthesize passphrase=_passphrase;
 @property long long securityType; // @synthesize securityType=_securityType;
+@property BOOL hidden; // @synthesize hidden=_hidden;
 @property(copy) NSNumber *lifeTimeInDays; // @synthesize lifeTimeInDays=_lifeTimeInDays;
 @property BOOL joinOnce; // @synthesize joinOnce=_joinOnce;
 @property(readonly) NSString *SSID; // @synthesize SSID=_SSID;
@@ -35,7 +37,7 @@
 - (BOOL)validateEAPSettings;
 - (BOOL)validateTrustedServerCertificateReferences;
 - (BOOL)validateClientTrustChainReference;
-- (void)buildClientTrustChainReference:(struct OpaqueSecIdentityRef *)arg1;
+- (void)buildClientTrustChainReference:(struct __SecIdentity *)arg1;
 - (BOOL)validateSecIdentityReference:(BOOL)arg1;
 - (BOOL)isWEPPassphraseValid;
 - (void)encodeWithCoder:(id)arg1;

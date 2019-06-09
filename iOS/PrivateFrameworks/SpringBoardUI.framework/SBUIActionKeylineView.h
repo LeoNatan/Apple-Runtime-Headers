@@ -6,12 +6,22 @@
 
 #import <UIKit/UIView.h>
 
+@class MTVisualStylingProvider;
+
 @interface SBUIActionKeylineView : UIView
 {
+    MTVisualStylingProvider *_visualStylingProvider;
+    double _height;
 }
 
+@property(nonatomic) double height; // @synthesize height=_height;
+- (void).cxx_destruct;
+- (void)_updateVisualStylingIfNecessary;
+- (void)_invalidateVisualStyling;
 - (struct CGSize)intrinsicContentSize;
-- (void)didMoveToSuperview;
+- (void)willMoveToSuperview:(id)arg1;
+- (void)layoutSubviews;
+- (id)init;
 
 @end
 

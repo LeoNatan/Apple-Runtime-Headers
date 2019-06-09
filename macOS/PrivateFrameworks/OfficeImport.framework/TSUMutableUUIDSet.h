@@ -6,6 +6,7 @@
 
 #import <OfficeImport/TSUUUIDSet.h>
 
+__attribute__((visibility("hidden")))
 @interface TSUMutableUUIDSet : TSUUUIDSet
 {
 }

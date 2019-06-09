@@ -12,7 +12,7 @@
 {
     NSString *_response;
     int _count;
-    int _responseLength;
+    unsigned int _responseLength;
     int _sameRecipientCount;
     double _numOfElapsedDays;
     double _normalizedSourceAppCount;
@@ -23,7 +23,7 @@
 }
 
 @property(readonly) int sameRecipientCount; // @synthesize sameRecipientCount=_sameRecipientCount;
-@property(readonly) int responseLength; // @synthesize responseLength=_responseLength;
+@property(readonly) unsigned int responseLength; // @synthesize responseLength=_responseLength;
 @property(readonly) double normalizedInputMethodDictationCount; // @synthesize normalizedInputMethodDictationCount=_normalizedInputMethodDictationCount;
 @property(readonly) double normalizedInputMethodScribbleCount; // @synthesize normalizedInputMethodScribbleCount=_normalizedInputMethodScribbleCount;
 @property(readonly) double normalizedInputMethodCannedCount; // @synthesize normalizedInputMethodCannedCount=_normalizedInputMethodCannedCount;
@@ -33,7 +33,7 @@
 @property(readonly) int count; // @synthesize count=_count;
 @property(readonly) NSString *response; // @synthesize response=_response;
 - (void).cxx_destruct;
-- (id)initWithFeatures:(id)arg1 count:(int)arg2 numOfElapsedDays:(double)arg3 sourceAppCount:(double)arg4 sourceNotificationCount:(double)arg5 inputSourceCannedCount:(double)arg6 inputSourceScribbleCount:(double)arg7 inputSourceDictationCount:(double)arg8 responseLength:(int)arg9 sameRecipientCount:(int)arg10;
+- (id)initWithFeatures:(id)arg1 count:(int)arg2 numOfElapsedDays:(double)arg3 sourceAppCount:(double)arg4 sourceNotificationCount:(double)arg5 inputSourceCannedCount:(double)arg6 inputSourceScribbleCount:(double)arg7 inputSourceDictationCount:(double)arg8 responseLength:(unsigned int)arg9 sameRecipientCount:(int)arg10;
 
 @end
 

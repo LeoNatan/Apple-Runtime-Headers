@@ -9,6 +9,12 @@
 @class NSString;
 
 @protocol ACXGizmoApplicationManagerProtocol <NSObject>
+- (void)installabilityForDeletableSystemAppWithBundleID:(NSString *)arg1 completion:(void (^)(unsigned int, NSError *))arg2;
+- (void)deletableSystemAppCanBeInstalledOnWatchWithBundleID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)counterpartApplicationisInstalledOnCompanionForWatchBundleID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)applicationIsInstalledOnCompanionWithBundleID:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
+- (void)reconcileAppsOnPairing:(void (^)(NSError *))arg1;
+- (void)fetchApplicationDatabaseSyncInformationWithCompletion:(void (^)(NSUUID *, unsigned int, NSError *))arg1;
 - (void)iconForApplicationWithBundleID:(NSString *)arg1 variant:(unsigned int)arg2 completion:(void (^)(NSData *, NSError *))arg3;
 - (void)compatibleWatchApplicationsOnCompanionWithCompletion:(void (^)(NSData *, NSError *))arg1;
 - (void)installWatchAppWithBundleID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;

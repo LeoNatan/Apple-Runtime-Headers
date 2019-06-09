@@ -36,6 +36,7 @@
 
 @property(nonatomic) __weak id <NLSedentaryTimerAlertDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (double)_delayIntervalForSedentaryTimerStart;
 - (void)_queue_showSedentaryAlertOfType:(int)arg1 withTimeoutDate:(id)arg2 experimentInstance:(id)arg3;
 - (_Bool)_isSedentaryTimerNotificationEnabled;
 - (void)dealloc;
@@ -67,18 +68,18 @@
 - (void)_queue_startTimerHandlerWithError:(id)arg1;
 - (void)_queue_startTimer;
 - (void)_queue_startSedentaryTimerIfRequired;
-- (void)_timerStopped;
+- (void)_timerStoppedWithError:(id)arg1;
 - (void)_queue_stopTimerHandlerWithError:(id)arg1;
 - (void)_queue_stopSedentaryTimer;
 - (void)_queue_stopSedentaryTimerIfRequired;
 - (id)_timer;
 - (void)_registerDaemonLaunchForSedentaryTimerFiredNotification;
 - (void)_checkIfSedentaryTimerNeedsStop;
-- (void)_checkIfSedentaryTimerNeedsStart;
+- (void)_checkIfSedentaryTimerNeedsStartWithDelay:(_Bool)arg1;
 - (_Bool)_canStartSedentaryTimer;
 - (_Bool)daemonDidReceiveNotification:(const char *)arg1;
 - (void)stopSedentaryTimer;
-- (void)startSedentaryTimerIfPossible;
+- (void)startSedentaryTimerIfPossibleWithDelay:(_Bool)arg1;
 - (int)_sedentaryTimerState;
 - (int)timerState;
 - (void)daemonReady:(id)arg1;

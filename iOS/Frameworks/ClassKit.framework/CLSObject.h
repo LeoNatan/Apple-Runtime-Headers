@@ -17,6 +17,7 @@
 {
     _Bool _deleted;
     _Bool _modified;
+    _Bool _enforceImmutablility;
     CLSDataStore *_dataStore;
     NSString *_parentObjectID;
     NSString *_appIdentifier;
@@ -28,11 +29,13 @@
     NSDate *_dateCreated;
     NSDate *_dateLastModified;
     NSString *_objectID;
+    NSDate *_dateExpires;
 }
 
 + (id)dateFormatter;
 + (_Bool)supportsSecureCoding;
 + (id)relations;
+@property(retain, nonatomic) NSDate *dateExpires; // @synthesize dateExpires=_dateExpires;
 @property(copy, nonatomic) NSString *objectID; // @synthesize objectID=_objectID;
 @property unsigned int generation; // @synthesize generation=_generation;
 @property(nonatomic, getter=isTemporary) _Bool temporary; // @synthesize temporary=_temporary;
@@ -66,6 +69,7 @@
 @property(readonly, nonatomic) id vertexID;
 - (void)unlock;
 - (void)lock;
+@property(nonatomic, getter=isImmutablilityEnforced) _Bool enforceImmutablility;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_init;

@@ -8,6 +8,7 @@
 
 @class AVAssetImageGenerator, AVPlayerController, AVPlayerControllerTimeResolver, AVPlayerLayer, AVTimer, AVVideoTrackThumbnailManager, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface AVVideoTrackView : AVTrackView
 {
     AVPlayerController *_playerController;

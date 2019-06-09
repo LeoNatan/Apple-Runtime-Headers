@@ -6,26 +6,30 @@
 
 #import <NanoMediaUI/NMUMPModelTableViewController.h>
 
-#import <NanoMediaUI/NMROriginObserverDelegate-Protocol.h>
 #import <NanoMediaUI/PUICActionContentControllerDelegate-Protocol.h>
 
-@class NMRNowPlayingController, NMROrigin, NMUButton, NSIndexSet, NSString;
+@class NMRNowPlayingController, NMROrigin, NMUButton, NSIndexSet, NSNumber, NSString;
 
-@interface NMUNowPlayingTrackListTableViewController : NMUMPModelTableViewController <NMROriginObserverDelegate, PUICActionContentControllerDelegate>
+@interface NMUNowPlayingTrackListTableViewController : NMUMPModelTableViewController <PUICActionContentControllerDelegate>
 {
     NMUButton *_shuffleButton;
     NMUButton *_repeatButton;
+    unsigned int _shuffleModeRequestNumber;
+    NSNumber *_transientShuffleMode;
+    unsigned int _repeatModeRequestNumber;
+    NSNumber *_transientRepeatMode;
+    NSIndexSet *_audiobookSections;
     NMRNowPlayingController *_nowPlayingController;
     NMROrigin *_origin;
-    NSIndexSet *_albumSections;
     CDUnknownBlockType _selectionBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType selectionBlock; // @synthesize selectionBlock=_selectionBlock;
+@property(readonly, nonatomic) NMROrigin *origin; // @synthesize origin=_origin;
+@property(readonly, nonatomic) NMRNowPlayingController *nowPlayingController; // @synthesize nowPlayingController=_nowPlayingController;
 - (void).cxx_destruct;
 - (void)_handleICAgeVerificationStateDidChangeNotification:(id)arg1;
 - (void)actionContentControllerCancel:(id)arg1;
-- (void)originObserver:(id)arg1 didUpdateSupportedCommandsForOrigin:(id)arg2;
 - (void)_handleRepeatButtonTapped:(id)arg1;
 - (void)_handleShuffleButtonTapped:(id)arg1;
 - (void)_updateRepeatButtonWithMode:(int)arg1 supported:(_Bool)arg2;
@@ -42,10 +46,11 @@
 - (id)modelRequestsForContentLoader:(id)arg1;
 - (void)_scrollToCurrentItemAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_playerResponse;
+- (_Bool)_prefersUpNextQueueLayoutForBundleIdentifier:(id)arg1;
+- (_Bool)_prefersExtendedContainerTracklistForBundleIdentifier:(id)arg1;
 - (void)dismissAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentFromViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)viewDidLoad;
-- (void)dealloc;
 - (id)initWithNowPlayingController:(id)arg1 origin:(id)arg2;
 
 // Remaining properties

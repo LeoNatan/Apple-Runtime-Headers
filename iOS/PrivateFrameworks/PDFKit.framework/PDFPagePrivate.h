@@ -6,41 +6,31 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock, NSMutableArray, NSMutableAttributedString, NSMutableDictionary, NSMutableSet, NSString, NSThread, PDFAKPageAdaptor, PDFDocument, PDFView, UIImage;
+@class NSAttributedString, NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PDFAKPageAdaptor, PDFDocument, PDFView, UIImage;
 
 __attribute__((visibility("hidden")))
 @interface PDFPagePrivate : NSObject
 {
     PDFDocument *document;
     struct CGPDFPage *page;
+    struct CGColor *pageBackgroundColorHint;
     PDFView *view;
     NSString *label;
     UIImage *image;
     struct CGImage *cgImage;
+    struct CGImageSource *cgImageSource;
     unsigned int cgImageOrientation;
+    struct os_unfair_lock_s layoutLock;
     struct CGPDFLayout *layout;
-    _Bool enqueuedForLayout;
-    struct _opaque_pthread_t *threadFetchingLayout;
-    struct _opaque_pthread_cond_t {
-        long long __sig;
-        char __opaque[40];
-    } layoutThreadCondition;
-    NSLock *lock_accessLayout;
-    NSLock *lock_dataEnqueuedForDataDetection;
-    _Bool enqueuedForDataDetection;
-    NSThread *layoutThread;
-    NSMutableAttributedString *attributedString;
-    NSLock *lock_text;
-    long long numChars;
-    _Bool textCharsLoaded;
-    struct __CFString *text;
+    struct os_unfair_lock_s dataDetectorsLock;
+    _Bool ranDataDetectors;
+    NSString *text;
+    NSAttributedString *attributedString;
     _Bool displaysAnnotations;
     _Bool displaysMarkups;
     NSMutableArray *annotations;
     NSLock *lock_getAnnotations;
     NSLock *lock_accessAnnotations;
-    NSMutableArray *unsupportedElements;
-    _Bool ranDataDetectors;
     NSMutableArray *scannedAnnotations;
     long long rotation;
     struct CGRect mediaBox;
@@ -56,6 +46,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *annotationChanges;
     NSMutableSet *changedAnnotations;
     NSMutableDictionary *widgetAnnotationLookup;
+    NSMutableArray *scannerResults;
     _Bool didChangeBounds;
 }
 

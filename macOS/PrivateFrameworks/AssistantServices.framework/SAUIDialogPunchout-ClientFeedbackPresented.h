@@ -8,5 +8,7 @@
 
 @interface SAUIDialogPunchout (ClientFeedbackPresented)
 - (id)_af_dialogIdentifier;
+- (id)af_dialogIdentifiersForAnalyticsContext;
+- (void)af_addEntriesToAnalyticsContext:(id)arg1;
 @end
 

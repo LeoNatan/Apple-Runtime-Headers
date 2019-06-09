@@ -8,6 +8,7 @@
 
 @class WDCharacterPropertiesValues, WDDocument;
 
+__attribute__((visibility("hidden")))
 @interface WDCharacterProperties : NSObject
 {
     BOOL mOriginal;

@@ -6,7 +6,7 @@
 
 #import <SAObjects/SABaseClientBoundCommand.h>
 
-@class SAIntentGroupProtobufMessage;
+@class NSString, SAIntentGroupProtobufMessage;
 
 @interface SAIntentGroupHandleIntent : SABaseClientBoundCommand
 {
@@ -15,6 +15,7 @@
 + (id)handleIntentWithDictionary:(id)arg1 context:(id)arg2;
 + (id)handleIntent;
 - (_Bool)requiresResponse;
+@property(copy, nonatomic) NSString *jsonEncodedIntent;
 @property(retain, nonatomic) SAIntentGroupProtobufMessage *intent;
 @property(nonatomic) _Bool allowsPunchOut;
 - (id)encodedClassName;

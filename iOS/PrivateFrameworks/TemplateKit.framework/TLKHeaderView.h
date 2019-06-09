@@ -6,61 +6,61 @@
 
 #import <TemplateKit/TLKView.h>
 
-#import <TemplateKit/NUIContainerStackViewDelegate-Protocol.h>
+@class NSString, TLKImage, TLKImageView, TLKLabel, TLKMultilineText, TLKRichText, TLKRoundedCornerLabel, TLKStackView;
 
-@class NSString, TLKImage, TLKImageView, TLKMultilineText, TLKRoundedCornerLabel, TLKStackView, TLKVibrantLabel, UILabel;
-
-@interface TLKHeaderView : TLKView <NUIContainerStackViewDelegate>
+@interface TLKHeaderView : TLKView
 {
     TLKImage *_image;
     TLKMultilineText *_title;
-    TLKMultilineText *_subtitle;
+    TLKRichText *_subtitle;
+    TLKMultilineText *_footnote;
     TLKMultilineText *_trailingText;
     TLKImage *_subtitleImage;
     NSString *_roundedBorderText;
     long long _axis;
     TLKImageView *_imageView;
-    UILabel *_titleLabel;
-    UILabel *_trailingTextLabel;
-    TLKVibrantLabel *_subtitleLabel;
+    TLKLabel *_titleLabel;
+    TLKLabel *_trailingTextLabel;
+    TLKLabel *_subtitleLabel;
+    TLKLabel *_footnoteLabel;
     TLKImageView *_subtitleImageView;
     TLKStackView *_subtitleStackView;
-    TLKStackView *_outerStackView;
     TLKStackView *_innerStackView;
     TLKRoundedCornerLabel *_roundedCornerLabel;
 }
 
-@property(retain) TLKRoundedCornerLabel *roundedCornerLabel; // @synthesize roundedCornerLabel=_roundedCornerLabel;
-@property(retain) TLKStackView *innerStackView; // @synthesize innerStackView=_innerStackView;
-@property(retain) TLKStackView *outerStackView; // @synthesize outerStackView=_outerStackView;
-@property(retain) TLKStackView *subtitleStackView; // @synthesize subtitleStackView=_subtitleStackView;
-@property(retain) TLKImageView *subtitleImageView; // @synthesize subtitleImageView=_subtitleImageView;
-@property(retain) TLKVibrantLabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
-@property(retain) UILabel *trailingTextLabel; // @synthesize trailingTextLabel=_trailingTextLabel;
-@property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property(retain) TLKImageView *imageView; // @synthesize imageView=_imageView;
+@property(retain, nonatomic) TLKRoundedCornerLabel *roundedCornerLabel; // @synthesize roundedCornerLabel=_roundedCornerLabel;
+@property(retain, nonatomic) TLKStackView *innerStackView; // @synthesize innerStackView=_innerStackView;
+@property(retain, nonatomic) TLKStackView *subtitleStackView; // @synthesize subtitleStackView=_subtitleStackView;
+@property(retain, nonatomic) TLKImageView *subtitleImageView; // @synthesize subtitleImageView=_subtitleImageView;
+@property(retain, nonatomic) TLKLabel *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
+@property(retain, nonatomic) TLKLabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
+@property(retain, nonatomic) TLKLabel *trailingTextLabel; // @synthesize trailingTextLabel=_trailingTextLabel;
+@property(retain, nonatomic) TLKLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) TLKImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) long long axis; // @synthesize axis=_axis;
 @property(retain, nonatomic) NSString *roundedBorderText; // @synthesize roundedBorderText=_roundedBorderText;
 @property(retain, nonatomic) TLKImage *subtitleImage; // @synthesize subtitleImage=_subtitleImage;
 @property(retain, nonatomic) TLKMultilineText *trailingText; // @synthesize trailingText=_trailingText;
-@property(retain, nonatomic) TLKMultilineText *subtitle; // @synthesize subtitle=_subtitle;
+@property(retain, nonatomic) TLKMultilineText *footnote; // @synthesize footnote=_footnote;
+@property(retain, nonatomic) TLKRichText *subtitle; // @synthesize subtitle=_subtitle;
 @property(retain, nonatomic) TLKMultilineText *title; // @synthesize title=_title;
 @property(retain, nonatomic) TLKImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
 - (id)roundedCornerLabelText;
 - (id)hasImage;
+- (id)footnoteLabelText;
 - (id)subtitleLabelText;
 - (id)titleLabelText;
 - (id)titleLabelFont;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)observedPropertiesChanged;
-- (void)styleDidChange:(unsigned long long)arg1;
-- (id)init;
+- (id)setupContentView;
 
 // Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property(retain, nonatomic) TLKStackView *contentView; // @dynamic contentView;
 
 @end
 

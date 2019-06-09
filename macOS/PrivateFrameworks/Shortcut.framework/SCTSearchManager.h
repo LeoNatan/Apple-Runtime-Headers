@@ -13,6 +13,7 @@
 
 @class NSButton, NSConditionLock, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSSearchField, NSStatusItem, NSString, NSTextField, NSTimer, NSWindow, SCTBackgroundView, SCTGRL, SCTGRLIndex, SCTMenuBarVisibilityManager, SCTMenuView, SCTTableView;
 
+__attribute__((visibility("hidden")))
 @interface SCTSearchManager : NSResponder <NSTextFieldDelegate, NSTableViewDelegate, NSTableViewDataSource, NSSearchFieldDelegate>
 {
     SCTMenuView *mSearchView;

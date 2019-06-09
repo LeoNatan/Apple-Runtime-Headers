@@ -34,11 +34,6 @@ struct CGSize {
     double height;
 };
 
-struct FloatRect {
-    struct Point2f _field1;
-    struct Point2f _field2;
-};
-
 struct FrameTimeNormalizer {
     CDUnknownFunctionPointerType *_field1;
     vector_0821a7d5 _field2;
@@ -48,45 +43,7 @@ struct FrameTimeNormalizer {
     CDStruct_1b6d18a9 _field6;
 };
 
-struct HomographyInfoRecord;
-
-struct HomographyRecordVector {
-    struct HomographyInfoRecord **_field1;
-    struct HomographyInfoRecord **_field2;
-    struct __compressed_pair<HomographyInfoRecord **, std::__1::allocator<HomographyInfoRecord *>> {
-        struct HomographyInfoRecord **_field1;
-    } _field3;
-};
-
-struct ImageFeatureMatchParamRec {
-    int blocksX;
-    int blocksY;
-    int blockOverlap;
-    int detectMethod;
-    int extractMethod;
-    _Bool justAffine;
-    _Bool rescalePoints;
-    float angleTolerance;
-    float distanceToleranceFraction;
-    float metricTolerance;
-    unsigned int maxAllowedMatches;
-    unsigned int minFeaturesPerFrame;
-    unsigned int maxFeaturesPerFrame;
-    _Bool useOpenCVMatching;
-    float nonmaxSuppressionRadius;
-    float maxReprojectionErrorBase;
-    float maxReprojectionErrorSlope;
-    _Bool useOpenCL;
-};
-
-struct ImageFeaturePair;
-
 struct MetadataFloatVector {
-    float _field1;
-    float _field2;
-};
-
-struct Point2f {
     float _field1;
     float _field2;
 };
@@ -94,21 +51,6 @@ struct Point2f {
 struct VTDecompressionOutputCallbackRecord {
     CDUnknownFunctionPointerType decompressionOutputCallback;
     void *decompressionOutputRefCon;
-};
-
-struct WorkingPixmapRecord {
-    char *_field1;
-    unsigned long long _field2;
-    unsigned long long _field3;
-    unsigned long long _field4;
-    unsigned long long _field5;
-    unsigned long long _field6;
-    struct __CVBuffer *_field7;
-    int _field8;
-};
-
-struct ransac_homography_record {
-    float _field1[9];
 };
 
 struct vector<CMTime, std::__1::allocator<CMTime>> {
@@ -125,14 +67,6 @@ struct vector<FloatPoint, std::__1::allocator<FloatPoint>> {
     struct __compressed_pair<FloatPoint *, std::__1::allocator<FloatPoint>> {
         CDStruct_183601bc *__value_;
     } __end_cap_;
-};
-
-struct vector<ImageFeaturePair, std::__1::allocator<ImageFeaturePair>> {
-    struct ImageFeaturePair *_field1;
-    struct ImageFeaturePair *_field2;
-    struct __compressed_pair<ImageFeaturePair *, std::__1::allocator<ImageFeaturePair>> {
-        struct ImageFeaturePair *_field1;
-    } _field3;
 };
 
 struct vector<SP_FrameInfo, std::__1::allocator<SP_FrameInfo>> {
@@ -188,14 +122,6 @@ typedef struct vector<FloatPoint, std::__1::allocator<FloatPoint>> {
         CDStruct_183601bc *__value_;
     } __end_cap_;
 } vector_f72cac12;
-
-typedef struct vector<ImageFeaturePair, std::__1::allocator<ImageFeaturePair>> {
-    struct ImageFeaturePair *_field1;
-    struct ImageFeaturePair *_field2;
-    struct __compressed_pair<ImageFeaturePair *, std::__1::allocator<ImageFeaturePair>> {
-        struct ImageFeaturePair *_field1;
-    } _field3;
-} vector_9ddfe0fc;
 
 typedef struct vector<float, std::__1::allocator<float>> {
     float *_field1;

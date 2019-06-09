@@ -4,9 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <QuickLookUI/QLUIServiceBaseViewControllerProtocol-Protocol.h>
+
 @class NSUUID;
 
-@protocol QLPreviewExtensionViewControllerProtocol
+@protocol QLPreviewExtensionViewControllerProtocol <QLUIServiceBaseViewControllerProtocol>
+- (void)setPreviewMode:(long long)arg1;
 - (void)hookUpToExtensionContextWithUUID:(NSUUID *)arg1 withCompletionHandler:(void (^)(void))arg2;
 @end
 

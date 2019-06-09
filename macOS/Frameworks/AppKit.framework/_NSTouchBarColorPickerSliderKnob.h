@@ -10,8 +10,8 @@ __attribute__((visibility("hidden")))
 @interface _NSTouchBarColorPickerSliderKnob : NSView
 {
     id _autounbinder;
-    unsigned int _minimized:1;
-    unsigned int _pressed:1;
+    BOOL _minimized;
+    BOOL _pressed;
 }
 
 + (id)keyPathsForValuesInvalidatingDisplay;

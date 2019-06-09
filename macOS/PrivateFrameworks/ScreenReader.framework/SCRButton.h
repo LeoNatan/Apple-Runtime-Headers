@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (id)previousElement;
 - (id)siblingTabUIElements;
 - (BOOL)isTab;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (BOOL)monitorItemDescriptionChanges;
 - (BOOL)isSelected;
 - (BOOL)isControlElement;
@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)valueDescription;
 - (BOOL)canNavigateToChildren;
 - (BOOL)isInteractive;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (id)onlyChild;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;
 

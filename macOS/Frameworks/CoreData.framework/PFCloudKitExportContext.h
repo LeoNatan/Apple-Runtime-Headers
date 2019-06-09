@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableArray, NSMutableSet, NSNumber, NSPersistentHistoryToken, NSString, PFCloudKitExporterOptions, PFCloudKitMirroredRelationshipCache, PFCloudKitSerializer;
+@class NSArray, NSMutableArray, NSMutableSet, NSNumber, NSPersistentHistoryToken, NSString, PFCloudKitExporterOptions, PFCloudKitMetadataCache, PFCloudKitSerializer;
 
 __attribute__((visibility("hidden")))
 @interface PFCloudKitExportContext : NSObject
@@ -19,15 +19,15 @@ __attribute__((visibility("hidden")))
     unsigned long long _currentBytes;
     NSMutableArray *_operations;
     NSArray *_writtenAssetURLs;
-    PFCloudKitMirroredRelationshipCache *_relCache;
     NSString *_exportMetadataIdentifier;
     NSMutableSet *_currentExportedObjects;
     NSPersistentHistoryToken *_finalHistoryToken;
+    NSMutableSet *_allDeletedRecordIDs;
+    PFCloudKitMetadataCache *_metadataCache;
 }
 
 @property(readonly, nonatomic) NSString *exportMetadataIdentifier; // @synthesize exportMetadataIdentifier=_exportMetadataIdentifier;
 @property(readonly, nonatomic) NSArray *writtenAssetURLs; // @synthesize writtenAssetURLs=_writtenAssetURLs;
-@property(readonly, nonatomic) PFCloudKitMirroredRelationshipCache *relCache; // @synthesize relCache=_relCache;
 @property(readonly, nonatomic) NSPersistentHistoryToken *finalHistoryToken; // @synthesize finalHistoryToken=_finalHistoryToken;
 @property(readonly, nonatomic) NSArray *operations; // @synthesize operations=_operations;
 - (BOOL)purgeExportMetadataFromStore:(id)arg1 withContext:(id)arg2 error:(id *)arg3;

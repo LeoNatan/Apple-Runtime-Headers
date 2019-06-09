@@ -8,16 +8,17 @@
 
 #import <AccountsDaemon/ACDOAuthSignerProtocol-Protocol.h>
 
-@class ACDClient, ACDClientAuthorizationManager, ACDDatabase, NSString;
+@class ACDClient, ACDClientAuthorizationManager, ACDDatabaseConnection, NSString;
 
 @interface ACDOAuthSigner : NSObject <ACDOAuthSignerProtocol>
 {
-    ACDDatabase *_database;
     ACDClient *_client;
+    ACDDatabaseConnection *_databaseConnection;
     ACDClientAuthorizationManager *_authorizationManager;
     _Bool _shouldIncludeAppIdInRequest;
 }
 
++ (id)new;
 - (void).cxx_destruct;
 - (id)csForAccountType:(id)arg1;
 - (id)ckForAccountType:(id)arg1;
@@ -28,7 +29,8 @@
 - (id)_signedRequest:(id)arg1 withAccountObject:(id)arg2 applicationID:(id)arg3 timestamp:(id)arg4;
 - (void)setClientBundleID:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)setShouldIncludeAppIdInRequest:(_Bool)arg1;
-- (id)initWithClient:(id)arg1;
+- (id)initWithClient:(id)arg1 databaseConnection:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

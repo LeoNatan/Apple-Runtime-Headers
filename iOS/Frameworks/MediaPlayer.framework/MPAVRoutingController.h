@@ -41,6 +41,7 @@
 + (_Bool)bundleIdRepresentsLongFormVideoContent:(id)arg1;
 + (id)systemRouteWithContextUID:(id)arg1;
 + (id)systemRoute;
++ (void)setActiveRoute:(id)arg1 reason:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)setActiveRoute:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)getActiveRouteWithTimeout:(double)arg1 completion:(CDUnknownBlockType)arg2;
 + (void)getActiveRouteWithCompletion:(CDUnknownBlockType)arg1;
@@ -92,6 +93,7 @@
 - (long long)_externalScreenType:(_Bool *)arg1;
 - (_Bool)_deviceAvailabilityOverrideState;
 - (void)_clearLegacyCachedRoute;
+- (void)unpickTVRoutes;
 - (void)clearCachedRoutes;
 - (_Bool)wirelessDisplayRoutesAvailable;
 - (_Bool)wirelessDisplayRouteIsPicked;

@@ -19,6 +19,7 @@
 + (id)nodeWithSession:(id)arg1 name:(id)arg2 options:(id)arg3 error:(id *)arg4;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (void)initialize;
+- (BOOL)setCredentialsWithBootstrapToken:(id)arg1 error:(id *)arg2;
 - (BOOL)replaceUserRecord:(id)arg1 withRecord:(id)arg2 attributes:(id)arg3 password:(id)arg4 options:(unsigned int)arg5 error:(id *)arg6;
 - (unsigned int)secureTokenRecoveryType;
 - (BOOL)setSecureTokenRecoveryMasterPasswordAndReturnError:(id *)arg1;

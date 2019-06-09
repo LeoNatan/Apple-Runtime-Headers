@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
     unsigned int _encodingWidth;
     unsigned int _encodingHeight;
     unsigned int _targetFramerate;
+    unsigned int _targetBitrate;
+    unsigned int _targetBitrateChangeCounter;
     unsigned int _txMaxBitrate;
     unsigned int _txMinBitrate;
     unsigned int _temporaryMaximumBitrate;
@@ -31,6 +33,8 @@ __attribute__((visibility("hidden")))
     _Bool _isServerBasedBandwidthProbingEnabled;
 }
 
+@property(nonatomic) unsigned int targetBitrateChangeCounter; // @synthesize targetBitrateChangeCounter=_targetBitrateChangeCounter;
+@property(nonatomic) unsigned int targetBitrate; // @synthesize targetBitrate=_targetBitrate;
 @property(nonatomic) _Bool isServerBasedBandwidthProbingEnabled; // @synthesize isServerBasedBandwidthProbingEnabled=_isServerBasedBandwidthProbingEnabled;
 @property double lastSentAudioHostTime; // @synthesize lastSentAudioHostTime=_lastSentAudioHostTime;
 @property unsigned int lastSentAudioSampleTime; // @synthesize lastSentAudioSampleTime=_lastSentAudioSampleTime;
@@ -39,7 +43,7 @@ __attribute__((visibility("hidden")))
 @property CDStruct_1b6d18a9 lastFrameTime; // @synthesize lastFrameTime=_latestSampleBufferTimestamp;
 - (void)handleActiveConnectionChange:(id)arg1;
 - (void)setFECRatio:(double)arg1;
-- (void)collectChannelMetrics:(CDStruct_1c8e0384 *)arg1 interval:(float)arg2;
+- (void)collectChannelMetrics:(CDStruct_3ab08b48 *)arg1 interval:(float)arg2;
 - (void)setStreamIDs:(unsigned short *)arg1 numOfStreamIDs:(unsigned char)arg2 repairedStreamIDs:(unsigned short *)arg3 numOfRepairedStreamIDs:(unsigned char)arg4;
 - (void)setKeyFrameOnlyStreamID:(unsigned short)arg1;
 - (unsigned int)setTemporaryMaximumBitrate:(unsigned int)arg1;

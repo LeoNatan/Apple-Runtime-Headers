@@ -9,5 +9,6 @@
 @interface NSURL (CPLArchiver)
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
+- (id)cpl_redactedShareURL;
 @end
 

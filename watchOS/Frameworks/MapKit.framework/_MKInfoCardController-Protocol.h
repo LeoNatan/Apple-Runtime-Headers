@@ -15,6 +15,7 @@
 @property(nonatomic) __weak id <UIScrollViewDelegate> scrollViewDelegate;
 @property(retain, nonatomic) GEOTransitOptions *transitOptions;
 @property(retain, nonatomic) GEOAutomobileOptions *automobileOptions;
+- (void)updateMaskAlpha:(float)arg1 onHeight:(float)arg2 withOffset:(float)arg3;
 - (void)hideTitle:(_Bool)arg1;
 @end
 

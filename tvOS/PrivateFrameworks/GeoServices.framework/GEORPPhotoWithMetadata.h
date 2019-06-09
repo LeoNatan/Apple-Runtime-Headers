@@ -8,27 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, NSData;
+@class GEOLatLng, NSData, PBDataReader;
 
 @interface GEORPPhotoWithMetadata : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     double _creationDate;
-    double _geotagHorizontalAccuracy;
-    double _geotagTimestamp;
     NSData *_data;
     GEOLatLng *_geotagCoordinate;
+    double _geotagHorizontalAccuracy;
+    double _geotagTimestamp;
     struct {
-        unsigned int creationDate:1;
-        unsigned int geotagHorizontalAccuracy:1;
-        unsigned int geotagTimestamp:1;
-    } _has;
+        unsigned int has_creationDate:1;
+        unsigned int has_geotagHorizontalAccuracy:1;
+        unsigned int has_geotagTimestamp:1;
+        unsigned int read_data:1;
+        unsigned int read_geotagCoordinate:1;
+        unsigned int wrote_creationDate:1;
+        unsigned int wrote_data:1;
+        unsigned int wrote_geotagCoordinate:1;
+        unsigned int wrote_geotagHorizontalAccuracy:1;
+        unsigned int wrote_geotagTimestamp:1;
+    } _flags;
 }
 
-@property(nonatomic) double geotagTimestamp; // @synthesize geotagTimestamp=_geotagTimestamp;
-@property(nonatomic) double geotagHorizontalAccuracy; // @synthesize geotagHorizontalAccuracy=_geotagHorizontalAccuracy;
-@property(retain, nonatomic) GEOLatLng *geotagCoordinate; // @synthesize geotagCoordinate=_geotagCoordinate;
-@property(nonatomic) double creationDate; // @synthesize creationDate=_creationDate;
-@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -37,13 +42,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasGeotagTimestamp;
+@property(nonatomic) double geotagTimestamp;
 @property(nonatomic) _Bool hasGeotagHorizontalAccuracy;
+@property(nonatomic) double geotagHorizontalAccuracy;
+@property(retain, nonatomic) GEOLatLng *geotagCoordinate;
 @property(readonly, nonatomic) _Bool hasGeotagCoordinate;
+- (void)_readGeotagCoordinate;
 @property(nonatomic) _Bool hasCreationDate;
+@property(nonatomic) double creationDate;
+@property(retain, nonatomic) NSData *data;
 @property(readonly, nonatomic) _Bool hasData;
+- (void)_readData;
 
 @end
 

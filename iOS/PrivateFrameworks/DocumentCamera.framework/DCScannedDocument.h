@@ -32,9 +32,9 @@
 - (_Bool)makeSureScanDirectoryExists:(id *)arg1;
 - (_Bool)copyImagesFromDocInfoCollection:(id)arg1 imageCache:(id)arg2;
 - (id)imageOfPageAtIndex:(unsigned long long)arg1;
-@property(readonly) unsigned long long pageCount;
+@property(readonly, nonatomic) unsigned long long pageCount;
 - (id)imageForScanAtIndex:(unsigned long long)arg1 error:(id *)arg2;
-@property(readonly) unsigned long long numberOfScans;
+- (unsigned long long)numberOfScans;
 - (id)pListURL:(id)arg1;
 - (id)copyImageForLoading:(id)arg1 fromFolderURL:(id)arg2;
 - (id)copyImageForSaving:(id)arg1 toFolderURL:(id)arg2;

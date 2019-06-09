@@ -41,6 +41,7 @@
 - (void)getPhraseShortcutPairs:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)addObserver:(CDUnknownBlockType)arg1;
+- (void)startServer;
 - (id)init;
 - (void)dealloc;
 

@@ -16,10 +16,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mNameToValueMap;
 }
 
+- (void).cxx_destruct;
 - (id)nameForValue:(int)arg1;
 - (id)valueForName:(id)arg1;
 - (id)typeName;
-- (void)dealloc;
 - (id)initWithTypeName:(id)arg1 pairs:(struct TCDumpEnumPair *)arg2;
 
 @end

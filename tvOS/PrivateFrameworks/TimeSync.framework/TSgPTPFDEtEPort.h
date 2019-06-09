@@ -19,8 +19,6 @@
 - (id)_statistics;
 - (void)updateProperties;
 - (_Bool)_commonInitWithService:(unsigned int)arg1;
-- (id)initWithMatchingDictionary:(id)arg1;
-- (id)initWithService:(unsigned int)arg1;
 
 @end
 

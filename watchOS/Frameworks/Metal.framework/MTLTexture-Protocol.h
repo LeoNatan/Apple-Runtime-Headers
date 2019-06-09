@@ -9,6 +9,7 @@
 @protocol MTLBuffer, MTLResource, MTLTexture;
 
 @protocol MTLTexture <MTLResource>
+@property(readonly, nonatomic) CDStruct_a06f635e swizzle;
 @property(readonly) _Bool allowGPUOptimizedContents;
 @property(readonly, getter=isFramebufferOnly) _Bool framebufferOnly;
 @property(readonly) unsigned int usage;
@@ -20,6 +21,8 @@
 @property(readonly) unsigned int width;
 @property(readonly) unsigned int pixelFormat;
 @property(readonly) unsigned int textureType;
+@property(readonly) unsigned int iosurfacePlane;
+@property(readonly) struct __IOSurface *iosurface;
 @property(readonly) unsigned int bufferBytesPerRow;
 @property(readonly) unsigned int bufferOffset;
 @property(readonly) id <MTLBuffer> buffer;
@@ -27,11 +30,12 @@
 @property(readonly) unsigned int parentRelativeLevel;
 @property(readonly) id <MTLTexture> parentTexture;
 @property(readonly) id <MTLResource> rootResource;
+- (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned int)arg1 textureType:(unsigned int)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4 swizzle:(CDStruct_a06f635e)arg5;
 - (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned int)arg1 textureType:(unsigned int)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4;
 - (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned int)arg1;
-- (void)replaceRegion:(CDStruct_44fb454a)arg1 mipmapLevel:(unsigned int)arg2 withBytes:(const void *)arg3 bytesPerRow:(unsigned int)arg4;
-- (void)getBytes:(void *)arg1 bytesPerRow:(unsigned int)arg2 fromRegion:(CDStruct_44fb454a)arg3 mipmapLevel:(unsigned int)arg4;
-- (void)replaceRegion:(CDStruct_44fb454a)arg1 mipmapLevel:(unsigned int)arg2 slice:(unsigned int)arg3 withBytes:(const void *)arg4 bytesPerRow:(unsigned int)arg5 bytesPerImage:(unsigned int)arg6;
-- (void)getBytes:(void *)arg1 bytesPerRow:(unsigned int)arg2 bytesPerImage:(unsigned int)arg3 fromRegion:(CDStruct_44fb454a)arg4 mipmapLevel:(unsigned int)arg5 slice:(unsigned int)arg6;
+- (void)replaceRegion:(CDStruct_4e0934b9)arg1 mipmapLevel:(unsigned int)arg2 withBytes:(const void *)arg3 bytesPerRow:(unsigned int)arg4;
+- (void)getBytes:(void *)arg1 bytesPerRow:(unsigned int)arg2 fromRegion:(CDStruct_4e0934b9)arg3 mipmapLevel:(unsigned int)arg4;
+- (void)replaceRegion:(CDStruct_4e0934b9)arg1 mipmapLevel:(unsigned int)arg2 slice:(unsigned int)arg3 withBytes:(const void *)arg4 bytesPerRow:(unsigned int)arg5 bytesPerImage:(unsigned int)arg6;
+- (void)getBytes:(void *)arg1 bytesPerRow:(unsigned int)arg2 bytesPerImage:(unsigned int)arg3 fromRegion:(CDStruct_4e0934b9)arg4 mipmapLevel:(unsigned int)arg5 slice:(unsigned int)arg6;
 @end
 

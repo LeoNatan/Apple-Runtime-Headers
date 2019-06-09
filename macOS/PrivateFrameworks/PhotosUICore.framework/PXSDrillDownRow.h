@@ -12,8 +12,10 @@
 {
     PXSettings *_childSettings;
     PXSModule *_childModule;
+    BOOL _isPrepared;
 }
 
++ (id)rowWithTitle:(id)arg1 childSettings:(id)arg2;
 + (id)rowWithTitle:(id)arg1 childSettingsKeyPath:(id)arg2;
 - (void).cxx_destruct;
 - (id)valueViewReuseIdentifier;

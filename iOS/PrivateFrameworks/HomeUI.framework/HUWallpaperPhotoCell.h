@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class NSString, UIActivityIndicatorView, UIButton, UIImage, UIImageView, UIView;
+@class CAShapeLayer, NSString, UIActivityIndicatorView, UIButton, UIImage, UIImageView, UILabel, UIStackView, UIView;
 @protocol HUWallpaperPhotoCellDelegate;
 
 @interface HUWallpaperPhotoCell : UICollectionViewCell
@@ -22,8 +22,14 @@
     UIActivityIndicatorView *_spinnerView;
     UIView *_selectionOverlayView;
     UIButton *_deleteButton;
+    UILabel *_choosePhotoLabel;
+    UIStackView *_stackView;
+    CAShapeLayer *_borderLayer;
 }
 
+@property(retain, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
+@property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
+@property(retain, nonatomic) UILabel *choosePhotoLabel; // @synthesize choosePhotoLabel=_choosePhotoLabel;
 @property(retain, nonatomic) UIButton *deleteButton; // @synthesize deleteButton=_deleteButton;
 @property(retain, nonatomic) UIView *selectionOverlayView; // @synthesize selectionOverlayView=_selectionOverlayView;
 @property(retain, nonatomic) UIActivityIndicatorView *spinnerView; // @synthesize spinnerView=_spinnerView;

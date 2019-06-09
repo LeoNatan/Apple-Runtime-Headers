@@ -6,7 +6,6 @@
 
 #import <CFNetwork/NSURLProtocol.h>
 
-__attribute__((visibility("hidden")))
 @interface _NSCFWikipediaProtocol : NSURLProtocol
 {
     const void *_instance;

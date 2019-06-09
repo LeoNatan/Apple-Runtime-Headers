@@ -19,6 +19,7 @@
 - (id)fileExtension;
 - (id)dataFromImage:(id)arg1;
 - (id)imageFromData:(id)arg1 error:(id *)arg2;
+- (id)imageFromURL:(id)arg1 error:(id *)arg2;
 - (id)initWithCompressionQuality:(double)arg1;
 - (id)init;
 

@@ -6,14 +6,16 @@
 
 #import <SpringBoardServices/NSObject-Protocol.h>
 
-@class BSSettings, NSString;
+@class BSDescriptionBuilder, BSSettings, NSString;
 
 @protocol BSSettingDescriptionProvider <NSObject>
 
 @optional
 - (NSString *)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (NSString *)keyDescriptionForSetting:(unsigned int)arg1;
+- (_Bool)appendDescriptionToBuilder:(BSDescriptionBuilder *)arg1 forFlag:(int)arg2 object:(id)arg3 ofSetting:(unsigned int)arg4;
 - (NSString *)settings:(BSSettings *)arg1 valueDescriptionForFlag:(int)arg2 object:(id)arg3 ofSetting:(unsigned int)arg4;
 - (NSString *)settings:(BSSettings *)arg1 keyDescriptionForSetting:(unsigned int)arg2;
+- (_Bool)settings:(BSSettings *)arg1 appendDescriptionToBuilder:(BSDescriptionBuilder *)arg2 forFlag:(int)arg3 object:(id)arg4 ofSetting:(unsigned int)arg5;
 @end
 

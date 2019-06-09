@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableDictionary, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIViewReusePool : NSObject
 {
     UIView *_parentView;

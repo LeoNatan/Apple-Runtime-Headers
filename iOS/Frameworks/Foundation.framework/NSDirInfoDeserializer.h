@@ -6,6 +6,7 @@
 
 #import <Foundation/NSAKDeserializer.h>
 
+__attribute__((visibility("hidden")))
 @interface NSDirInfoDeserializer : NSAKDeserializer
 {
 }

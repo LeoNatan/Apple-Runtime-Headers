@@ -37,6 +37,7 @@
 - (struct __CFArray *)copySyllableLengthArrayInConvertedAnalysisString;
 - (struct __CFArray *)copySyllableLengthArrayInAnalysisString;
 - (unsigned short)matchedLengthType;
+- (double)lmProbability;
 - (unsigned short)matchType;
 - (unsigned short)kind;
 - (long long)weight;
@@ -61,6 +62,8 @@
 @property(readonly, nonatomic) NSString *string;
 @property(readonly, nonatomic) NSString *surface;
 @property(readonly, nonatomic) int type;
+@property(readonly, nonatomic) _Bool isPartialCandidate;
+@property(readonly, nonatomic) _Bool isBilingualCandidate;
 @property(readonly, nonatomic) _Bool isRegionalCandidate;
 @property(readonly, nonatomic) _Bool isOTAWordlistCandidate;
 @property(readonly, nonatomic) _Bool isAutocorrectedCandidate;

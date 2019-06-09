@@ -25,12 +25,13 @@
 @property(copy, nonatomic) NSString *currentVersion; // @synthesize currentVersion=_currentVersion;
 @property(copy, nonatomic) NSString *previousVersion; // @synthesize previousVersion=_previousVersion;
 @property(nonatomic) unsigned long long platform; // @synthesize platform=_platform;
+- (void).cxx_destruct;
 - (id)importPreferredLanguages_macOS_10_9_forPreferences:(id)arg1;
 - (id)importPreferredLanguagesForPreferences:(id)arg1;
 - (id)appendRegionalVariantsToLanguageIdentifiers:(id)arg1 regionCode:(id)arg2;
 - (id)performMigrationForPreferences:(id)arg1;
+- (id)performMigrationForUserPreferences:(id)arg1 systemPreferences:(id)arg2;
 - (_Bool)performMigration;
-- (void)dealloc;
 
 @end
 

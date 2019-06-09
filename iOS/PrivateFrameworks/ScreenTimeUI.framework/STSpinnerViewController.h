@@ -8,6 +8,7 @@
 
 @class UIActivityIndicatorView;
 
+__attribute__((visibility("hidden")))
 @interface STSpinnerViewController : UIViewController
 {
     UIActivityIndicatorView *_spinnerView;

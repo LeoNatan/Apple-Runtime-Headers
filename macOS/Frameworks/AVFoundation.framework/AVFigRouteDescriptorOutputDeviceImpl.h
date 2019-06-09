@@ -43,6 +43,9 @@
 - (void)_volumeDidChangeForEndpointWithID:(struct __CFString *)arg1;
 @property(readonly) float volume;
 - (void)setSecondDisplayEnabled:(BOOL)arg1;
+@property(copy, nonatomic) NSString *currentBluetoothListeningMode;
+@property(readonly, nonatomic) NSArray *availableBluetoothListeningModes;
+@property(readonly, nonatomic) BOOL supportsBluetoothSharing;
 @property(readonly, nonatomic) BOOL presentsOptimizedUserInterfaceWhenPlayingFetchedAudioOnlyAssets;
 @property(readonly, nonatomic) BOOL canFetchMediaDataFromSender;
 @property(readonly, nonatomic) BOOL canPlayEncryptedProgressiveDownloadAssets;
@@ -57,6 +60,8 @@
 @property(readonly, copy, nonatomic) NSArray *connectedPairedDevices;
 @property(readonly, nonatomic, getter=isInUseByPairedDevice) BOOL inUseByPairedDevice;
 @property(readonly, nonatomic) NSDictionary *airPlayProperties;
+@property(readonly, nonatomic) NSNumber *isInEar;
+@property(readonly, nonatomic) NSNumber *supportsDataOverACLProtocol;
 @property(readonly, nonatomic) NSNumber *rightBatteryLevel;
 @property(readonly, nonatomic) NSNumber *leftBatteryLevel;
 @property(readonly, nonatomic) NSNumber *caseBatteryLevel;

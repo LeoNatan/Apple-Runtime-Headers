@@ -14,6 +14,7 @@
 __attribute__((visibility("hidden")))
 @interface CreditCardDataEditorCellView : NSTableCellView <NSTextFieldDelegate>
 {
+    BOOL _isVirtualCard;
     id <CreditCardDataEditorCellViewDelegate> _delegate;
     NSImageView *_creditCardIconImageView;
     NSTextField *_creditCardNameField;
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSTextField *_expirationDateField;
 }
 
+@property(nonatomic) BOOL isVirtualCard; // @synthesize isVirtualCard=_isVirtualCard;
 @property(nonatomic) __weak NSTextField *expirationDateField; // @synthesize expirationDateField=_expirationDateField;
 @property(nonatomic) __weak NSTextField *cardholderNameField; // @synthesize cardholderNameField=_cardholderNameField;
 @property(nonatomic) __weak NSTextField *creditCardNumberField; // @synthesize creditCardNumberField=_creditCardNumberField;
@@ -29,11 +31,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak NSImageView *creditCardIconImageView; // @synthesize creditCardIconImageView=_creditCardIconImageView;
 @property(nonatomic) __weak id <CreditCardDataEditorCellViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (BOOL)control:(id)arg1 textShouldBeginEditing:(id)arg2;
 - (BOOL)control:(id)arg1 textView:(id)arg2 doCommandBySelector:(SEL)arg3;
 - (BOOL)control:(id)arg1 textShouldEndEditing:(id)arg2;
 - (void)controlTextDidChange:(id)arg1;
 - (void)textFieldDidChangeText:(id)arg1;
 - (id)_identifierForTextField:(id)arg1;
+- (id)_creditCardFormatter;
+- (void)setBackgroundStyle:(long long)arg1;
 - (void)awakeFromNib;
 
 // Remaining properties

@@ -40,13 +40,14 @@ __attribute__((visibility("hidden")))
 + (BOOL)isFakeEvent:(id)arg1;
 - (BOOL)appModalSessionInProgressForAnyHostOtherThanPID:(int)arg1;
 - (void)endModalSession:(struct _NSModalSession *)arg1;
-- (void)endLocalAppModalSession:(struct _NSModalSession *)arg1 withWindow:(id)arg2;
+- (void)endServiceAppModalSession:(struct _NSModalSession *)arg1 withWindow:(id)arg2;
 - (void)endRemoteAppModalSession:(struct _NSModalSession *)arg1 withWindow:(id)arg2;
 - (struct _NSModalSession *)beginModalSessionForWindow:(id)arg1;
+- (struct _NSModalSession *)beginModalSessionForWindow:(id)arg1 relativeToWindow:(id)arg2;
 - (BOOL)appModalSessionsOutlawed;
-- (struct _NSModalSession *)beginLocalAppModalSessionForWindow:(id)arg1;
-- (void)beginRemoteAppModalSessionForWindow:(id)arg1 withLocalSession:(struct _NSModalSession *)arg2;
-- (id)beginHostModalSession:(id)arg1 forWindow:(id)arg2 withSize:(struct CGSize)arg3 withReply:(CDUnknownBlockType)arg4;
+- (struct _NSModalSession *)beginServiceAppModalSessionForWindow:(id)arg1 relativeToWindow:(id)arg2;
+- (BOOL)beginHostAppModalSessionForWindow:(id)arg1 withLocalSession:(struct _NSModalSession *)arg2 relativeToWindow:(id)arg3;
+- (id)beginHostAppModalSession:(id)arg1 forWindow:(id)arg2 withSize:(struct CGSize)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)endSheet:(id)arg1;
 - (void)endSheet:(id)arg1 returnCode:(long long)arg2;
 - (void)beginSheet:(id)arg1 modalForWindow:(id)arg2 modalDelegate:(id)arg3 didEndSelector:(SEL)arg4 contextInfo:(void *)arg5;

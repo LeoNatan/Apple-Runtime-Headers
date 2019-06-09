@@ -16,7 +16,7 @@
 @property(readonly, copy, nonatomic) NSArray *flagsToClear;
 @property(readonly, copy, nonatomic) NSArray *flagsToSet;
 - (unsigned char)operationType;
-- (id)initWithFlagsToSet:(id)arg1 flagsToClear:(id)arg2 forUids:(id)arg3 inMailbox:(id)arg4;
+- (id)initWithFlagsToSet:(id)arg1 flagsToClear:(id)arg2 forUIDs:(id)arg3 inMailbox:(id)arg4;
 
 @end
 

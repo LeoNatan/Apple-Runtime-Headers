@@ -11,8 +11,12 @@
 @protocol QLDisplayBundleOwner <NSObject>
 @property BOOL tracksMouseMovements;
 @property(readonly) BOOL allowsAlerts;
+@property(readonly) NSURL *savedCopyURL;
+@property(readonly) long long saveMode;
+@property(readonly) BOOL isSaving;
 @property(readonly) NSURL *currentURL;
 @property(readonly) NSScreen *screen;
+@property(readonly) int previewStatus;
 @property(readonly) BOOL windowSupportsRemoteViews;
 @property(readonly) BOOL isWindowKey;
 @property(readonly) double backingScaleFactor;
@@ -42,10 +46,12 @@
 - (void)startWatchingURL:(NSURL *)arg1;
 
 @optional
+- (void)displayBundle:(QLDisplayBundle *)arg1 didShowScreentimeLockout:(BOOL)arg2;
 - (void)displayBundleExitModalEditingSession:(QLDisplayBundle *)arg1;
 - (void)displayBundleAddHiddenContentViewToWindowForLoading:(QLDisplayBundle *)arg1;
+- (void)displayBundle:(QLDisplayBundle *)arg1 didSaveEdit:(BOOL)arg2 toURL:(NSURL *)arg3;
 - (void)displayBundle:(QLDisplayBundle *)arg1 didEditPage:(long long)arg2;
-- (void)displayBundleDidExitMarkup:(QLDisplayBundle *)arg1;
+- (void)displayBundleDidExitMarkup:(QLDisplayBundle *)arg1 waitingForSave:(BOOL)arg2;
 - (void)displayBundleDidEnterMarkup:(QLDisplayBundle *)arg1;
 @end
 

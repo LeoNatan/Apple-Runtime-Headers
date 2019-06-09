@@ -41,6 +41,7 @@
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 - (void).cxx_destruct;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (long long)_columnSpanForRowType:(unsigned long long)arg1;
 - (struct CGRect)_frameForRowType:(unsigned long long)arg1 inRect:(struct CGRect)arg2;
 - (_Bool)_shouldPageForRowType:(unsigned long long)arg1;
@@ -57,13 +58,12 @@
 - (void)forYouMemoriesViewController:(id)arg1 configureMetrics:(id)arg2;
 - (void)forYouMemoriesViewController:(id)arg1 transitionToViewController:(id)arg2 animated:(_Bool)arg3;
 - (id)showAllMemoriesFeedAnimated:(_Bool)arg1;
-- (void)userDidSelectAccessoryButton:(id)arg1;
+- (void)userDidSelectAccessoryButton:(struct NSObject *)arg1;
 - (void)gadgetControllerHasDisappeared;
 - (void)gadgetControllerHasAppeared;
 - (struct NSObject *)contentViewController;
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(readonly, nonatomic) unsigned long long gadgetType;
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
@@ -73,11 +73,13 @@
 - (void)_updateVisibilityIfNeeded;
 - (void)_dismissIfNeeded;
 - (void)_updateIfNeeded;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithDataSourceManager:(id)arg1;
 
 // Remaining properties
+@property(readonly, nonatomic) Class collectionViewItemClass;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

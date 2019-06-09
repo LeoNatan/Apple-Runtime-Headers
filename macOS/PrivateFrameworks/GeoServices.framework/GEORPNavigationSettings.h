@@ -14,36 +14,28 @@
 {
     unsigned long long _distanceUnits;
     unsigned long long _maxAlternateRouteCount;
+    NSString *_voiceLanguage;
     unsigned long long _voiceVolume;
     int _userPreferredTransportType;
-    NSString *_voiceLanguage;
     BOOL _beepBeforeInstruction;
     BOOL _muteSpeechOverride;
     BOOL _pauseSpokenAudio;
     BOOL _shouldUseGuidanceEventManager;
     BOOL _speechEnabled;
     struct {
-        unsigned int distanceUnits:1;
-        unsigned int maxAlternateRouteCount:1;
-        unsigned int voiceVolume:1;
-        unsigned int userPreferredTransportType:1;
-        unsigned int beepBeforeInstruction:1;
-        unsigned int muteSpeechOverride:1;
-        unsigned int pauseSpokenAudio:1;
-        unsigned int shouldUseGuidanceEventManager:1;
-        unsigned int speechEnabled:1;
-    } _has;
+        unsigned int has_distanceUnits:1;
+        unsigned int has_maxAlternateRouteCount:1;
+        unsigned int has_voiceVolume:1;
+        unsigned int has_userPreferredTransportType:1;
+        unsigned int has_beepBeforeInstruction:1;
+        unsigned int has_muteSpeechOverride:1;
+        unsigned int has_pauseSpokenAudio:1;
+        unsigned int has_shouldUseGuidanceEventManager:1;
+        unsigned int has_speechEnabled:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL shouldUseGuidanceEventManager; // @synthesize shouldUseGuidanceEventManager=_shouldUseGuidanceEventManager;
-@property(retain, nonatomic) NSString *voiceLanguage; // @synthesize voiceLanguage=_voiceLanguage;
-@property(nonatomic) BOOL beepBeforeInstruction; // @synthesize beepBeforeInstruction=_beepBeforeInstruction;
-@property(nonatomic) unsigned long long maxAlternateRouteCount; // @synthesize maxAlternateRouteCount=_maxAlternateRouteCount;
-@property(nonatomic) BOOL speechEnabled; // @synthesize speechEnabled=_speechEnabled;
-@property(nonatomic) BOOL muteSpeechOverride; // @synthesize muteSpeechOverride=_muteSpeechOverride;
-@property(nonatomic) BOOL pauseSpokenAudio; // @synthesize pauseSpokenAudio=_pauseSpokenAudio;
-@property(nonatomic) unsigned long long distanceUnits; // @synthesize distanceUnits=_distanceUnits;
-@property(nonatomic) unsigned long long voiceVolume; // @synthesize voiceVolume=_voiceVolume;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -52,21 +44,31 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsUserPreferredTransportType:(id)arg1;
 - (id)userPreferredTransportTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasUserPreferredTransportType;
-@property(nonatomic) int userPreferredTransportType; // @synthesize userPreferredTransportType=_userPreferredTransportType;
+@property(nonatomic) int userPreferredTransportType;
 @property(nonatomic) BOOL hasShouldUseGuidanceEventManager;
+@property(nonatomic) BOOL shouldUseGuidanceEventManager;
+@property(retain, nonatomic) NSString *voiceLanguage;
 @property(readonly, nonatomic) BOOL hasVoiceLanguage;
 @property(nonatomic) BOOL hasBeepBeforeInstruction;
+@property(nonatomic) BOOL beepBeforeInstruction;
 @property(nonatomic) BOOL hasMaxAlternateRouteCount;
+@property(nonatomic) unsigned long long maxAlternateRouteCount;
 @property(nonatomic) BOOL hasSpeechEnabled;
+@property(nonatomic) BOOL speechEnabled;
 @property(nonatomic) BOOL hasMuteSpeechOverride;
+@property(nonatomic) BOOL muteSpeechOverride;
 @property(nonatomic) BOOL hasPauseSpokenAudio;
+@property(nonatomic) BOOL pauseSpokenAudio;
 @property(nonatomic) BOOL hasDistanceUnits;
+@property(nonatomic) unsigned long long distanceUnits;
 @property(nonatomic) BOOL hasVoiceVolume;
+@property(nonatomic) unsigned long long voiceVolume;
 
 @end
 

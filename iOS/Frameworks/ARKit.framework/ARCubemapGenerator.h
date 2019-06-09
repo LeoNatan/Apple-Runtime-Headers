@@ -6,19 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class ARGPUCubemapConverter, ARGPUCubemapProjector, ARGPUWarper;
+@class ARGPUCubemapConverter, ARGPUCubemapHistogram, ARGPUCubemapProjector, ARGPUWarper;
 @protocol OS_dispatch_queue;
 
 @interface ARCubemapGenerator : NSObject
 {
     ARGPUCubemapProjector *_cubemapProjector;
     ARGPUCubemapConverter *_cubemapConverter;
+    ARGPUCubemapHistogram *_cubemapHistogram;
     ARGPUWarper *_gpuWarper;
     NSObject<OS_dispatch_queue> *_cubemapQueue;
 }
 
 - (void).cxx_destruct;
--     // Error parsing type: v1288@0:8{?=[4]}1680{ARLabHistogram=f{array<std::__1::array<std::__1::array<float, 8>, 8>, 4>=[4{array<std::__1::array<float, 8>, 8>=[8{array<float, 8>=[8f]}]}]}}96{vector<ARTexturedPlane, std::__1::allocator<ARTexturedPlane> >=^{?}^{?}{__compressed_pair<ARTexturedPlane *, std::__1::allocator<ARTexturedPlane> >=^{?}}}1124^{__CVBuffer=}1148{?=[4]}1156{?=[3]}1220d1268f1276@?1280, name: cubemapWithTransform:extent:lastHistogram:fromPlanes:cameraImage:cameraTransform:cameraIntrinsics:cameraExposure:cameraExposureOffset:completionHandler:
+-     // Error parsing type: v1288@0:8{?=[4]}1680{ARLabHistogram=f{array<std::__1::array<std::__1::array<float, 8>, 8>, 4>=[4{array<std::__1::array<float, 8>, 8>=[8{array<float, 8>=[8f]}]}]}}96{vector<ARTexturedPlane, std::__1::allocator<ARTexturedPlane> >=^{ARTexturedPlane}^{ARTexturedPlane}{__compressed_pair<ARTexturedPlane *, std::__1::allocator<ARTexturedPlane> >=^{ARTexturedPlane}}}1124^{__CVBuffer=}1148{?=[4]}1156{?=[3]}1220d1268f1276@?1280, name: cubemapWithTransform:extent:lastHistogram:fromPlanes:cameraImage:cameraTransform:cameraIntrinsics:cameraExposure:cameraExposureOffset:completionHandler:
 - (id)init;
 
 @end

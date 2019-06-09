@@ -15,22 +15,18 @@
 @interface HKClinicalProviderSearchResult : NSObject <NSCopying, NSSecureCoding, HKClinicalBrandable>
 {
     _Bool _supported;
-    _Bool _multiple;
     NSString *_externalID;
     NSString *_batchID;
     NSString *_title;
     NSString *_subtitle;
-    NSString *_locality;
-    NSString *_administrativeArea;
+    NSString *_location;
     HKClinicalBrand *_brand;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(readonly, nonatomic, getter=hasMultipleLocations) _Bool multiple; // @synthesize multiple=_multiple;
 @property(readonly, nonatomic, getter=isSupported) _Bool supported; // @synthesize supported=_supported;
 @property(readonly, copy, nonatomic) HKClinicalBrand *brand; // @synthesize brand=_brand;
-@property(readonly, copy, nonatomic) NSString *administrativeArea; // @synthesize administrativeArea=_administrativeArea;
-@property(readonly, copy, nonatomic) NSString *locality; // @synthesize locality=_locality;
+@property(readonly, copy, nonatomic) NSString *location; // @synthesize location=_location;
 @property(readonly, copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, copy, nonatomic) NSString *batchID; // @synthesize batchID=_batchID;
@@ -42,7 +38,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithExternalID:(id)arg1 batchID:(id)arg2 title:(id)arg3 subtitle:(id)arg4 locality:(id)arg5 administrativeArea:(id)arg6 supported:(_Bool)arg7 multiple:(_Bool)arg8 brand:(id)arg9;
+- (id)initWithExternalID:(id)arg1 batchID:(id)arg2 title:(id)arg3 subtitle:(id)arg4 location:(id)arg5 supported:(_Bool)arg6 brand:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

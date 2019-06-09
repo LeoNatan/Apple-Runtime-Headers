@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface EMNumberFormatter : NSObject
 {
     struct __CFNumberFormatter *_genericFormatter;

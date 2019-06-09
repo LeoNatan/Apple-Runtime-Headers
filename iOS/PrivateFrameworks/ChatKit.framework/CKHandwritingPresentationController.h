@@ -9,6 +9,7 @@
 @class CKBrowserItemPayload, CKDeviceOrientationManager, CKHandwritingWindow, CKScheduledUpdater, NSString, UIViewController;
 @protocol CKHandwritingBrowserViewControllerProtocol, CKHandwritingPresentationControllerDelegate, CKHandwritingViewControllerSendDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKHandwritingPresentationController : NSObject
 {
     _Bool _requestedVisibility;

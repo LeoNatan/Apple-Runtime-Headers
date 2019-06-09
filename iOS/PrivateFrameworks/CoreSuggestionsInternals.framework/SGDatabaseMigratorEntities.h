@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)skipFromZeroSchema:(unsigned long long *)arg1;
++ (id)skipFromZeroSchema:(unsigned int *)arg1;
 + (id)migrations;
 
 @end

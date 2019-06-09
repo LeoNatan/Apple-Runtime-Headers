@@ -20,12 +20,13 @@ __attribute__((visibility("hidden")))
 - (void)cancel;
 - (void)_finishWithFinalLayout:(id)arg1 invalidLayout:(id)arg2;
 - (void)animate;
+- (void)_animateSearchBar;
 - (void)_animateLargeTitleView;
 - (void)_animateContentView;
 - (void)_animateCanvasViews;
-- (void)_animateAsTwoPartsIfNecessaryPartOne:(CDUnknownBlockType)arg1 partTwo:(CDUnknownBlockType)arg2;
 - (float)contentViewMaxY;
 - (void)prepare;
+- (void)_prepareSearchBar;
 - (void)_prepareLargeTitleView;
 - (void)_prepareContentView;
 - (void)_prepareCanvasViews;

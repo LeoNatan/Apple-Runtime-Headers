@@ -11,7 +11,6 @@
 
 @interface BBSectionInfoSettings : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _allowsNotifications;
     _Bool _showsOnExternalDevices;
     _Bool _showsCustomSettingsLink;
     int _authorizationStatus;
@@ -22,12 +21,14 @@
     unsigned int _pushSettings;
     int _carPlaySetting;
     int _criticalAlertSetting;
+    int _spokenNotificationSetting;
     int _bulletinGroupingSetting;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)sectionInfoSettingsForManagedBundleID:(id)arg1;
 @property(nonatomic) int bulletinGroupingSetting; // @synthesize bulletinGroupingSetting=_bulletinGroupingSetting;
+@property(nonatomic) int spokenNotificationSetting; // @synthesize spokenNotificationSetting=_spokenNotificationSetting;
 @property(nonatomic) int criticalAlertSetting; // @synthesize criticalAlertSetting=_criticalAlertSetting;
 @property(nonatomic) int carPlaySetting; // @synthesize carPlaySetting=_carPlaySetting;
 @property(nonatomic) unsigned int pushSettings; // @synthesize pushSettings=_pushSettings;
@@ -37,8 +38,8 @@
 @property(nonatomic) _Bool showsOnExternalDevices; // @synthesize showsOnExternalDevices=_showsOnExternalDevices;
 @property(nonatomic) int lockScreenSetting; // @synthesize lockScreenSetting=_lockScreenSetting;
 @property(nonatomic) int notificationCenterSetting; // @synthesize notificationCenterSetting=_notificationCenterSetting;
-@property(nonatomic) _Bool allowsNotifications; // @synthesize allowsNotifications=_allowsNotifications;
 @property(nonatomic) int authorizationStatus; // @synthesize authorizationStatus=_authorizationStatus;
+@property(nonatomic) _Bool allowsNotifications;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

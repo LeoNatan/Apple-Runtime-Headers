@@ -6,10 +6,12 @@
 
 #import <UIKitCore/UIControl.h>
 
-@class NSArray, NSString, UIColor, UIFont;
+#import <UIKitCore/UIAccessibilityHUDGestureDelegate-Protocol.h>
+
+@class NSArray, NSString, UIAccessibilityHUDGestureManager, UIColor, UIFont;
 
 __attribute__((visibility("hidden")))
-@interface UITableViewIndex : UIControl
+@interface UITableViewIndex : UIControl <UIAccessibilityHUDGestureDelegate>
 {
     NSArray *_titles;
     UIFont *_font;
@@ -26,6 +28,7 @@ __attribute__((visibility("hidden")))
     double _verticalTextHeightEstimate;
     NSArray *_entries;
     long long _idiom;
+    UIAccessibilityHUDGestureManager *_axHUDGestureManager;
     struct UIEdgeInsets _drawingInsets;
 }
 
@@ -34,6 +37,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool pastTop; // @synthesize pastTop=_pastTop;
 @property(readonly, nonatomic) long long selectedSection; // @synthesize selectedSection=_selectedSection;
 - (void).cxx_destruct;
+- (long long)_indexForEntryAtPoint:(struct CGPoint)arg1;
+- (_Bool)_accessibilityHUDGestureManagerCancelsTouchesInView:(id)arg1;
+- (void)_accessibilityHUDGestureManager:(id)arg1 gestureLiftedAtPoint:(struct CGPoint)arg2;
+- (_Bool)_accessibilityHUDGestureManager:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
+- (id)_accessibilityHUDGestureManager:(id)arg1 HUDItemForPoint:(struct CGPoint)arg2;
+- (void)_setupAXHUDGestureIfNecessary;
+- (void)didMoveToWindow;
+- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)canBecomeFocused;
 - (id)_externalDotImage;
 - (id)_dotImage;
@@ -63,6 +74,12 @@ __attribute__((visibility("hidden")))
 - (id)_fontForIdiom:(long long)arg1;
 - (void)_setIdiom:(long long)arg1;
 - (long long)_idiom;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

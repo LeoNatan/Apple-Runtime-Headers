@@ -7,10 +7,19 @@
 #import <UIKit/UIFont.h>
 
 @interface UIFont (HKAdditions)
++ (id)hk_chartOverlaySectionHeaderFont;
++ (id)hk_chartCurrentValueDateFont;
++ (id)hk_chartCurrentValueUnitFont;
++ (id)hk_chartActivityValueFont;
++ (id)hk_chartCurrentValueValueFont;
++ (id)hk_chartCurrentValueKindFont;
 + (id)hk_chartLollipopValueFont;
 + (id)hk_chartLollipopKeyFont;
 + (id)hk_scalableFontForTextStyle:(id)arg1 symbolicTraits:(unsigned int)arg2;
 + (id)hk_chartAxisLabelFont;
++ (id)hk_preferredRoundedFontForTextStyle:(id)arg1 additionalSymbolicTraits:(unsigned int)arg2;
++ (id)hk_preferredRoundedFontForTextStyle:(id)arg1;
++ (id)hk_roundedSystemFontWithSize:(double)arg1 weight:(double)arg2 textStyle:(id)arg3;
 + (id)hk_roundedSystemFontWithSize:(double)arg1 weight:(double)arg2;
 + (id)hk_unitLabelFontScaledBy:(double)arg1;
 + (id)hk_titleLabelFontScaledBy:(double)arg1;

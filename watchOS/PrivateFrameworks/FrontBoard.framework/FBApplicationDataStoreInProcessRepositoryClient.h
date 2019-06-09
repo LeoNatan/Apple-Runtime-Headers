@@ -18,8 +18,8 @@
     struct NSMutableDictionary *_prefetchedKeyValues;
     NSObject<OS_dispatch_queue> *_prefetchQueue;
     NSObject<OS_dispatch_queue> *_clientCalloutQueue;
-    NSObject<OS_dispatch_queue> *_observersQueue;
-    NSHashTable *_observers;
+    struct os_unfair_lock_s _observersLock;
+    NSHashTable *_observersLock_observers;
 }
 
 - (void).cxx_destruct;

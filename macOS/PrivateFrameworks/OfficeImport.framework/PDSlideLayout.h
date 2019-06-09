@@ -8,6 +8,7 @@
 
 @class PDSlideMaster;
 
+__attribute__((visibility("hidden")))
 @interface PDSlideLayout : PDSlideChild
 {
     int mSlideLayoutType;

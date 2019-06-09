@@ -23,7 +23,8 @@ __attribute__((visibility("hidden")))
 - (void)resetPresentedPlayer;
 - (void)stopPresentedPlayer;
 - (void)stopBackgroundedPlayer;
-- (void)presentWithPlayer:(id)arg1;
+- (void)presentWithPlayer:(id)arg1 animated:(_Bool)arg2 prepareBlock:(CDUnknownBlockType)arg3;
+- (void)presentWithPlayer:(id)arg1 animated:(_Bool)arg2;
 
 @end
 

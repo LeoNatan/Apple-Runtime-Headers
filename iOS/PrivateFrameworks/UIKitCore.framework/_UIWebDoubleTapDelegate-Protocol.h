@@ -8,7 +8,7 @@
 
 @protocol _UIWebDoubleTapDelegate
 - (_Bool)considerHeightForDoubleTap;
-- (CDStruct_57d825b2)doubleTapScalesForSize:(struct CGSize)arg1;
+- (CDStruct_39925896)doubleTapScalesForSize:(struct CGSize)arg1;
 - (struct CGRect)rectOfInterestForPoint:(struct CGPoint)arg1;
 - (double)minimumScaleForSize:(struct CGSize)arg1;
 - (struct CGRect)visibleContentRect;

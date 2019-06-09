@@ -9,7 +9,7 @@
 #import <UserNotificationsKit/NCNotificationAlertDestination-Protocol.h>
 #import <UserNotificationsKit/NCNotificationAlertDestinationDelegate-Protocol.h>
 
-@class NCNotificationCollapsingQueue, NCNotificationDestinationsRegistry, NCNotificationRequest, NCNotificationStore, NSString;
+@class BSServiceConnectionEndpoint, NCNotificationCollapsingQueue, NCNotificationDestinationsRegistry, NCNotificationRequest, NCNotificationStore, NSString;
 @protocol NCNotificationAlertDestinationDelegate, NCNotificationDestinationDelegate;
 
 @interface NCNotificationAlertQueue : NSObject <NCNotificationAlertDestinationDelegate, NCNotificationAlertDestination>
@@ -31,7 +31,7 @@
 - (_Bool)_readyToReceiveForNotificationRequest:(id)arg1;
 - (_Bool)_destinations:(id)arg1 canReceiveNotificationRequest:(id)arg2;
 - (_Bool)_performDestinationOperationForRequest:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (_Bool)_postNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
+- (_Bool)_postNotificationRequest:(id)arg1;
 - (void)_postEnqueuedNotificationRequestsCoalescingWith:(id)arg1;
 - (void)_postNextNotificationRequestPassingTest:(CDUnknownBlockType)arg1;
 - (void)_postNextNotificationRequest;
@@ -55,10 +55,11 @@
 - (void)destination:(id)arg1 executeAction:(id)arg2 forNotificationRequest:(id)arg3 requestAuthentication:(_Bool)arg4 withParameters:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)destination:(id)arg1 requestPermissionToExecuteAction:(id)arg2 forNotificationRequest:(id)arg3 withParameters:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)updateNotificationSectionSettings:(id)arg1 previousSectionSettings:(id)arg2;
-- (void)withdrawNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
-- (void)modifyNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
-- (void)postNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
+- (void)withdrawNotificationRequest:(id)arg1;
+- (void)modifyNotificationRequest:(id)arg1;
+- (void)postNotificationRequest:(id)arg1;
 - (_Bool)canReceiveNotificationRequest:(id)arg1;
+@property(readonly, nonatomic) BSServiceConnectionEndpoint *endpoint;
 @property(readonly, nonatomic) NSString *identifier;
 - (void)setDestination:(id)arg1 ready:(_Bool)arg2;
 - (id)destinationsForRequestDestinations:(id)arg1;

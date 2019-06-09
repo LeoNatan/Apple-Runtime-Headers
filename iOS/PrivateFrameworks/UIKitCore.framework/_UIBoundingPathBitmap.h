@@ -16,7 +16,10 @@ __attribute__((visibility("hidden")))
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) struct _UIBoundingPathBitmapData bitmapData; // @synthesize bitmapData=_bitmapData;
+- (id)debugQuickLookObject;
+- (id)_imageRepresentation;
 - (id)description;
+- (id)boundingPathBitmapWithRect:(struct _UIIntegralRect)arg1 cornerRadii:(struct _UIIntegralCornerRadii)arg2;
 - (id)boundingPathBitmapWithRect:(struct _UIIntegralRect)arg1;
 - (void)dealloc;
 - (id)initWithBitmapData:(struct _UIBoundingPathBitmapData)arg1;

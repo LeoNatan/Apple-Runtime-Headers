@@ -50,7 +50,7 @@
 - (void)validationComplete:(id)arg1;
 - (void)setPairedDevice:(id)arg1;
 - (id)getWindowFrameName;
-- (int)runModal:(BOOL)arg1;
+- (long long)runModal:(BOOL)arg1;
 - (void)dealloc;
 - (void)windowWillClose:(id)arg1;
 - (id)windowNibName;

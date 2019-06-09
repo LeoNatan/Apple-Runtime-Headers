@@ -36,7 +36,7 @@
 + (id)actionWithPayload:(id)arg1;
 + (BOOL)shouldCloseInboundStreamWhenDone;
 + (BOOL)shouldCloseOutboundStreamWhenDone;
-+ (BOOL)needsDirectAccessToSendOrReceiveResult;
++ (BOOL)streamsResults;
 + (int)actionID;
 @property void *compressionStream; // @synthesize compressionStream=_compressionStream;
 @property(retain) NSObject<OS_dispatch_queue> *resumeQueue; // @synthesize resumeQueue=_resumeQueue;
@@ -61,6 +61,7 @@
 - (void).cxx_destruct;
 - (void)receivedEOA;
 - (void)extractEntryProgressCallback:(const CDStruct_743dcad3 *)arg1;
+- (void)extractEntryBeginCallback:(const CDStruct_743dcad3 *)arg1 overrides:(CDStruct_1210889d *)arg2;
 - (void)processACL:(CDStruct_f9f9ee5f *)arg1;
 - (BOOL)_writeCompletelyToFd:(int)arg1 buffer:(const void *)arg2 length:(unsigned long long)arg3;
 - (BOOL)_readCompletelyFromFd:(int)arg1 buffer:(void *)arg2 length:(unsigned long long)arg3;
@@ -69,6 +70,7 @@
 - (BOOL)receiveResultOnFd:(int)arg1 errorIsFatal:(char *)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)shouldSkip:(const char *)arg1 ofType:(int)arg2;
+- (id)description;
 - (id)requestPayload;
 - (id)initWithSource:(id)arg1 andDestination:(id)arg2 andRestartPoint:(id)arg3 andExcludedPaths:(id)arg4 andOptions:(id)arg5;
 

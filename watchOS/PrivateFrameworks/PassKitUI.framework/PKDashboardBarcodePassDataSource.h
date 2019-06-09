@@ -20,6 +20,7 @@
 }
 
 - (void).cxx_destruct;
+- (id)footerTextForSection:(unsigned int)arg1;
 - (id)titleForSection:(unsigned int)arg1;
 - (unsigned int)numberOfSections;
 - (unsigned int)numberOfItemsInSection:(unsigned int)arg1;
@@ -30,7 +31,7 @@
 - (void)groupViewDidUpdatePassView:(id)arg1;
 - (void)sendContentIsLoadedIfNecessary;
 - (void)dealloc;
-- (id)initWithGroupView:(id)arg1;
+- (id)initWithGroupView:(id)arg1 context:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

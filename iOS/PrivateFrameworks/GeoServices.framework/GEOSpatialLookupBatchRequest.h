@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_requests;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)requestType;
-@property(retain, nonatomic) NSMutableArray *requests; // @synthesize requests=_requests;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,12 +28,14 @@ __attribute__((visibility("hidden")))
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)requestAtIndex:(unsigned long long)arg1;
 - (unsigned long long)requestsCount;
 - (void)addRequest:(id)arg1;
 - (void)clearRequests;
+@property(retain, nonatomic) NSMutableArray *requests;
 
 @end
 

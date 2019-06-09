@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OITSUFormatObject.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSUMutableFormatObject : OITSUFormatObject
 {
 }

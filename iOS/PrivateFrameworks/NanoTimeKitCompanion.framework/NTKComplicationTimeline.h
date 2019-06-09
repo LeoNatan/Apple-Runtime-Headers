@@ -44,6 +44,7 @@
 - (id)_beforeGapDate;
 - (id)_rightmostDate;
 - (id)_leftmostDate;
+- (id)_nowEntry;
 - (void)_timerFired;
 - (void)_updateTimer;
 - (id)endOfVisibilityForNowEntry;

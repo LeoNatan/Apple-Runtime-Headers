@@ -18,9 +18,10 @@
     // Error parsing type: , name: inCallControlsDismissTimer
     // Error parsing type: , name: hideInactiveParticipantsTimer
     // Error parsing type: , name: effectsLayoutController
+    // Error parsing type: , name: pipZoomControl
+    // Error parsing type: , name: shouldShowZoomControls
     // Error parsing type: , name: deviceOrientation
     // Error parsing type: , name: delegate
-    // Error parsing type: , name: shouldInitializeEffects
     // Error parsing type: , name: effectsEnabled
     // Error parsing type: , name: isPipped
 }
@@ -30,6 +31,7 @@
 - (id)init;
 - (id)accessibilityConstraintController;
 - (void)setControllerIsPipped:(BOOL)arg1;
+- (void)hideEffectsBrowser;
 - (void)openMessagesConversation;
 - (void)muteVideo;
 - (void)toggleVideoMute;

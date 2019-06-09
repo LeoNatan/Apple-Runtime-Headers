@@ -8,6 +8,7 @@
 
 @class NSDictionary, SKUIReportAConcernMetadata;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReportAConcernOperation : ISOperation
 {
     NSDictionary *_responseDictionary;

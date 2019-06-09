@@ -84,6 +84,7 @@ struct MPSLibraryInfo {
     struct MPSDeviceSpecificInfo _field19;
     struct MPSDeviceSpecificInfo _field20;
     struct MPSDeviceSpecificInfo _field21;
+    struct MPSDeviceSpecificInfo _field22;
 };
 
 struct MPSOrigin {

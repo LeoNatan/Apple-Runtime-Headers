@@ -14,14 +14,20 @@
     unsigned long long _maxVertexBufferBindCount;
     unsigned long long _maxFragmentBufferBindCount;
     unsigned long long _maxKernelBufferBindCount;
+    unsigned long long _resourceIndex;
 }
 
+@property(nonatomic) unsigned long long resourceIndex; // @synthesize resourceIndex=_resourceIndex;
+- (void)setMaxKernelBufferBindCount:(unsigned long long)arg1;
+- (unsigned long long)maxKernelBufferBindCount;
 - (void)setMaxFragmentBufferBindCount:(unsigned long long)arg1;
 - (unsigned long long)maxFragmentBufferBindCount;
 - (void)setMaxVertexBufferBindCount:(unsigned long long)arg1;
 - (unsigned long long)maxVertexBufferBindCount;
 - (void)setInheritBuffers:(_Bool)arg1;
 - (_Bool)inheritBuffers;
+- (void)setInheritPipelineState:(_Bool)arg1;
+- (_Bool)inheritPipelineState;
 - (void)setCommandTypes:(unsigned long long)arg1;
 - (unsigned long long)commandTypes;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -8,6 +8,7 @@
 
 @class SKUIImageViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPanelTemplateViewElement : SKUIViewElement
 {
 }

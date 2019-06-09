@@ -8,6 +8,8 @@
 
 #import <AppKit/NSCoding-Protocol.h>
 
+@class NSMutableArray;
+
 @interface NSClickGestureRecognizer : NSGestureRecognizer <NSCoding>
 {
     long long _flags;
@@ -17,10 +19,17 @@
     long long _currentButtonCount;
     long long _activeButtonCount;
     long long _currentClickCount;
-    id _reserved0;
-    id _reserved1;
+    double _allowableMovement;
+    long long _behavior;
+    long long _stage;
+    double _pressure;
+    double _stageTransition;
+    long long _numberOfTouchesRequired;
+    long long _activeTouchCount;
+    NSMutableArray *_trackingTouchIdentities;
 }
 
+@property long long numberOfTouchesRequired; // @synthesize numberOfTouchesRequired=_numberOfTouchesRequired;
 @property long long numberOfClicksRequired; // @synthesize numberOfClicksRequired=_numberOfClicksRequired;
 - (BOOL)canPreventGestureRecognizer:(id)arg1;
 - (void)touchesCancelledWithEvent:(id)arg1;
@@ -47,7 +56,6 @@
 - (void)reset;
 - (struct CGPoint)locationInView:(id)arg1;
 @property unsigned long long buttonMask;
-@property long long numberOfTouchesRequired;
 - (void)_appendSubclassDescription:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

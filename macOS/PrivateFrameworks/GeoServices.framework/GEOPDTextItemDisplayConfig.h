@@ -17,12 +17,14 @@ __attribute__((visibility("hidden")))
     unsigned int _maxItemsPerRow;
     unsigned int _maxRowCount;
     struct {
-        unsigned int maxItemsPerRow:1;
-        unsigned int maxRowCount:1;
-    } _has;
+        unsigned int has_maxItemsPerRow:1;
+        unsigned int has_maxRowCount:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,12 +33,13 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasMaxRowCount;
-@property(nonatomic) unsigned int maxRowCount; // @synthesize maxRowCount=_maxRowCount;
+@property(nonatomic) unsigned int maxRowCount;
 @property(nonatomic) BOOL hasMaxItemsPerRow;
-@property(nonatomic) unsigned int maxItemsPerRow; // @synthesize maxItemsPerRow=_maxItemsPerRow;
+@property(nonatomic) unsigned int maxItemsPerRow;
 
 @end
 

@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 
 + (id)plugInPromptConfigurationWithTitle:(id)arg1 message:(id)arg2 confirmButtonLabel:(id)arg3;
 + (id)openApplicationPromptConfigurationWithApplicationName:(id)arg1 originStringForAccessibility:(id)arg2;
++ (id)passDownloadBlockedPromptConfiguration;
 + (id)printSheetBlockedPromptConfiguration;
 + (id)mailPromptConfigurationWithOriginStringForAccessibility:(id)arg1;
 + (id)telephonyPromptConfigurationWithOriginStringForAccessibility:(id)arg1;

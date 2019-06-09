@@ -12,6 +12,7 @@
 {
 }
 
++ (id)__downloadedDate_KEY;
 + (id)__keepLocalManagedStatus_KEY;
 + (id)__keepLocalEnableState_KEY;
 + (id)__libraryAddEligible_KEY;
@@ -57,6 +58,7 @@
 @property(copy, nonatomic) CDUnknownBlockType artworkCatalogBlock; // @dynamic artworkCatalogBlock;
 @property(copy, nonatomic) NSArray *clips; // @dynamic clips;
 @property(copy, nonatomic) NSString *descriptionText; // @dynamic descriptionText;
+@property(readonly, copy, nonatomic) NSDate *downloadedDate; // @dynamic downloadedDate;
 @property(nonatomic) double duration; // @dynamic duration;
 @property(copy, nonatomic) CDUnknownBlockType editorialArtworkCatalogBlock; // @dynamic editorialArtworkCatalogBlock;
 @property(nonatomic) int explicitRating; // @dynamic explicitRating;

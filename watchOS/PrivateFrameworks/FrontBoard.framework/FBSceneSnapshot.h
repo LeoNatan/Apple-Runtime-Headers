@@ -6,25 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class FBScene, FBSceneSnapshotContext, UIImage, XBDisplaySnapshot;
+@class FBScene, FBSceneSnapshotContext, IOSurface, _FBSSnapshot;
 
 @interface FBSceneSnapshot : NSObject
 {
     FBScene *_scene;
     FBSceneSnapshotContext *_context;
-    XBDisplaySnapshot *_snapshot;
+    _FBSSnapshot *_snapshot;
 }
 
-@property(readonly, nonatomic) FBSceneSnapshotContext *context; // @synthesize context=_context;
+@property(readonly, copy, nonatomic) FBSceneSnapshotContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) void *fallbackIOSurface;
-- (_Bool)capture;
-@property(readonly, nonatomic) UIImage *UIImage;
-@property(readonly, nonatomic) struct CGImage *CGImage;
-@property(readonly, nonatomic) void *IOSurface;
-@property(readonly, nonatomic, getter=isDataLoaded) _Bool dataLoaded;
 - (struct CGAffineTransform)_baseTransformForSnapshotContext:(id)arg1 rootContext:(id)arg2;
 - (id)_collectLayersToSnapshotFromScene:(id)arg1 withSnapshotContext:(id)arg2 rootContext:(id)arg3;
+@property(readonly, nonatomic) IOSurface *fallbackIOSurface;
+- (_Bool)capture;
+@property(readonly, nonatomic) struct CGImage *CGImage;
+@property(readonly, nonatomic) IOSurface *IOSurface;
+@property(readonly, nonatomic) _Bool hasProtectedContent;
 - (id)initWithScene:(id)arg1 snapshotContext:(id)arg2;
 
 @end

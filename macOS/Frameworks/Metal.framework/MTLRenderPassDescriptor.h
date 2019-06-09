@@ -24,8 +24,11 @@
 
 // Remaining properties
 @property(readonly) MTLRenderPassColorAttachmentDescriptorArray *colorAttachments; // @dynamic colorAttachments;
+@property(nonatomic) unsigned long long defaultRasterSampleCount; // @dynamic defaultRasterSampleCount;
 @property(copy, nonatomic) MTLRenderPassDepthAttachmentDescriptor *depthAttachment; // @dynamic depthAttachment;
 @property(nonatomic) unsigned long long renderTargetArrayLength; // @dynamic renderTargetArrayLength;
+@property(nonatomic) unsigned long long renderTargetHeight; // @dynamic renderTargetHeight;
+@property(nonatomic) unsigned long long renderTargetWidth; // @dynamic renderTargetWidth;
 @property(copy, nonatomic) MTLRenderPassStencilAttachmentDescriptor *stencilAttachment; // @dynamic stencilAttachment;
 @property(retain, nonatomic) id <MTLBuffer> visibilityResultBuffer; // @dynamic visibilityResultBuffer;
 

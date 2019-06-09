@@ -22,9 +22,11 @@
     UIView *_accessoryView;
     UIView *_contentView;
     UIColor *_backgroundColor;
+    UIColor *_titleColor;
 }
 
 + (id)actionWithTitle:(id)arg1 style:(int)arg2 actionHandler:(CDUnknownBlockType)arg3;
+@property(retain, nonatomic) UIColor *titleColor; // @synthesize titleColor=_titleColor;
 @property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;

@@ -51,6 +51,7 @@
 - (id)checkOutGatewayForMailbox:(id)arg1;
 - (id)_checkOutNewGatewayWithConnection:(id)arg1 forMailbox:(id)arg2;
 - (id)checkOutNewGatewayWithConnection:(id)arg1;
+- (void)mailboxWithServerName:(id)arg1 wasRenamed:(id)arg2;
 - (void)_removeDisconnectedConnection:(id)arg1 shouldRecover:(BOOL)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)checkInNewConnection:(id)arg1;

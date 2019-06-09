@@ -8,36 +8,50 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, GEOMiniCard, NSString;
+@class GEOLatLng, GEOMiniCard, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOTrafficCamera : PBCodable <NSCopying>
 {
-    double _speedThreshold;
-    unsigned int _cameraPriority;
-    unsigned int _highlightDistance;
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     NSString *_identifier;
     GEOMiniCard *_infoCard;
     GEOLatLng *_position;
     NSString *_speedLimitText;
+    double _speedThreshold;
     GEOMiniCard *_speedingCard;
+    unsigned int _cameraPriority;
+    unsigned int _highlightDistance;
     int _type;
     struct {
-        unsigned int speedThreshold:1;
-        unsigned int cameraPriority:1;
-        unsigned int highlightDistance:1;
-        unsigned int type:1;
-    } _has;
+        unsigned int has_speedThreshold:1;
+        unsigned int has_cameraPriority:1;
+        unsigned int has_highlightDistance:1;
+        unsigned int has_type:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_identifier:1;
+        unsigned int read_infoCard:1;
+        unsigned int read_position:1;
+        unsigned int read_speedLimitText:1;
+        unsigned int read_speedingCard:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_identifier:1;
+        unsigned int wrote_infoCard:1;
+        unsigned int wrote_position:1;
+        unsigned int wrote_speedLimitText:1;
+        unsigned int wrote_speedThreshold:1;
+        unsigned int wrote_speedingCard:1;
+        unsigned int wrote_cameraPriority:1;
+        unsigned int wrote_highlightDistance:1;
+        unsigned int wrote_type:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int cameraPriority; // @synthesize cameraPriority=_cameraPriority;
-@property(retain, nonatomic) GEOMiniCard *speedingCard; // @synthesize speedingCard=_speedingCard;
-@property(nonatomic) double speedThreshold; // @synthesize speedThreshold=_speedThreshold;
-@property(retain, nonatomic) NSString *speedLimitText; // @synthesize speedLimitText=_speedLimitText;
-@property(retain, nonatomic) GEOMiniCard *infoCard; // @synthesize infoCard=_infoCard;
-@property(nonatomic) unsigned int highlightDistance; // @synthesize highlightDistance=_highlightDistance;
-@property(retain, nonatomic) GEOLatLng *position; // @synthesize position=_position;
-@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -45,20 +59,34 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasCameraPriority;
+@property(nonatomic) unsigned int cameraPriority;
+@property(retain, nonatomic) GEOMiniCard *speedingCard;
 @property(readonly, nonatomic) _Bool hasSpeedingCard;
+- (void)_readSpeedingCard;
 @property(nonatomic) _Bool hasSpeedThreshold;
+@property(nonatomic) double speedThreshold;
+@property(retain, nonatomic) NSString *speedLimitText;
 @property(readonly, nonatomic) _Bool hasSpeedLimitText;
+- (void)_readSpeedLimitText;
+@property(retain, nonatomic) GEOMiniCard *infoCard;
 @property(readonly, nonatomic) _Bool hasInfoCard;
+- (void)_readInfoCard;
 @property(nonatomic) _Bool hasHighlightDistance;
+@property(nonatomic) unsigned int highlightDistance;
+@property(retain, nonatomic) GEOLatLng *position;
 @property(readonly, nonatomic) _Bool hasPosition;
+- (void)_readPosition;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) int type;
+@property(retain, nonatomic) NSString *identifier;
 @property(readonly, nonatomic) _Bool hasIdentifier;
+- (void)_readIdentifier;
 
 @end
 

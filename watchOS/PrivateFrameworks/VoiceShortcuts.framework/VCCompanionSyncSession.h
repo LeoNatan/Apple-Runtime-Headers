@@ -8,27 +8,35 @@
 
 #import <VoiceShortcuts/SYSessionDelegate-Protocol.h>
 
-@class NSString, SYSession;
-@protocol VCCompanionSyncSessionDelegate;
+@class NSSet, NSString, SYSession;
+@protocol OS_dispatch_queue, OS_os_transaction, VCCompanionSyncSessionDelegate, VCShortcutSyncService;
 
 @interface VCCompanionSyncSession : NSObject <SYSessionDelegate>
 {
     id <VCCompanionSyncSessionDelegate> _delegate;
-    SYSession *_sySession;
+    SYSession *_session;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_os_transaction> *_transaction;
+    id <VCShortcutSyncService> _service;
+    NSSet *_syncDataHandlers;
 }
 
-+ (id)partitionChanges:(id)arg1 forDataHandlers:(id)arg2;
++ (int)sessionType;
 + (void)initialize;
-@property(readonly, nonatomic) SYSession *sySession; // @synthesize sySession=_sySession;
+@property(readonly, copy, nonatomic) NSSet *syncDataHandlers; // @synthesize syncDataHandlers=_syncDataHandlers;
+@property(readonly, nonatomic) id <VCShortcutSyncService> service; // @synthesize service=_service;
+@property(readonly, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly, nonatomic) SYSession *session; // @synthesize session=_session;
 @property(nonatomic) __weak id <VCCompanionSyncSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)resetDataStoreForSyncSession:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)syncSession:(id)arg1 resetDataStoreWithError:(id *)arg2;
 - (void)syncSession:(id)arg1 didEndWithError:(id)arg2;
 - (void)syncSession:(id)arg1 applyChanges:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (int)syncSession:(id)arg1 enqueueChanges:(CDUnknownBlockType)arg2 error:(id *)arg3;
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, nonatomic) int sessionType;
-- (id)initWithSYSession:(id)arg1;
+- (id)initWithSYSession:(id)arg1 service:(id)arg2 syncDataHandlers:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *description;

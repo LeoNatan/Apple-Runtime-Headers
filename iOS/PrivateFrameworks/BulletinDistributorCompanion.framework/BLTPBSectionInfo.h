@@ -26,15 +26,17 @@
     int _sectionCategory;
     NSString *_sectionID;
     int _sectionType;
+    int _spokenNotificationSetting;
     NSString *_subsectionID;
     int _subsectionPriority;
     NSMutableArray *_subsections;
     unsigned int _suppressedSettings;
     NSString *_universalSectionID;
     unsigned int _version;
+    NSString *_watchSectionID;
     _Bool _allowsNotifications;
     _Bool _criticalAlertSetting;
-    _Bool _displaysCriticalBulletins;
+    _Bool _displaysCriticalBulletinsLegacy;
     _Bool _excludeFromBulletinBoard;
     _Bool _iconsStripped;
     _Bool _phoneAllowsNotifications;
@@ -54,12 +56,13 @@
         unsigned int pushSettings:1;
         unsigned int sectionCategory:1;
         unsigned int sectionType:1;
+        unsigned int spokenNotificationSetting:1;
         unsigned int subsectionPriority:1;
         unsigned int suppressedSettings:1;
         unsigned int version:1;
         unsigned int allowsNotifications:1;
         unsigned int criticalAlertSetting:1;
-        unsigned int displaysCriticalBulletins:1;
+        unsigned int displaysCriticalBulletinsLegacy:1;
         unsigned int excludeFromBulletinBoard:1;
         unsigned int iconsStripped:1;
         unsigned int phoneAllowsNotifications:1;
@@ -72,6 +75,7 @@
 }
 
 + (Class)subsectionsType;
+@property(retain, nonatomic) NSString *watchSectionID; // @synthesize watchSectionID=_watchSectionID;
 @property(nonatomic) int phoneAuthorizationStatus; // @synthesize phoneAuthorizationStatus=_phoneAuthorizationStatus;
 @property(nonatomic) int authorizationStatus; // @synthesize authorizationStatus=_authorizationStatus;
 @property(nonatomic) _Bool excludeFromBulletinBoard; // @synthesize excludeFromBulletinBoard=_excludeFromBulletinBoard;
@@ -84,7 +88,7 @@
 @property(nonatomic) unsigned int version; // @synthesize version=_version;
 @property(nonatomic) int subsectionPriority; // @synthesize subsectionPriority=_subsectionPriority;
 @property(retain, nonatomic) NSMutableArray *subsections; // @synthesize subsections=_subsections;
-@property(nonatomic) _Bool displaysCriticalBulletins; // @synthesize displaysCriticalBulletins=_displaysCriticalBulletins;
+@property(nonatomic) _Bool displaysCriticalBulletinsLegacy; // @synthesize displaysCriticalBulletinsLegacy=_displaysCriticalBulletinsLegacy;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(nonatomic) unsigned int suppressedSettings; // @synthesize suppressedSettings=_suppressedSettings;
 @property(nonatomic) _Bool allowsNotifications; // @synthesize allowsNotifications=_allowsNotifications;
@@ -110,6 +114,11 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasWatchSectionID;
+- (int)StringAsSpokenNotificationSetting:(id)arg1;
+- (id)spokenNotificationSettingAsString:(int)arg1;
+@property(nonatomic) _Bool hasSpokenNotificationSetting;
+@property(nonatomic) int spokenNotificationSetting; // @synthesize spokenNotificationSetting=_spokenNotificationSetting;
 - (int)StringAsNotificationCenterSetting:(id)arg1;
 - (id)notificationCenterSettingAsString:(int)arg1;
 @property(nonatomic) _Bool hasNotificationCenterSetting;
@@ -137,7 +146,7 @@
 - (unsigned long long)subsectionsCount;
 - (void)addSubsections:(id)arg1;
 - (void)clearSubsections;
-@property(nonatomic) _Bool hasDisplaysCriticalBulletins;
+@property(nonatomic) _Bool hasDisplaysCriticalBulletinsLegacy;
 @property(readonly, nonatomic) _Bool hasDisplayName;
 @property(nonatomic) _Bool hasSuppressedSettings;
 @property(nonatomic) _Bool hasAllowsNotifications;

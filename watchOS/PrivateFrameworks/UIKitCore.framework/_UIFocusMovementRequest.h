@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIFocusUpdateRequesting-Protocol.h>
 
-@class NSString, UIFocusAnimationCoordinator, UIFocusSystem, UIWindow, _UIFocusInputDeviceInfo, _UIFocusItemInfo, _UIFocusMovementInfo;
+@class NSString, UIFocusAnimationCoordinator, UIFocusSystem, UIWindow, _UIFocusInputDeviceInfo, _UIFocusItemInfo, _UIFocusMovementInfo, _UIFocusSearchInfo;
 
 __attribute__((visibility("hidden")))
 @interface _UIFocusMovementRequest : NSObject <_UIFocusUpdateRequesting>
@@ -19,8 +19,10 @@ __attribute__((visibility("hidden")))
     UIWindow *_window;
     _UIFocusItemInfo *_focusedItemInfo;
     _UIFocusMovementInfo *_movementInfo;
+    _UIFocusSearchInfo *_searchInfo;
 }
 
+@property(retain, nonatomic) _UIFocusSearchInfo *searchInfo; // @synthesize searchInfo=_searchInfo;
 @property(retain, nonatomic) _UIFocusMovementInfo *movementInfo; // @synthesize movementInfo=_movementInfo;
 @property(retain, nonatomic) _UIFocusItemInfo *focusedItemInfo; // @synthesize focusedItemInfo=_focusedItemInfo;
 @property(readonly, nonatomic) __weak UIWindow *window; // @synthesize window=_window;

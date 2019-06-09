@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     struct shared_ptr<vision::mod::ObjectTrackerAbstract> mTrackerImpl;
     unsigned long long _requestRevision;
+    unsigned int _trackedFrameCVPixelBufferFormat;
     long long _trackedFrameNumber;
     NSUUID *_key;
     NSString *_level;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSUUID *key; // @synthesize key=_key;
 @property struct CGRect lastTrackedBBox; // @synthesize lastTrackedBBox=_lastTrackedBBox;
 @property long long trackedFrameNumber; // @synthesize trackedFrameNumber=_trackedFrameNumber;
+@property unsigned int trackedFrameCVPixelBufferFormat; // @synthesize trackedFrameCVPixelBufferFormat=_trackedFrameCVPixelBufferFormat;
 @property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -4,15 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <DocumentManagerUICore/DOCFittingImageView.h>
+#import <DocumentManagerUICore/DOCBorderedFittingImageView.h>
 
-#import <DocumentManagerUICore/DOCAppearanceProtocol-Protocol.h>
+@class FPItem, NSURL;
 
-@class DOCAppearance, FPItem, NSString, NSURL;
-
-@interface DOCThumbnailFittingImageView : DOCFittingImageView <DOCAppearanceProtocol>
+@interface DOCThumbnailFittingImageView : DOCBorderedFittingImageView
 {
-    DOCAppearance *_appearance;
     FPItem *_item;
     NSURL *_url;
     long long _generatorGeneration;
@@ -21,9 +18,8 @@
 @property(nonatomic) long long generatorGeneration; // @synthesize generatorGeneration=_generatorGeneration;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(readonly, nonatomic) FPItem *item; // @synthesize item=_item;
-@property(retain, nonatomic) DOCAppearance *appearance; // @synthesize appearance=_appearance;
 - (void).cxx_destruct;
-- (void)updateAppearance:(id)arg1;
+- (void)didMoveToWindow;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateThumbnailForURL:(id)arg1;
 - (void)updateThumbnailForItem:(id)arg1;
@@ -32,12 +28,6 @@
 - (void)_commonInitWithSize:(struct CGSize)arg1;
 - (id)initWithSize:(struct CGSize)arg1 url:(id)arg2;
 - (id)initWithSize:(struct CGSize)arg1 item:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

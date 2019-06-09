@@ -21,9 +21,13 @@ __attribute__((visibility("hidden")))
     id <PUDisplayAsset> __streamedVideo;
     double __streamedVideoBeginTime;
     long long __streamedVideoStallCount;
+    long long __oneUpPresentationOrigin;
+    id <PUDisplayAsset> __lastViewedAssetPerOrigin;
 }
 
 + (id)sharedTracer;
+@property(retain, nonatomic) id <PUDisplayAsset> _lastViewedAssetPerOrigin; // @synthesize _lastViewedAssetPerOrigin=__lastViewedAssetPerOrigin;
+@property(nonatomic) long long _oneUpPresentationOrigin; // @synthesize _oneUpPresentationOrigin=__oneUpPresentationOrigin;
 @property(nonatomic, setter=_setStreamedVideoStallCount:) long long _streamedVideoStallCount; // @synthesize _streamedVideoStallCount=__streamedVideoStallCount;
 @property(nonatomic, setter=_setStreamedVideoBeginTime:) double _streamedVideoBeginTime; // @synthesize _streamedVideoBeginTime=__streamedVideoBeginTime;
 @property(nonatomic, setter=_setStreamedVideoDidStartPlaying:) _Bool _streamedVideoDidStartPlaying; // @synthesize _streamedVideoDidStartPlaying=__streamedVideoDidStartPlaying;
@@ -34,6 +38,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, setter=_setLastViewedAsset:) __weak id <PUDisplayAsset> _lastViewedAsset; // @synthesize _lastViewedAsset=__lastViewedAsset;
 @property(readonly, nonatomic) NSMapTable *_browsingViewModelTracers; // @synthesize _browsingViewModelTracers=__browsingViewModelTracers;
 - (void).cxx_destruct;
+- (void)userDidEnterOneUpFromOrigin:(long long)arg1;
 - (void)userStartedViewingCollection:(id)arg1 withListViewItemSelectionTrackerKey:(struct __CFString *)arg2;
 - (id)_browsingViewModelTracerForBrowsingViewModel:(id)arg1 createIfNeeded:(_Bool)arg2;
 - (long long)_assetTypeForAsset:(id)arg1;

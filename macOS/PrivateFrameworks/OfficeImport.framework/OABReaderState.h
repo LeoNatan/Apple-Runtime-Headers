@@ -9,6 +9,7 @@
 @class ESDContainer, NSMutableArray, NSMutableDictionary;
 @protocol OADColorPalette;
 
+__attribute__((visibility("hidden")))
 @interface OABReaderState : NSObject
 {
     Class mClient;

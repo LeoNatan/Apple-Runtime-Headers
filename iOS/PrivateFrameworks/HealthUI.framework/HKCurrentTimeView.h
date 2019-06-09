@@ -16,10 +16,12 @@
     HKCurrentTimeChevronButton *_nextTimeIndexButton;
     _Bool _disableControls;
     _Bool _currentTimeButtonEnabled;
+    _Bool _omitPrevNextButtons;
     NSString *_currentTimeString;
     id <HKCurrentTimeViewDelegate> _delegate;
 }
 
+@property(nonatomic) _Bool omitPrevNextButtons; // @synthesize omitPrevNextButtons=_omitPrevNextButtons;
 @property(nonatomic) _Bool currentTimeButtonEnabled; // @synthesize currentTimeButtonEnabled=_currentTimeButtonEnabled;
 @property(nonatomic) _Bool disableControls; // @synthesize disableControls=_disableControls;
 @property(nonatomic) __weak id <HKCurrentTimeViewDelegate> delegate; // @synthesize delegate=_delegate;
@@ -42,6 +44,7 @@
 @property(nonatomic) _Bool nextTimeButtonEnabled;
 @property(nonatomic) _Bool previousTimeButtonEnabled;
 - (void)setupViewWithWideHorizontalMargin:(_Bool)arg1;
+- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithWideHorizontalMargin:(_Bool)arg1;

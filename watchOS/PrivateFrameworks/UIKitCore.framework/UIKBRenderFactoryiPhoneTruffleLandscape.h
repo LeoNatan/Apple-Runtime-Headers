@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 - (float)_row4ControlSegmentWidthRight;
 - (float)_row4ControlSegmentWidthLeft;
-- (id)thinKeycapsFontName;
 - (id)lightKeycapsFontName;
 - (_Bool)isTallPopup;
 - (float)popupFontSize;

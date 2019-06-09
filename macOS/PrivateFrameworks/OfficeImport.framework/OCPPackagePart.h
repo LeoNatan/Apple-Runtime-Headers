@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSURL, OCPPackage, OCPPackageRelationshipCollection;
 
+__attribute__((visibility("hidden")))
 @interface OCPPackagePart : NSObject
 {
     NSURL *mLocation;

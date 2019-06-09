@@ -27,56 +27,9 @@ struct CGSize {
 
 struct NSImage {
     Class _field1;
-    id _field2;
-    struct CGSize _field3;
-    struct __imageFlags {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :2;
-        unsigned int :3;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :8;
-    } _field4;
-    id _field5;
-    id _field6;
 };
 
 struct NSWindowController {
     Class _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    struct __wcFlags {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :24;
-    } _field8;
-    id _field9;
-    id _field10;
 };
 

@@ -6,21 +6,30 @@
 
 #import <Foundation/NSExtensionContext.h>
 
-@class NSViewController, QLPreviewExtensionViewController;
+@class NSURL, NSViewController, QLExtensionPreview, QLPreviewExtensionViewController;
 @protocol QLPreviewingController;
 
 @interface QLPreviewExtensionContext : NSExtensionContext
 {
+    BOOL _hostIsAnimating;
+    QLExtensionPreview *_preview;
     QLPreviewExtensionViewController *_viewService;
     NSViewController<QLPreviewingController> *_previewViewController;
 }
 
 + (id)_extensionAuxiliaryVendorProtocol;
++ (void)_updateClassesOnHostInterface:(id)arg1;
 + (id)_extensionAuxiliaryHostProtocol;
 @property(retain) NSViewController<QLPreviewingController> *previewViewController; // @synthesize previewViewController=_previewViewController;
 @property __weak QLPreviewExtensionViewController *viewService; // @synthesize viewService=_viewService;
+@property(retain) QLExtensionPreview *preview; // @synthesize preview=_preview;
+@property BOOL hostIsAnimating; // @synthesize hostIsAnimating=_hostIsAnimating;
 - (void).cxx_destruct;
-- (void)loadWithPreview:(id)arg1 size:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)requestAccessToAdditionalResources:(id)arg1 completion:(CDUnknownBlockType)arg2;
+@property(readonly) NSURL *previewContentURL;
+- (void)loadWithPreview:(id)arg1 isAnimating:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_derivedExtensionAuxiliaryHostProtocol;
+- (id)hostProxy;
 
 @end
 

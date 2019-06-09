@@ -8,6 +8,7 @@
 
 @class NSMutableArray, ODDAlgorithm, ODDPoint, ODDShape;
 
+__attribute__((visibility("hidden")))
 @interface ODILayoutNode : NSObject
 {
     ODDPoint *mPoint;

@@ -40,6 +40,6 @@
 - (id)initWithCalendarIdentifier:(id)arg1;
 - (id)_init;
 - (id)init;
-- (void)_update:(id)arg1;
+- (void)_update;
 @end
 

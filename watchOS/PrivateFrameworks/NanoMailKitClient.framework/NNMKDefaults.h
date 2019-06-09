@@ -10,9 +10,15 @@
 {
 }
 
++ (_Bool)forceStandaloneMode;
 + (_Bool)isPPTEnviroment;
++ (void)setPPTMessageIdUnderTest:(id)arg1;
++ (id)pptMessageIdUnderTest;
++ (void)setPPTResults:(id)arg1;
++ (id)pptResults;
 + (_Bool)bypassBBForNotifications;
 + (id)pushNotificationVersion;
++ (id)webLinksToTest;
 + (unsigned int)openAllMessagesTestCount;
 + (_Bool)isStandaloneServiceEnabled;
 + (_Bool)networkLatencyTestMode;

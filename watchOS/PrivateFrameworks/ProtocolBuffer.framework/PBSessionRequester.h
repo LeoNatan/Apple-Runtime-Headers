@@ -40,10 +40,12 @@
     NSArray *_clientCertificates;
     NSDictionary *_connectionProperties;
     _Bool _shouldHandleCookies;
+    NSString *_apsRelayTopic;
     CDStruct_dca542ad _flags;
 }
 
 + (_Bool)usesEncodedMessages;
+@property(copy, nonatomic) NSString *apsRelayTopic; // @synthesize apsRelayTopic=_apsRelayTopic;
 @property(nonatomic) _Bool shouldHandleCookies; // @synthesize shouldHandleCookies=_shouldHandleCookies;
 @property(retain, nonatomic) NSArray *clientCertificates; // @synthesize clientCertificates=_clientCertificates;
 @property(readonly, nonatomic) unsigned int downloadPayloadSize; // @synthesize downloadPayloadSize=_downloadPayloadSize;

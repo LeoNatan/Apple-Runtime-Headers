@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface _NSCGSWindow : NSCGSWindow
 {
     unsigned int _windowID;
+    unsigned int _ownerID;
     unsigned int _externalWindow:1;
     unsigned int _flags;
     struct CGSRegionObject *_relativeShape;
@@ -93,6 +94,7 @@ __attribute__((visibility("hidden")))
 - (void)_prepareForRelativeMoveForWindow:(id)arg1;
 - (void)setShape:(struct CGSRegionObject *)arg1;
 - (struct CGSRegionObject *)shape;
+- (unsigned int)ownerID;
 - (unsigned int)windowID;
 - (id)description;
 - (void)dealloc;

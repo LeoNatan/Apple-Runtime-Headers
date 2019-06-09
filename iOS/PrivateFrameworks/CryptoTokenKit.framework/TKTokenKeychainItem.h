@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSDictionary, NSMutableDictionary, NSString;
+@class NSData, NSDictionary, NSMutableDictionary, NSString, TKTokenID;
 
 @interface TKTokenKeychainItem : NSObject
 {
@@ -14,16 +14,18 @@
     id _objectID;
     NSString *_label;
     NSDictionary *_constraints;
-    NSString *_tokenID;
+    TKTokenID *_tokenID;
 }
 
++ (id)keychainItemWithInfo:(id)arg1;
 + (id)accessControlForConstraints:(id)arg1 tokenID:(id)arg2 error:(id *)arg3;
 + (id)operationMap;
-@property(retain) NSString *tokenID; // @synthesize tokenID=_tokenID;
+@property(retain) TKTokenID *tokenID; // @synthesize tokenID=_tokenID;
 @property(copy) NSDictionary *constraints; // @synthesize constraints=_constraints;
 @property(copy) NSString *label; // @synthesize label=_label;
 @property(readonly, copy) id objectID; // @synthesize objectID=_objectID;
 - (void).cxx_destruct;
+- (id)initWithItemInfo:(id)arg1;
 @property(readonly, copy) NSMutableDictionary *keychainAttributes; // @dynamic keychainAttributes;
 @property(retain) NSData *accessControl;
 @property(readonly, copy) NSData *encodedObjectID;

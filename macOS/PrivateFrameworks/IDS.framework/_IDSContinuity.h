@@ -32,9 +32,10 @@
 - (void)continuityDidStopScanningForType:(long long)arg1;
 - (void)continuityDidStartScanningForType:(long long)arg1;
 - (void)continuityDidFailToStartAdvertisingOfType:(long long)arg1 withError:(id)arg2;
+- (void)continuityDidStopAdvertisingOfType:(long long)arg1 withError:(id)arg2;
 - (void)continuityDidStopAdvertisingOfType:(long long)arg1;
 - (void)continuityDidStartAdvertisingOfType:(long long)arg1;
-- (void)continuityDidUpdateState:(long long)arg1;
+- (void)continuityDidUpdateStateToState:(long long)arg1;
 - (void)_callDelegateWithBlock:(CDUnknownBlockType)arg1;
 - (void)_daemonDied:(id)arg1;
 - (void)_handleReconnect;

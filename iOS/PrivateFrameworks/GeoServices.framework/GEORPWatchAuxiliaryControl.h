@@ -8,18 +8,26 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, PBDataReader;
 
 @interface GEORPWatchAuxiliaryControl : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_hardwareIdentifier;
     NSString *_osBuild;
     NSString *_osVersion;
+    struct {
+        unsigned int read_hardwareIdentifier:1;
+        unsigned int read_osBuild:1;
+        unsigned int read_osVersion:1;
+        unsigned int wrote_hardwareIdentifier:1;
+        unsigned int wrote_osBuild:1;
+        unsigned int wrote_osVersion:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *osBuild; // @synthesize osBuild=_osBuild;
-@property(retain, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
-@property(retain, nonatomic) NSString *hardwareIdentifier; // @synthesize hardwareIdentifier=_hardwareIdentifier;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,11 +36,18 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *osBuild;
 @property(readonly, nonatomic) _Bool hasOsBuild;
+- (void)_readOsBuild;
+@property(retain, nonatomic) NSString *osVersion;
 @property(readonly, nonatomic) _Bool hasOsVersion;
+- (void)_readOsVersion;
+@property(retain, nonatomic) NSString *hardwareIdentifier;
 @property(readonly, nonatomic) _Bool hasHardwareIdentifier;
+- (void)_readHardwareIdentifier;
 
 @end
 

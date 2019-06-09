@@ -9,7 +9,7 @@
 #import <AppStoreDaemon/ASDNotificationCenterNotificationObserver-Protocol.h>
 #import <AppStoreDaemon/ASDNotificationCenterProgressObserver-Protocol.h>
 
-@class ASDNotificationCenter, ASDServiceBroker, NSMutableDictionary, NSPredicate, NSString;
+@class ASDNotificationCenter, ASDServiceBroker, NRDevice, NSMutableDictionary, NSPredicate, NSString;
 @protocol ASDAppQueryResultsObserver, OS_dispatch_queue;
 
 @interface ASDAppQuery : NSObject <ASDNotificationCenterNotificationObserver, ASDNotificationCenterProgressObserver>
@@ -21,16 +21,24 @@
     id <ASDAppQueryResultsObserver> _observer;
     NSMutableDictionary *_resultCache;
     ASDServiceBroker *_serviceBroker;
+    NRDevice *_device;
     NSPredicate *_predicate;
 }
 
 + (id)_newProgressForApp:(id)arg1 fromRemoteProgress:(id)arg2 usingServiceBroker:(id)arg3;
-+ (void)_executeQueryWithPredicate:(id)arg1 usingServiceBroker:(id)arg2 withResultHandler:(CDUnknownBlockType)arg3;
++ (void)_executeQueryWithPredicate:(id)arg1 onPairedDevice:(id)arg2 usingServiceBroker:(id)arg3 withResultHandler:(CDUnknownBlockType)arg4;
 + (void)anyWithPredicate:(id)arg1 withResultHandler:(CDUnknownBlockType)arg2;
++ (id)queryWithPredicate:(id)arg1 onPairedDevice:(id)arg2;
 + (id)queryWithPredicate:(id)arg1;
++ (id)queryForSystemAppsOnPairedDevice:(id)arg1;
 + (id)queryForStoreItemIDs:(id)arg1;
 + (id)queryForStoreApps;
++ (id)queryForBetaAppsOnPairedDevice:(id)arg1;
++ (id)queryDefaultPairedWatchForBetaApps;
++ (id)queryForBundleAtPath:(id)arg1;
 + (id)queryForBundleIDs:(id)arg1;
++ (id)queryForBetaApps;
++ (id)queryForBeagleApps;
 @property(readonly) NSPredicate *predicate; // @synthesize predicate=_predicate;
 - (void).cxx_destruct;
 - (void)_sendResultsChangedWithResults:(id)arg1;
@@ -50,7 +58,9 @@
 - (void)executeQueryWithResultHandler:(CDUnknownBlockType)arg1;
 @property __weak id <ASDAppQueryResultsObserver> observer;
 - (void)dealloc;
+- (id)initWithPredicate:(id)arg1 onPairedDevice:(id)arg2 serviceBroker:(id)arg3 notificationCenter:(id)arg4;
 - (id)initWithPredicate:(id)arg1 serviceBroker:(id)arg2 notificationCenter:(id)arg3;
+- (id)initWithPredicate:(id)arg1 onPairedDevice:(id)arg2;
 - (id)initWithPredicate:(id)arg1;
 - (id)init;
 

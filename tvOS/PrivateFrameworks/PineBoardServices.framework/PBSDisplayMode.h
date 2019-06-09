@@ -62,6 +62,7 @@
 @property(readonly, nonatomic) _Bool isValid;
 - (id)initWithCADisplayMode:(id)arg1 usePineBoardPolicy:(_Bool)arg2 encodedPromotedModes:(id)arg3;
 - (id)init;
+@property(readonly, nonatomic) long long latencyBandwidth;
 - (id)encodedString;
 - (id)initWithEncodedString:(id)arg1;
 - (id)_parseVersionAorBorC:(const char *)arg1;

@@ -6,6 +6,7 @@
 
 #import <UIKit/UICollectionViewLayoutAttributes.h>
 
+__attribute__((visibility("hidden")))
 @interface CKAppStripLayoutAttributes : UICollectionViewLayoutAttributes
 {
     _Bool _showsBorder;

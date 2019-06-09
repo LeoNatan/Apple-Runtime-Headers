@@ -9,10 +9,12 @@
 #import <PhotoFoundation/PFLoggerBackend-Protocol.h>
 
 @class NSString;
+@protocol OS_os_transaction;
 
 @interface PFLoggerBackendAdapter : NSObject <PFLoggerBackend>
 {
     // Error parsing type: AQ, name: _pendingTransactionCount
+    NSObject<OS_os_transaction> *_transaction;
     _Bool _runningUnderDebugger;
 }
 
@@ -22,6 +24,7 @@
 + (id)pathWithoutParametersFromString:(id)arg1;
 + (id)backendsFromUserDefaultsWithLogLevel:(int)arg1;
 @property _Bool runningUnderDebugger; // @synthesize runningUnderDebugger=_runningUnderDebugger;
+- (void).cxx_destruct;
 - (void)flushWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool outputsToDebuggerConsole;
 @property(readonly, nonatomic) _Bool formatsMessage;

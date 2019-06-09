@@ -7,7 +7,11 @@
 #import <Foundation/NSSet.h>
 
 @interface NSSet (HealthKit)
++ (id)hk_typesForDictionaryMapping:(Class)arg1 to:(Class)arg2;
++ (id)hk_typesForSetOf:(Class)arg1;
++ (id)hk_typesForArrayOf:(Class)arg1;
 + (id)hk_setByUnioningSet:(id)arg1 otherSet:(id)arg2;
+- (id)hk_mapToDictionary:(CDUnknownBlockType)arg1;
 - (id)hk_firstSortedObjectWithComparison:(CDUnknownBlockType)arg1;
 - (id)hk_intersection:(id)arg1;
 - (id)hk_minus:(id)arg1;

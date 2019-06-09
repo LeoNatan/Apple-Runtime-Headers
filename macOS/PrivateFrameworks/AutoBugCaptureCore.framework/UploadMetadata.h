@@ -8,6 +8,7 @@
 
 @class NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface UploadMetadata : NSObject
 {
     BOOL _uploaded;

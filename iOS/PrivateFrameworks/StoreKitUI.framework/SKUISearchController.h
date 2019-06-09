@@ -9,6 +9,7 @@
 @class NSMutableString, SKUISearchBar, UILabel;
 @protocol SKUISearchControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUISearchController : UISearchController
 {
     UILabel *_suffixLabel;

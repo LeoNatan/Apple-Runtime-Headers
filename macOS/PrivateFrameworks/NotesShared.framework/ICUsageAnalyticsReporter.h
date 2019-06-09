@@ -13,7 +13,6 @@
 + (double)percentileOfValue:(double)arg1 givenMaximum:(double)arg2;
 + (void)clearSharedCollector;
 + (id)sharedReporter;
-- (void)logDocCamFilterUsageForFilterType:(short)arg1;
 - (void)logChecklistLengthFromTrackedToDoParagraphs:(id)arg1;
 - (void)incrementCountForKey:(id)arg1 withSignature:(id)arg2;
 - (void)incrementCountForKey:(id)arg1;

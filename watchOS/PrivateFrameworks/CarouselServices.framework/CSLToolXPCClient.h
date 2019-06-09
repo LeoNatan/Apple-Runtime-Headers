@@ -19,7 +19,6 @@
 - (void)sendMessage:(int)arg1 withString:(const char *)arg2;
 - (void)sendMessage:(int)arg1 withFlag1:(_Bool)arg2 flag2:(_Bool)arg3;
 - (void)sendSimpleMessage:(int)arg1;
-- (id)init;
 
 @end
 

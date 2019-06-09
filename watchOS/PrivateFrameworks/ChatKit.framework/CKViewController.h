@@ -9,12 +9,14 @@
 @interface CKViewController : UIViewController
 {
     _Bool _appeared;
+    _Bool _deferredAppeared;
     _Bool _appearing;
     _Bool _dissapearing;
 }
 
 @property(nonatomic) _Bool dissapearing; // @synthesize dissapearing=_dissapearing;
 @property(nonatomic) _Bool appearing; // @synthesize appearing=_appearing;
+@property(nonatomic) _Bool deferredAppeared; // @synthesize deferredAppeared=_deferredAppeared;
 @property(nonatomic) _Bool appeared; // @synthesize appeared=_appeared;
 - (void)childViewControllersPerform:(SEL)arg1;
 - (void)viewDidAppearDeferredSetup;

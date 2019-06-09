@@ -6,16 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class HSCloudItemIDList;
+@class ICCloudItemIDList;
 
 @interface MPCloudControllerItemIDList : NSObject
 {
-    HSCloudItemIDList *_cloudItemIDList;
+    ICCloudItemIDList *_cloudItemIDList;
 }
 
 + (id)cloudItemIDListForPlaylist:(id)arg1;
 - (void).cxx_destruct;
-- (id)HSCloudItemIDList;
+- (id)ICCloudItemIDList;
 - (void)insertCloudItemID:(unsigned long long)arg1 idType:(int)arg2 atIndex:(unsigned int)arg3;
 - (void)addCloudItemID:(unsigned long long)arg1 idType:(int)arg2;
 - (id)init;

@@ -19,22 +19,24 @@
     unsigned long long _courseColorType;
     NSString *_instructorName;
     NSData *_instructorImageData;
-    NSArray *_anchorCertificates;
+    NSArray *_anchorCertificateDatas;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSArray *anchorCertificates; // @synthesize anchorCertificates=_anchorCertificates;
-@property(copy, nonatomic) NSData *instructorImageData; // @synthesize instructorImageData=_instructorImageData;
-@property(copy, nonatomic) NSString *instructorName; // @synthesize instructorName=_instructorName;
-@property(nonatomic) unsigned long long courseColorType; // @synthesize courseColorType=_courseColorType;
-@property(nonatomic) unsigned long long courseMascotType; // @synthesize courseMascotType=_courseMascotType;
-@property(copy, nonatomic) NSString *courseDescription; // @synthesize courseDescription=_courseDescription;
-@property(copy, nonatomic) NSString *courseName; // @synthesize courseName=_courseName;
-@property(copy, nonatomic) DMFControlGroupIdentifier *courseIdentifier; // @synthesize courseIdentifier=_courseIdentifier;
+@property(readonly, copy, nonatomic) NSArray *anchorCertificateDatas; // @synthesize anchorCertificateDatas=_anchorCertificateDatas;
+@property(readonly, copy, nonatomic) NSData *instructorImageData; // @synthesize instructorImageData=_instructorImageData;
+@property(readonly, copy, nonatomic) NSString *instructorName; // @synthesize instructorName=_instructorName;
+@property(readonly, nonatomic) unsigned long long courseColorType; // @synthesize courseColorType=_courseColorType;
+@property(readonly, nonatomic) unsigned long long courseMascotType; // @synthesize courseMascotType=_courseMascotType;
+@property(readonly, copy, nonatomic) NSString *courseDescription; // @synthesize courseDescription=_courseDescription;
+@property(readonly, copy, nonatomic) NSString *courseName; // @synthesize courseName=_courseName;
+@property(readonly, copy, nonatomic) DMFControlGroupIdentifier *courseIdentifier; // @synthesize courseIdentifier=_courseIdentifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)description;
+- (id)initWithCourseIdentifier:(id)arg1 courseName:(id)arg2 courseDescription:(id)arg3 courseMascotType:(unsigned long long)arg4 courseColorType:(unsigned long long)arg5 instructorName:(id)arg6 instructorImageData:(id)arg7 anchorCertificateDatas:(id)arg8;
+- (id)initWithCourseIdentifier:(id)arg1 courseName:(id)arg2 courseDescription:(id)arg3 courseMascotType:(unsigned long long)arg4 courseColorType:(unsigned long long)arg5 instructorName:(id)arg6 anchorCertificateDatas:(id)arg7;
 - (id)initWithCourseIdentifier:(id)arg1 courseName:(id)arg2 courseDescription:(id)arg3 courseMascotType:(unsigned long long)arg4 courseColorType:(unsigned long long)arg5 instructorName:(id)arg6 instructorImageData:(id)arg7 anchorCertificates:(id)arg8;
 - (id)initWithCourseIdentifier:(id)arg1 courseName:(id)arg2 courseDescription:(id)arg3 courseMascotType:(unsigned long long)arg4 courseColorType:(unsigned long long)arg5 instructorName:(id)arg6 anchorCertificates:(id)arg7;
 - (id)initWithCourseIdentifier:(id)arg1 courseName:(id)arg2 courseDescription:(id)arg3 instructorName:(id)arg4 instructorImageData:(id)arg5 anchorCertificates:(id)arg6;

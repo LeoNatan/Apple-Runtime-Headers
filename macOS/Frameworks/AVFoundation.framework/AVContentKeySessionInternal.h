@@ -25,6 +25,8 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_cryptorsList;
     NSString *_keySystem;
     NSMutableDictionary *keyRequestsByRequestID;
+    NSObject<OS_dispatch_queue> *_delegateReadWriteQueue;
+    NSObject<OS_dispatch_queue> *_delegateQueue;
 }
 
 @end

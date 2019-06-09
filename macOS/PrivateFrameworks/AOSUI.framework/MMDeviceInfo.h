@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly, nonatomic) NSString *deviceName; // @synthesize deviceName=_deviceName;
 @property(readonly, nonatomic) NSString *udid; // @synthesize udid=_udid;
-- (void)dealloc;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) long long osTheme;
 - (long long)aquaInterface;
 - (id)init;

@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MapKit/_MKNanoPlaceCardSectionDataDelegate-Protocol.h>
+#import <MapKit/_MKNanoPlaceCardSectionProvidingDelegate-Protocol.h>
 
 @class _MKNanoPlaceCardAttributionDataSource;
 
-@protocol _MKNanoPlaceCardAttributionDataDelegate <_MKNanoPlaceCardSectionDataDelegate>
+@protocol _MKNanoPlaceCardAttributionDataDelegate <_MKNanoPlaceCardSectionProvidingDelegate>
 - (void)placeCardSectionSelectedAttribution:(_MKNanoPlaceCardAttributionDataSource *)arg1;
 @end
 

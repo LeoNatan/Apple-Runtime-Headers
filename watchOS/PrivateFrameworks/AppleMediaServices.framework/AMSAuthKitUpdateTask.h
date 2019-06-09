@@ -8,10 +8,11 @@
 
 #import <AppleMediaServices/AKAppleIDAuthenticationDelegate-Protocol.h>
 
-@class ACAccount, ACDAccountStore, AMSAuthenticateOptions, NSString;
+@class ACAccount, ACDAccountStore, AMSAuthenticateOptions, NSArray, NSString;
 
 @interface AMSAuthKitUpdateTask : AMSTask <AKAppleIDAuthenticationDelegate>
 {
+    NSArray *_additionalControllers;
     ACAccount *_account;
     ACDAccountStore *_accountStore;
     AMSAuthenticateOptions *_options;
@@ -22,13 +23,14 @@
 @property(retain, nonatomic) AMSAuthenticateOptions *options; // @synthesize options=_options;
 @property(retain, nonatomic) ACDAccountStore *accountStore; // @synthesize accountStore=_accountStore;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
+@property(retain, nonatomic) NSArray *additionalControllers; // @synthesize additionalControllers=_additionalControllers;
 - (void).cxx_destruct;
+- (id)_promptAllowedBundleIds;
 - (id)_performAuthKitUpdateByProxyForAccount:(id)arg1 options:(id)arg2;
 - (id)_performAuthKitUpdateByPromptingUserForAccount:(id)arg1 options:(id)arg2;
 - (id)_performAuthKitUpdateUsingSecondaryPasswordForAccount:(id)arg1 options:(id)arg2;
 - (id)_performAuthKitUpdateUsingRawPasswordForAccount:(id)arg1 options:(id)arg2;
 - (id)_performAuthKitUpdateSilentlyForAccount:(id)arg1 options:(id)arg2;
-- (id)_createUpdatedAccount:(id)arg1 usingAuthenticationResults:(id)arg2;
 - (_Bool)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (id)performAuthKitUpdate;
 - (id)initWithAccount:(id)arg1 accountStore:(id)arg2 options:(id)arg3;

@@ -10,13 +10,15 @@
 
 @protocol ICSearchIndexable <NSObject>
 - (NSArray *)authorsExcludingCurrentUser;
+- (_Bool)isMovable;
 - (_Bool)isHiddenFromSearch;
 - (_Bool)searchResultCanBeDeletedFromNoteContext;
 - (unsigned int)searchResultType;
 - (unsigned int)searchResultsSection;
 - (NSDate *)modificationDate;
 - (NSDate *)creationDate;
-- (NSString *)identifier;
+- (NSString *)contentIdentifier;
+- (NSString *)searchIndexingIdentifier;
 - (int)visibilityTestingType;
 - (NSManagedObjectID *)objectID;
 - (NSManagedObjectContext *)managedObjectContext;

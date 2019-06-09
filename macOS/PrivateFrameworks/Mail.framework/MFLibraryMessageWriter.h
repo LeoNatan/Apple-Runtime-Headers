@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class MFMailbox, NSArray;
-@protocol MFAddProgressMonitor;
+@protocol EDMessageChangeHookResponder, MFAddProgressMonitor;
 
 @interface MFLibraryMessageWriter : NSObject
 {
@@ -23,6 +23,7 @@
     MFMailbox *_destinationMailbox;
     id <MFAddProgressMonitor> _progressDelegate;
     CDUnknownBlockType _insertCompletionBlock;
+    id <EDMessageChangeHookResponder> _hookResponder;
     long long _messageFlagsToSet;
     long long _messageFlagsToClear;
     NSArray *_unsortedMessagesIndexesOrder;
@@ -31,6 +32,7 @@
 @property(readonly, copy, nonatomic) NSArray *unsortedMessagesIndexesOrder; // @synthesize unsortedMessagesIndexesOrder=_unsortedMessagesIndexesOrder;
 @property(nonatomic) long long messageFlagsToClear; // @synthesize messageFlagsToClear=_messageFlagsToClear;
 @property(nonatomic) long long messageFlagsToSet; // @synthesize messageFlagsToSet=_messageFlagsToSet;
+@property(retain, nonatomic) id <EDMessageChangeHookResponder> hookResponder; // @synthesize hookResponder=_hookResponder;
 @property(copy, nonatomic) CDUnknownBlockType insertCompletionBlock; // @synthesize insertCompletionBlock=_insertCompletionBlock;
 @property(retain, nonatomic) id <MFAddProgressMonitor> progressDelegate; // @synthesize progressDelegate=_progressDelegate;
 @property(nonatomic) BOOL isMailboxRebuild; // @synthesize isMailboxRebuild=_isMailboxRebuild;

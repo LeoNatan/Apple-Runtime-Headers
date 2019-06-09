@@ -56,6 +56,9 @@
 - (void)raiseHIDEventTapPriorityToMaximum;
 - (void)endHandlingHIDEventsForReason:(id)arg1;
 - (void)beginHandlingHIDEventsForReason:(id)arg1;
+- (void)cleanup;
+- (void)_threadStop;
+- (void)dealloc;
 @property(readonly, nonatomic) NSArray *hidEventTapEnabledReasons;
 - (id)initWithHIDTapIdentifier:(id)arg1 HIDEventTapPriority:(int)arg2 systemEventTapIdentifier:(id)arg3 systemEventTapPriority:(int)arg4;
 - (id)init;

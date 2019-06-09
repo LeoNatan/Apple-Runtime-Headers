@@ -13,7 +13,6 @@
 @interface TVApplicationControllerContext : NSObject <NSCopying>
 {
     _Bool _supplementary;
-    _Bool _appUsesTabBarRootViewController;
     NSURL *_javaScriptApplicationURL;
     NSString *_storageIdentifier;
     NSDictionary *_launchOptions;
@@ -27,7 +26,6 @@
 @property(copy, nonatomic) NSString *bagBootURLKey; // @synthesize bagBootURLKey=_bagBootURLKey;
 @property(copy, nonatomic) NSURL *appJSCachePath; // @synthesize appJSCachePath=_appJSCachePath;
 @property(copy, nonatomic) NSURL *appLocalJSURL; // @synthesize appLocalJSURL=_appLocalJSURL;
-@property(nonatomic) _Bool appUsesTabBarRootViewController; // @synthesize appUsesTabBarRootViewController=_appUsesTabBarRootViewController;
 @property(nonatomic, getter=isSupplementary) _Bool supplementary; // @synthesize supplementary=_supplementary;
 @property(copy, nonatomic) NSDictionary *launchOptions; // @synthesize launchOptions=_launchOptions;
 @property(copy, nonatomic) NSString *storageIdentifier; // @synthesize storageIdentifier=_storageIdentifier;

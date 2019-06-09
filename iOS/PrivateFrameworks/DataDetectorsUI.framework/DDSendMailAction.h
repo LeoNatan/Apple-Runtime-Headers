@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (id)notificationURL;
 - (id)notificationIconBundleIdentifier;
 - (id)notificationTitle;
+- (id)icon;
 - (id)localizedName;
 - (id)initWithURL:(id)arg1 result:(struct __DDResult *)arg2 context:(id)arg3;
 

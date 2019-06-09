@@ -4,17 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <SettingsFoundation/SFRestrictionsController.h>
 
-@interface PSRestrictionsController : NSObject
+@interface PSRestrictionsController : SFRestrictionsController
 {
 }
-
-+ (void)resetRestrictionsPassword;
-+ (void)resetRestrictions;
-+ (void)setSpringBoardCapability:(id)arg1 enabled:(_Bool)arg2;
-+ (id)TCCServices;
-+ (id)restrictionSpecifiers;
 
 @end
 

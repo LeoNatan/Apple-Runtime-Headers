@@ -6,6 +6,7 @@
 
 #import <AppKit/NSPathControl.h>
 
+@class NSObject;
 @protocol TPathControlDelegate;
 
 __attribute__((visibility("hidden")))
@@ -14,8 +15,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
+- (void)viewDidChangeBackingProperties;
 - (id)menuForEvent:(id)arg1;
-@property id <TPathControlDelegate> delegate; // @dynamic delegate;
+@property __weak NSObject<TPathControlDelegate> *delegate; // @dynamic delegate;
 - (BOOL)acceptsFirstResponder;
 - (BOOL)canBecomeKeyView;
 

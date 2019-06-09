@@ -22,6 +22,7 @@
 - (id)initWithSize:(struct CGSize)arg1 format:(id)arg2;
 - (id)initWithSize:(struct CGSize)arg1;
 - (id)init;
+- (void)_prepareContextForReuse:(struct CGContext *)arg1;
 - (void)pushContext:(id)arg1;
 
 @end

@@ -7,9 +7,26 @@
 #import <CoreServices/LSApplicationProxy.h>
 
 @interface LSApplicationProxy (TVSUIApplicationProxyLifetimeCacheKeyAdditions)
-- (id)tvsui_bundlePathHash;
++ (id)_tvsui_placeholderIconImage;
++ (id)_tvsui_placeholderLayeredIconAtSystemScale;
++ (id)tvsui_placeholderLayeredIcon;
++ (void)tvsui_initializeFlatIconCache;
 - (double)tvsui_lastModifiedDate;
 - (id)tvsui_iconCacheKey;
 - (id)tvsui_cacheKey;
+- (_Bool)_tvsui_isSoftFailure;
+- (_Bool)_isNotInstalled;
+- (id)_tvsui_assetManager;
+- (id)_tvsui_uncachedAssetManager;
+- (id)_tvsui_cachedSmallFlatApplicationIcon;
+- (id)_tvsui_cachedFlatApplicationIcon;
+- (id)_tvsui_applicationIconName;
+- (long long)tvsui_preferredUserInterfaceStyle;
+- (id)tvsui_supportedUserInterfaceStyles;
+- (_Bool)tvsui_applicationLaunchImageIsTemplate;
+- (id)tvsui_applicationLaunchImageName;
+- (id)tvsui_volatileTopShelfImage;
+- (id)tvsui_volatileApplicationLayeredIcon;
+- (id)tvsui_applicationFlatIcon;
 @end
 

@@ -10,15 +10,27 @@
 
 @interface PHFaceCrop : PHObject
 {
+    short _state;
+    short _type;
+    NSData *_resourceData;
 }
 
 + (id)fetchFaceCropsNeedingFaceDetectionWithOptions:(id)arg1;
++ (id)fetchFaceCropsForPerson:(id)arg1 options:(id)arg2;
 + (id)fetchFaceCropsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchFaceCropsWithOptions:(id)arg1;
++ (id)fetchType;
++ (id)managedEntityName;
 + (id)identifierCode;
-@property(readonly, nonatomic) short state;
-@property(readonly, nonatomic) NSData *resourceData;
-- (id)faceCrop;
++ (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)entityKeyMap;
++ (id)propertiesToFetchWithHint:(unsigned long long)arg1;
+@property(readonly, nonatomic) short type; // @synthesize type=_type;
+@property(readonly, nonatomic) short state; // @synthesize state=_state;
+@property(readonly, nonatomic) NSData *resourceData; // @synthesize resourceData=_resourceData;
+- (void).cxx_destruct;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
+- (Class)changeRequestClass;
 
 @end
 

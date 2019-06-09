@@ -13,6 +13,7 @@
 + (id)contentsOfDirectoryAtPath:(id)arg1 fileManager:(id)arg2;
 + (BOOL)isFileAtPathDirectory:(id)arg1 workspace:(id)arg2;
 + (id)defaultPhotoPathsFileManager:(id)arg1 workspace:(id)arg2;
++ (id)os_log;
 
 @end
 

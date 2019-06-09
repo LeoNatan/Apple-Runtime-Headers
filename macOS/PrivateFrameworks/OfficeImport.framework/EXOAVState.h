@@ -8,6 +8,7 @@
 
 @class EXReadState;
 
+__attribute__((visibility("hidden")))
 @interface EXOAVState : OAVReadState
 {
     EXReadState *mEXReadState;

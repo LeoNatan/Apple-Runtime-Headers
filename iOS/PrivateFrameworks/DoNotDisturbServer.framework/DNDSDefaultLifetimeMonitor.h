@@ -10,8 +10,8 @@
 {
 }
 
-+ (_Bool)willMonitorLifetime:(id)arg1;
-- (id)updateForModeAssertionDetails:(id)arg1 date:(id)arg2;
++ (Class)lifetimeClass;
+- (id)updateForModeAssertions:(id)arg1 date:(id)arg2;
 
 @end
 

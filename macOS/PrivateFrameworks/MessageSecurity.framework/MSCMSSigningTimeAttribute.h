@@ -15,7 +15,7 @@
     NSDate *_signingTime;
 }
 
-@property(readonly) NSDate *signingTime; // @synthesize signingTime=_signingTime;
+@property(readonly, retain) NSDate *signingTime; // @synthesize signingTime=_signingTime;
 - (void).cxx_destruct;
 - (id)encodeAttributeWithError:(id *)arg1;
 - (id)initWithSigningTime:(id)arg1;

@@ -6,33 +6,37 @@
 
 #import <objc/NSObject.h>
 
-#import <CarKit/CARSessionCommandDelegate-Protocol.h>
+@class CARInputDeviceManager, CARObserverHashTable, CARSessionConfiguration, NSDictionary, NSNumber, NSString;
 
-@class CARInputDeviceManager, CARSessionConfiguration, NSArray, NSDictionary, NSNumber, NSString;
-
-@interface CARSession : NSObject <CARSessionCommandDelegate>
+@interface CARSession : NSObject
 {
     struct OpaqueFigEndpoint *_endpoint;
+    _Bool _isPaired;
     _Bool _authenticated;
     CARSessionConfiguration *_configuration;
     NSDictionary *_APEndPointInfo;
+    NSString *_sourceVersion;
     CARInputDeviceManager *_inputDeviceManager;
-    NSArray *_screenInfo;
-    NSArray *_screenIDs;
+    CARObserverHashTable *_observers;
 }
 
-@property(copy, nonatomic) NSArray *screenIDs; // @synthesize screenIDs=_screenIDs;
-@property(copy, nonatomic) NSArray *screenInfo; // @synthesize screenInfo=_screenInfo;
+@property(retain, nonatomic) CARObserverHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) CARInputDeviceManager *inputDeviceManager; // @synthesize inputDeviceManager=_inputDeviceManager;
 @property(readonly, nonatomic, getter=isAuthenticated) _Bool authenticated; // @synthesize authenticated=_authenticated;
+@property(readonly, copy, nonatomic) NSString *sourceVersion; // @synthesize sourceVersion=_sourceVersion;
 @property(readonly, copy, nonatomic) NSDictionary *APEndPointInfo; // @synthesize APEndPointInfo=_APEndPointInfo;
+@property(readonly, nonatomic) _Bool isPaired; // @synthesize isPaired=_isPaired;
 @property(readonly, nonatomic) CARSessionConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
+- (void)_newObserverAdded:(id)arg1;
 - (void)sendCommand:(id)arg1 withParameters:(id)arg2;
+- (void)_updateConfiguration;
 - (void)_fetchAuthenticationStatus;
 - (id)_endpointValueForKey:(struct __CFString *)arg1;
 - (struct OpaqueFigEndpoint *)endpoint;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (void)takeScreenForConnection;
 - (void)takeScreenForClient:(id)arg1 reason:(id)arg2;
 - (id)borrowScreenForClient:(id)arg1 reason:(id)arg2;
@@ -40,19 +44,18 @@
 - (void)releaseTurnByTurnOwnership;
 - (void)requestTurnByTurnOwnership;
 - (unsigned long long)navigationOwner;
-- (_Bool)ownsScreen;
+- (_Bool)carOwnsScreen;
 - (void)requestCarUIForURL:(id)arg1;
 - (void)requestCarUI;
+- (id)lastNavigatingBundleIdentifier;
+- (id)systemNightMode;
 - (id)MFiCertificateSerialNumber;
+- (void)setInputMode:(unsigned long long)arg1 forInputDevice:(id)arg2;
 @property(readonly, copy, nonatomic) NSNumber *electronicTollCollectionAvailable;
 @property(readonly, copy, nonatomic) NSNumber *limitUserInterfaces;
 @property(readonly, copy, nonatomic) NSNumber *nightMode;
+- (id)_fig_safe_description;
 - (id)initWithFigEndpoint:(struct OpaqueFigEndpoint *)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

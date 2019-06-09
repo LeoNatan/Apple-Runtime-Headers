@@ -8,6 +8,7 @@
 
 @class OADDrawable, PDBuild, PDSequentialTimeNode;
 
+__attribute__((visibility("hidden")))
 @interface PDAnimationInfoData : NSObject
 {
     unsigned int mOrder;

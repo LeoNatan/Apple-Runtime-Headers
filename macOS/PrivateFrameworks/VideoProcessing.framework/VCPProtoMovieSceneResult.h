@@ -16,14 +16,17 @@
     float _distanceToPreviousScene;
     float _flickerScore;
     float _qualityScore;
+    float _sceneprintDistanceToPreviousScene;
     VCPProtoTimeRange *_timeRange;
     struct {
         unsigned int distanceToPreviousScene:1;
         unsigned int flickerScore:1;
+        unsigned int sceneprintDistanceToPreviousScene:1;
     } _has;
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+@property(nonatomic) float sceneprintDistanceToPreviousScene; // @synthesize sceneprintDistanceToPreviousScene=_sceneprintDistanceToPreviousScene;
 @property(nonatomic) float flickerScore; // @synthesize flickerScore=_flickerScore;
 @property(nonatomic) float distanceToPreviousScene; // @synthesize distanceToPreviousScene=_distanceToPreviousScene;
 @property(nonatomic) float qualityScore; // @synthesize qualityScore=_qualityScore;
@@ -38,6 +41,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasSceneprintDistanceToPreviousScene;
 @property(nonatomic) BOOL hasFlickerScore;
 @property(nonatomic) BOOL hasDistanceToPreviousScene;
 - (id)exportToLegacyDictionary;

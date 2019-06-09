@@ -17,7 +17,7 @@
 @property(nonatomic) id delegate; // @synthesize delegate=_delegate;
 - (int)cropOverlayMode;
 - (id)imageTile;
-- (int)imageFormat;
+- (unsigned short)imageFormat;
 - (id)photo;
 - (void)cropOverlayWasCancelled:(id)arg1;
 - (void)cropOverlay:(id)arg1 didFinishSaving:(id)arg2;

@@ -7,6 +7,7 @@
 @class CLLocation, CLVisit, NSArray, NSString, NSURL;
 
 @protocol CLSimulationLocationProtocol
+- (void)simulateBeaconWithProximityUUID:(NSString *)arg1 major:(int)arg2 minor:(int)arg3 eventType:(unsigned char)arg4;
 - (void)simulateFenceWithBundleID:(NSString *)arg1 andFenceID:(NSString *)arg2 eventType:(unsigned char)arg3 atLocation:(CLLocation *)arg4;
 - (void)getFencesForBundleID:(NSString *)arg1 withReply:(void (^)(NSDictionary *))arg2;
 - (void)simulateSignificantLocationChange:(CLLocation *)arg1;

@@ -13,17 +13,14 @@ __attribute__((visibility("hidden")))
 {
     _Bool _hasAudio;
     _Bool _hasVideo;
-    _Bool _isEVOD;
     NSURL *_previewURL;
     NSString *_type;
 }
 
-+ (_Bool)isEVODForOffer:(id)arg1;
 + (id)typeForOffer:(id)arg1;
 + (id)previewURLForOffer:(id)arg1;
 + (_Bool)hasVideoForOffer:(id)arg1;
 + (_Bool)hasAudioForOffer:(id)arg1;
-@property(readonly, nonatomic) _Bool isEVOD; // @synthesize isEVOD=_isEVOD;
 @property(readonly, nonatomic) _Bool hasVideo; // @synthesize hasVideo=_hasVideo;
 @property(readonly, nonatomic) _Bool hasAudio; // @synthesize hasAudio=_hasAudio;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;

@@ -25,6 +25,8 @@
 + (void)cannedInfoForType:(unsigned long long)arg1 directivesPath:(id *)arg2 modelName:(id *)arg3;
 + (id)errorDomain;
 + (id)sharedModelManager;
++ (const void *)associatedObjectKeyForType:(long long)arg1;
++ (void)initialize;
 @property(nonatomic) unsigned long long activeCount; // @synthesize activeCount=_activeCount;
 @property(retain, nonatomic) NSMutableDictionary *models; // @synthesize models=_models;
 @property(retain, nonatomic) NSMutableDictionary *shadowModels; // @synthesize shadowModels=_shadowModels;
@@ -33,8 +35,8 @@
 @property(nonatomic) _Bool disablePolicy; // @synthesize disablePolicy=_disablePolicy;
 - (void).cxx_destruct;
 - (double)testL2WithData:(id)arg1 experimental:(_Bool)arg2;
-- (float *)computeScoresForFeatures:(id)arg1 withBundleFeatures:(id)arg2 serverBundleFeatures:(id)arg3 usingModelContext:(id)arg4 qos:(unsigned int)arg5 shouldCancel:(_Bool *)arg6;
-- (float *)computeL2ScoresForVectors:(id)arg1 secondVector:(id)arg2 withServerFeatures:(id)arg3 withBundleFeatures:(id)arg4 experimentalWeight1:(double)arg5 experimentalWeight2:(double)arg6 forShadow:(_Bool)arg7 shouldCancel:(_Bool *)arg8;
+- (float *)computeScoresForFeatures:(id)arg1 withBundleFeatures:(id)arg2 serverBundleFeatures:(id)arg3 usingModelContext:(id)arg4 qos:(unsigned int)arg5 shouldCancel:(_Bool *)arg6 filterBundle:(id)arg7;
+- (float *)computeL2ScoresForVectors:(id)arg1 secondVector:(id)arg2 withServerFeatures:(id)arg3 withBundleFeatures:(id)arg4 experimentalWeight1:(double)arg5 experimentalWeight2:(double)arg6 forShadow:(_Bool)arg7 shouldCancel:(_Bool *)arg8 clientBundle:(id)arg9 hasMail:(_Bool)arg10;
 - (void)updateModelsAccordingToHierarchy;
 - (void)updateModelsAccordingToHierarchy:(id)arg1 updateEnabled:(_Bool)arg2 disablePendingUpdates:(_Bool)arg3;
 - (id)loadIfNecessaryModelOfResourceType:(unsigned long long)arg1 nowTime:(double)arg2 intoModelDict:(id)arg3 currentVersion:(id)arg4;
@@ -43,7 +45,7 @@
 - (void)triggerUpdate;
 - (void)deactivate;
 - (void)activate;
-- (id)getL2ModelVersion;
+- (id)getL2ModelVersionForClientBundle:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

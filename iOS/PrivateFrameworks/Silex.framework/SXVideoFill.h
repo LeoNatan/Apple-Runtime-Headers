@@ -12,7 +12,7 @@
 {
 }
 
-+ (id)typeString;
++ (void)load;
 - (_Bool)loopWithValue:(id)arg1 withType:(int)arg2;
 
 // Remaining properties

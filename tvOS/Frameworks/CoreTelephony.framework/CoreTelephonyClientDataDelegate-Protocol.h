@@ -6,15 +6,22 @@
 
 #import <CoreTelephony/NSObject-Protocol.h>
 
-@class CTDataConnectionStatus, CTDataStatus, CTXPCServiceSubscriptionContext, NSArray;
+@class CTDataConnectionStatus, CTDataSettings, CTDataStatus, CTServiceDescriptor, CTXPCServiceSubscriptionContext, NSArray;
 
 @protocol CoreTelephonyClientDataDelegate <NSObject>
 
 @optional
+- (void)internetConnectionAvailability:(_Bool)arg1;
+- (void)internetDataStatus:(CTDataStatus *)arg1;
+- (void)internetConnectionActivationError:(int)arg1;
+- (void)internetConnectionStateChanged:(CTDataConnectionStatus *)arg1;
+- (void)dataSettingsChanged:(CTDataSettings *)arg1;
 - (void)dataStatus:(CTXPCServiceSubscriptionContext *)arg1 dataStatusInfo:(CTDataStatus *)arg2;
 - (void)connectionAvailability:(CTXPCServiceSubscriptionContext *)arg1 availableConnections:(NSArray *)arg2;
 - (void)servingNetworkChanged:(CTXPCServiceSubscriptionContext *)arg1;
+- (void)currentDataServiceDescriptorChanged:(CTServiceDescriptor *)arg1;
 - (void)currentDataSimChanged:(CTXPCServiceSubscriptionContext *)arg1;
+- (void)preferredDataServiceDescriptorChanged:(CTServiceDescriptor *)arg1;
 - (void)preferredDataSimChanged:(CTXPCServiceSubscriptionContext *)arg1;
 - (void)connectionActivationError:(CTXPCServiceSubscriptionContext *)arg1 connection:(int)arg2 error:(int)arg3;
 - (void)connectionStateChanged:(CTXPCServiceSubscriptionContext *)arg1 connection:(int)arg2 dataConnectionStatusInfo:(CTDataConnectionStatus *)arg3;

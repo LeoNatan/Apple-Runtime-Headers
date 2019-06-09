@@ -6,11 +6,16 @@
 
 #import <BulletinDistributorGizmo/BLTSectionConfigurationInternal.h>
 
+@class BLTSectionIdentifierMapper;
+
 @interface BLTSectionConfiguration : BLTSectionConfigurationInternal
 {
+    BLTSectionIdentifierMapper *_sectionIDMapper;
 }
 
-- (id)overriddenSectionInfos;
+@property(retain, nonatomic) BLTSectionIdentifierMapper *sectionIDMapper; // @synthesize sectionIDMapper=_sectionIDMapper;
+- (void).cxx_destruct;
+- (unsigned int)coordinationTypeForSectionID:(id)arg1 subtype:(int)arg2 category:(id)arg3;
 
 @end
 

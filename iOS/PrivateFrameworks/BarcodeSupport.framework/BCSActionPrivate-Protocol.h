@@ -6,9 +6,13 @@
 
 #import <BarcodeSupport/BCSAction-Protocol.h>
 
-@class NSDictionary;
+@class NSArray, NSDictionary, NSString;
 
 @protocol BCSActionPrivate <BCSAction>
+@property(readonly, nonatomic) _Bool isWiFiAction;
+@property(readonly, nonatomic) _Bool isInvalidDataAction;
+@property(readonly, copy, nonatomic) NSArray *appLinks;
+@property(readonly, copy, nonatomic) NSString *extraPreviewText;
 @property(readonly, copy, nonatomic) NSDictionary *debugDescriptionDictionary;
 @end
 

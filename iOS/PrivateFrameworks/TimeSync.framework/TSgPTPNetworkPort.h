@@ -6,11 +6,12 @@
 
 #import <TimeSync/TSgPTPPort.h>
 
-@class NSString;
+@class NSMutableArray, NSString;
 
 @interface TSgPTPNetworkPort : TSgPTPPort
 {
     unsigned int _connection;
+    NSMutableArray *_clients;
     _Bool _remoteIsSameDevice;
     _Bool _asCapable;
     BOOL _localSyncLogMeanInterval;
@@ -81,6 +82,11 @@
 @property(nonatomic) unsigned short remotePortNumber; // @synthesize remotePortNumber=_remotePortNumber;
 @property(nonatomic) unsigned long long remoteClockIdentity; // @synthesize remoteClockIdentity=_remoteClockIdentity;
 - (void)dealloc;
+- (void)removeClient:(id)arg1;
+- (void)addClient:(id)arg1;
+- (_Bool)deregisterAsyncCallbackError:(id *)arg1;
+- (_Bool)registerAsyncCallbackError:(id *)arg1;
+- (void)_handleNotification:(int)arg1 withArg1:(unsigned long long)arg2 andArg2:(unsigned long long)arg3;
 - (_Bool)getCurrentPortInfo:(CDStruct_57c52001 *)arg1 error:(id *)arg2;
 - (_Bool)disablePortError:(id *)arg1;
 - (_Bool)enablePortError:(id *)arg1;
@@ -122,8 +128,6 @@
 @property(readonly, nonatomic) unsigned int connection;
 - (void)updateProperties;
 - (_Bool)_commonInitWithService:(unsigned int)arg1;
-- (id)initWithMatchingDictionary:(id)arg1;
-- (id)initWithService:(unsigned int)arg1;
 
 @end
 

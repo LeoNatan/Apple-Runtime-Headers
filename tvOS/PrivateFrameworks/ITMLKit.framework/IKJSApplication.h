@@ -20,6 +20,7 @@
 - (void)update;
 - (void)reload:(id)arg1:(id)arg2;
 - (void)dispatchErrorWithMessage:(id)arg1 sourceURL:(id)arg2 line:(id)arg3;
+- (_Bool)requestDocumentWithContext:(id)arg1 response:(id)arg2;
 - (void)traitCollectionChanged:(id)arg1;
 - (void)updatedAppWithOptions:(id)arg1;
 - (void)exitAppWithOptions:(id)arg1;

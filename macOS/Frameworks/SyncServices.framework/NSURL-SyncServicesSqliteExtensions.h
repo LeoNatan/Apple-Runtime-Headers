@@ -10,5 +10,7 @@
 + (id)isd_propertyValueWithType:(int)arg1 bytesEncodedForSqlite:(const void *)arg2;
 - (int)isd_sqlitePropertyValueType;
 - (void *)isd_bytesEncodedForSqlite;
+- (BOOL)isd_isEqual:(id)arg1;
+- (int)isd_quickDirtyCoderType;
 @end
 

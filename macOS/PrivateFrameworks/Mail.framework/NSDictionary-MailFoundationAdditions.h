@@ -13,5 +13,6 @@
 - (float)floatForKey:(id)arg1;
 - (long long)integerForKey:(id)arg1;
 - (BOOL)boolForKey:(id)arg1;
+- (id)mutableSomewhatDeepCopy;
 @end
 

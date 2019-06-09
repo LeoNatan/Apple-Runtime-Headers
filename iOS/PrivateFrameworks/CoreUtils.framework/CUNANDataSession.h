@@ -6,15 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class CUNANEndpoint, NSString;
+#import <CoreUtils/WiFiAwareDataSessionDelegate-Protocol.h>
+
+@class CUNANEndpoint, NSString, WiFiAwareDataSession, WiFiAwarePublisher, WiFiAwarePublisherDataSessionHandle;
 @protocol OS_dispatch_queue;
 
-@interface CUNANDataSession : NSObject
+@interface CUNANDataSession : NSObject <WiFiAwareDataSessionDelegate>
 {
     CDUnknownBlockType _activateCompletion;
     _Bool _invalidateCalled;
     _Bool _invalidateDone;
     struct LogCategory *_ucat;
+    WiFiAwareDataSession *_wfaDataSessionClient;
     unsigned int _localInterfaceIndex;
     unsigned int _trafficFlags;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -23,27 +26,43 @@
     CDUnknownBlockType _interruptionHandler;
     CDUnknownBlockType _invalidationHandler;
     CUNANEndpoint *_peerEndpoint;
+    WiFiAwarePublisher *_publisher;
+    WiFiAwarePublisherDataSessionHandle *_wfaDataSessionServer;
     CDUnion_fab80606 _peerAddress;
 }
 
+@property(retain, nonatomic) WiFiAwarePublisherDataSessionHandle *wfaDataSessionServer; // @synthesize wfaDataSessionServer=_wfaDataSessionServer;
+@property(retain, nonatomic) WiFiAwarePublisher *publisher; // @synthesize publisher=_publisher;
 @property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
 @property(retain, nonatomic) CUNANEndpoint *peerEndpoint; // @synthesize peerEndpoint=_peerEndpoint;
-@property(readonly, nonatomic) CDUnion_fab80606 peerAddress; // @synthesize peerAddress=_peerAddress;
-@property(readonly, nonatomic) unsigned int localInterfaceIndex; // @synthesize localInterfaceIndex=_localInterfaceIndex;
+@property(nonatomic) CDUnion_fab80606 peerAddress; // @synthesize peerAddress=_peerAddress;
+@property(nonatomic) unsigned int localInterfaceIndex; // @synthesize localInterfaceIndex=_localInterfaceIndex;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(copy, nonatomic) CDUnknownBlockType interruptionHandler; // @synthesize interruptionHandler=_interruptionHandler;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
+- (void)dataSession:(id)arg1 terminatedWithReason:(long long)arg2;
+- (_Bool)_dataSession:(id)arg1 confirmedForPeerDataAddress:(id)arg2 serviceSpecificInfo:(id)arg3 error:(id *)arg4;
+- (void)dataSession:(id)arg1 confirmedForPeerDataAddress:(id)arg2 serviceSpecificInfo:(id)arg3;
+- (void)dataSession:(id)arg1 failedToStartWithError:(long long)arg2;
+- (void)dataSessionRequestStarted:(id)arg1;
+- (void)_terminateServerDataSession;
 - (void)_invalidated;
 - (void)_invalidate;
 - (void)invalidate;
+- (void)_activateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)activateWithCompletion:(CDUnknownBlockType)arg1;
 - (id)descriptionWithLevel:(int)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

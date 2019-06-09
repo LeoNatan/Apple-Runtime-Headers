@@ -7,14 +7,13 @@
 #import <objc/NSObject.h>
 
 @class NSDictionary, NSMutableDictionary, NSMutableSet;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore;
+@protocol OS_dispatch_queue;
 
 @interface SUUpdateSession : NSObject
 {
     NSMutableDictionary *_updateStatusByKey;
     NSMutableDictionary *_initiatedDownloads;
     NSDictionary *_completeUpdatesByKey;
-    NSObject<OS_dispatch_semaphore> *_foregroundConcurrentDownloadSemaphore;
     NSMutableSet *_backgroundKeys;
     NSMutableDictionary *_initiatedInstalls;
     NSMutableDictionary *_factoredInstallSizeByKey;
@@ -33,9 +32,11 @@
     BOOL _pendingStageInstallCancelled;
     CDUnknownBlockType _transactionCountDidChangeHandler;
     CDUnknownBlockType _installStateDidChangeHandler;
+    CDUnknownBlockType _installedBundleURLsHandler;
 }
 
 + (id)sharedUpdateSession;
+@property(copy) CDUnknownBlockType installedBundleURLsHandler; // @synthesize installedBundleURLsHandler=_installedBundleURLsHandler;
 @property BOOL pendingStageInstallCancelled; // @synthesize pendingStageInstallCancelled=_pendingStageInstallCancelled;
 @property BOOL nowIsLater; // @synthesize nowIsLater=_nowIsLater;
 @property BOOL isPreparingForReboot; // @synthesize isPreparingForReboot=_isPreparingForReboot;
@@ -55,13 +56,15 @@
 - (id)combinedStatusForUpdatesWithProductKeys:(id)arg1 individualStatus:(id *)arg2;
 - (id)statusForUpdateWithProductKey:(id)arg1;
 - (void)fixupStatusForLocalUpdateWithProductKey:(id)arg1;
-- (id)_nonatomicStatusForUpdateWithProductKey:(id)arg1 averageDownloadSpeed:(float *)arg2;
+- (id)_nonatomicStatusForUpdateWithProductKey:(id)arg1 estimatedDownloadTimeRemaining:(float *)arg2;
 - (id)_updateStatusForProducts:(id)arg1;
 - (void)_cancelBackgroundDownloadOperations;
+- (void)cancelAllUpdatesWithReply:(CDUnknownBlockType)arg1;
 - (void)cancelUpdatesForProductKeys:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)startUpdateForProducts:(id)arg1 usingClientAuthorization:(struct AuthorizationOpaqueRef *)arg2 inForeground:(BOOL)arg3 holdingBoostDuringInstall:(BOOL)arg4 stageInstall:(BOOL)arg5 clientBlocksRestart:(BOOL)arg6 allowOnlyAppleSigned:(BOOL)arg7 packageScriptUserID:(unsigned int)arg8 sendingStatusUpdates:(BOOL)arg9 replyWhenDone:(CDUnknownBlockType)arg10;
-- (void)_installProducts:(id)arg1 authorization:(struct AuthorizationOpaqueRef *)arg2 holdingBoostDuringInstall:(BOOL)arg3 stageInstall:(BOOL)arg4 clientBlocksRestart:(BOOL)arg5 allowOnlyAppleSigned:(BOOL)arg6 packageScriptUserID:(unsigned int)arg7;
+- (void)startUpdateForProducts:(id)arg1 usingClientAuthorization:(struct AuthorizationOpaqueRef *)arg2 inForeground:(BOOL)arg3 holdingBoostDuringInstall:(BOOL)arg4 stageInstall:(BOOL)arg5 clientBlocksRestart:(BOOL)arg6 packageScriptUserID:(unsigned int)arg7 sendingStatusUpdates:(BOOL)arg8 replyWhenDone:(CDUnknownBlockType)arg9;
+- (void)_installProducts:(id)arg1 authorization:(struct AuthorizationOpaqueRef *)arg2 holdingBoostDuringInstall:(BOOL)arg3 stageInstall:(BOOL)arg4 clientBlocksRestart:(BOOL)arg5 packageScriptUserID:(unsigned int)arg6;
 - (void)startDownloadingForProducts:(id)arg1 inForeground:(BOOL)arg2 replyWhenDone:(CDUnknownBlockType)arg3;
+- (void)_resetUpdateStateIfProductIsNotDownloadedButProductStateIsGreaterThanOrEqualToDownloadedForProducts:(id)arg1;
 - (void)_startDownloadingUpdateWithProduct:(id)arg1 inForeground:(BOOL)arg2 forActivePhases:(unsigned long long)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (BOOL)preflightFirmwareForProducts:(id)arg1 inForeground:(BOOL)arg2 error:(id *)arg3;
 - (void)finishStagingProduct:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

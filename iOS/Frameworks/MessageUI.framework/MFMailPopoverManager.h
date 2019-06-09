@@ -17,6 +17,7 @@
 
 + (void)enumerateManagersUsingBlock:(CDUnknownBlockType)arg1;
 + (id)managerForWindow:(id)arg1 createIfNeeded:(_Bool)arg2;
+- (void).cxx_destruct;
 - (id)allPassThroughViews;
 - (void)removePassthroughViewProvider:(id)arg1;
 - (void)addPassthroughViewProvider:(id)arg1;

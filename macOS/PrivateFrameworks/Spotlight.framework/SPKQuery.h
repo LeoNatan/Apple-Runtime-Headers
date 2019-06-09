@@ -45,6 +45,7 @@
 @property(readonly, getter=isExtensionQuery) BOOL extensionQuery;
 @property(readonly, getter=isCalculatorQuery) BOOL calculatorQuery;
 @property(readonly, getter=isApplicationQuery) BOOL applicationQuery;
+@property(readonly, getter=isCoreSpotlightQuery) BOOL coreSpotlightQuery;
 @property(readonly, getter=isDocumentQuery) BOOL documentQuery;
 @property(readonly, getter=isRemoteQuery) BOOL remoteQuery;
 @property(readonly, getter=isParsecQuery) BOOL parsecQuery;
@@ -57,12 +58,12 @@
 - (BOOL)isCanceled;
 - (BOOL)isCompleted;
 - (BOOL)isStarted;
+- (id)getQueryRankingConfigurationWithRanker:(id)arg1 spotlightQuery:(id)arg2;
 - (void)addChildQuery:(id)arg1;
 @property(readonly) NSArray *childQueries;
 @property(readonly) CDUnknownBlockType responseHandler;
 @property(retain) NSString *unmodifiedUserQueryString;
 - (id)description;
-- (BOOL)updateUserQueryString:(id)arg1;
 - (id)initWithUserQuery:(id)arg1 queryGroupId:(unsigned long long)arg2 options:(unsigned long long)arg3 keyboardLanguage:(id)arg4;
 - (id)initWithUserQuery:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithUserQuery:(id)arg1;

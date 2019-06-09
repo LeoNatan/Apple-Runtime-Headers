@@ -12,12 +12,13 @@
 {
     id <MTLDevice> _device;
     id <MTLCommandQueue> _commandQueue;
-    id <MTLRenderPipelineState> _cubemapPipelineState;
+    id <MTLRenderPipelineState> _cubemapPipelineStateSRGB;
+    id <MTLRenderPipelineState> _cubemapPipelineStateHDR;
     id <MTLDepthStencilState> _cubemapDepthState;
 }
 
 - (void).cxx_destruct;
--     // Error parsing type: v100@0:8@16{?=[4]}24r^{vector<ARTexturedPlane, std::__1::allocator<ARTexturedPlane> >=^{?}^{?}{__compressed_pair<ARTexturedPlane *, std::__1::allocator<ARTexturedPlane> >=^{?}}}88B96, name: projectToCube:transformWorldFromCube:planes:blend:
+-     // Error parsing type: v100@0:8@16{?=[4]}24r^{vector<ARTexturedPlane, std::__1::allocator<ARTexturedPlane> >=^{ARTexturedPlane}^{ARTexturedPlane}{__compressed_pair<ARTexturedPlane *, std::__1::allocator<ARTexturedPlane> >=^{ARTexturedPlane}}}88B96, name: projectToCube:transformWorldFromCube:planes:blend:
 - (id)init;
 
 @end

@@ -6,26 +6,26 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitCore/_UIScreenBasedObject-Protocol.h>
+#import <UIKitCore/_UICanvasBasedObject-Protocol.h>
 
-@class NSDictionary, NSString, UIScreen;
+@class NSDictionary, NSString, UIWindowScene;
 
-@interface UITextEffectsHostingInfo : NSObject <_UIScreenBasedObject>
+@interface UITextEffectsHostingInfo : NSObject <_UICanvasBasedObject>
 {
     unsigned long long _hostedUseCount;
-    UIScreen *_screen;
-    NSDictionary *_perScreenOptions;
+    UIWindowScene *_scene;
+    NSDictionary *_perSceneOptions;
 }
 
-+ (id)hostingInfoForScreen:(id)arg1;
-@property(retain, nonatomic) NSDictionary *perScreenOptions; // @synthesize perScreenOptions=_perScreenOptions;
-@property(retain, nonatomic) UIScreen *screen; // @synthesize screen=_screen;
++ (id)hostingInfoForWindowScene:(id)arg1;
+@property(retain, nonatomic) NSDictionary *perSceneOptions; // @synthesize perSceneOptions=_perSceneOptions;
+@property(retain, nonatomic) UIWindowScene *scene; // @synthesize scene=_scene;
 - (void).cxx_destruct;
 @property(nonatomic) _Bool useHostedInstance;
 @property(readonly) NSDictionary *_options;
-@property(readonly) UIScreen *_intendedScreen;
+@property(readonly) UIWindowScene *_intendedCanvas;
 - (_Bool)_matchingOptions:(id)arg1;
-- (id)_initWithScreen:(id)arg1 options:(id)arg2;
+- (id)_initWithCanvas:(id)arg1 options:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

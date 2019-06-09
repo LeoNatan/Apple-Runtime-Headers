@@ -40,7 +40,9 @@
 - (BOOL)rawPathIsExcluded:(const char *)arg1 hints:(struct _TMRulesQueryHints *)arg2;
 - (BOOL)pathIsExcluded:(id)arg1 hints:(struct _TMRulesQueryHints *)arg2 details:(struct _TMRulesQueryDetails *)arg3;
 - (BOOL)pathIsExcluded:(id)arg1 hints:(struct _TMRulesQueryHints *)arg2;
+- (BOOL)pathIsExcluded:(id)arg1 isDir:(BOOL)arg2;
 - (BOOL)URLIsExcluded:(id)arg1 hints:(struct _TMRulesQueryHints *)arg2 details:(struct _TMRulesQueryDetails *)arg3;
+- (BOOL)URLIsExcluded:(id)arg1 isDir:(BOOL)arg2;
 - (BOOL)URLIsExcluded:(id)arg1 hints:(struct _TMRulesQueryHints *)arg2;
 - (void)dealloc;
 - (id)initWithDisk:(id)arg1 baseFilter:(id)arg2 customExclusionsFilter:(id)arg3 spotlightOracle:(id)arg4;

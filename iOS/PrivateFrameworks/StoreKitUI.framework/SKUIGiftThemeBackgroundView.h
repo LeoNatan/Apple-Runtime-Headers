@@ -8,6 +8,7 @@
 
 @class UIScrollView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftThemeBackgroundView : UIView
 {
     UIScrollView *_scrollView;

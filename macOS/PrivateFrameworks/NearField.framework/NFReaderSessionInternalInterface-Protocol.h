@@ -7,16 +7,12 @@
 #import <NearField/NFReaderSessionInterface-Protocol.h>
 
 @class NSArray, NSData, NSDictionary;
-@protocol NFNdefMessage;
 
 @protocol NFReaderSessionInternalInterface <NFReaderSessionInterface>
 - (oneway void)felicaRequestService:(NSArray *)arg1 callback:(void (^)(NSArray *, NSError *))arg2;
 - (oneway void)execRemoteAdminScript:(NSDictionary *)arg1 callback:(void (^)(NSDictionary *, unsigned long long, double, NSError *))arg2;
 - (oneway void)felicaStateForSystemCode:(NSData *)arg1 withRequestService:(NSArray *)arg2 withBlockReadList:(NSArray *)arg3 performSearchServiceCode:(BOOL)arg4 callback:(void (^)(NSDictionary *, NSError *))arg5;
-- (oneway void)ndefWrite:(id <NFNdefMessage>)arg1 callback:(void (^)(NSError *))arg2;
-- (oneway void)ndefRead:(void (^)(NSError *, id <NFNdefMessage>))arg1;
 - (oneway void)formatNdefWithKey:(NSData *)arg1 callback:(void (^)(NSError *))arg2;
-- (oneway void)checkNdefSupport:(void (^)(NSError *, BOOL, BOOL))arg1;
 - (oneway void)startPollingForTechnology:(unsigned int)arg1 callback:(void (^)(NSError *))arg2;
 @end
 

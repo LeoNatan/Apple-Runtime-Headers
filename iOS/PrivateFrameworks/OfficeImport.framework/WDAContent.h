@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <OfficeImport/OADClient-Protocol.h>
+#import <OfficeImport/OADLinkedTextClient-Protocol.h>
 #import <OfficeImport/OADTextClient-Protocol.h>
 
 @class NSString, OADDrawable, WDAAnchor, WDATextBox;
 
 __attribute__((visibility("hidden")))
-@interface WDAContent : NSObject <OADClient, OADTextClient>
+@interface WDAContent : NSObject <OADClient, OADTextClient, OADLinkedTextClient>
 {
     WDAAnchor *mAnchor;
     WDATextBox *mTextBox;
@@ -22,16 +23,18 @@ __attribute__((visibility("hidden")))
 
 + (Class)classForType:(unsigned short)arg1;
 @property(readonly, nonatomic) WDAAnchor *anchor; // @synthesize anchor=mAnchor;
+@property __weak OADDrawable *drawable; // @synthesize drawable=mDrawable;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)hasText;
+- (_Bool)isLinked;
+- (unsigned long long)linkedTextBoxSupport;
 - (_Bool)floating;
 - (void)setTextType:(int)arg1;
 - (int)textType;
 - (_Bool)isTopLevelObject;
 - (_Bool)isLine;
 - (_Bool)isShape;
-- (void)setDrawable:(id)arg1;
-- (id)drawable;
 - (void)setTextBox:(id)arg1 document:(id)arg2;
 - (id)textBox;
 - (void)setBounds:(struct CGRect)arg1;
@@ -40,7 +43,6 @@ __attribute__((visibility("hidden")))
 - (id)createTextBoxWithDocument:(id)arg1 textType:(int)arg2;
 - (void)clearAnchor;
 - (id)createAnchor;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

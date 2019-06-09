@@ -8,11 +8,12 @@
 
 #import <AutoBugCaptureCore/ABCPersistentStoreControllerDelegate-Protocol.h>
 
-@class ABCConfigurationManager, ABCPersistentStoreController, AutoBugCaptureCacheDelete, DiagCollectionTransport, DiagnosticCaseManager, DiagnosticExtensionController, DiagnosticLiaison, DiagnosticStorageManager, DiagnosticsTransport, NSString;
+@class ABCConfigurationManager, ABCPersistentStoreController, AutoBugCaptureCacheDelete, CloudKitUploadController, DiagCollectionTransport, DiagnosticCaseManager, DiagnosticExtensionController, DiagnosticLiaison, DiagnosticStorageManager, DiagnosticsTransport, NSString;
 @protocol OS_dispatch_queue;
 
 @interface ABCAdministrator : NSObject <ABCPersistentStoreControllerDelegate>
 {
+    CloudKitUploadController *_uploadController;
     NSObject<OS_dispatch_queue> *adminQueue;
     DiagCollectionTransport *diagCollectionTransport;
     DiagnosticsTransport *diagTransport;
@@ -28,8 +29,6 @@
 }
 
 + (id)sharedInstance;
-@property(nonatomic) int autoBugCaptureState; // @synthesize autoBugCaptureState=_autoBugCaptureState;
-@property(readonly, nonatomic) BOOL autoBugCaptureAdministrativelyEnabled; // @synthesize autoBugCaptureAdministrativelyEnabled=_autoBugCaptureAdministrativelyEnabled;
 @property(retain, nonatomic) DiagnosticLiaison *diagnosticLiaison; // @synthesize diagnosticLiaison=_diagnosticLiaison;
 @property(retain, nonatomic) ABCConfigurationManager *configurationManager; // @synthesize configurationManager=_configurationManager;
 @property(retain, nonatomic) ABCPersistentStoreController *storeController; // @synthesize storeController=_storeController;
@@ -37,6 +36,9 @@
 @property(retain, nonatomic) DiagnosticExtensionController *diagExtensionController; // @synthesize diagExtensionController=_diagExtensionController;
 @property(retain, nonatomic) DiagnosticStorageManager *storageManager; // @synthesize storageManager=_storageManager;
 @property(retain, nonatomic) DiagnosticCaseManager *caseManager; // @synthesize caseManager=_caseManager;
+@property(readonly, nonatomic) BOOL autoBugCaptureAdministrativelyEnabled; // @synthesize autoBugCaptureAdministrativelyEnabled=_autoBugCaptureAdministrativelyEnabled;
+@property(nonatomic) int autoBugCaptureState; // @synthesize autoBugCaptureState=_autoBugCaptureState;
+@property(retain, nonatomic) CloudKitUploadController *ckUploadController; // @synthesize ckUploadController=_uploadController;
 - (void).cxx_destruct;
 - (void)shutdownAgent;
 - (void)startupAgent;
@@ -54,6 +56,8 @@
 - (void)startAutoBugCaptureAdministrative:(BOOL)arg1;
 - (void)administrativelyDiableAutoBugCapture;
 - (void)administrativelyEnableAutoBugCapture;
+- (void)stopUploadTaskScheduler;
+- (void)startUploadTaskScheduler;
 - (void)scheduleDiagnosticsMaintenanceActivity;
 - (void)stopMaintenanceServices;
 - (void)startMaintenanceServices;

@@ -28,6 +28,7 @@
     NSSet *_associatedApplicationIdentifiers;
     NSSet *_associatedWebDomains;
     NSString *_sanitizedPrimaryAccountNumber;
+    NSString *_associatedAccountServiceAccountIdentifier;
     NSString *_issuerCountryCode;
     NSSet *_paymentApplications;
     NSSet *_devicePaymentApplications;
@@ -70,6 +71,7 @@
 @property(nonatomic) _Bool supportsSerialNumberBasedProvisioning; // @synthesize supportsSerialNumberBasedProvisioning=_supportsSerialNumberBasedProvisioning;
 @property(copy, nonatomic) NSString *issuerCountryCode; // @synthesize issuerCountryCode=_issuerCountryCode;
 @property(nonatomic) _Bool supportsPeerPayment; // @synthesize supportsPeerPayment=_supportsPeerPayment;
+@property(copy, nonatomic) NSString *associatedAccountServiceAccountIdentifier; // @synthesize associatedAccountServiceAccountIdentifier=_associatedAccountServiceAccountIdentifier;
 @property(nonatomic) _Bool hasAssociatedPeerPaymentAccount; // @synthesize hasAssociatedPeerPaymentAccount=_hasAssociatedPeerPaymentAccount;
 @property(nonatomic) _Bool supportsDefaultCardSelection; // @synthesize supportsDefaultCardSelection=_supportsDefaultCardSelection;
 @property(nonatomic) _Bool supportsFPANNotifications; // @synthesize supportsFPANNotifications=_supportsFPANNotifications;
@@ -81,12 +83,14 @@
 @property(copy, nonatomic) NSString *primaryAccountNumberSuffix; // @synthesize primaryAccountNumberSuffix=_primaryAccountNumberSuffix;
 @property(copy, nonatomic) NSString *primaryAccountIdentifier; // @synthesize primaryAccountIdentifier=_primaryAccountIdentifier;
 - (void).cxx_destruct;
+- (_Bool)isContactlessPaymentSupportedForTransitNetworks:(id)arg1;
 - (_Bool)shouldSuppressNoChargeAmount;
 - (id)sortedPaymentApplications:(id)arg1 ascending:(_Bool)arg2;
 - (id)_launchURLForPassAction:(id)arg1;
 - (id)addValueURL;
 - (id)felicaProperties;
 @property(readonly, copy, nonatomic) PKTransitPassProperties *transitProperties;
+@property(readonly, nonatomic) NSArray *upgradeRequests;
 - (id)notificationCenterTitle;
 @property(readonly, nonatomic) _Bool supportsOnlyTransit;
 - (id)_localizedSuspendedReasonForAID:(id)arg1;
@@ -105,6 +109,7 @@
 @property(readonly) __weak NSString *deviceAccountIdentifier;
 - (_Bool)availableForAutomaticPresentationUsingBeaconContext;
 - (_Bool)availableForAutomaticPresentationUsingVASContext;
+- (_Bool)shouldIgnoreTransactionUpdatesSwitch;
 - (_Bool)isSuicaPass;
 - (_Bool)isTransitPass;
 - (_Bool)isAccessPass;

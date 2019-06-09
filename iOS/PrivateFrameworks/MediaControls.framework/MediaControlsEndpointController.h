@@ -12,6 +12,7 @@
 @class MPAVEndpointRoute, MPAVRoutingController, MPCPlayerPath, MPCPlayerResponse, MPMediaControlsConfiguration, MPRequestResponseController, NSArray, NSString;
 @protocol MediaControlsEndpointControllerConnectionDelegate, MediaControlsEndpointControllerDelegate, MediaControlsEndpointObserverDelegate;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsEndpointController : NSObject <MPRequestResponseControllerDelegate, MPAVRoutingControllerDelegate>
 {
     _Bool _allowsAutomaticResponseLoading;
@@ -56,6 +57,7 @@
 - (void)_initRoutingController;
 - (void)_createRequestController;
 - (void)_connectionHasBecomeInvalid;
+- (_Bool)controller:(id)arg1 shouldRetryFailedRequestWithError:(id)arg2;
 - (void)controller:(id)arg1 defersResponseReplacement:(CDUnknownBlockType)arg2;
 - (void)updateRoutePropertiesIfNeeded;
 - (void)launchNowPlayingApp;

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (void)load;
 - (void)_xref_dispose;
+- (oneway void)release;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

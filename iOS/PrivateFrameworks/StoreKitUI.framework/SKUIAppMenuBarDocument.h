@@ -10,6 +10,7 @@
 
 @class IKAppContext, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAppMenuBarDocument : IKAppMenuBarDocument <SKUIDOMFeature>
 {
 }

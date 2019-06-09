@@ -10,9 +10,7 @@
 
 @interface NSOperation : NSObject
 {
-    id _private;
-    int _private1;
-    int _private1b;
+    // Error parsing type: {?="__prevOp"@"NSOperation""__nextOp"@"NSOperation""__nextPriOp"@"NSOperation""__queue"@"NSOperationQueue""__dependencies"@"NSMutableArray""__down_dependencies"@"NSHashTable""__unfinished_deps"q"__completion"@?"__obsInfo"^v"__implicitObsInfo"^v"__thread_prio"d"__nameBuffer"*"_voucher"@"NSObject<OS_voucher>""__schedule"@?"__wait_mutex"{_opaque_pthread_mutex_t="__sig"q"__opaque"[56c]}"__wait_cond"{_opaque_pthread_cond_t="__sig"q"__opaque"[40c]}"__lock"{os_unfair_lock_s="_os_unfair_lock_opaque"I}"_shouldRemoveDependenciesAfterFinish"B"__state"AC"__prio"c"__cached_isReady"AB"__isCancelled"AB"__propertyQoS"AC"__isExecutingObserverCount"AC"__isFinishedObserverCount"AC"__isReadyObserverCount"AC"__isCancelledObserverCount"AC}, name: _iop
 }
 
 + (_Bool)_removesDependenciesAfterFinish;
@@ -30,7 +28,6 @@
 - (id)debugDescription;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
-- (id)_activity;
 - (id)description;
 - (void)start;
 - (void)main;

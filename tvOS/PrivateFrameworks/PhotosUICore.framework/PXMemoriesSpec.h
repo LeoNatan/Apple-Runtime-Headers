@@ -16,7 +16,7 @@
     struct UIColor *_feedBackgroundColor;
     struct UIColor *_selectionHighlightColor;
     long long _feedHeroPosition;
-    long long _feedScrollDirection;
+    long long _feedAxis;
     unsigned long long _feedMemoriesPerRow;
     double _feedEntryHeaderHeight;
     double _firstFeedEntryHeaderHeight;
@@ -24,8 +24,6 @@
     double _feedInteritemSpacing;
     long long _idiom;
     double _feedHeroImageAspectRatio;
-    double _favoriteBadgeHeight;
-    double _favoriteBadgeInset;
     double _feedAdditionalContentThreshold;
     struct UIFont *_tabTitleFont;
     struct UIColor *_tabTitleTextColor;
@@ -36,11 +34,15 @@
     double _orbPreviewSize;
     unsigned long long __style;
     double __displayScale;
+    double __columnWidth;
+    struct CGSize _favoriteBadgeSize;
     struct CGPoint _highlightedSectionHeaderOffset;
     struct CGPoint _borderOffset;
     struct UIEdgeInsets _feedEntryEdgeInsets;
+    struct UIEdgeInsets _favoriteBadgeInset;
 }
 
+@property(readonly, nonatomic) double _columnWidth; // @synthesize _columnWidth=__columnWidth;
 @property(readonly, nonatomic) double _displayScale; // @synthesize _displayScale=__displayScale;
 @property(readonly, nonatomic) unsigned long long _style; // @synthesize _style=__style;
 @property(readonly, nonatomic) double orbPreviewSize; // @synthesize orbPreviewSize=_orbPreviewSize;
@@ -54,8 +56,8 @@
 @property(readonly, nonatomic) double feedAdditionalContentThreshold; // @synthesize feedAdditionalContentThreshold=_feedAdditionalContentThreshold;
 @property(readonly, nonatomic) _Bool shouldRemoveHighlightOnScroll; // @synthesize shouldRemoveHighlightOnScroll=_shouldRemoveHighlightOnScroll;
 @property(readonly, nonatomic) struct CGPoint highlightedSectionHeaderOffset; // @synthesize highlightedSectionHeaderOffset=_highlightedSectionHeaderOffset;
-@property(readonly, nonatomic) double favoriteBadgeInset; // @synthesize favoriteBadgeInset=_favoriteBadgeInset;
-@property(readonly, nonatomic) double favoriteBadgeHeight; // @synthesize favoriteBadgeHeight=_favoriteBadgeHeight;
+@property(readonly, nonatomic) struct UIEdgeInsets favoriteBadgeInset; // @synthesize favoriteBadgeInset=_favoriteBadgeInset;
+@property(readonly, nonatomic) struct CGSize favoriteBadgeSize; // @synthesize favoriteBadgeSize=_favoriteBadgeSize;
 @property(readonly, nonatomic) _Bool alwaysShowFavoritesBadge; // @synthesize alwaysShowFavoritesBadge=_alwaysShowFavoritesBadge;
 @property(readonly, nonatomic) double feedHeroImageAspectRatio; // @synthesize feedHeroImageAspectRatio=_feedHeroImageAspectRatio;
 @property(readonly, nonatomic) long long idiom; // @synthesize idiom=_idiom;
@@ -66,7 +68,7 @@
 @property(readonly, nonatomic) _Bool feedShouldAllowHeaders; // @synthesize feedShouldAllowHeaders=_feedShouldAllowHeaders;
 @property(readonly, nonatomic) struct UIEdgeInsets feedEntryEdgeInsets; // @synthesize feedEntryEdgeInsets=_feedEntryEdgeInsets;
 @property(readonly, nonatomic) unsigned long long feedMemoriesPerRow; // @synthesize feedMemoriesPerRow=_feedMemoriesPerRow;
-@property(readonly, nonatomic) long long feedScrollDirection; // @synthesize feedScrollDirection=_feedScrollDirection;
+@property(readonly, nonatomic) long long feedAxis; // @synthesize feedAxis=_feedAxis;
 @property(readonly, nonatomic) long long feedHeroPosition; // @synthesize feedHeroPosition=_feedHeroPosition;
 @property(readonly, nonatomic) UIColor *selectionHighlightColor; // @synthesize selectionHighlightColor=_selectionHighlightColor;
 @property(readonly, nonatomic) UIColor *feedBackgroundColor; // @synthesize feedBackgroundColor=_feedBackgroundColor;

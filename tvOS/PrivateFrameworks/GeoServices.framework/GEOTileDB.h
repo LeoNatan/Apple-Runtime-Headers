@@ -6,8 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GEOCountryConfiguration, GEOResourceManifestManager, GEOSQLiteDB, NSMutableDictionary, NSString, _GEOTileDBWriteQueue;
-@protocol OS_dispatch_queue;
+@class GEOCountryConfiguration, GEOResourceManifestManager, GEOSQLiteDB, NSMutableDictionary, NSString, NSURL, _GEOTileDBWriteQueue, geo_isolater;
 
 @interface GEOTileDB : NSObject
 {
@@ -18,7 +17,7 @@
     _Bool _tileDataSizeIsValid;
     GEOCountryConfiguration *_countryConfiguration;
     GEOResourceManifestManager *_manifestManager;
-    NSObject<OS_dispatch_queue> *_infrequentlyChangingMetadataQueue;
+    geo_isolater *_infrequentlyChangingMetadataIsolater;
     CDStruct_e4886f83 *_expirationRecords;
     unsigned long long _expirationRecordsCount;
     _Bool _preloading;
@@ -26,9 +25,13 @@
     NSString *_devicePostureCountry;
     NSString *_devicePostureRegion;
     NSMutableDictionary *_editionsMap;
+    NSURL *_baseDirectory;
+    NSURL *_externalDataDirectory;
 }
 
 - (void).cxx_destruct;
+- (void)enumerateAllKeysIncludingData:(_Bool)arg1 onQueue:(id)arg2 group:(id)arg3 dataHandler:(CDUnknownBlockType)arg4;
+- (void)_enumerateAllKeysOnQueueIncludingData:(_Bool)arg1 dataHandler:(CDUnknownBlockType)arg2 callbackQueue:(id)arg3;
 - (void)_evictVeryOldTiles;
 - (void)evictVeryOldTilesWithGroup:(id)arg1;
 - (void)_invalidateAllTileData;
@@ -52,6 +55,7 @@
 - (void)addData:(id)arg1 forKey:(const struct _GEOTileKey *)arg2 edition:(unsigned int)arg3 set:(unsigned int)arg4 provider:(unsigned int)arg5 etag:(id)arg6 reason:(unsigned char)arg7;
 - (void)dataForKeys:(id)arg1 reason:(unsigned char)arg2 group:(id)arg3 callbackQueue:(id)arg4 dataHandler:(CDUnknownBlockType)arg5;
 - (_Bool)_dataForKeyOnDBQueue:(const struct _GEOTileKey *)arg1 reason:(unsigned char)arg2 callbackQueue:(id)arg3 dataHandler:(CDUnknownBlockType)arg4;
+- (unsigned long long)calculateFreeableSizeSync;
 - (void)calculateFreeableSizeWithQueue:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (unsigned long long)_shrinkBySizeSlow:(unsigned long long)arg1;
 - (unsigned long long)_shrinkBySize:(unsigned long long)arg1;
@@ -60,6 +64,8 @@
 - (void)_decrementCalculatedTileDataSize:(unsigned long long)arg1;
 - (void)_incrementCalculatedTileDataSize:(unsigned long long)arg1;
 - (unsigned long long)_allTileDataSize;
+- (unsigned long long)shrinkBySizeSync:(unsigned long long)arg1;
+- (unsigned long long)shrinkToSizeSync:(unsigned long long)arg1;
 - (void)shrinkBySize:(unsigned long long)arg1 queue:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)shrinkToSize:(unsigned long long)arg1 queue:(id)arg2 finished:(CDUnknownBlockType)arg3;
 - (void)endPreloadSession;
@@ -72,13 +78,14 @@
 - (void)_countryChanged:(id)arg1;
 - (void)_deviceLocked:(id)arg1;
 - (void)_localeChanged:(id)arg1;
+- (void)_cleanUpOrphanedExternalResources;
 - (void)_performInTransaction:(CDUnknownBlockType)arg1;
 - (void)_performOnDBQueue:(CDUnknownBlockType)arg1;
 - (_Bool)_setup:(id)arg1;
 - (id)_setupDB:(id)arg1;
 - (void)tearDown;
-- (id)initWithDBFilePath:(id)arg1 manifestManager:(id)arg2 countryConfiguration:(id)arg3 maximumDatabaseSize:(unsigned long long)arg4;
-- (id)initWithDBFilePath:(id)arg1;
+- (id)initWithBaseDirectory:(id)arg1 manifestManager:(id)arg2 countryConfiguration:(id)arg3 maximumDatabaseSize:(unsigned long long)arg4;
+- (id)initWithBaseDirectory:(id)arg1;
 - (id)init;
 
 @end

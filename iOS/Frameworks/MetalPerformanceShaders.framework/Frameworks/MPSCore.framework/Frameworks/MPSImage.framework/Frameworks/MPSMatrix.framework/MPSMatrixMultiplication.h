@@ -36,10 +36,10 @@
 @property(nonatomic) unsigned long long K; // @synthesize K=_K;
 @property(nonatomic) unsigned long long N; // @synthesize N=_N;
 @property(nonatomic) unsigned long long M; // @synthesize M=_M;
-@property(readonly, nonatomic) double beta; // @synthesize beta=_beta;
-@property(readonly, nonatomic) double alpha; // @synthesize alpha=_alpha;
-@property(readonly, nonatomic) _Bool transB; // @synthesize transB=_transB;
-@property(readonly, nonatomic) _Bool transA; // @synthesize transA=_transA;
+@property(nonatomic) double beta; // @synthesize beta=_beta;
+@property(nonatomic) double alpha; // @synthesize alpha=_alpha;
+@property(nonatomic) _Bool transB; // @synthesize transB=_transB;
+@property(nonatomic) _Bool transA; // @synthesize transA=_transA;
 @property(nonatomic) unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property(nonatomic) unsigned long long batchStart; // @synthesize batchStart=_batchStart;
 @property(nonatomic) CDStruct_67e7699a rightMatrixOrigin; // @synthesize rightMatrixOrigin=_rightMatrixOrigin;

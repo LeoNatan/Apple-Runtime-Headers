@@ -8,13 +8,12 @@
 
 #import <VectorKit/GEOResourceManifestTileGroupObserver-Protocol.h>
 
-@class GEOResourceManifestConfiguration, NSString;
+@class NSString;
 
 __attribute__((visibility("hidden")))
 @interface VKStylesheetVendorResourceManifestTileGroupObserverProxy : NSObject <GEOResourceManifestTileGroupObserver>
 {
     struct weak_ptr<md::StylesheetVendor> _vendor;
-    GEOResourceManifestConfiguration *_manifestConfiguration;
 }
 
 - (id).cxx_construct;
@@ -22,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (void)dealloc;
-- (id)initWithStylesheetVendor:(shared_ptr_dd2d1f5e)arg1 manifestConfiguration:(id)arg2;
+- (id)initWithStylesheetVendor:(shared_ptr_dd2d1f5e)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

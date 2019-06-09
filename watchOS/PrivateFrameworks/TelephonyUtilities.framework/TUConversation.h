@@ -24,6 +24,7 @@
     NSSet *_remoteMembers;
     NSSet *_activeRemoteParticipants;
     int _avcSessionToken;
+    NSString *_avcSessionIdentifier;
     NSUUID *_messagesGroupUUID;
     TUHandle *_initiator;
     NSString *_messagesGroupName;
@@ -41,6 +42,7 @@
 @property(copy, nonatomic) NSString *messagesGroupName; // @synthesize messagesGroupName=_messagesGroupName;
 @property(retain, nonatomic) TUHandle *initiator; // @synthesize initiator=_initiator;
 @property(retain, nonatomic) NSUUID *messagesGroupUUID; // @synthesize messagesGroupUUID=_messagesGroupUUID;
+@property(copy, nonatomic) NSString *avcSessionIdentifier; // @synthesize avcSessionIdentifier=_avcSessionIdentifier;
 @property(nonatomic) int avcSessionToken; // @synthesize avcSessionToken=_avcSessionToken;
 @property(copy, nonatomic) NSSet *activeRemoteParticipants; // @synthesize activeRemoteParticipants=_activeRemoteParticipants;
 @property(copy, nonatomic) NSSet *remoteMembers; // @synthesize remoteMembers=_remoteMembers;

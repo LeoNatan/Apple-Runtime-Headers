@@ -9,7 +9,7 @@
 #import <CloudDocsDaemon/NSCopying-Protocol.h>
 #import <CloudDocsDaemon/NSSecureCoding-Protocol.h>
 
-@class BRFieldCKInfo, NSData, NSNumber, NSSet, NSString;
+@class BRCUserRowID, BRFieldCKInfo, NSData, NSNumber, NSSet, NSString;
 
 @interface BRCVersion : NSObject <NSCopying, NSSecureCoding>
 {
@@ -24,6 +24,7 @@
     NSData *_quarantineInfo;
     NSSet *_conflictLoserEtags;
     NSData *_lazyXattr;
+    NSNumber *_editedSinceShared;
     NSNumber *_lastEditorDeviceOrUserRowID;
     NSString *_lastEditorDeviceName;
 }
@@ -32,6 +33,7 @@
 @property(retain, nonatomic) NSData *quarantineInfo; // @synthesize quarantineInfo=_quarantineInfo;
 @property(retain, nonatomic) NSString *lastEditorDeviceName; // @synthesize lastEditorDeviceName=_lastEditorDeviceName;
 @property(retain, nonatomic) NSNumber *lastEditorDeviceOrUserRowID; // @synthesize lastEditorDeviceOrUserRowID=_lastEditorDeviceOrUserRowID;
+@property(retain, nonatomic) NSNumber *editedSinceShared; // @synthesize editedSinceShared=_editedSinceShared;
 @property(retain, nonatomic) NSData *lazyXattr; // @synthesize lazyXattr=_lazyXattr;
 @property(retain, nonatomic) NSData *xattrSignature; // @synthesize xattrSignature=_xattrSignature;
 @property(retain, nonatomic) NSSet *conflictLoserEtags; // @synthesize conflictLoserEtags=_conflictLoserEtags;
@@ -59,10 +61,10 @@
 - (id)description;
 - (id)descriptionWithContext:(id)arg1;
 - (id)displayNameWithoutExtension:(_Bool)arg1;
-- (id)lastEditorDisplayNameWithDB:(id)arg1;
+- (id)lastEditorNameComponentsWithDB:(id)arg1;
 - (id)lastEditorUserIdentityWithDB:(id)arg1;
 - (id)lastEditorDeviceDisplayNameWithDB:(id)arg1;
-@property(retain, nonatomic) NSNumber *lastEditorRowID;
+@property(retain, nonatomic) BRCUserRowID *lastEditorRowID;
 @property(retain, nonatomic) NSNumber *lastEditorDeviceRowID;
 - (_Bool)_hasLastEditorRowID;
 - (_Bool)_hasLastEditorDeviceRowID;

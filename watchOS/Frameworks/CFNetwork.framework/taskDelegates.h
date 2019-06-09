@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface taskDelegates : NSObject <NSURLSessionTaskDelegate>
 {
     _Bool _didRedirect;

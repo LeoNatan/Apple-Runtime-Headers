@@ -9,6 +9,8 @@
 @class IDSStunCandidatePair, NSDictionary;
 
 @protocol IDSStunCandidatePairDelegate <NSObject>
+- (void)sendAllocbindRequest:(IDSStunCandidatePair *)arg1 isRealloc:(_Bool)arg2 inResponseToNoSessionState:(_Bool)arg3;
+- (void)disconnectCandidatePair:(IDSStunCandidatePair *)arg1;
 - (void)candidatePair:(IDSStunCandidatePair *)arg1 didAddQREvent:(NSDictionary *)arg2;
 - (void)candidatePair:(IDSStunCandidatePair *)arg1 didReceiveStunErrorResponse:(long long)arg2 errorCode:(unsigned short)arg3;
 - (void)candidatePair:(IDSStunCandidatePair *)arg1 didReceiveSessionInfo:(NSDictionary *)arg2 success:(_Bool)arg3;

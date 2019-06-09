@@ -11,15 +11,16 @@
 @interface NEVPNApp : NEVPN
 {
     _Bool _noRestriction;
+    _Bool _restrictDomains;
     NSArray *_appRules;
-    long long _tunnelType;
 }
 
 + (_Bool)supportsSecureCoding;
+@property _Bool restrictDomains; // @synthesize restrictDomains=_restrictDomains;
 @property _Bool noRestriction; // @synthesize noRestriction=_noRestriction;
-@property long long tunnelType; // @synthesize tunnelType=_tunnelType;
 @property(copy) NSArray *appRules; // @synthesize appRules=_appRules;
 - (void).cxx_destruct;
+- (void)updateAppRulesForUID:(unsigned int)arg1;
 - (_Bool)installSigningIdentifiersWithFlowDivertControlSocket:(int)arg1;
 - (id)copyUniqueSigningIdentifiers;
 - (id)copyAppRuleIDs;

@@ -25,7 +25,6 @@
 @property(nonatomic) unsigned long long minimumCharacterPixelHeight;
 @property(copy, nonatomic) NSString *textRecognition;
 @property(nonatomic) unsigned long long algorithm;
-- (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
 
 @end

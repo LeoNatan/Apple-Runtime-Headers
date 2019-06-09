@@ -8,16 +8,22 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBUnknownFields;
+
 @interface GEOTransitSectionOption : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
     CDStruct_9f2792e4 _sections;
     unsigned int _defaultSectionIndex;
     struct {
-        unsigned int defaultSectionIndex:1;
-    } _has;
+        unsigned int has_defaultSectionIndex:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int defaultSectionIndex; // @synthesize defaultSectionIndex=_defaultSectionIndex;
++ (BOOL)isValid:(id)arg1;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -25,9 +31,11 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasDefaultSectionIndex;
+@property(nonatomic) unsigned int defaultSectionIndex;
 - (void)setSections:(unsigned int *)arg1 count:(unsigned long long)arg2;
 - (unsigned int)sectionAtIndex:(unsigned long long)arg1;
 - (void)addSection:(unsigned int)arg1;

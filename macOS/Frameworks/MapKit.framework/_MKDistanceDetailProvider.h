@@ -20,7 +20,7 @@
 }
 
 + (BOOL)infoAvailable;
-@property(copy) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
+@property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 - (void).cxx_destruct;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
@@ -35,7 +35,7 @@
 - (void)dealloc;
 - (void)endUpdates;
 - (void)beginUpdateWithHandler:(CDUnknownBlockType)arg1;
-@property(retain) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
+@property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

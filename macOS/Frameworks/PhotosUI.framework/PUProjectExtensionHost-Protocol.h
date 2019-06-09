@@ -4,11 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUExtensionHost-Protocol.h>
-
 @class NSProgress, NSString, NSURL, PHProjectInfo;
 
-@protocol PUProjectExtensionHost <PUExtensionHost>
+@protocol PUProjectExtensionHost
 - (void)performDragOperationWithPasteboardNamed:(NSString *)arg1 draggingSequenceNumber:(long long)arg2;
 - (NSProgress *)updateProjectInfo:(PHProjectInfo *)arg1 forProject:(NSString *)arg2 completion:(void (^)(PHProjectInfo *))arg3;
 - (void)showEditorForAssetWithLocalIdentifier:(NSString *)arg1;

@@ -20,7 +20,7 @@
 - (id)initWithMetrics:(id)arg1;
 
 // Remaining properties
-@property(readonly, copy, nonatomic) PXMemoriesFeedWidgetLayoutMetrics *metrics; // @dynamic metrics;
+@property(copy, nonatomic) PXMemoriesFeedWidgetLayoutMetrics *metrics; // @dynamic metrics;
 
 @end
 

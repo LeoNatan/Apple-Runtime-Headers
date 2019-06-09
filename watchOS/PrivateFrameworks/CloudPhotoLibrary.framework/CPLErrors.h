@@ -12,6 +12,7 @@
 
 + (id)errorsForIdentifiers:(id)arg1 error:(id)arg2;
 + (id)unsafeResources:(id)arg1 withError:(id)arg2 resourceStorage:(id)arg3;
++ (id)sessionHasBeenDeferredError;
 + (id)missingError;
 + (id)cplErrorWithCode:(int)arg1 underlyingError:(id)arg2 userInfo:(id)arg3 description:(id)arg4 arguments:(char *)arg5;
 + (id)cplErrorWithCode:(int)arg1 underlyingError:(id)arg2 userInfo:(id)arg3 description:(id)arg4;
@@ -26,6 +27,7 @@
 + (id)invalidClientCacheErrorWithReason:(id)arg1;
 + (id)libraryClosedError;
 + (id)transportErrorFromTransportError:(id)arg1;
++ (id)readOnlyError;
 + (id)unknownPrimaryScope;
 + (id)invalidScopeErrorWithScopeIndex:(int)arg1;
 + (id)invalidScopeErrorWithScopeIdentifier:(id)arg1;

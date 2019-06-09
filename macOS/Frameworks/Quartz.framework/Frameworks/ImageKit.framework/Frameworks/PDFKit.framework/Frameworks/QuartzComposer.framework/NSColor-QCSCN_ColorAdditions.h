@@ -7,7 +7,9 @@
 #import <AppKit/NSColor.h>
 
 @interface NSColor (QCSCN_ColorAdditions)
++ (id)colorWithC3DColor4:(const struct C3DColor4 *)arg1;
 - (BOOL)QCSCN_ColorGetRed:(float *)arg1 green:(float *)arg2 blue:(float *)arg3 alpha:(float *)arg4;
 - (BOOL)QCSCN_GetComponentsRed:(double *)arg1 green:(double *)arg2 blue:(double *)arg3 alpha:(double *)arg4;
+- (BOOL)colorToC3DColor4:(struct C3DColor4 *)arg1;
 @end
 

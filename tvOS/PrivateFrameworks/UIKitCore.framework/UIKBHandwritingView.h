@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSMutableArray, NSMutableSet, NSString, UIBezierPath, UIKBHandwritingBezierPathPointFIFO, UIKBHandwritingBoxcarFilterPointFIFO, UIKBHandwritingQuadCurvePointFIFO, UIKBHandwritingStrokePointFIFO, UIKBHandwritingStrokeView;
+@class NSMutableArray, NSMutableSet, NSString, UIBezierPath, UIDelayedAction, UIImageView, UIKBHandwritingBezierPathPointFIFO, UIKBHandwritingBoxcarFilterPointFIFO, UIKBHandwritingInputSpeedModel, UIKBHandwritingQuadCurvePointFIFO, UIKBHandwritingStrokePointFIFO, UIKBHandwritingStrokeView;
 
 __attribute__((visibility("hidden")))
 @interface UIKBHandwritingView : UIKBKeyView <UIGestureRecognizerDelegate>
@@ -25,13 +25,21 @@ __attribute__((visibility("hidden")))
     UIKBHandwritingQuadCurvePointFIFO *_interpolatingFIFO;
     UIKBHandwritingBezierPathPointFIFO *_bezierPathFIFO;
     UIKBHandwritingStrokeView *_strokeView;
+    UIImageView *_snapshotView;
     NSMutableSet *_activeTouches;
+    double _pageOffset;
+    UIDelayedAction *_nextPageTimer;
+    UIKBHandwritingInputSpeedModel *_inputSpeedModel;
     CDStruct_23d8ee2f _previousPoint;
 }
 
+@property(retain, nonatomic) UIKBHandwritingInputSpeedModel *inputSpeedModel; // @synthesize inputSpeedModel=_inputSpeedModel;
+@property(retain, nonatomic) UIDelayedAction *nextPageTimer; // @synthesize nextPageTimer=_nextPageTimer;
+@property(nonatomic) double pageOffset; // @synthesize pageOffset=_pageOffset;
 @property(nonatomic) CDStruct_19cde01f previousPoint; // @synthesize previousPoint=_previousPoint;
 @property(nonatomic) _Bool initialPointPosted; // @synthesize initialPointPosted=_initialPointPosted;
 @property(retain, nonatomic) NSMutableSet *activeTouches; // @synthesize activeTouches=_activeTouches;
+@property(retain, nonatomic) UIImageView *snapshotView; // @synthesize snapshotView=_snapshotView;
 @property(retain, nonatomic) UIKBHandwritingStrokeView *strokeView; // @synthesize strokeView=_strokeView;
 @property(retain, nonatomic) UIKBHandwritingBezierPathPointFIFO *bezierPathFIFO; // @synthesize bezierPathFIFO=_bezierPathFIFO;
 @property(retain, nonatomic) UIKBHandwritingQuadCurvePointFIFO *interpolatingFIFO; // @synthesize interpolatingFIFO=_interpolatingFIFO;
@@ -62,8 +70,17 @@ __attribute__((visibility("hidden")))
 - (void)updateForKeyplane:(id)arg1 key:(id)arg2;
 - (void)setRenderConfig:(id)arg1;
 - (_Bool)shouldCache;
+- (void)startFadeOutAnimation;
+- (void)didMoveToWindow;
+- (void)pageOffsetTimerFired;
+- (void)cancelPageOffsetTimer;
+- (void)touchPageOffsetTimer;
 - (void)log;
 - (void)dealloc;
+- (void)layoutSubviews;
+- (void)displayLayer:(id)arg1;
+- (id)layerForRenderFlags:(long long)arg1;
+- (void)recreateInkMaskIfNeeded;
 - (id)initWithFrame:(struct CGRect)arg1 keyplane:(id)arg2 key:(id)arg3;
 
 // Remaining properties

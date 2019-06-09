@@ -33,5 +33,6 @@
 - (id)tsu_objectBeforeObjectIdenticalTo:(id)arg1;
 - (id)initWithInts:(int *)arg1 count:(unsigned long long)arg2;
 - (id)initWithCGFloats:(double *)arg1 count:(unsigned long long)arg2;
+- (void)appendJsonStringToString:(id)arg1;
 @end
 

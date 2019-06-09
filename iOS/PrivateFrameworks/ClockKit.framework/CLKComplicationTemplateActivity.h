@@ -10,16 +10,16 @@
 {
     long long _family;
     _Bool _hideDots;
-    double _energyPercentComplete;
-    double _briskMinutesPercentComplete;
-    double _standHoursPercentComplete;
+    double _movePercentComplete;
+    double _exercisePercentComplete;
+    double _standPercentComplete;
 }
 
 + (id)activityTemplateWithFamily:(long long)arg1;
 @property(nonatomic, getter=dotsAreHidden) _Bool hideDots; // @synthesize hideDots=_hideDots;
-@property(nonatomic) double standHoursPercentComplete; // @synthesize standHoursPercentComplete=_standHoursPercentComplete;
-@property(nonatomic) double briskMinutesPercentComplete; // @synthesize briskMinutesPercentComplete=_briskMinutesPercentComplete;
-@property(nonatomic) double energyPercentComplete; // @synthesize energyPercentComplete=_energyPercentComplete;
+@property(nonatomic) double standPercentComplete; // @synthesize standPercentComplete=_standPercentComplete;
+@property(nonatomic) double exercisePercentComplete; // @synthesize exercisePercentComplete=_exercisePercentComplete;
+@property(nonatomic) double movePercentComplete; // @synthesize movePercentComplete=_movePercentComplete;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isCompatibleWithFamily:(long long)arg1;
 - (void)_enumerateBOOLKeysWithBlock:(CDUnknownBlockType)arg1;

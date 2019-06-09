@@ -6,15 +6,15 @@
 
 #import <PhotosUICore/PXBarsController.h>
 
-#import <PhotosUICore/PXActionMenuDelegate-Protocol.h>
-#import <PhotosUICore/PXActionPerformerDelegate-Protocol.h>
+#import <PhotosUICore/PXAssetCollectionActionPerformerDelegate-Protocol.h>
 #import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXPhotosDataSourceChangeObserver-Protocol.h>
+#import <PhotosUICore/PXPhotosDetailsActionMenuDelegate-Protocol.h>
 #import <PhotosUICore/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSString, PXActionMenuController, PXActionPerformer, PXAssetActionManager, PXAssetCollectionActionManager, PXBarAppearance, PXExtendedTraitCollection, PXPhotosDataSource, PXPhotosDetailsBarSpec, PXPhotosDetailsContext, PXPhotosDetailsUIViewController, PXPhotosDetailsViewModel, PXSectionedSelectionManager, UIView;
+@class NSMutableDictionary, NSString, PXActionPerformer, PXAssetActionManager, PXAssetCollectionActionManager, PXBarAppearance, PXExtendedTraitCollection, PXPhotoDetailsActionMenuController, PXPhotosDataSource, PXPhotosDetailsBarSpec, PXPhotosDetailsContext, PXPhotosDetailsUIViewController, PXPhotosDetailsViewModel, PXSectionedSelectionManager, UIView;
 
-@interface PXPhotosDetailsBarsController : PXBarsController <PXPhotosDataSourceChangeObserver, PXChangeObserver, PXActionPerformerDelegate, PXActionMenuDelegate, UIPopoverPresentationControllerDelegate>
+@interface PXPhotosDetailsBarsController : PXBarsController <PXPhotosDataSourceChangeObserver, PXChangeObserver, PXAssetCollectionActionPerformerDelegate, PXPhotosDetailsActionMenuDelegate, UIPopoverPresentationControllerDelegate>
 {
     struct {
         _Bool assetActionManager;
@@ -29,7 +29,7 @@
     PXSectionedSelectionManager *__selectionManager;
     PXActionPerformer *__activePerformer;
     PXActionPerformer *__lastActionPerformer;
-    PXActionMenuController *__activeMenuController;
+    PXPhotoDetailsActionMenuController *__activeMenuController;
     UIView *__titleView;
     PXPhotosDetailsContext *__context;
     PXPhotosDataSource *__dataSource;
@@ -46,18 +46,19 @@
 @property(readonly, nonatomic) PXPhotosDetailsContext *_context; // @synthesize _context=__context;
 @property(nonatomic, setter=_setShowTitleView:) _Bool _showTitleView; // @synthesize _showTitleView=__showTitleView;
 @property(readonly, nonatomic) UIView *_titleView; // @synthesize _titleView=__titleView;
-@property(retain, nonatomic) PXActionMenuController *_activeMenuController; // @synthesize _activeMenuController=__activeMenuController;
+@property(retain, nonatomic) PXPhotoDetailsActionMenuController *_activeMenuController; // @synthesize _activeMenuController=__activeMenuController;
 @property(nonatomic, setter=_setLastActionPerformer:) __weak PXActionPerformer *_lastActionPerformer; // @synthesize _lastActionPerformer=__lastActionPerformer;
 @property(retain, nonatomic, setter=_setActivePerformer:) PXActionPerformer *_activePerformer; // @synthesize _activePerformer=__activePerformer;
 @property(retain, nonatomic, setter=_setSelectionManager:) PXSectionedSelectionManager *_selectionManager; // @synthesize _selectionManager=__selectionManager;
 @property(readonly, nonatomic) PXPhotosDetailsViewModel *_viewModel; // @synthesize _viewModel=__viewModel;
 @property(retain, nonatomic, setter=_setBarAppearance:) PXBarAppearance *_barAppearance; // @synthesize _barAppearance=__barAppearance;
 - (void).cxx_destruct;
-- (_Bool)actionMenu:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (_Bool)actionMenu:(id)arg1 presentViewController:(id)arg2;
-- (void)prepareForPopoverPresentation:(id)arg1;
 - (_Bool)_dismissViewControllerIfSafeAnimated:(_Bool)arg1;
+- (void)actionMenu:(id)arg1 assetCollectionActionPerformer:(id)arg2 playMovieForAssetCollection:(id)arg3;
 - (void)actionMenu:(id)arg1 actionPerformer:(id)arg2 didChangeState:(unsigned long long)arg3;
+- (_Bool)actionMenu:(id)arg1 actionPerformer:(id)arg2 dismissViewController:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (_Bool)actionMenu:(id)arg1 actionPerformer:(id)arg2 presentViewController:(id)arg3;
+- (void)prepareForPopoverPresentation:(id)arg1;
 - (_Bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)actionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (id)_sourceBarButtonItemForActionType:(id)arg1;

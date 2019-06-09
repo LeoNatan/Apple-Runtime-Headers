@@ -26,6 +26,7 @@
 - (id)_cachedPodcastSizeInfoDict;
 - (void)_setupFromCache;
 - (double)_adjustedSizeDurationRatio:(double)arg1;
+- (unsigned long long)averageEpisodeSize;
 - (unsigned long long)sizeForFeedURL:(id)arg1 duration:(double)arg2 feedProvidedSize:(unsigned long long)arg3;
 - (void)synchronize;
 - (_Bool)incrementSize:(unsigned long long)arg1 duration:(double)arg2 forFeedURL:(id)arg3;

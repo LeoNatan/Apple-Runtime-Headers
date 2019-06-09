@@ -52,6 +52,7 @@
 - (id)existingSupplementaryLayoutAttributes;
 - (id)existingSupplementaryLayoutAttributesInSection:(long long)arg1;
 - (id)layoutAttributesForCellsInRect:(struct CGRect)arg1 validateLayout:(BOOL)arg2;
+- (id)_layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForElementsInSection:(long long)arg1;
 - (id)layoutAttributesForGlobalItemIndex:(long long)arg1;
@@ -72,6 +73,7 @@
 - (long long)numberOfItemsInSection:(long long)arg1;
 - (long long)numberOfItems;
 - (long long)numberOfSections;
+- (long long *)_sectionItemCounts;
 - (BOOL)hasValidItemCounts;
 - (void)validateLayoutInRect:(struct CGRect)arg1;
 - (void)_loadEverything;

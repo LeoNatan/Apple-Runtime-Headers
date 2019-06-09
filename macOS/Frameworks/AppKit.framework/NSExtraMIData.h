@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     struct CGSize imageSize;
     NSString *userKE;
     NSString *kbdKE;
+    unsigned char kbdKEMask;
     struct CGSize cachedAttributedTitleSize;
     long long cachedAttributedTitleHeightForDrawing;
     BOOL attributedTitleHasAttachment;

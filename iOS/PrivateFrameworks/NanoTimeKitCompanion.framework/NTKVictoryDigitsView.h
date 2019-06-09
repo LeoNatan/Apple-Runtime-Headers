@@ -6,31 +6,33 @@
 
 #import <UIKit/UIView.h>
 
-@class CAGradientLayer, CLKDevice, NSString, UIColor, _AdjustableLabel;
+@class CAGradientLayer, CLKDevice, NSString, NTKVictoryLabel, UIColor;
 
 @interface NTKVictoryDigitsView : UIView
 {
     CLKDevice *_device;
-    _AdjustableLabel *_mainLabel;
-    _AdjustableLabel *_outlineBackgroundLabel;
+    NTKVictoryLabel *_label;
     _Bool _hasSetAppearance;
     CAGradientLayer *_dimmingOverlay;
     _Bool _dimIsUpper;
-    _Bool _lastDigitIs7;
+    UIColor *_color;
     double _scale;
     long long _appearance;
+    UIColor *_outlineBackgroundColor;
 }
 
-+ (id)_cachedFontForAppearance:(long long)arg1 forDevice:(id)arg2;
++ (id)_fontForAppearance:(long long)arg1 forDevice:(id)arg2;
+@property(retain, nonatomic) UIColor *outlineBackgroundColor; // @synthesize outlineBackgroundColor=_outlineBackgroundColor;
 @property(nonatomic) long long appearance; // @synthesize appearance=_appearance;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
+@property(copy, nonatomic) UIColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
-- (id)_makeLabel;
+- (id)_createLabel;
 - (void)_updateFonts;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 @property(copy, nonatomic) NSString *digitText;
-@property(copy, nonatomic) UIColor *color;
+- (void)applyColor;
 - (void)setDimmingFactor:(double)arg1 isUpper:(_Bool)arg2;
 - (void)prepareAppearance:(long long)arg1;
 - (id)initForDevice:(id)arg1;

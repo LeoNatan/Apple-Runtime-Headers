@@ -8,5 +8,6 @@
 
 @interface UIColor (PassesAdditions)
 + (id)colorWithPKColor:(id)arg1;
++ (id)npkPassbookAppColor;
 @end
 

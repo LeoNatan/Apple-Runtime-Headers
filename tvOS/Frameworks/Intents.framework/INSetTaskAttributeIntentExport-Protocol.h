@@ -7,12 +7,15 @@
 #import <Intents/JSExport-Protocol.h>
 #import <Intents/NSObject-Protocol.h>
 
-@class INSpatialEventTrigger, INTask, INTemporalEventTrigger;
+@class INContactEventTrigger, INSpatialEventTrigger, INSpeakableString, INTask, INTemporalEventTrigger;
 
 @protocol INSetTaskAttributeIntentExport <NSObject, JSExport>
+@property(copy, nonatomic) INContactEventTrigger *contactEventTrigger;
 @property(copy, nonatomic) INTemporalEventTrigger *temporalEventTrigger;
 @property(copy, nonatomic) INSpatialEventTrigger *spatialEventTrigger;
+@property(nonatomic) long long priority;
 @property(nonatomic) long long status;
+@property(copy, nonatomic) INSpeakableString *taskTitle;
 @property(copy, nonatomic) INTask *targetTask;
 - (id)init;
 @end

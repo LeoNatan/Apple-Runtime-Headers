@@ -59,6 +59,7 @@
 - (BOOL)isCompatibleWithFileType:(id)arg1;
 - (BOOL)writeMovieHeaderToURL:(id)arg1 fileType:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 - (id)movieHeaderWithFileType:(id)arg1 error:(id *)arg2;
+- (struct OpaqueFigMutableMovie *)_mutableMovieForFileType:(id)arg1;
 
 @end
 

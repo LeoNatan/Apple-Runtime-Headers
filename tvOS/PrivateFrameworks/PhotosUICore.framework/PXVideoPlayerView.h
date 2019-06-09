@@ -6,12 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class ISWrappedAVPlayer, NSArray, UIImage, UIImageView, _PXVideoView;
+@class ISWrappedAVPlayer, NSArray, PXVideoView, UIImage, UIImageView;
 @protocol PXVideoPlayerViewDelegate;
 
 @interface PXVideoPlayerView : UIView
 {
-    _PXVideoView *_videoView;
+    PXVideoView *_videoView;
     NSArray *_videoViewConstraints;
     UIImageView *_previewImageView;
     NSArray *_previewImageViewConstraints;

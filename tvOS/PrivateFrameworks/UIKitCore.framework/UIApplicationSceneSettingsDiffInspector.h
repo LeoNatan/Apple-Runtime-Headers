@@ -20,6 +20,7 @@
 - (void)observeIdleModeEnabledWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeCanShowAlertsWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeDeviceOrientationEventsEnabledWithBlock:(CDUnknownBlockType)arg1;
+- (void)observeStatusBarHeightWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeStatusBarAvoidanceFrameWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeStatusBarPartsWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeForcedStatusBarForegroundTransparentWithBlock:(CDUnknownBlockType)arg1;
@@ -27,6 +28,7 @@
 - (void)observeDeactivationReasonsWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeStatusBarStyleOverridesToSuppressWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeUnderLockWithBlock:(CDUnknownBlockType)arg1;
+- (void)observePersistenceIdentifierWithBlock:(CDUnknownBlockType)arg1;
 
 @end
 

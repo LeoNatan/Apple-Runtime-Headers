@@ -52,6 +52,7 @@ __attribute__((visibility("hidden")))
     AVCStatisticsCollector *_statisticsCollector;
     _Bool _isAudioStalled;
     unsigned int _sentAudioBytes;
+    unsigned int _encodedBytes;
     unsigned int _totalTxAudioBytes;
     unsigned int _estimateTxAudioBytes;
     unsigned int _audioFrameCounter;
@@ -90,20 +91,21 @@ __attribute__((visibility("hidden")))
     unsigned int _tierNetworkBitrate;
     _Bool _sendActiveVoiceOnly;
     double _lastReportingCallbackTime;
-    struct {
-        unsigned int averageNetworkBitrate;
-        unsigned int averageMediaBitrate;
-        double averageFramerate;
-    } _currentChannelMetrics;
+    CDStruct_3ab08b48 _currentChannelMetrics;
     CDStruct_94aa5fb4 _idsChannelDataFormat;
     unsigned int _maxIDSStreamIdCount;
     NSArray *_supportedNumRedundantPayload;
     _Bool _currentDTXEnable;
+    unsigned char _mediaControlInfoVersion;
+    _Bool _alwaysOnAudioRedundancyEnabled;
+    _Bool _cellularAllowRedLowBitratesEnabled;
+    _Bool _wifiAllowRedLowBitratesEnabled;
 }
 
+@property(nonatomic) unsigned char mediaControlInfoVersion; // @synthesize mediaControlInfoVersion=_mediaControlInfoVersion;
 @property(nonatomic, getter=isCurrentDTXEnabled) _Bool currentDTXEnable; // @synthesize currentDTXEnable=_currentDTXEnable;
 @property(nonatomic) _Bool sendActiveVoiceOnly; // @synthesize sendActiveVoiceOnly=_sendActiveVoiceOnly;
-@property(nonatomic) CDStruct_1c8e0384 currentChannelMetrics; // @synthesize currentChannelMetrics=_currentChannelMetrics;
+@property(nonatomic) CDStruct_3ab08b48 currentChannelMetrics; // @synthesize currentChannelMetrics=_currentChannelMetrics;
 @property(retain, nonatomic) NSArray *supportedNumRedundantPayload; // @synthesize supportedNumRedundantPayload=_supportedNumRedundantPayload;
 @property(nonatomic) unsigned int maxIDSStreamIdCount; // @synthesize maxIDSStreamIdCount=_maxIDSStreamIdCount;
 @property(nonatomic) int qualityIndicator; // @synthesize qualityIndicator=_qualityIndicator;
@@ -126,6 +128,7 @@ __attribute__((visibility("hidden")))
 - (void)logTierInfo:(int)arg1;
 @property(readonly, nonatomic) unsigned int redMaxDelay20ms;
 @property(readonly, nonatomic) unsigned int redNumPayloads;
+@property(readonly, nonatomic) unsigned int encodedBytes;
 @property(readonly, nonatomic) unsigned int sentAudioBytes;
 - (int)sendAudioPacket:(char *)arg1 payloadLength:(int)arg2 payloadType:(int)arg3 timestamp:(unsigned int)arg4 priority:(unsigned char)arg5 marker:(int)arg6 nextInterval:(float)arg7 padding:(char *)arg8 paddingLength:(unsigned char)arg9 sendReport:(int)arg10;
 - (int)sendAudioPacket:(struct tagAudioPacketData)arg1;

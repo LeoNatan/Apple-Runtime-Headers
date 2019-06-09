@@ -15,13 +15,19 @@
 
 + (id)_vibrancyEntryWithType:(id)arg1 inputColor1:(id)arg2 inputColor2:(id)arg3 inputReversed:(_Bool)arg4;
 + (_Bool)supportsSecureCoding;
++ (id)_effectForBlurEffect:(id)arg1 vibrancyStyle:(int)arg2;
++ (id)_effectWithStyle:(int)arg1 ignoreSimpleVibrancy:(_Bool)arg2;
++ (id)_vibrantEffectForLightMaterial:(id)arg1 darkMaterial:(id)arg2 vibrancyStyle:(int)arg3;
++ (id)_vibrantEffectWithCAColorMatrix:(struct CAColorMatrix)arg1 alpha:(float)arg2;
 + (id)_lightVibrantEffectWithDarkenColor:(id)arg1 burnColor:(id)arg2 compositingColor:(id)arg3;
 + (id)_darkVibrantEffectWithLightenColor:(id)arg1 dodgeColor:(id)arg2 compositingColor:(id)arg3;
 + (id)vibrantEffectWithCompositingMode:(int)arg1 compositingColor:(id)arg2;
 + (id)lightVibrantEffectWithBurnColor:(id)arg1 darkenColor:(id)arg2 compositingColor:(id)arg3;
 + (id)darkVibrantEffectWithDodgeColor:(id)arg1 lightenColor:(id)arg2 compositingColor:(id)arg3;
++ (id)effectForBlurEffect:(id)arg1 style:(int)arg2;
 + (id)effectForBlurEffect:(id)arg1;
 - (void).cxx_destruct;
+@property(readonly, nonatomic, getter=_vibrancyStyle) int _vibrancyStyle;
 - (int)_blurStyle;
 - (id)description;
 - (id)effectForUserInterfaceStyle:(int)arg1;
@@ -29,13 +35,14 @@
 - (_Bool)_isATVStyle;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (int)_expectedUsage;
-- (_Bool)_needsUpdateForOption:(id)arg1;
-- (_Bool)_needsUpdateForTransitionFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
-- (void)_updateEffectNode:(id)arg1 forTraitCollection:(id)arg2;
-- (id)effectConfigForOptions:(id)arg1;
+- (_Bool)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(int)arg3;
+- (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(int)arg3;
+- (id)effectConfigForReducedTransperancy:(_Bool)arg1;
 - (id)effectConfig;
 - (id)effectConfigForQuality:(int)arg1;
 - (id)_reduceTransparencyEffectConfig;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)_initWithImplementation:(id)arg1;

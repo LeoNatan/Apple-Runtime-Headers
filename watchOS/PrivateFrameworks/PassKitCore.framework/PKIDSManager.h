@@ -37,6 +37,7 @@
 @property(retain, nonatomic) NSMutableArray *pendingCancellations; // @synthesize pendingCancellations=_pendingCancellations;
 @property(nonatomic) id <PKIDSManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (void)_createThumbnailCacheDirectory;
 - (void)_populateDevicesIfNeeded;
 - (id)_remoteDevicesWithArchive;
 - (void)_archiveDevicesToDisk;

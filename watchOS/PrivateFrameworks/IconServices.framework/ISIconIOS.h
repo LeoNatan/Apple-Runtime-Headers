@@ -6,16 +6,18 @@
 
 #import <IconServices/ISIcon.h>
 
-@class LSResourceProxy;
+@class LSResourceProxy, NSArray;
 
 __attribute__((visibility("hidden")))
 @interface ISIconIOS : ISIcon
 {
+    NSArray *_decorations;
     LSResourceProxy *_resourceProxy;
 }
 
 + (id)backgroundQueue;
 @property(retain) LSResourceProxy *resourceProxy; // @synthesize resourceProxy=_resourceProxy;
+@property(copy, nonatomic) NSArray *decorations; // @synthesize decorations=_decorations;
 - (void).cxx_destruct;
 - (void)getCGImageForImageDescriptor:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (struct CGImage *)CGImageForImageDescriptor:(id)arg1;
@@ -29,10 +31,12 @@ __attribute__((visibility("hidden")))
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToIcon:(id)arg1;
+- (id)initWithResourceProxy:(id)arg1 decorations:(id)arg2;
 - (id)initWithResourceProxy:(id)arg1;
 - (id)initWithType:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithURL:(id)arg1;
+- (id)_initTransparent;
 
 @end
 

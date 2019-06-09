@@ -4,34 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NanoTimeKit/NTKFace.h>
+#import <NanoTimeKit/NTKPrideDigitalFace.h>
 
-@interface NTKPrideFace : NTKFace
+@interface NTKPrideFace : NTKPrideDigitalFace
 {
 }
-
-+ (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
-+ (_Bool)isAvailableForDevice:(id)arg1;
-+ (_Bool)isRestrictedForDevice:(id)arg1;
-+ (void)callBlockWhenFaceBecomesAvailable:(CDUnknownBlockType)arg1;
-+ (_Bool)releaseImminent;
-+ (id)releaseDate;
-+ (id)_debugReleaseDate;
-+ (void)setEnabledState:(unsigned int)arg1;
-+ (unsigned int)enabledState;
-+ (void)_setWasAvailable;
-+ (_Bool)_wasAvailable;
-- (id)_localizedNameForComplicationSlot:(id)arg1;
-- (Class)_optionClassForCustomEditMode:(int)arg1;
-- (unsigned int)_indexOfOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
-- (id)_optionAtIndex:(unsigned int)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
-- (unsigned int)_numberOfOptionsForCustomEditMode:(int)arg1 slot:(id)arg2;
-- (_Bool)_hasOptionsForCustomEditMode:(int)arg1;
-- (id)_defaultOptionForCustomEditMode:(int)arg1 slot:(id)arg2;
-- (int)_customEditModeForUniqueConfiguration;
-- (id)_customEditModes;
-- (id)_orderedComplicationSlots;
-- (id)_complicationSlotDescriptors;
 
 @end
 

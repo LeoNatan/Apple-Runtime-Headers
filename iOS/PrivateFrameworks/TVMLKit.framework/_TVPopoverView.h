@@ -8,19 +8,19 @@
 
 #import <TVMLKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, TVImageProxy, _TVButton, _TVPopoverDescriptor;
+@class NSString, TVButton, TVImageProxy, _TVPopoverDescriptor;
 
 @interface _TVPopoverView : UIView <UIGestureRecognizerDelegate>
 {
     _Bool _imageLoaded;
     _TVPopoverDescriptor *_popoverDescriptor;
-    _TVButton *_tvPopoverButton;
+    TVButton *_tvPopoverButton;
     TVImageProxy *_imageProxy;
 }
 
 @property(retain, nonatomic) TVImageProxy *imageProxy; // @synthesize imageProxy=_imageProxy;
 @property(nonatomic, getter=isImageLoaded) _Bool imageLoaded; // @synthesize imageLoaded=_imageLoaded;
-@property(retain, nonatomic) _TVButton *tvPopoverButton; // @synthesize tvPopoverButton=_tvPopoverButton;
+@property(retain, nonatomic) TVButton *tvPopoverButton; // @synthesize tvPopoverButton=_tvPopoverButton;
 @property(retain, nonatomic) _TVPopoverDescriptor *popoverDescriptor; // @synthesize popoverDescriptor=_popoverDescriptor;
 - (void).cxx_destruct;
 - (void)_popoverButtonPressed:(id)arg1;

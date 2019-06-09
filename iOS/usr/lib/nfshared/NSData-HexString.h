@@ -9,5 +9,6 @@
 @interface NSData (HexString)
 + (id)NF_dataWithHexString:(id)arg1;
 - (id)NF_asHexString;
+- (_Bool)NF_isZeroed;
 @end
 

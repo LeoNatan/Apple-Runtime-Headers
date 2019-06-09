@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADPattern.h>
 
+__attribute__((visibility("hidden")))
 @interface OADPresetPattern : OADPattern
 {
     int mType;

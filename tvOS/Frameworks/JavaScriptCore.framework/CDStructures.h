@@ -31,6 +31,8 @@ struct CGSize {
     double _field2;
 };
 
+struct CachedBytecode;
+
 struct CallbackData {
     struct CallbackData *_field1;
     id _field2;
@@ -55,6 +57,15 @@ struct JSObject {
     struct AuxiliaryBarrier<JSC::Butterfly *> _field6;
 };
 
+struct JSSourceCode {
+    unsigned int _field1;
+    unsigned char _field2;
+    unsigned char _field3;
+    unsigned char _field4;
+    unsigned char _field5;
+    struct SourceCode _field6;
+};
+
 struct JSValue {
     union EncodedValueDescriptor u;
 };
@@ -64,11 +75,52 @@ struct JSWeakValue {
     union WeakValueUnion m_value;
 };
 
+struct MappedFileData {
+    void *m_fileData;
+    unsigned int m_fileSize;
+};
+
 struct OpaqueJSValue;
+
+struct OrdinalNumber {
+    int _field1;
+};
+
+struct RefPtr<JSC::CachedBytecode, WTF::DumbPtrTraits<JSC::CachedBytecode>> {
+    struct CachedBytecode *m_ptr;
+};
 
 struct RefPtr<JSC::JSLock, WTF::DumbPtrTraits<JSC::JSLock>> {
     struct JSLock *m_ptr;
 };
+
+struct RefPtr<JSC::SourceProvider, WTF::DumbPtrTraits<JSC::SourceProvider>> {
+    struct SourceProvider *_field1;
+};
+
+struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl>> {
+    struct StringImpl *m_ptr;
+};
+
+struct RetainPtr<NSURL> {
+    void *m_ptr;
+};
+
+struct SourceCode {
+    struct RefPtr<JSC::SourceProvider, WTF::DumbPtrTraits<JSC::SourceProvider>> _field1;
+    int _field2;
+    int _field3;
+    struct OrdinalNumber _field4;
+    struct OrdinalNumber _field5;
+};
+
+struct SourceProvider;
+
+struct String {
+    struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl>> m_impl;
+};
+
+struct StringImpl;
 
 struct Strong<JSC::JSObject> {
     struct JSValue *m_slot;
@@ -94,6 +146,10 @@ struct WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id>>;
 
 struct WeakImpl;
 
+struct WeakObjCPtr<id<JSModuleLoaderDelegate>> {
+    id m_weakReference;
+};
+
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -113,6 +169,10 @@ struct unique_ptr<JSC::WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashT
 #pragma mark Typedef'd Structures
 
 // Template types
+typedef struct RefPtr<JSC::CachedBytecode, WTF::DumbPtrTraits<JSC::CachedBytecode>> {
+    struct CachedBytecode *m_ptr;
+} RefPtr_cd332c91;
+
 typedef struct pair<JSC::JSObject *, JSC::JSObject *> {
     struct JSObject *_field1;
     struct JSObject *_field2;

@@ -6,7 +6,7 @@
 
 #import <Photos/PHAssetPropertySet.h>
 
-@class NSData, NSDictionary;
+@class NSData, NSString;
 
 @interface PHAssetPhotosOneUpProperties : PHAssetPropertySet
 {
@@ -21,8 +21,10 @@
 @property(readonly, nonatomic) NSData *reverseLocationData; // @synthesize reverseLocationData=_reverseLocationData;
 @property(readonly, nonatomic) _Bool reverseLocationDataIsValid; // @synthesize reverseLocationDataIsValid=_reverseLocationDataIsValid;
 - (void).cxx_destruct;
+- (id)placeNamesForLocalizedDetailedDescriptionIsHome:(_Bool *)arg1;
 - (id)localizedGeoDescriptionIsHome:(_Bool *)arg1;
-@property(readonly, nonatomic) NSDictionary *locationAddressDictionary;
+- (id)_locationInfo;
+@property(readonly, nonatomic) NSString *addressString;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2 prefetched:(_Bool)arg3;
 
 @end

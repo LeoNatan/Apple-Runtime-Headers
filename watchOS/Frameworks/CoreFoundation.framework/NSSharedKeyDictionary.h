@@ -17,10 +17,12 @@ __attribute__((visibility("hidden")))
     CDUnknownFunctionPointerType _ifkIMP;
     NSMutableDictionary *_sideDic;
     unsigned long _mutations;
+    _Bool _doKVO;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)sharedKeyDictionaryWithKeySet:(id)arg1;
+- (void)setObservationInfo:(void *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (Class)classForCoder;

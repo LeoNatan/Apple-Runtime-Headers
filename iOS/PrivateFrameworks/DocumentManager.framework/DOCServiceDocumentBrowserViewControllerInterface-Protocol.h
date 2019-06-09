@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class FPSandboxingURLWrapper, NSArray, NSString;
+@class FPItem, FPSandboxingURLWrapper, NSArray, NSString, NSURL;
 
 @protocol DOCServiceDocumentBrowserViewControllerInterface
+- (void)getTransitionControllerForItem:(FPItem *)arg1 completionBlock:(void (^)(id <DOCServiceTransitionProtocol>))arg2;
+- (void)getTransitionControllerForURL:(NSURL *)arg1 completionBlock:(void (^)(id <DOCServiceTransitionProtocol>))arg2;
 - (void)_renameDocumentAtURL:(FPSandboxingURLWrapper *)arg1 newName:(NSString *)arg2 completion:(void (^)(FPSandboxingURLWrapper *, NSError *))arg3;
 - (void)_clearCurrentOpenInteraction;
 - (void)_dismissAllPresentedViewControllers:(_Bool)arg1 completion:(void (^)(void))arg2;
@@ -16,10 +18,11 @@
 - (void)_setAllowsDocumentCreation:(_Bool)arg1;
 - (void)_importDocumentAtURLWrapper:(FPSandboxingURLWrapper *)arg1 nextToDocumentAtURLWrapper:(FPSandboxingURLWrapper *)arg2 mode:(unsigned long long)arg3 completionHandler:(void (^)(DOCItem *, NSError *))arg4;
 - (void)_importDocumentAtURLWrapper:(FPSandboxingURLWrapper *)arg1 mode:(unsigned long long)arg2 toCurrentBrowserLocationWithCompletion:(void (^)(DOCItem *, NSError *))arg3;
+- (void)_wakeUpForKeyCommands;
+- (void)_setSceneIdentifier:(NSString *)arg1;
 - (void)_setCustomActions:(NSArray *)arg1;
 - (void)_setAdditionalTrailingNavigationBarButtonItems:(NSArray *)arg1;
 - (void)_setAdditionalLeadingNavigationBarButtonItems:(NSArray *)arg1;
-- (void)_browserProxyWithCompletionBlock:(void (^)(id <DOCServiceBrowserViewControllerProxy>))arg1;
 - (void)_revealDocumentAtURL:(FPSandboxingURLWrapper *)arg1 importIfNeeded:(_Bool)arg2 completion:(void (^)(DOCItem *, NSError *))arg3;
 @end
 

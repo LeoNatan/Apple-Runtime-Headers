@@ -23,6 +23,7 @@
 + (id)sharedStore;
 @property(readonly, nonatomic) BOOL hasPasswordsEligibleForAutoFill; // @synthesize hasPasswordsEligibleForAutoFill=_hasPasswordsEligibleForAutoFill;
 - (void).cxx_destruct;
+- (id)persistentIdentifierForCredential:(id)arg1 protectionSpace:(id)arg2;
 - (void)_ensureDomainsToUsersExists;
 - (void)_cleanUpRedundantCredentialsWithoutUsernames;
 - (void)reset;

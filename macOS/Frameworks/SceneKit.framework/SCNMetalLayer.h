@@ -81,7 +81,7 @@
 - (void)setBackgroundColor:(struct CGColor *)arg1;
 - (id)renderer;
 - (void)setRenderer:(id)arg1;
-@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
 - (struct SCNVector3)unprojectPoint:(struct SCNVector3)arg1;
 - (struct SCNVector3)projectPoint:(struct SCNVector3)arg1;
 - (void)projectPoints:(struct SCNVector3 *)arg1 count:(unsigned long long)arg2;
@@ -105,6 +105,9 @@
 - (long long)preferredFramesPerSecond;
 - (BOOL)_checkAndUpdateDisplayLinkStateIfNeeded;
 - (id)displayLink;
+@property(nonatomic) BOOL usesReverseZ;
+@property(nonatomic, getter=isTemporalAntialiasingEnabled) BOOL temporalAntialiasingEnabled;
+@property(readonly, nonatomic) struct CGRect currentViewport;
 @property(nonatomic) BOOL showsStatistics;
 - (id)rendererOptions;
 - (BOOL)canDrawConcurrently;

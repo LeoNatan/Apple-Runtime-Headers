@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (struct GEOFlyoverRegion *)regionForID:(unsigned int)arg1;
 - (id)initWithFlyoverRegions:(id)arg1;
 - (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

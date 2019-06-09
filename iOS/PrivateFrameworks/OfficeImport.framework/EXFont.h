@@ -12,7 +12,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)edFontFromXmlFontElement:(struct _xmlNode *)arg1 inConditionalFormat:(_Bool)arg2 returnDefaultIfEmpty:(_Bool)arg3 state:(id)arg4;
-+ (void)initialize;
++ (id)vertAlignEnumMap;
++ (id)underlineEnumMap;
 + (int)edUnderlineFromXmlUnderlineElement:(struct _xmlNode *)arg1;
 + (int)edScriptFromXmlVertAlignElement:(struct _xmlNode *)arg1;
 

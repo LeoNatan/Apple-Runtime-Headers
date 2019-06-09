@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <AuthKit/AKAppleIDAuthenticationLimitedUIProvider-Protocol.h>
+#import <AuthKit/AKAuthenticationContext-Protocol.h>
 #import <AuthKit/NSSecureCoding-Protocol.h>
 
 @class AKAnisetteData, AKDevice, NSArray, NSDictionary, NSNumber, NSSet, NSString, NSUUID;
 @protocol AKAnisetteServiceProtocol, OS_dispatch_queue;
 
-@interface AKAppleIDAuthenticationContext : NSObject <AKAppleIDAuthenticationLimitedUIProvider, NSSecureCoding>
+@interface AKAppleIDAuthenticationContext : NSObject <AKAppleIDAuthenticationLimitedUIProvider, AKAuthenticationContext, NSSecureCoding>
 {
     NSString *_generatedCode;
     NSNumber *_latitude;
@@ -61,6 +62,9 @@
     unsigned long long _capabilityForUIDisplay;
     NSString *_shortLivedToken;
     NSString *_message;
+    AKAnisetteData *_companionDeviceAnisetteData;
+    AKAnisetteData *_proxiedDeviceAnisetteData;
+    NSString *_appProvidedContext;
     NSString *_username;
     long long _serviceType;
     NSString *_reason;
@@ -71,6 +75,7 @@
     NSString *_altDSID;
     NSDictionary *_httpHeadersForRemoteUI;
     id _clientInfo;
+    NSDictionary *_appProvidedData;
     NSString *_title;
     NSString *_helpAnchor;
     NSString *_helpBook;
@@ -80,8 +85,6 @@
     NSNumber *_hasEmptyPassword;
     NSSet *_desiredInternalTokens;
     NSString *_securityUpgradeContext;
-    AKAnisetteData *_proxiedDeviceAnisetteData;
-    AKAnisetteData *_companionDeviceAnisetteData;
     NSString *_displayString;
     NSString *_displayTitle;
 }
@@ -89,8 +92,6 @@
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSString *displayTitle; // @synthesize displayTitle=_displayTitle;
 @property(copy, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
-@property(retain, nonatomic) AKAnisetteData *companionDeviceAnisetteData; // @synthesize companionDeviceAnisetteData=_companionDeviceAnisetteData;
-@property(retain, nonatomic) AKAnisetteData *proxiedDeviceAnisetteData; // @synthesize proxiedDeviceAnisetteData=_proxiedDeviceAnisetteData;
 @property(copy, nonatomic) NSString *securityUpgradeContext; // @synthesize securityUpgradeContext=_securityUpgradeContext;
 @property(nonatomic) _Bool shouldSkipSettingsLaunchAlert; // @synthesize shouldSkipSettingsLaunchAlert=_shouldSkipSettingsLaunchAlert;
 @property(nonatomic, setter=setFirstTimeLogin:) _Bool isFirstTimeLogin; // @synthesize isFirstTimeLogin=_isFirstTimeLogin;
@@ -111,6 +112,7 @@
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) _Bool needsRepair; // @synthesize needsRepair=_needsRepair;
 @property(nonatomic) _Bool shouldOfferSecurityUpgrade; // @synthesize shouldOfferSecurityUpgrade=_shouldOfferSecurityUpgrade;
+@property(copy, nonatomic) NSDictionary *appProvidedData; // @synthesize appProvidedData=_appProvidedData;
 @property(retain, nonatomic) id clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(copy, nonatomic) NSDictionary *httpHeadersForRemoteUI; // @synthesize httpHeadersForRemoteUI=_httpHeadersForRemoteUI;
 @property(copy, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
@@ -128,8 +130,11 @@
 @property(nonatomic) _Bool shouldAllowAppleIDCreation; // @synthesize shouldAllowAppleIDCreation=_shouldAllowAppleIDCreation;
 @property(nonatomic) _Bool isUsernameEditable; // @synthesize isUsernameEditable=_isUsernameEditable;
 @property(copy, nonatomic) NSString *username; // @synthesize username=_username;
+@property(copy, nonatomic) NSString *appProvidedContext; // @synthesize appProvidedContext=_appProvidedContext;
+@property(retain, nonatomic) AKAnisetteData *proxiedDeviceAnisetteData; // @synthesize proxiedDeviceAnisetteData=_proxiedDeviceAnisetteData;
+@property(retain, nonatomic) AKAnisetteData *companionDeviceAnisetteData; // @synthesize companionDeviceAnisetteData=_companionDeviceAnisetteData;
 @property(nonatomic) unsigned long long _attemptIndex; // @synthesize _attemptIndex;
-@property(readonly, nonatomic) _Bool _shouldSkipInitialReachabilityCheck; // @synthesize _shouldSkipInitialReachabilityCheck;
+@property(nonatomic) _Bool _shouldSkipInitialReachabilityCheck; // @synthesize _shouldSkipInitialReachabilityCheck;
 @property(copy, nonatomic, setter=_setMessage:) NSString *_message; // @synthesize _message;
 @property(copy, nonatomic, setter=_setShortLivedToken:) NSString *_shortLivedToken; // @synthesize _shortLivedToken;
 @property(nonatomic) _Bool _isPasswordEditable; // @synthesize _isPasswordEditable;
@@ -143,6 +148,7 @@
 @property(copy, nonatomic, setter=_setProxiedAppBundleID:) NSString *_proxiedAppBundleID; // @synthesize _proxiedAppBundleID;
 @property(nonatomic, setter=_setProxyingForApp:) _Bool _isProxyingForApp; // @synthesize _isProxyingForApp;
 - (void).cxx_destruct;
+- (void)presentBiometricOrPasscodeValidationForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_secondFactorQueue;
 - (void)_handleSecondFactorCodeEntry;
 - (void)_stopListeningForSecondFactorCodeEntryNotification;
@@ -154,14 +160,18 @@
 - (void)dismissBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) _Bool _requiresPasswordInput;
 - (void)presentBasicLoginUIWithCompletion:(CDUnknownBlockType)arg1;
-@property(copy, nonatomic) AKDevice *companionDevice;
-@property(copy, nonatomic) AKDevice *proxiedDevice;
+@property(copy, nonatomic) AKDevice *companionDevice; // @synthesize companionDevice=_companionDevice;
+@property(copy, nonatomic) AKDevice *proxiedDevice; // @synthesize proxiedDevice=_proxiedDevice;
 @property(copy, nonatomic) NSString *serviceIdentifier;
+- (id)_appendBlameIfRequiredTo:(id)arg1;
 @property(readonly, nonatomic) NSString *_interpolatedReasonWithBlame;
 @property(readonly, nonatomic) NSString *_interpolatedReason;
 @property(nonatomic) _Bool shouldForceInteractiveAuth; // @synthesize shouldForceInteractiveAuth=_shouldForceInteractiveAuth;
 @property(nonatomic) _Bool shouldPreventInteractiveAuth; // @synthesize shouldPreventInteractiveAuth=_shouldPreventInteractiveAuth;
 @property(readonly, nonatomic) unsigned long long _capabilityForUIDisplay; // @synthesize _capabilityForUIDisplay;
+@property(readonly, nonatomic, getter=isContextEligibleForBiometricOrPasscodeAuth) _Bool contextEligibleForBiometricOrPasscodeAuth;
+@property(readonly, nonatomic, getter=isContextEligibleForSilentAuth) _Bool contextEligibleForSilentAuth;
+@property(readonly, nonatomic, getter=isContextEligibleForSilentAuthCoercion) _Bool contextEligibleForSilentAuthCoercion;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 - (_Bool)_localUserHasEmptyPassword;
@@ -169,6 +179,7 @@
 - (id)_sanitizedCopy;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithContext:(id)arg1;
 - (id)_initWithIdentifier:(id)arg1;
 - (id)init;
 - (id)authKitAccountForSilentServiceToken:(id *)arg1;

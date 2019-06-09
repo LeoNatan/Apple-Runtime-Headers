@@ -14,6 +14,7 @@
 
 @class NSMapTable, NSMutableIndexSet, NSString, SKUIClientContext, SKUILockupComponent, SKUIMissingItemLoader, SKUIProductPageOverlayController, SKUIRowComponent;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRowSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIEmbeddedMediaViewDelegate, SKUIItemStateCenterObserver, SKUIMissingItemDelegate, SKUIProductPageOverlayDelegate>
 {
     SKUIClientContext *_clientContext;

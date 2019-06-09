@@ -20,7 +20,6 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)initWithAsset:(id)arg1 trackIDs:(id)arg2;

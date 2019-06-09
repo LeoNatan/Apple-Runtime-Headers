@@ -6,10 +6,11 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class NSAttributedString, UITextRange, _UIPositionedAttributedString;
+@class NSArray, NSAttributedString, UITextRange, _UIPositionedAttributedString;
 @protocol UITextPasteAnimating, UITextPasteSessionDelegate;
 
 @protocol UITextPasteSession <NSObject>
+@property(copy, nonatomic) NSArray *originalItems;
 @property(nonatomic) __weak id <UITextPasteSessionDelegate> delegate;
 @property(readonly, nonatomic) NSAttributedString *pasteResult;
 @property(readonly, nonatomic, getter=isPastingBlocked) _Bool pastingBlocked;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSTimer, UIWebPDFView;
+@class NSMutableDictionary, NSMutableSet, NSTimer, UIWebPDFView, _UISelectorDictionary;
 
 #pragma mark Blocks
 
@@ -13,26 +13,42 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Named Structures
 
 struct CAColorMatrix {
-    float _field1;
-    float _field2;
-    float _field3;
-    float _field4;
-    float _field5;
-    float _field6;
-    float _field7;
-    float _field8;
-    float _field9;
-    float _field10;
-    float _field11;
-    float _field12;
-    float _field13;
-    float _field14;
-    float _field15;
-    float _field16;
-    float _field17;
-    float _field18;
-    float _field19;
-    float _field20;
+    float m11;
+    float m12;
+    float m13;
+    float m14;
+    float m15;
+    float m21;
+    float m22;
+    float m23;
+    float m24;
+    float m25;
+    float m31;
+    float m32;
+    float m33;
+    float m34;
+    float m35;
+    float m41;
+    float m42;
+    float m43;
+    float m44;
+    float m45;
+};
+
+struct CAMeshFace {
+    unsigned int _field1[4];
+    float _field2[4];
+};
+
+struct CAMeshVertex {
+    struct CGPoint _field1;
+    struct CAPoint3D _field2;
+};
+
+struct CAPoint3D {
+    double _field1;
+    double _field2;
+    double _field3;
 };
 
 struct CATransform3D {
@@ -114,6 +130,13 @@ struct UIPeripheralAnimationGeometry {
     double targetFrameHeightDelta;
 };
 
+struct UIRectCornerRadii {
+    double topLeft;
+    double bottomLeft;
+    double bottomRight;
+    double topRight;
+};
+
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;
@@ -135,6 +158,15 @@ struct _UIBoundingPathBitmapData {
     unsigned short *rows;
 };
 
+struct _UIBoundingPathBitmapDataCorner {
+    unsigned long long location;
+    unsigned long long radius;
+    unsigned long long size;
+    _Bool edgePositionsUseLargeValues;
+    void *referenceEdgePositionsByRow;
+    void *referenceEdgePositionsByCol;
+};
+
 struct _UIBoundingPathBitmapDataSkipRegion {
     unsigned long long y;
     unsigned long long height;
@@ -147,6 +179,13 @@ struct _UICollectionViewCompositionLayout {
 struct _UICollectionViewCompositionLayoutInvalidationContext {
     Class _field1;
     id _field2;
+};
+
+struct _UIIntegralCornerRadii {
+    long long _field1;
+    long long _field2;
+    long long _field3;
+    long long _field4;
 };
 
 struct _UIIntegralPoint {
@@ -164,16 +203,37 @@ struct _UIIntegralSize {
     long long _field2;
 };
 
+struct _UIOrderedRangeIndexerImpl;
+
+struct _UIRTreeContainerNode;
+
 struct _UIRenderingSurface {
     struct CGRect _field1;
     double _field2;
 };
 
-struct _UIViewTraitCollectionChangeDescription {
+struct _UISEGestureFeatureSample {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    _Bool _field3;
+    long long _field4;
+    unsigned long long _field5;
+    struct CGPoint _field6;
+    double _field7;
+};
+
+struct _UITraitCollectionChangeDescription {
     id _field1;
     id _field2;
     _Bool _field3;
     _Bool _field4;
+    _Bool _field5;
+    _Bool _field6;
+    _Bool _field7;
+    _Bool _field8;
+    _Bool _field9;
+    _Bool _field10;
+    _Bool _field11;
 };
 
 struct _UIWebTouchEvent {
@@ -201,8 +261,20 @@ struct _UIWebViewportConfiguration {
     _Bool avoidsUnsafeArea;
 };
 
+struct __shared_weak_count;
+
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
+};
+
+struct shared_ptr<_UIOrderedRangeIndexerImpl> {
+    struct _UIOrderedRangeIndexerImpl *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<_UIRTreeContainerNode> {
+    struct _UIRTreeContainerNode *__ptr_;
+    struct __shared_weak_count *__cntrl_;
 };
 
 struct ui_size_cache {
@@ -226,6 +298,14 @@ struct work_interval_instance {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    NSMutableSet *keyCommands;
+    NSMutableSet *commandMenus;
+    _UISelectorDictionary *actionCommands;
+    NSMutableDictionary *actionPropertyListCommands;
+    NSMutableDictionary *parentMenuIdentifiers;
+} CDStruct_3b3a7b20;
+
+typedef struct {
     UIWebPDFView *view;
     NSTimer *timer;
 } CDStruct_d58a15aa;
@@ -233,7 +313,7 @@ typedef struct {
 typedef struct {
     id _field1;
     _Bool _field2;
-    int _field3;
+    _Bool _field3;
     _Bool _field4;
     _Bool _field5;
     _Bool _field6;
@@ -243,8 +323,7 @@ typedef struct {
     _Bool _field10;
     _Bool _field11;
     _Bool _field12;
-    _Bool _field13;
-} CDStruct_3cbf53c3;
+} CDStruct_a002d41c;
 
 typedef struct {
     id _field1;
@@ -287,7 +366,7 @@ typedef struct {
 } CDStruct_a7a14e3b;
 
 typedef struct {
-    _Bool itemIsEnabled[41];
+    _Bool itemIsEnabled[42];
     char timeString[64];
     char shortTimeString[64];
     char dateString[256];
@@ -303,8 +382,11 @@ typedef struct {
     char operatorDirectory[1024];
     unsigned int serviceContentType;
     unsigned int secondaryServiceContentType;
+    unsigned int cellLowDataModeActive:1;
+    unsigned int secondaryCellLowDataModeActive:1;
     int wifiSignalStrengthRaw;
     int wifiSignalStrengthBars;
+    unsigned int wifiLowDataModeActive:1;
     unsigned int dataNetworkType;
     unsigned int secondaryDataNetworkType;
     int batteryCapacity;
@@ -320,6 +402,7 @@ typedef struct {
     unsigned int displayRawGSMSignal:1;
     unsigned int displayRawWifiSignal:1;
     unsigned int locationIconType:1;
+    unsigned int voiceControlIconType:2;
     unsigned int quietModeInactive:1;
     unsigned int tetheringConnectionCount;
     unsigned int batterySaverModeActive:1;
@@ -329,6 +412,7 @@ typedef struct {
     char breadcrumbSecondaryTitle[256];
     char personName[100];
     unsigned int electronicTollCollectionAvailable:1;
+    unsigned int radarAvailable:1;
     unsigned int wifiLinkWarning:1;
     unsigned int wifiSearching:1;
     double backgroundActivityDisplayStartDate;
@@ -336,7 +420,7 @@ typedef struct {
     unsigned int secondaryCellularConfigured:1;
     char primaryServiceBadgeString[100];
     char secondaryServiceBadgeString[100];
-} CDStruct_1916f467;
+} CDStruct_0942cde0;
 
 typedef struct {
     unsigned int val[8];
@@ -397,12 +481,6 @@ typedef struct {
 } CDStruct_d83abbfb;
 
 typedef struct {
-    double targetValue;
-    double tension;
-    double friction;
-} CDStruct_57d825b2;
-
-typedef struct {
     double amount;
     int unit;
 } CDStruct_73524d89;
@@ -428,7 +506,13 @@ typedef struct {
     long long forceTouchCapability;
     long long preferredContentSizeCategory;
     double displayCornerRadius;
-} CDStruct_477bbee4;
+    long long legibilityWeight;
+    long long semanticContext;
+    long long accessibilityContrast;
+    long long userInterfaceLevel;
+    long long vibrancy;
+    long long debugHighlight;
+} CDStruct_8ff49dc2;
 
 typedef struct {
     long long width;
@@ -447,7 +531,7 @@ typedef struct {
 } CDStruct_0ba2c6ed;
 
 typedef struct {
-    _Bool overrideItemIsEnabled[41];
+    _Bool overrideItemIsEnabled[42];
     unsigned int overrideTimeString:1;
     unsigned int overrideDateString:1;
     unsigned int overrideGsmSignalStrengthRaw:1;
@@ -482,17 +566,12 @@ typedef struct {
     unsigned int overrideSecondaryCellularConfigured:1;
     unsigned int overridePrimaryServiceBadgeString:1;
     unsigned int overrideSecondaryServiceBadgeString:1;
-    CDStruct_1916f467 values;
-} CDStruct_308dc736;
+    CDStruct_0942cde0 values;
+} CDStruct_f9a79af9;
 
 typedef struct {
     CDStruct_73524d89 _field1[4];
 } CDStruct_bd7e7c01;
-
-typedef struct {
-    int _field1;
-    struct CGSize _field2;
-} CDStruct_2f66a7ba;
 
 typedef struct {
     struct {
@@ -620,10 +699,6 @@ typedef struct {
 } CDStruct_d7010776;
 
 typedef struct {
-    unsigned int enabled:1;
-} CDStruct_513ff01d;
-
-typedef struct {
     unsigned int :1;
 } CDStruct_65389fcd;
 
@@ -633,6 +708,18 @@ typedef struct {
     double _field3;
     double _field4;
 } CDStruct_d2b197d1;
+
+typedef struct {
+    double _field1;
+    double _field2;
+    double _field3;
+} CDStruct_39925896;
+
+typedef struct {
+    double targetValue;
+    double tension;
+    double friction;
+} CDStruct_57d825b2;
 
 typedef struct {
     double _field1;

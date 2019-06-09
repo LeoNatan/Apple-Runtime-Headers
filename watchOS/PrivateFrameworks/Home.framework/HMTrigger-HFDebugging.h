@@ -11,7 +11,12 @@
 @class NSString;
 
 @interface HMTrigger (HFDebugging) <HFStateDumpBuildable>
++ (id)hf_sanitizeTriggerName:(id)arg1 home:(id)arg2;
++ (id)hf_localizedStringForSignficantEvent:(id)arg1 offset:(id)arg2;
 - (id)hf_stateDumpBuilderWithContext:(id)arg1;
+- (id)hf_forceDisableReasons;
+@property(readonly, nonatomic) _Bool hf_isShortcutOwned;
+@property(readonly, nonatomic) _Bool hf_requiresConfirmationToRun;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

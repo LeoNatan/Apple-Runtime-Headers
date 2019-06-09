@@ -69,7 +69,7 @@
 - (void)packageDownloader:(id)arg1 didChangeProgress:(double)arg2;
 - (void)packageDownloaderDidStop:(id)arg1;
 - (void)packageDownloaderDidStart:(id)arg1;
-- (void)_setCatalogURL:(id)arg1 isDevelopmentCatalog:(BOOL)arg2;
+- (void)_setCatalogURL:(id)arg1 options:(unsigned long long)arg2;
 
 @end
 

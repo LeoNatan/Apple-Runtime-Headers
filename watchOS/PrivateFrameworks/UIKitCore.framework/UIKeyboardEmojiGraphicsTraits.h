@@ -6,7 +6,6 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface UIKeyboardEmojiGraphicsTraits : NSObject
 {
     float _emojiKeyWidth;
@@ -28,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _fakeEmojiKeySize;
 }
 
++ (id)emojiGraphicsTraitsForCurrentScreenTraits;
 + (id)emojiGraphicsTraitsWithScreenTraits:(id)arg1;
 @property(readonly, nonatomic) float alertTextWidth; // @synthesize alertTextWidth=_alertTextWidth;
 @property(readonly, nonatomic) float scrollSnapOffset; // @synthesize scrollSnapOffset=_scrollSnapOffset;

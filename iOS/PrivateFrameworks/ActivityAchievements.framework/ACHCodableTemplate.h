@@ -28,8 +28,11 @@
     NSString *_availabilityPredicate;
     NSString *_availabilityStartDate;
     NSString *_availableCountryCodes;
+    NSString *_availableSuffixes;
     NSString *_canonicalUnit;
     NSString *_goalExpression;
+    NSString *_gracePredicate;
+    NSString *_graceVisibilityPredicate;
     NSString *_predicate;
     NSString *_progressExpression;
     NSString *_sourceName;
@@ -54,6 +57,9 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *graceVisibilityPredicate; // @synthesize graceVisibilityPredicate=_graceVisibilityPredicate;
+@property(retain, nonatomic) NSString *gracePredicate; // @synthesize gracePredicate=_gracePredicate;
+@property(retain, nonatomic) NSString *availableSuffixes; // @synthesize availableSuffixes=_availableSuffixes;
 @property(retain, nonatomic) NSString *availableCountryCodes; // @synthesize availableCountryCodes=_availableCountryCodes;
 @property(nonatomic) _Bool displaysEarnedInstanceCount; // @synthesize displaysEarnedInstanceCount=_displaysEarnedInstanceCount;
 @property(nonatomic) long long displayOrder; // @synthesize displayOrder=_displayOrder;
@@ -91,6 +97,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasGraceVisibilityPredicate;
+@property(readonly, nonatomic) _Bool hasGracePredicate;
+@property(readonly, nonatomic) _Bool hasAvailableSuffixes;
 @property(readonly, nonatomic) _Bool hasAvailableCountryCodes;
 @property(nonatomic) _Bool hasDisplaysEarnedInstanceCount;
 @property(nonatomic) _Bool hasDisplayOrder;

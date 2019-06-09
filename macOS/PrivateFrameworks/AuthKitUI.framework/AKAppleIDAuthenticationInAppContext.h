@@ -23,6 +23,7 @@
     BOOL _showRememberPasswordCheckbox;
     BOOL _rememberPassswordCheckedByDefault;
     BOOL _hideAlternativeButton;
+    BOOL _hideCancelButton;
     BOOL _clientShouldHandleAlternativeButtonAction;
     BOOL _shouldPreventSignIn;
     BOOL _hideReasonString;
@@ -55,6 +56,7 @@
 @property BOOL shouldPreventSignIn; // @synthesize shouldPreventSignIn=_shouldPreventSignIn;
 @property BOOL clientShouldHandleAlternativeButtonAction; // @synthesize clientShouldHandleAlternativeButtonAction=_clientShouldHandleAlternativeButtonAction;
 @property(copy) NSString *privacyBundleIdentifier; // @synthesize privacyBundleIdentifier=_privacyBundleIdentifier;
+@property BOOL hideCancelButton; // @synthesize hideCancelButton=_hideCancelButton;
 @property BOOL hideAlternativeButton; // @synthesize hideAlternativeButton=_hideAlternativeButton;
 @property(retain) NSString *alternativeButtonString; // @synthesize alternativeButtonString=_alternativeButtonString;
 @property BOOL rememberPassswordCheckedByDefault; // @synthesize rememberPassswordCheckedByDefault=_rememberPassswordCheckedByDefault;
@@ -68,6 +70,7 @@
 - (void)_updateUI:(CDUnknownBlockType)arg1;
 - (void)showCDPView:(id)arg1 modalForWindow:(id)arg2 withController:(id)arg3;
 - (void)endCDPView;
+- (void)presentBiometricOrPasscodeValidationForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_dismissServerProvidedUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_presentServerProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_presentIDPProvidedUIWithConfiguration:(id)arg1 completion:(CDUnknownBlockType)arg2;

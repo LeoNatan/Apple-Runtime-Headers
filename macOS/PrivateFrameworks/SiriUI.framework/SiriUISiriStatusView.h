@@ -12,7 +12,6 @@
 @class AVPlayerLayer, AVPlayerLooper, AVQueuePlayer, NSPressGestureRecognizer, NSString, SRFLockStateNotifier, SiriUITalkGestureTarget, SiriUITextInputField;
 @protocol SiriUISiriStatusViewAnimationDelegate, SiriUISiriStatusViewDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SiriUISiriStatusView : NSView <NSGestureRecognizerDelegate, SiriUITalkGestureTargetDelegate>
 {
     SiriUITalkGestureTarget *_gestureTarget;

@@ -16,11 +16,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)_generateNotificationFromPayload:(id)arg1 config:(id)arg2 bagContract:(id)arg3;
-+ (id)_downloadAssetAtUrl:(id)arg1 notification:(id)arg2 bagContract:(id)arg3;
++ (id)_generateNotificationFromPayload:(id)arg1 config:(id)arg2 bag:(id)arg3;
++ (id)_downloadAssetAtUrl:(id)arg1 notification:(id)arg2 bag:(id)arg3;
 + (id)_cachedImagePathForIdentifier:(id)arg1 assetURL:(id)arg2;
 + (void)userNotification:(id)arg1 selectedButtonAction:(id)arg2;
-+ (void)handleNotificationPayload:(id)arg1 config:(id)arg2 bagContract:(id)arg3;
++ (void)handleNotificationPayload:(id)arg1 config:(id)arg2 bag:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

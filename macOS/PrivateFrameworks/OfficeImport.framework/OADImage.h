@@ -8,6 +8,7 @@
 
 @class OADMovie, OADOle, OADShapeGeometry;
 
+__attribute__((visibility("hidden")))
 @interface OADImage : OADGraphic
 {
     OADShapeGeometry *mGeometry;

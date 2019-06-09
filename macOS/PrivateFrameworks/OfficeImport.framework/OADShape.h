@@ -8,6 +8,7 @@
 
 @class OADOrientedBounds, OADShapeGeometry, OADTextBody;
 
+__attribute__((visibility("hidden")))
 @interface OADShape : OADGraphic
 {
     OADShapeGeometry *mGeometry;

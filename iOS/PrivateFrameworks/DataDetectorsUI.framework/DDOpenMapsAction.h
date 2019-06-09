@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (id)notificationURL;
 - (id)notificationIconBundleIdentifier;
 - (id)notificationTitle;
+- (id)icon;
 - (id)localizedName;
 
 @end

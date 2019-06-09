@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface _UIInterfaceActionRepresentationsSequenceView : UIScrollView
 {
     int _sizingSeparatedContentSequenceViewToFitDisabledCount;
+    _Bool _visualCornerForcedOverride;
     UIInterfaceActionVisualStyle *_visualStyle;
     NSArray *_arrangedActionRepresentationViews;
     int _actionLayoutAxis;
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) _UIInterfaceActionSeparatableSequenceView *separatedContentSequenceView; // @synthesize separatedContentSequenceView=_separatedContentSequenceView;
 @property(readonly, nonatomic) NSLayoutConstraint *minimumHeightConstraint; // @synthesize minimumHeightConstraint=_minimumHeightConstraint;
+@property(nonatomic) _Bool visualCornerForcedOverride; // @synthesize visualCornerForcedOverride=_visualCornerForcedOverride;
 @property(nonatomic) unsigned int visualCornerPosition; // @synthesize visualCornerPosition=_visualCornerPosition;
 @property(nonatomic) int actionLayoutAxis; // @synthesize actionLayoutAxis=_actionLayoutAxis;
 @property(retain, nonatomic) NSArray *arrangedActionRepresentationViews; // @synthesize arrangedActionRepresentationViews=_arrangedActionRepresentationViews;

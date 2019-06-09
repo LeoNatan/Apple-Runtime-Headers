@@ -61,6 +61,8 @@
 - (void)applicationController:(id)arg1 didReceiveViewModelError:(id)arg2;
 - (void)applicationController:(id)arg1 startDidFailWithError:(id)arg2;
 - (void)applicationControllerDidStart:(id)arg1;
+- (id)_supportedProviderAuthenticationToken;
+- (void)_enqueueSubscriptionOperationIfRequiredForResponse:(id)arg1 asDependencyOf:(id)arg2;
 - (id)_accountChannelsWithChannelIDs:(id)arg1;
 - (void)_resetVerificationStateWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_accountMetadataWithAuthenticationScheme:(id)arg1 responseStatusCode:(id)arg2 responseString:(id)arg3 accountMetadataRequest:(id)arg4 verificationData:(id)arg5;

@@ -8,6 +8,7 @@
 
 #import <Foundation/NSCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface NSDocInfo : NSObject <NSCopying>
 {
     long long time;
@@ -23,6 +24,7 @@
 - (id)copy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithFileAttributes:(id)arg1;
+- (void)setFileAttributes:(id)arg1;
 - (id)initFromInfo:(struct stat *)arg1;
 
 @end

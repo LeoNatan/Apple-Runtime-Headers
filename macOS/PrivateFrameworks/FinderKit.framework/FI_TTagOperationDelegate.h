@@ -15,10 +15,13 @@ __attribute__((visibility("hidden")))
 {
     struct mutex fLock;
     struct TConditionVariable fCondition;
+    _Bool tornDown;
 }
 
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)aboutToTearDown;
 - (int)asyncNodeOperation:(id)arg1 errorNotification:(const struct TOperationMonitor *)arg2 error:(const struct OperationErrorRecord *)arg3 reply:(struct NodeEventReply *)arg4;
 - (int)asyncNodeOperation:(id)arg1 statusNotification:(const struct TOperationMonitor *)arg2;
 - (void)waitForOperationToFinish;

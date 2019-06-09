@@ -53,7 +53,6 @@
 - (id)tokenSetForLength:(int)arg1;
 - (int)errorCount;
 - (unsigned int)cursor;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithData:(id)arg1 watchdogTimer:(id)arg2;
 - (id)tokenName:(int)arg1;

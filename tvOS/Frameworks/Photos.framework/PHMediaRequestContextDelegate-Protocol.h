@@ -6,11 +6,10 @@
 
 #import <Photos/NSObject-Protocol.h>
 
-@class PDImageRequest, PDMediaRequestContext, PHMediaRequest;
+@class PHImageRequest, PHMediaRequestContext;
 
 @protocol PHMediaRequestContextDelegate <NSObject>
-- (void)mediaRequestContextDidFinish:(PDMediaRequestContext *)arg1;
-- (void)mediaRequestContext:(PDMediaRequestContext *)arg1 isQueryingCacheForRequest:(PDImageRequest *)arg2 didWait:(_Bool *)arg3 didFindImage:(_Bool *)arg4 resultHandler:(void (^)(struct CGImage *, _Bool, NSError *))arg5;
-- (void)mediaRequestContext:(PDMediaRequestContext *)arg1 spawnedNewRequest:(PHMediaRequest *)arg2;
+- (void)mediaRequestContextDidFinish:(PHMediaRequestContext *)arg1;
+- (void)mediaRequestContext:(PHMediaRequestContext *)arg1 isQueryingCacheForRequest:(PHImageRequest *)arg2 didWait:(_Bool *)arg3 didFindImage:(_Bool *)arg4 resultHandler:(void (^)(struct CGImage *, _Bool, NSError *))arg5;
 @end
 

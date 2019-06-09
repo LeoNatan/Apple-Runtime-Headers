@@ -37,6 +37,8 @@
 - (void)dealloc;
 - (id)init;
 - (void)setTestLocale:(id)arg1;
+- (void)unsetPasteboardTextForTestingAndClearCache;
+- (void)setPasteboardTextForTesting:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

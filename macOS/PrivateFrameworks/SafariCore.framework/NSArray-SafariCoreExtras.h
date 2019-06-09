@@ -20,7 +20,9 @@
 - (id)safari_reduceObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)safari_filterObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)safari_mapObjectsUsingBlock:(CDUnknownBlockType)arg1;
+- (id)safari_orderedSetByApplyingBlock:(CDUnknownBlockType)arg1;
 - (id)safari_setByApplyingBlock:(CDUnknownBlockType)arg1;
+- (void)safari_enumerateZippedValuesWithArray:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)safari_mapAndFilterObjectsWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (id)safari_mapAndFilterObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)safari_arrayAtIndex:(unsigned long long)arg1;

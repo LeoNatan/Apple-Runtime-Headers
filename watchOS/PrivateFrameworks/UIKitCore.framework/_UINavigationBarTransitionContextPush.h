@@ -17,12 +17,16 @@ __attribute__((visibility("hidden")))
 
 - (void)complete;
 - (void)cancel;
-- (void)_finishWithFinalLayout:(id)arg1 finalLargeTitleLayout:(id)arg2 invalidLayout:(id)arg3 invalidLargeTitleLayout:(id)arg4;
+- (void)_finishWithFinalLayout:(id)arg1 invalidLayout:(id)arg2;
 - (void)animate;
+- (void)_animateSearchBar;
+- (void)_animateBackgroundView;
 - (void)_animateLargeTitleView;
 - (void)_animateContentView;
 - (void)_animateScaleTransition;
 - (void)prepare;
+- (void)_prepareSearchBar;
+- (void)_prepareBackgroundView;
 - (void)_prepareLargeTitleView;
 - (void)_prepareContentView;
 - (void)_prepareScaleTransition;

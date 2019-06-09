@@ -6,7 +6,7 @@
 
 #import <WatchKit/NSObject-Protocol.h>
 
-@class HKWorkoutConfiguration, INIntent, NSDictionary, NSSet, NSString, NSUserActivity, UILocalNotification;
+@class HKWorkoutConfiguration, INIntent, NSData, NSDictionary, NSError, NSSet, NSString, NSUserActivity, UILocalNotification, WKExtendedRuntimeSession;
 
 @protocol WKExtensionDelegate <NSObject>
 
@@ -17,12 +17,16 @@
 - (void)handleActionWithIdentifier:(NSString *)arg1 forRemoteNotification:(NSDictionary *)arg2 withResponseInfo:(NSDictionary *)arg3;
 - (void)handleActionWithIdentifier:(NSString *)arg1 forLocalNotification:(UILocalNotification *)arg2;
 - (void)handleActionWithIdentifier:(NSString *)arg1 forRemoteNotification:(NSDictionary *)arg2;
+- (void)didReceiveRemoteNotification:(NSDictionary *)arg1 fetchCompletionHandler:(void (^)(unsigned int))arg2;
+- (void)didFailToRegisterForRemoteNotificationsWithError:(NSError *)arg1;
+- (void)didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)arg1;
 - (void)deviceOrientationDidChange;
 - (void)handleBackgroundTasks:(NSSet *)arg1;
 - (void)handleIntent:(INIntent *)arg1 completionHandler:(void (^)(INIntentResponse *))arg2;
 - (void)handleActivity:(NSUserActivity *)arg1;
 - (void)handleUserActivity:(NSDictionary *)arg1;
 - (void)handleRemoteNowPlayingActivity;
+- (void)handleExtendedRuntimeSession:(WKExtendedRuntimeSession *)arg1;
 - (void)handleActiveWorkoutRecovery;
 - (void)handleWorkoutConfiguration:(HKWorkoutConfiguration *)arg1;
 - (void)applicationDidEnterBackground;

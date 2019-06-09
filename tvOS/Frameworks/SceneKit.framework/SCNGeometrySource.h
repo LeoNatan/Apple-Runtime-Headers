@@ -9,6 +9,7 @@
 #import <SceneKit/NSSecureCoding-Protocol.h>
 
 @class NSData, NSString;
+@protocol MTLBuffer;
 
 @interface SCNGeometrySource : NSObject <NSSecureCoding>
 {
@@ -21,9 +22,14 @@
     long long _dataOffset;
     long long _dataStride;
     unsigned char _mkSemantic;
+    id <MTLBuffer> _mtlBuffer;
+    long long _mtlVertexFormat;
+    _Bool _encodeDataAsHalf;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)_geometrySourceWithSource:(id)arg1 vertexFormat:(unsigned long long)arg2;
++ (id)geometrySourceWithBuffer:(id)arg1 vertexFormat:(unsigned long long)arg2 semantic:(id)arg3 vertexCount:(long long)arg4 dataOffset:(long long)arg5 dataStride:(long long)arg6;
 + (id)geometrySourceWithColorComponents:(const float *)arg1 count:(long long)arg2 hasAlpha:(_Bool)arg3 colorSpace:(struct CGColorSpace *)arg4;
 + (id)geometrySourceWithTextureCoordinates:(const struct CGPoint *)arg1 count:(long long)arg2;
 + (id)geometrySourceWithNormals:(const struct SCNVector3 *)arg1 count:(long long)arg2;
@@ -37,6 +43,7 @@
 + (id)geometrySourceWithMDLVertexAttribute:(id)arg1 mesh:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)_uninterleaveData:(id)arg1 count:(unsigned long long)arg2 srcOffset:(unsigned long long)arg3 srcStride:(unsigned long long)arg4 dstStride:(unsigned long long)arg5;
 -     // Error parsing type: r^{__C3DMeshSource={__C3DGenericSource={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DSourceAccessor}(?=^{__CFData}^v^v)qb1b1b1}SCC}16@0:8, name: meshSource
 - (const void *)__CFObject;
 - (id)scene;
@@ -54,6 +61,9 @@
 @property(readonly, nonatomic) NSData *data;
 - (void)setMkSemantic:(id)arg1;
 - (id)mkSemantic;
+- (void)set_encodeDataAsHalf:(_Bool)arg1;
+- (_Bool)_encodeDataAsHalf;
+- (id)initWithBuffer:(id)arg1 vertexFormat:(unsigned long long)arg2 semantic:(id)arg3 vertexCount:(long long)arg4 dataOffset:(long long)arg5 dataStride:(long long)arg6;
 - (id)initWithData:(id)arg1 semantic:(id)arg2 vectorCount:(long long)arg3 componentType:(short)arg4 componentCount:(unsigned long long)arg5 dataOffset:(long long)arg6 dataStride:(long long)arg7;
 - (id)initWithData:(id)arg1 semantic:(id)arg2 vectorCount:(long long)arg3 floatComponents:(_Bool)arg4 componentsPerVector:(long long)arg5 bytesPerComponent:(long long)arg6 dataOffset:(long long)arg7 dataStride:(long long)arg8;
 - (id)description;

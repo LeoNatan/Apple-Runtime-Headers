@@ -15,9 +15,9 @@ __attribute__((visibility("hidden")))
     float mPosition;
 }
 
+- (void).cxx_destruct;
 - (float)position;
 - (id)color;
-- (void)dealloc;
 - (id)initWithColor:(id)arg1 position:(float)arg2;
 
 @end

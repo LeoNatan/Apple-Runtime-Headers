@@ -8,5 +8,11 @@
 
 @interface NSMutableString (CNOrderedDictionary)
 - (unsigned int)_cn_replaceStrings:(id)arg1;
+- (void)_cn_deleteCharactersInSet:(id)arg1 options:(unsigned int)arg2;
+- (void)_cn_deleteCharactersInSet:(id)arg1;
+- (void)_cn_trimTrailingWhitespace;
+- (void)_cn_trimLeadingWhitespace;
+- (void)_cn_trim;
+- (void)_cn_appendNonNilString:(id)arg1;
 @end
 

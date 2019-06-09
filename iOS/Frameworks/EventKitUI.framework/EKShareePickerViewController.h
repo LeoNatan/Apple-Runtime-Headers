@@ -23,7 +23,8 @@
 - (unsigned long long)eventAttendeePicker:(id)arg1 getValidationStatusForAddress:(id)arg2;
 - (void)eventAttendeePicker:(id)arg1 cacheValidationStatus:(unsigned long long)arg2 forAddress:(id)arg3;
 - (struct CGSize)preferredContentSize;
-@property(copy, nonatomic) NSArray *sharees;
+- (void)setSharees:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *sharees;
 - (id)_createRecipientFromSharee:(id)arg1;
 - (id)_recipientFromSharee:(id)arg1;
 - (id)_createShareeFromRecipient:(id)arg1;

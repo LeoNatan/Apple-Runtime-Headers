@@ -343,6 +343,18 @@ struct _csiheader {
     } _field10;
 };
 
+struct _csitextstyle {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    char _field9[0];
+};
+
 struct _cuieffectdata {
     unsigned int _field1;
     unsigned int _field2;
@@ -385,11 +397,6 @@ struct _slice {
     unsigned int y;
     unsigned int width;
     unsigned int height;
-};
-
-struct _themelook {
-    long long _field1;
-    char *_field2;
 };
 
 struct crmFlags {
@@ -479,11 +486,6 @@ struct vector<PSDGradientOpacityStop, std::__1::allocator<PSDGradientOpacityStop
 };
 
 #pragma mark Typedef'd Structures
-
-typedef struct {
-    unsigned int _field1;
-    unsigned int _field2;
-} CDStruct_c0454aff;
 
 typedef struct {
     unsigned int _field1;

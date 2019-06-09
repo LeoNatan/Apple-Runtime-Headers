@@ -9,6 +9,7 @@
 @class CXNamespace, ECColumnWidthConvertor, EDReference, EDResources, EDSheet, EDWorkbook, EXOAVState, EXOfficeArtState, NSMutableArray, NSMutableDictionary, OCPPackagePart;
 @protocol TCCancelDelegate;
 
+__attribute__((visibility("hidden")))
 @interface EXReadState : OCXReadState
 {
     unsigned int mCurrentSheetIndex;

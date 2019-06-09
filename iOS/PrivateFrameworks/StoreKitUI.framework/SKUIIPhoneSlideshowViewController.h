@@ -12,6 +12,7 @@
 @class NSMutableArray, NSMutableDictionary, NSOperationQueue, NSString, SKUIClientContext, SKUIGiftThemeCollectionView, UIPageControl;
 @protocol SKUISlideshowViewControllerDataSource, SKUISlideshowViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIPhoneSlideshowViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 {
     SKUIClientContext *_clientContext;

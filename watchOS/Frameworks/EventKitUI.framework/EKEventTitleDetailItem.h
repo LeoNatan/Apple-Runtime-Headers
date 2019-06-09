@@ -22,8 +22,10 @@ __attribute__((visibility("hidden")))
     _Bool _hasMapItemLaunchOptionFromTimeToLeaveNotification;
     NSDate *_proposedTime;
     NSObject<EKEventTitleDetailItemDelegate> *_editDelegate;
+    unsigned int _numberOfTitleLines;
 }
 
+@property(nonatomic) unsigned int numberOfTitleLines; // @synthesize numberOfTitleLines=_numberOfTitleLines;
 @property(nonatomic) _Bool hasMapItemLaunchOptionFromTimeToLeaveNotification; // @synthesize hasMapItemLaunchOptionFromTimeToLeaveNotification=_hasMapItemLaunchOptionFromTimeToLeaveNotification;
 @property(nonatomic) __weak NSObject<EKEventTitleDetailItemDelegate> *editDelegate; // @synthesize editDelegate=_editDelegate;
 @property(retain, nonatomic) NSDate *proposedTime; // @synthesize proposedTime=_proposedTime;

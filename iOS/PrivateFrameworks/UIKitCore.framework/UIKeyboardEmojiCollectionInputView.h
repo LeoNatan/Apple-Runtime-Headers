@@ -8,12 +8,13 @@
 
 #import <UIKitCore/UICollectionViewDataSource-Protocol.h>
 #import <UIKitCore/UICollectionViewDelegate-Protocol.h>
+#import <UIKitCore/UIKeyboardMediaControllerDelegate-Protocol.h>
 
 @class NSIndexPath, NSString, UICollectionViewFlowLayout, UIKeyboardEmojiCategory, UIKeyboardEmojiCollectionView, UIKeyboardEmojiGraphicsTraits, UIResponder;
 @protocol UIKBEmojiHitTestResponder;
 
 __attribute__((visibility("hidden")))
-@interface UIKeyboardEmojiCollectionInputView : UIKeyboardEmojiKeyView <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface UIKeyboardEmojiCollectionInputView : UIKeyboardEmojiKeyView <UIKeyboardMediaControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 {
     UIKeyboardEmojiCollectionView *_collectionView;
     UICollectionViewFlowLayout *_flowLayout;
@@ -22,6 +23,9 @@ __attribute__((visibility("hidden")))
     UIKeyboardEmojiGraphicsTraits *_emojiGraphicsTraits;
     _Bool _isDraggingInputView;
     unsigned long long _currentSection;
+    _Bool _inputDelegateCanSupportAnimoji;
+    _Bool _hasShownAnimojiFirstTimeExperience;
+    _Bool _shouldRetryFetchingAnimojiRecents;
     CDUnknownBlockType _completionBlock;
     UIResponder<UIKBEmojiHitTestResponder> *_hitTestResponder;
 }
@@ -47,10 +51,14 @@ __attribute__((visibility("hidden")))
 - (double)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(long long)arg3;
 - (double)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(long long)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (void)didTearDownRecentsViewForKeyboardMediaController:(id)arg1;
+- (_Bool)_showingAnimojiUnsupportedOverlayView;
+- (_Bool)_shouldShowRecentlyUsedMedia;
 - (void)willDisplayModalActionView:(id)arg1 withSubTreeKeyView:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)shouldDismissModalDisplayView:(id)arg1;
 - (long long)didInputSubTree:(id)arg1;

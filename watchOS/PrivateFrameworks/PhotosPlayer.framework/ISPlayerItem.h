@@ -84,8 +84,7 @@
 @property(nonatomic, setter=_setStatus:) int status;
 @property(retain, nonatomic, setter=_setPlayerContent:) ISPlayerContent *playerContent;
 @property(retain, nonatomic, setter=_setError:) NSError *error;
-- (_Bool)decodesAllFramesDuringOrdinaryPlayback;
-- (void)setDecodesAllFramesDuringOrdinaryPlayback:(_Bool)arg1;
+@property(nonatomic) _Bool decodesAllFramesDuringOrdinaryPlayback;
 @property(nonatomic) _Bool reversesMoreVideoFramesInMemory;
 @property(nonatomic) _Bool aggressivelyCacheVideoFrames;
 - (void)_reloadAllContent;

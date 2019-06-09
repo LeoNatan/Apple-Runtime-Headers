@@ -12,10 +12,12 @@ __attribute__((visibility("hidden")))
     _Bool _containsEnd;
     _Bool _containsStart;
     _Bool _vertical;
+    _Bool __drawsOwnHighlight;
     struct CGRect _rect;
 }
 
 + (id)selectionRectWithRect:(struct CGRect)arg1 fromView:(id)arg2;
+@property(nonatomic, setter=_setDrawsOwnHighlight:) _Bool _drawsOwnHighlight; // @synthesize _drawsOwnHighlight=__drawsOwnHighlight;
 @property(nonatomic, getter=isVertical) _Bool vertical; // @synthesize vertical=_vertical;
 @property(nonatomic) _Bool containsStart; // @synthesize containsStart=_containsStart;
 @property(nonatomic) _Bool containsEnd; // @synthesize containsEnd=_containsEnd;

@@ -14,8 +14,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (Class)cellClass;
-- (BOOL)accessibilityPerformShowMenu;
-- (id)menuForEvent:(id)arg1;
+- (id)menu;
 
 // Remaining properties
 @property(nonatomic) __weak id <DelayedPopUpRolloverImageButtonDelegate> delegate; // @dynamic delegate;

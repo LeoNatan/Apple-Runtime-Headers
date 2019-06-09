@@ -10,9 +10,11 @@
 
 @interface _DKEventStatsCounterInternal : NSObject
 {
+    struct os_unfair_lock_s _lock;
     BOOL _hasType;
     BOOL _hasResult;
-    // Error parsing type: ^{XSPerfCollection={_opaque_pthread_mutex_t=q[56c]}IIIAS^{XSPerfCounter}^{XSPerfMetric}^{XSPerfString}*}, name: _stats
+    unsigned long long _numCounters;
+    unsigned long long *_counters;
     NSString *_eventName;
     NSString *_eventType;
     NSArray *_typeValues;
@@ -26,7 +28,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)countWithTypeValue:(id)arg1 success:(BOOL)arg2;
 - (void)incrementCountByNumber:(unsigned long long)arg1 typeValue:(id)arg2 success:(BOOL)arg3;
-- (unsigned long long)indexOfTypeValue:(id)arg1 success:(BOOL)arg2;
+- (long long)indexOfTypeValue:(id)arg1 success:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithCollectionName:(id)arg1 eventName:(id)arg2 eventType:(id)arg3 eventTypePossibleValues:(id)arg4 hasResult:(BOOL)arg5 scalar:(BOOL)arg6;
 - (id)initWithCollectionName:(id)arg1 eventName:(id)arg2 eventType:(id)arg3 eventTypePossibleValues:(id)arg4 hasResult:(BOOL)arg5;

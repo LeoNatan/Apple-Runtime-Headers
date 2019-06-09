@@ -4,18 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NanoPassKit/NSObject-Protocol.h>
+#import <NanoPassKit/PDXPCServiceExportedInterface-Protocol.h>
 
-@class NSData, NSError, NSString, NSURL, NSUUID, PKPaymentApplication, PKPaymentPass, PKPaymentWebServiceContext, PKPeerPaymentAccount, PKPeerPaymentWebServiceContext;
+@class NSData, NSDate, NSError, NSString, NSURL, NSUUID, PKCommutePlan, PKPaymentApplication, PKPaymentBalance, PKPaymentBalanceReminder, PKPaymentPass, PKPaymentWebServiceContext, PKPeerPaymentAccount, PKPeerPaymentWebServiceContext, PKVerificationChannel;
 
-@protocol NPKCompanionServerProtocol <NSObject>
+@protocol NPKCompanionServerProtocol <PDXPCServiceExportedInterface>
 - (void)trustedDeviceEnrollmentSignatureWithAccountDSID:(NSString *)arg1 sessionData:(NSData *)arg2 handler:(void (^)(NSString *, unsigned int, NSData *, NSError *))arg3;
+- (void)noteForegroundVerificationObserverActive:(_Bool)arg1;
+- (void)startBackgroundVerificationObserverForPass:(PKPaymentPass *)arg1 verificationMethod:(PKVerificationChannel *)arg2;
+- (void)setCommutePlanReminderInterval:(double)arg1 forCommutePlan:(PKCommutePlan *)arg2 pass:(PKPaymentPass *)arg3 completion:(void (^)(_Bool))arg4;
+- (void)commutePlanReminderIntervalForCommutePlan:(PKCommutePlan *)arg1 pass:(PKPaymentPass *)arg2 withCompletion:(void (^)(double))arg3;
+- (void)setBalanceReminder:(PKPaymentBalanceReminder *)arg1 forBalance:(PKPaymentBalance *)arg2 pass:(PKPaymentPass *)arg3 completion:(void (^)(_Bool))arg4;
+- (void)balanceReminderForBalance:(PKPaymentBalance *)arg1 pass:(PKPaymentPass *)arg2 withCompletion:(void (^)(PKPaymentBalanceReminder *))arg3;
 - (void)balancesForPaymentPassWithUniqueIdentifier:(NSString *)arg1 completion:(void (^)(NSSet *))arg2;
 - (void)transitStateWithPassUniqueIdentifier:(NSString *)arg1 paymentApplication:(PKPaymentApplication *)arg2 completion:(void (^)(PKTransitAppletState *))arg3;
 - (void)deletePaymentTransactionWithIdentifier:(NSString *)arg1 passUniqueIdentifier:(NSString *)arg2 fromDeviceWithPairingID:(NSUUID *)arg3 completion:(void (^)(NSError *))arg4;
-- (void)transactionsForPaymentPassWithUniqueIdentifier:(NSString *)arg1 withTransactionSource:(unsigned int)arg2 withBackingData:(unsigned int)arg3 limit:(int)arg4 completion:(void (^)(NSSet *))arg5;
+- (void)transactionsForPaymentPassWithUniqueIdentifier:(NSString *)arg1 withTransactionSource:(unsigned int)arg2 withBackingData:(unsigned int)arg3 startDate:(NSDate *)arg4 endDate:(NSDate *)arg5 orderedByDate:(int)arg6 limit:(int)arg7 completion:(void (^)(NSSet *))arg8;
 - (void)markAllAppletsForDeletionWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)initiateLostModeExitAuthWithCompletion:(void (^)(NSError *))arg1;
+- (void)handlePeerPaymentTermsAndConditionsRequestFromGizmo;
 - (void)peerPaymentAccountForPairingID:(NSUUID *)arg1 withCompletion:(void (^)(PKPeerPaymentAccount *))arg2;
 - (void)setPeerPaymentAccount:(PKPeerPaymentAccount *)arg1 forPairingID:(NSUUID *)arg2 completion:(void (^)(void))arg3;
 - (void)sharedPeerPaymentWebServiceContextForPairingID:(NSUUID *)arg1 withCompletion:(void (^)(PKPeerPaymentWebServiceContext *))arg2;
@@ -38,6 +45,8 @@
 - (void)paymentPassWithUniqueID:(NSString *)arg1 reply:(void (^)(PKPaymentPass *))arg2;
 - (void)paymentPassUniqueIDs:(void (^)(NSSet *))arg1;
 - (void)registerDeviceWithCompletion:(void (^)(unsigned int, unsigned int, NSError *))arg1;
+- (void)handleDeviceUnlockedForPendingProvisioningRequestFromGizmo;
+- (void)provisionPassForAccountIdentifier:(NSString *)arg1 makeDefault:(_Bool)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)noteProvisioningPreflightCompleteWithSuccess:(_Bool)arg1 error:(NSError *)arg2 completion:(void (^)(void))arg3;
 - (void)beginProvisioningFromWatchOfferForPaymentPass:(PKPaymentPass *)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)noteWatchOfferDisplayedForPaymentPassWithUniqueID:(NSString *)arg1;

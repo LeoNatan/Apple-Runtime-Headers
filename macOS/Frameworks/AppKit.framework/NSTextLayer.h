@@ -4,49 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppKit/_NSBackingLayer.h>
+#import <QuartzCore/CALayer.h>
 
-#import <AppKit/CALinearMaskLayerDelegate-Protocol.h>
+#import <AppKit/CALayerDelegate-Protocol.h>
 
-@class CALayer, CALinearMaskLayer, NSGraphicsContext, NSMapTable, NSMutableArray, NSString;
+@class NSString;
 
 __attribute__((visibility("hidden")))
-@interface NSTextLayer : _NSBackingLayer <CALinearMaskLayerDelegate>
+@interface NSTextLayer : CALayer <CALayerDelegate>
 {
-    CALinearMaskLayer *_primaryOverlay;
-    struct CGColor *_primaryOverlayColor;
-    CDUnknownBlockType _primaryOverlayRenderer;
-    NSMutableArray *_primaryOverlayRenderers;
-    CALayer *_colorLayer;
+    CALayer *_foregroundLayer;
     CALayer *_bezelLayer;
-    NSMapTable *_layers;
-    NSMapTable *_renderers;
-    struct CGContext *_ctx;
-    struct CGColorTransform *_colorTransform;
-    struct CGDisplayList *_displayList;
-    struct CGContext *_displayListContext;
-    BOOL _wantsSubpixelAA;
-    BOOL _allowsLinearMaskLayer;
-    BOOL _needsFSBC;
-    struct CGDisplayList *_renderInContextDisplayList;
-    NSGraphicsContext *_drawingContext;
 }
 
-@property(readonly) NSGraphicsContext *drawingContext;
 @property(retain) CALayer *bezelLayer;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
-- (void)drawLayer:(id)arg1 inLinearMaskContext:(struct CALinearMaskContext *)arg2;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
-- (void)setSublayerTransform:(struct CATransform3D)arg1;
 - (void)_renderForegroundInContext:(struct CGContext *)arg1;
-- (void)renderInContext:(struct CGContext *)arg1;
+- (void)drawInContext:(struct CGContext *)arg1;
+- (void)setSublayerTransform:(struct CATransform3D)arg1;
 - (void)_appkitViewBackingLayerUniqueMethod;
 - (void)_NS_invalidateSuggestedContentsScale;
 - (void)NS_didChangeDefaultContentsScale:(double)arg1;
 - (void)display;
-- (void)drawInContext:(struct CGContext *)arg1;
-- (void)setContentsScale:(double)arg1;
 - (void)dealloc;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

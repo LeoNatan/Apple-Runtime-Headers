@@ -6,8 +6,75 @@
 
 #import <WeatherFoundation/WFWeatherConditions.h>
 
+@class NSDate, NSNumber, NSString, UIImage, WFTemperature;
+
 @interface WFWeatherConditions (WFWeatherConditions_NWKSanitize)
++ (id)_nwm_shortSuffixedKey:(id)arg1;
++ (id)nwm_localizedNoDataRounded;
++ (id)nwm_localizedNoData;
++ (id)nwm_localizedDescriptionShortForConditionCode:(unsigned int)arg1 timeOfDay:(unsigned int)arg2;
++ (id)nwm_localizedDescriptionKeyForConditionCode:(unsigned int)arg1 timeOfDay:(unsigned int)arg2;
++ (id)nwm_localizedDescriptionForConditionCode:(unsigned int)arg1 timeOfDay:(unsigned int)arg2;
++ (id)nwk_chanceOfPrecipitationSummary:(id)arg1;
++ (int)_preferredWindSpeedUnitForLocale:(id)arg1;
++ (id)_localizedWindspeed:(double)arg1 withUnit:(int)arg2 forLocale:(id)arg3;
++ (id)_defaultWindSpeedWithUnit:(double)arg1;
++ (id)nwm_localizedWindpeedUnit;
 - (void)nwk_sanitizeDateComponents;
 - (void)nwk_ensureFutureExpirationDate;
+- (unsigned int)nw_timeOfDay;
+@property(readonly, nonatomic) NSString *nwm_localizedDescriptionShort;
+@property(readonly, nonatomic) NSString *nwm_localizedDescriptionKey;
+@property(readonly, nonatomic) NSString *nwm_localizedDescription;
+@property(readonly, nonatomic) UIImage *nwkLargeConditionImage;
+@property(readonly, nonatomic) UIImage *nwkSmallConditionDaytimeImage;
+@property(readonly, nonatomic) UIImage *nwkSmallConditionImage;
+- (id)_nwkConditionImage:(unsigned int)arg1 forceDaytime:(_Bool)arg2;
+@property(readonly, nonatomic) float windDirectionInDegrees;
+@property(readonly, nonatomic) NSString *nwkLocalizedWindspeedWithoutUnit;
+@property(readonly, nonatomic) unsigned int nwkUVIndexCategory;
+@property(readonly, nonatomic) NSString *nwkLocalizedFormattedUVIndex;
+- (_Bool)nwk_wf_isDay;
+- (id)nwk_windCompactLocalizedDirectionAbbreviation;
+@property(readonly, nonatomic) NSString *nwk_windLocalizedDirectionAbbreviation;
+@property(readonly, nonatomic) float nwk_windDirectionInDegrees;
+@property(readonly, nonatomic) NSString *nwk_localizedWindspeedWithoutUnit;
+@property(readonly, nonatomic) NSString *nwk_localizedWindspeedWithUnit;
+@property(readonly, nonatomic) NSString *nwk_UVIndexRiskDescription;
+@property(readonly, nonatomic) unsigned int nwk_UVIndexCategory;
+@property(readonly, nonatomic) NSString *nwk_localizedFormattedUVIndex;
+@property(readonly, nonatomic) NSNumber *nwk_UVIndex;
+- (id)nwkUVIndex;
+@property(readonly, nonatomic) unsigned int conditionCode;
+@property(readonly, nonatomic) WFTemperature *temperatureLow;
+@property(readonly, nonatomic) WFTemperature *temperatureHigh;
+@property(readonly, nonatomic) WFTemperature *temperature;
+@property(readonly, nonatomic) NSDate *sunsetDate;
+@property(readonly, nonatomic) NSDate *sunriseDate;
+@property(readonly, nonatomic) double duration;
+@property(readonly, nonatomic) NSDate *expirationDate;
+@property(readonly, nonatomic) NSDate *date;
+- (id)_dateForComponent:(id)arg1 dateComponentsComponent:(id)arg2;
+- (id)_nwkFormattedHighLowTemperaturesWithFormat:(id)arg1;
+@property(readonly, nonatomic) NSString *nwkLocalizedFormattedCondensedHighLowTemperatures;
+@property(readonly, nonatomic) NSString *nwkLocalizedFormattedHighLowTemperatures;
+@property(readonly, nonatomic) NSString *nwkLocalizedFormattedLowTemperature;
+@property(readonly, nonatomic) NSString *nwkLocalizedFormattedHighTemperature;
+@property(readonly, nonatomic) NSString *nwkLocalizedDescription;
+@property(readonly, nonatomic) NSString *nwkLocalizedDescriptionShort;
+@property(readonly, nonatomic) unsigned int nwm_ultravioletIndexCategory;
+@property(readonly, nonatomic) NSString *nwm_localizedUltravioletIndexRiskDescription;
+- (double)_speedByConverting:(double)arg1 toUnit:(int)arg2;
+- (id)_localizedWindDirectionAbbreviation:(_Bool)arg1;
+- (unsigned int)_indexOfWindDirectionKeyForWindDirectionInDegrees:(double)arg1 keys:(id)arg2;
+- (id)nwm_windDirectionKey;
+@property(readonly, nonatomic) NSString *nwm_localizedWindspeedWithoutUnit;
+@property(readonly, nonatomic) NSString *nwm_localizedWindspeedWithUnit;
+@property(readonly, nonatomic) NSString *nwm_localizedWindDirection;
+@property(readonly, nonatomic) NSString *nwm_localizedWindDirectionAbbreviationCompact;
+@property(readonly, nonatomic) NSString *nwm_localizedWindDirectionAbbreviation;
+- (_Bool)appliesToDate:(id)arg1 withinInterval:(double)arg2;
+@property(readonly, nonatomic) unsigned int conditionType;
+- (_Bool)isCodeInGroup:(unsigned int *)arg1 size:(unsigned int)arg2;
 @end
 

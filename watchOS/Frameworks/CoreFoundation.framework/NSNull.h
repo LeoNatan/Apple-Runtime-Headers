@@ -22,6 +22,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
 - (unsigned int)retainCount;
+- (id)autorelease;
 - (oneway void)release;
 - (id)retain;
 - (unsigned long)_cfTypeID;

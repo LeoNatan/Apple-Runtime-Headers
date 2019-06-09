@@ -11,13 +11,15 @@
 #import <PassKitUI/PKPaymentServiceDelegate-Protocol.h>
 #import <PassKitUI/PKPostalAddressEditorViewControllerDelegate-Protocol.h>
 
-@class NSArray, NSButton, NSImage, NSNumberFormatter, NSPopUpButton, NSString, NSTableView, NSTextField, NSView, NSWindow, PKInAppPaymentService, PKPassLibrary, PKPaymentCardVerificationViewController, PKPaymentOptionsDefaults, PKPaymentPass, PKPaymentPreferenceContact, PKPaymentService;
+@class NSArray, NSButton, NSImage, NSNumberFormatter, NSPopUpButton, NSString, NSTabView, NSTabViewItem, NSTableView, NSTextField, NSView, NSWindow, PKInAppPaymentService, PKPassLibrary, PKPaymentCardVerificationViewController, PKPaymentOptionsDefaults, PKPaymentPass, PKPaymentPreferenceContact, PKPaymentService;
 
 @interface PKCardInfoViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource, PKPaymentServiceDelegate, PKPostalAddressEditorViewControllerDelegate>
 {
     BOOL _isUpdatingContentView;
     PKPaymentPass *_card;
     NSView *_healthyCardView;
+    NSTabView *_healthyCardTabView;
+    NSTabViewItem *_healthyCardTransactionsTabViewItem;
     NSView *_invalidCardView;
     NSView *_lostModeCardView;
     NSView *_securityConfigurationView;
@@ -83,6 +85,8 @@
 @property(retain) NSView *securityConfigurationView; // @synthesize securityConfigurationView=_securityConfigurationView;
 @property(retain) NSView *lostModeCardView; // @synthesize lostModeCardView=_lostModeCardView;
 @property(retain) NSView *invalidCardView; // @synthesize invalidCardView=_invalidCardView;
+@property(retain) NSTabViewItem *healthyCardTransactionsTabViewItem; // @synthesize healthyCardTransactionsTabViewItem=_healthyCardTransactionsTabViewItem;
+@property(retain) NSTabView *healthyCardTabView; // @synthesize healthyCardTabView=_healthyCardTabView;
 @property(retain) NSView *healthyCardView; // @synthesize healthyCardView=_healthyCardView;
 @property(retain) PKPaymentPass *card; // @synthesize card=_card;
 - (void).cxx_destruct;

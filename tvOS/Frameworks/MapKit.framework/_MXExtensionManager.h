@@ -33,7 +33,6 @@
 + (id)_queue;
 + (id)managerWithExtensionLookupPolicy:(id)arg1 updateHandler:(CDUnknownBlockType)arg2;
 + (id)managerWithLookupPolicy:(id)arg1 delegate:(id)arg2;
-+ (id)lookupPolicyForRideSharingExtensions;
 + (void)_maps_updateRideBookingExtensions:(id)arg1;
 + (id)_maps_lookupPolicyForRidesharingNonUIExtensions;
 + (id)_maps_lookupPolicyForEnabledRidesharingNonUIExtensions;

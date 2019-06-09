@@ -9,6 +9,6 @@
 @class MFEWSPersistActionResultsOperation;
 
 @protocol MFEWSPersistActionResultsOperationDelegate <NSObject>
-- (void)persistActionResultsOperationCompleted:(MFEWSPersistActionResultsOperation *)arg1;
+- (void)persistActionResultsOperationCompleted:(MFEWSPersistActionResultsOperation *)arg1 needToReplayAction:(BOOL)arg2;
 @end
 

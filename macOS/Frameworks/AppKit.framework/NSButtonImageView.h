@@ -6,21 +6,15 @@
 
 #import <AppKit/_NSSimpleImageView.h>
 
-@class NSColor, NSImage;
+@class NSImage;
 
 __attribute__((visibility("hidden")))
 @interface NSButtonImageView : _NSSimpleImageView
 {
     NSImage *_image;
-    NSColor *_tintColor;
-    unsigned long long _state;
-    int _backgroundStyle;
 }
 
 + (id)keyPathsForValuesInvalidatingDisplay;
-@property(nonatomic) int backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
-@property(nonatomic) unsigned long long state; // @synthesize state=_state;
-@property(copy, nonatomic) NSColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 - (int)_vibrancyBlendMode;
 - (void)dealloc;

@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <OSAnalytics/OSAAppleErrorReport.h>
+#import <OSAnalytics/OSAReport.h>
 
-#import <OSAnalytics/ConcreteReport-Protocol.h>
+#import <OSAnalytics/OSAConcreteReport-Protocol.h>
 
 @class NSMutableArray, NSString;
 
-@interface OSAJetsamReport : OSAAppleErrorReport <ConcreteReport>
+@interface OSAJetsamReport : OSAReport <OSAConcreteReport>
 {
     NSString *_largestProcess;
     NSString *_largestActiveApp;
@@ -21,16 +21,21 @@
     struct jetsam_snapshot *_snapshot;
     NSString *_event_reason;
     unsigned long long _event_code;
+    BOOL _aleFlag;
 }
 
 + (long long)_daysSince1970;
++ (int)instrumentEventsWithAudioAssertionState:(id)arg1;
++ (struct jetsam_snapshot *)fetchSnapshotWithFlags:(unsigned int)arg1 error:(id *)arg2;
 - (void).cxx_destruct;
 - (void)generateLogAtLevel:(BOOL)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (BOOL)isActionable;
 - (void)_setDumpedSuspendedJetsamLog;
 - (_Bool)alreadyDumpedSuspendedJetsamLogToday;
-- (void)acquireJetsamData;
 - (void)_getSnapshotWithFlags:(unsigned int)arg1;
+- (void)acquireJetsamData;
+- (void)acquireJetsamDataWithFlags:(unsigned int)arg1;
+- (id)additionalIPSMetadata;
 - (id)reportNamePrefix;
 - (id)appleCareDetails;
 - (id)problemType;

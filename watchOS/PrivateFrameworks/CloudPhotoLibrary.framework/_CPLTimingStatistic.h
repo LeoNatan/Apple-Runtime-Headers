@@ -12,11 +12,12 @@ __attribute__((visibility("hidden")))
     unsigned int _recordCount;
     unsigned int _batchCount;
     unsigned int _errorCount;
+    unsigned int _cancelCount;
     double _duration;
 }
 
 - (id)description;
-- (void)updateWithDuration:(double)arg1 recordCount:(unsigned int)arg2 error:(_Bool)arg3;
+- (void)updateWithDuration:(double)arg1 recordCount:(unsigned int)arg2 error:(_Bool)arg3 cancelled:(_Bool)arg4;
 
 @end
 

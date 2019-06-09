@@ -26,7 +26,6 @@
 - (void)addDelegate:(id)arg1;
 @property(readonly, nonatomic) id delegate;
 - (id)initWithDelegate:(id)arg1 delegateProtocol:(id)arg2;
-- (id)initWithDelegate:(id)arg1;
 
 @end
 

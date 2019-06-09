@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (id)dimmingViewForAlertController:(id)arg1;
 - (_Bool)hideCancelAction:(id)arg1 inAlertController:(id)arg2;
 - (long long)permittedActionLayoutDirection;
-- (id)textFieldContainingViewWithTextField:(id)arg1;
+- (id)textFieldContainingViewWithTextField:(id)arg1 position:(long long)arg2;
 - (struct UIEdgeInsets)contentInsetsForContainerView:(id)arg1;
 - (double)actionWidthForMinimumActionWidth:(double)arg1;
 - (double)maximumWidthForTitleAndMessageContentView;

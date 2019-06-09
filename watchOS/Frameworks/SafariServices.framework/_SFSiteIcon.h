@@ -15,9 +15,10 @@
 + (id)defaultIconKeyColor;
 + (float)cornerRadius;
 + (struct CGSize)minimumAcceptableSizeForDownloadedIcon;
++ (float)fontPointSizeForIconSize:(int)arg1;
 + (struct CGSize)sizeForIconSize:(int)arg1;
++ (int)_defaultIconSize;
 + (struct CGSize)defaultSize;
-+ (id)defaultBackgroundColor;
 
 @end
 

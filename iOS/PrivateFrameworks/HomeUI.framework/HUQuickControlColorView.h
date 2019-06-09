@@ -10,40 +10,42 @@
 #import <HomeUI/HUQuickControlColorPickerViewInteractionDelegate-Protocol.h>
 #import <HomeUI/HUQuickControlInteractiveView-Protocol.h>
 
-@class HFColorPalette, HFColorPaletteColor, HUColorPaletteView, HUColorPickerView, HUQuickControlCircleButton, HUQuickControlColorViewProfile, HUQuickControlSegmentedControl, NSLayoutConstraint, NSString;
+@class HFColorPalette, HFColorPaletteColor, HUColorLinearPaletteView, HUColorPickerView, HUQuickControlColorViewProfile, NSIndexPath, NSString, UISegmentedControl;
 @protocol HUQuickControlColorViewInteractionDelegate, HUQuickControlInteractiveView;
 
 @interface HUQuickControlColorView : UIView <HUQuickControlColorPickerViewInteractionDelegate, HUQuickControlColorPaletteViewInteractionDelegate, HUQuickControlInteractiveView>
 {
     _Bool _showPickerModeControl;
+    _Bool _userInteractionActive;
     HUQuickControlColorViewProfile *_profile;
+    unsigned long long _reachabilityState;
     id <HUQuickControlColorViewInteractionDelegate> _interactionDelegate;
     HFColorPalette *_colorPalette;
-    unsigned long long _activeMode;
+    NSIndexPath *_linearPaletteViewSelectedColorIndexPath;
     HFColorPaletteColor *_selectedColor;
-    HUColorPaletteView *_colorPaletteView;
+    id _originalValue;
+    HFColorPalette *_originalPalette;
+    HUColorLinearPaletteView *_colorLinearPaletteView;
     HUColorPickerView *_colorPickerView;
-    HUQuickControlCircleButton *_switchButton;
-    HUQuickControlSegmentedControl *_colorPickerModeSegmentedControl;
-    NSLayoutConstraint *_switchButtonWidthConstraint;
-    NSLayoutConstraint *_switchButtonHeightConstraint;
-    double _circleRadius;
+    UISegmentedControl *_colorPickerModeSegmentedControl;
 }
 
-@property(nonatomic) double circleRadius; // @synthesize circleRadius=_circleRadius;
-@property(retain, nonatomic) NSLayoutConstraint *switchButtonHeightConstraint; // @synthesize switchButtonHeightConstraint=_switchButtonHeightConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *switchButtonWidthConstraint; // @synthesize switchButtonWidthConstraint=_switchButtonWidthConstraint;
-@property(retain, nonatomic) HUQuickControlSegmentedControl *colorPickerModeSegmentedControl; // @synthesize colorPickerModeSegmentedControl=_colorPickerModeSegmentedControl;
-@property(retain, nonatomic) HUQuickControlCircleButton *switchButton; // @synthesize switchButton=_switchButton;
+@property(nonatomic, getter=isUserInteractionActive) _Bool userInteractionActive; // @synthesize userInteractionActive=_userInteractionActive;
+@property(retain, nonatomic) UISegmentedControl *colorPickerModeSegmentedControl; // @synthesize colorPickerModeSegmentedControl=_colorPickerModeSegmentedControl;
 @property(retain, nonatomic) HUColorPickerView *colorPickerView; // @synthesize colorPickerView=_colorPickerView;
-@property(retain, nonatomic) HUColorPaletteView *colorPaletteView; // @synthesize colorPaletteView=_colorPaletteView;
+@property(retain, nonatomic) HUColorLinearPaletteView *colorLinearPaletteView; // @synthesize colorLinearPaletteView=_colorLinearPaletteView;
 @property(nonatomic) _Bool showPickerModeControl; // @synthesize showPickerModeControl=_showPickerModeControl;
+@property(retain, nonatomic) HFColorPalette *originalPalette; // @synthesize originalPalette=_originalPalette;
+@property(retain, nonatomic) id originalValue; // @synthesize originalValue=_originalValue;
 @property(retain, nonatomic) HFColorPaletteColor *selectedColor; // @synthesize selectedColor=_selectedColor;
-@property(nonatomic) unsigned long long activeMode; // @synthesize activeMode=_activeMode;
+@property(retain, nonatomic) NSIndexPath *linearPaletteViewSelectedColorIndexPath; // @synthesize linearPaletteViewSelectedColorIndexPath=_linearPaletteViewSelectedColorIndexPath;
 @property(retain, nonatomic) HFColorPalette *colorPalette; // @synthesize colorPalette=_colorPalette;
 @property(nonatomic) __weak id <HUQuickControlColorViewInteractionDelegate> interactionDelegate; // @synthesize interactionDelegate=_interactionDelegate;
+@property(nonatomic) unsigned long long reachabilityState; // @synthesize reachabilityState=_reachabilityState;
 @property(copy, nonatomic) HUQuickControlColorViewProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+- (void)cancelColorPicking;
+- (void)presentFullColorViewForControlView:(id)arg1 selectedColorIndexPath:(id)arg2;
 - (void)controlView:(id)arg1 colorPaletteDidChange:(id)arg2;
 - (void)controlView:(id)arg1 colorPickerModeDidChange:(unsigned long long)arg2;
 - (void)controlView:(id)arg1 interactionStateDidChange:(_Bool)arg2 forFirstTouch:(_Bool)arg3;
@@ -51,22 +53,16 @@
 - (id)intrinsicSizeDescriptorForControlSize:(unsigned long long)arg1;
 - (void)beginUserInteractionWithFirstTouchGestureRecognizer:(id)arg1;
 @property(retain, nonatomic) id value;
-@property(readonly, nonatomic, getter=isUserInteractionActive) _Bool userInteractionActive;
-- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (void)_configureConstraints;
-- (double)_switchButtonFontSize;
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)_updateColorPickerModeSwitchView;
-- (void)_createColorPickerModeSegmentedControlIfNecessary;
-- (void)_switchButtonTapped:(id)arg1;
-- (void)_updateSwitchButtonText;
-- (void)_updateSwitchButtonColor;
+- (void)_updateUIForReachabilityState:(unsigned long long)arg1;
+- (void)_updateColorPicker;
 @property(readonly, nonatomic, getter=isSelectedColorInPalette) _Bool selectedColorInPalette;
-- (id)_allControlViews;
 @property(readonly, nonatomic) UIView<HUQuickControlInteractiveView> *activeView;
+- (void)_updateLayout;
+- (void)_updateVisibleViews;
 - (void)layoutSubviews;
 - (id)initWithProfile:(id)arg1 colorPalette:(id)arg2;
 - (id)initWithProfile:(id)arg1;
+@property(readonly, nonatomic) unsigned long long mode;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

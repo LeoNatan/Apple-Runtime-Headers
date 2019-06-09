@@ -20,6 +20,7 @@
 
 @property(retain, nonatomic) MFError *error; // @synthesize error;
 @property(retain, nonatomic) MFActivityMonitor *monitor; // @synthesize monitor;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithMaximumSize:(unsigned int)arg1 latency:(double)arg2;
 

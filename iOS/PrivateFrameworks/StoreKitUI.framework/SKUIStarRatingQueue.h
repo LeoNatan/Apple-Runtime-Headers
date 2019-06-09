@@ -8,6 +8,7 @@
 
 @class SKUIClientContext, SKUIReviewConfiguration, UIWindow;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStarRatingQueue : NSObject
 {
     SKUIClientContext *_clientContext;

@@ -12,9 +12,10 @@
 @interface HMFTimer : HMFObject
 {
     HMFUnfairLock *_lock;
-    NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_delegateQueue;
+    NSObject<OS_dispatch_queue> *_timerQueue;
     double _timeInterval;
-    unsigned long long _leeway;
+    long long _leeway;
     _Bool _running;
     NSDate *_fireDate;
     id <HMFTimerDelegate> _delegate;
@@ -26,7 +27,6 @@
 @property(nonatomic, getter=isRunning) _Bool running; // @synthesize running=_running;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, nonatomic) NSObject<OS_dispatch_source> *timer; // @synthesize timer=_timer;
-@property(readonly, nonatomic) unsigned long long leeway; // @synthesize leeway=_leeway;
 @property __weak id <HMFTimerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) double timeInterval; // @synthesize timeInterval=_timeInterval;
 - (void).cxx_destruct;
@@ -36,8 +36,10 @@
 - (void)kick;
 - (void)suspend;
 - (void)resume;
+@property(retain) NSObject<OS_dispatch_queue> *delegateQueue;
 - (void)setFireDate:(id)arg1;
 @property(readonly, copy) NSDate *fireDate; // @synthesize fireDate=_fireDate;
+@property(readonly, nonatomic) unsigned long long leeway;
 - (id)attributeDescriptions;
 - (void)dealloc;
 - (id)initWithTimeInterval:(double)arg1 options:(unsigned int)arg2;

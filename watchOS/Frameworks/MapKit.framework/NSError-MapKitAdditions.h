@@ -14,5 +14,11 @@
 @property(readonly, nonatomic, getter=_mapkit_isCLHeadingFailure) _Bool _mapkit_CLHeadingFailure;
 @property(readonly, nonatomic, getter=_mapkit_isCLLocationUnknown) _Bool _mapkit_CLLocationUnknown;
 @property(readonly, nonatomic, getter=_mapkit_isCLDenied) _Bool _mapkit_CLDenied;
+- (id)_mapkit_error;
+- (id)_mapkit_transitIncident;
+- (int)_mapkit_underlyingGEOError;
+- (int)_mapkit_directionsErrorCode;
+- (_Bool)_mapkit_isDirectionsError;
+- (id)_mapkit_errorWithDirectionsError:(id)arg1;
 @end
 

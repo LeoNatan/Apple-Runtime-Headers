@@ -6,12 +6,15 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class CWNetwork, CWNetworkProfile, NSButton, NSTextField;
+@class CWDisplayedScanResult, NSButton, NSData, NSString, NSTextField;
 
 @interface CWSecurityMismatchDialog : NSWindowController
 {
-    CWNetwork *_network;
-    CWNetworkProfile *_profile;
+    CWDisplayedScanResult *_scanResult;
+    NSString *_username;
+    NSString *_password;
+    NSData *_identityData;
+    BOOL _remember;
     NSTextField *_title;
     NSTextField *_description;
     NSButton *_okButton;
@@ -19,8 +22,11 @@
     id _delegate;
 }
 
-@property(readonly, copy) CWNetworkProfile *profile; // @synthesize profile=_profile;
-@property(readonly, copy) CWNetwork *network; // @synthesize network=_network;
+@property BOOL remember; // @synthesize remember=_remember;
+@property(copy) NSData *identityData; // @synthesize identityData=_identityData;
+@property(copy) NSString *password; // @synthesize password=_password;
+@property(copy) NSString *username; // @synthesize username=_username;
+@property(readonly, copy) CWDisplayedScanResult *scanResult; // @synthesize scanResult=_scanResult;
 @property __weak id delegate; // @synthesize delegate=_delegate;
 - (void)windowDidLoad;
 - (void)onCancelButton:(id)arg1;
@@ -29,7 +35,7 @@
 - (id)networkSecurityString;
 - (id)localizedStringForKey:(id)arg1;
 - (void)dealloc;
-- (id)initWithNetwork:(id)arg1 profile:(id)arg2;
+- (id)initWithScanResult:(id)arg1;
 
 @end
 

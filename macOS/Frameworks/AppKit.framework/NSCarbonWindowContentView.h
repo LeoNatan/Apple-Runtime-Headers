@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
 - (BOOL)isOpaque;
-- (void)drawRect:(struct CGRect)arg1;
 
 @end
 

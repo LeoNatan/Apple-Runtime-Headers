@@ -7,6 +7,7 @@
 #import <Foundation/NSMutableArray.h>
 
 @interface NSMutableArray (HealthKit)
+- (void)hk_addNonNilObject:(id)arg1;
 - (void)hk_removeObjectsPassingTest:(CDUnknownBlockType)arg1;
 - (void)hk_addObjectsFromArray:(id)arg1 passingTest:(CDUnknownBlockType)arg2;
 - (id)hk_dequeue;

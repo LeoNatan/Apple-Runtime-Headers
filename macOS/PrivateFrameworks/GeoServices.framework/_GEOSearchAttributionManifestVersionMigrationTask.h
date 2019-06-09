@@ -8,8 +8,8 @@
 
 #import <GeoServices/GEOActiveTileGroupMigrationTask-Protocol.h>
 
-@class GEOActiveTileGroup, GEOReportedProgress, GEOSearchAttributionManifest, GEOSearchAttributionManifestVersionMigrator, NSProgress, NSString, NSURL, NSURLSession, NSURLSessionDataTask;
-@protocol NSObject, OS_dispatch_queue;
+@class GEOActiveTileGroup, GEOActiveTileGroupMigrationTaskOptions, GEOReportedProgress, GEOSearchAttributionManifest, GEOSearchAttributionManifestVersionMigrator, NSProgress, NSString, NSURL, NSURLSession, NSURLSessionDataTask;
+@protocol GEORequestCounterTicket, NSObject, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface _GEOSearchAttributionManifestVersionMigrationTask : NSObject <GEOActiveTileGroupMigrationTask>
@@ -24,10 +24,13 @@ __attribute__((visibility("hidden")))
     GEOReportedProgress *_progress;
     NSURLSession *_urlSession;
     NSURLSessionDataTask *_downloadTask;
+    id <GEORequestCounterTicket> _requestCounterTicket;
     GEOSearchAttributionManifest *_attributionManifest;
     id <NSObject> _transaction;
+    GEOActiveTileGroupMigrationTaskOptions *_options;
 }
 
+@property(retain, nonatomic) GEOActiveTileGroupMigrationTaskOptions *options; // @synthesize options=_options;
 @property(retain, nonatomic) id <NSObject> transaction; // @synthesize transaction=_transaction;
 - (void).cxx_destruct;
 - (void)removeOldData:(id)arg1;
@@ -37,7 +40,7 @@ __attribute__((visibility("hidden")))
 - (void)_handleResponse:(id)arg1 withData:(id)arg2 error:(id)arg3;
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1 callbackQueue:(id)arg2;
 @property(readonly) NSProgress *progress;
-@property(readonly) long long estimatedWeight;
+@property(readonly, nonatomic) long long estimatedWeight;
 - (void)dealloc;
 - (id)initWithMigrator:(id)arg1 newSearchAttributionManifestURL:(id)arg2 oldTileGroup:(id)arg3;
 - (id)init;

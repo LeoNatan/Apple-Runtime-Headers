@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     UIImage *_highlightOrSelectedImage;
 }
 
++ (id)imageWithImage:(id)arg1 existingImageView:(id)arg2;
 @property(retain, nonatomic) UIImage *highlightOrSelectedImage; // @synthesize highlightOrSelectedImage=_highlightOrSelectedImage;
 - (void).cxx_destruct;
 - (void)_updateImage;

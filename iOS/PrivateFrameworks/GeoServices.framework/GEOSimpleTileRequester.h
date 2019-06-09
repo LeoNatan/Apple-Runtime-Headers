@@ -9,7 +9,7 @@
 #import <GeoServices/GEOSimpleTileRequesterOperationDelegate-Protocol.h>
 #import <GeoServices/GEOSimpleTileRequesterSubclass-Protocol.h>
 
-@class GEODataSession, GEOTileKeyMap, GEOTileRequestBalancer, NSMutableArray, NSObject, NSString;
+@class GEODataSession, GEOTileKeyMap, GEOTileRequestBalancer, NSMutableArray, NSObject, NSString, geo_isolater;
 @protocol OS_dispatch_queue, OS_os_activity, OS_voucher;
 
 @interface GEOSimpleTileRequester : GEOTileRequester <GEOSimpleTileRequesterSubclass, GEOSimpleTileRequesterOperationDelegate>
@@ -19,7 +19,6 @@
     NSMutableArray *_errors;
     NSObject<OS_os_activity> *_activity;
     NSObject<OS_voucher> *_voucher;
-    NSObject<OS_dispatch_queue> *_workQueue;
     GEODataSession *_dataSession;
     unsigned int _qos;
     struct GEOOnce_s _didStart;
@@ -28,12 +27,12 @@
     _Bool _subclassImplementsTileEdition;
     _Bool _hasRemainingTileKeys;
     GEOTileKeyMap *_signpostIDs;
+    unsigned int _highestRunningOperationPriority;
+    geo_isolater *_highestRunningOperationPriorityIsolation;
 }
 
 @property(readonly, nonatomic) GEOTileRequestBalancer *balancer; // @synthesize balancer=_balancer;
 @property(readonly, nonatomic) NSObject<OS_os_activity> *activity; // @synthesize activity=_activity;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
-@property(retain, nonatomic) GEODataSession *dataSession; // @synthesize dataSession=_dataSession;
 - (void).cxx_destruct;
 - (id)operationsForKey:(const struct _GEOTileKey *)arg1;
 - (id)removeOperationsForKey:(const struct _GEOTileKey *)arg1;
@@ -46,19 +45,26 @@
 - (void)_cancelKey:(struct _GEOTileKey)arg1;
 - (void)cancelKey:(const struct _GEOTileKey *)arg1;
 - (void)_cancel;
+- (void)failedLoadingTileForKey:(struct _GEOTileKey)arg1 baseOperation:(id)arg2 error:(id)arg3;
+- (void)finishedLoadingTileForKey:(struct _GEOTileKey)arg1 baseOperation:(id)arg2;
 - (void)_generateEndSignpostEventIfNecessary:(struct _GEOTileKey)arg1;
 - (void)cancel;
 - (void)_cancelAllRunningOperations;
 - (void)_cleanup;
-- (id)newRequestWithType:(int)arg1 URL:(id)arg2 useProxyAuth:(_Bool)arg3 entityTag:(id)arg4 cachedData:(id)arg5 allowedRequestMode:(BOOL)arg6 timeout:(double)arg7 requestCounterTicket:(id)arg8;
+- (id)newRequestWithKind:(CDStruct_d1a7ebee)arg1 URL:(id)arg2 useProxyAuth:(_Bool)arg3 entityTag:(id)arg4 cachedData:(id)arg5 timeout:(double)arg6 requestCounterTicket:(id)arg7;
 - (void)createRequest:(id *)arg1 localizationRequest:(id *)arg2 forKey:(const struct _GEOTileKey *)arg3;
 - (id)_createOperationsForTileKey:(const struct _GEOTileKey *)arg1 priority:(unsigned int)arg2;
+- (_Bool)_useProxyAuthForTileKey:(const struct _GEOTileKey *)arg1;
 - (void)_notifyDelegateDone:(CDUnknownBlockType)arg1;
 - (void)_checkIfDone;
 - (void)_didStartOperationsForAllTileKeys;
 - (void)_updateRunningCountAndCheckIfDone;
+- (void)_updateHighestRunningPriority;
 - (void)start;
+@property(readonly, nonatomic) unsigned int highestRunningOperationPriority;
 @property(readonly, nonatomic, getter=isRunning) _Bool running;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue;
+- (id)initWithTileRequest:(id)arg1 delegateQueue:(id)arg2 delegate:(id)arg3 dataSession:(id)arg4;
 - (id)initWithTileRequest:(id)arg1 delegateQueue:(id)arg2 delegate:(id)arg3;
 - (_Bool)shouldParticipateInBalancerScheduling;
 - (void)didStartOperationsForAllTileKeys;
@@ -72,9 +78,11 @@
 - (_Bool)needsLocalizationForKey:(const struct _GEOTileKey *)arg1;
 - (id)localizationURLForTileKey:(const struct _GEOTileKey *)arg1;
 - (id)newXPCDataRequestForTileKey:(const struct _GEOTileKey *)arg1;
-- (_Bool)useProxyAuthForTileKey:(const struct _GEOTileKey *)arg1;
+- (CDStruct_d1a7ebee)kindForTileKey:(const struct _GEOTileKey *)arg1;
 - (id)urlForTileKey:(const struct _GEOTileKey *)arg1;
+- (_Bool)downloadsDataToDisk;
 - (_Bool)allowsCookies;
+- (_Bool)shouldAllowEmptyDataForTileKey:(const struct _GEOTileKey *)arg1;
 - (int)checksumMethodForIncomingTileDataWithKey:(struct _GEOTileKey *)arg1;
 - (id)verifyDataIntegrity:(id)arg1 checksumMethod:(int)arg2;
 - (void)_operationFailed:(id)arg1 error:(id)arg2;

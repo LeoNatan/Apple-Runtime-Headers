@@ -10,6 +10,16 @@
 {
 }
 
++ (id)addCreationDate:(id)arg1 toTIFFDictionary:(id)arg2;
++ (id)addCreationDate:(id)arg1 toExifDictionary:(id)arg2;
++ (id)_exifSubsecTimeFormatter;
++ (id)_exifDateTimeFormatter;
++ (id)gpsDictionaryForLocation:(id)arg1;
++ (id)_gpsDateFormatter;
++ (id)_gpsTimeFormatter;
++ (id)_dateFormatterTemplate;
++ (id)addCustomLocation:(id)arg1 toMetadata:(id)arg2;
++ (id)addCustomDate:(id)arg1 toMetadata:(id)arg2;
 + (id)addCustomLabel:(id)arg1 toMetadata:(id)arg2;
 
 @end

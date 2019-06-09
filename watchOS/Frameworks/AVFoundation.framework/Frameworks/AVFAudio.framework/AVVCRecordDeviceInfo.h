@@ -23,7 +23,7 @@
 @property(readonly) _Bool isRemoteDevice; // @synthesize isRemoteDevice=_isRemoteDevice;
 @property(readonly, nonatomic) NSString *recordRoute; // @synthesize recordRoute=_recordRoute;
 - (void)dealloc;
-- (id)initWithVoiceController:(id)arg1;
+- (id)initWithRecordingEngine:(struct AVVCRecordingEngine *)arg1;
 
 @end
 

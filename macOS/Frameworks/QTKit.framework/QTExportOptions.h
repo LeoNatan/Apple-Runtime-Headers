@@ -9,29 +9,20 @@
 #import <QTKit/NSCopying-Protocol.h>
 #import <QTKit/NSMutableCopying-Protocol.h>
 
-@class NSString, QTExportOptionsInternal;
-
 @interface QTExportOptions : NSObject <NSMutableCopying, NSCopying>
 {
-    QTExportOptionsInternal *_internal;
 }
 
 + (id)exportOptionsWithIdentifier:(id)arg1;
 + (id)localizedNameForExportOptionsIdentifier:(id)arg1;
 + (id)exportOptionsIdentifiersCompatibleWithMovie:(id)arg1;
++ (id)allExportOptionsIdentifiers;
 + (id)presetNameForIdentifier:(id)arg1;
 + (id)templateNameForIdentifier:(id)arg1;
-+ (id)allExportOptionsIdentifiers;
-- (id)recommendedFileTypesForExportedFile;
-- (id)localizedExportOptionsSummary;
-@property(readonly) struct OpaqueRFExport *exportRef;
-@property(retain, nonatomic) NSString *exportOptionsIdentifier;
-- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)initWithIdentifier:(id)arg1 exportRef:(void *)arg2;
 - (id)init;
-- (id)initWithIdentifier:(id)arg1 exportRef:(struct OpaqueRFExport *)arg2;
-- (BOOL)validateSourceForExportIdentifier:(id *)arg1;
 
 @end
 

@@ -18,8 +18,8 @@
     id <NSTouchBarColorPickerViewControllerDelegate> _delegate;
     NSColorList *_colorList;
     NSArray *_allowedColorSpaces;
-    unsigned int _allowsAlpha:1;
-    unsigned int _supportsPressAndHoldVariants:1;
+    BOOL _allowsAlpha;
+    BOOL _supportsPressAndHoldVariants;
 }
 
 + (id)keyPathsForValuesAffecting_currentPreferredPickerView;

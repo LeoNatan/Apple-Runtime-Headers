@@ -45,7 +45,7 @@
 @property(retain, nonatomic) HMDDevice *owningDevice; // @synthesize owningDevice=_owningDevice;
 @property(retain, nonatomic) HMDUser *owner; // @synthesize owner=_owner;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
-@property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
+@property(copy, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)updateEventTriggerMessage:(int)arg1 message:(id)arg2 relay:(_Bool)arg3;
@@ -75,6 +75,7 @@
 - (void)_actionSetsUpdated:(id)arg1 message:(id)arg2;
 - (void)_updateActionSetRequest:(id)arg1 postUpdate:(_Bool)arg2;
 - (void)_handleUpdateActionSetRequest:(id)arg1 postUpdate:(_Bool)arg2;
+- (void)_handleUpdateActionSetRequest:(id)arg1;
 - (void)_handleRemoveTriggerOwnedActionSetRequest:(id)arg1 postUpdate:(_Bool)arg2;
 - (void)_handleRemoveActionSetRequest:(id)arg1 postUpdate:(_Bool)arg2;
 - (void)_handleAddTriggerOwnedActionSetRequest:(id)arg1;

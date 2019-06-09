@@ -16,13 +16,15 @@
 }
 
 - (void).cxx_destruct;
-- (void)_drawBody;
-- (void)_drawTappingFoot;
-- (void)_drawHead;
-- (void)_drawSkirt;
-- (void)_drawFlower;
+- (int)getBlinkFrameFor15sTime:(float)arg1;
+- (float)_getBlinkDuration;
+- (void)_drawBodyWithEncoder:(id)arg1;
+- (void)_drawTappingFootWithEncoder:(id)arg1;
+- (void)_drawHeadWithEncoder:(id)arg1;
+- (void)_drawSkirtWithEncoder:(id)arg1;
+- (void)_drawFlowerWithEncoder:(id)arg1;
 - (void)setupBodyState;
-- (void)setupVAOs;
+- (void)setupGeometry;
 - (void)loadFootTextures;
 - (id)initWithLoader:(id)arg1;
 

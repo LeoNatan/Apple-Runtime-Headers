@@ -14,6 +14,8 @@
 }
 
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)_applyPausedUpdate;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (void)layoutSubviews;

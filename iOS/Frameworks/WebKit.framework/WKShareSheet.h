@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface WKShareSheet : NSObject
 {
     struct WeakObjCPtr<WKWebView> _webView;
-    CompletionHandler_dde7f840 _completionHandler;
+    CompletionHandler_e3f3fa93 _completionHandler;
     struct RetainPtr<UIActivityViewController> _shareSheetViewController;
     struct RetainPtr<UIViewController> _presentationViewController;
     id <WKShareSheetDelegate> _delegate;
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)dispatchDidDismiss;
 - (void)dismiss;
 - (void)_didCompleteWithSuccess:(_Bool)arg1;
-- (void)presentWithParameters:(const struct ShareDataWithParsedURL *)arg1 completionHandler:(CompletionHandler_dde7f840 *)arg2;
+- (void)presentWithParameters:(const struct ShareDataWithParsedURL *)arg1 inRect:(Optional_93f3c085)arg2 completionHandler:(CompletionHandler_e3f3fa93 *)arg3;
 - (id)initWithView:(id)arg1;
 
 @end

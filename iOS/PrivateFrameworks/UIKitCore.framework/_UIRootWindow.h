@@ -6,22 +6,42 @@
 
 #import <UIKitCore/UIWindow.h>
 
+@class NSString, RBSAssertion;
+
 @interface _UIRootWindow : UIWindow
 {
     double _scale;
+    struct os_unfair_lock_s _visibilityLock;
+    _Bool _visibilityLock_enabled;
+    NSString *_visibilityLock_environment;
+    NSString *_visibilityLock_identifier;
+    _Bool _visibilityLock_updateEnqueued;
+    struct os_unfair_lock_s _visibilityProcessingLock;
+    NSString *_visibilityProcessingLock_identifier;
+    RBSAssertion *_visibilityProcessingLock_assertion;
+    struct CGAffineTransform _additionalRootLayerAffineTransform;
 }
 
+@property(nonatomic, getter=_additionalRootLayerAffineTransform, setter=_setAdditionalRootLayerAffineTransform:) struct CGAffineTransform additionalRootLayerAffineTransform; // @synthesize additionalRootLayerAffineTransform=_additionalRootLayerAffineTransform;
+- (void).cxx_destruct;
+- (void)_visibilityLock_enqueueUpdateIfNecessary;
+- (id)_visibilityLock_environment;
+- (void)_updateVisibility;
 - (void)_noteScreenDidChangeMode:(id)arg1;
+- (void)setHidden:(_Bool)arg1;
 - (void)setScreen:(id)arg1;
-- (void)_configureRootLayer:(id)arg1 transformLayer:(id)arg2;
+- (void)_configureRootLayer:(id)arg1 sceneTransformLayer:(id)arg2 transformLayer:(id)arg3;
 - (_Bool)_transformLayerIncludesScreenRotation;
 - (void)_configureContextOptions:(id)arg1;
-- (CDStruct_3cbf53c3)_bindingDescription;
+- (CDStruct_a002d41c)_bindingDescription;
+- (id)_layerForCoordinateSpaceConversion;
 - (_Bool)_touchesInsideShouldHideCalloutBar;
-- (_Bool)_isConstrainedByScreenJail;
 - (_Bool)_isWindowServerHostingManaged;
 - (_Bool)_wantsSceneAssociation;
+- (_Bool)_extendsScreenSceneLifetime;
 - (id)_context;
+- (void)setVisibilityIdentifier:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *visibilityEnvironment;
 - (void)dealloc;
 - (id)initWithScreen:(id)arg1;
 - (id)initWithDisplay:(id)arg1;

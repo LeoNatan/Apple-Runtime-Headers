@@ -7,51 +7,70 @@
 #import <objc/NSObject.h>
 
 #import <AppleMediaServices/NSCopying-Protocol.h>
+#import <AppleMediaServices/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSString;
+@class AMSProcessInfo, NSDictionary, NSString;
 
-@interface AMSAuthenticateOptions : NSObject <NSCopying>
+@interface AMSAuthenticateOptions : NSObject <NSCopying, NSSecureCoding>
 {
     unsigned long long _authenticationType;
     BOOL _allowServerDialogs;
     BOOL _canMakeAccountActive;
+    BOOL _usernameEditable;
     BOOL _allowSecondaryCredentialSource;
     BOOL _remoteProxyAuthentication;
+    NSString *_appProvidedContext;
+    NSDictionary *_appProvidedData;
     NSDictionary *_createAccountQueryParams;
+    AMSProcessInfo *_clientInfo;
     NSString *_defaultButtonString;
+    NSDictionary *_HTTPHeaders;
     NSString *_logKey;
-    id _presentingViewController;
     NSString *_promptTitle;
     NSString *_proxyAppBundleID;
     NSString *_proxyAppName;
     NSString *_reason;
     NSString *_userAgent;
+    NSString *_userAgentSuffix;
     unsigned long long _credentialSource;
-    NSString *_mediaType;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly, getter=isRemoteProxyAuthentication) BOOL remoteProxyAuthentication; // @synthesize remoteProxyAuthentication=_remoteProxyAuthentication;
-@property(retain) NSString *mediaType; // @synthesize mediaType=_mediaType;
 @property unsigned long long credentialSource; // @synthesize credentialSource=_credentialSource;
 @property BOOL allowSecondaryCredentialSource; // @synthesize allowSecondaryCredentialSource=_allowSecondaryCredentialSource;
+@property BOOL usernameEditable; // @synthesize usernameEditable=_usernameEditable;
+@property(retain) NSString *userAgentSuffix; // @synthesize userAgentSuffix=_userAgentSuffix;
 @property(retain) NSString *userAgent; // @synthesize userAgent=_userAgent;
 @property(retain) NSString *reason; // @synthesize reason=_reason;
 @property(retain) NSString *proxyAppName; // @synthesize proxyAppName=_proxyAppName;
 @property(retain) NSString *proxyAppBundleID; // @synthesize proxyAppBundleID=_proxyAppBundleID;
 @property(retain) NSString *promptTitle; // @synthesize promptTitle=_promptTitle;
-@property(retain) id presentingViewController; // @synthesize presentingViewController=_presentingViewController;
 @property(retain) NSString *logKey; // @synthesize logKey=_logKey;
+@property(retain) NSDictionary *HTTPHeaders; // @synthesize HTTPHeaders=_HTTPHeaders;
 @property(retain) NSString *defaultButtonString; // @synthesize defaultButtonString=_defaultButtonString;
+@property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain) NSDictionary *createAccountQueryParams; // @synthesize createAccountQueryParams=_createAccountQueryParams;
 @property BOOL canMakeAccountActive; // @synthesize canMakeAccountActive=_canMakeAccountActive;
+@property(copy) NSDictionary *appProvidedData; // @synthesize appProvidedData=_appProvidedData;
+@property(copy) NSString *appProvidedContext; // @synthesize appProvidedContext=_appProvidedContext;
 @property BOOL allowServerDialogs; // @synthesize allowServerDialogs=_allowServerDialogs;
 - (void).cxx_destruct;
+- (void)setPresentingViewController:(id)arg1;
+- (void)setMediaType:(id)arg1;
+- (void)setAuthKitData:(id)arg1;
+- (id)presentingViewController;
+- (id)mediaType;
+- (id)authKitData;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)description;
 @property unsigned long long authenticationType;
-@property(readonly) NSDictionary *optionsDictionaryForRemoteProxyAuthentication;
+- (id)optionsDictionaryForRemoteProxyAuthentication;
 - (id)optionsDictionary;
 @property(readonly) BOOL allowSilentAuthentication;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithOptionsDictionary:(id)arg1;
 - (id)init;
 

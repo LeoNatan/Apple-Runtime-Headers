@@ -6,20 +6,32 @@
 
 #import <Metal/MTLCommandQueueDescriptor.h>
 
+@class NSObject;
+@protocol OS_dispatch_queue;
+
 __attribute__((visibility("hidden")))
 @interface MTLCommandQueueDescriptorInternal : MTLCommandQueueDescriptor
 {
     unsigned int _maxCommandBufferCount;
-    unsigned int _qosClass;
-    int _qosRelativePriority;
+    unsigned int _qosLevel;
+    NSObject<OS_dispatch_queue> *_commitQueue;
+    _Bool _commitSynchronously;
+    NSObject<OS_dispatch_queue> *_completionQueue;
+    _Bool _disableCrossQueueHazardTracking;
     _Bool _openGLQueue;
 }
 
 @property _Bool isOpenGLQueue; // @synthesize isOpenGLQueue=_openGLQueue;
-- (void)setQosRelativePriority:(int)arg1;
-- (int)qosRelativePriority;
-- (void)setQosClass:(unsigned int)arg1;
-- (unsigned int)qosClass;
+- (void)setDisableCrossQueueHazardTracking:(_Bool)arg1;
+- (_Bool)disableCrossQueueHazardTracking;
+- (void)setCompletionQueue:(id)arg1;
+- (id)completionQueue;
+- (void)setCommitSynchronously:(_Bool)arg1;
+- (_Bool)commitSynchronously;
+- (void)setCommitQueue:(id)arg1;
+- (id)commitQueue;
+- (void)setQosLevel:(unsigned int)arg1;
+- (unsigned int)qosLevel;
 - (void)setMaxCommandBufferCount:(unsigned int)arg1;
 - (unsigned int)maxCommandBufferCount;
 - (id)description;

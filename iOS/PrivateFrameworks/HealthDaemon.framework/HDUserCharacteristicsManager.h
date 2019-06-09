@@ -47,11 +47,12 @@
 - (void)_queue_updateQuantityCharacteristics;
 - (void)_queue_updateUserProfile;
 - (void)_queue_updateQuantityCharacteristicsAndUserProfileIfNeeded;
-- (void)_updateQuantityCharacteristicsAndUserProfile;
+- (void)_queue_updateQuantityCharacteristicsAndUserProfile;
 - (void)_userCharacteristicsDidChangeShouldUpdateUserProfile:(_Bool)arg1 shouldSync:(_Bool)arg2;
 - (double)restingCaloriesFromTotalCalories:(double)arg1 timeInterval:(double)arg2 authorizedToRead:(_Bool)arg3;
 - (_Bool)_setUserCharacteristic:(id)arg1 forType:(id)arg2 shouldInsertSample:(_Bool)arg3 updateProfileAndSync:(_Bool)arg4 error:(id *)arg5;
 - (_Bool)setUserCharacteristic:(id)arg1 forType:(id)arg2 error:(id *)arg3;
+- (id)modificationDateForCharacteristicWithType:(id)arg1 error:(id *)arg2;
 - (id)_userCharacteristicForType:(id)arg1 entity:(id *)arg2 error:(id *)arg3;
 - (id)userCharacteristicForType:(id)arg1 error:(id *)arg2;
 - (void)dealloc;

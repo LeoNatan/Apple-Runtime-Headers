@@ -13,6 +13,7 @@
 
 + (id)featureValueWithDouble:(double)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (unsigned long long)_integralFeatureValue;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (double)doubleValue;

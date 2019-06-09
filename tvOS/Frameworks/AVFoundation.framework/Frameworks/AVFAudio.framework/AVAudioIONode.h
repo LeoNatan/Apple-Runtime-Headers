@@ -10,11 +10,13 @@
 {
 }
 
-- (_Bool)enableRealtimeRenderingModeWithIOUnit:(struct AVAudioIOUnit *)arg1 isInput:(_Bool)arg2;
+- (_Bool)enableRealtimeRenderingModeWithIOUnit:(struct AVAudioIOUnit *)arg1 isInput:(_Bool)arg2 forceIOUnitReset:(_Bool)arg3;
 - (_Bool)enableManualRenderingMode:(long long)arg1 isInput:(_Bool)arg2;
+@property(readonly, nonatomic, getter=isVoiceProcessingEnabled) _Bool voiceProcessingEnabled;
+- (_Bool)setVoiceProcessingEnabled:(_Bool)arg1 error:(id *)arg2;
 - (long long)manualRenderingMode;
 - (_Bool)isInManualRenderingMode;
-- (void)didDetachFromEngine:(id)arg1;
+- (void)didDetachFromEngine:(id)arg1 error:(id *)arg2;
 - (void)didAttachToEngine:(id)arg1;
 @property(readonly, nonatomic) struct OpaqueAudioComponentInstance *audioUnit;
 @property(readonly, nonatomic) double presentationLatency;

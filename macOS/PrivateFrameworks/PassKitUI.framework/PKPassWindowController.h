@@ -27,6 +27,7 @@
     NSButton *_addToPassbookButton;
     double _slideUpYDelta;
     BOOL _attachToHostWindow;
+    BOOL _didAddPass;
     PKPassViewerViewController *_passViewController;
     PKPass *_pass;
     NSButton *_closeButton;
@@ -35,6 +36,7 @@
     struct CGRect _positionRelativeToRect;
 }
 
+@property BOOL didAddPass; // @synthesize didAddPass=_didAddPass;
 @property BOOL attachToHostWindow; // @synthesize attachToHostWindow=_attachToHostWindow;
 @property long long closeAnimationStyle; // @synthesize closeAnimationStyle=_closeAnimationStyle;
 @property long long openAnimationStyle; // @synthesize openAnimationStyle=_openAnimationStyle;

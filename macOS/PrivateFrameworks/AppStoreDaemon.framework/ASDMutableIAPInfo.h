@@ -6,21 +6,27 @@
 
 #import <AppStoreDaemon/ASDIAPInfo.h>
 
-@class NSNumber, NSString;
+@class NSDate, NSNumber, NSString;
 
 @interface ASDMutableIAPInfo : ASDIAPInfo
 {
 }
 
-@property(nonatomic) unsigned char type; // @dynamic type;
-@property(retain, nonatomic) NSString *subscriptionFamilyId; // @dynamic subscriptionFamilyId;
 @property(retain, nonatomic) NSNumber *purchaseTimestamp; // @dynamic purchaseTimestamp;
 @property(retain, nonatomic) NSNumber *lastModifiedTimestamp; // @dynamic lastModifiedTimestamp;
-@property(nonatomic) BOOL hasUsedIntroPricingOffer; // @dynamic hasUsedIntroPricingOffer;
-@property(nonatomic) BOOL hasUsedFreeOffer; // @dynamic hasUsedFreeOffer;
 @property(retain, nonatomic) NSNumber *expirationTimestamp; // @dynamic expirationTimestamp;
-@property(retain, nonatomic) NSNumber *appAdamId; // @dynamic appAdamId;
+
+// Remaining properties
 @property(retain, nonatomic) NSNumber *adamId; // @dynamic adamId;
+@property(retain, nonatomic) NSNumber *appAdamId; // @dynamic appAdamId;
+@property(nonatomic) BOOL autoRenewStatus; // @dynamic autoRenewStatus;
+@property(retain, nonatomic) NSDate *expirationDate; // @dynamic expirationDate;
+@property(nonatomic) BOOL hasUsedFreeOffer; // @dynamic hasUsedFreeOffer;
+@property(nonatomic) BOOL hasUsedIntroPricingOffer; // @dynamic hasUsedIntroPricingOffer;
+@property(retain, nonatomic) NSDate *lastModifiedDate; // @dynamic lastModifiedDate;
+@property(retain, nonatomic) NSDate *purchaseDate; // @dynamic purchaseDate;
+@property(retain, nonatomic) NSString *subscriptionFamilyId; // @dynamic subscriptionFamilyId;
+@property(nonatomic) unsigned char type; // @dynamic type;
 
 @end
 

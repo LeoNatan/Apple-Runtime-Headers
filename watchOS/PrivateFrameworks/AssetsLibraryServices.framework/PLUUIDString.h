@@ -12,6 +12,7 @@
     char _uuidString[37];
 }
 
++ (_Bool)parseUUIDString:(id)arg1 uuidBuffer:(char *)arg2;
 + (id)UUIDString;
 - (const char *)UTF8String;
 - (int)compare:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange)arg3 locale:(id)arg4;

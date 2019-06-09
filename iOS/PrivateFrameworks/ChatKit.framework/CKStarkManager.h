@@ -6,33 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class UIScreen, UIViewController, UIWindow;
+@class UIViewController, UIWindow;
 
 @interface CKStarkManager : NSObject
 {
-    _Bool _isStarkConnected;
     UIViewController *_starkRootViewController;
     UIWindow *_starkWindow;
-    UIScreen *_starkScreen;
 }
 
 + (id)sharedInstance;
-@property(retain, nonatomic) UIScreen *starkScreen; // @synthesize starkScreen=_starkScreen;
 @property(retain, nonatomic) UIWindow *starkWindow; // @synthesize starkWindow=_starkWindow;
 @property(retain, nonatomic) UIViewController *starkRootViewController; // @synthesize starkRootViewController=_starkRootViewController;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool isStarkConnected;
 - (id)_assistantContextForRecipientID:(id)arg1;
 - (void)activateForRecipient:(id)arg1;
 - (id)_assistantContextForConversation:(id)arg1;
 - (void)activateForConversation:(id)arg1;
-- (void)detachStarkScreen:(id)arg1;
-- (void)attachStarkToScreen:(id)arg1;
-- (void)screenDidDisconnectNotification:(id)arg1;
-- (void)screenDidConnectNotification:(id)arg1;
-- (void)startListeningForScreenNotifications;
-@property(readonly, nonatomic) _Bool isStarkConnected; // @synthesize isStarkConnected=_isStarkConnected;
-- (void)dealloc;
-- (id)init;
+- (void)detachStarkFromWindow:(id)arg1;
+- (void)attachStarkToWindow:(id)arg1;
 
 @end
 

@@ -218,10 +218,12 @@
 @property(nonatomic) _Bool enablesReturnKeyAutomatically; // @dynamic enablesReturnKeyAutomatically;
 @property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
 @property(readonly, nonatomic) UITextPosition *endOfDocument; // @dynamic endOfDocument;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) _Bool forceDefaultDictationInfo;
 @property(nonatomic) long long forceDictationKeyboardType;
 @property(nonatomic) _Bool forceDisableDictation;
 @property(nonatomic) _Bool forceEnableDictation;
+@property(nonatomic) _Bool forceFloatingKeyboard;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) _Bool hidePrediction;
@@ -252,6 +254,7 @@
 @property(nonatomic) long long selectionGranularity;
 @property(retain, nonatomic) UIColor *selectionHighlightColor;
 @property(nonatomic) int shortcutConversionType;
+@property(nonatomic) _Bool showDictationButton;
 @property(nonatomic) long long smartDashesType;
 @property(nonatomic) long long smartInsertDeleteType;
 @property(nonatomic) long long smartQuotesType;
@@ -269,6 +272,7 @@
 @property(readonly, nonatomic) id <UITextInputTokenizer> tokenizer; // @dynamic tokenizer;
 @property(retain, nonatomic) UIColor *underlineColorForSpelling;
 @property(retain, nonatomic) UIColor *underlineColorForTextAlternatives;
+@property(nonatomic) _Bool useAutomaticEndpointing;
 @property(nonatomic) _Bool useInterfaceLanguageForLocalization;
 @property(nonatomic) struct _NSRange validTextRange;
 

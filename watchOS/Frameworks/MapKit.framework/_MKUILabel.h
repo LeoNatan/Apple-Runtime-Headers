@@ -13,8 +13,8 @@
 
 @property(copy, nonatomic) CDUnknownBlockType _mapkit_themeColorProvider; // @synthesize _mapkit_themeColorProvider=__mapkit_themeColorProvider;
 - (void).cxx_destruct;
-- (void)infoCardThemeChanged:(id)arg1;
-- (void)willMoveToWindow:(id)arg1;
+- (void)infoCardThemeChanged;
+- (void)didMoveToWindow;
 
 @end
 

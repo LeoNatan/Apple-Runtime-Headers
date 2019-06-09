@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (id)participantConfigFromXPCDictionary:(id)arg1;
 - (void)deregisterBlocksForService;
 - (void)registerBlocksForService;
+- (void)vcSession:(id)arg1 participantID:(id)arg2 spatialAudioSourceIDDidChange:(unsigned long long)arg3;
 - (void)vcSession:(id)arg1 participantID:(id)arg2 didDetectError:(id)arg3;
 - (void)vcSession:(id)arg1 participantID:(id)arg2 didChangeProminence:(unsigned char)arg3 description:(id)arg4;
 - (void)vcSession:(id)arg1 participantID:(id)arg2 remoteVideoPausedDidChange:(_Bool)arg3;

@@ -12,12 +12,8 @@
 {
 }
 
-- (void)undeleteMessagesWithDetails:(id)arg1;
++ (id)errorDescriptionForTransferFailureMessageWithMissedMessageCount:(unsigned long long)arg1 subject:(id)arg2 destinationMailbox:(id)arg3;
 - (void)deleteMessagesOlderThanNumberOfDays:(long long)arg1 compact:(BOOL)arg2;
-- (long long)_addMessages:(id)arg1 fromStore:(id)arg2 missedMessages:(id)arg3 newMessages:(id)arg4 newDocumentIDsByOld:(id)arg5 flagsToSet:(id)arg6 appendReason:(long long)arg7 userInitiated:(BOOL)arg8 error:(id *)arg9;
-- (long long)_doAppendMessages:(id)arg1 fromStore:(id)arg2 missedMessages:(id)arg3 newMessages:(id)arg4 newDocumentIDsByOld:(id)arg5 flagsToSet:(id)arg6 appendReason:(long long)arg7 userInitiated:(BOOL)arg8 error:(id *)arg9;
-- (long long)appendMessages:(id)arg1 missedMessages:(id)arg2 newMessages:(id)arg3 newDocumentIDsByOld:(id)arg4 flagsToSet:(id)arg5 appendReason:(long long)arg6 userInitiated:(BOOL)arg7 error:(id *)arg8;
-- (id)messageWithLibraryID:(long long)arg1 options:(unsigned int)arg2;
 - (id)messagesForMailbox:(id)arg1 olderThanNumberOfDays:(long long)arg2;
 - (void)enqueuedMessageChangesInExistingRequest;
 - (void)didAddMessages;

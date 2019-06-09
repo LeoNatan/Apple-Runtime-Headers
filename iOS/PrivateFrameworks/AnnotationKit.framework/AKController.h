@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class AKActionController, AKAttributeController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKPeripheralAvailabilityManager_iOS, AKSignatureModelController, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSMapTable, NSMutableArray, NSString, UIView;
-@protocol AKControllerDelegateProtocol;
+@class AKActionController, AKAttributeController, AKFormFeatureDetectorController, AKHighlightAnnotationController, AKLegacyDoodleController, AKMainEventHandler, AKModelController, AKPageController, AKPeripheralAvailabilityManager_iOS, AKSidecarController, AKSignatureModelController, AKStatistics, AKTextEditorController, AKToolController, AKToolbarView, AKToolbarViewController, AKUndoController, NSMapTable, NSMutableArray, NSString, UIView;
+@protocol AKControllerDelegateProtocol, PKRulerHostingDelegate;
 
 @interface AKController : NSObject
 {
@@ -24,10 +24,12 @@
     _Bool _selectNewlyCreatedAnnotations;
     _Bool _shapeDetectionEnabled;
     _Bool _useHighVisibilityDefaultInks;
+    _Bool __isInDFRAction;
     id <AKControllerDelegateProtocol> _delegate;
     AKModelController *_modelController;
     UIView *_toolbarView;
     unsigned long long _currentPageIndex;
+    id <PKRulerHostingDelegate> _rulerHostingDelegate;
     NSString *_author;
     NSMutableArray *_pageControllers;
     NSMapTable *_pageModelControllersToPageControllers;
@@ -36,6 +38,7 @@
     AKToolbarViewController *_toolbarViewController;
     AKAttributeController *_attributeController;
     AKUndoController *_undoController;
+    AKSidecarController *_sidecarController;
     AKMainEventHandler *_mainEventHandler;
     AKTextEditorController *_textEditorController;
     AKLegacyDoodleController *_legacyDoodleController;
@@ -63,6 +66,7 @@
 + (id)akBundleIdentifier;
 + (id)akBundle;
 + (id)controllerWithDelegate:(id)arg1;
+@property(readonly) _Bool _isInDFRAction; // @synthesize _isInDFRAction=__isInDFRAction;
 @property(nonatomic) _Bool useHighVisibilityDefaultInks; // @synthesize useHighVisibilityDefaultInks=_useHighVisibilityDefaultInks;
 @property(nonatomic) __weak AKToolbarView *modernToolbarView; // @synthesize modernToolbarView=_modernToolbarView;
 @property(nonatomic) _Bool shapeDetectionEnabled; // @synthesize shapeDetectionEnabled=_shapeDetectionEnabled;
@@ -84,6 +88,7 @@
 @property(retain) AKLegacyDoodleController *legacyDoodleController; // @synthesize legacyDoodleController=_legacyDoodleController;
 @property(retain) AKTextEditorController *textEditorController; // @synthesize textEditorController=_textEditorController;
 @property(retain) AKMainEventHandler *mainEventHandler; // @synthesize mainEventHandler=_mainEventHandler;
+@property(retain) AKSidecarController *sidecarController; // @synthesize sidecarController=_sidecarController;
 @property(retain) AKUndoController *undoController; // @synthesize undoController=_undoController;
 @property(retain) AKAttributeController *attributeController; // @synthesize attributeController=_attributeController;
 @property(retain) AKToolbarViewController *toolbarViewController; // @synthesize toolbarViewController=_toolbarViewController;
@@ -93,6 +98,7 @@
 @property(retain) NSMutableArray *pageControllers; // @synthesize pageControllers=_pageControllers;
 @property _Bool isTestingInstance; // @synthesize isTestingInstance=_isTestingInstance;
 @property(copy) NSString *author; // @synthesize author=_author;
+@property(nonatomic) __weak id <PKRulerHostingDelegate> rulerHostingDelegate; // @synthesize rulerHostingDelegate=_rulerHostingDelegate;
 @property unsigned long long currentPageIndex; // @synthesize currentPageIndex=_currentPageIndex;
 @property(nonatomic) _Bool pencilAlwaysDraws; // @synthesize pencilAlwaysDraws=_pencilAlwaysDraws;
 @property(nonatomic) _Bool annotationEditingEnabled; // @synthesize annotationEditingEnabled=_annotationEditingEnabled;
@@ -113,10 +119,15 @@
 - (id)pageControllerForAnnotation:(id)arg1;
 - (id)pageControllerForPageModelController:(id)arg1;
 - (id)currentPageController;
+- (id)_toolpicker_inkIdentifier;
+- (void)_toolpicker_setInkIdentifier:(id)arg1;
+- (id)_toolpicker_color;
+- (void)_toolpicker_setColor:(id)arg1;
 - (_Bool)supportForPencilAlwaysDrawsSatisfied;
 - (_Bool)shouldDrawVariableStrokeDoodles;
 - (_Bool)_validateCutCopyDelete;
 - (void)_didReceiveMemoryWarning:(id)arg1;
+@property(readonly, nonatomic) _Bool onlyDrawWithApplePencil;
 - (void)removeNoteFromAnnotation:(id)arg1;
 - (void)addPopupToAnnotation:(id)arg1 openPopup:(_Bool)arg2;
 - (void)highlightableSelectionDidEndChanging;
@@ -147,6 +158,7 @@
 - (void)redo:(id)arg1;
 - (_Bool)validateUndo:(id)arg1;
 - (void)undo:(id)arg1;
+- (void)delayedUndoControllerSetup;
 - (void)clearUndoStack;
 - (void)applyCurrentCrop;
 - (void)resetToDefaultToolMode;
@@ -154,6 +166,7 @@
 - (unsigned long long)toolMode;
 - (id)imageForToolbarButtonItemOfType:(unsigned long long)arg1;
 - (id)toolbarButtonItemOfType:(unsigned long long)arg1;
+- (void)_updateGestureDependencyPriority;
 - (id)rotationGestureRecognizer;
 - (id)panGestureRecognizer;
 - (id)pressGestureRecognizer;

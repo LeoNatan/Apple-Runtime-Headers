@@ -6,7 +6,6 @@
 
 #import <UIKit/UIButton.h>
 
-__attribute__((visibility("hidden")))
 @interface BFFContinueButton : UIButton
 {
 }

@@ -6,13 +6,16 @@
 
 #import <EventKitUI/EKEventViewDelegate-Protocol.h>
 
-@class EKEventEditViewController, EKEventViewController;
+@class EKEventEditViewController, EKEventViewController, UIAlertController;
 
 @protocol EKEventViewDelegatePrivate <EKEventViewDelegate>
 
 @optional
+- (void)eventViewController:(EKEventViewController *)arg1 requestsDisplayOfDeleteAlert:(UIAlertController *)arg2;
+- (_Bool)eventViewDelegateShouldHandlePresentationOfDeleteAlert:(EKEventViewController *)arg1;
 - (_Bool)eventViewControllerEditButtonTemporarilyDisabled:(EKEventViewController *)arg1;
 - (_Bool)eventViewControllerUseMinimalModeAfterTraitCollectionChange:(EKEventViewController *)arg1;
+- (void)eventViewControllerDidReceiveEditUserInteraction:(EKEventViewController *)arg1;
 - (void)eventViewControllerWillDisappear:(EKEventViewController *)arg1;
 - (_Bool)eventViewControllerShouldDismissSelf:(EKEventViewController *)arg1;
 - (_Bool)eventViewControllerShouldAlwaysShowNavBar:(EKEventViewController *)arg1;

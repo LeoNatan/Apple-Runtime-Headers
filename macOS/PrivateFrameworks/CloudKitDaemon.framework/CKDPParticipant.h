@@ -8,19 +8,23 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class CKDPContactInformation, CKDPIdentifier, CKDPProtectionInfo, NSData;
+@class CKDPContactInformation, CKDPDate, CKDPIdentifier, CKDPProtectionInfo, NSData;
 
 @interface CKDPParticipant : PBCodable <NSCopying>
 {
     long long _acceptTimestamp;
+    CKDPDate *_acceptedTimestampDate;
     CKDPContactInformation *_contactInformation;
+    CKDPDate *_inviteTimestampDate;
     CKDPIdentifier *_inviterId;
+    int _keyHealth;
     int _outOfNetworkKeyType;
     NSData *_outOfNetworkPrivateKey;
     CKDPIdentifier *_participantId;
     int _participantType;
     int _permission;
     CKDPProtectionInfo *_protectionInfo;
+    NSData *_protectionInfoPublicKey;
     CKDPProtectionInfo *_publicKey;
     int _publicKeyVersion;
     int _state;
@@ -31,6 +35,7 @@
     BOOL _isOrgUser;
     struct {
         unsigned int acceptTimestamp:1;
+        unsigned int keyHealth:1;
         unsigned int outOfNetworkKeyType:1;
         unsigned int participantType:1;
         unsigned int permission:1;
@@ -43,7 +48,10 @@
     } _has;
 }
 
+@property(retain, nonatomic) CKDPDate *inviteTimestampDate; // @synthesize inviteTimestampDate=_inviteTimestampDate;
+@property(retain, nonatomic) NSData *protectionInfoPublicKey; // @synthesize protectionInfoPublicKey=_protectionInfoPublicKey;
 @property(nonatomic) BOOL isOrgUser; // @synthesize isOrgUser=_isOrgUser;
+@property(retain, nonatomic) CKDPDate *acceptedTimestampDate; // @synthesize acceptedTimestampDate=_acceptedTimestampDate;
 @property(nonatomic) BOOL isInNetwork; // @synthesize isInNetwork=_isInNetwork;
 @property(nonatomic) BOOL acceptedInProcess; // @synthesize acceptedInProcess=_acceptedInProcess;
 @property(nonatomic) int outOfNetworkKeyType; // @synthesize outOfNetworkKeyType=_outOfNetworkKeyType;
@@ -66,7 +74,14 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasInviteTimestampDate;
+- (int)StringAsKeyHealth:(id)arg1;
+- (id)keyHealthAsString:(int)arg1;
+@property(nonatomic) BOOL hasKeyHealth;
+@property(nonatomic) int keyHealth; // @synthesize keyHealth=_keyHealth;
+@property(readonly, nonatomic) BOOL hasProtectionInfoPublicKey;
 @property(nonatomic) BOOL hasIsOrgUser;
+@property(readonly, nonatomic) BOOL hasAcceptedTimestampDate;
 @property(nonatomic) BOOL hasIsInNetwork;
 @property(nonatomic) BOOL hasAcceptedInProcess;
 @property(nonatomic) BOOL hasPublicKeyVersion;

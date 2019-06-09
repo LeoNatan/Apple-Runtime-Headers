@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) float minFrequency; // @synthesize minFrequency=_minFrequency;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)assign:(id)arg1;
+- (void)assign:(const struct _VCAudioPowerSpectrumEntry *)arg1;
 
 @end
 

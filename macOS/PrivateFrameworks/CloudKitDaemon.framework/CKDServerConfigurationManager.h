@@ -39,7 +39,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *switchNotifSource; // @synthesize switchNotifSource=_switchNotifSource;
 - (void).cxx_destruct;
 - (id)CKStatusReportArray;
-- (void)expireConfigurationForContext:(id)arg1;
+- (void)expireConfigurationForContextInfoProvider:(id)arg1 accountInfoProvider:(id)arg2;
 - (void)expireGlobalConfiguration;
 - (void)_writeOutiCloudHostnames:(id)arg1;
 - (void)_behaviorOptionsChanged:(id)arg1;
@@ -52,7 +52,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)init;
 - (void)_watchForSwitchPrefFileChanges;
-- (id)_uniqueStringForContainerAndAccount:(id)arg1;
+- (id)_uniqueStringForContext:(id)arg1 account:(id)arg2;
 - (void)systemAvailabilityChanged:(unsigned long long)arg1;
 
 // Remaining properties

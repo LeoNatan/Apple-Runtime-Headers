@@ -10,6 +10,7 @@
 
 @class NSSharingAccountConfigurationViewController, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NSSharingContainerViewController : NSViewController <NSExtensionRequestHandling>
 {
     NSSharingAccountConfigurationViewController *_configurationViewController;

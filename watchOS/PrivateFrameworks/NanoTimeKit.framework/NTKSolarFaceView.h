@@ -10,14 +10,13 @@
 #import <NanoTimeKit/PUICCrownInputSequencerDelegate-Protocol.h>
 #import <NanoTimeKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CSLPIMinorDetentAssertion, NSDateFormatter, NSDictionary, NSMutableSet, NSString, NSTimer, NTKBezierPathView, NTKColorCurve, NTKDigitalTimeLabel, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, NTKFloatCurve, NTKSolarDiskView, NTKSolarPath, NTKSolarTimeModel, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UILabel, UITapGestureRecognizer, UIView;
+@class CSLPIMinorDetentAssertion, NSDateFormatter, NSDictionary, NSMutableSet, NSString, NSTimer, NTKBezierPathView, NTKColorCurve, NTKDigitalTimeLabelStyle, NTKDigitialUtilitarianFaceViewComplicationFactory, NTKFloatCurve, NTKSolarDiskView, NTKSolarPath, NTKSolarTimeModel, PUICClientSideAnimation, PUICCrownInputSequencer, UIImageView, UILabel, UITapGestureRecognizer, UIView;
 
 @interface NTKSolarFaceView : NTKDigitalFaceView <NTKTimeView, PUICCrownInputSequencerDelegate, UIGestureRecognizerDelegate>
 {
     NTKDigitialUtilitarianFaceViewComplicationFactory *_faceViewComplicationFactory;
     NTKColorCurve *_preNoonComplicationColorCurve;
     NTKColorCurve *_postNoonComplicationColorCurve;
-    NTKDigitalTimeLabel *_digitalTimeLabel;
     NTKDigitalTimeLabelStyle *_digitalTimeLabelDefaultStyle;
     NTKDigitalTimeLabelStyle *_digitalTimeLabelSmallInUpperRightCornerStyle;
     UIView *_solarContentView;
@@ -53,6 +52,7 @@
     NTKSolarPath *_solarPath;
     UITapGestureRecognizer *_viewModeTapGesture;
     int _previousViewMode;
+    int _nextViewMode;
     struct NSNumber *_clockTimerToken;
     struct NSString *_locationManagerToken;
     PUICCrownInputSequencer *_crownSequencer;
@@ -77,6 +77,8 @@
 }
 
 - (void).cxx_destruct;
+- (id)_digitalTimeLabelStyleFromViewMode:(int)arg1 faceBounds:(struct CGRect)arg2;
+- (unsigned int)_timeLabelOptions;
 - (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
 - (void)_configureForEditMode:(int)arg1;
 - (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
@@ -84,11 +86,8 @@
 - (void)_adjustUIForBoundsChange;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
-- (void)_bringForegroundViewsToFront;
 - (void)_layoutForegroundContainerView;
 - (_Bool)_needsForegroundContainerView;
-- (void)_layoutTimeLabelForViewMode:(int)arg1;
-- (id)_digitalTimeLabelStyleForViewMode:(int)arg1;
 - (void)_layoutSolarDiskViewForViewMode:(int)arg1;
 - (void)_layoutSolarPathAndContainerForViewMode:(int)arg1;
 - (void)_layoutHorizonForViewMode:(int)arg1;
@@ -98,19 +97,19 @@
 - (void)_beginAnimatingForReason:(id)arg1;
 - (void)_cleanupAfterSettingViewMode:(int)arg1;
 - (void)_prepareForSettingViewMode:(int)arg1;
+- (void)_setViewMode:(int)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setViewMode:(int)arg1 animated:(_Bool)arg2;
 - (void)_interpolateFromViewMode:(int)arg1 toViewMode:(int)arg2 progress:(float)arg3;
 - (_Bool)_canEnterInteractiveMode;
-- (void)_updateToViewMode:(int)arg1;
 - (void)_transitionToViewMode:(int)arg1;
 - (void)_setSolarBezierPath:(id)arg1 animated:(_Bool)arg2;
 - (id)_createSolarBezierPath;
-- (void)_updateSolarPathForChangedDate:(id)arg1;
+- (void)_updateSolarPathForChangedDate:(id)arg1 animated:(_Bool)arg2;
 - (void)_updateSolarPathForChangedLocation:(id)arg1;
 - (struct CGPoint)_pointOnSolarPathForPercentage:(float)arg1;
 - (id)_createWaypointView;
 - (void)_animateSolarDiskFromPercentage:(float)arg1 toPercentage:(float)arg2 reason:(id)arg3;
-- (void)_animateSolarDiskToRestPercentageIfNeeded;
+- (void)_animateSolarDiskToRestPercentageIfNeededForViewMode:(int)arg1;
 - (void)_updateSolarDiskHaloViewPosition;
 - (void)_updateSignificantClockPositionWithSolarDiskCenter:(struct CGPoint)arg1;
 - (void)_solarDiskPercentageChanged:(float)arg1;
@@ -143,7 +142,7 @@
 - (void)_applyDataMode;
 - (void)_stopClockUpdates;
 - (void)_startClockUpdates;
-- (void)_updateTimeScrubbingContent;
+- (void)_updateTimeScrubbingContentForViewMode:(int)arg1;
 - (void)_detentIfNecessaryForOffset:(float)arg1;
 - (void)_disableDetents;
 - (void)_enableDetents;
@@ -155,10 +154,12 @@
 - (_Bool)_wheelChangedWithEvent:(id)arg1;
 - (void)_disableCrown;
 - (void)_enableCrown;
-- (void)_updateDigitalTimeLabelStylesForBounds:(struct CGRect)arg1;
+- (_Bool)_shouldHandleHardwareEvents;
 - (void)layoutSubviews;
 - (void)_applyShowContentForUnadornedSnapshot;
 - (void)setViewMode:(int)arg1;
+- (void)_unloadViews;
+- (void)_setupViews;
 - (void)_becameInactiveFace;
 - (void)_becameActiveFace;
 - (void)_unloadSnapshotContentViews;

@@ -8,5 +8,6 @@
 
 @interface UIScreen (ChatKit)
 @property(readonly, nonatomic) unsigned int ck_screenSizeCategory;
+- (_Bool)__ck_isFullscreen;
 @end
 

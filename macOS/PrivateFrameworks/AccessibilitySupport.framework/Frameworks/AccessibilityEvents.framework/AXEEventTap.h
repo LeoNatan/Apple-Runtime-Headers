@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSThread, _AXEEventTapInfo;
+@class NSLock, NSString, NSThread;
 @protocol AXEEventTapDelegate;
 
 @interface AXEEventTap : NSObject
@@ -22,16 +22,22 @@
     id <AXEEventTapDelegate> _delegate;
     unsigned long long _eventsOfInterest;
     NSString *__priority;
+    NSLock *__eventTapThreadLock;
     NSThread *__eventTapThread;
     double __lastReconnectTimestamp;
-    _AXEEventTapInfo *_info;
+    long long __eventTapID;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-@property(retain, nonatomic, setter=_setInfo:) _AXEEventTapInfo *info; // @synthesize info=_info;
++ (void)_setEventTap:(id)arg1 eventTapID:(long long)arg2;
++ (id)_eventTapForEventTapID:(long long)arg1;
++ (id)_eventTapIDToEventTapInfoMap;
++ (id)_eventTapIDQueue;
+@property(readonly, nonatomic) long long _eventTapID; // @synthesize _eventTapID=__eventTapID;
 @property(nonatomic, setter=_setReconnectCount:) unsigned int _reconnectCount; // @synthesize _reconnectCount=__reconnectCount;
 @property(nonatomic, setter=_setLastReconnectTimestamp:) double _lastReconnectTimestamp; // @synthesize _lastReconnectTimestamp=__lastReconnectTimestamp;
-@property(retain, nonatomic) NSThread *_eventTapThread; // @synthesize _eventTapThread=__eventTapThread;
+@property(retain) NSThread *_eventTapThread; // @synthesize _eventTapThread=__eventTapThread;
+@property(readonly, nonatomic) NSLock *_eventTapThreadLock; // @synthesize _eventTapThreadLock=__eventTapThreadLock;
 @property(readonly, nonatomic) unsigned int _options; // @synthesize _options=__options;
 @property(readonly, nonatomic) unsigned int _placement; // @synthesize _placement=__placement;
 @property(readonly, copy, nonatomic) NSString *_priority; // @synthesize _priority=__priority;

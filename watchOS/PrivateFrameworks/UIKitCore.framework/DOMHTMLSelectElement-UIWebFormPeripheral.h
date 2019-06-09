@@ -8,5 +8,11 @@
 
 @interface DOMHTMLSelectElement (UIWebFormPeripheral)
 - (id)createPeripheral;
+- (_Bool)_supportsAutoFill;
+- (_Bool)_requiresInputView;
+- (_Bool)_requiresAccessoryView;
+- (void)_stopAssistingDocumentView:(id)arg1;
+- (void)_startAssistingDocumentView:(id)arg1;
+- (_Bool)nodeCanBecomeFirstResponder;
 @end
 

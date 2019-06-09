@@ -10,5 +10,13 @@
 @property(readonly, nonatomic) _Bool isAuthKitUnableToPromptDueToNetworkError;
 @property(readonly, nonatomic) _Bool isAuthKitUnableToPromptError;
 @property(readonly, nonatomic) _Bool isAuthenticationError;
+- (id)errorByExtendingUserInfoWithDictionary:(id)arg1;
+- (_Bool)isRecoveryPETSoftLimitError;
+- (_Bool)isRecoveryPETHardLimitError;
+- (_Bool)isCoolDownError;
+- (_Bool)isLoginSoftLimit;
+- (_Bool)isLoginHardLimit;
+- (_Bool)isICSCInvalidError;
+- (_Bool)isICSCRecoveryHardLimitError;
 @end
 

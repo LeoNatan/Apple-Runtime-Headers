@@ -52,8 +52,8 @@ __attribute__((visibility("hidden")))
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesChanged:(const vector_614ab7ad *)arg2 inObservedNode:(const struct TFENode *)arg3;
 - (void)coalescingNodeObserver:(struct TCoalescingNodeObserver *)arg1 nodesAdded:(const struct TFENodeVector *)arg2 toObservedNode:(const struct TFENode *)arg3;
 - (void)cancelDelayedNodeEventHandling;
-- (void)delayNodeEventHandling:(double)arg1;
-- (void)flushPendingEvents:(const function_b1fce659 *)arg1;
+- (void)delayNodeEventHandling:(duration_3c68f186)arg1;
+- (void)flushPendingEvents:(unique_function_63952f55 *)arg1;
 - (struct TFENodeVector)typeSelectCandidates;
 - (struct TGroupManager *)_groupManagerForNode:(const struct TFENode *)arg1 calculateFolderSizes:(_Bool)arg2;
 - (_Bool)isGroupNode:(const struct TFENode *)arg1 inContainerNode:(const struct TFENode *)arg2;
@@ -105,8 +105,8 @@ __attribute__((visibility("hidden")))
 - (void)closeContainerNodes:(const vector_c133cd5b *)arg1;
 - (void)_openContainerNodesOnWorkerQueue:(const shared_ptr_7bdd7b4a *)arg1 busyStateIncrementer:(id)arg2 isSwitchingViewStyles:(_Bool)arg3;
 - (void)openContainerNodes:(const vector_a7e7ffc1 *)arg1;
-- (void)handlePendingCallBacks:(int)arg1;
-- (void)callOnMainThread:(const function_b1fce659 *)arg1;
+- (void)handlePendingCallBacks:(duration_34584d68)arg1;
+- (void)callOnMainThread:(unique_function_63952f55 *)arg1;
 - (void)aboutToTearDown;
 - (void)dealloc;
 - (id)initWithSortBy:(int)arg1 sortInIncreasingOrder:(_Bool)arg2 sortFoldersFirst:(_Bool)arg3 groupBy:(int)arg4 checkChildrenForTags:(_Bool)arg5;

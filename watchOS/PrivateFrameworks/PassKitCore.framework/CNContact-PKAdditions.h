@@ -31,7 +31,9 @@
 - (id)recentContact;
 - (void)setRecentContact:(id)arg1;
 - (id)pkSingleLineFormattedContactAddress;
+- (id)pkFormattedContactAddressIncludingPhoneticName:(_Bool)arg1 showName:(_Bool)arg2;
 - (id)pkFormattedContactAddressIncludingPhoneticName:(_Bool)arg1;
+- (id)pkFormattedContactAddressWithoutName;
 - (id)pkFormattedContactAddress;
 - (void)pkAddLabeledValues:(id)arg1 withProperty:(id)arg2;
 - (id)pkDictionaryForProperty:(id)arg1;

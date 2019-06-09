@@ -24,7 +24,7 @@
 - (id)setupContentView;
 
 // Remaining properties
-@property(retain) TLKGridRowView *contentView; // @dynamic contentView;
+@property(retain, nonatomic) TLKGridRowView *contentView; // @dynamic contentView;
 
 @end
 

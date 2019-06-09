@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, UITableView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReportAConcernReasonDataSource : NSObject <UITableViewDataSource>
 {
     UITableView *_tableView;

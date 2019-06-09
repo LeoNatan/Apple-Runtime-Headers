@@ -6,15 +6,18 @@
 
 #import <Safari/BookmarkSource.h>
 
-@class NSArray, NSDate, NSDateFormatter, NSMapTable, NSMenu, NSMenuItem;
+#import <Safari/NSMenuDelegate-Protocol.h>
+
+@class NSArray, NSDate, NSDateFormatter, NSMapTable, NSMenu, NSMenuItem, NSString;
 
 __attribute__((visibility("hidden")))
-@interface HistoryBookmarkSource : BookmarkSource
+@interface HistoryBookmarkSource : BookmarkSource <NSMenuDelegate>
 {
     NSMenu *_historyMenu;
     NSMenuItem *_recentlyClosedSubmenuMenuItem;
     NSMenuItem *_reopenRecentlyClosedTabsMenuItem;
     unsigned long long _builtInHistoryMenuItemsCount;
+    BOOL _isHistoryMenuUpToDate;
     NSArray *_sessions;
     NSDate *_oldestDateLoaded;
     NSDateFormatter *_dateFormatter;
@@ -63,12 +66,19 @@ __attribute__((visibility("hidden")))
 - (id)bookmarkSourceImage;
 - (id)bookmarkFromContentItem:(id)arg1;
 - (id)addressStringForContentItem:(id)arg1;
+- (BOOL)menuHasKeyEquivalent:(id)arg1 forEvent:(id)arg2 target:(id *)arg3 action:(SEL *)arg4;
 - (void)menuWillOpen:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;
 - (void)performDelayedLaunchOperations;
 - (void)setHistoryMenu:(id)arg1;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

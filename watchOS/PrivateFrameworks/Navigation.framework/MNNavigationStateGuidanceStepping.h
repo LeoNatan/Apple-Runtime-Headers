@@ -11,8 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (unsigned int)desiredResourcePolicy;
-- (int)type;
+- (unsigned int)type;
 
 @end
 

@@ -14,5 +14,8 @@
 - (NAFuture *)updateTimer:(NSObject<MTTimerIntentSupport> *)arg1;
 - (NAFuture *)addTimer:(NSObject<MTTimerIntentSupport> *)arg1;
 - (NAFuture *)timers;
+
+@optional
+- (NAFuture *)sleepTimersWithState:(unsigned int)arg1;
 @end
 

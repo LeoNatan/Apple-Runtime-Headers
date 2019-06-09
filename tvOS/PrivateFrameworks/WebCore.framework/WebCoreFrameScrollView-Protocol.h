@@ -8,7 +8,7 @@
 - (struct CGPoint)scrollOrigin;
 - (void)setScrollOrigin:(struct CGPoint)arg1 updatePositionAtAll:(_Bool)arg2 immediately:(_Bool)arg3;
 - (void)setScrollBarsSuppressed:(_Bool)arg1 repaintOnUnsuppress:(_Bool)arg2;
-- (void)scrollingModes:(int *)arg1 vertical:(int *)arg2;
-- (void)setScrollingModes:(int)arg1 vertical:(int)arg2 andLock:(_Bool)arg3;
+- (void)scrollingModes:(unsigned char *)arg1 vertical:(unsigned char *)arg2;
+- (void)setScrollingModes:(unsigned char)arg1 vertical:(unsigned char)arg2 andLock:(_Bool)arg3;
 @end
 

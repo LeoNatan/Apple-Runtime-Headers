@@ -13,16 +13,19 @@
 @interface _UIStatusBarImageView : UIImageView <_UIStatusBarDisplayable>
 {
     _Bool _useDisabledAppearanceForAccessibilityHUD;
-    double _iconScale;
+    long long _fontStyle;
     UIImage *_accessibilityHUDImage;
+    double _iconScale;
 }
 
+@property(nonatomic) double iconScale; // @synthesize iconScale=_iconScale;
 @property(retain, nonatomic) UIImage *accessibilityHUDImage; // @synthesize accessibilityHUDImage=_accessibilityHUDImage;
 @property(nonatomic) _Bool useDisabledAppearanceForAccessibilityHUD; // @synthesize useDisabledAppearanceForAccessibilityHUD=_useDisabledAppearanceForAccessibilityHUD;
-@property(nonatomic) double iconScale; // @synthesize iconScale=_iconScale;
+@property(nonatomic) long long fontStyle; // @synthesize fontStyle=_fontStyle;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) UIAccessibilityHUDItem *accessibilityHUDRepresentation;
 - (void)applyStyleAttributes:(id)arg1;
+@property(readonly, nonatomic) _Bool prefersBaselineAlignment;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithFrame:(struct CGRect)arg1;
 

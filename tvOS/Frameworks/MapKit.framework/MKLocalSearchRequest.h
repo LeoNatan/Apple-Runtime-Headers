@@ -8,7 +8,7 @@
 
 #import <MapKit/NSCopying-Protocol.h>
 
-@class CLLocation, NSArray, NSString, _MKLocalSearchExternalTransitLookupParameters, _MKLocalSearchMerchantParameters;
+@class CLLocation, MKPointOfInterestFilter, NSArray, NSString, _MKLocalSearchExternalTransitLookupParameters, _MKLocalSearchMerchantParameters;
 @protocol GEOCompletionItem;
 
 @interface MKLocalSearchRequest : NSObject <NSCopying>
@@ -27,9 +27,13 @@
     NSArray *_muids;
     NSString *_contactsDataString;
     NSString *_canonicalSearchString;
+    unsigned long long _resultTypes;
+    MKPointOfInterestFilter *_pointOfInterestFilter;
 }
 
 + (id)searchRequestWithCompletion:(id)arg1;
+@property(copy, nonatomic) MKPointOfInterestFilter *pointOfInterestFilter; // @synthesize pointOfInterestFilter=_pointOfInterestFilter;
+@property(nonatomic) unsigned long long resultTypes; // @synthesize resultTypes=_resultTypes;
 @property(nonatomic) _Bool hasSentFeedbackForCompletion; // @synthesize hasSentFeedbackForCompletion=_hasSentFeedbackForCompletion;
 @property(nonatomic, getter=_allowPhoneNumberLookupUsingCellular, setter=_setAllowPhoneNumberLookupUsingCellular:) _Bool allowPhoneNumberLookupUsingCellular; // @synthesize allowPhoneNumberLookupUsingCellular=_allowPhoneNumberLookupUsingCellular;
 @property(retain, nonatomic, getter=_canonicalSearchString, setter=_setCanonicalSearchString:) NSString *canonicalSearchString; // @synthesize canonicalSearchString=_canonicalSearchString;
@@ -49,7 +53,10 @@
 - (id)_dictionaryRepresentation;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithMapsURL:(id)arg1;
+- (id)initWithNaturalLanguageQuery:(id)arg1 region:(CDStruct_b7cb895d)arg2;
+- (id)initWithNaturalLanguageQuery:(id)arg1;
 - (id)initWithCompletion:(id)arg1;
+- (id)init;
 
 @end
 

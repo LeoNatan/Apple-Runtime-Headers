@@ -14,7 +14,11 @@
 }
 
 - (void).cxx_destruct;
-- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)_updateInnerLabel;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
+- (void)setTimeTravelDate:(id)arg1 animated:(_Bool)arg2;
+- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
 - (void)_applyPausedUpdate;
 - (id)_outerView;

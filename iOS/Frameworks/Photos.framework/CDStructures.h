@@ -43,6 +43,10 @@ struct NSDictionary {
     Class _field1;
 };
 
+struct NSObject {
+    Class _field1;
+};
+
 struct PHAssetResourceTableDataSpecification {
     int _field1;
     int _field2;

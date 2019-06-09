@@ -17,8 +17,6 @@
     NSHashTable *_queue_observers;
     _Bool _queue_hasPasscodeSet;
     _Bool _queue_hasUnlockedSinceBoot;
-    int _stateChangedNotifyToken;
-    int _firstUnlockNotification;
 }
 
 + (id)sharedInstance;

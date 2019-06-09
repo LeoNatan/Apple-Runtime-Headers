@@ -18,9 +18,11 @@
 }
 
 - (void).cxx_destruct;
+- (id)_fullColorNowPlayingProviderForFamily:(int)arg1;
 - (id)_nowPlayingProviderForFamily:(int)arg1;
 - (id)_italicTextProviderForText:(id)arg1;
 - (id)_largeUtility;
+- (id)_graphicRectangular;
 - (id)_largeModular;
 - (id)templateForComplicationFamily:(int)arg1;
 - (id)description;

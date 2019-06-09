@@ -10,6 +10,8 @@
 {
 }
 
++ (id)_findPPRItem:(id)arg1;
++ (id)preinstallPPRAlertControllerWithItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)getErrorTitleDetail:(id)arg1 forCarrier:(id)arg2;
 + (id)formattedPhoneNumber:(id)arg1;
 

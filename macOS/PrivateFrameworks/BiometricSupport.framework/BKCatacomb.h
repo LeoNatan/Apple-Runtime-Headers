@@ -13,7 +13,8 @@
     NSString *_catacombDir;
 }
 
-+ (id)catacombWithDir:(id)arg1 withSerial:(id)arg2;
++ (id)catacombWithDir:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *catacombDir; // @synthesize catacombDir=_catacombDir;
 - (void).cxx_destruct;
 - (id)content;
 - (int)deleteAll;

@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface _UIPercentDrivenInteractionEffectChangeContext : NSObject <UIInteractionContext>
 {
     _Bool _ended;

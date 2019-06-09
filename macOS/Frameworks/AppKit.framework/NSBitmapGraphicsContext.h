@@ -18,6 +18,7 @@
     } _bgcFlags;
 }
 
+- (struct CGImage *)retainedCGImage;
 - (BOOL)isDrawingToScreen;
 - (BOOL)isFlipped;
 - (void)dealloc;

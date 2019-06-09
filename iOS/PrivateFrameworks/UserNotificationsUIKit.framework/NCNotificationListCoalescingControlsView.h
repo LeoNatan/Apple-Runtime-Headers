@@ -6,16 +6,17 @@
 
 #import <UIKit/UIView.h>
 
+#import <UserNotificationsUIKit/MTMaterialGrouping-Protocol.h>
 #import <UserNotificationsUIKit/NCToggleControlDelegate-Protocol.h>
 #import <UserNotificationsUIKit/PLContentSizeCategoryAdjusting-Protocol.h>
 
 @class NCToggleControlPair, NSString, _UILegibilitySettings;
 @protocol NCNotificationListCoalescingControlsViewDelegate;
 
-@interface NCNotificationListCoalescingControlsView : UIView <NCToggleControlDelegate, PLContentSizeCategoryAdjusting>
+@interface NCNotificationListCoalescingControlsView : UIView <NCToggleControlDelegate, PLContentSizeCategoryAdjusting, MTMaterialGrouping>
 {
+    NSString *_materialGroupNameBase;
     id <NCNotificationListCoalescingControlsViewDelegate> _delegate;
-    NSString *_backgroundGroupName;
     NCToggleControlPair *_toggleControlPair;
     _UILegibilitySettings *_legibilitySettings;
     double _effectiveButtonHeight;
@@ -30,8 +31,8 @@
 @property(nonatomic, getter=_effectiveButtonHeight) double effectiveButtonHeight; // @synthesize effectiveButtonHeight=_effectiveButtonHeight;
 @property(retain, nonatomic) _UILegibilitySettings *legibilitySettings; // @synthesize legibilitySettings=_legibilitySettings;
 @property(retain, nonatomic) NCToggleControlPair *toggleControlPair; // @synthesize toggleControlPair=_toggleControlPair;
-@property(copy, nonatomic) NSString *backgroundGroupName; // @synthesize backgroundGroupName=_backgroundGroupName;
 @property(nonatomic) __weak id <NCNotificationListCoalescingControlsViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 - (void).cxx_destruct;
 - (_Bool)_isClearButtonExpanded;
 - (id)_clearButton;
@@ -44,8 +45,6 @@
 - (void)_configureToggleControlPairIfNecessary;
 - (id)_newClearButton;
 - (id)_newRestackButton;
-- (id)_effectiveGroupName;
-- (long long)_materialRecipe;
 - (struct UIEdgeInsets)_edgeInsets;
 - (id)_clearButtonTitle;
 - (id)_restackButtonTitle;
@@ -56,7 +55,6 @@
 - (void)toggleControlDidPresentPreviewInteractionPresentedContent:(id)arg1;
 - (void)toggleControlDidBeginPreviewInteraction:(id)arg1;
 - (id)containerViewForToggleControlPreviewInteractionPresentedContent:(id)arg1;
-- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

@@ -27,7 +27,6 @@ __attribute__((visibility("hidden")))
 - (long long)maxEntrySize;
 - (void)setMaxSize:(long long)arg1;
 - (long long)maxSize;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithURL:(id)arg1;
 

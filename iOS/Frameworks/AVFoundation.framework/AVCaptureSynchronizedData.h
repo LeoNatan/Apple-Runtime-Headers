@@ -13,6 +13,7 @@
     AVCaptureSynchronizedDataInternal *_synchronizedDataInternal;
 }
 
+- (int)constituentDeviceCaptureID;
 - (_Bool)hasCorrespondingVisionData;
 - (_Bool)hasCorrespondingDepthData;
 - (void)setAdjustedTimestamp:(CDStruct_1b6d18a9)arg1;

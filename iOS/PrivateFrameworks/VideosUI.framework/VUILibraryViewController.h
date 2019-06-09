@@ -8,6 +8,7 @@
 
 #import <VideosUI/UICollectionViewDataSource-Protocol.h>
 #import <VideosUI/UIGestureRecognizerDelegate-Protocol.h>
+#import <VideosUI/VUIDownloadDataSourceDelegate-Protocol.h>
 #import <VideosUI/VUILibraryPopoverDataSource-Protocol.h>
 #import <VideosUI/VUILibraryPopoverDelegate-Protocol.h>
 #import <VideosUI/VUILibraryShelfCollectionViewControllerDelegate-Protocol.h>
@@ -15,20 +16,19 @@
 #import <VideosUI/VUIMediaItemEntityTypesFetchControllerDelegate-Protocol.h>
 #import <VideosUI/VUIMediaLibraryFetchControllerQueueDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, UIBarButtonItem, VUILibraryBannerCollectionViewCell, VUILibraryDownloadViewController, VUILibraryListPopoverViewCell, VUILibraryMediaEntityShelvesViewModel, VUILibraryMenuItemViewCell, VUILibraryPopoverViewController, VUIMediaLibrary, VUIMetricsController, _VUILibrarySeeAllController;
+@class NSArray, NSDictionary, NSString, UIBarButtonItem, VUIDownloadDataSource, VUIDownloadViewController, VUILibraryBannerCollectionViewCell, VUILibraryListPopoverViewCell, VUILibraryMediaEntityShelvesViewModel, VUILibraryMenuItemViewCell, VUILibraryPopoverViewController, VUIMediaLibrary, _VUILibrarySeeAllController;
 
 __attribute__((visibility("hidden")))
-@interface VUILibraryViewController : VUILibraryStackViewController <UICollectionViewDataSource, VUILibraryShelfCollectionViewControllerDelegate, VUIMediaItemEntityTypesFetchControllerDelegate, VUIMediaEntitiesFetchControllerDelegate, VUIMediaLibraryFetchControllerQueueDelegate, VUILibraryPopoverDataSource, VUILibraryPopoverDelegate, UIGestureRecognizerDelegate>
+@interface VUILibraryViewController : VUILibraryStackViewController <UICollectionViewDataSource, VUILibraryShelfCollectionViewControllerDelegate, VUIMediaItemEntityTypesFetchControllerDelegate, VUIMediaEntitiesFetchControllerDelegate, VUIMediaLibraryFetchControllerQueueDelegate, VUILibraryPopoverDataSource, VUILibraryPopoverDelegate, UIGestureRecognizerDelegate, VUIDownloadDataSourceDelegate>
 {
-    id _isNetworkTypeChangedToken;
-    id _networkReachabilityChangedToken;
-    _Bool _lastNetworkReachableStatus;
-    VUILibraryDownloadViewController *_presentedDownloadViewController;
+    VUIDownloadViewController *_presentedDownloadViewController;
     _Bool _ppt_isLoaded;
     _Bool _appliedNavigationItem;
     _Bool _hasMenuItemFetchCompleted;
     _Bool _areLocalMediaItemsAvailable;
     _Bool _hasMediaEntitiesFetchCompleted;
+    _Bool _isUpdatingRentals;
+    _Bool _hasDownloadFetchCompleted;
     _Bool _doesDeviceSupportHDR;
     _Bool _isIpad;
     UIBarButtonItem *_libraryBarButton;
@@ -45,14 +45,16 @@ __attribute__((visibility("hidden")))
     VUILibraryMediaEntityShelvesViewModel *_shelvesViewModel;
     NSDictionary *_shelfTypeByFetchRequestIdentifier;
     _VUILibrarySeeAllController *_currentSeeAllController;
-    VUIMetricsController *_metricsController;
+    VUIDownloadDataSource *_downloadDataSource;
 }
 
 + (id)_localizedTitleForShelfType:(long long)arg1;
 + (CDUnknownBlockType)shelfTypesSortComparator;
-@property(retain, nonatomic) VUIMetricsController *metricsController; // @synthesize metricsController=_metricsController;
 @property(nonatomic) _Bool isIpad; // @synthesize isIpad=_isIpad;
 @property(nonatomic) _Bool doesDeviceSupportHDR; // @synthesize doesDeviceSupportHDR=_doesDeviceSupportHDR;
+@property(nonatomic) _Bool hasDownloadFetchCompleted; // @synthesize hasDownloadFetchCompleted=_hasDownloadFetchCompleted;
+@property(retain, nonatomic) VUIDownloadDataSource *downloadDataSource; // @synthesize downloadDataSource=_downloadDataSource;
+@property(nonatomic) _Bool isUpdatingRentals; // @synthesize isUpdatingRentals=_isUpdatingRentals;
 @property(retain, nonatomic) _VUILibrarySeeAllController *currentSeeAllController; // @synthesize currentSeeAllController=_currentSeeAllController;
 @property(retain, nonatomic) NSDictionary *shelfTypeByFetchRequestIdentifier; // @synthesize shelfTypeByFetchRequestIdentifier=_shelfTypeByFetchRequestIdentifier;
 @property(nonatomic) _Bool hasMediaEntitiesFetchCompleted; // @synthesize hasMediaEntitiesFetchCompleted=_hasMediaEntitiesFetchCompleted;
@@ -72,20 +74,23 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIBarButtonItem *libraryBarButton; // @synthesize libraryBarButton=_libraryBarButton;
 @property(nonatomic) _Bool appliedNavigationItem; // @synthesize appliedNavigationItem=_appliedNavigationItem;
 - (void).cxx_destruct;
-- (_Bool)ppt_isLoading;
+- (_Bool)vui_ppt_isLoading;
+- (void)_accountsChanged:(id)arg1;
 - (id)_localizedTitleForCellType:(long long)arg1;
 - (void)_configureShelfViewController:(id)arg1 withShelfType:(long long)arg2;
+- (void)_removeRentalsUpdateNotificationObserver;
 - (void)_removeNotificationObserversWithDeviceLibrary:(id)arg1;
 - (void)_removeMediaLibraryNotificationObservers;
+- (void)_addRentalsUpdateNotificationObserver;
 - (void)_addNotificationObserversWithDeviceLibrary:(id)arg1;
 - (void)_addMediaLibraryNotificationObservers;
+- (void)_updateRentals;
 - (void)_deviceMediaLibraryUpdateStateDidChange:(id)arg1;
 - (void)_stopMonitoringDeviceMediaLibraryInitialUpdate;
 - (void)_startMonitoringDeviceMediaLibraryInitialUpdate;
 - (_Bool)_isDeviceMediaLibraryInitialUpdateInProgress;
 - (id)_deviceMediaLibrary;
-- (_Bool)_isNetworkReachable;
-- (void)_networkStatusChanged;
+- (void)_networkReachabilityDidChange:(id)arg1;
 - (void)_homeShareMediaLibrariesDidChange:(id)arg1;
 - (void)_reloadPopoverViewController;
 - (void)_updatePopoverSelectedItem;
@@ -107,6 +112,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)_haveAllInitialFetchesCompleted;
 - (void)_startFetchControllers;
 - (id)_fetchRequestsWithMediaLibrary:(id)arg1 shelfTypeMap:(id *)arg2;
+- (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;
+- (void)downloadManager:(id)arg1 downloadedFetchDidFinishWithEntities:(id)arg2;
 - (void)fetchDidCompleteForMediaLibraryFetchControllerQueue:(id)arg1;
 - (void)popoverView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct CGSize)popoverView:(id)arg1 sizeForItemAtIndexPath:(id)arg2;
@@ -131,10 +138,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewDidAppear:(_Bool)arg1;
-- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
-- (void)_handleApplicationBecomingActive:(id)arg1;
 - (void)dealloc;
 - (id)initWithMediaLibrary:(id)arg1;
 

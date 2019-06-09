@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (struct CGSize)_updateLabelTextColorAndFontReturningShadowOffset;
-- (struct CGSize)_updateLabelTextColorAndFontReturningShadowOffset_legacy;
 - (struct CGRect)promptBounds;
 - (struct CGRect)_labelFrame;
 @property(copy, nonatomic) NSString *prompt;

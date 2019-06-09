@@ -10,7 +10,7 @@
 {
 }
 
-- (void)performWithCustomAnimator:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)customAnimator;
 
 @end
 

@@ -19,7 +19,6 @@
 + (void)trackIsTTLEnabled:(_Bool)arg1;
 + (void)trackEventFiredTTLAlertWithAlertType:(unsigned int)arg1 transportType:(unsigned int)arg2 etaType:(unsigned int)arg3 travelState:(unsigned int)arg4 hasSuggestedLocation:(_Bool)arg5 isOnSharedCalendar:(_Bool)arg6;
 + (void)trackTTLCandidateEventHasSuggestedLocation:(_Bool)arg1 isOnSharedCalendar:(_Bool)arg2;
-+ (void)trackSignificantEventHasSuggestedLocation:(_Bool)arg1 isOnSharedCalendar:(_Bool)arg2;
 
 @end
 

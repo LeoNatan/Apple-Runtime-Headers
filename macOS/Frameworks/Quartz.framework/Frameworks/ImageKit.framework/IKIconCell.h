@@ -44,7 +44,7 @@
 + (double)labelHeightForAttributes:(id)arg1 iconSize:(double)arg2 gridSpacing:(double)arg3 titlesOnRight:(BOOL)arg4 showInfo:(BOOL)arg5;
 + (BOOL)shouldWrapLabelsForIconSize:(double)arg1 gridSpacing:(double)arg2 titlesOnRight:(BOOL)arg3;
 + (double)selectionRadiusForIconSize:(double)arg1;
-+ (id)titleAttributesWithSize:(double)arg1 lineBreakMode:(unsigned long long)arg2 align:(unsigned long long)arg3 select:(BOOL)arg4;
++ (id)titleAttributesWithSize:(double)arg1 lineBreakMode:(unsigned long long)arg2 align:(long long)arg3 select:(BOOL)arg4;
 + (void)initialize;
 - (BOOL)hitTestWithRect:(struct CGRect)arg1;
 - (BOOL)hitTestWithPoint:(struct CGPoint)arg1;

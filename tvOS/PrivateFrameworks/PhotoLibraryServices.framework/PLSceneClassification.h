@@ -12,8 +12,8 @@
 {
 }
 
-+ (void)batchFetchScenesByAssetUUIDWithAssetUUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
-+ (id)entityInManagedObjectContext:(id)arg1;
++ (id)PLJunkSceneClassificationIDForLabel:(id)arg1;
++ (void)batchFetchScenesByAssetObjectIDWithAssetObjectIDs:(id)arg1 library:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 assetUUID:(id)arg2 sceneIdentifier:(int)arg3 confidence:(double)arg4;
 - (id)debugLogDescription;

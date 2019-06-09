@@ -8,5 +8,13 @@
 
 @interface NSView (WebSetNeedsDisplayInRect)
 - (void)_web_setNeedsDisplayInRect:(struct CGRect)arg1;
+- (void)_web_addDescendentWebHTMLViewsToArray:(id)arg1;
+- (BOOL)_web_firstResponderIsSelfOrDescendantView;
+- (unsigned long long)_web_dragOperationForDraggingInfo:(id)arg1;
+- (BOOL)_web_dragShouldBeginFromMouseDown:(id)arg1 withExpiration:(id)arg2;
+- (BOOL)_web_dragShouldBeginFromMouseDown:(id)arg1 withExpiration:(id)arg2 xHysteresis:(float)arg3 yHysteresis:(float)arg4;
+- (id)_webView;
+- (id)_web_parentWebFrameView;
+- (id)_web_superviewOfClass:(Class)arg1;
 @end
 

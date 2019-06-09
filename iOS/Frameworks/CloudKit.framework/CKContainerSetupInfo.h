@@ -6,18 +6,18 @@
 
 #import <objc/NSObject.h>
 
+#import <CloudKit/NSCopying-Protocol.h>
 #import <CloudKit/NSSecureCoding-Protocol.h>
 
 @class CKAccountOverrideInfo, CKContainerID, NSDictionary, NSString;
 
-@interface CKContainerSetupInfo : NSObject <NSSecureCoding>
+@interface CKContainerSetupInfo : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _captureResponseHTTPHeaders;
     _Bool _wantsSiloedContext;
     _Bool _useZoneWidePCS;
     _Bool _holdAllOperations;
     _Bool _returnPCSMetadata;
-    _Bool _useMMCSEncryptionV2;
     _Bool _bypassPCSEncryption;
     _Bool _forceEnableReadOnlyManatee;
     _Bool _masqueradeAsThirdPartyApp;
@@ -26,6 +26,7 @@
     NSString *_sourceApplicationBundleIdentifier;
     CKAccountOverrideInfo *_accountInfoOverride;
     NSDictionary *_fakeEntitlements;
+    unsigned long long _mmcsEncryptionSupport;
     NSString *_containerEncryptionServiceName;
 }
 
@@ -35,7 +36,7 @@
 @property(nonatomic) _Bool forceEnableReadOnlyManatee; // @synthesize forceEnableReadOnlyManatee=_forceEnableReadOnlyManatee;
 @property(nonatomic) _Bool bypassPCSEncryption; // @synthesize bypassPCSEncryption=_bypassPCSEncryption;
 @property(retain, nonatomic) NSString *containerEncryptionServiceName; // @synthesize containerEncryptionServiceName=_containerEncryptionServiceName;
-@property(nonatomic) _Bool useMMCSEncryptionV2; // @synthesize useMMCSEncryptionV2=_useMMCSEncryptionV2;
+@property(nonatomic) unsigned long long mmcsEncryptionSupport; // @synthesize mmcsEncryptionSupport=_mmcsEncryptionSupport;
 @property(nonatomic) _Bool returnPCSMetadata; // @synthesize returnPCSMetadata=_returnPCSMetadata;
 @property(nonatomic) _Bool holdAllOperations; // @synthesize holdAllOperations=_holdAllOperations;
 @property(retain, nonatomic) NSDictionary *fakeEntitlements; // @synthesize fakeEntitlements=_fakeEntitlements;
@@ -46,6 +47,7 @@
 @property(retain, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
 @property(retain, nonatomic) CKContainerID *containerID; // @synthesize containerID=_containerID;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

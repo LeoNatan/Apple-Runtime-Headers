@@ -8,7 +8,7 @@
 
 #import <AppKit/NSCoding-Protocol.h>
 
-@class NSArray, NSAttributedString, NSCandidateListTouchBarItem, NSColor, NSDictionary, NSParagraphStyle, NSRulerView, NSSelectionArray, NSSharingServicePicker, NSTextContainer, NSTextFinder, NSTextInputContext, NSTextTouchBarItemController, NSTextView, NSTrackingArea, NSUndoManager, NSView, NSWindow;
+@class NSArray, NSAttributedString, NSCandidateListTouchBarItem, NSColor, NSDictionary, NSParagraphStyle, NSRulerView, NSSelectionArray, NSSharingServicePicker, NSTextCheckingController, NSTextContainer, NSTextFinder, NSTextInputContext, NSTextTouchBarItemController, NSTextView, NSTrackingArea, NSUndoManager, NSView, NSWindow;
 
 __attribute__((visibility("hidden")))
 @interface NSTextViewSharedData : NSObject <NSCoding>
@@ -180,6 +180,7 @@ __attribute__((visibility("hidden")))
     NSTextTouchBarItemController *_touchBarItemController;
     NSCandidateListTouchBarItem *_candidateListTouchBarItem;
     unsigned long long _candidateSequenceNumber;
+    NSTextCheckingController *_textCheckingController;
 }
 
 + (void)initialize;

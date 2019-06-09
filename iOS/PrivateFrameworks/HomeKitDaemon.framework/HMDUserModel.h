@@ -17,6 +17,7 @@
 // Remaining properties
 @property(retain, nonatomic) HMDAccountHandle *accountHandle; // @dynamic accountHandle;
 @property(retain, nonatomic) HMDAccountIdentifier *accountIdentifier; // @dynamic accountIdentifier;
+@property(retain, nonatomic) NSNumber *camerasAccessLevel; // @dynamic camerasAccessLevel;
 @property(retain, nonatomic) NSString *changeTag; // @dynamic changeTag;
 @property(retain, nonatomic) NSDictionary *pairingIdentity; // @dynamic pairingIdentity;
 @property(retain, nonatomic) NSNumber *presenceAuthorizationStatus; // @dynamic presenceAuthorizationStatus;

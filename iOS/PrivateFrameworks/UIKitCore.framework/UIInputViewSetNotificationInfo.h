@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 @interface UIInputViewSetNotificationInfo : NSObject
 {
     _Bool _changedAccessoryOnly;
+    _Bool _assistantOnScreenOnly;
     _Bool _forceNotification;
     _Bool _wasCausedRemotely;
     _Bool _dueToRotation;
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool dueToRotation; // @synthesize dueToRotation=_dueToRotation;
 @property(nonatomic) _Bool wasCausedRemotely; // @synthesize wasCausedRemotely=_wasCausedRemotely;
 @property(nonatomic) _Bool forceNotification; // @synthesize forceNotification=_forceNotification;
+@property(nonatomic) _Bool assistantOnScreenOnly; // @synthesize assistantOnScreenOnly=_assistantOnScreenOnly;
 @property(nonatomic) _Bool changedAccessoryOnly; // @synthesize changedAccessoryOnly=_changedAccessoryOnly;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(nonatomic) double duration; // @synthesize duration=_duration;

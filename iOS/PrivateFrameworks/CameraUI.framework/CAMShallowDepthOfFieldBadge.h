@@ -6,17 +6,17 @@
 
 #import <UIKit/UIView.h>
 
-@class CAMBadgeTextView;
+@class CEKBadgeTextView;
 
 @interface CAMShallowDepthOfFieldBadge : UIView
 {
     long long _shallowDepthOfFieldStatus;
-    CAMBadgeTextView *__enabledTextView;
-    CAMBadgeTextView *__disabledTextView;
+    CEKBadgeTextView *__enabledTextView;
+    CEKBadgeTextView *__disabledTextView;
 }
 
-@property(readonly, nonatomic) CAMBadgeTextView *_disabledTextView; // @synthesize _disabledTextView=__disabledTextView;
-@property(readonly, nonatomic) CAMBadgeTextView *_enabledTextView; // @synthesize _enabledTextView=__enabledTextView;
+@property(readonly, nonatomic) CEKBadgeTextView *_disabledTextView; // @synthesize _disabledTextView=__disabledTextView;
+@property(readonly, nonatomic) CEKBadgeTextView *_enabledTextView; // @synthesize _enabledTextView=__enabledTextView;
 @property(nonatomic) long long shallowDepthOfFieldStatus; // @synthesize shallowDepthOfFieldStatus=_shallowDepthOfFieldStatus;
 - (void).cxx_destruct;
 - (void)updateToContentSize:(id)arg1;

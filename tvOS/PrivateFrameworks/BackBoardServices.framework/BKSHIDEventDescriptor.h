@@ -17,16 +17,15 @@
     unsigned int _hidEventType;
 }
 
-+ (id)reusableKeyboardDescriptorWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
-+ (id)reusableVendorDefinedDescriptorWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
-+ (id)reusableDescriptorWithEventType:(unsigned int)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)descriptorWithEventType:(unsigned int)arg1;
-@property(readonly) unsigned int hidEventType; // @synthesize hidEventType=_hidEventType;
++ (id)descriptorForHIDEvent:(struct __IOHIDEvent *)arg1;
+@property(readonly, nonatomic) unsigned int hidEventType; // @synthesize hidEventType=_hidEventType;
+- (_Bool)describes:(id)arg1;
+- (_Bool)matchesHIDEvent:(struct __IOHIDEvent *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (_Bool)describes:(id)arg1;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -35,6 +34,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithEventType:(unsigned int)arg1;
+- (id)init;
+- (id)descriptorByAddingSenderIDToMatchCriteria:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,6 +8,7 @@
 
 @class ODCSummaryViewController, SFAuthorizationView;
 
+__attribute__((visibility("hidden")))
 @interface ODCSummaryView : NSView
 {
     ODCSummaryViewController *_controller;

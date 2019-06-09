@@ -10,13 +10,13 @@
 
 @interface _NTKCGalleryCollectionCell : UICollectionViewCell
 {
-    NTKCFaceContainerView *_faceContainerView;
     UILabel *_nameLabel;
     UIImageView *_nameImageView;
     NSLayoutConstraint *_nameBaselineConstraint;
     NSLayoutConstraint *_leadingImageConstraint;
     NSLayoutConstraint *_trailingImageConstraint;
     NSLayoutConstraint *_centerConstraint;
+    NTKCFaceContainerView *_faceContainerView;
     NSString *_calloutName;
     UIImage *_calloutImage;
     UIFontMetrics *_fontMetrics;
@@ -29,8 +29,8 @@
 @property(retain, nonatomic) UIFontMetrics *fontMetrics; // @synthesize fontMetrics=_fontMetrics;
 @property(retain, nonatomic) UIImage *calloutImage; // @synthesize calloutImage=_calloutImage;
 @property(copy, nonatomic) NSString *calloutName; // @synthesize calloutName=_calloutName;
+@property(retain, nonatomic) NTKCFaceContainerView *faceContainerView; // @synthesize faceContainerView=_faceContainerView;
 - (void).cxx_destruct;
-- (id)previewViewAndRect:(struct CGRect *)arg1;
 @property(nonatomic) _Bool active;
 - (void)_highlight;
 - (void)setSelected:(_Bool)arg1;

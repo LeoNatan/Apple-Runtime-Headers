@@ -25,10 +25,10 @@
 
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (_Bool)canResumeCollectionFromLastSensorDatum;
 - (Class)sensorDatumClassForAggregator:(id)arg1;
 - (id)identifierForDataAggregator:(id)arg1;
 - (id)sourceForDataAggregator:(id)arg1;
-- (id)deviceForDataAggregator:(id)arg1;
 - (void)dataAggregator:(id)arg1 wantsCollectionWithConfiguration:(id)arg2;
 - (void)beginCollectionForDataAggregator:(id)arg1 lastPersistedSensorDatum:(id)arg2;
 - (void)_queue_handleCharacteristic:(id)arg1 device:(id)arg2;

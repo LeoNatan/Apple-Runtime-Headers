@@ -15,12 +15,14 @@
 - (NSUndoManager *)undoManagerForContentViewController:(MUContentViewController *)arg1;
 
 @optional
+- (struct CGSize)adjustedSourceImageSize;
 - (UIViewController *)popoverPresentingViewControllerForAnnotationController:(AKController *)arg1;
 - (void)controllerWillDismissSignatureManagerView:(AKController *)arg1;
 - (void)controllerWillShowSignatureManagerView:(AKController *)arg1;
 - (void)controllerWillDismissSignatureCaptureView:(AKController *)arg1;
 - (void)controllerWillShowSignatureCaptureView:(AKController *)arg1;
 - (void)penStrokeCompletedForAnnotationController:(AKController *)arg1;
+- (void)annotationController:(AKController *)arg1 detectedEditOfType:(unsigned long long)arg2;
 - (void)editDetectedForAnnotationController:(AKController *)arg1;
 - (void)editCheckpointReachedForAnnotationController:(AKController *)arg1;
 - (_Bool)contentViewController:(MUPDFContentViewController *)arg1 shouldHandleURL:(NSURL *)arg2;

@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 {
     id _impl;
     id _delegate;
-    id _delegateHelper;
     id _menuOwner;
     NSFont *_font;
     NSString *_name;
@@ -23,9 +22,10 @@ __attribute__((visibility("hidden")))
     const void *_contextMenuPluginAEDesc;
     NSStoryboard *_storyboard;
     unsigned long long _indentationWidth;
-    NSString *_delegateClass;
+    BOOL _disablesKeyboardAdjustedShortcuts;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 
 @end

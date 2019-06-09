@@ -6,7 +6,6 @@
 
 #import <QuartzCore/CALayer.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit27AudioVisualizationRingLayer : CALayer
 {
     // Error parsing type: , name: opacityMultiple

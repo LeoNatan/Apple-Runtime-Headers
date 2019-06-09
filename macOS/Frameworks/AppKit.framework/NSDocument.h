@@ -532,9 +532,8 @@
 - (id)_writableTypeForType:(id)arg1 saveOperation:(unsigned long long)arg2;
 - (void)_document:(id)arg1 didSucceed:(BOOL)arg2 forScriptCommand:(id)arg3;
 @property(copy) NSString *lastComponentOfFileName;
-- (void)_performAsynchronousFileAccessUsingBlock:(CDUnknownBlockType)arg1;
+- (void)_performFileAccessSynchronously:(BOOL)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)_synchronouslyCheckFileURLUsingBlock:(CDUnknownBlockType)arg1;
-- (void)_performSynchronousFileAccessUsingBlock:(CDUnknownBlockType)arg1;
 - (void)_performFileAccess:(id)arg1;
 - (void)_fileAccessStabilizedFileURL;
 - (void)_continueCurrentFileAccessDuringBlock:(CDUnknownBlockType)arg1;

@@ -8,6 +8,21 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
+#pragma mark Named Structures
+
+struct AWFaceDetectMetadata {
+    _Bool _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+    unsigned long long _field5;
+};
+
+struct AWRemoteMetadata {
+    long long _field1;
+    long long _field2;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -15,4 +30,11 @@ typedef struct {
     unsigned long long pollCount;
     unsigned long long singleShotCount;
 } CDStruct_2c6bab44;
+
+#pragma mark Typedef'd Unions
+
+typedef union {
+    struct AWFaceDetectMetadata _field1;
+    struct AWRemoteMetadata _field2;
+} CDUnion_4b9e79fd;
 

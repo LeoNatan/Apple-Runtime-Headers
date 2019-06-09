@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
     NSArray *_formatStrings;
     NSArray *_formatTokens;
     NSArray *_separators;
+    NSArray *_formatStyles;
 }
 
+@property(readonly, nonatomic) NSArray *formatStyles; // @synthesize formatStyles=_formatStyles;
 @property(readonly, nonatomic) NSArray *separators; // @synthesize separators=_separators;
 @property(readonly, nonatomic) NSArray *formatTokens; // @synthesize formatTokens=_formatTokens;
 @property(readonly, nonatomic) NSArray *formatStrings; // @synthesize formatStrings=_formatStrings;

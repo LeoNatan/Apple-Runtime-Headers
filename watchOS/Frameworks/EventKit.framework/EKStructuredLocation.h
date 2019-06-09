@@ -16,6 +16,7 @@
     EKPredictedLocationOfInterest *_predictedLOI;
 }
 
++ (id)displayLabelForContact:(id)arg1 unlocalizedLabel:(id)arg2;
 + (id)locationWithMapItem:(id)arg1;
 + (id)_stringByStrippingControlCharactersFromString:(id)arg1;
 + (id)locationWithTitle:(id)arg1;
@@ -34,7 +35,7 @@
 - (_Bool)isEqualToLocation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(copy, nonatomic) NSData *mapKitHandle;
-@property(copy, nonatomic) NSString *addressBookEntityID;
+@property(copy, nonatomic) NSString *contactLabel;
 @property(nonatomic) double radius;
 - (void)setRadiusRaw:(id)arg1;
 - (id)radiusRaw;

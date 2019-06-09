@@ -17,6 +17,7 @@
 
 @property(readonly, nonatomic) CKStoreClient *storeClient; // @synthesize storeClient=_storeClient;
 - (void).cxx_destruct;
+- (void)_authenticateUsername:(id)arg1 password:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)terminateSetupCompletion;
 - (void)completeSetupWithResponse:(id)arg1 account:(id)arg2 store:(id)arg3 context:(long long)arg4 handler:(CDUnknownBlockType)arg5;
 - (id)delegateAccountInformation;

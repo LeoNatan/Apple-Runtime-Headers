@@ -17,9 +17,8 @@
 @property(retain, nonatomic) UIViewController *parentViewController; // @synthesize parentViewController=_parentViewController;
 @property(nonatomic) _Bool saveInPhotosLibrary; // @synthesize saveInPhotosLibrary=_saveInPhotosLibrary;
 - (void).cxx_destruct;
-- (void)alertUserWithTitle:(id)arg1 message:(id)arg2;
-- (void)stop;
-- (void)start;
+- (void)stopRecordingWithHandler:(CDUnknownBlockType)arg1;
+- (void)startRecordingWithHandler:(CDUnknownBlockType)arg1;
 - (id)initWith:(id)arg1;
 
 @end

@@ -8,23 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOLocalizedAttribution : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_displayName;
     NSString *_language;
     NSMutableArray *_logoURLs;
     NSMutableArray *_snippetLogoURLs;
+    struct {
+        unsigned int read_displayName:1;
+        unsigned int read_language:1;
+        unsigned int read_logoURLs:1;
+        unsigned int read_snippetLogoURLs:1;
+        unsigned int wrote_displayName:1;
+        unsigned int wrote_language:1;
+        unsigned int wrote_logoURLs:1;
+        unsigned int wrote_snippetLogoURLs:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)snippetLogoURLsType;
 + (Class)logoURLsType;
-@property(retain, nonatomic) NSMutableArray *snippetLogoURLs; // @synthesize snippetLogoURLs=_snippetLogoURLs;
-@property(retain, nonatomic) NSMutableArray *logoURLs; // @synthesize logoURLs=_logoURLs;
-@property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
-@property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,18 +42,29 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)snippetLogoURLsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)snippetLogoURLsCount;
+- (void)_addNoFlagsSnippetLogoURLs:(id)arg1;
 - (void)addSnippetLogoURLs:(id)arg1;
 - (void)clearSnippetLogoURLs;
+@property(retain, nonatomic) NSMutableArray *snippetLogoURLs;
+- (void)_readSnippetLogoURLs;
 - (id)logoURLsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)logoURLsCount;
+- (void)_addNoFlagsLogoURLs:(id)arg1;
 - (void)addLogoURLs:(id)arg1;
 - (void)clearLogoURLs;
+@property(retain, nonatomic) NSMutableArray *logoURLs;
+- (void)_readLogoURLs;
+@property(retain, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) _Bool hasDisplayName;
+- (void)_readDisplayName;
+@property(retain, nonatomic) NSString *language;
 @property(readonly, nonatomic) _Bool hasLanguage;
+- (void)_readLanguage;
 - (id)bestURLForLogos:(id)arg1 scale:(double)arg2;
 
 @end

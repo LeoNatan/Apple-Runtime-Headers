@@ -8,42 +8,68 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDAutocompleteEntry, GEOPDRetainedSearchMetadata, GEOPDVenueIdentifier, GEOPDViewportInfo, NSData, NSString, PBUnknownFields;
+@class GEOPDAutocompleteEntry, GEOPDRetainedSearchMetadata, GEOPDVenueIdentifier, GEOPDViewportInfo, NSData, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteParametersAllEntriesWithBrowse : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    GEOPDAutocompleteEntry *_categorySuggestionEntry;
+    CDStruct_95bda58d _supportedListTypes;
     NSData *_categorySuggestionEntryMetadata;
-    int _maxResults;
+    GEOPDAutocompleteEntry *_categorySuggestionEntry;
+    GEOPDAutocompleteEntry *_querySuggestionEntry;
     NSString *_query;
     GEOPDRetainedSearchMetadata *_retainedSearch;
     GEOPDVenueIdentifier *_venueIdentifier;
     GEOPDViewportInfo *_viewportInfo;
+    int _maxQueryBuilderSuggestions;
+    int _maxResults;
     BOOL _highlightDiff;
     BOOL _interleaveCategorySuggestions;
+    BOOL _supportClientRankingFeatureMetadata;
     BOOL _supportDirectionIntentSuggestions;
     BOOL _supportUnresolvedDirectionIntent;
     struct {
-        unsigned int maxResults:1;
-        unsigned int highlightDiff:1;
-        unsigned int interleaveCategorySuggestions:1;
-        unsigned int supportDirectionIntentSuggestions:1;
-        unsigned int supportUnresolvedDirectionIntent:1;
-    } _has;
+        unsigned int has_maxQueryBuilderSuggestions:1;
+        unsigned int has_maxResults:1;
+        unsigned int has_highlightDiff:1;
+        unsigned int has_interleaveCategorySuggestions:1;
+        unsigned int has_supportClientRankingFeatureMetadata:1;
+        unsigned int has_supportDirectionIntentSuggestions:1;
+        unsigned int has_supportUnresolvedDirectionIntent:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_supportedListTypes:1;
+        unsigned int read_categorySuggestionEntryMetadata:1;
+        unsigned int read_categorySuggestionEntry:1;
+        unsigned int read_querySuggestionEntry:1;
+        unsigned int read_query:1;
+        unsigned int read_retainedSearch:1;
+        unsigned int read_venueIdentifier:1;
+        unsigned int read_viewportInfo:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_supportedListTypes:1;
+        unsigned int wrote_categorySuggestionEntryMetadata:1;
+        unsigned int wrote_categorySuggestionEntry:1;
+        unsigned int wrote_querySuggestionEntry:1;
+        unsigned int wrote_query:1;
+        unsigned int wrote_retainedSearch:1;
+        unsigned int wrote_venueIdentifier:1;
+        unsigned int wrote_viewportInfo:1;
+        unsigned int wrote_maxQueryBuilderSuggestions:1;
+        unsigned int wrote_maxResults:1;
+        unsigned int wrote_highlightDiff:1;
+        unsigned int wrote_interleaveCategorySuggestions:1;
+        unsigned int wrote_supportClientRankingFeatureMetadata:1;
+        unsigned int wrote_supportDirectionIntentSuggestions:1;
+        unsigned int wrote_supportUnresolvedDirectionIntent:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL supportUnresolvedDirectionIntent; // @synthesize supportUnresolvedDirectionIntent=_supportUnresolvedDirectionIntent;
-@property(retain, nonatomic) GEOPDRetainedSearchMetadata *retainedSearch; // @synthesize retainedSearch=_retainedSearch;
-@property(nonatomic) BOOL supportDirectionIntentSuggestions; // @synthesize supportDirectionIntentSuggestions=_supportDirectionIntentSuggestions;
-@property(retain, nonatomic) GEOPDVenueIdentifier *venueIdentifier; // @synthesize venueIdentifier=_venueIdentifier;
-@property(nonatomic) BOOL interleaveCategorySuggestions; // @synthesize interleaveCategorySuggestions=_interleaveCategorySuggestions;
-@property(retain, nonatomic) GEOPDAutocompleteEntry *categorySuggestionEntry; // @synthesize categorySuggestionEntry=_categorySuggestionEntry;
-@property(retain, nonatomic) NSData *categorySuggestionEntryMetadata; // @synthesize categorySuggestionEntryMetadata=_categorySuggestionEntryMetadata;
-@property(retain, nonatomic) GEOPDViewportInfo *viewportInfo; // @synthesize viewportInfo=_viewportInfo;
-@property(retain, nonatomic) NSString *query; // @synthesize query=_query;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -52,21 +78,55 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasMaxQueryBuilderSuggestions;
+@property(nonatomic) int maxQueryBuilderSuggestions;
+@property(nonatomic) BOOL hasSupportClientRankingFeatureMetadata;
+@property(nonatomic) BOOL supportClientRankingFeatureMetadata;
+@property(retain, nonatomic) GEOPDAutocompleteEntry *querySuggestionEntry;
+@property(readonly, nonatomic) BOOL hasQuerySuggestionEntry;
+- (void)_readQuerySuggestionEntry;
+- (int)StringAsSupportedListTypes:(id)arg1;
+- (id)supportedListTypesAsString:(int)arg1;
+- (void)setSupportedListTypes:(int *)arg1 count:(unsigned long long)arg2;
+- (int)supportedListTypeAtIndex:(unsigned long long)arg1;
+- (void)_addNoFlagsSupportedListType:(int)arg1;
+- (void)addSupportedListType:(int)arg1;
+- (void)clearSupportedListTypes;
+@property(readonly, nonatomic) int *supportedListTypes;
+@property(readonly, nonatomic) unsigned long long supportedListTypesCount;
+- (void)_readSupportedListTypes;
 @property(nonatomic) BOOL hasSupportUnresolvedDirectionIntent;
+@property(nonatomic) BOOL supportUnresolvedDirectionIntent;
+@property(retain, nonatomic) GEOPDRetainedSearchMetadata *retainedSearch;
 @property(readonly, nonatomic) BOOL hasRetainedSearch;
+- (void)_readRetainedSearch;
 @property(nonatomic) BOOL hasSupportDirectionIntentSuggestions;
+@property(nonatomic) BOOL supportDirectionIntentSuggestions;
+@property(retain, nonatomic) GEOPDVenueIdentifier *venueIdentifier;
 @property(readonly, nonatomic) BOOL hasVenueIdentifier;
+- (void)_readVenueIdentifier;
 @property(nonatomic) BOOL hasInterleaveCategorySuggestions;
+@property(nonatomic) BOOL interleaveCategorySuggestions;
+@property(retain, nonatomic) GEOPDAutocompleteEntry *categorySuggestionEntry;
 @property(readonly, nonatomic) BOOL hasCategorySuggestionEntry;
+- (void)_readCategorySuggestionEntry;
+@property(retain, nonatomic) NSData *categorySuggestionEntryMetadata;
 @property(readonly, nonatomic) BOOL hasCategorySuggestionEntryMetadata;
+- (void)_readCategorySuggestionEntryMetadata;
 @property(nonatomic) BOOL hasHighlightDiff;
-@property(nonatomic) BOOL highlightDiff; // @synthesize highlightDiff=_highlightDiff;
+@property(nonatomic) BOOL highlightDiff;
 @property(nonatomic) BOOL hasMaxResults;
-@property(nonatomic) int maxResults; // @synthesize maxResults=_maxResults;
+@property(nonatomic) int maxResults;
+@property(retain, nonatomic) GEOPDViewportInfo *viewportInfo;
 @property(readonly, nonatomic) BOOL hasViewportInfo;
+- (void)_readViewportInfo;
+@property(retain, nonatomic) NSString *query;
 @property(readonly, nonatomic) BOOL hasQuery;
+- (void)_readQuery;
+- (void)dealloc;
 
 @end
 

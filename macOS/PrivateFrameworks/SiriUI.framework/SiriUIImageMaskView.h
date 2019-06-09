@@ -8,7 +8,6 @@
 
 @class NSImage;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIImageMaskView : NSView
 {
     NSImage *_maskImage;

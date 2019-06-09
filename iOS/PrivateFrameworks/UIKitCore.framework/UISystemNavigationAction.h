@@ -19,6 +19,7 @@
 - (long long)UIActionType;
 - (id)_destinationContextForResponseDestination:(unsigned long long)arg1;
 - (_Bool)sendResponseForDestination:(unsigned long long)arg1;
+- (id)sceneIdentifierForDestination:(unsigned long long)arg1;
 - (id)URLForDestination:(unsigned long long)arg1;
 - (id)bundleIdForDestination:(unsigned long long)arg1;
 - (id)titleForDestination:(unsigned long long)arg1;

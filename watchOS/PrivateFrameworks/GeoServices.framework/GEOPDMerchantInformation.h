@@ -8,16 +8,18 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDMerchantInformation : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_merchantAdditionalData;
     NSString *_merchantAddress;
+    NSString *_merchantCanl;
     NSString *_merchantCity;
-    int _merchantCleanConfidenceLevel;
     NSString *_merchantCountryCode;
     NSString *_merchantDoingBusinessAsName;
     NSString *_merchantEnhancedName;
@@ -28,26 +30,46 @@ __attribute__((visibility("hidden")))
     NSString *_merchantState;
     NSString *_merchantType;
     NSString *_merchantZip;
+    int _merchantCleanConfidenceLevel;
     struct {
-        unsigned int merchantCleanConfidenceLevel:1;
-    } _has;
+        unsigned int has_merchantCleanConfidenceLevel:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_merchantAdditionalData:1;
+        unsigned int read_merchantAddress:1;
+        unsigned int read_merchantCanl:1;
+        unsigned int read_merchantCity:1;
+        unsigned int read_merchantCountryCode:1;
+        unsigned int read_merchantDoingBusinessAsName:1;
+        unsigned int read_merchantEnhancedName:1;
+        unsigned int read_merchantId:1;
+        unsigned int read_merchantRawAddress:1;
+        unsigned int read_merchantRawCity:1;
+        unsigned int read_merchantRawState:1;
+        unsigned int read_merchantState:1;
+        unsigned int read_merchantType:1;
+        unsigned int read_merchantZip:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_merchantAdditionalData:1;
+        unsigned int wrote_merchantAddress:1;
+        unsigned int wrote_merchantCanl:1;
+        unsigned int wrote_merchantCity:1;
+        unsigned int wrote_merchantCountryCode:1;
+        unsigned int wrote_merchantDoingBusinessAsName:1;
+        unsigned int wrote_merchantEnhancedName:1;
+        unsigned int wrote_merchantId:1;
+        unsigned int wrote_merchantRawAddress:1;
+        unsigned int wrote_merchantRawCity:1;
+        unsigned int wrote_merchantRawState:1;
+        unsigned int wrote_merchantState:1;
+        unsigned int wrote_merchantType:1;
+        unsigned int wrote_merchantZip:1;
+        unsigned int wrote_merchantCleanConfidenceLevel:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *merchantAdditionalData; // @synthesize merchantAdditionalData=_merchantAdditionalData;
-@property(nonatomic) int merchantCleanConfidenceLevel; // @synthesize merchantCleanConfidenceLevel=_merchantCleanConfidenceLevel;
-@property(retain, nonatomic) NSString *merchantType; // @synthesize merchantType=_merchantType;
-@property(retain, nonatomic) NSString *merchantCountryCode; // @synthesize merchantCountryCode=_merchantCountryCode;
-@property(retain, nonatomic) NSString *merchantRawAddress; // @synthesize merchantRawAddress=_merchantRawAddress;
-@property(retain, nonatomic) NSString *merchantAddress; // @synthesize merchantAddress=_merchantAddress;
-@property(retain, nonatomic) NSString *merchantZip; // @synthesize merchantZip=_merchantZip;
-@property(retain, nonatomic) NSString *merchantRawState; // @synthesize merchantRawState=_merchantRawState;
-@property(retain, nonatomic) NSString *merchantState; // @synthesize merchantState=_merchantState;
-@property(retain, nonatomic) NSString *merchantRawCity; // @synthesize merchantRawCity=_merchantRawCity;
-@property(retain, nonatomic) NSString *merchantCity; // @synthesize merchantCity=_merchantCity;
-@property(retain, nonatomic) NSString *merchantEnhancedName; // @synthesize merchantEnhancedName=_merchantEnhancedName;
-@property(retain, nonatomic) NSString *merchantDoingBusinessAsName; // @synthesize merchantDoingBusinessAsName=_merchantDoingBusinessAsName;
-@property(retain, nonatomic) NSString *merchantId; // @synthesize merchantId=_merchantId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -56,22 +78,53 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *merchantCanl;
+@property(readonly, nonatomic) _Bool hasMerchantCanl;
+- (void)_readMerchantCanl;
+@property(retain, nonatomic) NSString *merchantAdditionalData;
 @property(readonly, nonatomic) _Bool hasMerchantAdditionalData;
+- (void)_readMerchantAdditionalData;
 @property(nonatomic) _Bool hasMerchantCleanConfidenceLevel;
+@property(nonatomic) int merchantCleanConfidenceLevel;
+@property(retain, nonatomic) NSString *merchantType;
 @property(readonly, nonatomic) _Bool hasMerchantType;
+- (void)_readMerchantType;
+@property(retain, nonatomic) NSString *merchantCountryCode;
 @property(readonly, nonatomic) _Bool hasMerchantCountryCode;
+- (void)_readMerchantCountryCode;
+@property(retain, nonatomic) NSString *merchantRawAddress;
 @property(readonly, nonatomic) _Bool hasMerchantRawAddress;
+- (void)_readMerchantRawAddress;
+@property(retain, nonatomic) NSString *merchantAddress;
 @property(readonly, nonatomic) _Bool hasMerchantAddress;
+- (void)_readMerchantAddress;
+@property(retain, nonatomic) NSString *merchantZip;
 @property(readonly, nonatomic) _Bool hasMerchantZip;
+- (void)_readMerchantZip;
+@property(retain, nonatomic) NSString *merchantRawState;
 @property(readonly, nonatomic) _Bool hasMerchantRawState;
+- (void)_readMerchantRawState;
+@property(retain, nonatomic) NSString *merchantState;
 @property(readonly, nonatomic) _Bool hasMerchantState;
+- (void)_readMerchantState;
+@property(retain, nonatomic) NSString *merchantRawCity;
 @property(readonly, nonatomic) _Bool hasMerchantRawCity;
+- (void)_readMerchantRawCity;
+@property(retain, nonatomic) NSString *merchantCity;
 @property(readonly, nonatomic) _Bool hasMerchantCity;
+- (void)_readMerchantCity;
+@property(retain, nonatomic) NSString *merchantEnhancedName;
 @property(readonly, nonatomic) _Bool hasMerchantEnhancedName;
+- (void)_readMerchantEnhancedName;
+@property(retain, nonatomic) NSString *merchantDoingBusinessAsName;
 @property(readonly, nonatomic) _Bool hasMerchantDoingBusinessAsName;
+- (void)_readMerchantDoingBusinessAsName;
+@property(retain, nonatomic) NSString *merchantId;
 @property(readonly, nonatomic) _Bool hasMerchantId;
+- (void)_readMerchantId;
 
 @end
 

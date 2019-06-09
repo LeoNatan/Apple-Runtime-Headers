@@ -16,15 +16,17 @@ __attribute__((visibility("hidden")))
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)displayTimingsForActiveScreens;
 + (id)displayTimingForScreenNumber:(long long)arg1;
-+ (id)displayTimingWithAnchorTime:(unsigned long long)arg1 interval:(unsigned long long)arg2;
-+ (id)displayTimingWithAnchorTime:(unsigned long long)arg1 interval:(unsigned long long)arg2 latency:(unsigned long long)arg3;
++ (id)genericDisplayTiming;
++ (id)displayTimingWithAnchorTime:(unsigned long long)arg1 interval:(unsigned long long)arg2 submissionDelta:(unsigned long long)arg3 wakeUpDelta:(unsigned long long)arg4;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (unsigned long long)submissionTimeBeforeTime:(unsigned long long)arg1;
-- (unsigned long long)submissionTimeAfterTime:(unsigned long long)arg1;
-- (unsigned long long)displayTimeForSubmissionTime:(unsigned long long)arg1;
-- (unsigned long long)submissionTimeForDisplayTime:(unsigned long long)arg1;
-- (unsigned long long)displayTimeBeforeTime:(unsigned long long)arg1;
-- (unsigned long long)displayTimeAfterTime:(unsigned long long)arg1;
+@property(readonly) unsigned long long interval;
+- (unsigned long long)presentationTimeForWakeUpTime:(unsigned long long)arg1;
+- (unsigned long long)submissionDeadlineForWakeUpTime:(unsigned long long)arg1;
+- (unsigned long long)wakeUpTimeAfterTime:(unsigned long long)arg1;
+- (unsigned long long)submissionDeadlineAfterTime:(unsigned long long)arg1;
+- (unsigned long long)presentationTimeForSubmissionDeadline:(unsigned long long)arg1;
+- (unsigned long long)submissionDeadlineForPresentationTime:(unsigned long long)arg1;
+- (unsigned long long)presentationTimeAfterTime:(unsigned long long)arg1;
 
 @end
 

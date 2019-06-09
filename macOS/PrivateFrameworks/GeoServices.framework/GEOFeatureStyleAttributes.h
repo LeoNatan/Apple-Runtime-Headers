@@ -31,10 +31,12 @@
 + (id)calendarEventStyleAttributes;
 + (id)restaurantStyleAttributes;
 + (id)parkedCarStyleAttributes;
++ (id)transitStationStyleAttributes;
 + (id)workStyleAttributes;
 + (id)homeStyleAttributes;
 + (id)searchResultStyleAttributes;
 + (id)airportStyleAttributes;
++ (id)addressMarkerStyleAttributes;
 - (void).cxx_destruct;
 - (void)sort;
 - (id)description;
@@ -67,6 +69,9 @@
 - (BOOL)shouldSuppress3DBuildingStrokes;
 - (BOOL)isDrivable;
 - (BOOL)isWalkable;
+- (int)walkableSide;
+- (int)sidewalkSide;
+- (BOOL)isRoadPedestrianNavigable;
 - (int)drivingSide;
 - (BOOL)hasDrivingSide;
 - (BOOL)isBorder;
@@ -77,6 +82,7 @@
 - (BOOL)isRamp;
 - (BOOL)isBridge;
 - (BOOL)isTunnel;
+- (id)initWithPlaceStyleAttributes:(id)arg1;
 
 @end
 

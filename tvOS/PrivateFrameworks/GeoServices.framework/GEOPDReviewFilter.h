@@ -19,11 +19,13 @@ __attribute__((visibility("hidden")))
     unsigned long long _photoSizeFiltersSpace;
     _Bool _suppressSyntheticReviews;
     struct {
-        unsigned int suppressSyntheticReviews:1;
-    } _has;
+        unsigned int has_suppressSyntheticReviews:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,10 +34,11 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasSuppressSyntheticReviews;
-@property(nonatomic) _Bool suppressSyntheticReviews; // @synthesize suppressSyntheticReviews=_suppressSyntheticReviews;
+@property(nonatomic) _Bool suppressSyntheticReviews;
 - (void)setPhotoSizeFilters:(struct GEOPDPhotoSizeFilterValue *)arg1 count:(unsigned long long)arg2;
 - (struct GEOPDPhotoSizeFilterValue)photoSizeFilterAtIndex:(unsigned long long)arg1;
 - (void)addPhotoSizeFilter:(struct GEOPDPhotoSizeFilterValue)arg1;

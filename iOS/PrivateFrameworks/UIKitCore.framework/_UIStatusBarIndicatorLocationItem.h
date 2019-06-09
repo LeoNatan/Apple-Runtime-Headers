@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)imageNameForUpdate:(id)arg1;
+- (id)systemImageNameForUpdate:(id)arg1;
 - (id)indicatorEntryKey;
 
 @end

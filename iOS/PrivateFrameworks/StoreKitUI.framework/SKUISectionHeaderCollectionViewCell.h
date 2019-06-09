@@ -10,6 +10,7 @@
 
 @class NSString, SKUISectionHeaderView;
 
+__attribute__((visibility("hidden")))
 @interface SKUISectionHeaderCollectionViewCell : SKUICollectionViewCell <SKUIViewElementView>
 {
     SKUISectionHeaderView *_headerView;

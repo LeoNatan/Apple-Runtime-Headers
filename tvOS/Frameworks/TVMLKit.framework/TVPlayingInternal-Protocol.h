@@ -6,16 +6,8 @@
 
 #import <TVMLKit/TVPlaying-Protocol.h>
 
-@class NSArray, NSDate;
-
 @protocol TVPlayingInternal <TVPlaying>
-@property(nonatomic) _Bool pausesOnHDCPProtectionDown;
 @property(nonatomic) _Bool updatesMediaRemoteInfoAutomatically;
-@property(nonatomic) _Bool preventsSleepDuringVideoPlayback;
-@property(readonly, nonatomic) _Bool currentMediaItemHasVideoContent;
-- (NSArray *)errorLogs;
-- (NSArray *)accessLogs;
-- (NSDate *)playbackDate;
-- (void)reset;
+@property(nonatomic) _Bool pausesOnHDCPProtectionDown;
 @end
 

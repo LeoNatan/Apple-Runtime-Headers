@@ -6,13 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <AppleMediaServices/BKSProcessDelegate-Protocol.h>
-
-@class BKSProcess, BKSProcessAssertion, NSCountedSet, NSString;
+@class BKSProcessAssertion, NSCountedSet, NSString;
 @protocol OS_os_transaction;
 
 __attribute__((visibility("hidden")))
-@interface AMSKeepAliveSession : NSObject <BKSProcessDelegate>
+@interface AMSKeepAliveSession : NSObject
 {
     BOOL _interrupted;
     NSString *_assertionName;
@@ -20,19 +18,16 @@ __attribute__((visibility("hidden")))
     NSString *_logKey;
     BKSProcessAssertion *_taskAssertion;
     NSObject<OS_os_transaction> *_osTransaction;
-    BKSProcess *_process;
     long long _timerId;
 }
 
 + (id)_sharedSessionQueue;
-+ (void)_reapplyAssertion;
-+ (void)_deactivateSession;
-+ (void)_afterDelay:(long long)arg1 coalesce:(BOOL)arg2 handler:(CDUnknownBlockType)arg3;
-+ (void)interrupt;
-+ (void)removeKeepAliveForName:(id)arg1;
-+ (void)addKeepAliveForName:(id)arg1;
++ (id)_sessionKeyWithName:(id)arg1 style:(long long)arg2;
++ (void)_accessActiveSessionsWithBlock:(CDUnknownBlockType)arg1;
++ (void)interruptKeepAliveForName:(id)arg1 style:(long long)arg2;
++ (void)removeKeepAliveForName:(id)arg1 style:(long long)arg2;
++ (void)addKeepAliveForName:(id)arg1 style:(long long)arg2;
 @property long long timerId; // @synthesize timerId=_timerId;
-@property(retain) BKSProcess *process; // @synthesize process=_process;
 @property(retain) NSObject<OS_os_transaction> *osTransaction; // @synthesize osTransaction=_osTransaction;
 @property(retain) BKSProcessAssertion *taskAssertion; // @synthesize taskAssertion=_taskAssertion;
 @property(readonly) NSString *logKey; // @synthesize logKey=_logKey;
@@ -40,16 +35,12 @@ __attribute__((visibility("hidden")))
 @property(retain) NSCountedSet *activeNames; // @synthesize activeNames=_activeNames;
 @property(readonly) NSString *assertionName; // @synthesize assertionName=_assertionName;
 - (void).cxx_destruct;
-- (void)_invalidate;
-- (void)processWillExpire:(id)arg1;
+- (void)_startLogTimer;
+- (void)_invalidateAssertion;
+- (void)_invalidateTransaction;
+- (void)_afterDelay:(double)arg1 coalesce:(BOOL)arg2 queue:(id)arg3 handler:(CDUnknownBlockType)arg4;
 - (void)dealloc;
-- (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (id)initWithName:(id)arg1 style:(long long)arg2;
 
 @end
 

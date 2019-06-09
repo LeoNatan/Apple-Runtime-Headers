@@ -18,6 +18,7 @@
 
 @property(nonatomic) _Bool shouldScrollToFirstResponder; // @synthesize shouldScrollToFirstResponder=_shouldScrollToFirstResponder;
 @property(nonatomic) _Bool subviewsDisabled; // @synthesize subviewsDisabled=_subviewsDisabled;
+- (void).cxx_destruct;
 - (_Bool)_scrollsToMakeFirstResponderVisible;
 - (void)setContentOffset:(struct CGPoint)arg1 animated:(_Bool)arg2;
 - (void)endBlockingScroll;
@@ -26,7 +27,6 @@
 - (void)didAddSubview:(id)arg1;
 - (void)enableSubview:(id)arg1;
 - (void)disableSubview:(id)arg1;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

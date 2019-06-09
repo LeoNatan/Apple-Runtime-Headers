@@ -16,6 +16,7 @@
 }
 
 @property(readonly) struct Object *_apiObject;
+@property(readonly, nonatomic) long long effectiveContentMode;
 - (id)_request;
 - (void)dealloc;
 

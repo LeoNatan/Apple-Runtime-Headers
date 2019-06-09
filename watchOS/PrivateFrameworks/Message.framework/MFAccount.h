@@ -6,16 +6,19 @@
 
 #import <objc/NSObject.h>
 
-#import <Message/EMAccount-Protocol.h>
-#import <Message/MFPubliclyDescribable-Protocol.h>
+#import <Message/ECAuthenticatableAccount-Protocol.h>
+#import <Message/EDAccount-Protocol.h>
+#import <Message/EFPubliclyDescribable-Protocol.h>
 
-@class ACAccount, NSDictionary, NSMutableDictionary, NSString;
+@class ACAccount, ECAccount, ECAuthenticationScheme, NSArray, NSDictionary, NSMutableDictionary, NSString;
 
-@interface MFAccount : NSObject <EMAccount, MFPubliclyDescribable>
+@interface MFAccount : NSObject <EDAccount, ECAuthenticatableAccount, EFPubliclyDescribable>
 {
     ACAccount *_persistentAccount;
     struct os_unfair_lock_s _persistentAccountLock;
     NSMutableDictionary *_unsavedAccountProperties;
+    NSArray *emailAddressStrings;
+    ECAccount *_baseAccount;
     NSString *_sourceApplicationBundleIdentifier;
 }
 
@@ -49,6 +52,10 @@
 + (_Bool)shouldHealAccounts;
 + (void)setShouldHealAccounts:(_Bool)arg1;
 @property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
+@property(readonly, nonatomic) ECAccount *baseAccount; // @synthesize baseAccount=_baseAccount;
+@property(readonly, copy, nonatomic) NSArray *emailAddressStrings; // @synthesize emailAddressStrings;
+- (void).cxx_destruct;
+- (void)setMissingPasswordError;
 - (id)copyDiagnosticInformation;
 - (_Bool)isSyncingNotes;
 - (_Bool)isEnabledForDataclass:(id)arg1;
@@ -62,7 +69,7 @@
 - (id)nameForMailboxUid:(id)arg1;
 - (id)networkAccountIdentifier;
 @property(readonly) NSString *syncStoreIdentifier;
-@property(readonly) NSString *uniqueId;
+@property(readonly) NSString *uniqueID;
 - (_Bool)_connectAndAuthenticate:(id)arg1;
 - (void)reportAuthenticationError:(id)arg1 authScheme:(id)arg2;
 - (id)customDescriptionForError:(id)arg1 authScheme:(id)arg2 defaultDescription:(id)arg3;
@@ -77,13 +84,11 @@
 - (_Bool)requiresAuthentication;
 - (Class)connectionClass;
 - (id)_newConnection;
-- (void)setPreferredAuthScheme:(id)arg1;
-- (id)preferredAuthScheme;
+@property(retain, nonatomic) ECAuthenticationScheme *preferredAuthScheme;
 - (void)accountInfoDidChange;
 - (void)setClientCertificates:(id)arg1;
 - (id)clientCertificates;
-- (void)setDomain:(id)arg1;
-- (id)domain;
+@property(retain, nonatomic) NSString *domain;
 - (void)setTryDirectSSL:(_Bool)arg1;
 - (_Bool)allowsTrustPrompt;
 - (void)setUsesSSL:(_Bool)arg1;
@@ -99,7 +104,7 @@
 - (unsigned int)portNumber;
 - (_Bool)hasPasswordCredential;
 - (_Bool)canAuthenticateWithCurrentCredentials;
-- (id)systemAccount;
+@property(readonly, copy, nonatomic) ACAccount *systemAccount;
 - (_Bool)fetchTokensIfNecessary:(id *)arg1;
 @property(readonly) NSString *managedTag;
 @property(readonly) ACAccount *accountForRenewingCredentials;
@@ -107,12 +112,8 @@
 - (_Bool)promptUserForPasswordWithTitle:(id)arg1 message:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)renewCredentialsWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_renewCredentialsWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)setOAuth2Token:(id)arg1 refreshToken:(id)arg2 error:(id *)arg3;
-- (id)oauth2Token;
-- (_Bool)setCredentialItem:(id)arg1 forKey:(id)arg2 error:(id *)arg3;
-- (void)setCredentialItem:(id)arg1 forKey:(id)arg2;
-- (id)credentialItemForKey:(id)arg1 error:(id *)arg2;
-- (id)credentialItemForKey:(id)arg1;
+- (void)setOAuth2Token:(id)arg1 refreshToken:(id)arg2;
+@property(readonly, retain, nonatomic) NSString *oauth2Token;
 - (unsigned int)credentialAccessibility;
 @property(copy, nonatomic) NSString *password;
 - (id)_passwordWithError:(id *)arg1;
@@ -139,7 +140,7 @@
 - (void)setAccountProperty:(id)arg1 forKey:(id)arg2;
 - (id)accountPropertyForKey:(id)arg1;
 @property(readonly) NSDictionary *properties;
-@property(readonly, copy, nonatomic) NSString *mf_publicDescription;
+@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *description;
 - (id)_privacySafeDescription;
 - (id)accountClass;
@@ -154,7 +155,6 @@
 - (void)setPersistentAccount:(id)arg1;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)initWithPersistentAccount:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithProperties:(id)arg1;

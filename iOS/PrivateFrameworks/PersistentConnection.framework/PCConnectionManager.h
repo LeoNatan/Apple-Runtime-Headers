@@ -121,8 +121,13 @@
 - (void)setPollingIntervalOverride:(double)arg1;
 @property(readonly, nonatomic) double pollingInterval;
 - (_Bool)_isPushConnected;
+@property(nonatomic) _Bool usingServerStatsAggressively;
+@property(nonatomic) double serverStatsExpectedKeepAliveInterval;
+@property(nonatomic) double serverStatsMinKeepAliveInterval;
+@property(nonatomic) double serverStatsMaxKeepAliveInterval;
 - (void)_setMaximumKeepAliveInterval:(double)arg1 onInterface:(long long)arg2;
 @property double maximumKeepAliveInterval;
+- (void)_setMinimumKeepAliveInterval:(double)arg1 onInterface:(long long)arg2;
 @property(nonatomic) double minimumKeepAliveInterval;
 @property(readonly, nonatomic) double currentKeepAliveInterval;
 @property(readonly, nonatomic) unsigned long long countOfGrowthActions;

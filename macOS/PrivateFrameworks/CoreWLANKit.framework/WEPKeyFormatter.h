@@ -6,6 +6,7 @@
 
 #import <CoreWLANKit/UTF8Formatter.h>
 
+__attribute__((visibility("hidden")))
 @interface WEPKeyFormatter : UTF8Formatter
 {
 }

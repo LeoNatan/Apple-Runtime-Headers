@@ -10,31 +10,47 @@
 
 @interface DOCThumbnailFolderIcon : NSObject
 {
+    double _bottomInset;
+    double _sharedBadgeBottomInset;
+    struct CGSize _badgeSize;
+    struct CGSize _sharedBadgeSize;
     NSString *_documentsBadgeName;
     NSString *_desktopBadgeName;
+    NSString *_sharedBadgeName;
+    NSString *_downloadsBadgeName;
     UIImage *_documentsBadge;
     UIImage *_desktopBadge;
-    UIImage *_image;
+    UIImage *_sharedBadge;
+    UIImage *_downloadsBadge;
+    UIImage *_plainFolderImage;
     NSString *_imageName;
-    double _dimension;
-    double _bottomInset;
-    struct CGSize _badgeSize;
+    double _imageDimension;
 }
 
-+ (id)folderIconForSize:(struct CGSize)arg1 scale:(double)arg2 style:(unsigned long long)arg3;
-+ (id)darkFolderIcons;
-+ (id)lightFolderIcons;
-@property(readonly, nonatomic) struct CGSize badgeSize; // @synthesize badgeSize=_badgeSize;
-@property(readonly, nonatomic) double bottomInset; // @synthesize bottomInset=_bottomInset;
-@property(readonly, nonatomic) double dimension; // @synthesize dimension=_dimension;
++ (id)imageWithStyle:(unsigned long long)arg1 assetImage:(id)arg2;
++ (id)_folderIconForSize:(struct CGSize)arg1 scale:(double)arg2;
++ (id)folderIconForDescriptor:(id)arg1;
++ (id)folderIcons;
++ (id)_folderIconsForImageNamePattern:(id)arg1 documentsBadgeNamePattern:(id)arg2 desktopBadgeNamePattern:(id)arg3 sharedBadgeNamePattern:(id)arg4 downloadsBadgeNamePattern:(id)arg5;
+@property(readonly, nonatomic) double imageDimension; // @synthesize imageDimension=_imageDimension;
 @property(readonly, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
-@property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(readonly, nonatomic) UIImage *plainFolderImage; // @synthesize plainFolderImage=_plainFolderImage;
 - (void).cxx_destruct;
+- (double)bottomInsetForFolderType:(unsigned long long)arg1;
+@property(readonly, nonatomic) double bottomInset;
+- (struct CGSize)badgeSizeForFolderType:(unsigned long long)arg1;
+@property(readonly, nonatomic) struct CGSize badgeSize;
 - (id)badgeForFolderType:(unsigned long long)arg1;
+- (id)_badgedFolderIconForBadge:(id)arg1 badgeSize:(struct CGSize)arg2 bottomInset:(double)arg3 style:(unsigned long long)arg4;
+- (id)badgedFolderIconForBadge:(id)arg1 style:(unsigned long long)arg2;
+- (id)badgedFolderIconForFolderType:(unsigned long long)arg1 style:(unsigned long long)arg2;
 - (void)resolveImage;
+- (id)image;
+@property(readonly, nonatomic) UIImage *downloadsBadge; // @synthesize downloadsBadge=_downloadsBadge;
+@property(readonly, nonatomic) UIImage *sharedBadge; // @synthesize sharedBadge=_sharedBadge;
 @property(readonly, nonatomic) UIImage *desktopBadge; // @synthesize desktopBadge=_desktopBadge;
 @property(readonly, nonatomic) UIImage *documentsBadge; // @synthesize documentsBadge=_documentsBadge;
-- (id)initWithImageName:(id)arg1 documentsBadgeName:(id)arg2 dekstopBadgeName:(id)arg3 badgeDimension:(double)arg4 badgeBottomInset:(double)arg5;
+- (id)initWithImageName:(id)arg1 documentsBadgeName:(id)arg2 dekstopBadgeName:(id)arg3 sharedBadgeName:(id)arg4 downloadsBadgeName:(id)arg5 imageDimension:(double)arg6 badgeDimension:(double)arg7 badgeBottomInset:(double)arg8 sharedBadgeDimension:(double)arg9 sharedBadgeBottomInset:(double)arg10;
 
 @end
 

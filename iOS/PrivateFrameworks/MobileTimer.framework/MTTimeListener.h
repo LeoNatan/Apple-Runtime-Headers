@@ -8,23 +8,25 @@
 
 #import <MobileTimer/MTAgentNotificationListener-Protocol.h>
 
-@class NSHashTable, NSString;
+@class MTObserverStore, NSString;
 @protocol NAScheduler, OS_dispatch_queue;
 
 @interface MTTimeListener : NSObject <MTAgentNotificationListener>
 {
     id <NAScheduler> _serializer;
     NSObject<OS_dispatch_queue> *_queue;
-    NSHashTable *_observers;
+    MTObserverStore *_observers;
 }
 
-@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
+@property(retain, nonatomic) MTObserverStore *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 - (void).cxx_destruct;
 - (void)registerObserver:(id)arg1;
-- (void)handleNotification:(id)arg1;
-- (_Bool)handlesNotification:(id)arg1;
+- (void)handleNotification:(id)arg1 ofType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (double)assertionTimeOutForNotification:(id)arg1 ofType:(long long)arg2;
+- (_Bool)handlesNotification:(id)arg1 ofType:(long long)arg2;
+- (id)initWithCallbackScheduler:(id)arg1;
 - (id)init;
 
 // Remaining properties

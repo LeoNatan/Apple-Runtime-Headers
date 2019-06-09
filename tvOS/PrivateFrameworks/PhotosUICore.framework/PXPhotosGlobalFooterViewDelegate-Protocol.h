@@ -10,5 +10,8 @@
 
 @protocol PXPhotosGlobalFooterViewDelegate <NSObject>
 - (void)photosGlobalFooterView:(PXPhotosGlobalFooterView *)arg1 presentViewController:(UIViewController *)arg2;
+
+@optional
+- (void)photosGlobalFooterViewDidChangeHeight:(PXPhotosGlobalFooterView *)arg1;
 @end
 

@@ -4,29 +4,31 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <ITMLKit/IKDOMConditional.h>
 
-@class IKDOMElement, NSString, _IKDOMPrototypeDerivationRules;
+@class NSArray, NSString, _IKDOMPrototypeDerivationRules;
 
-@interface IKDOMPrototype : NSObject
+@interface IKDOMPrototype : IKDOMConditional
 {
-    IKDOMElement *_domElement;
-    NSString *_identifier;
+    struct {
+        _Bool parsedGrouping;
+    } _flags;
+    struct NSArray *_grouping;
     NSString *_type;
     NSString *_selector;
     _IKDOMPrototypeDerivationRules *_rules;
 }
 
++ (struct NSArray *)_groupingForDOMElement:(id)arg1;
 + (id)prototypeWithDOMElement:(id)arg1;
 @property(readonly, copy, nonatomic) _IKDOMPrototypeDerivationRules *rules; // @synthesize rules=_rules;
 @property(readonly, copy, nonatomic) NSString *selector; // @synthesize selector=_selector;
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, nonatomic) __weak IKDOMElement *domElement; // @synthesize domElement=_domElement;
 - (void).cxx_destruct;
 - (id)_derivativeWithDataItem:(id)arg1;
 - (id)instantiateDOMElement;
 - (id)variantForDataItem:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *grouping; // @synthesize grouping=_grouping;
 - (id)initWithDOMElement:(id)arg1 selector:(id)arg2;
 
 @end

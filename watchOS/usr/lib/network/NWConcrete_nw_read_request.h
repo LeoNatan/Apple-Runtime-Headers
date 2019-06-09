@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     char *buffer;
     NSObject<OS_dispatch_data> *data;
     NSObject<OS_nw_content_context> *context;
+    NSObject<OS_nw_content_context> *repliable_message;
     NSObject<OS_nw_error> *error;
     NSObject<OS_nw_array> *read_array;
     unsigned int reported:1;

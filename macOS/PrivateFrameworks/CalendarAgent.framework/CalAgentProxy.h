@@ -21,6 +21,7 @@
 + (BOOL)_clientIsReminders;
 + (BOOL)_clientIsiCal;
 - (void).cxx_destruct;
+- (void)_forceResetCalendarCacheAndShutdown;
 - (void)_migrateLocalDataIntoParentAccountWithID:(id)arg1 delay:(long long)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)openURL:(id)arg1;
 - (void)setPreventShutdownAfterIAMigration:(BOOL)arg1;
@@ -48,9 +49,9 @@
 - (void)getDefaultCalendarForEventsCalendarIdentifierWithReply:(CDUnknownBlockType)arg1;
 - (void)getPreference:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)attemptLocationGeocodeOnEvents;
-- (void)calMeCardWithReply:(CDUnknownBlockType)arg1;
 - (void)temporarilyAcceptCertificates:(id)arg1 forHost:(id)arg2;
 - (void)cacheWeatherForEventsWithStartDateBetweenStart:(id)arg1 andEnd:(id)arg2;
+- (void)sendEmailFromAddress:(id)arg1 toRecipients:(id)arg2 withSubject:(id)arg3 withBody:(id)arg4 withAttachment:(id)arg5 attachmentFilename:(id)arg6;
 - (void)sendEmailTo:(id)arg1 withSubject:(id)arg2 withBody:(id)arg3 withAttachment:(id)arg4 attachmentFilename:(id)arg5;
 - (void)restoreToBackupWithBookmark:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)travelTimeFrom:(id)arg1 to:(id)arg2 arrivalDate:(id)arg3 withRouteTypes:(id)arg4 withCompletionBlock:(CDUnknownBlockType)arg5;
@@ -65,7 +66,7 @@
 - (void)expandGroupForCalDAVprincipalWithObjectIDString:(id)arg1 groupIdentifier:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)principalPropertSearchForCalDAVPrincipalWithObjectIDString:(id)arg1 searchString:(id)arg2 searchTypes:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)getUserAvailabilityForObjectID:(id)arg1 maskedSharedUID:(id)arg2 addresses:(id)arg3 timeRange:(id)arg4 reply:(CDUnknownBlockType)arg5;
-- (void)setOfficeHoursForPrincipalObjectIDString:(id)arg1 officeHours:(id)arg2;
+- (void)setOfficeHoursForPrincipalObjectIDString:(id)arg1 officeHours:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)getOfficeHoursForPrincipalObjectIDString:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)removeNaturalLanguageSuggestedEventCalendar;
 - (void)createNaturalLanguageSuggestedEventCalendar;
@@ -95,9 +96,9 @@
 - (void)calDAVCalendarDeletedWithUID:(id)arg1;
 - (void)principalDeletedWithObjectID:(id)arg1;
 - (void)updateSessionCacheWithReply:(CDUnknownBlockType)arg1;
-- (void)stopDebugQueueWithObjectID:(id)arg1;
-- (void)startDebugQueueWithObjectID:(id)arg1;
-- (void)sessionDebugInfoWithObjectID:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)stopDebugQueueWithSourceID:(id)arg1;
+- (void)startDebugQueueWithSourceID:(id)arg1;
+- (void)sessionDebugInfoWithSourceID:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)reinviteSharees:(id)arg1 withCalendarObjectIDString:(id)arg2;
 - (void)setupCoreDataXPCServerWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)init;

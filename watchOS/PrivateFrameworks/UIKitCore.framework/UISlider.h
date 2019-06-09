@@ -22,6 +22,7 @@
     UIImageView *_thumbView;
     UIImageView *_minTrackView;
     UIImageView *_maxTrackView;
+    UIView *_minTrackClipView;
     UIView *_maxTrackClipView;
     struct {
         unsigned int continuous:1;
@@ -38,7 +39,6 @@
     UIColor *_maxTintColor;
     UIColor *_thumbTintColor;
     UIView *_thumbViewNeue;
-    _Bool _useLookNeue;
     NSArray *_trackColors;
     _Bool _trackIsArtworkBased;
     _Bool _thumbIsArtworkBased;
@@ -46,6 +46,7 @@
     UIImageView *_innerThumbView;
 }
 
++ (id)_modernThumbImageWithTraitCollection:(id)arg1 tintColor:(id)arg2;
 + (_Bool)_allowActionsToQueue;
 @property(retain, nonatomic) UIColor *thumbTintColor; // @synthesize thumbTintColor=_thumbTintColor;
 @property(retain, nonatomic) UIColor *maximumTrackTintColor; // @synthesize maximumTrackTintColor=_maxTintColor;
@@ -60,8 +61,8 @@
 - (_Bool)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)cancelMouseTracking;
 - (void)_sendDelayedActions;
-- (void)_sliderAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
-- (void)_sliderAnimationWillStart:(id)arg1 context:(id)arg2;
+- (void)_sliderAnimationDidStop:(_Bool)arg1;
+- (void)_sliderAnimationWillStart;
 - (unsigned int)_controlEventsForActionTriggered;
 @property(nonatomic) float maximumValue; // @dynamic maximumValue;
 @property(nonatomic) float minimumValue; // @dynamic minimumValue;
@@ -77,6 +78,7 @@
 - (void)_updateAppearanceForEnabled:(_Bool)arg1;
 - (void)_layoutSubviewsForBoundsChange:(_Bool)arg1;
 - (void)_updateMaxTrackColorForInitialization:(_Bool)arg1;
+- (void)_traitCollectionDidChangeInternal:(const struct _UITraitCollectionChangeDescription *)arg1;
 - (void)layoutSubviews;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
@@ -98,6 +100,7 @@
 - (id)minimumTrackImageForState:(unsigned int)arg1;
 - (id)thumbImageForState:(unsigned int)arg1;
 - (void)setMaximumTrackImage:(id)arg1 forState:(unsigned int)arg2;
+- (void)_updateMinimumTrackTintColor;
 - (void)setMinimumTrackImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setThumbImage:(id)arg1 forState:(unsigned int)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
@@ -143,7 +146,6 @@
 - (id)_contentForState:(unsigned int)arg1;
 - (void)_setMaximumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
-- (void)_setThumbTintColor:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setThumbImage:(id)arg1 forStates:(unsigned int)arg2;
 - (void)_setContent:(id)arg1 forState:(unsigned int)arg2;
 

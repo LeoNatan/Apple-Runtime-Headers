@@ -6,6 +6,7 @@
 
 #import <ICADevices/ICDDevice.h>
 
+__attribute__((visibility("hidden")))
 @interface ICDFireWireDevice : ICDDevice
 {
     unsigned long long _guid;

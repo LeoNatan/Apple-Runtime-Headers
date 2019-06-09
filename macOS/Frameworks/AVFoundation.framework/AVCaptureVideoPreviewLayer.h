@@ -31,7 +31,6 @@
 - (void)removeConnection:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id *)arg2;
 - (id)connectionMediaTypes;
-- (void)didStopForSession:(id)arg1 error:(id)arg2;
 - (BOOL)resumePreviewForConnection:(id)arg1;
 - (BOOL)pausePreviewForConnection:(id)arg1;
 - (BOOL)setPaused:(BOOL)arg1 forConnection:(id)arg2;
@@ -53,6 +52,12 @@
 - (id)_videoPreviewUnitPixelBufferAttributes;
 - (id)pixelBufferAttributes;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (struct CGRect)rectForMetadataOutputRectOfInterest:(struct CGRect)arg1;
+- (struct CGRect)metadataOutputRectOfInterestForRect:(struct CGRect)arg1;
+- (struct CGPoint)pointForCaptureDevicePointOfInterest:(struct CGPoint)arg1;
+- (struct CGPoint)captureDevicePointOfInterestForPoint:(struct CGPoint)arg1;
+- (id)transformedMetadataObjectForMetadataObject:(id)arg1;
+- (void)_updateCaptureDeviceTransformWithConnection:(id)arg1 videoGravity:(id)arg2 sourceSize:(struct CGSize)arg3;
 - (void)inputFormatDescriptionChanged:(id)arg1;
 - (void)refreshFormatDescriptionFromInputPort:(id)arg1;
 - (void)positionSublayer;
@@ -64,7 +69,6 @@
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setSessionWithNoConnection:(id)arg1;
 @property(retain, nonatomic) AVCaptureSession *session;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithLayer:(id)arg1;
 - (id)initWithSessionWithNoConnection:(id)arg1;

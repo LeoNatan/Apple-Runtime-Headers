@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(copy) NSString *localizedAttributeDescription; // @synthesize localizedAttributeDescription=_localizedAttributeDescription;
 @property(copy) NSString *localizedAttributeName; // @synthesize localizedAttributeName=_localizedAttributeName;
 @property(copy) NSString *attributeName; // @synthesize attributeName=_attributeName;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithAttributeName:(const struct TString *)arg1;
 

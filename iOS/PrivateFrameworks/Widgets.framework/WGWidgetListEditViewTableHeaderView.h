@@ -21,6 +21,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(readonly, nonatomic) double contentMinY;
 - (id)initWithReuseIdentifier:(id)arg1;
+- (id)initWithReuseIdentifier:(id)arg1 forTodayView:(_Bool)arg2;
 
 @end
 

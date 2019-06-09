@@ -9,7 +9,7 @@
 #import <VectorKit/GGLLayerDelegate-Protocol.h>
 #import <VectorKit/MDRenderTarget-Protocol.h>
 
-@class CALayer, NSString;
+@class CALayer, NSString, VKSharedResources;
 @protocol GGLLayer, GGLRenderQueueSource;
 
 __attribute__((visibility("hidden")))
@@ -18,12 +18,18 @@ __attribute__((visibility("hidden")))
     CALayer<GGLLayer> *_layer;
     id <GGLRenderQueueSource> _renderSource;
     shared_ptr_e963992e _taskContext;
-    struct _retain_ptr<VKSharedResources *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> _sharedResources;
+    struct RenderQueue *_activeRenderQueue;
+    struct _retain_ptr<VKSharedResources *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> {
+        CDUnknownFunctionPointerType *_vptr$_retain_ptr;
+        VKSharedResources *_obj;
+        struct _retain_objc _retain;
+        struct _release_objc _release;
+    } _sharedResources;
     struct deque<std::__1::function<void ()>, std::__1::allocator<std::__1::function<void ()>>> _completionHandlers;
     struct RenderTargetFormat _format;
     struct Device {
         int;
-        shared_ptr_807ec9ac;
+        struct shared_ptr<ggl::Device>;
         struct unique_ptr<md::SharedDeviceResources, std::__1::default_delete<md::SharedDeviceResources>>;
     } *_device;
     struct Renderer {
@@ -34,6 +40,7 @@ __attribute__((visibility("hidden")))
         unsigned long long;
         _Bool;
         float;
+        unsigned long long;
         struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, geo::StdAllocator<std::__1::shared_ptr<ggl::DebugRenderer>, ggl::Allocator>>;
         struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue>>;
         struct shared_ptr<ggl::CommonLibrary>;
@@ -46,6 +53,7 @@ __attribute__((visibility("hidden")))
     struct unique_ptr<ggl::RenderTarget, std::__1::default_delete<ggl::RenderTarget>> _renderTarget;
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer>> _depthStencil;
     struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer>> _msaaTexture;
+    struct unique_ptr<ggl::RenderBuffer, std::__1::default_delete<ggl::RenderBuffer>> _colorTextures[3];
     _Bool _useMultisampling;
     _Bool _requiresMultisampling;
     struct CGContext *_snapshotContext;
@@ -53,6 +61,7 @@ __attribute__((visibility("hidden")))
     _Bool _shouldRasterize;
     struct CGRect _bounds;
     double _contentsScale;
+    unsigned long long _signpostId;
 }
 
 @property(readonly, nonatomic) _Bool shouldRasterize; // @synthesize shouldRasterize=_shouldRasterize;
@@ -64,7 +73,7 @@ __attribute__((visibility("hidden")))
 - (struct DebugConsole *)debugConsoleForId:(int)arg1;
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 toLayer:(id)arg2;
 @property(readonly, nonatomic) float averageFPS;
-- (void)renderWithTimestamp:(double)arg1 completion:(function_30b369b8)arg2;
+- (void)renderWithTimestamp:(double)arg1 completion:(function_d3afe2e2)arg2;
 - (_Bool)hasRenderTarget;
 - (void)destroyRenderTarget;
 - (void)createRenderTarget;
@@ -76,7 +85,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGSize size;
 - (void)didEnterBackground;
 - (void)didReceiveMemoryWarning;
-- (shared_ptr_fa6aa836)bitmapData:(struct Texture *)arg1;
+- (shared_ptr_fa6aa836)bitmapData;
 - (void)_didReadPixels:(shared_ptr_fa6aa836 *)arg1;
 - (void)drawInContext:(struct CGContext *)arg1;
 - (void)setBackgroundColor:(struct CGColor *)arg1;
@@ -88,11 +97,17 @@ __attribute__((visibility("hidden")))
 - (void)enablePerformanceHUD:(id)arg1;
 @property(readonly, nonatomic) struct Renderer *renderer;
 - (void)didPresent;
-- (void)drawToTexture:(struct Texture *)arg1 withTimestamp:(double)arg2 completionHandler:(CDUnknownBlockType)arg3 prepareHandler:(CDUnknownBlockType)arg4;
-- (void)drawToTexture:(struct Texture *)arg1 withTimestamp:(double)arg2;
-- (void)_createRenderTarget:(struct Texture *)arg1;
+- (void)willPresent;
+- (void)didUpdateFrameTexture;
+- (void)willUpdateFrameTexture;
+- (void)drawToTexture:(struct Texture *)arg1 withRenderQueue:(struct RenderQueue *)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)drawToTexture:(struct Texture *)arg1 withRenderQueue:(struct RenderQueue *)arg2;
+- (struct RenderQueue *)_renderQueueForTimestamp:(double)arg1 prepareHandler:(CDUnknownBlockType)arg2;
+- (struct RenderQueue *)renderQueueForTimestamp:(double)arg1;
+- (_Bool)isDelayedRenderQueueConsumptionSupported;
+- (void)prepareTexture:(struct Texture *)arg1;
 - (void)dealloc;
-- (id)initWithContentScale:(double)arg1 shouldRasterize:(_Bool)arg2 taskContext:(const shared_ptr_e963992e *)arg3 device:(struct Device *)arg4 sharedResources:(id)arg5;
+- (id)initWithContentScale:(double)arg1 shouldRasterize:(_Bool)arg2 taskContext:(const shared_ptr_e963992e *)arg3 device:(struct Device *)arg4 sharedResources:(id)arg5 signpostId:(unsigned long long)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

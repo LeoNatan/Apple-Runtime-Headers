@@ -10,6 +10,7 @@
 
 @class OADColor, OADDash, OADFill, OADLineEnd, OADLineJoin;
 
+__attribute__((visibility("hidden")))
 @interface OADStroke : OADProperties <NSCopying>
 {
     OADColor *mColor;

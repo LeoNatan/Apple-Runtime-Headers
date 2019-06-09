@@ -9,6 +9,7 @@
 @protocol _SFBarRegistrationToken;
 
 @protocol _SFBarRegistrationObserving <NSObject>
+- (void)didChangeArrangedBarItems:(id <_SFBarRegistrationToken>)arg1;
 - (void)didCompleteBarRegistrationWithToken:(id <_SFBarRegistrationToken>)arg1;
 @end
 

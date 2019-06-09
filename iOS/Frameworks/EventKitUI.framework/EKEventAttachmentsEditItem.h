@@ -8,22 +8,39 @@
 
 #import <EventKitUI/EKEventAttachmentCellControllerDelegate-Protocol.h>
 #import <EventKitUI/EKEventAttachmentEditViewControllerDelegate-Protocol.h>
+#import <EventKitUI/UIDocumentPickerDelegate-Protocol.h>
+#import <EventKitUI/UIDropInteractionDelegate-Protocol.h>
 
-@class NSArray, NSString;
+@class EKUITableViewCell, NSArray, NSString;
 
 __attribute__((visibility("hidden")))
-@interface EKEventAttachmentsEditItem : EKEventEditItem <EKEventAttachmentCellControllerDelegate, EKEventAttachmentEditViewControllerDelegate>
+@interface EKEventAttachmentsEditItem : EKEventEditItem <UIDocumentPickerDelegate, UIDropInteractionDelegate, EKEventAttachmentCellControllerDelegate, EKEventAttachmentEditViewControllerDelegate>
 {
     NSArray *_cellControllers;
+    EKUITableViewCell *_addAttachmentCell;
 }
 
 - (void).cxx_destruct;
+- (void)_loadAndAddDataAttachmentFromItem:(id)arg1;
+- (void)dropInteraction:(id)arg1 sessionDidEnd:(id)arg2;
+- (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
+- (id)dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
+- (void)dropInteraction:(id)arg1 sessionDidExit:(id)arg2;
+- (void)dropInteraction:(id)arg1 sessionDidEnter:(id)arg2;
+- (_Bool)dropInteraction:(id)arg1 canHandleSession:(id)arg2;
+- (void)documentPickerWasCancelled:(id)arg1;
+- (void)documentPicker:(id)arg1 didPickDocumentsAtURLs:(id)arg2;
+- (void)_showAddAttachmentViewController;
 - (id)owningEventForAttachmentEditViewController:(id)arg1;
 - (id)owningEventForAttachmentCellController:(id)arg1;
 - (id)parentViewControllerForAttachmentCellController:(id)arg1;
+- (id)trailingSwipeActionsConfigurationForRowAtIndex:(long long)arg1;
+- (_Bool)forceTableReloadOnSave;
+- (_Bool)_shouldShowAddAttachmentCell;
 - (_Bool)usesDetailViewControllerForSubitem:(unsigned long long)arg1;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned long long)arg2;
 - (void)editor:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
+- (id)_addAttachmentCell;
 - (id)cellForSubitemAtIndex:(unsigned long long)arg1;
 - (double)defaultCellHeightForSubitemAtIndex:(unsigned long long)arg1 forWidth:(double)arg2;
 - (unsigned long long)numberOfSubitems;

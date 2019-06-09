@@ -13,10 +13,12 @@
 __attribute__((visibility("hidden")))
 @interface UIDictationInterpretationGroup : NSObject <NSSecureCoding>
 {
+    _Bool _isLowConfidence;
     NSArray *_interpretations;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) _Bool isLowConfidence; // @synthesize isLowConfidence=_isLowConfidence;
 @property(readonly, nonatomic) NSArray *interpretations; // @synthesize interpretations=_interpretations;
 - (void).cxx_destruct;
 - (id)description;
@@ -24,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double bestConfidenceScore;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithInterpretations:(id)arg1 isLowConfidence:(_Bool)arg2;
 - (id)initWithInterpretations:(id)arg1;
 
 @end

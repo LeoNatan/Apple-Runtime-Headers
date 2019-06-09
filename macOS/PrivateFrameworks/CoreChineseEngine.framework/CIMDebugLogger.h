@@ -11,7 +11,6 @@
 @interface CIMDebugLogger : NSObject
 {
     int _mecabraInputMethodType;
-    NSURL *_languageModelDirectoryURL;
     NSURL *_dynamicDictionaryDirectoryURL;
     NSDictionary *_activeSessionLog;
     NSTimer *_dataFlushTimer;
@@ -23,7 +22,6 @@
 - (void).cxx_destruct;
 - (void)startDynamicLogTimer;
 - (void)flushDynamicLogs;
-@property(readonly, copy) NSURL *languageModelDirectoryURL; // @synthesize languageModelDirectoryURL=_languageModelDirectoryURL;
 @property(readonly, copy) NSURL *dynamicDictionaryDirectoryURL; // @synthesize dynamicDictionaryDirectoryURL=_dynamicDictionaryDirectoryURL;
 - (void)updateSessionLog;
 - (struct __Mecabra *)mecabraEngine;

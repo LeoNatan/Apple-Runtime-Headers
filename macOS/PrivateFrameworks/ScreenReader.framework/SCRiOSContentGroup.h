@@ -12,8 +12,9 @@ __attribute__((visibility("hidden")))
 }
 
 - (BOOL)isiOSContentGroup;
-- (BOOL)isiOSElement;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
+- (id)initWithUIElement:(id)arg1 parent:(id)arg2;
+- (Class)classForChildUIElement:(id)arg1 parent:(id)arg2;
 
 @end
 

@@ -9,7 +9,7 @@
 #import <CarPlaySupport/CPListTemplateProviding-Protocol.h>
 #import <CarPlaySupport/UITableViewDelegate-Protocol.h>
 
-@class CPListTemplate, CPSSectionedDataSource, NSIndexPath, NSString, NSTimer, UIActivityIndicatorView;
+@class CPListTemplate, CPSSectionedDataSource, CPSTableView, NSIndexPath, NSString, NSTimer, UIActivityIndicatorView;
 
 @interface CPSListTemplateViewController : CPSBaseTemplateViewController <UITableViewDelegate, CPListTemplateProviding>
 {
@@ -20,8 +20,10 @@
     unsigned long long _spinnerState;
     NSTimer *_spinnerStartTimer;
     NSTimer *_spinnerTimeoutTimer;
+    CPSTableView *_tableView;
 }
 
+@property(retain, nonatomic) CPSTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) NSTimer *spinnerTimeoutTimer; // @synthesize spinnerTimeoutTimer=_spinnerTimeoutTimer;
 @property(retain, nonatomic) NSTimer *spinnerStartTimer; // @synthesize spinnerStartTimer=_spinnerStartTimer;
 @property(nonatomic) unsigned long long spinnerState; // @synthesize spinnerState=_spinnerState;
@@ -43,8 +45,7 @@
 - (void)_scheduleLoadingSpinnerForIndexPath:(id)arg1;
 - (void)_addSpinnerToIndexPath:(id)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
-- (void)viewDidLoad;
-- (void)loadView;
+- (void)_viewDidLoad;
 @property(readonly, nonatomic) CPListTemplate *listTemplate;
 - (id)initWithListTemplate:(id)arg1 templateDelegate:(id)arg2;
 

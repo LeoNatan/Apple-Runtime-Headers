@@ -11,6 +11,7 @@
 @class CKTwoButtonInlineNotificationView, NSString;
 @protocol CKUnexpectedlyLoggedOutNotificationViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKUnexpectedlyLoggedOutNotificationView : UIView <CKTwoButtonInlineNotificationViewDelegate>
 {
     id <CKUnexpectedlyLoggedOutNotificationViewDelegate> _delegate;

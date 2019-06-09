@@ -22,6 +22,9 @@ __attribute__((visibility("hidden")))
     struct __CFDictionary *videoPreviewSynchronizerUnits;
     struct __CFDictionary *videoPreviewOutputUnits;
     NSDictionary *pixelBufferAttributes;
+    struct CGAffineTransform metadataTransform;
+    double rollAdjustment;
+    struct os_unfair_lock_s internalLock;
 }
 
 @end

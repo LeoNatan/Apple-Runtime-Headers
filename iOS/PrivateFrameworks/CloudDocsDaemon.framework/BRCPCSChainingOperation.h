@@ -6,17 +6,19 @@
 
 #import <CloudDocsDaemon/_BRCOperation.h>
 
+#import <CloudDocsDaemon/BRCListOperationDelegate-Protocol.h>
 #import <CloudDocsDaemon/BRCOperationSubclass-Protocol.h>
 
-@class BRCAppLibrary, BRCServerItem, NSString;
+@class BRCAppLibrary, BRCListDirectoryContentsOperation, BRCServerItem, NSString;
 
 __attribute__((visibility("hidden")))
-@interface BRCPCSChainingOperation : _BRCOperation <BRCOperationSubclass>
+@interface BRCPCSChainingOperation : _BRCOperation <BRCListOperationDelegate, BRCOperationSubclass>
 {
     BRCAppLibrary *_appLibrary;
     BRCServerItem *_rootItem;
     _Bool _completed;
     unsigned long long _batchSize;
+    BRCListDirectoryContentsOperation *_listOperation;
     _Bool _shouldFillBatch;
     CDUnknownBlockType _pcsChainCompletionBlock;
 }
@@ -27,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)main;
 - (void)_sendRecordBatch:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_buildRecordListWithCompletion:(CDUnknownBlockType)arg1;
+- (void)listOperation:(id)arg1 wasReplacedByOperation:(id)arg2;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (_Bool)shouldRetryForError:(id)arg1;
 - (id)initWithRootItem:(id)arg1 appLibrary:(id)arg2;

@@ -8,12 +8,11 @@
 
 #import <HealthUI/HKGraphViewDelegate-Protocol.h>
 
-@class HKUIInteractiveChartDateLabelSlider, NSString;
+@class NSString;
 
 @interface HKDateGraphViewController : HKGraphViewController <HKGraphViewDelegate>
 {
     _Bool _hasSetVisibleDateRange;
-    HKUIInteractiveChartDateLabelSlider *_dateLabelSlider;
     _Bool _disableXAxis;
     int _dayScopeType;
     struct CGSize _minimumSize;
@@ -22,20 +21,15 @@
 @property(nonatomic) int dayScopeType; // @synthesize dayScopeType=_dayScopeType;
 @property(nonatomic) _Bool disableXAxis; // @synthesize disableXAxis=_disableXAxis;
 @property(nonatomic) struct CGSize minimumSize; // @synthesize minimumSize=_minimumSize;
-- (void).cxx_destruct;
 - (void)setDetailView:(id)arg1;
-- (void)graphView:(id)arg1 didUpdateYAxisWidth:(float)arg2 toWidth:(float)arg3;
 - (void)graphView:(id)arg1 didFinishUserScrollingToValueRange:(id)arg2;
 - (void)graphView:(id)arg1 didUpdateVisibleValueRange:(id)arg2 changeContext:(int)arg3;
-- (void)_updateDateSliderWithRange:(id)arg1 graphView:(id)arg2;
 - (void)_marginStyleChangeForContext:(int)arg1 graphView:(id)arg2;
 - (id)_dateAxisStyle;
 - (id)_xAxisLabelFont;
-- (void)_createDateLabelSlider;
 - (void)_setupGraphViewSelectionStyle;
 - (id)_createGraphViewWithDateZoom:(int)arg1 previousDateZoom:(int)arg2 previousXAxisSpace:(float)arg3;
 - (void)viewWillLayoutSubviews;
-- (void)_resizeDateLabelSlider:(struct CGSize)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

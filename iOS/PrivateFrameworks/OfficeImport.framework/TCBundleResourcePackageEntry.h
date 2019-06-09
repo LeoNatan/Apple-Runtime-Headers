@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     struct _xmlDoc *mXmlDocument;
 }
 
+- (void).cxx_destruct;
 - (struct _xmlDoc *)xmlDocument;
 - (id)data;
 - (void)dealloc;

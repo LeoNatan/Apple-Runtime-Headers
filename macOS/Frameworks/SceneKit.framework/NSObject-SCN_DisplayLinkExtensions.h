@@ -7,6 +7,17 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (SCN_DisplayLinkExtensions)
++ (Class)SCNUID_classForElementOfArray:(id)arg1;
++ (id)SCNUID_additionalProperties;
++ (id)SCNUID_viewForProperty:(id)arg1;
++ (id)SCNUID_constantToStringForProperty:(id)arg1;
++ (id)SCNUID_instanciateWithOption:(id)arg1;
++ (id)SCNUID_creationOptions;
++ (BOOL)SCNUID_rangeForFloatProperty:(id)arg1 min:(double *)arg2 max:(double *)arg3;
++ (id)SCNUID_propertiesToFilterOut;
++ (id)SCNUID_enumForProperty:(id)arg1;
++ (id)SCNUID_propertyOrdering;
 - (id)SCN_setupDisplayLinkWithQueue:(id)arg1;
+- (id)SCNUI_name;
 @end
 

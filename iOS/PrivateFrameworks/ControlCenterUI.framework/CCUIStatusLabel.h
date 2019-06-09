@@ -6,17 +6,22 @@
 
 #import <UIKit/UILabel.h>
 
+@class MTVisualStylingProvider;
+
 @interface CCUIStatusLabel : UILabel
 {
+    MTVisualStylingProvider *_visualStylingProvider;
     unsigned long long _verticalAlignment;
     struct UIEdgeInsets _edgeInsets;
 }
 
 @property(nonatomic) unsigned long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property(nonatomic) struct UIEdgeInsets edgeInsets; // @synthesize edgeInsets=_edgeInsets;
+- (void).cxx_destruct;
+- (void)_updateVisualStyling;
 - (void)_contentSizeCategoryDidChange;
 - (void)drawTextInRect:(struct CGRect)arg1;
-- (void)willMoveToSuperview:(id)arg1;
+- (void)didMoveToWindow;
 - (id)init;
 
 @end

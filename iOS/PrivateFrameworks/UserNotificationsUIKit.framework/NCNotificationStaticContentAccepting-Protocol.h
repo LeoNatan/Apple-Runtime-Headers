@@ -15,7 +15,10 @@
 @property(copy, nonatomic) NSString *primaryText;
 
 @optional
-@property(nonatomic) unsigned long long messageNumberOfLines;
+@property(nonatomic) unsigned long long maximumNumberOfSecondaryLargeTextLines;
+@property(nonatomic) unsigned long long maximumNumberOfSecondaryTextLines;
+@property(nonatomic) unsigned long long maximumNumberOfPrimaryLargeTextLines;
+@property(nonatomic) unsigned long long maximumNumberOfPrimaryTextLines;
 @property(retain, nonatomic) UIView *accessoryView;
 @property(retain, nonatomic) UIImage *thumbnail;
 @property(copy, nonatomic) NSString *summaryText;

@@ -8,7 +8,7 @@
 
 #import <Rapport/RPAuthenticatable-Protocol.h>
 
-@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUHomeKitManager, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSError, NSString, NSUUID, RPCompanionLinkDevice, RPIdentity, RPIdentityDaemon, RPMetrics;
+@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUHomeKitManager, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSError, NSString, NSUUID, RPCloudDaemon, RPCloudSession, RPCompanionLinkDevice, RPIdentity, RPIdentityDaemon, RPMetrics;
 @protocol CUReadWriteRequestable, OS_dispatch_queue, OS_dispatch_source;
 
 @interface RPConnection : NSObject <RPAuthenticatable>
@@ -43,8 +43,8 @@
     _Bool _readRequested;
     struct NSMutableDictionary *_requests;
     struct NSMutableArray *_sendArray;
-    unsigned int _xidLast;
     struct LogCategory *_ucat;
+    unsigned int _xidLast;
     _Bool _clientMode;
     _Bool _flowControlReadEnabled;
     _Bool _invalidationHandled;
@@ -65,6 +65,9 @@
     CUBonjourDevice *_bonjourPeerDevice;
     CUBluetoothScalablePipe *_btPipe;
     id _client;
+    RPCloudDaemon *_cloudDaemon;
+    NSString *_cloudDeviceIdentifier;
+    RPCloudSession *_cloudSession;
     NSString *_destinationString;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     unsigned int _flags;
@@ -77,6 +80,7 @@
     RPIdentity *_identityResolved;
     RPIdentity *_identityVerified;
     CDUnknownBlockType _invalidationHandler;
+    int _keepAliveSeconds;
     NSString *_label;
     int _linkType;
     RPCompanionLinkDevice *_localDeviceInfo;
@@ -89,27 +93,23 @@
     int _preferredIdentityType;
     NSData *_pskData;
     CDUnknownBlockType _receivedEventHandler;
-    CDUnknownBlockType _receivedFileStartHandler;
-    CDUnknownBlockType _receivedFileDataHandler;
-    CDUnknownBlockType _receivedFileEndHandler;
     CDUnknownBlockType _receivedRequestHandler;
     CDUnknownBlockType _sessionStartHandler;
     int _state;
     CDUnknownBlockType _stateChangedHandler;
     CUTCPConnection *_tcpConnection;
+    unsigned int _trafficFlags;
     unsigned long long _controlFlags;
     unsigned long long _statusFlags;
 }
 
+@property(nonatomic) unsigned int trafficFlags; // @synthesize trafficFlags=_trafficFlags;
 @property(retain, nonatomic) CUTCPConnection *tcpConnection; // @synthesize tcpConnection=_tcpConnection;
 @property(readonly, nonatomic) unsigned long long statusFlags; // @synthesize statusFlags=_statusFlags;
 @property(copy, nonatomic) CDUnknownBlockType stateChangedHandler; // @synthesize stateChangedHandler=_stateChangedHandler;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(copy, nonatomic) CDUnknownBlockType sessionStartHandler; // @synthesize sessionStartHandler=_sessionStartHandler;
 @property(copy, nonatomic) CDUnknownBlockType receivedRequestHandler; // @synthesize receivedRequestHandler=_receivedRequestHandler;
-@property(copy, nonatomic) CDUnknownBlockType receivedFileEndHandler; // @synthesize receivedFileEndHandler=_receivedFileEndHandler;
-@property(copy, nonatomic) CDUnknownBlockType receivedFileDataHandler; // @synthesize receivedFileDataHandler=_receivedFileDataHandler;
-@property(copy, nonatomic) CDUnknownBlockType receivedFileStartHandler; // @synthesize receivedFileStartHandler=_receivedFileStartHandler;
 @property(copy, nonatomic) CDUnknownBlockType receivedEventHandler; // @synthesize receivedEventHandler=_receivedEventHandler;
 @property(copy, nonatomic) NSData *pskData; // @synthesize pskData=_pskData;
 @property(nonatomic) _Bool present; // @synthesize present=_present;
@@ -124,6 +124,7 @@
 @property(retain, nonatomic) RPCompanionLinkDevice *localDeviceInfo; // @synthesize localDeviceInfo=_localDeviceInfo;
 @property(readonly, nonatomic) int linkType; // @synthesize linkType=_linkType;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(nonatomic) int keepAliveSeconds; // @synthesize keepAliveSeconds=_keepAliveSeconds;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(nonatomic) _Bool invalidationHandled; // @synthesize invalidationHandled=_invalidationHandled;
 @property(readonly, nonatomic) RPIdentity *identityVerified; // @synthesize identityVerified=_identityVerified;
@@ -139,6 +140,9 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSString *destinationString; // @synthesize destinationString=_destinationString;
 @property(nonatomic) unsigned long long controlFlags; // @synthesize controlFlags=_controlFlags;
+@property(retain, nonatomic) RPCloudSession *cloudSession; // @synthesize cloudSession=_cloudSession;
+@property(copy, nonatomic) NSString *cloudDeviceIdentifier; // @synthesize cloudDeviceIdentifier=_cloudDeviceIdentifier;
+@property(retain, nonatomic) RPCloudDaemon *cloudDaemon; // @synthesize cloudDaemon=_cloudDaemon;
 @property(nonatomic) _Bool clientMode; // @synthesize clientMode=_clientMode;
 @property(retain, nonatomic) id client; // @synthesize client=_client;
 @property(retain, nonatomic) CUBluetoothScalablePipe *btPipe; // @synthesize btPipe=_btPipe;
@@ -168,9 +172,6 @@
 - (void)_abortRequestsWithError:(id)arg1;
 - (void)_receivedResponse:(id)arg1 ctx:(CDStruct_0dd72924 *)arg2;
 - (void)_receivedRequest:(id)arg1 ctx:(CDStruct_0dd72924 *)arg2;
-- (void)_receivedFileData:(id)arg1 xid:(id)arg2 requestID:(id)arg3;
-- (void)_receivedFileEnd:(id)arg1 xid:(id)arg2 requestID:(id)arg3;
-- (void)_receivedFileStart:(id)arg1 xid:(id)arg2 requestID:(id)arg3;
 - (void)_receivedEvent:(id)arg1 ctx:(CDStruct_0dd72924 *)arg2;
 - (void)_receivedObject:(id)arg1 ctx:(CDStruct_0dd72924 *)arg2;
 - (void)_receivedHeader:(const CDStruct_798ebea5 *)arg1 encryptedObjectData:(id)arg2 ctx:(CDStruct_0dd72924 *)arg3;
@@ -180,9 +181,6 @@
 - (void)sendReachabilityProbe:(const char *)arg1;
 - (void)_sendFrameType:(unsigned char)arg1 unencryptedObject:(id)arg2;
 - (void)_sendFrameType:(unsigned char)arg1 body:(id)arg2;
-- (void)sendFileEnd:(id)arg1 error:(id)arg2 xpcID:(unsigned int)arg3 options:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
-- (void)sendFileData:(id)arg1 xpcID:(unsigned int)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
-- (void)sendFileStart:(id)arg1 xpcID:(unsigned int)arg2 options:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)_sendEncryptedResponse:(id)arg1 error:(id)arg2 xid:(id)arg3 requestID:(id)arg4;
 - (void)_sendEncryptedRequestID:(id)arg1 request:(id)arg2 xpcID:(unsigned int)arg3 options:(id)arg4 sendEntry:(id)arg5 responseHandler:(CDUnknownBlockType)arg6;
 - (void)sendEncryptedRequestID:(id)arg1 request:(id)arg2 xpcID:(unsigned int)arg3 options:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
@@ -197,9 +195,11 @@
 - (void)_serverPairSetupWithData:(id)arg1 start:(_Bool)arg2;
 - (_Bool)_serverPairingAllowed;
 - (void)_serverPreAuthRequestWithData:(id)arg1;
+- (void)_serverNetworkError:(id)arg1 label:(const char *)arg2;
 - (void)_serverError:(id)arg1;
 - (id)_serverAllowMACAddresses;
 - (void)_serverAcceptTCP;
+- (void)_serverAcceptCloud;
 - (void)_serverAcceptBTPipe;
 - (void)_serverAcceptBLE;
 - (void)_serverAccept;
@@ -216,10 +216,11 @@
 - (void)_clientPairSetupStart;
 - (void)_clientPreAuthResponseWithData:(id)arg1;
 - (void)_clientPreAuthStart;
-- (void)_clientLinkError:(id)arg1;
+- (void)_clientNetworkError:(id)arg1 label:(const char *)arg2;
 - (_Bool)_clientError:(id)arg1;
 - (void)_clientConnectCompleted:(id)arg1;
 - (void)_clientConnectStartTCP;
+- (void)_clientConnectStartCloud;
 - (void)_clientConnectStartBTPipe;
 - (void)_clientConnectStartBLE;
 - (void)_clientConnectStart;

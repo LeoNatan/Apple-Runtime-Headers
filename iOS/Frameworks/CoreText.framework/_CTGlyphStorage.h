@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (void)setProps:(unsigned int)arg1 atIndex:(long long)arg2;
 - (void)setOrigin:(struct CGPoint)arg1 atIndex:(long long)arg2;
 - (struct CGPoint)originAtIndex:(long long)arg1;
-- (const struct CGPoint *)origins;
 - (_Bool)implementsOrigins;
 - (void)setAttachmentCount:(long long)arg1 atIndex:(long long)arg2;
 - (long long)attachmentCountAtIndex:(long long)arg1;

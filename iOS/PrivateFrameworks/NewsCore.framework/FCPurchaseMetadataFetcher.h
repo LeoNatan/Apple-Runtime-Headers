@@ -21,6 +21,7 @@
 @property(copy, nonatomic) NSNumber *externalVersionID; // @synthesize externalVersionID=_externalVersionID;
 @property(copy, nonatomic) NSNumber *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
+- (id)createAMSLookupWithProfile:(id)arg1;
 - (id)promiseBundleIDWithAppAdamID:(id)arg1;
 - (id)promiseProductLookupWithLookupResult:(id)arg1 externalVersionID:(id)arg2 restorePurcase:(_Bool)arg3;
 - (id)promiseStoreExternalVersionWithAppAdamID:(id)arg1;

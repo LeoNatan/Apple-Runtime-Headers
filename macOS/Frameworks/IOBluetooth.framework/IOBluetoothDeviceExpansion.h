@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class IOBluetoothL2CAPChannel, NSString, NSXPCConnection;
+@class IOBluetoothL2CAPChannel, NSString, NSUUID, NSXPCConnection;
 
 @interface IOBluetoothDeviceExpansion : NSObject
 {
@@ -32,6 +32,7 @@
     BOOL lowEnergyPointer;
     unsigned int serviceMask;
     unsigned char colorID;
+    unsigned char keySize;
     unsigned char capabilityMask;
     unsigned char batteryPercentSingle;
     unsigned char batteryPercentLeft;
@@ -55,8 +56,10 @@
     NSString *accessoryFWVersion;
     NSXPCConnection *xpcConnection;
     id mTarget;
+    NSUUID *identifier;
 }
 
+@property NSUUID *identifier; // @synthesize identifier;
 @property(retain) id mTarget; // @synthesize mTarget;
 @property(retain) NSXPCConnection *xpcConnection; // @synthesize xpcConnection;
 @property(retain) NSString *accessoryFWVersion; // @synthesize accessoryFWVersion;
@@ -79,6 +82,7 @@
 @property unsigned char batteryPercentLeft; // @synthesize batteryPercentLeft;
 @property unsigned char batteryPercentSingle; // @synthesize batteryPercentSingle;
 @property unsigned char capabilityMask; // @synthesize capabilityMask;
+@property unsigned char keySize; // @synthesize keySize;
 @property BOOL isFirstPairing; // @synthesize isFirstPairing;
 @property unsigned char colorID; // @synthesize colorID;
 @property unsigned int serviceMask; // @synthesize serviceMask;

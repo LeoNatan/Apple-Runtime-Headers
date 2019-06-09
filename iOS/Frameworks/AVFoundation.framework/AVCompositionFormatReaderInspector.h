@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (_Bool)isCompatibleWithPhotosTranscodingServiceWithOptions:(id)arg1;
 - (_Bool)isCompatibleWithAirPlayVideo;
 - (_Bool)isCompatibleWithSavedPhotosAlbum;
 - (_Bool)isComposable;

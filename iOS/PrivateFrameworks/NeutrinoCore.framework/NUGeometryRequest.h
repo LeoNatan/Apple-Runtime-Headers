@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (long long)mediaComponentType;
 - (id)newRenderJob;
+- (id)submitSynchronous:(out id *)arg1;
 - (void)submit:(CDUnknownBlockType)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithComposition:(id)arg1;

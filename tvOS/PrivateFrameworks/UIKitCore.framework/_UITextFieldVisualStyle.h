@@ -17,8 +17,8 @@ __attribute__((visibility("hidden")))
 + (id)inferredVisualStyleWithStyleSubject:(id)arg1;
 @property(nonatomic) __weak id <_UITextFieldVisualStyleSubject> styleSubject; // @synthesize styleSubject=_styleSubject;
 - (void).cxx_destruct;
-- (id)fieldEditorTextAttributes:(id)arg1 storingOriginalAttributes:(id)arg2;
-- (id)overrideAttributesForEditing;
+- (id)overridingEditingAttributes:(id)arg1 forOriginalAttributes:(id)arg2;
+- (id)namesOfAttributesToOverrideForEditing;
 - (void)handleTextVibrancy;
 - (_Bool)textShouldUseVibrancy;
 - (id)parentViewForTextContentView;

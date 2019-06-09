@@ -6,7 +6,20 @@
 
 #import <HealthKit/HKMedicationOrder.h>
 
-@interface HKMedicationOrder (HDExtensions)
+#import <HealthDaemon/HDCoding-Protocol.h>
+
+@class NSString;
+
+@interface HKMedicationOrder (HDExtensions) <HDCoding>
 + (Class)hd_dataEntityClass;
++ (id)createWithCodable:(id)arg1;
+- (_Bool)addCodableRepresentationToCollection:(id)arg1;
+- (id)codableRepresentationForSync;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

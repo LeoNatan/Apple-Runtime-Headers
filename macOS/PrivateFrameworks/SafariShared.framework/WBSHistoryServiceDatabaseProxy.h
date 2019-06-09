@@ -17,6 +17,9 @@
 }
 
 - (void).cxx_destruct;
+- (void)setTitle:(id)arg1 ofTagWithID:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)assignHistoryItemWithID:(long long)arg1 toTopicTagsWithIDs:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)createTagsForIdentifiers:(id)arg1 withTitles:(id)arg2 type:(unsigned long long)arg3 level:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)updateDatabaseAfterSuccessfulSyncWithGeneration:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)visitsAndTombstonesNeedingSyncWithVisitSyncWindow:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resetCloudHistoryDataWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -34,6 +37,7 @@
 - (void)setLastSeenDate:(id)arg1 forCloudClientVersion:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)lastSeenDateForCloudClientVersion:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchCloudClientVersionTable:(CDUnknownBlockType)arg1;
+- (void)vacuumHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)flushWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)updateVisitWithIdentifier:(id)arg1 title:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateVisitWithIdentifier:(id)arg1 removeAttributes:(unsigned long long)arg2 addAttributes:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -83,6 +83,12 @@ struct os_unfair_lock_s {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    _Bool _field1;
+    _Bool _field2;
+    unsigned int _field3;
+} CDStruct_1c32fd50;
+
+typedef struct {
     _Bool foreground;
     _Bool foregroundActive;
 } CDStruct_973bafd3;
@@ -99,10 +105,38 @@ typedef struct {
 } CDStruct_c3b9c2ee;
 
 typedef struct {
-    float visibility;
-    float visibilityAnimationTarget;
-    unsigned int animationCounter;
-} CDStruct_14d1e09a;
+    float target;
+    float position;
+    float velocity;
+    float positionThreshold;
+    float velocityThreshold;
+    _Bool running;
+} CDStruct_32173fa3;
+
+typedef struct {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+    _Bool _field7;
+    float _field8;
+    float _field9;
+    _Bool _field10;
+    float _field11;
+    float _field12;
+} CDStruct_37b59f17;
+
+typedef struct {
+    float mass;
+    float stiffness;
+    float damping;
+    float beta;
+    float omega0;
+    float scratch;
+    _Bool dirty;
+} CDStruct_db579c49;
 
 typedef struct {
     float cornerRadius;
@@ -142,4 +176,12 @@ typedef struct {
         _Bool widthConstrained;
     } textMetrics[4];
 } CDStruct_fea8a6c8;
+
+// Ambiguous groups
+typedef struct {
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+    unsigned int :1;
+} CDStruct_d8808cea;
 

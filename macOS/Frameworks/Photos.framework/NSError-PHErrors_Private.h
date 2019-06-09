@@ -7,6 +7,7 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (PHErrors_Private)
++ (id)ph_genericEntitlementError;
 + (id)ph_genericErrorWithUnderlyingError:(id)arg1 localizedDescription:(id)arg2;
 + (id)ph_genericErrorWithLocalizedDescription:(id)arg1;
 + (id)_ph_genericErrorWithUnderlyingError:(id)arg1 localizedDescription:(id)arg2;

@@ -7,13 +7,30 @@
 #import <objc/NSObject.h>
 
 #import <RelevanceEngine/NSCopying-Protocol.h>
+#import <RelevanceEngine/REFeatureProperties-Protocol.h>
 
 @class NSString;
 
-@interface REFeature : NSObject <NSCopying>
+@interface REFeature : NSObject <REFeatureProperties, NSCopying>
 {
 }
 
++ (id)systemFeatureNames;
++ (id)coreBehaviorLocationCoarsePredictionFeature;
++ (id)coreBehaviorLocationPredictionFeature;
++ (id)coreBehaviorDayCoarsePredictionFeature;
++ (id)coreBehaviorDayPredictionFeature;
++ (id)coreBehaviorTimeCoarsePredictionFeature;
++ (id)coreBehaviorTimePredictionFeature;
++ (id)coreBehaviorAppIdentifierHashFeature;
++ (id)coreBehaviorEventIdentifierHashFeature;
++ (id)coreBehaviorShortcutTypeFeature;
++ (id)bluetoothDeviceFeature;
++ (id)isConnectedToBluetoothSpeakerFeature;
++ (id)isConnectedToCarFeature;
++ (id)companionAppUsageFeature;
++ (id)bulletinFeature;
++ (id)activitySummaryFeature;
 + (id)standHourCompletionFeature;
 + (id)exerciseTimeCompletionFeature;
 + (id)activeEnergyCompletionFeature;
@@ -32,6 +49,7 @@
 + (id)isSiriActionFeature;
 + (id)itemIdentifierFeature;
 + (id)motionFeature;
++ (id)deviceMotionFeature;
 + (id)isStationaryFeature;
 + (id)travelingFeature;
 + (id)knownLocationOfInterestFeature;
@@ -65,11 +83,16 @@
 + (id)transformedFeatureWithTransformer:(id)arg1 features:(id)arg2;
 + (id)crossedFeatureWithFeatures:(id)arg1;
 + (id)featureWithName:(id)arg1 featureType:(unsigned long long)arg2;
++ (id)featuresFromSourceAtPath:(id)arg1 withNames:(id)arg2;
++ (id)featuresFromSourceAtPath:(id)arg1;
++ (id)featuresFromSource:(id)arg1 withNames:(id)arg2;
++ (id)featuresFromSource:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_replaceDependentFeature:(id)arg1 withFeature:(id)arg2;
 - (id)_dependentFeatures;
 - (id)_rootFeatures;
 - (long long)_bitCount;
+- (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, nonatomic) unsigned long long featureType;

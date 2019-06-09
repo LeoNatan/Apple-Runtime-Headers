@@ -6,11 +6,12 @@
 
 #import <CoreTelephony/NSObject-Protocol.h>
 
-@class CTCellInfo, CTEnhancedDataLinkQualityMetric, CTEnhancedLinkQualityMetric, CTIMSRegistrationTransportInfo, CTNetworkList, CTRegistrationDisplayStatus, CTSignalStrengthInfo, CTVoiceLinkQualityMetric, CTXPCServiceSubscriptionContext, NSDictionary, NSNumber, NSString;
+@class CTCellInfo, CTEncryptionStatusInfo, CTEnhancedDataLinkQualityMetric, CTEnhancedLinkQualityMetric, CTIMSRegistrationTransportInfo, CTNetworkList, CTRegistrationDisplayStatus, CTServiceDescriptor, CTSignalStrengthInfo, CTVoiceLinkQualityMetric, CTXPCServiceSubscriptionContext, NSDictionary, NSNumber, NSString;
 
 @protocol CoreTelephonyClientRegistrationDelegate <NSObject>
 
 @optional
+- (void)encryptionStatusChanged:(CTServiceDescriptor *)arg1 info:(CTEncryptionStatusInfo *)arg2;
 - (void)networkReselectionNeeded:(CTXPCServiceSubscriptionContext *)arg1;
 - (void)networkSelected:(CTXPCServiceSubscriptionContext *)arg1 success:(_Bool)arg2 mode:(NSString *)arg3;
 - (void)customerServiceProfileChanged:(CTXPCServiceSubscriptionContext *)arg1 visible:(_Bool)arg2;

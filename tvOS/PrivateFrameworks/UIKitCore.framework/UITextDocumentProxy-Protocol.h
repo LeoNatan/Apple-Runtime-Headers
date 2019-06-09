@@ -14,6 +14,8 @@
 @property(readonly, nonatomic) NSString *selectedText;
 @property(readonly, nonatomic) NSString *documentContextAfterInput;
 @property(readonly, nonatomic) NSString *documentContextBeforeInput;
+- (void)unmarkText;
+- (void)setMarkedText:(NSString *)arg1 selectedRange:(struct _NSRange)arg2;
 - (void)adjustTextPositionByCharacterOffset:(long long)arg1;
 @end
 

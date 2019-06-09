@@ -6,15 +6,16 @@
 
 #import <Foundation/NSKeyedUnarchiver.h>
 
-#import <MobileTimer/MTCoder-Protocol.h>
+#import <MobileTimer/MTSerializer-Protocol.h>
 
-@interface MTStorageReaderV1 : NSKeyedUnarchiver <MTCoder>
+@class NSCoder;
+
+@interface MTStorageReaderV1 : NSKeyedUnarchiver <MTSerializer>
 {
 }
 
-- (_Bool)mt_isWritingToStorage;
-- (_Bool)mt_isReadingFromPersistence;
-- (_Bool)mt_isWritingToPersistence;
+@property(readonly, nonatomic) unsigned int mtType;
+@property(readonly, nonatomic) NSCoder *mtCoder;
 
 @end
 

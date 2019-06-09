@@ -10,13 +10,15 @@
 #import <Vision/NSSecureCoding-Protocol.h>
 #import <Vision/VNRequestRevisionProviding-Protocol.h>
 #import <Vision/VNSerializing-Protocol.h>
+#import <Vision/VNSerializingInternal-Protocol.h>
 
 @class NSData, NSDictionary, NSString;
 
-@interface VNEspressoModelImageprint : NSObject <NSSecureCoding, NSCopying, VNSerializing, VNRequestRevisionProviding>
+@interface VNEspressoModelImageprint : NSObject <VNSerializingInternal, NSSecureCoding, NSCopying, VNSerializing, VNRequestRevisionProviding>
 {
     NSDictionary *_labelsAndConfidence;
     unsigned long long _requestRevision;
+    unsigned long long _elementType;
     NSData *_descriptorData;
     unsigned long long _elementCount;
     unsigned long long _lengthInBytes;
@@ -43,11 +45,12 @@
 - (id)initWithState:(id)arg1 error:(id *)arg2;
 - (id)serializeStateAndReturnError:(id *)arg1;
 - (unsigned long long)serializeStateIntoData:(id)arg1 startingAtByteOffset:(unsigned long long)arg2 error:(id *)arg3;
-- (unsigned long long)serializedLength;
+@property(readonly, nonatomic) unsigned long long serializedLength;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) unsigned long long requestRevision;
-- (id)initWithData:(const void *)arg1 elementCount:(unsigned long long)arg2 lengthInBytes:(unsigned long long)arg3 labelsAndConfidence:(id)arg4 requestRevision:(unsigned long long)arg5;
+@property(readonly) unsigned long long elementType;
+- (id)initWithData:(const void *)arg1 elementCount:(unsigned long long)arg2 elementType:(unsigned long long)arg3 lengthInBytes:(unsigned long long)arg4 labelsAndConfidence:(id)arg5 requestRevision:(unsigned long long)arg6;
 
 @end
 

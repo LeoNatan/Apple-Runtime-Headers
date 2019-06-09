@@ -70,12 +70,11 @@
 - (void)_curvedComplicationCircleRadius:(double *)arg1 centerAngle:(double *)arg2 maxAngularWidth:(double *)arg3 circleCenter:(struct CGPoint *)arg4 interior:(_Bool *)arg5 forSlot:(id)arg6;
 - (_Bool)_slotSupportsCurvedText:(id)arg1;
 - (_Bool)slotUsesCurvedText:(id)arg1;
-- (void)_prepareTimeViewForReuse:(id)arg1;
-- (void)_configureReusableTimeView:(id)arg1;
+- (void)_configureTimeView:(id)arg1;
 - (id)_tapHighlightImage;
 - (void)_faceViewWasTapped;
 - (void)faceViewWasTapped:(id)arg1;
-- (void)_backlightDidTurnOff;
+- (void)handleScreenBlanked;
 - (void)_handleEitherScreenWake;
 - (void)_handleOrdinaryScreenWake;
 - (void)_handleWristRaiseScreenWake;

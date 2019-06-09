@@ -12,18 +12,13 @@
 @interface NMUMenuTableViewController : PUICTableViewController
 {
     NSArray *_sectionedVisibleItems;
-    _Bool _automaticallyAdjustsCellHeight;
-    _Bool _wantsLargeIconLayout;
     NSArray *_sectionedItems;
     id <NMUMenuTableViewControllerDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <NMUMenuTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) _Bool wantsLargeIconLayout; // @synthesize wantsLargeIconLayout=_wantsLargeIconLayout;
-@property(nonatomic) _Bool automaticallyAdjustsCellHeight; // @synthesize automaticallyAdjustsCellHeight=_automaticallyAdjustsCellHeight;
 @property(retain, nonatomic) NSArray *sectionedItems; // @synthesize sectionedItems=_sectionedItems;
 - (void).cxx_destruct;
-- (void)_updateRowHeightIfNeeded;
 - (void)_setNeedsVisibleItemsUpdate;
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
@@ -34,7 +29,6 @@
 @property(readonly, nonatomic) unsigned int numberOfVisibleItems;
 @property(readonly, nonatomic) NSArray *sectionedVisibleItems;
 - (void)viewDidLayoutSubviews;
-- (void)viewDidLoad;
 - (id)init;
 
 @end

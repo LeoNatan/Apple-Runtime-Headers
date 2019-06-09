@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)informBrowserDelegateUsingSelector:(SEL)arg1 withObject:(id)arg2;
 - (id)deviceWithDelegate:(id)arg1;
 - (id)devicesMatchingDeviceTypeMask:(unsigned long long)arg1;
+- (id)deviceWithDeviceID:(id)arg1;
 - (id)deviceWithDeviceRef:(id)arg1;
 - (void)processDevices:(id)arg1;
 - (void)updateDevices:(id)arg1 type:(unsigned long long)arg2;

@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <ProactiveML/PMLPlistAndChunksSerializableProtocol-Protocol.h>
 #import <ProactiveML/PMLTransformerProtocol-Protocol.h>
 
-@class NSString;
+@class NSLocale, NSString;
 
-@interface PMLHashingVectorizer : NSObject <PMLTransformerProtocol, PMLPlistAndChunksSerializableProtocol>
+@interface PMLHashingVectorizer : NSObject <PMLTransformerProtocol>
 {
     int _buckets;
     _Bool _normalize;
@@ -19,25 +18,30 @@
     struct _NSRange _tokenNGramRange;
     _Bool _shouldNormalizeTokens;
     _Bool _shouldNormalizeCharacters;
+    NSLocale *_localeForNonwordTokens;
+    _Bool _tokenizeNewlines;
     _Bool _intercept;
 }
 
 + (id)withBucketSize:(int)arg1 characterNGramRange:(struct _NSRange)arg2 tokenNGramRange:(struct _NSRange)arg3 shouldNormalizeTokens:(_Bool)arg4 shouldNormalizeCharacters:(_Bool)arg5 withIntercept:(_Bool)arg6;
-+ (id)withBucketSize:(int)arg1 ngrams:(int)arg2 andIntercept:(_Bool)arg3;
++ (id)withBucketSize:(int)arg1 characterNGramRange:(struct _NSRange)arg2 tokenNGramRange:(struct _NSRange)arg3 shouldNormalizeTokens:(_Bool)arg4 shouldNormalizeCharacters:(_Bool)arg5 localeForNonwordTokens:(id)arg6 tokenizeNewlines:(_Bool)arg7 withIntercept:(_Bool)arg8;
++ (id)withBucketSize:(int)arg1 ngrams:(int)arg2 localeForNonwordTokens:(id)arg3 tokenizeNewlines:(_Bool)arg4 andIntercept:(_Bool)arg5;
 + (id)withBucketSize:(int)arg1 andNgrams:(int)arg2;
-+ (id)withBucketSize:(int)arg1;
 @property(nonatomic) _Bool normalize; // @synthesize normalize=_normalize;
+- (void).cxx_destruct;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToHashingVectorizer:(id)arg1;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
 - (id)toPlistWithChunks:(id)arg1;
 - (id)transform:(id)arg1;
 - (id)init;
-- (id)initWithBucketSize:(int)arg1 characterNGramRange:(struct _NSRange)arg2 tokenNGramRange:(struct _NSRange)arg3 shouldNormalizeTokens:(_Bool)arg4 shouldNormalizeCharacters:(_Bool)arg5 withIntercept:(_Bool)arg6;
-- (id)initWithBucketSize:(int)arg1 ngrams:(int)arg2 andIntercept:(_Bool)arg3;
+- (id)initWithBucketSize:(int)arg1 characterNGramRange:(struct _NSRange)arg2 tokenNGramRange:(struct _NSRange)arg3 shouldNormalizeTokens:(_Bool)arg4 shouldNormalizeCharacters:(_Bool)arg5 localeForNonwordTokens:(id)arg6 tokenizeNewlines:(_Bool)arg7 withIntercept:(_Bool)arg8;
+- (id)initWithBucketSize:(int)arg1 ngrams:(int)arg2 localeForNonwordTokens:(id)arg3 tokenizeNewlines:(_Bool)arg4 andIntercept:(_Bool)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

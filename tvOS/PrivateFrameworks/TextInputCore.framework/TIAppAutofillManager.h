@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, NSUUID;
+@class NSDictionary, NSString, NSUUID, TIKeyboardSecureCandidateRenderer;
 
 @interface TIAppAutofillManager : NSObject
 {
+    TIKeyboardSecureCandidateRenderer *_secureCandidateRenderer;
     NSUUID *_documentIdentifierForLastAutofillGeneration;
     NSString *_clientIdentifierForLastAutofillGeneration;
     NSString *_clientIdentifierForLastKeyboardSync;
@@ -25,14 +26,16 @@
 - (void)shouldAcceptOneTimeCode:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)shouldAcceptAutofill:(id)arg1 withPayload:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)shouldAuthenticateToAcceptAutofill;
-- (id)generateAutofillFormSuggestedUsernameWithSecureCandidateRenderer:(id)arg1 withRenderTraits:(id)arg2 withKeyboardState:(id)arg3;
-- (id)generateAutofillFormCandidatesWithSecureCandidateRenderer:(id)arg1 withRenderTraits:(id)arg2 withKeyboardState:(id)arg3;
+- (id)generateAutofillFormSuggestedUsernameWithRenderTraits:(id)arg1 withKeyboardState:(id)arg2;
+- (id)generateAutofillFormCandidatesWithRenderTraits:(id)arg1 withKeyboardState:(id)arg2;
 - (id)obtainBundleIdentifierFromConnection:(id)arg1;
 - (id)obtainApplicationIdentifierFromConnection:(id)arg1;
+- (_Bool)_simulatesAutofillCandidates;
 - (id)customInfoFromCredential:(id)arg1;
 - (_Bool)isValidedString:(id)arg1;
 - (void)pushQueuedCredentialIfNecessaryForKeyboardState:(id)arg1;
 - (void)obtainCredential:(id)arg1;
+@property(readonly, nonatomic) TIKeyboardSecureCandidateRenderer *secureCandidateRenderer;
 - (id)initPrivate;
 
 @end

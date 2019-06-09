@@ -9,7 +9,7 @@
 #import <IMCore/IMSendProgressDelegate-Protocol.h>
 #import <IMCore/INSpeakable-Protocol.h>
 
-@class IMAccount, IMChatRegistry, IMHandle, IMMessage, IMMessageItem, IMScheduledUpdater, IMSendProgress, IMTimingCollection, MKMapItem, NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSSet, NSString, TUConversation;
+@class IMAccount, IMChatRegistry, IMHandle, IMMessage, IMMessageItem, IMOrderingTools, IMScheduledUpdater, IMSendProgress, IMTimingCollection, MKMapItem, NSArray, NSData, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNumber, NSSet, NSString;
 @protocol IMChatItemRules;
 
 @interface IMChat : IMItemsController <INSpeakable, IMSendProgressDelegate>
@@ -17,7 +17,6 @@
     NSString *_guid;
     NSString *_typingGUID;
     NSString *_localUserIsComposing;
-    NSString *_currentLocationGUID;
     NSString *_identifier;
     IMAccount *_account;
     NSString *_displayName;
@@ -69,7 +68,8 @@
     NSString *_personCentricID;
     NSDictionary *_bizIntent;
     double _latestTypingIndicatorTimeInterval;
-    TUConversation *_conversation;
+    IMOrderingTools *_orderingTools;
+    NSString *_currentLocationGUID;
 }
 
 + (Class)chatItemRulesClass;
@@ -87,8 +87,9 @@
 + (void)_removeGUID:(id)arg1 fromList:(id)arg2;
 + (void)_storeGUID:(id)arg1 forKey:(id)arg2;
 + (id)_GUIDsForKey:(id)arg1;
-@property(readonly, nonatomic) TUConversation *conversation; // @synthesize conversation=_conversation;
 @property(retain, nonatomic) NSString *lastAddressedSIMID; // @synthesize lastAddressedSIMID=_lastAddressedSIMID;
+@property(retain, nonatomic) NSString *currentLocationGUID; // @synthesize currentLocationGUID=_currentLocationGUID;
+@property(retain, nonatomic) IMOrderingTools *orderingTools; // @synthesize orderingTools=_orderingTools;
 @property(nonatomic) double latestTypingIndicatorTimeInterval; // @synthesize latestTypingIndicatorTimeInterval=_latestTypingIndicatorTimeInterval;
 @property(copy, nonatomic) NSDictionary *bizIntent; // @synthesize bizIntent=_bizIntent;
 @property(readonly, nonatomic) long long lastMessageTimeStampOnLoad; // @synthesize lastMessageTimeStampOnLoad=_lastMessageTimeStampOnLoad;
@@ -121,6 +122,7 @@
 - (void)_accountControllerUpdated:(id)arg1;
 - (_Bool)_sanityCheckAccounts;
 - (void)_handleAddressBookChangeForRecipientUID:(id)arg1;
+@property(readonly, nonatomic) _Bool hasMessageFromMe;
 - (void)addPendingParticipants:(id)arg1;
 - (void)_removeParticipantsFromChat:(id)arg1 reason:(id)arg2 fromiMessageChat:(_Bool)arg3;
 - (void)removeParticipantsFromiMessageChat:(id)arg1 reason:(id)arg2;
@@ -154,6 +156,7 @@
 - (id)allChatProperties;
 - (void)_setChatProperties:(id)arg1;
 - (_Bool)_isDuplicate:(id)arg1;
+- (void)resortMessages;
 - (void)markAllMessagesAsRead;
 - (void)markMessagesAsRead:(id)arg1;
 - (void)markMessageAsRead:(id)arg1;
@@ -162,6 +165,7 @@
 - (void)updateMessage:(id)arg1 flags:(unsigned long long)arg2;
 - (void)updateMessage:(id)arg1;
 - (_Bool)authorizedToSendCurrentLocationMessage;
+- (_Bool)authorizationToSendCurrentLocationMessageDetermined;
 - (_Bool)canSendCurrentLocationMessage;
 - (_Bool)canSendTransfer:(id)arg1;
 - (_Bool)canSendMessage:(id)arg1;
@@ -173,7 +177,6 @@
 - (void)_setLocalUserIsComposing:(id)arg1 suppliedGUID:(id)arg2;
 - (_Bool)_shouldSendCancelTypingIndicator;
 @property(readonly, nonatomic) NSString *localTypingMessageGUID;
-- (void)_sendCurrentLocationMessageUsingLocationManager:(id)arg1;
 - (void)sendCurrentLocationMessage;
 - (void)sendMessage:(id)arg1;
 - (void)_fixItemForSendingMessageTime:(id)arg1;
@@ -213,6 +216,7 @@
 - (_Bool)hasSurfRequestNotFromMe:(id)arg1;
 - (_Bool)hasSurfRequestForPaymentType:(unsigned long long)arg1;
 - (unsigned long long)paymentTypeForMessage:(id)arg1;
+- (void)_resetChatIdToLastMessageItemMap;
 - (void)_handleMessageGUIDDeletions:(id)arg1;
 - (void)_setParticipantState:(unsigned long long)arg1 forHandles:(id)arg2 quietly:(_Bool)arg3;
 - (void)_setParticipantState:(unsigned long long)arg1 forHandle:(id)arg2 quietly:(_Bool)arg3;
@@ -230,11 +234,21 @@
 - (void)didUnregisterFromRegistry:(id)arg1;
 - (void)clear;
 @property(nonatomic) _Bool hasHadSuccessfulQuery;
-- (void)verifyChatShouldBeSMSSpam;
+- (long long)numberOfTimesRespondedToThread;
+- (_Bool)containsMessageFromContactOrMe;
+- (void)_updateLastSeenMessageGuid:(id)arg1;
+@property(readonly, nonatomic) NSString *lastSeenMessageGuid;
+- (void)verifyChatShouldBeSpamWithService:(id)arg1;
+- (void)_updateChatItemsAsNotSpamEnumeratingItems:(CDUnknownBlockType)arg1;
+- (void)_updateChatItemsAsNotSpam;
+- (void)updateWasDetectedAsiMessageSpam:(_Bool)arg1;
 - (void)updateWasDetectedAsSMSSpam:(_Bool)arg1;
 - (void)updateShouldForceToSMS:(_Bool)arg1;
 - (_Bool)shouldForceToSMS;
+- (_Bool)isSMS;
+- (_Bool)allParticipantsAreContacts;
 - (_Bool)hasKnownParticipants;
+- (void)loadParticipantContactsIfNecessary;
 - (void)updateIsFiltered:(_Bool)arg1;
 @property(nonatomic) _Bool isFiltered; // @dynamic isFiltered;
 - (void)autoReportSpam;
@@ -291,7 +305,6 @@
 - (void)_targetToService:(id)arg1 newComposition:(_Bool)arg2;
 - (void)_setPreviousAccount:(id)arg1 forService:(id)arg2;
 - (id)_previousAccountForService:(id)arg1;
-- (_Bool)_chatHasValidAccount:(id)arg1 forService:(id)arg2;
 - (_Bool)_accountIsOperational:(id)arg1 forService:(id)arg2;
 - (void)_delayedInvalidateDowngradeState;
 - (void)_handleIncomingCommand:(id)arg1;
@@ -312,16 +325,25 @@
 @property(readonly, nonatomic) long long watermarkMessageID;
 - (id)_storedWatermarkMessageID;
 - (id)messageAcknowledgmentSummaryForConversationListWithMessage:(id)arg1;
+- (void)sendMessageAcknowledgment:(long long)arg1 forChatItem:(id)arg2 withAssociatedMessageInfo:(id)arg3 withGuid:(id)arg4;
 - (void)sendMessageAcknowledgment:(long long)arg1 forChatItem:(id)arg2 withAssociatedMessageInfo:(id)arg3;
+- (void)sendMessageAcknowledgment:(long long)arg1 forChatItem:(id)arg2 withMessageSummaryInfo:(id)arg3 withGuid:(id)arg4;
 - (void)sendMessageAcknowledgment:(long long)arg1 forChatItem:(id)arg2 withMessageSummaryInfo:(id)arg3;
 - (void)deleteExtensionPayloadData;
 - (void)closeSession;
 @property(readonly, nonatomic) _Bool isAppleChat;
 @property(readonly, nonatomic) _Bool isMakoChat;
+@property(readonly, nonatomic) _Bool hasVerifiedBusiness;
 @property(readonly, nonatomic) _Bool isBusinessChat;
 @property(readonly, nonatomic) _Bool isReplyEnabled;
 @property(readonly, nonatomic) MKMapItem *mapItem;
 - (id)_privateInitWithAccount:(id)arg1 style:(unsigned char)arg2 roomName:(id)arg3 messages:(id)arg4 participants:(id)arg5 isFiltered:(_Bool)arg6 hasHadSuccessfulQuery:(_Bool)arg7;
+- (void)clearScrutinyMode;
+- (void)watermarkOutForScrutinyMode;
+- (_Bool)isInScrutinyMode;
+- (_Bool)_serverBagPreventsScrutinyMode;
+- (unsigned long long)scrutinyModeAttemptCount;
+- (void)watermarkInForScrutinyMode;
 - (void)deleteTransfers:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *attachments;
 @property(readonly, nonatomic) _Bool isCurrentlyDownloadingPurgedAttachments;
@@ -344,12 +366,6 @@
 - (id)messagesToReportAsSpamFromChatItems:(id)arg1;
 - (id)allMessagesToReportAsSpam;
 - (id)chatItemsForItems:(id)arg1;
-- (void)clearScrutinyMode;
-- (void)watermarkOutForScrutinyMode;
-- (_Bool)isInScrutinyMode;
-- (_Bool)_serverBagPreventsScrutinyMode;
-- (unsigned long long)scrutinyModeAttemptCount;
-- (void)watermarkInForScrutinyMode;
 - (void)_setRenderingDataDictionary:(id)arg1;
 - (id)_renderingDataDictionary;
 - (void)markChatItemAsPlayedExpressiveSend:(id)arg1;
@@ -368,7 +384,7 @@
 - (_Bool)isHoldingUpdatesForKey:(id)arg1;
 - (void)endHoldingUpdatesForKey:(id)arg1;
 - (void)beginHoldingUpdatesForKey:(id)arg1;
-- (id)chatItems;
+@property(readonly, copy, nonatomic) NSArray *chatItems;
 - (void)_updateLocationShareItemsForSender:(id)arg1;
 - (void)_configureLocationShareItem:(id)arg1;
 - (void)stopTrackingParticipantLocations;
@@ -389,7 +405,10 @@
 - (void)initiateTUConversationWithVideoEnabled:(_Bool)arg1;
 - (void)joinExistingTUConversationWithVideoEnabled:(_Bool)arg1;
 - (void)_launchAppForJoinRequest:(id)arg1;
+- (id)conversation;
 - (_Bool)mapsToTUConversation:(id)arg1;
+- (void)allowedToShowConversation:(CDUnknownBlockType)arg1;
+- (_Bool)allowedToShowConversation;
 @property(readonly, nonatomic) NSArray *alternativeSpeakableMatches;
 @property(readonly, nonatomic) NSString *vocabularyIdentifier;
 @property(readonly, nonatomic) NSString *pronunciationHint;

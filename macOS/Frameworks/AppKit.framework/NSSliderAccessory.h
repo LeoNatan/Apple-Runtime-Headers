@@ -13,12 +13,12 @@
 @class NSArray, NSImage, NSSlider, NSSliderAccessoryBehavior, NSString, NSURL;
 @protocol NSSliderAccessoryContainer;
 
-@interface NSSliderAccessory : NSObject <NSCoding, NSAccessibility, NSAccessibilityElement>
+@interface NSSliderAccessory : NSObject <NSAccessibility, NSAccessibilityElement, NSCoding>
 {
     id _content;
     id _container;
     NSSliderAccessoryBehavior *_behavior;
-    unsigned int _enabled:1;
+    BOOL _enabled;
 }
 
 + (id)accessoryWithImage:(id)arg1;

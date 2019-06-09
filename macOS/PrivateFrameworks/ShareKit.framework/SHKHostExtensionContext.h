@@ -11,6 +11,7 @@
 @class NSString, SHKSharingService;
 @protocol NSSharingExtensionContextProtocol;
 
+__attribute__((visibility("hidden")))
 @interface SHKHostExtensionContext : NSExtensionContext <SHKHostExtensionContextProtocol>
 {
     id <NSSharingExtensionContextProtocol> _remote;

@@ -10,6 +10,7 @@
 
 @class NSString, SKUIAttributedStringLayout, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStarRatingViewElementView : UIView <SKUIViewElementView>
 {
     struct UIEdgeInsets _contentInset;

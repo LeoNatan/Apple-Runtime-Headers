@@ -17,15 +17,13 @@
 
 + (id)emptyNowPlayingState;
 @property(readonly, nonatomic) float preferredPlaybackRate; // @synthesize preferredPlaybackRate=_preferredPlaybackRate;
+@property(readonly, nonatomic) NSData *artworkImageData;
 @property(readonly, nonatomic) double rewindTimeInterval;
 @property(readonly, nonatomic) double fastForwardTimeInterval;
 @property(readonly, nonatomic, getter=isSkipBackwardCommandEnabled) _Bool skipBackwardCommandEnabled;
 @property(readonly, nonatomic, getter=isSkipForwardCommandEnabled) _Bool skipForwardCommandEnabled;
-@property(readonly, nonatomic) NSNumber *previousTrackCommandEnabled;
-@property(readonly, nonatomic) NSNumber *nextTrackCommandEnabled;
-@property(readonly, nonatomic, getter=isAddToLibraryActive) _Bool addToLibraryActive;
-@property(readonly, nonatomic, getter=isAddToLibraryCommandEnabled) _Bool addToLibraryCommandEnabled;
-@property(readonly, nonatomic, getter=isAddToLibraryCommandSupported) _Bool addToLibraryCommandSupported;
+@property(readonly, nonatomic, getter=isPreviousTrackCommandEnabled) _Bool previousTrackCommandEnabled;
+@property(readonly, nonatomic, getter=isNextTrackCommandEnabled) _Bool nextTrackCommandEnabled;
 @property(readonly, nonatomic) NSString *localizedBookmarkTitle;
 @property(readonly, nonatomic, getter=isBookmarkedActive) _Bool bookmarkedActive;
 @property(readonly, nonatomic, getter=isBookmarkCommandEnabled) _Bool bookmarkCommandEnabled;
@@ -48,17 +46,16 @@
 @property(readonly, nonatomic) NSData *applicationIconImageData;
 @property(readonly, nonatomic) NSString *applicationBundleIdentifier;
 @property(readonly, nonatomic) NSString *applicationDisplayName;
-@property(readonly, nonatomic) NSData *artworkImageData;
 @property(readonly, nonatomic, getter=isAlwaysLive) _Bool alwaysLive;
 @property(readonly, nonatomic, getter=isAdvertisement) _Bool advertisement;
 @property(readonly, nonatomic) NSString *radioStationHash;
 @property(readonly, nonatomic) NSNumber *radioStationIdentifier;
 @property(readonly, nonatomic) NSString *radioStationName;
+@property(readonly, nonatomic) NSString *collectionTitle;
 @property(readonly, nonatomic) MPArtworkCatalog *artworkCatalog;
 @property(readonly, nonatomic, getter=isExplicitTrack) _Bool explicitTrack;
 @property(readonly, nonatomic) NSString *album;
 @property(readonly, nonatomic) NSString *artist;
-@property(readonly, nonatomic) NSString *displayTitle;
 @property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) NSNumber *storeAdamID;
 @property(readonly, nonatomic) NSNumber *itemAlbumPersistentID;
@@ -70,9 +67,8 @@
 @property(readonly, nonatomic) float playbackRate;
 @property(readonly, nonatomic) double duration;
 @property(readonly, nonatomic) NSDate *timestamp;
-@property(readonly, nonatomic) _Bool hasSupportedFeedbackCommands;
 @property(readonly, nonatomic, getter=isFirstPartyApp) _Bool firstPartyApp;
-@property(readonly, nonatomic) _Bool isPlayingRadio;
+@property(readonly, nonatomic, getter=isPlayingRadio) _Bool playingRadio;
 @property(readonly, nonatomic, getter=isPlaying) _Bool playing;
 @property(readonly, nonatomic) _Bool hasNowPlayingInfo;
 @property(readonly, nonatomic) double elapsedTime;

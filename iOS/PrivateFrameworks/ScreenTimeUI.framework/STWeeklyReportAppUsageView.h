@@ -25,7 +25,7 @@
 - (void).cxx_destruct;
 - (id)_appImageSubviewWithImage:(id)arg1 dimension:(double)arg2;
 - (void)_didFetchIcon:(id)arg1;
-- (id)initWithUsageReport:(id)arg1;
+- (id)initWithUsageReport:(id)arg1 useVibrancy:(_Bool)arg2;
 
 @end
 

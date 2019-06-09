@@ -8,6 +8,7 @@
 
 @class PDNotesMaster;
 
+__attribute__((visibility("hidden")))
 @interface PDNotesSlide : PDSlideChild
 {
     PDNotesMaster *mNotesMaster;

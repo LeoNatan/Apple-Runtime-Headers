@@ -14,6 +14,7 @@
     MTLIOAccelDevice<MTLDevice> *_device;
     struct MTLIOAccelCommandBufferStorage *_storage;
     unsigned long long *_submitToHardwareTimeStampPointer;
+    unsigned long long _protectionOptions;
     void *_scheduledCallbackBlockPtr;
     void *_completedCallbackBlockPtr;
     NSObject<OS_dispatch_semaphore> *_commitAndResetSem;
@@ -26,6 +27,9 @@
 - (void)_encodePurgedResources;
 - (void)addPurgedHeap:(id)arg1;
 - (void)addPurgedResource:(id)arg1;
+- (void)setProtectionOptions:(unsigned long long)arg1;
+- (unsigned long long)protectionOptions;
+- (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2 timeout:(unsigned int)arg3;
 - (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2;
 - (void)encodeSignalEvent:(id)arg1 value:(unsigned long long)arg2;
 - (void)encodeSubmitSleepMS:(unsigned int)arg1;

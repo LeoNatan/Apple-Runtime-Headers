@@ -6,7 +6,7 @@
 
 #import <NeutrinoCore/NSObject-Protocol.h>
 
-@class AVAsynchronousVideoCompositionRequest, AVVideoCompositionRenderContext, NSDictionary;
+@class AVAsynchronousVideoCompositionRequest, AVVideoCompositionRenderContext, AVVideoCompositionRenderHint, NSDictionary;
 
 @protocol AVVideoCompositing <NSObject>
 @property(readonly, nonatomic) NSDictionary *requiredPixelBufferAttributesForRenderContext;
@@ -16,6 +16,8 @@
 
 @optional
 @property(readonly, nonatomic) _Bool supportsWideColorSourceFrames;
+- (void)prerollForRenderingUsingHint:(AVVideoCompositionRenderHint *)arg1;
+- (void)anticipateRenderingUsingHint:(AVVideoCompositionRenderHint *)arg1;
 - (void)cancelAllPendingVideoCompositionRequests;
 @end
 

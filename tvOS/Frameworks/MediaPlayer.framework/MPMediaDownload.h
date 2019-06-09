@@ -16,6 +16,7 @@
     long long _storeSagaID;
 }
 
++ (long long)_downloadReasonFromStoreDownload:(id)arg1;
 + (id)MPMediaDownloadsFromATAssets:(id)arg1;
 + (id)MPMediaDownloadsFromMPStoreDownloads:(id)arg1;
 @property long long storeSagaID; // @synthesize storeSagaID=_storeSagaID;
@@ -24,9 +25,10 @@
 @property(nonatomic) long long downloadReason; // @synthesize downloadReason=_downloadReason;
 @property(readonly, nonatomic) long long storeItemID; // @synthesize storeItemID=_storeItemID;
 @property(readonly, nonatomic) long long deviceLibraryID; // @synthesize deviceLibraryID=_deviceLibraryID;
-- (id)initWithATAsset:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
+- (id)description;
 - (id)initWithMPStoreDownload:(id)arg1;
-- (id)init;
 
 @end
 

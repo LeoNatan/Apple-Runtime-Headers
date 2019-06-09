@@ -4,24 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MessageUI/MFAtomTextView.h>
+#import <UIKit/UISearchTextField.h>
 
-@class NSString, SearchUIResultViewController;
+@class SearchUIResultsViewController;
 
-@interface SearchUISearchField : MFAtomTextView
+@interface SearchUISearchField : UISearchTextField
 {
-    SearchUIResultViewController *_resultViewController;
+    SearchUIResultsViewController *_resultsViewController;
 }
 
-@property __weak SearchUIResultViewController *resultViewController; // @synthesize resultViewController=_resultViewController;
+@property __weak SearchUIResultsViewController *resultsViewController; // @synthesize resultsViewController=_resultsViewController;
 - (void).cxx_destruct;
-- (struct CGSize)intrinsicContentSize;
 - (id)nextResponder;
-- (id)textFromMarkedTextRange:(struct _NSRange)arg1 markedTextReplacement:(id)arg2;
-@property(readonly) NSString *searchText;
-- (struct _NSRange)_markedTextNSRange;
-- (void)setText:(id)arg1;
-- (id)text;
 
 @end
 

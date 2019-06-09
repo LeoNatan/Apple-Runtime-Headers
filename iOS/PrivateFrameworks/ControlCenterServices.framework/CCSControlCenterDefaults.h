@@ -11,7 +11,6 @@
 }
 
 + (id)standardDefaults;
-@property(nonatomic) _Bool shouldEnableTigrisCarryUI;
 - (unsigned long long)_defaultPresentationGesture;
 - (void)_bindAndRegisterDefaults;
 - (id)init;

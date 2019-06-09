@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSString *_audioCategory;
     NACEventThrottler *_defaultsThrottler;
     NSNumber *_volumeValue;
+    _Bool _allowUserToExceedEUVolumeLimit;
     _Bool _systemMuted;
     _Bool _prominentHapticEnabled;
     id <NACVolumeControllerDelegate> _delegate;
@@ -34,9 +35,11 @@ __attribute__((visibility("hidden")))
 - (void)_persistVolumeValue:(id)arg1;
 - (void)_setNeedsVolumeReload;
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
+- (void)allowUserToExceedEUVolumeLimit;
 - (void)setVolumeValue:(float)arg1 muted:(_Bool)arg2 overrideEULimit:(_Bool)arg3;
 - (void)setMuted:(_Bool)arg1;
 - (void)setVolumeValue:(float)arg1;
+@property(readonly, nonatomic) int volumeWarningState;
 @property(readonly, nonatomic, getter=isVolumeWarningEnabled) _Bool volumeWarningEnabled;
 @property(readonly, nonatomic) float EUVolumeLimit;
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable;

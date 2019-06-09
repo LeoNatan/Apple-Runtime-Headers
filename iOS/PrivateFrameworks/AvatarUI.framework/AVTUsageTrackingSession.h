@@ -8,7 +8,7 @@
 
 #import <AvatarUI/AVTUsageTrackingSession-Protocol.h>
 
-@class AVTAvatarConfiguration, AVTUsageTrackingRecordTimedEvent, NSDate;
+@class AVTAvatarConfiguration, AVTAvatarRecord, AVTUsageTrackingRecordTimedEvent, NSDate;
 @protocol AVTAggDClient, AVTAvatarConfigurationMetric, AVTAvatarStoreInternal, AVTDifferentialPrivacyRecorder, AVTUILogger, OS_dispatch_queue;
 
 @interface AVTUsageTrackingSession : NSObject <AVTUsageTrackingSession>
@@ -22,6 +22,7 @@
     id <AVTAvatarConfigurationMetric> _metric;
     CDUnknownBlockType _recordTransformer;
     AVTAvatarConfiguration *_defaultConfiguration;
+    AVTAvatarRecord *_avatarRecord;
     CDUnknownBlockType _timeProvider;
     NSDate *_editorEnterDate;
     AVTUsageTrackingRecordTimedEvent *_faceTrackingEvent;
@@ -50,6 +51,7 @@
 @property(nonatomic) _Bool recordedVideo; // @synthesize recordedVideo=_recordedVideo;
 @property(nonatomic) _Bool expandedMode; // @synthesize expandedMode=_expandedMode;
 @property(readonly, copy, nonatomic) CDUnknownBlockType timeProvider; // @synthesize timeProvider=_timeProvider;
+@property(readonly, nonatomic) AVTAvatarRecord *avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(readonly, nonatomic) AVTAvatarConfiguration *defaultConfiguration; // @synthesize defaultConfiguration=_defaultConfiguration;
 @property(readonly, copy, nonatomic) CDUnknownBlockType recordTransformer; // @synthesize recordTransformer=_recordTransformer;
 @property(readonly, nonatomic) id <AVTAvatarConfigurationMetric> metric; // @synthesize metric=_metric;
@@ -65,6 +67,7 @@
 - (void)nts_reportAvatarCountWithClient:(id)arg1;
 - (void)nts_reportFaceTrackingTimeWithEndTime:(id)arg1 client:(id)arg2;
 - (void)nts_reportEditorTimeWithExitTime:(id)arg1 client:(id)arg2;
+- (void)nts_loadDefaultConfigurationIfNeeded;
 - (void)end;
 - (void)beginWithStore:(id)arg1;
 - (void)didResumeFaceTracking;
@@ -80,7 +83,6 @@
 - (void)didEditAvatar:(id)arg1;
 - (void)didCreateAvatar:(id)arg1;
 - (void)didDeleteAvatar:(id)arg1;
-- (void)didTriggerHoldPose;
 - (void)didSendStickerWithAvatar:(id)arg1;
 - (void)didSendImageWithAvatar:(id)arg1;
 - (void)didReplayVideo;
@@ -88,7 +90,7 @@
 - (void)didSendVideoWithAvatar:(id)arg1 duration:(double)arg2;
 - (void)reportAddOneForScalarKey:(id)arg1;
 - (void)performClientWork:(CDUnknownBlockType)arg1;
-- (id)initWithAggDClient:(id)arg1 dpRecorder:(id)arg2 serialQueueProvider:(CDUnknownBlockType)arg3 recordTransformer:(CDUnknownBlockType)arg4 defaultConfiguration:(id)arg5 timeProvider:(CDUnknownBlockType)arg6 configurationMetric:(id)arg7 logger:(id)arg8;
+- (id)initWithAggDClient:(id)arg1 dpRecorder:(id)arg2 serialQueueProvider:(CDUnknownBlockType)arg3 recordTransformer:(CDUnknownBlockType)arg4 avatarRecord:(id)arg5 defaultConfiguration:(id)arg6 timeProvider:(CDUnknownBlockType)arg7 configurationMetric:(id)arg8 logger:(id)arg9;
 - (id)initWithSerialQueueProvider:(CDUnknownBlockType)arg1 recordTransformer:(CDUnknownBlockType)arg2 logger:(id)arg3;
 
 @end

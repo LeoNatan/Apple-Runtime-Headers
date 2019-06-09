@@ -8,6 +8,7 @@
 
 @class NSCache, _NSImageRepAdaptiveToScale;
 
+__attribute__((visibility("hidden")))
 @interface _NSImageAdaptiveToScale : NSImage
 {
     CDUnknownBlockType _vkImageWithScale;

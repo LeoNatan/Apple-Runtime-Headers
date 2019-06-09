@@ -6,7 +6,7 @@
 
 #import <UIKit/UIControl.h>
 
-@class ASVBlurredBackgroundView, ASVWrappedButton, UIColor, UIFont;
+@class ASVBlurredBackgroundView, ASVWrappedButton, NSString, UIColor, UIFont, UIImage;
 
 @interface ASVButton : UIControl
 {
@@ -24,9 +24,17 @@
     UIColor *_black70PercentColor;
     UIColor *_blue100PercentColor;
     UIColor *_blue50PercentColor;
+    long long _currentStyle;
+    UIColor *_white75PercentColor;
+    UIColor *_white52PercentColor;
+    UIColor *_white26PercentColor;
     struct UIEdgeInsets _largeImageInsets;
 }
 
+@property(retain, nonatomic) UIColor *white26PercentColor; // @synthesize white26PercentColor=_white26PercentColor;
+@property(retain, nonatomic) UIColor *white52PercentColor; // @synthesize white52PercentColor=_white52PercentColor;
+@property(retain, nonatomic) UIColor *white75PercentColor; // @synthesize white75PercentColor=_white75PercentColor;
+@property(nonatomic) long long currentStyle; // @synthesize currentStyle=_currentStyle;
 @property(retain, nonatomic) UIColor *blue50PercentColor; // @synthesize blue50PercentColor=_blue50PercentColor;
 @property(retain, nonatomic) UIColor *blue100PercentColor; // @synthesize blue100PercentColor=_blue100PercentColor;
 @property(retain, nonatomic) UIColor *black70PercentColor; // @synthesize black70PercentColor=_black70PercentColor;
@@ -43,6 +51,11 @@
 @property(nonatomic) struct UIEdgeInsets largeImageInsets; // @synthesize largeImageInsets=_largeImageInsets;
 @property(nonatomic) long long controlStyle; // @synthesize controlStyle=_controlStyle;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateCurrentAppearanceIfNeeded;
+- (void)layoutSubviews;
+@property(retain, nonatomic) UIImage *image;
+@property(retain, nonatomic) NSString *title;
 - (void)_didUpdateContentSizeCategory:(id)arg1;
 - (void)_didUpdateDarkenColorsSetting:(id)arg1;
 - (void)_updateTitleStyleForButton:(id)arg1 withControlStyle:(long long)arg2;

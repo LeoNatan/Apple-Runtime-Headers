@@ -4,11 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TVMLKit/IKAppDocumentDelegate-Protocol.h>
+#import <TVMLKit/IKAppDocumentDelegatePrivate-Protocol.h>
 
-@class IKAppDocument;
+@class IKAppDocument, IKViewElement, NSString, TVTemplateFeaturesManager, UIResponder;
 
-@protocol _TVIKAppDocumentDelegate <IKAppDocumentDelegate>
+@protocol _TVIKAppDocumentDelegate <IKAppDocumentDelegatePrivate>
 - (struct CGSize)tv_adjustedWindowSizeForDocument:(IKAppDocument *)arg1;
+
+@optional
+- (_Bool)tv_isPresentedModalForDocument:(IKAppDocument *)arg1;
+- (TVTemplateFeaturesManager *)tv_featuresManagerForDocument:(IKAppDocument *)arg1;
+- (_Bool)tv_handleEventForDocument:(IKAppDocument *)arg1 eventName:(NSString *)arg2 targetResponder:(UIResponder *)arg3 viewElement:(IKViewElement *)arg4 extraInfo:(id *)arg5;
 @end
 

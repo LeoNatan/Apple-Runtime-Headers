@@ -16,13 +16,7 @@
 
 @interface MMCSCSetupController : NSObject <MMCSCPinSetupViewControllerDelegate, MMCSCPassPhraseSetupViewControllerDelegate, MMCSCSMSTargetSetupViewControllerDelegate, MMCSCOptionsSetupViewControllerDelegate>
 {
-    id <MMCSCSetupControllerDelegate> _delegate;
-    NSWindow *_dialog;
     NSWindow *_parentWindow;
-    MMCSCPinSetupViewController *_cscPinVC;
-    MMCSCOptionsSetupViewController *_cscOptionsVC;
-    MMCSCPassPhraseSetupViewController *_cscPassPhraseVC;
-    MMCSCSMSTargetSetupViewController *_cscSMSTargetVC;
     NSString *_passPhrase;
     NSString *_smsCountryCode;
     NSString *_smsCountryPrefix;
@@ -32,6 +26,12 @@
     BOOL _isUpdatingPassphrase;
     BOOL _usingNumericPassphrase;
     int _numericPassphraseLength;
+    id <MMCSCSetupControllerDelegate> _delegate;
+    NSWindow *_dialog;
+    MMCSCPinSetupViewController *_cscPinVC;
+    MMCSCOptionsSetupViewController *_cscOptionsVC;
+    MMCSCPassPhraseSetupViewController *_cscPassPhraseVC;
+    MMCSCSMSTargetSetupViewController *_cscSMSTargetVC;
 }
 
 @property BOOL isUpdatingPassphrase; // @synthesize isUpdatingPassphrase=_isUpdatingPassphrase;
@@ -46,9 +46,10 @@
 @property(copy) NSString *smsCountryPrefix; // @synthesize smsCountryPrefix=_smsCountryPrefix;
 @property(copy) NSString *smsCountryCode; // @synthesize smsCountryCode=_smsCountryCode;
 @property(copy) NSString *passPhrase; // @synthesize passPhrase=_passPhrase;
-@property(retain) NSWindow *dialog; // @synthesize dialog=_dialog;
+@property __weak NSWindow *dialog; // @synthesize dialog=_dialog;
 @property(retain) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
 @property id <MMCSCSetupControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)mmCSCOptionsSetupViewControllerDidCancel:(id)arg1;
 - (void)mmCSCOptionsSetupViewControllerDidReturn:(id)arg1;
 - (void)mmCSCOptionsSetupViewControllerDidEnd:(id)arg1;
@@ -68,7 +69,6 @@
 - (void)endModalDialog;
 - (void)beginDialogWithParentWindow:(id)arg1 shouldNest:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)beginDialogWithParentWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

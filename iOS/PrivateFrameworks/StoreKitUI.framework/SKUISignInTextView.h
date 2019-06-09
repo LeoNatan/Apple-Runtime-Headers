@@ -10,6 +10,7 @@
 
 @class NSString, UITextInputPasswordRules;
 
+__attribute__((visibility("hidden")))
 @interface SKUISignInTextView : UITextField <UITextInputTraits>
 {
     long long _keyboardType;

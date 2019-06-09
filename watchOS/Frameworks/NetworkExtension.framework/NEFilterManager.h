@@ -22,6 +22,7 @@
 @property(retain) NEConfiguration *configuration; // @synthesize configuration=_configuration;
 @property _Bool hasLoaded; // @synthesize hasLoaded=_hasLoaded;
 - (void).cxx_destruct;
+@property int grade;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 @property(copy) NSString *localizedDescription;

@@ -15,8 +15,10 @@
     double _initialMediaTime;
     UIInteractionProgress *_interactionProgress;
     _Bool _forceTouchCompleted;
+    id _userInfo;
 }
 
+@property(retain, nonatomic) id userInfo; // @synthesize userInfo=_userInfo;
 @property(readonly, nonatomic) _Bool forceTouchCompleted; // @synthesize forceTouchCompleted=_forceTouchCompleted;
 - (void).cxx_destruct;
 - (void)interactionProgress:(id)arg1 didEnd:(_Bool)arg2;

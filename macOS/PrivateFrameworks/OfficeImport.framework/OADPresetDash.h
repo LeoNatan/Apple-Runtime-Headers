@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADDash.h>
 
+__attribute__((visibility("hidden")))
 @interface OADPresetDash : OADDash
 {
     BOOL mType;

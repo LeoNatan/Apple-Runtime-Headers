@@ -6,9 +6,9 @@
 
 #import <CloudPhotoLibrary/NSObject-Protocol.h>
 
-@class CPLNetworkWatcher;
+@class CPLNetworkState, CPLNetworkWatcher;
 
 @protocol CPLNetworkWatcherDelegate <NSObject>
-- (void)networkStateDidChangeForNetworkWatcher:(CPLNetworkWatcher *)arg1;
+- (void)watcher:(CPLNetworkWatcher *)arg1 stateDidChangeToNetworkState:(CPLNetworkState *)arg2;
 @end
 

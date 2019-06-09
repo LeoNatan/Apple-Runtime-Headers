@@ -158,6 +158,10 @@ struct duration<long long, std::__1::ratio<1, 1000>> {
     long long __rep_;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000>>> {
     struct duration<long long, std::__1::ratio<1, 1000000000>> __d_;
 };

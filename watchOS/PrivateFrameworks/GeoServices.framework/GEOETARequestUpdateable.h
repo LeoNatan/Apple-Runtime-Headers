@@ -13,14 +13,12 @@
 @interface GEOETARequestUpdateable : GEOXPCRequest <GEOXPCRequest>
 {
     GEOETATrafficUpdateRequest *_request;
-    int _mode;
     GEODataConditionalConnectionProperties *_connectionProperties;
 }
 
 + (Class)replyClass;
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) GEODataConditionalConnectionProperties *connectionProperties; // @synthesize connectionProperties=_connectionProperties;
-@property(nonatomic) int mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) GEOETATrafficUpdateRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
 - (_Bool)expectsReply;

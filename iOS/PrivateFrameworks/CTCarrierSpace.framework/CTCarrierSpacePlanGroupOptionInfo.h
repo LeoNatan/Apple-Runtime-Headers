@@ -20,11 +20,15 @@
     NSString *_planValue;
     NSString *_planDetailsURL;
     NSString *_planTermsURL;
+    NSString *_planPurchaseURL;
+    long long _planType;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool planPurchasable; // @synthesize planPurchasable=_planPurchasable;
 @property(nonatomic) unsigned char planSubscriptionStatus; // @synthesize planSubscriptionStatus=_planSubscriptionStatus;
+@property(nonatomic) long long planType; // @synthesize planType=_planType;
+@property(retain, nonatomic) NSString *planPurchaseURL; // @synthesize planPurchaseURL=_planPurchaseURL;
 @property(retain, nonatomic) NSString *planTermsURL; // @synthesize planTermsURL=_planTermsURL;
 @property(retain, nonatomic) NSString *planDetailsURL; // @synthesize planDetailsURL=_planDetailsURL;
 @property(retain, nonatomic) NSString *planValue; // @synthesize planValue=_planValue;

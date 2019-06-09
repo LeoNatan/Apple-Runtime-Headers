@@ -4,31 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <EventKit/EKObject.h>
+#import <EventKit/EKNotification.h>
 
 @class EKCalendar, NSDate, NSString, NSURL;
 
-__attribute__((visibility("hidden")))
-@interface EKInviteReplyNotification : EKObject
+@interface EKInviteReplyNotification : EKNotification
 {
 }
 
++ (id)sourceForInviteReplyNotification:(id)arg1;
 + (id)knownRelationshipSingleValueKeys;
 + (Class)frozenClass;
-@property(readonly, nonatomic) EKCalendar *inviteReplyCalendar;
-@property(readonly, nonatomic) EKCalendar *calendar;
+- (_Bool)validate:(id *)arg1;
 - (void)clearAlertedStatus;
 @property(readonly, nonatomic) _Bool alerted;
-@property(readonly, nonatomic) NSDate *creationDate;
-@property(readonly, nonatomic) unsigned int status;
-@property(readonly, nonatomic) NSString *shareeLastName;
-@property(readonly, nonatomic) NSString *shareeFirstName;
-@property(readonly, nonatomic) NSURL *shareeURL;
 @property(readonly, nonatomic) NSString *shareePhoneNumber;
 @property(readonly, nonatomic) NSString *shareeEmailAddress;
-- (id)shareeAddressURL;
-@property(readonly, nonatomic) NSString *shareeDisplayName;
 @property(readonly, nonatomic) NSString *calendarName;
+@property(copy, nonatomic) NSString *summary;
+@property(copy, nonatomic) NSDate *creationDate;
+@property(nonatomic) unsigned int shareeStatus;
+@property(copy, nonatomic) NSURL *shareeURL;
+@property(copy, nonatomic) NSString *shareeLastName;
+@property(copy, nonatomic) NSString *shareeFirstName;
+@property(copy, nonatomic) NSString *shareeDisplayName;
+@property(copy, nonatomic) NSString *inReplyTo;
+- (void)_setInviteReplyCalendar:(id)arg1;
+@property(readonly, nonatomic) EKCalendar *inviteReplyCalendar;
+- (id)initWithInviteReplyCalendar:(id)arg1;
 
 @end
 

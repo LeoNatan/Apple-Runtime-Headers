@@ -10,7 +10,7 @@
 {
 }
 
-+ (void)showPanel:(unsigned long long)arg1;
++ (void)showPanel:(long long)arg1;
 + (void)setUIServerValue:(id)arg1 forKey:(id)arg2;
 
 @end

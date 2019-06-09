@@ -6,7 +6,7 @@
 
 #import <PassKitCore/NSObject-Protocol.h>
 
-@class NSArray, NSString, NSURL, PKAppleAccountInformation, PKPaymentProvisioningController, PKPeerPaymentAccount, PKPeerPaymentCredential;
+@class NSArray, NSString, NSURL, PKAppleAccountInformation, PKPaymentProvisioningController, PKPeerPaymentAccount, PKPeerPaymentCredential, PKPeerPaymentWebService;
 
 @protocol PKPeerPaymentWebServiceTargetDeviceProtocol <NSObject>
 - (void)cloudStoreStatusWithCompletion:(void (^)(CKAccountInfo *, _Bool, NSError *))arg1;
@@ -24,6 +24,7 @@
 - (PKAppleAccountInformation *)appleAccountInformation;
 - (void)initalizeCloudStoreIfNecessaryWithCompletion:(void (^)(_Bool))arg1;
 - (void)peerPaymentReRegisterWithURL:(NSURL *)arg1 pushToken:(NSString *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
+- (void)peerPaymentReRegisterWithURL:(NSURL *)arg1 pushToken:(NSString *)arg2 peerPaymentWebService:(PKPeerPaymentWebService *)arg3 completion:(void (^)(_Bool, NSError *))arg4;
 - (void)resetApplePayManateeViewWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)checkTLKsMissingWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)initalizeCloudStoreIfNecessaryWithHandler:(void (^)(_Bool, NSError *))arg1;

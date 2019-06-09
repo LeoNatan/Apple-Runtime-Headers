@@ -13,6 +13,7 @@
 }
 
 - (id)_initWithItem:(id)arg1;
+- (id)transcriptDate;
 @property(readonly, nonatomic) NSDate *date;
 
 @end

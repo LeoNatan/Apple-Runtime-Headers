@@ -69,7 +69,6 @@
 @property(copy) NSURL *initialURL;
 - (void)_updateOkButtonEnabledState;
 - (void)dealloc;
-- (void)_selectFirstKeyView;
 - (void)finderLocationPopUpOtherLocation:(id)arg1;
 - (unsigned long long)finderLocationPopUpMenuOptions:(id)arg1;
 - (id)finderLocationPopUpRequestRecentPlaces:(id)arg1;

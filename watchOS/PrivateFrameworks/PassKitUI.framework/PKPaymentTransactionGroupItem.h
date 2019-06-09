@@ -8,14 +8,16 @@
 
 #import <PassKitUI/PKDashboardItem-Protocol.h>
 
-@class NSString, PKPaymentPass, PKPaymentTransactionGroup;
+@class NSString, PKAccount, PKPaymentPass, PKPaymentTransactionGroup;
 
 @interface PKPaymentTransactionGroupItem : NSObject <PKDashboardItem>
 {
     PKPaymentTransactionGroup *_group;
     PKPaymentPass *_paymentPass;
+    PKAccount *_account;
 }
 
+@property(retain, nonatomic) PKAccount *account; // @synthesize account=_account;
 @property(retain, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(retain, nonatomic) PKPaymentTransactionGroup *group; // @synthesize group=_group;
 - (void).cxx_destruct;

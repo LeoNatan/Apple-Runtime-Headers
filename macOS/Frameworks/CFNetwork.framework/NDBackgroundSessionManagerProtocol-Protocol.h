@@ -12,6 +12,8 @@
 @protocol NDBackgroundSessionManagerProtocol <NSObject>
 - (void)obliterateAllSessionsWithReply:(void (^)(void))arg1;
 - (void)getActiveSessionIdentifiersWithReply:(void (^)(NSArray *))arg1;
+- (void)okayToSendPendingCallbacksForIdentifier:(NSString *)arg1 reply:(void (^)(void))arg2;
+- (void)releaseAssertionForSession:(NSString *)arg1 reply:(void (^)(void))arg2;
 - (void)sendPendingCallbacksForIdentifier:(NSString *)arg1 reply:(void (^)(void))arg2;
 - (void)createSessionWithConfiguration:(NSURLSessionConfiguration *)arg1 clientProxy:(id <NDBackgroundSessionClient>)arg2 cachesDirectory:(NSURL *)arg3 options:(NSDictionary *)arg4 reply:(void (^)(id <NDBackgroundSessionProtocol>, NSDictionary *, BOOL))arg5;
 - (void)dropBoost;

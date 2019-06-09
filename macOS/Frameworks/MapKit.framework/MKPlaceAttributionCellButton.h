@@ -8,6 +8,7 @@
 
 @protocol MKPlaceAttributionCellButtonDelegate;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceAttributionCellButton : NSButton
 {
     id <MKPlaceAttributionCellButtonDelegate> _buttonDelegate;

@@ -8,6 +8,7 @@
 
 @class MFPhoneBitmap;
 
+__attribute__((visibility("hidden")))
 @interface MFPhonePatternBrush : MFPhoneBrush
 {
     MFPhoneBitmap *m_pattern;

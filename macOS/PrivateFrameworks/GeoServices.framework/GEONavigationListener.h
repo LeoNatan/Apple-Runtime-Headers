@@ -6,17 +6,18 @@
 
 #import <objc/NSObject.h>
 
-#import <GeoServices/GEONavigationServerObserverXPCInterface-Protocol.h>
+#import <GeoServices/GEONavigationServerListenerXPCInterface-Protocol.h>
 
 @class NSString, NSXPCConnection;
 @protocol GEONavigationListenerDelegate, OS_dispatch_queue;
 
-@interface GEONavigationListener : NSObject <GEONavigationServerObserverXPCInterface>
+@interface GEONavigationListener : NSObject <GEONavigationServerListenerXPCInterface>
 {
     NSXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_queue;
     int _navigationStartedToken;
     int _navigationStoppedToken;
+    int _navigationRoutePreviewToken;
     id <GEONavigationListenerDelegate> _delegate;
     CDUnknownBlockType _routeSummaryUpdatedHandler;
     CDUnknownBlockType _transitSummaryUpdatedHandler;
@@ -29,10 +30,11 @@
     CDUnknownBlockType _positionFromDestinationUpdatedHandler;
     CDUnknownBlockType _trafficIncidentAlertDetailsDataUpdatedHandler;
     CDUnknownBlockType _navigationVoiceVolumeUpdatedHandler;
+    unsigned long long _navigationState;
+    int _transportType;
     NSString *_currentRoadName;
 }
 
-@property(readonly, nonatomic) NSString *currentRoadName; // @synthesize currentRoadName=_currentRoadName;
 @property(copy, nonatomic) CDUnknownBlockType navigationVoiceVolumeUpdatedHandler; // @synthesize navigationVoiceVolumeUpdatedHandler=_navigationVoiceVolumeUpdatedHandler;
 @property(copy, nonatomic) CDUnknownBlockType trafficIncidentAlertDetailsDataUpdatedHandler; // @synthesize trafficIncidentAlertDetailsDataUpdatedHandler=_trafficIncidentAlertDetailsDataUpdatedHandler;
 @property(copy, nonatomic) CDUnknownBlockType positionFromDestinationUpdatedHandler; // @synthesize positionFromDestinationUpdatedHandler=_positionFromDestinationUpdatedHandler;
@@ -44,8 +46,11 @@
 @property(copy, nonatomic) CDUnknownBlockType guidanceStateUpdatedHandler; // @synthesize guidanceStateUpdatedHandler=_guidanceStateUpdatedHandler;
 @property(copy, nonatomic) CDUnknownBlockType transitSummaryUpdatedHandler; // @synthesize transitSummaryUpdatedHandler=_transitSummaryUpdatedHandler;
 @property(copy, nonatomic) CDUnknownBlockType routeSummaryUpdatedHandler; // @synthesize routeSummaryUpdatedHandler=_routeSummaryUpdatedHandler;
+@property(readonly, nonatomic) NSString *currentRoadName; // @synthesize currentRoadName=_currentRoadName;
+@property(readonly, nonatomic) unsigned long long navigationState; // @synthesize navigationState=_navigationState;
 @property(nonatomic) __weak id <GEONavigationListenerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (unsigned long long)_listenerStateForSessionState:(unsigned long long)arg1;
 - (void)_notifyWithNavigationVoiceVolume:(int)arg1;
 - (void)_notifyWithTrafficIncidentDetailsData:(id)arg1;
 - (void)_notifyWithPositionFromDestination:(CDStruct_c3b9c2ee)arg1;
@@ -71,6 +76,7 @@
 - (void)routeSummaryUpdatedWithGuidanceStateData:(id)arg1;
 - (void)routeSummaryUpdatedWithTransitSummaryData:(id)arg1;
 - (void)routeSummaryUpdatedWithNavigationRouteSummaryData:(id)arg1;
+- (void)navigationStateChanged:(unsigned long long)arg1 transportType:(int)arg2;
 - (void)_connectToDaemonIfNeeded;
 - (void)_close;
 - (void)_open;
@@ -88,6 +94,7 @@
 - (void)requestRouteSummary;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

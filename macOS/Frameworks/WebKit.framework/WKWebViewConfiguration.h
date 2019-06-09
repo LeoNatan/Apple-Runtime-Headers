@@ -9,7 +9,7 @@
 #import <WebKit/NSCopying-Protocol.h>
 #import <WebKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString, WKPreferences, WKProcessPool, WKUserContentController, WKWebView, WKWebsiteDataStore, _WKApplicationManifest, _WKVisitedLinkStore, _WKWebsiteDataStore;
+@class NSArray, NSString, WKPreferences, WKProcessPool, WKUserContentController, WKWebView, WKWebpagePreferences, WKWebsiteDataStore, _WKApplicationManifest, _WKVisitedLinkStore, _WKWebsiteDataStore;
 
 @interface WKWebViewConfiguration : NSObject <NSSecureCoding, NSCopying>
 {
@@ -19,6 +19,7 @@
     struct LazyInitialized<WTF::RetainPtr<WKUserContentController>> _userContentController;
     struct LazyInitialized<WTF::RetainPtr<_WKVisitedLinkStore>> _visitedLinkStore;
     struct LazyInitialized<WTF::RetainPtr<WKWebsiteDataStore>> _websiteDataStore;
+    struct LazyInitialized<WTF::RetainPtr<WKWebpagePreferences>> _defaultWebpagePreferences;
     struct WeakObjCPtr<WKWebView> _relatedWebView;
     struct WeakObjCPtr<WKWebView> _alternateWebViewForNavigationGestures;
     struct RetainPtr<NSString> _groupIdentifier;
@@ -51,6 +52,7 @@
     BOOL _shouldDeferAsynchronousScriptsUntilAfterDocumentLoad;
     BOOL _drawsBackground;
     BOOL _editableImagesEnabled;
+    BOOL _undoManagerAPIEnabled;
     struct RetainPtr<NSString> _mediaContentTypesRequiringHardwareSupport;
     struct RetainPtr<NSArray<NSString *>> _additionalSupportedImageTypes;
     BOOL _suppressesIncrementalRendering;
@@ -72,6 +74,7 @@
 - (void)setURLSchemeHandler:(id)arg1 forURLScheme:(id)arg2;
 @property(retain, nonatomic, setter=_setVisitedLinkStore:) _WKVisitedLinkStore *_visitedLinkStore;
 @property(copy, nonatomic) NSString *applicationNameForUserAgent;
+@property(copy, nonatomic) WKWebpagePreferences *defaultWebpagePreferences;
 @property(retain, nonatomic) WKWebsiteDataStore *websiteDataStore;
 @property(retain, nonatomic) WKUserContentController *userContentController;
 @property(retain, nonatomic) WKPreferences *preferences;
@@ -81,6 +84,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (id)init;
+@property(nonatomic, setter=_setUndoManagerAPIEnabled:) BOOL _undoManagerAPIEnabled;
 @property(nonatomic, setter=_setEditableImagesEnabled:) BOOL _editableImagesEnabled;
 @property(nonatomic, setter=_setAllowMediaContentTypesRequiringHardwareSupportAsFallback:) BOOL _allowMediaContentTypesRequiringHardwareSupportAsFallback;
 @property(nonatomic, setter=_setLegacyEncryptedMediaAPIEnabled:) BOOL _legacyEncryptedMediaAPIEnabled;

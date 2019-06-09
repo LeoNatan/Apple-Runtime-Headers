@@ -11,7 +11,6 @@
 __attribute__((visibility("hidden")))
 @interface SidecarTransferSender : SidecarTransfer
 {
-    long long _type;
     long long _itemID;
     NSArray *_items;
     NSMutableArray *_slices;

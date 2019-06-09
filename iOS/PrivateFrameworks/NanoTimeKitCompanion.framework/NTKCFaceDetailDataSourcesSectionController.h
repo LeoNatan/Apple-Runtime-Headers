@@ -27,8 +27,8 @@
 @property(retain, nonatomic) NTKCUpNextDataSourcesManager *manager; // @synthesize manager=_manager;
 - (void).cxx_destruct;
 - (id)_getDisabledDataSources;
-- (void)_buildRowsWithDataSourceIdentifiers:(id)arg1 donatedAppIdentifiers:(id)arg2;
-- (void)manager:(id)arg1 didUpdateDataSourceIdentifiers:(id)arg2 donatedIdentifiers:(id)arg3;
+- (void)_buildRowsWithDataSourceEntries:(id)arg1;
+- (void)manager:(id)arg1 didUpdateDataSourceEntries:(id)arg2;
 - (void)toggleCell:(id)arg1 didToggle:(_Bool)arg2;
 - (void)_updatedDisabledDataSources:(id)arg1;
 - (void)faceDidChange;

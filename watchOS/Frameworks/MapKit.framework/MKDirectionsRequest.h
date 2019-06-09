@@ -28,11 +28,9 @@
     GEOAutomobileOptions *_automobileOptions;
     GEOTransitOptions *_transitOptions;
     GEOWalkingOptions *_walkingOptions;
-    int _requestMode;
 }
 
 + (_Bool)isDirectionsRequestURL:(id)arg1;
-@property(nonatomic, getter=_requestMode, setter=_setRequestMode:) int requestMode; // @synthesize requestMode=_requestMode;
 @property(retain, nonatomic, getter=_walkingOptions, setter=_setWalkingOptions:) GEOWalkingOptions *walkingOptions; // @synthesize walkingOptions=_walkingOptions;
 @property(retain, nonatomic, getter=_transitOptions, setter=_setTransitOptions:) GEOTransitOptions *transitOptions; // @synthesize transitOptions=_transitOptions;
 @property(retain, nonatomic, getter=_automobileOptions, setter=_setAutomobileOptions:) GEOAutomobileOptions *automobileOptions; // @synthesize automobileOptions=_automobileOptions;

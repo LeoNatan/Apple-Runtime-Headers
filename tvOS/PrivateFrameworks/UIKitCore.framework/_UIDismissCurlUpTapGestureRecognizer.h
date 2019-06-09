@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic, setter=_setCurlUpDY:) float _curlUpDY; // @synthesize _curlUpDY;
-- (_Bool)_shouldReceiveTouch:(id)arg1 recognizerView:(id)arg2 touchView:(id)arg3;
+- (_Bool)_shouldReceiveTouch:(id)arg1 forEvent:(id)arg2 recognizerView:(id)arg3;
 - (_Bool)canBePreventedByGestureRecognizer:(id)arg1;
 
 @end

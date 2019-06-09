@@ -7,6 +7,8 @@
 #import <CloudKit/CKOperationGroup.h>
 
 @interface CKOperationGroup (BRAdditions)
++ (id)br_osUpgradeMigration;
++ (id)br_migrationPCS;
 + (id)br_fetchNonLocalVersions;
 + (id)br_purge;
 + (id)br_fetchIdentityXPC;
@@ -18,6 +20,7 @@
 + (id)br_zoneConsolidation;
 + (id)br_quotaUpdateXPC;
 + (id)br_quotaUpdateUploader;
++ (id)br_uploadAllDocs;
 + (id)br_upload;
 + (id)br_downloadConflictingVersions;
 + (id)br_downloadUpdatedDocuments;
@@ -29,10 +32,15 @@
 + (id)br_syncUpZoneHealth;
 + (id)br_syncUpAppLibraryMetadata;
 + (id)br_syncUp;
++ (id)br_fetchRecents;
++ (id)br_fetchShareAlias;
++ (id)br_fetchParentChain;
++ (id)br_listDirectoryContents;
 + (id)br_syncDownZoneHealth;
 + (id)br_syncDownAppLibraryMetadata;
 + (id)br_syncDownAppLaunch;
 + (id)br_syncDownPushTriggered;
++ (id)br_syncDownFullBackground;
 + (id)br_syncDownInitial;
 + (id)br_syncDownPeriodic;
 + (id)br_syncDown;

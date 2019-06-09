@@ -9,14 +9,13 @@
 #import <UIKitCore/UIDragAnimating-Protocol.h>
 #import <UIKitCore/UIDragInteractionContext-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, UIDelayedAction;
+@class NSArray, NSMutableArray, NSString, UITouch;
 
 __attribute__((visibility("hidden")))
 @interface UIDragInteractionContextImpl : NSObject <UIDragInteractionContext, UIDragAnimating>
 {
     _Bool _shouldAnimateLift;
     _Bool _preparedForLift;
-    _Bool _accessibilityDrag;
     _Bool _hasBegunDrag;
     NSMutableArray *_animationBlocks;
     NSMutableArray *_completionBlocks;
@@ -24,17 +23,18 @@ __attribute__((visibility("hidden")))
     NSArray *_items;
     CDUnknownBlockType _animations;
     CDUnknownBlockType _completion;
-    UIDelayedAction *_gateTimer;
-    UIDelayedAction *_cancellationTimer;
+    CDUnknownBlockType __sessionDidBegin;
+    long long _invocationType;
+    UITouch *_initiationTouch;
     struct CGPoint _initialLocation;
 }
 
-@property(retain, nonatomic) UIDelayedAction *cancellationTimer; // @synthesize cancellationTimer=_cancellationTimer;
-@property(retain, nonatomic) UIDelayedAction *gateTimer; // @synthesize gateTimer=_gateTimer;
 @property(nonatomic) _Bool hasBegunDrag; // @synthesize hasBegunDrag=_hasBegunDrag;
-@property(nonatomic, getter=isAccessibilityDrag) _Bool accessibilityDrag; // @synthesize accessibilityDrag=_accessibilityDrag;
+@property(retain, nonatomic) UITouch *initiationTouch; // @synthesize initiationTouch=_initiationTouch;
+@property(nonatomic) long long invocationType; // @synthesize invocationType=_invocationType;
 @property(nonatomic, getter=isPreparedForLift) _Bool preparedForLift; // @synthesize preparedForLift=_preparedForLift;
 @property(nonatomic) struct CGPoint initialLocation; // @synthesize initialLocation=_initialLocation;
+@property(copy, nonatomic) CDUnknownBlockType _sessionDidBegin; // @synthesize _sessionDidBegin=__sessionDidBegin;
 @property(copy, nonatomic) CDUnknownBlockType completion; // @synthesize completion=_completion;
 @property(copy, nonatomic) CDUnknownBlockType animations; // @synthesize animations=_animations;
 @property(nonatomic) _Bool shouldAnimateLift; // @synthesize shouldAnimateLift=_shouldAnimateLift;

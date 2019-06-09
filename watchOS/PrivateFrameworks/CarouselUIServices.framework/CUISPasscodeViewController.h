@@ -62,6 +62,8 @@
 - (_Bool)_privateValidatePasscode:(id)arg1 outError:(id *)arg2;
 - (_Bool)validatePasscode:(id)arg1 error:(id *)arg2;
 - (void)_showPasscodeError:(id)arg1;
+- (id)_messageForError:(id)arg1;
+- (id)_defaultMessageForError:(id)arg1;
 - (void)_showDifferingPasscodes;
 - (void)_showConfirmPasscode:(id)arg1;
 - (void)_setWaiting:(_Bool)arg1 animated:(_Bool)arg2;

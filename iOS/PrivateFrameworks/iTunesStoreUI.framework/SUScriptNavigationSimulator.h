@@ -34,6 +34,7 @@
 - (id)attributeKeys;
 - (id)_className;
 - (long long)_relativeIndexFromIndex:(long long)arg1;
+- (void)_callCallbackWithWithTransition:(id)arg1;
 - (void)_startNextTransition;
 - (CDUnknownBlockType)_popHandler;
 - (void)_handlePopFromIndex:(long long)arg1 toIndex:(long long)arg2;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
++ (BOOL)isAudioPayloadSupported:(int)arg1;
 + (int)payloadFromNegotiationPayload:(int)arg1;
 + (int)negotiationPayloadFromPayload:(int)arg1;
 @property(nonatomic) BOOL useSBR; // @synthesize useSBR=_useSBR;
@@ -41,10 +42,10 @@ __attribute__((visibility("hidden")))
 - (id)description;
 @property(nonatomic) BOOL hasAudioUnitModel;
 - (void)printWithLogFile:(void *)arg1;
-- (id)newAudioRuleCollection;
-- (void)setAudioRuleCollection:(id)arg1;
+- (id)newMediaNegotiatorAudioConfiguration;
+@property(readonly, nonatomic) BOOL allowAudioSwitching;
 @property(readonly, nonatomic) BOOL allowAudioRecording;
-- (id)initWithSSRC:(unsigned int)arg1 audioRuleCollection:(id)arg2 allowAudioRecording:(BOOL)arg3 audioUnitNumber:(unsigned int)arg4;
+- (id)initWithAudioConfiguration:(id)arg1;
 
 @end
 

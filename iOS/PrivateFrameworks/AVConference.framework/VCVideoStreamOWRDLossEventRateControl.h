@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 @interface VCVideoStreamOWRDLossEventRateControl : NSObject <VCVideoStreamRateControlProtocol>
 {
     double _packetLossRate;
+    double _packetLossRateVideo;
     double _roundTripTime;
     double _firstReceiveTime;
     double _shortAverageLag;

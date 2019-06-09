@@ -6,18 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSCharacterSet, NSMutableDictionary, NSMutableSet, NSSet, NSString, SCRBezelServicesManager, SCRCIndexMap, SCRCTargetSelectorTimer, SCRCUserDefaults, SCREvent, SCREventCapsLockDetector, SCRGestureFactory, SCRKeyboardKey, SCRWorkspace;
+@class NSCharacterSet, NSMutableDictionary, NSMutableSet, NSSet, NSString, SCRBezelServicesManager, SCRCIndexMap, SCRCTargetSelectorTimer, SCRCUserDefaults, SCREvent, SCREventCapsLockDetector, SCRGestureFactory, SCRKeyboardKey, SCROutputManager, SCRWorkspace;
 
 __attribute__((visibility("hidden")))
 @interface SCREventFactory : NSObject
 {
-    long long _modifierMask;
+    unsigned long long _modifierMask;
     unsigned int _lastCGSModifierFlags;
     SCRCUserDefaults *_keyboardDomain;
     SCRCTargetSelectorTimer *_keyRepeatTimer;
     SCREvent *_keyRepeatEvent;
     SCRCTargetSelectorTimer *_modifierKeyTimer;
-    int _eventTag;
+    long long _eventTag;
     SCRKeyboardKey *_escapeKey;
     double _lastKeyPressTime;
     NSSet *_repeatCommands;
@@ -26,13 +26,12 @@ __attribute__((visibility("hidden")))
     int _hotKeyDownCount;
     unsigned int _cgsConnection;
     struct ProcessSerialNumber _keyboardPSN;
-    long long _kbCommanderModifierKey;
-    long long _fastSearchModifierKey;
+    unsigned long long _kbCommanderModifierKey;
+    unsigned long long _fastSearchModifierKey;
     struct __CFMachPort *_eventTap;
     unsigned long long _eventTapReconnectCount;
     double _eventTapLastReconnect;
     struct __CGEventTapProxy *_eventTapProxy;
-    struct __CFRunLoopSource *_eventTapSource;
     SCRCTargetSelectorTimer *_invertedTKeyTimer;
     unsigned long long _invertedTStateMask;
     unsigned long long _lastRepeatedMask;
@@ -46,9 +45,7 @@ __attribute__((visibility("hidden")))
     struct __IOHIDEventSystemClient *_client;
     struct __IOHIDServiceClient *_service;
     struct {
-        SCRGestureFactory *currentGestureFactory;
-        int lastState;
-        NSMutableDictionary *trackpadGestureFactories;
+        long long lastState;
         char isTrackpadCommanderEnabled;
         unsigned long long continuityHash;
         long long continuityZone;
@@ -64,17 +61,13 @@ __attribute__((visibility("hidden")))
         char isCursorHidden;
         char snarfingEvents;
         struct CGPoint cursorLocation;
-        NSString *lastCommandKey;
-        NSString *lastGestureKey;
-        NSString *tapDragCommand;
         char tapDragEnabled;
         double tapDragStartTime;
-        SCRCTargetSelectorTimer *mouseDownTimer;
         unsigned long long mouseDownCount;
         char mouseDownIsRight;
         unsigned long long fingerCount;
         unsigned long long tapCount;
-        int axisDirection;
+        long long axisDirection;
         char isControlled;
         char isCommanded;
         long long rotorSoundZone;
@@ -83,52 +76,65 @@ __attribute__((visibility("hidden")))
         char isInPassthruTouchMode;
         struct CGPoint passthruTouchStartPoint;
     } _gesture;
+    SCRCTargetSelectorTimer *_mouseDownTimer;
     SCRCIndexMap *_uniCharToVirtualKeysMap;
     struct {
-        unsigned int numPadCommanderEnabled:1;
-        unsigned int keyboardPassthruEnabled:1;
         unsigned int controlOnly:1;
-        unsigned int modalSessionEnabled:1;
-        unsigned int vocFollowsKeyWindow:1;
+        unsigned int eventCaptureEnabled:1;
+        unsigned int fastSearchEnabled:1;
         unsigned int invalid:1;
         unsigned int kbCommanderEnabled:1;
         unsigned int kbCommanderTracking:1;
+        unsigned int keyboardPassthruEnabled:1;
+        unsigned int modalSessionEnabled:1;
+        unsigned int nonArrowQuickNavEnabled:1;
+        unsigned int numPadCommanderEnabled:1;
+        unsigned int quickNavOverridesSelectionEvents:1;
+        unsigned int speakAfterTextInsertionEnabled:1;
+        unsigned int vocFollowsKeyWindow:1;
         unsigned int itCommanderEnabled:1;
         unsigned int itCommanderCaptureEnabled:1;
         unsigned int itCommanderTemporarilyDisabled:1;
-        unsigned int speakAfterTextInsertionEnabled:1;
-        unsigned int fastSearchEnabled:1;
-        unsigned int nonArrowQuickNavEnabled:1;
-        unsigned int quickNavOverridesSelectionEvents:1;
-        unsigned int eventCaptureEnabled:1;
     } _flags;
+    struct __CFRunLoopSource *_eventTapSource;
+    NSMutableDictionary *_trackpadGestureFactories;
+    SCRGestureFactory *_currentGestureFactory;
+    NSString *_lastCommandKey;
+    NSString *_lastGestureKey;
+    NSString *_tapDragCommand;
     BOOL _voiceOverKeysLocked;
     BOOL __isControlAndOptionPressed;
     BOOL _isSecureInputEnabled;
     BOOL _isProcessingTrackpadCommanderGesture;
     BOOL _screenSaverEnabled;
     BOOL __isVOModifierTemporarilyUnlocked;
+    unsigned char __initializationState;
     BOOL _modifierDelayElapsed;
-    unsigned long long __keysToUseForVOModifier;
+    long long __keysToUseForVOModifier;
     SCREventCapsLockDetector *__capsLockDetector;
     SCRBezelServicesManager *_bezelServicesManager;
-    unsigned long long __syntheticEscapeKeyState;
+    long long __syntheticEscapeKeyState;
+    SCROutputManager *__outputManager;
     SCRWorkspace *__workspaceDelegate;
     unsigned long long __trackpadCommanderControlOptionOnHash;
     unsigned long long __trackpadCommanderControlOptionOffHash;
     unsigned long long __trackpadCommanderCapsLockOnHash;
     unsigned long long __trackpadCommanderCapsLockOffHash;
+    SCRCUserDefaults *__userDefaults;
 }
 
 + (BOOL)isSecurityApprovedEvent:(struct __CGEvent *)arg1;
 + (void)initialize;
+@property(readonly, nonatomic) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
 @property(nonatomic, setter=_setTrackpadCommanderCapsLockOffHash:) unsigned long long _trackpadCommanderCapsLockOffHash; // @synthesize _trackpadCommanderCapsLockOffHash=__trackpadCommanderCapsLockOffHash;
 @property(nonatomic, setter=_setTrackpadCommanderCapsLockOnHash:) unsigned long long _trackpadCommanderCapsLockOnHash; // @synthesize _trackpadCommanderCapsLockOnHash=__trackpadCommanderCapsLockOnHash;
 @property(nonatomic, setter=_setTrackpadCommanderControlOptionOffHash:) unsigned long long _trackpadCommanderControlOptionOffHash; // @synthesize _trackpadCommanderControlOptionOffHash=__trackpadCommanderControlOptionOffHash;
 @property(nonatomic, setter=_setTrackpadCommanderControlOptionOnHash:) unsigned long long _trackpadCommanderControlOptionOnHash; // @synthesize _trackpadCommanderControlOptionOnHash=__trackpadCommanderControlOptionOnHash;
-@property(readonly, nonatomic) SCRWorkspace *_workspaceDelegate; // @synthesize _workspaceDelegate=__workspaceDelegate;
+@property(readonly, nonatomic) __weak SCRWorkspace *_workspaceDelegate; // @synthesize _workspaceDelegate=__workspaceDelegate;
 @property(nonatomic) BOOL modifierDelayElapsed; // @synthesize modifierDelayElapsed=_modifierDelayElapsed;
-@property(nonatomic) unsigned long long _syntheticEscapeKeyState; // @synthesize _syntheticEscapeKeyState=__syntheticEscapeKeyState;
+@property(nonatomic, setter=_setInitializationState:) unsigned char _initializationState; // @synthesize _initializationState=__initializationState;
+@property(readonly, nonatomic) SCROutputManager *_outputManager; // @synthesize _outputManager=__outputManager;
+@property(nonatomic) long long _syntheticEscapeKeyState; // @synthesize _syntheticEscapeKeyState=__syntheticEscapeKeyState;
 @property(nonatomic, setter=_setVOModifierTemporarilyUnlocked:) BOOL _isVOModifierTemporarilyUnlocked; // @synthesize _isVOModifierTemporarilyUnlocked=__isVOModifierTemporarilyUnlocked;
 @property(nonatomic) BOOL screenSaverEnabled; // @synthesize screenSaverEnabled=_screenSaverEnabled;
 @property(nonatomic) BOOL isProcessingTrackpadCommanderGesture; // @synthesize isProcessingTrackpadCommanderGesture=_isProcessingTrackpadCommanderGesture;
@@ -137,18 +143,19 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *_lastITCommand; // @synthesize _lastITCommand;
 @property(retain, nonatomic, setter=_setCapsLockDetector:) SCREventCapsLockDetector *_capsLockDetector; // @synthesize _capsLockDetector=__capsLockDetector;
 @property(nonatomic, setter=_setControlAndOptionPressed:) BOOL _isControlAndOptionPressed; // @synthesize _isControlAndOptionPressed=__isControlAndOptionPressed;
-@property(nonatomic, setter=_setKeysToUseForVOModifier:) unsigned long long _keysToUseForVOModifier; // @synthesize _keysToUseForVOModifier=__keysToUseForVOModifier;
+@property(nonatomic, setter=_setKeysToUseForVOModifier:) long long _keysToUseForVOModifier; // @synthesize _keysToUseForVOModifier=__keysToUseForVOModifier;
+- (void).cxx_destruct;
 - (void)postKeyboardKeyIgnoringEventTap:(unsigned short)arg1 isDown:(BOOL)arg2;
 - (void)_delayedHandleEvent:(id)arg1;
-- (void)processKeyString:(id)arg1 withModifierMask:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)processKeyString:(id)arg1 withModifierMask:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_processKeyString:(id)arg1 withModifierMask:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_processModifierMask:(long long)arg1 modifierFlags:(unsigned long long *)arg2 down:(BOOL)arg3;
-- (void)processVirtualKey:(unsigned short)arg1 withModifierMask:(long long)arg2;
+- (void)_processModifierMask:(unsigned long long)arg1 modifierFlags:(unsigned long long *)arg2 down:(BOOL)arg3;
+- (void)processVirtualKey:(unsigned short)arg1 withModifierMask:(unsigned long long)arg2;
 - (void)_processVirtualKey:(id)arg1 withModifierMask:(id)arg2;
 - (void)clearModifierState;
 - (void)updateCapsLockModifierMask;
 - (void)setEventCaptureEnabled:(BOOL)arg1;
-- (void)_manageModifierAlternatesWithMask:(long long)arg1 event:(struct __CGEvent *)arg2 wasDown:(BOOL)arg3 areDown:(BOOL)arg4;
+- (void)_manageModifierAlternatesWithMask:(unsigned long long)arg1 event:(struct __CGEvent *)arg2 wasDown:(BOOL)arg3 areDown:(BOOL)arg4;
 - (void)clearApplicationModifiers;
 - (void)_updateKeyboardCommanderTrackingState;
 - (void)_handleEvent:(struct __CGEvent *)arg1;
@@ -169,7 +176,7 @@ __attribute__((visibility("hidden")))
 - (void)setInvertedTCommanderCaptureEnabled:(BOOL)arg1;
 - (id)_uniCharToVirtualKeysMap;
 - (BOOL)_handleTimeMachineNumPadEvent:(struct __CGEvent *)arg1;
-- (long long)_fetchAvailableModifiers:(struct __CGEvent *)arg1;
+- (unsigned long long)_fetchAvailableModifiers:(struct __CGEvent *)arg1;
 - (void)_updateTextCursorFeedbackOption;
 - (void)_handleOptionRightArrow;
 - (BOOL)_handleKeyboardCommanderEvent:(struct __CGEvent *)arg1 eventType:(unsigned int)arg2;
@@ -188,8 +195,8 @@ __attribute__((visibility("hidden")))
 - (void)_delayedWorkspaceDidChange;
 - (BOOL)isModalSessionEnabled;
 - (void)setIsModalSessionEnabled:(BOOL)arg1;
-- (int)eventTag;
-- (void)setEventTag:(int)arg1;
+- (long long)eventTag;
+- (void)setEventTag:(long long)arg1;
 - (void)_setSecureInputEnabled:(BOOL)arg1;
 - (void)_updateSecureInputState;
 - (void)updateSecureInputState;
@@ -212,26 +219,25 @@ __attribute__((visibility("hidden")))
 - (void)_updateFastSearchPreferences;
 @property(readonly, nonatomic) BOOL keyboardCommanderEnabled; // @dynamic keyboardCommanderEnabled;
 @property(readonly, nonatomic) BOOL _isVOModifierPressed;
-- (void)_setupEventTapWithEvents:(unsigned int)arg1;
 - (void)setupEventTap;
 - (void)_setEventListenMasksForKeyboard:(BOOL)arg1 mouse:(BOOL)arg2;
 - (void)_initializeModifierState;
-- (BOOL)_registerForCGEvents;
-- (void)_invalidateEventTap;
 - (void)invalidate;
-- (void)dealloc;
-- (id)initWithWorkspaceDelegate:(id)arg1;
+- (void)completeInitialization;
+- (id)initWithWorkspaceDelegate:(id)arg1 userDefaults:(id)arg2 outputManager:(id)arg3;
 - (void)_postProcessEventForFactory:(id)arg1;
 - (BOOL)_handleGestureCommanderEvent:(struct __CGEvent *)arg1;
+- (BOOL)_shouldCaptureSystemGesture:(struct __CGEvent *)arg1;
 - (void)gestureGutterUpCallbackWithFactory:(id)arg1;
 - (void)gestureTrackingCallbackWithFactory:(id)arg1;
 - (void)gestureTappingCallbackWithFactory:(id)arg1;
 - (void)gestureSplitTappingCallbackWithFactory:(id)arg1;
+- (BOOL)shouldBlockSplitTapGestureWithFactory:(id)arg1;
 - (void)_processPreCommand;
 - (void)_processTrackWithFactory:(id)arg1;
 - (void)_processForFactory:(id)arg1 gestureString:(id)arg2 directionString:(id)arg3 countString:(id)arg4 argument:(id)arg5 continuous:(BOOL)arg6 resetCursor:(BOOL)arg7;
 - (id)_gestureCommander;
-- (BOOL)_processPressEventWithGestureString:(id)arg1 failSilently:(BOOL)arg2 modifierMask:(long long)arg3 ignoreHelp:(BOOL)arg4;
+- (BOOL)_processPressEventWithGestureString:(id)arg1 failSilently:(BOOL)arg2 modifierMask:(unsigned long long)arg3 ignoreHelp:(BOOL)arg4;
 - (void)_processMouseDown;
 - (void)_processPassthruTouchStart:(BOOL)arg1;
 - (void)_processIdle;
@@ -251,6 +257,9 @@ __attribute__((visibility("hidden")))
 - (void)_enableTrackpadsFromPreferences:(BOOL)arg1;
 - (unsigned int)_trackpadDisabledEventMask;
 - (unsigned int)_trackpadEnabledEventMask;
+- (void)_invalidateEventTap;
+- (void)_setupEventTapWithEvents:(unsigned int)arg1;
+- (BOOL)_registerForCGEvents;
 
 @end
 

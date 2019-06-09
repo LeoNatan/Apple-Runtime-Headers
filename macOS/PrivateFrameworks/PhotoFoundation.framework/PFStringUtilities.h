@@ -10,6 +10,7 @@
 {
 }
 
++ (id)descriptionForMachTimeInterval:(unsigned long long)arg1;
 + (id)descriptionForNSInterval:(unsigned long long)arg1;
 + (id)descriptionForTimeInterval:(double)arg1;
 + (id)LTRString:(id)arg1;

@@ -20,8 +20,10 @@
     NSString *_refreshToken;
     long long _statusCode;
     NSString *_token;
+    NSString *_idToken;
 }
 
+@property(readonly) NSString *idToken; // @synthesize idToken=_idToken;
 @property(readonly) NSString *token; // @synthesize token=_token;
 @property(readonly) long long statusCode; // @synthesize statusCode=_statusCode;
 @property(readonly) NSString *refreshToken; // @synthesize refreshToken=_refreshToken;

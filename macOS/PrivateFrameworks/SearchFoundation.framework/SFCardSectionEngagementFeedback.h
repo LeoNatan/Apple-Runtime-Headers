@@ -13,9 +13,11 @@
     SFPunchout *_destination;
     unsigned long long _triggerEvent;
     unsigned long long _actionCardType;
+    unsigned long long _actionTarget;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) unsigned long long actionTarget; // @synthesize actionTarget=_actionTarget;
 @property(nonatomic) unsigned long long actionCardType; // @synthesize actionCardType=_actionCardType;
 @property(nonatomic) unsigned long long triggerEvent; // @synthesize triggerEvent=_triggerEvent;
 @property(retain, nonatomic) SFPunchout *destination; // @synthesize destination=_destination;

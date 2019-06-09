@@ -14,6 +14,8 @@
     NSDictionary *_entitlements;
 }
 
++ (_Bool)isPrivateSearchEnabledProcess;
++ (_Bool)isSearchEnabledProcess;
 + (_Bool)isInternalProcess;
 + (_Bool)isDashboardAppProcess;
 + (id)allowedEntitlements;
@@ -27,6 +29,8 @@
 - (_Bool)boolValueForEntitlement:(id)arg1 error:(id *)arg2;
 - (_Bool)isInDevelopmentEnvironment;
 - (_Bool)hasEntitlement:(id)arg1;
+- (_Bool)isPrivateSearchAPIEnabled;
+- (_Bool)isSearchAPIEnabled;
 - (_Bool)isRegisterDashboardEnabled;
 - (_Bool)isDashboardAPIEnabled;
 - (_Bool)isInternal;

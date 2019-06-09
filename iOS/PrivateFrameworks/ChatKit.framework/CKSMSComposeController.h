@@ -43,6 +43,7 @@
 - (void)setTextEntryContentsVisible:(_Bool)arg1;
 - (void)smsComposeControllerSendStartedWithText:(id)arg1;
 - (void)smsComposeControllerShouldSendMessageWithText:(id)arg1 toRecipients:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)smsComposeControllerEntryViewContentInserted;
 - (void)smsComposeControllerCancelled;
 - (void)smsComposeControllerAppeared;
 - (void)smsComposeControllerDataInserted;
@@ -59,9 +60,12 @@
 - (void)disableCameraAttachments;
 - (void)setCanEditRecipients:(_Bool)arg1;
 - (void)setPendingAddresses:(id)arg1;
+- (void)setText:(id)arg1 subject:(id)arg2 addresses:(id)arg3 chatGUID:(id)arg4 groupName:(id)arg5;
 - (void)setText:(id)arg1 subject:(id)arg2 addresses:(id)arg3;
 - (_Bool)insertMessage:(id)arg1;
 - (_Bool)canInsertMessage;
+- (void)showInsertedItemInEntryView;
+- (void)insertItemForSendingAndCalculateEntryViewFrame:(id)arg1 withAlternateFilename:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)insertRichLinkWithURL:(id)arg1 andData:(id)arg2;
 - (_Bool)insertAttachmentWithURL:(id)arg1 andDescription:(id)arg2;
 - (_Bool)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;

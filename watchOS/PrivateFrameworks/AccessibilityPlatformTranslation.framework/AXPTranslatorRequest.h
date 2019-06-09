@@ -18,11 +18,13 @@
     unsigned int _attributeType;
     unsigned int _actionType;
     NSDictionary *_parameters;
+    unsigned int _clientType;
 }
 
 + (id)allowedDecodableClasses;
 + (id)requestWithTranslation:(id)arg1;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned int clientType; // @synthesize clientType=_clientType;
 @property(retain, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;
 @property(nonatomic) unsigned int actionType; // @synthesize actionType=_actionType;
 @property(nonatomic) unsigned int attributeType; // @synthesize attributeType=_attributeType;

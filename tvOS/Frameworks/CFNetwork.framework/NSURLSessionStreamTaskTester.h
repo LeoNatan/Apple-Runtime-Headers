@@ -12,7 +12,6 @@
 @class NSError, NSInputStream, NSOutputStream, NSString, NSURLSession, NSURLSessionStreamTask;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface NSURLSessionStreamTaskTester : NSObject <NSURLSessionStreamDelegate, NSStreamDelegate>
 {
     struct StreamTaskTestConfig _testConfig;

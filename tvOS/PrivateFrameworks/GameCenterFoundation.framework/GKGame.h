@@ -9,7 +9,7 @@
 #import <GameCenterFoundation/NSCoding-Protocol.h>
 #import <GameCenterFoundation/NSSecureCoding-Protocol.h>
 
-@class GKGameInternal, GKStoreItemInternal, NSDictionary, NSNumber, NSString;
+@class GKGameDescriptor, GKGameInternal, GKStoreItemInternal, NSDictionary, NSNumber, NSString;
 
 @interface GKGame : NSObject <NSCoding, NSSecureCoding>
 {
@@ -30,7 +30,6 @@
 + (_Bool)isPreferences;
 @property long long environment; // @synthesize environment=_environment;
 @property(retain) GKGameInternal *internal; // @synthesize internal=_internal;
-@property(readonly, nonatomic, getter=isDownloading) _Bool downloading;
 @property(readonly, nonatomic, getter=isInstalled) _Bool installedGame;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
@@ -40,7 +39,8 @@
 - (_Bool)isStoreItemUnexpired;
 @property(readonly, nonatomic) struct GKGameInfo gameInfo;
 @property(readonly, nonatomic) NSString *cacheKey;
-@property(readonly, nonatomic) NSDictionary *gameDescriptor;
+@property(readonly, nonatomic) NSDictionary *gameDescriptorDictionary;
+@property(readonly, nonatomic) GKGameDescriptor *gameDescriptor;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -65,8 +65,9 @@
 @property(readonly, nonatomic) NSString *defaultCategory; // @dynamic defaultCategory;
 @property(readonly, nonatomic) NSNumber *externalVersion; // @dynamic externalVersion;
 @property(readonly, nonatomic) NSString *name; // @dynamic name;
-@property(nonatomic) unsigned char platform; // @dynamic platform;
+@property(nonatomic) long long platform; // @dynamic platform;
 @property(nonatomic, getter=isPrerendered) _Bool prerendered; // @dynamic prerendered;
+@property(readonly, nonatomic) NSString *shortBundleVersion; // @dynamic shortBundleVersion;
 @property(retain, nonatomic) GKStoreItemInternal *storeItem; // @dynamic storeItem;
 @property(readonly, nonatomic) _Bool supportsMultiplayer; // @dynamic supportsMultiplayer;
 @property(readonly, nonatomic) _Bool supportsTurnBasedMultiplayer; // @dynamic supportsTurnBasedMultiplayer;

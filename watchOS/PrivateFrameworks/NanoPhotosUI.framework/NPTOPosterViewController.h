@@ -64,8 +64,7 @@
 - (void)getSelectedPhotoFacePhoto:(id *)arg1 contentOffset:(struct CGPoint *)arg2 zoomScale:(float *)arg3;
 - (void)savePhotoForWatchFaceInDirectory:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_createWatchFace:(_Bool)arg1;
-- (void)_createKaleidoscopeWatchFace;
-- (void)_createPhotosWatchFace;
+- (void)_handleCreateWatchFaceAction;
 - (id)actionController;
 - (_Bool)canProvideActionController;
 - (void)_updateUserActivity;

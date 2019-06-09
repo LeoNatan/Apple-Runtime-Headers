@@ -12,17 +12,19 @@
 
 @class NSImage, NSMenuItem, NSString, NSToolbar, NSView;
 
-@interface NSToolbarItem : NSObject <NSCopying, NSMenuItemValidation, NSValidatedUserInterfaceItem>
+@interface NSToolbarItem : NSObject <NSMenuItemValidation, NSValidatedUserInterfaceItem, NSCopying>
 {
     NSToolbar *_toolbar;
     NSImage *_image;
+    NSString *_title;
     NSString *_itemIdentifier;
     NSString *_label;
-    unsigned long long _labelAlignment;
+    long long _labelAlignment;
     NSString *_paletteLabel;
     NSString *_toolTip;
     NSMenuItem *_menuItemRep;
     long long _tag;
+    BOOL _bordered;
     struct __tbiFlags {
         unsigned int viewRespondsToIsEnabled:1;
         unsigned int viewRespondsToSetEnabled:1;
@@ -52,7 +54,10 @@
         unsigned int isMeasuring:1;
         unsigned int ignoresEncodedMinMaxValue:1;
         unsigned int usesStaticMinMaxValues:1;
-        unsigned int RESERVED:4;
+        unsigned int viewRespondsToTitle:1;
+        unsigned int viewRespondsToSetTitle:1;
+        unsigned int viewRespondsToBordered:1;
+        unsigned int viewRespondsToSetBordered:1;
     } _tbiFlags;
     id _tbiReserved;
     id _itemViewer;
@@ -80,7 +85,10 @@
 - (void).cxx_destruct;
 - (id)extensionService;
 @property(readonly) BOOL allowsDuplicatesInToolbar;
+- (void)_configureDefaultViewIfNecessary;
+@property(copy) NSString *title;
 @property(retain) NSImage *image;
+@property(getter=isBordered) BOOL bordered;
 - (BOOL)isSpace;
 - (BOOL)isMeasuring;
 - (void)_itemViewMinSize:(struct CGSize *)arg1 maxSize:(struct CGSize *)arg2 stretchesContent:(BOOL)arg3;
@@ -189,9 +197,11 @@
 - (id)_initialViewToSelectFromDirection:(long long)arg1;
 - (id)_buttonAtIndex:(unsigned long long)arg1;
 - (id)_button;
+- (id)_buttonIfExists;
+- (id)_labelView;
 - (void)_setItemViewer:(id)arg1;
 - (id)_itemViewer;
-- (unsigned long long)_labelAlignment;
+- (long long)_labelAlignment;
 - (BOOL)_allowToolbarToStealEvent:(id)arg1;
 - (BOOL)wantsToDrawLabelInPalette;
 - (BOOL)wantsToDrawIconIntoLabelAreaInDisplayMode:(unsigned long long)arg1;

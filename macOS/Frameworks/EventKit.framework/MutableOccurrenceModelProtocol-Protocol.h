@@ -28,5 +28,6 @@
 @property(copy, nonatomic) id <EKProtocolStructuredLocation> ekStructuredLocation;
 @property(retain, nonatomic) id <CalendarModelProtocol> container;
 - (void)setAllDay:(BOOL)arg1;
+- (void)setSequence:(NSNumber *)arg1;
 @end
 

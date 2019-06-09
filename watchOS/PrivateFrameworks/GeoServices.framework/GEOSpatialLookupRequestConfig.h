@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
     double _timeout;
 }
 
-- (int)dataRequestKindForRequest:(id)arg1;
+- (CDStruct_d1a7ebee)dataRequestKindForRequest:(id)arg1 traits:(id)arg2;
 - (unsigned char)requestCounterInfoTypeForRequest:(id)arg1;
 - (unsigned int)urlType;
 - (id)initWithTimeout:(double)arg1;

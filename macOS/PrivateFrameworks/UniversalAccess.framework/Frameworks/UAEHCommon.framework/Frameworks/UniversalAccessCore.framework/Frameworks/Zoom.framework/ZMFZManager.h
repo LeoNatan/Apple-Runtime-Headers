@@ -107,8 +107,8 @@
 - (unsigned long long)_visualEventIndicatorStyle;
 - (unsigned int)_cgsConnectionID;
 - (void)_ensureVisualEventIndicatorViewStyleMatchesPreferences;
-- (struct __CGEvent *)processActiveEventTapEvent:(struct __CGEvent *)arg1 type:(unsigned int)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
-- (void)processPassiveEventTapEvent:(struct __CGEvent *)arg1 type:(unsigned int)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
+- (struct __CGEvent *)eventTapManager:(id)arg1 activelyTappedEvent:(struct __CGEvent *)arg2 type:(unsigned int)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
+- (void)eventTapManager:(id)arg1 passivelyTappedKeyboardEvent:(id)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
 - (void)notableWindowAppeared:(id)arg1;
 - (void)stateMachine:(id)arg1 zoomToFactor:(double)arg2 zoomOrigin:(struct CGPoint)arg3 suppressAnimation:(BOOL)arg4;
 - (void)stateMachine:(id)arg1 moveMouseTo:(struct CGPoint)arg2;

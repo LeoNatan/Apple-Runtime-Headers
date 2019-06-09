@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class UNSKeyedDataStoreRepository, UNSKeyedObservable;
+@class UNSBundleLibrarian, UNSKeyedDataStoreRepository, UNSKeyedObservable;
 @protocol OS_dispatch_queue;
 
 @interface UNSPendingNotificationRepository : NSObject
@@ -14,6 +14,7 @@
     UNSKeyedDataStoreRepository *_repository;
     UNSKeyedObservable *_observable;
     NSObject<OS_dispatch_queue> *_queue;
+    UNSBundleLibrarian *_librarian;
 }
 
 - (void).cxx_destruct;
@@ -25,6 +26,7 @@
 - (id)_queue_pendingNotificationRecordsForBundleIdentifier:(id)arg1;
 - (void)_queue_setPendingNotificationDictionaries:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)_queue_pendingNotificationDictionariesForBundleIdentifier:(id)arg1;
+- (void)contentProtectionStateChangedForFirstUnlock:(_Bool)arg1;
 - (void)performMigration;
 - (void)applicationStateDidRestore;
 - (void)notificationSourcesDidUninstall:(id)arg1;
@@ -33,8 +35,8 @@
 - (id)allBundleIdentifiers;
 - (void)removeObserver:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)addObserver:(id)arg1 forBundleIdentifier:(id)arg2;
-- (id)initWithDataStoreRepository:(id)arg1 observable:(id)arg2;
-- (id)initWithDirectory:(id)arg1;
+- (id)initWithDataStoreRepository:(id)arg1 observable:(id)arg2 librarian:(id)arg3;
+- (id)initWithDirectory:(id)arg1 librarian:(id)arg2 repositoryProtectionStrategy:(id)arg3;
 - (long long)_maxObjectsPerKey;
 
 @end

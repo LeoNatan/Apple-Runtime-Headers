@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVAssetResourceLoadingContentInformationRequest, AVAssetResourceLoadingDataRequest, AVAssetResourceLoadingRequestor, AVWeakReference, NSDictionary, NSMutableData, NSMutableURLRequest, NSURLRequest, NSURLResponse;
+@class AVAssetResourceLoadingContentInformationRequest, AVAssetResourceLoadingDataRequest, AVAssetResourceLoadingRequestor, AVDispatchOnce, AVWeakReference, NSDictionary, NSMutableData, NSMutableURLRequest, NSURLRequest, NSURLResponse;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -18,8 +18,7 @@ __attribute__((visibility("hidden")))
     struct OpaqueFigCustomURLHandler *customURLHandler;
     struct __CFDictionary *requestInfo;
     unsigned long long requestID;
-    long long responseInfoSentOnceToken;
-    NSDictionary *requestDictionary;
+    AVDispatchOnce *responseInfoSentOnceToken;
     NSMutableURLRequest *URLRequest;
     NSURLResponse *response;
     NSURLRequest *redirect;
@@ -31,9 +30,6 @@ __attribute__((visibility("hidden")))
     int finished;
     int cancelled;
     int sentContentInfo;
-    struct OpaqueFigPlaybackItem *figPlaybackItem;
-    struct OpaqueFigAssetImageGenerator *figImageGenerator;
-    struct OpaqueFigAsset *figAsset;
     CDUnknownBlockType streamingKeyRequestCompletionHandler;
     struct OpaqueFigCPECryptor *figCryptor;
     AVAssetResourceLoadingRequestor *requestor;

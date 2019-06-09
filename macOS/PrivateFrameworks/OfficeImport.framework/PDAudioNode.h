@@ -6,6 +6,7 @@
 
 #import <OfficeImport/PDMediaNode.h>
 
+__attribute__((visibility("hidden")))
 @interface PDAudioNode : PDMediaNode
 {
     BOOL mIsNarration;

@@ -6,33 +6,45 @@
 
 #import <objc/NSObject.h>
 
+#import <UserNotifications/BSXPCCoding-Protocol.h>
 #import <UserNotifications/NSCopying-Protocol.h>
 #import <UserNotifications/NSSecureCoding-Protocol.h>
 
-@class NSString, UNNotification;
+@class BSServiceConnectionEndpoint, NSString, UNNotification;
 
-@interface UNNotificationResponse : NSObject <NSCopying, NSSecureCoding>
+@interface UNNotificationResponse : NSObject <BSXPCCoding, NSCopying, NSSecureCoding>
 {
     UNNotification *_notification;
     NSString *_actionIdentifier;
-    unsigned long long _actionOptions;
+    NSString *_originIdentifier;
+    BSServiceConnectionEndpoint *_targetConnectionEndpoint;
+    NSString *_targetSceneIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2 actionOptions:(unsigned long long)arg3;
++ (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2 originIdentifier:(id)arg3 targetConnectionEndpoint:(id)arg4 targetSceneIdentifier:(id)arg5;
++ (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2 originIdentifier:(id)arg3 targetConnectionEndpoint:(id)arg4;
 + (id)responseWithNotification:(id)arg1 actionIdentifier:(id)arg2;
-@property(readonly, nonatomic) unsigned long long actionOptions; // @synthesize actionOptions=_actionOptions;
+@property(readonly, nonatomic) NSString *targetSceneIdentifier; // @synthesize targetSceneIdentifier=_targetSceneIdentifier;
+@property(readonly, nonatomic) BSServiceConnectionEndpoint *targetConnectionEndpoint; // @synthesize targetConnectionEndpoint=_targetConnectionEndpoint;
+@property(readonly, copy, nonatomic) NSString *originIdentifier; // @synthesize originIdentifier=_originIdentifier;
 @property(readonly, copy, nonatomic) NSString *actionIdentifier; // @synthesize actionIdentifier=_actionIdentifier;
 @property(readonly, copy, nonatomic) UNNotification *notification; // @synthesize notification=_notification;
 - (void).cxx_destruct;
+- (id)initWithXPCDictionary:(id)arg1;
+- (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (id)initWithNotification:(id)arg1 actionIdentifier:(id)arg2;
-- (id)_initWithNotification:(id)arg1 actionIdentifier:(id)arg2 actionOptions:(unsigned long long)arg3;
+- (id)_initWithNotification:(id)arg1 actionIdentifier:(id)arg2 originIdentifier:(id)arg3 targetConnectionEndpoint:(id)arg4 targetSceneIdentifier:(id)arg5;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

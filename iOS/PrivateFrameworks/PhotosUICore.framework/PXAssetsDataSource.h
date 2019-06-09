@@ -6,18 +6,39 @@
 
 #import <PhotosUICore/PXSectionedDataSource.h>
 
+@protocol PXDisplayAssetCollection;
+
 @interface PXAssetsDataSource : PXSectionedDataSource
 {
 }
 
+- (void)prefetchIndexPaths:(id)arg1 level:(unsigned long long)arg2;
+- (id)assetCollectionReferenceNearestToObjectReference:(id)arg1;
 - (id)objectReferenceNearestToObjectReference:(id)arg1;
+@property(readonly, nonatomic) long long numberOfEnrichedSections;
 - (_Bool)hasCurationForAssetCollection:(id)arg1;
-- (id)keyAssetsForAssetCollectionAtSectionIndexPath:(struct PXSimpleIndexPath)arg1;
+- (long long)numberOfCuratedItemsInAssetCollection:(id)arg1;
+- (long long)numberOfUncuratedItemsInAssetCollection:(id)arg1;
+- (long long)numberOfCuratedItemsInSectionIndexPath:(struct PXSimpleIndexPath)arg1;
+- (long long)numberOfUncuratedItemsInSectionIndexPath:(struct PXSimpleIndexPath)arg1;
+- (id)keyAssetsForAssetCollection:(id)arg1;
+- (struct PXSimpleIndexPath)keyAssetIndexPathForSectionIndexPath:(struct PXSimpleIndexPath)arg1;
+- (id)keyAssetsInSectionIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)startingAssetReference;
+- (unsigned long long)estimatedAssetCountForSectionIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)assetReferenceForAssetReference:(id)arg1;
 - (struct PXSimpleIndexPath)indexPathForAssetReference:(id)arg1;
 - (id)assetReferenceAtItemIndexPath:(struct PXSimpleIndexPath)arg1;
 - (Class)objectReferenceClassForItem;
+- (id)assetCollectionReferencesWithParentAssetCollectionReference:(id)arg1 assetCollectionReferenceWithSameKeyAssetAsParent:(id *)arg2;
+- (id)assetCollectionReferencesWithParentAssetCollectionReference:(id)arg1;
+- (id)assetCollectionReferenceForAssetCollectionReference:(id)arg1;
+- (struct PXSimpleIndexPath)indexPathForAssetCollectionReference:(id)arg1;
+- (id)assetCollectionReferenceAtSectionIndexPath:(struct PXSimpleIndexPath)arg1;
+- (Class)objectReferenceClassForSection;
+@property(readonly, nonatomic) id <PXDisplayAssetCollection> lastAssetCollection;
+@property(readonly, nonatomic) id <PXDisplayAssetCollection> firstAssetCollection;
+- (id)assetIdentifierAtItemIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)assetAtItemIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)assetsInSectionIndexPath:(struct PXSimpleIndexPath)arg1;
 - (id)assetCollectionAtSectionIndexPath:(struct PXSimpleIndexPath)arg1;

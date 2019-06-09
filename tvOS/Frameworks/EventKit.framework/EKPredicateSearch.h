@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     int _retryCount;
 }
 
++ (id)signpostHandle;
 + (id)searchWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;
 - (void).cxx_destruct;
 - (void)disconnect;
@@ -35,6 +36,8 @@ __attribute__((visibility("hidden")))
 - (void)_startProcessingWithCompletion:(CDUnknownBlockType)arg1 synchronous:(_Bool)arg2 processor:(CDUnknownBlockType)arg3;
 - (void)_startFetchObjectIDsActivityWithCompletion:(CDUnknownBlockType)arg1 synchronous:(_Bool)arg2;
 - (void)_startActivityWithCompletion:(CDUnknownBlockType)arg1 synchronous:(_Bool)arg2;
+- (void)signpostEndWithError:(int)arg1 count:(unsigned long long)arg2;
+- (void)signpostStart;
 - (id)_createOSActivity;
 - (void)terminate;
 - (id)initWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;

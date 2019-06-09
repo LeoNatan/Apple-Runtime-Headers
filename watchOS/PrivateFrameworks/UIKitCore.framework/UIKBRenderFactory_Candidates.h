@@ -9,23 +9,10 @@
 __attribute__((visibility("hidden")))
 @interface UIKBRenderFactory_Candidates : UIKBRenderFactory
 {
-    _Bool _shouldUseKeyboardBackground;
 }
 
-@property(nonatomic) _Bool shouldUseKeyboardBackground; // @synthesize shouldUseKeyboardBackground=_shouldUseKeyboardBackground;
-- (id)traitsForExtendedView;
-- (id)traitsForEdgeGradientWithSize:(struct CGSize)arg1;
-- (id)traitsForSortControlBackgroundWithSize:(struct CGSize)arg1 edges:(unsigned int)arg2;
-- (id)traitsForEmptyExtendedPane:(struct CGSize)arg1 rowHeight:(float)arg2 idiomPad:(_Bool)arg3 clipCorners:(_Bool)arg4;
-- (id)traitsForExtendedCellSize:(struct CGSize)arg1 highlighted:(_Bool)arg2 groupHeader:(_Bool)arg3 edges:(unsigned int)arg4;
 - (id)traitsForHWRCellSize:(struct CGSize)arg1 highlighted:(_Bool)arg2;
-- (id)traitsForToggleButtonWithSize:(struct CGSize)arg1 highlighted:(_Bool)arg2 edges:(unsigned int)arg3;
-- (id)traitsForCellSize:(struct CGSize)arg1 disambiguation:(_Bool)arg2 highlighted:(_Bool)arg3 edges:(unsigned int)arg4;
 - (id)initWithRenderingContext:(id)arg1;
-- (id)controlKeyDividerColorName;
-- (id)controlKeyForegroundColorName;
-- (id)controlKeyBackgroundColorName;
-- (id)defaultKeyDividerColorName;
 - (int)lightHighQualityEnabledBlendForm;
 
 @end

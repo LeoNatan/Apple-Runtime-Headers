@@ -34,6 +34,7 @@
 
 @property BOOL plotActiveRangeOnly; // @synthesize plotActiveRangeOnly;
 @property BOOL drawActivePointOnly; // @synthesize drawActivePointOnly;
+- (void)viewDidChangeEffectiveAppearance;
 - (BOOL)acceptsFirstMouse:(id)arg1;
 - (void)parameterValuesChanged:(id)arg1 param1:(unsigned int)arg2 value:(float)arg3 param2:(unsigned int)arg4 value:(float)arg5;
 - (void)parameterValueChanged:(id)arg1 param:(unsigned int)arg2 value:(float)arg3;

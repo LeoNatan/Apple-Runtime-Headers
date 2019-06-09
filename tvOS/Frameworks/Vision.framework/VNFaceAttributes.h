@@ -22,19 +22,25 @@
     VNFaceAttributeCategory *_hairColorCategory;
     VNFaceAttributeCategory *_baldCategory;
     VNFaceAttributeCategory *_glassesCategory;
+    VNFaceAttributeCategory *_makeupCategory;
+    VNFaceAttributeCategory *_makeupEyesCategory;
+    VNFaceAttributeCategory *_makeupLipsCategory;
     unsigned long long _requestRevision;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
-@property(copy, nonatomic) VNFaceAttributeCategory *glassesCategory; // @synthesize glassesCategory=_glassesCategory;
-@property(copy, nonatomic) VNFaceAttributeCategory *baldCategory; // @synthesize baldCategory=_baldCategory;
-@property(copy, nonatomic) VNFaceAttributeCategory *hairColorCategory; // @synthesize hairColorCategory=_hairColorCategory;
-@property(copy, nonatomic) VNFaceAttributeCategory *faceHairCategory; // @synthesize faceHairCategory=_faceHairCategory;
-@property(copy, nonatomic) VNFaceAttributeCategory *smilingCategory; // @synthesize smilingCategory=_smilingCategory;
-@property(copy, nonatomic) VNFaceAttributeCategory *eyesCategory; // @synthesize eyesCategory=_eyesCategory;
-@property(copy, nonatomic) VNFaceAttributeCategory *genderCategory; // @synthesize genderCategory=_genderCategory;
-@property(copy, nonatomic) VNFaceAttributeCategory *ageCategory; // @synthesize ageCategory=_ageCategory;
+@property(retain) VNFaceAttributeCategory *makeupLipsCategory; // @synthesize makeupLipsCategory=_makeupLipsCategory;
+@property(retain) VNFaceAttributeCategory *makeupEyesCategory; // @synthesize makeupEyesCategory=_makeupEyesCategory;
+@property(retain) VNFaceAttributeCategory *makeupCategory; // @synthesize makeupCategory=_makeupCategory;
+@property(retain) VNFaceAttributeCategory *glassesCategory; // @synthesize glassesCategory=_glassesCategory;
+@property(retain) VNFaceAttributeCategory *baldCategory; // @synthesize baldCategory=_baldCategory;
+@property(retain) VNFaceAttributeCategory *hairColorCategory; // @synthesize hairColorCategory=_hairColorCategory;
+@property(retain) VNFaceAttributeCategory *faceHairCategory; // @synthesize faceHairCategory=_faceHairCategory;
+@property(retain) VNFaceAttributeCategory *smilingCategory; // @synthesize smilingCategory=_smilingCategory;
+@property(retain) VNFaceAttributeCategory *eyesCategory; // @synthesize eyesCategory=_eyesCategory;
+@property(retain) VNFaceAttributeCategory *genderCategory; // @synthesize genderCategory=_genderCategory;
+@property(retain) VNFaceAttributeCategory *ageCategory; // @synthesize ageCategory=_ageCategory;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

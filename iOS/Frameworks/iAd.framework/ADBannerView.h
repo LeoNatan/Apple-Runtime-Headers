@@ -14,7 +14,6 @@
 
 @interface ADBannerView : UIView <ADAdRecipient, ADDimmerViewDelegate>
 {
-    id <ADBannerViewDelegate> _weakDelegate;
     id <ADBannerViewInternalDelegate> _weakInternalDelegate;
     _Bool _displayed;
     _Bool _reUsed;
@@ -55,6 +54,7 @@
     NSDate *_loadEndTime;
     double _adDataLoadTime;
     double _bannerLoadTime;
+    id <ADBannerViewDelegate> _weakDelegate;
     struct CGSize _portraitSize;
     struct CGSize _landscapeSize;
 }
@@ -67,6 +67,7 @@
 + (struct CGSize)sizeFromBannerContentSizeIdentifier:(id)arg1;
 + (void)setServerURL:(id)arg1;
 + (_Bool)requiresConstraintBasedLayout;
+@property(nonatomic) __weak id <ADBannerViewDelegate> weakDelegate; // @synthesize weakDelegate=_weakDelegate;
 @property(nonatomic) double bannerLoadTime; // @synthesize bannerLoadTime=_bannerLoadTime;
 @property(nonatomic) double adDataLoadTime; // @synthesize adDataLoadTime=_adDataLoadTime;
 @property(copy, nonatomic) NSDate *loadEndTime; // @synthesize loadEndTime=_loadEndTime;
@@ -108,6 +109,7 @@
 @property(nonatomic) int slotPosition; // @synthesize slotPosition=_slotPosition;
 @property(nonatomic) int screenfuls; // @synthesize screenfuls=_screenfuls;
 @property(copy, nonatomic) NSString *adResponseId; // @synthesize adResponseId=_adResponseId;
+- (void).cxx_destruct;
 - (id)currentAdIdentifier;
 - (void)unregisterVideoPlayerForAdAnalytics:(id)arg1;
 - (void)registerVideoPlayerForAdAnalytics:(id)arg1;
@@ -174,7 +176,6 @@
 - (void)serverBannerViewWillLoad;
 @property(readonly, nonatomic) UIViewController *presentingViewController;
 - (void)setViewSizeInPortrait:(struct CGSize)arg1 inLandscape:(struct CGSize)arg2;
-- (id)adPrivacyDetailsAttributes;
 - (void)privacyButtonWasTapped;
 - (void)_resetHighlightTimer;
 - (void)_updateHighlight:(id)arg1;
@@ -183,10 +184,6 @@
 - (void)displayCreativeView;
 - (void)displayBannerView;
 - (void)reportNativeClickEvent;
-- (void)reportAdPrivacySheetDidLinkOut;
-- (void)reportAdPrivacySheetDidDisappear;
-- (void)reportAdPrivacySheetDidAppear;
-- (void)reportAdPrivacySheetDidRender;
 - (void)bannerTappedAtPoint:(struct CGPoint)arg1 withMRAIDAction:(id)arg2;
 - (void)bannerTappedAtPoint:(struct CGPoint)arg1;
 - (void)beginAction;

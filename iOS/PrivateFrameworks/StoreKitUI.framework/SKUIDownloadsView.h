@@ -6,6 +6,7 @@
 
 #import <UIKit/UIView.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIDownloadsView : UIView
 {
     UIView *_contentView;

@@ -6,31 +6,49 @@
 
 #import <objc/NSObject.h>
 
+#import <Intents/INCodableAttributeRelationComparing-Protocol.h>
+#import <Intents/INCodableCoding-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class INCodableEnum, NSArray, NSString;
 
-@interface INCodableEnumValue : NSObject <NSSecureCoding, NSCopying>
+@interface INCodableEnumValue : NSObject <INCodableAttributeRelationComparing, NSSecureCoding, NSCopying, INCodableCoding>
 {
+    INCodableEnum *_codableEnum;
     long long _index;
     NSString *_name;
     NSString *_displayName;
     NSString *_displayNameLocID;
+    NSArray *_synonyms;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSArray *synonyms; // @synthesize synonyms=_synonyms;
 @property(copy, nonatomic) NSString *displayNameLocID; // @synthesize displayNameLocID=_displayNameLocID;
 @property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) long long index; // @synthesize index=_index;
+@property(nonatomic, setter=_setCodableEnum:) __weak INCodableEnum *_codableEnum; // @synthesize _codableEnum;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)_dictionaryRepresentation;
+- (id)dictionaryRepresentationForLanguage:(id)arg1;
+- (id)dictionaryRepresentation;
+- (void)updateWithDictionary:(id)arg1;
+- (id)dictionaryKeyForKeyPath:(id)arg1;
+- (id)keyPrefix;
+- (id)localizedDisplayNameForLanguage:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *localizedDisplayName;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)_intents_compareValue:(id)arg1 relation:(unsigned long long)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

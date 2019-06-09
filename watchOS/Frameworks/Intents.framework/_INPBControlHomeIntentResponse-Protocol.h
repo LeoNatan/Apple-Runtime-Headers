@@ -6,6 +6,14 @@
 
 #import <Intents/NSObject-Protocol.h>
 
+@class NSArray, _INPBHomeEntityResponse;
+
 @protocol _INPBControlHomeIntentResponse <NSObject>
++ (Class)entityResponsesType;
+@property(readonly, nonatomic) unsigned int entityResponsesCount;
+@property(copy, nonatomic) NSArray *entityResponses;
+- (_INPBHomeEntityResponse *)entityResponsesAtIndex:(unsigned int)arg1;
+- (void)addEntityResponses:(_INPBHomeEntityResponse *)arg1;
+- (void)clearEntityResponses;
 @end
 

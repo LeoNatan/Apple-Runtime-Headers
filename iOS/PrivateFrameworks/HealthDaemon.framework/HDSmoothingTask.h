@@ -6,17 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class HKWorkoutRoute, NSArray;
+@class HDDaemonTransaction, HKWorkoutRoute, NSArray;
 
 @interface HDSmoothingTask : NSObject
 {
     HKWorkoutRoute *_sample;
     NSArray *_unsmoothedLocations;
     CDUnknownBlockType _completionHandler;
+    HDDaemonTransaction *_transaction;
     unsigned long long _smoothingAttempts;
 }
 
 @property unsigned long long smoothingAttempts; // @synthesize smoothingAttempts=_smoothingAttempts;
+@property(retain, nonatomic) HDDaemonTransaction *transaction; // @synthesize transaction=_transaction;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(retain, nonatomic) NSArray *unsmoothedLocations; // @synthesize unsmoothedLocations=_unsmoothedLocations;
 @property(retain, nonatomic) HKWorkoutRoute *sample; // @synthesize sample=_sample;

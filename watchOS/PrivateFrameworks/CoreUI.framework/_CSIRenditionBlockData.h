@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     char *_data;
     unsigned int _nrows;
     unsigned long _rowbytes;
-    unsigned long _imageBytes;
+    // Error parsing type: AL, name: _imageBytes
     char _name[128];
     unsigned char _imageBlockReleaseCount;
     unsigned long _sourceRowbytes;

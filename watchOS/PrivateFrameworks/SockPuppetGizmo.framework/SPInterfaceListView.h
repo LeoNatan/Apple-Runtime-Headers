@@ -85,6 +85,7 @@
 @property(nonatomic) int index; // @synthesize index=_index;
 - (void).cxx_destruct;
 - (void)prepareInterfaceItemForIB;
+- (void)_performScrollTest:(id)arg1;
 - (void)action:(id)arg1 value:(id)arg2;
 - (void)setInterfaceItemValue:(id)arg1 property:(id)arg2;
 - (void)_finalizeUpdatingTableAtRunLoopCompletion;

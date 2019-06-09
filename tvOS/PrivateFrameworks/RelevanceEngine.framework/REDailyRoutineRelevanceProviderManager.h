@@ -7,18 +7,21 @@
 #import <RelevanceEngine/RERelevanceProviderManager.h>
 
 #import <RelevanceEngine/REDailyRoutinePredictorDelegate-Protocol.h>
+#import <RelevanceEngine/REDailyRoutineRelevanceProviderManagerProperties-Protocol.h>
 
 @class NSString;
 
-@interface REDailyRoutineRelevanceProviderManager : RERelevanceProviderManager <REDailyRoutinePredictorDelegate>
+@interface REDailyRoutineRelevanceProviderManager : RERelevanceProviderManager <REDailyRoutinePredictorDelegate, REDailyRoutineRelevanceProviderManagerProperties>
 {
     _Bool _inMorningRoutine;
     _Bool _inEveningRoutine;
 }
 
++ (_Bool)_wantsSeperateRelevanceQueue;
 + (id)_features;
 + (Class)_relevanceProviderClass;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) _Bool isInMorningRoutine;
+@property(readonly, nonatomic) _Bool isInEveningRoutine;
 - (void)dailyRoutinePredictorDidEndEveningRoutine:(id)arg1;
 - (void)dailyRoutinePredictorDidBeginEveningRoutine:(id)arg1;
 - (void)dailyRoutinePredictorDidEndMorningRoutine:(id)arg1;
@@ -26,8 +29,8 @@
 - (void)dailyRoutinePredictorDidUpdatedPredictedRoutines:(id)arg1;
 - (void)_updateRoutines;
 - (void)_prepareForUpdate;
-- (void)_closeDataStoresAndObserveChanges;
-- (void)_openDataStoresAndObserveChanges;
+- (void)pause;
+- (void)resume;
 - (_Bool)_isInRoutine:(unsigned long long)arg1 forDate:(id)arg2;
 - (id)_valueForProvider:(id)arg1 context:(id)arg2 feature:(id)arg3;
 - (id)_valueForProvider:(id)arg1 feature:(id)arg2;

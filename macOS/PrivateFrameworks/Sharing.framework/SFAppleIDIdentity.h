@@ -46,17 +46,17 @@
 - (void).cxx_destruct;
 - (int)verifyKeys;
 - (void)removeFromKeychain;
-- (struct OpaqueSecIdentityRef *)copyIdentity;
+- (struct __SecIdentity *)copyIdentity;
 @property(readonly, nonatomic) BOOL needsRenewal;
 @property(readonly, nonatomic) BOOL isInvalid;
 @property(readonly, nonatomic) BOOL intermediateCertificateExpired;
 @property(readonly, nonatomic) NSString *intermediateCertificateSerialNumber;
 @property(readonly, nonatomic) BOOL certificateExpired;
 - (BOOL)isDateInThePast:(id)arg1;
-- (struct OpaqueSecKeyRef *)copyPrivateKey;
-- (struct OpaqueSecCertificateRef *)copyIntermediateCertificate;
-- (struct OpaqueSecCertificateRef *)copyCertificateWithType:(long long)arg1;
-- (struct OpaqueSecCertificateRef *)copyCertificate;
+-     // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}16@0:8, name: copyPrivateKey
+- (struct __SecCertificate *)copyIntermediateCertificate;
+- (struct __SecCertificate *)copyCertificateWithType:(long long)arg1;
+- (struct __SecCertificate *)copyCertificate;
 - (id)description;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithAppleID:(id)arg1 altDSID:(id)arg2;

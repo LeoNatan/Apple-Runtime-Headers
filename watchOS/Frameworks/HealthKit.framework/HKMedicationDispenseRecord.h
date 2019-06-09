@@ -6,12 +6,13 @@
 
 #import <HealthKit/HKMedicalRecord.h>
 
+#import <HealthKit/HKConceptIndexable-Protocol.h>
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKCodedQuantity, HKMedicalCoding, HKMedicalDate, HKMedicationDispenseRecordType, NSArray;
+@class HKCodedQuantity, HKConcept, HKMedicalCoding, HKMedicalDate, HKMedicationDispenseRecordType, NSArray, NSLocale, NSString, NSUUID;
 
-@interface HKMedicationDispenseRecord : HKMedicalRecord <NSSecureCoding, NSCopying>
+@interface HKMedicationDispenseRecord : HKMedicalRecord <HKConceptIndexable, NSSecureCoding, NSCopying>
 {
     NSArray *_medicationCodings;
     HKCodedQuantity *_quantityDispensed;
@@ -21,19 +22,28 @@
     HKMedicalDate *_earliestDosageDate;
     HKMedicalCoding *_statusCoding;
     HKCodedQuantity *_daysSupplyQuantity;
+    HKConcept *_medication;
+    HKConcept *_status;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)medicationDispenseRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 sortDate:(id)arg9 medicationCodings:(id)arg10 quantityDispensed:(id)arg11 preparationDate:(id)arg12 handOverDate:(id)arg13 dosages:(id)arg14 earliestDosageDate:(id)arg15 statusCoding:(id)arg16 daysSupplyQuantity:(id)arg17;
-+ (id)medicationDispenseRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 medicationCodings:(id)arg9 quantityDispensed:(id)arg10 preparationDate:(id)arg11 handOverDate:(id)arg12 dosages:(id)arg13 earliestDosageDate:(id)arg14 statusCoding:(id)arg15 daysSupplyQuantity:(id)arg16;
++ (id)_newMedicationDispenseRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 medicationCodings:(id)arg11 quantityDispensed:(id)arg12 preparationDate:(id)arg13 handOverDate:(id)arg14 dosages:(id)arg15 earliestDosageDate:(id)arg16 statusCoding:(id)arg17 daysSupplyQuantity:(id)arg18 config:(CDUnknownBlockType)arg19;
++ (id)medicationDispenseRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 medicationCodings:(id)arg11 quantityDispensed:(id)arg12 preparationDate:(id)arg13 handOverDate:(id)arg14 dosages:(id)arg15 earliestDosageDate:(id)arg16 statusCoding:(id)arg17 daysSupplyQuantity:(id)arg18;
++ (id)medicationDispenseRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 medicationCodings:(id)arg10 quantityDispensed:(id)arg11 preparationDate:(id)arg12 handOverDate:(id)arg13 dosages:(id)arg14 earliestDosageDate:(id)arg15 statusCoding:(id)arg16 daysSupplyQuantity:(id)arg17;
 + (id)defaultDisplayString;
 + (id)statusCodingPreferredSystems;
 + (id)medicationCodingsPreferredSystems;
++ (id)cachedConceptRelationshipKeyPaths;
++ (id)indexableConceptKeyPaths;
 - (void).cxx_destruct;
 @property(readonly, copy) HKMedicationDispenseRecordType *medicationDispenseRecordType;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned int)arg1;
+- (void)_setStatus:(id)arg1;
+@property(readonly, copy) HKConcept *status;
+- (void)_setMedication:(id)arg1;
+@property(readonly, copy) HKConcept *medication;
 - (void)_setDaysSupplyQuantity:(id)arg1;
 @property(readonly, copy) HKCodedQuantity *daysSupplyQuantity;
 - (void)_setStatusCoding:(id)arg1;
@@ -50,17 +60,30 @@
 @property(readonly, copy) HKCodedQuantity *quantityDispensed;
 - (void)_setMedicationCodings:(id)arg1;
 @property(readonly, copy) NSArray *medicationCodings;
+- (id)statusCodingContext;
+- (id)statusCodingCollection;
+- (id)medicationCodingsContext;
+- (id)medicationCodingsCollection;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEquivalent:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)init;
 - (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;
 - (id)indexKeywords;
 - (id)statusCodingTasks;
 - (id)medicationCodingsTasks;
+- (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
+- (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly) NSUUID *UUID;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly, copy, nonatomic) NSLocale *locale;
+@property(readonly) Class superclass;
 
 @end
 

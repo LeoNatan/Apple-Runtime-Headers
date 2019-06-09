@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
 - (id)_nameForDeleteButton;
 - (_Bool)_performSave:(long long)arg1 animated:(_Bool)arg2;
 - (void)_performDelete:(long long)arg1;
+- (id)tableView:(id)arg1 trailingSwipeActionsConfigurationForRowAtIndexPath:(id)arg2;
 - (void)deleteClicked:(id)arg1;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)tableViewDidStartReload:(id)arg1;
@@ -114,6 +115,7 @@ __attribute__((visibility("hidden")))
 - (void)editItemDidStartEditing:(id)arg1;
 - (void)_revertEvent;
 - (void)_copyEventForPossibleRevert;
+- (id)_viewHierarchy;
 @property(nonatomic) double navBarRightContentInset;
 @property(nonatomic) double navBarLeftContentInset;
 - (void)_setWantsToEnableDoneButton:(_Bool)arg1;
@@ -130,7 +132,6 @@ __attribute__((visibility("hidden")))
 - (void)setupForEvent;
 - (unsigned long long)entityType;
 - (id)notificationNamesForLocaleChange;
-- (void)customizeActionSheet:(id)arg1;
 - (id)defaultAlertTitle;
 - (void)setupDeleteButton;
 - (id)preferredTitle;

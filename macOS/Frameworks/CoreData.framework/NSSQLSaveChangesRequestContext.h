@@ -33,7 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)addDataMask:(id)arg1 forEntityKey:(id)arg2;
 - (void)setOriginalRow:(id)arg1 forObjectID:(id)arg2;
 - (id)originalRowForObjectID:(id)arg1;
-- (void)executeRequestCore:(id *)arg1;
+- (BOOL)executeRequestCore:(id *)arg1;
 - (void)executeEpilogue;
 - (void)executePrologue;
 - (BOOL)isWritingRequest;

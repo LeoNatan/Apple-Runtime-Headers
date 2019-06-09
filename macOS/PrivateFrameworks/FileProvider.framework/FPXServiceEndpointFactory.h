@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <FileProvider/_NSFileProviderServiceEndpointCreating-Protocol.h>
+#import <FileProvider/NSFileProviderServiceEndpointCreating-Protocol.h>
 
 @class FPXDomainContext, NSDictionary;
 
 __attribute__((visibility("hidden")))
-@interface FPXServiceEndpointFactory : NSObject <_NSFileProviderServiceEndpointCreating>
+@interface FPXServiceEndpointFactory : NSObject <NSFileProviderServiceEndpointCreating>
 {
     NSDictionary *_serviceSources;
     FPXDomainContext *_domainContext;

@@ -24,14 +24,15 @@
 - (BOOL)remapAllRecordsWithPreviousScopedIdentifier:(id)arg1 newScopedIdentifier:(id)arg2 error:(id *)arg3;
 - (id)recordsWithRelatedScopedIdentifier:(id)arg1 isFinal:(BOOL)arg2;
 - (BOOL)hasRecordWithScopedIdentifier:(id)arg1;
-- (id)recordWithScopedIdentifier:(id)arg1 isConfirmed:(char *)arg2;
+- (id)recordWithScopedIdentifier:(id)arg1 isConfirmed:(char *)arg2 isStaged:(char *)arg3;
 - (id)recordWithScopedIdentifier:(id)arg1 isFinal:(BOOL)arg2;
 - (BOOL)deleteRecordWithScopedIdentifier:(id)arg1 isFinal:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)confirmAllRecordsWithError:(id *)arg1;
 - (id)cloudChangeBatchFromBatch:(id)arg1 usingMapping:(id)arg2 isFinal:(BOOL)arg3 withError:(id *)arg4;
 - (BOOL)_remapRecord:(id)arg1 inBatch:(id)arg2 error:(id *)arg3;
 - (BOOL)applyBatch:(id)arg1 isFinal:(BOOL)arg2 direction:(unsigned long long)arg3 withError:(id *)arg4;
-- (BOOL)updateRecord:(id)arg1 isFinal:(BOOL)arg2 error:(id *)arg3;
+- (BOOL)updateStagedRecord:(id)arg1 error:(id *)arg2;
+- (BOOL)updateFinalRecord:(id)arg1 confirmed:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)addRecord:(id)arg1 isFinal:(BOOL)arg2 error:(id *)arg3;
 - (BOOL)deleteRecordsForScopeIndex:(long long)arg1 maxCount:(long long)arg2 deletedCount:(long long *)arg3 error:(id *)arg4;
 - (unsigned long long)scopeType;

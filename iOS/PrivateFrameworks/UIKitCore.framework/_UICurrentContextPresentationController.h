@@ -12,10 +12,11 @@
 
 - (void)transitionDidFinish:(_Bool)arg1;
 - (id)_firstCurrentContextChildInWindow;
-- (CDStruct_d58201db)__sizeClassPair;
+- (CDStruct_912cb5d2)__sizeClassPair;
 - (struct CGRect)_frameOfPresentedViewControllerViewInSuperview;
 - (struct CGRect)frameOfPresentedViewInContainerView;
 - (_Bool)_shouldPresentedViewControllerControlStatusBarAppearance;
+- (_Bool)_mayChildGrabPresentedViewControllerView;
 - (_Bool)shouldRemovePresentersView;
 - (_Bool)_shouldRespectDefinesPresentationContext;
 - (_Bool)shouldPresentInFullscreen;

@@ -38,6 +38,7 @@
 - (id)description;
 - (void)setRequestId:(unsigned long long)arg1;
 - (void)setPluginIdentifier:(id)arg1;
+- (id)initWithRequestId:(unsigned long long)arg1 pluginIdentifier:(id)arg2 personHandle:(id)arg3 startDate:(id)arg4 endDate:(id)arg5;
 - (id)initWithPersonHandle:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 
 @end

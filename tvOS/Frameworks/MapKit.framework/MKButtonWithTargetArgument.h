@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     id _targetArgument;
 }
 
++ (id)button;
 @property(retain, nonatomic) id targetArgument; // @synthesize targetArgument=_targetArgument;
 - (void).cxx_destruct;
 

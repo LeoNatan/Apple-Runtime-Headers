@@ -16,12 +16,12 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) NSMutableArray *attributeNames; // @synthesize attributeNames=mAttributeNames;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)target;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -27,6 +27,8 @@ struct AuthorizationCallbacks {
     CDUnknownFunctionPointerType _field12;
     CDUnknownFunctionPointerType _field13;
     CDUnknownFunctionPointerType _field14;
+    CDUnknownFunctionPointerType _field15;
+    CDUnknownFunctionPointerType _field16;
 };
 
 struct CGPoint {
@@ -62,6 +64,13 @@ typedef struct {
     Class _field1;
     id _field2;
 } CDStruct_fc55cc78;
+
+typedef struct {
+    char *_field1;
+    unsigned long long _field2;
+    void *_field3;
+    unsigned int _field4;
+} CDStruct_53ddf7ec;
 
 typedef struct {
     unsigned int _field1;

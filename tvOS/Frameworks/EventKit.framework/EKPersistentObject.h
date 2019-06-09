@@ -27,6 +27,7 @@
 + (Class)meltedClass;
 + (Class)frozenClass;
 + (id)propertiesUnavailableForPartialObjects;
++ (Class)alternateUniverseClass;
 + (id)relations;
 + (id)defaultPropertiesToLoad;
 @property(retain, nonatomic) NSMutableDictionary *committedProperties; // @synthesize committedProperties=_committedProperties;
@@ -104,6 +105,7 @@
 - (_Bool)isCompletelyEqual:(id)arg1;
 - (id)meltedObjectInStore:(id)arg1;
 - (struct EKPersistentObject *)frozenObject;
+- (Class)frozenClass;
 - (id)existingMeltedObject;
 - (id)changeSet;
 @property(readonly, nonatomic) NSString *semanticIdentifier;
@@ -117,6 +119,7 @@
 @property(readonly, nonatomic) _Bool canBeConvertedToFullObject;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)initWithAlternateUniverseObject:(struct EKPersistentObject *)arg1 inEventStore:(id)arg2 withUpdatedChildObjects:(id)arg3;
 - (id)init;
 
 // Remaining properties

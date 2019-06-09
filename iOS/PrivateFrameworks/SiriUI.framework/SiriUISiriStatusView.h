@@ -28,7 +28,7 @@
     NSObject<OS_dispatch_queue> *_glyphConfigurationQueue;
     double _lastStateChangeTime;
     UIScreen *_screen;
-    int _deferredFlamesViewState;
+    long long _deferredFlamesViewState;
     SiriUIConfiguration *_configuration;
     _Bool _textInputEnabled;
     _Bool _siriGlyphHidden;
@@ -64,14 +64,14 @@
 - (void)_setupOrbIfNeeded:(CDUnknownBlockType)arg1;
 - (void)_layoutFlamesViewIfNeeded;
 - (void)_attachFlamesViewIfNeeded;
-- (void)_setFlamesViewState:(int)arg1;
+- (void)_setFlamesViewState:(long long)arg1;
 - (id)_flamesView;
-- (_Bool)_deviceNeedsReducedFramerateForCarPlayThinkingState;
 - (void)_micButtonHeld:(id)arg1;
 - (void)_micButtonTapped:(id)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (struct CGRect)_flamesViewFrame;
+- (double)_statusViewHeight;
 - (void)layoutSubviews;
 - (void)fadeOutCurrentAura;
 - (void)setupOrbIfNeeded;

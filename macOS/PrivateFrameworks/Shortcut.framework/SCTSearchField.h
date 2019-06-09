@@ -6,6 +6,7 @@
 
 #import <AppKit/NSSearchField.h>
 
+__attribute__((visibility("hidden")))
 @interface SCTSearchField : NSSearchField
 {
 }

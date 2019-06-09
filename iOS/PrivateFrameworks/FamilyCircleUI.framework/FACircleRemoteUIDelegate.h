@@ -35,7 +35,7 @@
 - (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(_Bool)arg3;
 - (void)remoteUIController:(id)arg1 didRefreshObjectModel:(id)arg2;
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;
-- (_Bool)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3;
+- (void)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)_notifyDelegateOfCompletionWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (id)initWithContext:(id)arg1 serverHookHandler:(id)arg2;
 - (id)init;

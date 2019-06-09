@@ -4,26 +4,39 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUICore/PXAssetUIImageViewTile.h>
+#import <objc/NSObject.h>
 
-@class ISAnimatedImageView, PHAnimatedImage;
+#import <PhotosUICore/PXAssetTile-Protocol.h>
+#import <PhotosUICore/PXReusableObject-Protocol.h>
+#import <PhotosUICore/PXUIViewBasicTile-Protocol.h>
 
-@interface PXAssetAnimatedImageUIViewTile : PXAssetUIImageViewTile
+@class ISAnimatedImageView, NSString, PHAnimatedImage, PXImageRequester, UIView;
+
+@interface PXAssetAnimatedImageUIViewTile : NSObject <PXReusableObject, PXAssetTile, PXUIViewBasicTile>
 {
     ISAnimatedImageView *_animatedImageView;
     long long _animatedImageRequestID;
     unsigned long long _requestCount;
+    PXImageRequester *_imageRequester;
     PHAnimatedImage *__animatedImage;
 }
 
 @property(retain, nonatomic, setter=_setAnimatedImage:) PHAnimatedImage *_animatedImage; // @synthesize _animatedImage=__animatedImage;
+@property(retain, nonatomic) PXImageRequester *imageRequester; // @synthesize imageRequester=_imageRequester;
 - (void).cxx_destruct;
-- (void)setImageRequester:(id)arg1;
 - (void)_handleAnimatedImageResult:(id)arg1 info:(id)arg2 expectedRequestCount:(unsigned long long)arg3;
 - (void)_requestAnimatedImageIfNeeded;
 - (void)_updateAnimatedImageView;
-- (id)view;
+@property(readonly, nonatomic) UIView *view;
+- (void)didApplyGeometry:(struct PXTileGeometry)arg1 withUserData:(id)arg2;
+- (void)prepareForReuse;
 - (void)becomeReusable;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

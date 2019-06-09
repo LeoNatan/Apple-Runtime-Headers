@@ -11,6 +11,7 @@
 }
 
 + (id)verbosenessDictionaryForLevel:(long long)arg1;
++ (id)userExposedPunctuationCharacters;
 + (id)punctuationDictionaryForLevel:(long long)arg1;
 + (id)punctuationKeyForString:(id)arg1;
 

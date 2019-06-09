@@ -6,7 +6,6 @@
 
 #import <CFNetwork/NSURLProtocol.h>
 
-__attribute__((visibility("hidden")))
 @interface _NSCFURLProtocol : NSURLProtocol
 {
     struct _CFURLProtocol *_prot;

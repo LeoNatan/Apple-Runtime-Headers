@@ -7,28 +7,29 @@
 #import <PhotoLibraryServices/PLManagedObject.h>
 
 #import <PhotoLibraryServices/PLCloudDeletable-Protocol.h>
+#import <PhotoLibraryServices/PLFileSystemMetadataPersistence-Protocol.h>
 #import <PhotoLibraryServices/PLSyncablePerson-Protocol.h>
 
 @class NSDictionary, NSSet, NSString, PLDetectedFace, PLDetectedFaceGroup;
 
-@interface PLPerson : PLManagedObject <PLSyncablePerson, PLCloudDeletable>
+@interface PLPerson : PLManagedObject <PLSyncablePerson, PLCloudDeletable, PLFileSystemMetadataPersistence>
 {
 }
 
 + (id)fetchFinalMergeTargetPersonForPersonWithUUID:(id)arg1 context:(id)arg2;
-+ (_Bool)resetAllWithError:(id *)arg1;
++ (_Bool)resetAllInLibrary:(id)arg1 error:(id *)arg2;
 + (id)predicateForPersistence;
 + (id)predicateForVisibleKeyFace;
 + (id)predicateForPersonsNeedingFaceCropGenerationForFaceObjectID:(id)arg1;
 + (id)_stringFromContact:(id)arg1 preferGivenName:(_Bool)arg2;
 + (id)displayNameFromContact:(id)arg1;
 + (id)fullNameFromContact:(id)arg1;
-+ (void)batchFetchAssociatedPersonByFaceGroupUUIDWithFaceGroupUUIDs:(id)arg1 predicate:(id)arg2 completion:(CDUnknownBlockType)arg3;
-+ (id)fetchPersonCountByAssetUUIDForAssetUUIDs:(id)arg1 predicate:(id)arg2 error:(id *)arg3;
-+ (void)batchFetchPersonsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)batchFetchAssociatedPersonByFaceGroupUUIDWithFaceGroupUUIDs:(id)arg1 predicate:(id)arg2 library:(id)arg3 completion:(CDUnknownBlockType)arg4;
++ (id)fetchPersonCountByAssetUUIDForAssetUUIDs:(id)arg1 predicate:(id)arg2 library:(id)arg3 error:(id *)arg4;
++ (void)batchFetchPersonsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 library:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)batchFetchPersonUUIDsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 inManagedObjectContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
 + (id)_batchFetchPersonUUIDsByAssetUUIDWithAssetUUIDs:(id)arg1 predicate:(id)arg2 inManagedObjectContext:(id)arg3 error:(id *)arg4;
-+ (id)entityInManagedObjectContext:(id)arg1;
++ (id)listOfPropertiesToResetAgeAndGender;
 + (id)entityName;
 + (void)createAssociatedPersonForFaceGroup:(id)arg1 inManagedObjectContext:(id)arg2;
 + (void)createAssociatedPersonForFaceGroup:(id)arg1;
@@ -58,7 +59,8 @@
 - (id)reverseOrderedMergeTargetPersons;
 - (id)pickOptimalStateForUserInitiatedMergeWithPersons:(id)arg1 nominalTarget:(id)arg2;
 - (id)_nameRelatedMetadataKeys;
-- (void)persistMetadataToFileSystem;
+- (void)removePersistedFileSystemDataWithPathManager:(id)arg1;
+- (void)persistMetadataToFileSystemWithPathManager:(id)arg1;
 - (_Bool)isValidForPersistence;
 - (void)refreshInvalidMergeCandidates;
 - (void)refereshMergeCandidates;
@@ -83,6 +85,10 @@
 @property(readonly) long long cloudDeletionType;
 - (void)prepareForDeletion;
 - (_Bool)shouldIndexForSearch;
+- (_Bool)validForPersistenceChangedForChangedKeys:(id)arg1;
+- (id)payloadIDForTombstone:(id)arg1;
+- (id)payloadForChangedKeys:(id)arg1;
+- (id)payloadID;
 - (id)syncDescription;
 @property(readonly, nonatomic) _Bool isTombstone;
 @property(readonly, nonatomic) _Bool graphVerified;
@@ -98,6 +104,7 @@
 - (_Bool)supportsCloudUpload;
 
 // Remaining properties
+@property(nonatomic) unsigned short ageType; // @dynamic ageType;
 @property(retain, nonatomic) PLDetectedFaceGroup *associatedFaceGroup; // @dynamic associatedFaceGroup;
 @property(nonatomic) short cloudDeleteState; // @dynamic cloudDeleteState;
 @property(nonatomic) short cloudLocalState; // @dynamic cloudLocalState;
@@ -111,6 +118,7 @@
 @property(readonly, nonatomic) int faceCount; // @dynamic faceCount;
 @property(retain, nonatomic) NSSet *faceCrops; // @dynamic faceCrops;
 @property(retain, nonatomic) NSString *fullName; // @dynamic fullName;
+@property(nonatomic) unsigned short genderType; // @dynamic genderType;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) _Bool inPersonNamingModel; // @dynamic inPersonNamingModel;
 @property(retain, nonatomic) NSSet *invalidMergeCandidates; // @dynamic invalidMergeCandidates;
@@ -123,6 +131,7 @@
 @property(retain, nonatomic) NSSet *personReferences; // @dynamic personReferences;
 @property(retain, nonatomic) NSString *personUUID; // @dynamic personUUID;
 @property(retain, nonatomic) NSString *personUri; // @dynamic personUri;
+@property(nonatomic) short questionType; // @dynamic questionType;
 @property(retain, nonatomic) NSSet *rejectedFaces; // @dynamic rejectedFaces;
 @property(retain, nonatomic) NSSet *rejectedFacesNeedingFaceCrops; // @dynamic rejectedFacesNeedingFaceCrops;
 @property(readonly) Class superclass;

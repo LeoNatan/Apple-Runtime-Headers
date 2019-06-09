@@ -8,6 +8,7 @@
 
 @class NSString, STAllowance, STDeviceBedtime;
 
+__attribute__((visibility("hidden")))
 @interface STIntroductionModel : NSObject
 {
     _Bool _deviceForChild;

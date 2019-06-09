@@ -14,11 +14,11 @@
 {
 }
 
++ (id)_basePruningPredicateForDate:(id)arg1 profile:(id)arg2;
 + (_Bool)_insertObjectsFromCodableObjectCollection:(id)arg1 syncStore:(id)arg2 profile:(id)arg3 error:(id *)arg4;
-+ (id)_baseDataObjectPredicate;
++ (id)_predicateForSyncSession:(id)arg1;
 + (Class)healthEntityClass;
 + (id)syncEntityIdentifier;
-+ (id)_companionNanoSyncPredicateConjunctionForSession:(id)arg1;
 + (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 + (int)nanoSyncObjectType;
 

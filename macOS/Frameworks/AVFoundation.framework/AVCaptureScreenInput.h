@@ -11,10 +11,12 @@
 @interface AVCaptureScreenInput : AVCaptureInput
 {
     AVCaptureScreenInputInternal *_internal;
+    BOOL removesDuplicateFrames;
 }
 
 + (id)new;
 + (void)initialize;
+@property(nonatomic) BOOL removesDuplicateFrames; // @synthesize removesDuplicateFrames;
 - (struct OpaqueCMClock *)inputClock;
 - (void)_updateGraphicsSubsystemErrorStatusFromPropertyListener:(id)arg1;
 - (id)notReadyError;
@@ -25,7 +27,6 @@
 - (void)removeInputUnitsForInputPort:(id)arg1 fromGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3;
 - (BOOL)addInputUnitsForInputPort:(id)arg1 toGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3 error:(id *)arg4;
 - (id)ports;
-@property(nonatomic) BOOL removesDuplicateFrames;
 - (void)setCaptureTimeScale:(int)arg1;
 - (int)captureTimeScale;
 @property(nonatomic) double scaleFactor;
@@ -38,7 +39,6 @@
 - (struct CGRect)_flippedCropRectForCropRect:(struct CGRect)arg1;
 - (int)_getInputUnitProperty:(unsigned int)arg1 bytes:(void *)arg2 length:(unsigned int)arg3;
 - (int)_setInputUnitProperty:(unsigned int)arg1 bytes:(const void *)arg2 length:(unsigned int)arg3;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (id)initWithDisplayID:(unsigned int)arg1;

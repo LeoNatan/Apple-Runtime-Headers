@@ -6,25 +6,25 @@
 
 #import <objc/NSObject.h>
 
-#import <NetworkServiceProxy/NSPNetworkAgentDelegate-Protocol.h>
 #import <NetworkServiceProxy/NSSecureCoding-Protocol.h>
 
-@class NPKeyBag, NPTunnelTuscanyEndpoint, NPWaldo, NSData, NSDate, NSDictionary, NSPKeyNetworkAgent, NSString, NSURLSession, NSUUID, NWEndpoint, NWNetworkAgentRegistration;
+@class NPTunnelTuscanyEndpoint, NPWaldo, NSData, NSDate, NSDictionary, NSPKeyNetworkAgent, NSString, NSURLSession, NSUUID, NWEndpoint, NWNetworkAgentRegistration;
 
-@interface NPTuscanyOnRamp : NSObject <NSPNetworkAgentDelegate, NSSecureCoding>
+@interface NPTuscanyOnRamp : NSObject <NSSecureCoding>
 {
     BOOL _dayPassFailed;
     BOOL _dayPassPending;
+    int _error;
     NPTunnelTuscanyEndpoint *_tuscanyEndpoint;
+    NSData *_dayPass;
+    NSUUID *_dayPassUUID;
     unsigned long long _maxFrameSize;
     long long _TFOStatus;
     unsigned long long _rtt;
-    NPKeyBag *_keybag;
+    long long _currentEdgeType;
+    NSDate *_dayPassCreationDate;
     NWEndpoint *_daypassEndpoint;
     NSDate *_retryDate;
-    NSUUID *_dayPassUUID;
-    NSData *_dayPass;
-    NSDate *_dayPassCreationDate;
     double _dayPassHardExpiry;
     NWNetworkAgentRegistration *_agentRegistration;
     NSPKeyNetworkAgent *_agent;
@@ -33,9 +33,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (void)logKeybag:(id)arg1 message:(id)arg2 identifier:(id)arg3;
-+ (id)resetWithOnRamps:(id)arg1 currentTimestamp:(unsigned int)arg2 currentNetworkInfo:(id)arg3 currentEdgeIndex:(long long)arg4 currentEdgeList:(id)arg5 lastFailureReason:(unsigned int)arg6 generation:(unsigned int)arg7 identifier:(id)arg8 updateHash:(id)arg9;
-+ (id)currentOnRamp;
 @property BOOL dayPassPending; // @synthesize dayPassPending=_dayPassPending;
 @property(retain) NSURLSession *dayPassSession; // @synthesize dayPassSession=_dayPassSession;
 @property BOOL dayPassFailed; // @synthesize dayPassFailed=_dayPassFailed;
@@ -43,18 +40,18 @@
 @property(retain) NSPKeyNetworkAgent *agent; // @synthesize agent=_agent;
 @property(retain) NWNetworkAgentRegistration *agentRegistration; // @synthesize agentRegistration=_agentRegistration;
 @property double dayPassHardExpiry; // @synthesize dayPassHardExpiry=_dayPassHardExpiry;
-@property(retain) NSDate *dayPassCreationDate; // @synthesize dayPassCreationDate=_dayPassCreationDate;
-@property(retain) NSData *dayPass; // @synthesize dayPass=_dayPass;
-@property(retain) NSUUID *dayPassUUID; // @synthesize dayPassUUID=_dayPassUUID;
 @property(retain) NSDate *retryDate; // @synthesize retryDate=_retryDate;
 @property(readonly) NWEndpoint *daypassEndpoint; // @synthesize daypassEndpoint=_daypassEndpoint;
-@property(retain) NPKeyBag *keybag; // @synthesize keybag=_keybag;
+@property(retain) NSDate *dayPassCreationDate; // @synthesize dayPassCreationDate=_dayPassCreationDate;
+@property int error; // @synthesize error=_error;
+@property(readonly) long long currentEdgeType; // @synthesize currentEdgeType=_currentEdgeType;
 @property(readonly) unsigned long long rtt; // @synthesize rtt=_rtt;
-@property(readonly) long long TFOStatus; // @synthesize TFOStatus=_TFOStatus;
+@property long long TFOStatus; // @synthesize TFOStatus=_TFOStatus;
 @property(readonly) unsigned long long maxFrameSize; // @synthesize maxFrameSize=_maxFrameSize;
+@property(retain) NSUUID *dayPassUUID; // @synthesize dayPassUUID=_dayPassUUID;
+@property(retain) NSData *dayPass; // @synthesize dayPass=_dayPass;
 @property(retain) NPTunnelTuscanyEndpoint *tuscanyEndpoint; // @synthesize tuscanyEndpoint=_tuscanyEndpoint;
 - (void).cxx_destruct;
-- (BOOL)updateHashMatchesEdgeSet:(id)arg1;
 @property(readonly) BOOL isTFOEnabled;
 @property unsigned int dayPassSessionCounter;
 - (void)invalidateDayPass;
@@ -71,25 +68,13 @@
 - (BOOL)fillTestDaypass;
 @property(readonly) BOOL dayPassRefreshAllowed;
 - (void)resetParentWaldo:(id)arg1;
-- (void)reportUsageOfUUID:(id)arg1 withResult:(BOOL)arg2 rtt:(unsigned long long)arg3 geohash:(id)arg4 fallbackReason:(long long)arg5 signingIdentifier:(id)arg6 remoteEndpoint:(id)arg7;
-@property(readonly) double timeSinceLastUsed;
-@property(readonly) long long currentFallbackReason;
-@property(readonly) long long currentEdgeType;
-@property unsigned int currentTimestamp;
-- (void)stopUsingUUID:(id)arg1;
-- (id)getDayPassForUUID:(id)arg1;
-- (unsigned int)getNextSessionCounterForUUID:(id)arg1;
-- (id)copyCurrentEndpointReturnUUID:(id *)arg1;
-- (void)resetFromCurrentInfo;
+- (unsigned int)getNextSessionCounter;
+- (id)initWithKey:(id)arg1;
 - (unsigned int)copyValue:(void *)arg1 ofSize:(unsigned int)arg2 fromOffset:(unsigned int)arg3 base:(const char *)arg4 totalLength:(unsigned int)arg5;
 - (id)getTuscanyEndpoint:(id)arg1;
 - (void)updateSessionCounterFromKernel;
 - (void)unregisterAgent;
 - (BOOL)registerAgentWithKey:(id)arg1;
-- (void)receiveUnassertionForUUID:(id)arg1;
-- (void)receiveAssertionForUUID:(id)arg1;
-- (BOOL)resetAgent:(id)arg1;
-- (void)dealloc;
 - (id)initWithEndpoint:(id)arg1;
 
 @end

@@ -6,24 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class FBMainDisplayLayoutPublisher, NSString;
+@protocol BSInvalidatable;
 
 @interface FBDisplayLayoutTransition : NSObject
 {
+    FBMainDisplayLayoutPublisher *_publisher;
     NSString *_name;
     NSString *_transitionReason;
     int _displayType;
-    _Bool _transitioning;
+    id <BSInvalidatable> _transition;
     int _interfaceOrientation;
     int _backlightLevel;
 }
 
 + (void)flushLayoutForDisplayType:(int)arg1;
 + (id)layoutForDisplayType:(int)arg1;
-+ (_Bool)isTransitioningForDisplayType:(int)arg1;
 @property(nonatomic) int backlightLevel; // @synthesize backlightLevel=_backlightLevel;
 @property(nonatomic) int interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
-@property(readonly, nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(copy, nonatomic) NSString *transitionReason; // @synthesize transitionReason=_transitionReason;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) int displayType; // @synthesize displayType=_displayType;
@@ -31,8 +31,10 @@
 - (void)endTransition;
 - (void)beginTransition;
 - (id)description;
+@property(readonly, nonatomic, getter=isTransitioning) _Bool transitioning;
 - (void)dealloc;
 - (id)initWithDisplayType:(int)arg1 name:(id)arg2;
+- (id)init;
 
 @end
 

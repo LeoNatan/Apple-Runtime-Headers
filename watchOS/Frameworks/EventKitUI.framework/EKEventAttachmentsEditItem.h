@@ -8,22 +8,31 @@
 
 #import <EventKitUI/EKEventAttachmentCellControllerDelegate-Protocol.h>
 #import <EventKitUI/EKEventAttachmentEditViewControllerDelegate-Protocol.h>
+#import <EventKitUI/UIDocumentPickerDelegate-Protocol.h>
 
-@class NSArray, NSString;
+@class EKUITableViewCell, NSArray, NSString;
 
 __attribute__((visibility("hidden")))
-@interface EKEventAttachmentsEditItem : EKEventEditItem <EKEventAttachmentCellControllerDelegate, EKEventAttachmentEditViewControllerDelegate>
+@interface EKEventAttachmentsEditItem : EKEventEditItem <UIDocumentPickerDelegate, EKEventAttachmentCellControllerDelegate, EKEventAttachmentEditViewControllerDelegate>
 {
     NSArray *_cellControllers;
+    EKUITableViewCell *_addAttachmentCell;
 }
 
 - (void).cxx_destruct;
+- (void)documentPickerWasCancelled:(id)arg1;
+- (void)documentPicker:(id)arg1 didPickDocumentsAtURLs:(id)arg2;
+- (void)_showAddAttachmentViewController;
 - (id)owningEventForAttachmentEditViewController:(id)arg1;
 - (id)owningEventForAttachmentCellController:(id)arg1;
 - (id)parentViewControllerForAttachmentCellController:(id)arg1;
+- (id)trailingSwipeActionsConfigurationForRowAtIndex:(int)arg1;
+- (_Bool)forceTableReloadOnSave;
+- (_Bool)_shouldShowAddAttachmentCell;
 - (_Bool)usesDetailViewControllerForSubitem:(unsigned int)arg1;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (void)editor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
+- (id)_addAttachmentCell;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (unsigned int)numberOfSubitems;

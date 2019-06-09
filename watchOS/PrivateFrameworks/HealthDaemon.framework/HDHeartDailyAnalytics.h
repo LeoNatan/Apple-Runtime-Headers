@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class HDAWDHealthKitHeartDailyAnalytics, NSMutableDictionary;
+@class NSMutableDictionary;
 
 @interface HDHeartDailyAnalytics : NSObject
 {
     NSMutableDictionary *_payload;
-    HDAWDHealthKitHeartDailyAnalytics *_awdPayload;
 }
 
 - (void).cxx_destruct;

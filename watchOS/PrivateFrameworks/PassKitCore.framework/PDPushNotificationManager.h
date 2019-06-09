@@ -23,6 +23,7 @@
 
 @property(copy, nonatomic) NSString *pushToken; // @synthesize pushToken=_pushToken;
 - (void).cxx_destruct;
+- (void)simulatePushForTopic:(id)arg1;
 - (void)connect;
 @property(readonly, nonatomic) NSArray *currentConsumers;
 @property(readonly, nonatomic) NSArray *topics;

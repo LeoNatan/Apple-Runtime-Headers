@@ -82,6 +82,8 @@
 @property(nonatomic) BOOL shouldFetchAttributes; // @synthesize shouldFetchAttributes=_shouldFetchAttributes;
 @property(nonatomic) unsigned int uid; // @synthesize uid=_uid;
 - (void).cxx_destruct;
+- (id)userPersonaFromIdentityString:(id)arg1;
+@property(readonly, nonatomic) __weak NSArray *allUserPersonas;
 - (BOOL)commitChangesWithError:(id *)arg1;
 - (BOOL)commitChanges;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

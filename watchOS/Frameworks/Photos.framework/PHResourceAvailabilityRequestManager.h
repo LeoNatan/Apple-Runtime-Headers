@@ -23,6 +23,7 @@
 - (void)videoChoosingAndAvailabilityRequest:(id)arg1 didReportProgress:(double)arg2 completed:(_Bool)arg3 error:(id)arg4;
 - (void)resourceAvailabilityChangeRequest:(id)arg1 didFinishWithSuccess:(_Bool)arg2 url:(id)arg3 data:(id)arg4 info:(id)arg5 error:(id)arg6;
 - (void)resourceAvailabilityChangeRequest:(id)arg1 didReportProgress:(double)arg2 completed:(_Bool)arg3 error:(id)arg4;
+- (void)resourceRepairRequest:(id)arg1 didFinishWithSuccess:(_Bool)arg2;
 - (void)_availabilityRequestDidFinish:(id)arg1;
 - (id)_requestWithTaskIdentifier:(id)arg1;
 - (void)_unregisterRequest:(id)arg1;

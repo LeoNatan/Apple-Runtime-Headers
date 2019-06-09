@@ -8,6 +8,7 @@
 
 @class UIButton, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemCameraLandingView : UIView
 {
     UILabel *_bodyLabel;

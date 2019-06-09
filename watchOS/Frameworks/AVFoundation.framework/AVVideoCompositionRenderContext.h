@@ -23,7 +23,6 @@
 @property(readonly, nonatomic) struct CGAffineTransform renderTransform;
 @property(readonly, nonatomic) struct CGSize size;
 - (void)dealloc;
-- (void)finalize;
 - (void)_willDeallocOrFinalize;
 - (_Bool)isBufferYCbCr:(struct __CVBuffer *)arg1;
 - (struct __CVPixelBufferPool *)pixelBufferPool;

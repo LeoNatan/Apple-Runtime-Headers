@@ -53,12 +53,6 @@ struct os_unfair_lock_s {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    id _field1;
-    id _field2;
-    id _field3;
-} CDStruct_0f015c83;
-
-typedef struct {
     _Bool _field1;
     _Bool _field2;
     _Bool _field3;

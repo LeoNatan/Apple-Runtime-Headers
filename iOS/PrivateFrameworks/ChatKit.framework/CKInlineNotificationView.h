@@ -9,6 +9,7 @@
 @class _UIBackdropView;
 @protocol CKInlineNotificationViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKInlineNotificationView : UIView
 {
     _Bool _visible;

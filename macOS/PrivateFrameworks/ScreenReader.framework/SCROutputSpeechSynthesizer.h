@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *category; // @synthesize category=_category;
 @property(retain, nonatomic) SCROutputAction *action; // @synthesize action=_action;
 @property(retain, nonatomic) id owner; // @synthesize owner=_owner;
+- (void).cxx_destruct;
 - (void)_outputTestingLogging:(id)arg1;
 - (BOOL)_setObject:(id)arg1 forProperty:(struct __CFString *)arg2;
 - (void)_clearOptions;
@@ -61,7 +62,6 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) float pitchBase;
 @property(nonatomic) float pitchMod;
 @property(nonatomic) float rate;
-- (void)dealloc;
 - (id)initWithVoice:(id)arg1;
 
 // Remaining properties

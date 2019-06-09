@@ -16,16 +16,19 @@
     NSString *_bundleIdentifier;
     unsigned long long _stateFlags;
     int _ratingRank;
+    unsigned long long _installType;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)description;
 - (void)addStateFlag:(unsigned long long)arg1;
-- (id)initWithBundleIdentifier:(id)arg1 stateFlags:(unsigned long long)arg2 ratingRank:(int)arg3;
+- (id)initWithBundleIdentifier:(id)arg1 stateFlags:(unsigned long long)arg2 ratingRank:(int)arg3 installType:(unsigned long long)arg4;
+@property(readonly, nonatomic, getter=isDowngraded) _Bool downgraded;
 @property(readonly, nonatomic, getter=isBlocked) _Bool blocked;
 @property(readonly, nonatomic, getter=isRemovedSystemApp) _Bool removedSystemApp;
 @property(readonly, nonatomic, getter=isAlwaysAvailable) _Bool alwaysAvailable;
@@ -33,7 +36,6 @@
 @property(readonly, nonatomic, getter=isInstalled) _Bool installed;
 @property(readonly, nonatomic, getter=isPlaceholder) _Bool placeholder;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
-- (void)dealloc;
 
 @end
 

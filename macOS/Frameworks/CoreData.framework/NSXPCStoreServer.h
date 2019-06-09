@@ -41,6 +41,7 @@
 - (id)requestHandlingPolicy;
 - (id)delegate;
 - (void)dealloc;
+- (void)stopListening;
 - (void)startListening;
 - (void)setErrorHandlingDelegate:(id)arg1;
 - (id)errorHandlingDelegate;
@@ -49,10 +50,11 @@
 - (id)handlePersistentHistoryTokenRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)handlePersistentHistoryRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)handleBatchDeleteRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
+- (id)handleBatchUpdateRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
+- (id)handleBatchInsertRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)handleQueryGenerationReleaseRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)handleQueryGenerationReopenRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)handleQueryGenerationRequestInContext:(id)arg1 error:(id *)arg2;
-- (id)handlePullChangesRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (id)handleNotificationNameRequestInContext:(id)arg1 error:(id *)arg2;
 - (id)handleMetadataRequestInContext:(id)arg1;
 - (id)handleFetchRequest:(id)arg1 inContext:(id)arg2 error:(id *)arg3;

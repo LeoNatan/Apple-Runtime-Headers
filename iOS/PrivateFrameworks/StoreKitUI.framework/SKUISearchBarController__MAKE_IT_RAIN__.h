@@ -8,6 +8,7 @@
 
 @class UISearchController;
 
+__attribute__((visibility("hidden")))
 @interface SKUISearchBarController__MAKE_IT_RAIN__ : NSObject
 {
     UISearchController *_searchController;

@@ -60,6 +60,10 @@
 - (void)_updateMaterialNumber:(id)arg1;
 - (void)_updateMaterialImage:(id)arg1;
 - (void)_updateMaterialProceduralContents:(id)arg1;
+- (void)_updateMaterialTextureProvider:(id)arg1;
+- (void)_updateMaterialCaptureDeviceOutputConsumerSource:(id)arg1;
+- (void)_updateMaterialCaptureDevice:(id)arg1;
+- (void)_updateMaterialAVPlayer:(id)arg1;
 - (void)_updateMaterialLayer:(id)arg1;
 - (void)_updateMaterialSKTexture:(id)arg1;
 - (void)_updateMaterialMTLTexture:(id)arg1;
@@ -105,7 +109,7 @@
 - (const void *)__CFObject;
 - (id)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 -     // Error parsing type: ^{__C3DTextureSampler={__CFRuntimeBase=QAQ}iiiiii{C3DColor4=(?=[4f]{?=ffff})}fCiQ}16@0:8, name: textureSampler
--     // Error parsing type: ^{__C3DEffectCommonProfile={__CFRuntimeBase=QAQ}^{__C3DMaterial}i^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}fffffCqBBb1b1b1b1b1b1b1b1b1b13}16@0:8, name: commonProfile
+-     // Error parsing type: ^{__C3DEffectCommonProfile={__CFRuntimeBase=QAQ}^{__C3DMaterial}i^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}^{__C3DEffectSlot}fffffCqBBb1b1b1b1b1b1b1b1b1b13}16@0:8, name: commonProfile
 -     // Error parsing type: ^{__C3DEffectSlot={__CFRuntimeBase=QAQ}{C3DColor4=(?=[4f]{?=ffff})}^v(?=^{__C3DImage}^v^{__C3DImageProxy}^{__C3DTexture})b8b1b1b1b4c^{__C3DTextureSampler}^(C3DMatrix4x4)fi^v}16@0:8, name: effectSlot
 - (id)parent;
 - (void)parentWillDie:(id)arg1;
@@ -127,6 +131,14 @@
 - (id)UIView;
 - (void)setUIView:(id)arg1;
 - (void)_updateMaterialUIComponent:(id)arg1;
+- (id)textureProvider;
+- (void)setTextureProvider:(id)arg1;
+- (id)captureDeviceOutputConsumerSource;
+- (void)setCaptureDeviceOutputConsumerSource:(id)arg1;
+- (id)captureDevice;
+- (void)setCaptureDevice:(id)arg1;
+- (id)avPlayer;
+- (void)setAvPlayer:(id)arg1;
 - (id)layer;
 - (void)setLayer:(id)arg1;
 - (id)skTexture;
@@ -144,7 +156,8 @@
 - (_Bool)sRGBTexture;
 @property(nonatomic) long long wrapT;
 @property(nonatomic) long long wrapS;
-@property(retain, nonatomic) id borderColor;
+- (void)setBorderColor:(id)arg1;
+- (id)borderColor;
 @property(nonatomic) double intensity;
 @property(nonatomic) long long textureComponents;
 @property(nonatomic) long long mappingChannel;
@@ -168,6 +181,7 @@
 - (void)linkCustomPropertyWithParent:(id)arg1 andCustomName:(id)arg2;
 - (void)unlinkCustomPropertyWithParent:(id)arg1;
 - (void)_setParent:(id)arg1;
+- (id)__runtimeResolvedPath;
 - (void)dealloc;
 - (void)__allocateContentTransformIfNeeded;
 - (id)initPresentationMaterialPropertyWithModelProperty:(id)arg1;

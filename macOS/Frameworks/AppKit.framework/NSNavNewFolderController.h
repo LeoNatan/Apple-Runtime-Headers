@@ -6,12 +6,12 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class NSButton, NSSavePanel, NSTextField;
+@class NSButton, NSLocalSavePanel, NSTextField;
 
 __attribute__((visibility("hidden")))
 @interface NSNavNewFolderController : NSWindowController
 {
-    NSSavePanel *_savePanel;
+    NSLocalSavePanel *_savePanel;
     NSTextField *_folderNameField;
     NSTextField *_errorMessage;
     NSButton *_cancelButton;

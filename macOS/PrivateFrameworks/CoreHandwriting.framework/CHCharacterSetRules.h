@@ -25,28 +25,39 @@
     NSCharacterSet *_numeralEndLetterCharSet;
     NSCharacterSet *_lexiconSkipCharSet;
     NSCharacterSet *_containsDotCharSet;
+    NSCharacterSet *_containsTwoDotsCharSet;
     NSCharacterSet *_prefixCapitalizationExceptionCharSet;
     NSCharacterSet *_selfLoopPunctuationCharSet;
     NSCharacterSet *_emoticonTopCharSet;
     NSCharacterSet *_emoticonMiddleCharSet;
     NSCharacterSet *_emoticonBottomCharSet;
+    NSCharacterSet *_emailAtCharSet;
+    NSCharacterSet *_emailPunctuationCharSet;
+    NSCharacterSet *_urlPunctuationCharSet;
+    NSCharacterSet *_nonSpaceSeparatorCharSet;
     NSObject<OS_dispatch_queue> *__charSetRulesQueue;
     map_0512c6b1 _strokeMaxPenalties;
     map_fc1db4e5 _signatureUniChar;
 }
 
 + (unsigned long long)characterType:(unsigned int)arg1;
++ (unsigned long long)expectedMaxDotCount:(unsigned int)arg1;
 + (unsigned long long)expectedMinStrokeCount:(unsigned int)arg1;
 + (unsigned long long)expectedMaxStrokeCount:(unsigned int)arg1;
 + (id)sharedCharacterSetRules;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *_charSetRulesQueue; // @synthesize _charSetRulesQueue=__charSetRulesQueue;
 @property(nonatomic) map_fc1db4e5 signatureUniChar; // @synthesize signatureUniChar=_signatureUniChar;
 @property(nonatomic) map_0512c6b1 strokeMaxPenalties; // @synthesize strokeMaxPenalties=_strokeMaxPenalties;
+@property(retain, nonatomic) NSCharacterSet *nonSpaceSeparatorCharSet; // @synthesize nonSpaceSeparatorCharSet=_nonSpaceSeparatorCharSet;
+@property(retain, nonatomic) NSCharacterSet *urlPunctuationCharSet; // @synthesize urlPunctuationCharSet=_urlPunctuationCharSet;
+@property(retain, nonatomic) NSCharacterSet *emailPunctuationCharSet; // @synthesize emailPunctuationCharSet=_emailPunctuationCharSet;
+@property(retain, nonatomic) NSCharacterSet *emailAtCharSet; // @synthesize emailAtCharSet=_emailAtCharSet;
 @property(retain, nonatomic) NSCharacterSet *emoticonBottomCharSet; // @synthesize emoticonBottomCharSet=_emoticonBottomCharSet;
 @property(retain, nonatomic) NSCharacterSet *emoticonMiddleCharSet; // @synthesize emoticonMiddleCharSet=_emoticonMiddleCharSet;
 @property(retain, nonatomic) NSCharacterSet *emoticonTopCharSet; // @synthesize emoticonTopCharSet=_emoticonTopCharSet;
 @property(retain, nonatomic) NSCharacterSet *selfLoopPunctuationCharSet; // @synthesize selfLoopPunctuationCharSet=_selfLoopPunctuationCharSet;
 @property(retain, nonatomic) NSCharacterSet *prefixCapitalizationExceptionCharSet; // @synthesize prefixCapitalizationExceptionCharSet=_prefixCapitalizationExceptionCharSet;
+@property(retain, nonatomic) NSCharacterSet *containsTwoDotsCharSet; // @synthesize containsTwoDotsCharSet=_containsTwoDotsCharSet;
 @property(retain, nonatomic) NSCharacterSet *containsDotCharSet; // @synthesize containsDotCharSet=_containsDotCharSet;
 @property(retain, nonatomic) NSCharacterSet *lexiconSkipCharSet; // @synthesize lexiconSkipCharSet=_lexiconSkipCharSet;
 @property(retain, nonatomic) NSCharacterSet *numeralEndLetterCharSet; // @synthesize numeralEndLetterCharSet=_numeralEndLetterCharSet;
@@ -63,6 +74,7 @@
 @property(retain, nonatomic) NSCharacterSet *lowercaseCharSet; // @synthesize lowercaseCharSet=_lowercaseCharSet;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (unsigned long long)_expectedMaxDotCount:(unsigned int)arg1;
 - (unsigned long long)_characterType:(unsigned int)arg1;
 - (unsigned long long)_expectedMinStrokeCount:(unsigned int)arg1;
 - (unsigned long long)_expectedMaxStrokeCount:(unsigned int)arg1;

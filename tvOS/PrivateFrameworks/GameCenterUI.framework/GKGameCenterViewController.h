@@ -13,7 +13,7 @@
 
 @interface GKGameCenterViewController : UINavigationController <GKExtensionParentViewControllerProtocol>
 {
-    id <GKGameCenterControllerDelegate> _gameCenterDelegateWeak;
+    id <GKGameCenterControllerDelegate> _gameCenterDelegate;
     long long _viewState;
     NSString *_leaderboardIdentifier;
     long long _leaderboardTimeScope;
@@ -25,6 +25,8 @@
 + (_Bool)_preventsAppearanceProxyCustomization;
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(retain, nonatomic) GKDashboardHostViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
+@property(nonatomic) __weak id <GKGameCenterControllerDelegate> gameCenterDelegate; // @synthesize gameCenterDelegate=_gameCenterDelegate;
+- (void).cxx_destruct;
 - (_Bool)shouldAutomaticallyForwardAppearanceMethods;
 - (_Bool)shouldAutomaticallyForwardRotationMethods;
 - (_Bool)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
@@ -44,7 +46,6 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
-@property(nonatomic) id <GKGameCenterControllerDelegate> gameCenterDelegate; // @synthesize gameCenterDelegate=_gameCenterDelegateWeak;
 - (void)dealloc;
 - (id)init;
 - (void)notifyDelegateOnWillFinish;

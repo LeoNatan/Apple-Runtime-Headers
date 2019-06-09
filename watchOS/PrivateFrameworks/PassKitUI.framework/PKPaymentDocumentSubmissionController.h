@@ -36,6 +36,7 @@
 - (void)terminateSetupFlowFromViewController:(id)arg1;
 - (void)userWantsToCancelFromViewController:(id)arg1;
 - (void)tryUploadAgain;
+- (void)userWantsToWithdraw;
 - (void)contactApplePressed;
 - (void)uploadID;
 - (void)scanAgain;

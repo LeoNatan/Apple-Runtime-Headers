@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     OADDrawable *mDrawable;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -22,7 +23,6 @@ __attribute__((visibility("hidden")))
 - (id)drawable;
 - (void)setIsAnimateBackground:(_Bool)arg1;
 - (_Bool)isAnimateBackground;
-- (void)dealloc;
 - (id)init;
 
 @end

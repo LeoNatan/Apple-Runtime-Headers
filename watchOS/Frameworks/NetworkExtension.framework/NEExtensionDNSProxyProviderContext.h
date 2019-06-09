@@ -15,8 +15,8 @@
 }
 
 + (id)_extensionAuxiliaryVendorProtocol;
+- (id)extensionPoint;
 - (void)setSystemDNSSettings:(id)arg1;
-- (void)setInitialFlowDivertControlSocket:(id)arg1 extraValidation:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

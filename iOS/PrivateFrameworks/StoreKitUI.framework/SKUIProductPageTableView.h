@@ -8,6 +8,7 @@
 
 @class UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageTableView : UITableView
 {
     UIView *_productPageHeaderView;

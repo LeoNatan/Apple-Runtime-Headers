@@ -12,11 +12,14 @@
 {
     AVCaptureDeviceInputInternal *_internal;
     _Bool _unifiedAutoExposureDefaultsEnabled;
+    CDStruct_1b6d18a9 _videoMinFrameDurationOverride;
 }
 
 + (id)deviceInputWithDevice:(id)arg1 error:(id *)arg2;
 + (void)initialize;
+@property(nonatomic) CDStruct_1b6d18a9 videoMinFrameDurationOverride; // @synthesize videoMinFrameDurationOverride=_videoMinFrameDurationOverride;
 @property(nonatomic) _Bool unifiedAutoExposureDefaultsEnabled; // @synthesize unifiedAutoExposureDefaultsEnabled=_unifiedAutoExposureDefaultsEnabled;
+- (id)videoDevice;
 - (void)_sourceFormatDidChange:(struct opaqueCMFormatDescription *)arg1;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (_Bool)_authorizedToUseDeviceAndRequestIfNecessary:(id)arg1;
@@ -29,6 +32,7 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithDevice:(id)arg1 error:(id *)arg2;
 
 @end

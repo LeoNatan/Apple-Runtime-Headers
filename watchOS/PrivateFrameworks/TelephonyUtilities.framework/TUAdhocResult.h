@@ -20,7 +20,6 @@
 @property __weak TUSearchController *searchController; // @synthesize searchController=_searchController;
 - (void).cxx_destruct;
 @property(readonly) NSArray *idsCanonicalDestinations;
-@property(readonly) NSString *idsCanonicalDestination;
 @property(readonly) _Bool mostRecentCallWasMissed;
 @property(readonly) int mostRecentCallType;
 @property(readonly) NSArray *handles;

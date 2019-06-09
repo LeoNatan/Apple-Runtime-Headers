@@ -22,12 +22,12 @@
 - (id)_alertViewController;
 - (void)_dismiss;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
-- (void)handleHomeButtonPressed;
-- (_Bool)shouldAutorotate;
+- (void)handleButtonActions:(id)arg1;
 - (id)pk_navigationController;
-- (void)setUserInfo:(id)arg1;
-- (void)_willAppearInRemoteViewController;
+- (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (long long)preferredStatusBarStyle;
 - (unsigned long long)supportedInterfaceOrientations;
+- (_Bool)shouldAutorotate;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;

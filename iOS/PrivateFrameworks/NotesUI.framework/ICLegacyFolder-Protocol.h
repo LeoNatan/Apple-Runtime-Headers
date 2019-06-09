@@ -10,6 +10,7 @@
 @protocol ICLegacyAccount, ICLegacyFolder, ICLegacyNote;
 
 @protocol ICLegacyFolder <NSObject>
+- (_Bool)isDeletedOrInTrash;
 - (NSManagedObjectContext *)managedObjectContext;
 - (NSManagedObjectID *)objectID;
 - (void)addNotesObject:(id <ICLegacyNote>)arg1;

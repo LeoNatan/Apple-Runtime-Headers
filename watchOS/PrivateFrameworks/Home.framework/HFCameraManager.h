@@ -59,8 +59,10 @@
 - (id)_nextSnapshotDate;
 - (void)_endPeriodicSnapshots;
 - (void)_beginPeriodicSnapshots;
+@property(readonly, nonatomic, getter=isContinuousStreamingEnabled) _Bool continuousStreamingEnabled;
 - (void)endContinuousStreamingWithRequester:(id)arg1;
 - (void)beginContinuousStreamingWithRequester:(id)arg1;
+@property(readonly, nonatomic, getter=arePeriodicSnapshotsEnabled) _Bool periodicSnapshotsEnabled;
 - (void)endPeriodicSnapshotsWithRequester:(id)arg1;
 - (void)beginPeriodicSnapshotsWithRequester:(id)arg1;
 - (void)dealloc;

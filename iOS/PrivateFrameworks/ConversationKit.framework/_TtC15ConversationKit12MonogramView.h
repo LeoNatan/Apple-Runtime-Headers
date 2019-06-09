@@ -6,11 +6,11 @@
 
 #import <UIKit/UIView.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit12MonogramView : UIView
 {
     // Error parsing type: , name: lastSizeForFont
     // Error parsing type: , name: font
+    // Error parsing type: , name: colorStyle
     // Error parsing type: , name: text
 }
 

@@ -4,45 +4,81 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Photos/PHChangeRequest.h>
 
-@class NSString, PHAssetCollection, PHFetchResult, PHObjectPlaceholder, PHPhotoLibrary, RDAlbum, RDAlbumVersionTable;
+#import <Photos/PHInsertChangeRequest-Protocol.h>
+#import <Photos/PHUpdateChangeRequest-Protocol.h>
 
-@interface PHAssetCollectionChangeRequest : NSObject
+@class NSManagedObjectID, NSString, PHAssetCollection, PHObjectPlaceholder, PHRelationshipChangeRequestHelper;
+
+@interface PHAssetCollectionChangeRequest : PHChangeRequest <PHInsertChangeRequest, PHUpdateChangeRequest>
 {
-    PHAssetCollection *_assetCollection;
-    PHFetchResult *_assets;
-    PHObjectPlaceholder *_placeholderForCreatedAssetCollection;
-    RDAlbum *_mutableAlbum;
-    RDAlbumVersionTable *_albumVersionTable;
-    PHPhotoLibrary *_photoLibrary;
+    PHAssetCollection *_originalAssetCollection;
+    PHRelationshipChangeRequestHelper *_assetsHelper;
+    PHRelationshipChangeRequestHelper *_customKeyAssetHelper;
 }
 
++ (void)_deleteAssetCollections:(id)arg1 withOperation:(long long)arg2 topLevelSelector:(SEL)arg3;
++ (void)undeleteAssetCollections:(id)arg1;
++ (void)expungeAssetCollections:(id)arg1;
++ (void)deleteAssetCollections:(id)arg1;
++ (id)creationRequestForAssetCollectionCopyFromAssetCollection:(id)arg1;
 + (id)validateAssetCollectionTitle:(id)arg1 error:(id *)arg2;
-+ (id)changeRequestForAssetCollection:(id)arg1 assets:(id)arg2 photoLibrary:(id)arg3;
-+ (id)changeRequestForAssetCollection:(id)arg1 photoLibrary:(id)arg2;
-+ (id)creationRequestForAssetCollectionWithTitle:(id)arg1 photoLibrary:(id)arg2;
++ (id)creationRequestForAssetCollectionWithTitle:(id)arg1;
 + (id)changeRequestForAssetCollection:(id)arg1 assets:(id)arg2;
 + (id)changeRequestForAssetCollection:(id)arg1;
-+ (void)deleteAssetCollections:(id)arg1;
-+ (id)creationRequestForAssetCollectionWithTitle:(id)arg1;
-@property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
-@property(readonly, nonatomic) RDAlbumVersionTable *albumVersionTable; // @synthesize albumVersionTable=_albumVersionTable;
-@property(retain, nonatomic) RDAlbum *mutableAlbum; // @synthesize mutableAlbum=_mutableAlbum;
-@property(readonly, nonatomic) PHObjectPlaceholder *placeholderForCreatedAssetCollection; // @synthesize placeholderForCreatedAssetCollection=_placeholderForCreatedAssetCollection;
++ (id)_changeRequestForAssetCollection:(id)arg1 optionalAssets:(id)arg2;
+@property(readonly, nonatomic) PHRelationshipChangeRequestHelper *customKeyAssetHelper; // @synthesize customKeyAssetHelper=_customKeyAssetHelper;
+@property(readonly, nonatomic) PHRelationshipChangeRequestHelper *assetsHelper; // @synthesize assetsHelper=_assetsHelper;
+@property(retain, nonatomic) PHAssetCollection *originalAssetCollection; // @synthesize originalAssetCollection=_originalAssetCollection;
 - (void).cxx_destruct;
-- (id)versionsFromAssets:(id)arg1;
+@property(readonly, copy) NSString *description;
+- (BOOL)applyMutationsToManagedObject:(id)arg1 photoLibrary:(id)arg2 error:(id *)arg3;
+- (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id *)arg2;
+- (BOOL)allowMutationToManagedObject:(id)arg1 propertyKey:(id)arg2 error:(id *)arg3;
+- (id)createManagedObjectForInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
+- (BOOL)validateInsertIntoPhotoLibrary:(id)arg1 error:(id *)arg2;
+- (void)removeAssets:(id)arg1;
+- (void)addAssets:(id)arg1;
+- (void)removeAsset:(id)arg1;
+- (void)addAsset:(id)arg1;
 - (void)moveAssetsAtIndexes:(id)arg1 toIndex:(unsigned long long)arg2;
 - (void)replaceAssetsAtIndexes:(id)arg1 withAssets:(id)arg2;
+- (void)replaceAssetInAssetsAtIndex:(unsigned long long)arg1 withAsset:(id)arg2;
 - (void)removeAssetsAtIndexes:(id)arg1;
-- (void)removeAssets:(id)arg1;
 - (void)insertAssets:(id)arg1 atIndexes:(id)arg2;
-- (void)addAssets:(id)arg1;
+- (void)removeAssetFromAssetsAtIndex:(unsigned long long)arg1;
+- (void)insertAsset:(id)arg1 inAssetsAtIndex:(unsigned long long)arg2;
+- (id)_mutableAssetsObjectIDsAndUUIDs;
+- (void)_prepareAssetIDsIfNeeded;
+- (void)_prepareWithFetchResult:(id)arg1;
+- (void)_setOriginalAssetCollection:(id)arg1;
+- (void)setCustomKeyAsset:(id)arg1;
+- (id)_mutableKeyAssetObjectIDsAndUUIDs;
+- (void)_prepareKeyAssetIDIfNeeded;
+- (void)setIsPinned:(BOOL)arg1;
+- (BOOL)isPinned;
 @property(retain, nonatomic) NSString *title;
-@property(readonly, nonatomic) NSString *localIdentifier;
-- (id)initWithAssetCollection:(id)arg1 assets:(id)arg2;
-- (id)initWithAssetCollection:(id)arg1;
-- (id)initWithPhotoLibrary:(id)arg1;
+@property(nonatomic) BOOL customSortAscending;
+@property(nonatomic) unsigned int customSortKey;
+@property(readonly, nonatomic) PHObjectPlaceholder *placeholderForCreatedAssetCollection;
+@property(readonly, nonatomic) NSString *managedEntityName;
+- (BOOL)prepareForPhotoLibraryCheck:(id)arg1 error:(id *)arg2;
+- (BOOL)prepareForServicePreflightCheck:(id *)arg1;
+- (void)encodeToXPCDict:(id)arg1;
+- (id)initWithXPCDict:(id)arg1 request:(id)arg2 clientAuthorization:(id)arg3;
+- (id)initWithUUID:(id)arg1 objectID:(id)arg2;
+- (id)initForNewObject;
+
+// Remaining properties
+@property(readonly, nonatomic, getter=isClientEntitled) BOOL clientEntitled;
+@property(readonly, nonatomic) NSString *clientName;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) BOOL isNewRequest;
+@property(readonly, getter=isMutated) BOOL mutated;
+@property(readonly, nonatomic) NSManagedObjectID *objectID;
+@property(readonly) Class superclass;
 
 @end
 

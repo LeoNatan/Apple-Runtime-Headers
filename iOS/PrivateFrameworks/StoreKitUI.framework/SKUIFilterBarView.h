@@ -12,6 +12,7 @@
 
 @class NSMapTable, NSMutableArray, NSString, SKUIDividerView, SKUIMenuPopoverController, UIControl;
 
+__attribute__((visibility("hidden")))
 @interface SKUIFilterBarView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIMenuPopoverDelegate, SKUIViewElementView>
 {
     SKUIDividerView *_bottomDividerView;

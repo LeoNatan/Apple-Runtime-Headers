@@ -24,6 +24,7 @@
 - (void)shareePickerViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (void)shareeViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (void)shareeViewControllerDidChangeAccessLevel:(id)arg1;
+- (void)_dismissShareePicker;
 - (void)_popBackToCalendarEditor:(_Bool)arg1;
 - (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned long long)arg2;
 - (_Bool)saveStateToCalendar:(id)arg1;

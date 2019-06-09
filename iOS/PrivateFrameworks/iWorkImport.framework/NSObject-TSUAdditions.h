@@ -13,5 +13,7 @@
 - (void)tsu_removeObserverForToken:(id)arg1;
 - (id)tsu_addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
 - (void)tsu_performSelector:(SEL)arg1 withValue:(id)arg2;
+- (void)tsu_runBlock;
+- (void)tp_performSelector:(SEL)arg1 withIndexesFromSet:(id)arg2;
 @end
 

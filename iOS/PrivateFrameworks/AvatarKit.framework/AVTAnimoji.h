@@ -24,7 +24,7 @@
 + (id)animojiNamed:(id)arg1;
 + (id)animojiWithContentsOfURL:(id)arg1;
 + (id)animoji;
-+ (id)_pathForPuppetNamed:(id)arg1 inAvatarBundle:(_Bool)arg2;
++ (id)_scenePathForPuppetNamed:(id)arg1;
 + (id)animojiNames;
 + (void)preloadPuppetNamed:(id)arg1;
 + (void)preloadPuppet:(id)arg1;
@@ -34,6 +34,8 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)specializationSettings;
+- (id)arTechniqueName;
+- (_Bool)hasCustomARTechnique;
 - (_Bool)_decode:(id)arg1 error:(id *)arg2;
 - (void)_encode:(id)arg1;
 - (void)setPuppetState:(id)arg1;

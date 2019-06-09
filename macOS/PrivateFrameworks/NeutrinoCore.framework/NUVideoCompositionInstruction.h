@@ -26,6 +26,7 @@
 }
 
 + (id)instructionFromBase:(id)arg1;
++ (id)instructionForVideoTrack:(id)arg1;
 @property(nonatomic) long long sampleMode; // @synthesize sampleMode=_sampleMode;
 @property(retain, nonatomic) NUColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(nonatomic) CDStruct_912cb5d2 renderScale; // @synthesize renderScale=_renderScale;

@@ -10,6 +10,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface AWDSymptomsNetworkAnalyticsRRCConnectedPeriod : PBCodable <NSCopying>
 {
     unsigned long long _bytesIn;

@@ -6,23 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <UIFoundation/NSCoding-Protocol.h>
 #import <UIFoundation/NSSecureCoding-Protocol.h>
 #import <UIFoundation/NSTextAttachmentContainer-Protocol.h>
 
 @class NSData, NSFileWrapper, NSImage, NSString, NSTextAttachmentView;
 @protocol NSTextAttachmentCell;
 
-@interface NSTextAttachment : NSObject <NSSecureCoding, NSTextAttachmentContainer, NSCoding>
+@interface NSTextAttachment : NSObject <NSTextAttachmentContainer, NSSecureCoding>
 {
-    NSFileWrapper *_fileWrapper;
-    id <NSTextAttachmentCell> _cell;
-    struct {
-        unsigned int cellWasExplicitlySet:1;
-        unsigned int ignoresOrientation:1;
-        unsigned int allowsEditingContents:1;
-        unsigned int :29;
-    } _flags;
     NSData *_data;
     NSString *_uti;
     NSString *_cacheKey;
@@ -35,6 +26,14 @@
     } _taFlags;
     NSImage *_image;
     NSTextAttachmentView *_wrapperView;
+    NSFileWrapper *_fileWrapper;
+    id <NSTextAttachmentCell> _cell;
+    struct {
+        unsigned int cellWasExplicitlySet:1;
+        unsigned int ignoresOrientation:1;
+        unsigned int allowsEditingContents:1;
+        unsigned int :29;
+    } _flags;
 }
 
 + (void)registerTextAttachmentClass:(Class)arg1 forFileType:(id)arg2;
@@ -82,6 +81,8 @@
 - (id)initWithData:(id)arg1 ofType:(id)arg2;
 - (id)_image;
 - (id)_cacheKey;
+- (id)_imageForUTI_iOS:(id)arg1;
+- (id)_imageForUTI_macOS:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

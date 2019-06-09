@@ -21,8 +21,27 @@ struct CGRect {
 };
 
 struct CGSize {
-    double _field1;
-    double _field2;
+    double width;
+    double height;
+};
+
+struct SCNMatrix4 {
+    float _field1;
+    float _field2;
+    float _field3;
+    float _field4;
+    float _field5;
+    float _field6;
+    float _field7;
+    float _field8;
+    float _field9;
+    float _field10;
+    float _field11;
+    float _field12;
+    float _field13;
+    float _field14;
+    float _field15;
+    float _field16;
 };
 
 struct SCNVector3 {
@@ -59,17 +78,13 @@ typedef struct {
 } CDStruct_b01a1f36;
 
 typedef struct {
-    float _field1[4];
-} CDStruct_212a8bf9;
-
-typedef struct {
     double timestamp;
     _Bool translation__orientation__cameraSpace;
-    float blendShapeWeights_smooth[64];
-    float blendShapeWeights_raw[64];
+    float blendShapeWeights_smooth[51];
+    float blendShapeWeights_raw[51];
     float parameters_smooth[1];
     float parameters_raw[1];
-} CDStruct_40c3f62d;
+} CDStruct_32896d86;
 
 typedef struct {
     double totalLatency;

@@ -23,6 +23,7 @@
 @property(nonatomic) __weak UIView *circleView; // @synthesize circleView=_circleView;
 @property(retain, nonatomic) NTKAnalogScene *analogScene; // @synthesize analogScene=_analogScene;
 - (void).cxx_destruct;
+- (void)_setupSceneHostViewIfNecessary;
 - (void)_setContentViewsOpaque:(_Bool)arg1;
 @property(nonatomic) _Bool shouldRasterizeBackground;
 - (void)_prepareForSnapshotting;
@@ -45,7 +46,7 @@
 - (void)_applyFrozen;
 - (struct CGSize)_sceneSize;
 - (_Bool)_needsForegroundContainerView;
-- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)setEditView:(id)arg1;
 - (void)_handleLocaleDidChange;
 - (_Bool)_shouldFreezeSceneForEditMode:(int)arg1;

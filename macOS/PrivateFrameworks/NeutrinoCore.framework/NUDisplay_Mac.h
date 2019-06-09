@@ -8,7 +8,7 @@
 
 #import <NeutrinoCore/NUDisplay-Protocol.h>
 
-@class NSString;
+@class NSString, NUColorSpace, NUPixelFormat;
 
 @interface NUDisplay_Mac : NSObject <NUDisplay>
 {
@@ -17,9 +17,13 @@
 
 + (id)displays;
 @property(readonly, nonatomic) unsigned int displayID; // @synthesize displayID=_displayID;
+@property(readonly) NUColorSpace *colorSpace;
+@property(readonly) NUPixelFormat *pixelFormat;
+- (id)pixelEncoding;
 @property(readonly, nonatomic) CDStruct_912cb5d2 size;
 @property(readonly, nonatomic) NSString *name;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) id identifier;
 - (id)initWithDisplayID:(unsigned int)arg1;
 - (id)init;
 

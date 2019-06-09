@@ -11,5 +11,6 @@
 + (void)_isdUseFriendlyExceptions:(BOOL)arg1;
 - (void)_friendlyRaise;
 - (id)_friendlyInitWithName:(id)arg1 reason:(id)arg2 userInfo:(id)arg3;
+- (id)_isdErrorWithCode:(long long)arg1 domain:(id)arg2;
 @end
 

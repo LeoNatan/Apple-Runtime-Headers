@@ -6,22 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSCache, NSMutableArray, NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSString, SGSqliteDatabaseImpl;
 
 @interface SGSqliteDatabase : NSObject
 {
-    struct sqlite3 *_db;
-    int _transactionDepth;
-    BOOL _transactionRolledback;
-    // Error parsing type: {atomic_flag="_Value"AB}, name: _isClosed
+    SGSqliteDatabaseImpl *_impl;
     unsigned long long _lastBusyWaitEnded;
-    NSString *_filename;
-    NSCache *_queryCache;
     NSMutableDictionary *_sqlarrays;
-    struct _opaque_pthread_mutex_t _lock;
-    NSMutableArray *_statementsToFinalizeAsync;
-    BOOL _currentExclusivity;
-    BOOL _isInMemory;
 }
 
 + (int)bindParam:(struct sqlite3_stmt *)arg1 name:(const char *)arg2 nscoding:(id)arg3;
@@ -31,7 +22,6 @@
 + (int)bindParam:(struct sqlite3_stmt *)arg1 name:(const char *)arg2 int64:(long long)arg3;
 + (int)bindParam:(struct sqlite3_stmt *)arg1 name:(const char *)arg2 int:(int)arg3;
 + (int)bindParamToNull:(struct sqlite3_stmt *)arg1 name:(const char *)arg2;
-+ (BOOL)shouldCacheSql:(const char *)arg1;
 + (void)truncateDatabaseAtPath:(id)arg1;
 + (id)randomlyNamedInMemoryPathWithBaseName:(id)arg1;
 + (id)inMemoryPath;
@@ -43,8 +33,6 @@
 + (id)sqliteDatabaseWithFilename:(id)arg1 flags:(int)arg2 error:(id *)arg3;
 + (id)corruptionMarkerPathForPath:(id)arg1;
 + (id)corruptionMarkerFilename;
-@property(readonly, nonatomic) BOOL isInMemory; // @synthesize isInMemory=_isInMemory;
-@property(readonly, nonatomic) NSString *filename; // @synthesize filename=_filename;
 - (void).cxx_destruct;
 - (void)vacuum;
 - (unsigned long long)vacuumMode;
@@ -59,15 +47,10 @@
 - (id)tablesWithColumnNamed:(id)arg1;
 - (BOOL)hasTableNamed:(id)arg1;
 - (long long)maxIdForTable:(id)arg1;
-- (BOOL)setUserVersion:(unsigned long long)arg1;
-- (unsigned long long)userVersion;
+- (BOOL)setUserVersion:(unsigned int)arg1;
+- (unsigned int)userVersion;
 - (BOOL)createSnapshot:(id)arg1;
 - (id)description;
-- (BOOL)_transactionWithExclusivity:(BOOL)arg1 transaction:(CDUnknownBlockType)arg2;
-- (void)_txnEnd;
-- (void)_txnRollback;
-- (void)_txnBeginExclusive;
-- (void)_txnBegin;
 - (BOOL)frailReadTransaction:(CDUnknownBlockType)arg1;
 - (void)readTransaction:(CDUnknownBlockType)arg1;
 - (BOOL)frailWriteTransaction:(CDUnknownBlockType)arg1;
@@ -80,14 +63,15 @@
 - (BOOL)prepAndRunNonDataQueries:(id)arg1 onError:(CDUnknownBlockType)arg2;
 - (void)_prepAndRunQuery:(id)arg1 columns:(id)arg2 dictionary:(id)arg3 onError:(CDUnknownBlockType)arg4;
 - (BOOL)prepAndRunQuery:(id)arg1 onPrep:(CDUnknownBlockType)arg2 onRow:(CDUnknownBlockType)arg3 onError:(CDUnknownBlockType)arg4;
+- (BOOL)_prepQuery:(id)arg1 onPrep:(CDUnknownBlockType)arg2 onError:(CDUnknownBlockType)arg3;
 - (void)prepQuery:(id)arg1 onPrep:(CDUnknownBlockType)arg2 onError:(CDUnknownBlockType)arg3;
-- (BOOL)runQuery:(struct sqlite3_stmt *)arg1 onRow:(CDUnknownBlockType)arg2;
-- (BOOL)runQuery:(struct sqlite3_stmt *)arg1 onRow:(CDUnknownBlockType)arg2 onError:(CDUnknownBlockType)arg3;
+- (BOOL)runQuery:(id)arg1 onRow:(CDUnknownBlockType)arg2 onError:(CDUnknownBlockType)arg3;
+@property(readonly, nonatomic) BOOL isInMemory;
+@property(readonly, nonatomic) NSString *filename;
 @property(readonly, nonatomic) struct sqlite3 *handle;
 - (long long)lastInsertRowId;
 - (void)simulateOnDiskDatabase;
 - (void)closePermanently;
-- (void)dealloc;
 - (id)initWithFilename:(id)arg1 flags:(int)arg2 error:(id *)arg3;
 - (BOOL)_handle_sqlite_error_code:(int)arg1 error:(id)arg2 onError:(CDUnknownBlockType)arg3;
 - (BOOL)_handle_SQLITE_AUTH_USER:(id)arg1 onError:(CDUnknownBlockType)arg2;

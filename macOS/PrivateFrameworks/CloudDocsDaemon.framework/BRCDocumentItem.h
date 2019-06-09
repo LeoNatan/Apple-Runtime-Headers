@@ -40,9 +40,9 @@
 - (BOOL)_needsSyncBubbleRecomputeForError:(id)arg1 origError:(id)arg2;
 - (BOOL)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
-- (void)_updateRecursivePropertiesInDB:(id)arg1 dbRowID:(unsigned long long)arg2 diffs:(unsigned long long)arg3;
+- (void)_updateRecursivePropertiesInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (BOOL)_nukePackageItemsFromDB:(id)arg1;
-- (void)_updateReadThrottleIfNeededForRowID:(unsigned long long)arg1 forCreation:(BOOL)arg2;
+- (void)_updateReadThrottleIfNeededForCreation:(BOOL)arg1;
 - (void)_updateUploadJobIfNeededWithDiffs:(unsigned long long)arg1;
 - (void)_updateLiveConflictLoserFromFSAtPath:(id)arg1;
 - (void)addResolvedConflictLoserEtag:(id)arg1;
@@ -55,7 +55,7 @@
 - (void)markForceNeedsSyncUp;
 - (void)markForceUpload;
 - (void)handleUnknownItemError;
-- (BOOL)markLatestRequestAcknowledgedInZone:(id)arg1;
+- (BOOL)markLatestSyncRequestAcknowledgedInZone:(id)arg1;
 - (void)markLatestSyncRequestRejectedInZone:(id)arg1;
 - (void)markNeedsReading;
 - (void)markDead;
@@ -69,7 +69,7 @@
 - (BOOL)updateLocationAndMetaFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
 - (BOOL)updateFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
 - (id)_filenameOverrideForPath:(id)arg1;
-- (void)learnItemID:(id)arg1 ownerKey:(id)arg2 path:(id)arg3 markLost:(BOOL)arg4;
+- (void)learnItemID:(id)arg1 ownerKey:(id)arg2 path:(id)arg3 sharingOptions:(unsigned long long)arg4 markLost:(BOOL)arg5;
 - (void)markItemForgottenByServer;
 - (void)updateVersionMetadataFromServerItem:(id)arg1 preventVersionDiffs:(BOOL)arg2;
 - (void)updateContentsCKInfoAndDeviceIDFromServerItem:(id)arg1;
@@ -96,14 +96,15 @@
 - (id)anyReverseAliasInAppLibrary:(id)arg1;
 - (struct PQLResultSet *)reverseAliasEnumerator;
 - (BOOL)_isInterestingUpdateForNotifs;
-@property(readonly, nonatomic) unsigned int downloadStatus;
-@property(readonly, nonatomic) unsigned int queryItemStatus;
+@property(readonly, nonatomic) unsigned short downloadStatus;
+@property(readonly, nonatomic) unsigned short queryItemStatus;
 @property(readonly, nonatomic) BOOL isDownloadRequestedForThumbnail;
 @property(readonly, nonatomic) BOOL isDownloadRequested;
 @property(readonly, nonatomic) BOOL shouldTransferThumbnail;
 @property(readonly, nonatomic) BOOL shouldHaveThumbnail;
 @property(readonly, nonatomic) BOOL shouldBeGreedy;
 - (BOOL)hasShareIDAndIsOwnedByMe;
+@property(readonly, nonatomic) BOOL iCloudDriveIsResponsibleForAutoEviction;
 @property(readonly, nonatomic) BOOL isVisibleIniCloudDrive;
 @property(readonly, nonatomic) BOOL isAutomaticallyEvictable;
 @property(readonly, nonatomic) BOOL isEvictable;
@@ -117,6 +118,7 @@
 - (id)aliasItemID;
 - (id)baseContentsRecord;
 - (id)contentsRecordID;
+- (BOOL)learnStagedInfoFromDownloadStageID:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, nonatomic) BRCAliasItem *asBRAlias; // @dynamic asBRAlias;

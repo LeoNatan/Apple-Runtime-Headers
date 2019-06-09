@@ -13,10 +13,8 @@
     _Bool _monitorsSettings;
     _Bool _monitorsPairingStatus;
     _Bool _monitorsClientSettings;
-    _Bool _monitorsEffectiveSettings;
 }
 
-@property(nonatomic) _Bool monitorsEffectiveSettings; // @synthesize monitorsEffectiveSettings=_monitorsEffectiveSettings;
 @property(nonatomic) _Bool monitorsClientSettings; // @synthesize monitorsClientSettings=_monitorsClientSettings;
 @property(nonatomic) _Bool monitorsPairingStatus; // @synthesize monitorsPairingStatus=_monitorsPairingStatus;
 @property(nonatomic) _Bool monitorsSettings; // @synthesize monitorsSettings=_monitorsSettings;

@@ -9,6 +9,7 @@
 @protocol SFXPCInterface
 
 @optional
+- (void)userNotificationDictionaryResponse:(NSDictionary *)arg1;
 - (void)userNotificationTextResponse:(NSString *)arg1;
 - (void)userNotificationResponse:(long)arg1;
 - (void)userNotificationError:(NSError *)arg1;
@@ -28,6 +29,14 @@
 - (void)remoteInteractionSessionTextSessionDidEnd:(SFRemoteTextSessionInfo *)arg1;
 - (void)remoteInteractionSessionTextSessionDidBegin:(SFRemoteTextSessionInfo *)arg1;
 - (void)remoteInteractionSessionRemoteTextEvent:(NSDictionary *)arg1;
+- (void)proximityClientDeviceDidUntriggerHandler:(NSString *)arg1;
+- (void)proximityClientDeviceWillTriggerHandler:(NSString *)arg1;
+- (void)proximityClientDeviceWasSelectedHandler:(NSString *)arg1;
+- (void)proximityClientDeviceWasDismissedHandler:(NSString *)arg1 reason:(int)arg2;
+- (void)proximityClientDeviceExitedNearby:(NSString *)arg1;
+- (void)proximityClientDeviceEnteredNearby:(NSString *)arg1;
+- (void)proximityClientDeviceExitedImmediate:(NSString *)arg1;
+- (void)proximityClientDeviceEnteredImmediate:(NSString *)arg1;
 - (void)deviceDiscoveryScanStateChanged:(int)arg1;
 - (void)deviceDiscoveryDeviceChanged:(SFDevice *)arg1 changes:(unsigned int)arg2;
 - (void)deviceDiscoveryLostDevice:(SFDevice *)arg1;

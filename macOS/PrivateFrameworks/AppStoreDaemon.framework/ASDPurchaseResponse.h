@@ -16,8 +16,12 @@
     NSArray *_items;
 }
 
++ (BOOL)supportsSecureCoding;
 @property(readonly) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithPurchaseResponseItems:(id)arg1;
 - (id)init;
 

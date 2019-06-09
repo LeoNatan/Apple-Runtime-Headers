@@ -6,14 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSTimer;
-@protocol PXPeopleProgressDataSource;
+@class NSTimer, PXPeopleProgressDataSource;
 
 @interface PXPeopleProgressManager : NSObject
 {
     BOOL _monitoringProgress;
     BOOL _processingComplete;
-    id <PXPeopleProgressDataSource> _dataSource;
+    PXPeopleProgressDataSource *_dataSource;
     double _updateInterval;
     double _progress;
     unsigned long long _processingStatus;
@@ -26,14 +25,13 @@
 @property double progress; // @synthesize progress=_progress;
 @property(nonatomic) double updateInterval; // @synthesize updateInterval=_updateInterval;
 @property(nonatomic, getter=isMonitoringProgress) BOOL monitoringProgress; // @synthesize monitoringProgress=_monitoringProgress;
-@property(retain, nonatomic) id <PXPeopleProgressDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(retain, nonatomic) PXPeopleProgressDataSource *dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (BOOL)_progressComplete:(double)arg1;
 - (void)_updateStatusForProgress:(double)arg1 processCount:(unsigned long long)arg2;
 - (void)_scheduleNextUpdate;
 - (void)updateProgressWithForce:(BOOL)arg1;
 - (void)_updateWithStatus:(unsigned long long)arg1 progress:(double)arg2;
-@property(readonly) BOOL hasFaceProcessingTodo;
 - (BOOL)hasSubstantialProcessingUsingMinAssetCount:(BOOL)arg1;
 @property(readonly) BOOL shouldUseProgressFooter;
 @property(readonly) BOOL shouldUseInterstitial;

@@ -8,43 +8,46 @@
 
 #import <VoiceShortcuts/SYServiceDelegate-Protocol.h>
 #import <VoiceShortcuts/VCCompanionSyncSessionDelegate-Protocol.h>
-#import <VoiceShortcuts/VCVoiceShortcutSyncService-Protocol.h>
 
-@class NSArray, NSString, SYService, VCCompanionSyncSession;
-@protocol OS_dispatch_queue, VCCompanionSyncServiceDelegate;
+@class NSSet, NSString, SYService, VCCompanionSyncDebouncer, VCCompanionSyncSession, VCNRDeviceSyncService;
+@protocol OS_dispatch_queue, VCCompanionSyncServiceDelegate, VCSyncDataEndpoint;
 
-@interface VCCompanionSyncService : NSObject <SYServiceDelegate, VCCompanionSyncSessionDelegate, VCVoiceShortcutSyncService>
+@interface VCCompanionSyncService : NSObject <SYServiceDelegate, VCCompanionSyncSessionDelegate>
 {
-    _Bool _hasBeenStarted;
     id <VCCompanionSyncServiceDelegate> _delegate;
-    NSArray *_syncDataHandlers;
-    NSString *_syncServiceIdentifier;
-    NSObject<OS_dispatch_queue> *_syncQueue;
-    SYService *_syService;
+    SYService *_service;
+    NSObject<OS_dispatch_queue> *_queue;
+    id <VCSyncDataEndpoint> _syncDataEndpoint;
+    VCCompanionSyncDebouncer *_debouncer;
+    NSSet *_currentDataHandlers;
     VCCompanionSyncSession *_currentSession;
+    VCNRDeviceSyncService *_currentSyncService;
 }
 
-+ (id)successfulChangesFromAllSyncedChanges:(id)arg1 sessionFinishError:(id)arg2;
 + (void)initialize;
+@property(copy, nonatomic) VCNRDeviceSyncService *currentSyncService; // @synthesize currentSyncService=_currentSyncService;
 @property(retain, nonatomic) VCCompanionSyncSession *currentSession; // @synthesize currentSession=_currentSession;
-@property(retain, nonatomic) SYService *syService; // @synthesize syService=_syService;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *syncQueue; // @synthesize syncQueue=_syncQueue;
-@property(retain, nonatomic) NSString *syncServiceIdentifier; // @synthesize syncServiceIdentifier=_syncServiceIdentifier;
-@property(readonly, nonatomic) NSArray *syncDataHandlers; // @synthesize syncDataHandlers=_syncDataHandlers;
-@property(nonatomic) _Bool hasBeenStarted; // @synthesize hasBeenStarted=_hasBeenStarted;
+@property(copy, nonatomic) NSSet *currentDataHandlers; // @synthesize currentDataHandlers=_currentDataHandlers;
+@property(readonly, nonatomic) VCCompanionSyncDebouncer *debouncer; // @synthesize debouncer=_debouncer;
+@property(readonly, nonatomic) id <VCSyncDataEndpoint> syncDataEndpoint; // @synthesize syncDataEndpoint=_syncDataEndpoint;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly, nonatomic) SYService *service; // @synthesize service=_service;
 @property(nonatomic) __weak id <VCCompanionSyncServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)clearSyncStateForAllDataHandlers;
-- (void)startSyncSession;
 - (void)companionSyncSession:(id)arg1 didFinishWithError:(id)arg2;
+- (void)service:(id)arg1 didSwitchFromPairingID:(id)arg2 toPairingID:(id)arg3;
+- (void)service:(id)arg1 willSwitchFromPairingID:(id)arg2 toPairingID:(id)arg3;
+- (void)service:(id)arg1 encounteredError:(id)arg2 context:(id)arg3;
 - (_Bool)service:(id)arg1 startSession:(id)arg2 error:(id *)arg3;
+- (void)updateCurrentSyncServiceIfNecessary;
+- (void)updateSyncDataHandlers;
+- (void)resetSession;
 - (void)requestFullResync;
+- (void)requestSyncImmediately;
 - (void)requestSync;
-- (void)voiceShortcutsDidChange;
-- (void)stopSyncService;
-- (_Bool)startSyncService:(id *)arg1;
 - (_Bool)isRunningOnWatch;
-- (id)initWithSyncDataHandlers:(id)arg1 pairedDeviceIdentifier:(id)arg2;
+- (void)dealloc;
+- (id)initWithSyncDataEndpoint:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

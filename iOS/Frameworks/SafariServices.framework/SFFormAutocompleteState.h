@@ -92,6 +92,7 @@ __attribute__((visibility("hidden")))
 - (void)_showCreditCardDataSuggestionsAfterUserHasFilledCreditCardData;
 - (id)_sortedSingleCreditCardDataArray:(id)arg1;
 - (_Bool)_shouldOfferCreditCardDataAfterUserHasFilledCreditCardData:(id)arg1;
+- (_Bool)_textFieldLooksLikeCardSecurityCodeFieldButNotCardNumberOrCardholderField:(id)arg1;
 - (id)_displayTextForCreditCardNumber:(id)arg1;
 @property(readonly, nonatomic) _Bool shouldOfferToAutoFillCreditCardData;
 - (_Bool)_shouldAllowGeneratedPassword;

@@ -8,7 +8,7 @@
 
 #import <ContactsPersistence/CNAccountDescription-Protocol.h>
 
-@class ABCDContainer, NSString, NSURL;
+@class ABCDContainer, NSArray, NSNumber, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface CNOnDiskAccountDescription : NSObject <CNAccountDescription>
@@ -23,15 +23,17 @@ __attribute__((visibility("hidden")))
 @property BOOL isPersistent; // @synthesize isPersistent=_isPersistent;
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property(copy) NSURL *baseURL; // @synthesize baseURL=_baseURL;
+- (void).cxx_destruct;
 - (BOOL)_isLocalAccount;
 @property(readonly) ABCDContainer *containerRepresentation;
 @property(readonly) NSURL *persistentStoreURL;
 @property(readonly) BOOL isEnabled;
-- (void)dealloc;
 
 // Remaining properties
+@property(readonly, copy) NSArray *childAccounts;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly) NSNumber *dsid;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

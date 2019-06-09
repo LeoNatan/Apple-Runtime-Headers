@@ -31,6 +31,7 @@
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqualToActionSearchResult:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void)_updateInlineCard;
 - (void)setAtxAction:(id)arg1;
 - (id)init;

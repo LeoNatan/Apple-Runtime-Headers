@@ -10,6 +10,7 @@
 
 @class NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIEditorialLinkLayoutRequest : NSObject <SKUILayoutRequest>
 {
     NSArray *_links;

@@ -14,12 +14,14 @@
 @interface ScreenSaverExtensionModule : ScreenSaverModule <NSXPCListenerDelegate>
 {
     NSXPCListener *_listener;
-    BOOL _needsAnimationTimer;
+    NSViewController *_configurationSheetViewController;
     NSViewController *_configurationViewController;
     NSObject<OS_dispatch_queue> *_requestQueue;
     NSObject<OS_dispatch_semaphore> *_requestQueueSema;
     NSObject<OS_dispatch_queue> *_viewBridgeEndpointQueue;
     NSObject<OS_dispatch_semaphore> *_viewBridgeEndpointSema;
+    NSObject<OS_dispatch_queue> *_workQueue;
+    NSObject<OS_dispatch_semaphore> *_workQueueSema;
     NSXPCListenerEndpoint *_viewBridgeEndpoint;
     NSExtension *_extension;
 }
@@ -27,15 +29,20 @@
 + (id)_exportedInterface;
 @property(retain) NSExtension *extension; // @synthesize extension=_extension;
 - (void)___nsx_pingHost:(CDUnknownBlockType)arg1;
-- (void)requestConfigurationViewController:(CDUnknownBlockType)arg1;
-- (BOOL)needsAnimationTimer;
 - (void)extension:(id)arg1 viewBridgeEndpoint:(id)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)beginExtensionRequestWithUserInfo:(id)arg1;
-- (id)loadViewForFrame:(struct CGRect)arg1 isPreview:(BOOL)arg2;
 @property(readonly, nonatomic) NSXPCListenerEndpoint *listenerEndpoint;
+- (void)_handshake:(BOOL)arg1;
+- (void)requestConfigurationViewController:(CDUnknownBlockType)arg1;
+- (void)requestConfigurationSheetViewController:(CDUnknownBlockType)arg1;
+- (void)beginExtensionRequestWithUserInfo:(id)arg1;
+- (id)loadViewForFrame:(struct CGRect)arg1 isPreview:(BOOL)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (id)loadViewForFrame:(struct CGRect)arg1 isPreview:(BOOL)arg2;
+- (BOOL)hasConfigureSheet;
+- (void)presentConfigureSheetWithCompletionBlock:(CDUnknownBlockType)arg1 dismissBlock:(CDUnknownBlockType)arg2;
+- (id)displayName;
 - (void)dealloc;
-- (id)initWithExtension:(id)arg1;
+- (id)initWithExtension:(id)arg1 isPreview:(BOOL)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

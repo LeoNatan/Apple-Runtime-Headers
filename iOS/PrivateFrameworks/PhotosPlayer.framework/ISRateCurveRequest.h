@@ -8,6 +8,7 @@
 
 @class ISAVPlayer;
 
+__attribute__((visibility("hidden")))
 @interface ISRateCurveRequest : NSObject
 {
     double _startTime;

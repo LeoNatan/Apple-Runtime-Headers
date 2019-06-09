@@ -10,14 +10,14 @@
 
 @interface GEOMapFeatureBuilding : NSObject
 {
-    CDStruct_4b3b14e6 *_feature;
+    CDStruct_b326a3d5 *_feature;
     NSArray *_sections;
 }
 
 @property(readonly, nonatomic) NSArray *sections; // @synthesize sections=_sections;
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithFeature:(CDStruct_4b3b14e6 *)arg1;
+- (id)initWithFeature:(CDStruct_b326a3d5 *)arg1;
 
 @end
 

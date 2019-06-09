@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (id)subtitleFontForItemAtIndex:(unsigned int)arg1;
 - (id)subtitleForItemAtIndex:(unsigned int)arg1;
 - (id)fontForItemAtIndex:(unsigned int)arg1;
+- (_Bool)usesDeviceLanguageForItemAtIndex:(unsigned int)arg1;
 - (id)localizedTitleForItemAtIndex:(unsigned int)arg1;
 - (id)titleForItemAtIndex:(unsigned int)arg1;
 - (void)didSelectItemAtIndex:(unsigned int)arg1;
@@ -60,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (unsigned int)numberOfItems;
 - (void)willFadeForSelectionAtIndex:(unsigned int)arg1;
 - (void)willFade;
+- (void)didShow;
 - (void)willShow;
 - (_Bool)shouldShow;
 - (struct CGRect)popupRect;
@@ -90,16 +92,16 @@ __attribute__((visibility("hidden")))
 - (void)setNeedsDisplay;
 - (void)setNeedsDisplayForTopBottomCells;
 - (void)setNeedsDisplayForCell:(id)arg1;
-- (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)hide;
 - (void)removeFromSuperview;
+- (_Bool)launchedFromKeyboard;
 - (void)clear;
 - (void)fadeWithDelay:(double)arg1 forSelectionAtIndex:(unsigned int)arg2;
 - (void)fadeWithDelay:(double)arg1;
 - (void)fade;
 - (void)_delayedFade;
 - (void)showAsPopupForKey:(id)arg1 inLayout:(id)arg2;
-- (int)_internationalKeyRoundedCornerInLayout:(id)arg1;
+- (unsigned int)_internationalKeyRoundedCornerInLayout:(id)arg1;
 - (float)minYOfLastTableCellForSelectionExtraView;
 - (id)maskForShadowViewBlurredBackground;
 - (id)containerView;

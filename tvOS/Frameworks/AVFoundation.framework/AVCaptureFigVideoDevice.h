@@ -9,6 +9,7 @@
 @class AVCaptureDeviceControlRequestQueue, AVCaptureDeviceFormat, AVWeakReference, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureFigVideoDevice : AVCaptureDevice
 {
     NSObject<OS_dispatch_queue> *_fcsQueue;
@@ -17,7 +18,6 @@
     NSObject<OS_dispatch_queue> *_devicePropsQueue;
     NSString *_fcsUID;
     long long _position;
-    long long _origin;
     NSString *_localizedName;
     NSArray *_formats;
     AVCaptureDeviceFormat *_activeFormat;
@@ -81,8 +81,6 @@
     _Bool _faceDetectionDrivenImageProcessingEnabled;
     struct CGRect _faceRectangle;
     int _faceRectangleAngle;
-    _Bool _automaticallyEnablesLowLightBoostWhenAvailable;
-    _Bool _lowLightBoostEnabled;
     _Bool _highDynamicRangeSceneDetectionEnabled;
     _Bool _automaticallyAdjustsVideoHDREnabled;
     _Bool _videoHDREnabled;
@@ -207,9 +205,9 @@
 - (void)_setIsStillImageStabilizationScene:(_Bool)arg1;
 - (_Bool)_isStillImageStabilizationScene;
 - (_Bool)isStillImageStabilizationScene;
-- (void)setHighDynamicRangeSceneDetectionEnabled:(_Bool)arg1;
 - (void)_setHighDynamicRangeScene:(_Bool)arg1;
 - (_Bool)_isHighDynamicRangeScene;
+- (void)setHighDynamicRangeSceneDetectionEnabled:(_Bool)arg1;
 - (_Bool)isHighDynamicRangeScene;
 - (_Bool)isHighDynamicRangeSceneDetectionEnabled;
 - (_Bool)isHighDynamicRangeSceneDetectionSupported;
@@ -318,7 +316,6 @@
 - (long long)position;
 - (_Bool)isConnected;
 - (_Bool)isInUseByAnotherApplication;
-- (long long)deviceSourceOrigin;
 - (_Bool)cachesFigCaptureSourceConfigurationChanges;
 - (void)setCachesFigCaptureSourceConfigurationChanges:(_Bool)arg1;
 - (_Bool)isActiveVideoMaxFrameDurationSet;
@@ -344,6 +341,7 @@
 - (_Bool)isLockedForConfiguration;
 - (_Bool)supportsAVCaptureSessionPreset:(id)arg1;
 - (_Bool)hasMediaType:(id)arg1;
+- (int)figCaptureSourceDeviceType;
 - (id)deviceType;
 - (id)localizedName;
 - (id)modelID;

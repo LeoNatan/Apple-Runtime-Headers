@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)dockListIndex;
 - (void)makeFrontmost:(id)arg1;
 - (void)addItemStatusToRequest:(id)arg1;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (id)typeDescription;
 - (void)addItemDescriptionToRequest:(id)arg1;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;

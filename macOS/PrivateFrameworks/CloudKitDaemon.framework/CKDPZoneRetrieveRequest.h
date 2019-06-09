@@ -8,11 +8,12 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class CKDPRecordZoneIdentifier;
+@class CKDPRecordZoneIdentifier, NSData;
 
 __attribute__((visibility("hidden")))
 @interface CKDPZoneRetrieveRequest : PBRequest <NSCopying>
 {
+    NSData *_continuationMarker;
     CKDPRecordZoneIdentifier *_zoneIdentifier;
     BOOL _onlyFetchPCSInfo;
     struct {
@@ -21,6 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)options;
+@property(retain, nonatomic) NSData *continuationMarker; // @synthesize continuationMarker=_continuationMarker;
 @property(nonatomic) BOOL onlyFetchPCSInfo; // @synthesize onlyFetchPCSInfo=_onlyFetchPCSInfo;
 @property(retain, nonatomic) CKDPRecordZoneIdentifier *zoneIdentifier; // @synthesize zoneIdentifier=_zoneIdentifier;
 - (void).cxx_destruct;
@@ -35,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasContinuationMarker;
 @property(nonatomic) BOOL hasOnlyFetchPCSInfo;
 @property(readonly, nonatomic) BOOL hasZoneIdentifier;
 

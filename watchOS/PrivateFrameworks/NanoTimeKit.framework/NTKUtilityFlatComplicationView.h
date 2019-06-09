@@ -6,22 +6,35 @@
 
 #import <NanoTimeKit/NTKUtilityComplicationView.h>
 
-@class NTKColoringLabel, NTKCurvedColoringLabel, UIImageView, UIView;
-@protocol NTKComplicationImageView;
+#import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
+#import <NanoTimeKit/CLKMonochromeFilterProvider-Protocol.h>
 
-@interface NTKUtilityFlatComplicationView : NTKUtilityComplicationView
+@class NSString, NTKColoringLabel, NTKCurvedColoringLabel, UIImageView, UIView;
+@protocol CLKMonochromeFilterProvider, NTKComplicationImageView, NTKUtilityFlatComplicationViewDelegate;
+
+@interface NTKUtilityFlatComplicationView : NTKUtilityComplicationView <CLKMonochromeFilterProvider, CLKMonochromeComplicationView>
 {
     UIView<NTKComplicationImageView> *_imageView;
     NTKColoringLabel *_label;
     NTKCurvedColoringLabel *_curvedLabel;
     UIImageView *_curvedHighlightView;
     NTKColoringLabel *_activeLabel;
+    id <CLKMonochromeFilterProvider> _filterProvider;
+    id <NTKUtilityFlatComplicationViewDelegate> _delegate;
+    float _textWidthInRadians;
 }
 
 + (void)circleRadius:(float *)arg1 centerAngle:(float *)arg2 maxAngularWidth:(float *)arg3 interior:(_Bool *)arg4 forPlacement:(unsigned int)arg5 forDevice:(id)arg6;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
+@property(nonatomic) float textWidthInRadians; // @synthesize textWidthInRadians=_textWidthInRadians;
+@property(nonatomic) __weak id <NTKUtilityFlatComplicationViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (id)colorForView:(id)arg1 accented:(_Bool)arg2;
+- (id)filterForView:(id)arg1 style:(int)arg2;
+- (id)filterForView:(id)arg1 style:(int)arg2 fraction:(float)arg3;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)_enumerateColoringStackedImagesViewsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_enumerateColoringViewsWithBlock:(CDUnknownBlockType)arg1;
 - (id)_backgroundPlatterImage;
@@ -36,11 +49,20 @@
 - (void)setShouldUseBackgroundPlatter:(_Bool)arg1;
 - (unsigned int)imagePlacement;
 - (void)setUseBlockyHighlightCorners:(_Bool)arg1;
+@property(nonatomic) float circleRadius;
+@property(nonatomic) float maxAngularWidth;
 - (void)setPlacement:(unsigned int)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setCanUseCurvedText:(_Bool)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)updateTextWidthIfNeeded;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

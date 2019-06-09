@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVAudioFormat, NSDictionary, NSURL;
+@class AVAudioFormat, NSArray, NSDictionary, NSURL;
 @protocol AVAudioRecorderDelegate;
 
 @interface AVAudioRecorder : NSObject
@@ -15,11 +15,12 @@
 }
 
 @property(nonatomic) BOOL instantaneousMetering;
+@property(copy, nonatomic) NSArray *channelAssignments;
 - (float)averagePowerForChannel:(unsigned long long)arg1;
 - (float)peakPowerForChannel:(unsigned long long)arg1;
 - (void)updateMeters;
 @property(getter=isMeteringEnabled) BOOL meteringEnabled;
-@property id <AVAudioRecorderDelegate> delegate;
+@property __weak id <AVAudioRecorderDelegate> delegate;
 @property(readonly) double deviceCurrentTime;
 @property(readonly) double currentTime;
 - (BOOL)deleteRecording;

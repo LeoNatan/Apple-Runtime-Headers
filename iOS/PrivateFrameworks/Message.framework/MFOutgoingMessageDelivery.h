@@ -6,19 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class DeliveryAccount, MFAttachmentCompositionContext, MFMailDelivery, MFMessage, MFMutableMessageHeaders, MFPlainTextDocument, MailAccount, NSArray, NSDictionary, NSString;
+@class DeliveryAccount, ECHTMLStringAndMIMECharset, MFAttachmentCompositionContext, MFMailDelivery, MFMailMessage, MFMutableMessageHeaders, MFPlainTextDocument, MailAccount, NSArray, NSDictionary;
 @protocol MFDeliveryDelegate;
 
 @interface MFOutgoingMessageDelivery : NSObject
 {
-    MFMessage *_message;
+    MFMailMessage *_message;
     MFMutableMessageHeaders *_headers;
     NSArray *_mixedContent;
     _Bool _textPartsAreHTML;
-    NSString *_htmlBody;
+    ECHTMLStringAndMIMECharset *_htmlBody;
     MFPlainTextDocument *_plainTextAlternative;
     NSArray *_otherHTMLAndAttachments;
-    NSArray *_charsets;
     id <MFDeliveryDelegate> _delegate;
     MailAccount *_archiveAccount;
     DeliveryAccount *_deliveryAccount;
@@ -30,7 +29,7 @@
     long long _originalConversationId;
 }
 
-+ (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
++ (id)newWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
 + (id)newWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(_Bool)arg3;
 + (id)newWithMessage:(id)arg1;
 @property(nonatomic) _Bool isUserRequested; // @synthesize isUserRequested=_isUserRequested;
@@ -38,6 +37,7 @@
 @property(nonatomic) unsigned long long conversationFlags; // @synthesize conversationFlags=_conversationFlags;
 @property(retain, nonatomic) MFAttachmentCompositionContext *attachmentContext; // @synthesize attachmentContext=_attachmentContext;
 @property(retain, nonatomic) NSDictionary *compositionSpecification; // @synthesize compositionSpecification=_compositionSpecification;
+- (void).cxx_destruct;
 - (void)setAccount:(id)arg1;
 - (void)setArchiveAccount:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -49,8 +49,7 @@
 - (id)_deliverSynchronouslyWithCurrentSettings:(_Bool)arg1;
 - (id)originalHeaders;
 - (id)_currentDeliveryObject;
-- (void)dealloc;
-- (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
+- (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4;
 - (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(_Bool)arg3;
 - (id)initWithMessage:(id)arg1;
 - (id)init;

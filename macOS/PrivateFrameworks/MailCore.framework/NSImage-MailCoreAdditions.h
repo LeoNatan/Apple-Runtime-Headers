@@ -12,11 +12,16 @@
 + (id)rotateImage:(id)arg1 byDegrees:(double)arg2;
 + (id)imageDataForType:(id *)arg1 fromPasteboard:(id)arg2;
 + (id)imagePasteboardTypesWithPreferenceToPNG;
++ (id)compositeImageWithImageDictionaries:(id)arg1 size:(struct CGSize)arg2;
++ (id)drawingDictionaryWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) double pixelsHigh;
 @property(readonly, nonatomic) double pixelsWide;
 @property(readonly, nonatomic) unsigned long long frameCount;
 @property(readonly, copy, nonatomic) NSData *PNGData;
 @property(readonly, nonatomic) NSBitmapImageRep *bitmapImageRep;
 @property(readonly, nonatomic) NSImage *opaqueImage;
+- (id)flippedImageForLayoutDirection:(long long)arg1;
+- (id)tintedImageWithColor:(id)arg1 size:(struct CGSize)arg2;
+- (id)tintedImageWithColor:(id)arg1;
 @end
 

@@ -6,23 +6,34 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSAttributedString, NSMutableArray, NSMutableAttributedString;
+@class AXMOutputRequestHandle, NSArray, NSMutableArray;
+@protocol OS_dispatch_queue;
 
 @interface AXMOutputRequest : NSObject
 {
-    NSMutableAttributedString *_speechSequence;
-    NSMutableArray *_soundFileURLs;
+    AXMOutputRequestHandle *_handle;
+    NSObject<OS_dispatch_queue> *_queue;
+    NSMutableArray *_queue_actions;
     _Bool _interruptsAndClearsQueue;
+    CDUnknownBlockType _completionBlock;
 }
 
 + (id)speechItemSeparator;
+@property(readonly, nonatomic) AXMOutputRequestHandle *handle; // @synthesize handle=_handle;
 @property(nonatomic) _Bool interruptsAndClearsQueue; // @synthesize interruptsAndClearsQueue=_interruptsAndClearsQueue;
+@property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
 - (void).cxx_destruct;
+- (void)addActiveSoundItemWithURL:(id)arg1;
+- (void)addActiveSoundItemWithID:(id)arg1;
 - (void)addSoundItemWithURL:(id)arg1;
-- (void)addSoundItemWithID:(long long)arg1;
-@property(readonly, nonatomic) NSArray *soundFileURLs;
+- (void)addSoundItemWithID:(id)arg1;
 - (void)addSpeechItem:(id)arg1;
-@property(readonly, nonatomic) NSAttributedString *speechSequence;
+- (void)_addAction:(id)arg1;
+@property(readonly, nonatomic) NSArray *activeSoundActions;
+@property(readonly, nonatomic) NSArray *oneShotSoundActions;
+@property(readonly, nonatomic) NSArray *speechActions;
+@property(readonly, nonatomic) NSArray *actions;
+- (id)init;
 
 @end
 

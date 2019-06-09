@@ -10,10 +10,8 @@
 {
 }
 
-+ (id)reuseIdentifierForCardSection:(id)arg1;
-+ (id)cardSectionViewForModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
-+ (id)viewsForCardSections:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
-+ (id)viewForCardSection:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
++ (id)cardSectionViewForModel:(id)arg1 feedbackDelegate:(id)arg2;
++ (id)viewsForCardSections:(id)arg1 isInline:(_Bool)arg2 feedbackDelegate:(id)arg3;
 + (Class)viewClassForCardSection:(id)arg1;
 
 @end

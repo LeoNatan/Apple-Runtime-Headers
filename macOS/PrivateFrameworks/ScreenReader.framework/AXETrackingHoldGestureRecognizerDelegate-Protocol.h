@@ -12,6 +12,7 @@
 
 @optional
 - (void)holdGestureRecognizer:(AXETrackingHoldGestureRecognizer *)arg1 aborted:(NSArray *)arg2;
+- (void)holdGestureRecognizer:(AXETrackingHoldGestureRecognizer *)arg1 touchesMovedAfterStabilizing:(NSArray *)arg2;
 - (void)holdGestureRecognizer:(AXETrackingHoldGestureRecognizer *)arg1 stabilized:(NSArray *)arg2;
 - (void)holdGestureRecognizer:(AXETrackingHoldGestureRecognizer *)arg1 startedStabilizing:(NSArray *)arg2;
 @end

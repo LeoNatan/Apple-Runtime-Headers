@@ -9,7 +9,7 @@
 #import <NanoMusicCore/MPAVRoutingControllerDelegate-Protocol.h>
 
 @class MPAVRoutingController, NMCVirtualAudioRoute, NSArray, NSMutableArray, NSMutableDictionary, NSString;
-@protocol OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source;
+@protocol OS_dispatch_group, OS_dispatch_source;
 
 @interface NMCAudioRoutingManager : NSObject <MPAVRoutingControllerDelegate>
 {
@@ -23,8 +23,6 @@
     _Bool _pendingPickedRoutesStateDidChangeNotification;
     _Bool _hasFetchedInitialAvailableRoutes;
     NSObject<OS_dispatch_group> *_availableRoutesFetchGroup;
-    NSObject<OS_dispatch_group> *_routePickingGroup;
-    NSObject<OS_dispatch_queue> *_routePickingQueue;
     NSObject<OS_dispatch_source> *_pickRouteTimer;
     NMCVirtualAudioRoute *_pendingPickingRoute;
     NSObject<OS_dispatch_source> *_bluetoothNotificationTimer;
@@ -78,8 +76,6 @@
 @property(copy, nonatomic) NSString *audioCategory; // @dynamic audioCategory;
 - (void)pickVirtualAudioRoute:(id)arg1;
 - (id)w1Route;
-- (void)attemptToPickW1RouteWithAudioSession:(id)arg1 options:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)attemptToPickW1RouteWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)fetchAudioRoutesInfoIgnoringCache:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)fetchAudioRoutesInfoWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NMCVirtualAudioRoute *pickedVirtualAudioRoute;

@@ -18,9 +18,6 @@
     struct CGPoint _startPoint;
     struct CGPoint _anchorPoint;
     id _space;
-    double _unused1;
-    double _unused2;
-    double _unused3;
     CDUnknownBlockType _completionBlock;
     double _scaleAmount;
     unsigned int _animateAlpha:1;

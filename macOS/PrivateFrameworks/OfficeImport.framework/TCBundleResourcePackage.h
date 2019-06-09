@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, OISFUZipArchive;
 
+__attribute__((visibility("hidden")))
 @interface TCBundleResourcePackage : NSObject
 {
     OISFUZipArchive *mZipArchive;

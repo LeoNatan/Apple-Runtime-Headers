@@ -6,10 +6,12 @@
 
 #import <UIKit/UIView.h>
 
-@class CLKDevice, UIColor;
+@class CLKDevice, UIColor, UIImageView;
 
 @interface NTKAstronomyLocationDot : UIView
 {
+    UIView *_outerDot;
+    UIImageView *_innerDotImageView;
     _Bool _animating;
     CLKDevice *_device;
     UIColor *_outerDotColor;
@@ -18,13 +20,14 @@
     double _innerDotDiameter;
     double _pulseDuration;
     double _pulseAlphaDelay;
-    UIView *_outerDot;
-    UIView *_innerDotImageView;
 }
 
-+ (struct CGSize)defaultSize;
-@property(retain, nonatomic) UIView *innerDotImageView; // @synthesize innerDotImageView=_innerDotImageView;
-@property(retain, nonatomic) UIView *outerDot; // @synthesize outerDot=_outerDot;
++ (double)defaultPulseAlphaDelay;
++ (double)defaultPulseDuration;
++ (double)_defaultInnerDotDiameterForSizeClass:(unsigned long long)arg1;
++ (double)_defaultOuterDotDiameterForSizeClass:(unsigned long long)arg1;
++ (id)_defaultColor;
++ (struct CGSize)_defaultSize;
 @property(nonatomic) _Bool animating; // @synthesize animating=_animating;
 @property(nonatomic) double pulseAlphaDelay; // @synthesize pulseAlphaDelay=_pulseAlphaDelay;
 @property(nonatomic) double pulseDuration; // @synthesize pulseDuration=_pulseDuration;
@@ -37,12 +40,7 @@
 - (void)layoutSubviews;
 - (void)stopAnimation;
 - (void)startAnimation;
-- (double)defaultPulseAlphaDelay;
-- (double)defaultPulseDuration;
-- (double)defaultInnerDotDiameter;
-- (double)defaultOuterDotDiameter;
-- (id)defaultColor;
-- (id)makeDot;
+- (void)_generateInnerDotImage;
 - (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
 - (id)initForDevice:(id)arg1;
 

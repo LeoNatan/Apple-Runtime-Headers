@@ -14,7 +14,7 @@
     BOOL _systemInformationSubscribed;
     unsigned int _filter;
     unsigned int _continuationCount;
-    unsigned long long _providerFilters[8];
+    unsigned long long _providerFilters[9];
     char *_iftracebuf;
     unsigned int _id;
     unsigned long long _numUpdatesDispatched;

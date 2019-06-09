@@ -11,6 +11,7 @@
 @class NSObject, NSURL;
 @protocol OS_dispatch_semaphore;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBadgeTextAttachment : NSTextAttachment <NSCopying>
 {
     NSURL *_imageURL;

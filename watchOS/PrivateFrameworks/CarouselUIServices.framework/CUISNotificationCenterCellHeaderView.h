@@ -4,32 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <CarouselUIServices/CUISNotificationNCCellHeaderView.h>
 
-@class CUISNotificationCenterCellPlatterView, NSString, UIColor, UIImage, UIImageView, UILabel;
-
-@interface CUISNotificationCenterCellHeaderView : UIView
+@interface CUISNotificationCenterCellHeaderView : CUISNotificationNCCellHeaderView
 {
-    UILabel *_titleLabel;
-    UIImageView *_iconView;
-    UIImageView *_iconShadowView;
-    CUISNotificationCenterCellPlatterView *_platterView;
-    UIColor *_titleColor;
-    UIImageView *_modifierIconView;
-    unsigned int _iconStyle;
 }
 
-@property(nonatomic) unsigned int iconStyle; // @synthesize iconStyle=_iconStyle;
-- (void).cxx_destruct;
-- (void)_createSubviews;
-- (void)layoutSubviews;
-@property(readonly, nonatomic) struct CGRect backgroundFrame;
-@property(retain, nonatomic) UIColor *titleColor;
-@property(retain, nonatomic) UIColor *headerBackgroundColor;
-@property(retain, nonatomic) UIImage *modifierIcon;
-@property(retain, nonatomic) UIImage *icon;
-@property(copy, nonatomic) NSString *title;
-- (id)init;
+@property(nonatomic) unsigned int iconStyle;
 
 @end
 

@@ -8,5 +8,9 @@
 
 @interface UIImage (ContactsUI)
 + (id)invisibleImage;
++ (id)cnui_tintedImageNamed:(id)arg1 withTint:(id)arg2;
++ (id)cnui_imageNamed:(id)arg1;
++ (id)cnui_templateImageNamed:(id)arg1 withTint:(id)arg2;
++ (id)cnui_templateImageNamed:(id)arg1;
 @end
 

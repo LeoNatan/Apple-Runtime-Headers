@@ -4,33 +4,60 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PhotosUICore/PXObservable.h>
 
+#import <PhotosUI/PUCMMActivityItemSourceDelegate-Protocol.h>
+#import <PhotosUI/PXActivityItemSourceController-Protocol.h>
 #import <PhotosUI/PXCMMActionPerformerDelegate-Protocol.h>
+#import <PhotosUI/PXChangeObserver-Protocol.h>
 
-@class NSArray, NSError, NSMutableOrderedSet, NSOrderedSet, NSString, NSURL, PUActivityViewController;
+@class NSArray, NSMutableArray, NSMutableOrderedSet, NSObject, NSOrderedSet, NSString, NSURL, PUActivityViewController, PUCMMActivityItemSource;
+@protocol OS_dispatch_queue, PUActivityItemSourceControllerDelegate;
 
-@interface PUActivityItemSourceController : NSObject <PXCMMActionPerformerDelegate>
+@interface PUActivityItemSourceController : PXObservable <PUCMMActivityItemSourceDelegate, PXCMMActionPerformerDelegate, PXChangeObserver, PXActivityItemSourceController>
 {
     NSMutableOrderedSet *_assetItems;
     NSMutableOrderedSet *_assetItemSources;
-    int _taskId;
+    NSArray *_activeItemSources;
+    // Error parsing type: Ai, name: _taskId
+    unsigned long long _cloudSharedAssetCount;
+    _Bool _shouldExcludeLivenessInAllItemSources;
+    _Bool _shouldExcludeLocationInAllItemSourcess;
+    _Bool _shouldShareAsOriginals;
+    _Bool _momentSharePublishAttempted;
+    unsigned long long _preferredPreparationType;
+    id <PUActivityItemSourceControllerDelegate> _delegate;
+    unsigned long long _state;
     PUActivityViewController *_activityViewController;
     CDUnknownBlockType _progressHandler;
     NSURL *_publishedURL;
-    NSArray *__activeItemSources;
-    NSError *__error;
+    PUCMMActivityItemSource *_cmmActivityItemSource;
+    NSMutableArray *_errors;
     NSString *_activeActivityType;
+    unsigned long long _numSourcesDownloading;
+    NSObject<OS_dispatch_queue> *_externalIsolation;
 }
 
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *externalIsolation; // @synthesize externalIsolation=_externalIsolation;
+@property(nonatomic) unsigned long long numSourcesDownloading; // @synthesize numSourcesDownloading=_numSourcesDownloading;
 @property(retain) NSString *activeActivityType; // @synthesize activeActivityType=_activeActivityType;
-@property(retain, setter=_setError:) NSError *_error; // @synthesize _error=__error;
-@property(retain, setter=_setActiveItemSources:) NSArray *_activeItemSources; // @synthesize _activeItemSources=__activeItemSources;
+@property(retain) NSMutableArray *errors; // @synthesize errors=_errors;
+@property(readonly, nonatomic) PUCMMActivityItemSource *cmmActivityItemSource; // @synthesize cmmActivityItemSource=_cmmActivityItemSource;
 @property(retain, nonatomic, setter=_setPublishedURL:) NSURL *publishedURL; // @synthesize publishedURL=_publishedURL;
+@property(readonly, nonatomic) _Bool momentSharePublishAttempted; // @synthesize momentSharePublishAttempted=_momentSharePublishAttempted;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
+@property(nonatomic) _Bool shouldShareAsOriginals; // @synthesize shouldShareAsOriginals=_shouldShareAsOriginals;
+@property(nonatomic) _Bool shouldExcludeLocationInAllItemSourcess; // @synthesize shouldExcludeLocationInAllItemSourcess=_shouldExcludeLocationInAllItemSourcess;
+@property(nonatomic) _Bool shouldExcludeLivenessInAllItemSources; // @synthesize shouldExcludeLivenessInAllItemSources=_shouldExcludeLivenessInAllItemSources;
 @property(copy, nonatomic) NSOrderedSet *assetItems; // @synthesize assetItems=_assetItems;
 @property(nonatomic) __weak PUActivityViewController *activityViewController; // @synthesize activityViewController=_activityViewController;
+@property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
+@property(nonatomic) __weak id <PUActivityItemSourceControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) unsigned long long preferredPreparationType; // @synthesize preferredPreparationType=_preferredPreparationType;
 - (void).cxx_destruct;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
+- (void)cmmActivityItemSource:(id)arg1 didFinishPreparationForActivityType:(id)arg2 preparationType:(unsigned long long)arg3 withItems:(id)arg4 didCancel:(_Bool)arg5 error:(id)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)cmmActivityItemSource:(id)arg1 willBeginPreparationWithActivityType:(id)arg2 preparationType:(unsigned long long)arg3;
 - (_Bool)actionPerformer:(id)arg1 dismissViewController:(struct NSObject *)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)actionPerformer:(id)arg1 presentViewController:(struct NSObject *)arg2;
 - (id)activityItemSourceForAsset:(id)arg1;
@@ -40,13 +67,22 @@
 - (void)runExplicitly:(_Bool)arg1 withActivityType:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_cleanupAfterPerform;
 - (_Bool)_prepareForPerformWithActivityType:(id)arg1 error:(id *)arg2;
-- (long long)countOfLoopsToShare;
-- (long long)countOfVideosToShare;
-- (long long)countOfImagesToShare;
+- (void)_prepareMomentShareLinkFromIndividualItemSourcesForActivity:(id)arg1;
+- (void)_prepareIndividualItemSourcesForActivity:(id)arg1;
+- (void)configureItemSourcesForActivityIfNeeded:(id)arg1 forcePreparationAsMomentShareLink:(_Bool)arg2;
+- (struct PXAssetMediaTypeCount)requestAssetsMediaTypeCount;
 @property(readonly, copy, nonatomic) NSOrderedSet *assets;
+- (void)updateState;
+- (void)setState:(unsigned long long)arg1;
+@property(copy) NSArray *activeItemSources;
 - (void)removeAssetItem:(id)arg1;
 - (void)addAssetItem:(id)arg1;
+- (CDStruct_2a4d9400)synthesizedSharingPreferencesForAssetItem:(id)arg1;
+- (void)updateSharingPreferencesInItemSources;
+@property(readonly, nonatomic) _Bool itemSourcesSupportMomentShareLinkCreation;
+@property(readonly, copy, nonatomic) NSArray *activityItems;
 @property(readonly, copy, nonatomic) NSOrderedSet *assetItemSources;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -15,6 +15,8 @@
 
 + (id)allocWithProtocol:(id)arg1;
 - (void).cxx_destruct;
+- (struct objc_method_description)_methodDescriptionFromProtocolHierarchy:(id)arg1 selector:(SEL)arg2;
+- (struct objc_method_description)_methodDescriptionFromProtocol:(id)arg1 selector:(SEL)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
 

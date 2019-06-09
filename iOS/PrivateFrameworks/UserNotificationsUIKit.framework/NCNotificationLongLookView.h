@@ -31,13 +31,17 @@
 - (void)notificationContentView:(id)arg1 willInteractWithURL:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+@property(nonatomic) unsigned long long maximumNumberOfSecondaryLargeTextLines;
+@property(nonatomic) unsigned long long maximumNumberOfSecondaryTextLines;
+@property(nonatomic) unsigned long long maximumNumberOfPrimaryLargeTextLines;
+@property(nonatomic) unsigned long long maximumNumberOfPrimaryTextLines;
 - (_Bool)_lookViewTapGestureRecognizerShouldReceiveTouch:(id)arg1;
 - (void)layoutSubviews;
 - (void)_layoutCustomContentViewInRelationToContentView;
 - (void)_layoutCustomContentView;
 - (void)_layoutNotificationContentView;
-- (void)_layoutMainContentView;
 - (struct CGSize)_contentViewSize;
+- (struct CGRect)_mainContentViewFrame;
 - (struct CGRect)_actionsViewFrame;
 - (void)_configureLookViewTapGestureRecognizerIfNecessary;
 - (void)_configureNotificationContentViewIfNecessary;
@@ -71,7 +75,6 @@
 @property(readonly, nonatomic) NSArray *iconButtons;
 @property(copy, nonatomic) NSArray *icons;
 @property(retain, nonatomic) NSArray *interfaceActions;
-@property(nonatomic) unsigned long long messageNumberOfLines;
 @property(copy, nonatomic) NSString *preferredContentSizeCategory;
 @property(readonly, nonatomic) UIScrollView *scrollView;
 @property(copy, nonatomic) NSString *summaryText;

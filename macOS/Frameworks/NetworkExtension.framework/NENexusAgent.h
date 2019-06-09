@@ -49,6 +49,8 @@
 
 // Remaining properties
 @property(nonatomic) BOOL requiresAssert;
+@property(nonatomic) BOOL supportsResolveRequests;
+@property(nonatomic) BOOL updateClientsImmediately;
 
 @end
 

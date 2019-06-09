@@ -21,6 +21,9 @@
 + (id)deviceCapabilitiesModelIdentifierWithParentIdentifier:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)deviceCapabilities;
++ (BOOL)supportsRouterManagement;
++ (BOOL)isCompanionCapable;
++ (BOOL)supportsBackboard;
 + (BOOL)supportsSyncingToSharedUsers;
 + (BOOL)supportsAddingAccessory;
 + (BOOL)supportsReceivingRemoteCameraStream;
@@ -42,13 +45,16 @@
 - (id)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)modelCopyWithChangeType:(unsigned long long)arg1 uuid:(id)arg2 parentUUID:(id)arg3;
-@property(retain, nonatomic) NSUUID *modelParentIdentifier;
-@property(readonly, nonatomic) NSUUID *modelIdentifier;
+@property(copy, nonatomic) NSUUID *modelParentIdentifier;
+@property(readonly, copy, nonatomic) NSUUID *modelIdentifier;
+@property(readonly) Class modelClass;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) BOOL supportsCameraRecording;
+@property(readonly, nonatomic) BOOL supportsMultiUser;
 @property(readonly, nonatomic) BOOL supportsTargetControl;
 @property(readonly, nonatomic) BOOL supportsHomeInvitation;
 @property(readonly, nonatomic, getter=isRemoteGatewayCapable) BOOL remoteGatewayCapable;

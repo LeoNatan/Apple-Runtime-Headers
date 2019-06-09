@@ -6,6 +6,7 @@
 
 #import <OfficeImport/EDCollection.h>
 
+__attribute__((visibility("hidden")))
 @interface EDReferenceCollection : EDCollection
 {
     _Bool mCoalesce;

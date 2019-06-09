@@ -8,6 +8,7 @@
 
 @class NSString, SKUIImageViewElement, SKUILabelViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPhysicalCircleItemViewElement : SKUIViewElement
 {
     long long _circleSize;

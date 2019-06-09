@@ -9,7 +9,7 @@
 #import <SafariShared/WBSHistoryLoader-Protocol.h>
 #import <SafariShared/WBSHistoryStore-Protocol.h>
 
-@class NSArray, NSCountedSet, NSData, NSDate, NSMapTable, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NSURL, WBSHistoryCrypto, WBSPeriodicActivityScheduler, WBSSQLiteDatabase, WBSSQLiteStatementCache;
+@class NSArray, NSCountedSet, NSData, NSDate, NSMapTable, NSMutableDictionary, NSMutableSet, NSString, NSTimer, NSURL, WBSHistoryCrypto, WBSHistoryTagDatabaseController, WBSPeriodicActivityScheduler, WBSSQLiteDatabase, WBSSQLiteStatementCache;
 @protocol OS_dispatch_queue, WBSHistoryStoreDelegate;
 
 @interface WBSHistorySQLiteStore : NSObject <WBSHistoryStore, WBSHistoryLoader>
@@ -45,7 +45,9 @@
     _Bool _writeLastMaintenanceDateOnNextWrite;
     _Bool _checkpointWriteAheadLogOnNextWrite;
     WBSPeriodicActivityScheduler *_maintenanceScheduler;
+    WBSHistoryTagDatabaseController *_tagController;
     _Bool _pushNotificationsAreInitialized;
+    _Bool _syncsWithManateeContainer;
     id <WBSHistoryStoreDelegate> _delegate;
     double _historyAgeLimit;
     WBSSQLiteDatabase *_database;
@@ -54,6 +56,7 @@
 
 @property(readonly, nonatomic) WBSHistoryCrypto *crypto; // @synthesize crypto=_crypto;
 @property(readonly, nonatomic) WBSSQLiteDatabase *database; // @synthesize database=_database;
+@property(nonatomic) _Bool syncsWithManateeContainer; // @synthesize syncsWithManateeContainer=_syncsWithManateeContainer;
 @property(nonatomic) double historyAgeLimit; // @synthesize historyAgeLimit=_historyAgeLimit;
 @property(nonatomic) _Bool pushNotificationsAreInitialized; // @synthesize pushNotificationsAreInitialized=_pushNotificationsAreInitialized;
 @property(nonatomic) __weak id <WBSHistoryStoreDelegate> delegate; // @synthesize delegate=_delegate;
@@ -114,6 +117,17 @@
 - (void)_finishLoadingOnMainThread;
 - (void)_finishLoadingOnMainThreadIfNeeded;
 - (void)_loadHistory;
+- (void)_registerHistoryTagFrecencyScoringFunction;
+- (void)fetchTopicsFromStartDate:(id)arg1 toEndDate:(id)arg2 limit:(unsigned long long)arg3 minimumItemCount:(unsigned long long)arg4 sortOrder:(long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)setTitle:(id)arg1 ofTag:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchTopicsFromStartDate:(id)arg1 toEndDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)assignHistoryItem:(id)arg1 toTopicTags:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (Class)_classForHistoryTagType:(unsigned long long)arg1;
+- (id)_createHistoryTagsWithIdentifiers:(id)arg1 titles:(id)arg2 type:(unsigned long long)arg3 level:(long long)arg4 error:(id *)arg5;
+- (_Bool)_populateHistoryItemsInHistoryTopicTag:(id)arg1 fromStartDate:(id)arg2 toEndDate:(id)arg3 error:(id *)arg4;
+- (id)_fetchHistoryTagsWithPredicate:(id)arg1 error:(id *)arg2;
+- (id)_tagsWithIdentifiers:(id)arg1 titles:(id)arg2 ofType:(unsigned long long)arg3 level:(long long)arg4 creatingIfNeeded:(_Bool)arg5 createdTags:(id *)arg6 error:(id *)arg7;
+- (void)tagsWithIdentifiers:(id)arg1 type:(unsigned long long)arg2 level:(long long)arg3 creatingIfNecessary:(_Bool)arg4 withTitles:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)enumerateSubsequentVisitsInRedirectChainOnDatabaseQueue:(id)arg1 items:(id)arg2 enumerationBlock:(CDUnknownBlockType)arg3;
 - (void)enumeratePriorVisitsInRedirectChainOnDatabaseQueue:(id)arg1 items:(id)arg2 enumerationBlock:(CDUnknownBlockType)arg3;
 - (void)enumerateLastVisitForItemsOnDatabaseQueue:(id)arg1 ignoringVisits:(id)arg2 enumerationBlock:(CDUnknownBlockType)arg3;
@@ -143,6 +157,7 @@
 - (void)_clearHistoryVisitsMatchingURLHash:(id)arg1 salt:(id)arg2 afterDate:(id)arg3 beforeDate:(id)arg4 addingTombstone:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)_clearHistoryVisitsMatchingURLString:(id)arg1 afterDate:(id)arg2 beforeDate:(id)arg3 addingTombstone:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 addingTombstone:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)vacuumHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)removePastHistoryVisitsForItem:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

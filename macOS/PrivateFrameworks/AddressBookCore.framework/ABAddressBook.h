@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <AddressBookCore/ABDistributedNotificationListenerDelegate-Protocol.h>
 #import <AddressBookCore/CNCDPersistenceBackend-Protocol.h>
 #import <AddressBookCore/CalendarAgentClient-Protocol.h>
 
-@class ABAddressBookImpl, ABPersistentStoreCoordinatorCache, NSMutableDictionary, NSString, NSTimer;
+@class ABAddressBookImpl, ABDistributedNotificationListener, ABPersistentStoreCoordinatorCache, NSMutableDictionary, NSString, NSTimer;
 
-@interface ABAddressBook : NSObject <CalendarAgentClient, CNCDPersistenceBackend>
+@interface ABAddressBook : NSObject <ABDistributedNotificationListenerDelegate, CalendarAgentClient, CNCDPersistenceBackend>
 {
     id _reserved8;
     void *_reserved2;
@@ -39,6 +40,7 @@
         unsigned int tracksAllSources:1;
         unsigned int _reserved:21;
     } _flags;
+    ABDistributedNotificationListener *_distributedListener;
 }
 
 + (id)resultWithGlobalAPILockOnly:(CDUnknownBlockType)arg1;
@@ -62,15 +64,14 @@
 + (id)localizedDefaults;
 + (id)fileLock;
 + (id)addressFormats;
-+ (_Bool)initializeFileLock;
 + (id)addressBookMetadataDirectory;
 + (id)addressBookTempImagesDirectory;
 + (id)addressBookSaveFile;
 + (id)addressBookCoreDataDatabaseFile;
-+ (id)mailRecentsCoreDataDatabaseFile;
++ (id)makeAccountCollectionForAlternateURL:(id)arg1;
++ (id)makeCoordinatorCacheForAlternateLocation:(id)arg1;
 + (id)addressBookDirectory;
 + (id)defaultAddressBookDirectory;
-+ (id)mailRecentsCoreDataDatabaseFileName;
 + (id)addressBookCoreDataDatabaseFileName;
 + (BOOL)isUsingDefaultAddressBookDirectory;
 + (void)setAddressBookDirectory:(id)arg1;
@@ -83,32 +84,31 @@
 + (void)postDistributedNotificationName:(id)arg1 object:(id)arg2 userInfo:(id)arg3 deliverImmediately:(BOOL)arg4;
 + (BOOL)isPredicateSearchingEnabled;
 + (BOOL)nts_hasSharedInstance;
-+ (id)nts_AddressBookWithDatabaseDirectory:(id)arg1 options:(id)arg2;
-+ (id)nts_AddressBookWithDatabaseDirectory:(id)arg1 doInitialImports:(BOOL)arg2;
-+ (id)nts_AddressBookWithDatabaseDirectory:(id)arg1;
-+ (id)addressBookWithDatabaseDirectory:(id)arg1 options:(id)arg2;
++ (id)nts_AddressBookWithOptions:(id)arg1;
++ (id)addressBookWithOptions:(id)arg1;
 + (id)addressBookWithDatabaseDirectory:(id)arg1 doInitialImports:(BOOL)arg2;
 + (id)addressBookWithDatabaseDirectory:(id)arg1;
 + (id)nts_AddressBook;
 + (id)sharedLocalAddressBook;
 + (id)localAddressBook;
 + (id)addressBook;
++ (void)configureOptionsForTestEnvironment:(id)arg1;
 + (id)sharedAddressBook;
 + (id)nts_CreateSharedAddressBook;
 + (BOOL)_remotelySyncSourcesWithIdentifiers:(id)arg1 usingService:(struct __CFString *)arg2;
 + (void)_remotelySyncSourcesWithIdentifiers:(id)arg1;
 + (void)runAddressBookManager;
 + (id)nts_SharedAddressBook;
-+ (id)log;
 + (void)initialize;
-+ (void)initialize_MailRecents;
-+ (BOOL)isUsingMailRecents;
-+ (void)setIsUsingMailRecents:(BOOL)arg1;
++ (id)os_log_activation;
++ (id)os_log_locking;
++ (id)os_log;
 + (id)emptyDirectoryResultsAddressBook;
 + (id)provisionalAddressBook;
 + (id)emptyMemoryBackedAddressBook;
 + (id)emptyMemoryBackedAddressBookWithOptions:(id)arg1;
 + (id)optionsForCloningAddressBook:(id)arg1;
+@property(readonly, nonatomic) ABDistributedNotificationListener *distributedListener; // @synthesize distributedListener=_distributedListener;
 @property(retain, nonatomic) ABAddressBookImpl *impl; // @synthesize impl=_reserved8;
 - (void)agentUpdatedCache:(id)arg1;
 - (void)calMeCardChanged;
@@ -121,9 +121,9 @@
 - (id)makeManagedObjectContextWithConcurrencyType:(unsigned long long)arg1;
 - (void)_linkRecordsWithFactory:(id)arg1;
 - (void)_performImplicitLinking;
+- (void)applyDiff:(id)arg1 toContainerWithIdentifier:(id)arg2;
 - (id)defaultContainer;
 - (id)allContainers;
-- (id)nts_managedObjectContextForMailRecentsCoreDataSPI;
 - (id)defaultAccount;
 - (id)accountRepository;
 - (BOOL)hasUnfilteredAccess;
@@ -150,7 +150,6 @@
 - (BOOL)writeChangesToServer;
 - (id)combinePeople:(id)arg1 error:(id *)arg2;
 - (id)formattedAddressFromDictionary:(id)arg1;
-- (id)_formattedAddressFromDictionary:(id)arg1 includeName:(BOOL)arg2 includeCompany:(BOOL)arg3 order:(id *)arg4;
 - (long long)defaultNameOrdering;
 - (id)defaultCountryCode;
 - (void)setDefaultCountryCode:(id)arg1;
@@ -163,7 +162,7 @@
 - (void)resetDatabaseAtPath:(id)arg1;
 - (void)refreshRecordsWithUserInfo:(id)arg1;
 - (void)commonDatabaseChangedExternally:(id)arg1;
-- (void)distributedDatabaseChangedExternally:(id)arg1;
+- (void)listener:(id)arg1 didReceiveNotification:(id)arg2;
 - (void)localDatabaseChangedExternally:(id)arg1;
 - (void)rebroadcastDatabaseChangedExternally:(id)arg1;
 - (id)notificationNameForRebroadcast:(id)arg1;
@@ -183,9 +182,9 @@
 - (void)registerForLocalDatabaseChangeNotifications;
 - (id)nts_InitDefaultContactManager;
 - (id)nts_InitializeDatabase;
-- (id)sanitizeDatabaseDirectory:(id)arg1 withOptions:(id)arg2;
+- (id)databaseDirectoryWithOptions:(id)arg1;
+- (id)nts_InitWithOptions:(id)arg1;
 - (id)nts_InitAddressBookWithDatabaseDirectory:(id)arg1 options:(id)arg2;
-- (id)nts_InitAddressBookWithDatabaseDirectory:(id)arg1;
 - (void)nts_ImportMacBuddyMeCard;
 - (void)nts_ImportTipCards;
 - (BOOL)isABCoreDataImportCompleted;
@@ -203,7 +202,6 @@
 - (id)addressBookMetaDataDirectory;
 - (id)addressBookSaveFile;
 - (id)addressBookCoreDataDatabaseFile;
-- (id)mailRecentsCoreDataDatabaseFile;
 - (id)addressBookDatabaseFile;
 - (id)addressBookDirectoryURL;
 - (id)addressBookDirectory;
@@ -304,9 +302,6 @@
 - (BOOL)nts_AddRecord:(id)arg1 account:(id)arg2 error:(id *)arg3;
 - (BOOL)nts_AddRecord:(id)arg1;
 - (BOOL)addRecords:(id)arg1 account:(id)arg2 error:(id *)arg3;
-- (void)partitionRecords:(id)arg1 intoRegularRecords:(id)arg2 mailRecentRecords:(id)arg3;
-- (id)addMailRecentRecords:(id)arg1 account:(id)arg2 error:(id *)arg3;
-- (id)addRegularRecords:(id)arg1 account:(id)arg2 error:(id *)arg3;
 - (id)nts_addRecords:(id)arg1 account:(id)arg2 error:(id *)arg3;
 - (BOOL)addRecords:(id)arg1 error:(id *)arg2;
 - (BOOL)addRecord:(id)arg1 account:(id)arg2;
@@ -355,8 +350,6 @@
 - (id)nts_Me;
 - (void)setMe:(id)arg1;
 - (id)me;
-- (BOOL)nts_hasUnsavedMailRecentsChanges;
-- (BOOL)hasUnsavedMailRecentsChanges;
 - (BOOL)nts_hasUnsavedChanges;
 - (BOOL)hasUnsavedChanges;
 - (BOOL)nts_SaveWithFileLock:(BOOL)arg1 triggerSync:(BOOL)arg2;
@@ -394,8 +387,6 @@
 - (id)uncachedImageReferences;
 - (id)photoFutureForPersonWithUniqueId:(id)arg1;
 - (id)_peopleMatchingPhoneNumber:(id)arg1 countryCode:(id)arg2;
-- (id)mailRecentsMatching:(id)arg1;
-- (id)mailRecentForEmail:(id)arg1;
 - (id)nts_GroupsMatchingNormalizedName:(id)arg1 inSubscribedContent:(BOOL)arg2 context:(id)arg3;
 - (id)nts_ContactsMatchingNormalizedEmailAddress:(id)arg1 inSubscribedContent:(BOOL)arg2 context:(id)arg3;
 - (id)recordsMatchingMailAddressWithEmail:(id)arg1 fullName:(id)arg2 firstName:(id)arg3 lastName:(id)arg4 inSubscribedContent:(BOOL)arg5;
@@ -410,8 +401,6 @@
 - (id)customPropertyDescriptionsWithRecordType:(id)arg1 persistentStore:(id)arg2;
 - (void)clearCustomPropertyCaches;
 - (id)fetchAllRecordsForClass:(Class)arg1;
-- (void)abGlobalMailRecentAPIUnlockInFile:(const char *)arg1 line:(unsigned long long)arg2;
-- (void)abGlobalMailRecentAPILockInFile:(const char *)arg1 line:(unsigned long long)arg2;
 - (void)abGlobalAPIUnlockInFile:(const char *)arg1 line:(unsigned long long)arg2 togglingSuddenTermination:(BOOL)arg3;
 - (void)abGlobalAPIUnlockInFile:(const char *)arg1 line:(unsigned long long)arg2;
 - (BOOL)abGlobalAPITryLockInFile:(const char *)arg1 line:(unsigned long long)arg2 togglingSuddenTermination:(BOOL)arg3;
@@ -420,7 +409,6 @@
 - (void)abGlobalAPILockInFile:(const char *)arg1 line:(unsigned long long)arg2;
 - (void)abRunWithGlobalAPILockInFile:(const char *)arg1 line:(unsigned long long)arg2 block:(CDUnknownBlockType)arg3;
 - (id)abResultWithGlobalAPILockInFile:(const char *)arg1 line:(unsigned long long)arg2 block:(CDUnknownBlockType)arg3;
-- (id)nts_mailRecentsManagedObjectContext;
 - (id)managedObjectContext;
 - (id)persistentStoreForSourceIdentifier:(id)arg1;
 - (id)persistentStoreCoordinator;

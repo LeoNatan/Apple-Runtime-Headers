@@ -8,5 +8,6 @@
 
 @interface NSColorWell (ASKContainerName)
 + (id)containerName_ask;
+- (void)setIsBordered:(BOOL)arg1;
 @end
 

@@ -12,8 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_sortIndexesForObjects:(id)arg1 titleForObjectBlock:(CDUnknownBlockType)arg2;
-+ (id)changeSetMapFromFetchControllerResult:(id)arg1 andRequests:(id)arg2;
-+ (id)mediaEntitiesMapFromFetchControllerResult:(id)arg1 andRequests:(id)arg2;
 + (CDUnknownBlockType)mediaItemEntityTypesSortComparator;
 + (id)sortIndexesForMediaEntities:(id)arg1 sortIndexPropertyKey:(id)arg2;
 + (id)sortIndexesForGrouping:(id)arg1;

@@ -20,6 +20,7 @@
 - (id)colorSyncModeForRGBOverview;
 - (id)initWithDictionary:(id)arg1 andScanner:(id)arg2;
 - (void)dealloc;
+- (BOOL)handleCommandCompletion:(id)arg1;
 @property unsigned long long documentType;
 @property(readonly) struct CGSize documentSize;
 @property(readonly) NSIndexSet *supportedDocumentTypes;

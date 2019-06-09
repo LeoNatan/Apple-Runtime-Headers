@@ -6,16 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <HealthUI/HKHealthPrivacyHostAuthorizationViewControllerDelegate-Protocol.h>
+#import <HealthUI/HKHealthPrivacyHostAuthorizationControllerDelegate-Protocol.h>
 #import <HealthUI/_HKAuthorizationPresentationController-Protocol.h>
 
-@class HKHealthPrivacyHostAuthorizationViewController, NSString, UIWindow, _UIAsyncInvocation;
+@class HKHealthPrivacyHostAuthorizationViewController, HKNanoHostAuthorizationController, NSString, UIWindow, _UIAsyncInvocation;
 
-@interface HKAuthorizationPresentationController : NSObject <HKHealthPrivacyHostAuthorizationViewControllerDelegate, _HKAuthorizationPresentationController>
+@interface HKAuthorizationPresentationController : NSObject <HKHealthPrivacyHostAuthorizationControllerDelegate, _HKAuthorizationPresentationController>
 {
     _Bool _didPresent;
     _UIAsyncInvocation *_requestCancellationInvocation;
     HKHealthPrivacyHostAuthorizationViewController *_hostViewController;
+    HKNanoHostAuthorizationController *_nanoAuthorizationController;
     UIWindow *_savedKeyWindow;
     UIWindow *_window;
 }
@@ -23,23 +24,18 @@
 @property(nonatomic) _Bool didPresent; // @synthesize didPresent=_didPresent;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
 @property(retain, nonatomic) UIWindow *savedKeyWindow; // @synthesize savedKeyWindow=_savedKeyWindow;
+@property(retain, nonatomic) HKNanoHostAuthorizationController *nanoAuthorizationController; // @synthesize nanoAuthorizationController=_nanoAuthorizationController;
 @property(retain, nonatomic) HKHealthPrivacyHostAuthorizationViewController *hostViewController; // @synthesize hostViewController=_hostViewController;
 @property(retain, nonatomic) _UIAsyncInvocation *requestCancellationInvocation; // @synthesize requestCancellationInvocation=_requestCancellationInvocation;
 - (void).cxx_destruct;
-- (void)healthPrivacyHostAuthorizationViewController:(id)arg1 didFinishWithError:(id)arg2;
-- (_Bool)_validatePurposeStringsWithinRequest:(id)arg1 readUsageDescriptionKey:(id)arg2 shareUsageDescriptionKey:(id)arg3 error:(id *)arg4;
-- (id)_healthDataPresentationRequestForRequestRecord:(id)arg1;
-- (id)_clinicalHealthRecordsPresentationRequestForRequestRecord:(id)arg1;
-- (_Bool)_shouldPresentHealthDataFlowForRequestRecord:(id)arg1;
-- (_Bool)_shouldPresentClinicalHealthRecordsFlowForRequestRecord:(id)arg1;
-- (id)_healthDataTypesSubsetOfTypes:(id)arg1;
-- (id)_clinicalTypesSubsetOfTypes:(id)arg1;
+- (void)healthPrivacyHostAuthorizationControllerDidFinishWithError:(id)arg1;
 - (void)_dismissRemoteViewController;
 - (void)_makeRemoteViewControllerKeyAndVisible:(id)arg1;
-- (void)_mainQueue_presentWithRequestRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_mainQueue_presentWithPresentationRequests:(id)arg1 authorizationRequestRecord:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_requestAndConfigureHostViewController:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_requestAndConfigureCarouselAlert:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)cancelPresentation;
-- (void)presentWithRequestRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentWithPresentationRequests:(id)arg1 authorizationRequestRecord:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 
 // Remaining properties

@@ -6,7 +6,7 @@
 
 #import <NearField/NFSession.h>
 
-@class NFApplet, NFWeakReference, NSDictionary;
+@class NFApplet, NFWeakReference, NSDictionary, NSSet;
 @protocol NFLoyaltyAndPaymentSessionDelegate;
 
 @interface NFLoyaltyAndPaymentSession : NFSession
@@ -19,10 +19,12 @@
     unsigned long long _numActiveSEs;
     BOOL _fieldNotificationSent;
     NFApplet *_activeApplet;
+    NSSet *_activeKeys;
     NFApplet *_defaultApplet;
 }
 
 @property(readonly) NFApplet *defaultApplet; // @synthesize defaultApplet=_defaultApplet;
+@property(readonly) NSSet *activeKeys; // @synthesize activeKeys=_activeKeys;
 @property(readonly) NFApplet *activeApplet; // @synthesize activeApplet=_activeApplet;
 - (BOOL)startExpressMode:(id *)arg1;
 - (BOOL)enablePlasticCardMode:(BOOL)arg1 error:(id *)arg2;
@@ -33,8 +35,6 @@
 - (id)felicaAppletState:(id)arg1;
 - (BOOL)stopCardEmulation:(id *)arg1;
 - (BOOL)stopCardEmulation;
-- (BOOL)startHostCardEmulation:(id *)arg1;
-- (BOOL)startHostCardEmulation;
 - (BOOL)_startDeferredCardEmulationWithAuthorization:(id)arg1 error:(id *)arg2;
 - (BOOL)startDeferredCardEmulation:(unsigned char)arg1 authorization:(id)arg2 error:(id *)arg3;
 - (BOOL)startDeferredCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
@@ -42,6 +42,7 @@
 - (BOOL)_startCardEmulationWithAuthorization:(id)arg1 error:(id *)arg2;
 - (BOOL)startCardEmulation:(unsigned char)arg1 authorization:(id)arg2 error:(id *)arg3;
 - (BOOL)startCardEmulation:(unsigned char)arg1 authorization:(id)arg2;
+- (BOOL)setActivePaymentApplet:(id)arg1 keys:(id)arg2 error:(id *)arg3;
 - (BOOL)setActivePaymentApplet:(id)arg1 error:(id *)arg2;
 - (BOOL)setActivePaymentApplet:(id)arg1;
 - (BOOL)setActivePaymentApplet:(id)arg1 makeDefault:(BOOL)arg2;

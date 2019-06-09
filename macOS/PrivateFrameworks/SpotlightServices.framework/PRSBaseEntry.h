@@ -10,14 +10,14 @@
 
 @interface PRSBaseEntry : NSObject
 {
+    int _imageAlign;
     NSString *_title;
     NSURL *_url;
     NSImage *_image;
-    unsigned long long _imageAlign;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) unsigned long long imageAlign; // @synthesize imageAlign=_imageAlign;
+@property(nonatomic) int imageAlign; // @synthesize imageAlign=_imageAlign;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;

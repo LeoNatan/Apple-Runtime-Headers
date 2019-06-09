@@ -8,6 +8,7 @@
 
 @class NSArray, NSNumberFormatter, SKUIClientContext, SKUIColorScheme, SKUIProductPageTableExpandableHeaderView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageTableInAppPurchasesSection : SKUIProductPageTableSection
 {
     SKUIClientContext *_clientContext;

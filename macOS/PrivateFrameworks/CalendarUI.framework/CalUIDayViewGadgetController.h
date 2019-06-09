@@ -67,6 +67,7 @@
 @property(readonly) NSObject<OS_dispatch_group> *eventStoreReadyGroup;
 - (id)initWithEventStore:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2 eventStore:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

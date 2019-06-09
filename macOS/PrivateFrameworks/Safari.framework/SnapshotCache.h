@@ -30,7 +30,7 @@
 - (void)siteMetadataImageCache:(id)arg1 didFinishLoadingImage:(id)arg2 forKeyString:(id)arg3;
 - (void)stopWatchingUpdatesForRequest:(id)arg1;
 - (void)_registerRequest:(id)arg1;
-- (id)operationForRequest:(id)arg1;
+- (CDUnknownBlockType)_blockOperationForRequest:(id)arg1;
 - (void)prepareResponseForRequest:(id)arg1 allowDelayedResponse:(BOOL)arg2;
 - (id)responseForRequest:(id)arg1 willProvideUpdates:(char *)arg2;
 - (BOOL)canHandleRequest:(id)arg1;

@@ -9,10 +9,11 @@
 #import <CloudDocsDaemon/NSCopying-Protocol.h>
 #import <CloudDocsDaemon/PQLValuable-Protocol.h>
 
-@class NSString;
+@class NSData, NSString;
 
 @interface BRFieldCKInfo : PBCodable <PQLValuable, NSCopying>
 {
+    NSData *_deletionChangeToken;
     NSString *_etag;
     NSString *_etagBeforeCrossZoneMove;
     _Bool _knownToServer;
@@ -23,7 +24,9 @@
     } _has;
 }
 
++ (id)newFromSqliteStatement:(struct sqlite3_stmt *)arg1 atIndex:(int)arg2;
 + (id)newFromSqliteValue:(struct sqlite3_value *)arg1;
+@property(retain, nonatomic) NSData *deletionChangeToken; // @synthesize deletionChangeToken=_deletionChangeToken;
 @property(retain, nonatomic) NSString *etagBeforeCrossZoneMove; // @synthesize etagBeforeCrossZoneMove=_etagBeforeCrossZoneMove;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(nonatomic) _Bool wasCached; // @synthesize wasCached=_wasCached;
@@ -38,6 +41,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool hasDeletionChangeToken;
 @property(readonly, nonatomic) _Bool hasEtagBeforeCrossZoneMove;
 @property(readonly, nonatomic) _Bool hasEtag;
 @property(nonatomic) _Bool hasWasCached;

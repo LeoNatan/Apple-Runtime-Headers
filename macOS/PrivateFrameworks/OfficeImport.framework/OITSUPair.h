@@ -10,6 +10,7 @@
 #import <OfficeImport/NSCopying-Protocol.h>
 #import <OfficeImport/NSMutableCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSUPair : NSObject <NSCopying, NSMutableCopying, NSCoding>
 {
     id mFirst;

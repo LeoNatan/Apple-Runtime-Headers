@@ -10,6 +10,7 @@
 
 @class NSString, SKUIRedeemViewControllerLegacy;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemIdRequiresValidationOperation : ISOperation <ISDialogOperationDelegate>
 {
     CDUnknownBlockType _resultBlock;

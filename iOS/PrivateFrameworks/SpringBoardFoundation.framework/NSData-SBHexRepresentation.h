@@ -7,6 +7,6 @@
 #import <Foundation/NSData.h>
 
 @interface NSData (SBHexRepresentation)
-- (id)sb_hexadecimalEncodedString;
+- (id)sbf_hexadecimalEncodedString;
 @end
 

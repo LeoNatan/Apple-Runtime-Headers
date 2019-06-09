@@ -11,6 +11,7 @@
 @class NSString, SKInvocationQueueProxy, SKRemoteReviewViewController, _UIAsyncInvocation;
 @protocol SKUIServiceReviewViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKStoreReviewViewController : UIViewController <SKRemoteReviewViewControllerDelegate>
 {
     SKInvocationQueueProxy<SKUIServiceReviewViewController> *_serviceProxy;

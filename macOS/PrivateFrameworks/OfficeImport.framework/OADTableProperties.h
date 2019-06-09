@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, OADTableStyle;
 
+__attribute__((visibility("hidden")))
 @interface OADTableProperties : OADDrawableProperties <OADEffectsParent>
 {
     OADTableStyle *mStyle;

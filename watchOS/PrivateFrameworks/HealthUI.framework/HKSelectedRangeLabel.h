@@ -11,6 +11,7 @@
     struct UIEdgeInsets _padding;
 }
 
++ (id)_prefixColorForSelectedRangeData:(id)arg1 defaultColor:(id)arg2;
 + (id)_stringForSelectedRangeData:(id)arg1;
 + (id)attributedStringForSelectedRangeData:(id)arg1 font:(id)arg2 foregroundColor:(id)arg3 prefersImageAffixes:(_Bool)arg4;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;

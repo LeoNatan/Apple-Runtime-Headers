@@ -22,6 +22,7 @@
 @property(nonatomic) _Bool bannerAnimating; // @synthesize bannerAnimating=_bannerAnimating;
 @property(nonatomic) _Bool bannerVisible; // @synthesize bannerVisible=_bannerVisible;
 @property(retain, nonatomic) GKNotificationBannerView *bannerView; // @synthesize bannerView=_bannerView;
+- (void).cxx_destruct;
 - (struct CGPoint)_visibleBannerCenterPosition:(struct CGSize)arg1;
 - (struct CGPoint)_hiddenBannerPosition:(struct CGSize)arg1;
 - (void)addConstraintsForBannerView;
@@ -36,7 +37,6 @@
 - (void)handleWindowSingleTap:(id)arg1;
 - (void)windowTouchesEnded:(id)arg1 withEvent:(id)arg2;
 - (_Bool)windowPointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 
 @end
 

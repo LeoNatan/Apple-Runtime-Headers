@@ -6,13 +6,14 @@
 
 #import <AVConference/VCSessionParticipant.h>
 
+#import <AVConference/VCMomentTransportDelegate-Protocol.h>
 #import <AVConference/VCSessionUplinkVideoStreamControllerDelegate-Protocol.h>
 #import <AVConference/VCVideoCaptureClient-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, VCSessionUplinkBandwidthAllocator, VCSessionUplinkVideoStreamController, VCVideoRule;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, VCAudioPowerSpectrumSource, VCMoments, VCSessionUplinkBandwidthAllocator, VCSessionUplinkVideoStreamController, VCVideoRule;
 
 __attribute__((visibility("hidden")))
-@interface VCSessionParticipantLocal : VCSessionParticipant <VCVideoCaptureClient, VCSessionUplinkVideoStreamControllerDelegate>
+@interface VCSessionParticipantLocal : VCSessionParticipant <VCVideoCaptureClient, VCSessionUplinkVideoStreamControllerDelegate, VCMomentTransportDelegate>
 {
     VCSessionUplinkBandwidthAllocator *_uplinkBandwidthAllocator;
     NSMutableDictionary *_activeUplinkAudioStreams;
@@ -58,8 +59,11 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_videoPayloadTypes;
     unsigned int _currentUplinkTotalBitrateVideo;
     unsigned int _currentUplinkTotalBitrateAudio;
+    VCMoments *_moments;
+    VCAudioPowerSpectrumSource *_powerSpectrumSource;
 }
 
+@property(readonly, nonatomic) VCMoments *moments; // @synthesize moments=_moments;
 @property(readonly, nonatomic) unsigned int currentUplinkTotalBitrateAudio; // @synthesize currentUplinkTotalBitrateAudio=_currentUplinkTotalBitrateAudio;
 @property(readonly, nonatomic) unsigned int currentUplinkTotalBitrateVideo; // @synthesize currentUplinkTotalBitrateVideo=_currentUplinkTotalBitrateVideo;
 @property(readonly, nonatomic) NSSet *videoPayloadTypes; // @synthesize videoPayloadTypes=_videoPayloadTypes;
@@ -71,6 +75,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct tagVCMediaQueue *mediaQueue; // @synthesize mediaQueue=_mediaQueue;
 @property(readonly, nonatomic) unsigned short connectionStatsStreamID; // @synthesize connectionStatsStreamID=_connectionStatsStreamID;
 @property(nonatomic) _Bool encryptionInfoReceived; // @synthesize encryptionInfoReceived=_encryptionInfoReceived;
+- (void)moments:(id)arg1 shouldProcessRequest:(id)arg2 recipientID:(id)arg3;
 - (void)handleActiveConnectionChange:(id)arg1;
 - (void)controller:(id)arg1 didChangeActiveVideoStreams:(id)arg2;
 - (void)pushAudioSamples:(struct opaqueVCAudioBufferList *)arg1;
@@ -123,16 +128,24 @@ __attribute__((visibility("hidden")))
 - (id)supportedAudioRules;
 - (void)updatePayloadTypesWithConfigProvider:(id)arg1;
 - (_Bool)computeMediaBlob;
+- (id)newMediaNegotiatorAudioConfiguration;
 - (id)multiwayVideoStreamConfigs;
-- (id)multiwayAudioStreamConfigs;
+- (id)multiwayVideoStreamNegotiatorConfigForStreamConfig:(id)arg1 isSubstream:(_Bool)arg2;
+- (id)multiwayAudioStreamNegotiatorConfigForStreamConfig:(id)arg1;
 - (void)initializeUplinkVideoStreamController;
 - (_Bool)setupVideoStreamWithConfiguration:(id)arg1;
 - (_Bool)setupVideoStreamsWithConfigProvider:(id)arg1;
+- (_Bool)setupVideoStreamsWithConfigProvider:(id)arg1 mediaNegotiatorConfig:(id)arg2;
 - (_Bool)setupAudioStreamWithConfiguration:(id)arg1;
 - (_Bool)setupAudioStreamsWithConfigProvider:(id)arg1;
+- (_Bool)setupAudioStreamsWithConfigProvider:(id)arg1 mediaNegotiatorConfig:(id)arg2;
+- (_Bool)applyMediaNegotiatorConfig:(id)arg1 toMediaStreamConfig:(id)arg2;
+- (_Bool)configureAudioIOWithDeviceRole:(int)arg1;
+- (void)updateMomentsCapabillities:(unsigned int)arg1 imageType:(int)arg2 videoCodec:(int)arg3;
+- (void)updateMediaSettingsWithConfig:(id)arg1;
 - (unsigned int)calculateUplinkTotalBitrateForMediaStreams:(id)arg1;
-- (void)collectAudioChannelMetrics:(CDStruct_1c8e0384 *)arg1;
-- (void)collectVideoChannelMetrics:(CDStruct_1c8e0384 *)arg1;
+- (void)collectAudioChannelMetrics:(CDStruct_3ab08b48 *)arg1;
+- (void)collectVideoChannelMetrics:(CDStruct_3ab08b48 *)arg1;
 - (void)stopAudioIOCompletion;
 - (_Bool)setState:(unsigned int)arg1;
 - (void)deregisterForVideoCapture;
@@ -143,7 +156,7 @@ __attribute__((visibility("hidden")))
 - (void)stop;
 - (void)start;
 - (void)dealloc;
-- (id)initWithIDSDestination:(id)arg1 delegate:(id)arg2 processId:(int)arg3 sessionUUID:(id)arg4;
+- (id)initWithIDSDestination:(id)arg1 negotiationData:(id)arg2 delegate:(id)arg3 processId:(int)arg4 sessionUUID:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

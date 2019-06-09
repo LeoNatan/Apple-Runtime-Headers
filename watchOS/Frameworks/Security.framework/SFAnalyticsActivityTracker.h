@@ -14,14 +14,16 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_name;
     Class _clientClass;
-    NSNumber *_measurement;
     unsigned long long _start;
     _Bool _canceled;
+    NSNumber *_measurement;
 }
 
+@property(retain) NSNumber *measurement; // @synthesize measurement=_measurement;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)cancel;
+- (void)stopWithEvent:(id)arg1 result:(id)arg2;
 - (void)stop;
 - (void)start;
 - (void)performAction:(CDUnknownBlockType)arg1;

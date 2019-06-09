@@ -80,6 +80,8 @@
 - (int)_migrateAddBasalCalorieKeyValueWithError:(id *)arg1;
 - (id)whitetailProtectedMigrationSteps;
 - (id)whitetailUnprotectedMigrationSteps;
+- (void)yukon_addProtectedMigrationSteps;
+- (void)yukon_addUnprotectedMigrationSteps;
 - (int)_addBasalEnergyColumnToWorkoutsWithError:(id *)arg1;
 - (int)_fixDanglingSourcesAndProvenancesWithError:(id *)arg1;
 - (int)_addNotNullConstraintToProvenanceColumnWithError:(id *)arg1;

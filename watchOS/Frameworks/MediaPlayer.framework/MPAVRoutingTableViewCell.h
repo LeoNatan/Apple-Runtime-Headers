@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UITableViewCell.h>
+#import <MediaPlayer/MPAVClippingTableViewCell.h>
 
 #import <MediaPlayer/MPAVRoutingThemeableCellView-Protocol.h>
 
 @class MPAVRoutingTableViewCellSubtitleTextState, MPVolumeSlider, NSString, NSTimer, UIActivityIndicatorView, UIImageView, UILabel;
 @protocol MPAVRoutingTableViewCellDelegate;
 
-@interface MPAVRoutingTableViewCell : UITableViewCell <MPAVRoutingThemeableCellView>
+@interface MPAVRoutingTableViewCell : MPAVClippingTableViewCell <MPAVRoutingThemeableCellView>
 {
     UIImageView *_iconImageView;
     UILabel *_routeNameLabel;
@@ -67,7 +67,7 @@
 - (id)volumeView;
 - (id)subtitleView;
 - (id)titleView;
-- (void)updateForEndpoint:(id)arg1 route:(id)arg2 inferLocalizedModelName:(_Bool)arg3;
+- (void)updateForEndpoint:(id)arg1 routeItem:(id)arg2 inferLocalizedModelName:(_Bool)arg3;
 - (void)prepareForReuse;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;

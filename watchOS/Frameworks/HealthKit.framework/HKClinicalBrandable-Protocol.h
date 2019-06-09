@@ -12,8 +12,5 @@
 @property(readonly, copy, nonatomic) HKClinicalBrand *brand;
 @property(readonly, copy, nonatomic) NSString *subtitle;
 @property(readonly, copy, nonatomic) NSString *title;
-
-@optional
-@property(readonly, nonatomic, getter=hasMultipleLocations) _Bool multiple;
 @end
 

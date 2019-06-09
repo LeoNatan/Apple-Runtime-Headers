@@ -22,11 +22,13 @@
     } _supportedRates;
     int _canScrub;
     int _command;
+    NSMutableArray *_currentPlaybackSessionTypes;
     NSString *_localizedShortTitle;
     NSString *_localizedTitle;
     float _maximumRating;
     float _minimumRating;
     int _numAvailableSkips;
+    NSString *_playbackSessionIdentifier;
     float _preferredPlaybackRate;
     int _presentationStyle;
     int _repeatMode;
@@ -34,6 +36,7 @@
     int _skipFrequency;
     int _skipInterval;
     NSMutableArray *_supportedCustomQueueIdentifiers;
+    NSMutableArray *_supportedPlaybackSessionTypes;
     int _upNextItemCount;
     _Bool _active;
     _Bool _enabled;
@@ -57,7 +60,12 @@
     } _has;
 }
 
++ (Class)currentPlaybackSessionTypesType;
++ (Class)supportedPlaybackSessionTypesType;
 + (Class)supportedCustomQueueIdentifierType;
+@property(retain, nonatomic) NSString *playbackSessionIdentifier; // @synthesize playbackSessionIdentifier=_playbackSessionIdentifier;
+@property(retain, nonatomic) NSMutableArray *currentPlaybackSessionTypes; // @synthesize currentPlaybackSessionTypes=_currentPlaybackSessionTypes;
+@property(retain, nonatomic) NSMutableArray *supportedPlaybackSessionTypes; // @synthesize supportedPlaybackSessionTypes=_supportedPlaybackSessionTypes;
 @property(nonatomic) float preferredPlaybackRate; // @synthesize preferredPlaybackRate=_preferredPlaybackRate;
 @property(nonatomic) int upNextItemCount; // @synthesize upNextItemCount=_upNextItemCount;
 @property(nonatomic) _Bool supportsSharedQueue; // @synthesize supportsSharedQueue=_supportsSharedQueue;
@@ -83,6 +91,15 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasPlaybackSessionIdentifier;
+- (id)currentPlaybackSessionTypesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)currentPlaybackSessionTypesCount;
+- (void)addCurrentPlaybackSessionTypes:(id)arg1;
+- (void)clearCurrentPlaybackSessionTypes;
+- (id)supportedPlaybackSessionTypesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)supportedPlaybackSessionTypesCount;
+- (void)addSupportedPlaybackSessionTypes:(id)arg1;
+- (void)clearSupportedPlaybackSessionTypes;
 @property(nonatomic) _Bool hasPreferredPlaybackRate;
 @property(nonatomic) _Bool hasUpNextItemCount;
 @property(nonatomic) _Bool hasSupportsSharedQueue;
@@ -97,8 +114,8 @@
 - (void)addSupportedCustomQueueIdentifier:(id)arg1;
 - (void)clearSupportedCustomQueueIdentifiers;
 - (void)setSupportedPlaybackQueueTypes:(int *)arg1 count:(unsigned long long)arg2;
-- (int)supportedPlaybackQueueTypeAtIndex:(unsigned long long)arg1;
-- (void)addSupportedPlaybackQueueType:(int)arg1;
+- (int)supportedPlaybackQueueTypesAtIndex:(unsigned long long)arg1;
+- (void)addSupportedPlaybackQueueTypes:(int)arg1;
 - (void)clearSupportedPlaybackQueueTypes;
 @property(readonly, nonatomic) int *supportedPlaybackQueueTypes;
 @property(readonly, nonatomic) unsigned long long supportedPlaybackQueueTypesCount;

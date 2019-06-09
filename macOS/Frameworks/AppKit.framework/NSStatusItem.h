@@ -18,7 +18,6 @@
     unsigned long long _fFlags;
     id _statusItemMenu;
     NSMutableDictionary *_replicants;
-    id _fReserved;
     NSString *_displayIdentifier;
 }
 

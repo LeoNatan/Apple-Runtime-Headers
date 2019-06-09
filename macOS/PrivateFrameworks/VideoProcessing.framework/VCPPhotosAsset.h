@@ -32,6 +32,7 @@
 - (id)exif;
 - (float)photoOffsetSeconds;
 - (id)originalMovie;
+- (id)streamedMovie;
 - (id)movie;
 - (float)slowmoRate;
 - (double)duration;

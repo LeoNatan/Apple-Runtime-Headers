@@ -37,6 +37,7 @@
 - (void)showCoachingAlertRequests:(id)arg1;
 - (void)hideSedentaryActivityAlert;
 - (void)showSedentaryAlertOfType:(int)arg1 withTimeoutDate:(id)arg2 withActiveHourCount:(int)arg3 withTotalCount:(int)arg4 wheelchairUser:(_Bool)arg5 experimentInstance:(id)arg6;
+- (void)weeklySummaryInfoForDate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)didPredictActivityEndedWithIdentifier:(id)arg1 endDate:(id)arg2 activityType:(unsigned int)arg3 locationType:(int)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)setMuteForTodayPredictedActivityAlerts:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getPredictedActivitiesWithCompletion:(CDUnknownBlockType)arg1;
@@ -48,8 +49,6 @@
 - (void)didBeginPredictedActivityAtDate:(id)arg1 withIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)didClassifyPredictedActivityWithIdentifier:(id)arg1 asActivityType:(unsigned int)arg2 locationType:(int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)showTypicalDayWithCompletion:(CDUnknownBlockType)arg1;
-- (void)stopFakingWithCompletion:(CDUnknownBlockType)arg1;
-- (void)fakeFreeCalendarDateIntervals:(id)arg1 motionState:(_Bool)arg2 inCarState:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)coachingAlertDidCompleteWithResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)forceCoachingWithArguments:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)runCoachingManagerWithCompletion:(CDUnknownBlockType)arg1;

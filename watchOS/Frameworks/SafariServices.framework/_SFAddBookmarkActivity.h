@@ -17,12 +17,12 @@
 
 - (void).cxx_destruct;
 - (_Bool)addBookmarkNavControllerCanSaveBookmarkChanges:(id)arg1;
-- (void)addBookmarkNavController:(id)arg1 didFinishWithResult:(_Bool)arg2;
+- (void)addBookmarkNavController:(id)arg1 didFinishWithResult:(_Bool)arg2 bookmark:(id)arg3;
 - (id)_embeddedActivityViewController;
 - (id)activityViewController;
 @property(readonly, nonatomic) _SFSingleBookmarkNavigationController *bookmarkNavigationController;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
-- (id)activityImage;
+- (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;
 

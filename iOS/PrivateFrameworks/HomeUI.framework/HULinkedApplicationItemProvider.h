@@ -20,9 +20,7 @@
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 - (void).cxx_destruct;
-- (id)_generateItemsFromStoreResult:(id)arg1;
-- (id)_performStoreLookupWithLibraryResult:(id)arg1;
-- (id)_performLibraryLookupForAccessories:(id)arg1;
+- (id)_generateItemsFromSoftwareLookupResult:(id)arg1;
 - (id)reloadItems;
 - (id)invalidationReasons;
 - (id)items;

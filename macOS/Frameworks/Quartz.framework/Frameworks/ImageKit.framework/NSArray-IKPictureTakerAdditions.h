@@ -10,5 +10,7 @@
 - (BOOL)IKIPContainsObjectIdenticalTo:(id)arg1;
 - (id)IKIPArrayByApplyingSelector:(SEL)arg1;
 - (id)IKIPArrayByApplyingSelector:(SEL)arg1 withObject:(id)arg2;
+- (id)localizedVersionString;
+- (id)localizedArrayValues;
 @end
 

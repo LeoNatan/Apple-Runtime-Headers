@@ -10,35 +10,57 @@
 
 @interface CSSpIdSATAnalyzer : NSObject
 {
-    void *_novDetect;
-    unsigned long long _spIdType;
-    NSString *_userName;
-    NSString *_satModelDir;
-    NSString *_satAudioDir;
-    NSString *_spIdTypeStr;
-    unsigned long long _satRunMode;
-    NSString *_satRunModeStr;
+    float _satScoreVTScale;
+    float _satScoreVTOffset;
+    float _satScoreNonVTScale;
+    float _satScoreNonVTOffset;
+    float _satLogitCeilScore;
+    float _satLogitFloorScore;
+    float _retrainThresholdTrigger;
+    float _retrainExplicitUttThresholdSAT;
+    float _retrainExplicitUttThresholdTDSR;
+    float _retrainThresholdSAT;
+    float _retrainThresholdTDSR;
+    int _pruningNumRetentionUtterance;
+    int _maximumSpeakerVectors;
+    NSString *_profileID;
+    NSString *_sysConfigFilepath;
+    unsigned long long _satImplicitBaseProfileThreshold;
+    unsigned long long _satImplicitProfileThreshold;
+    unsigned long long _satImplicitProfileDeltaThreshold;
+    NSString *_voiceProfilePruningCookie;
 }
 
-+ (id)createSATAnalyzersForCSSpIdType:(unsigned long long)arg1 withAsset:(id)arg2;
-@property(retain, nonatomic) NSString *satRunModeStr; // @synthesize satRunModeStr=_satRunModeStr;
-@property(nonatomic) unsigned long long satRunMode; // @synthesize satRunMode=_satRunMode;
-@property(retain, nonatomic) NSString *spIdTypeStr; // @synthesize spIdTypeStr=_spIdTypeStr;
-@property(retain, nonatomic) NSString *satAudioDir; // @synthesize satAudioDir=_satAudioDir;
-@property(retain, nonatomic) NSString *satModelDir; // @synthesize satModelDir=_satModelDir;
-@property(retain, nonatomic) NSString *userName; // @synthesize userName=_userName;
-@property(nonatomic) unsigned long long spIdType; // @synthesize spIdType=_spIdType;
+@property(readonly, nonatomic) NSString *voiceProfilePruningCookie; // @synthesize voiceProfilePruningCookie=_voiceProfilePruningCookie;
+@property(readonly, nonatomic) int maximumSpeakerVectors; // @synthesize maximumSpeakerVectors=_maximumSpeakerVectors;
+@property(readonly, nonatomic) int pruningNumRetentionUtterance; // @synthesize pruningNumRetentionUtterance=_pruningNumRetentionUtterance;
+@property(readonly, nonatomic) float retrainThresholdTDSR; // @synthesize retrainThresholdTDSR=_retrainThresholdTDSR;
+@property(readonly, nonatomic) float retrainThresholdSAT; // @synthesize retrainThresholdSAT=_retrainThresholdSAT;
+@property(readonly, nonatomic) float retrainExplicitUttThresholdTDSR; // @synthesize retrainExplicitUttThresholdTDSR=_retrainExplicitUttThresholdTDSR;
+@property(readonly, nonatomic) float retrainExplicitUttThresholdSAT; // @synthesize retrainExplicitUttThresholdSAT=_retrainExplicitUttThresholdSAT;
+@property(readonly, nonatomic) float retrainThresholdTrigger; // @synthesize retrainThresholdTrigger=_retrainThresholdTrigger;
+@property(readonly, nonatomic) unsigned long long satImplicitProfileDeltaThreshold; // @synthesize satImplicitProfileDeltaThreshold=_satImplicitProfileDeltaThreshold;
+@property(readonly, nonatomic) unsigned long long satImplicitProfileThreshold; // @synthesize satImplicitProfileThreshold=_satImplicitProfileThreshold;
+@property(readonly, nonatomic) unsigned long long satImplicitBaseProfileThreshold; // @synthesize satImplicitBaseProfileThreshold=_satImplicitBaseProfileThreshold;
+@property(readonly, nonatomic) float satLogitFloorScore; // @synthesize satLogitFloorScore=_satLogitFloorScore;
+@property(readonly, nonatomic) float satLogitCeilScore; // @synthesize satLogitCeilScore=_satLogitCeilScore;
+@property(readonly, nonatomic) float satScoreNonVTOffset; // @synthesize satScoreNonVTOffset=_satScoreNonVTOffset;
+@property(readonly, nonatomic) float satScoreNonVTScale; // @synthesize satScoreNonVTScale=_satScoreNonVTScale;
+@property(readonly, nonatomic) float satScoreVTOffset; // @synthesize satScoreVTOffset=_satScoreVTOffset;
+@property(readonly, nonatomic) float satScoreVTScale; // @synthesize satScoreVTScale=_satScoreVTScale;
+@property(readonly, nonatomic) NSString *sysConfigFilepath; // @synthesize sysConfigFilepath=_sysConfigFilepath;
+@property(readonly, nonatomic) NSString *profileID; // @synthesize profileID=_profileID;
 - (void).cxx_destruct;
-- (void)deleteVectorAtIndex:(int)arg1;
 - (void)updateSAT;
-- (float)analyzeSpeakerVector:(id)arg1 numVectors:(unsigned long long)arg2;
+- (float)analyzeSpeakerVector:(id)arg1 numElements:(unsigned long long)arg2;
 @property(readonly, nonatomic) float satScoreThreshold;
+@property(readonly, nonatomic) NSString *satAudioDir;
+@property(readonly, nonatomic) NSString *satModelDir;
 @property(readonly, nonatomic) NSString *sysConfigRoot;
-@property(readonly, nonatomic) NSString *sysConfigFilepath;
-- (id)_getValueForNDAPIConfigOption:(id)arg1;
-- (double)_getFloatValueForNDAPIConfigOption:(id)arg1 defaultValue:(double)arg2;
-- (void)dealloc;
-- (id)initWithCSSpIdType:(unsigned long long)arg1 forRunMode:(unsigned long long)arg2 profile:(id)arg3 locale:(id)arg4 assetResourcePath:(id)arg5 assetHash:(id)arg6;
+- (id)sysConfigFile;
+- (id)userName;
+@property(readonly, nonatomic) unsigned long long spIdType;
+- (id)initWithCSspIdType:(unsigned long long)arg1 userName:(id)arg2 assetResourcePath:(id)arg3 satDirectory:(id)arg4 assetHash:(id)arg5;
 
 @end
 

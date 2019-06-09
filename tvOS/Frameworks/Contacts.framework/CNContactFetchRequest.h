@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Contacts/CNFetchRequest.h>
 
 #import <Contacts/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSPredicate;
 
-@interface CNContactFetchRequest : NSObject <NSSecureCoding>
+@interface CNContactFetchRequest : CNFetchRequest <NSSecureCoding>
 {
     _Bool _rankSort;
     _Bool _mutableObjects;
@@ -18,6 +18,7 @@
     _Bool _disallowsEncodedFetch;
     _Bool _onlyMainStore;
     _Bool _allowsBatching;
+    _Bool _shouldFailIfAccountNotYetSynced;
     NSPredicate *_predicate;
     NSArray *_keysToFetch;
     long long _sortOrder;
@@ -25,6 +26,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool shouldFailIfAccountNotYetSynced; // @synthesize shouldFailIfAccountNotYetSynced=_shouldFailIfAccountNotYetSynced;
 @property(nonatomic) _Bool allowsBatching; // @synthesize allowsBatching=_allowsBatching;
 @property(nonatomic) _Bool onlyMainStore; // @synthesize onlyMainStore=_onlyMainStore;
 @property(nonatomic) unsigned long long batchSize; // @synthesize batchSize=_batchSize;
@@ -39,6 +41,7 @@
 - (_Bool)requiresMeContactAuthorization;
 - (id)effectiveKeysToFetch;
 - (id)effectivePredicate;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithKeysToFetch:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

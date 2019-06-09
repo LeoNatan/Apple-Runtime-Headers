@@ -13,5 +13,6 @@
 - (void)numberPadView:(PUICQuickboardNumberPadView *)arg1 didSelectNumberPadCharacter:(int)arg2;
 - (void)numberPadView:(PUICQuickboardNumberPadView *)arg1 didUnhighlightNumberPadCharacter:(int)arg2;
 - (void)numberPadView:(PUICQuickboardNumberPadView *)arg1 didHighlightNumberPadCharacter:(int)arg2;
+- (void)numberPadViewDidSelectDelete:(PUICQuickboardNumberPadView *)arg1;
 @end
 

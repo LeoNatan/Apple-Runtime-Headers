@@ -12,16 +12,19 @@
 
 + (id)sharedController;
 + (id)_pickVariantsForManifestRootTypes:(id)arg1;
+- (void)personalizeVolumeAtMountPointForInstall:(id)arg1 outputDirectory:(id)arg2 options:(id)arg3 completionHandlerWithResults:(CDUnknownBlockType)arg4;
 - (void)personalizeVolumeAtMountPointForInstall:(id)arg1 outputDirectory:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)personalizeVolumeAtMountPoint:(id)arg1 outputDirectory:(id)arg2 options:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)personalizeVolumeAtMountPoint:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)requiredManifestPathsForBootFile:(id)arg1;
 - (BOOL)volumeHasBeenPersonalized:(id)arg1 prebootFolder:(id)arg2;
+- (BOOL)personalizationRequiredForInstallRootDirectory:(id)arg1 targetVolumeMountPoint:(id)arg2;
 - (BOOL)personalizationRequiredForVolumeAtMountPoint:(id)arg1;
 - (BOOL)personalizationRequired;
 - (BOOL)networkAvailableForPersonalizationWithOptions:(id)arg1;
 - (BOOL)networkAvailableForPersonalization;
 - (id)_requiredManifestPathsForBootFile:(id)arg1 device:(id)arg2;
+- (struct NSDictionary *)_resultDictionaryWithRequest:(id)arg1 sequenceNumber:(unsigned long long)arg2;
 - (void)_personalizeBundleForInstall:(id)arg1 volume:(id)arg2 outputDirectory:(id)arg3 options:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_personalizeBundle:(id)arg1 outputDirectory:(id)arg2 variant:(id)arg3 options:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 

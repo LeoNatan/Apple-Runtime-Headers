@@ -18,8 +18,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSSet *triggerKeys;
 - (void)_setIsBackedByTrigger:(BOOL)arg1;
 - (BOOL)isBackedByTrigger;
-@property(nonatomic, getter=isConstrained) BOOL constrained;
-- (BOOL)isUnique;
+- (BOOL)isDerivedAttribute;
 - (BOOL)shouldIndex;
 - (id)attributeDescription;
 - (void)dealloc;

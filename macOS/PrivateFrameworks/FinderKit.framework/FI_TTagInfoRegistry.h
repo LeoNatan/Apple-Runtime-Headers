@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     struct TReadWriteLock _lock;
     int _discoveringTags;
     struct TFENode _tagsContainerNode;
+    struct TNotificationCenterObserver _favoriteTagsPrefChangedObserver;
 }
 
 + (void)stopDiscovery;
@@ -62,7 +63,6 @@ __attribute__((visibility("hidden")))
 - (id)tagInfoForName:(id)arg1;
 - (void)aboutToTearDown;
 - (id)_init;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

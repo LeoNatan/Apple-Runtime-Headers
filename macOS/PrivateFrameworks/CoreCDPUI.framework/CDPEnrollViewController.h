@@ -46,7 +46,6 @@
     NSButton *_backButton;
     NSButton *_nextButton;
     NSButton *_alternateButton;
-    NSButton *_enterThePasscodeForDeviceButton;
     NSWindow *_sheet;
     NSLayoutConstraint *_widthOfPinViewConstraint;
     NSLayoutConstraint *_errorConstraint;
@@ -72,7 +71,6 @@
 @property(retain) NSLayoutConstraint *errorConstraint; // @synthesize errorConstraint=_errorConstraint;
 @property(retain) NSLayoutConstraint *widthOfPinViewConstraint; // @synthesize widthOfPinViewConstraint=_widthOfPinViewConstraint;
 @property(retain) NSWindow *sheet; // @synthesize sheet=_sheet;
-@property(retain) NSButton *enterThePasscodeForDeviceButton; // @synthesize enterThePasscodeForDeviceButton=_enterThePasscodeForDeviceButton;
 @property(retain) NSButton *alternateButton; // @synthesize alternateButton=_alternateButton;
 @property(retain) NSButton *nextButton; // @synthesize nextButton=_nextButton;
 @property(retain) NSButton *backButton; // @synthesize backButton=_backButton;
@@ -112,7 +110,6 @@
 - (void)handleForgotWithRecoveryKey;
 - (void)handleForgot;
 - (void)handleForgotAccountRecovery;
-- (void)enterThePasscodeForDeviceButtonPressed:(id)arg1;
 - (void)cantApproveFromAnotherDeviceButtonPressed:(id)arg1;
 - (void)handleAlternateButtonPressed;
 - (void)handleAlternateButtonPressedAccountRecovery;

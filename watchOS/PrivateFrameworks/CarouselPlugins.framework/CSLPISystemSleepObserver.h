@@ -6,36 +6,30 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
 @protocol OS_dispatch_queue;
 
 @interface CSLPISystemSleepObserver : NSObject
 {
+    NSObject<OS_dispatch_queue> *_queue;
+    NSString *_identifier;
+    CDUnknownBlockType _willPowerOnBlock;
+    CDUnknownBlockType _hasPoweredOnBlock;
+    CDUnknownBlockType _canSleepBlock;
+    CDUnknownBlockType _willNotSleepBlock;
+    CDUnknownBlockType _willSleepBlock;
     unsigned int _systemPowerConnection;
     struct IONotificationPort *_systemPowerPort;
     unsigned int _systemPowerNotifier;
-    _Bool _sleepImminent;
-    NSObject<OS_dispatch_queue> *_queue;
-    CDUnknownBlockType _canSleepBlock;
-    CDUnknownBlockType _sleepImminentBlock;
-    CDUnknownBlockType _wakeBlock;
-    CDUnknownBlockType _willWakeBlock;
 }
 
-@property(readonly, nonatomic) CDUnknownBlockType willWakeBlock; // @synthesize willWakeBlock=_willWakeBlock;
-@property(copy, nonatomic) CDUnknownBlockType wakeBlock; // @synthesize wakeBlock=_wakeBlock;
-@property(copy, nonatomic) CDUnknownBlockType sleepImminentBlock; // @synthesize sleepImminentBlock=_sleepImminentBlock;
-@property(copy, nonatomic) CDUnknownBlockType canSleepBlock; // @synthesize canSleepBlock=_canSleepBlock;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(getter=isSleepImminent) _Bool sleepImminent; // @synthesize sleepImminent=_sleepImminent;
 - (void).cxx_destruct;
 - (void)_systemPowerChanged:(unsigned int)arg1 notificationID:(void *)arg2;
 - (void)_stopPowerMonitoring;
 - (void)_startPowerMonitoring;
-- (void)setSleepImminentAndCallBlocksIfNecessary:(_Bool)arg1;
+- (void)stop;
 - (void)dealloc;
-- (id)init;
-- (id)initWithQueue:(id)arg1 canSleepBlock:(CDUnknownBlockType)arg2 sleepImminentBlock:(CDUnknownBlockType)arg3 willWakeBlock:(CDUnknownBlockType)arg4 wakeBlock:(CDUnknownBlockType)arg5;
-- (id)initWithQueue:(id)arg1 canSleepBlock:(CDUnknownBlockType)arg2 sleepImminentBlock:(CDUnknownBlockType)arg3 wakeBlock:(CDUnknownBlockType)arg4;
+- (id)initWithQueue:(id)arg1 identifier:(id)arg2 willPowerOnBlock:(CDUnknownBlockType)arg3 hasPoweredOnBlock:(CDUnknownBlockType)arg4 canSleepBlock:(CDUnknownBlockType)arg5 willNotSleepBlock:(CDUnknownBlockType)arg6 willSleepBlock:(CDUnknownBlockType)arg7;
 
 @end
 

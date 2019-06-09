@@ -35,6 +35,7 @@
 - (id)bag_stringForKey:(id)arg1;
 - (BOOL)bag_boolForKey:(id)arg1;
 - (id)_bag_objectOfClass:(Class)arg1 forKey:(id)arg2;
+@property(readonly, nonatomic) long long protocolVersion;
 @property(readonly, nonatomic) NSDictionary *tuscanyConfiguration;
 @property(readonly, copy, nonatomic) NSString *parsecFeedbackFormat;
 @property(readonly, nonatomic) BOOL disableAsTypedSuggestion;
@@ -73,8 +74,8 @@
 @property(readonly, copy, nonatomic) NSString *firstUseDescriptionText;
 @property(readonly, copy, nonatomic) NSArray *enabledDomains;
 @property(readonly, copy, nonatomic) NSArray *recentlyUsedAppIdentifierWhitelist;
-@property(readonly, nonatomic) long long maximumNumberOfFeedbackFiles;
 @property(readonly, nonatomic) BOOL feedbackEnabled;
+@property(readonly, nonatomic) long long abTest2WeekZoneSize;
 @property(readonly, nonatomic) unsigned long long maximumCachedQueriesToSend;
 @property(readonly, nonatomic) unsigned long long maximumCachedResultsToSend;
 @property(readonly, nonatomic) unsigned long long minimumQueryLength;
@@ -97,6 +98,7 @@
 @property(readonly, nonatomic) NSNumber *minSearchRenderTimeout;
 @property(readonly, nonatomic) NSNumber *searchRenderTimeout;
 @property(readonly, copy, nonatomic) NSDictionary *resources;
+@property(readonly, copy, nonatomic) NSString *releaseTag;
 @property(readonly, copy, nonatomic) NSString *version;
 @property(readonly, nonatomic, getter=isEnabled) BOOL enabled;
 - (double)expirationDate;
@@ -105,9 +107,11 @@
 - (id)_bag_objectOfClass:(Class)arg1 forKey:(id)arg2 override:(BOOL)arg3;
 - (id)valueForKey:(id)arg1 override:(BOOL)arg2;
 - (id)valueForKey:(id)arg1;
+- (id)initWithData:(id)arg1 userAgent:(id)arg2 userDefaults:(id)arg3;
 - (id)initWithBag:(id)arg1 userAgent:(id)arg2;
 - (id)initWithData:(id)arg1;
 - (id)initWithData:(id)arg1 userAgent:(id)arg2;
+- (id)initWithURL:(id)arg1 userAgent:(id)arg2 userDefaults:(id)arg3;
 - (id)initWithURL:(id)arg1 userAgent:(id)arg2;
 - (id)initWithURL:(id)arg1 userDefaults:(id)arg2;
 

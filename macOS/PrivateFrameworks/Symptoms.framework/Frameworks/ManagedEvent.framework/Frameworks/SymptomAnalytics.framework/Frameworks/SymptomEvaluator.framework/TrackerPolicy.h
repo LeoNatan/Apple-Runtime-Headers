@@ -6,27 +6,37 @@
 
 #import <objc/NSObject.h>
 
+@class FlowClassification;
+
+__attribute__((visibility("hidden")))
 @interface TrackerPolicy : NSObject
 {
-    unsigned int _defaultDisposition;
-    unsigned int _numClassMaps;
     struct {
         unsigned int trafficClass;
-        unsigned int flowDisposition;
+        FlowClassification *flowClassification;
     } _classMap[12];
-    unsigned int _numMgmtFlagsMaps;
     struct {
         unsigned int mgmtFlags;
-        unsigned int flowDisposition;
+        FlowClassification *flowClassification;
     } _mgmtFlagsMap[4];
+    unsigned int _numClassMaps;
+    unsigned int _numMgmtFlagsMaps;
+    FlowClassification *_defaultClassification;
     unsigned long long _maximumConnectionsPerHour;
 }
 
++ (void)initialize;
++ (id)preferredInstance:(id)arg1;
 @property unsigned long long maximumConnectionsPerHour; // @synthesize maximumConnectionsPerHour=_maximumConnectionsPerHour;
+@property(retain) FlowClassification *defaultClassification; // @synthesize defaultClassification=_defaultClassification;
+@property unsigned int numMgmtFlagsMaps; // @synthesize numMgmtFlagsMaps=_numMgmtFlagsMaps;
+@property unsigned int numClassMaps; // @synthesize numClassMaps=_numClassMaps;
+- (void).cxx_destruct;
 - (int)configureInstance:(id)arg1;
-- (void)addDisposition:(unsigned int)arg1 forTrafficMgmtFlags:(unsigned int)arg2;
-- (void)addDisposition:(unsigned int)arg1 forTrafficClass:(unsigned int)arg2;
-- (unsigned int)flowDispositionFor:(id)arg1;
+- (void)addClassification:(id)arg1 forTrafficMgmtFlags:(unsigned int)arg2;
+- (void)addClassification:(id)arg1 forTrafficClass:(unsigned int)arg2;
+- (id)flowClassificationFor:(id)arg1;
+- (id)nonDefaultFlowClassificationFor:(id)arg1;
 - (id)description;
 - (id)init;
 

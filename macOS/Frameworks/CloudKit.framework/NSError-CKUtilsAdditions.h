@@ -11,5 +11,11 @@
 + (id)CKErrorWithPOSIXCode:(int)arg1;
 - (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (BOOL)CKIsPOSIXErrorCode:(long long)arg1;
+@property(readonly, nonatomic, getter=isComparisonError) BOOL comparisonError;
+- (BOOL)CKHasCKErrorInChildChain;
+- (BOOL)CKIsCKError;
+- (BOOL)CKIsNotFoundError;
+- (id)CKClientSuitableUnderlyingError;
+- (id)CKClientSuitableError;
 @end
 

@@ -7,6 +7,12 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (_TVMonogramLoader)
++ (id)tv_allowedLiteralJSONObjects;
 @property(nonatomic, setter=tv_setGeneratorType:) unsigned long long tv_generatorType;
+- (id)tv_toPropertiesJSDictionary;
+- (id)tv_JSCompatibleValue;
+- (void)tv_setAssociatedIKViewElement:(id)arg1;
+- (id)tv_associatedIKViewElement;
+- (_Bool)tv_superOfClass:(Class)arg1 respondsToSelector:(SEL)arg2;
 @end
 

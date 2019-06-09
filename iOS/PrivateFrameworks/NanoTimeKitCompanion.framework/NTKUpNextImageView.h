@@ -6,17 +6,21 @@
 
 #import <UIKit/UIView.h>
 
+#import <NanoTimeKitCompanion/CLKMonochromeComplicationView-Protocol.h>
 #import <NanoTimeKitCompanion/NTKUpNextBaseCellContentsLayerProvider-Protocol.h>
 
 @class CALayer, CLKImageProvider, NSString, NTKUpNextBaseCell, UIColor, UIImage, UIImageView;
+@protocol CLKMonochromeFilterProvider;
 
-@interface NTKUpNextImageView : UIView <NTKUpNextBaseCellContentsLayerProvider>
+@interface NTKUpNextImageView : UIView <NTKUpNextBaseCellContentsLayerProvider, CLKMonochromeComplicationView>
 {
     UIImageView *_foregroundImageView;
     UIImageView *_backgroundImageView;
     CALayer *_foregroundAccentBackdrop;
     UIImageView *_foregroundAccentImageView;
+    UIImageView *_overrideImageView;
     NTKUpNextBaseCell *_parentCell;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     UIColor *_fallbackTintColor;
     CLKImageProvider *_imageProvider;
     UIImage *_overrideImage;
@@ -24,12 +28,18 @@
 }
 
 @property(retain, nonatomic) NSString *compositingFilter; // @synthesize compositingFilter=_compositingFilter;
-@property(retain, nonatomic) UIImage *overrideImage; // @synthesize overrideImage=_overrideImage;
-@property(retain, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
+@property(readonly, nonatomic) UIImage *overrideImage; // @synthesize overrideImage=_overrideImage;
+@property(readonly, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(retain, nonatomic) UIColor *fallbackTintColor; // @synthesize fallbackTintColor=_fallbackTintColor;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)setContentMode:(long long)arg1;
 - (void)_updateColors;
+- (void)setOverrideImage:(id)arg1;
+- (void)setImageProvider:(id)arg1;
+- (void)setFullColorImage:(id)arg1 tintableImageProvider:(id)arg2;
 - (_Bool)_hasMultipartImages;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;

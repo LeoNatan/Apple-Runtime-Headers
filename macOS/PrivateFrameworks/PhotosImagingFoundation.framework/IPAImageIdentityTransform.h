@@ -6,7 +6,6 @@
 
 #import <PhotosImagingFoundation/IPAImageTransform.h>
 
-__attribute__((visibility("hidden")))
 @interface IPAImageIdentityTransform : IPAImageTransform
 {
 }

@@ -9,8 +9,10 @@
 @class ACHEarnedInstance, ACHTemplate, NSString, NSURL;
 
 @protocol ACHServerInterface <NSObject>
+- (void)remote_availableMobileAssetsWithCompletion:(void (^)(NSArray *))arg1;
 - (void)remote_setActivityChallengeAssetsServerURL:(NSURL *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)remote_fetchActivityChallengeAssetsServerURLWithCompletion:(void (^)(NSURL *, NSError *))arg1;
+- (void)remote_runMonthlyChallengesWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_forceAwardingSchedulerWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)remote_fetchEphemeralAchievementWithTemplateUniqueName:(NSString *)arg1 completion:(void (^)(ACHAchievement *, NSError *))arg2;
 - (void)remote_fetchAchievementWithTemplateUniqueName:(NSString *)arg1 completion:(void (^)(ACHAchievement *, NSError *))arg2;

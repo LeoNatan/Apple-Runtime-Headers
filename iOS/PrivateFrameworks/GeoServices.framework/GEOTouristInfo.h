@@ -8,19 +8,17 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface GEOTouristInfo : PBCodable <NSCopying>
 {
     double _fetchTimestamp;
     _Bool _isTourist;
     struct {
-        unsigned int fetchTimestamp:1;
-        unsigned int isTourist:1;
-    } _has;
+        unsigned int has_fetchTimestamp:1;
+        unsigned int has_isTourist:1;
+    } _flags;
 }
 
-@property(nonatomic) double fetchTimestamp; // @synthesize fetchTimestamp=_fetchTimestamp;
-@property(nonatomic) _Bool isTourist; // @synthesize isTourist=_isTourist;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -28,10 +26,13 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasFetchTimestamp;
+@property(nonatomic) double fetchTimestamp;
 @property(nonatomic) _Bool hasIsTourist;
+@property(nonatomic) _Bool isTourist;
 
 @end
 

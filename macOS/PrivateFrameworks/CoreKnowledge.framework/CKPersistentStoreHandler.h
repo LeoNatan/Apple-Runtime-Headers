@@ -32,7 +32,6 @@
 - (id)valuesAndReturnError:(id *)arg1;
 - (id)keysMatching:(id)arg1 error:(id *)arg2;
 - (id)keysAndReturnError:(id *)arg1;
-- (void)dealloc;
 - (id)initWithName:(id)arg1;
 - (id)init;
 

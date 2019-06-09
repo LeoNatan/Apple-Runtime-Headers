@@ -8,6 +8,7 @@
 
 @class NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface EDTableFilterColumn : NSObject
 {
     unsigned long long mColumnIndex;

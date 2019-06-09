@@ -10,30 +10,6 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct NoteAccountObject {
-    Class _field1;
-    id _field2;
-    id _field3;
-};
-
-struct NoteContext {
-    Class _field1;
-    id _field2;
-    id _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    unsigned int _field10;
-    _Bool _field11;
-    _Bool _field12;
-    _Bool _field13;
-    _Bool _field14;
-    id _field15;
-};
-
 struct _NSRange {
     unsigned int _field1;
     unsigned int _field2;

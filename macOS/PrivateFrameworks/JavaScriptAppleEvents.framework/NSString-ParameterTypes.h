@@ -7,6 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (ParameterTypes)
++ (id)stringWithFourCharCode:(unsigned int)arg1;
 - (BOOL)isTypeAny;
 - (BOOL)isTypeFile;
 - (BOOL)isTypeBoolean;
@@ -14,5 +15,10 @@
 - (BOOL)isTypeText;
 - (BOOL)isTypeList;
 - (BOOL)isTypeSpecifier;
+- (BOOL)isRemoteApplicationURL;
+- (id)jsaeCamelCase;
+- (unsigned int)toFourCharCode;
+- (struct OpaqueJSString *)toJSString;
+- (id)titleCase;
 @end
 

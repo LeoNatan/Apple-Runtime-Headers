@@ -7,12 +7,11 @@
 @class AWAttentionAwarenessConfiguration;
 
 @protocol AWRemoteClient
-- (void)useUnitTestSampling:(_Bool)arg1;
 - (void)pollWithTimeout:(unsigned long long)arg1 reply:(void (^)(NSError *))arg2;
 - (void)resetAttentionLostTimer;
 - (void)notifyEvent:(unsigned long long)arg1 timestamp:(unsigned long long)arg2;
 - (void)getLastEvent:(void (^)(AWAttentionEvent *))arg1;
-- (void)setClientConfig:(AWAttentionAwarenessConfiguration *)arg1 shouldReset:(_Bool)arg2;
+- (void)setClientConfig:(AWAttentionAwarenessConfiguration *)arg1 shouldReset:(_Bool)arg2 reply:(void (^)(NSError *))arg3;
 - (void)invalidate;
 @end
 

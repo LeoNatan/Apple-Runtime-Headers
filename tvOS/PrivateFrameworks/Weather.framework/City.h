@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CLLocation, NSArray, NSDate, NSDictionary, NSError, NSHashTable, NSNumber, NSString, NSTimeZone, NSTimer, NSURL, WFGeocodeRequest, WFLocation, WFTemperature;
+@class CLLocation, NSArray, NSDate, NSDictionary, NSError, NSHashTable, NSNumber, NSString, NSTimeZone, NSTimer, NSURL, WFAQIScaleCategory, WFGeocodeRequest, WFLocation, WFTemperature;
 
 @interface City : NSObject
 {
@@ -51,6 +51,7 @@
     unsigned long long _pressureRising;
     NSNumber *_airQualityIdx;
     NSNumber *_airQualityCategory;
+    WFAQIScaleCategory *_airQualityScaleCategory;
     WFLocation *_wfLocation;
     unsigned long long _lastUpdateStatus;
     long long _updateInterval;
@@ -73,6 +74,7 @@
 @property(nonatomic) unsigned long long lastUpdateStatus; // @synthesize lastUpdateStatus=_lastUpdateStatus;
 @property(retain, nonatomic) WFLocation *wfLocation; // @synthesize wfLocation=_wfLocation;
 @property(nonatomic) _Bool autoUpdate; // @synthesize autoUpdate=_autoUpdate;
+@property(retain, nonatomic) WFAQIScaleCategory *airQualityScaleCategory; // @synthesize airQualityScaleCategory=_airQualityScaleCategory;
 @property(retain, nonatomic) NSNumber *airQualityCategory; // @synthesize airQualityCategory=_airQualityCategory;
 @property(retain, nonatomic) NSNumber *airQualityIdx; // @synthesize airQualityIdx=_airQualityIdx;
 @property(nonatomic) float heatIndex; // @synthesize heatIndex=_heatIndex;

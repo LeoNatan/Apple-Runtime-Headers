@@ -28,15 +28,15 @@
 @property(retain, nonatomic) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(copy, nonatomic) NSString *message; // @synthesize message=_message;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(readonly, nonatomic) UILabel *labelMessage; // @synthesize labelMessage=_labelMessage;
+@property(readonly, nonatomic) UILabel *labelTitle; // @synthesize labelTitle=_labelTitle;
 @property(nonatomic) _Bool smallDevice; // @synthesize smallDevice=_smallDevice;
 - (void).cxx_destruct;
-- (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)_layoutWithBounds:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)dismissButtonPressed:(id)arg1;
 - (void)prepareForReuse;
-- (void)resetFonts;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

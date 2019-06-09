@@ -9,7 +9,7 @@
 #import <network/OS_nw_service_connector-Protocol.h>
 
 @class NSString;
-@protocol OS_dispatch_queue, OS_nw_dictionary, OS_nw_listener, OS_nw_parameters;
+@protocol OS_dispatch_queue, OS_nw_array, OS_nw_dictionary, OS_nw_listener, OS_nw_parameters, OS_xpc_object;
 
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_service_connector : NSObject <OS_nw_service_connector>
@@ -20,10 +20,15 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *serviceConnectorQueue;
     unsigned long long uniqueID;
     unsigned short localPortHBO;
+    unsigned char retryCounterForAddressInUse;
     CDUnknownBlockType serviceAvailableBlock;
+    NSObject<OS_nw_array> *pendingUnverifiedIncomingRequests;
     NSObject<OS_nw_dictionary> *pendingIncomingRequests;
     NSObject<OS_nw_dictionary> *activeConnections;
     NSObject<OS_nw_dictionary> *activeOutgoingRequests;
+    NSObject<OS_xpc_object> *remotePubKeys;
+    unsigned char localPrivKey[32];
+    unsigned char localPubKey[32];
 }
 
 - (void).cxx_destruct;

@@ -26,6 +26,7 @@
 - (void)_removeToken:(id)arg1;
 - (void)_queue_noteInstallationConstraintMonitor:(id)arg1 constraintsDidChange:(unsigned long long)arg2;
 - (void)invalidate;
+- (id)monitorOfClass:(Class)arg1;
 - (void)invalidateWithError:(id)arg1;
 - (id)registerObserverBlock:(CDUnknownBlockType)arg1;
 - (void)dealloc;

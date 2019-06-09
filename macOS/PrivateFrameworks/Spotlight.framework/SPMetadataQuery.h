@@ -6,7 +6,7 @@
 
 #import <Spotlight/SPKQuery.h>
 
-@class NSArray, NSDictionary, NSMapTable, NSMutableDictionary, NSObject, NSString, SPKResponse, SPMetadataPattern;
+@class CSFilesSearchQuery, NSArray, NSDictionary, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject, NSString, SPKResponse, SPMetadataPattern;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface SPMetadataQuery : SPKQuery
@@ -15,18 +15,21 @@
     NSArray *_queryTerms;
     _Bool _highConfidenceNL;
     NSDictionary *_NLPRankingTerms;
-    NSArray *_bitMasksForNLPRankingTerms;
     int _performanceFeedbackCount;
     NSMutableDictionary *_performanceFeedbackResults;
+    NSDictionary *_nlpCategoryPreference;
+    NSString *_nlpConfidence;
     id _queryNoteObserver;
     BOOL _isRewrite;
     BOOL _persistent;
     _Bool _definiteLocalQuery;
     NSString *_correctedQuery;
+    NSArray *_bitMasksForNLPRankingTerms;
     NSArray *_prefetchedAttributes;
     NSArray *_sortingAttributes;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    struct __MDQuery *_query;
+    NSMutableArray *_results;
+    CSFilesSearchQuery *_query;
     NSDictionary *_userQueryContentTypeDict;
     id _prefetchedAttributesKeySet;
     NSMapTable *_mapMetadataItemToResult;
@@ -53,12 +56,14 @@
 @property(readonly) NSMapTable *mapMetadataItemToResult; // @synthesize mapMetadataItemToResult=_mapMetadataItemToResult;
 @property(readonly) id prefetchedAttributesKeySet; // @synthesize prefetchedAttributesKeySet=_prefetchedAttributesKeySet;
 @property(readonly) NSDictionary *userQueryContentTypeDict; // @synthesize userQueryContentTypeDict=_userQueryContentTypeDict;
-@property(readonly) struct __MDQuery *query; // @synthesize query=_query;
+@property(readonly) CSFilesSearchQuery *query; // @synthesize query=_query;
+@property(retain, nonatomic) NSMutableArray *results; // @synthesize results=_results;
 @property(readonly) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(readonly) NSArray *sortingAttributes; // @synthesize sortingAttributes=_sortingAttributes;
 @property(readonly) NSArray *prefetchedAttributes; // @synthesize prefetchedAttributes=_prefetchedAttributes;
 @property _Bool definiteLocalQuery; // @synthesize definiteLocalQuery=_definiteLocalQuery;
 @property(getter=isPersistent) BOOL persistent; // @synthesize persistent=_persistent;
+@property(retain) NSArray *bitMasksForNLPRankingTerms; // @synthesize bitMasksForNLPRankingTerms=_bitMasksForNLPRankingTerms;
 @property(retain) NSString *correctedQuery; // @synthesize correctedQuery=_correctedQuery;
 @property BOOL isRewrite; // @synthesize isRewrite=_isRewrite;
 - (void).cxx_destruct;
@@ -66,10 +71,8 @@
 - (void)willSendPerformanceFeedback:(int)arg1;
 - (void)updateWithQueryCorrection:(id)arg1;
 - (id)waitForQueryCorrection;
-- (void)tagNLPResults:(id)arg1;
-- (void)updateWithNote:(id)arg1;
+- (void)sendResponseForCompletion:(BOOL)arg1;
 - (void)_prepareQuery;
-- (void)_setQueryNoteBlock:(CDUnknownBlockType)arg1;
 - (id)queryStringForUserQuery:(id)arg1 options:(unsigned long long)arg2;
 - (id)_basicTextContentQueryForUserQuery:(id)arg1;
 - (id)_scopesForOptions:(unsigned long long)arg1;
@@ -80,10 +83,9 @@
 - (void)executeQuery;
 - (id)userQueryString;
 - (void)_sendResponse:(id)arg1;
-- (void)dealloc;
 - (id)initWithUserQuery:(id)arg1 queryGroupId:(unsigned long long)arg2 options:(unsigned long long)arg3 keyboardLanguage:(id)arg4;
-- (void)initQuery;
 - (BOOL)supportsRefinement;
+- (BOOL)isCoreSpotlightQuery;
 - (BOOL)isDocumentQuery;
 - (id)rankingQueries;
 - (BOOL)needsIO;

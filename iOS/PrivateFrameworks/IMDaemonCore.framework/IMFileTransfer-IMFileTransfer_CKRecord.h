@@ -18,6 +18,7 @@
 + (id)_recordType;
 - (id)_fileManager;
 - (id)initWithCKRecord:(id)arg1 writeAssetToDisk:(_Bool)arg2;
+- (void)moveTransferAssertFromRecord:(id)arg1;
 - (id)copyCKRecordRepresentationWithZoneID:(id)arg1 salt:(id)arg2 useStingRay:(_Bool)arg3;
 - (void)_setRecordPropertiesBasedOnExistingRecord:(id)arg1 useStingRay:(_Bool)arg2;
 - (_Bool)_isUsingStingRay;

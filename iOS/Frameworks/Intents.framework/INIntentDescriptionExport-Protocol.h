@@ -7,10 +7,9 @@
 #import <Intents/JSExport-Protocol.h>
 #import <Intents/NSObject-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSString;
 
 @protocol INIntentDescriptionExport <NSObject, JSExport>
-@property(readonly, copy, nonatomic) NSDictionary *slotsByName;
 @property(readonly, nonatomic) SEL confirmSelector;
 @property(readonly, nonatomic) SEL handleSelector;
 @property(readonly, nonatomic) _Bool isPrivate;

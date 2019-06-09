@@ -69,7 +69,6 @@ __attribute__((visibility("hidden")))
 - (void)targetLostServiceConnection:(id)arg1;
 - (void)targetEstablishedServiceConnection:(id)arg1;
 - (void)openServiceConnectionForTarget:(id)arg1;
-- (void)targetDidChangeReadyState:(id)arg1;
 - (void)targetHasBasicInformation:(id)arg1;
 @property(readonly, nonatomic) RWIApplication *currentApplication;
 @property(readonly, nonatomic) RWIMachine *currentMachine; // @dynamic currentMachine;

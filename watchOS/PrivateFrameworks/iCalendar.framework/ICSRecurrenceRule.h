@@ -13,7 +13,7 @@
 
 @interface ICSRecurrenceRule : NSObject <NSSecureCoding, ICSWriting>
 {
-    int _freq;
+    unsigned int _freq;
     NSMutableDictionary *_parameters;
 }
 
@@ -44,11 +44,11 @@
 @property(nonatomic) NSNumber *interval;
 @property(nonatomic) NSNumber *count;
 @property(retain, nonatomic) ICSDateValue *until;
-@property(nonatomic) int freq;
+@property(nonatomic) unsigned int freq;
 - (void)removeParameterValueForName:(id)arg1;
 - (void)setParameterValue:(id)arg1 forName:(id)arg2;
 - (id)parameterValueForName:(id)arg1;
-- (id)initWithFrequency:(int)arg1;
+- (id)initWithFrequency:(unsigned int)arg1;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)cleanUpForStartDate:(id)arg1;
 - (id)occurrencesForStartDate:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 inTimeZone:(id)arg4;

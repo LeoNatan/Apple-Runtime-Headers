@@ -14,5 +14,6 @@
 - (void)signInViewController:(AKBaseSignInViewController *)arg1 shouldContinueWithAuthenticationResults:(NSMutableDictionary *)arg2 error:(NSError *)arg3 forContext:(AKAppleIDAuthenticationContext *)arg4 completion:(void (^)(_Bool))arg5;
 - (_Bool)signInViewController:(AKBaseSignInViewController *)arg1 shouldContinueWithAuthenticationResults:(NSMutableDictionary *)arg2 error:(NSError *)arg3 forContext:(AKAppleIDAuthenticationContext *)arg4;
 - (void)signInViewController:(AKBaseSignInViewController *)arg1 didAuthenticateWithResults:(NSMutableDictionary *)arg2 error:(NSError *)arg3;
+- (void)signInViewController:(AKBaseSignInViewController *)arg1 willPerformAuthenticationWithContext:(AKAppleIDAuthenticationContext *)arg2 completionHandler:(void (^)(void))arg3;
 @end
 

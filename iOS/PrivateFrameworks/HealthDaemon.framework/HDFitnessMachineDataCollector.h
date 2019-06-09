@@ -47,7 +47,6 @@
 - (double)preferredAggregationIntervalForAggregator:(id)arg1;
 - (id)identifierForDataAggregator:(id)arg1;
 - (id)sourceForDataAggregator:(id)arg1;
-- (id)deviceForDataAggregator:(id)arg1;
 - (void)dataAggregator:(id)arg1 wantsCollectionWithConfiguration:(id)arg2;
 - (void)beginCollectionForDataAggregator:(id)arg1 lastPersistedSensorDatum:(id)arg2;
 - (id)_filterForFitnessMachineSamplesWithStartDate:(id)arg1 endDate:(id)arg2;

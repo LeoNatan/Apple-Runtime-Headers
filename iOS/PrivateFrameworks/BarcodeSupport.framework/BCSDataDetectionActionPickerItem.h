@@ -10,7 +10,6 @@
 
 @class CNContact, DDAction, NSString;
 
-__attribute__((visibility("hidden")))
 @interface BCSDataDetectionActionPickerItem : BCSActionPickerItem <DDDetectionControllerInteractionDelegate>
 {
     DDAction *_ddAction;
@@ -19,6 +18,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)action:(id)arg1 didDismissAlertController:(id)arg2;
 - (void)performAction;
+@property(readonly, nonatomic) NSString *icsString;
 @property(readonly, nonatomic) CNContact *contact;
 - (id)actionURL;
 - (id)targetApplicationBundleIdentifier;

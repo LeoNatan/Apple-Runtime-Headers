@@ -63,7 +63,6 @@
 - (void)setQueryType:(int)arg1;
 - (id)password;
 - (id)user;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithUser:(id)arg1 password:(id)arg2 url:(id)arg3;
 - (id)initWithAuthDelegate:(id)arg1 url:(id)arg2;

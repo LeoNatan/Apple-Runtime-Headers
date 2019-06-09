@@ -8,6 +8,7 @@
 
 @class NSRegularExpression;
 
+__attribute__((visibility("hidden")))
 @interface SKUITemplateParsingDataProvider : SSVURLDataConsumer
 {
     NSRegularExpression *_regularExpression;

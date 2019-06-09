@@ -8,6 +8,7 @@
 
 @class OADFill, OADTableCellBorderStyle;
 
+__attribute__((visibility("hidden")))
 @interface OADTableCellStyle : NSObject
 {
     OADTableCellBorderStyle *mBorderStyle;

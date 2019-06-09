@@ -28,9 +28,6 @@
 - (void)setPressed:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setPressed:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setPressed:(_Bool)arg1;
-- (void)setFocusDirection:(struct CGPoint)arg1 animated:(_Bool)arg2;
-- (void)setFocusDirection:(struct CGPoint)arg1;
-- (struct CGPoint)focusDirection;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 focusAnimationCoordinator:(id)arg3;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;

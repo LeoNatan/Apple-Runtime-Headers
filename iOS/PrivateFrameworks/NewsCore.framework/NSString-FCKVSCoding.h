@@ -11,7 +11,32 @@
 @interface NSString (FCKVSCoding) <FCKeyValueStoreCoding>
 + (id)readValueFromKeyValuePair:(id)arg1;
 + (int)keyValuePairType;
++ (id)fc_hardPaywallArticleIDWithArticleID:(id)arg1;
++ (_Bool)fc_string:(id)arg1 isEqualToString:(id)arg2;
++ (id)stringWithValue:(id)arg1;
++ (id)fc_string:(CDUnknownBlockType)arg1;
 - (void)writeToKeyValuePair:(id)arg1;
+- (id)_FCCKPIdentifierWithType:(int)arg1;
+- (_Bool)fc_isValidColorHexString;
+- (unsigned long long)fc_unsignedLongLongValue;
+- (_Bool)fc_isValidTagID;
+- (_Bool)fc_isValidHardPaywallArticleID;
+- (_Bool)fc_isValidIssueID;
+- (_Bool)fc_isValidArticleID;
+- (_Bool)fc_isValidCloudKitIDWithPrefix:(id)arg1;
+- (_Bool)fc_isValidCloudKitID;
+- (id)fc_numberFollowingString:(id)arg1;
+- (id)fc_stringByAppendingStringIfNeeded:(id)arg1;
+- (id)fc_stringByPrefixingLinesWithString:(id)arg1;
+- (id)fc_stringByReplacingOccurrencesOfStrings:(id)arg1 withString:(id)arg2;
+- (id)fc_stringByMultiplyingStringByCount:(unsigned long long)arg1;
+- (id)fc_stringByReplacingPrefix:(id)arg1 withString:(id)arg2;
+- (id)stringByRemovingCharactersInSet:(id)arg1;
+- (id)fc_stringByRemovingPunctuation;
+- (id)fc_stringByTrimmingWhiteSpace;
+- (id)tokenizedLowerCaseStringWithMinimumLength:(unsigned long long)arg1;
+- (id)fc_lowercaseTokensWithMinimumLength:(unsigned long long)arg1;
+@property(readonly, nonatomic) struct _NSRange range;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

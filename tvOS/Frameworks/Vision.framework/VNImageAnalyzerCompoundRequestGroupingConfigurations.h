@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)preferBackgroundProcessing;
 - (unsigned long long)groupingConfigurationsCount;
 - (id)allGroupingConfigurations;
-- (id)groupingConfigurationForRequest:(id)arg1 withObservationClass:(Class)arg2;
+- (id)groupingConfigurationForRequest:(id)arg1 kind:(unsigned long long)arg2;
 - (id)init;
 
 @end

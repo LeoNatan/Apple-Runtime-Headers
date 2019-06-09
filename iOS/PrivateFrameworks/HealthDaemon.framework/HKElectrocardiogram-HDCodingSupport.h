@@ -7,6 +7,7 @@
 #import <HealthKit/HKElectrocardiogram.h>
 
 @interface HKElectrocardiogram (HDCodingSupport)
++ (Class)hd_dataEntityClass;
 - (id)codableRepresentationForSync;
 @end
 

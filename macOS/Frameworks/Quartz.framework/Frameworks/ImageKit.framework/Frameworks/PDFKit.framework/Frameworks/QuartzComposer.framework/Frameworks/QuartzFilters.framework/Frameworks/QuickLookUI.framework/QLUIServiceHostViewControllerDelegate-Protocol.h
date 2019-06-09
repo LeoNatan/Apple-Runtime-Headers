@@ -6,17 +6,17 @@
 
 #import <QuickLookUI/QLRemoteViewControllerDelegate-Protocol.h>
 
-@class NSDictionary;
+@class NSDictionary, NSURL, QLPreview;
 
 @protocol QLUIServiceHostViewControllerDelegate <QLRemoteViewControllerDelegate>
+- (void)didSaveEdit:(BOOL)arg1 toURL:(NSURL *)arg2;
 - (void)remotePreviewDesistedWithHints:(NSDictionary *)arg1;
 - (BOOL)deactivated;
 - (void)didLoad;
 - (void)pageUpdatedContent:(long long)arg1;
-- (void)doubleClickOnPreviewContent;
 - (void)remotePreviewSizingUpdated;
 - (void)showPasswordUI;
 - (void)updatePropertiesFromDictionary:(NSDictionary *)arg1;
--     // Error parsing type: ^{__QLPreview={__CFRuntimeBase=QAQ}@^{__CFURL}^{__CFDictionary}^{__CFString}^v{?=q^?^?^?^?}^vIiCCi^{__CFDictionary}^{__QLGenerator}^{__QLServer}CICCCC^{__CFString}^{__CFString}i^{__CFSet}{CGSize=dd}C^{__CFString}^{__CFString}^{__CFString}^{__CFURL}^{__CFData}^{__CFData}iiiiiI{CGRect={CGPoint=dd}{CGSize=dd}}CCCC^{?}^{__QLPreviewRequest}}16@0:8, name: preview
+- (QLPreview *)preview;
 @end
 

@@ -18,7 +18,9 @@
 + (BOOL)supportsSecureCoding;
 + (id)lazyPropertyListWithLazyPropertyLists:(id)arg1;
 + (id)lazyPropertyListWithPropertyList:(id)arg1;
++ (id)lazyPropertyListWithPropertyListURL:(id)arg1;
 + (id)lazyPropertyListWithPropertyListData:(id)arg1;
++ (id)lazyPropertyList;
 + (id)lazyPropertyListWithContext:(struct LSContext *)arg1 unit:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

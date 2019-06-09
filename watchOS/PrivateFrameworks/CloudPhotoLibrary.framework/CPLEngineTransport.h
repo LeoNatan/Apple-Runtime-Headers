@@ -43,6 +43,7 @@
 - (id)createGroupForInitialDownload;
 - (id)createGroupForResetSync;
 - (id)createGroupForInitialUpload;
+- (void)findPersistedInitialSyncSession:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)isResourceDynamic:(id)arg1;
 - (void)getPushEnvironmentWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getStatusDictionaryWithCompletionHandler:(CDUnknownBlockType)arg1;

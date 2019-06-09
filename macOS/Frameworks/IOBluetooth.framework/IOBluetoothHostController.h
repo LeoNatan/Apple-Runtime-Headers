@@ -38,6 +38,8 @@
 - (void)stopHCIEventListener;
 - (id)getDeviceForHCIRequestID:(unsigned int)arg1 removeIfFound:(BOOL)arg2;
 - (void)addDeviceToOutstandingRequests:(id)arg1 forHCIRequestID:(unsigned int)arg2;
+- (int)BluetoothHCIBroadcomLoadPwrRegulatoryFile:(char *)arg1 inPtbDataLength:(unsigned char)arg2;
+- (int)BluetoothHCIBroadcomMasterSkipSniffMode:(unsigned short)arg1 inEnable:(unsigned char)arg2 inNumInstants:(unsigned char)arg3 inInactivityTimer:(unsigned short)arg4 inStopSkipTimer:(unsigned short)arg5;
 - (int)BluetoothHCISetLighthouseDebugQuery:(unsigned char)arg1;
 - (int)BluetoothHCISetLighthouseSetParameters:(unsigned short)arg1 inLEScanWindow:(unsigned short)arg2 inLEAdvertisementInterval:(unsigned short)arg3 inAdvType:(unsigned char)arg4 inAdvAddressFilterControl:(unsigned char)arg5 inRSSIThreshold:(BOOL)arg6 inTimeout:(unsigned char)arg7;
 - (int)BluetoothHCISetLighthouseControl:(unsigned char)arg1;
@@ -63,8 +65,9 @@
 - (int)BluetoothHCILESetExtendedAdvertisingParameters:(unsigned char)arg1 advertisingIntervalMin:(unsigned short)arg2 advertisingIntervalMax:(unsigned short)arg3 advertisingType:(unsigned char)arg4 advertisingChannelMap:(unsigned char)arg5 advertisingFilterPolicy:(unsigned char)arg6;
 - (int)BluetoothHCILECreateExtendedAdvertisingInstance:(unsigned char)arg1 address:(struct BluetoothDeviceAddress *)arg2 outLEextOpcode:(char *)arg3 outHandle:(char *)arg4;
 - (int)BluetoothHCILERemoveExtendedAdvertisingInstance:(unsigned char)arg1 outLEextOpcode:(char *)arg2;
-- (int)BroadcomHCILERemoveAdvancedMatchingRuleWithAddressEnhanced:(BOOL)arg1 address:(struct BluetoothDeviceAddress *)arg2 blob:(CDStruct_cbd83a78)arg3 mask:(CDStruct_cbd83a78)arg4 RSSIThreshold:(BOOL)arg5 packetType:(unsigned char)arg6 matchingCapacity:(char *)arg7 matchingRemaining:(char *)arg8;
-- (int)BroadcomHCILEAddAdvancedMatchingRuleWithAddressEnhanced:(BOOL)arg1 address:(struct BluetoothDeviceAddress *)arg2 blob:(CDStruct_cbd83a78)arg3 mask:(CDStruct_cbd83a78)arg4 RSSIThreshold:(BOOL)arg5 packetType:(unsigned char)arg6 matchingCapacity:(char *)arg7 matchingRemaining:(char *)arg8;
+- (int)BroadcomHCILESetScanEnableEnhanced:(unsigned char)arg1 scanType:(unsigned char)arg2 filterDuplicates:(unsigned char)arg3 bypassFilterDuplicateControl:(unsigned char)arg4 targetCore:(unsigned char)arg5 scanPeriod:(unsigned short)arg6 scanDuration:(unsigned short)arg7;
+- (int)BroadcomHCILERemoveAdvancedMatchingRuleWithAddressEnhanced:(BOOL)arg1 address:(struct BluetoothDeviceAddress *)arg2 blob:(CDStruct_cbd83a78)arg3 mask:(CDStruct_cbd83a78)arg4 RSSIThreshold:(BOOL)arg5 packetType:(unsigned char)arg6 allowDuplicates:(unsigned char)arg7 matchingCapacity:(char *)arg8 matchingRemaining:(char *)arg9;
+- (int)BroadcomHCILEAddAdvancedMatchingRuleWithAddressEnhanced:(BOOL)arg1 address:(struct BluetoothDeviceAddress *)arg2 blob:(CDStruct_cbd83a78)arg3 mask:(CDStruct_cbd83a78)arg4 RSSIThreshold:(BOOL)arg5 packetType:(unsigned char)arg6 allowDuplicates:(unsigned char)arg7 matchingCapacity:(char *)arg8 matchingRemaining:(char *)arg9;
 - (int)BroadcomHCILERemoveAdvancedMatchingRuleWithAddress:(BOOL)arg1 address:(struct BluetoothDeviceAddress *)arg2 blob:(CDStruct_cbd83a78)arg3 mask:(CDStruct_cbd83a78)arg4 RSSIThreshold:(BOOL)arg5 packetType:(unsigned char)arg6 matchingCapacity:(char *)arg7 matchingRemaining:(char *)arg8;
 - (int)BroadcomHCILEAddAdvancedMatchingRuleWithAddress:(BOOL)arg1 address:(struct BluetoothDeviceAddress *)arg2 blob:(CDStruct_cbd83a78)arg3 mask:(CDStruct_cbd83a78)arg4 RSSIThreshold:(BOOL)arg5 packetType:(unsigned char)arg6 matchingCapacity:(char *)arg7 matchingRemaining:(char *)arg8;
 - (int)BroadcomHCILERemoveAdvancedMatchingRule:(CDStruct_cbd83a78)arg1 mask:(CDStruct_cbd83a78)arg2 RSSIThreshold:(BOOL)arg3 packetType:(unsigned char)arg4 matchingCapacity:(char *)arg5 matchingRemaining:(char *)arg6;
@@ -172,6 +175,7 @@
 - (int)BluetoothHCIEnableDeviceUnderTestMode;
 - (int)BluetoothHCIWriteLoopbackMode:(unsigned char)arg1;
 - (int)BluetoothHCIReadLoopbackMode:(char *)arg1;
+- (int)BluetoothHCIEncryptionKeySize:(unsigned short)arg1 outKeySize:(char *)arg2;
 - (int)BluetoothHCIReadClock:(unsigned short)arg1 inWhichClock:(unsigned char)arg2 outReadClockInfo:(struct BluetoothReadClockInfo *)arg3;
 - (int)BluetoothHCIReadAFHChannelMap:(unsigned short)arg1 outAFHMode:(char *)arg2 outAFHChannelMap:(unsigned char [10])arg3;
 - (int)BluetoothHCIReadRSSI:(unsigned short)arg1 outRSSI:(char *)arg2;
@@ -184,6 +188,8 @@
 - (int)BluetoothHCIReadLocalSupportedFeatures:(struct BluetoothHCISupportedFeatures *)arg1;
 - (int)BluetoothHCIReadLocalSupportedCommands:(struct BluetoothHCISupportedCommands *)arg1;
 - (int)BluetoothHCIReadLocalVersionInformation:(char *)arg1 outHCIRevision:(unsigned short *)arg2 outLMPVersion:(char *)arg3 outManufacturerName:(unsigned short *)arg4 outLMPSubversion:(unsigned short *)arg5;
+- (int)BluetoothHCIWriteSecureConnectionsHostSupport:(unsigned char)arg1;
+- (int)BluetoothHCIReadSecureConnectionsHostSupport:(char *)arg1;
 - (int)BluetoothHCIWriteLEHostSupported:(unsigned char)arg1 simultaneousLEHost:(unsigned char)arg2;
 - (int)BluetoothHCIReadLEHostSupported:(char *)arg1 simultaneousLEHost:(char *)arg2;
 - (int)BluetoothHCIEnhancedFlush:(unsigned short)arg1 inPacketType:(unsigned char)arg2 outConnectionHandle:(unsigned short *)arg3;

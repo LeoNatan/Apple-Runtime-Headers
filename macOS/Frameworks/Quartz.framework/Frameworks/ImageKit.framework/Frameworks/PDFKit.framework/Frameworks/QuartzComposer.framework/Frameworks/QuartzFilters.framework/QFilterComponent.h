@@ -20,7 +20,7 @@
 + (id)growableItemsKeysToValueToObserveForUndo;
 + (id)growableItemsKeyPath;
 + (BOOL)isUsedInFilter:(id)arg1;
-+ (id)newWithFilterInfo:(id)arg1 parent:(id)arg2;
++ (id)filterComponentWithFilterInfo:(id)arg1 parent:(id)arg2;
 @property(retain) QFilterComponentChild *child; // @synthesize child=_child;
 @property(retain) QFilterInfo *filterInfo; // @synthesize filterInfo=_filterInfo;
 @property(copy) NSString *name; // @synthesize name=_name;
@@ -30,7 +30,7 @@
 - (void)updateProfileInfo;
 - (void)updateOptionsInfo;
 - (BOOL)addCell;
-- (id)newGrowableItem;
+- (id)createGrowableItem;
 - (id)growableItems;
 - (BOOL)canGrow;
 - (id)profileNamesForDataType:(int)arg1 numToSkip:(long long *)arg2;

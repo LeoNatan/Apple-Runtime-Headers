@@ -5,11 +5,10 @@
 //
 
 #import <AppPredictionUI/CRSServing-Protocol.h>
-#import <AppPredictionUI/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@protocol CRSIdentifiedServing <CRSServing, NSSecureCoding>
+@protocol CRSIdentifiedServing <CRSServing>
 @property(readonly, copy, nonatomic) NSString *serviceIdentifier;
 @end
 

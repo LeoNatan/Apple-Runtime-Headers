@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *psName; // @synthesize psName=_psName;
 @property(readonly, nonatomic) NSDictionary *namesByLanguage; // @synthesize namesByLanguage=_namesByLanguage;
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)localizedFontName;
 - (int)preferredLanguage;
 - (id)description;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithDictionary:(id)arg1;
 - (id)equivalentDictionary;
-- (void)dealloc;
 - (id)initWithNamesByLanguage:(id)arg1 psName:(id)arg2 styling:(struct TCFontStyling)arg3;
 
 @end

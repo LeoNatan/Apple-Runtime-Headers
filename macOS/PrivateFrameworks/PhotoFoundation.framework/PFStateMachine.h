@@ -22,7 +22,6 @@
     NSMutableArray *_subflowStack;
 }
 
-+ (void)initialize;
 @property(readonly) id uuid; // @synthesize uuid=_uuid;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;

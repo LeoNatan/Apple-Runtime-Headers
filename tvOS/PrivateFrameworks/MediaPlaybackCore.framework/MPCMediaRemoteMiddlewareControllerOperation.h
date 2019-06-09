@@ -9,7 +9,7 @@
 #import <MediaPlaybackCore/MPCMediaRemoteMiddlewareControllerProviding-Protocol.h>
 #import <MediaPlaybackCore/MPMiddlewareAutomaticDependencyOperation-Protocol.h>
 
-@class MPCFuture, MPCMediaRemoteController, MPCMediaRemoteMiddleware, MPCPlayerRequest, NSArray, NSError, NSMapTable, NSString;
+@class MPCFuture, MPCMediaRemoteController, MPCMediaRemoteMiddleware, MPCPlayerPath, NSArray, NSError, NSMapTable, NSString;
 
 @interface MPCMediaRemoteMiddlewareControllerOperation : MPAsyncOperation <MPCMediaRemoteMiddlewareControllerProviding, MPMiddlewareAutomaticDependencyOperation>
 {
@@ -17,22 +17,22 @@
     CDUnknownBlockType _invalidationHandler;
     NSArray *_invalidationObservers;
     MPCMediaRemoteMiddleware *_middleware;
-    MPCPlayerRequest *_playerRequest;
+    MPCPlayerPath *_playerPath;
     MPCFuture *_controllerFuture;
 }
 
 @property(retain, nonatomic) MPCFuture *controllerFuture; // @synthesize controllerFuture=_controllerFuture;
-@property(retain, nonatomic) MPCPlayerRequest *playerRequest; // @synthesize playerRequest=_playerRequest;
+@property(retain, nonatomic) MPCPlayerPath *playerPath; // @synthesize playerPath=_playerPath;
 @property(retain, nonatomic) MPCMediaRemoteMiddleware *middleware; // @synthesize middleware=_middleware;
 @property(readonly, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler; // @synthesize invalidationHandler=_invalidationHandler;
 @property(retain, nonatomic) NSMapTable *inputOperations; // @synthesize inputOperations=_inputOperations;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *outputProtocols;
-@property(readonly, nonatomic) NSArray *inputsProtocols;
+@property(readonly, nonatomic) NSArray *inputProtocols;
 - (id)timeoutDescription;
 - (void)execute;
-- (id)initWithMiddleware:(id)arg1 playerRequest:(id)arg2;
+- (id)initWithMiddleware:(id)arg1 playerPath:(id)arg2;
 @property(readonly, nonatomic) MPCMediaRemoteController *controller;
 
 // Remaining properties

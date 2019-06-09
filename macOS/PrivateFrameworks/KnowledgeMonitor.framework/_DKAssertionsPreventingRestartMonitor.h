@@ -24,10 +24,12 @@
 @property(nonatomic) int userspaceAssertionsToken; // @synthesize userspaceAssertionsToken=_userspaceAssertionsToken;
 - (void)synchronouslyReflectCurrentValue;
 - (BOOL)areAssertionsPreventingRestart;
+- (void)deactivate;
 - (void)stop;
 - (void)start;
 - (id)loadState;
 - (void)saveState;
+- (void)dealloc;
 
 @end
 

@@ -61,6 +61,7 @@
 - (void)connectClicked:(id)arg1;
 - (void)radioClicked:(id)arg1;
 - (void)controlTextDidChange:(id)arg1;
+- (BOOL)userPassRadiosVisible;
 - (void)setIsConnecting:(BOOL)arg1;
 - (void)dealloc;
 - (void)awakeFromNib;

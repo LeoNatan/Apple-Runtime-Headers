@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)resultsUnderlapsSearchBar;
 - (_Bool)shouldAccountForStatusBar;
 - (id)_presentationControllerForTraitCollection:(id)arg1;
-- (id)_presentedViewControllerForSizeClassPair:(CDStruct_d58201db)arg1;
+- (id)_presentedViewControllerForSizeClassPair:(CDStruct_912cb5d2)arg1;
 - (long long)adaptivePresentationStyle;
 - (void)hideBackgroundObscuringView;
 - (void)showBackgroundObscuringView;

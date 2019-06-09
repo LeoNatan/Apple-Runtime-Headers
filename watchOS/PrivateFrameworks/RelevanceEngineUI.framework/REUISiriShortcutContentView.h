@@ -20,9 +20,9 @@
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 - (void).cxx_destruct;
-- (id)_attributedTextFromTitle:(id)arg1 description:(id)arg2;
+- (id)_attributedTextWithBoldText:(id)arg1 andRegularText:(id)arg2;
 - (void)layoutSubviews;
-- (void)setTitle:(id)arg1 description:(id)arg2 image:(id)arg3;
+- (void)setBoldText:(id)arg1 regularText:(id)arg2 image:(id)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
 

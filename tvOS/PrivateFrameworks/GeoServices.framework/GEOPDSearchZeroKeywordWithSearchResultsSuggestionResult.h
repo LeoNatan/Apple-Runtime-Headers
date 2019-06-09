@@ -17,9 +17,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_searchResultsForCategoryEntrys;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)searchResultsForCategoryEntryType;
-@property(retain, nonatomic) NSMutableArray *searchResultsForCategoryEntrys; // @synthesize searchResultsForCategoryEntrys=_searchResultsForCategoryEntrys;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,12 +29,14 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)searchResultsForCategoryEntryAtIndex:(unsigned long long)arg1;
 - (unsigned long long)searchResultsForCategoryEntrysCount;
 - (void)addSearchResultsForCategoryEntry:(id)arg1;
 - (void)clearSearchResultsForCategoryEntrys;
+@property(retain, nonatomic) NSMutableArray *searchResultsForCategoryEntrys;
 
 @end
 

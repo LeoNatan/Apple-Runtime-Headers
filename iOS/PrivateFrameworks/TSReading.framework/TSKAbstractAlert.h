@@ -36,7 +36,7 @@
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)enterBackground;
 - (void)willPresentAlertView;
-- (void)didPresentAlertView;
+- (void)_didPresentAlertView:(id)arg1;
 - (void)willDismissWithButtonIndex:(long long)arg1;
 - (void)didDismissWithButtonIndex:(long long)arg1;
 - (void)clickedButtonAtIndex:(long long)arg1;

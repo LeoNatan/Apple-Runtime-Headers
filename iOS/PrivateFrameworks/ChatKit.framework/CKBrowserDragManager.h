@@ -39,6 +39,7 @@
 - (void)browserDragViewController:(id)arg1 draggedWithTarget:(id)arg2;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)tapRecognized:(id)arg1;
+- (void)setPlusButtonHidden:(_Bool)arg1;
 - (void)beginDraggingItem:(id)arg1 withAnimatedDragImage:(id)arg2 fromRect:(struct CGRect)arg3;
 - (void)beginDraggingItem:(id)arg1 withDragImage:(id)arg2 fromRect:(struct CGRect)arg3;
 - (_Bool)usesSeparateDragWindow;

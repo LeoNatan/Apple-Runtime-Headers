@@ -6,52 +6,74 @@
 
 #import <UIKit/UIControl.h>
 
-@class UIImage, UIImageView, UILabel, UIView;
+@class CCUIMenuModuleItem, MTVisualStylingProvider, UILabel, UIView;
 
 @interface CCUIMenuModuleItemView : UIControl
 {
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
-    UIImage *_glyphImage;
     UIView *_separatorView;
-    UIImageView *_glyphImageView;
     UIView *_highlightedBackgroundView;
+    UIView *_leadingView;
+    UIView *_trailingView;
+    CCUIMenuModuleItem *_menuItem;
+    MTVisualStylingProvider *_visualStylingProvider;
     _Bool _separatorVisible;
     _Bool _useTallLayout;
-    CDUnknownBlockType _handler;
+    _Bool _useTrailingCheckmarkLayout;
     double _preferredMaxLayoutWidth;
+    unsigned long long _indentation;
 }
 
++ (double)defaultMenuItemHeightForContentSizeCategory:(id)arg1 useTallLayout:(_Bool)arg2;
++ (id)_subtitleFontForContentSizeCategory:(id)arg1;
++ (id)_titleFontForContentSizeCategory:(id)arg1;
++ (id)_preferredFontForTextStyle:(id)arg1 hiFontStyle:(long long)arg2 contentSizeCategory:(id)arg3;
++ (_Bool)_shouldLimitContentSizeCategory:(id)arg1;
+@property(retain, nonatomic) UIView *trailingView; // @synthesize trailingView=_trailingView;
+@property(retain, nonatomic) UIView *leadingView; // @synthesize leadingView=_leadingView;
+@property(retain, nonatomic) CCUIMenuModuleItem *menuItem; // @synthesize menuItem=_menuItem;
+@property(nonatomic) unsigned long long indentation; // @synthesize indentation=_indentation;
+@property(nonatomic) _Bool useTrailingCheckmarkLayout; // @synthesize useTrailingCheckmarkLayout=_useTrailingCheckmarkLayout;
 @property(nonatomic) _Bool useTallLayout; // @synthesize useTallLayout=_useTallLayout;
 @property(nonatomic) double preferredMaxLayoutWidth; // @synthesize preferredMaxLayoutWidth=_preferredMaxLayoutWidth;
 @property(nonatomic) _Bool separatorVisible; // @synthesize separatorVisible=_separatorVisible;
-@property(readonly, copy, nonatomic) CDUnknownBlockType handler; // @synthesize handler=_handler;
 - (void).cxx_destruct;
+- (void)_stopAutomaticallyUpdatingView:(id)arg1 recursivelyIfNeeded:(_Bool)arg2;
+- (void)_updateVisualStyleOfView:(id)arg1 withStyle:(long long)arg2 recursivelyIfNeeded:(_Bool)arg3;
+- (void)_layoutTrailingCustomViews;
+- (void)_layoutLeadingCustomView;
 - (void)_contentSizeCategoryDidChange;
 - (_Bool)_shouldUseTallLayout;
 - (void)_updateForStateChange;
 - (struct NSDirectionalEdgeInsets)_labelInsets;
-- (double)_glyphMargin;
+- (double)_trailingWidthForCustomViews;
+- (double)_labelTrailingInset;
+- (double)_labelLeadingInset;
 - (double)_titleBaselineToBottom;
 - (double)_titleBaselineToTop;
 - (_Bool)_shouldHorizontallyCenterText;
 - (double)_textHeightForLabel:(id)arg1 width:(double)arg2;
 - (id)_subtitleFont;
 - (id)_titleFont;
-- (_Bool)_shouldLimitContentSizeCategory;
-- (id)_preferredFontForTextStyle:(id)arg1 hiFontStyle:(long long)arg2;
 - (double)_separatorHeight;
 - (_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (void)didMoveToWindow;
 - (void)_setContinuousCornerRadius:(double)arg1;
 - (void)setEnabled:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
+- (void)updateSubviewsAlpha:(double)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 glyphImage:(id)arg3 useTallLayout:(_Bool)arg4 handler:(CDUnknownBlockType)arg5;
-- (id)initWithTitle:(id)arg1 subtitle:(id)arg2 glyphImage:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (id)initWithTitle:(id)arg1 glyphImage:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (id)subtitle;
+- (id)title;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
+- (void)_setSubtitle:(id)arg1;
+- (void)_setTitle:(id)arg1;
+- (id)initWithMenuItem:(id)arg1;
 
 @end
 

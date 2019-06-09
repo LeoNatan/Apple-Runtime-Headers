@@ -88,10 +88,8 @@
 - (void)allItemsOfItemType:(unsigned int)arg1 storeLocally:(_Bool)arg2 userInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)allItemsOfItemType:(unsigned int)arg1 storeLocally:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchRecordsWithRecordIDs:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)fetchAndStoreChanges:(_Bool)arg1 forceFetch:(_Bool)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 userInfo:(id)arg5 proccessedCloudStoreRecords:(id)arg6 processedDeletedRecords:(id)arg7 serverChangeToken:(id)arg8 completion:(CDUnknownBlockType)arg9;
 - (void)fetchAndStoreChanges:(_Bool)arg1 forceFetch:(_Bool)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 userInfo:(id)arg5 completion:(CDUnknownBlockType)arg6;
-- (void)fetchAndStoreChangesWithForceFetch:(_Bool)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 userInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)fetchAndStoreChangesWithForceFetch:(_Bool)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)fetchAndStoreChangesWithOperationGroupName:(id)arg1 operationGroupNameSuffix:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)simulateCloudStorePushWithCompletion:(CDUnknownBlockType)arg1;
 - (void)createZoneSubscriptions:(id)arg1 operationGroupNameSuffix:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)createZones:(id)arg1 operationGroupNameSuffix:(id)arg2 userInfo:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -101,7 +99,6 @@
 - (void)cloudStoreAccountChanged:(id)arg1;
 - (void)processResultWithError:(id)arg1 nextExpectedState:(unsigned int)arg2 operationGroupNameSuffix:(id)arg3 retryCount:(unsigned int)arg4 shouldRetry:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)processFetchedCloudStoreDataWithModifiedRecords:(id)arg1 deletedRecords:(id)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 shouldUpdateLocalDatabase:(_Bool)arg5 userInfo:(id)arg6 completion:(CDUnknownBlockType)arg7;
-- (void)processFetchedCloudStoreDataWithModifiedRecords:(id)arg1 deletedRecords:(id)arg2 operationGroupName:(id)arg3 operationGroupNameSuffix:(id)arg4 shouldUpdateLocalDatabase:(_Bool)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)setContainerState:(unsigned int)arg1 operationGroupNameSuffix:(id)arg2 retryCount:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)setContainerState:(unsigned int)arg1 operationGroupNameSuffix:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)cloudStoreAccountInformationWithCompletion:(CDUnknownBlockType)arg1;

@@ -6,29 +6,52 @@
 
 #import <objc/NSObject.h>
 
-@class _PASLock;
+@class _PASLock, _PASNotificationToken;
 
 @interface PPConfiguration : NSObject
 {
     _PASLock *_lock;
+    _PASNotificationToken *_assetUpdateHandlerToken;
+    int _abGroupOverrideChangedNotificationToken;
 }
 
-+ (id)_loadConfigPlist;
++ (id)_loadTopicCalibrationPlistWithPath:(id)arg1;
++ (id)_loadConfigPlistWithPath:(id)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (int)portraitAnalyticsGeohashLength;
+- (int)portraitAnalyticsMaximumNumberOfRecords;
+- (double)portraitAnalyticsTopicsSamplingRate;
+- (int)feedbackSessionLogsGeohashLength;
+- (float)feedbackSessionLogsExtractionsSamplingRate;
+- (float)feedbackSessionLogsMappedTopicsSamplingRate;
+- (float)feedbackSessionLogsSamplingRate;
+- (float)scoreThresholdForLocation;
+- (float)scoreThresholdForTopic;
+- (float)scoreThresholdForNamedEntity;
+- (double)highLevelTopicScoreThreshold;
+- (BOOL)safariDataDetectorsEnabledForHighMemoryDevices;
+- (BOOL)safariDonationTitleExtractionEnabled;
+- (BOOL)highLevelTopicExtractionEnabled;
+- (id)topicCalibrationTrie;
+- (id)portraitMusicDataCollectionAMPBundleIds;
+- (int)portraitMusicDataCollectionMaximumRecordsPerType;
+- (double)portraitMusicDataCollectionSamplingRateForAMP;
+- (double)portraitMusicDataCollectionSamplingRateForCTS;
 - (double)portraitAnalyticsSamplingRate;
-- (double)getTopicsMultiplierForSource:(id)arg1 andAlgorithm:(id)arg2;
+- (float)getTopicsMultiplierForSource:(id)arg1 andAlgorithm:(id)arg2;
 - (double)nonReaderTextWeight;
 - (double)halfValuePosition;
+- (id)availablePortraitVariantNames;
+- (id)naturalPortraitVariantName;
 - (id)portraitVariantName;
-- (unsigned long long)maxNumberOfTopicRecords;
-- (unsigned long long)minNumberOfTopicRecords;
 - (double)scalingFactorForMappingId:(id)arg1;
-- (double)remoteTopicsMultiplier;
+- (float)remoteTopicsMultiplier;
 - (id)resourceForMappingId:(id)arg1;
 - (double)topicsSigmoidPeakValue;
 - (double)topicsScalingFactor;
 - (double)topicsSigmoidWidth;
+- (void)dealloc;
 - (id)init;
 - (void)_loadConfigParams;
 

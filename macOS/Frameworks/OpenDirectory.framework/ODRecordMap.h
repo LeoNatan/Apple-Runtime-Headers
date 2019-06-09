@@ -17,13 +17,14 @@
 
 + (id)recordMap;
 + (id)recordMapFromDictionary:(id)arg1;
+@property(copy) NSMutableDictionary *attributes; // @synthesize attributes;
 @property(copy) NSDictionary *odPredicate; // @synthesize odPredicate;
 @property(copy) NSString *native; // @synthesize native;
 @property(readonly, copy) NSDictionary *dictionary;
 - (void)setAttributeMap:(id)arg1 forStandardAttribute:(id)arg2;
 - (id)attributeMapForStandardAttribute:(id)arg1;
-@property(readonly, copy) NSArray *standardAttributeTypes;
-@property(readonly, copy) NSDictionary *attributes;
+@property(readonly, copy) NSArray *standardAttributeTypes; // @dynamic standardAttributeTypes;
+- (void)dealloc;
 - (id)init;
 
 @end

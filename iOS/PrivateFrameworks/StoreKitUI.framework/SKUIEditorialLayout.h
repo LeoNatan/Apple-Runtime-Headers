@@ -8,6 +8,7 @@
 
 @class SKUIEditorialComponent, SKUILayoutCache;
 
+__attribute__((visibility("hidden")))
 @interface SKUIEditorialLayout : NSObject
 {
     SKUIEditorialComponent *_editorial;

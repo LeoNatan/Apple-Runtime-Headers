@@ -6,15 +6,19 @@
 
 #import <MailCore/MCMessageHeaders.h>
 
-@class NSMutableArray, NSMutableDictionary;
+#import <MailCore/ECMutableMessageHeaders-Protocol.h>
 
-@interface MCMutableMessageHeaders : MCMessageHeaders
+@class NSMutableArray, NSMutableDictionary, NSString;
+
+@interface MCMutableMessageHeaders : MCMessageHeaders <ECMutableMessageHeaders>
 {
     NSMutableDictionary *_headersAdded;
     NSMutableArray *_headersRemoved;
 }
 
 - (void).cxx_destruct;
+- (void)setAddressListForTo:(id)arg1;
+- (void)setAddressListForSender:(id)arg1;
 - (void)removeHeaderForKey:(id)arg1;
 - (void)setMessageIDList:(id)arg1 forKey:(id)arg2;
 - (void)setAddressList:(id)arg1 forKey:(id)arg2;
@@ -31,10 +35,14 @@
 - (id)_headersForKey:(id)arg1;
 - (BOOL)hasHeaderForKey:(id)arg1;
 - (id)allHeaderKeys;
-- (id)description;
-- (id)debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy) NSString *debugDescription;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+
+// Remaining properties
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

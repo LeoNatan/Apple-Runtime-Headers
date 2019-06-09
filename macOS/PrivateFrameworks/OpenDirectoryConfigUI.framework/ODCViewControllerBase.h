@@ -8,6 +8,7 @@
 
 @class NSString, NSView, SFAuthorizationView;
 
+__attribute__((visibility("hidden")))
 @interface ODCViewControllerBase : NSObject
 {
     SFAuthorizationView *_authView;

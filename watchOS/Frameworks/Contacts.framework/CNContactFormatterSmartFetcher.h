@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool ignoresOrganization; // @synthesize ignoresOrganization=_ignoresOrganization;
 @property(nonatomic) _Bool ignoresNickname; // @synthesize ignoresNickname=_ignoresNickname;
 - (void).cxx_destruct;
+- (id)_cn_ignorableKeys;
 - (id)_cn_optionalKeys;
 - (id)_cn_requiredKeys;
 - (void)_cn_executeGetterForRepresentedKeys:(CDUnknownBlockType)arg1;

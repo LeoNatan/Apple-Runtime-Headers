@@ -6,11 +6,25 @@
 
 #import <WatchKit/WKInterfaceObject.h>
 
-@interface WKInterfaceVolumeControl : WKInterfaceObject
+#import <WatchKit/WKInterfaceObjectDynamicCreatable-Protocol.h>
+
+@class NSString;
+
+@interface WKInterfaceVolumeControl : WKInterfaceObject <WKInterfaceObjectDynamicCreatable>
 {
 }
 
+- (id)interfaceDescriptionForDynamicCreation;
+- (void)resignFocus;
+- (void)focus;
 - (void)setTintColor:(id)arg1;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -9,11 +9,11 @@
 __attribute__((visibility("hidden")))
 @interface NSSliderCircularKnob : NSView
 {
-    CDStruct_5a39c0a2 _drawingState;
+    CDStruct_c9beae75 _drawingState;
 }
 
 - (void)drawRect:(struct CGRect)arg1;
-@property CDStruct_5a39c0a2 drawingState;
+@property CDStruct_c9beae75 drawingState;
 - (BOOL)isFlipped;
 
 @end

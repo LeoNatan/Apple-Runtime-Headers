@@ -27,6 +27,7 @@
 - (id)description;
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
+- (id)init;
 
 @end
 

@@ -14,6 +14,7 @@
     CDUnknownBlockType _cleanSubitemsCompletionBlock;
 }
 
++ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(copy) CDUnknownBlockType cleanSubitemsCompletionBlock; // @synthesize cleanSubitemsCompletionBlock=_cleanSubitemsCompletionBlock;
 - (void).cxx_destruct;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;

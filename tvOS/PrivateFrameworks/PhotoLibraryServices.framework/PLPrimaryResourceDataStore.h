@@ -8,24 +8,27 @@
 
 #import <PhotoLibraryServices/PLResourceDataStore-Protocol.h>
 
-@class NSMutableDictionary, NSString, NSURL, PLCloudPhotoLibraryManager;
+@class NSMutableDictionary, NSString, PAImageConversionServiceClient, PAVideoConversionServiceClient, PLCloudPhotoLibraryManager, PLPhotoLibraryPathManager, PLPrimaryResourceDataStoreKeyHelper;
 
 @interface PLPrimaryResourceDataStore : PLResourceDataStore <PLResourceDataStore>
 {
     NSMutableDictionary *_inflightCPLDownloadTaskIdentifiersByRequestID;
     NSMutableDictionary *_pendingCPLDownloadShouldRunByRequestID;
     struct os_unfair_lock_s _lock;
-    NSURL *_resourceDirectoryURL;
-    PLCloudPhotoLibraryManager *_cplManager;
+    PAImageConversionServiceClient *_imageConversionServiceClient;
+    PAVideoConversionServiceClient *_videoConversionServiceClient;
+    unsigned int _masterThumbRecipeID;
+    PLPrimaryResourceDataStoreKeyHelper *_mainScopeKeyHelper;
+    NSMutableDictionary *_keyHelperByBundleScope;
 }
 
++ (unsigned int)currentDeviceMasterThumbRecipeID;
 + (unsigned short)keyLengthWithDataPreview:(unsigned char)arg1;
 + (id)supportedRecipes;
-+ (unsigned int)storeID;
-+ (_Bool)isMasterThumbRecipeID:(unsigned int)arg1;
-+ (unsigned int)masterThumbRecipeID;
-@property(retain, nonatomic) PLCloudPhotoLibraryManager *cplManager; // @synthesize cplManager=_cplManager;
-@property(copy, nonatomic) NSURL *resourceDirectoryURL; // @synthesize resourceDirectoryURL=_resourceDirectoryURL;
++ (unsigned int)storeClassID;
+@property(retain, nonatomic) NSMutableDictionary *keyHelperByBundleScope; // @synthesize keyHelperByBundleScope=_keyHelperByBundleScope;
+@property(retain, nonatomic) PLPrimaryResourceDataStoreKeyHelper *mainScopeKeyHelper; // @synthesize mainScopeKeyHelper=_mainScopeKeyHelper;
+@property(nonatomic) unsigned int masterThumbRecipeID; // @synthesize masterThumbRecipeID=_masterThumbRecipeID;
 - (void).cxx_destruct;
 - (void)transitional_reconsiderLocalAvailabilityBasedOnExistingLocationOfCPLResource:(id)arg1 givenFilePath:(id)arg2;
 - (void)requestStreamingURLForResource:(id)arg1 asset:(id)arg2 inContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -43,15 +46,23 @@
 - (id)keyFromKeyStruct:(const void *)arg1;
 - (id)descriptionForSubtype:(long long)arg1;
 - (id)name;
-- (id)init;
-- (void)_handleCPLDownloadCompleteWithAssetObjectID:(id)arg1 resourceObjectID:(id)arg2 managedObjectContext:(id)arg3;
+@property(readonly, getter=_cplManager) PLCloudPhotoLibraryManager *cplManager;
+- (id)initWithPathManager:(id)arg1;
+- (id)_masterThumbnailVirtualResourceForAsset:(id)arg1;
 - (id)_expectedFilePathForMasterThumbnailForAsset:(id)arg1;
-- (void)_downloadCPLResourceForAsset:(id)arg1 resourceType:(unsigned long long)arg2 options:(id)arg3 taskDidBeginHandler:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (unsigned long long)_makeResourceLocallyAvailable:(id)arg1 asset:(id)arg2 inContext:(id)arg3 options:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)_videoConversionServiceClient;
+- (id)_imageConversionServiceClient;
+- (unsigned long long)_pruneResource:(id)arg1 asset:(id)arg2 inContext:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_downloadCPLResource:(id)arg1 forAsset:(id)arg2 options:(id)arg3 taskDidBeginHandler:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (_Bool)_isSystemLibraryStore;
+- (id)keyHelperForBundleScope:(unsigned char)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) PLPhotoLibraryPathManager *pathManager;
 @property(readonly) Class superclass;
 
 @end

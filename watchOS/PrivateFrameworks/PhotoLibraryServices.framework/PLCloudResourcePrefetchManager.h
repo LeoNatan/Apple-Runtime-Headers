@@ -14,7 +14,8 @@
     PLPhotoLibrary *_photoLibrary;
     PLCloudPhotoLibraryManager *_cplManager;
     PLCloudResourcePruneManager *_pruneManager;
-    NSMutableSet *_inflightResources;
+    NSMutableSet *_legacyInflightResources;
+    NSMutableSet *_rmInflightResoures;
     int _defaultPrefetchMode;
     NSDate *_lastCheckCPLBGDownloadDate;
     _Bool _enqueuedCheckCPLBGDownload;
@@ -22,12 +23,14 @@
 }
 
 + (id)_orderedPrefetchConditionStringsOnAssets;
-+ (id)_originalResourceTypes;
++ (id)_identifierForResourceDownload:(id)arg1;
++ (id)_legacyIdentifierForItemIdentifier:(id)arg1 cplType:(unsigned int)arg2;
 - (void).cxx_destruct;
 - (void)_resourcesToPrefetchWithPredicates:(id)arg1 budget:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_resourcesWithPredicate:(id)arg1 limit:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_predicatesForNonThumbnails;
 - (id)_predicateForKeyFacePrefetching;
+- (id)_predicateToPrefetchHighlightWithUUIDs:(id)arg1;
 - (id)_predicateToPrefetchSuggestions:(id)arg1;
 - (id)_predicateToPrefetchMemories:(id)arg1;
 - (id)_resourcesToPrefetchForAsset:(id)arg1;
@@ -53,7 +56,9 @@
 - (void)_startPrefetchNextBatch;
 - (void)_writeDownloadFinishedMarkerIfNeeded;
 - (_Bool)_canPrefetch;
-- (id)_identifierForResourceDownload:(id)arg1;
+- (void)_inflightResourcesRemoveIdentifier:(id)arg1 cplResource:(id)arg2;
+- (void)_inflightResourcesAddIdentifier:(id)arg1 cplResource:(id)arg2;
+- (id)_inflightResources;
 - (void)_runOnWorkQueueWithTransaction:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_reloadDefaultDownload;
 - (void)_reloadDownloadOriginalsSetting;
@@ -65,10 +70,8 @@
 - (void)_checkCPLBackgroundDownloadOperations;
 - (void)startAutomaticPrefetch;
 - (void)dealloc;
-- (id)initWithCPLManager:(id)arg1 pruneManager:(id)arg2;
+- (id)initWithCPLManager:(id)arg1 pruneManager:(id)arg2 library:(id)arg3;
 - (id)init;
-- (id)_nrm_assetPredicateForCPLResourceType:(unsigned int)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
-- (id)_nrm_masterPredicateForCPLResourceType:(unsigned int)arg1 additionalAssetConditions:(id)arg2 additionalResourcePredicates:(id)arg3;
 
 @end
 

@@ -18,6 +18,7 @@
     NSArray *_promptItems;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)promptItemsType;
 @property(copy, nonatomic) NSArray *promptItems; // @synthesize promptItems=_promptItems;
 - (void).cxx_destruct;
@@ -25,6 +26,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)promptItemsAtIndex:(unsigned int)arg1;

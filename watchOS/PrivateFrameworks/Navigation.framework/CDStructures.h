@@ -38,7 +38,19 @@ struct _NSRange {
     unsigned int _field2;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    _Bool _field1;
+    int _field2;
+    _Bool _field3;
+    _Bool _field4;
+    _Bool _field5;
+} CDStruct_8d2218a5;
 
 typedef struct {
     unsigned int index;
@@ -50,11 +62,6 @@ typedef struct {
     double _field2;
     double _field3;
 } CDStruct_39925896;
-
-typedef struct {
-    double latitude;
-    double longitude;
-} CDStruct_2c43369c;
 
 typedef struct {
     float _field1;
@@ -75,7 +82,10 @@ typedef struct {
 typedef struct {
     int _field1;
     int _field2;
-    CDStruct_2c43369c _field3;
+    struct {
+        double _field1;
+        double _field2;
+    } _field3;
     double _field4;
     double _field5;
     double _field6;
@@ -89,13 +99,16 @@ typedef struct {
     int _field14;
     double _field15;
     int _field16;
-    CDStruct_2c43369c _field17;
+    struct {
+        double _field1;
+        double _field2;
+    } _field17;
     double _field18;
     int _field19;
     unsigned int _field20;
     int _field21;
     int _field22;
-} CDStruct_0e8fe709;
+} CDStruct_b79ad89f;
 
 typedef struct {
     struct {
@@ -145,13 +158,28 @@ typedef struct {
     _Bool _field16;
     unsigned char _field17;
     _Bool _field18;
-    unsigned char _field19;
+    unsigned short _field19;
     struct _NSRange _field20;
     _Bool _field21;
     unsigned int _field22;
-} CDStruct_3da87dc5;
+} CDStruct_4e2e1dc0;
 
-// Template types
+// Ambiguous groups
+typedef struct {
+    double _field1;
+    double _field2;
+} CDStruct_c3b9c2ee;
+
+typedef struct {
+    double latitude;
+    double longitude;
+} CDStruct_2c43369c;
+
+typedef struct {
+    double remainingTime;
+    double remainingDistance;
+} CDStruct_a70066d4;
+
 typedef struct LineSegment<double, 2> {
     Matrix_2bdd42a3 _origin;
     Matrix_2bdd42a3 _direction;

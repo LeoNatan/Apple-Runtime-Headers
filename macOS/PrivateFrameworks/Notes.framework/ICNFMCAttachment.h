@@ -107,7 +107,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy, nonatomic) NSString *symbolicLinkDestinationForFileWrapper;
-- (id)createTemporaryFile;
 - (BOOL)createEmptyAttachmentAtPath:(id)arg1;
 - (void)_setupFileWrapper:(id)arg1;
 - (id)_freshFileWrapper;

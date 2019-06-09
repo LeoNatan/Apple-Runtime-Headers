@@ -11,6 +11,7 @@
 @class AVAsset, AVAssetExportSession, AVAudioMix, AVVideoComposition, NSString, NSTimer, NSURL;
 @protocol AVExportSessionHelperDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVFoundationExportSession : NSObject <AVExportSessionHelper>
 {
     NSURL *_outputURL;

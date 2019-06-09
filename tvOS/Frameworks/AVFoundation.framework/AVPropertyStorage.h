@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (id)objectForKey:(id)arg1 defaultObjectBlock:(CDUnknownBlockType)arg2;
 - (_Bool)shouldUsePropertyStorageCacheForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithCachePolicy:(long long)arg1 keysRequiringExplicitPerThreadSignal:(id)arg2;
 - (id)init;

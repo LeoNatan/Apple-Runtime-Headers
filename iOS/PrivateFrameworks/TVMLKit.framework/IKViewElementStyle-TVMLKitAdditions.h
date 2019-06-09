@@ -11,10 +11,13 @@
 @interface IKViewElementStyle (TVMLKitAdditions)
 - (id)tv_group;
 - (unsigned long long)tv_maxLines;
+- (struct UIEdgeInsets)tv_scrollableBoundsInset;
+- (id)tv_scrollMode;
+- (id)tv_highlightStyle;
 - (_Bool)tv_acceptsFocus;
 - (id)tv_overflow;
 - (id)tv_progressStyle;
-- (unsigned long long)tv_focusSizeIncrease;
+- (double)tv_focusSizeIncrease;
 - (id)tv_focusAlign;
 - (id)tv_shadow;
 - (double)tv_imageUpscaleFactor;
@@ -46,12 +49,16 @@
 - (id)tv_textShadow;
 - (double)tv_columnPadding;
 - (id)tv_columnColor;
+- (id)tv_darkTintColor;
 - (id)tv_tintColor;
 - (id)tv_tintColor2;
 - (id)tv_highlightColor;
 - (id)tv_color;
 - (id)tv_borderColor;
+- (id)tv_backgroundHighlightColor;
+- (id)tv_backgroundHighlightStyle;
 - (id)tv_backgroundColor;
+- (_Bool)tv_hasWidth;
 - (double)tv_width;
 - (double)tv_minimumScaleFactor;
 - (_Bool)tv_adjustsFontSizeToFitWidth;
@@ -62,11 +69,14 @@
 - (double)tv_maxHeight;
 - (double)tv_lineSpacing;
 - (double)tv_interitemSpacing;
+- (_Bool)tv_hasHeight;
 - (double)tv_height;
 - (double)tv_fontSize;
 - (id)tv_fontFamily;
 - (struct CGAffineTransform)tv_focusTransform;
 - (struct CGAffineTransform)tv_transform;
+- (unsigned long long)tv_edgeFlagForStyle:(id)arg1;
+- (id)tv_cssValueForStyle:(id)arg1;
 - (id)tv_valueForStyle:(id)arg1;
 @property(retain, nonatomic, setter=tv_setStyleMetrics:) TVAppStyle *tv_styleMetrics;
 - (id)tv_associatedViewElementStyle;

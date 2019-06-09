@@ -17,24 +17,19 @@
     _Bool _isNearRoute;
     _Bool _isUserTrackingOn;
     struct {
-        unsigned int timeSinceRouteResponse:1;
-        unsigned int resultIndex:1;
-        unsigned int stepID:1;
-        unsigned int isNearCurrentlyDisplayedStep:1;
-        unsigned int isNearRoute:1;
-        unsigned int isUserTrackingOn:1;
-    } _has;
+        unsigned int has_timeSinceRouteResponse:1;
+        unsigned int has_resultIndex:1;
+        unsigned int has_stepID:1;
+        unsigned int has_isNearCurrentlyDisplayedStep:1;
+        unsigned int has_isNearRoute:1;
+        unsigned int has_isUserTrackingOn:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (id)routeDetailsWithResultIndex:(int)arg1 stepID:(int)arg2 nearRoute:(_Bool)arg3 nearCurrentlyDisplayedStep:(_Bool)arg4 userTrackingOn:(_Bool)arg5 timeSinceResponse:(double)arg6;
 + (id)routeDetailsWithResultIndex:(int)arg1 stepID:(int)arg2;
 + (id)routeDetailsWithResultIndex:(int)arg1;
-@property(nonatomic) double timeSinceRouteResponse; // @synthesize timeSinceRouteResponse=_timeSinceRouteResponse;
-@property(nonatomic) _Bool isUserTrackingOn; // @synthesize isUserTrackingOn=_isUserTrackingOn;
-@property(nonatomic) _Bool isNearCurrentlyDisplayedStep; // @synthesize isNearCurrentlyDisplayedStep=_isNearCurrentlyDisplayedStep;
-@property(nonatomic) _Bool isNearRoute; // @synthesize isNearRoute=_isNearRoute;
-@property(nonatomic) unsigned int stepID; // @synthesize stepID=_stepID;
-@property(nonatomic) int resultIndex; // @synthesize resultIndex=_resultIndex;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -42,14 +37,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasTimeSinceRouteResponse;
+@property(nonatomic) double timeSinceRouteResponse;
 @property(nonatomic) _Bool hasIsUserTrackingOn;
+@property(nonatomic) _Bool isUserTrackingOn;
 @property(nonatomic) _Bool hasIsNearCurrentlyDisplayedStep;
+@property(nonatomic) _Bool isNearCurrentlyDisplayedStep;
 @property(nonatomic) _Bool hasIsNearRoute;
+@property(nonatomic) _Bool isNearRoute;
 @property(nonatomic) _Bool hasStepID;
+@property(nonatomic) unsigned int stepID;
 @property(nonatomic) _Bool hasResultIndex;
+@property(nonatomic) int resultIndex;
 - (id)initWithResultIndex:(int)arg1;
 
 @end

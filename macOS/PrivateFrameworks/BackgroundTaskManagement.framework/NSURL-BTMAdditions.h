@@ -11,6 +11,7 @@
 - (BOOL)__btm_isBundle;
 - (id)__btm_innerAppURL;
 - (id)__btm_outerAppURL;
+- (BOOL)__btm_isInTrash;
 - (id)__btm_localizedName;
 @end
 

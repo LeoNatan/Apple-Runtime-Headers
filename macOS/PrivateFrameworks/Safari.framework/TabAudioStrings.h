@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)audioPlaybackStartedInMutedForegroundTabInCurrentWindowVoiceOverMessage;
 + (id)voiceOverNotificationMessageForTabMediaStateChangeWhenTabWithLabel:(id)arg1 isPlayingMutableMedia:(BOOL)arg2 isMuted:(BOOL)arg3 isInKeyWindow:(BOOL)arg4 isSelected:(BOOL)arg5;
 + (id)alwaysAllowCaptureDeviceStringForDomain:(id)arg1;
++ (id)screenCapturePauseEntireScreenCaptureTitleMenuItemString;
 + (id)mediaCapturePauseCaptureCameraAndMicrophoneTitleMenuItemString;
 + (id)mediaCapturePauseCaptureMicrophoneOnlyTitleMenuItemString;
 + (id)mediaCapturePauseCaptureCameraOnlyTitleMenuItemString;
@@ -28,6 +29,11 @@ __attribute__((visibility("hidden")))
 + (id)muteMenuItemStringForDomain:(id)arg1;
 + (id)unmuteMenuItemString;
 + (id)muteMenuItemString;
++ (id)tabsUsingScreenCaptureOrMediaCaptureDescription;
++ (id)tabUsingScreenCaptureAndMicrophoneDescription;
++ (id)tabUsingScreenCaptureAndCameraDescription;
++ (id)tabUsingScreenCaptureAndMediaCaptureDescription;
++ (id)tabUsingScreenCaptureDescription;
 + (id)tabsUsingCameraOrMicrophoneDescription;
 + (id)tabUsingCameraAndMicrophoneDescription;
 + (id)tabUsingMicrophoneDescription;

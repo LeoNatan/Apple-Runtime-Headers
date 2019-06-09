@@ -11,6 +11,7 @@
 
 @class NSArray, NSString, SKUIMenuBarViewElementConfiguration;
 
+__attribute__((visibility("hidden")))
 @interface SKUIShelfMenuBarViewElement : SKUIShelfViewElement <_SKUIMenuBarViewElementConfigurationReloadDelegate, SKUIMenuBarViewElement>
 {
     NSArray *_focusedViewElements;

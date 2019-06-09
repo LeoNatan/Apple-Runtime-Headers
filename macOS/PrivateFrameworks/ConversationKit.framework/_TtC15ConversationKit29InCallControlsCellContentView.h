@@ -8,7 +8,6 @@
 
 #import <ConversationKit/CALayerDelegate-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit29InCallControlsCellContentView : NSView <CALayerDelegate>
 {
 }

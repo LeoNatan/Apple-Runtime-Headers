@@ -6,11 +6,12 @@
 
 #import <MediaPlayer/MPAsyncOperation.h>
 
+#import <MediaPlaybackCore/MPCStoreFrontLocalEquivalencyMiddlewarePlayingItemProviding-Protocol.h>
 #import <MediaPlaybackCore/MPMiddlewareAutomaticDependencyOperation-Protocol.h>
 
-@class MPCPlayerRequest, MPCStoreFrontLocalEquivalencyMiddleware, NSArray, NSError, NSMapTable, NSString;
+@class MPCPlayerRequest, MPCStoreFrontLocalEquivalencyMiddleware, MPModelGenericObject, NSArray, NSError, NSIndexPath, NSMapTable, NSString;
 
-@interface MPCStoreFrontLocalEquivalencyMiddlewareOperation : MPAsyncOperation <MPMiddlewareAutomaticDependencyOperation>
+@interface MPCStoreFrontLocalEquivalencyMiddlewareOperation : MPAsyncOperation <MPCStoreFrontLocalEquivalencyMiddlewarePlayingItemProviding, MPMiddlewareAutomaticDependencyOperation>
 {
     struct NSMapTable *_inputOperations;
     CDUnknownBlockType _invalidationHandler;
@@ -26,9 +27,11 @@
 @property(retain, nonatomic) NSMapTable *inputOperations; // @synthesize inputOperations=_inputOperations;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSArray *outputProtocols;
-@property(readonly, nonatomic) NSArray *inputsProtocols;
+@property(readonly, nonatomic) NSArray *inputProtocols;
 - (void)execute;
 - (id)initWithMiddleware:(id)arg1 playerRequest:(id)arg2;
+@property(readonly, nonatomic) NSIndexPath *playingItemIndexPath;
+@property(readonly, nonatomic) MPModelGenericObject *overridePlayingItem;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

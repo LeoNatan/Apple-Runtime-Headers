@@ -7,10 +7,11 @@
 #import <UIKitCore/UIView.h>
 
 #import <UIKitCore/CAAnimationDelegate-Protocol.h>
+#import <UIKitCore/_UIStatusBarDisplayable-Protocol.h>
 
-@class NSArray, NSAttributedString, NSString;
+@class NSArray, NSAttributedString, NSString, UIAccessibilityHUDItem;
 
-@interface _UIExpandingGlyphsView : UIView <CAAnimationDelegate>
+@interface _UIExpandingGlyphsView : UIView <_UIStatusBarDisplayable, CAAnimationDelegate>
 {
     _Bool _expandsFromLeftToRight;
     _Bool _fadesOut;
@@ -36,12 +37,16 @@
 - (struct CGSize)intrinsicContentSize;
 - (void)animateCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(readonly, nonatomic) _Bool prefersBaselineAlignment;
 
 // Remaining properties
+@property(readonly, nonatomic) UIAccessibilityHUDItem *accessibilityHUDRepresentation;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
+@property(readonly, nonatomic) int overriddenVerticalAlignment;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) _Bool wantsCrossfade;
 
 @end
 

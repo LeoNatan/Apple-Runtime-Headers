@@ -49,6 +49,7 @@
 - (void)setActiveEnergyUnit:(id)arg1 basalEnergyUnit:(id)arg2;
 - (void)setActivitySummary:(id)arg1 animated:(_Bool)arg2;
 - (void)setupSubviews;
+- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 activeEnergyUnit:(id)arg2 basalEnergyUnit:(id)arg3;
 

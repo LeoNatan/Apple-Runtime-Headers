@@ -16,8 +16,6 @@
 + (id)_pixelDataForImage:(id)arg1;
 + (id)flatImage:(id)arg1 withColor:(id)arg2;
 + (id)squareThumbnailImageFromImage:(id)arg1 thumbnailWidthInPixels:(double)arg2;
-+ (void)decodeImageData:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-+ (id)_decodeHelperConnection;
 
 @end
 

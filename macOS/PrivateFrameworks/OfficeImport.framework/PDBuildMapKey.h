@@ -10,6 +10,7 @@
 
 @class NSString, NSValue;
 
+__attribute__((visibility("hidden")))
 @interface PDBuildMapKey : NSObject <NSCopying>
 {
     NSValue *mDrawableValue;

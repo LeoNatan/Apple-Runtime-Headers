@@ -65,7 +65,7 @@
 - (void)windowDidResize:(id)arg1;
 - (void)_updateRecipientBarView;
 - (void)viewDidLoad;
-- (void)contactPicker:(id)arg1 didChooseCompatibilityContact:(id)arg2 key:(id)arg3 value:(id)arg4;
+- (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
 - (void)showContacts:(id)arg1;
 - (void)accountLoginStatusChanged:(id)arg1;
 - (void)_tokenFieldDidChange:(id)arg1;

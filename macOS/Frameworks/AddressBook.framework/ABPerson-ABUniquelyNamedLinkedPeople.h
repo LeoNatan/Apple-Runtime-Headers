@@ -7,6 +7,29 @@
 #import "ABPerson.h"
 
 @interface ABPerson (ABUniquelyNamedLinkedPeople)
++ (id)initialInstantMessageServiceKeys;
++ (id)discontinuedInstantMessageServices;
++ (id)defaultInstantMessageService;
++ (id)initialFieldsForProperty:(id)arg1;
++ (id)builtInLabelsForProperty:(id)arg1;
++ (id)builtInLabels;
 - (id)uniquelyNamedLinkedPeople;
+- (BOOL)abHasSimilarAddress:(id)arg1;
+- (BOOL)_abAddress:(id)arg1 isSimilarToAddress:(id)arg2;
+- (id)abUsedProperties;
+- (id)relatedMatchesForIdentifier:(id)arg1;
+- (id)relatedMatchesForName:(id)arg1 label:(id)arg2 givenLastName:(id)arg3;
+- (void)setAllProperties:(id)arg1;
+- (id)allPropertiesIncludingImage:(BOOL)arg1;
+- (id)allProperties;
+- (void)updateMultiValue:(id)arg1 forProperty:(id)arg2 changes:(id)arg3 replaceValues:(BOOL)arg4;
+- (void)updateMultiValue:(id)arg1 forProperty:(id)arg2 changes:(id)arg3;
+- (id)mergedSimilarMultiValuesIn:(id)arg1 forProperty:(id)arg2 changes:(id)arg3;
+- (unsigned long long)indexOfLabel:(id)arg1 inMultiValue:(id)arg2 testValue:(CDUnknownBlockType)arg3;
+- (void)updateSingleValue:(id)arg1 forProperty:(id)arg2 changes:(id)arg3;
+- (void)updateNote:(id)arg1 changes:(id)arg2;
+- (void)mergeSingleValue:(id)arg1 forProperty:(id)arg2;
+- (void)mergeMultiValue:(id)arg1 forProperty:(id)arg2;
+- (void)mergeNote:(id)arg1;
 @end
 

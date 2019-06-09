@@ -8,27 +8,20 @@
 
 #import <CloudKit/NSSecureCoding-Protocol.h>
 
-@class NSError;
-
 @interface CKAccountInfo : NSObject <NSSecureCoding>
 {
-    _Bool _supportsDeviceToDeviceEncryption;
     _Bool _hasValidCredentials;
-    _Bool _hasEncryptionIdentity;
     int _accountStatus;
     int _accountPartition;
-    NSError *_manateeError;
+    int _deviceToDeviceEncryptionAvailability;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSError *manateeError; // @synthesize manateeError=_manateeError;
-@property(nonatomic) _Bool hasEncryptionIdentity; // @synthesize hasEncryptionIdentity=_hasEncryptionIdentity;
 @property(nonatomic) _Bool hasValidCredentials; // @synthesize hasValidCredentials=_hasValidCredentials;
+@property(nonatomic) int deviceToDeviceEncryptionAvailability; // @synthesize deviceToDeviceEncryptionAvailability=_deviceToDeviceEncryptionAvailability;
 @property(nonatomic) int accountPartition; // @synthesize accountPartition=_accountPartition;
-@property(nonatomic) _Bool supportsDeviceToDeviceEncryption; // @synthesize supportsDeviceToDeviceEncryption=_supportsDeviceToDeviceEncryption;
 @property(nonatomic) int accountStatus; // @synthesize accountStatus=_accountStatus;
-- (void).cxx_destruct;
-@property(retain, nonatomic) NSError *deviceToDeviceEncryptionAvailabilityError;
+@property(nonatomic) _Bool supportsDeviceToDeviceEncryption;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)CKPropertiesDescription;

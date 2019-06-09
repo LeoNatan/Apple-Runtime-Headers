@@ -18,6 +18,7 @@
     NSMutableDictionary *_attachmentsUndoData;
 }
 
+- (void).cxx_destruct;
 - (id)storageLocationForAttachment:(id)arg1 withMessage:(id)arg2;
 - (id)messageForAttachment:(id)arg1;
 - (void)fetchDataForAttachment:(id)arg1 consumer:(id)arg2 progress:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -29,7 +30,6 @@
 - (void)recordPasteboardDataForAttachments:(id)arg1;
 - (void)removeDataForAttachment:(id)arg1;
 - (void)addData:(id)arg1 forContentID:(id)arg2;
-- (void)dealloc;
 - (id)initWithData:(id)arg1 forContentID:(id)arg2;
 
 // Remaining properties

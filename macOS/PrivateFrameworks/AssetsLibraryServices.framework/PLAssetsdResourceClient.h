@@ -10,6 +10,8 @@
 {
 }
 
+- (BOOL)updateInternalResourcePath:(id)arg1 objectURI:(id)arg2 error:(id *)arg3;
+- (id)consolidateAssets:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)generateOnDemandResourcesForAsset:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)downloadCloudSharedAsset:(id)arg1 withCloudPlaceholderKind:(unsigned long long)arg2 shouldPrioritize:(BOOL)arg3 shouldExtendTimer:(BOOL)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (BOOL)estimatedOutputFileLengthForVideoURL:(id)arg1 fallbackFilePath:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4 outFileLength:(long long *)arg5 error:(id *)arg6;

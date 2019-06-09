@@ -32,7 +32,6 @@
 + (id)versionNumbersEncodedInClass:(Class)arg1 withMethodNamePrefix:(id)arg2 suffix:(id)arg3;
 + (id)configurationFromLoadedObjects:(id)arg1 error:(id *)arg2;
 + (Class)_modelClassForKind:(unsigned int)arg1 error:(id *)arg2;
-@property(readonly, copy, nonatomic) VNPersonsModelConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
 - (id)faceCountsForAllPersons;
 - (id)faceCountsForPersonsWithUniqueIdentifiers:(id)arg1;
@@ -40,8 +39,10 @@
 - (id)personUniqueIdentifiers;
 - (unsigned long long)personCount;
 - (id)predictPersonFromFaceObservation:(id)arg1 limit:(unsigned long long)arg2 canceller:(id)arg3 error:(id *)arg4;
+@property(readonly, copy, nonatomic) VNPersonsModelConfiguration *configuration;
 - (id)upToDateFaceModelWithCanceller:(id)arg1 error:(id *)arg2;
 - (id)description;
+- (_Bool)updateInternalConfigurationWithModelFaceprintRequestRevision:(unsigned long long)arg1 error:(id *)arg2;
 - (id)initWithConfiguration:(id)arg1 dataSource:(id)arg2;
 
 @end

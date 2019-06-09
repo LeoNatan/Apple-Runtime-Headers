@@ -9,7 +9,6 @@
 @class NSError, NSHTTPURLResponse, NSMutableData, NSURLSessionTask;
 @protocol OS_dispatch_semaphore;
 
-__attribute__((visibility("hidden")))
 @interface TLSTestHarnessResult : NSObject
 {
     NSURLSessionTask *_task;

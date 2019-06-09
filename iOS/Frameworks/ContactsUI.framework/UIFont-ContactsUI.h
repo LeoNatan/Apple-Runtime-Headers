@@ -9,5 +9,13 @@
 @interface UIFont (ContactsUI)
 + (id)cnui_footnoteFont;
 + (id)cnui_bodyFont;
++ (_Bool)ab_preferredContentSizeCategoryIsAccessibilityCategory;
++ (id)ab_preferredContentSizeCategoryName;
++ (id)ab_preferredRowFontForTextStyle:(id)arg1;
++ (id)ab_preferredFontForTextStyle:(id)arg1;
++ (_Bool)_shouldUseDefaultFont;
++ (void)ab_setIgnoreUserFontSize:(_Bool)arg1;
+- (id)ab_italicFont;
+- (id)ab_boldFont;
 @end
 

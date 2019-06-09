@@ -8,6 +8,7 @@
 
 @class NSDictionary, NSMutableArray, NSMutableDictionary, PDSlideMaster;
 
+__attribute__((visibility("hidden")))
 @interface PBMasterInfo : NSObject
 {
     PDSlideMaster *mSlideMaster;

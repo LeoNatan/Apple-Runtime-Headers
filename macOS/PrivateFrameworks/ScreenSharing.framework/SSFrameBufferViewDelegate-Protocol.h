@@ -6,11 +6,11 @@
 
 #import <ScreenSharing/NSObject-Protocol.h>
 
-@class NSArray, NSURL, SSFrameBufferView;
+@class NSString, NSURL, SSFrameBufferView;
 
 @protocol SSFrameBufferViewDelegate <NSObject>
-@property(readonly) unsigned int currentViewRotation;
 @property(readonly) BOOL useAVConference;
-- (void)ssFrameBufferView:(SSFrameBufferView *)arg1 didDropRemotePaths:(NSArray *)arg2 atLocalDropDestination:(NSURL *)arg3;
+- (void)didFinishDroppingRemotePaths;
+- (void)ssFrameBufferView:(SSFrameBufferView *)arg1 didDropRemotePath:(NSString *)arg2 atLocalDropDestination:(NSURL *)arg3 completionHandler:(void (^)(NSError *))arg4;
 @end
 

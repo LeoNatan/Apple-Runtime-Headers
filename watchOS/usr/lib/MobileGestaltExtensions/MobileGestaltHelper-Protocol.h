@@ -7,6 +7,7 @@
 @class NSString;
 
 @protocol MobileGestaltHelper
+- (void)rebuildCache:(void (^)(_Bool))arg1;
 - (void)getAppleTVMode:(void (^)(NSDictionary *))arg1;
 - (void)getServerAnswerForQuestion:(NSString *)arg1 reply:(void (^)(NSDictionary *))arg2;
 - (void)getSpringboardRegionOverride:(NSString *)arg1 reply:(void (^)(NSNumber *))arg2;

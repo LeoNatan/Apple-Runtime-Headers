@@ -102,6 +102,7 @@
     id <FCHeadlineStocksFields> _stocksFields;
     NSData *_backingArticleRecordData;
     FCIssue *_masterIssue;
+    long long _bodyTextLength;
     NSString *_identifier;
     NSURL *_headlineURL;
     NSString *_titleCompact;
@@ -116,6 +117,7 @@
 @property(copy, nonatomic) NSString *titleCompact; // @synthesize titleCompact=_titleCompact;
 @property(copy, nonatomic) NSURL *headlineURL; // @synthesize headlineURL=_headlineURL;
 @property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) long long bodyTextLength; // @synthesize bodyTextLength=_bodyTextLength;
 @property(readonly, nonatomic) _Bool showBundleSoftPaywall; // @synthesize showBundleSoftPaywall=_showBundleSoftPaywall;
 @property(readonly, nonatomic, getter=isIssueOnly) _Bool issueOnly; // @synthesize issueOnly=_issueOnly;
 @property(readonly, copy, nonatomic) FCIssue *masterIssue; // @synthesize masterIssue=_masterIssue;

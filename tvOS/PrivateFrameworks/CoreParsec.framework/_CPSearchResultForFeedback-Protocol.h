@@ -13,6 +13,7 @@
 @property(readonly, nonatomic) unsigned long long whichSectionbundleid;
 @property(readonly, nonatomic) unsigned long long whichResultbundleidentifier;
 @property(readonly, nonatomic) NSData *jsonData;
+@property(copy, nonatomic) NSData *entityData;
 @property(nonatomic) int knownApplicationBundleIdentifier;
 @property(copy, nonatomic) NSString *applicationBundleIdentifier;
 @property(nonatomic) int knownSectionBundleIdentifier;

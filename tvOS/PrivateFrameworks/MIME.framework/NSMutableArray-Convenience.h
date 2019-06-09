@@ -12,5 +12,9 @@
 - (void)mf_addObject:(id)arg1 orPlaceholder:(id)arg2;
 - (_Bool)mf_addObjectIfAbsentAccordingToEquals:(id)arg1;
 - (_Bool)mf_addObjectIfAbsent:(id)arg1;
+- (unsigned long long)mf_removeObject:(id)arg1 usingSortFunction:(CDUnknownFunctionPointerType)arg2 context:(void *)arg3;
+- (unsigned long long)mf_insertObject:(id)arg1 usingSortFunction:(CDUnknownFunctionPointerType)arg2 context:(void *)arg3 allowDuplicates:(_Bool)arg4;
+- (unsigned long long)mf_removeObject:(id)arg1 usingComparator:(CDUnknownBlockType)arg2;
+- (unsigned long long)mf_insertObject:(id)arg1 usingComparator:(CDUnknownBlockType)arg2 allowDuplicates:(_Bool)arg3;
 @end
 

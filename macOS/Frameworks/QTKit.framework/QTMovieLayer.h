@@ -6,28 +6,13 @@
 
 #import <QuartzCore/CALayer.h>
 
-@class QTMovieLayerPrivate;
-
 @interface QTMovieLayer : CALayer
 {
-    QTMovieLayerPrivate *_movieLayerPriv;
 }
 
 + (id)layerWithMovie:(id)arg1;
-- (void)layerDidChangeDisplay:(unsigned int)arg1;
-- (void)layerDidBecomeVisible:(BOOL)arg1;
-- (void)layoutSublayers;
-- (void)_qtMovieClosedCaptionVisibilityDidChange:(id)arg1;
-- (void)_qtMovieSubtitleVisibilityDidChange:(id)arg1;
-- (void)_qtMovieClosedCaptionDidChange:(id)arg1;
-- (void)_qtMovieSubtitleDidChange:(id)arg1;
-- (id)movie;
-- (void)setMovie:(id)arg1;
-- (void)finalize;
-- (void)dealloc;
-- (void)tearDown;
-- (id)init;
 - (id)initWithMovie:(id)arg1;
+- (id)init;
 
 @end
 

@@ -25,6 +25,10 @@
 - (void)setReverbBlend:(float)arg1;
 - (float)rate;
 - (void)setRate:(float)arg1;
+- (int)pointSourceInHeadMode;
+- (void)setPointSourceInHeadMode:(int)arg1;
+- (int)sourceMode;
+- (void)setSourceMode:(int)arg1;
 - (int)renderingAlgorithm;
 - (void)setRenderingAlgorithm:(int)arg1;
 - (float)pan;

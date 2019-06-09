@@ -16,7 +16,8 @@
 + (id)availableCountryCodes;
 + (id)countryCodesFromPlist;
 + (id)defaultCountryCode;
-@property(copy) NSString *countryCode; // @synthesize countryCode=_countryCode;
+@property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
+- (void).cxx_destruct;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (BOOL)isPartialStringValid:(id *)arg1 proposedSelectedRange:(struct _NSRange *)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange)arg4 errorDescription:(id *)arg5;
 - (BOOL)getObjectValue:(id *)arg1 forString:(id)arg2 errorDescription:(id *)arg3;
@@ -24,7 +25,6 @@
 - (id)stringForObjectValue:(id)arg1;
 - (BOOL)isPhoneNumberValid:(id)arg1 withPreFix:(id)arg2;
 - (id)description;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

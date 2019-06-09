@@ -6,29 +6,38 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <TVPlayback/TVPMusicVideoTitleControllerDelegate-Protocol.h>
 #import <TVPlayback/UIViewControllerAnimatedTransitioning-Protocol.h>
 #import <TVPlayback/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class AVPlayer, AVPlayerViewController, NSString, TVPMusicNowPlayingVideoView, UIView;
-@protocol TVPMusicVideoPlayerViewControllerDelegate;
+@class AVPlayer, AVPlayerViewController, NSString, TVPMusicNowPlayingVideoView, TVPMusicVideoTitleController, UIView;
+@protocol TVPAVFPlayback, TVPMusicVideoPlayerViewControllerDelegate;
 
-@interface TVPMusicVideoPlayerViewController : UIViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
+@interface TVPMusicVideoPlayerViewController : UIViewController <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning, TVPMusicVideoTitleControllerDelegate>
 {
     _Bool _viewVisible;
     id <TVPMusicVideoPlayerViewControllerDelegate> _delegate;
     AVPlayerViewController *_avPlayerViewController;
     AVPlayer *_avPlayer;
+    id <TVPAVFPlayback> _player;
     TVPMusicNowPlayingVideoView *_videoView;
     TVPMusicNowPlayingVideoView *_interstitialView;
+    TVPMusicVideoTitleController *_titleController;
 }
 
+@property(retain, nonatomic) TVPMusicVideoTitleController *titleController; // @synthesize titleController=_titleController;
 @property(readonly, nonatomic) TVPMusicNowPlayingVideoView *interstitialView; // @synthesize interstitialView=_interstitialView;
 @property(readonly, nonatomic) TVPMusicNowPlayingVideoView *videoView; // @synthesize videoView=_videoView;
+@property(readonly, nonatomic) id <TVPAVFPlayback> player; // @synthesize player=_player;
 @property(nonatomic, getter=isViewVisible) _Bool viewVisible; // @synthesize viewVisible=_viewVisible;
 @property(retain, nonatomic) AVPlayer *avPlayer; // @synthesize avPlayer=_avPlayer;
 @property(readonly, nonatomic) AVPlayerViewController *avPlayerViewController; // @synthesize avPlayerViewController=_avPlayerViewController;
 @property(nonatomic) __weak id <TVPMusicVideoPlayerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)didSelectAddButton:(id)arg1;
+- (void)didHideTitle:(id)arg1;
+- (void)didShowTitle:(id)arg1;
+- (void)willShowTitle:(id)arg1;
 - (void)_animateDismissTransition:(id)arg1;
 - (void)_animatePresentTransition:(id)arg1;
 - (void)animateTransition:(id)arg1;
@@ -36,6 +45,8 @@
 - (id)animationControllerForDismissedController:(id)arg1;
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
+- (void)_menuButtonPressed:(id)arg1;
+- (id)preferredFocusEnvironments;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly, nonatomic) UIView *previewView;
 - (void)viewWillLayoutSubviews;
@@ -46,6 +57,7 @@
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithPlayer:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

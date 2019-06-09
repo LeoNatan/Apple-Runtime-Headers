@@ -24,11 +24,14 @@
     int _restartAction;
     int _minTrust;
     PKInstallRequest *_request;
-    BOOL _isExecuting;
     double _totalEstimatedTime;
     NSFileHandle *_translocationFileHandle;
+    BOOL _userConsentedInstall;
+    BOOL _isExecuting;
 }
 
+@property BOOL isExecuting; // @synthesize isExecuting=_isExecuting;
+@property BOOL userConsentedInstall; // @synthesize userConsentedInstall=_userConsentedInstall;
 @property int authorizationType; // @synthesize authorizationType=_authorizationType;
 - (id)_determinePrefixPathForPackage:(id)arg1;
 - (void)_resolvePackagesUsingSourceManager;

@@ -8,21 +8,26 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEODirectionsResponse, GEOETAResponse;
+@class GEODirectionsResponse, GEOETAResponse, PBDataReader;
 
 @interface GEORouteHypothesisResponse : PBCodable <NSCopying>
 {
-    double _updatedTimeStamp;
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     GEODirectionsResponse *_directionsResponse;
     GEOETAResponse *_etaResponse;
+    double _updatedTimeStamp;
     struct {
-        unsigned int updatedTimeStamp:1;
-    } _has;
+        unsigned int has_updatedTimeStamp:1;
+        unsigned int read_directionsResponse:1;
+        unsigned int read_etaResponse:1;
+        unsigned int wrote_directionsResponse:1;
+        unsigned int wrote_etaResponse:1;
+        unsigned int wrote_updatedTimeStamp:1;
+    } _flags;
 }
 
-@property(nonatomic) double updatedTimeStamp; // @synthesize updatedTimeStamp=_updatedTimeStamp;
-@property(retain, nonatomic) GEOETAResponse *etaResponse; // @synthesize etaResponse=_etaResponse;
-@property(retain, nonatomic) GEODirectionsResponse *directionsResponse; // @synthesize directionsResponse=_directionsResponse;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,11 +36,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasUpdatedTimeStamp;
+@property(nonatomic) double updatedTimeStamp;
+@property(retain, nonatomic) GEOETAResponse *etaResponse;
 @property(readonly, nonatomic) _Bool hasEtaResponse;
+- (void)_readEtaResponse;
+@property(retain, nonatomic) GEODirectionsResponse *directionsResponse;
 @property(readonly, nonatomic) _Bool hasDirectionsResponse;
+- (void)_readDirectionsResponse;
 
 @end
 

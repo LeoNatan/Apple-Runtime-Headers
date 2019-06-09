@@ -6,8 +6,17 @@
 
 #import <Foundation/NSArray.h>
 
-@interface NSArray (HealthKit)
+#import <HealthKit/HKCodedObject-Protocol.h>
+
+@class NSString;
+
+@interface NSArray (HealthKit) <HKCodedObject>
 + (_Bool)_permutationHelperForArray:(id)arg1 number:(long long)arg2 permutationHandler:(CDUnknownBlockType)arg3;
++ (id)hk_arrayWithCount:(long long)arg1 generator:(CDUnknownBlockType)arg2;
++ (id)indexableKeyPathsWithPrefix:(id)arg1;
+- (_Bool)_permutationsWithCount:(long long)arg1 permutation:(id)arg2 depth:(long long)arg3 block:(CDUnknownBlockType)arg4;
+- (void)hk_enumeratePermutationsOfSubsetsOfLength:(long long)arg1 block:(CDUnknownBlockType)arg2;
+- (id)hk_reversed;
 - (void)hk_enumeratePermutationsWithBlock:(CDUnknownBlockType)arg1;
 - (id)hk_mapToSet:(CDUnknownBlockType)arg1;
 - (id)hk_mapToDictionary:(CDUnknownBlockType)arg1;
@@ -25,5 +34,13 @@
 - (id)hk_filter:(CDUnknownBlockType)arg1;
 - (id)hk_map:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)hk_map:(CDUnknownBlockType)arg1;
+- (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
+- (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

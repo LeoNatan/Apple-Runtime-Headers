@@ -8,11 +8,11 @@
 
 #import <RelevanceEngine/MLFeatureProvider-Protocol.h>
 #import <RelevanceEngine/NSCopying-Protocol.h>
-#import <RelevanceEngine/REIndentedDescription-Protocol.h>
+#import <RelevanceEngine/_REFeatureMapLoggingProperties-Protocol.h>
 
-@class NSDictionary, NSSet, NSString;
+@class NSArray, NSDictionary, NSSet;
 
-@interface REFeatureMap : NSObject <MLFeatureProvider, REIndentedDescription, NSCopying>
+@interface REFeatureMap : NSObject <MLFeatureProvider, _REFeatureMapLoggingProperties, NSCopying>
 {
     unsigned long long _hash;
     unsigned long long *_values;
@@ -21,8 +21,10 @@
 
 + (id)defaultFeatureName;
 - (void).cxx_destruct;
-- (id)descriptionWithIndent:(unsigned long long)arg1;
-@property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) NSArray *loggingValues;
+@property(readonly, nonatomic) NSSet *allFeatures;
+- (id)description;
+- (void)enumerateFeatureValuesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateEmptyFeaturesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateStringFeaturesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateDoubleFeaturesUsingBlock:(CDUnknownBlockType)arg1;
@@ -30,13 +32,15 @@
 - (void)enumerateBoolFeaturesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateFeaturesUsingBlock:(CDUnknownBlockType)arg1;
 - (_Bool)hasValueForFeature:(id)arg1;
-- (id)valueForFeature:(id)arg1;
+- (unsigned long long)valueForFeature:(id)arg1;
+- (id)featureValueForFeature:(id)arg1;
 - (void)removeAllValues;
 - (void)removeValueForFeature:(id)arg1;
-- (void)setValue:(id)arg1 forFeature:(id)arg2;
+- (void)setFeatureValue:(id)arg1 forFeature:(id)arg2;
+- (void)setValue:(unsigned long long)arg1 forFeature:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (unsigned long long)_count;
 - (void)dealloc;
 - (id)initWithFeatureMap:(id)arg1;
@@ -44,10 +48,6 @@
 @property(readonly, nonatomic) unsigned long long featureCount;
 - (id)featureValueForName:(id)arg1;
 @property(readonly, nonatomic) NSSet *featureNames;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

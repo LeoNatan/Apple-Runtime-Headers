@@ -17,6 +17,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)URIWithPrefixedURI:(id)arg1;
 @property(retain, nonatomic) NSString *prefixedURI; // @synthesize prefixedURI=_prefixedURI;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

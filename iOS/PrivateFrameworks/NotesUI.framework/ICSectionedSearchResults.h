@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class NSArray, NSMutableDictionary;
 
 @interface ICSectionedSearchResults : NSObject
 {
@@ -20,10 +20,12 @@
 - (void).cxx_destruct;
 - (void)updateForSortTypeChange;
 - (_Bool)replaceSearchResultObject:(id)arg1 withObject:(id)arg2;
+- (id)indexPathOfObject:(id)arg1;
+- (id)indexPathOfSearchResult:(id)arg1;
 - (_Bool)hideSearchResultsForObjects:(id)arg1;
 - (_Bool)hideSearchResultsForIdentifier:(id)arg1;
 - (void)filterSearchResultsUsingVisiblityTesting:(id)arg1;
-- (_Bool)addSearchResults:(id)arg1 removingFoundIdentifiers:(id)arg2 passingVisibilityTesting:(id)arg3;
+- (unsigned long long)addSearchResults:(id)arg1 removingFoundIdentifiers:(id)arg2 passingVisibilityTesting:(id)arg3;
 - (unsigned long long)addSearchResultsBySection:(id)arg1;
 - (id)searchResultsBySectionForSearchResults:(id)arg1 passingVisibilityTesting:(id)arg2;
 - (_Bool)passesVisibilityTesting:(id)arg1 forSearchResult:(id)arg2;
@@ -37,11 +39,13 @@
 - (id)searchResultObjectsInSection:(unsigned long long)arg1;
 - (id)searchResultsInSection:(unsigned long long)arg1;
 - (id)searchResultSectionForSectionIndex:(unsigned long long)arg1;
+- (id)searchResultWithObject:(id)arg1;
 - (id)searchResultAtRow:(long long)arg1 section:(unsigned long long)arg2;
 - (unsigned long long)sectionForSearchResult:(id)arg1;
 - (unsigned long long)countForSection:(unsigned long long)arg1;
 - (_Bool)hasSearchResults;
 - (void)clear;
+@property(readonly, nonatomic) NSArray *allSearchResults;
 - (void)noteWillBeUndeletedOrUntrashed:(id)arg1;
 - (void)objectsDidChange:(id)arg1;
 - (id)description;

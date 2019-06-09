@@ -6,31 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class SFCrossfadingImageView;
+@class UIImageView;
 
 __attribute__((visibility("hidden")))
 @interface _SFURLLabelAccessoryItem : NSObject
 {
     _Bool _centerAligned;
-    SFCrossfadingImageView *_view;
+    UIImageView *_view;
+    UIImageView *_squishedView;
     float _spacing;
-    float _squishedSpacing;
-    float _squishedVerticalOffset;
-    float _verticalOffset;
     struct CGSize _size;
-    struct CGSize _squishedSize;
-    struct CGSize _interpolatedSize;
 }
 
 @property(nonatomic) _Bool centerAligned; // @synthesize centerAligned=_centerAligned;
-@property(nonatomic) struct CGSize interpolatedSize; // @synthesize interpolatedSize=_interpolatedSize;
-@property(nonatomic) struct CGSize squishedSize; // @synthesize squishedSize=_squishedSize;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-@property(nonatomic) float verticalOffset; // @synthesize verticalOffset=_verticalOffset;
-@property(nonatomic) float squishedVerticalOffset; // @synthesize squishedVerticalOffset=_squishedVerticalOffset;
-@property(nonatomic) float squishedSpacing; // @synthesize squishedSpacing=_squishedSpacing;
 @property(nonatomic) float spacing; // @synthesize spacing=_spacing;
-@property(retain, nonatomic) SFCrossfadingImageView *view; // @synthesize view=_view;
+@property(retain, nonatomic) UIImageView *squishedView; // @synthesize squishedView=_squishedView;
+@property(retain, nonatomic) UIImageView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 
 @end

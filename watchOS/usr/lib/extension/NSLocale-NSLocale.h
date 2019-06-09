@@ -8,9 +8,20 @@
 
 @interface NSLocale (NSLocale)
 + (id)autoupdatingCurrentLocale;
++ (id)_preferredTemperatureUnit;
++ (void)_setPreferredTemperatureUnit:(id)arg1;
++ (id)_preferredMeasurementSystem;
++ (void)_setPreferredMeasurementSystem:(id)arg1;
++ (id)mostPreferredLanguageOf:(id)arg1 withPreferredLanguages:(id)arg2 forUsage:(unsigned int)arg3 options:(unsigned int)arg4;
++ (id)mostPreferredLanguageOf:(id)arg1 forUsage:(unsigned int)arg2 options:(unsigned int)arg3;
++ (void)registerPreferredLanguage:(id)arg1 usage:(unsigned int)arg2 confidence:(float)arg3;
++ (void)setPreferredLanguages:(id)arg1;
++ (id)systemLanguages;
++ (id)preferredLocale;
 - (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;
+@property(readonly) int _calendarDirection;
 @end
 

@@ -12,12 +12,14 @@
 #import <NotesShared/NSTextStorageDelegate-Protocol.h>
 #import <NotesShared/TTMergeableStringDelegate-Protocol.h>
 
-@class ICAccount, ICAttachment, ICFolder, ICMergableDictionary, ICNoteData, NSData, NSDate, NSNumber, NSSet, NSString, NSUUID, TTMergeableStringVersionedDocument, TTVectorMultiTimestamp;
+@class ICAccount, ICAttachment, ICFolder, ICMergableDictionary, ICNoteData, NSArray, NSData, NSDate, NSMutableArray, NSNumber, NSSet, NSString, NSUUID, TTMergeableStringVersionedDocument, TTVectorMultiTimestamp;
 @protocol ICNoteMergeabilityDelegate;
 
 @interface ICNote : ICCloudSyncingObject <ICSearchIndexableNote, ICCloudObject, TTMergeableStringDelegate, ICNoteUI, NSTextStorageDelegate>
 {
     NSUUID *_uuid;
+    id _noteDidSaveObserver;
+    NSMutableArray *_noteDidSaveBlocks;
     _Bool needsRefresh;
     _Bool needsToSaveLastViewedTimestamp;
     _Bool preventReleasingTextStorage;
@@ -37,12 +39,13 @@
 
 + (id)defaultTitleForEmptyNote;
 + (id)keyPathsForValuesAffectingHasUnreadChanges;
++ (_Bool)containsUnmovableNotes:(id)arg1;
++ (_Bool)containsUndeletableNotes:(id)arg1;
 + (id)keyPathsForValuesAffectingIsEditable;
 + (unsigned long long)maxNoteAttachments;
 + (unsigned long long)maxNoteTextLength;
 + (id)keyPathsForValuesAffectingIsSharedViaICloud;
 + (id)keyPathsForValuesAffectingCanBeSharedViaICloud;
-+ (id)keyPathsForValuesAffectingParentCloudObject;
 + (id)snippetForPasswordProtectedNote:(id)arg1;
 + (void)redactNote:(id)arg1;
 + (id)createNoteFromNote:(id)arg1 inFolder:(id)arg2 isPasswordProtected:(_Bool)arg3 removingOriginalNote:(_Bool)arg4;
@@ -53,6 +56,8 @@
 + (id)predicateForVisibleNotes;
 + (id)predicateForNote:(id)arg1;
 + (id)newFetchRequestForNotes;
++ (id)modernNotesInObjects:(id)arg1;
++ (_Bool)notes:(id)arg1 containSharedNotesNotSharedViaFolder:(id)arg2;
 + (unsigned long long)countOfNotesMatchingPredicate:(id)arg1 context:(id)arg2;
 + (id)notesMatchingPredicate:(id)arg1 context:(id)arg2;
 + (unsigned long long)countOfVisibleNotesInContext:(id)arg1;
@@ -61,7 +66,9 @@
 + (id)allNotesInContext:(id)arg1;
 + (id)noteWithLegacyManagedObjectID:(id)arg1 context:(id)arg2;
 + (id)visibleNoteWithIdentifier:(id)arg1 context:(id)arg2;
++ (id)noteWithIdentifier:(id)arg1 includeDeleted:(_Bool)arg2 accountID:(id)arg3 context:(id)arg4;
 + (id)noteWithIdentifier:(id)arg1 includeDeleted:(_Bool)arg2 context:(id)arg3;
++ (id)noteWithIdentifier:(id)arg1 accountID:(id)arg2 context:(id)arg3;
 + (id)noteWithIdentifier:(id)arg1 context:(id)arg2;
 + (id)noteWithUUID:(id)arg1 context:(id)arg2;
 + (id)refreshAllOfNoteWithIdentifier:(id)arg1 context:(id)arg2;
@@ -69,15 +76,21 @@
 + (void)purgeNote:(id)arg1;
 + (void)deleteNote:(id)arg1;
 + (void)deleteEmptyNote:(id)arg1;
-+ (id)newEmptyNoteWithUUID:(id)arg1 context:(id)arg2;
-+ (id)newEmptyNoteWithIdentifier:(id)arg1 context:(id)arg2;
++ (id)newEmptyNoteWithUUID:(id)arg1 folder:(id)arg2;
++ (id)newEmptyNoteWithIdentifier:(id)arg1 folder:(id)arg2;
++ (id)newEmptyNoteInFolder:(id)arg1;
++ (id)newNoteWithoutIdentifierInFolder:(id)arg1;
++ (id)newObjectWithIdentifier:(id)arg1 folder:(id)arg2;
++ (id)newNoteWithoutIdentifierInAccount:(id)arg1;
 + (id)newEmptyNoteInContext:(id)arg1;
-+ (id)newNoteWithoutIdentifierInContext:(id)arg1;
 + (id)newObjectWithIdentifier:(id)arg1 context:(id)arg2;
++ (id)keyPathsForValuesAffectingPrefersLightBackground;
 + (id)keyPathsForValuesAffectingCloudAccount;
 + (_Bool)supportsUserSpecificRecords;
-+ (id)newCloudObjectForRecord:(id)arg1 context:(id)arg2;
-+ (id)existingCloudObjectForRecordID:(id)arg1 context:(id)arg2;
++ (id)newPlaceholderObjectForRecordName:(id)arg1 account:(id)arg2;
++ (id)newPlaceholderObjectForRecordName:(id)arg1 accountID:(id)arg2 context:(id)arg3;
++ (id)newCloudObjectForRecord:(id)arg1 accountID:(id)arg2 context:(id)arg3;
++ (id)existingCloudObjectForRecordID:(id)arg1 accountID:(id)arg2 context:(id)arg3;
 @property _Bool isRecoveringCryptoWrappedKey; // @synthesize isRecoveringCryptoWrappedKey;
 @property(nonatomic) _Bool shouldAddMediaAsynchronously; // @synthesize shouldAddMediaAsynchronously;
 @property(retain, nonatomic) id reservedForTextStorage; // @synthesize reservedForTextStorage=_reservedForTextStorage;
@@ -100,6 +113,7 @@
 @property(copy, nonatomic) TTVectorMultiTimestamp *lastNotifiedTimestamp; // @synthesize lastNotifiedTimestamp=_lastNotifiedTimestamp;
 @property(readonly, nonatomic) TTVectorMultiTimestamp *timestamp;
 - (void)setLegacyManagedObjectID:(id)arg1;
+- (void)setMarkedForDeletion:(_Bool)arg1;
 @property(retain, nonatomic) ICFolder *folder; // @dynamic folder;
 @property(retain, nonatomic) ICAccount *account; // @dynamic account;
 - (void)setNeedsInitialFetchFromCloud:(_Bool)arg1;
@@ -119,6 +133,7 @@
 - (_Bool)supportsEncryptedValuesDictionary;
 - (void)setCryptoTag:(id)arg1;
 - (void)setCryptoInitializationVector:(id)arg1;
+- (void)changePinStatusIfPossible;
 @property(nonatomic) _Bool shouldShowHighlights;
 @property(readonly, nonatomic) _Bool hasUnreadChanges;
 - (_Bool)hasLoadedDocument;
@@ -132,6 +147,8 @@
 - (_Bool)hasThumbnailImage;
 - (void)enumerateAttachmentsInOrderUsingBlock:(CDUnknownBlockType)arg1;
 - (id)attachmentsInOrder;
+- (id)allNoteTextAttachmentsIncludingSubAttachments:(_Bool)arg1;
+- (id)allAttachmentsIncludingSubAttachments;
 - (id)visibleTopLevelAttachments;
 - (id)visibleAttachments;
 - (_Bool)containsAttachmentsUnsupportedInPasswordProtection;
@@ -143,6 +160,11 @@
 - (void)markForDeletion;
 - (_Bool)requiresLegacyTombstoneAfterDeletion;
 - (_Bool)allowsNewTextLength:(unsigned long long)arg1;
+- (_Bool)isSharable;
+- (_Bool)isPinnable;
+- (_Bool)isMovable;
+- (_Bool)isLockable;
+- (_Bool)isDeletable;
 - (_Bool)isEditable;
 - (_Bool)isVisible;
 - (_Bool)wantsUndoCommands;
@@ -161,8 +183,11 @@
 - (id)uuid;
 - (id)attributedString;
 - (id)mergeableString;
+- (_Bool)shouldSyncMinimumSupportedNotesVersion;
+- (long long)intrinsicNotesVersion;
 - (void)didRefresh:(_Bool)arg1;
 - (void)willRefresh:(_Bool)arg1;
+- (void)didSave;
 - (void)dealloc;
 - (_Bool)shouldReleaseDocumentWhenTurningIntoFault;
 - (void)willTurnIntoFault;
@@ -174,25 +199,29 @@
 - (id)shareType;
 - (id)shareTitle;
 - (_Bool)canBeRootShareObject;
+- (_Bool)isSharedViaICloudFolder;
 - (_Bool)isSharedViaICloud;
 - (_Bool)canBeSharedViaICloud;
+- (id)childCloudObjectsForMinimumSupportedVersionPropagation;
 - (id)childCloudObjects;
 - (id)parentCloudObject;
 - (void)willAddOrRemovePassword;
+- (id)trashFolderIfDeleted;
 - (id)attachmentWithIdentifier:(id)arg1;
 - (void)addMediaToAttachment:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (id)addAttachmentWithUTI:(id)arg1 data:(id)arg2 filename:(id)arg3 updateFileBasedAttributes:(_Bool)arg4;
 - (id)addAttachmentWithUTI:(id)arg1 data:(id)arg2 filename:(id)arg3;
 - (id)addAttachment;
+- (id)addInlineDrawingAttachment;
 - (id)addTableAttachmentWithTableData:(id)arg1;
-- (id)addTableAttachmentWithRows:(id)arg1;
 - (id)addTableAttachmentWithText:(id)arg1;
 - (id)addTableAttachment;
-- (id)addGalleryAttachment;
+- (id)addGalleryAttachmentWithIdentifier:(id)arg1;
 - (id)addURLAttachmentWithURL:(id)arg1;
 - (id)addAttachmentWithUTI:(id)arg1 data:(id)arg2 filenameExtension:(id)arg3;
 - (id)addAttachmentWithUTI:(id)arg1 withURL:(id)arg2 updateFileBasedAttributes:(_Bool)arg3;
 - (id)addAttachmentWithUTI:(id)arg1 withURL:(id)arg2;
+- (id)addAttachmentWithUTI:(id)arg1 identifier:(id)arg2;
 - (id)addAttachmentWithUTI:(id)arg1;
 - (id)addAttachmentWithRemoteFileURL:(id)arg1;
 - (id)addAttachmentWithFileWrapper:(id)arg1;
@@ -203,14 +232,17 @@
 - (void)addShareParticipantsToAttributeSet:(id)arg1;
 - (id)searchableItemAttributeSet;
 - (id)searchDomainIdentifier;
-- (id)searchableItemIdentifier;
-- (id)searchableContentKeyPaths;
+- (id)searchIndexingIdentifier;
+- (id)contentIdentifier;
+@property(readonly, nonatomic) NSArray *noteCellKeyPaths;
+- (_Bool)prefersLightBackground;
 - (id)searchableString;
 - (id)authorsExcludingCurrentUser;
 - (id)dateForCurrentSortType;
 - (_Bool)isHiddenFromSearch;
 - (id)trimmedTitle;
 - (id)accountName;
+- (id)folderNameForNoteList;
 - (id)folderName;
 - (_Bool)searchResultCanBeDeletedFromNoteContext;
 - (unsigned long long)searchResultType;
@@ -229,16 +261,19 @@
 - (_Bool)hasAllMandatoryFields;
 - (void)fixBrokenReferences;
 - (_Bool)isInICloudAccount;
-- (void)mergeDataFromUserSpecificRecord:(id)arg1;
+- (void)mergeDataFromUserSpecificRecord:(id)arg1 accountID:(id)arg2;
 - (id)newlyCreatedUserSpecificRecord;
+- (id)newlyCreatedRecordWithObfuscator:(id)arg1;
 - (id)newlyCreatedRecord;
-- (void)mergeFoldersFromRecord:(id)arg1;
+- (void)mergeFoldersFromRecord:(id)arg1 account:(id)arg2;
+- (id)folderReferenceFromRecord:(id)arg1;
 - (void)mergeTextData:(id)arg1 record:(id)arg2 mergePolicy:(long long)arg3;
 - (void)mergeTextDataFromRecord:(id)arg1 mergePolicy:(long long)arg2;
 - (void)mergeEncryptedDataFromRecord:(id)arg1;
-- (void)mergeDataFromRecord:(id)arg1 withMergePolicy:(long long)arg2;
-- (void)mergeDataFromRecord:(id)arg1;
-- (void)objectWasFetchedFromCloudWithRecord:(id)arg1;
+- (void)mergeDataFromRecord:(id)arg1 mergePolicy:(long long)arg2 account:(id)arg3;
+- (void)mergeDataFromRecord:(id)arg1 account:(id)arg2;
+- (void)mergeDataFromRecord:(id)arg1 accountID:(id)arg2;
+- (void)objectWasFetchedFromCloudWithRecord:(id)arg1 accountID:(id)arg2;
 - (id)recordType;
 - (id)recordZoneName;
 
@@ -264,6 +299,7 @@
 @property(retain, nonatomic) ICNoteData *noteData; // @dynamic noteData;
 @property(retain, nonatomic) NSNumber *noteHasChanges; // @dynamic noteHasChanges;
 @property(nonatomic) short paperStyleType; // @dynamic paperStyleType;
+@property(nonatomic) short preferredBackgroundType; // @dynamic preferredBackgroundType;
 @property(retain, nonatomic) ICFolder *primitiveFolder; // @dynamic primitiveFolder;
 @property(retain, nonatomic) NSData *replicaIDToUserIDDictData; // @dynamic replicaIDToUserIDDictData;
 @property(retain, nonatomic) NSString *selectedInkColorString; // @dynamic selectedInkColorString;

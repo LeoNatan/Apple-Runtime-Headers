@@ -71,10 +71,10 @@
 - (id)appendBool:(_Bool)arg1 withName:(id)arg2;
 - (void)appendString:(id)arg1 withName:(id)arg2 skipIfEmpty:(_Bool)arg3;
 - (void)appendString:(id)arg1 withName:(id)arg2;
+- (id)appendObjectWithName:(id)arg1 formatBlock:(CDUnknownBlockType)arg2;
 - (id)appendObject:(id)arg1 withName:(id)arg2 skipIfNil:(_Bool)arg3;
 - (id)appendObject:(id)arg1 withName:(id)arg2;
 - (id)appendSuper;
-- (id)_activeComponentString;
 - (id)initWithObject:(id)arg1;
 
 @end

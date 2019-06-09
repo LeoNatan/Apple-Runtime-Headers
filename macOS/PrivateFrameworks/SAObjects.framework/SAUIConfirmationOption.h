@@ -8,7 +8,7 @@
 
 #import <SAObjects/SAAceSerializable-Protocol.h>
 
-@class NSArray, NSString;
+@class NSArray, NSNumber, NSString;
 
 @interface SAUIConfirmationOption : AceObject <SAAceSerializable>
 {
@@ -17,7 +17,10 @@
 + (id)confirmationOptionWithDictionary:(id)arg1 context:(id)arg2;
 + (id)confirmationOption;
 @property(copy, nonatomic) NSString *type;
+@property(copy, nonatomic) NSNumber *speechDuration;
 @property(copy, nonatomic) NSString *label;
+@property(copy, nonatomic) NSString *iconType;
+@property(copy, nonatomic) NSString *iconLabel;
 @property(copy, nonatomic) NSArray *commands;
 @property(nonatomic) BOOL active;
 - (id)encodedClassName;

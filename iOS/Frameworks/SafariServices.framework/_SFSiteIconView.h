@@ -6,7 +6,8 @@
 
 #import <UIKit/UIImageView.h>
 
-@class UIImage, UILabel, WebBookmark;
+@class CALayer, UIColor, UIImage, UILabel, WebBookmark;
+@protocol _SFSiteIconViewUpdateObserver;
 
 @interface _SFSiteIconView : UIImageView
 {
@@ -14,17 +15,32 @@
     UILabel *_monogramLabel;
     long long _state;
     id _touchIconRequestToken;
+    CALayer *_imageLayer;
+    CALayer *_shadowLayer;
+    CALayer *_backgroundLayer;
+    CALayer *_borderLayer;
+    _Bool _modernImageIsTransparent;
+    UIColor *_internalBackgroundColor;
+    _Bool _shouldUseModernStyling;
+    _Bool _shouldShowDropShadow;
     WebBookmark *_bookmark;
     UIImage *_leadingImage;
+    id <_SFSiteIconViewUpdateObserver> _updateObserver;
 }
 
+@property(nonatomic) _Bool shouldShowDropShadow; // @synthesize shouldShowDropShadow=_shouldShowDropShadow;
+@property(nonatomic) _Bool shouldUseModernStyling; // @synthesize shouldUseModernStyling=_shouldUseModernStyling;
+@property(nonatomic) __weak id <_SFSiteIconViewUpdateObserver> updateObserver; // @synthesize updateObserver=_updateObserver;
 @property(retain, nonatomic) UIImage *leadingImage; // @synthesize leadingImage=_leadingImage;
 @property(retain, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
 - (void).cxx_destruct;
+- (void)_updateBackgroundLayerBackgroundColor;
+- (id)_shadowImage;
 - (void)_setState:(long long)arg1;
 - (void)_setMonogramWithString:(id)arg1 backgroundColor:(id)arg2;
 - (long long)_inferredIconSize;
 - (void)_updateMonogramLabelSizeAndFont;
+- (double)_monogramFontSize;
 - (id)_tintedFolderImage;
 - (void)_setGlyph:(id)arg1 withBackgroundColor:(id)arg2;
 - (void)_clearGlyph;
@@ -32,7 +48,9 @@
 - (void)_setImage:(id)arg1 withBackgroundColor:(id)arg2;
 - (void)_cancelTouchIconRequest;
 - (void)_updateSiteIconViewWithTouchIconResponse:(id)arg1;
+- (void)_displayDefaultFolderIcon;
 - (void)updateBookmarkData;
+- (struct CGRect)_imageFrame;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)dealloc;

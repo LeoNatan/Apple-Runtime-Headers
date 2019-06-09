@@ -10,7 +10,7 @@
 #import <ITMLKit/IKJSInspectorControllerDelegate-Protocol.h>
 #import <ITMLKit/ISURLOperationDelegate-Protocol.h>
 
-@class IKAppCache, IKJSArrayBufferStore, IKJSFoundation, IKJSInspectorController, IKViewElementRegistry, JSContext, NSError, NSMutableArray, NSNumber, NSString, NSThread, NSURL;
+@class IKAppCache, IKAppReloadContext, IKJSApplication, IKJSArrayBufferStore, IKJSFoundation, IKJSInspectorController, IKJSViewModelService, IKJSWeakMap, IKViewElementRegistry, JSContext, NSError, NSMutableArray, NSNumber, NSString, NSThread, NSURL;
 @protocol IKAppContextDelegate, IKAppScriptFallbackHandler, IKApplication, OS_dispatch_source;
 
 @interface IKAppContext : NSObject <ISURLOperationDelegate, IKAppCacheDelegate, IKJSInspectorControllerDelegate>
@@ -47,11 +47,14 @@
     NSMutableArray *_onStartQueue;
     NSString *_responseScript;
     NSError *_responseError;
-    id _reloadData;
+    IKAppReloadContext *_reloadContext;
     NSMutableArray *_pendingQueue;
     NSURL *_resolvedBootURL;
     NSMutableArray *_postEvaluationBlocks;
+    IKJSApplication *_jsApp;
     IKJSFoundation *_jsFoundation;
+    IKJSWeakMap *_jsWeakMap;
+    IKJSViewModelService *_jsViewModelService;
     IKViewElementRegistry *_viewElementRegistry;
     IKJSInspectorController *_webInspectorController;
 }
@@ -63,12 +66,15 @@
 @property(readonly, nonatomic) _Bool appUsesDefaultStyleSheets; // @synthesize appUsesDefaultStyleSheets=_appUsesDefaultStyleSheets;
 @property(readonly, nonatomic) IKViewElementRegistry *viewElementRegistry; // @synthesize viewElementRegistry=_viewElementRegistry;
 @property(nonatomic, getter=isPrivileged) _Bool privileged; // @synthesize privileged=_privileged;
+@property(retain, nonatomic) IKJSViewModelService *jsViewModelService; // @synthesize jsViewModelService=_jsViewModelService;
+@property(retain, nonatomic) IKJSWeakMap *jsWeakMap; // @synthesize jsWeakMap=_jsWeakMap;
 @property(retain, nonatomic) IKJSFoundation *jsFoundation; // @synthesize jsFoundation=_jsFoundation;
+@property(retain, nonatomic) IKJSApplication *jsApp; // @synthesize jsApp=_jsApp;
 @property(retain, nonatomic) NSMutableArray *postEvaluationBlocks; // @synthesize postEvaluationBlocks=_postEvaluationBlocks;
 @property(readonly, copy, nonatomic) NSURL *resolvedBootURL; // @synthesize resolvedBootURL=_resolvedBootURL;
 @property(retain, nonatomic) NSMutableArray *pendingQueue; // @synthesize pendingQueue=_pendingQueue;
 @property(getter=isRunning) _Bool running; // @synthesize running=_running;
-@property(retain, nonatomic) id reloadData; // @synthesize reloadData=_reloadData;
+@property(retain, nonatomic) IKAppReloadContext *reloadContext; // @synthesize reloadContext=_reloadContext;
 @property(retain, nonatomic) NSError *responseError; // @synthesize responseError=_responseError;
 @property(copy, nonatomic) NSString *responseScript; // @synthesize responseScript=_responseScript;
 @property(nonatomic) _Bool canAccessPendingQueue; // @synthesize canAccessPendingQueue=_canAccessPendingQueue;

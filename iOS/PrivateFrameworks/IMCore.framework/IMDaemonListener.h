@@ -42,6 +42,13 @@
 @property(readonly, nonatomic) NSMutableDictionary *_contexts; // @synthesize _contexts;
 - (void).cxx_destruct;
 - (void)oneTimeCodesDidChange:(id)arg1;
+- (void)pendingNicknamesOrHandledNicknamesDidChange;
+- (void)updatePersonalNickname:(id)arg1;
+- (void)updateNicknameHandlesSharing:(id)arg1 handlesBlocked:(id)arg2;
+- (void)handlesSharingNicknamesDidChange;
+- (void)updatePendingNicknameUpdates:(id)arg1 handledNicknameUpdates:(id)arg2;
+- (void)updateNicknameData:(id)arg1;
+- (void)nicknameRequestResponse:(id)arg1 encodedNicknameData:(id)arg2;
 - (void)receivedUrgentRequestForMessages:(id)arg1;
 - (void)returnMOCEnabledState:(unsigned long long)arg1;
 - (void)updateCloudKitStateWithDictionary:(id)arg1;
@@ -57,8 +64,6 @@
 - (void)didFetchRampState:(id)arg1;
 - (void)didFetchSyncStateStats:(id)arg1;
 - (void)databaseChatSpamUpdated:(id)arg1;
-- (void)databaseNoLongerFull;
-- (void)databaseFull;
 - (void)databaseUpdated:(id)arg1;
 - (void)_deferredSetup:(id)arg1;
 - (void)setupComplete:(_Bool)arg1 info:(id)arg2;
@@ -87,7 +92,6 @@
 - (void)fileTransfer:(id)arg1 updatedWithProperties:(id)arg2;
 - (void)fileTransfers:(id)arg1 createdWithLocalPaths:(id)arg2;
 - (void)fileTransfer:(id)arg1 createdWithProperties:(id)arg2;
-- (void)standaloneFileTransferRegistered:(id)arg1;
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 messagesReceived:(id)arg5;
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 messageReceived:(id)arg5;
 - (void)account:(id)arg1 chat:(id)arg2 style:(unsigned char)arg3 chatProperties:(id)arg4 invitationReceived:(id)arg5;

@@ -46,8 +46,8 @@
 - (void)actionSlider:(id)arg1 didUpdateSlideWithValue:(double)arg2;
 - (void)actionSliderDidBeginSlide:(id)arg1;
 - (void)layoutSubviews;
-- (void)hideAnimated:(_Bool)arg1;
-- (void)showAnimated:(_Bool)arg1;
+- (void)hideAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)showAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 vibrantSettings:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -6,7 +6,7 @@
 
 #import <PlacesKit/NSObject-Protocol.h>
 
-@class CLBeaconRegion, CLHeading, CLLocation, CLLocationManager, CLRegion, CLVisit, NSArray, NSError;
+@class CLBeaconIdentityConstraint, CLBeaconRegion, CLHeading, CLLocation, CLLocationManager, CLRegion, CLVisit, NSArray, NSError;
 
 @protocol CLLocationManagerDelegate <NSObject>
 
@@ -21,6 +21,8 @@
 - (void)locationManager:(CLLocationManager *)arg1 didFailWithError:(NSError *)arg2;
 - (void)locationManager:(CLLocationManager *)arg1 didExitRegion:(CLRegion *)arg2;
 - (void)locationManager:(CLLocationManager *)arg1 didEnterRegion:(CLRegion *)arg2;
+- (void)locationManager:(CLLocationManager *)arg1 didFailRangingBeaconsForConstraint:(CLBeaconIdentityConstraint *)arg2 error:(NSError *)arg3;
+- (void)locationManager:(CLLocationManager *)arg1 didRangeBeacons:(NSArray *)arg2 satisfyingConstraint:(CLBeaconIdentityConstraint *)arg3;
 - (void)locationManager:(CLLocationManager *)arg1 rangingBeaconsDidFailForRegion:(CLBeaconRegion *)arg2 withError:(NSError *)arg3;
 - (void)locationManager:(CLLocationManager *)arg1 didRangeBeacons:(NSArray *)arg2 inRegion:(CLBeaconRegion *)arg3;
 - (void)locationManager:(CLLocationManager *)arg1 didDetermineState:(long long)arg2 forRegion:(CLRegion *)arg3;

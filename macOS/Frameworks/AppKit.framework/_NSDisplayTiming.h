@@ -11,22 +11,25 @@ __attribute__((visibility("hidden")))
 {
     unsigned long long _offset;
     unsigned long long _interval;
-    unsigned long long _latency;
+    unsigned long long _submissionDelta;
+    unsigned long long _wakeUpDelta;
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
-- (unsigned long long)submissionTimeBeforeTime:(unsigned long long)arg1;
-- (unsigned long long)submissionTimeAfterTime:(unsigned long long)arg1;
-- (unsigned long long)displayTimeForSubmissionTime:(unsigned long long)arg1;
-- (unsigned long long)submissionTimeForDisplayTime:(unsigned long long)arg1;
-- (unsigned long long)displayTimeBeforeTime:(unsigned long long)arg1;
-- (unsigned long long)displayTimeAfterTime:(unsigned long long)arg1;
+- (unsigned long long)interval;
+- (unsigned long long)presentationTimeForWakeUpTime:(unsigned long long)arg1;
+- (unsigned long long)submissionDeadlineForWakeUpTime:(unsigned long long)arg1;
+- (unsigned long long)wakeUpTimeAfterTime:(unsigned long long)arg1;
+- (unsigned long long)submissionDeadlineAfterTime:(unsigned long long)arg1;
+- (unsigned long long)presentationTimeForSubmissionDeadline:(unsigned long long)arg1;
+- (unsigned long long)submissionDeadlineForPresentationTime:(unsigned long long)arg1;
+- (unsigned long long)presentationTimeAfterTime:(unsigned long long)arg1;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
-- (id)initWithAnchorTime:(unsigned long long)arg1 interval:(unsigned long long)arg2 latency:(unsigned long long)arg3;
+- (id)initWithAnchorTime:(unsigned long long)arg1 interval:(unsigned long long)arg2 submissionDelta:(unsigned long long)arg3 wakeUpDelta:(unsigned long long)arg4;
 
 @end
 

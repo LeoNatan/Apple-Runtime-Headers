@@ -37,6 +37,8 @@
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)dealloc;
 - (id)init;
+- (void)invalidateAssertionOfType:(unsigned int)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)acquireAssertionOfType:(unsigned int)arg1 withIdentifier:(id)arg2 reason:(id)arg3 handler:(CDUnknownBlockType)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

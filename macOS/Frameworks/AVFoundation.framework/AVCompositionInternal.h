@@ -6,22 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class AVAssetInspector, AVAssetInspectorLoader, NSDictionary, NSMutableArray;
+@class AVAssetInspector, AVAssetInspectorLoader, AVDispatchOnce, NSDictionary, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface AVCompositionInternal : NSObject
 {
     struct OpaqueFigMutableComposition *mutableComposition;
-    long long formatReaderInitializationOnce;
-    long long assetInspectorInitializationOnce;
-    long long tracksInitializationOnce;
+    AVDispatchOnce *formatReaderInitializationOnce;
+    AVDispatchOnce *assetInspectorInitializationOnce;
+    AVDispatchOnce *tracksInitializationOnce;
     struct OpaqueFigFormatReader *formatReader;
     AVAssetInspectorLoader *assetInspectorLoader;
     AVAssetInspector *assetInspector;
     struct CGSize naturalSize;
     NSDictionary *URLAssetInitializationOptions;
     NSMutableArray *tracks;
-    long long figAssetInitializationOnce;
+    AVDispatchOnce *figAssetInitializationOnce;
     struct OpaqueFigAsset *figAsset;
 }
 

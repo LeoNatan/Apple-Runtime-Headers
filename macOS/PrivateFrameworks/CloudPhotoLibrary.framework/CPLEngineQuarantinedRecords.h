@@ -26,6 +26,7 @@
 - (BOOL)resetRejectedRecordsWithError:(id *)arg1;
 - (BOOL)bumpRejectedRecords:(id)arg1 error:(id *)arg2;
 - (void)_sendQuarantineFeedbackWithRecordClass:(Class)arg1 reason:(id)arg2;
+- (unsigned long long)countOfQuarantinedRecordsInScopeWithIdentifier:(id)arg1;
 - (unsigned long long)countOfQuarantinedRecords;
 - (BOOL)isRecordWithScopedIdentifierQuarantined:(id)arg1;
 - (BOOL)removeQuarantinedRecordsWithScopedIdentifier:(id)arg1 notify:(BOOL)arg2 error:(id *)arg3;

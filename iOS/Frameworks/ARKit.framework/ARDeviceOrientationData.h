@@ -6,13 +6,16 @@
 
 #import <objc/NSObject.h>
 
+#import <ARKit/ARDictionaryCoding-Protocol.h>
+#import <ARKit/ARMetadataWrapperCoding-Protocol.h>
 #import <ARKit/ARMutableSensorData-Protocol.h>
 #import <ARKit/NSSecureCoding-Protocol.h>
 
-@class NSString;
+@class CMDeviceMotion, NSString;
 
-@interface ARDeviceOrientationData : NSObject <ARMutableSensorData, NSSecureCoding>
+@interface ARDeviceOrientationData : NSObject <ARDictionaryCoding, ARMetadataWrapperCoding, ARMutableSensorData, NSSecureCoding>
 {
+    CMDeviceMotion *_deviceMotion;
     double _timestamp;
     CDStruct_2d7b3170 _rotationMatrix;
 }
@@ -20,15 +23,24 @@
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) CDStruct_2d7b3170 rotationMatrix; // @synthesize rotationMatrix=_rotationMatrix;
 @property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
+@property(retain, nonatomic) CMDeviceMotion *deviceMotion; // @synthesize deviceMotion=_deviceMotion;
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithMetadataWrapper:(id)arg1;
+- (id)encodeToMetadataWrapper;
+- (id)initWithDictionary:(id)arg1;
+- (id)encodeToDictionary;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+// Error parsing type for property rotationMatrixENU:
+// Property attributes: T{?=[4]},R,N
+
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

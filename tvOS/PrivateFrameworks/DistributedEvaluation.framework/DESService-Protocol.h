@@ -14,8 +14,7 @@
 - (void)fetchTelemetryForBundleId:(NSString *)arg1 completion:(void (^)(NSDictionary *, NSError *))arg2;
 - (void)runLiveEvaluationForAllBundlesWithBaseURL:(NSURL *)arg1 localeIdentifier:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)runLiveEvaluationForBundleId:(NSString *)arg1 baseURL:(NSURL *)arg2 localeIdentifier:(NSString *)arg3 completion:(void (^)(NSError *))arg4;
-- (void)runEvaluationForBundleId:(NSString *)arg1 recipe:(NSDictionary *)arg2 recordUUID:(NSUUID *)arg3 attachments:(NSArray *)arg4 completion:(void (^)(NSDictionary *, NSData *, NSError *))arg5;
-- (void)runEvaluationForBundleId:(NSString *)arg1 recipe:(NSDictionary *)arg2 recordInfo:(NSDictionary *)arg3 recordData:(NSData *)arg4 recordUUID:(NSUUID *)arg5 attachments:(NSArray *)arg6 completion:(void (^)(NSDictionary *, NSData *, NSError *))arg7;
+- (void)runEvaluationForBundleId:(NSString *)arg1 recipePath:(NSString *)arg2 recordUUIDs:(NSArray *)arg3 attachments:(NSArray *)arg4 completion:(void (^)(NSDictionary *, NSData *, NSURL *, NSError *))arg5;
 - (void)saveCoreDuetEvent:(_DKEvent *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)deleteSavedRecordForBundleId:(NSString *)arg1 identfier:(NSUUID *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)deleteAllSavedRecordsForBundleId:(NSString *)arg1 completion:(void (^)(NSError *))arg2;

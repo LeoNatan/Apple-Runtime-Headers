@@ -21,6 +21,7 @@
 + (id)participantWithName:(id)arg1 url:(id)arg2;
 @property(readonly, nonatomic) EKCalendarItem *owner; // @synthesize owner=_owner;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (id)semanticIdentifier;
 - (id)setInviterNameString;
 @property(copy, nonatomic) NSString *inviterNameString; // @dynamic inviterNameString;
@@ -31,8 +32,6 @@
 - (void)setProposedStartDate:(id)arg1;
 - (id)proposedStartDate;
 - (_Bool)isLocationRoom;
-- (void *)ABRecordWithAddressBook:(void *)arg1;
-@property(readonly, nonatomic) NSPredicate *contactPredicate;
 - (id)nameComponents;
 - (_Bool)isEqualToParticipant:(id)arg1;
 - (void)setURL:(id)arg1;
@@ -55,10 +54,10 @@
 @property(readonly, nonatomic) NSString *UUID;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 phoneNumber:(id)arg3 url:(id)arg4;
+@property(readonly, nonatomic) NSPredicate *contactPredicate; // @dynamic contactPredicate;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

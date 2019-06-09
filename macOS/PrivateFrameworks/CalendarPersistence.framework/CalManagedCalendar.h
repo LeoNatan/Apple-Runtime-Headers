@@ -19,6 +19,22 @@
 + (void)enableChangeRequestNotifications;
 + (id)pathExtension;
 + (id)entityName;
+- (void)setSubscriptionNotes:(id)arg1;
+- (id)subscriptionNotes;
+- (void)setSubscriptionTitle:(id)arg1;
+- (id)subscriptionTitle;
+- (void)setSubscriptionID:(id)arg1;
+- (id)subscriptionID;
+- (id)refreshDate;
+- (void)setSubscriptionURL:(id)arg1;
+@property(readonly, nonatomic) NSURL *subscriptionURL;
+- (void)setRefreshInterval:(double)arg1;
+- (double)refreshInterval;
+- (void)setRemoveAttachments:(BOOL)arg1;
+- (BOOL)removeAttachments;
+- (void)setRemoveAlarms:(BOOL)arg1;
+- (BOOL)removeAlarms;
+- (void)setIsAffectingAvailability:(BOOL)arg1;
 @property(readonly) BOOL isAffectingAvailability;
 - (id)enclosingSource;
 @property(readonly, nonatomic) NSString *serverPath;
@@ -37,7 +53,6 @@
 @property(readonly, nonatomic) NSString *defaultOrganizerNameForNewItems;
 @property(readonly, nonatomic) BOOL isShareable;
 - (void)setPublishURL:(id)arg1;
-@property(readonly, nonatomic) NSURL *subscriptionURL;
 @property(readonly, copy, nonatomic) NSURL *publishURL;
 @property(readonly, nonatomic) NSURL *prePublishURL;
 @property(readonly, nonatomic) NSSet *sharedOwnerAddresses;
@@ -90,6 +105,7 @@
 - (BOOL)containsEvents;
 - (id)_itemPredicate;
 - (void)prefetchRelationshipsForDelete;
+@property long long maxAttendees;
 @property long long notificationCount;
 @property BOOL isTaskContainer;
 @property BOOL isEventContainer;
@@ -101,6 +117,8 @@
 - (id)iCalendarDocumentWithID:(id)arg1 name:(id)arg2 description:(id)arg3 color:(id)arg4 options:(unsigned long long)arg5;
 - (void)setNeedsPublish:(BOOL)arg1;
 - (id)calendarSource;
+- (void)importFiles:(id)arg1 intoContext:(id)arg2 importOptionsForInsert:(unsigned long long)arg3 importOptionsForUpdate:(unsigned long long)arg4 processEvents:(BOOL)arg5 processReminders:(BOOL)arg6 callbackQueue:(id)arg7 progressBlock:(CDUnknownBlockType)arg8 abortForIssueBlock:(CDUnknownBlockType)arg9 finishBlock:(CDUnknownBlockType)arg10 synchronously:(BOOL)arg11;
+- (void)syncImportFiles:(id)arg1 intoContext:(id)arg2 importOptionsForInsert:(unsigned long long)arg3 importOptionsForUpdate:(unsigned long long)arg4 processEvents:(BOOL)arg5 processReminders:(BOOL)arg6 progressBlock:(CDUnknownBlockType)arg7 abortForIssueBlock:(CDUnknownBlockType)arg8 finishBlock:(CDUnknownBlockType)arg9;
 - (void)asyncImportFiles:(id)arg1 intoContext:(id)arg2 importOptionsForInsert:(unsigned long long)arg3 importOptionsForUpdate:(unsigned long long)arg4 processEvents:(BOOL)arg5 processReminders:(BOOL)arg6 callbackQueue:(id)arg7 progressBlock:(CDUnknownBlockType)arg8 abortForIssueBlock:(CDUnknownBlockType)arg9 finishBlock:(CDUnknownBlockType)arg10;
 - (void)asyncImportICSDocument:(id)arg1 importOptionsForInsert:(unsigned long long)arg2 importOptionsForUpdate:(unsigned long long)arg3 processEvents:(BOOL)arg4 processReminders:(BOOL)arg5 callbackQueue:(id)arg6 progressBlock:(CDUnknownBlockType)arg7 abortForIssueBlock:(CDUnknownBlockType)arg8 finishBlock:(CDUnknownBlockType)arg9;
 - (void)blockingImportICSDocument:(id)arg1 importOptionsForInsert:(unsigned long long)arg2 importOptionsForUpdate:(unsigned long long)arg3 processEvents:(BOOL)arg4 processReminders:(BOOL)arg5 progressBlock:(CDUnknownBlockType)arg6 abortForIssueBlock:(CDUnknownBlockType)arg7 finishBlock:(CDUnknownBlockType)arg8;

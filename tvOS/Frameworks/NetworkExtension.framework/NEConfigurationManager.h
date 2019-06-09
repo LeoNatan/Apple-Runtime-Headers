@@ -21,6 +21,7 @@
     int _changedNotifyToken;
     NSString *_pluginType;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_queue> *_outerQueue;
     NSDictionary *_currentIndex;
     NSObject<OS_dispatch_queue> *_changedQueue;
     CDUnknownBlockType _changedHandler;
@@ -35,7 +36,7 @@
 }
 
 + (void)disableConfiguration:(id)arg1 onDemandOnly:(_Bool)arg2;
-+ (long long)configuration:(id)arg1 overlapsWithOtherConfiguration:(id)arg2;
++ (long long)configuration:(id)arg1 overlapsWithOtherConfiguration:(id)arg2 sameTypeCount:(unsigned long long *)arg3;
 + (_Bool)configurationIsEnabled:(id)arg1;
 + (void)updateFlags:(unsigned long long *)arg1 withConfiguration:(id)arg2;
 + (id)sharedManagerForAllUsers;
@@ -57,19 +58,20 @@
 @property(retain) NSObject<OS_dispatch_queue> *changedQueue; // @synthesize changedQueue=_changedQueue;
 @property(retain) NSDictionary *currentIndex; // @synthesize currentIndex=_currentIndex;
 @property int changedNotifyToken; // @synthesize changedNotifyToken=_changedNotifyToken;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *outerQueue; // @synthesize outerQueue=_outerQueue;
 @property(readonly) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly) NSString *pluginType; // @synthesize pluginType=_pluginType;
 - (void).cxx_destruct;
+- (id)getCurrentUserUUIDForConfigurationID:(id)arg1 fromIndex:(id)arg2;
 - (void)upgradeLegacyPluginConfigurationsWithUpgradeInfo:(id)arg1 completionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)fetchCarrierBundleNATKeepAliveIntervalOverCell:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchUpgradeInfoForPluginType:(id)arg1 completionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)fetchClientListenerWithBundleID:(id)arg1 completionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)showObsoleteAppAlert;
 - (void)triggerLocalAuthenticationForConfigurationWithID:(id)arg1 withCompletionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)copyIdentities:(id)arg1 fromDomain:(long long)arg2 withCompletionQueue:(id)arg3 handler:(CDUnknownBlockType)arg4;
-- (void)handleApplicationsRemoved:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)handleApplicationsRemoved:(id)arg1 completionQueue:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)handlePluginTypesRemoved:(id)arg1 configuration:(id)arg2 vpn:(id)arg3 updateSCPreferences:(struct __SCPreferences *)arg4;
-- (void)handleFileRemovedWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)handleFileRemovedWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setChangedQueue:(id)arg1 andHandler:(CDUnknownBlockType)arg2;
 - (void)removeConfiguration:(id)arg1 withCompletionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)saveConfiguration:(id)arg1 withCompletionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;
@@ -79,14 +81,14 @@
 - (void)loadConfigurations:(id)arg1 withFilter:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)loadConfigurationsInternal:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)loadIndexWithFilter:(id)arg1 completionQueue:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)syncWithSystemConfigurationWithAppNameCallback:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)syncConfigurationsWithSC:(id)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)updateSCPreferencesSignatureOnDisk;
 - (void)removeConfigurationFromDisk:(id)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)removeConfigurationFromDisk:(id)arg1 updateSCPreferences:(struct __SCPreferences *)arg2;
 - (void)saveConfigurationToDisk:(id)arg1 currentSignature:(id)arg2 userUUID:(id)arg3 isUpgrade:(_Bool)arg4 completionQueue:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (id)saveConfigurationToDisk:(id)arg1 updateSCPreferences:(struct __SCPreferences *)arg2 currentSignature:(id)arg3 userUUID:(id)arg4 notifyNow:(_Bool)arg5 isUpgrade:(_Bool)arg6;
 - (void)postChangeNotification;
-- (void)postChangeNotificationWithGeneration:(long long)arg1 andFlags:(unsigned long long)arg2;
+- (void)postChangeNotificationWithGeneration:(long long)arg1 andFlags:(unsigned long long)arg2 onlyIfChanged:(_Bool)arg3;
 - (id)makeMutableCopyOfIndex:(id)arg1;
 - (id)filterIndexWithFilter:(id)arg1;
 - (id)readIndexFromDiskWithError:(id *)arg1;

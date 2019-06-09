@@ -24,7 +24,7 @@
 @property(nonatomic) BOOL didValidateHIID; // @synthesize didValidateHIID;
 - (void).cxx_destruct;
 - (void)stream:(id)arg1 handleEvent:(unsigned long long)arg2;
-- (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 forDeviceID:(id)arg3;
+- (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 andDeviceID:(id)arg3;
 - (void)updateProperty:(unsigned long long)arg1 forDeviceID:(id)arg2;
 - (void)netServiceDidStop:(id)arg1;
 - (void)netService:(id)arg1 didNotPublish:(id)arg2;
@@ -39,7 +39,6 @@
 - (void)validatePairedAid;
 - (BOOL)shouldAcceptConnection;
 - (double)searchTimeout;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

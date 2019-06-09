@@ -11,7 +11,6 @@
 
 @interface MMPinFieldView : NSView
 {
-    id <MMPinFieldViewDelegate> _delegate;
     NSImage *_digitField;
     NSImage *_digitFieldHightlight;
     NSArray *_pinFieldBoxArray;
@@ -24,28 +23,32 @@
     BOOL _enabled;
     BOOL _echosBullets;
     BOOL _supportsRTL;
-    NSButton *_nextButtonResponder;
     long long _pinLength;
     struct {
         unsigned int pinFieldViewTextDidChange:1;
         unsigned int pinFieldViewTextDidComplete:1;
         unsigned int padding:6;
     } _delegateFlags;
+    id <MMPinFieldViewDelegate> _delegate;
+    NSButton *_nextButtonResponder;
 }
 
 + (struct CGSize)viewSizeWithLength:(long long)arg1;
 + (struct CGSize)digitViewSizeWithLength:(long long)arg1;
-@property NSButton *nextButtonResponder; // @synthesize nextButtonResponder=_nextButtonResponder;
+@property(retain) NSButton *nextButtonResponder; // @synthesize nextButtonResponder=_nextButtonResponder;
 @property BOOL supportsRTL; // @synthesize supportsRTL=_supportsRTL;
-@property BOOL echosBullets; // @synthesize echosBullets=_echosBullets;
-@property id <MMPinFieldViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) BOOL echosBullets; // @synthesize echosBullets=_echosBullets;
+@property(nonatomic) __weak id <MMPinFieldViewDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (int)activeInputIndex;
 - (struct CGRect)rectForIndex:(int)arg1;
+- (void)handleTextChange;
+- (void)_handleBackspaceEvent;
+- (void)_appendNewCharacterWithEvent:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (BOOL)acceptsFirstResponder;
 - (void)drawFocusRingOnRect:(struct CGRect)arg1;
 - (void)drawRect:(struct CGRect)arg1;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 pinLength:(long long)arg2 supportsRTL:(BOOL)arg3;
 - (id)initWithFrame:(struct CGRect)arg1 pinLength:(long long)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -8,6 +8,7 @@
 
 #import <UIKitCore/_UIFocusMovementActionForwarding-Protocol.h>
 #import <UIKitCore/_UIHostedTextServiceSessionDelegate-Protocol.h>
+#import <UIKitCore/_UISheetPresentationControllerDelegate-Protocol.h>
 #import <UIKitCore/_UIViewServiceDeputy-Protocol.h>
 #import <UIKitCore/_UIViewServiceDeputyRotationSource-Protocol.h>
 #import <UIKitCore/_UIViewServiceDummyPopoverControllerDelegate-Protocol.h>
@@ -17,7 +18,7 @@
 @protocol _UIViewServiceViewControllerOperatorDelegate;
 
 __attribute__((visibility("hidden")))
-@interface _UIViewServiceViewControllerOperator : UIViewController <_UIViewServiceViewControllerOperator_RemoteViewControllerInterface, _UIHostedTextServiceSessionDelegate, _UIViewServiceDummyPopoverControllerDelegate, _UIFocusMovementActionForwarding, _UIViewServiceDeputy, _UIViewServiceDeputyRotationSource>
+@interface _UIViewServiceViewControllerOperator : UIViewController <_UIViewServiceViewControllerOperator_RemoteViewControllerInterface, _UIHostedTextServiceSessionDelegate, _UIViewServiceDummyPopoverControllerDelegate, _UISheetPresentationControllerDelegate, _UIFocusMovementActionForwarding, _UIViewServiceDeputy, _UIViewServiceDeputyRotationSource>
 {
     int __automatic_invalidation_retainCount;
     _Bool __automatic_invalidation_invalidated;
@@ -96,7 +97,7 @@ __attribute__((visibility("hidden")))
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
 - (id)_presentationControllerClassName;
-- (void)__hostDidSetPresentationControllerClassName:(id)arg1 canShowTextServices:(_Bool)arg2;
+- (void)__hostDidSetPresentationControllerClassName:(id)arg1;
 - (void)_marginInfoForChild:(id)arg1 leftMargin:(double *)arg2 rightMargin:(double *)arg3;
 - (struct UIEdgeInsets)_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(_Bool *)arg2;
 - (struct UIEdgeInsets)_viewSafeAreaInsetsFromScene;
@@ -110,13 +111,13 @@ __attribute__((visibility("hidden")))
 - (void)__setContentSize:(struct CGSize)arg1 boundingPath:(id)arg2;
 - (void)__setContentSize:(struct CGSize)arg1 boundingPath:(id)arg2 withFence:(id)arg3;
 - (void)__exchangeAccessibilityPortInformation:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
-- (void)__createViewController:(id)arg1 withContextToken:(id)arg2 fbsDisplays:(id)arg3 appearanceSerializedRepresentations:(id)arg4 legacyAppearance:(_Bool)arg5 traitCollection:(id)arg6 initialInterfaceOrientation:(long long)arg7 hostAccessibilityServerPort:(id)arg8 replyHandler:(CDUnknownBlockType)arg9;
-- (void)__createViewController:(id)arg1 withAppearanceSerializedRepresentations:(id)arg2 legacyAppearance:(_Bool)arg3 hostAccessibilityServerPort:(id)arg4 replyHandler:(CDUnknownBlockType)arg5;
+- (void)__createViewController:(id)arg1 withContextToken:(id)arg2 fbsDisplays:(id)arg3 appearanceSerializedRepresentations:(id)arg4 traitCollection:(id)arg5 initialInterfaceOrientation:(long long)arg6 hostAccessibilityServerPort:(id)arg7 canShowTextServices:(_Bool)arg8 replyHandler:(CDUnknownBlockType)arg9;
+- (void)__createViewController:(id)arg1 withAppearanceSerializedRepresentations:(id)arg2 hostAccessibilityServerPort:(id)arg3 canShowTextServices:(_Bool)arg4 replyHandler:(CDUnknownBlockType)arg5;
 - (id)_supportedInterfaceOrientationsForViewController:(id)arg1;
 - (void)__hostDidRotateFromInterfaceOrientation:(long long)arg1 skipSelf:(_Bool)arg2;
 - (void)__hostWillAnimateRotationToInterfaceOrientation:(long long)arg1 duration:(double)arg2 skipSelf:(_Bool)arg3;
 - (void)__hostWillRotateToInterfaceOrientation:(long long)arg1 duration:(double)arg2 skipSelf:(_Bool)arg3;
-- (void)__hostViewWillTransitionToSize:(struct CGSize)arg1 withContextDescription:(id)arg2 boundingPath:(id)arg3 statusBarHeight:(double)arg4 underlapsStatusBar:(_Bool)arg5 whenDone:(CDUnknownBlockType)arg6;
+- (void)__hostViewWillTransitionToSize:(struct CGSize)arg1 withContextDescription:(id)arg2 boundingPath:(id)arg3 statusBarHeight:(double)arg4 underlapsStatusBar:(_Bool)arg5 fence:(id)arg6 whenDone:(CDUnknownBlockType)arg7;
 - (_Bool)_shouldForwardLegacyRotationOnly;
 - (id)_viewControllersForRotationCallbacks;
 - (void)__hostDidChangeStatusBarHeight:(double)arg1;
@@ -125,6 +126,7 @@ __attribute__((visibility("hidden")))
 - (void)__hostWillResignActive;
 - (void)__hostWillEnterForeground;
 - (void)__hostDidEnterBackground;
+- (void)__setSheetConfiguration:(id)arg1;
 - (void)__setServiceInPopover:(_Bool)arg1;
 - (void)__hostViewDidMoveToScreenWithFBSDisplayIdentity:(id)arg1 newHostingHandleReplyHandler:(CDUnknownBlockType)arg2;
 - (void)__hostDidDetachDisplay:(id)arg1;
@@ -138,12 +140,15 @@ __attribute__((visibility("hidden")))
 - (id)invalidate;
 - (void)dummyPopoverController:(id)arg1 popoverViewDidSetUseToolbarShine:(_Bool)arg2;
 - (void)dummyPopoverController:(id)arg1 didChangeContentSize:(struct CGSize)arg2 animated:(_Bool)arg3;
+- (void)_completeInteractiveSheetTransitionInHost:(_Bool)arg1 immediately:(_Bool)arg2 duration:(double)arg3 timingCurve:(id)arg4;
+- (void)_updateInteractiveSheetTransitionInHostWithProgress:(double)arg1;
+- (void)_startInteractiveSheetTransitionInHostWithProgress:(double)arg1;
+- (void)presentationControllerDidAttemptToDismiss:(id)arg1;
+- (_Bool)isModalInPresentation;
 - (void)systemLayoutFittingSizeDidChangeForChildViewController:(id)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (struct CGSize)preferredContentSize;
 - (struct CGSize)contentSizeForViewInPopover;
-- (struct CGRect)_frameForContainerViewInSheetForBounds:(struct CGRect)arg1;
-- (struct CGRect)_frameForContainerViewInSheetForBounds:(struct CGRect)arg1 displayingTopView:(_Bool)arg2 andBottomView:(_Bool)arg3;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (void)_willResignContentViewControllerOfPopover:(id)arg1;
 - (void)_didBecomeContentViewControllerOfPopover:(id)arg1;
@@ -155,12 +160,11 @@ __attribute__((visibility("hidden")))
 - (void)__prepareForDisconnectionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_firstResponderDidChange:(id)arg1;
 - (_Bool)becomeFirstResponder;
-- (void)__hostWillTransitionToTraitCollection:(id)arg1 withContextDescription:(id)arg2 deferIfAnimated:(_Bool)arg3;
+- (void)__hostWillTransitionToTraitCollection:(id)arg1 withContextDescription:(id)arg2 deferIfAnimated:(_Bool)arg3 inRemoteViewHierarchy:(_Bool)arg4;
 - (void)__setHostTraitCollection:(id)arg1 deferIfAnimated:(_Bool)arg2;
 - (void)__setHostTintColor:(id)arg1 tintAdjustmentMode:(long long)arg2;
-- (void)__hostDidUpdateAppearanceWithSerializedRepresentations:(id)arg1 originalSource:(id)arg2 legacyAppearance:(_Bool)arg3;
+- (void)__hostDidUpdateAppearanceWithSerializedRepresentations:(id)arg1 originalSource:(id)arg2;
 - (id)_appearanceSource;
-- (void)_windowDidUpdateCurrentTintView:(id)arg1;
 - (void)_windowDidUnregisterScrollToTopView;
 - (void)_windowDidRegisterScrollToTopView;
 - (void)__scrollToTopFromTouchAtViewLocation:(struct CGPoint)arg1 resultHandler:(CDUnknownBlockType)arg2;

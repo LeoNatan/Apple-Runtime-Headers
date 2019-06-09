@@ -6,19 +6,20 @@
 
 #import <UIKit/UIView.h>
 
-@class PKContinuousButton, PKPaymentSetupFooterView, UILabel;
+@class NSString, PKContinuousButton, PKPaymentSetupFooterView, UITextView;
 
 @interface PKPaymentSetupDockView : UIView
 {
     PKContinuousButton *_continuousButton;
+    UITextView *_buttonExplanationTextView;
     PKPaymentSetupFooterView *_footerView;
     _Bool _isBuddyiPad;
     _Bool _requiresAdditionalContinuousButtonPadding;
     int _context;
-    UILabel *_buttonExplanationLabel;
+    NSString *_buttonExplanationText;
 }
 
-@property(retain, nonatomic) UILabel *buttonExplanationLabel; // @synthesize buttonExplanationLabel=_buttonExplanationLabel;
+@property(retain, nonatomic) NSString *buttonExplanationText; // @synthesize buttonExplanationText=_buttonExplanationText;
 @property(readonly, nonatomic) int context; // @synthesize context=_context;
 @property(nonatomic) _Bool requiresAdditionalContinuousButtonPadding; // @synthesize requiresAdditionalContinuousButtonPadding=_requiresAdditionalContinuousButtonPadding;
 - (void).cxx_destruct;
@@ -28,6 +29,7 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(retain, nonatomic) PKPaymentSetupFooterView *footerView;
 @property(retain, nonatomic) PKContinuousButton *continuousButton;
+@property(readonly, nonatomic) UITextView *buttonExplanationTextView;
 - (id)initWithFrame:(struct CGRect)arg1 context:(int)arg2;
 
 @end

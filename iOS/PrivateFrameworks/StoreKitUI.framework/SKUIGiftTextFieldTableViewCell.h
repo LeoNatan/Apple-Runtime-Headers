@@ -9,13 +9,16 @@
 @class NSAttributedString, NSString, UIControl, UILabel, UITextField, UIView;
 @protocol UITextFieldDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftTextFieldTableViewCell : UITableViewCell
 {
     UILabel *_label;
     UITextField *_textField;
     UIView *_topBorderView;
+    _Bool _leftToRight;
 }
 
+@property(nonatomic) _Bool leftToRight; // @synthesize leftToRight=_leftToRight;
 @property(readonly, nonatomic) UIControl *textField; // @synthesize textField=_textField;
 - (void).cxx_destruct;
 - (void)layoutSubviews;

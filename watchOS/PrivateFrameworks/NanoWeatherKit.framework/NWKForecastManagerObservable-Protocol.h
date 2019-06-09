@@ -18,5 +18,7 @@
 - (void)manager:(NWKForecastManager *)arg1 updatedStaticLocationsFrom:(NSArray *)arg2 to:(NSArray *)arg3;
 - (void)manager:(NWKForecastManager *)arg1 updatedSelectedLocationFrom:(WFLocation *)arg2 to:(WFLocation *)arg3;
 - (void)manager:(NWKForecastManager *)arg1 updatedLocalLocationFrom:(WFLocation *)arg2 to:(WFLocation *)arg3;
+- (void)managerReceivedLocationConnectionInterrupt:(NWKForecastManager *)arg1;
+- (void)manager:(NWKForecastManager *)arg1 receivedForecastConnectionInterruptForLocation:(WFLocation *)arg2;
 @end
 

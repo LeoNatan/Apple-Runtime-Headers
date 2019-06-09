@@ -9,6 +9,6 @@
 @class MFEWSGetNewMessageActionsOperation, NSArray;
 
 @protocol MFEWSGetNewMessageActionsOperationDelegate <NSObject>
-- (void)getNewMessageActionsOperation:(MFEWSGetNewMessageActionsOperation *)arg1 didFetchActions:(NSArray *)arg2;
+- (void)getNewMessageActionsOperation:(MFEWSGetNewMessageActionsOperation *)arg1 didGetActions:(NSArray *)arg2;
 @end
 

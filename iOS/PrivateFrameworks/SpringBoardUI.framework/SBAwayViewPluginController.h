@@ -78,7 +78,6 @@
 - (void)setDeactivationContext:(id)arg1;
 - (void)setActivationContext:(id)arg1;
 - (void)purgeView;
-- (void)_updateAppearance;
 - (id)pluginAnimateAppearanceTransition:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (_Bool)pluginAnimatesAppearanceTransition:(_Bool)arg1;
 - (_Bool)pluginHandleEvent:(long long)arg1;

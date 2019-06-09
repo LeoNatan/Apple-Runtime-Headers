@@ -24,7 +24,7 @@
 @property struct CGRect draggingFrame;
 - (void)dealloc;
 - (id)initWithPasteboardWriter:(id)arg1 frame:(struct CGRect)arg2 contents:(id)arg3;
-- (void)setItem:(id)arg1;
+- (id)_initWithItem:(id)arg1;
 - (id)initWithPasteboardWriter:(id)arg1;
 
 @end

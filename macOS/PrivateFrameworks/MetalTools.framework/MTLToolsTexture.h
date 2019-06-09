@@ -28,6 +28,7 @@
 @property(readonly) struct __IOSurface *iosurface;
 - (id)newSharedTextureHandle;
 - (void)didModifyData;
+- (id)newTextureViewWithPixelFormat:(unsigned long long)arg1 textureType:(unsigned long long)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4 swizzle:(CDStruct_a06f635e)arg5;
 - (id)newTextureViewWithPixelFormat:(unsigned long long)arg1 textureType:(unsigned long long)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4;
 - (id)newTextureViewWithPixelFormat:(unsigned long long)arg1;
 - (void)replaceRegion:(CDStruct_1e3be3a8)arg1 mipmapLevel:(unsigned long long)arg2 slice:(unsigned long long)arg3 withBytes:(const void *)arg4 bytesPerRow:(unsigned long long)arg5 bytesPerImage:(unsigned long long)arg6;
@@ -48,7 +49,9 @@
 - (void)getBytes:(void *)arg1 bytesPerRow:(unsigned long long)arg2 fromRegion:(CDStruct_1e3be3a8)arg3 mipmapLevel:(unsigned long long)arg4;
 - (void)copyFromPixels:(const void *)arg1 rowBytes:(unsigned long long)arg2 imageBytes:(unsigned long long)arg3 toSlice:(unsigned long long)arg4 mipmapLevel:(unsigned long long)arg5 origin:(CDStruct_14f26992)arg6 size:(CDStruct_14f26992)arg7;
 - (void)copyFromSlice:(unsigned long long)arg1 mipmapLevel:(unsigned long long)arg2 origin:(CDStruct_14f26992)arg3 size:(CDStruct_14f26992)arg4 toPixels:(void *)arg5 rowBytes:(unsigned long long)arg6 imageBytes:(unsigned long long)arg7;
-@property(readonly) unsigned long long resourceIndex;
+@property(nonatomic) unsigned long long resourceIndex;
+@property(readonly) unsigned int swizzleKey;
+@property(readonly, nonatomic) CDStruct_a06f635e swizzle;
 @property(readonly) unsigned long long bufferBytesPerRow;
 @property(readonly) unsigned long long bufferOffset;
 @property(readonly) unsigned long long parentRelativeSlice;
@@ -70,12 +73,17 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) id <MTLDevice> device;
 @property(readonly) unsigned long long hash;
+@property(readonly) unsigned long long hazardTrackingMode;
 @property(readonly) id <MTLHeap> heap;
+@property(readonly) unsigned long long heapOffset;
 @property(copy) NSString *label;
+@property(readonly) unsigned long long protectionOptions;
+@property(readonly) unsigned long long resourceOptions;
 @property int responsibleProcess;
 @property(readonly) MTLResourceAllocationInfo *sharedAllocationInfo;
 @property(readonly) unsigned long long storageMode;
 @property(readonly) Class superclass;
+@property(readonly) unsigned long long unfilteredResourceOptions;
 
 @end
 

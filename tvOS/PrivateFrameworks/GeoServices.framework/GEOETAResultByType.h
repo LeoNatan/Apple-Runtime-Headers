@@ -8,47 +8,60 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEORouteTrafficDetail, GEOShortTrafficSummary, NSMutableArray;
+@class GEORouteTrafficDetail, GEOShortTrafficSummary, NSMutableArray, PBDataReader, PBUnknownFields;
 
 @interface GEOETAResultByType : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     double _expectedTimeOfDeparture;
-    unsigned int _distance;
-    unsigned int _historicTravelTime;
     GEORouteTrafficDetail *_routeTrafficDetail;
     GEOShortTrafficSummary *_shortTrafficSummary;
+    NSMutableArray *_summaryForPredictedDestinations;
+    unsigned int _distance;
+    unsigned int _historicTravelTime;
     unsigned int _staticTravelTime;
     int _status;
-    NSMutableArray *_summaryForPredictedDestinations;
     int _transportType;
-    unsigned int _travelTimeAggressiveEstimate;
     unsigned int _travelTimeBestEstimate;
+    unsigned int _travelTimeAggressiveEstimate;
     unsigned int _travelTimeConservativeEstimate;
     struct {
-        unsigned int expectedTimeOfDeparture:1;
-        unsigned int distance:1;
-        unsigned int historicTravelTime:1;
-        unsigned int staticTravelTime:1;
-        unsigned int status:1;
-        unsigned int transportType:1;
-        unsigned int travelTimeAggressiveEstimate:1;
-        unsigned int travelTimeBestEstimate:1;
-        unsigned int travelTimeConservativeEstimate:1;
-    } _has;
+        unsigned int has_expectedTimeOfDeparture:1;
+        unsigned int has_distance:1;
+        unsigned int has_historicTravelTime:1;
+        unsigned int has_staticTravelTime:1;
+        unsigned int has_status:1;
+        unsigned int has_transportType:1;
+        unsigned int has_travelTimeBestEstimate:1;
+        unsigned int has_travelTimeAggressiveEstimate:1;
+        unsigned int has_travelTimeConservativeEstimate:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_routeTrafficDetail:1;
+        unsigned int read_shortTrafficSummary:1;
+        unsigned int read_summaryForPredictedDestinations:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_expectedTimeOfDeparture:1;
+        unsigned int wrote_routeTrafficDetail:1;
+        unsigned int wrote_shortTrafficSummary:1;
+        unsigned int wrote_summaryForPredictedDestinations:1;
+        unsigned int wrote_distance:1;
+        unsigned int wrote_historicTravelTime:1;
+        unsigned int wrote_staticTravelTime:1;
+        unsigned int wrote_status:1;
+        unsigned int wrote_transportType:1;
+        unsigned int wrote_travelTimeBestEstimate:1;
+        unsigned int wrote_travelTimeAggressiveEstimate:1;
+        unsigned int wrote_travelTimeConservativeEstimate:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)summaryForPredictedDestinationType;
-@property(retain, nonatomic) GEOShortTrafficSummary *shortTrafficSummary; // @synthesize shortTrafficSummary=_shortTrafficSummary;
-@property(retain, nonatomic) GEORouteTrafficDetail *routeTrafficDetail; // @synthesize routeTrafficDetail=_routeTrafficDetail;
-@property(retain, nonatomic) NSMutableArray *summaryForPredictedDestinations; // @synthesize summaryForPredictedDestinations=_summaryForPredictedDestinations;
-@property(nonatomic) unsigned int staticTravelTime; // @synthesize staticTravelTime=_staticTravelTime;
-@property(nonatomic) unsigned int travelTimeAggressiveEstimate; // @synthesize travelTimeAggressiveEstimate=_travelTimeAggressiveEstimate;
-@property(nonatomic) unsigned int travelTimeConservativeEstimate; // @synthesize travelTimeConservativeEstimate=_travelTimeConservativeEstimate;
-@property(nonatomic) double expectedTimeOfDeparture; // @synthesize expectedTimeOfDeparture=_expectedTimeOfDeparture;
-@property(nonatomic) unsigned int distance; // @synthesize distance=_distance;
-@property(nonatomic) unsigned int historicTravelTime; // @synthesize historicTravelTime=_historicTravelTime;
-@property(nonatomic) unsigned int travelTimeBestEstimate; // @synthesize travelTimeBestEstimate=_travelTimeBestEstimate;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -56,29 +69,44 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOShortTrafficSummary *shortTrafficSummary;
 @property(readonly, nonatomic) _Bool hasShortTrafficSummary;
+- (void)_readShortTrafficSummary;
+@property(retain, nonatomic) GEORouteTrafficDetail *routeTrafficDetail;
 @property(readonly, nonatomic) _Bool hasRouteTrafficDetail;
+- (void)_readRouteTrafficDetail;
 - (id)summaryForPredictedDestinationAtIndex:(unsigned long long)arg1;
 - (unsigned long long)summaryForPredictedDestinationsCount;
+- (void)_addNoFlagsSummaryForPredictedDestination:(id)arg1;
 - (void)addSummaryForPredictedDestination:(id)arg1;
 - (void)clearSummaryForPredictedDestinations;
+@property(retain, nonatomic) NSMutableArray *summaryForPredictedDestinations;
+- (void)_readSummaryForPredictedDestinations;
 @property(nonatomic) _Bool hasStaticTravelTime;
+@property(nonatomic) unsigned int staticTravelTime;
 @property(nonatomic) _Bool hasTravelTimeAggressiveEstimate;
+@property(nonatomic) unsigned int travelTimeAggressiveEstimate;
 @property(nonatomic) _Bool hasTravelTimeConservativeEstimate;
+@property(nonatomic) unsigned int travelTimeConservativeEstimate;
 @property(nonatomic) _Bool hasExpectedTimeOfDeparture;
+@property(nonatomic) double expectedTimeOfDeparture;
 @property(nonatomic) _Bool hasDistance;
+@property(nonatomic) unsigned int distance;
 @property(nonatomic) _Bool hasHistoricTravelTime;
+@property(nonatomic) unsigned int historicTravelTime;
 @property(nonatomic) _Bool hasTravelTimeBestEstimate;
+@property(nonatomic) unsigned int travelTimeBestEstimate;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatus;
-@property(nonatomic) int status; // @synthesize status=_status;
+@property(nonatomic) int status;
 - (int)StringAsTransportType:(id)arg1;
 - (id)transportTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasTransportType;
-@property(nonatomic) int transportType; // @synthesize transportType=_transportType;
+@property(nonatomic) int transportType;
 
 @end
 

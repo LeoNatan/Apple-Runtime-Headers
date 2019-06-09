@@ -36,8 +36,6 @@
 - (void)removeNotificationsWithEventIdentifier:(id)arg1;
 - (void)removeNotificationWithIdentifier:(id)arg1;
 - (void)addNotification:(id)arg1;
-- (void)removeSectionSubtypeWithDescriptor:(id)arg1;
-- (void)addSectionSubtypeWithDescriptor:(id)arg1;
 - (void)dealloc;
 - (id)initWithCallbackMachService:(id)arg1;
 - (id)init;

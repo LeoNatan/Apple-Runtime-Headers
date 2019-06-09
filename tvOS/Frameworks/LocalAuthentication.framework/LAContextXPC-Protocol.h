@@ -9,6 +9,10 @@
 #import <LocalAuthentication/LAContextExternalizationProt-Protocol.h>
 #import <LocalAuthentication/LAContextPropertiesProt-Protocol.h>
 
+@class NSData;
+
 @protocol LAContextXPC <LAContextExternalizationProt, LAContextPropertiesProt, LAContextClientEvaluationProt, LAContextEventFeedbackProt>
+- (void)tokenForTransferToUnknownProcess:(void (^)(NSData *, NSError *))arg1;
+- (void)allowTransferToProcess:(int)arg1 receiverAuditTokenData:(NSData *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
 @end
 

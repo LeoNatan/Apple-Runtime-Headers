@@ -7,8 +7,6 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (SCROBrailleAdditions)
-- (struct _NSRange)_nsRangeForCFRange:(CDStruct_912cb5d2)arg1;
-- (long long)_indexAdjustedForWhitespace:(long long)arg1;
 - (struct _NSRange)rangeOfWordAfterWordAtIndex:(long long)arg1;
 - (struct _NSRange)rangeOfWordBeforeWordAtIndex:(long long)arg1;
 - (struct _NSRange)rangeOfWordContainingIndex:(long long)arg1;

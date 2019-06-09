@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)isInternalInstall;
 + (struct _NSRange)range:(struct _NSRange)arg1 liesWithinRange:(struct _NSRange)arg2 assert:(_Bool)arg3;
 + (_Bool)isInternetReachable;
 

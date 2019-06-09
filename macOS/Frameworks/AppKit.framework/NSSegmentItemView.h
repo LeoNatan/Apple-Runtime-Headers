@@ -36,13 +36,13 @@ __attribute__((visibility("hidden")))
     BOOL _leadingSegmentSelected;
     BOOL _trailingSegmentSelected;
     BOOL _showMenuIndicator;
-    unsigned long long _alignment;
+    long long _alignment;
     NSUserInterfaceCompressionOptions *_compressibleOptions;
     BOOL _isObserving;
 }
 
 @property NSUserInterfaceCompressionOptions *compressibleOptions; // @synthesize compressibleOptions=_compressibleOptions;
-@property unsigned long long alignment; // @synthesize alignment=_alignment;
+@property long long alignment; // @synthesize alignment=_alignment;
 @property BOOL trailingSegmentSelected; // @synthesize trailingSegmentSelected=_trailingSegmentSelected;
 @property BOOL leadingSegmentSelected; // @synthesize leadingSegmentSelected=_leadingSegmentSelected;
 @property BOOL trailingSeparator; // @synthesize trailingSeparator=_trailingSeparator;
@@ -71,14 +71,12 @@ __attribute__((visibility("hidden")))
 - (int)_vibrancyBlendMode;
 - (void)_updateBezelView;
 - (struct CGSize)_labelSize;
-- (void)_updateLabelState;
 @property(retain) NSFont *font;
 - (void)setLabelView:(id)arg1;
 - (id)labelView;
 @property(readonly) struct CGRect labelRect;
 @property(copy) NSString *label;
 @property BOOL showMenuIndicator; // @synthesize showMenuIndicator=_showMenuIndicator;
-- (void)_updateImageState;
 @property unsigned long long imageScaling;
 - (void)setImageRect:(struct CGRect)arg1;
 @property(readonly) struct CGRect imageRect;

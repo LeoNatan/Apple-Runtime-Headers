@@ -16,6 +16,7 @@
 + (id)resolveIntentSlot;
 - (_Bool)mutatingCommand;
 - (_Bool)requiresResponse;
+@property(copy, nonatomic) NSString *jsonEncodedIntent;
 @property(copy, nonatomic) NSNumber *intentSlotValueIndex;
 @property(copy, nonatomic) NSString *intentSlotKeyPath;
 @property(retain, nonatomic) SAIntentGroupProtobufMessage *intent;

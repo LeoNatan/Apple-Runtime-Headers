@@ -69,6 +69,7 @@
 @property(readonly, nonatomic) FCForYouCatchUpOperation *forYouCatchUpOperation; // @synthesize forYouCatchUpOperation=_forYouCatchUpOperation;
 - (_Bool)isNewEdition;
 - (id)articleIDsContainedByGroupType:(long long)arg1;
+- (id)groupOfGroupType:(long long)arg1;
 - (id)allArticleIDs;
 - (id)allGroupIDs;
 - (id)filterTransformationWithFilterOptions:(long long)arg1 considerOutputFrom:(id)arg2;

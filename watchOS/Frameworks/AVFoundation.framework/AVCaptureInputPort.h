@@ -11,10 +11,14 @@
 @interface AVCaptureInputPort : NSObject
 {
     AVCaptureInputPortInternal *_internal;
+    NSString *_sourceDeviceType;
+    int _sourceDevicePosition;
 }
 
 + (_Bool)automaticallyNotifiesObserversOfClock;
-+ (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(_Bool)arg4;
++ (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(_Bool)arg4 sourceDeviceType:(id)arg5 sourceDevicePosition:(int)arg6;
+@property(readonly, nonatomic) int sourceDevicePosition; // @synthesize sourceDevicePosition=_sourceDevicePosition;
+@property(readonly, nonatomic) NSString *sourceDeviceType; // @synthesize sourceDeviceType=_sourceDeviceType;
 - (void)bumpChangeSeed;
 - (int)changeSeed;
 - (id)figCaptureSourceConfigurationForSessionPreset:(id)arg1;
@@ -30,7 +34,7 @@
 - (id)description;
 - (void)setOwner:(id)arg1;
 - (void)dealloc;
-- (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(_Bool)arg4;
+- (id)_initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(_Bool)arg4 sourceDeviceType:(id)arg5 sourceDevicePosition:(int)arg6;
 
 @end
 

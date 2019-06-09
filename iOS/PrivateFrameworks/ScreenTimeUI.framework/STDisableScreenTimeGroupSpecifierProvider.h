@@ -8,6 +8,7 @@
 
 @class PSSpecifier;
 
+__attribute__((visibility("hidden")))
 @interface STDisableScreenTimeGroupSpecifierProvider : STRootGroupSpecifierProvider
 {
     PSSpecifier *_disableScreenTimeSpecifier;

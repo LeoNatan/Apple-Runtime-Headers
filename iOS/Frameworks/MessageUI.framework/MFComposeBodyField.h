@@ -11,7 +11,7 @@
 #import <MessageUI/UIWebDraggingDelegate-Protocol.h>
 #import <MessageUI/WebResourceLoadDelegate-Protocol.h>
 
-@class DOMHTMLDocument, DOMHTMLElement, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, UIBarButtonItemGroup, UIView;
+@class DOMHTMLDocument, DOMHTMLElement, NSDictionary, NSMutableDictionary, NSMutableSet, NSString, UIBarButtonItemGroup, UIView;
 @protocol MFMailComposeViewDelegate;
 
 @interface MFComposeBodyField : UIWebDocumentView <MFComposeBodyFieldInternal, WebResourceLoadDelegate, MFComposeBodyField, UIWebDraggingDelegate>
@@ -27,17 +27,18 @@
     unsigned int _isLoading:1;
     unsigned int _needsReplaceImages:1;
     struct _NSRange _rangeToSelect;
-    id <MFMailComposeViewDelegate> _mailComposeViewDelegate;
     NSString *_compositionContextID;
     int _preventLayout;
     _Bool _prefersFirstLineSelection;
     unsigned long long _imageCount;
     unsigned long long _attachmentSequenceNumber;
     struct UIEdgeInsets _previousLayoutMargins;
-    NSArray *_attachmentURLsToReplaceWithFilenames;
-    UIBarButtonItemGroup *_inputAssistantItemGroup;
+    NSDictionary *_replacementFilenamesByContentID;
+    UIBarButtonItemGroup *_leadingInputAssistantItemGroup;
+    UIBarButtonItemGroup *_trailingInputAssistantItemGroup;
     _Bool _createAttachmentsForUnknownDataTypes;
     NSMutableSet *_drawingAttachmentNames;
+    id <MFMailComposeViewDelegate> _mailComposeViewDelegate;
     NSMutableDictionary *_droppedAttachments;
     UIView *_imageDropSnapshot;
     NSDictionary *_attachmentDragPreviews;
@@ -51,6 +52,7 @@
 @property(retain, nonatomic) UIView *imageDropSnapshot; // @synthesize imageDropSnapshot=_imageDropSnapshot;
 @property(retain, nonatomic) NSMutableDictionary *droppedAttachments; // @synthesize droppedAttachments=_droppedAttachments;
 @property _Bool shouldShowStandardButtons; // @synthesize shouldShowStandardButtons=_shouldShowStandardButtons;
+- (void).cxx_destruct;
 - (id)documentFragmentForPasteboardItemAtIndex:(long long)arg1;
 @property(readonly, nonatomic) _Bool canPaste;
 - (id)_nodeForAttachmentFileURL:(id)arg1 text:(id)arg2 type:(id)arg3 contentID:(id)arg4;
@@ -96,11 +98,9 @@
 - (_Bool)_sourceIsManaged;
 - (struct CGRect)rectOfElementWithID:(id)arg1;
 - (id)htmlString;
-- (void)getHTMLStringsAttachmentsCharsetsAndPlainTextAlternative:(CDUnknownBlockType)arg1;
-- (id)plainTextContentFromDOMDocument:(id)arg1;
+- (void)getHTMLStringsAttachmentsAndPlainTextAlternative:(CDUnknownBlockType)arg1;
 - (id)plainTextContent;
-- (id)compositionContextID;
-- (void)setCompositionContextID:(id)arg1;
+@property(nonatomic) __weak NSString *compositionContextID;
 - (id)plainTextAlternative;
 - (id)containsRichText;
 - (void)markupSelectedAttachment;
@@ -108,17 +108,26 @@
 - (void)_decreaseQuoteLevelKeyCommandInvoked:(id)arg1;
 - (void)_increaseQuoteLevelKeyCommandInvoked:(id)arg1;
 - (void)_pasteAsQuotationKeyCommandInvoked:(id)arg1;
-@property(readonly, retain, nonatomic) UIBarButtonItemGroup *_mailComposeEditingInputAssistantGroup;
-@property(retain, nonatomic, setter=_setInputAssistantItemGroup:) UIBarButtonItemGroup *_inputAssistantItemGroup;
-- (void)_didTapInsertPhotoInputAssistantButton:(id)arg1;
+@property(retain, nonatomic, setter=_setTrailingInputAssistantItemGroup:) UIBarButtonItemGroup *_trailingInputAssistantItemGroup;
+@property(retain, nonatomic, setter=_setLeadingInputAssistantItemGroup:) UIBarButtonItemGroup *_leadingInputAssistantItemGroup;
+@property(readonly, nonatomic) UIBarButtonItemGroup *_mailComposeEditingTrailingInputAssistantGroup;
+@property(readonly, nonatomic) UIBarButtonItemGroup *_mailComposeEditingLeadingInputAssistantGroup;
+- (void)_didTapScanDocumentButton:(id)arg1;
+- (void)_didTapImportDocumentButton:(id)arg1;
+- (void)_didTapInsertDrawingOrMarkupButton:(id)arg1;
+- (void)_didTapInsertPhotoButton:(id)arg1;
+- (void)_didTapCameraButton:(id)arg1;
 - (void)_showQuoteLevelOptionsPopover:(id)arg1;
 - (void)didUndoOrRedo:(id)arg1;
 - (void)replaceAttachment:(id)arg1 withDocumentData:(id)arg2 fileName:(id)arg3 mimeType:(id)arg4;
 - (void)_insertNodeIntoCurrentSelection:(id)arg1;
 - (void)insertDocumentWithData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
 - (void)replaceAttachment:(id)arg1 withDocumentAtURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)insertScannedDocumentWithData:(id)arg1;
 - (void)insertDocumentWithURL:(id)arg1 isDrawingFile:(_Bool)arg2;
-- (void)insertPhotoOrVideoWithInfoDictionary:(id)arg1;
+- (id)contentIDsForMediaAttachments;
+- (void)removeMediaWithAssetIdentifier:(id)arg1;
+- (void)insertPhotoOrVideoWithAssetIdentifier:(id)arg1 infoDictionary:(id)arg2;
 - (void)changeQuoteLevel:(long long)arg1;
 - (void)changeQuoteLevel:(long long)arg1 forDOMRange:(id)arg2;
 - (void)updateQuoteLevelMenu;
@@ -139,6 +148,7 @@
 - (void)restoreSelectionFromTemporaryMarkers:(_Bool)arg1;
 - (void)restoreSelectionFromTemporaryMarkers;
 - (id)insertTemporarySelectionMarkersForRange:(id)arg1;
+@property(readonly, nonatomic) _Bool allowsAttachmentElements;
 - (id)nextAttachmentName;
 - (void)addMailAttributesBeforeDisplayHidingTrailingEmptyQuotes:(_Bool)arg1;
 - (void)prependMarkupString:(id)arg1 quote:(_Bool)arg2;
@@ -148,7 +158,7 @@
 - (void)setMarkupString:(id)arg1 quote:(_Bool)arg2;
 - (void)appendMarkupString:(id)arg1 quote:(_Bool)arg2;
 - (void)prependMarkupString:(id)arg1 quote:(_Bool)arg2 emptyFirst:(_Bool)arg3;
-- (void)prependPreamble:(id)arg1;
+- (void)prependPreamble:(id)arg1 quote:(_Bool)arg2;
 - (void)addMarkupString:(id)arg1 quote:(_Bool)arg2 emptyFirst:(_Bool)arg3 prepended:(_Bool)arg4;
 - (void)addDOMNode:(id)arg1 quote:(_Bool)arg2 emptyFirst:(_Bool)arg3 prepended:(_Bool)arg4;
 - (void)_nts_AddDOMNode:(id)arg1 quote:(_Bool)arg2 emptyFirst:(_Bool)arg3 prepended:(_Bool)arg4;
@@ -171,13 +181,17 @@
 - (void)layoutWithMinimumSize;
 - (void)endPreventingLayout;
 - (void)beginPreventingLayout;
-- (void)setAttachmentURLsToBeReplacedWithFilename:(id)arg1;
+- (void)setReplacementFilenamesByContentID:(id)arg1;
 - (void)deferredBecomeFirstResponder;
 - (void)_applyLayoutMarginsToBodyStyle;
 - (void)layoutMarginsDidChange;
+- (void)releaseFocusAfterDismissing;
+- (void)retainFocusAfterPresenting;
 - (void)unscaleImages;
 - (void)scaleImagesToScale:(unsigned long long)arg1;
 - (void)removeDropPlaceholders;
+- (void)showOriginalAttachments;
+- (void)setOriginalAttachmentInfo:(id)arg1;
 - (void)replaceImagesIfNecessary;
 - (void)_replaceImages;
 - (void)_ensureQuotedImagesHaveAttachmentStyleForElement:(id)arg1;
@@ -191,7 +205,7 @@
 - (void)ensureSelection;
 @property(nonatomic, getter=isDirty) _Bool dirty;
 - (double)contentWidth;
-@property(nonatomic) id <MFMailComposeViewDelegate> mailComposeViewDelegate;
+@property(nonatomic) __weak id <MFMailComposeViewDelegate> mailComposeViewDelegate;
 - (void)updateInputAssistantItem;
 - (void)invalidate;
 - (void)dealloc;

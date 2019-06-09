@@ -16,6 +16,11 @@
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
 @property(retain, nonatomic) ICCRDTIdentifierOrderedSetVersionedDocument *attachmentIdentifiersOrderedSetDocument; // @synthesize attachmentIdentifiersOrderedSetDocument=_attachmentIdentifiersOrderedSetDocument;
 - (void).cxx_destruct;
+- (id)searchableStringArray;
+- (id)searchableTextContent;
+- (id)additionalIndexableTextContentInNote;
+- (id)standaloneTitleForNote;
+- (BOOL)providesStandaloneTitleForNote;
 - (void)undeleteSubAttachments;
 - (void)updateAttachmentMarkedForDeletionStateAttachmentIsInNote:(BOOL)arg1;
 - (void)updateAfterLoadWithSubAttachmentIdentifierMap:(id)arg1;

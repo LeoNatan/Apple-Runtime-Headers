@@ -26,6 +26,7 @@
 + (id)_trackNavigationLoopOnMenu:(id)arg1 view:(id)arg2;
 @property struct NSEdgeInsets selectionInset; // @synthesize selectionInset=_selectionInset;
 - (BOOL)_sendActionFrom:(id)arg1;
+- (unsigned long long)sendActionOnMask;
 - (long long)sendActionOn:(unsigned long long)arg1;
 - (void)dismiss;
 - (void)performClick:(id)arg1;

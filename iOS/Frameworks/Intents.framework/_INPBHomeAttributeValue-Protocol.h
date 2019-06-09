@@ -11,8 +11,12 @@
 @protocol _INPBHomeAttributeValue <NSObject>
 @property(nonatomic) _Bool hasValueType;
 @property(nonatomic) int valueType;
+@property(nonatomic) _Bool hasUnit;
+@property(nonatomic) int unit;
 @property(readonly, nonatomic) _Bool hasStringValue;
 @property(copy, nonatomic) NSString *stringValue;
+@property(nonatomic) _Bool hasLimitValue;
+@property(nonatomic) int limitValue;
 @property(nonatomic) _Bool hasIntegerValue;
 @property(nonatomic) long long integerValue;
 @property(nonatomic) _Bool hasDoubleValue;
@@ -21,5 +25,9 @@
 @property(nonatomic) _Bool booleanValue;
 - (int)StringAsValueType:(NSString *)arg1;
 - (NSString *)valueTypeAsString:(int)arg1;
+- (int)StringAsUnit:(NSString *)arg1;
+- (NSString *)unitAsString:(int)arg1;
+- (int)StringAsLimitValue:(NSString *)arg1;
+- (NSString *)limitValueAsString:(int)arg1;
 @end
 

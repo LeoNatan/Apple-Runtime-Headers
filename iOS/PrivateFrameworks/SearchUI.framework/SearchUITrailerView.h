@@ -6,22 +6,22 @@
 
 #import <TemplateKit/TLKStackView.h>
 
-@class SFPunchout, SKUIPlayButton, SearchUITrailersCardSectionView, UILabel, UIView;
+@class SFPunchout, SearchUIButton, SearchUITrailersCardSectionView, TLKLabel, UIView;
 
 @interface SearchUITrailerView : TLKStackView
 {
     SearchUITrailersCardSectionView *_cardSectionView;
-    UILabel *_titleLabel;
-    SKUIPlayButton *_playButton;
+    SearchUIButton *_playButton;
+    TLKLabel *_titleLabel;
     SFPunchout *_punchout;
     UIView *_centeredBoxView;
 }
 
-@property(retain) UIView *centeredBoxView; // @synthesize centeredBoxView=_centeredBoxView;
-@property(retain) SFPunchout *punchout; // @synthesize punchout=_punchout;
-@property(retain) SKUIPlayButton *playButton; // @synthesize playButton=_playButton;
-@property(retain) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
-@property __weak SearchUITrailersCardSectionView *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
+@property(retain, nonatomic) UIView *centeredBoxView; // @synthesize centeredBoxView=_centeredBoxView;
+@property(retain, nonatomic) SFPunchout *punchout; // @synthesize punchout=_punchout;
+@property(retain, nonatomic) TLKLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
+@property(retain, nonatomic) SearchUIButton *playButton; // @synthesize playButton=_playButton;
+@property(nonatomic) __weak SearchUITrailersCardSectionView *cardSectionView; // @synthesize cardSectionView=_cardSectionView;
 - (void).cxx_destruct;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)playTrailer;

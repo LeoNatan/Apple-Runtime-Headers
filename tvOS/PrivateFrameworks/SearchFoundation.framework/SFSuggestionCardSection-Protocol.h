@@ -11,6 +11,7 @@
 @protocol SFSuggestionCardSection <SFCardSection>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(nonatomic) int suggestionType;
 @property(copy, nonatomic) NSString *scopedSearchSectionBundleIdentifier;
 @property(nonatomic) _Bool isContact;
 @property(retain, nonatomic) SFRichText *suggestionText;

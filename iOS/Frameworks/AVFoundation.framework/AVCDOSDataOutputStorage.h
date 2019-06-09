@@ -9,6 +9,7 @@
 @class AVCaptureOutput, NSMutableArray;
 @protocol AVCaptureDataOutputDelegateOverride;
 
+__attribute__((visibility("hidden")))
 @interface AVCDOSDataOutputStorage : NSObject
 {
     AVCaptureOutput<AVCaptureDataOutputDelegateOverride> *_dataOutput;

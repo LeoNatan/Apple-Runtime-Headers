@@ -8,21 +8,35 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOFormattedString, GEOPlaceFormattedString;
+@class GEOFormattedString, GEOPlaceFormattedString, PBDataReader, PBUnknownFields;
 
 @interface GEOAlertNonRecommendedRouteText : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     GEOPlaceFormattedString *_body;
     GEOFormattedString *_responseAlertPrimary;
     GEOFormattedString *_responseAlertSecondary;
     GEOPlaceFormattedString *_title;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_body:1;
+        unsigned int read_responseAlertPrimary:1;
+        unsigned int read_responseAlertSecondary:1;
+        unsigned int read_title:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_body:1;
+        unsigned int wrote_responseAlertPrimary:1;
+        unsigned int wrote_responseAlertSecondary:1;
+        unsigned int wrote_title:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPlaceFormattedString *body; // @synthesize body=_body;
-@property(retain, nonatomic) GEOPlaceFormattedString *title; // @synthesize title=_title;
-@property(retain, nonatomic) GEOFormattedString *responseAlertSecondary; // @synthesize responseAlertSecondary=_responseAlertSecondary;
-@property(retain, nonatomic) GEOFormattedString *responseAlertPrimary; // @synthesize responseAlertPrimary=_responseAlertPrimary;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -30,12 +44,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPlaceFormattedString *body;
 @property(readonly, nonatomic) BOOL hasBody;
+- (void)_readBody;
+@property(retain, nonatomic) GEOPlaceFormattedString *title;
 @property(readonly, nonatomic) BOOL hasTitle;
+- (void)_readTitle;
+@property(retain, nonatomic) GEOFormattedString *responseAlertSecondary;
 @property(readonly, nonatomic) BOOL hasResponseAlertSecondary;
+- (void)_readResponseAlertSecondary;
+@property(retain, nonatomic) GEOFormattedString *responseAlertPrimary;
 @property(readonly, nonatomic) BOOL hasResponseAlertPrimary;
+- (void)_readResponseAlertPrimary;
 
 @end
 

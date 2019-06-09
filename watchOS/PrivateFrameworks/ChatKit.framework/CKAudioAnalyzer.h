@@ -10,6 +10,7 @@
 
 @class NSDictionary, NSMutableData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CKAudioAnalyzer : NSObject <Endpointer>
 {
     _Bool _detectedMusic;

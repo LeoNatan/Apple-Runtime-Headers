@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)_configureWithBgImage:(id)arg1 backdropImage:(id)arg2;
 - (id)_backgroundImageProxy;
 - (struct CGSize)_backgroundImageProxySize;
+- (id)preferredFocusEnvironments;
 - (void)viewDidLayoutSubviews;
 - (void)loadView;
 - (void)updateWithViewElement:(id)arg1;

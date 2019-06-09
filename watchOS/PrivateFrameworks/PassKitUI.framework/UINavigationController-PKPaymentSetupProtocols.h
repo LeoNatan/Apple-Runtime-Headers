@@ -7,9 +7,13 @@
 #import <UIKit/UINavigationController.h>
 
 @interface UINavigationController (PKPaymentSetupProtocols)
+- (void)_pk_popToViewControllerMarker:(id)arg1 animated:(_Bool)arg2;
 - (void)_pk_presentPaymentSetupViewController:(id)arg1 animated:(_Bool)arg2 performPreflight:(_Bool)arg3 delay:(long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)pk_presentPaymentSetupViewController:(id)arg1 animated:(_Bool)arg2 delay:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)pk_presentPaymentSetupViewController:(id)arg1 animated:(_Bool)arg2 performPreflight:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)pk_presentPaymentSetupViewController:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
+- (id)pkui_compactNavigationContainer;
 @end
 

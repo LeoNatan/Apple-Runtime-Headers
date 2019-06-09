@@ -7,8 +7,10 @@
 #import <Foundation/NSSet.h>
 
 @interface NSSet (IC)
-- (id)objectsOfClass:(Class)arg1;
-- (_Bool)containsObjectPassingTest:(CDUnknownBlockType)arg1;
-- (id)objectPassingTest:(CDUnknownBlockType)arg1;
+- (id)ic_map:(CDUnknownBlockType)arg1;
+- (id)ic_compactMap:(CDUnknownBlockType)arg1;
+- (id)ic_objectsOfClass:(Class)arg1;
+- (_Bool)ic_containsObjectPassingTest:(CDUnknownBlockType)arg1;
+- (id)ic_objectPassingTest:(CDUnknownBlockType)arg1;
 @end
 

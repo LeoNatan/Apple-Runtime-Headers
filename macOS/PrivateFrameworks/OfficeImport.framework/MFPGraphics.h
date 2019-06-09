@@ -8,6 +8,7 @@
 
 @class MFPGraphicsState, MFPObjectTable, NSMutableArray, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface MFPGraphics : NSObject
 {
     struct CGRect mCanvas;

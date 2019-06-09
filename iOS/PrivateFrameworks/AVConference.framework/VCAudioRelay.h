@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class VCAudioRelayIO;
+#import <AVConference/VCBasebandCodecNotifications-Protocol.h>
+
+@class NSString, VCAudioRelayIO;
 @protocol OS_dispatch_source;
 
-@interface VCAudioRelay : NSObject
+@interface VCAudioRelay : NSObject <VCBasebandCodecNotifications>
 {
     _Bool _isRelayRunning;
     double _IOBufferDuration;
@@ -27,6 +29,7 @@
     unsigned int _blocksRelayedCount;
     float _clientUplinkPowerMovingAverage;
     float _clientDownlinkPowerMovingAverage;
+    struct _VCRemoteCodecInfo _remoteCodecInfo;
 }
 
 @property(readonly) float clientUplinkPowerMovingAverage; // @synthesize clientUplinkPowerMovingAverage=_clientUplinkPowerMovingAverage;
@@ -39,7 +42,9 @@
 @property(readonly) _Bool isRelayRunning; // @synthesize isRelayRunning=_isRelayRunning;
 @property(copy, nonatomic) VCAudioRelayIO *clientIO; // @synthesize clientIO=_clientIO;
 @property(copy, nonatomic) VCAudioRelayIO *remoteIO; // @synthesize remoteIO=_remoteIO;
+- (void)didUpdateBasebandCodec:(const struct _VCRemoteCodecInfo *)arg1;
 - (void)relayCallback;
+- (void)relayProcessSamples;
 - (void)startPeriodicHealthPrint;
 - (void)updateRealTimeStats;
 - (void)sleepTillTime:(struct timespec *)arg1;
@@ -60,11 +65,18 @@
 - (_Bool)startRelayIO:(id)arg1 name:(id)arg2 recordingsName:(id)arg3;
 - (_Bool)setClientIO:(id)arg1 withError:(id *)arg2;
 - (_Bool)setRemoteIO:(id)arg1 withError:(id *)arg2;
+- (void)updateRemoteCodecInfo:(const struct _VCRemoteCodecInfo *)arg1;
 - (_Bool)setIOBufferDuration:(double)arg1 withError:(id *)arg2;
 - (void)unlock;
 - (void)lock;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

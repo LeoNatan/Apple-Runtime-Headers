@@ -11,6 +11,7 @@
 
 @class NSString, NSTimer, SKUIContextActionsViewController, UILongPressGestureRecognizer, UIPreviewInteraction, UIViewController, UIViewPropertyAnimator;
 
+__attribute__((visibility("hidden")))
 @interface SKUIContextActionsPresentationRegistration : NSObject <UIGestureRecognizerDelegate, UIPreviewInteractionDelegate>
 {
     _Bool _previewInteractionDidEnd;

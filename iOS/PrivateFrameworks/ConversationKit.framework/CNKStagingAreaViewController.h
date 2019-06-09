@@ -40,10 +40,12 @@
 - (void).cxx_destruct;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)hideEffectsBrowser;
 - (void)didTapSwapLocalParticipantCamera;
 - (void)toggleVideoMute;
 - (void)didTapLeaveButton;
 - (void)didTapJoinButton;
+- (_Bool)_canShowWhileLocked;
 - (void)updateViewConstraints;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillDisappear:(_Bool)arg1;

@@ -4,12 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSDictionary, NSError, NSString, QLPreview;
+#import <QuickLookUI/QLUIServiceBaseHostViewControllerProtocol-Protocol.h>
 
-@protocol QLUIServiceHostViewControllerProtocol
+@class NSDictionary, NSError, NSString, NSURL, QLPreview;
+
+@protocol QLUIServiceHostViewControllerProtocol <QLUIServiceBaseHostViewControllerProtocol>
 - (void)closePanel:(long long)arg1;
+- (void)didSaveEdit:(BOOL)arg1 toURL:(NSURL *)arg2;
 - (void)pageUpdatedContent:(long long)arg1;
-- (void)doubleClickOnPreviewContent;
 - (void)remoteDesisted:(QLPreview *)arg1 displayBundle:(NSString *)arg2 error:(NSError *)arg3;
 - (void)sizingUpdated;
 - (void)previewNeedsPassword;

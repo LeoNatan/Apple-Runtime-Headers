@@ -10,7 +10,7 @@
 #import <UserNotifications/NSMutableCopying-Protocol.h>
 #import <UserNotifications/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSNumber, NSString;
+@class NSNumber, NSString, NSURL;
 
 @interface UNNotificationSound : NSObject <NSMutableCopying, NSCopying, NSSecureCoding>
 {
@@ -23,10 +23,11 @@
     _Bool _shouldIgnoreRingerSwitch;
     _Bool _shouldRepeat;
     NSString *_toneFileName;
+    NSURL *_toneFileURL;
     NSString *_toneIdentifier;
     unsigned long long _toneMediaLibraryItemIdentifier;
     NSString *_vibrationIdentifier;
-    NSDictionary *_vibrationPattern;
+    NSURL *_vibrationPatternFileURL;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -37,12 +38,14 @@
 + (id)criticalSoundNamed:(id)arg1;
 + (id)defaultCriticalSoundWithAudioVolume:(float)arg1;
 + (id)defaultCriticalSound;
++ (id)defaultSystemSound;
 + (id)defaultSound;
 @property(readonly, nonatomic, getter=isCritical) _Bool critical; // @synthesize critical=_critical;
-@property(readonly, copy, nonatomic) NSDictionary *vibrationPattern; // @synthesize vibrationPattern=_vibrationPattern;
+@property(readonly, copy, nonatomic) NSURL *vibrationPatternFileURL; // @synthesize vibrationPatternFileURL=_vibrationPatternFileURL;
 @property(readonly, copy, nonatomic) NSString *vibrationIdentifier; // @synthesize vibrationIdentifier=_vibrationIdentifier;
 @property(readonly, nonatomic) long long alertType; // @synthesize alertType=_alertType;
 @property(readonly, copy, nonatomic) NSString *toneIdentifier; // @synthesize toneIdentifier=_toneIdentifier;
+@property(readonly, copy, nonatomic) NSURL *toneFileURL; // @synthesize toneFileURL=_toneFileURL;
 @property(readonly, copy, nonatomic) NSString *toneFileName; // @synthesize toneFileName=_toneFileName;
 @property(readonly, nonatomic) _Bool shouldRepeat; // @synthesize shouldRepeat=_shouldRepeat;
 @property(readonly, nonatomic) _Bool shouldIgnoreRingerSwitch; // @synthesize shouldIgnoreRingerSwitch=_shouldIgnoreRingerSwitch;
@@ -60,7 +63,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)init;
-- (id)_initWithAlertType:(long long)arg1 alertTopic:(id)arg2 audioCategory:(id)arg3 audioVolume:(id)arg4 critical:(_Bool)arg5 maximumDuration:(double)arg6 shouldIgnoreRingerSwitch:(_Bool)arg7 shouldRepeat:(_Bool)arg8 toneFileName:(id)arg9 toneIdentifier:(id)arg10 toneMediaLibraryItemIdentifier:(unsigned long long)arg11 vibrationIdentifier:(id)arg12 vibrationPattern:(id)arg13;
+- (id)_initWithAlertType:(long long)arg1 alertTopic:(id)arg2 audioCategory:(id)arg3 audioVolume:(id)arg4 critical:(_Bool)arg5 maximumDuration:(double)arg6 shouldIgnoreRingerSwitch:(_Bool)arg7 shouldRepeat:(_Bool)arg8 toneFileName:(id)arg9 toneFileURL:(id)arg10 toneIdentifier:(id)arg11 toneMediaLibraryItemIdentifier:(unsigned long long)arg12 vibrationIdentifier:(id)arg13 vibrationPatternFileURL:(id)arg14;
 
 @end
 

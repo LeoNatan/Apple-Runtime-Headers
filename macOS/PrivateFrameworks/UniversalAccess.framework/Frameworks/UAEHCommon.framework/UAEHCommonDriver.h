@@ -23,7 +23,7 @@
 @property(retain, nonatomic) NSXPCConnection *_hudXPCConnection; // @synthesize _hudXPCConnection=__hudXPCConnection;
 - (void).cxx_destruct;
 - (BOOL)isSafeToQuit;
-- (void)_showTransientHUDForCurrentStateOfFeature:(id)arg1;
+- (void)_showTransientHUDForCurrentStateOfFeature:(id)arg1 enabled:(BOOL)arg2;
 - (void)_informDaemonOfSafeToQuit;
 - (id)_settingsChangedNotificationsToObserve;
 - (void)stopListeningForSettingsNotifications;

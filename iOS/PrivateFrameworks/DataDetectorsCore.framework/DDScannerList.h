@@ -6,26 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray;
+@class NSMutableArray, NSString;
 
 __attribute__((visibility("hidden")))
 @interface DDScannerList : NSObject
 {
+    _Bool _spotlightSuggestionsEnabled;
     int _type;
+    NSString *_hash;
     NSMutableArray *_waitQueue;
     NSMutableArray *_scannerCache;
     NSMutableArray *_activeScanners;
 }
 
-- (_Bool)full;
-- (CDUnknownBlockType)dequeueJob;
-- (void)enqueueJob:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
+- (unsigned long long)busyCount;
+- (unsigned long long)totalCount;
+- (id)dequeueJob;
+- (void)enqueueJob:(CDUnknownBlockType)arg1 withIdentifier:(long long)arg2;
 - (void)pushBackScanner:(id)arg1;
-- (id)scanner;
+- (id)scannerCreate;
+- (_Bool)cancelJob:(long long)arg1;
 - (void)activateScanner:(id)arg1;
 - (id)getCachedScanner;
-- (void)dealloc;
-- (id)initWithType:(int)arg1;
+- (id)initWithConfiguration:(id)arg1;
 
 @end
 

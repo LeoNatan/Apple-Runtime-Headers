@@ -8,7 +8,7 @@
 
 #import <NetworkExtension/NEConfigurationCommandHandling-Protocol.h>
 
-@class NEConfiguration, NEConfigurationManager, NSArray, NSMutableArray, NSString;
+@class NEConfiguration, NEConfigurationManager, NEDNSProxyProviderProtocol, NEFilterProviderConfiguration, NSArray, NSMutableArray, NSString;
 
 @interface NEUtilConfigurationClient : NSObject <NEConfigurationCommandHandling>
 {
@@ -46,6 +46,8 @@
 - (id)readIndexFromDiskForGivenPatahWithError:(id)arg1 returnError:(id *)arg2 fileDecoder:(id *)arg3;
 - (void)loadConfigurationWithName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadConfigurationsForceRefresh:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)removePersonalDNSWithParameters:(id)arg1 errorStr:(id *)arg2;
+- (_Bool)addPersonalDNSWithParameters:(id)arg1 errorStr:(id *)arg2;
 - (_Bool)removeAppRuleWithParameters:(id)arg1 errorStr:(id *)arg2;
 - (_Bool)addAppRuleWithParameters:(id)arg1 errorStr:(id *)arg2;
 - (_Bool)removePathRuleWithParameters:(id)arg1 errorStr:(id *)arg2;
@@ -64,10 +66,15 @@
 - (_Bool)setProviderTypeWithParameters:(id)arg1 errorStr:(id *)arg2;
 - (_Bool)setPasswordWithParameters:(id)arg1 errorStr:(id *)arg2;
 - (_Bool)setCommonParameters:(id)arg1 errorStr:(id *)arg2;
+- (_Bool)unsetDNSProxyWithParameters:(id)arg1 errorStr:(id *)arg2;
+- (_Bool)setDNSProxyWithParameters:(id)arg1 errorStr:(id *)arg2;
+- (_Bool)unsetFilterPluginParameters:(id)arg1 errorStr:(id *)arg2;
 - (_Bool)setFilterPluginWithParameters:(id)arg1 errorStr:(id *)arg2;
 - (_Bool)setProtocolWithParameters:(id)arg1 errorStr:(id *)arg2;
 - (_Bool)swapConfigurationTypeWithParameters:(id)arg1 errorStr:(id *)arg2;
 - (_Bool)createConfigurationWithParameters:(id)arg1 errorStr:(id *)arg2;
+@property(readonly) NEDNSProxyProviderProtocol *dnsProxyConfiguration;
+@property(readonly) NEFilterProviderConfiguration *filterConfiguration;
 - (id)protocolForParameters:(id)arg1;
 - (_Bool)isIsAlwaysOn;
 @property(copy) NSArray *onDemandRules;

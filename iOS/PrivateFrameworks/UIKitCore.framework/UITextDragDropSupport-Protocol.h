@@ -13,6 +13,7 @@
 @property(readonly, nonatomic, getter=isDragActive) _Bool dragActive;
 @property(readonly, nonatomic) UIDropInteraction *dropInteraction;
 @property(readonly, nonatomic) UIDragInteraction *dragInteraction;
+- (void)invalidateDropCaret;
 - (void)notifyTextInteraction;
 - (_Bool)accessibilityCanDrag;
 @end

@@ -28,6 +28,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIStatusBarLockView *lockView; // @synthesize lockView=_lockView;
 - (void).cxx_destruct;
 - (id)viewForIdentifier:(id)arg1;
+- (void)_create_stringView;
+- (void)_create_lockView;
 - (id)removalAnimationForDisplayItemWithIdentifier:(id)arg1;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)additionAnimationForDisplayItemWithIdentifier:(id)arg1;

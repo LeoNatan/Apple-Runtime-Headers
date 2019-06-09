@@ -14,6 +14,7 @@
 }
 
 + (unsigned long long)precedenceLevel;
+- (void).cxx_destruct;
 - (id)persistentUniqueIdentifier;
 - (id)fileWrapperForcingDownload:(_Bool)arg1;
 - (void)inlineDisplayData:(id *)arg1 mimeType:(id *)arg2;
@@ -26,7 +27,6 @@
 - (void)setCachedValue:(id)arg1 forKey:(id)arg2;
 - (id)cachedValueForKey:(id)arg1;
 - (id)description;
-- (void)dealloc;
 - (id)initWithWrapper:(id)arg1;
 - (id)init;
 - (void)setMimePart:(id)arg1;

@@ -11,6 +11,7 @@
 @interface _DKApplicationUsageMonitor : _DKMonitor
 {
     void *_notificationID;
+    unsigned long long _activityNotificationHandle;
     NSDictionary *_activeApplicationEvents;
 }
 
@@ -18,7 +19,8 @@
 + (BOOL)shouldMergeUnchangedEvents;
 + (id)eventStream;
 @property(copy, nonatomic) NSDictionary *activeApplicationEvents; // @synthesize activeApplicationEvents=_activeApplicationEvents;
-@property(nonatomic) void *notificationID; // @synthesize notificationID=_notificationID;
+@property unsigned long long activityNotificationHandle; // @synthesize activityNotificationHandle=_activityNotificationHandle;
+@property void *notificationID; // @synthesize notificationID=_notificationID;
 - (void).cxx_destruct;
 - (void)invalidateInstantState;
 - (void)synchronouslyReflectCurrentValue;
@@ -27,6 +29,7 @@
 - (void)updateActiveApplications:(id)arg1;
 - (void)platformSpecificStop;
 - (void)platformSpecificStart;
+- (void)_obtainCurrentValueWithActivityState:(unsigned long long)arg1;
 - (void)obtainCurrentValue;
 - (void)registerForAppChangeNotifications;
 - (void)updateContextStore;

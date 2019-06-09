@@ -13,5 +13,6 @@
 - (id)gs_issueExtension:(const char *)arg1 error:(id *)arg2;
 - (BOOL)validateGSNameAllowingDot:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)validateGSName:(out id *)arg1;
+- (void)chmod:(unsigned short)arg1;
 @end
 

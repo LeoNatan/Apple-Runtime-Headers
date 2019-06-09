@@ -27,11 +27,12 @@
 - (void).cxx_destruct;
 - (id)_characteristicTypeToTargetValuesMap;
 - (void)_getDesiredItemDescription:(id *)arg1 controlDescription:(id *)arg2 withSourceItemResults:(id)arg3;
+- (id)namingComponentForHomeKitObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithValueSource:(id)arg1;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource;
 - (id)accessories;
-- (id)services;
+@property(readonly, nonatomic) NSSet *services;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 - (id)serviceActionItemForChildServiceItem:(id)arg1;
 - (void)addActionBuilder:(id)arg1;

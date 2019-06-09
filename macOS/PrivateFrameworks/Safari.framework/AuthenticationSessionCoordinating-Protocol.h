@@ -7,7 +7,7 @@
 @class NSString, NSURL, NSUUID;
 
 @protocol AuthenticationSessionCoordinating
-- (void)askSafariToCancelAuthenticationSessionWithUUID:(NSUUID *)arg1;
-- (void)askSafariToBeginAuthenticationSessionWithUUID:(NSUUID *)arg1 url:(NSURL *)arg2 callbackURLScheme:(NSString *)arg3 usingEphemeralSession:(BOOL)arg4 completionHandler:(void (^)(NSURL *, NSError *))arg5;
+- (void)askDefaultBrowserToCancelAuthenticationSessionWithUUID:(NSUUID *)arg1;
+- (void)askDefaultBrowserToBeginAuthenticationSessionWithUUID:(NSUUID *)arg1 url:(NSURL *)arg2 callbackURLScheme:(NSString *)arg3 usingEphemeralSession:(BOOL)arg4 completionHandler:(void (^)(NSURL *, NSError *))arg5;
 @end
 

@@ -52,6 +52,7 @@
 @property(readonly, getter=isFinished) BOOL finished;
 @property(readonly, getter=isCancelled) BOOL cancelled;
 - (id)init;
+- (id)binaryPromiseAdapter;
 
 @end
 

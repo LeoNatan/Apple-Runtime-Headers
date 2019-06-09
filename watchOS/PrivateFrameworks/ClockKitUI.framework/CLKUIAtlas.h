@@ -15,8 +15,12 @@
     unsigned int _status;
     unsigned int _width;
     unsigned int _height;
+    unsigned int _memoryCost;
+    double _boundTime;
 }
 
+@property(nonatomic) unsigned int memoryCost; // @synthesize memoryCost=_memoryCost;
+@property(nonatomic) double boundTime; // @synthesize boundTime=_boundTime;
 @property(readonly, nonatomic) unsigned int height; // @synthesize height=_height;
 @property(readonly, nonatomic) unsigned int width; // @synthesize width=_width;
 @property(nonatomic) unsigned int status; // @synthesize status=_status;

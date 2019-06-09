@@ -32,6 +32,7 @@
     _Bool _scrollsLastUsedAppIconIntoView;
     _Bool _hideShinyStatus;
     _Bool _minifiesOnSelection;
+    _Bool _isMinifyingOnTranscriptScroll;
     id <CKBrowserSwitcherFooterViewDelegate> _delegate;
     id <CKBrowserSwitcherFooterViewDataSource> _dataSource;
     double _snapshotVerticalOffset;
@@ -40,6 +41,7 @@
 
 @property(retain, nonatomic) UIView *grayLine; // @synthesize grayLine=_grayLine;
 @property(nonatomic) double snapshotVerticalOffset; // @synthesize snapshotVerticalOffset=_snapshotVerticalOffset;
+@property(nonatomic) _Bool isMinifyingOnTranscriptScroll; // @synthesize isMinifyingOnTranscriptScroll=_isMinifyingOnTranscriptScroll;
 @property(nonatomic) _Bool minifiesOnSelection; // @synthesize minifiesOnSelection=_minifiesOnSelection;
 @property(retain, nonatomic) CKAppStripLayout *appStripLayout; // @synthesize appStripLayout=_appStripLayout;
 @property(nonatomic) _Bool hideShinyStatus; // @synthesize hideShinyStatus=_hideShinyStatus;
@@ -52,6 +54,8 @@
 - (void)_updateVisibilityState;
 - (void)animateAppStripVisible:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)updatePredictiveTypeSnapshot:(id)arg1;
+- (void)transcriptCollectionStartedScrolling:(id)arg1;
+- (void)updateBrowserCell:(id)arg1;
 - (void)reloadData;
 - (void)installedAppsChanged:(id)arg1;
 - (void)updateCollectionView:(id)arg1;
@@ -79,6 +83,7 @@
 - (void)selectPluginAtIndexPath:(id)arg1;
 - (void)setInitiallySelectedPluginIfNeeded;
 @property(nonatomic) _Bool showBorders;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (struct UIEdgeInsets)insetsForAppStrip;
 - (void)layoutSubviews;
 - (void)willMoveToSuperview:(id)arg1;

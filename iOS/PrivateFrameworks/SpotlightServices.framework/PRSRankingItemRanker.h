@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSMapTable, NSString;
+@class NSMapTable, NSString, PRSQueryRankingConfiguration;
 
 @interface PRSRankingItemRanker : NSObject
 {
+    PRSQueryRankingConfiguration *_rankingConfiguration;
     _Bool _isInternalDevice;
     _Bool _policyDisabled;
     _Bool _isCancelled;
@@ -22,9 +23,19 @@
     double _experimentalWeight1;
     double _experimentalWeight2;
     NSString *_meContactIdentifier;
+    double _currentTime;
 }
 
 + (id)importantAttributesForBundle:(id)arg1;
++ (id)filesBundle;
++ (id)searchBundle;
++ (id)relatedSearchesBundle;
++ (id)dictionaryBundle;
++ (id)conversionBundle;
++ (id)calculatorBundle;
++ (id)safariBundle;
++ (id)remindersBundle;
++ (id)contactsBundle;
 + (id)settingsBundle;
 + (id)appsBundle;
 + (id)musicBundle;
@@ -33,13 +44,13 @@
 + (id)notesBundle;
 + (id)mailBundle;
 + (void)setDockApps:(id)arg1;
-+ (CDUnknownBlockType)shouldUpdateFuncForSnippetFeature:(unsigned long long)arg1;
++ (CDUnknownBlockType)shouldUpdateFuncForSnippetFeature:(long long)arg1;
 + (_Bool)isCJK;
 + (void)clearState;
-+ (id)contactsBundle;
 + (id)sortedUniqueBundleFeatureValuesFromBundleFeatures:(id)arg1;
 + (id)requiredAttributes;
 + (void)initialize;
+@property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property _Bool isCJK; // @synthesize isCJK=_isCJK;
 @property _Bool isCancelled; // @synthesize isCancelled=_isCancelled;
 @property(nonatomic) float lastIsSpaceFeature; // @synthesize lastIsSpaceFeature=_lastIsSpaceFeature;
@@ -60,7 +71,9 @@
 - (CDUnknownBlockType)comparatorByJoiningComparator:(CDUnknownBlockType)arg1 withPredicate:(id)arg2;
 - (_Bool)wasItemCreatedWithinAWeek:(id)arg1;
 - (void)rerankItemsWithPolicyForBundleItems:(id)arg1 isCJK:(_Bool)arg2;
-- (void)updateScoresForPreparedItems:(id)arg1 isCJK:(_Bool)arg2;
+- (void)computePolicyFeaturesForBundleItems:(id)arg1 isCJK:(_Bool)arg2 currentTime:(double)arg3;
+- (void)updateScoresForPreparedItems:(id)arg1 isCJK:(_Bool)arg2 clientBundle:(id)arg3;
+- (void)updateScoresForPreparedItems:(id)arg1;
 - (void)hackMusicResultsWithItem:(id)arg1 featureVector:(id)arg2;
 - (float *)computeScoresForVectors:(id)arg1 withBundleFeatures:(id)arg2;
 - (void)computeRelativeFeatureForContext:(id)arg1 items:(id)arg2;
@@ -74,12 +87,12 @@
 - (void)updateResultSetContext:(struct _resultset_computation_ctx *)arg1 andUniqueScores:(id)arg2 withResultSetItems:(id)arg3;
 - (void)deactivate;
 - (void)activate;
-- (id)rankingConfigurationWithMeContact:(id)arg1 emailAddresses:(id)arg2 phoneFavorites:(id)arg3 vipList:(id)arg4 clientBundle:(id)arg5;
+- (id)rankingConfigurationWithMeContact:(id)arg1 emailAddresses:(id)arg2 phoneFavorites:(id)arg3 vipList:(id)arg4 clientBundle:(id)arg5 isScopedSearch:(_Bool)arg6 spotlightQuery:(id)arg7;
 - (id)rankingConfiguration;
 - (void)dealloc;
 - (void)cancel;
-- (id)initWithSearchString:(id)arg1 language:(id)arg2 isCJK:(_Bool)arg3 experimentalWeight1:(double)arg4 experimentalWeight2:(double)arg5;
-- (id)initWithSearchString:(id)arg1 language:(id)arg2;
+- (id)initWithSearchString:(id)arg1 language:(id)arg2 isCJK:(_Bool)arg3 experimentalWeight1:(double)arg4 experimentalWeight2:(double)arg5 currentTime:(double)arg6;
+- (id)initWithSearchString:(id)arg1 language:(id)arg2 currentTime:(double)arg3;
 - (id)init;
 
 @end

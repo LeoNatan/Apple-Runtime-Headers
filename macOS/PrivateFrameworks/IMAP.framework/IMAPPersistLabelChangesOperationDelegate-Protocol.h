@@ -9,6 +9,6 @@
 @class IMAPPersistLabelChangesOperation, NSArray;
 
 @protocol IMAPPersistLabelChangesOperationDelegate <NSObject>
-- (void)persistLabelChangesOperation:(IMAPPersistLabelChangesOperation *)arg1 persistedLabelChangesForMessageDetails:(NSArray *)arg2;
+- (void)persistLabelChangesOperation:(IMAPPersistLabelChangesOperation *)arg1 persistedLabelChangesForServerMessages:(NSArray *)arg2;
 @end
 

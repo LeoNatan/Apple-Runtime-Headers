@@ -8,6 +8,7 @@
 
 @class OADCharacterProperties;
 
+__attribute__((visibility("hidden")))
 @interface OADTextRun : NSObject
 {
     OADCharacterProperties *mProperties;

@@ -42,7 +42,7 @@
 - (void)_integrateTags:(id)arg1 eventInitiationLevel:(long long)arg2;
 - (void)_fetchMissingTagsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_enableTopStoriesNotifications;
-- (void)_refreshChannelsWithNotificationsEnabled;
+- (void)_refreshNotificationRegistrations;
 - (void)_updateNotificationsForPurchaseTagIDs:(id)arg1 isPaid:(_Bool)arg2;
 - (void)_purchaseListDidRemoveTagIDs:(id)arg1;
 - (void)_purchaseListDidAddTagIDs:(id)arg1;
@@ -86,6 +86,7 @@
 - (id)tagIDsWithType:(unsigned long long)arg1;
 - (id)groupableTagIDs;
 - (id)ignoredTagIDs;
+- (id)demoAutoFavoriteChannelIDs;
 - (id)autoFavoriteTagIDs;
 - (id)mutedTagIDs;
 - (id)subscribedTagIDs;

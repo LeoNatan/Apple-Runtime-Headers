@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class AVExternalDevice, MPPlayableContentManagerContext, NSArray, NSMutableSet, NSOperationQueue;
+#import <MediaPlayer/CARSessionObserving-Protocol.h>
+
+@class CARSessionStatus, MPPlayableContentManagerContext, NSArray, NSMutableSet, NSOperationQueue, NSString;
 @protocol MPPlayableContentDataSource, MPPlayableContentDelegate, OS_dispatch_queue;
 
-@interface MPPlayableContentManager : NSObject
+@interface MPPlayableContentManager : NSObject <CARSessionObserving>
 {
     NSMutableSet *_mutatedContentItems;
     NSMutableSet *_contentItemIdentifiersSentToMediaRemote;
@@ -17,7 +19,7 @@
     NSOperationQueue *_artworkUpdateQueue;
     _Bool _coalescingUpdates;
     _Bool _scheduledSupportedAPIsChange;
-    AVExternalDevice *_externalDevice;
+    CARSessionStatus *_currentSessionStatus;
     id <MPPlayableContentDataSource> _dataSource;
     id <MPPlayableContentDelegate> _delegate;
     MPPlayableContentManagerContext *_context;
@@ -48,6 +50,8 @@
 - (void)_setupMediaRemoteEndpoint;
 - (void)_enqueueArtworkUpdate:(id)arg1 size:(struct CGSize)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)_enqueueArtworkUpdate:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)sessionDidDisconnect:(id)arg1;
+- (void)sessionDidConnect:(id)arg1;
 - (void)_contentItemChangedNotification:(id)arg1;
 - (void)endUpdates;
 - (void)beginUpdates;
@@ -55,6 +59,12 @@
 - (void)dealloc;
 - (id)init;
 - (id)_init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

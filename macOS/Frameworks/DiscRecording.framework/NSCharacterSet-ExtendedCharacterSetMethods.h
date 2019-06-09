@@ -8,5 +8,6 @@
 
 @interface NSCharacterSet (ExtendedCharacterSetMethods)
 + (id)eolSet;
++ (id)countryCodeEndingSet;
 @end
 

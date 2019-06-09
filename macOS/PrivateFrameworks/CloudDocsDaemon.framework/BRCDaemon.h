@@ -79,11 +79,15 @@
 - (id)dirPathForSyncedFolderType:(unsigned long long)arg1;
 - (void)setDirPath:(id)arg1 forSyncedFolderType:(unsigned long long)arg2;
 - (void)localeDidChange;
+- (BOOL)isRunningShareAcceptForShareID:(id)arg1 structureRecordID:(id)arg2;
 - (void)dumpToContext:(id)arg1;
 - (id)registerShareAcceptOperation:(id)arg1 forURL:(id)arg2;
 - (void)restart;
 - (void)start;
 - (void)_finishStartup;
+- (void)_migrateToFPFSIfNeeded;
+- (BOOL)_enableFPFSWithError:(id *)arg1;
+- (unsigned long long)_numberOfItemsInDB;
 - (void)_resumeAccount;
 - (void)_startupAndLoadAccount;
 - (void)_startXPCListeners;

@@ -6,9 +6,34 @@
 
 #import <Contacts/CNContact.h>
 
-@class NSPersonNameComponents;
+#import <TelephonyUtilities/TUSearchResult-Protocol.h>
 
-@interface CNContact (TUAdditions)
+@class NSArray, NSPersonNameComponents, NSString, NSURL;
+
+@interface CNContact (TUAdditions) <TUSearchResult>
++ (id)keysToFetchForFaceTime;
 @property(readonly, copy, nonatomic) NSPersonNameComponents *personNameComponents;
+@property(readonly, nonatomic) NSArray *emailAddressStrings;
+@property(readonly, nonatomic) NSArray *phoneNumberStrings;
+@property(readonly, nonatomic) NSURL *faceTimeQuicklookURL;
+@property(readonly, nonatomic) NSString *anyDestinationID;
+@property(readonly, nonatomic) NSArray *allIDSDestinations;
+@property(readonly) NSArray *idsCanonicalDestinations;
+@property(readonly) _Bool mostRecentCallWasMissed;
+@property(readonly) long long mostRecentCallType;
+@property(readonly) NSArray *handles;
+@property(readonly) NSString *isoCountryCode;
+@property(readonly) NSString *destinationId;
+@property(readonly) NSString *backingContactIdentifier;
+@property(readonly) NSString *backingContactId;
+@property(readonly) CNContact *backingContact;
+@property(readonly) NSString *callerId;
+@property(readonly) NSString *displayName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

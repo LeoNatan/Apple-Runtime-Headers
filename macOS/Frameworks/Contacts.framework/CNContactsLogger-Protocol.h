@@ -11,6 +11,7 @@
 @protocol CNContactsLogger <NSObject>
 - (void)XPCConnectionWasInterrupted;
 - (void)XPCConnectionWasInvalidated;
+- (void)errorWhenQueryingTetheredSyncData:(NSError *)arg1;
 - (void)internalError:(NSError *)arg1;
 - (void)SPIUsageLackingEntitlementRejectedForPID:(int)arg1;
 - (void)SPIUsageLackingEntitlementGrantedForPID:(int)arg1;
@@ -30,6 +31,8 @@
 - (void)contactsAccessWasGranted:(BOOL)arg1;
 - (void)tccAccessRequestWasDenied;
 - (void)tccAccessPreflightWasDenied;
+- (void)settingDefaultAccount:(void (^)(void (^)(void)))arg1;
+- (void)resettingSortDataIfNeeded:(void (^)(void (^)(void)))arg1;
 - (void)servicingContactsRequest:(void (^)(void (^)(void)))arg1;
 - (void)clearingChangeHistory:(void (^)(void (^)(void)))arg1;
 - (void)fetchingChangeHistory:(void (^)(void (^)(void)))arg1;
@@ -43,6 +46,7 @@
 - (void)fetchingContactWithUserActivity:(void (^)(void (^)(void)))arg1;
 - (void)fetchingContactsBatch:(void (^)(void (^)(void)))arg1;
 - (void)fetchingContacts:(void (^)(void (^)(void)))arg1;
+- (void)fetchingContactSectionCounts:(void (^)(void (^)(void)))arg1;
 - (void)fetchingContactCount:(void (^)(void (^)(void)))arg1;
 - (void)changingMeContact:(void (^)(void (^)(void)))arg1;
 - (void)fetchingMeContactIdentifier:(void (^)(void (^)(void)))arg1;

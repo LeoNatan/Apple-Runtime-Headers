@@ -8,6 +8,7 @@
 
 @class NSView;
 
+__attribute__((visibility("hidden")))
 @interface AVAudioTrimControlsViewController : AVTrimControlsViewController
 {
     NSView *_initialFirstResponder;
@@ -15,6 +16,10 @@
 }
 
 - (void).cxx_destruct;
+- (long long)layoutStyle;
+- (struct CGSize)intrinsicControlsContentViewSize;
+- (long long)preferredEffectMaterial;
+- (long long)preferredBlendingMode;
 - (id)initialFirstResponder;
 - (void)setupNextKeyView;
 - (unsigned long long)preferredTrimViewStyle;

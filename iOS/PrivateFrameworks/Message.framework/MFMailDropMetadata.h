@@ -26,13 +26,14 @@
 @property _Bool isInvalid; // @synthesize isInvalid=_isInvalid;
 @property unsigned long long flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) NSDate *expiration; // @synthesize expiration=_expiration;
-@property(copy, nonatomic) NSURL *wrappedUrl; // @synthesize wrappedUrl=_wrappedUrl;
-@property(copy, nonatomic) NSURL *directUrl; // @synthesize directUrl=_directUrl;
+@property(retain, nonatomic) NSURL *wrappedUrl; // @synthesize wrappedUrl=_wrappedUrl;
+@property(retain, nonatomic) NSURL *directUrl; // @synthesize directUrl=_directUrl;
 @property _Bool autoArchive; // @synthesize autoArchive=_autoArchive;
 @property(copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property long long fileSize; // @synthesize fileSize=_fileSize;
 @property(copy, nonatomic) NSString *fileName; // @synthesize fileName=_fileName;
-@property(getter=UUID, setter=setUUID:) NSString *UUID;
+- (void).cxx_destruct;
+@property __weak NSString *UUID;
 - (void)merge:(id)arg1;
 - (_Bool)isBannerWithMultiple;
 - (_Bool)isExpired;
@@ -41,7 +42,6 @@
 - (id)wrappedUrlString;
 - (id)directUrlString;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)description;
 
 @end

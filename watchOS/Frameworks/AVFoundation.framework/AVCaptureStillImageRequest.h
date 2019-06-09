@@ -8,6 +8,7 @@
 
 @class AVCaptureBracketedStillImageSettings;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureStillImageRequest : NSObject
 {
     CDUnknownBlockType _sbufCompletionBlock;

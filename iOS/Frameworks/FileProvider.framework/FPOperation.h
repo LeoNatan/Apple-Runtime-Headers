@@ -27,20 +27,22 @@
 @property(readonly, getter=isFinished) _Bool finished; // @synthesize finished=_finished;
 - (void).cxx_destruct;
 - (void)operationDidProgressWithInfo:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (oneway void)invalidate;
-- (oneway void)setCancellationHandler:(id)arg1;
+- (void)invalidate;
+- (void)setCancellationHandler:(id)arg1;
 - (void)_setRemoteCancellationHandler:(id)arg1;
+- (void)resetRemoteOperation;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (void)completedWithResult:(id)arg1 error:(id)arg2;
 - (_Bool)finishIfCancelled;
 - (_Bool)_finishIfCancelled;
-- (oneway void)cancel;
+- (void)cancel;
 - (void)start;
 - (void)_setExecuting:(_Bool)arg1;
 @property(readonly, getter=isExecuting) _Bool executing;
 - (void)_setFinished:(_Bool)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)proxifiedDescription;
 - (id)operationDescription;
 - (id)init;
 

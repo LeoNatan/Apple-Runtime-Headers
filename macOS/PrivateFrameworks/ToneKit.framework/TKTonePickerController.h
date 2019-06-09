@@ -8,7 +8,7 @@
 
 #import <ToneKit/TLToneStoreDownloadObserver-Protocol.h>
 
-@class NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSString, TKTonePickerItem, TLAlert, TLToneManager;
+@class NSArray, NSIndexPath, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, TKTonePickerItem, TLAlert, TLToneManager;
 @protocol TKTonePickerControllerDelegate, TLToneStoreDownloadController;
 
 @interface TKTonePickerController : NSObject <TLToneStoreDownloadObserver>
@@ -33,6 +33,7 @@
     NSMutableArray *_toneGroupLists;
     NSMutableArray *_toneGroupNames;
     NSMutableArray *_toneGroupBucketIdentifiers;
+    NSMutableSet *_identifiersOfRemovableTones;
     TLAlert *_playingAlert;
     BOOL _showsDefault;
     BOOL _showsNone;
@@ -126,6 +127,8 @@
 - (void)didFinishCheckingForAvailableToneStoreDownloads:(BOOL)arg1;
 - (void)storeAccountNameDidChange:(id)arg1;
 @property(readonly, nonatomic) BOOL canShowStore;
+- (void)_applyBatchUpdatesWithDeletedPickerRowItems:(id)arg1 deletedTonePickerSectionItems:(id)arg2 insertedPickerRowItems:(id)arg3 insertedTonePickerSectionItems:(id)arg4 tonePickerSectionItemsWithUpdatedHeaderText:(id)arg5 tonePickerSectionItemsWithUpdatedFooterText:(id)arg6;
+- (void)_performBatchUpdates:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic, setter=_setToneManager:) TLToneManager *_toneManager;
 - (void)_sortToneIdentifiersArray:(id)arg1;
 - (id)_loadRingtonesFromPlist;
@@ -136,6 +139,8 @@
 - (void)_reloadTonesForExternalChange:(BOOL)arg1 shouldSkipDelegateFullReload:(BOOL)arg2;
 - (void)_reloadTones;
 - (void)_reloadStateForBasicBehavior;
+- (void)deleteTonePickerItem:(id)arg1;
+- (BOOL)canDeleteTonePickerItem:(id)arg1;
 - (BOOL)_didSelectToneClassicsPickerItem:(id)arg1;
 - (BOOL)didSelectTonePickerItem:(id)arg1;
 - (id)_selectedIdentifier:(char *)arg1;

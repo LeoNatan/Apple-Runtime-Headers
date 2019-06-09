@@ -11,6 +11,6 @@
 @protocol HDStatisticsSourceOrderProvider <NSObject>
 - (HKSource *)sourceForSourceID:(long long)arg1;
 - (NSString *)bundleIdentifierForSourceID:(long long)arg1;
-- (void)orderSourceIDs:(vector_bbba3654 *)arg1;
+- (void)orderSourceIDs:(vector_d87a6415 *)arg1;
 @end
 

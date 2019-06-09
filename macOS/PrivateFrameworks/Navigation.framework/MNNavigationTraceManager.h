@@ -13,7 +13,6 @@
 @class MNTraceEventRecorder, MNTracePlayer, MNTraceRecorder, NSBundle, NSString;
 @protocol GEOMotionContextProviderDelegate, MNLocationProviderDelegate, MNNavigationTraceManagerDelegate;
 
-__attribute__((visibility("hidden")))
 @interface MNNavigationTraceManager : NSObject <MNTracePlayerObserver, MNLocationProvider, GEOMotionContextProvider>
 {
     MNTracePlayer *_tracePlayer;
@@ -25,6 +24,7 @@ __attribute__((visibility("hidden")))
     id <GEOMotionContextProviderDelegate> _motionContextProviderDelegate;
 }
 
+@property(nonatomic) int navigationType; // @synthesize navigationType=_navigationType;
 @property(readonly, nonatomic) MNTraceEventRecorder *traceEventRecorder; // @synthesize traceEventRecorder=_traceEventRecorder;
 @property(readonly, nonatomic) MNTraceRecorder *traceRecorder; // @synthesize traceRecorder=_traceRecorder;
 @property(readonly, nonatomic) MNTracePlayer *tracePlayer; // @synthesize tracePlayer=_tracePlayer;
@@ -72,10 +72,19 @@ __attribute__((visibility("hidden")))
 - (void)tracePlayerDidPause:(id)arg1;
 - (void)tracePlayerDidStop:(id)arg1;
 - (void)tracePlayerDidStart:(id)arg1;
+- (void)_recordStylesheet:(id)arg1;
+- (void)_recordEnvironmentInfo:(id)arg1;
+- (id)_defaultTraceExtension;
+- (id)_defaultTraceNameForDestination:(id)arg1;
+- (id)_tracePathForTraceName:(id)arg1;
+- (id)_validFilenameForTraceName:(id)arg1;
 - (unsigned long long)_startIndexForNavigation;
 - (BOOL)_isNavigating;
 - (void)close;
-- (void)openWithRoutePlanningDetails:(id)arg1;
+- (void)startSimulationWithRoute:(id)arg1 request:(id)arg2 response:(id)arg3 routeAttributes:(id)arg4 routeIndex:(unsigned int)arg5 traceNameOverride:(id)arg6;
+- (void)openForSimulationWithRoute:(id)arg1 traceRecordingData:(id)arg2 traceNameOverride:(id)arg3;
+- (void)openForRecordingWithTraceRecordingData:(id)arg1 traceNameOverride:(id)arg2;
+- (void)openForPlaybackWithTracePath:(id)arg1;
 - (void)dealloc;
 
 // Remaining properties

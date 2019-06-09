@@ -24,9 +24,9 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithDeviceName:(id)arg1 ownerFirstName:(id)arg2 ownerLastName:(id)arg3;
-@property(nonatomic, readonly) NSString *ownerLastName; // @synthesize ownerLastName;
-@property(nonatomic, readonly) NSString *ownerFirstName; // @synthesize ownerFirstName;
-@property(nonatomic, readonly) NSString *deviceName; // @synthesize deviceName;
+@property(nonatomic, readonly) NSString *ownerLastName;
+@property(nonatomic, readonly) NSString *ownerFirstName;
+@property(nonatomic, readonly) NSString *deviceName;
 
 @end
 

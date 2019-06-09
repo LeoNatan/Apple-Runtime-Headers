@@ -8,6 +8,7 @@
 
 @class SKUIAttributedStringLayout;
 
+__attribute__((visibility("hidden")))
 @interface SKUIBadgeImageRequest : NSObject
 {
     unsigned long long _requestIdentifier;

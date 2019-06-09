@@ -6,7 +6,7 @@
 
 #import <SAObjects/SAAceView.h>
 
-@class NSString, SAUIImageResource;
+@class NSString, NSURL, SAUIImageResource;
 
 @interface SAVCSContentDetailPage : SAAceView
 {
@@ -16,6 +16,7 @@
 + (id)contentDetailPage;
 @property(copy, nonatomic) NSString *utsId;
 @property(nonatomic) _Bool userDriven;
+@property(copy, nonatomic) NSURL *url;
 @property(copy, nonatomic) NSString *showId;
 @property(copy, nonatomic) NSString *seasonId;
 @property(copy, nonatomic) NSString *loadingText;

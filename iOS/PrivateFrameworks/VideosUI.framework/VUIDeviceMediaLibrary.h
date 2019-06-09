@@ -10,6 +10,7 @@
 {
 }
 
+- (void)updateFromCloudWithReason:(long long)arg1;
 - (void)updateProgressWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isInitialUpdateInProgress) _Bool initialUpdateInProgress;
 @property(readonly, nonatomic, getter=isUpdating) _Bool updating;

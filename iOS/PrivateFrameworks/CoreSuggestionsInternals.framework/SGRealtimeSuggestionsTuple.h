@@ -12,10 +12,12 @@
 {
     NSArray *_contacts;
     NSArray *_events;
+    NSArray *_reminders;
     NSArray *_invalidatedIdentifiers;
 }
 
 @property(retain) NSArray *invalidatedIdentifiers; // @synthesize invalidatedIdentifiers=_invalidatedIdentifiers;
+@property(retain) NSArray *reminders; // @synthesize reminders=_reminders;
 @property(retain) NSArray *events; // @synthesize events=_events;
 @property(retain) NSArray *contacts; // @synthesize contacts=_contacts;
 - (void).cxx_destruct;

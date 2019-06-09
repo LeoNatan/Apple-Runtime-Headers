@@ -11,30 +11,45 @@
 }
 
 + (void)requestImageForStyleAttributes:(id)arg1 size:(unsigned int)arg2 scale:(float)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 transparent:(_Bool)arg7 transitmode:(_Bool)arg8 interactive:(_Bool)arg9 isCarplay:(_Bool)arg10 nightMode:(_Bool)arg11;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 transparent:(_Bool)arg7 transitmode:(_Bool)arg8 interactive:(_Bool)arg9 isCarplay:(_Bool)arg10;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 transparent:(_Bool)arg7 transitmode:(_Bool)arg8 interactive:(_Bool)arg9 nightMode:(_Bool)arg10;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 transparent:(_Bool)arg7 transitmode:(_Bool)arg8 interactive:(_Bool)arg9;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 transparent:(_Bool)arg7 transitmode:(_Bool)arg8 nightMode:(_Bool)arg9;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 transparent:(_Bool)arg7 transitmode:(_Bool)arg8;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 transparent:(_Bool)arg7 nightMode:(_Bool)arg8;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 transparent:(_Bool)arg7;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6 nightMode:(_Bool)arg7;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(_Bool)arg6;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 nightMode:(_Bool)arg6;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(_Bool)arg5 transitMode:(_Bool)arg6 interactive:(_Bool)arg7 nightMode:(_Bool)arg8;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(_Bool)arg5 transitMode:(_Bool)arg6 interactive:(_Bool)arg7;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(_Bool)arg5 transitMode:(_Bool)arg6 isCarplay:(_Bool)arg7 nightMode:(_Bool)arg8;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(_Bool)arg5 transitMode:(_Bool)arg6 isCarplay:(_Bool)arg7;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(_Bool)arg5 transitMode:(_Bool)arg6 nightMode:(_Bool)arg7;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(_Bool)arg5 transitMode:(_Bool)arg6;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(_Bool)arg5 nightMode:(_Bool)arg6;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(_Bool)arg5;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 nightMode:(_Bool)arg5;
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4;
 + (id)imageForMapItem:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 fallbackToBundleIcon:(_Bool)arg5;
 + (id)imageForMapItem:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4;
 + (id)imageForMapItem:(id)arg1 forScale:(float)arg2 fallbackToBundleIcon:(_Bool)arg3;
 + (id)imageForMapItem:(id)arg1 forScale:(float)arg2;
++ (id)imageForTrafficIncidentType:(int)arg1 size:(unsigned int)arg2 forScale:(float)arg3 nightMode:(_Bool)arg4;
 + (id)imageForTrafficIncidentType:(int)arg1 size:(unsigned int)arg2 forScale:(float)arg3;
++ (id)imageForTrafficCamera:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 nightMode:(_Bool)arg4;
 + (id)imageForTrafficCamera:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3;
++ (id)_imageForFeatureStyleAttributes:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 nightMode:(_Bool)arg4;
 + (id)_imageForFeatureStyleAttributes:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3;
-+ (id)_imageForFeatureStyleAttributes:(id)arg1 iconText:(id)arg2 size:(unsigned int)arg3 forScale:(float)arg4 navMode:(_Bool)arg5;
++ (id)_imageForFeatureStyleAttributes:(id)arg1 iconText:(id)arg2 size:(unsigned int)arg3 forScale:(float)arg4 navMode:(_Bool)arg5 nightMode:(_Bool)arg6;
++ (id)_imageForFeatureStyleAttributes:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 navMode:(_Bool)arg4 nightMode:(_Bool)arg5;
 + (id)_imageForFeatureStyleAttributes:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 navMode:(_Bool)arg4;
 + (struct CGColor *)newGlyphColorForStyleAttributes:(id)arg1 forScale:(float)arg2;
 + (struct CGColor *)newHaloColorForStyleAttributes:(id)arg1 forScale:(float)arg2;
 + (struct CGColor *)newFillColorForStyleAttributes:(id)arg1 forScale:(float)arg2;
-+ (id)_iconManager;
++ (id)iconManager;
 + (void)setUseSharedCaches;
 + (void)setDiskCacheURL:(id)arg1;
 

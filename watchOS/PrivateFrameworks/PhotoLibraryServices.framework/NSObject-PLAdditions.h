@@ -8,5 +8,7 @@
 
 @interface NSObject (PLAdditions)
 - (id)pl_briefDescription;
+- (id)_pl_prettyDescriptionWithIndent:(int)arg1;
+- (id)_pl_prettyDescription;
 @end
 

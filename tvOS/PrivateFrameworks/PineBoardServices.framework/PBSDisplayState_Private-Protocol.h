@@ -6,7 +6,10 @@
 
 #import <PineBoardServices/PBSDisplayState-Protocol.h>
 
+@class NSDictionary;
+
 @protocol PBSDisplayState_Private <PBSDisplayState>
+@property(readonly, nonatomic) NSDictionary *audioLatencies;
 @property(readonly, nonatomic) long long lastCablePollStatus;
 @end
 

@@ -10,9 +10,17 @@
 {
 }
 
++ (void)clearCountsForKeys:(id)arg1;
++ (long long)getCountForKey:(id)arg1;
++ (void)setCount:(long long)arg1 forKey:(id)arg2;
++ (void)incrementCountForKey:(id)arg1;
++ (id)countDictionary;
 + (void)_dispatchRecord:(id)arg1;
 + (void)_logMessage:(id)arg1 withLevel:(unsigned int)arg2 forKey:(id)arg3 inFile:(const char *)arg4 atLine:(unsigned int)arg5;
++ (id)logMessageWithInterval:(double)arg1 lastDate:(id)arg2 level:(unsigned int)arg3 forKey:(id)arg4 inFile:(const char *)arg5 atLine:(int)arg6 format:(id)arg7;
 + (void)logMessageForKey:(id)arg1 inFile:(const char *)arg2 atLine:(int)arg3 format:(id)arg4;
++ (void)logMessageWithLevel:(unsigned int)arg1 forKey:(id)arg2 inFile:(const char *)arg3 atLine:(int)arg4 format:(id)arg5 args:(struct __va_list_tag [1])arg6;
++ (void)logMessageWithLevel:(unsigned int)arg1 forKey:(id)arg2 inFile:(const char *)arg3 atLine:(int)arg4 format:(id)arg5;
 + (void)logError:(id)arg1;
 + (void)logInfo:(id)arg1;
 + (void)addHandler:(id)arg1;

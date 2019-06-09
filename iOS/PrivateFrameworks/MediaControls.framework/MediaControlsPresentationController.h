@@ -10,6 +10,7 @@
 
 @class MTMaterialView, NSString, UIView;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsPresentationController : UIPreviewPresentationController <UIGestureRecognizerDelegate>
 {
     UIView *_presentingView;

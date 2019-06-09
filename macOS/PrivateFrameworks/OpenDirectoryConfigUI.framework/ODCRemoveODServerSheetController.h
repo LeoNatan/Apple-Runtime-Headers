@@ -8,6 +8,7 @@
 
 @class NSAlert, NSButton, NSDictionary, NSProgressIndicator, NSTextField, NSView, NSWindow, ODCRemoveODServerAction, ODCServersViewController, SFAuthorizationView;
 
+__attribute__((visibility("hidden")))
 @interface ODCRemoveODServerSheetController : NSObject
 {
     NSWindow *_docWindow;

@@ -40,6 +40,7 @@
 
 // Remaining properties
 @property(readonly, copy, nonatomic) NSString *articleID;
+@property(readonly, nonatomic) long long bodyTextLength;
 @property(readonly, nonatomic, getter=isBundlePaid) _Bool bundlePaid;
 @property(readonly, copy, nonatomic) NSString *clusterID;
 @property(readonly, nonatomic) unsigned long long contentType;

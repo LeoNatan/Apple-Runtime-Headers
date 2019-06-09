@@ -8,6 +8,7 @@
 
 @class SKUIIndexBarEntryDescriptor, SKUIIndexBarEntryViewElement, SKUIViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIndexBarSingleEntryListController : SKUIIndexBarEntryListController
 {
     SKUIIndexBarEntryDescriptor *_entryDescriptor;

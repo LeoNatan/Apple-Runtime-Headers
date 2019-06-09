@@ -39,14 +39,15 @@
 - (void).cxx_destruct;
 - (void)clearRetryForSelector:(SEL)arg1;
 - (void)retrySelector:(SEL)arg1;
-- (id)objectForSearchableItemIdentifier:(id)arg1 inContexts:(id)arg2;
+- (id)objectForManagedObjectIDURI:(id)arg1 inContexts:(id)arg2;
 - (id)objectsDictionaryForSearchableItems:(id)arg1 inContexts:(id)arg2;
 - (id)objectForSearchableItem:(id)arg1 context:(id)arg2;
 - (id)objectsForSearchableItems:(id)arg1 inContexts:(id)arg2;
-- (void)reindexSearchableItemsWithIdentifiers:(id)arg1 inIndex:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)reindexSearchableItemsWithIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)reindexSearchableItemsWithObjectIDURIs:(id)arg1 inIndex:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)reindexSearchableItemsWithObjectIDURIs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)reindexAllSearchableItemsInIndex:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)reindexAllSearchableItemsInIndex;
+- (id)pendingReindexingOperation;
 - (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(CDUnknownBlockType)arg3;
 - (void)searchableIndex:(id)arg1 reindexAllSearchableItemsWithAcknowledgementHandler:(CDUnknownBlockType)arg2;
 - (void)deleteAllSearchableItemsWithCompletionHandler:(CDUnknownBlockType)arg1;

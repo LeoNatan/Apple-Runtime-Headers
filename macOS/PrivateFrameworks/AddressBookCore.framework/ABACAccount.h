@@ -8,7 +8,7 @@
 
 #import <AddressBookCore/NSSecureCoding-Protocol.h>
 
-@class ABACAccountType, NSDictionary, NSString;
+@class ABACAccountType, NSArray, NSDictionary, NSNumber, NSString;
 
 @interface ABACAccount : NSObject <NSSecureCoding>
 {
@@ -17,22 +17,38 @@
     ABACAccountType *_accountType;
     ABACAccountType *_parentAccountType;
     NSDictionary *_accountProperties;
+    NSNumber *_dsid;
+    NSString *_altDSID;
+    NSArray *_childAccounts;
 }
 
 + (BOOL)supportsSecureCoding;
++ (void)_setIsEnabled:(BOOL)arg1 forDataclass:(id)arg2 forAccount:(id)arg3;
++ (BOOL)_dataclassIsEnabled:(id)arg1 forAccount:(id)arg2;
++ (void)setAccountPropertiesOnAccount:(id)arg1 toDictionary:(id)arg2;
++ (id)childAccountsFromACAccount:(id)arg1;
++ (id)altDSIDFromACAccount:(id)arg1;
++ (BOOL)isAccountEnabled:(id)arg1;
++ (id)accountPropertiesFromACAccount:(id)arg1;
+@property(readonly, copy) NSArray *childAccounts; // @synthesize childAccounts=_childAccounts;
+@property(readonly, copy) NSString *altDSID; // @synthesize altDSID=_altDSID;
+@property(readonly, copy) NSNumber *dsid; // @synthesize dsid=_dsid;
 @property(copy) NSDictionary *accountProperties; // @synthesize accountProperties=_accountProperties;
 @property(readonly) ABACAccountType *parentAccountType; // @synthesize parentAccountType=_parentAccountType;
 @property(readonly) ABACAccountType *accountType; // @synthesize accountType=_accountType;
 @property(readonly) NSString *accountDescription; // @synthesize accountDescription=_accountDescription;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-@property(readonly) BOOL requiresSeparateBirthdayCalendar;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+@property(readonly) BOOL requiresSeparateBirthdayCalendar;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (id)initWithIdentifier:(id)arg1 accountDescription:(id)arg2 accountType:(id)arg3 parentAccountType:(id)arg4 accountProperties:(id)arg5;
+- (id)initWithIdentifier:(id)arg1 accountDescription:(id)arg2 accountType:(id)arg3 parentAccountType:(id)arg4 accountProperties:(id)arg5 dsid:(id)arg6 altDSID:(id)arg7 childAccounts:(id)arg8;
+- (id)initWithACAccount:(id)arg1;
 
 @end
 

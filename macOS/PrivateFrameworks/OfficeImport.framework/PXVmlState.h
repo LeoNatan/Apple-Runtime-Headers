@@ -8,6 +8,7 @@
 
 @class ESDObject, PBPresentationReaderState;
 
+__attribute__((visibility("hidden")))
 @interface PXVmlState : OAVReadState
 {
     ESDObject *mLegacyTextGlobals;

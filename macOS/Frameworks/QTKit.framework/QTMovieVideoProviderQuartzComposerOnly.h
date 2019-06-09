@@ -8,17 +8,8 @@
 
 @interface QTMovieVideoProviderQuartzComposerOnly : NSObject
 {
-    struct QTMovieVideoProviderQuartzComposerOnlyInternal *_internal;
 }
 
-- (void)_currentImageBufferDidChange:(id)arg1;
-- (void)unscheduleFromRunLoop:(id)arg1 forMode:(id)arg2;
-- (void)scheduleInRunLoop:(id)arg1 forMode:(id)arg2;
-- (struct __CVBuffer *)copyCurrentPixelBuffer;
-- (void)setMovie:(id)arg1;
-- (id)movie;
-- (void)finalize;
-- (void)dealloc;
 - (id)init;
 
 @end

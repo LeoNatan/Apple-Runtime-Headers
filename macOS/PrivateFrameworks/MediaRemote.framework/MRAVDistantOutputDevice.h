@@ -19,6 +19,7 @@
 
 + (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
+- (id)bluetoothID;
 - (unsigned int)volumeCapabilities;
 - (BOOL)isAddedToHomeKit;
 - (id)sourceInfo;

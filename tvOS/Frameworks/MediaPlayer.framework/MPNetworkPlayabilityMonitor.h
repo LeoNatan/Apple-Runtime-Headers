@@ -14,8 +14,8 @@
 @interface MPNetworkPlayabilityMonitor : NSObject <ICEnvironmentMonitorObserver>
 {
     long long _effectiveNetworkTypeForCloudPlayback;
-    double _lastAverageBitrate;
     long long _networkType;
+    double _lastAverageBitrate;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
@@ -23,8 +23,8 @@
 - (void).cxx_destruct;
 - (void)_onQueueUpdateEffectiveNetworkTypesForPlayback;
 - (long long)_onQueueEffectiveNetworkTypeForAverageBitrate:(double)arg1;
-@property(readonly, nonatomic) long long networkType;
 @property(readonly, nonatomic) double lastAverageBitrate;
+@property(readonly, nonatomic) long long networkType;
 @property(readonly, nonatomic) long long effectiveNetworkTypeForPlayback;
 - (void)adjustEffectiveNetworkTypeUsingPreviouslyPlayedItem:(id)arg1;
 - (void)environmentMonitorDidChangeNetworkType:(id)arg1;

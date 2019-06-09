@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/UIView.h>
+#import <UIKitCore/_UIAlertControlleriOSActionSheetCancelBackgroundView.h>
 
 #import <UIKitCore/UIActionSheetPresentationControllerDismissActionView-Protocol.h>
 
 @class NSString, UIButton;
 
 __attribute__((visibility("hidden")))
-@interface UIActionSheetiOSDismissActionView : UIView <UIActionSheetPresentationControllerDismissActionView>
+@interface UIActionSheetiOSDismissActionView : _UIAlertControlleriOSActionSheetCancelBackgroundView <UIActionSheetPresentationControllerDismissActionView>
 {
     _Bool _usesShortCompactVerticalLayout;
     UIButton *_dismissButton;
@@ -23,11 +23,8 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (double)_heightForTraitCollection:(id)arg1;
 @property(copy, nonatomic) NSString *title;
-- (void)setHighlighted:(_Bool)arg1;
-- (void)_applyContinuousCornerRadius:(double)arg1;
 - (void)_setupDismissButton;
 - (id)initWithContinuousCornerRadius:(double)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

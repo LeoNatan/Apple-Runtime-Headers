@@ -22,13 +22,11 @@
 - (id)streamingContentKeyRequestDataForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (struct OpaqueFigCustomURLHandler *)_contentKeySessionCustomURLHandler;
 - (_Bool)_contentKeySessionIsAttached;
-- (id)createKeyRequestDataUsingCryptorForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 performAsync:(_Bool)arg4 error:(id *)arg5;
+- (id)keyRequestDataUsingCryptorForApp:(id)arg1 contentIdentifier:(id)arg2 options:(id)arg3 performAsync:(_Bool)arg4 error:(id *)arg5;
 - (void)finishLoadingWithResponse:(id)arg1 data:(id)arg2 redirect:(id)arg3;
 - (void)finishLoadingWithError:(id)arg1;
 - (void)finishLoading;
 - (void)forwardRequestToContentKeySession;
-- (void)_sendDataIncrementally:(id)arg1 data:(id)arg2;
-- (void)_sendDictionaryForURLRequest:(id)arg1 context:(id)arg2;
 - (void)_sendFinishLoadingToCustomURLHandler;
 - (void)_sendFinishLoadingToCustomURLHandlerWithError:(id)arg1;
 - (void)_sendDataToCustomURLHandler:(id)arg1;
@@ -54,17 +52,14 @@
 @property(readonly, nonatomic, getter=isFinished) _Bool finished;
 - (unsigned long long)_requestID;
 @property(readonly, nonatomic) NSURLRequest *request;
-- (id)_requestDictionary;
 - (struct __CFDictionary *)_requestInfo;
 - (struct OpaqueFigCustomURLLoader *)_customURLLoader;
 - (struct OpaqueFigCustomURLHandler *)_customURLHandler;
 - (id)_resourceLoader;
 - (id)_weakReference;
 @property(readonly, copy) NSString *description;
-- (void)finalize;
 - (void)dealloc;
-- (id)initWithResourceLoader:(id)arg1 URL:(id)arg2 httpRequestHeaders:(id)arg3 requestOffset:(id)arg4 requestLength:(id)arg5 allowedContentTypes:(id)arg6 figCryptor:(struct OpaqueFigCPECryptor *)arg7 cryptorKeyRequestID:(unsigned long long)arg8 figPlaybackItem:(struct OpaqueFigPlaybackItem *)arg9 figAssetImageGenerator:(struct OpaqueFigAssetImageGenerator *)arg10;
-- (id)initWithResourceLoader:(id)arg1 requestDictionary:(id)arg2;
+- (id)initWithResourceLoader:(id)arg1 URL:(id)arg2 httpRequestHeaders:(id)arg3 requestOffset:(id)arg4 requestLength:(id)arg5 allowedContentTypes:(id)arg6 figCryptor:(struct OpaqueFigCPECryptor *)arg7 cryptorKeyRequestID:(unsigned long long)arg8;
 - (id)initWithResourceLoader:(id)arg1 requestInfo:(struct __CFDictionary *)arg2 requestID:(unsigned long long)arg3;
 - (id)init;
 

@@ -14,12 +14,12 @@ __attribute__((visibility("hidden")))
     NSString *_name;
 }
 
-@property(readonly) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)fetchValueForContext:(struct sqlite3_context *)arg1 row:(unsigned int)arg2 column:(unsigned int)arg3;
-@property(readonly) unsigned int rowCount;
-@property(readonly) NSString *columnDefinitions;
-@property(readonly) struct sqlite3_module *module;
+@property(readonly, nonatomic) unsigned int rowCount;
+@property(readonly, nonatomic) NSString *columnDefinitions;
+@property(readonly, nonatomic) struct sqlite3_module *module;
 - (id)initWithName:(id)arg1;
 - (id)init;
 

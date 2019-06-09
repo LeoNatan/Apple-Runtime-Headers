@@ -6,43 +6,66 @@
 
 #import <objc/NSObject.h>
 
-@class KCPairingChannelContext, NSXPCConnection;
+@class KCPairingChannelContext, NSString, NSXPCConnection, OTControl, OTJoiningConfiguration;
 
 @interface KCPairingChannel : NSObject
 {
     _Bool _needInitialSync;
-    _Bool _initator;
+    _Bool _initiator;
     _Bool _acceptorWillSendInitialSyncCredentials;
+    _Bool _testFailSOS;
+    _Bool _testFailOctagon;
+    _Bool _doingSOS;
+    _Bool _doingOctagon;
     unsigned int _counter;
     KCPairingChannelContext *_peerVersionContext;
     NSXPCConnection *_connection;
+    OTControl *_otControl;
+    NSString *_contextID;
+    CDUnknownBlockType _nextOctagonState;
     CDUnknownBlockType _nextState;
+    OTJoiningConfiguration *_joiningConfiguration;
 }
 
 + (_Bool)isSupportedPlatform;
 + (id)pairingChannelAcceptor:(id)arg1;
 + (id)pairingChannelInitiator:(id)arg1;
+@property _Bool doingOctagon; // @synthesize doingOctagon=_doingOctagon;
+@property _Bool doingSOS; // @synthesize doingSOS=_doingSOS;
+@property(nonatomic) _Bool testFailOctagon; // @synthesize testFailOctagon=_testFailOctagon;
+@property(nonatomic) _Bool testFailSOS; // @synthesize testFailSOS=_testFailSOS;
+@property(retain, nonatomic) OTJoiningConfiguration *joiningConfiguration; // @synthesize joiningConfiguration=_joiningConfiguration;
 @property(copy) CDUnknownBlockType nextState; // @synthesize nextState=_nextState;
+@property(copy) CDUnknownBlockType nextOctagonState; // @synthesize nextOctagonState=_nextOctagonState;
+@property(retain) NSString *contextID; // @synthesize contextID=_contextID;
+@property(retain) OTControl *otControl; // @synthesize otControl=_otControl;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property _Bool acceptorWillSendInitialSyncCredentials; // @synthesize acceptorWillSendInitialSyncCredentials=_acceptorWillSendInitialSyncCredentials;
 @property unsigned int counter; // @synthesize counter=_counter;
-@property _Bool initator; // @synthesize initator=_initator;
+@property _Bool initiator; // @synthesize initiator=_initiator;
 @property KCPairingChannelContext *peerVersionContext; // @synthesize peerVersionContext=_peerVersionContext;
 @property(readonly) _Bool needInitialSync; // @synthesize needInitialSync=_needInitialSync;
 - (void).cxx_destruct;
+- (void)setOctagonMessageFailForTesting:(_Bool)arg1;
+- (void)setSOSMessageFailForTesting:(_Bool)arg1;
+- (void)setConfiguration:(id)arg1;
+- (void)setControlObject:(id)arg1;
 - (void)setXPCConnectionObject:(id)arg1;
 - (id)exchangePacket:(id)arg1 complete:(_Bool *)arg2 error:(id *)arg3;
 - (void)exchangePacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (void)validateStart:(CDUnknownBlockType)arg1;
 - (_Bool)ensureControlChannel;
 - (void)acceptorThirdPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
+- (void)acceptorSecondOctagonPacket:(id)arg1 reply:(id)arg2 complete:(CDUnknownBlockType)arg3;
 - (void)acceptorSecondPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
+- (void)acceptorFirstOctagonPacket:(id)arg1 reply:(id)arg2 complete:(CDUnknownBlockType)arg3;
 - (void)acceptorFirstPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
-- (void)initatorFourthPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
-- (void)initatorThirdPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
-- (void)initatorCompleteSecondPacket:(CDUnknownBlockType)arg1;
-- (void)initatorSecondPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
-- (void)initatorFirstPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
+- (void)initiatorFourthPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
+- (void)initiatorThirdPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
+- (void)initiatorCompleteSecondPacketOctagon:(id)arg1 application:(id)arg2 complete:(CDUnknownBlockType)arg3;
+- (void)initiatorCompleteSecondPacketWithSOS:(id)arg1 complete:(CDUnknownBlockType)arg2;
+- (void)initiatorSecondPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
+- (void)initiatorFirstPacket:(id)arg1 complete:(CDUnknownBlockType)arg2;
 - (id)decompressData:(id)arg1;
 - (id)compressData:(id)arg1;
 - (void)setNextStateError:(id)arg1 complete:(CDUnknownBlockType)arg2;

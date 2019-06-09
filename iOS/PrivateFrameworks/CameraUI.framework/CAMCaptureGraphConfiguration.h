@@ -40,6 +40,7 @@
 - (id)description;
 - (id)completeDescription;
 - (id)shortDescription;
+@property(readonly, nonatomic) long long devicePosition;
 - (id)initWithCaptureMode:(long long)arg1 captureDevice:(long long)arg2 videoConfiguration:(long long)arg3 audioConfiguration:(long long)arg4 previewConfiguration:(unsigned long long)arg5 previewSampleBufferVideoFormat:(long long)arg6 previewFilters:(id)arg7 videoThumbnailOutputConfiguration:(id)arg8 photoEncodingBehavior:(long long)arg9 videoEncodingBehavior:(long long)arg10 enableAutoLowLightVideoIfSupported:(_Bool)arg11 videoHDRSuspended:(_Bool)arg12;
 
 @end

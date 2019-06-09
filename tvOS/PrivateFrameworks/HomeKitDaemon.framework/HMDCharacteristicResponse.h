@@ -17,6 +17,7 @@
     NSDate *_valueUpdatedTime;
 }
 
++ (id)responsesWithRequests:(id)arg1 error:(id)arg2;
 + (id)responseWithRequest:(id)arg1 error:(id)arg2;
 @property(readonly, nonatomic) NSDate *valueUpdatedTime; // @synthesize valueUpdatedTime=_valueUpdatedTime;
 @property(readonly, nonatomic) NSNumber *stateNumber; // @synthesize stateNumber=_stateNumber;

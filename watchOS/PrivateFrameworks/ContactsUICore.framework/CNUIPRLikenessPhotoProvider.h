@@ -26,7 +26,6 @@
 - (struct CGImage *)_cnui_circularImageForSize:(struct CGSize)arg1 scale:(float)arg2;
 - (unsigned int)_cnui_likenessType;
 - (id)_cnui_likenessForSize:(struct CGSize)arg1 scale:(float)arg2;
-- (id)_cnui_likenessForSize:(struct CGSize)arg1;
 - (id)initWithPhotoData:(id)arg1;
 
 // Remaining properties

@@ -30,7 +30,7 @@
 - (id)description;
 - (void)addKey:(id)arg1;
 - (id)init;
-- (id)_keyForCode:(short)arg1;
+- (id)_keyForCode:(unsigned long long)arg1;
 
 @end
 

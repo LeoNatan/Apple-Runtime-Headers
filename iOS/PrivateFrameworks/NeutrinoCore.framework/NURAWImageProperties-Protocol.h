@@ -15,5 +15,6 @@
 @property(readonly) double temperature;
 @property(readonly) NSArray *availableDecoderVersions;
 @property(readonly) NSString *decoderVersion;
+- (NSArray *)inputNeutralXYFromRGB:(const double *)arg1;
 @end
 

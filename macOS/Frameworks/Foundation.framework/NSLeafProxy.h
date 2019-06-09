@@ -8,6 +8,7 @@
 
 @class NSDocInfo, NSString;
 
+__attribute__((visibility("hidden")))
 @interface NSLeafProxy <NSCopying>
 {
     Class isa;

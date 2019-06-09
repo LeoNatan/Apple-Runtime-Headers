@@ -7,26 +7,31 @@
 #import <objc/NSObject.h>
 
 #import <SetupAssistant/BYClientDaemonCloudSyncProtocol-Protocol.h>
-#import <SetupAssistant/BYDaemonCloudSyncProtocol-Protocol.h>
 
 @class NSString, NSXPCConnection;
 @protocol BYClientDaemonCloudSyncProtocol;
 
-@interface BYBuddyDaemonCloudSyncClient : NSObject <BYDaemonCloudSyncProtocol, BYClientDaemonCloudSyncProtocol>
+@interface BYBuddyDaemonCloudSyncClient : NSObject <BYClientDaemonCloudSyncProtocol>
 {
+    _Bool _syncDidStart;
+    _Bool _syncDidComplete;
     id <BYClientDaemonCloudSyncProtocol> _delegate;
     NSXPCConnection *_connection;
 }
 
 + (id)clientInterface;
+@property(nonatomic) _Bool syncDidComplete; // @synthesize syncDidComplete=_syncDidComplete;
+@property(nonatomic) _Bool syncDidStart; // @synthesize syncDidStart=_syncDidStart;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property __weak id <BYClientDaemonCloudSyncProtocol> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)syncCompletedWithErrors:(id)arg1;
 - (void)syncProgress:(double)arg1;
+- (void)connectToDaemon;
+- (void)cloudSyncProgressUpdate:(long long)arg1 completedClients:(long long)arg2 errors:(id)arg3;
+- (void)cancelSync;
 - (void)startSync;
 - (void)needsToSync:(CDUnknownBlockType)arg1;
-- (void)connectToDaemon;
 - (id)init;
 
 // Remaining properties

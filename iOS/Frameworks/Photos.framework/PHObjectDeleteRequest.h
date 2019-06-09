@@ -4,27 +4,26 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Photos/PHChangeRequest.h>
 
 #import <Photos/PHDeleteChangeRequest-Protocol.h>
 
 @class NSManagedObjectID, NSString;
 
-@interface PHObjectDeleteRequest : NSObject <PHDeleteChangeRequest>
+@interface PHObjectDeleteRequest : PHChangeRequest <PHDeleteChangeRequest>
 {
     NSString *_uuid;
     NSManagedObjectID *_objectID;
     _Bool _clientEntitled;
     NSString *_clientName;
-    int _clientProcessID;
 }
 
++ (id)_deleteRequestsForObjects:(id)arg1;
++ (id)deleteRequestsForObjects:(id)arg1 ofType:(Class)arg2 forSelector:(SEL)arg3;
 + (id)deleteRequestForObject:(id)arg1;
-@property(readonly, nonatomic) int clientProcessID; // @synthesize clientProcessID=_clientProcessID;
-@property(readonly, nonatomic) NSString *clientName; // @synthesize clientName=_clientName;
 @property(readonly, nonatomic, getter=isClientEntitled) _Bool clientEntitled; // @synthesize clientEntitled=_clientEntitled;
 @property(readonly, nonatomic) NSManagedObjectID *objectID; // @synthesize objectID=_objectID;
-@property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
+- (id)uuid;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *managedEntityName;
 - (void)deleteManagedObject:(id)arg1 photoLibrary:(id)arg2;
@@ -33,11 +32,13 @@
 - (_Bool)prepareForServicePreflightCheck:(id *)arg1;
 - (void)encodeToXPCDict:(id)arg1;
 - (id)init;
-- (id)initWithXPCDict:(id)arg1 clientEntitlements:(id)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (id)initWithXPCDict:(id)arg1 request:(id)arg2 clientAuthorization:(id)arg3;
 - (id)initForNewObject;
+- (id)initWithUUID:(id)arg1 request:(id)arg2 objectID:(id)arg3;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
 
 // Remaining properties
+@property(readonly, nonatomic) NSString *clientName;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

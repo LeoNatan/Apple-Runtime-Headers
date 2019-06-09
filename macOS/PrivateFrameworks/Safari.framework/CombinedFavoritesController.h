@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (void)combinedFavoritesGridViewControllerViewDidHide;
 - (void)combinedFavoritesGridViewControllerViewWillShow;
 @property(retain, nonatomic) WebBookmarkList *rootBookmarkListForFavorites;
+- (id)bookmarkForUUID:(id)arg1;
 - (id)initWithTouchIconCache:(id)arg1;
 
 @end

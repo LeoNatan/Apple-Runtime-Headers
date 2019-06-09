@@ -7,49 +7,36 @@
 #import <objc/NSObject.h>
 
 #import <VoiceShortcuts/PSYSyncCoordinatorDelegate-Protocol.h>
-#import <VoiceShortcuts/VCCompanionSyncServiceDelegate-Protocol.h>
 
-@class NSArray, NSMutableDictionary, NSString, PSYServiceSyncSession, PSYSyncCoordinator;
-@protocol OS_dispatch_queue;
+@class NSString, PSYSyncCoordinator, VCCompanionSyncService, VCDaemonXPCEventHandler;
+@protocol OS_dispatch_queue, VCSyncDataEndpoint;
 
-@interface VCWatchSyncCoordinator : NSObject <PSYSyncCoordinatorDelegate, VCCompanionSyncServiceDelegate>
+@interface VCWatchSyncCoordinator : NSObject <PSYSyncCoordinatorDelegate>
 {
-    int _pairedDeviceDidChangeNotificationToken;
-    PSYSyncCoordinator *_psySyncCoordinator;
-    PSYServiceSyncSession *_psySyncSession;
-    NSArray *_syncDataHandlers;
-    NSObject<OS_dispatch_queue> *_serialQueue;
-    NSMutableDictionary *_syncServiceByPairingID;
-    NSMutableDictionary *_pairedDeviceByPairingID;
+    PSYSyncCoordinator *_pairedSyncCoordinator;
+    id <VCSyncDataEndpoint> _syncDataEndpoint;
+    VCDaemonXPCEventHandler *_eventHandler;
+    NSObject<OS_dispatch_queue> *_queue;
+    VCCompanionSyncService *_service;
 }
 
 + (void)initialize;
-@property(readonly, nonatomic) NSMutableDictionary *pairedDeviceByPairingID; // @synthesize pairedDeviceByPairingID=_pairedDeviceByPairingID;
-@property(readonly, nonatomic) NSMutableDictionary *syncServiceByPairingID; // @synthesize syncServiceByPairingID=_syncServiceByPairingID;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-@property(readonly, nonatomic) NSArray *syncDataHandlers; // @synthesize syncDataHandlers=_syncDataHandlers;
-@property(retain, nonatomic) PSYServiceSyncSession *psySyncSession; // @synthesize psySyncSession=_psySyncSession;
-@property(readonly, nonatomic) PSYSyncCoordinator *psySyncCoordinator; // @synthesize psySyncCoordinator=_psySyncCoordinator;
+@property(readonly, nonatomic) VCCompanionSyncService *service; // @synthesize service=_service;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(readonly, nonatomic) VCDaemonXPCEventHandler *eventHandler; // @synthesize eventHandler=_eventHandler;
+@property(readonly, nonatomic) id <VCSyncDataEndpoint> syncDataEndpoint; // @synthesize syncDataEndpoint=_syncDataEndpoint;
+@property(readonly, nonatomic) PSYSyncCoordinator *pairedSyncCoordinator; // @synthesize pairedSyncCoordinator=_pairedSyncCoordinator;
 - (void).cxx_destruct;
-- (void)companionSyncServiceDidFinishSyncSession:(id)arg1;
 - (void)handleDidUnpairNotification:(id)arg1;
-- (void)handleDidPairNotification:(id)arg1;
-- (void)handleDidBecomeInactiveNotification:(id)arg1;
-- (void)handleDidBecomeActiveNotification:(id)arg1;
-- (void)unsubscribeFromNanoRegistryNotifications;
-- (void)subscribeToNanoRegistryNotifications;
-- (void)notifyPairedSyncThatSyncFinished;
+- (void)handleDeviceDidChangeVersionNotification;
+- (void)stopObservingWatchChangeNotifications;
+- (void)startObservingWatchChangeNotifications;
 - (void)syncCoordinatorDidChangeSyncRestriction:(id)arg1;
 - (void)syncCoordinator:(id)arg1 didInvalidateSyncSession:(id)arg2;
 - (void)syncCoordinator:(id)arg1 beginSyncSession:(id)arg2;
-- (void)stopCompanionSyncServiceForPairingID:(id)arg1;
-- (void)actuallyStartSyncServiceForActivePairedDevice:(id)arg1;
-- (_Bool)shouldSyncWithActivePairedDevice:(id)arg1;
-- (void)startSyncToActivePairedDeviceIfAvailable;
-- (_Bool)isRunningOnWatch;
-- (void)start;
+- (void)requestSyncIfUnrestricted;
 - (void)dealloc;
-- (id)initWithSyncDataHandlers:(id)arg1;
+- (id)initWithSyncDataEndpoint:(id)arg1 eventHandler:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

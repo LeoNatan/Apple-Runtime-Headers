@@ -8,6 +8,7 @@
 
 @class UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIOverlayFlipTransition : NSObject
 {
     UIView *_flipSourceView;

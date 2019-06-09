@@ -6,7 +6,6 @@
 
 #import <CFNetwork/__NSCFLocalSessionTask.h>
 
-__attribute__((visibility("hidden")))
 @interface __NSCFLocalDataTask : __NSCFLocalSessionTask
 {
 }

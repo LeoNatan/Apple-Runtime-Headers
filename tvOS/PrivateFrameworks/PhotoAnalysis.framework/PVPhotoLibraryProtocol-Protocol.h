@@ -12,7 +12,6 @@
 @protocol PVPhotoLibraryProtocol <NSObject>
 - (NSSet *)pv_fetchInvalidAssetIdentifiersForCommonComparison;
 - (NSDate *)pv_lastAssetDate;
-- (_Bool)pv_isLibraryBeingSynchronized;
 - (float)pv_faceProcessingProgress;
 - (id <PVFetchResultProtocol>)pv_fetchFaceGroupsForPerson:(id <PVPersonProtocol>)arg1;
 - (id <PVFetchResultProtocol>)pv_fetchFaceGroups;

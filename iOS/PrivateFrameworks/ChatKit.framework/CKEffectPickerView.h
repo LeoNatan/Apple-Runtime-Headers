@@ -157,6 +157,7 @@
 - (void)_setBalloonText:(id)arg1 withColor:(id)arg2;
 - (void)_resizeBalloon;
 - (void)addEffect:(id)arg1 withDescriptiveText:(id)arg2 withIdentifier:(id)arg3;
+- (id)sendImage;
 - (void)setBalloonText:(id)arg1;
 - (void)updateColor:(BOOL)arg1;
 - (void)updateHintTransition:(double)arg1;

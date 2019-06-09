@@ -11,7 +11,7 @@
 
 @class CKContainerID, CKRecordID, CKShareID, CKShareParticipant, NSArray, NSData, NSMutableArray, NSMutableSet, NSString, NSURL;
 
-@interface CKShare : CKRecord <NSSecureCoding, NSCopying>
+@interface CKShare : CKRecord <NSCopying, NSSecureCoding>
 {
     BOOL _allowsReadOnlyParticipantsToSeeEachOther;
     BOOL _allowsAnonymousPublicAccess;
@@ -57,7 +57,6 @@
 - (void)encodeSystemFieldsWithCoder:(id)arg1;
 - (id)shareURL;
 @property(retain, nonatomic) NSData *publicSharingIdentity;
-- (id)privateToken;
 - (id)encryptedPublicSharingKey;
 - (void)setWantsPublicSharingKey:(BOOL)arg1;
 - (void)_getDecryptedShareInContainer:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -81,8 +80,9 @@
 - (void)clearModifiedParticipants;
 @property(readonly, nonatomic) NSArray *participants;
 - (void)CKAssignToContainerWithID:(id)arg1;
+- (BOOL)canHostServerURLInfo;
+@property(readonly, nonatomic) BOOL isZoneWideShare;
 - (BOOL)hasEncryptedData;
-- (id)debugDescription;
 - (id)description;
 - (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;
 - (id)copyWithOriginalValues;
@@ -97,6 +97,7 @@
 - (id)initWithRecordType:(id)arg1;
 - (id)init;
 - (id)_initWithShareRecordID:(id)arg1;
+- (id)initWithRecordZoneID:(id)arg1;
 - (id)initWithRootRecord:(id)arg1 shareID:(id)arg2;
 - (id)initWithRootRecord:(id)arg1;
 

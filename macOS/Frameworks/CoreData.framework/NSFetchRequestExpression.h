@@ -22,6 +22,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)expressionForFetch:(id)arg1 context:(id)arg2 countOnly:(BOOL)arg3;
+- (id)_keypathsForDerivedPropertyValidation:(id *)arg1;
 - (id)_expressionWithSubstitutionVariables:(id)arg1;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned long long)arg2;
 - (unsigned long long)hash;

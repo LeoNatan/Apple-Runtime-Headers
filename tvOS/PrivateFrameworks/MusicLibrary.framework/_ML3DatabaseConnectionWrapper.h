@@ -8,7 +8,6 @@
 
 @class ML3DatabaseConnection, NSThread;
 
-__attribute__((visibility("hidden")))
 @interface _ML3DatabaseConnectionWrapper : NSObject
 {
     ML3DatabaseConnection *_connection;

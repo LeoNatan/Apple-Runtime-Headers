@@ -4,32 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <CoreData/NSManagedObject.h>
 
 @class NSData, NSDate, NSSet, NSUUID;
 
 __attribute__((visibility("hidden")))
-@interface NSCKImportOperation : NSObject
+@interface NSCKImportOperation : NSManagedObject
 {
-    NSDate *_importDate;
-    NSUUID *_operationUUID;
-    NSData *_changeTokenBytes;
-    NSSet *_pendingRelationships;
-    NSSet *_mirroredRelationships;
 }
 
-@property(readonly, nonatomic) NSSet *mirroredRelationships; // @synthesize mirroredRelationships=_mirroredRelationships;
-@property(readonly, nonatomic) NSSet *pendingRelationships; // @synthesize pendingRelationships=_pendingRelationships;
-@property(readonly, nonatomic) NSData *changeTokenBytes; // @synthesize changeTokenBytes=_changeTokenBytes;
-@property(readonly, nonatomic) NSUUID *operationUUID; // @synthesize operationUUID=_operationUUID;
-@property(readonly, nonatomic) NSDate *importDate; // @synthesize importDate=_importDate;
-- (void)dealloc;
-- (void)setChangeToken:(id)arg1;
-- (id)description;
-- (void)setBindValue:(id)arg1;
-- (void)_addPendingRelationship:(id)arg1;
-- (id)initWithFetchResult:(id)arg1 andSQLEntity:(id)arg2;
-- (id)init;
++ (id)entityPath;
++ (BOOL)purgeFinishedImportOperationsInStore:(id)arg1 withManagedObjectContext:(id)arg2 error:(id *)arg3;
++ (id)fetchOperationWithIdentifier:(id)arg1 fromStore:(id)arg2 inManagedObjectContext:(id)arg3 error:(id *)arg4;
++ (id)fetchUnfinishedImportOperationsInStore:(id)arg1 withManagedObjectContext:(id)arg2 error:(id *)arg3;
+
+// Remaining properties
+@property(retain, nonatomic) NSData *changeTokenBytes; // @dynamic changeTokenBytes;
+@property(retain, nonatomic) NSDate *importDate; // @dynamic importDate;
+@property(retain, nonatomic) NSUUID *operationUUID; // @dynamic operationUUID;
+@property(retain, nonatomic) NSSet *pendingRelationships; // @dynamic pendingRelationships;
 
 @end
 

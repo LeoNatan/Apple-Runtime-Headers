@@ -11,6 +11,7 @@
 
 @interface CAMZoomButton : UIControl
 {
+    _Bool __shouldUseOutline;
     id <CAMZoomButtonDelegate> _delegate;
     double _zoomFactor;
     long long _orientation;
@@ -27,6 +28,7 @@
 + (double)circleDiameterForContentSize:(id)arg1;
 + (_Bool)_shouldUseLargeButtonSizeForContentSize:(id)arg1;
 + (id)textForZoomFactor:(double)arg1;
+@property(readonly, nonatomic) _Bool _shouldUseOutline; // @synthesize _shouldUseOutline=__shouldUseOutline;
 @property(readonly, nonatomic) UIImageView *_backgroundImageView; // @synthesize _backgroundImageView=__backgroundImageView;
 @property(readonly, nonatomic) UIImageView *_circleImageView; // @synthesize _circleImageView=__circleImageView;
 @property(readonly, nonatomic) UILabel *_zoomFactorLabel; // @synthesize _zoomFactorLabel=__zoomFactorLabel;

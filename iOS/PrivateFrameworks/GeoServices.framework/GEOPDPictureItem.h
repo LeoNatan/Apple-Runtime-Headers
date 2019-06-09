@@ -8,25 +8,35 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDPhoto, NSString, PBUnknownFields;
+@class GEOPDPhoto, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDPictureItem : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDPhoto *_photo;
-    int _photoItemType;
     NSString *_primaryText;
     NSString *_secondaryText;
+    int _photoItemType;
     struct {
-        unsigned int photoItemType:1;
-    } _has;
+        unsigned int has_photoItemType:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_photo:1;
+        unsigned int read_primaryText:1;
+        unsigned int read_secondaryText:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_photo:1;
+        unsigned int wrote_primaryText:1;
+        unsigned int wrote_secondaryText:1;
+        unsigned int wrote_photoItemType:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *secondaryText; // @synthesize secondaryText=_secondaryText;
-@property(retain, nonatomic) NSString *primaryText; // @synthesize primaryText=_primaryText;
-@property(retain, nonatomic) GEOPDPhoto *photo; // @synthesize photo=_photo;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -35,15 +45,22 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsPhotoItemType:(id)arg1;
 - (id)photoItemTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasPhotoItemType;
-@property(nonatomic) int photoItemType; // @synthesize photoItemType=_photoItemType;
+@property(nonatomic) int photoItemType;
+@property(retain, nonatomic) NSString *secondaryText;
 @property(readonly, nonatomic) _Bool hasSecondaryText;
+- (void)_readSecondaryText;
+@property(retain, nonatomic) NSString *primaryText;
 @property(readonly, nonatomic) _Bool hasPrimaryText;
+- (void)_readPrimaryText;
+@property(retain, nonatomic) GEOPDPhoto *photo;
 @property(readonly, nonatomic) _Bool hasPhoto;
+- (void)_readPhoto;
 
 @end
 

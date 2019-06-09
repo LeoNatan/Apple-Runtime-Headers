@@ -71,7 +71,6 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)deviceIDForPhoneNumber:(id)arg1;
 @property(readonly, nonatomic) TUCloudCallingDevice *defaultPairedDevice;
 @property(readonly, copy) NSString *description;
 - (id)init;

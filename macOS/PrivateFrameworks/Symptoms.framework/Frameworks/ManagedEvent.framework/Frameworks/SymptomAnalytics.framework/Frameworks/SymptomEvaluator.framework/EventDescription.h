@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSMutableDictionary;
+@class NSDate, NSMutableDictionary, NSString;
 
 @interface EventDescription : NSObject
 {
@@ -18,10 +18,10 @@
     long long _eventLen;
     void *_eventData;
     NSMutableDictionary *_eventQualifiers;
-    id _eventKey;
+    NSString *_eventKey;
 }
 
-@property(retain, nonatomic) id eventKey; // @synthesize eventKey=_eventKey;
+@property(retain, nonatomic) NSString *eventKey; // @synthesize eventKey=_eventKey;
 @property(readonly, nonatomic) NSMutableDictionary *eventQualifiers; // @synthesize eventQualifiers=_eventQualifiers;
 @property(readonly, nonatomic) void *eventData; // @synthesize eventData=_eventData;
 @property(readonly, nonatomic) long long eventLen; // @synthesize eventLen=_eventLen;

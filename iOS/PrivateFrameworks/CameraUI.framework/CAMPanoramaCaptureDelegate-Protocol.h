@@ -13,7 +13,7 @@
 @optional
 - (void)panoramaRequest:(CAMPanoramaCaptureRequest *)arg1 didReceiveNotification:(long long)arg2;
 - (void)panoramaRequest:(CAMPanoramaCaptureRequest *)arg1 didCompleteCaptureWithResult:(CAMStillImageCaptureResult *)arg2;
-- (void)panoramaRequestDidStopCapturing:(CAMPanoramaCaptureRequest *)arg1;
+- (void)panoramaRequestDidStopCapturing:(CAMPanoramaCaptureRequest *)arg1 interrupted:(_Bool)arg2;
 - (void)panoramaRequestDidStartCapturing:(CAMPanoramaCaptureRequest *)arg1;
 @end
 

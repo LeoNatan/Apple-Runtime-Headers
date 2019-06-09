@@ -36,5 +36,6 @@
 - (void)willHide;
 - (void)didShow;
 - (void)willShow;
+- (void)refreshQuickLookFrame;
 @end
 

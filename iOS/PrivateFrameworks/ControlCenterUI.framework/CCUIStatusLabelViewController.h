@@ -31,6 +31,7 @@
 - (unsigned long long)_advancePresentationStateFromReady;
 - (void)_advancePresentationState;
 - (void)_resetPresentationStateAnimated:(_Bool)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillLayoutSubviews;

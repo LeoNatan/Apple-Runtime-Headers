@@ -9,6 +9,7 @@
 @class NTKZeusColorPalette;
 
 @protocol NTKZeusComplicationDisplay <NSObject>
+@property(nonatomic) _Bool legibilityEnabled;
 @property(readonly, nonatomic) NTKZeusColorPalette *palette;
 @property(nonatomic) unsigned int style;
 - (void)applyTransitionFraction:(float)arg1 fromPalette:(NTKZeusColorPalette *)arg2 toPalette:(NTKZeusColorPalette *)arg3;

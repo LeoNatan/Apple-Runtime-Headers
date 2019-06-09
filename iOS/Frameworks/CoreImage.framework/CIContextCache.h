@@ -10,6 +10,8 @@
 {
 }
 
++ (long long)countAllocated;
++ (long long)currentNonVolatileSize;
 + (long long)peakNonVolatileSize;
 + (void)resetStatistics;
 

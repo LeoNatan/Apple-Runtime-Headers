@@ -27,6 +27,8 @@
 - (void)removeAllOutputDevices;
 - (void)removeOutputDevices:(id)arg1;
 - (void)updateOutputDevices:(id)arg1;
+- (void)notifyOutputDeviceRemoved:(id)arg1;
+- (void)notifyOutputDeviceAdded:(id)arg1;
 - (unsigned int)volumeControlCapabilities;
 - (float)volume;
 - (id)uniqueIdentifier;

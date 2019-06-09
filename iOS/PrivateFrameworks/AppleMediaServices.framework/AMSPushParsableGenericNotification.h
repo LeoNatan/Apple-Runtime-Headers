@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)_generateNotificationFromPayload:(id)arg1 config:(id)arg2;
-+ (void)handleNotificationPayload:(id)arg1 config:(id)arg2 bagContract:(id)arg3;
++ (void)handleNotificationPayload:(id)arg1 config:(id)arg2 bag:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

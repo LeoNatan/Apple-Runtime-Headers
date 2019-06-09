@@ -8,7 +8,7 @@
 
 #import <Navigation/NSCopying-Protocol.h>
 
-@class NSData, NSString, NSUUID;
+@class NSData, NSMutableArray, NSString, NSUUID;
 
 @interface MNGuidanceEventFeedback : PBCodable <NSCopying>
 {
@@ -21,6 +21,7 @@
     unsigned int _enrouteNoticeIndex;
     NSString *_eventDescription;
     unsigned int _eventIndex;
+    NSMutableArray *_junctionViewImageIDs;
     NSData *_routeID;
     unsigned int _selectedPrimaryStringIndex;
     unsigned int _selectedSecondaryStringIndex;
@@ -28,6 +29,7 @@
     unsigned int _trafficColor;
     int _type;
     NSString *_uniqueIDstring;
+    _Bool _junctionViewDisplayed;
     _Bool _shortPrompt;
     struct {
         unsigned int endDistance:1;
@@ -43,11 +45,15 @@
         unsigned int stepID:1;
         unsigned int trafficColor:1;
         unsigned int type:1;
+        unsigned int junctionViewDisplayed:1;
         unsigned int shortPrompt:1;
     } _has;
 }
 
++ (Class)junctionViewImageIDType;
 @property(retain, nonatomic) NSString *eventDescription; // @synthesize eventDescription=_eventDescription;
+@property(nonatomic) _Bool junctionViewDisplayed; // @synthesize junctionViewDisplayed=_junctionViewDisplayed;
+@property(retain, nonatomic) NSMutableArray *junctionViewImageIDs; // @synthesize junctionViewImageIDs=_junctionViewImageIDs;
 @property(nonatomic) double maneuverTime; // @synthesize maneuverTime=_maneuverTime;
 @property(nonatomic) double endDistance; // @synthesize endDistance=_endDistance;
 @property(nonatomic) double endTime; // @synthesize endTime=_endTime;
@@ -74,6 +80,11 @@
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(readonly, nonatomic) _Bool hasEventDescription;
+@property(nonatomic) _Bool hasJunctionViewDisplayed;
+- (id)junctionViewImageIDAtIndex:(unsigned int)arg1;
+- (unsigned int)junctionViewImageIDsCount;
+- (void)addJunctionViewImageID:(id)arg1;
+- (void)clearJunctionViewImageIDs;
 @property(nonatomic) _Bool hasManeuverTime;
 @property(nonatomic) _Bool hasEndDistance;
 @property(nonatomic) _Bool hasEndTime;

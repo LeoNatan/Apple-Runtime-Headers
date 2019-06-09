@@ -12,7 +12,7 @@
 #import <AssistantServices/AFInterstitialProviderDelegate-Protocol.h>
 #import <AssistantServices/NSXPCListenerDelegate-Protocol.h>
 
-@class AFAudioPowerUpdater, AFClientConfiguration, AFClockAlarmSnapshot, AFClockTimerSnapshot, AFInterstitialProvider, AFOneArgumentSafetyBlock, NSArray, NSError, NSMutableArray, NSMutableDictionary, NSString, NSUUID, NSXPCConnection;
+@class AFAudioPowerUpdater, AFClientConfiguration, AFClockAlarmSnapshot, AFClockTimerSnapshot, AFInterstitialProvider, AFOneArgumentSafetyBlock, AFQueue, NSArray, NSError, NSMutableDictionary, NSString, NSUUID, NSXPCConnection;
 @protocol AFAssistantUIService, AFSpeechDelegate, OS_dispatch_group, OS_dispatch_queue, OS_dispatch_source;
 
 @interface AFConnection : NSObject <NSXPCListenerDelegate, AFAudioPowerUpdaterDelegate, AFAccessibilityListening, AFDeviceRingerSwitchListening, AFInterstitialProviderDelegate>
@@ -33,6 +33,8 @@
     _Bool _activeRequestHasSpeechRecognition;
     _Bool _activeRequestIsDucking;
     _Bool _activeRequestIsTwoShot;
+    unsigned long long _activeRequestSpeechEndHostTime;
+    unsigned long long _activeRequestNumberOfPresentedInterstitials;
     NSMutableDictionary *_replyHandlerForAceId;
     unsigned int _stateInSync:1;
     unsigned int _shouldSpeak:1;
@@ -40,10 +42,11 @@
     unsigned int _hasOutstandingRequest:1;
     unsigned int _audioSessionID;
     NSString *_recordRoute;
+    NSString *_playbackRoute;
     AFAudioPowerUpdater *_inputAudioPowerUpdater;
     AFClientConfiguration *_clientConfiguration;
     AFInterstitialProvider *_interstitialProvider;
-    NSMutableArray *_interstitialCommands;
+    AFQueue *_interstitialCommandQueue;
     unsigned int _clientConfigurationIsInSync:1;
     unsigned int _voiceOverIsActive:1;
     NSError *_lastRetryError;
@@ -182,9 +185,7 @@
 - (void)audioPowerUpdaterDidUpdate:(id)arg1 averagePower:(float)arg2 peakPower:(float)arg3;
 - (void)_tellSpeechDelegateRecognitionDidFail:(id)arg1;
 - (void)_tellSpeechDelegateSpeechRecognizedPartialResult:(id)arg1;
-- (void)_tellSpeechDelegateDidRecognizePhrases:(id)arg1 utterances:(id)arg2;
 - (void)_tellSpeechDelegateRecognitionUpdateWillBeginForTask:(id)arg1;
-- (void)_tellSpeechDelegateRecordingDidFinishRecognitionUpdateWithError:(id)arg1;
 - (void)_tellSpeechDelegateRecordingDidUpdateRecognitionPhrases:(id)arg1 utterances:(id)arg2 refId:(id)arg3;
 - (void)_tellSpeechDelegateRecognizedAdditionalSpeechInterpretation:(id)arg1 refId:(id)arg2;
 - (void)_tellSpeechDelegateSpeechRecognized:(id)arg1;
@@ -200,7 +201,7 @@
 - (void)_tellDelegateAudioSessionDidBecomeActive:(_Bool)arg1;
 - (void)_tellDelegateAudioSessionWillBecomeActive:(_Bool)arg1;
 - (void)_tellDelegateStartPlaybackDidFail:(long long)arg1;
-- (void)_tellDelegateWillProcessStartPlayback:(long long)arg1;
+- (void)_tellDelegateWillProcessStartPlayback:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_tellDelegateAudioPlaybackRequestDidStop:(id)arg1 error:(id)arg2;
 - (void)_tellDelegateAudioPlaybackRequestDidNotStart:(id)arg1 error:(id)arg2;
 - (void)_tellDelegateAudioPlaybackRequestDidStart:(id)arg1;
@@ -219,6 +220,7 @@
 - (void)_tellDelegateShouldSpeakChanged:(_Bool)arg1;
 - (void)_completeRequestWithUUID:(id)arg1 error:(id)arg2;
 - (void)_tellDelegateRequestWillStart;
+- (void)_updateSpeechEndHostTime:(unsigned long long)arg1;
 - (void)_markSpeechRecognized;
 - (void)_markIsTwoShot;
 - (void)_markIsDucking;
@@ -238,6 +240,7 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithTargetQueue:(id)arg1;
+- (void)broadcastCommandDictionary:(id)arg1;
 - (void)sendFeedbackToAppPreferencesPredictorForMetricsContext:(id)arg1 selectedBundleId:(id)arg2;
 - (void)requestBarrier:(CDUnknownBlockType)arg1;
 - (void)startSpeechRequestWithSpeechFileAtURL:(id)arg1 isNarrowBand:(_Bool)arg2;

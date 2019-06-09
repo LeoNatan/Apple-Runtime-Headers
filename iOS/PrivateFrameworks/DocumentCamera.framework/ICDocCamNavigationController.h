@@ -15,6 +15,7 @@
 }
 
 - (void)prepareForDismissal;
+- (long long)_preferredModalPresentationStyle;
 - (_Bool)shouldAutorotate;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)didReceiveMemoryWarning;

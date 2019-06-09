@@ -6,27 +6,30 @@
 
 #import <HealthDaemon/HDDataCollectorSensorDatum.h>
 
-@class HKQuantity;
+@class HKQuantity, NSDictionary;
 
 @interface HDQuantityDatum : HDDataCollectorSensorDatum
 {
     HKQuantity *_quantity;
-    unsigned long long _options;
+    NSDictionary *_metadata;
+    CDUnknownBlockType _saveCompletion;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)quantityDatumWithHKQuantityDatum:(id)arg1 metadata:(id)arg2;
 + (id)quantityDataForDifferencesInData:(id)arg1 baseDatum:(id)arg2 unit:(id)arg3 differenceHandler:(CDUnknownBlockType)arg4 intervalHandler:(CDUnknownBlockType)arg5;
 + (id)hdt_quantityDatumForType:(id)arg1 startTime:(double)arg2 endTime:(double)arg3 value:(double)arg4;
-@property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
-@property(readonly, nonatomic) HKQuantity *quantity; // @synthesize quantity=_quantity;
+@property(copy, nonatomic) CDUnknownBlockType saveCompletion; // @synthesize saveCompletion=_saveCompletion;
+@property(readonly, copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(readonly, copy, nonatomic) HKQuantity *quantity; // @synthesize quantity=_quantity;
 - (void).cxx_destruct;
-- (id)datumForChangeSince:(id)arg1 newIdentifier:(id)arg2 newResumeContext:(id)arg3;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 dateInterval:(id)arg2 quantity:(id)arg3 options:(unsigned long long)arg4 resumeContextProvider:(CDUnknownBlockType)arg5;
-- (id)initWithIdentifier:(id)arg1 dateInterval:(id)arg2 resumeContext:(id)arg3 quantity:(id)arg4 options:(unsigned long long)arg5;
+- (id)datumForChangeSince:(id)arg1 newIdentifier:(id)arg2 newResumeContext:(id)arg3;
+- (id)initWithIdentifier:(id)arg1 dateInterval:(id)arg2 quantity:(id)arg3 metadata:(id)arg4 resumeContextProvider:(CDUnknownBlockType)arg5;
 - (id)initWithIdentifier:(id)arg1 dateInterval:(id)arg2 resumeContext:(id)arg3 quantity:(id)arg4;
 
 @end

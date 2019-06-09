@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSMutableDictionary, NSURL;
+@class NSArray, NSData, NSMutableDictionary, NSString, NSURL;
 @protocol OS_dispatch_queue;
 
 @interface _LSDefaults : NSObject
@@ -44,8 +44,11 @@
 @property(readonly, nonatomic, getter=isAppleInternal) _Bool appleInternal; // @synthesize appleInternal=_appleInternal;
 @property(readonly, nonatomic, getter=isInXCTestRigInsecure) _Bool inXCTestRigInsecure; // @synthesize inXCTestRigInsecure=_inXCTestRigInsecure;
 @property(readonly, getter=isInSyncBubble) _Bool inSyncBubble; // @synthesize inSyncBubble=_inSyncBubble;
+- (void).cxx_destruct;
 - (id)debugDescription;
 @property(readonly) NSData *HMACSecret;
+@property(readonly) _Bool alwaysUseDebugOpenWithMenus; // @dynamic alwaysUseDebugOpenWithMenus;
+@property(readonly) _Bool markLocalizationsStoredInDatabase; // @dynamic markLocalizationsStoredInDatabase;
 @property(readonly) NSArray *preferredLocalizations; // @dynamic preferredLocalizations;
 @property(readonly) long long concurrentInstallOperations;
 @property(readonly) double databaseSaveLatency;
@@ -56,19 +59,23 @@
 - (id)darwinNotificationNameForCurrentUser:(id)arg1;
 - (unsigned int)proxyUIDForCurrentEffectiveUID;
 - (unsigned int)proxyUIDForUID:(unsigned int)arg1;
-@property(readonly, getter=isSimulator) _Bool simulator;
 - (id)serviceNameForConnectionType:(unsigned short)arg1;
 @property(readonly, nonatomic) _Bool issueSandboxExceptionsIfMayNotMapDatabase;
 @property(readonly, nonatomic) _Bool abortIfMayNotMapDatabase;
 @property(readonly, nonatomic) _Bool allowsAlternateIcons;
 @property _Bool hasServer; // @synthesize hasServer=_hasServer;
 - (id)classesWithNameForXCTests:(const char *)arg1;
+@property(readonly) NSString *simulatorRuntimeBuildVersion;
+@property(readonly) NSString *simulatorRuntimeVersion;
+@property(readonly) NSURL *simulatorRootURL;
 @property(readonly) NSURL *dbRecoveryFileURL;
+@property(readonly) NSURL *installJournalDirectoryURL;
 @property(readonly) NSURL *dbSentinelFileURL;
 @property(readonly) NSURL *identifiersFileURL;
 @property(readonly) NSURL *queriedSchemesMapFileURL;
 @property(readonly) NSURL *securePeferencesFileURL;
 @property(readonly) NSURL *preferencesFileURL;
+- (id)databaseStoreFileURLWithUID:(unsigned int)arg1;
 @property(readonly) NSURL *databaseStoreFileURL;
 @property(readonly) unsigned short databaseStoreFileMode;
 - (id)userPreferencesURL;
@@ -76,7 +83,6 @@
 @property(readonly) NSURL *userContainerURL;
 @property(readonly) NSURL *systemContainerURL;
 @property(readonly) unsigned int currentSchemaVersion;
-- (void)dealloc;
 - (id)init;
 
 @end

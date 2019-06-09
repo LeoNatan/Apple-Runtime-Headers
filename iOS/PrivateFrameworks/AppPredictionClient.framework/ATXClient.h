@@ -26,10 +26,15 @@
 - (_Bool)forceCacheUpdateForConsumerSubType:(unsigned char)arg1 intent:(id)arg2 candidateBundleIdentifiers:(id)arg3 candidateIntentTypeIdentifiers:(id)arg4;
 - (void)logUserFeedback:(id)arg1 aprResponse:(id)arg2 consumerSubType:(unsigned char)arg3 engagementType:(unsigned long long)arg4 bundleIdentifier:(id)arg5 bundleIdsShown:(id)arg6;
 - (void)logUserFeedback:(id)arg1 consumerSubType:(unsigned char)arg2 engagementType:(unsigned long long)arg3 bundleIdentifier:(id)arg4 bundleIdsShown:(id)arg5;
+- (id)appPredictionsForConsumerSubType:(unsigned char)arg1 blackList:(id)arg2 limit:(int)arg3;
+- (id)_predicateForBlacklist:(id)arg1;
 - (id)appPredictionsForConsumerSubType:(unsigned char)arg1 limit:(int)arg2;
 - (id)_simulatorResponse;
 - (id)appPredictionsWithLimit:(int)arg1;
-- (id)_remoteObjectProxy;
+- (void)sortAppsByLaunches:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (id)_syncProxy;
+- (id)_asyncProxy;
+- (id)_getConnection;
 - (void)dealloc;
 - (id)init;
 - (id)initWithConsumerType:(unsigned long long)arg1 cacheBasePath:(id)arg2;

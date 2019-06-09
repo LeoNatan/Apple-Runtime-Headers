@@ -16,7 +16,7 @@
 @interface GKTurnBasedMatchmakerViewController : UINavigationController <GKLocalPlayerListener, GKTurnBasedEventListener, GKExtensionParentViewControllerProtocol>
 {
     _Bool _showExistingMatches;
-    id <GKTurnBasedMatchmakerViewControllerDelegate> _turnBasedMatchmakerDelegateWeak;
+    id <GKTurnBasedMatchmakerViewControllerDelegate> turnBasedMatchmakerDelegate;
     GKTurnBasedMatchmakerHostViewController *_remoteViewController;
     GKMatchRequest *_matchRequest;
     UIAlertController *_alertController;
@@ -27,12 +27,13 @@
 @property(retain, nonatomic) UIAlertController *alertController; // @synthesize alertController=_alertController;
 @property(retain, nonatomic) GKMatchRequest *matchRequest; // @synthesize matchRequest=_matchRequest;
 @property(retain, nonatomic) GKTurnBasedMatchmakerHostViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
+@property(nonatomic) __weak id <GKTurnBasedMatchmakerViewControllerDelegate> turnBasedMatchmakerDelegate; // @synthesize turnBasedMatchmakerDelegate;
+- (void).cxx_destruct;
 - (void)authenticationChanged:(id)arg1;
 - (void)playerQuitMatch:(id)arg1;
 - (void)finishWithMatch:(id)arg1;
 - (void)finishWithError:(id)arg1;
 - (void)cancel;
-@property(nonatomic) id <GKTurnBasedMatchmakerViewControllerDelegate> turnBasedMatchmakerDelegate; // @synthesize turnBasedMatchmakerDelegate=_turnBasedMatchmakerDelegateWeak;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;

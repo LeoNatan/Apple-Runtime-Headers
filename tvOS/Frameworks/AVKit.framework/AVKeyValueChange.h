@@ -6,24 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVKeyValueChange : NSObject
 {
-    NSDictionary *_changes;
+    id _value;
+    id _oldValue;
     NSString *_keyPath;
     id _observationToken;
 }
 
 @property(readonly, nonatomic) id observationToken; // @synthesize observationToken=_observationToken;
 @property(readonly, nonatomic) NSString *keyPath; // @synthesize keyPath=_keyPath;
+@property(readonly, nonatomic) id oldValue; // @synthesize oldValue=_oldValue;
+@property(readonly, nonatomic) id value; // @synthesize value=_value;
 - (void).cxx_destruct;
-- (id)object:(id)arg1 as:(Class)arg2;
-- (id)objectOrNilFor:(id)arg1;
-@property(readonly, nonatomic, getter=isInitialValue) _Bool initialValue;
-@property(readonly, nonatomic) id oldValue;
-@property(readonly, nonatomic) id value;
-- (id)initWithChanges:(id)arg1 keyPath:(id)arg2 observationToken:(id)arg3;
+- (id)initWithValue:(id)arg1 oldValue:(id)arg2 keyPath:(id)arg3 observationToken:(id)arg4;
 
 @end
 

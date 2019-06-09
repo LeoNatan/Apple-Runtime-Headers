@@ -15,6 +15,8 @@
 - (void)engineController:(REUIRelevanceEngineController *)arg1 didReloadContent:(REContent *)arg2 atIndexPath:(NSIndexPath *)arg3;
 
 @optional
+- (void)engineControllerDidFinishUpdatingRelevance:(REUIRelevanceEngineController *)arg1;
+- (void)engineControllerDidBeginUpdatingRelevance:(REUIRelevanceEngineController *)arg1;
 - (_Bool)engineController:(REUIRelevanceEngineController *)arg1 isElementAtIndexPathVisible:(NSIndexPath *)arg2;
 - (void)engineController:(REUIRelevanceEngineController *)arg1 performBatchUpdateBlock:(void (^)(void))arg2 completion:(void (^)(void))arg3;
 @end

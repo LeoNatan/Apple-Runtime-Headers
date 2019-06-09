@@ -8,7 +8,6 @@
 
 @class NSDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface SocksHandshake : NSObject
 {
     BOOL _finished;

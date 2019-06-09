@@ -11,18 +11,11 @@
 - (id)_ab_uniqueObjects;
 - (BOOL)_ab_containsAnyObjectInSet:(id)arg1;
 - (BOOL)_ab_containsAnyObjectInArray:(id)arg1;
-- (id)_ab_arrayByCollectingResults:(CDUnknownBlockType)arg1;
 - (void)_ab_enumerateWithStride:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (id)_ab_tail;
-- (id)_ab_subarrayFromIndex:(unsigned long long)arg1;
 - (id)_abDictionaryOfObjectsByKey:(CDUnknownBlockType)arg1;
 - (id)_abSortedArrayUsingAuxiliaryKey:(CDUnknownBlockType)arg1;
 - (id)_abGroupByKey:(CDUnknownBlockType)arg1;
 - (id)_abFlatten;
-- (void)_ab_each_reverse:(CDUnknownBlockType)arg1;
-- (void)_ab_each:(CDUnknownBlockType)arg1;
-- (BOOL)_abAll:(CDUnknownBlockType)arg1;
-- (BOOL)_abAny:(CDUnknownBlockType)arg1;
 - (id)_abFilter:(CDUnknownBlockType)arg1;
 - (id)_ab_mapNoNils:(CDUnknownBlockType)arg1;
 - (id)_abMap:(CDUnknownBlockType)arg1;
@@ -34,5 +27,8 @@
 - (id)_abFirstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (id)abIndicesForObjects:(id)arg1;
 - (BOOL)abContainsObjectUsingPointerComparison:(id)arg1;
+- (id)abPeopleFromUniqueIdsWithAddressBook:(id)arg1;
+- (id)abPeopleFromUniqueIds;
+- (id)abUniqueIds;
 @end
 

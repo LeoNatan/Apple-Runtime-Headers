@@ -10,7 +10,7 @@
 
 @protocol MPCVideoView <NSObject>
 @property(readonly, nonatomic) AVPlayerLayer *playerLayer;
-@property(retain, nonatomic) NSString *videoGravity;
+@property(copy, nonatomic) NSString *videoGravity;
 @property(readonly, nonatomic) struct CGSize preferredContentSize;
 @property(readonly, nonatomic, getter=isReadyForDisplay) _Bool readyForDisplay;
 @end

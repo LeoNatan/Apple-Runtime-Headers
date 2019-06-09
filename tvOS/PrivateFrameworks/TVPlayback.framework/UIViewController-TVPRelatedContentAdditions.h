@@ -10,5 +10,7 @@
 
 @interface UIViewController (TVPRelatedContentAdditions)
 @property(readonly, nonatomic) TVPRelatedContentViewController *tvp_relatedContentViewController;
+- (id)tvp_customAnimatorForNavigationControllerOperation:(long long)arg1 fromViewController:(id)arg2;
+- (id)tvp_customAnimatorForNavigationControllerOperation:(long long)arg1 toViewController:(id)arg2;
 @end
 

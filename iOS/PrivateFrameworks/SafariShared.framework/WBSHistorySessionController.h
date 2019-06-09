@@ -8,12 +8,13 @@
 
 #import <SafariShared/WBSHistorySessions-Protocol.h>
 
-@class NSArray, NSMutableDictionary, WBSHistorySessionIntervalCache;
+@class NSArray, NSMutableDictionary, WBSHistory, WBSHistorySessionIntervalCache;
 @protocol OS_dispatch_queue;
 
 @interface WBSHistorySessionController : NSObject <WBSHistorySessions>
 {
     NSObject<OS_dispatch_queue> *_sessionCacheAccessQueue;
+    WBSHistory *_history;
     NSMutableDictionary *_itemsBySession;
     NSArray *_orderedSessions;
     WBSHistorySessionIntervalCache *_intervalCache;
@@ -39,9 +40,9 @@
 - (unsigned long long)numberOfItemsVisitedInSession:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numberOfSessions;
 - (id)itemLastVisitedInSession:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)orderedItemsNewerThanDate:(id)arg1 maxCount:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)enumerateOrderedItemsLastVisitedInSession:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (void)dealloc;
-- (id)init;
+- (id)initWithHistory:(id)arg1;
 
 @end
 

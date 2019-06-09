@@ -10,6 +10,7 @@
 
 @class CHDDefaultTextProperties, CHDLegend, CHDPlotArea, CHDTitle, CHDView3D, EDSheet, EDWorkbook, NSMutableArray, NSString, OADGraphicProperties, OADThemeOverrides;
 
+__attribute__((visibility("hidden")))
 @interface CHDChart : OADGraphic <OADDrawableContainer>
 {
     EDSheet *mSheet;

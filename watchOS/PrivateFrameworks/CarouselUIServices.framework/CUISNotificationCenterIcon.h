@@ -4,23 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <CarouselUIServices/CUISNotificationNCIcon.h>
 
-@class UIImage;
-
-@interface CUISNotificationCenterIcon : NSObject
+@interface CUISNotificationCenterIcon : CUISNotificationNCIcon
 {
-    UIImage *_image;
-    unsigned int _iconStyle;
-    UIImage *_modifierImage;
 }
 
 + (id)iconWithImage:(id)arg1 iconStyle:(unsigned int)arg2;
-@property(retain, nonatomic) UIImage *modifierImage; // @synthesize modifierImage=_modifierImage;
-@property(nonatomic) unsigned int iconStyle; // @synthesize iconStyle=_iconStyle;
-@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
-- (void).cxx_destruct;
-- (id)initWithImage:(id)arg1 iconStyle:(unsigned int)arg2;
+@property(nonatomic) unsigned int iconStyle;
 
 @end
 

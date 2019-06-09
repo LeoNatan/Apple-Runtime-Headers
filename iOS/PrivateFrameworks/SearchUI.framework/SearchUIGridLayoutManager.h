@@ -15,12 +15,13 @@
     NSMapTable *_tableMapping;
 }
 
-+ (id)itemsForDataItems:(id)arg1;
++ (id)richTextForRichDataItems:(id)arg1;
++ (id)richTextForDataItems:(id)arg1;
 + (id)alignmentsForSFHeaderRow:(id)arg1;
 + (_Bool)shouldHideViewForSection:(id)arg1;
-@property(retain) NSMapTable *tableMapping; // @synthesize tableMapping=_tableMapping;
-@property _Bool isCompactTable; // @synthesize isCompactTable=_isCompactTable;
-@property(retain) TLKGridLayoutManager *gridManager; // @synthesize gridManager=_gridManager;
+@property(retain, nonatomic) NSMapTable *tableMapping; // @synthesize tableMapping=_tableMapping;
+@property(nonatomic) _Bool isCompactTable; // @synthesize isCompactTable=_isCompactTable;
+@property(retain, nonatomic) TLKGridLayoutManager *gridManager; // @synthesize gridManager=_gridManager;
 - (void).cxx_destruct;
 - (id)tableRowForTableRowCardSection:(id)arg1;
 - (_Bool)computeCompactTableForSections:(id)arg1;

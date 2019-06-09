@@ -21,7 +21,6 @@
 - (void)processCaptionCommand:(unsigned int)arg1 data:(id)arg2;
 - (void)resetCaptions;
 - (void)dealloc;
-- (void)finalize;
 - (void)setFontName:(const char *)arg1;
 - (id)init;
 

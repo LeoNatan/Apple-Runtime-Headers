@@ -15,9 +15,11 @@
     NSString *_establishingAccountID;
     FMFSession *_session;
     FMFDevice *_activeDevice;
+    unsigned long long _fmfProvisionedState;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) unsigned long long fmfProvisionedState; // @synthesize fmfProvisionedState=_fmfProvisionedState;
 @property(retain, nonatomic) NSString *establishingAccountID; // @synthesize establishingAccountID=_establishingAccountID;
 @property(retain, nonatomic) FMFDevice *activeDevice; // @synthesize activeDevice=_activeDevice;
 @property(retain, nonatomic) FMFSession *session; // @synthesize session=_session;
@@ -68,6 +70,9 @@
 - (void)sendMappingPacket:(id)arg1 toHandle:(id)arg2;
 - (id)allSiblingFMFHandlesForChat:(id)arg1;
 - (id)fmfHandlesForChat:(id)arg1;
+- (void)_accountStoreDidChangeNotification:(id)arg1;
+- (id)_accountStore;
+- (_Bool)imIsProvisionedForLocationSharing;
 @property(readonly, nonatomic) _Bool disableLocationSharing;
 @property(readonly, nonatomic) _Bool restrictLocationSharing;
 - (id)init;

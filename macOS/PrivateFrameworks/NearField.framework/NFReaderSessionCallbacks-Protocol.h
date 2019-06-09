@@ -14,7 +14,7 @@
 
 @optional
 - (void)didDetectExternalReaderWithNotification:(NFFieldNotification *)arg1;
-- (void)didDetectNDEFMessages:(NSArray *)arg1 fromTags:(NSArray *)arg2;
+- (void)didDetectNDEFMessages:(NSArray *)arg1 fromTags:(NSArray *)arg2 updateUICallback:(void (^)(long long))arg3;
 - (void)didDetectTags:(NSArray *)arg1;
 @end
 

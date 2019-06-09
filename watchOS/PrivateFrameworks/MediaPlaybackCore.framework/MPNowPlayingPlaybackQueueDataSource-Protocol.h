@@ -13,7 +13,9 @@
 - (NSString *)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 contentItemIDForOffset:(int)arg2;
 
 @optional
+- (void)_nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 getTransportablePlaybackSessionRepresentationWithCompletion:(void (^)(NSString *, NSData *, NSString *, NSError *))arg2;
 - (MPNowPlayingContentItem *)contentItemForOffset:(int)arg1;
+- (void)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 getTransportablePlaybackSessionRepresentationWithCompletion:(void (^)(NSData *, NSError *))arg2;
 - (NSString *)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 childContentItemIDAtIndex:(int)arg2 ofItem:(MPNowPlayingContentItem *)arg3;
 - (NSArray *)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 contentItemIDsFromOffset:(int)arg2 toOffset:(int)arg3 nowPlayingIndex:(int *)arg4;
 - (NSProgress *)nowPlayingInfoCenter:(MPNowPlayingInfoCenter *)arg1 currentLanguageOptionsForContentItem:(MPNowPlayingContentItem *)arg2 completion:(void (^)(NSArray *, NSError *))arg3;

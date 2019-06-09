@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 - (void)schedule;
 - (void)performFirstSchedulingAfterStartupInDB:(id)arg1;
 - (void)_scheduleSyncUpJob:(id)arg1;
+- (void)setState:(int)arg1 forItem:(id)arg2 zone:(id)arg3;
 - (void)postponeSyncUpForItem:(id)arg1 inZone:(id)arg2;
 - (BOOL)isItemPendingSyncUp:(id)arg1;
 - (unsigned long long)inFlightDiffsForItem:(id)arg1;

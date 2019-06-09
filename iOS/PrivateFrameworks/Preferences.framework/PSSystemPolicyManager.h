@@ -13,10 +13,10 @@
 + (_Bool)_documentSettingsNeededForBundleID:(id)arg1;
 + (_Bool)_notificationSettingsNeededForBundleID:(id)arg1;
 + (void)_populateBBSectionIDs;
++ (id)specifiersForThirdPartyApps:(id)arg1;
 + (_Bool)_cellularDataSettingsNeededForBundleID:(id)arg1;
 + (id)_dataUsageWorkspaceInfo;
 + (_Bool)_backgroundAppRefreshSettingsNeededForProxy:(id)arg1;
-+ (_Bool)_locationSettingsNeededForBundleID:(id)arg1;
 + (_Bool)_privacySettingsNeededForProxy:(id)arg1;
 + (_Bool)_systemSettingsNeededForProxy:(id)arg1;
 + (_Bool)_shouldIncludeProxy:(id)arg1;

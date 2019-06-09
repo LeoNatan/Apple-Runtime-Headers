@@ -10,6 +10,7 @@
 {
 }
 
++ (id)errorStatusIconWithColor:(id)arg1;
 + (id)malformedStatusSelectedIcon;
 + (id)malformedStatusIcon;
 + (id)unknownStatusSelectedIcon;

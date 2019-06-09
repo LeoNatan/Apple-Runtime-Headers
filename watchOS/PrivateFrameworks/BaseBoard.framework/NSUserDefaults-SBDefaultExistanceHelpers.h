@@ -9,5 +9,6 @@
 @interface NSUserDefaults (SBDefaultExistanceHelpers)
 - (void)bs_setDomain:(id)arg1;
 - (id)bs_domain;
+- (_Bool)bs_defaultExists:(id)arg1;
 @end
 

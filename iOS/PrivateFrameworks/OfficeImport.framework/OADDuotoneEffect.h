@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     int mTransferMode2;
 }
 
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)setStyleColor:(id)arg1;
@@ -28,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (id)color2;
 - (void)setColor1:(id)arg1;
 - (id)color1;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 

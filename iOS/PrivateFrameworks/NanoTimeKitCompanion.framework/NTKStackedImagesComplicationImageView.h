@@ -6,12 +6,14 @@
 
 #import <UIKit/UIView.h>
 
+#import <NanoTimeKitCompanion/CLKMonochromeComplicationView-Protocol.h>
 #import <NanoTimeKitCompanion/NTKComplicationImageView-Protocol.h>
 #import <NanoTimeKitCompanion/NTKLegibilityView-Protocol.h>
 
 @class CLKDevice, CLKImageProvider, NSString, NTKColoringImageView, UIColor, UIImage, UIImageView;
+@protocol CLKMonochromeFilterProvider;
 
-@interface NTKStackedImagesComplicationImageView : UIView <NTKComplicationImageView, NTKLegibilityView>
+@interface NTKStackedImagesComplicationImageView : UIView <NTKComplicationImageView, NTKLegibilityView, CLKMonochromeComplicationView>
 {
     CLKDevice *_device;
     NTKColoringImageView *_foregroundImageView;
@@ -27,6 +29,7 @@
     UIColor *_shadowColor;
     double _imageScaleFactor;
     CLKImageProvider *_imageProvider;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     UIColor *_color;
     UIColor *_overrideColor;
     double _multicolorAlpha;
@@ -37,14 +40,18 @@
 @property(nonatomic) double multicolorAlpha; // @synthesize multicolorAlpha=_multicolorAlpha;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 @property(retain, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 @property(nonatomic) _Bool legibilityEnabled; // @dynamic legibilityEnabled;
 @property(retain, nonatomic) UIColor *shadowColor; // @synthesize shadowColor=_shadowColor;
 @property(nonatomic) double shadowBlur; // @synthesize shadowBlur=_shadowBlur;
 @property(nonatomic) _Bool usesLegibility; // @dynamic usesLegibility;
 @property(readonly, nonatomic) UIColor *contentColor;
 - (_Bool)hasMonochromeImage;
+- (_Bool)_shouldIgnoreTwoPieceImage;
 - (void)_loadImageViewsIfNecessary;
 - (_Bool)_hasShadowViews;
 - (_Bool)_hasMultipartImages;

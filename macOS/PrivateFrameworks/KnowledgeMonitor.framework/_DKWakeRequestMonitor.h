@@ -11,6 +11,7 @@
 
 @interface _DKWakeRequestMonitor : _DKMonitor
 {
+    BOOL _updateTimerResumed;
     int _wakeRequestToken;
     NSDate *_nextUserVisibleWakeRequestDate;
     NSString *_nextUserVisibleWakeRequestor;
@@ -26,10 +27,12 @@
 - (void).cxx_destruct;
 - (void)obtainNextUserVisibleWakeRequest;
 - (void)synchronouslyReflectCurrentValue;
+- (void)deactivate;
 - (void)stop;
 - (void)start;
 - (id)loadState;
 - (void)saveState;
+- (void)dealloc;
 
 @end
 

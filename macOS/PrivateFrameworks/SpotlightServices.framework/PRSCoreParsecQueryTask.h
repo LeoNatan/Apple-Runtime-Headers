@@ -12,7 +12,6 @@
 {
     PARSession *_parSession;
     BOOL _parsecEnabled;
-    BOOL _bingEnabled;
     unsigned long long _whyQuery;
     SFSearchSuggestion *_suggestion;
     PARTask *_task;
@@ -24,7 +23,6 @@
 - (void)resume;
 - (void)handleResults:(id)arg1;
 - (id)initWithSession:(id)arg1 parsecSession:(id)arg2 handler:(id)arg3 queue:(id)arg4 scaleFactor:(double)arg5 queryIdent:(unsigned long long)arg6 whyQuery:(unsigned long long)arg7;
-- (void)setBingState:(BOOL)arg1;
 - (void)setParsecState:(BOOL)arg1;
 - (BOOL)needsBag;
 

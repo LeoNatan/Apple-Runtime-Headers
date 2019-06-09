@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)applyTextStyle:(id)arg1 toParagraphProperties:(id)arg2;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setParentTextListStyle:(id)arg1;
 - (id)addRow;
@@ -23,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)rowCount;
 - (id)grid;
 - (id)tableProperties;
-- (void)dealloc;
 - (id)init;
 - (void)flipTableRTL;
 - (id)masterCellOfPos:(struct OADTMatrixPos)arg1;

@@ -8,11 +8,16 @@
 
 #import <GeoServices/GEONavigationServerPushStateXPCInterface-Protocol.h>
 
-@class NSData, NSMutableArray, NSString;
+@class GEONavdPeer, NSData, NSMutableArray, NSString;
 
 @interface GEONavigationServer : NSObject <GEONavigationServerPushStateXPCInterface>
 {
-    NSMutableArray *_peers;
+    GEONavdPeer *_pushStatePeer;
+    NSMutableArray *_listenerPeers;
+    _Bool _isListenerConnectionOpen;
+    int _listenerConnectionOpenToken;
+    unsigned long long _state;
+    int _transportType;
     NSData *_routeSummaryData;
     NSData *_transitSummaryData;
     NSData *_guidanceStateData;
@@ -29,6 +34,9 @@
 
 + (id)identifier;
 - (void).cxx_destruct;
+- (void)_notifyListenersOpenConnection;
+- (void)_closePushStatePeerConnection;
+- (void)_openPushStatePeerConnection:(id)arg1;
 - (void)clearAllData;
 - (void)_sendMessage:(long long)arg1 data:(id)arg2 toPeer:(id)arg3;
 - (void)_forEachValidPeerProxy:(CDUnknownBlockType)arg1;
@@ -58,6 +66,7 @@
 - (void)setRouteSummaryWithGuidanceStateData:(id)arg1;
 - (void)setRouteSummaryWithTransitSummaryData:(id)arg1;
 - (void)setRouteSummaryWithNavigationRouteSummaryData:(id)arg1;
+- (void)setNavigationSessionState:(unsigned long long)arg1 transportType:(int)arg2;
 - (void)dealloc;
 - (_Bool)shouldAcceptNewConnection:(id)arg1 shouldCreateNavigationPeer:(_Bool)arg2;
 - (id)init;

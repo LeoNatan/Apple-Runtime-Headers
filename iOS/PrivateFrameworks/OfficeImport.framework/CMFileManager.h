@@ -6,14 +6,15 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface CMFileManager : NSObject
 {
 }
 
 + (id)getUrlProtocol:(id)arg1;
 + (id)canonicalUrlPrefix:(id)arg1;
-+ (int)getFileTypeFromUTI:(id)arg1;
-+ (int)getFileTypeFromPath:(id)arg1;
++ (unsigned long long)getFileTypeFromUTI:(id)arg1;
++ (unsigned long long)getFileTypeFromPath:(id)arg1;
 + (id)uniqueFileName:(id)arg1;
 + (id)getTmpDirectory;
 

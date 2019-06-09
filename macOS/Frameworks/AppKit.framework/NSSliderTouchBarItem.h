@@ -27,8 +27,11 @@
 - (void)_itemViewDidCancelTracking;
 - (void)_itemViewDidEndTracking;
 - (void)_itemViewWillBeginTracking;
+@property double maximumSliderWidth;
+@property double minimumSliderWidth;
 @property(copy) NSString *customizationLabel;
 - (void)_sliderDidChange:(id)arg1;
+@property double doubleValue;
 @property(copy) NSString *label;
 @property double valueAccessoryWidth;
 @property(retain) NSSlider *slider;

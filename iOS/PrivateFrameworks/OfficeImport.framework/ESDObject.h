@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     _Bool mIsChart;
 }
 
+- (void).cxx_destruct;
 - (void)setChart:(_Bool)arg1;
 - (_Bool)isChart;
 - (void)writeToWriter:(struct OcWriter *)arg1;
@@ -28,8 +29,8 @@ __attribute__((visibility("hidden")))
 - (int)shapeID;
 - (struct EshGroup *)eshGroup;
 - (struct EshShape *)eshShape;
-- (id)ebInitWithType:(unsigned short)arg1 version:(unsigned short)arg2 state:(id)arg3;
-- (id)pbInitWithType:(unsigned short)arg1 version:(unsigned short)arg2 state:(id)arg3;
+- (id)initForExcelBinaryWithType:(unsigned short)arg1 version:(unsigned short)arg2 state:(id)arg3;
+- (id)initPBWithType:(unsigned short)arg1 version:(unsigned short)arg2 state:(id)arg3;
 
 @end
 

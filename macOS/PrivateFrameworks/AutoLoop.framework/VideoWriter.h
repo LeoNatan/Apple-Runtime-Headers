@@ -9,7 +9,6 @@
 @class AVAssetWriter, AVAssetWriterInput, AVAssetWriterInputPixelBufferAdaptor, NSConditionLock, NSError;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface VideoWriter : NSObject
 {
     BOOL _initFailed;

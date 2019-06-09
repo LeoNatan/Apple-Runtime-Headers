@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface MPStoreItemImportTrackData : ML3StoreItemTrackData
 {
     NSArray *_importElements;

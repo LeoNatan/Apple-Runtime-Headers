@@ -11,6 +11,7 @@
 
 @class EDColorReference, EDResources, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDFont : NSObject <NSCopying, EDImmutableObject>
 {
     EDResources *mResources;

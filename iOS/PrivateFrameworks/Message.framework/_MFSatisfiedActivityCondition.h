@@ -8,13 +8,13 @@
 
 #import <Message/MFActivityCondition-Protocol.h>
 
-@class MFObservable, NSString;
+@class EFObservable, NSString;
 
 @interface _MFSatisfiedActivityCondition : NSObject <MFActivityCondition>
 {
 }
 
-@property(readonly, nonatomic) MFObservable *conditionsObservable;
+@property(readonly, nonatomic) EFObservable *conditionsObservable;
 @property(readonly, nonatomic, getter=isSatisfied) _Bool satisfied;
 
 // Remaining properties

@@ -18,9 +18,12 @@
 
 @interface UIResponder : NSObject <UITextInput_Internal, UITextInputAdditions, UIUserActivityRestoring, _UIStateRestorationContinuation, _UITouchable, UIResponderStandardEditActions>
 {
-    unsigned int _hasOverrideClient:1;
-    unsigned int _hasOverrideHost:1;
-    unsigned int _hasInputAssistantItem:1;
+    struct {
+        unsigned int hasOverrideClient:1;
+        unsigned int hasOverrideHost:1;
+        unsigned int hasInputAssistantItem:1;
+        unsigned int suppressSoftwareKeyboard:1;
+    } _responderFlags;
 }
 
 + (void)clearTextInputContextIdentifier:(id)arg1;
@@ -33,6 +36,7 @@
 + (void)_stopDeferredTrackingObjectsWithIdentifiers;
 + (void)_startDeferredTrackingObjectsWithIdentifiers;
 + (id)objectWithRestorationIdentifierPath:(id)arg1;
+- (long long)undoOption;
 - (void)_setDropDataOwner:(long long)arg1;
 - (long long)_dropDataOwner;
 - (void)_setDragDataOwner:(long long)arg1;
@@ -108,19 +112,28 @@
 - (void)_overrideInputViewNextResponderWithResponder:(id)arg1;
 - (void)_clearOverrideNextResponder;
 - (void)_preserveResponderOverridesWhilePerforming:(CDUnknownBlockType)arg1;
+- (void)_restoreOverrideState:(id)arg1;
+- (id)_captureOverrideState;
 - (void)_clearOverrideHost;
 - (id)_overrideHost;
 - (id)_currentOverrideHost;
 - (id)_currentOverrideClient;
 - (_Bool)_restoreFirstResponder;
+- (void)updateTextAttributesWithConversionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSUndoManager *undoManager;
+- (void)selectToHere:(id)arg1;
 - (void)_addShortcut:(id)arg1;
 - (void)_share:(id)arg1;
 - (void)_lookup:(id)arg1;
 - (void)_define:(id)arg1;
+- (id)validationForCommand:(id)arg1;
+- (void)validateCommand:(id)arg1;
+- (void)_buildCommandsFromChainWithBuilder:(id)arg1;
+- (void)buildCommandsWithBuilder:(id)arg1;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (id)_targetCanPerformBlock:(CDUnknownBlockType)arg1;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (id)_selectToHereResponderProxy;
 - (id)_textServicesResponderProxy;
 - (void)_clearBecomeFirstResponderWhenCapable;
 - (id)firstResponder;
@@ -154,7 +167,9 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)dealloc;
-- (_Bool)_usesDeemphasizedTextAppearance;
+- (void)_clearTextInputSource;
+- (void)set_textInputSource:(long long)arg1;
+- (long long)_textInputSource;
 - (id)_selectableText;
 @property(readonly, nonatomic) UIView<UITextInputPrivate> *_textSelectingContainer;
 - (struct CGRect)_lastRectForRange:(id)arg1;
@@ -190,6 +205,7 @@
 - (id)_textColorForCaretSelection;
 - (id)_rangeFromCurrentRangeWithDelta:(struct _NSRange)arg1;
 - (id)_clampedpositionFromPosition:(id)arg1 offset:(int)arg2;
+- (id)_rangeOfSmartSelectionIncludingRange:(id)arg1;
 - (id)_findPleasingWordBoundaryFromPosition:(id)arg1;
 - (id)_intersectionOfRange:(id)arg1 andRange:(id)arg2;
 - (_Bool)_range:(id)arg1 intersectsRange:(id)arg2;
@@ -202,11 +218,14 @@
 - (id)_rangeOfEnclosingWord:(id)arg1;
 - (id)_rangeOfTextUnit:(long long)arg1 enclosingPosition:(id)arg2;
 - (id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2;
+- (id)_normalizedStringForRangeComparison:(id)arg1;
 - (void)_scrollRectToVisible:(struct CGRect)arg1 animated:(_Bool)arg2;
 - (void)_replaceDocumentWithText:(id)arg1;
 - (void)_replaceCurrentWordWithText:(id)arg1;
+- (void)_transpose;
 - (void)_deleteForwardAndNotify:(_Bool)arg1;
 - (void)_deleteBackwardAndNotify:(_Bool)arg1;
+- (void)_deleteToEndOfParagraph;
 - (void)_deleteToEndOfLine;
 - (void)_deleteToStartOfLine;
 - (void)_deleteByWord;
@@ -251,9 +270,11 @@
 @property(readonly, nonatomic, getter=isEditable) _Bool editable;
 - (id)__textInteractionFromAssistant;
 - (void)__tearDownInteractionAssistantIfNecessary;
-- (void)__createInteractionAssistantIfNecessaryWithSet:(long long)arg1;
+- (void)__createInteractionAssistantIfNecessaryWithMode:(long long)arg1;
 - (id)interactionAssistant;
 - (id)textInputView;
+- (void)_setSuppressSoftwareKeyboard:(_Bool)arg1;
+- (_Bool)_suppressSoftwareKeyboard;
 @property(readonly, nonatomic) UITextInputAssistantItem *inputAssistantItem;
 - (void)reloadInputViewsWithoutReset;
 - (void)reloadInputViews;

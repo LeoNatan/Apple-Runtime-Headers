@@ -18,7 +18,7 @@
 + (id)modelNamespace;
 
 // Remaining properties
-@property(retain, nonatomic) NSNumber *automaticSoftwareUpdateEnabled; // @dynamic automaticSoftwareUpdateEnabled;
+@property(copy, nonatomic) NSNumber *automaticSoftwareUpdateEnabled; // @dynamic automaticSoftwareUpdateEnabled;
 
 @end
 

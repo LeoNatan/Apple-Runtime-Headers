@@ -13,16 +13,18 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
++ (id)_contextNameFromMoreActionContextType:(unsigned int)arg1;
 + (id)_originNameForOrigin:(id)arg1;
 + (id)_stringForRoutePickingResult:(unsigned int)arg1;
 + (id)_feedbackActionNameFromActionType:(int)arg1;
-+ (id)_controlNameForControlType:(int)arg1;
++ (id)_actionNameFromMoreActionType:(unsigned int)arg1;
++ (id)_controlNameForActionType:(unsigned int)arg1;
 + (id)_viewNameForViewType:(unsigned int)arg1;
 + (id)_launcherNameForLaunchURLType:(unsigned int)arg1;
-+ (void)_pushValue:(double)arg1 forDistributionKeyComponents:(id)arg2;
 + (void)_setScalarValue:(long long)arg1 forKeyComponents:(id)arg2;
 + (void)_incrementScalarValueForKeyComponents:(id)arg1;
 + (void)incrementTapCountForFeedbackActionType:(int)arg1 origin:(id)arg2;
++ (void)incrementTapCountForMoreActionType:(unsigned int)arg1 context:(unsigned int)arg2 origin:(id)arg3;
 + (void)incrementTrackListTrackSelectionCountForOrigin:(id)arg1;
 + (void)incrementRepeatModeChangeCountForOrigin:(id)arg1;
 + (void)incrementShuffleModeChangeCountForOrigin:(id)arg1;
@@ -30,12 +32,8 @@
 + (void)incrementRouteSelectionResult:(unsigned int)arg1 forOrigin:(id)arg2;
 + (void)incrementRouteChangeCountForOrigin:(id)arg1;
 + (void)incrementRouteSelectCountForOrigin:(id)arg1;
-+ (void)incrementTapBasedVolumeControlCountForOrigin:(id)arg1;
 + (void)incrementCrownBasedVolumeControlCountForOrigin:(id)arg1;
-+ (void)incrementAirPlayOrbTapCountForOrigin:(id)arg1;
-+ (void)incrementButtonTapCountForControlType:(int)arg1 origin:(id)arg2;
-+ (void)incrementPauseButtonTapCountForOrigin:(id)arg1;
-+ (void)incrementPlayButtonTapCountForOrigin:(id)arg1;
++ (void)incrementButtonTapCountForActionType:(unsigned int)arg1 origin:(id)arg2;
 + (void)incrementPlaybackRoutePickerPresentationCount;
 + (void)incrementPlaybackShuffleAllCountFromViewType:(unsigned int)arg1 origin:(id)arg2;
 + (void)incrementPlaybackStartCountFromViewType:(unsigned int)arg1 index:(int)arg2 origin:(id)arg3;

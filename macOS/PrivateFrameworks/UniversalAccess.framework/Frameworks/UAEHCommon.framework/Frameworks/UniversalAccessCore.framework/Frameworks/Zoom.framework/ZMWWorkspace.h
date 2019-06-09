@@ -27,7 +27,6 @@
     ZMWMainWindow *_mainWindow;
     NSThread *_mainThread;
     NSNumber *_nonSystemZoomFactor;
-    ZMWEventManager *__eventManager;
     NSObject<OS_dispatch_source> *__refreshQueueSource;
     NSMutableDictionary *__animationDictionary;
     NSObject<OS_dispatch_queue> *__eventQueue;
@@ -46,7 +45,6 @@
 @property(nonatomic) BOOL _isAnimating; // @synthesize _isAnimating=__isAnimating;
 @property(nonatomic) BOOL _isRefreshing; // @synthesize _isRefreshing=__isRefreshing;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *_refreshQueueSource; // @synthesize _refreshQueueSource=__refreshQueueSource;
-@property(retain, nonatomic) ZMWEventManager *_eventManager; // @synthesize _eventManager=__eventManager;
 @property(retain, nonatomic) NSNumber *nonSystemZoomFactor; // @synthesize nonSystemZoomFactor=_nonSystemZoomFactor;
 @property(nonatomic) BOOL swipeScrollDirection; // @synthesize swipeScrollDirection=_swipeScrollDirection;
 @property(nonatomic) BOOL isInResizeMode; // @synthesize isInResizeMode=_isInResizeMode;
@@ -90,6 +88,7 @@
 - (void)_initializeWindows;
 - (void)informSystemZoomWindowEnabled:(BOOL)arg1;
 - (void)_informSystemZoomWindowEnabled:(BOOL)arg1;
+@property(readonly, nonatomic) ZMWEventManager *_eventManager;
 @property(readonly, nonatomic) BOOL isSafeToQuit;
 - (id)init;
 - (void)resizeHorizDown;

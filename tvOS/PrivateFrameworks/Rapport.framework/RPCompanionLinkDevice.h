@@ -16,12 +16,14 @@
     _Bool _btPipeConnected;
     _Bool _changed;
     _Bool _daemon;
+    _Bool _uiTriggered;
     unsigned int _flags;
     int _mediaSystemRole;
     int _mediaSystemState;
     int _personalDeviceState;
     int _personalRequestsState;
     int _mediaSystemRoleEffective;
+    int _serversChangedState;
     NSString *_deviceColor;
     NSUUID *_homeKitIdentifier;
     NSString *_idsPersonalDeviceIdentifier;
@@ -37,6 +39,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool uiTriggered; // @synthesize uiTriggered=_uiTriggered;
+@property(nonatomic) int serversChangedState; // @synthesize serversChangedState=_serversChangedState;
 @property(copy, nonatomic) NSString *password; // @synthesize password=_password;
 @property(copy, nonatomic) NSUUID *pairingIdentifier; // @synthesize pairingIdentifier=_pairingIdentifier;
 @property(nonatomic) int mediaSystemRoleEffective; // @synthesize mediaSystemRoleEffective=_mediaSystemRoleEffective;

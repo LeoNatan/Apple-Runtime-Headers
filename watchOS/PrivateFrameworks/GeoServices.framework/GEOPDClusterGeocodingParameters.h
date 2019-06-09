@@ -17,9 +17,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_assetLocations;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)assetLocationType;
-@property(retain, nonatomic) NSMutableArray *assetLocations; // @synthesize assetLocations=_assetLocations;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -28,12 +29,14 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)assetLocationAtIndex:(unsigned int)arg1;
 - (unsigned int)assetLocationsCount;
 - (void)addAssetLocation:(id)arg1;
 - (void)clearAssetLocations;
+@property(retain, nonatomic) NSMutableArray *assetLocations;
 
 @end
 

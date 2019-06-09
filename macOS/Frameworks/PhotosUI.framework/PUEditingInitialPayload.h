@@ -8,38 +8,40 @@
 
 #import <PhotosUI/NSSecureCoding-Protocol.h>
 
-@class CLLocation, NSData, NSDate, NSString, PHAdjustmentData;
+@class CLLocation, NSData, NSDate, NSString, NSURL, PHAdjustmentData;
 
 @interface PUEditingInitialPayload : NSObject <NSSecureCoding>
 {
+    int _fullSizeImageExifOrientation;
     long long _mediaType;
     unsigned long long _mediaSubtypes;
     long long _playbackStyle;
     NSDate *_creationDate;
     CLLocation *_location;
-    NSString *_uniformTypeIdentifier;
     PHAdjustmentData *_adjustmentData;
+    long long _adjustmentBaseVersion;
     NSData *_placeholderImageData;
     NSData *_displaySizeImageData;
-    NSData *_inputFileSandboxData;
-    long long _inputOrientation;
-    NSData *_outputFileSandboxData;
-    NSData *_inputVideoComplementSandboxData;
-    NSData *_outputVideoComplementSandboxData;
-    CDStruct_1b6d18a9 _inputLivePhotoTime;
+    NSURL *_videoURL;
+    NSString *_videoPathSandboxExtensionToken;
+    NSURL *_fullSizeImageURL;
+    NSString *_fullSizeImageURLSandboxExtensionToken;
+    NSString *_uniformTypeIdentifier;
+    CDStruct_1b6d18a9 _livePhotoStillDisplayTime;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) CDStruct_1b6d18a9 inputLivePhotoTime; // @synthesize inputLivePhotoTime=_inputLivePhotoTime;
-@property(copy, nonatomic) NSData *outputVideoComplementSandboxData; // @synthesize outputVideoComplementSandboxData=_outputVideoComplementSandboxData;
-@property(copy, nonatomic) NSData *inputVideoComplementSandboxData; // @synthesize inputVideoComplementSandboxData=_inputVideoComplementSandboxData;
-@property(copy, nonatomic) NSData *outputFileSandboxData; // @synthesize outputFileSandboxData=_outputFileSandboxData;
-@property(nonatomic) long long inputOrientation; // @synthesize inputOrientation=_inputOrientation;
-@property(copy, nonatomic) NSData *inputFileSandboxData; // @synthesize inputFileSandboxData=_inputFileSandboxData;
+@property(copy, nonatomic) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
+@property(nonatomic) int fullSizeImageExifOrientation; // @synthesize fullSizeImageExifOrientation=_fullSizeImageExifOrientation;
+@property(copy, nonatomic) NSString *fullSizeImageURLSandboxExtensionToken; // @synthesize fullSizeImageURLSandboxExtensionToken=_fullSizeImageURLSandboxExtensionToken;
+@property(retain, nonatomic) NSURL *fullSizeImageURL; // @synthesize fullSizeImageURL=_fullSizeImageURL;
+@property(nonatomic) CDStruct_1b6d18a9 livePhotoStillDisplayTime; // @synthesize livePhotoStillDisplayTime=_livePhotoStillDisplayTime;
+@property(copy, nonatomic) NSString *videoPathSandboxExtensionToken; // @synthesize videoPathSandboxExtensionToken=_videoPathSandboxExtensionToken;
+@property(retain, nonatomic) NSURL *videoURL; // @synthesize videoURL=_videoURL;
 @property(copy, nonatomic) NSData *displaySizeImageData; // @synthesize displaySizeImageData=_displaySizeImageData;
 @property(copy, nonatomic) NSData *placeholderImageData; // @synthesize placeholderImageData=_placeholderImageData;
-@property(copy, nonatomic) PHAdjustmentData *adjustmentData; // @synthesize adjustmentData=_adjustmentData;
-@property(copy, nonatomic) NSString *uniformTypeIdentifier; // @synthesize uniformTypeIdentifier=_uniformTypeIdentifier;
+@property(nonatomic) long long adjustmentBaseVersion; // @synthesize adjustmentBaseVersion=_adjustmentBaseVersion;
+@property(retain, nonatomic) PHAdjustmentData *adjustmentData; // @synthesize adjustmentData=_adjustmentData;
 @property(copy, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(copy, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(nonatomic) long long playbackStyle; // @synthesize playbackStyle=_playbackStyle;

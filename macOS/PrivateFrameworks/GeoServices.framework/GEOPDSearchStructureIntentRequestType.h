@@ -17,12 +17,14 @@ __attribute__((visibility("hidden")))
     int _intentType;
     int _structureType;
     struct {
-        unsigned int intentType:1;
-        unsigned int structureType:1;
-    } _has;
+        unsigned int has_intentType:1;
+        unsigned int has_structureType:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,16 +33,17 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsIntentType:(id)arg1;
 - (id)intentTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasIntentType;
-@property(nonatomic) int intentType; // @synthesize intentType=_intentType;
+@property(nonatomic) int intentType;
 - (int)StringAsStructureType:(id)arg1;
 - (id)structureTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasStructureType;
-@property(nonatomic) int structureType; // @synthesize structureType=_structureType;
+@property(nonatomic) int structureType;
 
 @end
 

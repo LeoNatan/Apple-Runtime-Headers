@@ -6,15 +6,19 @@
 
 #import <objc/NSObject.h>
 
+@protocol OS_dispatch_queue;
+
 @interface VCPImageManager : NSObject
 {
     struct FigPhotoDecompressionSession *_decodeSession;
     struct OpaqueVTPixelTransferSession *_transferSession;
+    NSObject<OS_dispatch_queue> *_decodeQueue;
 }
 
 + (BOOL)loggingEnabled;
 + (BOOL)canDecodeAcceleratedUniformTypeIdentifier:(id)arg1;
 + (id)sharedImageManager;
+- (void).cxx_destruct;
 - (struct __CVBuffer *)pixelBufferWithFormat:(int)arg1 andMaxDimension:(unsigned long long)arg2 fromImageURL:(id)arg3;
 - (struct __CVBuffer *)pixelBufferWithFormat:(int)arg1 fromImageURL:(id)arg2;
 - (struct __CVBuffer *)imageForResource:(id)arg1 pixelFormat:(int)arg2 maxDimension:(unsigned long long)arg3;

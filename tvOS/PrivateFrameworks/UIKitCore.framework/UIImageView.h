@@ -7,15 +7,23 @@
 #import <UIKitCore/UIView.h>
 
 #import <UIKitCore/UIAccessibilityContentSizeCategoryImageAdjusting-Protocol.h>
+#import <UIKitCore/_UIImageContentEffect-Protocol.h>
+#import <UIKitCore/_UIImageContentLayoutTarget-Protocol.h>
 
-@class NSArray, NSString, UIColor, UIImage, UILayoutGuide, UITraitCollection, _UIStackedImageContainerView;
+@class NSArray, NSString, UIColor, UIImage, UIImageSymbolConfiguration, UILayoutGuide, UITraitCollection, _UIStackedImageContainerView;
 
-@interface UIImageView : UIView <UIAccessibilityContentSizeCategoryImageAdjusting>
+@interface UIImageView : UIView <UIAccessibilityContentSizeCategoryImageAdjusting, _UIImageContentLayoutTarget, _UIImageContentEffect>
 {
     id _storage;
     struct UIEdgeInsets _cachedEdgeInsetsForEffects;
     UITraitCollection *_lastResolvedTraitCollection;
     long long _lastResolvedLayoutDirectionTrait;
+    double _previousBaselineOffsetFromBottom;
+    double _previousFirstBaselineOffsetFromTop;
+    struct {
+        unsigned int canDrawContentIsValid:1;
+        unsigned int canDrawContent:1;
+    } _imageViewFlags;
     struct {
         unsigned int adjustsImageWhenAncestorFocused:1;
         unsigned int masksFocusEffectToContents:1;
@@ -41,7 +49,7 @@
 - (void)_configureForLayeredImage:(id)arg1;
 - (_Bool)_displayImageAsLayered:(id)arg1;
 - (void)_updateImageViewForOldImage:(id)arg1 newImage:(id)arg2;
-- (void)_resolveImageForTrait:(id)arg1;
+- (_Bool)_resolveImageForTrait:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)_currentHighlightedImage;
 - (id)_currentImage;
@@ -90,9 +98,26 @@
 - (struct UIEdgeInsets)alignmentRectInsets;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(_Bool)arg1;
+@property(retain, nonatomic) UIImageSymbolConfiguration *symbolConfiguration;
+- (void)_setOverridingSymbolConfiguration:(id)arg1;
+@property(retain, nonatomic) UIImageSymbolConfiguration *preferredSymbolConfiguration;
+- (id)_overridingSymbolConfiguration;
+- (id)_symbolConfigurationForImage:(id)arg1;
+- (id)midlineGuide;
+- (id)_imageContentGuideAllowingCreation:(_Bool)arg1;
+@property(readonly) UILayoutGuide *imageContentGuide;
+- (void)_imageContentParametersDidChange;
+- (struct UIEdgeInsets)_contentInsetsForImage:(id)arg1;
+- (void)_baselineOffsetParametersDidChange;
+- (_Bool)_hasBaseline;
+- (double)_baselineOffsetFromBottom;
+- (double)_firstBaselineOffsetFromTop;
 - (struct CGSize)_intrinsicSizeWithinSize:(struct CGSize)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
+- (void)setContentMode:(long long)arg1;
+@property(readonly, nonatomic) _Bool _layoutShouldFlipHorizontalOrientations;
+@property(readonly, nonatomic) double preferredContentScaleFactor;
 - (void)setContentScaleFactor:(double)arg1;
 - (void)_setViewGeometry:(struct CGRect)arg1 forMetric:(int)arg2;
 @property(readonly) UILayoutGuide *focusedFrameGuide;
@@ -110,9 +135,12 @@
 - (id)initWithImage:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_updateState;
+- (id)_renditionForSource:(id)arg1 withCGImageProvider:(CDUnknownBlockType)arg2 lazy:(_Bool)arg3;
+- (id)_effectForRenderingSource:(id)arg1;
 - (_Bool)_setImageViewContents:(id)arg1;
+- (void)_invalidateImageLayouts;
+- (id)_layoutForImage:(id)arg1;
 - (_Bool)_canDrawContent;
-- (_Bool)_shouldDrawImage:(id)arg1;
 - (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (unsigned long long)defaultAccessibilityTraits;
 - (_Bool)isAccessibilityElementByDefault;
@@ -127,9 +155,12 @@
 - (_Bool)_recomputePretilingState;
 
 // Remaining properties
+@property(readonly, nonatomic) struct CGRect bounds;
+@property(readonly, nonatomic) long long contentMode; // @dynamic contentMode;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) long long semanticContentAttribute;
 @property(readonly) Class superclass;
 @property(retain, nonatomic) UIColor *tintColor; // @dynamic tintColor;
 @property(nonatomic, getter=isUserInteractionEnabled) _Bool userInteractionEnabled; // @dynamic userInteractionEnabled;

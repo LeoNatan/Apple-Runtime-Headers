@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (AppleScriptKit)
++ (id)containerName_ask;
 - (id)eventHandlerWithName_ask:(id)arg1;
 - (BOOL)hasKindOfEventHandler_ask:(id)arg1;
 - (BOOL)eventHandlerIsSupported_ask:(id)arg1;
@@ -28,5 +29,7 @@
 - (unsigned long long)objectIndex_ask;
 - (void)setEventHandlers_ask:(id)arg1;
 - (id)eventHandlers_ask;
+- (id)handleLogScriptCommand:(id)arg1;
+- (id)logDescription_ask;
 @end
 

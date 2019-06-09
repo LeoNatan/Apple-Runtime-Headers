@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     struct nw_protocol *protocol_handle;
     NSObject<OS_xpc_object> *legacy_parameters;
     char *log_id_str;
+    unsigned short log_id_num;
     void *handle;
 }
 

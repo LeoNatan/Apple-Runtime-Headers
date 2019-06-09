@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
     NSArray *_names;
     NSDictionary *_properties;
     NSMutableDictionary *_cachedContents;
-    void *_reserved;
     struct __zFlags {
         unsigned int providerSuppliesContents:1;
         unsigned int providerSuppliesStreams:1;
@@ -28,7 +27,6 @@ __attribute__((visibility("hidden")))
         unsigned int fileOpen:1;
         unsigned int reserved:27;
     } _zFlags;
-    void *_reserved2[5];
     NSMutableDictionary *_entryNameToData;
     NSMutableDictionary *_entryNameToLocalFileHeader;
     NSMutableDictionary *_entryNameToCentralDirectoryFileHeader;

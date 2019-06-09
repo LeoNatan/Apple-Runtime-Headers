@@ -8,7 +8,7 @@
 
 #import <AddressBook/ABFaceTimeCommunicationsBridgeDelegate-Protocol.h>
 
-@class ABFaceTimeCommunicationsBridge, NSButton, NSStackView, NSString;
+@class ABFaceTimeCommunicationsBridge, CNFuture, NSButton, NSStackView, NSString;
 @protocol ABFaceTimeDataSource;
 
 @interface ABCommunicationButtonsController : NSObject <ABFaceTimeCommunicationsBridgeDelegate>
@@ -17,14 +17,21 @@
     NSStackView *_communicationButtonsRow;
     id <ABFaceTimeDataSource> _dataSource;
     ABFaceTimeCommunicationsBridge *_bridge;
+    CNFuture *_availabilityFuture;
     NSButton *_faceTimeButton;
     NSButton *_faceTimeAudioButton;
 }
 
++ (BOOL)isIdentifierFromCuratedSource:(id)arg1;
++ (id)uniqueIdentifiersSuitableForAvailabilityLookupFromIdentifiers:(id)arg1;
++ (id)emailEndpointsFromEmailAddresses:(id)arg1;
++ (id)phoneEndpointsFromPhoneNumbers:(id)arg1;
++ (id)communicationEndpointsFromPhoneNumbers:(id)arg1 emailAddresses:(id)arg2;
 + (id)faceTimeImageWrapper;
 + (id)faceTimeAudioImageWrapper;
 @property(readonly, nonatomic) NSButton *faceTimeAudioButton; // @synthesize faceTimeAudioButton=_faceTimeAudioButton;
 @property(readonly, nonatomic) NSButton *faceTimeVideoButton; // @synthesize faceTimeVideoButton=_faceTimeButton;
+@property(retain, nonatomic) CNFuture *availabilityFuture; // @synthesize availabilityFuture=_availabilityFuture;
 @property(nonatomic) BOOL availableForFaceTime; // @synthesize availableForFaceTime=_availableForFaceTime;
 @property(retain, nonatomic) ABFaceTimeCommunicationsBridge *bridge; // @synthesize bridge=_bridge;
 @property(nonatomic) __weak id <ABFaceTimeDataSource> dataSource; // @synthesize dataSource=_dataSource;
@@ -35,10 +42,6 @@
 - (void)showTelephonyMenu;
 - (BOOL)shouldShowTelephonyMenu;
 - (void)makeTelephonyCallWithItem:(id)arg1;
-- (BOOL)isIdentifierFromCuratedSource:(id)arg1;
-- (id)uniqueIdentifiersSuitableForAvailabilityLookup;
-- (id)emailEndpoints;
-- (id)phoneEndpoints;
 - (id)communicationEndpoints;
 - (BOOL)shouldUseSingleEndpoint;
 - (void)makeFaceTimeCallWithButton:(id)arg1;
@@ -46,13 +49,16 @@
 - (void)handleFaceTimeAudioPressed;
 - (void)performActionForButton:(id)arg1;
 - (void)adjustStateOfButton:(id)arg1;
+- (void)adjustStateOfButtons;
 - (void)faceTimeCommunicationsBridge:(id)arg1 faceTimeAvailabilityChaged:(BOOL)arg2 forContactWithIdentifier:(id)arg3;
 - (void)buildLabelForButton:(id)arg1;
 - (id)allButtons;
-- (void)startFaceTimeAvailabilityLookup;
+- (void)stopAvailabilityLookup;
+- (void)startAvailabilityLookup;
 - (void)buildFaceTimeAudioButton;
 - (void)buildFaceTimeButton;
 - (void)buildCommunicationsRowStackView;
+- (void)dealloc;
 - (id)initWithFaceTimeBridge:(id)arg1 dataSource:(id)arg2;
 
 // Remaining properties

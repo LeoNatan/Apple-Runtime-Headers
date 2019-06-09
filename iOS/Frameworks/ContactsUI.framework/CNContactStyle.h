@@ -17,6 +17,7 @@
     _Bool _shouldPresentInCurrentContext;
     _Bool _blurSupported;
     UIColor *_textColor;
+    UIColor *_sectionHeaderTextColor;
     UIColor *_taglineTextColor;
     UIColor *_disabledTextColor;
     UIColor *_placeholderTextColor;
@@ -45,13 +46,13 @@
     long long _modalTransitionStyle;
     long long _topActionsViewStyle;
     long long _inlineActionsViewStyle;
+    struct UIEdgeInsets _separatorInset;
 }
 
 + (id)currentStyle;
 + (void)setCurrentStyle:(id)arg1;
 + (id)testStyle;
 + (id)siriStyle;
-+ (id)starkStyle;
 + (id)watchStyle;
 + (id)faceTimeStyle;
 + (id)darkStyle;
@@ -67,6 +68,7 @@
 @property(nonatomic) long long barStyle; // @synthesize barStyle=_barStyle;
 @property(retain, nonatomic) UIColor *selectedCellBackgroundColor; // @synthesize selectedCellBackgroundColor=_selectedCellBackgroundColor;
 @property(retain, nonatomic) UIColor *sectionBackgroundColor; // @synthesize sectionBackgroundColor=_sectionBackgroundColor;
+@property(nonatomic) struct UIEdgeInsets separatorInset; // @synthesize separatorInset=_separatorInset;
 @property(nonatomic) long long separatorStyle; // @synthesize separatorStyle=_separatorStyle;
 @property(retain, nonatomic) UIColor *separatorColor; // @synthesize separatorColor=_separatorColor;
 @property(retain, nonatomic) UIColor *headerBackgroundColor; // @synthesize headerBackgroundColor=_headerBackgroundColor;
@@ -89,6 +91,7 @@
 @property(retain, nonatomic) UIColor *placeholderTextColor; // @synthesize placeholderTextColor=_placeholderTextColor;
 @property(retain, nonatomic) UIColor *disabledTextColor; // @synthesize disabledTextColor=_disabledTextColor;
 @property(retain, nonatomic) UIColor *taglineTextColor; // @synthesize taglineTextColor=_taglineTextColor;
+@property(retain, nonatomic) UIColor *sectionHeaderTextColor; // @synthesize sectionHeaderTextColor=_sectionHeaderTextColor;
 @property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) UIFont *boldTextFont;

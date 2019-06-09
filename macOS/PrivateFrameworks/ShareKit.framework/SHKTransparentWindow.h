@@ -6,6 +6,7 @@
 
 #import <AppKit/NSWindow.h>
 
+__attribute__((visibility("hidden")))
 @interface SHKTransparentWindow : NSWindow
 {
 }

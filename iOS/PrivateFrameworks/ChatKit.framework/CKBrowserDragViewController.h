@@ -30,6 +30,8 @@
     UIImage *_currentFrameImage;
     NSArray *_dragImageFrames;
     UIView *_dragView;
+    UIView *_plusImageView;
+    UIView *_whiteBackground;
     CALayer *_peelImageLayer;
     CALayer *_peelMaskLayer;
     double _initialScale;
@@ -102,6 +104,8 @@
 @property(nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
 @property(retain, nonatomic) CALayer *peelMaskLayer; // @synthesize peelMaskLayer=_peelMaskLayer;
 @property(retain, nonatomic) CALayer *peelImageLayer; // @synthesize peelImageLayer=_peelImageLayer;
+@property(retain, nonatomic) UIView *whiteBackground; // @synthesize whiteBackground=_whiteBackground;
+@property(retain, nonatomic) UIView *plusImageView; // @synthesize plusImageView=_plusImageView;
 @property(retain, nonatomic) UIView *dragView; // @synthesize dragView=_dragView;
 @property(retain, nonatomic) NSArray *dragImageFrames; // @synthesize dragImageFrames=_dragImageFrames;
 @property(retain, nonatomic) UIImage *currentFrameImage; // @synthesize currentFrameImage=_currentFrameImage;
@@ -115,7 +119,7 @@
 @property(nonatomic) _Bool canScale; // @synthesize canScale=_canScale;
 @property(nonatomic) __weak id <CKBrowserDragViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)reversePeelAnimationToPoint:(struct CGPoint)arg1 forPlacement:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)reversePeelAnimationToPoint:(struct CGPoint)arg1 forPlacement:(_Bool)arg2 shouldShrink:(_Bool)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)animateScaleDown;
 - (void)animatePeelWithCompletion:(CDUnknownBlockType)arg1;
 - (void)setUpPeelLayers;
@@ -141,7 +145,8 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (void)animatePlacementAtPoint:(struct CGPoint)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)setPlusImageViewHidden:(_Bool)arg1;
+- (void)animatePlacementAtPoint:(struct CGPoint)arg1 shouldShrink:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)animateBackToSourceCompletionBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) double absoluteScale;
 @property(readonly, nonatomic) double dragViewRotation;

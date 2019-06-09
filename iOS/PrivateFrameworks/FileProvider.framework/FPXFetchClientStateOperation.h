@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
 {
     CSSearchableIndex *_index;
     NSString *_indexName;
+    NSString *_domainIdentifier;
+    NSString *_reason;
 }
 
 + (id)_currentIndexerVersion;
@@ -21,8 +23,9 @@ __attribute__((visibility("hidden")))
 - (void)_fetchClientState;
 - (void)_handleFetchedClientState:(id)arg1 error:(id)arg2;
 - (void)_markClientStateResetDone;
-- (_Bool)_clientStateResetNeeded;
-- (id)initWithIndex:(id)arg1 indexName:(id)arg2;
+- (id)_clientStateCurrentVersionIfNeedReset;
+- (id)operationDescription;
+- (id)initWithIndex:(id)arg1 indexName:(id)arg2 domainID:(id)arg3 reason:(id)arg4;
 
 @end
 

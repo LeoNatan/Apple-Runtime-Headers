@@ -18,6 +18,8 @@
     unsigned long long _numberOfNotificationsAffected;
 }
 
++ (BOOL)updateLastABCReportTimeAndAllowReport;
++ (void)reportRefreshExceptionToABC:(id)arg1;
 @property(nonatomic) BOOL fromFullRefresh; // @synthesize fromFullRefresh=_fromFullRefresh;
 @property(nonatomic) BOOL notifyOnChanges; // @synthesize notifyOnChanges=_notifyOnChanges;
 @property(nonatomic) unsigned long long numberOfNotificationsAffected; // @synthesize numberOfNotificationsAffected=_numberOfNotificationsAffected;

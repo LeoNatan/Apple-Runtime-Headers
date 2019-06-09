@@ -8,6 +8,7 @@
 
 @class AVMediaSelectionOption, MPAVRoute, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelMediaOption : NSObject
 {
     NSString *_displayName;
@@ -25,6 +26,10 @@
 @property(readonly, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
 @property(readonly, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
+- (id)description;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToMediaOption:(id)arg1;
+- (unsigned long long)hash;
 - (id)initWithMediaSelectionOption:(id)arg1;
 - (id)initWithRoute:(id)arg1;
 - (id)initWithDisplayName:(id)arg1;

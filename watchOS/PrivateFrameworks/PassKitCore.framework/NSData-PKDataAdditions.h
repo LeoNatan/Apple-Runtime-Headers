@@ -8,6 +8,7 @@
 
 @interface NSData (PKDataAdditions)
 + (id)dataWithCGImage:(struct CGImage *)arg1;
+- (_Bool)hasPDFMIMEType;
 - (id)hexEncoding;
 - (id)fileSafeBase64Encoding;
 - (id)SHA256Hash;

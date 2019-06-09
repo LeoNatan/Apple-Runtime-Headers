@@ -38,6 +38,8 @@
     _Bool _supportsBinauralStreaming;
     _Bool _supportsCombinedPresets;
     _Bool _supportsCombinedVolumes;
+    _Bool _leftPeripheralPaired;
+    _Bool _rightPeripheralPaired;
     short _leftMicrophoneVolumeSteps;
     short _rightMicrophoneVolumeSteps;
     short _leftStreamVolumeSteps;
@@ -51,6 +53,7 @@
     unsigned int rightProgramVersion;
     unsigned int _leftPresetBitmask;
     unsigned int _rightPresetBitmask;
+    int _availableInputEars;
     NSString *leftUUID;
     NSString *rightUUID;
     NSString *name;
@@ -93,6 +96,9 @@
 }
 
 + (id)characteristicsUUIDs;
+@property(nonatomic) _Bool rightPeripheralPaired; // @synthesize rightPeripheralPaired=_rightPeripheralPaired;
+@property(nonatomic) _Bool leftPeripheralPaired; // @synthesize leftPeripheralPaired=_leftPeripheralPaired;
+@property(nonatomic) int availableInputEars; // @synthesize availableInputEars=_availableInputEars;
 @property(retain, nonatomic) NSDate *rightBatteryLowDate; // @synthesize rightBatteryLowDate=_rightBatteryLowDate;
 @property(retain, nonatomic) NSDate *leftBatteryLowDate; // @synthesize leftBatteryLowDate=_leftBatteryLowDate;
 @property(nonatomic) unsigned long long rightWriteResponseProperties; // @synthesize rightWriteResponseProperties=_rightWriteResponseProperties;
@@ -161,11 +167,14 @@
 @property(retain, nonatomic) NSString *rightUUID; // @synthesize rightUUID;
 @property(retain, nonatomic) NSString *leftUUID; // @synthesize leftUUID;
 - (void).cxx_destruct;
+- (unsigned long long)deviceType;
+- (unsigned long long)requiredProperties;
+- (id)serviceUUID;
+- (_Bool)isFakeDevice;
 - (id)persistentRepresentation;
 - (_Bool)addPeripheral:(id)arg1;
 @property(readonly, copy) NSString *description;
-- (_Bool)isBluetoothPaired;
-- (_Bool)isPartiallyBluetoothPaired;
+- (void)checkPairingStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)peripheralDidUnpair:(id)arg1;
 - (void)peripheral:(id)arg1 didFinishPairingWithResult:(id)arg2;
 - (void)pairingDidCompleteForPeripheral:(id)arg1;

@@ -15,17 +15,15 @@
     PSIGroup *_group;
     NSArray *_assetIds;
     NSArray *_collectionIds;
-    NSArray *_tripIds;
 }
 
-@property(retain, nonatomic) NSArray *tripIds; // @synthesize tripIds=_tripIds;
 @property(retain, nonatomic) NSArray *collectionIds; // @synthesize collectionIds=_collectionIds;
 @property(retain, nonatomic) NSArray *assetIds; // @synthesize assetIds=_assetIds;
 @property(retain, nonatomic) PSIGroup *group; // @synthesize group=_group;
 @property(retain, nonatomic) NSValue *rangeMatchingToken; // @synthesize rangeMatchingToken=_rangeMatchingToken;
 @property(retain, nonatomic) PSIQueryToken *searchToken; // @synthesize searchToken=_searchToken;
+- (void).cxx_destruct;
 - (void)reset;
-- (void)dealloc;
 
 @end
 

@@ -12,6 +12,7 @@
 @class NSArray, NSString, SKUIClientContext, UICollectionView, _UIContentUnavailableView;
 @protocol SKUIDownloadsChildViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIPadDownloadsViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
 {
     UICollectionView *_collectionView;

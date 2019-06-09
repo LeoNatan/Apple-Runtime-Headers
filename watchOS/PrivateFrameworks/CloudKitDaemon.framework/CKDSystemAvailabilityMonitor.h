@@ -6,29 +6,21 @@
 
 #import <objc/NSObject.h>
 
-#import <CloudKitDaemon/PSYSyncStateObserverDelegate-Protocol.h>
-
-@class NSMutableSet, NSString, PSYSyncStateObserver;
+@class NSMutableSet;
 @protocol OS_dispatch_queue;
 
-@interface CKDSystemAvailabilityMonitor : NSObject <PSYSyncStateObserverDelegate>
+@interface CKDSystemAvailabilityMonitor : NSObject
 {
-    _Bool _syncComplete;
     unsigned int _availabilityState;
-    PSYSyncStateObserver *_syncStateObserver;
-    NSMutableSet *_watchers;
+    NSMutableSet *_watcherWrappers;
     NSObject<OS_dispatch_queue> *_availabilityQueue;
 }
 
-+ (_Bool)_syncObserverHasCompleted:(id)arg1;
 + (id)sharedMonitor;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *availabilityQueue; // @synthesize availabilityQueue=_availabilityQueue;
-@property(retain, nonatomic) NSMutableSet *watchers; // @synthesize watchers=_watchers;
-@property(nonatomic) _Bool syncComplete; // @synthesize syncComplete=_syncComplete;
-@property(retain, nonatomic) PSYSyncStateObserver *syncStateObserver; // @synthesize syncStateObserver=_syncStateObserver;
+@property(retain, nonatomic) NSMutableSet *watcherWrappers; // @synthesize watcherWrappers=_watcherWrappers;
 @property unsigned int availabilityState; // @synthesize availabilityState=_availabilityState;
 - (void).cxx_destruct;
-- (void)syncStateObserverDidChangeSyncState:(id)arg1;
 - (void)unregisterWatcher:(id)arg1;
 - (void)registerWatcher:(id)arg1;
 - (_Bool)_systemMayNowBeReady;
@@ -37,12 +29,6 @@
 - (void)dealloc;
 - (id)_init;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

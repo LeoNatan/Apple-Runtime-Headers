@@ -36,6 +36,8 @@
 - (int)numberOfItemsInSection:(int)arg1;
 - (id)sectionAtIndex:(int)arg1;
 - (int)numberOfSections;
+- (id)allSections;
+- (id)allItems;
 @property(readonly, nonatomic) id lastItem;
 @property(readonly, nonatomic) id firstItem;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

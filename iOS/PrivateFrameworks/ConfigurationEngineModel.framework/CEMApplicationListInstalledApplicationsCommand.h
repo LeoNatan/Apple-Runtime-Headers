@@ -12,15 +12,15 @@
 
 @interface CEMApplicationListInstalledApplicationsCommand : CEMCommandBase <CEMRegisteredTypeProtocol>
 {
-    NSArray *_payloadIdentifiers;
+    NSArray *_payloadBundleIdentifiers;
 }
 
 + (id)buildRequiredOnlyWithIdentifier:(id)arg1;
-+ (id)buildWithIdentifier:(id)arg1 withIdentifiers:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withBundleIdentifiers:(id)arg2;
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
-@property(copy, nonatomic) NSArray *payloadIdentifiers; // @synthesize payloadIdentifiers=_payloadIdentifiers;
+@property(copy, nonatomic) NSArray *payloadBundleIdentifiers; // @synthesize payloadBundleIdentifiers=_payloadBundleIdentifiers;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;

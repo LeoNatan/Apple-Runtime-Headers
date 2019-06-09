@@ -4,19 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PassKitUI/PKViewController.h>
+#import <UIKit/UIViewController.h>
 
 #import <PassKitUI/PKExplanationViewDelegate-Protocol.h>
 
 @class NSString, PKExplanationView, UIActivityIndicatorView, UIBarButtonItem;
 @protocol PKExplanationViewControllerDelegate;
 
-@interface PKExplanationViewController : PKViewController <PKExplanationViewDelegate>
+@interface PKExplanationViewController : UIViewController <PKExplanationViewDelegate>
 {
     UIBarButtonItem *_spinningItem;
     UIBarButtonItem *_hiddenRightBarButtonItem;
     UIActivityIndicatorView *_activityIndicatorView;
     _Bool _showingSpinner;
+    _Bool _wasBackHidden;
     _Bool _showCancelButton;
     _Bool _showDoneButton;
     id <PKExplanationViewControllerDelegate> _explanationViewControllerDelegate;
@@ -38,8 +39,6 @@
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (void)loadView;
-- (id)pkui_navigationBarTintColor;
-- (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (id)initWithContext:(int)arg1;
 - (id)init;
 

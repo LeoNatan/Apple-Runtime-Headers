@@ -6,36 +6,43 @@
 
 #import <objc/NSObject.h>
 
+#import <MusicLibrary/ML3AccountInformationProviding-Protocol.h>
 #import <MusicLibrary/ML3DatabaseConnectionDelegate-Protocol.h>
 #import <MusicLibrary/ML3DatabaseConnectionPoolDelegate-Protocol.h>
+#import <MusicLibrary/NSSecureCoding-Protocol.h>
 
-@class ML3AccountCacheDatabase, ML3Container, ML3DatabaseConnectionPool, ML3DatabaseMetadata, ML3LibraryNotificationManager, NSArray, NSLock, NSMutableDictionary, NSString;
+@class ML3AccountCacheDatabase, ML3Container, ML3DatabaseConnectionPool, ML3DatabaseMetadata, ML3LibraryNotificationManager, ML3MusicLibraryResourcesManager, NSArray, NSDate, NSLock, NSMutableDictionary, NSNumber, NSString;
 @protocol ML3MusicLibraryDelegate, OS_dispatch_queue;
 
-@interface ML3MusicLibrary : NSObject <ML3DatabaseConnectionDelegate, ML3DatabaseConnectionPoolDelegate>
+@interface ML3MusicLibrary : NSObject <ML3DatabaseConnectionDelegate, ML3DatabaseConnectionPoolDelegate, NSSecureCoding, ML3AccountInformationProviding>
 {
-    NSObject<OS_dispatch_queue> *_serialQueue;
     NSString *_libraryUID;
     NSLock *_libraryUIDLock;
     NSString *_syncLibraryUID;
     ML3AccountCacheDatabase *_accountCacheDatabase;
-    ML3LibraryNotificationManager *_notificationManager;
-    struct iPhoneSortKeyBuilder *_sortKeyBuilder;
     NSMutableDictionary *_optimizedLibraryEntityFilterPredicatesByEntityClass;
     NSMutableDictionary *_optimizedLibraryContainerFilterPredicatesByContainerClass;
     NSMutableDictionary *_optimizedLibraryPublicEntityFilterPredicatesByEntityClass;
     NSMutableDictionary *_optimizedLibraryPublicContainerFilterPredicatesByContainerClass;
     _Bool _isHomeSharingLibraryLoaded;
     _Bool _isHomeSharingLibrary;
-    id <ML3MusicLibraryDelegate> _delegate;
+    _Bool _usingSharedLibraryPath;
+    _Bool _readOnly;
     ML3DatabaseConnectionPool *_connectionPool;
     NSString *_databasePath;
+    struct iPhoneSortKeyBuilder *_sortKeyBuilder;
+    ML3MusicLibraryResourcesManager *_resourcesManager;
+    ML3LibraryNotificationManager *_notificationManager;
+    NSObject<OS_dispatch_queue> *_serialQueue;
+    NSString *_accountDSID;
+    id <ML3MusicLibraryDelegate> _delegate;
     NSArray *_libraryEntityFilterPredicates;
     NSArray *_libraryContainerFilterPredicates;
     NSArray *_libraryPublicEntityFilterPredicates;
     NSArray *_libraryPublicContainerFilterPredicates;
 }
 
++ (id)distributedToLocalNotificationMapping;
 + (id)assistantSyncDataChangedNotificationName;
 + (id)widthLimitedSetValuesQueue;
 + (_Bool)updateTrackIntegrityOnConnection:(id)arg1;
@@ -44,14 +51,30 @@
 + (id)sectionIndexTitles;
 + (id)localizedSectionIndexTitleForSectionHeader:(id)arg1;
 + (id)localizedSectionHeaderForSectionHeader:(id)arg1;
++ (_Bool)supportsSecureCoding;
 + (void)setCompanionDeviceActiveStoreAccountSubscriber:(_Bool)arg1;
 + (_Bool)companionDeviceActiveStoreAccountIsSubscriber;
 + (_Bool)deviceSupportsMultipleLibraries;
 + (void)enableAutomaticDatabaseValidation;
 + (void)disableAutomaticDatabaseValidation;
 + (void)disableSharedLibrary;
++ (void)setSharedLibraryDatabasePath:(id)arg1;
 + (id)sharedLibraryDatabasePath;
 + (id)sharedLibrary;
++ (id)musicLibraryPerUserDSID;
++ (void)setAutoupdatingSharedLibraryPath:(id)arg1;
++ (id)autoupdatingSharedLibraryPath;
++ (id)autoupdatingSharedLibrary;
++ (id)allLibraries;
++ (id)registeredLibraries;
++ (id)musicLibraryForUserAccount:(id)arg1;
++ (id)globalSerialQueue;
++ (long long)artworkSourceTypeForTrackSource:(int)arg1;
++ (id)artworkTokenForChapterWithItemPID:(long long)arg1 retrievalTime:(double)arg2;
++ (id)artworkTokenForArtistHeroURL:(id)arg1;
++ (id)artworkRelativePathFromToken:(id)arg1;
++ (long long)devicePreferredImageFormat;
++ (_Bool)deviceSupportsASTC;
 + (_Bool)dropIndexesUsingConnection:(id)arg1 tableNames:(const char *)arg2;
 + (_Bool)orderingLanguageMatchesSystemUsingConnection:(id)arg1;
 + (_Bool)userVersionMatchesSystemUsingConnection:(id)arg1;
@@ -70,23 +93,39 @@
 + (id)pathForBaseLocationPath:(long long)arg1;
 + (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(_Bool)arg3 createParentFolderIfNecessary:(_Bool)arg4;
 + (id)pathForResourceFileOrFolder:(int)arg1;
-+ (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(_Bool)arg3 isFolder:(_Bool *)arg4;
-+ (id)controlDirectoryPathWithBasePath:(id)arg1;
-+ (id)mediaFolderRelativePath:(id)arg1;
++ (id)libraryContainerRelativePath:(id)arg1;
++ (id)libraryContainerPathByAppendingPathComponent:(id)arg1;
++ (id)libraryContainerPath;
++ (id)libraryPathForContainerPath:(id)arg1;
++ (id)allLibraryContainerPaths;
 + (id)mediaFolderPathByAppendingPathComponent:(id)arg1;
 + (id)mediaFolderPath;
 + (id)unitTestableLibraryForTest:(id)arg1 basePath:(id)arg2 setupSQLFilenames:(id)arg3;
 + (id)databasePathForUnitTest:(id)arg1 withBasePath:(id)arg2;
++ (id)jaliscoGetSortedMediaKinds:(id)arg1;
+@property(nonatomic, getter=isReadOnly) _Bool readOnly; // @synthesize readOnly=_readOnly;
+@property(nonatomic, getter=isUsingSharedLibraryPath) _Bool usingSharedLibraryPath; // @synthesize usingSharedLibraryPath=_usingSharedLibraryPath;
 @property(retain, nonatomic) NSArray *libraryPublicContainerFilterPredicates; // @synthesize libraryPublicContainerFilterPredicates=_libraryPublicContainerFilterPredicates;
 @property(retain, nonatomic) NSArray *libraryPublicEntityFilterPredicates; // @synthesize libraryPublicEntityFilterPredicates=_libraryPublicEntityFilterPredicates;
 @property(retain, nonatomic) NSArray *libraryContainerFilterPredicates; // @synthesize libraryContainerFilterPredicates=_libraryContainerFilterPredicates;
 @property(retain, nonatomic) NSArray *libraryEntityFilterPredicates; // @synthesize libraryEntityFilterPredicates=_libraryEntityFilterPredicates;
-@property(readonly, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
-@property(readonly, nonatomic) ML3DatabaseConnectionPool *connectionPool; // @synthesize connectionPool=_connectionPool;
 @property(nonatomic) __weak id <ML3MusicLibraryDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, copy, nonatomic) NSString *accountDSID; // @synthesize accountDSID=_accountDSID;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
+@property(retain, nonatomic) ML3LibraryNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
 - (void).cxx_destruct;
 - (void)_updateDatabaseConnectionsProfilingLevel;
 - (void)_postClientNotificationWithDistributedName:(id)arg1 localName:(id)arg2;
+- (void)_tearDownNotificationManager;
+- (void)_setupNotificationManager;
+- (void)_closeAndLockCurrentDatabaseConnections;
+- (_Bool)_shouldProcessAccountChanges;
+- (void)_completeAccountChangeWithPath:(id)arg1;
+- (_Bool)_prepareForAccountChange:(id *)arg1;
+- (void)terminateForFailureToPerformDatabasePathChange;
+- (void)emergencyDisconnectWithCompletion:(CDUnknownBlockType)arg1;
+- (void)performDatabasePathChange:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_libraryPathDidChangeNotification:(id)arg1;
 - (void)_loggingSettingsDidChangeNotification:(id)arg1;
 - (void)_effectiveSettingsDidChangeNotification:(id)arg1;
 - (_Bool)_clearAllRowsFromTables:(id)arg1;
@@ -219,9 +258,16 @@
 @property(readonly, nonatomic) long long currentRevision;
 @property(nonatomic) _Bool downloadOnAddToLibrary;
 @property(nonatomic) _Bool isHomeSharingLibrary;
+@property(readonly, nonatomic) struct iPhoneSortKeyBuilder *sortKeyBuilder; // @synthesize sortKeyBuilder=_sortKeyBuilder;
+@property(readonly, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
+@property(readonly, nonatomic) ML3DatabaseConnectionPool *connectionPool; // @synthesize connectionPool=_connectionPool;
+@property(readonly, nonatomic) ML3MusicLibraryResourcesManager *resourcesManager; // @synthesize resourcesManager=_resourcesManager;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithPath:(id)arg1 readOnly:(_Bool)arg2 populateUnitTestTablesBlock:(CDUnknownBlockType)arg3;
 - (id)initWithPath:(id)arg1;
+- (id)initWithResourcesManager:(id)arg1;
 - (id)artistForArtistName:(id)arg1 seriesName:(id)arg2;
 - (id)artistGroupingKeyForArtistName:(id)arg1 seriesName:(id)arg2;
 - (_Bool)repairAlbumArtistRelationshipsWithConnection:(id)arg1;
@@ -237,6 +283,7 @@
 - (CDStruct_912cb5d2)nameOrderForString:(id)arg1;
 - (_Bool)validateSortMapUnicodeVersionOnConnection:(id)arg1;
 - (_Bool)inTransactionUpdateSearchMapOnConnection:(id)arg1;
+- (_Bool)inTransactionUpdateSortMapOnConnection:(id)arg1 forceRebuild:(_Bool)arg2 forceUpdateOriginals:(_Bool)arg3;
 - (_Bool)inTransactionUpdateSortMapOnConnection:(id)arg1 forceUpdateOriginals:(_Bool)arg2;
 - (_Bool)updateSortMapOnConnection:(id)arg1 forceUpdateOriginals:(_Bool)arg2;
 - (_Bool)updateSortMapOnConnection:(id)arg1;
@@ -281,12 +328,63 @@
 - (long long)clearPurgeableStorageAmount:(long long)arg1 withUrgency:(unsigned long long)arg2;
 - (long long)purgeableStorageSizeWithUrgency:(unsigned long long)arg1 includeAutoFilledTracks:(_Bool)arg2;
 - (long long)purgeableStorageSizeWithUrgency:(unsigned long long)arg1;
+- (_Bool)isArtworkFetchableForPersistentID:(long long)arg1 entityType:(long long)arg2 artworkType:(long long)arg3 artworkSourceType:(long long)arg4;
+- (_Bool)hasOriginalArtworkForRelativePath:(id)arg1;
+- (id)artworkCacheDirectoryForEffect:(id)arg1;
+- (id)artworkCacheDirectoryForSize:(struct CGSize)arg1;
+@property(readonly, copy, nonatomic) NSString *rootArtworkCacheDirectory;
+@property(readonly, copy, nonatomic) NSString *originalArtworkDirectory;
+@property(readonly, copy, nonatomic) NSString *artworkDirectory;
 - (void)updateMusicLibraryByApplyingUbiquitousBookmarkMetadataToTrackWithPersistentID:(long long)arg1;
 - (void)updateUbiquitousDatabaseByRemovingUbiquitousMetadataFromTrackWithPersistentID:(long long)arg1;
 - (id)uppService;
 @property(readonly, nonatomic) _Bool supportsUbiquitousPlaybackPositions;
+- (id)pathForBaseLocationPath:(long long)arg1;
+- (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(_Bool)arg3 createParentFolderIfNecessary:(_Bool)arg4;
+- (id)pathForResourceFileOrFolder:(int)arg1;
+- (id)libraryContainerRelativePath:(id)arg1;
+- (id)libraryContainerPathByAppendingPathComponent:(id)arg1;
+- (id)libraryContainerPath;
+- (void)clearSagaCloudAddToPlaylistBehavior;
+- (void)clearSagaPrefersToMergeWithCloudLibrary;
+- (void)clearSagaCloudLibraryTroveID;
+- (void)clearSagaCloudLibraryCUID;
+- (void)clearSagaLastPlaylistPlayDataUploadDate;
+- (void)clearSagaLastItemPlayDataUploadDate;
+- (void)clearSagaLastGeniusUpdateDate;
+- (void)clearSagaCloudAccountID;
+@property(nonatomic) long long preferredVideoQuality;
+@property(copy, nonatomic) NSDate *sagaLastSubscribedContainersUpdateTime;
+@property(copy, nonatomic) NSDate *sagaLastLibraryUpdateTime;
+@property(nonatomic) long long sagaOnDiskDatabaseRevision;
+@property(copy, nonatomic) NSString *storefrontIdentifier;
+@property(nonatomic) _Bool sagaPrefersToMergeWithCloudLibrary;
+@property(nonatomic) _Bool sagaNeedsFullUpdateAfterNextUpdate;
+@property(nonatomic) long long sagaCloudAddToPlaylistBehavior;
+@property(nonatomic) long long sagaDatabaseUserVersion;
+@property(copy, nonatomic) NSString *sagaCloudLibraryTroveID;
+@property(copy, nonatomic) NSString *sagaCloudLibraryCUID;
+@property(copy, nonatomic) NSDate *sagaLastPlaylistPlayDataUploadDate;
+@property(copy, nonatomic) NSDate *sagaLastItemPlayDataUploadDate;
+@property(copy, nonatomic) NSDate *sagaLastGeniusUpdateDate;
+@property(copy, nonatomic) NSNumber *sagaLastKnownActiveLockerAccountDSID;
+@property(copy, nonatomic) NSNumber *sagaAccountID;
 - (long long)syncIdFromMultiverseId:(id)arg1;
 - (_Bool)prepareUnitTestDatabaseWithSQLFromContentsOfFile:(id)arg1 error:(id *)arg2;
+- (void)updateJaliscoExcludedMediaKindsWith:(id)arg1 excludingMediaKindsInSet:(_Bool)arg2;
+- (void)sortJaliscoLastSupportedMediaKinds;
+- (void)clearJaliscoLastExcludedMediaKinds;
+- (void)clearJaliscoLastGeniusUpdateDate;
+- (void)clearJaliscoAccountID;
+@property(copy, nonatomic) NSDate *jaliscoLastLibraryUpdateTime;
+@property(nonatomic) long long jaliscoOnDiskDatabaseRevision;
+@property(nonatomic) _Bool jaliscoNeedsUpdateForTokens;
+@property(nonatomic) _Bool jaliscoIsMusicGeniusUserEnabled;
+@property(nonatomic) _Bool jaliscoHasCloudGeniusData;
+@property(readonly, nonatomic) NSArray *jaliscoLastExcludedMediaKinds;
+@property(copy, nonatomic) NSString *jaliscoLastSupportedMediaKinds;
+@property(copy, nonatomic) NSDate *jaliscoLastGeniusUpdateDate;
+@property(copy, nonatomic) NSNumber *jaliscoAccountID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

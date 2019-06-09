@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class MFSQLiteConnection;
+@class EDPersistenceDatabaseConnection;
 
 @interface MFMailMessageLibraryMailboxURLMigrationStep : NSObject
 {
-    MFSQLiteConnection *_sqliteConnection;
+    EDPersistenceDatabaseConnection *_sqliteConnection;
 }
 
-@property(retain, nonatomic) MFSQLiteConnection *sqliteConnection; // @synthesize sqliteConnection=_sqliteConnection;
+@property(retain, nonatomic) EDPersistenceDatabaseConnection *sqliteConnection; // @synthesize sqliteConnection=_sqliteConnection;
 - (void).cxx_destruct;
 - (void)_purgeFoldersMatchingPatterns:(id)arg1;
 - (_Bool)_updateMailboxURLsInSQLitedb:(struct sqlite3 *)arg1 withOldURLToNewURLMap:(id)arg2;

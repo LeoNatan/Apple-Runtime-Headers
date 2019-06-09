@@ -7,13 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <AVKit/AVPlayerViewControllerContentViewDelegate-Protocol.h>
-#import <AVKit/AVRoutePickerViewDelegate-Protocol.h>
-#import <AVKit/AVScrollViewObserverDelegate-Protocol.h>
+#import <AVKit/AVRoutePickerViewInternalDelegate-Protocol.h>
+#import <AVKit/AVScrubbing-Protocol.h>
 #import <AVKit/AVTransportControlsViewDelegate-Protocol.h>
 
-@class AVNowPlayingInfoController, AVObservationController, AVPictureInPictureController, AVPlaybackControlsView, AVPlaybackControlsVisibilityControllerItem, AVPlayerController, AVPlayerControllerTimeResolver, AVPlayerViewController, AVRouteDetectorCoordinator, AVScrollViewObserver, AVSecondScreenContentViewConnection, AVTimeFormatter, AVTurboModePlaybackControlsPlaceholderView, AVVolumeController, NSArray, NSString, NSTimer, UIAlertController, UIViewPropertyAnimator;
+@class AVNowPlayingInfoController, AVObservationController, AVPictureInPictureController, AVPlaybackControlsView, AVPlaybackControlsVisibilityControllerItem, AVPlayerController, AVPlayerControllerTimeResolver, AVPlayerControllerVolumeAnimator, AVPlayerViewController, AVRouteDetectorCoordinator, AVSecondScreenContentViewConnection, AVTimeFormatter, AVTurboModePlaybackControlsPlaceholderView, NSArray, NSNumber, NSString, NSTimer, NSUUID, UIAlertController, UIViewPropertyAnimator;
+@protocol AVVolumeController;
 
-@interface AVPlaybackControlsController : NSObject <AVTransportControlsViewDelegate, AVRoutePickerViewDelegate, AVScrollViewObserverDelegate, AVPlayerViewControllerContentViewDelegate>
+__attribute__((visibility("hidden")))
+@interface AVPlaybackControlsController : NSObject <AVTransportControlsViewDelegate, AVRoutePickerViewInternalDelegate, AVPlayerViewControllerContentViewDelegate, AVScrubbing>
 {
     _Bool _playerViewControllerIsBeingTransitionedWithResizing;
     _Bool _playerViewControllerIsPresentingFullScreen;
@@ -26,7 +28,9 @@
     _Bool _volumeControlsCanShowSlider;
     _Bool _showsPictureInPictureButton;
     _Bool _showsPlaybackControls;
-    _Bool _showsPlaybackControlsWhenInline;
+    _Bool _hasCustomPlaybackControls;
+    _Bool _canIncludePlaybackControlsWhenInline;
+    _Bool _showsVideoGravityButton;
     _Bool _requiresLinearPlayback;
     _Bool _updatesNowPlayingInfoCenter;
     _Bool _showsDoneButtonWhenFullScreen;
@@ -34,26 +38,33 @@
     _Bool _playbackControlsIncludeDisplayModeControls;
     _Bool _playbackControlsIncludeVolumeControls;
     _Bool _playbackControlsIncludeStartContentTransitionButtons;
+    _Bool _playbackControlsShouldControlSystemVolume;
+    _Bool _forcePlaybackControlsHidden;
+    _Bool _showsTimecodes;
     _Bool _startLeftwardContentTransitionButtonEnabled;
     _Bool _startRightwardContentTransitionButtonEnabled;
     _Bool _showsLoadingIndicator;
     _Bool _prefersVolumeSliderExpanded;
-    _Bool _includesVideoGravityButton;
+    _Bool _canIncludeVideoGravityButton;
     _Bool _hasStartedUpdates;
     _Bool _coveringWindow;
-    _Bool _contentViewBeingScrolledOrOffScreen;
     _Bool _hasPlaybackBegunSincePlayerControllerBecameReadyToPlay;
+    _Bool _hasBecomeReadyToPlay;
     _Bool _multipleRoutesDetected;
     _Bool _resumingUpdates;
+    _Bool _prefersMuted;
     _Bool _playbackSuspendedForScrubbing;
     _Bool _hasSeekableLiveStreamingContent;
     _Bool _scrubbingOrSeeking;
     _Bool _shouldIgnoreTimeResolverUpdates;
+    _Bool _videoScaled;
     AVPlayerController *_playerController;
     long long _preferredUnobscuredArea;
+    NSArray *_customControlItems;
     CDUnknownBlockType _playButtonHandlerForLazyPlayerLoading;
+    CDUnknownBlockType _contentTransitionAction;
     AVPictureInPictureController *_pictureInPictureController;
-    AVVolumeController *_volumeController;
+    id <AVVolumeController> _volumeController;
     AVNowPlayingInfoController *_nowPlayingInfoControllerIfLoaded;
     AVSecondScreenContentViewConnection *_secondScreenConnection;
     AVPlayerViewController *_playerViewController;
@@ -69,12 +80,12 @@
     id _AVRouteDetectorCoordinatorMultipleRoutesDetectedObserver;
     NSTimer *_loadingIndicatorTimer;
     UIViewPropertyAnimator *_collapseExpandSliderAnimator;
-    AVScrollViewObserver *_scrollViewObserver;
+    AVPlayerControllerVolumeAnimator *_volumeAnimator;
+    NSUUID *_playerMuteFadeAnimationID;
     AVPlaybackControlsVisibilityControllerItem *_playbackControlsContainerVisibilityItem;
     AVPlaybackControlsVisibilityControllerItem *_volumeControlsContainerVisibilityItem;
-    AVPlaybackControlsVisibilityControllerItem *_turboModePlaybackControlsVisibilityItem;
     NSArray *_allVisibilityControllerItems;
-    long long _preferredPlaybackControlsLoadedStatus;
+    NSNumber *_pendingOrientationChange;
     double _loadingIndicatorTimerDelay;
     long long _timeControlStatus;
     long long _videoGravityButtonType;
@@ -97,10 +108,9 @@
 + (id)keyPathsForValuesAffectingProminentPlayButtonCanShowPauseGlyph;
 + (id)keyPathsForValuesAffectingShowsProminentPlayButton;
 + (id)keyPathsForValuesAffectingShowsRoutePickerView;
-+ (id)keyPathsForValuesAffectingIncludesFullScreenButton;
-+ (id)keyPathsForValuesAffectingIncludesDoneButton;
 + (id)keyPathsForValuesAffectingFullScreen;
 @property(readonly, nonatomic) NSString *uniqueIdentifer; // @synthesize uniqueIdentifer=_uniqueIdentifer;
+@property(nonatomic, getter=isVideoScaled) _Bool videoScaled; // @synthesize videoScaled=_videoScaled;
 @property(nonatomic) struct CGRect playbackViewFrame; // @synthesize playbackViewFrame=_playbackViewFrame;
 @property(nonatomic) long long videoGravityButtonType; // @synthesize videoGravityButtonType=_videoGravityButtonType;
 @property(nonatomic) _Bool shouldIgnoreTimeResolverUpdates; // @synthesize shouldIgnoreTimeResolverUpdates=_shouldIgnoreTimeResolverUpdates;
@@ -108,22 +118,23 @@
 @property(nonatomic) _Bool hasSeekableLiveStreamingContent; // @synthesize hasSeekableLiveStreamingContent=_hasSeekableLiveStreamingContent;
 @property(nonatomic) long long timeControlStatus; // @synthesize timeControlStatus=_timeControlStatus;
 @property(nonatomic, getter=isPlaybackSuspendedForScrubbing) _Bool playbackSuspendedForScrubbing; // @synthesize playbackSuspendedForScrubbing=_playbackSuspendedForScrubbing;
+@property(nonatomic) _Bool prefersMuted; // @synthesize prefersMuted=_prefersMuted;
 @property(nonatomic, getter=isResumingUpdates) _Bool resumingUpdates; // @synthesize resumingUpdates=_resumingUpdates;
 @property(nonatomic) double loadingIndicatorTimerDelay; // @synthesize loadingIndicatorTimerDelay=_loadingIndicatorTimerDelay;
 @property(nonatomic) _Bool multipleRoutesDetected; // @synthesize multipleRoutesDetected=_multipleRoutesDetected;
+@property(nonatomic) _Bool hasBecomeReadyToPlay; // @synthesize hasBecomeReadyToPlay=_hasBecomeReadyToPlay;
 @property(nonatomic) _Bool hasPlaybackBegunSincePlayerControllerBecameReadyToPlay; // @synthesize hasPlaybackBegunSincePlayerControllerBecameReadyToPlay=_hasPlaybackBegunSincePlayerControllerBecameReadyToPlay;
-@property(nonatomic) long long preferredPlaybackControlsLoadedStatus; // @synthesize preferredPlaybackControlsLoadedStatus=_preferredPlaybackControlsLoadedStatus;
-@property(nonatomic, getter=isContentViewBeingScrolledOrOffScreen) _Bool contentViewBeingScrolledOrOffScreen; // @synthesize contentViewBeingScrolledOrOffScreen=_contentViewBeingScrolledOrOffScreen;
 @property(nonatomic, getter=isCoveringWindow) _Bool coveringWindow; // @synthesize coveringWindow=_coveringWindow;
 @property(nonatomic) _Bool hasStartedUpdates; // @synthesize hasStartedUpdates=_hasStartedUpdates;
-@property(nonatomic) _Bool includesVideoGravityButton; // @synthesize includesVideoGravityButton=_includesVideoGravityButton;
+@property(retain, nonatomic) NSNumber *pendingOrientationChange; // @synthesize pendingOrientationChange=_pendingOrientationChange;
+@property(nonatomic) _Bool canIncludeVideoGravityButton; // @synthesize canIncludeVideoGravityButton=_canIncludeVideoGravityButton;
 @property(nonatomic) _Bool prefersVolumeSliderExpanded; // @synthesize prefersVolumeSliderExpanded=_prefersVolumeSliderExpanded;
 @property(nonatomic) _Bool showsLoadingIndicator; // @synthesize showsLoadingIndicator=_showsLoadingIndicator;
 @property(readonly, nonatomic) NSArray *allVisibilityControllerItems; // @synthesize allVisibilityControllerItems=_allVisibilityControllerItems;
-@property(readonly, nonatomic) AVPlaybackControlsVisibilityControllerItem *turboModePlaybackControlsVisibilityItem; // @synthesize turboModePlaybackControlsVisibilityItem=_turboModePlaybackControlsVisibilityItem;
 @property(readonly, nonatomic) AVPlaybackControlsVisibilityControllerItem *volumeControlsContainerVisibilityItem; // @synthesize volumeControlsContainerVisibilityItem=_volumeControlsContainerVisibilityItem;
 @property(readonly, nonatomic) AVPlaybackControlsVisibilityControllerItem *playbackControlsContainerVisibilityItem; // @synthesize playbackControlsContainerVisibilityItem=_playbackControlsContainerVisibilityItem;
-@property(retain, nonatomic) AVScrollViewObserver *scrollViewObserver; // @synthesize scrollViewObserver=_scrollViewObserver;
+@property(retain, nonatomic) NSUUID *playerMuteFadeAnimationID; // @synthesize playerMuteFadeAnimationID=_playerMuteFadeAnimationID;
+@property(retain, nonatomic) AVPlayerControllerVolumeAnimator *volumeAnimator; // @synthesize volumeAnimator=_volumeAnimator;
 @property(nonatomic) __weak UIViewPropertyAnimator *collapseExpandSliderAnimator; // @synthesize collapseExpandSliderAnimator=_collapseExpandSliderAnimator;
 @property(nonatomic) __weak NSTimer *loadingIndicatorTimer; // @synthesize loadingIndicatorTimer=_loadingIndicatorTimer;
 @property(retain, nonatomic) id AVRouteDetectorCoordinatorMultipleRoutesDetectedObserver; // @synthesize AVRouteDetectorCoordinatorMultipleRoutesDetectedObserver=_AVRouteDetectorCoordinatorMultipleRoutesDetectedObserver;
@@ -139,11 +150,15 @@
 @property(readonly, nonatomic) __weak AVPlayerViewController *playerViewController; // @synthesize playerViewController=_playerViewController;
 @property(retain, nonatomic) AVSecondScreenContentViewConnection *secondScreenConnection; // @synthesize secondScreenConnection=_secondScreenConnection;
 @property(retain, nonatomic) AVNowPlayingInfoController *nowPlayingInfoControllerIfLoaded; // @synthesize nowPlayingInfoControllerIfLoaded=_nowPlayingInfoControllerIfLoaded;
-@property(readonly, nonatomic) AVVolumeController *volumeController; // @synthesize volumeController=_volumeController;
+@property(retain, nonatomic) id <AVVolumeController> volumeController; // @synthesize volumeController=_volumeController;
 @property(retain, nonatomic) AVPictureInPictureController *pictureInPictureController; // @synthesize pictureInPictureController=_pictureInPictureController;
+@property(copy, nonatomic) CDUnknownBlockType contentTransitionAction; // @synthesize contentTransitionAction=_contentTransitionAction;
 @property(nonatomic, getter=isStartRightwardContentTransitionButtonEnabled) _Bool startRightwardContentTransitionButtonEnabled; // @synthesize startRightwardContentTransitionButtonEnabled=_startRightwardContentTransitionButtonEnabled;
 @property(nonatomic, getter=isStartLeftwardContentTransitionButtonEnabled) _Bool startLeftwardContentTransitionButtonEnabled; // @synthesize startLeftwardContentTransitionButtonEnabled=_startLeftwardContentTransitionButtonEnabled;
 @property(copy, nonatomic) CDUnknownBlockType playButtonHandlerForLazyPlayerLoading; // @synthesize playButtonHandlerForLazyPlayerLoading=_playButtonHandlerForLazyPlayerLoading;
+@property(nonatomic) _Bool showsTimecodes; // @synthesize showsTimecodes=_showsTimecodes;
+@property(nonatomic) _Bool forcePlaybackControlsHidden; // @synthesize forcePlaybackControlsHidden=_forcePlaybackControlsHidden;
+@property(nonatomic) _Bool playbackControlsShouldControlSystemVolume; // @synthesize playbackControlsShouldControlSystemVolume=_playbackControlsShouldControlSystemVolume;
 @property(nonatomic) _Bool playbackControlsIncludeStartContentTransitionButtons; // @synthesize playbackControlsIncludeStartContentTransitionButtons=_playbackControlsIncludeStartContentTransitionButtons;
 @property(nonatomic) _Bool playbackControlsIncludeVolumeControls; // @synthesize playbackControlsIncludeVolumeControls=_playbackControlsIncludeVolumeControls;
 @property(nonatomic) _Bool playbackControlsIncludeDisplayModeControls; // @synthesize playbackControlsIncludeDisplayModeControls=_playbackControlsIncludeDisplayModeControls;
@@ -151,9 +166,12 @@
 @property(nonatomic) _Bool showsDoneButtonWhenFullScreen; // @synthesize showsDoneButtonWhenFullScreen=_showsDoneButtonWhenFullScreen;
 @property(nonatomic) _Bool updatesNowPlayingInfoCenter; // @synthesize updatesNowPlayingInfoCenter=_updatesNowPlayingInfoCenter;
 @property(nonatomic) _Bool requiresLinearPlayback; // @synthesize requiresLinearPlayback=_requiresLinearPlayback;
-@property(nonatomic) _Bool showsPlaybackControlsWhenInline; // @synthesize showsPlaybackControlsWhenInline=_showsPlaybackControlsWhenInline;
+@property(nonatomic) _Bool showsVideoGravityButton; // @synthesize showsVideoGravityButton=_showsVideoGravityButton;
+@property(nonatomic) _Bool canIncludePlaybackControlsWhenInline; // @synthesize canIncludePlaybackControlsWhenInline=_canIncludePlaybackControlsWhenInline;
+@property(nonatomic) _Bool hasCustomPlaybackControls; // @synthesize hasCustomPlaybackControls=_hasCustomPlaybackControls;
 @property(nonatomic) _Bool showsPlaybackControls; // @synthesize showsPlaybackControls=_showsPlaybackControls;
 @property(nonatomic) _Bool showsPictureInPictureButton; // @synthesize showsPictureInPictureButton=_showsPictureInPictureButton;
+@property(copy, nonatomic) NSArray *customControlItems; // @synthesize customControlItems=_customControlItems;
 @property(nonatomic) _Bool volumeControlsCanShowSlider; // @synthesize volumeControlsCanShowSlider=_volumeControlsCanShowSlider;
 @property(nonatomic) _Bool inlinePlaybackControlsAlwaysShowLargePlayButtonWhenPaused; // @synthesize inlinePlaybackControlsAlwaysShowLargePlayButtonWhenPaused=_inlinePlaybackControlsAlwaysShowLargePlayButtonWhenPaused;
 @property(nonatomic) _Bool showsMinimalPlaybackControlsWhenEmbeddedInline; // @synthesize showsMinimalPlaybackControlsWhenEmbeddedInline=_showsMinimalPlaybackControlsWhenEmbeddedInline;
@@ -168,8 +186,6 @@
 - (void).cxx_destruct;
 - (void)_updateSecondScreenConnectionReadyToConnect;
 - (void)_updateEdgeInsetsForLetterboxedContentInContentView:(id)arg1;
-- (void)_updateIsBeingScrolledOrOffScreen;
-- (void)_updatePreferredPlaybackControlsLoadedStatusNotifyingContentViewOfChanges:(_Bool)arg1;
 - (void)_updateNowPlayingInfoCenter;
 - (void)_updatePrefersInspectionSuspended;
 - (void)_updateHasPlaybackBegunSincePlayerControllerBecameReadyToPlay:(_Bool)arg1 playing:(_Bool)arg2 userDidEndTappingProminentPlayButton:(_Bool)arg3;
@@ -177,6 +193,9 @@
 - (void)_updateScrubberAndTimeLabels;
 - (void)_updateOrCreateTimeResolverIfNeeded;
 - (void)_updateContainerInclusion;
+- (void)_updateControlInclusion;
+- (void)updateControlsInclusion;
+- (void)_updateSkipButtonsEnableLongPress;
 - (void)_startObservingPotentiallyUnimplementedPlayerControllerProperties;
 - (void)_startObservingForPlaybackViewUpdates;
 - (void)_updatePlaybackControlsVisibleAndObservingUpdates;
@@ -191,26 +210,35 @@
 - (void)skipButtonLongPressTriggered:(id)arg1;
 - (void)skipButtonTouchUpInside:(id)arg1;
 - (void)prominentPlayButtonTouchUpInside:(id)arg1;
-- (void)scrollViewObserverValuesDidChange:(id)arg1;
+- (id)overrideRoutingContextUIDForRoutePickerView:(id)arg1;
+- (unsigned long long)overrideRouteSharingPolicyForRoutePickerView:(id)arg1;
 - (void)routePickerViewDidEndPresentingRoutes:(id)arg1;
 - (void)routePickerViewWillBeginPresentingRoutes:(id)arg1;
 - (void)_updateVolumeSliderValueWithSystemVolume:(float)arg1 animated:(_Bool)arg2;
 - (id)_volumeButtonMicaPackageState;
 - (void)_updateVolumeButtonGlyph;
-- (void)_showOrHideVolumeSlider;
+- (void)_showOrHideDisplayModeControls;
+- (void)_showOrHideAudioControls;
 - (_Bool)_prefersVolumeSliderExpandedAutomatically;
 - (void)volumeButtonPanChanged:(id)arg1;
+- (void)endChangingVolume;
+- (void)beginChangingVolume;
 - (void)volumeButtonLongPressTriggered:(id)arg1;
 - (void)volumeButtonTapTriggered:(id)arg1;
 - (void)volumeSliderValueDidChange:(id)arg1;
 - (void)handleCurrentRouteSupportsVolumeControlChanged:(id)arg1;
 - (void)handleVolumeChange:(id)arg1;
+- (void)endScrubbing;
+- (void)scrubToTime:(double)arg1 resolution:(double)arg2;
+- (void)beginScrubbing;
 - (void)transportControls:(id)arg1 scrubberDidEndScrubbing:(id)arg2;
 - (void)transportControls:(id)arg1 scrubberDidScrub:(id)arg2;
 - (void)transportControls:(id)arg1 scrubberDidBeginScrubbing:(id)arg2;
 - (void)transportControlsNeedsLayoutIfNeeded:(id)arg1;
 - (void)secondScreenConnectionDidResignActive:(id)arg1;
 - (void)secondScreenConnectionDidBecomeActive:(id)arg1;
+- (void)playerViewControllerContentViewDidUpdateScrollingStatus:(id)arg1;
+- (id)playerViewControllerContentViewOverrideLayoutClass:(id)arg1;
 - (_Bool)playerViewControllerContentViewIsBeingTransitionedFromFullScreen:(id)arg1;
 - (_Bool)playerViewControllerContentViewHasActiveTransition:(id)arg1;
 - (void)playerViewControllerContentViewDidChangeVideoGravity:(id)arg1;
@@ -218,8 +246,8 @@
 - (struct UIEdgeInsets)playerViewControllerContentViewEdgeInsetsForLetterboxedVideo:(id)arg1;
 - (void)playerViewControllerContentViewDidLayoutSubviews:(id)arg1;
 - (void)playerViewControllerContentViewDidMoveToSuperviewOrWindow:(id)arg1;
+- (void)playerViewControllerContentViewPlaybackContentContainerViewChanged:(id)arg1;
 - (_Bool)playerViewControllerContentViewIsPlayingOnSecondScreen:(id)arg1;
-- (long long)playerViewControllerContentViewPreferredPlaybackControlsLoadedStatus:(id)arg1;
 - (void)playerViewControllerContentView:(id)arg1 willLoadTurboModePlaceholderView:(id)arg2;
 - (void)playerViewControllerContentView:(id)arg1 willLoadPlaybackControlsView:(id)arg2;
 - (void)turboModePlaybackControlsPlaceholderViewDidLoad:(id)arg1;
@@ -242,9 +270,8 @@
 @property(readonly, nonatomic) _Bool showsProminentPlayButton;
 @property(readonly, nonatomic) _Bool showsRoutePickerView;
 @property(readonly, nonatomic) _Bool entersFullScreenWhenTapped;
-@property(readonly, nonatomic) _Bool includesFullScreenButton;
-@property(readonly, nonatomic) _Bool includesDoneButton;
 @property(readonly, nonatomic, getter=isFullScreen) _Bool fullScreen;
+- (void)toggleMuted;
 - (void)startUpdatesIfNeeded;
 - (void)dealloc;
 - (id)initWithPlayerViewController:(id)arg1;

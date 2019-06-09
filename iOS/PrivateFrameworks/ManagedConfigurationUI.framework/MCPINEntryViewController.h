@@ -12,12 +12,16 @@ __attribute__((visibility("hidden")))
 @interface MCPINEntryViewController : DevicePINController
 {
     NSObject *_delegate;
+    unsigned long long _style;
 }
 
+@property(nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(nonatomic) __weak NSObject *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)stringsBundle;
 - (id)stringsTable;
+- (void)_updateStyle;
+- (void)viewWillAppear:(_Bool)arg1;
 - (id)init;
 
 @end

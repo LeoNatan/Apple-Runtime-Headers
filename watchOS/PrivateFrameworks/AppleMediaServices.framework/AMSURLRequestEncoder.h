@@ -6,42 +6,58 @@
 
 #import <objc/NSObject.h>
 
+#import <AppleMediaServices/AMSBagConsumer-Protocol.h>
+#import <AppleMediaServices/AMSBagConsumer_Project-Protocol.h>
 #import <AppleMediaServices/AMSRequestEncoding-Protocol.h>
 
-@class ACAccount, AMSProcessInfo, NSDictionary, NSString;
-@protocol AMSResponseDecoding, AMSURLBagContract, OS_dispatch_queue;
+@class ACAccount, AMSKeychainOptions, AMSProcessInfo, NSDictionary, NSString;
+@protocol AMSBagProtocol, AMSResponseDecoding, AMSURLBagContract, OS_dispatch_queue;
 
-@interface AMSURLRequestEncoder : NSObject <AMSRequestEncoding>
+@interface AMSURLRequestEncoder : NSObject <AMSBagConsumer_Project, AMSBagConsumer, AMSRequestEncoding>
 {
     _Bool _compressRequestBody;
+    _Bool _disableResponseDecoding;
     _Bool _includeClientVersions;
+    _Bool _shouldSetCookiesFromResponse;
+    _Bool _shouldSetStorefrontFromResponse;
     _Bool _urlKnownToBeTrusted;
-    _Bool _disableAccountMediaTypeComponent;
     ACAccount *_account;
     NSDictionary *_additionalMetrics;
     int _anisetteType;
-    id <AMSURLBagContract> _bagContract;
+    id <AMSBagProtocol> _bag;
     AMSProcessInfo *_clientInfo;
-    int _dataEncoding;
     int _dialogOptions;
+    AMSKeychainOptions *_keychainOptions;
     NSString *_logUUID;
     int _mescalType;
+    int _requestEncoding;
     id <AMSResponseDecoding> _responseDecoder;
+    id <AMSURLBagContract> _bagContract;
     NSObject<OS_dispatch_queue> *_internalQueue;
+    long _encodeCount;
 }
 
-@property(nonatomic) _Bool disableAccountMediaTypeComponent; // @synthesize disableAccountMediaTypeComponent=_disableAccountMediaTypeComponent;
++ (void)addRequiredBagKeysToAggregator:(id)arg1;
++ (id)bagSubProfileVersion;
++ (id)bagSubProfile;
++ (id)bagKeySet;
+@property(nonatomic) long encodeCount; // @synthesize encodeCount=_encodeCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
+@property(retain, nonatomic) id <AMSURLBagContract> bagContract; // @synthesize bagContract=_bagContract;
 @property(nonatomic) _Bool urlKnownToBeTrusted; // @synthesize urlKnownToBeTrusted=_urlKnownToBeTrusted;
+@property(nonatomic) _Bool shouldSetStorefrontFromResponse; // @synthesize shouldSetStorefrontFromResponse=_shouldSetStorefrontFromResponse;
+@property(nonatomic) _Bool shouldSetCookiesFromResponse; // @synthesize shouldSetCookiesFromResponse=_shouldSetCookiesFromResponse;
 @property(retain, nonatomic) id <AMSResponseDecoding> responseDecoder; // @synthesize responseDecoder=_responseDecoder;
+@property(nonatomic) int requestEncoding; // @synthesize requestEncoding=_requestEncoding;
 @property(nonatomic) int mescalType; // @synthesize mescalType=_mescalType;
 @property(retain, nonatomic) NSString *logUUID; // @synthesize logUUID=_logUUID;
+@property(retain, nonatomic) AMSKeychainOptions *keychainOptions; // @synthesize keychainOptions=_keychainOptions;
 @property(nonatomic) _Bool includeClientVersions; // @synthesize includeClientVersions=_includeClientVersions;
 @property(nonatomic) int dialogOptions; // @synthesize dialogOptions=_dialogOptions;
-@property(nonatomic) int dataEncoding; // @synthesize dataEncoding=_dataEncoding;
+@property(nonatomic) _Bool disableResponseDecoding; // @synthesize disableResponseDecoding=_disableResponseDecoding;
 @property(nonatomic) _Bool compressRequestBody; // @synthesize compressRequestBody=_compressRequestBody;
 @property(retain, nonatomic) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
-@property(retain, nonatomic) id <AMSURLBagContract> bagContract; // @synthesize bagContract=_bagContract;
+@property(retain, nonatomic) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(nonatomic) int anisetteType; // @synthesize anisetteType=_anisetteType;
 @property(retain, nonatomic) NSDictionary *additionalMetrics; // @synthesize additionalMetrics=_additionalMetrics;
 @property(retain, nonatomic) ACAccount *account; // @synthesize account=_account;
@@ -53,11 +69,13 @@
 - (id)requestWithMethod:(int)arg1 bagURL:(id)arg2 parameters:(id)arg3 error:(id *)arg4;
 - (id)requestWithMethod:(int)arg1 bagURL:(id)arg2 error:(id *)arg3;
 - (id)requestByEncodingRequest:(id)arg1 parameters:(id)arg2 error:(id *)arg3;
+- (id)initWithBagContract:(id)arg1;
 - (id)_methodStringFromMethod:(int)arg1;
 - (id)requestByEncodingRequest:(id)arg1 parameters:(id)arg2;
 - (id)requestWithMethod:(int)arg1 URL:(id)arg2 parameters:(id)arg3;
 - (id)requestWithMethod:(int)arg1 bagURL:(id)arg2 parameters:(id)arg3;
-- (id)initWithBagContract:(id)arg1;
+@property(nonatomic) int dataEncoding;
+- (id)initWithBag:(id)arg1;
 - (id)init;
 
 // Remaining properties

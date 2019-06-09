@@ -18,6 +18,10 @@
     NTPBColor *_cardBackgroundColor;
     NTPBDate *_creationDate;
     int _ctaTextRef;
+    NTPBColorGradient *_darkStyleBackgroundGradient;
+    NTPBColor *_darkStyleCardBackgroundColor;
+    NTPBColorGradient *_darkStyleSauceGradient;
+    NTPBColor *_darkStyleTitleColor;
     NTPBDiscoverMoreVideosInfo *_discoverMoreVideosInfo;
     NTPBDate *_editionFeedEndDate;
     NTPBDate *_editionFeedStartDate;
@@ -53,6 +57,10 @@
 + (Class)issueIDsType;
 + (Class)videoPlaylistHeadlinesType;
 + (Class)headlinesType;
+@property(retain, nonatomic) NTPBColorGradient *darkStyleSauceGradient; // @synthesize darkStyleSauceGradient=_darkStyleSauceGradient;
+@property(retain, nonatomic) NTPBColor *darkStyleCardBackgroundColor; // @synthesize darkStyleCardBackgroundColor=_darkStyleCardBackgroundColor;
+@property(retain, nonatomic) NTPBColorGradient *darkStyleBackgroundGradient; // @synthesize darkStyleBackgroundGradient=_darkStyleBackgroundGradient;
+@property(retain, nonatomic) NTPBColor *darkStyleTitleColor; // @synthesize darkStyleTitleColor=_darkStyleTitleColor;
 @property(retain, nonatomic) NTPBColor *cardBackgroundColor; // @synthesize cardBackgroundColor=_cardBackgroundColor;
 @property(retain, nonatomic) NTPBColorGradient *sauceGradient; // @synthesize sauceGradient=_sauceGradient;
 @property(nonatomic) int ctaTextRef; // @synthesize ctaTextRef=_ctaTextRef;
@@ -84,6 +92,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasDarkStyleSauceGradient;
+@property(readonly, nonatomic) _Bool hasDarkStyleCardBackgroundColor;
+@property(readonly, nonatomic) _Bool hasDarkStyleBackgroundGradient;
+@property(readonly, nonatomic) _Bool hasDarkStyleTitleColor;
 @property(readonly, nonatomic) _Bool hasCardBackgroundColor;
 @property(readonly, nonatomic) _Bool hasSauceGradient;
 @property(nonatomic) _Bool hasCtaTextRef;

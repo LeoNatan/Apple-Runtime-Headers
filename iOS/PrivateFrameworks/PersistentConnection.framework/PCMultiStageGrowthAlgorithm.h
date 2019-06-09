@@ -31,23 +31,34 @@ __attribute__((visibility("hidden")))
     NSObject<OS_os_log> *_logObject;
     _Bool _isServerOriginatedKeepAlive;
     _Bool _minimumIntervalFallbackEnabled;
+    int _lastKeepAliveAlgorithmMode;
+    int _currentKeepAliveAlgorithmMode;
+    double _serverStatsMinKeepAliveInterval;
+    double _serverStatsMaxKeepAliveInterval;
+    double _serverStatsExpectedKeepAliveInterval;
+    _Bool _usingServerStatsAggressively;
 }
 
 + (void)_loadDefaultValue:(double *)arg1 forKey:(struct __CFString *)arg2;
 + (void)_loadDefaults;
+@property(nonatomic) _Bool usingServerStatsAggressively; // @synthesize usingServerStatsAggressively=_usingServerStatsAggressively;
+@property(nonatomic) double serverStatsMaxKeepAliveInterval; // @synthesize serverStatsMaxKeepAliveInterval=_serverStatsMaxKeepAliveInterval;
+@property(nonatomic) double serverStatsExpectedKeepAliveInterval; // @synthesize serverStatsExpectedKeepAliveInterval=_serverStatsExpectedKeepAliveInterval;
+@property(nonatomic) double serverStatsMinKeepAliveInterval; // @synthesize serverStatsMinKeepAliveInterval=_serverStatsMinKeepAliveInterval;
 @property(readonly, nonatomic) int growthStage; // @synthesize growthStage=_growthStage;
 @property(nonatomic) _Bool minimumIntervalFallbackEnabled; // @synthesize minimumIntervalFallbackEnabled=_minimumIntervalFallbackEnabled;
 @property(nonatomic) _Bool isServerOriginatedKeepAlive; // @synthesize isServerOriginatedKeepAlive=_isServerOriginatedKeepAlive;
 @property(nonatomic) double lastSuccessfulKeepAliveInterval; // @synthesize lastSuccessfulKeepAliveInterval=_lastSuccessfulKeepAliveInterval;
-@property(nonatomic) double maximumKeepAliveInterval; // @synthesize maximumKeepAliveInterval=_maximumKeepAliveInterval;
-@property(nonatomic) double minimumKeepAliveInterval; // @synthesize minimumKeepAliveInterval=_minimumKeepAliveInterval;
 @property(readonly, nonatomic) double currentKeepAliveInterval; // @synthesize currentKeepAliveInterval=_currentKeepAliveInterval;
 @property(readonly, nonatomic) unsigned long long countOfGrowthActions; // @synthesize countOfGrowthActions=_countOfGrowthActions;
 - (void).cxx_destruct;
+- (id)_stringForMode:(int)arg1;
 - (id)_stringForStage:(int)arg1;
 - (id)_stringForAction:(int)arg1;
 @property(readonly, copy) NSString *description;
 - (double)_steadyStateTimeout;
+- (void)_processRefinedShrinkAction:(int)arg1;
+- (void)_processInitialShrinkAction:(int)arg1;
 - (void)_processRefinedGrowthAction:(int)arg1;
 - (void)_processMinimumIntervalFallbackStateAction:(int)arg1;
 - (void)_processSteadyStateAction:(int)arg1;
@@ -56,10 +67,13 @@ __attribute__((visibility("hidden")))
 - (void)processNextAction:(int)arg1;
 - (void)_resetAlgorithmToInterval:(double)arg1;
 - (void)_resetAlgorithmToInterval:(double)arg1 stage:(int)arg2;
+- (void)_adjustGrowthAlgorithmMode;
 @property(readonly, copy, nonatomic) NSDictionary *cacheInfo;
 - (_Bool)useIntervalIfImprovement:(double)arg1;
 - (void)_fallbackToLastSuccessfulKeepAliveInterval;
 - (void)_setCurrentKeepAliveInterval:(double)arg1;
+@property(nonatomic) double minimumKeepAliveInterval; // @synthesize minimumKeepAliveInterval=_minimumKeepAliveInterval;
+@property(nonatomic) double maximumKeepAliveInterval; // @synthesize maximumKeepAliveInterval=_maximumKeepAliveInterval;
 - (id)initWithCacheInfo:(id)arg1 loggingIdentifier:(id)arg2 algorithmName:(id)arg3;
 
 // Remaining properties

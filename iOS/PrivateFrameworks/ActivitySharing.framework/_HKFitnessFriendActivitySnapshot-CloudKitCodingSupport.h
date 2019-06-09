@@ -8,7 +8,7 @@
 
 #import <ActivitySharing/ASCloudKitCodable-Protocol.h>
 
-@class ASCodableCloudKitActivitySnapshot, NSString;
+@class ASCodableCloudKitActivitySnapshot, HKQuantity, NSString;
 
 @interface _HKFitnessFriendActivitySnapshot (CloudKitCodingSupport) <ASCloudKitCodable>
 + (id)_fitnessFriendActivitySnapshotWithCodableSnapshot:(id)arg1 friendUUID:(id)arg2 uploadedDate:(id)arg3;
@@ -18,6 +18,10 @@
 + (struct _HKFitnessFriendActivitySnapshot *)fitnessFriendActivitySnapshotWithRecord:(id)arg1 friendUUID:(id)arg2;
 - (id)recordWithZoneID:(id)arg1;
 @property(readonly, nonatomic) ASCodableCloudKitActivitySnapshot *codableSnapshot;
+- (_Bool)isAmm;
+- (double)percent;
+@property(readonly, nonatomic) HKQuantity *mmgQuantity;
+@property(readonly, nonatomic) HKQuantity *mmvQuantity;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

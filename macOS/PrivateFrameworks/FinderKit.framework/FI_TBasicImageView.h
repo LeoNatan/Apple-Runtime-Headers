@@ -36,6 +36,8 @@ __attribute__((visibility("hidden")))
 - (id)dimmedFilters;
 - (void)setBoundsSize:(struct CGSize)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
+- (void)_setSuperFrameSize:(struct CGSize)arg1;
+- (void)_setSuperBoundsSize:(struct CGSize)arg1;
 - (void)setFrameOrBoundsSizeHelper:(const struct CGSize *)arg1 oldSize:(const struct CGSize *)arg2 sizeChangerBlock:(const function_96ce23bb *)arg3;
 - (void)setNeedsDisplayInRect:(struct CGRect)arg1;
 - (_Bool)intersectsOpaquePixels:(const struct CGRect *)arg1;

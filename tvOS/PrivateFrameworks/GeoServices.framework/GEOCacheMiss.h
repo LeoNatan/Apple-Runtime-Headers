@@ -12,26 +12,23 @@
 
 @interface GEOCacheMiss : PBCodable <NSCopying>
 {
+    NSMutableArray *_errors;
     unsigned int _bytes;
     unsigned int _count;
-    NSMutableArray *_errors;
     unsigned int _httpStatus;
     int _missType;
     int _requestorType;
     struct {
-        unsigned int bytes:1;
-        unsigned int count:1;
-        unsigned int httpStatus:1;
-        unsigned int missType:1;
-        unsigned int requestorType:1;
-    } _has;
+        unsigned int has_bytes:1;
+        unsigned int has_count:1;
+        unsigned int has_httpStatus:1;
+        unsigned int has_missType:1;
+        unsigned int has_requestorType:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)errorsType;
-@property(nonatomic) unsigned int httpStatus; // @synthesize httpStatus=_httpStatus;
-@property(retain, nonatomic) NSMutableArray *errors; // @synthesize errors=_errors;
-@property(nonatomic) unsigned int bytes; // @synthesize bytes=_bytes;
-@property(nonatomic) unsigned int count; // @synthesize count=_count;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -40,23 +37,28 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasHttpStatus;
+@property(nonatomic) unsigned int httpStatus;
 - (id)errorsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)errorsCount;
 - (void)addErrors:(id)arg1;
 - (void)clearErrors;
+@property(retain, nonatomic) NSMutableArray *errors;
 @property(nonatomic) _Bool hasBytes;
+@property(nonatomic) unsigned int bytes;
 @property(nonatomic) _Bool hasCount;
+@property(nonatomic) unsigned int count;
 - (int)StringAsMissType:(id)arg1;
 - (id)missTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasMissType;
-@property(nonatomic) int missType; // @synthesize missType=_missType;
+@property(nonatomic) int missType;
 - (int)StringAsRequestorType:(id)arg1;
 - (id)requestorTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasRequestorType;
-@property(nonatomic) int requestorType; // @synthesize requestorType=_requestorType;
+@property(nonatomic) int requestorType;
 
 @end
 

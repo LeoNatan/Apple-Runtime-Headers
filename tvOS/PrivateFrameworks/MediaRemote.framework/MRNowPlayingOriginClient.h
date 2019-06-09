@@ -20,6 +20,7 @@
     unsigned int _routeDiscoveryMode;
     NSMutableArray *_applicationPickedRoutes;
     unsigned int _inputMode;
+    float _volume;
     unsigned int _volumeCapabilities;
     MRApplicationActivity *_activity;
     _MRDeviceInfoMessageProtobuf *_deviceInfo;
@@ -29,6 +30,7 @@
     CDUnknownBlockType _commandCallback;
     CDUnknownBlockType _beginLyricsEventCallback;
     CDUnknownBlockType _endLyricsEventCallback;
+    CDUnknownBlockType _playbackSessionCallback;
     NSMutableArray *_nowPlayingClients;
     unsigned int _hardwareRemoteBehavior;
     _MRNowPlayingClientProtobuf *_activeNowPlayingClient;
@@ -57,11 +59,13 @@
 @property(copy, nonatomic) NSArray *applicationPickedRoutes;
 @property(copy, nonatomic) CDUnknownBlockType endLyricsEventCallback;
 @property(copy, nonatomic) CDUnknownBlockType beginLyricsEventCallback;
+@property(copy, nonatomic) CDUnknownBlockType playbackSessionCallback;
 @property(copy, nonatomic) CDUnknownBlockType commandCallback;
 @property(copy, nonatomic) CDUnknownBlockType playbackQueueTransactionCallback;
 @property(copy, nonatomic) CDUnknownBlockType playbackQueueCallback;
 @property(readonly, nonatomic) NSArray *nowPlayingClients;
 @property(nonatomic) unsigned int volumeCapabilities;
+@property(nonatomic) float volume;
 - (void)dealloc;
 - (id)initWithOrigin:(id)arg1;
 

@@ -8,7 +8,6 @@
 
 @protocol SiriUIAccessibilityStashDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SiriUICardView : NSView
 {
     id <SiriUIAccessibilityStashDelegate> _accessibilityStashDelegate;

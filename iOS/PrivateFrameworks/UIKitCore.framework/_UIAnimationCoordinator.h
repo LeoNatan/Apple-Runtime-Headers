@@ -45,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (void)animate;
 - (void)_updateTransitionContext;
 @property(readonly, retain, nonatomic) NSMutableDictionary *stash;
+- (void)dealloc;
 @property(readonly, retain, nonatomic) _UIViewControllerOneToOneTransitionContext *transitionContext;
 
 // Remaining properties

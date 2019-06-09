@@ -23,7 +23,6 @@
 
 - (void).cxx_destruct;
 - (id)initWithUpdate:(const struct nstat_msg_src_update_convenient *)arg1 startTime:(double)arg2 flowFlags:(unsigned int)arg3 previously:(struct update_subset_for_deltas *)arg4;
-- (id)initWithUpdate:(const struct nstat_msg_src_update_convenient *)arg1 startTime:(double)arg2 flowFlags:(unsigned int)arg3;
 - (id)flowSnapshotTimestamp;
 - (id)flowStartTimestamp;
 - (double)flowDuration;
@@ -31,10 +30,11 @@
 - (unsigned long long)networkActivityMapPart2;
 - (unsigned long long)networkActivityMapPart1;
 - (unsigned long long)networkActivityMapStartTime;
+- (BOOL)interfaceCellularViaFallback;
 - (BOOL)interfaceExpensive;
 - (BOOL)interfaceAWDL;
 - (BOOL)interfaceWired;
-- (BOOL)interfaceWifi;
+- (BOOL)interfaceWiFi;
 - (BOOL)interfaceCellular;
 - (BOOL)interfaceLoopback;
 - (BOOL)interfaceUnknown;
@@ -54,6 +54,7 @@
 - (unsigned int)interfaceIndex;
 - (BOOL)flowUsesChannels;
 - (id)provider;
+- (id)descriptorDescription;
 
 @end
 

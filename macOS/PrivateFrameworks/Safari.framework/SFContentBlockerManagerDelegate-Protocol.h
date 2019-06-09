@@ -13,7 +13,6 @@
 - (BOOL)allowUnsignedContentBlockers;
 - (NSString *)developerIdentifierForContentBlocker:(NSExtension *)arg1;
 - (NSArray *)contentBlockersFromContentBlockersState:(NSDictionary *)arg1;
-- (void)replaceLegacyExtensionsWithContentBlocker:(NSExtension *)arg1 userHasChangedEnabledState:(BOOL)arg2;
 - (NSArray *)contentBlockersNotBlockedForAnyReason:(NSArray *)arg1;
 - (void)contentBlockerEnabledStateDidChange:(NSExtension *)arg1;
 - (void)contentBlockersWereRemoved:(NSArray *)arg1;

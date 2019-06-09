@@ -8,6 +8,7 @@
 
 @class SKUIViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsHeaderFooterDescription : NSObject
 {
     SKUIViewElement *_viewElement;

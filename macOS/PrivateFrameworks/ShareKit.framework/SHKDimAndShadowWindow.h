@@ -8,6 +8,7 @@
 
 @class CALayer, NSWindow;
 
+__attribute__((visibility("hidden")))
 @interface SHKDimAndShadowWindow : SHKBorderlessEffectWindow
 {
     BOOL animatesTransitions;
@@ -29,6 +30,7 @@
 - (void)continueTransitionInWithIdentityLayerTransformAfterDelay:(double)arg1 animate:(BOOL)arg2 currentMediaTime:(double)arg3;
 - (void)continueTransitionInWithIdentityLayerTransformAfterDelay:(double)arg1 animate:(BOOL)arg2;
 - (void)startTransitionInWithDimFrame:(struct CGRect)arg1 serviceScreenFrame:(struct CGRect)arg2 initialLayerTransform:(struct CGAffineTransform)arg3;
+- (void)ensureGroupLayerInitialized;
 - (id)initWithFrame:(struct CGRect)arg1 noSourceWindow:(BOOL)arg2;
 
 @end

@@ -11,31 +11,20 @@
 
 @interface RTLifeCycleManager : NSObject
 {
-    _Bool _activeTransaction;
-    _Bool _exitWhenNoTransactions;
     NSMutableArray *_signals;
-    NSMutableDictionary *_transactions;
     NSMutableDictionary *_listeners;
     NSMutableSet *_services;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-+ (id)sharedInstance;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(nonatomic) _Bool exitWhenNoTransactions; // @synthesize exitWhenNoTransactions=_exitWhenNoTransactions;
-@property(nonatomic) _Bool activeTransaction; // @synthesize activeTransaction=_activeTransaction;
 @property(retain, nonatomic) NSMutableSet *services; // @synthesize services=_services;
 @property(retain, nonatomic) NSMutableDictionary *listeners; // @synthesize listeners=_listeners;
-@property(retain, nonatomic) NSMutableDictionary *transactions; // @synthesize transactions=_transactions;
 @property(retain, nonatomic) NSMutableArray *signals; // @synthesize signals=_signals;
 - (void).cxx_destruct;
 - (void)_exit;
 - (void)exit;
 - (void)exitWithDelay:(double)arg1;
-- (void)processTransactions;
-- (void)decrementTransactionsForObject:(id)arg1;
-- (void)incrementTransactionsForObject:(id)arg1;
-- (id)keyForObject:(id)arg1;
 - (void)_start;
 - (void)submitUptimeMetricsWithDefaultsMananger:(id)arg1;
 - (id)serviceWithClass:(Class)arg1;

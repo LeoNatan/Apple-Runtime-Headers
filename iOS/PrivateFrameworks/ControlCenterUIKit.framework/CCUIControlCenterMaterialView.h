@@ -10,18 +10,15 @@
 {
 }
 
-+ (id)baseMaterialBlurView;
 + (id)secondaryMaterialView;
-+ (id)primaryMaterialView;
-+ (id)moduleBackgroundMaterialView;
 + (id)controlCenterLightFill;
 + (id)controlCenterTertiaryMaterial;
 + (id)controlCenterDarkMaterial;
++ (long long)_controlCenterRecipe;
 + (id)_auxiliaryMaterialView;
 + (id)_tertiaryMaterialView;
 + (id)_lightFillMaterialView;
 + (id)_darkMaterialView;
-+ (long long)_recipe;
 
 @end
 

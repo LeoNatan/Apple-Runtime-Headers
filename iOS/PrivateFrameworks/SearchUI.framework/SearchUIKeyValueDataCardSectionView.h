@@ -19,7 +19,7 @@
 - (id)setupContentView;
 
 // Remaining properties
-@property(retain) TLKKeyValueView *contentView; // @dynamic contentView;
+@property(retain, nonatomic) TLKKeyValueView *contentView; // @dynamic contentView;
 
 @end
 

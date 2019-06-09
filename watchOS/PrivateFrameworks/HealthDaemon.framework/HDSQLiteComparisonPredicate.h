@@ -12,8 +12,12 @@
 {
     int _comparisonType;
     id _value;
+    _Bool _influenceIndexUsage;
 }
 
++ (id)predicateWithCoalescedProperties:(id)arg1 value:(id)arg2 comparisonType:(int)arg3;
++ (id)predicateWithProperty:(id)arg1 ifNullValue:(id)arg2 value:(id)arg3 comparisonType:(int)arg4;
++ (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparisonType:(int)arg3 influenceIndexUsage:(_Bool)arg4;
 + (id)predicateWithProperty:(id)arg1 value:(id)arg2 comparisonType:(int)arg3;
 + (id)predicateWithProperty:(id)arg1 likeValue:(id)arg2 escapeCharacter:(id)arg3;
 + (id)predicateWithProperty:(id)arg1 likeValue:(id)arg2;
@@ -32,8 +36,9 @@
 - (id)SQLForEntityClass:(Class)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
-- (void)bindToStatement:(struct sqlite3_stmt *)arg1 bindingIndex:(inout int *)arg2;
+- (void)bindToStatement:(struct sqlite3_stmt *)arg1 bindingIndex:(int *)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithProperty:(id)arg1 value:(id)arg2 comparisonType:(int)arg3 influenceIndexUsage:(_Bool)arg4;
 - (id)initWithProperty:(id)arg1 value:(id)arg2 comparisonType:(int)arg3;
 
 @end

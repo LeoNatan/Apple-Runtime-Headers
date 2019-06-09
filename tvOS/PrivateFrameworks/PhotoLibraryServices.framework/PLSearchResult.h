@@ -15,12 +15,13 @@
 
 @property(readonly, nonatomic) PSIGroupResult *groupResult; // @synthesize groupResult=_groupResult;
 - (void).cxx_destruct;
+- (_Bool)isImplicitlyTokenized;
 - (_Bool)isMatchedByIdentifierAtIndex:(long long)arg1;
 - (_Bool)isContentStringTextSearchableAtIndex:(long long)arg1;
 - (id)matchRangesAtIndex:(long long)arg1;
 - (id)tokensAtIndex:(long long)arg1;
 - (long long)categoryAtIndex:(long long)arg1;
-- (unsigned long long)matchCount;
+- (unsigned long long)groupCount;
 @property(readonly) NSString *owningContentString;
 @property(readonly, nonatomic) NSString *groupDescription;
 @property(readonly, nonatomic) unsigned long long assetCount;

@@ -10,6 +10,7 @@
 
 @class NSString, UIGestureRecognizer;
 
+__attribute__((visibility("hidden")))
 @interface _AVPermissiveSwipeGestureDelegate : NSObject <UIGestureRecognizerDelegate>
 {
     UIGestureRecognizer *_parentGestureRecognizer;

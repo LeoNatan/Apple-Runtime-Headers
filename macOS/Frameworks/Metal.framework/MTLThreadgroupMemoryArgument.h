@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 
 - (id)formattedDescription:(unsigned long long)arg1;
 - (void)setStructType:(id)arg1;
+- (void)setStructType:(id)arg1 doRetain:(BOOL)arg2;
+- (id)structType;
 - (id)threadgroupMemoryStructType;
 - (unsigned long long)threadgroupMemoryDataType;
 - (unsigned long long)threadgroupMemoryDataSize;

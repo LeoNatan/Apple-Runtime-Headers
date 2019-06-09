@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <ContactsUI/CNUINavigationListItemContent-Protocol.h>
+
 @class NSArray, NSString, UIImage;
 @protocol CNUINavigationListItemContent;
 
-@interface CNUINavigationListItem : NSObject
+@interface CNUINavigationListItem : NSObject <CNUINavigationListItemContent>
 {
     id <CNUINavigationListItemContent> _content;
     CNUINavigationListItem *_parent;
@@ -24,6 +26,7 @@
 + (id)itemForActionItem:(id)arg1 isGrouped:(_Bool)arg2;
 + (id)navigationListItemsForUserActionListModel:(id)arg1;
 + (id)localizedLabelForActionItem:(id)arg1 usingPropertyLabel:(_Bool)arg2;
++ (id)navigationListItemForContactProperty:(id)arg1;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) __weak CNUINavigationListItem *defaultItem; // @synthesize defaultItem=_defaultItem;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
@@ -36,6 +39,12 @@
 - (id)initWithTitle:(id)arg1 image:(id)arg2;
 - (id)initWithTitle:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

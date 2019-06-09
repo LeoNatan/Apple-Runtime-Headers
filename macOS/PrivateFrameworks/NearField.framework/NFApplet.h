@@ -24,6 +24,7 @@
     unsigned char _appletGPState;
     unsigned char _groupActivationStyle;
     NSObject<NFAppletCollection> *_appletCollection;
+    NSData *_typeFSystemCode;
     unsigned char _family;
     unsigned char _activationState;
     BOOL _authTransientSupport;
@@ -64,6 +65,7 @@
 - (void)_setIsActive:(BOOL)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) unsigned char supportedTypeFSystem;
 @property(readonly, nonatomic) BOOL isTypeF;
 - (BOOL)isEqualToApplet:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

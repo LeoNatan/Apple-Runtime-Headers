@@ -8,7 +8,7 @@
 
 #import <Home/HFServiceLikeBuilder-Protocol.h>
 
-@class HFAppleMusicAccountArbitrator, HFRoomBuilder, HMAccessory, HMMediaSystem, HMMediaSystemBuilder, NSArray, NSString;
+@class HFAppleMusicAccountArbitrator, HFNamingComponents, HFRoomBuilder, HMAccessory, HMMediaSystem, HMMediaSystemBuilder, NSArray, NSString;
 @protocol HFIconDescriptor;
 
 @interface HFMediaSystemBuilder : HFItemBuilder <HFServiceLikeBuilder>
@@ -20,6 +20,7 @@
     HFAppleMusicAccountArbitrator *_accountArbitrator;
     HMAccessory *_firstSetupSourceAccessory;
     HMMediaSystemBuilder *_homeKitMediaSystemBuilder;
+    HFNamingComponents *_namingComponent;
     HFRoomBuilder *_roomBuilder;
 }
 
@@ -27,6 +28,7 @@
 @property(nonatomic) _Bool isCreatingMediaSystem; // @synthesize isCreatingMediaSystem=_isCreatingMediaSystem;
 @property(nonatomic) _Bool hasSetRoom; // @synthesize hasSetRoom=_hasSetRoom;
 @property(retain, nonatomic) HFRoomBuilder *roomBuilder; // @synthesize roomBuilder=_roomBuilder;
+@property(retain, nonatomic) HFNamingComponents *namingComponent; // @synthesize namingComponent=_namingComponent;
 @property(retain, nonatomic) HMMediaSystemBuilder *homeKitMediaSystemBuilder; // @synthesize homeKitMediaSystemBuilder=_homeKitMediaSystemBuilder;
 @property(readonly, nonatomic) HMAccessory *firstSetupSourceAccessory; // @synthesize firstSetupSourceAccessory=_firstSetupSourceAccessory;
 @property(retain, nonatomic) HFAppleMusicAccountArbitrator *accountArbitrator; // @synthesize accountArbitrator=_accountArbitrator;

@@ -4,16 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MessageUI/MFComposeHeaderView.h>
+#import <MessageUI/MFMailComposeHeaderView.h>
 
 @class NSMutableArray, UISegmentedControl;
+@protocol MFComposeImageSizeViewDelegate;
 
-@interface MFComposeImageSizeView : MFComposeHeaderView
+@interface MFComposeImageSizeView : MFMailComposeHeaderView
 {
     UISegmentedControl *_segmentedControl;
     NSMutableArray *_visibleScales;
 }
 
+- (void).cxx_destruct;
 - (void)segmentedControlChanged;
 - (void)setScale:(unsigned long long)arg1;
 - (void)removeSizeDescriptionForScale:(unsigned long long)arg1;
@@ -21,8 +23,10 @@
 - (unsigned long long)_insertIndexForScale:(unsigned long long)arg1;
 - (unsigned long long)_scaleLabelIndexForScale:(unsigned long long)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(nonatomic) __weak id <MFComposeImageSizeViewDelegate> delegate; // @dynamic delegate;
 
 @end
 

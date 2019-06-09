@@ -6,18 +6,39 @@
 
 #import <objc/NSObject.h>
 
+@class NSString;
+
 @interface PHAssetExportRequestOptions : NSObject
 {
+    _Bool _includeAllAssetResources;
     _Bool _treatLivePhotoAsStill;
     _Bool _flattenSlomoVideos;
     _Bool _dontAllowRAW;
+    _Bool _shouldStripLocation;
+    _Bool _ensureSRGBCompatibleColorSpace;
+    _Bool _disableMetadataCorrections;
+    _Bool _forceDateTimeMetadataBaking;
+    _Bool _forceLocationMetadataBaking;
     long long _variant;
+    NSString *_videoExportPreset;
+    NSString *_videoExportFileType;
+    long long _locationComparisonStrategy;
 }
 
+@property(nonatomic) _Bool forceLocationMetadataBaking; // @synthesize forceLocationMetadataBaking=_forceLocationMetadataBaking;
+@property(nonatomic) _Bool forceDateTimeMetadataBaking; // @synthesize forceDateTimeMetadataBaking=_forceDateTimeMetadataBaking;
+@property(nonatomic) _Bool disableMetadataCorrections; // @synthesize disableMetadataCorrections=_disableMetadataCorrections;
+@property(nonatomic) long long locationComparisonStrategy; // @synthesize locationComparisonStrategy=_locationComparisonStrategy;
+@property(copy, nonatomic) NSString *videoExportFileType; // @synthesize videoExportFileType=_videoExportFileType;
+@property(copy, nonatomic) NSString *videoExportPreset; // @synthesize videoExportPreset=_videoExportPreset;
+@property(nonatomic) _Bool ensureSRGBCompatibleColorSpace; // @synthesize ensureSRGBCompatibleColorSpace=_ensureSRGBCompatibleColorSpace;
+@property(nonatomic) _Bool shouldStripLocation; // @synthesize shouldStripLocation=_shouldStripLocation;
 @property(nonatomic) _Bool dontAllowRAW; // @synthesize dontAllowRAW=_dontAllowRAW;
 @property(nonatomic) _Bool flattenSlomoVideos; // @synthesize flattenSlomoVideos=_flattenSlomoVideos;
 @property(nonatomic) _Bool treatLivePhotoAsStill; // @synthesize treatLivePhotoAsStill=_treatLivePhotoAsStill;
 @property(nonatomic) long long variant; // @synthesize variant=_variant;
+@property(nonatomic) _Bool includeAllAssetResources; // @synthesize includeAllAssetResources=_includeAllAssetResources;
+- (void).cxx_destruct;
 - (id)description;
 
 @end

@@ -27,6 +27,7 @@
 @property(nonatomic) __weak id <PXActionPerformerDelegate> actionPerformerDelegate; // @synthesize actionPerformerDelegate=_actionPerformerDelegate;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 - (void).cxx_destruct;
+- (void)invalidateBarButtonItemWithIdentifier:(id)arg1;
 - (id)barButtonItemForIdentifier:(id)arg1;
 - (id)_getCachedOrCreateNewBarButtonItemForIdentifier:(id)arg1;
 @property(readonly, nonatomic) NSArray *toolbarItemIdentifiers;

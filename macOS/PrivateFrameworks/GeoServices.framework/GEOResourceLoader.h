@@ -9,7 +9,7 @@
 #import <GeoServices/NSProgressReporting-Protocol.h>
 
 @class GEOApplicationAuditToken, GEOPowerAssertion, GEOReportedProgress, NSArray, NSMapTable, NSMutableArray, NSProgress, NSString, NSURL;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_os_log;
 
 @interface GEOResourceLoader : NSObject <NSProgressReporting>
 {
@@ -17,7 +17,7 @@
     NSString *_additionalDirectoryToConsider;
     NSMutableArray *_resourcesToLoad;
     CDUnknownBlockType _completionHandler;
-    long long _numberOfDownloadsInProgress;
+    unsigned long long _numberOfDownloadsInProgress;
     long long _numberOfCopiesInProgress;
     BOOL _canceled;
     BOOL _requiresWiFi;
@@ -34,6 +34,7 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
     GEOReportedProgress *_progress;
     NSURL *_authProxyURL;
+    NSObject<OS_os_log> *_log;
 }
 
 + (Class)resourceLoadOperationClass;
@@ -49,7 +50,8 @@
 - (void)startWithCompletionHandler:(CDUnknownBlockType)arg1 callbackQueue:(id)arg2;
 - (void)_cleanup;
 @property(readonly) NSProgress *progress;
-- (id)initWithTargetDirectory:(id)arg1 baseURL:(id)arg2 proxyURL:(id)arg3 resources:(id)arg4 maximumConcurrentLoads:(unsigned long long)arg5 additionalDirectoryToConsider:(id)arg6;
+- (id)initWithTargetDirectory:(id)arg1 baseURL:(id)arg2 proxyURL:(id)arg3 resources:(id)arg4 maximumConcurrentLoads:(unsigned long long)arg5 additionalDirectoryToConsider:(id)arg6 log:(id)arg7;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

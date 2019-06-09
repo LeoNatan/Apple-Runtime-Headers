@@ -77,6 +77,9 @@
 - (id)dateFromISO8601String:(id)arg1;
 - (_Bool)parseActivityAlerts;
 - (_Bool)addIMValueTo:(id)arg1;
+- (_Bool)parseIMAGEHASH;
+- (_Bool)parseIMAGETYPE;
+- (_Bool)parseGuardianWhitelisted;
 - (_Bool)parseIMPP;
 - (id)parseInstantMessengerProfile:(id)arg1;
 - (_Bool)parseSocialProfiles;
@@ -127,7 +130,6 @@
 @property(nonatomic) void *source;
 - (void)cleanUpCardState;
 - (_Bool)hasImportErrors;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithData:(id)arg1 watchdogTimer:(id)arg2;
 - (id)initWithData:(id)arg1;

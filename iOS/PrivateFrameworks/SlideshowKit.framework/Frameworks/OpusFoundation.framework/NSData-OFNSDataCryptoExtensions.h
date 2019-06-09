@@ -15,5 +15,9 @@
 - (id)hmacSha1Hash:(id)arg1;
 - (id)sha1Hash;
 - (id)md5Hash;
+- (id)searchHTMLContentByXPathQuery:(id)arg1;
+- (id)searchDataByXPathQuery:(struct _xmlDoc *)arg1 query:(id)arg2;
+- (id)dictionaryFromNode:(struct _xmlNode *)arg1 parentResult:(id)arg2 isParentContent:(_Bool)arg3;
+- (id)stringWithEncoding:(unsigned long long)arg1;
 @end
 

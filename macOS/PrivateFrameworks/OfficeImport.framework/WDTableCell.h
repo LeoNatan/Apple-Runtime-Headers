@@ -8,6 +8,7 @@
 
 @class NSString, WDTableCellProperties, WDTableRow, WDText;
 
+__attribute__((visibility("hidden")))
 @interface WDTableCell : NSObject
 {
     unsigned long long mIndex;

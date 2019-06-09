@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)getRemoteAutoFillAvailabilityWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getAutomaticStrongPasswordForAppWithPasswordRules:(id)arg1 confirmPasswordRules:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)invalidate;
 - (void)dealloc;

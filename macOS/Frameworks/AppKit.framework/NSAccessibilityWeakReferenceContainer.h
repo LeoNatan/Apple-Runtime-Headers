@@ -11,17 +11,19 @@
 __attribute__((visibility("hidden")))
 @interface NSAccessibilityWeakReferenceContainer : NSObject <NSCopying>
 {
-    BOOL _supportsZeroingWeakReference;
+    unsigned long long _hash;
     id _weakReference;
+    id _danglingReference;
+    BOOL _hasWeakReference;
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)strongReference;
-- (id)autoreleasedReference;
+@property(readonly) __weak id object;
 - (void)dealloc;
 - (id)initWithObject:(id)arg1;
+- (id)init;
 
 @end
 

@@ -6,10 +6,8 @@
 
 #import <ScreenSharing/SSGestureEvent.h>
 
-__attribute__((visibility("hidden")))
 @interface SSGestureSwipeEvent : SSGestureEvent
 {
-    void *mReservedForInstanceVariablesGestureSwipe;
     float _progress;
     float _positionX;
     float _positionY;

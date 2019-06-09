@@ -20,8 +20,7 @@
 @property(nonatomic) __weak id <WBSSiteMetadataProviderDelegate> providerDelegate; // @synthesize providerDelegate=_providerDelegate;
 - (void).cxx_destruct;
 - (void)webViewMetadataFetchOperation:(id)arg1 didFinishUsingWebView:(id)arg2;
-- (id)webViewMetadataFetchOperation:(id)arg1 webViewOfSize:(struct CGSize)arg2 withConfiguration:(id)arg3;
-- (id)operationForRequest:(id)arg1;
+- (void)webViewMetadataFetchOperation:(id)arg1 getWebViewOfSize:(struct CGSize)arg2 withConfiguration:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)prepareResponseForRequest:(id)arg1 allowDelayedResponse:(_Bool)arg2;
 - (id)responseForRequest:(id)arg1 willProvideUpdates:(_Bool *)arg2;
 - (_Bool)_requestIsValid:(id)arg1;

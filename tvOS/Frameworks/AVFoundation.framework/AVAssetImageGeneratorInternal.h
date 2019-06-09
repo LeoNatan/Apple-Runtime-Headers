@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     AVCustomVideoCompositorSession *customVideoCompositorSession;
     NSObject<OS_dispatch_queue> *imageRequestQueue;
     int cancelledRequestIDThreshold;
+    NSObject<OS_dispatch_queue> *generateImagesAsyncQueue;
 }
 
 @end

@@ -17,6 +17,7 @@
     _Bool _titleUsesAllCaps;
     _Bool _favorite;
     _Bool _isReordering;
+    _Bool _ppt_fullImageLoaded;
     _Bool _blurApplied;
     UIImageView *_avatarView;
     NSString *_name;
@@ -24,15 +25,11 @@
     unsigned long long _selectionStyle;
     id <PXPeopleCollectionViewCellDelegate> _delegate;
     UILabel *_nameLabel;
-    UIImageView *_selectionView;
+    UIView *_selectionView;
     PXRoundedCornerOverlayView *_roundCornerOverlay;
     UIButton *_favoriteBadge;
     UIView *_highlightOverlayView;
-    UIImage *_checkMarkImage;
-    UIImage *_favoriteOnImage;
-    UIImage *_favoriteOffImage;
-    UIImage *_favoriteOverlay;
-    UIImage *_unFavoriteOverlay;
+    UIView *_checkmarkView;
     UIView *_gradientView;
     UIImageView *_mirrorView;
     UIVisualEffectView *_blurView;
@@ -44,16 +41,13 @@
 @property(retain, nonatomic) UIVisualEffectView *blurView; // @synthesize blurView=_blurView;
 @property(retain, nonatomic) UIImageView *mirrorView; // @synthesize mirrorView=_mirrorView;
 @property(retain, nonatomic) UIView *gradientView; // @synthesize gradientView=_gradientView;
-@property(retain, nonatomic) UIImage *unFavoriteOverlay; // @synthesize unFavoriteOverlay=_unFavoriteOverlay;
-@property(retain, nonatomic) UIImage *favoriteOverlay; // @synthesize favoriteOverlay=_favoriteOverlay;
-@property(retain, nonatomic) UIImage *favoriteOffImage; // @synthesize favoriteOffImage=_favoriteOffImage;
-@property(retain, nonatomic) UIImage *favoriteOnImage; // @synthesize favoriteOnImage=_favoriteOnImage;
-@property(retain, nonatomic) UIImage *checkMarkImage; // @synthesize checkMarkImage=_checkMarkImage;
+@property(retain, nonatomic) UIView *checkmarkView; // @synthesize checkmarkView=_checkmarkView;
 @property(retain, nonatomic) UIView *highlightOverlayView; // @synthesize highlightOverlayView=_highlightOverlayView;
 @property(retain, nonatomic) UIButton *favoriteBadge; // @synthesize favoriteBadge=_favoriteBadge;
 @property(retain, nonatomic) PXRoundedCornerOverlayView *roundCornerOverlay; // @synthesize roundCornerOverlay=_roundCornerOverlay;
-@property(retain, nonatomic) UIImageView *selectionView; // @synthesize selectionView=_selectionView;
+@property(retain, nonatomic) UIView *selectionView; // @synthesize selectionView=_selectionView;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
+@property(nonatomic) _Bool ppt_fullImageLoaded; // @synthesize ppt_fullImageLoaded=_ppt_fullImageLoaded;
 @property(nonatomic) __weak id <PXPeopleCollectionViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned long long selectionStyle; // @synthesize selectionStyle=_selectionStyle;
 @property(nonatomic, setter=setReordering:) _Bool isReordering; // @synthesize isReordering=_isReordering;
@@ -63,8 +57,6 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) UIImageView *avatarView; // @synthesize avatarView=_avatarView;
 - (void).cxx_destruct;
-- (struct UIColor *)_placeHolderColor;
-- (void)contentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)_stretchableGradientImageWithSize:(struct CGSize)arg1 scale:(double)arg2 gradientColor:(id)arg3;
 - (void)_updateTitleAndFavoriteBadgeForLayoutChange;
 - (void)_updateType;
@@ -78,7 +70,6 @@
 - (void)prepareForReuse;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

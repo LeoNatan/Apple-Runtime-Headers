@@ -13,6 +13,7 @@
 @interface _MRAVOutputDeviceDescriptorProtobuf : PBCodable <NSCopying>
 {
     float _batteryLevel;
+    NSString *_bluetoothID;
     int _deviceSubType;
     int _deviceType;
     NSString *_firmwareVersion;
@@ -80,6 +81,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *bluetoothID; // @synthesize bluetoothID=_bluetoothID;
 @property(nonatomic) int volumeCapabilities; // @synthesize volumeCapabilities=_volumeCapabilities;
 @property(nonatomic) _Bool isAddedToHomeKit; // @synthesize isAddedToHomeKit=_isAddedToHomeKit;
 @property(nonatomic) _Bool parentGroupContainsDiscoverableLeader; // @synthesize parentGroupContainsDiscoverableLeader=_parentGroupContainsDiscoverableLeader;
@@ -125,6 +127,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasBluetoothID;
 @property(nonatomic) _Bool hasVolumeCapabilities;
 @property(nonatomic) _Bool hasIsAddedToHomeKit;
 @property(nonatomic) _Bool hasParentGroupContainsDiscoverableLeader;

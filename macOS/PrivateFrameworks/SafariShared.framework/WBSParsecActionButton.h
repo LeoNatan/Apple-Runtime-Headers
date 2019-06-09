@@ -47,6 +47,7 @@
 @property(readonly, copy, nonatomic) NSString *type; // @synthesize type=_type;
 - (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isForAppleMusicResult) BOOL forAppleMusicResult;
+- (id)initWithSFActionItem:(id)arg1;
 - (id)initWithDictionary:(id)arg1 mediaKind:(id)arg2;
 
 @end

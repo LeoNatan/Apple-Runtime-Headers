@@ -19,7 +19,7 @@
 + (id)getAvailableTaskingRoutings;
 + (id)getInstalledTaskIds;
 + (id)applyTasking:(id)arg1 taskId:(id)arg2 fromBlob:(id)arg3;
-+ (void)proxyTasking:(id)arg1 taskId:(id)arg2 usingConfig:(id)arg3 fromBlob:(id)arg4;
++ (id)proxyTasking:(id)arg1 taskId:(id)arg2 usingConfig:(id)arg3 fromBlob:(id)arg4;
 + (void)initialize;
 
 @end

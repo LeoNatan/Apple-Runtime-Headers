@@ -12,11 +12,11 @@
 
 @interface SLURLPreviewGenerator : NSObject <UIWebViewDelegate>
 {
-    UIWebView *_webView;
     CDUnknownBlockType _completion;
+    UIWebView *_webView;
 }
 
-@property(readonly) UIWebView *webView; // @synthesize webView=_webView;
+@property(retain) UIWebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
 - (void)uiWebView:(id)arg1 decidePolicyForGeolocationRequestFromOrigin:(id)arg2 frame:(id)arg3 listener:(id)arg4;
 - (void)webView:(id)arg1 didFailLoadWithError:(id)arg2;

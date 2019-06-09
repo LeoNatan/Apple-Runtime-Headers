@@ -6,8 +6,6 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate;
-
 __attribute__((visibility("hidden")))
 @interface PDFTileSurface : NSObject
 {
@@ -15,11 +13,11 @@ __attribute__((visibility("hidden")))
     int pageNumber;
     int tileSize;
     int type;
+    struct __IOSurface *ioSurfaceRef;
     struct CGImage *cgImageRef;
-    NSDate *recycledDate;
 }
 
-- (void).cxx_destruct;
+- (void)releaseSurface;
 
 @end
 

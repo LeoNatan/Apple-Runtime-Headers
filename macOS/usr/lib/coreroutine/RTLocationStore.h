@@ -6,30 +6,33 @@
 
 #import <coreroutine/RTStore.h>
 
-@class NSMutableArray, NSObject;
-@protocol OS_dispatch_source;
+@class NSMutableArray, RTTimer, RTTimerManager;
 
 @interface RTLocationStore : RTStore
 {
-    BOOL _flushTimerSuspended;
+    RTTimer *_flushTimer;
+    RTTimerManager *_timerManager;
     NSMutableArray *_locations;
-    NSObject<OS_dispatch_source> *_flushTimer;
 }
 
-@property(readonly) NSObject<OS_dispatch_source> *flushTimer; // @synthesize flushTimer=_flushTimer;
 - (void).cxx_destruct;
-- (void)fetchMetricsFromDate:(id)arg1 toDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)_fetchMetricsFromDate:(id)arg1 toDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)fetchMetricsWithOptions:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_fetchMetricsWithOptions:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)removeLocationsPredating:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_removeLocationsPredating:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)fetchLocationsFromDate:(id)arg1 toDate:(id)arg2 uncertainty:(double)arg3 limit:(unsigned long long)arg4 handler:(CDUnknownBlockType)arg5;
-- (void)_fetchLocationsFromDate:(id)arg1 toDate:(id)arg2 uncertainty:(double)arg3 limit:(unsigned long long)arg4 handler:(CDUnknownBlockType)arg5;
+- (void)fetchStoredLocationsWithContext:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_fetchStoredLocationsWithContext:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)fetchStoredLocationsWithOptions:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_fetchStoredLocationsWithOptions:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)fetchStoredLocationsCountFromDate:(id)arg1 toDate:(id)arg2 uncertainty:(double)arg3 limit:(unsigned long long)arg4 handler:(CDUnknownBlockType)arg5;
+- (void)_fetchStoredLocationsCountFromDate:(id)arg1 toDate:(id)arg2 uncertainty:(double)arg3 limit:(unsigned long long)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)storeLocations:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_storeLocations:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_flushCachedLocations:(CDUnknownBlockType)arg1;
-- (void)_suspendFlushTimer;
-- (void)_resumeFlushTimer;
+- (void)_flushCachedLocationsWithHandler:(CDUnknownBlockType)arg1;
+- (void)_invalidateFlushTimer;
+- (void)_startFlushTimer;
 - (void)_shutdown;
+- (id)initWithPersistenceManager:(id)arg1 timerManager:(id)arg2;
 - (id)initWithPersistenceManager:(id)arg1;
 - (id)init;
 

@@ -16,15 +16,19 @@
 }
 
 + (unsigned long long)defaultPriority;
++ (void)configureForRunningOnANEIfPossibleWithRequest:(id)arg1;
++ (_Bool)isANEDeviceAvailable;
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned long long effectivePriority; // @synthesize effectivePriority=_effectivePriority;
 @property(nonatomic) unsigned long long priority; // @synthesize priority=_priority;
 @property(nonatomic) double minimumConfidence; // @synthesize minimumConfidence=_minimumConfidence;
 - (id)_diagnosticNameForRequests:(id)arg1 diagnostics:(id)arg2;
+- (_Bool)evaluateRequests:(id)arg1 withContext:(id)arg2 requestHandlerOptions:(id)arg3 error:(id *)arg4;
 - (_Bool)shouldEvaluate:(id)arg1;
 - (void)evaluate:(id)arg1;
 - (void)resetEffectivePriority;
 - (void)boostEffectivePriority;
+- (_Bool)validateVisionKitSoftLinkSymbols;
 - (void)nodeInitialize;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

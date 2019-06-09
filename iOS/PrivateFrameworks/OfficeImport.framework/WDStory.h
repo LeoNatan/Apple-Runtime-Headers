@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     _Bool mOle;
 }
 
+- (void).cxx_destruct;
 - (_Bool)isOle;
 - (void)setOle:(_Bool)arg1;
 - (id)text;
 - (id)head;
-- (void)dealloc;
 - (id)initWithHead:(id)arg1;
 
 @end

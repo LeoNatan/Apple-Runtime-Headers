@@ -9,7 +9,7 @@
 #import <PhotosUICore/PXAutoScrollerDelegate-Protocol.h>
 #import <PhotosUICore/PXSectionedDataSourceManagerObserver-Protocol.h>
 
-@class NSString, PXIndexPathSet, PXSectionedSelectionManager, PXUIAutoScroller, UIGestureRecognizer, UIScrollView;
+@class NSString, PXIndexPathSet, PXSectionedSelectionManager, PXUIAutoScroller, UIMultiSelectInteraction, UIScrollView;
 @protocol PXSwipeSelectionManagerDelegate;
 
 @interface PXSwipeSelectionManager : NSObject <PXAutoScrollerDelegate, PXSectionedDataSourceManagerObserver>
@@ -20,12 +20,15 @@
         _Bool respondsToItemIndexPathClosestLeadingLocation;
         _Bool respondsToItemIndexPathClosestAboveLocation;
         _Bool respondsToShouldSelectItemAtIndexPath;
+        _Bool respondsToShouldBeginSelectionAtLocation;
+        _Bool respondsToShouldAutomaticallyTransitionToMultiSelectModeAtPoint;
+        _Bool respondsToAutomaticallyTransitionToMultiSelectMode;
     } _delegateFlags;
     id <PXSwipeSelectionManagerDelegate> _delegate;
     unsigned long long _state;
     UIScrollView *_scrollView;
     PXSectionedSelectionManager *_selectionManager;
-    UIGestureRecognizer *_swipeGestureRecognizer;
+    UIMultiSelectInteraction *_multiSelectInteraction;
     unsigned long long __currentDataSourceIdentifier;
     PXIndexPathSet *__selectedIndexPathsBeforeSwipe;
     id __pausingChangesToken;
@@ -40,7 +43,7 @@
 @property(nonatomic, setter=_setCurrentIndexPath:) struct PXSimpleIndexPath _currentIndexPath; // @synthesize _currentIndexPath=__currentIndexPath;
 @property(nonatomic, setter=_setStartingIndexPath:) struct PXSimpleIndexPath _startingIndexPath; // @synthesize _startingIndexPath=__startingIndexPath;
 @property(nonatomic, setter=_setCurrentDataSourceIdentifier:) unsigned long long _currentDataSourceIdentifier; // @synthesize _currentDataSourceIdentifier=__currentDataSourceIdentifier;
-@property(readonly, nonatomic) UIGestureRecognizer *swipeGestureRecognizer; // @synthesize swipeGestureRecognizer=_swipeGestureRecognizer;
+@property(readonly, nonatomic) UIMultiSelectInteraction *multiSelectInteraction; // @synthesize multiSelectInteraction=_multiSelectInteraction;
 @property(readonly, nonatomic) PXSectionedSelectionManager *selectionManager; // @synthesize selectionManager=_selectionManager;
 @property(readonly, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(nonatomic, setter=_setState:) unsigned long long state; // @synthesize state=_state;
@@ -49,18 +52,15 @@
 - (void)_updateWithDataSource:(id)arg1 changeHistory:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)sectionedDataSourceManagerInterestingObjectReferences:(id)arg1;
-- (void)autoScroller:(id)arg1 didAutoscrollWithTimestamp:(double)arg2;
 - (void)_updateSelectedIndexPaths;
 - (void)_invalidateSelectedIndexPaths;
 - (void)_endSelection;
 - (void)_updateSelectionWithHitIndexPath:(struct PXSimpleIndexPath)arg1 leadingClosestIndexPath:(struct PXSimpleIndexPath)arg2 aboveClosestIndexPath:(struct PXSimpleIndexPath)arg3;
 - (void)_beginSelectionFromIndexPath:(struct PXSimpleIndexPath)arg1;
-- (void)_handleSwipeSelectionGesture:(id)arg1;
 - (_Bool)_isSelecting;
 - (struct PXSimpleIndexPath)_itemIndexPathClosestAboveLocation:(struct CGPoint)arg1;
 - (struct PXSimpleIndexPath)_itemIndexPathClosestLeadingLocation:(struct CGPoint)arg1;
 - (struct PXSimpleIndexPath)_itemIndexPathAtLocation:(struct CGPoint)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)initWithSelectionManager:(id)arg1 scrollView:(id)arg2;
 

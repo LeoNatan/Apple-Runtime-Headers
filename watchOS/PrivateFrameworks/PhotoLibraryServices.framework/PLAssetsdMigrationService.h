@@ -4,21 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PhotoLibraryServices/PLAbstractLibraryServicesManagerService.h>
 
 #import <PhotoLibraryServices/PLAssetsdMigrationServiceProtocol-Protocol.h>
 
-@class NSString;
+@class NSObject, NSString;
+@protocol OS_dispatch_queue;
 
-@interface PLAssetsdMigrationService : NSObject <PLAssetsdMigrationServiceProtocol>
+@interface PLAssetsdMigrationService : PLAbstractLibraryServicesManagerService <PLAssetsdMigrationServiceProtocol>
 {
+    NSObject<OS_dispatch_queue> *_backgroundQueue;
 }
 
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *backgroundQueue; // @synthesize backgroundQueue=_backgroundQueue;
+- (void).cxx_destruct;
+- (void)moveiPhotoLibraryMediaWithReply:(CDUnknownBlockType)arg1;
+- (void)dataMigrationWillFinishWithReply:(CDUnknownBlockType)arg1;
+- (void)cleanupModelForDataMigrationForRestoreType:(int)arg1 reply:(CDUnknownBlockType)arg2;
+- (id)initWithLibraryServicesManager:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
+
 @end
 

@@ -17,8 +17,8 @@
 }
 
 + (id)rangeSpanningEntireContentOfWebArea:(id)arg1;
-+ (id)rangeWithMarkerRange:(const struct __AXTextMarkerRange *)arg1 uiElement:(id)arg2;
-+ (id)rangeWithStartMarker:(const struct __AXTextMarker *)arg1 endMarker:(const struct __AXTextMarker *)arg2 uiElement:(id)arg3;
++ (id)rangeWithMarkerRange:(struct __AXTextMarkerRange *)arg1 uiElement:(id)arg2;
++ (id)rangeWithStartMarker:(struct __AXTextMarker *)arg1 endMarker:(struct __AXTextMarker *)arg2 uiElement:(id)arg3;
 + (id)rangeWithNSRange:(struct _NSRange)arg1;
 + (id)rangeWithLocation:(unsigned long long)arg1 length:(unsigned long long)arg2;
 + (id)rangeWithStartPosition:(id)arg1 endPosition:(id)arg2;
@@ -27,6 +27,7 @@
 @property(readonly, nonatomic) AXFTextPosition *start; // @synthesize start=_start;
 - (void).cxx_destruct;
 - (BOOL)_isCompatibleWithRange:(id)arg1;
+- (id)_initInvalidRange;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToAXFTextRange:(id)arg1;

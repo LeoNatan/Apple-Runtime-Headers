@@ -6,35 +6,47 @@
 
 #import <objc/NSObject.h>
 
-@class HapticClient, NSArray;
+@class HapticClient, NSArray, NSMutableArray;
 
 @interface AVHapticPlayer : NSObject
 {
     HapticClient *_client;
     _Bool _resourcesAllocated;
     unsigned int _behavior;
-    NSArray *_channelArray;
+    NSMutableArray *_channelArray;
     CDUnknownBlockType _connectionErrorHandler;
+    CDUnknownBlockType _stopRunningHandler;
 }
 
 + (_Bool)isSupported;
 @property(nonatomic) unsigned int behavior; // @synthesize behavior=_behavior;
 @property(readonly) _Bool resourcesAllocated; // @synthesize resourcesAllocated=_resourcesAllocated;
 @property(readonly) HapticClient *client; // @synthesize client=_client;
+@property(copy) CDUnknownBlockType stopRunningHandler; // @synthesize stopRunningHandler=_stopRunningHandler;
 - (void).cxx_destruct;
-- (_Bool)detachHapticSequence:(unsigned int)arg1 atTime:(double)arg2;
-- (_Bool)setSequenceParam:(unsigned int)arg1 atTime:(double)arg2 channel:(unsigned int)arg3 param:(unsigned int)arg4 value:(float)arg5 error:(id *)arg6;
+- (void)detachHapticSequence:(unsigned int)arg1;
+- (_Bool)clearSequenceEvents:(unsigned int)arg1 atTime:(double)arg2;
+- (_Bool)setSequenceChannelParam:(unsigned int)arg1 atTime:(double)arg2 channel:(unsigned int)arg3 param:(unsigned int)arg4 value:(float)arg5 error:(id *)arg6;
+- (_Bool)seekHapticSequence:(unsigned int)arg1 toTime:(double)arg2;
+- (_Bool)resumeHapticSequence:(unsigned int)arg1 atTime:(double)arg2;
+- (_Bool)pauseHapticSequence:(unsigned int)arg1 atTime:(double)arg2;
 - (_Bool)stopHapticSequence:(unsigned int)arg1 atTime:(double)arg2;
 - (_Bool)playHapticSequence:(unsigned int)arg1 atTime:(double)arg2 offset:(double)arg3;
 - (_Bool)finishWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)stopRunningWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)stopRunning;
 - (void)startRunningWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)stopPrewarm;
 - (void)prewarmWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (_Bool)setSequencePlaybackRate:(unsigned int)arg1 rate:(float)arg2 error:(id *)arg3;
+- (_Bool)setSequenceLoopLength:(unsigned int)arg1 length:(float)arg2 error:(id *)arg3;
 - (_Bool)enableSequenceLooping:(unsigned int)arg1 enable:(_Bool)arg2 error:(id *)arg3;
 - (_Bool)prepareHapticSequence:(unsigned int)arg1 error:(id *)arg2;
-- (_Bool)loadHapticPattern:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (_Bool)loadHapticSequence:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (_Bool)loadAndPrepareHapticSequenceFromVibePattern:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (_Bool)loadAndPrepareHapticSequenceFromEvents:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (_Bool)loadAndPrepareHapticSequenceFromData:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (_Bool)removeCustomAudioEvent:(unsigned int)arg1 reply:(CDUnknownBlockType)arg2;
+- (_Bool)createCustomAudioEvent:(id)arg1 format:(id)arg2 frames:(unsigned int)arg3 options:(id)arg4 reply:(CDUnknownBlockType)arg5;
 - (_Bool)loadHapticEvent:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)deallocateRenderResources;
 - (void)allocateRenderResourcesWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -44,10 +56,15 @@
 @property(readonly) double hapticLatency;
 @property(readonly) double currentMediaTime;
 @property(readonly, nonatomic) NSArray *channels;
+- (_Bool)removeChannel:(id)arg1 error:(id *)arg2;
+- (id)addChannel:(id *)arg1;
 - (_Bool)setNumberOfChannels:(unsigned int)arg1 error:(id *)arg2;
 - (unsigned int)getBehavior;
 - (void)dealloc;
+- (id)initWithSessionID:(unsigned int)arg1 sessionIsShared:(_Bool)arg2 error:(id *)arg3;
+- (id)initWithSessionID:(unsigned int)arg1 error:(id *)arg2;
 - (id)initAndReturnError:(id *)arg1;
+- (_Bool)doInitWithSessionID:(unsigned int)arg1 isShared:(_Bool)arg2 error:(id *)arg3;
 
 @end
 

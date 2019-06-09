@@ -15,7 +15,7 @@
 - (id)hd_epochDatestamp;
 - (id)hd_datestamp;
 - (id)hd_sourceID;
-- (long long)hd_recordID;
+- (long long)hd_compare:(id)arg1;
 - (_Bool)hd_hasWorkout;
 
 // Remaining properties

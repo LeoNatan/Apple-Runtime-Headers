@@ -6,50 +6,41 @@
 
 #import <objc/NSObject.h>
 
-#import <SecurityInterface/AuthenticationHintsDelegate-Protocol.h>
 #import <SecurityInterface/LAUIAuthenticationSheetDelegate-Protocol.h>
 
-@class LAUIAuthenticationSheetController, NSData, NSMutableArray, NSMutableDictionary, NSString, SFAuthorization;
-@protocol AuthenticationHintsProvider;
+@class LAUIAuthenticationSheetController, NSString;
 
 __attribute__((visibility("hidden")))
-@interface SheetSupport : NSObject <AuthenticationHintsDelegate, LAUIAuthenticationSheetDelegate>
+@interface SheetSupport : NSObject <LAUIAuthenticationSheetDelegate>
 {
-    id <AuthenticationHintsProvider> _watchProvider;
-    id <AuthenticationHintsProvider> _smartCardProvider;
     id _laContext;
     LAUIAuthenticationSheetController *_sheetController;
-    SFAuthorization *_sfAuthorization;
-    CDStruct_166d2db6 *_rights;
+    struct AuthorizationOpaqueRef *_authorization;
+    const CDStruct_166d2db6 *_rights;
+    CDStruct_166d2db6 *_authorizedRights;
+    CDStruct_166d2db6 *_environment;
     unsigned int _flags;
-    NSData *_pamToken;
-    NSString *_pamUsername;
-    NSString *_pamService;
-    NSString *_originalUsername;
-    NSMutableDictionary *_scLongNames;
-    NSMutableArray *_scUsers;
-    long long _authType;
     int _sheetResult;
+    BOOL _checkRights;
+    unsigned long long _originalEnvironmentItemsCount;
+    long long _authType;
 }
 
-+ (id)_longNameForUser:(id)arg1;
++ (unsigned char)_isEnvironmentItemBanned:(CDStruct_53ddf7ec *)arg1;
 + (BOOL)_legacySmartcard;
 + (Class)_lauiClassFromString:(id)arg1;
 + (void *)_loadLAUI;
 + (Class)_saClassFromString:(id)arg1;
 + (void *)_loadSystemAdministrationFramework;
 - (long long)unverifiedDataEntered:(unsigned int)arg1;
-- (void)event:(long long)arg1 eventHints:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (id)_shortNameForUser:(id)arg1;
-- (id)_createProviderWithServiceName:(id)arg1 options:(unsigned long long)arg2;
 - (void)_finishSheet;
-- (void)_freeInternals;
-- (BOOL)_shouldUseTouchId;
+- (BOOL)_shouldAllowPasswordless;
 - (int)_processSheetCredentials:(unsigned int)arg1 providedUid:(int)arg2;
-- (int)doSheetAuthorization:(unsigned int)arg1 forWindow:(id)arg2;
+- (int)doSheetAuthorization:(unsigned int)arg1 environment:(const CDStruct_166d2db6 *)arg2 forWindow:(id)arg3 authorizedRights:(struct **)arg4;
 - (BOOL)shouldUseSheet;
+- (void)clearAuthorizedRights;
 - (void)dealloc;
-- (id)initWithAuthorization:(id)arg1 andRights:(CDStruct_166d2db6 *)arg2;
+- (id)initWithAuthorization:(struct AuthorizationOpaqueRef *)arg1 andRights:(const CDStruct_166d2db6 *)arg2 checkRights:(BOOL)arg3;
 - (id)init;
 
 // Remaining properties

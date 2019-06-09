@@ -10,6 +10,7 @@
 
 @class NSString, SKUIReportAConcernConfiguration, SKUIReportAConcernReasonDataSource, UITableView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReportAConcernReasonViewController : UIViewController <UITableViewDelegate>
 {
     CDUnknownBlockType _completion;

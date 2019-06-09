@@ -5,37 +5,26 @@
 //
 
 #import <Photos/NSObject-Protocol.h>
+#import <Photos/_PLThumbnailLoadingAsset-Protocol.h>
 
-@class NSManagedObjectID, NSString, NSURL, PLManagedAsset, PLPhotoLibrary;
+@class NSString, NSURL, PLManagedAsset, PLPhotoLibrary;
 
-@protocol _PLImageLoadingAsset <NSObject>
+@protocol _PLImageLoadingAsset <_PLThumbnailLoadingAsset, NSObject>
 - (unsigned long long)localResourcesState;
 - (_Bool)isOriginalSRGB;
 - (void)generateLargeThumbnailFileIfNecessary;
 - (_Bool)isTimelapsePlaceholder;
 - (PLManagedAsset *)managedAssetForPhotoLibrary:(PLPhotoLibrary *)arg1;
 - (double)duration;
-- (long long)cloudPlaceholderKind;
 - (_Bool)isCloudPlaceholder;
 - (_Bool)isCloudPhotoLibraryAsset;
 - (long long)cloudSharedAssetPlaceholderKind;
 - (_Bool)isCloudSharedAsset;
 - (_Bool)isInFlight;
-- (NSURL *)fileURLForFullsizeRenderImage;
-- (NSURL *)fileURLForFullsizeRenderVideo;
-- (NSString *)pathForSRGBLargeThumbnailFile;
-- (NSString *)pathForVideoPreviewFile;
-- (NSString *)pathForMediumThumbnailFile;
-- (NSString *)pathForLargeThumbnailFile;
-- (NSString *)pathForNonAdjustedFullsizeImageFile;
-- (NSString *)pathForFullsizeRenderImageFile;
 - (NSString *)pathForAdjustmentDataFile;
 - (NSString *)pathForAdjustmentFile;
-- (NSString *)pathForPenultimateFullsizeRenderVideoFile;
-- (NSString *)pathForPenultimateFullsizeRenderImageFile;
-- (NSString *)pathForSubstandardFullsizeRenderImageFile;
 - (NSString *)pathForOriginalFile;
-- (NSString *)originalFileName;
+- (NSString *)originalFilename;
 - (int)orientation;
 - (_Bool)isStreamedVideo;
 - (_Bool)isPartOfBurst;
@@ -45,22 +34,18 @@
 - (_Bool)isLoopingVideo;
 - (_Bool)isVideo;
 - (NSString *)uniformTypeIdentifier;
-- (NSManagedObjectID *)objectID;
 - (struct CGSize)originalImageSize;
 - (struct CGSize)imageSize;
 - (NSString *)thumbnailIdentifier;
-- (_Bool)complete;
 - (short)kindSubtype;
 - (short)kind;
 - (short)savedAssetType;
 - (NSString *)uuid;
-- (unsigned long long)effectiveThumbnailIndex;
 - (NSString *)debugFilename;
 - (_Bool)hasAdjustments;
 - (_Bool)hasLegacyAdjustments;
 - (long long)originalImageOrientation;
 - (NSURL *)assetsLibraryURL;
 - (double)aspectRatio;
-- (PLPhotoLibrary *)pl_photoLibrary;
 @end
 

@@ -13,9 +13,12 @@
 
 @interface FBSSceneSpecification : NSObject <NSCopying, BSDescriptionProviding>
 {
+    BOOL _forLocalSynchronousSceneClientProvider;
 }
 
 + (id)specification;
++ (void)initialize;
++ (CDUnknownFunctionPointerType)_swizzleMethodOnClass:(Class)arg1 originalSelector:(SEL)arg2 block:(id)arg3;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
@@ -24,6 +27,7 @@
 - (BOOL)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)_copyForLocalSynchronousSceneClientProvider;
 - (BOOL)isValid;
 @property(readonly, nonatomic) Class transitionContextClass;
 @property(readonly, nonatomic) Class clientSettingsClass;

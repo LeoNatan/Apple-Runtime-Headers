@@ -8,6 +8,7 @@
 
 @class OADDrawableCategoryDefaults;
 
+__attribute__((visibility("hidden")))
 @interface OADDrawableDefaults : NSObject
 {
     OADDrawableCategoryDefaults *mShapeDefaults;

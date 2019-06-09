@@ -8,6 +8,7 @@
 
 @class SKUIShelfViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIShelfPageComponent : SKUIPageComponent
 {
 }

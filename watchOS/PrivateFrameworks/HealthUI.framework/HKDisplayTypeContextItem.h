@@ -11,7 +11,6 @@
 @interface HKDisplayTypeContextItem : NSObject
 {
     _Bool _infoHidden;
-    int _heartType;
     NSString *_title;
     NSString *_unit;
     NSString *_value;
@@ -29,7 +28,6 @@
 @property(copy, nonatomic) NSString *unit; // @synthesize unit=_unit;
 @property(nonatomic) _Bool infoHidden; // @synthesize infoHidden=_infoHidden;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
-@property(nonatomic) int heartType; // @synthesize heartType=_heartType;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 

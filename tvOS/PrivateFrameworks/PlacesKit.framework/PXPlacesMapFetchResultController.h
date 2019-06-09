@@ -32,6 +32,7 @@
 @property(nonatomic) unsigned long long contentMode; // @synthesize contentMode=_contentMode;
 @property(retain, nonatomic) id <PXPlacesMapControllerAccess> mapViewController; // @synthesize mapViewController=_mapViewController;
 - (void).cxx_destruct;
+- (void)focusOnMapRect:(CDStruct_02837cd9)arg1 animated:(_Bool)arg2;
 - (void)focusOnGeotaggablesAnimated:(_Bool)arg1;
 - (void)focusOnProvidedAssetsImmediately;
 - (void)focusOnProvidedAssetsAnimated:(_Bool)arg1;

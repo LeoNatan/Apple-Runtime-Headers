@@ -12,6 +12,7 @@
 }
 
 + (void)dummySelector:(id)arg1;
++ (_Bool)isAlwaysOn;
 + (_Bool)isAvailable;
 - (void)updateAggregateDictionaryPrivate;
 - (id)stringForOrientation:(int)arg1;
@@ -22,6 +23,8 @@
 - (void)signalAndReleaseSemaphoreIfNecessaryPrivate;
 - (void)stopDeviceOrientationUpdatesPrivate;
 - (void)startDeviceOrientationUpdatesPrivateToQueue:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
+- (void)stop;
+- (void)start;
 - (void)stopDeviceOrientationUpdates;
 - (void)startDeviceOrientationUpdatesToQueue:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (_Bool)isDeviceOrientationActive;

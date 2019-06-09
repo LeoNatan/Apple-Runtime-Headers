@@ -8,7 +8,7 @@
 
 #import <IDSFoundation/IDSLink-Protocol.h>
 
-@class NSString;
+@class NSIndexSet, NSString;
 @protocol IDSLinkDelegate;
 
 @interface IDSTCPLink : NSObject <IDSLink>
@@ -25,8 +25,12 @@
     id <IDSLinkDelegate> _delegate;
     id <IDSLinkDelegate> _alternateDelegate;
     unsigned long long _state;
+    NSIndexSet *_cellularInterfaceIndices;
+    BOOL _wifiAssistEnabled;
 }
 
+@property(nonatomic) BOOL wifiAssistEnabled; // @synthesize wifiAssistEnabled=_wifiAssistEnabled;
+@property(retain, nonatomic) NSIndexSet *cellularInterfaceIndices; // @synthesize cellularInterfaceIndices=_cellularInterfaceIndices;
 @property __weak id <IDSLinkDelegate> alternateDelegate; // @synthesize alternateDelegate=_alternateDelegate;
 @property(readonly) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) BOOL isSSL; // @synthesize isSSL=_isSSL;
@@ -34,14 +38,15 @@
 @property(retain) NSString *deviceUniqueID; // @synthesize deviceUniqueID=_deviceUniqueID;
 @property(retain) NSString *cbuuid; // @synthesize cbuuid=_cbuuid;
 - (void).cxx_destruct;
+- (void)setWiFiAssistState:(BOOL)arg1;
 - (id)generateLinkReport:(double)arg1 isCurrentLink:(BOOL)arg2;
 - (unsigned long long)sendPacketBufferArray:(CDStruct_183601bc **)arg1 arraySize:(int)arg2 toDeviceUniqueID:(id)arg3 cbuuid:(id)arg4;
-- (unsigned long long)sendPacketBuffer:(CDStruct_18fdc6f4 *)arg1 toDeviceUniqueID:(id)arg2 cbuuid:(id)arg3;
-- (void)processIncomingPacket:(CDStruct_18fdc6f4 *)arg1;
+- (unsigned long long)sendPacketBuffer:(CDStruct_4c86a2e2 *)arg1 toDeviceUniqueID:(id)arg2 cbuuid:(id)arg3;
+- (void)processIncomingPacket:(CDStruct_4c86a2e2 *)arg1;
 - (BOOL)disconnect:(struct sockaddr_in *)arg1 remoteAddress:(struct sockaddr_in *)arg2;
-- (BOOL)connect:(int)arg1 localAddress:(struct sockaddr_in *)arg2 portRange:(unsigned short)arg3 remoteAddress:(struct sockaddr_in *)arg4 clientUUID:(unsigned char [16])arg5 completionHandler:(CDUnknownBlockType)arg6;
-- (struct IDSTCPConnection_ *)_getIDSTCPConnection:(CDStruct_18fdc6f4 *)arg1;
-- (long long)getPacketLength:(CDStruct_18fdc6f4 *)arg1 isChannelData:(char *)arg2;
+- (BOOL)connect:(int)arg1 localAddress:(struct sockaddr *)arg2 portRange:(unsigned short)arg3 remoteAddress:(struct sockaddr *)arg4 clientUUID:(unsigned char [16])arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (struct IDSTCPConnection_ *)_getIDSTCPConnection:(CDStruct_4c86a2e2 *)arg1;
+- (long long)getPacketLength:(CDStruct_4c86a2e2 *)arg1 isChannelData:(char *)arg2;
 - (id)copyLinkStatsDict;
 @property(readonly, getter=linkTypeString) NSString *linkTypeString;
 @property(readonly) unsigned long long headerOverhead;

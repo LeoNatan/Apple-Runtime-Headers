@@ -55,6 +55,7 @@
 - (void)setProgress:(float)arg1 animated:(_Bool)arg2;
 - (void)_setProgress:(float)arg1;
 - (void)tintColorDidChange;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)layoutSubviews;
 - (float)_shadowOpacityForUserInterfaceStyle:(int)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

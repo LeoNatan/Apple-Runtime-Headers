@@ -42,7 +42,7 @@
 - (_Bool)_queue_applicationIsRemoved:(id)arg1;
 - (_Bool)applicationIsRemoved:(id)arg1;
 - (void)dealloc;
-- (id)init;
+- (id)_init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

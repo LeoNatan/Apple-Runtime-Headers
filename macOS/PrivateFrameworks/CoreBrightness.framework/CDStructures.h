@@ -162,7 +162,9 @@ typedef struct {
         float _field1;
         float _field2;
     } _field5;
-} CDStruct_7bd4ac66;
+    int _field6;
+    double _field7;
+} CDStruct_0384f68a;
 
 typedef struct {
     CDStruct_c688133d _field1;
@@ -208,7 +210,8 @@ typedef struct {
     int mode;
     CDStruct_6cee55f3 schedule;
     unsigned long long disableFlags;
-} CDStruct_768fa5c4;
+    char available;
+} CDStruct_d991f265;
 
 // Ambiguous groups
 typedef struct {

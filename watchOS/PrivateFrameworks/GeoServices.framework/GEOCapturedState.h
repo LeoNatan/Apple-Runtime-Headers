@@ -22,7 +22,6 @@
 @property(readonly) NSData *stateData;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-@property(readonly) const char *decoderType;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

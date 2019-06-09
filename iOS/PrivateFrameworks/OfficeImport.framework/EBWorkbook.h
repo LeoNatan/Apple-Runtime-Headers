@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (ChVector_be6372b9 *)createSheetNamesFromWorkbook:(id)arg1;
++ (ChVector_cc6fdd32 *)createSheetNamesFromWorkbook:(id)arg1;
 + (id)readWithState:(id)arg1 reader:(id)arg2;
 + (int)xlSheetTypeEnumFromEDSheet:(id)arg1;
 + (void)setupProcessors:(id)arg1;

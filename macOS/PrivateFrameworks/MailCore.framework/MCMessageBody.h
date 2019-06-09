@@ -21,7 +21,6 @@
     unsigned long long _originalEncoding;
     NSString *_mimeType;
     NSURL *_baseURL;
-    NSArray *_stationeryBackgroundImageURLs;
     NSArray *_signers;
     NSError *_smimeError;
 }
@@ -33,7 +32,6 @@
 @property(nonatomic) BOOL isEncrypted; // @synthesize isEncrypted=_isEncrypted;
 @property(copy, nonatomic) NSArray *signers; // @synthesize signers=_signers;
 @property(nonatomic) BOOL isPlainText; // @synthesize isPlainText=_isPlainText;
-@property(copy, nonatomic) NSArray *stationeryBackgroundImageURLs; // @synthesize stationeryBackgroundImageURLs=_stationeryBackgroundImageURLs;
 @property(retain, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
 @property(copy, nonatomic) NSString *mimeType; // @synthesize mimeType=_mimeType;
 @property(nonatomic) unsigned long long originalEncoding; // @synthesize originalEncoding=_originalEncoding;

@@ -9,6 +9,7 @@
 @class UIScrollView, UIViewController;
 @protocol SKUIScrollingSegmentedControllerItemContextDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIScrollingSegmentedControllerItemContext : NSObject
 {
     struct UIEdgeInsets _appliedContentInsetsAdjustment;

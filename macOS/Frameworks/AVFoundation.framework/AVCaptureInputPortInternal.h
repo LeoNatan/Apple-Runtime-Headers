@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class AVCaptureInput, NSString;
+@class AVWeakReference, NSString;
 
 __attribute__((visibility("hidden")))
 @interface AVCaptureInputPortInternal : NSObject
 {
-    AVCaptureInput *input;
+    AVWeakReference *inputWeakReference;
     NSString *mediaType;
     struct opaqueCMFormatDescription *formatDescription;
     BOOL enabled;
@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     BOOL mixerIsReadOnly;
     struct OpaqueCMClock *clock;
     void *callbackContextToken;
+    struct os_unfair_lock_s internalLock;
 }
 
 @end

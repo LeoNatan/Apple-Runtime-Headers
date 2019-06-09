@@ -8,7 +8,6 @@
 
 @class MNAnnouncementPlanEvent;
 
-__attribute__((visibility("hidden")))
 @interface MNAnnouncementConflict : NSObject
 {
     _Bool _announcementsAreSimilar;

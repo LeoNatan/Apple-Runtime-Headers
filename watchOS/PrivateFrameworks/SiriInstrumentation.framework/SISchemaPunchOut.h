@@ -6,33 +6,37 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaPunchOut-Protocol.h>
 
-@class NSString, SISchemaViewContainer;
+@class NSData, NSString, SISchemaViewContainer;
 
-@interface SISchemaPunchOut : PBCodable <NSCopying>
+@interface SISchemaPunchOut : PBCodable <SISchemaPunchOut, NSSecureCoding>
 {
     NSString *_appID;
     NSString *_urlScheme;
     SISchemaViewContainer *_viewContainer;
+    NSData *_viewElementID;
 }
 
+@property(copy, nonatomic) NSData *viewElementID; // @synthesize viewElementID=_viewElementID;
 @property(retain, nonatomic) SISchemaViewContainer *viewContainer; // @synthesize viewContainer=_viewContainer;
-@property(retain, nonatomic) NSString *urlScheme; // @synthesize urlScheme=_urlScheme;
-@property(retain, nonatomic) NSString *appID; // @synthesize appID=_appID;
+@property(copy, nonatomic) NSString *urlScheme; // @synthesize urlScheme=_urlScheme;
+@property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 - (void).cxx_destruct;
-- (void)mergeFrom:(id)arg1;
-- (unsigned int)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) _Bool hasViewContainer;
-@property(readonly, nonatomic) _Bool hasUrlScheme;
-@property(readonly, nonatomic) _Bool hasAppID;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

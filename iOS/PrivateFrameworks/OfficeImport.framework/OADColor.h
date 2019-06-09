@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 + (id)rgbColorWithColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3 colorPalette:(id)arg4;
 + (id)mapAdjustedColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3 colorPalette:(id)arg4;
 + (id)basicMapOfColor:(id)arg1 colorMap:(id)arg2 colorScheme:(id)arg3 colorPalette:(id)arg4;
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (void)addTransformOfType:(int)arg1;
 - (void)setTransforms:(id)arg1;
 - (id)transforms;
-- (void)dealloc;
 - (void)addTransform:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 

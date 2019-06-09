@@ -33,16 +33,28 @@
 - (void).cxx_destruct;
 -     // Error parsing type: @56@0:8@16@24^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}32@40@48, name: barcodePreviewActionForContext:URL:result:contact:ics:
 -     // Error parsing type: @56@0:8@16@24^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}32@40@48, name: barcodeActionsForContext:URL:result:contact:ics:
+- (_Bool)_phoneNumberIsABusinessNumber:(id)arg1;
+-     // Error parsing type: @24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _phoneNumberFromResult:
+-     // Error parsing type: B24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _shouldImmediatelyLaunchDefaultActionForPhoneNumberResult:
+- (_Bool)_shouldImmediatelyLaunchDefaultActionForPhoneNumberURL:(id)arg1;
 - (_Bool)_shouldImmediatelyShowActionSheetForURL:(id)arg1;
 -     // Error parsing type: B24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _shouldImmediatelyShowActionSheetForCoreResult:
+- (void)_cacheBusinessPhoneNumber:(id)arg1;
+-     // Error parsing type: v24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: _interactionDidStartForResult:
+- (void)_interactionDidStartForURL:(id)arg1;
 -     // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}40@0:8@16@24^@32, name: _resultForURL:forContainer:context:
 -     // Error parsing type: ^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}40@0:8@16@24^@32, name: _resultForIdentifier:forContainer:context:
+-     // Error parsing type: v24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: interactionDidStartForResult:
+- (void)interactionDidStartForURL:(id)arg1;
+-     // Error parsing type: B24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: shouldImmediatelyLaunchDefaultActionForResult:
+- (_Bool)shouldImmediatelyLaunchDefaultActionForURL:(id)arg1;
 - (void)cancelAction;
 - (_Bool)actionIsCancellable;
 - (_Bool)isPerformingAction;
 - (void)performAction:(id)arg1 fromView:(id)arg2 alertController:(id)arg3 interactionDelegate:(id)arg4;
 - (void)performAction:(id)arg1 fromAlertController:(id)arg2 interactionDelegate:(id)arg3;
 - (void)performAction:(id)arg1 inView:(id)arg2 interactionDelegate:(id)arg3;
+-     // Error parsing type: @32@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24, name: actionsForResult:context:
 - (void)_doURLification:(id)arg1;
 - (void)containerWillBeRemoved:(id)arg1;
 - (void)cancelURLificationForContainer:(id)arg1;
@@ -65,6 +77,8 @@
 - (id)defaultActionForAnchor:(id)arg1 url:(id)arg2 forFrame:(id)arg3;
 - (struct __DDResult *)resultForNode:(id)arg1 url:(id)arg2 frame:(id)arg3 contextRef:(id *)arg4;
 - (id)actionsForDOMNode:(id)arg1 forFrame:(id)arg2;
+- (id)attributedTitleForResult:(struct __DDResult *)arg1 updaterBlock:(CDUnknownBlockType)arg2;
+- (id)attributedTitleForURL:(id)arg1 updaterBlock:(CDUnknownBlockType)arg2;
 - (id)titleForURL:(id)arg1 results:(id)arg2 context:(id)arg3;
 - (id)defaultActionForURL:(id)arg1 results:(id)arg2 context:(id)arg3;
 - (id)actionsForURL:(id)arg1 identifier:(id)arg2 selectedText:(id)arg3 results:(id)arg4 context:(id)arg5;
@@ -85,14 +99,17 @@
 - (void)startURLificationForFrame:(id)arg1 detectedTypes:(unsigned long long)arg2 options:(int)arg3;
 - (id)preferredTextAttributesForLinkAtCharacterIndex:(unsigned long long)arg1 ofStorage:(id)arg2;
 - (_Bool)shouldUseLightStyleAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2 moreHighlight:(_Bool *)arg3;
+- (void)interactionDidStartAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2;
 - (id)_URLForLinkAttributeValue:(id)arg1;
+- (id)attributedTitleForResultAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2 updaterBlock:(CDUnknownBlockType)arg3;
 - (id)titleForResult:(struct __DDResult *)arg1 subResult:(struct __DDResult *)arg2 withURL:(id)arg3 context:(id)arg4;
 - (id)defaultActionAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2 context:(id)arg3;
 - (id)titleForResultAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2 context:(id)arg3;
 - (id)actionsAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2 context:(id)arg3;
 - (id)_applyBlock:(CDUnknownBlockType)arg1 withResultsAtIndex:(unsigned long long)arg2 ofStorage:(id)arg3 context:(id)arg4;
+- (_Bool)shouldImmediatelyLaunchDefaultActionForTapAndHoldAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2;
 - (_Bool)shouldImmediatelyShowActionSheetForTapAtIndex:(unsigned long long)arg1 ofStorage:(id)arg2;
-- (id)_resultForLinkAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2 subResult:(id *)arg3 url:(id *)arg4;
+- (id)_resultForLinkAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2 subResult:(id *)arg3 url:(id *)arg4 effectiveRange:(struct _NSRange *)arg5;
 - (struct __DDResult *)resultForLinkAtIndex:(unsigned long long)arg1 inTextStorage:(id)arg2;
 - (id)_subResultAtIndex:(unsigned long long)arg1 ofResult:(id)arg2;
 - (void)resetResultsForTextView:(id)arg1;

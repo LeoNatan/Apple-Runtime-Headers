@@ -25,6 +25,7 @@
 
 - (void).cxx_destruct;
 - (void)setNewSpeechRequestHandler:(CDUnknownBlockType)arg1;
+- (void)_dispatchSpeechRequestOptions:(id)arg1;
 - (void)_setupSpeechRequestListener;
 - (void)setIntentHandler:(CDUnknownBlockType)arg1;
 - (void)setDismissalHandler:(CDUnknownBlockType)arg1;

@@ -9,7 +9,7 @@
 __attribute__((visibility("hidden")))
 @interface FI_TIconSpatialDataController : NSObject
 {
-    struct TMutex _lock;
+    struct mutex _lock;
     struct TFENode _bulkSettingContainer;
     struct TFENodeVector _bulkSettingNodes;
     vector_55f57b11 _bulkSettingSpatialData;

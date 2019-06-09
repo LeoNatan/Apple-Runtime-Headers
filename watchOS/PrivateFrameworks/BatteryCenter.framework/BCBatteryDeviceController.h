@@ -12,21 +12,23 @@
 @interface BCBatteryDeviceController : NSObject
 {
     NSMutableDictionary *_devicesByIdentifier;
-    NSArray *_sortedDevices;
     struct __CFRunLoopSource *_powerSourcesChangedRunLoopSource;
     struct __CFRunLoopSource *_accessoriesChangedRunLoopSource;
     struct __CFRunLoopSource *_accessoriesLimitedPowerRunLoopSource;
     NSMapTable *_handlersByIdentifier;
     _Bool _batterySaverModeActive;
-    _Bool _chargeChangeHandlingDisabled;
     NSObject<OS_dispatch_queue> *_queue;
     unsigned int _numFakeDevices;
+    _Bool _chargeChangeHandlingDisabled;
+    NSArray *_sortedDevices;
 }
 
 + (id)_glyphForBatteryDevice:(id)arg1;
 + (id)_glyphForBatteryDeviceWithTransport:(int)arg1 accessoryCategory:(unsigned int)arg2 vendor:(int)arg3 productIdentifier:(int)arg4 parts:(unsigned int)arg5;
 + (id)_internalBatteryDeviceGlyph;
 + (id)sharedInstance;
+@property(nonatomic, getter=_chargeChangeHandlingDisabled, setter=_setChargeChangeHandlingDisabled:) _Bool chargeChangeHandlingDisabled; // @synthesize chargeChangeHandlingDisabled=_chargeChangeHandlingDisabled;
+@property(retain, nonatomic, getter=_sortedDevices, setter=_setSortedDevices:) NSArray *sortedDevices; // @synthesize sortedDevices=_sortedDevices;
 - (void).cxx_destruct;
 - (id)_fakeDevicePowerSourceDescriptions;
 - (id)_fakeDeviceB443PowerSourceDescription;

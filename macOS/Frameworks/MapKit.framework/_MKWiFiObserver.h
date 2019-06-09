@@ -8,6 +8,7 @@
 
 @protocol _MKWiFiObserverDelegate;
 
+__attribute__((visibility("hidden")))
 @interface _MKWiFiObserver : NSObject
 {
     struct __SCDynamicStore *_airportDynamicStore;

@@ -12,6 +12,7 @@
 
 @class MKPlaceActionManager, NSArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceCardActionsViewController : MKPlaceSectionViewController <MKPlaceCardActionSectionViewDelegate, _MKStackViewDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate>
 {
     BOOL _haveTwoColumns;
@@ -35,6 +36,7 @@
 @property(nonatomic) BOOL useSmallFonts; // @synthesize useSmallFonts=_useSmallFonts;
 @property(nonatomic) BOOL haveTwoColumns; // @synthesize haveTwoColumns=_haveTwoColumns;
 - (void).cxx_destruct;
+- (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)placeCardActionSectionView:(id)arg1 buttonWithActionItemPressed:(id)arg2;
 - (void)sectionView:(id)arg1 didSelectRow:(id)arg2 atIndex:(unsigned long long)arg3;

@@ -8,21 +8,19 @@
 
 #import <NanoMediaUI/NMUMarqueeViewDelegate-Protocol.h>
 
-@class NMULiveLabel, NMUMarqueeView, NSArray, NSString, UIColor, UIFont, UILabel;
+@class NMUMarqueeView, NSArray, NSString, UIColor, UIFont, UILabel;
 
 @interface NMUNowPlayingTitlesView : UIView <NMUMarqueeViewDelegate>
 {
     NMUMarqueeView *_titleMarqueeView;
     NMUMarqueeView *_detailMarqueeView;
-    NMULiveLabel *_liveLabel;
-    UILabel *_originNameLabel;
+    UILabel *_liveLabel;
     UILabel *_titleLabel;
     UILabel *_detailLabel;
     _Bool _needsLabelUpdate;
     float _firstLineLeading;
     float _secondLineLeading;
     _Bool _lendingContainerViews;
-    _Bool _showsOriginName;
     _Bool _explicit;
     _Bool _alwaysLive;
     int _style;
@@ -30,7 +28,6 @@
     NSString *_albumText;
     NSString *_artistText;
     NSString *_stationNameText;
-    NSString *_originNameText;
     float _textMargin;
     int _textAlignment;
     NSArray *_firstLineFields;
@@ -51,8 +48,6 @@
 @property(nonatomic) float textMargin; // @synthesize textMargin=_textMargin;
 @property(nonatomic, getter=isAlwaysLive) _Bool alwaysLive; // @synthesize alwaysLive=_alwaysLive;
 @property(nonatomic, getter=isExplicit) _Bool explicit; // @synthesize explicit=_explicit;
-@property(nonatomic, getter=shouldShowOriginName) _Bool showsOriginName; // @synthesize showsOriginName=_showsOriginName;
-@property(copy, nonatomic) NSString *originNameText; // @synthesize originNameText=_originNameText;
 @property(copy, nonatomic) NSString *stationNameText; // @synthesize stationNameText=_stationNameText;
 @property(copy, nonatomic) NSString *artistText; // @synthesize artistText=_artistText;
 @property(copy, nonatomic) NSString *albumText; // @synthesize albumText=_albumText;
@@ -76,7 +71,6 @@
 - (id)_defaultSecondLineFields;
 @property(readonly, nonatomic) float topLineBaselineOffsetFromBoundsTop;
 - (id)topLabelFont;
-- (id)originNameLabel;
 - (id)liveLabel;
 @property(nonatomic) float firstLineLeading;
 - (id)_defaultFirstLineFields;

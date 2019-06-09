@@ -8,6 +8,7 @@
 
 @class NSString, SKUIGiftAmountControl, UIControl;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftAmountSection : SKUIGiftTableViewSection
 {
     SKUIGiftAmountControl *_amountControl;

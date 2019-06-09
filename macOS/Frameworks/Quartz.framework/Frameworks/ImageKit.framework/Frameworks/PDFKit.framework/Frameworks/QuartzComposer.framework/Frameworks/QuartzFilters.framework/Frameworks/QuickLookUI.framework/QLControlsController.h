@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     QLControlsContainerView *_containerView;
     NSView *_contentView;
     unsigned long long _controlSize;
-    unsigned long long _alignment;
+    long long _alignment;
     BOOL _needsRelayout;
     double _effectiveWidth;
     NSMutableDictionary *_buttons;
@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) double effectiveWidth; // @synthesize effectiveWidth=_effectiveWidth;
 @property(readonly) QLControlsContainerView *containerView; // @synthesize containerView=_containerView;
 @property(copy) NSArray *collectionKeys; // @synthesize collectionKeys=_collectionKeys;
-@property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
+@property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) int buttonStyle; // @synthesize buttonStyle=_buttonStyle;
 @property unsigned long long controlSize; // @synthesize controlSize=_controlSize;
 @property id <QLControlsDelegate> delegate; // @synthesize delegate=_delegate;

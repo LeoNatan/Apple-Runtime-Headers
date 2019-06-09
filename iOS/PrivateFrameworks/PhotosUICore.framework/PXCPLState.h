@@ -14,7 +14,8 @@
 {
     _Bool _isSyncing;
     _Bool _isUserPaused;
-    _Bool _isInBatterySaverMode;
+    _Bool _isInLowDataMode;
+    _Bool _isInLowPowerMode;
     _Bool _isExceedingBatteryQuota;
     _Bool _isExceedingCellularQuota;
     _Bool _isExceedingLocalStorageQuota;
@@ -37,7 +38,8 @@
 @property(nonatomic) _Bool isExceedingLocalStorageQuota; // @synthesize isExceedingLocalStorageQuota=_isExceedingLocalStorageQuota;
 @property(nonatomic) _Bool isExceedingCellularQuota; // @synthesize isExceedingCellularQuota=_isExceedingCellularQuota;
 @property(nonatomic) _Bool isExceedingBatteryQuota; // @synthesize isExceedingBatteryQuota=_isExceedingBatteryQuota;
-@property(nonatomic) _Bool isInBatterySaverMode; // @synthesize isInBatterySaverMode=_isInBatterySaverMode;
+@property(nonatomic) _Bool isInLowPowerMode; // @synthesize isInLowPowerMode=_isInLowPowerMode;
+@property(nonatomic) _Bool isInLowDataMode; // @synthesize isInLowDataMode=_isInLowDataMode;
 @property(nonatomic) _Bool isUserPaused; // @synthesize isUserPaused=_isUserPaused;
 @property(nonatomic) unsigned long long numberOfReferencedItems; // @synthesize numberOfReferencedItems=_numberOfReferencedItems;
 @property(nonatomic) unsigned long long numberOfItemsFailingToUpload; // @synthesize numberOfItemsFailingToUpload=_numberOfItemsFailingToUpload;

@@ -6,29 +6,25 @@
 
 #import <UIKit/UIView.h>
 
-#import <NotesUI/NoteTextViewActionDelegate-Protocol.h>
-#import <NotesUI/NoteTextViewLayoutDelegate-Protocol.h>
-#import <NotesUI/UITextViewDelegate-Protocol.h>
+#import <NotesUI/NoteHTMLEditorViewActionDelegate-Protocol.h>
+#import <NotesUI/NoteHTMLEditorViewDelegate-Protocol.h>
+#import <NotesUI/NoteHTMLEditorViewLayoutDelegate-Protocol.h>
+#import <NotesUI/UIScrollViewDelegate-Protocol.h>
 #import <NotesUI/UIWebDraggingDelegate-Protocol.h>
 
-@class DOMHTMLDocument, NSArray, NSLayoutConstraint, NSString, NoteDateLabel, NoteTextView, NotesScrollView, UIScrollView, _UICompatibilityTextView;
+@class NSArray, NSString, NoteDateLabel, NoteHTMLEditorView;
 @protocol NoteContentLayerDelegate, NotesTextureScrolling;
 
-@interface NoteContentLayer : UIView <NoteTextViewActionDelegate, NoteTextViewLayoutDelegate, UITextViewDelegate, UIWebDraggingDelegate>
+@interface NoteContentLayer : UIView <NoteHTMLEditorViewDelegate, NoteHTMLEditorViewActionDelegate, NoteHTMLEditorViewLayoutDelegate, UIScrollViewDelegate, UIWebDraggingDelegate>
 {
     _Bool _containsCJK;
     _Bool _tracksMaximumContentLength;
     _Bool _updatedTitleRange;
     id <NoteContentLayerDelegate> _delegate;
-    NoteTextView *_textView;
-    NSLayoutConstraint *_bottomMarginConstraint;
-    NSLayoutConstraint *_dateTopMarginConstraint;
-    NSLayoutConstraint *_dateHorizontalContraint;
-    NSLayoutConstraint *_textTopMarginConstraint;
-    NSLayoutConstraint *_leftConstraint;
-    NSLayoutConstraint *_rightConstraint;
-    NotesScrollView *_scrollView;
-    UIView *_horizontalLayoutGuide;
+    id <NotesTextureScrolling> _textureScrollingDelegate;
+    NoteHTMLEditorView *_noteHTMLEditorView;
+    NSArray *_horizontalConstraints;
+    double _originalTopInset;
     NoteDateLabel *_dateLabel;
     NSString *_noteIdentifierForCurrentlyDraggedItems;
 }
@@ -36,43 +32,38 @@
 @property(retain, nonatomic) NSString *noteIdentifierForCurrentlyDraggedItems; // @synthesize noteIdentifierForCurrentlyDraggedItems=_noteIdentifierForCurrentlyDraggedItems;
 @property(nonatomic) _Bool updatedTitleRange; // @synthesize updatedTitleRange=_updatedTitleRange;
 @property(retain, nonatomic) NoteDateLabel *dateLabel; // @synthesize dateLabel=_dateLabel;
-@property(retain, nonatomic) UIView *horizontalLayoutGuide; // @synthesize horizontalLayoutGuide=_horizontalLayoutGuide;
-@property(retain, nonatomic) NotesScrollView *scrollView; // @synthesize scrollView=_scrollView;
-@property(retain, nonatomic) NSLayoutConstraint *rightConstraint; // @synthesize rightConstraint=_rightConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *leftConstraint; // @synthesize leftConstraint=_leftConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *textTopMarginConstraint; // @synthesize textTopMarginConstraint=_textTopMarginConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *dateHorizontalContraint; // @synthesize dateHorizontalContraint=_dateHorizontalContraint;
-@property(retain, nonatomic) NSLayoutConstraint *dateTopMarginConstraint; // @synthesize dateTopMarginConstraint=_dateTopMarginConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *bottomMarginConstraint; // @synthesize bottomMarginConstraint=_bottomMarginConstraint;
-@property(retain, nonatomic) NoteTextView *textView; // @synthesize textView=_textView;
+@property(nonatomic) double originalTopInset; // @synthesize originalTopInset=_originalTopInset;
+@property(retain, nonatomic) NSArray *horizontalConstraints; // @synthesize horizontalConstraints=_horizontalConstraints;
+@property(retain, nonatomic) NoteHTMLEditorView *noteHTMLEditorView; // @synthesize noteHTMLEditorView=_noteHTMLEditorView;
 @property(nonatomic) _Bool tracksMaximumContentLength; // @synthesize tracksMaximumContentLength=_tracksMaximumContentLength;
+@property(nonatomic) __weak id <NotesTextureScrolling> textureScrollingDelegate; // @synthesize textureScrollingDelegate=_textureScrollingDelegate;
 @property(nonatomic) _Bool containsCJK; // @synthesize containsCJK=_containsCJK;
 @property(nonatomic) __weak id <NoteContentLayerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)_webView:(id)arg1 allowsSelectingContentAfterDropForSession:(id)arg2;
-- (_Bool)_webView:(id)arg1 performDropWithItemProviders:(id)arg2;
-- (id)_webView:(id)arg1 willUpdateDropProposalToProposal:(id)arg2 forSession:(id)arg3;
-- (void)_webView:(id)arg1 dropInteraction:(id)arg2 concludeDrop:(id)arg3;
-- (void)_webView:(id)arg1 sessionDidExit:(id)arg2;
-- (void)_webView:(id)arg1 sessionDidEnter:(id)arg2;
+- (void)processAttachmentItemProviders:(id)arg1;
 - (id)_webView:(id)arg1 adjustedItemProviders:(id)arg2;
 - (long long)_webView:(id)arg1 dataOwnerForDropSession:(id)arg2;
 - (long long)_webView:(id)arg1 dataOwnerForDragSession:(id)arg2;
-- (_Bool)isNoteTextViewVisible:(id)arg1;
-- (void)noteTextView:(id)arg1 didChangeContentSize:(struct CGSize)arg2;
-- (id)readerDelegateInTextView:(id)arg1;
-- (_Bool)noteTextView:(id)arg1 acceptContentsFromPasteboard:(id)arg2;
-- (void)noteTextView:(id)arg1 handleLongPressOnElement:(id)arg2 atPoint:(struct CGPoint)arg3;
-- (_Bool)noteTextView:(id)arg1 canHandleLongPressOnElement:(id)arg2;
-- (void)insertImageInTextView:(id)arg1;
-- (_Bool)allowsAttachmentsInTextView:(id)arg1;
-- (_Bool)canInsertImagesInTextView:(id)arg1;
-- (void)scrollViewWillBeginDragging:(id)arg1;
+- (_Bool)isNoteHTMLEditorViewVisible:(id)arg1;
+- (void)noteHTMLEditorView:(id)arg1 didChangeContentSize:(struct CGSize)arg2;
+- (_Bool)noteHTMLEditorViewShouldPaste:(id)arg1;
+- (id)readerDelegateInNoteHTMLEditorView:(id)arg1;
+- (_Bool)noteHTMLEditorView:(id)arg1 acceptContentsFromPasteboard:(id)arg2;
+- (void)noteHTMLEditorView:(id)arg1 handleLongPressOnElement:(id)arg2 atPoint:(struct CGPoint)arg3;
+- (_Bool)noteHTMLEditorView:(id)arg1 canHandleLongPressOnElement:(id)arg2;
+- (void)insertImageInNoteHTMLEditorView:(id)arg1;
+- (_Bool)allowsAttachmentsInNoteHTMLEditorView:(id)arg1;
+- (_Bool)canInsertImagesInNoteHTMLEditorView:(id)arg1;
 - (_Bool)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange)arg2 replacementText:(id)arg3;
-- (void)textViewDidEndEditing:(id)arg1;
-- (void)textViewDidBeginEditing:(id)arg1;
-- (void)webViewDidChangeNotification:(id)arg1;
-- (_Bool)textViewShouldBeginEditing:(id)arg1;
+- (id)noteHTMLEditorView:(id)arg1 attachmentPresentationForContentID:(id)arg2;
+- (id)noteHTMLEditorView:(id)arg1 fileURLForAttachmentWithContentID:(id)arg2;
+- (void)noteHTMLEditorViewDidEndEditing:(id)arg1;
+- (void)noteHTMLEditorViewDidBeginEditing:(id)arg1;
+- (void)noteHTMLEditorViewWillChange:(id)arg1;
+- (void)noteHTMLEditorViewDidChange:(id)arg1;
+- (_Bool)noteHTMLEditorViewShouldBeginEditing:(id)arg1 isUserInitiated:(_Bool)arg2;
+- (void)noteHTMLEditorView:(id)arg1 didAddAttachmentForMimeType:(id)arg2 filename:(id)arg3 data:(id)arg4;
+- (void)noteHTMLEditorView:(id)arg1 didAddAttachmentItemProviders:(id)arg2;
 - (id)keyCommands;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)scrollSelectionToVisible:(_Bool)arg1;
@@ -81,22 +72,19 @@
 - (id)viewPrintFormatter;
 - (id)contentAsPasteboardItems;
 - (id)webArchive;
-- (void)replaceSelectionWithNode:(id)arg1;
-- (void)setSelectedDOMRange:(id)arg1 affinity:(int)arg2;
+- (void)replaceSelectionWithAttachmentPresentation:(id)arg1;
 - (struct CGRect)rectForDOMNode:(id)arg1;
 - (struct CGRect)rectForSelection;
-- (id)selectedDOMRange;
-- (void)addSubWebResourcesObject:(id)arg1;
-@property(readonly, nonatomic) NSArray *subWebResources;
-@property(readonly, nonatomic) DOMHTMLDocument *htmlDocument;
 @property(nonatomic) struct CGPoint contentOffset;
 - (_Bool)isFirstResponder;
 - (_Bool)resignFirstResponder;
 - (_Bool)becomeFirstResponder;
 - (_Bool)canResignFirstResponder;
 - (_Bool)canBecomeFirstResponder;
+- (void)scrollViewDidScroll:(id)arg1;
+- (void)handleTapOnContent:(id)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (void)layoutSubviews;
+- (void)layoutMarginsDidChange;
 - (void)didChangeFullSizeClass;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
@@ -104,24 +92,19 @@
 @property(readonly, nonatomic) _Bool hasFullHeight;
 - (void)setScrollIndicatorInsets:(struct UIEdgeInsets)arg1;
 - (void)flashScrollIndicators;
-@property(readonly, nonatomic) _UICompatibilityTextView *contentTextView;
-@property(readonly, nonatomic) UIScrollView *contentScrollView;
 @property(readonly, nonatomic) _Bool contentContainsValuableContent;
 @property(readonly, nonatomic) NSString *title;
 - (id)contentAsPlainText:(_Bool)arg1;
-@property(nonatomic) __weak id <NotesTextureScrolling> textureScrollingDelegate;
 @property(nonatomic, getter=isEditable) _Bool editable;
 - (void)forcedSetContainsCJK:(_Bool)arg1;
-- (void)setContent:(id)arg1 isPlainText:(_Bool)arg2 isCJK:(_Bool)arg3;
+- (void)setContent:(id)arg1 isPlainText:(_Bool)arg2 isCJK:(_Bool)arg3 attachments:(id)arg4;
 - (void)setTimestampDate:(id)arg1;
 - (void)updateDateLabel;
 - (void)reloadInterface;
 - (void)updateConstraints;
-- (void)setupDateHorizontalConstraint;
 - (void)updateMarginConstraints;
 - (void)invalidateSizeRelatedConstraints;
 - (void)updateHorizontalConstraints;
-- (void)setNotesWebPreferencesOnWebView:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 

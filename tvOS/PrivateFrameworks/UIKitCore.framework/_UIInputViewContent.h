@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     double _contentHeight;
     double _contentWidth;
     UIInputView *_inputView;
-    int _unclippableCorners;
+    unsigned long long _unclippableCorners;
 }
 
-@property(nonatomic) int _unclippableCorners; // @synthesize _unclippableCorners;
+@property(nonatomic) unsigned long long _unclippableCorners; // @synthesize _unclippableCorners;
 - (void)_updateCornerClipping;
 - (struct CGSize)_contentSize;
 - (void)addSubview:(id)arg1;

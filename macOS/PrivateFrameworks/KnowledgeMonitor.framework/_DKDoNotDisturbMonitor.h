@@ -10,8 +10,5 @@
 {
 }
 
-+ (BOOL)shouldMergeUnchangedEvents;
-+ (id)eventStream;
-
 @end
 

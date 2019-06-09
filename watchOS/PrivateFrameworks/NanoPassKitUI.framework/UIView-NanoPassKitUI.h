@@ -8,5 +8,8 @@
 
 @interface UIView (NanoPassKitUI)
 - (_Bool)npkBecomeFirstResponder;
+- (void)npk_setLayerTreePaused:(_Bool)arg1;
+- (_Bool)npk_isLayerTreePaused;
+- (void)npkActivateConstraintsToContainerWithContentInset:(struct UIEdgeInsets)arg1;
 @end
 

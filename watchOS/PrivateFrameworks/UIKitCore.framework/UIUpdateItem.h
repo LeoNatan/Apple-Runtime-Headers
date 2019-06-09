@@ -13,18 +13,14 @@ __attribute__((visibility("hidden")))
 {
     UICollectionViewUpdateItem *_collectionViewUpdateItem;
     _Bool _headerFooterOnly;
-    _Bool _skipAnimation;
     int _action;
     NSIndexPath *_indexPath;
     int _animation;
-    float _offset;
     UITableViewUpdateGap *_gap;
 }
 
 @property(nonatomic) __weak UITableViewUpdateGap *gap; // @synthesize gap=_gap;
-@property(nonatomic) _Bool skipAnimation; // @synthesize skipAnimation=_skipAnimation;
 @property(nonatomic) _Bool headerFooterOnly; // @synthesize headerFooterOnly=_headerFooterOnly;
-@property(nonatomic) float offset; // @synthesize offset=_offset;
 @property(nonatomic) int animation; // @synthesize animation=_animation;
 @property(readonly, nonatomic) NSIndexPath *indexPath; // @synthesize indexPath=_indexPath;
 @property(readonly, nonatomic) int action; // @synthesize action=_action;

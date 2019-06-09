@@ -21,13 +21,14 @@
 }
 
 + (id)instanceWithParentObject:(id)arg1 keyValue:(id)arg2;
++ (id)addIdentityToKeychainFromCertificateData:(id)arg1 privateKeyData:(id)arg2;
 + (id)instanceWithRecord:(id)arg1;
 + (id)skeletonInstance;
 + (_Bool)supportsSecureCoding;
 + (id)recordType;
 + (id)keychainGroup;
 + (id)commonNameWithPrefix:(id)arg1;
-+ (id)createIdentityWithCommonName:(id)arg1;
++ (id)makeIdentityWithCommonName:(id)arg1;
 + (id)freshPrivateIdentityWithCommonNamePrefix:(id)arg1;
 @property(retain, nonatomic) NSDate *stagedIdentityExpirationDate; // @synthesize stagedIdentityExpirationDate=_stagedIdentityExpirationDate;
 @property(retain, nonatomic) NSDate *identityExpirationDate; // @synthesize identityExpirationDate=_identityExpirationDate;

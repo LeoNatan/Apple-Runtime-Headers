@@ -6,10 +6,18 @@
 
 #import <AccessibilityEvents/NSObject-Protocol.h>
 
+@class AXEEventTapManager, AXEGestureEvent, AXEKeyboardEvent, AXEMouseEvent;
+
 @protocol AXEEventTapListener <NSObject>
 
 @optional
-- (struct __CGEvent *)processActiveEventTapEvent:(struct __CGEvent *)arg1 type:(unsigned int)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
-- (void)processPassiveEventTapEvent:(struct __CGEvent *)arg1 type:(unsigned int)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
+- (struct __CGEvent *)eventTapManager:(AXEEventTapManager *)arg1 activelyTappedEvent:(struct __CGEvent *)arg2 type:(unsigned int)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
+- (struct __CGEvent *)eventTapManager:(AXEEventTapManager *)arg1 activelyTappedMouseEvent:(AXEMouseEvent *)arg2 cgEvent:(struct __CGEvent *)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
+- (struct __CGEvent *)eventTapManager:(AXEEventTapManager *)arg1 activelyTappedKeyboardEvent:(AXEKeyboardEvent *)arg2 cgEvent:(struct __CGEvent *)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
+- (struct __CGEvent *)eventTapManager:(AXEEventTapManager *)arg1 activelyTappedGestureEvent:(AXEGestureEvent *)arg2 cgEvent:(struct __CGEvent *)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
+- (void)eventTapManager:(AXEEventTapManager *)arg1 passivelyTappedEvent:(struct __CGEvent *)arg2 type:(unsigned int)arg3 withProxy:(struct __CGEventTapProxy *)arg4;
+- (void)eventTapManager:(AXEEventTapManager *)arg1 passivelyTappedMouseEvent:(AXEMouseEvent *)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
+- (void)eventTapManager:(AXEEventTapManager *)arg1 passivelyTappedKeyboardEvent:(AXEKeyboardEvent *)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
+- (void)eventTapManager:(AXEEventTapManager *)arg1 passivelyTappedGestureEvent:(AXEGestureEvent *)arg2 withProxy:(struct __CGEventTapProxy *)arg3;
 @end
 

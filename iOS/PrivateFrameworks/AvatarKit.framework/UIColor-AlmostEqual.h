@@ -7,6 +7,8 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (AlmostEqual)
++ (id)avt_colorWithColor4: /* Error: Ran out of types for this method. */;
 - (_Bool)avt_isAlmostEqualToColor:(struct UIColor *)arg1;
+-     // Error parsing type: 16@0:8, name: avt_colorToColor4
 @end
 

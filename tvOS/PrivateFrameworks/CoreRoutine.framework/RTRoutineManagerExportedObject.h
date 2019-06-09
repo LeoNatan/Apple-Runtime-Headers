@@ -18,10 +18,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) __weak RTRoutineManager *routineManager; // @synthesize routineManager=_routineManager;
 - (void).cxx_destruct;
-- (void)onActionConditions:(id)arg1 error:(id)arg2;
 - (void)onVehicleEvents:(id)arg1 error:(id)arg2;
-- (void)onNextPredictedLocationsOfInterest:(id)arg1 withError:(id)arg2;
-- (void)onPredictedApplications:(id)arg1 error:(id)arg2;
 - (void)onScenarioTrigger:(id)arg1 withError:(id)arg2;
 - (void)onLeechedLowConfidenceVisit:(id)arg1 withError:(id)arg2;
 - (void)onLeechedVisit:(id)arg1 withError:(id)arg2;

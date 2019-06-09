@@ -64,6 +64,7 @@
 - (_Bool)hasServiceWithUUID:(id)arg1;
 - (void)addHealthService:(id)arg1;
 - (void)discoverServices;
+- (_Bool)updateCBPeripheral:(id)arg1;
 @property(readonly) NSString *stateDescription;
 @property(readonly) long long state;
 @property(readonly, nonatomic) NSUUID *identifier;

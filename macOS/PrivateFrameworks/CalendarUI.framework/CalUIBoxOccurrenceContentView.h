@@ -23,6 +23,7 @@
     BOOL _showsTravelTime;
     BOOL _hideTimeDueToOccurrenceStartingOnPreviousDay;
     BOOL _titleIsMultiLine;
+    int _attendeesStatus;
     int _titleLayoutState;
     int _locationLayoutState;
     EKEvent *_event;
@@ -41,7 +42,6 @@
     CalUILayerBackedView *_attendeeView;
     CalUILayerBackedView *_topAlignmentView;
     NSString *_accountIconID;
-    int *_attendeesStatus;
     double _currentFontSize;
     NSDictionary *_views;
     NSDictionary *_metrics;
@@ -103,7 +103,7 @@
 @property BOOL hideTimeDueToOccurrenceStartingOnPreviousDay; // @synthesize hideTimeDueToOccurrenceStartingOnPreviousDay=_hideTimeDueToOccurrenceStartingOnPreviousDay;
 @property int locationLayoutState; // @synthesize locationLayoutState=_locationLayoutState;
 @property int titleLayoutState; // @synthesize titleLayoutState=_titleLayoutState;
-@property int *attendeesStatus; // @synthesize attendeesStatus=_attendeesStatus;
+@property int attendeesStatus; // @synthesize attendeesStatus=_attendeesStatus;
 @property(retain) NSString *accountIconID; // @synthesize accountIconID=_accountIconID;
 @property BOOL showsTravelTime; // @synthesize showsTravelTime=_showsTravelTime;
 @property BOOL showsBirthdayIcon; // @synthesize showsBirthdayIcon=_showsBirthdayIcon;

@@ -8,6 +8,7 @@
 
 @class ECMappingContext, EDProcessors, EDReference, EDResources, EDWarnings, ESDContainer, NSDate, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDWorkbook : OCDDocument
 {
     EDResources *mResources;
@@ -24,11 +25,15 @@
     NSString *mTemporaryDirectory;
     NSMutableArray *mBulletBlips;
     ESDContainer *mEscherDrawingGroup;
+    _Bool mIsOutOfMemoryConditionDetected;
 }
 
 + (id)impliedColorMap;
+- (void).cxx_destruct;
 - (id)description;
 - (id)bulletBlips;
+- (_Bool)isOutOfMemoryDetected;
+- (void)outOfMemoryDetected;
 - (id)warnings;
 - (void)applyProcessors;
 - (id)processors;

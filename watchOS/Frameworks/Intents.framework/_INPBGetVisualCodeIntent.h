@@ -21,6 +21,7 @@
     int _visualCodeType;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) int visualCodeType; // @synthesize visualCodeType=_visualCodeType;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
 - (void).cxx_destruct;
@@ -28,6 +29,8 @@
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (int)StringAsVisualCodeType:(id)arg1;

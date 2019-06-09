@@ -26,9 +26,9 @@
 @property(retain, nonatomic) NSArray *drawings; // @synthesize drawings=_drawings;
 @property(nonatomic) __weak id <ICHandwritingDebugDelegate> handwritingDebugDelegate; // @synthesize handwritingDebugDelegate=_handwritingDebugDelegate;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)visualizationManagerDidUpdateRecognitionStatus:(id)arg1;
 - (void)close;
-- (void)tapToRadar:(id)arg1;
 - (void)refresh;
 - (id)handwritingDebugWindow;
 - (void)viewWillAppear:(_Bool)arg1;

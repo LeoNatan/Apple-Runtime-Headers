@@ -10,7 +10,7 @@
 {
 }
 
-@property(nonatomic) int fbtype;
+@property(nonatomic) unsigned long long fbtype;
 - (id)initWithPeriod:(id)arg1;
 
 @end

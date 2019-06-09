@@ -6,13 +6,14 @@
 
 #import <UIKit/UIActivityItemProvider.h>
 
-@class NSData, NSString, PKPassView;
+@class PKLinkedApplication, PKPass, PKPassView;
 
 @interface PKActivityItemProvider : UIActivityItemProvider
 {
-    NSData *_passData;
+    PKPass *_pass;
     PKPassView *_passView;
-    NSString *_passOrganizationName;
+    PKLinkedApplication *_linkedApp;
+    int _sharingMethod;
 }
 
 - (void).cxx_destruct;
@@ -20,8 +21,7 @@
 - (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize)arg3;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)item;
-- (void)dealloc;
-- (id)initWithPass:(id)arg1 andPassView:(id)arg2;
+- (id)initWithPass:(id)arg1 passView:(id)arg2 linkedApp:(id)arg3 sharingMethod:(int)arg4;
 
 @end
 

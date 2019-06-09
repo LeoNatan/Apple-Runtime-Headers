@@ -14,12 +14,22 @@ __attribute__((visibility("hidden")))
     NSObject<OS_xpc_object> *_connection;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     id _wrmClientDelegate;
+    int _mediaControlInfoVersion;
+    _Bool _reportImmediateWRMMetricEnabled;
+    _Bool _reportRtpErasureMetricsEnabled;
+    _Bool _allowPreWarmCellEnabled;
 }
 
+@property _Bool allowPreWarmCellEnabled; // @synthesize allowPreWarmCellEnabled=_allowPreWarmCellEnabled;
+@property _Bool reportRtpErasureMetricsEnabled; // @synthesize reportRtpErasureMetricsEnabled=_reportRtpErasureMetricsEnabled;
+@property _Bool reportImmediateWRMMetricEnabled; // @synthesize reportImmediateWRMMetricEnabled=_reportImmediateWRMMetricEnabled;
+@property int mediaControlInfoVersion; // @synthesize mediaControlInfoVersion=_mediaControlInfoVersion;
+- (void)setPreWarmState:(_Bool)arg1;
 - (void)processNotificationList:(id)arg1;
 - (void)setConfiguration:(CDStruct_69d7cc99 *)arg1;
-- (void)reportMetricsFaceTimeCalling:(const CDStruct_0db8e210 *)arg1;
-- (void)reportMetricsWifiCalling:(const CDStruct_0db8e210 *)arg1;
+- (void)reportMetricsFaceTimeCalling:(const CDStruct_dea828ac *)arg1;
+- (void)reportImmediateMetric:(int)arg1 value:(unsigned long long)arg2;
+- (void)reportMetricsWifiCalling:(const CDStruct_dea828ac *)arg1;
 - (void)sendReport:(id)arg1;
 - (void)dumpReport:(id)arg1;
 - (void)sendStatusUpdateFaceTimeCalling:(const CDStruct_8aeecdac *)arg1;

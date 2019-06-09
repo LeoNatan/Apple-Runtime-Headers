@@ -8,6 +8,7 @@
 
 @class CAShapeLayer;
 
+__attribute__((visibility("hidden")))
 @interface SKUIShapeView : UIView
 {
 }

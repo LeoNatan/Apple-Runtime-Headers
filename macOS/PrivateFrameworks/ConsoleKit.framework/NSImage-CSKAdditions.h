@@ -8,5 +8,33 @@
 
 @interface NSImage (CSKAdditions)
 + (id)csk_imageNamed:(id)arg1 inBundle:(id)arg2;
++ (id)csk_iconForFilePath:(id)arg1;
++ (id)csk_iconForFileURL:(id)arg1;
++ (id)csk_findIconWithColor:(id)arg1;
++ (id)csk_pullDownIconWithColor:(id)arg1;
++ (id)csk_infoMessageTypeDotIcon;
++ (id)csk_debugMessageTypeDotIcon;
++ (id)csk_faultMessageTypeDotIcon;
++ (id)csk_errorMessageTypeDotIcon;
++ (id)csk_sidebarUnknownDeviceIcon;
++ (id)csk_sidebarMacProIcon;
++ (id)csk_sidebarMacProCylinderIcon;
++ (id)csk_sidebarMacMiniIcon;
++ (id)csk_sidebarMacBookIcon;
++ (id)csk_sidebarIMacIcon;
++ (id)csk_sidebarTVThirdIcon;
++ (id)csk_sidebarTVIcon;
++ (id)csk_sidebarWatchIcon;
++ (id)csk_sidebarIPadIcon;
++ (id)csk_sidebarIPodTouchIcon;
++ (id)csk_sidebarIPhoneIcon;
++ (id)csk_sidebarGenericFolderIcon;
++ (id)csk_sidebarGenericFileIcon;
++ (id)csk_sidebarMacAnalyticsReportIcon;
++ (id)csk_sidebarMiscReportIcon;
++ (id)csk_sidebarLogReportIcon;
++ (id)csk_sidebarSpinReportIcon;
++ (id)csk_sidebarCrashReportIcon;
+- (id)csk_imageTintedWithColor:(id)arg1;
 @end
 

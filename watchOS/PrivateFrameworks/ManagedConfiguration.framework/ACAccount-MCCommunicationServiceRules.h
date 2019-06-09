@@ -6,9 +6,24 @@
 
 #import <Accounts/ACAccount.h>
 
-@class NSDictionary;
+@class NSDictionary, NSNumber, NSString;
 
 @interface ACAccount (MCCommunicationServiceRules)
 @property(retain, nonatomic) NSDictionary *communicationServiceRules;
+- (id)mcBackingPayload;
+- (id)mcBackingProfile;
+@property(retain, nonatomic) NSNumber *mcEnableNotesUserOverridable;
+@property(retain, nonatomic) NSNumber *mcEnableRemindersUserOverridable;
+@property(retain, nonatomic) NSNumber *mcEnableCalendarsUserOverridable;
+@property(retain, nonatomic) NSNumber *mcEnableContactsUserOverridable;
+@property(retain, nonatomic) NSNumber *mcEnableMailUserOverridable;
+@property(retain, nonatomic) NSNumber *mcEASAccountEnableNotes;
+@property(retain, nonatomic) NSString *mcPayloadUUID;
+@property(retain, nonatomic) NSString *mcProfileUUID;
+@property(retain, nonatomic) NSString *mcConfigurationProfileIdentifier;
+@property(retain, nonatomic) NSString *mcAccountIdentifier;
+- (_Bool)MCIsManaged;
+- (void)unenrollAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (_Bool)mc_isUserEnrollmentAccount;
 @end
 

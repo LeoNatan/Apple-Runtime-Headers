@@ -47,9 +47,11 @@
 - (unsigned long long)day;
 - (unsigned long long)month;
 - (unsigned long long)year;
+- (double)differenceInSeconds:(id)arg1;
 - (long long)differenceInDays:(id)arg1;
 - (long long)differenceInMonths:(id)arg1;
 - (long long)differenceInYears:(id)arg1;
+- (CDStruct_deff9ab7)differenceAsCalGregorianUnits:(id)arg1 flags:(unsigned long long)arg2;
 - (CDStruct_deff9ab7)differenceAsGregorianUnits:(id)arg1 flags:(unsigned long long)arg2;
 - (id)calendarDateWithDate:(id)arg1;
 - (id)calendarDateInTimeZone:(id)arg1;

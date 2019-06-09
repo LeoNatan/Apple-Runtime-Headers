@@ -13,27 +13,31 @@
 {
     long long _generationCount;
     long long _lastGenerationFromDisk;
-    struct __CFString *preferenceID;
-    struct __CFURL *urlOnDisk;
-    struct __CFDictionary *cache;
-    long long storageChangeCount;
-    long long initialSyncChangeCount;
-    unsigned char isInitialSync;
-    struct __CFSet *dirtyKeys;
-    struct __CFDictionary *configurationDictionary;
-    NSMutableDictionary *externalChanges;
-    SYDClient *client;
-    CDUnknownBlockType registrationBlock;
-    NSObject<OS_dispatch_queue> *registrationQueue;
+    struct __CFString *_preferenceID;
+    struct __CFURL *_urlOnDisk;
+    struct __CFDictionary *_cache;
+    long long _storageChangeCount;
+    long long _initialSyncChangeCount;
+    unsigned char _isInitialSync;
+    struct __CFSet *_dirtyKeys;
+    struct __CFDictionary *_configurationDictionary;
+    NSMutableDictionary *_externalChanges;
+    SYDClient *_client;
+    CDUnknownBlockType _registrationBlock;
+    NSObject<OS_dispatch_queue> *_registrationQueue;
     NSObject<OS_dispatch_queue> *_protectionQueue;
+    BOOL _memoryWarningSourceEnabled;
     NSObject<OS_dispatch_source> *_memoryWarningSource;
     double _lastAccess;
     BOOL _forceNextSynchronization;
     NSObject<OS_os_transaction> *_isExecutingForClient;
 }
 
++ (id)SYDUbiquitousKeyValueStoreDidChangeExternallyNotification;
 + (id)SYDRemotePreferencesSourceConfigurationDidChangeNotification;
 + (id)SYDRemotePreferencesSourceDidChangeNotification;
++ (BOOL)alwaysUseKVSOnCloudKit;
++ (void)setAlwaysUseKVSOnCloudKit:(BOOL)arg1;
 + (void)initialize;
 + (void)migrateSyncedDefaultsForBundleIdentifier:(id)arg1;
 + (void)noteAccountChanges:(id)arg1;
@@ -61,12 +65,14 @@
 - (void)scheduleRemoteSynchronization;
 - (void)setDefaultsConfiguration:(id)arg1;
 - (void)_cachePlistFromDisk;
+- (void)setCache:(struct __CFDictionary *)arg1;
 - (void)setValue:(void *)arg1 forKey:(struct __CFString *)arg2;
 - (void *)getValueForKey:(struct __CFString *)arg1;
 - (void)_locked_syd_end_transaction;
 - (void)_locked_syd_start_transaction;
 - (void)_forceRegistrationNow;
 - (void)dealloc;
+- (id)initWithApplicationID:(struct __CFString *)arg1 storeID:(struct __CFString *)arg2 shared:(BOOL)arg3 additionalSource:(BOOL)arg4 containerPath:(struct __CFString *)arg5 storeType:(long long)arg6;
 - (id)initWithApplicationID:(struct __CFString *)arg1 storeID:(struct __CFString *)arg2 shared:(BOOL)arg3 additionalSource:(BOOL)arg4 containerPath:(struct __CFString *)arg5;
 - (id)initWithApplicationID:(struct __CFString *)arg1 storeID:(struct __CFString *)arg2 shared:(BOOL)arg3 additionalSource:(BOOL)arg4;
 - (id)initWithApplicationID:(struct __CFString *)arg1 storeID:(struct __CFString *)arg2 shared:(BOOL)arg3;

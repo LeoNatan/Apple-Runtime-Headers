@@ -6,32 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSMutableDictionary, NSSet;
+@class NSArray;
+@protocol OS_dispatch_queue;
 
 @interface ACDAccountNotifier : NSObject
 {
-    NSSet *_notificationPlugins;
-    NSDictionary *_pluginBundlesByAccountTypeID;
-    NSMutableDictionary *_instantiatedPluginsByAccountTypeID;
-    NSMutableDictionary *_principalObjectByPluginBundleURL;
+    NSObject<OS_dispatch_queue> *_notificationEntryQueue;
+    NSArray *_notificationEntries;
 }
 
-+ (id)_presumedAccountTypeIDsByNotificationPluginID;
-+ (id)sharedAccountNotifier;
++ (id)allNotificationEntries;
+@property(readonly, copy, nonatomic) NSArray *notificationEntries; // @synthesize notificationEntries=_notificationEntries;
 - (void).cxx_destruct;
-- (id)notificationPlugins;
+- (id)_provisionedDataclassesForNewAccount:(id)arg1 oldAccount:(id)arg2;
+- (id)_unsafe_pluginsRegisteredForNewAccount:(id)arg1 oldAccount:(id)arg2;
+- (id)_pluginsRegisteredForNewAccount:(id)arg1 oldAccount:(id)arg2;
+- (id)_unsafe_pluginsRegisteredForAccount:(id)arg1;
+- (id)_pluginsRegisteredForAccount:(id)arg1;
+- (void)removeAllNotificationEntries;
+- (void)addNotificationEntry:(id)arg1;
 - (void)postDidPerformDataclassActionsOnAccount:(id)arg1 forDataclasses:(id)arg2;
 - (void)postWillPerformDataclassActionsOnAccount:(id)arg1 forDataclasses:(id)arg2;
 - (void)postDidChangeNotificationForType:(int)arg1 inStore:(id)arg2 newAccount:(id)arg3 oldAccount:(id)arg4;
 - (_Bool)postWillChangeNotificationForType:(int)arg1 inStore:(id)arg2 newAccount:(id)arg3 oldAccount:(id)arg4;
-- (_Bool)canRemoveAccount:(id)arg1 inStore:(id)arg2;
-- (_Bool)canSaveAccount:(id)arg1 inStore:(id)arg2;
-- (id)_generateMapOfNotificationPluginBundlesByAccountTypeID;
-- (id)_loadPrincipalObjectFromBundle:(id)arg1;
-- (id)_loadPrincipalObjectsFromBundles:(id)arg1;
-- (id)_pluginsRegisteredForAccountType:(id)arg1;
+- (_Bool)canRemoveAccount:(id)arg1 inStore:(id)arg2 error:(id *)arg3;
+- (_Bool)canSaveAccount:(id)arg1 inStore:(id)arg2 error:(id *)arg3;
+- (id)initWithNotificationEntries:(id)arg1;
 - (id)init;
-- (void)_faultInNotificationPlugins;
 
 @end
 

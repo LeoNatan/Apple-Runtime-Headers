@@ -6,7 +6,7 @@
 
 #import <AVFoundation/AVAsset.h>
 
-@class AVAssetSynchronousInspectorLoader, AVStreamDataAssetInspector, AVStreamDataParser, NSArray, NSDictionary;
+@class AVAssetSynchronousInspectorLoader, AVDispatchOnce, AVStreamDataAssetInspector, AVStreamDataParser, NSArray, NSDictionary;
 
 __attribute__((visibility("hidden")))
 @interface AVStreamDataAsset : AVAsset
@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     AVStreamDataParser *_parser;
     AVStreamDataAssetInspector *_inspector;
     AVAssetSynchronousInspectorLoader *_inspectorLoader;
-    long long _tracksOnce;
+    AVDispatchOnce *_tracksOnce;
     NSArray *_tracks;
     NSDictionary *_trackDictsByTrackID;
 }

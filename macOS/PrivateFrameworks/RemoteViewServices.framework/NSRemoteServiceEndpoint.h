@@ -13,16 +13,16 @@
     NSObject<OS_xpc_object> *_connection;
     CDUnknownBlockType _errorHandler;
     CDUnknownBlockType _connectionHandler;
-    BOOL _isAcceptingConnections;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
+@property(copy, nonatomic) CDUnknownBlockType connectionHandler; // @synthesize connectionHandler=_connectionHandler;
+- (void).cxx_destruct;
+- (void)invalidate;
 - (void)stop;
 - (void)start;
 - (void)_connectionDidReceiveEvent:(id)arg1;
-- (void)setConnectionHandler:(CDUnknownBlockType)arg1;
-- (void)setErrorHandler:(CDUnknownBlockType)arg1;
-- (void *)endpoint;
-- (void)dealloc;
+- (id)endpoint;
 - (id)init;
 
 @end

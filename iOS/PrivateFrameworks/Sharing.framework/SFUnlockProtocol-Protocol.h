@@ -6,13 +6,14 @@
 
 #import <Sharing/NSObject-Protocol.h>
 
-@class NSString, SFAutoUnlockDevice;
+@class NSData, NSString, SFAutoUnlockDevice;
 @protocol SFUnlockClientProtocol;
 
 @protocol SFUnlockProtocol <NSObject>
 
 @optional
 - (void)unlockStateForDevice:(NSString *)arg1 completionHandler:(void (^)(SFUnlockState *, NSError *))arg2;
+- (void)establishStashBagWithManifest:(NSData *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)establishStashBagWithCompletionHandler:(void (^)(_Bool, NSError *))arg1;
 - (void)unlockEnabledWithDevice:(NSString *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
 - (void)disableUnlockWithDevice:(NSString *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;

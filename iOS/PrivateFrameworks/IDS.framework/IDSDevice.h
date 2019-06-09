@@ -14,15 +14,8 @@
 }
 
 - (void).cxx_destruct;
-- (void)closeSocketForDomain:(id)arg1;
-- (int)openSocketForDomain:(id)arg1 transportType:(long long)arg2;
-- (int)openSocketForDomain:(id)arg1;
-- (int)socketForDomain:(id)arg1;
-- (void)cleanupStreamPairWithInputStream:(id)arg1 outputStream:(id)arg2;
-- (void)establishStreamPairWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 onQueue:(id)arg3;
-- (void)closeSocket:(int)arg1;
-- (void)openSocketWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 onQueue:(id)arg3;
 - (id)_internal;
+- (void)_setService:(id)arg1;
 - (void)_setAccount:(id)arg1;
 @property(readonly, nonatomic) unsigned long long serviceMinCompatibilityVersion;
 @property(readonly, nonatomic) unsigned long long maxCompatibilityVersion;

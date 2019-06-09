@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class _CFXNotificationRegistrationBase;
+@class NSMutableArray, _CFXNotificationRegistrationBase;
 
 #pragma mark Function Pointers and Blocks
 
@@ -140,11 +140,16 @@ typedef struct {
 } CDStruct_912cb5d2;
 
 typedef struct {
-    struct NSMethodFrameArgInfo *_field1;
-    struct NSMethodFrameArgInfo *_field2;
-    unsigned int _field3;
-    unsigned int _field4;
-} CDStruct_52991635;
+    struct NSMethodFrameArgInfo *retInfo;
+    struct NSMethodFrameArgInfo *argInfo;
+    unsigned int numArgs;
+    unsigned int frameSize;
+} CDStruct_b48d777a;
+
+typedef struct {
+    struct __CFBasicHash *set;
+    NSMutableArray *array;
+} CDStruct_2595eaee;
 
 typedef struct {
     int _field1;
@@ -194,12 +199,17 @@ typedef struct {
         } ;
         struct {
             unsigned int muts;
+            unsigned int other;
+        } ;
+        struct {
+            unsigned int mutbits:31;
+            unsigned int copyKeys:1;
             unsigned int used:25;
             unsigned int kvo:1;
             unsigned int szidx:6;
         } ;
     } state;
-} CDStruct_2af495fa;
+} CDStruct_bc24fd1e;
 
 typedef struct {
     id *list;

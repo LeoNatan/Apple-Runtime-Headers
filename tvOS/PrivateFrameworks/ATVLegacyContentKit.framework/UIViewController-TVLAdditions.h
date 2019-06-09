@@ -29,5 +29,9 @@
 @property(nonatomic) _Bool isVolatile;
 @property(nonatomic) _Bool wasEverActivated;
 @property(retain, nonatomic) TVLDocument *feedDocument;
+@property(copy, nonatomic) CDUnknownBlockType wasPushedBlock;
+@property(copy, nonatomic) CDUnknownBlockType wasPoppedBlock;
+@property(copy, nonatomic) CDUnknownBlockType wasBuriedBlock;
+@property(copy, nonatomic) CDUnknownBlockType wasExhumedBlock;
 @end
 

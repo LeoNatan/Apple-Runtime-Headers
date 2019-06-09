@@ -6,28 +6,32 @@
 
 #import <UIKitCore/_UILabelContent.h>
 
-@class NSMutableAttributedString;
+@class NSAttributedString;
 
 __attribute__((visibility("hidden")))
 @interface _UILabelAttributedStringContent : _UILabelContent
 {
-    NSMutableAttributedString *_attributedString;
+    NSAttributedString *_attributedString;
 }
 
 - (void).cxx_destruct;
+- (unsigned long long)hash;
+- (_Bool)_isContentEqualToContent:(id)arg1;
 - (_Bool)isEqualToAttributedString:(id)arg1;
 - (_Bool)isEqualToString:(id)arg1;
 - (id)attributedString;
 - (id)string;
+- (_Bool)isWidthVariant;
 - (_Bool)isAttributed;
 - (_Bool)isNil;
 - (long long)length;
 - (id)attributedStringContent;
 - (id)defaultValueForAttribute:(id)arg1;
-- (id)valueForAttribute:(id)arg1 isUniform:(_Bool *)arg2;
-- (void)applyToRange:(struct _NSRange)arg1 attribute:(id)arg2 withValue:(id)arg3;
-- (void)applyToEntireRangeAttribute:(id)arg1 withValue:(id)arg2;
-- (id)initWithAttributedString:(id)arg1 defaultAttributesProvider:(CDUnknownBlockType)arg2;
+- (_Bool)isAttribute:(id)arg1 uniformlyEqualToValue:(id)arg2;
+- (id)contentByApplyingAttribute:(id)arg1 value:(id)arg2 toRange:(struct _NSRange)arg3;
+- (id)contentByApplyingAttributeToEntireRange:(id)arg1 value:(id)arg2;
+- (id)contentWithString:(id)arg1;
+- (id)initWithAttributedString:(id)arg1 defaultAttributesProvider:(id)arg2;
 
 @end
 

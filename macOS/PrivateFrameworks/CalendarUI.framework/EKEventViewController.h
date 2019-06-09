@@ -8,7 +8,7 @@
 
 #import <CalendarUI/CalUIEventViewTouchBarDelegate-Protocol.h>
 
-@class CalUIEventViewTouchBar, EKDiff, EKEvent, EKUIAttendeesGadget, EKUIGadget, EKUIGadgetContainer, EKUILocationGadget, EKUIStartTimeGadget, EKUIThreeButtonGadget, EKUITitleCalendarCompositeGadget, NSString;
+@class CalUIEventViewTouchBar, EKDiff, EKEvent, EKUIAttendeesGadget, EKUIGadget, EKUIGadgetContainer, EKUILocationGadget, EKUIProposedTimeCompositeGadget, EKUIStartTimeGadget, EKUIThreeButtonGadget, EKUITitleCalendarCompositeGadget, NSString;
 
 @interface EKEventViewController : EKViewController <CalUIEventViewTouchBarDelegate>
 {
@@ -18,6 +18,7 @@
     EKUIGadgetContainer *_titleLocationContainer;
     EKUITitleCalendarCompositeGadget *_titleGadget;
     EKUILocationGadget *_locationGadget;
+    EKUIProposedTimeCompositeGadget *_proposedTimeCompositeGadget;
     EKUIGadgetContainer *_dateTimeContainer;
     EKUIStartTimeGadget *_startTimeGadget;
     EKUIGadget *_attachmentGadget;
@@ -44,6 +45,7 @@
 @property(retain) EKUIGadget *attachmentGadget; // @synthesize attachmentGadget=_attachmentGadget;
 @property(retain) EKUIStartTimeGadget *startTimeGadget; // @synthesize startTimeGadget=_startTimeGadget;
 @property(retain) EKUIGadgetContainer *dateTimeContainer; // @synthesize dateTimeContainer=_dateTimeContainer;
+@property(retain) EKUIProposedTimeCompositeGadget *proposedTimeCompositeGadget; // @synthesize proposedTimeCompositeGadget=_proposedTimeCompositeGadget;
 @property(retain) EKUILocationGadget *locationGadget; // @synthesize locationGadget=_locationGadget;
 @property(retain) EKUITitleCalendarCompositeGadget *titleGadget; // @synthesize titleGadget=_titleGadget;
 @property(retain) EKUIGadgetContainer *titleLocationContainer; // @synthesize titleLocationContainer=_titleLocationContainer;
@@ -54,7 +56,7 @@
 - (id)oldEvent:(id)arg1 didUpdateTo:(id)arg2;
 - (id)oldObject:(id)arg1 didUpdateTo:(id)arg2;
 - (void)updateSuddenTerminationWithNewEvent:(id)arg1;
-- (BOOL)commitFromCommitButton:(BOOL)arg1;
+- (BOOL)commitFromCommitButton:(BOOL)arg1 shouldClose:(char *)arg2;
 - (BOOL)hasUnsentChanges;
 - (void)reportJunk;
 - (void)deleteEvent;

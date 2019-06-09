@@ -27,7 +27,8 @@ __attribute__((visibility("hidden")))
         unsigned int userInterfaceLayoutDirectionOverride:1;
         unsigned int isPaletteToolbar:1;
         unsigned int bezeled:1;
-        unsigned int reserved:23;
+        unsigned int overflowMenuUsesAllItems:1;
+        unsigned int reserved:22;
     } _tbaFlags;
     unsigned short _fullScreenAuxiliaryViewForceVisibleCounter;
     double auxMinHeight;

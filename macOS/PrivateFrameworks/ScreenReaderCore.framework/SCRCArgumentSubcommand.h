@@ -21,7 +21,7 @@
 - (void)stopDueToSigTerm;
 - (void)stop;
 - (int)run;
-- (void)addOption:(id)arg1 argument:(id)arg2 target:(id)arg3 action:(SEL)arg4 argumentDescription:(id)arg5 required:(BOOL)arg6;
+- (void)addOption:(BOOL)arg1 argument:(id)arg2 target:(id)arg3 action:(SEL)arg4 argumentDescription:(id)arg5 required:(BOOL)arg6;
 - (id)formattedHelpFooter;
 - (id)formattedHelpHeader;
 - (id)optionArray;

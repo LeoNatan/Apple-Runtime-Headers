@@ -4,52 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <ClockComplications/CLKCComplicationDataSource.h>
 
-@class CLKDevice, NTKComplication;
-@protocol NTKComplicationDataSourceDelegate;
+@class NTKComplication;
 
-@interface NTKComplicationDataSource : NSObject
+@interface NTKComplicationDataSource : CLKCComplicationDataSource
 {
-    NTKComplication *_complication;
-    int _family;
-    CLKDevice *_device;
-    id <NTKComplicationDataSourceDelegate> _delegate;
 }
 
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 withFamily:(int)arg2 forDevice:(id)arg3;
 + (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
-+ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
-+ (Class)richComplicationDisplayViewClassForType:(unsigned int)arg1 family:(int)arg2 forDevice:(id)arg3;
 + (Class)dataSourceClassForComplicationType:(unsigned int)arg1 family:(int)arg2 forDevice:(id)arg3;
-@property(nonatomic) __weak id <NTKComplicationDataSourceDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
-@property(readonly, nonatomic) int family; // @synthesize family=_family;
-@property(readonly, nonatomic) NTKComplication *complication; // @synthesize complication=_complication;
-- (void).cxx_destruct;
-- (void)getDesiredUpdateIntervalWithHandler:(CDUnknownBlockType)arg1;
-- (void)getTimelineEntriesAfterDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)getTimelineEntriesBeforeDate:(id)arg1 limit:(unsigned int)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
-- (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;
-- (void)getTimelineStartDateWithHandler:(CDUnknownBlockType)arg1;
-- (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
-- (id)lockedTemplate;
-- (id)currentSwitcherTemplate;
-- (id)complicationApplicationIdentifier;
-- (_Bool)alwaysShowIdealizedTemplateInSwitcher;
-- (void)didTouchUpInside;
-- (void)didTouchDown;
-- (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)resumeAnimations;
-- (void)pauseAnimations;
-- (void)resume;
-- (void)pause;
-- (void)becomeInactive;
-- (void)becomeActive;
-@property(readonly, nonatomic) _Bool supportsTapAction;
-@property(readonly, nonatomic) unsigned int timelineAnimationBehavior;
+- (Class)richComplicationDisplayViewClassForDevice:(id)arg1;
 - (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
+
+// Remaining properties
+@property(readonly, nonatomic) NTKComplication *complication; // @dynamic complication;
 
 @end
 

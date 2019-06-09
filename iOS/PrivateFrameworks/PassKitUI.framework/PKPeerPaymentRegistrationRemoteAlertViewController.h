@@ -17,11 +17,11 @@
 + (_Bool)_isSecureForRemoteViewService;
 - (void)_dismiss;
 - (void)paymentSetupDidFinish:(id)arg1;
-- (void)handleHomeButtonPressed;
+- (void)handleButtonActions:(id)arg1;
 - (_Bool)shouldAutorotate;
 - (id)_peerPaymentAccountFromData:(id)arg1;
-- (void)setUserInfo:(id)arg1;
-- (void)_willAppearInRemoteViewController;
+- (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (long long)preferredStatusBarStyle;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

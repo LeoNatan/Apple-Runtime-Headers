@@ -21,12 +21,12 @@ __attribute__((visibility("hidden")))
 + (_Bool)isNamespaceSupported:(const char *)arg1;
 + (void)registerNamespace:(id)arg1;
 @property(retain, nonatomic) CXNamespace *fallbackNamespace; // @synthesize fallbackNamespace=mFallbackNamespace;
+- (void).cxx_destruct;
 - (const char *)fallbackUri;
 - (const char *)uri;
 - (_Bool)containsAttribute:(struct _xmlAttr *)arg1;
 - (_Bool)containsNode:(struct _xmlNode *)arg1;
 - (id)initUnsupportedNsWithUri:(const char *)arg1;
-- (void)dealloc;
 - (id)initWithUri:(const char *)arg1 fallbackNamespace:(id)arg2;
 - (id)initWithUri:(const char *)arg1;
 - (id)init;

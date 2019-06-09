@@ -11,7 +11,19 @@
 @class NSString;
 
 @interface HMHomeManager (HFDebugging) <HFStateDumpBuildable>
++ (id)hf_homeFutureForName:(id)arg1;
 - (id)hf_stateDumpBuilderWithContext:(id)arg1;
+@property(readonly, nonatomic) _Bool hf_hasDetectediCloudIssue;
+- (id)hf_setHasSeenNewFeaturesView:(_Bool)arg1;
+- (_Bool)hf_hasSeenNewFeaturesView;
+- (id)hf_setHasSeenOnboardingWelcomeView:(_Bool)arg1;
+- (_Bool)hf_hasSeenOnboardingWelcomeView;
+- (id)hf_homeForName:(id)arg1;
+- (id)hf_setOrderedHomes:(id)arg1;
+- (id)hf_orderedHomes;
+- (id)hf_orderedHomesList;
+- (id)hf_mutableOrderedHomesList;
+- (id)hf_homeWithIdentifier:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

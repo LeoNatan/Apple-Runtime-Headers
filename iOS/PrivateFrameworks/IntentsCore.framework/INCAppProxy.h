@@ -13,6 +13,7 @@
     INCExtensionConnection *_connection;
 }
 
++ (_Bool)shouldLaunchAppInBackgroundWithIntent:(id)arg1 intentResponse:(id)arg2;
 + (void)initialize;
 @property(readonly, nonatomic) __weak INCExtensionConnection *_connection; // @synthesize _connection;
 - (void).cxx_destruct;

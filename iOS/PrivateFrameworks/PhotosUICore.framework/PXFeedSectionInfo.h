@@ -29,12 +29,14 @@
     PLCloudSharedAlbumInvitationRecord *_invitationRecord;
     long long _numberOfItems;
     NSIndexSet *_excludedAssetIndexes;
+    long long _cachedInboxModelType;
 }
 
 + (void)endCachingSharedAlbumsByGUIDs;
 + (void)beginCachingSharedAlbumsByGUIDs;
 + (id)sectionInfoWithCloudFeedEntry:(id)arg1;
 + (id)defaultPreviewImage;
+@property(nonatomic) long long cachedInboxModelType; // @synthesize cachedInboxModelType=_cachedInboxModelType;
 @property(copy, nonatomic) NSIndexSet *excludedAssetIndexes; // @synthesize excludedAssetIndexes=_excludedAssetIndexes;
 @property(nonatomic) _Bool shouldBeVisibleWhenEmpty; // @synthesize shouldBeVisibleWhenEmpty=_shouldBeVisibleWhenEmpty;
 @property(nonatomic) long long numberOfItems; // @synthesize numberOfItems=_numberOfItems;
@@ -49,6 +51,7 @@
 @property(retain, nonatomic) PLManagedAsset *secondaryKeyAsset; // @synthesize secondaryKeyAsset=_secondaryKeyAsset;
 @property(retain, nonatomic) PLManagedAsset *keyAsset; // @synthesize keyAsset=_keyAsset;
 - (void).cxx_destruct;
+- (_Bool)isEqual:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *transientIdentifier; // @synthesize transientIdentifier=_transientIdentifier;
 - (id)sharedAlbumWithGUID:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *localizedLocationNames;
@@ -65,6 +68,8 @@
 @property(readonly, retain, nonatomic) NSOrderedSet *assets;
 @property(readonly, retain, nonatomic) NSString *title;
 @property(readonly, retain, nonatomic) NSString *uuid;
+- (long long)_inboxModelTypeForCloudCommentType;
+@property(readonly, nonatomic) long long inboxModelType;
 - (long long)indexOfItemWithComment:(id)arg1;
 - (long long)indexOfItemWithAsset:(id)arg1;
 - (_Bool)containsAsset:(id)arg1;
@@ -96,7 +101,6 @@
 - (id)_usersInvolvedForComment;
 - (id)_usersInvolvedForLike;
 - (id)_usersInvolved;
-- (long long)_inboxModelTypeForCloudCommentType;
 @property(readonly, nonatomic) NSString *keyCommentGUID;
 @property(readonly, nonatomic) NSString *ownerEmail;
 @property(readonly, nonatomic) NSString *ownerLastName;
@@ -108,7 +112,6 @@
 @property(readonly, nonatomic) _Bool userIsSender;
 @property(readonly, copy, nonatomic) NSArray *senderNames;
 @property(readonly, copy, nonatomic) NSString *inboxModelTitle;
-@property(readonly, nonatomic) long long type;
 @property(readonly, nonatomic) NSDate *creationDate;
 
 // Remaining properties

@@ -12,6 +12,7 @@
 @property(readonly, nonatomic) unsigned long long numberOfTabs;
 @property(readonly, nonatomic) id <WBSOrderedTab> selectedTabForTabOrderProvider;
 @property(readonly, nonatomic) unsigned long long indexOfSelectedTab;
+- (unsigned long long)indexForTab:(id <WBSOrderedTab>)arg1;
 - (id <WBSOrderedTab>)originatingTabForTab:(id <WBSOrderedTab>)arg1;
 - (id <WBSOrderedTab>)tabAtIndex:(unsigned long long)arg1;
 @end

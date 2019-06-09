@@ -13,14 +13,15 @@ __attribute__((visibility("hidden")))
 {
     id _representedObject;
     long long _itemCount;
-    NSBulkPointerArray *_pointerArray;
+    NSBulkPointerArray *_itemPointers;
     NSMutableIndexSet *_invalidIndexes;
 }
 
 @property(retain) id representedObject; // @synthesize representedObject=_representedObject;
 - (void)dealloc;
-- (id)description;
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)replaceItemPointersFromArray:(id)arg1 range:(struct _NSRange)arg2;
+- (void)appendItemPointersTo:(id)arg1;
 - (void)reloadItemsAtIndexes:(id)arg1;
 - (void)moveItemFromIndex:(long long)arg1 toIndex:(long long)arg2;
 - (void)deleteItemsAtIndexes:(id)arg1;
@@ -28,14 +29,15 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)actualItemCount;
 - (void)setObject:(id)arg1 atIndex:(long long)arg2;
 - (id)objectAtIndex:(long long)arg1;
-- (void)processBatchUpdateItemMoves:(id)arg1;
 - (void)fetchAllNeededRepresentedObjectsFromObjectBasedDataSource:(id)arg1 forCollectionView:(id)arg2;
 - (BOOL)needsToFetchAnyRepresentedObjects;
 - (id)debugDescription;
+- (id)description;
 @property long long itemCount;
 - (void)setAllRepresentedObjectPointers:(id)arg1;
-- (void)invalidateAllRepresentedObjectPointers;
+- (id)deepCopyForBatchUpdate;
 - (id)init;
+- (id)initWithRepresentedObject:(id)arg1 itemCount:(long long)arg2 itemPointers:(id)arg3 invalidIndexes:(id)arg4;
 
 @end
 

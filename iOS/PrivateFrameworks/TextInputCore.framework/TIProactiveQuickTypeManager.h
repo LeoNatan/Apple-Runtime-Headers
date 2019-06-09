@@ -9,7 +9,7 @@
 #import <TextInputCore/TIKeyboardActivityObserving-Protocol.h>
 #import <TextInputCore/TIProactiveQuickTypeManaging-Protocol.h>
 
-@class NSDate, NSDictionary, NSString, TIProactiveTrigger;
+@class NSDate, NSString, TIProactiveTrigger;
 @protocol OS_dispatch_queue, _ICPredictionManaging;
 
 @interface TIProactiveQuickTypeManager : NSObject <TIProactiveQuickTypeManaging, TIKeyboardActivityObserving>
@@ -20,8 +20,6 @@
     NSDate *_lastSuggestionTime;
     NSString *_maxLengthProactiveCandidate;
     unsigned long long _textBeforeLength;
-    NSString *_recipientEmailOrPhone;
-    NSDictionary *_recipientInfo;
 }
 
 + (id)buildSecureCandidateFrom:(id)arg1 withSecureCandidateRenderer:(id)arg2 input:(id)arg3;
@@ -31,8 +29,6 @@
 + (id)buildSecureCandidateForTestFrom:(id)arg1 withSecureCandidateRenderer:(id)arg2 input:(id)arg3;
 + (void)setSharedTIProactiveQuickTypeManager:(id)arg1;
 - (void).cxx_destruct;
-- (void)setCachedRecipientInfo:(id)arg1 forEmailOrPhone:(id)arg2;
-- (id)getCachedRecipientInfoForEmailOrPhone:(id)arg1;
 - (_Bool)isAutoCompleteEnabled;
 - (_Bool)isAutoPopupEnabled;
 - (_Bool)isEnabled;

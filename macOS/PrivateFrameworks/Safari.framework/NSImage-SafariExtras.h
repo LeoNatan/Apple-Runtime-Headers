@@ -7,6 +7,7 @@
 #import <AppKit/NSImage.h>
 
 @interface NSImage (SafariExtras)
++ (void)safari_fetchContactImageForContact:(id)arg1 diameter:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)safari_fetchContactImageForContactWithUniqueID:(id)arg1 diameter:(double)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)safari_defaultMediumFavicon;
 + (id)safari_defaultSmallFavicon;
@@ -28,8 +29,6 @@
 @property(readonly, nonatomic) BOOL safari_shouldApplyBackingForDarkBackdrop;
 - (id)safari_darkModeSafeFaviconImage;
 - (id)safari_imageByRoundingCornersWithRadius:(double)arg1;
-@property(readonly, nonatomic) BOOL safari_transparencyAnalysisResultIsNotOpaque;
-@property(nonatomic, setter=safari_setTransparencyAnalysisResult:) long long safari_transparencyAnalysisResult;
 - (id)safari_iconFilledWithBackgroundColor:(id)arg1;
 - (id)safari_flatImageWithColor:(id)arg1;
 - (id)_safari_imageWithBackgroundColor:(id)arg1 compositingOperation:(unsigned long long)arg2;

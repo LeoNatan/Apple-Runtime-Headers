@@ -33,7 +33,7 @@
 - (void)_updateShadowWithLayoutAttributes:(id)arg1;
 - (void)_updateHighlightedAndSelectedAppearance;
 - (void)applyLayoutAttributes:(id)arg1;
-- (float)_preferredContinuousCornerRadius;
+- (id)artworkImageViewFormat;
 - (void)setDownloadState:(unsigned int)arg1 dimmed:(_Bool)arg2 progress:(float)arg3 animated:(_Bool)arg4;
 - (void)setDownloadState:(unsigned int)arg1 dimmed:(_Bool)arg2 progress:(float)arg3;
 @property(readonly, nonatomic) NMUDownloadProgressView *downloadProgressView;

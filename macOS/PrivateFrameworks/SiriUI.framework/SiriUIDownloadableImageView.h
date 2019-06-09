@@ -8,7 +8,6 @@
 
 @class NSBundle, NSImageView, NSString, NSURL;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIDownloadableImageView : NSView
 {
     NSImageView *_imageView;

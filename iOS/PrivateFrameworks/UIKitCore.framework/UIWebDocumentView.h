@@ -65,6 +65,7 @@
     struct {
         NSTimer *timer;
         struct CGPoint location;
+        long long modifierFlags;
         _Bool isBlocked;
         _Bool isCancelled;
         _Bool isOnWebThread;
@@ -117,7 +118,6 @@
     unsigned int _needsScrollNotifications:1;
     unsigned int _loadsSynchronously:1;
     unsigned int _mouseDown:1;
-    unsigned int _usePreTimberlineTransparencyBehavior:1;
     unsigned int _geolocationDialogAllowed:1;
     unsigned int _usingMinimalTilesDuringLoading:1;
     unsigned int _sheetsCount:2;
@@ -204,7 +204,7 @@
 - (_Bool)shouldSelectionAssistantReceiveDoubleTapAtPoint:(struct CGPoint)arg1 forScale:(double)arg2;
 - (void)willZoomToMinimumScale;
 - (_Bool)considerHeightForDoubleTap;
-- (CDStruct_57d825b2)doubleTapScalesForSize:(struct CGSize)arg1;
+- (CDStruct_39925896)doubleTapScalesForSize:(struct CGSize)arg1;
 - (struct CGRect)rectOfInterestForPoint:(struct CGPoint)arg1;
 - (double)minimumScaleForSize:(struct CGSize)arg1;
 - (struct CGRect)visibleContentRect;
@@ -318,6 +318,7 @@
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
 - (void)endFloatingCursor;
+- (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (void)beginFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (struct CGRect)_selectionClipRect;
@@ -398,6 +399,9 @@
 - (void)deleteFromInput;
 - (void)addInputString:(id)arg1;
 - (void)addInputString:(id)arg1 withFlags:(unsigned long long)arg2;
+- (_Bool)handleKeyAppCommandForCurrentEvent;
+- (_Bool)handleKeyTextCommandForCurrentEvent;
+- (_Bool)handleKeyCommandForCurrentEvent;
 - (id)delegate;
 - (void)setContinuousSpellCheckingEnabled:(_Bool)arg1;
 - (void)_setParentTextView:(id)arg1;
@@ -563,7 +567,6 @@
 - (float)_documentScale;
 - (void)_setDocumentScale:(float)arg1;
 - (void)setFrame:(struct CGRect)arg1;
-- (void)setUsePreTimberlineTransparencyBehavior;
 - (unsigned long long)dataDetectorTypes;
 - (void)setDataDetectorTypes:(unsigned long long)arg1;
 - (unsigned long long)effectiveDataDetectorTypes;
@@ -605,6 +608,7 @@
 - (struct CGRect)webViewFrameForUIFrame:(struct CGRect)arg1;
 - (void)_restoreViewportSettingsWithSize:(struct CGSize)arg1;
 - (Class)_printFormatterClass;
+- (_Bool)_dragInteraction:(id)arg1 sessionSupportsSystemDrag:(id)arg2;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForAddingToSession:(id)arg2 withTouchAtPoint:(struct CGPoint)arg3;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;
 - (void)dragInteraction:(id)arg1 session:(id)arg2 didEndWithOperation:(unsigned long long)arg3;
@@ -644,6 +648,7 @@
 - (void)webView:(id)arg1 didObserveDeferredContentChange:(int)arg2 forFrame:(id)arg3;
 - (void)attemptClick:(id)arg1;
 - (void)_sendMouseMoveAndAttemptClick:(id)arg1;
+- (id)newMouseEvent:(int)arg1;
 - (void)performClick:(id)arg1;
 - (void)_syntheticMouseEventNotHandledAtLocation:(struct CGPoint)arg1;
 - (void)_twoFingerPanRecognized:(id)arg1;
@@ -666,7 +671,7 @@
 - (void)tapInteractionWithLocation:(struct CGPoint)arg1;
 - (void)continueInteractionWithLocation:(struct CGPoint)arg1;
 - (void)startInteractionWithLocation:(struct CGPoint)arg1;
-- (void)_resetInteractionWithLocation:(struct CGPoint)arg1;
+- (void)_resetInteractionWithLocation:(struct CGPoint)arg1 modifierFlags:(long long)arg2;
 - (void)performInteractionSelector:(SEL)arg1 afterDelay:(double)arg2;
 - (void)clearInteractionTimer;
 - (void)_interactionStoppedFromPreviewItemController:(id)arg1;
@@ -778,7 +783,6 @@
 - (id)_beginPrintModeForPDFView:(id)arg1 withSize:(struct CGSize)arg2 startOffset:(double)arg3 minimumLayoutWidth:(double)arg4 maximumLayoutWidth:(double)arg5;
 - (id)_beginPrintModeForHTMLView:(id)arg1 withSize:(struct CGSize)arg2 startOffset:(double)arg3 minimumLayoutWidth:(double)arg4 maximumLayoutWidth:(double)arg5 tileClippedContent:(_Bool)arg6;
 - (_Bool)isInPrintMode;
-- (id)URL;
 
 // Remaining properties
 @property(copy, nonatomic) NSIndexSet *PINEntrySeparatorIndexes;
@@ -804,10 +808,12 @@
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically; // @dynamic enablesReturnKeyAutomatically;
 @property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) _Bool forceDefaultDictationInfo;
 @property(nonatomic) long long forceDictationKeyboardType;
 @property(nonatomic) _Bool forceDisableDictation;
 @property(nonatomic) _Bool forceEnableDictation;
+@property(nonatomic) _Bool forceFloatingKeyboard;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) _Bool hidePrediction;
@@ -830,6 +836,7 @@
 @property(retain, nonatomic) UIImage *selectionDragDotImage; // @dynamic selectionDragDotImage;
 @property(retain, nonatomic) UIColor *selectionHighlightColor; // @dynamic selectionHighlightColor;
 @property(nonatomic) int shortcutConversionType; // @dynamic shortcutConversionType;
+@property(nonatomic) _Bool showDictationButton;
 @property(nonatomic) long long smartDashesType; // @dynamic smartDashesType;
 @property(nonatomic) long long smartInsertDeleteType; // @dynamic smartInsertDeleteType;
 @property(nonatomic) long long smartQuotesType; // @dynamic smartQuotesType;
@@ -846,6 +853,7 @@
 @property(nonatomic) struct __CFCharacterSet *textTrimmingSet; // @dynamic textTrimmingSet;
 @property(retain, nonatomic) UIColor *underlineColorForSpelling;
 @property(retain, nonatomic) UIColor *underlineColorForTextAlternatives;
+@property(nonatomic) _Bool useAutomaticEndpointing;
 @property(nonatomic) _Bool useInterfaceLanguageForLocalization;
 @property(nonatomic) struct _NSRange validTextRange;
 

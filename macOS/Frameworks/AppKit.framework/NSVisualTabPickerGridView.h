@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <NSVisualTabPickerGridViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <NSVisualTabPickerGridViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (id)_tabPickerThumbnailViews;
 - (double)_additionalHeightTakenByStackedTilesForRow:(unsigned long long)arg1;
 - (void)_getHorizontalLeadingOffset:(double *)arg1 trailingOffset:(double *)arg2;
 - (void)_computeArrayOfTabItemsPerContainer;
@@ -82,6 +83,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)canCloseNSVisualTabPickerTileContainerView:(id)arg1;
 - (void)selectTabBarItem:(id)arg1;
 - (id)visualTabPickerTileContainerView:(id)arg1 viewForTileAtIndex:(unsigned long long)arg2;
+- (BOOL)visualTabPickerTileContainerView:(id)arg1 highlightStateForTileAtIndex:(unsigned long long)arg2;
+- (id)visualTabPickerTileContainerView:(id)arg1 imageForTileAtIndex:(unsigned long long)arg2;
 - (id)visualTabPickerTileContainerView:(id)arg1 titleForTileAtIndex:(unsigned long long)arg2;
 - (id)titleForNSVisualTabPickerTileContainerView:(id)arg1;
 - (unsigned long long)numberOfTilesInNSVisualTabPickerTileContainerView:(id)arg1;
@@ -94,6 +97,7 @@ __attribute__((visibility("hidden")))
 - (void)reloadTabViewItem:(id)arg1;
 - (void)removeTabViewItem:(id)arg1;
 - (void)addTabViewItem:(id)arg1 atIndex:(unsigned long long)arg2;
+- (void)selectedTabDidChange;
 - (void)hideCloseButtons;
 - (void)reloadGridView;
 - (void)_updateSize;

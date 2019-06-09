@@ -20,7 +20,6 @@
 - (void)redoIt;
 - (void)undoIt;
 - (void)_swap;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithSmartGroup:(id)arg1 name:(id)arg2 searchElement:(id)arg3 hilights:(BOOL)arg4 addressBook:(id)arg5;
 

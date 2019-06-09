@@ -35,6 +35,8 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) NSString *fallbackUserInfoURL;
+@property(readonly, nonatomic) Class fallbackWebUserInfoResponseClass;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
 

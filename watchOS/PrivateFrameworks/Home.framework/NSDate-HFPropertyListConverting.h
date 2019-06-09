@@ -11,6 +11,34 @@
 @class NSString;
 
 @interface NSDate (HFPropertyListConverting) <HFPropertyListConvertible>
++ (id)hf_dateByAddingYears:(int)arg1 months:(int)arg2 weeks:(int)arg3 days:(int)arg4 hours:(int)arg5 minutes:(int)arg6 seconds:(int)arg7 nanoseconds:(int)arg8 toDate:(id)arg9;
++ (int)hf_daysBetweenDates:(id)arg1 endDate:(id)arg2;
++ (id)hf_dateByAddingNanoseconds:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingSeconds:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingMinutes:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingHours:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingDays:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingWeeks:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingMonths:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateByAddingYears:(int)arg1 toDate:(id)arg2;
++ (id)hf_dateBySubtractingComponents:(id)arg1 fromDate:(id)arg2 times:(int)arg3;
++ (id)hf_dateByAddingComponents:(id)arg1 toDate:(id)arg2 times:(int)arg3;
++ (id)hf_sharedTimeZone;
++ (id)hf_sharedCalendar;
+- (_Bool)hf_isBetweenStartDate:(id)arg1 endDate:(id)arg2;
+- (_Bool)hf_isMidnight;
+- (_Bool)hf_isFirstHourOfDay;
+- (_Bool)hf_isWithinOneSecondOfDate:(id)arg1;
+- (_Bool)hf_isWithinOneMinuteOfDate:(id)arg1;
+- (_Bool)hf_isWithinOneHourOfDate:(id)arg1;
+- (_Bool)hf_isWithinInterval:(double)arg1 ofDate:(id)arg2;
+- (id)hf_endOfWeek;
+- (id)hf_startOfWeek;
+- (id)hf_startOfSecond;
+- (id)hf_startOfMinute;
+- (id)hf_startOfHour;
+- (id)hf_startOfNextDay;
+- (id)hf_startOfDay;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

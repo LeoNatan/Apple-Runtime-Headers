@@ -23,6 +23,7 @@
 - (void)updateValueView:(id)arg1;
 - (id)createValueView;
 - (id)possibleValues:(id)arg1 titles:(id)arg2;
+- (id)px_possibleValues:(id)arg1;
 
 @end
 

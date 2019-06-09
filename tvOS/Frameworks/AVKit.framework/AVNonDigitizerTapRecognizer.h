@@ -8,6 +8,7 @@
 
 @class UIPress;
 
+__attribute__((visibility("hidden")))
 @interface AVNonDigitizerTapRecognizer : UITapGestureRecognizer
 {
     UIPress *_recognizedPress;

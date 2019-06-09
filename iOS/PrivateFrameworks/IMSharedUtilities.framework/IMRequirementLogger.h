@@ -6,25 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class IMLoggerOutput, NSString;
-
 @interface IMRequirementLogger : NSObject
 {
+    unsigned char _loggingLevel;
     _Bool _throwFailures;
-    IMLoggerOutput *_logger;
-    NSString *_categoryOverride;
+    const char *_categoryOverride;
 }
 
 + (id)sharedInstance;
 + (void)__setSingleton__im:(id)arg1;
 + (id)__singleton__im;
 @property _Bool throwFailures; // @synthesize throwFailures=_throwFailures;
-@property(retain) NSString *categoryOverride; // @synthesize categoryOverride=_categoryOverride;
-@property(retain) IMLoggerOutput *logger; // @synthesize logger=_logger;
-- (void).cxx_destruct;
+@property unsigned char loggingLevel; // @synthesize loggingLevel=_loggingLevel;
+- (struct IMRequirementFailed_t)requirementDidFail:(const char *)arg1;
+- (void)dealloc;
+@property const char *categoryOverride; // @synthesize categoryOverride=_categoryOverride;
 - (id)description;
-- (void)requirementFailedForCategory:(const char *)arg1 description:(id)arg2 location:(struct IMFileLocation_t *)arg3;
-@property long long loggingLevel;
 - (void)updateSettingsFromUserDefaults;
 - (id)init;
 

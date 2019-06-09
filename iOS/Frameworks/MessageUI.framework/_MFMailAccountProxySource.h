@@ -18,6 +18,7 @@
 }
 
 + (id)defaultInstance;
+- (void).cxx_destruct;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_deregisterForNotifications_nts;
 - (void)_registerForNotifications_nts;

@@ -20,9 +20,8 @@
 - (void).cxx_destruct;
 - (id)_evaluateVideo:(out id *)arg1;
 - (_Bool)requiresVideoComposition;
-- (id)_evaluatePortraitEffectsMatte:(out id *)arg1;
-- (_Bool)canPropagateOriginalDepthData;
-- (id)_evaluateDepthData:(out id *)arg1;
+- (id)_evaluateAuxiliaryImageForType:(long long)arg1 error:(out id *)arg2;
+- (_Bool)canPropagateOriginalAuxiliaryData;
 - (id)_transformWithError:(out id *)arg1;
 - (id)_evaluateImageGeometry:(out id *)arg1;
 - (long long)outputImageOrientation:(long long)arg1;

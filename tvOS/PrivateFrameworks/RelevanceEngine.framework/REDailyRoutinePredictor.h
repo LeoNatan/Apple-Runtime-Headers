@@ -41,7 +41,7 @@
 @property(readonly, nonatomic) NSDateInterval *currentRoutineInterval;
 @property(readonly, nonatomic) unsigned long long currentRoutineType;
 - (void)dealloc;
-- (id)init;
+- (id)_init;
 - (void)_setOverrideRoutineType:(unsigned long long)arg1;
 
 // Remaining properties

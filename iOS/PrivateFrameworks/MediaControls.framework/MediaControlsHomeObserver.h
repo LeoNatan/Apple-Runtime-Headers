@@ -12,6 +12,7 @@
 @class HMHomeManager, NSMutableSet, NSString;
 @protocol MediaControlsHomeObserverDelegate, OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsHomeObserver : NSObject <HFHomeObserver, HFHomeManagerObserver>
 {
     HMHomeManager *_homeManager;

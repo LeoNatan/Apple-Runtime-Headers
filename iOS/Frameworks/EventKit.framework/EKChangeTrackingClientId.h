@@ -4,11 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <CalendarDaemon/CADChangeTrackingClientId.h>
+#import <objc/NSObject.h>
 
-@interface EKChangeTrackingClientId : CADChangeTrackingClientId
+@class CADChangeTrackingClientId, NSString;
+
+@interface EKChangeTrackingClientId : NSObject
 {
+    NSString *_suffix;
+    NSString *_customClientId;
 }
+
+@property(readonly, copy, nonatomic) NSString *customClientId; // @synthesize customClientId=_customClientId;
+@property(readonly, copy, nonatomic) NSString *suffix; // @synthesize suffix=_suffix;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) CADChangeTrackingClientId *CADChangeTrackingClientId;
+- (id)initWithCustomClientId:(id)arg1 suffix:(id)arg2;
+- (id)init;
+- (id)initWithSuffix:(id)arg1;
+- (id)initWithCustomClientId:(id)arg1;
 
 @end
 

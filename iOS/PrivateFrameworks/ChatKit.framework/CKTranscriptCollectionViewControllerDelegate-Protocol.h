@@ -6,7 +6,7 @@
 
 #import <ChatKit/NSObject-Protocol.h>
 
-@class CKBalloonView, CKBrowserItemPayload, CKChatItem, CKFullScreenEffect, CKMessageStatusChatItem, CKTranscriptCollectionViewController, IMSticker, NSArray, NSIndexPath, NSString;
+@class CKBalloonView, CKBrowserItemPayload, CKChatItem, CKFullScreenEffect, CKMessageStatusChatItem, CKTranscriptCollectionViewController, IMSticker, NSArray, NSIndexPath, NSString, UITraitCollection;
 @protocol CKSendAnimationContext;
 
 @protocol CKTranscriptCollectionViewControllerDelegate <NSObject>
@@ -21,6 +21,7 @@
 - (_Bool)transcriptCollectionViewControllerShouldLayoutFullscreenEffects:(CKTranscriptCollectionViewController *)arg1;
 - (_Bool)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 shouldSetupFullscreenEffectUI:(CKFullScreenEffect *)arg2;
 - (_Bool)transcriptCollectionViewControllerPlaybackForOutgoingEffectsIsAllowed:(CKTranscriptCollectionViewController *)arg1;
+- (UITraitCollection *)traitCollectionForTranscriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1;
 - (void)transcriptCollectionViewControllerDidInsertAssociatedChatItem:(CKTranscriptCollectionViewController *)arg1;
 - (void)transcriptCollectionViewControllerWillDisplayLastBalloon:(CKTranscriptCollectionViewController *)arg1;
 - (void)transcriptCollectionViewControllerDisplaySMSSpamReporting:(CKTranscriptCollectionViewController *)arg1;
@@ -40,5 +41,10 @@
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonView:(CKBalloonView *)arg2 tappedForChatItem:(CKChatItem *)arg3;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 didDeselectItemAtIndexPath:(NSIndexPath *)arg2;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 didSelectItemAtIndexPath:(NSIndexPath *)arg2;
+
+@optional
+- (void)transcriptCollectionViewDidBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)arg1;
+- (_Bool)transcriptCollectionViewShouldBeginMultipleSelectionInteractionAtIndexPath:(NSIndexPath *)arg1;
+- (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 willDisplayBalloonForGUID:(NSString *)arg2;
 @end
 

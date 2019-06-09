@@ -6,56 +6,38 @@
 
 #import <AppKit/NSView.h>
 
-@class NSImageView, NSVisualEffectView, _TtC15ConversationKit13PlatformLabel;
+@class _TtC15ConversationKit19ParticipantInfoView;
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit15ParticipantView : NSView
 {
-    // Error parsing type: , name: participantIdentifier
-    // Error parsing type: , name: lastConfigurationHashValue
+    // Error parsing type: , name: backgroundEffectsView
     // Error parsing type: , name: contentView
-    // Error parsing type: , name: associatedVideoProvider
-    // Error parsing type: , name: videoTransform
-    // Error parsing type: , name: audioVisualizationView
-    // Error parsing type: , name: contactGlowView
-    // Error parsing type: , name: contactView
+    // Error parsing type: , name: monogramView
     // Error parsing type: , name: videoView
-    // Error parsing type: , name: pausedVideoView
-    // Error parsing type: , name: loggingIdentifier
-    // Error parsing type: , name: overlayBackdropView
-    // Error parsing type: , name: overlaySpinner
-    // Error parsing type: , name: overlayIconView
-    // Error parsing type: , name: overlaySubtitleLabel
-    // Error parsing type: , name: overlayTitleLabelContainerView
+    // Error parsing type: , name: alertView
+    // Error parsing type: , name: videoOverlayView
     // Error parsing type: , name: bottomBar
-    // Error parsing type: , name: bottomBarLabel
-    // Error parsing type: , name: bottomBarButton
-    // Error parsing type: , name: squareLayoutGuide
-    // Error parsing type: , name: avatarToLabelLayoutGuide
-    // Error parsing type: , name: overlayViewTopLayoutGuide
-    // Error parsing type: , name: overlayViewBottomLayoutGuide
-    // Error parsing type: , name: overlayConstraints
-    // Error parsing type: , name: labelState
-    // Error parsing type: , name: overallLayoutState
-    // Error parsing type: , name: debugProminenceLabel
-    // Error parsing type: , name: bottomBarHideTimer
-    // Error parsing type: , name: style
+    // Error parsing type: , name: debugLabel
+    // Error parsing type: , name: mostRecentViewModelHash
+    // Error parsing type: , name: loggingIdentifier
+    // Error parsing type: , name: hideBottomBarTimer
+    // Error parsing type: , name: hideAlertViewTimer
+    // Error parsing type: , name: participantIdentifier
     // Error parsing type: , name: delegate
+    // Error parsing type: , name: isInRoster
+    // Error parsing type: , name: customCornerRadius
+    // Error parsing type: , name: isExpanded
 }
 
 - (void).cxx_destruct;
-- (id)initWithFrame:(struct CGRect)arg1;
-- (BOOL)accessibilityIsShowingVideo;
-- (id)initWithCoder:(id)arg1;
-- (void)didTapExpandButton;
 - (void)layout;
 - (void)dealloc;
-@property(nonatomic) long long style; // @synthesize style;
-@property(nonatomic, readonly) _TtC15ConversationKit13PlatformLabel *bottomBarLabel; // @synthesize bottomBarLabel;
-@property(nonatomic, readonly) NSVisualEffectView *bottomBar; // @synthesize bottomBar;
-@property(nonatomic, readonly) _TtC15ConversationKit13PlatformLabel *overlaySubtitleLabel; // @synthesize overlaySubtitleLabel;
-@property(nonatomic, readonly) NSImageView *overlayIconView; // @synthesize overlayIconView;
-@property(nonatomic, readonly) NSVisualEffectView *overlayBackdropView; // @synthesize overlayBackdropView;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)init;
+@property(nonatomic) BOOL isExpanded; // @synthesize isExpanded;
+@property(nonatomic) BOOL isInRoster; // @synthesize isInRoster;
+@property(nonatomic, readonly) _TtC15ConversationKit19ParticipantInfoView *bottomBar; // @synthesize bottomBar;
 
 @end
 

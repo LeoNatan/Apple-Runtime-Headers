@@ -10,6 +10,7 @@
 
 @class NSString, UIImageView, UIVisualEffectView;
 
+__attribute__((visibility("hidden")))
 @interface CKVideoCancelActionMenuItemView : UIView <CKActionMenuItemView>
 {
     _Bool _highlighted;

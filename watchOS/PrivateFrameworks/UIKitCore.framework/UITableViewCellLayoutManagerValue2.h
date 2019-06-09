@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
 - (void)layoutSubviewsOfCell:(id)arg1;
 - (void)getTextLabelRect:(struct CGRect *)arg1 detailTextLabelRect:(struct CGRect *)arg2 forCell:(id)arg3 rowWidth:(float)arg4 forSizing:(_Bool)arg5;
 - (id)defaultDetailTextLabelFontForCell:(id)arg1;
-- (id)defaultTextLabelFontForCell:(id)arg1;
 - (id)detailTextLabelForCell:(id)arg1;
 - (id)textLabelForCell:(id)arg1;
 - (id)imageViewForCell:(id)arg1;

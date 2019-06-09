@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
     struct TNSRef<NSLayoutGuide, void> _sidebarScrollViewVerticalContentInsetsLayoutGuide;
     struct NSEdgeInsets _browserViewContentInsets;
     struct NSEdgeInsets _sidebarViewContentInsets;
-    NSView *_contentView;
+    struct TNSWeakPtr<NSView, void> _weakContentView;
     _Bool _opaqueToolbar;
     struct TKeyValueObserver _sidebarInsetsDidChangeObserver;
     struct TKeyValueObserver _browserInsetsDidChangeObserver;
@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)updateBrowserViewContentInsets;
 - (void)updateSidebarViewContentInsets;
+@property(nonatomic) __weak NSView *contentView; // @dynamic contentView;
 - (id)initWithContentView:(id)arg1 toolbarBottomAnchor:(id)arg2;
 
 @end

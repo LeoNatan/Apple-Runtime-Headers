@@ -19,6 +19,7 @@
     _INPBString *_activityType;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)activityDescriptorsType;
 @property(retain, nonatomic) _INPBString *activityType; // @synthesize activityType=_activityType;
 @property(copy, nonatomic) NSArray *activityDescriptors; // @synthesize activityDescriptors=_activityDescriptors;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasActivityType;

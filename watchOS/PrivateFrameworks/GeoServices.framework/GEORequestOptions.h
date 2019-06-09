@@ -9,23 +9,25 @@
 #import <GeoServices/GEOSurchargeOption-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, PBUnknownFields;
 @protocol GEOSurchargeType;
 
 __attribute__((visibility("hidden")))
 @interface GEORequestOptions : PBCodable <GEOSurchargeOption, NSCopying>
 {
-    int _optionUsed;
+    PBUnknownFields *_unknownFields;
     NSMutableArray *_requestOptions;
+    int _optionUsed;
     struct {
-        unsigned int optionUsed:1;
-    } _has;
+        unsigned int has_optionUsed:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)requestOptionType;
-@property(nonatomic) int optionUsed; // @synthesize optionUsed=_optionUsed;
-@property(retain, nonatomic) NSMutableArray *requestOptions; // @synthesize requestOptions=_requestOptions;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -33,13 +35,16 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasOptionUsed;
+@property(nonatomic) int optionUsed;
 - (id)requestOptionAtIndex:(unsigned int)arg1;
 - (unsigned int)requestOptionsCount;
 - (void)addRequestOption:(id)arg1;
 - (void)clearRequestOptions;
+@property(retain, nonatomic) NSMutableArray *requestOptions;
 @property(readonly, nonatomic) id <GEOSurchargeType> selectedSurchargeType;
 @property(readonly, nonatomic) unsigned int selectedSurchargeTypeIndex;
 @property(readonly, nonatomic) NSArray *surchargeTypes;

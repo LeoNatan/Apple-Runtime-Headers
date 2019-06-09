@@ -8,7 +8,6 @@
 
 @class ExifMetadataExtractor, IrisVideoMetadataExtractor, NSArray, NSDictionary, NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface PregateFeatureBuilder : NSObject
 {
     NSMutableDictionary *featuresDict;
@@ -39,25 +38,25 @@ __attribute__((visibility("hidden")))
 @property(readonly) NSMutableDictionary *featuresDict; // @synthesize featuresDict;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (int)processFullDictionary;
+- (int)processFullDictionary:(BOOL)arg1;
 - (void)buildFullDictionary;
 - (int)processVideo;
 - (int)processStill;
 - (int)processVideoInternal;
 - (int)processStillInternal;
 - (id)init;
-- (_Bool)processStillImageMetadata;
+- (int)processStillImageMetadata;
 - (int)processStillImageFaceData;
 - (int)processMovieMetadata;
 - (int)processVidTrackMetadata;
 - (int)readPerFrameMetadataToArrays;
-- (void)processBlurVectors;
-- (void)processOffsetVectors;
-- (void)processPresentationTimes;
-- (void)processVideoFaceInfo;
+- (int)processBlurVectors;
+- (int)processOffsetVectors;
+- (int)processPresentationTimes;
+- (int)processVideoFaceInfo;
 - (int)processStandardPerFrameKeys;
 - (int)standardProcessKey:(id)arg1 addToDictionary:(id)arg2;
-- (void)fillVector:(vector_f9ed6fc8 *)arg1 withPerFrameStats:(id)arg2;
+- (int)fillVector:(vector_f9ed6fc8 *)arg1 withPerFrameStats:(id)arg2;
 
 @end
 

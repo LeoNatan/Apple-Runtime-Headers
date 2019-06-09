@@ -20,7 +20,8 @@
 - (void).cxx_destruct;
 @property(nonatomic) _Bool disablePathFallback;
 @property(nonatomic) int dataMode;
-@property(nonatomic) _Bool useTFOHeuristics;
+- (void)setFastOpenForceEnable:(_Bool)arg1;
+- (_Bool)fastOpenForceEnable;
 @property(nonatomic) _Bool tfoNoCookie;
 @property(nonatomic) _Bool tfo;
 @property(nonatomic) int multipathService;

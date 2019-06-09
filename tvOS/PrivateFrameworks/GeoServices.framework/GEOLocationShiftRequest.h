@@ -13,7 +13,7 @@
     struct GEOPixelPoint _pixel;
 }
 
-@property(nonatomic) struct GEOPixelPoint pixel; // @synthesize pixel=_pixel;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -23,8 +23,10 @@
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) struct GEOPixelPoint pixel;
 
 @end
 

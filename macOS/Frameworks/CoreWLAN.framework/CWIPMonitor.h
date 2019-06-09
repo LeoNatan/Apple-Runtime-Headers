@@ -92,7 +92,6 @@
 - (void)monitorNetworkServiceID:(id)arg1;
 - (id)initForInterfaceWithName:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 
 @end
 

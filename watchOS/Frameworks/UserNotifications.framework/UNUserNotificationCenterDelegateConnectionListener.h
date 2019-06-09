@@ -22,11 +22,13 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)_queue_didChangeSettings:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)_queue_didReceiveNotificationResponse:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_queue_invalidateListenerForBundleIdentifier:(id)arg1;
 - (void)_queue_ensureListenerForBundleIdentifier:(id)arg1;
 - (void)_queue_setDelegate:(id)arg1 forBundleIdentifier:(id)arg2;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)didChangeSettings:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)didReceiveNotificationResponse:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setDelegate:(id)arg1 forBundleIdentifier:(id)arg2;
 - (id)init;

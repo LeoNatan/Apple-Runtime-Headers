@@ -23,6 +23,7 @@
     PKImage *_selfIlluminationMaterialPropertyImage;
     PKImage *_metalnessMaterialPropertyImage;
     PKImage *_roughnessMaterialPropertyImage;
+    PKImage *_overlayMaterialPropertyImage;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -30,6 +31,7 @@
 + (id)archiveName;
 + (_Bool)shouldCache;
 + (int)imageSetType;
+@property(retain, nonatomic) PKImage *overlayMaterialPropertyImage; // @synthesize overlayMaterialPropertyImage=_overlayMaterialPropertyImage;
 @property(retain, nonatomic) PKImage *roughnessMaterialPropertyImage; // @synthesize roughnessMaterialPropertyImage=_roughnessMaterialPropertyImage;
 @property(retain, nonatomic) PKImage *metalnessMaterialPropertyImage; // @synthesize metalnessMaterialPropertyImage=_metalnessMaterialPropertyImage;
 @property(retain, nonatomic) PKImage *selfIlluminationMaterialPropertyImage; // @synthesize selfIlluminationMaterialPropertyImage=_selfIlluminationMaterialPropertyImage;

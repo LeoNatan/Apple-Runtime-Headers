@@ -85,8 +85,6 @@
 - (void)_resignActive;
 - (void)_ensureActive;
 - (void)_setMoviePlayer:(id)arg1;
-- (id)_nowPlayingMovie;
-- (void)_setNowPlayingMovie:(id)arg1;
 - (id)_movieOptions;
 - (id)_movies;
 - (void)_setMovies:(id)arg1;

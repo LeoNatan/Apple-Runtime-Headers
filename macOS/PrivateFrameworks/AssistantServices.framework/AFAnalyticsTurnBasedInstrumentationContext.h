@@ -21,7 +21,7 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)createNextTurnBasedContext;
+- (id)nextTurnBasedContext;
 - (void)emitInstrumentation:(id)arg1;
 - (void)emitInstrumentation:(id)arg1 machAbsoluteTime:(unsigned long long)arg2;
 @property(readonly, nonatomic) NSUUID *turnIdentifier;

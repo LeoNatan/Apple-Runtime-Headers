@@ -6,11 +6,10 @@
 
 #import <SystemMigrationNetworking/SMNAction.h>
 
-@class NSDictionary, NSString;
+@class NSString;
 
 @interface SMNWirelessConnectAction : SMNAction
 {
-    NSDictionary *_result;
     NSString *_wirelessSSID;
     NSString *_password;
     unsigned long long _timeout;
@@ -23,12 +22,10 @@
 @property unsigned long long timeout; // @synthesize timeout=_timeout;
 @property(retain) NSString *password; // @synthesize password=_password;
 @property(retain) NSString *wirelessSSID; // @synthesize wirelessSSID=_wirelessSSID;
-@property(retain) NSDictionary *result; // @synthesize result=_result;
 - (void).cxx_destruct;
 - (BOOL)success;
 - (BOOL)returnsData;
 - (BOOL)expectsAResult;
-- (BOOL)setResultFromData:(id)arg1;
 - (id)resultData;
 - (id)requestPayload;
 - (BOOL)isEqual:(id)arg1;

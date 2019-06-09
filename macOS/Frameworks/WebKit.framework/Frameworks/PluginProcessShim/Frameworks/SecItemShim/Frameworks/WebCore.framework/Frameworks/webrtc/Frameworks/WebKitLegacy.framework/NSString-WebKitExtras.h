@@ -17,5 +17,17 @@
 - (id)_web_stringByAbbreviatingWithTildeInPath;
 - (float)_web_widthWithFont:(id)arg1;
 - (void)_web_drawAtPoint:(struct CGPoint)arg1 font:(id)arg2 textColor:(id)arg3;
+- (id)_web_capitalizeRFC822HeaderFieldName;
+- (BOOL)_webkit_looksLikeAbsoluteURL;
+- (struct _NSRange)_webkit_rangeOfURLScheme;
+- (id)_webkit_encodeHostName;
+- (id)_webkit_decodeHostName;
+- (id)_web_encodeHostName;
+- (id)_web_decodeHostName;
+- (id)_webkit_scriptIfJavaScriptURL;
+- (id)_webkit_stringByReplacingValidPercentEscapes;
+- (BOOL)_webkit_isFileURL;
+- (BOOL)_webkit_isJavaScriptURL;
+- (BOOL)_web_isUserVisibleURL;
 @end
 

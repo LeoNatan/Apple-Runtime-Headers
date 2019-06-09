@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, TSUUUIDSetStore;
 
+__attribute__((visibility("hidden")))
 @interface TSUUUIDSubsetCreator : NSObject
 {
     TSUUUIDSetStore *_uuidSetStore;

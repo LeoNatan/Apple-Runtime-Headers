@@ -13,13 +13,17 @@
 __attribute__((visibility("hidden")))
 @interface FI_TDiscardSmartFolderSheetClient : NSObject <TStdAlertSheetClientProtocol>
 {
-    FI_TBrowserContainerController *_controller;
+    struct TNSWeakPtr<FI_TBrowserContainerController, void> _weakContainerController;
 }
 
 + (id)clientWithContainerController:(id)arg1;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)stdAlertSheetOtherButtonPressed;
 - (void)stdAlertSheetCancelButtonPressed;
 - (void)stdAlertSheetOKButtonPressed;
+- (void)setContainerController:(id)arg1;
+@property(readonly) __weak FI_TBrowserContainerController *containerController; // @dynamic containerController;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

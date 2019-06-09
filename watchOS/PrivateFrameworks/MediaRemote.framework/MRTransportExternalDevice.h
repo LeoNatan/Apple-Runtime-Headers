@@ -87,6 +87,7 @@
 @property(nonatomic) int connectionRecoveryBehavior; // @synthesize connectionRecoveryBehavior=_connectionRecoveryBehavior;
 @property(readonly, nonatomic) MRExternalDeviceTransport *transport; // @synthesize transport=_transport;
 - (void).cxx_destruct;
+- (void)_handleSetDefaultSupportedCommandsMessage:(id)arg1;
 - (void)_contentItemUpdatedNotification:(id)arg1;
 - (id)_createPlaybackQueue:(_Bool)arg1;
 - (void)_updateNowPlayingInfo;
@@ -128,16 +129,17 @@
 - (void)_callClientNameCallback;
 - (void)_callClientPairingCallback:(CDUnknownBlockType)arg1;
 - (void)_callClientConnectionStateCallback:(unsigned int)arg1 previousConnectionState:(unsigned int)arg2 error:(id)arg3;
+- (void)_handlePlaybackSessionRequest:(void *)arg1 forPlayerPath:(void *)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_handleLegacyPlaybackQueueRequestWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handlePlaybackQueueResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handlePlaybackQueueRequest:(void *)arg1 forPlayer:(void *)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_onSerialQueue_registerOriginCallbacks;
 - (void)_cleanUpWithReason:(int)arg1;
 - (void)_cleanUpStreamsWithReason:(int)arg1;
-- (void)_onWorkerQueue_syncClientState;
+- (id)_onWorkerQueue_syncClientState;
 - (id)_onWorkerQueue_openSecuritySession;
-- (id)_onWorkerQueue_loadDeviceInfo;
 - (id)_onWorkerQueue_setupCustomOrigin;
+- (id)_onWorkerQueue_loadDeviceInfo;
 - (id)_onWorkerQueue_initializeConnectionWithOptions:(unsigned int)arg1;
 - (void)_transportDeviceInfoDidChangeNotification:(id)arg1;
 - (void)_localDeviceInfoDidChangeNotification:(id)arg1;

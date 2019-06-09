@@ -13,8 +13,6 @@ __attribute__((visibility("hidden")))
 
 + (long long)gridStyleForCSSStyle:(id)arg1;
 + (_Bool)viewElementNeedsUpdate:(id)arg1;
-+ (struct CGPoint)originForElement:(id)arg1 withSize:(struct CGSize)arg2 inRect:(struct CGRect)arg3;
-+ (struct CGPoint)originForElement:(id)arg1 withSize:(struct CGSize)arg2 inRect:(struct CGRect)arg3 containedInElement:(id)arg4;
 
 @end
 

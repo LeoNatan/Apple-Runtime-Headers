@@ -39,6 +39,7 @@
 - (void)applyStyleAttributes:(id)arg1 toDisplayItem:(id)arg2;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (id)_applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
+- (id)overriddenStyleAttributesForData:(id)arg1 identifier:(id)arg2;
 - (_Bool)canEnableDisplayItem:(id)arg1 fromData:(id)arg2;
 - (void)setNeedsUpdate;
 @property(readonly, nonatomic) NSSet *dependentEntryKeys;

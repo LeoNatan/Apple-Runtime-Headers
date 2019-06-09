@@ -10,6 +10,7 @@
 
 @class NSColor, NSImage, NSString, NSView;
 
+__attribute__((visibility("hidden")))
 @interface _MKBalloonLabelMarkerView : _MKLabelMarkerView <_MKBalloonCalloutViewConfiguring>
 {
     NSView *_anchorDotView;
@@ -23,9 +24,8 @@
     double _smallBalloonScaleFactor;
 }
 
-+ (Class)calloutViewClass;
 - (void).cxx_destruct;
-- (void)_configureBalloonForDataIconImageKeys:(id)arg1 scale:(double)arg2;
+- (void)_configureBalloonForDataIconImageKeys:(id)arg1 scale:(double)arg2 coordinate:(struct CLLocationCoordinate2D)arg3;
 - (BOOL)updateCalloutViewIfNeededAnimated:(BOOL)arg1;
 - (void)_addAnchorDotViewIfNeeded;
 - (BOOL)shouldShowCallout;

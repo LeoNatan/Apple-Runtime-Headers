@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_shouldUseWordsNotSymbols) _Bool shouldUseWordsNotSymbols; // @synthesize shouldUseWordsNotSymbols=_shouldUseWordsNotSymbols;
 @property(retain, nonatomic) UIKeyCommandDiscoverabilityHUDVisualStyle *visualStyle; // @synthesize visualStyle=_visualStyle;
 - (void).cxx_destruct;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_pageControlValueChanged:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

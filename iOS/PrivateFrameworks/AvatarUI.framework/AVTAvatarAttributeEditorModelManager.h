@@ -30,11 +30,14 @@
 @property(readonly, copy, nonatomic) AVTAvatarRecord *avatarRecord; // @synthesize avatarRecord=_avatarRecord;
 @property(readonly, nonatomic) AVTMemoji *avatar; // @synthesize avatar=_avatar;
 - (void).cxx_destruct;
+- (void)updateAvatarWithAvatarUpdater:(CDUnknownBlockType)arg1 animated:(_Bool)arg2;
+- (void)updateAvatarBySelectingHeaderPickerItem:(id)arg1 animated:(_Bool)arg2;
 - (void)updateAvatarBySelectingSectionItem:(id)arg1 animated:(_Bool)arg2;
 - (void)preLoadCategory:(id)arg1;
 - (void)cancelPreloadForSectionItemIndexPath:(id)arg1;
 - (void)preloadSectionItem:(id)arg1 atIndexPath:(id)arg2;
-- (id)buildUIModelWithCurrentlySelectedCategory:(id)arg1;
+- (id)buildInitialEditorState;
+- (id)buildUIModelWithCurrentEditorDataSource:(id)arg1 forCategoryAtIndex:(unsigned long long)arg2;
 - (void)dealloc;
 - (void)cancelAllPreloading;
 - (id)initWithAvatarRecord:(id)arg1 coreModel:(id)arg2 imageProvider:(id)arg3 resourceLoader:(id)arg4 environment:(id)arg5;

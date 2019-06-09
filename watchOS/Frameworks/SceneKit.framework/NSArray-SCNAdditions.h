@@ -9,5 +9,6 @@
 @interface NSArray (SCNAdditions)
 +     // Error parsing type: @72@0:4{?=[4]}8, name: SCN_arrayWithSimdMatrix4:
 -     // Error parsing type: {?=[4]}8@0:4, name: SCN_simdMatrix4Value
+- (id)SCNMutableDeepCopy;
 @end
 

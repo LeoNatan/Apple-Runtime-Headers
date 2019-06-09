@@ -9,7 +9,7 @@
 #import <ChatKit/CKPluginEntryViewController-Protocol.h>
 
 @class CKBalloonView, IMBalloonPlugin, IMBalloonPluginDataSource, NSString;
-@protocol CKTranscriptBalloonPluginController;
+@protocol CKPluginEntryViewControllerDelegate, CKTranscriptBalloonPluginController;
 
 @interface CKDefaultPluginEntryViewController : UIViewController <CKPluginEntryViewController>
 {
@@ -47,6 +47,7 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(nonatomic) __weak id <CKPluginEntryViewControllerDelegate> entryViewDelegate;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

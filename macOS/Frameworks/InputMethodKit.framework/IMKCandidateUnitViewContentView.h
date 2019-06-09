@@ -16,6 +16,7 @@
 
 @property(nonatomic) BOOL drawsBackgroundColor; // @synthesize drawsBackgroundColor=_drawsBackgroundColor;
 @property(retain, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+- (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (void)shouldUpdateForPressAndHold:(id)arg1 position:(struct CGPoint)arg2 with:(long long)arg3;
 - (void)touchesEnded:(id)arg1 position:(struct CGPoint)arg2;
 - (void)scrubbed:(id)arg1 position:(struct CGPoint)arg2;

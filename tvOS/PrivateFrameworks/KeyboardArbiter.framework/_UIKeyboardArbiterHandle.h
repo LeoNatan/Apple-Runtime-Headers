@@ -8,7 +8,7 @@
 
 #import <KeyboardArbiter/_UIKeyboardArbitration-Protocol.h>
 
-@class BKSProcessAssertion, FBSCAContextSceneLayer, NSArray, NSMutableSet, NSString, NSXPCConnection, _UIKeyboardArbiter;
+@class BKSProcessAssertion, BSServiceConnectionEndpointInjector, FBSCAContextSceneLayer, NSArray, NSMutableSet, NSString, NSXPCConnection, _UIKeyboardArbiter;
 
 __attribute__((visibility("hidden")))
 @interface _UIKeyboardArbiterHandle : NSObject <_UIKeyboardArbitration>
@@ -30,11 +30,14 @@ __attribute__((visibility("hidden")))
     unsigned long long _remoteKeepAliveAssertionCount;
     unsigned long long _remoteKeepAliveTimerCount;
     NSArray *_cachedContext;
+    BSServiceConnectionEndpointInjector *_endpointGrantInjector;
     NSXPCConnection *_connection;
+    double _iavHeight;
 }
 
 + (id)handlerWithArbiter:(id)arg1 forConnection:(id)arg2;
 @property(readonly) _Bool wantsFence; // @synthesize wantsFence=_wantsFence;
+@property(readonly) double iavHeight; // @synthesize iavHeight=_iavHeight;
 @property(readonly) double level; // @synthesize level=_level;
 @property(readonly) _Bool wantedActive; // @synthesize wantedActive=_wantedActive;
 @property(readonly) _Bool active; // @synthesize active=_active;
@@ -45,12 +48,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
 - (void)setKeyboardTotalDisable:(_Bool)arg1 withFence:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)sceneShouldFocusWithToken:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (void)applicationShouldFocusWithBundle:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (void)invalidate;
 - (void)uncacheWindowContext;
 - (void)cacheWindowContext;
 - (void)releaseProcessAssertion;
 - (void)takeProcessAssertionOnRemoteWithQueue:(id)arg1;
+- (_Bool)isHostingPID:(int)arg1;
 - (_Bool)isHandlerShowableWithHandler:(id)arg1;
 - (id)description;
 - (void)retrieveMoreDebugInformationWithCompletion:(CDUnknownBlockType)arg1;
@@ -58,9 +63,12 @@ __attribute__((visibility("hidden")))
 - (void)transition:(id)arg1 eventStage:(unsigned long long)arg2 withInfo:(id)arg3;
 - (void)notifyHostedPIDsOfSuppression:(_Bool)arg1;
 - (void)setWindowHostingPID:(int)arg1 active:(_Bool)arg2;
+- (void)notifyIAVHeight:(double)arg1;
 - (void)signalKeyboardChangeComplete;
 - (void)signalKeyboardChanged:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (void)setWantsFencing:(_Bool)arg1;
+- (void)didDetachLayer;
+- (void)didAttachLayer;
 - (void)checkActivation:(_Bool)arg1;
 - (void)setWindowContextID:(unsigned int)arg1 sceneIdentifier:(id)arg2 forKeyboard:(_Bool)arg3 withLevel:(double)arg4;
 - (void)_deactivateScene;

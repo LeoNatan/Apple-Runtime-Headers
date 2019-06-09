@@ -6,14 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSMutableSet, NWUsageMonitor;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NWPollHandler, NWUsageMonitor;
 @protocol NWUsageManagerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 @interface NWUsageManager : NSObject
 {
     int _interfaceTraceFd;
-    unsigned int _continuationCount;
     char *_iftracebuf;
+    unsigned int _continuationCount;
+    unsigned long long _currentPollReference;
+    unsigned long long _nextPollReference;
+    // Error parsing type: AQ, name: _pollsOutstanding
     BOOL _configured;
     BOOL _invalidated;
     int _sockfd;
@@ -22,22 +25,24 @@
     NSObject<OS_dispatch_source> *_readSource;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_queue> *_clientQueue;
-    NSMutableDictionary *_currentQueries;
-    NSMutableDictionary *__internalSources;
+    NSMutableDictionary *_internalSources;
     NSMutableSet *_interfaceSources;
     unsigned long long _currentQueryAllReference;
     unsigned long long _querySequenceNumber;
     char *_readBuffer;
+    NSMutableArray *_queuedPolls;
+    NWPollHandler *_activePoll;
 }
 
 @property(getter=isInvalidated) BOOL invalidated; // @synthesize invalidated=_invalidated;
 @property BOOL configured; // @synthesize configured=_configured;
+@property(retain) NWPollHandler *activePoll; // @synthesize activePoll=_activePoll;
+@property(retain) NSMutableArray *queuedPolls; // @synthesize queuedPolls=_queuedPolls;
 @property char *readBuffer; // @synthesize readBuffer=_readBuffer;
 @property unsigned long long querySequenceNumber; // @synthesize querySequenceNumber=_querySequenceNumber;
 @property unsigned long long currentQueryAllReference; // @synthesize currentQueryAllReference=_currentQueryAllReference;
 @property(retain) NSMutableSet *interfaceSources; // @synthesize interfaceSources=_interfaceSources;
-@property(retain) NSMutableDictionary *_internalSources; // @synthesize _internalSources=__internalSources;
-@property(retain) NSMutableDictionary *currentQueries; // @synthesize currentQueries=_currentQueries;
+@property(retain) NSMutableDictionary *internalSources; // @synthesize internalSources=_internalSources;
 @property int sockfd; // @synthesize sockfd=_sockfd;
 @property(retain) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(retain) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
@@ -45,12 +50,14 @@
 @property(retain) NWUsageMonitor *usageMonitor; // @synthesize usageMonitor=_usageMonitor;
 @property(nonatomic) __weak id <NWUsageManagerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)stateDictionary;
 - (void)enumerateChangedFlowsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)enumerateAllFlowsUsingBlock:(CDUnknownBlockType)arg1;
-- (void)_enumerateAllFlowsCheckingChange:(BOOL)arg1 block:(CDUnknownBlockType)arg2;
-- (void)refreshAllFlowsSync;
-- (void)refreshAllFlows;
+- (id)stateDictionary;
+- (void)ignoreFlow:(unsigned long long)arg1;
+- (_Bool)enumerateFlowsUsingBlock:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)enumerateFlowsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)enumerateSelectFlows:(id)arg1 deliveryBlock:(CDUnknownBlockType)arg2;
+- (_Bool)enumerateSelectFlows:(id)arg1 deliveryBlock:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (int)flowEnumerationCurrentUsage;
 - (id)initWithQueue:(id)arg1;
 - (BOOL)configure:(id)arg1;
 - (BOOL)reconfigure:(id)arg1;
@@ -59,25 +66,25 @@
 - (void)dealloc;
 - (void)invalidate;
 - (void)_setInterfaceTraceFd:(int)arg1;
-- (void)performQueryAll:(id)arg1;
-- (BOOL)setThresholds:(id)arg1;
-- (void)setThreshold:(unsigned long long)arg1 onInterface:(unsigned int)arg2;
-- (void)noteInterfaceSrcRef:(unsigned long long)arg1 forInterface:(unsigned int)arg2 threshold:(unsigned long long)arg3;
-- (void)handleCounts:(struct nstat_msg_src_counts *)arg1;
-- (BOOL)addAllForProvider:(int)arg1 filter:(unsigned long long)arg2 events:(unsigned long long)arg3;
-- (void)removeSourceInternal:(unsigned long long)arg1;
-- (void)sendRemoveSource:(unsigned long long)arg1;
-- (BOOL)handleCompletionMessage:(struct nstat_msg_hdr *)arg1 length:(unsigned int)arg2;
-- (BOOL)handleCompletion:(unsigned long long)arg1 message:(struct nstat_msg_hdr *)arg2 length:(unsigned int)arg3;
-- (void)handleReadEvent;
-- (void)handleMessage:(struct nstat_msg_hdr *)arg1 length:(long long)arg2;
-- (void)sendRequestMessage:(int)arg1 sourceRef:(unsigned long long)arg2;
-- (void)handleInitialUpdateForSource:(id)arg1;
-- (void)handleRemoveForSource:(id)arg1;
-- (void)handleUpdateForSource:(id)arg1 message:(struct nstat_msg_src_update_convenient *)arg2;
-- (BOOL)sendMessage:(struct nstat_msg_hdr *)arg1 length:(long long)arg2;
-- (void)trace:(char *)arg1;
-- (void)traceMemoryBuf:(char *)arg1 length:(long long)arg2 tag:(char *)arg3;
+- (BOOL)_setThresholds:(id)arg1;
+- (void)_setThreshold:(unsigned long long)arg1 onInterface:(unsigned int)arg2;
+- (void)_noteInterfaceSrcRef:(unsigned long long)arg1 forInterface:(unsigned int)arg2 threshold:(unsigned long long)arg3;
+- (void)_handleCounts:(struct nstat_msg_src_counts *)arg1;
+- (void)_addAllForProvider:(int)arg1 filter:(unsigned long long)arg2 events:(unsigned long long)arg3;
+- (void)_removeSourceInternal:(unsigned long long)arg1;
+- (void)_handleCompletion:(unsigned long long)arg1;
+- (void)_startQueuedPoll;
+- (void)_handleReadEvent;
+- (void)_handleMessage:(struct nstat_msg_hdr *)arg1 length:(long long)arg2;
+- (void)_handleRemoveForSource:(id)arg1;
+- (void)_restartPoll:(id)arg1;
+- (void)_startPoll:(id)arg1;
+- (void)_sendPoll;
+- (void)_sendRemoveSource:(unsigned long long)arg1;
+- (void)_sendUpdateRequestMessage:(unsigned long long)arg1;
+- (void)_sendMessage:(struct nstat_msg_hdr *)arg1 length:(long long)arg2;
+- (void)_trace:(char *)arg1;
+- (void)_traceMemoryBuf:(char *)arg1 length:(long long)arg2 tag:(char *)arg3;
 
 @end
 

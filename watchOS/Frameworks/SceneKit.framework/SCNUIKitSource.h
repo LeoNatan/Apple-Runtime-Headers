@@ -6,6 +6,8 @@
 
 #import <SceneKit/SCNImageSource.h>
 
+@class UIView, UIWindow;
+
 __attribute__((visibility("hidden")))
 @interface SCNUIKitSource : SCNImageSource
 {
@@ -13,12 +15,13 @@ __attribute__((visibility("hidden")))
     id _uiWindow;
 }
 
-@property(retain, nonatomic) id uiWindow; // @synthesize uiWindow=_uiWindow;
-@property(retain, nonatomic) id uiView; // @synthesize uiView=_uiView;
+@property(retain, nonatomic) UIWindow *uiWindow; // @synthesize uiWindow=_uiWindow;
+@property(retain, nonatomic) UIView *uiView; // @synthesize uiView=_uiView;
 - (void)dealloc;
 - (_Bool)isOpaque;
 - (id)textureSource;
 - (id)prepareWindowIfNeeded;
+- (_Bool)supportsMetal;
 - (id)init;
 
 @end

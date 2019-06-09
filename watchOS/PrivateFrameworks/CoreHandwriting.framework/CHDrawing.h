@@ -7,33 +7,37 @@
 #import <objc/NSObject.h>
 
 #import <CoreHandwriting/NSCopying-Protocol.h>
+#import <CoreHandwriting/NSSecureCoding-Protocol.h>
 
-@interface CHDrawing : NSObject <NSCopying>
+@interface CHDrawing : NSObject <NSCopying, NSSecureCoding>
 {
-    struct CJKChar _drawing;
+    struct CHDrawingStrokes _drawing;
 }
 
-+ (float)_computeXProjectionBoundsOverlapFromReferenceBounds:(struct CGRect)arg1 toSubjectBounds:(struct CGRect)arg2;
-+ (id)sortedArrayForPointIndices:(id)arg1;
-@property(nonatomic) struct CJKChar drawing; // @synthesize drawing=_drawing;
++ (_Bool)supportsSecureCoding;
+@property(nonatomic) struct CHDrawingStrokes drawing; // @synthesize drawing=_drawing;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)debugQuickLookObject;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (set_3721c3e1)computeDelayedStrokesUsingMinimumDrawingSize:(struct CGSize)arg1;
-- (struct CGRect)boundingBoxForDrawingSegmentFromIndexPath:(id)arg1 toIndexPath:(id)arg2;
+- (float)averageCharacterHeightEstimation:(float)arg1 minChunkHeight:(float)arg2;
+- (struct CGRect)boundingBoxForDrawingSegmentFromCutPoint:(id)arg1 toCutPoint:(id)arg2;
 - (void)appendSegment:(id)arg1 fromDrawing:(id)arg2;
-- (id)findSubStrokeSegmentationPointsExcludingStrokes:(set_3721c3e1)arg1;
+- (id)findSignalCutPointsExcludingStrokes:(set_c64ac980)arg1;
 - (id)filterPointsWithProximity:(double)arg1 fixedPoints:(id)arg2 points:(id)arg3;
-- (id)findLocalYMaximaWithWindowSize:(unsigned int)arg1 excludingStrokes:(set_3721c3e1)arg2;
+- (id)findLocalYMaximaWithWindowSize:(unsigned int)arg1 excludingStrokes:(set_c64ac980)arg2;
 - (id)initialSegmentationPointIndicesForDrawing;
 - (void)setLineHeight:(double)arg1;
-- (vector_55d7bafa)strokeIndicesSortedByMinXCoordinate;
-- (id)spatiallyResampledWithDistance:(float)arg1;
+- (vector_12bd641b)strokeIndicesSortedByMinXCoordinate;
+- (id)drawingSpatiallyResampled:(float)arg1 outputPointMap:(vector_f22155c2 *)arg2;
+- (id)drawingScaledByFactor:(float)arg1;
 - (id)sortedDrawingUsingMinXCoordinate;
 - (Matrix_273a43f8)orientationRepresentationForSampling:(unsigned int)arg1 convolutionWidth:(unsigned int)arg2;
-- (Matrix_273a43f8)bitmapRepresentationForSize:(struct CGSize)arg1 drawingAlgorithm:(int)arg2;
 - (Matrix_273a43f8)bitmapRepresentationForSize:(struct CGSize)arg1;
 - (id)xyRepresentation;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToDrawing:(id)arg1;
 - (struct _NSRange)matchingStrokePrefixRangeForDrawing:(id)arg1;
 - (_Bool)isPrefixForDrawing:(id)arg1;
 - (void)clear;
@@ -41,11 +45,15 @@
 - (void)addPoint:(struct CGPoint)arg1;
 - (struct CGRect)bounds;
 - (struct CGRect)strokeBoundsAtIndex:(unsigned int)arg1;
-- (_Bool)containsStrokeLessThanSize:(struct CGSize)arg1;
+- (id)indexesOfStrokesSmallerThanSize:(struct CGSize)arg1;
 - (unsigned int)strokeCount;
 - (struct CGPoint)pointForStrokeIndex:(unsigned int)arg1 pointIndex:(unsigned int)arg2;
 - (unsigned int)pointCountForStrokeIndex:(unsigned int)arg1;
 - (unsigned int)pointCount;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithContentsOfXYString:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 
 @end

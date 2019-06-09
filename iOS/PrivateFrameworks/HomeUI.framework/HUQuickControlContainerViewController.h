@@ -14,7 +14,7 @@
 #import <HomeUI/HUQuickControlViewControllerCoordinatorDelegate-Protocol.h>
 #import <HomeUI/HUViewControllerCustomDissmissing-Protocol.h>
 
-@class HFItem, HMHome, HUAnimationApplier, HUQuickControlContainerView, HUQuickControlViewController, HUQuickControlViewControllerCoordinator, NSString, UITapGestureRecognizer;
+@class HFItem, HMHome, HUAnimationApplier, HUQuickControlContainerView, HUQuickControlViewController, HUQuickControlViewControllerCoordinator, NSString, UILayoutGuide, UIPanGestureRecognizer, UITapGestureRecognizer;
 @protocol HUOpenURLHandling, HUPresentationDelegate, HUQuickControlContainerViewControllerDelegate, NSCopying;
 
 @interface HUQuickControlContainerViewController : UIViewController <HUPresentationDelegate, HUQuickControlContainerViewDelegate, HUQuickControlViewControllerCoordinatorDelegate, HUQuickControlContentHosting, HUItemPresentationContainer, HUPresentationDelegateHost, HUViewControllerCustomDissmissing>
@@ -23,34 +23,37 @@
     id <HUPresentationDelegate> presentationDelegate;
     HFItem<NSCopying> *_item;
     HMHome *_home;
+    HUQuickControlContainerView *_controlContainerView;
     id <HUQuickControlContainerViewControllerDelegate> _delegate;
     id <HUOpenURLHandling> _detailViewURLHandler;
+    UILayoutGuide *_availableContentLayoutGuide;
     UITapGestureRecognizer *_dismissGestureRecognizer;
+    UIPanGestureRecognizer *_panGestureRecognizer;
     HUAnimationApplier *_presentationApplier;
     unsigned long long _presentationState;
     HUQuickControlViewControllerCoordinator *_viewControllerCoordinator;
     HUQuickControlViewController *_activeControlViewController;
-    HUQuickControlContainerView *_controlContainerView;
     struct CGRect _sourceRect;
 }
 
-+ (id)_detailChromeAnimationSettingsForPresenting:(_Bool)arg1;
-+ (id)_statusBarHidingAnimationSettingsForPresenting:(_Bool)arg1;
++ (id)_detailChromeAnimationSettings;
 + (id)_sourceViewTransitionAnimationSettingsForPresenting:(_Bool)arg1;
 + (id)_blurAnimationSettingsForPresenting:(_Bool)arg1;
 + (id)_controlAlphaAnimationSettingsForPresenting:(_Bool)arg1;
 + (id)_controlScaleAnimationSettingsForPresenting:(_Bool)arg1;
 + (id)_easeOutTimingFunction;
 @property(nonatomic) _Bool presentedDetailView; // @synthesize presentedDetailView=_presentedDetailView;
-@property(retain, nonatomic) HUQuickControlContainerView *controlContainerView; // @synthesize controlContainerView=_controlContainerView;
 @property(retain, nonatomic) HUQuickControlViewController *activeControlViewController; // @synthesize activeControlViewController=_activeControlViewController;
 @property(retain, nonatomic) HUQuickControlViewControllerCoordinator *viewControllerCoordinator; // @synthesize viewControllerCoordinator=_viewControllerCoordinator;
 @property(nonatomic) unsigned long long presentationState; // @synthesize presentationState=_presentationState;
 @property(retain, nonatomic) HUAnimationApplier *presentationApplier; // @synthesize presentationApplier=_presentationApplier;
+@property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
 @property(retain, nonatomic) UITapGestureRecognizer *dismissGestureRecognizer; // @synthesize dismissGestureRecognizer=_dismissGestureRecognizer;
 @property(nonatomic) struct CGRect sourceRect; // @synthesize sourceRect=_sourceRect;
+@property(retain, nonatomic) UILayoutGuide *availableContentLayoutGuide; // @synthesize availableContentLayoutGuide=_availableContentLayoutGuide;
 @property(retain, nonatomic) id <HUOpenURLHandling> detailViewURLHandler; // @synthesize detailViewURLHandler=_detailViewURLHandler;
 @property(nonatomic) __weak id <HUQuickControlContainerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) HUQuickControlContainerView *controlContainerView; // @synthesize controlContainerView=_controlContainerView;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 @property(readonly, nonatomic) HFItem<NSCopying> *item; // @synthesize item=_item;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate;
@@ -64,14 +67,13 @@
 - (void)controllerCoordinator:(id)arg1 didUpdateStatusWithPrimaryText:(id)arg2 secondaryText:(id)arg3;
 - (void)controllerCoordinator:(id)arg1 didUpdateIconDescriptor:(id)arg2 showOffState:(_Bool)arg3;
 - (void)detailsButtonPressedInContainerView:(id)arg1;
-- (void)alternateControlButtonPressedInContainerView:(id)arg1;
 - (id)finishPresentation:(id)arg1 animated:(_Bool)arg2;
 - (id)hu_prepareForDismissalAnimated:(_Bool)arg1;
 - (void)beginReceivingTouchesWithGestureRecognizer:(id)arg1;
-- (void)_handleDismissGesture:(id)arg1;
 - (id)_dismissDetailsViewControllerAnimated:(_Bool)arg1 dismissControl:(_Bool)arg2;
 - (id)_prepareDetailViewController;
-- (id)_presentControlOfType:(unsigned long long)arg1 animated:(_Bool)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (void)_dismissQuickControls;
 - (void)_controlDidDismiss;
 - (void)_updateActiveControlViewController;
 - (void)_createControlContainerViewWithSourceRect:(struct CGRect)arg1;
@@ -83,21 +85,20 @@
 - (void)_settingsButtonPressed:(id)arg1;
 - (void)_backButtonPressed:(id)arg1;
 - (void)_updateUserInteractionEnabledForActiveControl;
-- (void)_updateAlternateControlButtonVisibility;
 - (void)_updateReachabilityStateForActiveControl;
 - (void)_updateIconDescriptorAnimated:(_Bool)arg1;
 - (void)_updateControlStatusText;
-- (id)presentAlternateActionViewControllerAnimated:(_Bool)arg1;
 - (id)presentDetailViewControllerAnimated:(_Bool)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
 - (_Bool)isControlPresentedOrPresenting;
+@property(readonly, copy) NSString *description;
 - (id)initWithItem:(id)arg1 controlItems:(id)arg2 home:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

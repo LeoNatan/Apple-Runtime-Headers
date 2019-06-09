@@ -8,7 +8,7 @@
 
 #import <UIKitCore/NSCoding-Protocol.h>
 
-@class NSArray, NSDictionary, NSSet, NSString, UIBarButtonItemGroup, UIColor, UIImage, UILayoutGuide, UINavigationItem, UIToolbarButton, UIView;
+@class NSArray, NSDictionary, NSSet, NSString, UIBarButtonItemGroup, UIColor, UIImage, UILayoutGuide, UINavigationItem, UIToolbarButton, UIView, _UIBarButtonItemAppearanceStorage;
 @protocol _UIBarButtonItemViewOwner;
 
 @interface UIBarButtonItem : UIBarItem <NSCoding>
@@ -24,7 +24,7 @@
     struct UIEdgeInsets _additionalSelectionInsets;
     float _width;
     UIView *_view;
-    id _appearanceStorage;
+    _UIBarButtonItemAppearanceStorage *_appearanceStorage;
     struct {
         unsigned int enabled:1;
         unsigned int style:3;
@@ -119,6 +119,7 @@
 - (id)_itemForPresenting;
 - (void)_executeValidationHandler;
 - (void)_setButtonGroup:(id)arg1 isRepresentative:(_Bool)arg2;
+@property(nonatomic, getter=_width, setter=_setWidth:) float _width; // @dynamic _width;
 @property(nonatomic) float width;
 - (void)setLargeContentSizeImageInsets:(struct UIEdgeInsets)arg1;
 - (id)_internalLargeContentSizeImage;
@@ -146,8 +147,6 @@
 - (id)initWithImage:(id)arg1 landscapeImagePhone:(id)arg2 style:(int)arg3 target:(id)arg4 action:(SEL)arg5;
 - (id)initWithImage:(id)arg1 style:(int)arg2 target:(id)arg3 action:(SEL)arg4;
 - (id)init;
-- (float)_width;
-- (void)_setWidth:(float)arg1;
 @property(retain, nonatomic, setter=_setGestureRecognizers:) NSArray *_gestureRecognizers;
 - (id)createViewForToolbar:(id)arg1;
 - (id)createViewForNavigationItem:(id)arg1;
@@ -168,7 +167,7 @@
 - (_Bool)_showsChevron;
 - (void)_setActsAsFakeBackButton:(_Bool)arg1;
 - (_Bool)_actsAsFakeBackButton;
-- (id)_imageForState:(unsigned int)arg1 metrics:(int)arg2 position:(int)arg3 type:(int)arg4;
+- (id)_imageForState:(unsigned int)arg1 compact:(_Bool)arg2 type:(int)arg3;
 - (_Bool)hasImage;
 - (_Bool)hasTitle;
 - (id)resolvedTitle;
@@ -183,6 +182,7 @@
 - (id)window;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)_updateView;
 - (void)_getToolbarSystemItemEdgeInsetsWithImageInsets:(struct UIEdgeInsets *)arg1 forBarStyle:(int)arg2 landscape:(_Bool)arg3 alwaysBordered:(_Bool)arg4;
 - (float)_rightImagePaddingForEdgeMarginInNavBar;

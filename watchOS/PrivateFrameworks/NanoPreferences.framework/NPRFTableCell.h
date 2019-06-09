@@ -8,12 +8,14 @@
 
 #import <NanoPreferences/NPRFSpecifierContentReader-Protocol.h>
 
-@class NSString, PSSpecifier;
+@class NSBundle, NSString, PSSpecifier;
 
 @interface NPRFTableCell : PUICTableViewCell <NPRFSpecifierContentReader>
 {
     _Bool _cellEnabled;
     PSSpecifier *_specifier;
+    NSBundle *_localizationBundle;
+    NSString *_localizedStringTable;
 }
 
 + (int)cellStyle;
@@ -21,8 +23,11 @@
 + (id)reuseIdentifierForClassAndType:(int)arg1;
 + (id)reuseIdentifierForBasicCellTypes:(int)arg1;
 + (Class)cellClassForSpecifier:(id)arg1;
+@property(retain, nonatomic) NSString *localizedStringTable; // @synthesize localizedStringTable=_localizedStringTable;
+@property(retain, nonatomic) NSBundle *localizationBundle; // @synthesize localizationBundle=_localizationBundle;
 @property(retain, nonatomic) PSSpecifier *specifier; // @synthesize specifier=_specifier;
 - (void).cxx_destruct;
+- (id)localizedStringForKey:(id)arg1;
 - (_Bool)isCellEnabled;
 - (void)setCellEnabled:(_Bool)arg1;
 - (id)cellAccesoryForSpecifier:(id)arg1 controller:(id)arg2;

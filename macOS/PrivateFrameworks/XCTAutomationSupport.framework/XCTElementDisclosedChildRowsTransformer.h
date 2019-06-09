@@ -6,14 +6,17 @@
 
 #import <XCTAutomationSupport/XCTElementSetCodableTransformer.h>
 
+#import <XCTAutomationSupport/XCTCapabilitiesProviding-Protocol.h>
+
 @class NSString;
 
-@interface XCTElementDisclosedChildRowsTransformer : XCTElementSetCodableTransformer
+@interface XCTElementDisclosedChildRowsTransformer : XCTElementSetCodableTransformer <XCTCapabilitiesProviding>
 {
     BOOL _stopsOnFirstMatch;
     NSString *_transformationDescription;
 }
 
++ (void)provideCapabilitiesToBuilder:(id)arg1;
 - (void)setStopsOnFirstMatch:(BOOL)arg1;
 - (BOOL)stopsOnFirstMatch;
 - (void)setTransformationDescription:(id)arg1;
@@ -22,8 +25,15 @@
 - (id)requiredKeyPathsOrError:(id *)arg1;
 - (BOOL)supportsAttributeKeyPathAnalysis;
 - (BOOL)supportsRemoteEvaluation;
+- (BOOL)canBeRemotelyEvaluatedWithCapabilities:(id)arg1;
 - (id)iteratorForInput:(id)arg1;
 - (id)transform:(id)arg1 relatedElements:(id *)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

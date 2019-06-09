@@ -17,6 +17,7 @@
     unsigned char _subtype;
     unsigned char _semanticTag;
     unsigned char _time;
+    unsigned char _options;
     unsigned int _fields;
     NSArray *_subFields;
     NSString *_label;
@@ -35,8 +36,8 @@
 + (unsigned char)_subtypeFromString:(id)arg1;
 + (unsigned char)_typeFromString:(id)arg1;
 + (_Bool)supportsSecureCoding;
++ (id)quickTypeQueryWithType:(unsigned char)arg1 subtype:(unsigned char)arg2 semanticTag:(unsigned char)arg3 fields:(unsigned int)arg4 time:(unsigned char)arg5 options:(unsigned char)arg6 subFields:(id)arg7 label:(id)arg8 people:(id)arg9 localeIdentifier:(id)arg10 bundleIdentifier:(id)arg11 recipients:(id)arg12;
 + (id)quickTypeQueryWithType:(unsigned char)arg1 subtype:(unsigned char)arg2 semanticTag:(unsigned char)arg3 fields:(unsigned int)arg4 time:(unsigned char)arg5 subFields:(id)arg6 label:(id)arg7 people:(id)arg8 localeIdentifier:(id)arg9 bundleIdentifier:(id)arg10 recipients:(id)arg11;
-+ (id)quickTypeQueryWithType:(unsigned char)arg1 subtype:(unsigned char)arg2 semanticTag:(unsigned char)arg3 fields:(unsigned int)arg4 time:(unsigned char)arg5 label:(id)arg6 people:(id)arg7 localeIdentifier:(id)arg8 bundleIdentifier:(id)arg9 recipients:(id)arg10;
 + (id)quickTypeQueryFromLMTokens:(id)arg1 localeIdentifier:(id)arg2 recipients:(id)arg3 bundleIdentifier:(id)arg4;
 @property(retain, nonatomic) NSArray *recipients; // @synthesize recipients=_recipients;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
@@ -44,12 +45,14 @@
 @property(retain, nonatomic) NSArray *people; // @synthesize people=_people;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
 @property(retain, nonatomic) NSArray *subFields; // @synthesize subFields=_subFields;
+@property(nonatomic) unsigned char options; // @synthesize options=_options;
 @property(nonatomic) unsigned char time; // @synthesize time=_time;
 @property(nonatomic) unsigned int fields; // @synthesize fields=_fields;
 @property(nonatomic) unsigned char semanticTag; // @synthesize semanticTag=_semanticTag;
 @property(nonatomic) unsigned char subtype; // @synthesize subtype=_subtype;
 @property(nonatomic) unsigned char type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (_Bool)isResultEquivelentToQuickTypeQuery:(id)arg1;
 - (_Bool)isEqualToQuickTypeQuery:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -58,7 +61,7 @@
 - (unsigned long long)hash;
 - (id)description;
 - (id)init;
-- (id)initWithType:(unsigned char)arg1 subtype:(unsigned char)arg2 semanticTag:(unsigned char)arg3 fields:(unsigned int)arg4 time:(unsigned char)arg5 subFields:(id)arg6 label:(id)arg7 people:(id)arg8 localeIdentifier:(id)arg9 bundleIdentifier:(id)arg10 recipients:(id)arg11;
+- (id)initWithType:(unsigned char)arg1 subtype:(unsigned char)arg2 semanticTag:(unsigned char)arg3 fields:(unsigned int)arg4 time:(unsigned char)arg5 options:(unsigned char)arg6 subFields:(id)arg7 label:(id)arg8 people:(id)arg9 localeIdentifier:(id)arg10 bundleIdentifier:(id)arg11 recipients:(id)arg12;
 
 @end
 

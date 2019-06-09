@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)maybeAssignWindow:(id)arg1;
 - (void)reshapeContentForTileFrame:(struct CGRect)arg1 fromFrame:(struct CGRect)arg2;
 - (BOOL)disableMCExit;
-- (void)setAsThePrincipalFullScreenWindowInSpace;
+- (BOOL)setAsThePrincipalFullScreenWindowInSpace;
 - (id)windowIDsToFreeze;
 - (void)_gatherWindowsToFreeze:(id)arg1 wids:(id)arg2;
 - (struct CGRect)contentWindowFrame;

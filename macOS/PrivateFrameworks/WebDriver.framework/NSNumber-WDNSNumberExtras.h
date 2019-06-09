@@ -7,6 +7,10 @@
 #import <Foundation/NSNumber.h>
 
 @interface NSNumber (WDNSNumberExtras)
++ (BOOL)parseString:(id)arg1 intoNSUInteger:(unsigned long long *)arg2;
++ (BOOL)parseString:(id)arg1 intoNSInteger:(long long *)arg2;
++ (BOOL)parseString:(id)arg1 intoUInt64:(unsigned long long *)arg2;
++ (BOOL)parseString:(id)arg1 intoSInt64:(long long *)arg2;
 @property(readonly, nonatomic) BOOL webDriver_isBooleanLiteral;
 @end
 

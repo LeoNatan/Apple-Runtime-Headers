@@ -8,7 +8,7 @@
 
 #import <C2/C2RequestDelegate-Protocol.h>
 
-@class C2RequestOptions, NSMutableURLRequest, NSString, NSURLSessionTask;
+@class C2MetricOptions, C2RequestOptions, NSMutableURLRequest, NSString, NSURLSessionTask;
 
 @interface C2ReportMetrics : NSObject <C2RequestDelegate>
 {
@@ -18,6 +18,7 @@
     NSMutableURLRequest *_metricRequest;
     C2RequestOptions *_metricsTransportRequestOptions;
     NSURLSessionTask *_metricTask;
+    C2MetricOptions *_metricOptions;
     CDUnknownBlockType _testBehavior_tooManyTasksRunning;
     CDUnknownBlockType _testBehavior_didCompleteWithError;
 }
@@ -29,6 +30,7 @@
 + (id)requestForMetricRequestOptions:(id)arg1 networkEvent:(id)arg2 genericEvent:(id)arg3 triggers:(int)arg4;
 @property(copy, nonatomic) CDUnknownBlockType testBehavior_didCompleteWithError; // @synthesize testBehavior_didCompleteWithError=_testBehavior_didCompleteWithError;
 @property(copy, nonatomic) CDUnknownBlockType testBehavior_tooManyTasksRunning; // @synthesize testBehavior_tooManyTasksRunning=_testBehavior_tooManyTasksRunning;
+@property(retain, nonatomic) C2MetricOptions *metricOptions; // @synthesize metricOptions=_metricOptions;
 @property(retain, nonatomic) NSURLSessionTask *metricTask; // @synthesize metricTask=_metricTask;
 @property(retain, nonatomic) C2RequestOptions *metricsTransportRequestOptions; // @synthesize metricsTransportRequestOptions=_metricsTransportRequestOptions;
 @property(retain, nonatomic) NSMutableURLRequest *metricRequest; // @synthesize metricRequest=_metricRequest;

@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)initialValueForLabel:(id)arg1 group:(id)arg2;
 + (id)emptyValueForLabel:(id)arg1;
 + (void)initialize;
 - (id)displayStringForValue:(id)arg1;

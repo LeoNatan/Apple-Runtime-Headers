@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)createProcessAssertionForPid:(int)arg1;
++ (void)createProcessAssertionForPid:(int)arg1 timeout:(double)arg2 queue:(id)arg3 timeoutHandler:(CDUnknownBlockType)arg4;
 + (_Bool)canOpenApplication:(id)arg1;
 + (void)launchClientWithBundleIdentifier:(id)arg1 restorationIdentifier:(id)arg2 eventAgentManager:(id)arg3 handler:(CDUnknownBlockType)arg4;
 

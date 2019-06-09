@@ -42,7 +42,6 @@
 - (unsigned long long)_insertionIndexForPerson:(id)arg1;
 - (id)allPeople;
 - (void)setMeCard:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithUIController:(id)arg1 group:(id)arg2;
 

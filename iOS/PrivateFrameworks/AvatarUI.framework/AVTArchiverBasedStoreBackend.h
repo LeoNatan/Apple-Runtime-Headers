@@ -41,7 +41,8 @@
 - (_Bool)deleteAvatarWithIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)saveAvatar:(id)arg1 error:(id *)arg2;
 - (_Bool)saveAvatars:(id)arg1 error:(id *)arg2;
-- (id)avatarsWithIdentifier:(id)arg1 error:(id *)arg2;
+- (id)avatarsExcludingIdentifiers:(id)arg1 error:(id *)arg2;
+- (id)avatarsWithIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)allAvatars;
 - (id)avatarsForFetchRequest:(id)arg1 error:(id *)arg2;
 - (void)loadModel:(id)arg1;

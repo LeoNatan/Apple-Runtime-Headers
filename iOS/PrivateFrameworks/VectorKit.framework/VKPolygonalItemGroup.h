@@ -48,7 +48,7 @@ __attribute__((visibility("hidden")))
 - (void)updateCachedStyles;
 @property(readonly, nonatomic) const unordered_set_bb7a56cc *featureIds;
 - (_Bool)hasFeatureId:(unsigned long long)arg1;
-- (_Bool)canAcceptPolygon:(CDStruct_64195c06 *)arg1;
+- (_Bool)canAcceptPolygon:(CDStruct_a190bee8 *)arg1;
 - (void)didFinishAddingData;
 - (void)willAddDataWithAccessor:(struct ResourceAccessor *)arg1;
 - (unsigned char)indexForGeoFeatureAttributes:(id)arg1;
@@ -56,8 +56,8 @@ __attribute__((visibility("hidden")))
 - (const MultiRange_4bdc93a8 *)commitRangesToHorizontalVenueWallStrokeRenderItemBatcher:(struct Batcher *)arg1 forMeshAtIndex:(unsigned long long)arg2 cullingMask:(unsigned int)arg3;
 - (const MultiRange_4bdc93a8 *)commitRangesToVenueWallEndCapRenderItemBatcher:(struct Batcher *)arg1 forMeshAtIndex:(unsigned long long)arg2 cullingMask:(unsigned int)arg3;
 - (const MultiRange_4bdc93a8 *)commitRangesToVenueWallRenderItemBatcher:(struct Batcher *)arg1 forMeshAtIndex:(unsigned long long)arg2 cullingMask:(unsigned int)arg3;
-- (const MultiRange_4bdc93a8 *)commitRangesToStrokeRenderItemBatcher:(struct Batcher *)arg1 forMeshAtIndex:(unsigned long long)arg2 cullingMask:(unsigned int)arg3 featureIdPredicate:(function_d674753c)arg4;
-- (const MultiRange_4bdc93a8 *)commitRangesToFillRenderItemBatcher:(struct Batcher *)arg1 forMeshAtIndex:(unsigned long long)arg2 cullingMask:(unsigned int)arg3 featureIdPredicate:(function_d674753c)arg4;
+- (const MultiRange_4bdc93a8 *)commitRangesToStrokeRenderItemBatcher:(struct Batcher *)arg1 forMeshAtIndex:(unsigned long long)arg2 cullingMask:(unsigned int)arg3 featureIdPredicate:(function_5fd0b804)arg4;
+- (const MultiRange_4bdc93a8 *)commitRangesToFillRenderItemBatcher:(struct Batcher *)arg1 forMeshAtIndex:(unsigned long long)arg2 cullingMask:(unsigned int)arg3 featureIdPredicate:(function_5fd0b804)arg4;
 @property(readonly, nonatomic) vector_74364602 *fillMeshes;
 @property(readonly, nonatomic) float tileZoom;
 @property(readonly, nonatomic) vector_b346fa92 *selectedStyleQueries;

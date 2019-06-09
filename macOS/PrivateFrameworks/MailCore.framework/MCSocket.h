@@ -65,7 +65,7 @@
 - (BOOL)_setSSLStreamProperties:(BOOL)arg1;
 - (BOOL)_setupStreamsWithHostname:(id)arg1 port:(long long)arg2 needToEstablishInternetConnection:(char *)arg3 useSSL:(char *)arg4 isBackground:(BOOL)arg5 error:(id *)arg6;
 - (BOOL)connectToHost:(id)arg1 withPort:(long long)arg2 isBackground:(BOOL)arg3;
-- (void)setClientIdentity:(struct OpaqueSecIdentityRef *)arg1;
+- (void)setClientIdentity:(struct __SecIdentity *)arg1;
 - (BOOL)setUsesSSL:(BOOL)arg1;
 - (void)dealloc;
 - (id)init;

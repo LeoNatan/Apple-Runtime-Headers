@@ -8,7 +8,6 @@
 
 @interface NTKRingView : NTKColoringView
 {
-    _Bool _showsRingsBackground;
     double _ringWidth;
     double _radius;
     double _fillFraction;
@@ -16,7 +15,6 @@
     double _appearanceAnimationProgress;
 }
 
-@property(nonatomic) _Bool showsRingsBackground; // @synthesize showsRingsBackground=_showsRingsBackground;
 @property(nonatomic) double appearanceAnimationProgress; // @synthesize appearanceAnimationProgress=_appearanceAnimationProgress;
 @property(nonatomic) double ringAnimationDelta; // @synthesize ringAnimationDelta=_ringAnimationDelta;
 @property(nonatomic) double fillFraction; // @synthesize fillFraction=_fillFraction;

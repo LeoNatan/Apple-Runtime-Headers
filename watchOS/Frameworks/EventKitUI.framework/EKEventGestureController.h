@@ -9,13 +9,14 @@
 #import <EventKitUI/UIAlertViewDelegate-Protocol.h>
 #import <EventKitUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class EKCalendarDate, EKDayOccurrenceView, EKEvent, EKICSPreviewController, EKUIRecurrenceAlertController, NSString, NSTimer, UILongPressGestureRecognizer, UITapGestureRecognizer;
+@class EKCalendarDate, EKDayOccurrenceView, EKEvent, EKUIRecurrenceAlertController, NSString, NSTimer, UILongPressGestureRecognizer, UITapGestureRecognizer, UIView;
 @protocol EKEventGestureControllerDelegate, EKEventGestureControllerUntimedDelegate;
 
 @interface EKEventGestureController : NSObject <UIGestureRecognizerDelegate, UIAlertViewDelegate>
 {
     UILongPressGestureRecognizer *_draggingGestureRecognizer;
     UITapGestureRecognizer *_tapGestureRecognizer;
+    UIView *_targetView;
     int _currentDraggingState;
     int _pendingDraggingState;
     int _queuedDraggingState;
@@ -50,8 +51,6 @@
     int _consecutivePageTurnCount;
     _Bool _forcedStart;
     _Bool _needsCommit;
-    CDUnknownBlockType _alertSheetCompletionHandler;
-    EKICSPreviewController *_currentICSPreviewController;
     EKUIRecurrenceAlertController *_recurrenceAlertController;
     _Bool _usesXDragOffsetInCancelRegion;
     _Bool _usesHorizontalDragLocking;
@@ -77,12 +76,14 @@
 - (void).cxx_destruct;
 - (float)_Debug_HoursSinceStartOfDay:(double)arg1;
 - (_Bool)_isPointInCancelRegion:(struct CGPoint)arg1;
+- (float)_cancelRegionMargin;
 - (struct CGPoint)_computeOriginAtTouchPoint:(struct CGPoint)arg1 forDate:(double)arg2 isAllDay:(_Bool)arg3 allowXOffset:(_Bool)arg4 allowFloorAtRegionBottom:(_Bool)arg5;
 - (float)_computeHeightForOccurrenceViewOfDuration:(double)arg1 allDay:(_Bool)arg2;
 - (float)_computeWidthForOccurrenceView;
 - (void)_updateHorizontalDragLockForPoint:(struct CGPoint)arg1;
 - (float)_capOccurrenceViewYOrigin:(float)arg1;
 - (float)_alignedYOriginForAllDayOccurrence:(id)arg1 atPoint:(struct CGPoint)arg2 floorAtAllDayRegionBottom:(_Bool)arg3;
+- (float)_allDayBottomPadding;
 - (_Bool)_flingOrCancelDraggingViewIfNeeded;
 - (void)_cancel;
 - (void)_commit;
@@ -134,7 +135,6 @@
 - (void)updateDraggingOccurrenceOrigin;
 @property(readonly, nonatomic) _Bool dragGestureInProgress;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)promptUserForProposeNewTime:(id)arg1 forEvent:(id)arg2 whenFinished:(CDUnknownBlockType)arg3;
 - (void)promptUserForRecurrenceActionOnOccurrence:(id)arg1 whenFinished:(CDUnknownBlockType)arg2;
 - (void)removeDraggedOccurrence;

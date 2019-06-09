@@ -33,6 +33,7 @@
 - (void)putNodeInIndex:(id)arg1;
 - (id)nodeForName:(id)arg1;
 - (id)nodeForSceneClassId:(unsigned int)arg1;
+- (void)dealloc;
 - (id)initWithGraphURL:(id)arg1 localizationBundle:(id)arg2 tableName:(id)arg3;
 - (id)init;
 

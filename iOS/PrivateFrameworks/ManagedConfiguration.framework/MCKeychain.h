@@ -36,10 +36,10 @@
 + (void)removeItemForService:(id)arg1 account:(id)arg2 label:(id)arg3 description:(id)arg4 useSystemKeychain:(_Bool)arg5 group:(id)arg6;
 + (id)dataFromService:(id)arg1 account:(id)arg2 label:(id)arg3 description:(id)arg4 group:(id)arg5 useSystemKeychain:(_Bool)arg6 outError:(id *)arg7;
 + (id)dataFromService:(id)arg1 account:(id)arg2 label:(id)arg3 description:(id)arg4 useSystemKeychain:(_Bool)arg5 outError:(id *)arg6;
-+ (_Bool)setData:(id)arg1 forService:(id)arg2 account:(id)arg3 label:(id)arg4 description:(id)arg5 access:(void *)arg6 group:(id)arg7 useSystemKeychain:(_Bool)arg8 outError:(id *)arg9;
++ (_Bool)setData:(id)arg1 forService:(id)arg2 account:(id)arg3 label:(id)arg4 description:(id)arg5 access:(void *)arg6 group:(id)arg7 useSystemKeychain:(_Bool)arg8 sysBound:(_Bool)arg9 outError:(id *)arg10;
 + (_Bool)setData:(id)arg1 forService:(id)arg2 account:(id)arg3 label:(id)arg4 description:(id)arg5 access:(void *)arg6 useSystemKeychain:(_Bool)arg7 outError:(id *)arg8;
 + (_Bool)setData:(id)arg1 forService:(id)arg2 account:(id)arg3 label:(id)arg4 description:(id)arg5 useSystemKeychain:(_Bool)arg6 outError:(id *)arg7;
-+ (_Bool)setString:(id)arg1 forService:(id)arg2 account:(id)arg3 label:(id)arg4 description:(id)arg5 access:(void *)arg6 group:(id)arg7 useSystemKeychain:(_Bool)arg8 outError:(id *)arg9;
++ (_Bool)setString:(id)arg1 forService:(id)arg2 account:(id)arg3 label:(id)arg4 description:(id)arg5 access:(void *)arg6 group:(id)arg7 useSystemKeychain:(_Bool)arg8 sysBound:(_Bool)arg9 outError:(id *)arg10;
 + (_Bool)setString:(id)arg1 forService:(id)arg2 account:(id)arg3 label:(id)arg4 description:(id)arg5 group:(id)arg6 useSystemKeychain:(_Bool)arg7 outError:(id *)arg8;
 + (_Bool)setString:(id)arg1 forService:(id)arg2 account:(id)arg3 label:(id)arg4 description:(id)arg5 useSystemKeychain:(_Bool)arg6 outError:(id *)arg7;
 + (id)stringFromService:(id)arg1 account:(id)arg2 label:(id)arg3 description:(id)arg4 group:(id)arg5 useSystemKeychain:(_Bool)arg6 outError:(id *)arg7;

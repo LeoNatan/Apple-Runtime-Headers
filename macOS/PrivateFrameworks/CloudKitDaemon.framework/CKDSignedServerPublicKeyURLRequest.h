@@ -13,20 +13,20 @@ __attribute__((visibility("hidden")))
 {
     CKPublicKey *_verifiedPublicKey;
     NSURL *_plistURL;
-    struct OpaqueSecPolicyRef *_certificateTrustPolicy;
+    struct __SecPolicy *_certificateTrustPolicy;
 }
 
-+ (BOOL)verifyData:(id)arg1 withSignature:(id)arg2 usingKey:(struct OpaqueSecKeyRef *)arg3;
-+ (BOOL)verifyInteger:(long long)arg1 withSignature:(id)arg2 usingKey:(struct OpaqueSecKeyRef *)arg3;
-+ (struct __SecTrust *)createTrustEvalFromCertificateList:(id)arg1 verifiedWithPolicy:(struct OpaqueSecPolicyRef *)arg2;
++ (BOOL)verifyData:(id)arg1 withSignature:(id)arg2 usingKey:(struct __SecKey *)arg3;
++ (BOOL)verifyInteger:(long long)arg1 withSignature:(id)arg2 usingKey:(struct __SecKey *)arg3;
++ (struct __SecTrust *)createTrustEvalFromCertificateList:(id)arg1 verifiedWithPolicy:(struct __SecPolicy *)arg2;
 + (id)nearestExpirationInCertificateList:(id)arg1;
 + (id)certificateListServerPlist:(id)arg1;
 + (BOOL)serverResponseIsComplete:(id)arg1;
-@property(readonly, nonatomic) struct OpaqueSecPolicyRef *certificateTrustPolicy; // @synthesize certificateTrustPolicy=_certificateTrustPolicy;
+@property(readonly, nonatomic) struct __SecPolicy *certificateTrustPolicy; // @synthesize certificateTrustPolicy=_certificateTrustPolicy;
 @property(readonly, nonatomic) NSURL *plistURL; // @synthesize plistURL=_plistURL;
 @property(retain) CKPublicKey *verifiedPublicKey; // @synthesize verifiedPublicKey=_verifiedPublicKey;
 - (void).cxx_destruct;
-- (BOOL)canVerifySignedPlistValues:(id)arg1 withKey:(struct OpaqueSecKeyRef *)arg2;
+- (BOOL)canVerifySignedPlistValues:(id)arg1 withKey:(struct __SecKey *)arg2;
 - (void)requestDidParsePlistObject:(id)arg1;
 - (id)url;
 - (BOOL)hasRequestBody;
@@ -35,11 +35,10 @@ __attribute__((visibility("hidden")))
 - (long long)serverType;
 - (BOOL)allowsAnonymousAccount;
 - (BOOL)requiresTokenRegistration;
-- (BOOL)requiresSignature;
 - (BOOL)requiresDeviceID;
 - (BOOL)requiresConfiguration;
 - (void)dealloc;
-- (id)initWithPlistURL:(id)arg1 verifyWithPolicy:(struct OpaqueSecPolicyRef *)arg2;
+- (id)initWithPlistURL:(id)arg1 verifyWithPolicy:(struct __SecPolicy *)arg2;
 
 @end
 

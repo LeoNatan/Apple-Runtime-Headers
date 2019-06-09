@@ -211,7 +211,7 @@
 - (void)copyObject:(id)arg1;
 - (void)copyToPasteboard:(id)arg1;
 - (void)copy:(id)arg1;
-- (id)copyString;
+- (id)stringFromSelection;
 - (id)currentLayoutParent;
 - (id)styleProvider;
 - (int)p_canPerformOptInEditorAction:(SEL)arg1 withSender:(id)arg2;
@@ -282,9 +282,6 @@
 - (void)handleHardPressGestureRecognizer:(id)arg1;
 - (void)endHardPressGestureRecognizer:(id)arg1;
 - (id)p_updateEditingRepIfApplicableWithGesture:(id)arg1 unscaledCanvasPoint:(struct CGPoint)arg2;
-- (void)p_stopHorizontalRangedMagnification;
-- (void)p_moveHorizontalRangedLoupeForRep:(id)arg1 unscaledCanvasPoint:(struct CGPoint)arg2;
-- (void)p_beginHorizontalRangedMagnificationForRep:(id)arg1 unscaledCanvasPoint:(struct CGPoint)arg2;
 - (struct CGPoint)p_clampPointToLine:(struct CGPoint)arg1 trackingRep:(id)arg2;
 - (void)p_handleLongPressGesture:(id)arg1;
 - (void)p_handleSwipeMoveCaretWithTextGranularity:(long long)arg1 textDirection:(long long)arg2 layoutDirection:(long long)arg3;

@@ -36,7 +36,6 @@
     unsigned int _isStatic:1;
     unsigned int _hasSelectedBackgroundView:1;
     unsigned int _selectionBlendingMode:1;
-    unsigned int _checkingFontRefColor:1;
     unsigned int _forDeletion:1;
     unsigned int _emphasizedForDropOperation:1;
     unsigned int _keyViewLoopIsDirty:1;
@@ -134,14 +133,9 @@
 - (BOOL)wantsUpdateLayer;
 - (void)drawDraggingDestinationFeedbackInRect:(struct CGRect)arg1;
 - (void)drawSelectionInRect:(struct CGRect)arg1;
-- (BOOL)drawsBackground;
 - (void)drawBackgroundInRect:(struct CGRect)arg1;
 - (id)_floatingBackgroundColor;
 - (BOOL)_shouldUseBackgroundColor;
-- (BOOL)shouldSetFontSmoothingBackgroundColor;
-- (id)_backgroundColorForFontSmoothing;
-- (id)_selectedBackgroundColorForFontSmoothing;
-- (id)fontSmoothingBackgroundColor;
 - (BOOL)_needsSelectionBlurBackgroundView;
 - (BOOL)_hasSourceListBackgroundColorOrNil;
 - (void)_drawSourceListBackgroundInnerEdgeInRect:(struct CGRect)arg1;

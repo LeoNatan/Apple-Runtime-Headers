@@ -13,35 +13,56 @@
     NSArray *_junkResults;
     NSArray *_qualityResults;
     NSArray *_faceResults;
+    NSArray *_saliencyResults;
     NSArray *_actionResults;
     NSArray *_voiceResults;
     NSArray *_featureResults;
+    NSArray *_humanPoseResults;
+    NSArray *_humanActionResults;
+    NSArray *_humanTrackResults;
+    NSArray *_cameraMotionResults;
     NSArray *_keyFrameResults;
+    NSMutableArray *_expressionSegments;
     NSMutableArray *_internalResults;
     NSMutableArray *_internalConstraintResults;
+    struct CGSize _frameSize;
     BOOL _isLivePhoto;
     BOOL _verbose;
 }
 
 - (void).cxx_destruct;
+- (float)junkScoreForTimerange:(CDStruct_e83c9415)arg1;
+- (float)cameraMotionScoreForTimerange:(CDStruct_e83c9415)arg1;
+- (float)visualPleasingScoreForTimerange:(CDStruct_e83c9415)arg1;
+- (float)voiceScoreForTimerange:(CDStruct_e83c9415)arg1;
+- (float)actionScoreForTimerange:(CDStruct_e83c9415)arg1;
+- (float)qualityScoreForTimerange:(CDStruct_e83c9415)arg1;
+- (float)analyzeOverallQuality:(CDStruct_e83c9415)arg1;
 - (void)mergeSimilarSegments;
 - (void)mergeShortSegments;
 - (float)computeVoiceScoreInTimeRange:(CDStruct_e83c9415)arg1;
+- (float)computeHumanPoseScoreInTimerange:(CDStruct_e83c9415)arg1;
+- (float)computeHumanActionScoreInTimerange:(CDStruct_e83c9415)arg1;
 - (float)computeActionScoreInTimerange:(CDStruct_e83c9415)arg1;
+- (float)expressionScoreForTimerange:(CDStruct_e83c9415)arg1;
 - (float)computeExpressionScoreInTimerange:(CDStruct_e83c9415)arg1;
 - (void)computeHighlightScoreOfSegment:(id)arg1;
 - (BOOL)addSegment:(id)arg1;
 - (int)evaluateSegment:(id)arg1;
 - (void)searchFeatureVectorOfSegment:(id)arg1;
-- (int)pickHighlightsFrom:(id)arg1;
 - (int)computeHighlightScoreWithConstraint;
 - (id)pickKeyFramesInRange:(CDStruct_e83c9415)arg1;
 - (void)SetKeyFramesForSegments:(id)arg1;
+- (float)computeHighlightScoreOfRange:(CDStruct_e83c9415)arg1;
+- (CDStruct_e83c9415)computeActionFaceTrimFor:(CDStruct_e83c9415)arg1;
+- (CDStruct_e83c9415)computeQualityTrimFor:(CDStruct_e83c9415)arg1;
+- (void)generateExpressionSegments:(CDStruct_e83c9415)arg1;
 - (int)generateInitialSegments;
 - (id)results;
+- (struct CGRect)computeBestPlaybackCrop:(CDStruct_e83c9415)arg1;
 - (id)movieSummary;
 - (int)generateHighlights;
-- (int)prepareRequiredQualityResult:(id)arg1 junkDetectionResult:(id)arg2 descriptorResult:(id)arg3 faceResult:(id)arg4 actionResult:(id)arg5 voiceResult:(id)arg6 keyFrameResult:(id)arg7;
+- (int)prepareRequiredQualityResult:(id)arg1 junkDetectionResult:(id)arg2 descriptorResult:(id)arg3 faceResult:(id)arg4 saliencyResult:(id)arg5 actionResult:(id)arg6 voiceResult:(id)arg7 keyFrameResult:(id)arg8 humanPoseResults:(id)arg9 humanActionResults:(id)arg10 humanTrackResults:(id)arg11 cameraMotionResults:(id)arg12 frameSize:(struct CGSize)arg13;
 - (id)initWithAnalysisType:(unsigned long long)arg1 isLivePhoto:(BOOL)arg2;
 
 @end

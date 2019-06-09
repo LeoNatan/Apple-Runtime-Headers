@@ -22,7 +22,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 @property(nonatomic) int resultCode; // @synthesize resultCode;
-@property(nonatomic, copy) NSArray *devices; // @synthesize devices;
+@property(nonatomic, copy) NSArray *devices;
 
 @end
 

@@ -9,6 +9,7 @@
 @class NSArray, SKUIToolbarButtonsController, SKUIToolbarViewElement;
 @protocol SKUIToolbarControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIToolbarController : NSObject
 {
     SKUIToolbarButtonsController *_buttonsController;

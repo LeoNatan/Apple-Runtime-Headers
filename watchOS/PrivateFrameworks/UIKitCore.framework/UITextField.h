@@ -16,16 +16,17 @@
 #import <UIKitCore/UITextInput-Protocol.h>
 #import <UIKitCore/UITextInputTraits_Private-Protocol.h>
 #import <UIKitCore/UIViewGhostedRangeSupporting-Protocol.h>
+#import <UIKitCore/_UIDrawsTextInRect-Protocol.h>
 #import <UIKitCore/_UIFloatingContentViewDelegate-Protocol.h>
 #import <UIKitCore/_UILayoutBaselineUpdating-Protocol.h>
-#import <UIKitCore/_UITextFieldContentViewContextProvider-Protocol.h>
-#import <UIKitCore/_UITextFieldContent_Internal-Protocol.h>
+#import <UIKitCore/_UITextFieldCanvasViewContext-Protocol.h>
 #import <UIKitCore/_UITextFieldVisualStyleSubject-Protocol.h>
+#import <UIKitCore/_UITextItemDiscoverable-Protocol.h>
 
-@class CUICatalog, CUIStyleEffectConfiguration, NSArray, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutConstraint, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIButton, UIColor, UIFieldEditor, UIFont, UIImage, UIImageView, UIInputContextHistory, UILabel, UISystemInputViewController, UITapGestureRecognizer, UITextFieldAtomBackgroundView, UITextFieldBackgroundView, UITextFieldBorderView, UITextFieldLabel, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIVisualEffectView, _UIBaselineLayoutStrut, _UICascadingTextStorage, _UIDetachedFieldEditorBackgroundView, _UIFieldEditorLayoutManager, _UIFloatingContentView, _UIFullFontSize, _UITextFieldContentView, _UITextFieldVisualStyle;
-@protocol UITextFieldDelegate, UITextInputDelegate, UITextInputTokenizer;
+@class CUICatalog, CUIStyleEffectConfiguration, NSArray, NSAttributedString, NSDictionary, NSIndexSet, NSLayoutConstraint, NSLayoutManager, NSString, NSTextContainer, NSTextStorage, UIButton, UIColor, UIFieldEditor, UIFont, UIImage, UIImageView, UIInputContextHistory, UILabel, UISystemInputViewController, UITapGestureRecognizer, UITextFieldAtomBackgroundView, UITextFieldBackgroundView, UITextFieldBorderView, UITextFieldLabel, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIVisualEffectView, _UIBaselineLayoutStrut, _UICascadingTextStorage, _UIDetachedFieldEditorBackgroundView, _UIFieldEditorLayoutManager, _UIFloatingContentView, _UIFullFontSize, _UITextFieldCanvasView, _UITextFieldVisualStyle, _UITextItemDiscoverer;
+@protocol UICoordinateSpace, UITextFieldDelegate, UITextInputDelegate, UITextInputTokenizer;
 
-@interface UITextField : UIControl <UIKeyboardInput, _UILayoutBaselineUpdating, _UIFloatingContentViewDelegate, UIGestureRecognizerDelegate, UIKeyInputPrivate, _UITextFieldVisualStyleSubject, UIViewGhostedRangeSupporting, UITextInputTraits_Private, _UITextFieldContent_Internal, UIPopoverControllerDelegate, _UITextFieldContentViewContextProvider, UITextFieldContent, UITextInput, NSCoding, UIContentSizeCategoryAdjusting>
+@interface UITextField : UIControl <UIKeyboardInput, _UILayoutBaselineUpdating, _UIFloatingContentViewDelegate, UIGestureRecognizerDelegate, _UITextFieldVisualStyleSubject, UIViewGhostedRangeSupporting, _UIDrawsTextInRect, UITextInputTraits_Private, UIPopoverControllerDelegate, _UITextFieldCanvasViewContext, UIKeyInputPrivate, UITextFieldContent, _UITextItemDiscoverable, UITextInput, NSCoding, UIContentSizeCategoryAdjusting>
 {
     int _borderStyle;
     float _minimumFontSize;
@@ -53,7 +54,7 @@
     UITextFieldBorderView *_backgroundView;
     UITextFieldBorderView *_disabledBackgroundView;
     UITextFieldBackgroundView *_systemBackgroundView;
-    _UITextFieldContentView *_textContentView;
+    _UITextFieldCanvasView *_textContentView;
     _UIFloatingContentView *_floatingContentView;
     UIVisualEffectView *_contentBackdropView;
     _UIDetachedFieldEditorBackgroundView *_fieldEditorBackgroundView;
@@ -72,11 +73,13 @@
     NSTextContainer *__textContainer;
     _UIFieldEditorLayoutManager *__layoutManager;
     _UICascadingTextStorage *_textStorage;
+    NSDictionary *_linkTextAttributes;
     UIView *_inputView;
     UIView *_inputAccessoryView;
     UIView *_recentsAccessoryView;
     UISystemInputViewController *_systemInputViewController;
     UITextFieldAtomBackgroundView *_atomBackgroundView;
+    _UITextItemDiscoverer *_textItemDiscoverer;
     struct {
         unsigned int verticallyCenterText:1;
         unsigned int isAnimating:4;
@@ -103,8 +106,10 @@
         unsigned int disableFocus:1;
         unsigned int disableRemoteTextEditing:1;
         unsigned int allowsAttachments:1;
+        unsigned int isReceivingDrop:1;
         unsigned int contentCoverUnsecuresText:1;
         unsigned int forcesClearButtonHighContrastAppearance:1;
+        unsigned int contentInsetsFromFontsValid:1;
     } _textFieldFlags;
     _Bool _deferringBecomeFirstResponder;
     _Bool _animateNextHighlightChange;
@@ -122,6 +127,8 @@
     _UITextFieldVisualStyle *_visualStyle;
 }
 
++ (Class)_fieldEditorClass;
++ (_Bool)_wantsFadedEdges;
 + (_Bool)_isCompatibilityTextField;
 @property(retain, nonatomic) _UITextFieldVisualStyle *visualStyle; // @synthesize visualStyle=_visualStyle;
 @property(retain) UIView *inputView; // @synthesize inputView=_inputView;
@@ -139,6 +146,15 @@
 @property(retain, nonatomic, setter=_setBaselineLayoutConstraint:) NSLayoutConstraint *_baselineLayoutConstraint; // @synthesize _baselineLayoutConstraint;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 - (void).cxx_destruct;
+- (void)_setPasscodeStyleAlpha:(float)arg1;
+- (float)_passcodeStyleAlpha;
+- (void)_updateForPasscodeAppearance;
+- (_Bool)_overridePasscodeStyle;
+- (void)_setOverridePasscodeStyle:(_Bool)arg1;
+- (_Bool)_isPasscodeStyle;
+- (struct _NSRange)_unobscuredSecureRange;
+- (struct CGRect)_clipRectForFadedEdges;
+- (id)_targetForDrawTextInRect;
 - (_Bool)_isFocused;
 - (int)_userInterfaceStyle;
 - (int)_keyboardAppearance;
@@ -147,13 +163,15 @@
 - (void)_disableClipToBoundsForBorderStyleNone;
 - (id)_effectiveContentView;
 - (id)_floatingContentView;
-- (id)_contextForTextFieldContentView;
 - (void)_addTextContentView;
 - (void)_initContentView;
 - (void)_initTextStorage;
+- (_Bool)hasTextItemsOfType:(int)arg1 inTextRange:(id)arg2;
+- (id)textItemsOfType:(int)arg1 inTextRange:(id)arg2;
+- (id)visibleTextRange;
+@property(readonly, nonatomic) id <UICoordinateSpace> textItemCoordinateSpace;
+- (id)_textItemDiscoverer;
 - (struct _NSRange)_visibleRangeWithLayout:(_Bool)arg1;
-- (void)_pasteSessionDidFinish;
-- (void)_performPasteOfAttributedString:(id)arg1 toRange:(id)arg2 animator:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (_Bool)isTextDropActive;
 - (_Bool)isTextDragActive;
 - (void)removeAllGhostedRanges;
@@ -171,20 +189,31 @@
 - (float)_roundedRectBackgroundCornerRadius;
 - (void)_setRoundedRectBackgroundCornerRadius:(float)arg1;
 - (id)_backgroundView;
-- (id)_textContentView;
+- (id)_canvasView;
 - (id)_systemBackgroundView;
 - (void)setContinuousSpellCheckingEnabled:(_Bool)arg1;
 - (void)_deleteBackwardAndNotify:(_Bool)arg1;
 - (void)deleteBackward;
 - (struct _NSRange)insertFilteredText:(id)arg1;
+- (void)insertText:(id)arg1 style:(int)arg2 alternatives:(id)arg3;
+- (void)insertText:(id)arg1 alternatives:(id)arg2 style:(int)arg3;
 - (void)insertText:(id)arg1;
 @property(readonly, nonatomic) _Bool hasText;
+- (_Bool)_delegateShouldChangeCharactersInTextStorageRange:(struct _NSRange)arg1 replacementString:(id)arg2 delegateCares:(_Bool *)arg3;
+- (_Bool)_delegateShouldClear;
+- (_Bool)_delegateShouldScrollToVisibleWhenBecomingFirstResponder;
+- (_Bool)_delegateShouldEndEditing;
+- (struct _NSRange)_textRangeForTextStorageRange:(struct _NSRange)arg1;
+- (struct _NSRange)_rangeForSetText;
+- (_Bool)_delegateShouldBeginEditing;
 - (_Bool)_shouldResignOnEditingDidEndOnExit;
 - (id)rangeWithTextAlternatives:(id *)arg1 atPosition:(id)arg2;
 - (void)_setOverridePlaceholder:(id)arg1 alignment:(int)arg2;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(_Bool)arg2;
 - (struct CGRect)frameForDictationResultPlaceholder:(id)arg1;
 @property(readonly, nonatomic) id insertDictationResultPlaceholder;
+- (void)removeTextPlaceholder:(id)arg1;
+- (id)insertTextPlaceholderWithSize:(struct CGSize)arg1;
 - (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
 - (id)metadataDictionariesForDictationResults;
 - (id)characterRangeAtPoint:(struct CGPoint)arg1;
@@ -216,6 +245,7 @@
 @property(readonly, nonatomic) UITextRange *markedTextRange;
 @property(copy) UITextRange *selectedTextRange;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
+- (void)replaceRange:(id)arg1 withAttributedText:(id)arg2;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (id)attributedTextInRange:(id)arg1;
 - (void)insertAttributedText:(id)arg1;
@@ -223,6 +253,7 @@
 - (id)_inputController;
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)_inPopover;
+- (void)validateCommand:(id)arg1;
 - (void)_transliterateChinese:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
 - (void)replace:(id)arg1;
@@ -265,6 +296,7 @@
 - (struct CGRect)_selectionClipRect;
 - (_Bool)_tvHasFloatingFieldEditor;
 - (void)endFloatingCursor;
+- (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1 velocity:(struct CGPoint)arg2;
 - (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (void)beginFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (_Bool)_restoreFirstResponder;
@@ -274,11 +306,10 @@
 - (void)startAutoscroll:(struct CGPoint)arg1;
 - (_Bool)hasSelection;
 - (id)_fieldEditor;
-- (id)_fieldEditorIfAttached;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
 - (_Bool)_useGesturesForEditableContent;
-- (_Bool)isEditable;
+@property(readonly, nonatomic, getter=isEditable) _Bool editable;
 - (id)_uiktest_tvCustomTextColor;
 - (id)_uiktest_placeholderLabelColor;
 - (_Bool)_uiktest_tvUseVibrancy;
@@ -372,6 +403,7 @@
 - (void)_willAttachFieldEditor;
 - (void)_addFieldEditorToView;
 - (id)_defaultPromptString;
+- (void)_detachFieldEditorDiscardingEdits:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)_detachFieldEditor;
 - (void)_attachFieldEditor;
 @property(nonatomic) int textSelectionBehavior;
@@ -417,7 +449,7 @@
 - (id)backgroundColor;
 - (void)setBackgroundColor:(id)arg1;
 @property(copy, nonatomic) NSDictionary *typingAttributes;
-- (void)_pasteAttributedString:(id)arg1 pasteAsRichText:(_Bool)arg2;
+- (id)_attributedStringForInsertionOfAttributedString:(id)arg1;
 @property(nonatomic) _Bool allowsEditingTextAttributes;
 @property(nonatomic) _Bool adjustsFontSizeToFitWidth;
 - (void)setClearsPlaceholderOnBeginEditing:(_Bool)arg1;
@@ -441,7 +473,7 @@
 - (void)setContentVerticalAlignment:(int)arg1;
 @property(copy, nonatomic) NSDictionary *defaultTextAttributes;
 @property(nonatomic) int textAlignment;
-- (void)_adjustPreferredFontForCurrentContentSizeCategory;
+- (void)_adjustFontForAccessibilityTraits:(_Bool)arg1;
 - (void)setClipsToBounds:(_Bool)arg1;
 @property(retain, nonatomic) UIFont *font;
 - (void)disableClearsOnInsertion;
@@ -464,7 +496,7 @@
 - (void)_sanitizeText:(id)arg1;
 - (void)sanitizeAttributedText:(id)arg1;
 - (_Bool)_textNeedsSanitizing:(id)arg1;
-- (void)_setAttributedText:(id)arg1 onFieldEditorAndSetCaretSelectionAfterText:(_Bool)arg2;
+- (void)_setAttributedTextOnFieldEditor:(id)arg1;
 @property(copy, nonatomic) NSString *text;
 - (void)finishedSettingTextOrAttributedText;
 - (id)searchText;
@@ -473,6 +505,9 @@
 - (id)_text;
 @property(nonatomic) _Bool allowsAttachments;
 @property(nonatomic) int nonEditingLinebreakMode;
+- (id)linkTextAttributes;
+- (void)setLinkTextAttributes:(id)arg1;
+@property(readonly, nonatomic) struct CGPoint textContainerOrigin;
 - (id)_textStorage;
 - (id)_textContainer;
 - (id)_layoutManager;
@@ -501,6 +536,7 @@
 - (_Bool)_shouldSendContentChangedNotificationsIfOnlyMarkedTextChanged;
 - (id)_contentSnapshot;
 - (id)_placeholderLabel;
+- (id)valueForKey:(id)arg1;
 - (id)_placeholderView;
 - (id)_placeholderColor;
 - (void)_setSystemBackgroundViewActive:(_Bool)arg1;
@@ -531,6 +567,7 @@
 - (float)_baselineLayoutConstraintConstantForBounds:(struct CGRect)arg1;
 - (void)_updateLabel;
 - (struct CGRect)_availableTextRectForBounds:(struct CGRect)arg1 forEditing:(_Bool)arg2;
+- (struct CGRect)_boundsForTextRectExcludingButtons:(struct CGRect)arg1;
 - (struct CGRect)_availableTextRectExcludingButtonsForBounds:(struct CGRect)arg1;
 - (_Bool)_isShowingPrefix;
 - (_Bool)_isShowingPlaceholder;
@@ -602,7 +639,7 @@
 - (void)_uninstallSelectGestureRecognizer;
 - (void)_installSelectGestureRecognizer;
 - (_Bool)becomeFirstResponder;
-- (void)scrollTextFieldToVisible;
+- (void)scrollTextFieldToVisibleIfNecessary;
 - (_Bool)_requiresKeyboardResetOnReload;
 - (_Bool)canResignFirstResponder;
 - (_Bool)canBecomeFirstResponder;
@@ -635,12 +672,6 @@
 - (void)_setCuiCatalog:(id)arg1;
 - (_Bool)isElementAccessibilityExposedToInterfaceBuilder;
 - (_Bool)isAccessibilityElementByDefault;
-- (void)_setPasscodeStyleAlpha:(float)arg1;
-- (float)_passcodeStyleAlpha;
-- (void)_updateForPasscodeAppearance;
-- (_Bool)_overridePasscodeStyle;
-- (void)_setOverridePasscodeStyle:(_Bool)arg1;
-- (_Bool)_isPasscodeStyle;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 
@@ -660,6 +691,7 @@
 @property(readonly, copy) NSString *description;
 @property(nonatomic) _Bool disableInputBars;
 @property(nonatomic) _Bool disablePrediction;
+@property(readonly, nonatomic) struct CGPoint drawingScale;
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically; // @dynamic enablesReturnKeyAutomatically;
 @property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
@@ -687,6 +719,7 @@
 @property(retain, nonatomic) UIImage *selectionDragDotImage;
 @property(retain, nonatomic) UIColor *selectionHighlightColor;
 @property(nonatomic) int shortcutConversionType;
+@property(nonatomic) _Bool showDictationButton;
 @property(nonatomic) int smartDashesType; // @dynamic smartDashesType;
 @property(nonatomic) int smartInsertDeleteType; // @dynamic smartInsertDeleteType;
 @property(nonatomic) int smartQuotesType; // @dynamic smartQuotesType;
@@ -700,6 +733,7 @@
 @property(nonatomic) struct __CFCharacterSet *textTrimmingSet;
 @property(retain, nonatomic) UIColor *underlineColorForSpelling;
 @property(retain, nonatomic) UIColor *underlineColorForTextAlternatives;
+@property(nonatomic) _Bool useAutomaticEndpointing;
 @property(nonatomic) _Bool useInterfaceLanguageForLocalization;
 @property(nonatomic) struct _NSRange validTextRange;
 

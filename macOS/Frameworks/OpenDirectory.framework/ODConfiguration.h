@@ -52,13 +52,13 @@
 @property BOOL manInTheMiddleProtection; // @synthesize manInTheMiddleProtection;
 @property long long packetEncryption; // @synthesize packetEncryption;
 @property long long packetSigning; // @synthesize packetSigning;
-@property(readonly) BOOL trustUsesSystemKeychain; // @synthesize trustUsesSystemKeychain;
-@property(readonly) BOOL trustUsesKerberosKeytab; // @synthesize trustUsesKerberosKeytab;
-@property(readonly) BOOL trustUsesMutualAuthentication; // @synthesize trustUsesMutualAuthentication;
-@property(readonly, copy) NSString *trustMetaAccount; // @synthesize trustMetaAccount;
-@property(readonly, copy) NSString *trustKerberosPrincipal; // @synthesize trustKerberosPrincipal;
-@property(readonly, copy) NSString *trustType; // @synthesize trustType;
-@property(readonly, copy) NSString *trustAccount; // @synthesize trustAccount;
+@property BOOL trustUsesSystemKeychain; // @synthesize trustUsesSystemKeychain;
+@property BOOL trustUsesKerberosKeytab; // @synthesize trustUsesKerberosKeytab;
+@property BOOL trustUsesMutualAuthentication; // @synthesize trustUsesMutualAuthentication;
+@property(copy) NSString *trustMetaAccount; // @synthesize trustMetaAccount;
+@property(copy) NSString *trustKerberosPrincipal; // @synthesize trustKerberosPrincipal;
+@property(copy) NSString *trustType; // @synthesize trustType;
+@property(copy) NSString *trustAccount; // @synthesize trustAccount;
 @property unsigned short preferredDestinationHostPort; // @synthesize preferredDestinationHostPort;
 @property(copy) NSString *preferredDestinationHostName; // @synthesize preferredDestinationHostName;
 @property BOOL hideRegistration; // @synthesize hideRegistration;
@@ -73,6 +73,7 @@
 - (BOOL)saveUsingAuthorization:(id)arg1 error:(id *)arg2;
 @property(readonly, copy) NSDictionary *configuration;
 - (void)packageModules:(id)arg1 intoConfiguration:(id)arg2 forCategory:(id)arg3;
+- (void)dealloc;
 - (id)init;
 - (id)initWithSession:(id)arg1;
 

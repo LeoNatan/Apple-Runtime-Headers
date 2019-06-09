@@ -8,20 +8,30 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, PBUnknownFields;
+@class NSMutableArray, PBDataReader, PBUnknownFields;
 
 @interface GEORegionalResourceTileData : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_attributions;
     NSMutableArray *_icons;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_attributions:1;
+        unsigned int read_icons:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_attributions:1;
+        unsigned int wrote_icons:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)attributionType;
 + (Class)iconType;
-@property(retain, nonatomic) NSMutableArray *attributions; // @synthesize attributions=_attributions;
-@property(retain, nonatomic) NSMutableArray *icons; // @synthesize icons=_icons;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,16 +40,23 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)attributionAtIndex:(unsigned long long)arg1;
 - (unsigned long long)attributionsCount;
+- (void)_addNoFlagsAttribution:(id)arg1;
 - (void)addAttribution:(id)arg1;
 - (void)clearAttributions;
+@property(retain, nonatomic) NSMutableArray *attributions;
+- (void)_readAttributions;
 - (id)iconAtIndex:(unsigned long long)arg1;
 - (unsigned long long)iconsCount;
+- (void)_addNoFlagsIcon:(id)arg1;
 - (void)addIcon:(id)arg1;
 - (void)clearIcons;
+@property(retain, nonatomic) NSMutableArray *icons;
+- (void)_readIcons;
 
 @end
 

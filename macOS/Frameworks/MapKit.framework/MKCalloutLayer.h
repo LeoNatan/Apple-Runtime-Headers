@@ -6,6 +6,7 @@
 
 #import <QuartzCore/CALayer.h>
 
+__attribute__((visibility("hidden")))
 @interface MKCalloutLayer : CALayer
 {
     long long _anchorPosition;

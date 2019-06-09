@@ -10,7 +10,8 @@
 #import <PassKitUI/UITableViewDataSource-Protocol.h>
 #import <PassKitUI/UITableViewDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSOrderedSet, NSString, PKDashboardMessageCell, UIImage, UIScrollView, UITableViewCell;
+@class NSMutableDictionary, NSOrderedSet, NSString, PKDashboardMessageCell, UIImage, UIPageControl, UIScrollView, UITableViewCell;
+@protocol PKDashboardMessagesViewDelegate;
 
 @interface PKDashboardMessagesView : UIView <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
 {
@@ -24,9 +25,18 @@
     UIImage *_dismissImage;
     unsigned int _primaryIndex;
     struct UIEdgeInsets _insets;
+    float _widthForLastSizeCache;
+    float _maxTableViewHeight;
+    float _actionCellHeight;
+    UIPageControl *_pageControl;
+    NSString *_lastReportedDiscoveryIdentifier;
+    id <PKDashboardMessagesViewDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <PKDashboardMessagesViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) NSOrderedSet *messages; // @synthesize messages=_messages;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
 - (unsigned int)_primaryIndexAtOffset:(struct CGPoint)arg1;
 - (float)_endOfItemAtIndex:(unsigned int)arg1;
 - (float)_startOfItemAtIndex:(unsigned int)arg1;
@@ -42,8 +52,12 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)_reportCurrentMessageToDiscoveryService;
 - (id)_messageForTableView:(id)arg1;
-- (void)updateWithMessages:(id)arg1;
+- (void)updateWithMessages:(id)arg1 currentIndex:(unsigned int)arg2;
+- (float)_maxHeightForSize:(struct CGSize)arg1;
+- (float)_actionCellHeightForSize:(struct CGSize)arg1;
+- (void)_updateSizeCacheIfNecessary;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

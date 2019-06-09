@@ -6,7 +6,7 @@
 
 #import <Intents/INIntent.h>
 
-@class NSArray, NSString;
+@class NSArray, NSNumber, NSString;
 
 @interface MSSendMailIntent : INIntent
 {
@@ -14,11 +14,14 @@
 
 
 // Remaining properties
-@property(copy, nonatomic) NSArray *sendMailBccAddresses; // @dynamic sendMailBccAddresses;
-@property(copy, nonatomic) NSString *sendMailBody; // @dynamic sendMailBody;
-@property(copy, nonatomic) NSArray *sendMailCcAddresses; // @dynamic sendMailCcAddresses;
-@property(copy, nonatomic) NSArray *sendMailSenderAddresses; // @dynamic sendMailSenderAddresses;
-@property(copy, nonatomic) NSString *sendMailSubject; // @dynamic sendMailSubject;
-@property(copy, nonatomic) NSArray *sendMailToAddresses; // @dynamic sendMailToAddresses;
+@property(copy, nonatomic) NSArray *attachments; // @dynamic attachments;
+@property(copy, nonatomic) NSArray *bcc; // @dynamic bcc;
+@property(copy, nonatomic) NSString *body; // @dynamic body;
+@property(copy, nonatomic) NSArray *cc; // @dynamic cc;
+@property(copy, nonatomic) NSNumber *isDraft; // @dynamic isDraft;
+@property(copy, nonatomic) NSString *sender; // @dynamic sender;
+@property(copy, nonatomic) NSString *subject; // @dynamic subject;
+@property(copy, nonatomic) NSArray *to; // @dynamic to;
+@property(copy, nonatomic) NSString *userTypedContent; // @dynamic userTypedContent;
 @end
 

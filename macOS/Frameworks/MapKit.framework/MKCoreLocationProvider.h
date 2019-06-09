@@ -12,6 +12,7 @@
 @class CLLocation, CLLocationManager, NSBundle, NSString;
 @protocol MKLocationProviderDelegate, OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface MKCoreLocationProvider : NSObject <CLLocationManagerDelegate, MKLocationProvider>
 {
     CLLocationManager *_clLocationManager;

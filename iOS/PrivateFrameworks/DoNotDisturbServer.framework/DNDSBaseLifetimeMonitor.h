@@ -20,7 +20,7 @@
     id <DNDSLifetimeMonitorDelegate> _delegate;
 }
 
-+ (_Bool)willMonitorLifetime:(id)arg1;
++ (Class)lifetimeClass;
 @property(nonatomic) __weak id <DNDSLifetimeMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <DNDSLifetimeMonitorDataSource> dataSource; // @synthesize dataSource=_dataSource;
 @property(readonly, copy, nonatomic) NSArray *activeLifetimeAssertionUUIDs; // @synthesize activeLifetimeAssertionUUIDs=_activeLifetimeAssertionUUIDs;
@@ -30,7 +30,7 @@
 @property(readonly, copy, nonatomic) NSString *sysdiagnoseDataIdentifier; // @dynamic sysdiagnoseDataIdentifier;
 - (void)refreshMonitorFromQueueForDate:(id)arg1;
 - (void)refreshMonitorForDate:(id)arg1;
-- (id)updateForModeAssertionDetails:(id)arg1 date:(id)arg2;
+- (id)updateForModeAssertions:(id)arg1 date:(id)arg2;
 - (void)dealloc;
 - (id)init;
 

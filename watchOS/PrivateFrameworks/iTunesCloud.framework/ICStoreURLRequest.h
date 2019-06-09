@@ -28,6 +28,7 @@
 @property(nonatomic) _Bool shouldUseMescalSigning; // @synthesize shouldUseMescalSigning=_shouldUseMescalSigning;
 @property(nonatomic) int anisetteVersion; // @synthesize anisetteVersion=_anisetteVersion;
 - (void).cxx_destruct;
+- (_Bool)_shouldPersonalizeRequest;
 - (id)_stringForCachePolicy:(unsigned int)arg1;
 - (void)_getSignatureDataForRequest:(id)arg1 urlBag:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)buildStoreURLRequestWithURLRequest:(id)arg1 builderProperties:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

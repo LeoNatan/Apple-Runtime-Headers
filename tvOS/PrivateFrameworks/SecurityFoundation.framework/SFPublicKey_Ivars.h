@@ -8,7 +8,7 @@
 
 @interface SFPublicKey_Ivars : NSObject
 {
-    struct __SecKey *secKey;
+    // Error parsing type: ^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}, name: secKey
 }
 
 - (void)dealloc;

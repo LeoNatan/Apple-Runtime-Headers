@@ -30,6 +30,7 @@
 + (void)_parseErrorMessage:(id *)arg1 fromPayload:(id)arg2;
 + (void)_parseNodeHandle:(id *)arg1 fromPayload:(id)arg2;
 + (void)_parseFrameHandle:(id *)arg1 fromPayload:(id)arg2;
++ (void)_parseBrowsingContextPresentation:(id *)arg1 fromPayload:(id)arg2;
 + (void)_parseBrowsingContextHandle:(id *)arg1 fromPayload:(id)arg2;
 + (void)_parseCoordinateSystem:(id *)arg1 fromPayload:(id)arg2;
 + (void)_parseRect:(id *)arg1 fromPayload:(id)arg2;

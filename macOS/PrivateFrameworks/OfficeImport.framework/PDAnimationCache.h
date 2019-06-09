@@ -8,6 +8,7 @@
 
 @class NSString, PDAnimateMotionBehavior, PDAnimationTarget, PDBuild;
 
+__attribute__((visibility("hidden")))
 @interface PDAnimationCache : NSObject
 {
     int mNodeType;

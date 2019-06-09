@@ -6,33 +6,41 @@
 
 #import <CloudDocsDaemon/BRCClientZone.h>
 
-@class BRCAppLibrary, BRCPrivateServerZone, BRCProblemReport, BRCServerZoneHealthState, NSMutableArray, NSMutableSet, NSSet;
+@class BRCAppLibrary, BRCPrivateServerZone, BRCProblemReport, BRCServerZoneHealthState, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet;
 
 __attribute__((visibility("hidden")))
 @interface BRCPrivateClientZone : BRCClientZone
 {
     NSMutableArray *_syncBarriers;
+    NSMutableSet *_itemIDsBlockedFromSyncForCZMProcessing;
+    NSMutableDictionary *_itemsBlockedByAssociationFroCZMProcessing;
     BRCServerZoneHealthState *_zoneHealthState;
     BRCProblemReport *_problemReport;
-    NSMutableArray *_faultsLiveBarriers;
     NSMutableSet *_appLibraries;
     BRCAppLibrary *_defaultAppLibrary;
 }
 
 @property(readonly, nonatomic) BRCServerZoneHealthState *zoneHealthState; // @synthesize zoneHealthState=_zoneHealthState;
+@property(readonly, nonatomic) NSSet *itemIDsBlockedFromSyncForCZMProcessing; // @synthesize itemIDsBlockedFromSyncForCZMProcessing=_itemIDsBlockedFromSyncForCZMProcessing;
 @property(readonly, nonatomic) NSSet *appLibraries; // @synthesize appLibraries=_appLibraries;
 - (void).cxx_destruct;
 - (BOOL)validateItemsLoggingToFile:(struct __sFILE *)arg1 db:(id)arg2;
 - (BOOL)validateStructureLoggingToFile:(struct __sFILE *)arg1 db:(id)arg2;
 - (void)_checkResultSetIsEmpty:(id)arg1 logToFile:(struct __sFILE *)arg2 reason:(id)arg3 result:(char *)arg4;
 - (BOOL)dumpActivityToContext:(id)arg1 includeExpensiveActivity:(BOOL)arg2 error:(id *)arg3;
+- (void)createCloudKitZoneWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_createCloudKitZoneWithGroup:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)sharedItemMovedIntoShareInThisZone:(id)arg1 associatedItemID:(id)arg2;
+- (void)_listDirectoryIfNecessaryAndDownloadItem:(id)arg1;
+- (void)_refreshAndStartDownloadWithGlobalID:(id)arg1;
+- (void)_startDownloadingSharedItemIfNecessary:(id)arg1;
+- (void)_removeSharedItemAndProcess:(id)arg1;
+- (void)_finishedProcessingSharedItemThatMovedToThisZone:(id)arg1;
+- (void)_removeItemFromCZMProcessingIfNotAssociated:(id)arg1;
+- (id)_refreshItemFromDB:(id)arg1;
 @property(readonly, nonatomic) BOOL isDocumentScopePublic;
 - (id)resolveClashOfAlias:(id)arg1 atPath:(id)arg2 withAlias:(id)arg3 atPath:(id)arg4;
-- (BOOL)removeSyncDownForAliasData:(id)arg1;
-- (void)performBlock:(CDUnknownBlockType)arg1 whenSyncDownCompletesLookingForAliasWithBookmarkData:(id)arg2;
 - (id)serverAliasByUnsaltedBookmarkData:(id)arg1;
-- (void)signalFaultingWatchersWithError:(id)arg1;
-- (void)notifyClient:(id)arg1 whenFaultingIsDone:(CDUnknownBlockType)arg2;
 - (BOOL)recomputeAppSyncBlockState;
 @property(readonly, nonatomic) BOOL zoneHealthNeedsSyncUp;
 - (void)zoneHealthWasReset;
@@ -57,10 +65,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BRCPrivateServerZone *privateServerZone;
 - (id)asPrivateClientZone;
 @property(readonly, nonatomic) BOOL isPrivateZone;
-- (struct PQLResultSet *)reparentedItemsNeedingChaining;
 - (struct PQLResultSet *)unchainedItemInfoInServerTruthEnumeratorParentedTo:(id)arg1;
 - (BOOL)parentIDHasLiveUnchainedChildren:(id)arg1;
-- (BOOL)isItemIDMarkedChained:(id)arg1;
+- (unsigned int)pcsChainStateForItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) BOOL isSharedZone; // @dynamic isSharedZone;

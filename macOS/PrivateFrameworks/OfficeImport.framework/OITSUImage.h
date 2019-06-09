@@ -8,6 +8,7 @@
 
 @class NSImage, TSUOnce;
 
+__attribute__((visibility("hidden")))
 @interface OITSUImage : NSObject
 {
     struct CGImage *mCachedSliceableImage;

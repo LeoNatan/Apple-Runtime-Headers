@@ -8,7 +8,7 @@
 
 #import <VideosUI/VUIHomeShareMediaLibraryManagerDelegate-Protocol.h>
 
-@class NSArray, NSString, VUIDeviceMediaLibrary, VUIMediaLibrary;
+@class NSArray, NSString, VUIAggregateMediaLibrary, VUIDeviceMediaLibrary, VUIMediaLibrary, VUISidebandMediaLibrary;
 @protocol OS_dispatch_queue, VUIHomeShareMediaLibraryManager;
 
 @interface VUIMediaLibraryManager : NSObject <VUIHomeShareMediaLibraryManagerDelegate>
@@ -16,25 +16,31 @@
     VUIMediaLibrary *_activeMediaLibrary;
     NSObject<OS_dispatch_queue> *_completionDispatchQueue;
     VUIDeviceMediaLibrary *_deviceMediaLibrary;
+    VUISidebandMediaLibrary *_sidebandMediaLibrary;
+    VUIAggregateMediaLibrary *_aggregateMediaLibrary;
     NSObject<OS_dispatch_queue> *_serialProcessingDispatchQueue;
     NSObject<VUIHomeShareMediaLibraryManager> *_homeShareManager;
 }
 
++ (void)setDeleteAllVideosAndKeysOnInitializationForAppRemoval:(_Bool)arg1;
 + (id)defaultManager;
 @property(retain, nonatomic) NSObject<VUIHomeShareMediaLibraryManager> *homeShareManager; // @synthesize homeShareManager=_homeShareManager;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialProcessingDispatchQueue; // @synthesize serialProcessingDispatchQueue=_serialProcessingDispatchQueue;
+@property(retain, nonatomic) VUIAggregateMediaLibrary *aggregateMediaLibrary; // @synthesize aggregateMediaLibrary=_aggregateMediaLibrary;
+@property(retain, nonatomic) VUISidebandMediaLibrary *sidebandMediaLibrary; // @synthesize sidebandMediaLibrary=_sidebandMediaLibrary;
 @property(retain, nonatomic) VUIDeviceMediaLibrary *deviceMediaLibrary; // @synthesize deviceMediaLibrary=_deviceMediaLibrary;
+@property(retain, nonatomic) VUIMediaLibrary *activeMediaLibrary; // @synthesize activeMediaLibrary=_activeMediaLibrary;
 - (void).cxx_destruct;
 - (void)_postHomeShareMediaLibrariesDidChangeNotificationWithMediaLibraries:(id)arg1 andChangeSet:(id)arg2;
 - (id)_homeShareMediaLibraryManager;
 - (id)_mediaLibraryForIdentifier:(id)arg1;
-- (void)_configureGlobalMediaPlayerOptions;
 - (void)_enqueueStrongSelfCompletionQueueBlock:(CDUnknownBlockType)arg1;
 - (void)_enqueueCompletionQueueBlock:(CDUnknownBlockType)arg1;
 - (void)homeShareManager:(id)arg1 mediaLibrariesDidUpdate:(id)arg2 withChangeSet:(id)arg3;
 - (id)_deviceMediaLibrary;
 - (id)mediaLibraryForIdentifier:(id)arg1;
-@property(retain) VUIMediaLibrary *activeMediaLibrary; // @synthesize activeMediaLibrary=_activeMediaLibrary;
+- (void)endDiscoveringHomeShareMediaLibraries;
+- (void)beginDiscoveringHomeShareMediaLibraries;
 @property(readonly, copy, nonatomic) NSArray *homeShareMediaLibraries;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionDispatchQueue; // @synthesize completionDispatchQueue=_completionDispatchQueue;
 - (id)init;

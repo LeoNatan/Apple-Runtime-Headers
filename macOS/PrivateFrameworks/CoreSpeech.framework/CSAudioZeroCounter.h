@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)stopReportZeroStatistics;
 - (void)getZeroStatisticsFromBuffer:(id)arg1 entireSamples:(unsigned int)arg2;
+- (void)resetWithSampleRate:(float)arg1;
 - (id)initWithToken:(id)arg1 sampleRate:(float)arg2 numChannels:(unsigned int)arg3;
 
 @end

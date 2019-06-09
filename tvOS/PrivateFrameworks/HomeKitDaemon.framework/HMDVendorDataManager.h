@@ -32,6 +32,7 @@
 - (void).cxx_destruct;
 - (void)timerDidFire:(id)arg1;
 - (_Bool)_isSameVendorList:(id)arg1;
+- (id)_modelEntryForProductData:(id)arg1;
 - (id)_modelEntryForManufacturer:(id)arg1 model:(id)arg2;
 - (id)_parseManufacturersList:(id)arg1;
 - (void)_handleData:(id)arg1 fromServerWithError:(id)arg2;
@@ -40,6 +41,7 @@
 - (void)_handleServerResponse:(id)arg1 withData:(id)arg2 error:(id)arg3;
 - (void)_initWithLocalFile;
 - (void)_fetchDataFromServer;
+- (id)vendorModelEntryForProductData:(id)arg1;
 - (id)vendorModelEntryForManufacturer:(id)arg1 model:(id)arg2;
 - (id)init;
 - (void)start;

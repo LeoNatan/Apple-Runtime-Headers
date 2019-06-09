@@ -6,22 +6,31 @@
 
 #import <objc/NSObject.h>
 
-@class NSMapTable;
-@protocol OS_dispatch_queue;
+#import <PersonalizationPortrait/PPClientStore-Protocol.h>
+#import <PersonalizationPortrait/PPFeedbackAccepting-Protocol.h>
 
-@interface PPContactStore : NSObject
+@class NSString, PPClientFeedbackHelper, PPRecordMonitoringHelper;
+
+@interface PPContactStore : NSObject <PPFeedbackAccepting, PPClientStore>
 {
-    NSMapTable *_recordLoadingDelegates;
-    NSObject<OS_dispatch_queue> *_changeMonitoringQueue;
+    PPRecordMonitoringHelper *_monitoringHelper;
+    PPClientFeedbackHelper *_clientFeedbackHelper;
 }
 
 - (void).cxx_destruct;
 - (_Bool)loadContactNameRecordsAndMonitorChangesWithDelegate:(id)arg1 error:(id *)arg2;
 - (void)_loadContactNameRecordsWithDelegate:(id)arg1;
 - (void)_sendChangesToDelegates;
-- (void)_resetContactNameRecordsWithDelegate:(id)arg1;
+- (CDUnknownBlockType)_recordGenerator;
+- (void)feedbackDisambiguationResultWithChoicesIdentifiers:(id)arg1 chosenContactIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)forwardingTargetForSelector:(SEL)arg1;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)iterContactNameRecordsForClient:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (_Bool)iterRankedContactsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)init;
+
+// Remaining properties
+@property(retain, nonatomic) NSString *clientIdentifier; // @dynamic clientIdentifier;
 
 @end
 

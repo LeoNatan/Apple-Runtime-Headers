@@ -8,30 +8,40 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOLocalizedName : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_languageCode;
-    NSString *_name;
-    unsigned int _nameRank;
     NSString *_nameType;
+    NSString *_name;
     NSString *_phoneticName;
+    unsigned int _nameRank;
     _Bool _isDefault;
     struct {
-        unsigned int nameRank:1;
-        unsigned int isDefault:1;
-    } _has;
+        unsigned int has_nameRank:1;
+        unsigned int has_isDefault:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_languageCode:1;
+        unsigned int read_nameType:1;
+        unsigned int read_name:1;
+        unsigned int read_phoneticName:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_languageCode:1;
+        unsigned int wrote_nameType:1;
+        unsigned int wrote_name:1;
+        unsigned int wrote_phoneticName:1;
+        unsigned int wrote_nameRank:1;
+        unsigned int wrote_isDefault:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *phoneticName; // @synthesize phoneticName=_phoneticName;
-@property(nonatomic) unsigned int nameRank; // @synthesize nameRank=_nameRank;
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-@property(retain, nonatomic) NSString *nameType; // @synthesize nameType=_nameType;
-@property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
-@property(nonatomic) _Bool isDefault; // @synthesize isDefault=_isDefault;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -40,14 +50,25 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *phoneticName;
 @property(readonly, nonatomic) _Bool hasPhoneticName;
+- (void)_readPhoneticName;
 @property(nonatomic) _Bool hasNameRank;
+@property(nonatomic) unsigned int nameRank;
+@property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool hasName;
+- (void)_readName;
+@property(retain, nonatomic) NSString *nameType;
 @property(readonly, nonatomic) _Bool hasNameType;
+- (void)_readNameType;
+@property(retain, nonatomic) NSString *languageCode;
 @property(readonly, nonatomic) _Bool hasLanguageCode;
+- (void)_readLanguageCode;
 @property(nonatomic) _Bool hasIsDefault;
+@property(nonatomic) _Bool isDefault;
 - (id)initWithPlaceDataLocalizedString:(id)arg1;
 
 @end

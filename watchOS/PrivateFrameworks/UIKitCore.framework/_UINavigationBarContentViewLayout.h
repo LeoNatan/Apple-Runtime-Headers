@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSLayoutConstraint, UIBarButtonItemGroup, UIFont, UILabel, UILayoutGuide, UIView, _UIButtonBar, _UIButtonBarButton, _UINavigationBarContentView, _UITAMICAdaptorView;
+@class NSArray, NSLayoutConstraint, UIBarButtonItemGroup, UILabel, UILayoutGuide, UIView, _UIBarButtonItemData, _UIButtonBar, _UIButtonBarButton, _UINavBackButtonAppearanceData, _UINavigationBarContentView, _UITAMICAdaptorView;
 @protocol _UINavigationBarAugmentedTitleView;
 
 __attribute__((visibility("hidden")))
@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
     NSArray *_alignmentConstraints;
     NSArray *_heightConstraints;
     NSArray *_backButtonConstraints;
+    NSLayoutConstraint *_backButtonMinimumWidthConstraint;
+    NSLayoutConstraint *_backButtonMaximumWidthConstraint;
     NSArray *_leadingBarConstraints;
     NSArray *_titleViewConstraints;
     NSArray *_augmentedTitleViewContraints;
@@ -41,18 +43,24 @@ __attribute__((visibility("hidden")))
     int _alignment;
     int _currentContentSize;
     float _overrideSize;
-    UIFont *_activeFontForScaling;
     float _resolvedSize;
     int _resolvedAlignment;
     _UIButtonBarButton *_backButton;
     float _minimumBackButtonWidth;
+    float _maximumBackButtonWidth;
     UILabel *_inlineTitleView;
+    float _inlineTitleViewAlpha;
     UIView *_titleView;
     _UITAMICAdaptorView *_titleViewWrapperView;
-    float _titleVerticalPositionAdjustment;
     UIView<_UINavigationBarAugmentedTitleView> *_augmentedTitleView;
+    float _largeTitleHeight;
     _UIButtonBar *_leadingBar;
     _UIButtonBar *_trailingBar;
+    _UIBarButtonItemData *_plainItemAppearance;
+    _UIBarButtonItemData *_doneItemAppearance;
+    _UINavBackButtonAppearanceData *_backButtonAppearance;
+    struct UIOffset _titlePositionAdjustment;
+    CDStruct_930042bc _largeTitleHeightRange;
     struct NSDirectionalEdgeInsets _layoutMargins;
 }
 
@@ -62,19 +70,25 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIView *trailingBarSnapshot; // @synthesize trailingBarSnapshot=_trailingBarSnapshot;
 @property(readonly, nonatomic) UIView *leadingBarSnapshot; // @synthesize leadingBarSnapshot=_leadingBarSnapshot;
 @property(nonatomic) _Bool active; // @synthesize active=_active;
+@property(retain, nonatomic) _UINavBackButtonAppearanceData *backButtonAppearance; // @synthesize backButtonAppearance=_backButtonAppearance;
+@property(retain, nonatomic) _UIBarButtonItemData *doneItemAppearance; // @synthesize doneItemAppearance=_doneItemAppearance;
+@property(retain, nonatomic) _UIBarButtonItemData *plainItemAppearance; // @synthesize plainItemAppearance=_plainItemAppearance;
 @property(retain, nonatomic) _UIButtonBar *trailingBar; // @synthesize trailingBar=_trailingBar;
 @property(retain, nonatomic) _UIButtonBar *leadingBar; // @synthesize leadingBar=_leadingBar;
+@property(nonatomic) CDStruct_b2fbf00d largeTitleHeightRange; // @synthesize largeTitleHeightRange=_largeTitleHeightRange;
+@property(nonatomic) float largeTitleHeight; // @synthesize largeTitleHeight=_largeTitleHeight;
 @property(retain, nonatomic) UIView<_UINavigationBarAugmentedTitleView> *augmentedTitleView; // @synthesize augmentedTitleView=_augmentedTitleView;
-@property(nonatomic) float titleVerticalPositionAdjustment; // @synthesize titleVerticalPositionAdjustment=_titleVerticalPositionAdjustment;
+@property(nonatomic) struct UIOffset titlePositionAdjustment; // @synthesize titlePositionAdjustment=_titlePositionAdjustment;
 @property(readonly, nonatomic) _UITAMICAdaptorView *titleViewWrapperView; // @synthesize titleViewWrapperView=_titleViewWrapperView;
 @property(retain, nonatomic) UIView *titleView; // @synthesize titleView=_titleView;
+@property(nonatomic) float inlineTitleViewAlpha; // @synthesize inlineTitleViewAlpha=_inlineTitleViewAlpha;
 @property(retain, nonatomic) UILabel *inlineTitleView; // @synthesize inlineTitleView=_inlineTitleView;
 @property(nonatomic) _Bool hasFakedBackButton; // @synthesize hasFakedBackButton=_hasFakedBackButton;
+@property(nonatomic) float maximumBackButtonWidth; // @synthesize maximumBackButtonWidth=_maximumBackButtonWidth;
 @property(nonatomic) float minimumBackButtonWidth; // @synthesize minimumBackButtonWidth=_minimumBackButtonWidth;
 @property(retain, nonatomic) _UIButtonBarButton *backButton; // @synthesize backButton=_backButton;
 @property(readonly, nonatomic) int resolvedAlignment; // @synthesize resolvedAlignment=_resolvedAlignment;
 @property(readonly, nonatomic) float resolvedSize; // @synthesize resolvedSize=_resolvedSize;
-@property(retain, nonatomic) UIFont *activeFontForScaling; // @synthesize activeFontForScaling=_activeFontForScaling;
 @property(nonatomic) float overrideSize; // @synthesize overrideSize=_overrideSize;
 @property(nonatomic) struct NSDirectionalEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
 @property(nonatomic) int currentContentSize; // @synthesize currentContentSize=_currentContentSize;
@@ -91,16 +105,23 @@ __attribute__((visibility("hidden")))
 - (void)replaceTrailingBarWithSnapshot;
 - (void)replaceLeadingBarWithSnapshot;
 - (void)updateSpacingConstraints;
+- (void)backButtonAppearanceChanged;
+- (void)doneItemAppearanceChanged;
+- (void)plainItemAppearanceChanged;
 @property(retain, nonatomic) NSArray *trailingBarItems;
 @property(retain, nonatomic) NSArray *leadingBarItems;
+- (void)updateAlphas;
 - (void)updateTitleHeight;
+- (void)updateAugmentedTitleViewBackButtonConstraints;
 - (void)updateAugmentedTitleViewLayout;
 - (void)_updateAugmentedTitleViewLayout;
 - (void)updateAugmentedTitleViewHeight;
+@property(readonly, nonatomic) float baselineOffsetFromTop;
 @property(readonly, nonatomic) UIView *effectiveTitleView;
-- (void)_keepConstraintsActiveIfNecessary:(id *)arg1 updateLayout:(CDUnknownBlockType)arg2;
+- (void)_activateConstraintsAndUpdateViewOrderIfNecessary:(id)arg1;
+- (void)_deactivateConstraintsIfNecessary:(id)arg1;
 - (void)_updateSubviewOrder;
-- (void)setBackButtonHidden:(_Bool)arg1 titleHidden:(_Bool)arg2 barsHidden:(_Bool)arg3;
+- (void)setBackButtonHidden:(_Bool)arg1 titleLabelHidden:(_Bool)arg2 titleViewHidden:(_Bool)arg3 barsHidden:(_Bool)arg4;
 - (void)setContentHidden:(_Bool)arg1;
 - (void)cleanupAfterLayoutTransitionCompleted;
 - (void)removeAllSnapshots;
@@ -113,11 +134,13 @@ __attribute__((visibility("hidden")))
 - (void)freeze;
 - (void)_disableLayoutFlushing:(_Bool)arg1;
 - (void)_updateTitleViewConstraints;
+- (float)_inlineTitleBaselineOffset;
 - (void)_prepareTitleViewAndWrapIfNecessary;
+- (void)_updateBackButtonWidthConstraintsAndActivateIfNecessary;
 - (void)_updateBackButtonConstraints;
 - (void)_updateMarginConstraints;
 - (void)_updateHeightConstraints;
-- (float)_baseHeight;
+@property(readonly, nonatomic) float baseHeight;
 - (float)_contentHeight;
 @property(readonly, nonatomic) float currentHeight;
 - (void)_updateAlignmentConstraints;

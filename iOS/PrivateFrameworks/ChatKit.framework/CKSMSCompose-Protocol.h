@@ -23,6 +23,7 @@
 - (void)setGameCenterModeWithPickerBlock:(void (^)(void))arg1;
 - (void)forceMMS;
 - (void)forceCancelComposition;
+- (void)setText:(NSString *)arg1 subject:(NSString *)arg2 addresses:(NSArray *)arg3 chatGUID:(NSString *)arg4 groupName:(NSString *)arg5;
 - (void)setText:(NSString *)arg1 subject:(NSString *)arg2 addresses:(NSArray *)arg3;
 - (void)setTextEntryContentsVisible:(_Bool)arg1;
 - (void)disableCameraAttachments;

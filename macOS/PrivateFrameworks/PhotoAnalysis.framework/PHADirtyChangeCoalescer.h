@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class PHACoalescer;
+@class PFCoalescer;
 @protocol OS_dispatch_queue, PHADirtyChangeCoalescerDelegate;
 
 @interface PHADirtyChangeCoalescer : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
-    PHACoalescer *_valueCoalescer;
+    PFCoalescer *_valueCoalescer;
     id <PHADirtyChangeCoalescerDelegate> _delegate;
 }
 

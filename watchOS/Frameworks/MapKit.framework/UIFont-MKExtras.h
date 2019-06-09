@@ -12,5 +12,11 @@
 + (id)_mapkit_preferredFontForTextStyleTimeDisplayInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 useMonospace:(_Bool)arg3;
 + (id)_mapkit_preferredFontForTextStyleTimeDisplayInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
 + (id)_mapkit_preferredFontForTextStyleInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
+- (float)_mapkit_scaledValueForValue:(float)arg1;
+- (float)_mapkit_lineHeight;
+- (id)_mapkit_fontWithWeight:(float)arg1;
+- (id)_mapkit_fontByAddingFeaturesForTabularFigures;
+- (id)_mapkit_fontByAddingFeaturesForTimeDisplay;
+- (id)_mapkit_fontByAddingFeaturesForTimeDisplayUseMonospace:(_Bool)arg1;
 @end
 

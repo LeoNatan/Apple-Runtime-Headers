@@ -27,7 +27,6 @@
     NSString *_unlockActionLabel;
     NSURL *_activateActionURL;
     NSURL *_dismissActionlURL;
-    NSURL *_clearActionURL;
     NSURL *_launchActionURL;
     NSData *_launchActionArguments;
     NSDictionary *_userInfo;
@@ -43,7 +42,6 @@
 @property(copy) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(copy) NSData *launchActionArguments; // @synthesize launchActionArguments=_launchActionArguments;
 @property(copy) NSURL *launchActionURL; // @synthesize launchActionURL=_launchActionURL;
-@property(copy) NSURL *clearActionURL; // @synthesize clearActionURL=_clearActionURL;
 @property(copy) NSURL *dismissActionlURL; // @synthesize dismissActionlURL=_dismissActionlURL;
 @property(copy) NSURL *activateActionURL; // @synthesize activateActionURL=_activateActionURL;
 @property(copy) NSString *unlockActionLabel; // @synthesize unlockActionLabel=_unlockActionLabel;

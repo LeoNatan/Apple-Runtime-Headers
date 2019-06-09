@@ -6,15 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <MessageUI/MFContactsSearchConsumer-Protocol.h>
+#import <MessageUI/CNAutocompleteSearchConsumer-Protocol.h>
 
-@class MFContactsSearchManager, MFContactsSearchResultsModel, NSMutableArray, NSNumber, NSString;
+@class CNAutocompleteSearchManager, NSMutableArray, NSNumber, NSString;
 @protocol MFMailComposeContactsSearchControllerDelegate;
 
-@interface MFMailComposeContactsSearchController : NSObject <MFContactsSearchConsumer>
+@interface MFMailComposeContactsSearchController : NSObject <CNAutocompleteSearchConsumer>
 {
-    MFContactsSearchManager *_manager;
-    MFContactsSearchResultsModel *_model;
+    CNAutocompleteSearchManager *_manager;
     NSMutableArray *_autocompleteSearchResults;
     NSMutableArray *_corecipientSearchResults;
     NSNumber *_corecipientSearchTaskID;
@@ -25,7 +24,8 @@
 }
 
 @property(retain, nonatomic) NSNumber *taskID; // @synthesize taskID=_taskID;
-@property(nonatomic) id <MFMailComposeContactsSearchControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <MFMailComposeContactsSearchControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)endedNetworkActivity;
 - (void)beganNetworkActivity;
 - (void)_finishSearch;
@@ -34,8 +34,6 @@
 - (void)consumeCorecipientSearchResults:(id)arg1 taskID:(id)arg2;
 - (void)finishedSearchingForAutocompleteResults;
 - (void)consumeAutocompleteSearchResults:(id)arg1 taskID:(id)arg2;
-- (void)finishedSearchingForType:(unsigned long long)arg1;
-- (void)consumeSearchResults:(id)arg1 type:(unsigned long long)arg2 taskID:(id)arg3;
 - (void)removeRecipient:(id)arg1;
 - (void)didSelectRecipient:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)findCorecipientsWithRecipients:(id)arg1;
@@ -44,7 +42,6 @@
 - (void)searchWithString:(id)arg1 enteredRecipients:(id)arg2 title:(id)arg3;
 - (void)searchWithString:(id)arg1;
 - (void)_reset;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

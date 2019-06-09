@@ -7,27 +7,27 @@
 #import <objc/NSObject.h>
 
 @class CalDateRange, NSArray, NSString;
+@protocol CalFreeBusyCacheDelegate;
 
 @interface CalFreeBusyOperationInfo : NSObject
 {
     NSString *_eventSharedUid;
-    id _callbackObject;
-    SEL _aSelector;
     NSArray *_addresses;
     CalDateRange *_timeRange;
     BOOL _cancelled;
+    id <CalFreeBusyCacheDelegate> _delegate;
 }
 
-@property(readonly) id callbackObject; // @synthesize callbackObject=_callbackObject;
+@property(nonatomic) __weak id <CalFreeBusyCacheDelegate> delegate; // @synthesize delegate=_delegate;
 @property BOOL cancelled; // @synthesize cancelled=_cancelled;
 @property(readonly) CalDateRange *timeRange; // @synthesize timeRange=_timeRange;
 @property(readonly) NSString *eventSharedUid; // @synthesize eventSharedUid=_eventSharedUid;
 @property(readonly) NSArray *addresses; // @synthesize addresses=_addresses;
 - (void).cxx_destruct;
-- (void)perfermCallbackWith:(id)arg1;
+- (void)notifyFreeBusyOperationWithResponseInfo:(id)arg1;
 - (BOOL)containsAddress:(id)arg1;
 - (BOOL)matchesSharedUid:(id)arg1 andTimeRange:(id)arg2;
-- (id)initWithAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 callbackTo:(id)arg4 withSelector:(SEL)arg5;
+- (id)initWithAddresses:(id)arg1 forEventSharedUid:(id)arg2 inTimeRange:(id)arg3 withDelegate:(id)arg4;
 
 @end
 

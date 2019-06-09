@@ -22,11 +22,17 @@
     _Bool _AWDL;
     _Bool _Cellular;
     _Bool _temporary;
+    _Bool _companionLink;
+    _Bool _expensive;
+    _Bool _constrained;
 }
 
 + (id)interfaceAddress:(struct ifaddrs *)arg1 eflags:(unsigned long long)arg2 v6flags:(int)arg3 iftype:(int)arg4;
 + (id)interfaceAddressWithTransmittedBytes:(char *)arg1 length:(long long)arg2 withLocalInterfaceName:(id)arg3;
 + (id)BSSIDWithInterfaceName:(id)arg1;
+@property(nonatomic) _Bool constrained; // @synthesize constrained=_constrained;
+@property(readonly, nonatomic) _Bool expensive; // @synthesize expensive=_expensive;
+@property(readonly, getter=isCompanionLink) _Bool companionLink; // @synthesize companionLink=_companionLink;
 @property(readonly, getter=isTemporaryIPv6) _Bool temporary; // @synthesize temporary=_temporary;
 @property(readonly) NSData *bssid; // @synthesize bssid=_bssid;
 @property(readonly, getter=isCellular) _Bool Cellular; // @synthesize Cellular=_Cellular;

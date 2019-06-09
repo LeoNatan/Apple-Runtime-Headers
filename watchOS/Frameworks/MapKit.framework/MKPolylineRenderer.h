@@ -6,12 +6,26 @@
 
 #import <MapKit/MKOverlayPathRenderer.h>
 
-@class MKPolyline;
+@class MKPolyline, VKVectorOverlayPolylineGroup;
 
 @interface MKPolylineRenderer : MKOverlayPathRenderer
 {
+    VKVectorOverlayPolylineGroup *_vectorGeometry;
 }
 
++ (Class)_mapkitLeafClass;
+- (void).cxx_destruct;
+- (void)_updateRenderColors;
+- (id)vectorDataForOverlay:(id)arg1;
+- (_Bool)overlayCanProvideVectorData:(id)arg1;
+- (id)_vectorGeometry;
+- (_Bool)_canProvideVectorGeometry;
+- (void)setMiterLimit:(float)arg1;
+- (void)setLineCap:(int)arg1;
+- (void)setLineJoin:(int)arg1;
+- (void)setAlpha:(float)arg1;
+- (void)setStrokeColor:(id)arg1;
+- (void)setLineWidth:(float)arg1;
 - (void)drawMapRect:(CDStruct_02837cd9)arg1 zoomScale:(float)arg2 inContext:(struct CGContext *)arg3;
 - (void)createPath;
 @property(readonly, nonatomic) MKPolyline *polyline;

@@ -11,6 +11,7 @@
 @protocol NMSMessageCenterDelegate <NSObject>
 
 @optional
+- (void)messageCenter:(NMSMessageCenter *)arg1 connectedDevicesChanged:(NSArray *)arg2;
 - (void)messageCenter:(NMSMessageCenter *)arg1 nearbyDevicesChanged:(NSArray *)arg2;
 - (void)messageCenter:(NMSMessageCenter *)arg1 activeDeviceChanged:(IDSDevice *)arg2 acknowledgement:(void (^)(void))arg3;
 - (void)messageCenter:(NMSMessageCenter *)arg1 failedToSendMessageWithIdentifier:(NSString *)arg2 error:(NSError *)arg3 userInfo:(NSDictionary *)arg4;

@@ -33,6 +33,7 @@
 @property(retain, nonatomic) NSDate *recurrenceDate; // @synthesize recurrenceDate=_recurrenceDate;
 @property(retain, nonatomic) NSURL *resourceURL; // @synthesize resourceURL=_resourceURL;
 - (void).cxx_destruct;
+- (id)requestBody;
 - (id)createdICSData;
 - (id)createdICSDocument;
 - (id)createdScheduleTag;

@@ -35,6 +35,7 @@
 + (id)cachedModelForPersistentStoreWithURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
 + (id)_figureOutWhereExternalReferencesEndedUpRelativeTo:(id)arg1;
 + (BOOL)doURLStuff:(id)arg1 createdStubFile:(char *)arg2 readOnly:(char *)arg3 error:(id *)arg4 options:(id)arg5;
++ (BOOL)_rekeyPersistentStoreAtURL:(id)arg1 options:(id)arg2 withKey:(id)arg3 error:(id *)arg4;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
 + (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 error:(id *)arg5;
 + (Class)rowCacheClass;
@@ -73,7 +74,6 @@
 - (BOOL)_isMetadataDirty;
 - (void)_updateMetadata;
 - (id)_defaultMetadata;
-- (void)_updateAncillaryVersionHashesInMetadata:(id)arg1;
 - (id)_updatedMetadataWithSeed:(id)arg1 includeVersioning:(BOOL)arg2;
 - (id)obtainPermanentIDsForObjects:(id)arg1 error:(id *)arg2;
 - (void)managedObjectContextDidUnregisterObjectsWithIDs:(id)arg1 generation:(id)arg2;
@@ -86,7 +86,8 @@
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id *)arg3;
 - (void)doFilesystemCleanupOnRemove:(BOOL)arg1;
 - (void)_preflightCrossCheck;
-- (void)setPersistentStoreCoordinator:(id)arg1;
+- (id)_persistentStoreCoordinator;
+- (void)_setPersistentStoreCoordinator:(id)arg1;
 - (BOOL)_unload:(id *)arg1;
 - (void)_resetObjectIDFactoriesForStoreUUIDChange;
 - (BOOL)load:(id *)arg1;
@@ -95,6 +96,7 @@
 - (Class)faultHandlerClass;
 - (id)faultHandler;
 - (Class)_objectIDClass;
+- (void)_setCoreSpotlightDelegate:(id)arg1;
 
 @end
 

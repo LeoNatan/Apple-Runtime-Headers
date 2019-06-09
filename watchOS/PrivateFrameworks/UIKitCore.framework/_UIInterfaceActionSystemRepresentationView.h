@@ -42,7 +42,8 @@ __attribute__((visibility("hidden")))
 - (id)_constraintsForInsettingLabelsViewLeadingAndTrailingToImageViewsExact:(_Bool)arg1;
 - (id)_constraintsForInsettingLabelsViewLeadingAndTrailing;
 - (id)_constraintsToEnsureContainerHeightTallEnoughForViews:(id)arg1;
-- (id)_constraintsForVeritcallyCenteringViews:(id)arg1;
+- (id)_constraintForBaselineAligningOrVerticallyCenteringImageViewToLabelsView:(id)arg1;
+- (id)_constraintForVerticallyCenteringLabelsView;
 - (void)_loadConstraintsForLabelsAndImagesDisplay;
 - (void)_loadConstraintsForLabelsOnlyDisplay;
 - (void)_loadConstraintsForDisplayedViews;

@@ -10,6 +10,7 @@
 
 @class NSArray, NSDictionary, NSString, SKUIMediaSocialAuthor;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSMediaSocialAuthor : NSObject <SKUIJSMediaSocialAuthor>
 {
     SKUIMediaSocialAuthor *_mediaSocialAuthor;

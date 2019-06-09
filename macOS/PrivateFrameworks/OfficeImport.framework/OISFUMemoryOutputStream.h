@@ -10,6 +10,7 @@
 
 @class NSMutableData, NSString;
 
+__attribute__((visibility("hidden")))
 @interface OISFUMemoryOutputStream : NSObject <SFUOutputStream>
 {
     NSMutableData *mData;

@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 - (void)setTitleStringSet:(const unordered_set_66d0470b *)arg1;
 - (void)setTitleSharedBestFitFormatterSelector:(const shared_ptr_2ccd00e6 *)arg1;
 - (void)setTitleObject:(id)arg1;
-- (void)setTitleAlignment:(unsigned long long)arg1;
+- (void)setTitleAlignment:(long long)arg1;
 - (void)setTitleStr:(struct TString)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

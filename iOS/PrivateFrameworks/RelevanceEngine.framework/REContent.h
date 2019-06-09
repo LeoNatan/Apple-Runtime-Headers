@@ -6,19 +6,21 @@
 
 #import <objc/NSObject.h>
 
-#import <RelevanceEngine/NSCoding-Protocol.h>
 #import <RelevanceEngine/NSCopying-Protocol.h>
-#import <RelevanceEngine/REIndentedDescription-Protocol.h>
+#import <RelevanceEngine/NSSecureCoding-Protocol.h>
+#import <RelevanceEngine/_REContentLoggingProperties-Protocol.h>
 
-@class CLKImageProvider, CLKTextProvider, NSAttributedString, NSMutableDictionary, NSString, NSTimeZone, REAccessoryDescription, REAccessoryImage, REAccessoryMatchup, REImageContentProvider, RETextContentProvider, UIColor, UIImage;
+@class CLKImageProvider, CLKTextProvider, NSAttributedString, NSDictionary, NSMutableDictionary, NSNumber, NSString, NSTimeZone, REAccessoryDescription, REAccessoryImage, REAccessoryMatchup, REImageContentProvider, RETextContentProvider, UIColor, UIImage;
 
-@interface REContent : NSObject <REIndentedDescription, NSCopying, NSCoding>
+@interface REContent : NSObject <_REContentLoggingProperties, NSCopying, NSSecureCoding>
 {
     NSMutableDictionary *_contents;
     NSTimeZone *_timeZone;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSNumber *description1Opacity;
 @property(copy, nonatomic) CLKImageProvider *headerImageProvider;
 @property(copy, nonatomic) CLKImageProvider *bodyImageProvider;
 @property(copy, nonatomic) CLKTextProvider *headerTextProvider;
@@ -55,21 +57,16 @@
 @property(retain, nonatomic) NSString *bodyImageCompositingFilter;
 @property(retain, nonatomic) UIImage *overrideBodyImage;
 @property(retain, nonatomic) UIImage *overrideHeaderImage;
-@property(readonly, copy) NSString *description;
-- (id)descriptionWithIndent:(unsigned long long)arg1;
+- (id)description;
+@property(readonly, nonatomic) NSDictionary *loggingContentValues;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (id)objectForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
-@property(nonatomic) _Bool wantsFullCellPhoto;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
 
 @end
 

@@ -6,6 +6,7 @@
 
 #import <UIKit/UICollectionReusableView.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIIPadSearchSeparatorView : UICollectionReusableView
 {
 }

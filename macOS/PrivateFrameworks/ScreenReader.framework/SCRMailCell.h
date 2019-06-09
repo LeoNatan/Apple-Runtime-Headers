@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *potentialMessageContent;
 @property(readonly, nonatomic) id <SCRMailMessageContent> messageContent;
 - (void)addElementSummaryToRequest:(id)arg1;
+- (void)addItemNameContentToRequest:(id)arg1;
 - (void)addItemDescriptionToRequest:(id)arg1;
 - (void)addCellLabelToRequest:(id)arg1;
 - (void)_addDetailedMessageDescriptionToRequest:(id)arg1;

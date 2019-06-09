@@ -9,5 +9,6 @@
 @interface NSObject (CRKCardViewControllerAdditions)
 - (int)_crk_trailingCardSectionSeparatorStyle;
 - (int)_crk_leadingCardSectionSeparatorStyle;
+- (id)crk_backingPunchout;
 @end
 

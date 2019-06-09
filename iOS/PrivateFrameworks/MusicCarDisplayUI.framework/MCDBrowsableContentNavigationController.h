@@ -9,7 +9,7 @@
 #import <MusicCarDisplayUI/MCDPCContainerDelegate-Protocol.h>
 #import <MusicCarDisplayUI/UITabBarControllerDelegate-Protocol.h>
 
-@class AVExternalDevice, MCDPCContainer, MCDPCModel, NSObject, NSString, UIButton;
+@class MCDPCContainer, MCDPCModel, NSObject, NSString, UIButton;
 @protocol OS_dispatch_queue;
 
 @interface MCDBrowsableContentNavigationController : UITabBarController <UITabBarControllerDelegate, MCDPCContainerDelegate>
@@ -21,7 +21,6 @@
     MCDPCContainer *_container;
     UITabBarController *_tabBarController;
     UITabBarController *_hostTabBarController;
-    AVExternalDevice *_externalDevice;
     MCDPCModel *_model;
     NSString *_bundleID;
     UIButton *_nowPlayingButton;
@@ -36,7 +35,6 @@
 @property(retain, nonatomic) UIButton *nowPlayingButton; // @synthesize nowPlayingButton=_nowPlayingButton;
 @property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(retain, nonatomic) MCDPCModel *model; // @synthesize model=_model;
-@property(retain, nonatomic) AVExternalDevice *externalDevice; // @synthesize externalDevice=_externalDevice;
 @property(nonatomic) __weak UITabBarController *hostTabBarController; // @synthesize hostTabBarController=_hostTabBarController;
 @property(retain, nonatomic) UITabBarController *tabBarController; // @synthesize tabBarController=_tabBarController;
 @property(retain, nonatomic) MCDPCContainer *container; // @synthesize container=_container;

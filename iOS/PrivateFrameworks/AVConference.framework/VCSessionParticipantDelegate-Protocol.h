@@ -9,6 +9,7 @@
 @class NSError, NSString, VCSessionParticipant;
 
 @protocol VCSessionParticipantDelegate <NSObject>
+- (void)vcSessionParticipant:(VCSessionParticipant *)arg1 spatialAudioSourceIDDidChange:(unsigned long long)arg2;
 - (void)vcSessionParticipant:(VCSessionParticipant *)arg1 didDetectError:(NSError *)arg2;
 - (void)vcSessionParticipantDidMediaDecryptionTimeOut:(VCSessionParticipant *)arg1;
 - (void)vcSessionParticipantDidChangeReceivingStreams:(VCSessionParticipant *)arg1;

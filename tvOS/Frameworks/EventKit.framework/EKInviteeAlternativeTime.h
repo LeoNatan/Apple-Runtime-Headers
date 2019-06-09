@@ -8,7 +8,6 @@
 
 @class NSArray, NSDate;
 
-__attribute__((visibility("hidden")))
 @interface EKInviteeAlternativeTime : NSObject
 {
     NSDate *_startDate;

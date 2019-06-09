@@ -14,6 +14,7 @@
 - (_Bool)appNavigationController:(_TVAppNavigationController *)arg1 shouldDismissShroudForDocument:(IKAppDocument *)arg2;
 - (_Bool)appNavigationController:(_TVAppNavigationController *)arg1 shouldIgnoreDismissalForViewController:(UIViewController *)arg2;
 - (_Bool)appNavigationController:(_TVAppNavigationController *)arg1 shouldOverrideModalBehaviorForDocument:(IKAppDocument *)arg2 andExistingDocument:(IKAppDocument *)arg3;
+- (void)appNavigationControllerWillDisappear:(_TVAppNavigationController *)arg1;
 - (void)appNavigationController:(_TVAppNavigationController *)arg1 willLoadAppDocumentWithController:(_TVAppDocumentController *)arg2;
 @end
 

@@ -6,15 +6,20 @@
 
 #import <EventKitUI/EKCalendarEditItem.h>
 
+@class EKSource;
+
 @interface EKCalendarAccountEditItem : EKCalendarEditItem
 {
+    EKSource *_limitedToSource;
 }
 
+- (void).cxx_destruct;
 - (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
 - (_Bool)calendarEditor:(id)arg1 shouldSelectSubitem:(unsigned int)arg2;
 - (id)currentSource;
 - (_Bool)canAddCalendarToMoreThanOneAccount;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
+- (id)initLimitedToSource:(id)arg1;
 
 @end
 

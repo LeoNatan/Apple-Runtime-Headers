@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     long long _childrenCount;
 }
 
+- (void).cxx_destruct;
 - (BOOL)isGestureContainerElement;
 - (BOOL)shouldIncludeInItemChooser;
 - (BOOL)shouldPromoteForMovingUIElement:(id)arg1;
@@ -25,10 +26,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)indexOfElement:(id)arg1 visibleOnly:(BOOL)arg2;
 - (unsigned long long)numberOfChildren:(BOOL)arg1;
 - (id)children:(BOOL)arg1;
-- (void)sendBrailleLineWithElement:(id)arg1 focusThrough:(BOOL)arg2 forceRebuild:(BOOL)arg3;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
-- (void)updateBrailleLineWithFocusedElement:(id)arg1;
-- (void)_buildBrailleLineWithFocusedElement:(id)arg1;
+- (long long)brailleLineType;
 - (id)visibleChildrenDescriptionIgnoringChild:(id)arg1;
 - (BOOL)shouldMapElement:(id)arg1;
 - (BOOL)allowMappingIfZeroSize;
@@ -55,14 +53,14 @@ __attribute__((visibility("hidden")))
 - (void)_setChildIndex:(long long)arg1;
 - (long long)_childIndex;
 - (BOOL)needToRebuildChildren;
+- (id)_itemCountOutputAfterFirstChildDescription:(long long)arg1;
+- (void)_addFirstChildDescription:(id)arg1 itemCount:(long long)arg2 toRequest:(id)arg3;
 - (void)addItemNameToRequest:(id)arg1;
-- (BOOL)containsStitchedText;
 - (BOOL)canFocusOutInto;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
 - (Class)classForChildUIElement:(id)arg1 parent:(id)arg2;
-- (long long)elementChildrenCount;
+- (BOOL)containsStitchedText;
 - (id)stitchedTextElements;
-- (void)dealloc;
 - (id)initWithUIElement:(id)arg1 parent:(id)arg2;
 
 @end

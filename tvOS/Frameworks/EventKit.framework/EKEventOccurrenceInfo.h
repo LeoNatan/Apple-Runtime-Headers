@@ -8,7 +8,6 @@
 
 @class EKObjectID;
 
-__attribute__((visibility("hidden")))
 @interface EKEventOccurrenceInfo : NSObject
 {
     EKObjectID *_objectID;

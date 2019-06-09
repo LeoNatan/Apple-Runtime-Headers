@@ -6,8 +6,32 @@
 
 #import <NotesShared/ICAttachmentGalleryModel.h>
 
-@interface ICAttachmentGalleryModel (PreviewGeneration)
-- (void)generatePreviewsInOperation:(id)arg1;
+#import <NotesUI/NSFilePromiseProviderDelegate-Protocol.h>
+
+@class NSString;
+
+@interface ICAttachmentGalleryModel (PreviewGeneration) <NSFilePromiseProviderDelegate>
+- (BOOL)generatePreviewsInOperation:(id)arg1;
 - (BOOL)needToGeneratePreviews;
+- (void)drawPreviewInRect:(struct CGRect)arg1;
+- (id)fileURLForTypeIdentifier:(id)arg1;
+- (id)providerFileTypes;
+- (void)filePromiseProvider:(id)arg1 writePromiseToURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)filePromiseProvider:(id)arg1 fileNameForType:(id)arg2;
+- (id)filePromiseProvider;
+- (id)pasteboardPropertyListForType:(id)arg1;
+- (id)writableTypesForPasteboard:(id)arg1;
+- (BOOL)requiresFilePromiseForDrags;
+- (id)activityItems;
+- (id)quicklookPreviewItems;
+- (id)itemProvider;
+- (CDUnknownBlockType)genericBrickThumbnailCreator;
+- (CDUnknownBlockType)genericListThumbnailCreator;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

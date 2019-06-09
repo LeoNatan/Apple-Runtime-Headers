@@ -19,9 +19,11 @@ __attribute__((visibility("hidden")))
     long long _requestID;
     SidecarSession *_session;
     long long _transferID;
+    long long _type;
     NSArray *_items;
 }
 
+@property(nonatomic) long long type; // @synthesize type=_type;
 @property(readonly, nonatomic) long long transferID; // @synthesize transferID=_transferID;
 @property(readonly, nonatomic) long long requestID; // @synthesize requestID=_requestID;
 @property(readonly, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
@@ -32,6 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)dataForType:(id)arg1;
 @property(readonly, nonatomic) SidecarSession *session;
 - (id)initWithSession:(id)arg1 requestID:(long long)arg2;
+- (id)initWithSession:(id)arg1 requestID:(long long)arg2 transferID:(long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

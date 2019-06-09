@@ -12,11 +12,11 @@
 {
     BOOL _transitNotAvailableAdvisoryShowing;
     struct {
-        unsigned int transitNotAvailableAdvisoryShowing:1;
-    } _has;
+        unsigned int has_transitNotAvailableAdvisoryShowing:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL transitNotAvailableAdvisoryShowing; // @synthesize transitNotAvailableAdvisoryShowing=_transitNotAvailableAdvisoryShowing;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -24,9 +24,11 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasTransitNotAvailableAdvisoryShowing;
+@property(nonatomic) BOOL transitNotAvailableAdvisoryShowing;
 
 @end
 

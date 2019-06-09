@@ -6,13 +6,13 @@
 
 #import <MediaToolbox/FigBaseCALayer.h>
 
+__attribute__((visibility("hidden")))
 @interface FigSubtitleBackdropCALayerContentLayer : FigBaseCALayer
 {
     struct OpaqueFigSubtitleBackdropCALayerContentLayerInternal *layerInternal;
 }
 
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 

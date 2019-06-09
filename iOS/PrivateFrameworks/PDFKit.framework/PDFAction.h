@@ -15,13 +15,13 @@
     PDFActionPrivate *_private;
 }
 
-+ (Class)classForActionDictionary:(struct CGPDFDictionary *)arg1;
++ (Class)_classForActionDictionary:(struct CGPDFDictionary *)arg1;
 + (id)actionWithActionDictionary:(struct CGPDFDictionary *)arg1 forDocument:(id)arg2 forPage:(id)arg3;
 - (void).cxx_destruct;
 - (id)baseURLForDocument:(id)arg1;
-- (void)setNextActions:(struct CGPDFArray *)arg1 forDocument:(id)arg2 forPage:(id)arg3;
-- (void)setNextAction:(struct CGPDFDictionary *)arg1 forDocument:(id)arg2 forPage:(id)arg3;
-- (void)setNextActions:(id)arg1;
+- (void)_setNextActions:(struct CGPDFArray *)arg1 forDocument:(id)arg2 forPage:(id)arg3;
+- (void)_setNextAction:(struct CGPDFDictionary *)arg1 forDocument:(id)arg2 forPage:(id)arg3;
+- (void)_setNextActions:(id)arg1;
 - (id)nextActions;
 - (void)setType:(id)arg1;
 - (id)description;

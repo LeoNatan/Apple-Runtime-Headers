@@ -10,19 +10,10 @@
 
 @interface ETTaskClassifier : ETTask
 {
-    shared_ptr_d082c67d net_with_bwd;
-    shared_ptr_d082c67d fwd_net;
-    struct options sgd_options;
     NSArray *_class_names;
 }
 
 @property NSArray *class_names; // @synthesize class_names=_class_names;
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)saveNetwork:(id)arg1;
-- (id)evaluate:(id)arg1;
-- (float)fit:(id)arg1 numberOfEpochs:(int)arg2 withProgress:(CDUnknownBlockType)arg3;
-- (float)fit:(id)arg1 numberOfBatches:(unsigned int)arg2 withProgress:(CDUnknownBlockType)arg3;
 - (id)initWithModelDef:(id)arg1 optimizerDef:(id)arg2 extractor:(id)arg3 needWeightsInitialization:(BOOL)arg4;
 - (id)initWithModelDef:(id)arg1 optimizerDef:(id)arg2 extractor:(id)arg3;
 

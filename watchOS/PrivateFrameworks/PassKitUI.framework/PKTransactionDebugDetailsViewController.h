@@ -12,6 +12,7 @@
 {
     PKPaymentTransaction *_transaction;
     UITableViewCell *_mapsCell;
+    _Bool _inBridge;
     NSDictionary *_transactionDetails;
     NSDictionary *_merchantDetails;
     NSDictionary *_mapsMerchantDetails;
@@ -21,7 +22,6 @@
 @property(retain, nonatomic) NSDictionary *merchantDetails; // @synthesize merchantDetails=_merchantDetails;
 @property(retain, nonatomic) NSDictionary *transactionDetails; // @synthesize transactionDetails=_transactionDetails;
 - (void).cxx_destruct;
-- (void)_handleShareButton:(id)arg1;
 - (void)_didSelectMap;
 - (id)_cellWithPrimaryText:(id)arg1 infoText:(id)arg2;
 - (id)_mapsCell;
@@ -42,6 +42,7 @@
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)viewDidLoad;
 - (id)initWithTransaction:(id)arg1;
 
 @end

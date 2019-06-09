@@ -50,7 +50,6 @@
         unsigned int isInLayoutSubviews:1;
         unsigned int usesDynamicRowHeight:1;
     } _pickerViewFlags;
-    _Bool _usesModernStyle;
     UIColor *_textColor;
     UIColor *_textShadowColor;
     _UIPickerViewTestParameters *_currentTestParameters;
@@ -65,8 +64,8 @@
 + (struct CGSize)defaultSizeForTraits:(id)arg1;
 + (struct CGSize)sizeForMainScreenTraitsThatFits:(struct CGSize)arg1;
 + (struct CGSize)sizeThatFits:(struct CGSize)arg1 forTraits:(id)arg2;
-@property(nonatomic, getter=_enabled, setter=_setEnabled:) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic, getter=_magnifierLineColor, setter=_setMagnifierLineColor:) UIColor *magnifierLineColor; // @synthesize magnifierLineColor=_magnifierLineColor;
+@property(nonatomic, getter=_enabled, setter=_setEnabled:) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic, setter=_setMagnifierEnabled:) _Bool _magnifierEnabled; // @synthesize _magnifierEnabled;
 @property(nonatomic) __weak id <UIPickerViewDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <UIPickerViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
@@ -75,11 +74,9 @@
 - (id)_scalarStatisticsForUserValueChangedEvent;
 - (void)_willPlayClickSound;
 - (struct CATransform3D)_perspectiveTransform;
-- (_Bool)_shouldDrawWithModernStyle;
 @property(retain, nonatomic, getter=_textShadowColor, setter=_setTextShadowColor:) UIColor *textShadowColor;
 @property(retain, nonatomic, getter=_textColor, setter=_setTextColor:) UIColor *textColor;
 @property(retain, nonatomic, getter=_highlightColor, setter=_setHighlightColor:) UIColor *highlightColor;
-@property(getter=_usesModernStyle, setter=_setUsesModernStyle:) _Bool usesModernStyle;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)selectRow:(int)arg1 inColumn:(int)arg2 animated:(_Bool)arg3;

@@ -8,14 +8,13 @@
 
 #import <AVKit/AVTouchBarMediaSelectionButtonViewControllerDelegate-Protocol.h>
 #import <AVKit/AVTouchBarMediaSelectionViewControllerDelegate-Protocol.h>
-#import <AVKit/NSDescriptionBasedTouchBarItemProvider-Protocol.h>
 #import <AVKit/NSTouchBarDelegate-Protocol.h>
 #import <AVKit/NSTouchBarProvider-Protocol.h>
 
 @class AVPlayerView, AVTouchBarMediaSelectionButtonViewController, AVTouchBarMediaSelectionViewController, AVTouchBarPlaybackControlsViewController, NSCustomTouchBarItem, NSPopoverTouchBarItem, NSString, NSTouchBar;
 @protocol AVTouchBarMediaSelectionControlling><AVTouchBarPlaybackControlsControllingInternal><AVTouchBarTrackControlling><AVTimeControlling, AVTouchBarPlaybackControlsControlling;
 
-@interface AVTouchBarPlaybackControlsProvider : NSResponder <AVTouchBarMediaSelectionViewControllerDelegate, AVTouchBarMediaSelectionButtonViewControllerDelegate, NSTouchBarDelegate, NSTouchBarProvider, NSDescriptionBasedTouchBarItemProvider>
+@interface AVTouchBarPlaybackControlsProvider : NSResponder <AVTouchBarMediaSelectionViewControllerDelegate, AVTouchBarMediaSelectionButtonViewControllerDelegate, NSTouchBarDelegate, NSTouchBarProvider>
 {
     NSTouchBar *_touchBar;
     id <AVTouchBarPlaybackControlsControlling> _playbackControlsController;
@@ -29,7 +28,6 @@
     AVTouchBarMediaSelectionViewController *_touchBarMediaSelectionViewController;
 }
 
-+ (id)touchBarItemWithIdentifier:(id)arg1 itemDescription:(id)arg2;
 + (void)initialize;
 - (void).cxx_destruct;
 - (void)updateTouchBarItemIdentifiersForTouchBar:(id)arg1;
@@ -47,7 +45,7 @@
 - (void)touchBarMediaSelectionViewController:(id)arg1 didSelectAudioTouchBarMediaSelectionOption:(id)arg2;
 @property __weak AVPlayerView *playerView;
 @property(retain, nonatomic) id <AVTouchBarMediaSelectionControlling><AVTouchBarPlaybackControlsControllingInternal><AVTouchBarTrackControlling><AVTimeControlling> playerController;
-- (void)reloadThumbailsOrAudioAmplitudeSamples;
+- (void)reloadThumbailsOrAudioWaveform;
 @property(retain) id <AVTouchBarPlaybackControlsControlling> playbackControlsController;
 - (void)dealloc;
 - (id)init;

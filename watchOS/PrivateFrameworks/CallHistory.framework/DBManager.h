@@ -30,7 +30,7 @@
 + (id)instanceWithModelURL:(id)arg1;
 + (int)isDataStoreAtURLInitialized:(id)arg1 withModelAtURL:(id)arg2;
 + (id)getPersistentCoordinator:(id)arg1;
-+ (id)dbOptions:(_Bool)arg1;
++ (id)persistentStoreOptions:(_Bool)arg1;
 @property(retain, nonatomic) NSPersistentStoreCoordinator *fPersistentStoreCoordinator; // @synthesize fPersistentStoreCoordinator;
 - (void).cxx_destruct;
 - (id)createManagedObjectContext;

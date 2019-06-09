@@ -12,7 +12,6 @@
 {
 }
 
-+ (id)_nonWhitespaceIconName:(id)arg1;
 @property(copy, nonatomic) NSSet *disabledReasons; // @dynamic disabledReasons;
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @dynamic enabled;
 - (void)setCacheDeletingCount:(long long)arg1;

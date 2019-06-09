@@ -6,17 +6,20 @@
 
 #import <FileProvider/FPOperation.h>
 
-@class CSSearchableIndex;
+@class CSSearchableIndex, NSString;
 
 __attribute__((visibility("hidden")))
 @interface FPXDropSpotlightIndexOperation : FPOperation
 {
     CSSearchableIndex *_index;
+    NSString *_reason;
+    NSString *_domainID;
 }
 
 - (void).cxx_destruct;
 - (void)main;
-- (id)initWithIndex:(id)arg1;
+- (id)operationDescription;
+- (id)initWithIndex:(id)arg1 domainID:(id)arg2 reason:(id)arg3;
 
 @end
 

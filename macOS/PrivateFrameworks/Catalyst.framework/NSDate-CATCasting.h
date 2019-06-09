@@ -8,5 +8,8 @@
 
 @interface NSDate (CATCasting)
 + (id)cat_dateWithObject:(id)arg1;
++ (id)cat_dateWithInternetTimeString:(id)arg1;
++ (id)cat_RFC3339Formatters;
+- (id)cat_internetTimeString;
 @end
 

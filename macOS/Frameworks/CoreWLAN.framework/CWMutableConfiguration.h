@@ -12,11 +12,12 @@
 {
 }
 
+
+// Remaining properties
+@property(copy) NSOrderedSet *networkProfiles; // @dynamic networkProfiles;
 @property BOOL rememberJoinedNetworks; // @dynamic rememberJoinedNetworks;
 @property BOOL requireAdministratorForAssociation; // @dynamic requireAdministratorForAssociation;
-@property BOOL requireAdministratorForPower; // @dynamic requireAdministratorForPower;
 @property BOOL requireAdministratorForIBSSMode; // @dynamic requireAdministratorForIBSSMode;
-@property(copy) NSOrderedSet *networkProfiles; // @dynamic networkProfiles;
-
+@property BOOL requireAdministratorForPower; // @dynamic requireAdministratorForPower;
 @end
 

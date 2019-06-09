@@ -18,20 +18,16 @@ __attribute__((visibility("hidden")))
     double _sessionRelativeTimestamp;
     int _tileSetStateType;
     struct {
-        unsigned int sessionID:1;
-        unsigned int durationInOldState:1;
-        unsigned int newCoverage:1;
-        unsigned int oldCoverage:1;
-        unsigned int sessionRelativeTimestamp:1;
-        unsigned int tileSetStateType:1;
-    } _has;
+        unsigned int has_sessionID:1;
+        unsigned int has_durationInOldState:1;
+        unsigned int has_newCoverage:1;
+        unsigned int has_oldCoverage:1;
+        unsigned int has_sessionRelativeTimestamp:1;
+        unsigned int has_tileSetStateType:1;
+    } _flags;
 }
 
-@property(nonatomic) double newCoverage; // @synthesize newCoverage=_newCoverage;
-@property(nonatomic) double oldCoverage; // @synthesize oldCoverage=_oldCoverage;
-@property(nonatomic) double durationInOldState; // @synthesize durationInOldState=_durationInOldState;
-@property(nonatomic) double sessionRelativeTimestamp; // @synthesize sessionRelativeTimestamp=_sessionRelativeTimestamp;
-@property(nonatomic) struct GEOSessionID sessionID; // @synthesize sessionID=_sessionID;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -39,17 +35,23 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasNewCoverage;
+@property(nonatomic) double newCoverage;
 @property(nonatomic) BOOL hasOldCoverage;
+@property(nonatomic) double oldCoverage;
 - (int)StringAsTileSetStateType:(id)arg1;
 - (id)tileSetStateTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasTileSetStateType;
-@property(nonatomic) int tileSetStateType; // @synthesize tileSetStateType=_tileSetStateType;
+@property(nonatomic) int tileSetStateType;
 @property(nonatomic) BOOL hasDurationInOldState;
+@property(nonatomic) double durationInOldState;
 @property(nonatomic) BOOL hasSessionRelativeTimestamp;
+@property(nonatomic) double sessionRelativeTimestamp;
 @property(nonatomic) BOOL hasSessionID;
+@property(nonatomic) struct GEOSessionID sessionID;
 
 @end
 

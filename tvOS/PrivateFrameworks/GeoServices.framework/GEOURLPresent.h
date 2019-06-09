@@ -8,18 +8,25 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOURLOptions, NSMutableArray;
+@class GEOURLOptions, NSMutableArray, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOURLPresent : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_items;
     GEOURLOptions *_options;
+    struct {
+        unsigned int read_items:1;
+        unsigned int read_options:1;
+        unsigned int wrote_items:1;
+        unsigned int wrote_options:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)itemType;
-@property(retain, nonatomic) GEOURLOptions *options; // @synthesize options=_options;
-@property(retain, nonatomic) NSMutableArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,13 +35,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOURLOptions *options;
 @property(readonly, nonatomic) _Bool hasOptions;
+- (void)_readOptions;
 - (id)itemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)itemsCount;
+- (void)_addNoFlagsItem:(id)arg1;
 - (void)addItem:(id)arg1;
 - (void)clearItems;
+@property(retain, nonatomic) NSMutableArray *items;
+- (void)_readItems;
 - (id)initWithDirectionsOptions:(id)arg1;
 - (id)initWithOptions:(id)arg1;
 

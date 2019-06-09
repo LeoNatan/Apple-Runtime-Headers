@@ -6,13 +6,20 @@
 
 #import <Foundation/NSMutableSet.h>
 
-@interface EAEmailAddressSet : NSMutableSet
+#import <EmailAddressing/EFLoggable-Protocol.h>
+#import <EmailAddressing/NSSecureCoding-Protocol.h>
+
+@class NSData, NSString;
+
+@interface EAEmailAddressSet : NSMutableSet <EFLoggable, NSSecureCoding>
 {
     NSMutableSet *_internalSet;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)setWithCapacity:(unsigned long long)arg1;
 + (id)set;
++ (id)log;
 @property(retain, nonatomic) NSMutableSet *internalSet; // @synthesize internalSet=_internalSet;
 - (void).cxx_destruct;
 - (void)setSet:(id)arg1;
@@ -30,10 +37,20 @@
 - (_Bool)intersectsSet:(id)arg1;
 - (id)member:(id)arg1;
 - (unsigned long long)count;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+@property(readonly, nonatomic) NSData *serializedRepresentation;
+- (id)initWithSerializedRepresentation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCapacity:(unsigned long long)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -32,6 +32,8 @@
 + (BOOL)automaticRTLMirroringSupported;
 + (id)keyPathsForValuesAffectingItems;
 + (id)keyPathsForValuesAffectingItemIdentifiers;
++ (BOOL)isAutomaticCustomizeTouchBarMenuItemEnabled;
++ (void)setAutomaticCustomizeTouchBarMenuItemEnabled:(BOOL)arg1;
 + (void)resetUserDefinedTouchBar;
 + (id)userDefinedTouchBar;
 + (id)pathToUserDefinedTouchBar;

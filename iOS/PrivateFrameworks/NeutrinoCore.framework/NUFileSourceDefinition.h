@@ -19,6 +19,8 @@
 @property(readonly) NSString *uti; // @synthesize uti=_uti;
 @property(readonly) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+- (id)description;
+- (long long)mediaType;
 - (id)initWithURL:(id)arg1 UTI:(id)arg2;
 - (id)init;
 - (id)generateSourceNodeWithIdentifier:(id)arg1 error:(out id *)arg2;

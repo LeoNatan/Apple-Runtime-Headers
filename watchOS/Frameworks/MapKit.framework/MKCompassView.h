@@ -20,11 +20,14 @@
 @property(readonly, nonatomic) int compassViewStyle; // @synthesize compassViewStyle=_compassViewStyle;
 @property(readonly, nonatomic) int compassViewSize; // @synthesize compassViewSize=_compassViewSize;
 - (void).cxx_destruct;
+- (_Bool)isPointInNorthEastHalf:(struct CGPoint)arg1;
 - (struct CGSize)intrinsicContentSize;
 @property(nonatomic) double yaw;
 @property(nonatomic) double mapHeading;
 - (void)_updateLayerForCurrentSizeAndStyle;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)setCompassViewSize:(int)arg1 style:(int)arg2;
+- (void)_adaptCompassStyleToUserInterfaceStyle;
 - (void)layoutSubviews;
 - (void)updateLocale:(id)arg1;
 - (void)dealloc;

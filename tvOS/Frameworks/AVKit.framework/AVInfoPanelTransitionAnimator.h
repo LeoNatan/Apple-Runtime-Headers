@@ -7,21 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <AVKit/UIViewControllerAnimatedTransitioning-Protocol.h>
-#import <AVKit/_UITabBarControllerInterruptibleTransitioning-Protocol.h>
 
 @class NSString;
-@protocol UIViewControllerContextTransitioning;
 
-@interface AVInfoPanelTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning, _UITabBarControllerInterruptibleTransitioning>
+__attribute__((visibility("hidden")))
+@interface AVInfoPanelTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 {
-    double _contentHeightDifference;
-    id <UIViewControllerContextTransitioning> _transitionContext;
 }
 
-- (void).cxx_destruct;
-- (void)_beginDrawerAnimationFromViewController:(id)arg1 toViewController:(id)arg2 containerView:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_beginFadeAnimationFromViewController:(id)arg1 toViewController:(id)arg2 containerView:(id)arg3;
-- (void)interruptTabBarControllerTransition;
+- (id)_drawerAnimatorFromViewController:(id)arg1 toViewController:(id)arg2 containerView:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 

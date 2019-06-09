@@ -18,14 +18,14 @@ __attribute__((visibility("hidden")))
     int _resolvedItemType;
     unsigned int _resultIndex;
     struct {
-        unsigned int resolvedItemType:1;
-        unsigned int resultIndex:1;
-    } _has;
+        unsigned int has_resolvedItemType:1;
+        unsigned int has_resultIndex:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int resultIndex; // @synthesize resultIndex=_resultIndex;
-@property(retain, nonatomic) NSString *extractedTerm; // @synthesize extractedTerm=_extractedTerm;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -34,13 +34,16 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasResultIndex;
+@property(nonatomic) unsigned int resultIndex;
 - (int)StringAsResolvedItemType:(id)arg1;
 - (id)resolvedItemTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasResolvedItemType;
-@property(nonatomic) int resolvedItemType; // @synthesize resolvedItemType=_resolvedItemType;
+@property(nonatomic) int resolvedItemType;
+@property(retain, nonatomic) NSString *extractedTerm;
 @property(readonly, nonatomic) BOOL hasExtractedTerm;
 
 @end

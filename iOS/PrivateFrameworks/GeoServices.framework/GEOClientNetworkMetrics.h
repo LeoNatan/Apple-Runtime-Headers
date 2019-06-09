@@ -8,39 +8,47 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOClientNetworkMetrics : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     double _requestEnd;
     double _requestStart;
+    NSString *_serviceIpAddress;
+    NSMutableArray *_transactionMetrics;
     int _httpResponseCode;
     int _redirectCount;
     int _requestDataSize;
     int _responseDataSize;
-    NSString *_serviceIpAddress;
-    NSMutableArray *_transactionMetrics;
     struct {
-        unsigned int requestEnd:1;
-        unsigned int requestStart:1;
-        unsigned int httpResponseCode:1;
-        unsigned int redirectCount:1;
-        unsigned int requestDataSize:1;
-        unsigned int responseDataSize:1;
-    } _has;
+        unsigned int has_requestEnd:1;
+        unsigned int has_requestStart:1;
+        unsigned int has_httpResponseCode:1;
+        unsigned int has_redirectCount:1;
+        unsigned int has_requestDataSize:1;
+        unsigned int has_responseDataSize:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_serviceIpAddress:1;
+        unsigned int read_transactionMetrics:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_requestEnd:1;
+        unsigned int wrote_requestStart:1;
+        unsigned int wrote_serviceIpAddress:1;
+        unsigned int wrote_transactionMetrics:1;
+        unsigned int wrote_httpResponseCode:1;
+        unsigned int wrote_redirectCount:1;
+        unsigned int wrote_requestDataSize:1;
+        unsigned int wrote_responseDataSize:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)transactionMetricsType;
-@property(retain, nonatomic) NSMutableArray *transactionMetrics; // @synthesize transactionMetrics=_transactionMetrics;
-@property(nonatomic) int redirectCount; // @synthesize redirectCount=_redirectCount;
-@property(nonatomic) double requestEnd; // @synthesize requestEnd=_requestEnd;
-@property(nonatomic) double requestStart; // @synthesize requestStart=_requestStart;
-@property(nonatomic) int responseDataSize; // @synthesize responseDataSize=_responseDataSize;
-@property(nonatomic) int requestDataSize; // @synthesize requestDataSize=_requestDataSize;
-@property(retain, nonatomic) NSString *serviceIpAddress; // @synthesize serviceIpAddress=_serviceIpAddress;
-@property(nonatomic) int httpResponseCode; // @synthesize httpResponseCode=_httpResponseCode;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -49,19 +57,31 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)transactionMetricsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)transactionMetricsCount;
+- (void)_addNoFlagsTransactionMetrics:(id)arg1;
 - (void)addTransactionMetrics:(id)arg1;
 - (void)clearTransactionMetrics;
+@property(retain, nonatomic) NSMutableArray *transactionMetrics;
+- (void)_readTransactionMetrics;
 @property(nonatomic) _Bool hasRedirectCount;
+@property(nonatomic) int redirectCount;
 @property(nonatomic) _Bool hasRequestEnd;
+@property(nonatomic) double requestEnd;
 @property(nonatomic) _Bool hasRequestStart;
+@property(nonatomic) double requestStart;
 @property(nonatomic) _Bool hasResponseDataSize;
+@property(nonatomic) int responseDataSize;
 @property(nonatomic) _Bool hasRequestDataSize;
+@property(nonatomic) int requestDataSize;
+@property(retain, nonatomic) NSString *serviceIpAddress;
 @property(readonly, nonatomic) _Bool hasServiceIpAddress;
+- (void)_readServiceIpAddress;
 @property(nonatomic) _Bool hasHttpResponseCode;
+@property(nonatomic) int httpResponseCode;
 
 @end
 

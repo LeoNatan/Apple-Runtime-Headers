@@ -8,6 +8,7 @@
 
 @class SCTCarbonMenu;
 
+__attribute__((visibility("hidden")))
 @interface SCTMenuItemGRL : SCTGRL
 {
     SCTCarbonMenu *mCarbonMenu;

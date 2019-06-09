@@ -7,7 +7,10 @@
 #import <NotesShared/ICAttachmentTableModel.h>
 
 @interface ICAttachmentTableModel (UI)
+- (struct CGSize)previewInAvailableSize:(struct CGSize)arg1 shouldDraw:(_Bool)arg2;
+- (void)drawPreviewInRect:(struct CGRect)arg1;
 - (id)activityItems;
+- (id)quicklookPreviewItems;
 - (id)attributesForSharingHTMLWithTagName:(id *)arg1 textContent:(id *)arg2;
 - (_Bool)canConvertToHTMLForSharing;
 - (id)htmlString;

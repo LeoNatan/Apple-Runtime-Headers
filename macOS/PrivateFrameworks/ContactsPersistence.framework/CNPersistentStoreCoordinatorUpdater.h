@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain) id <NSLocking> fileLock; // @synthesize fileLock=_fileLock;
 @property BOOL isPristine; // @synthesize isPristine=_isPristine;
+- (void).cxx_destruct;
 - (id)scopeAccountUrls:(id)arg1 forCacheKey:(id)arg2;
 - (id)locksWithPersistentStoreCoordinator:(id)arg1;
 - (void)updatePersistentStoresWithBuilder:(id)arg1 addedUrls:(id)arg2 removedUrls:(id)arg3 resultBlock:(CDUnknownBlockType)arg4;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (id)updatePersistentStoresInCacheWithKey:(id)arg1 newAccounts:(id)arg2;
 - (void)checkIfMainDatabaseInResultsIsPristine:(id)arg1 forCacheKey:(id)arg2;
 - (void)updatePersistentStoresForAccountsWithURLs:(id)arg1;
-- (void)dealloc;
 - (id)initWithCoordinatorCache:(id)arg1 readOnly:(BOOL)arg2;
 
 @end

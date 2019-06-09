@@ -7,8 +7,23 @@
 #import <Foundation/NSString.h>
 
 #import <Home/HFPropertyListConvertible-Protocol.h>
+#import <Home/HFStringGenerator-Protocol.h>
 
-@interface NSString (HFPropertyListConverting) <HFPropertyListConvertible>
+@interface NSString (HFPropertyListConverting) <HFPropertyListConvertible, HFStringGenerator>
++ (id)hf_formattedPersonNameForFirstName:(id)arg1 lastName:(id)arg2;
+- (unsigned long long)hf_countForSubstring:(id)arg1;
+- (id)hf_toHexString:(char *)arg1 length:(unsigned int)arg2;
+- (unsigned int)hf_UTF8Length;
+- (id)hf_stringByLowercasingFirstWord;
+- (id)hf_stringByCapitalizingFirstWord;
+- (id)hf_stringByTransformingFirstWordUsingBlock:(CDUnknownBlockType)arg1;
+- (_Bool)hf_isEmail;
+- (_Bool)hf_isPhoneNumber;
+- (id)hf_SHA256;
+- (id)hf_SHA1;
+- (_Bool)prefersDynamicString;
+- (id)stringWithAttributes:(id)arg1;
+- (id)dynamicStringForSize:(struct CGSize)arg1 attributes:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

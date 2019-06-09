@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSDate *expirationDate;
 @property(nonatomic) _Bool ignoreMaxRetryCount;
+@property(nonatomic) _Bool sessionForceInternetInvitation;
 @property(nonatomic) _Bool liveMessageDelivery;
 @property(nonatomic) _Bool disallowRefresh;
 @property(nonatomic) _Bool alwaysSkipSelf;
@@ -42,6 +43,7 @@
 @property(nonatomic) _Bool requireBluetooth;
 @property(nonatomic) _Bool localDelivery;
 @property(nonatomic) long long priority;
+@property(nonatomic) _Bool wantsCertifiedDelivery;
 @property(nonatomic) _Bool wantsDeliveryStatus;
 @property(nonatomic) _Bool wantsProgress;
 @property(nonatomic) _Bool wantsResponse;
@@ -51,6 +53,8 @@
 @property(nonatomic) _Bool useDictAsTopLevel;
 @property(nonatomic) _Bool compressed;
 @property(nonatomic) _Bool expectsPeerResponse;
+@property(retain, nonatomic) NSNumber *originalTimestamp;
+@property(retain, nonatomic) NSNumber *dropMessageIndicatorCommand;
 @property(retain, nonatomic) NSString *metricReportIdentifier;
 @property(retain, nonatomic) NSData *groupData;
 @property(retain, nonatomic) NSString *sessionID;
@@ -72,6 +76,7 @@
 @property(retain, nonatomic) NSData *messageUUID;
 @property(retain, nonatomic) NSDictionary *deliveryStatusContext;
 @property(retain, nonatomic) NSString *identifier;
+@property(retain, nonatomic) NSNumber *commandContext;
 @property(retain, nonatomic) NSNumber *command;
 @property(retain, nonatomic) NSData *dataToEncrypt;
 @property(retain, nonatomic) NSString *accountUUID;

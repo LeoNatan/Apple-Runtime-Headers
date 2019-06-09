@@ -23,6 +23,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithRequest:(id)arg1 traits:(id)arg2 categories:(id)arg3;
 
 // Remaining properties
+@property(readonly, nonatomic, getter=isCancelled) _Bool cancelled;
+@property(readonly, nonatomic) CDStruct_d1a7ebee dataRequestKind;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;

@@ -43,7 +43,6 @@
     NSObject<OS_dispatch_queue> *_scObservationQueue;
     NSObject<OS_dispatch_queue> *_sampleQueue;
     struct __SCDynamicStore *_dynamicStoreConnection;
-    CDUnknownBlockType _connectionComparator;
     NSNetServiceBrowser *_netServiceBrowser;
     NSObject<OS_dispatch_queue> *_currentlyConnectingConnectionQueue;
     SMNConnection *_currentConnectingConnection;
@@ -52,6 +51,7 @@
     SMNConnection *_activeConnection;
     NSMutableOrderedSet *_otherConnections;
     NSDictionary *_remoteAddressesByIFMap;
+    CDUnknownBlockType _connectionComparator;
     double _infrastructureWirelessRate;
 }
 
@@ -61,6 +61,7 @@
 @property double infrastructureWirelessRate; // @synthesize infrastructureWirelessRate=_infrastructureWirelessRate;
 @property int ipv6Port; // @synthesize ipv6Port=_ipv6Port;
 @property int preferredInterface; // @synthesize preferredInterface=_preferredInterface;
+@property(copy) CDUnknownBlockType connectionComparator; // @synthesize connectionComparator=_connectionComparator;
 @property BOOL hasEverBeenConnected; // @synthesize hasEverBeenConnected=_hasEverBeenConnected;
 @property int socketFd; // @synthesize socketFd=_socketFd;
 @property(getter=isServer) BOOL server; // @synthesize server=_server;
@@ -75,7 +76,6 @@
 @property(retain) NSObject<OS_dispatch_queue> *currentlyConnectingConnectionQueue; // @synthesize currentlyConnectingConnectionQueue=_currentlyConnectingConnectionQueue;
 @property int ipv6AcceptSocket; // @synthesize ipv6AcceptSocket=_ipv6AcceptSocket;
 @property(retain) NSNetServiceBrowser *netServiceBrowser; // @synthesize netServiceBrowser=_netServiceBrowser;
-@property(copy) CDUnknownBlockType connectionComparator; // @synthesize connectionComparator=_connectionComparator;
 @property struct __SCDynamicStore *dynamicStoreConnection; // @synthesize dynamicStoreConnection=_dynamicStoreConnection;
 @property(retain) NSObject<OS_dispatch_queue> *sampleQueue; // @synthesize sampleQueue=_sampleQueue;
 @property(retain) NSObject<OS_dispatch_queue> *scObservationQueue; // @synthesize scObservationQueue=_scObservationQueue;

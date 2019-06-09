@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CDPDevice, NSDictionary, NSString;
+@class CDPDevice, NSDictionary, NSString, OTClique;
 
 @interface CDPDRemoteSecretValidationResult : NSObject
 {
@@ -16,8 +16,10 @@
     CDPDevice *_device;
     NSString *_validSecret;
     NSDictionary *_recoveredInfo;
+    OTClique *_recoveredClique;
 }
 
+@property(retain, nonatomic) OTClique *recoveredClique; // @synthesize recoveredClique=_recoveredClique;
 @property(copy, nonatomic) NSDictionary *recoveredInfo; // @synthesize recoveredInfo=_recoveredInfo;
 @property(copy, nonatomic) NSString *validSecret; // @synthesize validSecret=_validSecret;
 @property(copy, nonatomic) CDPDevice *device; // @synthesize device=_device;

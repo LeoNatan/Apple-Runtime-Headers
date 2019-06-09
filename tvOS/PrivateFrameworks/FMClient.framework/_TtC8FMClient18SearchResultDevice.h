@@ -31,18 +31,18 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithFirstName:(id)arg1 lastName:(id)arg2 ownerDsid:(id)arg3 serverId:(id)arg4 deviceName:(id)arg5 deviceClass:(id)arg6 productName:(id)arg7 discoveryId:(id)arg8 productType:(id)arg9 thisDevice:(_Bool)arg10 needsSafety:(_Bool)arg11 pairedDevices:(id)arg12;
-@property(nonatomic, readonly) NSArray *pairedDevices; // @synthesize pairedDevices;
+@property(nonatomic, readonly) NSArray *pairedDevices;
 @property(nonatomic, readonly) _Bool needsSafety; // @synthesize needsSafety;
 @property(nonatomic, readonly) _Bool thisDevice; // @synthesize thisDevice;
-@property(nonatomic, readonly) NSString *productType; // @synthesize productType;
-@property(nonatomic, readonly) NSString *discoveryId; // @synthesize discoveryId;
-@property(nonatomic, readonly) NSString *productName; // @synthesize productName;
-@property(nonatomic, readonly) NSString *deviceClass; // @synthesize deviceClass;
-@property(nonatomic, readonly) NSString *deviceName; // @synthesize deviceName;
-@property(nonatomic, readonly) NSString *serverId; // @synthesize serverId;
-@property(nonatomic, readonly) NSString *ownerDsid; // @synthesize ownerDsid;
-@property(nonatomic, readonly) NSString *lastName; // @synthesize lastName;
-@property(nonatomic, readonly) NSString *firstName; // @synthesize firstName;
+@property(nonatomic, readonly) NSString *productType;
+@property(nonatomic, readonly) NSString *discoveryId;
+@property(nonatomic, readonly) NSString *productName;
+@property(nonatomic, readonly) NSString *deviceClass;
+@property(nonatomic, readonly) NSString *deviceName;
+@property(nonatomic, readonly) NSString *serverId;
+@property(nonatomic, readonly) NSString *ownerDsid;
+@property(nonatomic, readonly) NSString *lastName;
+@property(nonatomic, readonly) NSString *firstName;
 
 @end
 

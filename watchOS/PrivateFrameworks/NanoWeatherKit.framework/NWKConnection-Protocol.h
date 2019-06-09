@@ -7,7 +7,8 @@
 #import <NanoWeatherKit/NSObject-Protocol.h>
 
 @protocol NWKConnection <NSObject>
-- (void)invalidateWithCompletion:(void (^)(void))arg1;
 - (void)resumeWithCompletion:(void (^)(void))arg1;
+- (void)invalidateWithCompletion:(void (^)(void))arg1;
+- (void)cleanup;
 @end
 

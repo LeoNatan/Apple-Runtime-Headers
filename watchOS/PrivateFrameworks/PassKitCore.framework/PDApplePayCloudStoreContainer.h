@@ -6,25 +6,42 @@
 
 #import <PassKitCore/PDCloudStoreContainer.h>
 
-@class NSObject, PKPaymentTransactionProcessor, PKPaymentWebService, PKPeerPaymentAccount;
-@protocol OS_dispatch_queue;
+#import <PassKitCore/PDAccountManagerObserver-Protocol.h>
 
-@interface PDApplePayCloudStoreContainer : PDCloudStoreContainer
+@class NSMutableSet, NSString, PDAccountManager, PDPaymentWebServiceCoordinator, PKPaymentTransactionProcessor, PKPeerPaymentAccount;
+
+@interface PDApplePayCloudStoreContainer : PDCloudStoreContainer <PDAccountManagerObserver>
 {
-    NSObject<OS_dispatch_queue> *_proactiveFetchQueue;
+    struct os_unfair_lock_s _fetchLock;
+    _Bool _proactiveFetchInProgress;
+    NSMutableSet *_fetchingTransactionsForUniqueIDs;
     PKPaymentTransactionProcessor *_transactionProcessor;
     PKPeerPaymentAccount *_peerPaymentAccount;
-    PKPaymentWebService *_paymentWebService;
+    PDPaymentWebServiceCoordinator *_paymentWebServiceCoordinator;
+    PDAccountManager *_accountManager;
 }
 
 + (void)invalidateServerChangeTokens;
 - (void).cxx_destruct;
+- (void)_parseAccountEventsFromRecords:(id)arg1 shouldUpdateLocalDatabase:(_Bool)arg2 updateReasons:(unsigned int)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)_recordsFromAccountEvent:(id)arg1;
+- (void)_fetchAndParseAccountEventRecordsForRecords:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 shouldUpdateLocalDatabase:(_Bool)arg4 userInfo:(id)arg5 updateReasons:(unsigned int)arg6 completion:(CDUnknownBlockType)arg7;
+- (id)_accountEventRecordsFromArray:(id)arg1;
+- (id)_recordTypeForAssociatedRecordForAccountEvent:(id)arg1;
+- (id)_recordTypesForAccountEvents;
+- (_Bool)_isAccountEventAssociatedObjectFromRecordType:(id)arg1;
+- (_Bool)_isAccountEventFromRecordType:(id)arg1;
+- (void)_saveTransactionFetchRetries:(id)arg1;
+- (id)_transactionFetchRetries;
+- (void)_fetchTransactionsFailedForPassUniqueIdentifier:(id)arg1;
+- (void)_resetFetchTransactionsForPassUniqueIdentifier:(id)arg1;
+- (_Bool)_shouldFetchTransactionsForPassUniqueIdentifier:(id)arg1;
 - (id)_originDeviceIDForCloudStoreRecord:(id)arg1;
 - (id)_passUniqueIdentifierForCloudStoreRecord:(id)arg1;
 - (id)_serviceIdentfierToRecordDictionaryFromArray:(id)arg1;
-- (void)_fetchMissingRecordsFromModifiedRecords:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_fetchMissingRecordsFromModifiedRecords:(id)arg1 operationGroupName:(id)arg2 operationGroupNameSuffix:(id)arg3 userInfo:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (_Bool)_canFormTransactionFromCloudStoreRecord:(id)arg1;
-- (id)_parseModifiedRecords:(id)arg1 counterpartRecords:(id)arg2 shouldUpdateLocalDatabase:(_Bool)arg3 updateReasons:(unsigned int)arg4;
+- (id)_parseTransactionRecords:(id)arg1 counterpartRecords:(id)arg2 shouldUpdateLocalDatabase:(_Bool)arg3 userInfo:(id)arg4 updateReasons:(unsigned int)arg5;
 - (_Bool)_isTransactionItemFromRecordType:(id)arg1;
 - (_Bool)_canSyncTransactionToCloudKit:(id)arg1;
 - (id)_strippedRecordName:(id)arg1;
@@ -33,7 +50,10 @@
 - (id)_cloudStoreSpecificKeysForItem:(id)arg1 paymentPass:(id)arg2;
 - (id)_insertOrUpdatePaymentTransaction:(id)arg1 withOriginDeviceID:(id)arg2 forPassUniqueIdentifier:(id)arg3 paymentApplication:(id)arg4 withInsertionMode:(unsigned int)arg5 performTruncation:(_Bool)arg6;
 - (id)_paymentApplicationForPassUniqueIdentifier:(id)arg1;
+- (void)populateEvents:(id)arg1 forAccountIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)uploadTransaction:(id)arg1 forPassWithUniqueIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)generateRandomTransactionForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)passWithUniqueIdentifierDidDisappear:(id)arg1;
 - (_Bool)canSyncTransactionToCloudKitWithBackingData:(_Bool)arg1 passUniqueIdentifier:(id)arg2 serviceIdentifier:(id)arg3;
 - (_Bool)canSyncTransactionFromCloudKitForPassUniqueIdentifier:(id)arg1;
 - (void)fetchAndStoreRecordsForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -53,8 +73,16 @@
 - (_Bool)canInitializeContainer;
 - (id)allRecordNamesAssociatedWithRecordName:(id)arg1 inZone:(id)arg2;
 - (id)recordTypeForRecordID:(id)arg1;
+- (void)accountManager:(id)arg1 didRemoveAccount:(id)arg2;
+- (void)accountManager:(id)arg1 didAddAccount:(id)arg2;
 - (void)invalidateCloudStoreIfPossibleWithOperationGroupNameSuffix:(id)arg1;
-- (id)initWithDataSource:(id)arg1 transactionProcessor:(id)arg2 paymentWebService:(id)arg3;
+- (id)initWithDataSource:(id)arg1 transactionProcessor:(id)arg2 paymentWebServiceCoordinator:(id)arg3 accountManager:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

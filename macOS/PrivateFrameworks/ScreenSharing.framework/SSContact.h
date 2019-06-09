@@ -8,7 +8,6 @@
 
 @class ABPerson, NSDictionary, NSString;
 
-__attribute__((visibility("hidden")))
 @interface SSContact : NSObject
 {
     ABPerson *_person;

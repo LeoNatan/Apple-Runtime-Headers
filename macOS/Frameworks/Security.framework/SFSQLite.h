@@ -25,8 +25,10 @@
     BOOL _hasMigrated;
     BOOL _corrupt;
     BOOL _traced;
+    NSDateFormatter *_oldDateFormatter;
 }
 
+@property(retain, nonatomic) NSDateFormatter *oldDateFormatter; // @synthesize oldDateFormatter=_oldDateFormatter;
 @property(retain, nonatomic) NSDateFormatter *dateFormatter; // @synthesize dateFormatter=_dateFormatter;
 @property(readonly, nonatomic) NSMutableDictionary *statementsBySQL; // @synthesize statementsBySQL=_statementsBySQL;
 @property(nonatomic) BOOL corrupt; // @synthesize corrupt=_corrupt;

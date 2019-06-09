@@ -12,16 +12,19 @@
 
 @interface SSFileTransferWindowController : NSWindowController <SSFileTransferTableCellViewDelegate>
 {
-    NSTableView *tableView;
-    NSTextField *transferCountTextField;
-    NSButton *cancelAllButton;
     NSMutableArray *fileTransferArray;
     long long rowPlusOneToMakeVisibleInAwakeFromNib;
     NSMutableDictionary *iconCacheDict;
     NSUserDefaults *iconCacheUserDefaults;
+    NSTableView *_tableView;
+    NSTextField *_transferCountTextField;
+    NSButton *_cancelAllButton;
 }
 
 + (id)sharedController;
+@property NSButton *cancelAllButton; // @synthesize cancelAllButton=_cancelAllButton;
+@property NSTextField *transferCountTextField; // @synthesize transferCountTextField=_transferCountTextField;
+@property NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(retain) NSUserDefaults *iconCacheUserDefaults; // @synthesize iconCacheUserDefaults;
 @property(retain) NSMutableDictionary *iconCacheDict; // @synthesize iconCacheDict;
 - (id)iconForFilePath:(id)arg1;

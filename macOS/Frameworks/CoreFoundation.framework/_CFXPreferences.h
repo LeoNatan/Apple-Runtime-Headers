@@ -12,16 +12,15 @@ __attribute__((visibility("hidden")))
 @interface _CFXPreferences : NSObject
 {
     struct __CFDictionary *_sources;
-    struct _opaque_pthread_mutex_t *_sourcesLock;
     struct __CFDictionary *_namedVolatileSources;
-    struct _opaque_pthread_mutex_t *_namedVolatileSourcesLock;
     struct __CFDictionary *_searchLists;
-    struct _opaque_pthread_mutex_t *_searchListsLock;
     NSObject<OS_xpc_object> *_agentConnection;
     NSObject<OS_xpc_object> *_daemonConnection;
-    NSObject<OS_xpc_object> *_observationConnection;
     unsigned int _launchdUID;
     unsigned int _euid;
+    struct os_unfair_lock_s _sourcesLock;
+    struct os_unfair_lock_s _searchListsLock;
+    struct os_unfair_lock_s _namedVolatileSourcesLock;
 }
 
 + (id)copyDefaultPreferences;
@@ -35,6 +34,7 @@ __attribute__((visibility("hidden")))
 -     // Error parsing type: ^AI28@0:8i16r*20, name: shmemForRole:name:
 - (void)resetPreferences:(BOOL)arg1;
 - (void)ingestVolatileStateFromPreferences:(id)arg1;
+- (void)_deliverPendingKVONotifications;
 - (void)registerDefaultValues:(struct __CFDictionary *)arg1;
 - (struct __CFArray *)volatileSourceNames;
 - (struct __CFDictionary *)copyDictionaryForApp:(struct __CFString *)arg1 withContainer:(struct __CFString *)arg2;
@@ -81,7 +81,6 @@ __attribute__((visibility("hidden")))
 - (void)alreadylocked_withSearchLists:(CDUnknownBlockType)arg1;
 - (void)replaceSearchList:(id)arg1 withSearchList:(id)arg2;
 - (void)withSuiteSearchListForIdentifier:(struct __CFString *)arg1 user:(struct __CFString *)arg2 locked:(BOOL)arg3 perform:(CDUnknownBlockType)arg4;
-- (void)withSnapshotSearchList:(CDUnknownBlockType)arg1;
 - (void)assertEquivalence:(BOOL)arg1 ofIdentifiers:(struct __CFArray *)arg2 containers:(struct __CFArray *)arg3 cloudConfigurationURLs:(struct __CFArray *)arg4;
 - (void)withSearchListForIdentifier:(struct __CFString *)arg1 container:(struct __CFString *)arg2 cloudConfigurationURL:(struct __CFURL *)arg3 perform:(CDUnknownBlockType)arg4;
 - (void)updateSearchListsForIdentifier:(struct __CFString *)arg1;

@@ -8,5 +8,6 @@
 
 @interface NSArray (SCRExtra)
 - (id)ax_boundsCheckedObjectAtIndex:(unsigned long long)arg1;
+- (id)sortedArrayOfDFRElements;
 @end
 

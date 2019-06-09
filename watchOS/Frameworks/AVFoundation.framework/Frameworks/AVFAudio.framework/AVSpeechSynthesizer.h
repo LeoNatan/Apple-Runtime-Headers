@@ -6,18 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray;
+@class AVAudioSession, NSArray;
 @protocol AVSpeechSynthesizerDelegate;
 
 @interface AVSpeechSynthesizer : NSObject
 {
     _Bool _speaking;
     _Bool _paused;
+    _Bool _mixToTelephonyUplink;
     id <AVSpeechSynthesizerDelegate> _delegate;
     NSArray *_outputChannels;
+    AVAudioSession *_synthesizerAudioSession;
 }
 
 + (void)initialize;
+@property(nonatomic) _Bool mixToTelephonyUplink; // @synthesize mixToTelephonyUplink=_mixToTelephonyUplink;
+@property(readonly, nonatomic) AVAudioSession *synthesizerAudioSession; // @synthesize synthesizerAudioSession=_synthesizerAudioSession;
 @property(retain, nonatomic) NSArray *outputChannels; // @synthesize outputChannels=_outputChannels;
 @property(readonly, nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
 @property(readonly, nonatomic, getter=isSpeaking) _Bool speaking; // @synthesize speaking=_speaking;
@@ -26,6 +30,7 @@
 - (_Bool)continueSpeaking;
 - (_Bool)pauseSpeakingAtBoundary:(int)arg1;
 - (_Bool)stopSpeakingAtBoundary:(int)arg1;
+- (void)writeUtterance:(id)arg1 toBufferCallback:(CDUnknownBlockType)arg2;
 - (void)speakUtterance:(id)arg1;
 
 @end

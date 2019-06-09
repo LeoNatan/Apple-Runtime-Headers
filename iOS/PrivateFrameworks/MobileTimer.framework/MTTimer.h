@@ -7,18 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <MobileTimer/MTDictionarySerializable-Protocol.h>
-#import <MobileTimer/MTDiffable-Protocol.h>
 #import <MobileTimer/MTScheduleable-Protocol.h>
+#import <MobileTimer/MTSerializable-Protocol.h>
 #import <MobileTimer/MTTimerIntentSupport-Protocol.h>
 #import <MobileTimer/NAEquatable-Protocol.h>
 #import <MobileTimer/NSCopying-Protocol.h>
 #import <MobileTimer/NSMutableCopying-Protocol.h>
 #import <MobileTimer/NSSecureCoding-Protocol.h>
 
-@class MTSound, NSDate, NSString, NSURL, NSUUID;
+@class MTSound, NSDate, NSDictionary, NSString, NSURL, NSUUID;
 @protocol MTTimerTime;
 
-@interface MTTimer : NSObject <MTScheduleable, MTDictionarySerializable, MTDiffable, MTTimerIntentSupport, NAEquatable, NSCopying, NSMutableCopying, NSSecureCoding>
+@interface MTTimer : NSObject <MTScheduleable, MTDictionarySerializable, MTTimerIntentSupport, MTSerializable, NAEquatable, NSCopying, NSMutableCopying, NSSecureCoding>
 {
     NSUUID *_timerID;
     unsigned long long _state;
@@ -29,6 +29,7 @@
     NSString *_title;
     MTSound *_sound;
     id <MTTimerTime> _fireTime;
+    NSDictionary *_siriContext;
     CDUnknownBlockType _currentDateProvider;
 }
 
@@ -38,6 +39,7 @@
 + (id)descriptionForState:(unsigned long long)arg1;
 + (id)currentTimerFromTimers:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType currentDateProvider; // @synthesize currentDateProvider=_currentDateProvider;
+@property(copy, nonatomic) NSDictionary *siriContext; // @synthesize siriContext=_siriContext;
 @property(copy, nonatomic) id <MTTimerTime> fireTime; // @synthesize fireTime=_fireTime;
 @property(copy, nonatomic) MTSound *sound; // @synthesize sound=_sound;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -48,7 +50,9 @@
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic) NSUUID *timerID; // @synthesize timerID=_timerID;
 - (void).cxx_destruct;
+- (void)serializeWithSerializer:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initFromDeserializer:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)_copyStateOntoTimer:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
@@ -79,7 +83,7 @@
 - (id)upcomingTriggersAfterDate:(id)arg1;
 - (_Bool)shouldBeScheduled;
 - (id)identifier;
-- (id)keyForIdentifier;
+@property(readonly, nonatomic) long long type;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

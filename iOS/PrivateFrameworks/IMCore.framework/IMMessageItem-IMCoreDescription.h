@@ -7,6 +7,26 @@
 #import <IMSharedUtilities/IMMessageItem.h>
 
 @interface IMMessageItem (IMCoreDescription)
++ (id)displayNameForAddress:(id)arg1;
++ (_Bool)isLoginAddress:(id)arg1;
++ (id)handleForAddress:(id)arg1;
++ (id)bestAccountForAddress:(id)arg1;
++ (Class)contextClass;
 - (id)descriptionForPurpose:(long long)arg1 isGroupMessage:(_Bool)arg2 messageDataSource:(CDUnknownBlockType)arg3 attachmentDataSource:(CDUnknownBlockType)arg4;
+- (id)_copyWithFlags:(unsigned long long)arg1;
+- (id)_copy;
+- (_Bool)_isInvitation;
+- (void)_setInivtation:(_Bool)arg1;
+- (id)message;
+- (_Bool)isExtensibleMessageWithPluginPayload:(id *)arg1;
+- (id)_service;
+- (id)_newChatItemsWithFilteredChat:(_Bool)arg1 isBusiness:(_Bool)arg2 parentChatIsSpam:(_Bool)arg3 hasKnownParticipants:(_Bool)arg4;
+- (id)_newChatItems;
+- (_Bool)_hasMessageChatItem;
+- (_Bool)isIncomingTypingOrCancelTypingMessage;
+- (_Bool)isTypingOrCancelTypingMessage;
+- (_Bool)isCancelTypingMessage;
+- (_Bool)isIncomingTypingMessage;
+- (_Bool)isSystemMessage;
 @end
 

@@ -6,7 +6,6 @@
 
 #import <CFNetwork/__NSCFLocalDataTask.h>
 
-__attribute__((visibility("hidden")))
 @interface __NSCFLocalUploadTask : __NSCFLocalDataTask
 {
 }

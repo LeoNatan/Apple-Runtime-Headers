@@ -9,6 +9,7 @@
 @class NSDictionary;
 
 @protocol TURouteControllerXPCClient <NSObject>
-- (oneway void)handleRoutesByUniqueIdentifierUpdated:(NSDictionary *)arg1;
+- (oneway void)handlePairedHostDeviceRoutesByUniqueIdentifierUpdated:(NSDictionary *)arg1;
+- (oneway void)handleLocalRoutesByUniqueIdentifierUpdated:(NSDictionary *)arg1;
 @end
 

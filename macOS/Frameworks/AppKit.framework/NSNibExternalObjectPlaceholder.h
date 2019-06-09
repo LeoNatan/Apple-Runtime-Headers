@@ -15,6 +15,7 @@
     NSString *_externalObjectPlaceholderIdentifier;
 }
 
++ (void)removeMappingForCoder:(id)arg1 withIdentifier:(id)arg2;
 + (void)removeMappingsForCoder:(id)arg1;
 + (id)mappedEntryForCoder:(id)arg1 withIdentifier:(id)arg2;
 + (void)addMappings:(id)arg1 forCoder:(id)arg2;

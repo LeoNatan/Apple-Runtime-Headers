@@ -6,17 +6,17 @@
 
 #import <UIKit/UIControl.h>
 
-#import <MessageUI/MFModernAtomViewResembling-Protocol.h>
+#import <MessageUI/CNAtomViewResembling-Protocol.h>
 
-@class MFModernAtomView, NSString, UIFont;
-@protocol MFModernAddressAtomDelegate;
+@class CNAtomView, NSString, UIFont;
+@protocol ECEmailAddressConvertible, MFModernAddressAtomDelegate;
 
-@interface MFModernAddressAtom : UIControl <MFModernAtomViewResembling>
+@interface MFModernAddressAtom : UIControl <CNAtomViewResembling>
 {
     id <MFModernAddressAtomDelegate> _delegate;
-    MFModernAtomView *_atomView;
+    CNAtomView *_atomView;
     void *_person;
-    NSString *_fullAddress;
+    id <ECEmailAddressConvertible> _fullAddress;
     NSString *_displayString;
     unsigned int _maxWidth;
     int _identifier;
@@ -30,6 +30,7 @@
 
 + (id)copyDisplayStringForAddress:(id)arg1 usingAddressBook:(void *)arg2 useAbbreviatedName:(_Bool)arg3;
 @property(nonatomic) double firstLineIndent; // @synthesize firstLineIndent=_firstLineIndent;
+- (void).cxx_destruct;
 - (id)viewForLastBaselineLayout;
 - (void)performBuildInAnimationFromTextColor:(id)arg1 withDuration:(double)arg2;
 - (void)setOpaque:(_Bool)arg1;

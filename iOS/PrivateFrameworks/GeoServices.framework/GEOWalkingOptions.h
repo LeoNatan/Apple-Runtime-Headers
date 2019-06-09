@@ -8,16 +8,22 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBUnknownFields;
+
 @interface GEOWalkingOptions : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
     CDStruct_95bda58d _avoidedModes;
     double _preferredSpeed;
     struct {
-        unsigned int preferredSpeed:1;
-    } _has;
+        unsigned int has_preferredSpeed:1;
+    } _flags;
 }
 
-@property(nonatomic) double preferredSpeed; // @synthesize preferredSpeed=_preferredSpeed;
++ (_Bool)isValid:(id)arg1;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -25,6 +31,7 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsAvoidedModes:(id)arg1;
@@ -36,6 +43,7 @@
 @property(readonly, nonatomic) int *avoidedModes;
 @property(readonly, nonatomic) unsigned long long avoidedModesCount;
 @property(nonatomic) _Bool hasPreferredSpeed;
+@property(nonatomic) double preferredSpeed;
 - (void)dealloc;
 
 @end

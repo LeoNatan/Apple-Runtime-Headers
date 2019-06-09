@@ -14,11 +14,11 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mColumns;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)addColumn;
 - (id)columnAtIndex:(unsigned long long)arg1;
 - (unsigned long long)columnCount;
-- (void)dealloc;
 - (id)init;
 - (void)flipColumnsRTL;
 

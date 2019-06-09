@@ -9,6 +9,7 @@
 #import <TVPlayback/AVPlayerViewControllerDelegate-Protocol.h>
 #import <TVPlayback/AVRoutePickerViewDelegate-Protocol.h>
 #import <TVPlayback/TVPCollectionViewDelegate-Protocol.h>
+#import <TVPlayback/TVPMusicNowPlayingSnapshotBackgroundViewDelegate-Protocol.h>
 #import <TVPlayback/TVPMusicNowPlayingViewDelegate-Protocol.h>
 #import <TVPlayback/TVPMusicVideoPlayerViewControllerDelegate-Protocol.h>
 #import <TVPlayback/TVPPlaybackProgressAnimatorDelegate-Protocol.h>
@@ -17,10 +18,10 @@
 #import <TVPlayback/UIGestureRecognizerDelegate-Protocol.h>
 #import <TVPlayback/UIScrollViewDelegate-Protocol.h>
 
-@class MPAVRoute, NSArray, NSDate, NSIndexPath, NSObject, NSOperationQueue, NSString, NSTimer, TVPAudioTransportBarView, TVPB239FingerRestGestureRecognizer, TVPB39TapGestureRecognizer, TVPChapter, TVPDefiniteDurationPlaybackProgress, TVPHardwareButtonEventManager, TVPMusicBarsView, TVPMusicNowPlayingView, TVPMusicVideoPlayerViewController, TVPPlaybackProgressAnimator, TVPScrubbingConfiguration, TVSStateMachine, TVSUIRestrictionsPasscodeEntryViewController, UIDigitizerLongPressGestureRecognizer, UIDigitizerTapGestureRecognizer, UILongPressGestureRecognizer, UIScrollView, UITapGestureRecognizer, _TVPMusicNowPlayingInvalidationContext, _TVPMusicNowPlayingSelectedItemCoordinator, _TVPRoutePickerButton;
+@class MPAVRoute, NSArray, NSDate, NSIndexPath, NSObject, NSOperationQueue, NSString, NSTimer, TVPAudioTransportBarView, TVPB239FingerRestGestureRecognizer, TVPB39TapGestureRecognizer, TVPChapter, TVPDefiniteDurationPlaybackProgress, TVPHardwareButtonEventManager, TVPMusicBarsView, TVPMusicNowPlayingView, TVPMusicVideoPlayerViewController, TVPPlaybackProgressAnimator, TVPScrubbingConfiguration, TVPStateMachine, UIDigitizerLongPressGestureRecognizer, UIDigitizerTapGestureRecognizer, UILongPressGestureRecognizer, UIScrollView, UITapGestureRecognizer, _TVPMusicNowPlayingInvalidationContext, _TVPMusicNowPlayingSelectedItemCoordinator, _TVPRoutePickerButton;
 @protocol TVPMediaItem, TVPPlayback, TVPPlaybackViewControllerDelegate;
 
-@interface TVPMusicNowPlayingViewController : UIViewController <TVPCollectionViewDelegate, TVPMusicNowPlayingViewDelegate, TVPPlaybackProgressAnimatorDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, UIScrollViewDelegate, AVPlayerViewControllerDelegate, AVRoutePickerViewDelegate, TVPMusicVideoPlayerViewControllerDelegate>
+@interface TVPMusicNowPlayingViewController : UIViewController <TVPCollectionViewDelegate, TVPMusicNowPlayingViewDelegate, TVPPlaybackProgressAnimatorDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, UIScrollViewDelegate, AVPlayerViewControllerDelegate, AVRoutePickerViewDelegate, TVPMusicVideoPlayerViewControllerDelegate, TVPMusicNowPlayingSnapshotBackgroundViewDelegate>
 {
     NSOperationQueue *_presentationOperationQueue;
     TVPMusicBarsView *_musicBarsView;
@@ -36,24 +37,23 @@
     TVPB39TapGestureRecognizer *_rightTapGestureRecognizer;
     TVPB39TapGestureRecognizer *_upTapGestureRecognizer;
     TVPB39TapGestureRecognizer *_downTapGestureRecognizer;
-    TVPB39TapGestureRecognizer *_B39SelectGestureRecognizer;
     UILongPressGestureRecognizer *_leftb39LongClickRecognizer;
     UILongPressGestureRecognizer *_rightb39LongClickRecognizer;
     UITapGestureRecognizer *_menuButtonRecognizer;
-    UILongPressGestureRecognizer *_touchRecognizer;
     TVPB239FingerRestGestureRecognizer *_fingerRestedRecognizer;
     _Bool _limitingRemoteInput;
     _Bool _playingItemWasFocused;
     long long _indexForCurrentControls;
     id <TVPMediaItem> _mediaItemForCurrentControls;
     NSIndexPath *_lastFocusedIndexPath;
-    _Bool _isTouchingB239;
     _TVPRoutePickerButton *_routePickerButton;
+    _Bool _autoplay;
     _Bool _isRadioPlayback;
     _Bool _popWhenPlayerStops;
     _Bool _singleCoverOnly;
     _Bool _showAnimatedBackground;
     _Bool _showsInlineVideo;
+    _Bool _showsTransportBarOnPause;
     _Bool _transportBarVisible;
     _Bool _scrubbing;
     _Bool _restrictionsEnforcementPassed;
@@ -62,6 +62,7 @@
     _Bool _viewVisible;
     _Bool _viewSeen;
     _Bool _keepTransportBarVisible;
+    _Bool _needsInitializationInViewDidAppear;
     id <TVPPlaybackViewControllerDelegate> _playbackDelegate;
     NSString *_audioRouteName;
     long long _initialPlaybackType;
@@ -70,7 +71,7 @@
     NSObject<TVPPlayback> *_player;
     _TVPMusicNowPlayingInvalidationContext *_invalidationContext;
     NSTimer *_updateTimer;
-    TVSStateMachine *_stateMachine;
+    TVPStateMachine *_stateMachine;
     TVPAudioTransportBarView *_transportBar;
     TVPPlaybackProgressAnimator *_playbackProgressAnimator;
     TVPDefiniteDurationPlaybackProgress *_definiteDurationPlaybackProgress;
@@ -79,7 +80,6 @@
     NSDate *_lastObserverFireDate;
     double _playlistExitTime;
     NSArray *_mediaItems;
-    TVSUIRestrictionsPasscodeEntryViewController *_restrictionsPasscodeViewController;
     NSString *_restrictionsPasscodePreviousState;
     long long _indexToPlayAfterPasscodePrompt;
     NSIndexPath *_initialIndexPath;
@@ -91,9 +91,12 @@
     TVPMusicVideoPlayerViewController *_videoPlayerViewController;
     TVPHardwareButtonEventManager *_buttonEventManager;
     _TVPMusicNowPlayingSelectedItemCoordinator *_selectedItemCoordinator;
+    UIViewController *_idleViewController;
 }
 
 + (void)initialize;
+@property(retain, nonatomic) UIViewController *idleViewController; // @synthesize idleViewController=_idleViewController;
+@property(nonatomic) _Bool needsInitializationInViewDidAppear; // @synthesize needsInitializationInViewDidAppear=_needsInitializationInViewDidAppear;
 @property(nonatomic) _Bool keepTransportBarVisible; // @synthesize keepTransportBarVisible=_keepTransportBarVisible;
 @property(retain, nonatomic) _TVPMusicNowPlayingSelectedItemCoordinator *selectedItemCoordinator; // @synthesize selectedItemCoordinator=_selectedItemCoordinator;
 @property(retain, nonatomic) TVPHardwareButtonEventManager *buttonEventManager; // @synthesize buttonEventManager=_buttonEventManager;
@@ -111,7 +114,6 @@
 @property(nonatomic) long long indexToPlayAfterPasscodePrompt; // @synthesize indexToPlayAfterPasscodePrompt=_indexToPlayAfterPasscodePrompt;
 @property(retain, nonatomic) NSString *restrictionsPasscodePreviousState; // @synthesize restrictionsPasscodePreviousState=_restrictionsPasscodePreviousState;
 @property(nonatomic) _Bool restrictionsEnforcementPassed; // @synthesize restrictionsEnforcementPassed=_restrictionsEnforcementPassed;
-@property(retain, nonatomic) TVSUIRestrictionsPasscodeEntryViewController *restrictionsPasscodeViewController; // @synthesize restrictionsPasscodeViewController=_restrictionsPasscodeViewController;
 @property(readonly, nonatomic) NSArray *mediaItems; // @synthesize mediaItems=_mediaItems;
 @property(nonatomic, getter=isScrubbing) _Bool scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(nonatomic) double playlistExitTime; // @synthesize playlistExitTime=_playlistExitTime;
@@ -122,10 +124,11 @@
 @property(retain, nonatomic) TVPDefiniteDurationPlaybackProgress *definiteDurationPlaybackProgress; // @synthesize definiteDurationPlaybackProgress=_definiteDurationPlaybackProgress;
 @property(retain, nonatomic) TVPPlaybackProgressAnimator *playbackProgressAnimator; // @synthesize playbackProgressAnimator=_playbackProgressAnimator;
 @property(retain, nonatomic) TVPAudioTransportBarView *transportBar; // @synthesize transportBar=_transportBar;
-@property(retain, nonatomic) TVSStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
+@property(retain, nonatomic) TVPStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
 @property(retain, nonatomic) NSTimer *updateTimer; // @synthesize updateTimer=_updateTimer;
 @property(retain, nonatomic) _TVPMusicNowPlayingInvalidationContext *invalidationContext; // @synthesize invalidationContext=_invalidationContext;
 @property(retain, nonatomic) NSObject<TVPPlayback> *player; // @synthesize player=_player;
+@property(nonatomic) _Bool showsTransportBarOnPause; // @synthesize showsTransportBarOnPause=_showsTransportBarOnPause;
 @property(nonatomic) long long initialViewMode; // @synthesize initialViewMode=_initialViewMode;
 @property(retain, nonatomic) MPAVRoute *endpointRoute; // @synthesize endpointRoute=_endpointRoute;
 @property(nonatomic) _Bool showsInlineVideo; // @synthesize showsInlineVideo=_showsInlineVideo;
@@ -136,11 +139,15 @@
 @property(nonatomic) _Bool singleCoverOnly; // @synthesize singleCoverOnly=_singleCoverOnly;
 @property(nonatomic) _Bool popWhenPlayerStops; // @synthesize popWhenPlayerStops=_popWhenPlayerStops;
 @property(nonatomic) _Bool isRadioPlayback; // @synthesize isRadioPlayback=_isRadioPlayback;
+@property(nonatomic) _Bool autoplay; // @synthesize autoplay=_autoplay;
 - (void).cxx_destruct;
 - (void)_registerStateMachineHandlers;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)_scrubScrollViewWillEndDraggingWithVelocity:(struct CGPoint)arg1 targetContentOffset:(inout struct CGPoint *)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
+- (_Bool)nowPlayingSnapshotBackgroundViewShouldPerformSnapshot:(id)arg1;
+- (_Bool)musicVideoPlayerViewControllerShouldDismiss:(id)arg1;
+- (void)musicVideoPlayerSelectedAddButton:(id)arg1;
 - (void)musicVideoPlayerViewControllerWillDisappear:(id)arg1;
 - (void)musicVideoPlayerViewControllerWillAppear:(id)arg1;
 - (struct CGRect)musicVideoPlayerViewController:(id)arg1 rectForPresentationAnimationTransitionInSourceView:(id)arg2;
@@ -150,22 +157,24 @@
 - (_Bool)playerViewControllerShouldDismiss:(id)arg1;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
 - (void)collectionView:(id)arg1 didFocusItemAtIndexPath:(id)arg2;
-- (void)collectionView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
+- (void)_dismissVideoViewController;
 - (_Bool)_isScrubbingAllowed;
 - (_Bool)_shouldShowTransportBar;
 - (_Bool)_isAudioOnDemand;
-- (void)_removeRestrictionsPasscodeViewController;
 - (_Bool)_isMediaItemExplicit:(id)arg1;
 - (_Bool)_shouldShowRestrictionsPromptForMediaItem:(id)arg1;
 - (_Bool)_shouldRestrictExplicitTracks;
 - (_Bool)_restrictionsEnabled;
+- (void)_updateIdleViewControllerIfNeeded;
+- (void)_removeIdleViewControllerAndRestoreLayout:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_setIdleViewController:(id)arg1 forMediaItem:(id)arg2;
+- (void)updateIdleViewControllerIfNeeded;
 - (void)_transitionToPlaylistWithAfterCurrentStateTransitionBlock:(CDUnknownBlockType *)arg1 animated:(_Bool)arg2;
 - (_Bool)_isUnknownItemType;
-- (void)_setNowPlayingInfo:(id)arg1;
 - (void)configureVideoForVisibleCellsWithPlayingIndexPath:(id)arg1;
 - (void)configureVideoForVisibleCells;
 - (void)_updateNowPlayingViewAnimated:(_Bool)arg1;
@@ -195,15 +204,12 @@
 - (void)_handleRightLongClick:(id)arg1;
 - (void)_handleLeftLongClick:(id)arg1;
 - (void)_handleLongClick:(id)arg1;
-- (void)_handleLongPress:(id)arg1;
 - (void)_handleSelectButton:(id)arg1;
 - (void)_fingerRestRecognized:(id)arg1;
-- (void)_handleB39Select:(id)arg1;
 - (void)_handleDownTap:(id)arg1;
 - (void)_handleUpTap:(id)arg1;
 - (void)_handleRightTap:(id)arg1;
 - (void)_handleLeftTap:(id)arg1;
-- (void)_handleFocusMovementFailed:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
 - (id)preferredFocusEnvironments;
@@ -221,7 +227,7 @@
 - (void)nowPlayingViewDidSelectContextMenu:(id)arg1;
 - (void)nowPlayingViewPlaylistDidBecomeHidden:(id)arg1;
 - (void)nowPlayingView:(id)arg1 playlistWillBecomeHiddenWithExecutionBlock:(CDUnknownBlockType)arg2;
-- (void)nowPlayingViewPlaylistWillBecomeVisible:(id)arg1;
+- (void)nowPlayingView:(id)arg1 playlistWillBecomeVisibleWithExecutionBlock:(CDUnknownBlockType)arg2;
 - (void)_showContextMenu;
 - (void)_setPlayerElapsedTimeFromScrubberPosition;
 - (double)_scrubPercentageBySnappingToNeareastChapterForScrubPercentage:(double)arg1 withScrollView:(id)arg2 horizontalVelocity:(double)arg3;

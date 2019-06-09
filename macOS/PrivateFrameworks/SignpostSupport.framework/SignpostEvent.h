@@ -91,7 +91,7 @@
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3 unixDate:(struct timeval *)arg4 unixTimeZone:(struct timezone *)arg5 stackFrames:(id)arg6;
 - (BOOL)_overridesOwnTime;
 - (id)initWithDictionary:(id)arg1;
-- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1;
+- (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1 shouldRedact:(BOOL)arg2;
 - (id)humanReadableType;
 
 // Remaining properties

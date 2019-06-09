@@ -36,7 +36,8 @@
 + (id)compoundPredicateForKey:(id)arg1 option:(id)arg2 andSubPredicate:(id)arg3;
 + (id)bitwiseAndPredicateForKey:(id)arg1 andNumber:(long long)arg2 comparingToNumber:(long long)arg3 withComparisonType:(unsigned long long)arg4;
 + (void)initialize;
-@property(readonly, nonatomic) NSString *displayName;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) __weak NSString *displayName;
 - (BOOL)isKindOfEntityNamed:(id)arg1;
 - (BOOL)nts_HasChangedProperties;
 - (id)nts_ChangedProperties;
@@ -70,7 +71,6 @@
 - (BOOL)_isPublicRecord;
 - (id)_table;
 - (void)awakeFromInsert;
-- (void)dealloc;
 - (id)initWithEntity:(id)arg1 uniqueId:(id)arg2 insertIntoManagedObjectContext:(id)arg3;
 - (id)initWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2;
 - (unsigned long long)nameOrderWithFormatter:(id)arg1;

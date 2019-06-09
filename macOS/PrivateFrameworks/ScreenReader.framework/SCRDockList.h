@@ -37,7 +37,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)handleUntaggedOperationWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)handleEvent:(id)arg1 request:(id)arg2;
 - (BOOL)_handleDockItemReorder:(id)arg1;
-- (BOOL)addContainerSummaryToRequest:(id)arg1;
 - (BOOL)tabDockSelectionChanged;
 - (void)_delayedEchoCurrentSelection;
 - (BOOL)childrenShouldAddIndexToDescription;

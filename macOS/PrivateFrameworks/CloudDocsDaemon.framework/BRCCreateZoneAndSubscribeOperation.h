@@ -31,7 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)createActivity;
-- (id)initWithServerZone:(id)arg1;
+- (id)initWithClientZone:(id)arg1;
 - (id)initWithSession:(id)arg1 zoneID:(id)arg2;
 
 // Remaining properties

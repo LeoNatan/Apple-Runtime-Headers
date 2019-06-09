@@ -6,29 +6,25 @@
 
 #import <VoiceShortcuts/VCCompanionSyncSession.h>
 
-@class NSArray, NSMutableArray, NSObject;
-@protocol OS_dispatch_queue;
+@class NSDictionary, NSMutableArray;
 
 @interface VCCompanionSyncOutgoingSession : VCCompanionSyncSession
 {
-    NSObject<OS_dispatch_queue> *_changesIsolationQueue;
-    NSMutableArray *_mutablePendingChanges;
-    NSMutableArray *_mutableSentChanges;
+    NSMutableArray *_pendingChanges;
+    NSDictionary *_metadata;
+    NSMutableArray *_sentChanges;
+    NSMutableArray *_syncedChanges;
 }
 
-@property(readonly, nonatomic) NSMutableArray *mutableSentChanges; // @synthesize mutableSentChanges=_mutableSentChanges;
-@property(readonly, nonatomic) NSMutableArray *mutablePendingChanges; // @synthesize mutablePendingChanges=_mutablePendingChanges;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *changesIsolationQueue; // @synthesize changesIsolationQueue=_changesIsolationQueue;
++ (int)sessionType;
+@property(readonly, nonatomic) NSMutableArray *syncedChanges; // @synthesize syncedChanges=_syncedChanges;
+@property(readonly, nonatomic) NSMutableArray *sentChanges; // @synthesize sentChanges=_sentChanges;
+@property(readonly, copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(readonly, nonatomic) NSMutableArray *pendingChanges; // @synthesize pendingChanges=_pendingChanges;
 - (void).cxx_destruct;
-- (_Bool)syncSession:(id)arg1 resetDataStoreWithError:(id *)arg2;
-- (void)syncSession:(id)arg1 applyChanges:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)syncSession:(id)arg1 successfullySynced:(id)arg2;
 - (int)syncSession:(id)arg1 enqueueChanges:(CDUnknownBlockType)arg2 error:(id *)arg3;
-- (void)markChangeAsSent:(id)arg1;
-- (id)nextPendingChange;
-@property(readonly, nonatomic) NSArray *syncedChanges;
-@property(readonly, nonatomic) NSArray *pendingChanges;
-- (int)sessionType;
-- (id)initWithSYSession:(id)arg1 changeSetToSync:(id)arg2;
+- (id)initWithSYSession:(id)arg1 service:(id)arg2 syncDataHandlers:(id)arg3 changeSet:(id)arg4 metadata:(id)arg5;
 
 @end
 

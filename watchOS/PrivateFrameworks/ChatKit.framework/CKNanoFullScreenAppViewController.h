@@ -46,12 +46,14 @@
 - (id)initWithBalloonPlugin:(id)arg1 dataSource:(id)arg2;
 @property(readonly, nonatomic) int browserPresentationStyle;
 @property(nonatomic) NSString *conversationID;
+@property(nonatomic) _Bool isPrimaryViewController;
 @property(nonatomic) _Bool isiMessage;
 @property(readonly, nonatomic) _Bool shouldShowChatChrome;
 @property(retain, nonatomic) IMBalloonPluginDataSource *balloonPluginDataSource;
 @property(readonly, nonatomic) IMBalloonPlugin *balloonPlugin;
 @property(nonatomic) __weak NSObject<CKBrowserViewControllerSendDelegate> *sendDelegate;
 @property(retain, nonatomic) UIViewController *presentationViewController;
+@property(readonly, nonatomic, getter=isDismissing) _Bool dismissing;
 @property(readonly, nonatomic) _Bool shouldSuppressEntryView;
 @property(readonly, nonatomic) _Bool mayBeKeptInViewHierarchy;
 @property(readonly, nonatomic) _Bool supportsQuickView;
@@ -69,7 +71,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly, nonatomic) struct CGRect horizontalSwipeExclusionRect;
-@property(nonatomic) _Bool isPrimaryViewController;
 @property(readonly, nonatomic) int parentModalPresentationStyle;
 @property(readonly, nonatomic) __weak id <UIViewControllerTransitioningDelegate> parentTransitioningDelegate;
 @property(retain, nonatomic) NSArray *recipients;

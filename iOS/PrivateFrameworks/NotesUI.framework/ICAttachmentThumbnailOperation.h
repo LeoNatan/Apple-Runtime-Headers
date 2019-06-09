@@ -4,20 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSBlockOperation.h>
+#import <Foundation/NSOperation.h>
 
-@class ICAttachmentPreviewImageLoader, NSCache, NSManagedObjectID, NSMutableArray, NSString, NSURL;
+#import <NotesUI/ICAttachmentThumbnailOperation-Protocol.h>
 
-@interface ICAttachmentThumbnailOperation : NSBlockOperation
+@class ICAppearanceInfo, ICAttachmentPreviewImageLoader, ICAttachmentThumbnailOperationQueue, ICThumbnailDataCache, NSManagedObjectID, NSMutableArray, NSString, NSURL;
+
+@interface ICAttachmentThumbnailOperation : NSOperation <ICAttachmentThumbnailOperation>
 {
     _Bool _attachmentPropertiesCaptured;
     _Bool _showAsFileIcon;
     _Bool _isMovie;
-    NSString *_cacheKey;
     double _scale;
-    NSCache *_cache;
+    ICAppearanceInfo *_appearanceInfo;
+    ICThumbnailDataCache *_cache;
+    NSString *_cacheKey;
     CDUnknownBlockType _fallbackBlock;
     CDUnknownBlockType _processingBlock;
+    ICAttachmentThumbnailOperationQueue *_queue;
     NSMutableArray *_completionBlocks;
     NSManagedObjectID *_attachmentID;
     ICAttachmentPreviewImageLoader *_attachmentPreviewImageLoader;
@@ -34,17 +38,21 @@
 @property(nonatomic) _Bool attachmentPropertiesCaptured; // @synthesize attachmentPropertiesCaptured=_attachmentPropertiesCaptured;
 @property(retain, nonatomic) NSManagedObjectID *attachmentID; // @synthesize attachmentID=_attachmentID;
 @property(retain, nonatomic) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
+@property(nonatomic) __weak ICAttachmentThumbnailOperationQueue *queue; // @synthesize queue=_queue;
 @property(copy, nonatomic) CDUnknownBlockType processingBlock; // @synthesize processingBlock=_processingBlock;
 @property(copy, nonatomic) CDUnknownBlockType fallbackBlock; // @synthesize fallbackBlock=_fallbackBlock;
-@property(retain, nonatomic) NSCache *cache; // @synthesize cache=_cache;
+@property(retain, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
+@property(retain, nonatomic) ICThumbnailDataCache *cache; // @synthesize cache=_cache;
+@property(retain, nonatomic) ICAppearanceInfo *appearanceInfo; // @synthesize appearanceInfo=_appearanceInfo;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize minSize; // @synthesize minSize=_minSize;
-@property(retain, nonatomic) NSString *cacheKey; // @synthesize cacheKey=_cacheKey;
 - (void).cxx_destruct;
+- (void)requestThumbnail;
 - (void)main;
 - (void)addCompletionBlock:(CDUnknownBlockType)arg1;
+- (_Bool)isMatchingOperationForCacheKey:(id)arg1 cache:(id)arg2;
 - (void)capturePropertiesFromAttachment:(id)arg1;
-- (id)initWithAttachment:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 cache:(id)arg4 cacheKey:(id)arg5 processingBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7 fallbackBlock:(CDUnknownBlockType)arg8;
+- (id)initWithAttachment:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 appearanceInfo:(id)arg4 cache:(id)arg5 cacheKey:(id)arg6 processingBlock:(CDUnknownBlockType)arg7 completionBlock:(CDUnknownBlockType)arg8 fallbackBlock:(CDUnknownBlockType)arg9 queue:(id)arg10;
 
 @end
 

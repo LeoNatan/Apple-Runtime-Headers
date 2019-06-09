@@ -15,12 +15,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)areStopsOverridden;
 - (void)setStops:(id)arg1;
 - (id)stops;
-- (void)dealloc;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (_Bool)isAnythingOverridden;
 - (id)initWithDefaults;

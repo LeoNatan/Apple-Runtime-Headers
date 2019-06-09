@@ -7,30 +7,32 @@
 #import <FinderKit/FI_TViewController.h>
 
 #import <FinderKit/NSTextFieldDelegate-Protocol.h>
+#import <FinderKit/TMarkTornDown-Protocol.h>
 #import <FinderKit/TSearchCriteriaViewControllerDelegate-Protocol.h>
 #import <FinderKit/TSearchScopeSliceControllerDelegate-Protocol.h>
 
 @class FI_TBrowserContainerController, NSDictionary, NSSearchField, NSSet, NSString;
 
 __attribute__((visibility("hidden")))
-@interface FI_TSearchSliceController : FI_TViewController <NSTextFieldDelegate, TSearchScopeSliceControllerDelegate, TSearchCriteriaViewControllerDelegate>
+@interface FI_TSearchSliceController : FI_TViewController <NSTextFieldDelegate, TSearchScopeSliceControllerDelegate, TSearchCriteriaViewControllerDelegate, TMarkTornDown>
 {
     struct TNSRef<NSStackView, void> _slicesStackView;
     struct TNSRef<FI_TSearchScopeSliceController, void> _scopeSliceController;
     struct TNSRef<FI_TSearchCriteriaViewController, void> _criteriaController;
     NSSearchField *_toolbarSearchField;
-    FI_TBrowserContainerController *_containerController;
+    struct TNSWeakPtr<FI_TBrowserContainerController, void> _weakContainerController;
     struct TNSRef<NSSet, void> _searchFilterUTIs;
     _Bool _isSaveable;
     _Bool _configuring;
+    _Bool tornDown;
 }
 
 + (void)copySuggestionsFrom:(id)arg1 to:(id)arg2;
 + (void)setSearchFieldState:(id)arg1 withState:(id)arg2;
 + (id)searchFieldState:(id)arg1;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 @property _Bool configuring; // @synthesize configuring=_configuring;
 @property _Bool isSaveable; // @synthesize isSaveable=_isSaveable;
-@property(nonatomic) FI_TBrowserContainerController *containerController; // @synthesize containerController=_containerController;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)updateUIForAction;
@@ -82,6 +84,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *currentScopeString;
 @property(readonly, nonatomic) _Bool scopeSliceIsVisible;
 - (void)toggleSlices;
+@property(nonatomic) __weak FI_TBrowserContainerController *containerController; // @dynamic containerController;
 @property(copy) NSSet *searchFilterUTIs; // @dynamic searchFilterUTIs;
 - (void)aboutToTearDown;
 - (void)viewLoaded;

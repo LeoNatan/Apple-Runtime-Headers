@@ -15,5 +15,20 @@
 + (id)tsce_periodCharacterSet;
 + (id)tsce_characterSetRequiringSingleQuotes;
 + (id)tsce_singleQuoteCharacterSet;
++ (id)tswp_lineBreakingCharacterSet;
++ (id)tswp_postSmartSet;
++ (id)tswp_preSmartSet;
++ (id)tswp_allQuotesCharacterSetExcludingRight;
++ (id)tswp_allQuotesCharacterSetExcludingLeft;
++ (id)tswp_variationSelectorCharacterSet;
++ (id)tswp_curlyQuotesCharacterSet;
++ (id)tswp_singleRightQuoteCharacterSet;
++ (id)tswp_singleLeftQuoteCharacterSet;
++ (id)tswp_smartSingleQuotesCharacterSet;
++ (id)tswp_spaceCharacterSet;
++ (id)tswp_invisibleCharacterSet;
++ (id)tswp_breakingSpaceCharacterSet;
++ (id)tswp_sentenceDelimiterCharacterSet;
++ (id)tswp_characterSetWithCharactersInArray:(const unsigned short *)arg1 length:(unsigned long long)arg2;
 @end
 

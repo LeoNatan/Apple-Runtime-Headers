@@ -60,8 +60,8 @@ typedef struct {
     unsigned int shouldAllowRecentNotificationsReveal:1;
     unsigned int shouldAttemptToFinishLongLookTransition:1;
     unsigned int shouldFinishLongLookTransitionForNotification:1;
+    unsigned int shouldHintForDefaultAction:1;
     unsigned int staticContentProviderForNotificationRequest:1;
-    unsigned int isPresentingNotificationManagementSuggestionForNotificationRequest:1;
     unsigned int auxiliaryOptionsContentProviderForNotificationRequest:1;
     unsigned int didEndDisplayingCellForNotificationRequest:1;
     unsigned int shouldAllowInteractionsForNotificationRequest:1;
@@ -83,6 +83,7 @@ typedef struct {
     unsigned int hideHomeAffordanceAnimationSettings:1;
     unsigned int unhideHomeAffordanceAnimationSettings:1;
     unsigned int settleHomeAffordanceAnimationBehaviorDescription:1;
+    unsigned int hasCaptureOnlyBackgroundViewForShadow:1;
     unsigned int requestsExpandingCoalescedBundleForNotificationRequest:1;
     unsigned int requestsCoalescingExpandedBundleForCoalescingIdentifier:1;
     unsigned int requestsClearingNotificationRequestsForCoalescingIdentifier:1;
@@ -92,7 +93,7 @@ typedef struct {
     unsigned int requestsCoalescingNotificationRequest:1;
     unsigned int sectionSettingsForSectionIdentifier:1;
     unsigned int requestsPresentingManagementView:1;
-} CDStruct_ef5db9df;
+} CDStruct_a7a354cd;
 
 typedef struct {
     unsigned int significantUserInteraction:1;

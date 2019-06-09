@@ -42,12 +42,15 @@ __attribute__((visibility("hidden")))
     NSString *_networkRequestUri;
     unsigned int _networkResponseHeaderSize;
     NSString *_networkTaskDescription;
+    NSString *_optionsDiscretionaryNetworkBehavior;
+    NSString *_optionsDuetPreClearedMode;
     NSString *_optionsQualityOfService;
     NSString *_optionsSourceApplicationBundleIdentifier;
     NSString *_optionsSourceApplicationSecondaryIdentifier;
     unsigned int _optionsTimeoutIntervalForRequest;
     unsigned int _optionsTimeoutIntervalForResource;
     _Bool _networkConnectionReused;
+    _Bool _networkIsDiscretionary;
     _Bool _optionsAllowExpensiveAccess;
     _Bool _optionsAllowPowerNapScheduling;
     _Bool _optionsAppleIdContext;
@@ -79,6 +82,7 @@ __attribute__((visibility("hidden")))
         unsigned int optionsTimeoutIntervalForRequest:1;
         unsigned int optionsTimeoutIntervalForResource:1;
         unsigned int networkConnectionReused:1;
+        unsigned int networkIsDiscretionary:1;
         unsigned int optionsAllowExpensiveAccess:1;
         unsigned int optionsAllowPowerNapScheduling:1;
         unsigned int optionsAppleIdContext:1;
@@ -88,6 +92,8 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
+@property(retain, nonatomic) NSString *optionsDuetPreClearedMode; // @synthesize optionsDuetPreClearedMode=_optionsDuetPreClearedMode;
+@property(retain, nonatomic) NSString *optionsDiscretionaryNetworkBehavior; // @synthesize optionsDiscretionaryNetworkBehavior=_optionsDiscretionaryNetworkBehavior;
 @property(nonatomic) _Bool optionsTlsPinningRequired; // @synthesize optionsTlsPinningRequired=_optionsTlsPinningRequired;
 @property(nonatomic) _Bool optionsAppleIdContext; // @synthesize optionsAppleIdContext=_optionsAppleIdContext;
 @property(retain, nonatomic) NSString *optionsSourceApplicationSecondaryIdentifier; // @synthesize optionsSourceApplicationSecondaryIdentifier=_optionsSourceApplicationSecondaryIdentifier;
@@ -111,6 +117,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned long long timestampC2Now; // @synthesize timestampC2Now=_timestampC2Now;
 @property(nonatomic) unsigned long long timestampC2Start; // @synthesize timestampC2Start=_timestampC2Start;
 @property(nonatomic) unsigned long long timestampC2Init; // @synthesize timestampC2Init=_timestampC2Init;
+@property(nonatomic) _Bool networkIsDiscretionary; // @synthesize networkIsDiscretionary=_networkIsDiscretionary;
 @property(retain, nonatomic) NSString *networkRequestUri; // @synthesize networkRequestUri=_networkRequestUri;
 @property(nonatomic) unsigned long long networkStatusCode; // @synthesize networkStatusCode=_networkStatusCode;
 @property(retain, nonatomic) C2MPError *networkFatalError; // @synthesize networkFatalError=_networkFatalError;
@@ -139,6 +146,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasOptionsDuetPreClearedMode;
+@property(readonly, nonatomic) _Bool hasOptionsDiscretionaryNetworkBehavior;
 @property(nonatomic) _Bool hasOptionsTlsPinningRequired;
 @property(nonatomic) _Bool hasOptionsAppleIdContext;
 @property(readonly, nonatomic) _Bool hasOptionsSourceApplicationSecondaryIdentifier;
@@ -162,6 +171,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasTimestampC2Now;
 @property(nonatomic) _Bool hasTimestampC2Start;
 @property(nonatomic) _Bool hasTimestampC2Init;
+@property(nonatomic) _Bool hasNetworkIsDiscretionary;
 @property(readonly, nonatomic) _Bool hasNetworkRequestUri;
 @property(nonatomic) _Bool hasNetworkStatusCode;
 @property(readonly, nonatomic) _Bool hasNetworkFatalError;

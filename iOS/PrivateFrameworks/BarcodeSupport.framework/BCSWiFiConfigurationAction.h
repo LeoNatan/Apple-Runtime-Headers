@@ -11,7 +11,9 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (_Bool)isWiFiAction;
 - (id)actionPickerItems;
+- (void)performDefaultActionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performDefaultAction;
 - (id)debugDescriptionExtraInfoDictionary;
 - (id)localizedDefaultActionDescription;

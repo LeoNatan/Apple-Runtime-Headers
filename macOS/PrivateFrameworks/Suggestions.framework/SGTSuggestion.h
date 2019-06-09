@@ -29,6 +29,10 @@
 @property(nonatomic) BOOL enforceStrictMatch;
 @property(nonatomic) BOOL forceLastPosition;
 @property(nonatomic) BOOL intermediateResult;
+- (long long)_suggestionType;
+- (void)_setSuggestionType:(long long)arg1;
+- (void)_setIsRecent:(BOOL)arg1;
+- (BOOL)_isRecent;
 @property(readonly) BOOL isTopHit;
 - (void)_setIsTopHitCandidate:(BOOL)arg1;
 - (BOOL)_isTopHitCandidate;
@@ -36,6 +40,8 @@
 - (id)_propertyListRepresentation;
 - (id)_identifier;
 - (BOOL)_shouldNotBeIncludedInRecents;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToSuggestion:(id)arg1;
 - (id)description;
 - (BOOL)attributeName:(id)arg1 isValidForScope:(long long)arg2;
 - (long long)scopeForAttributeName:(id)arg1;

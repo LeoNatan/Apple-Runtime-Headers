@@ -4,14 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotoFoundation/PFInitialization.h>
+#import <PhotoFoundation/PFInitializationWorkItemTrigger.h>
 
-@interface PFStartupInitializationTrigger : PFInitialization
+@interface PFStartupInitializationTrigger : PFInitializationWorkItemTrigger
 {
 }
 
 + (Class)workItemClass;
-+ (void)performInitialization;
 
 @end
 

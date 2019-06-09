@@ -13,10 +13,13 @@
 @interface MapsSuggestionsGEOMapItemDeduper : MapsSuggestionsBaseDeduper <MapsSuggestionsDeduper>
 {
     int _type;
+    struct NSString *_name;
 }
 
 + (_Bool)isEnabled;
+- (void).cxx_destruct;
 - (_Bool)dedupeByEnrichingEntry:(id)arg1 withEntry:(id)arg2;
+@property(readonly, nonatomic) NSString *uniqueName;
 - (id)initWithSacrificedType:(int)arg1;
 
 // Remaining properties
@@ -24,7 +27,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
-@property(readonly, nonatomic) NSString *uniqueName;
 
 @end
 

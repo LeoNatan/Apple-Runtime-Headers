@@ -6,11 +6,30 @@
 
 #import <UIKit/UIImage.h>
 
-@interface UIImage (MapKitExtras)
+#import <MapKit/MKArtworkImageSource-Protocol.h>
+
+@class NSString;
+
+@interface UIImage (MapKitExtras) <MKArtworkImageSource>
 + (id)_mapkit_imageNamed:(id)arg1 compatibleWithTraitCollection:(id)arg2;
 + (id)_mapkit_imageNamed:(id)arg1;
++ (id)_mk_newImageForCorner:(unsigned int)arg1 cornerRadius:(float)arg2;
++ (id)_mapkit_imageFromVKImage:(id)arg1;
++ (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 scale:(float)arg3 withWidthPaddingMultiple:(float)arg4 coordinate:(struct CLLocationCoordinate2D)arg5;
++ (id)_mapkit_transitArtworkImageWithDataSource:(id)arg1 size:(int)arg2 scale:(float)arg3 coordinate:(struct CLLocationCoordinate2D)arg4;
+- (id)_mapkit_imageWithAlpha:(float)arg1;
 - (id)_mapkit_templateImageWithTintColor:(id)arg1;
 - (id)_mapkit_horizontallyFlippedImage;
 - (id)_mapkit_dimmedImage;
+- (id)badgeImageToDisplayWithScreenScale:(float)arg1;
+- (id)imageToDisplayWithScreenScale:(float)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly, nonatomic) _Bool primaryImage;
+@property(readonly, nonatomic) _Bool shouldHighlight;
+@property(readonly) Class superclass;
 @end
 

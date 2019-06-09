@@ -14,13 +14,13 @@
     id _participant;
 }
 
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)displayString;
 @property(retain, nonatomic) id participant;
 - (void)setCalAttendeeName:(id)arg1;
 - (id)initWithComposeRecipient:(id)arg1;
-- (void)dealloc;
 
 @end
 

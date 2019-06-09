@@ -17,9 +17,9 @@
     int _type;
 }
 
-@property(retain, nonatomic) NSString *resourceName; // @synthesize resourceName=_resourceName;
-@property(nonatomic) int type; // @synthesize type=_type;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,10 +28,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *resourceName;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
+@property(nonatomic) int type;
 
 @end
 

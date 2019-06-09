@@ -10,10 +10,6 @@
 {
 }
 
-+ (void)_promptAndWait:(id)arg1;
-+ (_Bool)_deleteAppWithBundleIdentifier:(id)arg1;
-+ (_Bool)_restoreAppWithBundleIdentifier:(id)arg1;
-+ (void)setTVAppVisible:(_Bool)arg1 force:(_Bool)arg2 silent:(_Bool)arg3;
 + (void)setTVAppAllowed:(_Bool)arg1 silent:(_Bool)arg2;
 + (void)setTVAppAllowed:(_Bool)arg1;
 

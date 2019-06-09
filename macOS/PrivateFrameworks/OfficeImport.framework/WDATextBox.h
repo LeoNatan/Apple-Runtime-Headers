@@ -8,6 +8,7 @@
 
 @class NSNumber, WDAContent, WDDocument, WDText;
 
+__attribute__((visibility("hidden")))
 @interface WDATextBox : NSObject
 {
     WDText *mText;

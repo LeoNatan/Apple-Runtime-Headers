@@ -16,6 +16,7 @@
     SiriUIKeyline *_bottomKeyline;
     SiriUIContentButton *_snippetPunchOutButton;
     UIView *_snippetBackgroundView;
+    UIView *_materialView;
     UIView *_clippingContainerView;
     UIView *_cancelledTouchPreventionView;
     UILabel *_cancelledLabel;

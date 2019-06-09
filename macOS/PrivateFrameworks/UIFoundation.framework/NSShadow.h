@@ -35,7 +35,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithShadow:(id)arg1;
 - (void)set;
-- (void)_applyToCGContext:(struct CGContext *)arg1 graphicsContext:(id)arg2;
+- (void)applyToGraphicsContext:(id)arg1;
 @property double shadowBlurRadius;
 @property struct CGSize shadowOffset;
 - (id)init;

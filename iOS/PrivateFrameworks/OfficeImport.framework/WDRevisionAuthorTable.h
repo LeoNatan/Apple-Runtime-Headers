@@ -15,13 +15,13 @@ __attribute__((visibility("hidden")))
     WDDocument *mDocument;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)authorAddLookup:(id)arg1;
 - (void)addAuthor:(id)arg1;
 - (id)authorAt:(unsigned long long)arg1;
 - (unsigned long long)authorCount;
 - (id)authors;
-- (void)dealloc;
 - (id)initWithDocument:(id)arg1;
 
 @end

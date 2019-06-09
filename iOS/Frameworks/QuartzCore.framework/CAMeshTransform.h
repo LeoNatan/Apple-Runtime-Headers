@@ -31,6 +31,8 @@
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)inverseMesh;
+- (id)subdividedMesh:(int)arg1;
 - (id)_subdivideToDepth:(long long)arg1;
 - (id)_data;
 - (_Bool)_constructWithData:(id)arg1;

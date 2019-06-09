@@ -4,17 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class CLLocation, GEOMapItemStorage, NSArray, NSData, NSDate, NSDictionary, NSString, NSUUID, RTLocation, RTPredictedLocationOfInterest;
+@class GEOMapItemStorage, NSArray, NSData, NSDate, NSDictionary, NSString, NSUUID, RTLocation, RTMapServiceOptions;
 
 @protocol RTHelperServiceProtocol
-- (void)fetchMapsURLFromGeoMapItemHandle:(NSData *)arg1 handler:(void (^)(NSURL *, NSError *))arg2;
-- (void)calculateETAFromOrigin:(CLLocation *)arg1 toDestination:(RTPredictedLocationOfInterest *)arg2 handler:(void (^)(unsigned long long, unsigned long long, NSString *, RTMapItem *, NSError *))arg3;
+- (void)fetchMapItemsFromAddressDictionary:(NSDictionary *)arg1 options:(RTMapServiceOptions *)arg2 handler:(void (^)(NSArray *, NSError *))arg3;
+- (void)fetchMapItemsFromAddressString:(NSString *)arg1 options:(RTMapServiceOptions *)arg2 handler:(void (^)(NSArray *, NSError *))arg3;
+- (void)fetchMapItemsFromLocations:(NSArray *)arg1 accessPoints:(NSArray *)arg2 startDate:(NSDate *)arg3 endDate:(NSDate *)arg4 options:(RTMapServiceOptions *)arg5 handler:(void (^)(NSArray *, NSError *))arg6;
+- (void)fetchMapItemsFromLocation:(RTLocation *)arg1 options:(RTMapServiceOptions *)arg2 handler:(void (^)(NSArray *, NSError *))arg3;
+- (void)fetchMapItemsFromNaturalLanguageQuery:(NSString *)arg1 location:(RTLocation *)arg2 options:(RTMapServiceOptions *)arg3 handler:(void (^)(NSArray *, NSError *))arg4;
 - (void)createMapItemWithIdentifier:(NSUUID *)arg1 geoMapItemStorage:(GEOMapItemStorage *)arg2 source:(unsigned long long)arg3 creationDate:(NSDate *)arg4 handler:(void (^)(RTMapItem *, NSError *))arg5;
-- (void)fetchMapItemsFromAddressDictionary:(NSDictionary *)arg1 handler:(void (^)(NSArray *, NSError *))arg2;
-- (void)fetchMapItemsFromAddressString:(NSString *)arg1 handler:(void (^)(NSArray *, NSError *))arg2;
-- (void)fetchMapItemsFromLocations:(NSArray *)arg1 accessPoints:(NSArray *)arg2 startDate:(NSDate *)arg3 endDate:(NSDate *)arg4 handler:(void (^)(NSArray *, NSError *))arg5;
-- (void)fetchMapItemsFromLocation:(RTLocation *)arg1 handler:(void (^)(NSArray *, NSError *))arg2;
-- (void)fetchMapItemsFromNaturalLanguageQuery:(NSString *)arg1 location:(RTLocation *)arg2 handler:(void (^)(NSArray *, NSError *))arg3;
-- (void)fetchMapItemFromHandle:(NSData *)arg1 handler:(void (^)(RTMapItem *, NSError *))arg2;
+- (void)fetchMapItemFromHandle:(NSData *)arg1 options:(RTMapServiceOptions *)arg2 handler:(void (^)(RTMapItem *, NSError *))arg3;
 @end
 

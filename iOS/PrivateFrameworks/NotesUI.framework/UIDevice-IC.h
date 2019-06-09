@@ -10,6 +10,7 @@
 + (_Bool)ic_isLargeiPad;
 + (_Bool)ic_isPlusiPhone;
 + (_Bool)ic_isiPhone;
++ (_Bool)ic_isSmalliPhone;
 + (_Bool)ic_isiPad;
 @end
 

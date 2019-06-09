@@ -13,12 +13,12 @@
 
 @interface CKAsset : NSObject <CKRecordValue, NSSecureCoding>
 {
+    BOOL _shouldReadAssetContentUsingClientProxy;
     BOOL _wasCached;
     BOOL _hasSize;
     BOOL _uploaded;
     BOOL _downloaded;
     BOOL _shouldReadRawEncryptedData;
-    NSURL *_fileURL;
     NSString *_downloadURLTemplate;
     CKRecord *_record;
     NSString *_recordKey;
@@ -34,12 +34,14 @@
     NSURL *_constructedAssetDownloadURL;
     NSString *_constructedAssetDownloadURLTemplate;
     unsigned long long _constructedAssetEstimatedSize;
+    NSURL *_realPathURL;
     NSData *_signature;
     unsigned long long _size;
     unsigned long long _paddedFileSize;
     NSNumber *_deviceID;
     NSNumber *_fileID;
     NSNumber *_generationCountToSave;
+    NSURL *_fileURL;
     NSData *_assetContent;
     NSString *_itemTypeHint;
     CKAssetCopyInfo *_assetCopyInfo;
@@ -93,14 +95,17 @@
 @property(retain, nonatomic) NSDate *downloadURLExpiration; // @synthesize downloadURLExpiration=_downloadURLExpiration;
 @property(retain, nonatomic) NSString *UUID; // @synthesize UUID=_UUID;
 @property(retain, nonatomic) CKAssetCopyInfo *assetCopyInfo; // @synthesize assetCopyInfo=_assetCopyInfo;
+@property(readonly, nonatomic) BOOL shouldReadAssetContentUsingClientProxy; // @synthesize shouldReadAssetContentUsingClientProxy=_shouldReadAssetContentUsingClientProxy;
 @property(retain, nonatomic) NSString *itemTypeHint; // @synthesize itemTypeHint=_itemTypeHint;
 @property(copy, nonatomic) NSData *assetContent; // @synthesize assetContent=_assetContent;
+@property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(retain, nonatomic) NSNumber *generationCountToSave; // @synthesize generationCountToSave=_generationCountToSave;
 @property(readonly, nonatomic) NSNumber *fileID; // @synthesize fileID=_fileID;
 @property(readonly, nonatomic) NSNumber *deviceID; // @synthesize deviceID=_deviceID;
 @property(nonatomic) unsigned long long paddedFileSize; // @synthesize paddedFileSize=_paddedFileSize;
 @property(nonatomic) unsigned long long size; // @synthesize size=_size;
 @property(copy, nonatomic) NSData *signature; // @synthesize signature=_signature;
+@property(copy, nonatomic) NSURL *realPathURL; // @synthesize realPathURL=_realPathURL;
 @property(nonatomic) unsigned long long constructedAssetEstimatedSize; // @synthesize constructedAssetEstimatedSize=_constructedAssetEstimatedSize;
 @property(retain, nonatomic) NSString *constructedAssetDownloadURLTemplate; // @synthesize constructedAssetDownloadURLTemplate=_constructedAssetDownloadURLTemplate;
 @property(retain, nonatomic) NSURL *constructedAssetDownloadURL; // @synthesize constructedAssetDownloadURL=_constructedAssetDownloadURL;
@@ -116,7 +121,6 @@
 @property(copy, nonatomic) NSString *recordKey; // @synthesize recordKey=_recordKey;
 @property(nonatomic) __weak CKRecord *record; // @synthesize record=_record;
 @property(retain, nonatomic) NSString *downloadURLTemplate; // @synthesize downloadURLTemplate=_downloadURLTemplate;
-@property(copy, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -129,6 +133,7 @@
 @property(readonly, nonatomic) BOOL isConstructedAsset;
 @property(readonly, nonatomic) BOOL isRereferencedAssetUpload;
 @property(readonly, nonatomic) NSString *assetHandleUUID;
+- (id)initWithAssetContent:(id)arg1 itemTypeHint:(id)arg2;
 - (id)initWithCopyInfo:(id)arg1 fileURL:(id)arg2;
 - (id)initWithFileDescriptor:(int)arg1;
 - (id)initWithDeviceID:(id)arg1 fileID:(id)arg2 generationID:(id)arg3;

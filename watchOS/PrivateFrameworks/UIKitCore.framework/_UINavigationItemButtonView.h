@@ -33,7 +33,9 @@ __attribute__((visibility("hidden")))
 - (void)_backSelectGestureChanged:(id)arg1;
 - (void)_uninstallBackSelectGestureRecognizer;
 - (void)_installBackSelectGestureRecognizer;
+- (void)_updateBackSelectGestureRecognizer;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)didMoveToWindow;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)canBecomeFocused;
 - (Class)_appearanceGuideClass;
@@ -71,7 +73,6 @@ __attribute__((visibility("hidden")))
 - (void)setPressed:(_Bool)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setStyle:(int)arg1 animated:(_Bool)arg2;
-- (void)_styleAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (struct CGSize)imageSize;
 - (id)image;
 - (id)title;

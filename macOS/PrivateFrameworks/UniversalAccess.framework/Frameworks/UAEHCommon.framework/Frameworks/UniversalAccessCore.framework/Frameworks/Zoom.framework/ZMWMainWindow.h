@@ -8,6 +8,7 @@
 
 @class CALayer, ZMWShadowWindow, ZMWSnapshotView, ZMWSplitScreenBorderView, ZMWView, ZMWZoomView;
 
+__attribute__((visibility("hidden")))
 @interface ZMWMainWindow : ZMWWindow
 {
     ZMWView *_mouseDownLayer;

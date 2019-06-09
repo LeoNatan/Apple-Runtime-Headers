@@ -13,7 +13,7 @@
 
 + (id)sharedIconCache;
 - (id)cachedImageForItemClass:(unsigned int)arg1;
-- (id)cachedImageForItem:(struct OpaqueSecKeychainItemRef *)arg1;
+- (id)cachedImageForItem:(struct __SecKeychainItem *)arg1;
 - (id)cachedImageNamed:(id)arg1;
 - (void)dealloc;
 - (id)init;

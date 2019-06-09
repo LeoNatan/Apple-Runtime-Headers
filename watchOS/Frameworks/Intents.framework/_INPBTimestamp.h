@@ -19,12 +19,15 @@
     long long _seconds;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) long long seconds; // @synthesize seconds=_seconds;
 @property(nonatomic) int nanos; // @synthesize nanos=_nanos;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(nonatomic) _Bool hasSeconds;

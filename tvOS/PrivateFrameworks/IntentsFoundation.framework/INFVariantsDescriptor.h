@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 
 + (id)variant;
 + (id)variantWithVariants:(unsigned long long)arg1;
-@property unsigned long long gender; // @synthesize gender=_gender;
-@property unsigned long long plurality; // @synthesize plurality=_plurality;
+@property(nonatomic) unsigned long long gender; // @synthesize gender=_gender;
+@property(nonatomic) unsigned long long plurality; // @synthesize plurality=_plurality;
 - (_Bool)isEqual:(id)arg1;
 - (id)variantByRemovingOneAttribute;
 - (id)copyWithZone:(struct _NSZone *)arg1;

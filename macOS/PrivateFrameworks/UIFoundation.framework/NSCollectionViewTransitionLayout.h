@@ -48,7 +48,6 @@
 - (void)invalidateLayout;
 - (void)_setCollectionViewCore:(id)arg1;
 - (id)init;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithCurrentLayout:(id)arg1 nextLayout:(id)arg2;
 
 @end

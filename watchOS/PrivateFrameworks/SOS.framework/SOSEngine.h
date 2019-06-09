@@ -6,20 +6,21 @@
 
 #import <objc/NSObject.h>
 
-#import <SOS/NPHSOSPersistentTimerLocationManagerDelegate-Protocol.h>
 #import <SOS/NSXPCListenerDelegate-Protocol.h>
 #import <SOS/SOSInternalServerProtocol-Protocol.h>
+#import <SOS/SOSPersistentTimerLocationManagerDelegate-Protocol.h>
 #import <SOS/SOSServerProtocol-Protocol.h>
 
-@class CLLocation, FKFriendsManager, NPHSOSPersistentTimerLocationManager, NSDate, NSMutableArray, NSString, SOSContactsManager, _MKLocationShifter;
+@class CLLocation, FKFriendsManager, NSDate, NSMutableArray, NSString, SOSContactsManager, SOSPersistentTimerLocationManager, _MKLocationShifter;
 
-@interface SOSEngine : NSObject <NPHSOSPersistentTimerLocationManagerDelegate, SOSInternalServerProtocol, SOSServerProtocol, NSXPCListenerDelegate>
+@interface SOSEngine : NSObject <SOSInternalServerProtocol, SOSPersistentTimerLocationManagerDelegate, SOSServerProtocol, NSXPCListenerDelegate>
 {
-    NPHSOSPersistentTimerLocationManager *_sosPersistentTimerLocationManager;
+    SOSPersistentTimerLocationManager *_sosPersistentTimerLocationManager;
     NSDate *_timeToStopSendingMessages;
     NSDate *_timeLastMessageSent;
     CLLocation *_lastLocationSent;
     SOSContactsManager *_contactsManager;
+    NSString *_medicalIDName;
     int _notifyContactsReason;
     FKFriendsManager *_friendsManager;
     _MKLocationShifter *_locationShifter;
@@ -33,7 +34,7 @@
 + (id)additionalTextForCallbackNumber:(id)arg1;
 + (id)GPSCoordinatesURLForLocation:(id)arg1;
 + (id)_sosMessageForLocation:(id)arg1 isFirstMessage:(_Bool)arg2 withMMS:(_Bool)arg3 myFullName:(id)arg4 myFirstName:(id)arg5 callbackNumber:(id)arg6 Reason:(int)arg7;
-+ (id)_sosMessageForLocation:(id)arg1 isFirstMessage:(_Bool)arg2 withMMS:(_Bool)arg3 callbackNumber:(id)arg4 Reason:(int)arg5;
++ (id)_sosMessageForLocation:(id)arg1 isFirstMessage:(_Bool)arg2 withMMS:(_Bool)arg3 callbackNumber:(id)arg4 medicalIDName:(id)arg5 Reason:(int)arg6;
 + (id)firstNameForContact:(id)arg1;
 + (id)fullNameForContact:(id)arg1;
 + (id)meContact;
@@ -44,13 +45,14 @@
 + (void)_sendCKMessage:(id)arg1 failureBlock:(CDUnknownBlockType)arg2;
 + (void)_sendMessage:(id)arg1 location:(id)arg2 recipients:(id)arg3 useStandalone:(_Bool)arg4 failureBlock:(CDUnknownBlockType)arg5;
 + (void)_sendSMSMessage:(id)arg1 MMSMessage:(id)arg2 location:(id)arg3 recipients:(id)arg4 failureBlock:(CDUnknownBlockType)arg5;
-+ (void)_sendMessageToRecipients:(id)arg1 withLocation:(id)arg2 isFirstMessage:(_Bool)arg3 Reason:(int)arg4;
++ (void)_sendMessageToRecipients:(id)arg1 withLocation:(id)arg2 isFirstMessage:(_Bool)arg3 medicalIDName:(id)arg4 Reason:(int)arg5;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableArray *clientConnections; // @synthesize clientConnections=_clientConnections;
 @property(retain, nonatomic) _MKLocationShifter *locationShifter; // @synthesize locationShifter=_locationShifter;
 @property(retain, nonatomic) FKFriendsManager *friendsManager; // @synthesize friendsManager=_friendsManager;
 - (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
+- (void)fetchMedicalIDName;
 - (void)contactStoreDidChange;
 - (_Bool)locationIsValidToSend:(id)arg1;
 - (void)isSendingLocationUpdate:(CDUnknownBlockType)arg1;
@@ -71,6 +73,7 @@
 - (id)contactsManager;
 - (void)dealloc;
 - (void)start;
+- (id)initWithoutEntitlement;
 - (id)init;
 
 // Remaining properties

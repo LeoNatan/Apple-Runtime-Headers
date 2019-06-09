@@ -13,6 +13,7 @@
     NSString *_model;
     NSString *_name;
     NSString *_osVersion;
+    NSString *_swVersion;
     NSString *_modelSmallPhotoURL3x;
     NSString *_modelSmallPhotoURL2x;
     NSString *_modelSmallPhotoURL1x;
@@ -29,6 +30,7 @@
 @property(readonly, nonatomic) NSString *modelSmallPhotoURL1x; // @synthesize modelSmallPhotoURL1x=_modelSmallPhotoURL1x;
 @property(readonly, nonatomic) NSString *modelSmallPhotoURL2x; // @synthesize modelSmallPhotoURL2x=_modelSmallPhotoURL2x;
 @property(readonly, nonatomic) NSString *modelSmallPhotoURL3x; // @synthesize modelSmallPhotoURL3x=_modelSmallPhotoURL3x;
+@property(readonly, nonatomic) NSString *swVersion; // @synthesize swVersion=_swVersion;
 @property(readonly, nonatomic) NSString *osVersion; // @synthesize osVersion=_osVersion;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *model; // @synthesize model=_model;

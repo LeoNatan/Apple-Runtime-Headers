@@ -8,6 +8,7 @@
 
 @class EDColorReference;
 
+__attribute__((visibility("hidden")))
 @interface EDPatternFill : EDFill
 {
     int mType;

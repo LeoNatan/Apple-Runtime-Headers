@@ -23,12 +23,12 @@
         unsigned int invalidateDataSource:1;
         unsigned int invalidateEverything:1;
     } _invalidationContextFlags;
-    _Bool _initiatedFromReloadData;
     _Bool _retainExistingSizingInfoForEstimates;
+    long long _intent;
 }
 
+@property(nonatomic, getter=_intent, setter=_setIntent:) long long intent; // @synthesize intent=_intent;
 @property(nonatomic, getter=_retainExistingSizingInfoForEstimates, setter=_setRetainExistingSizingInfoForEstimates:) _Bool retainExistingSizingInfoForEstimates; // @synthesize retainExistingSizingInfoForEstimates=_retainExistingSizingInfoForEstimates;
-@property(nonatomic, getter=_initiatedFromReloadData, setter=_setInitiatedFromReloadData:) _Bool initiatedFromReloadData; // @synthesize initiatedFromReloadData=_initiatedFromReloadData;
 - (void).cxx_destruct;
 @property(nonatomic, setter=_setInteractiveMovementTarget:) struct CGPoint interactiveMovementTarget;
 @property(copy, nonatomic, setter=_setTargetIndexPathsForInteractivelyMovingItems:) NSArray *targetIndexPathsForInteractivelyMovingItems;

@@ -28,6 +28,7 @@
 - (id)primaryCredentialForEnvironment:(long long)arg1;
 - (id)pushCredentialForEnvironment:(long long)arg1;
 - (id)allCredentialsForEnvironment:(long long)arg1;
+- (id)credentialForAltDSID:(id)arg1 environment:(long long)arg2;
 - (id)credentialForUsername:(id)arg1 environment:(long long)arg2;
 - (id)credentialForPlayer:(id)arg1 environment:(long long)arg2;
 - (unsigned long long)loginStatusForCredential:(id)arg1;

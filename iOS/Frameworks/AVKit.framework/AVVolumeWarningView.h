@@ -8,6 +8,7 @@
 
 @class UIViewPropertyAnimator;
 
+__attribute__((visibility("hidden")))
 @interface AVVolumeWarningView : UIView
 {
     _Bool _stopping;

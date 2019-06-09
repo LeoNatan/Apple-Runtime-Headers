@@ -10,7 +10,7 @@
 #import <CloudDocsDaemon/BRCOperationSubclass-Protocol.h>
 #import <CloudDocsDaemon/LSOpenResourceOperationDelegate-Protocol.h>
 
-@class BRCAccountSession, BRCAppLibrary, BRCClientZone, BRCItemID, BRCXPCClient, CKRecordID, CKShare, CKShareMetadata, NSArray, NSObject, NSString, NSURL;
+@class BRCAcceptShareOperation, BRCAccountSession, BRCAppLibrary, BRCClientZone, BRCItemID, BRCXPCClient, CKRecordID, CKShareMetadata, NSArray, NSObject, NSString, NSURL;
 @protocol BRCUserNotifier, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -23,14 +23,17 @@ __attribute__((visibility("hidden")))
     NSURL *_shareURL;
     CKRecordID *_shareID;
     CKShareMetadata *_shareMetadata;
-    CKShare *_share;
-    BRCItemID *_sharedItemID;
+    BRCItemID *_linkItemID;
+    BRCItemID *_rootItemID;
     NSString *_unsaltedBookmarkData;
     BRCClientZone *_clientZone;
     BRCAppLibrary *_appLibrary;
     _Bool _needsZoneAndAppLibraryActivation;
+    BRCAcceptShareOperation *_acceptOperation;
+    _Bool _allowsDirectoryFaults;
     NSURL *_shareDocumentURL;
-    NSString *_documentName;
+    NSString *_rootFilename;
+    NSString *_linkFilename;
     BRCXPCClient *_xpcClient;
     NSObject<OS_dispatch_queue> *_queue;
 }
@@ -40,13 +43,15 @@ __attribute__((visibility("hidden")))
 + (void)_openiCloudSettings;
 + (id)_runningShareIDs;
 + (Class)userNotificationClass;
+@property(readonly, nonatomic) CKShareMetadata *shareMetadata; // @synthesize shareMetadata=_shareMetadata;
 - (void).cxx_destruct;
 - (void)_endAcceptationFlow;
 - (void)_openSharedItemIfStillNeeded;
 - (void)_prepareToDownloadSharedDocument;
-- (void)_locateSharedItemOnDisk;
 - (void)_waitForSharedItemToBeOnDiskOnRecipient;
 - (void)_waitForSharedItemToSyncDownOnRecipient;
+- (void)_locateSharedItemOnRecipient;
+- (void)_createServerFaultIfPossibleWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_acceptShareURL;
 - (void)_openSharedSideFaultFile;
 - (void)_openDocumentInDocumentsAppIfInstalled:(id)arg1;
@@ -54,6 +59,7 @@ __attribute__((visibility("hidden")))
 - (void)_createSideFaultOnDisk;
 - (void)_waitForSharedItemToBeOnDiskOnOwner;
 - (void)_waitForSharedItemToSyncDownOnOwner;
+- (void)_locateSharedItemOnOwner;
 - (void)_openiWorkAppPreemptively;
 - (void)_parseShareMetadata;
 - (void)_showSharingJoinDialog;
@@ -64,8 +70,11 @@ __attribute__((visibility("hidden")))
 - (void)openResourceOperation:(id)arg1 didFailWithError:(id)arg2;
 - (void)openResourceOperationDidComplete:(id)arg1;
 - (void)_activateSharedZoneIfNeeded;
-- (void)_captureOpenInfoFromDocument:(id)arg1;
+- (void)_captureOpenInfoFromItem:(id)arg1;
 - (_Bool)_isiWorkShare;
+- (_Bool)_isDirectoryLinkInsideFolderShare;
+- (_Bool)_isDocumentLinkInsideFolderShare;
+- (_Bool)_isLinkInsideFolderShare;
 - (_Bool)_isFolderShare;
 - (_Bool)_isOwnerOrShareAlreadyAccepted;
 - (_Bool)_isOwner;

@@ -25,9 +25,9 @@
 + (struct CGPoint)_perceivedAnchorPoint;
 + (id)_shadowImage;
 + (id)_reuseIdentifier;
-+ (id)_pinsWithMapType:(unsigned long long)arg1 mapDisplayStyle:(CDStruct_51745937)arg2 pinColor:(id)arg3;
++ (id)_pinsWithMapType:(unsigned long long)arg1 mapDisplayStyle:(CDStruct_51745937)arg2 pinColor:(id)arg3 effectiveAppearance:(id)arg4;
 + (id)_imageCache;
-+ (id)_imageForState:(long long)arg1 mapType:(unsigned long long)arg2 displayStyle:(unsigned long long)arg3 pinColor:(id)arg4;
++ (id)_imageForState:(long long)arg1 mapType:(unsigned long long)arg2 displayStyle:(unsigned long long)arg3 pinColor:(id)arg4 effectiveAppearance:(id)arg5;
 + (id)_imageForLayer:(long long)arg1 state:(long long)arg2 mapType:(unsigned long long)arg3;
 + (id)_dropBounceAnimation;
 + (id)_bounceAnimation;
@@ -36,12 +36,13 @@
 + (id)greenPinColor;
 + (id)redPinColor;
 + (struct CGSize)_perceivedSize;
++ (Class)_mapkitLeafClass;
 + (Class)layerClass;
 @property(nonatomic, setter=_setDelegate:) __weak id <_MKPinAnnotationViewDelegate> _delegate; // @synthesize _delegate;
 - (void).cxx_destruct;
 - (void)updateLayer;
-- (void)viewDidChangeEffectiveAppearance;
 - (id)accessibilityAttributeValue:(id)arg1;
+- (void)_updateAnchorPosition:(struct CGPoint)arg1 alignToPixels:(BOOL)arg2;
 - (int)_state;
 - (BOOL)isHighlighted;
 - (void)setHighlighted:(BOOL)arg1;
@@ -76,7 +77,7 @@
 - (id)description;
 - (void)_setMapDisplayStyle:(CDStruct_51745937)arg1;
 - (void)_setMapType:(unsigned long long)arg1;
-- (struct NSEdgeInsets)alignmentRectInsets;
+- (struct NSEdgeInsets)_defaultCollisionAlignmentRectInsets;
 - (struct CGRect)_significantBounds;
 @property(nonatomic) BOOL animatesDrop;
 @property(retain) NSColor *pinTintColor;

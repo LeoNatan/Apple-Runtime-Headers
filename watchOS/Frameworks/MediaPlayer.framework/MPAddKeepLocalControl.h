@@ -6,7 +6,7 @@
 
 #import <UIKit/UIControl.h>
 
-@class MPDownloadProgressView, NSMutableDictionary, UIImageView, UILabel, UIView;
+@class MPDownloadProgressView, NSMutableDictionary, UIColor, UIImageView, UILabel, UIView;
 
 @interface MPAddKeepLocalControl : UIControl
 {
@@ -24,15 +24,16 @@
     _Bool _allowsAddImage;
     _Bool _scaleImageForAccessibility;
     int _displayStyle;
+    UIColor *_filledTintColor;
     struct MPAddKeepLocalControlStatus _controlStatus;
 }
 
 + (id)_imageNamed:(id)arg1 compatibleWithTraitCollection:(id)arg2;
 + (id)systemLightGrayColor;
-+ (id)cloudDownloadImageForTintColor:(id)arg1 outlineColor:(id)arg2 traitCollection:(id)arg3;
 + (id)controlTitleFontForControlStatusType:(int)arg1;
 + (id)_newControlTitleLabel;
 + (struct CGSize)_expectedSizeForControlStatusType:(int)arg1 controlTitle:(id)arg2 hasControlImage:(_Bool)arg3 displayScale:(float)arg4 preferredHeight:(float)arg5;
+@property(retain, nonatomic) UIColor *filledTintColor; // @synthesize filledTintColor=_filledTintColor;
 @property(nonatomic) _Bool scaleImageForAccessibility; // @synthesize scaleImageForAccessibility=_scaleImageForAccessibility;
 @property(nonatomic) int displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(nonatomic) struct MPAddKeepLocalControlStatus controlStatus; // @synthesize controlStatus=_controlStatus;

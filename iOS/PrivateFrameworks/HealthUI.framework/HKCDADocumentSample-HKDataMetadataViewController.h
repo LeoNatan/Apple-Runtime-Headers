@@ -8,5 +8,9 @@
 
 @interface HKCDADocumentSample (HKDataMetadataViewController)
 - (id)dataForSharingWithHealthStore:(id)arg1;
+- (id)detailedReportName;
+- (void)fetchDetailedReportWithHealthStore:(id)arg1 reportDataBlock:(CDUnknownBlockType)arg2;
+- (_Bool)hasAssociatedReport;
+- (void)addDetailValuesToSection:(id)arg1;
 @end
 

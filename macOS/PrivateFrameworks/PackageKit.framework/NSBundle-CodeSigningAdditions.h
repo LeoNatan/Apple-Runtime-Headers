@@ -9,5 +9,8 @@
 @interface NSBundle (CodeSigningAdditions)
 - (BOOL)_verifyCodeSignaturesWithRequirement:(struct __SecRequirement *)arg1 recursively:(BOOL)arg2 errors:(id *)arg3 cancelUsingTest:(CDUnknownBlockType)arg4;
 - (BOOL)_verifyCodeSignaturesWithRequirement:(struct __SecRequirement *)arg1 recursively:(BOOL)arg2 errors:(id *)arg3;
+- (BOOL)__verifyCodeSignatureOnURL:(id)arg1 requirements:(struct __SecRequirement *)arg2 error:(id *)arg3;
+- (BOOL)__verifyCodeSignaturesUnderDirectory:(id)arg1 requirements:(struct __SecRequirement *)arg2 currentBundleResourcePath:(id)arg3 addingErrorsTo:(id)arg4 cancelUsingTest:(CDUnknownBlockType)arg5;
+- (BOOL)__verifyCodeSignaturesWithRequirement:(struct __SecRequirement *)arg1 recursively:(BOOL)arg2 addingErrorsTo:(id)arg3 cancelUsingTest:(CDUnknownBlockType)arg4;
 @end
 

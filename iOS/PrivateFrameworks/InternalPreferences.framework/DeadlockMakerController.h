@@ -11,6 +11,7 @@
 @class NSObject, NSString, PSSpecifier;
 @protocol OS_xpc_object;
 
+__attribute__((visibility("hidden")))
 @interface DeadlockMakerController : PSListController <UITextFieldDelegate>
 {
     _Bool _enabled;

@@ -10,6 +10,7 @@
 
 @class NSLock, NSMutableDictionary, TSUSparseArray;
 
+__attribute__((visibility("hidden")))
 @interface TSUUUIDSetStore : NSObject <NSCopying>
 {
     NSLock *_lock;

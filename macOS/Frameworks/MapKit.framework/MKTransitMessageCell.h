@@ -10,6 +10,7 @@
 
 @class NSString, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKTransitMessageCell : MKCustomSeparatorTableViewCell <MKMultiLineLabelContainer>
 {
     _MKUILabel *_messageLabel;

@@ -50,7 +50,7 @@
 @property(readonly, copy) NSArray *shortMonthSymbols;
 @property(readonly, copy) NSArray *monthSymbols;
 @property(readonly, copy) NSArray *eraSymbols;
-- (id)_gregorianStartDate;
+- (id)_copyGregorianStartDate;
 - (void)_setGregorianStartDate:(id)arg1;
 - (id)_copyTimeZone;
 - (id)_copyLocale;

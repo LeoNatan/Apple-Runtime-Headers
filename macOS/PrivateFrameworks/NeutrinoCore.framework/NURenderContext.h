@@ -6,20 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSPointerArray, NURenderNode;
+@class NSArray, NSMutableArray, NSPointerArray, NURenderNode;
 @protocol OS_dispatch_queue;
 
 @interface NURenderContext : NSObject
 {
     NSPointerArray *_jobs;
+    NSMutableArray *_rateLimitedJobs;
     NSObject<OS_dispatch_queue> *_queue;
+    BOOL _shouldCoalesceUpdates;
+    double _minimumRenderInterval;
     NURenderNode *_lastPrepareNode;
     NURenderNode *_lastRenderNode;
+    unsigned long long _nextRenderTime;
 }
 
+@property unsigned long long nextRenderTime; // @synthesize nextRenderTime=_nextRenderTime;
 @property(retain) NURenderNode *lastRenderNode; // @synthesize lastRenderNode=_lastRenderNode;
 @property(retain) NURenderNode *lastPrepareNode; // @synthesize lastPrepareNode=_lastPrepareNode;
+@property(nonatomic) BOOL shouldCoalesceUpdates; // @synthesize shouldCoalesceUpdates=_shouldCoalesceUpdates;
+@property double minimumRenderInterval; // @synthesize minimumRenderInterval=_minimumRenderInterval;
 - (void).cxx_destruct;
+- (id)debugDescription;
+- (void)updateNextRenderTimeFromTime:(unsigned long long)arg1;
+- (id)_dequeueRateLimitedJob;
+- (id)dequeueRateLimitedJob;
+- (void)_enqueueRateLimitedJob:(id)arg1;
+- (void)enqueueRateLimitedJob:(id)arg1;
 - (void)cancelAllRequests;
 - (void)cancelAllJobs;
 - (void)_cancelAllJobs;

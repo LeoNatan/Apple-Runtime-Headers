@@ -10,15 +10,16 @@
 #import <NanoAudioControl/MPVolumeControllerDelegate-Protocol.h>
 #import <NanoAudioControl/NACVolumeController-Protocol.h>
 
-@class MPAVRoutingController, MPVolumeController, NACEventThrottler, NSCountedSet, NSString;
+@class MPAVRoute, MPAVRoutingController, MPVolumeController, NACEventThrottler, NSCountedSet, NSString;
 @protocol NACVolumeControllerDelegate, OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface NACVolumeControllerLocal : NSObject <MPVolumeControllerDelegate, MPAVRoutingControllerDelegate, NACVolumeController>
 {
+    NSString *_audioCategory;
+    MPAVRoute *_route;
     MPVolumeController *_volumeController;
     MPAVRoutingController *_routingController;
-    NSString *_audioCategory;
     NSCountedSet *_volumeSetHistory;
     NACEventThrottler *_volumeThrottler;
     NACEventThrottler *_hapticThrottler;
@@ -40,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateVolumeState;
 @property(nonatomic, getter=isProminentHapticEnabled) _Bool prominentHapticEnabled;
 - (void)playProminentHapticPreview;
+- (void)playDefaultHapticPreview;
 - (void)playPreview;
 @property(nonatomic) float hapticIntensity;
 - (void)_setHapticIntensity:(id)arg1;
@@ -48,14 +50,18 @@ __attribute__((visibility("hidden")))
 - (void)updateCachedHapticState;
 @property(nonatomic) int hapticState;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
+- (void)volumeController:(id)arg1 volumeWarningStateDidChange:(int)arg2;
 - (void)volumeController:(id)arg1 EUVolumeLimitDidChange:(float)arg2;
 - (void)volumeController:(id)arg1 mutedStateDidChange:(_Bool)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
+- (void)volumeController:(id)arg1 volumeControlAvailableDidChange:(_Bool)arg2;
 - (void)_ignoreHapticObservation;
+- (void)allowUserToExceedEUVolumeLimit;
 - (void)setVolumeValue:(float)arg1 muted:(_Bool)arg2 overrideEULimit:(_Bool)arg3;
 - (void)setMuted:(_Bool)arg1;
 - (void)_setVolumeValue:(id)arg1;
 - (void)setVolumeValue:(float)arg1;
+@property(readonly, nonatomic) int volumeWarningState;
 @property(readonly, nonatomic, getter=isVolumeWarningEnabled) _Bool volumeWarningEnabled;
 @property(readonly, nonatomic) float EUVolumeLimit;
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable;
@@ -65,6 +71,8 @@ __attribute__((visibility("hidden")))
 - (void)beginObservingHaptics;
 - (void)endObservingVolume;
 - (void)beginObservingVolume;
+- (id)_init;
+- (id)initWithRoute:(id)arg1;
 - (id)initWithAudioCategory:(id)arg1;
 - (id)init;
 

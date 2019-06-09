@@ -8,6 +8,7 @@
 
 @class CALayer;
 
+__attribute__((visibility("hidden")))
 @interface TPRingView : UIView
 {
     CALayer *_luminanceRingLayer;

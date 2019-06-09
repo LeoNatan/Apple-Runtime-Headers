@@ -37,6 +37,7 @@
 - (void)_cleanupViews;
 - (id)_maneuverSymbolImage;
 - (void)backgroundColorDidChange;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)setManeuverViewSize:(unsigned long long)arg1;
 - (id)initWithManeuver:(id)arg1 style:(long long)arg2;
 

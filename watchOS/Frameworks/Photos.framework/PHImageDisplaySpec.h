@@ -19,6 +19,7 @@
 - (struct CGSize)requestSizeFromFullSizedWidth:(int)arg1 height:(int)arg2;
 - (id)description;
 - (id)shortDescription;
+- (_Bool)hasExplicitCrop;
 - (id)initWithTargetSize:(struct CGSize)arg1 contentMode:(int)arg2 normalizedCropRect:(struct CGRect)arg3;
 - (id)initWithTargetSize:(struct CGSize)arg1 contentMode:(int)arg2;
 - (id)initWithTargetSize:(struct CGSize)arg1;

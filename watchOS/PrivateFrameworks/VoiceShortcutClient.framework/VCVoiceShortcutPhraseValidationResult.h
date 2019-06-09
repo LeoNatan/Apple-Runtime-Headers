@@ -20,7 +20,7 @@
 + (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSError *validationError; // @synthesize validationError=_validationError;
 @property(nonatomic) int validationState; // @synthesize validationState=_validationState;
-@property(retain, nonatomic) NSString *phrase; // @synthesize phrase=_phrase;
+@property(readonly, copy, nonatomic) NSString *phrase; // @synthesize phrase=_phrase;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

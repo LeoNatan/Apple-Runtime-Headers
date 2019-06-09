@@ -25,6 +25,7 @@
     _Bool _isInitiator;
     long long _linkProtocol;
     struct sockaddr_storage _serverAddress;
+    struct sockaddr_storage _serverAddressIPv6;
     NSString *_groupID;
     NSString *_stableGroupID;
     NSUUID *_defaultDeviceLocalCBUUID;
@@ -59,7 +60,8 @@
 @property(readonly) long long allocateType; // @synthesize allocateType=_allocateType;
 - (void).cxx_destruct;
 - (long long)parseSessionInfo:(id)arg1;
-@property(readonly) const struct sockaddr *serverAddress;
+@property(readonly) const struct sockaddr_storage *serverAddressIPv6;
+@property(readonly) const struct sockaddr_storage *serverAddress;
 
 @end
 

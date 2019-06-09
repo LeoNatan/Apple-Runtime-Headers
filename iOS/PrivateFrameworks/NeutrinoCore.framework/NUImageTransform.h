@@ -4,14 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <NeutrinoCore/NUGeometryTransform.h>
 
-@interface NUImageTransform : NSObject
+@interface NUImageTransform : NUGeometryTransform
 {
 }
 
+- (id)transformByRotateX:(double)arg1 y:(double)arg2 z:(double)arg3;
+- (id)transformByRotateZ:(double)arg1;
+- (id)transformByTranslateX:(double)arg1 translateY:(double)arg2;
+- (id)transformByScaleX:(double)arg1 scaleY:(double)arg2;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
+- (id)description;
 - (struct CGRect)transformRect:(struct CGRect)arg1;
 - (struct CGPoint)transformPoint:(struct CGPoint)arg1;
 - (id)inverseTransform;

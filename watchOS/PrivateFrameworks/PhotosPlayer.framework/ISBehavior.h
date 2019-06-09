@@ -9,6 +9,7 @@
 @class ISPlayerState;
 @protocol ISBehaviorDelegate;
 
+__attribute__((visibility("hidden")))
 @interface ISBehavior : NSObject
 {
     _Bool _active;

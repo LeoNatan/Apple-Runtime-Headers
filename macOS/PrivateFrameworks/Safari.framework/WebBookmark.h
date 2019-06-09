@@ -172,7 +172,6 @@ __attribute__((visibility("hidden")))
 - (void)goToInNewTabWithTabPlacementHint:(const struct TabPlacementHint *)arg1;
 - (void)goToInNewWindow;
 - (void)goToWithWindowPolicy:(long long)arg1 tabPlacementHint:(const struct TabPlacementHint *)arg2;
-- (void)goToWithTabPlacementHint:(const struct TabPlacementHint *)arg1;
 - (BOOL)insertBookmarkWithUndo:(id)arg1 atIndex:(unsigned long long)arg2 didCheckIfBookmarkEditingIsPermitted:(BOOL)arg3 allowDuplicateURLs:(BOOL)arg4;
 - (BOOL)moveWithUndoToFolder:(id)arg1 index:(unsigned long long)arg2;
 - (id)addNewSubfolderWithUndoTitled:(id)arg1 insertionIndex:(unsigned long long)arg2;

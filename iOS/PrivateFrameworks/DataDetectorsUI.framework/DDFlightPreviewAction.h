@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSString *platerTitle; // @synthesize platerTitle=_platerTitle;
 - (void).cxx_destruct;
 - (void)setPreviewMode:(_Bool)arg1;
+- (id)menuActionClasses;
 - (id)previewActions;
 - (_Bool)wantsSeamlessCommit;
 - (id)platterTitle;

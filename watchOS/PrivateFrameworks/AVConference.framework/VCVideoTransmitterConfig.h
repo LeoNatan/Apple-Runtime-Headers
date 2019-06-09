@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+@class AVCStatisticsCollector, NSDictionary, NSMutableDictionary;
+
 __attribute__((visibility("hidden")))
 @interface VCVideoTransmitterConfig : NSObject
 {
     int _videoResolution;
     int _videoSource;
     int _codecType;
-    struct tagHANDLE *_rtpHandle;
     struct opaqueRTCReporting *_reportingAgent;
     int _reportingParentID;
     unsigned int _framerate;
@@ -25,8 +26,28 @@ __attribute__((visibility("hidden")))
     int _videoPayload;
     int _encodingMode;
     // Error parsing type: ^AC, name: _videoPriorityPointer
+    unsigned int _customWidth;
+    unsigned int _customHeight;
+    int _mode;
+    AVCStatisticsCollector *_statisticsCollector;
+    struct tagVCVideoTransmitterStreamConfig *_streamConfigs;
+    int _streamCount;
+    int _tilesPerFrame;
+    _Bool _useRateControl;
+    unsigned long _pixelFormat;
+    NSMutableDictionary *_customFeatureListStrings;
 }
 
+@property(readonly, nonatomic) NSDictionary *customFeatureListStrings; // @synthesize customFeatureListStrings=_customFeatureListStrings;
+@property(nonatomic) unsigned long pixelFormat; // @synthesize pixelFormat=_pixelFormat;
+@property(nonatomic) _Bool useRateControl; // @synthesize useRateControl=_useRateControl;
+@property(nonatomic) int tilesPerFrame; // @synthesize tilesPerFrame=_tilesPerFrame;
+@property(nonatomic) int streamCount; // @synthesize streamCount=_streamCount;
+@property(readonly, nonatomic) struct tagVCVideoTransmitterStreamConfig *streamConfigs; // @synthesize streamConfigs=_streamConfigs;
+@property(retain, nonatomic) AVCStatisticsCollector *statisticsCollector; // @synthesize statisticsCollector=_statisticsCollector;
+@property(nonatomic) int mode; // @synthesize mode=_mode;
+@property(nonatomic) unsigned int customHeight; // @synthesize customHeight=_customHeight;
+@property(nonatomic) unsigned int customWidth; // @synthesize customWidth=_customWidth;
 // Error parsing type for property videoPriorityPointer:
 // Property attributes: T^AC,N,V_videoPriorityPointer
 
@@ -42,10 +63,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) unsigned int framerate; // @synthesize framerate=_framerate;
 @property(nonatomic) int reportingParentID; // @synthesize reportingParentID=_reportingParentID;
 @property(nonatomic) struct opaqueRTCReporting *reportingAgent; // @synthesize reportingAgent=_reportingAgent;
-@property(nonatomic) struct tagHANDLE *rtpHandle; // @synthesize rtpHandle=_rtpHandle;
 @property(nonatomic) int codecType; // @synthesize codecType=_codecType;
 @property(nonatomic) int videoResolution; // @synthesize videoResolution=_videoResolution;
+- (void)addCustomFeatureListString:(id)arg1 payload:(int)arg2;
+- (void)dealloc;
 - (id)description;
+- (id)init;
 
 @end
 

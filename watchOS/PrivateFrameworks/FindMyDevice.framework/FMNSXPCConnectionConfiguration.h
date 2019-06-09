@@ -19,10 +19,12 @@
     unsigned int _options;
 }
 
++ (id)eraseDeviceServiceConfiguration;
 + (id)helperConfiguration;
 + (id)fmipConfiguration;
 + (id)btDiscoveryConfiguration;
 + (id)userNotificationConfiguration;
++ (id)emergencyCallInfoPublisherConfiguration;
 + (id)identityConfiguration;
 @property(nonatomic) _Bool machService; // @synthesize machService=_machService;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;

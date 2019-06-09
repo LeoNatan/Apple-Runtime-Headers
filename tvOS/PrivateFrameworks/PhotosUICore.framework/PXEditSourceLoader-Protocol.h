@@ -6,7 +6,7 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class NSError, NSNumber, NSProgress, NSString, PLEditSource, PLPhotoEditModel;
+@class NSError, NSNumber, NSProgress, NSString, PLEditSource;
 
 @protocol PXEditSourceLoader <NSObject>
 @property(readonly, nonatomic) NSNumber *loadDuration;
@@ -14,7 +14,6 @@
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) long long baseVersion;
 @property(readonly, copy, nonatomic) NSString *livePhotoPairingIdentifier;
-@property(readonly, copy, nonatomic) PLPhotoEditModel *editModel;
 @property(readonly, nonatomic) PLEditSource *editSource;
 @property(readonly, nonatomic) NSProgress *progress;
 - (void)beginLoading;

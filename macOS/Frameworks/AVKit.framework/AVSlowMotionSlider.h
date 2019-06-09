@@ -9,6 +9,7 @@
 @class NSMutableArray;
 @protocol AVSlowMotionSliderDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVSlowMotionSlider : NSView
 {
     double _minValue;

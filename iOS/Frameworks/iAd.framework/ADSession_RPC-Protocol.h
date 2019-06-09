@@ -7,6 +7,7 @@
 @class ADAdImpressionPublicAttributes, NSError, NSString, NSURL;
 
 @protocol ADSession_RPC
+- (void)_remote_adDataForAdSpace:(NSString *)arg1 completionHandler:(void (^)(NSString *, ADAdSpaceConfiguration *))arg2;
 - (void)_remote_configVersionDidChange:(NSString *)arg1;
 - (void)_remote_proxyTypeDidChange:(long long)arg1;
 - (void)_remote_contentProxyURLConnectDidChange:(NSURL *)arg1;

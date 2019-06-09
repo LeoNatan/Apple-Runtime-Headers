@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CALayer, CLKDevice, NSArray;
+@class CALayer, CLKDevice, NSArray, UIColor;
 
 @interface NTKColorAnalogBackgroundView : UIView
 {
@@ -15,6 +15,7 @@
     CALayer *_circleLayer;
     CALayer *_fullscreenLayer;
     CLKDevice *_device;
+    UIColor *_color;
 }
 
 - (void).cxx_destruct;

@@ -20,8 +20,14 @@
 @property(readonly, nonatomic) _Bool success; // @synthesize success=_success;
 @property(readonly, nonatomic) MFError *error; // @synthesize error=_error;
 @property(readonly, nonatomic) NSString *serverId; // @synthesize serverId=_serverId;
+- (void).cxx_destruct;
 - (void)handleResponse:(id)arg1 error:(id)arg2;
-- (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

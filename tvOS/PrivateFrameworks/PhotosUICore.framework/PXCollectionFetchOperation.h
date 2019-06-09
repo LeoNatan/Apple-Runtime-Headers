@@ -17,6 +17,7 @@
     PHFetchResult *_outputFetchResult;
 }
 
++ (id)fetchOperationWithCollection:(id)arg1 delegate:(id)arg2;
 @property(retain, nonatomic) PHFetchResult *outputFetchResult; // @synthesize outputFetchResult=_outputFetchResult;
 @property(readonly, nonatomic) PHCollection *collection; // @synthesize collection=_collection;
 @property(retain, nonatomic) PHFetchOptions *fetchOptions; // @synthesize fetchOptions=_fetchOptions;
@@ -25,8 +26,8 @@
 - (void)handleFinish;
 - (void)handleBegin;
 - (void)main;
-- (id)initWithCollection:(id)arg1;
 - (id)init;
+- (id)initWithCollection:(id)arg1;
 
 @end
 

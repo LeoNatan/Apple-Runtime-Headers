@@ -8,35 +8,46 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLocalizedString, GEOPDHoursThreshold, NSMutableArray, PBUnknownFields;
+@class GEOLocalizedString, GEOPDHoursThreshold, NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDBusinessHours : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     unsigned long long _end;
-    unsigned long long _start;
     GEOPDHoursThreshold *_hoursThreshold;
-    int _hoursType;
     GEOLocalizedString *_message;
     GEOLocalizedString *_shortMessage;
+    unsigned long long _start;
     NSMutableArray *_weeklyHours;
+    int _hoursType;
     struct {
-        unsigned int end:1;
-        unsigned int start:1;
-        unsigned int hoursType:1;
-    } _has;
+        unsigned int has_end:1;
+        unsigned int has_start:1;
+        unsigned int has_hoursType:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_hoursThreshold:1;
+        unsigned int read_message:1;
+        unsigned int read_shortMessage:1;
+        unsigned int read_weeklyHours:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_end:1;
+        unsigned int wrote_hoursThreshold:1;
+        unsigned int wrote_message:1;
+        unsigned int wrote_shortMessage:1;
+        unsigned int wrote_start:1;
+        unsigned int wrote_weeklyHours:1;
+        unsigned int wrote_hoursType:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)weeklyHoursType;
 + (id)businessHoursForPlaceData:(id)arg1;
-@property(retain, nonatomic) GEOPDHoursThreshold *hoursThreshold; // @synthesize hoursThreshold=_hoursThreshold;
-@property(retain, nonatomic) GEOLocalizedString *shortMessage; // @synthesize shortMessage=_shortMessage;
-@property(retain, nonatomic) GEOLocalizedString *message; // @synthesize message=_message;
-@property(nonatomic) unsigned long long end; // @synthesize end=_end;
-@property(nonatomic) unsigned long long start; // @synthesize start=_start;
-@property(retain, nonatomic) NSMutableArray *weeklyHours; // @synthesize weeklyHours=_weeklyHours;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -45,21 +56,33 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDHoursThreshold *hoursThreshold;
 @property(readonly, nonatomic) _Bool hasHoursThreshold;
+- (void)_readHoursThreshold;
 - (int)StringAsHoursType:(id)arg1;
 - (id)hoursTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasHoursType;
-@property(nonatomic) int hoursType; // @synthesize hoursType=_hoursType;
+@property(nonatomic) int hoursType;
+@property(retain, nonatomic) GEOLocalizedString *shortMessage;
 @property(readonly, nonatomic) _Bool hasShortMessage;
+- (void)_readShortMessage;
+@property(retain, nonatomic) GEOLocalizedString *message;
 @property(readonly, nonatomic) _Bool hasMessage;
+- (void)_readMessage;
 @property(nonatomic) _Bool hasEnd;
+@property(nonatomic) unsigned long long end;
 @property(nonatomic) _Bool hasStart;
+@property(nonatomic) unsigned long long start;
 - (id)weeklyHoursAtIndex:(unsigned int)arg1;
 - (unsigned int)weeklyHoursCount;
+- (void)_addNoFlagsWeeklyHours:(id)arg1;
 - (void)addWeeklyHours:(id)arg1;
 - (void)clearWeeklyHours;
+@property(retain, nonatomic) NSMutableArray *weeklyHours;
+- (void)_readWeeklyHours;
 
 @end
 

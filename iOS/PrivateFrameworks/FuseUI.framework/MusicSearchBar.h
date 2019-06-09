@@ -12,7 +12,6 @@
 {
 }
 
-- (_Bool)_isInBar;
 - (void)layoutSubviews;
 
 // Remaining properties

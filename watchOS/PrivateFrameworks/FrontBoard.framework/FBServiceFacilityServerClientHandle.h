@@ -4,43 +4,37 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FrontBoardServices/BSBasicServerClient.h>
+#import <objc/NSObject.h>
 
+#import <FrontBoard/BSInvalidatable-Protocol.h>
 #import <FrontBoard/FBSServiceFacilityClientHandle_Internal-Protocol.h>
 
-@class BSProcessHandle, FBProcess, NSObject, NSString;
-@protocol FBSServiceFacilityClientContext, OS_xpc_object;
+@class BSProcessHandle, BSServiceConnection, FBProcess, NSString, RBSProcessIdentity;
+@protocol BSXPCServiceConnectionMessaging, FBSServiceFacilityClientContext;
 
-@interface FBServiceFacilityServerClientHandle : BSBasicServerClient <FBSServiceFacilityClientHandle_Internal>
+@interface FBServiceFacilityServerClientHandle : NSObject <FBSServiceFacilityClientHandle_Internal, BSInvalidatable>
 {
-    _Bool _uiApp;
-    NSString *_bundleID;
-    _Bool _extension;
-    _Bool _suspended;
     NSString *_facilityID;
+    BSServiceConnection *_connection;
     FBProcess *_process;
     BSProcessHandle *_processHandle;
     id <FBSServiceFacilityClientContext> _context;
-    NSString *_bundlePath;
 }
 
-@property(retain, nonatomic) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(retain, nonatomic) id <FBSServiceFacilityClientContext> context; // @synthesize context=_context;
-@property(copy, nonatomic) NSString *facilityID; // @synthesize facilityID=_facilityID;
-@property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(nonatomic, getter=isExtension) _Bool extension; // @synthesize extension=_extension;
-@property(nonatomic, getter=isUIApp) _Bool UIApp; // @synthesize UIApp=_uiApp;
+@property(readonly, copy, nonatomic) NSString *facilityID; // @synthesize facilityID=_facilityID;
+@property(readonly, nonatomic) BSProcessHandle *processHandle; // @synthesize processHandle=_processHandle;
 - (void).cxx_destruct;
-- (void)suspend;
-- (void)resume;
-@property(readonly, nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
-@property(readonly, nonatomic) int pid;
+- (id)prettyProcessDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly, nonatomic) BSProcessHandle *processHandle;
-- (id)initWithConnection:(id)arg1;
+@property(readonly, nonatomic) id <BSXPCServiceConnectionMessaging> clientHandle_messageBuilder;
+@property(readonly, nonatomic, getter=isSuspended) _Bool suspended;
+@property(readonly, copy, nonatomic) RBSProcessIdentity *processIdentity;
+@property(readonly, nonatomic) int pid;
+- (void)invalidate;
+- (id)initWithFacilityID:(id)arg1 connection:(id)arg2;
 
 // Remaining properties
-@property(readonly, nonatomic) NSObject<OS_xpc_object> *connection;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;

@@ -24,6 +24,7 @@
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (void)viewDidLoad;
 - (id)initWithInstructionsItem:(id)arg1 contentViewController:(id)arg2;
+- (id)initWithItemManager:(id)arg1 instructionsItem:(id)arg2 contentViewController:(id)arg3;
 - (id)initWithItemManager:(id)arg1 tableViewStyle:(long long)arg2;
 
 @end

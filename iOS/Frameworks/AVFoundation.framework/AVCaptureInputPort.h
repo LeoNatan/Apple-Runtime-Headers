@@ -14,12 +14,15 @@
 }
 
 + (_Bool)automaticallyNotifiesObserversOfClock;
-+ (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(_Bool)arg4;
++ (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(_Bool)arg4 sourceDeviceType:(id)arg5 sourceDevicePosition:(long long)arg6;
 - (void)bumpChangeSeed;
 - (int)changeSeed;
 - (id)figCaptureSourceConfigurationForSessionPreset:(id)arg1;
 - (id)sourceID;
 - (id)valueForUndefinedKey:(id)arg1;
+- (_Bool)sourcesFromConstituentDevice;
+@property(readonly, nonatomic) long long sourceDevicePosition;
+@property(readonly, nonatomic) NSString *sourceDeviceType;
 - (void)_setClock:(struct OpaqueCMClock *)arg1;
 @property(readonly, nonatomic) struct OpaqueCMClock *clock;
 @property(nonatomic, getter=isEnabled) _Bool enabled;
@@ -30,7 +33,7 @@
 - (id)description;
 - (void)setOwner:(id)arg1;
 - (void)dealloc;
-- (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(_Bool)arg4;
+- (id)_initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(_Bool)arg4 sourceDeviceType:(id)arg5 sourceDevicePosition:(long long)arg6;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @class NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface UIKit_PKSubsystem : NSObject <PKModularService>
 {
     _Bool _initialized;
@@ -18,11 +19,13 @@
 }
 
 + (id)initForPlugInKit;
++ (id)initForPlugInKitWithOptions:(id)arg1;
 + (id)sharedInstance;
 @property(nonatomic, getter=isPlugInKitProcess) _Bool plugInKitProcess; // @synthesize plugInKitProcess=_plugInKitProcess;
 @property(copy, nonatomic) NSDictionary *infoDictionary; // @synthesize infoDictionary=_infoDictionary;
 - (void)endUsing:(id)arg1;
 - (void)beginUsing:(id)arg1 withBundle:(id)arg2;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

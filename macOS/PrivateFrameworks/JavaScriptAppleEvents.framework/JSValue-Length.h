@@ -6,7 +6,27 @@
 
 #import <JavaScriptCore/JSValue.h>
 
+@class JSValuePrivateProperties;
+
 @interface JSValue (Length)
++ (id)valueWithNewFunctionWithArgumentNames:(id)arg1 body:(id)arg2 inContext:(id)arg3;
++ (id)valueWithObjCValue:(void *)arg1 type:(id)arg2 inContext:(id)arg3;
++ (id)valueWithNewObjectOfJSClassRef:(struct OpaqueJSClass *)arg1 inContext:(id)arg2;
 - (long long)length;
+- (id)qualifiedDescriptor;
+- (id)prettyPrintAsException;
+- (id)prettyPrint;
+- (BOOL)isFunction;
+@property(retain) JSValue *prototype;
+- (id)ownPropertyNames;
+- (id)propertyNames;
+- (void)defineProperties:(id)arg1;
+- (BOOL)isDate;
+- (BOOL)isPath;
+- (BOOL)isArray;
+@property(readonly) JSValuePrivateProperties *privateProperties;
+- (void)getObjCValue:(void **)arg1 type:(id)arg2;
+- (id)toDisplayString;
+- (id)toSourceString;
 @end
 

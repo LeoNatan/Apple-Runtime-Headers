@@ -18,15 +18,14 @@ __attribute__((visibility("hidden")))
     int _status;
     BOOL _resultsApplied;
     struct {
-        unsigned int responseUuid:1;
-        unsigned int status:1;
-        unsigned int resultsApplied:1;
-    } _has;
+        unsigned int has_responseUuid:1;
+        unsigned int has_status:1;
+        unsigned int has_resultsApplied:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)routeInfoType;
-@property(retain, nonatomic) NSMutableArray *routeInfos; // @synthesize routeInfos=_routeInfos;
-@property(nonatomic) struct GEOSessionID responseUuid; // @synthesize responseUuid=_responseUuid;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -35,19 +34,22 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)routeInfoAtIndex:(unsigned long long)arg1;
 - (unsigned long long)routeInfosCount;
 - (void)addRouteInfo:(id)arg1;
 - (void)clearRouteInfos;
+@property(retain, nonatomic) NSMutableArray *routeInfos;
 @property(nonatomic) BOOL hasResponseUuid;
+@property(nonatomic) struct GEOSessionID responseUuid;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) BOOL hasStatus;
-@property(nonatomic) int status; // @synthesize status=_status;
+@property(nonatomic) int status;
 @property(nonatomic) BOOL hasResultsApplied;
-@property(nonatomic) BOOL resultsApplied; // @synthesize resultsApplied=_resultsApplied;
+@property(nonatomic) BOOL resultsApplied;
 
 @end
 

@@ -8,38 +8,51 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLocalizedString, GEOPDMapsIdentifier, GEOTimezone, NSMutableArray, PBUnknownFields;
+@class GEOLocalizedString, GEOPDMapsIdentifier, GEOTimezone, NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDPoiEvent : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_eventCategorys;
     NSMutableArray *_eventDateTimes;
     GEOPDMapsIdentifier *_eventId;
-    int _expectedAttendance;
     GEOLocalizedString *_name;
     NSMutableArray *_performers;
     NSMutableArray *_poiIds;
     GEOTimezone *_timezone;
+    int _expectedAttendance;
     struct {
-        unsigned int expectedAttendance:1;
-    } _has;
+        unsigned int has_expectedAttendance:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_eventCategorys:1;
+        unsigned int read_eventDateTimes:1;
+        unsigned int read_eventId:1;
+        unsigned int read_name:1;
+        unsigned int read_performers:1;
+        unsigned int read_poiIds:1;
+        unsigned int read_timezone:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_eventCategorys:1;
+        unsigned int wrote_eventDateTimes:1;
+        unsigned int wrote_eventId:1;
+        unsigned int wrote_name:1;
+        unsigned int wrote_performers:1;
+        unsigned int wrote_poiIds:1;
+        unsigned int wrote_timezone:1;
+        unsigned int wrote_expectedAttendance:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)performerType;
 + (Class)eventDateTimeType;
 + (Class)poiIdType;
 + (Class)eventCategoryType;
-@property(nonatomic) int expectedAttendance; // @synthesize expectedAttendance=_expectedAttendance;
-@property(retain, nonatomic) NSMutableArray *performers; // @synthesize performers=_performers;
-@property(retain, nonatomic) GEOTimezone *timezone; // @synthesize timezone=_timezone;
-@property(retain, nonatomic) NSMutableArray *eventDateTimes; // @synthesize eventDateTimes=_eventDateTimes;
-@property(retain, nonatomic) NSMutableArray *poiIds; // @synthesize poiIds=_poiIds;
-@property(retain, nonatomic) NSMutableArray *eventCategorys; // @synthesize eventCategorys=_eventCategorys;
-@property(retain, nonatomic) GEOLocalizedString *name; // @synthesize name=_name;
-@property(retain, nonatomic) GEOPDMapsIdentifier *eventId; // @synthesize eventId=_eventId;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -48,28 +61,48 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasExpectedAttendance;
+@property(nonatomic) int expectedAttendance;
 - (id)performerAtIndex:(unsigned long long)arg1;
 - (unsigned long long)performersCount;
+- (void)_addNoFlagsPerformer:(id)arg1;
 - (void)addPerformer:(id)arg1;
 - (void)clearPerformers;
+@property(retain, nonatomic) NSMutableArray *performers;
+- (void)_readPerformers;
+@property(retain, nonatomic) GEOTimezone *timezone;
 @property(readonly, nonatomic) _Bool hasTimezone;
+- (void)_readTimezone;
 - (id)eventDateTimeAtIndex:(unsigned long long)arg1;
 - (unsigned long long)eventDateTimesCount;
+- (void)_addNoFlagsEventDateTime:(id)arg1;
 - (void)addEventDateTime:(id)arg1;
 - (void)clearEventDateTimes;
+@property(retain, nonatomic) NSMutableArray *eventDateTimes;
+- (void)_readEventDateTimes;
 - (id)poiIdAtIndex:(unsigned long long)arg1;
 - (unsigned long long)poiIdsCount;
+- (void)_addNoFlagsPoiId:(id)arg1;
 - (void)addPoiId:(id)arg1;
 - (void)clearPoiIds;
+@property(retain, nonatomic) NSMutableArray *poiIds;
+- (void)_readPoiIds;
 - (id)eventCategoryAtIndex:(unsigned long long)arg1;
 - (unsigned long long)eventCategorysCount;
+- (void)_addNoFlagsEventCategory:(id)arg1;
 - (void)addEventCategory:(id)arg1;
 - (void)clearEventCategorys;
+@property(retain, nonatomic) NSMutableArray *eventCategorys;
+- (void)_readEventCategorys;
+@property(retain, nonatomic) GEOLocalizedString *name;
 @property(readonly, nonatomic) _Bool hasName;
+- (void)_readName;
+@property(retain, nonatomic) GEOPDMapsIdentifier *eventId;
 @property(readonly, nonatomic) _Bool hasEventId;
+- (void)_readEventId;
 
 @end
 

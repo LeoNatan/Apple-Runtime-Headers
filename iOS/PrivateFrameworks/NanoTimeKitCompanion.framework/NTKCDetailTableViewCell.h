@@ -26,7 +26,6 @@
 - (_Bool)_visibleAtPoint:(struct CGPoint)arg1;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
-- (id)_disclosureChevronImage:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)dealloc;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

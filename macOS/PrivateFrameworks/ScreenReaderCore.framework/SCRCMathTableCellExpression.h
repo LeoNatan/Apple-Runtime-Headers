@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
 - (id)prefixForChildAtIndex:(unsigned long long)arg1;
 - (id)_suffixForCell;
 - (id)_prefixForCell;
-- (id)speakableSegmentsWithSpeakingStyle:(int)arg1 upToDepth:(unsigned long long)arg2 treePosition:(id)arg3;
-- (id)speakableDescriptionWithSpeakingStyle:(int)arg1 arePausesAllowed:(BOOL)arg2;
+- (id)speakableSegmentsWithSpeakingStyle:(long long)arg1 upToDepth:(unsigned long long)arg2 treePosition:(id)arg3;
+- (id)speakableDescriptionWithSpeakingStyle:(long long)arg1 arePausesAllowed:(BOOL)arg2;
 - (void)_getTableDataIfNecessary;
 
 @end

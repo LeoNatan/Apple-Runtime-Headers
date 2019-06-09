@@ -8,17 +8,17 @@
 
 @interface PKInkFeatheringDescriptor : NSObject
 {
-    double _touchStartCapTime;
-    double _touchStartCapFade;
-    double _touchEndCapTime;
-    double _touchEndCapFade;
+    double _startCapTime;
+    double _startCapFade;
+    double _endCapTime;
+    double _endCapFade;
 }
 
 + (id)descriptorWithStartCapTime:(double)arg1 startCapFade:(double)arg2 endCapTime:(double)arg3 endCapFade:(double)arg4;
-@property(nonatomic) double touchEndCapFade; // @synthesize touchEndCapFade=_touchEndCapFade;
-@property(nonatomic) double touchEndCapTime; // @synthesize touchEndCapTime=_touchEndCapTime;
-@property(nonatomic) double touchStartCapFade; // @synthesize touchStartCapFade=_touchStartCapFade;
-@property(nonatomic) double touchStartCapTime; // @synthesize touchStartCapTime=_touchStartCapTime;
+@property(nonatomic) double endCapFade; // @synthesize endCapFade=_endCapFade;
+@property(nonatomic) double endCapTime; // @synthesize endCapTime=_endCapTime;
+@property(nonatomic) double startCapFade; // @synthesize startCapFade=_startCapFade;
+@property(nonatomic) double startCapTime; // @synthesize startCapTime=_startCapTime;
 
 @end
 

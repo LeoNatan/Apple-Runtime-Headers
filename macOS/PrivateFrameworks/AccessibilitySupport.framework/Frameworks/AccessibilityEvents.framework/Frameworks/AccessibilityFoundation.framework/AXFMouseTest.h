@@ -8,22 +8,27 @@
 
 #import <AccessibilityFoundation/AXFMouseDelegate-Protocol.h>
 
-@class NSString;
+@class AXFMouseCursorImage, NSString;
 
 @interface AXFMouseTest : NSObject <AXFMouseDelegate>
 {
     BOOL accumulateClickCount;
-    float _cursorScale;
+    BOOL keepCursorImageSynchronizedWithSystem;
+    AXFMouseCursorImage *cursorImage;
+    double _cursorScale;
     long long _currentDownButton;
+    struct CGSize cursorImageSize;
     struct CGPoint _currentLocation;
-    struct CGSize _cursorImageSize;
 }
 
 @property(nonatomic) long long currentDownButton; // @synthesize currentDownButton=_currentDownButton;
-@property(nonatomic) struct CGSize cursorImageSize; // @synthesize cursorImageSize=_cursorImageSize;
-@property(nonatomic) float cursorScale; // @synthesize cursorScale=_cursorScale;
+@property(nonatomic) double cursorScale; // @synthesize cursorScale=_cursorScale;
 @property(nonatomic) struct CGPoint currentLocation; // @synthesize currentLocation=_currentLocation;
+@property(nonatomic) BOOL keepCursorImageSynchronizedWithSystem; // @synthesize keepCursorImageSynchronizedWithSystem;
+@property(readonly, nonatomic) struct CGSize cursorImageSize; // @synthesize cursorImageSize;
+@property(retain, nonatomic) AXFMouseCursorImage *cursorImage; // @synthesize cursorImage;
 @property(nonatomic) BOOL accumulateClickCount; // @synthesize accumulateClickCount;
+- (void).cxx_destruct;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)performMouseAction:(long long)arg1 atPoint:(struct CGPoint)arg2 markupHandler:(CDUnknownBlockType)arg3 withCompletion:(CDUnknownBlockType)arg4;
@@ -39,6 +44,7 @@
 - (void)pressButton:(long long)arg1 withModifiers:(unsigned long long)arg2;
 - (void)pressButton:(long long)arg1 withModifiers:(unsigned long long)arg2 markupHandler:(CDUnknownBlockType)arg3;
 - (void)pressButton:(long long)arg1;
+- (void)setSystemCursorType:(unsigned long long)arg1;
 - (void)setCursorType:(int)arg1;
 - (void)hideCursor;
 - (void)showCursor;

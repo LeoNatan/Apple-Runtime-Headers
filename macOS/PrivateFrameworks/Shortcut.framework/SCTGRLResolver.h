@@ -8,6 +8,7 @@
 
 @class SCTGRL;
 
+__attribute__((visibility("hidden")))
 @interface SCTGRLResolver : SCTInvocation
 {
     SCTGRL *mGRL;

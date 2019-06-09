@@ -4,39 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NanoTimeKit/NTKComplicationDataSource.h>
+#import <NanoTimeKit/NTKBaseAlarmComplicationDataSource.h>
 
-@class MTAlarm, MTAlarmManager, NTKAlarmTimelineEntry;
-
-@interface NTKAlarmComplicationDataSource : NTKComplicationDataSource
+@interface NTKAlarmComplicationDataSource : NTKBaseAlarmComplicationDataSource
 {
-    MTAlarm *_nextAlarm;
-    struct NSNumber *_timerToken;
-    NTKAlarmTimelineEntry *_currentAlarmEntry;
-    MTAlarmManager *_alarmManager;
 }
 
-+ (_Bool)acceptsComplicationFamily:(int)arg1 forDevice:(id)arg2;
-+ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
-@property(retain, nonatomic) MTAlarmManager *alarmManager; // @synthesize alarmManager=_alarmManager;
-- (void).cxx_destruct;
-- (void)_alarmStoreChangedNotification:(id)arg1;
-- (void)_stopObserving;
-- (void)_startObserving;
-- (id)_alarmComplicationFuture;
++ (id)_nextTriggerForAlarm:(id)arg1 afterDate:(id)arg2;
+- (id)_alarmComplicationFutureWithDate:(id)arg1;
 - (id)_offAlarmEntry;
-- (id)_activeAlarmEntryForAlarm:(id)arg1;
+- (id)_activeAlarmEntryForNextAlarm:(id)arg1 date:(id)arg2;
 - (id)_noAlarmEntry;
-- (id)_currentTimelineEntry;
-- (void)resume;
-- (void)pause;
+- (id)emptyEntryModel;
 - (void)getLaunchURLForTimelineEntryDate:(id)arg1 timeTravelDate:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
 - (id)complicationApplicationIdentifier;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
-- (id)currentSwitcherTemplate;
-- (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
-- (void)dealloc;
-- (id)initWithComplication:(id)arg1 family:(int)arg2 forDevice:(id)arg3;
 
 @end
 

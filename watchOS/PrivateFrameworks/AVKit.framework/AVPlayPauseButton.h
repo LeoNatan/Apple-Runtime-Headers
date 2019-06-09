@@ -6,6 +6,7 @@
 
 #import <AVKit/AVButton.h>
 
+__attribute__((visibility("hidden")))
 @interface AVPlayPauseButton : AVButton
 {
     _Bool _playing;

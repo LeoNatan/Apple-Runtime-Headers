@@ -58,7 +58,6 @@
 - (struct NSEdgeInsets)alignmentRectInsets;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (id)init;
 - (void)_commonInit;
 - (id)_bezelRenderingButton;
 

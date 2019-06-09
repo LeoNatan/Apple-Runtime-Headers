@@ -25,11 +25,13 @@
     unsigned long long _queryId;
     NSString *_url;
     NSDictionary *_headers;
+    NSData *_bodyData;
     unsigned long long _whichTrigger;
 }
 
 + (id)startSearchFeedbackWithUUID;
 @property(readonly, nonatomic) unsigned long long whichTrigger; // @synthesize whichTrigger=_whichTrigger;
+@property(copy, nonatomic) NSData *bodyData; // @synthesize bodyData=_bodyData;
 @property(nonatomic) int tuscanyStatus; // @synthesize tuscanyStatus=_tuscanyStatus;
 @property(nonatomic) int endpoint; // @synthesize endpoint=_endpoint;
 @property(copy, nonatomic) NSDictionary *headers; // @synthesize headers=_headers;
@@ -51,6 +53,7 @@
 @property(nonatomic) int triggerEvent; // @synthesize triggerEvent=_triggerEvent;
 - (void)setHeaders:(id)arg1 forKey:(id)arg2;
 - (_Bool)getHeaders:(id *)arg1 forKey:(id)arg2;
+- (void)clearTrigger;
 - (id)init;
 - (id)initWithFacade:(id)arg1;
 @property(readonly, nonatomic) _Bool requiresQueryId;

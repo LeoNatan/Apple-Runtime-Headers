@@ -8,6 +8,7 @@
 
 @class UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelCustomViewController : AVInfoPanelContentViewController
 {
     UIViewController *_externalViewController;

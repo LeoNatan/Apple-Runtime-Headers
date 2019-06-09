@@ -6,9 +6,9 @@
 
 #import <AppKit/NSView.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit22AudioVisualizationView : NSView
 {
+    // Error parsing type: , name: colorStyle
     // Error parsing type: , name: gradient
 }
 
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 - (id)makeBackingLayer;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)init;
 
 @end
 

@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (long)sendAuthResponse:(struct __CFDictionary *)arg1 requestID:(unsigned long long)arg2 disposition:(int)arg3 credential:(id)arg4 authHandler:(struct OpaqueFigCustomURLHandler *)arg5;
 + (id)copyKeychainCredentialForUrl:(id)arg1;
-- (long)_handleAuthChallenge:(struct __CFDictionary *)arg1 requestID:(unsigned long long)arg2;
+- (long)_handleAuthChallenge:(struct __CFDictionary *)arg1 requestID:(unsigned long long)arg2 canHandleRequestOut:(char *)arg3;
 - (void)dealloc;
 - (id)initWithFigAsset:(struct OpaqueFigAsset *)arg1;
 

@@ -4,10 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSDictionary, NSUUID;
+@class NSArray, NSDictionary;
 
 @protocol VNClusteringWritable
-+ (NSUUID *)nonGroupedGroupID;
 - (NSArray *)getClustersWithOptions:(NSDictionary *)arg1 error:(id *)arg2;
 @end
 

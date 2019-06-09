@@ -13,11 +13,12 @@
     int _signDetailIndex;
     int _signTitleIndex;
     struct {
-        unsigned int signDetailIndex:1;
-        unsigned int signTitleIndex:1;
-    } _has;
+        unsigned int has_signDetailIndex:1;
+        unsigned int has_signTitleIndex:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -25,12 +26,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasSignDetailIndex;
-@property(nonatomic) int signDetailIndex; // @synthesize signDetailIndex=_signDetailIndex;
+@property(nonatomic) int signDetailIndex;
 @property(nonatomic) _Bool hasSignTitleIndex;
-@property(nonatomic) int signTitleIndex; // @synthesize signTitleIndex=_signTitleIndex;
+@property(nonatomic) int signTitleIndex;
 
 @end
 

@@ -8,31 +8,41 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSData, PBUnknownFields;
+@class NSData, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOSuggestionsOptions : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    int _entriesType;
-    int _listType;
     NSData *_suggestionEntryMetadata;
     NSData *_suggestionMetadata;
+    int _entriesType;
+    int _listType;
     BOOL _includeRankingFeatures;
     BOOL _normalizePOIs;
     struct {
-        unsigned int entriesType:1;
-        unsigned int listType:1;
-        unsigned int includeRankingFeatures:1;
-        unsigned int normalizePOIs:1;
-    } _has;
+        unsigned int has_entriesType:1;
+        unsigned int has_listType:1;
+        unsigned int has_includeRankingFeatures:1;
+        unsigned int has_normalizePOIs:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_suggestionEntryMetadata:1;
+        unsigned int read_suggestionMetadata:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_suggestionEntryMetadata:1;
+        unsigned int wrote_suggestionMetadata:1;
+        unsigned int wrote_entriesType:1;
+        unsigned int wrote_listType:1;
+        unsigned int wrote_includeRankingFeatures:1;
+        unsigned int wrote_normalizePOIs:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL includeRankingFeatures; // @synthesize includeRankingFeatures=_includeRankingFeatures;
-@property(nonatomic) BOOL normalizePOIs; // @synthesize normalizePOIs=_normalizePOIs;
-@property(retain, nonatomic) NSData *suggestionEntryMetadata; // @synthesize suggestionEntryMetadata=_suggestionEntryMetadata;
-@property(retain, nonatomic) NSData *suggestionMetadata; // @synthesize suggestionMetadata=_suggestionMetadata;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -41,20 +51,27 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasIncludeRankingFeatures;
+@property(nonatomic) BOOL includeRankingFeatures;
 @property(nonatomic) BOOL hasNormalizePOIs;
+@property(nonatomic) BOOL normalizePOIs;
+@property(retain, nonatomic) NSData *suggestionEntryMetadata;
 @property(readonly, nonatomic) BOOL hasSuggestionEntryMetadata;
+- (void)_readSuggestionEntryMetadata;
+@property(retain, nonatomic) NSData *suggestionMetadata;
 @property(readonly, nonatomic) BOOL hasSuggestionMetadata;
+- (void)_readSuggestionMetadata;
 - (int)StringAsEntriesType:(id)arg1;
 - (id)entriesTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasEntriesType;
-@property(nonatomic) int entriesType; // @synthesize entriesType=_entriesType;
+@property(nonatomic) int entriesType;
 - (int)StringAsListType:(id)arg1;
 - (id)listTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasListType;
-@property(nonatomic) int listType; // @synthesize listType=_listType;
+@property(nonatomic) int listType;
 
 @end
 

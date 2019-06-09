@@ -13,7 +13,7 @@
 #import <EventKitUI/EKEventGestureControllerDelegate-Protocol.h>
 #import <EventKitUI/UIScrollViewDelegate-Protocol.h>
 
-@class CalendarOccurrencesCollection, EKDayOccurrenceView, EKDayView, EKDayViewWithGutters, EKEventEditViewController, EKEventGestureController, NSCalendar, NSDateComponents, NSObject, NSString, NSTimer, ScrollSpringFactory, UIScrollView, UIView;
+@class CalendarOccurrencesCollection, EKDayOccurrenceView, EKDayView, EKDayViewWithGutters, EKEventEditViewController, EKEventGestureController, NSArray, NSCalendar, NSDateComponents, NSObject, NSString, NSTimer, ScrollSpringFactory, UIScrollView, UIView;
 @protocol EKDayViewControllerDataSource, EKDayViewControllerDelegate, OS_dispatch_queue;
 
 @interface EKDayViewController : UIViewController <BlockableScrollViewDelegate, EKDayOccurrenceViewDelegate, EKDayViewDataSource, EKDayViewDelegate, EKEventGestureControllerDelegate, UIScrollViewDelegate>
@@ -43,17 +43,21 @@
     double _dayStart;
     double _dayEnd;
     _Bool _initialLoadHasOccurred;
+    _Bool _shouldScrollToNowOnViewWillAppear;
     _Bool _instigatedDateChange;
     _Bool _viewAppeared;
-    _Bool _resizing;
     _Bool _adjustingForDeceleration;
     _Bool _fingerDown;
+    _Bool _requiresFullDayRelayout;
+    int _springAnimatedDecelerationsInProgress;
+    int _sizeTransitionsInProgress;
     _Bool _correctAfterScroll;
     NSDateComponents *_targetDateComponents;
     _Bool _needToCompleteScrollingAnimation;
     _Bool _needToCompleteDeceleration;
     NSObject<OS_dispatch_queue> *_reloadQueue;
     NSObject<OS_dispatch_queue> *_protectionQueue;
+    int _targetSizeClass;
     _Bool _showsBanner;
     _Bool _allowsDaySwitching;
     _Bool _allowsSelection;
@@ -111,6 +115,7 @@
 - (void)applicationDidBecomeActive;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidLayoutSubviews;
+- (void)blockableScrollViewDidChangeFrameSize;
 - (_Bool)blockableScrollViewShouldAllowScrolling;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(_Bool)arg2;
 - (void)_stopShowNowTimer;
@@ -184,8 +189,8 @@
 - (id)_occurrencesForDayView:(id)arg1;
 - (void)dayView:(id)arg1 didUpdateScrollPosition:(struct CGPoint)arg2;
 - (void)significantTimeChangeOccurred;
-- (void)reloadDataBetweenStart:(id)arg1 end:(id)arg2 completionForCurrentDayReload:(CDUnknownBlockType)arg3;
-- (void)reloadDataWithCompletion:(CDUnknownBlockType)arg1;
+- (void)loadDataBetweenStart:(id)arg1 end:(id)arg2 completionForCurrentDayReload:(CDUnknownBlockType)arg3;
+- (void)loadData:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)reloadData;
 - (id)_eventsForDay:(id)arg1;
 - (id)eventsForStartDate:(id)arg1 endDate:(id)arg2;
@@ -206,6 +211,7 @@
 - (void)dayView:(id)arg1 firstVisibleSecondChanged:(unsigned int)arg2;
 - (void)_setNextAndPreviousFirstVisibleSecondToCurrent;
 - (void)_setDisplayDateInternal:(id)arg1;
+- (void)dayViewDidCompleteAsyncLoadAndLayout:(id)arg1;
 - (void)dayView:(id)arg1 isPinchingDayViewWithScale:(float)arg2;
 - (void)dayView:(id)arg1 didScaleDayViewWithScale:(float)arg2;
 - (void)dayView:(id)arg1 didCreateOccurrenceViews:(id)arg2;
@@ -213,7 +219,7 @@
 - (id)preferredEventToSelectOnDate:(id)arg1;
 - (_Bool)_isCalendarDate:(id)arg1 sameDayAsComponents:(id)arg2;
 @property(readonly, nonatomic) _Bool currentDayContainsOccurrences;
-@property(readonly, nonatomic) UIView *currentDayContentGridView;
+@property(readonly, nonatomic) NSArray *currentDayContentGridViewSubviews;
 @property(readonly, nonatomic) UIView *currentAllDayView;
 @property(readonly, nonatomic) EKDayView *currentDayView;
 - (id)gestureController;
@@ -225,13 +231,15 @@
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_scrollDayViewAfterRelayoutDays;
 - (void)scrollDayViewAppropriatelyWithAnimation:(_Bool)arg1;
 @property(nonatomic) _Bool scrollEventsInToViewIgnoresVisibility;
 - (void)loadView;
 - (void)dealloc;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)initWithTargetSizeClass:(int)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

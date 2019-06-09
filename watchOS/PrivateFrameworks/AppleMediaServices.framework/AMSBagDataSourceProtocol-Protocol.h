@@ -11,7 +11,6 @@
 @protocol AMSBagDataSourceProtocol <NSObject>
 @property(readonly, copy, nonatomic) NSString *profileVersion;
 @property(readonly, copy, nonatomic) NSString *profile;
-@property(readonly, nonatomic) NSString *logKey;
 @property(readonly, nonatomic, getter=isLoaded) _Bool loaded;
 @property(readonly, nonatomic) NSDate *expirationDate;
 - (NSString *)valueForURLVariable:(NSString *)arg1;

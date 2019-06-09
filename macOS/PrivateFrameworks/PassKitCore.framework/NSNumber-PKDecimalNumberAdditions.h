@@ -7,6 +7,9 @@
 #import <Foundation/NSNumber.h>
 
 @interface NSNumber (PKDecimalNumberAdditions)
+- (BOOL)pk_isZeroNumber;
+- (BOOL)pk_isPositiveNumber;
+- (BOOL)pk_isNegativeNumber;
 - (BOOL)pk_isIntegralNumber;
 @end
 

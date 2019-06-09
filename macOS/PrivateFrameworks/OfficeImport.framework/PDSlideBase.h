@@ -8,6 +8,7 @@
 
 @class NSArray, NSString, OADBackground, OADTableStyle, PDAnimation, PDTransition;
 
+__attribute__((visibility("hidden")))
 @interface PDSlideBase : NSObject
 {
     unsigned int mSlideId;

@@ -42,6 +42,7 @@
     CDStruct_02837cd9 _signalFocusMapRect;
 }
 
++ (void)launchMapsAtCoordinate:(struct CLLocationCoordinate2D)arg1 withTitle:(id)arg2;
 @property(retain, nonatomic) NSMutableDictionary *showDebugMapRectColors; // @synthesize showDebugMapRectColors=_showDebugMapRectColors;
 @property(retain, nonatomic) CLLocationManager *locationManager; // @synthesize locationManager=_locationManager;
 @property(retain) PXPlacesImageCache *cache; // @synthesize cache=_cache;
@@ -100,7 +101,6 @@
 - (void)removePipeline:(id)arg1;
 - (void)removeDataSource:(id)arg1;
 - (void)addPipeline:(id)arg1;
-- (void)launchMapsAtCoordinate:(struct CLLocationCoordinate2D)arg1 withTitle:(id)arg2;
 - (void)loadView;
 - (void)dealloc;
 - (id)init;

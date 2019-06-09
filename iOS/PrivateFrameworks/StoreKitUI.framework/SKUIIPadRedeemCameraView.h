@@ -11,6 +11,7 @@
 @class NSString, SKUIRedeemCameraLandingView, SKUIRedeemTextField, UIButton, UIImage, UIScrollView;
 @protocol SKUIRedeemCameraViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIPadRedeemCameraView : UIView <UITextFieldDelegate>
 {
     id <SKUIRedeemCameraViewDelegate> _delegate;

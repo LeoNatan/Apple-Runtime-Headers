@@ -16,7 +16,7 @@
 @property(readonly, copy, nonatomic) NSArray *senderNames;
 @property(readonly, nonatomic) unsigned long long assetsCount;
 @property(readonly, copy, nonatomic) NSString *inboxModelTitle;
-@property(readonly, nonatomic) long long type;
+@property(readonly, nonatomic) long long inboxModelType;
 @property(readonly, nonatomic) NSDate *creationDate;
 
 @optional

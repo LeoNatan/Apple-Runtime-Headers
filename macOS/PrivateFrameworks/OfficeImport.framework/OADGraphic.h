@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADDrawable.h>
 
+__attribute__((visibility("hidden")))
 @interface OADGraphic : OADDrawable
 {
     OADGraphic *mMasterGraphic;

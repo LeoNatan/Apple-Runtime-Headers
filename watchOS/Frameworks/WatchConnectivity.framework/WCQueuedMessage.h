@@ -8,6 +8,7 @@
 
 @class NSDate, WCMessage;
 
+__attribute__((visibility("hidden")))
 @interface WCQueuedMessage : NSObject
 {
     WCMessage *_message;

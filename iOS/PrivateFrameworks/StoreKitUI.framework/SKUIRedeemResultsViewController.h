@@ -8,6 +8,7 @@
 
 @class SKUIRedeem;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemResultsViewController : SKUIRedeemStepViewController
 {
     SKUIRedeem *_redeem;

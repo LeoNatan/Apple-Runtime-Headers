@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
     id _rememberedKeyWindow;
     const long long *_rememberedWindowOrdering;
     unsigned long long _rememberedWindowOrderingCount;
-    id _carbonMenuWindowReserved;
 }
 
 + (id)_allowedRunLoopModesForToolTips;

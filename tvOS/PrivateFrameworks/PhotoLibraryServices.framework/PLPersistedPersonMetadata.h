@@ -10,6 +10,7 @@
 
 @interface PLPersistedPersonMetadata : NSObject
 {
+    _Bool _cplEnabled;
     short _keyFacePickSource;
     unsigned int _manualOrder;
     int _type;
@@ -30,18 +31,18 @@
 
 + (void)performPostImportMigrationFromVersion:(unsigned long long)arg1 fromDataInManagedObjectContext:(id)arg2;
 + (void)updateMergeTargetPersonWithPersonUUIDMapping:(id)arg1 fromDataInManagedObjectContext:(id)arg2;
-+ (id)personUUIDsToDedupeWithMetadataURLs:(id)arg1;
++ (id)personUUIDsToDedupeWithMetadataURLs:(id)arg1 cplEnabled:(_Bool)arg2;
 + (id)_persistedFaceMetadataWithFaces:(id)arg1 keyFace:(id)arg2 clusterRejectedFaceIDs:(id)arg3;
 + (id)_clusterRejectedFaceIDsWithPerson:(id)arg1;
 + (id)_rejectedFacesToArchiveWithPerson:(id)arg1;
 + (id)_detectedFacesToArchiveWithPerson:(id)arg1;
 + (id)_fetchFacesWithPredicate:(id)arg1 resultType:(unsigned long long)arg2 managedObjectContext:(id)arg3 error:(id *)arg4;
-+ (id)urlsForPersistedPersonsInLibraryMetadataDirectory;
-+ (_Bool)deleteMetadataFileForPersonUUID:(id)arg1;
-+ (id)metadataFileURLForPersonUUID:(id)arg1;
++ (_Bool)_deleteMetadataFileForPersonUUID:(id)arg1 metadataURL:(id)arg2;
++ (_Bool)deleteMetadataFileForPersonUUID:(id)arg1 pathManager:(id)arg2;
++ (id)urlsForPersistedPersonsInMetadataDirectoryOfLibrary:(id)arg1;
++ (id)_metadataFileURLForPersonUUID:(id)arg1 pathManager:(id)arg2;
 + (_Bool)isValidPath:(id)arg1 outPersonUUID:(id *)arg2;
 + (_Bool)isValidPath:(id)arg1;
-+ (id)urlForLegacyHiddenFacesFile;
 @property(retain, nonatomic) NSURL *metadataURL; // @synthesize metadataURL=_metadataURL;
 @property(retain, nonatomic) PLPerson *person; // @synthesize person=_person;
 @property(nonatomic) long long fromVersion; // @synthesize fromVersion=_fromVersion;
@@ -73,12 +74,13 @@
 - (void)_addAssetUUIDsFromFaces:(id)arg1 toMutableSet:(id)arg2;
 - (_Bool)updateFacesInPerson:(id)arg1 fromDataInManagedObjectContext:(id)arg2 deferUnmatched:(_Bool)arg3;
 - (id)insertPersonFromDataInManagedObjectContext:(id)arg1;
+- (void)removePersistedData;
 - (void)writePersistedData;
 - (id)detectedFaceIdentifiers;
-- (id)initWithPersistedDataAtURL:(id)arg1 deferUnarchiving:(_Bool)arg2;
-- (id)initWithPersistedDataAtURL:(id)arg1;
+- (id)initWithPersistedDataAtURL:(id)arg1 deferUnarchiving:(_Bool)arg2 cplEnabled:(_Bool)arg3;
+- (id)initWithPersistedDataAtURL:(id)arg1 cplEnabled:(_Bool)arg2;
 - (id)initWithPLPerson:(id)arg1 metadataURL:(id)arg2;
-- (id)initWithPLPerson:(id)arg1;
+- (id)initWithPLPerson:(id)arg1 pathManager:(id)arg2;
 - (id)init;
 
 @end

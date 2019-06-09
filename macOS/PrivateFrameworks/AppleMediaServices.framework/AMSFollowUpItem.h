@@ -35,8 +35,9 @@
 @property long long displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(retain) NSArray *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
-- (BOOL)shouldOverwriteItem:(id)arg1;
 - (id)postMetricsWithBagContract:(id)arg1;
+- (BOOL)shouldOverwriteItem:(id)arg1;
+- (id)postMetricsWithBag:(id)arg1;
 - (id)generateItem;
 @property(retain) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property long long priority;

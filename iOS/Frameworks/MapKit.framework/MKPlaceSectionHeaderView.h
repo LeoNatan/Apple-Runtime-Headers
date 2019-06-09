@@ -6,7 +6,7 @@
 
 #import <MapKit/MKPlaceSectionItemView.h>
 
-@class NSArray, NSLayoutConstraint, NSString, UIImage, _MKRightImageButton, _MKUILabel;
+@class MKVibrantLabel, NSArray, NSLayoutConstraint, NSString, UIImage, _MKRightImageButton;
 
 __attribute__((visibility("hidden")))
 @interface MKPlaceSectionHeaderView : MKPlaceSectionItemView
@@ -16,14 +16,12 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_baselineToBaselineConstraint;
     NSLayoutConstraint *_iconHeightConstraint;
     NSLayoutConstraint *_iconWidthConstraint;
-    NSLayoutConstraint *_seeMoreBaselineConstraint;
-    NSLayoutConstraint *_seeMoreCenterYConstraint;
     _Bool _contentChanged;
     double _width;
     _Bool _showSeeMoreButton;
     NSString *_seeMoreButtonText;
     NSString *_providerName;
-    _MKUILabel *_sectionHeaderLabel;
+    MKVibrantLabel *_sectionHeaderLabel;
     _MKRightImageButton *_seeMoreButton;
     NSArray *_seeMoreButtonConstraints;
     NSArray *_constraints;
@@ -37,7 +35,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) NSArray *seeMoreButtonConstraints; // @synthesize seeMoreButtonConstraints=_seeMoreButtonConstraints;
 @property(retain, nonatomic) _MKRightImageButton *seeMoreButton; // @synthesize seeMoreButton=_seeMoreButton;
-@property(retain, nonatomic) _MKUILabel *sectionHeaderLabel; // @synthesize sectionHeaderLabel=_sectionHeaderLabel;
+@property(retain, nonatomic) MKVibrantLabel *sectionHeaderLabel; // @synthesize sectionHeaderLabel=_sectionHeaderLabel;
 @property(nonatomic) _Bool showSeeMoreButton; // @synthesize showSeeMoreButton=_showSeeMoreButton;
 @property(nonatomic) struct CGSize iconDisplaySize; // @synthesize iconDisplaySize=_iconDisplaySize;
 @property(retain, nonatomic) NSString *providerName; // @synthesize providerName=_providerName;

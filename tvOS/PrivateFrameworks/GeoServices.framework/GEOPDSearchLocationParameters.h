@@ -14,15 +14,16 @@ __attribute__((visibility("hidden")))
 @interface GEOPDSearchLocationParameters : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    int _searchLocationParametersType;
     GEOPDTransportHint *_searchTransportHint;
+    int _searchLocationParametersType;
     struct {
-        unsigned int searchLocationParametersType:1;
-    } _has;
+        unsigned int has_searchLocationParametersType:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDTransportHint *searchTransportHint; // @synthesize searchTransportHint=_searchTransportHint;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,13 +32,15 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDTransportHint *searchTransportHint;
 @property(readonly, nonatomic) _Bool hasSearchTransportHint;
 - (int)StringAsSearchLocationParametersType:(id)arg1;
 - (id)searchLocationParametersTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasSearchLocationParametersType;
-@property(nonatomic) int searchLocationParametersType; // @synthesize searchLocationParametersType=_searchLocationParametersType;
+@property(nonatomic) int searchLocationParametersType;
 
 @end
 

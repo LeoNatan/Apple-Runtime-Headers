@@ -11,9 +11,9 @@
 
 @interface ADPrerollTopBar : UIView
 {
-    id <ADPrerollTopBarDelegate> _delegate;
     _Bool _isFullscreen;
     _Bool _layoutForExpandedSize;
+    id <ADPrerollTopBarDelegate> _delegate;
     UIStatusBar *_statusBar;
     ADPrerollButton *_doneButton;
     ADProgressView *_progressView;
@@ -24,15 +24,15 @@
 @property(retain, nonatomic) UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
 @property(nonatomic) _Bool layoutForExpandedSize; // @synthesize layoutForExpandedSize=_layoutForExpandedSize;
 @property(nonatomic) _Bool isFullscreen; // @synthesize isFullscreen=_isFullscreen;
+@property(nonatomic) __weak id <ADPrerollTopBarDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)_doneButtonTapped:(id)arg1;
 - (void)_scaleToFitButtonTapped:(id)arg1;
 - (void)_scaleToFillButtonTapped:(id)arg1;
 - (void)layoutSubviews;
 - (void)setElapsedTime:(double)arg1 totalTime:(double)arg2;
 - (double)requiredHeight;
-@property(nonatomic) __weak id <ADPrerollTopBarDelegate> delegate;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)dealloc;
 
 @end
 

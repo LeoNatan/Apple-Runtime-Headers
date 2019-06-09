@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     _Bool _keysAreCompacted;
 }
 
+@property(readonly, copy, nonatomic) NSSet *keys; // @synthesize keys=_keys;
 - (void).cxx_destruct;
 - (id)debugDescription;
 @property(retain) NSDictionary *completeDictionary;

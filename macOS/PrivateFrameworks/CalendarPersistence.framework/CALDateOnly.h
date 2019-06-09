@@ -13,7 +13,6 @@
 + (id)dateOnlyFromDate:(id)arg1;
 + (id)dateOnlyWithYear:(long long)arg1 month:(unsigned long long)arg2 day:(unsigned long long)arg3;
 + (id)date;
-+ (id)dateOnlyArrayFromDateTimeArray:(id)arg1;
 - (id)description;
 - (id)dateByAddingYears:(long long)arg1 months:(long long)arg2 days:(long long)arg3 hours:(long long)arg4 minutes:(long long)arg5 seconds:(long long)arg6;
 - (id)dateByAddingRawInterval:(double)arg1;

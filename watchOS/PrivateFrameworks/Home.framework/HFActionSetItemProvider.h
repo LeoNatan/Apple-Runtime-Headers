@@ -6,8 +6,8 @@
 
 #import <Home/HFItemProvider.h>
 
-@class HMHome, HMRoom, NSMutableSet;
-@protocol HFCharacteristicValueSource;
+@class HFItem, HMHome, HMRoom, NSMutableSet;
+@protocol HFCharacteristicValueSource, HFServiceLikeItem;
 
 @interface HFActionSetItemProvider : HFItemProvider
 {
@@ -16,12 +16,14 @@
     HMRoom *_room;
     CDUnknownBlockType _filter;
     unsigned int _actionSetItemStyle;
+    HFItem<HFServiceLikeItem> *_serviceLikeItem;
     NSMutableSet *_actionSetItems;
     id <HFCharacteristicValueSource> _overrideValueSource;
 }
 
 @property(retain, nonatomic) id <HFCharacteristicValueSource> overrideValueSource; // @synthesize overrideValueSource=_overrideValueSource;
 @property(retain, nonatomic) NSMutableSet *actionSetItems; // @synthesize actionSetItems=_actionSetItems;
+@property(copy, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
 @property(readonly, nonatomic) unsigned int actionSetItemStyle; // @synthesize actionSetItemStyle=_actionSetItemStyle;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;
 @property(nonatomic) _Bool onlyShowsFavorites; // @synthesize onlyShowsFavorites=_onlyShowsFavorites;

@@ -6,11 +6,17 @@
 
 #import <PhotosUICore/NSObject-Protocol.h>
 
-@class PHImageRequestOptions;
+@class NSArray, PHImageRequestOptions;
 @protocol PXDisplayAsset;
 
 @protocol PXUIImageProvider <NSObject>
 - (void)cancelImageRequest:(long long)arg1;
 - (long long)requestImageForAsset:(id <PXDisplayAsset>)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(PHImageRequestOptions *)arg4 resultHandler:(void (^)(UIImage *, NSDictionary *))arg5;
+- (id)init;
+
+@optional
+- (void)stopCachingImagesForAllAssets;
+- (void)stopCachingImagesForAssets:(NSArray *)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(PHImageRequestOptions *)arg4;
+- (void)startCachingImagesForAssets:(NSArray *)arg1 targetSize:(struct CGSize)arg2 contentMode:(long long)arg3 options:(PHImageRequestOptions *)arg4;
 @end
 

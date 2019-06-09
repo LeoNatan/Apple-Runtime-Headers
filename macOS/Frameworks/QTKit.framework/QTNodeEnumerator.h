@@ -6,22 +6,13 @@
 
 #import <Foundation/NSEnumerator.h>
 
-@class QTMovie;
-
 @interface QTNodeEnumerator : NSEnumerator
 {
-    QTMovie *_movie;
-    unsigned int _index;
-    long long _reserved1;
-    long long _reserved2;
-    long long _reserved3;
 }
 
 + (id)nodeEnumeratorWithMovie:(id)arg1;
-- (id)nextObject;
-- (void)dealloc;
+- (id)init;
 - (id)initWithMovie:(id)arg1;
-- (void)setMovie:(id)arg1;
 
 @end
 

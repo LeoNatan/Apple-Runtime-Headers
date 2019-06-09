@@ -7,6 +7,8 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (AXBSideStorage)
++ (id)_AXBBundles;
++ (void)_AXBInitializeBundle;
 - (void)_axbStorageRemoveValueForKey:(id)arg1;
 - (void)_axbStorageSetUnsignedIntegerValue:(unsigned long long)arg1 forKey:(id)arg2;
 - (void)_axbStorageSetIntegerValue:(long long)arg1 forKey:(id)arg2;
@@ -16,5 +18,25 @@
 - (void)_axbStorageSetWeakValue:(id)arg1 forKey:(id)arg2;
 - (void)_axbStorageSetValue:(id)arg1 forKey:(id)arg2 storageMode:(long long)arg3;
 - (id)_axbStorageValueForKey:(id)arg1;
+- (id)__axbSafeValidatedValueForKey:(id)arg1 expectedClass:(Class)arg2 possibleExpectedTypeEncodings:(const char *)arg3;
+- (id)__axbSafeValidatedValueForKey:(id)arg1 expectedClass:(Class)arg2 expectedTypeEncoding:(const char *)arg3;
+- (void)__accessibilityPerformSafeValueKeyBlock:(CDUnknownBlockType)arg1 withKey:(id)arg2 onClass:(Class)arg3;
+- (id)_axbSafeValueForKeyPath:(id)arg1;
+- (id)__axValueForKey:(id)arg1;
+- (id)_axbSafeValueForKey:(id)arg1;
+- (struct CGRect)_axbSafeRectForKey:(id)arg1;
+- (struct CGSize)_axbSafeSizeForKey:(id)arg1;
+- (struct CGPoint)_axbSafePointForKey:(id)arg1;
+- (double)_axbSafeCGFloatForKey:(id)arg1;
+- (struct _NSRange)_axbSafeRangeForKey:(id)arg1;
+- (double)_axbSafeTimeIntervalForKey:(id)arg1;
+- (double)_axbSafeDoubleForKey:(id)arg1;
+- (float)_axbSafeFloatForKey:(id)arg1;
+- (unsigned long long)_axbSafeUnsignedIntegerForKey:(id)arg1;
+- (long long)_axbSafeIntegerForKey:(id)arg1;
+- (unsigned int)_axbSafeUnsignedIntForKey:(id)arg1;
+- (int)_axbSafeIntForKey:(id)arg1;
+- (BOOL)_axbSafeBoolForKey:(id)arg1;
+- (void *)_axbSafeIvarForKey:(id)arg1;
 @end
 

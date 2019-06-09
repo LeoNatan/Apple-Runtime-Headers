@@ -8,6 +8,7 @@
 
 @class EDCollection, EDResources, NSArray, OADGraphicProperties;
 
+__attribute__((visibility("hidden")))
 @interface CHDLegend : NSObject
 {
     int mLegendPosition;

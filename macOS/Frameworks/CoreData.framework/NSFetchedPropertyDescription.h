@@ -19,6 +19,8 @@
 + (BOOL)supportsSecureCoding;
 - (void)_createCachesAndOptimizeState;
 - (unsigned long long)_propertyType;
+- (void)setReadOnly:(BOOL)arg1;
+- (void)setTransient:(BOOL)arg1;
 - (BOOL)isReadOnly;
 - (BOOL)isTransient;
 @property(retain) NSFetchRequest *fetchRequest;

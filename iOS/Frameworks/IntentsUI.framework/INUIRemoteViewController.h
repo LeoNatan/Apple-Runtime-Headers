@@ -41,15 +41,17 @@
 @property(copy, nonatomic, setter=_setRequestInfo:) INUIExtensionRequestInfo *requestInfo; // @synthesize requestInfo=_requestInfo;
 @property(nonatomic) struct CGSize preferredContentSize; // @synthesize preferredContentSize=_preferredContentSize;
 - (void).cxx_destruct;
+- (_Bool)_canShowWhileLocked;
 - (void)serviceViewControllerDesiresConstrainedSize:(struct CGSize)arg1;
 - (void)configureWithInteraction:(id)arg1 context:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)configureForParameters:(id)arg1 ofInteraction:(id)arg2 interactiveBehavior:(unsigned long long)arg3 context:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
-- (void)configureForParameters:(id)arg1 ofInteraction:(id)arg2 context:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)configureWithInteraction:(id)arg1 context:(unsigned long long)arg2 errorHandlingCompletion:(CDUnknownBlockType)arg3;
+- (void)extensionHostContextWillBeginEditing:(id)arg1;
 - (void)extensionHostContext:(id)arg1 wantsToHandleIntent:(id)arg2;
 - (void)_updateExtensionContextStateWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_errorHandlingServiceViewControllerProxy;
 - (void)_queryRepresentedPropertiesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)desiresInteractivity:(CDUnknownBlockType)arg1;
 - (void)requestCancellation;
 - (void)setIdealConfiguration:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setDelegate:(id)arg1 completion:(CDUnknownBlockType)arg2;

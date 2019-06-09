@@ -9,31 +9,37 @@
 #import <CoreRoutine/NSCopying-Protocol.h>
 #import <CoreRoutine/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSUUID;
+@class NSDate, NSUUID, RTLocation;
 
 @interface RTLocationOfInterestVisit : NSObject <NSCopying, NSSecureCoding>
 {
-    NSDate *_entry;
-    NSDate *_exit;
+    RTLocation *_location;
     NSUUID *_identifier;
+    NSDate *_entryDate;
+    NSDate *_exitDate;
+    unsigned int _locationOfInterestSource;
     double _locationOfInterestConfidence;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) unsigned int locationOfInterestSource; // @synthesize locationOfInterestSource=_locationOfInterestSource;
 @property(readonly, nonatomic) double locationOfInterestConfidence; // @synthesize locationOfInterestConfidence=_locationOfInterestConfidence;
+@property(readonly, nonatomic) NSDate *exitDate; // @synthesize exitDate=_exitDate;
+@property(readonly, nonatomic) NSDate *entryDate; // @synthesize entryDate=_entryDate;
 @property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
-@property(readonly, nonatomic) NSDate *exit; // @synthesize exit=_exit;
-@property(readonly, nonatomic) NSDate *entry; // @synthesize entry=_entry;
+@property(readonly, nonatomic) RTLocation *location; // @synthesize location=_location;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSDate *exitTime;
-@property(readonly, nonatomic) NSDate *entryTime;
+- (id)exit;
+- (id)entry;
+- (id)exitTime;
+- (id)entryTime;
 - (id)description;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 entry:(id)arg2 exit:(id)arg3 locationOfInterestConfidence:(double)arg4;
+- (id)initWithIdentifier:(id)arg1 entry:(id)arg2 exit:(id)arg3 location:(id)arg4 locationOfInterestConfidence:(double)arg5 locationOfInterestSource:(unsigned int)arg6;
 - (id)init;
 
 @end

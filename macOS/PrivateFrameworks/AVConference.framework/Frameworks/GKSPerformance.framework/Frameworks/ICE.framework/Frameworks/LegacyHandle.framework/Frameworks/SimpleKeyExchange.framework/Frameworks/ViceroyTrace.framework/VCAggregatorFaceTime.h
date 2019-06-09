@@ -31,6 +31,11 @@ __attribute__((visibility("hidden")))
     double _callAverageTargetBitrate;
     double _callAverageSendBitrate;
     double _callAverageReceiveBitrate;
+    double _callAverageTotalVideoSendBitrate;
+    double _callAverageVideoMediaSendBitrate;
+    double _callAverageVideoHeaderSendBitrate;
+    double _callAverageVideoFECSendBitrate;
+    double _callAverageTotalVideoRecvBitrate;
     double _callAverageRTT;
     double _callPoorConnectionTotalLength;
     double _callPoorConnectionMaxLength;
@@ -58,8 +63,11 @@ __attribute__((visibility("hidden")))
     unsigned int _callDetailedErrorCode;
     unsigned int _numberOfSegments;
     unsigned int _REDState;
+    unsigned char _wifiAssistState;
     unsigned long long _lastReportedAudioPacketSent;
     unsigned long long _lastReportedVideoPacketSent;
+    unsigned int _lastReportedAudioPacketRecv;
+    unsigned int _lastReportedVideoPacketRecv;
     unsigned int _initialRampUpTime;
     int _initialBitrateDelta;
     int _initialBitrate;
@@ -71,6 +79,19 @@ __attribute__((visibility("hidden")))
     unsigned int _videoFrameImcompleteNextTSCounter;
     unsigned int _videoFrameTotalIncompleteCounter;
     unsigned int _decodedVideoFrameEnqueueCounter;
+    unsigned int _videoFrameReceivedCounter;
+    unsigned int _videoFrameExpectedCounter;
+    unsigned int _videoFrameNonFECTotalCounter;
+    unsigned int _videoFrameNonFECCompleteCounter;
+    unsigned int _encodedVideoFrameCounter;
+    unsigned int _captureVideoFrameCounter;
+    unsigned int _localSwitches;
+    unsigned int _remoteSwitches;
+    unsigned int _callTotalCellDupTxDataBytes;
+    unsigned int _callTotalCellDupRxDataBytes;
+    unsigned int _callTotalUsedCellBudgetTxDataBytes;
+    unsigned int _callTotalUsedCellBudgetRxDataBytes;
+    BOOL _isDuplicationEnabled;
     VCHistogram *_callVideoSwitchPeriodHistogram;
     VCAdaptiveLearning *_adaptiveLearning;
 }
@@ -91,12 +112,14 @@ __attribute__((visibility("hidden")))
 - (void)updateSegment:(id)arg1 TBR:(int)arg2 ISBTR:(int)arg3 SATXBR:(int)arg4 SARBR:(int)arg5 BWE:(int)arg6;
 - (int)adaptiveLearningState;
 - (void)processEventWithCategory:(unsigned short)arg1 type:(unsigned short)arg2 payload:(id)arg3;
+- (BOOL)isDuplicationChanged:(BOOL)arg1;
+- (void)updateSwitchConfiguration:(unsigned int)arg1 payload:(id)arg2;
 - (void)updateAdaptiveLearningStats:(unsigned int)arg1 payload:(id)arg2;
 - (void)updateVideoSwitchTimes;
 - (void)updateConnectionTimes:(id)arg1;
-- (void)updateRelayInfo:(id)arg1 isRelay:(BOOL)arg2;
+- (void)updateRelayInfo:(id)arg1;
 - (void)updateNoRemoteState:(BOOL)arg1;
-- (void)updateRedState:(id)arg1;
+- (void)updateRedState:(id)arg1 wifiAssistState:(id)arg2;
 - (void)updateErrorCode:(id)arg1;
 - (void)updateRoleModeTransport:(unsigned short)arg1 deviceRole:(unsigned short)arg2 transportType:(unsigned short)arg3;
 - (void)updatePauseVideo:(BOOL)arg1;
@@ -107,7 +130,6 @@ __attribute__((visibility("hidden")))
 - (id)duplicationIndicator;
 - (id)connectionTypeIndicator;
 - (id)interfaceTypeIndicator:(BOOL)arg1;
-- (unsigned int)RTPeriod;
 - (void)reset;
 - (void)flushCurrentSegment;
 - (id)aggregatedSessionReport;

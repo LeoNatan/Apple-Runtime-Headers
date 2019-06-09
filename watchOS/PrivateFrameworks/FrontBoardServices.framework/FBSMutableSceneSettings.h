@@ -15,12 +15,14 @@
 + (_Bool)_isMutable;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)setOccluded:(_Bool)arg1;
 @property(copy, nonatomic) NSArray *occlusions; // @dynamic occlusions;
 - (void)_setDisplayConfiguration:(id)arg1;
 - (id)transientLocalSettings;
 - (id)ignoreOcclusionReasons;
 - (id)otherSettings;
 @property(nonatomic, getter=isBackgrounded) _Bool backgrounded; // @dynamic backgrounded;
+@property(nonatomic, getter=isForeground) _Bool foreground; // @dynamic foreground;
 @property(nonatomic) int interfaceOrientation; // @dynamic interfaceOrientation;
 @property(nonatomic) float level; // @dynamic level;
 @property(nonatomic) struct CGRect frame; // @dynamic frame;

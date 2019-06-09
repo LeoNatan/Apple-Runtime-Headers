@@ -46,11 +46,13 @@
 - (void)_pressedButton:(id)arg1;
 - (void)_tappedButton:(id)arg1;
 - (id)sourceViewForAction:(id)arg1;
-- (void)moveToOffset:(float)arg1 extraOffset:(float)arg2 animated:(_Bool)arg3 usingSpringWithStiffness:(float)arg4 initialVelocity:(float)arg5;
+- (void)_performAction:(id)arg1 offset:(float)arg2 extraOffset:(float)arg3;
+- (void)moveToOffset:(float)arg1 extraOffset:(float)arg2 animator:(id)arg3 usingSpringWithStiffness:(float)arg4 initialVelocity:(float)arg5;
 - (void)configureWithSwipeActions:(id)arg1;
 - (void)freeze;
 - (void)resetView;
 - (void)layoutSubviews;
+- (id)_inferredAccessibilityIdentifierTemplate;
 - (void)_rebuildButtons;
 - (Class)_buttonClass;
 - (unsigned int)_swipeActionCount;
@@ -61,7 +63,7 @@
 @property(readonly, nonatomic) _Bool hasActions;
 @property(readonly, nonatomic) _Bool primaryActionIsDestructive;
 @property(readonly, nonatomic) UIContextualAction *primarySwipeAction;
-- (id)initWithCellEdge:(unsigned int)arg1 style:(unsigned int)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 cellEdge:(unsigned int)arg2 style:(unsigned int)arg3;
 
 @end
 

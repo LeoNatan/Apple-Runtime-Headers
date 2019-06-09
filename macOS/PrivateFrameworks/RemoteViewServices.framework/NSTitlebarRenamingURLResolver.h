@@ -48,6 +48,7 @@
 @property struct _NSRange startEditingRange; // @synthesize startEditingRange=_startEditingRange;
 @property(copy) NSString *userEditedDisplayName; // @synthesize userEditedDisplayName=_userEditedDisplayName;
 @property(copy) NSString *startDisplayName; // @synthesize startDisplayName=_startDisplayName;
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)resolveFinalURLInPBOXOverwriteOK:(BOOL)arg1 forClientPID:(int)arg2 andEUID:(unsigned int)arg3 usingFinalTitle:(id)arg4;
 - (id)findAvailableURLForFinalDisplayName:(id)arg1 withFileSystemUniquing:(BOOL)arg2;
@@ -64,7 +65,6 @@
 @property(readonly) NSURL *finalURL;
 - (void)_setFinalURL:(id)arg1;
 @property struct _NSRange editingRange; // @dynamic editingRange;
-- (void)dealloc;
 - (id)initWithRemoteServiceRequest:(id)arg1;
 - (id)init;
 

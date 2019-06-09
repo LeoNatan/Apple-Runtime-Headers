@@ -6,24 +6,43 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString;
+@class NSArray, NSDictionary, NSString, _PASCFBurstTrie;
 
 @interface PPConfigurationGuardedData : NSObject
 {
     double topicsSigmoidWidth;
     double topicsSigmoidPeakValue;
     double topicsScalingFactor;
-    double remoteTopicsMultiplier;
+    float remoteTopicsMultiplier;
     double halfValuePosition;
     double nonReaderTextWeight;
-    unsigned long long minimumTopicRecords;
-    unsigned long long maximumTopicRecords;
     double analyticsSamplingRate;
+    double musicDataCollectionSamplingRateForCTS;
+    double musicDataCollectionSamplingRateForAMP;
+    int musicDataCollectionMaximumRecordsPerType;
+    NSArray *musicDataCollectionAMPBundleIds;
     NSString *variantName;
+    NSString *naturalVariantName;
+    NSArray *availableVariantNames;
     NSDictionary *topicMaps;
     NSDictionary *topicMapsScalingFactors;
     NSDictionary *topicsSourceMultiplier;
     NSDictionary *topicsAlgorithmMultiplier;
+    _PASCFBurstTrie *topicCalibration;
+    BOOL highLevelTopicExtractionEnabled;
+    BOOL safariDonationTitleExtractionEnabled;
+    BOOL safariDataDetectorsEnabledForHighMemoryDevices;
+    double highLevelTopicScoreThreshold;
+    float scoreThresholdForNamedEntity;
+    float scoreThresholdForTopic;
+    float scoreThresholdForLocation;
+    float feedbackSessionLogsSamplingRate;
+    float feedbackSessionLogsMappedTopicsSamplingRate;
+    float feedbackSessionLogsExtractionsSamplingRate;
+    int feedbackSessionLogsGeohashLength;
+    double analyticsTopicsSamplingRate;
+    int analyticsMaximumNumberOfRecords;
+    int analyticsGeohashLength;
 }
 
 - (void).cxx_destruct;

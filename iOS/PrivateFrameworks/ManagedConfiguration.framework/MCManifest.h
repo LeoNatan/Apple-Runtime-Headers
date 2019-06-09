@@ -33,6 +33,7 @@
 - (void)removeIdentifierFromSystemManifest:(id)arg1 flag:(int)arg2;
 - (void)addIdentifierToUserManifest:(id)arg1 flag:(int)arg2;
 - (void)addIdentifierToSystemManifest:(id)arg1 flag:(int)arg2;
+- (id)allInstalledPayloadsOfClass:(Class)arg1;
 - (id)allProfileIdentifiersInstalledNonInteractivelyWithFilterFlags:(int)arg1;
 - (id)allInstalledSystemProfileIdentifiers;
 - (id)allInstalledUserProfileIdentifiers;

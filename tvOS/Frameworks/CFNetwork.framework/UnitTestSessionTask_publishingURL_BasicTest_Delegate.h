@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface UnitTestSessionTask_publishingURL_BasicTest_Delegate : NSObject <NSURLSessionTaskDelegate>
 {
     SmartBlockWithArgs_343a5e9e _didDidCompleteWithErrorCompletionBlock;

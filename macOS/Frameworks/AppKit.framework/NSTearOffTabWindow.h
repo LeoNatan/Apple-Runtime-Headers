@@ -32,6 +32,7 @@
 - (void)_resolveAutomaticEnterFullScreenFlags;
 - (BOOL)_wantsFullScreenTileDropTargets;
 - (BOOL)canEnterFullScreenMode;
+- (BOOL)_allowedInOtherAppsFullScreenSpaceWithCollectionBehavior:(unsigned long long)arg1;
 - (id)initWithContentRect:(struct CGRect)arg1 tornFromWindow:(id)arg2;
 - (void)dealloc;
 

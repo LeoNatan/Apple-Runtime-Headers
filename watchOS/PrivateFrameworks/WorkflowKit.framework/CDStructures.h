@@ -8,3 +8,56 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
+#pragma mark Named Structures
+
+struct CGPoint {
+    float _field1;
+    float _field2;
+};
+
+struct CGRect {
+    struct CGPoint _field1;
+    struct CGSize _field2;
+};
+
+struct CGSize {
+    float width;
+    float height;
+};
+
+struct NSDictionary {
+    Class _field1;
+};
+
+struct SipHasher {
+    int _c;
+    int _d;
+    unsigned long long _v0;
+    unsigned long long _v1;
+    unsigned long long _v2;
+    unsigned long long _v3;
+    struct TailBuffer _buffer;
+};
+
+struct TailBuffer {
+    unsigned long long value;
+};
+
+struct WFRowTemplateValueInfo {
+    Class _field1;
+    SEL _field2;
+    SEL _field3;
+    id _field4;
+    id _field5;
+};
+
+struct _NSRange {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+
+struct _WFDatabaseResultsSlice {
+    unsigned int startIndex;
+    unsigned int endIndex;
+};
+

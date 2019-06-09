@@ -16,14 +16,16 @@
 
 @interface HFMediaValueManager : NSObject <HFMediaObjectObserver, HFMediaSessionObserver, HFMediaValueSource, HFHomeKitItemProtocol>
 {
-    NSError *_cachedPlaybackStateWriteError;
+    _Bool _hasPendingWrites;
     id <HFMediaProfileContainer> _mediaProfileContainer;
     NSMutableArray *_transactionStack;
+    NSError *_cachedPlaybackStateWriteError;
 }
 
+@property(retain, nonatomic) NSError *cachedPlaybackStateWriteError; // @synthesize cachedPlaybackStateWriteError=_cachedPlaybackStateWriteError;
 @property(retain, nonatomic) NSMutableArray *transactionStack; // @synthesize transactionStack=_transactionStack;
+@property(readonly, nonatomic) _Bool hasPendingWrites; // @synthesize hasPendingWrites=_hasPendingWrites;
 @property(readonly, nonatomic) __weak id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
-@property(readonly, nonatomic) NSError *cachedPlaybackStateWriteError; // @synthesize cachedPlaybackStateWriteError=_cachedPlaybackStateWriteError;
 - (void).cxx_destruct;
 - (void)_notifyDelegatesFailedToUpdatePlaybackStateWithError:(id)arg1 mediaSession:(id)arg2;
 - (void)_notifyDelegatesWillUpdatePlaybackState:(long long)arg1 mediaSession:(id)arg2;
@@ -33,9 +35,11 @@
 - (void)_clearCachedPlaybackStateWriteErrorWithReason:(id)arg1 notifyDelegates:(_Bool)arg2;
 - (void)mediaObject:(id)arg1 didUpdateMediaSession:(id)arg2;
 - (void)mediaSession:(id)arg1 didUpdatePlaybackState:(long long)arg2;
-- (id)writePlaybackState:(long long)arg1;
-- (long long)lastPlaybackStateForProfile;
-@property(readonly, nonatomic) _Bool hasPendingWrites;
+- (id)mediaProfileContainerForRouteID:(id)arg1;
+- (id)cachedPlaybackStateWriteErrorForRouteID:(id)arg1;
+- (id)writePlaybackState:(long long)arg1 forRouteID:(id)arg2;
+- (long long)lastPlaybackStateForProfileForRouteID:(id)arg1;
+- (_Bool)hasPendingWritesForRouteID:(id)arg1;
 @property(readonly, nonatomic) id <HFHomeKitObject> homeKitObject;
 - (id)init;
 - (id)initWithMediaProfileContainer:(id)arg1;

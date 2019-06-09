@@ -18,10 +18,12 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (CDStruct_d1a7ebee)dataRequestKind;
 - (void)submitWithHandler:(CDUnknownBlockType)arg1 auditToken:(id)arg2 timeout:(long long)arg3 networkActivity:(CDUnknownBlockType)arg4;
 - (id)description;
 - (id)initWithIdentifiers:(id)arg1 resultProviderID:(int)arg2 contentProvider:(id)arg3 traits:(id)arg4 options:(unsigned long long)arg5;
 - (id)initWithMUIDs:(id)arg1 resultProviderID:(int)arg2 contentProvider:(id)arg3 traits:(id)arg4 options:(unsigned long long)arg5;
+- (id)initWithTraits:(id)arg1;
 
 @end
 

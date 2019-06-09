@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UILabel.h>
+#import <TemplateKit/TLKLabel.h>
 
 @class NSAttributedString, NSString;
 
 __attribute__((visibility("hidden")))
-@interface FULabel : UILabel
+@interface FULabel : TLKLabel
 {
     NSString *_stringValue;
     NSAttributedString *_attributedStringValue;

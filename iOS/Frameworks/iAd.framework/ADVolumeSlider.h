@@ -14,6 +14,7 @@
     UIColor *_minimumTintUsedForTrackImageColor;
 }
 
+- (void).cxx_destruct;
 - (void)_updateTrackTintForVolumeControlAvailability;
 - (id)_trackImageWithTintColor:(id)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

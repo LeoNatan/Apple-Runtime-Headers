@@ -9,6 +9,7 @@
 @class NSString, SKUIGift, SKUIGiftRecipientTableViewCell, SKUIGiftTextTableViewCell, UITextView;
 @protocol UITextFieldDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftAddressingSection : SKUIGiftTableViewSection
 {
     double _footerHeight;

@@ -6,7 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class AMSURLAction, AMSURLRequestProperties, NSError, NSMutableData, NSURLResponse, NSURLSession, NSURLSessionTask, NSURLSessionTaskMetrics;
+@class AMSURLAction, AMSURLRequestProperties, AMSURLSession, NSError, NSMutableData, NSMutableDictionary, NSURLResponse, NSURLSessionTask, NSURLSessionTaskMetrics;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface AMSURLTaskInfo : NSObject
@@ -17,8 +18,11 @@ __attribute__((visibility("hidden")))
     AMSURLRequestProperties *_properties;
     AMSURLAction *_receivedAction;
     NSURLResponse *_response;
-    NSURLSession *_session;
+    long long _retryCount;
+    AMSURLSession *_session;
     NSURLSessionTask *_task;
+    NSObject<OS_dispatch_queue> *_taskQueue;
+    NSMutableDictionary *_userInfo;
     CDUnknownBlockType _completionBlock;
 }
 
@@ -28,8 +32,11 @@ __attribute__((visibility("hidden")))
 + (id)createTaskInfoForTask:(id)arg1;
 + (id)taskInfoForTask:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
+@property(readonly, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *taskQueue; // @synthesize taskQueue=_taskQueue;
 @property(retain, nonatomic) NSURLSessionTask *task; // @synthesize task=_task;
-@property(nonatomic) __weak NSURLSession *session; // @synthesize session=_session;
+@property(retain, nonatomic) AMSURLSession *session; // @synthesize session=_session;
+@property(nonatomic) long long retryCount; // @synthesize retryCount=_retryCount;
 @property(retain, nonatomic) NSURLResponse *response; // @synthesize response=_response;
 @property(retain, nonatomic) AMSURLAction *receivedAction; // @synthesize receivedAction=_receivedAction;
 @property(retain, nonatomic) AMSURLRequestProperties *properties; // @synthesize properties=_properties;
@@ -37,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
 @property(retain, nonatomic) NSMutableData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
+- (void)migrateFromTaskInfo:(id)arg1;
 - (id)initWithTask:(id)arg1;
 
 @end

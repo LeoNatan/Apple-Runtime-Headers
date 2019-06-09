@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSCache, PPQuickTypeConnectionsServant, PPQuickTypeContactsServant, PPQuickTypeEventsServant, PPQuickTypeNavigationServant;
+@class PPQuickTypeConnectionsServant, PPQuickTypeContactsServant, PPQuickTypeEventsServant, PPQuickTypeNavigationServant, _PASLock;
 
 @interface PPLocalQuickTypeBroker : NSObject
 {
@@ -14,15 +14,20 @@
     PPQuickTypeContactsServant *_contactsServant;
     PPQuickTypeEventsServant *_eventsServant;
     PPQuickTypeConnectionsServant *_connectionsServant;
-    NSCache *_recentItemsForRecipients;
+    _PASLock *_cacheLock;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (_Bool)registerFeedback:(id)arg1 error:(id *)arg2;
+- (id)_cacheEntryWithRecipients:(id)arg1;
+- (id)_cachedQuickTypeItemsWithRecipients:(id)arg1;
+- (id)_cachedQuickTypeItemsWithQuery:(id)arg1;
+- (id)_recipientItemCacheKeyForRecipients:(id)arg1;
+- (id)_quickTypeItemsFromServantsWithQuery:(id)arg1 limit:(unsigned int)arg2 explanationSet:(id)arg3;
 - (void)hibernateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)warmUpWithCompletion:(CDUnknownBlockType)arg1;
 - (void)recentQuickTypeItemsForRecipients:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_recipientItemCacheKeyForRecipients:(id)arg1;
 - (void)quickTypeItemsWithLanguageModelingTokens:(id)arg1 localeIdentifier:(id)arg2 recipients:(id)arg3 bundleIdentifier:(id)arg4 limit:(unsigned int)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)quickTypeItemsWithQuery:(id)arg1 limit:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)init;

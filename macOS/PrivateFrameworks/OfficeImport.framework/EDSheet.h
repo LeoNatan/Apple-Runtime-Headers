@@ -8,6 +8,7 @@
 
 @class EDColorReference, EDHeaderFooter, EDPageSetup, EDProcessors, EDString, EDWarnings, EDWorkbook, ESDContainer, NSMutableArray, OITSUPointerKeyDictionary;
 
+__attribute__((visibility("hidden")))
 @interface EDSheet : OCDDelayedNode
 {
     EDString *mName;

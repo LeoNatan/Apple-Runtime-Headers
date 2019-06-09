@@ -11,6 +11,7 @@
 @class NSMutableDictionary, NSString, SKUIResourceLoader;
 @protocol SKUIMissingItemDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMissingItemLoader : NSObject <SKUIItemRequestDelegate>
 {
     long long _batchSize;

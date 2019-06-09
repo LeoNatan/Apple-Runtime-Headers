@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OITSUNumberFormat.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSUMutableNumberFormat : OITSUNumberFormat
 {
 }

@@ -37,6 +37,7 @@
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) PHFetchResult *collectionListFetchResult; // @synthesize collectionListFetchResult=_collectionListFetchResult;
 - (void).cxx_destruct;
+- (id)initWithAssetFetchResult:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithCollectionListFetchResult:(id)arg1 options:(unsigned long long)arg2;
 - (id)init;
 

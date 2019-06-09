@@ -6,40 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSMutableSet;
-@protocol OS_dispatch_queue;
+@class NSMutableSet;
+@protocol BLTSectionIdentifierMapperDelegate, OS_dispatch_queue;
 
 @interface BLTSectionIdentifierMapper : NSObject
 {
     NSMutableSet *_mappings;
     NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_unverifiedMappings;
-    NSMutableSet *_settingsOnlyMappings;
-    NSMutableSet *_forwardedOnlyMappings;
+    id <BLTSectionIdentifierMapperDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <BLTSectionIdentifierMapperDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (_Bool)isMirroredSectionID:(id)arg1;
 - (id)mirroredSectionIDForRemoteSectionID:(id)arg1;
 - (id)_loadLocalDataProviderSectionIDs;
 - (void)_createLocalMappings;
-- (void)_handleReceivedUpdatedSectionInfoForSectionID:(id)arg1;
-- (void)verifyMappingsWithSectionInfoList:(id)arg1;
-- (_Bool)_verifyMapping:(id)arg1 withSectionInfoList:(id)arg2;
-- (id)settingsOnlyMappings;
-- (id)mappingWithSectionID:(id)arg1 type:(int)arg2 mapperType:(int)arg3;
-- (id)_mapping:(id)arg1 withSectionID:(id)arg2 type:(int)arg3;
 - (id)mappingWithSectionID:(id)arg1;
 - (id)mappingWithUniversalSectionID:(id)arg1;
 - (id)mappingWithRemoteSectionID:(id)arg1;
 - (id)mappingWithMirroredSectionID:(id)arg1;
+- (id)mappingWithLocalSectionID:(id)arg1 universalSectionID:(id)arg2 updateForIncomingBulletin:(int)arg3;
 - (id)mappingWithLocalSectionID:(id)arg1;
-- (void)_checkMappingsVerified:(id)arg1;
-- (id)mapRemoteSectionID:(id)arg1 forUniversalSectionID:(id)arg2;
+- (id)mapRemoteSectionID:(id)arg1 forUniversalSectionID:(id)arg2 isFactoryChild:(_Bool)arg3;
 - (void)unmapWatchKitLocalSectionID:(id)arg1;
 - (id)_mapDynamicRemoteSectionID:(id)arg1 forLocalSectionID:(id)arg2 universalSectionID:(id)arg3 mirroredSectionID:(id)arg4;
 - (id)mapFactoryChildSectionID:(id)arg1;
-- (id)mapWatchKitRemoteSectionID:(id)arg1 forLocalSectionID:(id)arg2;
+- (id)_mapWatchKitRemoteSectionID:(id)arg1 forLocalSectionID:(id)arg2;
 - (void)dealloc;
 - (id)init;
 

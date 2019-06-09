@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     NSPanGestureRecognizer *_panRecognizer;
     CDUnknownBlockType _pressHandler;
     CDUnknownBlockType _panHandler;
-    unsigned int _isInteractable:1;
-    unsigned int _isSpace:1;
-    unsigned int _leadingJiggle:1;
-    unsigned int _trailingJiggle:1;
+    BOOL _isInteractable;
+    BOOL _isSpace;
+    BOOL _leadingJiggle;
+    BOOL _trailingJiggle;
 }
 
 @property(readonly) long long state; // @synthesize state=_state;

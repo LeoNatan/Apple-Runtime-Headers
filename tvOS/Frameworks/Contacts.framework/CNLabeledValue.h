@@ -6,21 +6,21 @@
 
 #import <objc/NSObject.h>
 
-#import <Contacts/CNSuggested-Protocol.h>
 #import <Contacts/NSCopying-Protocol.h>
 #import <Contacts/NSSecureCoding-Protocol.h>
 
-@class CNLabelValuePair, NSDictionary, NSSet, NSString, SGRecordId;
+@class CNLabelValuePair, NSDictionary, NSSet, NSString;
 @protocol NSCopying><NSSecureCoding;
 
-@interface CNLabeledValue : NSObject <CNSuggested, NSCopying, NSSecureCoding>
+@interface CNLabeledValue : NSObject <NSCopying, NSSecureCoding>
 {
+    CNLabelValuePair *_labelValuePair;
     NSString *_identifier;
     int _iOSLegacyIdentifier;
-    CNLabelValuePair *_labelValuePair;
     NSString *_storeIdentifier;
     NSDictionary *_storeInfo;
     NSSet *_linkedIdentifiers;
+    _Bool _isValueMutable;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -35,6 +35,7 @@
 + (id)valueForIdentifier:(id)arg1 inArray:(id)arg2;
 + (id)labelForIdentifier:(id)arg1 inArray:(id)arg2;
 + (id)localizedStringForLabel:(id)arg1;
++ (id)propertyDescriptionOwnersByLabel;
 + (id)entryForIdentifier:(id)arg1 inArray:(id)arg2;
 + (CDUnknownBlockType)testMatchingIdentifier:(id)arg1;
 + (id)makeIdentifier;
@@ -46,12 +47,12 @@
 @property(nonatomic) int iOSLegacyIdentifier; // @synthesize iOSLegacyIdentifier=_iOSLegacyIdentifier;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-@property(readonly) unsigned long long hash;
+- (unsigned long long)hash;
 - (_Bool)isEqualIgnoringIdentifiers:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToLabeledValue:(id)arg1 includeIdentifiers:(_Bool)arg2;
 - (_Bool)isEqualToLabeledValue:(id)arg1;
-@property(readonly, copy) NSString *description;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)addStoreInfo:(id)arg1;
@@ -61,16 +62,10 @@
 @property(readonly, copy, nonatomic) id <NSCopying><NSSecureCoding> value;
 @property(readonly, copy, nonatomic) NSString *label;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)primitiveInitWithIdentifier:(id)arg1 label:(id)arg2 value:(id)arg3;
 - (id)initWithIdentifier:(id)arg1 label:(id)arg2 value:(id)arg3;
 - (id)initWithLabel:(id)arg1 value:(id)arg2;
-- (id)valueOrigin;
-@property(readonly, nonatomic) NSString *suggestionFoundInBundleId;
-@property(readonly, nonatomic) SGRecordId *suggestionRecordId;
-@property(readonly, nonatomic, getter=isSuggested) _Bool suggested;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly) Class superclass;
+- (id)init;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class MTMaterialView, UIView;
 
+__attribute__((visibility("hidden")))
 @interface LanguageOptionTableViewCell : UITableViewCell
 {
     UIView *_materialView;

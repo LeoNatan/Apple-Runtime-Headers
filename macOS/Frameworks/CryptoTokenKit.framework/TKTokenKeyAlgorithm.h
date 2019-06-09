@@ -16,7 +16,7 @@
 - (void).cxx_destruct;
 - (BOOL)supportsAlgorithm:(struct __CFString *)arg1;
 - (BOOL)isAlgorithm:(struct __CFString *)arg1;
-- (id)initWithXpcObject:(id)arg1;
+- (id)initWithAlgorithmsArray:(id)arg1;
 
 @end
 

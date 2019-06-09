@@ -7,6 +7,17 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (WEDErrorAdditions)
++ (id)APIGenericErrorFromErrorCode:(int)arg1;
++ (id)APIFakeUserErrorFromErrorCode:(int)arg1;
++ (id)APIUserErrorFromErrorCode:(int)arg1;
++ (id)APIInternalServerErrorFromErrorCode:(int)arg1;
++ (id)APIAuthorizationErrorFromErrorCode:(int)arg1;
++ (id)APILimitErrorFromErrorCode:(int)arg1;
++ (id)APIParameterErrorFromErrorCode:(int)arg1;
++ (id)errorFromTencentWeiboAPIResponseErrorWithType:(int)arg1 code:(int)arg2;
+- (id)encodeableError;
+- (id)encodeableError;
+- (id)encodeableError;
 - (id)encodeableError;
 @end
 

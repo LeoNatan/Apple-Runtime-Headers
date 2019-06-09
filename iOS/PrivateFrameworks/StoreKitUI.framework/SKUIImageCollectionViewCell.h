@@ -10,6 +10,7 @@
 
 @class NSString, SKUIImageView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIImageCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView>
 {
     SKUIImageView *_highlightImageView;

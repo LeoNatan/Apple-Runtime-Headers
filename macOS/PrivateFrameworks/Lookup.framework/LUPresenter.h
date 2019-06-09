@@ -21,6 +21,7 @@
 
 + (id)animationControllerForTerm:(id)arg1 relativeToRect:(struct CGRect)arg2 ofView:(id)arg3 options:(id)arg4;
 + (id)animationControllerForTerm:(id)arg1 atLocation:(struct CGPoint)arg2 options:(id)arg3;
++ (id)animationControllerForTerm:(id)arg1 atLocation:(struct CGPoint)arg2 positioningView:(id)arg3 options:(id)arg4;
 + (id)addressInString:(id)arg1 range:(struct _NSRange)arg2;
 + (void)positioningView:(id *)arg1 andRect:(struct CGRect *)arg2 forTerm:(id)arg3 atLocation:(struct CGPoint)arg4 options:(id)arg5;
 + (BOOL)windowIsPopover:(id)arg1;
@@ -45,6 +46,7 @@
 - (unsigned long long)preferredEdgeOfPopover:(id)arg1 relativeToRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (void)showDefinitionForTerm:(id)arg1 relativeToRect:(struct CGRect)arg2 ofView:(id)arg3 options:(id)arg4;
 - (void)showDefinitionForTerm:(id)arg1 atLocation:(struct CGPoint)arg2 options:(id)arg3;
+- (void)showDefinitionForTerm:(id)arg1 atLocation:(struct CGPoint)arg2 positioningView:(id)arg3 options:(id)arg4;
 - (id)animationControllerForTerm:(id)arg1 relativeToRect:(struct CGRect)arg2 ofView:(id)arg3 options:(id)arg4;
 - (void)postPopoverWillCloseNotification;
 - (void)commonLUPresenterTeardown;

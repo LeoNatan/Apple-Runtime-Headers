@@ -10,6 +10,7 @@
 {
 }
 
++ (void)convertPanelElementInfo:(id)arg1 atURL:(id)arg2 fromVersion:(unsigned long long)arg3;
 + (void)convertPanelInfo:(id)arg1 atURL:(id)arg2 packageInfo:(id)arg3 fromVersion:(unsigned long long)arg4;
 + (void)convertPanelsInfo:(id)arg1 atURL:(id)arg2 packageInfo:(id)arg3 fromVersion:(unsigned long long)arg4;
 + (id)convertPackageInfo:(id)arg1 atURL:(id)arg2 fromVersion:(unsigned long long)arg3;

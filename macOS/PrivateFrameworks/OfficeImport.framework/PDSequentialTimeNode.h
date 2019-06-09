@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSString, PDAnimationTarget;
 
+__attribute__((visibility("hidden")))
 @interface PDSequentialTimeNode : PDTimeNode
 {
     BOOL mConcurrent;

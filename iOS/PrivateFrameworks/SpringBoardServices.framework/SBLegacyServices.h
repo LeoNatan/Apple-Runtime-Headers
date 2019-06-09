@@ -13,6 +13,7 @@
 + (void)setFunction:(void *)arg1 forSymbol:(const char *)arg2;
 + (id)workloop;
 + (void)start;
++ (void)checkInPorts;
 + (void)_configure;
 
 @end

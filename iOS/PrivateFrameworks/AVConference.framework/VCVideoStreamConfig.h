@@ -6,6 +6,8 @@
 
 #import <AVConference/VCMediaStreamConfig.h>
 
+@class NSString;
+
 __attribute__((visibility("hidden")))
 @interface VCVideoStreamConfig : VCMediaStreamConfig
 {
@@ -24,9 +26,21 @@ __attribute__((visibility("hidden")))
     unsigned long long _sourceFramerate;
     int _encodingMode;
     // Error parsing type: ^AC, name: _videoPriorityPointer
+    int _captureSource;
+    unsigned int _screenDisplayID;
+    unsigned long long _customWidth;
+    unsigned long long _customHeight;
+    NSString *_rxCodecFeatureListString;
+    NSString *_txCodecFeatureListString;
+    unsigned long long _tilesPerFrame;
 }
 
 + (_Bool)validateClientDictionary:(id)arg1;
+@property(nonatomic) unsigned long long tilesPerFrame; // @synthesize tilesPerFrame=_tilesPerFrame;
+@property(nonatomic) unsigned long long customHeight; // @synthesize customHeight=_customHeight;
+@property(nonatomic) unsigned long long customWidth; // @synthesize customWidth=_customWidth;
+@property(nonatomic) unsigned int screenDisplayID; // @synthesize screenDisplayID=_screenDisplayID;
+@property(nonatomic) int captureSource; // @synthesize captureSource=_captureSource;
 // Error parsing type for property videoPriorityPointer:
 // Property attributes: T^AC,N,V_videoPriorityPointer
 
@@ -38,8 +52,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool enableCVO; // @synthesize enableCVO=_enableCVO;
 @property(nonatomic) int remoteVideoInitialOrientation; // @synthesize remoteVideoInitialOrientation=_remoteVideoInitialOrientation;
 @property(nonatomic) unsigned long long keyFrameInterval; // @synthesize keyFrameInterval=_keyFrameInterval;
+@property(retain, nonatomic) NSString *rxCodecFeatureListString; // @synthesize rxCodecFeatureListString=_rxCodecFeatureListString;
 @property(nonatomic) unsigned long long rxMaxBitrate; // @synthesize rxMaxBitrate=_rxMaxBitrate;
 @property(nonatomic) unsigned long long rxMinBitrate; // @synthesize rxMinBitrate=_rxMinBitrate;
+@property(retain, nonatomic) NSString *txCodecFeatureListString; // @synthesize txCodecFeatureListString=_txCodecFeatureListString;
 @property(nonatomic) unsigned long long txMaxBitrate; // @synthesize txMaxBitrate=_txMaxBitrate;
 @property(nonatomic) unsigned long long txMinBitrate; // @synthesize txMinBitrate=_txMinBitrate;
 @property(nonatomic) unsigned long long framerate; // @synthesize framerate=_framerate;
@@ -48,6 +64,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)applyVideoStreamClientDictionary:(id)arg1;
 - (void)dealloc;
 - (id)initWithClientDictionary:(id)arg1;
+- (id)init;
 
 @end
 

@@ -4,21 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
-
-#import <WebKit/WKFormPeripheral-Protocol.h>
+#import <WebKit/WKFormPeripheralBase.h>
 
 __attribute__((visibility("hidden")))
-@interface WKFormColorControl : NSObject <WKFormPeripheral>
+@interface WKFormColorControl : WKFormPeripheralBase
 {
-    struct RetainPtr<id<WKFormControl>> _control;
 }
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (void)endEditing;
-- (void)beginEditing;
-- (id)assistantView;
 - (id)initWithView:(id)arg1;
 
 @end

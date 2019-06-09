@@ -20,15 +20,16 @@
     UILabel *_titleLabel;
     UIButton *_accessoryButton;
     CAShapeLayer *_selectionLayer;
+    struct CGSize _engagedSize;
 }
 
-+ (CDUnknownBlockType)imageInsetProviderForConstant:(double)arg1;
 + (struct CGPath *)selectionPathInBounds:(struct CGRect)arg1;
 + (id)cellIdentifier;
 @property(readonly, nonatomic) CAShapeLayer *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
 @property(retain, nonatomic) UIButton *accessoryButton; // @synthesize accessoryButton=_accessoryButton;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(readonly, nonatomic) AVTUIAnimatingImageView *imageView; // @synthesize imageView=_imageView;
+@property(nonatomic) struct CGSize engagedSize; // @synthesize engagedSize=_engagedSize;
 @property(nonatomic) _Bool showsTitle; // @synthesize showsTitle=_showsTitle;
 @property(nonatomic) _Bool roundImageCorners; // @synthesize roundImageCorners=_roundImageCorners;
 @property(nonatomic) _Bool selectionVisible; // @synthesize selectionVisible=_selectionVisible;

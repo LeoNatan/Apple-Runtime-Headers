@@ -9,10 +9,17 @@
 @class NSURL;
 
 @interface NSError (MapKitAdditions)
++ (id)_errorWithExtensionServiceError:(long long)arg1;
 @property(readonly, retain, nonatomic) NSURL *_mapkit_locationErrorSettingsURL;
 @property(readonly, nonatomic, getter=_mapkit_isCLErrorNetwork) _Bool _mapkit_CLErrorNetwork;
 @property(readonly, nonatomic, getter=_mapkit_isCLHeadingFailure) _Bool _mapkit_CLHeadingFailure;
 @property(readonly, nonatomic, getter=_mapkit_isCLLocationUnknown) _Bool _mapkit_CLLocationUnknown;
 @property(readonly, nonatomic, getter=_mapkit_isCLDenied) _Bool _mapkit_CLDenied;
+- (id)_mapkit_error;
+- (id)_mapkit_transitIncident;
+- (long long)_mapkit_underlyingGEOError;
+- (long long)_mapkit_directionsErrorCode;
+- (_Bool)_mapkit_isDirectionsError;
+- (id)_mapkit_errorWithDirectionsError:(id)arg1;
 @end
 

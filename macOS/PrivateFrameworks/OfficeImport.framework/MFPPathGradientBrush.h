@@ -8,6 +8,7 @@
 
 @class NSArray, OITSUBezierPath, OITSUColor;
 
+__attribute__((visibility("hidden")))
 @interface MFPPathGradientBrush : MFPGradientBrush
 {
     OITSUColor *mCenterColor;

@@ -16,8 +16,10 @@
     NSString *_manufacturer;
     NSString *_model;
     NSString *_name;
+    NSString *_productData;
 }
 
+@property(retain, nonatomic) NSString *productData; // @synthesize productData=_productData;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 @property(retain, nonatomic) NSString *firmwareVersion; // @synthesize firmwareVersion=_firmwareVersion;
 @property(retain, nonatomic) NSString *model; // @synthesize model=_model;
@@ -32,6 +34,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasProductData;
 @property(readonly, nonatomic) BOOL hasName;
 @property(readonly, nonatomic) BOOL hasFirmwareVersion;
 @property(readonly, nonatomic) BOOL hasModel;

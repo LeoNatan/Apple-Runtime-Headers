@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
     _Bool caretBlinks;
 }
 
++ (id)activeInstance;
++ (id)sharedInstance;
 @property(nonatomic) _Bool caretBlinks; // @synthesize caretBlinks;
 @property(nonatomic) _Bool receivedCandidatesInCurrentInputMode; // @synthesize receivedCandidatesInCurrentInputMode;
 @property(nonatomic) _Bool showsCandidateInline; // @synthesize showsCandidateInline;

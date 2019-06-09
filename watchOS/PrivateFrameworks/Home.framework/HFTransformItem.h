@@ -23,6 +23,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithSourceItem:(id)arg1 updateOptionsTransformBlock:(CDUnknownBlockType)arg2 resultsTransformBlock:(CDUnknownBlockType)arg3;
 - (id)initWithSourceItem:(id)arg1 transformationBlock:(CDUnknownBlockType)arg2;
+- (id)initWithSourceItem:(id)arg1 resultKeyExclusionFilter:(id)arg2;
 - (id)initWithSourceItem:(id)arg1 resultKeyFilter:(id)arg2;
 - (id)init;
 

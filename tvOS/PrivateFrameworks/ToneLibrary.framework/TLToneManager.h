@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSDictionary, NSString, TLAccessQueue;
+@protocol NSCopying;
 
 @interface TLToneManager : NSObject
 {
@@ -15,6 +16,7 @@
     NSDictionary *_toneIdentifiersBySyncIdentifier;
     NSDictionary *_alertTonesByIdentifier;
     NSDictionary *_toneIdentifierAliasMap;
+    id <NSCopying> _contentProtectionStateObserverToken;
     _Bool _shouldUseServiceToAccessTonePreferences;
     NSDictionary *_cachedTonePreferences;
     _Bool _shouldIgnoreNextToneDidChangeNotification;
@@ -26,6 +28,7 @@
 + (id)_systemWideTonePreferenceKeyForAlertType:(long long)arg1;
 + (id)sharedToneManager;
 - (void).cxx_destruct;
+- (void)_handleProtectionContentUnlockedEvent;
 - (void)_handleDeviceRingtonesChangedNotification;
 - (void)_handleTonePreferencesChangedNotificationForPreferencesKinds:(unsigned long long)arg1;
 - (void)_didSetTonePreferenceSuccessfullyWithKey:(id)arg1 inDomain:(id)arg2 usingPreferencesOfKind:(unsigned long long)arg3;
@@ -91,6 +94,7 @@
 - (int)_lockManifestAtPath:(id)arg1;
 - (_Bool)_removeTonesFromManifestAtPath:(id)arg1 fileNames:(id)arg2 shouldSkipReload:(_Bool)arg3 alreadyLockedManifest:(_Bool)arg4 removedEntries:(id *)arg5;
 - (_Bool)_removeToneFromManifestAtPath:(id)arg1 fileName:(id)arg2;
+- (_Bool)_removeToneWithIdentifier:(id)arg1;
 - (id)_addToneEntries:(id)arg1 toManifestAtPath:(id)arg2 mediaDirectory:(id)arg3 shouldSkipReload:(_Bool)arg4;
 - (id)_addToneToManifestAtPath:(id)arg1 metadata:(id)arg2 fileName:(id)arg3 mediaDirectory:(id)arg4;
 - (unsigned long long)_installedTonesSize;
@@ -99,7 +103,7 @@
 - (void)_reloadTones;
 - (void)_reloadTonesAfterExternalChange;
 - (id)_tonesFromManifestPath:(id)arg1 mediaDirectoryPath:(id)arg2;
-- (void)_loadITunesRingtoneInfoPlistAtPath:(id)arg1;
+- (_Bool)_loadITunesRingtoneInfoPlistAtPath:(id)arg1;
 @property(readonly, nonatomic) NSString *_systemRingtoneDirectory;
 @property(readonly, nonatomic) NSString *_iTunesRingtoneInformationPlist;
 @property(readonly, nonatomic) NSString *_iTunesRingtoneDirectory;

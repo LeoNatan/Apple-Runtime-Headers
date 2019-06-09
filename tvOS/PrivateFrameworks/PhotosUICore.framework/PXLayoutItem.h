@@ -14,14 +14,19 @@
 {
     double _weight;
     struct CGSize _size;
+    struct CGPoint _positionOffset;
     struct CGRect _preferredCropRect;
     struct CGRect _acceptableCropRect;
+    struct CGAffineTransform _transform;
 }
 
-@property(readonly, nonatomic) struct CGRect acceptableCropRect; // @synthesize acceptableCropRect=_acceptableCropRect;
-@property(readonly, nonatomic) struct CGRect preferredCropRect; // @synthesize preferredCropRect=_preferredCropRect;
-@property(readonly, nonatomic) double weight; // @synthesize weight=_weight;
-@property(readonly, nonatomic) struct CGSize size; // @synthesize size=_size;
+@property(nonatomic) struct CGRect acceptableCropRect; // @synthesize acceptableCropRect=_acceptableCropRect;
+@property(nonatomic) struct CGRect preferredCropRect; // @synthesize preferredCropRect=_preferredCropRect;
+@property(nonatomic) struct CGPoint positionOffset; // @synthesize positionOffset=_positionOffset;
+@property(nonatomic) struct CGAffineTransform transform; // @synthesize transform=_transform;
+@property(nonatomic) double weight; // @synthesize weight=_weight;
+@property(nonatomic) struct CGSize size; // @synthesize size=_size;
+- (double)weightUsingCriterion:(long long)arg1;
 - (id)initWithSize:(struct CGSize)arg1 weight:(double)arg2;
 - (id)init;
 

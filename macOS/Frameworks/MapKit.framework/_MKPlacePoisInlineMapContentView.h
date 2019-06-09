@@ -8,6 +8,7 @@
 
 @class _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface _MKPlacePoisInlineMapContentView : _MKPlaceInlineMapContentView
 {
     _MKUILabel *_storesLabel;

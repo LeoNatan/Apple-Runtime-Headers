@@ -8,5 +8,6 @@
 
 @interface RWIProtocolNetworkRequest (IKJSInspector)
 + (id)ik_networkRequestFromURLRequest:(id)arg1;
++ (id)safe_initWithUrl:(id)arg1 method:(id)arg2 headers:(id)arg3;
 @end
 

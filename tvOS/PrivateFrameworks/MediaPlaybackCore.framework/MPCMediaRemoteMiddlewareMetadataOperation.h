@@ -9,7 +9,8 @@
 #import <MediaPlaybackCore/MPCMediaRemoteMiddlewareModelObjectsProviding-Protocol.h>
 #import <MediaPlaybackCore/MPMiddlewareAutomaticDependencyOperation-Protocol.h>
 
-@class MPCFuture, MPCMediaRemoteMiddleware, MPCPlayerRequest, MPSectionedCollection, NSArray, NSError, NSIndexPath, NSMapTable, NSString;
+@class MPCFuture, MPCMediaRemoteMiddleware, MPRequest, MPSectionedCollection, NSArray, NSError, NSIndexPath, NSMapTable, NSString;
+@protocol MPCMediaRemoteMiddlewareMetadataOperationConfiguration;
 
 @interface MPCMediaRemoteMiddlewareMetadataOperation : MPAsyncOperation <MPCMediaRemoteMiddlewareModelObjectsProviding, MPMiddlewareAutomaticDependencyOperation>
 {
@@ -17,7 +18,7 @@
     NSArray *_invalidationObservers;
     struct NSMapTable *_inputOperations;
     MPCMediaRemoteMiddleware *_middleware;
-    MPCPlayerRequest *_playerRequest;
+    MPRequest<MPCMediaRemoteMiddlewareMetadataOperationConfiguration> *_request;
     MPCFuture *_playQueueIdentifiersFuture;
     MPCFuture *_playingIdentifierFuture;
     MPCFuture *_queueIdentifierFuture;
@@ -26,7 +27,7 @@
 @property(retain, nonatomic) MPCFuture *queueIdentifierFuture; // @synthesize queueIdentifierFuture=_queueIdentifierFuture;
 @property(retain, nonatomic) MPCFuture *playingIdentifierFuture; // @synthesize playingIdentifierFuture=_playingIdentifierFuture;
 @property(retain, nonatomic) MPCFuture *playQueueIdentifiersFuture; // @synthesize playQueueIdentifiersFuture=_playQueueIdentifiersFuture;
-@property(retain, nonatomic) MPCPlayerRequest *playerRequest; // @synthesize playerRequest=_playerRequest;
+@property(retain, nonatomic) MPRequest<MPCMediaRemoteMiddlewareMetadataOperationConfiguration> *request; // @synthesize request=_request;
 @property(retain, nonatomic) MPCMediaRemoteMiddleware *middleware; // @synthesize middleware=_middleware;
 @property(retain, nonatomic) NSMapTable *inputOperations; // @synthesize inputOperations=_inputOperations;
 @property(readonly, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
@@ -34,15 +35,14 @@
 - (void).cxx_destruct;
 - (id)_itemGenericObjectPropertySetForContentItem:(id)arg1 propertySet:(id)arg2;
 - (id)_genericObjectPropertySetForContentItem:(id)arg1 preferredRelationships:(id)arg2 propertySet:(id)arg3;
-- (id)_sectionGenericObjectPropertySetForContentItem:(id)arg1 propertySet:(id)arg2;
 - (struct _MSVSignedRange)rangeFromTracklistRange:(CDStruct_339ad95e)arg1;
 @property(readonly, nonatomic) NSArray *outputProtocols;
-@property(readonly, nonatomic) NSArray *inputsProtocols;
+@property(readonly, nonatomic) NSArray *inputProtocols;
 - (id)timeoutDescription;
 - (void)execute;
 - (void)_loadPlayingIdentifierWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_loadItemsWithCompletion:(CDUnknownBlockType)arg1;
-- (id)initWithMiddleware:(id)arg1 playerRequest:(id)arg2;
+- (id)initWithMiddleware:(id)arg1 request:(id)arg2;
 @property(readonly, nonatomic) MPSectionedCollection *sourceContentItems;
 @property(readonly, nonatomic) MPSectionedCollection *modelObjects;
 @property(readonly, copy, nonatomic) NSIndexPath *playingIndexPath;

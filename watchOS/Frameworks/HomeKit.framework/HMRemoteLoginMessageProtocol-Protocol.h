@@ -15,7 +15,7 @@
 + (id)objWithMessage:(HMFMessage *)arg1;
 + (id)objWithDict:(NSDictionary *)arg1;
 @property(readonly, nonatomic) NSDictionary *messagePayload;
-- (NSString *)xpcMessageName;
-- (NSString *)messageName;
+@property(readonly, copy, nonatomic) NSString *xpcMessageName;
+@property(readonly, copy, nonatomic) NSString *messageName;
 @end
 

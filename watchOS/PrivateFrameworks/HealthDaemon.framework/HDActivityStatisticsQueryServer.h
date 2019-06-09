@@ -13,7 +13,6 @@
 @interface HDActivityStatisticsQueryServer : HDQueryServer <HDDataObserver>
 {
     HKStatisticsCollection *_statisticsCollection;
-    _Bool _deliveredInitialResults;
     _Bool _deliversUpdates;
     _HKDelayedOperation *_updateOperation;
     _HKDelayedOperation *_resetOperation;
@@ -27,18 +26,18 @@
 
 + (Class)queryClass;
 - (void).cxx_destruct;
-- (void)_queue_deliverActivityMoveStatistics:(id)arg1 exerciseStatistics:(id)arg2 standHoursInfo:(id)arg3 workouts:(id)arg4;
+- (void)_queue_deliverResult:(id)arg1;
 - (void)_queue_deliverError:(id)arg1;
 - (void)_queue_deliverUpdates;
 - (void)_queue_reset;
-- (_Bool)_queue_updateDataSourceWithMoveStatistics:(id *)arg1 exerciseStatistics:(id *)arg2 standInfo:(id *)arg3 workoutInfoOut:(id *)arg4 error:(id *)arg5;
+- (id)_queue_queryResultFromDataSourceWithError:(id *)arg1;
 - (void)_createDataSourceIfNecessary;
 - (id)_allObservedQuantityTypes;
 - (_Bool)_queue_queryIsRunning;
+- (void)_queue_didDeactivate;
 - (void)_queue_stop;
 - (void)_queue_start;
-- (_Bool)_shouldListenForUpdates;
-- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
+- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 delegate:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

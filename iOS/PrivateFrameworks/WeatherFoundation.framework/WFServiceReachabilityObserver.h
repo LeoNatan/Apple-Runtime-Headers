@@ -22,7 +22,7 @@
 + (id)sharedObserver;
 @property(retain) NWPathEvaluator *serviceReachabilityEvaluator; // @synthesize serviceReachabilityEvaluator=_serviceReachabilityEvaluator;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
-@property long long reachability; // @synthesize reachability=_reachability;
+@property(nonatomic) long long reachability; // @synthesize reachability=_reachability;
 @property(retain) NSHashTable *observerObjects; // @synthesize observerObjects=_observerObjects;
 @property(retain) NSMutableDictionary *blockObserversForUUID; // @synthesize blockObserversForUUID=_blockObserversForUUID;
 @property(retain) NSObject<OS_dispatch_queue> *observerQueue; // @synthesize observerQueue=_observerQueue;

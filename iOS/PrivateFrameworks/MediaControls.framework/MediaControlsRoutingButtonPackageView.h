@@ -6,6 +6,7 @@
 
 #import <ControlCenterUIKit/CCUICAPackageView.h>
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsRoutingButtonPackageView : CCUICAPackageView
 {
 }

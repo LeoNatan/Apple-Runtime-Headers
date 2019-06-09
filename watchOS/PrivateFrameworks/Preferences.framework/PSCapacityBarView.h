@@ -22,6 +22,7 @@
 @property(retain, nonatomic) PSCapacityBarData *barData; // @synthesize barData=_barData;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
+- (id)bezierPathWithLineFrom:(struct CGPoint)arg1 to:(struct CGPoint)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

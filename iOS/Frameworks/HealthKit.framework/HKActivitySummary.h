@@ -34,9 +34,11 @@
     NSDate *_endDate;
     NSDate *_creationDate;
     NSDate *_energyBurnedGoalDate;
+    NSDate *_briskMinutesGoalDate;
+    NSDate *_activeHoursGoalDate;
 }
 
-+ (id)_highestEnergyBurnedActivityCacheAmongCaches:(id)arg1;
++ (id)_mostRecentlyCreatedCacheAmongCaches:(id)arg1;
 + (id)_mostSignificantCacheAmongCaches:(id)arg1;
 + (_Bool)_validateActivitySummaryDateComponentsRange:(id)arg1 endDateComponents:(id)arg2 errorMessage:(id *)arg3;
 + (_Bool)_validateActivitySummaryDateComponents:(id)arg1 errorMessage:(id *)arg2;
@@ -44,6 +46,8 @@
 @property(nonatomic, getter=_isDataLoading, setter=_setDataLoading:) _Bool dataLoading; // @synthesize dataLoading=_dataLoading;
 @property(retain, nonatomic, getter=_dailyBriskMinutesStatistics, setter=_setDailyBriskMinutesStatistics:) NSArray *dailyBriskMinutesStatistics; // @synthesize dailyBriskMinutesStatistics=_dailyBriskMinutesStatistics;
 @property(retain, nonatomic, getter=_dailyEnergyBurnedStatistics, setter=_setDailyEnergyBurnedStatistics:) NSArray *dailyEnergyBurnedStatistics; // @synthesize dailyEnergyBurnedStatistics=_dailyEnergyBurnedStatistics;
+@property(retain, nonatomic, getter=_activeHoursGoalDate, setter=_setActiveHoursGoalDate:) NSDate *activeHoursGoalDate; // @synthesize activeHoursGoalDate=_activeHoursGoalDate;
+@property(retain, nonatomic, getter=_briskMinutesGoalDate, setter=_setBriskMinutesGoalDate:) NSDate *briskMinutesGoalDate; // @synthesize briskMinutesGoalDate=_briskMinutesGoalDate;
 @property(retain, nonatomic, getter=_energyBurnedGoalDate, setter=_setEnergyBurnedGoalDate:) NSDate *energyBurnedGoalDate; // @synthesize energyBurnedGoalDate=_energyBurnedGoalDate;
 @property(retain, nonatomic, getter=_creationDate, setter=_setCreationDate:) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain, nonatomic, getter=_endDate, setter=_setEndDate:) NSDate *endDate; // @synthesize endDate=_endDate;
@@ -72,6 +76,7 @@
 - (_Bool)_useHourlyGoalComparison;
 - (_Bool)_hasStandHoursGoal;
 - (_Bool)_hasExerciseGoal;
+@property(readonly, nonatomic, getter=_hasEnergyBurnedGoal) _Bool hasEnergyBurnedGoal;
 @property(readonly, nonatomic, getter=_hasMoveGoal) _Bool hasMoveGoal;
 - (id)dateComponentsForCalendar:(id)arg1;
 - (void)_encodeQuantity:(id)arg1 withCoder:(id)arg2 key:(id)arg3 unit:(id)arg4;
@@ -83,6 +88,7 @@
 - (unsigned long long)hash;
 - (_Bool)_allFieldsAreEqual:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (id)init;
 
 @end
 

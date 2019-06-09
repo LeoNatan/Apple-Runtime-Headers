@@ -10,6 +10,7 @@
 
 @class OITSUColor;
 
+__attribute__((visibility("hidden")))
 @interface WDBorder : NSObject <NSCopying>
 {
     int mStyle;

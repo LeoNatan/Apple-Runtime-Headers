@@ -6,19 +6,47 @@
 
 #import <UIKit/UIView.h>
 
-@interface UIView (NUIContainerView)
+#import <AppSupportUI/NUIArrangementItem-Protocol.h>
+#import <AppSupportUI/_UIMultilineTextContentSizing-Protocol.h>
+
+@class NSString;
+
+@interface UIView (NUIContainerView) <NUIArrangementItem, _UIMultilineTextContentSizing>
+- (void)setUntransformedFrame:(struct CGRect)arg1;
 @property(nonatomic) _Bool invalidatingIntrinsicContentSizeAlsoInvalidatesSuperview;
-@property(nonatomic) float customFirstBaselineOffsetFromContentTop;
 @property(nonatomic) float customFirstBaselineOffsetFromTop;
 @property(nonatomic) float customBaselineOffsetFromBottom;
-@property(nonatomic, getter=isBaselineRelativeAlignmentRectInsets) _Bool baselineRelativeAlignmentRectInsets;
 @property(nonatomic) struct UIEdgeInsets customAlignmentRectInsets;
-@property(nonatomic) float customScreenScale;
+- (void)setLayoutSize:(struct CGSize)arg1 withContentPriority:(float)arg2;
 @property(nonatomic) struct CGSize maximumLayoutSize;
 @property(nonatomic) struct CGSize minimumLayoutSize;
 - (id)containerViewInfoCreateIfNeeded:(_Bool)arg1;
 - (_Bool)isLayoutSizeDependentOnPerpendicularAxis;
 - (_Bool)supportsAsynchronousMeasurement;
+- (float)effectiveFirstBaselineOffsetFromTop;
+- (float)effectiveBaselineOffsetFromBottom;
+- (int)_nui_baselineViewType;
 - (struct CGSize)effectiveLayoutSizeFittingSize:(struct CGSize)arg1;
+- (void)nukeContentLayoutSizeCacheFromOrbit;
+- (struct nui_size_cache *)contentLayoutSizeCache;
+- (void)_didInvalidateIntrinsicContentSize;
+- (float)systemSpacingToSuperView:(id)arg1 edge:(unsigned int)arg2 baselineRelative:(_Bool)arg3 multiplier:(float)arg4;
+- (float)systemSpacingToAdjecentSiblingView:(id)arg1 axis:(int)arg2 baselineRelative:(_Bool)arg3 multiplier:(float)arg4;
+- (float)effectiveFirstBaselineOffsetFromContentTop;
+- (float)effectiveBaselineOffsetFromContentBottom;
+- (struct UIEdgeInsets)effectiveAlignmentRectInsets;
+- (float)effectiveScreenScale;
+- (struct CGSize)effectiveMaximumLayoutContentSize;
+- (struct CGSize)effectiveMinimumLayoutContentSize;
+- (struct CGSize)calculateLayoutSizeFittingSize:(struct CGSize)arg1;
+- (id)contentLayoutSizeCacheDescription;
+- (_Bool)_isContainerView;
+- (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 @end
 

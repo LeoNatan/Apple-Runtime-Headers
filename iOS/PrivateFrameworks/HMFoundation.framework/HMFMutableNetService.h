@@ -10,8 +10,6 @@
 
 @interface HMFMutableNetService : HMFNetService
 {
-    unsigned long long _port;
-    _Bool _publishing;
     CDUnknownBlockType _publishBlock;
 }
 
@@ -23,15 +21,14 @@
 - (void)netServiceWillPublish:(id)arg1;
 - (void)stopPublishing;
 - (void)startPublishingWithCompletionHandler:(CDUnknownBlockType)arg1;
-@property(getter=isPublishing) _Bool publishing; // @synthesize publishing=_publishing;
 - (void)setInternal:(id)arg1;
 - (id)internal;
 - (void)updateTXTRecord;
 - (void)updateTXTRecordWithData:(id)arg1;
 - (void)removeTXTRecordValueForKey:(id)arg1;
 - (void)setTXTRecordValue:(id)arg1 forKey:(id)arg2;
-@property(copy, nonatomic) NSDictionary *TXTRecord; // @dynamic TXTRecord;
-@property(nonatomic) unsigned long long port; // @synthesize port=_port;
+@property(copy) NSDictionary *TXTRecord; // @dynamic TXTRecord;
+@property unsigned long long port; // @dynamic port;
 - (id)initWithDomain:(id)arg1 type:(id)arg2 name:(id)arg3 port:(unsigned long long)arg4;
 - (id)initWithNetService:(id)arg1;
 

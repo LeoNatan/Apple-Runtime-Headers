@@ -13,8 +13,8 @@
 @interface ProfileMessage : IDSBaseMessage <NSCopying>
 {
     NSData *_pushCert;
-    struct OpaqueSecKeyRef *_pushKey;
-    struct OpaqueSecKeyRef *_pushPublicKey;
+    struct __SecKey *_pushKey;
+    struct __SecKey *_pushPublicKey;
     NSData *_pushToken;
     NSString *_authToken;
     NSString *_profileID;
@@ -23,8 +23,8 @@
 @property(copy, nonatomic) NSString *profileID; // @synthesize profileID=_profileID;
 @property(copy, nonatomic) NSString *authToken; // @synthesize authToken=_authToken;
 @property(copy, nonatomic) NSData *pushToken; // @synthesize pushToken=_pushToken;
-@property(nonatomic) struct OpaqueSecKeyRef *pushPublicKey; // @synthesize pushPublicKey=_pushPublicKey;
-@property(nonatomic) struct OpaqueSecKeyRef *pushPrivateKey; // @synthesize pushPrivateKey=_pushKey;
+@property(nonatomic) struct __SecKey *pushPublicKey; // @synthesize pushPublicKey=_pushPublicKey;
+@property(nonatomic) struct __SecKey *pushPrivateKey; // @synthesize pushPrivateKey=_pushKey;
 @property(copy, nonatomic) NSData *pushCertificate; // @synthesize pushCertificate=_pushCert;
 - (void).cxx_destruct;
 - (void)handleResponseDictionary:(id)arg1;

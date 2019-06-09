@@ -9,42 +9,46 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
 @class NSObject, NSString;
-@protocol OS_dispatch_queue;
+@protocol HMFLocking, OS_dispatch_queue;
 
 @interface HMDAppleAccountSettings : HMFObject <HMFLogging>
 {
+    id <HMFLocking> _lock;
     BOOL _homeEnabled;
     BOOL _keychainSyncEnabled;
+    BOOL _managed;
+    BOOL _ephemeral;
     BOOL _migrated;
     int _circleChangedNotificationToken;
     int _viewMembershipChangedNotificationToken;
     NSObject<OS_dispatch_queue> *_clientQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
 }
 
-+ (id)logCategory;
 + (BOOL)supportsCloudSettings;
 + (id)sharedSettings;
++ (id)logCategory;
 @property(nonatomic) int viewMembershipChangedNotificationToken; // @synthesize viewMembershipChangedNotificationToken=_viewMembershipChangedNotificationToken;
 @property(nonatomic) int circleChangedNotificationToken; // @synthesize circleChangedNotificationToken=_circleChangedNotificationToken;
 @property(nonatomic) BOOL migrated; // @synthesize migrated=_migrated;
-@property(readonly) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 - (void).cxx_destruct;
 - (void)__updateHomeEnabled:(BOOL)arg1 userInitiated:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)updateHomeEnabled:(BOOL)arg1 userInitiated:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)updateHomeEnabled:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)__migrateHomePreferences;
 - (void)__registerForKeychainChangeNotifications;
 - (void)__synchronize;
 - (void)synchronize;
+@property(readonly, getter=isEphemeral) BOOL ephemeral; // @synthesize ephemeral=_ephemeral;
+@property(readonly, getter=isManaged) BOOL managed; // @synthesize managed=_managed;
 - (void)_notifyClientsOfUpdatedKeychainSyncState:(BOOL)arg1;
-@property(getter=isKeychainSyncEnabled) BOOL keychainSyncEnabled; // @synthesize keychainSyncEnabled=_keychainSyncEnabled;
+@property(readonly, getter=isKeychainSyncEnabled) BOOL keychainSyncEnabled; // @synthesize keychainSyncEnabled=_keychainSyncEnabled;
 - (void)_notifyClientsOfUpdatedHomeState:(BOOL)arg1 userInitiated:(BOOL)arg2;
 - (void)enableHome:(BOOL)arg1 userInitiated:(BOOL)arg2;
 @property(readonly, getter=isHomeEnabled) BOOL homeEnabled; // @synthesize homeEnabled=_homeEnabled;
-- (id)attributeDescriptions;
 - (void)dealloc;
 - (id)init;
+- (id)attributeDescriptions;
+@property(readonly, getter=isEducationMode) BOOL educationMode;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

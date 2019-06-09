@@ -14,20 +14,24 @@
 @interface PHAGraphManager : NSObject <PFMulticasterDelegate, PFWeakContainerNilNotificationDelegate>
 {
     struct PFDirectMessagingMulticaster *_clientMulticaster;
-    PGGraphUpdateManager *_updateManager;
     NSMutableSet *_clientsWantingUpdates;
     _Bool _rebuildInProgress;
     PFSerialQueue *_serializer;
     PGManager *_graphManager;
     PFWeakContainer *_graphMonitor;
+    PGGraphUpdateManager *_updateManager;
     PHAManager *_photoAnalysisManager;
 }
 
 @property(retain, nonatomic) PHAManager *photoAnalysisManager; // @synthesize photoAnalysisManager=_photoAnalysisManager;
+@property(readonly, nonatomic) PGGraphUpdateManager *updateManager; // @synthesize updateManager=_updateManager;
 - (void).cxx_destruct;
 - (void)_stopListeningWithClient:(id)arg1;
 - (void)_startListeningWithClient:(id)arg1;
+- (void)_configureGraphManager;
 - (void)unloadGraph;
+- (void)_performRebuildFullRebuild:(_Bool)arg1 withProgressBlock:(CDUnknownBlockType)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)performLightWeightRebuildWithProgressBlock:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)performFullRebuildWithProgressBlock:(CDUnknownBlockType)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (id)loadGraph;
 - (_Bool)isGraphLoaded;
@@ -38,6 +42,7 @@
 - (void)shutdown;
 - (void)_graphBecameReady:(id)arg1;
 - (void)weakReferenceBecameNil:(id)arg1;
+- (id)statusAsDictionary;
 - (void)dealloc;
 - (id)initWithManager:(id)arg1;
 

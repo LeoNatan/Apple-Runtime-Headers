@@ -19,6 +19,8 @@
     UIColor *_foregroundColor;
     CLKFont *_font;
     NSDate *_timeTravelDate;
+    UIColor *_computedForegroundColor;
+    UIColor *_computedPlatterColor;
     _Bool _canUseCurvedText;
     _Bool _shouldUseBackgroundPlatter;
     _Bool _alwaysEnforcePlatterInset;
@@ -116,10 +118,17 @@
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (_Bool)shouldUsePlatterInset;
+- (_Bool)isPlacementForTopBezelComplication;
 - (void)_applyColorScheme:(id)arg1;
 - (void)applyTransitionFraction:(double)arg1 fromFaceColor:(unsigned long long)arg2 toFaceColor:(unsigned long long)arg3 units:(unsigned long long)arg4 brightenedUnits:(unsigned long long)arg5;
 - (void)applyFaceColor:(unsigned long long)arg1 units:(unsigned long long)arg2;
 @property(nonatomic) double foregroundAlpha; // @synthesize foregroundAlpha=_foregroundAlpha;
+- (id)_computedPlatterColor;
+- (void)_computePlatterColor;
+- (void)_updatePlatterColor;
+- (id)_computedForegroundColor;
+- (void)_computeForegroundColor;
+- (void)_updateForegroundColor;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

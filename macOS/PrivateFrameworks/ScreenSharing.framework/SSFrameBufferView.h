@@ -7,13 +7,14 @@
 #import <AppKit/NSView.h>
 
 #import <ScreenSharing/CAAnimationDelegate-Protocol.h>
+#import <ScreenSharing/NSFilePromiseProviderDelegate-Protocol.h>
 #import <ScreenSharing/SSDragDelegate-Protocol.h>
 #import <ScreenSharing/SSFrameBufferObserver-Protocol.h>
 
-@class CALayer, NSArray, NSImage, NSMutableDictionary, NSPasteboard, NSString, NSTrackingArea, SSFrameBuffer;
+@class CALayer, NSArray, NSDraggingSession, NSImage, NSMutableDictionary, NSPasteboard, NSString, SSFrameBuffer;
 @protocol SSFrameBufferViewDelegate, SSInputEventConsumer;
 
-@interface SSFrameBufferView : NSView <SSFrameBufferObserver, SSDragDelegate, CAAnimationDelegate>
+@interface SSFrameBufferView : NSView <SSFrameBufferObserver, SSDragDelegate, CAAnimationDelegate, NSFilePromiseProviderDelegate>
 {
     SSFrameBuffer *mFrameBuffer;
     id <SSInputEventConsumer> mInputEventConsumer;
@@ -22,23 +23,29 @@
     CALayer *flashLayer;
     id <SSFrameBufferViewDelegate> delegate;
     BOOL mShouldWarnAboutScaling;
-    double mXScaleFactor;
-    double mXInverseScaleFactor;
-    double mYScaleFactor;
-    double mYInverseScaleFactor;
-    NSTrackingArea *mTrackingArea;
     BOOL mCursorInside;
     BOOL mShouldMaskScreen;
     NSPasteboard *mRemotePasteboard;
     NSImage *mRemoteDragImage;
     NSArray *mRemoteFilePaths;
     NSMutableDictionary *mScreenIdsAndRenderViews;
-    void *mReservedForInstanceVariables;
     BOOL allowsDragAndDropFileCopyToRemote;
     BOOL allowsDragAndDropFileCopyFromRemote;
+    double _mXScaleFactor;
+    double _mXInverseScaleFactor;
+    double _mYScaleFactor;
+    double _mYInverseScaleFactor;
+    NSArray *_uniqueRemoteFilePaths;
+    NSDraggingSession *_dragSession;
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
+@property(retain) NSDraggingSession *dragSession; // @synthesize dragSession=_dragSession;
+@property(copy) NSArray *uniqueRemoteFilePaths; // @synthesize uniqueRemoteFilePaths=_uniqueRemoteFilePaths;
+@property double mYInverseScaleFactor; // @synthesize mYInverseScaleFactor=_mYInverseScaleFactor;
+@property double mYScaleFactor; // @synthesize mYScaleFactor=_mYScaleFactor;
+@property double mXInverseScaleFactor; // @synthesize mXInverseScaleFactor=_mXInverseScaleFactor;
+@property double mXScaleFactor; // @synthesize mXScaleFactor=_mXScaleFactor;
 @property BOOL allowsDragAndDropFileCopyFromRemote; // @synthesize allowsDragAndDropFileCopyFromRemote;
 @property BOOL allowsDragAndDropFileCopyToRemote; // @synthesize allowsDragAndDropFileCopyToRemote;
 @property BOOL shouldMaskScreen; // @synthesize shouldMaskScreen=mShouldMaskScreen;
@@ -48,6 +55,11 @@
 @property(retain) NSPasteboard *remotePasteboard; // @synthesize remotePasteboard=mRemotePasteboard;
 @property(retain) id <SSInputEventConsumer> inputEventConsumer; // @synthesize inputEventConsumer=mInputEventConsumer;
 @property(retain) NSMutableDictionary *screenIdsAndRenderViews; // @synthesize screenIdsAndRenderViews=mScreenIdsAndRenderViews;
+- (void)setCursorColor:(id)arg1;
+- (void)setTouchEvents:(id)arg1;
+- (void)setAVConferenceLayerRotation:(unsigned int)arg1;
+- (void)AVConferenceLayerContent:(id)arg1;
+- (id)renderView;
 - (struct SSPoint)frameBufferCoordinatesFromWindowCoordinates:(struct CGPoint)arg1;
 - (struct SSPoint)frameBufferCoordinatesFromNSEvent:(id)arg1;
 - (void)sendMouseEventWithWindowCoordinates:(struct CGPoint)arg1;
@@ -61,9 +73,9 @@
 - (void)draggingExited:(id)arg1;
 - (unsigned long long)draggingUpdated:(id)arg1;
 - (unsigned long long)draggingEntered:(id)arg1;
-- (void)draggedImage:(id)arg1 endedAt:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
+- (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
 - (id)namesOfPromisedFilesDroppedAtDestination:(id)arg1;
-- (unsigned long long)draggingSourceOperationMaskForLocal:(BOOL)arg1;
+- (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
 - (void)ssDragRemotePasteboardTransferred:(id)arg1 withDragImage:(id)arg2 withRemoteFilePaths:(id)arg3;
 - (id)genericDocumentIconForDragWithItemCount:(unsigned long long)arg1;
 @property(readonly) BOOL isPBCopy;
@@ -71,7 +83,10 @@
 - (void)ssFrameBuffer:(id)arg1 sizeWillChangeTo:(struct SSSize)arg2;
 - (void)ssFrameBuffer:(id)arg1 rectangleChanged:(struct SSRect)arg2;
 @property(retain) SSFrameBuffer *frameBuffer; // @dynamic frameBuffer;
-- (void)dragImage:(id)arg1 at:(struct CGPoint)arg2 offset:(struct CGSize)arg3 event:(id)arg4 pasteboard:(id)arg5 source:(id)arg6 slideBack:(BOOL)arg7;
+- (void)filePromiseProvider:(id)arg1 writePromiseToURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)filePromiseProvider:(id)arg1 fileNameForType:(id)arg2;
+- (void)ssDragImage:(id)arg1 at:(struct CGPoint)arg2 offset:(struct CGSize)arg3 event:(id)arg4 pasteboard:(id)arg5 source:(id)arg6 slideBack:(BOOL)arg7;
+- (void)ensureUniqueDragNames;
 - (void)swipeWithEvent:(id)arg1;
 - (void)gestureScrollWithEvent:(id)arg1;
 - (void)rotateWithEvent:(id)arg1;

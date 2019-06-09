@@ -6,6 +6,7 @@
 
 #import <ChatKit/CKUIBehaviorPad.h>
 
+__attribute__((visibility("hidden")))
 @interface CKUIBehaviorHUDPad : CKUIBehaviorPad
 {
 }

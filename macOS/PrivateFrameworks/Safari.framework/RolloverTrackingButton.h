@@ -21,9 +21,11 @@ __attribute__((visibility("hidden")))
     BOOL _usesRolloverAppearanceOnMouseDown;
     BOOL _usesRolloverAppearanceWhenFirstResponder;
     BOOL _redrawOnMouseEnteredAndExited;
+    BOOL _useRolloverAppearanceNow;
     id <RolloverTrackingButtonDelegate> _delegate;
 }
 
+@property(nonatomic) BOOL useRolloverAppearanceNow; // @synthesize useRolloverAppearanceNow=_useRolloverAppearanceNow;
 @property(nonatomic) BOOL redrawOnMouseEnteredAndExited; // @synthesize redrawOnMouseEnteredAndExited=_redrawOnMouseEnteredAndExited;
 @property(nonatomic) BOOL usesRolloverAppearanceWhenFirstResponder; // @synthesize usesRolloverAppearanceWhenFirstResponder=_usesRolloverAppearanceWhenFirstResponder;
 @property(nonatomic) BOOL usesRolloverAppearanceOnMouseDown; // @synthesize usesRolloverAppearanceOnMouseDown=_usesRolloverAppearanceOnMouseDown;

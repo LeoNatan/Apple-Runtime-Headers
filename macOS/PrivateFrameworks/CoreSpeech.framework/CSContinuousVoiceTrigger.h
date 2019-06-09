@@ -7,18 +7,17 @@
 #import <objc/NSObject.h>
 
 #import <CoreSpeech/CSKeywordAnalyzerNDAPIScoreDelegate-Protocol.h>
-#import <CoreSpeech/CSSpeechManagerDelegate-Protocol.h>
 
-@class CSAsset, CSKeywordAnalyzerNDAPI, CSSpeechManager, NSString;
-@protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
+@class CSAsset, CSAudioTimeConverter, CSKeywordAnalyzerNDAPI, NSString;
+@protocol CSContinuousVoiceTriggerDelegate, OS_dispatch_queue;
 
-@interface CSContinuousVoiceTrigger : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSSpeechManagerDelegate>
+@interface CSContinuousVoiceTrigger : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate>
 {
     float _keywordThreshold;
     float _twoShotThreshold;
     float _lastScore;
-    id <CSVoiceTriggerDelegate> _delegate;
-    CSSpeechManager *_speechManager;
+    id <CSContinuousVoiceTriggerDelegate> _delegate;
+    CSAudioTimeConverter *_audioTimeConverter;
     NSObject<OS_dispatch_queue> *_queue;
     CSAsset *_currentAsset;
     CSKeywordAnalyzerNDAPI *_keywordAnalyzer;
@@ -40,23 +39,20 @@
 @property(retain, nonatomic) CSKeywordAnalyzerNDAPI *keywordAnalyzer; // @synthesize keywordAnalyzer=_keywordAnalyzer;
 @property(retain, nonatomic) CSAsset *currentAsset; // @synthesize currentAsset=_currentAsset;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(nonatomic) __weak CSSpeechManager *speechManager; // @synthesize speechManager=_speechManager;
-@property(nonatomic) __weak id <CSVoiceTriggerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) CSAudioTimeConverter *audioTimeConverter; // @synthesize audioTimeConverter=_audioTimeConverter;
+@property(nonatomic) __weak id <CSContinuousVoiceTriggerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)_shotAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
 - (void)keywordAnalyzerNDAPI:(id)arg1 hasResultAvailable:(id)arg2 forChannel:(unsigned long long)arg3;
-- (void)speechManagerDidStopForwarding:(id)arg1 forReason:(long long)arg2;
-- (void)speechManagerDidStartForwarding:(id)arg1 successfully:(BOOL)arg2 error:(id)arg3;
-- (void)speechManagerLPCMRecordBufferAvailable:(id)arg1 chunk:(id)arg2;
-- (void)speechManagerRecordBufferAvailable:(id)arg1 buffer:(id)arg2;
+- (void)processAudioSamples:(id)arg1;
 - (void)startDetectTwoShot:(id)arg1;
 - (void)_setAsset:(id)arg1;
 - (void)setAsset:(id)arg1;
 - (void)_reset;
 - (void)reset;
 - (void)start;
-- (id)initWithManager:(id)arg1 asset:(id)arg2;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

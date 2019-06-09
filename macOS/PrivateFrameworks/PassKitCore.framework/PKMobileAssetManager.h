@@ -15,10 +15,12 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (id)sortDescriptorsForEducationVideoWithPeerPaymentCard:(BOOL)arg1;
-- (id)predicateForEducationVideo;
-- (void)fetchEducationVideoWithPeerPaymentCard:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)fetchNeededAssetsForThisDeviceWithPeerPaymentCard:(BOOL)arg1;
+- (void)fetchCityStationProviderAssetForBaseProvider:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchAssetsForMarketWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)_sortDescriptorWithPreferredFeatureKey:(id)arg1 isFeaturePreferred:(BOOL)arg2 keyPath:(id)arg3;
+- (id)sortDescriptorsForEducationVideoWithPreferredFeatures:(unsigned long long)arg1;
+- (void)fetchEducationVideoWithPreferredFeatures:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchNeededAssetsForThisDeviceWithPreferredFeatures:(unsigned long long)arg1;
 - (id)init;
 
 @end

@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGroupViewElement : SKUIViewElement
 {
     NSString *_type;

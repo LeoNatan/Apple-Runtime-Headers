@@ -19,7 +19,6 @@
 - (void)showMoreInfo:(id)arg1;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (id)icon;
-- (void)dealloc;
 - (id)initWithServiceID:(id)arg1 forAccount:(id)arg2;
 
 @end

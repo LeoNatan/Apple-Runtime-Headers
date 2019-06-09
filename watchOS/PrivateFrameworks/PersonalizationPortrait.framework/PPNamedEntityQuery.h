@@ -15,6 +15,9 @@
 {
     _Bool _overrideDecayRate;
     _Bool _matchCategory;
+    _Bool _excludeWithoutSentiment;
+    _Bool _isMapsSearchQuery;
+    _Bool _orderByName;
     unsigned int _limit;
     NSDate *_fromDate;
     NSDate *_toDate;
@@ -25,11 +28,18 @@
     NSString *_matchingName;
     NSSet *_matchingCategories;
     NSSet *_excludingAlgorithms;
+    NSString *_matchingEntityTrie;
     double _decayRate;
 }
 
 + (id)locationQueryWithLimit:(unsigned int)arg1 fromDate:(id)arg2 consumerType:(unsigned int)arg3;
++ (id)_excludingAlgorithmsDescription:(id)arg1;
++ (id)_matchingCategoriesDescription:(id)arg1;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool orderByName; // @synthesize orderByName=_orderByName;
+@property(nonatomic) _Bool isMapsSearchQuery; // @synthesize isMapsSearchQuery=_isMapsSearchQuery;
+@property(retain, nonatomic) NSString *matchingEntityTrie; // @synthesize matchingEntityTrie=_matchingEntityTrie;
+@property(nonatomic) _Bool excludeWithoutSentiment; // @synthesize excludeWithoutSentiment=_excludeWithoutSentiment;
 @property(retain, nonatomic) NSSet *excludingAlgorithms; // @synthesize excludingAlgorithms=_excludingAlgorithms;
 @property(retain, nonatomic) NSSet *matchingCategories; // @synthesize matchingCategories=_matchingCategories;
 @property(nonatomic) _Bool matchCategory; // @synthesize matchCategory=_matchCategory;
@@ -44,6 +54,7 @@
 @property(retain, nonatomic) NSDate *fromDate; // @synthesize fromDate=_fromDate;
 @property(nonatomic) unsigned int limit; // @synthesize limit=_limit;
 - (void).cxx_destruct;
+- (id)customizedDescription;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToNamedEntityQuery:(id)arg1;

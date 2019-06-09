@@ -10,7 +10,7 @@
 {
 }
 
-+ (void)becomeCurrentUser;
++ (BOOL)becomeCurrentUser;
 
 @end
 

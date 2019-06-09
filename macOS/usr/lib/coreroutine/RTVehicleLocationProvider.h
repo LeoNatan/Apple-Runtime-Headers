@@ -86,8 +86,6 @@
 - (void)_clearBulletinNotifications;
 - (void)_postVehicleReplacementBulletinNotificationWithVehicleEvent:(id)arg1 replacingEvent:(id)arg2;
 - (void)_postBulletinNotificationIfAppropriate;
-- (void)fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(CDUnknownBlockType)arg4;
-- (void)_fetchNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3 withHandler:(CDUnknownBlockType)arg4;
 - (void)engageInVehicleEventWithIdentifier:(id)arg1;
 - (void)updateVehicleEventWithIdentifier:(id)arg1 location:(id)arg2;
 - (void)updateVehicleEventWithIdentifier:(id)arg1 mapItem:(id)arg2;
@@ -117,7 +115,7 @@
 - (void)onLeechedLocation:(id)arg1;
 - (void)onLocationNotification:(id)arg1;
 - (void)_shutdown;
-- (void)purgeManager:(id)arg1 performPurgeOfType:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_setup;
 - (id)initWithLocationManager:(id)arg1 motionActivityManager:(id)arg2 mapsSupportManager:(id)arg3 metricManager:(id)arg4 managedObjectContext:(id)arg5 persistenceManager:(id)arg6 vehicleLocationHistoryController:(id)arg7 learnedLocationManager:(id)arg8 managedConfiguration:(id)arg9 defaultsManager:(id)arg10 keychainManager:(id)arg11;
 - (id)init;

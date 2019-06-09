@@ -42,10 +42,12 @@
 - (void).cxx_destruct;
 - (void)_preferencesUpdated:(id)arg1;
 - (void)_updateEnabled;
-- (_Bool)_setupRegardlessOfPreferences:(_Bool)arg1;
+- (_Bool)_setupIfNecessary;
 - (_Bool)_shouldEnable;
 @property(readonly, nonatomic) _Bool defaultEnabled;
 @property(readonly, nonatomic) NSSet *usedFeedbacks; // @synthesize usedFeedbacks=_usedFeedbacks;
+- (id)_updateFeedbacksForOutputMode:(id)arg1;
+- (id)_updateFeedbackForOutputMode:(id)arg1;
 @property(readonly, nonatomic) NSArray *feedbackKeyPaths;
 - (id)tweakedConfigurationForClass:(Class)arg1 usage:(id)arg2;
 - (id)tweakedConfigurationForCaller:(id)arg1 usage:(id)arg2;

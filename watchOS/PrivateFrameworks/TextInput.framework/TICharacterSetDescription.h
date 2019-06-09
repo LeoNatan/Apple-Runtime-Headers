@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <TextInput/NSCopying-Protocol.h>
+#import <TextInput/NSMutableCopying-Protocol.h>
 #import <TextInput/NSSecureCoding-Protocol.h>
 
 @class NSCharacterSet, NSString;
 
-@interface TICharacterSetDescription : NSObject <NSCopying, NSSecureCoding>
+@interface TICharacterSetDescription : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
     NSCharacterSet *_characterSet;
     _Bool _inverted;

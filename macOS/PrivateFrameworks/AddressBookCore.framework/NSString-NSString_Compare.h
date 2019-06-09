@@ -9,6 +9,7 @@
 #import <AddressBookCore/ABCompare-Protocol.h>
 
 @interface NSString (NSString_Compare) <ABCompare>
++ (id)abUniqueString;
 - (BOOL)_abCompareNotWithinIntervalFromTodayYearless:(id)arg1;
 - (BOOL)_abCompareNotWithinIntervalFromToday:(id)arg1;
 - (BOOL)_abCompareWithinIntervalFromTodayYearless:(id)arg1;
@@ -21,5 +22,21 @@
 - (BOOL)_abComparePrefixMatch:(id)arg1 options:(unsigned long long)arg2;
 - (BOOL)_abCompareContainsSubString:(id)arg1 options:(unsigned long long)arg2;
 - (long long)_abCompare:(id)arg1 ascending:(BOOL)arg2 options:(unsigned long long)arg3;
+- (id)ab_queryPiecesNoLowerCase;
+- (id)ab_queryPieces;
+- (BOOL)_ab_containsDiacritics;
+- (void)abEnumerateCharactersWithOptions:(unsigned long long)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)abSha1HashString;
+- (id)abNormalizedUID;
+- (id)abUIDWithTableName:(id)arg1;
+- (id)abWords;
+- (id)abStringByRemovingPunctuation;
+- (id)abStandardizedPhoneNumber;
+- (id)_ab_stringByReplacingStrings:(id)arg1;
+- (id)_ab_rangesOfStrings:(id)arg1;
+- (id)abVCardDataRepresentation;
+- (id)abCaseNormalizedCopy;
+- (id)abNameComponentTokensUsingLocale:(id)arg1 inferredNameOrder:(long long *)arg2;
+- (id)abNameComponentTokens;
 @end
 

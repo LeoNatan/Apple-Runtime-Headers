@@ -18,6 +18,8 @@
     NSXPCConnection *_serverConnection;
     id <CLKComplicationDataSource> _dataSource;
     NSSet *_activeComplications;
+    struct os_unfair_lock_s _connectionLock;
+    int _restartNotificationToken;
     struct {
         _Bool supportsGetTimeTravelDirections;
         _Bool supportsGetTimelineStartDate;
@@ -53,12 +55,15 @@
 - (void)setActiveComplications:(id)arg1;
 - (void)_createDataSourceIfNecessary;
 - (void)_checkinWithServer;
+- (void)_complicationServiceDidStart;
 - (void)_createConnection;
 @property(readonly, nonatomic) NSDate *latestTimeTravelDate;
 @property(readonly, nonatomic) NSDate *earliestTimeTravelDate;
 @property(readonly, nonatomic) NSArray *activeComplications;
 - (void)extendTimelineForComplication:(id)arg1;
 - (void)reloadTimelineForComplication:(id)arg1;
+- (id)serverProxy;
+- (void)dealloc;
 - (id)_init;
 - (id)initWithClientIdentifier:(id)arg1;
 - (id)init;

@@ -4,19 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FileProvider/FPActionOperation.h>
+#import <FileProvider/FPTransformOperation.h>
 
 @class NSArray, NSDate;
 
-@interface FPSetLastOpenDateOperation : FPActionOperation
+@interface FPSetLastOpenDateOperation : FPTransformOperation
 {
     NSArray *_items;
     NSDate *_date;
 }
 
 - (void).cxx_destruct;
-- (void)presendNotifications;
-- (void)mainWithExtensionProxy:(id)arg1;
+- (id)fp_prettyDescription;
+- (unsigned long long)transformItem:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)initWithItems:(id)arg1 date:(id)arg2;
 - (id)replicateForItems:(id)arg1;
 

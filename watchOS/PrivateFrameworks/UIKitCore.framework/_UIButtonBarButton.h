@@ -6,21 +6,24 @@
 
 #import <UIKitCore/UIControl.h>
 
-@class NSLayoutConstraint, _UIButtonBarButtonVisualProvider;
+@class NSLayoutConstraint, _UIBarButtonItemData, _UIButtonBarButtonVisualProvider;
 
-__attribute__((visibility("hidden")))
 @interface _UIButtonBarButton : UIControl
 {
     _UIButtonBarButtonVisualProvider *_visualProvider;
     NSLayoutConstraint *_widthMinimizingConstraint;
     NSLayoutConstraint *_heightMinimizingConstraint;
     struct CGRect _hitRect;
+    _Bool _needsAppearanceUpdate;
     _Bool _backButton;
+    _UIBarButtonItemData *_appearanceData;
 }
 
+@property(retain, nonatomic) _UIBarButtonItemData *appearanceData; // @synthesize appearanceData=_appearanceData;
 @property(readonly, nonatomic, getter=isBackButton) _Bool backButton; // @synthesize backButton=_backButton;
 @property(readonly, copy, nonatomic) _UIButtonBarButtonVisualProvider *visualProvider; // @synthesize visualProvider=_visualProvider;
 - (void).cxx_destruct;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_accessibilitySettingsChanged:(id)arg1;
 - (_Bool)_accessibilityShouldActivateOnHUDLift;
@@ -36,9 +39,10 @@ __attribute__((visibility("hidden")))
 - (void)_configureFromBarItem:(id)arg1 appearanceDelegate:(id)arg2 isBackButton:(_Bool)arg3;
 @property(readonly, nonatomic) NSLayoutConstraint *heightMinimizingConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *widthMinimizingConstraint;
-- (void)reset;
+- (void)setNeedsAppearanceUpdate;
 - (void)configureBackButtonFromBarItem:(id)arg1 withAppearanceDelegate:(id)arg2;
 - (void)configureFromBarItem:(id)arg1 withAppearanceDelegate:(id)arg2;
+- (void)_setTouchHasHighlighted:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)setEnabled:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1;

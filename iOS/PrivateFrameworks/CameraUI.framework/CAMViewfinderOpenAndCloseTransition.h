@@ -6,17 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class CAMSnapshotView, CAMViewfinderView;
+@class CAMSnapshotView;
+@protocol CAMViewfinderTransitionable;
 
 @interface CAMViewfinderOpenAndCloseTransition : NSObject
 {
     _Bool _didEnterBackground;
-    CAMViewfinderView *__viewfinderView;
+    id <CAMViewfinderTransitionable> __transitionableViewfinder;
     CAMSnapshotView *__snapshotView;
 }
 
 @property(retain, nonatomic, setter=_setSnapshotView:) CAMSnapshotView *_snapshotView; // @synthesize _snapshotView=__snapshotView;
-@property(readonly, nonatomic) __weak CAMViewfinderView *_viewfinderView; // @synthesize _viewfinderView=__viewfinderView;
+@property(readonly, nonatomic) __weak id <CAMViewfinderTransitionable> _transitionableViewfinder; // @synthesize _transitionableViewfinder=__transitionableViewfinder;
 @property(nonatomic) _Bool didEnterBackground; // @synthesize didEnterBackground=_didEnterBackground;
 - (void).cxx_destruct;
 - (void)closeWithoutBlurring;
@@ -24,7 +25,7 @@
 - (void)openAnimated:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_closeViewfinder:(_Bool)arg1 animated:(_Bool)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (id)_existingSnapshotViewCreateIfNecessary:(_Bool)arg1 removedOnCompletion:(_Bool)arg2;
-- (id)initWithViewfinderView:(id)arg1;
+- (id)initWithTransitionableViewfinder:(id)arg1;
 
 @end
 

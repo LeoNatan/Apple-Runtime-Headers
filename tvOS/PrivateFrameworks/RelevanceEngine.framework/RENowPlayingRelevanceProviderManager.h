@@ -6,14 +6,16 @@
 
 #import <RelevanceEngine/RERelevanceProviderManager.h>
 
-@interface RENowPlayingRelevanceProviderManager : RERelevanceProviderManager
+#import <RelevanceEngine/RENowPlayingRelevanceProviderManagerProperties-Protocol.h>
+
+@interface RENowPlayingRelevanceProviderManager : RERelevanceProviderManager <RENowPlayingRelevanceProviderManagerProperties>
 {
     unsigned long long _state;
 }
 
 + (Class)_relevanceProviderClass;
 + (id)_features;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) unsigned long long state;
 - (void)_updatePlaybackState;
 - (void)pause;
 - (void)resume;

@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSMutableDictionary;
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@protocol OS_dispatch_queue;
 
 @interface CMActivityAlarmProxy : NSObject
 {
@@ -17,12 +17,9 @@
     NSMutableDictionary *fAlarms;
     NSObject<OS_dispatch_queue> *fReplyQueue;
     _Bool fAlarmAvailable;
-    NSObject<OS_dispatch_source> *fWatchdogTimer;
 }
 
 + (id)sharedInstance;
-- (void)_stopWatchdogCheckins;
-- (void)_startWatchdogCheckins;
 - (void)stopListeningForActivityAlarm:(id)arg1;
 - (void)listenForActivityAlarm:(id)arg1;
 - (_Bool)activityAlarmAvailable;

@@ -11,6 +11,7 @@
 @interface NTKRichComplicationCurvedProgressView : NTKRichComplicationProgressView
 {
     float _curveWidth;
+    int _progressFillStyle;
     NTKRichComplicationCurveView *_backgroundView;
     NTKRichComplicationCurveView *_foregroundView;
     _Bool _clockwise;
@@ -22,7 +23,13 @@
 @property(nonatomic) float endAngle; // @synthesize endAngle=_endAngle;
 @property(nonatomic) float beginAngle; // @synthesize beginAngle=_beginAngle;
 - (void).cxx_destruct;
-- (id)initWithCurveWidth:(float)arg1 padding:(float)arg2 beginAngle:(float)arg3 endAngle:(float)arg4 forDevice:(id)arg5;
+- (id)colorForView:(id)arg1 accented:(_Bool)arg2;
+- (id)filterForView:(id)arg1 style:(int)arg2 fraction:(float)arg3;
+- (id)filterForView:(id)arg1 style:(int)arg2;
+- (id)overrideBackgroundGradientColorsForGradientColors:(id)arg1 locations:(id)arg2;
+- (id)overrideBackgroundGradientColorsForGradientColors:(id)arg1;
+- (void)setProgress:(float)arg1;
+- (id)initWithCurveWidth:(float)arg1 padding:(float)arg2 beginAngle:(float)arg3 endAngle:(float)arg4 forDevice:(id)arg5 withFilterStyle:(int)arg6 progressFillStyle:(int)arg7;
 
 @end
 

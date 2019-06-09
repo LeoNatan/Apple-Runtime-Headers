@@ -4,17 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AccessibilityVisuals/AXVWindow.h>
+#import <AccessibilityVisuals/AXVVoiceOverStyleWindow.h>
 
-@interface AXVOverlayWindow : AXVWindow
+@protocol NSObject;
+
+@interface AXVOverlayWindow : AXVVoiceOverStyleWindow
 {
-    BOOL __spansAllScreens;
+    BOOL _spansAllScreens;
+    id <NSObject> __windowResizeObservation;
+    struct CGRect __frameBeforeSpanningAllScreens;
 }
 
-@property(nonatomic) BOOL _spansAllScreens; // @synthesize _spansAllScreens=__spansAllScreens;
-- (struct CGRect)_totalScreenBounds;
+@property(retain, nonatomic) id <NSObject> _windowResizeObservation; // @synthesize _windowResizeObservation=__windowResizeObservation;
+@property(nonatomic) struct CGRect _frameBeforeSpanningAllScreens; // @synthesize _frameBeforeSpanningAllScreens=__frameBeforeSpanningAllScreens;
+@property(nonatomic) BOOL spansAllScreens; // @synthesize spansAllScreens=_spansAllScreens;
+- (void).cxx_destruct;
 - (void)_updateHighlightViewFramesSpanningAllScreens:(struct CGRect)arg1;
-- (void)screenParametersDidChange:(id)arg1;
+- (void)handleScreenParametersChanged;
+- (void)dealloc;
 - (id)init;
 - (id)initWithContentRect:(struct CGRect)arg1;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;

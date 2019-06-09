@@ -8,17 +8,21 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class NSData, NSString;
+@class CKDPCodeFunctionInvokeRequestAttestationRequest, CKDPCodeFunctionInvokeRequestProtectedCloudComputeMetadata, NSData, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CKDPCodeFunctionInvokeRequest : PBRequest <NSCopying>
 {
+    CKDPCodeFunctionInvokeRequestAttestationRequest *_attestationRequest;
     NSString *_functionName;
+    CKDPCodeFunctionInvokeRequestProtectedCloudComputeMetadata *_protectedCloudComputeMetadata;
     NSData *_serializedParameters;
     NSString *_serviceName;
 }
 
 + (id)options;
+@property(retain, nonatomic) CKDPCodeFunctionInvokeRequestAttestationRequest *attestationRequest; // @synthesize attestationRequest=_attestationRequest;
+@property(retain, nonatomic) CKDPCodeFunctionInvokeRequestProtectedCloudComputeMetadata *protectedCloudComputeMetadata; // @synthesize protectedCloudComputeMetadata=_protectedCloudComputeMetadata;
 @property(retain, nonatomic) NSData *serializedParameters; // @synthesize serializedParameters=_serializedParameters;
 @property(retain, nonatomic) NSString *functionName; // @synthesize functionName=_functionName;
 @property(retain, nonatomic) NSString *serviceName; // @synthesize serviceName=_serviceName;
@@ -34,6 +38,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasAttestationRequest;
+@property(readonly, nonatomic) _Bool hasProtectedCloudComputeMetadata;
 @property(readonly, nonatomic) _Bool hasSerializedParameters;
 @property(readonly, nonatomic) _Bool hasFunctionName;
 @property(readonly, nonatomic) _Bool hasServiceName;

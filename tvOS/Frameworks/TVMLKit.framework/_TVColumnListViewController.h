@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (void)_dispatchEventOfType:(unsigned long long)arg1 forItemAtIndexPath:(id)arg2;
+- (void)_dispatchEvent:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (id)_dataSourceWithSections:(id)arg1 numColumns:(unsigned long long)arg2 lineSpace:(double)arg3;
 - (void)_updateViewLayout;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;

@@ -8,6 +8,7 @@
 
 @class CKConversation, CKNanoChatController, CKTranscriptCollectionViewController;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoTranscriptActionController : PUICActionController
 {
     CKNanoChatController *_chatController;

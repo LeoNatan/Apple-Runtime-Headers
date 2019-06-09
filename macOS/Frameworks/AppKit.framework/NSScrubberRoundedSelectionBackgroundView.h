@@ -10,7 +10,6 @@
 
 @interface NSScrubberRoundedSelectionBackgroundView : NSScrubberSelectionView
 {
-    unsigned int _reservedBackgroundFlags;
     NSColor *_tintColor;
 }
 

@@ -4,23 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Spotlight/PRSResult.h>
+#import <SpotlightServices/SFSearchResult_SpotlightExtras.h>
 
 #import <Spotlight/NSPasteboardWriting-Protocol.h>
 
 @class NSString;
 
-@interface PRSCalculatorResult : PRSResult <NSPasteboardWriting>
+@interface PRSCalculatorResult : SFSearchResult_SpotlightExtras <NSPasteboardWriting>
 {
     NSString *_inputString;
 }
 
 @property(readonly) NSString *inputString; // @synthesize inputString=_inputString;
 - (void).cxx_destruct;
-- (id)type;
+- (int)type;
 - (BOOL)isCalculation;
-- (unsigned long long)rank;
-- (unsigned long long)score;
+-     // Error parsing type: T16@0:8, name: rank
+-     // Error parsing type: T16@0:8, name: score
 - (id)groupName;
 - (id)category;
 - (BOOL)isEqual:(id)arg1;

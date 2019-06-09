@@ -6,12 +6,12 @@
 
 #import <HealthDaemon/HDAssertion.h>
 
-@class BKSProcessAssertion, CLInUseAssertion, HDXPCClient;
+@class BKSProcessAssertion, CLInUseAssertion, HDHealthStoreClient;
 
 @interface _HDBackgroundRunningAssertion : HDAssertion
 {
     _Bool _shouldAcquireCLAssertion;
-    HDXPCClient *_client;
+    HDHealthStoreClient *_client;
     BKSProcessAssertion *_bksAssertion;
     CLInUseAssertion *_coreLocationAssertion;
 }
@@ -19,7 +19,7 @@
 @property(retain, nonatomic) CLInUseAssertion *coreLocationAssertion; // @synthesize coreLocationAssertion=_coreLocationAssertion;
 @property(retain, nonatomic) BKSProcessAssertion *bksAssertion; // @synthesize bksAssertion=_bksAssertion;
 @property(readonly, nonatomic) _Bool shouldAcquireCLAssertion; // @synthesize shouldAcquireCLAssertion=_shouldAcquireCLAssertion;
-@property(readonly, nonatomic) HDXPCClient *client; // @synthesize client=_client;
+@property(readonly, nonatomic) HDHealthStoreClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
 - (id)initWithOwnerIdentifier:(id)arg1 client:(id)arg2 shouldAcquireCLAssertion:(_Bool)arg3;
 

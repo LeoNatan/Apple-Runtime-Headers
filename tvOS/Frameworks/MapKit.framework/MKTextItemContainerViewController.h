@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) id <GEOTextItemContainer> textItemContainer; // @synthesize textItemContainer=_textItemContainer;
 - (void).cxx_destruct;
 - (void)updateUIForTheme:(id)arg1;
-- (void)infoCardThemeChanged:(id)arg1;
+- (void)infoCardThemeChanged;
 - (void)contentSizeCategoryDidChange:(id)arg1;
 - (void)setupSubviewsWithMaxWidth:(double)arg1;
 - (void)viewDidLayoutSubviews;

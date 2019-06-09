@@ -16,6 +16,9 @@ __attribute__((visibility("hidden")))
     long long _delta;
 }
 
+@property(nonatomic) long long delta; // @synthesize delta=_delta;
+@property(nonatomic) unsigned long long length; // @synthesize length=_length;
+@property(nonatomic) unsigned long long location; // @synthesize location=_location;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithRange:(struct _NSRange)arg1 delta:(long long)arg2;

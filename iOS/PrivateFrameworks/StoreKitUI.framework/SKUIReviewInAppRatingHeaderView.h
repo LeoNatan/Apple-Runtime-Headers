@@ -8,6 +8,7 @@
 
 @class NSString, SKUIStarRatingControl, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewInAppRatingHeaderView : UIView
 {
     _Bool _completed;

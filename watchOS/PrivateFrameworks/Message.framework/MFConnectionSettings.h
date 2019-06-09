@@ -39,6 +39,7 @@
 @property(copy, nonatomic) NSString *hostname; // @synthesize hostname=_hostname;
 @property(copy, nonatomic) NSString *certUIService; // @synthesize certUIService=_certUIService;
 @property(nonatomic) _Bool tryDirectSSL; // @synthesize tryDirectSSL=_tryDirectSSLConnection;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setConnectionServiceType:(struct __CFString *)arg1;
 - (struct __CFString *)connectionServiceType;

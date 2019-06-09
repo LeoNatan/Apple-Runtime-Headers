@@ -28,6 +28,7 @@
 - (void)refill;
 - (void)endWork;
 - (void)startWork;
+- (id)state;
 - (_Bool)canDoDiscretionaryWork;
 - (void)_writeThrottleStateLocked;
 - (void)_writeThrottleState;

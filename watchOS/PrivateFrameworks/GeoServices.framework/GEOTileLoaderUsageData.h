@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double queuedTime; // @synthesize queuedTime=_queuedTime;
 @property(readonly, nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(readonly, nonatomic) struct _GEOTileKey key; // @synthesize key=_key;
-- (id)initWithTileKey:(const struct _GEOTileKey *)arg1;
+- (id)initWithTileKey:(const struct _GEOTileKey *)arg1 startTime:(double)arg2;
 
 @end
 

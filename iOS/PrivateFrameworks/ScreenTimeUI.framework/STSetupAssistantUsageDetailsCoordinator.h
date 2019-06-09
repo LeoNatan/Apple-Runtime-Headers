@@ -10,6 +10,7 @@
 
 @class NSArray, NSString, STUsageDetailsViewModel;
 
+__attribute__((visibility("hidden")))
 @interface STSetupAssistantUsageDetailsCoordinator : NSObject <STUsageDetailsViewModelCoordinator>
 {
     _Bool _refreshing;
@@ -26,7 +27,7 @@
 - (void)refreshUsageData;
 - (void)stopRefreshingUsageData;
 - (void)startRefreshingUsageData;
-- (id)introUsageItems;
+- (id)_introUsageItemsWithStartDate:(id)arg1;
 - (id)categoryConfigByIdentifier;
 - (id)appConfigByIdentifier;
 - (id)init;

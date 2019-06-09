@@ -8,7 +8,7 @@
 
 #import <PersonalizationPortraitInternals/PPTopicReadOnlyServerProtocol-Protocol.h>
 
-@class NSString, PPBundleIdResolver, PPXPCServerPipelinedBatchQueryManager;
+@class NSString, PPXPCServerPipelinedBatchQueryManager, _PASBundleIdResolver;
 @protocol PPTopicClientProtocol;
 
 @interface PPTopicReadOnlyServerRequestHandler : NSObject <PPTopicReadOnlyServerProtocol>
@@ -16,18 +16,14 @@
     id <PPTopicClientProtocol> _clientProxy;
     PPXPCServerPipelinedBatchQueryManager *_queryManager;
     NSString *_clientProcessName;
-    PPBundleIdResolver *_bundleIdResolver;
+    _PASBundleIdResolver *_bundleIdResolver;
 }
 
-@property(retain, nonatomic) PPBundleIdResolver *bundleIdResolver; // @synthesize bundleIdResolver=_bundleIdResolver;
+@property(retain, nonatomic) _PASBundleIdResolver *bundleIdResolver; // @synthesize bundleIdResolver=_bundleIdResolver;
 @property(copy, nonatomic) NSString *clientProcessName; // @synthesize clientProcessName=_clientProcessName;
 - (void).cxx_destruct;
-- (void)feedbackMappedTopicsOverallEngagement:(id)arg1 forMapping:(id)arg2;
-- (void)feedbackTopicsOverallEngagement:(id)arg1;
-- (void)feedbackEngagedMappedTopics:(id)arg1 forMapping:(id)arg2;
-- (void)feedbackEngagedTopics:(id)arg1;
-- (void)feedbackUsedMappedTopics:(id)arg1 forMapping:(id)arg2;
-- (void)feedbackUsedTopics:(id)arg1;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)unmapMappedTopicIdentifier:(id)arg1 mappingIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)scoresForTopicMapping:(id)arg1 query:(id)arg2 queryId:(unsigned long long)arg3;
 - (void)topicRecordsWithQuery:(id)arg1 queryId:(unsigned long long)arg2;
 - (void)rankedTopicsWithQuery:(id)arg1 queryId:(unsigned long long)arg2;

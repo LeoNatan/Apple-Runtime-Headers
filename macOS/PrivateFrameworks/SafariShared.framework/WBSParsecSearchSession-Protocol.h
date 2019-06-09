@@ -12,7 +12,6 @@
 @protocol WBSParsecSearchSession <NSObject>
 @property(readonly, nonatomic) id <WBSParsecFeedbackDispatcher> feedbackDispatcher;
 @property(nonatomic, setter=setUIScale:) double uiScale;
-@property(readonly, nonatomic, getter=isValid) BOOL valid;
 @property(retain, nonatomic) WBSCompletionQuery *currentQuery;
 @property(nonatomic) __weak id <WBSParsecSearchSessionDelegate> delegate;
 @end

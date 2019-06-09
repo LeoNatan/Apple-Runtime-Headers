@@ -12,6 +12,7 @@
 {
     NSMutableArray *_calendarObservers;
     NSMutableArray *_contactsObservers;
+    NSMutableArray *_remindersObservers;
     NSMutableArray *_queuedOperations;
     _Bool _observersFrozen;
 }
@@ -20,12 +21,13 @@
 - (_Bool)hasObserver:(id)arg1;
 - (void)thawObserversForTesting;
 - (void)freezeObservers;
+- (void)addRemindersObserver:(id)arg1;
 - (void)addContactsObserver:(id)arg1;
 - (void)addCalendarObserver:(id)arg1;
 - (void)addEntries:(id)arg1;
 - (unsigned long long)_eventBatchOperationSupportedForEntries:(id)arg1;
 - (void)addEntry:(id)arg1;
-- (void)_callCalendarObservers:(id)arg1 contactsObservers:(id)arg2 withEntry:(id)arg3;
+- (void)_callCalendarObservers:(id)arg1 contactsObservers:(id)arg2 remindersObservers:(id)arg3 withEntry:(id)arg4;
 - (id)init;
 
 @end

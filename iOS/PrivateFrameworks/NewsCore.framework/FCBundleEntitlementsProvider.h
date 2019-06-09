@@ -8,16 +8,17 @@
 
 #import <NewsCore/FCBundleEntitlementsProviderType-Protocol.h>
 
-@protocol FCCoreConfigurationManager;
+@protocol FCCoreConfigurationManager, FCEntitlementsOverrideProviderType;
 
 @interface FCBundleEntitlementsProvider : NSObject <FCBundleEntitlementsProviderType>
 {
+    id <FCEntitlementsOverrideProviderType> entitlementsOverrideProvider;
     id <FCCoreConfigurationManager> _configurationManager;
 }
 
 @property(readonly, nonatomic) id <FCCoreConfigurationManager> configurationManager; // @synthesize configurationManager=_configurationManager;
+@property(retain, nonatomic) id <FCEntitlementsOverrideProviderType> entitlementsOverrideProvider; // @synthesize entitlementsOverrideProvider;
 - (void).cxx_destruct;
-- (id)_bundlePurchaseIDForTemporaryAccessWithConfiguration:(id)arg1;
 - (void)_fetchEntitlementsWithIgnoreCache:(_Bool)arg1 configuration:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchEntitlementsWithIgnoreCache:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithConfigurationManager:(id)arg1;

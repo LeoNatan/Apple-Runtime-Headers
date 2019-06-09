@@ -7,12 +7,10 @@
 #import <objc/NSObject.h>
 
 @class NSUUID;
-@protocol OS_xpc_object;
 
 @interface PLCloudChangeHubClient : NSObject
 {
     unsigned char _nodeUUID[16];
-    NSObject<OS_xpc_object> *_hubConnection;
     NSUUID *_uuid;
 }
 
@@ -23,10 +21,6 @@
 - (id)resultsFromReply:(id)arg1 sinceIndex:(unsigned long long)arg2;
 - (id)fetchResultsSinceIndex:(unsigned long long)arg1;
 - (id)fetchPendingEventsSinceIndex:(unsigned long long)arg1;
-- (unsigned long long)fetchLastEventIndex;
-@property(readonly, getter=isConnected) _Bool connected;
-- (void)disconnect;
-- (_Bool)connect;
 - (id)initWithUUID:(id)arg1;
 - (id)init;
 

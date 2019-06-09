@@ -22,9 +22,13 @@ __attribute__((visibility("hidden")))
     int _cpuFamily;
     NSString *_cpuType;
     NSString *_machineName;
+    BOOL _isGVAEncoderAvailableInitialized;
+    BOOL _isGVAEncoderAvailable;
 }
 
++ (long long)deviceClass;
 + (id)sharedInstance;
+@property(readonly, nonatomic) BOOL supportsHEIFEncoding;
 @property(readonly, nonatomic) BOOL isDeviceLargeScreen;
 @property(readonly, nonatomic) unsigned int maxActiveVideoDecoders;
 @property(readonly, nonatomic) unsigned int maxActiveVideoEncoders;
@@ -40,10 +44,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL canDoHEVC;
 @property(readonly, nonatomic) BOOL canDoHiDefEncoding;
 - (BOOL)isGVAEncoderAvailable;
-- (BOOL)isModel:(id)arg1;
-- (BOOL)isMachineNewerThanSandybridge:(int)arg1;
-- (id)getCPUTypeStringForMachineType:(int)arg1;
-- (int)getCPUFamilyType;
+- (BOOL)_isModel:(id)arg1;
+- (BOOL)_isMachineNewerThanSandybridge:(int)arg1;
+- (id)_getCPUTypeStringForMachineType:(int)arg1;
+- (int)_getCPUFamilyType;
 - (void)dealloc;
 - (id)init;
 

@@ -19,6 +19,7 @@
     struct btC3DDebugDraw *_debugDrawer;
     struct c3dAether _aether;
     BOOL _hasActiveFields;
+    BOOL _firstSimulationDone;
     id <SCNPhysicsContactDelegate> _contactDelegate;
     SCNPhysicsContact *_contact;
     SCNScene *_scene;
@@ -29,6 +30,8 @@
     NSMutableArray *_fields;
     double _elapsedTime;
     NSMutableArray *_behaviors;
+    NSArray *_activeBehaviors;
+    BOOL _activeBehaviorsValid;
     NSMutableSet *_bodies;
 }
 

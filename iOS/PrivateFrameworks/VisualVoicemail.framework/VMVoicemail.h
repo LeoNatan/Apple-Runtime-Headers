@@ -30,6 +30,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (unsigned long long)flagsByApplyingMailboxType:(long long)arg1 toFlags:(unsigned long long)arg2;
++ (long long)mailboxTypeForFlags:(unsigned long long)arg1;
 @property(nonatomic) unsigned long long flags; // @synthesize flags=_flags;
 @property(retain, nonatomic) NSURL *transcriptionURL; // @synthesize transcriptionURL=_transcriptionURL;
 @property(copy, nonatomic) NSString *receiverISOCountryCode; // @synthesize receiverISOCountryCode=_receiverISOCountryCode;
@@ -66,6 +68,7 @@
 - (_Bool)isTranscribing;
 @property(nonatomic, getter=isTemporary) _Bool temporary;
 @property(nonatomic, getter=isRead) _Bool read;
+@property(nonatomic) long long mailboxType;
 @property(nonatomic, getter=isDownloading) _Bool downloading;
 @property(nonatomic, getter=isDetached) _Bool detached;
 @property(nonatomic, getter=isDeleted) _Bool deleted;

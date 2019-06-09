@@ -10,6 +10,7 @@
 
 @class CKAlertAction, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoAlertSheetController : PUICAlertSheetController <PUICActionSheetControllerDelegate>
 {
     CKAlertAction *_cancelAction;

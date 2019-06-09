@@ -8,6 +8,7 @@
 
 @class WDAnnotationData, WDCharacterRun;
 
+__attribute__((visibility("hidden")))
 @interface WDAnnotation : WDRun
 {
     int mType;

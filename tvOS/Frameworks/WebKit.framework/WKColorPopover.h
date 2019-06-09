@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface WKColorPopover : WKFormRotatingAccessoryPopover <WKFormControl>
 {
-    struct RetainPtr<NSObject<WKFormControl>> _innerControl;
+    RetainPtr_5ad583fd _innerControl;
 }
 
 - (id).cxx_construct;

@@ -16,7 +16,7 @@
 + (id)schemaHashRoot;
 
 // Remaining properties
-@property(retain, nonatomic) NSString *name; // @dynamic name;
+@property(copy, nonatomic) NSString *name; // @dynamic name;
 
 @end
 

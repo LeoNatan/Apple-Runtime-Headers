@@ -10,5 +10,7 @@
 + (id)valueWithType:(int)arg1 representation:(id)arg2;
 + (id)constraintWithDictonaryRepresentation:(id)arg1;
 + (id)constraintsWithArrayRepresenation:(id)arg1;
+- (id)modelWithParentIdentifier:(id)arg1;
+- (id)initWithModel:(id)arg1;
 @end
 

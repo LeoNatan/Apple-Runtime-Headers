@@ -24,6 +24,7 @@
 
 + (void)cumulativeNormalDistributionWithData:(id)arg1 sigmaFactor:(double)arg2 usingBlock:(CDUnknownBlockType)arg3;
 + (void)probabilityDensityNormalDistributionWithData:(id)arg1 sigmaFactor:(double)arg2 usingBlock:(CDUnknownBlockType)arg3;
++ (unsigned long long)numberOfFacesProcessedOnLastRunAtURL:(id)arg1;
 + (id)requestSuggestedMePersonIdentifierAtURL:(id)arg1 withError:(id *)arg2;
 + (void)setProcessed:(BOOL)arg1 forLibrary:(id)arg2;
 + (BOOL)hasProcessedForLibrary:(id)arg1;

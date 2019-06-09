@@ -29,7 +29,9 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned int)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
 - (id)_redactedDictionaryRepresentation;
+@property(nonatomic) int messageType;
 @property(copy, nonatomic) NSArray *attachments;
+@property(nonatomic) int effect;
 - (void)setSender:(id)arg1;
 @property(readonly, copy, nonatomic) INPerson *sender;
 - (void)setServiceName:(id)arg1;

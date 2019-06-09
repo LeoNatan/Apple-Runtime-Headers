@@ -8,7 +8,7 @@
 
 #import <SceneKit/SCNBufferStream-Protocol.h>
 
-@class CAMetalLayer, MTLRenderPassDescriptor, NSMutableArray, NSMutableDictionary, NSString, SCNMTLRenderPipeline, SCNMTLResourceManager, SCNRenderTargetRegistry;
+@class CAMetalLayer, MTLRenderPassDescriptor, NSMutableArray, NSMutableDictionary, NSString, SCNMTLRenderPipeline, SCNMTLResourceManager;
 @protocol CAMetalDrawable, MTLBuffer, MTLCommandBuffer, MTLCommandQueue, MTLDepthStencilState, MTLDevice, MTLRenderCommandEncoder, MTLSamplerState, MTLTexture, OS_dispatch_group, OS_dispatch_queue, OS_dispatch_semaphore;
 
 __attribute__((visibility("hidden")))
@@ -17,7 +17,6 @@ __attribute__((visibility("hidden")))
     // Error parsing type: {C3DColor4=""(?="rgba"[4f]""{?="r"f"g"f"b"f"a"f}"simd")}, name: _rendererPremultipliedBackgroundColor
     long long _currentFrameIndex;
     struct __C3DEngineStats *__engineStats;
-    SCNRenderTargetRegistry *_renderTargetRegistry;
     double _superSamplingFactor;
     struct CATransform3D _screenTransform;
     long long _sampleCount;
@@ -31,8 +30,10 @@ __attribute__((visibility("hidden")))
     unsigned int _wantsWideGamut:1;
     unsigned int _isOpaque:1;
     unsigned int _disableLinearRendering:1;
+    unsigned int _enableARMode:1;
     unsigned int _useFunctionConstants:1;
     unsigned int _reverseZ:1;
+    id <MTLCommandQueue> _ownedCommandQueue;
     NSObject<OS_dispatch_semaphore> *_inFlightSemaphore;
     // Error parsing type: {atomic<int>="__a_"Ai}, name: _pendingGPUFrameCount
     id <MTLTexture> _textureTarget;
@@ -44,13 +45,11 @@ __attribute__((visibility("hidden")))
     MTLRenderPassDescriptor *_originalRenderPassDescriptor;
     // Error parsing type: , name: _renderSize
     id <MTLCommandBuffer> _currentCommandBuffer;
-    // Error parsing type: ^{SCNMTLRenderCommandEncoder=BQQQQBBBBIIBB[31{?=@Q}][128@][16@][31{?=@Q}][128@][16@]@@@^{SCNMTLBufferPool}tt}, name: _renderEncoder
+    struct SCNMTLRenderCommandEncoder *_renderEncoder;
     id <MTLCommandBuffer> _resourceCommandBuffer;
     struct SCNMTLBlitCommandEncoder _resourceBlitEncoder;
-    // Error parsing type: {SCNMTLComputeCommandEncoder="_buffers"[31@"<MTLBuffer>"]"_offsets"[31Q]"_textures"[128@"<MTLTexture>"]"_samplers"[16@"<MTLSamplerState>"]"_texturesToBind"t"_computePipelineState"@"<MTLComputePipelineState>""_encoder"@"<MTLComputeCommandEncoder>""_commandBuffer"@"<MTLCommandBuffer>""_bufferPool"^{SCNMTLBufferPool}"_features"I"_buffersToBind"I}, name: _resourceComputeEncoder
-    // Error parsing type: ^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[4{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[5f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}, name: _currentPass
-    CDStruct_b491a7a6 _renderPassParameters;
-    NSMutableArray *_renderPasses;
+    struct SCNMTLComputeCommandEncoder _resourceComputeEncoder;
+    CDStruct_7e4e619b _renderPassParameters;
     CDStruct_21854d8c _currentStreamBufferIndices;
     struct SCNMTLBufferPool *_volatileBufferPools[3];
     struct SCNMTLBufferPool *_frameVolatileBufferPool;
@@ -65,7 +64,8 @@ __attribute__((visibility("hidden")))
     id <MTLSamplerState> _defaultSamplerState;
     struct __C3DFXMetalProgram *_background2DProgram[3];
     struct __C3DFXMetalProgram *_backgroundCubeProgram[3];
-    struct __C3DFXMetalProgram *_backgroundVideoProgram[3];
+    // Error parsing type: ^{__C3DFXMetalProgram={__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}[2^{__CFString}]^{__CFString}^{__CFDictionary}^v^{__CFDictionary}^v^{__CFString}}, name: _backgroundVideoProgram
+    // Error parsing type: ^{__C3DFXMetalProgram={__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}[2^{__CFString}]^{__CFString}^{__CFDictionary}^v^{__CFDictionary}^v^{__CFString}}, name: _backgroundVideoAlpha0Program
     struct __C3DRasterizerStates *_backgroundRasterizerStates;
     double _initialTime;
     NSObject<OS_dispatch_queue> *_resourceQueue;
@@ -78,15 +78,11 @@ __attribute__((visibility("hidden")))
         struct __C3DFXPass *pass;
         void *renderGraphPass;
         char passRequiresLighting;
-        char passRequiresLastFrameTransform;
         struct __C3DTransformTree *transformTree;
     } _processingContext;
     unsigned int _seed;
     // Error parsing type: [6{SCNSceneBuffer="viewTransform"{float4x4="columns"[4]}"inverseViewTransform"{float4x4="columns"[4]}"projectionTransform"{float4x4="columns"[4]}"viewProjectionTransform"{float4x4="columns"[4]}"viewToCubeTransform"{float4x4="columns"[4]}"lastFrameViewProjectionTransform"{float4x4="columns"[4]}"ambientLightingColor""fogColor""fogParameters""inverseResolution""time"f"sinTime"f"cosTime"f"random01"f"motionBlurIntensity"f"environmentIntensity"f"inverseProjectionTransform"{float4x4="columns"[4]}"inverseViewProjectionTransform"{float4x4="columns"[4]}"nearFar""viewportSize""inverseTransposeViewTransform"{float4x4="columns"[4]}"clusterScale"}], name: _frameUniforms
-    struct {
-        id <MTLBuffer> buffer;
-        unsigned long long offset;
-    } _sceneUniforms;
+    CDStruct_deec94a8 _sceneUniforms;
     struct {
         id <MTLBuffer> buffer;
         unsigned long long offset;
@@ -96,12 +92,12 @@ __attribute__((visibility("hidden")))
         id <MTLSamplerState> samplerStates[256];
     } _lightsData;
     // Error parsing type: {?="modelTransform"{float4x4="columns"[4]}"lastFrameModelTransform"{float4x4="columns"[4]}"normalTransform"{float4x4="columns"[4]}"modelViewTransform"{float4x4="columns"[4]}"modelViewProjectionTransform"{float4x4="columns"[4]}"boundingBox"{float2x3="columns"[2]}"worldBoundingBox"{float2x3="columns"[2]}"instanceNode"^{__C3DNode}"flags"I"probeCacheIndex"^I"boneTransformSizeWritten"I}, name: _nodeUniforms
-    // Error parsing type: {?="currentLightingSet"{?="lights"[8C]}"currentShadowMaps"[8@"<MTLTexture>"]"currentGoboMaps"[8@"<MTLTexture>"]"frameLightingSetDatas"{unordered_map<unsigned long long, SCNMTLLightSetData, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, SCNMTLLightSetData> > >="__table_"{__hash_table<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData> > >="__bucket_list_"{unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> *> > >="__ptr_"{__compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> *> > >="__value_"^^{__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *>}"__value_"{__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> *> >="__data_"{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> *> >="__value_"Q}}}}"__p1_"{__compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> > >="__value_"{__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *>="__next_"^{__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *>}}}"__p2_"{__compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::hash<unsigned long long>, true> >="__value_"Q}"__p3_"{__compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::equal_to<unsigned long long>, true> >="__value_"f}}}"currentLightingHashKey"Q"currentLightingDesc"{?="count"q"lights"[8^{__C3DLight}]"lightsData"[8^{__C3DLightRuntimeData}]}"currentLightingSpace"{?="columns"[4]}"currentLightingSpaceShadow"{?="columns"[4]}"needLightingSpaceTransformation"B"clusterSystem"{SCNMTLClusterSystem="clustersCount""tileSize""selectedDebugClusterIndex""_debugClusterTilesPipeline"@"SCNMTLRenderPipeline""_debugLightIndicesBufferPipeline"@"SCNMTLRenderPipeline""_debugClusterSlicesPipeline"@"SCNMTLRenderPipeline""_debugProgram"[6^{__C3DFXMetalProgram}]"_debugShapes"[6^{__C3DMesh}]}"clusterInfo"{Info="clusterBuffer"{?="memory"*"buffer"@"<MTLBuffer>""offset"Q}"clusterTexture"@"<MTLTexture>""lightIndicesBuffer"@"<MTLBuffer>""lightIndicesBufferOffset"I"lightIndicesBufferSize"I"cellSize""clusterScale""cellPixelSize""omniLightsRange""spotLightsRange""probeLightsRange""lightsBuffer"{?="memory"*"buffer"@"<MTLBuffer>""offset"Q}"lightsBufferSize"I"shadowTextures"[8@"<MTLTexture>"]"iesOrGoboTextures"[8@"<MTLTexture>"]"samplerStates"[8@"<MTLSamplerState>"]}"reflectionProbesTextureArray"@"<MTLTexture>"}, name: _lighting
+    // Error parsing type: {?="currentLightingSet"{?="lights"[8C]}"currentShadowMaps"[8@"<MTLTexture>"]"currentGoboMaps"[8@"<MTLTexture>"]"frameLightingSetDatas"{unordered_map<unsigned long long, SCNMTLLightSetData, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, SCNMTLLightSetData> > >="__table_"{__hash_table<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData> > >="__bucket_list_"{unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> *> > >="__ptr_"{__compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> *> > >="__value_"^^{__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *>}"__value_"{__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> *> >="__data_"{__compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *> *> >="__value_"Q}}}}"__p1_"{__compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> > >="__value_"{__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *>="__next_"^{__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, void *> *>}}}"__p2_"{__compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::hash<unsigned long long>, true> >="__value_"Q}"__p3_"{__compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, SCNMTLLightSetData>, std::__1::equal_to<unsigned long long>, true> >="__value_"f}}}"currentLightingHashKey"Q"currentLightingDesc"{?="count"q"lights"[8^{__C3DLight}]"lightsData"[8^{__C3DLightRuntimeData}]}"currentLightingSpace"{?="columns"[4]}"currentLightingSpaceShadow"{?="columns"[4]}"needLightingSpaceTransformation"B"clusterSystem"{SCNMTLClusterSystem="clustersCount""tileSize""selectedDebugClusterIndex""_debugClusterTilesPipeline"@"SCNMTLRenderPipeline""_debugLightIndicesBufferPipeline"@"SCNMTLRenderPipeline""_debugClusterSlicesPipeline"@"SCNMTLRenderPipeline""_debugProgram"[7^{__C3DFXMetalProgram}]"_debugShapes"[7^{__C3DMesh}]}"clusterInfo"{Info="clusterBuffer"{?="memory"*"buffer"@"<MTLBuffer>""offset"Q}"clusterTexture"@"<MTLTexture>""lightIndicesBuffer"@"<MTLBuffer>""lightIndicesBufferOffset"I"lightIndicesBufferSize"I"cellSize""clusterScale""cellPixelSize""omniLightsRange""spotLightsRange""probeLightsRange""lightsBuffer"{?="memory"*"buffer"@"<MTLBuffer>""offset"Q}"lightsBufferSize"I"shadowTextures"[8@"<MTLTexture>"]"iesOrGoboTextures"[8@"<MTLTexture>"]"samplerStates"[8@"<MTLSamplerState>"]"areaBuffer"@"<MTLBuffer>""areaBufferOffset"Q"areaBufferOffsets"[8Q]}"reflectionProbesTextureArray"@"<MTLTexture>"}, name: _lighting
     struct Cache _cache;
     struct {
-        struct __C3DFXPass *debugLightMeshPass[6];
-        struct __C3DFXPass *lightPasses[6];
-        struct __C3DMesh *lightMeshes[6];
+        struct __C3DFXPass *debugLightMeshPass[7];
+        struct __C3DFXPass *lightPasses[7];
+        struct __C3DMesh *lightMeshes[7];
         char resourcesAreReady;
     } _deferredRendering;
     struct {
@@ -112,7 +108,7 @@ __attribute__((visibility("hidden")))
     struct {
         id <MTLTexture> backgroundTexture;
         id <MTLTexture> overlayTexture;
-        id <MTLTexture> stencilTexture;
+        id <MTLTexture> stencilDepthTexture;
     } _skCompositing;
     struct {
         unsigned long long pixelFormat;
@@ -128,17 +124,6 @@ __attribute__((visibility("hidden")))
         NSMutableDictionary *errors;
     } _compilationIssues;
     struct {
-        id <MTLTexture> currentColors[4];
-        id <MTLTexture> currentDepth;
-        id <MTLTexture> currentStencil;
-        id <MTLTexture> mainColors[4];
-        id <MTLTexture> mainColorsArray[4];
-        id <MTLTexture> mainDepth;
-        id <MTLTexture> mainDepthArray;
-        id <MTLTexture> outputColors[4];
-        id <MTLTexture> outputDepth;
-    } _renderTargets;
-    struct {
         unsigned int modelTransformBindingCount;
         unsigned int modelViewTransformBindingCount;
         unsigned int normalTransformBindingCount;
@@ -149,21 +134,22 @@ __attribute__((visibility("hidden")))
         struct __C3DMaterial *material;
     } _renderGraph;
     BOOL enablesDeferredShading;
-    BOOL _renderGraphEnabled;
     MTLRenderPassDescriptor *_clientRenderPassDescriptor;
     id <MTLRenderCommandEncoder> _clientRenderCommandEncoder;
     id <MTLCommandBuffer> _clientCommandBuffer;
     unsigned long long _debugOptions;
     double _contentScaleFactor;
+    id <MTLCommandQueue> _clientCommandQueue;
     NSString *_generatedTexturePath;
 }
 
 + (void)registerBindings;
 @property(retain, nonatomic) NSString *generatedTexturePath; // @synthesize generatedTexturePath=_generatedTexturePath;
+@property(nonatomic) double superSamplingFactor; // @synthesize superSamplingFactor=_superSamplingFactor;
+@property(retain, nonatomic) id <MTLCommandQueue> clientCommandQueue; // @synthesize clientCommandQueue=_clientCommandQueue;
 @property(readonly, nonatomic) void *renderEncoder; // @synthesize renderEncoder=_renderEncoder;
 @property(nonatomic) BOOL shouldPresentAfterMinimumDuration; // @synthesize shouldPresentAfterMinimumDuration=_shouldPresentAfterMinimumDuration;
 @property(readonly, nonatomic) void *frameTexturePool; // @synthesize frameTexturePool=_frameTexturePool;
-@property(readonly, nonatomic) SCNRenderTargetRegistry *renderTargetRegistry; // @synthesize renderTargetRegistry=_renderTargetRegistry;
 @property(readonly, nonatomic) SCNMTLResourceManager *resourceManager; // @synthesize resourceManager=_resourceManager;
 @property(nonatomic) BOOL enablesDeferredShading; // @synthesize enablesDeferredShading;
 @property(nonatomic) double contentScaleFactor; // @synthesize contentScaleFactor=_contentScaleFactor;
@@ -178,14 +164,11 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)getCurrentPassHash;
 - (void)setCurrentPassMaterial:(struct __C3DMaterial *)arg1;
 - (void)setCurrentPassHash:(unsigned long long)arg1;
-- (void)writeBytes:(void *)arg1 length:(unsigned long long)arg2;
+- (void)writeBytes:(const void *)arg1 length:(unsigned long long)arg2;
 - (void)endRenderCommandEncoding;
-- (void)executeRenderPasses;
-- (void)addRenderPass:(id)arg1;
-- (void)clearRenderPasses;
 - (void)renderSKSceneWithRenderer:(id)arg1 overlay:(BOOL)arg2 atTime:(double)arg3;
 - (BOOL)debugKeyDown:(id)arg1;
-- (void)superSampling:(id)arg1 into:(id)arg2;
+- (float)renderTime;
 - (void)_drawFullScreenTexture:(id)arg1 over:(BOOL)arg2;
 - (void)_drawShadowMaps;
 - (void)_drawPBRTextures;
@@ -195,7 +178,7 @@ __attribute__((visibility("hidden")))
 - (void)endDeferredLighting;
 -     // Error parsing type: v36@0:8^{__C3DNode={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DNode}^{__C3DNode}^{__C3DNode}i{?=(C3DMatrix4x4=[16f][4]{?=[4]})(?=)}^(C3DMatrix4x4)BfQib1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b3{?={?=SS}I}^{?}^{__C3DGeometry}^{__C3DSkinner}f{?=}}16i24^{__C3DLightRuntimeData=If[4{?=[4]}]^v^{__C3DTextureSampler}^v^{__C3DTextureSampler}}28, name: renderLight:lightType:lightData:
 - (void)beginDeferredLighting;
--     // Error parsing type: v24@0:8^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[4{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[5f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}16, name: drawFullScreenQuadForPass:
+-     // Error parsing type: v24@0:8^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[8{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[9f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}16, name: drawFullScreenQuadForPass:
 - (void)resetVolatileMeshElements;
 -     // Error parsing type: v24@0:8^{__C3DMeshElement={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}II^{__C3DMeshElement}CCC{?=c^{__CFData}I^I{?=qq}CB}fff^v^{__C3DMeshSource}[2]^{?}I}16, name: unmapVolatileMeshElement:
 -     // Error parsing type: ^{__C3DMeshElement={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}II^{__C3DMeshElement}CCC{?=c^{__CFData}I^I{?=qq}CB}fff^v^{__C3DMeshSource}[2]^{?}I}36@0:8c16q20q28, name: createVolatileMeshElementOfType:primitiveCount:bytesPerIndex:
@@ -204,23 +187,20 @@ __attribute__((visibility("hidden")))
 - (void)resetVolatileMeshes;
 - (void)unmapVolatileMesh:(struct __C3DMesh *)arg1 modifiedVerticesCount:(long long)arg2;
 - (BOOL)mapVolatileMesh:(struct __C3DMesh *)arg1 verticesCount:(long long)arg2;
--     // Error parsing type: v56@0:8^{?=SS}16{?=qq}24^{__C3DRendererElementStore=}40^{__C3DFXPassInstance=^{__C3DFXPass}q^{__C3DFXPassInstance}CBC[6^{__C3DArray}]{__C3DCullingContext=^{__C3DEnginePipeline}[6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})]ICCCB^{__C3DFXPass}^v^{__C3DNode}^{__C3DNode}BBBBBBBQQ^v^{__C3DScene}^{__C3DEngineContext}dd(?={?=ffff})(C3DMatrix4x4=[16f][4]{?=[4]})(C3DMatrix4x4=[16f][4]{?=[4]})[6{?=^{?}II}]B^?}^{__C3DNode}}48, name: drawWireframeOverlayForElements:range:store:passInstance:
+-     // Error parsing type: v56@0:8^{?=SS}16{?=qq}24^{__C3DRendererElementStore=}40^{__C3DFXPassInstance=^{__C3DFXPass}q^{__C3DFXPassInstance}CBC[6^{__C3DArray}]{__C3DCullingContext=^{__C3DEnginePipeline}[6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})]ICCCB^{__C3DFXPass}^v^{__C3DNode}^{__C3DNode}BBBBBBBBBBQQ^v^{__C3DScene}^{__C3DEngineContext}dd(?={?=ffff})(C3DMatrix4x4=[16f][4]{?=[4]})(C3DMatrix4x4=[16f][4]{?=[4]})[6{?=^{?}II}]B^?}^{__C3DNode}}48, name: drawWireframeOverlayForElements:range:store:passInstance:
 @property(readonly, nonatomic) NSMutableDictionary *compilationErrors;
 @property(nonatomic) BOOL collectsCompilationErrors;
 @property(nonatomic) BOOL showsAuthoringEnvironment;
--     // Error parsing type: v32@0:8^{__C3DRendererElement=I^{__C3DNode}^{__C3DGeometry}^{__C3DMesh}^v^{__C3DMaterial}^{__C3DFXTechnique}{?=[8C]}iIb8b1b1b1b1b1b1b3b1b3}16^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[4{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[5f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}24, name: drawRenderElement:withPass:
+-     // Error parsing type: v32@0:8^{__C3DRendererElement=I^{__C3DNode}^{__C3DGeometry}^{__C3DMesh}^v^{__C3DMaterial}^{__C3DFXTechnique}{?=[8C]}iIb8b1b1b1b1b1b1b3b1b3}16^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[8{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[9f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}24, name: drawRenderElement:withPass:
 - (void)_prepareMaterialTextures:(struct __C3DMaterial *)arg1;
-- (id)renderTargetForSemantic:(int)arg1;
-- (id)mainDepthTexture;
-- (id)mainColorTextureForChannel:(unsigned long long)arg1;
 - (void)stopProcessingRendererElements:(BOOL)arg1;
 - (void)startProcessingRendererElementsWithEngineIterationContext:(CDStruct_65434d98 *)arg1;
 - (void)processRendererElements:(CDStruct_d65e47c4 *)arg1 count:(unsigned int)arg2 engineIterationContext:(CDStruct_65434d98 *)arg3;
 -     // Error parsing type: v148@0:8^{__C3DMesh=}16^{__C3DMeshElement={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}II^{__C3DMeshElement}CCC{?=c^{__CFData}I^I{?=qq}CB}fff^v^{__C3DMeshSource}[2]^{?}I}24^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}32^{__C3DEngineContext=}40(C3DMatrix4x4=[16f][4]{?=[4]})48r^{C3DColor4=(?=[4f]{?=ffff})}112^{__C3DRasterizerStates=}120^{__C3DBlendStates=}128^{__C3DImage=}136c144, name: renderMesh:meshElement:withProgram:engineContext:transform:color:rasterizerStates:blendState:texture:depthBias:
 -     // Error parsing type: v32@0:8^{__C3DImageProxy={__CFRuntimeBase=QAQ}{?=^?^?^?^?}^vC}16^{__C3DEngineContext=}24, name: renderVideoBackground:engineContext:
--     // Error parsing type: v40@0:8^{__C3DEffectSlot={__CFRuntimeBase=QAQ}{C3DColor4=(?=[4f]{?=ffff})}^v(?=^{__C3DImage}^v^{__C3DImageProxy}^{__C3DTexture})b8b1b1b1b4c^{__C3DTextureSampler}^(C3DMatrix4x4)fi^v}16^{__C3DEngineContext=}24^{__C3DFXPassInstance=^{__C3DFXPass}q^{__C3DFXPassInstance}CBC[6^{__C3DArray}]{__C3DCullingContext=^{__C3DEnginePipeline}[6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})]ICCCB^{__C3DFXPass}^v^{__C3DNode}^{__C3DNode}BBBBBBBQQ^v^{__C3DScene}^{__C3DEngineContext}dd(?={?=ffff})(C3DMatrix4x4=[16f][4]{?=[4]})(C3DMatrix4x4=[16f][4]{?=[4]})[6{?=^{?}II}]B^?}^{__C3DNode}}32, name: renderBackground:engineContext:passInstance:
--     // Error parsing type: f28@0:8r^(C3DMatrix4x4=[16f][4]{?=[4]})16f24, name: _renderBackgroundZFarForProjection:defaultZFar:
--     // Error parsing type: v24@0:8^(C3DMatrix4x4=[16f][4]{?=[4]})16, name: _updateProjectionForSkyboxRendering:
+-     // Error parsing type: v40@0:8^{__C3DEffectSlot={__CFRuntimeBase=QAQ}{C3DColor4=(?=[4f]{?=ffff})}^v(?=^{__C3DImage}^v^{__C3DImageProxy}^{__C3DTexture})b8b1b1b1b4c^{__C3DTextureSampler}^(C3DMatrix4x4)fi^v}16^{__C3DEngineContext=}24^{__C3DFXPassInstance=^{__C3DFXPass}q^{__C3DFXPassInstance}CBC[6^{__C3DArray}]{__C3DCullingContext=^{__C3DEnginePipeline}[6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})]ICCCB^{__C3DFXPass}^v^{__C3DNode}^{__C3DNode}BBBBBBBBBBQQ^v^{__C3DScene}^{__C3DEngineContext}dd(?={?=ffff})(C3DMatrix4x4=[16f][4]{?=[4]})(C3DMatrix4x4=[16f][4]{?=[4]})[6{?=^{?}II}]B^?}^{__C3DNode}}32, name: renderBackground:engineContext:passInstance:
+-     // Error parsing type: f28@0:8r^(C3DMatrix4x4=[16f][4]{?=[4]})16f24, name: _zFarForSkyboxRenderingProjectionMatrix:defaultZFar:
+-     // Error parsing type: v24@0:8^(C3DMatrix4x4=[16f][4]{?=[4]})16, name: _updateProjectionMatrixForOrthographicSkyboxRenderingIfNeeded:
 - (void)_drawPatchForMeshElement:(id)arg1 instanceCount:(unsigned long long)arg2;
 - (void)_drawMeshElement:(id)arg1 instanceCount:(unsigned long long)arg2;
 - (void)_setMeshBuffers:(id)arg1;
@@ -233,26 +213,21 @@ __attribute__((visibility("hidden")))
 -     // Error parsing type: @24@0:8^{__C3DEffectSlot={__CFRuntimeBase=QAQ}{C3DColor4=(?=[4f]{?=ffff})}^v(?=^{__C3DImage}^v^{__C3DImageProxy}^{__C3DTexture})b8b1b1b1b4c^{__C3DTextureSampler}^(C3DMatrix4x4)fi^v}16, name: irradianceTextureForEffectSlot:
 -     // Error parsing type: @24@0:8^{__C3DEffectSlot={__CFRuntimeBase=QAQ}{C3DColor4=(?=[4f]{?=ffff})}^v(?=^{__C3DImage}^v^{__C3DImageProxy}^{__C3DTexture})b8b1b1b1b4c^{__C3DTextureSampler}^(C3DMatrix4x4)fi^v}16, name: textureForEffectSlot:
 - (id)newRenderTargetWithDescription:(CDStruct_ace98575 *)arg1 size:(unsigned long long)arg2 arrayLength: /* Error: Ran out of types for this method. */;
-- (void)setRenderPassParameters:(CDStruct_b491a7a6)arg1;
-- (void)newEndRenderPass;
-- (void)newBeginRenderPass:(id)arg1 renderEncoder:(void *)arg2;
-// Error parsing type for property resourceComputeEncoder:
-// Property attributes: T^{SCNMTLComputeCommandEncoder=[31@][31Q][128@][16@]t@@@^{SCNMTLBufferPool}II},R,N
-
+- (void)endRenderPass;
+- (void)beginRenderPass:(id)arg1 renderEncoder:(void *)arg2 parameters:(CDStruct_7e4e619b)arg3;
+@property(readonly, nonatomic) struct SCNMTLComputeCommandEncoder *resourceComputeEncoder;
 @property(readonly, nonatomic) struct SCNMTLBlitCommandEncoder *resourceBlitEncoder;
 @property(readonly, nonatomic) id <MTLCommandBuffer> resourceCommandBuffer;
 - (void)_createResourceCommandBufferIfNeeded;
-- (void)endRenderPass;
--     // Error parsing type: v24@0:8^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[4{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[5f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}16, name: __C3DFXContextDidApplyPass:
--     // Error parsing type: c28@0:8^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[4{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[5f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}16{?=CCCB}24, name: beginRenderPass:parameters:
 - (void)_clearRenderCaches;
--     // Error parsing type: c48@0:8@16^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[4{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[5f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}24^{?=CCCB}32^c40, name: _setupDescriptor:forPass:parameters:rendersIntoFinalDrawable:
+- (void *)_clusterInfo;
 - (void)_setReflectionProbeArrayTexture:(id)arg1;
+- (id)_reflectionProbeArrayTexture;
 - (id)_finalRenderTexture;
-- (id)_renderTargetWithDescription:(CDStruct_ace98575)arg1 size:(id)arg2 name:(long long)arg3 useCount: /* Error: Ran out of types for this method. */;
 @property(readonly, nonatomic) CAMetalLayer *layerTarget;
 @property(readonly, nonatomic) id <MTLTexture> textureTarget;
 - (void)endFrameWaitingUntilCompleted:(BOOL)arg1;
+- (void)endFrameSceneSpecifics;
 - (void)beginFrame:(id)arg1;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resourceQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_group> *resourceGroup;
@@ -262,16 +237,15 @@ __attribute__((visibility("hidden")))
 - (void)_clearUnusedBindingPoints;
 @property(nonatomic) BOOL isOpaque;
 @property(nonatomic) long long sampleCount;
-@property(readonly, nonatomic) BOOL reverseZ;
+@property(nonatomic) BOOL reverseZ;
+@property(nonatomic) BOOL enableARMode;
 @property(nonatomic) BOOL disableLinearRendering;
 @property(readonly, nonatomic) long long pendingGPUFrameCount;
-@property(nonatomic, getter=isRenderGraphEnabled) BOOL renderGraphEnabled; // @synthesize renderGraphEnabled=_renderGraphEnabled;
 @property(nonatomic) BOOL wantsWideGamut;
 - (BOOL)supportsMTLFeatureSet:(unsigned long long)arg1;
 @property(readonly, nonatomic) int profile;
 @property(readonly, nonatomic) unsigned int features;
 @property(nonatomic) struct CATransform3D screenTransform;
-@property(nonatomic) double superSamplingFactor;
 @property(readonly, nonatomic) void *frameConstantBufferPool;
 @property(nonatomic) long long preferredFramesPerSecond;
 @property(readonly, nonatomic) id <MTLCommandQueue> commandQueue;
@@ -280,7 +254,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1 engineContext:(struct __C3DEngineContext *)arg2;
 - (void)_reduceStatsOfConstantBuffer:(id)arg1;
--     // Error parsing type: ^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[4{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[5f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}32@0:8@16@24, name: _createPassWithVertex:fragment:
+-     // Error parsing type: ^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[8{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[9f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}32@0:8@16@24, name: _createPassWithVertex:fragment:
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

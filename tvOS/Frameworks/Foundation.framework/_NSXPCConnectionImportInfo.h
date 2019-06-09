@@ -6,15 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSLock, NSMutableDictionary;
-
 __attribute__((visibility("hidden")))
 @interface _NSXPCConnectionImportInfo : NSObject
 {
     unsigned long long _generationCount;
-    NSLock *_lock;
+    struct os_unfair_lock_s _lock;
     struct __CFDictionary *_proxyNumberToCount;
-    NSMutableDictionary *_remoteSideEntitlementCache;
+    void *_secTaskRef;
 }
 
 - (id)_valueForEntitlement:(id)arg1 auditToken:(CDStruct_4c969caf)arg2;

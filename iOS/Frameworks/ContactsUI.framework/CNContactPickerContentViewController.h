@@ -9,7 +9,7 @@
 #import <ContactsUI/CNContactNavigationControllerDelegate-Protocol.h>
 #import <ContactsUI/CNContactPickerContentViewController-Protocol.h>
 
-@class CNContactNavigationController, CNContactStoreDataSource, CNManagedConfiguration, NSArray, NSMutableArray, NSPredicate, NSString, UINavigationController;
+@class CNContactNavigationController, CNContactStoreDataSource, CNManagedConfiguration, FAFamilyMember, NSArray, NSMutableArray, NSPredicate, NSString, UINavigationController;
 @protocol CNContactPickerContentDelegate;
 
 __attribute__((visibility("hidden")))
@@ -22,8 +22,10 @@ __attribute__((visibility("hidden")))
     _Bool _clientHasContactsAccess;
     _Bool _hidesSearchableSources;
     _Bool _onlyRealContacts;
+    _Bool _ignoresParentalRestrictions;
     _Bool _allowsEditing;
     _Bool _allowsCancel;
+    _Bool _allowsDeletion;
     _Bool _hidesPromptInLandscape;
     id <CNContactPickerContentDelegate> _delegate;
     CNContactNavigationController *_contactNavigationController;
@@ -38,9 +40,11 @@ __attribute__((visibility("hidden")))
     NSPredicate *_predicateForSelectionOfContact;
     NSPredicate *_predicateForSelectionOfProperty;
     CNManagedConfiguration *_managedConfiguration;
+    FAFamilyMember *_familyMember;
 }
 
 + (id)descriptorForContactPropertiesSupportingPredicateEvaluation;
+@property(retain, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 @property(retain, nonatomic) CNManagedConfiguration *managedConfiguration; // @synthesize managedConfiguration=_managedConfiguration;
 @property(copy, nonatomic) NSPredicate *predicateForSelectionOfProperty; // @synthesize predicateForSelectionOfProperty=_predicateForSelectionOfProperty;
 @property(copy, nonatomic) NSPredicate *predicateForSelectionOfContact; // @synthesize predicateForSelectionOfContact=_predicateForSelectionOfContact;
@@ -49,8 +53,10 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSString *bannerTitle; // @synthesize bannerTitle=_bannerTitle;
 @property(nonatomic) _Bool hidesPromptInLandscape; // @synthesize hidesPromptInLandscape=_hidesPromptInLandscape;
 @property(copy, nonatomic) NSString *prompt; // @synthesize prompt=_prompt;
+@property(nonatomic) _Bool allowsDeletion; // @synthesize allowsDeletion=_allowsDeletion;
 @property(nonatomic) _Bool allowsCancel; // @synthesize allowsCancel=_allowsCancel;
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
+@property(nonatomic) _Bool ignoresParentalRestrictions; // @synthesize ignoresParentalRestrictions=_ignoresParentalRestrictions;
 @property(nonatomic) _Bool onlyRealContacts; // @synthesize onlyRealContacts=_onlyRealContacts;
 @property(nonatomic) _Bool hidesSearchableSources; // @synthesize hidesSearchableSources=_hidesSearchableSources;
 @property(nonatomic) long long cardActions; // @synthesize cardActions=_cardActions;

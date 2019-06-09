@@ -15,6 +15,7 @@
 }
 
 + (struct CGSize)_intrinsicContentSizeForNumberOfBars:(int)arg1 iconSize:(int)arg2;
++ (id)_barImageWithSize:(struct CGSize)arg1 forScale:(float)arg2 distance:(float)arg3 angle:(float)arg4 centerPoint:(struct CGPoint)arg5 cornerRadius:(float)arg6 thickness:(float)arg7;
 + (float)_totalWidthForIconSize:(int)arg1;
 + (float)_interspaceForIconSize:(int)arg1;
 + (float)_barThicknessAtIndex:(unsigned int)arg1 iconSize:(int)arg2;

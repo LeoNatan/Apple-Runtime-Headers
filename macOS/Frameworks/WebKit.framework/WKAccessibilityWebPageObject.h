@@ -17,6 +17,9 @@ __attribute__((visibility("hidden")))
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityShouldUseUniqueId;
 - (id)accessibilityAttributeValue:(id)arg1 forParameter:(id)arg2;
+- (id)accessibilityDataDetectorValue:(id)arg1 point:(struct FloatPoint *)arg2;
+- (id)accessibilityAttributePositionValue;
+- (id)accessibilityAttributeSizeValue;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityChildren;
 - (id)accessibilityActionNames;

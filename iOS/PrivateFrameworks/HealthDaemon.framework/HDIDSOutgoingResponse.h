@@ -8,10 +8,11 @@
 
 #import <HealthDaemon/HDNanoSyncDescription-Protocol.h>
 
-@class HDIDSMessageCenter, IDSDevice, NSData, NSDictionary, NSString;
+@class HDDaemonTransaction, HDIDSMessageCenter, IDSDevice, NSData, NSDictionary, NSString;
 
 @interface HDIDSOutgoingResponse : NSObject <HDNanoSyncDescription>
 {
+    HDDaemonTransaction *_transaction;
     _Bool _doNotCompress;
     _Bool _forceLocalDelivery;
     _Bool _sent;

@@ -15,6 +15,7 @@
     struct CGPoint _previousUntransformedPoint;
     struct CGPoint _currentTransformedPoint;
     struct CGPoint _currentUntransformedPoint;
+    struct CGRect _boundingRegion;
     CDStruct_2660488d _previousRenderingData;
     CDStruct_2660488d _currentRenderingData;
 }
@@ -28,13 +29,14 @@
 @property(nonatomic) struct CGPoint previousTransformedPoint; // @synthesize previousTransformedPoint=_previousTransformedPoint;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(readonly, copy, nonatomic) CDUnknownBlockType sizeForValue; // @synthesize sizeForValue=_sizeForValue;
+@property(readonly, nonatomic) struct CGRect boundingRegion; // @synthesize boundingRegion=_boundingRegion;
 - (void).cxx_destruct;
 - (CDStruct_2660488d)_computeRenderingDataForValue:(float)arg1 transformedPoint:(struct CGPoint)arg2 previousSlope:(int)arg3 nextSlope:(int)arg4 previousOptions:(int)arg5;
 - (int)_slopeForPoint:(struct CGPoint)arg1 otherPoint:(struct CGPoint)arg2;
 - (CDStruct_2660488d)renderingData;
 - (_Bool)processLastPoint;
 - (_Bool)processTransformedPoint:(struct CGPoint)arg1 untransformedPoint:(struct CGPoint)arg2;
-- (id)initWithLabelSizeBlock:(CDUnknownBlockType)arg1;
+- (id)initWithBoundingRegion:(struct CGRect)arg1 labelSizeBlock:(CDUnknownBlockType)arg2;
 
 @end
 

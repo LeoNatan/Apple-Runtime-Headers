@@ -6,22 +6,26 @@
 
 #import <MapKit/_MKTableViewController.h>
 
-#import <MapKit/MKDynamicTransitUIContainer-Protocol.h>
+#import <MapKit/MKTransitItemReferenceDateUpdaterDelegate-Protocol.h>
 
-@class MKTransitItemIncidentsController, NSDate, NSString;
+@class MKTransitItemIncidentsController, MKTransitItemReferenceDateUpdater, NSDate, NSString;
 @protocol GEOTransitLineItem, MKTransitLineIncidentsViewControllerDelegate;
 
-@interface MKTransitLineIncidentsViewController : _MKTableViewController <MKDynamicTransitUIContainer>
+__attribute__((visibility("hidden")))
+@interface MKTransitLineIncidentsViewController : _MKTableViewController <MKTransitItemReferenceDateUpdaterDelegate>
 {
     MKTransitItemIncidentsController *_incidentsController;
-    id <GEOTransitLineItem> _lineItem;
     NSDate *_referenceDate;
     id <MKTransitLineIncidentsViewControllerDelegate> _incidentsDelegate;
+    id <GEOTransitLineItem> _lineItem;
+    MKTransitItemReferenceDateUpdater *_itemUpdater;
 }
 
-@property(nonatomic) __weak id <MKTransitLineIncidentsViewControllerDelegate> incidentsDelegate; // @synthesize incidentsDelegate=_incidentsDelegate;
+@property(readonly, nonatomic) MKTransitItemReferenceDateUpdater *itemUpdater; // @synthesize itemUpdater=_itemUpdater;
 @property(readonly, nonatomic) id <GEOTransitLineItem> lineItem; // @synthesize lineItem=_lineItem;
+@property(nonatomic) __weak id <MKTransitLineIncidentsViewControllerDelegate> incidentsDelegate; // @synthesize incidentsDelegate=_incidentsDelegate;
 - (void).cxx_destruct;
+- (void)transitItemReferenceDateUpdater:(id)arg1 didUpdateToReferenceDate:(id)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
@@ -32,6 +36,7 @@
 - (void)transitUIReferenceTimeUpdated:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)updateTransitLineItemIfNeeded;
 - (void)viewDidLoad;
 - (id)initWithLineItem:(id)arg1;
 

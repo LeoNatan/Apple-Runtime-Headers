@@ -9,17 +9,14 @@
 @interface MLInternalSettings : NSObject
 {
     _Bool _restrictNeuralNetworksToUseCPUOnly;
-    _Bool _restrictNeuralNetworksToUseNonEnergyEfficientMode;
-    _Bool _experimentalMode;
+    _Bool _restrictNeuralNetworksFromUsingANE;
     _Bool _isNeuralNetworkGPUPathForbidden;
-    _Bool _isNeuralNetworkEnergyEfficientPathForbidden;
 }
 
++ (_Bool)deviceHasANE;
 + (id)globalSettings;
-@property(readonly, nonatomic) _Bool isNeuralNetworkEnergyEfficientPathForbidden; // @synthesize isNeuralNetworkEnergyEfficientPathForbidden=_isNeuralNetworkEnergyEfficientPathForbidden;
 @property(readonly, nonatomic) _Bool isNeuralNetworkGPUPathForbidden; // @synthesize isNeuralNetworkGPUPathForbidden=_isNeuralNetworkGPUPathForbidden;
-@property _Bool experimentalMode; // @synthesize experimentalMode=_experimentalMode;
-@property _Bool restrictNeuralNetworksToUseNonEnergyEfficientMode; // @synthesize restrictNeuralNetworksToUseNonEnergyEfficientMode=_restrictNeuralNetworksToUseNonEnergyEfficientMode;
+@property _Bool restrictNeuralNetworksFromUsingANE; // @synthesize restrictNeuralNetworksFromUsingANE=_restrictNeuralNetworksFromUsingANE;
 @property _Bool restrictNeuralNetworksToUseCPUOnly; // @synthesize restrictNeuralNetworksToUseCPUOnly=_restrictNeuralNetworksToUseCPUOnly;
 - (id)init;
 

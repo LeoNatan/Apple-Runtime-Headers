@@ -16,9 +16,10 @@
     GEOPDAutocompleteEntry *_autocompleteEntry;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (id)storageForCompletionItem:(id)arg1;
-@property(retain, nonatomic) GEOPDAutocompleteEntry *autocompleteEntry; // @synthesize autocompleteEntry=_autocompleteEntry;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -27,8 +28,10 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDAutocompleteEntry *autocompleteEntry;
 @property(readonly, nonatomic) _Bool hasAutocompleteEntry;
 - (void)applyToUserSearchInput:(id)arg1;
 

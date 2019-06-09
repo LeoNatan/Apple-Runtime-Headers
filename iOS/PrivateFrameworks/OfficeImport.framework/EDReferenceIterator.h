@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 
 + (id)referenceIteratorWithReferenceArray:(id)arg1 workbook:(id)arg2;
 + (id)referenceIteratorWithReference:(id)arg1 workbook:(id)arg2;
+- (void).cxx_destruct;
 - (unsigned int)currentCellIndex;
 - (struct EDCellHeader *)nextCell;
 - (void)setCurrentSheet:(id)arg1;

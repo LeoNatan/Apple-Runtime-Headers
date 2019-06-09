@@ -67,7 +67,7 @@
 - (id)UUID;
 - (void)invalidate;
 - (id)initWithURL:(id)arg1;
-- (id)initWithURL:(id)arg1 humanName:(id)arg2 flags:(unsigned int)arg3;
+- (id)initWithURL:(id)arg1 humanName:(id)arg2 flags:(unsigned long long)arg3;
 
 @end
 

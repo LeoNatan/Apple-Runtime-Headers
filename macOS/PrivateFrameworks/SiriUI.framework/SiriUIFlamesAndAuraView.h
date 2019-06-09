@@ -9,7 +9,6 @@
 @class FlameGroup, NSMutableArray, SiriUIAudioLevelSmoother;
 @protocol MTLBuffer, MTLCommandQueue, MTLRenderPipelineState, SiriUIFlamesAndAuraViewDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIFlamesAndAuraView : MTKView
 {
     id <MTLRenderPipelineState> _pipelineState[4];

@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     _Bool mFrame;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)setFrame:(_Bool)arg1;
@@ -41,7 +42,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToBorder:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

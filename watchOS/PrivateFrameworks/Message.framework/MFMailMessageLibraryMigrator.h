@@ -13,16 +13,15 @@
     int _needsSpotlightReindex;
 }
 
-+ (_Bool)_setMobileMailNeedsSpotlightReIndex:(_Bool)arg1;
-+ (_Bool)_mobileMailNeedsSpotlightReIndex;
-- (void)noteNeedsSpotlightReindex;
++ (int)currentVersion;
 - (void)performSpotlightReindexIfNeededWithHandler:(CDUnknownBlockType)arg1;
+- (void)noteNeedsSpotlightReindex;
 - (void)resetTTRPromptAndForceReindex;
 - (_Bool)needsRebuildMessageInfoIndex;
 - (void)noteRebuildMessageInfoIndex;
 - (_Bool)needsRebuildTriggers;
 - (void)noteNeedsRebuildTriggers;
-- (_Bool)migrateWithSQLiteConnection:(id)arg1;
+- (_Bool)migrateWithDatabaseConnection:(id)arg1 schema:(id)arg2 hookResponder:(id)arg3;
 
 @end
 

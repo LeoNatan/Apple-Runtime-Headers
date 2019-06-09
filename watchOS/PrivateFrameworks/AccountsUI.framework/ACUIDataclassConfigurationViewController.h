@@ -42,6 +42,7 @@
 @property(copy, nonatomic) NSArray *preEnabledDataclasses; // @synthesize preEnabledDataclasses=_preEnabledDataclasses;
 @property(nonatomic, getter=isFirstTimeSetup) _Bool firstTimeSetup; // @synthesize firstTimeSetup=_firstTimeSetup;
 - (void).cxx_destruct;
+- (_Bool)isUserEnrollment;
 - (_Bool)_confirmSyncDelete;
 - (_Bool)_confirmDeleteLocalDataForDataclasses:(id)arg1;
 - (_Bool)_confirmKeepLocalDataForDataclasses:(id)arg1;

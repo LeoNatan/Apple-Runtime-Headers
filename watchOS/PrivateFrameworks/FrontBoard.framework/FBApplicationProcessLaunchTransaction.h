@@ -6,24 +6,24 @@
 
 #import <FrontBoard/FBTransaction.h>
 
-@class FBApplicationProcess, FBProcessExecutionContext, FBProcessManager, FBWaitForProcessDeathTransaction, NSString;
+@class BSAtomicSignal, FBProcess, FBProcessExecutionContext, FBProcessManager, FBWaitForProcessDeathTransaction, RBSProcessIdentity;
 
 @interface FBApplicationProcessLaunchTransaction : FBTransaction
 {
     FBProcessManager *_processManager;
-    NSString *_bundleID;
-    FBApplicationProcess *_process;
+    RBSProcessIdentity *_identity;
+    FBProcess *_process;
     CDUnknownBlockType _executionContextProvider;
     FBWaitForProcessDeathTransaction *_deathTransaction;
     FBProcessExecutionContext *_executionContext;
-    int _interruptedOrComplete;
+    BSAtomicSignal *_interruptedOrComplete;
     _Bool _failedLaunch;
     _Bool _exited;
 }
 
 @property(readonly, nonatomic) _Bool exited; // @synthesize exited=_exited;
 @property(readonly, nonatomic) _Bool failedLaunch; // @synthesize failedLaunch=_failedLaunch;
-@property(readonly, nonatomic) FBApplicationProcess *process; // @synthesize process=_process;
+@property(readonly, nonatomic) FBProcess *process; // @synthesize process=_process;
 - (void).cxx_destruct;
 - (void)_queue_finishProcessLaunch:(_Bool)arg1;
 - (void)_queue_processWillLaunch:(id)arg1;
@@ -39,8 +39,10 @@
 - (void)_begin;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (id)initWithProcessIdentity:(id)arg1 executionContextProvider:(CDUnknownBlockType)arg2;
 - (id)initWithApplicationBundleID:(id)arg1 executionContextProvider:(CDUnknownBlockType)arg2;
 - (id)initWithApplicationProcess:(id)arg1;
+- (id)init;
 
 @end
 

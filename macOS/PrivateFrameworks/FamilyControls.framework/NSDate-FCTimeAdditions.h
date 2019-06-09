@@ -8,5 +8,11 @@
 
 @interface NSDate (FCTimeAdditions)
 - (id)timeValue;
+- (id)midnightDate;
+- (BOOL)isLastDayOfWeekend;
+- (BOOL)isFirstDayOfWeekend;
+- (BOOL)isDayBeforeWeekend;
+- (BOOL)isWeekend;
+- (id)dateByAddingDays:(long long)arg1;
 @end
 

@@ -16,13 +16,13 @@
 + (BOOL)_isPublicRecord;
 + (id)_table;
 + (id)abEntityName;
+- (void).cxx_destruct;
 - (id)creationDate;
 - (void)touch:(id)arg1;
 - (void)setPrimitiveCreationDateYearless:(id)arg1;
 - (void)setPrimitiveCreationDateYear:(id)arg1;
 - (void)setPrimitiveCreationDate:(id)arg1;
 - (void)setCreationDate:(id)arg1;
-- (void)dealloc;
 
 // Remaining properties
 @property(copy) NSString *deletedRecordUniqueId; // @dynamic deletedRecordUniqueId;

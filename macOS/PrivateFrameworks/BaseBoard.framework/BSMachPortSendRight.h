@@ -12,20 +12,17 @@
 {
 }
 
-+ (BOOL)supportsSecureCoding;
-+ (void)_queue_destroyPort:(unsigned int)arg1;
++ (void)_unsafe_destroyPort:(unsigned int)arg1;
++ (BOOL)_unsafe_isUsablePort:(unsigned int)arg1;
++ (unsigned int)_unsafe_decodePort:(id)arg1;
++ (struct _xpc_type_s *)_decodeType;
 + (id)_rightDescription;
 + (id)bootstrapLookUpWithName:(id)arg1;
 + (id)wrapSendRight:(unsigned int)arg1;
 + (id)bootstrapLookUpPortWithName:(id)arg1;
 + (id)taskNamePortForPID:(int)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)_queue_isUsable;
-- (BOOL)_shouldInvalidateOnEncode;
+- (id)_lock_encodePort:(unsigned int)arg1;
 - (id)initWithNonRetainingPort:(unsigned int)arg1;
 - (id)initFromReceiveRight:(id)arg1;
 - (id)initWithCopyOfRight:(id)arg1;

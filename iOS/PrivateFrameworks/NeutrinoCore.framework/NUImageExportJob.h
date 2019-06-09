@@ -16,7 +16,6 @@
 - (void).cxx_destruct;
 - (void)cleanUp;
 - (_Bool)render:(out id *)arg1;
-- (id)newRenderPipelineStateForEvaluationMode:(long long)arg1;
 - (_Bool)wantsOutputImage;
 - (_Bool)wantsOutputGeometry;
 - (id)result;

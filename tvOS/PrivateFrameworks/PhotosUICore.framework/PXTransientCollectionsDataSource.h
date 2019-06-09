@@ -26,7 +26,7 @@
 - (id)collectionAtIndexPath:(id)arg1;
 - (id)indexPathForCollection:(id)arg1;
 - (id)init;
-- (id)initWithNavigationRootTitle:(id)arg1 identifier:(id)arg2;
+- (id)initWithNavigationRootTitle:(id)arg1 identifier:(id)arg2 photoLibrary:(id)arg3;
 - (id)initWithFetchResult:(id)arg1;
 
 @end

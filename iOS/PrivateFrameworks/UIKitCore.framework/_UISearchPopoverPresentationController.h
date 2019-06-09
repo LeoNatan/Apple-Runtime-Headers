@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool shouldAccountForStatusBar;
 @property(readonly, retain, nonatomic) UIView *searchBarContainerView;
 - (id)_presentationControllerForTraitCollection:(id)arg1;
-- (id)_presentedViewControllerForSizeClassPair:(CDStruct_d58201db)arg1;
+- (id)_presentedViewControllerForSizeClassPair:(CDStruct_912cb5d2)arg1;
 - (long long)adaptivePresentationStyle;
 - (void)_transitionFromDidEnd;
 - (void)_transitionFromWillBegin;

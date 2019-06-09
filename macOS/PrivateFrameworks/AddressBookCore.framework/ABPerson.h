@@ -70,6 +70,8 @@
 - (void)linkWithPerson:(id)arg1;
 @property(copy) NSString *linkId;
 - (BOOL)_propertyHasChanged:(id)arg1;
+- (BOOL)isEmptyPersonIgnoringProperties:(id)arg1;
+- (BOOL)isEmptyPerson;
 - (id)valueSanitizer;
 - (id)fetchUpdatedBackingObject;
 - (BOOL)_requiresSeparateBirthdayCalendar;
@@ -81,7 +83,7 @@
 - (void)nts_importSingleValue:(id)arg1 fromArchive:(id)arg2 forPropertyKey:(id)arg3;
 - (void)nts_addPropertyValueToArchive:(id)arg1 forPropertyKey:(id)arg2;
 - (BOOL)nts_canRemove;
-- (BOOL)isReadOnly;
+- (BOOL)nts_computeIsReadOnly;
 - (id)parentGroups;
 - (BOOL)_isLastNameFirst;
 - (BOOL)_isMe;
@@ -111,7 +113,6 @@
 - (id)_fullName;
 - (void)populateWithDictionary:(id)arg1 skipUnknownProperties:(BOOL)arg2 generateMultiValueIDs:(BOOL)arg3 recordIsNew:(BOOL)arg4;
 - (void)resetWithDictionary:(id)arg1 skipUnknownProperties:(BOOL)arg2 generateMultiValueIDs:(BOOL)arg3;
-- (id)imagePathOfKind:(id)arg1;
 - (id)imageDirectory;
 - (BOOL)hasCustomImageOfKind:(id)arg1;
 - (BOOL)hasCustomImage;
@@ -141,6 +142,12 @@
 - (BOOL)setClippingRect:(struct CGRect)arg1 forKey:(id)arg2 onFile:(id)arg3;
 - (BOOL)removeExtendedAttributesWithKeys:(id)arg1 fromFile:(id)arg2;
 - (BOOL)setLargeImageClippingRect:(id)arg1;
+- (void)setLargeImageClippingRectID:(id)arg1;
+- (id)largeImageClippingRectID;
+- (void)setLargeImageHash:(id)arg1;
+- (id)largeImageHash;
+- (void)setPrimitiveLargeImageClippingRect:(struct CGRect)arg1;
+- (struct CGRect)primitiveLargeImageClippingRect;
 - (id)largeImageHashOfType:(id)arg1;
 - (id)largeImageClippingRectIDOfType:(id)arg1;
 - (struct CGRect)largeImageClippingRectOfType:(id)arg1;
@@ -150,7 +157,6 @@
 - (id)imageClippingRectsOfKind:(id)arg1;
 - (BOOL)setLargeImageData:(id)arg1;
 - (id)largeImageData;
-- (id)largeImagePath;
 - (long long)loadImageDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (long long)beginLoadingImageDataForClient:(id)arg1;
 - (long long)_beginLoadingImageDataForClient:(id)arg1;
@@ -162,17 +168,8 @@
 - (id)_imageOfKind:(id)arg1;
 - (id)_image;
 - (BOOL)nts_SetImageData:(id)arg1 kind:(id)arg2;
-- (BOOL)_saveImageDataToDisk:(id)arg1 kind:(id)arg2;
-- (BOOL)_writeImageData:(id)arg1 toURL:(id)arg2;
-- (void)_removeExistingImageAtURL:(id)arg1;
-- (void)_makeSureImagesFolderExistsForImageWithURL:(id)arg1;
-- (id)nts_pathForLocalImageOfKind:(id)arg1;
-- (id)nts_pathForLocalImage;
 - (id)_customImageData;
 - (id)nts_CustomImageData;
-- (id)pathForUIDTaggedImage;
-- (id)nts_PathForUIDTaggedImage;
-- (id)nts_PathForUIDTaggedImageOfKind:(id)arg1;
 - (BOOL)_takeGroupMembershipsFromPeople:(id)arg1;
 - (BOOL)_takeGroupMembershipsFromPerson:(id)arg1;
 - (BOOL)_matchAndMerge_MergePerson:(id)arg1;

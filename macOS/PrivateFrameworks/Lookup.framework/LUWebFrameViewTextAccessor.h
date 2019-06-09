@@ -8,6 +8,7 @@
 
 @class WebFrameView;
 
+__attribute__((visibility("hidden")))
 @interface LUWebFrameViewTextAccessor : LUTextAccessor
 {
     WebFrameView *_webFrameView;

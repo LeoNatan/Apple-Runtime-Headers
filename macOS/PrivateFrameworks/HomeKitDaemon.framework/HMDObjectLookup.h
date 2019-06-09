@@ -22,6 +22,7 @@
 @property(readonly, nonatomic) NSMapTable *uuidToObjectMapping; // @synthesize uuidToObjectMapping=_uuidToObjectMapping;
 - (void).cxx_destruct;
 - (void)applyChange:(id)arg1 previous:(id)arg2 onObject:(id)arg3 result:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)resetObjects;
 - (void)_scanThroughObjects;
 - (id)_lookupObjectWithUUID:(id)arg1 applyObjectChange:(id)arg2 previous:(id)arg3 result:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)lookupAndApplyObjectChange:(id)arg1 previous:(id)arg2 result:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;

@@ -6,61 +6,73 @@
 
 #import <PersonalizationPortrait/PPNamedEntityStore.h>
 
-@class PPDeletionTracker, PPKVOObserver, _PASLock, _PASNotificationToken;
+@class PPLocalTopicStore, PPMNamedEntitiesDonation, PPMObjectsDeletion, PPNamedEntityStorage, _PASLock, _PASNotificationToken;
 
 @interface PPLocalNamedEntityStore : PPNamedEntityStore
 {
     _PASLock *_lock;
+    PPLocalTopicStore *_topicStoreForNamedEntityMapping;
     unsigned long long _hardFetchLimit;
     // Error parsing type: AB, name: _isCacheInvalidated
-    _PASLock *_cacheLock;
-    PPDeletionTracker *_deletionTracker;
-    PPKVOObserver *_defaultsOverrideObserver;
-    id _remoteDeletionObserver;
     int _bundleIdBlacklistNotificationToken;
     _PASNotificationToken *_assetUpdateNotificationToken;
+    PPMNamedEntitiesDonation *_donationTracker;
+    PPMObjectsDeletion *_deletionTracker;
+    PPNamedEntityStorage *_storage;
 }
 
++ (_Bool)_yesWithProbability:(double)arg1;
++ (id)ppFeedbackItemToPPPBFeedbackItem:(id)arg1;
++ (id)recordsForNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 decayRate:(double)arg4;
++ (void)_filterBlacklistedNamedEntityRecords:(id)arg1;
++ (id)_loadScoreInterpreter;
++ (void)sortAndTruncate:(id)arg1 queryLimit:(unsigned long long)arg2;
++ (struct PPScoredItem *)scoredEntityFromRecords:(id)arg1 scoringDate:(id)arg2 overrideDecayRate:(_Bool)arg3 decayRate:(double)arg4 calendar:(id)arg5 sourceStats:(id)arg6 scoreInterpreter:(id)arg7;
++ (id)_aggregateRecords:(id)arg1 overrideDecayRate:(_Bool)arg2 decayRate:(double)arg3;
 + (id)defaultStore;
+@property(readonly, nonatomic) PPNamedEntityStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
-- (_Bool)donateLocationNamedEntities:(id)arg1 bundleId:(id)arg2 error:(id *)arg3;
-- (_Bool)clearWithError:(id *)arg1;
+- (id)_mapsSearchQueryResultWithError:(id *)arg1;
+- (void)_registerMapsQueryPrefetching;
+- (id)getScoredNamedEntityFeaturesWithNamedEntity:(id)arg1 excludingSourceBundleId:(id)arg2 decayRate:(double)arg3 error:(id *)arg4 strictFiltering:(_Bool)arg5 scoreInterpreter:(id)arg6;
+- (_Bool)_logFeedbackSessionsWithFeedback:(id)arg1 error:(id *)arg2;
+- (id)_feedbackItemToNamedEntityMapForFeedback:(id)arg1 error:(id *)arg2;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)disableSyncForBundleIds:(id)arg1;
+- (_Bool)donateLocationNamedEntities:(id)arg1 bundleId:(id)arg2 groupId:(id)arg3 error:(id *)arg4;
+- (_Bool)_donateLocationNamedEntityToLocationStore:(id)arg1 source:(id)arg2 locationAlgorithm:(unsigned short)arg3 error:(id *)arg4;
+- (_Bool)clearWithError:(id *)arg1 deletedCount:(unsigned long long *)arg2;
+- (_Bool)cloudSyncWithError:(id *)arg1;
 - (_Bool)removeMapItemsBeforeCutoffDate:(id)arg1 error:(id *)arg2;
 - (_Bool)removeMapItemForPlaceName:(id)arg1 error:(id *)arg2;
 - (id)mapItemForPlaceName:(id)arg1 error:(id *)arg2;
 - (_Bool)donateMapItem:(id)arg1 forPlaceName:(id)arg2 error:(id *)arg3;
-- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 olderThan:(id)arg3 error:(id *)arg4;
-- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 error:(id *)arg2;
-- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 error:(id *)arg3;
-- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 error:(id *)arg3;
-- (_Bool)_deleteAllNamedEntitiesWithPredicate:(id)arg1 loggingBundleId:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
-- (_Bool)_signalNamedEntitiesRemoved:(id)arg1;
-- (_Bool)_deleteAllExtractionsWithPredicate:(id)arg1 fromStreams:(id)arg2 deletedCount:(unsigned long long *)arg3 namedEntitiesRemoved:(id)arg4 error:(id *)arg5;
+- (_Bool)deleteAllNamedEntitiesOlderThanDate:(id)arg1 deletedCount:(unsigned long long *)arg2 error:(id *)arg3;
+- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 olderThan:(id)arg3 deletedCount:(unsigned long long *)arg4 error:(id *)arg5;
+- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 deletedCount:(unsigned long long *)arg2 error:(id *)arg3;
+- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
+- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
 - (_Bool)flushDonationsWithError:(id *)arg1;
+- (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 sentimentScore:(double)arg6 error:(id *)arg7;
 - (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 error:(id *)arg6;
+- (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(_Bool)arg4 error:(id *)arg5;
+- (_Bool)_donateTopicsFromEntities:(id)arg1 source:(id)arg2 cloudSync:(_Bool)arg3 decayRate:(double)arg4 error:(id *)arg5;
 - (id)_filterOutInvalidNamesFromEntities:(id)arg1;
 - (_Bool)_shouldSuppressRepeatedImpressions:(id)arg1;
 - (id)_filterBlacklistedScoredNamedEntities:(id)arg1;
 - (id)_coalesceScoredNamedEntities:(id)arg1;
-- (void)feedbackNamedEntitiesOverallEngagement:(id)arg1;
-- (void)feedbackNamedEntitiesOverallEngagement:(id)arg1 clientIdentifier:(id)arg2;
-- (void)feedbackEngagedNamedEntities:(id)arg1;
-- (void)feedbackEngagedNamedEntities:(id)arg1 clientIdentifier:(id)arg2;
-- (void)feedbackUsedNamedEntities:(id)arg1;
-- (void)feedbackUsedNamedEntities:(id)arg1 clientIdentifier:(id)arg2;
+- (id)rankedNamedEntitiesWithQuery:(id)arg1 error:(id *)arg2 clientProcessName:(id)arg3;
 - (id)rankedNamedEntitiesWithQuery:(id)arg1 error:(id *)arg2;
+- (void)_petLoggingForQuery:(id)arg1 resultCount:(unsigned long long)arg2 clientProcessName:(id)arg3 error:(id)arg4;
+- (void)_unlimitedNamedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
+- (id)sourceStatsExcludedAlgorithms:(id)arg1;
 - (_Bool)iterRankedNamedEntitiesWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (_Bool)monitorNamedEntityRecordChangesWithError:(id *)arg1 setup:(CDUnknownBlockType)arg2 handler:(CDUnknownBlockType)arg3 finish:(CDUnknownBlockType)arg4;
-- (id)_rankedNamedEntitiesWithQuery:(id)arg1 usingFakeDataSource:(id)arg2;
-- (id)_cached_namedEntityRecordsWithQuery:(id)arg1;
 - (id)namedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2;
 - (_Bool)iterNamedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
-- (double)_scoreEntityRecord:(id)arg1 query:(id)arg2 scoringDate:(id)arg3;
-- (id)_namedEntitiesOverride;
-- (void)_loadNamedEntitiesOverrideFromDefaults:(id)arg1;
-- (void)_clearQueryCacheWithLockWitness:(id)arg1;
+- (id)init;
 - (void)dealloc;
-- (id)initWithRecordFetchLimit:(unsigned long long)arg1 useQueryCache:(_Bool)arg2;
+- (id)initWithStorage:(id)arg1 topicStoreForNamedEntityMapping:(id)arg2 recordFetchLimit:(unsigned long long)arg3;
 
 @end
 

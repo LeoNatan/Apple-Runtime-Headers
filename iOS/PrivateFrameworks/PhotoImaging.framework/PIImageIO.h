@@ -12,9 +12,9 @@
 
 + (id)writeImage:(id)arg1 toDirectoryAtPath:(id)arg2 withBasename:(id)arg3;
 + (id)writeImage:(id)arg1 toTemporaryDirectoryWithBasename:(id)arg2;
-+ (_Bool)writeCGImage:(struct CGImage *)arg1 fileURL:(id)arg2 fileType:(id)arg3 options:(id)arg4;
-+ (_Bool)writeCGImage:(struct CGImage *)arg1 fileURL:(id)arg2 fileType:(id)arg3;
-+ (_Bool)writeImage:(id)arg1 fileURL:(id)arg2 fileType:(id)arg3;
++ (_Bool)writeCGImage:(struct CGImage *)arg1 fileURL:(id)arg2 options:(id)arg3;
++ (_Bool)writeCGImage:(struct CGImage *)arg1 fileURL:(id)arg2;
++ (_Bool)writeImage:(id)arg1 fileURL:(id)arg2;
 
 @end
 

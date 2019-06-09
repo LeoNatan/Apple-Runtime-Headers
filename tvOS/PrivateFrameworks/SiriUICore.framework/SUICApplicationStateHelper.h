@@ -8,21 +8,24 @@
 
 #import <SiriUICore/FBSDisplayLayoutObserver-Protocol.h>
 
-@class BKSApplicationStateMonitor, NSMutableArray, NSString;
+@class BKSApplicationStateMonitor, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
 @interface SUICApplicationStateHelper : NSObject <FBSDisplayLayoutObserver>
 {
     BKSApplicationStateMonitor *_appStateMonitor;
-    NSMutableArray *_foregroundAppInfos;
+    NSMutableDictionary *_foregroundAppInfos;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
 - (void)_appInfoDictionariesForDisplayLayout:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_updateForAppInfoDictionaries:(id)arg1 displayType:(id)arg2;
 - (void)_updateForAppInfoDictionaries:(id)arg1;
 - (void)_handleApplicationStateUpdate:(id)arg1;
 - (void)layoutMonitor:(id)arg1 didUpdateDisplayLayout:(id)arg2 withContext:(id)arg3;
+- (id)_foregroundAppInfosFor:(long long)arg1;
+- (id)foregroundAppInfosForCarPlay;
 - (id)foregroundAppInfos;
 - (void)dealloc;
 - (id)init;

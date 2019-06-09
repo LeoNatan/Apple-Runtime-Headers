@@ -120,7 +120,9 @@
 - (void)updateContactThumbnailImageIfNeeded;
 - (void)updateForDirectEditing;
 - (id)overrideLikenessesForContacts:(id)arg1;
-- (BOOL)contactsAreEqualIgnoringIdentifiers:(id)arg1;
+- (void)showDelegateSuppliedLikenessProvidersForContacts:(id)arg1;
+- (void)showUpToDateLikenessProvidersForContacts:(id)arg1;
+- (void)showLastKnownLikenessProvidersForContacts:(id)arg1;
 - (void)resolveLikenessesForContacts:(id)arg1;
 - (void)updateLikenesses;
 - (void)updateViewModelWithContacts:(id)arg1;

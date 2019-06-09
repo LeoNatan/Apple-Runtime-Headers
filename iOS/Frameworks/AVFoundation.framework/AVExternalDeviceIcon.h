@@ -16,7 +16,6 @@
 @property(readonly, nonatomic, getter=isPrerendered) _Bool prerendered;
 @property(readonly, nonatomic) NSData *imageData;
 @property(readonly, nonatomic) struct CGSize pixelSize;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
 

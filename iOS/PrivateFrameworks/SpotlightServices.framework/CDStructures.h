@@ -73,11 +73,6 @@ struct prs_model_resource_header {
     unsigned char _field4[0];
 };
 
-struct ranking_index_score_t {
-    unsigned long long lsb;
-    unsigned long long msb;
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

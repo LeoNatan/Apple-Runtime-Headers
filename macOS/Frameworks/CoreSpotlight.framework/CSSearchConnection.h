@@ -14,8 +14,8 @@
     NSMutableDictionary *_queries;
 }
 
++ (id)sharedCSUserFSConnection;
 + (id)sharedSearchConnection;
-+ (void)initialize;
 @property(readonly, nonatomic) BOOL previouslyInitialized; // @synthesize previouslyInitialized=_previouslyInitialized;
 @property(retain, nonatomic) NSMutableDictionary *queries; // @synthesize queries=_queries;
 - (void).cxx_destruct;
@@ -29,6 +29,7 @@
 - (id)removeQueryForID:(id)arg1;
 - (id)queryForID:(id)arg1;
 - (id)init;
+- (id)initWithMachServiceName:(id)arg1;
 
 @end
 

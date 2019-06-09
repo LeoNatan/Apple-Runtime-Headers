@@ -7,6 +7,6 @@
 #import <Foundation/NSBundle.h>
 
 @interface NSBundle (PhotosUICore)
-+ (id)px_PhotosUICoreFrameworkBundle;
++ (id)px_bundle;
 @end
 

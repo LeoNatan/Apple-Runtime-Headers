@@ -6,13 +6,12 @@
 
 #import <Photos/PHMediaRequestDelegate-Protocol.h>
 
-@class NSDictionary, NSError, PDImageRequest, PHImageResult;
+@class NSArray, NSManagedObjectID, PHImageRequest;
+@protocol PLResourceDataStore, PLResourceDataStoreKey;
 
 @protocol PHImageRequestDelegate <PHMediaRequestDelegate>
-- (void)imageRequest:(PDImageRequest *)arg1 didFinishLoadingImageResult:(PHImageResult *)arg2 info:(NSDictionary *)arg3 error:(NSError *)arg4;
-- (_Bool)imageRequestIsInitialRequestOfMultistageRequest:(PDImageRequest *)arg1;
-- (void)imageRequest:(PDImageRequest *)arg1 isRequestingScheduledWorkBlock:(void (^)(PDImageRequest *))arg2;
-- (void)imageRequest:(PDImageRequest *)arg1 didProcessHintsWithLocallyAvailable:(_Bool)arg2 isDegraded:(_Bool)arg3;
-- (void)imageRequest:(PDImageRequest *)arg1 isQueryingCacheAndDidWait:(_Bool *)arg2 didFindImage:(_Bool *)arg3 resultHandler:(void (^)(struct CGImage *, _Bool, NSError *))arg4;
+- (_Bool)imageRequest:(PHImageRequest *)arg1 isRequestingRepairAndRetryForDataStoreKey:(id <PLResourceDataStoreKey>)arg2 inStore:(id <PLResourceDataStore>)arg3 assetObjectID:(NSManagedObjectID *)arg4 forValidationErrors:(NSArray *)arg5;
+- (void)imageRequest:(PHImageRequest *)arg1 isRequestingScheduledWorkBlock:(void (^)(PHImageRequest *))arg2;
+- (void)imageRequest:(PHImageRequest *)arg1 isQueryingCacheAndDidWait:(_Bool *)arg2 didFindImage:(_Bool *)arg3 resultHandler:(void (^)(struct CGImage *, _Bool, NSError *))arg4;
 @end
 

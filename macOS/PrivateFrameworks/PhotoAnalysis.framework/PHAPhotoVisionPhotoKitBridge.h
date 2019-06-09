@@ -11,6 +11,22 @@
 }
 
 + (void)assignPropertiesOfPVFace:(id)arg1 toPHFaceChangeRequest:(id)arg2;
++ (unsigned short)phFaceGlassesTypeFromPVFace:(id)arg1;
++ (id)vnFaceAttributeGlassesToPHFaceGlassesTypeMap;
++ (unsigned short)phFaceBaldTypeFromPVFace:(id)arg1;
++ (id)vnFaceAttributeBaldToPHFaceBaldTypeMap;
++ (unsigned short)phFaceHairColorTypeFromPVFace:(id)arg1;
++ (id)vnFaceAttributeHairColorToPHFaceHairColorTypeMap;
++ (unsigned short)phFaceFacialHairTypeFromPVFace:(id)arg1;
++ (id)vnFaceAttributeFacialHairToPHFacialHairTypeMap;
++ (unsigned short)phFaceSmileTypeFromPVFace:(id)arg1;
++ (id)vnFaceAttributeSmileToPHFaceSmileTypeMap;
++ (unsigned short)phFaceEyesStateFromPVFace:(id)arg1;
++ (id)vnFaceAttributeEyesToPHEyesStateMap;
++ (unsigned short)phFaceGenderFromPVFace:(id)arg1;
++ (id)vnFaceAttributeGenderToPHFaceGenderTypeMap;
++ (unsigned short)phFaceAgeTypeFromPVFace:(id)arg1;
++ (id)vnFaceAttributeAgeToPHFaceAgeTypeMap;
 + (id)pvFaceCropFromPHFaceCrop:(id)arg1;
 + (id)phFaceCropsFromPVFaceCrops:(id)arg1 withFetchOptions:(id)arg2;
 + (id)phFaceCropFromPVFaceCrop:(id)arg1 withFetchOptions:(id)arg2;

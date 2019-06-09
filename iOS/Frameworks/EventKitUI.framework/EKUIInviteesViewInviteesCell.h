@@ -14,6 +14,7 @@
     _Bool _showSpinner;
     UILabel *_nameLabel;
     UILabel *_commentLabel;
+    UILabel *_optionalInviteeLabel;
     UIImageView *_statusImageView;
     EKUILabeledAvatarView *_contactAvatarView;
     NSArray *_persistentConstraints;
@@ -34,10 +35,12 @@
 @property(retain, nonatomic) NSArray *persistentConstraints; // @synthesize persistentConstraints=_persistentConstraints;
 @property(retain, nonatomic) EKUILabeledAvatarView *contactAvatarView; // @synthesize contactAvatarView=_contactAvatarView;
 @property(retain, nonatomic) UIImageView *statusImageView; // @synthesize statusImageView=_statusImageView;
+@property(retain, nonatomic) UILabel *optionalInviteeLabel; // @synthesize optionalInviteeLabel=_optionalInviteeLabel;
 @property(retain, nonatomic) UILabel *commentLabel; // @synthesize commentLabel=_commentLabel;
 @property(retain, nonatomic) UILabel *nameLabel; // @synthesize nameLabel=_nameLabel;
 @property _Bool hideStatus; // @synthesize hideStatus=_hideStatus;
 - (void).cxx_destruct;
+- (void)setOptionalInviteeCellSubtext:(id)arg1;
 - (void)updateWithParticipantForSorting:(id)arg1 availabilityType:(long long)arg2 showSpinner:(_Bool)arg3 animated:(_Bool)arg4;
 - (void)updateWithParticipantForSorting:(id)arg1;
 - (void)updateConstraints;

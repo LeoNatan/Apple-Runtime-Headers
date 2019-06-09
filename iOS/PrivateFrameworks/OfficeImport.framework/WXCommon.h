@@ -11,6 +11,14 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)customNumberFormatEnumMap;
++ (id)numberFormatEnumMap;
++ (id)heightTypeEnumMap;
++ (id)tableWidthTypeEnumMap;
++ (id)strictJustifyEnumMap;
++ (id)justifyEnumMap;
++ (id)strictTextDirectionEnumMap;
++ (id)textDirectionEnumMap;
 + (void)initialize;
 
 @end

@@ -8,6 +8,7 @@
 
 @class NSLayoutGuide, NSMutableArray, NSTextField;
 
+__attribute__((visibility("hidden")))
 @interface AVExternalPlaybackIndicatorView : NSView
 {
     NSView *_containerView;

@@ -8,24 +8,22 @@
 
 #import <AXMediaUtilities/NSSecureCoding-Protocol.h>
 
+@class AXMTextLayoutManager, NSArray;
+
 @interface AXMTextDetectorNode : AXMEvaluationNode <NSSecureCoding>
 {
-    _Bool _detectDiacritics;
-    _Bool _returnSubFeatures;
-    _Bool _minimizeFalsePositives;
-    unsigned int _detectionFlavor;
-    float _minimumCharacterHeight;
+    AXMTextLayoutManager *_textLayoutManager;
+    NSArray *_recognitionLanguages;
+    NSArray *_customWords;
 }
 
-+ (id)supportedDetectionLanguages;
++ (id)supportedRecognitionLanguagesForFlavor:(unsigned int)arg1 textRecognitionLevel:(unsigned int)arg2 error:(id *)arg3;
 + (id)title;
 + (_Bool)isSupported;
 + (_Bool)supportsSecureCoding;
-@property(nonatomic) _Bool minimizeFalsePositives; // @synthesize minimizeFalsePositives=_minimizeFalsePositives;
-@property(nonatomic) _Bool returnSubFeatures; // @synthesize returnSubFeatures=_returnSubFeatures;
-@property(nonatomic) _Bool detectDiacritics; // @synthesize detectDiacritics=_detectDiacritics;
-@property(nonatomic) float minimumCharacterHeight; // @synthesize minimumCharacterHeight=_minimumCharacterHeight;
-@property(nonatomic) unsigned int detectionFlavor; // @synthesize detectionFlavor=_detectionFlavor;
+@property(copy, nonatomic) NSArray *customWords; // @synthesize customWords=_customWords;
+@property(copy, nonatomic) NSArray *recognitionLanguages; // @synthesize recognitionLanguages=_recognitionLanguages;
+- (void).cxx_destruct;
 - (void)evaluate:(id)arg1;
 - (_Bool)shouldEvaluate:(id)arg1;
 - (_Bool)requiresVisionFramework;

@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
     unsigned int mNoWrapOverridden:1;
 }
 
+- (void).cxx_destruct;
 - (void)setNoWrapOverridden:(_Bool)arg1;
 - (_Bool)isNoWrapOverridden;
 - (void)setNoWrap:(_Bool)arg1;

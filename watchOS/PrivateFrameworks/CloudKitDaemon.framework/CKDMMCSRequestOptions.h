@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 {
     _Bool _allowsCellularAccess;
     _Bool _allowsPowerNapScheduling;
-    _Bool _automaticallyRetryNetworkFailures;
+    _Bool _resolvedAutomaticallyRetryNetworkFailures;
     int _databaseScope;
     int _containerEnvironment;
     NSString *_topmostParentOperationID;
@@ -26,7 +26,9 @@ __attribute__((visibility("hidden")))
     NSData *_authPutResponse;
     NSDictionary *_authPutResponseHeaders;
     int _qualityOfService;
-    unsigned int _discretionaryNetworkBehavior;
+    int _queuePriority;
+    unsigned int _resolvedDiscretionaryNetworkBehavior;
+    unsigned int _duetPreClearedMode;
     C2MetricOptions *_metricOptions;
     unsigned int _networkServiceType;
     CKOperationMMCSRequestOptions *_MMCSRequestOptions;
@@ -35,8 +37,10 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKOperationMMCSRequestOptions *MMCSRequestOptions; // @synthesize MMCSRequestOptions=_MMCSRequestOptions;
 @property(nonatomic) unsigned int networkServiceType; // @synthesize networkServiceType=_networkServiceType;
 @property(retain, nonatomic) C2MetricOptions *metricOptions; // @synthesize metricOptions=_metricOptions;
-@property(nonatomic) unsigned int discretionaryNetworkBehavior; // @synthesize discretionaryNetworkBehavior=_discretionaryNetworkBehavior;
-@property(nonatomic) _Bool automaticallyRetryNetworkFailures; // @synthesize automaticallyRetryNetworkFailures=_automaticallyRetryNetworkFailures;
+@property(nonatomic) unsigned int duetPreClearedMode; // @synthesize duetPreClearedMode=_duetPreClearedMode;
+@property(nonatomic) unsigned int resolvedDiscretionaryNetworkBehavior; // @synthesize resolvedDiscretionaryNetworkBehavior=_resolvedDiscretionaryNetworkBehavior;
+@property(nonatomic) _Bool resolvedAutomaticallyRetryNetworkFailures; // @synthesize resolvedAutomaticallyRetryNetworkFailures=_resolvedAutomaticallyRetryNetworkFailures;
+@property(nonatomic) int queuePriority; // @synthesize queuePriority=_queuePriority;
 @property(nonatomic) int qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property(nonatomic) _Bool allowsPowerNapScheduling; // @synthesize allowsPowerNapScheduling=_allowsPowerNapScheduling;
 @property(nonatomic) _Bool allowsCellularAccess; // @synthesize allowsCellularAccess=_allowsCellularAccess;

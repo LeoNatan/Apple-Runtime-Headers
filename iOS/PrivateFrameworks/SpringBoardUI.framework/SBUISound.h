@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, TLAlertConfiguration;
+@class NSDictionary, NSString, TLAlert;
 
 @interface SBUISound : NSObject
 {
@@ -15,18 +15,16 @@
     unsigned int _resolvedSystemSoundID;
     unsigned long long _soundBehavior;
     NSDictionary *_vibrationPattern;
-    TLAlertConfiguration *_alertConfiguration;
+    TLAlert *_toneAlert;
     CDUnknownBlockType _completionBlock;
     NSString *_songPath;
     long long _eventType;
-    long long _alertType;
 }
 
 + (id)soundWithFeedbackEventType:(long long)arg1;
-@property(nonatomic) long long alertType; // @synthesize alertType=_alertType;
 @property(nonatomic) long long eventType; // @synthesize eventType=_eventType;
 @property(copy, nonatomic) NSString *songPath; // @synthesize songPath=_songPath;
-@property(copy, nonatomic) TLAlertConfiguration *alertConfiguration; // @synthesize alertConfiguration=_alertConfiguration;
+@property(retain, nonatomic) TLAlert *toneAlert; // @synthesize toneAlert=_toneAlert;
 @property(retain, nonatomic) NSDictionary *vibrationPattern; // @synthesize vibrationPattern=_vibrationPattern;
 @property(nonatomic) unsigned long long soundBehavior; // @synthesize soundBehavior=_soundBehavior;
 @property(nonatomic, setter=_setResolvedSoundID:) unsigned int _resolvedSystemSoundID; // @synthesize _resolvedSystemSoundID;
@@ -40,6 +38,7 @@
 - (_Bool)playInEvironments:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)isPlaying;
 - (id)initWithFeedbackEventType:(long long)arg1;
+- (id)initWithToneAlert:(id)arg1;
 - (id)initWithToneAlertConfiguration:(id)arg1;
 - (id)initWithToneAlert:(long long)arg1 accountIdentifier:(id)arg2 toneIdentifier:(id)arg3 vibrationIdentifier:(id)arg4;
 - (id)initWithSystemSoundPath:(id)arg1 behavior:(unsigned long long)arg2 vibrationPattern:(id)arg3;

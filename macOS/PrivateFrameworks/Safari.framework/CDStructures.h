@@ -4,8 +4,6 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class BrowserViewController, BrowserWindowController;
-
 #pragma mark Function Pointers and Blocks
 
 typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
@@ -29,18 +27,15 @@ struct Array {
     struct WKRetainPtr<const void *> m_webKit2Object;
 };
 
-struct AuthenticationChallenge {
-    struct WKRetainPtr<const void *> _field1;
-};
-
 struct AuthenticationSheetRequest {
     CDUnknownFunctionPointerType *_field1;
     unsigned int _field2;
     id _field3;
-    struct AuthenticationChallenge _field4;
-    int _field5;
-    id _field6;
+    id _field4;
+    CDUnknownBlockType _field5;
+    int _field6;
     id _field7;
+    id _field8;
 };
 
 struct AutomaticTerminationController {
@@ -64,8 +59,6 @@ struct BackForwardListItem {
 struct Boolean {
     struct WKRetainPtr<const void *> m_webKit2Object;
 };
-
-struct BrowserPageDiagnosticLoggingClient;
 
 struct BrowserPageFindClient;
 
@@ -142,7 +135,7 @@ struct CGSize {
 struct Certificate {
     CDUnknownFunctionPointerType *_field1;
     unsigned int _field2;
-    struct RetainPtr<OpaqueSecCertificateRef *> _field3;
+    struct RetainPtr<__SecCertificate *> _field3;
 };
 
 struct CertificateInfo {
@@ -156,29 +149,12 @@ struct CompletionListAddressBookNonNameFieldAutoFillCommand {
     unsigned int _field2;
     id _field3;
     _Bool _field4;
-    id _field5;
+    unsigned long long _field5;
     id _field6;
-    struct CommandTarget *_field7;
-    int _field8;
-    struct Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16> _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    id _field13;
-    id _field14;
-};
-
-struct CompletionListAddressBookRecentlyUsedAutoFillCommand {
-    CDUnknownFunctionPointerType *_field1;
-    unsigned int _field2;
-    id _field3;
-    _Bool _field4;
-    id _field5;
-    id _field6;
-    struct CommandTarget *_field7;
-    int _field8;
-    struct Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16> _field9;
-    id _field10;
+    id _field7;
+    struct CommandTarget *_field8;
+    int _field9;
+    struct Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16> _field10;
     id _field11;
     id _field12;
     id _field13;
@@ -186,13 +162,33 @@ struct CompletionListAddressBookRecentlyUsedAutoFillCommand {
     id _field15;
 };
 
+struct CompletionListAddressBookRecentlyUsedAutoFillCommand {
+    CDUnknownFunctionPointerType *_field1;
+    unsigned int _field2;
+    id _field3;
+    _Bool _field4;
+    unsigned long long _field5;
+    id _field6;
+    id _field7;
+    struct CommandTarget *_field8;
+    int _field9;
+    struct Vector<std::__1::pair<NSString *, NSString *>, 0, WTF::CrashOnOverflow, 16> _field10;
+    id _field11;
+    id _field12;
+    id _field13;
+    id _field14;
+    id _field15;
+    id _field16;
+};
+
 struct CompletionListItem {
     CDUnknownFunctionPointerType *_field1;
     unsigned int _field2;
     id _field3;
     _Bool _field4;
-    id _field5;
+    unsigned long long _field5;
     id _field6;
+    id _field7;
 };
 
 struct Context {
@@ -204,9 +200,10 @@ struct CreditCardCompletionListItem {
     unsigned int _field2;
     id _field3;
     _Bool _field4;
-    id _field5;
+    unsigned long long _field5;
     id _field6;
     id _field7;
+    id _field8;
 };
 
 struct Data {
@@ -420,11 +417,12 @@ struct FormAutoFillCompletionListItem {
     unsigned int _field2;
     id _field3;
     _Bool _field4;
-    id _field5;
+    unsigned long long _field5;
     id _field6;
     id _field7;
-    int _field8;
+    id _field8;
     int _field9;
+    int _field10;
 };
 
 struct FormCompletionController;
@@ -787,9 +785,9 @@ struct Optional<SearchSuggestionNavigation> {
     union constexpr_storage_t<SearchSuggestionNavigation> storage_;
 };
 
-struct Optional<long long> {
+struct Optional<unsigned long long> {
     _Bool init_;
-    union constexpr_storage_t<long long> storage_;
+    union constexpr_storage_t<unsigned long long> storage_;
 };
 
 struct Page {
@@ -806,6 +804,20 @@ struct PageLoadTestViewController {
     id _field3;
     id _field4;
     struct Timer<Safari::PageLoadTestViewController> _field5;
+};
+
+struct ParsecSearchResultCompletionListItem {
+    CDUnknownFunctionPointerType *_field1;
+    unsigned int _field2;
+    id _field3;
+    _Bool _field4;
+    unsigned long long _field5;
+    id _field6;
+    id _field7;
+    struct CommandTarget *_field8;
+    int _field9;
+    id _field10;
+    int _field11;
 };
 
 struct PerformanceCollector {
@@ -990,8 +1002,6 @@ struct RefPtr<Safari::SheetRequest, WTF::DumbPtrTraits<Safari::SheetRequest>> {
     struct SheetRequest *m_ptr;
 };
 
-struct RefPtr<Safari::SignatureCreator, WTF::DumbPtrTraits<Safari::SignatureCreator>>;
-
 struct RefPtr<Safari::SiteMetadataFetcher, WTF::DumbPtrTraits<Safari::SiteMetadataFetcher>> {
     struct SiteMetadataFetcher *m_ptr;
 };
@@ -1028,27 +1038,23 @@ struct RetainPtr<CGImage *> {
     void *_field1;
 };
 
-struct RetainPtr<OpaqueSecCertificateRef *> {
-    void *_field1;
-};
-
-struct RetainPtr<OpaqueSecIdentityRef *> {
-    void *_field1;
-};
-
-struct RetainPtr<OpaqueSecKeyRef *> {
-    void *_field1;
-};
-
-struct RetainPtr<OpaqueSecPolicyRef *> {
-    void *_field1;
-};
-
 struct RetainPtr<RemoteNotificationCenterRequest> {
     void *m_ptr;
 };
 
 struct RetainPtr<__CFRunLoopTimer *> {
+    void *_field1;
+};
+
+struct RetainPtr<__SecCertificate *> {
+    void *_field1;
+};
+
+struct RetainPtr<__SecIdentity *> {
+    void *_field1;
+};
+
+struct RetainPtr<__SecPolicy *> {
     void *_field1;
 };
 
@@ -1134,12 +1140,6 @@ struct SidebarAnimationContext {
     char layoutAnalysisClaimsPageIsCentered;
 };
 
-struct SignatureCreator {
-    unsigned int _field1;
-    Ref_46982f58 _field2;
-    struct RetainPtr<OpaqueSecKeyRef *> _field3;
-};
-
 struct SiteMetadataFetcher;
 
 struct SnippetEditorDelegate;
@@ -1155,9 +1155,8 @@ struct TabBarController {
 };
 
 struct TabPlacementHint {
-    BrowserWindowController *m_browserWindowController;
-    BrowserViewController *m_browserViewController;
-    _Bool m_contentViewIsAncestorTab;
+    id _field1;
+    _Bool _field2;
 };
 
 struct Timer<Safari::PageLoadTestViewController> {
@@ -1228,11 +1227,12 @@ struct URLMatchCompletionListItem {
     unsigned int _field2;
     id _field3;
     _Bool _field4;
-    id _field5;
+    unsigned long long _field5;
     id _field6;
-    struct CommandTarget *_field7;
-    int _field8;
-    id _field9;
+    id _field7;
+    struct CommandTarget *_field8;
+    int _field9;
+    id _field10;
 };
 
 struct URLRequest {
@@ -1329,6 +1329,7 @@ struct UnifiedFieldCompletionListGenerator {
     id _field38;
     _Bool _field39;
     id _field40;
+    id _field41;
 };
 
 struct UnifiedFieldCompletionListGeneratorClient;
@@ -1380,12 +1381,6 @@ struct Vector<WTF::RefPtr<Safari::ExtensionMenuItem, WTF::DumbPtrTraits<Safari::
     struct RefPtr<Safari::ExtensionMenuItem, WTF::DumbPtrTraits<Safari::ExtensionMenuItem>> *_field1;
     unsigned int _field2;
     unsigned int _field3;
-};
-
-struct Vector<WTF::RefPtr<Safari::SignatureCreator, WTF::DumbPtrTraits<Safari::SignatureCreator>>, 0, WTF::CrashOnOverflow, 16> {
-    struct RefPtr<Safari::SignatureCreator, WTF::DumbPtrTraits<Safari::SignatureCreator>> *m_buffer;
-    unsigned int m_capacity;
-    unsigned int m_size;
 };
 
 struct Vector<WTF::RefPtr<Safari::TopSite, WTF::DumbPtrTraits<Safari::TopSite>>, 0, WTF::CrashOnOverflow, 16> {
@@ -1492,12 +1487,6 @@ struct type {
 struct unique_ptr<Safari::AutomaticTerminationDisabler, std::__1::default_delete<Safari::AutomaticTerminationDisabler>> {
     struct __compressed_pair<Safari::AutomaticTerminationDisabler *, std::__1::default_delete<Safari::AutomaticTerminationDisabler>> {
         struct AutomaticTerminationDisabler *__value_;
-    } __ptr_;
-};
-
-struct unique_ptr<Safari::BrowserPageDiagnosticLoggingClient, std::__1::default_delete<Safari::BrowserPageDiagnosticLoggingClient>> {
-    struct __compressed_pair<Safari::BrowserPageDiagnosticLoggingClient *, std::__1::default_delete<Safari::BrowserPageDiagnosticLoggingClient>> {
-        struct BrowserPageDiagnosticLoggingClient *__value_;
     } __ptr_;
 };
 
@@ -1640,8 +1629,8 @@ struct vector<unsigned long, std::__1::allocator<unsigned long>> {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    unsigned int val[8];
-} CDStruct_4c969caf;
+    unsigned int _field1[8];
+} CDStruct_6ad76789;
 
 typedef struct {
     int webProcessID;
@@ -1673,13 +1662,13 @@ typedef struct RetainPtr<CGImage *> {
     void *_field1;
 } RetainPtr_fae59704;
 
-typedef struct RetainPtr<OpaqueSecIdentityRef *> {
+typedef struct RetainPtr<__SecIdentity *> {
     void *_field1;
-} RetainPtr_45e7c27d;
+} RetainPtr_6b1fd32a;
 
-typedef struct RetainPtr<OpaqueSecPolicyRef *> {
+typedef struct RetainPtr<__SecPolicy *> {
     void *_field1;
-} RetainPtr_3b882a02;
+} RetainPtr_9f6ce05b;
 
 typedef struct RetainPtr<__SecTrust *> {
     void *_field1;
@@ -1700,12 +1689,6 @@ typedef struct Vector<WTF::RefPtr<Safari::CompletionListItem, WTF::DumbPtrTraits
     unsigned int m_capacity;
     unsigned int m_size;
 } Vector_9c080eda;
-
-typedef struct Vector<WTF::RefPtr<Safari::ExtensionBar, WTF::DumbPtrTraits<Safari::ExtensionBar>>, 0, WTF::CrashOnOverflow, 16> {
-    struct RefPtr<Safari::ExtensionBar, WTF::DumbPtrTraits<Safari::ExtensionBar>> *m_buffer;
-    unsigned int m_capacity;
-    unsigned int m_size;
-} Vector_3e1c2c1a;
 
 typedef struct Vector<WTF::RefPtr<Safari::ExtensionContextMenuItem, WTF::DumbPtrTraits<Safari::ExtensionContextMenuItem>>, 0, WTF::CrashOnOverflow, 16> {
     struct RefPtr<Safari::ExtensionContextMenuItem, WTF::DumbPtrTraits<Safari::ExtensionContextMenuItem>> *_field1;
@@ -1757,8 +1740,8 @@ union constexpr_storage_t<SearchSuggestionNavigation> {
     struct SearchSuggestionNavigation value_;
 };
 
-union constexpr_storage_t<long long> {
+union constexpr_storage_t<unsigned long long> {
     unsigned char dummy_;
-    long long value_;
+    unsigned long long value_;
 };
 

@@ -39,10 +39,6 @@
 + (id)diagnosticDescriptionForService:(unsigned int)arg1 withIndent:(id)arg2;
 + (id)keyPathsForValuesAffectingDynamicEntityModelID;
 + (id)keyPathsForValuesAffectingDynamicEntityID;
-+ (id)keyPathsForValuesAffectingAsGrandmasterID;
-+ (id)keyPathsForValuesAffectingModelID;
-+ (id)keyPathsForValuesAffectingVendorID;
-+ (id)keyPathsForValuesAffectingGuid;
 + (id)keyPathsForValuesAffectingControllerImplemented;
 + (id)keyPathsForValuesAffectingVideoSink;
 + (id)keyPathsForValuesAffectingAudioSink;
@@ -104,10 +100,6 @@
 - (id)description;
 @property(readonly, getter=isDynamicEntityModelID) BOOL dynamicEntityModelID;
 @property(readonly, getter=isDynamicEntityID) BOOL dynamicEntityID;
-@property unsigned long long asGrandmasterID; // @dynamic asGrandmasterID;
-@property unsigned int modelID; // @dynamic modelID;
-@property unsigned int vendorID; // @dynamic vendorID;
-@property unsigned long long guid; // @dynamic guid;
 @property(getter=isControllerImplemented) BOOL controllerImplemented; // @dynamic controllerImplemented;
 @property(getter=isVideoSink) BOOL videoSink; // @dynamic videoSink;
 @property(getter=isAudioSink) BOOL audioSink; // @dynamic audioSink;

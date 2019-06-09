@@ -20,6 +20,7 @@
 + (void)animateWithParameters:(id)arg1 fromCurrentState:(_Bool)arg2 frameInterval:(double)arg3 animations:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;
 + (void)animateWithParameters:(id)arg1 fromCurrentState:(_Bool)arg2 animations:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 + (void)animateWithParameters:(id)arg1 animations:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
++ (id)fencingAnimation;
 @property(nonatomic) double startTime; // @synthesize startTime=_startTime;
 @property(retain, nonatomic) id <_UIBasicAnimationFactory> animationFactory; // @synthesize animationFactory=_animationFactory;
 @property(nonatomic) long long curve; // @synthesize curve=_curve;

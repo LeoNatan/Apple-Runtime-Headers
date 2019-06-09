@@ -6,38 +6,26 @@
 
 #import <ScreenTimeUI/STTableCell.h>
 
-@class STCandyBarView, STDeviceUnlockStateListener, STHorizontallySegmentedView, STNoUsageDataView, STScreenTimeSummaryView, STUnlockForContentView;
+@class STNoUsageDataView, STUsageGraphViewController, STUsageSummaryTitleView;
 
+__attribute__((visibility("hidden")))
 @interface STOverallUsageSummaryCell : STTableCell
 {
-    _Bool _isWidget;
-    STScreenTimeSummaryView *_summaryView;
-    STCandyBarView *_candyBarView;
-    STHorizontallySegmentedView *_topItemsView;
+    STUsageSummaryTitleView *_titleView;
+    STUsageGraphViewController *_weekGraphViewController;
     STNoUsageDataView *_noUsageDataView;
-    STUnlockForContentView *_unlockView;
-    STDeviceUnlockStateListener *_lockStateListener;
 }
 
-@property(retain, nonatomic) STDeviceUnlockStateListener *lockStateListener; // @synthesize lockStateListener=_lockStateListener;
-@property(readonly, nonatomic) STUnlockForContentView *unlockView; // @synthesize unlockView=_unlockView;
-@property(readonly, nonatomic) STNoUsageDataView *noUsageDataView; // @synthesize noUsageDataView=_noUsageDataView;
-@property(readonly, nonatomic) STHorizontallySegmentedView *topItemsView; // @synthesize topItemsView=_topItemsView;
-@property(readonly, nonatomic) STCandyBarView *candyBarView; // @synthesize candyBarView=_candyBarView;
-@property(readonly, nonatomic) STScreenTimeSummaryView *summaryView; // @synthesize summaryView=_summaryView;
-@property(readonly, nonatomic) _Bool isWidget; // @synthesize isWidget=_isWidget;
+@property(readonly) STNoUsageDataView *noUsageDataView; // @synthesize noUsageDataView=_noUsageDataView;
+@property(readonly) STUsageGraphViewController *weekGraphViewController; // @synthesize weekGraphViewController=_weekGraphViewController;
+@property(readonly) STUsageSummaryTitleView *titleView; // @synthesize titleView=_titleView;
 - (void).cxx_destruct;
-- (void)updateViewsForLockState:(_Bool)arg1;
-- (void)startMonitoringDeviceLockChanges;
-- (void)refreshWithCoordinator:(id)arg1;
+- (void)_setNoUsageDataViewVisibility;
 - (void)setValue:(id)arg1;
-- (void)_heightDidChange;
-- (void)_layoutDidChangeFrom:(_Bool)arg1 to:(_Bool)arg2;
-- (void)_numberOfLinesDidChangeFrom:(id)arg1 to:(id)arg2;
+- (id)value;
+- (void)_hasMulitlineLayoutDidChangeFrom:(_Bool)arg1 to:(_Bool)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
-- (void)stOverallUsageSummaryCellCommonInit;
-- (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3 isWidget:(_Bool)arg4;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 
 @end

@@ -10,14 +10,14 @@
 #import <MapsSupport/NSCopying-Protocol.h>
 
 @class MSPTransitStorageIcon, MSPTransitStorageShield, NSString, PBUnknownFields;
-@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource;
+@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource, GEOTransitTextDataSource;
 
 @interface MSPTransitStorageArtwork : PBCodable <GEOTransitArtworkDataSource, NSCopying>
 {
     PBUnknownFields *_unknownFields;
     NSString *_accessibilityText;
-    long long _artworkSourceType;
-    long long _artworkUseType;
+    int _artworkSourceType;
+    int _artworkUseType;
     MSPTransitStorageIcon *_icon;
     MSPTransitStorageShield *_iconFallbackShield;
     MSPTransitStorageShield *_shield;
@@ -34,8 +34,8 @@
 @property(retain, nonatomic) MSPTransitStorageShield *iconFallbackShield; // @synthesize iconFallbackShield=_iconFallbackShield;
 @property(retain, nonatomic) MSPTransitStorageIcon *icon; // @synthesize icon=_icon;
 @property(retain, nonatomic) MSPTransitStorageShield *shield; // @synthesize shield=_shield;
-@property(nonatomic) long long artworkUseType; // @synthesize artworkUseType=_artworkUseType;
-@property(nonatomic) long long artworkSourceType; // @synthesize artworkSourceType=_artworkSourceType;
+@property(nonatomic) int artworkUseType; // @synthesize artworkUseType=_artworkUseType;
+@property(nonatomic) int artworkSourceType; // @synthesize artworkSourceType=_artworkSourceType;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
@@ -52,12 +52,13 @@
 @property(readonly, nonatomic) _Bool hasIconFallbackShield;
 @property(readonly, nonatomic) _Bool hasIcon;
 @property(readonly, nonatomic) _Bool hasShield;
-- (long long)StringAsArtworkUseType:(id)arg1;
-- (id)artworkUseTypeAsString:(long long)arg1;
+- (int)StringAsArtworkUseType:(id)arg1;
+- (id)artworkUseTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasArtworkUseType;
-- (long long)StringAsArtworkSourceType:(id)arg1;
-- (id)artworkSourceTypeAsString:(long long)arg1;
+- (int)StringAsArtworkSourceType:(id)arg1;
+- (id)artworkSourceTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasArtworkSourceType;
+@property(readonly, nonatomic) id <GEOTransitTextDataSource> textDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> shieldDataSource;
 @property(readonly, nonatomic) id <GEOTransitIconDataSource> iconDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> iconFallbackShieldDataSource;

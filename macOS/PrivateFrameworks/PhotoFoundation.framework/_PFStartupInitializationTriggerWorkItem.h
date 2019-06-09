@@ -4,18 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotoFoundation/PFInitializationClassWorkItem.h>
+#import <PhotoFoundation/_PFTriggeredWorkItem.h>
 
-@class NSMutableArray;
-
-@interface _PFStartupInitializationTriggerWorkItem : PFInitializationClassWorkItem
+@interface _PFStartupInitializationTriggerWorkItem : _PFTriggeredWorkItem
 {
-    NSMutableArray *_startupWorkItems;
 }
-
-- (void).cxx_destruct;
-- (void)addStartupWorkItem:(id)arg1;
-- (id)init;
 
 @end
 

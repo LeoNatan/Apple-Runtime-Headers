@@ -8,6 +8,7 @@
 
 @class NSMapTable, SKUIToolbarViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIToolbarButtonsController : NSObject
 {
     NSMapTable *_buttonItemElements;

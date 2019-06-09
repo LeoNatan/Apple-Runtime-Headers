@@ -19,6 +19,7 @@
 }
 
 + (id)propertyKeyForPropertyID:(int)arg1;
++ (void)initialize;
 @property(nonatomic) int revertedRecordID; // @synthesize revertedRecordID=_revertedRecordID;
 @property(retain, nonatomic) CNMutableGroup *cnImpl; // @synthesize cnImpl=_cnImpl;
 @property(nonatomic) __weak ABSSource *source; // @synthesize source=_source;

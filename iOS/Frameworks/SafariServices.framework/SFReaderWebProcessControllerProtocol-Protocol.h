@@ -6,12 +6,15 @@
 
 #import <SafariServices/NSObject-Protocol.h>
 
-@class NSDictionary, NSNumber, WKBrowsingContextHandle;
+@class NSDictionary, NSNumber, NSString, WKBrowsingContextHandle;
 
 @protocol SFReaderWebProcessControllerProtocol <NSObject>
-- (void)willHideReader;
+- (void)collectArticleContent;
+- (void)checkReaderAvailability;
 - (void)didFinishPresentationUpdateAfterTransitioningToReader;
 - (void)prepareReaderContentForPrinting;
+- (void)setReaderIsActive:(_Bool)arg1;
+- (void)activateFont:(NSString *)arg1;
 - (void)setConfiguration:(NSDictionary *)arg1;
 - (void)collectReaderContentForMail;
 - (void)collectReadingListItemInfoWithBookmarkID:(NSNumber *)arg1;

@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) NSString *proxiedBundleId; // @synthesize proxiedBundleId=_proxiedBundleId;
 - (void).cxx_destruct;
 - (id)_bundleIdForAuditToken;
+- (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)bundleId;
 - (id)backingTokenData;

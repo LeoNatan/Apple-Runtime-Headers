@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class BU_ButtonController, BU_DPRemoteDesktopPicture, BU_TBUStarfieldShadowLayer, BU_TNotificationCenterObserverGlue, BU_TRunAfterHelper, BU_TValidatingDateFormatter, CABackdropLayer, CALayer, NSArray, NSDate, NSDateComponents, NSObject, NSTimer, NSValue;
+@class BU_ButtonController, BU_DPRemoteDesktopPicture, BU_TBUStarfieldShadowLayer, BU_TNotificationCenterObserverGlue, BU_TRunAfterHelper, BU_TValidatingDateFormatter, CABackdropLayer, CALayer, CAMediaTimingFunction, NSArray, NSDate, NSDateComponents, NSObject, NSTimer, NSValue;
 
 #pragma mark Named Structures
 
@@ -126,6 +126,10 @@ struct TNSRef<CALayer, void> {
     CALayer *fRef;
 };
 
+struct TNSRef<CAMediaTimingFunction, void> {
+    CAMediaTimingFunction *fRef;
+};
+
 struct TNSRef<NSArray, void> {
     NSArray *fRef;
 };
@@ -185,6 +189,10 @@ struct TRef<NSObject<OS_dispatch_queue>*, TRetainReleasePolicy<dispatch_queue_t>
     NSObject *fRef;
 };
 
+struct TRef<NSObject<OS_xpc_object>*, TRetainReleasePolicy<xpc_object_t>> {
+    NSObject *fRef;
+};
+
 struct TRef<__CFDictionary *, TRetainReleasePolicy<CFMutableDictionaryRef>> {
     struct __CFDictionary *_field1;
 };
@@ -196,7 +204,7 @@ struct TRef<const __CFString *, TRetainReleasePolicy<CFStringRef>> {
 struct TSnapshot;
 
 struct TSpinLock {
-    int fSpinLock;
+    struct os_unfair_lock_s fSpinLock;
 };
 
 struct TString {
@@ -246,8 +254,8 @@ struct TTimelineControl {
 
 struct TTimelineItem;
 
-struct __hash_node_base<std::__1::__hash_node<NSObject *, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<NSObject *, void *>*> *__next_;
+struct __hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*> *__next_;
 };
 
 struct __shared_weak_count;
@@ -288,28 +296,32 @@ struct function<void (NSNotification *)> {
     struct __base<void (NSNotification *)> *__f_;
 };
 
-struct set<TString, std::__1::less<TString>, std::__1::allocator<TString>> {
-    struct __tree<TString, std::__1::less<TString>, std::__1::allocator<TString>> {
+struct map<TString, TNotificationCenterObserver, std::__1::less<TString>, std::__1::allocator<std::__1::pair<const TString, TNotificationCenterObserver>>> {
+    struct __tree<std::__1::__value_type<TString, TNotificationCenterObserver>, std::__1::__map_value_compare<TString, std::__1::__value_type<TString, TNotificationCenterObserver>, std::__1::less<TString>, true>, std::__1::allocator<std::__1::__value_type<TString, TNotificationCenterObserver>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<TString, void *>>> {
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<TString, TNotificationCenterObserver>, void *>>> {
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::less<TString>> {
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<TString, std::__1::__value_type<TString, TNotificationCenterObserver>, std::__1::less<TString>, true>> {
             unsigned long long __value_;
         } __pair3_;
     } __tree_;
 };
 
-struct set<UDefaults::RegistryID, std::__1::less<UDefaults::RegistryID>, std::__1::allocator<UDefaults::RegistryID>> {
-    struct __tree<UDefaults::RegistryID, std::__1::less<UDefaults::RegistryID>, std::__1::allocator<UDefaults::RegistryID>> {
+struct map<UDefaults::RegistryID, TNotificationCenterObserver, std::__1::less<UDefaults::RegistryID>, std::__1::allocator<std::__1::pair<const UDefaults::RegistryID, TNotificationCenterObserver>>> {
+    struct __tree<std::__1::__value_type<UDefaults::RegistryID, TNotificationCenterObserver>, std::__1::__map_value_compare<UDefaults::RegistryID, std::__1::__value_type<UDefaults::RegistryID, TNotificationCenterObserver>, std::__1::less<UDefaults::RegistryID>, true>, std::__1::allocator<std::__1::__value_type<UDefaults::RegistryID, TNotificationCenterObserver>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<UDefaults::RegistryID, void *>>> {
+        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<UDefaults::RegistryID, TNotificationCenterObserver>, void *>>> {
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
         } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::less<UDefaults::RegistryID>> {
+        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<UDefaults::RegistryID, std::__1::__value_type<UDefaults::RegistryID, TNotificationCenterObserver>, std::__1::less<UDefaults::RegistryID>, true>> {
             unsigned long long __value_;
         } __pair3_;
     } __tree_;
+};
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
 };
 
 struct set<double, std::__1::less<double>, std::__1::allocator<double>> {
@@ -353,27 +365,27 @@ struct unique_ptr<fstd::finder_callable_details::callable_holder_base<void>, std
     } __ptr_;
 };
 
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<NSObject *, void *>*> **__value_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>> {
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>*>> {
                 unsigned long long __value_;
             } __data_;
         } __value_;
     } __ptr_;
 };
 
-struct unordered_set<NSObject *, std::__1::hash<NSObject *>, std::__1::equal_to<NSObject *>, std::__1::allocator<NSObject *>> {
-    struct __hash_table<NSObject *, std::__1::hash<NSObject *>, std::__1::equal_to<NSObject *>, std::__1::allocator<NSObject *>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>>> __bucket_list_;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>, std::__1::allocator<std::__1::__hash_node<NSObject *, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<NSObject *, void *>*> __value_;
+struct unordered_set<NSObject *__unsafe_unretained, std::__1::hash<NSObject *__unsafe_unretained>, std::__1::equal_to<NSObject *__unsafe_unretained>, std::__1::allocator<NSObject *__unsafe_unretained>> {
+    struct __hash_table<NSObject *__unsafe_unretained, std::__1::hash<NSObject *__unsafe_unretained>, std::__1::equal_to<NSObject *__unsafe_unretained>, std::__1::allocator<NSObject *__unsafe_unretained>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>, std::__1::allocator<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*> __value_;
         } __p1_;
-        struct __compressed_pair<unsigned long, std::__1::hash<NSObject *>> {
+        struct __compressed_pair<unsigned long, std::__1::hash<NSObject *__unsafe_unretained>> {
             unsigned long long __value_;
         } __p2_;
-        struct __compressed_pair<float, std::__1::equal_to<NSObject *>> {
+        struct __compressed_pair<float, std::__1::equal_to<NSObject *__unsafe_unretained>> {
             float __value_;
         } __p3_;
     } __table_;
@@ -487,20 +499,20 @@ typedef struct unique_function<void ()> {
     struct unique_ptr<fstd::finder_callable_details::callable_holder_base<void>, std::__1::default_delete<fstd::finder_callable_details::callable_holder_base<void>>> fLambdaHolder;
 } unique_function_63952f55;
 
-typedef struct unordered_set<NSObject *, std::__1::hash<NSObject *>, std::__1::equal_to<NSObject *>, std::__1::allocator<NSObject *>> {
-    struct __hash_table<NSObject *, std::__1::hash<NSObject *>, std::__1::equal_to<NSObject *>, std::__1::allocator<NSObject *>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>*>>> __bucket_list_;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *, void *>*>, std::__1::allocator<std::__1::__hash_node<NSObject *, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<NSObject *, void *>*> __value_;
+typedef struct unordered_set<NSObject *__unsafe_unretained, std::__1::hash<NSObject *__unsafe_unretained>, std::__1::equal_to<NSObject *__unsafe_unretained>, std::__1::allocator<NSObject *__unsafe_unretained>> {
+    struct __hash_table<NSObject *__unsafe_unretained, std::__1::hash<NSObject *__unsafe_unretained>, std::__1::equal_to<NSObject *__unsafe_unretained>, std::__1::allocator<NSObject *__unsafe_unretained>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*>, std::__1::allocator<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<NSObject *__unsafe_unretained, void *>*> __value_;
         } __p1_;
-        struct __compressed_pair<unsigned long, std::__1::hash<NSObject *>> {
+        struct __compressed_pair<unsigned long, std::__1::hash<NSObject *__unsafe_unretained>> {
             unsigned long long __value_;
         } __p2_;
-        struct __compressed_pair<float, std::__1::equal_to<NSObject *>> {
+        struct __compressed_pair<float, std::__1::equal_to<NSObject *__unsafe_unretained>> {
             float __value_;
         } __p3_;
     } __table_;
-} unordered_set_24e1661d;
+} unordered_set_e17e8012;
 
 typedef struct vector<std::__1::shared_ptr<TTimeMachineTarget>, std::__1::allocator<std::__1::shared_ptr<TTimeMachineTarget>>> {
     shared_ptr_253687d6 *_field1;

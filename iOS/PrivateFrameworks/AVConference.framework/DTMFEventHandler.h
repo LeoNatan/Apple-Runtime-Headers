@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *dtmfQueue;
     _Bool currentEventInTransmission;
     _Bool currentEventNeedsEndBlock;
+    unsigned long long currentEventRetransmitFinalPacketCount;
     _Bool currentIsMarker;
     unsigned char currentEvent;
     unsigned char currentVolume;

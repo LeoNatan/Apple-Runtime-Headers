@@ -13,17 +13,17 @@
     BOOL _monitoringVisitIncidents;
     BOOL _monitoringLeechedVisitIncidents;
     BOOL _monitoringLowConfidenceVisitIncidents;
-    unsigned long long _engineDependentCount;
+    unsigned long long _feedBufferReferenceCounter;
 }
 
-@property(nonatomic) unsigned long long engineDependentCount; // @synthesize engineDependentCount=_engineDependentCount;
+@property(nonatomic) unsigned long long feedBufferReferenceCounter; // @synthesize feedBufferReferenceCounter=_feedBufferReferenceCounter;
 @property(nonatomic) BOOL monitoringLowConfidenceVisitIncidents; // @synthesize monitoringLowConfidenceVisitIncidents=_monitoringLowConfidenceVisitIncidents;
 @property(nonatomic) BOOL monitoringLeechedVisitIncidents; // @synthesize monitoringLeechedVisitIncidents=_monitoringLeechedVisitIncidents;
 @property(nonatomic) BOOL monitoringVisitIncidents; // @synthesize monitoringVisitIncidents=_monitoringVisitIncidents;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)invalid;
 - (id)description;
-- (id)initWithMonitoringVisitIncidents:(BOOL)arg1 monitoringLeechedVisitIncidents:(BOOL)arg2 monitoringLowConfidenceVisitIncidents:(BOOL)arg3 engineDependentCount:(unsigned long long)arg4;
+- (id)initWithMonitoringVisitIncidents:(BOOL)arg1 monitoringLeechedVisitIncidents:(BOOL)arg2 monitoringLowConfidenceVisitIncidents:(BOOL)arg3 feedBufferReferenceCounter:(unsigned long long)arg4;
 
 @end
 

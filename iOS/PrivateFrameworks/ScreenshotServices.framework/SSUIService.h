@@ -15,6 +15,7 @@
 
 - (void).cxx_destruct;
 - (void)_runPPTNamed:(id)arg1;
+- (void)showScreenshotUIForImage:(id)arg1 options:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)showScreenshotUIForImage:(id)arg1 options:(id)arg2;
 - (id)init;
 

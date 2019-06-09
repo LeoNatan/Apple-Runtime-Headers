@@ -26,9 +26,9 @@
 - (void)setHelpTag:(id)arg1;
 - (void)setMoreInfo:(id)arg1;
 - (void)setLocalizedDescription:(id)arg1;
-- (id)shortDescription;
+- (id)ic_shortDescription;
 - (id)helpAnchor;
-- (id)moreInfo;
+- (id)ic_moreInfo;
 - (id)localizedDescription;
 - (id)userInfo;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;

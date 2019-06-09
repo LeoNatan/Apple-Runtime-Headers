@@ -6,46 +6,16 @@
 
 #import <AppKit/NSColor.h>
 
-@class NSString;
-
 @interface NSColor (ICNFMCMailCoreAdditions)
 + (id)scriptingRGBColorWithDescriptor:(id)arg1;
-+ (id)stationeryPaneBackgroundColor;
-+ (id)inactiveAlternateBackgroundColor;
-+ (id)activeAlternateBackgroundColor;
-+ (id)aquaBlueColor;
-+ (id)subjectAdditionColor;
-+ (id)splitterColor;
-+ (id)activeLinkColor;
-+ (id)visitedLinkColor;
-+ (id)linkColor;
-+ (id)junkMailColor;
-+ (id)threadQuasiSelectedColor;
-+ (id)lighterThreadChildBackgroundColor;
-+ (id)threadChildBackgroundColor;
-+ (id)threadBackgroundColor;
-+ (void)clearThreadBackgroundColors;
-+ (id)lighterThreadBackgroundColor;
-+ (void)setThreadBackgroundColor:(id)arg1;
-+ (id)colorWithHexString:(id)arg1;
-+ (id)colorWithIntValue:(int)arg1;
-+ (id)newSwatchForColor:(id)arg1;
-+ (void)configureColorMenu:(id)arg1;
-+ (id)colorForEnrichedValue:(id)arg1;
-+ (id)colorForIdentifier:(id)arg1;
-+ (id)identifierForColor:(id)arg1;
-+ (int)intWithIdentifierColor:(id)arg1;
-+ (id)colorPlist;
-+ (id)colorForHighlightColorValue:(unsigned int)arg1;
-+ (unsigned int)highlightColorValueForColor:(id)arg1;
-+ (id)allHighlightColors;
-+ (id)colorForQuoteLevel:(unsigned long long)arg1;
-+ (id)quotingColorList;
-+ (id)defaultQuotingColors;
-+ (id)allQuotingColors;
-@property(readonly, copy, nonatomic) NSString *cssColorString;
++ (id)ic_colorWithIntValue:(int)arg1;
++ (id)ic_colorForIdentifier:(id)arg1;
++ (id)ic_identifierForColor:(id)arg1;
++ (id)ic_colorPlist;
++ (id)ic_colorForQuoteLevel:(unsigned long long)arg1;
++ (id)ic_quotingColorList;
++ (id)ic_defaultQuotingColors;
 - (id)scriptingRGBColorDescriptor;
-@property(readonly, copy, nonatomic) NSString *hexString;
-@property(readonly, nonatomic) int intValue;
+@property(readonly, nonatomic) int ic_intValue;
 @end
 

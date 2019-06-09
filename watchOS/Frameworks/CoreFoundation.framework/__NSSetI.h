@@ -15,12 +15,16 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
-+ (id)__new:(const id *)arg1:(char *)arg2:(unsigned int)arg3:(_Bool)arg4;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
 - (void)dealloc;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)mutableCopy;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)copy;
 - (void)enumerateObjectsWithOptions:(unsigned int)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)getObjects:(id *)arg1 count:(unsigned int)arg2;
+- (unsigned int)countForObject:(id)arg1;
+- (_Bool)containsObject:(id)arg1;
 - (unsigned int)countByEnumeratingWithState:(CDStruct_c73467ff *)arg1 objects:(id *)arg2 count:(unsigned int)arg3;
 - (double)clumpingInterestingThreshold;
 - (double)clumpingFactor;

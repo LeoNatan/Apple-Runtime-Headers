@@ -8,11 +8,11 @@
 
 @interface ACSHActionPressKeyCode : ACSHAction
 {
-    unsigned long long _macKeyCode;
-    unsigned long long _usbKeyCode;
     BOOL _usesMacKeyCode;
     BOOL _shouldExecuteSystemFunction;
     BOOL _shouldNotLockModifierKey;
+    unsigned long long _macKeyCode;
+    unsigned long long _usbKeyCode;
     long long _keyboardHWType;
     unsigned long long _modifiers;
 }

@@ -6,14 +6,15 @@
 
 #import <FrontBoard/NSObject-Protocol.h>
 
-@class BSProcessHandle, NSString;
+@class BSProcessHandle, NSString, RBSProcessIdentity;
 @protocol FBSServiceFacilityClientContext;
 
 @protocol FBSServiceFacilityClientHandle <NSObject>
 @property(retain, nonatomic) id <FBSServiceFacilityClientContext> context;
 @property(readonly, copy, nonatomic) NSString *facilityID;
-@property(readonly, nonatomic) BSProcessHandle *processHandle;
 @property(readonly, nonatomic, getter=isSuspended) _Bool suspended;
+@property(readonly, copy, nonatomic) RBSProcessIdentity *processIdentity;
+@property(readonly, nonatomic) BSProcessHandle *processHandle;
 @property(readonly, nonatomic) int pid;
 @end
 

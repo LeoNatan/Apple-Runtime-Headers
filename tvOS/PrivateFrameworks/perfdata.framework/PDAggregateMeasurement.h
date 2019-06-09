@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     _Bool _validMin;
     _Bool _validMax;
+    NSMutableDictionary *_labels;
     PDContainer *_container;
     NSString *_metric;
     NSString *_unitString;
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSString *unitString; // @synthesize unitString=_unitString;
 @property(retain, nonatomic) NSString *metric; // @synthesize metric=_metric;
 @property(retain, nonatomic) PDContainer *container; // @synthesize container=_container;
+@property(retain, nonatomic) NSMutableDictionary *labels; // @synthesize labels=_labels;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) PDMeasurement *measurement;
 - (void)updateWithMeasurement:(id)arg1;

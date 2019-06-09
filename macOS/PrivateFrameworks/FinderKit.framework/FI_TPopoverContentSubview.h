@@ -18,8 +18,6 @@ __attribute__((visibility("hidden")))
 - (void)removeSeparator;
 - (void)addSeparator;
 - (id)view;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithView:(id)arg1;
 
 @end

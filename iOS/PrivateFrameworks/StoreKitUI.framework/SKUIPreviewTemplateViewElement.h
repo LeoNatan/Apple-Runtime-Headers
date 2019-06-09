@@ -8,6 +8,7 @@
 
 @class NSString, SKUILockupViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPreviewTemplateViewElement : SKUIViewElement
 {
     long long _itemIdentifier;

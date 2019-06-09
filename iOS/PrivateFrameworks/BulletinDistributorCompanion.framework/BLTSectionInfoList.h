@@ -31,6 +31,7 @@
 - (void).cxx_destruct;
 - (void)reloadBBSection:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_migrateFromExternalDeviceSwitchToOverrides:(id)arg1;
+- (_Bool)hasCustomSettingsSetForSectionID:(id)arg1;
 - (id)sectionOverrideOnlyForSectionID:(id)arg1;
 - (id)sectionOverridesOnly;
 - (id)overriddenSettings;
@@ -44,6 +45,7 @@
 - (id)bbSectionInfoForSectionID:(id)arg1;
 - (id)overriddenSectionInfoForSectionID:(id)arg1;
 - (void)reloadWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_updateListItem:(id)arg1 overrides:(id)arg2 sectionID:(id)arg3;
 - (id)sectionIDs;
 - (void)dealloc;
 - (id)init;

@@ -8,22 +8,33 @@
 
 #import <CoreHandwriting/NSCopying-Protocol.h>
 
-@class CHStrokeGroupingResult, NSArray, NSDictionary, NSString;
+@class CHStrokeClassificationResult, CHStrokeClutterFilter, CHStrokeGroupingResult, NSArray, NSDictionary, NSString;
 @protocol CHStrokeProviderVersion;
 
 @interface CHRecognitionSessionResult : NSObject <NSCopying>
 {
+    int __transcriptionCapability;
     id <CHStrokeProviderVersion> _strokeProviderVersion;
+    NSArray *_orderedStrokeIdentifiers;
     NSArray *_locales;
+    NSArray *_preferredLocales;
+    CHStrokeClutterFilter *_clutterFilter;
+    int _recognitionEnvironment;
+    CHStrokeClassificationResult *_strokeClassificationResult;
     CHStrokeGroupingResult *_strokeGroupingResult;
     NSDictionary *__recognitionResultsByGroupID;
-    CDStruct_a0ca6847 _generationDuration;
+    CDStruct_76929b14 _generationDuration;
 }
 
 @property(readonly, copy, nonatomic) NSDictionary *_recognitionResultsByGroupID; // @synthesize _recognitionResultsByGroupID=__recognitionResultsByGroupID;
-@property(readonly, nonatomic) CDStruct_a0ca6847 generationDuration; // @synthesize generationDuration=_generationDuration;
+@property(readonly, nonatomic) CDStruct_76929b14 generationDuration; // @synthesize generationDuration=_generationDuration;
 @property(readonly, retain, nonatomic) CHStrokeGroupingResult *strokeGroupingResult; // @synthesize strokeGroupingResult=_strokeGroupingResult;
+@property(readonly, retain, nonatomic) CHStrokeClassificationResult *strokeClassificationResult; // @synthesize strokeClassificationResult=_strokeClassificationResult;
+@property(readonly, nonatomic) int recognitionEnvironment; // @synthesize recognitionEnvironment=_recognitionEnvironment;
+@property(readonly, retain, nonatomic) CHStrokeClutterFilter *clutterFilter; // @synthesize clutterFilter=_clutterFilter;
+@property(readonly, copy, nonatomic) NSArray *preferredLocales; // @synthesize preferredLocales=_preferredLocales;
 @property(readonly, copy, nonatomic) NSArray *locales; // @synthesize locales=_locales;
+@property(readonly, retain, nonatomic) NSArray *orderedStrokeIdentifiers; // @synthesize orderedStrokeIdentifiers=_orderedStrokeIdentifiers;
 @property(readonly, retain, nonatomic) id <CHStrokeProviderVersion> strokeProviderVersion; // @synthesize strokeProviderVersion=_strokeProviderVersion;
 - (id)recognitionResultForStrokeGroupIdentifier:(int)arg1;
 - (id)_resultsDebugDescriptionIntoGroupsArray:(id)arg1 groupHeaderBlock:(CDUnknownBlockType)arg2;
@@ -31,11 +42,12 @@
 @property(readonly, nonatomic) NSArray *allResultsDebugDescriptionByGroup;
 @property(readonly, nonatomic) NSString *allResultsDebugDescription;
 @property(readonly, nonatomic) NSString *highConfidenceDebugDescription;
+@property(readonly, nonatomic) int _transcriptionCapability;
 - (id)debugDescription;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (id)initWithStrokeProviderVersion:(id)arg1 locales:(id)arg2 strokeGroupingResult:(id)arg3 recognitionResults:(id)arg4 generationDuration:(CDStruct_a0ca6847)arg5;
+- (id)initWithStrokeProviderVersion:(id)arg1 orderedStrokeIdentifiers:(id)arg2 locales:(id)arg3 preferredLocales:(id)arg4 clutterFilter:(id)arg5 strokeClassificationResult:(id)arg6 strokeGroupingResult:(id)arg7 recognitionResults:(id)arg8 inlineContinuousModeResults:(id)arg9 generationDuration:(CDStruct_76929b14)arg10 recognitionEnvironment:(int)arg11;
 - (id)init;
 
 @end

@@ -8,6 +8,7 @@
 
 @protocol OISFUBufferedInputStream;
 
+__attribute__((visibility("hidden")))
 @interface OISFUZipRecordInputStream : NSObject
 {
     id <OISFUBufferedInputStream> mInput;

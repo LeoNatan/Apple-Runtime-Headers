@@ -6,12 +6,13 @@
 
 #import <HealthKit/HKMedicalRecord.h>
 
+#import <HealthKit/HKConceptIndexable-Protocol.h>
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKMedicalCoding, HKMedicalDate, HKMedicationRecordType, NSArray, NSString;
+@class HKConcept, HKMedicalCoding, HKMedicalDate, HKMedicationRecordType, NSArray, NSLocale, NSString, NSUUID;
 
-@interface HKMedicationRecord : HKMedicalRecord <NSSecureCoding, NSCopying>
+@interface HKMedicationRecord : HKMedicalRecord <HKConceptIndexable, NSSecureCoding, NSCopying>
 {
     NSArray *_medicationCodings;
     int _assertionType;
@@ -25,21 +26,36 @@
     NSArray *_reasonsNotTakenCodings;
     HKMedicalDate *_effectiveStartDate;
     HKMedicalDate *_effectiveEndDate;
+    HKConcept *_medication;
+    HKConcept *_status;
+    HKConcept *_reasonForUse;
+    NSArray *_reasonsNotTaken;
 }
 
 + (_Bool)_isConcreteObjectClass;
 + (_Bool)supportsEquivalence;
 + (_Bool)supportsSecureCoding;
-+ (id)medicationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 sortDate:(id)arg9 medicationCodings:(id)arg10 assertionType:(int)arg11 asserter:(id)arg12 assertionDate:(id)arg13 statusCoding:(id)arg14 dosages:(id)arg15 earliestDosageDate:(id)arg16 reasonForUseCodings:(id)arg17 notTaken:(_Bool)arg18 reasonsNotTakenCodings:(id)arg19 effectiveStartDate:(id)arg20 effectiveEndDate:(id)arg21;
++ (id)_newMedicationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 medicationCodings:(id)arg11 assertionType:(int)arg12 asserter:(id)arg13 assertionDate:(id)arg14 statusCoding:(id)arg15 dosages:(id)arg16 earliestDosageDate:(id)arg17 reasonForUseCodings:(id)arg18 notTaken:(_Bool)arg19 reasonsNotTakenCodings:(id)arg20 effectiveStartDate:(id)arg21 effectiveEndDate:(id)arg22 config:(CDUnknownBlockType)arg23;
++ (id)medicationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 sortDate:(id)arg10 medicationCodings:(id)arg11 assertionType:(int)arg12 asserter:(id)arg13 assertionDate:(id)arg14 statusCoding:(id)arg15 dosages:(id)arg16 earliestDosageDate:(id)arg17 reasonForUseCodings:(id)arg18 notTaken:(_Bool)arg19 reasonsNotTakenCodings:(id)arg20 effectiveStartDate:(id)arg21 effectiveEndDate:(id)arg22;
 + (id)defaultDisplayString;
 + (id)statusCodingPreferredSystems;
 + (id)reasonsNotTakenCodingsPreferredSystems;
 + (id)reasonForUseCodingsPreferredSystems;
 + (id)medicationCodingsPreferredSystems;
-+ (id)medicationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 extractionVersion:(int)arg6 device:(id)arg7 metadata:(id)arg8 medicationCodings:(id)arg9 assertionType:(int)arg10 asserter:(id)arg11 assertionDate:(id)arg12 statusCoding:(id)arg13 dosages:(id)arg14 earliestDosageDate:(id)arg15 reasonForUseCodings:(id)arg16 notTaken:(_Bool)arg17 reasonsNotTakenCodings:(id)arg18 effectiveStartDate:(id)arg19 effectiveEndDate:(id)arg20;
++ (id)cachedConceptRelationshipKeyPaths;
++ (id)indexableConceptKeyPaths;
++ (id)medicationRecordWithType:(id)arg1 note:(id)arg2 enteredInError:(_Bool)arg3 modifiedDate:(id)arg4 FHIRIdentifier:(id)arg5 locale:(id)arg6 extractionVersion:(int)arg7 device:(id)arg8 metadata:(id)arg9 medicationCodings:(id)arg10 assertionType:(int)arg11 asserter:(id)arg12 assertionDate:(id)arg13 statusCoding:(id)arg14 dosages:(id)arg15 earliestDosageDate:(id)arg16 reasonForUseCodings:(id)arg17 notTaken:(_Bool)arg18 reasonsNotTakenCodings:(id)arg19 effectiveStartDate:(id)arg20 effectiveEndDate:(id)arg21;
 - (void).cxx_destruct;
 @property(readonly, copy) HKMedicationRecordType *medicationRecordType;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned int)arg1;
+- (void)_setReasonsNotTaken:(id)arg1;
+@property(readonly, copy) NSArray *reasonsNotTaken;
+- (void)_setReasonForUse:(id)arg1;
+@property(readonly, copy) HKConcept *reasonForUse;
+- (void)_setStatus:(id)arg1;
+@property(readonly, copy) HKConcept *status;
+- (void)_setMedication:(id)arg1;
+@property(readonly, copy) HKConcept *medication;
 - (void)_setEffectiveEndDate:(id)arg1;
 @property(readonly, copy) HKMedicalDate *effectiveEndDate;
 - (void)_setEffectiveStartDate:(id)arg1;
@@ -64,11 +80,19 @@
 @property(readonly) int assertionType;
 - (void)_setMedicationCodings:(id)arg1;
 @property(readonly, copy) NSArray *medicationCodings;
+- (id)reasonsNotTakenCodingsContexts;
+- (id)reasonsNotTakenCodingsCollection;
+- (id)reasonForUseCodingsContext;
+- (id)reasonForUseCodingsCollection;
+- (id)statusCodingContext;
+- (id)statusCodingCollection;
+- (id)medicationCodingsContext;
+- (id)medicationCodingsCollection;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEquivalent:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)init;
 - (id)medicalRecordPreferredSystems;
 - (id)medicalRecordCodings;
@@ -77,6 +101,15 @@
 - (id)reasonsNotTakenCodingsTasks;
 - (id)reasonForUseCodingsTasks;
 - (id)medicationCodingsTasks;
+- (_Bool)applyConcepts:(id)arg1 forKeyPath:(id)arg2 error:(id *)arg3;
+- (id)codingsForKeyPath:(id)arg1 error:(id *)arg2;
+
+// Remaining properties
+@property(readonly) NSUUID *UUID;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly, copy, nonatomic) NSLocale *locale;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,10 +6,12 @@
 
 #import <GeoServices/GEOMapItemTransitSchedule-Protocol.h>
 
-@class NSArray, NSString;
+@class GEOComposedRoute, NSArray, NSString;
 @protocol GEOTransitSystem;
 
 @protocol GEOMapItemTransitInfo <GEOMapItemTransitSchedule>
+@property(readonly, nonatomic) GEOComposedRoute *composedRoute;
+@property(readonly, nonatomic) NSArray *transitTripStops;
 @property(readonly, nonatomic) NSString *displayName;
 @property(readonly, nonatomic) BOOL hasTransitIncidentComponent;
 @property(readonly, nonatomic) BOOL isTransitIncidentsTTLExpired;

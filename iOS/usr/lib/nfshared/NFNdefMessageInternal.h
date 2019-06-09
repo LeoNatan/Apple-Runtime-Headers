@@ -21,6 +21,7 @@
 + (id)dataFromNDEFMessage:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)addRecordArray:(id)arg1;
 - (void)addRecord:(id)arg1;
 - (id)asData;
 - (id)decode;

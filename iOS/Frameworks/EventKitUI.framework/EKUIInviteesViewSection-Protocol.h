@@ -6,9 +6,10 @@
 
 #import <EventKitUI/NSObject-Protocol.h>
 
-@class NSIndexPath, NSString, UITableView, UITableViewCell;
+@class NSArray, NSIndexPath, NSString, UITableView, UITableViewCell;
 
 @protocol EKUIInviteesViewSection <NSObject>
+- (NSArray *)actionsForRow:(NSIndexPath *)arg1;
 - (void)cancelOutstandingOperations;
 - (void)setTableViewCellHook:(UITableViewCell * (^)(unsigned long long))arg1;
 - (void)commitEditingStyle:(long long)arg1 forRow:(NSIndexPath *)arg2;

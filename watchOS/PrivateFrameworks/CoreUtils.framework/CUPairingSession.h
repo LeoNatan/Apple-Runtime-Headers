@@ -19,6 +19,7 @@
     NSDictionary *_additionalPeerInfo;
     NSDictionary *_additionalSelfInfo;
     NSArray *_allowedMACAddresses;
+    NSDictionary *_appInfoSelf;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSString *_fixedPIN;
     unsigned int _flags;
@@ -68,6 +69,7 @@
 @property(nonatomic) unsigned int flags; // @synthesize flags=_flags;
 @property(copy, nonatomic) NSString *fixedPIN; // @synthesize fixedPIN=_fixedPIN;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+@property(copy, nonatomic) NSDictionary *appInfoSelf; // @synthesize appInfoSelf=_appInfoSelf;
 @property(nonatomic) unsigned long long selfAppFlags; // @synthesize selfAppFlags=_selfAppFlags;
 @property(copy, nonatomic) NSArray *allowedMACAddresses; // @synthesize allowedMACAddresses=_allowedMACAddresses;
 @property(copy, nonatomic) NSDictionary *additionalSelfInfo; // @synthesize additionalSelfInfo=_additionalSelfInfo;
@@ -77,6 +79,7 @@
 - (void).cxx_destruct;
 - (long)deriveKeyWithSaltPtr:(const void *)arg1 saltLen:(unsigned long)arg2 infoPtr:(const void *)arg3 infoLen:(unsigned long)arg4 keyLen:(unsigned long)arg5 outputKeyPtr:(void *)arg6;
 - (void)closeStream:(id)arg1;
+- (id)openStreamWithName:(id)arg1 type:(int)arg2 error:(id *)arg3;
 - (id)openStreamWithName:(id)arg1 error:(id *)arg2;
 - (void)_tryPIN:(id)arg1;
 - (void)tryPIN:(id)arg1;
@@ -86,6 +89,7 @@
 - (void)invalidate;
 - (void)_activate;
 - (void)activate;
+@property(readonly, copy, nonatomic) NSDictionary *appInfoPeer;
 @property(readonly, nonatomic) unsigned long long peerAppFlags;
 @property(readonly, nonatomic) CUPairedPeer *pairedPeer;
 - (void)_cleanup;

@@ -37,7 +37,7 @@
 @property(retain, nonatomic) NSString *logString; // @synthesize logString=_logString;
 @property(readonly, nonatomic) NSString *triggerType; // @synthesize triggerType=_triggerType;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
-@property(readonly, nonatomic) __weak HMDHome *home; // @synthesize home=_home;
+@property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 @property(nonatomic) __weak id <HMDEventDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;

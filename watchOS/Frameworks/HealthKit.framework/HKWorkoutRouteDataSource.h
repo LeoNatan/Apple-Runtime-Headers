@@ -33,6 +33,7 @@
 - (void)connectionInvalidated;
 - (id)remoteInterface;
 - (id)exportedInterface;
+- (void)clientRemote_didUpdateAltitude:(id)arg1;
 - (void)clientRemote_didUpdateRoute:(id)arg1;
 - (void)clientRemote_didUpdateElevation:(id)arg1;
 - (void)workoutBuilderDidFinish;

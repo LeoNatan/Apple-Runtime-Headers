@@ -53,6 +53,7 @@
 - (void)runActivityWithLastCompletedDate:(id)arg1;
 - (void)disable;
 - (void)enable;
+- (id)getArchivingCriteria;
 - (void)runInitialActivity;
 - (void)dealloc;
 - (id)init;

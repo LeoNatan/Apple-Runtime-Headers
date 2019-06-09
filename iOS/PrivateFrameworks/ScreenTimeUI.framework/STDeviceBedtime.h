@@ -8,25 +8,26 @@
 
 #import <ScreenTimeUI/NSCopying-Protocol.h>
 
-@class NSDictionary, RMBlueprintScheduleSimpleItem;
+@class NSDictionary, NSString, STBlueprintScheduleSimpleItem;
 
 @interface STDeviceBedtime : NSObject <NSCopying>
 {
     _Bool _deviceBedtimeEnabled;
     _Bool _askForMoreTime;
     _Bool _shouldAllowEditing;
-    RMBlueprintScheduleSimpleItem *_simpleSchedule;
+    STBlueprintScheduleSimpleItem *_simpleSchedule;
     NSDictionary *_scheduleByWeekdayIndex;
 }
 
 + (id)defaultBedtimeSchedule;
 @property(copy) NSDictionary *scheduleByWeekdayIndex; // @synthesize scheduleByWeekdayIndex=_scheduleByWeekdayIndex;
-@property(copy) RMBlueprintScheduleSimpleItem *simpleSchedule; // @synthesize simpleSchedule=_simpleSchedule;
+@property(copy) STBlueprintScheduleSimpleItem *simpleSchedule; // @synthesize simpleSchedule=_simpleSchedule;
 @property(nonatomic) _Bool shouldAllowEditing; // @synthesize shouldAllowEditing=_shouldAllowEditing;
 @property(nonatomic) _Bool askForMoreTime; // @synthesize askForMoreTime=_askForMoreTime;
 @property(nonatomic) _Bool deviceBedtimeEnabled; // @synthesize deviceBedtimeEnabled=_deviceBedtimeEnabled;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy) NSString *scheduleText;
 - (id)initWithBlueprint:(id)arg1;
 - (id)init;
 

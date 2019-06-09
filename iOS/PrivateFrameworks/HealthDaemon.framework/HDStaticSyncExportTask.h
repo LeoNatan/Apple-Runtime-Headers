@@ -26,6 +26,7 @@
 }
 
 + (id)_estimateSyncEntityClassesWithChangesForSession:(id)arg1 profile:(id)arg2;
++ (long long)nextSyncAnchorForEntity:(Class)arg1 session:(id)arg2 startSyncAnchor:(long long)arg3 profile:(id)arg4 error:(id *)arg5;
 + (id)_dataForChanges:(id)arg1;
 + (id)_chagesetFilePathForCount:(unsigned long long)arg1;
 + (id)_archiveCreatorInDirectory:(id)arg1 session:(id)arg2 count:(unsigned long long)arg3;

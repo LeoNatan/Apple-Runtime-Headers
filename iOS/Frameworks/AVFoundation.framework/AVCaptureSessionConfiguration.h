@@ -8,6 +8,7 @@
 
 @class NSArray, NSHashTable;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureSessionConfiguration : NSObject
 {
     long long _configurationID;

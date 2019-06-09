@@ -6,30 +6,34 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitServices/UISApplicationSupportServerDelegate-Protocol.h>
+#import <UIKitServices/BSServiceConnectionListenerDelegate-Protocol.h>
+#import <UIKitServices/UISApplicationSupportXPCServerInterface-Protocol.h>
 
-@class FBSSerialQueue, NSString, UISApplicationSupportServer;
+@class BSServiceConnectionListener, FBSSerialQueue, NSString;
 @protocol UISApplicationSupportServiceDelegate;
 
-@interface UISApplicationSupportService : NSObject <UISApplicationSupportServerDelegate>
+@interface UISApplicationSupportService : NSObject <BSServiceConnectionListenerDelegate, UISApplicationSupportXPCServerInterface>
 {
-    UISApplicationSupportServer *_server;
+    BSServiceConnectionListener *_listener;
     id <UISApplicationSupportServiceDelegate> _delegate;
     FBSSerialQueue *_calloutQueue;
     struct {
         unsigned int delegateRequestPasscodeUnlockUI:1;
-        unsigned int delegateInitialDisplayConfigurationForClient:1;
+        unsigned int delegateApplicationInitializationContextForClient:1;
+        unsigned int destroyScenesWithPersistentIdentifiers_animationType_destroySessions_forClient_completion:1;
         unsigned int delegateInitialDisplayContextForClient:1;
-        unsigned int delegateScreenEdgeInfo:1;
     } _delegateFlags;
 }
 
 @property(nonatomic) __weak id <UISApplicationSupportServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (id)edgeInfoForClient:(id)arg1 displayConfiguration:(id)arg2;
-- (id)initialDisplayContextForClient:(id)arg1;
-- (void)requestPasscodeUnlockUIForClient:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)destroyScenesPersistentIdentifiers:(id)arg1 animationType:(id)arg2 destroySessions:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)applicationInitializationContextWithCompletion:(CDUnknownBlockType)arg1;
+- (oneway void)requestPasscodeUnlockUIWithCompletion:(CDUnknownBlockType)arg1;
+- (void)listener:(id)arg1 didReceiveConnection:(id)arg2 withContext:(id)arg3;
+- (void)dealloc;
 - (id)initWithCalloutQueue:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

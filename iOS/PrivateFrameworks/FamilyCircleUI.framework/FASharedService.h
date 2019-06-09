@@ -6,11 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSNumber, NSString;
 
 @interface FASharedService : NSObject
 {
+    _Bool _isSeparator;
+    _Bool _isDefault;
     NSString *_name;
+    NSNumber *_order;
     NSString *_displayLabel;
     NSString *_subLabel;
     NSString *_detailLabel;
@@ -27,7 +30,10 @@
 @property(readonly, nonatomic) NSString *detailLabel; // @synthesize detailLabel=_detailLabel;
 @property(readonly, nonatomic) NSString *subLabel; // @synthesize subLabel=_subLabel;
 @property(readonly, nonatomic) NSString *displayLabel; // @synthesize displayLabel=_displayLabel;
+@property(readonly, nonatomic) NSNumber *order; // @synthesize order=_order;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) _Bool isDefault; // @synthesize isDefault=_isDefault;
+@property(readonly, nonatomic) _Bool isSeparator; // @synthesize isSeparator=_isSeparator;
 - (void).cxx_destruct;
 - (_Bool)isEqualToSharedService:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

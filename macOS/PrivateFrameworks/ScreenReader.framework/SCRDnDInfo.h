@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface SCRDnDInfo : NSObject
 {
     NSData *_voCursorSnapShotData;
-    int _dragState;
+    long long _dragState;
     SCRWindowState *_windowState;
     NSMutableDictionary *_dragItemInfo;
     NSMutableDictionary *_destinationItemInfo;
@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSData *voCursorSnapShotData; // @synthesize voCursorSnapShotData=_voCursorSnapShotData;
 - (void).cxx_destruct;
 @property(retain) SCRWindowState *windowState;
-@property int dragState;
+@property long long dragState;
 - (id)dropDestinationDescription;
 - (void)setDropDestinationElement:(id)arg1;
 - (id)dropDestinationElement;

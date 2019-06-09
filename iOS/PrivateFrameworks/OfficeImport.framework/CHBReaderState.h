@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     int mXlCurrentPlotIndex;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) OADColorScheme *colorScheme;
 - (const struct XlChartSeriesFormat *)defaultFormatForXlSeries:(const struct XlChartDataSeries *)arg1;
 - (const struct XlChartSeriesFormat *)xlCurrentDefaultSeriesFormat;
@@ -37,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (id)resources;
 - (id)workbook;
 - (id)ebReaderSheetState;
-- (void)dealloc;
 - (id)initWithEBReaderSheetState:(id)arg1;
 
 @end

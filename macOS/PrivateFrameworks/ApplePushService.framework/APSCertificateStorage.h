@@ -11,19 +11,19 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (struct OpaqueSecKeychainRef *)getKeychain;
++ (struct __SecKeychain *)getKeychain;
 + (void)flushKeychain;
-+ (struct OpaqueSecKeychainRef *)unlockAndCopyKeychain;
++ (struct __SecKeychain *)unlockAndCopyKeychain;
 + (id)certificateName;
 + (id)activationRecordForName:(id)arg1;
-+ (struct OpaqueSecKeychainItemRef *)copyActivationRecordKeychainItemForName:(id)arg1;
-+ (struct OpaqueSecIdentityRef *)clientIdentity;
++ (struct __SecKeychainItem *)copyActivationRecordKeychainItemForName:(id)arg1;
++ (struct __SecIdentity *)clientIdentity;
 + (BOOL)hasEntitlement:(id)arg1;
-+ (id)identityExpirationDate:(struct OpaqueSecIdentityRef *)arg1;
-+ (struct OpaqueSecCertificateRef *)certificateForIdentity:(struct OpaqueSecIdentityRef *)arg1;
-+ (struct OpaqueSecIdentityRef *)identityForName:(id)arg1;
-+ (struct OpaqueSecCertificateRef *)certificateForName:(id)arg1;
-+ (id)commonNameForCertificate:(struct OpaqueSecCertificateRef *)arg1;
++ (id)identityExpirationDate:(struct __SecIdentity *)arg1;
++ (struct __SecCertificate *)certificateForIdentity:(struct __SecIdentity *)arg1;
++ (struct __SecIdentity *)identityForName:(id)arg1;
++ (struct __SecCertificate *)copyCertificateForName:(id)arg1;
++ (id)commonNameForCertificate:(struct __SecCertificate *)arg1;
 + (id)getUniqueHostIdentifier;
 
 @end

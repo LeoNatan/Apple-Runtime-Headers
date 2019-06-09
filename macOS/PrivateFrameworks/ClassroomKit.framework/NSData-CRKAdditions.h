@@ -7,8 +7,6 @@
 #import <Foundation/NSData.h>
 
 @interface NSData (CRKAdditions)
-- (id)crk_certificateFingerprint;
-- (id)crk_certificateCommonNames;
 - (id)crk_hexString;
 - (id)crk_sha1Hash;
 @end

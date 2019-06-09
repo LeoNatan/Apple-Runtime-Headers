@@ -8,6 +8,7 @@
 
 @class ODDFillColorList;
 
+__attribute__((visibility("hidden")))
 @interface ODDColorTransformStyleLabel : NSObject
 {
     ODDFillColorList *mFillColors;

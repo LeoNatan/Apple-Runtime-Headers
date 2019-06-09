@@ -24,6 +24,7 @@
 }
 
 + (id)sharedHardwareManager;
+- (id)setChipscope:(BOOL)arg1;
 - (void)actOnUserInitiatedSystemShutDown:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 @property(nonatomic) BOOL suspendBackgroundTagReading;
 @property(readonly, nonatomic) BOOL isBackgroundTagReadingAvailable;
@@ -42,11 +43,8 @@
 - (id)startSesHatSession:(CDUnknownBlockType)arg1;
 - (id)startReaderSession:(CDUnknownBlockType)arg1;
 - (id)startLoyaltyAndContactlessPaymentSession:(CDUnknownBlockType)arg1;
-- (id)startValueAddedServiceSession:(CDUnknownBlockType)arg1;
-- (id)startValueAddedServiceSession:(id)arg1 callback:(CDUnknownBlockType)arg2;
 - (id)startSecureElementManagerSessionWithPriority:(CDUnknownBlockType)arg1;
 - (id)startSecureElementManagerSession:(CDUnknownBlockType)arg1;
-- (id)startSecureElementSession:(id)arg1 didStartCallback:(CDUnknownBlockType)arg2;
 - (id)startContactlessUICCSession:(CDUnknownBlockType)arg1;
 - (id)startContactlessSession:(CDUnknownBlockType)arg1;
 - (id)startContactlessPaymentSession:(CDUnknownBlockType)arg1;
@@ -69,12 +67,14 @@
 @property(readonly) NSUUID *blessedUser;
 - (unsigned int)setBlessedUser:(id)arg1 keybagUUID:(id)arg2 withAuthorization:(id)arg3;
 - (unsigned int)setBlessedUser:(id)arg1 withAuthorization:(id)arg2;
+- (unsigned int)checkUserBlessing:(id)arg1 hasCards:(char *)arg2;
 - (unsigned int)checkUserBlessing:(id)arg1;
+- (void)dumpLPMDebugLog;
+- (id)getPowerCounters:(id *)arg1;
 - (id)disableHeadless;
 - (BOOL)getHeadlessFactoryMode:(id *)arg1;
 - (id)getHeadlessModeFlags:(unsigned int *)arg1;
 - (id)configureHeadlessFactoryMode:(BOOL)arg1;
-- (id)expressTransitIdentifier;
 - (BOOL)expressModesEnabled;
 - (BOOL)isExpressAppletTypeSupported:(unsigned char)arg1;
 - (BOOL)isExpressModeSupported;

@@ -14,6 +14,8 @@
 @interface IXPlaceholderAttributes : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _launchProhibited;
+    _Bool _watchOnlyApp;
+    _Bool _runsIndependentlyOfCompanionApp;
     NSString *_bundleVersion;
     NSDictionary *_extensionDictionary;
     NSString *_minimumOSVersion;
@@ -21,9 +23,13 @@
     NSArray *_sbAppTags;
     NSArray *_lsCounterpartIdentifiers;
     NSString *_sbIconMasqueradeIdentifier;
+    NSString *_companionBundleIdentifierForWatchApp;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool runsIndependentlyOfCompanionApp; // @synthesize runsIndependentlyOfCompanionApp=_runsIndependentlyOfCompanionApp;
+@property(nonatomic) _Bool watchOnlyApp; // @synthesize watchOnlyApp=_watchOnlyApp;
+@property(copy, nonatomic) NSString *companionBundleIdentifierForWatchApp; // @synthesize companionBundleIdentifierForWatchApp=_companionBundleIdentifierForWatchApp;
 @property(copy, nonatomic) NSString *sbIconMasqueradeIdentifier; // @synthesize sbIconMasqueradeIdentifier=_sbIconMasqueradeIdentifier;
 @property(copy, nonatomic) NSArray *lsCounterpartIdentifiers; // @synthesize lsCounterpartIdentifiers=_lsCounterpartIdentifiers;
 @property(copy, nonatomic) NSArray *sbAppTags; // @synthesize sbAppTags=_sbAppTags;

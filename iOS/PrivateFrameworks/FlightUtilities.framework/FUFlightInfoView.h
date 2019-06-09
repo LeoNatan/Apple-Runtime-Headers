@@ -46,10 +46,6 @@ __attribute__((visibility("hidden")))
     FULabel *_labelDurationComplete;
     FULabel *_labelBaggageClaimTitle;
     FULabel *_labelBaggageClaimValue;
-    FUSeparator *_sep1;
-    FUSeparator *_sep2;
-    FUSeparator *_sep3;
-    FUSeparator *_sep4;
     FUSeparator *_sep5;
     NSLayoutConstraint *_leadingInset;
     NSLayoutConstraint *_trailingInset;
@@ -76,10 +72,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSLayoutConstraint *trailingInset; // @synthesize trailingInset=_trailingInset;
 @property(retain, nonatomic) NSLayoutConstraint *leadingInset; // @synthesize leadingInset=_leadingInset;
 @property __weak FUSeparator *sep5; // @synthesize sep5=_sep5;
-@property __weak FUSeparator *sep4; // @synthesize sep4=_sep4;
-@property __weak FUSeparator *sep3; // @synthesize sep3=_sep3;
-@property __weak FUSeparator *sep2; // @synthesize sep2=_sep2;
-@property __weak FUSeparator *sep1; // @synthesize sep1=_sep1;
 @property __weak FULabel *labelBaggageClaimValue; // @synthesize labelBaggageClaimValue=_labelBaggageClaimValue;
 @property __weak FULabel *labelBaggageClaimTitle; // @synthesize labelBaggageClaimTitle=_labelBaggageClaimTitle;
 @property __weak FULabel *labelDurationComplete; // @synthesize labelDurationComplete=_labelDurationComplete;
@@ -126,6 +118,9 @@ __attribute__((visibility("hidden")))
 - (void)updateForFollowupContent:(_Bool)arg1;
 - (void)dealloc;
 - (void)updateFlightButtonIcon;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (void)didMoveToWindow;
+- (void)_dynamicUserInterfaceTraitDidChange;
 - (void)setupLabelStylesWithStyle:(unsigned long long)arg1;
 - (double)standardTableCellContentInset;
 - (void)awakeFromNib;

@@ -11,17 +11,17 @@
 @interface _MPMediaLibraryEntityRelationshipTranslator : NSObject
 {
     _Bool _transient;
-    struct ModelPropertyBase *_foreignPropertyBase;
     Class _relationshipModelClass;
+    struct ModelPropertyBase *_foreignPropertyBase;
     CDUnknownBlockType _validRelationshipHandler;
     shared_ptr_217a6612 _relationshipValidationProperties;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType validRelationshipHandler; // @synthesize validRelationshipHandler=_validRelationshipHandler;
 @property(nonatomic) shared_ptr_217a6612 relationshipValidationProperties; // @synthesize relationshipValidationProperties=_relationshipValidationProperties;
+@property(nonatomic) struct ModelPropertyBase *foreignPropertyBase; // @synthesize foreignPropertyBase=_foreignPropertyBase;
 @property(nonatomic) _Bool transient; // @synthesize transient=_transient;
 @property(nonatomic) Class relationshipModelClass; // @synthesize relationshipModelClass=_relationshipModelClass;
-@property(nonatomic) struct ModelPropertyBase *foreignPropertyBase; // @synthesize foreignPropertyBase=_foreignPropertyBase;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) MPMediaLibraryEntityTranslator *entityTranslator;

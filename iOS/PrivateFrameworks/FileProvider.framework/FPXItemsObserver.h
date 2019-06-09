@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
     NSData *_syncAnchor;
 }
 
-@property(retain) NSData *syncAnchor; // @synthesize syncAnchor=_syncAnchor;
+@property(copy) NSData *syncAnchor; // @synthesize syncAnchor=_syncAnchor;
 @property(copy) CDUnknownBlockType finishedBlock; // @synthesize finishedBlock=_finishedBlock;
 - (void).cxx_destruct;
 - (void)finishEnumeratingWithError:(id)arg1;

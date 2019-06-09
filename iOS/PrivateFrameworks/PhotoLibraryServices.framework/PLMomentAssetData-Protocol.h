@@ -5,20 +5,43 @@
 //
 
 #import <PhotoLibraryServices/PLMomentRefreshable-Protocol.h>
+#import <PhotoLibraryServices/PLRegionsClusteringItem-Protocol.h>
 
-@class CLLocation, NSArray, NSData, NSDate, NSObject, NSString;
-@protocol NSCopying, PLMomentAssetData, PLMomentData;
+@class CLLocation, NSArray, NSData, NSDate, NSObject, NSString, PLRevGeoLocationInfo, PLRevGeoPlaceAnnotation;
+@protocol NSCopying, PLMomentAssetData, PLMomentData, PLPhotosHighlightData;
 
-@protocol PLMomentAssetData <PLMomentRefreshable>
+@protocol PLMomentAssetData <PLMomentRefreshable, PLRegionsClusteringItem>
+@property(readonly, nonatomic) _Bool hasChanges;
+@property(readonly, nonatomic) _Bool isAvalancheStackPhoto;
+@property(readonly, nonatomic) _Bool isInterestingForAvalanche;
+@property(readonly, nonatomic) NSString *avalancheUUID;
+@property(readonly, nonatomic) _Bool isScreenRecording;
+@property(readonly, nonatomic) _Bool isVideo;
+@property(readonly, nonatomic) _Bool isPhoto;
 @property(nonatomic) double curationScore;
 @property(nonatomic) _Bool favorite;
-@property(readonly, retain, nonatomic) NSData *placeAnnotationData;
+@property(nonatomic) id <PLPhotosHighlightData> yearHighlightBeingKeyAsset;
+@property(nonatomic) id <PLPhotosHighlightData> monthHighlightBeingFirstAsset;
+@property(nonatomic) id <PLPhotosHighlightData> monthHighlightBeingKeyAsset;
+@property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingExtendedAssets;
+@property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingOverviewAssets;
+@property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingKeyAsset;
+@property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingAssets;
+@property(nonatomic) id <PLPhotosHighlightData> highlightBeingExtendedAssets;
+@property(nonatomic) id <PLPhotosHighlightData> highlightBeingOverviewAssets;
+@property(nonatomic) id <PLPhotosHighlightData> highlightBeingSummaryAssets;
+@property(nonatomic) id <PLPhotosHighlightData> highlightBeingKeyAsset;
+@property(nonatomic) id <PLPhotosHighlightData> highlightBeingAssets;
+@property(readonly, retain, nonatomic) PLRevGeoLocationInfo *locationInfo;
+@property(readonly, retain, nonatomic) PLRevGeoPlaceAnnotation *placeAnnotation;
 @property(nonatomic) _Bool shiftedLocationIsValid;
 @property(retain, nonatomic) CLLocation *shiftedLocation;
 @property(readonly, retain, nonatomic) NSObject<NSCopying> *uniqueObjectID;
 @property(nonatomic) _Bool reverseLocationDataIsValid;
 @property(retain, nonatomic) NSData *reverseLocationData;
 @property(retain, nonatomic) id <PLMomentData> moment;
+@property(readonly, nonatomic) int inferredTimeZoneOffset;
+@property(readonly, retain, nonatomic) NSDate *localDateCreated;
 @property(retain, nonatomic) NSDate *dateCreated;
 @property(retain, nonatomic) CLLocation *location;
 - (NSString *)globalUUID;
@@ -28,10 +51,6 @@
 - (long long)compareToAsset:(id <PLMomentAssetData>)arg1;
 
 @optional
-@property(retain, nonatomic) NSString *customCollectionUUID;
-@property(retain, nonatomic) NSString *customCollectionName;
-@property(retain, nonatomic) NSString *customMomentUUID;
-@property(retain, nonatomic) NSString *customMomentName;
 @property(readonly, retain, nonatomic) NSString *cloudAssetGUID;
 @property(nonatomic) long long width;
 @property(nonatomic) long long height;

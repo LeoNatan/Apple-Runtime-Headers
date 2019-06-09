@@ -9,6 +9,7 @@
 @class NPKPassColorProfile, NSArray, PKImage;
 
 @interface PKPass (NanoPassKitUI)
+@property(readonly) _Bool npkCanUseDynamicView;
 - (id)npkAccessoryDescription;
 @property(readonly) PKImage *npkUIPassholderImage;
 @property(readonly) PKImage *npkUICroppedFooterImage;

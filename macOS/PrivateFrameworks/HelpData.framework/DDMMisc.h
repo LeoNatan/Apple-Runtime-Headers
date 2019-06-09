@@ -18,12 +18,17 @@
 }
 
 @property(readonly) NSString *buildID; // @synthesize buildID=_buildID;
-@property(readonly) NSURL *remoteExactMatch; // @synthesize remoteExactMatch=_remoteExactMatch;
-@property(readonly) NSURL *remoteCSSearchIndex; // @synthesize remoteCSSearchIndex=_remoteCSSearchIndex;
-@property(readonly) NSURL *remoteSearchIndex; // @synthesize remoteSearchIndex=_remoteSearchIndex;
-@property(readonly) NSURL *harrierBaseURL; // @synthesize harrierBaseURL=_harrierBaseURL;
+@property(readonly, nonatomic) NSURL *remoteExactMatch; // @synthesize remoteExactMatch=_remoteExactMatch;
+@property(readonly, nonatomic) NSURL *remoteCSSearchIndex; // @synthesize remoteCSSearchIndex=_remoteCSSearchIndex;
+@property(readonly, nonatomic) NSURL *remoteSearchIndex; // @synthesize remoteSearchIndex=_remoteSearchIndex;
+@property(readonly, nonatomic) NSURL *harrierBaseURL; // @synthesize harrierBaseURL=_harrierBaseURL;
 - (void).cxx_destruct;
 - (id)description;
+- (id)mappepURL:(id)arg1;
+- (void)setRemoteExactMatch:(id)arg1;
+- (void)setRemoteCSSearchIndex:(id)arg1;
+- (void)setRemoteSearchIndex:(id)arg1;
+- (void)setHarrierBaseURL:(id)arg1;
 
 @end
 

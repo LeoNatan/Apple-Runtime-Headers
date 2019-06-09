@@ -17,14 +17,14 @@ __attribute__((visibility("hidden")))
     unsigned int _closingSoonMessageThresholdSecond;
     unsigned int _openingSoonMessageThresholdSecond;
     struct {
-        unsigned int closingSoonMessageThresholdSecond:1;
-        unsigned int openingSoonMessageThresholdSecond:1;
-    } _has;
+        unsigned int has_closingSoonMessageThresholdSecond:1;
+        unsigned int has_openingSoonMessageThresholdSecond:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int closingSoonMessageThresholdSecond; // @synthesize closingSoonMessageThresholdSecond=_closingSoonMessageThresholdSecond;
-@property(nonatomic) unsigned int openingSoonMessageThresholdSecond; // @synthesize openingSoonMessageThresholdSecond=_openingSoonMessageThresholdSecond;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,10 +33,13 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasClosingSoonMessageThresholdSecond;
+@property(nonatomic) unsigned int closingSoonMessageThresholdSecond;
 @property(nonatomic) BOOL hasOpeningSoonMessageThresholdSecond;
+@property(nonatomic) unsigned int openingSoonMessageThresholdSecond;
 
 @end
 

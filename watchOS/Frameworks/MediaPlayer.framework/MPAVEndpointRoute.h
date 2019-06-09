@@ -25,6 +25,9 @@
 - (_Bool)_groupLeaderIsOfDeviceSubtype:(unsigned int)arg1;
 - (void)_endpointOutputDevicesDidChange:(id)arg1;
 - (void)_endpointDidChange:(id)arg1;
+- (int)numberOfOutputDevices;
+- (_Bool)isSplitRoute;
+- (_Bool)isSplitterCapable;
 - (_Bool)supportsRemoteControl;
 - (_Bool)supportsGrouping;
 - (int)routeSubtype;

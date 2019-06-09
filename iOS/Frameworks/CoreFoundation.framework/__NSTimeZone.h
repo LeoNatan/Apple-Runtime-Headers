@@ -17,8 +17,6 @@ __attribute__((visibility("hidden")))
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)__new:(struct __CFString *)arg1 cache:(_Bool)arg2;
-+ (id)__new:(struct __CFString *)arg1 data:(struct __CFData *)arg2;
 + (void)initialize;
 - (void)dealloc;
 - (id)localizedName:(long long)arg1 locale:(id)arg2;

@@ -7,7 +7,6 @@
 #import <MobileTimer/NSObject-Protocol.h>
 
 @class MTAlarm, MTScheduledObject, MTTimer, NSArray;
-@protocol MTNotificationResponseDelegate;
 
 @protocol MTNotificationCenter <NSObject>
 - (void)dismissNotificationsForTimer:(MTTimer *)arg1;
@@ -17,8 +16,8 @@
 
 @optional
 - (void)removeAllDeliveredNotifications;
-- (void)registerResponseDelegate:(id <MTNotificationResponseDelegate>)arg1;
 - (void)dismissNotificationsWithIdentifiers:(NSArray *)arg1;
 - (void)dismissNotificationsForAlarm:(MTAlarm *)arg1 dismissAction:(unsigned int)arg2;
+- (void)dismissRelatedNotificationsForScheduledAlarm:(MTScheduledObject *)arg1;
 @end
 

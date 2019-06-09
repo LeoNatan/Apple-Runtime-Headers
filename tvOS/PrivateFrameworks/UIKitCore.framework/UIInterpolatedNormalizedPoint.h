@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)epsilon;
 + (id)valueWithCGPoint:(struct CGPoint)arg1;
 
 @end

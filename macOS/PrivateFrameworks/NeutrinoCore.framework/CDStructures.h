@@ -4,7 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#pragma mark Blocks
+#pragma mark Function Pointers and Blocks
+
+typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
@@ -31,16 +33,21 @@ struct CGAffineTransform {
 };
 
 struct CGPoint {
-    double _field1;
-    double _field2;
+    double x;
+    double y;
 };
 
 struct CGRect {
-    struct CGPoint _field1;
-    struct CGSize _field2;
+    struct CGPoint origin;
+    struct CGSize size;
 };
 
 struct CGSize {
+    double width;
+    double height;
+};
+
+struct CGVector {
     double _field1;
     double _field2;
 };
@@ -169,7 +176,8 @@ struct vector<unsigned char, std::__1::allocator<unsigned char>> {
 typedef struct {
     char _field1;
     char _field2;
-} CDStruct_7ddbbeae;
+    char _field3;
+} CDStruct_550fdc95;
 
 typedef struct {
     double min;

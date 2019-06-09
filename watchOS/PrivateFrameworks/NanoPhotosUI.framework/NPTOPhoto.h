@@ -37,7 +37,7 @@
 @property(readonly, nonatomic) UIImage *lazilyDecodedFullImage;
 - (id)_fullImageData;
 - (id)thumbnail:(int)arg1;
-- (id)_imageWithFormat:(int)arg1;
+- (id)_imageWithSize:(int)arg1;
 - (id)initWithAsset:(id)arg1;
 @property(readonly, nonatomic) UIImage *fullImage;
 @property(readonly, nonatomic) UIImage *aspectRatioThumbnail;

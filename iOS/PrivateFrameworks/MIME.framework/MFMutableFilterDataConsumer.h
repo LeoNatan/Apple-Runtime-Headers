@@ -18,11 +18,11 @@
     _Bool _isDone;
 }
 
+- (void).cxx_destruct;
 - (void)done;
 - (id)data;
 - (long long)appendData:(id)arg1;
 - (void)addDataConsumer:(id)arg1;
-- (void)dealloc;
 - (id)initWithMainConsumer:(id)arg1;
 
 // Remaining properties

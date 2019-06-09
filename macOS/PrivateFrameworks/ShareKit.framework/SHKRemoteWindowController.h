@@ -9,30 +9,31 @@
 #import <ShareKit/NSWindowDelegate-Protocol.h>
 #import <ShareKit/SHKHostWindowDelegate-Protocol.h>
 
-@class NSString, NSWindow, SHKBlurWindow, SHKDimAndShadowWindow, SHKRemoteView, SHKSharingService;
+@class NSString, NSWindow, SHKBlurWindow, SHKDimAndShadowWindow, SHKMarzipanRemoteViewController, SHKRemoteViewController, SHKSharingService;
 
-@interface SHKRemoteWindowController : NSWindowController <SHKHostWindowDelegate, NSWindowDelegate>
+__attribute__((visibility("hidden")))
+@interface SHKRemoteWindowController : NSWindowController <NSWindowDelegate, SHKHostWindowDelegate>
 {
     BOOL _disableServiceWindowPresentation;
-    BOOL _isInNotificationCenter;
     BOOL _noSourceWindow;
-    SHKRemoteView *_remoteView;
+    SHKRemoteViewController *_remoteViewController;
+    SHKMarzipanRemoteViewController *_marzipanRemoteViewController;
     SHKSharingService *_service;
-    NSWindow *_clientWindow;
+    NSWindow *_hostWindow;
     SHKDimAndShadowWindow *_dimAndShadowWindow;
     SHKBlurWindow *_blurWindow;
     struct CGRect _dimFrame;
 }
 
 @property BOOL noSourceWindow; // @synthesize noSourceWindow=_noSourceWindow;
-@property BOOL isInNotificationCenter; // @synthesize isInNotificationCenter=_isInNotificationCenter;
 @property BOOL disableServiceWindowPresentation; // @synthesize disableServiceWindowPresentation=_disableServiceWindowPresentation;
 @property(retain) SHKBlurWindow *blurWindow; // @synthesize blurWindow=_blurWindow;
 @property(retain) SHKDimAndShadowWindow *dimAndShadowWindow; // @synthesize dimAndShadowWindow=_dimAndShadowWindow;
 @property struct CGRect dimFrame; // @synthesize dimFrame=_dimFrame;
-@property(retain) NSWindow *clientWindow; // @synthesize clientWindow=_clientWindow;
+@property(retain) NSWindow *hostWindow; // @synthesize hostWindow=_hostWindow;
 @property __weak SHKSharingService *service; // @synthesize service=_service;
-@property __weak SHKRemoteView *remoteView; // @synthesize remoteView=_remoteView;
+@property __weak SHKMarzipanRemoteViewController *marzipanRemoteViewController; // @synthesize marzipanRemoteViewController=_marzipanRemoteViewController;
+@property __weak SHKRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 - (void).cxx_destruct;
 @property struct CGRect blurFrame;
 - (void)windowDidResignMain:(id)arg1;
@@ -52,9 +53,8 @@
 - (void)requestClientWindowFrameWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)setHostWindowFrame:(struct CGRect)arg1 withClientWindowSync:(BOOL)arg2 blurAndShadowSync:(BOOL)arg3;
 - (void)invalidate;
-- (void)readyToShowWindow;
-- (void)advanceToRunPhaseIfNeeded;
-- (id)initWithWindow:(id)arg1 clientWindow:(id)arg2 remoteView:(id)arg3 noSourceWindow:(BOOL)arg4 disableServiceWindowPresentation:(BOOL)arg5 isInNotificationCenter:(BOOL)arg6 service:(id)arg7;
+- (void)showRemoteWindow;
+- (id)initWithRemoteWindow:(id)arg1 hostWindow:(id)arg2 remoteViewController:(id)arg3 marzipanRemoteViewController:(id)arg4 noSourceWindow:(BOOL)arg5 disableServiceWindowPresentation:(BOOL)arg6 service:(id)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

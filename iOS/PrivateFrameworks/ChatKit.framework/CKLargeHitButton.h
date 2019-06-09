@@ -6,6 +6,7 @@
 
 #import <UIKit/UIButton.h>
 
+__attribute__((visibility("hidden")))
 @interface CKLargeHitButton : UIButton
 {
     struct UIEdgeInsets _hitTestInsets;

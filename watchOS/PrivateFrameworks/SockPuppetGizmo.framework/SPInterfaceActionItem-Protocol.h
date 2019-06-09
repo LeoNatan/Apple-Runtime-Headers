@@ -11,8 +11,5 @@
 @protocol SPInterfaceActionItem <SPInterfaceItem>
 - (void)setTarget:(id)arg1 forInterfaceItemAction:(SEL)arg2;
 - (NSString *)interfaceAction;
-
-@optional
-- (void)setTarget:(id)arg1 forPropertiesChanged:(SEL)arg2;
 @end
 

@@ -11,6 +11,7 @@
 
 @class MCPeerID, MCSession, NSString, NSURLSession, NSURLSessionDataTask;
 
+__attribute__((visibility("hidden")))
 @interface MCResourceDownloader : NSObject <NSURLSessionDelegate, NSURLSessionDataDelegate>
 {
     NSURLSession *_urlSession;

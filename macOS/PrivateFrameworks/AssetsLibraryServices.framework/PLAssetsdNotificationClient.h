@@ -14,7 +14,6 @@
 - (void)asyncNotifySuggestedCMMViewedForColletionID:(id)arg1;
 - (void)asyncNotifySuggestedCMMNotificationForColletionID:(id)arg1 notificationDeliveryDate:(id)arg2;
 - (void)asyncNotifyReportAsJunkPhotoStreamInvitationForAlbumWithCloudGUID:(id)arg1;
-- (void)asyncNotifyUserRespondedToMemoriesNotification;
 - (void)asyncNotifyInterestingMemoryNotificationViewedForColletionID:(id)arg1;
 - (void)asyncNotifyInterestingMemoryNotificationForColletionID:(id)arg1 keyAssetUUID:(id)arg2 notificationTitle:(id)arg3 notificationSubtitle:(id)arg4 notificationDeliveryDate:(id)arg5;
 - (void)asyncNotifyResponseToPhotoStreamInvitationForAlbumWithCloudGUID:(id)arg1 acceptInvitation:(BOOL)arg2;

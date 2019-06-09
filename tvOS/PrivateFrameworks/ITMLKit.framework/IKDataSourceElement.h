@@ -6,12 +6,18 @@
 
 #import <ITMLKit/IKViewElement.h>
 
-@class IKElementChangeSet, NSArray;
+@class IKChangeSet, NSArray, NSDictionary;
 @protocol IKDataSourceElementImplementing;
 
 @interface IKDataSourceElement : IKViewElement
 {
     _Bool _areItemsBound;
+    struct {
+        _Bool hasResetImplicitUpdates;
+        _Bool hasProxyElementForLoadedChildElement;
+        _Bool hasCanProxyUnloadedChildElement;
+    } _implFlags;
+    NSDictionary *_indexTitles;
     NSArray *_autoHighlightedChildElements;
     long long _autoHighlightIndex;
     id <IKDataSourceElementImplementing> _impl;
@@ -21,21 +27,28 @@
 @property(readonly, nonatomic) id <IKDataSourceElementImplementing> impl; // @synthesize impl=_impl;
 @property(nonatomic) long long autoHighlightIndex; // @synthesize autoHighlightIndex=_autoHighlightIndex;
 @property(copy, nonatomic) NSArray *autoHighlightedChildElements; // @synthesize autoHighlightedChildElements=_autoHighlightedChildElements;
+@property(copy, nonatomic) NSDictionary *indexTitles; // @synthesize indexTitles=_indexTitles;
 - (void).cxx_destruct;
-- (_Bool)areItemsBound;
+- (id)_parsedIndexTitlesFromString:(id)arg1;
+@property(readonly, nonatomic, getter=areItemsBound) _Bool itemsBound;
+- (_Bool)canProxyUnloadedChildElement:(id)arg1;
+- (id)proxyElementForLoadedChildElement:(id)arg1;
 - (void)appDocumentDidMarkStylesDirty;
-- (id)actualElementForProxyElement:(id)arg1 jsContext:(id)arg2;
+- (void)resetImplicitUpdates;
 - (void)resetUpdates;
 - (void)unloadIndex:(long long)arg1;
 - (void)loadIndex:(long long)arg1;
+- (long long)indexOfItemForElement:(id)arg1;
 - (id)elementForItemAtIndex:(long long)arg1;
 - (id)prototypeForItemAtIndex:(long long)arg1;
 - (long long)numberOfItems;
-@property(readonly, nonatomic) IKElementChangeSet *itemsChangeset;
+@property(readonly, nonatomic) IKChangeSet *itemsChangeSet;
+@property(readonly, copy, nonatomic) NSArray *proxiedItemElements;
 @property(readonly, nonatomic) NSArray *prototypes;
 - (void)resetProperty:(unsigned long long)arg1;
 - (id)applyUpdatesWithElement:(id)arg1;
 - (void)configureUpdatesWithElement:(id)arg1;
+- (id)debugDescription;
 - (void)dealloc;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (void)enumerateItemElementsUsingBlock:(CDUnknownBlockType)arg1;

@@ -8,20 +8,31 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOTraitsTransitScheduleModeFilter, GEOTraitsTransitScheduleTimeRange, PBUnknownFields;
+@class GEOTraitsTransitScheduleModeFilter, GEOTraitsTransitScheduleTimeRange, PBDataReader, PBUnknownFields;
 
 @interface GEOTraitsTransitScheduleFilter : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOTraitsTransitScheduleModeFilter *_highFrequencyFilter;
     GEOTraitsTransitScheduleModeFilter *_lowFrequencyFilter;
     GEOTraitsTransitScheduleTimeRange *_operatingHoursRange;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_highFrequencyFilter:1;
+        unsigned int read_lowFrequencyFilter:1;
+        unsigned int read_operatingHoursRange:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_highFrequencyFilter:1;
+        unsigned int wrote_lowFrequencyFilter:1;
+        unsigned int wrote_operatingHoursRange:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOTraitsTransitScheduleTimeRange *operatingHoursRange; // @synthesize operatingHoursRange=_operatingHoursRange;
-@property(retain, nonatomic) GEOTraitsTransitScheduleModeFilter *lowFrequencyFilter; // @synthesize lowFrequencyFilter=_lowFrequencyFilter;
-@property(retain, nonatomic) GEOTraitsTransitScheduleModeFilter *highFrequencyFilter; // @synthesize highFrequencyFilter=_highFrequencyFilter;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,11 +41,18 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOTraitsTransitScheduleTimeRange *operatingHoursRange;
 @property(readonly, nonatomic) _Bool hasOperatingHoursRange;
+- (void)_readOperatingHoursRange;
+@property(retain, nonatomic) GEOTraitsTransitScheduleModeFilter *lowFrequencyFilter;
 @property(readonly, nonatomic) _Bool hasLowFrequencyFilter;
+- (void)_readLowFrequencyFilter;
+@property(retain, nonatomic) GEOTraitsTransitScheduleModeFilter *highFrequencyFilter;
 @property(readonly, nonatomic) _Bool hasHighFrequencyFilter;
+- (void)_readHighFrequencyFilter;
 
 @end
 

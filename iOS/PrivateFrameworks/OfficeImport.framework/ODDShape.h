@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mAdjustments;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)addAdjustment:(id)arg1;
 - (id)adjustments;
@@ -23,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (int)presetType;
 - (void)setType:(int)arg1;
 - (int)type;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -6,10 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-__attribute__((visibility("hidden")))
+@class UILabel;
+
 @interface _TtC15ConversationKit33ParticipantViewLabelContainerView : UIView
 {
     // Error parsing type: , name: label
+    // Error parsing type: , name: centerAlignedConstraints
+    // Error parsing type: , name: leadingAlignedConstraints
+    // Error parsing type: , name: isCentered
 }
 
 + (Class)layerClass;
@@ -17,6 +21,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithCoder:(id)arg1;
 @property(nonatomic, readonly) struct CGSize intrinsicContentSize;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(nonatomic, readonly) UILabel *label; // @synthesize label;
 
 @end
 

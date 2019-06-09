@@ -10,6 +10,7 @@
 @protocol HUDetailsPresentationDelegateHost;
 
 @protocol HUQuickControlContainerViewControllerDelegate <NSObject>
+- (void)quickControlViewControllerDidTapDetailsButton:(HUQuickControlContainerViewController *)arg1;
 - (void)quickControlViewControllerWillDismissDetailsViewController:(HUQuickControlContainerViewController *)arg1 shouldDismissQuickControl:(_Bool)arg2;
 - (UIViewController<HUDetailsPresentationDelegateHost> *)detailsViewControllerForQuickControlViewController:(HUQuickControlContainerViewController *)arg1 item:(HFItem *)arg2;
 - (_Bool)hasDetailsActionForQuickControlViewController:(HUQuickControlContainerViewController *)arg1 item:(HFItem *)arg2;

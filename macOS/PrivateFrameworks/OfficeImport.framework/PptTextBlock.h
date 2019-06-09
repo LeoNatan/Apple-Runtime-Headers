@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableString;
 
+__attribute__((visibility("hidden")))
 @interface PptTextBlock : NSObject
 {
     struct PptTextHeaderAtom *mTextHeader;

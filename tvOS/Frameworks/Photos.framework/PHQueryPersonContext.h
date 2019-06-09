@@ -14,7 +14,6 @@
 }
 
 + (id)subpredicatesForFetchOptions:(id)arg1;
-+ (unsigned long long)peopleHomeUnverifiedFaceCountThreshold;
 - (void).cxx_destruct;
 - (id)personContextOneUpPredicate;
 - (id)personContextDetailPredicate;

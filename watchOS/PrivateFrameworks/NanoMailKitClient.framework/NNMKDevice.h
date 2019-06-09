@@ -14,12 +14,14 @@
     _Bool _isClassCDataAvailable;
     _Bool _isRunningInStoreDemoMode;
     NSString *_registryBasePath;
+    NSString *_databaseSubfolder;
 }
 
 + (_Bool)isWebKitSupported;
 + (_Bool)isJapanRegion;
 + (id)sharedInstance;
 @property(readonly, nonatomic) _Bool isRunningInStoreDemoMode; // @synthesize isRunningInStoreDemoMode=_isRunningInStoreDemoMode;
+@property(readonly, nonatomic) NSString *databaseSubfolder; // @synthesize databaseSubfolder=_databaseSubfolder;
 @property(readonly, nonatomic) NSString *registryBasePath; // @synthesize registryBasePath=_registryBasePath;
 @property(readonly, nonatomic) _Bool isClassCDataAvailable; // @synthesize isClassCDataAvailable=_isClassCDataAvailable;
 @property(readonly, nonatomic) _Bool isDeviceUnlocked; // @synthesize isDeviceUnlocked=_isDeviceUnlocked;
@@ -29,6 +31,7 @@
 @property(readonly, nonatomic) _Bool isRunningTest;
 - (void)setIsRunningInStoreDemoMode:(_Bool)arg1;
 - (void)setIsDeviceUnlocked:(_Bool)arg1;
+- (void)setDatabaseSubfolder:(id)arg1;
 - (void)setRegistryBasePath:(id)arg1;
 - (id)_defaultRegistryBasePath;
 - (void)_updateDeviceUnlockedState;

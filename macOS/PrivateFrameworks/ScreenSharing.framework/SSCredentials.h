@@ -10,12 +10,11 @@
 
 @interface SSCredentials : NSObject
 {
-    NSString *mAuthenticationType;
-    void *mReservedForInstanceVariables;
+    NSString *_authenticationType;
 }
 
 + (id)noAuthenticationNeededCredentials;
-@property(readonly) NSString *authenticationType; // @synthesize authenticationType=mAuthenticationType;
+@property NSString *authenticationType; // @synthesize authenticationType=_authenticationType;
 - (id)description;
 - (id)initWithAuthenticationType:(id)arg1;
 

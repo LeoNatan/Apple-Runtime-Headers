@@ -9,6 +9,7 @@
 @class NSTimer;
 @protocol CKInvisibleInkEffectCoverageTrackerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKInvisibleInkEffectCoverageTracker : NSObject
 {
     double *_expiryTimes;

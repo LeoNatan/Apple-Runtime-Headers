@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 {
     int _type;
     OADOrientedBounds *_orientedBounds;
-    int _format;
+    unsigned long long _format;
     NSDictionary *_adjustValues;
 }
 
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isOffice12;
 - (struct CGAffineTransform)affineTransform;
 - (void)setAdjustValues:(id)arg1;
-- (void)setFileFormat:(int)arg1;
+- (void)setFileFormat:(unsigned long long)arg1;
 - (void)setShapeType:(int)arg1;
 - (void)setOrientedBounds:(id)arg1;
 

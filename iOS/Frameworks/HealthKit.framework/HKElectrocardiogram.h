@@ -29,9 +29,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)prepareForSaving:(id *)arg1;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned long long)arg1;
 - (id)payload;
 - (void)_setPayload:(id)arg1;
+- (void)_enumerateDataForLead:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (void)enumerateDataForLead:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) HKQuantity *frequency;
 @property(readonly, nonatomic) long long numberOfValues;

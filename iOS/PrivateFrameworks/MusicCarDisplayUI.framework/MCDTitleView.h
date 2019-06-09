@@ -6,13 +6,14 @@
 
 #import <UIKit/UIView.h>
 
-@class NSLayoutConstraint, UILabel;
+@class NSLayoutConstraint, UIFont, UILabel;
 
 @interface MCDTitleView : UIView
 {
-    NSLayoutConstraint *_titlePaddingConstraint;
+    NSLayoutConstraint *_badgeWidthConstraint;
     _Bool _explicitTrack;
     _Bool _shouldUseMusicExplicitGlyph;
+    UIFont *_font;
     UILabel *_titleLabel;
     UILabel *_explicitLabel;
 }
@@ -23,8 +24,11 @@
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 - (void)_updateExplicitTreatmentString;
-- (id)_addLabelWithFont:(id)arg1;
-- (void)_addConstraints;
+- (id)_createLabelWithTextAlignment:(long long)arg1;
+- (struct CGSize)intrinsicContentSize;
+- (void)updateConstraints;
+@property(retain, nonatomic) UIFont *font; // @synthesize font=_font;
+- (void)setupConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

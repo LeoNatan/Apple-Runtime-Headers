@@ -16,11 +16,14 @@
     CDStruct_95bda58d _photoSizes;
     int _maxPhotos;
     int _photoType;
-    CDStruct_86c1f53f _has;
+    struct {
+        unsigned int has_photoType:1;
+    } _flags;
 }
 
-@property(nonatomic) int maxPhotos; // @synthesize maxPhotos=_maxPhotos;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -29,6 +32,7 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsPhotoSizes:(id)arg1;
@@ -42,7 +46,8 @@
 - (int)StringAsPhotoType:(id)arg1;
 - (id)photoTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasPhotoType;
-@property(nonatomic) int photoType; // @synthesize photoType=_photoType;
+@property(nonatomic) int photoType;
+@property(nonatomic) int maxPhotos;
 - (void)dealloc;
 
 @end

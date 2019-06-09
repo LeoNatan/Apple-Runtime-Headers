@@ -18,7 +18,6 @@
 - (_Bool)appendTimedMetadataGroup:(id)arg1;
 @property(readonly, nonatomic) AVAssetWriterInput *assetWriterInput;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithAssetWriterInput:(id)arg1;
 - (id)init;

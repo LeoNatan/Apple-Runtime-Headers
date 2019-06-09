@@ -11,28 +11,19 @@
 
 @interface NPTunnelFlowProtocol : NPTunnelFlow
 {
-    BOOL _waitingForOutput;
-    BOOL _disconnectedByApp;
     BOOL _disconnectedByTunnel;
+    NSObject<OS_dispatch_data> *_inputBuffer;
     BOOL _discardFirstData;
     BOOL _connectedOnTunnelReadyForData;
     BOOL _connectedOnInitialData;
+    BOOL _waitingForOutput;
     struct nw_protocol *_inputProtocol;
-    NSObject<OS_dispatch_data> *_inputBuffer;
 }
 
-@property BOOL connectedOnInitialData; // @synthesize connectedOnInitialData=_connectedOnInitialData;
-@property BOOL connectedOnTunnelReadyForData; // @synthesize connectedOnTunnelReadyForData=_connectedOnTunnelReadyForData;
-@property BOOL discardFirstData; // @synthesize discardFirstData=_discardFirstData;
-@property(retain) NSObject<OS_dispatch_data> *inputBuffer; // @synthesize inputBuffer=_inputBuffer;
-@property BOOL disconnectedByTunnel; // @synthesize disconnectedByTunnel=_disconnectedByTunnel;
-@property BOOL disconnectedByApp; // @synthesize disconnectedByApp=_disconnectedByApp;
-@property BOOL waitingForOutput; // @synthesize waitingForOutput=_waitingForOutput;
-@property(readonly) struct nw_protocol *inputProtocol; // @synthesize inputProtocol=_inputProtocol;
+@property(readonly, nonatomic) BOOL waitingForOutput; // @synthesize waitingForOutput=_waitingForOutput;
+@property(readonly, nonatomic) struct nw_protocol *inputProtocol; // @synthesize inputProtocol=_inputProtocol;
 - (void).cxx_destruct;
 - (void)handleAppData:(id)arg1;
-- (id)appData;
-- (void)setAppData:(id)arg1;
 - (void)handleOutputFrame:(id)arg1 send:(BOOL)arg2;
 - (unsigned int)addOutputFramesToArray:(struct nw_frame_array_s *)arg1 limitMinimumBytes:(unsigned int)arg2 limitMaximumBytes:(unsigned int)arg3 limitMaximumFrames:(unsigned int)arg4;
 - (BOOL)addBufferToFrameArray:(struct nw_frame_array_s *)arg1 bufferSize:(unsigned long long)arg2;

@@ -12,7 +12,7 @@
 
 - (_Bool)canCommitPreview;
 - (_Bool)displaysAvalancheStacks;
-- (int)thumbnailImageFormat;
+- (unsigned short)thumbnailImageFormat;
 
 @end
 

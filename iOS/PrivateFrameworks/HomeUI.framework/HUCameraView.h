@@ -8,7 +8,7 @@
 
 #import <HomeUI/UIScrollViewDelegate-Protocol.h>
 
-@class HMCameraSource, HMCameraView, HUCameraBadgeView, HUCameraErrorContent, HUCameraErrorView, HUCenteringScrollView, HURemoteContextHostingView, NADecayingTimer, NSArray, NSLayoutConstraint, NSLayoutYAxisAnchor, NSString, UIActivityIndicatorView, UIImageView, UITapGestureRecognizer;
+@class HMCameraSource, HMCameraView, HUCameraBadgeView, HUCameraErrorContent, HUCameraErrorView, HUCenteringScrollView, HURemoteContextHostingView, NADecayingTimer, NSArray, NSLayoutConstraint, NSLayoutYAxisAnchor, NSString, UIActivityIndicatorView, UIImageView, UITapGestureRecognizer, UIVisualEffectView;
 
 @interface HUCameraView : UIView <UIScrollViewDelegate>
 {
@@ -23,7 +23,7 @@
     HUCameraBadgeView *_badgeView;
     UIView *_cameraOverlayView;
     HUCenteringScrollView *_scrollView;
-    UIView *_cameraDimmingView;
+    UIVisualEffectView *_cameraDimmingView;
     UIView *_backgroundView;
     HUCameraErrorView *_errorView;
     UIActivityIndicatorView *_activityIndicatorView;
@@ -44,7 +44,7 @@
 @property(retain, nonatomic) UIActivityIndicatorView *activityIndicatorView; // @synthesize activityIndicatorView=_activityIndicatorView;
 @property(retain, nonatomic) HUCameraErrorView *errorView; // @synthesize errorView=_errorView;
 @property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
-@property(retain, nonatomic) UIView *cameraDimmingView; // @synthesize cameraDimmingView=_cameraDimmingView;
+@property(retain, nonatomic) UIVisualEffectView *cameraDimmingView; // @synthesize cameraDimmingView=_cameraDimmingView;
 @property(retain, nonatomic) HUCenteringScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property(readonly, nonatomic) UIView *cameraOverlayView; // @synthesize cameraOverlayView=_cameraOverlayView;
 @property(readonly, nonatomic) HUCameraBadgeView *badgeView; // @synthesize badgeView=_badgeView;
@@ -67,6 +67,7 @@
 - (void)_updateErrorAndActivityIndicatorVisibilityAnimated:(_Bool)arg1;
 - (void)_updateMaskedCameraCorners;
 - (void)_adjustContentInsets;
+- (struct CGRect)_centeredAspectFillCameraRect;
 - (void)scrollViewDidEndZooming:(id)arg1 withView:(id)arg2 atScale:(double)arg3;
 - (id)viewForZoomingInScrollView:(id)arg1;
 - (void)resetCameraZoom;

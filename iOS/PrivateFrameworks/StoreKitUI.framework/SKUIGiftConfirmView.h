@@ -8,6 +8,7 @@
 
 @class SKUIGiftConfiguration, SKUIGiftConfirmLabeledValue, UIButton, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftConfirmView : UIView
 {
     SKUIGiftConfirmLabeledValue *_amountView;
@@ -33,8 +34,8 @@
 
 - (void).cxx_destruct;
 - (id)_termsButton;
-- (id)_newLightLabelWithSize:(double)arg1 white:(double)arg2 alpha:(double)arg3;
-- (id)_newBoldLabelWithSize:(double)arg1 white:(double)arg2;
+- (id)_newLightLabelWithSize:(double)arg1 alpha:(double)arg2;
+- (id)_newBoldLabelWithSize:(double)arg1;
 - (void)layoutSubviews;
 @property(readonly, nonatomic) UIButton *termsButton;
 - (id)initWithGift:(id)arg1 configuration:(id)arg2;

@@ -9,7 +9,7 @@
 #import <CameraUI/CAMNebulaDaemonTimelapseClientProtocol-Protocol.h>
 #import <CameraUI/CAMStillImageCaptureRequestDelegate-Protocol.h>
 
-@class CAMFocusResult, CAMLocationController, CAMMotionController, CAMNebulaDaemonProxyManager, CAMPersistenceController, CAMTimelapseState, CUCaptureController, NSCountedSet, NSDate, NSMutableSet, NSString;
+@class CAMCaptureGraphConfiguration, CAMFocusResult, CAMLocationController, CAMMotionController, CAMNebulaDaemonProxyManager, CAMPersistenceController, CAMStorageController, CAMTimelapseState, CUCaptureController, NSCountedSet, NSDate, NSMutableSet, NSString;
 @protocol CAMTimelapseControllerDelegate, OS_dispatch_source;
 
 @interface CAMTimelapseController : NSObject <CAMStillImageCaptureRequestDelegate, CAMNebulaDaemonTimelapseClientProtocol>
@@ -20,6 +20,7 @@
     _Bool __backendRecoveryNeeded;
     _Bool __previewStarted;
     _Bool __focusAndExposureAdjusted;
+    CAMCaptureGraphConfiguration *__graphConfigurationForCurrentState;
     id <CAMTimelapseControllerDelegate> _delegate;
     CAMFocusResult *_lastFocusResult;
     CAMTimelapseState *__state;
@@ -30,11 +31,13 @@
     CAMLocationController *__locationController;
     CAMMotionController *__motionController;
     CAMPersistenceController *__persistenceController;
+    CAMStorageController *__storageController;
     CAMNebulaDaemonProxyManager *__nebulaDaemonProxyManager;
 }
 
 + (id)createPlaceholderResultForTimelapseState:(id)arg1;
 @property(readonly, nonatomic) CAMNebulaDaemonProxyManager *_nebulaDaemonProxyManager; // @synthesize _nebulaDaemonProxyManager=__nebulaDaemonProxyManager;
+@property(readonly, nonatomic) CAMStorageController *_storageController; // @synthesize _storageController=__storageController;
 @property(readonly, nonatomic) CAMPersistenceController *_persistenceController; // @synthesize _persistenceController=__persistenceController;
 @property(readonly, nonatomic) CAMMotionController *_motionController; // @synthesize _motionController=__motionController;
 @property(readonly, nonatomic) CAMLocationController *_locationController; // @synthesize _locationController=__locationController;
@@ -79,6 +82,8 @@
 @property(readonly, nonatomic) NSDate *captureStartTime;
 - (void)_reserveDiskSpaceForTimelapseUUID:(id)arg1 preferHEVC:(_Bool)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)_restoreCaptureStateFromDisk;
+- (void)_invalidateCachedGraphConfiguration;
+@property(readonly, nonatomic, getter=_graphConfigurationForCurrentState) CAMCaptureGraphConfiguration *_graphConfigurationForCurrentState; // @synthesize _graphConfigurationForCurrentState=__graphConfigurationForCurrentState;
 - (void)_setNewCaptureStateForCaptureDevice:(long long)arg1 captureSession:(unsigned short)arg2;
 - (void)_stopCapturingWithReasons:(long long)arg1;
 - (void)_startCapturingWithCaptureDevice:(long long)arg1 captureSession:(unsigned short)arg2;
@@ -90,7 +95,7 @@
 - (void)restoreConfiguration;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCaptureController:(id)arg1 locationController:(id)arg2 motionController:(id)arg3 persistenceController:(id)arg4 nebulaDaemonProxyManager:(id)arg5;
+- (id)initWithCaptureController:(id)arg1 locationController:(id)arg2 motionController:(id)arg3 persistenceController:(id)arg4 storageController:(id)arg5 nebulaDaemonProxyManager:(id)arg6;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

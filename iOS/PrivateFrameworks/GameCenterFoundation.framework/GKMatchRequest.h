@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GKMatchRequestInternal, NSArray, NSString;
+@class GKMatchRequestInternal, GKTournament, NSArray, NSString;
 
 @interface GKMatchRequest : NSObject
 {
@@ -21,10 +21,13 @@
 @property(copy) CDUnknownBlockType recipientResponseHandler; // @synthesize recipientResponseHandler=_recipientResponseHandler;
 @property(copy) CDUnknownBlockType inviteeResponseHandler; // @synthesize inviteeResponseHandler=_inviteeResponseHandler;
 @property(retain) GKMatchRequestInternal *internal; // @synthesize internal=_internal;
+- (_Bool)isConfiguredForAutomatchOnly;
+- (_Bool)isIncorrectlyInvitingPlayers;
 - (void)loadRecipientsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 @property(retain) NSArray *playersToInvite; // @dynamic playersToInvite;
+@property(retain) GKTournament *tournamentForInvitePool;
 @property(retain) NSArray *recipients; // @dynamic recipients;
 - (id)guestPlayers;
 - (_Bool)respondsToSelector:(SEL)arg1;
@@ -52,6 +55,7 @@
 @property unsigned long long minPlayers; // @dynamic minPlayers;
 @property unsigned int playerAttributes; // @dynamic playerAttributes;
 @property unsigned long long playerGroup; // @dynamic playerGroup;
+@property _Bool restrictToAutomatch; // @dynamic restrictToAutomatch;
 
 @end
 

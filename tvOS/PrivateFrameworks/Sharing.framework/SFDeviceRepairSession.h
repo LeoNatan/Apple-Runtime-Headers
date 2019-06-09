@@ -14,6 +14,7 @@
     _Bool _activateCalled;
     _Bool _invalidateCalled;
     unsigned long long _startTicks;
+    int _preflightWiFiEarlyState;
     int _preflightWiFiState;
     SFSession *_sfSession;
     int _sfSessionState;
@@ -63,7 +64,8 @@
 - (int)_runGetProblems;
 - (int)_runPairVerify;
 - (int)_runSFSessionStart;
-- (int)_runPreflightWiFi;
+- (int)_runPreflightWiFiFull;
+- (int)_runPreflightWiFiEarly;
 - (void)_run;
 - (void)_reportError:(id)arg1;
 - (void)invalidate;

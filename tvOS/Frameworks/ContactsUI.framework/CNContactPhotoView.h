@@ -7,8 +7,6 @@
 #import <UIKit/UIControl.h>
 
 #import <ContactsUI/CNAvatarViewDelegate-Protocol.h>
-#import <ContactsUI/QLPreviewControllerDataSource-Protocol.h>
-#import <ContactsUI/QLPreviewControllerDelegate-Protocol.h>
 #import <ContactsUI/UIImagePickerControllerDelegate-Protocol.h>
 #import <ContactsUI/UINavigationControllerDelegate-Protocol.h>
 
@@ -16,7 +14,7 @@
 @protocol CNContactPhotoViewDelegate, CNPresenterDelegate;
 
 __attribute__((visibility("hidden")))
-@interface CNContactPhotoView : UIControl <UINavigationControllerDelegate, UIImagePickerControllerDelegate, QLPreviewControllerDelegate, QLPreviewControllerDataSource, CNAvatarViewDelegate>
+@interface CNContactPhotoView : UIControl <UINavigationControllerDelegate, UIImagePickerControllerDelegate, CNAvatarViewDelegate>
 {
     _Bool _editing;
     _Bool _modified;
@@ -53,16 +51,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(retain, nonatomic) NSArray *contacts; // @synthesize contacts=_contacts;
 - (void).cxx_destruct;
-- (id)previewController:(id)arg1 previewItemAtIndex:(long long)arg2;
-- (long long)numberOfPreviewItemsInPreviewController:(id)arg1;
-- (void)previewControllerDidDismiss:(id)arg1;
-- (struct CGRect)previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id *)arg3;
-- (id)previewController:(id)arg1 transitionViewForPreviewItem:(id)arg2;
-- (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect *)arg3;
 - (void)avatarView:(id)arg1 willShowActions:(id)arg2;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
 - (void)_bounceSmallPhoto;
-- (void)_presentFullScreenPhoto:(id)arg1;
 - (void)_zoomContactPhoto;
 - (id)previewPath;
 - (id)_createImagePickerForEditingImageData:(id)arg1 withCropRect:(struct CGRect)arg2;

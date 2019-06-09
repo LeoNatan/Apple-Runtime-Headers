@@ -21,6 +21,7 @@
 
 - (void).cxx_destruct;
 - (void)CSEventMonitorDidReceiveEvent:(id)arg1;
+- (void)notifyCallback;
 - (void)notifyCallback:(_Bool)arg1;
 - (_Bool)isEnabled;
 - (_Bool)_checkAllConditionsEnabled;

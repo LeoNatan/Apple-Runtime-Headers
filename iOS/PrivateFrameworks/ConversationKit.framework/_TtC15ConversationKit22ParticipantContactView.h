@@ -6,19 +6,19 @@
 
 #import <UIKit/UIView.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit22ParticipantContactView : UIView
 {
     // Error parsing type: , name: gradientView
     // Error parsing type: , name: contactMonogram
-    // Error parsing type: , name: contactSilhouetteImageView
+    // Error parsing type: , name: silhouette
     // Error parsing type: , name: contactDetails
 }
 
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

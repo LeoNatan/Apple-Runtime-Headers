@@ -60,7 +60,6 @@
 - (BOOL)_hasFirstResponder;
 - (BOOL)performKeyEquivalent:(id)arg1;
 - (void)scrollToCellAtIndex:(unsigned long long)arg1 constrainScroll:(BOOL)arg2;
-- (BOOL)scrollRectToVisible:(struct CGRect)arg1;
 - (void)scrollPoint:(struct CGPoint)arg1;
 - (void)_scrollEdge:(unsigned long long)arg1 to:(CDUnknownBlockType)arg2;
 - (id)enclosingScrollView;

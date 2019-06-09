@@ -15,6 +15,8 @@
     PVSceneTaxonomy *_taxonomy;
     NSString *_name;
     double _threshold;
+    double _highRecallThreshold;
+    double _highPrecisionThreshold;
     NSMutableSet *_parentNodes;
     NSMutableSet *_childNodes;
 }
@@ -22,6 +24,8 @@
 + (id)localizedStringForKey:(id)arg1 localizationBundle:(id)arg2 tableName:(id)arg3;
 @property(retain) NSMutableSet *childNodes; // @synthesize childNodes=_childNodes;
 @property(retain) NSMutableSet *parentNodes; // @synthesize parentNodes=_parentNodes;
+@property(readonly) double highPrecisionThreshold; // @synthesize highPrecisionThreshold=_highPrecisionThreshold;
+@property(readonly) double highRecallThreshold; // @synthesize highRecallThreshold=_highRecallThreshold;
 @property(readonly) double threshold; // @synthesize threshold=_threshold;
 @property(readonly, getter=isIndexed) BOOL indexed; // @synthesize indexed=_indexed;
 @property(readonly, copy) NSString *name; // @synthesize name=_name;
@@ -35,11 +39,12 @@
 - (id)localizedSynonyms;
 - (id)localizedLabel;
 - (void)traverse:(long long)arg1 visitor:(CDUnknownBlockType)arg2;
+- (void)recursivelyReleaseParents;
 - (void)addChildNode:(id)arg1;
 @property(readonly, copy) NSSet *children;
 @property(readonly, copy) NSSet *parents;
 @property(readonly, getter=isRoot) BOOL root;
-- (id)initWithSceneClassId:(unsigned int)arg1 name:(id)arg2 indexed:(BOOL)arg3 threshold:(double)arg4 taxonomy:(id)arg5;
+- (id)initWithSceneClassId:(unsigned int)arg1 name:(id)arg2 indexed:(BOOL)arg3 threshold:(double)arg4 highRecallThreshold:(double)arg5 highPrecisionThreshold:(double)arg6 taxonomy:(id)arg7;
 
 @end
 

@@ -14,7 +14,7 @@
 {
 }
 
-- (void)_dispose;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

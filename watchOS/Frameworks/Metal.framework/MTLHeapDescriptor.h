@@ -18,8 +18,11 @@
 
 // Remaining properties
 @property(nonatomic) unsigned int cpuCacheMode; // @dynamic cpuCacheMode;
+@property(nonatomic) unsigned int hazardTrackingMode; // @dynamic hazardTrackingMode;
+@property(nonatomic) unsigned int resourceOptions; // @dynamic resourceOptions;
 @property(nonatomic) unsigned int size; // @dynamic size;
 @property(nonatomic) unsigned int storageMode; // @dynamic storageMode;
+@property(nonatomic) int type; // @dynamic type;
 
 @end
 

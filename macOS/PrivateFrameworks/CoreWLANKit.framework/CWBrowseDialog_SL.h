@@ -11,18 +11,18 @@
 #import <CoreWLANKit/NSTableViewDelegate-Protocol.h>
 #import <CoreWLANKit/NSTextFieldDelegate-Protocol.h>
 
-@class CWInterface, CWNetwork, CWNetworkProfile, NSArray, NSButton, NSProgressIndicator, NSScrollView, NSString, NSTableView, NSTextField;
+@class CWDisplayedScanResult, NSArray, NSButton, NSProgressIndicator, NSScrollView, NSString, NSTableView, NSTextField;
 
 @interface CWBrowseDialog_SL : NSWindowController <NSCollectionViewDelegate, NSTextFieldDelegate, NSTableViewDataSource, NSTableViewDelegate>
 {
-    CWInterface *interface_;
-    CWNetwork *network_;
-    CWNetworkProfile *profile_;
-    id delegate_;
-    NSArray *scanResults_;
-    BOOL showingNetworkBrowser_;
-    NSString *customTitle_;
-    NSString *customDescription_;
+    CWDisplayedScanResult *_scanResult;
+    id _delegate;
+    NSArray *_scanResults;
+    BOOL _showingNetworkBrowser;
+    NSString *_customTitle;
+    NSString *_customDescription;
+    long long _prevSelectedRow;
+    long long _selectedRow;
     NSTextField *windowTitleLabel;
     NSTextField *windowDescriptionLabel;
     NSButton *okButton;
@@ -33,33 +33,30 @@
     NSTableView *tableView;
     NSScrollView *tableScrollView;
     NSButton *helpButton;
-    long long _prevSelectedRow;
-    long long _selectedRow;
 }
 
-+ (id)browseDialogWithInterface:(id)arg1 displayedScanResults:(id)arg2 title:(id)arg3 description:(id)arg4;
-@property(copy) CWNetworkProfile *profile; // @synthesize profile=profile_;
-@property(copy) NSString *customDescription; // @synthesize customDescription=customDescription_;
-@property(copy) NSString *customTitle; // @synthesize customTitle=customTitle_;
-@property(copy) NSArray *scanResults; // @synthesize scanResults=scanResults_;
-@property(copy) CWNetwork *network; // @synthesize network=network_;
-@property id delegate; // @synthesize delegate=delegate_;
-@property(retain) CWInterface *interface; // @synthesize interface=interface_;
++ (id)browseDialogWithScanResults:(id)arg1 title:(id)arg2 description:(id)arg3;
+@property(copy) NSString *customDescription; // @synthesize customDescription=_customDescription;
+@property(copy) NSString *customTitle; // @synthesize customTitle=_customTitle;
+@property(copy) NSArray *scanResults; // @synthesize scanResults=_scanResults;
+@property(copy) CWDisplayedScanResult *scanResult; // @synthesize scanResult=_scanResult;
+@property id delegate; // @synthesize delegate=_delegate;
 - (void)tableViewSelectionDidChange:(id)arg1;
+- (BOOL)selectionShouldChangeInTableView:(id)arg1;
 - (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 objectValueForTableColumn:(id)arg2 row:(long long)arg3;
 - (id)localizedStringForKey:(id)arg1;
-- (void)scanCompletedWithDisplayedScanResults:(id)arg1;
-- (void)scanStarted;
+- (void)updateWithScanResults:(id)arg1;
+- (void)updateScanUI:(BOOL)arg1;
 - (void)onCancelButton:(id)arg1;
 - (void)onOKButton:(id)arg1;
 - (void)onHelpButton:(id)arg1;
 - (void)windowDidLoad;
 - (void)close;
 - (void)awakeFromNib;
-- (id)initWithInterface:(id)arg1 displayedScanResults:(id)arg2 title:(id)arg3 description:(id)arg4;
+- (id)initWithScanResults:(id)arg1 title:(id)arg2 description:(id)arg3;
 - (id)prepareScanResults:(id)arg1;
 - (void)dealloc;
 

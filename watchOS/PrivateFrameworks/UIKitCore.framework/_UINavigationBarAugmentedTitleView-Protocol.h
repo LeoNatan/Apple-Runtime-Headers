@@ -11,6 +11,9 @@
 
 @protocol _UINavigationBarAugmentedTitleView <NSObject>
 @property(readonly, nonatomic) int _preferredAlignment;
+@property(readonly, nonatomic) float _navigationBarTrailingBarButtonsAlpha;
+@property(readonly, nonatomic) float _navigationBarLeadingBarButtonsAlpha;
+@property(readonly, nonatomic) float _navigationBarBackButtonAlpha;
 @property(readonly, nonatomic) _Bool _hideNavigationBarTrailingBarButtons;
 @property(readonly, nonatomic) _Bool _hideNavigationBarStandardTitle;
 @property(readonly, nonatomic) _Bool _hideNavigationBarLeadingBarButtons;
@@ -18,9 +21,9 @@
 @property(readonly, nonatomic) float _navigationBarBackButtonMaximumWidth;
 @property(readonly, nonatomic) float _navigationBarContentHeight;
 @property(readonly, nonatomic) _Bool _underlayNavigationBarContent;
-- (void)_transitionCompleted:(int)arg1 willBeDisplayed:(_Bool)arg2;
-- (void)_performTransition:(int)arg1 willBeDisplayed:(_Bool)arg2;
-- (void)_transitionWillBegin:(int)arg1 willBeDisplayed:(_Bool)arg2;
+- (void)_navigationBarTransitionCompleted:(int)arg1 willBeDisplayed:(_Bool)arg2;
+- (void)_performNavigationBarTransition:(int)arg1 willBeDisplayed:(_Bool)arg2;
+- (void)_navigationBarTransitionWillBegin:(int)arg1 willBeDisplayed:(_Bool)arg2;
 - (_Bool)_wantsTwoPartTransition;
 - (void)_contentDidChange;
 - (int)_preferredContentSizeForSize:(int)arg1;

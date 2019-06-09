@@ -58,7 +58,6 @@
 @property(readonly, copy, nonatomic) NSData *localStructuredData;
 @property(readonly, nonatomic) NSManagedObjectID *managedObjectID;
 @property(readonly, nonatomic) BOOL organizedByMe;
-@property(readonly, retain, nonatomic) id <EKProtocolParticipant> organizer;
 @property(readonly, copy, nonatomic) NSString *organizerEmail;
 @property(readonly, copy, nonatomic) NSString *organizerEncodedLikenessData;
 @property(readonly, copy, nonatomic) NSString *organizerName;

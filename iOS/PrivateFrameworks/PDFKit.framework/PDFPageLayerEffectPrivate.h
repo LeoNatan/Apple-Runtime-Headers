@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CALayer, LoupeRenderRequest, NSMutableDictionary, NSUUID, PDFAnnotation, PDFSelection, PDFTimer;
+@class CALayer, NSMutableArray, NSMutableDictionary, NSUUID, PDFAnnotation, PDFPageLayerEffect, PDFScannerResult;
 @protocol PDFPageLayerInterface;
 
 __attribute__((visibility("hidden")))
@@ -18,27 +18,11 @@ __attribute__((visibility("hidden")))
     _Bool shouldRotateContent;
     PDFAnnotation *annotation;
     NSMutableDictionary *markupEffectLayers;
-    PDFSelection *selection;
+    NSMutableArray *selections;
     NSMutableDictionary *selectionEffectLayers;
-    _Bool showTextSelectionHandle;
-    struct {
-        _Bool isOnFirstPage;
-        _Bool isOnLastPage;
-        struct CGRect firstPageRect;
-        struct CGRect lastPageRect;
-    } pageInfo;
+    PDFScannerResult *pdfResult;
     CALayer *rootSelectionLayer;
-    CALayer *selectionStartHandle;
-    CALayer *selectionEndHandle;
-    PDFTimer *zoomTimer;
-    CALayer *textMagnifierLayer;
-    struct CGImage *magnifierImageMask;
-    struct CGSize magnifierSize;
-    CALayer *lollipopMagnifierLayer;
-    struct CGImage *lollipopImageMask;
-    struct CGSize lollipopSize;
-    LoupeRenderRequest *loupeRenderRequest;
-    struct os_unfair_lock_s loupeRenderRequestLock;
+    PDFPageLayerEffect *noteLayer;
 }
 
 - (void).cxx_destruct;

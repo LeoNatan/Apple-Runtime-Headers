@@ -6,7 +6,7 @@
 
 #import <UIKitCore/_UIBarContentView.h>
 
-@class NSLayoutConstraint, NSMapTable, _UIButtonBar;
+@class NSLayoutConstraint, NSMapTable, _UIBarButtonItemData, _UIButtonBar;
 
 __attribute__((visibility("hidden")))
 @interface _UIToolbarContentView : _UIBarContentView
@@ -17,10 +17,18 @@ __attribute__((visibility("hidden")))
     NSMapTable *_absorptionTable;
     float _standardEdgeSpacing;
     _Bool _hitTestingExtensionsAreValid;
+    _Bool _compactMetrics;
+    int _itemDistribution;
+    _UIBarButtonItemData *_plainItemAppearance;
+    _UIBarButtonItemData *_doneItemAppearance;
     struct NSDirectionalEdgeInsets _padding;
 }
 
+@property(retain, nonatomic) _UIBarButtonItemData *doneItemAppearance; // @synthesize doneItemAppearance=_doneItemAppearance;
+@property(retain, nonatomic) _UIBarButtonItemData *plainItemAppearance; // @synthesize plainItemAppearance=_plainItemAppearance;
+@property(nonatomic) int itemDistribution; // @synthesize itemDistribution=_itemDistribution;
 @property(nonatomic) struct NSDirectionalEdgeInsets padding; // @synthesize padding=_padding;
+@property(nonatomic) _Bool compactMetrics; // @synthesize compactMetrics=_compactMetrics;
 - (void).cxx_destruct;
 - (void)_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
@@ -30,7 +38,8 @@ __attribute__((visibility("hidden")))
 - (void)_UIAppearance_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)_appearanceChanged;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (int)barMetrics;
+- (void)doneItemAppearanceChanged;
+- (void)plainItemAppearanceChanged;
 - (float)defaultTextPadding;
 - (float)defaultEdgeSpacing;
 - (float)absorptionForItem:(id)arg1;
@@ -42,7 +51,8 @@ __attribute__((visibility("hidden")))
 - (void)updateContent;
 - (void)updateConstraints;
 - (id)_newButtonBarWithItems:(id)arg1;
-- (void)_updateButtonBarConstraintConstantsForItems:(id)arg1 inView:(id)arg2;
+- (void)_updateButtonBarConstraintConstants;
+- (struct NSDirectionalEdgeInsets)_directionalSafeArea;
 - (void)tintColorDidChange;
 - (void)layoutMarginsDidChange;
 

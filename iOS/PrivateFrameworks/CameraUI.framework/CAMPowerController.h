@@ -11,8 +11,8 @@
 
 @interface CAMPowerController : NSObject
 {
+    // Error parsing type: Ai, name: _assertionIdentifierGenerator
     _Bool __isBackgrounded;
-    int __assertionIdentifierGenerator;
     int __powerPressureNotificationToken;
     NSMutableDictionary *__assertionsByIdentifier;
     NSObject<OS_dispatch_queue> *__powerControllerQueue;
@@ -24,7 +24,6 @@
 @property(readonly, nonatomic) unsigned long long _backgroundTaskIdentifier; // @synthesize _backgroundTaskIdentifier=__backgroundTaskIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_powerControllerQueue; // @synthesize _powerControllerQueue=__powerControllerQueue;
 @property(readonly, nonatomic) NSMutableDictionary *_assertionsByIdentifier; // @synthesize _assertionsByIdentifier=__assertionsByIdentifier;
-@property(readonly, nonatomic) int _assertionIdentifierGenerator; // @synthesize _assertionIdentifierGenerator=__assertionIdentifierGenerator;
 - (void).cxx_destruct;
 - (void)removeAssertionForIdentifier:(unsigned int)arg1 withReason:(unsigned int)arg2;
 - (void)addAssertionForIndentifier:(unsigned int)arg1 withReason:(unsigned int)arg2;

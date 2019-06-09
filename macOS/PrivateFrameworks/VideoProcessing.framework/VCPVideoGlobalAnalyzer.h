@@ -11,6 +11,7 @@
 }
 
 - (int)setActivityLevel:(id)arg1;
+- (float)assetActivityLevelFromAnalysisResults:(id)arg1;
 - (BOOL)isJunkTimeRange:(CDStruct_e83c9415)arg1 basedOnResults:(id)arg2;
 - (float)cameraActivityfromQuality:(float)arg1;
 - (float)subjectActivityInTimeRange:(CDStruct_e83c9415)arg1 fromResults:(id)arg2;

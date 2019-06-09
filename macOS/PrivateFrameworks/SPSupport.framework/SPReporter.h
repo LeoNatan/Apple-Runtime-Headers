@@ -20,6 +20,7 @@
 + (id)reporterBundlesForDataType:(id)arg1;
 + (id)reporterBundles;
 + (BOOL)isRunningFromInstaller;
+- (void).cxx_destruct;
 - (id)codeSigningDictionaryForURL:(struct __CFURL *)arg1;
 - (id)localizedStringForKey:(id)arg1;
 - (id)updateDictionary:(id)arg1;

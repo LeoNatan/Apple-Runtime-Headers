@@ -12,7 +12,6 @@
 __attribute__((visibility("hidden")))
 @interface NSSpeechSynthesizerVars : NSObject
 {
-    id _delegate;
     struct SpeechChannelRecord *_speechChannel;
     _NSPeriodicInvoker *_speechFeedbackServicesInvoker;
     unsigned int _speechFeedbackServicesRef;
@@ -24,10 +23,13 @@ __attribute__((visibility("hidden")))
     BOOL _needsResyncWithDefaultVoice;
     BOOL _speechFinishedSuccessfully;
     BOOL _synthesizerIsRetained;
+    id <NSSpeechSynthesizerDelegate> _delegate;
 }
 
 + (id)voiceIdentifierForVoiceCreator:(unsigned int)arg1 voiceID:(unsigned int)arg2;
 + (BOOL)findVoiceByIdentifier:(id)arg1 returningCreator:(unsigned int *)arg2 returningID:(unsigned int *)arg3;
+@property __weak id <NSSpeechSynthesizerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 @property(retain) _NSPeriodicInvoker *speechFeedbackServicesInvoker;
 @property BOOL synthesizerIsRetained;
 @property BOOL speechFinishedSuccessfully;
@@ -41,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(readonly) struct SpeechChannelRecord *speechChannel;
 - (short)setSpeechChannelWithVoiceCreator:(unsigned int)arg1 voiceID:(unsigned int)arg2;
 - (short)setSpeechChannelWithVoiceIdentifier:(id)arg1;
-@property __weak id <NSSpeechSynthesizerDelegate> delegate;
 - (void)dealloc;
 
 @end

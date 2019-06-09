@@ -10,14 +10,15 @@
 {
 }
 
++ (Class)meltedClass;
 + (id)relations;
 - (void)setOwner:(id)arg1;
 - (id)owner;
 - (int)entityType;
-- (void)setExternalData:(id)arg1;
-- (id)externalData;
-- (void)setExternalModTag:(id)arg1;
-- (id)externalModTag;
+- (void)setExternalRepresentation:(id)arg1;
+- (id)externalRepresentation;
+- (void)setExternalModificationTag:(id)arg1;
+- (id)externalModificationTag;
 - (void)setExternalScheduleID:(id)arg1;
 - (id)externalScheduleID;
 - (void)setExternalFolderID:(id)arg1;

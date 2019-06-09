@@ -14,7 +14,6 @@
 
 + (id)localEntityModelForEntityModel:(id)arg1 onInterface:(id)arg2 usingRemoteMACAddress:(id)arg3 generatedControllerMappings:(id *)arg4;
 + (void)setLocalModelMakerModelName:(id)arg1;
-- (void)dealloc;
 - (BOOL)processClockSource:(id)arg1 inConfiguration:(id)arg2 withOldNewMappings:(id)arg3 ofEntityModel:(id)arg4 withLocalToRemoteMappings:(id)arg5 andRemoteToLocalMappings:(id)arg6;
 - (BOOL)processVideoUnit:(id)arg1 inConfiguration:(id)arg2 withOldNewMappings:(id)arg3 ofEntityModel:(id)arg4 withLocalToRemoteMappings:(id)arg5 andRemoteToLocalMappings:(id)arg6;
 - (BOOL)processAudioUnit:(id)arg1 inConfiguration:(id)arg2 withOldNewMappings:(id)arg3 ofEntityModel:(id)arg4 withLocalToRemoteMappings:(id)arg5 andRemoteToLocalMappings:(id)arg6;

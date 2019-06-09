@@ -10,5 +10,6 @@
 - (void)IKIPSetFrame:(struct CGRect)arg1 constrainedToScreen:(id)arg2;
 - (void)IKIPSetFrame:(struct CGRect)arg1 constrainedToScreen:(id)arg2 display:(BOOL)arg3 animate:(BOOL)arg4;
 - (struct CGRect)IKIPFrame:(struct CGRect)arg1 constrainedToScreen:(id)arg2;
+- (void)ikSetupWhiteBackground;
 @end
 

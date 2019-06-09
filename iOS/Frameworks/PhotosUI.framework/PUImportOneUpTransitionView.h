@@ -8,13 +8,13 @@
 
 #import <PhotosUI/PUImportOneUpCellDisplayDelegate-Protocol.h>
 
-@class NSArray, PUImportMediaProvider, PUImportOneUpCellBadgeView, UIImage;
+@class NSArray, PUImportOneUpCellBadgeView, PXImportMediaProvider, UIImage;
 
 __attribute__((visibility("hidden")))
 @interface PUImportOneUpTransitionView : PUImportOneUpCell <PUImportOneUpCellDisplayDelegate>
 {
     UIImage *_startingImage;
-    PUImportMediaProvider *_mediaProvider;
+    PXImportMediaProvider *_mediaProvider;
     PUImportOneUpCellBadgeView *_badgeView;
     NSArray *_badgeViewOffsetConstraints;
     double _initialPhotoViewAlpha;
@@ -30,7 +30,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGRect initialFrame; // @synthesize initialFrame=_initialFrame;
 @property(readonly, nonatomic) NSArray *badgeViewOffsetConstraints; // @synthesize badgeViewOffsetConstraints=_badgeViewOffsetConstraints;
 @property(readonly, nonatomic) PUImportOneUpCellBadgeView *badgeView; // @synthesize badgeView=_badgeView;
-@property(retain, nonatomic) PUImportMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
+@property(retain, nonatomic) PXImportMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(retain, nonatomic) UIImage *startingImage; // @synthesize startingImage=_startingImage;
 - (void).cxx_destruct;
 - (void)importOneUpCell:(id)arg1 didRequestCancellationOfThumbnailRequestWithID:(long long)arg2;

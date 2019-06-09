@@ -19,8 +19,6 @@
     CUReachabilityMonitor *_reachabilityMonitor;
     NSDictionary *_productTypesMappingTable;
     NSDictionary *_cachedProductMappingsTable;
-    NSDictionary *_mpnMappingTable;
-    NSDictionary *_cachedMpnMappingTable;
     NSURL *_cacheDirectory;
     NSMutableDictionary *_cachedQueryPaths;
     _Bool _useProcessLocalCache;
@@ -35,13 +33,10 @@
 - (void)storeEntries:(id)arg1 inLocalCacheWithFileName:(id)arg2;
 - (id)localCacheWithFileName:(id)arg1;
 - (id)hardcodedMappedProducts;
-- (id)mpnMappingFileNameForProductType:(id)arg1;
-- (id)onqueue_assetMappedMPNForMPN:(id)arg1 forProductType:(id)arg2;
 - (id)onqueue_assetMappedProductTypeForProductType:(id)arg1;
 - (id)onqueue_sharingManagementAsset;
 - (id)onqueue_mappedProductTypeForProductType:(id)arg1;
 - (void)mappedProductTypeForProductType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)onqueue_validateMPNInQuery:(id)arg1;
 - (void)onqueue_validateProductTypeInQuery:(id)arg1;
 - (void)onqueue_downloadAsset:(id)arg1 ucat:(struct LogCategory *)arg2 queryLogString:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)onqueue_findAssetBundleForAssetQuery:(id)arg1 ucat:(struct LogCategory *)arg2 queryType:(id)arg3 fallback:(_Bool)arg4 retryAttempt:(_Bool)arg5 withCompletionHandler:(CDUnknownBlockType)arg6;
@@ -52,8 +47,6 @@
 - (void)clearQueryResultFromLocalCache:(id)arg1;
 - (void)addQueryResultToLocalCache:(id)arg1 url:(id)arg2 isFallback:(_Bool)arg3;
 - (id)locallyCachedQueryResults;
-- (void)storeMPNsInLocalCache:(id)arg1 forProductType:(id)arg2;
-- (id)locallyCachedMPNsForProductType:(id)arg1;
 - (void)storeProductMappingsInLocalCache:(id)arg1;
 - (id)locallyCachedProductMappings;
 - (id)cacheDirectory;

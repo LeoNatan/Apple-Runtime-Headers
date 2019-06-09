@@ -13,6 +13,8 @@
 
 @protocol PLPhotoLibraryPathManager <PLPhotoLibraryPathManagerCore, PLPhotoLibraryPathManagerModel, PLPhotoLibraryPathManagerDCIM>
 + (id <PLPhotoLibraryPathManager>)systemLibraryPathManager;
+- (NSSet *)pathsForExternalWriters;
+- (BOOL)createPathsForNewLibrariesWithError:(id *)arg1;
 - (NSSet *)pathsForPermissionCheck;
 - (NSDictionary *)pathsForClientAccess:(id <PLClientAuthorization>)arg1;
 - (void)obtainAccessAndWaitWithFileWithIdentifier:(PLPhotoLibraryFileIdentifier *)arg1 mode:(unsigned char)arg2 toURLWithHandler:(void (^)(NSURL *, NSError *))arg3;

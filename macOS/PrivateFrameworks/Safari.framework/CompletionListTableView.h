@@ -20,9 +20,11 @@ __attribute__((visibility("hidden")))
 - (BOOL)isAccessibilityElement;
 - (BOOL)isAccessibilityEnabled;
 - (id)_accessibilityDescription;
+- (void)drawGridInClipRect:(struct CGRect)arg1;
 - (BOOL)_rowIsSelectableByUser:(long long)arg1;
 - (struct CGRect)frameOfCellAtColumn:(long long)arg1 row:(long long)arg2;
 - (BOOL)isOpaque;
+- (void)mouseExited:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)mouseMoved:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

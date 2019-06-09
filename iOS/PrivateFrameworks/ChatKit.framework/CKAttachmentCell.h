@@ -12,6 +12,7 @@
 @class CKAnimatedImage, CKAttachmentItem, NSArray, NSObject, NSString, UIImage, UIImageView, UITapGestureRecognizer;
 @protocol CKAttachmentCellDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKAttachmentCell : UICollectionViewCell <CKAnimationTimerObserver, UIGestureRecognizerDelegate>
 {
     _Bool _editing;

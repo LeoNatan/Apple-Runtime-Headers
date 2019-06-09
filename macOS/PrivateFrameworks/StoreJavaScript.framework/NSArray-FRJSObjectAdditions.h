@@ -7,6 +7,7 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (FRJSObjectAdditions)
+- (void)setMessagingDelegate:(id)arg1;
 - (void)setProtected:(BOOL)arg1;
 - (void)unprotect;
 - (void)protect;

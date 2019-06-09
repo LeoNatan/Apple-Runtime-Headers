@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
 
 @property(copy, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 - (void).cxx_destruct;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)canTransitionToEffect:(id)arg1;
 - (void)removeEffectFromView:(id)arg1;

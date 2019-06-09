@@ -4,17 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <XCTAutomationSupport/NSCopying-Protocol.h>
 #import <XCTAutomationSupport/NSObject-Protocol.h>
 
-@class NSOrderedSet, NSSet, NSString, XCElementSnapshot;
+@class NSOrderedSet, NSSet, NSString, XCElementSnapshot, XCTCapabilities;
 @protocol XCTMatchingElementIterator;
 
-@protocol XCTElementSetTransformer <NSObject>
+@protocol XCTElementSetTransformer <NSObject, NSCopying>
 @property BOOL stopsOnFirstMatch;
 @property(readonly) BOOL supportsAttributeKeyPathAnalysis;
 @property(copy) NSString *transformationDescription;
 @property(readonly) BOOL supportsRemoteEvaluation;
 - (NSSet *)requiredKeyPathsOrError:(id *)arg1;
+- (BOOL)canBeRemotelyEvaluatedWithCapabilities:(XCTCapabilities *)arg1;
 - (id <XCTMatchingElementIterator>)iteratorForInput:(XCElementSnapshot *)arg1;
 - (NSOrderedSet *)transform:(NSOrderedSet *)arg1 relatedElements:(id *)arg2;
 @end

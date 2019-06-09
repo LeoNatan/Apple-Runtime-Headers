@@ -19,12 +19,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) OADFontCollection *minorFont; // @synthesize minorFont=_minorFont;
 @property(readonly, nonatomic) OADFontCollection *majorFont; // @synthesize majorFont=_majorFont;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+- (void).cxx_destruct;
 - (void)validateFontScheme;
 - (id)fontForId:(int)arg1;
 - (_Bool)isEmpty;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -9,7 +9,7 @@
 #import <QuartzCore/CAMetalDrawable-Protocol.h>
 #import <QuartzCore/MTLDrawableSPI-Protocol.h>
 
-@class CAMetalLayer, NSMutableArray, NSString;
+@class CAMetalLayer, IOSurfaceSharedEvent, NSMutableArray, NSString;
 @protocol MTLTexture;
 
 @interface CAMetalDrawable : NSObject <CAMetalDrawable, MTLDrawableSPI>
@@ -17,6 +17,9 @@
     struct _CAMetalDrawablePrivate *_priv;
     id <MTLTexture> _cachedTexture;
     CAMetalLayer *_layer;
+    unsigned long long _drawableID;
+    IOSurfaceSharedEvent *_sharedEvent;
+    unsigned int _insertSeed;
     BOOL _presentScheduledInsertSeedValid;
     unsigned int _presentScheduledInsertSeed;
     NSMutableArray *_presentScheduledHandlers;
@@ -24,6 +27,9 @@
 
 @property(nonatomic) unsigned int presentScheduledInsertSeed; // @synthesize presentScheduledInsertSeed=_presentScheduledInsertSeed;
 @property(nonatomic) BOOL presentScheduledInsertSeedValid; // @synthesize presentScheduledInsertSeedValid=_presentScheduledInsertSeedValid;
+@property(nonatomic) unsigned int insertSeed; // @synthesize insertSeed=_insertSeed;
+@property(nonatomic) IOSurfaceSharedEvent *sharedEvent; // @synthesize sharedEvent=_sharedEvent;
+@property(nonatomic) unsigned long long drawableID; // @synthesize drawableID=_drawableID;
 - (void).cxx_destruct;
 @property(readonly) CAMetalLayer *layer;
 - (void)presentAtTime:(double)arg1;

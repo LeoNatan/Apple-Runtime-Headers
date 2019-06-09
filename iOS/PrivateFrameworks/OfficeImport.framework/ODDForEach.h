@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     ODDIteratorSpecification *mIteratorSpecification;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)iteratorSpecification;
-- (void)dealloc;
 - (id)init;
 
 @end

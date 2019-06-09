@@ -6,28 +6,36 @@
 
 #import <UIKit/UIView.h>
 
-@class AVAsset, UIImage, UIImageView;
+#import <QuickLook/PHVideoScrubberFilmstripView-Protocol.h>
+
+@class AVAsset, NSString, UIImage, UIImageView;
 
 __attribute__((visibility("hidden")))
-@interface QLWaveformView : UIView
+@interface QLWaveformView : UIView <PHVideoScrubberFilmstripView>
 {
     struct CGSize _waveSize;
     UIView *_lineView;
     UIImage *_waveImage;
     UIImageView *_waveView;
     AVAsset *_asset;
-    UIImage *_placeholderImage;
-    struct CGRect *_visibleRect;
+    UIImage *placeholderImage;
+    struct CGRect visibleRect;
 }
 
-@property struct CGRect *visibleRect; // @synthesize visibleRect=_visibleRect;
-@property(retain) UIImage *placeholderImage; // @synthesize placeholderImage=_placeholderImage;
-@property(retain, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
+@property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect;
+@property(retain, nonatomic) UIImage *placeholderImage; // @synthesize placeholderImage;
+@property(copy, nonatomic) AVAsset *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
 - (void)_updateWithWaveformImage:(id)arg1;
 - (void)_expandWaveform;
 - (void)updateImage;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

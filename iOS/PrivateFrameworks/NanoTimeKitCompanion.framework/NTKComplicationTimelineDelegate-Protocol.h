@@ -6,9 +6,11 @@
 
 #import <NanoTimeKitCompanion/NSObject-Protocol.h>
 
+@class NTKComplicationTimeline;
 @protocol CLKTimelineEntry;
 
 @protocol NTKComplicationTimelineDelegate <NSObject>
+- (void)entriesDidChangeInTimeline:(NTKComplicationTimeline *)arg1;
 - (void)timeTravelEntryDidChangeFrom:(id <CLKTimelineEntry>)arg1 to:(id <CLKTimelineEntry>)arg2;
 - (void)nowEntryDidChangeFrom:(id <CLKTimelineEntry>)arg1 to:(id <CLKTimelineEntry>)arg2;
 @end

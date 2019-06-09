@@ -16,7 +16,7 @@
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 - (id)createSpec;
 - (Class)specClass;
-- (BOOL)shouldUpdateSpecForExtendedTraitCollectionChange:(unsigned long long)arg1;
+- (BOOL)shouldUpdateSpecForExtendedTraitCollection:(id)arg1 change:(unsigned long long)arg2;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2 style:(unsigned long long)arg3;
 - (id)initWithExtendedTraitCollection:(id)arg1 options:(unsigned long long)arg2;
 

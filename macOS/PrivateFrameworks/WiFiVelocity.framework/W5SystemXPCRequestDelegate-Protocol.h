@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSNumber, NSString, NSURL, NSUUID, W5DebugConfiguration, W5PerfConfiguration, W5WiFiChannel;
+@class NSArray, NSDictionary, NSNumber, NSString, NSURL, NSUUID, W5DebugConfiguration, W5PerfConfiguration, W5WiFiChannel;
 
 @protocol W5SystemXPCRequestDelegate
 - (void)stopWiFiConnectionMonitoringAndReply:(void (^)(NSError *))arg1;
@@ -14,6 +14,8 @@
 - (void)cancelPerfServerWithUUID:(NSUUID *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)runPerfServerWithConfiguration:(W5PerfConfiguration *)arg1 port:(NSNumber *)arg2 uuid:(NSUUID *)arg3 reply:(void (^)(NSError *))arg4;
 - (void)cancelPerfClientWithUUID:(NSUUID *)arg1 reply:(void (^)(NSError *))arg2;
+- (void)cancelWiFiPerfLoggingWithUUID:(NSUUID *)arg1 reply:(void (^)(NSError *))arg2;
+- (void)runWiFiPerfLoggingWithConfiguration:(NSDictionary *)arg1 uuid:(NSUUID *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)runPerfClientWithConfiguration:(W5PerfConfiguration *)arg1 address:(NSString *)arg2 port:(NSNumber *)arg3 uuid:(NSUUID *)arg4 reply:(void (^)(NSError *, W5PerfResult *))arg5;
 - (void)relinquishPortsWithUUID:(NSUUID *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)reserveAvailablePorts:(unsigned long long)arg1 uuid:(NSUUID *)arg2 reply:(void (^)(NSError *, NSArray *))arg3;
@@ -21,11 +23,11 @@
 - (void)cancelWiFiSnifferWithUUID:(NSUUID *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)runWiFiSnifferOnChannel:(W5WiFiChannel *)arg1 duration:(double)arg2 outputFile:(NSURL *)arg3 uuid:(NSUUID *)arg4 reply:(void (^)(NSError *))arg5;
 - (void)cancelCollectLogsWithUUID:(NSUUID *)arg1 reply:(void (^)(NSError *))arg2;
-- (void)collectLogItems:(NSArray *)arg1 compress:(BOOL)arg2 outputURL:(NSURL *)arg3 additionalLog:(NSURL *)arg4 uuid:(NSUUID *)arg5 reply:(void (^)(NSError *, NSArray *))arg6;
+- (void)collectLogs:(NSArray *)arg1 configuration:(NSDictionary *)arg2 filename:(NSString *)arg3 additionalLog:(NSURL *)arg4 uuid:(NSUUID *)arg5 reply:(void (^)(NSError *, NSURL *, NSArray *))arg6;
 - (void)setDebugConfiguration:(W5DebugConfiguration *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)queryDebugConfigurationAndReply:(void (^)(NSError *, W5DebugConfiguration *))arg1;
 - (void)cancelDiagnosticsWithUUID:(NSUUID *)arg1 reply:(void (^)(NSError *))arg2;
-- (void)runDiagnosticsTests:(NSArray *)arg1 uuid:(NSUUID *)arg2 reply:(void (^)(NSError *, NSArray *))arg3;
+- (void)runDiagnostics:(NSArray *)arg1 configuration:(NSDictionary *)arg2 uuid:(NSUUID *)arg3 reply:(void (^)(NSError *, NSArray *))arg4;
 - (void)queryStatusAndReply:(void (^)(NSError *, W5Status *))arg1;
 @end
 

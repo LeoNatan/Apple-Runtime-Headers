@@ -13,8 +13,8 @@
 #import <ContactsUI/CNContactViewControllerAddContactPresenter-Protocol.h>
 #import <ContactsUI/CNContactViewControllerDelegate-Protocol.h>
 
-@class CNAccountsAndGroupsDataSource, CNContactListViewController, CNContactStore, CNContactStoreDataSource, CNContactStyle, CNContactViewController, CNUIUserActivityManager, NSString, UIAlertController, UIKeyCommand;
-@protocol CNContactDataSource, CNContactNavigationControllerDelegate, CNScheduler;
+@class CNAccountsAndGroupsDataSource, CNAccountsAndGroupsViewController, CNContactListStyleApplier, CNContactListViewController, CNContactStore, CNContactStoreDataSource, CNContactStyle, CNContactViewController, CNUIUserActivityManager, NSString, UIAlertController, UIKeyCommand;
+@protocol CNContactDataSource, CNContactNavigationControllerDelegate, CNScheduler, NSObject;
 
 @interface CNContactNavigationController : UINavigationController <CNContactListViewControllerDelegate, CNContactListViewControllerDelegateInternal, CNContactViewControllerDelegate, CNContactContentViewControllerDelegate, CNAccountsAndGroupsViewControllerDelegate, CNContactViewControllerAddContactPresenter>
 {
@@ -29,6 +29,7 @@
     CNContactStyle *_contactStyle;
     CNContactStore *_contactStore;
     CNContactViewController *_reusableContactViewController;
+    CNAccountsAndGroupsViewController *_accountsAndGroupsViewController;
     CNAccountsAndGroupsDataSource *_accountsAndGroupsDataSource;
     long long _leftButtonBehavior;
     long long _rightButtonBehavior;
@@ -38,10 +39,14 @@
     UIAlertController *_facebookContactsAlertController;
     id <CNScheduler> _backgroundScheduler;
     CNUIUserActivityManager *_activityManager;
+    CNContactListStyleApplier *_contactListStyleApplier;
+    id <NSObject> _currentStyleDidChangeNotificationToken;
 }
 
 + (id)newContactFormatter;
 @property(nonatomic) _Bool ignoresMapsData; // @synthesize ignoresMapsData=_ignoresMapsData;
+@property(retain, nonatomic) id <NSObject> currentStyleDidChangeNotificationToken; // @synthesize currentStyleDidChangeNotificationToken=_currentStyleDidChangeNotificationToken;
+@property(retain, nonatomic) CNContactListStyleApplier *contactListStyleApplier; // @synthesize contactListStyleApplier=_contactListStyleApplier;
 @property(retain, nonatomic) CNUIUserActivityManager *activityManager; // @synthesize activityManager=_activityManager;
 @property(nonatomic) _Bool hasPendingShowCard; // @synthesize hasPendingShowCard=_hasPendingShowCard;
 @property(retain, nonatomic) id <CNScheduler> backgroundScheduler; // @synthesize backgroundScheduler=_backgroundScheduler;
@@ -52,6 +57,7 @@
 @property(nonatomic) long long rightButtonBehavior; // @synthesize rightButtonBehavior=_rightButtonBehavior;
 @property(nonatomic) long long leftButtonBehavior; // @synthesize leftButtonBehavior=_leftButtonBehavior;
 @property(retain, nonatomic) CNAccountsAndGroupsDataSource *accountsAndGroupsDataSource; // @synthesize accountsAndGroupsDataSource=_accountsAndGroupsDataSource;
+@property(nonatomic) __weak CNAccountsAndGroupsViewController *accountsAndGroupsViewController; // @synthesize accountsAndGroupsViewController=_accountsAndGroupsViewController;
 @property(retain, nonatomic) CNContactViewController *reusableContactViewController; // @synthesize reusableContactViewController=_reusableContactViewController;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) _Bool allowsContactBlocking; // @synthesize allowsContactBlocking=_allowsContactBlocking;
@@ -61,6 +67,7 @@
 @property(nonatomic) _Bool allowsCardEditing; // @synthesize allowsCardEditing=_allowsCardEditing;
 @property(retain, nonatomic) CNContactStyle *contactStyle; // @synthesize contactStyle=_contactStyle;
 - (void).cxx_destruct;
+- (id)userActivityRepresentingCurrentlyDisplayedContact;
 - (void)notifyOtherFacebookContactsAlertDidSelectAction;
 - (void)otherFacebookContactsAlertDidSelectActionWithNotification:(id)arg1;
 - (void)observeOtherFacebookContactsAlert;
@@ -73,9 +80,9 @@
 - (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (void)searchForString:(id)arg1;
 - (void)popToContactListAndSaveChanges:(_Bool)arg1;
-- (void)showUnifiedCardForPerson:(void *)arg1;
 - (void)applicationDidResume;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)checkForInfoContentWithContext:(id)arg1;
 - (void)accountsAndGroupsViewControllerDidFinish:(id)arg1;
 - (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;

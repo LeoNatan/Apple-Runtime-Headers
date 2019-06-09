@@ -10,6 +10,7 @@
 
 @interface EKUIGadgetView : NSView
 {
+    BOOL _shouldAbsorbMouseClickEvents;
     EKUIGadget *_gadget;
     NSTrackingArea *_trackingArea;
     NSView *_cachedPreviousKeyView;
@@ -19,6 +20,7 @@
 @property __weak NSView *cachedNextKeyView; // @synthesize cachedNextKeyView=_cachedNextKeyView;
 @property __weak NSView *cachedPreviousKeyView; // @synthesize cachedPreviousKeyView=_cachedPreviousKeyView;
 @property(retain) NSTrackingArea *trackingArea; // @synthesize trackingArea=_trackingArea;
+@property BOOL shouldAbsorbMouseClickEvents; // @synthesize shouldAbsorbMouseClickEvents=_shouldAbsorbMouseClickEvents;
 @property __weak EKUIGadget *gadget; // @synthesize gadget=_gadget;
 - (void).cxx_destruct;
 - (unsigned long long)draggingEntered:(id)arg1;
@@ -26,6 +28,8 @@
 - (void)layout;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateConstraints;
+- (void)mouseUp:(id)arg1;
+- (void)mouseDown:(id)arg1;
 - (void)mouseExited:(id)arg1;
 - (void)mouseEntered:(id)arg1;
 - (void)updateTrackingAreas;

@@ -12,8 +12,11 @@
 {
 }
 
++ (id)entityName;
 - (void)willSave;
 - (void)prepareForDeletion;
+- (id)payloadForChangedKeys:(id)arg1;
+- (id)payloadID;
 
 // Remaining properties
 @property(retain, nonatomic) PLAdditionalAssetAttributes *assetAttributes; // @dynamic assetAttributes;

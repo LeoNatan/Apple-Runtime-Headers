@@ -10,7 +10,6 @@ __attribute__((visibility("hidden")))
 @interface _NSPopoverPrivateData : NSObject
 {
     long long closeReason;
-    CDStruct_4a40d4f7 _flags;
 }
 
 @end

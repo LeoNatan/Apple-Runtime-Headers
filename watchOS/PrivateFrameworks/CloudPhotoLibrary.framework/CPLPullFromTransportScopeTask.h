@@ -32,6 +32,9 @@
     CPLLibraryInfo *_initialLibraryInfo;
     CPLLibraryState *_initialLibraryState;
     id <CPLEngineTransportGetCurrentSyncAnchorTask> _fetchInitialSyncAnchorTask;
+    NSObject<OS_dispatch_queue> *_notifyQueue;
+    _Bool _didNotifySchedulerPullQueueIsFullOnce;
+    _Bool _needsToNotifySchedulerPullQueueIsFull;
 }
 
 - (void).cxx_destruct;
@@ -56,7 +59,10 @@
 - (unsigned int)_totalAssetCountForScope;
 - (void)_extractAndMingleAssetsIfPossibleFromBatch:(id)arg1 inTransaction:(id)arg2;
 - (void)_cancelAllTasks;
-- (id)initWithEngineLibrary:(id)arg1 clientCacheIdentifier:(id)arg2 scope:(id)arg3 transportScope:(id)arg4;
+- (void)_notifySchedulerPullQueueIsFullNowIfNecessary;
+- (void)_notifySchedulerPullQueueIsFull;
+- (void)_reallyNotifySchedulerPullQueueIsFull;
+- (id)initWithEngineLibrary:(id)arg1 session:(id)arg2 clientCacheIdentifier:(id)arg3 scope:(id)arg4 transportScope:(id)arg5;
 
 @end
 

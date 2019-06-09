@@ -20,15 +20,18 @@
 }
 
 @property(readonly, nonatomic) HDAssertion *accessibilityAssertion; // @synthesize accessibilityAssertion=_accessibilityAssertion;
-@property(readonly, nonatomic) NSUUID *syncIdentifier; // @synthesize syncIdentifier=_syncIdentifier;
+@property(readonly, copy, nonatomic) NSUUID *syncIdentifier; // @synthesize syncIdentifier=_syncIdentifier;
 @property(readonly, nonatomic) int reason; // @synthesize reason=_reason;
 @property(readonly, nonatomic) unsigned int options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *syncContainerPrefix; // @synthesize syncContainerPrefix=_syncContainerPrefix;
 @property(readonly, nonatomic) CKOperationGroup *operationGroup; // @synthesize operationGroup=_operationGroup;
 @property(readonly, nonatomic) HDCloudSyncRepository *repository; // @synthesize repository=_repository;
 - (void).cxx_destruct;
+- (id)descriptionForSignpost;
+- (id)databaseForContainer:(id)arg1;
 - (id)pushStoreWithIdentifier:(id)arg1 container:(id)arg2 error:(id *)arg3;
 - (id)pushStoreIdentifierForContainer:(id)arg1 error:(id *)arg2;
+@property(readonly, nonatomic) _Bool rebaseProhibited;
 - (id)initWithRepository:(id)arg1 operationGroup:(id)arg2 syncContainerPrefix:(id)arg3 options:(unsigned int)arg4 reason:(int)arg5 accessibilityAssertion:(id)arg6 syncIdentifier:(id)arg7;
 
 @end

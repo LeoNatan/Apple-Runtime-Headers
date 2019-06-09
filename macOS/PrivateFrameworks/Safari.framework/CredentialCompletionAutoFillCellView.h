@@ -8,7 +8,6 @@
 
 @class NSImageView, NSLayoutConstraint, NSString, NSTextField, NSView;
 
-__attribute__((visibility("hidden")))
 @interface CredentialCompletionAutoFillCellView : BiometricPromptCellView
 {
     NSImageView *_trailingImageView;

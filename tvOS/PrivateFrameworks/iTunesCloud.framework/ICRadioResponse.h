@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSError *serverError;
 @property(readonly, copy, nonatomic) ICStoreDialogResponse *dialog;
+@property(readonly, nonatomic) long long version;
 @property(readonly, copy, nonatomic) NSDictionary *contentDictionary;
 - (id)initWithResponseDictionary:(id)arg1 expirationDate:(id)arg2;
 - (id)initWithURLResponse:(id)arg1;

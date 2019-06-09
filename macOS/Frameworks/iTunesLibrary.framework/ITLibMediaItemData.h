@@ -10,15 +10,17 @@
 
 @interface ITLibMediaItemData : NSObject
 {
-    NSURL *_URL;
-    unsigned long long _playlistCount;
     BOOL _downloadable;
+    NSURL *_URL;
+    NSURL *_securityScopedURL;
+    unsigned long long _playlistCount;
 }
 
 @property(nonatomic) BOOL downloadable; // @synthesize downloadable=_downloadable;
 @property(nonatomic) unsigned long long playlistCount; // @synthesize playlistCount=_playlistCount;
+@property(retain, nonatomic) NSURL *securityScopedURL; // @synthesize securityScopedURL=_securityScopedURL;
 @property(retain, nonatomic) NSURL *URL; // @synthesize URL=_URL;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

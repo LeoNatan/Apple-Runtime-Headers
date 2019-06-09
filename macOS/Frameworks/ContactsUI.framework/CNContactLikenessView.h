@@ -14,6 +14,7 @@
 {
 }
 
++ (id)log;
 - (void)viewModelDidUpdate:(id)arg1;
 - (id)init;
 

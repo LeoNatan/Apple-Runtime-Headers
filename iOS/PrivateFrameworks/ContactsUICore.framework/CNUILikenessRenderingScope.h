@@ -6,21 +6,33 @@
 
 #import <objc/NSObject.h>
 
+@class PRMonogramColor;
+
 @interface CNUILikenessRenderingScope : NSObject
 {
     _Bool _rightToLeft;
     double _scale;
+    double _strokeWidth;
+    struct CGColor *_strokeColor;
     unsigned long long _style;
+    PRMonogramColor *_color;
     struct CGSize _pointSize;
 }
 
-+ (id)renderingScopeWithPointSize:(struct CGSize)arg1 scale:(double)arg2 rightToLeft:(_Bool)arg3 style:(unsigned long long)arg4;
++ (id)renderingScopeWithPointSize:(struct CGSize)arg1 scale:(double)arg2 rightToLeft:(_Bool)arg3 style:(unsigned long long)arg4 color:(id)arg5;
++ (id)renderingScopeWithPointSize:(struct CGSize)arg1 scale:(double)arg2 strokeWidth:(double)arg3 strokeColor:(struct CGColor *)arg4 rightToLeft:(_Bool)arg5 style:(unsigned long long)arg6 color:(id)arg7;
+@property(readonly, nonatomic) PRMonogramColor *color; // @synthesize color=_color;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
 @property(readonly, nonatomic) _Bool rightToLeft; // @synthesize rightToLeft=_rightToLeft;
+@property(readonly, nonatomic) struct CGColor *strokeColor; // @synthesize strokeColor=_strokeColor;
+@property(readonly, nonatomic) double strokeWidth; // @synthesize strokeWidth=_strokeWidth;
 @property(readonly, nonatomic) double scale; // @synthesize scale=_scale;
 @property(readonly, nonatomic) struct CGSize pointSize; // @synthesize pointSize=_pointSize;
+- (void).cxx_destruct;
+- (void)setStrokeColor:(struct CGColor *)arg1;
 - (id)description;
-- (id)initWithPointSize:(struct CGSize)arg1 scale:(double)arg2 rightToLeft:(_Bool)arg3 style:(unsigned long long)arg4;
+- (void)dealloc;
+- (id)initWithPointSize:(struct CGSize)arg1 scale:(double)arg2 strokeWidth:(double)arg3 strokeColor:(struct CGColor *)arg4 rightToLeft:(_Bool)arg5 style:(unsigned long long)arg6 color:(id)arg7;
 
 @end
 

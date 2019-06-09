@@ -8,7 +8,6 @@
 
 #import <CFNetwork/NSCoding-Protocol.h>
 
-__attribute__((visibility("hidden")))
 @interface NSHTTPURLResponseInternal : NSObject <NSCoding>
 {
     struct __SecTrust *peerTrust;

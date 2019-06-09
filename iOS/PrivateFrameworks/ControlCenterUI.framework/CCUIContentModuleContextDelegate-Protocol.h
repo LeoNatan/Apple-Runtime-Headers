@@ -9,7 +9,6 @@
 @class CCUIContentModuleContext, CCUIStatusUpdate;
 
 @protocol CCUIContentModuleContextDelegate <NSObject>
-- (void)didUpdatePreferredSizeForContentModuleContext:(CCUIContentModuleContext *)arg1;
 - (void)dismissControlCenterForContentModuleContext:(CCUIContentModuleContext *)arg1;
 - (void)dismissExpandedViewForContentModuleContext:(CCUIContentModuleContext *)arg1;
 - (void)requestExpandModuleForContentModuleContext:(CCUIContentModuleContext *)arg1;

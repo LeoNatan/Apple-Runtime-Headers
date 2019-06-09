@@ -51,6 +51,7 @@
 - (void).cxx_destruct;
 - (id)_gregorianUtcCalendar;
 - (void)recordFieldPresenceStatistics;
+- (_Bool)isEmpty;
 - (_Bool)hasAnyData;
 @property(copy, nonatomic) NSDateComponents *gregorianBirthday;
 - (_Bool)isEqual:(id)arg1;

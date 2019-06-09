@@ -15,6 +15,7 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SPQueryResponse *_delayedResponse;
     int _unsafeState;
+    NSArray *_supportedAppScopes;
     _Bool _sentSuggestions;
     // Error parsing type: Ai, name: _updatesDisabled
     // Error parsing type: A^{WaitingResults_s}, name: _deferredUpdate

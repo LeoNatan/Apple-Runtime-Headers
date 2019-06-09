@@ -6,33 +6,44 @@
 
 #import <ScreenReader/SCROutputSound.h>
 
+@class NSData, NSString, NSURL;
+
 __attribute__((visibility("hidden")))
 @interface SCRSound : SCROutputSound
 {
-    struct OpaqueAudioFileID *_audioFile;
-    void *_info;
-    void *_reservedData[7];
-    float _volume;
-    int _busId;
-    double _audioDuration;
-    unsigned long long _soundID;
+    struct nssound_info *_info;
     BOOL _ensureSingleCompletionCallbacks;
-    BOOL __compltionCallbackNeedsSending;
+    BOOL __completionCallbackNeedsSending;
+    int _busID;
+    float _volume;
+    unsigned int __soundFlags;
+    unsigned long long _soundID;
+    double _audioDuration;
+    struct OpaqueAudioFileID *__audioFile;
+    NSString *__soundName;
+    NSURL *__soundURL;
+    NSData *__soundData;
 }
 
++ (BOOL)shouldShortCircuitSoundOutput;
++ (void)setShouldShortCircuitSoundOutput:(BOOL)arg1;
 + (id)_soundForID:(unsigned long long)arg1;
 + (void)_unregisterSound:(id)arg1;
 + (void)_registerSound:(id)arg1;
-+ (id)alloc;
 + (void)initialize;
-+ (void)_setShouldShortCircuitSoundOutput:(BOOL)arg1;
-@property(nonatomic, setter=_setCompltionCallbackNeedsSending:) BOOL _compltionCallbackNeedsSending; // @synthesize _compltionCallbackNeedsSending=__compltionCallbackNeedsSending;
+@property(nonatomic, setter=_setCompletionCallbackNeedsSending:) BOOL _completionCallbackNeedsSending; // @synthesize _completionCallbackNeedsSending=__completionCallbackNeedsSending;
+@property(nonatomic, setter=_setSoundFlags:) unsigned int _soundFlags; // @synthesize _soundFlags=__soundFlags;
+@property(copy, nonatomic, setter=_setSoundData:) NSData *_soundData; // @synthesize _soundData=__soundData;
+@property(copy, nonatomic, setter=_setSoundURL:) NSURL *_soundURL; // @synthesize _soundURL=__soundURL;
+@property(copy, nonatomic, setter=_setSoundName:) NSString *_soundName; // @synthesize _soundName=__soundName;
+@property(nonatomic, setter=_setAudioFile:) struct OpaqueAudioFileID *_audioFile; // @synthesize _audioFile=__audioFile;
 @property(nonatomic) BOOL ensureSingleCompletionCallbacks; // @synthesize ensureSingleCompletionCallbacks=_ensureSingleCompletionCallbacks;
+@property(nonatomic) double audioDuration; // @synthesize audioDuration=_audioDuration;
+@property(nonatomic) float volume; // @synthesize volume=_volume;
+@property(nonatomic) int busID; // @synthesize busID=_busID;
 @property(nonatomic) unsigned long long soundID; // @synthesize soundID=_soundID;
+- (void).cxx_destruct;
 - (id)description;
-- (id)soundData;
-- (void)setBusId:(int)arg1;
-- (int)busId;
 - (void)_informDelegateOfCompletionIfNeeded:(BOOL)arg1;
 - (void)_audioCompletedCleanup:(struct __CFBoolean *)arg1;
 - (void)audioCompletedCleanup;
@@ -42,17 +53,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)stop;
 - (BOOL)play;
 - (BOOL)isPlaying;
-- (double)audioDuration;
-- (void)setVolume:(float)arg1;
-- (float)volume;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (id)initWithData:(id)arg1;
-- (id)initWithContentsOfURL:(id)arg1 byReference:(BOOL)arg2;
-- (id)initWithContentsOfFile:(id)arg1 byReference:(BOOL)arg2;
-- (id)init;
+- (id)_initWithContentsOfURL:(id)arg1;
+- (id)_initWithContentsOfFile:(id)arg1;
 - (void)_postInitialization;
 
 @end

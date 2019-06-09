@@ -9,17 +9,13 @@
 #import <GeoServices/GEOPhoneNumberResolving-Protocol.h>
 
 @class NSString;
-@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface GEOPhoneNumberResolverRemoteProxy : NSObject <GEOPhoneNumberResolving>
 {
-    NSObject<OS_dispatch_queue> *_xcpWorkQueue;
 }
 
-- (void).cxx_destruct;
 - (void)resolvePhoneNumbers:(id)arg1 handler:(CDUnknownBlockType)arg2 queue:(id)arg3;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -10,15 +10,15 @@
 
 @interface PKSigningIdentity : NSObject
 {
-    struct OpaqueSecIdentityRef *_identity;
+    struct __SecIdentity *_identity;
     NSMutableArray *_supportingCerts;
     NSString *_keychainSpec;
 }
 
-+ (id)_identitiesMatchingPrefix:(id)arg1 policy:(struct OpaqueSecPolicyRef *)arg2 fromKeychain:(id)arg3;
++ (id)_identitiesMatchingPrefix:(id)arg1 policy:(struct __SecPolicy *)arg2 fromKeychain:(id)arg3;
 + (id)_validIdentitiesMatchingPrefix:(id)arg1 fromKeychain:(id)arg2 forCodeSigning:(BOOL)arg3 didExcludeWrongIdentities:(char *)arg4;
-+ (struct OpaqueSecKeychainRef *)_copyKeychainWithPath:(id)arg1;
-+ (id)commonNameForCertificate:(struct OpaqueSecCertificateRef *)arg1;
++ (struct __SecKeychain *)_copyKeychainWithPath:(id)arg1;
++ (id)commonNameForCertificate:(struct __SecCertificate *)arg1;
 + (id)allSigningIdentitiesWithPrefix:(id)arg1 fromKeychain:(id)arg2 forCodeSigning:(BOOL)arg3;
 + (id)allSigningIdentitiesWithPrefix:(id)arg1 fromKeychain:(id)arg2;
 + (id)bestSigningIdentityFromString:(id)arg1 fromKeychain:(id)arg2 forCodeSigning:(BOOL)arg3 error:(id *)arg4;
@@ -26,13 +26,13 @@
 + (id)bestSigningIdentityFromString:(id)arg1 fromKeychain:(id)arg2;
 - (unsigned long long)_levelOfMatch:(id)arg1;
 - (id)_sha1AsString;
-- (id)_initWithIdentityRef:(struct OpaqueSecIdentityRef *)arg1 keychainSpec:(id)arg2;
+- (id)_initWithIdentityRef:(struct __SecIdentity *)arg1 keychainSpec:(id)arg2;
 @property(readonly) NSString *keychainPath;
 - (BOOL)addIntermediateCertificateWithCommonName:(id)arg1;
 @property(readonly) NSArray *supportingCertificateRefs;
 - (BOOL)shouldUseTSAByDefault;
 @property(readonly) NSString *name;
-- (struct OpaqueSecIdentityRef *)identityRef;
+- (struct __SecIdentity *)identityRef;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (void)dealloc;

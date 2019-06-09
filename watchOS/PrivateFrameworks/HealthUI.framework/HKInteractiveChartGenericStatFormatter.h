@@ -7,18 +7,28 @@
 #import <HealthUI/HKInteractiveChartDataFormatter.h>
 
 @class NSArray;
+@protocol HKInteractiveChartRangeProvider;
 
 @interface HKInteractiveChartGenericStatFormatter : HKInteractiveChartDataFormatter
 {
-    NSArray *_statDisplayItems;
+    NSArray *_overrideStatFormatterItemOptions;
+    int _context;
+    id <HKInteractiveChartRangeProvider> _chartRangeProvider;
+    NSArray *_configuredStatItems;
 }
 
-@property(retain, nonatomic) NSArray *statDisplayItems; // @synthesize statDisplayItems=_statDisplayItems;
++ (int)mapSingleItemToStatisticsType:(id)arg1;
+@property(retain, nonatomic) NSArray *configuredStatItems; // @synthesize configuredStatItems=_configuredStatItems;
+@property(retain, nonatomic) id <HKInteractiveChartRangeProvider> chartRangeProvider; // @synthesize chartRangeProvider=_chartRangeProvider;
+@property(nonatomic) int context; // @synthesize context=_context;
+@property(retain, nonatomic) NSArray *overrideStatFormatterItemOptions; // @synthesize overrideStatFormatterItemOptions=_overrideStatFormatterItemOptions;
 - (void).cxx_destruct;
 - (id)formattedValueStringForChartData:(id)arg1 options:(int)arg2;
 - (id)formattedUnitStringForChartData:(id)arg1;
 - (id)formattedSelectedRangeLabelDataWithChartData:(id)arg1;
-- (id)formattedSelectedRangeLabelDataWithChartData:(id)arg1 items:(id)arg2;
+- (id)_makeSelectedRangeDataWithMin:(double)arg1 max:(double)arg2 unit:(id)arg3 statisticsType:(int)arg4;
+- (void)configureFormatterForDisplayType:(id)arg1 quantityType:(id)arg2 chartRangeProvider:(id)arg3 timeScope:(int)arg4 context:(int)arg5;
+- (id)_formattedSelectedRangeLabelDataWithChartData:(id)arg1 items:(id)arg2;
 
 @end
 

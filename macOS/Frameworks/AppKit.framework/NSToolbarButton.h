@@ -6,7 +6,7 @@
 
 #import <AppKit/NSButton.h>
 
-@class NSImage, NSString, NSToolbarItem;
+@class NSString, NSToolbarItem;
 
 @interface NSToolbarButton : NSButton
 {
@@ -17,18 +17,16 @@
     NSString *_alternateToolTip;
     NSString *_primaryTitle;
     NSString *_alternateTitle;
-    NSImage *_cachedDrawingImage;
-    CDStruct_9fab449c _tbbFlags;
-    id _toolbarButtonReserved;
 }
 
 + (void)initialize;
+- (void).cxx_destruct;
 - (id)cachedDrawingImage;
 - (void)invalidateCachedDrawingImage;
 - (BOOL)refusesFirstResponder;
 - (BOOL)sendAction;
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2;
-- (void)setImagePosition:(unsigned long long)arg1;
+- (void)setBordered:(BOOL)arg1;
 - (id)_item;
 - (void)dealloc;
 - (id)initWithItem:(id)arg1;

@@ -6,15 +6,17 @@
 
 #import <objc/NSObject.h>
 
-@class AUAudioUnitOfflineProcessor, AUPasscodeEncoder;
+@class APCPlayerEmbedInfo, AUAudioUnitOfflineProcessor, AUPasscodeEncoder;
 
 @interface APCEncoderProcessor : NSObject
 {
     AUPasscodeEncoder *_encoderAU;
     AUAudioUnitOfflineProcessor *_processor;
+    APCPlayerEmbedInfo *_passcodeEmbedInfo;
 }
 
 - (void).cxx_destruct;
+- (BOOL)getEmbeddingInfo:(id *)arg1;
 - (void)run;
 - (float)evaluateAsset:(id)arg1;
 - (id)initWithAssetURL:(id)arg1 codecConfig:(id)arg2 payload:(id)arg3 outputURL:(id)arg4 error:(id *)arg5;

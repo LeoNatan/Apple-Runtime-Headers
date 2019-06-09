@@ -10,7 +10,7 @@
 
 @interface CEMApplicationListInstalledApplicationsCommand_StatusInstalledApplicationListItem : CEMPayloadBase
 {
-    NSString *_statusIdentifier;
+    NSString *_statusBundleIdentifier;
     NSString *_statusExternalVersionIdentifier;
     NSString *_statusVersion;
     NSString *_statusShortVersion;
@@ -30,8 +30,8 @@
     NSNumber *_statusDownloadCancelled;
 }
 
-+ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withExternalVersionIdentifier:(id)arg2 withVersion:(id)arg3 withShortVersion:(id)arg4 withName:(id)arg5 withAppStoreVendable:(id)arg6 withDeviceBasedVPP:(id)arg7 withBetaApp:(id)arg8 withAdHocCodeSigned:(id)arg9 withHasUpdateAvailable:(id)arg10;
-+ (id)buildWithIdentifier:(id)arg1 withExternalVersionIdentifier:(id)arg2 withVersion:(id)arg3 withShortVersion:(id)arg4 withName:(id)arg5 withBundleSize:(id)arg6 withDynamicSize:(id)arg7 withIsValidated:(id)arg8 withInstalling:(id)arg9 withAppStoreVendable:(id)arg10 withDeviceBasedVPP:(id)arg11 withBetaApp:(id)arg12 withAdHocCodeSigned:(id)arg13 withHasUpdateAvailable:(id)arg14 withDownloadFailed:(id)arg15 withDownloadWaiting:(id)arg16 withDownloadPaused:(id)arg17 withDownloadCancelled:(id)arg18;
++ (id)buildRequiredOnlyWithBundleIdentifier:(id)arg1 withExternalVersionIdentifier:(id)arg2 withVersion:(id)arg3 withShortVersion:(id)arg4 withName:(id)arg5 withAppStoreVendable:(id)arg6 withDeviceBasedVPP:(id)arg7 withBetaApp:(id)arg8 withAdHocCodeSigned:(id)arg9 withHasUpdateAvailable:(id)arg10;
++ (id)buildWithBundleIdentifier:(id)arg1 withExternalVersionIdentifier:(id)arg2 withVersion:(id)arg3 withShortVersion:(id)arg4 withName:(id)arg5 withBundleSize:(id)arg6 withDynamicSize:(id)arg7 withIsValidated:(id)arg8 withInstalling:(id)arg9 withAppStoreVendable:(id)arg10 withDeviceBasedVPP:(id)arg11 withBetaApp:(id)arg12 withAdHocCodeSigned:(id)arg13 withHasUpdateAvailable:(id)arg14 withDownloadFailed:(id)arg15 withDownloadWaiting:(id)arg16 withDownloadPaused:(id)arg17 withDownloadCancelled:(id)arg18;
 + (id)allowedStatusKeys;
 @property(copy, nonatomic) NSNumber *statusDownloadCancelled; // @synthesize statusDownloadCancelled=_statusDownloadCancelled;
 @property(copy, nonatomic) NSNumber *statusDownloadPaused; // @synthesize statusDownloadPaused=_statusDownloadPaused;
@@ -50,7 +50,7 @@
 @property(copy, nonatomic) NSString *statusShortVersion; // @synthesize statusShortVersion=_statusShortVersion;
 @property(copy, nonatomic) NSString *statusVersion; // @synthesize statusVersion=_statusVersion;
 @property(copy, nonatomic) NSString *statusExternalVersionIdentifier; // @synthesize statusExternalVersionIdentifier=_statusExternalVersionIdentifier;
-@property(copy, nonatomic) NSString *statusIdentifier; // @synthesize statusIdentifier=_statusIdentifier;
+@property(copy, nonatomic) NSString *statusBundleIdentifier; // @synthesize statusBundleIdentifier=_statusBundleIdentifier;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayload;

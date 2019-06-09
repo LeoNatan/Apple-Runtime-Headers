@@ -6,7 +6,10 @@
 
 #import <EventKit/NSObject-Protocol.h>
 
+@class CADRouteHypothesis, NSString;
+
 @protocol CADCalendarToolInterface <NSObject>
+- (void)CADPostSyntheticRouteHypothesis:(CADRouteHypothesis *)arg1 forEventWithExternalURL:(NSString *)arg2 reply:(void (^)(int))arg3;
 - (void)CADPurgeChangeTrackingReply:(void (^)(int))arg1;
 @end
 

@@ -31,6 +31,7 @@
 - (void)addLockStatusObserver:(id)arg1;
 - (void)stopObservingKeyBagStatus;
 - (void)beginObservingKeyBagStatusWithCallback:(CDUnknownFunctionPointerType)arg1;
+- (id)platformBuildVersion;
 - (id)buildVersionHeader;
 - (id)protocolVersionHeader;
 - (id)storeUserAgent;

@@ -101,7 +101,8 @@
 - (id)facesFromAsset:(id)arg1;
 - (id)assetForIdentifier:(id)arg1 error:(id *)arg2;
 - (id)unverifiedVisibleFacesFromFaceGroupContainingFacesWithClusterSequenceNumbers:(id)arg1 withFaceprintVersion:(unsigned int)arg2;
-- (id)facesForClusteringWithLocalIdentifiers:(id)arg1 faceprintVersion:(unsigned int)arg2 excludeClustered:(_Bool)arg3;
+- (id)facesForClusteringWithLocalIdentifiers:(id)arg1 faceprintVersion:(unsigned int)arg2 excludeClustered:(_Bool)arg3 groupingIdentifiers:(id)arg4;
+- (id)momentIdentifierForFace:(id)arg1 withFetchOptions:(id)arg2;
 - (id)deterministicallyOrderedFaceIdentifiersWithLocalIdentifiers:(id)arg1 faceprintVersion:(unsigned int)arg2;
 - (id)unclusteredClusteringEligibleFaceLocalIdentifiers:(id *)arg1;
 - (id)faceLocalIdentifiersInFaceGroupWithLocalIdentifier:(id)arg1 error:(id *)arg2;

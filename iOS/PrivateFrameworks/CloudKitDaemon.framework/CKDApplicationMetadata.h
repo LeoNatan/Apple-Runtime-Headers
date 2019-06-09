@@ -26,14 +26,20 @@ __attribute__((visibility("hidden")))
     _Bool _allowsParticipantPII;
     _Bool _displaysSystemAcceptPrompt;
     _Bool _canUseNonLegacyShareURL;
+    _Bool _allowUnverifiedAccount;
     NSString *_apsEnvironmentString;
     long long _isApplication;
     NSString *_entitlementSpecifiedPCSServiceName;
     NSString *_applicationIdentifier;
     NSString *_clientPrefix;
+    NSString *_pushBundleID;
+    NSString *_associatedApplicationBundleID;
 }
 
+@property(nonatomic) _Bool allowUnverifiedAccount; // @synthesize allowUnverifiedAccount=_allowUnverifiedAccount;
 @property(nonatomic) _Bool canUseNonLegacyShareURL; // @synthesize canUseNonLegacyShareURL=_canUseNonLegacyShareURL;
+@property(retain, nonatomic) NSString *associatedApplicationBundleID; // @synthesize associatedApplicationBundleID=_associatedApplicationBundleID;
+@property(retain, nonatomic) NSString *pushBundleID; // @synthesize pushBundleID=_pushBundleID;
 @property(retain, nonatomic) NSString *clientPrefix; // @synthesize clientPrefix=_clientPrefix;
 @property(retain, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 @property(retain, nonatomic) NSString *entitlementSpecifiedPCSServiceName; // @synthesize entitlementSpecifiedPCSServiceName=_entitlementSpecifiedPCSServiceName;

@@ -9,35 +9,35 @@
 #import <AppPredictionClient/SFFeedbackListener-Protocol.h>
 
 @class NSArray, NSMutableArray, NSString, PETGoalConversionEventTracker, SFSearchResult;
+@protocol ATXSearchFeedbackListenerTarget;
 
 @interface ATXSearchFeedbackListener : NSObject <SFFeedbackListener>
 {
+    NSObject<ATXSearchFeedbackListenerTarget> *_target;
     NSArray *_currentZKWItems;
     NSString *_query;
     unsigned char _appConsumerSubType;
     unsigned char _actionConsumerSubType;
-    _Bool _testingMode;
-    NSMutableArray *_testingAppFeedback;
-    NSMutableArray *_testingActionFeedback;
-    PETGoalConversionEventTracker *_apAppPredicitonsShownTracker;
+    PETGoalConversionEventTracker *_apAppPredictionsShownTracker;
     _Bool _waitingForPredictedAppFeedback;
     _Bool _waitingForPredictedActionFeedback;
     SFSearchResult *_engagedResult;
     NSMutableArray *_explicitlyDismissedActions;
-    _Bool _backgroundActionExecuted;
     _Bool _cardWasEngaged;
-    unsigned long long _lastResultsDidBecomeVisibleTimeStamp;
-    unsigned long long _lastDidStartSearchTimeStamp;
-    unsigned long long _lastSearchViewDidAppearTimeStamp;
-    unsigned long long _lastSearchViewDidDisappearTimeStamp;
-    unsigned long long _lastDidEngageResultTimeStamp;
-    unsigned long long _lastDidEngageCardSectionTimeStamp;
+    struct {
+        CDStruct_a7b080c6 resultsDidBecomeVisible;
+        CDStruct_a7b080c6 didStartSearch;
+        CDStruct_a7b080c6 searchViewDidAppear;
+        CDStruct_a7b080c6 searchViewDidDisappear;
+        CDStruct_a7b080c6 didEngageResult;
+        CDStruct_a7b080c6 didEngageCardSection;
+    } _debounce;
+    _Bool _shouldDebounce;
 }
 
++ (id)mergeNewSearchResults:(id)arg1 intoExistingResults:(id)arg2;
+@property(nonatomic) _Bool shouldDebounce; // @synthesize shouldDebounce=_shouldDebounce;
 - (void).cxx_destruct;
-- (id)getTestingAtxFeedback;
-- (void)disableTestingMode;
-- (void)enableTestingMode;
 - (void)didEngageCardSection:(id)arg1;
 - (void)cardViewDidDisappear:(id)arg1;
 - (void)didEngageResult:(id)arg1;
@@ -45,16 +45,15 @@
 - (void)didStartSearch:(id)arg1;
 - (void)searchViewDidDisappear:(id)arg1;
 - (void)searchViewDidAppear:(id)arg1;
-- (void)_logZkwDisplayTime:(unsigned long long)arg1;
 - (void)_sendAppFeedback:(id)arg1 searchResults:(id)arg2;
-- (void)_sendActionFeedback:(id)arg1 searchResults:(id)arg2;
-- (void)_sendFeedbackAndDoLogging;
+- (void)_sendActionFeedback:(id)arg1 searchedActionType:(unsigned long long)arg2 engagedAppString:(id)arg3 searchResults:(id)arg4 executedInBackground:(_Bool)arg5;
+- (void)_sendFeedbackForEngagement:(_Bool)arg1 actionExecutedInBackground:(_Bool)arg2;
 - (void)_resetState;
-- (void)_setCurrentZKWItems:(id)arg1 triggerEvent:(unsigned long long)arg2;
+- (void)_zkwItemsDidAppear:(id)arg1;
 - (void)_setQuery:(id)arg1;
-- (void)_setBackgroundActionExecuted:(_Bool)arg1;
-- (void)_setActionConsumerSubType:(unsigned char)arg1;
-- (void)_setAppConsumerSubType:(unsigned char)arg1;
+- (void)_setAppConsumerSubType:(unsigned char)arg1 actionConsumerSubType:(unsigned char)arg2;
+- (_Bool)_isDuplicateEventWithState:(CDStruct_a7b080c6 *)arg1 timestamp:(unsigned long long)arg2 method:(SEL)arg3;
+- (id)initWithTarget:(id)arg1;
 - (id)init;
 
 // Remaining properties

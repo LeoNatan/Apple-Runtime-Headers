@@ -11,17 +11,26 @@
     _Bool _synchronous;
     _Bool _networkAccessAllowed;
     _Bool _allowPlaceholder;
+    _Bool _onlyUseFetchedAssetPropertiesDuringChoosing;
     int _choosingPolicy;
-    int _loadingMode;
+    unsigned int _loadingOptions;
     int _version;
+    int _resizeMode;
 }
 
++ (unsigned int)loadingOptionsFromLoadingMode:(int)arg1;
+@property(nonatomic) _Bool onlyUseFetchedAssetPropertiesDuringChoosing; // @synthesize onlyUseFetchedAssetPropertiesDuringChoosing=_onlyUseFetchedAssetPropertiesDuringChoosing;
 @property(nonatomic) _Bool allowPlaceholder; // @synthesize allowPlaceholder=_allowPlaceholder;
 @property(nonatomic, getter=isNetworkAccessAllowed) _Bool networkAccessAllowed; // @synthesize networkAccessAllowed=_networkAccessAllowed;
 @property(nonatomic, getter=isSynchronous) _Bool synchronous; // @synthesize synchronous=_synchronous;
+@property(nonatomic) int resizeMode; // @synthesize resizeMode=_resizeMode;
 @property(nonatomic) int version; // @synthesize version=_version;
-@property(nonatomic) int loadingMode; // @synthesize loadingMode=_loadingMode;
+@property(nonatomic) unsigned int loadingOptions; // @synthesize loadingOptions=_loadingOptions;
 @property(nonatomic) int choosingPolicy; // @synthesize choosingPolicy=_choosingPolicy;
+- (_Bool)shouldLoadDataOrURL;
+- (_Bool)shouldLoadURL;
+- (_Bool)shouldLoadData;
+- (_Bool)shouldLoadImage;
 - (id)description;
 - (id)shortDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;

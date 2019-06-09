@@ -11,6 +11,7 @@
 
 @class NSMutableArray, NSString, OITSUCustomFormatData;
 
+__attribute__((visibility("hidden")))
 @interface OITSUCustomFormat : NSObject <NSCopying, NSMutableCopying>
 {
     NSString *_formatNameStem;

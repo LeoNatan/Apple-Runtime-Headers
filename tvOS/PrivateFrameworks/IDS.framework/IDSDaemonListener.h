@@ -8,11 +8,12 @@
 
 #import <IDS/IDSDaemonListenerProtocol-Protocol.h>
 
-@class NSHashTable, NSMutableDictionary, NSProtocolChecker, NSString;
+@class IDSInternalQueueController, NSHashTable, NSMutableDictionary, NSProtocolChecker, NSString;
 @protocol OS_dispatch_queue;
 
 @interface IDSDaemonListener : NSObject <IDSDaemonListenerProtocol>
 {
+    IDSInternalQueueController *_internalQueueController;
     NSObject<OS_dispatch_queue> *_ivarQueue;
     NSHashTable *_handlers;
     NSProtocolChecker *_protocol;
@@ -20,6 +21,7 @@
     NSMutableDictionary *_topicToEnabledAccounts;
     NSMutableDictionary *_accountToDevices;
     NSMutableDictionary *_accountToActiveDeviceUniqueID;
+    NSMutableDictionary *_serviceToActiveDeviceUniqueID;
     NSString *_deviceIdentifier;
     _Bool _setupComplete;
     _Bool _postedSetupComplete;
@@ -38,10 +40,11 @@
 - (void)continuityDidStopScanningForType:(long long)arg1;
 - (void)continuityDidStartScanningForType:(long long)arg1;
 - (void)continuityDidFailToStartAdvertisingOfType:(long long)arg1 withError:(id)arg2;
+- (void)continuityDidStopAdvertisingOfType:(long long)arg1 withError:(id)arg2;
 - (void)continuityDidStopAdvertisingOfType:(long long)arg1;
 - (void)continuityDidStartAdvertisingOfType:(long long)arg1;
 - (void)continuityDidLosePeer:(id)arg1;
-- (void)continuityDidUpdateState:(long long)arg1;
+- (void)continuityDidUpdateStateToState:(long long)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;
@@ -69,6 +72,7 @@
 - (void)account:(id)arg1 aliasesChanged:(id)arg2;
 - (void)account:(id)arg1 registrationStatusInfoChanged:(id)arg2;
 - (void)account:(id)arg1 accountInfoChanged:(id)arg2;
+- (void)updateAccount:(id)arg1 withAccountInfo:(id)arg2;
 - (void)accountDisabled:(id)arg1 onService:(id)arg2;
 - (void)accountEnabled:(id)arg1 onService:(id)arg2;
 - (void)accountRemoved:(id)arg1;
@@ -88,6 +92,7 @@
 @property(readonly, nonatomic) _Bool hasPostedSetupComplete;
 @property(readonly, nonatomic) _Bool isSetupComplete;
 - (void)_noteDisconnected;
+- (id)initWithQueueController:(id)arg1 ivarQueue:(id)arg2;
 - (id)init;
 
 // Remaining properties

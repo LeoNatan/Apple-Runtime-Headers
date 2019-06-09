@@ -11,6 +11,7 @@
 @protocol SCROSBrailleDisplayManagerDelegate <NSObject>
 - (void)handlePlayCommandNotSupportedSound;
 - (void)handlePlayBorderHitSound;
+- (void)handleCopyStringToClipboard:(NSString *)arg1;
 - (void)handleDisplayModeChanged:(NSNumber *)arg1;
 - (void)handleBrailleTableFailedToLoad:(NSString *)arg1;
 - (void)handleBrailleDidShowNextAnnouncement:(NSNumber *)arg1;

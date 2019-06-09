@@ -13,10 +13,14 @@
     AVMutableCaptionRegionInternal *_mutableInternal;
 }
 
+@property(nonatomic) long long writingMode;
+@property(nonatomic) long long displayAlignment;
 @property(nonatomic) long long scroll;
 @property(copy, nonatomic) AVCaptionLength *height;
+@property(copy, nonatomic) AVCaptionPosition *endPosition;
 @property(copy, nonatomic) AVCaptionPosition *position;
 - (id)init;
+- (id)initWithIdentifier:(id)arg1;
 - (id)initWithFigMutableCaptionRegion:(struct OpaqueFigCaptionRegion *)arg1;
 
 @end

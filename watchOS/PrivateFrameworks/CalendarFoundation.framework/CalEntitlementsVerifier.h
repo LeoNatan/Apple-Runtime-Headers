@@ -10,11 +10,15 @@
 {
 }
 
++ (_Bool)currentProcessHasBirthdayModificationEntitlement;
 + (_Bool)currentProcessHasSyncClientEntitlement;
 + (_Bool)currentProcessHasContactsUIEntitlement;
 + (_Bool)currentProcessHasLocationdEffectiveBundleEntitlement;
 + (_Bool)currentProcessHasWatchOSMutableDatabaseEntitlement;
 + (_Bool)currentProcessHasAllowSuggestionsEntitlement;
++ (_Bool)currentProcessIsDataAccess;
++ (_Bool)currentProcessIsCalendarDaemon;
++ (_Bool)currentProcessIsFirstPartyCalendarApp;
 + (_Bool)currentProcessHasBooleanEntitlement:(id)arg1;
 
 @end

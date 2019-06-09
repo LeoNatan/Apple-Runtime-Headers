@@ -6,44 +6,56 @@
 
 #import <objc/NSObject.h>
 
-@class BSSignal, NSString;
-@protocol BKSAssertionClientProtocol, OS_dispatch_queue;
+#import <AssertionServices/RBSAssertionObserving-Protocol.h>
 
-@interface BKSAssertion : NSObject
+@class NSMutableArray, NSString, RBSAssertion, RBSTarget;
+
+@interface BKSAssertion : NSObject <RBSAssertionObserving>
 {
-    BSSignal *_invalidationSignal;
-    _Bool _acquired;
-    NSString *_identifier;
-    NSString *_name;
-    CDUnknownBlockType _invalidationHandler;
+    RBSAssertion *_internalAssertion;
     CDUnknownBlockType _acquisitionHandler;
-    id <BKSAssertionClientProtocol> _client;
-    NSObject<OS_dispatch_queue> *_clientQueue;
+    CDUnknownBlockType _invalidationHandler;
+    RBSTarget *_target;
+    NSMutableArray *_attributes;
+    NSString *_name;
+    struct os_unfair_lock_s _lock;
 }
 
-- (void)_clientQueue_updateAssertion;
-- (_Bool)_clientQueue_acquireAssertion;
-- (void)_clientQueue_invalidate:(_Bool)arg1;
-- (void)_registerAssertionAndAcquire:(_Bool)arg1;
-- (id)_clientQueue_updateEvent;
-- (id)_clientQueue_destroyEvent;
-- (id)_clientQueue_createEvent;
-- (id)_clientQueue;
-- (id)_clientQueue_client;
-- (_Bool)_clientQueue_acquired;
-- (id)_clientQueue_identifier;
-- (id)_clientQueue_name;
-- (void)assertionDidInvalidate;
+- (void).cxx_destruct;
+- (unsigned long long)_bksErrorForRBSAssertionError:(unsigned long long)arg1;
+- (void)_lock_setAttributes:(id)arg1;
+- (id)_lock_attributes;
+- (CDUnknownBlockType)_lock_acquisitionHandler;
+- (void)_lock_setInternalAssertion:(id)arg1;
+- (id)_lock_internalAssertion;
+- (void)_lock_setName:(id)arg1;
+- (id)_lock_name;
+- (void)_lock_reaquireAssertion;
+- (void)_lock:(CDUnknownBlockType)arg1;
+- (void)_acquireAsynchronously;
+- (CDUnknownBlockType)_acquisitionHandler;
+- (id)_internalAssertion;
+- (void)_setAttributes:(id)arg1;
+- (id)_attributes;
+- (void)_setTarget:(id)arg1;
+- (id)_target;
+- (void)_invalidateSynchronously:(_Bool)arg1;
+- (id)_initWithName:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)assertion:(id)arg1 didInvalidateWithError:(id)arg2;
+- (void)assertionWillInvalidate:(id)arg1;
 - (void)invalidate;
 - (_Bool)acquire;
 @property(copy, nonatomic) NSString *name;
 @property(copy, nonatomic) CDUnknownBlockType invalidationHandler;
 @property(readonly, nonatomic) _Bool valid;
 - (void)dealloc;
-- (id)_initWithClient:(id)arg1;
-- (id)_initWithClient:(id)arg1 name:(id)arg2;
-- (id)_initWithClient:(id)arg1 name:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

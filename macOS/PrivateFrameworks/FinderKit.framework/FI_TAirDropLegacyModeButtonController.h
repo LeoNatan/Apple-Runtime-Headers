@@ -16,10 +16,12 @@ __attribute__((visibility("hidden")))
     struct TNotificationCenterObserver _popoverWillCloseObserver;
 }
 
++ (id)keyPathsForValuesAffectingLegacyModeSupported;
 + (id)keyPathsForValuesAffectingButtonTitle;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)popoverWillClose;
+@property(readonly, getter=isLegacyModeSupported) _Bool legacyModeSupported;
 - (void)buttonPressed:(id)arg1;
 @property(readonly, retain, nonatomic) NSString *buttonTitle; // @dynamic buttonTitle;
 @property(readonly) FI_TAirDropDiscoveryController *discoveryController;

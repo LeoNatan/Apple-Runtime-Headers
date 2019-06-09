@@ -7,20 +7,21 @@
 #import <objc/NSObject.h>
 
 @class NSString;
-@protocol NSObject, OS_voucher;
+@protocol NSObject, OS_os_transaction, OS_voucher;
 
 __attribute__((visibility("hidden")))
 @interface _NSActivityAssertion : NSObject
 {
     unsigned long long _options;
     NSString *_reason;
+    NSObject<OS_os_transaction> *_transaction;
     unsigned int _displaySleepAssertionID;
     unsigned int _systemSleepAssertionID;
     NSObject<OS_voucher> *_voucher;
     NSObject<OS_voucher> *_previousVoucher;
-    unsigned char _adoptPreviousVoucher;
     id <NSObject> _xpcBoost;
     // Error parsing type: AB, name: _ended
+    unsigned char _adoptPreviousVoucher;
 }
 
 + (void)_performActivityWithOptions:(unsigned long long)arg1 reason:(id)arg2 usingBlock:(CDUnknownBlockType)arg3;

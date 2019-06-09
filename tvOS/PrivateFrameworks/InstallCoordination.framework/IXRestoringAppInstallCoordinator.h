@@ -7,38 +7,27 @@
 #import <InstallCoordination/IXAppInstallCoordinator.h>
 
 #import <InstallCoordination/IXCoordinatorWithAppAssetPromise-Protocol.h>
-#import <InstallCoordination/IXCoordinatorWithAutoEnablingExtensionTypes-Protocol.h>
 #import <InstallCoordination/IXCoordinatorWithInstallOptions-Protocol.h>
 #import <InstallCoordination/IXCoordinatorWithUserDataPromise-Protocol.h>
 
 @class NSString;
 
-@interface IXRestoringAppInstallCoordinator : IXAppInstallCoordinator <IXCoordinatorWithAppAssetPromise, IXCoordinatorWithInstallOptions, IXCoordinatorWithAutoEnablingExtensionTypes, IXCoordinatorWithUserDataPromise>
+@interface IXRestoringAppInstallCoordinator : IXAppInstallCoordinator <IXCoordinatorWithAppAssetPromise, IXCoordinatorWithInstallOptions, IXCoordinatorWithUserDataPromise>
 {
 }
 
 + (void)enumerateCoordinatorsUsingBlock:(CDUnknownBlockType)arg1;
 + (_Bool)enumerateCoordinatorsWithError:(id *)arg1 usingBlock:(CDUnknownBlockType)arg2;
++ (id)existingCoordinatorForAppWithBundleID:(id)arg1 error:(id *)arg2;
 + (id)coordinatorForAppWithBundleID:(id)arg1 withClientID:(unsigned long long)arg2 createIfNotExisting:(_Bool)arg3 created:(_Bool *)arg4 error:(id *)arg5;
 - (id)validInstallTypes;
-- (id)userDataRestoreShouldBegin:(_Bool *)arg1;
-@property(readonly, nonatomic) _Bool hasUserDataPromise;
-- (id)userDataPromiseWithError:(id *)arg1;
-- (_Bool)setUserDataPromise:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) _Bool hasAutoEnabledExtensionTypes;
-- (_Bool)setAutoEnabledExtensionTypes:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) _Bool hasInstallOptions;
-- (_Bool)setInstallOptions:(id)arg1 error:(id *)arg2;
-- (unsigned long long)appAssetPromiseResponsibleClientWithError:(id *)arg1;
-- (_Bool)setAppAssetPromiseResponsibleClient:(unsigned long long)arg1 error:(id *)arg2;
-- (_Bool)appAssetPromiseHasBegunFulfillment:(_Bool *)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) _Bool hasAppAssetPromise;
-- (id)appAssetPromiseWithError:(id *)arg1;
-- (_Bool)setAppAssetPromise:(id)arg1 error:(id *)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool hasAppAssetPromise;
+@property(readonly, nonatomic) _Bool hasInstallOptions;
+@property(readonly, nonatomic) _Bool hasUserDataPromise;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

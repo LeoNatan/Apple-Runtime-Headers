@@ -118,6 +118,8 @@
 - (void)setHasBeenLowered:(_Bool)arg1;
 @property(readonly) _Bool hasBeenLowered;
 - (_Bool)_existsInEngine:(id)arg1;
+- (void)_rebuildExtraVars;
+- (void)_setPriority:(float)arg1 mutuallyExclusiveConstraints:(id *)arg2;
 @property float priority;
 - (_Bool)_isIBPrototypingLayoutConstraint;
 @property _Bool shouldBeArchived;
@@ -130,6 +132,7 @@
 @property(readonly) long long firstAttribute;
 @property(readonly) id firstItem;
 @property(nonatomic, getter=_loweredConstantNeedsUpdate, setter=_setLoweredConstantNeedsUpdate:) _Bool loweredConstantNeedsUpdate;
+- (double)_unsatisfaction:(double *)arg1;
 @property(readonly) double unsatisfaction;
 - (double)dissatisfaction;
 @property(setter=_setAssociatedRuleNode:) _NSConstraintDescriptionLayoutRuleNode *_associatedRuleNode;

@@ -18,6 +18,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)fileObjectIDForURL:(id)arg1 allocateDocID:(_Bool)arg2 error:(id *)arg3;
++ (id)newFromSqliteStatement:(struct sqlite3_stmt *)arg1 atIndex:(int)arg2;
 + (id)newFromSqliteValue:(struct sqlite3_value *)arg1;
 + (id)fileObjectIDWithString:(id)arg1;
 @property(readonly) unsigned long long hash;

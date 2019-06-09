@@ -24,6 +24,7 @@
 + (id)_cannotOpenAttachmentLocalizedString;
 + (id)_okLocalizedString;
 + (id)cellControllersForAttachments:(id)arg1 givenExistingControllers:(id)arg2 sourceIsManaged:(_Bool)arg3;
++ (id)_keyForAttachment:(id)arg1;
 + (_Bool)_attachmentIsViewable:(id)arg1;
 @property(nonatomic) __weak id <EKEventAttachmentCellControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) EKAttachment *attachment; // @synthesize attachment=_attachment;
@@ -33,6 +34,7 @@
 - (id)documentInteractionControllerViewForPreview:(id)arg1;
 - (id)documentInteractionControllerViewControllerForPreview:(id)arg1;
 - (void)cellSelected;
+- (void)_openExternalAttachmentURLInBrowser:(id)arg1;
 - (void)_presentPreviewWithURL:(id)arg1 filename:(id)arg2;
 - (void)_presentPreviewOnMainThreadWithInfo:(id)arg1;
 - (id)_downloadProgressStringWithDownloadedBytes:(id)arg1 outOfTotalBytes:(id)arg2;

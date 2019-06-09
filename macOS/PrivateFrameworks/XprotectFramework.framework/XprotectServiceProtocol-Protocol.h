@@ -8,6 +8,6 @@
 
 @protocol XprotectServiceProtocol
 - (void)handleFeedbackReply:(BOOL)arg1;
-- (void)performAnalysisOnFile:(NSURL *)arg1 withLSProperties:(NSDictionary *)arg2 withReply:(void (^)(NSDictionary *))arg3;
+- (void)performAnalysisOnFile:(NSURL *)arg1 withLSProperties:(NSDictionary *)arg2 malwareScanOnly:(BOOL)arg3 withReply:(void (^)(NSDictionary *))arg4;
 @end
 

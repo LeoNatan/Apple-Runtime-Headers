@@ -10,12 +10,10 @@
 
 @protocol _CPImagesUsagePropensity <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
-@property(nonatomic) int totalSessions;
 @property(nonatomic) int totalEngagements;
 @property(nonatomic) float other;
-@property(nonatomic) int configuredLookbackTimeInDays;
-@property(nonatomic) long long collectionEndTimestamp;
-@property(nonatomic) long long collectionStartTimestamp;
+@property(nonatomic) float recentResult;
+@property(nonatomic) float zkw;
 - (id)initWithDictionary:(NSDictionary *)arg1;
 - (id)initWithJSON:(NSData *)arg1;
 @end

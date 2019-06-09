@@ -6,21 +6,22 @@
 
 #import <UIKit/UIView.h>
 
-@class CAShapeLayer, DOCTagIconView;
+@class CAShapeLayer, DOCTagDotView;
 
 @interface DOCTagCheckableDotView : UIView
 {
     _Bool _checked;
-    DOCTagIconView *_tagDotView;
+    DOCTagDotView *_tagDotView;
     CAShapeLayer *_borderLayer;
 }
 
 @property(readonly, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
-@property(readonly, nonatomic) DOCTagIconView *tagDotView; // @synthesize tagDotView=_tagDotView;
+@property(readonly, nonatomic) DOCTagDotView *tagDotView; // @synthesize tagDotView=_tagDotView;
 @property(nonatomic) _Bool checked; // @synthesize checked=_checked;
 - (void).cxx_destruct;
 - (void)updateLayoutOfLayers;
 - (void)layoutSublayersOfLayer:(id)arg1;
+- (void)layoutSubviews;
 @property(nonatomic) long long tagColor;
 - (id)initWithFrame:(struct CGRect)arg1;
 

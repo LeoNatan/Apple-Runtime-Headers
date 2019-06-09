@@ -19,6 +19,7 @@
 @property(copy, nonatomic) NSString *typeName;
 @property(copy, nonatomic) NSArray *stepResults;
 @property(copy, nonatomic) NSDictionary *slotResolutionMap;
+@property(copy, nonatomic) NSString *jsonEncodedIntent;
 @property(copy, nonatomic) NSString *base64EncodedIntent;
 - (id)encodedClassName;
 - (id)groupIdentifier;

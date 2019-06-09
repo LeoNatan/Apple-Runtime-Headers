@@ -8,6 +8,7 @@
 
 @class SKUIColorScheme, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface SKUIVideoImageDataConsumer : SKUIImageDataConsumer
 {
     unsigned long long _allowedOrientations;

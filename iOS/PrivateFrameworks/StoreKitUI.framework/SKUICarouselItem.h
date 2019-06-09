@@ -9,6 +9,7 @@
 @class NSString, SKUILink;
 @protocol SKUIArtworkProviding;
 
+__attribute__((visibility("hidden")))
 @interface SKUICarouselItem : NSObject
 {
     NSString *_accessibilityLabel;

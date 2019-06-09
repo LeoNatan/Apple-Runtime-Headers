@@ -16,7 +16,7 @@
     long long _serialNumber;
     long long _evaluationMode;
     long long _mediaComponentType;
-    long long _depthType;
+    long long _auxiliaryImageType;
     long long _sampleMode;
     long long _roundingPolicy;
     NSArray *_pipelineFilters;
@@ -37,7 +37,7 @@
 @property CDStruct_912cb5d2 scale; // @synthesize scale=_scale;
 @property long long sampleMode; // @synthesize sampleMode=_sampleMode;
 @property CDStruct_1b6d18a9 time; // @synthesize time=_time;
-@property long long depthType; // @synthesize depthType=_depthType;
+@property long long auxiliaryImageType; // @synthesize auxiliaryImageType=_auxiliaryImageType;
 @property long long mediaComponentType; // @synthesize mediaComponentType=_mediaComponentType;
 @property long long evaluationMode; // @synthesize evaluationMode=_evaluationMode;
 @property(readonly) long long serialNumber; // @synthesize serialNumber=_serialNumber;

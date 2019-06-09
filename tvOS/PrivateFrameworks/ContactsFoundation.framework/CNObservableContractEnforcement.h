@@ -8,15 +8,18 @@
 
 #import <ContactsFoundation/CNObserver-Protocol.h>
 
-@class NSString;
+@class CNObservableContractTerminationContext, NSString;
 
 @interface CNObservableContractEnforcement : NSObject <CNObserver>
 {
     unsigned long long _state;
+    CNObservableContractTerminationContext *_terminationContext;
 }
 
++ (id)os_log;
 + (_Bool)shouldSwizzleNilResults;
 + (_Bool)shouldEnforceRxProtocols;
+- (void).cxx_destruct;
 - (void)observerDidFailWithError:(id)arg1;
 - (void)observerDidComplete;
 - (void)observerDidReceiveResult:(id)arg1;

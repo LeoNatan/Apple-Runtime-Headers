@@ -8,6 +8,7 @@
 
 @class SKUIClientContext, SKUIShareSheetActivityViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIShareTemplateActivity : UIActivity
 {
     SKUIClientContext *_clientContext;

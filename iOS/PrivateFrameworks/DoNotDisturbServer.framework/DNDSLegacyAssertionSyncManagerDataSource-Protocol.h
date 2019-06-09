@@ -6,10 +6,10 @@
 
 #import <DoNotDisturbServer/DNDSAssertionSyncManagerDataSource-Protocol.h>
 
-@class DNDModeAssertion, NSDateInterval;
+@class DNDState;
 @protocol DNDSAssertionSyncManager;
 
 @protocol DNDSLegacyAssertionSyncManagerDataSource <DNDSAssertionSyncManagerDataSource>
-- (NSDateInterval *)legacyAssertionSyncManager:(id <DNDSAssertionSyncManager>)arg1 activeDateIntervalForModeAssertion:(DNDModeAssertion *)arg2;
+- (DNDState *)currentStateForLegacyAssertionSyncManager:(id <DNDSAssertionSyncManager>)arg1;
 @end
 

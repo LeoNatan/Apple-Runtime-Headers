@@ -33,7 +33,7 @@
 - (void)processSubscribeBeacon:(struct tagVoiceChatBeacon *)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;
 - (void)processUnsubscribeBeacon:(struct tagVoiceChatBeacon *)arg1 beaconState:(id)arg2 fromPeer:(id)arg3;
 - (void)receivedBeacon:(id)arg1 fromPeer:(id)arg2;
-- (void)peer:(id)arg1 didChangeState:(int)arg2;
+- (void)peer:(id)arg1 didChangeState:(unsigned int)arg2;
 - (void)calculateFocus:(id)arg1;
 - (void)sendBeacons;
 - (void)sendBeacon:(struct tagVoiceChatBeacon *)arg1 ToPeer:(id)arg2;

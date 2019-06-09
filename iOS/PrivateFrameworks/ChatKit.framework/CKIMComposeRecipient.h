@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MessageUI/MFComposeRecipient.h>
+#import <ContactsAutocompleteUI/CNComposeRecipient.h>
 
 #import <ChatKit/CKIMComposeRecipient-Protocol.h>
 
 @class IMHandle, NSString;
 
-@interface CKIMComposeRecipient : MFComposeRecipient <CKIMComposeRecipient>
+@interface CKIMComposeRecipient : CNComposeRecipient <CKIMComposeRecipient>
 {
     IMHandle *_handle;
 }
@@ -18,7 +18,6 @@
 @property(readonly, nonatomic) IMHandle *handle; // @synthesize handle=_handle;
 - (void).cxx_destruct;
 - (void)setIdentifier:(int)arg1;
-- (void)setRecord:(void *)arg1 recordID:(int)arg2 identifier:(int)arg3;
 - (_Bool)isRemovableFromSearchResults;
 - (id)objectForDragType:(id)arg1;
 - (id)supportedDragTypes;
@@ -29,15 +28,10 @@
 - (id)compositeName;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)unlocalizedLabel;
-- (id)label;
 - (int)identifier;
 - (id)commentedAddress;
 - (id)address;
-- (int)recordID;
-- (void *)record;
-- (int)property;
 - (void)releaseIMReferences;
-- (id)initWithRecord:(void *)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4 address:(id)arg5;
 - (id)initWithHandle:(id)arg1;
 
 // Remaining properties

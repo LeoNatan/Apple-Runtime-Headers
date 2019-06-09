@@ -15,6 +15,7 @@
 {
     _Bool _disableContinuousAnimation;
     UIVisualEffect *_vibrancyEffect;
+    long long _contentMode;
     unsigned long long _iconSize;
     unsigned long long _displayContext;
     unsigned long long _displayStyle;
@@ -28,6 +29,7 @@
 @property(nonatomic) _Bool disableContinuousAnimation; // @synthesize disableContinuousAnimation=_disableContinuousAnimation;
 @property(nonatomic) unsigned long long displayContext; // @synthesize displayContext=_displayContext;
 @property(nonatomic) unsigned long long iconSize; // @synthesize iconSize=_iconSize;
+@property(nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
 - (void).cxx_destruct;
 - (void)iconContentView:(id)arg1 didChangeAspectRatio:(double)arg2;
 @property(readonly, nonatomic) id <HFIconDescriptor> iconDescriptor;
@@ -39,6 +41,7 @@
 - (void)layoutSubviews;
 - (void)updateWithIconDescriptor:(id)arg1 displayStyle:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (id)contentContainerView;
+- (id)initWithFrame:(struct CGRect)arg1 contentMode:(long long)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

@@ -16,6 +16,7 @@
 - (void)volumeControllerDidUpdateHapticIntensity:(id <NACVolumeController>)arg1;
 - (void)volumeControllerDidUpdateProminentHapticState:(id <NACVolumeController>)arg1;
 - (void)volumeControllerDidUpdateHapticState:(id <NACVolumeController>)arg1;
+- (void)volumeControllerDidUpdateVolumeWarningState:(id <NACVolumeController>)arg1;
 - (void)volumeControllerDidUpdateVolumeWarningEnabled:(id <NACVolumeController>)arg1;
 - (void)volumeControllerDidUpdateEUVolumeLimit:(id <NACVolumeController>)arg1;
 - (void)volumeControllerDidUpdateMutedState:(id <NACVolumeController>)arg1;

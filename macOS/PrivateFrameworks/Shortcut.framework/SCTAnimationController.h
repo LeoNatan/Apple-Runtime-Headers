@@ -10,6 +10,7 @@
 
 @class NSString, NSView, NSViewAnimation, SCTInfiniteAnimation, SCTPopAnimation, SCTShowcaseWindow;
 
+__attribute__((visibility("hidden")))
 @interface SCTAnimationController : NSObject <NSAnimationDelegate>
 {
     SCTShowcaseWindow *mShowcaseWindow;

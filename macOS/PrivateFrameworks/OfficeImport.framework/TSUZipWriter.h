@@ -9,6 +9,7 @@
 @class NSArray, NSDate, NSError, NSMutableArray, NSMutableDictionary, TSUZipWriterEntry;
 @protocol OS_dispatch_data, OS_dispatch_queue, OS_dispatch_semaphore, TSURandomWriteChannel;
 
+__attribute__((visibility("hidden")))
 @interface TSUZipWriter : NSObject
 {
     unsigned long long _options;

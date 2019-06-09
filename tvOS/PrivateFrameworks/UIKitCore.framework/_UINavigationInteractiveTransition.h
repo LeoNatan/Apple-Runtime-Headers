@@ -22,7 +22,6 @@
 - (_Bool)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)dealloc;
 - (void)_setShouldReverseLayoutDirection:(_Bool)arg1;
 - (void)_configureNavigationGesture;
 - (id)initWithViewController:(id)arg1 animator:(id)arg2;

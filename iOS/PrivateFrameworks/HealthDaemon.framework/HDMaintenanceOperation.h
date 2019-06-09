@@ -8,6 +8,7 @@
 
 @interface HDMaintenanceOperation : NSOperation
 {
+    double _startedTime;
 }
 
 + (id)maintenanceOperationWithName:(id)arg1 asynchronousBlock:(CDUnknownBlockType)arg2;

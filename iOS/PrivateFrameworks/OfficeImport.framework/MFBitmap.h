@@ -21,11 +21,11 @@ __attribute__((visibility("hidden")))
     NSMutableData *m_bmpData;
 }
 
+- (void).cxx_destruct;
 - (_Bool)isEmpty;
 - (void)setMonoPalette:(id)arg1;
 - (_Bool)isFlipped;
 - (const char *)pixelData;
-- (void)dealloc;
 - (id)initWithBitmap:(id)arg1 in_width:(int)arg2 in_height:(int)arg3 in_planes:(int)arg4 in_bitsPerPixel:(int)arg5 in_bitmap:(const char *)arg6 in_bitmapSize:(unsigned int)arg7;
 - (id)initWithDIBitmap:(id)arg1 in_header:(const char *)arg2 in_headerSize:(unsigned int)arg3 in_bitmap:(const char *)arg4 in_bitmapSize:(unsigned int)arg5 in_usage:(int)arg6;
 - (id)initWithDIBitmap:(id)arg1 in_dib:(const char *)arg2 in_dibSize:(unsigned int)arg3 in_usage:(int)arg4;

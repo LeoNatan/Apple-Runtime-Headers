@@ -11,16 +11,19 @@
 
 @interface GEOComposedWalkingRouteLeg : GEOComposedRouteLeg
 {
-    id <GEOTransitRoutingIncidentMessage> _transitSteppingIncidentMessage;
-    id <GEOTransitRoutingIncidentMessage> _transitRouteDetailsIncidentMessage;
+    unsigned int _transitIncidentMessageStepIndex;
 }
 
-@property(readonly, nonatomic) id <GEOTransitRoutingIncidentMessage> transitRouteDetailsIncidentMessage; // @synthesize transitRouteDetailsIncidentMessage=_transitRouteDetailsIncidentMessage;
-@property(readonly, nonatomic) id <GEOTransitRoutingIncidentMessage> transitSteppingIncidentMessage; // @synthesize transitSteppingIncidentMessage=_transitSteppingIncidentMessage;
-- (void).cxx_destruct;
++ (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) unsigned int transitIncidentMessageStepIndex; // @synthesize transitIncidentMessageStepIndex=_transitIncidentMessageStepIndex;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)_transitIncidentMessageStep;
 @property(readonly, nonatomic) GEOComposedTransitWalkingRouteStep *arrivalStep;
 @property(readonly, nonatomic) GEOComposedWalkingRouteStep *lastWalkingStep;
-- (id)initWithComposedRoute:(id)arg1 stepRange:(struct _NSRange)arg2 pointRange:(struct _NSRange)arg3 transitSteppingIncidentMessage:(id)arg4 transitRouteDetailsIncidentMessage:(id)arg5;
+@property(readonly, nonatomic) id <GEOTransitRoutingIncidentMessage> transitRouteDetailsIncidentMessage;
+@property(readonly, nonatomic) id <GEOTransitRoutingIncidentMessage> transitSteppingIncidentMessage;
+- (id)initWithComposedRoute:(id)arg1 stepRange:(struct _NSRange)arg2 pointRange:(struct _NSRange)arg3 transitIncidentMessageStepIndex:(unsigned int)arg4;
 
 @end
 

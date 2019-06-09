@@ -10,7 +10,7 @@
 #import <AVKit/AVTouchBarPlaybackControlsControlling-Protocol.h>
 #import <AVKit/NSUserInterfaceValidations-Protocol.h>
 
-@class AVAsset, AVFragmentedMovieMinder, AVFunctionBarMediaSelectionOption, AVObservationController, AVOutputContextController, AVPlayer, AVTouchBarMediaSelectionOption, AVValueTiming, NSArray, NSDate, NSDictionary, NSError, NSObject, NSString, NSURL;
+@class AVAsset, AVAssetTrack, AVFragmentedMovieMinder, AVFunctionBarMediaSelectionOption, AVMediaSelectionOption, AVObservationController, AVOutputContextController, AVPlayer, AVTimecodeController, AVTouchBarMediaSelectionOption, AVValueTiming, NSArray, NSDate, NSDictionary, NSError, NSObject, NSString, NSURL;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface AVPlayerController : NSResponder <AVFunctionBarPlaybackControlsControlling, AVTouchBarPlaybackControlsControlling, NSUserInterfaceValidations>
@@ -20,7 +20,10 @@
     BOOL _lKeyDown;
     NSArray *_audioMediaSelectionOptions;
     NSArray *_legibleMediaSelectionOptions;
+    AVMediaSelectionOption *_cachedSelectedAudioMediaSelectionOption;
+    AVMediaSelectionOption *_cachedSelectedLegibleMediaSelectionOption;
     long long _savedCaptionAppearanceDisplayType;
+    BOOL _alwaysWantsAutomaticMediaOptionSelection;
     float _rate;
     BOOL _isResumed;
     NSObject<OS_dispatch_source> *_seekTimer;
@@ -37,7 +40,10 @@
     void *_observationInfo;
     BOOL _inspectionSuspended;
     id _updateAtMinMaxTimePeriodicObserverToken;
+    id _timecodePeriodicObserverToken;
     CDUnknownBlockType _listenerBlock;
+    BOOL _pictureInPictureInterrupted;
+    BOOL _handlesAudioSessionInterruptions;
     CDUnknownBlockType _retryPlayingImmediatelyBlock;
     BOOL _shouldPlayImmediately;
     BOOL _looping;
@@ -60,6 +66,7 @@
     BOOL _setOutputContextPending;
     BOOL _forceScanning;
     double _rateBeforeForceScanning;
+    BOOL _playingOnSecondScreen;
     BOOL _atMaxTime;
     BOOL _atMinTime;
     BOOL _scrubbing;
@@ -72,7 +79,12 @@
     BOOL _preventingIdleSystemSleep;
     BOOL _preventingIdleDisplaySleep;
     BOOL _disablingAutomaticTermination;
+    BOOL _allowsPictureInPicturePlayback;
+    BOOL _pictureInPictureActive;
+    BOOL _canTogglePictureInPicture;
+    BOOL _touchBarRequiresLinearPlayback;
     AVPlayer *_player;
+    long long _status;
     AVObservationController *_observationController;
     AVAsset *_currentAssetIfReady;
     NSObject<OS_dispatch_queue> *_assetInspectionQueue;
@@ -80,18 +92,19 @@
     AVValueTiming *_timing;
     AVValueTiming *_minTiming;
     AVValueTiming *_maxTiming;
+    AVAssetTrack *_currentAudioTrack;
+    AVTimecodeController *_timecodeController;
     double _seekToTime;
     NSDictionary *_metadata;
     NSArray *_contentChapters;
     NSArray *_availableMetadataFormats;
     double _rateBeforeScrubBegan;
+    double _defaultPlaybackRate;
     struct CGSize _presentationSize;
     CDStruct_1b6d18a9 _seekToTimeInternal;
 }
 
-+ (id)keyPathsForValuesAffectingShouldDisableAutomaticTermination;
-+ (id)keyPathsForValuesAffectingShouldPreventIdleDisplaySleep;
-+ (id)keyPathsForValuesAffectingShouldPreventIdleSystemSleep;
++ (id)keyPathsForValuesAffectingPictureInPicturePossible;
 + (id)keyPathsForValuesAffectingOutputContext;
 + (id)keyPathsForValuesAffectingExternalPlaybackAirPlayDeviceLocalizedName;
 + (id)keyPathsForValuesAffectingExternalPlaybackType;
@@ -108,6 +121,7 @@
 + (id)keyPathsForValuesAffectingCanScanForward;
 + (id)keyPathsForValuesAffectingCanSeek;
 + (id)keyPathsForValuesAffectingTimeControlStatus;
++ (id)keyPathsForValuesAffectingAudioWaveform;
 + (id)keyPathsForValuesAffectingHasShareableContent;
 + (id)keyPathsForValuesAffectingHasTrimmableContent;
 + (id)keyPathsForValuesAffectingHasSeekableLiveStreamingContent;
@@ -138,7 +152,6 @@
 + (id)keyPathsForValuesAffectingCompletelySeekable;
 + (id)keyPathsForValuesAffectingError;
 + (id)keyPathsForValuesAffectingReadyToPlay;
-+ (id)keyPathsForValuesAffectingStatus;
 + (void)initialize;
 + (id)keyPathsForValuesAffectingCurrentLegibleFunctionBarMediaSelectionOption;
 + (id)keyPathsForValuesAffectingHasLegibleFunctionBarMediaSelectionOptions;
@@ -148,12 +161,19 @@
 + (id)keyPathsForValuesAffectingHasLegibleMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasAudioMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasMediaSelectionOptions;
++ (id)keyPathsForValuesAffectingMaximumVideoResolution;
++ (id)keyPathsForValuesAffectingUsesExternalPlaybackWhileExternalScreenIsActive;
 + (id)keyPathsForValuesAffectingCurrentLegibleTouchBarMediaSelectionOption;
 + (id)keyPathsForValuesAffectingHasLegibleTouchBarMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingCurrentAudioTouchBarMediaSelectionOption;
 + (id)keyPathsForValuesAffectingHasAudioTouchBarMediaSelectionOptions;
 + (id)keyPathsForValuesAffectingHasTouchBarMediaSelectionOptions;
+@property BOOL touchBarRequiresLinearPlayback; // @synthesize touchBarRequiresLinearPlayback=_touchBarRequiresLinearPlayback;
+@property double defaultPlaybackRate; // @synthesize defaultPlaybackRate=_defaultPlaybackRate;
 @property(readonly) AVOutputContextController *outputContextController; // @synthesize outputContextController=_outputContextController;
+@property(nonatomic) BOOL canTogglePictureInPicture; // @synthesize canTogglePictureInPicture=_canTogglePictureInPicture;
+@property(nonatomic, getter=isPictureInPictureActive) BOOL pictureInPictureActive; // @synthesize pictureInPictureActive=_pictureInPictureActive;
+@property(nonatomic) BOOL allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
 @property(getter=isDisablingAutomaticTermination) BOOL disablingAutomaticTermination; // @synthesize disablingAutomaticTermination=_disablingAutomaticTermination;
 @property(getter=isPreventingIdleDisplaySleep) BOOL preventingIdleDisplaySleep; // @synthesize preventingIdleDisplaySleep=_preventingIdleDisplaySleep;
 @property(getter=isPreventingIdleSystemSleep) BOOL preventingIdleSystemSleep; // @synthesize preventingIdleSystemSleep=_preventingIdleSystemSleep;
@@ -168,6 +188,8 @@
 @property CDStruct_1b6d18a9 seekToTimeInternal; // @synthesize seekToTimeInternal=_seekToTimeInternal;
 @property(getter=isSeeking) BOOL seeking; // @synthesize seeking=_seeking;
 @property(getter=isSeekingInternal) BOOL seekingInternal; // @synthesize seekingInternal=_seekingInternal;
+@property(retain) AVTimecodeController *timecodeController; // @synthesize timecodeController=_timecodeController;
+@property(retain) AVAssetTrack *currentAudioTrack; // @synthesize currentAudioTrack=_currentAudioTrack;
 @property(retain) AVValueTiming *maxTiming; // @synthesize maxTiming=_maxTiming;
 @property(retain) AVValueTiming *minTiming; // @synthesize minTiming=_minTiming;
 @property(retain) AVValueTiming *timing; // @synthesize timing=_timing;
@@ -180,29 +202,28 @@
 @property(getter=isScrubbing) BOOL scrubbing; // @synthesize scrubbing=_scrubbing;
 @property(getter=isAtMinTime) BOOL atMinTime; // @synthesize atMinTime=_atMinTime;
 @property(getter=isAtMaxTime) BOOL atMaxTime; // @synthesize atMaxTime=_atMaxTime;
+@property long long status; // @synthesize status=_status;
 @property(retain) AVPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
-- (BOOL)shouldDisableAutomaticTermination;
-- (BOOL)shouldPreventIdleDisplaySleep;
-- (BOOL)shouldPreventIdleSystemSleep;
-- (BOOL)preventsIdleSleep;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (void)_prepareAssetForInspectionIfNeeded;
 - (id)scanningDelays;
+- (void)_updateRateForScrubbingAndSeeking;
 - (void)_cancelPendingSeeksIfNeeded;
+- (id)_timecodeTrack;
 - (void)setCanUseNetworkResourcesForLiveStreamingWhilePaused:(BOOL)arg1;
 - (BOOL)canUseNetworkResourcesForLiveStreamingWhilePaused;
 - (void)stopUsingNetworkResourcesForLiveStreamingWhilePaused;
 - (void)startUsingNetworkResourcesForLiveStreamingWhilePaused;
 - (void)togglePictureInPicture:(id)arg1;
-@property(readonly) BOOL canTogglePictureInPicture;
-@property(getter=isPictureInPictureActive) BOOL pictureInPictureActive;
-@property(readonly) BOOL allowsPictureInPicturePlayback;
+- (void)setPictureInPictureInterrupted:(BOOL)arg1;
+- (BOOL)isPictureInPictureInterrupted;
+- (BOOL)isPictureInPicturePossible;
 - (id)outputContext;
 - (id)externalPlaybackAirPlayDeviceLocalizedName;
 - (long long)externalPlaybackType;
 - (BOOL)isExternalPlaybackActive;
-- (BOOL)isPlayingOnSecondScreen;
+@property(getter=isPlayingOnSecondScreen) BOOL playingOnSecondScreen;
 - (BOOL)isPlayingOnExternalScreen;
 - (void)setAllowsExternalPlayback:(BOOL)arg1;
 - (BOOL)allowsExternalPlayback;
@@ -247,8 +268,11 @@
 - (void)seekToTime:(double)arg1;
 - (BOOL)canSeek;
 - (long long)timeControlStatus;
-- (BOOL)_isMarkedNotSerializablePlayerItem:(id)arg1;
-- (BOOL)_isRestrictedFromSavingPlayerItem:(id)arg1;
+- (void)_updateCurrentAudioTrackIfNeeded;
+- (BOOL)_assetContainsProResRaw:(id)arg1;
+- (BOOL)_assetIsMarkedNotSerializable:(id)arg1;
+- (id)audioWaveform;
+- (BOOL)_assetIsRestrictedFromSaving:(id)arg1;
 - (BOOL)hasShareableContent;
 - (BOOL)hasTrimmableContent;
 - (BOOL)hasSeekableLiveStreamingContent;
@@ -292,6 +316,7 @@
 - (void)updateAtMinMaxTime;
 - (void)setLooping:(BOOL)arg1;
 - (BOOL)isLooping;
+- (void)togglePlaybackEvenWhenInBackground:(id)arg1;
 - (void)togglePlayback:(id)arg1;
 @property(readonly) BOOL canTogglePlayback;
 - (void)pause:(id)arg1;
@@ -310,7 +335,7 @@
 - (BOOL)isCompletelySeekable;
 @property(readonly) NSError *error;
 @property(readonly, getter=isReadyToPlay) BOOL readyToPlay;
-@property(readonly) long long status;
+- (void)_updateStatus;
 - (id)_queuePlayer;
 - (void)setObservationInfo:(void *)arg1;
 - (void *)observationInfo;
@@ -327,8 +352,6 @@
 - (BOOL)hasFunctionBarMediaSelectionOptions;
 - (void)cancelThumbnailAndAudioAmplitudeSampleGenerationForRequestTypeLegacy:(long long)arg1;
 - (void)generateFunctionBarAudioAmplitudeSamples:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)isFunctionBarWaveformGeneratorLoaded;
-- (id)functionBarWaveformGenerator;
 - (void)generateFunctionBarThumbnailsForTimes:(id)arg1 size:(struct CGSize)arg2 requestType:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)isFunctionBarThumbnailGeneratorLoaded;
 - (id)functionBarThumbnailGenerator;
@@ -337,6 +360,7 @@
 @property(readonly) BOOL canBeginFunctionBarScrubbing;
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;
 - (void)_setMediaOption:(id)arg1 mediaCharacteristic:(id)arg2;
+- (void)_enableAutoMediaSelection:(id)arg1 shouldUpdateUserPreference:(BOOL)arg2;
 - (void)_enableAutoMediaSelection:(id)arg1;
 - (void)_disableLegibleMediaSelectionOptions:(id)arg1;
 - (id)legibleOptions;
@@ -344,6 +368,7 @@
 - (void)reloadLegibleOptions;
 - (void)reloadAudioOptions;
 - (void)reloadOptions;
+- (void)selectedMediaOptionMayHaveChanged;
 - (id)_optionsForGroup:(id)arg1;
 - (void)toggleCaptions;
 - (void)setSavedCaptionAppearanceDisplayType:(long long)arg1;
@@ -362,6 +387,21 @@
 - (id)audioMediaSelectionOptions;
 - (BOOL)hasAudioMediaSelectionOptions;
 - (BOOL)hasMediaSelectionOptions;
+@property(readonly) struct CGSize maximumVideoResolution;
+- (BOOL)usesExternalPlaybackWhileExternalScreenIsActive;
+@property BOOL handlesAudioSessionInterruptions;
+- (id)maxFrameCountString;
+- (id)maxTimecode;
+- (long long)frameNumberForCurrentTime;
+- (id)timecodeForCurrentTime;
+- (void)seekToFrame:(long long)arg1;
+- (void)seekToTimecode:(id)arg1;
+- (void)stopGeneratingTimecodes;
+- (BOOL)startGeneratingTimecodesUsingBlock:(CDUnknownBlockType)arg1;
+- (double)timecodeObservationInterval;
+- (id)loadTimecodeControllerIfNeeded;
+@property(readonly) BOOL hasTimecodes;
+@property(readonly) BOOL hasReadableTimecodes;
 - (BOOL)canHandleSelector:(SEL)arg1 withEvent:(id)arg2 shouldIgnoreSpaceKey:(BOOL)arg3;
 - (BOOL)_shouldHandleSwipeWithEvent:(id)arg1;
 - (void)swipeWithEvent:(id)arg1;
@@ -380,10 +420,7 @@
 @property(readonly) NSArray *audioTouchBarMediaSelectionOptions;
 - (BOOL)hasAudioTouchBarMediaSelectionOptions;
 - (BOOL)hasTouchBarMediaSelectionOptions;
-- (void)cancelThumbnailAndAudioAmplitudeSampleGenerationForRequestType:(long long)arg1;
-- (void)generateTouchBarAudioAmplitudeSamples:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)isTouchBarWaveformGeneratorLoaded;
-- (id)touchBarWaveformGenerator;
+- (void)cancelThumbnailGenerationForRequestType:(long long)arg1;
 - (void)generateTouchBarThumbnailsForTimes:(id)arg1 tolerance:(double)arg2 size:(struct CGSize)arg3 requestType:(long long)arg4 thumbnailHandler:(CDUnknownBlockType)arg5;
 - (BOOL)isTouchBarThumbnailGeneratorLoaded;
 - (id)touchBarThumbnailGenerator;

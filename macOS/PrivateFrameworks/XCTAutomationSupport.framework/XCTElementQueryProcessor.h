@@ -9,14 +9,16 @@
 #import <XCTAutomationSupport/XCTElementSnapshotAttributeDataSource-Protocol.h>
 #import <XCTAutomationSupport/XCTElementSnapshotProvider-Protocol.h>
 
-@class NSString;
+@class NSString, XCTCapabilities;
 @protocol XCTElementSnapshotProvider;
 
 @interface XCTElementQueryProcessor : NSObject <XCTElementSnapshotProvider, XCTElementSnapshotAttributeDataSource>
 {
     id <XCTElementSnapshotProvider> _snapshotProvider;
+    XCTCapabilities *_remoteInterfaceCapabilities;
 }
 
+@property(retain) XCTCapabilities *remoteInterfaceCapabilities; // @synthesize remoteInterfaceCapabilities=_remoteInterfaceCapabilities;
 @property __weak id <XCTElementSnapshotProvider> snapshotProvider; // @synthesize snapshotProvider=_snapshotProvider;
 - (void).cxx_destruct;
 @property(readonly) BOOL usePointTransformationsForFrameConversions;
@@ -24,8 +26,8 @@
 - (id)parameterizedAttribute:(id)arg1 forElement:(id)arg2 parameter:(id)arg3 error:(id *)arg4;
 - (id)attributesForElement:(id)arg1 attributes:(id)arg2 error:(id *)arg3;
 @property(readonly) BOOL allowsRemoteAccess;
-- (id)snapshotForElement:(id)arg1 attributes:(id)arg2 parameters:(id)arg3 error:(id *)arg4;
-- (void)fetchMatchesForQuery:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (id)snapshotForElement:(id)arg1 attributes:(id)arg2 parameters:(id)arg3 timeoutControls:(id)arg4 error:(id *)arg5;
+- (void)fetchMatchesForQuery:(id)arg1 clientCapabilities:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)init;
 
 // Remaining properties

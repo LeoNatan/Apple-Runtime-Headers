@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIApplicationSceneClientSettings-Protocol.h>
 
-@class FBSDisplayConfigurationRequest, FBSDisplayMode, NSArray, NSString;
+@class FBSDisplayConfigurationRequest, FBSDisplayMode, NSArray, NSData, NSDictionary, NSString;
 
 @interface UIApplicationSceneClientSettings : FBSSceneClientSettings <UIApplicationSceneClientSettings>
 {
@@ -17,9 +17,12 @@
 - (_Bool)isUISubclass;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (_Bool)settings:(id)arg1 appendDescriptionToBuilder:(id)arg2 forFlag:(int)arg3 object:(id)arg4 ofSetting:(unsigned int)arg5;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofOtherSetting:(unsigned int)arg3;
 - (id)keyDescriptionForOtherSetting:(unsigned int)arg1;
+@property(readonly, nonatomic) NSData *activationConditionsData;
+@property(readonly, copy, nonatomic) NSString *canvasTitle;
 @property(readonly, nonatomic) _Bool disablesMirroring;
 @property(readonly, nonatomic) float brightnessLevel;
 @property(readonly, nonatomic) NSArray *audioCategoriesDisablingVolumeHUD;
@@ -49,7 +52,10 @@
 @property(readonly, nonatomic) int defaultStatusBarStyle;
 @property(readonly, nonatomic) unsigned int statusBarContextID;
 @property(readonly, nonatomic, getter=isStatusBarForegroundTransparent) _Bool statusBarForegroundTransparent;
+@property(readonly, nonatomic) float statusBarAlpha;
 @property(readonly, nonatomic) _Bool statusBarHidden;
+@property(readonly, copy, nonatomic) NSDictionary *statusBarPartStyles;
+@property(readonly, nonatomic) int statusBarModernStyle;
 @property(readonly, nonatomic) int statusBarStyle;
 
 // Remaining properties

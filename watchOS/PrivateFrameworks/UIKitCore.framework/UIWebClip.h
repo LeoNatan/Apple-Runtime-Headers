@@ -18,6 +18,7 @@
     NSURL *startupImageURL;
     NSURL *startupLandscapeImageURL;
     NSString *title;
+    NSString *applicationBundleIdentifier;
     _Bool fullScreen;
     _Bool classicMode;
     _Bool removalDisallowed;
@@ -75,6 +76,7 @@
 @property _Bool removalDisallowed; // @synthesize removalDisallowed;
 @property _Bool classicMode; // @synthesize classicMode;
 @property _Bool fullScreen; // @synthesize fullScreen;
+@property(copy, nonatomic) NSString *applicationBundleIdentifier; // @synthesize applicationBundleIdentifier;
 @property(copy, nonatomic) NSString *title; // @synthesize title;
 @property(retain) NSURL *startupLandscapeImageURL; // @synthesize startupLandscapeImageURL;
 @property(retain) NSURL *startupImageURL; // @synthesize startupImageURL;
@@ -114,6 +116,7 @@
 - (_Bool)updateOnDisk;
 - (_Bool)_writeImage:(id)arg1 toDiskWithFileName:(id)arg2;
 - (id)_info;
+@property(readonly, nonatomic) NSURL *applicationLaunchURL;
 - (void)_reloadProperties;
 - (void)_readPropertiesFromBundle:(id)arg1;
 - (void)configureWithMetaTags:(id)arg1 linkTags:(id)arg2;

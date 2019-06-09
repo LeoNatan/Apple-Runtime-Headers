@@ -9,5 +9,7 @@
 @interface NSImage (ImageEffects)
 + (id)imageNamed:(id)arg1 state:(int)arg2 size:(struct CGSize)arg3;
 + (id)imageNamed:(id)arg1 state:(int)arg2;
+- (id)tintedImageWithColor:(id)arg1 withSize:(struct CGSize)arg2;
+- (id)tintedImageWithColor:(id)arg1;
 @end
 

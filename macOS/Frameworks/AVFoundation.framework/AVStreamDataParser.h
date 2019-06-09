@@ -17,8 +17,10 @@
     AVStreamDataParserInternal *_parser;
 }
 
++ (id)audiovisualMIMETypes;
 + (id)outputMIMECodecParameterForInputMIMECodecParameter:(id)arg1;
 + (id)_createNSDataWithBlockBuffer:(struct OpaqueCMBlockBuffer *)arg1;
++ (struct OpaqueCMBlockBuffer *)_createBlockBufferUsingNSData:(id)arg1 withOffset:(unsigned long long)arg2 withLength:(unsigned long long)arg3;
 + (struct OpaqueCMBlockBuffer *)_createBlockBufferUsingNSData:(id)arg1;
 - (void)_createAssetIfNecessary;
 - (BOOL)shouldProvideMediaDataForTrackID:(int)arg1;
@@ -26,7 +28,7 @@
 @property(readonly, nonatomic) AVAsset *asset;
 - (void)providePendingMediaData;
 - (void)appendStreamData:(id)arg1 withFlags:(unsigned long long)arg2;
-- (void)_appendStreamData:(id)arg1 withFlags:(unsigned long long)arg2;
+- (void)_appendStreamData:(struct OpaqueCMBlockBuffer *)arg1 withFlags:(unsigned long long)arg2;
 - (void)_setError:(id)arg1;
 @property(readonly) NSError *error;
 - (void)appendStreamData:(id)arg1;
@@ -36,7 +38,6 @@
 @property(readonly, nonatomic) id <AVStreamDataParserOutputHandling> delegate;
 - (void)setDelegate:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (void)_willDeallocOrFinalize;
 - (id)init;
 - (int)_createFigManifoldWithBlockBuffer:(struct OpaqueCMBlockBuffer *)arg1 manifold:(struct OpaqueFigManifold **)arg2;

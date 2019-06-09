@@ -21,7 +21,10 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) BOOL suppressesConnectionTerminationOnSystemChange;
+@property(nonatomic) unsigned long long downloadMonitorSpeedMultiplierForTesting;
+@property(copy, nonatomic, setter=setHSTSStorageDirectory:) NSURL *hstsStorageDirectory;
 @property(nonatomic, getter=isJITEnabled) BOOL JITEnabled;
+@property(nonatomic) BOOL usesSingleWebProcess;
 @property(nonatomic) BOOL pageCacheEnabled;
 @property(nonatomic) BOOL processSwapsOnWindowOpenWithOpener;
 @property(nonatomic) BOOL alwaysKeepAndReuseSwappedProcesses;

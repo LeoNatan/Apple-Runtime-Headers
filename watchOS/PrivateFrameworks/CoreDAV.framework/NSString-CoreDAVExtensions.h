@@ -18,6 +18,7 @@
 - (id)CDVStringByRemovingTerminatingSlashIfNeeded;
 - (id)CDVStringByAppendingSlashIfNeeded;
 - (id)CDVStringByRemovingPercentEscapesForHREF;
+- (id)CDVStringByAddingPercentEscapesForHREFIncludingPercent;
 - (id)CDVStringByAddingPercentEscapesForHREF;
 - (id)initWithCDVNameSpace:(id)arg1 andName:(id)arg2;
 @end

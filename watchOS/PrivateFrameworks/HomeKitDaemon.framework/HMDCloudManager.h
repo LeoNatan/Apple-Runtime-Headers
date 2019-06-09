@@ -8,7 +8,7 @@
 
 #import <HomeKitDaemon/APSConnectionDelegate-Protocol.h>
 
-@class APSConnection, CKContainer, CKDatabase, CKServerChangeToken, HMDCloudCache, HMDCloudDataSyncStateFilter, HMDCloudHomeManagerZone, HMDCloudLegacyZone, HMDCloudMetadataZone, HMDHomeManager, HMFMessageDispatcher, NSData, NSMutableArray, NSObject, NSString, NSUUID;
+@class APSConnection, CKContainer, CKDatabase, CKServerChangeToken, HMDCloudCache, HMDCloudDataSyncStateFilter, HMDCloudHomeManagerZone, HMDCloudLegacyZone, HMDCloudMetadataZone, HMDHomeManager, HMFMessageDispatcher, NSData, NSMutableArray, NSObject, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface HMDCloudManager : HMFObject <APSConnectionDelegate>
@@ -35,11 +35,9 @@
     CDUnknownBlockType _cloudMetadataDeletedNotificationHandler;
     CDUnknownBlockType _controllerKeyAvailableNotificationHandler;
     HMDCloudDataSyncStateFilter *_cloudDataSyncStateFilter;
-    NSUUID *_uuid;
     HMFMessageDispatcher *_msgDispatcher;
     HMDHomeManager *_homeManager;
     NSMutableArray *_currentBackoffTimerValuesInMinutes;
-    int _proxSetupNotificationToken;
     CDUnknownBlockType _dataDecryptionFailedHandler;
     CDUnknownBlockType _accountActiveUpdateHandler;
 }
@@ -48,11 +46,9 @@
 @property(nonatomic, getter=isFirstV3Fetch) _Bool firstV3Fetch; // @synthesize firstV3Fetch=_firstV3Fetch;
 @property(copy, nonatomic) CDUnknownBlockType accountActiveUpdateHandler; // @synthesize accountActiveUpdateHandler=_accountActiveUpdateHandler;
 @property(copy, nonatomic) CDUnknownBlockType dataDecryptionFailedHandler; // @synthesize dataDecryptionFailedHandler=_dataDecryptionFailedHandler;
-@property(nonatomic) int proxSetupNotificationToken; // @synthesize proxSetupNotificationToken=_proxSetupNotificationToken;
 @property(retain, nonatomic) NSMutableArray *currentBackoffTimerValuesInMinutes; // @synthesize currentBackoffTimerValuesInMinutes=_currentBackoffTimerValuesInMinutes;
 @property(nonatomic) __weak HMDHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
-@property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) HMDCloudDataSyncStateFilter *cloudDataSyncStateFilter; // @synthesize cloudDataSyncStateFilter=_cloudDataSyncStateFilter;
 @property(copy, nonatomic) CDUnknownBlockType controllerKeyAvailableNotificationHandler; // @synthesize controllerKeyAvailableNotificationHandler=_controllerKeyAvailableNotificationHandler;
 @property(copy, nonatomic) CDUnknownBlockType cloudMetadataDeletedNotificationHandler; // @synthesize cloudMetadataDeletedNotificationHandler=_cloudMetadataDeletedNotificationHandler;
@@ -84,8 +80,7 @@
 - (void)_registerForPushNotifications;
 - (void)_setupSubscriptionForZone:(id)arg1;
 - (void)_registerForProxSetupNotifications;
-- (void)_auditProxSetupNotification;
-- (_Bool)_isProxSetupRunning;
+- (void)_auditProxSetupNotification:(id)arg1;
 - (void)_stopControllerKeyPollTimer;
 - (void)_startControllerKeyPollTimerWithValue:(long long)arg1;
 - (void)_startControllerKeyPollTimerWithBackoff;

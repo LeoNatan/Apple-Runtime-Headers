@@ -6,15 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@class AFUIRequestOptions;
+@class SASRequestOptions;
 
 @interface AFUITestInput : NSObject
 {
-    AFUIRequestOptions *_requestOptions;
+    SASRequestOptions *_requestOptions;
 }
 
 + (id)_baseRequestOptions;
-@property(readonly, nonatomic) AFUIRequestOptions *requestOptions; // @synthesize requestOptions=_requestOptions;
+@property(readonly, nonatomic) SASRequestOptions *requestOptions; // @synthesize requestOptions=_requestOptions;
 - (void).cxx_destruct;
 - (id)initWithRecordedSpeechURL:(id)arg1;
 - (id)initWithText:(id)arg1;

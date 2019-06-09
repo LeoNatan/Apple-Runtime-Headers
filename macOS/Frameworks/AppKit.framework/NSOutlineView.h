@@ -61,7 +61,6 @@
         unsigned int delegateShouldEditTableColumn:1;
         unsigned int delegateWillDisplayCell:1;
     } _ovFlags;
-    id _unused_ovLock;
     long long *_indentArray;
     long long _originalWidth;
     id _expandSet;
@@ -350,6 +349,7 @@
 - (void)removeTableColumn:(id)arg1;
 - (void)addTableColumn:(id)arg1;
 @property NSTableColumn *outlineTableColumn;
+- (void)_setOutlineTableColumn:(id)arg1;
 @property BOOL indentationMarkerFollowsCell;
 @property double indentationPerLevel;
 - (void)reloadItem:(id)arg1 reloadChildren:(BOOL)arg2;

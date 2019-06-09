@@ -4,44 +4,44 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MediaPlayer/NSObject-Protocol.h>
+#import <MediaPlayer/MPAVQueueCoordinatingDataSource-Protocol.h>
 
-@class MPAVController, MPAVItem, MPPlaybackContext, NSString;
-@protocol MPAVItemQueueIdentifier;
+@class MPAVController, MPAVItem, MPPlaybackContext, NSArray, NSString;
+@protocol MPAVQueueControllerDelegate, MPAVQueueCoordinating;
 
-@protocol MPAVQueueController <NSObject>
-@property(readonly, nonatomic) long long currentIndex;
-@property(nonatomic) __weak MPAVController *avController;
-@property(readonly, nonatomic) _Bool allowsQueueResetWhenReachingEnd;
-@property(readonly, nonatomic) long long upNextItemCount;
-@property(readonly, nonatomic) long long playlistItemCount;
-@property(nonatomic) _Bool shouldDeferItemLoading;
-@property(nonatomic) long long repeatMode;
-@property(readonly, nonatomic) _Bool canSkipToPreviousItem;
-@property(nonatomic) __weak id delegate;
+@protocol MPAVQueueController <MPAVQueueCoordinatingDataSource>
+@property(nonatomic) _Bool allowsQueueModifications;
+@property(readonly, nonatomic) _Bool userCanChangeShuffleAndRepeatType;
+@property(readonly, nonatomic) unsigned long long supportedInsertionPositions;
+@property(nonatomic) long long shuffleType;
+@property(nonatomic) long long repeatType;
+@property(retain, nonatomic) id <MPAVQueueCoordinating> queueCoordinator;
+@property(nonatomic) __weak id <MPAVQueueControllerDelegate> delegate;
 @property(readonly, nonatomic) MPAVItem *currentItem;
+@property(readonly, nonatomic) _Bool hasUserMutations;
 @property(readonly, nonatomic) NSString *uniqueIdentifier;
-- (long long)_indexForStringIdentifier:(NSString *)arg1;
-- (long long)indexOfItemIdentifier:(id <MPAVItemQueueIdentifier>)arg1;
-- (long long)indexWithDelta:(long long)arg1 fromIndex:(long long)arg2 ignoreElapsedTime:(_Bool)arg3 didReachEnd:(_Bool *)arg4;
-- (void)setCurrentIndex:(long long)arg1 selectionDirection:(long long)arg2;
-- (NSString *)contentItemIDForPlaylistIndex:(long long)arg1;
-- (unsigned long long)indexForContentItemID:(NSString *)arg1;
-- (MPAVItem *)itemForPlaylistIndex:(long long)arg1;
-- (void)updateForSoundCheckDefaultsChange;
-- (void)handlePlaybackFailureForItem:(MPAVItem *)arg1;
 - (void)updateLocationDependentPropertiesForItem:(MPAVItem *)arg1;
 - (_Bool)isPlaceholderItemForContentItemID:(NSString *)arg1;
 - (MPAVItem *)itemForContentItemID:(NSString *)arg1;
+- (NSString *)contentItemIDWithCurrentItemOffset:(long long)arg1 mode:(long long)arg2 didReachEnd:(_Bool *)arg3;
+- (void)jumpToContentItemID:(NSString *)arg1;
+- (void)jumpToFirstContentItem;
+- (void)player:(MPAVController *)arg1 currentItemDidChangeFromItem:(MPAVItem *)arg2 toItem:(MPAVItem *)arg3;
 - (void)finalizeStateRestorationWithCompletionHandler:(void (^)(NSError *))arg1;
+- (void)handlePlaybackFailureForItem:(MPAVItem *)arg1;
+- (void)removeAllItemsAfterContentItemID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)removeContentItemID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)moveContentItemID:(NSString *)arg1 afterContentItemID:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
+- (void)addPlaybackContext:(MPPlaybackContext *)arg1 atPosition:(long long)arg2 jumpToIt:(_Bool)arg3 completion:(void (^)(NSError *))arg4;
+- (void)addPlaybackContext:(MPPlaybackContext *)arg1 atPosition:(long long)arg2 completion:(void (^)(NSError *))arg3;
+- (void)addPlaybackContext:(MPPlaybackContext *)arg1 afterContentItemID:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)reloadWithPlaybackContext:(MPPlaybackContext *)arg1 completionHandler:(void (^)(NSError *))arg2;
-- (void)reloadItemsKeepingCurrentItem:(_Bool)arg1;
 - (void)reset;
 - (unsigned long long)displayCountForItem:(MPAVItem *)arg1;
 - (unsigned long long)displayIndexForItem:(MPAVItem *)arg1;
-- (_Bool)canSkipToPreviousItemForItem:(MPAVItem *)arg1;
 - (_Bool)canSkipItem:(MPAVItem *)arg1;
-- (_Bool)canSeekItem:(MPAVItem *)arg1;
-- (_Bool)hasQueueContents;
+
+@optional
+- (NSArray *)contentItemIDsFromOffset:(long long)arg1 toOffset:(long long)arg2 nowPlayingIndex:(long long *)arg3;
 @end
 

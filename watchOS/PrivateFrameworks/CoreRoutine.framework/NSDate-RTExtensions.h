@@ -7,6 +7,7 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (RTExtensions)
++ (id)dateBisectingDate1:(id)arg1 date2:(id)arg2;
 + (id)dateWithHour:(int)arg1 minute:(int)arg2 second:(int)arg3;
 + (id)dateWithResolution:(unsigned int)arg1 calendar:(id)arg2;
 + (id)dateWithResolution:(unsigned int)arg1;

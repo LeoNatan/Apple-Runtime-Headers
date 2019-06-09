@@ -8,5 +8,6 @@
 
 @interface UIScreen (CKUtilities)
 - (_Bool)__ck_isFullscreen;
+@property(readonly, nonatomic) unsigned long long ck_screenSizeCategory;
 @end
 

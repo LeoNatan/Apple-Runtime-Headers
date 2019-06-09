@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class AVAssetExportSession, NSString, NSTimer, PFVideoAVObjectBuilder, PLProgressView;
+@protocol PLVideoRemakerDelegate;
 
 @interface PLVideoRemaker : NSObject
 {
@@ -19,8 +20,8 @@
     float _percentComplete;
     NSTimer *_progressTimer;
     PLProgressView *_progressView;
-    id _delegate;
     _Bool _shouldExportToPhotoDataDirectory;
+    NSObject<PLVideoRemakerDelegate> *_delegate;
     CDUnknownBlockType _progressHandler;
     NSString *_exportPresetOverride;
     NSString *_customAccessibilityLabel;
@@ -37,6 +38,8 @@
 @property(copy, nonatomic) NSString *exportPresetOverride; // @synthesize exportPresetOverride=_exportPresetOverride;
 @property(nonatomic) _Bool shouldExportToPhotoDataDirectory; // @synthesize shouldExportToPhotoDataDirectory=_shouldExportToPhotoDataDirectory;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
+@property(nonatomic) __weak NSObject<PLVideoRemakerDelegate> *delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)_exportCompletedWithSuccess:(_Bool)arg1;
 - (void)cancel;
 - (void)_didEndRemakingWithTemporaryPath:(id)arg1;
@@ -55,8 +58,6 @@
 - (int)mode;
 - (void)setDuration:(double)arg1;
 - (double)duration;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
 - (id)progressView;
 - (id)messageForRemakingProgress;
 - (void)dealloc;

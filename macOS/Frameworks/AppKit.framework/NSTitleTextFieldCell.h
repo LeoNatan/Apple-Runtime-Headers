@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (struct __CFString *)customizedBackgroundTypeForControlView:(id)arg1;
+- (id)_appearanceContentStyleInView:(id)arg1;
 - (BOOL)_shouldUseStyledTextInView:(id)arg1;
 
 @end

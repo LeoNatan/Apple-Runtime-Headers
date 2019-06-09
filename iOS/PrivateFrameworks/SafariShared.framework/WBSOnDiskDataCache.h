@@ -41,6 +41,7 @@
 - (id)_cacheSettingsFileURL;
 - (long long)_internalEntryStateForKeyString:(id)arg1;
 - (long long)entryStateForKeyString:(id)arg1;
+- (void)removeEntriesForKeyStringsNotIncludedIn:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeEntriesForKeyStrings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_didFailToLoadEntryForKeyString:(id)arg1 error:(id)arg2;
 - (void)_didLoadEntry:(id)arg1 forKeyString:(id)arg2;

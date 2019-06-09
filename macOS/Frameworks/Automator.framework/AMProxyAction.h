@@ -74,6 +74,7 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithAction:(id)arg1;
 - (BOOL)isAMProxyAction__;
+- (id)_am_convertForSendingOverXPCWithWorkflow:(id)arg1;
 
 @end
 

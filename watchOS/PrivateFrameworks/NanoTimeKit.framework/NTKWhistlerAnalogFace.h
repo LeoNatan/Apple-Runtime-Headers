@@ -11,7 +11,9 @@
 }
 
 + (id)_richComplicationSlotsForDevice:(id)arg1;
++ (id)_orderedComplicationSlots;
 + (id)_defaultSelectedComplicationSlotForDevice:(id)arg1;
++ (id)_complicationSlotDescriptors;
 - (id)_localizedNameForComplicationSlot:(id)arg1;
 - (id)_defaultColorOption;
 - (Class)_optionClassForCustomEditMode:(int)arg1;
@@ -20,8 +22,6 @@
 - (unsigned int)_numberOfOptionsForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_defaultOptionForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_customEditModes;
-- (id)_orderedComplicationSlots;
-- (id)_complicationSlotDescriptors;
 
 @end
 

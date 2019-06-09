@@ -18,7 +18,6 @@
     BOOL _cancelled;
     BOOL _loading;
     BOOL _forceCellularIfPossible;
-    BOOL _alwaysForceCellular;
     int _retries;
     BOOL _requireIDSHost;
     BOOL _shouldUsePipelining;
@@ -31,7 +30,6 @@
 
 @property(copy) CDUnknownBlockType block; // @synthesize block=_block;
 @property(retain) NSURLRequest *request; // @synthesize request=_request;
-@property BOOL alwaysForceCellular; // @synthesize alwaysForceCellular=_alwaysForceCellular;
 @property BOOL shouldReturnTimingData; // @synthesize shouldReturnTimingData=_shouldReturnTimingData;
 @property int keepAliveCell; // @synthesize keepAliveCell=_keepAliveCell;
 @property int keepAliveWifi; // @synthesize keepAliveWifi=_keepAliveWifi;

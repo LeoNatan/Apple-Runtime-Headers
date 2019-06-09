@@ -7,18 +7,15 @@
 #import <objc/NSObject.h>
 
 #import <Safari/CompletionUIPresentationControllerDelegate-Protocol.h>
-#import <Safari/FUFlightViewControllerDelegate-Protocol.h>
 #import <Safari/NSTableViewDataSource-Protocol.h>
 #import <Safari/NSTableViewDelegate-Protocol.h>
 #import <Safari/ParsecTableCellViewDelegate-Protocol.h>
 
-@class CompletionWindow, FUCompactFlightViewController, NSMutableSet, NSString, NSURL, NSView, WBSFaviconRequestsController, _MKResultView;
+@class CompletionWindow, NSMutableSet, NSString, NSURL, NSView, WBSFaviconRequestsController;
 
 __attribute__((visibility("hidden")))
-@interface UnifiedFieldCompletionControllerObjCAdapter : NSObject <ParsecTableCellViewDelegate, FUFlightViewControllerDelegate, CompletionUIPresentationControllerDelegate, NSTableViewDataSource, NSTableViewDelegate>
+@interface UnifiedFieldCompletionControllerObjCAdapter : NSObject <ParsecTableCellViewDelegate, CompletionUIPresentationControllerDelegate, NSTableViewDataSource, NSTableViewDelegate>
 {
-    _MKResultView *_reusableMKResultView;
-    FUCompactFlightViewController *_flightViewController;
     double _lastKnownUnifiedFieldWidth;
     double _lastKnownWindowBackingScaleFactor;
     struct UnifiedFieldCompletionController *_completionController;
@@ -26,20 +23,21 @@ __attribute__((visibility("hidden")))
     BOOL _shouldPostAccessibilityRefreshNotification;
     CompletionWindow *_completionWindow;
     WBSFaviconRequestsController *_requestsController;
+    BOOL _parsecActionButtonSelected;
 }
 
 + (BOOL)_atLeastOneCompletionListSectionHasChangedBetweenList:(const Vector_9c080eda *)arg1 list:(const Vector_9c080eda *)arg2;
 + (id)simplifiedURLStringForURLString:(id)arg1;
 + (BOOL)wantsFavoritesViewInCompletionList;
+@property(readonly, nonatomic, getter=isParsecActionButtonSelected) BOOL parsecActionButtonSelected; // @synthesize parsecActionButtonSelected=_parsecActionButtonSelected;
 - (void).cxx_destruct;
 - (BOOL)_shouldPostAXRefreshNotificationWithOldList:(const Vector_9c080eda *)arg1 newListItems:(const Vector_9c080eda *)arg2;
-- (id)_flightViewForSearchResult:(id)arg1;
+- (id)_tableCellViewForParsecSearchCompletionListItemWhenUsingSearchUI:(struct ParsecSearchResultCompletionListItem *)arg1;
 - (void)_registerForCompletionAbortingNotificationNamed:(id)arg1 object:(id)arg2;
 - (void)_unregisterForCompletionAbortingNotifications;
 - (void)_registerForCompletionAbortingNotifications;
 - (id)_completionListTableView;
 - (id)_browserWindowController;
-- (void)flightController:(id)arg1 didSelectLeg:(long long)arg2 ofFlight:(long long)arg3;
 - (void)completionUIPresentationControllerDidFinishPresentationAnimation:(id)arg1;
 - (void)completionUIPresentationControllerWillStartPresentationAnimation:(id)arg1;
 - (long long)numberOfRowsInTableView:(id)arg1;
@@ -50,15 +48,10 @@ __attribute__((visibility("hidden")))
 - (void)parsecTableCellViewActionButtonSelectionStateDidChange:(id)arg1;
 - (BOOL)parsecTableCellView:(id)arg1 shouldUseITunesPunchoutForActionButton:(id)arg2;
 - (BOOL)parsecTableCellView:(id)arg1 shouldShowActionButton:(id)arg2;
+- (BOOL)_shouldUseSearchUIViewForSearchResult:(id)arg1;
 - (BOOL)shouldUseITunesPunchoutForActionButton:(id)arg1;
 - (id)_playableContentIdentifierForActionButton:(id)arg1;
-- (BOOL)handleMoveRightInField:(id)arg1;
-- (BOOL)handleMoveLeftInField:(id)arg1;
 @property(readonly, nonatomic) NSURL *parsecActionButtonPunchoutURL;
-@property(readonly, nonatomic, getter=isParsecActionButtonSelected) BOOL parsecActionButtonSelected;
-- (BOOL)_setParsecActionButtonSelected:(BOOL)arg1 inResponseToKeyboardEventInTextField:(id)arg2;
-- (id)_selectedParsecTableRowViewWithActionButton;
-- (BOOL)_isParsecResultWithActionButtonSelected;
 - (void)_updateActionButtonVisibility;
 - (void)_monitorPurchaseHistoryLoadingStatus;
 - (void)showFavoritesViewIfPossible;
@@ -69,7 +62,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldShowIconAndURLInSameColumnAsTitleForCompletionItem:(struct URLMatchCompletionListItem *)arg1;
 - (void)unifiedFieldCompletionListDidHide;
 - (void)unifiedFieldCompletionListDidShow;
-- (void)_combinedFavoritesGridViewControllerHeightMayHaveChanged:(id)arg1;
 - (void)_completionListTableViewFrameDidChange:(id)arg1;
 - (void)_updateHeightsOfParsecCellViews;
 - (void)_requestImageForCell:(id)arg1 itemAtRow:(unsigned long long)arg2;

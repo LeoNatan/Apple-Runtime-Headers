@@ -10,12 +10,15 @@
 {
     unsigned int _spaceKeyBehavior;
     unsigned int _returnKeyBehavior;
+    unsigned int _tabKeyBehavior;
 }
 
++ (id)behaviorForSpaceKey:(unsigned int)arg1 forReturnKey:(unsigned int)arg2 forTabKey:(unsigned int)arg3;
 + (id)behaviorForSpaceKey:(unsigned int)arg1 forReturnKey:(unsigned int)arg2;
+@property(nonatomic) unsigned int tabKeyBehavior; // @synthesize tabKeyBehavior=_tabKeyBehavior;
 @property(nonatomic) unsigned int returnKeyBehavior; // @synthesize returnKeyBehavior=_returnKeyBehavior;
 @property(nonatomic) unsigned int spaceKeyBehavior; // @synthesize spaceKeyBehavior=_spaceKeyBehavior;
-- (id)initWithSpaceKeyBehavior:(unsigned int)arg1 returnKeyBehavior:(unsigned int)arg2;
+- (id)initWithSpaceKeyBehavior:(unsigned int)arg1 returnKeyBehavior:(unsigned int)arg2 tabKeyBehavior:(unsigned int)arg3;
 
 @end
 

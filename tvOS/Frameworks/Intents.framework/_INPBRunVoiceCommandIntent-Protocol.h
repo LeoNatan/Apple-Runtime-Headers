@@ -6,14 +6,18 @@
 
 #import <Intents/NSObject-Protocol.h>
 
-@class _INPBDataString, _INPBIntentMetadata, _INPBVoiceCommandDeviceInformation;
+@class NSString, _INPBDataString, _INPBIntentExecutionResult, _INPBIntentMetadata, _INPBVoiceCommandDeviceInformation;
 
 @protocol _INPBRunVoiceCommandIntent <NSObject>
 @property(readonly, nonatomic) _Bool hasVoiceCommand;
 @property(retain, nonatomic) _INPBDataString *voiceCommand;
+@property(readonly, nonatomic) _Bool hasPreviousIntentIdentifier;
+@property(copy, nonatomic) NSString *previousIntentIdentifier;
 @property(readonly, nonatomic) _Bool hasOriginDevice;
 @property(retain, nonatomic) _INPBVoiceCommandDeviceInformation *originDevice;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata;
+@property(readonly, nonatomic) _Bool hasExecutionResult;
+@property(retain, nonatomic) _INPBIntentExecutionResult *executionResult;
 @end
 

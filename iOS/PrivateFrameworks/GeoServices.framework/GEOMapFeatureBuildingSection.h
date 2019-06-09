@@ -12,7 +12,7 @@
     unsigned long long _coordinateCount;
     double _baseHeight;
     double _height;
-    CDStruct_8e575d68 *_feature;
+    CDStruct_0c54f6ee *_feature;
     unsigned long long _sectionIndex;
 }
 
@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) unsigned long long coordinateCount;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee *coordinates;
 - (void)dealloc;
-- (id)initWithFeature:(CDStruct_8e575d68 *)arg1 sectionIndex:(unsigned long long)arg2;
+- (id)initWithFeature:(CDStruct_0c54f6ee *)arg1 sectionIndex:(unsigned long long)arg2;
 
 @end
 

@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
 - (void)recipientViewController:(id)arg1 didEnterText:(id)arg2;
 - (void)recipientViewControllerDidRemoveRecipient:(id)arg1;
 - (void)recipientViewControllerDidAddRecipient:(id)arg1;
-- (id)backingNavigationControllerForComposeRecipientViewController:(id)arg1;
 - (_Bool)_validateRecipientsToAdd:(id)arg1;
 - (void)_saveAndDismiss;
 - (void)_dismiss;

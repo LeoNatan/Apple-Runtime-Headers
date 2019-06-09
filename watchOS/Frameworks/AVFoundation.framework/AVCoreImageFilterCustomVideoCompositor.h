@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (void)renderContextChanged:(id)arg1;
 @property(readonly, nonatomic) NSDictionary *requiredPixelBufferAttributesForRenderContext;
 @property(readonly, nonatomic) NSDictionary *sourcePixelBufferAttributes;
-- (void)finalize;
 - (void)dealloc;
 - (void)_willDeallocOrFinalize;
 - (id)init;

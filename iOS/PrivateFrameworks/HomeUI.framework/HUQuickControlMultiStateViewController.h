@@ -13,9 +13,12 @@
 }
 
 + (Class)controlItemClass;
+- (_Bool)_shouldUseWheelPickerView;
 - (id)controlToViewValueTransformer;
+- (_Bool)_isCharacteristicTypeRotationDirection;
 - (id)createViewProfile;
 - (id)createInteractionCoordinator;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)modelValueDidChange;
 - (id)overrideStatusText;
 - (_Bool)_useOverrideStatusText;

@@ -6,11 +6,13 @@
 
 #import <FMFUI/NSObject-Protocol.h>
 
-@class FMFDevice, FMFFriendshipRequest, FMFHandle, FMFLocation, NSArray, NSError, NSSet, NSString;
+@class FMFDevice, FMFFriendshipRequest, FMFHandle, FMFLocation, NSArray, NSDictionary, NSError, NSSet, NSString;
 
 @protocol FMFSessionDelegate <NSObject>
 
 @optional
+- (void)networkReachabilityUpdated:(BOOL)arg1;
+- (void)didUpdatePreferences:(NSDictionary *)arg1;
 - (void)didUpdateFences:(NSSet *)arg1;
 - (void)didUpdateFavoriteHandles:(NSArray *)arg1;
 - (void)didReceiveServerError:(NSError *)arg1;

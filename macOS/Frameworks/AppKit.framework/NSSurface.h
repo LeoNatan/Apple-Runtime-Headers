@@ -6,14 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSCGSWindowLegacySurface, NSGraphicsContext, NSView, NSWindow;
+@class NSGraphicsContext, NSView, NSWindow;
 
 @interface NSSurface : NSObject
 {
     NSView *_view;
     NSWindow *_window;
     struct CGRect _frame;
-    NSCGSWindowLegacySurface *_surface;
     unsigned int _surfaceID;
     unsigned int _backingStore;
     int _saveWeighting;

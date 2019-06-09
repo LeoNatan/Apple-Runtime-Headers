@@ -6,9 +6,10 @@
 
 #import <NeutrinoCore/JSExport-Protocol.h>
 
-@class NSString;
+@class NSString, NUJSRAWNoiseReductionProperties;
 
 @protocol NUJSRAWImagePropertiesExport <JSExport>
+@property(readonly) NUJSRAWNoiseReductionProperties *noiseReductionProperties;
 @property(readonly) double tint;
 @property(readonly) double temperature;
 @property(readonly) NSString *decoderVersion;

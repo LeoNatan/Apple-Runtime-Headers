@@ -34,6 +34,17 @@ struct CGSize {
     double height;
 };
 
+struct CLLocationCoordinate2D {
+    double latitude;
+    double longitude;
+};
+
+struct ICDeviceHardwareInfo {
+    unsigned long long modelName;
+    long long version;
+    long long subVersion;
+};
+
 struct ICDrawingAzimuthFilter {
     CDUnknownFunctionPointerType *_field1;
     struct ICDrawingInputProvider<ICDrawingInputPoint> *_field2;
@@ -187,104 +198,27 @@ struct ICDrawingVelocityCalculationFilter {
 
 struct ICSmoothingPoint;
 
+struct NSCache {
+    Class _field1;
+    id _field2;
+    void *_field3[5];
+    void *_field4;
+};
+
 struct NSColor {
     Class _field1;
 };
 
 struct NSFont {
     Class _field1;
-    id _field2;
-    double _field3;
-    long long _field4;
-    struct __fFlags {
-        unsigned int :1;
-        unsigned int :8;
-        unsigned int :4;
-        unsigned int :1;
-        unsigned int :3;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :13;
-    } _field5;
-    id _field6;
 };
 
 struct NSImage {
     Class _field1;
-    id _field2;
-    struct CGSize _field3;
-    struct __imageFlags {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :2;
-        unsigned int :3;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :8;
-    } _field4;
-    id _field5;
-    id _field6;
 };
 
 struct NSImageView {
     Class _field1;
-    id _field2;
-    struct CGRect _field3;
-    struct CGRect _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    struct __VFlags _field13;
-    struct __VFlags2 _field14;
-    id _field15;
-    id _field16;
-    struct __conFlags {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :22;
-    } _field17;
-    struct __IVFlags {
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :23;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-    } _field18;
-    id _field19;
-    SEL _field20;
 };
 
 struct NSManagedObjectContext {
@@ -293,193 +227,59 @@ struct NSManagedObjectContext {
 
 struct NSTextView {
     Class _field1;
-    id _field2;
-    struct CGRect _field3;
-    struct CGRect _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    struct __VFlags _field13;
-    struct __VFlags2 _field14;
-    id _field15;
 };
 
 struct NSView {
     Class _field1;
-    id _field2;
+    struct CGRect _field2;
     struct CGRect _field3;
-    struct CGRect _field4;
+    id _field4;
     id _field5;
     id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    struct __VFlags _field13;
-    struct __VFlags2 _field14;
+    struct __VFlags {
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :5;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :2;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :6;
+        unsigned int :1;
+        unsigned int :1;
+    } _field7;
 };
 
 struct NSViewController {
     Class _field1;
-    id _field2;
+};
+
+struct NSWindow {
+    Class _field1;
+    struct CGRect _field2;
     id _field3;
     id _field4;
     id _field5;
     id _field6;
     id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :28;
-    unsigned int :0;
-};
-
-struct NSWindow {
-    Class _field1;
-    id _field2;
-    struct CGRect _field3;
-    id _field4;
-    id _field5;
-    id _field6;
-    id _field7;
-    id _field8;
-    id _field9;
-    id _field10;
-    int _field11;
-    long long _field12;
-    int _field13;
-    id _field14;
-    id _field15;
-    unsigned char _field16;
-    unsigned char _field17;
-    unsigned char _field18;
-    unsigned int :1;
-    unsigned int :7;
-    void *_field19;
-    void *_field20;
-    id _field21;
-    int _field22;
-    id _field23;
-    id _field24;
-    struct CGSize *_field25;
-    id _field26;
-    id _field27;
-    struct __wFlags {
-        unsigned int :2;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :4;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :2;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-        unsigned int :1;
-    } _field28;
-    id _field29;
-    id _field30;
-    id _field31;
+    int _field8;
 };
 
 struct _NSRange {
     unsigned long long location;
     unsigned long long length;
-};
-
-struct __VFlags {
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :5;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :2;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :6;
-    unsigned int :1;
-    unsigned int :1;
-};
-
-struct __VFlags2 {
-    unsigned int :14;
-    unsigned int :14;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
-    unsigned int :1;
 };
 
 struct pair<long, double>;

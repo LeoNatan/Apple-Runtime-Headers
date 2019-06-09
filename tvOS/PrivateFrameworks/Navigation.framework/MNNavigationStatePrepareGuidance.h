@@ -6,27 +6,28 @@
 
 #import <Navigation/MNNavigationState.h>
 
-@class MNNavigationSessionManager, MNRoutePlanningDetails;
+@class MNNavigationSessionManager, NSArray;
 
-__attribute__((visibility("hidden")))
 @interface MNNavigationStatePrepareGuidance : MNNavigationState
 {
-    MNRoutePlanningDetails *_routePlanningDetails;
+    NSArray *_previewRoutes;
+    unsigned long long _selectedRouteIndex;
     MNNavigationSessionManager *_navigationSessionManager;
 }
 
 - (void).cxx_destruct;
+- (void)resumeRealtimeUpdatesForSubscriber:(id)arg1;
+- (void)pauseRealtimeUpdatesForSubscriber:(id)arg1;
 - (void)stopNavigation;
-- (void)startNavigationForRouteDetails:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)prepareNavigationWithRouteDetails:(id)arg1;
+- (void)startNavigationWithDetails:(id)arg1 activeBlock:(CDUnknownBlockType)arg2;
+- (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
 - (void)leaveState;
 - (void)enterState;
-- (id)initWithStateManager:(id)arg1 routePlanningDetails:(id)arg2;
+- (id)initWithStateManager:(id)arg1 previewRoutes:(id)arg2 selectedRouteIndex:(unsigned long long)arg3;
 - (id)traceManager;
-- (unsigned long long)desiredResourcePolicy;
 - (unsigned long long)desiredLocationProviderType;
 - (_Bool)requiresHighMemoryThreshold;
-- (long long)type;
+- (unsigned long long)type;
 
 @end
 

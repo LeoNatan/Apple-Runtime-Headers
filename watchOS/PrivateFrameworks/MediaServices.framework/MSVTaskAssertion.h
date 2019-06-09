@@ -17,14 +17,14 @@
     NSObject<OS_dispatch_source> *_invalidationTimer;
     _Bool _acquired;
     BKSProcessAssertion *_processAssertion;
-    int _type;
     NSString *_name;
 }
 
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(readonly, nonatomic) int type; // @synthesize type=_type;
 - (void).cxx_destruct;
+- (unsigned int)_BSKReasonForMSVReason:(unsigned int)arg1;
+- (unsigned int)_BSKFlagsForMSVFlags:(unsigned int)arg1;
 - (void)_cancelInvalidationTimerWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) int pid;
 @property(readonly, nonatomic, getter=isValid) _Bool valid;
@@ -33,9 +33,9 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
-- (id)initWithType:(int)arg1 bundleID:(id)arg2 name:(id)arg3 subsystem:(id)arg4;
-- (id)initWithType:(int)arg1 pid:(int)arg2 name:(id)arg3 subsystem:(id)arg4;
-- (id)_initWithType:(int)arg1 bundleID:(id)arg2 orPID:(int)arg3 name:(id)arg4 subsystem:(id)arg5;
+- (id)initWithName:(id)arg1 bundleID:(id)arg2 subsystem:(id)arg3 reason:(unsigned int)arg4 flags:(unsigned int)arg5;
+- (id)initWithName:(id)arg1 pid:(int)arg2 subsystem:(id)arg3 reason:(unsigned int)arg4 flags:(unsigned int)arg5;
+- (id)_initWithName:(id)arg1 bundleID:(id)arg2 pid:(int)arg3 subsystem:(id)arg4 reason:(unsigned int)arg5 flags:(unsigned int)arg6;
 
 @end
 

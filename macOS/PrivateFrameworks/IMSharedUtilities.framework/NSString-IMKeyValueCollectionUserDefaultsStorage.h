@@ -8,5 +8,9 @@
 
 @interface NSString (IMKeyValueCollectionUserDefaultsStorage)
 - (BOOL)isArchivable_im;
+- (id)__im_apfsCompatibleFilename;
+- (id)__im_filePathWithVariant:(id)arg1;
+- (id)im_stripSpamLabel;
+- (id)__im_engramDataRepresentation;
 @end
 

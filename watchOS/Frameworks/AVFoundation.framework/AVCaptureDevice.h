@@ -16,7 +16,6 @@
     int _transportType;
     NSArray *_linkedDevices;
     NSArray *_inputSources;
-    AVCaptureDeviceInputSource *_activeInputSource;
 }
 
 + (void)initialize;
@@ -33,7 +32,6 @@
 + (id)devicesWithMediaType:(id)arg1;
 + (void)_filterConnectedDevices:(id)arg1 withDeviceTypes:(id)arg2 mediaType:(id)arg3 position:(int)arg4;
 + (void)_filterConnectedLegacyDevices:(id)arg1;
-@property(retain, nonatomic) AVCaptureDeviceInputSource *activeInputSource; // @synthesize activeInputSource=_activeInputSource;
 @property(readonly, nonatomic) NSArray *inputSources; // @synthesize inputSources=_inputSources;
 @property(readonly, nonatomic) NSArray *linkedDevices; // @synthesize linkedDevices=_linkedDevices;
 @property(readonly, nonatomic, getter=isSuspended) _Bool suspended; // @synthesize suspended=_suspended;
@@ -180,6 +178,7 @@
 - (CDStruct_1b6d18a9)activeDepthDataMinFrameDuration;
 - (void)setActiveDepthDataFormat:(id)arg1;
 - (id)activeDepthDataFormat;
+@property(retain, nonatomic) AVCaptureDeviceInputSource *activeInputSource;
 @property(retain, nonatomic) AVCaptureDeviceFormat *activeFormat;
 @property(readonly, nonatomic) NSArray *formats;
 @property(readonly, nonatomic, getter=isConnected) _Bool connected;
@@ -196,7 +195,6 @@
 - (void)setHighDynamicRangeSceneDetectionEnabled:(_Bool)arg1;
 - (_Bool)isHighDynamicRangeSceneDetectionEnabled;
 - (_Bool)isHighDynamicRangeSceneDetectionSupported;
-- (int)deviceSourceOrigin;
 - (void)setProvidesStortorgetMetadata:(_Bool)arg1;
 - (_Bool)providesStortorgetMetadata;
 - (int)faceRectangleAngle;
@@ -214,6 +212,7 @@
 @property(readonly, nonatomic) NSString *modelID;
 @property(readonly, nonatomic) NSString *uniqueID;
 - (id)description;
+- (id)debugDescription;
 - (void)dealloc;
 - (id)initSubclass;
 

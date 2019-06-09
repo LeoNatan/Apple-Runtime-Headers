@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)productVersionForSystem:(id)arg1;
 + (id)humanReadableModelForSystem:(id)arg1;
 + (id)modelIDForSystem:(id)arg1;
 + (id)modelForSystem:(id)arg1;

@@ -4,70 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <CarouselUIServices/CUISNotificationNCCellContentView.h>
 
-@class CUISNotificationCenterCellLabelMetricCollection, NSString, PUICHyphenatedLabel, UIColor, UIFont, UIImageView, UILabel;
-@protocol BSUIDateLabel;
-
-@interface CUISNotificationCenterCellContentView : UIView
+@interface CUISNotificationCenterCellContentView : CUISNotificationNCCellContentView
 {
-    PUICHyphenatedLabel *_titleLabel;
-    PUICHyphenatedLabel *_subtitleLabel;
-    PUICHyphenatedLabel *_bodyLabel;
-    PUICHyphenatedLabel *_attachmentDescriptionLabel;
-    UILabel<BSUIDateLabel> *_dateLabel;
-    UIImageView *_titleImage;
-    UIImageView *_subtitleImage;
-    UIImageView *_bodyImage;
-    UIImageView *_attachmentDescriptionImage;
-    UIFont *_bottomMarginFont;
-    CUISNotificationCenterCellLabelMetricCollection *_labelMetrics;
-    struct _layoutAttributes {
-        float titleLeading;
-        float subtitleLeading;
-        float bodyLeading;
-        float attachmentDescriptionLeading;
-        float dateLeading;
-        float bottomMarginLeading;
-        float width;
-    } _scaledLayoutAttributes;
 }
 
-- (void).cxx_destruct;
-- (void)_configureEventLabelForBulletin:(id)arg1;
-- (id)_eventLabelForBulletin:(id)arg1;
-- (void)_configureRelevanceLabelForBulletin:(id)arg1;
-- (void)_recycleDateLabel;
-- (id)_relevanceLabelForBulletin:(id)arg1;
-- (id)_relevantDateLabelDescriptionUsingBulletin:(id)arg1;
-- (id)_bulletinEndDate:(id)arg1;
-- (void)_configureDateLabel:(id)arg1;
-- (void)_handleFontSizeChange:(id)arg1;
-- (id)_shortBodyFont;
-- (void)_createAttachmentDescriptionLabelIfNecessary;
-- (void)_createBodyLabelIfNecessary;
-- (void)_createSubtitleLabelIfNecessary;
-- (void)_createTitleLabelIfNecessary;
-- (CDStruct_e1c9cff6)_metricsThatFit:(struct CGSize)arg1 forLabel:(id)arg2 scaledLeading:(float)arg3;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (id)_labelMetricsForSize:(struct CGSize)arg1;
-- (id)_cachedLabelForSize:(struct CGSize)arg1 labelType:(unsigned int)arg2 text:(id)arg3 color:(id)arg4;
-- (id)_imageFromLabel:(id)arg1;
-- (void)_resetLabelMetrics;
-- (void)layoutSubviews;
-- (void)_setFirstLineBaselineFrameOriginY:(float)arg1 usingFont:(id)arg2 forImageView:(id)arg3;
-- (void)didEndDisplaying;
-@property(retain, nonatomic) UIColor *attachmentDescriptionColor;
-@property(retain, nonatomic) UIColor *bodyColor;
-@property(retain, nonatomic) UIColor *subtitleColor;
-@property(retain, nonatomic) UIColor *titleColor;
-@property(copy, nonatomic) NSString *attachmentDescription;
 - (void)setDateWithBulletin:(id)arg1;
-@property(copy, nonatomic) NSString *body;
-@property(copy, nonatomic) NSString *subtitle;
-@property(copy, nonatomic) NSString *title;
-- (void)dealloc;
-- (id)init;
 
 @end
 

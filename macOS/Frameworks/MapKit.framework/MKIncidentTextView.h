@@ -10,12 +10,13 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface MKIncidentTextView : NSTextView <MKMultilineText>
 {
     double _preferredMaxLayoutWidth;
 }
 
-@property double preferredMaxLayoutWidth; // @synthesize preferredMaxLayoutWidth=_preferredMaxLayoutWidth;
+@property(nonatomic) double preferredMaxLayoutWidth; // @synthesize preferredMaxLayoutWidth=_preferredMaxLayoutWidth;
 - (struct CGSize)intrinsicContentSize;
 
 // Remaining properties

@@ -8,6 +8,7 @@
 
 @class OADRelativeRect;
 
+__attribute__((visibility("hidden")))
 @interface OADPathShade : OADShade
 {
     OADRelativeRect *mFillToRect;

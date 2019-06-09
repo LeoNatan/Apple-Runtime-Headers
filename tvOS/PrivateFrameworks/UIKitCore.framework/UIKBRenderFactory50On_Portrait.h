@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 - (double)controlColumnWidthFactor;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderingContext:(id)arg3 keycapsFontName:(id)arg4;
-- (int)roundCornersForKey:(id)arg1 onKeyplane:(id)arg2;
+- (unsigned long long)roundCornersForKey:(id)arg1 onKeyplane:(id)arg2;
 - (unsigned long long)edgesWithInsetsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (struct UIEdgeInsets)symbolFrameInsets;
 - (_Bool)shouldShowBottomRowEdge;

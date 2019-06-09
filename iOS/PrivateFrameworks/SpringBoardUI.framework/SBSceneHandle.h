@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <SpringBoardUI/BSDescriptionProviding-Protocol.h>
-#import <SpringBoardUI/FBSceneHostManagerObserver-Protocol.h>
 #import <SpringBoardUI/FBSceneMonitorDelegate-Protocol.h>
+#import <SpringBoardUI/FBSceneObserver-Protocol.h>
 
 @class FBSDisplayIdentity, FBSSceneDefinition, FBScene, FBSceneMonitor, NSHashTable, NSMapTable, NSString;
 
-@interface SBSceneHandle : NSObject <FBSceneMonitorDelegate, FBSceneHostManagerObserver, BSDescriptionProviding>
+@interface SBSceneHandle : NSObject <FBSceneMonitorDelegate, FBSceneObserver, BSDescriptionProviding>
 {
     FBSSceneDefinition *_definition;
     FBScene *_scene;
@@ -30,9 +30,8 @@
 @property(retain, nonatomic, setter=_setDisplayIdentity:) FBSDisplayIdentity *displayIdentity; // @synthesize displayIdentity=_displayIdentity;
 @property(readonly, nonatomic) FBScene *sceneIfExists; // @synthesize sceneIfExists=_scene;
 - (void).cxx_destruct;
-- (void)_setContentState:(long long)arg1;
 - (void)_setScene:(id)arg1;
-- (void)sceneHostManagerContentStateDidChange:(id)arg1;
+- (void)sceneContentStateDidChange:(id)arg1;
 - (void)sceneMonitor:(id)arg1 pairingStatusDidChangeForExternalSceneIDs:(id)arg2;
 - (void)sceneMonitor:(id)arg1 sceneClientSettingsDidChangeWithDiff:(id)arg2 transitionContext:(id)arg3;
 - (void)sceneMonitor:(id)arg1 sceneSettingsDidChangeWithDiff:(id)arg2 previousSettings:(id)arg3;
@@ -48,11 +47,13 @@
 - (void)_didUpdatePairingStatusForExternalSceneIdentifiers:(id)arg1;
 - (void)_didUpdateClientSettingsWithDiff:(id)arg1 transitionContext:(id)arg2;
 - (void)_didUpdateSettingsWithDiff:(id)arg1 previousSettings:(id)arg2;
-- (void)_didUpdateHostContentState:(long long)arg1;
+- (void)_didUpdateContentState:(long long)arg1;
 - (void)_didDestroyScene:(id)arg1;
 - (void)_didCreateScene:(id)arg1;
 - (void)_enumerateObserversWithBlock:(CDUnknownBlockType)arg1;
 - (void)_commonInit;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
@@ -69,7 +70,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

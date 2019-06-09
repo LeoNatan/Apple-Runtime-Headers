@@ -11,6 +11,7 @@
 
 @class NSOperationQueue, NSString, SKUIGiftItemView, SKUIItemStateCenter, SKUIRedeemITunesPassLockup, SKUIRedeemResultMessageView, SKUITextBoxView, SKUITextLayout, UIButton, UIImage, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemNativeResultsViewController : SKUIRedeemResultsViewController <SKUIItemStateCenterObserver, SKUIRedeemResultsViewDelegate>
 {
     _Bool _extendedMessageIsExpanded;

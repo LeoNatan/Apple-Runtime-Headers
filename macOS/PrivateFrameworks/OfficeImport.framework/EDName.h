@@ -8,6 +8,7 @@
 
 @class EDFormula, EDString, NSString, OITSUPointerKeyDictionary;
 
+__attribute__((visibility("hidden")))
 @interface EDName : NSObject
 {
     NSString *_formulaString;

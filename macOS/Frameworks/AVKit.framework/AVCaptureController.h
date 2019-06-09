@@ -12,6 +12,7 @@
 @class AVCaptureAudioPreviewOutput, AVCaptureDeviceInput, AVCaptureDeviceInputSourceItem, AVCaptureDeviceSelectionController, AVCaptureFileOutput, AVCaptureQualityItem, AVCaptureSession, AVFunctionBarCaptureInputSourceItem, AVTouchBarCaptureInputSourceItem, NSArray, NSNumber, NSObject, NSString;
 @protocol AVCaptureControllerDelegate, OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureController : NSResponder <AVTouchBarRecordingControlsControllingInternal, AVFunctionBarRecordingControlsControllingInternal>
 {
     AVCaptureSession *_session;
@@ -105,8 +106,8 @@
 @property(readonly) AVCaptureDeviceInput *audioInput;
 @property(readonly) AVCaptureDeviceInput *videoInput;
 @property(readonly) BOOL canAssociateAudioAndVideoDevices;
-- (void)stopDiscovingWirelessCaptureDevices;
-- (void)startDiscovingWirelessCaptureDevices;
+- (void)stopDiscoveringWirelessCaptureDevices;
+- (void)startDiscoveringWirelessCaptureDevices;
 - (void)_setWirelessDeviceDiscoveryEnabled:(BOOL)arg1;
 - (void)audioLevelIndicatorTimerTask;
 - (void)stopAudioLevelIndicatorTimer;

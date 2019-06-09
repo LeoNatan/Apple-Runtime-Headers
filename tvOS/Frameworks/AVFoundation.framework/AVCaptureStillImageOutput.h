@@ -14,7 +14,7 @@
 }
 
 + (struct __CFDictionary *)_copyAttachmentsAndPropagateFaceRegionsToExifAuxDictionaryForSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
-+ (id)jpegStillImageNSDataRepresentationForSurface:(void *)arg1 size:(unsigned long long)arg2 metadata:(id)arg3;
++ (id)jpegStillImageNSDataRepresentationForSurface:(struct __IOSurface *)arg1 size:(unsigned long long)arg2 metadata:(id)arg3;
 + (id)jpegStillImageNSDataRepresentation:(struct opaqueCMSampleBuffer *)arg1;
 + (unsigned long long)maxStillImageJPEGDataSize;
 + (id)new;
@@ -69,7 +69,7 @@
 - (void)setSquareCropEnabled:(_Bool)arg1;
 - (_Bool)squareCropEnabled;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (_Bool)canAddConnectionForMediaType:(id)arg1;
+- (_Bool)canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (id)connectionMediaTypes;
 @property(readonly, nonatomic) NSArray *availableImageDataCodecTypes;
 @property(readonly, nonatomic) NSArray *availableImageDataCVPixelFormatTypes;

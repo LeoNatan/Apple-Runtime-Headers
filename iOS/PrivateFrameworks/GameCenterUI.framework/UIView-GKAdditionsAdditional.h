@@ -7,6 +7,8 @@
 #import <UIKit/UIView.h>
 
 @interface UIView (GKAdditionsAdditional)
++ (id)_gkStandardBackdropView;
++ (id)_gkViewFromNib;
 - (id)_gkAncestryAffectingVisualLayout;
 - (id)_gkAncestryDescription;
 - (id)_gkRecursiveDescriptionForValue:(id)arg1 forKey:(id)arg2;
@@ -19,5 +21,21 @@
 - (void)_gkClearPerspectiveTransform;
 - (void)_gkApplyPerspectiveTransform;
 @property(nonatomic) struct CGPoint integralCenter;
+- (void)_gkSetNeedsRender;
+- (void)_gkPerformWithoutAnimationWhenRotating:(CDUnknownBlockType)arg1;
+- (struct UIEdgeInsets)_gkPopoverPresentationInsets;
+- (struct CGRect)_gkPopoverPresentationRect;
+- (struct CGRect)_gkPopoverPresentationArea;
+- (void)_gkAddStandardFadeTransition;
+- (void)_gkEnumerateSubviewsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)_gkRemovePositionConstraintsForBubble:(id)arg1;
+- (void)_gkAddPositionConstraints:(struct CGPoint)arg1 forBubble:(id)arg2;
+- (void)_gkUseAsModalSheetBackgroundWithGroupName:(id)arg1;
+- (void)_gkApplyBackdropViewIfNeededWithGroupName:(id)arg1;
+- (void)_gkApplyBackdropViewWithGroupName:(id)arg1;
+- (id)_gkBackdropView;
+- (id)_gkApplyFakeStatusBarView;
+- (void)_gkSetDrawsAsKnockout:(_Bool)arg1 inBackdrop:(id)arg2;
+- (void)_gkSetDrawsAsBackdropOverlay:(_Bool)arg1;
 @end
 

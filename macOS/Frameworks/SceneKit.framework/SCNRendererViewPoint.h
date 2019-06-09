@@ -10,17 +10,17 @@
 
 @interface SCNRendererViewPoint : NSObject
 {
-    MTLRenderPassDescriptor *passDescriptor;
-    CDStruct_4b2885c7 viewport;
+    MTLRenderPassDescriptor *_passDescriptor;
+    CDStruct_4b2885c7 _viewport;
     struct CATransform3D viewMatrix;
     struct CATransform3D projectionMatrix;
 }
 
-@property(nonatomic) CDStruct_4b2885c7 viewport; // @synthesize viewport;
-@property(retain, nonatomic) MTLRenderPassDescriptor *passDescriptor; // @synthesize passDescriptor;
 @property(nonatomic) struct CATransform3D projectionMatrix; // @synthesize projectionMatrix;
 @property(nonatomic) struct CATransform3D viewMatrix; // @synthesize viewMatrix;
 - (void)dealloc;
+@property(retain, nonatomic) MTLRenderPassDescriptor *passDescriptor;
+@property(nonatomic) CDStruct_4b2885c7 viewport;
 
 @end
 

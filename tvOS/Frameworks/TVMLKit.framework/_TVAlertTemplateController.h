@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 {
     IKViewElement *_templateElement;
     _TVCollectionView *_collectionView;
-    NSArray *_buttonElements;
+    NSArray *_collectionViewElements;
     IKImageElement *_bgImageElement;
     IKImageElement *_bgHeroImageElement;
     NSIndexPath *_lastFocusedIndexPath;
@@ -31,6 +31,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)_backgroundImageRequiresBlur;
 - (id)_backgroundImageProxy;
 - (struct CGSize)_backgroundImageProxySize;
+- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didReceivePhysicalPlayForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didUpdateFocusInContext:(id)arg2 withAnimationCoordinator:(id)arg3;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;
 - (_Bool)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;

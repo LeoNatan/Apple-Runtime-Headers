@@ -38,7 +38,6 @@ __attribute__((visibility("hidden")))
 - (void)_resetTitleSize;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
-- (void)_adjustLabelTrackingIfNecessary;
 - (void)_updateLabel;
 - (struct CGRect)_labelFrame;
 - (float)_titleYAdjustmentCustomization;
@@ -48,7 +47,6 @@ __attribute__((visibility("hidden")))
 - (struct CGSize)_currentTextShadowOffsetForBarStyle:(int)arg1;
 - (id)_currentTextShadowColorForBarStyle:(int)arg1;
 - (id)_currentTextColorForBarStyle:(int)arg1;
-- (_Bool)_useSilverLookForBarStyle:(int)arg1;
 - (id)_defaultFont;
 - (id)navigationItem;
 - (id)initWithNavigationItem:(id)arg1;

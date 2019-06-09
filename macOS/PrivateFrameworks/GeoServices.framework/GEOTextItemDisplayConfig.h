@@ -18,6 +18,7 @@
 @property(readonly, nonatomic) unsigned int maxItemsPerRow; // @synthesize maxItemsPerRow=_maxItemsPerRow;
 - (id)initWithTextItemDisplayConfig:(id)arg1;
 - (id)initWithMaxItemsPerRow:(unsigned int)arg1 maxRowCount:(unsigned int)arg2;
+- (id)init;
 
 @end
 

@@ -6,6 +6,7 @@
 
 #import <OfficeImport/EDKeyedCollection.h>
 
+__attribute__((visibility("hidden")))
 @interface EDSortedCollection : EDKeyedCollection
 {
 }

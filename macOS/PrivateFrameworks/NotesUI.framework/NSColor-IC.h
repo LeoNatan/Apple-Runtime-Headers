@@ -6,19 +6,22 @@
 
 #import <AppKit/NSColor.h>
 
+@class NSString;
+
 @interface NSColor (IC)
 + (struct NSColor *)ic_colorFromString:(id)arg1;
 + (struct NSColor *)ic_lightPaperTexture;
 + (struct NSColor *)ic_paperTexture;
++ (struct NSImage *)ic_lightPaperImage;
++ (struct NSImage *)ic_paperImage;
++ (struct NSColor *)ICNotesListHeaderTextColor;
 + (struct NSColor *)ICLearnMoreButtonPressedColor;
 + (struct NSColor *)ICLearnMoreButtonUnpressedColor;
 + (struct NSColor *)ICFindInNoteHighlightColor;
-+ (struct NSColor *)ICTintedSelectionColor;
 + (struct NSColor *)ICNotesListFolderIconColor;
 + (struct NSColor *)ICLockIconColorList;
 + (struct NSColor *)ICListStatusIndicatorColor;
 + (struct NSColor *)ICLockIconColor;
-+ (struct NSColor *)ICYellowTodoButtonHighlightColor;
 + (struct NSColor *)ICYellowTodoButtonColor;
 + (struct NSColor *)ICGrayTodoButtonHighlightColor;
 + (struct NSColor *)ICGrayTodoButtonColor;
@@ -35,7 +38,22 @@
 + (BOOL)ic_shouldUseNotesAccentColor;
 + (struct NSColor *)ic_colorWith256Red:(double)arg1 green:(double)arg2 blue:(double)arg3 unitAlpha:(double)arg4;
 + (struct NSColor *)ic_colorWith256Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
++ (id)icaxHueNameForValue:(double)arg1;
 - (id)ic_colorString;
 - (struct NSColor *)ic_searchResultSelectedCellHighlightTextColor;
+@property(readonly, nonatomic) BOOL ic_isBlack;
+- (id)_icaxLightnessSaturationHueFormatString;
+- (id)_icaxSaturationHueFormatString;
+- (id)_icaxLightnessHueFormatString;
+- (id)_icaxColorDescriptionForHue:(id)arg1 saturation:(id)arg2 lightness:(id)arg3;
+@property(readonly, nonatomic) NSString *icaxDescriptionWithLuma;
+- (id)icaxSaturationModifier;
+- (id)icaxLightnessModifier;
+- (id)icaxHueName;
+@property(readonly, nonatomic) NSString *icaxApproximateColorDescription;
+@property(readonly, nonatomic) double icaxLuma;
+- (double)icaxSaturation;
+- (double)icaxHue;
+@property(retain, nonatomic, setter=_icaxSetCachedApproximateColorDescription:) NSString *_icaxCachedApproximateColorDescription;
 @end
 

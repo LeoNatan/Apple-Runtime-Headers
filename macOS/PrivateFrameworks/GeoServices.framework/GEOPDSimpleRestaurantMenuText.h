@@ -17,9 +17,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_menuGroups;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)menuGroupType;
-@property(retain, nonatomic) NSMutableArray *menuGroups; // @synthesize menuGroups=_menuGroups;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,12 +29,14 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)menuGroupAtIndex:(unsigned long long)arg1;
 - (unsigned long long)menuGroupsCount;
 - (void)addMenuGroup:(id)arg1;
 - (void)clearMenuGroups;
+@property(retain, nonatomic) NSMutableArray *menuGroups;
 
 @end
 

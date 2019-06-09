@@ -8,6 +8,7 @@
 
 @class NSString, TCProgressContext;
 
+__attribute__((visibility("hidden")))
 @interface TCProgressStage : NSObject
 {
     double m_currentPosition;

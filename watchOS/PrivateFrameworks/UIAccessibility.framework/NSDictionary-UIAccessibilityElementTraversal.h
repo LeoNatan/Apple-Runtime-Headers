@@ -7,7 +7,6 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (UIAccessibilityElementTraversal)
-- (id)_rearrangeKeyboardIfNecessaryWithOriginalArray:(id)arg1 processedArray:(id)arg2;
 - (id)_accessibilityLeafDescendantsWithCount:(unsigned int)arg1 shouldStopAtRemoteElement:(_Bool)arg2 options:(id)arg3 treeLogger:(id)arg4;
 @end
 

@@ -8,6 +8,7 @@
 
 @class OADShapeStyle;
 
+__attribute__((visibility("hidden")))
 @interface ODDStyleLabel : NSObject
 {
     OADShapeStyle *mShapeStyle;

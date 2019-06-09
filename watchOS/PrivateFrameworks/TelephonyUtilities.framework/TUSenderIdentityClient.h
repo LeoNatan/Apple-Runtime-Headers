@@ -35,6 +35,7 @@
 - (_Bool)isWhitelistedEmergencyNumberForDigits:(id)arg1 senderIdentityUUID:(id)arg2;
 - (_Bool)isEmergencyNumberForDigits:(id)arg1 senderIdentityUUID:(id)arg2 error:(id *)arg3;
 - (_Bool)isEmergencyNumberForDigits:(id)arg1 senderIdentityUUID:(id)arg2;
+- (_Bool)inEmergencyMode;
 
 @end
 

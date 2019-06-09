@@ -18,6 +18,8 @@
 - (void)observeWantsExclusiveForegroundWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeHomeIndicatorAutoHiddenWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeScreenEdgesDeferringSystemGesturesWithBlock:(CDUnknownBlockType)arg1;
+- (void)observeActivationConditionsDataWithBlock:(CDUnknownBlockType)arg1;
+- (void)observeCanvasTitleWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeReachabilitySupportedWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeWhitePointAdaptivityStyleWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeIdleModeVisualEffectsEnabledWithBlock:(CDUnknownBlockType)arg1;
@@ -39,6 +41,9 @@
 - (void)observeDefaultStatusBarStyleWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeStatusBarContextIDWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeStatusBarHiddenWithBlock:(CDUnknownBlockType)arg1;
+- (void)observeStatusBarAlphaWithBlock:(CDUnknownBlockType)arg1;
+- (void)observeStatusBarPartStylesWithBlock:(CDUnknownBlockType)arg1;
+- (void)observeStatusBarModernStyleWithBlock:(CDUnknownBlockType)arg1;
 - (void)observeStatusBarStyleWithBlock:(CDUnknownBlockType)arg1;
 
 @end

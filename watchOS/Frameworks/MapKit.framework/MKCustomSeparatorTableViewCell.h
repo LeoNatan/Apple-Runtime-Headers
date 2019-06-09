@@ -6,19 +6,19 @@
 
 #import <MapKit/MKTableViewCell.h>
 
+@class MKViewWithHairline;
+
 @interface MKCustomSeparatorTableViewCell : MKTableViewCell
 {
-    float _leftSeparatorInset;
-    float _rightSeparatorInset;
+    MKViewWithHairline *_separatorView;
 }
 
-@property(nonatomic) float rightSeparatorInset; // @synthesize rightSeparatorInset=_rightSeparatorInset;
-@property(nonatomic) float leftSeparatorInset; // @synthesize leftSeparatorInset=_leftSeparatorInset;
+- (void).cxx_destruct;
 @property(nonatomic) float trailingSeparatorInset;
 @property(nonatomic) float leadingSeparatorInset;
+@property(nonatomic) float rightSeparatorInset;
+@property(nonatomic) float leftSeparatorInset;
 @property(nonatomic, getter=isSeparatorHidden) _Bool separatorHidden;
-- (void)_updateSeparatorInset;
-- (struct CGRect)_separatorFrame;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 
 @end

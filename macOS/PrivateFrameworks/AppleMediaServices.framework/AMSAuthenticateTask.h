@@ -10,31 +10,37 @@
 
 @interface AMSAuthenticateTask : AMSTask
 {
+    AMSAuthenticateOptions *_options;
     NSString *_password;
+    NSString *_multiUserToken;
     NSString *_rawPassword;
     NSString *_altDSID;
     NSNumber *_DSID;
+    NSString *_homeID;
+    NSString *_homeUserID;
     NSString *_username;
     ACAccount *_authenticatedAccount;
-    AMSAuthenticateOptions *_options;
 }
 
-@property(retain) AMSAuthenticateOptions *options; // @synthesize options=_options;
 @property(retain) ACAccount *authenticatedAccount; // @synthesize authenticatedAccount=_authenticatedAccount;
 @property(retain) NSString *username; // @synthesize username=_username;
+@property(retain) NSString *homeUserID; // @synthesize homeUserID=_homeUserID;
+@property(retain) NSString *homeID; // @synthesize homeID=_homeID;
 @property(retain) NSNumber *DSID; // @synthesize DSID=_DSID;
 @property(retain) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(retain) NSString *rawPassword; // @synthesize rawPassword=_rawPassword;
+@property(retain) NSString *multiUserToken; // @synthesize multiUserToken=_multiUserToken;
 @property(retain) NSString *password; // @synthesize password=_password;
+@property(readonly) AMSAuthenticateOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
 - (void)_updateAccountWithProvidedInformation:(id)arg1;
-- (BOOL)_shouldPerformInProcessAuthKitUpdateForAccount:(id)arg1;
-- (id)_performAuthenticationWithError_macOS:(id *)arg1;
 - (id)_performAuthenticationUsingAccount:(id)arg1 credentialSource:(unsigned long long)arg2 error:(id *)arg3;
 - (id)_createVerifyCredentialOptionsWithCredentialSource:(unsigned long long)arg1;
 - (id)_accountStoreForAuthentication;
+- (id)_updateAccountWithAuthKit:(id)arg1 error:(id *)arg2;
 - (id)_accountForAuthentication;
 - (id)performAuthentication;
+- (id)initWithRequest:(id)arg1;
 - (id)initWithAccount:(id)arg1 options:(id)arg2;
 - (id)init;
 

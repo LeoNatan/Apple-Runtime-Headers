@@ -10,6 +10,7 @@
 {
 }
 
++ (struct CGImage *)newCGImageFromImageStorage:(id)arg1 colorSpace:(id)arg2;
 + (struct CGImage *)newCGImageFromBufferImage:(id)arg1;
 + (id)newCIImageFromBufferImage:(id)arg1;
 + (id)_newCIImageFromImage:(id)arg1;

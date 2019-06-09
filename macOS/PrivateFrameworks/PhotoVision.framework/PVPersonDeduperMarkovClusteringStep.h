@@ -6,7 +6,6 @@
 
 #import <PhotoVision/PVPersonDeduperStep.h>
 
-__attribute__((visibility("hidden")))
 @interface PVPersonDeduperMarkovClusteringStep : PVPersonDeduperStep
 {
 }

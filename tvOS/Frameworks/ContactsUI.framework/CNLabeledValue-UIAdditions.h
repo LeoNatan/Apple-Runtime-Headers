@@ -16,5 +16,6 @@
 + (id)defaultLabels;
 + (void *)addressBook;
 @property(readonly, nonatomic) NSString *localizedLabel;
+- (Class)contactViewControllerCellClassForPropertyType:(id)arg1;
 @end
 

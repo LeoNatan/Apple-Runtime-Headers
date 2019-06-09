@@ -80,7 +80,6 @@
 - (id)_predicateForYearlessSearchOnDatePropertyKeyPath:(id)arg1 toManyRelationshipName:(id)arg2 futureOnly:(BOOL)arg3 allNotMatch:(BOOL)arg4 customPropertyPath:(id)arg5 customProperty:(id)arg6 searchValue:(id)arg7 label:(id)arg8;
 - (id)_predicateForUnknownKeyWithComparison:(long long)arg1 value:(id)arg2;
 - (id)_predicateForKeyPath:(id)arg1 comparison:(long long)arg2 value:(id)arg3;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithProperty:(id)arg1 label:(id)arg2 key:(id)arg3 value:(id)arg4 searchPeople:(BOOL)arg5 comparison:(long long)arg6;
 - (id)initWithProperty:(id)arg1 label:(id)arg2 key:(id)arg3 value:(id)arg4 searchPeople:(BOOL)arg5 searchSubscribed:(BOOL)arg6 comparison:(long long)arg7;

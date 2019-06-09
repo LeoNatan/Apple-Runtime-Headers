@@ -22,16 +22,20 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_transformedManyToManys;
     NSMutableArray *_processedTransforms;
     NSMutableArray *_pendingTransforms;
+    BOOL _updateUsingCopy;
 }
 
+@property(nonatomic) BOOL migrationNeedsCopyDueToConstraintMigration; // @synthesize migrationNeedsCopyDueToConstraintMigration=_updateUsingCopy;
 @property(readonly, nonatomic) int migrationType; // @synthesize migrationType=_migrationType;
 @property(readonly, nonatomic) NSEntityMapping *entityMapping; // @synthesize entityMapping=_entityMapping;
 @property(readonly, nonatomic) NSSQLEntity *destinationEntity; // @synthesize destinationEntity=_dstEntity;
 @property(readonly, nonatomic) NSSQLEntity *sourceEntity; // @synthesize sourceEntity=_srcEntity;
+- (id)newCloudKitMetadataUpdateStatements;
 - (id)nextPropertyTransform;
 - (id)transformedManyToManys;
 - (id)removedManyToManys;
 - (id)addedManyToManys;
+- (void)populateForeignKeyUpdateDataWithMigrationContext:(struct _NSSQLMigrationContext)arg1;
 - (id)sqlValueForColumnName:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (void)_populateSQLValuesByPropertyFromTransforms:(id)arg1 migrationContext:(struct _NSSQLMigrationContext)arg2;
 - (void)_populateSQLValuesForVirtualToOnesWithMigrationContext:(struct _NSSQLMigrationContext)arg1;

@@ -14,14 +14,13 @@
     int _style;
     unsigned int _zoom;
     struct {
-        unsigned int count:1;
-        unsigned int style:1;
-        unsigned int zoom:1;
-    } _has;
+        unsigned int has_count:1;
+        unsigned int has_style:1;
+        unsigned int has_zoom:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int zoom; // @synthesize zoom=_zoom;
-@property(nonatomic) unsigned int count; // @synthesize count=_count;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -29,14 +28,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasZoom;
+@property(nonatomic) unsigned int zoom;
 @property(nonatomic) _Bool hasCount;
+@property(nonatomic) unsigned int count;
 - (int)StringAsStyle:(id)arg1;
 - (id)styleAsString:(int)arg1;
 @property(nonatomic) _Bool hasStyle;
-@property(nonatomic) int style; // @synthesize style=_style;
+@property(nonatomic) int style;
 
 @end
 

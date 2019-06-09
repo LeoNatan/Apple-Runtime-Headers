@@ -13,14 +13,14 @@
     NSString *_folderID;
 }
 
+- (void).cxx_destruct;
 - (id)_privacySafeDescription;
 - (id)dictionaryRepresentation;
 - (id)displayName;
-- (id)URLStringWithAccount:(id)arg1;
+- (id)URLWithAccount:(id)arg1;
 - (id)_folderID;
 @property(copy) NSString *folderID;
 - (_Bool)mergeWithUserInfo:(id)arg1;
-- (void)dealloc;
 - (id)initWithName:(id)arg1 attributes:(unsigned int)arg2 account:(id)arg3 folderID:(id)arg4;
 
 @end

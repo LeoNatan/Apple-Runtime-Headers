@@ -50,7 +50,7 @@
 @property(nonatomic) BOOL hasKey;
 - (id)logDescription;
 - (void)setValueAndType:(id)arg1;
-- (long long)migratedComparator;
+- (int)migratedComparator;
 @property(retain, nonatomic) NSDate *secondDateValue;
 @property(retain, nonatomic) NSDate *dateValue;
 @property(retain, nonatomic) NSString *secondStringValue;

@@ -34,6 +34,8 @@
 @property(retain, nonatomic) NSObject<PLAlbumProtocol> *album; // @synthesize album=_album;
 @property(readonly, nonatomic) PHAssetCollection *assetCollection; // @synthesize assetCollection=_assetCollection;
 - (void).cxx_destruct;
+- (void)navigateToDestination:(id)arg1 options:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)canRouteToDestination:(id)arg1;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
 - (void)_collectionView:(id)arg1 performDropWithCoordinator:(id)arg2;
 - (id)_collectionView:(id)arg1 dropSessionDidUpdate:(id)arg2 withDestinationIndexPath:(id)arg3;

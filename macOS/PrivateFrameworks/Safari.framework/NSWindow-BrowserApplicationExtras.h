@@ -10,5 +10,30 @@
 - (id)safari_unregisterDragTypes;
 - (id)safari_closeWithObjectReturnValue;
 - (id)safari_isVisibleWithObjectReturnValue;
+- (BOOL)willHandleMouseDraggedEvent:(id)arg1;
+- (BOOL)willHandleMouseDownEvent:(id)arg1;
+- (BOOL)willHandleKeyEvent:(id)arg1;
+- (BOOL)willHandleEvent:(id)arg1;
+- (id)safari_addToControllerNames;
+- (struct CGRect)safari_adjustWindowRectInMainScreen:(struct CGRect)arg1;
+- (void)safari_addViewUnderTitlebar:(id)arg1;
+- (void)safari_endSheetInParentWithReturnCode:(long long)arg1;
+- (struct CGImage *)_newScaledImage:(struct CGImage *)arg1 scale:(double)arg2;
+- (void)safari_applyLayerBackingProperties;
+- (void)safari_makeViewFirstResponderIfItBelongsToWindow:(id)arg1;
+- (id)safari_firstResponderView;
+- (BOOL)safari_isKeyOrMainWindow;
+- (id)safari_windowForSheet;
+- (id)safari_titlebarSeparatorColor;
+- (id)safari_toolbarBottomEdgeLowerColor;
+- (id)safari_toolbarBottomEdgeUpperColor;
+- (BOOL)_safari_hasActiveAppearanceIgnoringKeyFocus;
+- (void)setBottomBorderThickness:(float)arg1 showingSeparator:(BOOL)arg2;
+- (BOOL)makeNonDeferred;
+- (struct CGImage *)newCGImageForRect:(struct CGRect)arg1 excludingChildWindows:(id)arg2;
+- (id)imageForRect:(struct CGRect)arg1;
+- (BOOL)firstResponderIsDescendantOf:(id)arg1;
+- (struct CGPoint)safari_convertPointFromScreen:(struct CGPoint)arg1;
+- (struct CGPoint)safari_convertPointToScreen:(struct CGPoint)arg1;
 @end
 

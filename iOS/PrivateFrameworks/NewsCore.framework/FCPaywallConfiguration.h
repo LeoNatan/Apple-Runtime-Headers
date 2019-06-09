@@ -8,7 +8,7 @@
 
 #import <NewsCore/NSCopying-Protocol.h>
 
-@class FCPaywallVisualSpecConfiguration, FCSubscriptionButtonConfiguration, NSString, NSURL;
+@class FCPaywallTopOffsetConfiguration, FCPaywallVisualSpecConfiguration, FCSubscriptionButtonConfiguration, NSString, NSURL;
 
 @interface FCPaywallConfiguration : NSObject <NSCopying>
 {
@@ -20,23 +20,22 @@
     NSURL *_learnMoreURL;
     FCSubscriptionButtonConfiguration *_subscriptionButtonConfig;
     FCPaywallVisualSpecConfiguration *_visualSpecConfig;
+    FCPaywallTopOffsetConfiguration *_paywallTopOffsetConfig;
 }
 
-+ (id)defaultLearnMoreURLInternalTrial;
-+ (id)defaultLearnMoreTitleInternalTrial;
-+ (id)defaultPaywallDescriptionInternalTrial;
++ (id)defaultPaywallTopOffsetConfiguration;
 + (id)defaultPaywallDescription;
-+ (id)defaultPaywallTitleInternalTrial;
 + (id)defaultPaywallTitle;
-+ (id)defaultPDFHardPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
-+ (id)defaultMagazineFeedSoftPaywallLargePaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
-+ (id)defaultMagazineFeedSoftPaywallMediumPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
-+ (id)defaultMagazineFeedSoftPaywallSmallPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
-+ (id)defaultChannelSoftPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
-+ (id)defaultArticleSharedSoftPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
-+ (id)defaultArticleSoftPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
-+ (id)defaultArticleSharedHardPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
-+ (id)defaultArticleHardPaywallWithLandingPageArticleID:(id)arg1 temporaryAccessEnabled:(_Bool)arg2;
++ (id)defaultPDFHardPaywallWithLandingPageArticleID:(id)arg1;
++ (id)defaultMagazineFeedSoftPaywallLargePaywallWithLandingPageArticleID:(id)arg1;
++ (id)defaultMagazineFeedSoftPaywallMediumPaywallWithLandingPageArticleID:(id)arg1;
++ (id)defaultMagazineFeedSoftPaywallSmallPaywallWithLandingPageArticleID:(id)arg1;
++ (id)defaultChannelSoftPaywallWithLandingPageArticleID:(id)arg1;
++ (id)defaultArticleSharedSoftPaywallWithLandingPageArticleID:(id)arg1;
++ (id)defaultArticleSoftPaywallWithLandingPageArticleID:(id)arg1;
++ (id)defaultArticleSharedHardPaywallWithLandingPageArticleID:(id)arg1;
++ (id)defaultArticleHardPaywallWithLandingPageArticleID:(id)arg1;
+@property(readonly, nonatomic) FCPaywallTopOffsetConfiguration *paywallTopOffsetConfig; // @synthesize paywallTopOffsetConfig=_paywallTopOffsetConfig;
 @property(retain, nonatomic) FCPaywallVisualSpecConfiguration *visualSpecConfig; // @synthesize visualSpecConfig=_visualSpecConfig;
 @property(retain, nonatomic) FCSubscriptionButtonConfiguration *subscriptionButtonConfig; // @synthesize subscriptionButtonConfig=_subscriptionButtonConfig;
 @property(copy, nonatomic) NSURL *learnMoreURL; // @synthesize learnMoreURL=_learnMoreURL;
@@ -49,7 +48,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithPaywallType:(unsigned long long)arg1 title:(id)arg2 descriptionTrial:(id)arg3 descriptionNonTrial:(id)arg4 learnMoreTitle:(id)arg5 learnMoreURL:(id)arg6 subscriptionButtonConfig:(id)arg7 visualSpecConfig:(id)arg8;
+- (id)initWithPaywallType:(unsigned long long)arg1 title:(id)arg2 descriptionTrial:(id)arg3 descriptionNonTrial:(id)arg4 learnMoreTitle:(id)arg5 learnMoreURL:(id)arg6 subscriptionButtonConfig:(id)arg7 visualSpecConfig:(id)arg8 paywallTopOffsetConfig:(id)arg9;
 - (id)initWithConfigDictionary:(id)arg1;
 - (id)init;
 

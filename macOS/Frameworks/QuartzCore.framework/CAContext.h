@@ -40,11 +40,14 @@
 
 // Remaining properties
 @property unsigned long long GPURegistryID; // @dynamic GPURegistryID;
+@property(copy) NSString *annotation; // @dynamic annotation;
 @property BOOL colorMatchUntaggedContent; // @dynamic colorMatchUntaggedContent;
 @property struct CGColorSpace *colorSpace; // @dynamic colorSpace;
 @property unsigned int commitPriority; // @dynamic commitPriority;
 @property(copy) NSString *contentsFormat; // @dynamic contentsFormat;
 @property(readonly) unsigned int contextId; // @dynamic contextId;
+@property float desiredDynamicRange; // @dynamic desiredDynamicRange;
+@property(readonly) unsigned int displayId; // @dynamic displayId;
 @property unsigned int displayMask; // @dynamic displayMask;
 @property unsigned int displayNumber; // @dynamic displayNumber;
 @property unsigned int eventMask; // @dynamic eventMask;
@@ -52,6 +55,7 @@
 @property float level; // @dynamic level;
 @property(readonly) NSDictionary *options; // @dynamic options;
 @property int restrictedHostProcessId; // @dynamic restrictedHostProcessId;
+@property(getter=isSecure) BOOL secure; // @dynamic secure;
 @property struct CGRect unobscuredRegionOfInterest; // @dynamic unobscuredRegionOfInterest;
 @property(readonly) BOOL valid; // @dynamic valid;
 

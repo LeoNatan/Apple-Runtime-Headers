@@ -94,6 +94,7 @@
 - (void)fetchAppConfigurationIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSData *magazinesConfigurationData;
 @property(readonly, nonatomic) id <FCNewsAppConfiguration><FCJSONEncodableObjectProviding> jsonEncodableAppConfiguration;
+@property(readonly, nonatomic) id <FCNewsAppConfiguration> fetchedAppConfiguration;
 @property(readonly, nonatomic) id <FCNewsAppConfiguration> possiblyUnfetchedAppConfiguration;
 @property(readonly, nonatomic) id <FCNewsAppConfiguration> appConfiguration;
 - (id)initWithContextConfiguration:(id)arg1 contentHostDirectoryFileURL:(id)arg2 feldsparIDProvider:(id)arg3;

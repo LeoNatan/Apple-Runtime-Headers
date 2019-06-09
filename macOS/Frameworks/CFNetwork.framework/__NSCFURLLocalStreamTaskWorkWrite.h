@@ -8,7 +8,6 @@
 
 @class NSData;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFURLLocalStreamTaskWorkWrite : __NSCFURLLocalStreamTaskWork
 {
     NSData *_bytesAsData;

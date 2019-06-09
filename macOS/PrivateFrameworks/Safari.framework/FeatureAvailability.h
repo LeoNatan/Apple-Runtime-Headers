@@ -6,28 +6,35 @@
 
 #import <SafariShared/WBSFeatureAvailability.h>
 
-@class LAContext, NSObject;
+@class LAContext, NSObject, STManagementState;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface FeatureAvailability : WBSFeatureAvailability
 {
     NSObject<OS_dispatch_queue> *_internalQueue;
     LAContext *_laContext;
     NSObject<OS_dispatch_queue> *_laContextQueue;
+    STManagementState *_managementState;
+    NSObject<OS_dispatch_queue> *_screenTimePasscodeQueue;
     BOOL _threadUnsafeUserSignedIntoICloud;
     BOOL _threadUnsafeSafariSyncEnabled;
     BOOL _threadUnsafeKeychainSyncEnabled;
     BOOL _threadUnsafeUserUsingManagedAppleID;
     BOOL _cachedIsTouchIDAvailable;
     BOOL _cachedIsTouchIDSupportedOnDevice;
+    long long _cachedScreenTimePasscodeState;
 }
 
++ (void)executeBlockAfterScreenTimePasscodeStateDetermined:(CDUnknownBlockType)arg1;
++ (void)determineIfScreenTimePasscodeIsSetWithCompletionHandler:(CDUnknownBlockType)arg1;
++ (BOOL)isScreenTimePasscodeSet;
 + (BOOL)wantsAggressiveKeychainCredentialCaching;
 + (BOOL)_shouldShowRussianFeatures;
 + (BOOL)_shouldShowChineseFeatures;
 + (id)_sharedInstance;
 + (BOOL)_safariIsInRecoverySystem;
++ (BOOL)supportsCVV;
++ (BOOL)_hasSecureEnclaveCoprocessor;
 + (void)updateTouchIDAvailability;
 + (BOOL)isTouchIDSupportedOnDevice;
 + (BOOL)isTouchIDAvailable;
@@ -56,12 +63,15 @@ __attribute__((visibility("hidden")))
 + (BOOL)isSafariSyncEnabled;
 + (BOOL)isUserSignedIntoICloud;
 + (void)startMonitoringForAvailabilityChanges;
+@property long long cachedScreenTimePasscodeState; // @synthesize cachedScreenTimePasscodeState=_cachedScreenTimePasscodeState;
 @property BOOL cachedIsTouchIDSupportedOnDevice; // @synthesize cachedIsTouchIDSupportedOnDevice=_cachedIsTouchIDSupportedOnDevice;
 @property BOOL cachedIsTouchIDAvailable; // @synthesize cachedIsTouchIDAvailable=_cachedIsTouchIDAvailable;
 @property(getter=isUserUsingManagedAppleID) BOOL userUsingManagedAppleID; // @synthesize userUsingManagedAppleID=_threadUnsafeUserUsingManagedAppleID;
 @property(getter=isKeychainSyncEnabled) BOOL keychainSyncEnabled; // @synthesize keychainSyncEnabled=_threadUnsafeKeychainSyncEnabled;
 @property(getter=isUserSignedIntoICloud) BOOL userSignedIntoICloud; // @synthesize userSignedIntoICloud=_threadUnsafeUserSignedIntoICloud;
 - (void).cxx_destruct;
+- (void)_executeBlockAfterScreenTimePasscodeStateDetermined:(CDUnknownBlockType)arg1;
+- (void)isScreenTimePasscodeSetWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(getter=isSafariSyncEnabled) BOOL safariSyncEnabled; // @synthesize safariSyncEnabled=_threadUnsafeSafariSyncEnabled;
 - (void)_updateKeychainSyncingStatus;
 - (void)_updateTouchIDSupportAndAvailability;

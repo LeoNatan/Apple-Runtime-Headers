@@ -8,7 +8,6 @@
 
 @class AVAsset, AVAssetTrack, VideoAccessRand;
 
-__attribute__((visibility("hidden")))
 @interface VideoAccessIndex : NSObject
 {
     vector_0821a7d5 mFrameTimes;

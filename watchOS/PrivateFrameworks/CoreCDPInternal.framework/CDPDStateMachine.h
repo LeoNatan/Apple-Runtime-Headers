@@ -47,6 +47,7 @@
 - (void)_confirmCDPEligibilityWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_enableKVSForAccount:(id)arg1 store:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_preflightAccountStateWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)_isICloudKeychainDisabledByManagementProfile;
 - (_Bool)shouldAllowCDPEnrollment;
 - (void)_authenticatedRepairCloudDataProtectionStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_refreshAndAuthenticateWithContext:(id)arg1;

@@ -14,8 +14,8 @@
 {
 }
 
++ (id)keyPathsForValuesAffectingRefreshIntervalIfAutoRefreshed;
 + (id)entityName;
-+ (void)initialize;
 - (id)enclosingSource;
 - (id)properties;
 - (id)cloneInManagedObjectContext:(id)arg1;

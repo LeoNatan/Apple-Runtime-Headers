@@ -14,7 +14,6 @@
 - (id)hd_productType;
 - (id)hd_name;
 - (_Bool)hd_isActive;
-- (_Bool)hd_isPaired;
 - (id)hd_pairingID;
 @end
 

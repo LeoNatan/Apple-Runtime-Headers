@@ -15,7 +15,7 @@
 + (id)cjkSpacerCharacters;
 + (id)nameStringFromEmailAddress:(id)arg1 inContext:(id)arg2;
 + (id)possibleNameStringFromEmailAddress:(id)arg1 inContext:(id)arg2;
-+ (id)sgNameFromString:(id)arg1 origin:(id)arg2 recordId:(id)arg3 extractionType:(unsigned long long)arg4;
++ (id)sgNameFromString:(id)arg1 origin:(id)arg2 recordId:(id)arg3 extractionInfo:(id)arg4;
 + (id)bestName:(id)arg1;
 + (id)surnameFromName:(id)arg1;
 + (id)sketchesForName:(id)arg1;

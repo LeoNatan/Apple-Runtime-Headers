@@ -8,6 +8,7 @@
 
 @class SKUISettingsFamilyViewStateCoordinator;
 
+__attribute__((visibility("hidden")))
 @interface SKUIFamilySettingDescription : SKUISettingDescription
 {
     SKUISettingsFamilyViewStateCoordinator *_viewStateCoordinator;

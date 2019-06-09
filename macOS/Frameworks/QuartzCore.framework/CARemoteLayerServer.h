@@ -8,7 +8,6 @@
 
 @interface CARemoteLayerServer : NSObject
 {
-    id _impl;
 }
 
 + (id)sharedServer;

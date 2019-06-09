@@ -11,6 +11,7 @@
 }
 
 - (id)taskIdentifier;
+- (void)taskDidFinishWithError:(id)arg1;
 - (void)launch;
 - (void)_doOneIteration;
 

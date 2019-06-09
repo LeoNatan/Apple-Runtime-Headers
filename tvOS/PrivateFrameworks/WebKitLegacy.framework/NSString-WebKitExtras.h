@@ -14,5 +14,21 @@
 - (_Bool)_webkit_hasCaseInsensitivePrefix:(id)arg1;
 - (_Bool)_webkit_isCaseInsensitiveEqualToString:(id)arg1;
 - (id)_web_stringByAbbreviatingWithTildeInPath;
+- (id)_web_capitalizeRFC822HeaderFieldName;
+- (id)_web_bestURLForUserTypedString;
+- (id)_web_possibleURLsForUserTypedString;
+- (id)_web_possibleURLPrefixesForUserTypedString;
+- (id)_web_possibleURLsForForUserTypedString:(_Bool)arg1;
+- (_Bool)_webkit_looksLikeAbsoluteURL;
+- (struct _NSRange)_webkit_rangeOfURLScheme;
+- (id)_webkit_encodeHostName;
+- (id)_webkit_decodeHostName;
+- (id)_web_encodeHostName;
+- (id)_web_decodeHostName;
+- (id)_webkit_scriptIfJavaScriptURL;
+- (id)_webkit_stringByReplacingValidPercentEscapes;
+- (_Bool)_webkit_isFileURL;
+- (_Bool)_webkit_isJavaScriptURL;
+- (_Bool)_web_isUserVisibleURL;
 @end
 

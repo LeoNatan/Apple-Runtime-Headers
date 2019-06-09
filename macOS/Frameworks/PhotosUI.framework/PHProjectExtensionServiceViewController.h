@@ -6,6 +6,7 @@
 
 #import <PhotosUI/PHExtensionServiceViewController.h>
 
+__attribute__((visibility("hidden")))
 @interface PHProjectExtensionServiceViewController : PHExtensionServiceViewController
 {
 }

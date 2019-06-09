@@ -6,10 +6,12 @@
 
 #import <CloudKitDaemon/CKDPCSData.h>
 
+#import <CloudKitDaemon/NSSecureCoding-Protocol.h>
+
 @class CKDChainPCSData, CKDSharePCSData, CKDZonePCSData, CKEncryptedData, CKRecordID, CKRecordZoneID, NSData, NSString;
 
 __attribute__((visibility("hidden")))
-@interface CKDRecordPCSData : CKDPCSData
+@interface CKDRecordPCSData : CKDPCSData <NSSecureCoding>
 {
     CKRecordID *_recordID;
     NSString *_recordType;
@@ -43,6 +45,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)CKPropertiesDescription;
+- (void)setPcs:(struct _OpaquePCSShareProtection *)arg1;
 - (BOOL)shouldEncodePCSData;
 - (id)itemID;
 - (id)initWithRecord:(id)arg1;

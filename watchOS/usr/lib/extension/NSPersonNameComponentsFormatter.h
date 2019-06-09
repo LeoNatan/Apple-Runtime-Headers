@@ -69,7 +69,6 @@
 + (id)__familyNameFirstOrdering;
 + (id)localizedStringFromPersonNameComponents:(id)arg1 style:(int)arg2 options:(unsigned int)arg3;
 + (id)_formatterWithStyle:(int)arg1 options:(unsigned int)arg2;
-+ (_Bool)__shouldReturnEmptyString;
 + (id)__localizedNameDefaults;
 + (_Bool)__shouldFallbackToGivenNameInitialForAbbreviatedNameFormatFamilyNameOnly;
 + (_Bool)__shouldCacheFallbackToGivenNameInitialForAbbreviatedNameFormatFamilyNameOnly;

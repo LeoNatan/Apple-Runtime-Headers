@@ -16,6 +16,7 @@
 + (id)checkRestriction;
 - (_Bool)requiresResponse;
 @property(copy, nonatomic) NSString *launchId;
+@property(copy, nonatomic) NSString *executionEnvironment;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

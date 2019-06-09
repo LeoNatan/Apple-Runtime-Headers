@@ -13,5 +13,13 @@
 - (void)tvs_releaseBindingAdaptor;
 @property(readonly) TVSBindingAdaptor *tvs_bindingAdaptor;
 - (id)_tvs_bindingAdaptor;
+- (id)tvs_optionsForBinding:(id)arg1;
+- (void)tvs_unbind:(id)arg1;
+- (void)tvs_bind:(id)arg1 toObject:(id)arg2 withKeyPath:(id)arg3 options:(id)arg4;
+- (void)tvs_updateBoundValueForBinding:(id)arg1;
+- (void)_tvs_setAutounbinder:(id)arg1;
+- (id)_tvs_autounbinder;
+- (_Bool)isTVContentIdentifier__;
+- (_Bool)isTVContentItem__;
 @end
 

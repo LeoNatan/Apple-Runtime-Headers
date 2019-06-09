@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     BOOL _lookup;
     BOOL _observersSet;
     BOOL _closeRequested;
-    BOOL _valid;
+    BOOL _isValid;
     id _bridge;
     NSWindow *_hostingWindow;
     id _globalEventMonitor;
@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
     CDUnknownBlockType _behaviorChangeBlock;
 }
 
-@property BOOL valid; // @synthesize valid=_valid;
+@property BOOL isValid; // @synthesize isValid=_isValid;
 @property(copy, nonatomic) CDUnknownBlockType behaviorChangeBlock; // @synthesize behaviorChangeBlock=_behaviorChangeBlock;
 @property(retain) NSViewController *contentController; // @synthesize contentController=_contentController;
 @property BOOL closeRequested; // @synthesize closeRequested=_closeRequested;

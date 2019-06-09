@@ -6,14 +6,19 @@
 
 #import <GeoServices/GEOComposedEnrouteNotice.h>
 
+#import <GeoServices/NSSecureCoding-Protocol.h>
+
 @class GEOTrafficCamera, NSString;
 
-@interface GEOComposedTrafficCamera : GEOComposedEnrouteNotice
+@interface GEOComposedTrafficCamera : GEOComposedEnrouteNotice <NSSecureCoding>
 {
     GEOTrafficCamera *_trafficCamera;
 }
 
++ (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) unsigned int cameraPriority;
 @property(readonly, nonatomic) _Bool hasCameraPriority;
 @property(readonly, nonatomic) double speedThreshold;

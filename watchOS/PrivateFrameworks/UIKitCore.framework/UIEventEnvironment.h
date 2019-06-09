@@ -6,53 +6,79 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, UIApplication, UIPhysicalKeyboardEvent, UIPressesEvent, UITouch, UITouchesEvent, UIWheelEvent, _UIGameControllerEvent;
+@class NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, UIApplication, UIEvent, UIMotionEvent, UIPhysicalKeyboardEvent, UIPressesEvent, UIRemoteControlEvent, UIWheelEvent;
 
 __attribute__((visibility("hidden")))
 @interface UIEventEnvironment : NSObject
 {
     UIApplication *_application;
     NSMutableArray *_eventQueue;
-    UITouchesEvent *_touchesEvent;
-    UIPressesEvent *_pressesEvent;
-    UIWheelEvent *_wheelEvent;
-    _UIGameControllerEvent *_gameControllerEvent;
-    UIPhysicalKeyboardEvent *_physicalKeyboardEvent;
+    UIEvent *_event;
+    UIMotionEvent *_motionEvent;
+    UIRemoteControlEvent *_remoteControlEvent;
     _Bool _isSystemApplication;
-    UITouch *_currentTouch;
-    int _currentNudgePressType;
-    NSMutableDictionary *_pressesMap;
     NSMutableSet *_exclusiveTouchWindows;
     double _commitTimeForTouchEvents;
-    NSMutableArray *_afterNewTouchDownActions;
     NSMutableSet *_windowsWithActiveTouchMaps;
     _Bool _hasSeenAnyPencilEvents;
+    UIPressesEvent *_fallbackPressesEvent;
+    UIPhysicalKeyboardEvent *_fallbackPhysicalKeyboardEvent;
+    UIWheelEvent *_fallbackWheelEvent;
+    NSMapTable *_eventRegistryByScene;
+    NSMapTable *_pressesMapByScene;
+    NSMapTable *_currentNudgePressTypeByScene;
+    NSMutableDictionary *_physicalButtonPressesMap;
+    NSMapTable *_currentTouchByScene;
     int _disableTouchCoalescingCount;
     NSMutableDictionary *_estimatedTouchRecordsByContextIDAndEstimationIndex;
     NSMutableArray *_estimatedTouchRecordsInIncomingOrder;
 }
 
++ (void)_setKeyboardWindowSceneConnected:(_Bool)arg1;
++ (_Bool)_isKeyboardWindowSceneConnected;
 @property(readonly, nonatomic) NSSet *windowsWithActiveTouchMaps; // @synthesize windowsWithActiveTouchMaps=_windowsWithActiveTouchMaps;
 @property(retain, nonatomic) NSMutableArray *eventQueue; // @synthesize eventQueue=_eventQueue;
 @property(nonatomic) UIApplication *application; // @synthesize application=_application;
 - (void).cxx_destruct;
+- (void)_sendRemoteControlEvent:(int)arg1;
+- (void)_sendMotionCancelled:(int)arg1;
+- (void)_sendMotionEnded:(int)arg1;
+- (void)_sendMotionBegan:(int)arg1;
+- (id)_hoverEventForWindow:(id)arg1;
 - (void)_dispatchAndRemoveStaleEstimationUpdateRecordsWithEventTime:(double)arg1 upToRecord:(id)arg2;
 - (id)_estimatedTouchRecordForContextID:(id)arg1 estimationIndex:(id)arg2;
 - (void)_removeEstimatedTouchRecord:(id)arg1;
 - (void)_registerEstimatedTouches:(id)arg1 event:(id)arg2 forTouchable:(id)arg3;
-- (void)_setPress:(id)arg1 forType:(int)arg2;
-- (id)_pressForType:(int)arg1;
+- (id)_physicalKeyboardEventForWindow:(id)arg1;
+- (id)_physicalKeyboardEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (id)_gameControllerEventForWindow:(id)arg1;
+- (id)_gameControllerEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (id)_wheelEventForWindow:(id)arg1;
+- (id)_wheelEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (id)_pressesEventForWindow:(id)arg1;
+- (id)_pressesEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (id)_touchesEventForWindow:(id)arg1;
+- (id)_touchesEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (id)_findTouchesEventWindowSceneForKeyboardWindowSceneIfNeeded:(id)arg1;
+- (id)_moveEventForWindow:(id)arg1;
+- (id)_moveEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (void)sceneDidDisconnect:(id)arg1;
+- (void)_setCurrentNudgePressType:(int)arg1 forWindow:(id)arg2;
+- (int)_currentNudgePressTypeForWindow:(id)arg1;
+- (void)_setPress:(id)arg1 forType:(int)arg2 window:(id)arg3;
+- (id)_pressForType:(int)arg1 window:(id)arg2;
 - (void)_enableTouchCoalescingWithCount:(int)arg1;
 - (void)_disableTouchCoalescingWithCount:(int)arg1;
 - (_Bool)_isTouchCoalescingDisabled;
 - (void)_enqueueHIDEvent:(struct __IOHIDEvent *)arg1;
 - (void)_setTouchMap:(struct __CFDictionary *)arg1 forWindow:(id)arg2;
-- (void)_clearTouchesForView:(id)arg1;
+- (void)_clearTouchesForView:(id)arg1 onWindow:(id)arg2;
 - (_Bool)_isTrackingAnyTouch;
-- (void)_performAfterNewTouchDownActions;
-- (void)_addAfterNewTouchDownAction:(CDUnknownBlockType)arg1;
+- (void)_setCurrentTouch:(id)arg1 forWindow:(id)arg2;
+- (id)_currentTouchForWindow:(id)arg1;
 - (_Bool)eventWantsLowLatency:(id)arg1;
 - (id)UIKitEventForHIDEvent:(struct __IOHIDEvent *)arg1;
+- (void)dealloc;
 - (id)initWithApplication:(id)arg1;
 
 @end

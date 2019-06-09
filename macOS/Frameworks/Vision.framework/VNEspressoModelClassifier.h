@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)initDumpDebugIntermediates:(id *)arg1 debugInfo:(id *)arg2;
++ (id)classifierResourceTypesToNamesForRevision:(unsigned long long)arg1;
 + (void)convertRelationships:(id)arg1 toStdRelationships:(vector_153622dc *)arg2;
 + (shared_ptr_eb20c8f2)createHierarchicalModelForRequestRevision:(unsigned long long)arg1 error:(id *)arg2;
 + (id)createObservationWithDescriptors:(id)arg1 forRequestRevision:(unsigned long long)arg2;
@@ -27,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (id)blacklistedIdentifiers;
 - (id)getLabels;
 - (BOOL)_calculateImageDescriptors:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 canceller:(id)arg4 descriptorBuffer:(shared_ptr_0a6daad2 *)arg5 debugIntermediatesDumpPath:(id)arg6 outputDebugDictionary:(id)arg7 error:(id *)arg8;
-- (id)calculateImageDescriptorsWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;
+- (id)calculateImageDescriptors:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 canceller:(id)arg4 error:(id *)arg5;
 - (BOOL)completeInitializationAndReturnError:(id *)arg1;
 
 @end

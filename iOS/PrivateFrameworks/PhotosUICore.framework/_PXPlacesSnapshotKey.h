@@ -10,14 +10,16 @@
 
 @interface _PXPlacesSnapshotKey : NSObject <NSCopying>
 {
+    long long __userInterfaceStyle;
     struct CGSize __imageSize;
 }
 
-@property(nonatomic) struct CGSize _imageSize; // @synthesize _imageSize=__imageSize;
+@property(readonly, nonatomic) long long _userInterfaceStyle; // @synthesize _userInterfaceStyle=__userInterfaceStyle;
+@property(readonly, nonatomic) struct CGSize _imageSize; // @synthesize _imageSize=__imageSize;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithImageSize:(struct CGSize)arg1;
+- (id)initWithImageSize:(struct CGSize)arg1 userInterfaceStyle:(long long)arg2;
 
 @end
 

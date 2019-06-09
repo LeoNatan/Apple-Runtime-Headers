@@ -51,6 +51,7 @@
 - (void)cancel;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithArchivedLayeredImageProxy:(id)arg1;
+- (id)initWithURLImageRequest:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)initWithImageProxies:(id)arg1;
 - (id)initWithImages:(id)arg1;

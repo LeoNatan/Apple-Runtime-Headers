@@ -69,6 +69,7 @@
 @property(copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 @property(copy, nonatomic) NSDictionary *authenticationResults; // @synthesize authenticationResults=_authenticationResults;
 - (void).cxx_destruct;
+- (id)cliqueConfiguration;
 - (struct __CFData *)encodedTopLevelMetric;
 - (id)topLevelMetric;
 - (void)stopMetric:(id)arg1 withAttributes:(id)arg2;

@@ -13,11 +13,13 @@
 {
     CUBonjourBrowser *_bonjourBrowser;
     NSString *_bonjourTestID;
+    NSObject<OS_dispatch_source> *_bonjourTimer;
     _Bool _invalidateCalled;
     _Bool _reachabilityEnabled;
     CUReachabilityMonitor *_reachabilityMonitor;
     unsigned long long _startTicks;
     NSObject<OS_dispatch_source> *_timeoutTimer;
+    int _bonjourTestState;
     unsigned int _repairFlags;
     unsigned int _setupFlags;
     CDUnknownBlockType _completionHandler;
@@ -32,8 +34,11 @@
 @property(readonly, nonatomic) double metricSeconds; // @synthesize metricSeconds=_metricSeconds;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
+@property(readonly, nonatomic) int bonjourTestState; // @synthesize bonjourTestState=_bonjourTestState;
 - (void).cxx_destruct;
+- (void)_setupResponse:(id)arg1;
 - (void)_complete:(id)arg1;
+- (void)_bonjourTestTimeout;
 - (void)_bonjourTestFoundDevice:(id)arg1;
 - (void)_bonjourTestStart;
 - (void)invalidate;

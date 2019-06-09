@@ -10,7 +10,7 @@
 #import <ReplayKit/UINavigationControllerDelegate-Protocol.h>
 #import <ReplayKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSDate, NSString, NSURL, RPBroadcastController, RPPipViewController, RPSystemRecordingIndicatorWindow, UIView, UIWindow;
+@class NSDate, NSString, NSURL, RPBroadcastController, RPPipViewController, UIView, UIWindow;
 @protocol RPScreenRecorderDelegate, RPScreenRecorderPrivateDelegate;
 
 @interface RPScreenRecorder : NSObject <RPPreviewViewControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate>
@@ -37,7 +37,6 @@
     NSDate *_systemRecordingControlCenterStartClipEndTime;
     NSDate *_systemRecordingControlCenterEndClipStartTime;
     NSDate *_systemRecordingControlCenterEndClipEndTime;
-    RPSystemRecordingIndicatorWindow *_systemRecordingIndicatorWindow;
     CDUnknownBlockType _captureHandler;
     RPBroadcastController *_activeBroadcastController;
     NSURL *_broadcastURL;
@@ -54,7 +53,6 @@
 @property(copy, nonatomic) CDUnknownBlockType captureHandler; // @synthesize captureHandler=_captureHandler;
 @property(nonatomic) _Bool hasUserConsentForMicrophone; // @synthesize hasUserConsentForMicrophone=_hasUserConsentForMicrophone;
 @property(nonatomic) _Bool hasUserConsentForCamera; // @synthesize hasUserConsentForCamera=_hasUserConsentForCamera;
-@property(retain, nonatomic) RPSystemRecordingIndicatorWindow *systemRecordingIndicatorWindow; // @synthesize systemRecordingIndicatorWindow=_systemRecordingIndicatorWindow;
 @property(retain, nonatomic) NSDate *systemRecordingControlCenterEndClipEndTime; // @synthesize systemRecordingControlCenterEndClipEndTime=_systemRecordingControlCenterEndClipEndTime;
 @property(retain, nonatomic) NSDate *systemRecordingControlCenterEndClipStartTime; // @synthesize systemRecordingControlCenterEndClipStartTime=_systemRecordingControlCenterEndClipStartTime;
 @property(retain, nonatomic) NSDate *systemRecordingControlCenterStartClipEndTime; // @synthesize systemRecordingControlCenterStartClipEndTime=_systemRecordingControlCenterStartClipEndTime;
@@ -86,7 +84,7 @@
 - (void)clientWillResignActive;
 - (void)discardRecordingWithHandler:(CDUnknownBlockType)arg1;
 - (void)recordingDidStopWithError:(id)arg1 movieURL:(id)arg2;
-- (void)updateScreenRecordingState;
+- (void)updateScreenRecordingStateWithCurrentState:(id)arg1;
 - (void)recordingTimerDidUpdate:(id)arg1;
 - (void)didStopRecordingWithError:(id)arg1 previewViewController:(id)arg2;
 - (void)stopRecordingWithVideoURLHandler:(CDUnknownBlockType)arg1;
@@ -111,7 +109,6 @@
 - (id)videoQueue;
 - (id)audioQueue;
 - (void)setMicrophoneEnabledPersistent:(_Bool)arg1;
-- (void)updateCurrentState;
 - (id)init;
 
 // Remaining properties

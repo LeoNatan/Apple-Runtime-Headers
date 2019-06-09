@@ -35,7 +35,6 @@
 + (double)atomLineHeight;
 + (id)primaryLabelFont;
 + (id)defaultLabelFont;
-+ (id)defaultLabelTextColor;
 @property(copy, nonatomic) NSArray *addresses; // @synthesize addresses=_addresses;
 @property(nonatomic) __weak id <MFModernLabelledAtomListDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *viewsToDodge; // @synthesize viewsToDodge=_viewsToDodge;

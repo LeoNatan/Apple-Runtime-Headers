@@ -8,12 +8,11 @@
 
 #import <PersonalizationPortraitInternals/PPQuickTypeServantProtocol-Protocol.h>
 
-@class PPContactScorer, PPLocalEventStore;
+@class PPLocalEventStore;
 
 @interface PPQuickTypeEventsServant : NSObject <PPQuickTypeServantProtocol>
 {
     PPLocalEventStore *_localEventStore;
-    PPContactScorer *_contactScorer;
 }
 
 - (void).cxx_destruct;
@@ -39,7 +38,6 @@
 - (id)_fuzzyNextEvents:(id)arg1 minimumCount:(unsigned long long)arg2;
 - (id)_filterEvents:(id)arg1 time:(unsigned char)arg2 people:(id)arg3 busy:(_Bool)arg4 fields:(unsigned int)arg5 explanationSet:(id)arg6;
 - (id)quickTypeItemsWithQuery:(id)arg1 limit:(unsigned long long)arg2 explanationSet:(id)arg3;
-- (void)setContactScorer:(id)arg1;
 - (void)_warmUpFormatters;
 - (id)init;
 

@@ -10,6 +10,7 @@
 {
 }
 
++ (id)offscreenRendererWithDevice:(id)arg1 size:(struct CGSize)arg2;
 + (id)offscreenRendererWithContext:(id)arg1 size:(struct CGSize)arg2;
 @property(nonatomic) unsigned long long antialiasingMode;
 @property(nonatomic) struct CGSize size;

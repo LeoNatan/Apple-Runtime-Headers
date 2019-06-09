@@ -8,7 +8,7 @@
 
 #import <TVMLKit/TVAuxiliaryViewSelecting-Protocol.h>
 
-@class NSShadow, NSString, TVImageProxy, UIImage, _TVStackedImageNamedLayerStack, _UIStackedImageConfiguration, _UIStackedImageContainerLayer;
+@class NSShadow, NSString, TVImageProxy, UIImage, UIMotionEffectGroup, _TVStackedImageNamedLayerStack, _UIStackedImageConfiguration, _UIStackedImageContainerLayer;
 
 @interface TVStackedImageView : UIView <TVAuxiliaryViewSelecting>
 {
@@ -16,6 +16,7 @@
     _UIStackedImageContainerLayer *_imageStackLayer;
     _UIStackedImageConfiguration *_imageStackConfig;
     _TVStackedImageNamedLayerStack *_uiLayerStack;
+    UIMotionEffectGroup *_motionEffectGroup;
     double _layerSelectionDuration;
     double _layerUnselectionDuration;
     double _shadowSelectionDuration;
@@ -68,10 +69,14 @@
 - (void)setPressed:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setPressed:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isPressed) _Bool pressed;
+- (void)setFocused:(_Bool)arg1;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 focusAnimationCoordinator:(id)arg3;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 @property(nonatomic, getter=isSelected) _Bool selected;
+- (void)_detachMotionEffects;
+- (void)_attachMotionEffects;
+- (_Bool)_applyKeyPathsAndRelativeValues:(id)arg1 forMotionEffect:(id)arg2;
 @property(nonatomic) long long selectionStyle;
 @property(nonatomic) _Bool allowsNonOpaqueShadow;
 @property(nonatomic) double focusSizeIncrease;

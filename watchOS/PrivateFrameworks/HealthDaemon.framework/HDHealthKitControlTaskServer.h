@@ -10,7 +10,7 @@
 {
 }
 
-+ (_Bool)validateConfiguration:(id)arg1 error:(out id *)arg2;
++ (_Bool)validateConfiguration:(id)arg1 error:(id *)arg2;
 + (Class)configurationClass;
 + (id)requiredEntitlements;
 + (id)taskIdentifier;
@@ -20,7 +20,6 @@
 - (void)remote_condensedWorkoutsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_condenseWorkoutWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_condenseWorkoutsForReason:(int)arg1 workoutBatchLimit:(int)arg2 completion:(CDUnknownBlockType)arg3;
-- (id)initWithUUID:(id)arg1 configuration:(id)arg2 client:(id)arg3 profile:(id)arg4 delegate:(id)arg5;
 
 @end
 

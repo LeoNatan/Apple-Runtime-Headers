@@ -8,6 +8,7 @@
 
 @class NSLayoutConstraint, NSView;
 
+__attribute__((visibility("hidden")))
 @interface _MKStackingContentView : _MKUIViewControllerRootView
 {
     NSLayoutConstraint *_topConstraint;
@@ -20,9 +21,9 @@
 @property(retain, nonatomic) NSView *bottomView; // @synthesize bottomView=_bottomView;
 @property(retain, nonatomic) NSView *topView; // @synthesize topView=_topView;
 - (void).cxx_destruct;
+- (id)vibrancyGroupName;
 - (void)updateConstraints;
 @property(readonly, nonatomic) NSLayoutConstraint *bottomConstraint;
-- (void)infoCardThemeChanged:(id)arg1;
 - (id)initWithViewController:(id)arg1;
 
 @end

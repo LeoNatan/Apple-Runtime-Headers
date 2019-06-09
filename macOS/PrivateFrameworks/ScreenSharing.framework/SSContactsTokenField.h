@@ -8,7 +8,6 @@
 
 @class NSString, SSContactsTokenFieldDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SSContactsTokenField : NSTokenField
 {
     BOOL _completionWindowShowing;

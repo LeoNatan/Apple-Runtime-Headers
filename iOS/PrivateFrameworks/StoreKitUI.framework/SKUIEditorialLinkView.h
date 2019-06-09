@@ -9,6 +9,7 @@
 @class NSMutableArray, SKUIEditorialLinkLayout, UIColor;
 @protocol SKUIEditorialLinkViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIEditorialLinkView : UIView
 {
     NSMutableArray *_buttons;

@@ -13,6 +13,7 @@
 @property(readonly) NSArray *unknownProperties;
 @property(readonly) NSString *preferredApplePersonaIdentifier;
 @property(readonly) NSString *preferredLikenessSource;
+@property(readonly) NSString *downtimeWhitelist;
 @property(readonly) NSString *phonemeData;
 @property(readonly) NSString *uid;
 @property(readonly) NSString *cardDAVUID;

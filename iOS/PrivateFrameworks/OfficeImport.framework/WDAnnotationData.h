@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     NSString *mOwner;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)setOwner:(id)arg1;
 - (id)owner;
 - (void)setDate:(id)arg1;

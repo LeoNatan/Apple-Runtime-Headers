@@ -9,37 +9,50 @@
 #import <NetworkExtension/NEExtensionProviderHostProtocol-Protocol.h>
 #import <NetworkExtension/NEExtensionProviderProtocol-Protocol.h>
 
-@class NEConfiguration, NSString;
-@protocol NEExtensionProviderHostProtocol;
+@class NEConfiguration, NEProvider, NSObject, NSString, NSXPCConnection;
+@protocol NEExtensionProviderHostProtocol, OS_os_transaction;
 
 @interface NEExtensionProviderContext : NSExtensionContext <NEExtensionProviderProtocol, NEExtensionProviderHostProtocol>
 {
     id <NEExtensionProviderHostProtocol> _hostContext;
     NSString *_description;
+    BOOL _isDisposed;
     NEConfiguration *_configuration;
     CDUnknownBlockType _stopCompletionHandler;
+    NSXPCConnection *_hostConnection;
+    NEProvider *_provider;
+    NSObject<OS_os_transaction> *_transaction;
 }
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
+@property(retain, nonatomic) NSObject<OS_os_transaction> *transaction; // @synthesize transaction=_transaction;
+@property(readonly, nonatomic) NEProvider *provider; // @synthesize provider=_provider;
+@property(readonly) NSXPCConnection *hostConnection; // @synthesize hostConnection=_hostConnection;
 @property(copy) CDUnknownBlockType stopCompletionHandler; // @synthesize stopCompletionHandler=_stopCompletionHandler;
+@property(nonatomic) BOOL isDisposed; // @synthesize isDisposed=_isDisposed;
 @property(retain) NEConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *extensionPoint;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)stopWithReason:(int)arg1;
 - (void)startWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)dispose;
+- (void)createWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)displayMessage:(id)arg1 message:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)startedWithError:(id)arg1;
 - (void)cancelWithError:(id)arg1;
-- (void)setConfiguration:(id)arg1 extensionIdentifier:(id)arg2 deviceIdentifier:(id)arg3;
+- (void)setConfiguration:(id)arg1 extensionIdentifier:(id)arg2;
 - (void)wake;
 - (void)sleepWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (long long)neStopReasonToProviderStopReason:(int)arg1;
 - (void)completeSession;
 - (id)hostContext;
+- (id)_principalObject;
 - (void)setDescription:(id)arg1;
 @property(readonly, copy) NSString *description;
+- (id)initWithProvider:(id)arg1;
+- (id)initWithConnection:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

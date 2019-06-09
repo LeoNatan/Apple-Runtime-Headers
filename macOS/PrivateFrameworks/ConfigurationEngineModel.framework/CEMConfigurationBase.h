@@ -13,6 +13,7 @@
 + (id)restrictionPayloadKeys;
 + (id)profileType;
 + (id)declarationClass;
+- (id)_translatedMCXPayloadsForPayload:(id)arg1 outUUIDs:(id)arg2;
 - (id)profilePayloadsByTypeWithAssetProviders:(id)arg1;
 - (id)synthesizeProfilePayloadOutUUIDs:(id)arg1 withOldUUIDs:(id)arg2 assetProviders:(id)arg3;
 - (id)payloadUUIDWithIdentifier:(id)arg1 outUUIDs:(id)arg2 oldUUIDs:(id)arg3;

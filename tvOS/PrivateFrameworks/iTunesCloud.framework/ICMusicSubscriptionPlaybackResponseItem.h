@@ -20,6 +20,7 @@
 @property(copy, nonatomic) NSDate *assetExpirationDate; // @synthesize assetExpirationDate=_assetExpirationDate;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)fileAssetWithFlavorType:(long long)arg1;
 @property(readonly, nonatomic) long long storeAdamID;
 @property(readonly, copy, nonatomic) ICStoreHLSAssetInfo *hlsAsset;
 @property(readonly, copy, nonatomic) NSArray *fileAssets;

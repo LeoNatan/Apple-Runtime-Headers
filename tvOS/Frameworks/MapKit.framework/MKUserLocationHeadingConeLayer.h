@@ -8,12 +8,12 @@
 
 #import <MapKit/MKUserLocationHeadingIndicator-Protocol.h>
 
-@class MKUserLocationView, NSString;
+@class NSString, _MKPuckAnnotationView;
 
 __attribute__((visibility("hidden")))
 @interface MKUserLocationHeadingConeLayer : CALayer <MKUserLocationHeadingIndicator>
 {
-    MKUserLocationView *_userLocationView;
+    _MKPuckAnnotationView *_userLocationView;
     CALayer *_maskLayer;
 }
 

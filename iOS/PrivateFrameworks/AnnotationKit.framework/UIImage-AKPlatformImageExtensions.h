@@ -8,6 +8,12 @@
 
 @interface UIImage (AKPlatformImageExtensions)
 + (id)akImageNamed:(id)arg1;
++ (id)ak_strikethroughTextStyleImage;
++ (id)ak_underlineTextStyleImage;
++ (id)ak_italicTextStyleImage;
++ (id)ak_boldTextStyleImage;
++ (id)ak_colorSwatchPickerImageWithColor:(id)arg1 size:(struct CGSize)arg2 selected:(_Bool)arg3;
++ (id)ak_colorSwatchToolbarButtonImageWithColor:(id)arg1 size:(struct CGSize)arg2 selected:(_Bool)arg3;
 - (struct CGImage *)akCGImage;
 @end
 

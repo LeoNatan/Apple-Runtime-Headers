@@ -7,9 +7,22 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (SOBlockListControllerAdditions)
++ (id)timestampWithInterval:(double)arg1;
 - (id)abLabelForPerson:(id)arg1;
 - (id)abLabelForPerson:(id)arg1 formatWithName:(BOOL)arg2;
 - (id)associatedIMPerson;
 - (BOOL)isEqualToBlockListAddress:(id)arg1;
+- (id)escapedString;
+- (id)idsDestination;
+- (BOOL)containsCaseInsensitiveString:(id)arg1;
+- (BOOL)containsString:(id)arg1 options:(unsigned long long)arg2;
+- (id)formatForDisplayIfPhoneNumber;
+- (BOOL)isEqualToPhoneNumber:(id)arg1;
+- (id)formattedPhoneNumber;
+- (BOOL)isPassType;
+- (BOOL)isAudioType;
+- (BOOL)isMovieType;
+- (BOOL)isGIFType;
+- (BOOL)isImageType;
 @end
 

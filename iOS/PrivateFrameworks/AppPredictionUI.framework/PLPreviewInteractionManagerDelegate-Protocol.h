@@ -4,19 +4,17 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AppPredictionUI/NSObject-Protocol.h>
+#import <AppPredictionUI/PLClickPresentationInteractionManagerDelegate-Protocol.h>
 
 @class PLPreviewInteractionManager, UIView, UIViewController;
 @protocol PLPreviewInteractionPresentable, PLViewControllerTransitioningDelegate;
 
-@protocol PLPreviewInteractionManagerDelegate <NSObject>
+@protocol PLPreviewInteractionManagerDelegate <PLClickPresentationInteractionManagerDelegate>
 - (UIViewController<PLPreviewInteractionPresentable> *)presentedViewControllerForPreviewInteractionManager:(PLPreviewInteractionManager *)arg1;
 
 @optional
-- (_Bool)previewInteractionManagerShouldUseHapticTouch:(PLPreviewInteractionManager *)arg1;
 - (void)previewInteractionManager:(PLPreviewInteractionManager *)arg1 declinedDismissingPresentedContentWithTrigger:(long long)arg2;
 - (void)previewInteractionManager:(PLPreviewInteractionManager *)arg1 willDismissPresentedContentWithTrigger:(long long)arg2;
-- (_Bool)previewInteractionManagerShouldAutomaticallyTransitionToPreviewAfterDelay:(PLPreviewInteractionManager *)arg1;
 - (void)previewInteractionManager:(PLPreviewInteractionManager *)arg1 shouldFinishInteractionWithCompletionBlock:(void (^)(_Bool))arg2;
 - (void)previewInteractionManagerDidEndUserInteraction:(PLPreviewInteractionManager *)arg1;
 - (void)previewInteractionManagerWillBeginUserInteraction:(PLPreviewInteractionManager *)arg1;

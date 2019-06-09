@@ -6,7 +6,6 @@
 
 #import <AppKit/NSTextField.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit13PlatformLabel : NSTextField
 {
 }

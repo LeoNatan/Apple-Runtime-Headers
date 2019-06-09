@@ -18,9 +18,9 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) NSString *path; // @synthesize path=mPath;
 @property(readonly, nonatomic) NSString *contentType; // @synthesize contentType=mContentType;
+- (void).cxx_destruct;
 - (void)writeToStreamWriter:(id)arg1;
 - (_Bool)isOverride;
-- (void)dealloc;
 - (id)initWithContentType:(id)arg1 path:(id)arg2;
 - (id)initWithContentType:(id)arg1 extension:(id)arg2;
 

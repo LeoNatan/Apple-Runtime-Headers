@@ -6,8 +6,9 @@
 
 #import <MapKit/MKCalloutView.h>
 
-@class MKSmallCalloutView, _MKCalloutContentView, _MKCalloutLayer;
+@class MKSmallCalloutView, UIVisualEffectView, _MKCalloutContentView, _MKCalloutLayer;
 
+__attribute__((visibility("hidden")))
 @interface MKStandardCalloutView : MKCalloutView
 {
     struct {
@@ -30,10 +31,13 @@
     _MKCalloutContentView *_contentView;
     MKSmallCalloutView *_calloutView;
     _MKCalloutLayer *_maskLayer;
+    UIVisualEffectView *_backdropView;
 }
 
 + (float)defaultHeight;
 - (void).cxx_destruct;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)_adaptToUserInterfaceStyle;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_stopObservingAnnotationView:(id)arg1;
 - (void)_startObservingAnnotationView:(id)arg1;

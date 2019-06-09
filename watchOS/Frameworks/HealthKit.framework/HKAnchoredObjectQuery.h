@@ -16,6 +16,7 @@
     NSMutableArray *_samplesPendingDelivery;
     NSMutableArray *_deletedObjectsPendingDelivery;
     _Bool _includeDeletedObjects;
+    _Bool _includeAutomaticTimeZones;
     CDUnknownBlockType _updateHandler;
     HKQueryAnchor *_anchor;
     unsigned int _limit;
@@ -26,11 +27,12 @@
 + (void)configureClientInterface:(id)arg1;
 + (id)clientInterfaceProtocol;
 + (Class)configurationClass;
+@property(nonatomic) _Bool includeAutomaticTimeZones; // @synthesize includeAutomaticTimeZones=_includeAutomaticTimeZones;
 @property(readonly, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(nonatomic) double collectionInterval; // @synthesize collectionInterval=_collectionInterval;
 @property(nonatomic) _Bool includeDeletedObjects; // @synthesize includeDeletedObjects=_includeDeletedObjects;
 @property(nonatomic) unsigned int limit; // @synthesize limit=_limit;
-@property(retain, nonatomic) HKQueryAnchor *anchor; // @synthesize anchor=_anchor;
+@property(copy, nonatomic) HKQueryAnchor *anchor; // @synthesize anchor=_anchor;
 @property(copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 - (void).cxx_destruct;
 - (_Bool)queue_shouldDeactivateAfterInitialResults;

@@ -8,14 +8,20 @@
 
 @interface PXEditorialLayoutMetrics : PXLayoutMetrics
 {
+    BOOL _useSaliency;
+    BOOL _useNewImplementation;
     unsigned long long _numberOfColumns;
     double _interTileSpacing;
+    double _headerHeight;
     unsigned long long _lowerItemCountThreshold;
-    struct NSEdgeInsets _contentInsets;
+    struct NSEdgeInsets _padding;
 }
 
+@property(nonatomic) BOOL useNewImplementation; // @synthesize useNewImplementation=_useNewImplementation;
+@property(nonatomic) BOOL useSaliency; // @synthesize useSaliency=_useSaliency;
 @property(nonatomic) unsigned long long lowerItemCountThreshold; // @synthesize lowerItemCountThreshold=_lowerItemCountThreshold;
-@property(nonatomic) struct NSEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
+@property(nonatomic) double headerHeight; // @synthesize headerHeight=_headerHeight;
+@property(nonatomic) struct NSEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) double interTileSpacing; // @synthesize interTileSpacing=_interTileSpacing;
 @property(nonatomic) unsigned long long numberOfColumns; // @synthesize numberOfColumns=_numberOfColumns;
 - (id)copyWithZone:(struct _NSZone *)arg1;

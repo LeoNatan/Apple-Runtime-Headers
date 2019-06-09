@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <coreroutine/RTCoreDataTransformable-Protocol.h>
+#import <coreroutine/RTCoreDataReadable-Protocol.h>
+#import <coreroutine/RTCoreDataWritable-Protocol.h>
 
 @class NSArray, NSString, NSUUID, RTLearnedLocation, RTLearnedPlace;
 
-@interface RTLearnedLocationOfInterest : NSObject <RTCoreDataTransformable>
+@interface RTLearnedLocationOfInterest : NSObject <RTCoreDataReadable, RTCoreDataWritable>
 {
     NSUUID *_identifier;
     RTLearnedLocation *_location;
@@ -19,6 +20,9 @@
     NSArray *_transitions;
 }
 
++ (id)createWithLearnedLocationOfInterestVisitMO:(id)arg1;
++ (id)createWithLearnedLocationOfInterestMO:(id)arg1;
++ (id)createWithManagedObject:(id)arg1;
 + (unsigned long long)mapItemSourceFromGeoMapItemSource:(long long)arg1;
 @property(readonly, nonatomic) NSArray *transitions; // @synthesize transitions=_transitions;
 @property(readonly, nonatomic) NSArray *visits; // @synthesize visits=_visits;
@@ -29,12 +33,12 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
+- (id)filterWithDateInterval:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 location:(id)arg2 place:(id)arg3 visits:(id)arg4 transitions:(id)arg5;
 - (id)init;
-- (id)initWithLocationOfInterest:(id)arg1 creationDate:(id)arg2;
+- (void)updateManagedObject:(id)arg1;
 - (id)managedObjectWithContext:(id)arg1;
-- (id)initWithLocationOfInterestMO:(id)arg1 dateInterval:(id)arg2;
-- (id)initWithLocationOfInterestMO:(id)arg1;
+- (id)initWithLocationOfInterest:(id)arg1 creationDate:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

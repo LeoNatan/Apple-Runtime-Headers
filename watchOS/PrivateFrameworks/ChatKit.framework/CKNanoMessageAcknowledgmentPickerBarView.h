@@ -10,6 +10,7 @@
 
 @class NSArray, NSDictionary, NSString, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoMessageAcknowledgmentPickerBarView : UIView <CKPickerBarView>
 {
     UIView *_maskView;

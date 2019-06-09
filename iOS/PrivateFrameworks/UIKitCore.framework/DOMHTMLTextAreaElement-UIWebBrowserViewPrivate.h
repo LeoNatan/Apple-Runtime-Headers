@@ -13,5 +13,10 @@
 - (_Bool)_requiresAccessoryView;
 - (void)_stopAssistingDocumentView:(id)arg1;
 - (void)_startAssistingDocumentView:(id)arg1;
+- (_Bool)nodeCanBecomeFirstResponder;
+- (_Bool)isEditing;
+- (void)setSelectionWithPoint:(struct CGPoint)arg1;
+- (_Bool)isTextControl;
+- (id)textInputTraits;
 @end
 

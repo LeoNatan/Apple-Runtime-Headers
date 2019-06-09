@@ -6,9 +6,11 @@
 
 #import <RelevanceEngine/REPredictor.h>
 
+#import <RelevanceEngine/REActiveWorkoutPredictorProperties-Protocol.h>
+
 @class HKQuery, NSDate, REUpNextTimer;
 
-@interface REActiveWorkoutPredictor : REPredictor
+@interface REActiveWorkoutPredictor : REPredictor <REActiveWorkoutPredictorProperties>
 {
     int _workoutStateNotifyToken;
     float _dailyAverageWorkouts;
@@ -24,8 +26,10 @@
 @property(retain) NSDate *lastCompletedWorkoutDate; // @synthesize lastCompletedWorkoutDate=_lastCompletedWorkoutDate;
 @property _Bool hasActiveWorkout; // @synthesize hasActiveWorkout=_hasActiveWorkout;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
-- (void)_processWorkoutHistoryData:(id)arg1;
+@property(readonly, nonatomic) unsigned long long numberOfWorkoutsPerformedToday;
+@property(readonly, nonatomic) float dailyAverageWorkouts;
+@property(readonly, nonatomic) _Bool currentlyHasActiveWorkout;
+- (void)_processWorkoutHistoryData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_queue_fetchWorkoutHistory;
 - (void)_scheduleFetchWorkoutTimer;
 - (void)_updateWorkoutState;
@@ -37,7 +41,7 @@
 - (void)pause;
 - (void)resume;
 - (void)dealloc;
-- (id)init;
+- (id)_init;
 
 @end
 

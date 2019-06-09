@@ -4,21 +4,20 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <GeoServices/GEOETAUpdater.h>
+#import <Navigation/MNSessionUpdateManager.h>
 
 @class NSTimer;
 
 __attribute__((visibility("hidden")))
-@interface MNTracePlayerETAUpdater : GEOETAUpdater
+@interface MNTracePlayerETAUpdater : MNSessionUpdateManager
 {
     NSTimer *_delayTimer;
 }
 
 - (void).cxx_destruct;
-- (void)requestUpdate;
-- (void)startUpdateRequests;
-- (void)reset;
-- (void)_timerFiredWithResponse:(id)arg1 currentStep:(id)arg2 percentOfStepRemaining:(double)arg3 error:(id)arg4;
+- (void)resumeUpdateRequests;
+- (void)startUpdateRequestsForRoutes:(id)arg1;
+- (void)_handleDelayTimerWithUpdateRow:(id)arg1;
 - (void)playETAUpdate:(id)arg1;
 - (void)dealloc;
 

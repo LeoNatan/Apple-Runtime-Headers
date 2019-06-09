@@ -22,6 +22,7 @@
 - (id)gray_unfilledBalloonColor;
 - (id)transcriptDeemphasizedTextColor;
 - (id)transcriptBigEmojiColor;
+- (id)transcriptNicknameTextColor;
 - (id)transcriptTextColor;
 - (id)transcriptBackgroundColor;
 - (id)blue_sendButtonColor;

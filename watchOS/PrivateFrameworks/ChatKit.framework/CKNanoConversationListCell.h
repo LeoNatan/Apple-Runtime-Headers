@@ -10,6 +10,7 @@
 
 @class CKConversation, CKGroupCountView, CKNanoDrawingContentView, CKPhoneNumberCompressor, NSString, UIDateLabel;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoConversationListCell : PUICTableViewCell <CKConversationListCell>
 {
     CKNanoDrawingContentView *_drawingContentView;

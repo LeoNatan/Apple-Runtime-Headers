@@ -6,31 +6,34 @@
 
 #import <objc/NSObject.h>
 
-#import <CryptoTokenKit/TKProtocolTokenWatcher-Protocol.h>
+#import <CryptoTokenKit/TKProtocolTokenWatcherHost-Protocol.h>
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSXPCConnection, NSXPCListenerEndpoint;
+@class NSArray, NSMutableDictionary, NSXPCConnection, NSXPCListenerEndpoint;
 
-@interface TKTokenWatcher : NSObject <TKProtocolTokenWatcher>
+@interface TKTokenWatcher : NSObject <TKProtocolTokenWatcherHost>
 {
+    int _notifyToken;
+    NSXPCListenerEndpoint *_endpoint;
     NSXPCConnection *_connection;
-    NSMutableArray *_tokenIDs;
+    NSMutableDictionary *_tokenInfos;
     NSMutableDictionary *_removalHandlers;
     CDUnknownBlockType _insertionHandler;
 }
 
 - (void).cxx_destruct;
+- (id)getReaderAndDriverNameFor:(id)arg1;
 @property(readonly) NSXPCListenerEndpoint *endpoint;
 @property(readonly) NSArray *tokenIDs;
-- (void)removedToken:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)insertedToken:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)removedToken:(id)arg1;
+- (void)insertedToken:(id)arg1;
 - (void)addRemovalHandler:(CDUnknownBlockType)arg1 forTokenID:(id)arg2;
 - (void)setInsertionHandler:(CDUnknownBlockType)arg1;
-- (void)setupWithConnection:(id)arg1;
 - (id)initWithInsertionHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithEndpoint:(id)arg1;
 - (id)init;
-- (id)initWithConnection:(id)arg1;
+- (id)initWithEndpoint:(id)arg1;
+- (void)connectToWatcherServer;
+- (void)startWatching;
 
 @end
 

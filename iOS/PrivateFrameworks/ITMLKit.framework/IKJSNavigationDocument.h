@@ -8,16 +8,24 @@
 
 #import <ITMLKit/IKJSNavigationDocument-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSString;
 @protocol IKAppNavigationController;
 
 @interface IKJSNavigationDocument : IKJSObject <IKJSNavigationDocument>
 {
+    struct {
+        _Bool hasClear;
+        _Bool hasSetDocuments;
+        _Bool hasPresentModal;
+        _Bool hasDismissModal;
+    } _delegateSelectors;
     id <IKAppNavigationController> _navigationControllerDelegate;
 }
 
 @property(readonly, nonatomic) __weak id <IKAppNavigationController> navigationControllerDelegate; // @synthesize navigationControllerDelegate=_navigationControllerDelegate;
 - (void).cxx_destruct;
+@property(readonly) NSString *OPTION_RETAIN_CONTEXT;
+- (void)_migrateMediaControllerFromDocument:(id)arg1 toDocument:(id)arg2;
 - (id)_makeAppDocumentWithDocument:(id)arg1;
 - (void)clear;
 - (void)removeDocument:(id)arg1;
@@ -29,6 +37,7 @@
 - (void)dismissModal;
 - (void)presentModal:(id)arg1:(id)arg2;
 - (void)pushDocument:(id)arg1:(id)arg2;
+- (void)setDocuments:(id)arg1:(id)arg2;
 @property(readonly, retain, nonatomic) NSArray *documents;
 - (id)initWithAppContext:(id)arg1 navigationController:(id)arg2;
 

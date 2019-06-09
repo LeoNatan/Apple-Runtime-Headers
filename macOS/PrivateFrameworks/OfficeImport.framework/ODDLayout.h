@@ -8,6 +8,7 @@
 
 @class ODDLayoutNode;
 
+__attribute__((visibility("hidden")))
 @interface ODDLayout : NSObject
 {
     ODDLayoutNode *mRootNode;

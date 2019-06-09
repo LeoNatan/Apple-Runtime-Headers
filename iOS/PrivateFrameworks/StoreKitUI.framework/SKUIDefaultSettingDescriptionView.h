@@ -8,6 +8,7 @@
 
 @class SKUIViewReuseView, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDefaultSettingDescriptionView : SKUISettingDescriptionView
 {
     _Bool _hasDisclosureChevron;

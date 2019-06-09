@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OCDEncryptedReader.h>
 
+__attribute__((visibility("hidden")))
 @interface OCBReader : OCDEncryptedReader
 {
     struct OcBinaryReader *mBinaryReader;

@@ -13,8 +13,8 @@ __attribute__((visibility("hidden")))
 {
     NSArray *_sfCertificates;
     NSEnumerator *_sfCertEnumerator;
-    struct OpaqueSecPolicyRef *_sfPolicy;
-    struct OpaqueSecKeychainRef *_sfDestKeychain;
+    struct __SecPolicy *_sfPolicy;
+    struct __SecKeychain *_sfDestKeychain;
     NSWindow *_sfParentWindow;
     BOOL _sfDetailsDisclosedBefore;
     SEL _clientDidEndSelector;

@@ -15,7 +15,7 @@
     AVURLAssetInternal *_URLAsset;
 }
 
-+ (id)_getFigAssetCreationOptionsFromURLAssetInitializationOptions:(id)arg1 figAssetCreationFlags:(unsigned long long *)arg2 error:(id *)arg3;
++ (id)_getFigAssetCreationOptionsFromURLAssetInitializationOptions:(id)arg1 assetLoggingIdentifier:(id)arg2 figAssetCreationFlags:(unsigned long long *)arg3 error:(id *)arg4;
 + (id)URLAssetWithURL:(id)arg1 options:(id)arg2;
 + (BOOL)isPlayableExtendedMIMEType:(id)arg1;
 + (id)audiovisualMIMETypes;
@@ -52,7 +52,6 @@
 - (void)_setAssetInspectorLoader:(id)arg1;
 - (id)_assetInspectorLoader;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (void)_removeFigAssetNotifications;
 - (void)_addFigAssetNotifications;
@@ -77,7 +76,6 @@
 @property(readonly, nonatomic) BOOL shouldMatchDataInCacheByURLPathComponentOnly;
 - (BOOL)_hasResourceLoaderDelegate;
 @property(readonly, nonatomic) AVAssetResourceLoader *resourceLoader;
-- (void)_handleURLRequest:(id)arg1;
 - (void)_setUserInfoObject:(id)arg1;
 - (void)_removeUserInfoObject;
 - (void)expire;

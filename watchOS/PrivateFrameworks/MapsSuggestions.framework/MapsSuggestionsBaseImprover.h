@@ -15,6 +15,8 @@
 }
 
 + (_Bool)isEnabled;
+- (_Bool)improveUndecoratedSubtitle:(id)arg1 forEntry:(id)arg2;
+- (_Bool)improveUndecoratedTitle:(id)arg1 forEntry:(id)arg2;
 - (_Bool)improveEntry:(id)arg1;
 @property(readonly, nonatomic) NSString *uniqueName;
 

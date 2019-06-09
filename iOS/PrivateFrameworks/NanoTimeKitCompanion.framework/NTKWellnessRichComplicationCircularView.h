@@ -18,6 +18,8 @@
 - (void).cxx_destruct;
 - (void)_updateRingWithTemplate:(id)arg1;
 - (void)_showEmptyViews;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(long long)arg2;
 - (void)layoutSubviews;
 - (id)init;

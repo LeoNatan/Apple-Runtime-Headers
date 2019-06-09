@@ -6,12 +6,12 @@
 
 #import <ChatKit/NSObject-Protocol.h>
 
-@class CKEntity, CKNavbarCanvasViewController, UIView;
+@class CKNavbarCanvasViewController, UIView, UIViewController;
 
 @protocol CKNavbarCanvasViewControllerDelegate <NSObject>
+- (struct NSDirectionalEdgeInsets)systemMinimumLayoutMarginsForViewController:(UIViewController *)arg1;
 - (void)navbarCanvasViewControllerWantsNavbarResize:(CKNavbarCanvasViewController *)arg1;
 - (void)navbarCanvasViewController:(CKNavbarCanvasViewController *)arg1 buttonWasPressedOfType:(long long)arg2 wasLongPress:(_Bool)arg3;
-- (void)navbarCanvasViewController:(CKNavbarCanvasViewController *)arg1 avatarPickerViewControllerDidSelectEntity:(CKEntity *)arg2;
 - (void)navbarCanvasViewController:(CKNavbarCanvasViewController *)arg1 didTapView:(UIView *)arg2;
 @end
 

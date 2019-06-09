@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSDictionary, NSNumber, NSString;
 
 @interface WLKUserEnvironment : NSObject
 {
     _Bool _consented;
-    NSString *_DSID;
+    _Bool _internalBuild;
+    NSNumber *_DSID;
     NSString *_storeFrontIdentifier;
     NSString *_localeIdentifier;
     NSDictionary *_entitlements;
@@ -19,10 +20,15 @@
     NSArray *_consentedBrands;
     NSDictionary *_location;
     unsigned int _protocolVersion;
+    NSArray *_deniedBrands;
+    NSString *_platform;
 }
 
 + (void)setCurrentEnvironmentForTesting:(id)arg1;
 + (id)currentEnvironment;
+@property(retain, nonatomic) NSString *platform; // @synthesize platform=_platform;
+@property(nonatomic) _Bool internalBuild; // @synthesize internalBuild=_internalBuild;
+@property(retain, nonatomic) NSArray *deniedBrands; // @synthesize deniedBrands=_deniedBrands;
 @property(nonatomic) unsigned int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
 @property(readonly, nonatomic) NSDictionary *location; // @synthesize location=_location;
 @property(nonatomic) _Bool consented; // @synthesize consented=_consented;
@@ -31,10 +37,13 @@
 @property(retain, nonatomic) NSDictionary *entitlements; // @synthesize entitlements=_entitlements;
 @property(retain, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
 @property(retain, nonatomic) NSString *storeFrontIdentifier; // @synthesize storeFrontIdentifier=_storeFrontIdentifier;
-@property(retain, nonatomic) NSString *DSID; // @synthesize DSID=_DSID;
+@property(retain, nonatomic) NSNumber *DSID; // @synthesize DSID=_DSID;
 - (void).cxx_destruct;
+- (id)_consentQuery;
+- (id)_entitlementsQuery;
+- (id)_locationQueryParameters;
+- (id)_queryParameters;
 - (id)description;
-- (unsigned int)_hashForStoreStuff;
 - (unsigned int)hash;
 - (_Bool)isEqualToEnvironment:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

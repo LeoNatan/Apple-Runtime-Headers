@@ -6,40 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@class APSConnection, NSMapTable, NSMutableDictionary, NSMutableSet, NSString;
+@class APSConnection, NSMutableArray, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CKDPushConnection : NSObject
 {
-    _Bool _darkWakeEnabled;
     NSString *_apsEnvironmentString;
     APSConnection *_apsConnection;
     NSObject<OS_dispatch_queue> *_queue;
-    NSMapTable *_callbacks;
-    NSMutableDictionary *_topicsToWaitingAppContainerTuples;
-    NSMutableSet *_topicsAwaitingPublicToken;
+    NSMutableArray *_completionBlocks;
 }
 
-+ (id)sharedConnectionForAPSEnvironmentString:(id)arg1 darkWakeEnabled:(_Bool)arg2;
-@property(retain, nonatomic) NSMutableSet *topicsAwaitingPublicToken; // @synthesize topicsAwaitingPublicToken=_topicsAwaitingPublicToken;
-@property(retain, nonatomic) NSMutableDictionary *topicsToWaitingAppContainerTuples; // @synthesize topicsToWaitingAppContainerTuples=_topicsToWaitingAppContainerTuples;
-@property(retain, nonatomic) NSMapTable *callbacks; // @synthesize callbacks=_callbacks;
++ (id)sharedConnectionForAPSEnvironmentString:(id)arg1;
+@property(retain, nonatomic) NSMutableArray *completionBlocks; // @synthesize completionBlocks=_completionBlocks;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(nonatomic) _Bool darkWakeEnabled; // @synthesize darkWakeEnabled=_darkWakeEnabled;
 @property(retain, nonatomic) APSConnection *apsConnection; // @synthesize apsConnection=_apsConnection;
 @property(retain, nonatomic, setter=setAPSEnvironmentString:) NSString *apsEnvironmentString; // @synthesize apsEnvironmentString=_apsEnvironmentString;
 - (void).cxx_destruct;
 - (void)connectionDidReconnect:(id)arg1;
 - (void)connection:(id)arg1 didChangeConnectedStatus:(_Bool)arg2;
-- (void)connection:(id)arg1 didReceiveToken:(id)arg2 forTopic:(id)arg3 identifier:(id)arg4;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
-- (void)revokeTokenForAppContainerTuple:(id)arg1;
-- (void)requestTokenForAppContainerTuple:(id)arg1;
-- (id)_waitingAppContainerTuplesForTopic:(id)arg1;
-- (void)_removeWaitingAppContainerTuplesForTopic:(id)arg1;
-- (void)_addWaitingAppContainerTuple:(id)arg1 forTopic:(id)arg2;
+- (void)getToken:(CDUnknownBlockType)arg1;
 - (void)dealloc;
-- (id)initWithEnvironment:(id)arg1 darkWakeEnabled:(_Bool)arg2;
+- (id)initWithEnvironment:(id)arg1;
 
 @end
 

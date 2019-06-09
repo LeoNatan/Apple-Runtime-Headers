@@ -23,7 +23,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)init;
 - (BOOL)_requiresDatabaseMappingEntitlement;
-- (BOOL)_shouldCacheResolvedResults;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (BOOL)_canResolveLocallyWithoutMappingDatabase;
 - (id)_init;

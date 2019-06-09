@@ -12,17 +12,17 @@
 
 @interface CEMApplicationUpdateApplicationCommand : CEMCommandBase <CEMRegisteredTypeProtocol>
 {
-    NSString *_payloadIdentifier;
+    NSString *_payloadBundleIdentifier;
     NSNumber *_payloadImmediate;
 }
 
-+ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withIdentifier:(id)arg2;
-+ (id)buildWithIdentifier:(id)arg1 withIdentifier:(id)arg2 withImmediate:(id)arg3;
++ (id)buildRequiredOnlyWithIdentifier:(id)arg1 withBundleIdentifier:(id)arg2;
++ (id)buildWithIdentifier:(id)arg1 withBundleIdentifier:(id)arg2 withImmediate:(id)arg3;
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
 @property(copy, nonatomic) NSNumber *payloadImmediate; // @synthesize payloadImmediate=_payloadImmediate;
-@property(copy, nonatomic) NSString *payloadIdentifier; // @synthesize payloadIdentifier=_payloadIdentifier;
+@property(copy, nonatomic) NSString *payloadBundleIdentifier; // @synthesize payloadBundleIdentifier=_payloadBundleIdentifier;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)serializePayloadWithAssetProviders:(id)arg1;

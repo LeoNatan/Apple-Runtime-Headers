@@ -9,30 +9,35 @@
 #import <HealthDaemon/HDDiagnosticObject-Protocol.h>
 #import <HealthDaemon/HDProcessStateObserver-Protocol.h>
 
-@class HDDaemon, NSMutableDictionary, NSString;
-@protocol OS_dispatch_queue;
+@class HDDaemon, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface HDQueryManager : NSObject <HDProcessStateObserver, HDDiagnosticObject>
 {
-    NSObject<OS_dispatch_queue> *_queue;
+    struct os_unfair_lock_s _lock;
     NSMutableDictionary *_queryServersByUUID;
     NSMutableDictionary *_queryCollectionsByProcessBundleIdentifier;
+    NSMutableArray *_pendingDatabaseAccessBlocks;
+    NSMutableArray *_executingDatabaseAccessBlocks;
     HDDaemon *_daemon;
 }
 
 @property(readonly, nonatomic) __weak HDDaemon *daemon; // @synthesize daemon=_daemon;
 - (void).cxx_destruct;
+- (void)logDiagnostics;
 - (id)diagnosticDescription;
-- (void)_queue_processWithBundleIdentifier:(id)arg1 didSuspend:(_Bool)arg2;
-- (void)processResumed:(id)arg1;
-- (void)processSuspended:(id)arg1;
+- (void)_lock_handleClientStateChangeWithQueryCollection:(id)arg1;
+- (void)processWithBundleIdentifier:(id)arg1 didTransitionFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
 - (void)_logQueryActivationWithServer:(id)arg1;
-- (id)_queue_queryCollectionForBundleIdentifier:(id)arg1 createIfNecessary:(_Bool)arg2;
-- (void)_queue_unregisterQueryServer:(id)arg1;
-- (id)_queue_registerQueryServer:(id)arg1;
+- (id)_lock_queryCollectionForBundleIdentifier:(id)arg1 createIfNecessary:(_Bool)arg2;
+- (void)_lock_unregisterQueryServer:(id)arg1;
+- (id)_lock_registerQueryServer:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)_queryServerDidFinish:(id)arg1;
-- (void)_queue_startQueryServer:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)startQueryServer:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (id)_lock_registerQueryServer:(id)arg1 error:(id *)arg2;
+- (id)_lock_selectNextDatabaseAccessBlock;
+- (void)_lock_executeNextDatabaseAccessBlock;
+- (void)scheduleDatabaseAccessForQueryServer:(id)arg1 block:(CDUnknownBlockType)arg2;
+- (void)_lock_startQueryServer:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)startQueryServer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dealloc;
 - (id)initWithDaemon:(id)arg1;
 

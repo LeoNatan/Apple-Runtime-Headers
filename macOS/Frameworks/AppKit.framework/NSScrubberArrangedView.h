@@ -8,7 +8,6 @@
 
 @interface NSScrubberArrangedView : NSView
 {
-    id _cache;
     struct os_unfair_lock_s _flagLock;
     unsigned int _selected:1;
     unsigned int _highlighted:1;

@@ -6,21 +6,28 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, VUIProductMetadataLayout;
+@class NSArray, VUIProductInfoAiringView, VUIProductMetadataLayout, VUISeparatorView;
 
 __attribute__((visibility("hidden")))
 @interface VUIProductMetadataView : UIView
 {
     NSArray *_sectionViews;
     VUIProductMetadataLayout *_viewLayout;
+    UIView *_defaultFocusView;
+    VUIProductInfoAiringView *_airingView;
+    VUISeparatorView *_separatorView;
 }
 
-+ (id)configureViewWithSections:(id)arg1 existingView:(id)arg2;
 + (id)configureViewWithElement:(id)arg1 existingView:(id)arg2;
+@property(retain, nonatomic) VUISeparatorView *separatorView; // @synthesize separatorView=_separatorView;
+@property(retain, nonatomic) VUIProductInfoAiringView *airingView; // @synthesize airingView=_airingView;
+@property(retain, nonatomic) UIView *defaultFocusView; // @synthesize defaultFocusView=_defaultFocusView;
 @property(retain, nonatomic) VUIProductMetadataLayout *viewLayout; // @synthesize viewLayout=_viewLayout;
 @property(retain, nonatomic) NSArray *sectionViews; // @synthesize sectionViews=_sectionViews;
 - (void).cxx_destruct;
 - (id)_generateSectionViewFromElement:(id)arg1;
+- (id)preferredFocusEnvironments;
+- (_Bool)canBecomeFocused;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 - (void)updateViewWithSections:(id)arg1;

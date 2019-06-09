@@ -11,6 +11,11 @@
 @class CLLocation, NSDate, NSDictionary, NSString, PFVideoAVObjectBuilder;
 
 @interface PHAsset (PUDisplayAssetAdoption) <PUEditableAsset>
++ (id)pu_typeStringForMediaType:(long long)arg1;
++ (long long)_pu_mediaTypeForAssets:(id)arg1;
++ (long long)pu_commonMediaTypeForPhotoCount:(long long)arg1 videoCount:(long long)arg2 otherCount:(long long)arg3;
++ (id)pu_typeStringForAssets:(id)arg1;
+@property(readonly, nonatomic) unsigned long long deferredLogInfo;
 @property(readonly, copy, nonatomic) NSString *pathForTrimmedVideoFile;
 @property(readonly, copy, nonatomic) NSString *pathForOriginalVideoFile;
 @property(readonly, copy, nonatomic) NSString *pathForOriginalImageFile;
@@ -20,6 +25,7 @@
 @property(readonly, nonatomic) NSDictionary *imageProperties;
 @property(readonly, nonatomic) PFVideoAVObjectBuilder *videoObjectBuilder;
 @property(readonly, nonatomic) unsigned long long livePhotoVisibilityState;
+@property(readonly, nonatomic, getter=isTrimmableType) _Bool trimmableType;
 @property(readonly, nonatomic, getter=isInPlaceVideoTrimAllowed) _Bool inPlaceVideoTrimAllowed;
 @property(readonly, nonatomic, getter=isLivePhotoVisibilityAdjustmentAllowed) _Bool livePhotoVisibilityAdjustmentAllowed;
 @property(readonly, nonatomic, getter=isContentAdjustmentAllowed) _Bool contentAdjustmentAllowed;
@@ -45,6 +51,7 @@
 @property(readonly, nonatomic) _Bool hasPhotoColorAdjustments;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) _Bool isPhotoIrisPlaceholder;
+@property(readonly, nonatomic) NSDate *localCreationDate;
 @property(readonly, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) unsigned long long mediaSubtypes;
 @property(readonly, nonatomic) unsigned long long mediaType;

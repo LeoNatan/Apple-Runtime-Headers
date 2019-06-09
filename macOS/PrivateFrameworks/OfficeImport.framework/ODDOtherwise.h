@@ -6,6 +6,7 @@
 
 #import <OfficeImport/ODDLayoutObjectList.h>
 
+__attribute__((visibility("hidden")))
 @interface ODDOtherwise : ODDLayoutObjectList
 {
 }

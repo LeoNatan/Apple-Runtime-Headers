@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface GKCustomClassUnarchiver : NSObject <NSKeyedUnarchiverDelegate>
 {
     NSMutableDictionary *_cache;

@@ -6,14 +6,15 @@
 
 #import <AppKit/NSViewController.h>
 
+#import <LocalAuthenticationUI/AuthenticationHintsDelegate-Protocol.h>
 #import <LocalAuthenticationUI/LAUIAuthenticationSheetWindowDelegate-Protocol.h>
 #import <LocalAuthenticationUI/LAUIDelegate-Protocol.h>
 #import <LocalAuthenticationUI/LAUIUserPasswordFieldRemoteProtocol-Protocol.h>
 
-@class LAContext, LAUIAuthenticationSheetWindow, LAUIUserPasswordViewController, NSButton, NSColor, NSError, NSImageView, NSMutableArray, NSString, NSTextField, NSView, NSWindow;
-@protocol LAUIAuthenticationSheetDelegate;
+@class LAContext, LAUIAuthenticationSheetWindow, LAUIUserPasswordViewController, NSButton, NSColor, NSData, NSDictionary, NSError, NSImageView, NSMutableArray, NSMutableDictionary, NSPopUpButton, NSString, NSTextField, NSView, NSWindow;
+@protocol AuthenticationHintsProvider, LAUIAuthenticationSheetDelegate;
 
-@interface LAUIAuthenticationSheetController : NSViewController <LAUIUserPasswordFieldRemoteProtocol, LAUIDelegate, LAUIAuthenticationSheetWindowDelegate>
+@interface LAUIAuthenticationSheetController : NSViewController <LAUIUserPasswordFieldRemoteProtocol, LAUIDelegate, LAUIAuthenticationSheetWindowDelegate, AuthenticationHintsDelegate>
 {
     NSWindow *_window;
     LAUIAuthenticationSheetWindow *_sheet;
@@ -26,14 +27,28 @@
     int _noMatchCount;
     BOOL _passwordViewVisible;
     BOOL _isKeyWindow;
+    id <AuthenticationHintsProvider> _watchProvider;
+    id <AuthenticationHintsProvider> _smartCardProvider;
+    BOOL _smartCardActivated;
+    BOOL _smartCardInserted;
+    BOOL _watchActivated;
+    NSMutableDictionary *_longNames;
+    long long _previousAuthType;
+    NSString *_scPamUsername;
+    NSString *_scPamService;
+    NSData *_scPamToken;
+    BOOL _shouldExpandOnCardInsert;
+    NSTextField *_engineeringLabel;
     BOOL _canAuthenticateAsAnyAdmin;
     BOOL _enableUserNameField;
     BOOL _fallbackToAppPassword;
     BOOL _touchIDAvailable;
     BOOL _touchIDInhibited;
+    BOOL _smartCardInhibited;
+    BOOL _watchInhibited;
     BOOL _passwordExtractable;
     BOOL _pinAuthentication;
-    BOOL _skipUserPasswordVerification;
+    BOOL _skipUserCredentialsVerification;
     NSString *_authTitle;
     NSString *_authSubTitle;
     NSString *_authSubTitleNoTouchID;
@@ -46,6 +61,11 @@
     id <LAUIAuthenticationSheetDelegate> _delegate;
     NSString *_authDFRPrompt;
     LAContext *_authContext;
+    NSString *_pamUsername;
+    NSString *_pamService;
+    NSData *_pamToken;
+    NSDictionary *_backoffStateDict;
+    long long _authorizationType;
     NSImageView *_appIcon;
     NSImageView *_authIcon;
     NSTextField *_authTitleLabel;
@@ -57,6 +77,7 @@
     NSTextField *_usernameLabel;
     NSView *_passwordFieldContainer;
     NSTextField *_passwordLabel;
+    NSPopUpButton *_smartCardPopup;
     NSButton *_cancelButton;
     NSButton *_unlockButton;
     NSButton *_usePasswordButton;
@@ -65,6 +86,7 @@
 @property(nonatomic) __weak NSButton *usePasswordButton; // @synthesize usePasswordButton=_usePasswordButton;
 @property(nonatomic) __weak NSButton *unlockButton; // @synthesize unlockButton=_unlockButton;
 @property(nonatomic) __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
+@property(nonatomic) __weak NSPopUpButton *smartCardPopup; // @synthesize smartCardPopup=_smartCardPopup;
 @property(nonatomic) __weak NSTextField *passwordLabel; // @synthesize passwordLabel=_passwordLabel;
 @property(nonatomic) __weak NSView *passwordFieldContainer; // @synthesize passwordFieldContainer=_passwordFieldContainer;
 @property(nonatomic) __weak NSTextField *usernameLabel; // @synthesize usernameLabel=_usernameLabel;
@@ -76,11 +98,18 @@
 @property(nonatomic) __weak NSTextField *authTitleLabel; // @synthesize authTitleLabel=_authTitleLabel;
 @property(nonatomic) __weak NSImageView *authIcon; // @synthesize authIcon=_authIcon;
 @property(nonatomic) __weak NSImageView *appIcon; // @synthesize appIcon=_appIcon;
-@property(nonatomic) BOOL skipUserPasswordVerification; // @synthesize skipUserPasswordVerification=_skipUserPasswordVerification;
+@property(readonly) long long authorizationType; // @synthesize authorizationType=_authorizationType;
+@property(retain, nonatomic) NSDictionary *backoffStateDict; // @synthesize backoffStateDict=_backoffStateDict;
+@property(retain, nonatomic) NSData *pamToken; // @synthesize pamToken=_pamToken;
+@property(retain, nonatomic) NSString *pamService; // @synthesize pamService=_pamService;
+@property(retain, nonatomic) NSString *pamUsername; // @synthesize pamUsername=_pamUsername;
+@property(nonatomic) BOOL skipUserCredentialsVerification; // @synthesize skipUserCredentialsVerification=_skipUserCredentialsVerification;
 @property(nonatomic, getter=isPINAuthentication) BOOL pinAuthentication; // @synthesize pinAuthentication=_pinAuthentication;
 @property(nonatomic, getter=isPasswordExtractable) BOOL passwordExtractable; // @synthesize passwordExtractable=_passwordExtractable;
 @property(retain, nonatomic) LAContext *authContext; // @synthesize authContext=_authContext;
-@property(nonatomic, getter=isTouchIDInhibited) BOOL touchIDInhibited; // @synthesize touchIDInhibited=_touchIDInhibited;
+@property(nonatomic) BOOL watchInhibited; // @synthesize watchInhibited=_watchInhibited;
+@property(nonatomic) BOOL smartCardInhibited; // @synthesize smartCardInhibited=_smartCardInhibited;
+@property(nonatomic) BOOL touchIDInhibited; // @synthesize touchIDInhibited=_touchIDInhibited;
 @property(readonly, nonatomic, getter=isTouchIDAvailable) BOOL touchIDAvailable; // @synthesize touchIDAvailable=_touchIDAvailable;
 @property(nonatomic) BOOL fallbackToAppPassword; // @synthesize fallbackToAppPassword=_fallbackToAppPassword;
 @property(retain, nonatomic) NSString *authDFRPrompt; // @synthesize authDFRPrompt=_authDFRPrompt;
@@ -88,11 +117,18 @@
 @property(nonatomic) BOOL canAuthenticateAsAnyAdmin; // @synthesize canAuthenticateAsAnyAdmin=_canAuthenticateAsAnyAdmin;
 @property(nonatomic) __weak id <LAUIAuthenticationSheetDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (BOOL)_wasCanceledOnWatch:(id)arg1;
+- (void)event:(long long)arg1 eventHints:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (id)_longNameForShortName:(id)arg1;
+- (void)didShowAccountUnblocked;
+- (void)didShowAccountBackoffBlocked;
 - (void)enabledObjects:(id)arg1 forView:(id)arg2;
 - (void)setEnabled:(BOOL)arg1;
 - (void)didSubmitUnverifiedData:(unsigned int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)didVerifyPassword;
 - (void)didSubmitWrongPassword:(BOOL)arg1;
+- (void)watchResetUI;
+- (void)resetAHPValues;
 - (void)externalizedContextInReply:(CDUnknownBlockType)arg1;
 - (void)requestCancelAuthentication;
 - (void)event:(long long)arg1 params:(id)arg2 reply:(CDUnknownBlockType)arg3;
@@ -105,6 +141,9 @@
 - (void)sessionDidBecomeActive:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;
 - (void)windowDidBecomeKey:(id)arg1;
+- (void)updateSheetIcon;
+- (void)updateTitles;
+- (id)_createProviderWithServiceName:(id)arg1 options:(unsigned long long)arg2;
 @property(retain, nonatomic) NSString *usePasswordButtonTitle; // @synthesize usePasswordButtonTitle=_usePasswordButtonTitle;
 @property(retain, nonatomic) NSString *unlockButtonTitle; // @synthesize unlockButtonTitle=_unlockButtonTitle;
 @property(retain, nonatomic) NSColor *authSubTitleColor; // @synthesize authSubTitleColor=_authSubTitleColor;
@@ -127,8 +166,12 @@
 - (id)_currentUserName:(BOOL)arg1;
 - (void)_createTouchBar;
 - (void)switchToPasswordViewAnimated:(BOOL)arg1 touchIDAvailable:(BOOL)arg2;
+- (void)_createPasswordViewWithReply:(CDUnknownBlockType)arg1;
 - (void)endSheet;
+- (void)didEditSmartCardUser:(id)arg1;
+- (void)submitPamUser;
 - (void)beginSheetForWindow:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setUpViewWithCompletion:(CDUnknownBlockType)arg1;
 - (void)viewDidLoad;
 - (void)dealloc;
 - (id)init;

@@ -17,11 +17,11 @@
     NSError *_error;
 }
 
+- (void).cxx_destruct;
 - (void)actionFailed:(long long)arg1 forTask:(id)arg2 error:(id)arg3;
 - (void)resolvedRecipientsByEmailAddress:(id)arg1;
 - (id)waitForResolvedRecipients;
 @property(readonly) NSError *error;
-- (void)dealloc;
 - (id)init;
 
 @end

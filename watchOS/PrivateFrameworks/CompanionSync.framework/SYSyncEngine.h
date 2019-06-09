@@ -9,12 +9,13 @@
 #import <CompanionSync/SYStateLoggable-Protocol.h>
 
 @class NSString, PBCodable, SYService;
-@protocol OS_dispatch_queue, OS_os_activity, SYSyncEngineResponder;
+@protocol OS_dispatch_queue, OS_os_activity, OS_os_transaction, SYSyncEngineResponder;
 
 __attribute__((visibility("hidden")))
 @interface SYSyncEngine : NSObject <SYStateLoggable>
 {
     id <SYSyncEngineResponder> _responder;
+    NSObject<OS_os_transaction> *_transaction;
     NSObject<OS_os_activity> *_transportActivity;
     SYService *_service;
     NSObject<OS_dispatch_queue> *_queue;
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)cancelMessagesReturningFailures:(id)arg1;
 - (id)outputStreamWithMetadata:(id)arg1 priority:(int)arg2 options:(id)arg3 context:(id)arg4 error:(id *)arg5;
 - (void)enqueueSyncRequest:(id)arg1 withMessageID:(unsigned short)arg2 priority:(int)arg3 options:(id)arg4 userContext:(id)arg5 callback:(CDUnknownBlockType)arg6;
+@property(readonly, nonatomic) _Bool targetConnected;
 @property(readonly, nonatomic) _Bool targetIsNearby;
 @property(readonly, nonatomic) _Bool buffersHandshake;
 @property(readonly, nonatomic) _Bool buffersSessions;

@@ -44,6 +44,7 @@
     NSData *_imageData;
     NSString *_imageGroup;
     NSString *_imageReference;
+    unsigned int _startingPositionOfCurrentProperty;
     NSArray *_itemParameters;
     NSString *_grouping;
     unsigned int _encoding;
@@ -58,9 +59,9 @@
 + (id)newParsingSelectorMap;
 + (_Bool)parseFirstResultInData:(id)arg1 resultBuilder:(id)arg2;
 + (unsigned int)countOfCardsInData:(id)arg1;
-@property(readonly, nonatomic) CNVCardReadingOptions *options; // @synthesize options=_options;
 @property(copy, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
 @property(readonly, nonatomic) id <CNVCardParsedResultBuilder> resultBuilder; // @synthesize resultBuilder=_resultBuilder;
+@property(readonly, nonatomic) CNVCardReadingOptions *options; // @synthesize options=_options;
 - (void).cxx_destruct;
 - (int)currentPosition;
 - (_Bool)atEOF;
@@ -68,6 +69,7 @@
 - (id)parseBase64Data;
 - (id)parseUnknownValueStartingAtPosition:(unsigned int)arg1;
 - (id)parseArrayValue;
+- (id)unparsedStringForCurrentProperty;
 - (id)parseRemainingLine;
 - (_Bool)advancePastSemicolon;
 - (id)parseStringValue;
@@ -100,6 +102,7 @@
 - (id)firstValueForKey:(id)arg1 inExtensionGroup:(id)arg2;
 - (_Bool)parseExtension:(id)arg1;
 - (_Bool)parseInstantMessageValueWithService:(id)arg1;
+- (_Bool)parse_X_APPLE_GUARDIAN_WHITELISTED;
 - (_Bool)parse_X_APPLE_LIKENESS_SERVICE_IDENTIFIER;
 - (_Bool)parse_X_APPLE_LIKENESS_SOURCE;
 - (_Bool)parse_X_ADDRESSBOOKSERVER_PHONEME_DATA;

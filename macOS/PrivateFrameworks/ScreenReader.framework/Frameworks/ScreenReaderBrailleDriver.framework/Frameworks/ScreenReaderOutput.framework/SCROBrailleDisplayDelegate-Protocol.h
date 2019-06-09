@@ -10,6 +10,7 @@
 @protocol SCROBrailleDisplayCommandDispatcherProtocol, SCROBrailleDisplayInputManagerProtocol;
 
 @protocol SCROBrailleDisplayDelegate <NSObject>
+- (void)brailleDisplay:(SCROBrailleDisplay *)arg1 copyStringToClipboard:(NSString *)arg2;
 - (void)playCommandNotSupportedSoundForBrailleDisplay:(SCROBrailleDisplay *)arg1;
 - (void)playBorderHitSoundForBrailleDisplay:(SCROBrailleDisplay *)arg1;
 - (id <SCROBrailleDisplayCommandDispatcherProtocol>)newBrailleDisplayCommandDispatcher;

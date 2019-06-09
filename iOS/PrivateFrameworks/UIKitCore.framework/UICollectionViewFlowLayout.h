@@ -65,6 +65,7 @@
 @property(nonatomic) double minimumInteritemSpacing; // @synthesize minimumInteritemSpacing=_interitemSpacing;
 @property(nonatomic) double minimumLineSpacing; // @synthesize minimumLineSpacing=_lineSpacing;
 - (void).cxx_destruct;
+- (int)_layoutAxis;
 - (void)_didPerformUpdateVisibleCellsPass;
 - (void)_willPerformUpdateVisibleCellsPass;
 - (struct UIEdgeInsets)_adjustedSectionInsetForSectionInset:(struct UIEdgeInsets)arg1 forAxis:(int)arg2;

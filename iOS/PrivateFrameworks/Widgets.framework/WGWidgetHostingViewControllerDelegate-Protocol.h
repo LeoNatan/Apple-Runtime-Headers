@@ -9,6 +9,8 @@
 @class WGWidgetHostingViewController;
 
 @protocol WGWidgetHostingViewControllerDelegate <NSObject>
+- (void)unregisterWidgetForRefreshEvents:(WGWidgetHostingViewController *)arg1;
+- (void)registerWidgetForRefreshEvents:(WGWidgetHostingViewController *)arg1;
 - (struct CGSize)maxSizeForWidget:(WGWidgetHostingViewController *)arg1 forDisplayMode:(long long)arg2;
 
 @optional

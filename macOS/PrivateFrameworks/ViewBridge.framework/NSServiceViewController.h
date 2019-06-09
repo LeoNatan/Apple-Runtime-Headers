@@ -29,10 +29,9 @@
 + (BOOL)currentAppIsViewService;
 + (id)hostAppDescription:(int)arg1;
 + (unsigned int)_windowForContextID:(unsigned int)arg1 fromViewService:(int)arg2 error:(id *)arg3;
-+ (BOOL)canBecomeKey;
 + (unsigned int)declinedEventMask;
-- (void)_windowFrameWillChange;
-- (void)_windowFrameDidChange;
++ (BOOL)canBecomeMain;
++ (BOOL)canBecomeKey;
 - (void)_didDisassociateFromHostWindow;
 - (void)_didAssociateWithHostWindow;
 - (void)_viewDidChangeAppearance:(id)arg1;
@@ -41,6 +40,7 @@
 - (void)_setHostSDKVersion:(unsigned int)arg1;
 @property(readonly) unsigned int hostSDKVersion;
 @property NSViewServiceMarshal *marshal;
+- (id)description;
 @property(readonly) NSWindow *serviceWindow;
 - (id)initWithWindow:(id)arg1;
 - (void)_endPrivateEventLoop;
@@ -84,6 +84,8 @@
 - (void)associateMouseAndMouseCursorPosition:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)requestResize:(struct CGSize)arg1 animation:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_requestResize:(struct CGSize)arg1 hostShouldAnimate:(BOOL)arg2 animation:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (id)requestFrame:(struct CGRect)arg1 animation:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_requestFrame:(struct CGRect)arg1 hostShouldAnimate:(BOOL)arg2 animation:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)remoteViewSizeChanged:(struct CGSize)arg1 transaction:(id)arg2;
 - (BOOL)_remoteViewSizeChanged:(struct CGSize)arg1 transaction:(id)arg2;
 @property(readonly) BOOL adjustLayoutInProgress;
@@ -100,8 +102,10 @@
 - (void)errorOccurred:(id)arg1;
 - (void)deferBlockOntoMainThread:(CDUnknownBlockType)arg1;
 - (void)withHostContextInvoke:(CDUnknownBlockType)arg1;
-- (BOOL)canBecomeKey;
 - (unsigned int)declinedEventMask;
+- (BOOL)canBecomeMain;
+- (BOOL)canBecomeKey;
+- (void)declineKeyboardEventsOtherThan:(id)arg1;
 
 @end
 

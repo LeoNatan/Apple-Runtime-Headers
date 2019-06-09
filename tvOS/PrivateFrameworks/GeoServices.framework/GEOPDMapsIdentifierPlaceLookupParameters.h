@@ -17,14 +17,16 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_mapsIds;
     int _resultProviderId;
     _Bool _enablePartialClientization;
-    CDStruct_2527025c _has;
+    struct {
+        unsigned int has_resultProviderId:1;
+        unsigned int has_enablePartialClientization:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)mapsIdType;
-@property(nonatomic) _Bool enablePartialClientization; // @synthesize enablePartialClientization=_enablePartialClientization;
-@property(retain, nonatomic) NSMutableArray *mapsIds; // @synthesize mapsIds=_mapsIds;
-@property(nonatomic) int resultProviderId; // @synthesize resultProviderId=_resultProviderId;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,14 +35,18 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasEnablePartialClientization;
+@property(nonatomic) _Bool enablePartialClientization;
 - (id)mapsIdAtIndex:(unsigned long long)arg1;
 - (unsigned long long)mapsIdsCount;
 - (void)addMapsId:(id)arg1;
 - (void)clearMapsIds;
+@property(retain, nonatomic) NSMutableArray *mapsIds;
 @property(nonatomic) _Bool hasResultProviderId;
+@property(nonatomic) int resultProviderId;
 - (id)initWithIdentifiers:(id)arg1 resultProviderID:(int)arg2;
 
 @end

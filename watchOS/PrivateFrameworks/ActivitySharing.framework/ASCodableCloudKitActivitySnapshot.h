@@ -14,10 +14,13 @@
 {
     double _activeHours;
     double _activeHoursGoal;
+    long long _amm;
     double _briskMinutes;
     double _briskMinutesGoal;
     double _energyBurned;
     double _energyBurnedGoal;
+    double _mmg;
+    double _mmv;
     double _pushCount;
     long long _snapshotIndex;
     double _stepCount;
@@ -29,10 +32,13 @@
     struct {
         unsigned int activeHours:1;
         unsigned int activeHoursGoal:1;
+        unsigned int amm:1;
         unsigned int briskMinutes:1;
         unsigned int briskMinutesGoal:1;
         unsigned int energyBurned:1;
         unsigned int energyBurnedGoal:1;
+        unsigned int mmg:1;
+        unsigned int mmv:1;
         unsigned int pushCount:1;
         unsigned int snapshotIndex:1;
         unsigned int stepCount:1;
@@ -42,6 +48,9 @@
     } _has;
 }
 
+@property(nonatomic) long long amm; // @synthesize amm=_amm;
+@property(nonatomic) double mmg; // @synthesize mmg=_mmg;
+@property(nonatomic) double mmv; // @synthesize mmv=_mmv;
 @property(nonatomic) long long wheelchairUse; // @synthesize wheelchairUse=_wheelchairUse;
 @property(nonatomic) double pushCount; // @synthesize pushCount=_pushCount;
 @property(nonatomic) double stepCount; // @synthesize stepCount=_stepCount;
@@ -66,6 +75,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasAmm;
+@property(nonatomic) _Bool hasMmg;
+@property(nonatomic) _Bool hasMmv;
 @property(nonatomic) _Bool hasWheelchairUse;
 @property(nonatomic) _Bool hasPushCount;
 @property(nonatomic) _Bool hasStepCount;

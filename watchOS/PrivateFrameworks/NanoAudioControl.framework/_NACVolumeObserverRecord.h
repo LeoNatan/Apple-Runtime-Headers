@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     _Bool _volumeControlAvailable;
     _Bool _volumeWarningEnabled;
     _Bool _muted;
+    int _volumeWarningState;
     float _EUVolumeLimit;
     NACEventThrottler *_throttler;
     MPVolumeController *_volumeController;
@@ -25,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NACEventThrottler *throttler; // @synthesize throttler=_throttler;
 @property(nonatomic) float EUVolumeLimit; // @synthesize EUVolumeLimit=_EUVolumeLimit;
 @property(nonatomic, getter=isMuted) _Bool muted; // @synthesize muted=_muted;
+@property(nonatomic) int volumeWarningState; // @synthesize volumeWarningState=_volumeWarningState;
 @property(nonatomic, getter=isVolumeWarningEnabled) _Bool volumeWarningEnabled; // @synthesize volumeWarningEnabled=_volumeWarningEnabled;
 @property(nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable; // @synthesize volumeControlAvailable=_volumeControlAvailable;
 - (void).cxx_destruct;

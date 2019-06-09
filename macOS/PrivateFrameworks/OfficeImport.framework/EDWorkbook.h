@@ -8,6 +8,7 @@
 
 @class ECMappingContext, EDProcessors, EDReference, EDResources, EDWarnings, ESDContainer, NSDate, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDWorkbook : OCDDocument
 {
     EDResources *mResources;

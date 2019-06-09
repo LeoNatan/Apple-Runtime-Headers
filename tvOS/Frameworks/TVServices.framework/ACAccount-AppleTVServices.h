@@ -6,7 +6,7 @@
 
 #import <Accounts/ACAccount.h>
 
-@class NSDate, NSString;
+@class NSDate;
 
 @interface ACAccount (AppleTVServices)
 - (_Bool)_tvs_performBlock:(CDUnknownBlockType)arg1 authenticationExpiration:(double)arg2 error:(id *)arg3;
@@ -16,10 +16,6 @@
 @property(readonly, nonatomic) _Bool tvs_myPhotoStreamEnabled;
 - (_Bool)tvs_setSharedPhotoStreamEnabled:(_Bool)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) _Bool tvs_sharedPhotoStreamEnabled;
-- (void)tvs_setLinkediTunesAppleIDFromFamilyDetailsResponse:(id)arg1;
-@property(copy, nonatomic, setter=tvs_setLinkediTunesAppleID:) NSString *tvs_linkediTunesAppleID;
-- (void)tvs_setIsFamilyMemberFromFamilyDetailsResponse:(id)arg1;
-@property(nonatomic, setter=tvs_setIsFamilyMember:) _Bool tvs_isFamilyMember;
 @property(retain, nonatomic, setter=tvs_setLastAuthenticationDate:) NSDate *tvs_lastAuthenticationDate;
 @end
 

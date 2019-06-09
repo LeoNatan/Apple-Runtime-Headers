@@ -25,12 +25,12 @@
 @property(readonly, copy) NSString *userIdentifier; // @synthesize userIdentifier=_userIdentifier;
 @property(readonly, copy) NSString *username; // @synthesize username=_username;
 @property(readonly, copy) NSString *urlString; // @synthesize urlString=_urlString;
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (_Bool)isEmpty;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithUrlString:(id)arg1 username:(id)arg2 userIdentifier:(id)arg3 service:(id)arg4 displayName:(id)arg5;
 
 @end

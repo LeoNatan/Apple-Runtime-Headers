@@ -12,6 +12,9 @@
 {
 }
 
++ (id)entityNamesEligibleForDeletion;
++ (id)notTombstonedPredicate;
+- (void)willChangeValueForKey:(id)arg1;
 - (void)awakeFromInsert;
 @property(copy, nonatomic) NSUUID *identifier;
 
@@ -21,6 +24,7 @@
 @property(copy, nonatomic) NSDate *creationDate; // @dynamic creationDate;
 @property(retain, nonatomic) RTDeviceMO *device; // @dynamic device;
 @property(copy, nonatomic) NSDate *expirationDate; // @dynamic expirationDate;
+@property(nonatomic) unsigned long long flags; // @dynamic flags;
 
 @end
 

@@ -11,16 +11,22 @@
 @interface UIColorEffect : UIVisualEffect
 {
     NSString *_filterType;
+    NSDictionary *_configurationValues;
     NSDictionary *_identityValues;
     NSDictionary *_requestedValues;
 }
 
++ (_Bool)supportsSecureCoding;
++ (struct CAColorMatrix)_defaultShadowMatrix;
++ (id)colorEffectForAverageColor;
++ (id)colorEffectLuminanceCurvePoint1:(double)arg1 point2:(double)arg2 point3:(double)arg3 point4:(double)arg4 blendingAmount:(double)arg5;
 + (id)colorEffectLuminanceMap:(id)arg1 blendingAmount:(double)arg2;
 + (id)colorEffectMonochromeTint:(id)arg1 blendingAmount:(double)arg2 brightnessAdjustment:(double)arg3;
 + (id)colorEffectInvert;
 + (id)colorEffectContrast:(double)arg1;
 + (id)colorEffectBrightness:(double)arg1;
 + (id)colorEffectSaturate:(double)arg1;
++ (id)_colorEffectSourceOver:(CDStruct_d2b197d1)arg1;
 + (id)colorEffectSubtract:(id)arg1;
 + (id)colorEffectAdd:(id)arg1;
 + (id)colorEffectMultiply:(id)arg1;
@@ -30,12 +36,14 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)_updateEffectNode:(id)arg1 forTraitCollection:(id)arg2;
+- (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(long long)arg3;
 - (id)_filterEntry;
 - (long long)_expectedUsage;
 - (_Bool)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)init;
 
 @end
 

@@ -9,17 +9,12 @@
 #import <AOSUI/InternetAccountExports-Protocol.h>
 #import <AOSUI/MMWebKitControllerDelegate-Protocol.h>
 
-@class ADMChangePasswordController, CDPContext, CDPStateController, CDPStateUIController, JSContext, JSValue, MMJSDialogController, MMWebKitController, NSDictionary, NSMutableDictionary, NSString, NSView, NSWindow, WebView, iCloudPurchaseStorageController;
+@class ADMChangePasswordController, CDPContext, CDPStateController, CDPStateUIController, JSContext, JSValue, MMJSDialogController, MMWebKitController, NSDictionary, NSImage, NSMutableDictionary, NSString, NSView, NSWindow, WebView, iCloudPurchaseStorageController;
 @protocol ICAUIDelegate, ICAWebKitViewControllerDelegate, MBICAUIDelegate;
 
 @interface MMICAWebKitViewController : NSObject <MMWebKitControllerDelegate, InternetAccountExports>
 {
-    id <ICAUIDelegate> _icaUIDelegate;
-    id <ICAWebKitViewControllerDelegate> _icaWebKitViewControllerDelegate;
-    id <MBICAUIDelegate> _icaMBUIDelegate;
     MMWebKitController *_webKitController;
-    NSView *_parentView;
-    NSWindow *_parentWindow;
     MMJSDialogController *_mmJSDialogController;
     JSContext *_jsContext;
     NSString *_accountID;
@@ -28,7 +23,7 @@
     NSDictionary *_workflowDict;
     BOOL _supportsWindowResize;
     unsigned long long _gsType;
-    CDPStateUIController *cdpStateUIController;
+    CDPStateUIController *_cdpStateUIController;
     CDPStateController *cdpController;
     CDPContext *cdpContext;
     ADMChangePasswordController *mChangePasswordController;
@@ -41,13 +36,21 @@
         unsigned int delegateDidReceiveResponse:1;
         unsigned int padding:3;
     } _flags;
+    id <ICAUIDelegate> _icaUIDelegate;
+    id <MBICAUIDelegate> _icaMBUIDelegate;
+    id <ICAWebKitViewControllerDelegate> _icaWebKitViewControllerDelegate;
+    NSView *_parentView;
+    NSWindow *_parentWindow;
+    NSImage *_displayImage;
     iCloudPurchaseStorageController *_purchaseStorageController;
     NSMutableDictionary *_authKitData;
 }
 
 @property(retain, nonatomic) NSMutableDictionary *authKitData; // @synthesize authKitData=_authKitData;
 @property(retain) iCloudPurchaseStorageController *purchaseStorageController; // @synthesize purchaseStorageController=_purchaseStorageController;
-@property(copy) NSString *altDSID; // @synthesize altDSID=_altDSID;
+@property(retain) NSImage *displayImage; // @synthesize displayImage=_displayImage;
+@property(retain, nonatomic) CDPStateUIController *cdpStateUIController; // @synthesize cdpStateUIController=_cdpStateUIController;
+@property(copy, nonatomic) NSString *altDSID; // @synthesize altDSID=_altDSID;
 @property(nonatomic, setter=setGSType:) unsigned long long gsType; // @synthesize gsType=_gsType;
 @property(retain, nonatomic) NSDictionary *workflowDict; // @synthesize workflowDict=_workflowDict;
 @property(retain, nonatomic) NSDictionary *buttonBarDict; // @synthesize buttonBarDict=_buttonBarDict;
@@ -62,15 +65,26 @@
 @property(nonatomic) id <ICAWebKitViewControllerDelegate> icaWebKitViewControllerDelegate; // @synthesize icaWebKitViewControllerDelegate=_icaWebKitViewControllerDelegate;
 @property(nonatomic) id <MBICAUIDelegate> icaMBUIDelegate; // @synthesize icaMBUIDelegate=_icaMBUIDelegate;
 @property(nonatomic) id <ICAUIDelegate> icaUIDelegate; // @synthesize icaUIDelegate=_icaUIDelegate;
+- (void).cxx_destruct;
+- (BOOL)isSignedByApple:(id)arg1;
 - (id)_errorFromTransaction:(struct AOSTransactionC *)arg1;
 - (BOOL)_isTransactionSuccessful:(struct AOSTransactionC *)arg1;
 - (id)getCroppedImageFromServerForDSID:(id)arg1;
 - (void)retriveFromServer:(id)arg1 callback:(id)arg2 fallBackToLocal:(BOOL)arg3 dsid:(id)arg4;
+- (id)webViewWindow;
 - (id)_cdpStateController;
 - (void)repairCloudDataProtectionStateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)generateNewRecoveryKeyWithType:(long long)arg1 andCompletion:(CDUnknownBlockType)arg2;
 - (void)deleteRecoveryKey:(CDUnknownBlockType)arg1;
 - (void)_setRecoveryKeyState:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)getIcon:(id)arg1 bundleIconName:(id)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 callback:(id)arg5;
+- (void)selectFile:(id)arg1 inFolder:(id)arg2;
+- (void)openPrefPane:(id)arg1 userInfo:(id)arg2;
+- (void)updateName:(id)arg1 lastName:(id)arg2 middleName:(id)arg3 firstNamePronounce:(id)arg4 lastNamePronounce:(id)arg5;
+- (void)refreshDeviceListAndSelectOverview;
+- (void)setDataclassState:(BOOL)arg1 dataclass:(id)arg2;
+- (void)getDataclassState:(id)arg1 callback:(id)arg2;
+- (void)openApplicationWithBundleID:(id)arg1;
 - (id)getAuthKitData:(id)arg1;
 - (void)setAuthKitDataValue:(id)arg1 forKey:(id)arg2;
 - (BOOL)shouldSendErrorCodeToServer:(id)arg1;
@@ -137,6 +151,8 @@
 - (id)theme;
 - (id)dateFieldsOrder;
 - (id)logLevel;
+- (id)currentApplicationVersion;
+- (id)currentApplicationIdentifier;
 - (id)clientVersion;
 - (id)client;
 - (id)osBuild;

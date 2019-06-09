@@ -8,13 +8,18 @@
 
 #import <MapKit/MKMultiLineLabelContainer-Protocol.h>
 
-@class MKButtonWithTargetArgument, NSLayoutConstraint, NSString, _MKUILabel;
+@class MKButtonWithTargetArgument, NSLayoutConstraint, NSStackView, NSString, NSTimer, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKTransitDeparturesSectionHeaderView : MKMouseOverActionView <MKMultiLineLabelContainer>
 {
     unsigned long long _type;
     BOOL _extraSpacing;
     _MKUILabel *_label;
+    NSStackView *_updatingView;
+    _MKUILabel *_updatingLabel;
+    NSTimer *_updatingLabelTimestampRefreshTimer;
+    NSTimer *_updatingViewRefreshTimer;
     NSLayoutConstraint *_topConstraint;
     NSLayoutConstraint *_bottomConstraint;
     MKButtonWithTargetArgument *_button;

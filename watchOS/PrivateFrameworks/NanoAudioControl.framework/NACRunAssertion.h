@@ -6,12 +6,15 @@
 
 #import <objc/NSObject.h>
 
+@protocol OS_os_transaction;
+
 __attribute__((visibility("hidden")))
 @interface NACRunAssertion : NSObject
 {
+    NSObject<OS_os_transaction> *_transaction;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

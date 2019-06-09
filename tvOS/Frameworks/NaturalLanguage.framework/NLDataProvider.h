@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NLModelConfiguration, NSArray, NSDictionary;
+@class NLModelConfiguration, NSArray, NSDictionary, NSString;
 
 @interface NLDataProvider : NSObject
 {
@@ -20,10 +20,13 @@
     unsigned long long _numberOfLabels;
     unsigned long long _numberOfVocabularyEntries;
     unsigned long long _numberOfTokens;
+    NSString *_recognizedLanguage;
     _Bool _generatedMaps;
+    _Bool _performedLanguageRecognition;
 }
 
 - (void).cxx_destruct;
+@property(readonly) NSString *recognizedLanguage;
 - (unsigned long long)numberOfTokens;
 - (unsigned long long)numberOfVocabularyEntries;
 - (unsigned long long)numberOfLabels;
@@ -34,6 +37,7 @@
 - (struct __CFStringTokenizer *)tokenizer;
 - (void)generateMapsWithModelTrainer:(id)arg1;
 - (void)_generateMaps;
+- (void)_performLanguageRecognition;
 - (void)_generateMapsWithModelTrainer:(id)arg1;
 - (id)instanceAtIndex:(unsigned long long)arg1;
 @property(readonly) unsigned long long numberOfInstances;

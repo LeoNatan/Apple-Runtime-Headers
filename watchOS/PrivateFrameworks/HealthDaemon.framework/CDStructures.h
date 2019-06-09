@@ -4,6 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class HKSample;
+
 #pragma mark Function Pointers and Blocks
 
 typedef void (*CDUnknownFunctionPointerType)(void); // return type and parameters are unknown
@@ -17,7 +19,7 @@ struct DataStore;
 struct HDActivityCacheActiveSource {
     double _field1;
     long long _field2;
-    vector_bbba3654 _field3;
+    vector_d87a6415 _field3;
 };
 
 struct HDActivityCacheHeartRateStatisticsBuilderHeartRateSample;
@@ -34,42 +36,6 @@ struct HDActivityCacheStatisticsBuilderSample {
 struct HDActivityCacheStatisticsBuilderStandHourSample;
 
 struct HDActivityCacheStatisticsBuilderWorkoutSample;
-
-struct HDCumulativeSample_DEPRECATED;
-
-struct HDCumulativeStatistics_DEPRECATED {
-    double _sum;
-    long long _count;
-    double _startTime;
-    double _endTime;
-};
-
-struct HDCumulativeStatistics_DEPRECATEDBucket_DEPRECATED {
-    double _startTime;
-    double _endTime;
-    double _intervalDuration;
-    vector_bbba3654 _orderedSourceIDs;
-    struct unordered_map<long long, NSString *, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, NSString *>>> _sourceIDToBundleIdentifier;
-    struct HDCumulativeStatistics_DEPRECATEDInterval_DEPRECATED _currentInterval;
-    long long _currentIntervalIndex;
-    struct vector<HDCumulativeSample_DEPRECATED, std::__1::allocator<HDCumulativeSample_DEPRECATED>> _remainders;
-    struct HDCumulativeStatistics_DEPRECATED _statistics;
-    struct map<long long, HDCumulativeStatistics_DEPRECATED, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, HDCumulativeStatistics_DEPRECATED>>> _statisticsBySourceID;
-    struct map<std::__1::basic_string<char>, HDCumulativeStatistics_DEPRECATED, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, HDCumulativeStatistics_DEPRECATED>>> _statisticsBySourceBundleIdentifier;
-};
-
-struct HDCumulativeStatistics_DEPRECATEDEngine_DEPRECATED {
-    long long _currentBucketIndex;
-    struct HDCumulativeStatistics_DEPRECATEDBucket_DEPRECATED _currentBucket;
-    struct vector<HDCumulativeSample_DEPRECATED, std::__1::allocator<HDCumulativeSample_DEPRECATED>> _remainders;
-};
-
-struct HDCumulativeStatistics_DEPRECATEDInterval_DEPRECATED {
-    double _startTime;
-    double _endTime;
-    long long _sampleCount;
-    struct map<long long, HDCumulativeStatistics_DEPRECATED, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, HDCumulativeStatistics_DEPRECATED>>> _statisticsBySourceID;
-};
 
 struct HDDemoDataBloodPressure {
     double _field1;
@@ -120,25 +86,36 @@ struct _HDDeleteObjectDataDefn {
 
 struct _HDStatisticsCollectionCalculatorImplementation;
 
-struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*> {
-    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*> *__next_;
+struct _HDWrappedSource {
+    id _field1;
+    vector_d87a6415 _field2;
+    double _field3;
+    _Bool _field4;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*> *__next_;
 };
 
 struct __tree_end_node<std::__1::__tree_node_base<void *>*> {
     struct __tree_node_base<void *> *__left_;
 };
 
-struct deque<std::__1::tuple<double, double>, std::__1::allocator<std::__1::tuple<double, double>>> {
-    struct __split_buffer<std::__1::tuple<double, double>*, std::__1::allocator<std::__1::tuple<double, double>*>> {
-        struct tuple<double, double> **__first_;
-        struct tuple<double, double> **__begin_;
-        struct tuple<double, double> **__end_;
-        struct __compressed_pair<std::__1::tuple<double, double>**, std::__1::allocator<std::__1::tuple<double, double>*>> {
-            struct tuple<double, double> **__value_;
+struct deque<std::__1::tuple<double, double, float>, std::__1::allocator<std::__1::tuple<double, double, float>>> {
+    struct __split_buffer<std::__1::tuple<double, double, float>*, std::__1::allocator<std::__1::tuple<double, double, float>*>> {
+        struct tuple<double, double, float> **__first_;
+        struct tuple<double, double, float> **__begin_;
+        struct tuple<double, double, float> **__end_;
+        struct __compressed_pair<std::__1::tuple<double, double, float>**, std::__1::allocator<std::__1::tuple<double, double, float>*>> {
+            struct tuple<double, double, float> **__value_;
         } __end_cap_;
     } __map_;
     unsigned int __start_;
-    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::tuple<double, double>>> {
+    struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::tuple<double, double, float>>> {
         unsigned long __value_;
     } __size_;
 };
@@ -159,18 +136,6 @@ struct map<_HKDataTypeCode, std::__1::map<long long, _HDActivityCacheSourceTotal
     } __tree_;
 };
 
-struct map<long long, HDCumulativeStatistics_DEPRECATED, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, HDCumulativeStatistics_DEPRECATED>>> {
-    struct __tree<std::__1::__value_type<long long, HDCumulativeStatistics_DEPRECATED>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, HDCumulativeStatistics_DEPRECATED>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, HDCumulativeStatistics_DEPRECATED>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long long, HDCumulativeStatistics_DEPRECATED>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
-        } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, HDCumulativeStatistics_DEPRECATED>, std::__1::less<long long>, true>> {
-            unsigned long __value_;
-        } __pair3_;
-    } __tree_;
-};
-
 struct map<long long, _HDActivityCacheSourceTotal, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, _HDActivityCacheSourceTotal>>> {
     struct __tree<std::__1::__value_type<long long, _HDActivityCacheSourceTotal>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, _HDActivityCacheSourceTotal>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, _HDActivityCacheSourceTotal>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
@@ -181,30 +146,6 @@ struct map<long long, _HDActivityCacheSourceTotal, std::__1::less<long long>, st
             unsigned long _field1;
         } _field3;
     } _field1;
-};
-
-struct map<long long, _HDDiscreteStats, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, _HDDiscreteStats>>> {
-    struct __tree<std::__1::__value_type<long long, _HDDiscreteStats>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, _HDDiscreteStats>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, _HDDiscreteStats>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<long long, _HDDiscreteStats>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
-        } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, _HDDiscreteStats>, std::__1::less<long long>, true>> {
-            unsigned long __value_;
-        } __pair3_;
-    } __tree_;
-};
-
-struct map<std::__1::basic_string<char>, HDCumulativeStatistics_DEPRECATED, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, HDCumulativeStatistics_DEPRECATED>>> {
-    struct __tree<std::__1::__value_type<std::__1::basic_string<char>, HDCumulativeStatistics_DEPRECATED>, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, HDCumulativeStatistics_DEPRECATED>, std::__1::less<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__value_type<std::__1::basic_string<char>, HDCumulativeStatistics_DEPRECATED>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<std::__1::basic_string<char>, HDCumulativeStatistics_DEPRECATED>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
-        } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<std::__1::basic_string<char>, std::__1::__value_type<std::__1::basic_string<char>, HDCumulativeStatistics_DEPRECATED>, std::__1::less<std::__1::basic_string<char>>, true>> {
-            unsigned long __value_;
-        } __pair3_;
-    } __tree_;
 };
 
 struct normal_distribution<double> {
@@ -227,7 +168,14 @@ struct shared_ptr<health::DataStore> {
     struct __shared_weak_count *__cntrl_;
 };
 
-struct tuple<double, double>;
+struct tuple<double, double, float>;
+
+struct tuple<long long, HKSample *> {
+    struct __tuple_impl<std::__1::__tuple_indices<0, 1>, long long, HKSample *> {
+        long long __value_;
+        HKSample *__value_;
+    } __base_;
+};
 
 struct unique_ptr<_HDStatisticsCollectionCalculatorImplementation, std::__1::default_delete<_HDStatisticsCollectionCalculatorImplementation>> {
     struct __compressed_pair<_HDStatisticsCollectionCalculatorImplementation *, std::__1::default_delete<_HDStatisticsCollectionCalculatorImplementation>> {
@@ -235,27 +183,53 @@ struct unique_ptr<_HDStatisticsCollectionCalculatorImplementation, std::__1::def
     } __ptr_;
 };
 
-struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*>*>>> {
-    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*>*>>> {
-        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*> **__value_;
-        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*>*>> {
-            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*>*>> {
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>*>> {
                 unsigned long __value_;
             } __data_;
         } __value_;
     } __ptr_;
 };
 
-struct unordered_map<long long, NSString *, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, NSString *>>> {
-    struct __hash_table<std::__1::__hash_value_type<long long, NSString *>, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, NSString *>, std::__1::hash<long long>, true>, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, NSString *>, std::__1::equal_to<long long>, true>, std::__1::allocator<std::__1::__hash_value_type<long long, NSString *>>> {
-        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*>*>>> __bucket_list_;
-        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>>> {
-            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, NSString *>, void *>*> __value_;
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*>*>> {
+                unsigned long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unordered_map<long long, HKSource *, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, HKSource *>>> {
+    struct __hash_table<std::__1::__hash_value_type<long long, HKSource *>, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, HKSource *>, std::__1::hash<long long>, true>, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, HKSource *>, std::__1::equal_to<long long>, true>, std::__1::allocator<std::__1::__hash_value_type<long long, HKSource *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*> __value_;
         } __p1_;
-        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, NSString *>, std::__1::hash<long long>, true>> {
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, HKSource *>, std::__1::hash<long long>, true>> {
             unsigned long __value_;
         } __p2_;
-        struct __compressed_pair<float, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, NSString *>, std::__1::equal_to<long long>, true>> {
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, HKSource *>, std::__1::equal_to<long long>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<long long, bool, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, bool>>> {
+    struct __hash_table<std::__1::__hash_value_type<long long, bool>, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, bool>, std::__1::hash<long long>, true>, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, bool>, std::__1::equal_to<long long>, true>, std::__1::allocator<std::__1::__hash_value_type<long long, bool>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, bool>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, bool>, std::__1::hash<long long>, true>> {
+            unsigned long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, bool>, std::__1::equal_to<long long>, true>> {
             float __value_;
         } __p3_;
     } __table_;
@@ -309,14 +283,6 @@ struct vector<HDActivityCacheStatisticsBuilderWorkoutSample, std::__1::allocator
     } __end_cap_;
 };
 
-struct vector<HDCumulativeSample_DEPRECATED, std::__1::allocator<HDCumulativeSample_DEPRECATED>> {
-    struct HDCumulativeSample_DEPRECATED *__begin_;
-    struct HDCumulativeSample_DEPRECATED *__end_;
-    struct __compressed_pair<HDCumulativeSample_DEPRECATED *, std::__1::allocator<HDCumulativeSample_DEPRECATED>> {
-        struct HDCumulativeSample_DEPRECATED *__value_;
-    } __end_cap_;
-};
-
 struct vector<HistogramBucket, std::__1::allocator<HistogramBucket>> {
     struct HistogramBucket *__begin_;
     struct HistogramBucket *__end_;
@@ -325,11 +291,27 @@ struct vector<HistogramBucket, std::__1::allocator<HistogramBucket>> {
     } __end_cap_;
 };
 
+struct vector<_HDWrappedSource, std::__1::allocator<_HDWrappedSource>> {
+    struct _HDWrappedSource *__begin_;
+    struct _HDWrappedSource *__end_;
+    struct __compressed_pair<_HDWrappedSource *, std::__1::allocator<_HDWrappedSource>> {
+        struct _HDWrappedSource *__value_;
+    } __end_cap_;
+};
+
 struct vector<long long, std::__1::allocator<long long>> {
-    long long *__begin_;
-    long long *__end_;
+    long long *_field1;
+    long long *_field2;
     struct __compressed_pair<long long *, std::__1::allocator<long long>> {
-        long long *__value_;
+        long long *_field1;
+    } _field3;
+};
+
+struct vector<std::__1::tuple<long long, HKSample *>, std::__1::allocator<std::__1::tuple<long long, HKSample *>>> {
+    struct tuple<long long, HKSample *> *__begin_;
+    struct tuple<long long, HKSample *> *__end_;
+    struct __compressed_pair<std::__1::tuple<long long, HKSample *>*, std::__1::allocator<std::__1::tuple<long long, HKSample *>>> {
+        struct tuple<long long, HKSample *> *__value_;
     } __end_cap_;
 };
 
@@ -355,17 +337,12 @@ typedef struct {
 
 typedef struct {
     double _field1;
-    _Bool _field2;
-    _Bool _field3;
+    double _field2;
+    double _field3;
     _Bool _field4;
-} CDStruct_0714bc26;
-
-typedef struct {
-    double avg;
-    double max;
-    double min;
-    unsigned int count;
-} CDStruct_7ffd488b;
+    _Bool _field5;
+    _Bool _field6;
+} CDStruct_b3408c18;
 
 typedef struct {
     int majorVersion;
@@ -374,6 +351,12 @@ typedef struct {
 } CDStruct_4bb15e50;
 
 // Ambiguous groups
+typedef struct {
+    unsigned int endDate:1;
+    unsigned int startDate:1;
+    unsigned int value:1;
+} CDStruct_2d5b04fb;
+
 typedef struct {
     unsigned int requestType:1;
 } CDStruct_7c66fec0;
@@ -406,6 +389,21 @@ typedef struct shared_ptr<health::DataStore> {
     struct DataStore *__ptr_;
     struct __shared_weak_count *__cntrl_;
 } shared_ptr_88ae0538;
+
+typedef struct unordered_map<long long, HKSource *, std::__1::hash<long long>, std::__1::equal_to<long long>, std::__1::allocator<std::__1::pair<const long long, HKSource *>>> {
+    struct __hash_table<std::__1::__hash_value_type<long long, HKSource *>, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, HKSource *>, std::__1::hash<long long>, true>, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, HKSource *>, std::__1::equal_to<long long>, true>, std::__1::allocator<std::__1::__hash_value_type<long long, HKSource *>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<long long, HKSource *>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<long long, std::__1::__hash_value_type<long long, HKSource *>, std::__1::hash<long long>, true>> {
+            unsigned long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<long long, std::__1::__hash_value_type<long long, HKSource *>, std::__1::equal_to<long long>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+} unordered_map_083ec55b;
 
 typedef struct vector<HDActivityCacheActiveSource, std::__1::allocator<HDActivityCacheActiveSource>> {
     struct HDActivityCacheActiveSource *__begin_;
@@ -455,11 +453,19 @@ typedef struct vector<HDActivityCacheStatisticsBuilderWorkoutSample, std::__1::a
     } __end_cap_;
 } vector_89c96404;
 
-typedef struct vector<long long, std::__1::allocator<long long>> {
-    long long *__begin_;
-    long long *__end_;
-    struct __compressed_pair<long long *, std::__1::allocator<long long>> {
-        long long *__value_;
+typedef struct vector<_HDWrappedSource, std::__1::allocator<_HDWrappedSource>> {
+    struct _HDWrappedSource *__begin_;
+    struct _HDWrappedSource *__end_;
+    struct __compressed_pair<_HDWrappedSource *, std::__1::allocator<_HDWrappedSource>> {
+        struct _HDWrappedSource *__value_;
     } __end_cap_;
-} vector_bbba3654;
+} vector_f9051771;
+
+typedef struct vector<long long, std::__1::allocator<long long>> {
+    long long *_field1;
+    long long *_field2;
+    struct __compressed_pair<long long *, std::__1::allocator<long long>> {
+        long long *_field1;
+    } _field3;
+} vector_d87a6415;
 

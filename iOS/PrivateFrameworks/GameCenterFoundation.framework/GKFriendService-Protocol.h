@@ -9,6 +9,7 @@
 @class GKPlayerInternal;
 
 @protocol GKFriendService <NSObject>
+- (oneway void)getChallengableFriendsForPlayer:(GKPlayerInternal *)arg1 handler:(void (^)(NSArray *, NSError *))arg2;
 - (oneway void)getFriendsForPlayer:(GKPlayerInternal *)arg1 handler:(void (^)(NSArray *, NSError *))arg2;
 @end
 

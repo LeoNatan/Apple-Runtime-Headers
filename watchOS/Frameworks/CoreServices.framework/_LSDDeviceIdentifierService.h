@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
 + (id)XPCInterface;
 + (Class)clientClass;
 + (unsigned short)connectionType;
-+ (void)generateIdentifiersForInstallationWithContext:(struct LSContext *)arg1 bundleUnit:(unsigned int)arg2 bundleData:(const LSBundleData_7942beea *)arg3;
-+ (void)clearIdentifiersForUninstallationWithContext:(struct LSContext *)arg1 bundleUnit:(unsigned int)arg2 bundleData:(const LSBundleData_7942beea *)arg3;
-+ (id)vendorNameForDeviceIdentifiersWithContext:(struct LSContext *)arg1 bundleUnit:(unsigned int)arg2 bundleData:(const LSBundleData_7942beea *)arg3;
++ (void)generateIdentifiersForInstallationWithContext:(struct LSContext *)arg1 bundleUnit:(unsigned int)arg2 bundleData:(const struct LSBundleData *)arg3;
++ (void)clearIdentifiersForUninstallationWithContext:(struct LSContext *)arg1 bundleUnit:(unsigned int)arg2 bundleData:(const struct LSBundleData *)arg3;
++ (id)vendorNameForDeviceIdentifiersWithContext:(struct LSContext *)arg1 bundleUnit:(unsigned int)arg2 bundleData:(const struct LSBundleData *)arg3;
 
 @end
 

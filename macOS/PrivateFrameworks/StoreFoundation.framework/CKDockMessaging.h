@@ -21,7 +21,6 @@
 - (void)loadIconForIdentifier:(id)arg1 fromURL:(id)arg2 storeClient:(id)arg3;
 - (void)loadIconForProductID:(id)arg1 fromURL:(id)arg2 storeClient:(id)arg3;
 - (id)cachedIconPathForProductID:(id)arg1;
-- (void)sendMessageForUpdate:(id)arg1 status:(id)arg2;
 - (void)sendMessageForDownload:(id)arg1 status:(id)arg2;
 - (void)sendDockMessage:(int)arg1;
 - (void)sendInitialMessageForDownload:(id)arg1;

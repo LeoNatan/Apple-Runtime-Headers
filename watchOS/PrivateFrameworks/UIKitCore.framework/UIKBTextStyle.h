@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
     int _alignment;
     float _pathWeight;
     float _fontWeight;
-    int _anchorCorner;
+    unsigned int _anchorCorner;
     int _selector;
     struct CGPoint _textOffset;
     struct CGPoint _etchOffset;
@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 + (id)styleWithFontName:(id)arg1 withFontSize:(float)arg2;
 @property(nonatomic) _Bool ignoreTextMarginOnKey; // @synthesize ignoreTextMarginOnKey=_ignoreTextMarginOnKey;
 @property(nonatomic) int selector; // @synthesize selector=_selector;
-@property(nonatomic) int anchorCorner; // @synthesize anchorCorner=_anchorCorner;
+@property(nonatomic) unsigned int anchorCorner; // @synthesize anchorCorner=_anchorCorner;
 @property(nonatomic) float fontWeight; // @synthesize fontWeight=_fontWeight;
 @property(nonatomic) float pathWeight; // @synthesize pathWeight=_pathWeight;
 @property(nonatomic) struct CGPoint etchOffset; // @synthesize etchOffset=_etchOffset;

@@ -14,6 +14,10 @@
     BOOL _coexEnabled;
     BOOL _tdmEnabled;
     BOOL _hybridEnabled;
+    long long _btAntennaRequestsCount;
+    long long _btAntennaGrantCount;
+    long long _btAntennaGrantDurationMicroseconds;
+    long long _btAbortCount;
     BOOL _antennaRequestedDueToACL;
     BOOL _antennaRequestedDueToSCO;
     BOOL _antennaRequestedDueToeSCO;
@@ -21,25 +25,21 @@
     BOOL _antennaRequestedDueToSniff;
     BOOL _antennaRequestedDueToPageScan;
     BOOL _antennaRequestedDueToInquiryScan;
+    BOOL _antennaRequestedDueToPage;
     BOOL _antennaRequestedDueToInquiry;
     BOOL _antennaRequestedDueToBLE;
     BOOL _antennaRequestedDueToOther;
-    BOOL _antennaRequestedDueToPage;
-    long long _btAntennaRequestsCount;
-    long long _btAntennaGrantCount;
-    long long _btAntennaGrantDurationMicroseconds;
-    long long _btAbortCount;
     long long _psnullRetryCountExceededCount;
     long long _ucodeHighLatencyDetectedCount;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) BOOL antennaRequestedDueToPage; // @synthesize antennaRequestedDueToPage=_antennaRequestedDueToPage;
 @property(nonatomic) long long ucodeHighLatencyDetectedCount; // @synthesize ucodeHighLatencyDetectedCount=_ucodeHighLatencyDetectedCount;
 @property(nonatomic) long long psnullRetryCountExceededCount; // @synthesize psnullRetryCountExceededCount=_psnullRetryCountExceededCount;
 @property(nonatomic) BOOL antennaRequestedDueToOther; // @synthesize antennaRequestedDueToOther=_antennaRequestedDueToOther;
 @property(nonatomic) BOOL antennaRequestedDueToBLE; // @synthesize antennaRequestedDueToBLE=_antennaRequestedDueToBLE;
 @property(nonatomic) BOOL antennaRequestedDueToInquiry; // @synthesize antennaRequestedDueToInquiry=_antennaRequestedDueToInquiry;
+@property(nonatomic) BOOL antennaRequestedDueToPage; // @synthesize antennaRequestedDueToPage=_antennaRequestedDueToPage;
 @property(nonatomic) BOOL antennaRequestedDueToInquiryScan; // @synthesize antennaRequestedDueToInquiryScan=_antennaRequestedDueToInquiryScan;
 @property(nonatomic) BOOL antennaRequestedDueToPageScan; // @synthesize antennaRequestedDueToPageScan=_antennaRequestedDueToPageScan;
 @property(nonatomic) BOOL antennaRequestedDueToSniff; // @synthesize antennaRequestedDueToSniff=_antennaRequestedDueToSniff;

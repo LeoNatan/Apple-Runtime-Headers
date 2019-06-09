@@ -23,6 +23,7 @@
     _SFDialog *_presentedDialog;
 }
 
++ (void)applicationDidEnterBackground;
 @property(readonly, nonatomic) _SFDialog *presentedDialog; // @synthesize presentedDialog=_presentedDialog;
 @property(nonatomic) __weak id <_SFDialogViewControllerPresenting> viewControllerPresenter; // @synthesize viewControllerPresenter=_viewControllerPresenter;
 @property(nonatomic) __weak id <_SFDialogViewPresenting> dialogPresenter; // @synthesize dialogPresenter=_dialogPresenter;

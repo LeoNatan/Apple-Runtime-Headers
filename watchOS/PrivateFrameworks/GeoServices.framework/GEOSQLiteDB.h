@@ -32,11 +32,14 @@
     // Error parsing type: (?="flag"{atomic_flag="_Value"AB}"dummy"i), name: _didTearDown
 }
 
++ (_Bool)renameAllDBFilesFrom:(id)arg1 to:(id)arg2;
++ (id)_findAllDBFilesForURL:(id)arg1 error:(id *)arg2;
 + (id)defaultPragmas;
 - (void).cxx_destruct;
 - (_Bool)writeBlobData:(id)arg1 toTable:(const char *)arg2 column:(const char *)arg3 rowID:(long long)arg4 error:(id *)arg5;
 - (long long)lastInsertRowID;
 - (_Bool)deleteExternalResourceAtURL:(id)arg1 error:(id *)arg2;
+- (_Bool)moveExternalResourceAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 - (_Bool)writeExternalResourceWithData:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 - (_Bool)reportSQLiteErrorCode:(int)arg1 method:(id)arg2 error:(id *)arg3;
 - (id)noCopyBlobForColumn:(int)arg1 inStatment:(struct sqlite3_stmt *)arg2;
@@ -93,6 +96,7 @@
 - (id)description;
 - (id)initWithQueueName:(const char *)arg1 log:(id)arg2 databaseFileURL:(id)arg3 sqliteFlags:(int)arg4 pragmas:(id)arg5 setupBlock:(CDUnknownBlockType)arg6;
 - (id)initWithQueueName:(const char *)arg1 logFacility:(const char *)arg2 dbFilePath:(id)arg3 sqliteFlags:(int)arg4 pragmas:(id)arg5 setupBlock:(CDUnknownBlockType)arg6;
+- (id)init;
 @property(nonatomic) long long user_version;
 @property(readonly, nonatomic) NSDictionary *pragmas;
 @property(readonly, nonatomic) NSObject<OS_os_log> *log;

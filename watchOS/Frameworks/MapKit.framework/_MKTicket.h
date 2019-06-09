@@ -8,7 +8,7 @@
 
 #import <MapKit/MKMapServiceTicket-Protocol.h>
 
-@class GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSError, NSString;
+@class GEOCategorySearchResultSection, GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSError, NSString;
 @protocol GEOMapServiceTicket;
 
 __attribute__((visibility("hidden")))
@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+@property(readonly, nonatomic) GEOCategorySearchResultSection *categorySearchResultSection;
+@property(readonly, nonatomic) NSArray *searchResultSections;
 @property(readonly, nonatomic) NSString *sectionHeader;
 @property(readonly, nonatomic) double requestResponseTime;
 @property(readonly, nonatomic) _Bool showDymSuggestionCloseButton;

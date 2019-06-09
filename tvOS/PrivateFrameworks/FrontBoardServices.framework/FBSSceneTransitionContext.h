@@ -11,21 +11,22 @@
 #import <FrontBoardServices/NSCopying-Protocol.h>
 #import <FrontBoardServices/NSMutableCopying-Protocol.h>
 
-@class BKSAnimationFenceHandle, BSAnimationSettings, BSMutableSettings, BSProcessHandle, FBSceneUpdateContext, NSSet, NSString;
+@class BKSAnimationFenceHandle, BSAnimationSettings, BSMutableSettings, BSProcessHandle, FBSceneUpdateContext, FBWatchdogTransitionContext, NSSet, NSString;
 
 @interface FBSSceneTransitionContext : NSObject <BSXPCCoding, BSDescriptionProviding, NSCopying, NSMutableCopying>
 {
+    FBSceneUpdateContext *_updateContext;
+    FBWatchdogTransitionContext *_watchdogTransitionContext;
+    _Bool _allowCPUThrottling;
     BSAnimationSettings *_animationSettings;
     BKSAnimationFenceHandle *_animationFence;
     NSSet *_actions;
     BSProcessHandle *_originatingProcess;
     BSMutableSettings *_otherSettings;
     BSMutableSettings *_transientLocalClientSettings;
-    FBSceneUpdateContext *_updateContext;
 }
 
 + (id)transitionContext;
-@property(retain, nonatomic) FBSceneUpdateContext *updateContext; // @synthesize updateContext=_updateContext;
 @property(retain, nonatomic) BSProcessHandle *originatingProcess; // @synthesize originatingProcess=_originatingProcess;
 @property(copy, nonatomic) NSSet *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) BKSAnimationFenceHandle *animationFence; // @synthesize animationFence=_animationFence;
@@ -44,6 +45,7 @@
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+- (_Bool)_isEmpty;
 - (id)transientLocalClientSettings;
 - (id)otherSettings;
 - (void)dealloc;
@@ -51,6 +53,8 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) Class superclass;
+@property(retain, nonatomic) FBSceneUpdateContext *updateContext; // @dynamic updateContext;
+@property(retain, nonatomic) FBWatchdogTransitionContext *watchdogTransitionContext; // @dynamic watchdogTransitionContext;
 
 @end
 

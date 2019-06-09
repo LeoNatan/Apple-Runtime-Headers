@@ -6,21 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class HMSetupAccessoryBrowsingRequest, HMSetupAccessoryPayload, NSString;
+@class HMAccessoryOwnershipProof, HMSetupAccessoryBrowsingRequest, HMSetupAccessoryPayload, NSString, NSUUID;
 
 @interface HMAccessorySetupPayload : NSObject
 {
+    _Bool _requiresSetupPayloadURL;
+    _Bool _requiresOwnershipProof;
     HMSetupAccessoryPayload *_internalSetupPayload;
+    NSUUID *_userActivityID;
+    HMAccessoryOwnershipProof *_ownershipProof;
     HMSetupAccessoryBrowsingRequest *_accessoryBrowsingRequest;
     NSString *_suggestedRoomName;
 }
 
+@property(readonly, nonatomic) _Bool requiresOwnershipProof; // @synthesize requiresOwnershipProof=_requiresOwnershipProof;
+@property(readonly, nonatomic) _Bool requiresSetupPayloadURL; // @synthesize requiresSetupPayloadURL=_requiresSetupPayloadURL;
 @property(copy) NSString *suggestedRoomName; // @synthesize suggestedRoomName=_suggestedRoomName;
 @property(retain) HMSetupAccessoryBrowsingRequest *accessoryBrowsingRequest; // @synthesize accessoryBrowsingRequest=_accessoryBrowsingRequest;
+@property(readonly, nonatomic) HMAccessoryOwnershipProof *ownershipProof; // @synthesize ownershipProof=_ownershipProof;
+@property(readonly, nonatomic) NSUUID *userActivityID; // @synthesize userActivityID=_userActivityID;
 @property(retain) HMSetupAccessoryPayload *internalSetupPayload; // @synthesize internalSetupPayload=_internalSetupPayload;
 - (void).cxx_destruct;
 - (_Bool)_parseURLForBrowsingRequest:(id)arg1;
+- (id)updateWithURL:(id)arg1 ownershipProof:(id)arg2;
+- (id)initWithUserActivityID:(id)arg1 requiresOwnershipProof:(_Bool)arg2;
+- (id)initWithURL:(id)arg1 ownershipProof:(id)arg2;
 - (id)initWithURL:(id)arg1;
+- (id)initWithURL:(id)arg1 andOwnershipProof:(id)arg2;
 
 @end
 

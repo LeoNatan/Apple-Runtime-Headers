@@ -16,7 +16,6 @@
 {
 }
 
-+ (id)resolveBookmark:(id)arg1 error:(id *)arg2 isSecurityScoped:(char *)arg3;
 + (id)generateSnoozeAlarmFromAlarm:(id)arg1 onDate:(id)arg2 inManagedObjectContext:(id)arg3;
 + (void)addAlarmPrefetchToCalendarItemFetch:(id)arg1;
 + (id)insertNoneAlarmInManagedObjectContext:(id)arg1;

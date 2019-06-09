@@ -10,6 +10,7 @@
 
 @class NSMapTable, NSString, SKUIAttributedStringView, SKUITextBoxView, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIResponseView : SKUIViewReuseView <SKUIViewElementView>
 {
     SKUITextBoxView *_descriptionView;

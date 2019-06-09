@@ -18,7 +18,8 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 + (id)requestViewControllerWithConnectionHandler:(CDUnknownBlockType)arg1;
-@property(nonatomic) id <MFMailComposeRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <MFMailComposeRemoteViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)bodyFinishedDrawing;
 - (void)serviceCompositionRequestsSendWithBody:(id)arg1 recipients:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)serviceCompositionFinishedWithResult:(long long)arg1 error:(id)arg2;

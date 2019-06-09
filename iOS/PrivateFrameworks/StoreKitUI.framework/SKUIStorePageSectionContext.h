@@ -8,6 +8,7 @@
 
 @class SKUIClientContext, SKUIColorScheme, SKUIItemOfferButtonAppearance, SKUILayoutCache, SKUIMetricsController, SKUIMetricsImpressionSession, SKUIResourceLoader, SKUIStorePageSectionsViewController, UICollectionView, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStorePageSectionContext : NSObject
 {
     SKUIMetricsImpressionSession *_activeMetricsImpressionSession;

@@ -8,5 +8,6 @@
 
 @interface UIScrollView (AKPlatformView_Extensions)
 - (double)akMagnification;
+- (void)_swizzled_scrollViewAnimationEnded:(id)arg1 finished:(_Bool)arg2;
 @end
 

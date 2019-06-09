@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <UIKitCore/_UIFeedbackPlayer-Protocol.h>
+#import <UIKitCore/_UIFeedbackPlayer_Internal-Protocol.h>
 
 @class AVHapticPlayerChannel;
 
 __attribute__((visibility("hidden")))
-@interface _UIFeedbackAVHapticPlayer : NSObject <_UIFeedbackPlayer>
+@interface _UIFeedbackAVHapticPlayer : NSObject <_UIFeedbackPlayer_Internal>
 {
     CDUnknownBlockType _invalidationBlock;
     AVHapticPlayerChannel *_channel;
@@ -22,7 +22,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVHapticPlayerChannel *channel; // @synthesize channel=_channel;
 @property(copy, nonatomic) CDUnknownBlockType invalidationBlock; // @synthesize invalidationBlock=_invalidationBlock;
 - (void).cxx_destruct;
+- (void)_internal_stopFeedbackData:(id)arg1 forFeedback:(id)arg2;
 - (void)_stopFeedback:(id)arg1;
+- (void)_internal_playFeedbackData:(id)arg1 forFeedback:(id)arg2 atTime:(double)arg3;
 - (void)_playFeedback:(id)arg1 atTime:(double)arg2;
 - (void)_updateValueForParameters:(id)arg1 withKey:(id)arg2;
 - (_Bool)isEqual:(id)arg1;

@@ -6,9 +6,11 @@
 
 #import <AccessibilityFoundation/NSObject-Protocol.h>
 
-@class AXFDispatchWorkItem;
+@class AXFDispatchWorkItem, NSObject;
+@protocol OS_dispatch_queue;
 
 @protocol AXFDispatchQueue <NSObject>
+@property(readonly) NSObject<OS_dispatch_queue> *underlyingQueue;
 - (void)executeWorkItemAsynchronously:(AXFDispatchWorkItem *)arg1;
 - (void)executeWorkItemSynchronously:(AXFDispatchWorkItem *)arg1;
 - (void)executeBlockAsynchronously:(void (^)(void))arg1;

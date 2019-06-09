@@ -26,13 +26,13 @@
 
 + (void)addMapItemToContacts:(id)arg1;
 + (id)sharingControllerForPlaceItem:(id)arg1;
-@property(copy) NSArray *items; // @synthesize items=_items;
-@property(copy) NSString *name; // @synthesize name=_name;
-@property(copy) NSURL *mapsURL; // @synthesize mapsURL=_mapsURL;
-@property __weak id <NSSharingServiceDelegate><NSSharingServicePickerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(copy, nonatomic) NSArray *items; // @synthesize items=_items;
+@property(copy, nonatomic) NSString *name; // @synthesize name=_name;
+@property(copy, nonatomic) NSURL *mapsURL; // @synthesize mapsURL=_mapsURL;
+@property(nonatomic) __weak id <NSSharingServiceDelegate><NSSharingServicePickerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (BOOL)_exportVCard;
-@property(copy) NSString *vCardTemporaryPath;
+@property(copy, nonatomic) NSString *vCardTemporaryPath;
 - (id)sharingService:(id)arg1 optionsForItems:(id)arg2;
 - (BOOL)sharingService:(id)arg1 canShareAlternatePDFForItems:(id)arg2;
 - (struct CGRect)sharingService:(id)arg1 opaqueFrameForSourceWindow:(id)arg2;
@@ -47,7 +47,7 @@
 - (void)sharingServicePicker:(id)arg1 didChooseSharingService:(id)arg2;
 - (id)sharingServicePicker:(id)arg1 delegateForSharingService:(id)arg2;
 - (id)sharingServicePicker:(id)arg1 sharingServicesForItems:(id)arg2 proposedSharingServices:(id)arg3;
-@property(readonly) NSSharingServicePicker *picker; // @synthesize picker=_picker;
+@property(readonly, nonatomic) NSSharingServicePicker *picker; // @synthesize picker=_picker;
 - (id)airDropURL;
 - (void)dealloc;
 - (id)initWithPlaceItem:(id)arg1;

@@ -12,6 +12,7 @@
 @property(readonly, copy, nonatomic) NSData *serializedData;
 @property(copy, nonatomic) NSString *body;
 @property(readonly, copy, nonatomic) NSDate *expirationDate;
+- (BOOL)isFromUnsupportedProvider;
 - (BOOL)isValid;
 - (BOOL)isOpaque;
 - (id)initWithSerializedData:(NSData *)arg1;

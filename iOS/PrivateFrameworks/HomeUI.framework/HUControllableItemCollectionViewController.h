@@ -65,8 +65,10 @@
 - (id)collectionView:(id)arg1 targetIndexPathForMoveFromItemAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (_Bool)collectionView:(id)arg1 canMoveItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (_Bool)_isMultiServiceAccessory:(id)arg1;
 - (void)_updateEditingStateForCell:(id)arg1;
 - (id)prepareToPerformToggleActionForItem:(id)arg1 sourceItem:(id)arg2;
+- (id)_childItemsForItem:(id)arg1;
 - (id)_performTapActionForItem:(id)arg1;
 - (_Bool)_hasTapActionForItem:(id)arg1;
 - (id)_visibleCellForItem:(id)arg1;

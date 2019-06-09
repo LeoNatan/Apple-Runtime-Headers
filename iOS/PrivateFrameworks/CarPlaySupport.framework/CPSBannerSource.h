@@ -8,17 +8,18 @@
 
 #import <CarPlaySupport/CPBannerProviding-Protocol.h>
 #import <CarPlaySupport/CPSApplicationStateObserving-Protocol.h>
+#import <CarPlaySupport/CPSBannerItemDelegate-Protocol.h>
 #import <CarPlaySupport/SBUIBannerSource-Protocol.h>
 #import <CarPlaySupport/SBUIBannerTargetManagerObserver-Protocol.h>
 
 @class NSMutableArray, NSString, NSTimer, NSUUID, UIView;
-@protocol CPBannerDelegate, SBUIBannerTarget, SBUIBannerView;
+@protocol CPSBannerSourceDelegate, SBUIBannerTarget, SBUIBannerView;
 
-@interface CPSBannerSource : NSObject <SBUIBannerTargetManagerObserver, CPBannerProviding, SBUIBannerSource, CPSApplicationStateObserving>
+@interface CPSBannerSource : NSObject <CPSBannerItemDelegate, SBUIBannerTargetManagerObserver, CPBannerProviding, SBUIBannerSource, CPSApplicationStateObserving>
 {
     _Bool _applicationActive;
     _Bool _rateLimited;
-    id <CPBannerDelegate> _delegate;
+    id <CPSBannerSourceDelegate> _delegate;
     NSMutableArray *_queuedItems;
     id <SBUIBannerTarget> _bannerTarget;
     UIView<SBUIBannerView> *_displayedBannerView;
@@ -35,7 +36,7 @@
 @property(nonatomic) __weak UIView<SBUIBannerView> *displayedBannerView; // @synthesize displayedBannerView=_displayedBannerView;
 @property(nonatomic) __weak id <SBUIBannerTarget> bannerTarget; // @synthesize bannerTarget=_bannerTarget;
 @property(retain, nonatomic) NSMutableArray *queuedItems; // @synthesize queuedItems=_queuedItems;
-@property(nonatomic) __weak id <CPBannerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <CPSBannerSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)applicationStateMonitor:(id)arg1 didBecomeActive:(_Bool)arg2;
 - (void)_resetLastUserDismissedIdentifierTimerFired:(id)arg1;
@@ -51,6 +52,7 @@
 - (id)peekNextBannerItemForTarget:(id)arg1;
 - (void)bannerTargetManager:(id)arg1 didRemoveTarget:(id)arg2;
 - (void)bannerTargetManager:(id)arg1 didAddTarget:(id)arg2;
+- (void)bannerTappedWithIdentifier:(id)arg1;
 - (void)_flushQueue;
 - (void)_enqueueBannerItem:(id)arg1;
 - (void)postBannerForNavigationAlert:(id)arg1;

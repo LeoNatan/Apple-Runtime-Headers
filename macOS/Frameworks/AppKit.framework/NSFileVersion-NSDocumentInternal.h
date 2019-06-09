@@ -6,7 +6,21 @@
 
 #import <Foundation/NSFileVersion.h>
 
-@interface NSFileVersion (NSDocumentInternal)
+#import <AppKit/BUStarfieldTimelineItem-Protocol.h>
+
+@class NSString;
+
+@interface NSFileVersion (NSDocumentInternal) <BUStarfieldTimelineItem>
++ (void)_finishedWithBackupCollection:(void *)arg1;
++ (void)_getBackupVersionsForURL:(id)arg1 queue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (long long)_compareToVersion:(id)arg1;
+- (unsigned long long)timelineItemType;
+- (id)timelineItemDate;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

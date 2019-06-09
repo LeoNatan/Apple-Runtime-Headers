@@ -12,6 +12,7 @@
 @class AWDAgent, NSMutableDictionary, NSString;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface AnalyticsLaunchpad : NSObject <AnalyticsWorkspaceHealthDelegate, ConfigurableObjectProtocol>
 {
     NSObject<OS_dispatch_queue> *launch_queue;
@@ -37,6 +38,7 @@
 + (void)appendLaunchTime;
 + (void)postLaunchIntervalMetricWithPreviousLaunchTime:(unsigned long long)arg1;
 + (BOOL)launchHealthCheck:(id)arg1;
++ (id)symptomEvaluatorDatabaseContainerPath;
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableDictionary *launchParams; // @synthesize launchParams=_launchParams;

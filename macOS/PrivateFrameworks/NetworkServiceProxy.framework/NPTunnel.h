@@ -6,18 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSMutableDictionary, NSPAppRule, NSUUID, NetworkServiceProxyConnectionStats;
+@class NSDate, NSMutableDictionary, NSPAppRule, NSUUID;
 @protocol NPTunnelDelegate, OS_dispatch_data, OS_nw_endpoint, OS_nw_interface, OS_nw_parameters, OS_nw_path;
 
 @interface NPTunnel : NSObject
 {
     struct nw_protocol _protocol;
-    BOOL _persistMetrics;
+    NSObject<OS_dispatch_data> *_savedData;
+    void *_idleTimer;
     BOOL _isTFOProbeSucceeded;
     BOOL _isCancelled;
     BOOL _isReadyForData;
     BOOL _eof;
     BOOL _handledDisconnected;
+    BOOL _disableIdleTimeout;
     int _error;
     NSUUID *_identifier;
     NSObject<OS_nw_parameters> *_parameters;
@@ -28,45 +30,37 @@
     NSMutableDictionary *_flows;
     NSPAppRule *_appRule;
     NSDate *_connectionStartDate;
-    NetworkServiceProxyConnectionStats *_stats;
-    double _timeIntervalSinceLastUsage;
     double _timeToFirstRequest;
     double _timeToFirstByte;
     long long _connectionState;
     long long _fallbackReason;
     unsigned long long *_timestamps;
-    NSObject<OS_dispatch_data> *_savedData;
-    void *_idleTimer;
 }
 
 + (void)initializeProtocol;
-@property BOOL handledDisconnected; // @synthesize handledDisconnected=_handledDisconnected;
-@property void *idleTimer; // @synthesize idleTimer=_idleTimer;
-@property(retain) NSObject<OS_dispatch_data> *savedData; // @synthesize savedData=_savedData;
-@property BOOL eof; // @synthesize eof=_eof;
-@property BOOL isReadyForData; // @synthesize isReadyForData=_isReadyForData;
-@property BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
-@property(readonly) BOOL isTFOProbeSucceeded; // @synthesize isTFOProbeSucceeded=_isTFOProbeSucceeded;
-@property(readonly) unsigned long long *timestamps; // @synthesize timestamps=_timestamps;
-@property long long fallbackReason; // @synthesize fallbackReason=_fallbackReason;
-@property int error; // @synthesize error=_error;
-@property long long connectionState; // @synthesize connectionState=_connectionState;
-@property double timeToFirstByte; // @synthesize timeToFirstByte=_timeToFirstByte;
-@property double timeToFirstRequest; // @synthesize timeToFirstRequest=_timeToFirstRequest;
-@property(readonly) double timeIntervalSinceLastUsage; // @synthesize timeIntervalSinceLastUsage=_timeIntervalSinceLastUsage;
-@property(retain) NetworkServiceProxyConnectionStats *stats; // @synthesize stats=_stats;
-@property BOOL persistMetrics; // @synthesize persistMetrics=_persistMetrics;
-@property(retain) NSDate *connectionStartDate; // @synthesize connectionStartDate=_connectionStartDate;
-@property(readonly) NSPAppRule *appRule; // @synthesize appRule=_appRule;
-@property(readonly) NSMutableDictionary *flows; // @synthesize flows=_flows;
-@property(readonly) __weak id <NPTunnelDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain) NSObject<OS_nw_path> *path; // @synthesize path=_path;
-@property(retain) NSObject<OS_nw_endpoint> *localEndpoint; // @synthesize localEndpoint=_localEndpoint;
-@property(readonly) NSObject<OS_nw_endpoint> *endpoint; // @synthesize endpoint=_endpoint;
-@property(readonly) NSObject<OS_nw_parameters> *parameters; // @synthesize parameters=_parameters;
-@property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) BOOL disableIdleTimeout; // @synthesize disableIdleTimeout=_disableIdleTimeout;
+@property(nonatomic) BOOL handledDisconnected; // @synthesize handledDisconnected=_handledDisconnected;
+@property(nonatomic) BOOL eof; // @synthesize eof=_eof;
+@property(readonly, nonatomic) BOOL isReadyForData; // @synthesize isReadyForData=_isReadyForData;
+@property(nonatomic) BOOL isCancelled; // @synthesize isCancelled=_isCancelled;
+@property(readonly, nonatomic) BOOL isTFOProbeSucceeded; // @synthesize isTFOProbeSucceeded=_isTFOProbeSucceeded;
+@property(readonly, nonatomic) unsigned long long *timestamps; // @synthesize timestamps=_timestamps;
+@property(nonatomic) long long fallbackReason; // @synthesize fallbackReason=_fallbackReason;
+@property(nonatomic) int error; // @synthesize error=_error;
+@property(nonatomic) long long connectionState; // @synthesize connectionState=_connectionState;
+@property(nonatomic) double timeToFirstByte; // @synthesize timeToFirstByte=_timeToFirstByte;
+@property(nonatomic) double timeToFirstRequest; // @synthesize timeToFirstRequest=_timeToFirstRequest;
+@property(retain, nonatomic) NSDate *connectionStartDate; // @synthesize connectionStartDate=_connectionStartDate;
+@property(readonly, nonatomic) NSPAppRule *appRule; // @synthesize appRule=_appRule;
+@property(readonly, nonatomic) NSMutableDictionary *flows; // @synthesize flows=_flows;
+@property(readonly, nonatomic) __weak id <NPTunnelDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) NSObject<OS_nw_path> *path; // @synthesize path=_path;
+@property(retain, nonatomic) NSObject<OS_nw_endpoint> *localEndpoint; // @synthesize localEndpoint=_localEndpoint;
+@property(readonly, nonatomic) NSObject<OS_nw_endpoint> *endpoint; // @synthesize endpoint=_endpoint;
+@property(readonly, nonatomic) NSObject<OS_nw_parameters> *parameters; // @synthesize parameters=_parameters;
+@property(readonly, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-@property(readonly) NSObject<OS_nw_interface> *outputInterface;
+@property(readonly, nonatomic) NSObject<OS_nw_interface> *outputInterface;
 - (void)teardownOutputHandler;
 - (void)destroyConnection;
 - (void)cancelConnection;
@@ -82,14 +76,15 @@
 - (BOOL)flowIsFirstFlow:(id)arg1;
 - (void)handleFlowUsedTunnel;
 - (BOOL)start;
-@property(readonly) BOOL isConnectionAlive;
+@property(readonly, nonatomic) BOOL isConnectionAlive;
 - (unsigned long long)maxDataSendSizeForFlow:(id)arg1;
 - (id)createConnectionInfo;
-@property(readonly) unsigned long long initialWindowSize;
-@property(readonly) BOOL canHandleMoreData;
+@property(readonly, nonatomic) unsigned long long initialWindowSize;
+@property(readonly, nonatomic) BOOL canHandleMoreData;
 - (void)handleFallbackForFlow:(id)arg1;
 - (void)handleCanHandleMoreData;
 - (void)handleDisconnected;
+- (void)handleReady;
 - (void)handleConnected;
 - (void)acknowledgeData:(unsigned long long)arg1 sentToFlow:(id)arg2;
 - (void)sendData:(id)arg1 toClientFlow:(unsigned long long)arg2;
@@ -102,7 +97,7 @@
 - (void)startIdleTimer;
 - (unsigned long long)allocateFlowID;
 - (BOOL)addNewFlow:(id)arg1;
-@property(readonly) struct nw_protocol *protocol;
+@property(readonly, nonatomic) struct nw_protocol *protocol;
 - (void)dealloc;
 - (id)initWithEndpoint:(id)arg1 parameters:(id)arg2 appRule:(id)arg3 flowProperties:(id)arg4 delegate:(id)arg5;
 

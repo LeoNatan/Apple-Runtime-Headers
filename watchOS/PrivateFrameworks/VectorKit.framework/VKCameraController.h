@@ -9,18 +9,21 @@
 #import <VectorKit/VKCameraController-Protocol.h>
 
 @class GEOMapRegion, NSString, VKCamera;
-@protocol MDRenderTarget, VKCameraControllerDelegate;
+@protocol MDRenderTarget, VKMapViewCameraDelegate;
 
 __attribute__((visibility("hidden")))
 @interface VKCameraController : NSObject <VKCameraController>
 {
     VKCamera *_camera;
     id <MDRenderTarget> _canvas;
-    id <VKCameraControllerDelegate> _delegate;
+    id <VKMapViewCameraDelegate> _cameraDelegate;
     _Bool _gesturing;
     unsigned int _regionChangeCount;
     _Bool _inProgressRegionChangeIsAnimated;
     struct VKEdgeInsets _edgeInsets;
+    struct MapDataAccess *_mapDataAccess;
+    struct AnimationRunner *_animationRunner;
+    struct RunLoopController *_runLoopController;
     _Bool _staysCenteredDuringPinch;
     _Bool _staysCenteredDuringRotation;
     _Bool _isPitchEnabled;
@@ -28,6 +31,9 @@ __attribute__((visibility("hidden")))
     _Bool _allowDatelineWraparound;
 }
 
+@property(readonly, nonatomic) struct RunLoopController *runLoopController; // @synthesize runLoopController=_runLoopController;
+@property(readonly, nonatomic) struct AnimationRunner *animationRunner; // @synthesize animationRunner=_animationRunner;
+@property(readonly, nonatomic) struct MapDataAccess *mapDataAccess; // @synthesize mapDataAccess=_mapDataAccess;
 @property(nonatomic) _Bool allowDatelineWraparound; // @synthesize allowDatelineWraparound=_allowDatelineWraparound;
 @property(nonatomic) _Bool isRotateEnabled; // @synthesize isRotateEnabled=_isRotateEnabled;
 @property(nonatomic) _Bool isPitchEnabled; // @synthesize isPitchEnabled=_isPitchEnabled;
@@ -72,7 +78,6 @@ __attribute__((visibility("hidden")))
 - (Matrix_443f5d51)cursorFromScreenPoint:(struct CGPoint)arg1;
 - (struct CGPoint)scaledScreenPointForPoint:(struct CGPoint)arg1;
 - (struct CGPoint)centerScreenPoint;
-- (id)detailedDescriptionDictionaryRepresentation;
 - (id)detailedDescription;
 - (void)checkAndResetRegionChangeCount;
 - (_Bool)isChangingRegion;
@@ -82,13 +87,14 @@ __attribute__((visibility("hidden")))
 - (void)canvasDidLayout;
 - (void)setGesturing:(_Bool)arg1;
 - (_Bool)isGesturing;
-- (void)setDelegate:(id)arg1;
-- (id)delegate;
+- (void)setCameraDelegate:(id)arg1;
+- (id)cameraDelegate;
 - (void)setCanvas:(id)arg1;
 - (id)canvas;
 - (id)camera;
 - (void)setCamera:(id)arg1;
 - (void)dealloc;
+- (id)initWithMapDataAccess:(struct MapDataAccess *)arg1 animationRunner:(struct AnimationRunner *)arg2 runLoopController:(struct RunLoopController *)arg3 cameraDelegate:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

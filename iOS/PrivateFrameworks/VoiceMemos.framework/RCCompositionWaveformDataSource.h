@@ -34,6 +34,7 @@
 - (void)waveformDataSource:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (void)waveformDataSourceDidFinishLoading:(id)arg1;
 - (void)waveformGeneratorDidFinishLoading:(id)arg1 error:(id)arg2;
+- (_Bool)shouldMergeLiveWaveform;
 - (CDStruct_73a5d3ca)timeRangeToHighlight;
 - (id)saveableWaveform;
 - (double)duration;

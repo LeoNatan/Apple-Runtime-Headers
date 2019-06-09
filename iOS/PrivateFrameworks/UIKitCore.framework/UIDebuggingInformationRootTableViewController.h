@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)viewWillAppear:(_Bool)arg1;
 - (id)initWithStyle:(long long)arg1;
 
 @end

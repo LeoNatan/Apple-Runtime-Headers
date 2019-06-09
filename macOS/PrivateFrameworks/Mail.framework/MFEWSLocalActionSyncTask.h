@@ -10,7 +10,7 @@
 #import <Mail/MFEWSMessageActionSyncOperationDelegate-Protocol.h>
 #import <Mail/MFEWSPersistActionResultsOperationDelegate-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString;
+@class ECLocalMessageActionResults, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface MFEWSLocalActionSyncTask : MFEWSTask <MFEWSGetNewMessageActionsOperationDelegate, MFEWSMessageActionSyncOperationDelegate, MFEWSPersistActionResultsOperationDelegate>
 {
@@ -19,20 +19,23 @@
     BOOL _actionOperationRunning;
     BOOL _needToCheckForActions;
     BOOL _needToPersistResults;
+    ECLocalMessageActionResults *_resultsToPersist;
 }
 
+@property(retain, nonatomic) ECLocalMessageActionResults *resultsToPersist; // @synthesize resultsToPersist=_resultsToPersist;
 @property(nonatomic) BOOL needToPersistResults; // @synthesize needToPersistResults=_needToPersistResults;
 @property(nonatomic) BOOL needToCheckForActions; // @synthesize needToCheckForActions=_needToCheckForActions;
 @property(nonatomic) BOOL actionOperationRunning; // @synthesize actionOperationRunning=_actionOperationRunning;
 - (void).cxx_destruct;
 - (void)_createProgressForAction:(id)arg1;
-- (void)persistActionResultsOperationCompleted:(id)arg1;
-- (void)messageActionSyncOperationCompleted:(id)arg1;
-- (void)getNewMessageActionsOperation:(id)arg1 didFetchActions:(id)arg2;
+- (void)persistActionResultsOperationCompleted:(id)arg1 needToReplayAction:(BOOL)arg2;
+- (void)messageActionSyncOperationCompleted:(id)arg1 results:(id)arg2;
+- (void)getNewMessageActionsOperation:(id)arg1 didGetActions:(id)arg2;
 - (void)end;
 - (id)nextPersistenceOperation;
 - (id)nextNetworkOperation;
 - (void)recalculatePriorities;
+- (void)addLocalAction:(id)arg1;
 - (void)checkForNewMessageActions;
 - (id)init;
 - (id)initWithAccountName:(id)arg1;

@@ -6,21 +6,25 @@
 
 #import <MediaPlayer/MPAVController.h>
 
-@class MPAVItem, MPCPlaybackEngine, NSObject;
+@class MPAVItem, MPCPlaybackEngine, NSMutableSet, NSObject;
 @protocol OS_dispatch_queue;
 
 @interface _MPCAVController : MPAVController
 {
     NSObject<OS_dispatch_queue> *_unboostedAudioSessionQueue;
+    _Bool _playedSuccessfully;
     _Bool _allowsNewPlaybackErrorItem;
     MPCPlaybackEngine *_playbackEngine;
     MPAVItem *_firstPlaybackErrorItem;
+    NSMutableSet *_failedItemsIdentifiers;
 }
 
 + (_Bool)prefersApplicationAudioSession;
 + (Class)playlistManagerClass;
-@property(retain, nonatomic) MPAVItem *firstPlaybackErrorItem; // @synthesize firstPlaybackErrorItem=_firstPlaybackErrorItem;
+@property(retain, nonatomic) NSMutableSet *failedItemsIdentifiers; // @synthesize failedItemsIdentifiers=_failedItemsIdentifiers;
+@property(nonatomic) __weak MPAVItem *firstPlaybackErrorItem; // @synthesize firstPlaybackErrorItem=_firstPlaybackErrorItem;
 @property(nonatomic) _Bool allowsNewPlaybackErrorItem; // @synthesize allowsNewPlaybackErrorItem=_allowsNewPlaybackErrorItem;
+@property(nonatomic, getter=hasPlayedSuccessfully) _Bool playedSuccessfully; // @synthesize playedSuccessfully=_playedSuccessfully;
 @property(readonly, nonatomic) __weak MPCPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 - (void).cxx_destruct;
 - (void)_playbackUserDefaultsEQPresetDidChangeNotification:(id)arg1;
@@ -31,14 +35,15 @@
 - (void)_contentsChanged;
 - (void)_connectAVPlayer;
 - (void)_configureAudioSession;
+- (void)playbackHasStartedForItem:(id)arg1;
+- (void)handlePlaybackErrorWithUserInfo:(id)arg1;
 - (void)_networkPolicyItemCellularRestrictedNotification:(id)arg1;
-- (void)_playbackErrorNotification:(id)arg1;
 - (void)updateAudioSession;
-- (void)addPlaybackContext:(id)arg1 toQueueWithInsertionType:(int)arg2 completionHandler:(CDUnknownBlockType)arg3;
-@property(readonly, nonatomic) int upNextItemCount;
 - (void)setShuffleType:(int)arg1;
 - (void)setRepeatType:(int)arg1;
+- (void)endPlayback;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)initWithPlaybackEngine:(id)arg1 options:(unsigned int)arg2;
 - (id)initWithPlaybackEngine:(id)arg1;
 
 @end

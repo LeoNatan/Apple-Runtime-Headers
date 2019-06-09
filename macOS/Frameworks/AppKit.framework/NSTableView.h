@@ -18,9 +18,7 @@
 {
     NSTableHeaderView *_headerView;
     NSView *_cornerView;
-    NSMutableArray *_tableColumns;
     NSCell *_editingCell;
-    id _delegate;
     id _dataSource;
     struct CGSize _intercellSpacing;
     double _rowHeight;
@@ -62,6 +60,8 @@
         unsigned int allowsColumnResizing:1;
         unsigned int allowsColumnReordering:1;
     } _tvFlags;
+    id _delegate;
+    NSMutableArray *_tableColumns;
     id _reserved;
 }
 
@@ -77,6 +77,7 @@
 + (id)_sourceListBackgroundInnerEdgeColor;
 + (BOOL)_logErrorForNonStringIdentifier;
 + (BOOL)_prefersCellUserInterfaceLayoutDirection;
++ (BOOL)_controlClassSupportsNoCell;
 + (BOOL)isCompatibleWithResponsiveScrolling;
 + (BOOL)accessibilityIsSingleCelled;
 - (void).cxx_destruct;
@@ -153,6 +154,8 @@
 - (void)viewDidMoveToSuperview;
 - (BOOL)_needsRedisplayOnFrameChange;
 - (void)setFrameSize:(struct CGSize)arg1;
+- (void)_fixupAutoresizingMaskIfNecessary;
+- (void)setAutoresizingMask:(unsigned long long)arg1;
 - (struct CGRect)_visibleRectPastLastRow;
 - (void)_animatingCompleted;
 - (void)resizeWithOldSuperviewSize:(struct CGSize)arg1;
@@ -487,6 +490,7 @@
 - (BOOL)_editingIsPossibleForColumn:(long long)arg1 row:(long long)arg2 ignoringSelection:(BOOL)arg3;
 - (BOOL)_isFullWidthCellAtRow:(long long)arg1;
 - (unsigned long long)_hitTestForEvent:(id)arg1 atColumn:(long long)arg2 row:(long long)arg3;
+- (id)hitTest:(struct CGPoint)arg1;
 - (BOOL)canDragRowsWithIndexes:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (BOOL)_viewCanDragRowsWithIndexes:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (BOOL)_cellCanDragRowsWithIndexes:(id)arg1 atPoint:(struct CGPoint)arg2;
@@ -608,8 +612,6 @@
 - (BOOL)_canInheritContainingVisualEffectView;
 - (void)_setupBottomFillerView:(id)arg1 forRow:(long long)arg2;
 - (void)_updateAlternatingRowColorsForBottomFillerView:(id)arg1 forRow:(long long)arg2;
-- (BOOL)shouldSetFontSmoothingBackgroundColor;
-- (id)fontSmoothingBackgroundColor;
 - (void)_removeBackgroundView;
 - (void)viewDidChangeEffectiveAppearance;
 - (struct CGRect)_backgroundViewFillerFrame;
@@ -720,14 +722,12 @@
 - (void)_getSourceListColorFor:(int)arg1 startColor:(id *)arg2 endColor:(id *)arg3 bottomColor:(id *)arg4;
 - (void)drawRowsInRange:(struct _NSRange)arg1 clipRect:(struct CGRect)arg2;
 - (void)drawRowIndexes:(id)arg1 clipRect:(struct CGRect)arg2;
-- (BOOL)_setSelectedFontReferenceColorForRow:(long long)arg1;
 - (BOOL)_isGroupRow:(long long)arg1;
 - (BOOL)_shouldCacheGroupRows;
 - (BOOL)_hasGroupRows;
 - (void)_drawContextMenuHighlightForIndexes:(id)arg1 clipRect:(struct CGRect)arg2;
 - (void)drawRow:(long long)arg1 clipRect:(struct CGRect)arg2;
 - (void)_drawRowBackgroundForRow:(long long)arg1 clipRect:(struct CGRect)arg2;
-- (void)_setFontSmoothingBackgroundColorForCapturingImage;
 - (BOOL)_funnelRowBackgroundDrawingThroughDrawRect;
 - (BOOL)_isPropertyListTable;
 - (struct CGRect)overlayBounds;
@@ -743,7 +743,6 @@
 - (void)_drawBackgroundForGroupRow:(long long)arg1 clipRect:(struct CGRect)arg2 isButtedUpRow:(BOOL)arg3;
 - (void)_adjustDrawingTestFrame:(struct CGRect *)arg1 atRow:(long long)arg2 column:(long long)arg3;
 - (void)_drawContentsAtRow:(long long)arg1 column:(long long)arg2 withCellFrame:(struct CGRect)arg3;
-- (BOOL)_callDrawHighlight;
 - (BOOL)_shouldHighlightRows;
 - (void)_setEnabledAttributesOnCell:(id)arg1;
 - (void)_drawContentsAtRow:(long long)arg1 column:(long long)arg2 clipRect:(struct CGRect)arg3;
@@ -888,6 +887,8 @@
 - (void)_invalidateCachedColumnForced:(BOOL)arg1;
 - (struct CGRect)_oldRectOfColumn:(long long)arg1;
 - (double)_widthOfColumn:(long long)arg1;
+- (struct CGRect)_unobstructedVisibleRectOfColumn:(long long)arg1;
+- (BOOL)_shouldHeaderShowSeparatorForColumn:(long long)arg1;
 - (void)resignKeyWindow;
 - (void)becomeKeyWindow;
 - (void)_invalidateForKeyChange;
@@ -961,37 +962,6 @@
 - (BOOL)_delegateAndDatasourceIvarCanBeOpaque;
 - (BOOL)_delegateAndDatasourceCanBeWeak;
 - (id)designatedFocusRingView;
-- (BOOL)_shouldHeaderShowSeparatorForColumn:(long long)arg1;
-- (void)_drawRowHeaderSeparatorInClipRect:(struct CGRect)arg1;
-- (id)_rowHeaderSeparatorLineColor;
-- (void)_drawRowHeaderBackgroundInRect:(struct CGRect)arg1;
-- (BOOL)_drawRowHeaderSeparatorAsSurface;
-- (void)_viewDidEndLiveResize_handleRowHeaderSurfaces;
-- (void)_viewWillStartLiveResize_handleRowHeaderSurfaces;
-- (struct CGRect)_surfaceBounds;
-- (struct CGRect)_rowHeaderShadowSurfaceBounds;
-- (id)_rowHeaderShadowSurface;
-- (BOOL)_rowHeaderShadowSurfaceIsShowing;
-- (void)_sizeRowHeaderToFitIfNecessary;
-- (id)hitTest:(struct CGPoint)arg1;
-- (void)_unregisterForClipBoundsDidChangeNotificationIfNecessaryForSuperview:(id)arg1 force:(BOOL)arg2;
-- (void)_registerForClipBoundsDidChangeNotificationIfNecessaryForSuperview:(id)arg1;
-- (void)_clipViewBoundsChanged:(id)arg1;
-- (void)willRemoveSubview:(id)arg1;
-- (BOOL)_cachingView;
-- (void)_endDrawView:(id)arg1;
-- (void)_beginDrawView:(id)arg1;
-- (BOOL)_drawView:(id)arg1;
-- (struct CGRect)_unobstructedVisibleRectOfColumn:(long long)arg1;
-- (struct CGRect)_rowHeaderScrollableContentVisibleRect;
-- (struct CGRect)_rowHeaderFixedContentRect;
-- (void)_getRowHeaderFixedContentRect:(struct CGRect *)arg1 rowHeaderScrollableContentVisibleRect:(struct CGRect *)arg2;
-- (BOOL)_isRowHeaderColumn:(long long)arg1;
-- (long long)_rowHeaderColumn;
-- (BOOL)_hasRowHeaderColumn;
-- (id)_rowHeaderTableColumn;
-- (void)_setRowHeaderTableColumn:(id)arg1;
-- (void)_setRowHeaderTableColumn:(id)arg1 repositionTableColumnIfNecessary:(BOOL)arg2;
 - (id)deepestAccessibilityDescendants;
 - (id)accessibilityAuditPotentialChildren;
 - (void)_accessibilityUnregisterCellsOfTableColumn:(id)arg1;

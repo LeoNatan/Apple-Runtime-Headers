@@ -6,18 +6,17 @@
 
 #import <NeutrinoCore/NUSourceDefinition.h>
 
-@class NUMultipleSourceDefinition;
-
 @interface NULivePhotoSourceDefinition : NUSourceDefinition
 {
-    NUMultipleSourceDefinition *_image;
-    NUMultipleSourceDefinition *_video;
+    NUSourceDefinition *_image;
+    NUSourceDefinition *_video;
 }
 
-@property(readonly) NUMultipleSourceDefinition *video; // @synthesize video=_video;
-@property(readonly) NUMultipleSourceDefinition *image; // @synthesize image=_image;
+@property(readonly) NUSourceDefinition *video; // @synthesize video=_video;
+@property(readonly) NUSourceDefinition *image; // @synthesize image=_image;
 - (void).cxx_destruct;
-- (id)initWithMultipleResolutionImageSourceDefinition:(id)arg1 videoSourceDefinition:(id)arg2;
+- (id)description;
+- (long long)mediaType;
 - (id)initWithImageSourceDefinition:(id)arg1 videoSourceDefinition:(id)arg2;
 - (id)init;
 - (id)sourceContainerNodeWithIdentifier:(id)arg1 error:(out id *)arg2;

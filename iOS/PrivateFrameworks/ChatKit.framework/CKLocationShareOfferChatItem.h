@@ -18,12 +18,16 @@
 @property(retain, nonatomic) FMFLocation *lastKnownLocation; // @synthesize lastKnownLocation=_lastKnownLocation;
 - (void).cxx_destruct;
 - (id)_desaturatedImageForImage:(id)arg1;
+- (_Bool)shouldUpdatePreviewWithLocation:(id)arg1 lastKnownLocation:(id)arg2 previewURL:(id)arg3;
 - (void)_handleLocationDidChangeNotification:(id)arg1;
+- (id)modificationDateForPreview:(id)arg1;
 - (id)savedPreviewFromURL:(id)arg1;
 - (void)savePreview:(id)arg1 toURL:(id)arg2;
 - (id)_generatePlaceholderThumbnailFillToSize:(struct CGSize)arg1;
 - (id)_generateThumbnailFillToSize:(struct CGSize)arg1 contentAlignmentInsets:(struct UIEdgeInsets)arg2 withCoordinate:(struct CLLocationCoordinate2D)arg3 forState:(long long)arg4;
 - (void)_generateMapPreview;
+- (id)previewURLForWidth:(unsigned long long)arg1;
+- (id)previewURL;
 - (id)_previewCacheKey:(unsigned long long)arg1;
 - (id)previewForWidth:(double)arg1 orientation:(BOOL)arg2;
 @property(readonly, nonatomic) __weak NSString *locationText;

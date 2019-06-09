@@ -29,15 +29,14 @@
 - (id)_complicationsForegroundColor;
 - (id)_tapHighlightImage;
 - (void)_faceViewWasTapped;
-- (void)_backlightDidTurnOff;
+- (void)handleScreenBlanked;
 - (void)videoDidBeginPlayingQueuedVideo;
 - (void)videoDidFinishPlayingToEnd;
 - (void)_handleEitherScreenWake;
 - (void)_customizeVideoPlayerOnSetup;
 - (void)customizeFaceViewForListing:(id)arg1 changeEvent:(unsigned long long)arg2 animated:(_Bool)arg3;
 - (void)_applyOption:(id)arg1 forCustomEditMode:(long long)arg2 slot:(id)arg3;
-- (void)_prepareTimeViewForReuse:(id)arg1;
-- (void)_configureReusableTimeView:(id)arg1;
+- (void)_configureTimeView:(id)arg1;
 
 @end
 

@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     NSData *_index;
 }
 
-@property(retain, nonatomic) NSData *index; // @synthesize index=_index;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -25,8 +25,10 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSData *index;
 @property(readonly, nonatomic) _Bool hasIndex;
 
 @end

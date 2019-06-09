@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIViewController.h>
 
-@class NSArray, NSMutableArray;
+@class NSArray, NSMutableArray, NSURL;
 @protocol UIDocumentPickerDelegate;
 
 @interface UIDocumentPickerViewController : UIViewController
@@ -15,16 +15,20 @@
     NSMutableArray *_securityScopedURLs;
     _Bool _ignoreApplicationEntitlementForImport;
     _Bool _allowsMultipleSelection;
-    _Bool _sourceIsManaged;
+    _Bool _isContentManaged;
     id <UIDocumentPickerDelegate> _delegate;
     unsigned int _documentPickerMode;
+    NSURL *_directoryURL;
+    NSArray *_documentTypes;
     UIViewController *_childViewController;
     NSArray *_uploadURLs;
 }
 
-@property(nonatomic, getter=_sourceIsManaged, setter=_setSourceIsManaged:) _Bool sourceIsManaged; // @synthesize sourceIsManaged=_sourceIsManaged;
+@property(nonatomic, getter=_isContentManaged, setter=_setIsContentManaged:) _Bool isContentManaged; // @synthesize isContentManaged=_isContentManaged;
 @property(copy, nonatomic) NSArray *uploadURLs; // @synthesize uploadURLs=_uploadURLs;
 @property(retain, nonatomic, getter=_childViewController, setter=_setChildViewController:) UIViewController *childViewController; // @synthesize childViewController=_childViewController;
+@property(copy, nonatomic) NSArray *documentTypes; // @synthesize documentTypes=_documentTypes;
+@property(copy, nonatomic) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
 @property(nonatomic) _Bool allowsMultipleSelection; // @synthesize allowsMultipleSelection=_allowsMultipleSelection;
 @property(nonatomic) unsigned int documentPickerMode; // @synthesize documentPickerMode=_documentPickerMode;
 @property(nonatomic) __weak id <UIDocumentPickerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -36,11 +40,17 @@
 - (void)_callDelegateWithSelectedURLsAndDismiss:(id)arg1;
 - (void)_tellDelegateDocumentPickerWasCancelled;
 - (void)dealloc;
+- (void)dismissViewControllerAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)viewDidDisappear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+@property(nonatomic, getter=_sourceIsManaged, setter=_setSourceIsManaged:) _Bool sourceIsManaged; // @dynamic sourceIsManaged;
 - (void)_commonInitWithDocumentTypes:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)_initWithViewController:(id)arg1 inMode:(unsigned int)arg2 uploadURLOrNil:(id)arg3;
 - (id)_initIgnoringApplicationEntitlementForImportOfTypes:(id)arg1;
+@property(nonatomic) unsigned int pickerUserInterfaceStyle;
+@property(nonatomic) _Bool shouldShowFileExtensions;
 - (id)initWithURLs:(id)arg1 inMode:(unsigned int)arg2;
 - (id)initWithURL:(id)arg1 inMode:(unsigned int)arg2;
 - (id)initWithCoder:(id)arg1;

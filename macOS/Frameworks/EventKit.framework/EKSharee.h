@@ -34,7 +34,8 @@
 @property(readonly, nonatomic) NSManagedObjectID *managedObjectID;
 - (void).cxx_destruct;
 - (id)ABPersonInAddressBook:(id)arg1;
-@property(readonly, nonatomic) NSPredicate *contactPredicate;
+- (id)existingContact;
+- (id)newContact;
 @property(nonatomic) unsigned long long shareeAccessLevel;
 @property(nonatomic) unsigned long long shareeStatus;
 @property(readonly, nonatomic) NSString *phoneNumber;
@@ -51,6 +52,9 @@
 - (id)backingSharee;
 - (id)initWithObject:(id)arg1 createPartialBackingObject:(BOOL)arg2 keepBackingObject:(BOOL)arg3 preFrozenRelationshipObjects:(id)arg4 additionalFrozenProperties:(id)arg5;
 - (id)initWithName:(id)arg1 url:(id)arg2;
+- (id)lastName;
+- (id)firstName;
+@property(readonly, nonatomic) NSPredicate *contactPredicate; // @dynamic contactPredicate;
 
 // Remaining properties
 @property(readonly, nonatomic) BOOL canBeConvertedToFullObject;

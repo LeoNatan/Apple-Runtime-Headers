@@ -6,11 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-@class NSLayoutConstraint, PUSearchResultsIndexingProgressView, UIButton, UILabel;
+#import <PhotosUI/PXSettingsKeyObserver-Protocol.h>
+
+@class NSLayoutConstraint, NSString, PUSearchResultsIndexingProgressView, UIButton, UILabel;
 @protocol PUSearchResultsFooterViewDelegate;
 
 __attribute__((visibility("hidden")))
-@interface PUSearchResultsFooterView : UIView
+@interface PUSearchResultsFooterView : UIView <PXSettingsKeyObserver>
 {
     id <PUSearchResultsFooterViewDelegate> _delegate;
     UILabel *_noResultsLabel;
@@ -37,6 +39,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UILabel *noResultsLabel; // @synthesize noResultsLabel=_noResultsLabel;
 @property(nonatomic) __weak id <PUSearchResultsFooterViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)settings:(id)arg1 changedValueForKey:(id)arg2;
+- (void)_updateTapRadarConstraints;
 - (void)_didSelectTapToRadarButton:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (struct CGSize)minimumSize;
@@ -45,6 +49,12 @@ __attribute__((visibility("hidden")))
 - (void)showNoResultsContentForString:(id)arg1 suggestionsVisible:(_Bool)arg2;
 @property(nonatomic, getter=isIndexingViewHidden) _Bool indexingViewHidden;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -9,18 +9,19 @@
 #import <FrontBoardServices/BSDescriptionProviding-Protocol.h>
 #import <FrontBoardServices/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSString, RBSProcessIdentity;
 
 @interface FBSSceneClientIdentity : NSObject <NSCopying, BSDescriptionProviding>
 {
     _Bool _local;
-    NSString *_bundleIdentifier;
+    RBSProcessIdentity *_processIdentity;
 }
 
++ (id)identityForProcessIdentity:(id)arg1;
 + (id)identityForBundleID:(id)arg1;
 + (id)localIdentity;
+@property(readonly, copy, nonatomic) RBSProcessIdentity *processIdentity; // @synthesize processIdentity=_processIdentity;
 @property(readonly, nonatomic, getter=isLocal) _Bool local; // @synthesize local=_local;
-@property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
@@ -30,7 +31,9 @@
 - (_Bool)isEqual:(id)arg1;
 @property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithBundleID:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *bundleIdentifier;
+- (id)_init;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -18,9 +18,9 @@
     id <SFFeedbackListener> _feedbackDelegate;
 }
 
-@property __weak id <SFFeedbackListener> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
-@property(retain) UIViewController *viewControllerForPresenting; // @synthesize viewControllerForPresenting=_viewControllerForPresenting;
-@property(retain) SFSearchResult *result; // @synthesize result=_result;
+@property(nonatomic) __weak id <SFFeedbackListener> feedbackDelegate; // @synthesize feedbackDelegate=_feedbackDelegate;
+@property(retain, nonatomic) UIViewController *viewControllerForPresenting; // @synthesize viewControllerForPresenting=_viewControllerForPresenting;
+@property(retain, nonatomic) SFSearchResult *result; // @synthesize result=_result;
 - (void).cxx_destruct;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (void)addActionForGrade:(unsigned long long)arg1 title:(id)arg2;

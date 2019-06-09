@@ -4,17 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <CoreDuet/_DKSyncContextObject.h>
 
 #import <CoreDuet/APSConnectionDelegate-Protocol.h>
+#import <CoreDuet/_DKKnowledgeStorageEventNotificationDelegate-Protocol.h>
+#import <CoreDuet/_DKSyncCoordinator-Protocol.h>
 #import <CoreDuet/_DKSyncRemoteKnowledgeStorageFetchDelegate-Protocol.h>
 
-@class APSConnection, NSMutableArray, NSMutableSet, NSString, NSUUID, _CDMutablePerfMetric, _CDPeriodicSchedulerJob, _DKDataProtectionStateMonitor, _DKKnowledgeStorage, _DKSync2State, _DKSyncToggle, _DKSyncType, _DKThrottledActivity;
-@protocol NSObject, _DKKeyValueStore, _DKSyncLocalKnowledgeStorage, _DKSyncRemoteKnowledgeStorage;
+@class APSConnection, NSMutableArray, NSMutableSet, NSObject, NSString, NSUUID, _CDMutablePerfMetric, _CDPeriodicSchedulerJob, _DKDataProtectionStateMonitor, _DKKnowledgeStorage, _DKSync2State, _DKSyncToggle, _DKSyncType, _DKThrottledActivity;
+@protocol NSObject, OS_xpc_object, _DKKeyValueStore, _DKSyncLocalKnowledgeStorage, _DKSyncRemoteKnowledgeStorage;
 
-@interface _DKSync2Coordinator : NSObject <APSConnectionDelegate, _DKSyncRemoteKnowledgeStorageFetchDelegate>
+@interface _DKSync2Coordinator : _DKSyncContextObject <APSConnectionDelegate, _DKKnowledgeStorageEventNotificationDelegate, _DKSyncRemoteKnowledgeStorageFetchDelegate, _DKSyncCoordinator>
 {
-    id <_DKKeyValueStore> _keyValueStore;
     _DKThrottledActivity *_activityThrottler;
     id <NSObject> _observerToken;
     NSMutableSet *_busyTransactions;
@@ -44,15 +45,19 @@
     _DKSyncToggle *_cloudIsAvailableToggler;
     _DKSyncToggle *_rapportIsAvailableToggler;
     _CDPeriodicSchedulerJob *_periodicJob;
+    _Bool _triggeredSyncActivityRegistered;
+    NSObject<OS_xpc_object> *_triggeredSyncActivity;
     _Bool _isBusy;
     _Bool _hasSyncedUpHistoryToCloud;
     _DKKnowledgeStorage *_storage;
+    id <_DKKeyValueStore> _keyValueStore;
     id <_DKSyncLocalKnowledgeStorage> _localStorage;
     id <_DKSyncRemoteKnowledgeStorage> _transportCloudDown;
     id <_DKSyncRemoteKnowledgeStorage> _transportCloudUp;
     id <_DKSyncRemoteKnowledgeStorage> _transportRapport;
 }
 
++ (id)_syncTypeFromActivity:(id)arg1;
 + (_Bool)isOnPower;
 + (id)streamNamesToTombstone;
 + (void)_updateEventStatsWithSyncElapsedTimeStartDate:(id)arg1 endDate:(id)arg2;
@@ -66,9 +71,16 @@
 @property(retain, nonatomic) id <_DKSyncRemoteKnowledgeStorage> transportCloudDown; // @synthesize transportCloudDown=_transportCloudDown;
 @property(retain, nonatomic) id <_DKSyncLocalKnowledgeStorage> localStorage; // @synthesize localStorage=_localStorage;
 @property(nonatomic) _Bool hasSyncedUpHistoryToCloud; // @synthesize hasSyncedUpHistoryToCloud=_hasSyncedUpHistoryToCloud;
+@property(retain, nonatomic) id <_DKKeyValueStore> keyValueStore; // @synthesize keyValueStore=_keyValueStore;
 @property _Bool isBusy; // @synthesize isBusy=_isBusy;
 @property(readonly, nonatomic) _DKKnowledgeStorage *storage; // @synthesize storage=_storage;
 - (void).cxx_destruct;
+- (void)_unregisterTriggeredSyncActivity;
+- (void)_registerTriggeredSyncActivityWithIsStartup:(_Bool)arg1;
+- (void)_runTriggeredSyncActivity:(id)arg1;
+- (void)_checkInTriggeredSyncActivity:(id)arg1 isStartup:(_Bool)arg2;
+- (void)_updateTriggeredSyncActivity;
+- (id)_updatedExecutionCriteriaFromType:(id)arg1;
 - (void)removeBusyTransaction:(id)arg1;
 - (id)createBusyTransactionWithName:(const char *)arg1;
 - (void)_deleteNextBatchOfOurSiriEventsFromCloudWithStartDate:(id)arg1;
@@ -92,12 +104,6 @@
 - (void)_cloudSyncAvailabilityDidChange:(id)arg1;
 - (void)_unregisterDatabaseObservers;
 - (void)_registerDatabaseObservers;
-- (void)knowledgeStorage:(id)arg1 didDeleteEventsWithStreamNameCounts:(id)arg2;
-- (void)_databaseDidDeleteFromStreamNameCounts:(id)arg1;
-- (void)knowledgeStorage:(id)arg1 didInsertEventsWithStreamNameCounts:(id)arg2;
-- (void)knowledgeStorage:(id)arg1 didDeleteSyncedEvents:(id)arg2;
-- (void)knowledgeStorage:(id)arg1 didInsertSyncedEvents:(id)arg2;
-- (void)knowledgeStorage:(id)arg1 didHaveInsertsAndDeletesWithCount:(unsigned int)arg2;
 - (void)handleDataProtectionChangeFor:(id)arg1 willBeAvailable:(_Bool)arg2;
 - (_Bool)isSingleDevice;
 - (void)_unregisterPeriodicJob;
@@ -107,6 +113,7 @@
 - (id)_executionCriteriaWithInterval:(double)arg1;
 - (double)_intervalForJobGivenIsSingleDevice:(_Bool)arg1;
 - (void)_performPeriodicJob;
+- (void)_finishActivityWithError:(id)arg1;
 - (void)_performInitialSync;
 - (void)_possiblyPerformInitialSync;
 - (void)__finishSyncWithTransaction:(id)arg1 startDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -117,7 +124,7 @@
 - (void)deleteRemoteStateWithReply:(CDUnknownBlockType)arg1;
 - (void)synchronizeWithUrgency:(unsigned int)arg1 client:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)syncWithReply:(CDUnknownBlockType)arg1;
-- (void)handleFetchedSourceDeviceID:(id)arg1 fromPeer:(id)arg2 error:(id)arg3;
+- (void)handleFetchedSourceDeviceID:(id)arg1 version:(id)arg2 fromPeer:(id)arg3 error:(id)arg4;
 - (void)fetchSourceDeviceIDFromPeer:(id)arg1;
 - (void)possiblyUpdateIsBusyProperty;
 - (void)handleStatusChangeForPeer:(id)arg1 previousTransports:(int)arg2;
@@ -138,12 +145,19 @@
 - (void)_performSyncTogglesChangedActions;
 @property(readonly, nonatomic) NSUUID *deviceUUID;
 - (void)dealloc;
+- (id)initWithContext:(id)arg1;
 - (id)initWithStorage:(id)arg1;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
 - (void)connection:(id)arg1 didReceivePublicToken:(id)arg2;
+- (void)knowledgeStorage:(id)arg1 didDeleteEventsWithStreamNameCounts:(id)arg2;
+- (void)_databaseDidDeleteFromStreamNameCounts:(id)arg1;
+- (void)knowledgeStorage:(id)arg1 didInsertEventsWithStreamNameCounts:(id)arg2;
+- (void)knowledgeStorage:(id)arg1 didDeleteSyncedEvents:(id)arg2;
+- (void)knowledgeStorage:(id)arg1 didInsertSyncedEvents:(id)arg2;
+- (void)knowledgeStorage:(id)arg1 didHaveInsertsAndDeletesWithCount:(unsigned int)arg2;
 @property(readonly, nonatomic) _DKSyncType *syncType;
 - (id)deletedEventIDsSinceDate:(id)arg1 streamNames:(id)arg2 limit:(unsigned int)arg3 endDate:(id *)arg4 error:(id *)arg5;
-- (id)sortedEventsWithCreationDateBetweenDate:(id)arg1 andDate:(id)arg2 streamNames:(id)arg3 limit:(unsigned int)arg4 fetchOrder:(int)arg5 error:(id *)arg6;
+- (id)sortedEventsFromSyncWindows:(id)arg1 streamNames:(id)arg2 limit:(unsigned int)arg3 fetchOrder:(int)arg4 error:(id *)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

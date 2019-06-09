@@ -14,6 +14,7 @@
     _Bool _fuzzyMatching;
     NSString *_queryString;
     unsigned long long _attributeTokenCount;
+    unsigned long long _options;
     unsigned long long _matcherCount;
     const void **_matchers;
     unsigned long long _queryTermCount;
@@ -32,6 +33,7 @@
 @property(nonatomic) const void **matchers; // @synthesize matchers=_matchers;
 @property(nonatomic) unsigned long long matcherCount; // @synthesize matcherCount=_matcherCount;
 @property(nonatomic) _Bool fuzzyMatching; // @synthesize fuzzyMatching=_fuzzyMatching;
+@property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(nonatomic) unsigned long long attributeTokenCount; // @synthesize attributeTokenCount=_attributeTokenCount;
 @property(nonatomic) _Bool matchOncePerTerm; // @synthesize matchOncePerTerm=_matchOncePerTerm;
 @property(readonly, nonatomic) NSString *queryString; // @synthesize queryString=_queryString;

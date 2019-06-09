@@ -15,8 +15,7 @@ __attribute__((visibility("hidden")))
 + (id)_imageDirectoryURL;
 + (void)deleteDeprecatedCacheDirectory;
 + (id)sharedCache;
-+ (id)_generateDefaultFavoritesIconWithGlyphColor:(id)arg1;
-+ (id)_favoritesGlyph;
++ (id)_generateDefaultFavoritesIcon;
 + (id)_paddedUncoloredFavoritesGlyph;
 + (id)_monogramConfiguration;
 - (void)_willSaveTouchIcon:(id)arg1 withCacheSettingsEntry:(id)arg2;

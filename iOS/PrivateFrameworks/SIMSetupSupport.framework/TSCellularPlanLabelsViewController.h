@@ -4,21 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <SetupAssistantUI/BFFSplashController.h>
+#import <OnBoardingKit/OBTableWelcomeController.h>
 
 #import <SIMSetupSupport/TSSetupFlowItem-Protocol.h>
 #import <SIMSetupSupport/UINavigationControllerDelegate-Protocol.h>
 #import <SIMSetupSupport/UITableViewDataSource-Protocol.h>
 #import <SIMSetupSupport/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, TSCellularPlanLabelPickerViewController, UITableView, UITableViewCell;
+@class NSArray, NSLayoutConstraint, NSMutableArray, NSString, OBBoldTrayButton, TSCellularPlanLabelPickerViewController, UITableViewCell;
 @protocol TSSIMSetupFlowDelegate;
 
-@interface TSCellularPlanLabelsViewController : BFFSplashController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, TSSetupFlowItem>
+@interface TSCellularPlanLabelsViewController : OBTableWelcomeController <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, TSSetupFlowItem>
 {
+    OBBoldTrayButton *_doneButton;
     _Bool _allowDismiss;
     id <TSSIMSetupFlowDelegate> _delegate;
-    UITableView *_tableView;
+    NSLayoutConstraint *_heightAnchor;
     UITableViewCell *_sectionFooter;
     NSMutableArray *_sortedPlanItemsWithPendingLabels;
     TSCellularPlanLabelPickerViewController *_labelPickerViewController;
@@ -32,9 +33,12 @@
 @property(retain) TSCellularPlanLabelPickerViewController *labelPickerViewController; // @synthesize labelPickerViewController=_labelPickerViewController;
 @property(retain) NSMutableArray *sortedPlanItemsWithPendingLabels; // @synthesize sortedPlanItemsWithPendingLabels=_sortedPlanItemsWithPendingLabels;
 @property(retain) UITableViewCell *sectionFooter; // @synthesize sectionFooter=_sectionFooter;
-@property(retain) UITableView *tableView; // @synthesize tableView=_tableView;
+@property(retain, nonatomic) NSLayoutConstraint *heightAnchor; // @synthesize heightAnchor=_heightAnchor;
 @property __weak id <TSSIMSetupFlowDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (_Bool)canBeShownFromSuspendedState;
+- (void)_doneButtonTapped;
+- (void)_cancelButtonTapped;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
@@ -50,7 +54,6 @@
 - (void)savePlanLabels:(CDUnknownBlockType)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLayoutSubviews;
-- (void)_cancelButtonTapped;
 - (void)viewDidLoad;
 - (id)initWithIccid:(id)arg1 allowDismiss:(_Bool)arg2;
 - (id)initWithAllowDismiss:(_Bool)arg1;

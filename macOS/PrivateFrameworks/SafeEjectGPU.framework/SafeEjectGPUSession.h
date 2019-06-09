@@ -16,15 +16,25 @@
     unsigned long long _gpuid;
     unsigned long long _registryID;
     NSString *_name;
+    NSString *_enclosureName;
+    NSString *_location;
+    unsigned long long _enclosureRegistryID;
+    unsigned long long _locationNumber;
+    unsigned long long _maxTransferRate;
     _Bool _removable;
     _Bool _discrete;
     _Bool _integrated;
     NSMutableArray *_limboArray;
     NSObject<OS_dispatch_queue> *_limboQueue;
     _Bool _inLimbo;
+    _Bool _exportDictionary;
 }
 
 + (_Bool)relaunchPID:(int)arg1;
++ (_Bool)launchOnGPU:(id)arg1 gpuids:(id)arg2;
++ (_Bool)relaunchPIDOnGPU:(int)arg1 gpuids:(id)arg2;
+- (float)getPercentUtilization;
+- (id)appsByPID;
 - (id)apps;
 - (unsigned long long)cancel;
 - (unsigned long long)finalize;
@@ -38,6 +48,7 @@
 - (id)dictionary;
 - (id)prettifiedDeviceName:(id)arg1;
 - (void)dealloc;
+- (void)getEnclosureInfo;
 - (id)initWithGPU:(struct __GPUWranglerGPU *)arg1 andQueue:(id)arg2;
 
 @end

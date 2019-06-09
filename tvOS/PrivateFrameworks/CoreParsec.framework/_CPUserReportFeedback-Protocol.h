@@ -10,6 +10,7 @@
 
 @protocol _CPUserReportFeedback <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
+@property(copy, nonatomic) NSData *uuidBytes;
 @property(retain, nonatomic) _CPCardSectionForFeedback *cardSection;
 @property(retain, nonatomic) _CPPunchoutForFeedback *userSelection;
 @property(retain, nonatomic) _CPSearchResultForFeedback *result;

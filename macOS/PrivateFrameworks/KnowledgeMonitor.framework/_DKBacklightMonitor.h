@@ -18,8 +18,10 @@
 + (id)entitlements;
 + (id)eventStream;
 - (void)synchronouslyReflectCurrentValue;
+- (void)deactivate;
 - (void)stop;
 - (void)start;
+- (void)dealloc;
 
 @end
 

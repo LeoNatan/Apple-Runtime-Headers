@@ -16,6 +16,7 @@
 
 + (void)ensureHandlerSetup;
 + (void)initialize;
+- (void).cxx_destruct;
 - (void)account:(id)arg1 conference:(id)arg2 invitationSentSuccessfully:(_Bool)arg3;
 - (void)account:(id)arg1 relay:(id)arg2 handleCancel:(id)arg3 fromPerson:(id)arg4;
 - (void)account:(id)arg1 relay:(id)arg2 handleUpdate:(id)arg3 fromPerson:(id)arg4;
@@ -39,7 +40,6 @@
 - (void)account:(id)arg1 conference:(id)arg2 receivedResponseToInvitationFrom:(id)arg3 properties:(id)arg4;
 - (void)account:(id)arg1 conference:(id)arg2 receivedInvitationFrom:(id)arg3 properties:(id)arg4;
 - (void)_handleIncomingWithAccount:(id)arg1 fromHandle:(id)arg2 conference:(id)arg3 properites:(id)arg4;
-- (void)dealloc;
 
 @end
 

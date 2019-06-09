@@ -18,12 +18,14 @@ __attribute__((visibility("hidden")))
     _UIRemoteViewController *_remoteViewController;
     id _viewControllerOperatorProxy;
     id _textEffectsOperatorProxy;
-    _Bool _hasIntrinsicContentSize;
     struct CGSize _intrinsicContentSize;
     struct CGRect _formerTextEffectsContentFrame;
-    _Bool _observingBoundingPathChanges;
-    _Bool _needsRemoteViewServiceBoundingPathUpdate;
-    _Bool _remoteViewServiceBoundingPathUpdateScheduled;
+    struct {
+        unsigned int hasIntrinsicContentSize:1;
+        unsigned int observingBoundingPathChanges:1;
+        unsigned int needsRemoteViewServiceBoundingPathUpdate:1;
+        unsigned int remoteViewServiceBoundingPathUpdateScheduled:1;
+    } _sizeTrackingViewFlags;
 }
 
 + (id)viewWithRemoteViewController:(id)arg1 viewControllerOperatorProxy:(id)arg2 textEffectsOperatorProxy:(id)arg3;
@@ -37,6 +39,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)isScrollEnabled;
 - (void)_clearNeedsRemoteViewServiceBoundingPathUpdate;
 - (void)_setNeedsRemoteViewServiceBoundingPathUpdate;
+- (void)setBounds:(struct CGRect)arg1;
+- (void)setFrame:(struct CGRect)arg1;
 - (void)_boundingPathMayHaveChangedForView:(id)arg1 relativeToBoundsOriginOnly:(_Bool)arg2;
 - (id)_boundingPathForRemoteViewService;
 - (_Bool)_canSendViewServiceActualBoundingPath;
@@ -44,7 +48,9 @@ __attribute__((visibility("hidden")))
 - (_Bool)_fencingEffectsAreVisible;
 - (long long)_interfaceOrientationForScene:(id)arg1;
 - (void)_updateSceneGeometries:(id)arg1 forOrientation:(long long)arg2;
+- (void)_updateTextEffectsGeometries:(struct CGRect)arg1 textEffectsWindow:(id)arg2;
 - (void)_updateTextEffectsGeometries:(struct CGRect)arg1;
+- (void)_textEffectsWindowDidRotate:(id)arg1;
 - (void)_updateTextEffectsGeometriesImmediately;
 - (_Bool)_needsTextEffectsUpdateToFrame:(struct CGRect)arg1;
 - (void)updateIntrinsicContentSize:(struct CGSize)arg1;

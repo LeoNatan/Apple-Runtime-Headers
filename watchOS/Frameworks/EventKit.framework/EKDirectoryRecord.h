@@ -6,17 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface EKDirectoryRecord : NSObject
 {
     NSString *_displayName;
     NSString *_preferredAddress;
+    NSString *_principalPath;
 }
 
+@property(copy, nonatomic) NSString *principalPath; // @synthesize principalPath=_principalPath;
 @property(retain, nonatomic) NSString *preferredAddress; // @synthesize preferredAddress=_preferredAddress;
 @property(retain, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
+@property(readonly) NSDictionary *userInfo;
 - (id)description;
 
 @end

@@ -6,8 +6,8 @@
 
 #import <UIKit/UIView.h>
 
-@class CALayer, CAMediaTimingFunction, CLKDevice, NSArray, NSDictionary, NSMutableDictionary, NTKVictoryAnalogFakeComplicationButton, UIImage;
-@protocol NTKVictoryAnalogBackgroundViewDelegate;
+@class CAMediaTimingFunction, CLKDevice, NSArray, NSDictionary, NSMutableDictionary, NTKVictoryLogoButton, UIImage;
+@protocol NTKVictoryAnalogBackgroundColorPalette, NTKVictoryAnalogBackgroundViewDelegate;
 
 @interface NTKVictoryAnalogBackgroundView : UIView
 {
@@ -17,7 +17,9 @@
     NSMutableDictionary *_largeNumberImages;
     NSArray *_ringLayers;
     _Bool _ringLayerIsDigit[12];
-    NSArray *_bigNumberLayers;
+    NSArray *_largeHourMarkerLabels;
+    NSArray *_mediumNumberLayers;
+    NSArray *_temporaryNumberLayers;
     NSArray *_activeDigitIndices;
     _Bool _canonicalDigitStatesByStyle[3][12];
     NSDictionary *_transitionDigitTargetStates;
@@ -26,44 +28,59 @@
     unsigned int _transitionFromStyle;
     unsigned int _transitionToStyle;
     CAMediaTimingFunction *_transitionTimingFunction;
-    NTKVictoryAnalogFakeComplicationButton *_logoButton;
-    CALayer *_logoLayer;
+    NTKVictoryLogoButton *_logoButton;
+    NTKVictoryLogoButton *_smallLogoButton;
     struct CGPoint _logoPositionRing;
     struct CGPoint _logoPositionNoDigits;
     struct CGPoint _logoPositionBig;
+    struct CGPoint _logoPositionCircularDial;
+    float _dialShapeFraction;
+    id <NTKVictoryAnalogBackgroundColorPalette> _palette;
     unsigned int _style;
-    unsigned int _color;
+    unsigned int _dialShape;
     id <NTKVictoryAnalogBackgroundViewDelegate> _delegate;
 }
 
 + (id)_disabledLayerActions;
 @property(nonatomic) __weak id <NTKVictoryAnalogBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) unsigned int color; // @synthesize color=_color;
+@property(nonatomic) unsigned int dialShape; // @synthesize dialShape=_dialShape;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
+@property(retain, nonatomic) id <NTKVictoryAnalogBackgroundColorPalette> palette; // @synthesize palette=_palette;
 - (void).cxx_destruct;
 - (id)_largeNumberImageForNumber:(unsigned int)arg1;
 - (id)_regularNumberImageForNumber:(unsigned int)arg1;
 - (id)_dotImage;
+- (id)_circularDialLogoImage;
 - (id)_logoImage;
 - (id)_bigNumberInitialTransforms;
+- (struct CGAffineTransform)_affineTransformFromTransform3D:(struct CATransform3D)arg1;
 - (id)_createAndAddLayersWithCount:(unsigned int)arg1;
-- (void)_createBigNumberLayersIfNeeded;
+- (id)_createHourMarkerLabelsWithFontSize:(float)arg1;
+- (void)_createLargeHourMarkerLabelsAndAttachToViewIfNeeded;
+- (void)_createMediumNumberLayersIfNeededAndAttachToViewIfNeeded;
+- (unsigned int)_digitForIndex:(unsigned int)arg1;
 - (void)_createRingLayersIfNeeded;
 - (void)_setRingLayerAtIndex:(unsigned int)arg1 isDigit:(_Bool)arg2;
 - (void)willBeginEditing;
 - (float)_elementScaleForTransitionProgress:(float)arg1 initialScale:(float)arg2 middleScale:(float)arg3 finalScale:(float)arg4;
 - (float)_transitionProgressForDigitAtIndex:(unsigned int)arg1 overallProgress:(float)arg2 delayPerDigit:(float)arg3 digitTransitionLength:(float)arg4;
 - (struct CGColor *)_layerTransitionColorFromColor:(id)arg1 toColor:(id)arg2 amount:(float)arg3;
-- (void)applyTransitionFraction:(float)arg1 fromColor:(unsigned int)arg2 toColor:(unsigned int)arg3;
-- (void)_applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3 style:(unsigned int)arg4;
-- (void)_applyColor:(unsigned int)arg1 forStyle:(unsigned int)arg2;
+- (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3 style:(unsigned int)arg4 animateElements:(_Bool)arg5;
+- (void)applyTransitionFraction:(float)arg1 fromPalette:(id)arg2 toPalette:(id)arg3 style:(unsigned int)arg4;
+- (void)_applyPalette:(id)arg1 forStyle:(unsigned int)arg2;
+- (struct CGPoint)logoPositionForStyle:(unsigned int)arg1;
 - (void)_clearTransitionStateForStyle:(unsigned int)arg1;
 - (struct CATransform3D)_intermediateTransformForBigNumberAtIndex:(unsigned int)arg1 fraction:(float)arg2;
-- (void)applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3;
+- (void)applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3 fromPalette:(id)arg4 toPalette:(id)arg5;
+- (void)applyTransitionFraction:(float)arg1 fromDialShape:(unsigned int)arg2 toDialShape:(unsigned int)arg3;
+- (_Bool)isCircularDial;
 - (void)setInTimeTravel:(_Bool)arg1 animated:(_Bool)arg2;
 - (struct CGPoint)_ringDigitOffsetAtIndex:(unsigned int)arg1;
+- (void)layoutNumbers;
 - (void)layoutSubviews;
-- (void)_logoTapped;
+- (void)_logoTapped:(id)arg1;
+- (void)addSmallLogoButtonIfNeeded;
+- (void)addLogoButtonIfNeeded;
 - (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
 
 @end

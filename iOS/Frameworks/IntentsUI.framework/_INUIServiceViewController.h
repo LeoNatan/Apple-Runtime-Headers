@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (struct CGSize)_constrainedSizeForDesiredSize:(struct CGSize)arg1;
 - (void)queryRepresentedPropertiesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)desiresInteractivity:(CDUnknownBlockType)arg1;
 - (void)viewWasCancelled;
 - (void)configureForParameters:(id)arg1 ofInteraction:(id)arg2 interactiveBehavior:(unsigned long long)arg3 context:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)_errorHandlingRemoteViewControllerProxy;

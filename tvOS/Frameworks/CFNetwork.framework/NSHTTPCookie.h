@@ -20,7 +20,7 @@
 + (id)requestHeaderFieldsWithCookies:(id)arg1;
 + (const struct __CFArray *)_ns2cfCookies:(id)arg1;
 + (id)_cf2nsCookies:(struct __CFArray *)arg1;
-+ (id)cookieWithCFHTTPCookie:(struct OpaqueCFHTTPCookie *)arg1;
++ (id)cookieWithCFHTTPCookie:(id)arg1;
 + (id)cookieWithProperties:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -36,7 +36,7 @@
 - (id)Secure;
 - (id)Version;
 - (id)OriginURL;
-- (id)SameSite;
+- (id)SameSitePolicy;
 - (id)StoragePartition;
 - (id)CommentURL;
 - (id)Comment;
@@ -45,7 +45,7 @@
 - (id)Domain;
 - (id)Value;
 - (id)Name;
-- (id)sameSitePolicy;
+@property(readonly, copy) NSString *sameSitePolicy;
 - (id)_storagePartition;
 @property(readonly, copy) NSArray *portList;
 @property(readonly, copy) NSURL *commentURL;
@@ -59,13 +59,20 @@
 @property(readonly, getter=isSecure) _Bool secure;
 @property(readonly, getter=isSessionOnly) _Bool sessionOnly;
 @property(readonly) unsigned long long version;
-- (const struct OpaqueCFHTTPCookie *)_CFHTTPCookie;
-- (const struct OpaqueCFHTTPCookie *)_GetInternalCFHTTPCookie;
+- (id)_CFHTTPCookie;
+- (id)_GetInternalCFHTTPCookie;
 @property(readonly, copy) NSDictionary *properties;
 - (void)dealloc;
 - (id)init;
-- (id)initWithCFHTTPCookie:(struct OpaqueCFHTTPCookie *)arg1;
+- (id)initWithCFHTTPCookie:(id)arg1;
 - (id)initWithProperties:(id)arg1;
+- (id)_initWithInternal:(id)arg1;
+- (id)_initWithReference:(const struct CompactCookieArray *)arg1 index:(long long)arg2;
+- (id)_initWithProperties:(id)arg1 fromString:(_Bool)arg2;
+- (id)_initWithCookie:(id)arg1 partition:(id)arg2;
+- (id)_initWithHeader:(const struct CompactCookieHeader *)arg1;
+- (id)ensureCookieValid;
+@property(readonly) struct HTTPCookie *_inner; // @dynamic _inner;
 
 @end
 

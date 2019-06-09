@@ -6,13 +6,13 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSString, PLRoundProgressView, UIActivityIndicatorView, UILabel, _UIBackdropView;
+@class NSArray, NSString, PLRoundProgressView, UIActivityIndicatorView, UILabel, UIVisualEffectView;
 
 @interface PUProgressIndicatorView : UIView
 {
     UIActivityIndicatorView *_spinnerView;
     PLRoundProgressView *_pieProgressView;
-    _UIBackdropView *_backgroundView;
+    UIVisualEffectView *_visualEffectView;
     UILabel *_messageLabel;
     NSArray *_spinnerViewConstraints;
     NSArray *_pieProgressViewConstraints;
@@ -50,7 +50,7 @@
 - (void)_updatePieProgress;
 - (void)_updateProgressViewsWithAnimation:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateProgressViewsAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_newBackdropBackgroundView;
+- (id)_newVisualEffectBackgroundView;
 - (struct CGSize)intrinsicContentSize;
 - (void)updateConstraints;
 - (id)initWithCoder:(id)arg1;

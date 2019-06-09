@@ -26,6 +26,10 @@ __attribute__((visibility("hidden")))
 - (void)_addLayoutViews:(id)arg1;
 - (double)minimumLayoutWidthGivenMinimumSpaceWidth:(double)arg1;
 - (void)addLayoutViews:(id)arg1 layoutGuides:(id)arg2 constraintsToActivate:(id)arg3 constraintsToDeactivate:(id)arg4;
+- (void)setUseGroupSizing:(_Bool)arg1;
+- (_Bool)useGroupSizing;
+- (void)setSuppressSpacing:(_Bool)arg1;
+- (_Bool)suppressSpacing;
 - (_Bool)compact;
 - (void)configure;
 - (id)_metricsData;

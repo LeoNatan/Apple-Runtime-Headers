@@ -11,7 +11,6 @@
     struct ColorSyncTransform *_transform;
 }
 
-+ (id)transformWithSourceProfile:(id)arg1 proofingProfile:(id)arg2 destinationProfile:(id)arg3;
 + (id)transformWithSourceProfile:(id)arg1 destinationProfile:(id)arg2;
 - (id)lookupTableDataWithGridSize:(unsigned long long)arg1;
 - (void)dealloc;

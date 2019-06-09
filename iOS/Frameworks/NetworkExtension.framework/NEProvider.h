@@ -15,14 +15,13 @@
     NWPath *_defaultPath;
     NWPathEvaluator *_defaultPathEvaluator;
     NEExtensionProviderContext *_context;
-    NSString *_deviceIdentifier;
     NSString *_appName;
 }
 
 + (_Bool)isNEProviderBundle:(id)arg1 forExtensionPoint:(id)arg2;
 + (_Bool)isRunningInProvider;
++ (void)startSystemExtensionMode;
 @property(retain) NSString *appName; // @synthesize appName=_appName;
-@property(retain) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 @property(retain) NEExtensionProviderContext *context; // @synthesize context=_context;
 @property(retain) NWPathEvaluator *defaultPathEvaluator; // @synthesize defaultPathEvaluator=_defaultPathEvaluator;
 @property(retain) NWPath *defaultPath; // @synthesize defaultPath=_defaultPath;
@@ -38,6 +37,7 @@
 - (void)setdefaultPathObserver:(id)arg1;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (void)dealloc;
+- (id)initAllowUnentitled:(_Bool)arg1;
 - (id)init;
 
 // Remaining properties

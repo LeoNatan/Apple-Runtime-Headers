@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSSet;
+@class NSMutableDictionary;
 
 @interface AXAlternativeVoices : NSObject
 {
@@ -24,17 +24,13 @@
 - (void).cxx_destruct;
 - (id)_siriBaseIdentifierFromIdentifier:(id)arg1;
 - (id)_siriIdentifierFromBaseIdentifier:(id)arg1 language:(id)arg2 quality:(long long)arg3;
-- (_Bool)_siriSupportsLanguage:(id)arg1;
 - (id)voiceForVoiceIdentifier:(id)arg1 forLanguage:(id)arg2;
 - (id)nameForVoiceIdentifier:(id)arg1;
-- (id)alternativeVoiceIdentifiersForLangauge:(id)arg1;
 - (_Bool)isAlexAvailableForLanguage:(id)arg1;
 - (_Bool)isNashvilleSystemVoice:(id)arg1;
 - (_Bool)isSiriVoiceIdentifier:(id)arg1;
 - (_Bool)isOldSiriVoiceIdentifier:(id)arg1;
 - (_Bool)isAlternativeVoice:(id)arg1;
-- (_Bool)isAlternativeVoiceIdentifier:(id)arg1 forLanguage:(id)arg2;
-@property(readonly, copy, nonatomic) NSSet *supportedSiriLanguages;
 
 @end
 

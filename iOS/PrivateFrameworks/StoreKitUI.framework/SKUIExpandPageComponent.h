@@ -8,6 +8,7 @@
 
 @class NSMutableArray, SKUIExpandViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIExpandPageComponent : SKUIPageComponent
 {
     NSMutableArray *_childComponents;

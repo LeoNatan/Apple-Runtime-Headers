@@ -51,7 +51,8 @@
 - (id)createCallRecord;
 - (id)fetchAllNoLimit;
 - (id)fetchAll;
-- (id)fetchManagedCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3;
+- (id)fetchManagedCallsWithPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned long long)arg3 offset:(unsigned long long)arg4 batchSize:(unsigned long long)arg5;
+- (unsigned long long)fetchManagedCallCountWithPredicate:(id)arg1 sortDescriptors:(id)arg2;
 - (id)fetchWithPredicate:(id)arg1 forEntity:(id)arg2 withLimit:(_Bool)arg3;
 - (id)fetchWithPredicate:(id)arg1 forEntity:(id)arg2;
 - (void)mergeCallDBPropChangesFromRemoteAppSave;

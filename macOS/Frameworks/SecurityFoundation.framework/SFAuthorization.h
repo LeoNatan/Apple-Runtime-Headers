@@ -6,14 +6,15 @@
 
 #import <objc/NSObject.h>
 
-#import <SecurityFoundation/NSCoding-Protocol.h>
+#import <SecurityFoundation/NSSecureCoding-Protocol.h>
 
-@interface SFAuthorization : NSObject <NSCoding>
+@interface SFAuthorization : NSObject <NSSecureCoding>
 {
     struct AuthorizationOpaqueRef *_authorization;
     id _reserved;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)authorizationWithFlags:(unsigned int)arg1 rights:(const CDStruct_166d2db6 *)arg2 environment:(const CDStruct_166d2db6 *)arg3;
 + (id)authorization;
 - (void)invalidateCredentials:(BOOL)arg1;

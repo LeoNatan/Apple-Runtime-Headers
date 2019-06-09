@@ -16,13 +16,11 @@
 }
 
 + (double)_schedulingAssertionTimeout;
-+ (_Bool)_isSchedulingRelatedNotification:(id)arg1 streamName:(id)arg2;
-+ (_Bool)_isSleepNotification:(id)arg1 streamName:(id)arg2;
-+ (_Bool)_isSyncNotification:(id)arg1 streamName:(id)arg2;
++ (double)defaultAssertionTimeOutForNotification:(id)arg1 type:(int)arg2;
 @property(retain, nonatomic) id <NAScheduler> serializer; // @synthesize serializer=_serializer;
 @property(retain, nonatomic) NSMutableArray *listeners; // @synthesize listeners=_listeners;
 - (void).cxx_destruct;
-- (void)_handleNotification:(id)arg1;
+- (void)_handleNotificationWithName:(id)arg1 type:(int)arg2;
 - (void)_registerForXPCStream:(id)arg1 notificationType:(int)arg2;
 - (void)dealloc;
 - (void)_registerForLiveDarwinNotification:(id)arg1;

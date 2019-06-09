@@ -25,7 +25,7 @@
 - (id)cellForIndex:(unsigned int)arg1 tableView:(id)arg2;
 - (unsigned int)numberOfRowsInSection;
 - (id)sectionTitle;
-- (void)_generateRouteImage;
+- (void)generateRouteImage;
 - (id)initWithLocationReadings:(id)arg1;
 
 @end

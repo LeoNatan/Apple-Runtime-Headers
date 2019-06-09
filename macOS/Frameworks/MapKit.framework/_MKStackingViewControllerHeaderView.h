@@ -8,6 +8,7 @@
 
 @class NSString, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface _MKStackingViewControllerHeaderView : NSView
 {
     _MKUILabel *_titleLabel;

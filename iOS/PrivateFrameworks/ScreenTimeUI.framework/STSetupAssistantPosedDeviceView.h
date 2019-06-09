@@ -8,6 +8,7 @@
 
 @class STSetupAssistantUsageDetailsCoordinator, STWeeklyReportViewController, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface STSetupAssistantPosedDeviceView : UIView
 {
     _Bool _requestsBackgroundBleed;

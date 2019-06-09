@@ -9,8 +9,8 @@
 #import <PhotosUICore/PXGadgetDelegate-Protocol.h>
 #import <PhotosUICore/PXMutableGadgetProvider-Protocol.h>
 
-@class NSArray, NSString;
-@protocol PXGadgetDelegate, PXGadgetProviderDelegate;
+@class NSArray, NSString, PXGadgetNavigationHelper;
+@protocol PXGadgetDelegate, PXGadgetProviderDelegate, PXGadgetTransition;
 
 @interface PXGadgetProvider : NSObject <PXMutableGadgetProvider, PXGadgetDelegate>
 {
@@ -27,9 +27,8 @@
 @property(nonatomic) __weak id <PXGadgetDelegate> nextGadgetResponder; // @synthesize nextGadgetResponder=_nextGadgetResponder;
 @property(nonatomic) __weak id <PXGadgetProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (_Bool)scrollGadgetToVisible:(id)arg1 animated:(_Bool)arg2;
-- (id)gridPresentation;
-- (id)oneUpPresentation;
+@property(readonly, nonatomic) PXGadgetNavigationHelper *rootNavigationHelper;
+@property(readonly, nonatomic) id <PXGadgetTransition> gadgetTransition;
 - (void)dismissGadgetViewController:(struct NSObject *)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)presentGadgetViewController:(struct NSObject *)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)gadget:(id)arg1 transitionToViewController:(struct NSObject *)arg2 animated:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;

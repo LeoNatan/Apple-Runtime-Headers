@@ -10,6 +10,31 @@
 {
 }
 
+- (_Bool)invalidateBehavioralScoreOnAllAssetsWithError:(id *)arg1;
+- (void)deleteiTunesSyncedContentWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)getBackgroundJobServiceBundlesInQueueDictionaryWithError:(id *)arg1;
+- (unsigned int)getBackgroundJobServiceStateWithError:(id *)arg1;
+- (_Bool)registerBackgroundJobServiceIfNecessaryOnLibraryPath:(id)arg1 error:(id *)arg2;
+- (_Bool)invalidateReverseLocationDataOnAllAssetsWithError:(id *)arg1;
+- (_Bool)setKeywords:(id)arg1 forAssetWithUUID:(id)arg2;
+- (void)applySearchIndexGraphUpdates:(id)arg1 supportingData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)applySearchIndexUpdates:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)waitForSearchIndexExistence:(CDUnknownBlockType)arg1;
+- (void)getSearchIndexProgress:(CDUnknownBlockType)arg1;
+- (_Bool)synchronouslyMarkPersonAsNeedingKeyFace:(id)arg1 error:(id *)arg2;
+- (void)markPersonAsNeedingKeyFace:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)resetPendingAnalysisStatesWithError:(id *)arg1;
+- (_Bool)markAnalysisStatesProcessedForWorkerType:(short)arg1 error:(id *)arg2;
+- (_Bool)removeAnalysisRecordsForDeletedAssetsWithUUIDs:(id)arg1 workerType:(short)arg2 error:(id *)arg3;
+- (void)reloadMomentGenerationOptions;
+- (_Bool)repairMemoriesWithUUIDs:(id)arg1 error:(id *)arg2;
+- (_Bool)previewAssetLocalIdentifiers:(id *)arg1 error:(id *)arg2;
+- (_Bool)previewRenderedContentURLAtIndex:(unsigned int)arg1 previewRenderedContentURL:(id *)arg2 error:(id *)arg3;
+- (_Bool)previewRenderedContentURLCount:(unsigned int *)arg1 error:(id *)arg2;
+- (void)updateAssetLocationDataWithUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)synchronouslyGetSizeOfResourcesToUploadByCPL:(long long *)arg1 error:(id *)arg2;
+- (_Bool)synchronouslyGetLibrarySizesFromDB:(_Bool)arg1 sizes:(id *)arg2 error:(id *)arg3;
+- (void)getLibrarySizesFromDB:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getAssetCountsWithReply:(CDUnknownBlockType)arg1;
 
 @end

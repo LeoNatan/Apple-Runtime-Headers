@@ -15,6 +15,7 @@
 
 + (id)deviceInputWithDevice:(id)arg1 error:(id *)arg2;
 + (void)initialize;
+- (id)videoDevice;
 - (float)simulatedAperture;
 - (void)setSimulatedAperture:(float)arg1;
 - (void)setVisionDataDeliveryEnabled:(_Bool)arg1;
@@ -26,6 +27,12 @@
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (_Bool)_authorizedToUseDeviceAndRequestIfNecessary:(id)arg1;
 - (struct OpaqueCMClock *)clock;
+- (float)maxGainOverride;
+- (void)setMaxGainOverride:(float)arg1;
+- (_Bool)isMaxGainOverrideSupported;
+@property(nonatomic) CDStruct_1b6d18a9 videoMinFrameDurationOverride;
+- (id)portsWithMediaType:(id)arg1 sourceDeviceType:(id)arg2 sourceDevicePosition:(long long)arg3;
+- (id)multiCamPorts;
 - (id)ports;
 - (id)notReadyError;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession *)arg1;
@@ -35,6 +42,8 @@
 - (id)description;
 - (void)dealloc;
 - (id)init;
+- (void)_resetSimulatedAperture;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (id)initWithDevice:(id)arg1 error:(id *)arg2;
 
 @end

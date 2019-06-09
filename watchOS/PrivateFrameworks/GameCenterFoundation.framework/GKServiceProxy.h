@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class GKDaemonProxy, GKPlayerInternal, GKThreadsafeDictionary, NSDictionary;
+@protocol GKAccountService, GKAccountServicePrivate, GKAnalyticsService, GKAnalyticsServicePrivate, GKBulletinService, GKBulletinServicePrivate, GKChallengeService, GKChallengeServicePrivate, GKFriendService, GKFriendServicePrivate, GKGameService, GKGameServicePrivate, GKGameSessionService, GKGameSessionServicePrivate, GKGameStatService, GKGameStatServicePrivate, GKMultiplayerService, GKMultiplayerServicePrivate, GKProfileService, GKProfileServicePrivate, GKTournamentService, GKTournamentServicePrivate, GKTurnBasedService, GKTurnBasedServicePrivate, GKUtilityService, GKUtilityServicePrivate;
 
 @interface GKServiceProxy : NSObject
 {
@@ -30,30 +31,32 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)methodSignatureForProtocol:(id)arg1 selector:(SEL)arg2;
 - (id)requestIdentifierForInvocation:(id)arg1;
-- (id)gameSessionServicePrivate;
-- (id)gameSessionService;
-- (id)analyticsServicePrivate;
-- (id)analyticsService;
-- (id)bulletinServicePrivate;
-- (id)bulletinService;
-- (id)utilityServicePrivate;
-- (id)utilityService;
-- (id)turnBasedServicePrivate;
-- (id)turnBasedService;
-- (id)multiplayerServicePrivate;
-- (id)multiplayerService;
-- (id)challengeServicePrivate;
-- (id)challengeService;
-- (id)gameStatServicePrivate;
-- (id)gameStatService;
-- (id)gameServicePrivate;
-- (id)gameService;
-- (id)friendServicePrivate;
-- (id)friendService;
-- (id)profileServicePrivate;
-- (id)profileService;
-- (id)accountServicePrivate;
-- (id)accountService;
+@property(readonly) id <GKTournamentServicePrivate> tournamentServicePrivate;
+@property(readonly) id <GKTournamentService> tournamentService;
+@property(readonly) id <GKGameSessionServicePrivate> gameSessionServicePrivate;
+@property(readonly) id <GKGameSessionService> gameSessionService;
+@property(readonly) id <GKAnalyticsServicePrivate> analyticsServicePrivate;
+@property(readonly) id <GKAnalyticsService> analyticsService;
+@property(readonly) id <GKBulletinServicePrivate> bulletinServicePrivate;
+@property(readonly) id <GKBulletinService> bulletinService;
+@property(readonly) id <GKUtilityServicePrivate> utilityServicePrivate;
+@property(readonly) id <GKUtilityService> utilityService;
+@property(readonly) id <GKTurnBasedServicePrivate> turnBasedServicePrivate;
+@property(readonly) id <GKTurnBasedService> turnBasedService;
+@property(readonly) id <GKMultiplayerServicePrivate> multiplayerServicePrivate;
+@property(readonly) id <GKMultiplayerService> multiplayerService;
+@property(readonly) id <GKChallengeServicePrivate> challengeServicePrivate;
+@property(readonly) id <GKChallengeService> challengeService;
+@property(readonly) id <GKGameStatServicePrivate> gameStatServicePrivate;
+@property(readonly) id <GKGameStatService> gameStatService;
+@property(readonly) id <GKGameServicePrivate> gameServicePrivate;
+@property(readonly) id <GKGameService> gameService;
+@property(readonly) id <GKFriendServicePrivate> friendServicePrivate;
+@property(readonly) id <GKFriendService> friendService;
+@property(readonly) id <GKProfileServicePrivate> profileServicePrivate;
+@property(readonly) id <GKProfileService> profileService;
+@property(readonly) id <GKAccountServicePrivate> accountServicePrivate;
+@property(readonly) id <GKAccountService> accountService;
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1;
 

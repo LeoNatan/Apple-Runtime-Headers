@@ -36,10 +36,15 @@
     NSString *_remediationButtonText;
     NSString *_organization;
     NSURL *_parentURL;
+    struct ne_filter_globals *_globals;
+    unsigned long long _byteInboundCount;
+    unsigned long long _byteOutboundCount;
 }
 
 + (_Bool)filterRequired;
-+ (void)connectToFilterUnit:(unsigned int)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+@property unsigned long long byteOutboundCount; // @synthesize byteOutboundCount=_byteOutboundCount;
+@property unsigned long long byteInboundCount; // @synthesize byteInboundCount=_byteInboundCount;
+@property(readonly) struct ne_filter_globals *globals; // @synthesize globals=_globals;
 @property unsigned int controlUnit; // @synthesize controlUnit=_controlUnit;
 @property(retain) NSURL *parentURL; // @synthesize parentURL=_parentURL;
 @property _Bool expectRemediation; // @synthesize expectRemediation=_expectRemediation;
@@ -80,10 +85,13 @@
 - (id)mergeURLString:(id)arg1 withAppendString:(id)arg2;
 - (_Bool)sendDataToPluginWithConnection:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)initWithURL:(id)arg1 direction:(long long)arg2 socketIdentifier:(unsigned long long)arg3;
+- (void)initGlobals;
 - (void)prepareAgentForResponse:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)prepareAgentForRequest:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)prepareAgentWithHandler:(CDUnknownBlockType)arg1;
 - (void)prepareAgentForURL:(id)arg1 urlRequest:(id)arg2 urlResponse:(id)arg3 parentURL:(id)arg4 direction:(long long)arg5 flowUUID:(id)arg6 handler:(CDUnknownBlockType)arg7;
+- (_Bool)generateCryptoSignature:(unsigned char [32])arg1 length:(unsigned int *)arg2;
+- (void)connectToFilterUnit:(unsigned int)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 
 @end
 

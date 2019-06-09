@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
+#import <PhotosUI/PXDiagnosticsEnvironment-Protocol.h>
 #import <PhotosUI/PXGadget-Protocol.h>
 
 @class NSIndexSet, NSString, PHCollection, PUAlbumListCellContentView, PUAlbumListCellContentViewHelper, PXGadgetSpec;
 @protocol PUAlbumGadgetDelegate, PXGadgetDelegate;
 
 __attribute__((visibility("hidden")))
-@interface PUAlbumGadget : NSObject <PXGadget>
+@interface PUAlbumGadget : NSObject <PXDiagnosticsEnvironment, PXGadget>
 {
     _Bool _contentViewVisible;
     _Bool _needsUpdate;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 - (void).cxx_destruct;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (void)contentViewDidDisappear;
 - (void)contentViewWillAppear;
@@ -51,9 +53,9 @@ __attribute__((visibility("hidden")))
 - (id)init;
 
 // Remaining properties
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) unsigned long long headerStyle;

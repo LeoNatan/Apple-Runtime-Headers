@@ -29,6 +29,7 @@
 - (void)handleKeyboardWillShow:(id)arg1;
 - (void)clearInsetsWithDuration:(double)arg1;
 - (void)applyInsetsFromKeyboardFrame:(struct CGRect)arg1 duration:(double)arg2;
+- (void)reapplyInsets;
 - (void)stopAutoResizing;
 - (void)startAutoResizing;
 - (void)dealloc;

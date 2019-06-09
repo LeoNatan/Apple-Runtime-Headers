@@ -14,9 +14,10 @@
 #import <AVKit/AVNowPlayingFrameSource-Protocol.h>
 #import <AVKit/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class AVDurationTimeFormatter, AVFrameSet, AVInfoPanelViewController, AVInternalPlaybackOptions, AVKeyValueObserverCollection, AVLoadingIndicatorView, AVNowPlayingDimmingView, AVNowPlayingInfoHintView, AVNowPlayingTransportBar, AVStandardScanningDelegate, AVTimeRange, CADisplayLink, NSArray, NSString, NSTimer, NSURL, NSUUID, UIImageView, UIView, _AVFocusContainerView, _UIVisualEffectBackdropView;
+@class AVDurationTimeFormatter, AVFrameSet, AVInfoPanelViewController, AVInternalPlaybackOptions, AVKeyValueObserverCollection, AVLoadingIndicatorView, AVNowPlayingDimmingView, AVNowPlayingInfoHintView, AVNowPlayingTransportBar, AVPermissiveSwipeGestureRecognizer, AVSlidewaysTransition, AVStandardScanningDelegate, AVxOverlayViewController, CADisplayLink, NSArray, NSString, NSTimer, NSURL, NSUUID, UIImageView, UIView, UIViewController, _AVFocusContainerView, _UIVisualEffectBackdropView;
 @protocol AVPlayerViewControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVNowPlayingPlaybackControlsViewController : AVPlaybackControlsViewController <AVNowPlayingFrameSource, AVFrameSetDelegate, AVInfoPanelNavigationDelegate, AVInfoPanelSubtitlesDelegate, AVInfoPanelLanguageDelegate, AVInfoPanelViewControllerDelegate, UIViewControllerTransitioningDelegate>
 {
     _Bool _showsLoadingIndicator;
@@ -25,7 +26,6 @@
     _Bool _selectButtonHeldDown;
     _Bool _assetHasDates;
     _Bool _initialPlaybackBegun;
-    _Bool _sentEnteredInterstitial;
     _Bool _shouldFadeOutPlaybackControlsOncePlaybackBegins;
     long long _playbackControlsStateWhenVisible;
     double _maxMinusMinDurationCached;
@@ -39,6 +39,13 @@
     UIImageView *_scanningImageView;
     AVInfoPanelViewController *_infoPanelViewController;
     AVNowPlayingInfoHintView *_infoHintView;
+    AVNowPlayingInfoHintView *_customOverlayHintView;
+    AVNowPlayingInfoHintView *_nextChannelHintView;
+    AVNowPlayingInfoHintView *_previousChannelHintView;
+    AVPermissiveSwipeGestureRecognizer *_swipeLeft;
+    AVPermissiveSwipeGestureRecognizer *_swipeRight;
+    UIViewController *_channelInterstititialViewController;
+    AVSlidewaysTransition *_channelTransition;
     CADisplayLink *_displayLink;
     AVFrameSet *_frameSet;
     struct {
@@ -50,6 +57,7 @@
     id _audioSessionInterruptionNotificationObserver;
     id _playerItemDidScanToEndTimeObserver;
     _Bool _applicationResigning;
+    _Bool _customOverlayHintVisible;
     _Bool _loading;
     _Bool _shouldShowInfoHint;
     _Bool _scanningImageBlockCalled;
@@ -60,8 +68,10 @@
     NSString *_needleText;
     NSURL *_alternateThumbnailStreamURL;
     id <AVPlayerViewControllerDelegate> _delegate;
+    AVxOverlayViewController *_overlayViewController;
     NSArray *_customInfoViewControllers;
     NSString *_infoHint;
+    NSArray *_permissiveSwipeGestureRecognizers;
     AVKeyValueObserverCollection *_nowPlayingKVO;
     AVDurationTimeFormatter *_interstitialTimeFormatter;
     NSUUID *_scanningSesssionUUID;
@@ -78,9 +88,12 @@
 @property(nonatomic) _Bool shouldShowInfoHint; // @synthesize shouldShowInfoHint=_shouldShowInfoHint;
 @property(nonatomic, getter=isLoading) _Bool loading; // @synthesize loading=_loading;
 @property(retain, nonatomic) AVKeyValueObserverCollection *nowPlayingKVO; // @synthesize nowPlayingKVO=_nowPlayingKVO;
+@property(nonatomic, getter=isCustomOverlayHintVisible) _Bool customOverlayHintVisible; // @synthesize customOverlayHintVisible=_customOverlayHintVisible;
+@property(retain, nonatomic) NSArray *permissiveSwipeGestureRecognizers; // @synthesize permissiveSwipeGestureRecognizers=_permissiveSwipeGestureRecognizers;
 @property(nonatomic, getter=isApplicationResigning) _Bool applicationResigning; // @synthesize applicationResigning=_applicationResigning;
 @property(copy, nonatomic) NSString *infoHint; // @synthesize infoHint=_infoHint;
 @property(copy, nonatomic) NSArray *customInfoViewControllers; // @synthesize customInfoViewControllers=_customInfoViewControllers;
+@property(readonly, nonatomic) AVxOverlayViewController *overlayViewController; // @synthesize overlayViewController=_overlayViewController;
 @property(nonatomic) __weak id <AVPlayerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSURL *alternateThumbnailStreamURL; // @synthesize alternateThumbnailStreamURL=_alternateThumbnailStreamURL;
 @property(copy, nonatomic) NSString *needleText; // @synthesize needleText=_needleText;
@@ -92,9 +105,6 @@
 - (void)updateFractionOfContentLoaded;
 - (void)updateDisplayLink:(id)arg1;
 - (id)interstitialNeedleText;
-- (double)timeRemainingInCurrentInterstitial;
-- (id)previousInterstitialTimeRange;
-@property(readonly) AVTimeRange *currentInterstitialTimeRange;
 - (id)displayedTimeRangeOfContentLoaded;
 - (id)timeRangeForScrubbing;
 - (double)_scrubbingVelocityUpperBound;
@@ -121,6 +131,7 @@
 - (unsigned long long)_prefetchFramesForSliceSize:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_updateAdMarkers;
 - (id)interstitialTimeRangeCollection;
+- (id)interstitialController;
 - (id)_imageProxyForNavigationMarkerIndex:(unsigned long long)arg1;
 - (id)_navigationMarkerIndexPathsForFrameRange:(struct _NSRange)arg1;
 - (long long)_scrubbingIndexForMarkerIndex:(unsigned long long)arg1;
@@ -214,6 +225,7 @@
 - (void)touchesBegan:(id)arg1;
 - (_Bool)_isTouchingRemote;
 - (_Bool)shouldIgnoreTouchEvents;
+- (void)setCustomOverlayHintVisible:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_showInfoHint;
 - (void)_scheduleInfoHint;
 - (void)_cancelInfoHint;
@@ -225,13 +237,24 @@
 - (void)didReceiveMemoryWarning;
 - (void)_updateTransportBarScrubDataSource;
 @property(readonly, getter=isFrameSetForNavigationMarkersOnly) _Bool frameSetForNavigationMarkersOnly;
+- (id)preferredFocusEnvironments;
+- (void)_dismissInteractiveOverlay;
+- (void)_presentInteractiveOverlay;
+- (void)_swipeRight:(id)arg1;
+- (void)_swipeLeft:(id)arg1;
+- (_Bool)_isChannelSkippingEnabled;
+- (_Bool)_isPlayerItemChannel;
+- (void)_presentChannelInterstitialFromSwipeDirection:(unsigned long long)arg1;
+- (void)_didDismissChannelInterstitialResumingPlayback:(_Bool)arg1;
+- (void)_willDismissChannelInterstitialResumingPlayback:(_Bool)arg1;
+- (id)_viewControllerForChannelInterstitial:(_Bool)arg1;
+- (_Bool)_shouldChannelSkipToNextForSwipeDirection:(unsigned long long)arg1;
 - (void)loadView;
 @property(readonly, nonatomic) _AVFocusContainerView *focusContainerView;
 - (id)_playerItemForScrubbing;
-- (void)_exitInterstitialForTimeRange:(id)arg1;
-- (void)_enterInterstitialForTimeRange:(id)arg1;
-- (void)_didBeginPlaybackInsideTimeRange:(id)arg1;
 - (void)resetToPausePoint;
+- (void)resetToPausePointWithoutPlaying;
+- (void)_resetToPausePointResumingPlayback:(_Bool)arg1;
 - (_Bool)isAtPausePoint;
 - (void)_scrubbingPlayerItemStatusDidChange:(id)arg1;
 - (void)_playerItemForScrubbingDidChange:(id)arg1;

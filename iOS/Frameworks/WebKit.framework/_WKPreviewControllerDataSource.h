@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     struct RetainPtr<NSItemProvider> _itemProvider;
     struct RetainPtr<QLItem> _item;
+    struct URL _downloadedURL;
     CDUnknownBlockType _completionHandler;
     NSString *_mimeType;
 }

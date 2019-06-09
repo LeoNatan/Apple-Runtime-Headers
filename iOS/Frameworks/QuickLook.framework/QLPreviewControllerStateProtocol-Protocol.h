@@ -6,20 +6,21 @@
 
 #import <QuickLook/NSObject-Protocol.h>
 
-@class NSData, NSString, NSURL, NSUUID, UIColor;
+@class FPSandboxingURLWrapper, NSDictionary, NSString, NSURL, NSUUID, QLPreviewItemEditedCopy, UIColor;
 @protocol QLPrintingProtocol, QLRemotePopoverTracker;
 
 @protocol QLPreviewControllerStateProtocol <NSObject>
 - (void)updateTitle:(NSString *)arg1;
 - (void)updatePreferredContentSize:(struct CGSize)arg1;
-- (void)updatePreviewItemAtIndex:(unsigned long long)arg1 updatedContentsURL:(NSURL *)arg2 sandboxExtension:(NSData *)arg3 completionHandler:(void (^)(void))arg4;
+- (void)updatePreviewItemAtIndex:(unsigned long long)arg1 editedCopy:(QLPreviewItemEditedCopy *)arg2 completionHandler:(void (^)(void))arg3;
 - (void)presentAlertControllerForScenario:(long long)arg1;
-- (void)expandContentOfItemAtIndex:(unsigned long long)arg1 withUUID:(NSUUID *)arg2;
+- (void)expandContentOfItemAtIndex:(unsigned long long)arg1 withUUID:(NSUUID *)arg2 unarchivedItemsURLWrapper:(FPSandboxingURLWrapper *)arg3;
 - (void)beginInteractiveTransition;
+- (void)forwardMessage:(NSDictionary *)arg1 toItemAtIndex:(unsigned long long)arg2 withUUID:(NSUUID *)arg3 completionHandler:(void (^)(NSDictionary *, NSError *))arg4;
 - (void)currentPreviewItemViewControllerHasUnsavedEdits:(_Bool)arg1;
 - (void)setCanChangeCurrentPage:(_Bool)arg1;
 - (void)triggerQuickLookDismissal;
-- (void)showShareSheetWithPopoverTracker:(id <QLRemotePopoverTracker>)arg1 dismissCompletion:(void (^)(void))arg2;
+- (void)showShareSheetWithPopoverTracker:(id <QLRemotePopoverTracker>)arg1 customSharedURL:(NSURL *)arg2 dismissCompletion:(void (^)(void))arg3;
 - (void)showShareSheet;
 - (void)openURLIfAllowed:(NSURL *)arg1;
 - (void)setPrinter:(id <QLPrintingProtocol>)arg1;

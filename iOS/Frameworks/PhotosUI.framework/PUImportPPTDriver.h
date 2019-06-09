@@ -7,22 +7,22 @@
 #import <objc/NSObject.h>
 
 #import <PhotosUI/PUImportActionCoordinatorDelegate-Protocol.h>
-#import <PhotosUI/PUImportAssetsDataSourceManagerObserver-Protocol.h>
-#import <PhotosUI/PUImportMediaProviderNotificationsReceiver-Protocol.h>
+#import <PhotosUI/PXImportAssetsDataSourceManagerObserver-Protocol.h>
+#import <PhotosUI/PXImportMediaProviderNotificationsReceiver-Protocol.h>
 
-@class NSDictionary, NSMutableDictionary, NSString, PUImportActionCoordinator, PUImportAssetsDataSourceManager, PUImportController, PUImportMediaProvider, PUImportPPTImportSource, PUTabbedLibraryViewController;
+@class NSDictionary, NSMutableDictionary, NSString, PUImportActionCoordinator, PUImportPPTImportSource, PUTabbedLibraryViewController, PXImportAssetsDataSourceManager, PXImportController, PXImportMediaProvider;
 @protocol OS_dispatch_semaphore;
 
-@interface PUImportPPTDriver : NSObject <PUImportAssetsDataSourceManagerObserver, PUImportMediaProviderNotificationsReceiver, PUImportActionCoordinatorDelegate>
+@interface PUImportPPTDriver : NSObject <PXImportAssetsDataSourceManagerObserver, PXImportMediaProviderNotificationsReceiver, PUImportActionCoordinatorDelegate>
 {
     CDUnknownBlockType _insertDatasourceReply;
     CDUnknownBlockType _thumbnailTestReply;
     CDUnknownBlockType _importToLibraryTestReply;
     NSMutableDictionary *_extraResults;
-    PUImportAssetsDataSourceManager *_dataSourceManager;
-    PUImportController *_importController;
+    PXImportAssetsDataSourceManager *_dataSourceManager;
+    PXImportController *_importController;
     PUImportPPTImportSource *_currentImportSource;
-    PUImportMediaProvider *_mediaProvider;
+    PXImportMediaProvider *_mediaProvider;
     PUImportActionCoordinator *_actionCoordinator;
     NSObject<OS_dispatch_semaphore> *_importSemaphore;
     _Bool _importComplete;

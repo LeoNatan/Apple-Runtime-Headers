@@ -20,10 +20,11 @@ __attribute__((visibility("hidden")))
     _Bool _isPersistent;
     NSObject<OS_dispatch_source> *_timeoutTimer;
     NSObject<OS_dispatch_queue> *_timeoutTimerQueue;
+    struct OpaqueFigCFWeakReference *_timeoutTimerContext;
     _Bool _timeoutTimerStarted;
 }
 
-+ (void)selfTerminateDueToTimeout:(int)arg1;
++ (void)selfTerminateDueToTimeout:(id)arg1;
 @property(retain, nonatomic) NSData *tokenData; // @synthesize tokenData;
 @property(retain, nonatomic) id context; // @synthesize context;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *connection;

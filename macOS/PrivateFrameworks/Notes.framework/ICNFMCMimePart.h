@@ -176,15 +176,6 @@
 - (long long)typeCode;
 - (id)init;
 - (void)dealloc;
-- (id)copySignerLabels;
-- (void)verifySignature;
-- (id)decodeApplicationPkcs7_mimeWithContext:(id)arg1;
-- (id)decodeMultipartSignedWithContext:(id)arg1;
-- (id)_verifySignatureWithCMSDecoder:(struct _CMSDecoder *)arg1 againstSender:(id)arg2 signingError:(id *)arg3;
-- (struct _CMSDecoder *)_newCMSDecoderWithMimePart:(id)arg1 error:(id *)arg2;
-- (id)newEncryptedPartWithData:(id)arg1 recipients:(id)arg2 encryptedData:(id *)arg3;
-- (id)newSignedPartWithData:(id)arg1 sender:(id)arg2 signatureData:(id *)arg3;
-- (int)_addDataConvertingLineEndingsFromUnixToNetwork:(id)arg1 toCMSEncoder:(struct _CMSEncoder *)arg2;
 - (void)renderString:(id)arg1;
 
 // Remaining properties

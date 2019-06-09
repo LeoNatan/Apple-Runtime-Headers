@@ -34,8 +34,7 @@
 - (_Bool)anyClusterOfInterestWithinDistance:(double)arg1 ofLocation:(id)arg2 andEnteredEarlierThan:(double)arg3;
 - (id)getLocationsOfInterestWithinDistance:(double)arg1 ofLocation:(id)arg2;
 - (id)findClusterWithLocation:(id)arg1;
-- (id)getPredictedLocationsOfInterestOnDate:(id)arg1;
-- (long long)getRoutineModeFromLocation:(id)arg1;
+- (id)getPredictedLocationsOfInterestWithCriteria:(id)arg1;
 - (id)_getNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3;
 - (id)getNextPredictedLocationsOfInterestFromLocation:(id)arg1 startDate:(id)arg2 timeInterval:(double)arg3;
 - (void)updateInternalState;

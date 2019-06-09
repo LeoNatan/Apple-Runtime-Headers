@@ -54,6 +54,7 @@
 - (void)removeVisits:(id)arg1 candidateLastVisit:(id)arg2;
 - (void)wasRedirectedFrom:(id)arg1 to:(id)arg2;
 - (void)_addExistingVisit:(id)arg1;
+- (void)addExistingVisit:(id)arg1;
 - (void)_addVisit:(id)arg1;
 - (void)_wasVisitedOnSynchronizationQueue:(id)arg1;
 - (void)wasVisited:(id)arg1;
@@ -81,6 +82,7 @@
 @property(readonly, nonatomic) double lastVisitedTimeInterval;
 @property(readonly, nonatomic) WBSHistoryVisit *lastVisitOnSynchronizationQueue;
 @property(readonly, nonatomic) WBSHistoryVisit *lastVisit;
+@property(readonly, copy, nonatomic) NSString *userVisibleHostOrFallbackURLString;
 @property(readonly, nonatomic) NSString *userVisibleURLString; // @synthesize userVisibleURLString=_userVisibleURLString;
 @property(readonly, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *title;

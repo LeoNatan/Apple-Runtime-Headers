@@ -34,6 +34,17 @@ struct CGSize {
     double height;
 };
 
+struct CLLocationCoordinate2D {
+    double latitude;
+    double longitude;
+};
+
+struct ICDeviceHardwareInfo {
+    unsigned long long modelName;
+    long long version;
+    long long subVersion;
+};
+
 struct ICDrawingAzimuthFilter {
     CDUnknownFunctionPointerType *_field1;
     struct ICDrawingInputProvider<ICDrawingInputPoint> *_field2;
@@ -186,6 +197,13 @@ struct ICDrawingVelocityCalculationFilter {
 };
 
 struct ICSmoothingPoint;
+
+struct NSCache {
+    Class _field1;
+    id _field2;
+    void *_field3[5];
+    void *_field4;
+};
 
 struct NSDirectionalEdgeInsets {
     double _field1;

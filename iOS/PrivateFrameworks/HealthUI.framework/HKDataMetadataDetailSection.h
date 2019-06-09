@@ -6,11 +6,14 @@
 
 #import <HealthUI/HKDataMetadataSimpleSection.h>
 
-@class HKDisplayTypeController, HKUnitPreferenceController, NSObject;
+#import <HealthUI/HKDataMetadataDetailSectionDataReceiver-Protocol.h>
+
+@class HKDataMetadataDataSource, HKDisplayTypeController, HKUnitPreferenceController, NSObject;
 @protocol HKDataMetadataObject;
 
-@interface HKDataMetadataDetailSection : HKDataMetadataSimpleSection
+@interface HKDataMetadataDetailSection : HKDataMetadataSimpleSection <HKDataMetadataDetailSectionDataReceiver>
 {
+    HKDataMetadataDataSource *_metadataDataSource;
     NSObject<HKDataMetadataObject> *_object;
     HKDisplayTypeController *_displayTypeController;
     HKUnitPreferenceController *_unitController;

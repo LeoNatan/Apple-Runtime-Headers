@@ -13,20 +13,13 @@
     AVCaptureInputPortInternal *_internal;
 }
 
-+ (BOOL)automaticallyNotifiesObserversOfClock;
 + (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(BOOL)arg4;
 + (void)initialize;
-- (void)_updateFormatDescriptionFromPropertyListener;
-- (void)_updateFormatDescription;
 - (void)detachFromAudioMixerNode;
 - (void)attachToAudioMixerNode:(int)arg1 element:(unsigned int)arg2 scope:(unsigned int)arg3 isReadOnly:(BOOL)arg4;
 - (unsigned int)audioMixerNodeElement;
 - (void)setGraph:(struct OpaqueCMIOGraph *)arg1 node:(int)arg2 element:(unsigned int)arg3 scope:(unsigned int)arg4;
-- (void)_removeFormatDescriptionPropertyListener;
-- (unsigned int)element;
-- (unsigned int)scope;
-- (int)node;
-- (struct OpaqueCMIOGraph *)graph;
+- (void)_removeFormatDescriptionPropertyListenerForGraph:(struct OpaqueCMIOGraph *)arg1 node:(int)arg2 element:(unsigned int)arg3 scope:(unsigned int)arg4 callbackContextToken:(void *)arg5;
 - (id)valueForUndefinedKey:(id)arg1;
 - (void)_setClock:(struct OpaqueCMClock *)arg1;
 @property(readonly, nonatomic) struct OpaqueCMClock *clock;
@@ -36,8 +29,6 @@
 @property(readonly, nonatomic) NSString *mediaType;
 @property(readonly, nonatomic) AVCaptureInput *input;
 - (id)description;
-- (void)setInput:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(BOOL)arg4;
 

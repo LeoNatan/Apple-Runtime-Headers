@@ -79,7 +79,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIColor *textColor;
 @property(readonly, copy, nonatomic) NSString *subtitle;
 @property(readonly, copy, nonatomic) NSString *title;
-- (void)dealloc;
 - (id)init;
 
 @end

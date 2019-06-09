@@ -15,8 +15,8 @@
 }
 
 @property(retain, nonatomic) NSMutableDictionary *attributes; // @synthesize attributes=_attributes;
-@property(readonly, retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
-- (void)dealloc;
+@property(readonly, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
+- (void).cxx_destruct;
 - (void)persist;
 - (void)setString:(id)arg1 forKey:(id)arg2;
 - (void)setUInt64:(unsigned long long)arg1 forKey:(id)arg2;

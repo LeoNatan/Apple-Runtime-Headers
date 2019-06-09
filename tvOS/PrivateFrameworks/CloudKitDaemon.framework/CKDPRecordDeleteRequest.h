@@ -15,11 +15,19 @@ __attribute__((visibility("hidden")))
 {
     NSString *_etag;
     NSMutableArray *_pluginFields;
+    NSMutableArray *_publicKeys;
     CKDPRecordIdentifier *_recordIdentifier;
+    _Bool _participantKeyLost;
+    struct {
+        unsigned int participantKeyLost:1;
+    } _has;
 }
 
++ (Class)publicKeysType;
 + (Class)pluginFieldsType;
 + (id)options;
+@property(retain, nonatomic) NSMutableArray *publicKeys; // @synthesize publicKeys=_publicKeys;
+@property(nonatomic) _Bool participantKeyLost; // @synthesize participantKeyLost=_participantKeyLost;
 @property(retain, nonatomic) NSMutableArray *pluginFields; // @synthesize pluginFields=_pluginFields;
 @property(retain, nonatomic) NSString *etag; // @synthesize etag=_etag;
 @property(retain, nonatomic) CKDPRecordIdentifier *recordIdentifier; // @synthesize recordIdentifier=_recordIdentifier;
@@ -35,6 +43,11 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)publicKeysAtIndex:(unsigned long long)arg1;
+- (unsigned long long)publicKeysCount;
+- (void)addPublicKeys:(id)arg1;
+- (void)clearPublicKeys;
+@property(nonatomic) _Bool hasParticipantKeyLost;
 - (id)pluginFieldsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)pluginFieldsCount;
 - (void)addPluginFields:(id)arg1;

@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (struct __CFRunLoopSource *)serverSource;
 - (void)unregisterWithMach;
+- (_Bool)_registerWithMachServiceName:(char *)arg1;
 - (_Bool)registerWithMach;
 - (_Bool)isRegisteredWithMach;
 - (id)delegate;

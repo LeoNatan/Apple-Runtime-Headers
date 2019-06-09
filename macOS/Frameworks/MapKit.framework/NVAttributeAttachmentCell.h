@@ -6,12 +6,13 @@
 
 #import <AppKit/NSTextAttachmentCell.h>
 
+__attribute__((visibility("hidden")))
 @interface NVAttributeAttachmentCell : NSTextAttachmentCell
 {
     double verticalOffset;
 }
 
-@property double verticalOffset; // @synthesize verticalOffset;
+@property(nonatomic) double verticalOffset; // @synthesize verticalOffset;
 - (void)drawWithFrame:(struct CGRect)arg1 inView:(id)arg2;
 - (struct CGPoint)cellBaselineOffset;
 

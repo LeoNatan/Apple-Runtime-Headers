@@ -18,13 +18,13 @@ __attribute__((visibility("hidden")))
 + (id)alwaysAllowedBundleIdentifiers;
 + (id)queryWithIdentifier:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)_requiresDatabaseMappingEntitlement;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (void)dealloc;
 
 @end
 

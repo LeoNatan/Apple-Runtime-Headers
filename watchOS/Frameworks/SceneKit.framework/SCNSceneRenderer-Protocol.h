@@ -10,20 +10,22 @@
 @protocol SCNSceneRendererDelegate;
 
 @protocol SCNSceneRenderer <NSObject>
+@property(nonatomic) _Bool usesReverseZ;
+@property(readonly, nonatomic) struct CGRect currentViewport;
 @property(retain, nonatomic) SCNNode *audioListener;
 @property(readonly, nonatomic) AVAudioEnvironmentNode *audioEnvironmentNode;
 @property(readonly, nonatomic) AVAudioEngine *audioEngine;
-@property(readonly, nonatomic) void *context;
 @property(readonly, nonatomic) unsigned int renderingAPI;
 @property(retain, nonatomic) SKScene *overlaySKScene;
 @property(nonatomic) unsigned int debugOptions;
 @property(nonatomic) _Bool showsStatistics;
+@property(nonatomic, getter=isTemporalAntialiasingEnabled) _Bool temporalAntialiasingEnabled;
 @property(nonatomic, getter=isJitteringEnabled) _Bool jitteringEnabled;
 @property(nonatomic) _Bool autoenablesDefaultLighting;
 @property(retain, nonatomic) SCNNode *pointOfView;
 @property(nonatomic) _Bool loops;
 @property(getter=isPlaying) _Bool playing;
-@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
 @property(nonatomic) double sceneTime;
 @property(retain, nonatomic) SCNScene *scene;
 - (void)prepareObjects:(NSArray *)arg1 withCompletionHandler:(void (^)(_Bool))arg2;

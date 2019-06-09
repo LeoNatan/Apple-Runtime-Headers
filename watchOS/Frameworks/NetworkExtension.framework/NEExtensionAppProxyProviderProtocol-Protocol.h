@@ -9,7 +9,6 @@
 @class NSFileHandle;
 
 @protocol NEExtensionAppProxyProviderProtocol <NEExtensionTunnelProviderProtocol>
-- (void)setInitialFlowDivertControlSocket:(NSFileHandle *)arg1 extraValidation:(_Bool)arg2;
 - (void)setInitialFlowDivertControlSocket:(NSFileHandle *)arg1;
 - (void)setDelegateInterface:(unsigned int)arg1;
 @end

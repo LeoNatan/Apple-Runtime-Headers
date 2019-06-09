@@ -16,13 +16,16 @@ __attribute__((visibility("hidden")))
     long long _mtime;
 }
 
-@property(readonly, nonatomic) long long mtime; // @synthesize mtime=_mtime;
+@property(nonatomic) long long mtime; // @synthesize mtime=_mtime;
 - (id)asShareableItem;
 - (BOOL)startDownloadInTask:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)evictInTask:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
+- (void)prepareForSyncUpInZone:(id)arg1;
 - (BOOL)_deleteFromDB:(id)arg1 keepAliases:(BOOL)arg2;
 - (BOOL)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
+- (BOOL)_updateRecursiveProperties;
+- (BOOL)_insertRecursiveProperties;
 - (void)_retryPostponedIfNeededForDiffs:(unsigned long long)arg1;
 - (void)markRemovedFromFilesystemForServerEdit:(BOOL)arg1;
 - (void)_markLostDirectoryAsAlmostDead;
@@ -31,13 +34,16 @@ __attribute__((visibility("hidden")))
 - (id)clientZonesChildrenNeedingSyncUpAreIn;
 - (BOOL)hasPendingLostChildren;
 - (BOOL)hasLostChildren;
+- (id)childItemCount;
 - (BOOL)hasLiveChildren;
 - (BOOL)hasDeadChildren;
 - (void)transformIntoFSRoot;
 - (BOOL)containsPendingUploadOrSyncUp;
 - (BOOL)containsPendingDownload;
+- (BOOL)containsDirFault;
 - (BOOL)containsFault;
 - (BOOL)containsOverQuotaItems;
+- (BOOL)possiblyContainsSharedItem;
 - (BOOL)changedAtRelativePath:(id)arg1 scanPackage:(BOOL)arg2;
 - (void)updateItemMetadataFromServerItem:(id)arg1 appliedSharingPermission:(BOOL)arg2;
 - (BOOL)updateLocationAndMetaFromFSAtPath:(id)arg1 parentGlobalID:(id)arg2;
@@ -47,8 +53,10 @@ __attribute__((visibility("hidden")))
 - (id)_initFromPQLResultSet:(id)arg1 session:(id)arg2 db:(id)arg3 error:(id *)arg4;
 - (BOOL)hasShareIDAndIsOwnedByMe;
 @property(readonly, nonatomic) BRCDirectoryItem *asDirectory;
+- (void)learnItemID:(id)arg1 ownerKey:(id)arg2 path:(id)arg3 sharingOptions:(unsigned long long)arg4 markLost:(BOOL)arg5;
 - (unsigned long long)diffAgainstServerItem:(id)arg1;
 - (BOOL)isDirectoryWithPackageName;
+- (BOOL)isDirectoryFault;
 - (BOOL)isDirectory;
 
 // Remaining properties

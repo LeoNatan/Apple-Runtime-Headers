@@ -10,13 +10,9 @@ __attribute__((visibility("hidden")))
 @interface FI_TButtonCell : NSButtonCell
 {
     BOOL _acceptsFirstMouse;
-    BOOL _forceBlueGlow;
 }
 
-@property BOOL forceBlueGlow; // @synthesize forceBlueGlow=_forceBlueGlow;
 @property BOOL acceptsFirstMouse; // @synthesize acceptsFirstMouse=_acceptsFirstMouse;
-- (void)_updateCoreUIOptions:(id)arg1 withContentAppearanceInView:(id)arg2;
-- (unsigned long long)_interiorContentValueStateInView:(id)arg1;
 - (_Bool)acceptsFirstMouseFE:(id)arg1 inRect:(struct CGRect)arg2 ofView:(id)arg3;
 - (long long)nextState;
 - (void)initCommon;

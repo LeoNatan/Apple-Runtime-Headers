@@ -14,6 +14,7 @@
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_content_context : NSObject <OS_nw_content_context>
 {
+    unsigned char packet_id[16];
     char identifier[32];
     NWConcrete_nw_content_context *antecedent;
     unsigned long long expiration_milliseconds;
@@ -25,10 +26,12 @@ __attribute__((visibility("hidden")))
     unsigned int is_final:1;
     unsigned int expiration_checked:1;
     unsigned int completed_send:1;
-    unsigned int __pad_bits:5;
+    unsigned int has_packet_id:1;
+    unsigned int __pad_bits:4;
 }
 
 - (void).cxx_destruct;
+- (id)redactedDescription;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (id)initWithIdentifier:(const char *)arg1;

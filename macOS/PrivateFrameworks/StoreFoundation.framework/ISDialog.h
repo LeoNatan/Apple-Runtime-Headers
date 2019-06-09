@@ -60,6 +60,8 @@
 @property BOOL authorizationIsForced; // @synthesize authorizationIsForced=_authorizationIsForced;
 @property BOOL allowDuplicates; // @synthesize allowDuplicates=_allowDuplicates;
 - (void).cxx_destruct;
+- (id)_iconForStoreClient:(id)arg1 authenticationReason:(long long)arg2;
+- (id)_appWindow;
 - (void)stopModalForDialog:(id)arg1;
 - (void)handleDismissNoficiation:(id)arg1;
 @property(readonly) BOOL needsDedicatedUI;

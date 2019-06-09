@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Spotlight/PRSParsecSimpleResult.h>
+#import <SpotlightServices/SFSearchResult_SpotlightExtras.h>
 
 @class NSArray, NSMutableArray;
 
-@interface SPFusedResult : PRSParsecSimpleResult
+@interface SPFusedResult : SFSearchResult_SpotlightExtras
 {
     NSMutableArray *_childResults;
 }

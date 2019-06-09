@@ -21,6 +21,8 @@
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
+- (_Bool)isEqual:(id)arg1;
 - (id)description;
 - (void)updateForLandscape:(_Bool)arg1;
 - (_Bool)arePointsDeviceRelative;

@@ -13,7 +13,7 @@
     NSDateComponents *_dateComponents;
 }
 
-+ (float)heightForInterfaceOrientation:(int)arg1;
++ (float)heightForInterfaceOrientation:(int)arg1 windowSize:(struct CGSize)arg2 heightSizeClass:(int)arg3;
 - (void).cxx_destruct;
 - (id)dayColorKey;
 - (id)dayColor;

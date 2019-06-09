@@ -8,6 +8,7 @@
 
 @class NSArray, SKUIButtonViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIHeaderViewElement : SKUIViewElement
 {
 }

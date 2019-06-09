@@ -24,6 +24,7 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType resultHandler; // @synthesize resultHandler=_resultHandler;
 @property(readonly, nonatomic) PHImageRequestOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) long long contentMode; // @synthesize contentMode=_contentMode;
+@property(readonly, nonatomic) struct CGSize targetSize; // @synthesize targetSize=_targetSize;
 - (void).cxx_destruct;
 - (void)_handleRenderedImage:(id)arg1 error:(id)arg2;
 - (void)_handleImageWasCached;

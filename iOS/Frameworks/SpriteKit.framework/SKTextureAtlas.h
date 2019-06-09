@@ -39,6 +39,7 @@
 - (id)description;
 - (void)preloadWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)loadTexturesFromCUIImageAtlas:(id)arg1;
+- (id)createSubTextureFromTexture:(id)arg1 andCUINamedImage:(id)arg2 andOrigin:(struct CGPoint)arg3;
 - (void)loadTextures;
 - (void)parseAtlasPropertyList:(id)arg1 withPath:(id)arg2;
 @property(readonly, nonatomic) NSArray *textureNames;

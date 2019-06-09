@@ -13,6 +13,8 @@
     NSMapTable *_entries;
 }
 
+@property(retain, nonatomic) NSMapTable *entries; // @synthesize entries=_entries;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setEntry:(id)arg1 forAction:(SEL)arg2;
 - (id)entryForAction:(SEL)arg1;
@@ -20,7 +22,6 @@
 - (id)setAlwaysValidlEntryForAction:(SEL)arg1;
 - (id)setMenuEntryWithSelector:(SEL)arg1 forAction:(SEL)arg2;
 - (id)setSimpleSelector:(SEL)arg1 forAction:(SEL)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

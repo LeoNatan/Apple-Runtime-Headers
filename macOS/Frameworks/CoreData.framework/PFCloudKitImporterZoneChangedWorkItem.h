@@ -8,7 +8,7 @@
 
 #import <CoreData/PFCloudKitSerializerDelegate-Protocol.h>
 
-@class NSArray, NSCKImportOperation, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSUUID;
 
 __attribute__((visibility("hidden")))
 @interface PFCloudKitImporterZoneChangedWorkItem : PFCloudKitImporterWorkItem <PFCloudKitSerializerDelegate>
@@ -16,19 +16,24 @@ __attribute__((visibility("hidden")))
     NSArray *_changedRecordZoneIDs;
     NSMutableDictionary *_assetPathToSafeSaveURL;
     NSMutableArray *_resolvedRelationships;
-    NSCKImportOperation *_importOperation;
+    NSUUID *_importOperationIdentifier;
     NSMutableArray *_updatedRecords;
     unsigned long long _totalAssetBytes;
     NSMutableDictionary *_recordTypeToDeletedRecordID;
+    NSMutableArray *_allRecordIDs;
     NSMutableArray *_encounteredErrors;
+    NSMutableDictionary *_fetchedZoneIDToChangeToken;
+    NSMutableArray *_failedRelationships;
 }
 
+@property(readonly, nonatomic) NSDictionary *fetchedZoneIDToChangeToken; // @synthesize fetchedZoneIDToChangeToken=_fetchedZoneIDToChangeToken;
 @property(readonly, nonatomic) NSArray *encounteredErrors; // @synthesize encounteredErrors=_encounteredErrors;
+@property(readonly, nonatomic) NSArray *allRecordIDs; // @synthesize allRecordIDs=_allRecordIDs;
 @property(readonly, nonatomic) NSDictionary *recordTypeToDeletedRecordID; // @synthesize recordTypeToDeletedRecordID=_recordTypeToDeletedRecordID;
 @property(readonly, nonatomic) NSArray *updatedRecords; // @synthesize updatedRecords=_updatedRecords;
 @property(readonly, nonatomic) unsigned long long totalAssetBytes; // @synthesize totalAssetBytes=_totalAssetBytes;
 @property(readonly, nonatomic) NSDictionary *assetPathToSafeSaveURL; // @synthesize assetPathToSafeSaveURL=_assetPathToSafeSaveURL;
-@property(readonly, nonatomic) NSCKImportOperation *importOperation; // @synthesize importOperation=_importOperation;
+@property(readonly, nonatomic) NSUUID *importOperationIdentifier; // @synthesize importOperationIdentifier=_importOperationIdentifier;
 @property(readonly, nonatomic) NSArray *resolvedRelationships; // @synthesize resolvedRelationships=_resolvedRelationships;
 @property(readonly, nonatomic) NSArray *changedRecordZoneIDs; // @synthesize changedRecordZoneIDs=_changedRecordZoneIDs;
 - (id)cloudKitSerializer:(id)arg1 safeSaveURLForAsset:(id)arg2;
@@ -43,7 +48,7 @@ __attribute__((visibility("hidden")))
 - (void)doWorkWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)initWithChangedRecordZoneIDs:(id)arg1 options:(id)arg2 metadata:(id)arg3 request:(id)arg4;
+- (id)initWithChangedRecordZoneIDs:(id)arg1 options:(id)arg2 request:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mChildren;
 }
 
+- (void).cxx_destruct;
 - (void)addChild:(id)arg1;
 - (id)children;
-- (void)dealloc;
 - (id)init;
 
 @end

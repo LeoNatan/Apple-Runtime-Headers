@@ -53,7 +53,6 @@
 - (float)addPropertiesAtPoint:(struct CGPoint)arg1;
 - (float)addPropertyTitleAtPoint:(struct CGPoint)arg1;
 - (float)addAUTitleAtPoint:(struct CGPoint)arg1;
-- (void)privUpdateColumnWidths;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)showExpertParams:(id)arg1;
 - (unsigned int)parameterCountForScope:(unsigned int)arg1 element:(unsigned int)arg2;
@@ -69,6 +68,7 @@
 - (void)rebuildUI;
 - (void)setFilteredParameterList:(id)arg1 exclude:(BOOL)arg2;
 - (void)setViewAppearanceProperties:(id)arg1;
+- (void)privUpdateColumnWidths;
 - (id)initWithAudioUnit:(struct ComponentInstanceRecord *)arg1 size:(struct CGSize)arg2 displayFlags:(unsigned int)arg3 displayData:(id)arg4;
 
 @end

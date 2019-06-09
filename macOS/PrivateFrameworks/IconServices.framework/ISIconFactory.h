@@ -19,8 +19,12 @@ __attribute__((visibility("hidden")))
 - (id)initWithMIMEType:(id)arg1;
 - (id)initWithModelCode:(id)arg1;
 - (id)initWithFileExtension:(id)arg1;
+- (id)_initWithIcon:(id)arg1 decorations:(id)arg2;
+- (id)initWithImages:(id)arg1;
+- (id)_initTransparent;
 - (id)initWithResourceProxy:(id)arg1;
 - (id)initWithType:(id)arg1;
+- (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (id)_init;
 

@@ -54,8 +54,8 @@ struct CGSize {
 };
 
 struct CGVector {
-    double _field1;
-    double _field2;
+    double dx;
+    double dy;
 };
 
 struct NSDirectionalEdgeInsets {
@@ -125,6 +125,16 @@ struct PXAssetBadgeInfo {
     long long count;
 };
 
+struct PXAssetMediaTypeCount {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+    unsigned long long _field4;
+    unsigned long long _field5;
+    unsigned long long _field6;
+    unsigned long long _field7;
+};
+
 struct PXDisplayVelocity {
     double _field1;
     double _field2;
@@ -132,26 +142,15 @@ struct PXDisplayVelocity {
     double _field4;
 };
 
-struct PXMediaProviderThumbnailDataFormat {
-    unsigned long long _field1;
-    unsigned short _field2;
-    unsigned short _field3;
-};
-
-struct PXMediaProviderThumbnailDataSpec {
-    struct PXMediaProviderThumbnailDataFormat _field1;
-    unsigned short _field2;
-    unsigned short _field3;
-    unsigned short _field4;
-    unsigned short _field5;
-    unsigned short _field6;
-};
-
 struct PXSimpleIndexPath {
     unsigned long long dataSourceIdentifier;
     long long section;
     long long item;
     long long subitem;
+};
+
+struct UICollectionViewCell {
+    Class _field1;
 };
 
 struct UIEdgeInsets {
@@ -177,7 +176,20 @@ struct _PUSectionedTilingLayoutSectionInfo {
     struct CGRect _field3;
 };
 
+struct __va_list_tag {
+    unsigned int _field1;
+    unsigned int _field2;
+    void *_field3;
+    void *_field4;
+};
+
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    _Bool isEnabled;
+    double startTime;
+    double endTime;
+} CDStruct_3139860e;
 
 typedef struct {
     double left;
@@ -185,6 +197,11 @@ typedef struct {
     double top;
     double bottom;
 } CDStruct_6c514524;
+
+typedef struct {
+    long long privateInteger;
+    float privateFloat;
+} CDStruct_910f5d27;
 
 typedef struct {
     long long value;
@@ -208,4 +225,17 @@ typedef struct {
     struct CGPoint _field2;
     struct CGAffineTransform _field3;
 } CDStruct_d54ccef3;
+
+// Ambiguous groups
+typedef struct {
+    _Bool _field1;
+    _Bool _field2;
+    _Bool _field3;
+} CDStruct_2a4d9400;
+
+typedef struct {
+    _Bool excludeLiveness;
+    _Bool excludeLocation;
+    _Bool includeAllOriginalResources;
+} CDStruct_7f880b36;
 

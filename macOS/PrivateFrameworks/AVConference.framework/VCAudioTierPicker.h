@@ -18,6 +18,9 @@ __attribute__((visibility("hidden")))
     BOOL useCaseWatchContinuity;
     int operatingMode;
     BitrateLimits *bitrateLimits;
+    BOOL _alwaysOnAudioRedundancyEnabled;
+    BOOL _cellularAllowRedLowBitratesEnabled;
+    BOOL _wifiAllowRedLowBitratesEnabled;
 }
 
 + (id)valueForNetworkBitrate:(id)arg1 networkBitrate:(unsigned int)arg2;
@@ -31,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (id)tierForNetworkBitrate:(unsigned long long)arg1 withLegacyDuplication:(int)arg2;
 - (void)printCreatedAudioTiers:(id)arg1;
 - (void)dealloc;
-- (id)initWithOperatingMode:(int)arg1 payloadConfigs:(id)arg2 packetsPerBundle:(id)arg3 supportedRedNumPayloads:(id)arg4 headerSize:(unsigned long long)arg5 usingCellular:(BOOL)arg6 useCaseWatchContinuity:(BOOL)arg7 defaultMaxCap:(unsigned long long)arg8;
+- (id)initWithOperatingMode:(int)arg1 payloadConfigs:(id)arg2 packetsPerBundle:(id)arg3 supportedRedNumPayloads:(id)arg4 headerSize:(unsigned long long)arg5 usingCellular:(BOOL)arg6 useCaseWatchContinuity:(BOOL)arg7 defaultMaxCap:(unsigned long long)arg8 alwaysOnAudioRedundancyEnabled:(BOOL)arg9 cellularAllowRedLowBitratesEnabled:(BOOL)arg10 wifiAllowRedLowBitratesEnabled:(BOOL)arg11;
 
 @end
 

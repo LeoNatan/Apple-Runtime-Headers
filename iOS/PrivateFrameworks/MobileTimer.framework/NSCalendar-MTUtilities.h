@@ -7,10 +7,10 @@
 #import <Foundation/NSCalendar.h>
 
 @interface NSCalendar (MTUtilities)
-+ (id)_dateForInitial:(id)arg1 repeated:(id)arg2 backwards:(_Bool)arg3;
 + (unsigned long long)_optionsForBackwards:(_Bool)arg1;
 + (id)mtGregorianCalendar;
 - (_Bool)mtDateRequiresSingularTimeString:(id)arg1;
+- (id)_nextDateHelperAfterDate:(id)arg1 nextDateBlock:(CDUnknownBlockType)arg2;
 - (id)_mtNextDateAfterDate:(id)arg1 matchingUnit:(unsigned long long)arg2 value:(long long)arg3 backwards:(_Bool)arg4;
 - (id)mtPreviousDateBeforeDate:(id)arg1 matchingUnit:(unsigned long long)arg2 value:(long long)arg3;
 - (id)mtNextDateAfterDate:(id)arg1 matchingUnit:(unsigned long long)arg2 value:(long long)arg3;

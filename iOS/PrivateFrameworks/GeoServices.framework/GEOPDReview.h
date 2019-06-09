@@ -8,30 +8,40 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDRating, GEOPDUser, NSMutableArray, NSString, PBUnknownFields;
+@class GEOPDRating, GEOPDUser, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDReview : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    double _reviewTime;
     GEOPDRating *_rating;
     NSString *_reviewId;
+    double _reviewTime;
     GEOPDUser *_reviewer;
     NSMutableArray *_snippets;
     struct {
-        unsigned int reviewTime:1;
-    } _has;
+        unsigned int has_reviewTime:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_rating:1;
+        unsigned int read_reviewId:1;
+        unsigned int read_reviewer:1;
+        unsigned int read_snippets:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_rating:1;
+        unsigned int wrote_reviewId:1;
+        unsigned int wrote_reviewTime:1;
+        unsigned int wrote_reviewer:1;
+        unsigned int wrote_snippets:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)snippetType;
 + (id)reviewsForPlaceData:(id)arg1;
-@property(retain, nonatomic) GEOPDRating *rating; // @synthesize rating=_rating;
-@property(retain, nonatomic) NSString *reviewId; // @synthesize reviewId=_reviewId;
-@property(retain, nonatomic) GEOPDUser *reviewer; // @synthesize reviewer=_reviewer;
-@property(nonatomic) double reviewTime; // @synthesize reviewTime=_reviewTime;
-@property(retain, nonatomic) NSMutableArray *snippets; // @synthesize snippets=_snippets;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -40,16 +50,27 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDRating *rating;
 @property(readonly, nonatomic) _Bool hasRating;
+- (void)_readRating;
+@property(retain, nonatomic) NSString *reviewId;
 @property(readonly, nonatomic) _Bool hasReviewId;
+- (void)_readReviewId;
+@property(retain, nonatomic) GEOPDUser *reviewer;
 @property(readonly, nonatomic) _Bool hasReviewer;
+- (void)_readReviewer;
 @property(nonatomic) _Bool hasReviewTime;
+@property(nonatomic) double reviewTime;
 - (id)snippetAtIndex:(unsigned long long)arg1;
 - (unsigned long long)snippetsCount;
+- (void)_addNoFlagsSnippet:(id)arg1;
 - (void)addSnippet:(id)arg1;
 - (void)clearSnippets;
+@property(retain, nonatomic) NSMutableArray *snippets;
+- (void)_readSnippets;
 - (id)_bestSnippetLocale;
 - (id)_bestSnippet;
 

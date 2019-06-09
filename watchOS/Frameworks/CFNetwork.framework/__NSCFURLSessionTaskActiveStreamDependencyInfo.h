@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary, NSNumber;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFURLSessionTaskActiveStreamDependencyInfo : NSObject
 {
     NSNumber *_streamID;

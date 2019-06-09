@@ -8,11 +8,12 @@
 
 #import <CameraUI/CAMPanoramaCaptureRequestDelegate-Protocol.h>
 #import <CameraUI/CAMStillImageCaptureRequestDelegate-Protocol.h>
+#import <CameraUI/CAMStillImageCapturingVideoDelegate-Protocol.h>
 #import <CameraUI/CAMVideoCaptureRequestDelegate-Protocol.h>
 
 @class NSString, NSTimer;
 
-@interface CAMIdleController : NSObject <CAMStillImageCaptureRequestDelegate, CAMVideoCaptureRequestDelegate, CAMPanoramaCaptureRequestDelegate>
+@interface CAMIdleController : NSObject <CAMStillImageCaptureRequestDelegate, CAMVideoCaptureRequestDelegate, CAMPanoramaCaptureRequestDelegate, CAMStillImageCapturingVideoDelegate>
 {
     _Bool _updatingIdleTimer;
     NSTimer *_enableIdleTimer;
@@ -29,11 +30,11 @@
 - (void)timelapseRequestDidStopCapturing;
 - (void)timelapseRequestDidResumeCapturing;
 - (void)timelapseRequestDidStartCapturing;
-- (void)panoramaRequestDidStopCapturing:(id)arg1;
+- (void)panoramaRequestDidStopCapturing:(id)arg1 interrupted:(_Bool)arg2;
 - (void)panoramaRequestDidStartCapturing:(id)arg1;
 - (void)videoRequestDidStopCapturing:(id)arg1;
 - (void)videoRequestDidStartCapturing:(id)arg1;
-- (void)stillImageRequestDidStopCapturing:(id)arg1;
+- (void)stillImageRequestDidStopCapturingStillImage:(id)arg1;
 - (void)stopUpdatingIdleTimer;
 - (void)startUpdatingIdleTimer;
 @property(readonly, nonatomic, getter=_isIdleTimerIndefinitelyDisabled) _Bool idleTimerIndefinitelyDisabled;

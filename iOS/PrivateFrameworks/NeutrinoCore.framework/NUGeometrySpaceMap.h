@@ -7,11 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <NeutrinoCore/NSCopying-Protocol.h>
-#import <NeutrinoCore/NUSpaceMapping-Protocol.h>
+#import <NeutrinoCore/NUTaggedSpaceMapping-Protocol.h>
 
 @class NSMutableDictionary;
 
-@interface NUGeometrySpaceMap : NSObject <NSCopying, NUSpaceMapping>
+@interface NUGeometrySpaceMap : NSObject <NSCopying, NUTaggedSpaceMapping>
 {
     NSMutableDictionary *_spaces;
 }

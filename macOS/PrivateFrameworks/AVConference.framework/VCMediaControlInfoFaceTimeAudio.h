@@ -9,23 +9,27 @@
 __attribute__((visibility("hidden")))
 @interface VCMediaControlInfoFaceTimeAudio : VCMediaControlInfo
 {
-    unsigned char _controlInfoFeedback[6];
-    unsigned char _controlInfoMediaQueue[6];
-    unsigned int _controlInfoStats;
     unsigned int _controlInfoReceivedKbits;
     unsigned int _controlInfoReceivedPackets;
     unsigned int _controlInfoAudioPacketSize;
     unsigned int _controlInfoAudioTimestamp;
     double _controlInfoArrivalTime;
+    CDStruct_b4442fdd _controlFeedbackParameter;
+    BOOL _videoEnabled;
 }
 
+@property BOOL videoEnabled; // @synthesize videoEnabled=_videoEnabled;
 - (int)serializeToBuffer:(char *)arg1 bufferLength:(unsigned long long)arg2 blobLength:(unsigned long long *)arg3;
 - (int)getInfo:(void *)arg1 bufferLength:(unsigned long long)arg2 infoSize:(unsigned long long *)arg3 type:(unsigned int)arg4;
+- (int)setInfoUnserialized:(CDStruct_b4442fdd *)arg1 type:(unsigned int)arg2;
 - (BOOL)hasInfoType:(unsigned int)arg1;
 - (int)setInfo:(void *)arg1 size:(unsigned long long)arg2 type:(unsigned int)arg3;
-- (int)configureWithBuffer:(const char *)arg1 length:(unsigned long long)arg2 optionalControlInfo:(CDStruct_475a354f *)arg3;
-- (int)handleOptionalControlInfo:(CDStruct_475a354f *)arg1;
+- (int)getInfoUnserialized:(CDStruct_b4442fdd *)arg1 type:(unsigned int)arg2;
+- (int)configureWithBuffer:(const char *)arg1 length:(unsigned long long)arg2 optionalControlInfo:(CDStruct_39aa150d *)arg3;
+- (int)handleOptionalControlInfo:(CDStruct_39aa150d *)arg1;
+- (id)description;
 - (unsigned long long)serializedSize;
+@property(readonly) unsigned long long feedbackSize;
 
 @end
 

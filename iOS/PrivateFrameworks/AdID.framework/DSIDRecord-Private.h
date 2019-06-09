@@ -28,6 +28,7 @@
 
 // Remaining properties
 @property(retain, nonatomic) NSString *IDFA; // @dynamic IDFA;
+@property(nonatomic) _Bool accountAgeUnknown; // @dynamic accountAgeUnknown;
 @property(nonatomic) _Bool accountIsT13; // @dynamic accountIsT13;
 @property(nonatomic) _Bool accountIsU13; // @dynamic accountIsU13;
 @property(nonatomic) _Bool accountIsU18; // @dynamic accountIsU18;

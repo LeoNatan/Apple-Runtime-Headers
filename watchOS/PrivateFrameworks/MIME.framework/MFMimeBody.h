@@ -22,6 +22,7 @@
 + (id)copyNewMimeBoundary;
 + (id)versionString;
 @property(retain, nonatomic) NSArray *signers; // @synthesize signers=_signers;
+- (void).cxx_destruct;
 - (id)textHtmlPart;
 - (id)preferredBodyPart;
 - (int)preferredAlternative;
@@ -39,7 +40,6 @@
 @property(readonly, copy, nonatomic) NSString *mimeSubtype;
 @property(readonly, copy, nonatomic) NSString *mimeType;
 @property(retain, nonatomic) MFMimePart *topLevelPart;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

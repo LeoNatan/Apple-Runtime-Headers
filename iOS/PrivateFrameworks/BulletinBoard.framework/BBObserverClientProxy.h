@@ -53,6 +53,7 @@
 - (void)setObserverFeed:(unsigned long long)arg1 attachToLightsAndSirensGateway:(id)arg2;
 - (void)getObserverDebugInfo:(CDUnknownBlockType)arg1;
 - (void)noteServerReceivedResponseForBulletin:(id)arg1;
+- (void)updateGlobalSettings:(id)arg1;
 - (void)removeSection:(id)arg1;
 - (void)updateSectionParameters:(id)arg1 forSectionID:(id)arg2;
 - (void)updateSectionInfo:(id)arg1;

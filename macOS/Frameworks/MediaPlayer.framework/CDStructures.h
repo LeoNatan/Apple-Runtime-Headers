@@ -36,13 +36,24 @@ struct _MSVSignedRange {
     long long length;
 };
 
+struct objc_method_description {
+    SEL _field1;
+    char *_field2;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    long long numberOfAvailableSkips;
-    long long skipFrequency;
-    double skipInterval;
-} CDStruct_dcf4dde6;
+    char _field1;
+    char _field2;
+    char _field3;
+    char _field4;
+    char _field5;
+    char _field6;
+    char _field7;
+    char _field8;
+    long long _field9;
+} CDStruct_5fdd82f8;
 
 typedef struct {
     long long _field1;

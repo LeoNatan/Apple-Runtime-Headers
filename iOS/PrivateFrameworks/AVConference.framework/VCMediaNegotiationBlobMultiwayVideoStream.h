@@ -69,7 +69,8 @@ __attribute__((visibility("hidden")))
 - (void)printWithLogFile:(void *)arg1;
 - (id)description;
 @property(readonly, nonatomic) _Bool isSubStream;
-- (id)initWithMultiwayConfig:(id)arg1 isSubStream:(_Bool)arg2;
+- (id)newMultiwayVideoStream;
+- (id)initWithStreamConfig:(id)arg1;
 
 @end
 

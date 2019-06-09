@@ -11,6 +11,7 @@
 @class NSMapTable, NSString, SKUIClientContext, SKUISettingsContext, SKUISettingsObjectStore;
 @protocol SKUISettingsGroupsDescriptionDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUISettingsGroupsDescription : NSObject <SKUISettingsGroupControllerDelegate>
 {
     NSMapTable *_controllers;

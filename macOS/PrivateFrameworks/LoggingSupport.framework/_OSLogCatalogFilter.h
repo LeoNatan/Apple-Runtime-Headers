@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)visitPredicateExpression:(id)arg1;
 - (void)visitPredicate:(id)arg1;
 - (void)processComparisonPredicate:(id)arg1;
-- (void)processLeftExpression:(id *)arg1 andRightExpression:(id *)arg2;
+- (void)processLeftExpression:(id)arg1 andRightExpression:(id)arg2;
 -     // Error parsing type: v24@0:8^{uuiddb_dsc_map_s=A^{uuiddb_dsc_map_s}^{uuiddb_dsc_header_s}^{uuiddb_dsc_range_entry_s}^{uuiddb_dsc_uuid_entry_s}[16C]I}16, name: handleDSCContents:
 -     // Error parsing type: ^{uuiddb_dsc_map_s=A^{uuiddb_dsc_map_s}^{uuiddb_dsc_header_s}^{uuiddb_dsc_range_entry_s}^{uuiddb_dsc_uuid_entry_s}[16C]I}16@0:8, name: getDSCMap
 - (void)readDSCUUIDs;

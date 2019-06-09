@@ -21,8 +21,10 @@
 - (void)_handleMediaServicesReset;
 - (void)_handleMediaServicesLost;
 - (void)_handleRouteChanged:(unsigned long long)arg1 previousRoute:(id)arg2;
+- (id)_stringForRouteChangeReason:(unsigned long long)arg1;
 - (void)_handleSessionInterrupted:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (_Bool)activateSessionWithError:(id *)arg1;
+- (_Bool)deactivateSessionWithError:(id *)arg1;
 - (void)dealloc;
 - (id)init;
 

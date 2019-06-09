@@ -6,7 +6,11 @@
 
 #import <HealthDaemon/HDSQLitePredicate.h>
 
-@interface HDDataExternalSyncIdentifierEntityPredicate : HDSQLitePredicate
+#import <HealthDaemon/HDMetadataPredicate-Protocol.h>
+
+@class NSString;
+
+@interface HDDataExternalSyncIdentifierEntityPredicate : HDSQLitePredicate <HDMetadataPredicate>
 {
     HDSQLitePredicate *_valuePredicate;
     _Bool _matchObjectsWithoutKey;
@@ -16,11 +20,18 @@
 + (id)_valuePredicateForKey:(id)arg1 value:(id)arg2 operatorType:(unsigned int)arg3;
 + (Class)_valueClassForKey:(id)arg1;
 + (id)_propertyForKey:(id)arg1;
++ (id)predicateWithMetadataKey:(id)arg1 exists:(_Bool)arg2;
 + (id)predicateWithMetadataKey:(id)arg1 value:(id)arg2 operatorType:(unsigned int)arg3;
 + (id)predicateWithMetadataKey:(id)arg1 allowedValues:(id)arg2;
 - (void).cxx_destruct;
+@property(readonly, copy) NSString *description;
 - (void)bindToStatement:(struct sqlite3_stmt *)arg1 bindingIndex:(inout int *)arg2;
 - (id)SQLForEntityClass:(Class)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

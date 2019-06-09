@@ -95,6 +95,10 @@
 - (void)_setTransactionOnCurrentThread:(id)arg1;
 - (id)_currentTransaction;
 @property(readonly, copy) NSString *description;
+- (void)wipeStoreAtNextOpeningWithReason:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (_Bool)storeDerivativesFilter:(id)arg1 error:(id *)arg2;
+- (id)derivativesFilter;
+- (id)localResourceForCloudResource:(id)arg1 recordClass:(Class *)arg2;
 - (_Bool)setShouldUpdateDisabledFeaturesWithError:(id *)arg1;
 @property(readonly, nonatomic) _Bool shouldUpdateDisabledFeatures;
 @property(readonly, nonatomic) NSArray *disabledFeatures;
@@ -105,6 +109,7 @@
 - (void)dropUnacknowledgedBatch;
 - (void)keepUnacknowledgedBatch:(id)arg1;
 - (_Bool)checkExpectedLibraryVersion:(id)arg1 error:(id *)arg2;
+- (_Bool)hasPendingChangeSessionUpdate;
 - (_Bool)forceApplyPendingChangeSessionUpdateWithError:(id *)arg1;
 - (_Bool)applyPreviousChangeSessionUpdateWithExpectedLibraryVersion:(id)arg1 error:(id *)arg2;
 - (_Bool)beginChangeSession:(id)arg1 withLibraryVersion:(id)arg2 resetTracker:(id)arg3 error:(id *)arg4;
@@ -158,6 +163,7 @@
 - (_Bool)_resetCompleteSyncStateWithCause:(id)arg1 scope:(id)arg2 error:(id *)arg3;
 - (_Bool)_resetLocalSyncStateWithCause:(id)arg1 scope:(id)arg2 date:(id)arg3 error:(id *)arg4;
 - (_Bool)_resetGlobalStateWithError:(id *)arg1;
+- (id)_resetEventsJSON;
 - (id)_resetEventsDescriptions;
 @property(readonly, nonatomic) _Bool hasPendingResetSync;
 - (void)noteResetSyncFinished;

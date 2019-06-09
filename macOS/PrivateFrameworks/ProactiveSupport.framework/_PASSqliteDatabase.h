@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSCache, NSMutableArray, NSString;
+@class NSCache, NSMutableArray, NSMutableDictionary, NSString;
 @protocol _PASSqliteErrorHandlerProtocol;
 
 @interface _PASSqliteDatabase : NSObject
@@ -17,16 +17,39 @@
     // Error parsing type: {atomic_flag="_Value"AB}, name: _isClosed
     NSObject<_PASSqliteErrorHandlerProtocol> *_errorHandler;
     NSString *_filename;
-    NSCache *_queryCache;
     struct _opaque_pthread_mutex_t _lock;
     NSMutableArray *_statementsToFinalizeAsync;
     BOOL _currentExclusivity;
+    NSMutableDictionary *_explainedQueryForPlan;
+    NSCache *_explainedQueriesLogged;
+    struct __sFILE {
+        char *_field1;
+        int _field2;
+        int _field3;
+        short _field4;
+        short _field5;
+        struct __sbuf _field6;
+        int _field7;
+        void *_field8;
+        CDUnknownFunctionPointerType _field9;
+        CDUnknownFunctionPointerType _field10;
+        CDUnknownFunctionPointerType _field11;
+        CDUnknownFunctionPointerType _field12;
+        struct __sbuf _field13;
+        struct __sFILEX *_field14;
+        int _field15;
+        unsigned char _field16[3];
+        unsigned char _field17[1];
+        struct __sbuf _field18;
+        int _field19;
+        long long _field20;
+    } *_explainedQueriesLogFile;
     BOOL _isInMemory;
+    unsigned long long _queryCacheSize;
 }
 
 + (id)corruptionMarkerPathForPath:(id)arg1;
 + (void)runDebugCommand:(const char *)arg1 onDbWithHandle:(id)arg2;
-+ (BOOL)shouldCacheSql:(const char *)arg1;
 + (void)truncateDatabaseAtPath:(id)arg1;
 + (id)randomlyNamedInMemoryPathWithBaseName:(id)arg1;
 + (id)inMemoryPath;
@@ -36,7 +59,7 @@
 + (id)sqliteDatabaseInMemoryWithError:(id *)arg1;
 + (id)sqliteDatabaseInMemoryWithError:(id *)arg1 errorHandler:(id)arg2;
 + (id)sqliteDatabaseWithFilename:(id)arg1 contentProtection:(long long)arg2 error:(id *)arg3;
-+ (id)sqliteDatabaseWithFilename:(id)arg1 contentProtection:(long long)arg2 error:(id *)arg3 errorHandler:(id)arg4;
++ (id)sqliteDatabaseWithFilename:(id)arg1 contentProtection:(long long)arg2 errorHandler:(id)arg3 error:(id *)arg4;
 + (id)sqliteDatabaseWithFilename:(id)arg1 error:(id *)arg2;
 + (id)sqliteDatabaseWithFilename:(id)arg1 error:(id *)arg2 errorHandler:(id)arg3;
 + (id)sqliteDatabaseWithFilename:(id)arg1 flags:(int)arg2 error:(id *)arg3;
@@ -45,9 +68,12 @@
 + (id)initializeDatabase:(id)arg1 withProtection:(BOOL)arg2 newDatabaseCreated:(char *)arg3;
 + (id)initializeDatabase:(id)arg1 withContentProtection:(long long)arg2 newDatabaseCreated:(char *)arg3;
 + (id)initializeDatabase:(id)arg1 withContentProtection:(long long)arg2 newDatabaseCreated:(char *)arg3 errorHandler:(id)arg4;
+@property(nonatomic) unsigned long long queryCacheSize; // @synthesize queryCacheSize=_queryCacheSize;
 @property(readonly, nonatomic) BOOL isInMemory; // @synthesize isInMemory=_isInMemory;
 @property(readonly, nonatomic) NSString *filename; // @synthesize filename=_filename;
 - (void).cxx_destruct;
+- (void)disableQueryPlanLogging;
+- (BOOL)enableQueryPlanLoggingWithPath:(id)arg1;
 - (id)languageForFTSTable:(id)arg1;
 - (void)finalizeLater:(struct sqlite3_stmt *)arg1;
 - (void)withDbLockExecuteBlock:(CDUnknownBlockType)arg1;
@@ -56,8 +82,8 @@
 - (BOOL)hasColumnOnTable:(id)arg1 named:(id)arg2;
 - (id)tablesWithColumnNamed:(id)arg1;
 - (BOOL)hasTableNamed:(id)arg1;
-- (BOOL)setUserVersion:(unsigned long long)arg1;
-- (unsigned long long)userVersion;
+- (BOOL)setUserVersion:(unsigned int)arg1;
+- (unsigned int)userVersion;
 - (BOOL)createSnapshot:(id)arg1;
 - (id)description;
 - (BOOL)_transactionWithExclusivity:(BOOL)arg1 transaction:(CDUnknownBlockType)arg2;
@@ -78,6 +104,7 @@
 - (void)_prepAndRunQuery:(id)arg1 columns:(id)arg2 dictionary:(id)arg3 onError:(CDUnknownBlockType)arg4;
 - (BOOL)prepAndRunQuery:(id)arg1 onPrep:(CDUnknownBlockType)arg2 onRow:(CDUnknownBlockType)arg3 onError:(CDUnknownBlockType)arg4;
 - (BOOL)prepQuery:(id)arg1 onPrep:(CDUnknownBlockType)arg2 onError:(CDUnknownBlockType)arg3;
+- (void)_logQueryPlanForQuery:(id)arg1;
 - (BOOL)runQuery:(id)arg1 onRow:(CDUnknownBlockType)arg2;
 - (BOOL)runQuery:(id)arg1 onRow:(CDUnknownBlockType)arg2 onError:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) struct sqlite3 *handle;

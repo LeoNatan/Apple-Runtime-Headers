@@ -8,28 +8,25 @@
 
 #import <SafariServices/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, UIGestureRecognizer, UIImage, UIImageView;
+@class NSString, UIGestureRecognizer, UIVibrancyEffect, UIVisualEffectView;
 @protocol _SFNavigationBarURLButtonDelegate;
 
 __attribute__((visibility("hidden")))
 @interface _SFNavigationBarURLButton : UIButton <UIGestureRecognizerDelegate>
 {
-    UIImageView *_overlayImageView;
-    UIImageView *_tintImageView;
-    UIImage *_darkBackgroundImage;
-    UIImage *_lightBackgroundImage;
+    UIVibrancyEffect *_highlightedVibrancyEffect;
+    UIVibrancyEffect *_vibrancyEffect;
+    UIVisualEffectView *_effectView;
     UIGestureRecognizer *_longPressGestureRecognizer;
-    _Bool _usesLightOverlayAndTintAlpha;
     double _backgroundAlphaFactor;
-    long long _backgroundStyle;
+    unsigned long long _tintStyle;
     id <_SFNavigationBarURLButtonDelegate> _delegate;
     double _urlOutlineCornerRadius;
 }
 
 @property(nonatomic, setter=setURLOutlineCornerRadius:) double urlOutlineCornerRadius; // @synthesize urlOutlineCornerRadius=_urlOutlineCornerRadius;
 @property(nonatomic) __weak id <_SFNavigationBarURLButtonDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) _Bool usesLightOverlayAndTintAlpha; // @synthesize usesLightOverlayAndTintAlpha=_usesLightOverlayAndTintAlpha;
-@property(nonatomic) long long backgroundStyle; // @synthesize backgroundStyle=_backgroundStyle;
+@property(nonatomic) unsigned long long tintStyle; // @synthesize tintStyle=_tintStyle;
 @property(nonatomic) double backgroundAlphaFactor; // @synthesize backgroundAlphaFactor=_backgroundAlphaFactor;
 - (void).cxx_destruct;
 - (id)_accessibilityQuickSpeakContent;
@@ -42,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canBecomeFirstResponder;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)_updateBackgroundImageAnimated:(_Bool)arg1;
+- (void)_updateEffectView;
 - (_Bool)pointMostlyInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

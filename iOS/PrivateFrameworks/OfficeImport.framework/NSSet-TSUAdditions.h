@@ -10,6 +10,8 @@
 + (id)tsu_intersectionOfSets:(id)arg1;
 + (_Bool)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
 + (id)tsu_setWithSelectors:(SEL)arg1;
+- (id)tsu_setBySubtractingSet:(id)arg1;
+- (id)tsu_setByIntersectingSet:(id)arg1;
 - (id)tsu_onlyObject;
 - (_Bool)tsu_isHomogeneousForClass:(Class)arg1;
 - (id)tsu_setByMappingObjectsUsingBlock:(CDUnknownBlockType)arg1;

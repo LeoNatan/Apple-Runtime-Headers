@@ -8,6 +8,6 @@
 
 @interface UIView (WKHitTesting)
 - (id)_web_findDescendantViewAtPoint:(struct CGPoint)arg1 withEvent:(id)arg2;
-- (id)_web_recursiveFindDescendantInteractibleViewAtPoint:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)_web_setSubviews:(id)arg1;
 @end
 

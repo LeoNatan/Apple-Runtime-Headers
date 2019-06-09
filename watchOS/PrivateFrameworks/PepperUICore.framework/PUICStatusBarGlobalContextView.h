@@ -46,6 +46,7 @@
 - (_Bool)areIndicatorsHidden;
 - (void)setTimeHidden:(_Bool)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (_Bool)isTimeHidden;
+- (void)remoteStatusBarRequestsStateRefresh:(id)arg1;
 - (void)remoteStatusBar:(id)arg1 receivedNewWidth:(double)arg2;
 - (void)_activityIndicatorChanged:(id)arg1;
 - (void)_willMoveToWindow:(id)arg1;

@@ -4,85 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <NanoTimeKit/NTKWeatherProxiedComplicationDataSource.h>
 
-#import <NanoTimeKit/NWKSelectedLocationWeatherMonitorObserver-Protocol.h>
-
-@class NSDate, NSString, NWKSelectedLocationWeatherMonitor;
-
-@interface NTKWeatherComplicationDataSource : NSObject <NWKSelectedLocationWeatherMonitorObserver>
+@interface NTKWeatherComplicationDataSource : NTKWeatherProxiedComplicationDataSource
 {
-    _Bool _debugLastUpdateTimeEnabled;
-    NWKSelectedLocationWeatherMonitor *_weatherMonitor;
-    NSDate *_metricTrackingStartDate;
 }
 
-+ (id)sharedInstance;
-@property(retain, nonatomic) NSDate *metricTrackingStartDate; // @synthesize metricTrackingStartDate=_metricTrackingStartDate;
-@property(nonatomic, getter=isDebugLastUpdateTimeEnabled) _Bool debugLastUpdateTimeEnabled; // @synthesize debugLastUpdateTimeEnabled=_debugLastUpdateTimeEnabled;
-@property(readonly, nonatomic) NWKSelectedLocationWeatherMonitor *weatherMonitor; // @synthesize weatherMonitor=_weatherMonitor;
-- (void).cxx_destruct;
-- (void)_readDebugLastUpdateTimeEnabledPref;
-- (void)_unregisterForDebugLastUpdateTimeEnabledPrefNotitification;
-- (void)_registerForDebugLastUpdateTimeEnabledPrefNotitification;
-- (id)_entryForFamily:(int)arg1 weatherComplicationType:(int)arg2 airQualityConditions:(id)arg3 forecastConditions:(id)arg4;
-- (void)getLaunchURLForTimelineEntryDate:(id)arg1 weatherComplicationType:(int)arg2 withHandler:(CDUnknownBlockType)arg3;
-- (void)getTimelineEntriesForFamily:(int)arg1 afterDate:(id)arg2 limit:(unsigned int)arg3 weatherComplicationType:(int)arg4 withHandler:(CDUnknownBlockType)arg5;
-- (void)getTimelineEntriesForFamily:(int)arg1 beforeDate:(id)arg2 limit:(unsigned int)arg3 weatherComplicationType:(int)arg4 withHandler:(CDUnknownBlockType)arg5;
-- (void)getCurrentTimelineEntryForFamily:(int)arg1 weatherComplicationType:(int)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)getDesiredUpdateIntervalWithHandler:(CDUnknownBlockType)arg1;
-- (void)getTimelineEndDateWithHandler:(CDUnknownBlockType)arg1;
-- (void)getTimelineStartDateWithHandler:(CDUnknownBlockType)arg1;
-- (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
-- (void)weatherMonitorNoLongerWaitingForData:(id)arg1;
-- (void)selectedLocationUpdatedOnWeatherMonitor:(id)arg1;
-- (void)localeChanged:(id)arg1;
-- (void)forecastUpdatedOnWeatherMonitor:(id)arg1;
-- (void)displayNameUpdatedOnWeatherMonitor:(id)arg1;
-@property(readonly, nonatomic) NSString *observerName;
-@property(readonly, nonatomic) unsigned int loggingCategory;
-- (void)_setMetricTrackingStartDateWithNow;
-- (void)_setMetricTrackingStartDateWithForecastData;
-- (void)_postUpdateNotification;
-- (void)_logComplicationStaleDuration;
-- (id)complicationApplicationIdentifier;
-- (void)pause;
-- (void)resume;
-- (void)dealloc;
-- (id)init;
-- (float)_fillFractionFromAQIIndex:(int)arg1;
-- (void)_populateTemperatureCornerDataFromConditions:(id)arg1 forTemplate:(id)arg2;
-- (void)_populateWindDataFromConditions:(id)arg1 forTemplate:(id)arg2;
-- (void)_populateUVDataFromConditions:(id)arg1 forTemplate:(id)arg2;
-- (void)_populateConditionsDataFromConditions:(id)arg1 forTemplate:(id)arg2;
-- (void)_populateAirQualityDataFromConditions:(id)arg1 forTemplate:(id)arg2;
-- (void)_updateMaxDynamicFontSizeOfTemplate:(id)arg1 withFontSizeMapping:(id)arg2 defaultFontSize:(int)arg3 forText:(id)arg4;
-- (id)_temperatureStringForTemperature:(id)arg1 allowsDisplayOfTemperatureUnit:(_Bool)arg2;
-- (id)_temperatureConditionsStringForData:(id)arg1 allowsDisplayOfTemperatureUnit:(_Bool)arg2;
-- (id)_formattedTextProviderWithFontSize:(float)arg1 inTemplate:(id)arg2 forConditions:(id)arg3;
-- (void)_signatureRectangularTemplatePopulatedWithForecast:(id)arg1 startDate:(id)arg2 returnBlock:(CDUnknownBlockType)arg3;
-- (id)_signatureCornerTemplatePopulatedWithAirQualityConditions:(id)arg1;
-- (id)_signatureCornerTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2;
-- (id)_signatureCircularTemplateForWeatherConditions:(id)arg1;
-- (id)_signatureCircularTemplateForTemperatureWithConditions:(id)arg1;
-- (id)_signatureCircularTemplateForAirQualityWithConditions:(id)arg1;
-- (id)_signatureCircularTemplateForUVDataWithConditions:(id)arg1;
-- (id)_signatureCircularTemplateForComplicationType:(int)arg1 populatedWithWeatherConditions:(id)arg2 airQualityConditions:(id)arg3;
-- (id)_signatureBezelTemplateForComplicationType:(int)arg1 populatedWithWeatherConditions:(id)arg2 airQualityConditions:(id)arg3;
-- (id)_signatureBezelTemplateForWeatherConditions:(id)arg1;
-- (id)_utilitarianSmallTemplateForComplicationType:(int)arg1 family:(int)arg2 populatedWithConditions:(id)arg3;
-- (id)_utilitarianLargeTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2;
-- (id)_modularSmallTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2;
-- (id)_modularLargeTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2 shouldShowDebugLastUpdateTime:(_Bool)arg3;
-- (id)_extraLargeTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2;
-- (id)_circularMediumTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2;
-- (id)_circularSmallTemplateForComplicationType:(int)arg1 populatedWithConditions:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
++ (_Bool)acceptsComplicationType:(unsigned int)arg1 forDevice:(id)arg2;
++ (Class)proxyClass;
 
 @end
 

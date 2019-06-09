@@ -10,6 +10,7 @@
 
 @protocol MFDeviceDriver;
 
+__attribute__((visibility("hidden")))
 @interface MFTransform : NSObject <NSCopying>
 {
     struct CGAffineTransform m_world;

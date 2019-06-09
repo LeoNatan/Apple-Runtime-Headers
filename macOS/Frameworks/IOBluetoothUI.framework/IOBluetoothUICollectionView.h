@@ -14,7 +14,7 @@
 #import <IOBluetoothUI/NSTableViewDelegate-Protocol.h>
 #import <IOBluetoothUI/NSWindowDelegate-Protocol.h>
 
-@class AppleOptions, AudioOptions2, BluetoothHIDDeviceController, CBCentralManager, CBPeripheral, EnhancedAppleOptions, IOBluetoothDevice, IOBluetoothDeviceInquiry, IOBluetoothDevicePairViewController, IOBluetoothProximityPair, IOBluetoothUISortedArrayController, NSAlert, NSArray, NSButton, NSImage, NSImageView, NSMutableArray, NSMutableDictionary, NSPanel, NSProgressIndicator, NSString, NSTableView, NSTextField, NSTimer, NSTrackingArea, NSView, NSWindowController;
+@class BluetoothHIDDeviceController, CBCentralManager, CBPeripheral, IOBluetoothDevice, IOBluetoothDeviceInquiry, IOBluetoothDevicePairViewController, IOBluetoothProximityPair, IOBluetoothUISortedArrayController, NSAlert, NSArray, NSButton, NSImage, NSImageView, NSMutableArray, NSMutableDictionary, NSPanel, NSProgressIndicator, NSString, NSTableView, NSTextField, NSTimer, NSTrackingArea, NSView, NSWindowController;
 
 @interface IOBluetoothUICollectionView : NSViewController <NSMenuDelegate, NSTableViewDelegate, IOBluetoothDevicePairDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, NSWindowDelegate, IOBluetoothProximityPairDelegate>
 {
@@ -82,10 +82,7 @@
     BOOL mSafeToEnumerate;
     NSMutableArray *mDeviceArrayTmp;
     BOOL windowLoaded;
-    EnhancedAppleOptions *enhancedAppleOptionsController;
-    NSWindowController *enhancedAppleOptions2Controller;
-    AppleOptions *appleOptionsController;
-    AudioOptions2 *audioOptionsController2;
+    NSWindowController *audioOptionsController;
     IOBluetoothProximityPair *proxPairing;
     BOOL _mShowPairButton;
     NSTimer *_mLETimer;
@@ -123,6 +120,7 @@
 @property int inquiryCacheTimeout; // @synthesize inquiryCacheTimeout=mInquiryCacheTimeout;
 @property BOOL noInquiryCache; // @synthesize noInquiryCache=mNoInquiryCache;
 @property(retain) IOBluetoothDeviceInquiry *inquiry; // @synthesize inquiry=mInquiry;
+- (void)disableLEScans:(BOOL)arg1;
 - (void)setAppleAudioDeviceName:(id)arg1;
 - (id)setAppleDeviceName:(id)arg1;
 - (void)powerStateChangeStarted;

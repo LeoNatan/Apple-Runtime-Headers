@@ -8,6 +8,7 @@
 
 @class NSSet;
 
+__attribute__((visibility("hidden")))
 @interface AVAnimator : NSProxy
 {
     id _animationTarget;

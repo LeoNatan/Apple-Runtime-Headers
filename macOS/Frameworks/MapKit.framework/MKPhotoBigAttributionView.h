@@ -8,6 +8,7 @@
 
 @class MKImageView, MKMapItem, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKPhotoBigAttributionView : NSView
 {
     MKImageView *_imageView;

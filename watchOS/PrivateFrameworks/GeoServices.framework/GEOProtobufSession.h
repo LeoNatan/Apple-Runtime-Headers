@@ -6,24 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@protocol GEODataSession, GEODataSessionRulesProvider;
+@protocol GEODataSession;
 
 @interface GEOProtobufSession : NSObject
 {
     id <GEODataSession> _dataSession;
-    id <GEODataSessionRulesProvider> _rulesProvider;
     // Error parsing type: AL, name: _lastTaskIdentifier
 }
 
-+ (id)sharedEncodeDecodeQueue;
 + (id)sharedDelegateQueue;
 + (id)sharedProtobufSession;
 @property(readonly, nonatomic) id <GEODataSession> dataSession; // @synthesize dataSession=_dataSession;
 - (void).cxx_destruct;
 - (id)taskWithRequest:(id)arg1 requestTypeCode:(unsigned int)arg2 responseClass:(Class)arg3 delegate:(id)arg4 delegateQueue:(id)arg5;
-- (id)initWithDataSession:(id)arg1 rulesProvider:(id)arg2;
+- (id)initWithDataSession:(id)arg1;
 - (id)init;
-- (id)taskWithRequestKind:(int)arg1 protobufRequest:(id)arg2 URL:(id)arg3 additionalHTTPHeaders:(id)arg4 needsProxy:(_Bool)arg5 auditToken:(id)arg6 traits:(id)arg7 delegate:(id)arg8 delegateQueue:(id)arg9 requestCounterTicket:(id)arg10;
+- (id)taskWithRequestKind:(CDStruct_d1a7ebee)arg1 protobufRequest:(id)arg2 URL:(id)arg3 additionalHTTPHeaders:(id)arg4 needsProxy:(_Bool)arg5 auditToken:(id)arg6 traits:(id)arg7 delegate:(id)arg8 delegateQueue:(id)arg9 requestCounterTicket:(id)arg10 multipathServiceType:(unsigned int)arg11 multipathAlternatePort:(unsigned int)arg12 throttleToken:(id)arg13;
 
 @end
 

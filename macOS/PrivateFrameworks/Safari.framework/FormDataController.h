@@ -9,7 +9,7 @@
 #import <Safari/WBSFormAutoFillCorrectionManagerDelegate-Protocol.h>
 #import <Safari/WBSFormFieldClassificationCorrectorDelegate-Protocol.h>
 
-@class AutoFillAuthorizationController, NSMutableDictionary, NSString, WBSCoalescedAsynchronousWriter, WBSFormAutoFillCorrectionManager, WBSFormAutoFillParsecFeedbackProcessor;
+@class AutoFillAuthorizationController, AutoFillLocalAuthenticationManager, NSMutableDictionary, NSString, WBSCoalescedAsynchronousWriter, WBSFormAutoFillCorrectionManager, WBSFormAutoFillParsecFeedbackProcessor;
 @protocol EncryptionProvider;
 
 __attribute__((visibility("hidden")))
@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     BOOL _shouldUseInsecureEncryptionKeyForMigration;
     NSMutableDictionary *_threadUnsafeDeniedCredentialsByProtectionSpace;
     BOOL _hasAuthenticatedForPasswordAutoFillInClamshellMode;
+    AutoFillLocalAuthenticationManager *_localAuthenticationManager;
 }
 
 + (BOOL)contactIsMe:(id)arg1;
@@ -31,6 +32,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)isAddressBookPropertyAnAddressProperty:(id)arg1;
 + (id)sharedFormDataController;
 @property(nonatomic) BOOL hasAuthenticatedForPasswordAutoFillInClamshellMode; // @synthesize hasAuthenticatedForPasswordAutoFillInClamshellMode=_hasAuthenticatedForPasswordAutoFillInClamshellMode;
+@property(readonly, nonatomic) AutoFillLocalAuthenticationManager *localAuthenticationManager; // @synthesize localAuthenticationManager=_localAuthenticationManager;
 - (void).cxx_destruct;
 - (id)uniqueIDOfMe;
 - (id)feedbackProcessorForAutoFillCorrectionManager:(id)arg1;

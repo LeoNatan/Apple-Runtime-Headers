@@ -9,6 +9,7 @@
 @class NSMutableDictionary, NSObject;
 @protocol BonjourProbeDelegate, OS_dispatch_queue, OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface BonjourProbe : TestProbe
 {
     struct BonjourBrowser *bonjourManagerRef;

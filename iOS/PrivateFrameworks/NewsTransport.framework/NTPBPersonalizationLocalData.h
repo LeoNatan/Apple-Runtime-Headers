@@ -8,17 +8,19 @@
 
 #import <NewsTransport/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray;
+@class NSData, NSMutableArray, NSString;
 
 @interface NTPBPersonalizationLocalData : PBCodable <NSCopying>
 {
     NSMutableArray *_closedChangeGroups;
+    NSString *_currentInstanceIdentifier;
     NSMutableArray *_openChangeGroupDeltas;
     NSData *_remoteRecordData;
 }
 
 + (Class)closedChangeGroupsType;
 + (Class)openChangeGroupDeltasType;
+@property(retain, nonatomic) NSString *currentInstanceIdentifier; // @synthesize currentInstanceIdentifier=_currentInstanceIdentifier;
 @property(retain, nonatomic) NSData *remoteRecordData; // @synthesize remoteRecordData=_remoteRecordData;
 @property(retain, nonatomic) NSMutableArray *closedChangeGroups; // @synthesize closedChangeGroups=_closedChangeGroups;
 @property(retain, nonatomic) NSMutableArray *openChangeGroupDeltas; // @synthesize openChangeGroupDeltas=_openChangeGroupDeltas;
@@ -30,6 +32,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasCurrentInstanceIdentifier;
 @property(readonly, nonatomic) _Bool hasRemoteRecordData;
 - (id)closedChangeGroupsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)closedChangeGroupsCount;

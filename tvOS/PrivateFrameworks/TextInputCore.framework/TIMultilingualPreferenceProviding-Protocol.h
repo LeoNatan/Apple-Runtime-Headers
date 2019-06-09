@@ -9,6 +9,7 @@
 @class NSArray, TIInputMode;
 
 @protocol TIMultilingualPreferenceProviding <NSObject>
+@property(readonly, nonatomic) NSArray *userPreferredLanguages;
 @property(readonly, nonatomic) NSArray *userEnabledInputModes;
 @property(readonly, nonatomic) TIInputMode *preferredSecondaryInputMode;
 @end

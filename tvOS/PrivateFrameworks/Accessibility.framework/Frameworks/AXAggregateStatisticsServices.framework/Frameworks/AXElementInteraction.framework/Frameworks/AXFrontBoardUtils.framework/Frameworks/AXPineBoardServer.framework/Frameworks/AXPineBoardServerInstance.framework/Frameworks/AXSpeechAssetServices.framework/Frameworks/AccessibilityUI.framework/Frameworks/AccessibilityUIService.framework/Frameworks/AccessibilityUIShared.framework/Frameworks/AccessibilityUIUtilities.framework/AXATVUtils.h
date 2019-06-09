@@ -13,6 +13,7 @@
 + (id)sharedInstance;
 - (id)currentFocusedView;
 - (id)accessibilityLabelForResourceURL:(id)arg1;
+- (id)accessibilityLabelForID:(id)arg1;
 - (id)accessibilityIdentifierForResourceURL:(id)arg1;
 - (_Bool)atvaccessibilityAnnounceStateChangesForTVSPlayer:(id)arg1;
 - (void)atvaccessibilityTVSPlayer:(id)arg1 shouldAnnounceStateChanges:(_Bool)arg2;

@@ -13,15 +13,19 @@
 {
     NSHashTable *_registeredCellClasses;
     NSArray *_visibleTopItems;
+    NSArray *_visibleBottomItems;
     id <NMUModelCollectionDataSource> _dataSource;
     id <NMUModelCollectionDelegate> _delegate;
     NSArray *_topItems;
+    NSArray *_bottomItems;
 }
 
+@property(retain, nonatomic) NSArray *bottomItems; // @synthesize bottomItems=_bottomItems;
 @property(retain, nonatomic) NSArray *topItems; // @synthesize topItems=_topItems;
 @property(nonatomic) __weak id <NMUModelCollectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <NMUModelCollectionDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
+- (void)_setNeedsVisibleBottomItemsUpdate;
 - (void)_setNeedsVisibleTopItemsUpdate;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -30,6 +34,7 @@
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)dataSourceIndexPathsForCollectionIndexPaths:(id)arg1;
 - (id)dataSourceIndexPathForCollectionIndexPath:(id)arg1;
+@property(readonly, nonatomic) NSArray *visibleBottomItems;
 @property(readonly, nonatomic) NSArray *visibleTopItems;
 - (void)viewDidLoad;
 

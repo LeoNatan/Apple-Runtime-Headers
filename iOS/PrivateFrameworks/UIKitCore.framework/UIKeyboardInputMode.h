@@ -26,7 +26,6 @@
 + (_Bool)supportsSecureCoding;
 + (id)dictationInputMode;
 + (id)autofillSignupInputMode;
-+ (id)autofillFallbackInputMode;
 + (id)intlInputMode;
 + (id)keyboardInputModeWithIdentifier:(id)arg1;
 + (id)hardwareLayoutFromIdentifier:(id)arg1;

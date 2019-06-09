@@ -4,6 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSArray;
+
 #pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
@@ -73,51 +75,53 @@ typedef struct {
 } CDStruct_e99345e9;
 
 typedef struct {
-    unsigned char base;
-    struct CGRect content;
-    unsigned int id;
-    unsigned long long styleMask;
-} CDStruct_6d86e322;
-
-typedef struct {
-    unsigned int _field1;
-    unsigned int _field2;
-    unsigned long long _field3;
-    long long _field4;
-    unsigned long long _field5;
-    struct CGSize _field6;
-    struct CGSize _field7;
-    struct CGRect _field8;
-    id _field9;
-} CDStruct_4e11500c;
-
-typedef struct {
-    double _field1;
+    id _field1;
     id _field2;
     id _field3;
     id _field4;
     id _field5;
-    struct CGRect _field6;
-    char _field7;
-    char _field8;
-    char _field9;
-    id _field10;
-    id _field11;
-    id _field12;
-    id _field13;
-    unsigned int _field14;
-    unsigned long long _field15;
-    char _field16;
-} CDStruct_e2fa5527;
+    id _field6;
+    id _field7;
+    double _field8;
+    struct CGRect _field9;
+    unsigned long long _field10;
+    unsigned int _field11;
+    char _field12;
+    char _field13;
+    char _field14;
+} CDStruct_278a5119;
+
+typedef struct {
+    unsigned char base;
+    struct CGRect contentRect;
+    unsigned int id;
+    unsigned long long styleMask;
+} CDStruct_ef6a399e;
+
+typedef struct {
+    unsigned int caContextID;
+    unsigned int serviceConnectionID;
+    unsigned long long flags;
+    long long windowLevel;
+    unsigned long long windowStyleMask;
+    struct CGSize windowContentMinSize;
+    struct CGSize windowContentMaxSize;
+    struct CGRect serviceViewFrame;
+    NSArray *touchBarsDescription;
+} CDStruct_fe490e16;
 
 typedef struct {
     int privateEventLoopKind;
     char sharesParentKeyState;
-    CDStruct_6d86e322 window;
-} CDStruct_e578beec;
+    CDStruct_ef6a399e window;
+} CDStruct_8ca9744b;
 
 typedef struct {
     int _field1;
-    CDStruct_6d86e322 _field2;
-} CDStruct_d1b93830;
+    CDStruct_ef6a399e _field2;
+} CDStruct_5d2c0651;
+
+typedef struct {
+    CDStruct_ef6a399e _field1;
+} CDStruct_9fbe0e86;
 

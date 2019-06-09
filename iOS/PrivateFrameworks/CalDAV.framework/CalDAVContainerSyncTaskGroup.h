@@ -21,12 +21,8 @@
     id <CalDAVCalendar> _calendar;
     NSDateComponents *_eventFilterStartDate;
     NSDateComponents *_eventFilterEndDate;
-    NSDateComponents *_todoFilterStartDate;
-    NSDateComponents *_todoFilterEndDate;
 }
 
-@property(retain, nonatomic) NSDateComponents *todoFilterEndDate; // @synthesize todoFilterEndDate=_todoFilterEndDate;
-@property(retain, nonatomic) NSDateComponents *todoFilterStartDate; // @synthesize todoFilterStartDate=_todoFilterStartDate;
 @property(retain, nonatomic) NSDateComponents *eventFilterEndDate; // @synthesize eventFilterEndDate=_eventFilterEndDate;
 @property(retain, nonatomic) NSDateComponents *eventFilterStartDate; // @synthesize eventFilterStartDate=_eventFilterStartDate;
 @property(nonatomic) _Bool fallbackOnMultiGetError; // @synthesize fallbackOnMultiGetError=_fallbackOnMultiGetError;

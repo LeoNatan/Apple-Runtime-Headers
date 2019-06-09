@@ -10,6 +10,8 @@
 {
 }
 
++ (_Bool)deleteKeepAliveFile;
++ (_Bool)writeKeepAliveFile;
 + (id)systemContainerURL;
 + (id)prettyPrintDate:(id)arg1;
 + (id)addToDate:(id)arg1 numberOfDays:(long long)arg2;
@@ -34,6 +36,8 @@
 + (long long)appDemoteableSpace;
 + (void)postFailureNotification:(id)arg1 body:(id)arg2 buttonText:(id)arg3 altButtonText:(id)arg4;
 + (void)postAutoUpdateInformationalNotification:(id)arg1 body:(id)arg2 buttonText:(id)arg3 altButtonText:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
++ (id)internalRecoveryStringForErrorCode:(long long)arg1;
++ (long long)MADownloadErrorCodeToSUDownloadErrorCode:(long long)arg1;
 + (long long)translateErrorCodeFromError:(id)arg1;
 + (id)translateError:(id)arg1 withAddedUserInfo:(id)arg2;
 + (id)translateError:(id)arg1;
@@ -42,6 +46,8 @@
 + (id)errorWithCode:(long long)arg1 originalError:(id)arg2;
 + (id)errorWithCode:(long long)arg1;
 + (_Bool)alarmSetBeforeDate:(id)arg1;
++ (_Bool)isProductionFused;
++ (_Bool)currentReleaseTypeIsInternal;
 + (id)currentReleaseType;
 + (id)currentProductBuild;
 + (id)currentProductVersion;
@@ -54,6 +60,7 @@
 + (_Bool)isWiFiCapable;
 + (_Bool)isDaemon;
 + (void)setIsDaemon:(_Bool)arg1;
++ (id)appDemotionSettingQueue;
 + (id)taskQueue;
 
 @end

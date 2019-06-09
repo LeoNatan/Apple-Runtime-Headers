@@ -38,13 +38,17 @@ __attribute__((visibility("hidden")))
 - (void)reportingSetReportCallback:(CDUnknownFunctionPointerType)arg1 withContext:(void *)arg2;
 - (void)reportingSymptom:(unsigned int)arg1 withOptionalDict:(struct __CFDictionary *)arg2;
 - (void)sendAggregatedSessionReport;
+- (unsigned short)reportingSessionTypeForClientType:(int)arg1;
+- (unsigned short)reportingSessionMethodForClientType:(int)arg1;
 - (void)sendAggregatedCallReport;
+- (unsigned short)reportingCallMethodForClientType:(int)arg1;
 - (void)releaseReportingObject;
 - (void)didSendMessageForReportingClient:(id)arg1 event:(id)arg2;
 - (void)reportQR:(id)arg1;
 - (void)report:(id)arg1 segmentDirection:(int)arg2;
 - (void)dealloc;
 - (void)initAdaptiveLearningWithParameters:(id)arg1;
+- (id)aggregatorForClientType:(int)arg1;
 - (id)initWithCallID:(unsigned int)arg1 clientType:(int)arg2 parentHierarchyToken:(id)arg3;
 - (id)deriveFromParentHierarchyToken:(id)arg1;
 @property(readonly) int nextUnassignedReportingModuleID;

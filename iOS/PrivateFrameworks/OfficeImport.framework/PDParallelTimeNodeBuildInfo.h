@@ -23,7 +23,7 @@ __attribute__((visibility("hidden")))
 @property double duration; // @synthesize duration=mDuration;
 @property double delay; // @synthesize delay=mDelay;
 @property(retain) PDAnimationTarget *target; // @synthesize target=mTarget;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class SKUIContextActionsPresentationSource, SKUIDialogTemplateViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUIContextActionsConfiguration : NSObject
 {
     SKUIContextActionsPresentationSource *_presentationSource;

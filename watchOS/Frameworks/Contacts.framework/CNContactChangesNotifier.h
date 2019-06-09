@@ -22,6 +22,7 @@
 + (id)workQueue_createFetchersFromRegisteredObservers:(id)arg1;
 + (id)preparedContact:(id)arg1 withStore:(id)arg2 keysToFetch:(id)arg3;
 + (id)createProxyForObserver:(id)arg1 keysToFetch:(id)arg2;
++ (id)os_log;
 + (id)sharedNotifier;
 @property(nonatomic, getter=isObservingNotification) _Bool observingNotification; // @synthesize observingNotification=_observingNotification;
 @property(readonly, nonatomic) CNMutableMultiDictionary *registeredObservers; // @synthesize registeredObservers=_registeredObservers;

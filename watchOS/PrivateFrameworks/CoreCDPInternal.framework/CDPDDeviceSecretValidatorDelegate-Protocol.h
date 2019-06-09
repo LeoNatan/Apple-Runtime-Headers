@@ -10,7 +10,7 @@
 
 @protocol CDPDDeviceSecretValidatorDelegate <NSObject>
 - (_Bool)secretValidator:(CDPDDeviceSecretValidator *)arg1 shouldContinueValidationAfterError:(NSError *)arg2;
-- (void)secretValidator:(CDPDDeviceSecretValidator *)arg1 recoverSecureBackupWithContext:(CDPDSecureBackupContext *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)secretValidator:(CDPDDeviceSecretValidator *)arg1 recoverSecureBackupWithContext:(CDPDSecureBackupContext *)arg2 completion:(void (^)(CDPDRemoteSecretValidationResult *, NSError *))arg3;
 
 @optional
 - (void)secretValidator:(CDPDDeviceSecretValidator *)arg1 didFailRecovery:(CDPDevice *)arg2 withError:(NSError *)arg3 completion:(void (^)(_Bool, NSError *))arg4;

@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (id)requestOperationClasses;
 - (id)zoneIDsToLock;
 - (int)operationType;
+- (BOOL)allowsAnonymousAccount;
 @property(readonly, nonatomic) NSDictionary *resultsByRecordZoneID;
 @property(readonly, nonatomic) NSDictionary *zoneErrorsByZoneID;
 - (id)initWithRecordZoneIDs:(id)arg1 configurationsByRecordZoneID:(id)arg2;

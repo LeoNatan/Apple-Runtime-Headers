@@ -18,8 +18,8 @@
 - (void)_messagesAddedToLibrary:(id)arg1;
 - (void)deleteMessagesOlderThanNumberOfDays:(long long)arg1 compact:(BOOL)arg2;
 - (void)deleteMessages:(id)arg1 moveToTrash:(BOOL)arg2;
+- (id)moveMessages:(id)arg1 destinationMailboxURL:(id)arg2 userInitiated:(BOOL)arg3;
 - (long long)undoAppendOfLibraryIDs:(id)arg1;
-- (long long)appendMessages:(id)arg1 missedMessages:(id)arg2 newMessages:(id)arg3 newDocumentIDsByOld:(id)arg4 flagsToSet:(id)arg5 appendReason:(long long)arg6 userInitiated:(BOOL)arg7 error:(id *)arg8;
 - (id)lastMessageWithHeaders:(id)arg1 inMailbox:(id)arg2;
 - (BOOL)allowsOverwrite;
 

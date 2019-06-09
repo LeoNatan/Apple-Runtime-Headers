@@ -18,6 +18,7 @@
 - (void)remote_deleteMedicalIDDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)remote_updateMedicalIDData:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)remote_medicalIDDataCreateIfNecessary:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)remote_fetchMedicalIDWithCompletion:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

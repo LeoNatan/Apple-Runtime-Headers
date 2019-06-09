@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldCompressBody;
 - (id)additionalHeaderValues;
 - (id)url;
-- (BOOL)requiresSignature;
 - (long long)serverType;
 - (long long)partitionType;
 - (BOOL)allowsAnonymousAccount;

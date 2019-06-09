@@ -19,6 +19,7 @@
     NSProgress *_fileProgress;
 }
 
++ (BOOL)supportsSecureCoding;
 + (id)log;
 @property(retain, nonatomic) NSProgress *fileProgress; // @synthesize fileProgress=_fileProgress;
 @property(retain, nonatomic) NSProgress *overallProgress; // @synthesize overallProgress=_overallProgress;

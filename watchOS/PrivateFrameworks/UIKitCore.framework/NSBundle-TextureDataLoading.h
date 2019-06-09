@@ -7,6 +7,13 @@
 #import <Foundation/NSBundle.h>
 
 @interface NSBundle (TextureDataLoading)
++ (id)currentNibLoadingBundle;
++ (void)popNibLoadingBundle;
++ (void)pushNibLoadingBundle:(id)arg1;
++ (id)currentNibPath;
++ (void)popNibPath;
++ (void)pushNibPath:(id)arg1;
 - (id)dataForResourceName:(id)arg1;
+- (id)loadNibNamed:(id)arg1 owner:(id)arg2 options:(id)arg3;
 @end
 

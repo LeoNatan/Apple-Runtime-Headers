@@ -15,7 +15,7 @@
 
 @interface IDSRegistrationCompletedMetric : NSObject <CUTCoreAnalyticsMetric, CUTAWDMetric, CUTRTCMetric>
 {
-    long long _registrationType;
+    int _registrationType;
     NSString *_serviceIdentifier;
     _Bool _wasSuccessful;
     long long _registrationError;
@@ -26,14 +26,14 @@
 @property(readonly, nonatomic) long long registrationError; // @synthesize registrationError=_registrationError;
 @property(readonly, nonatomic) _Bool wasSuccessful; // @synthesize wasSuccessful=_wasSuccessful;
 @property(readonly, nonatomic) NSString *serviceIdentifier; // @synthesize serviceIdentifier=_serviceIdentifier;
-@property(readonly, nonatomic) long long registrationType; // @synthesize registrationType=_registrationType;
+@property(readonly, nonatomic) int registrationType; // @synthesize registrationType=_registrationType;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) unsigned short rtcType;
 @property(readonly, nonatomic) PBCodable<NSCopying> *awdRepresentation;
 @property(readonly) unsigned int awdIdentifier;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
 @property(readonly, nonatomic) NSString *name;
-- (id)initWithRegistrationType:(long long)arg1 serviceIdentifier:(id)arg2 wasSuccessful:(_Bool)arg3 registrationError:(long long)arg4 circleStatus:(long long)arg5;
+- (id)initWithRegistrationType:(int)arg1 serviceIdentifier:(id)arg2 wasSuccessful:(_Bool)arg3 registrationError:(long long)arg4 circleStatus:(long long)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

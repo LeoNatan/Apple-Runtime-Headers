@@ -9,18 +9,19 @@
 #import <NeutrinoCore/NUMutableBufferImage-Protocol.h>
 
 @class NSString, NUColorSpace, NUImageLayout, NUPixelFormat, NURegion;
-@protocol NUMutableBuffer;
+@protocol NUMutableBufferProvider;
 
 @interface NUMutableBufferImageAdapter : NUBufferImageAdapter <NUMutableBufferImage>
 {
-    id <NUMutableBuffer> _mutableBuffer;
+    id <NUMutableBufferProvider> _mutableBufferProvider;
 }
 
 - (void).cxx_destruct;
 - (_Bool)copyBufferStorage:(id)arg1 fromRect:(CDStruct_996ac03c)arg2 toPoint:(CDStruct_912cb5d2)arg3;
 - (_Bool)copySurfaceStorage:(id)arg1 fromRect:(CDStruct_996ac03c)arg2 toPoint:(CDStruct_912cb5d2)arg3 device:(id)arg4;
 - (void)writeBufferRegion:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
-- (id)initWithBuffer:(id)arg1 colorSpace:(id)arg2 validRegion:(id)arg3;
+- (id)initWithBufferProvider:(id)arg1 colorSpace:(id)arg2 validRegion:(id)arg3;
+- (id)initWithMutableBufferProvider:(id)arg1 colorSpace:(id)arg2 validRegion:(id)arg3;
 - (id)initWithMutableBuffer:(id)arg1 colorSpace:(id)arg2 validRegion:(id)arg3;
 
 // Remaining properties

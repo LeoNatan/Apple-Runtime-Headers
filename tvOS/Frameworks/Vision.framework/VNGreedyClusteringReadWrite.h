@@ -14,11 +14,10 @@ __attribute__((visibility("hidden")))
     struct shared_ptr<vision::mod::FaceClustering> m_ClusteringImpl;
 }
 
-+ (id)nonGroupedGroupID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)getClustersWithOptions:(id)arg1 error:(id *)arg2;
-- (long long)_cancellableUpdate:(struct ImageDescriptorBufferAbstract *)arg1 facesToMove:(vector_22dfb71c *)arg2;
+- (long long)_cancellableUpdate:(struct ImageDescriptorBufferAbstract *)arg1 facesToMove:(vector_22dfb71c *)arg2 requestRevision:(unsigned long long)arg3;
 - (id)initWithOptions:(id)arg1 error:(id *)arg2;
 
 @end

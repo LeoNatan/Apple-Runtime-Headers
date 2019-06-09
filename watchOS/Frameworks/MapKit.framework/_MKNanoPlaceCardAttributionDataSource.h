@@ -4,22 +4,34 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MapKit/_MKNanoPlaceCardSectionData.h>
+#import <objc/NSObject.h>
 
+#import <MapKit/_MKNanoPlaceCardSectionProviding-Protocol.h>
+
+@class MKMapItem, NSString;
 @protocol _MKNanoPlaceCardAttributionDataDelegate;
 
-@interface _MKNanoPlaceCardAttributionDataSource : _MKNanoPlaceCardSectionData
+@interface _MKNanoPlaceCardAttributionDataSource : NSObject <_MKNanoPlaceCardSectionProviding>
 {
+    id <_MKNanoPlaceCardAttributionDataDelegate> _delegate;
+    MKMapItem *_mapItem;
 }
 
-- (void)notifyDelegateForActionAtRow:(unsigned int)arg1;
-- (id)cellForRow:(unsigned int)arg1 inTableView:(id)arg2;
+@property(readonly, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
+@property(nonatomic) __weak id <_MKNanoPlaceCardAttributionDataDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
+- (void)notifyDelegateForActionAtIndexPath:(id)arg1;
+- (id)cellForRowAtIndexPath:(id)arg1 inTableView:(id)arg2;
+- (int)numberOfRowsInSection:(int)arg1;
+- (int)numberOfSections;
+- (id)titleForSection:(int)arg1;
 - (id)initWithMapItem:(id)arg1;
-- (int)numberOfRows;
-- (id)title;
 
 // Remaining properties
-@property(nonatomic) __weak id <_MKNanoPlaceCardAttributionDataDelegate> delegate; // @dynamic delegate;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -35,8 +35,9 @@
 @property(nonatomic) int displayStyle; // @synthesize displayStyle=_displayStyle;
 @property(retain, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 - (void).cxx_destruct;
-- (_Bool)shouldOverwriteItem:(id)arg1;
 - (id)postMetricsWithBagContract:(id)arg1;
+- (_Bool)shouldOverwriteItem:(id)arg1;
+- (id)postMetricsWithBag:(id)arg1;
 @property(retain, nonatomic) NSMutableDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(nonatomic) int priority;
 @property(retain, nonatomic) NSString *logKey;

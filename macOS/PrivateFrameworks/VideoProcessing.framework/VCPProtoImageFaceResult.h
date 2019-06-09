@@ -15,13 +15,18 @@
 {
     VCPProtoBounds *_bounds;
     int _eyeExpression;
+    float _faceQuality;
     int _mouthExpression;
     int _position;
     int _yaw;
     BOOL _isCloseup;
+    struct {
+        unsigned int faceQuality:1;
+    } _has;
 }
 
 + (id)resultFromLegacyDictionary:(id)arg1;
+@property(nonatomic) float faceQuality; // @synthesize faceQuality=_faceQuality;
 @property(nonatomic) BOOL isCloseup; // @synthesize isCloseup=_isCloseup;
 @property(retain, nonatomic) VCPProtoBounds *bounds; // @synthesize bounds=_bounds;
 @property(nonatomic) int position; // @synthesize position=_position;
@@ -38,6 +43,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasFaceQuality;
 - (id)exportToLegacyDictionary;
 
 @end

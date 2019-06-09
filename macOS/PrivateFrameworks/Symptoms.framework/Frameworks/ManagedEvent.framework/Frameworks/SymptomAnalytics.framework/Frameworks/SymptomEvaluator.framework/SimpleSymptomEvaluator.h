@@ -11,6 +11,7 @@
 @class NSMutableArray, NSString;
 @protocol SymptomAdditionalProtocol;
 
+__attribute__((visibility("hidden")))
 @interface SimpleSymptomEvaluator : NSObject <ConfigurableObjectProtocol>
 {
     NSString *symptomName;

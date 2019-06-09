@@ -9,7 +9,7 @@
 #import <SymptomEvaluator/NSCopying-Protocol.h>
 #import <SymptomEvaluator/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSMutableArray, NSPredicate;
+@class NSArray, NSDate, NSMutableArray, NSPredicate, NWNetworkAdviceUpdate;
 
 @interface NWNetworkOfInterest : NSObject <NSSecureCoding, NSCopying>
 {
@@ -23,6 +23,7 @@
     BOOL _isAny;
     BOOL _isBuiltin;
     long long _considerAlternate;
+    NWNetworkAdviceUpdate *_considerAlternateUpdate;
     long long _linkQuality;
     long long _powerCostDL;
     long long _powerCostUL;
@@ -61,6 +62,7 @@
 @property long long powerCostUL; // @synthesize powerCostUL=_powerCostUL;
 @property long long powerCostDL; // @synthesize powerCostDL=_powerCostDL;
 @property long long linkQuality; // @synthesize linkQuality=_linkQuality;
+@property(retain) NWNetworkAdviceUpdate *considerAlternateUpdate; // @synthesize considerAlternateUpdate=_considerAlternateUpdate;
 @property long long considerAlternate; // @synthesize considerAlternate=_considerAlternate;
 @property BOOL discretionaryTrafficInvited; // @synthesize discretionaryTrafficInvited=_discretionaryTrafficInvited;
 - (BOOL)_newDistroSlot;

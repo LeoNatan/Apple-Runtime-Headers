@@ -6,6 +6,7 @@
 
 #import <OfficeImport/CHDSeries.h>
 
+__attribute__((visibility("hidden")))
 @interface CHDPieSeries : CHDSeries
 {
     int mExplosion;

@@ -15,6 +15,7 @@
     double _confidence;
 }
 
++ (double)confidenceFromDataPointCount:(unsigned long long)arg1;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) unsigned long long dataPointCount; // @synthesize dataPointCount=_dataPointCount;
 @property(readonly, nonatomic) RTLocation *location; // @synthesize location=_location;
@@ -22,9 +23,11 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
+- (id)initWithLocation:(id)arg1 dataPointCount:(unsigned long long)arg2;
 - (id)initWithLocation:(id)arg1 dataPointCount:(unsigned long long)arg2 confidence:(double)arg3;
 - (id)init;
 - (id)initWithLocationOfInterest:(id)arg1;
+- (id)initWithMapItem:(id)arg1;
 
 @end
 

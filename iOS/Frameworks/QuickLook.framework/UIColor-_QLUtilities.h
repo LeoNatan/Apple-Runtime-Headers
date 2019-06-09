@@ -7,6 +7,6 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (_QLUtilities)
-+ (id)_ql_markupGrayColor;
++ (id)_ql_markupBackgroundColor;
 @end
 

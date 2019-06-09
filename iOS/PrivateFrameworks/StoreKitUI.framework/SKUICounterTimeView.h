@@ -8,6 +8,7 @@
 
 @class NSDate, SKUIClientContext, UIColor, UIFont, _SKUICounterTimeFieldView;
 
+__attribute__((visibility("hidden")))
 @interface SKUICounterTimeView : UIView
 {
     SKUIClientContext *_clientContext;

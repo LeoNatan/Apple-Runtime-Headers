@@ -41,6 +41,7 @@
 + (id)dataFromMetadataDictionaryWithKey:(id)arg1;
 + (id)legacyV3DataForCloud;
 + (id)legacyV3DataForIDS;
++ (_Bool)isServiceType:(id)arg1 compatibleWithAccessoryCategoryType:(id)arg2;
 + (_Bool)setSharedInstance:(id)arg1;
 + (id)getSharedInstance;
 + (id)getBuiltinInstance;
@@ -97,6 +98,7 @@
 - (id)mapWriteCharacteristicFromAssistantName:(id)arg1;
 - (id)mapReadCharacteristicFromAssistantName:(id)arg1;
 - (id)mapToAssistantCharacteristicName:(id)arg1;
+- (id)mapToAssistantServiceSubtypeName:(id)arg1 accessoryCategory:(id)arg2;
 - (id)mapToAssistantServiceSubtypeName:(id)arg1;
 - (id)mapFromAssistantServiceName:(id)arg1;
 - (id)mapToAssistantServiceName:(id)arg1;
@@ -118,6 +120,7 @@
 - (_Bool)shouldFilterCharacteristicOfType:(id)arg1;
 - (_Bool)shouldFilterServiceOfType:(id)arg1;
 - (_Bool)shouldCoalesceCharacteristicNotifications:(id)arg1 forService:(id)arg2;
+- (_Bool)isTargetCharacteristic:(id)arg1;
 - (_Bool)requiresTimedWrite:(id)arg1 forService:(id)arg2;
 - (_Bool)requiresDeviceUnlock:(id)arg1 forService:(id)arg2;
 - (_Bool)allowsSecuringWriteFor:(id)arg1 withValue:(id)arg2;

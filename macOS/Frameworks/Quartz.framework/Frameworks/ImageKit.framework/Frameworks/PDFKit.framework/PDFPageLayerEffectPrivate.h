@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CALayer, NSMutableDictionary, NSUUID, PDFAnnotation, PDFSelection;
+@class CALayer, NSMutableArray, NSMutableDictionary, NSUUID, PDFAnnotation, PDFPageLayerEffect, PDFScannerResult;
 @protocol PDFPageLayerInterface;
 
 __attribute__((visibility("hidden")))
@@ -18,16 +18,11 @@ __attribute__((visibility("hidden")))
     _Bool shouldRotateContent;
     PDFAnnotation *annotation;
     NSMutableDictionary *markupEffectLayers;
-    PDFSelection *selection;
+    NSMutableArray *selections;
     NSMutableDictionary *selectionEffectLayers;
-    _Bool showTextSelectionHandle;
-    struct {
-        _Bool isOnFirstPage;
-        _Bool isOnLastPage;
-        struct CGRect firstPageRect;
-        struct CGRect lastPageRect;
-    } pageInfo;
+    PDFScannerResult *pdfResult;
     CALayer *rootSelectionLayer;
+    PDFPageLayerEffect *noteLayer;
 }
 
 - (void).cxx_destruct;

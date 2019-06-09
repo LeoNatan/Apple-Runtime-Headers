@@ -34,6 +34,7 @@
 - (unsigned int)hash;
 - (_Bool)isEqualToHandle:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (_Bool)isValidForISOCountryCode:(id)arg1;
 - (id)personHandle;
 - (id)description;
 - (id)init;

@@ -6,11 +6,12 @@
 
 #import <QuickLook/QLPreviewItem-Protocol.h>
 
-@class NSString, NSURL, UIColor;
+@class NSDictionary, NSString, NSURL, UIColor;
 
 @protocol QLPreviewItemPrivateProtocol <QLPreviewItem>
 
 @optional
+@property(copy, nonatomic) NSDictionary *previewOptions;
 @property(readonly) NSString *MIMEType;
 @property(readonly) _Bool wantsDefaultMediaPlayer;
 @property(readonly) UIColor *backgroundColorOverride;

@@ -21,17 +21,16 @@
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel=_typicalDayModel;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
-- (id)allActivitySharingFriends;
 - (double)projectedDayDuration;
+- (id)workoutsCompletedDuringInterval:(id)arg1;
+- (id)allActivitySharingFriends;
 - (id)activitySummariesDuringInterval:(id)arg1 calendar:(id)arg2;
 - (id)yesterdayActivitySummary;
-- (double)recommendedGoalInCaloriesForDate:(id)arg1;
-- (id)workoutsCompletedDuringInterval:(id)arg1;
+- (double)recommendedGoalForDate:(id)arg1;
+- (id)weeklySummaryInfoForDate:(id)arg1;
 - (id)monthlyChallengeForDate:(id)arg1 calendar:(id)arg2;
 - (id)achievementsCompletedOnDay:(id)arg1 calendar:(id)arg2;
 - (id)achievementWithUniqueName:(id)arg1;
-- (id)weeklySummaryInfoForDate:(id)arg1;
-- (int)firstDayOfFitnessWeek;
 - (id)initWithProfile:(id)arg1 typicalDayModel:(id)arg2;
 
 // Remaining properties

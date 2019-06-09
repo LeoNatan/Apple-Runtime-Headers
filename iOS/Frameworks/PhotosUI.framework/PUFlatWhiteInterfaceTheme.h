@@ -10,20 +10,12 @@
 
 @class NSDictionary, NSString, UIColor, UIFont, UIImage;
 
-__attribute__((visibility("hidden")))
 @interface PUFlatWhiteInterfaceTheme : NSObject <PUInterfaceTheme>
 {
 }
 
 - (void)configureImportHeaderSubtitleLabel:(id)arg1;
 - (void)configureImportHeaderTitleLabel:(id)arg1;
-- (void)configureSlideshowMusicHeaderTitleLabel:(id)arg1;
-@property(readonly, nonatomic) UIColor *slideshowMusicHeaderTextColor;
-@property(readonly, nonatomic) UIColor *slideshowMusicHeaderBackgroundColor;
-@property(readonly, nonatomic) UIColor *slideshowSeparatorColor;
-@property(readonly, nonatomic) struct UIEdgeInsets slideshowSeparatorInset;
-@property(readonly, nonatomic) UIColor *slideshowChromeBarTintColor;
-- (id)cloudWelcomeViewTitleLabelFontForSize:(double)arg1;
 - (id)searchDimmedAttributes;
 - (id)searchItalicTitleAttributes;
 - (id)searchDefaultAttributes;
@@ -46,14 +38,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIFont *searchTitleLabelFont;
 @property(readonly, nonatomic) UIColor *searchRecentLabelTextColor;
 @property(readonly, nonatomic) UIFont *searchRecentLabelFont;
-@property(readonly, nonatomic) UIColor *searchTableViewBackgroundColor;
 - (void)configureEditPluginUserDefaultsAccessorySwitch:(id)arg1;
 - (void)configureEditPluginUserDefaultsCell:(id)arg1 withIcon:(id)arg2 title:(id)arg3;
 - (void)configureEditPluginUserDefaultsTableView:(id)arg1;
 - (void)configureEditPluginListCellLabel:(id)arg1;
 - (void)configureEditPluginNavigationController:(id)arg1;
 - (void)configureEditPluginListNavigationController:(id)arg1;
-@property(readonly, nonatomic) long long defaultKeyboardAppearance;
 @property(readonly, nonatomic) UIFont *sharedAlbumCommentCardAlbumTitleFont;
 @property(readonly, nonatomic) UIFont *sharedAlbumCommentCardButtonFont;
 @property(readonly, nonatomic) UIFont *sharedAlbumCommentCardTextFont;
@@ -85,6 +75,13 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIColor *videoEditingToolbarMainButtonColor;
 @property(readonly, nonatomic) UIFont *videoEditingToolbarButtonNormalFont;
 @property(readonly, nonatomic) UIColor *videoEditingBackgroundColor;
+@property(readonly, nonatomic) UIFont *topToolbarToolLabelFont;
+@property(readonly, nonatomic) UIColor *topToolbarToolLabelButtonColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarUnderlineColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarDarkGradientEndColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarDarkGradientStartColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarLightGradientEndColor;
+@property(readonly, nonatomic) UIColor *photoEditingToolbarLightGradientStartColor;
 @property(readonly, nonatomic) UIColor *photoEditingDepthBadgeDisabledTextColor;
 @property(readonly, nonatomic) UIColor *photoEditingDepthBadgeEnabledTextColor;
 @property(readonly, nonatomic) UIColor *photoEditingDepthBadgeDisabledColor;
@@ -110,6 +107,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIColor *photoEditingOverlayBadgeColor;
 @property(readonly, nonatomic) UIFont *photoEditingTooltipFont;
 @property(readonly, nonatomic) UIColor *photoEditingTooltipColor;
+@property(readonly, nonatomic) UIColor *photoEditingAdjustmentsBarSuggestedMarkerColor;
 @property(readonly, nonatomic) UIColor *photoEditingAdjustmentsBarCurrentPositionMarkerColor;
 @property(readonly, nonatomic) UIColor *photoEditingAdjustmentsBarOriginalPositionMarkerColor;
 @property(readonly, nonatomic) UIColor *photoEditingAdjustmentsBarDisabledColor;
@@ -202,8 +200,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIColor *albumListBackgroundColor;
 @property(readonly, nonatomic) double photoCollectionToolbarIconToTextSpacerWidth;
 @property(readonly, nonatomic) double photoCollectionToolbarTextTitleSpacerWidth;
-@property(readonly, nonatomic) UIColor *emptyPlaceholderViewBackgroundColor;
-@property(readonly, nonatomic) unsigned long long emptyPlaceholderStyle;
 - (id)photoCollectionCloudQuotaBannerLinkTextColorHighlighted:(_Bool)arg1;
 - (id)photoCollectionCloudQuotaBannerLinkTextFont;
 - (struct NSDirectionalEdgeInsets)photoCollectionCloudQuotaBannerTextMargins;

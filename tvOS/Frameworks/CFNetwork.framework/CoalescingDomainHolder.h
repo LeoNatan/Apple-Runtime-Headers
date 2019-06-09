@@ -8,7 +8,6 @@
 
 @class PathPolicyManager;
 
-__attribute__((visibility("hidden")))
 @interface CoalescingDomainHolder : NSObject
 {
     struct CoalescingDomain _coalescingDomain;

@@ -36,6 +36,8 @@
 - (void)_accessibilitySetSelectedTextRange:(struct _NSRange)arg1;
 - (struct _NSRange)_accessibilitySelectedTextRange;
 - (unsigned long long)accessibilityTraits;
+- (struct CGRect)accessibilityFrameForScrolling;
+- (_Bool)isAccessibilityElement;
 - (id)itemsForCustomRotor:(id)arg1;
 - (id)supportedCustomRotors;
 - (void)dealloc;

@@ -16,6 +16,7 @@
 
 + (id)new;
 + (void)initialize;
+- (void)_render:(id)arg1 sampleBuffer:(struct opaqueCMSampleBuffer *)arg2;
 - (id)outputGraphNodeDescriptionForConnection:(id)arg1;
 - (unsigned int)connectionUnitInputNumberForConnection:(id)arg1;
 - (int)connectionGraphNodeForConnection:(id)arg1;
@@ -26,10 +27,14 @@
 - (id)avCaptureOutputSettingsForConnection:(id)arg1 fileType:(id)arg2;
 - (void)_updateCompressorNodesForConnection:(id)arg1;
 - (BOOL)getAudioSplitterNode:(int *)arg1 andAudioMixerNode:(int *)arg2 forConnection:(id)arg3;
+- (id)recommendedAudioSettingsForAssetWriterWithOutputFileType:(id)arg1;
+- (id)supportedAssetWriterOutputFileTypes;
 @property(copy, nonatomic) NSDictionary *audioSettings;
 - (void)setSampleBufferDelegate:(id)arg1 queue:(id)arg2;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *sampleBufferCallbackQueue;
 @property(readonly, nonatomic) id <AVCaptureAudioDataOutputSampleBufferDelegate> sampleBufferDelegate;
+- (id)_getAVAudioOutputSettings;
+- (id)_defaultCaptureAudioSettings;
 - (void)dealloc;
 - (id)init;
 

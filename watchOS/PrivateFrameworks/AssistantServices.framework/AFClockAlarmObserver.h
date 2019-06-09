@@ -40,7 +40,7 @@
 - (void)alarmsAdded:(id)arg1;
 - (void)clockItemStorageDidUpdate:(id)arg1 insertedItemIDs:(id)arg2 updatedItemIDs:(id)arg3 deletedItemIDs:(id)arg4;
 - (void)invalidate;
-- (void)getNotifiedFiringAlarmIDsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)getFiringAlarmIDsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getAlarmSnapshotWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeListener:(id)arg1;
 - (void)addListener:(id)arg1;

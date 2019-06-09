@@ -10,6 +10,7 @@
 
 @class NSDictionary, NSString, TCFontFamily;
 
+__attribute__((visibility("hidden")))
 @interface TCFont : NSObject <NSCopying>
 {
     NSDictionary *_namesByLanguage;

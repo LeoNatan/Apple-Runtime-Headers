@@ -15,18 +15,22 @@ __attribute__((visibility("hidden")))
     VUILabel *_headerView;
     NSArray *_infoViews;
     UIView *_footerView;
+    UIView *_defaultFocusView;
+    VUILabel *_prototypeInfoHeaderLabel;
 }
 
 + (id)footerDescriptionWithString:(id)arg1 layout:(id)arg2 maxLine:(unsigned long long)arg3 existingView:(id)arg4;
 + (id)footerLabelWithString:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
 + (id)headerViewWithString:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
+@property(retain, nonatomic) VUILabel *prototypeInfoHeaderLabel; // @synthesize prototypeInfoHeaderLabel=_prototypeInfoHeaderLabel;
+@property(retain, nonatomic) UIView *defaultFocusView; // @synthesize defaultFocusView=_defaultFocusView;
 @property(retain, nonatomic) UIView *footerView; // @synthesize footerView=_footerView;
 @property(retain, nonatomic) NSArray *infoViews; // @synthesize infoViews=_infoViews;
 @property(retain, nonatomic) VUILabel *headerView; // @synthesize headerView=_headerView;
 @property(retain, nonatomic) VUIProductMetadataLayout *layout; // @synthesize layout=_layout;
 - (void).cxx_destruct;
-- (struct CGSize)_calculateInfoHeadersThatFits:(struct CGSize)arg1;
-- (struct CGSize)_calculateInfoDataViewsThatFit:(struct CGSize)arg1;
+- (id)preferredFocusEnvironments;
+- (_Bool)canBecomeFocused;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
 

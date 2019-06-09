@@ -11,13 +11,15 @@
 #import <ContactsUI/NSOutlineViewDataSource-Protocol.h>
 #import <ContactsUI/NSOutlineViewDelegate-Protocol.h>
 
-@class ABAccount, ABAddressBook, ABGroup, ABPersonEntriesList, CNContactListCellView, CNContactListHelperFactory, CNContactListView, NSArray, NSDictionary, NSString;
+@class ABAccount, ABAddressBook, ABGroup, ABPersonEntriesList, CNContact, CNContactListCellView, CNContactListHelperFactory, CNContactListView, CNContactStore, NSArray, NSDictionary, NSString;
 
 @interface CNContactListController : NSObject <CNContactListCellViewControllerDelegate, NSOutlineViewDelegate, NSOutlineViewDataSource, ABPersonListControllerProtocol>
 {
     ABPersonEntriesList *_personEntriesList;
     unsigned long long _countOfContactsExpanded;
+    BOOL _showSelectedContact;
     BOOL _shouldUnifyPeople;
+    BOOL _ignoreSelectionDidChange;
     ABAccount *_account;
     ABAddressBook *_addressBook;
     ABAddressBook *_suggestionAddressBook;
@@ -25,15 +27,19 @@
     NSDictionary *_cachedFetchedEntriesByUID;
     NSArray *_displayedKeys;
     CNContactListView *_contactListView;
+    CNContactStore *_contactStore;
     CNContactListHelperFactory *_helperFactory;
     CNContactListCellView *_cellView;
     long long _expandedRow;
 }
 
+@property BOOL ignoreSelectionDidChange; // @synthesize ignoreSelectionDidChange=_ignoreSelectionDidChange;
 @property BOOL shouldUnifyPeople; // @synthesize shouldUnifyPeople=_shouldUnifyPeople;
 @property long long expandedRow; // @synthesize expandedRow=_expandedRow;
 @property(retain) CNContactListCellView *cellView; // @synthesize cellView=_cellView;
-@property(retain) CNContactListHelperFactory *helperFactory; // @synthesize helperFactory=_helperFactory;
+@property(nonatomic) BOOL showSelectedContact; // @synthesize showSelectedContact=_showSelectedContact;
+@property(retain, nonatomic) CNContactListHelperFactory *helperFactory; // @synthesize helperFactory=_helperFactory;
+@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(retain, nonatomic) CNContactListView *contactListView; // @synthesize contactListView=_contactListView;
 @property(copy, nonatomic) NSArray *displayedKeys; // @synthesize displayedKeys=_displayedKeys;
 @property(copy) NSDictionary *cachedFetchedEntriesByUID; // @synthesize cachedFetchedEntriesByUID=_cachedFetchedEntriesByUID;
@@ -89,6 +95,9 @@
 - (BOOL)outlineView:(id)arg1 isGroupItem:(id)arg2;
 - (BOOL)outlineView:(id)arg1 isItemExpandable:(id)arg2;
 - (id)outlineView:(id)arg1 child:(long long)arg2 ofItem:(id)arg3;
+- (void)programaticallyChangeSelectionWithBlock:(CDUnknownBlockType)arg1;
+- (void)performInitialSelection;
+@property(readonly, nonatomic) CNContact *selectedContact;
 - (void)setupCellView;
 - (void)registerNibWithName:(id)arg1 forIdentifier:(id)arg2;
 - (void)setupListView;

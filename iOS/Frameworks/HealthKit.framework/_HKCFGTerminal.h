@@ -11,8 +11,10 @@
 }
 
 + (id)terminalMatchingSequenceOfCharactersInSet:(id)arg1;
++ (id)_terminalMatchingDoubleWithCondition:(CDUnknownBlockType)arg1;
 + (id)terminalMatchingDoubleWithCondition:(CDUnknownBlockType)arg1;
 + (id)terminalMatchingAnyDouble;
++ (id)_terminalMatchingIntegerWithCondition:(CDUnknownBlockType)arg1;
 + (id)terminalMatchingIntegerWithCondition:(CDUnknownBlockType)arg1;
 + (id)terminalMatchingAnyInteger;
 + (id)terminalMatchingCharacterInString:(id)arg1;

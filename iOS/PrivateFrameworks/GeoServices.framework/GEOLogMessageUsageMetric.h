@@ -18,19 +18,16 @@ __attribute__((visibility("hidden")))
     int _metricType;
     unsigned int _retryCount;
     struct {
-        unsigned int sessionId:1;
-        unsigned int messageSize:1;
-        unsigned int messageCount:1;
-        unsigned int metricState:1;
-        unsigned int metricType:1;
-        unsigned int retryCount:1;
-    } _has;
+        unsigned int has_sessionId:1;
+        unsigned int has_messageSize:1;
+        unsigned int has_messageCount:1;
+        unsigned int has_metricState:1;
+        unsigned int has_metricType:1;
+        unsigned int has_retryCount:1;
+    } _flags;
 }
 
-@property(nonatomic) struct GEOSessionID sessionId; // @synthesize sessionId=_sessionId;
-@property(nonatomic) unsigned int retryCount; // @synthesize retryCount=_retryCount;
-@property(nonatomic) unsigned long long messageSize; // @synthesize messageSize=_messageSize;
-@property(nonatomic) unsigned int messageCount; // @synthesize messageCount=_messageCount;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -38,20 +35,25 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasSessionId;
+@property(nonatomic) struct GEOSessionID sessionId;
 @property(nonatomic) _Bool hasRetryCount;
+@property(nonatomic) unsigned int retryCount;
 @property(nonatomic) _Bool hasMessageSize;
+@property(nonatomic) unsigned long long messageSize;
 @property(nonatomic) _Bool hasMessageCount;
+@property(nonatomic) unsigned int messageCount;
 - (int)StringAsMetricState:(id)arg1;
 - (id)metricStateAsString:(int)arg1;
 @property(nonatomic) _Bool hasMetricState;
-@property(nonatomic) int metricState; // @synthesize metricState=_metricState;
+@property(nonatomic) int metricState;
 - (int)StringAsMetricType:(id)arg1;
 - (id)metricTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasMetricType;
-@property(nonatomic) int metricType; // @synthesize metricType=_metricType;
+@property(nonatomic) int metricType;
 
 @end
 

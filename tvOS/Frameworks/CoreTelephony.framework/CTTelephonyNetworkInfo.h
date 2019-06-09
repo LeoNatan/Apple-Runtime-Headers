@@ -10,16 +10,18 @@
 #import <CoreTelephony/CoreTelephonyClientRegistrationDelegate-Protocol.h>
 
 @class CTCarrier, CTServiceDescriptorContainer, CoreTelephonyClient, NSDictionary, NSMutableDictionary, NSString;
+@protocol CTTelephonyNetworkInfoDelegate;
 
 @interface CTTelephonyNetworkInfo : NSObject <CoreTelephonyClientDataDelegate, CoreTelephonyClientRegistrationDelegate>
 {
-    struct queue _queue;
     CoreTelephonyClient *_client;
     CDUnknownBlockType _serviceSubscriberCellularProvidersDidUpdateNotifier;
     CDUnknownBlockType _subscriberCellularProviderDidUpdateNotifier;
+    _Bool _initialized;
     CTServiceDescriptorContainer *_descriptors;
+    id <CTTelephonyNetworkInfoDelegate> _delegate;
+    NSString *_dataServiceIdentifier;
     NSMutableDictionary *_serviceSubscriberCellularProviders;
-    CTCarrier *_subscriberCellularProvider;
     NSMutableDictionary *_cachedCurrentRadioAccessTechnology;
     NSMutableDictionary *_cachedSignalStrength;
     NSMutableDictionary *_cachedCellIds;
@@ -29,11 +31,12 @@
 @property(retain) NSMutableDictionary *cachedSignalStrength; // @synthesize cachedSignalStrength=_cachedSignalStrength;
 @property(retain) NSMutableDictionary *cachedCurrentRadioAccessTechnology; // @synthesize cachedCurrentRadioAccessTechnology=_cachedCurrentRadioAccessTechnology;
 @property(copy, nonatomic) CDUnknownBlockType serviceSubscriberCellularProvidersDidUpdateNotifier; // @synthesize serviceSubscriberCellularProvidersDidUpdateNotifier=_serviceSubscriberCellularProvidersDidUpdateNotifier;
-@property(retain) CTCarrier *subscriberCellularProvider; // @synthesize subscriberCellularProvider=_subscriberCellularProvider;
 @property(retain) NSMutableDictionary *serviceSubscriberCellularProviders; // @synthesize serviceSubscriberCellularProviders=_serviceSubscriberCellularProviders;
-- (id).cxx_construct;
+@property(readonly, copy) NSString *dataServiceIdentifier; // @synthesize dataServiceIdentifier=_dataServiceIdentifier;
+@property __weak id <CTTelephonyNetworkInfoDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)radioAccessTechnology;
+@property(readonly, retain) CTCarrier *subscriberCellularProvider;
 - (id)getFirstCellId;
 - (id)cellId;
 - (id)serviceCellId;
@@ -51,6 +54,7 @@
 - (void)queryCTSignalStrength;
 - (void)updateSignalStrength:(id)arg1 descriptor:(id)arg2;
 - (void)signalStrengthChanged:(id)arg1 info:(id)arg2;
+- (void)postNotificationIfReady:(id)arg1 object:(id)arg2;
 - (void)postCellularProviderUpdatesIfNecessary;
 - (void)carrierBundleChange:(id)arg1;
 - (void)cellChanged:(id)arg1 cell:(id)arg2;
@@ -65,6 +69,7 @@
 - (void)setServiceSubscriberCellularProviderDidUpdateNotifier:(CDUnknownBlockType)arg1;
 - (CDUnknownBlockType)serviceSubscribersCellularProviderDidUpdateNotifier;
 - (void)dealloc;
+- (id)initWithClient:(id)arg1;
 - (id)init;
 
 // Remaining properties

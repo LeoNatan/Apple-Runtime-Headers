@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 {
     LPImageViewStyle *_leadingIcon;
     LPImageViewStyle *_trailingIcon;
-    LPImageViewStyle *_belowLeadingIcon;
     LPCaptionBarAccessoryStyle *_leadingAccessory;
     LPCaptionBarAccessoryStyle *_trailingAccessory;
     LPVerticalTextStackViewStyle *_textStack;
@@ -30,14 +29,11 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) LPVerticalTextStackViewStyle *textStack; // @synthesize textStack=_textStack;
 @property(readonly, nonatomic) LPCaptionBarAccessoryStyle *trailingAccessory; // @synthesize trailingAccessory=_trailingAccessory;
 @property(readonly, nonatomic) LPCaptionBarAccessoryStyle *leadingAccessory; // @synthesize leadingAccessory=_leadingAccessory;
-@property(readonly, nonatomic) LPImageViewStyle *belowLeadingIcon; // @synthesize belowLeadingIcon=_belowLeadingIcon;
 @property(readonly, nonatomic) LPImageViewStyle *trailingIcon; // @synthesize trailingIcon=_trailingIcon;
 @property(readonly, nonatomic) LPImageViewStyle *leadingIcon; // @synthesize leadingIcon=_leadingIcon;
 - (void).cxx_destruct;
 - (id)rightAccessory;
 - (id)leftAccessory;
-- (id)belowRightIcon;
-- (id)belowLeftIcon;
 - (id)rightIcon;
 - (id)leftIcon;
 - (id)initWithPlatform:(long long)arg1;

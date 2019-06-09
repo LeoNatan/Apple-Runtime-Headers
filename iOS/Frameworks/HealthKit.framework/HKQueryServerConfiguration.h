@@ -6,22 +6,25 @@
 
 #import <HealthKit/HKTaskConfiguration.h>
 
-@class HKObjectType, _HKFilter;
+@class HKObjectType, NSString, _HKFilter;
 
-__attribute__((visibility("hidden")))
 @interface HKQueryServerConfiguration : HKTaskConfiguration
 {
     _Bool _shouldDeactivateAfterInitialResults;
     _Bool _shouldSuppressDataCollection;
     HKObjectType *_objectType;
+    NSString *_debugIdentifier;
     _HKFilter *_filter;
+    double _activationTime;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) double activationTime; // @synthesize activationTime=_activationTime;
 @property(nonatomic) _Bool shouldSuppressDataCollection; // @synthesize shouldSuppressDataCollection=_shouldSuppressDataCollection;
 @property(nonatomic) _Bool shouldDeactivateAfterInitialResults; // @synthesize shouldDeactivateAfterInitialResults=_shouldDeactivateAfterInitialResults;
 @property(retain, nonatomic) _HKFilter *filter; // @synthesize filter=_filter;
-@property(retain, nonatomic) HKObjectType *objectType; // @synthesize objectType=_objectType;
+@property(copy, nonatomic) NSString *debugIdentifier; // @synthesize debugIdentifier=_debugIdentifier;
+@property(copy, nonatomic) HKObjectType *objectType; // @synthesize objectType=_objectType;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

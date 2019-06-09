@@ -25,6 +25,7 @@
 @property(nonatomic) unsigned int cpuCacheMode; // @dynamic cpuCacheMode;
 @property(nonatomic) unsigned int depth; // @dynamic depth;
 @property(nonatomic) _Bool forceResourceIndex; // @dynamic forceResourceIndex;
+@property(nonatomic) unsigned int hazardTrackingMode; // @dynamic hazardTrackingMode;
 @property(nonatomic) unsigned int height; // @dynamic height;
 @property(nonatomic) unsigned int mipmapLevelCount; // @dynamic mipmapLevelCount;
 @property(nonatomic) unsigned int pixelFormat; // @dynamic pixelFormat;
@@ -32,6 +33,7 @@
 @property(nonatomic) unsigned int resourceOptions; // @dynamic resourceOptions;
 @property(nonatomic) unsigned int sampleCount; // @dynamic sampleCount;
 @property(nonatomic) unsigned int storageMode; // @dynamic storageMode;
+@property(nonatomic) CDStruct_a06f635e swizzle; // @dynamic swizzle;
 @property(nonatomic) unsigned int textureType; // @dynamic textureType;
 @property(nonatomic) unsigned int usage; // @dynamic usage;
 @property(nonatomic) unsigned int width; // @dynamic width;

@@ -23,6 +23,7 @@
 @property(retain, nonatomic) NSMutableData *outputData; // @synthesize outputData=_outputData;
 @property(nonatomic) struct _NSRange inputRange; // @synthesize inputRange=_inputRange;
 @property(retain, nonatomic) NSData *inputData; // @synthesize inputData=_inputData;
+- (void).cxx_destruct;
 - (int)_decompressionCompleteForArchive:(struct archive *)arg1 error:(id *)arg2;
 - (_Bool)_decompressArchive:(struct archive *)arg1 intoArchiveDirectory:(id)arg2 error:(id *)arg3;
 - (struct archive *)_decompressionArchive;

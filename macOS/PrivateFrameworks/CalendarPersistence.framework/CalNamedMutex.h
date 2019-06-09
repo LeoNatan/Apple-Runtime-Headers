@@ -14,7 +14,6 @@
     NSString *_name;
 }
 
-+ (void)setUnitTestsRunning;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)unlock;

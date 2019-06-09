@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, SMSystem_Daemon;
+@class NSArray, NSProgress, SMSystem_Daemon;
 
 @interface SMConfMigrator : NSObject
 {
@@ -14,6 +14,8 @@
     BOOL _doNotModifyTarget;
     SMSystem_Daemon *_source;
     SMSystem_Daemon *_destination;
+    NSProgress *_parentProgress;
+    double _parentProgressPendingUnits;
     NSArray *_synthesizedLegacyServerRules;
 }
 
@@ -24,6 +26,8 @@
 + (id)baseMigrationDataBundle;
 @property BOOL doNotModifyTarget; // @synthesize doNotModifyTarget=_doNotModifyTarget;
 @property(retain) NSArray *synthesizedLegacyServerRules; // @synthesize synthesizedLegacyServerRules=_synthesizedLegacyServerRules;
+@property double parentProgressPendingUnits; // @synthesize parentProgressPendingUnits=_parentProgressPendingUnits;
+@property(retain) NSProgress *parentProgress; // @synthesize parentProgress=_parentProgress;
 @property(getter=isCleanInstall) BOOL cleanInstall; // @synthesize cleanInstall=_cleanInstall;
 @property __weak SMSystem_Daemon *destination; // @synthesize destination=_destination;
 @property __weak SMSystem_Daemon *source; // @synthesize source=_source;
@@ -32,7 +36,7 @@
 - (void)executeToolAtPath:(id)arg1 withArguments:(id)arg2 andCopyPath:(id)arg3;
 - (void)migrateAllSettingsWithGroupName:(id)arg1;
 - (void)migrateWithRule:(id)arg1;
-- (id)allApplicableRules:(BOOL)arg1;
+- (id)allApplicableRules:(unsigned long long)arg1;
 - (id)synthesizeLegacyServerRulesFromPather:(id)arg1;
 - (id)initWithSource:(id)arg1 destination:(id)arg2;
 

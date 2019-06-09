@@ -28,18 +28,22 @@
     _Bool _backgroundFetchOriginSectionChanged;
     _Bool _needToStartBackgroundFetch;
     _Bool _interruptBackgroundFetch;
+    _Bool _pauseBackgroundFetchResultsDelivery;
+    NSMutableSet *_pauseLibraryChangeDeliveryTokens;
     NSMutableDictionary *_pendingResultsByAssetCollection;
     NSObject<OS_dispatch_queue> *_pendingResultsIsolationQueue;
     _Bool _processAndPublishScheduledOnRunloop;
     NSObject<OS_dispatch_queue> *_backgroundQueue;
     PXLIFOQueue *_backgroundLIFOQueue;
     NSMutableOrderedSet *_queuedAssetCollectionsToFetch;
+    NSObject<OS_dispatch_queue> *_prefetchQueue;
     NSMutableDictionary *_facesByAssetCache;
     NSMutableDictionary *_weightByAssetCache;
     NSArray *_filterPersons;
     _Bool _hideHiddenAssets;
     NSArray *_fetchPropertySets;
     long long _curationType;
+    PHFetchResult *_emptyAssetsFetchResult;
     _Bool _reverseSortOrder;
     _Bool _wantsCurationByDefault;
     _Bool _isBackgroundFetching;
@@ -52,18 +56,20 @@
     NSPredicate *_filterPredicate;
     NSSet *_allowedUUIDs;
     unsigned long long _fetchLimit;
+    NSArray *_sortDescriptors;
     unsigned long long __previousCollectionsCount;
     PHPhotoLibrary *_photoLibrary;
 }
 
-+ (id)_emptyAssetsFetchResult;
++ (id)_sharedPrefetchQueue;
 + (id)_curationSharedBackgroundQueue;
 @property(nonatomic) _Bool allowNextChangeDeliveryOnAllRunLoopModes; // @synthesize allowNextChangeDeliveryOnAllRunLoopModes=_allowNextChangeDeliveryOnAllRunLoopModes;
-@property(readonly, nonatomic) _Bool isBackgroundFetching; // @synthesize isBackgroundFetching=_isBackgroundFetching;
 @property(readonly, nonatomic) PHPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(nonatomic, setter=_setPreviousCollectionsCount:) unsigned long long _previousCollectionsCount; // @synthesize _previousCollectionsCount=__previousCollectionsCount;
+@property(readonly, nonatomic) _Bool isBackgroundFetching; // @synthesize isBackgroundFetching=_isBackgroundFetching;
 @property(nonatomic) _Bool wantsCurationByDefault; // @synthesize wantsCurationByDefault=_wantsCurationByDefault;
 @property(nonatomic) _Bool reverseSortOrder; // @synthesize reverseSortOrder=_reverseSortOrder;
+@property(copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(nonatomic) unsigned long long fetchLimit; // @synthesize fetchLimit=_fetchLimit;
 @property(copy, nonatomic) NSSet *allowedUUIDs; // @synthesize allowedUUIDs=_allowedUUIDs;
 @property(retain, nonatomic) NSPredicate *filterPredicate; // @synthesize filterPredicate=_filterPredicate;
@@ -77,6 +83,7 @@
 - (id)prepareForPhotoLibraryChange:(id)arg1;
 - (_Bool)_isCurationEnabled;
 - (void)_didFinishBackgroundFetching;
+- (void)_addResultTuple:(id)arg1 forAssetCollection:(id)arg2 toMutableResultRecord:(id)arg3;
 - (void)_processAndPublishPendingCollectionFetchResults;
 - (void)_processAndPublishPendingCollectionFetchResultsWhenAppropriate;
 - (void)_fetchRemainingCollectionsBackgroundLoop;
@@ -84,10 +91,13 @@
 - (void)startBackgroundFetchIfNeeded;
 - (void)_updateInaccurateAssetCollectionsIfNeeded;
 - (id)_inaccurateAssetCollections;
+- (void)_prefetchIndexesByFetchResult:(id)arg1;
+- (void)prefetchAssetsInSections:(id)arg1;
 - (void)prefetchAssetsAtIndexPaths:(id)arg1;
 - (void)prefetchApproximateAssetsAtIndexPaths:(id)arg1 reverseOrder:(_Bool)arg2;
 - (void)prefetchApproximateAssetsAtIndexPaths:(id)arg1;
 - (_Bool)forceAccurateIndexPath:(id)arg1 andAssetsBeforeAndAfter:(long long)arg2;
+- (_Bool)forceAccurateSectionsIfNeeded:(id)arg1 reloadChanges:(_Bool)arg2;
 - (_Bool)forceAccurateSectionsIfNeeded:(id)arg1;
 - (_Bool)forceAccurateSection:(long long)arg1 andSectionsBeforeAndAfter:(long long)arg2;
 - (_Bool)forceAccurateAllSectionsIfNeeded;
@@ -122,8 +132,10 @@
 - (id)assetReferenceAtIndexPath:(id)arg1;
 - (id)assetReferenceForAsset:(id)arg1 containedInAssetCollectionWithType:(long long)arg2;
 - (id)indexPathForAssetReference:(id)arg1;
+- (id)indexPathForAssetWithUUID:(id)arg1 orBurstIdentifier:(id)arg2 hintIndexPath:(id)arg3 hintCollections:(id)arg4;
 - (id)indexPathForAssetWithUUID:(id)arg1 orBurstIdentifier:(id)arg2 hintIndexPath:(id)arg3 hintCollection:(id)arg4;
 - (long long)indexForAsset:(id)arg1 inCollection:(id)arg2 hintIndex:(long long)arg3;
+- (id)indexPathForAsset:(id)arg1 hintIndexPath:(id)arg2 hintCollections:(id)arg3;
 - (id)indexPathForAsset:(id)arg1 hintIndexPath:(id)arg2 hintCollection:(id)arg3;
 - (id)indexPathForAsset:(id)arg1 inCollection:(id)arg2;
 - (id)approximateAssetsAtIndexPaths:(id)arg1;
@@ -132,7 +144,10 @@
 - (id)facesAtSimpleIndexPath:(struct PXSimpleIndexPath)arg1;
 - (double)weightForAsset:(id)arg1;
 - (id)assetAtSimpleIndexPath:(struct PXSimpleIndexPath)arg1;
+- (id)_assetsForAssetCollection:(id)arg1;
 - (id)assetsInSection:(long long)arg1;
+- (long long)keyAssetIndexInSection:(long long)arg1;
+- (id)_keyAssetsForAssetCollection:(id)arg1;
 - (id)keyAssetsInSection:(long long)arg1;
 - (id)infoForAssetCollection:(id)arg1;
 - (unsigned long long)sectionForAssetCollection:(id)arg1;
@@ -141,14 +156,19 @@
 - (id)firstAssetCollection;
 - (long long)numberOfItemsInSection:(long long)arg1;
 - (long long)numberOfSections;
+- (void)setWantsCurationForAllCollections:(_Bool)arg1 collectionsToDiff:(id)arg2;
 - (void)setWantsCuration:(_Bool)arg1 forAssetCollection:(id)arg2;
+- (void)setKeyAsset:(id)arg1 forAssetCollection:(id)arg2;
 - (void)_incrementVersionIdentifier;
 @property(readonly, nonatomic) _Bool isImmutable;
+- (void)resumeChangeDeliveryAndBackgroundLoading:(id)arg1;
+- (id)pauseChangeDeliveryAndBackgroundLoadingWithTimeout:(double)arg1;
 - (void)pauseChangeDeliveryFor:(double)arg1;
 - (void)unregisterChangeObserver:(id)arg1;
 - (void)registerChangeObserver:(id)arg1;
 - (id)_sectionCache;
 - (unsigned long long)_cachedSectionForAssetCollection:(id)arg1;
+@property(readonly, nonatomic) long long numberOfEnrichedSections;
 @property(readonly, nonatomic) long long estimatedOtherCount;
 @property(readonly, nonatomic) long long estimatedVideosCount;
 @property(readonly, nonatomic) long long estimatedPhotosCount;
@@ -159,8 +179,9 @@
 - (void)_publishChange:(id)arg1;
 - (void)_publishWillChange;
 - (void)_publishReloadChange;
-- (void)_createFilteredFetchResult:(out id *)arg1 curatedFetchResult:(out id *)arg2 keyAssetsFetchResult:(out id *)arg3 forAssetCollection:(id)arg4 calledOnMainQueue:(_Bool)arg5;
+- (id)_fetchTupleForAssetCollection:(id)arg1 calledOnMainQueue:(_Bool)arg2;
 - (void)_performManualReloadWithChangeBlock:(CDUnknownBlockType)arg1;
+- (void)_performManualChangesForAssetCollections:(id)arg1 collectionsToDiff:(id)arg2 changeBlock:(CDUnknownBlockType)arg3;
 - (void)_performManualChangesForAssetCollections:(id)arg1 changeBlock:(CDUnknownBlockType)arg2;
 - (id)_assetOidsByAssetCollectionForAssetsAtIndexPaths:(id)arg1;
 - (id)_mutableResultRecordForAssetCollection:(id)arg1;
@@ -179,6 +200,7 @@
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
 - (void)_commonInit;
+- (id)createDataSourceWithAssetsAtIndexPaths:(id)arg1;
 - (id)initWithPhotosDataSource:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithPhotosDataSourceConfiguration:(id)arg1;
 

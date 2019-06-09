@@ -6,15 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, Protocol;
+@class NSHashTable, NSLock, Protocol;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface MNObserverHashTable : NSObject
 {
     Protocol *_protocol;
     NSHashTable *_observers;
+    NSLock *_observersLock;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *callbackQueue; // @synthesize callbackQueue=_callbackQueue;
 - (void).cxx_destruct;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
@@ -22,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 @property(readonly) _Bool hasObservers;
+- (unsigned int)count;
 - (id)initWithProtocol:(id)arg1;
 
 @end

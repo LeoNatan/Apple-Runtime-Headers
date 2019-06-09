@@ -6,28 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, NSURL;
+@class LPFetcher, NSDictionary, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface LPiTunesMediaAsset : NSObject
 {
+    Class _customFetcherClass;
+    long long _type;
     NSURL *_URL;
     NSDictionary *_colors;
     NSString *_name;
-    NSString *_string;
-    Class _customResolverClass;
 }
 
-@property(readonly, retain, nonatomic) Class customResolverClass; // @synthesize customResolverClass=_customResolverClass;
-@property(readonly, copy, nonatomic) NSString *string; // @synthesize string=_string;
 @property(readonly, copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, copy, nonatomic) NSDictionary *colors; // @synthesize colors=_colors;
 @property(readonly, copy, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
+@property(readonly, retain, nonatomic) LPFetcher *fetcher;
 - (id)metadata;
-- (id)initWithName:(id)arg1 customStringResolverClass:(Class)arg2;
-- (id)initWithString:(id)arg1 forName:(id)arg2;
-- (id)initWithURL:(id)arg1 colors:(id)arg2 name:(id)arg3;
+- (id)initWithName:(id)arg1 customFetcherClass:(Class)arg2;
+- (id)initWithVideoURL:(id)arg1 name:(id)arg2;
+- (id)initWithImageURL:(id)arg1 colors:(id)arg2 name:(id)arg3;
 
 @end
 

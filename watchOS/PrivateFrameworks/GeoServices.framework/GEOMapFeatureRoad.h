@@ -10,7 +10,7 @@
 
 @interface GEOMapFeatureRoad : GEOMapFeatureLine
 {
-    CDStruct_75fd159b *_feature;
+    CDStruct_91c84281 *_feature;
     unsigned long long _roadID;
     GEOMapFeatureJunction *_junctionA;
     GEOMapFeatureJunction *_junctionB;
@@ -18,10 +18,13 @@
     _Bool _checkedJunctionB;
 }
 
-+ (double)estimatedWidthForRoad:(CDStruct_75fd159b *)arg1;
++ (double)estimatedWidthForRoad:(CDStruct_91c84281 *)arg1;
 - (void).cxx_destruct;
 - (CDStruct_6e3f967a *)_tilePointsForSection:(unsigned int)arg1 withCount:(out unsigned int *)arg2;
+- (id)_attributes;
 - (id)_containingTile;
+- (int)_flippedSidewalkSideFor:(int)arg1;
+- (int)_flippedWalkableSideFor:(int)arg1;
 - (id)_junctionB;
 - (id)_junctionA;
 - (id)localizedRoadName:(out id *)arg1;
@@ -31,22 +34,29 @@
 @property(readonly, nonatomic) _Bool isRail;
 @property(readonly, nonatomic) _Bool isBridge;
 @property(readonly, nonatomic) _Bool isTunnel;
+@property(readonly, nonatomic) int sidewalkSide;
+@property(readonly, nonatomic) int walkableSide;
+@property(readonly, nonatomic) _Bool isRoadPedestrianNavigable;
 @property(readonly, nonatomic) _Bool isWalkable;
 @property(readonly, nonatomic) _Bool isDrivable;
 @property(readonly, nonatomic) _Bool speedLimitIsMPH;
 @property(readonly, nonatomic) unsigned int speedLimit;
 @property(readonly, nonatomic) double roadWidth;
+@property(readonly, nonatomic) int laneCount;
 @property(readonly, nonatomic) int travelDirection;
 @property(readonly, nonatomic) int formOfWay;
 @property(readonly, nonatomic) int roadClass;
 @property(readonly, nonatomic) GEOMapFeatureJunction *endJunction;
 @property(readonly, nonatomic) GEOMapFeatureJunction *startJunction;
 @property(readonly, nonatomic) unsigned long long roadID;
+- (id)debugDescription;
 @property(readonly, nonatomic) _Bool isFlipped;
-@property(readonly, nonatomic) CDStruct_75fd159b *feature;
+@property(readonly, nonatomic) unsigned int featureIndex;
+@property(readonly, nonatomic) CDStruct_91c84281 *feature;
 @property(readonly, nonatomic) struct _GEOTileKey tileKey;
 - (void)dealloc;
-- (id)initWithFeature:(CDStruct_75fd159b *)arg1;
+- (id)initWithFeature:(CDStruct_91c84281 *)arg1;
+- (void)updateForDesiredRoadDirectionality:(unsigned int)arg1 isOutboundRoad:(_Bool)arg2;
 
 @end
 

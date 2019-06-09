@@ -15,6 +15,7 @@
     NSMutableDictionary *_cachedSystemVibrationIdentifiers;
     NSMutableDictionary *_cachedSystemVibrationCompleteSubdirectories;
     NSDictionary *_cachedUserGeneratedVibrationPatterns;
+    NSDictionary *_synchronizedVibrationPatternFromToneIdentifierMapping;
     NPSDomainAccessor *_transientNanoPreferencesDomainAccessor;
     _Bool _needsRefresh;
     _Bool _allowsAutoRefresh;
@@ -49,6 +50,10 @@
 - (void)_didChangeUserGeneratedVibrationPatterns;
 - (id)_userGeneratedVibrationPatterns;
 - (void)_handleUserGeneratedVibrationsDidChangeNotification;
+- (id)_sanitizeVibrationIdentifier:(id)arg1 forAlertType:(int)arg2 topic:(id)arg3 correspondingToneIdentifier:(id)arg4 useDefaultVibrationAsFallback:(_Bool)arg5 allowsNoneDefaultToAnyActualVibrationSubstitution:(_Bool)arg6 didFallback:(_Bool *)arg7;
+- (id)_sanitizeVibrationIdentifier:(id)arg1 forAlertType:(int)arg2 topic:(id)arg3 correspondingToneIdentifier:(id)arg4 didFallbackToCurrentVibrationIdentifier:(_Bool *)arg5;
+- (id)_synchronizedVibrationIdentifierForToneIdentifier:(id)arg1;
+- (_Bool)_areSynchronizedVibrationsAllowedForAlertType:(int)arg1;
 - (void)_didSetVibrationPreferenceSuccessfullyWithKey:(id)arg1 inDomain:(id)arg2 usingPreferencesOfKind:(unsigned int)arg3;
 - (_Bool)_vibrationIsSettableForAlertType:(int)arg1;
 - (id)_systemWideVibrationPatternPreferenceKeyForAlertType:(int)arg1;

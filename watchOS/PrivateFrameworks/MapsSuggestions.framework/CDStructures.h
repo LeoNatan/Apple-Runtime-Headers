@@ -4,6 +4,8 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+@class NSObject, NSString;
+
 #pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
@@ -15,10 +17,18 @@ struct CGSize {
     float _field2;
 };
 
+struct CLLocationCoordinate2D {
+    double _field1;
+    double _field2;
+};
+
 struct GEOMapItemStorage {
     Class _field1;
     id _field2;
-    id _field3;
+    struct {
+        unsigned int _field1;
+        unsigned int _field2;
+    } _field3;
     id _field4;
     id _field5;
     id _field6;
@@ -26,6 +36,28 @@ struct GEOMapItemStorage {
     id _field8;
     id _field9;
     id _field10;
+    id _field11;
+    id _field12;
+    struct {
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+        unsigned int :1;
+    } _field13;
 };
 
 struct NSArray {
@@ -33,6 +65,10 @@ struct NSArray {
 };
 
 struct NSData {
+    Class _field1;
+};
+
+struct NSDateInterval {
     Class _field1;
 };
 
@@ -58,6 +94,56 @@ struct NSSet {
 
 struct NSString {
     Class _field1;
+};
+
+struct Queue {
+    NSObject *_innerQueue;
+    NSString *_name;
+};
+
+struct ReadWriteQueue {
+    NSObject *_innerQueue;
+    NSString *_name;
+};
+
+struct SignalPack {
+    struct unordered_map<MapsSuggestionsSignalType, MSg::Signal, std::__1::hash<MapsSuggestionsSignalType>, std::__1::equal_to<MapsSuggestionsSignalType>, std::__1::allocator<std::__1::pair<const MapsSuggestionsSignalType, MSg::Signal>>> dict_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*> *__next_;
+};
+
+struct unique_ptr<MSg::Queue, std::__1::default_delete<MSg::Queue>> {
+    struct __compressed_pair<MSg::Queue *, std::__1::default_delete<MSg::Queue>> {
+        struct Queue *__value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*>*>> {
+                unsigned long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unordered_map<MapsSuggestionsSignalType, MSg::Signal, std::__1::hash<MapsSuggestionsSignalType>, std::__1::equal_to<MapsSuggestionsSignalType>, std::__1::allocator<std::__1::pair<const MapsSuggestionsSignalType, MSg::Signal>>> {
+    struct __hash_table<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, std::__1::__unordered_map_hasher<MapsSuggestionsSignalType, std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, std::__1::hash<MapsSuggestionsSignalType>, true>, std::__1::__unordered_map_equal<MapsSuggestionsSignalType, std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, std::__1::equal_to<MapsSuggestionsSignalType>, true>, std::__1::allocator<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<MapsSuggestionsSignalType, std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, std::__1::hash<MapsSuggestionsSignalType>, true>> {
+            unsigned long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<MapsSuggestionsSignalType, std::__1::__hash_value_type<MapsSuggestionsSignalType, MSg::Signal>, std::__1::equal_to<MapsSuggestionsSignalType>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
 };
 
 #pragma mark Typedef'd Structures

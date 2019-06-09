@@ -21,7 +21,9 @@
 
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (void)canWalkieTalkieChanged:(id)arg1;
 - (void)canCallPossiblyChanged:(id)arg1;
+- (void)quickCellDidSelectWalkieTalkie:(id)arg1;
 - (void)quickCellDidSelectMail:(id)arg1;
 - (void)quickCellDidSelectMessage:(id)arg1;
 - (void)quickCellDidSelectCall:(id)arg1;

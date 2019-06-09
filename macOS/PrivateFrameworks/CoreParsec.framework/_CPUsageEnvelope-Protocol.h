@@ -6,11 +6,16 @@
 
 #import <CoreParsec/NSObject-Protocol.h>
 
-@class NSData, NSDictionary, _CPImagesUsagePropensity, _CPNewsUsagePropensity, _CPSafariUsagePropensity, _CPSpotlightUsagePropensity, _CPUsageSinceLookback;
+@class NSData, NSDictionary, _CPDeviceContext, _CPImagesUsagePropensity, _CPNewsUsagePropensity, _CPSafariUsagePropensity, _CPSpotlightUsagePropensity, _CPUsageSinceLookback;
 
 @protocol _CPUsageEnvelope <NSObject>
 @property(readonly, nonatomic) unsigned long long whichKind;
 @property(readonly, nonatomic) NSData *jsonData;
+@property(retain, nonatomic) _CPDeviceContext *context;
+@property(nonatomic) int totalSessions;
+@property(nonatomic) int configuredLookbackTimeInDays;
+@property(nonatomic) long long collectionEndTimestamp;
+@property(nonatomic) long long collectionStartTimestamp;
 @property(retain, nonatomic) _CPNewsUsagePropensity *newsUsagePropensity;
 @property(retain, nonatomic) _CPImagesUsagePropensity *imagesUsagePropensity;
 @property(retain, nonatomic) _CPSpotlightUsagePropensity *spotlightUsagePropensity;

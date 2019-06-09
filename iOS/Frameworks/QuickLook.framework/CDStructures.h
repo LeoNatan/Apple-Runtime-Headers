@@ -41,6 +41,27 @@ struct QLFrameDurationInformation {
     double _field2;
 };
 
+struct QLPHDisplayVelocity {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+};
+
+struct QLPUDisplayVelocity {
+    double _field1;
+    double _field2;
+    double _field3;
+    double _field4;
+};
+
+struct QLPXDisplayVelocity {
+    double x;
+    double y;
+    double scale;
+    double rotation;
+};
+
 struct UIEdgeInsets {
     double top;
     double left;

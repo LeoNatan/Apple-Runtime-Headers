@@ -11,10 +11,10 @@
 @interface CKAvatarTitleCollectionReusableView : UICollectionReusableView
 {
     _Bool _avatarPickerActive;
+    CKLabel *_titleLabel;
     long long _style;
     long long _avatarTitleAccessoryImageType;
     long long _statusIndicatorType;
-    CKLabel *_titleLabel;
     UIImageView *_chevronImageView;
     UIImageView *_statusIndicatorImageView;
     NSMutableArray *_pendingTitles;
@@ -25,11 +25,11 @@
 @property(retain, nonatomic) NSMutableArray *pendingTitles; // @synthesize pendingTitles=_pendingTitles;
 @property(retain, nonatomic) UIImageView *statusIndicatorImageView; // @synthesize statusIndicatorImageView=_statusIndicatorImageView;
 @property(retain, nonatomic) UIImageView *chevronImageView; // @synthesize chevronImageView=_chevronImageView;
-@property(retain, nonatomic) CKLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) long long statusIndicatorType; // @synthesize statusIndicatorType=_statusIndicatorType;
 @property(nonatomic, getter=isAvatarPickerActive) _Bool avatarPickerActive; // @synthesize avatarPickerActive=_avatarPickerActive;
 @property(nonatomic) long long avatarTitleAccessoryImageType; // @synthesize avatarTitleAccessoryImageType=_avatarTitleAccessoryImageType;
 @property(nonatomic) long long style; // @synthesize style=_style;
+@property(retain, nonatomic) CKLabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 - (void).cxx_destruct;
 - (_Bool)isLTR;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

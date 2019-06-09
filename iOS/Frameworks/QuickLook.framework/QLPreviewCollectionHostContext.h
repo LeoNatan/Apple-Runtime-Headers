@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 
 + (id)_extensionAuxiliaryHostProtocol;
 + (id)_extensionAuxiliaryVendorProtocol;
-- (void)setSourceIsManaged:(_Bool)arg1;
+- (void)setIsContentManaged:(_Bool)arg1;
 - (void)hostViewControlerTransitionToState:(unsigned long long)arg1 animated:(_Bool)arg2;
 - (void)setLoadingString:(id)arg1;
 - (void)setAllowInteractiveTransitions:(_Bool)arg1;
@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)keyCommandWasPerformed:(id)arg1;
 - (void)keyCommandsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)prepareForActionSheetPresentationWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)saveCurrentPreviewEditsSynchronously:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)toolbarButtonPressedWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)toolbarButtonsForTraitCollection:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)hostApplicationDidBecomeActive;
@@ -38,6 +39,8 @@ __attribute__((visibility("hidden")))
 - (void)configureWithNumberOfItems:(long long)arg1 currentPreviewItemIndex:(unsigned long long)arg2 itemProvider:(id)arg3 stateManager:(id)arg4;
 - (void)setNotificationCenter:(id)arg1;
 - (void)getNetworkObserverWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (id)_synchronousProtocolServiceWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)_protocolServiceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_protocolService;
 
 @end

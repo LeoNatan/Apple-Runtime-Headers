@@ -20,6 +20,7 @@
     _MSMessageAppContext *_context;
     NSArray *_draftAssetArchives;
     NSString *_senderAddress;
+    NSString *_iMessageLoginID;
     NSArray *_recipientAddresses;
     id <MSConversationDelegate> _delegate;
 }
@@ -27,6 +28,7 @@
 + (id)activeConversation;
 @property(nonatomic) __weak id <MSConversationDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) NSArray *recipientAddresses; // @synthesize recipientAddresses=_recipientAddresses;
+@property(readonly, nonatomic) NSString *iMessageLoginID; // @synthesize iMessageLoginID=_iMessageLoginID;
 @property(readonly, nonatomic) NSString *senderAddress; // @synthesize senderAddress=_senderAddress;
 @property(readonly, copy, nonatomic) NSArray *draftAssetArchives; // @synthesize draftAssetArchives=_draftAssetArchives;
 @property(retain, nonatomic) _MSMessageAppContext *context; // @synthesize context=_context;

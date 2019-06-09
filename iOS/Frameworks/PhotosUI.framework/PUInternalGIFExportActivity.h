@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUActivity.h>
+#import <PhotosUICore/PXActivity.h>
 
 __attribute__((visibility("hidden")))
-@interface PUInternalGIFExportActivity : PUActivity
+@interface PUInternalGIFExportActivity : PXActivity
 {
 }
 
@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 - (void)performActivity;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)_asset;
-- (id)activityImage;
+- (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;
 

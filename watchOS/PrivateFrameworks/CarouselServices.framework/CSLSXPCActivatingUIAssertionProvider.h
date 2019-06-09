@@ -8,17 +8,25 @@
 
 #import <CarouselServices/CSLSActivatingUIAssertionProvider-Protocol.h>
 
-@class NSString;
+@class NSMutableDictionary, NSString;
 
 @interface CSLSXPCActivatingUIAssertionProvider : BSBaseXPCClient <CSLSActivatingUIAssertionProvider>
 {
+    NSMutableDictionary *_takenAssertions;
+    struct os_unfair_lock_s _lock;
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (void)_sendMessageType:(int)arg1 withMessage:(CDUnknownBlockType)arg2 withReplyHandler:(CDUnknownBlockType)arg3 waitForReply:(_Bool)arg4;
 - (void)releaseActivatingUIAssertionForUUID:(struct __CFUUID *)arg1;
 - (_Bool)takeActivatingUIAssertion:(id)arg1 forUUID:(struct __CFUUID *)arg2;
-- (id)init;
+- (_Bool)_takeRemoteAssertion:(id)arg1 uuidString:(id)arg2;
+- (void)queue_connectionWasInterrupted;
+- (void)_retakeAssertions;
+- (id)_lock_deepCopyTakenAssertions;
+- (void)_withLock:(CDUnknownBlockType)arg1;
+- (id)initWithServiceName:(id)arg1 endpoint:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

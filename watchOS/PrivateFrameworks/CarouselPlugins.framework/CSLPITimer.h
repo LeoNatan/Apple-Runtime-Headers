@@ -8,7 +8,7 @@
 
 #import <CarouselPlugins/CSLPISystemSleepGlobalObserverObserver-Protocol.h>
 
-@class CSLPIBalancedPowerAssertion, CSLPIDispatchTimer, CSLPIScheduledSystemWake, NSString;
+@class CSLPIDispatchTimer, CSLPIPowerAssertion, CSLPIScheduledSystemWake, NSString;
 @protocol OS_dispatch_queue;
 
 @interface CSLPITimer : NSObject <CSLPISystemSleepGlobalObserverObserver>
@@ -16,11 +16,10 @@
     CSLPIDispatchTimer *_dispatchTimer;
     struct _opaque_pthread_mutex_t _schedulingMutex;
     CSLPIScheduledSystemWake *_scheduledWake;
-    CSLPIBalancedPowerAssertion *_powerAssertion;
+    CSLPIPowerAssertion *_powerAssertion;
     double _wallClockFireTime;
     unsigned long long _rawScheduleTime;
     unsigned long long _rawScheduleDelta;
-    _Bool _powerAssertionTaken;
     _Bool _scheduledWithWallTime;
     _Bool _scheduled;
     _Bool _shouldWakeDevice;

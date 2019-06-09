@@ -12,6 +12,7 @@
 }
 
 - (id).cxx_construct;
+@property(readonly) _Bool legacyHDMIEDID;
 @property(readonly) long long bt2020YCC;
 @property(readonly) long long hdrStaticMetadataType1;
 @property(readonly) long long pqEOTF;

@@ -8,7 +8,7 @@
 
 #import <Mail/MCRemoteStoreAccount-Protocol.h>
 
-@class MCAuthScheme, NSArray, NSOperationQueue, NSString;
+@class ACAccount, ECAuthScheme, NSArray, NSOperationQueue, NSString;
 
 @interface MFRemoteStoreAccount : MFMailAccount <MCRemoteStoreAccount>
 {
@@ -52,18 +52,20 @@
 @property BOOL configureDynamically;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy) NSArray *emailAddressStrings;
 @property(copy) NSString *externalHostname;
 @property(readonly) unsigned long long hash;
-@property(copy, nonatomic) NSString *hostname;
+@property(readonly, copy) NSString *hostname;
 @property(readonly, copy) NSString *identifier;
 @property(readonly, nonatomic) BOOL isGmailAccount;
 @property(readonly) BOOL isYahooAccount;
 @property(readonly, copy) NSString *machineID;
+@property(readonly, nonatomic, getter=isManaged) BOOL managed;
 @property(readonly, copy) NSString *oauthToken;
 @property(readonly, copy) NSString *oneTimePassword;
-@property(copy, nonatomic) NSString *password;
+@property(readonly, copy) NSString *password;
 @property long long portNumber;
-@property(retain) MCAuthScheme *preferredAuthScheme;
+@property(retain) ECAuthScheme *preferredAuthScheme;
 @property(readonly, nonatomic) NSOperationQueue *remoteFetchQueue;
 @property(readonly, nonatomic) NSOperationQueue *remoteTaskQueue;
 @property(readonly, nonatomic) BOOL requiresAuthentication;
@@ -73,7 +75,8 @@
 @property(readonly, copy, nonatomic) NSArray *standardPorts;
 @property(readonly, copy, nonatomic) NSArray *standardSSLPorts;
 @property(readonly) Class superclass;
-@property(copy) NSString *username;
+@property(readonly, copy) ACAccount *systemAccount;
+@property(readonly, copy) NSString *username;
 @property BOOL usesSSL;
 
 @end

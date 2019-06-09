@@ -6,14 +6,19 @@
 
 #import <Vision/VNFaceLandmarkRegion.h>
 
-@class NSMutableDictionary;
+@class NSArray, NSMutableDictionary;
 
 @interface VNFaceLandmarkRegion2D : VNFaceLandmarkRegion
 {
     NSMutableDictionary *_sizedPointsCache;
-    // Error parsing type: r^, name: _points
+    // Error parsing type: ^, name: _points
+    NSArray *_precisionEstimatesPerPoint;
+    NSArray *_occlusionFlagsPerPoint;
 }
 
++ (_Bool)supportsSecureCoding;
+@property(readonly) NSArray *occlusionFlagsPerPoint; // @synthesize occlusionFlagsPerPoint=_occlusionFlagsPerPoint;
+@property(readonly) NSArray *precisionEstimatesPerPoint; // @synthesize precisionEstimatesPerPoint=_precisionEstimatesPerPoint;
 // Error parsing type for property points:
 // Property attributes: Tr^,V_points
 
@@ -21,10 +26,14 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;
--     // Error parsing type: @64@0:8{CGRect={CGPoint=dd}{CGSize=dd}}16^48Q56, name: initWithFaceBoundingBox:points:pointCount:
+-     // Error parsing type: @88@0:8Q16{CGRect={CGPoint=dd}{CGSize=dd}}24^56Q64@72@80, name: initWithRequestRevision:faceBoundingBox:points:pointCount:precisionEstimatesPerPoint:occlusionFlagsPerPoint:
 - (const struct CGPoint *)pointsInImageOfSize:(struct CGSize)arg1;
 @property(readonly) const struct CGPoint *normalizedPoints;
 -     // Error parsing type: 24@0:8Q16, name: pointAtIndex:
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithRequestRevision:(unsigned long long)arg1 faceBoundingBox:(struct CGRect)arg2;
 
 @end
 

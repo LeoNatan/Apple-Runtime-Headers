@@ -14,25 +14,31 @@
 @interface CSSPGEndpointAnalyzer : NSObject <EARCaesuraSilencePosteriorGeneratorDelegate>
 {
     _Bool _hasReported;
+    _Bool _isAnalyzeMode;
     float _endpointThreshold;
     id <CSSPGEndpointAnalyzerDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_queue;
     EARCaesuraSilencePosteriorGenerator *_caesuraSPG;
 }
 
+@property(nonatomic) _Bool isAnalyzeMode; // @synthesize isAnalyzeMode=_isAnalyzeMode;
 @property(nonatomic) _Bool hasReported; // @synthesize hasReported=_hasReported;
 @property(nonatomic) float endpointThreshold; // @synthesize endpointThreshold=_endpointThreshold;
 @property(retain, nonatomic) EARCaesuraSilencePosteriorGenerator *caesuraSPG; // @synthesize caesuraSPG=_caesuraSPG;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <CSSPGEndpointAnalyzerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)silenceDurationEstimateAvailable:(float *)arg1 numEstimates:(unsigned long long)arg2 clientProcessedAudioMs:(float)arg3;
 - (void)clientSilenceFeaturesAvailable:(id)arg1;
 - (void)addAudio:(id)arg1 numSamples:(unsigned long long)arg2;
+- (long long)getFrameDurationMs;
 - (void)stop;
 - (void)dealloc;
 - (void)start;
 - (void)reset;
+- (id)initWithAnalyzeMode;
 - (id)initWithEndpointThreshold:(float)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

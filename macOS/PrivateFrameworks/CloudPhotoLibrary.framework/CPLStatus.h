@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class CPLAccountFlags, NSArray, NSData, NSDate, NSDictionary, NSMutableDictionary, NSURL;
-@protocol OS_dispatch_queue;
+@protocol CPLStatusDelegate, OS_dispatch_queue;
 
 @interface CPLStatus : NSObject
 {
@@ -15,18 +15,24 @@
     NSURL *_statusFileURL;
     NSMutableDictionary *_status;
     NSObject<OS_dispatch_queue> *_lock;
+    id <CPLStatusDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <CPLStatusDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *disabledFeatures;
 @property(copy, nonatomic) NSData *accountFlagsData;
 @property(readonly, nonatomic) CPLAccountFlags *accountFlags;
-@property(nonatomic, getter=isConnectedToNetwork) BOOL connectedToNetwork;
+@property(nonatomic) BOOL lowDiskSpace;
+- (void)setConnectedToNetwork:(BOOL)arg1;
+@property(readonly, nonatomic) BOOL isConstrainedNetwork;
+@property(readonly, nonatomic, getter=isConnectedToNetwork) BOOL connectedToNetwork;
 @property(readonly, nonatomic) BOOL hasBatteryBudget;
 @property(readonly, nonatomic) BOOL hasCellularBudget;
 @property(readonly, nonatomic) BOOL hasValidSystemBudget;
-- (void)setHasCellularBudget:(BOOL)arg1 hasBatteryBudget:(BOOL)arg2 isBudgetValid:(BOOL)arg3;
+- (void)setHasCellularBudget:(BOOL)arg1 hasBatteryBudget:(BOOL)arg2 isConstrainedNetwork:(BOOL)arg3 isBudgetValid:(BOOL)arg4;
 - (id)statusDescription;
+- (void)_statusDidChange;
 @property(readonly, nonatomic) NSDate *cloudAssetCountPerTypeLastCheckDate;
 - (void)setCloudAssetCountPerType:(id)arg1 updateCheckDate:(BOOL)arg2;
 @property(readonly, nonatomic) NSDictionary *cloudAssetCountPerType;
@@ -41,6 +47,7 @@
 @property(copy, nonatomic) NSDate *lastCompletePrefetchDate;
 @property(copy, nonatomic) NSDate *lastSuccessfulSyncDate;
 - (void)refetchFromDisk;
+- (void)checkInitialSyncMarker;
 - (BOOL)_deleteInitialSyncMarkerWithError:(id *)arg1;
 - (BOOL)writeInitialSyncMarker:(id *)arg1;
 - (BOOL)_writeInitialSyncMarkerForDate:(id)arg1 error:(id *)arg2;

@@ -9,13 +9,11 @@
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 #import <PassKitCore/PKCloudStoreCoding-Protocol.h>
 
-@class CLLocation, CNPostalAddress, NSString, NSURL;
+@class CLLocation, CNPostalAddress, MKWalletMerchantStylingInfo, NSString, NSURL;
 
 @interface PKMapsMerchant : NSObject <NSSecureCoding, PKCloudStoreCoding>
 {
-    BOOL _hasPOIType;
     int _resultProviderIdentifier;
-    int _poiType;
     unsigned long long _identifier;
     NSString *_name;
     NSString *_phoneNumber;
@@ -24,15 +22,19 @@
     double _locationLongitude;
     CNPostalAddress *_postalAddress;
     NSURL *_heroImageURL;
+    NSString *_heroImageAttributionName;
     long long _category;
     NSString *_detailedCategory;
+    MKWalletMerchantStylingInfo *_stylingInfo;
+    NSURL *_businessChatURL;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSURL *businessChatURL; // @synthesize businessChatURL=_businessChatURL;
+@property(retain, nonatomic) MKWalletMerchantStylingInfo *stylingInfo; // @synthesize stylingInfo=_stylingInfo;
 @property(copy, nonatomic) NSString *detailedCategory; // @synthesize detailedCategory=_detailedCategory;
 @property(nonatomic) long long category; // @synthesize category=_category;
-@property(nonatomic) int poiType; // @synthesize poiType=_poiType;
-@property(nonatomic) BOOL hasPOIType; // @synthesize hasPOIType=_hasPOIType;
+@property(copy, nonatomic) NSString *heroImageAttributionName; // @synthesize heroImageAttributionName=_heroImageAttributionName;
 @property(copy, nonatomic) NSURL *heroImageURL; // @synthesize heroImageURL=_heroImageURL;
 @property(copy, nonatomic) CNPostalAddress *postalAddress; // @synthesize postalAddress=_postalAddress;
 @property(nonatomic) double locationLongitude; // @synthesize locationLongitude=_locationLongitude;

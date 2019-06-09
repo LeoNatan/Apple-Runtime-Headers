@@ -4,28 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <MaterialKit/MTVisualStyling.h>
 
-@class CAFilter, NSString, UIColor, UIVibrancyEffect;
-
-@interface MTVibrantStyling : NSObject
+@interface MTVibrantStyling : MTVisualStyling
 {
-    CAFilter *_composedFilter;
-    UIColor *_color;
-    double _alpha;
-    NSString *_blendMode;
 }
-
-+ (long long)highContrastStyleForPrivateStyle:(long long)arg1;
-+ (id)vibrantStylingWithPrivateStyle:(long long)arg1;
-@property(readonly, copy, nonatomic) NSString *blendMode; // @synthesize blendMode=_blendMode;
-@property(readonly, nonatomic) double alpha; // @synthesize alpha=_alpha;
-@property(readonly, nonatomic) UIColor *color; // @synthesize color=_color;
-@property(readonly, copy, nonatomic) CAFilter *composedFilter; // @synthesize composedFilter=_composedFilter;
-- (void).cxx_destruct;
-@property(readonly, copy, nonatomic) UIVibrancyEffect *visualEffect;
-- (id)_layerConfig;
-@property(readonly, nonatomic) long long style;
 
 @end
 

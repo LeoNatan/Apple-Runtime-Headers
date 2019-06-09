@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)libraryIdentifiersForContainerType:(unsigned int)arg1;
+- (id)identifiersForContainerType:(unsigned int)arg1;
 
 @end
 

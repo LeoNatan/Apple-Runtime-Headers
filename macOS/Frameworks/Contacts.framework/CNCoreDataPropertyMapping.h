@@ -10,6 +10,7 @@
 
 @class NSDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CNCoreDataPropertyMapping : NSObject <CNRecordCoreDataPredicateMapping>
 {
     NSString *_coreDataPredicateKeyPath;

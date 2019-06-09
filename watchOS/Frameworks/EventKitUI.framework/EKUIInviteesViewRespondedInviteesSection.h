@@ -15,6 +15,7 @@
     _Bool _editable;
     CDUnknownBlockType _participantTapped;
     CDUnknownBlockType _participantRemoved;
+    CDUnknownBlockType _participantSetRole;
     NSMutableArray *_participants;
     EKEvent *_event;
     NSString *_cachedCellReuseIdentifier;
@@ -30,11 +31,13 @@
 @property(retain, nonatomic) NSString *cachedCellReuseIdentifier; // @synthesize cachedCellReuseIdentifier=_cachedCellReuseIdentifier;
 @property(retain, nonatomic) EKEvent *event; // @synthesize event=_event;
 @property(retain, nonatomic) NSMutableArray *participants; // @synthesize participants=_participants;
+@property(copy, nonatomic) CDUnknownBlockType participantSetRole; // @synthesize participantSetRole=_participantSetRole;
 @property(copy, nonatomic) CDUnknownBlockType participantRemoved; // @synthesize participantRemoved=_participantRemoved;
 @property(copy, nonatomic) CDUnknownBlockType participantTapped; // @synthesize participantTapped=_participantTapped;
 - (void).cxx_destruct;
 - (_Bool)_isValidRow:(int)arg1;
 - (void)updateWithEvent:(id)arg1 editable:(_Bool)arg2;
+- (id)actionsForRow:(id)arg1;
 - (void)cancelOutstandingOperations;
 - (float)estimatedHeightForRow:(id)arg1;
 - (void)commitEditingStyle:(int)arg1 forRow:(id)arg2;

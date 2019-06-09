@@ -20,7 +20,6 @@
 + (_Bool)supportsSecureCoding;
 - (void).cxx_destruct;
 - (void)setUserSelectedArtworkImage:(id)arg1;
-- (_Bool)canPlayUsingNetworkType:(int)arg1;
 - (_Bool)isCloudMix;
 - (id)seedTracksQuery;
 - (id)representativeArtists;

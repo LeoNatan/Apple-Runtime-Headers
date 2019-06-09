@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
     NSPanel *correctionSubPanel;
     CDUnknownBlockType completionHandler;
     CDUnknownBlockType stringCompletionHandler;
-    BOOL useDefaultWindowShadow;
     NSAttributedString *primaryCandidate;
     NSMutableArray *alternativeCandidates;
     BOOL dismissedExternally;

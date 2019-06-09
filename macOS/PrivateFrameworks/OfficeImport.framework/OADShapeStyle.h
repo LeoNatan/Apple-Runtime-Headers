@@ -10,6 +10,7 @@
 
 @class OADFontReference, OADStyleMatrixReference;
 
+__attribute__((visibility("hidden")))
 @interface OADShapeStyle : NSObject <NSCopying>
 {
     OADStyleMatrixReference *mLineReference;

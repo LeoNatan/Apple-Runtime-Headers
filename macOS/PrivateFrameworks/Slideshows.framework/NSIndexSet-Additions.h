@@ -10,5 +10,7 @@
 - (id)indexSetWithMaximum:(long long)arg1;
 - (id)indexSetWithOffset:(long long)arg1;
 - (long long)indexAtIndex:(long long)arg1;
+- (long long)locationOfIndex:(long long)arg1;
+- (long long)indexAtIndex:(long long)arg1;
 @end
 

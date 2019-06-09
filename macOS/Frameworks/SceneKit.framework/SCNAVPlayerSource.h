@@ -27,6 +27,8 @@ __attribute__((visibility("hidden")))
 - (void)connectToProxy:(struct __C3DImageProxy *)arg1;
 @property(retain, nonatomic) AVPlayer *player;
 - (void)dealloc;
+- (void)unregisterPlayer:(id)arg1;
+- (void)registerPlayer:(id)arg1;
 - (void)discardVideoData;
 - (id)init;
 

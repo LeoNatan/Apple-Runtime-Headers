@@ -42,8 +42,8 @@
 @property(readonly, nonatomic) NSString *localizedTitle;
 @property(readonly, nonatomic) NSString *localizedDescription;
 @property(readonly, nonatomic) SKProductDiscount *introductoryPrice;
-- (_Bool)downloadable;
-@property(readonly, nonatomic, getter=isDownloadable) _Bool downloadable;
+@property(readonly, nonatomic) _Bool downloadable;
+@property(readonly, nonatomic) _Bool isDownloadable;
 @property(readonly, nonatomic) NSString *downloadContentVersion;
 @property(readonly, nonatomic) NSArray *downloadContentLengths;
 @property(readonly, nonatomic) NSString *contentVersion;

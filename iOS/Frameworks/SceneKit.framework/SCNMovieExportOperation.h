@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)main;
+- (void)renderAndAppendWithPresentationTime:(CDStruct_198678f7)arg1 usingAdaptor:(id)arg2 metalTextureCache:(struct __CVMetalTextureCache *)arg3 cvQueue:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)appendImage:(struct CGImage *)arg1 withPresentationTime:(CDStruct_198678f7)arg2 usingAdaptor:(id)arg3;
 - (void)_finishedExport;
 - (struct CGImage *)_copySnapshot:(struct CGSize)arg1;

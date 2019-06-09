@@ -21,7 +21,6 @@
 
 + (id)competitionListWithCodableCompetitionList:(id)arg1;
 + (id)competitionListWithRecord:(id)arg1;
-+ (id)competitionListsFromCodableCompetitionLists:(id)arg1 codableCompetitions:(id)arg2;
 + (id)competitionListFromCodableDatabaseCompetitionList:(id)arg1 codableCompetitions:(id)arg2 withType:(long long)arg3;
 @property(copy, nonatomic) CKRecord *systemFieldsOnlyRecord; // @synthesize systemFieldsOnlyRecord=_systemFieldsOnlyRecord;
 @property(retain, nonatomic) NSUUID *friendUUID; // @synthesize friendUUID=_friendUUID;

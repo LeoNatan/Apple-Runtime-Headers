@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void)updateForTrackingPoint:(struct CGPoint)arg1 isTrackingSelection:(BOOL)arg2;
+- (void)scrollItemAtIndex:(long long)arg1 toAlignment:(long long)arg2;
 - (void)setHighlightedIndex:(long long)arg1;
 - (void)setSelectedIndex:(long long)arg1;
 @property(readonly) NSScrubberDocumentView *targetView;

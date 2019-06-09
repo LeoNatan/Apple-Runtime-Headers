@@ -19,7 +19,9 @@
 @property(nonatomic) __weak id <CRKCardSectionViewControllingDelegate> cardSectionViewControllingDelegate; // @synthesize cardSectionViewControllingDelegate=_cardSectionViewControllingDelegate;
 - (void).cxx_destruct;
 - (void)cardEventDidOccur:(unsigned long long)arg1 withIdentifier:(id)arg2 userInfo:(id)arg3;
+- (void)remoteViewControllerWillBeginEditing:(id)arg1;
 - (void)remoteViewController:(id)arg1 requestsHandlingOfIntent:(id)arg2;
+- (void)desiresInteractivity:(CDUnknownBlockType)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

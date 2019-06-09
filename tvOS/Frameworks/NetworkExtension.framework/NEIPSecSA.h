@@ -8,7 +8,7 @@
 
 #import <NetworkExtension/NSCopying-Protocol.h>
 
-@class NSData, NSString, NWAddressEndpoint, NWInterface;
+@class NSData, NSString, NWAddressEndpoint;
 
 @interface NEIPSecSA : NSObject <NSCopying>
 {
@@ -16,7 +16,9 @@
     _Bool _natDetectedOnPeer;
     _Bool _natKeepaliveEnabled;
     _Bool _natKeepaliveOffloadEnabled;
+    _Bool _sequencePerTrafficClass;
     unsigned short _natTraversalPort;
+    unsigned short _natTraversalSrcPort;
     unsigned int _spi;
     int _direction;
     int _mode;
@@ -27,7 +29,7 @@
     unsigned int _internalSAID;
     NWAddressEndpoint *_localAddress;
     NWAddressEndpoint *_remoteAddress;
-    NWInterface *_boundInterface;
+    NSString *_boundInterfaceName;
     NSString *_tunnelInterfaceName;
     unsigned long long _lifetimeSeconds;
     NSData *_encryptionKey;
@@ -37,6 +39,8 @@
 }
 
 @property unsigned int internalSAID; // @synthesize internalSAID=_internalSAID;
+@property _Bool sequencePerTrafficClass; // @synthesize sequencePerTrafficClass=_sequencePerTrafficClass;
+@property unsigned short natTraversalSrcPort; // @synthesize natTraversalSrcPort=_natTraversalSrcPort;
 @property unsigned short natTraversalPort; // @synthesize natTraversalPort=_natTraversalPort;
 @property unsigned long long natKeepaliveOffloadIntervalSeconds; // @synthesize natKeepaliveOffloadIntervalSeconds=_natKeepaliveOffloadIntervalSeconds;
 @property unsigned long long natKeepaliveIntervalSeconds; // @synthesize natKeepaliveIntervalSeconds=_natKeepaliveIntervalSeconds;
@@ -51,7 +55,7 @@
 @property unsigned long long lifetimeSeconds; // @synthesize lifetimeSeconds=_lifetimeSeconds;
 @property unsigned int replayWindowSize; // @synthesize replayWindowSize=_replayWindowSize;
 @property(retain) NSString *tunnelInterfaceName; // @synthesize tunnelInterfaceName=_tunnelInterfaceName;
-@property(retain) NWInterface *boundInterface; // @synthesize boundInterface=_boundInterface;
+@property(retain) NSString *boundInterfaceName; // @synthesize boundInterfaceName=_boundInterfaceName;
 @property(retain) NWAddressEndpoint *remoteAddress; // @synthesize remoteAddress=_remoteAddress;
 @property(retain) NWAddressEndpoint *localAddress; // @synthesize localAddress=_localAddress;
 @property int protocol; // @synthesize protocol=_protocol;
@@ -62,6 +66,8 @@
 - (void)dealloc;
 - (void)invalidate;
 - (id)createDictionary;
+- (id)description;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned long long)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;

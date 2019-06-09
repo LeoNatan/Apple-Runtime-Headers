@@ -10,7 +10,7 @@
 
 @interface NFFieldNotificationECP2_0 : NFFieldNotification
 {
-    unsigned char _odaRequired;
+    BOOL _odaRequired;
     unsigned char _terminalSubType;
     unsigned long long _terminalType;
     NSArray *_tciArray;
@@ -22,7 +22,7 @@
 @property(readonly, retain) NSArray *tciArray; // @synthesize tciArray=_tciArray;
 @property(readonly) unsigned char terminalSubType; // @synthesize terminalSubType=_terminalSubType;
 @property(readonly) unsigned long long terminalType; // @synthesize terminalType=_terminalType;
-@property(readonly) unsigned char odaRequired; // @synthesize odaRequired=_odaRequired;
+@property(readonly) BOOL odaRequired; // @synthesize odaRequired=_odaRequired;
 - (id)description;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;

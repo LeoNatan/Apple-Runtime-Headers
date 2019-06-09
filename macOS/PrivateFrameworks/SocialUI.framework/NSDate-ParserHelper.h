@@ -7,6 +7,12 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (ParserHelper)
++ (id)timeFormatter;
++ (id)weekdayFormatter;
++ (id)dateFormatter;
 - (id)stringTimeIntervalSinceReferenceDate;
+- (id)dayAndTimeString;
+- (id)optimalDisplayString;
+- (long long)relativeDaysSinceNow;
 @end
 

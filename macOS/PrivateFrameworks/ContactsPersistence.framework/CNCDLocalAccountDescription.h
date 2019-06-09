@@ -8,7 +8,7 @@
 
 #import <ContactsPersistence/CNAccountDescription-Protocol.h>
 
-@class ABCDContainer, NSString, NSURL;
+@class ABCDContainer, NSArray, NSNumber, NSString, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface CNCDLocalAccountDescription : NSObject <CNAccountDescription>
@@ -24,8 +24,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *identifier;
 
 // Remaining properties
+@property(readonly, copy) NSArray *childAccounts;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly) NSNumber *dsid;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

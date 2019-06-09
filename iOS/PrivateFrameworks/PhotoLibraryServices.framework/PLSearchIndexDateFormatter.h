@@ -19,11 +19,12 @@
     NSString *_displayFormat;
     NSString *_parseFormat;
     NSArray *_monthSymbols;
-    _Bool _localeDidChange;
+    _Bool _didSetupLocaleAndFormats;
 }
 
 + (id)monthFormatForLocale:(id)arg1;
 + (id)yearFormatForLocale:(id)arg1;
+- (void).cxx_destruct;
 - (id)formattedDateRangeWithStartDate:(id)arg1 endDate:(id)arg2;
 - (id)newLocalizedStringFromYear:(id)arg1 month:(id)arg2;
 - (id)newLocalizedStringFromDate:(id)arg1;
@@ -31,11 +32,9 @@
 - (id)newLocalizedComponentsFromDate:(id)arg1 includeMonth:(_Bool)arg2;
 - (id)localizedMonthStringsFromDate:(id)arg1;
 - (id)localizedSeasonNameFromDate:(id)arg1;
-- (void)_localeDidChange:(id)arg1;
 - (void)_inqUpdateDateFormat:(id)arg1;
 - (void)_inqSetupDateFormatter;
 - (id)_arrangedMonthSymbols;
-- (void)dealloc;
 - (id)init;
 
 @end

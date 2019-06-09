@@ -9,11 +9,12 @@
 #import <FinderKit/FIAliasResolution-Protocol.h>
 #import <FinderKit/TColumnViewDelegate-Protocol.h>
 #import <FinderKit/TDuplicateTaskDelegateProtocol-Protocol.h>
+#import <FinderKit/TListNameFieldDelegate-Protocol.h>
 
 @class FI_TColumnPreviewController, NSString;
 
 __attribute__((visibility("hidden")))
-@interface FI_TColumnViewController : FI_TBrowserViewController <FIAliasResolution, TColumnViewDelegate, TDuplicateTaskDelegateProtocol>
+@interface FI_TColumnViewController : FI_TBrowserViewController <FIAliasResolution, TColumnViewDelegate, TDuplicateTaskDelegateProtocol, TListNameFieldDelegate>
 {
     struct TFENode _draggingSourceContainer;
     _Bool _selectedItemNeedsPreviewView;
@@ -33,17 +34,20 @@ __attribute__((visibility("hidden")))
     struct TColumnOptimizerContainers _delayedContainers;
     struct shared_ptr<TColumnPreviewQTEjectHelper> _ejectHelper;
     long long _columnIndexOriginatingDrag;
+    struct TNSRef<NSFont, void> _cellViewFont;
     _Bool _nextSelectionAllowsRetarget;
     _Bool _settingSelectionPath;
     _Bool _bumpedIn;
     TNSWeakPtr_a131d41e _showDelayedPreviewToken;
     struct TNotificationCenterObserver _adjustColumnWidthAutomaticallyObserver;
     struct TNotificationCenterObserver _userDidResizeColumnsObserver;
-    struct vector<TKeyValueBinder, std::__1::allocator<TKeyValueBinder>> _viewSettingsBinders;
+    _Bool _editing;
 }
 
++ (id)makeColumnCellViewForBrowserTableView:(id)arg1;
 @property(nonatomic) _Bool nextSelectionAllowsRetarget; // @synthesize nextSelectionAllowsRetarget=_nextSelectionAllowsRetarget;
 @property(nonatomic) int arrangeBy; // @synthesize arrangeBy=_arrangeBy;
+@property(nonatomic, getter=isEditing) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) _Bool delayedOpening; // @synthesize delayedOpening=_delayedOpening;
 @property(nonatomic) _Bool showsSize; // @synthesize showsSize=_showsSize;
 @property(nonatomic) _Bool showPreviewColumn; // @synthesize showPreviewColumn=_showPreviewColumn;
@@ -55,13 +59,12 @@ __attribute__((visibility("hidden")))
 - (long long)lastContainerColumn;
 - (long long)lastColumn;
 - (id)selectedItemsForColumn:(long long)arg1;
+- (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
 - (BOOL)browser:(id)arg1 acceptDrop:(id)arg2 atRow:(long long)arg3 column:(long long)arg4 dropOperation:(unsigned long long)arg5;
 - (unsigned long long)browser:(id)arg1 validateDrop:(id)arg2 proposedRow:(long long *)arg3 column:(long long *)arg4 dropOperation:(unsigned long long *)arg5;
 - (void)mouseDown:(id)arg1;
-- (void)commonPostMouseDown:(id)arg1;
 - (BOOL)browser:(id)arg1 canDragRowsWithIndexes:(id)arg2 inColumn:(long long)arg3 withEvent:(id)arg4;
 - (BOOL)browser:(id)arg1 writeRowsWithIndexes:(id)arg2 inColumn:(long long)arg3 toPasteboard:(id)arg4;
-- (void)dragImage:(id)arg1 offset:(struct CGSize)arg2 event:(id)arg3 column:(long long)arg4;
 - (id)dragFlockIconImageForNode:(const struct TFENode *)arg1 atIconSize:(double)arg2 inView:(id)arg3;
 - (id)dragFlockLabelImageForNode:(const struct TFENode *)arg1 outFrame:(struct CGRect *)arg2 inView:(id)arg3;
 - (struct CGImage *)newRestoreImageForNode:(const struct TFENode *)arg1 outRect:(struct CGRect *)arg2;
@@ -76,11 +79,12 @@ __attribute__((visibility("hidden")))
 - (BOOL)browser:(id)arg1 shouldAutoExpandItem:(id)arg2;
 - (void)browserDidScroll:(id)arg1;
 - (double)browser:(id)arg1 shouldSizeColumn:(long long)arg2 forUserResize:(BOOL)arg3 toWidth:(double)arg4;
-- (double)sizeToFitWidthOfColumn:(long long)arg1 forRange:(struct _NSRange)arg2;
 - (double)browser:(id)arg1 sizeToFitWidthOfColumn:(long long)arg2;
 - (double)browser:(id)arg1 heightOfRow:(long long)arg2 inColumn:(long long)arg3;
 - (void)columnView:(id)arg1 willStopUsingNode:(const struct TFENode *)arg2 forColumn:(long long)arg3;
+- (void)columnView:(id)arg1 willStopUsingItem:(id)arg2 forColumn:(long long)arg3;
 - (void)columnView:(id)arg1 willStartUsingNode:(const struct TFENode *)arg2 forColumn:(long long)arg3;
+- (void)columnView:(id)arg1 willStartUsingItem:(id)arg2 forColumn:(long long)arg3;
 - (_Bool)shouldObserveOrUnobserveNode:(const struct TFENode *)arg1 forColumn:(long long)arg2;
 - (BOOL)browser:(id)arg1 shouldTypeSelectForEvent:(id)arg2 withCurrentSearchString:(id)arg3;
 - (id)browser:(id)arg1 headerViewControllerForItem:(id)arg2;
@@ -102,8 +106,10 @@ __attribute__((visibility("hidden")))
 - (id)columnsForContainer:(const struct TFENode *)arg1 upToColumn:(long long)arg2;
 - (_Bool)isInitialPopulationComplete;
 - (_Bool)shouldCalculateFolderSizesForContainer:(const struct TFENode *)arg1;
-- (struct TString)textForLogicalSize:(unsigned long long)arg1;
 - (void)handleNodeChangedPropertyMap:(const unordered_map_f886f0c5 *)arg1 forBrowserTableView:(id)arg2;
+- (void)updateColumnCellView:(id)arg1 browserTableView:(id)arg2 masterLayoutGuide:(id)arg3 node:(const struct TFENode *)arg4 row:(long long)arg5;
+- (void)updateDisabledStateForColumnCellView:(id)arg1 browserTableView:(id)arg2 node:(const struct TFENode *)arg3 row:(long long)arg4;
+- (void)updateHeaderCellView:(id)arg1 node:(const struct TFENode *)arg2;
 - (void)attemptToSelectPendingNodes;
 - (void)reusingDataSource;
 - (void)dataSourceChanged:(const vector_274a36ec *)arg1;
@@ -112,6 +118,7 @@ __attribute__((visibility("hidden")))
 - (void)updateSTFEditorLocation;
 - (void)stopEditing:(_Bool)arg1;
 - (_Bool)startEditingWithNode:(const struct TFENode *)arg1 renameOp:(id)arg2;
+- (void)startEditingSelectedRow;
 - (BOOL)browser:(id)arg1 shouldEditItem:(id)arg2;
 - (id)zoomImageForNode:(const struct TFENode *)arg1 contentRect:(struct CGRect *)arg2;
 - (void)deselectAllNodes;
@@ -126,7 +133,6 @@ __attribute__((visibility("hidden")))
 - (void)setTextSize:(double)arg1;
 - (double)calculateIconSize;
 - (_Bool)updateRowHeights;
-- (void)unbindViewSettings;
 - (void)privateBindSettings;
 - (struct CGSize)idealContentSize;
 - (struct CGRect)iconFrameForNode:(const struct TFENode *)arg1;

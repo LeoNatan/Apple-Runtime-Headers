@@ -19,6 +19,7 @@
 + (id)newModelFromVersion:(unsigned long long)arg1 objects:(id)arg2 error:(id *)arg3;
 + (id)supportedWriteVersions;
 + (id)_version1ModelWithObjects:(id)arg1 error:(id *)arg2;
++ (id)configurationFromLoadedObjects:(id)arg1 error:(id *)arg2;
 - (void).cxx_destruct;
 - (void)personsModelDataWasModified:(id)arg1;
 - (BOOL)removePersonWithUniqueIdentifier:(id)arg1 error:(id *)arg2;

@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <UIKit/_UIDirectionalRotationView.h>
 
-@interface _SBOrientationTransformedContentView : UIView
+@interface _SBOrientationTransformedContentView : _UIDirectionalRotationView
 {
     long long _contentOrientation;
 }

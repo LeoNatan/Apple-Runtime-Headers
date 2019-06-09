@@ -15,8 +15,8 @@ __attribute__((visibility("hidden")))
     UIPickerTableView *pickerTable;
 }
 
-+ (id)_modernNonCenterCellFont;
-+ (id)_modernCenterCellFont;
++ (id)_nonCenterCellFont;
++ (id)_centerCellFont;
 @property(nonatomic) UIPickerTableView *pickerTable; // @synthesize pickerTable;
 - (void).cxx_destruct;
 - (void)_tapAction:(id)arg1;

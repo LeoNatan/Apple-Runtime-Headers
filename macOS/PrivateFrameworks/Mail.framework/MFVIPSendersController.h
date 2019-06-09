@@ -6,19 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class EAEmailAddressSet, EMVIPManager, NSArray, NSMutableDictionary, NSOperationQueue;
+@class EAEmailAddressSet, NSArray, NSMutableDictionary, NSOperationQueue;
+@protocol EMVIPManager;
 
 @interface MFVIPSendersController : NSObject
 {
     NSMutableDictionary *_VIPSendersMailboxesByIdentifier;
-    EMVIPManager *_vipManager;
+    id <EMVIPManager> _vipManager;
     NSOperationQueue *_operationQueue;
 }
 
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
-@property(readonly, nonatomic) EMVIPManager *vipManager; // @synthesize vipManager=_vipManager;
+@property(readonly, nonatomic) id <EMVIPManager> vipManager; // @synthesize vipManager=_vipManager;
 - (void).cxx_destruct;
 - (void)_addressBookDidChange:(id)arg1;
 - (void)_vipsDidChange:(id)arg1;
@@ -29,7 +30,7 @@
 - (void)addNewVIPSenderWithAddress:(id)arg1 name:(id)arg2;
 @property(readonly, copy) NSArray *VIPSendersMailboxes;
 - (id)_vipMailboxesPlistPath;
-- (void)_updateMailboxesAndPostNotificationsOnMainThread;
+- (void)_updateMailboxesAndPostNotificationsIsFirstLoad:(BOOL)arg1;
 - (void)_readVIPSenders;
 - (void)_saveMailboxInfo;
 - (void)save;

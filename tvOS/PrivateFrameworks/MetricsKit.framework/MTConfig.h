@@ -6,14 +6,17 @@
 
 #import <MetricsKit/MTObject.h>
 
+@class NSDictionary;
 @protocol MTConfigDelegate;
 
 @interface MTConfig : MTObject
 {
     id <MTConfigDelegate> _delegate;
     long long _eventDataTimeout;
+    NSDictionary *_debugSource;
 }
 
+@property(retain, nonatomic) NSDictionary *debugSource; // @synthesize debugSource=_debugSource;
 @property(nonatomic) long long eventDataTimeout; // @synthesize eventDataTimeout=_eventDataTimeout;
 @property(nonatomic) __weak id <MTConfigDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

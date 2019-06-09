@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <MediaPlayer/MPMediaRemoteEntityArtworkGenerator-Protocol.h>
+
 @class MPArtworkResizeUtility, MPNowPlayingContentItem, MPNowPlayingInfoCenterArtworkContext, MSVLRUDictionary, MSVTimer, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
 @protocol MPNowPlayingInfoLyricsDelegate, MPNowPlayingPlaybackQueueDataSource, MPNowPlayingPlaybackQueueDelegate, OS_dispatch_queue;
 
-@interface MPNowPlayingInfoCenter : NSObject
+@interface MPNowPlayingInfoCenter : NSObject <MPMediaRemoteEntityArtworkGenerator>
 {
     NSDictionary *_nowPlayingInfo;
     NSDictionary *_queuedNowPlayingInfo;
@@ -59,8 +61,6 @@
 - (void).cxx_destruct;
 - (void)_onQueue_pushContentItemsUpdate;
 - (void)_contentItemChangedNotification:(id)arg1;
-- (void)_audioSessionRoutingContextDidChangeNotification:(id)arg1;
-- (void)_updatePlayerAudioSessionProperties;
 - (void)_onQueue_registerPlaybackQueueDataSourceCallbacks:(id)arg1;
 - (void)_onQueue_registerLyricsDelegateCallbacks:(id)arg1;
 - (void)_onQueue_clearPlaybackQueueDataSourceCallbacks;
@@ -76,6 +76,7 @@
 - (void)_becomeActiveWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_artworkCatalogForContentItem:(id)arg1;
 @property(readonly, nonatomic) _Bool supportsArtworkCatalogLoading;
+- (CDUnknownBlockType)artworkCatalogBlockForContentItem:(id)arg1;
 @property(retain, nonatomic) MPNowPlayingContentItem *nowPlayingContentItem;
 - (void)invalidatePlaybackQueue;
 @property(nonatomic) __weak id <MPNowPlayingInfoLyricsDelegate> lyricsDelegate;
@@ -88,6 +89,12 @@
 - (void)_onQueue_pushNowPlayingInfoAndRetry:(_Bool)arg1;
 @property(copy, nonatomic) NSDictionary *nowPlayingInfo; // @dynamic nowPlayingInfo;
 - (void)_initializeNowPlayingInfo;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

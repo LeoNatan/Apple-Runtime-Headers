@@ -11,7 +11,7 @@
 #import <HomeKit/HMObjectMerge-Protocol.h>
 #import <HomeKit/NSSecureCoding-Protocol.h>
 
-@class HMAccessory, HMApplicationData, HMBulletinBoardNotification, HMFUnfairLock, HMMutableArray, NSArray, NSNumber, NSString, NSURL, NSUUID, _HMContext;
+@class HMAccessory, HMApplicationData, HMBulletinBoardNotification, HMFUnfairLock, HMMutableArray, NSArray, NSDictionary, NSNumber, NSString, NSURL, NSUUID, _HMContext;
 
 @interface HMService : NSObject <HMFLogging, NSSecureCoding, HMObjectMerge, HMMutableApplicationData>
 {
@@ -49,6 +49,11 @@
 + (int)_mapToServiceConfigurationStateFromIsConfiguredValue:(id)arg1;
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
++ (id)characteristicBlacklistForShortcutConditions;
++ (id)defaultCharacteristicByServiceDictionary;
++ (void)initializeCharacteristicDictionaries;
++ (id)serviceWithServiceReference:(id)arg1 home:(id)arg2;
++ (id)serviceWithSerializedDictionaryRepresentation:(id)arg1 home:(id)arg2;
 @property(nonatomic) _Bool mediaSourceDisplayOrderModifiable; // @synthesize mediaSourceDisplayOrderModifiable=_mediaSourceDisplayOrderModifiable;
 @property(retain, nonatomic) NSArray *mediaSourceDisplayOrder; // @synthesize mediaSourceDisplayOrder=_mediaSourceDisplayOrder;
 @property(readonly, copy, nonatomic) NSArray *linkedServiceInstanceIDs; // @synthesize linkedServiceInstanceIDs=_linkedServiceInstanceIDs;
@@ -75,9 +80,11 @@
 - (void)_handleUpdateConfiguredName:(id)arg1;
 - (void)_handleUpdateName:(id)arg1;
 - (void)_handleMarkServiceInteractive:(id)arg1;
+- (void)_handleUpdateServicePrimary:(id)arg1;
 - (void)updateApplicationData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_addLastKnownSleepDiscoveryModeDidUpdateDelegateCallbackToOperations:(id)arg1;
 - (_Bool)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (id)_findCharacteristicWithUniqueIdentifier:(id)arg1;
 - (id)_findCharacteristic:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -100,6 +107,8 @@
 - (int)lastKnownSleepDiscoveryMode;
 - (_Bool)hasSleepDiscoveryMode;
 @property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+- (id)characteristicsSupportedForShortcutConditions;
+- (id)defaultCharacteristic;
 @property(readonly, copy, nonatomic) NSArray *characteristics;
 @property(nonatomic) int configurationState; // @synthesize configurationState=_configurationState;
 @property(copy, nonatomic) NSString *serviceSubtype; // @synthesize serviceSubtype=_serviceSubtype;
@@ -114,6 +123,7 @@
 @property(readonly) unsigned int hash;
 @property(readonly, copy) NSString *description;
 - (id)init;
+@property(readonly, copy) NSDictionary *serializedDictionaryRepresentation;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

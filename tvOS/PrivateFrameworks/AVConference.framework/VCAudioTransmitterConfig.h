@@ -45,8 +45,16 @@ __attribute__((visibility("hidden")))
     NSArray *_supportedNumRedundantPayload;
     _Bool _sendActiveVoiceOnly;
     _Bool _currentDTXEnable;
+    unsigned char _mediaControlInfoVersion;
+    _Bool _alwaysOnAudioRedundancyEnabled;
+    _Bool _cellularAllowRedLowBitratesEnabled;
+    _Bool _wifiAllowRedLowBitratesEnabled;
 }
 
+@property(nonatomic) _Bool wifiAllowRedLowBitratesEnabled; // @synthesize wifiAllowRedLowBitratesEnabled=_wifiAllowRedLowBitratesEnabled;
+@property(nonatomic) _Bool cellularAllowRedLowBitratesEnabled; // @synthesize cellularAllowRedLowBitratesEnabled=_cellularAllowRedLowBitratesEnabled;
+@property(nonatomic) _Bool alwaysOnAudioRedundancyEnabled; // @synthesize alwaysOnAudioRedundancyEnabled=_alwaysOnAudioRedundancyEnabled;
+@property(nonatomic) unsigned char mediaControlInfoVersion; // @synthesize mediaControlInfoVersion=_mediaControlInfoVersion;
 @property(nonatomic, getter=isCurrentDTXEnabled) _Bool currentDTXEnable; // @synthesize currentDTXEnable=_currentDTXEnable;
 @property(nonatomic) int reportingParentID; // @synthesize reportingParentID=_reportingParentID;
 @property(nonatomic) _Bool sendActiveVoiceOnly; // @synthesize sendActiveVoiceOnly=_sendActiveVoiceOnly;

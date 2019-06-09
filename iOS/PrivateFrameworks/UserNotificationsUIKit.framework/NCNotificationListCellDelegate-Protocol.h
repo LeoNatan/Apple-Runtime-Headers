@@ -19,5 +19,9 @@
 - (void)notificationListCellRequestsDismissAction:(NCNotificationListCell *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)notificationListCellRequestsDefaultAction:(NCNotificationListCell *)arg1 completion:(void (^)(_Bool))arg2;
 - (void)willTearDownNotificationListCell:(NCNotificationListCell *)arg1;
+
+@optional
+- (_Bool)notificationListCellShouldPerformClipping:(NCNotificationListCell *)arg1;
+- (void)notificationListCell:(NCNotificationListCell *)arg1 didMoveToNewXPosition:(double)arg2;
 @end
 

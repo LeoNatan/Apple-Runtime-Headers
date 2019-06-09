@@ -49,6 +49,9 @@
 - (void)markArticle:(id)arg1 asOffensive:(_Bool)arg2;
 - (_Bool)toggleArticleHasBeenMarkedAsOffensive:(id)arg1;
 - (_Bool)hasArticleBeenMarkedAsOffensive:(id)arg1;
+- (_Bool)toggleDislikeForArticleWithID:(id)arg1;
+- (_Bool)toggleLikeForArticleWithID:(id)arg1;
+- (_Bool)_markArticle:(id)arg1 withLikingStatus:(unsigned long long)arg2;
 - (_Bool)markArticle:(id)arg1 withLikingStatus:(unsigned long long)arg2;
 - (unsigned long long)likingStatusForArticleID:(id)arg1;
 - (_Bool)_markArticleAsSeenWithArticleID:(id)arg1 articleVersion:(long long)arg2 historyItem:(id)arg3 modifiedHistoryFeaturesOut:(unsigned long long *)arg4;

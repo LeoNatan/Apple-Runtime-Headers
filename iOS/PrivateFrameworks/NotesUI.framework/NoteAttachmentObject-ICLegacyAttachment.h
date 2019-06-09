@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface NoteAttachmentObject (ICLegacyAttachment) <ICLegacyAttachment>
+- (id)cidURL;
 - (id)typeUTI;
 - (id)fileURL;
 - (id)identifier;

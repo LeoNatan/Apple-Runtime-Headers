@@ -42,6 +42,7 @@
 + (id)filterWithName:(id)arg1 compatibilityVersion:(int)arg2 keysAndValues:(id)arg3;
 + (id)filterWithName:(id)arg1 compatibilityVersion:(int)arg2;
 + (id)filterWithName:(id)arg1 setDefaults:(_Bool)arg2;
++ (id)supportedRawCameraModels;
 + (id)filterWithCVPixelBuffer:(struct __CVBuffer *)arg1 properties:(id)arg2 options:(id)arg3;
 + (id)filterWithImageData:(id)arg1 options:(id)arg2;
 + (id)filterWithImageURL:(id)arg1 options:(id)arg2;

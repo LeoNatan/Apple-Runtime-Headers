@@ -18,12 +18,16 @@ __attribute__((visibility("hidden")))
 - (BOOL)_savePCSDataToCache;
 - (BOOL)_saveUpdatedPCSToServer;
 - (void)_handleDecryptedZonePCSData:(id)arg1 withError:(id)arg2;
+- (void)_decryptZonePCSUsingServiceIdentities;
+- (void)_decryptZonePCSInSharedDatabase;
 - (BOOL)_decryptPCS;
 - (BOOL)_createAdditionalPCS;
 - (BOOL)_fetchPCSDataFromServer;
 - (void)_saveNewPCSOnDefaultZone:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_saveZoneToServer:(id)arg1 withPCS:(struct _OpaquePCSShareProtection *)arg2 zoneishPCS:(struct _OpaquePCSShareProtection *)arg3 previousEtag:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)_saveZoneToServer:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_fetchDepedentPCSInSharedDatabase;
+- (BOOL)_fetchDependentPCS;
 - (BOOL)_fetchPCSDataFromDatabase;
 - (void)_handlePCSDataFetched:(id)arg1 withError:(id)arg2;
 - (void)_willRetryFetch;

@@ -39,6 +39,7 @@
 @property(nonatomic) __weak id <BBObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)noteServerReceivedResponseForBulletin:(id)arg1;
+- (void)updateGlobalSettings:(id)arg1;
 - (void)removeSection:(id)arg1;
 - (void)updateSectionParameters:(id)arg1 forSectionID:(id)arg2;
 - (void)updateSectionInfo:(id)arg1;

@@ -18,6 +18,7 @@
     UITraitCollection *_traitCollection;
     int _effectiveLayoutDirection;
     float _iconScale;
+    int _symbolScale;
     UIFont *_font;
     UIFont *_emphasizedFont;
     UIFont *_smallFont;
@@ -28,6 +29,7 @@
 }
 
 + (id)overriddenStyleAttributes;
++ (id)styleAttributesForStatusBar:(id)arg1 style:(int)arg2;
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) NSArray *imageNamePrefixes; // @synthesize imageNamePrefixes=_imageNamePrefixes;
 @property(copy, nonatomic) UIColor *imageDimmedTintColor; // @synthesize imageDimmedTintColor=_imageDimmedTintColor;
@@ -36,16 +38,17 @@
 @property(copy, nonatomic) UIFont *smallFont; // @synthesize smallFont=_smallFont;
 @property(copy, nonatomic) UIFont *emphasizedFont; // @synthesize emphasizedFont=_emphasizedFont;
 @property(copy, nonatomic) UIFont *font; // @synthesize font=_font;
+@property(nonatomic) int symbolScale; // @synthesize symbolScale=_symbolScale;
 @property(nonatomic) float iconScale; // @synthesize iconScale=_iconScale;
-@property(nonatomic) int effectiveLayoutDirection; // @synthesize effectiveLayoutDirection=_effectiveLayoutDirection;
+@property(readonly, nonatomic) int effectiveLayoutDirection; // @synthesize effectiveLayoutDirection=_effectiveLayoutDirection;
 @property(copy, nonatomic) UITraitCollection *traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) int mode; // @synthesize mode=_mode;
 @property(readonly, nonatomic) int style; // @synthesize style=_style;
 - (void).cxx_destruct;
+- (id)fontForStyle:(int)arg1;
 - (id)styleAttributesWithOverrides:(id)arg1;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithStatusBar:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

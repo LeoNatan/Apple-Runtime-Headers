@@ -12,13 +12,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (double)controlHeight;
-+ (id)qtUIKitStringWithName:(const char *)arg1;
-+ (void)_initQTKitIfNecessary;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGRect)_trackRect;
 - (void)getTimeColorGrayComponents:(double *)arg1;
 - (id)newButtonWithFrame:(struct CGRect)arg1 tag:(long long)arg2 title:(id)arg3;
-- (id)_QTUIDrawingOptions;
+- (id)_QLQTUIDrawingOptions;
 
 @end
 

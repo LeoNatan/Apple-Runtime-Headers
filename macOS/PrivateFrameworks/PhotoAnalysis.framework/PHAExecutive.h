@@ -9,18 +9,28 @@
 #import <PhotoAnalysis/NSXPCListenerDelegate-Protocol.h>
 #import <PhotoAnalysis/PHPhotoLibraryAvailabilityObserver-Protocol.h>
 
-@class NSMutableDictionary, NSMutableSet, NSString, PHAPhotoLibraryList, PHASleepWakeMonitor;
-@protocol OS_dispatch_queue, OS_dispatch_source, OS_xpc_object;
+@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, PFSerialQueue, PHAActivityLog, PHAPhotoLibraryList, PHASleepWakeMonitor;
+@protocol OS_dispatch_source, OS_voucher, OS_xpc_object, PFDTransactionDispatchQueue;
 
 @interface PHAExecutive : NSObject <PHPhotoLibraryAvailabilityObserver, NSXPCListenerDelegate>
 {
     BOOL _isPhotoAnalysisAgent;
     BOOL _backgroundAnalysisActivityTriggered;
     long long _limitBackgroundCPUPercentage;
+    PFSerialQueue<PFDTransactionDispatchQueue> *_executiveStateQueue;
+    NSObject<OS_voucher> *_turboModeBoostVoucher;
+    NSMutableArray *_processingLog;
+    PHAActivityLog *_currentLog;
+    NSMutableArray *_cachedTurboLibraryURLs;
+    NSObject<OS_xpc_object> *_turboAnalysisActivity;
+    struct os_unfair_lock_s _turboLibrariesLock;
+    NSMutableSet *_pendingBackgroundLibraries;
+    struct os_unfair_lock_s _connectedClientsLock;
+    _Bool _shouldDeferActivity;
     unsigned char _state;
+    PHAActivityLog *_activityLog;
     NSMutableSet *_clients;
     NSMutableDictionary *_managersByLibraryPath;
-    NSObject<OS_dispatch_queue> *_executiveStateQueue;
     PHAPhotoLibraryList *_photoLibraryList;
     PHASleepWakeMonitor *_sleepWakeMonitor;
     long long _countOfCoordinatorsRunningBackgroundAnalysis;
@@ -28,43 +38,55 @@
     NSObject<OS_xpc_object> *_backgroundAnalysisActivity;
 }
 
++ (id)bootDateForTurboLibraryRegistration;
 + (void)registerEmptyBackgroundActivity;
 @property(retain) NSObject<OS_xpc_object> *backgroundAnalysisActivity; // @synthesize backgroundAnalysisActivity=_backgroundAnalysisActivity;
 @property(retain) NSObject<OS_dispatch_source> *backgroundAnalysisMonitorTimer; // @synthesize backgroundAnalysisMonitorTimer=_backgroundAnalysisMonitorTimer;
 @property long long countOfCoordinatorsRunningBackgroundAnalysis; // @synthesize countOfCoordinatorsRunningBackgroundAnalysis=_countOfCoordinatorsRunningBackgroundAnalysis;
 @property(retain) PHASleepWakeMonitor *sleepWakeMonitor; // @synthesize sleepWakeMonitor=_sleepWakeMonitor;
 @property(retain) PHAPhotoLibraryList *photoLibraryList; // @synthesize photoLibraryList=_photoLibraryList;
-@property(retain) NSObject<OS_dispatch_queue> *executiveStateQueue; // @synthesize executiveStateQueue=_executiveStateQueue;
 @property unsigned char state; // @synthesize state=_state;
 @property(retain) NSMutableDictionary *managersByLibraryPath; // @synthesize managersByLibraryPath=_managersByLibraryPath;
 @property(retain) NSMutableSet *clients; // @synthesize clients=_clients;
+@property(readonly) PHAActivityLog *activityLog; // @synthesize activityLog=_activityLog;
 - (void).cxx_destruct;
-- (void)_cleanupAfterBackgroundActivityFinishedForDefer:(BOOL)arg1 skipActivityStateCheck:(BOOL)arg2 message:(id)arg3;
+- (void)_registerTurboActivity;
+- (void)_runTurboProcessing:(id)arg1;
+- (void)_cleanupAfterBackgroundActivityFinishedForDefer:(BOOL)arg1 skipActivityStateCheck:(BOOL)arg2;
 - (void)_registerBackgroundActivity;
+- (void)_registerCuratedLibraryActivity;
 - (void)_installBackgroundAnalysisMonitor;
-- (void)_stopAllBackgroundAnalysisWithCompletion:(CDUnknownBlockType)arg1 queue:(id)arg2;
+- (void)_stopAllBackgroundAnalysisWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_startBackgroundAnalysis;
+- (void)handleOperation:(id)arg1;
 - (void)photoLibraryDidBecomeUnavailable:(id)arg1;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)stopBackgroundActivityForManager:(id)arg1;
 - (void)triggerBackgroundActivity;
 - (void)checkQuiescenceForManager:(id)arg1;
+- (void)writeQALog:(id)arg1;
 - (void)dumpAnalysisStatusWithContext:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)_localeDidChangeNotification:(id)arg1;
 - (void)dispatchAsyncToExecutiveStateQueue:(CDUnknownBlockType)arg1;
-- (void)_dispatchAsyncToQueue:(id)arg1 withTransactionBlock:(CDUnknownBlockType)arg2;
 - (void)terminateManagerIfQuiescentAndNoConnectedClients:(id)arg1;
 - (void)removeClientHandler:(id)arg1;
 - (id)clientInfoForManager:(id)arg1;
 - (BOOL)hasConnectedClientsForManager:(id)arg1;
+- (BOOL)hasPhotosConnectionForManager:(id)arg1;
 - (void)terminateManagerForPhotoLibraryURL:(id)arg1;
 - (id)managerForPhotoLibraryURL:(id)arg1;
-- (id)_urlForSystemPhotoLibrary;
+- (void)notifyLibraryAvailableAtURL:(id)arg1;
 - (id)statusAsDictionary;
 - (void)dumpStatusToLog;
+- (void)addProcessingActivityToStatusDictionary:(id)arg1;
 - (void)shutdown;
 - (void)_backgroundActivityDidBegin;
+- (BOOL)_photoAnalysCoreDuetSchedulingDisabled;
 - (BOOL)_photoAnalysisEnabled;
 - (void)startup;
+- (void)disableTurboModeForManager:(id)arg1;
+- (BOOL)turboIsEnabledForManager:(id)arg1;
+- (void)enableTurboModeForManager:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

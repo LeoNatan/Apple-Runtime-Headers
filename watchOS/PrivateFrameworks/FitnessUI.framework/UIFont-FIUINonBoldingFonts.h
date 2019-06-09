@@ -11,5 +11,30 @@
 + (id)fiui_nonBoldingSystemFontOfSize:(float)arg1 weight:(float)arg2;
 + (id)fiui_nonBoldingSystemFontOfSize:(float)arg1;
 + (id)_fiui_nonBoldedVersionOfFont:(id)arg1 size:(float)arg2;
++ (id)fu_bodyEmphasizeFont;
++ (id)fu_bodyShortFont;
++ (id)fu_mediumFontOfSize:(float)arg1 centeredColons:(_Bool)arg2;
++ (id)fu_mediumFontOfSize:(float)arg1;
++ (id)fu_systemFontOfSize:(float)arg1 centeredColons:(_Bool)arg2;
++ (id)fu_fontByApplyingFeatureSettings:(id)arg1 toFont:(id)arg2;
++ (id)fu_alternateColonsFeatureSetting;
++ (id)_fu_sausageFontOfSize:(float)arg1 fontWeight:(float)arg2 centeredColons:(_Bool)arg3;
++ (id)_fu_sausageFontOfSize:(float)arg1 fontWeight:(float)arg2;
++ (id)fu_heavySausageFontOfSize:(float)arg1;
++ (id)fu_boldSausageFontOfSize:(float)arg1;
++ (id)fu_semiboldSausageFontOfSize:(float)arg1;
++ (id)fu_mediumSausageFontOfSize:(float)arg1;
++ (id)fu_lightSausageFontOfSize:(float)arg1 centeredColons:(_Bool)arg2;
++ (id)fu_lightSausageFontOfSize:(float)arg1;
++ (id)fu_sausageFontOfSize:(float)arg1 centeredColons:(_Bool)arg2;
++ (id)fu_sausageFontOfSize:(float)arg1;
+- (id)fu_fontWithSizeFittingString:(id)arg1 withinWidth:(float)arg2 accountForGlyphOffset:(_Bool)arg3;
+- (id)fu_fontWithSizeFittingString:(id)arg1 withinWidth:(float)arg2;
+- (id)fu_shortSlashFont;
+- (id)fu_smallCapsFont;
+- (id)fu_monospacedFont;
+- (id)fu_fontWithStraightSidedNumbers;
+- (id)fu_fontWithCenteredColons;
+- (id)fu_fontWithSize:(float)arg1;
 @end
 

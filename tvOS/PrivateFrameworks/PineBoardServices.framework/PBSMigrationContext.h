@@ -16,7 +16,6 @@
     NSString *_toBuild;
 }
 
-+ (long long)compare3PartVersion:(id)arg1 with3PartVersion:(id)arg2;
 + (long long)compareBuild:(id)arg1 withBuild:(id)arg2;
 + (long long)compareOSVersion:(id)arg1 withOSVersion:(id)arg2;
 + (id)contextFromBuild:(id)arg1 fromVersion:(id)arg2 toBuild:(id)arg3 toVersion:(id)arg4;

@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSISEngine, NSIndexSet, NSMutableIndexSet, NSObject;
+@class NSDate, NSISEngine, NSIndexSet, NSObject;
 
 #pragma mark Function Pointers and Blocks
 
@@ -15,13 +15,13 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 #pragma mark Named Structures
 
 struct CGPoint {
-    float x;
-    float y;
+    float _field1;
+    float _field2;
 };
 
 struct CGRect {
-    struct CGPoint origin;
-    struct CGSize size;
+    struct CGPoint _field1;
+    struct CGSize _field2;
 };
 
 struct CGSize {
@@ -86,6 +86,17 @@ struct _NSLTToken {
 };
 
 struct _NSOrderedChange;
+
+struct _NSProgressFraction {
+    long long completed;
+    long long total;
+    _Bool overflowed;
+};
+
+struct _NSProgressFractionTuple {
+    struct _NSProgressFraction _field1;
+    struct _NSProgressFraction _field2;
+};
 
 struct _NSRange {
     unsigned int location;
@@ -511,6 +522,16 @@ typedef struct {
 } CDStruct_a8d20eab;
 
 typedef struct {
+    _Bool extensionHidden;
+    NSDate *creationDate;
+    struct _fields {
+        unsigned int extensionHidden:1;
+        unsigned int creationDate:1;
+        unsigned int reserved:30;
+    } validFields;
+} CDStruct_1b190c06;
+
+typedef struct {
     unsigned long long _field1;
     unsigned int _field2;
     unsigned int _field3;
@@ -520,11 +541,12 @@ typedef struct {
 } CDStruct_f5593f11;
 
 typedef struct {
-    CDStruct_183601bc *blocks;
-    unsigned int blocksCount;
-    unsigned int blocksCapacity;
-    NSMutableIndexSet *freeIndexes;
-} CDStruct_f99a037b;
+    CDStruct_183601bc *values;
+    unsigned int key;
+    unsigned int heap_position;
+    unsigned short count;
+    unsigned short capacity;
+} CDStruct_f13cc9bb;
 
 typedef struct {
     id objects;
@@ -538,6 +560,19 @@ typedef struct {
         unsigned int count;
     } list;
 } CDStruct_5c782e52;
+
+typedef struct {
+    CDStruct_183601bc *blocks;
+    unsigned int blocksCount;
+    unsigned int blocksCapacity;
+    struct {
+        union {
+            unsigned long long _data;
+            unsigned long long *_buckets;
+        } ;
+        unsigned int _bucketCount;
+    } freeIndexes;
+} CDStruct_e7e62876;
 
 typedef struct {
     unsigned short inline_capacity;
@@ -555,11 +590,4 @@ typedef struct {
         unsigned char padding[48];
     } data;
 } CDStruct_b1b42f93;
-
-#pragma mark Typedef'd Unions
-
-typedef union {
-    id _field1;
-    id _field2;
-} CDUnion_a1fd0927;
 

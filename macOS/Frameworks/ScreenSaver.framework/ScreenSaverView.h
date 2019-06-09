@@ -28,6 +28,7 @@
 - (BOOL)hidEvent:(id)arg1;
 - (BOOL)isMouseInteractive;
 - (BOOL)isKeyboardInteractive;
+- (void)setPreview:(BOOL)arg1;
 - (void)setScreenSaverModule:(id)arg1;
 - (id)screenSaverModule;
 @property(readonly, getter=isPreview) BOOL preview;
@@ -36,11 +37,12 @@
 - (void)drawRect:(struct CGRect)arg1;
 - (void)displayMessage:(id)arg1;
 - (void)animateOneFrame;
+- (void)prepareToAnimate;
 - (void)_oneStep:(id)arg1;
-- (struct CGRect)boundsInPixels;
-- (double)_scaleFactor;
+- (void)setIsAnimating:(BOOL)arg1;
 @property(readonly, getter=isAnimating) BOOL animating;
 - (void)_resetTimer;
+- (BOOL)_needsAnimationTimer;
 - (void)stopAnimation;
 - (void)startAnimation;
 @property double animationTimeInterval;

@@ -4,10 +4,6 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#pragma mark Blocks
-
-typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
-
 #pragma mark Named Structures
 
 struct CAMShutterButtonSpec {
@@ -17,47 +13,19 @@ struct CAMShutterButtonSpec {
     float _field4;
 };
 
-struct CATransform3D {
+struct CGPoint {
     float _field1;
     float _field2;
-    float _field3;
-    float _field4;
-    float _field5;
-    float _field6;
-    float _field7;
-    float _field8;
-    float _field9;
-    float _field10;
-    float _field11;
-    float _field12;
-    float _field13;
-    float _field14;
-    float _field15;
-    float _field16;
-};
-
-struct CGAffineTransform {
-    float a;
-    float b;
-    float c;
-    float d;
-    float tx;
-    float ty;
-};
-
-struct CGPoint {
-    float x;
-    float y;
 };
 
 struct CGRect {
-    struct CGPoint origin;
-    struct CGSize size;
+    struct CGPoint _field1;
+    struct CGSize _field2;
 };
 
 struct CGSize {
-    float width;
-    float height;
+    float _field1;
+    float _field2;
 };
 
 struct CMKShutterButtonSpec {
@@ -66,30 +34,4 @@ struct CMKShutterButtonSpec {
     float stopSquareSideLength;
     float stopSquareCornerRadius;
 };
-
-struct UIEdgeInsets {
-    float top;
-    float left;
-    float bottom;
-    float right;
-};
-
-#pragma mark Typedef'd Structures
-
-typedef struct {
-    _Bool _field1;
-    _Bool _field2;
-    _Bool _field3;
-    _Bool _field4;
-    _Bool _field5;
-    float _field6;
-    int _field7;
-} CDStruct_86e6d80c;
-
-typedef struct {
-    long long _field1;
-    int _field2;
-    unsigned int _field3;
-    long long _field4;
-} CDStruct_198678f7;
 

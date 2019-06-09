@@ -31,7 +31,6 @@
     double _startTime;
     NSTimer *_invalidationTimer;
     long long _flags;
-    id _reserved1;
 }
 
 + (id)touchBarMiniSwipeRecognizerWithTarget:(id)arg1 action:(SEL)arg2;

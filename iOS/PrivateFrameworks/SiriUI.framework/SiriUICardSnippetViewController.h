@@ -60,6 +60,7 @@
 - (void)presentViewController:(id)arg1 forCardViewController:(id)arg2;
 - (unsigned long long)navigationIndexOfCardViewController:(id)arg1;
 - (struct CGSize)cardViewController:(id)arg1 boundingSizeForCardSectionViewController:(id)arg2;
+- (_Bool)performBeganEditingCommand:(id)arg1 forCardViewController:(id)arg2;
 - (_Bool)performPunchoutCommand:(id)arg1 forCardViewController:(id)arg2;
 - (_Bool)performNextCardCommand:(id)arg1 forCardViewController:(id)arg2;
 - (_Bool)performReferentialCommand:(id)arg1 forCardViewController:(id)arg2;
@@ -70,10 +71,10 @@
 - (double)contentHeightForWidth:(double)arg1;
 - (id)localeForCardSnippetView:(id)arg1;
 - (id)sashItemForCardSnippetView:(id)arg1;
-- (void)_logReferencedCommands;
 - (void)_forwardProgressEvent:(unsigned long long)arg1 toCardViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)_forwardProgressEventToCardViewController:(unsigned long long)arg1;
 - (void)willConfirm;
+- (void)_insertCardViewController:(id)arg1;
 - (id)_metricsContextOfEventsForCardSection:(id)arg1 inCard:(id)arg2;
 - (id)_metricsContextOfEventsForCard:(id)arg1;
 - (void)_validateCardSectionForParsecFeedbackDelivery:(id)arg1 validHandler:(CDUnknownBlockType)arg2;

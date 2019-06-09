@@ -10,6 +10,7 @@
 {
 }
 
++ (id)shared;
 + (id)sharedManager;
 - (id)screenShotImageForRect:(struct CGRect)arg1;
 - (void)_drawCaptureImageForRect:(struct CGRect)arg1;

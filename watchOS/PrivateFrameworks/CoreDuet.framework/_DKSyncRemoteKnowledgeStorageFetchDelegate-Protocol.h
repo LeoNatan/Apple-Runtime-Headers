@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSDate, NSUUID, _DKSyncType;
+#import <CoreDuet/_DKSyncRemoteStorageDelegate-Protocol.h>
 
-@protocol _DKSyncRemoteKnowledgeStorageFetchDelegate
-@property(readonly, nonatomic) NSUUID *deviceUUID;
+@class NSArray, NSDate, _DKSyncType;
+
+@protocol _DKSyncRemoteKnowledgeStorageFetchDelegate <_DKSyncRemoteStorageDelegate>
 @property(readonly, nonatomic) _DKSyncType *syncType;
 - (NSArray *)deletedEventIDsSinceDate:(NSDate *)arg1 streamNames:(NSArray *)arg2 limit:(unsigned int)arg3 endDate:(id *)arg4 error:(id *)arg5;
-- (NSArray *)sortedEventsWithCreationDateBetweenDate:(NSDate *)arg1 andDate:(NSDate *)arg2 streamNames:(NSArray *)arg3 limit:(unsigned int)arg4 fetchOrder:(int)arg5 error:(id *)arg6;
+- (NSArray *)sortedEventsFromSyncWindows:(NSArray *)arg1 streamNames:(NSArray *)arg2 limit:(unsigned int)arg3 fetchOrder:(int)arg4 error:(id *)arg5;
 @end
 

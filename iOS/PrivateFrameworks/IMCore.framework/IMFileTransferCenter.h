@@ -41,7 +41,6 @@
 - (void)_handleFileTransfers:(id)arg1 createdWithLocalPaths:(id)arg2;
 - (void)_handleFileTransfer:(id)arg1 createdWithProperties:(id)arg2;
 - (void)_handleAllFileTransfers:(id)arg1;
-- (void)_handleStandaloneFileTransferRegistered:(id)arg1;
 - (void)acceptFileTransferIfPreauthorzed:(id)arg1;
 - (_Bool)wasFileTransferPreauthorized:(id)arg1;
 - (void)preauthorizeFileTransferFromOtherPerson:(id)arg1 account:(id)arg2 filename:(id)arg3 saveToPath:(id)arg4;

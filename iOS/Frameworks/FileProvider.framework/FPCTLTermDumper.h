@@ -6,7 +6,9 @@
 
 #import <objc/NSObject.h>
 
-@interface FPCTLTermDumper : NSObject
+#import <FileProvider/NSSecureCoding-Protocol.h>
+
+@interface FPCTLTermDumper : NSObject <NSSecureCoding>
 {
     int _fd;
     unsigned long long _termWidth;
@@ -14,6 +16,7 @@
     int _curAttrs;
     int _curFg;
     int _curBg;
+    _Bool _eightBitColor;
     _Bool _isatty;
     _Bool _useColor;
     _Bool _supportsEscapeSequences;
@@ -21,15 +24,18 @@
 
 + (void)execPagerOnFileFd:(int)arg1;
 + (void)setupPagerForFd:(int)arg1;
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) _Bool supportsEscapeSequences; // @synthesize supportsEscapeSequences=_supportsEscapeSequences;
 @property(readonly, nonatomic) _Bool useColor; // @synthesize useColor=_useColor;
 @property(readonly, nonatomic) _Bool isatty; // @synthesize isatty=_isatty;
 @property(readonly, nonatomic) int fd; // @synthesize fd=_fd;
-- (void)write:(const char *)arg1;
+- (id)annotateString:(id)arg1 markedIdentifiers:(id)arg2;
+- (void)write:(id)arg1;
 - (void)put:(id)arg1;
 - (void)puts:(const char *)arg1;
 - (void)puts:(const char *)arg1 len:(unsigned long long)arg2;
 - (void)_putsAndCrop:(const char *)arg1 len:(unsigned long long)arg2;
+- (void)dumpProgress:(id)arg1;
 - (void)dumpImage:(id)arg1 characterWidth:(unsigned long long)arg2 characterHeight:(unsigned long long)arg3;
 - (void)dumpImage:(id)arg1 width:(unsigned long long)arg2 height:(unsigned long long)arg3;
 - (void)changeAttributes:(int)arg1;
@@ -62,6 +68,8 @@
 - (id)startStringForFgColor:(int)arg1 bgColor:(int)arg2 attr:(int)arg3;
 - (unsigned long long)_startInCString:(char [256])arg1 fgColor:(int)arg2 bgColor:(int)arg3 attr:(int)arg4;
 - (void)startPager;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithFd:(int)arg1 forceColor:(_Bool)arg2;
 
 @end

@@ -16,6 +16,7 @@
 @property(nonatomic) unsigned long long verticalTextPlacement; // @synthesize verticalTextPlacement=_verticalTextPlacement;
 - (id)accessibilitySubrole;
 - (void)drawInteriorWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (void)_updateVerticalCentering;
 - (void)_commonInit;
 - (id)initWithCoder:(id)arg1;
 - (id)init;

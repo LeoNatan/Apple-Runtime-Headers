@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <AvatarUI/AVTViewDelegate-Protocol.h>
 #import <AvatarUI/SCNSceneRendererDelegate-Protocol.h>
 
 @class AVTAvatar, AVTView, NSString;
 @protocol AVTAvatarRecord, AVTUILogger, OS_dispatch_queue;
 
-@interface AVTViewUpdater : NSObject <SCNSceneRendererDelegate>
+@interface AVTViewUpdater : NSObject <SCNSceneRendererDelegate, AVTViewDelegate>
 {
     AVTView *_avtView;
     id <AVTAvatarRecord> _avatarRecord;

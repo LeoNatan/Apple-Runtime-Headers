@@ -13,21 +13,17 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) BOOL _justInsertedSpaceOnEmptyLine; // @synthesize _justInsertedSpaceOnEmptyLine=__justInsertedSpaceOnEmptyLine;
-- (BOOL)_isPlaceholderSymbol:(id)arg1 before:(id)arg2 after:(id)arg3;
-- (BOOL)_isPlaceholderSymbolAtIndex:(long long)arg1 string:(id)arg2;
-- (BOOL)_isCharacter:(id)arg1 placeholderSymbol:(id)arg2;
-- (BOOL)_isCharacterAnyPlaceholderSymbol:(id)arg1;
-- (BOOL)_isPlaceholderSymbolAtPosition:(id)arg1;
-- (id)_rangeAfter:(BOOL)arg1 placeholder:(id)arg2 character:(id)arg3 inRange:(id)arg4;
-- (id)_rangeBeforePlaceholderInRange:(id)arg1;
+- (BOOL)_readCharacter:(id)arg1 forward:(BOOL)arg2;
 - (BOOL)readPreviousCharacter:(id)arg1;
 - (BOOL)readNextCharacter:(id)arg1;
-- (id)wordRangeAfterPosition:(id)arg1;
 - (id)wordRangeBeforePosition:(id)arg1;
+- (id)wordRangeAfterPosition:(id)arg1;
+- (BOOL)ignoreTextMarkerRange:(id)arg1;
 - (id)attributedStringWithoutPlaceholderSymbolsForString:(id)arg1;
 - (void)handleTextChangeWithUserInfo:(id)arg1;
 - (void)handleTextSelectionChange;
 - (void)_selectionDidChange:(id)arg1;
+- (BOOL)isXcodeTextElement;
 
 @end
 

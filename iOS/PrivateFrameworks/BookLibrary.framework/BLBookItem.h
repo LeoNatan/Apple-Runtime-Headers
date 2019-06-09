@@ -63,6 +63,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)_cloudDictionaryRepresentation;
+- (void)_setFileURL:(id)arg1;
 - (void)_setCloudCoverImageData:(id)arg1;
 - (id)_cloudCoverImageData;
 @property(readonly, copy, nonatomic) NSString *mimeType;

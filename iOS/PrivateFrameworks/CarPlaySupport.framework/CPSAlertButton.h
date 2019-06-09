@@ -11,6 +11,9 @@
 }
 
 + (id)buttonWithCPAlertAction:(id)arg1;
+- (id)_externalUnfocusedBorderColor;
+- (id)_buttonFont;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end
 

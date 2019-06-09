@@ -8,6 +8,7 @@
 
 @class OADShapeProperties, OADTextBodyProperties, OADTextListStyle;
 
+__attribute__((visibility("hidden")))
 @interface OADDrawableCategoryDefaults : NSObject
 {
     OADShapeProperties *mShapeProperties;

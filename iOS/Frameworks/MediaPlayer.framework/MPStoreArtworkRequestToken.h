@@ -16,6 +16,7 @@
     _Bool _shouldIgnoreImage;
     NSURL *_artworkURL;
     NSArray *_lookupItemArtworks;
+    NSArray *_artworkInfoEntries;
     NSString *_cropStyle;
     NSString *_sourceEditorialArtworkKind;
 }
@@ -24,6 +25,7 @@
 @property(copy, nonatomic) NSString *sourceEditorialArtworkKind; // @synthesize sourceEditorialArtworkKind=_sourceEditorialArtworkKind;
 @property(nonatomic) _Bool shouldIgnoreImage; // @synthesize shouldIgnoreImage=_shouldIgnoreImage;
 @property(copy, nonatomic) NSString *cropStyle; // @synthesize cropStyle=_cropStyle;
+@property(copy, nonatomic) NSArray *artworkInfoEntries; // @synthesize artworkInfoEntries=_artworkInfoEntries;
 @property(copy, nonatomic) NSArray *lookupItemArtworks; // @synthesize lookupItemArtworks=_lookupItemArtworks;
 @property(copy, nonatomic) NSURL *artworkURL; // @synthesize artworkURL=_artworkURL;
 - (void).cxx_destruct;

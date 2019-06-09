@@ -24,6 +24,7 @@
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (_Bool)confirmConnectionWithError:(id *)arg1;
+- (id)deviceUUID;
 - (id)sourceDeviceIdentityWithError:(id *)arg1;
 - (id)sourceDeviceIdentityFromObject:(id)arg1 error:(id *)arg2;
 - (_Bool)deleteRemoteState:(id *)arg1;

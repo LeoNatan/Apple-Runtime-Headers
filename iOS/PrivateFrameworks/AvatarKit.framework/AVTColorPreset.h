@@ -27,6 +27,7 @@
 
 + (id)colorPresetWithName:(id)arg1 category:(long long)arg2;
 + (id)secondaryColorPresetWithName:(id)arg1 category:(long long)arg2 variation:(float)arg3;
++ (id)colorPresetWithName:(id)arg1 category:(long long)arg2 colorIndex:(unsigned long long)arg3 variation:(float)arg4;
 + (id)colorPresetWithName:(id)arg1 category:(long long)arg2 variation:(float)arg3;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;

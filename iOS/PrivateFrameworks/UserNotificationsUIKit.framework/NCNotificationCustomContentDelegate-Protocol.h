@@ -6,7 +6,7 @@
 
 #import <UserNotificationsUIKit/NSObject-Protocol.h>
 
-@class NCNotificationAction, NCNotificationRequest, NSArray, NSDictionary, UIView;
+@class NCNotificationAction, NCNotificationRequest, NSArray, NSDictionary;
 @protocol NCNotificationCustomContent;
 
 @protocol NCNotificationCustomContentDelegate <NSObject>
@@ -19,6 +19,5 @@
 - (void)customContent:(id <NCNotificationCustomContent>)arg1 didUpdateUserNotificationActions:(NSArray *)arg2;
 - (void)customContentDidUpdateTitle:(id <NCNotificationCustomContent>)arg1;
 - (void)customContentDidLoadExtension:(id <NCNotificationCustomContent>)arg1;
-- (void)customContent:(id <NCNotificationCustomContent>)arg1 didLoadAudioAccessoryView:(UIView *)arg2;
 @end
 

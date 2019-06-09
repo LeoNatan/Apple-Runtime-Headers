@@ -22,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (void)cancel;
 - (void)start;
 - (_Bool)isAsynchronous;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter *)arg1;
 - (id)init;

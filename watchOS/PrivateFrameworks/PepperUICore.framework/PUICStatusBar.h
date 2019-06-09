@@ -32,8 +32,8 @@
 
 + (float)heightForStyle:(int)arg1 orientation:(int)arg2;
 + (struct CGRect)_frameInSceneReferenceSpaceForStyle:(int)arg1 orientation:(int)arg2 inSceneWithReferenceSize:(struct CGSize)arg3;
-+ (struct CGRect)_frameForStyle:(int)arg1 orientation:(int)arg2 inWindowOfSize:(struct CGSize)arg3;
 + (void)_newAppContextCreated:(id)arg1;
++ (void)initialize;
 @property(nonatomic) _Bool hidden; // @synthesize hidden=_hidden;
 @property(nonatomic) _Bool shouldAnimateOnTitleContextChanges; // @synthesize shouldAnimateOnTitleContextChanges=_shouldAnimateOnTitleContextChanges;
 @property(retain, nonatomic) PUICStatusBarAppContextView *appContextView; // @synthesize appContextView=_appContextView;
@@ -52,7 +52,6 @@
 - (_Bool)isDoubleHeight;
 - (_Bool)_isTransparent;
 - (_Bool)isTranslucent;
-- (float)_standardHeight;
 - (int)currentStyle;
 - (float)currentHeight;
 - (void)setTintColor:(id)arg1 withDuration:(double)arg2;
@@ -110,6 +109,7 @@
 - (_Bool)_createSubviewsIfNeeded;
 - (_Bool)_forceCreateSubviewsIfNeeded;
 - (void)dealloc;
+- (void)_setFrameForStyle:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

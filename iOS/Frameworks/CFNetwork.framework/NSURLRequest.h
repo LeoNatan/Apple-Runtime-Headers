@@ -28,6 +28,8 @@
 + (void)setAllowsAnyHTTPSCertificate:(_Bool)arg1 forHost:(id)arg2;
 + (_Bool)allowsAnyHTTPSCertificateForHost:(id)arg1;
 - (id)boundInterfaceIdentifier;
+@property(readonly) _Bool allowsExpensiveNetworkAccess;
+@property(readonly) _Bool allowsConstrainedNetworkAccess;
 @property(readonly) _Bool allowsCellularAccess;
 @property(readonly) unsigned long long networkServiceType;
 - (void)_removePropertyForKey:(id)arg1;
@@ -44,14 +46,17 @@
 @property(readonly, copy) NSURL *mainDocumentURL;
 @property(readonly) double timeoutInterval;
 @property(readonly) unsigned long long cachePolicy;
+- (const struct __CFURL *)cfURL;
 @property(readonly, copy) NSURL *URL;
-- (struct _CFURLRequest *)_CFURLRequest;
+- (id)_CFURLRequest;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
+- (id)_initWithInternal:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (id)_initWithCFURLRequest:(struct _CFURLRequest *)arg1;
+- (id)_initWithCFURLRequest:(id)arg1;
 - (id)initWithURL:(id)arg1 cachePolicy:(unsigned long long)arg2 timeoutInterval:(double)arg3;
+@property(readonly) struct URLRequest *_inner;
 - (_Bool)_isSafeRequestForBackgroundDownload;
 - (_Bool)_isIdempotent;
 - (_Bool)_schemeWasUpgradedDueToDynamicHSTS;
@@ -70,6 +75,7 @@
 - (id)HTTPReferrer;
 - (id)HTTPExtraCookies;
 - (id)HTTPContentType;
+- (id)_bodyParts;
 @property(readonly, retain) NSInputStream *HTTPBodyStream;
 @property(readonly, copy) NSData *HTTPBody;
 - (id)valueForHTTPHeaderField:(id)arg1;

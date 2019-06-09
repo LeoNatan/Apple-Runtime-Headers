@@ -7,38 +7,45 @@
 #import <objc/NSObject.h>
 
 #import <MediaPlayer/MPSectionedIdentifierListEnumerationResult-Protocol.h>
+#import <MediaPlayer/NSSecureCoding-Protocol.h>
 
-@class MPSectionedIdentifierListEntryPositionKey, NSMutableArray, NSString;
+@class MPSectionedIdentifierListEntryPositionKey, NSArray, NSMutableArray, NSString;
 
-@interface MPSectionedIdentifierListEntry : NSObject <MPSectionedIdentifierListEnumerationResult>
+@interface MPSectionedIdentifierListEntry : NSObject <NSSecureCoding, MPSectionedIdentifierListEnumerationResult>
 {
+    NSMutableArray *_nextEntries;
     _Bool _dataSourceRemoved;
     MPSectionedIdentifierListEntryPositionKey *_positionKey;
     NSString *_sectionIdentifier;
     NSString *_hostedSectionIdentifier;
-    NSMutableArray *_nextEntries;
     MPSectionedIdentifierListEntry *_previousEntry;
     long long _branchDepth;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) long long branchDepth; // @synthesize branchDepth=_branchDepth;
 @property(nonatomic) __weak MPSectionedIdentifierListEntry *previousEntry; // @synthesize previousEntry=_previousEntry;
-@property(readonly, nonatomic) NSMutableArray *nextEntries; // @synthesize nextEntries=_nextEntries;
 @property(copy, nonatomic) NSString *hostedSectionIdentifier; // @synthesize hostedSectionIdentifier=_hostedSectionIdentifier;
 @property(readonly, nonatomic) NSString *sectionIdentifier; // @synthesize sectionIdentifier=_sectionIdentifier;
 @property(readonly, nonatomic) MPSectionedIdentifierListEntryPositionKey *positionKey; // @synthesize positionKey=_positionKey;
+@property(readonly, nonatomic) NSArray *nextEntries; // @synthesize nextEntries=_nextEntries;
 @property(readonly, nonatomic, getter=isDataSourceRemoved) _Bool dataSourceRemoved; // @synthesize dataSourceRemoved=_dataSourceRemoved;
 - (void).cxx_destruct;
 - (void)setDataSourceRemoved;
-- (void)addBranch:(id)arg1;
+- (void)prepareForDealloc;
+- (void)addNextEntry:(id)arg1;
+- (void)addBranch:(id)arg1 forceBranchDepthIncrease:(_Bool)arg2;
 - (id)trackingEntryResult;
 - (id)itemResult;
 @property(readonly, nonatomic) long long entryType;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (id)initWithPositionKey:(id)arg1 sectionIdentifier:(id)arg2;
+- (id)encodableNextEntriesWithExclusiveAccessToken:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

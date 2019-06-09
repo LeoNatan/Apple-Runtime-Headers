@@ -7,6 +7,34 @@
 #import <UIKit/UIView.h>
 
 @interface UIView (UIKit_SiriUIFrameworkAdditions)
++ (_Bool)siriChevronShouldBeOnLeadingSide;
 - (void)siriui_setBlendEffectEnabled:(_Bool)arg1;
+- (id)siriui_addHeightConstraint:(double)arg1 priority:(float)arg2;
+- (id)siriui_addWidthConstraint:(double)arg1 priority:(float)arg2;
+- (id)siriui_centerVerticallyWithView:(id)arg1 withMargin:(double)arg2 priority:(float)arg3;
+- (id)siriui_pinTrailingToLeadingEdgeOf:(id)arg1 withMargin:(double)arg2 priority:(float)arg3;
+- (id)siriui_pinLeadingToTrailingEdgeOf:(id)arg1 withMargin:(double)arg2 priority:(float)arg3;
+- (id)siriui_pinTrailingToTrailingEdgeOf:(id)arg1 withMargin:(double)arg2 priority:(float)arg3;
+- (id)siriui_pinLeadingToLeadingEdgeOf:(id)arg1 withMargin:(double)arg2 priority:(float)arg3;
+- (id)siriui_pinBottomToTopOf:(id)arg1 withMargin:(double)arg2 priority:(float)arg3;
+- (id)siriui_pinBottomTo:(id)arg1 withMargin:(double)arg2 priority:(float)arg3;
+- (id)siriui_pinTopTo:(id)arg1 withMargin:(double)arg2 priority:(float)arg3;
+- (id)siriui_addHeightConstraint:(double)arg1;
+- (id)siriui_addWidthConstraint:(double)arg1;
+- (id)siriui_pinTrailingTo:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_pinLeadingTo:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_pinLastBaselineToFirstBaseline:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_pinBottomToTopOf:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_pinBottomTo:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_pinTopTo:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_centerVerticallyWithItem:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_centerHorizontallyWithItem:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_pinTrailingToTrailingEdgeOf:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_pinTrailingToLeadingEdgeOf:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_pinLeadingToTrailingEdgeOf:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_pinLeadingToLeadingEdgeOf:(id)arg1 withMargin:(double)arg2;
+- (id)siriui_pinToLayoutGuide:(id)arg1;
+- (id)siriui_pinToSuperviewWithEdgeInsets:(struct UIEdgeInsets)arg1;
+- (void)recursive_setSemanticContentAttribute:(long long)arg1;
 @end
 

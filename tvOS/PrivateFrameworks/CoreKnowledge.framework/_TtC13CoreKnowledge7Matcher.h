@@ -10,7 +10,7 @@
 {
     // Error parsing type: , name: comparison
     // Error parsing type: , name: value
-    // Error parsing type: , name: sql.storage
+    // Error parsing type: , name: $__lazy_storage_$_sql
 }
 
 @end

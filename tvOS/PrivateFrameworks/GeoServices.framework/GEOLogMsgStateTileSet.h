@@ -15,8 +15,8 @@
     NSMutableArray *_tileSetInfos;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)tileSetInfoType;
-@property(retain, nonatomic) NSMutableArray *tileSetInfos; // @synthesize tileSetInfos=_tileSetInfos;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -25,12 +25,14 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)tileSetInfoAtIndex:(unsigned long long)arg1;
 - (unsigned long long)tileSetInfosCount;
 - (void)addTileSetInfo:(id)arg1;
 - (void)clearTileSetInfos;
+@property(retain, nonatomic) NSMutableArray *tileSetInfos;
 
 @end
 

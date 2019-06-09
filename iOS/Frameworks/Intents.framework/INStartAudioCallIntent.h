@@ -28,6 +28,7 @@
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
 @property(nonatomic, setter=setTTYType:) long long ttyType;
+@property(nonatomic) long long recordTypeForRedialing;
 - (void)setContacts:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *contacts;
 @property(nonatomic) long long preferredCallProvider;

@@ -6,7 +6,23 @@
 
 #import <PhotoLibraryServices/NSObject-Protocol.h>
 
+@class NSArray, NSProgress, NSString, NSURL, PLDelayedSaveActionsDetail, PLXPCDictionary;
+
 @protocol PLAssetsdLibraryServiceProtocol <NSObject>
+- (void)pendingEventsForRequest:(PLXPCDictionary *)arg1 reply:(void (^)(PLXPCDictionary *))arg2;
+- (void)publishRemoteChangeEvent:(PLXPCDictionary *)arg1 delayedSaveActionsDetail:(PLDelayedSaveActionsDetail *)arg2 reply:(void (^)(NSError *))arg3;
+- (void)automaticallyDeleteEmptyAlbumWithObjectURI:(NSURL *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
+- (void)updateThumbnailsForPhotos:(NSArray *)arg1 assignNewIndex:(_Bool)arg2 forceRefresh:(_Bool)arg3 reply:(void (^)(void))arg4;
+- (void)repairSingletonObjectsWithReply:(void (^)(void))arg1;
+- (void)recoverFromCrashIfNeeded;
+- (void)importFileSystemAssetsWithReason:(NSString *)arg1 reply:(void (^)(void))arg2;
+- (void)getPhotoLibraryStoreXPCListenerEndpointWithReply:(void (^)(NSXPCListenerEndpoint *))arg1;
+- (void)shutdownPhotoLibraryDatabaseWithReply:(void (^)(NSError *))arg1;
+- (NSProgress *)postOpenProgressWithReply:(void (^)(NSError *))arg1;
+- (NSProgress *)upgradePhotoLibraryDatabaseWithOptions:(unsigned long long)arg1 reply:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)openPhotoLibraryDatabaseWithReply:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)createPhotoLibraryDatabaseWithReply:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)getCurrentModelVersionWithReply:(void (^)(unsigned long long))arg1;
 - (void)launchAssetsd;
 @end
 

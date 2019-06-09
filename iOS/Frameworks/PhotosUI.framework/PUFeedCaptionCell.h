@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (void)layoutSubviews;
+- (void)traitCollectionDidChange:(id)arg1;
 @property(readonly, nonatomic) UIImage *notLikedImage;
 @property(readonly, nonatomic) UIImage *likedImage;
 @property(nonatomic) _Bool isLiked; // @dynamic isLiked;

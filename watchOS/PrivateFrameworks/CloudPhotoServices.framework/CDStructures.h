@@ -4,19 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#pragma mark Blocks
-
-typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
-
 #pragma mark Named Structures
 
 struct CGSize {
-    float width;
-    float height;
-};
-
-struct _NSRange {
-    unsigned int _field1;
-    unsigned int _field2;
+    float _field1;
+    float _field2;
 };
 

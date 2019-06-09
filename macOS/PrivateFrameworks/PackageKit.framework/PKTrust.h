@@ -11,7 +11,7 @@
 @interface PKTrust : NSObject
 {
     struct __SecTrust *_trustRef;
-    struct OpaqueSecPolicyRef *_policyRef;
+    struct __SecPolicy *_policyRef;
     unsigned int _trustResult;
     int _trustLevel;
     NSDate *_signingDate;
@@ -24,8 +24,8 @@
 + (id)stringForTrustLevel:(int)arg1;
 - (void)setAllowExpiredRoots:(BOOL)arg1;
 - (void)setAllowExpiredCertificates:(BOOL)arg1;
-- (BOOL)_isTrustedAsRootCertificate:(struct OpaqueSecCertificateRef *)arg1 inDomain:(unsigned int)arg2;
-- (struct OpaqueSecCertificateRef *)_anchorCertificateFromEvaluation;
+- (BOOL)_isTrustedAsRootCertificate:(struct __SecCertificate *)arg1 inDomain:(unsigned int)arg2;
+- (struct __SecCertificate *)_anchorCertificateFromEvaluation;
 - (BOOL)_evaluateTrustAtLevel:(int)arg1 isDevelopmentSigned:(char *)arg2;
 - (BOOL)_setCurrentPolicyWithOID:(struct cssm_data)arg1;
 - (BOOL)_restoreCurrentDateMode;

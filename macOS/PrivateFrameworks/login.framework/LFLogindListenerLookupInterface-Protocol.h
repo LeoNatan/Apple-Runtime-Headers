@@ -9,6 +9,8 @@
 @class NSDictionary;
 
 @protocol LFLogindListenerLookupInterface <NSObject>
+- (void)SMMoveSessionToConsoleTemporaryBridge:(NSDictionary *)arg1 reply:(void (^)(int))arg2;
+- (void)SMReleaseSessionTemporaryBridge:(NSDictionary *)arg1 reply:(void (^)(int))arg2;
 - (void)SMCreateSessionTemporaryBridge:(NSDictionary *)arg1 reply:(void (^)(int, unsigned int))arg2;
 - (void)SMGetSessionAgentConnection:(void (^)(int, NSXPCListenerEndpoint *))arg1;
 @end

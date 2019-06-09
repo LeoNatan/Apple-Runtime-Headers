@@ -10,6 +10,6 @@
 
 @protocol CoreDAVClientCertificateInfoProvider <NSObject>
 - (NSArray *)secCertificates;
-- (struct OpaqueSecIdentityRef *)copySecIdentity;
+- (struct __SecIdentity *)copySecIdentity;
 @end
 

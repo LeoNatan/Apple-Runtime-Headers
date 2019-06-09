@@ -15,18 +15,17 @@ __attribute__((visibility("hidden")))
 {
     PBUnknownFields *_unknownFields;
     unsigned long long _directoryGroupingId;
-    unsigned long long _muid;
     GEOPDVenueLabel *_label;
+    unsigned long long _muid;
     struct {
-        unsigned int directoryGroupingId:1;
-        unsigned int muid:1;
-    } _has;
+        unsigned int has_directoryGroupingId:1;
+        unsigned int has_muid:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
-@property(retain, nonatomic) GEOPDVenueLabel *label; // @synthesize label=_label;
-@property(nonatomic) unsigned long long directoryGroupingId; // @synthesize directoryGroupingId=_directoryGroupingId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -35,11 +34,15 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasMuid;
+@property(nonatomic) unsigned long long muid;
+@property(retain, nonatomic) GEOPDVenueLabel *label;
 @property(readonly, nonatomic) _Bool hasLabel;
 @property(nonatomic) _Bool hasDirectoryGroupingId;
+@property(nonatomic) unsigned long long directoryGroupingId;
 
 @end
 

@@ -10,10 +10,10 @@
 {
 }
 
-+ (id)confirmationRequiredWithValueToConfirm:(unsigned long long)arg1;
 + (id)confirmationRequiredWithFileEntityTypeOptionsToConfirm:(unsigned long long)arg1;
-+ (id)successWithResolvedValue:(unsigned long long)arg1;
 + (id)successWithResolvedFileEntityTypeOptions:(unsigned long long)arg1;
+- (id)_vocabularyValueForObject:(id)arg1 slotDescription:(id)arg2;
+- (id)_intentSlotValueForObject:(id)arg1 slotDescription:(id)arg2;
 
 @end
 

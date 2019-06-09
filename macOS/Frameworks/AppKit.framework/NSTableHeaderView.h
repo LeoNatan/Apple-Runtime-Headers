@@ -12,6 +12,7 @@
 
 @interface NSTableHeaderView : NSView <NSViewToolTipOwner>
 {
+    unsigned int _drawsBackground:1;
     NSTableView *_tableView;
     long long _resizedColumn;
     long long _draggedColumn;
@@ -26,7 +27,6 @@
     unsigned int _wantsTranslucency:1;
     unsigned int _addedBlurToClipView:1;
     unsigned int _usedNewHeight:1;
-    unsigned int _drawsBackground:1;
     unsigned int _reserved:23;
     BOOL _skipDrawingSeparator;
     id _viewDataX;
@@ -115,9 +115,6 @@
 - (void)_doModifySelectionWithEvent:(id)arg1 onColumn:(long long)arg2;
 - (void)_drawColumnHeaderWithIndexes:(id)arg1;
 - (BOOL)_drawingEndSeparator;
-- (BOOL)_hasRowHeaderColumn;
-- (struct CGRect)_rowHeaderScrollableContentVisibleRect;
-- (struct CGRect)_rowHeaderFixedContentRect;
 - (BOOL)_layoutIsSameAsCachedLayoutWithFrame:(struct CGRect)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)setFrameOrigin:(struct CGPoint)arg1;

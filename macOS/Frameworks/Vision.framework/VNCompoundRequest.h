@@ -16,7 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
-+ (id)compoundRequestsForOriginalRequests:(id)arg1;
++ (id)compoundRequestProcessingDeviceFromOriginalRequestsProcessingDevice:(id)arg1;
++ (id)compoundRequestsForOriginalRequests:(id)arg1 withPerformingContext:(id)arg2 error:(id *)arg3;
 @property(readonly, copy, nonatomic) NSArray *originalRequests; // @synthesize originalRequests=_originalRequests;
 - (void).cxx_destruct;
 - (id)description;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)internalPerformRevision:(unsigned long long)arg1 inContext:(id)arg2 error:(id *)arg3;
 - (long long)dependencyProcessingOrdinality;
 - (id)sequencedRequestPreviousObservationsKey;
+- (CDUnknownBlockType)resultsSortingComparator;
 - (BOOL)allowsCachingOfResults;
 - (BOOL)warmUpRequestPerformer:(id)arg1 error:(id *)arg2;
 - (id)compoundResults;

@@ -6,26 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class HDClientAuthorizationOracle, HDProfile, HDXPCClient, NSMutableArray, NSUUID;
+@class HDHealthStoreClient, HDProfile, NSMutableArray, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HDAuthorizationServer : NSObject
 {
-    HDClientAuthorizationOracle *_authorizationOracle;
-    int _invalidated;
-    HDXPCClient *_client;
+    // Error parsing type: AB, name: _invalidated
+    NSString *_sourceBundleIdentifier;
     HDProfile *_profile;
     NSObject<OS_dispatch_queue> *_queue;
+    HDHealthStoreClient *_client;
     NSMutableArray *_authorizationRequestIdentifiers;
     NSUUID *_transactionSessionIdentifier;
 }
 
-@property(nonatomic) int invalidated; // @synthesize invalidated=_invalidated;
 @property(retain, nonatomic) NSUUID *transactionSessionIdentifier; // @synthesize transactionSessionIdentifier=_transactionSessionIdentifier;
 @property(retain, nonatomic) NSMutableArray *authorizationRequestIdentifiers; // @synthesize authorizationRequestIdentifiers=_authorizationRequestIdentifiers;
+@property(readonly, nonatomic) HDHealthStoreClient *client; // @synthesize client=_client;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
-@property(readonly) HDXPCClient *client; // @synthesize client=_client;
+@property(readonly, copy) NSString *sourceBundleIdentifier; // @synthesize sourceBundleIdentifier=_sourceBundleIdentifier;
 - (void).cxx_destruct;
 - (void)_invalidate;
 - (void)_queue_enqueueAuthorizationRequestForBundleIdentifier:(id)arg1 writeTypes:(id)arg2 readTypes:(id)arg3 authorizationNeededHandler:(CDUnknownBlockType)arg4 requestCompletionHandler:(CDUnknownBlockType)arg5;
@@ -44,7 +44,7 @@
 - (void)performIfAuthorizedToSaveObjectsWithTypes:(id)arg1 onQueue:(id)arg2 usingBlock:(CDUnknownBlockType)arg3 errorHandler:(CDUnknownBlockType)arg4;
 - (void)performIfAuthorizedToReadTypes:(id)arg1 onQueue:(id)arg2 usingBlock:(CDUnknownBlockType)arg3 errorHandler:(CDUnknownBlockType)arg4;
 - (void)invalidate;
-- (id)initWithClient:(id)arg1 profile:(id)arg2 queue:(id)arg3;
+- (id)initWithClient:(id)arg1 queue:(id)arg2;
 - (void)updateDefaultAuthorizationStatusesWithCompletion:(CDUnknownBlockType)arg1;
 - (_Bool)resetAuthorizationStatusForBundleIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)resetAuthorizationStatusesForObjects:(id)arg1 error:(id *)arg2;

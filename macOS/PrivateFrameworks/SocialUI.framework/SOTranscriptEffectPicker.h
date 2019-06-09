@@ -8,7 +8,7 @@
 
 #import <SocialUI/SOEffectPickerViewControllerDelegate-Protocol.h>
 
-@class NSButton, NSString, SOBalloonEffectPickerViewController, SOMomentsEffectPickerViewController;
+@class NSButton, NSString, NSTextField, SOBalloonEffectPickerViewController, SOEffectPickerUnsentMessage, SOFullScreenEffectPickerViewController;
 @protocol SOTranscriptEffectPickerDelegate;
 
 @interface SOTranscriptEffectPicker : NSViewController <SOEffectPickerViewControllerDelegate>
@@ -16,25 +16,39 @@
     id <SOTranscriptEffectPickerDelegate> _delegate;
     NSButton *_balloonButton;
     NSButton *_momentButton;
-    SOMomentsEffectPickerViewController *_momentsViewController;
+    NSButton *_cancelButton;
+    NSButton *_sendButton;
+    NSTextField *_titleView;
+    SOFullScreenEffectPickerViewController *_momentsViewController;
     SOBalloonEffectPickerViewController *_balloonsViewController;
+    NSString *_chosenEffect;
+    SOEffectPickerUnsentMessage *_unsentMessage;
 }
 
+@property(retain) SOEffectPickerUnsentMessage *unsentMessage; // @synthesize unsentMessage=_unsentMessage;
+@property(retain) NSString *chosenEffect; // @synthesize chosenEffect=_chosenEffect;
 @property(retain, nonatomic) SOBalloonEffectPickerViewController *balloonsViewController; // @synthesize balloonsViewController=_balloonsViewController;
-@property(retain, nonatomic) SOMomentsEffectPickerViewController *momentsViewController; // @synthesize momentsViewController=_momentsViewController;
+@property(retain, nonatomic) SOFullScreenEffectPickerViewController *momentsViewController; // @synthesize momentsViewController=_momentsViewController;
+@property(nonatomic) __weak NSTextField *titleView; // @synthesize titleView=_titleView;
+@property(nonatomic) __weak NSButton *sendButton; // @synthesize sendButton=_sendButton;
+@property(nonatomic) __weak NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
 @property(nonatomic) __weak NSButton *momentButton; // @synthesize momentButton=_momentButton;
 @property(nonatomic) __weak NSButton *balloonButton; // @synthesize balloonButton=_balloonButton;
 @property __weak id <SOTranscriptEffectPickerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)effectPicker:(id)arg1 setSendEnabled:(BOOL)arg2;
+- (void)userChoseSendPicker:(id)arg1;
+- (void)userCancelledPicker:(id)arg1;
 - (void)effectPickerViewControllerWasCancelled:(id)arg1;
 - (void)effectPickerViewController:(id)arg1 didChooseEffect:(id)arg2;
+- (void)effectPickerViewController:(id)arg1 didPreviewEffect:(id)arg2;
 - (void)viewWillLayout;
 - (void)momentsButtonWasPressed:(id)arg1;
 - (void)bubbleButtonWasPressed:(id)arg1;
 - (void)setBalloonMode:(BOOL)arg1;
 - (void)showViewController:(id)arg1 hideViewController:(id)arg2;
 - (void)viewDidLoad;
-- (id)init;
+- (id)initWithUnsentMessage:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

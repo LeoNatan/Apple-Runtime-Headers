@@ -8,17 +8,16 @@
 
 @interface ICAttachmentMapModel : ICAttachmentModel
 {
-    id _reservedForMapSnapshotCreator;
 }
 
 + (id)contentInfoTextWithAttachmentCount:(unsigned long long)arg1;
-@property(retain, nonatomic) id reservedForMapSnapshotCreator; // @synthesize reservedForMapSnapshotCreator=_reservedForMapSnapshotCreator;
-- (void).cxx_destruct;
+- (BOOL)shouldSyncPreviewImageToCloud:(id)arg1;
 - (BOOL)canConvertToHTMLForSharing;
 - (id)attributesForSharingHTMLWithTagName:(id *)arg1 textContent:(id *)arg2;
 - (void)addLocation;
 - (id)MKMapItem;
 - (BOOL)hasPreviews;
+- (BOOL)previewsSupportMultipleAppearances;
 
 @end
 

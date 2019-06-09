@@ -14,14 +14,12 @@ __attribute__((visibility("hidden")))
     struct {
         unsigned int weekdayLast:1;
     } _datePickerWeekMonthDayViewFlags;
-    _Bool _isModern;
     UILabel *_dateLabel;
     UILabel *_weekdayLabel;
     NSString *_formattedDateString;
     float _weekdayWidth;
 }
 
-@property(nonatomic) _Bool isModern; // @synthesize isModern=_isModern;
 @property(nonatomic) float weekdayWidth; // @synthesize weekdayWidth=_weekdayWidth;
 @property(copy, nonatomic) NSString *formattedDateString; // @synthesize formattedDateString=_formattedDateString;
 @property(readonly, nonatomic) UILabel *weekdayLabel; // @synthesize weekdayLabel=_weekdayLabel;

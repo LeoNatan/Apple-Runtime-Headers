@@ -14,7 +14,6 @@
 
 @interface EKParticipant : EKObject <EKIdentityProtocol, EKProtocolMutableParticipant, NSCopying>
 {
-    int _proposedStartDateStatus;
     NSString *_comment;
     NSString *_name;
     NSString *_scheduleStatusString;
@@ -40,7 +39,6 @@
 + (id)participantWithName:(id)arg1 emailAddress:(id)arg2 phoneNumber:(id)arg3 url:(id)arg4;
 + (id)participantWithName:(id)arg1 url:(id)arg2;
 + (Class)classForParticipantInstance;
-@property(nonatomic) int proposedStartDateStatus; // @synthesize proposedStartDateStatus=_proposedStartDateStatus;
 @property(readonly, nonatomic) NSURL *URL; // @synthesize URL=_URL;
 @property(readonly, nonatomic) NSString *scheduleStatusString; // @synthesize scheduleStatusString=_scheduleStatusString;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
@@ -54,9 +52,11 @@
 - (id)nameUsingEmailAsBackup;
 - (id)contactIdentifier;
 - (id)ABPersonInAddressBook:(id)arg1;
-@property(readonly, nonatomic) NSPredicate *contactPredicate;
+- (id)existingContact;
+- (id)newContact;
 - (id)nameComponents;
 - (BOOL)isEqualToParticipant:(id)arg1;
+- (id)summary;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) long long participantRole;
 @property(readonly, nonatomic) long long participantStatus;
@@ -78,6 +78,7 @@
 - (id)status;
 - (void)setReplyRequested:(BOOL)arg1;
 - (BOOL)replyRequested;
+@property(nonatomic) int proposedStartDateStatus;
 - (void)setProposalStatusString:(id)arg1;
 - (id)proposalStatusString;
 - (void)setProposedEndDateUnadjustedFromUTC:(id)arg1;
@@ -99,6 +100,7 @@
 - (id)initWithObject:(id)arg1 createPartialBackingObject:(BOOL)arg2 keepBackingObject:(BOOL)arg3 preFrozenRelationshipObjects:(id)arg4 additionalFrozenProperties:(id)arg5;
 - (id)initWithName:(id)arg1 emailAddress:(id)arg2 phoneNumber:(id)arg3 url:(id)arg4;
 - (id)initWithName:(id)arg1 url:(id)arg2;
+@property(readonly, nonatomic) NSPredicate *contactPredicate; // @dynamic contactPredicate;
 
 // Remaining properties
 @property(readonly, nonatomic) BOOL canBeConvertedToFullObject;

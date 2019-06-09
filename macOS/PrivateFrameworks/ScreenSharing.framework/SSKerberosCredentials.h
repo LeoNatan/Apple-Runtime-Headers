@@ -12,7 +12,6 @@
 {
     NSString *mClientPrincipal;
     NSString *mServicePrincipal;
-    void *mReservedForInstanceVariablesKerberos;
 }
 
 + (id)kerberosCredentialsWithClientPrincipal:(id)arg1 withServicePrincipal:(id)arg2;

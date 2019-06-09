@@ -20,7 +20,7 @@
     int _attributes;
 }
 
-@property(nonatomic) MFMessageBodyParser *parser; // @synthesize parser=_parser;
+@property(nonatomic) __weak MFMessageBodyParser *parser; // @synthesize parser=_parser;
 @property(readonly, copy) NSString *description;
 - (_Bool)isExternallyRetained;
 - (void)releaseExternally;

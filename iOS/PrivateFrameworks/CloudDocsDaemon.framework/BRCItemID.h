@@ -27,6 +27,7 @@
 + (_Bool)supportsSecureCoding;
 + (_Bool)isDocumentsItemIDWithSQLiteValue:(struct sqlite3_value *)arg1;
 + (_Bool)isRootItemIDWithSQLiteValue:(struct sqlite3_value *)arg1;
++ (id)newFromSqliteStatement:(struct sqlite3_stmt *)arg1 atIndex:(int)arg2;
 + (id)newFromSqliteValue:(struct sqlite3_value *)arg1;
 + (id)documentsItemIDWithAppLibraryRowID:(id)arg1;
 - (void).cxx_destruct;
@@ -59,14 +60,16 @@
 @property(readonly, nonatomic) _Bool isSharedZoneRoot;
 @property(readonly, nonatomic) _Bool isDocumentsFolder;
 @property(readonly, nonatomic) _Bool isNonDesktopRoot;
-- (id)directoryReferenceInZoneID:(id)arg1 action:(unsigned long long)arg2;
-- (id)_directoryRecordName;
-- (id)structureRecordIDForItemType:(BOOL)arg1 appLibrary:(id)arg2 zone:(id)arg3 aliasTargetZone:(id)arg4;
+- (id)directoryReferenceInZone:(id)arg1 action:(unsigned long long)arg2;
+- (id)_directoryRecordNameWithSession:(id)arg1;
+- (id)sideCarRecordIDWithZone:(id)arg1;
+- (id)sideCarRecordNameWithZone:(id)arg1;
+- (id)structureRecordIDForItemType:(BOOL)arg1 zone:(id)arg2 aliasTargetZoneIsShared:(_Bool)arg3;
 - (id)pcsChainDocumentStructureReferenceInZoneID:(id)arg1;
-- (id)pcsChainParentReferenceInZoneID:(id)arg1;
-- (id)validatingDirectoryReferenceInZoneID:(id)arg1;
+- (id)pcsChainParentReferenceInZone:(id)arg1;
+- (id)validatingDirectoryReferenceInZone:(id)arg1;
 - (id)documentStructureRecordIDInZoneID:(id)arg1;
-- (id)directoryStructureRecordIDInZoneID:(id)arg1;
+- (id)directoryStructureRecordIDInZone:(id)arg1;
 - (id)contentsRecordIDInZoneID:(id)arg1;
 
 // Remaining properties

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class APCEncoderProcessor, APCPlayerEngine, AUPasscodeCodecConfiguration, AVPlayer, NSData;
+@class APCEncoderProcessor, APCPlayerEmbedInfo, APCPlayerEngine, AUPasscodeCodecConfiguration, AVPlayer, NSData;
 @protocol OS_dispatch_queue;
 
 @interface APCPlayer : NSObject
@@ -19,21 +19,25 @@
     NSData *_payload;
     struct NSData *_configurationData;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
+    unsigned long long _callbackTimingMSec;
 }
 
 + (unsigned long long)assetIDFromIdentifier:(id)arg1;
 + (id)carrierAssetIdentifiers;
 + (id)fileNameForCarrierAsset:(unsigned long long)arg1;
 + (id)urlForCarrierAsset:(unsigned long long)arg1;
+@property(nonatomic) unsigned long long callbackTimingMSec; // @synthesize callbackTimingMSec=_callbackTimingMSec;
 @property(readonly) BOOL isPlaying; // @synthesize isPlaying=_isPlaying;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(readonly, copy, nonatomic) NSData *configurationData; // @synthesize configurationData=_configurationData;
 @property(readonly, copy, nonatomic) NSData *payload; // @synthesize payload=_payload;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) APCPlayerEmbedInfo *embeddingInfo;
 - (void)stopSendWithFadeOut:(float)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)stopSendAfterMinimumLoops:(unsigned long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)stopSend:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)endPasscodeEmbedding;
+- (BOOL)startSendAtTime:(unsigned long long)arg1 withBeginning:(CDUnknownBlockType)arg2;
 - (BOOL)startSend;
 - (float)preparePayload:(id)arg1 usingCarrierAtURL:(id)arg2 error:(id *)arg3;
 - (float)preparePayload:(id)arg1 usingCarrierAsset:(unsigned long long)arg2 error:(id *)arg3;

@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (unsigned long long)accessibilityTraits;
+- (long long)accessibilityContainerType;
 - (id)accessibilityLabel;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;

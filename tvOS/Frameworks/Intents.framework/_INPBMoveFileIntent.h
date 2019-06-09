@@ -28,6 +28,7 @@
     _INPBString *_sourceName;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)propertiesType;
 + (Class)entityNameType;
 @property(nonatomic) int sourceType; // @synthesize sourceType=_sourceType;
@@ -42,6 +43,9 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (void)dealloc;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (int)StringAsSourceType:(id)arg1;

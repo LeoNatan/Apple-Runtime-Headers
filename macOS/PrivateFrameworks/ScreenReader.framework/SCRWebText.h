@@ -15,15 +15,9 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic, setter=_setWebAreaRepresentation:) SCRWebArea *_webAreaRepresentation; // @synthesize _webAreaRepresentation=__webAreaRepresentation;
-- (void)handleNewlineFeedback:(id)arg1 position:(id)arg2 prevLength:(unsigned long long)arg3 length:(unsigned long long)arg4;
 - (id)rangeForStartMarker:(id)arg1 withOffset:(unsigned long long)arg2 length:(unsigned long long)arg3;
-- (struct _NSRange)currentLineLocalNSRangeForAbsoluteMarkerRange:(id)arg1;
-- (BOOL)_containsLineBreaker:(id)arg1;
 - (BOOL)allowsDragForUIElement:(id)arg1;
 - (void)addLineInfoSummaryToRequest:(id)arg1;
-- (BOOL)hasVisitedLinkAtPosition:(id)arg1;
-- (id)adjustedPreviousSearchPositionForPosition:(id)arg1;
-- (id)nextStyleRangeForPosition:(id)arg1;
 - (id)styleRangeForPosition:(id)arg1;
 - (void)echoDataInRange:(id)arg1 request:(id)arg2 showOnScreen:(BOOL)arg3 feedbackType:(long long)arg4 withScrolling:(BOOL)arg5 braille:(BOOL)arg6;
 - (void)echoDataInRange:(id)arg1 request:(id)arg2 showOnScreen:(BOOL)arg3 feedbackType:(long long)arg4 withScrolling:(BOOL)arg5;
@@ -33,11 +27,6 @@ __attribute__((visibility("hidden")))
 - (id)paragraphStartMarkerBeforePosition:(id)arg1;
 - (id)sentenceEndMarkerAfterPosition:(id)arg1;
 - (id)sentenceRangeForPosition:(id)arg1;
-- (id)lineEndMarkerAfterPosition:(id)arg1;
-- (id)leftLineRangeForPosition:(id)arg1;
-- (id)lineRangeForPosition:(id)arg1;
-- (id)rangeForLine:(unsigned long long)arg1;
-- (unsigned long long)lineForPosition:(id)arg1;
 - (id)wordRangeForPosition:(id)arg1;
 - (BOOL)_isLineStartPosition:(id)arg1 forLineRange:(id)arg2;
 - (BOOL)_isLineEndPosition:(id)arg1 forLineRange:(id)arg2;
@@ -50,7 +39,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
 - (void)_registerForSelectionChangedNotification;
 - (BOOL)performBrailleRouterActionWithIndex:(unsigned long long)arg1 outputRequest:(id)arg2;
-- (BOOL)_openContextualMenu;
 - (BOOL)openContextualMenu;
 - (void)readCurrentParagraph:(id)arg1;
 - (void)readCurrentSentence:(id)arg1;
@@ -58,10 +46,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)readNextParagraph:(id)arg1;
 - (BOOL)readPreviousSentence:(id)arg1;
 - (BOOL)readNextSentence:(id)arg1;
-- (BOOL)readPreviousLine:(id)arg1;
-- (BOOL)readNextLine:(id)arg1;
 - (struct CGRect)boundsForRange:(id)arg1;
-- (id)currentBrailleLineWithEchoRange:(id)arg1;
 - (id)attributedStringForRange:(id)arg1;
 - (id)stringForRange:(id)arg1;
 - (id)valueDescription;
@@ -80,9 +65,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)tabOrDrillInShouldTempDisableQuickNav;
 - (BOOL)handleEvent:(id)arg1 request:(id)arg2;
 - (void)handleTextSelectionChange;
+- (BOOL)isWebText;
 - (Class)classForChildUIElement:(id)arg1 parent:(id)arg2;
 - (void)dealloc;
-- (BOOL)isMailWebText;
 
 @end
 

@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)main;
+@property(readonly, nonatomic) unsigned long long type;
 - (id)initWithAttachmentManagedObjectID:(id)arg1;
 
 @end

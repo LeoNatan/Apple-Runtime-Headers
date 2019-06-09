@@ -8,14 +8,7 @@
 
 @interface FBSUIApplicationLaunchResponse : FBSWorkspaceResponse
 {
-    _Bool _supportsTaskSuspension;
-    _Bool _supportsTaskSuspensionOnLock;
 }
-
-@property(nonatomic) _Bool supportsTaskSuspensionOnLock; // @synthesize supportsTaskSuspensionOnLock=_supportsTaskSuspensionOnLock;
-@property(nonatomic) _Bool supportsTaskSuspension; // @synthesize supportsTaskSuspension=_supportsTaskSuspension;
-- (void)encodeWithXPCDictionary:(id)arg1;
-- (id)initWithXPCDictionary:(id)arg1;
 
 @end
 

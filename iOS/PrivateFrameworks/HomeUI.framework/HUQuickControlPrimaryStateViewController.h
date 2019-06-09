@@ -15,9 +15,11 @@
 
 + (Class)controlItemClass;
 + (id)controlItemPredicate;
+- (_Bool)_isCharacteristicTypeRotationDirection;
 - (id)controlToViewValueTransformer;
 - (id)createViewProfile;
 - (id)createInteractionCoordinator;
+- (void)viewWillAppear:(_Bool)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) HFControlItem<HFPrimaryStateWriter> *controlItem; // @dynamic controlItem;

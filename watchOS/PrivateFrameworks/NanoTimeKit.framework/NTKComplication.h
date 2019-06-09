@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <ClockComplications/CLKCComplication.h>
 
 #import <NanoTimeKit/NSCopying-Protocol.h>
 #import <NanoTimeKit/NSSecureCoding-Protocol.h>
 
-@interface NTKComplication : NSObject <NSSecureCoding, NSCopying>
+@interface NTKComplication : CLKCComplication <NSSecureCoding, NSCopying>
 {
     unsigned int _complicationType;
 }
@@ -32,7 +32,9 @@
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1 subclassesAllowed:(_Bool)arg2;
 - (_Bool)isEqual:(id)arg1;
+- (id)localizedRichDetailText;
 - (id)localizedDetailText;
+- (id)localizedRichKeylineLabelText;
 - (id)localizedKeylineLabelText;
 - (id)description;
 - (_Bool)snapshotContext:(id)arg1 isStaleRelativeToContext:(id)arg2;

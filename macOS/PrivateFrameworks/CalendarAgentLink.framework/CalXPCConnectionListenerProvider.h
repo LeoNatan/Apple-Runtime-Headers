@@ -27,7 +27,7 @@
 - (void)dealloc;
 @property(readonly, copy) NSString *description;
 - (void)stopListening;
-- (void)performSelectorOnClients:(SEL)arg1 withObjects:(id)arg2;
+- (void)performBlockWithAllClients:(CDUnknownBlockType)arg1;
 - (void)_removeClientConnection:(id)arg1;
 - (void)_addClientConnection:(id)arg1 clientLink:(id)arg2;
 - (void)_didInvalidateConnection:(id)arg1;

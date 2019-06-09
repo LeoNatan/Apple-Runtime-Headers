@@ -24,6 +24,10 @@
     double _fogEndDistance;
     double _fogDensityExponent;
     id _fogColor;
+    BOOL _wantsScreenSpaceReflection;
+    long long _screenSpaceReflectionSampleCount;
+    double _screenSpaceReflectionMaxRayDistance;
+    double _screenSpaceReflectionStride;
     BOOL _paused;
     NSURL *_sourceURL;
     BOOL _pausedForEditing;
@@ -78,6 +82,12 @@
 - (void)lock;
 - (void)_dumpToDisk;
 - (BOOL)writeToURL:(id)arg1 options:(id)arg2 delegate:(id)arg3 progressHandler:(CDUnknownBlockType)arg4;
+@property(nonatomic) double screenSpaceReflectionStride;
+@property(nonatomic) double screenSpaceReflectionMaximumDistance;
+- (void)setScreenSpaceReflectionDepthThreshold:(double)arg1;
+- (double)screenSpaceReflectionDepthThreshold;
+@property(nonatomic) long long screenSpaceReflectionSampleCount;
+@property(nonatomic) BOOL wantsScreenSpaceReflection;
 @property(nonatomic) double fogStartDistance;
 @property(nonatomic) double fogDensityExponent;
 @property(nonatomic) double fogEndDistance;
@@ -121,6 +131,7 @@
 - (id)init;
 - (id)debugQuickLookObjectWithPointOfView:(id)arg1;
 - (id)debugQuickLookObject;
+- (BOOL)writeToURLWithUSDKit:(id)arg1;
 - (id)exportAsCOLLADAOperationWithDestinationURL:(id)arg1 attributes:(id)arg2 delegate:(id)arg3 didEndSelector:(SEL)arg4 userInfo:(void *)arg5;
 - (id)exportAsMovieOperationWithDestinationURL:(id)arg1 size:(struct CGSize)arg2 attributes:(id)arg3 delegate:(id)arg4 didEndSelector:(SEL)arg5 userInfo:(void *)arg6;
 - (id)_exportAsMovieOperationWithDestinationURL:(id)arg1 size:(struct CGSize)arg2 attributes:(id)arg3 delegate:(id)arg4 didEndSelector:(SEL)arg5 userInfo:(void *)arg6;

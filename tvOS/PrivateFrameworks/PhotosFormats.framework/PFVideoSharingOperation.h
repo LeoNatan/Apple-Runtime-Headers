@@ -6,7 +6,7 @@
 
 #import <Foundation/NSOperation.h>
 
-@class AVAsset, AVAssetExportSession, AVAudioMix, AVVideoComposition, NSArray, NSError, NSObject, NSString, NSURL, PFAssetAdjustments;
+@class AVAsset, AVAssetExportSession, AVAudioMix, AVVideoComposition, CLLocation, NSArray, NSDate, NSError, NSObject, NSString, NSURL, PFAssetAdjustments;
 @protocol OS_dispatch_queue;
 
 @interface PFVideoSharingOperation : NSOperation
@@ -24,16 +24,24 @@
     _Bool _shouldStripLocation;
     NSURL *_outputDirectoryURL;
     NSString *_outputFilename;
+    CLLocation *_customLocation;
+    NSDate *_customDate;
     NSString *_customAccessibilityLabel;
     NSString *_exportPreset;
+    NSString *_exportFileType;
     NSURL *_videoURL;
+    NSURL *_resultingFileURL;
     PFAssetAdjustments *__adjustments;
 }
 
 @property(retain, nonatomic, setter=_setAdjustments:) PFAssetAdjustments *_adjustments; // @synthesize _adjustments=__adjustments;
+@property(readonly, copy, nonatomic) NSURL *resultingFileURL; // @synthesize resultingFileURL=_resultingFileURL;
 @property(copy, nonatomic, setter=_setVideoURL:) NSURL *videoURL; // @synthesize videoURL=_videoURL;
+@property(copy, nonatomic) NSString *exportFileType; // @synthesize exportFileType=_exportFileType;
 @property(copy, nonatomic) NSString *exportPreset; // @synthesize exportPreset=_exportPreset;
 @property(copy, nonatomic) NSString *customAccessibilityLabel; // @synthesize customAccessibilityLabel=_customAccessibilityLabel;
+@property(copy, nonatomic) NSDate *customDate; // @synthesize customDate=_customDate;
+@property(copy, nonatomic) CLLocation *customLocation; // @synthesize customLocation=_customLocation;
 @property(nonatomic) _Bool shouldStripLocation; // @synthesize shouldStripLocation=_shouldStripLocation;
 @property(nonatomic) _Bool shouldStripMetadata; // @synthesize shouldStripMetadata=_shouldStripMetadata;
 @property(copy, nonatomic) NSString *outputFilename; // @synthesize outputFilename=_outputFilename;

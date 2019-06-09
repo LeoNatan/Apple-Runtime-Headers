@@ -24,14 +24,15 @@
 + (id)featureFromTagID:(id)arg1;
 + (id)featuresFromTagIDs:(id)arg1;
 + (id)featuresFromTag:(id)arg1;
-+ (id)featuresFromPersonalizingItem:(id)arg1;
++ (id)featuresFromPersonalizingItem:(id)arg1 personalizationTreatment:(id)arg2;
 + (id)featuresFromTodayPersonalizationEvent:(id)arg1;
-+ (id)featuresFromHeadline:(id)arg1;
++ (id)featuresFromHeadline:(id)arg1 personalizationTreatment:(id)arg2;
 + (id)featuresFromIssue:(id)arg1;
 @property(retain, nonatomic) NSString *tagID; // @synthesize tagID=_tagID;
 @property(readonly, nonatomic) NSString *fc_description; // @synthesize fc_description=_fc_description;
 @property(retain, nonatomic) NSString *personalizationIdentifier; // @synthesize personalizationIdentifier=_personalizationIdentifier;
 - (void).cxx_destruct;
+- (double)featureWeightWithConfigurableValues:(id)arg1 publisherID:(id)arg2;
 - (id)fr_description;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;

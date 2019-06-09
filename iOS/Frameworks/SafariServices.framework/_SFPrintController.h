@@ -30,6 +30,7 @@
     id <_SFPrintControllerDelegate> _delegate;
 }
 
++ (_Bool)isDisplayingPrintUI;
 @property(nonatomic) __weak id <_SFPrintControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak id <_SFDialogPresenting> dialogPresenter; // @synthesize dialogPresenter=_dialogPresenter;
 @property(nonatomic) __weak _SFReaderController *readerController; // @synthesize readerController=_readerController;
@@ -46,6 +47,7 @@
 - (void)clearQueue;
 - (void)resetPrintUISuppression;
 - (void)handleNextPrintRequest;
+- (void)getPDFDataForUsage:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)printFrame:(id)arg1 initiatedByWebContent:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_dequeuePrintItem;
 - (void)_enqueuePrintItem:(id)arg1;

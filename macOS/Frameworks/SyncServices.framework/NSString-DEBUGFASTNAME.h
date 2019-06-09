@@ -7,6 +7,13 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (DEBUGFASTNAME)
++ (id)isd_propertyValueWithType:(int)arg1 bytesEncodedForSqlite:(const void *)arg2;
 - (id)fastName;
+- (int)isd_sqlitePropertyValueType;
+- (void *)isd_bytesEncodedForSqlite;
+- (id)isd_initWithBytesEncodedForSqlite:(const void *)arg1 stringTable:(id)arg2;
+- (id)isd_initWithBytesEncodedForSqlite:(const void *)arg1;
+- (int)isd_quickDirtyCoderType;
+- (id)isd_uniquedGlobalId;
 @end
 

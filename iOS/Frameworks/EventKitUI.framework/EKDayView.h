@@ -41,6 +41,8 @@
     _Bool _pinching;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
+    long long _targetSizeClass;
+    _Bool _layoutWhenJoiningViewHierarchy;
     NSObject<OS_dispatch_queue> *_reloadQueue;
     _Bool _allowsOccurrenceSelection;
     _Bool _alignsMidnightToTop;
@@ -98,6 +100,8 @@
 - (void)highlightHour:(double)arg1;
 - (double)allDayRegionHeight;
 - (_Bool)scrollTowardPoint:(struct CGPoint)arg1;
+- (double)_scrollZoneTop;
+- (double)_scrollRate;
 - (struct CGPoint)pointAtDate:(double)arg1 isAllDay:(_Bool)arg2;
 - (double)_adjustSecondBackwardForDSTHole:(double)arg1;
 - (double)_adjustSecondForwardForDSTHole:(double)arg1;
@@ -112,6 +116,7 @@
 - (struct CGPoint)_pinchDistanceForGestureRecognizer:(id)arg1;
 - (void)_doubleTap:(id)arg1;
 - (void)_timeViewTapped:(id)arg1;
+- (void)dayViewContentDidCompleteAsyncLoadAndLayout:(id)arg1;
 - (void)dayViewContent:(id)arg1 didTapPinnedOccurrence:(id)arg2;
 - (void)dayViewContent:(id)arg1 didTapInEmptySpaceOnDay:(double)arg2;
 - (void)dayViewContent:(id)arg1 didSelectEvent:(id)arg2;
@@ -119,14 +124,15 @@
 - (void)occurrencePressed:(id)arg1 onDay:(double)arg2;
 - (void)allDayViewDidLayoutSubviews:(id)arg1;
 - (void)allDayView:(id)arg1 didSelectEvent:(id)arg2;
-- (void)reloadDataWithCompletion:(CDUnknownBlockType)arg1;
+- (void)resetOccurrenceViewColors;
+- (void)loadData:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)reloadDataSynchronously;
 - (void)reloadData;
 - (void)relayoutExistingTimedOccurrences;
 - (void)setScrollerYInset:(double)arg1 keepingYPointVisible:(double)arg2;
 - (void)scrollEventsIntoViewAnimated:(_Bool)arg1;
 - (void)_disposeAllDayView;
-- (void)_createAllDayView;
+- (void)_createAllDayViewWithSizeClass:(long long)arg1;
 - (void)_updateContentForSizeCategoryChange:(id)arg1;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -171,7 +177,7 @@
 @property(readonly, nonatomic) EKDayTimeView *timeView;
 @property(readonly, nonatomic) EKDayViewContent *dayContent;
 @property(readonly, nonatomic) EKDayAllDayView *allDayView;
-@property(nonatomic) int occurrenceBackgroundStyle;
+@property(nonatomic) long long occurrenceBackgroundStyle;
 @property(retain, nonatomic) UIColor *occurrenceTextBackgroundColor;
 @property(retain, nonatomic) UIColor *occurrenceLocationColor;
 @property(retain, nonatomic) UIColor *occurrenceTimeColor;
@@ -186,6 +192,7 @@
 @property(nonatomic) _Bool showsLeftBorder;
 @property(nonatomic) _Bool eventsFillGrid;
 @property(nonatomic) _Bool showsTimeLine;
+- (struct CGRect)currentTimeRectInView:(id)arg1 requireThumb:(_Bool)arg2;
 - (struct CGRect)currentTimeRectInView:(id)arg1;
 - (_Bool)_isTimeMarkerFullyUnobstructed;
 @property(nonatomic) _Bool showsTimeMarker;
@@ -197,6 +204,7 @@
 - (void)_invalidateMarkerTimer;
 - (void)_startMarkerTimer;
 - (void)_adjustForDateOrCalendarChange;
+- (long long)_sizeClass;
 - (void)stopScrolling;
 - (void)adjustFrameToSpanToMidnightFromStartDate:(id)arg1;
 - (void)dealloc;
@@ -204,10 +212,11 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setOpaque:(_Bool)arg1;
 - (void)removeFromSuperview;
+- (void)willMoveToWindow:(id)arg1;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)_localeChanged;
 @property(readonly, copy) NSString *description;
-- (id)initWithFrame:(struct CGRect)arg1 orientation:(long long)arg2 displayDate:(id)arg3 backgroundColor:(id)arg4 opaque:(_Bool)arg5 scrollbarShowsInside:(_Bool)arg6;
+- (id)initWithFrame:(struct CGRect)arg1 sizeClass:(long long)arg2 orientation:(long long)arg3 displayDate:(id)arg4 backgroundColor:(id)arg5 opaque:(_Bool)arg6 scrollbarShowsInside:(_Bool)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 
 + (id)stringForTileFlipMode:(int)arg1;
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)usesPlaceholderColor;
@@ -49,7 +50,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isAnythingOverridden;
 - (void)setParent:(id)arg1;
 - (id)initWithDefaults;
-- (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

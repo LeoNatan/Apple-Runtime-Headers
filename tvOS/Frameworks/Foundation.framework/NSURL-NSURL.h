@@ -6,7 +6,12 @@
 
 #import <Foundation/NSURL.h>
 
-@interface NSURL (NSURL)
+#import <Foundation/NSItemProviderReading-Protocol.h>
+#import <Foundation/NSItemProviderWriting-Protocol.h>
+
+@class NSArray, NSString;
+
+@interface NSURL (NSURL) <NSItemProviderReading, NSItemProviderWriting>
 + (id)URLByResolvingAliasFileAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 + (id)URLByResolvingBookmarkData:(id)arg1 options:(unsigned long long)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(_Bool *)arg4 error:(id *)arg5;
 + (id)fileURLWithFileSystemRepresentation:(const char *)arg1 isDirectory:(_Bool)arg2 relativeToURL:(id)arg3;
@@ -19,6 +24,16 @@
 + (id)URLWithString:(id)arg1 relativeToURL:(id)arg2;
 + (id)URLWithString:(id)arg1;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (id)fileURLWithPathComponents:(id)arg1;
++ (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
++ (id)_fileURLWithPath:(id)arg1 cachingResourceValuesForKeys:(id)arg2 error:(id *)arg3;
++ (id)_web_URLWithComponents:(CDStruct_4f05a0fa)arg1;
++ (id)_web_URLWithString:(id)arg1 relativeToURL:(id)arg2;
++ (id)_URLWithData:(id)arg1 relativeToURL:(id)arg2;
++ (id)_URLWithDataAsString:(id)arg1 relativeToURL:(id)arg2;
++ (id)writableTypeIdentifiersForItemProvider;
++ (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
++ (id)readableTypeIdentifiersForItemProvider;
 - (_Bool)hasDirectoryPath;
 - (_Bool)isFileURL;
 - (id)fragment;
@@ -34,10 +49,10 @@
 - (id)absoluteURL;
 - (id)absoluteString;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initByResolvingAliasFileAtURL:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (id)initByResolvingBookmarkData:(id)arg1 options:(unsigned long long)arg2 relativeToURL:(id)arg3 bookmarkDataIsStale:(_Bool *)arg4 error:(id *)arg5;
@@ -72,5 +87,40 @@
 - (unsigned long long)retainCount;
 - (oneway void)release;
 - (id)retain;
+@property(readonly, copy) NSURL *URLByResolvingSymlinksInPath;
+@property(readonly, copy) NSURL *URLByStandardizingPath;
+@property(readonly, copy) NSURL *URLByDeletingPathExtension;
+- (id)URLByAppendingPathExtension:(id)arg1;
+@property(readonly, copy) NSURL *URLByDeletingLastPathComponent;
+- (id)URLByAppendingPathComponent:(id)arg1;
+- (id)URLByAppendingPathComponent:(id)arg1 isDirectory:(_Bool)arg2;
+@property(readonly, copy) NSString *pathExtension;
+@property(readonly, copy) NSString *lastPathComponent;
+@property(readonly, copy) NSArray *pathComponents;
+- (id)_initFileURLWithPath:(id)arg1 cachingResourceValuesForKeys:(id)arg2 error:(id *)arg3;
+- (_Bool)_web_isJavaScriptURL;
+- (id)_web_suggestedFilenameWithMIMEType:(id)arg1;
+- (id)_web_scriptIfJavaScriptURL;
+- (CDStruct_4f05a0fa)_web_URLComponents;
+- (id)_hostString;
+- (id)_URLByEscapingSpacesAndControlChars;
+- (id)_web_URLByRemovingUserAndQueryAndFragment_nowarn;
+- (id)_web_URLByRemovingUserAndPath_nowarn;
+- (id)_web_URLByRemovingLastPathComponent_nowarn;
+- (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
+@property(readonly, copy, nonatomic) NSArray *writableTypeIdentifiersForItemProvider;
+- (id)_URLArchive;
+- (id)promisedItemResourceValuesForKeys:(id)arg1 error:(id *)arg2;
+- (_Bool)getPromisedItemResourceValue:(out id *)arg1 forKey:(id)arg2 error:(out id *)arg3;
+- (id)_valueFromFaultDictionary:(id)arg1 forKey:(id)arg2;
+- (_Bool)checkPromisedItemIsReachableAndReturnError:(id *)arg1;
+- (id)_fixedUpSideFaultError:(id)arg1;
+- (void)_performWithPhysicalURL:(CDUnknownBlockType)arg1;
+- (void)_promiseExtensionRelease:(long long)arg1;
+- (long long)_promiseExtensionConsume;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 @end
 

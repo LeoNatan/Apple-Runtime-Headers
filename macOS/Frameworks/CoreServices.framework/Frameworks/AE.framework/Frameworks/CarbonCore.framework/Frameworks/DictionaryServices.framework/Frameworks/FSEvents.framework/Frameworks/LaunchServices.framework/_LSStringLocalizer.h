@@ -6,42 +6,46 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSMutableDictionary, NSString, NSURL;
+@class NSArray, NSMutableDictionary, NSString, _LSLazyPropertyList;
 
 @interface _LSStringLocalizer : NSObject
 {
-    NSURL *_url;
-    BOOL _isMainBundle;
-    struct __CFBundle *_permanentBundle;
+    struct __CFBundle *_bundle;
     NSString *_stringsFile;
     NSMutableDictionary *_stringsFileContent;
-    NSMutableDictionary *_unlocalizedInfoPlistStrings;
+    _LSLazyPropertyList *_unlocalizedInfoPlistStrings;
     NSArray *_bundleLocalizations;
+    NSArray *_bundleLocalizationsWithDefaultPrefLocs;
 }
 
++ (void)gatherLocalizedStringsForCFBundle:(struct __CFBundle *)arg1 infoDictionary:(id)arg2 nameOnly:(BOOL)arg3;
++ (id)missingLocalizationPlaceholder;
 + (id)coreTypesLocalizer;
 + (id)frameworkBundleLocalizer;
 + (id)systemFolderLocalizer;
 + (void)setPreferredLocalizationsForXCTests:(id)arg1;
 + (id)preferredLocalizationsForXCTests;
-+ (id)localizedSystemFolderNameForNode:(id)arg1 preferredLocalizations:(id)arg2;
-+ (id)localizedNameForCanonicalName:(id)arg1 preferredLocalizations:(id)arg2;
-+ (id)queue;
++ (id)localizedSystemFolderNameForNode:(id)arg1 preferredLocalizations:(id)arg2 context:(struct LSContext *)arg3;
++ (id)localizedStringForCanonicalString:(id)arg1 preferredLocalizations:(id)arg2 context:(struct LSContext *)arg3;
++ (void)findKeysToLocalizeInInfoDictionary:(id)arg1 forArrayKey:(struct __CFString *)arg2 stringKey:(struct __CFString *)arg3 localizedKeys:(id)arg4;
++ (BOOL)isChinaSKU;
++ (id)IOQueue;
 - (void).cxx_destruct;
 - (id)debugDescription;
+- (void)enumerateLocalizedStringsForKeys:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)enumerateLocalizedStringsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)localizedStringDictionaryWithString:(id)arg1 defaultValue:(id)arg2;
 - (id)localizedStringsWithStrings:(id)arg1 preferredLocalizations:(id)arg2;
 - (id)localizedStringWithString:(id)arg1 preferredLocalizations:(id)arg2;
 - (void)dealloc;
+- (id)initWithCFBundle:(struct __CFBundle *)arg1 stringsFile:(id)arg2;
 - (id)initWithBundleURL:(id)arg1 stringsFile:(id)arg2;
 - (id)init;
--     // Error parsing type: @28@0:8^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[15{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}}16I24, name: initWithDatabase:pluginUnit:
--     // Error parsing type: @32@0:8^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[15{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}}16I24I28, name: initWithDatabase:bundleUnit:delegate:
-- (id)localizedStringWithString:(id)arg1 inBundle:(struct __CFBundle *)arg2 localeCode:(id)arg3 keep:(BOOL)arg4;
-- (id)localizedStringWithString:(id)arg1 inBundle:(struct __CFBundle *)arg2 preferredLocalizations:(id)arg3 keep:(BOOL)arg4;
-- (id)stringsFileContentInBundle:(struct __CFBundle *)arg1 withLocaleCode:(id)arg2 keep:(BOOL)arg3;
-- (struct __CFBundle *)bundle;
-- (id)_initWithBundleURL:(id)arg1 stringsFile:(id)arg2 keepBundle:(BOOL)arg3;
+- (id)initWithDatabase:(id)arg1 pluginUnit:(unsigned int)arg2;
+- (id)initWithDatabase:(id)arg1 bundleUnit:(unsigned int)arg2 delegate:(unsigned int)arg3;
+- (id)localizedStringWithString:(id)arg1 inBundle:(struct __CFBundle *)arg2 localeCode:(id)arg3;
+- (id)localizedStringWithString:(id)arg1 inBundle:(struct __CFBundle *)arg2 preferredLocalizations:(id)arg3;
+- (id)stringsFileContentInBundle:(struct __CFBundle *)arg1 withLocaleCode:(id)arg2;
 
 @end
 

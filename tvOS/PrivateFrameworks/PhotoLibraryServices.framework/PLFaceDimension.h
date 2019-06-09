@@ -17,6 +17,8 @@
     double _size;
 }
 
+- (double)photosFaceRepresentationQuality;
+- (double)photosFaceRepresentationRoll;
 - (id)photosFaceRepresentationLocalIdentifier;
 - (long long)photosFaceRepresentationClusterSequenceNumber;
 - (long long)photosFaceRepresentationQualityMeasure;

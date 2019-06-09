@@ -13,6 +13,7 @@
     NSDictionary *_relatedProperties;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)sortDescriptorWithRelatedProperties:(id)arg1 ascending:(_Bool)arg2;
 @property(copy, nonatomic) NSDictionary *relatedProperties; // @synthesize relatedProperties=_relatedProperties;
 - (void).cxx_destruct;

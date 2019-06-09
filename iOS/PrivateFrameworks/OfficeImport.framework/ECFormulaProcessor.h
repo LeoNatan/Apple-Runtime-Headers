@@ -12,8 +12,8 @@ __attribute__((visibility("hidden")))
     struct XlFormulaProcessor *mXlFormulaProcessorLasso;
     struct XlFormulaProcessor *mXlFormulaProcessorXl;
     struct XlNameTable *mXlNameTable;
-    ChVector_be6372b9 *mLassoSheetNames;
-    ChVector_be6372b9 *mXlSheetNames;
+    ChVector_cc6fdd32 *mLassoSheetNames;
+    ChVector_cc6fdd32 *mXlSheetNames;
     struct XlLinkTable *mXlLinkTable;
 }
 
@@ -23,8 +23,8 @@ __attribute__((visibility("hidden")))
 - (void)setupWithWorkbook:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (ChVector_be6372b9 *)sheetNamesFromWorkbook:(id)arg1;
-- (struct XlFormulaProcessor *)setupWithWorkbook:(id)arg1 xlNameTable:(struct XlNameTable *)arg2 sheetNames:(ChVector_be6372b9 *)arg3 xlLinkTable:(struct XlLinkTable *)arg4 lassoSyntax:(_Bool)arg5;
+- (ChVector_cc6fdd32 *)sheetNamesFromWorkbook:(id)arg1;
+- (struct XlFormulaProcessor *)setupWithWorkbook:(id)arg1 xlNameTable:(struct XlNameTable *)arg2 sheetNames:(ChVector_cc6fdd32 *)arg3 xlLinkTable:(struct XlLinkTable *)arg4 lassoSyntax:(_Bool)arg5;
 
 @end
 

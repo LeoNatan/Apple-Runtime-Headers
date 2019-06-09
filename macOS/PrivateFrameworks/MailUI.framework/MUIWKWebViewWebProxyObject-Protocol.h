@@ -6,10 +6,9 @@
 
 #import <MailUI/NSObject-Protocol.h>
 
-@class NSString, NSURL, NSValue;
+@class NSValue;
 
 @protocol MUIWKWebViewWebProxyObject <NSObject>
-- (void)addAttachmentForURL:(NSURL *)arg1 atPoint:(NSValue *)arg2 contentId:(NSString *)arg3 type:(NSString *)arg4 filename:(NSString *)arg5 tag:(NSString *)arg6;
 - (void)cacheDisplayInRect:(NSValue *)arg1 completionHandler:(void (^)(NSImage *))arg2;
 - (void)generateSelectionHTML:(void (^)(NSString *))arg1;
 - (void)generateStyleInlinedHTML:(void (^)(NSString *))arg1;

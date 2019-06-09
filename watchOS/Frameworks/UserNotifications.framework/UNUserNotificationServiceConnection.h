@@ -34,6 +34,11 @@
 - (id)_queue_ensureConnection;
 - (void)_invalidate;
 - (void)didReceiveDeviceToken:(id)arg1 forBundleIdentifier:(id)arg2;
+- (id)notificationSettingsForTopicsWithBundleIdentifier:(id)arg1;
+- (void)getNotificationSettingsForTopicsWithBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)notificationTopicsForBundleIdentifier:(id)arg1;
+- (void)getNotificationTopicsForBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)setNotificationTopics:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setBadgeString:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setBadgeNumber:(id)arg1 forBundleIdentifier:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)getBadgeNumberForBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -46,6 +51,7 @@
 - (void)removeAllDeliveredNotificationsForBundleIdentifier:(id)arg1;
 - (void)removeDeliveredNotificationsWithIdentifiers:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)getDeliveredNotificationsForBundleIdentifier:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)deliveredNotificationsForBundleIdentifier:(id)arg1;
 - (void)removeAllPendingNotificationRequestsForBundleIdentifier:(id)arg1;
 - (void)removeSimilarNotificationRequests:(id)arg1 forBundleIdentifier:(id)arg2;
 - (void)removePendingNotificationRequestsWithIdentifiers:(id)arg1 forBundleIdentifier:(id)arg2;

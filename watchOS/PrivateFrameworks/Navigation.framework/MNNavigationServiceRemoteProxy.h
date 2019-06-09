@@ -7,36 +7,39 @@
 #import <objc/NSObject.h>
 
 #import <Navigation/MNNavigationServiceProxy-Protocol.h>
-#import <Navigation/MNNavigationServiceReconnectorDelegate-Protocol.h>
 
-@class MNNavigationServiceReconnector, MNSettings, NSDate, NSHashTable, NSMutableArray, NSString, NSXPCConnection;
-@protocol MNNavigationServiceRemoteProxyDelegate;
+@class MNSettings, NSHashTable, NSMutableArray, NSString, NSXPCConnection;
+@protocol MNNavigationServiceClientInterface;
 
 __attribute__((visibility("hidden")))
-@interface MNNavigationServiceRemoteProxy : NSObject <MNNavigationServiceReconnectorDelegate, MNNavigationServiceProxy>
+@interface MNNavigationServiceRemoteProxy : NSObject <MNNavigationServiceProxy>
 {
     _Bool _applicationActive;
     NSXPCConnection *_connection;
-    MNNavigationServiceReconnector *_reconnector;
-    NSDate *_lastReconnectionDate;
-    NSMutableArray *_recentConnectionInterruptions;
     MNSettings *_settings;
     NSHashTable *_clients;
-    id <MNNavigationServiceRemoteProxyDelegate> _delegate;
+    NSMutableArray *_interruptionDates;
+    _Bool _isReconnecting;
+    id <MNNavigationServiceClientInterface> _delegate;
 }
 
-@property(nonatomic) __weak id <MNNavigationServiceRemoteProxyDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <MNNavigationServiceClientInterface> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)navigationServiceReconnector:(id)arg1 didReconnectWithDetails:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateNavigationDetails:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didChangeFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
 - (void)navigationServiceProxy:(id)arg1 willChangeFromState:(unsigned int)arg2 toState:(unsigned int)arg3;
+- (void)resumeRealtimeUpdatesForSubscriber:(id)arg1;
+- (void)pauseRealtimeUpdatesForSubscriber:(id)arg1;
+- (void)checkinForNavigationService;
+- (void)updateGuidanceWithData:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
+- (void)recordPedestrianTracePath:(id)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)setTracePosition:(double)arg1;
 - (void)setTracePlaybackSpeed:(double)arg1;
 - (void)setTraceIsPlaying:(_Bool)arg1;
 - (void)acceptReroute:(_Bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
+- (void)setJunctionViewImageWidth:(double)arg1 height:(double)arg2;
 - (void)setRideIndex:(unsigned int)arg1 forLegIndex:(unsigned int)arg2;
 - (void)setDisplayedStepIndex:(unsigned int)arg1;
 - (void)setIsConnectedToCarplay:(_Bool)arg1;
@@ -50,31 +53,32 @@ __attribute__((visibility("hidden")))
 - (void)repeatCurrentGuidanceWithReply:(CDUnknownBlockType)arg1;
 - (void)changeSettings:(id)arg1;
 - (void)setFullGuidanceMode:(_Bool)arg1;
-- (void)switchToRouteWithDetails:(id)arg1;
+- (void)switchToRoute:(id)arg1;
 - (void)resumeOriginalDestination;
 - (void)updateDestination:(id)arg1;
 - (void)stopPredictingDestinations;
 - (void)startPredictingDestinationsWithHandler:(CDUnknownBlockType)arg1;
 - (void)stopNavigation;
-- (void)startNavigationForRouteDetails:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)prepareNavigationWithRouteDetails:(id)arg1;
+- (void)startNavigationWithDetails:(id)arg1 activeBlock:(CDUnknownBlockType)arg2;
+- (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned int)arg2;
+- (void)cancelDirectionsRequestWithIdentifier:(id)arg1;
+- (void)requestDirections:(id)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_emptyMethod;
 - (id)_methodSignatureForEmptyMethod;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)forwardInvocation:(id)arg1;
-- (void)_cleanupReconnector;
-- (void)_initializeReconnectorWithDetails:(id)arg1 shouldPrepare:(_Bool)arg2;
 - (id)_remoteObjectProxy;
 - (void)_closeConnection;
-- (void)_abandonConnection;
-- (void)_reconnectIfAllowed;
+- (_Bool)_shouldReconnectWithInterruptionOnDate:(id)arg1;
+- (void)_handleInterruption;
 - (void)_openConnection;
 - (void)_updateConnection;
+@property(readonly, nonatomic) unsigned int clientCount;
+@property(readonly, nonatomic) unsigned int interruptionCount;
 - (_Bool)isOpenForClient:(id)arg1;
 - (void)closeForClient:(id)arg1;
 - (void)openForClient:(id)arg1;
 - (void)dealloc;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -10,6 +10,7 @@
 
 @class NSArray, SKUIStorePageSectionContext, UIColor;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStorePageSplit : NSObject <NSCopying>
 {
     UIColor *_dividerColor;

@@ -8,7 +8,7 @@
 
 @interface HKSeriesSample : HKSample
 {
-    long long _count;
+    // Error parsing type: AI, name: _count
     _Bool _frozen;
 }
 
@@ -19,7 +19,7 @@
 - (id)_valueDescription;
 - (_Bool)_shouldNotifyOnInsert;
 - (id)_validateSample;
-- (id)_validateConfiguration;
+- (id)_validateConfigurationWithOptions:(unsigned int)arg1;
 @property(readonly) unsigned int count;
 - (void)_setCount:(unsigned int)arg1;
 

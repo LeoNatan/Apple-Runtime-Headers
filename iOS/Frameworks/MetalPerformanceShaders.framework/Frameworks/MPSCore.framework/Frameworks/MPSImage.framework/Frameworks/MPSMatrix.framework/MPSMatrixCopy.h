@@ -23,6 +23,7 @@
 - (id)debugDescription;
 - (id)initWithCoder:(id)arg1 device:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
+- (void)encodeToCommandBuffer:(id)arg1 encoder:(id)arg2 copyDescriptor:(id)arg3 rowPermuteIndices:(id)arg4 rowPermuteOffset:(unsigned long long)arg5 columnPermuteIndices:(id)arg6 columnPermuteOffset:(unsigned long long)arg7;
 - (void)encodeToCommandBuffer:(id)arg1 copyDescriptor:(id)arg2 rowPermuteIndices:(id)arg3 rowPermuteOffset:(unsigned long long)arg4 columnPermuteIndices:(id)arg5 columnPermuteOffset:(unsigned long long)arg6;
 - (void)encodeToCommandBuffer:(id)arg1 copyDescriptor:(id)arg2;
 - (id)initWithDevice:(id)arg1 copyRows:(unsigned long long)arg2 copyColumns:(unsigned long long)arg3 sourcesAreTransposed:(_Bool)arg4 destinationsAreTransposed:(_Bool)arg5;

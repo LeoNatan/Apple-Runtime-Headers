@@ -135,7 +135,6 @@
 - (void)mapQueueShutDownStateMachineInMap:(id)arg1 personIDs:(id)arg2 index:(unsigned long long)arg3 forDestruction:(BOOL)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (void)shutDown;
 - (void)start;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -6,25 +6,19 @@
 
 #import <CoreParsec/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, _CPFeedbackPayload, _CPImagesUsagePropensity, _CPNewsUsagePropensity, _CPSafariUsagePropensity, _CPSpotlightUsagePropensity, _CPUsageSinceLookback;
+@class NSArray, NSData, NSDictionary, NSString, _CPFeedbackPayload, _CPUsageEnvelope, _CPUsageSinceLookback;
 
 @protocol _CPClientSession <NSObject>
-@property(readonly, nonatomic) unsigned long long whichPropensity;
 @property(readonly, nonatomic) NSData *jsonData;
 @property(copy, nonatomic) NSArray *feedbacks;
 @property(copy, nonatomic) NSData *jsonFeedback;
-@property(retain, nonatomic) _CPImagesUsagePropensity *imagesPropensity;
-@property(retain, nonatomic) _CPNewsUsagePropensity *newsPropensity;
-@property(retain, nonatomic) _CPSpotlightUsagePropensity *spotlightPropensity;
-@property(retain, nonatomic) _CPSafariUsagePropensity *safariPropensity;
+@property(retain, nonatomic) _CPUsageEnvelope *cohortsFeedback;
 @property(retain, nonatomic) _CPUsageSinceLookback *usageSinceLookback;
 @property(copy, nonatomic) NSString *locale;
 @property(copy, nonatomic) NSString *countryCode;
 @property(nonatomic) _Bool duEnabled;
 @property(copy, nonatomic) NSString *parsecDeveloperID;
 @property(nonatomic) _Bool removeTimestamps;
-@property(nonatomic) double firstUseDate;
-@property(nonatomic) _Bool firstUseOfTheDay;
 @property(nonatomic) int previousSessionEndReason;
 @property(nonatomic) double sessionStart;
 @property(copy, nonatomic) NSDictionary *resourceVersions;

@@ -8,7 +8,6 @@
 
 @class GEOPDPlaceRequest, GEOPDPlaceResponse;
 
-__attribute__((visibility("hidden")))
 @interface GEOAbstractRequestResponseTicket : GEOAbstractTicket
 {
     GEOPDPlaceRequest *_request;
@@ -16,10 +15,12 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (CDStruct_d1a7ebee)dataRequestKind;
 - (void)cancel;
 - (void)performSubmitWithHandler:(CDUnknownBlockType)arg1 auditToken:(id)arg2 timeout:(double)arg3 networkActivity:(CDUnknownBlockType)arg4;
 - (void)performSubmitWithHandler:(CDUnknownBlockType)arg1 timeout:(double)arg2 networkActivity:(CDUnknownBlockType)arg3;
 - (id)initWithRequest:(id)arg1 traits:(id)arg2;
+- (id)initWithTraits:(id)arg1;
 
 @end
 

@@ -20,7 +20,7 @@
     unsigned int _routeStartIndex;
     unsigned int _routeEndIndex;
     unsigned int _unsnappedPointCount;
-    CDStruct_6e3f967a *_unsnappedPoints;
+    CDStruct_869f9c67 *_unsnappedPoints;
 }
 
 @property(readonly) unsigned int routeEndIndex; // @synthesize routeEndIndex=_routeEndIndex;

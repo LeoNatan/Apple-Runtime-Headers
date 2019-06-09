@@ -25,10 +25,6 @@
 
 + (void)unregisterForCompletionNotifications;
 + (void)registerForCompletionNotificationsOnQueue:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
-+ (void)resumeNotifications;
-+ (void)processCompletionMessageFromServer:(id)arg1;
-+ (BOOL)messageIsCompletionMessage:(id)arg1;
-+ (void)sendCompletionNotificationForPerfLoggingOperation:(id)arg1 withReportData:(id)arg2 onConnection:(id)arg3;
 @property(readonly) NSDictionary *intervalTypeToIntervalDataDict; // @synthesize intervalTypeToIntervalDataDict=_intervalTypeToIntervalDataDict;
 @property(readonly) NSData *detailedReportData; // @synthesize detailedReportData=_detailedReportData;
 @property(readonly) unsigned long long endTimeInMachAbsTime; // @synthesize endTimeInMachAbsTime=_endTimeInMachAbsTime;
@@ -45,7 +41,6 @@
 @property(readonly) double durationInMs;
 @property(readonly) double endTimeInMs;
 @property(readonly) double startTimeInMs;
-- (id)initWithXPCDictionary:(id)arg1;
 
 @end
 

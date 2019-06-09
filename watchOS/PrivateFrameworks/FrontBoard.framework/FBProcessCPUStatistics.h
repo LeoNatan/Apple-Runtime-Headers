@@ -12,18 +12,20 @@
 {
     BSMachPortTaskNameRight *_taskNameRight;
     struct FBProcessTimes _times;
+    struct os_unfair_lock_s _lock;
 }
 
 - (void).cxx_destruct;
 - (double)_elapsedCPUTime;
-- (void)_hostwideUserElapsedCPUTime:(double *)arg1 systemElapsedCPUTime:(double *)arg2 idleElapsedCPUTime:(double *)arg3;
-- (void)_getApplicationCPUTimesForUser:(double *)arg1 system:(double *)arg2 idle:(double *)arg3;
+- (void)_hostwideUserElapsedCPUTime:(out double *)arg1 systemElapsedCPUTime:(out double *)arg2 idleElapsedCPUTime:(out double *)arg3;
+- (void)_lock_getApplicationCPUTimesForUser:(out double *)arg1 system:(out double *)arg2 idle:(out double *)arg3;
 - (id)descriptionForCrashReport;
 - (void)update;
 @property(readonly, nonatomic) double totalElapsedIdleTime;
 @property(readonly, nonatomic) double totalElapsedSystemTime;
 @property(readonly, nonatomic) double totalElapsedUserTime;
 @property(readonly, nonatomic) double totalElapsedTime;
+- (void)dealloc;
 - (id)initWithTaskNameRight:(id)arg1;
 
 @end

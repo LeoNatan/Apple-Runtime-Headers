@@ -14,7 +14,7 @@
 #import <NanoHealthDaemon/NLCoachingSubmanagerDelegate-Protocol.h>
 #import <NanoHealthDaemon/NLWristStateObserver-Protocol.h>
 
-@class CMPedometer, FITypicalDayActivityModel, HDBackgroundTaskScheduler, HDCurrentActivitySummaryHelper, HDProfile, HKActivitySummary, NLBridgeSettings, NLCoachingAlertNotifier, NLCoachingPreferences, NLDataLogger, NLGizmoWristEventsManager, NSCalendar, NSDate, NSDictionary, NSMutableSet, NSNumber, NSString;
+@class CMPedometer, FITypicalDayActivityModel, HDBackgroundTaskScheduler, HDCurrentActivitySummaryHelper, HDDataCollectionAssertion, HDProfile, HKActivitySummary, NLBridgeSettings, NLCoachingAlertNotifier, NLCoachingPreferences, NLDataLogger, NLGizmoWristEventsManager, NSCalendar, NSDate, NSDictionary, NSMutableSet, NSNumber, NSString;
 @protocol OS_dispatch_queue;
 
 @interface NLCoachingManager : NSObject <NLWristStateObserver, HDHealthDaemonReadyObserver, HDDatabaseProtectedDataObserver, HDCurrentActivitySummaryHelperObserver, HDNanoAlertSuppressionObserver, FITypicalDayActivityModelDelegate, NLCoachingSubmanagerDelegate>
@@ -27,6 +27,7 @@
     NLBridgeSettings *_bridgeSettings;
     NLDataLogger *_dataLogger;
     NLCoachingPreferences *_coachingPreferences;
+    HDDataCollectionAssertion *_dataCollectionAssertion;
     CMPedometer *_pedometer;
     NSMutableSet *_pollingReasons;
     NSObject<OS_dispatch_queue> *_pollingQueue;

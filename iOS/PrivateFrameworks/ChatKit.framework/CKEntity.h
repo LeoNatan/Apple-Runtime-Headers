@@ -43,6 +43,7 @@
 - (void)contactStoreDidChange:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *abbreviatedDisplayName;
 @property(readonly, nonatomic) _Bool isMe;
+- (id)cnContactWithKeys:(id)arg1;
 @property(readonly, nonatomic) void *abRecord;
 @property(readonly, nonatomic) IMHandle *defaultIMHandle;
 - (unsigned long long)hash;

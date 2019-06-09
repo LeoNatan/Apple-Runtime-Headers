@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSString;
+@class NSArray, NSData, NSDictionary, NSString;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface MNTrace : NSObject
@@ -37,15 +37,15 @@
     NSArray *_commuteDestinations;
     NSArray *_commuteDirectionsRequests;
     _Bool _copyToCrashReporter;
+    int _mainTransportType;
     NSString *_tracePath;
-    NSArray *_significantEvents;
+    NSDictionary *_miscInfo;
 }
 
-+ (id)routeSetsFromTraceAtPath:(id)arg1;
 @property(retain, nonatomic) NSArray *bookmarkImages; // @synthesize bookmarkImages=_bookmarkImages;
+@property(retain, nonatomic) NSDictionary *miscInfo; // @synthesize miscInfo=_miscInfo;
 @property(retain, nonatomic) NSArray *commuteDirectionsRequests; // @synthesize commuteDirectionsRequests=_commuteDirectionsRequests;
 @property(retain, nonatomic) NSArray *commuteDestinations; // @synthesize commuteDestinations=_commuteDestinations;
-@property(retain, nonatomic) NSArray *significantEvents; // @synthesize significantEvents=_significantEvents;
 @property(retain, nonatomic) NSArray *annotatedUserEnvironments; // @synthesize annotatedUserEnvironments=_annotatedUserEnvironments;
 @property(retain, nonatomic) NSArray *annotatedUserBehavior; // @synthesize annotatedUserBehavior=_annotatedUserBehavior;
 @property(retain, nonatomic) NSArray *routeSelections; // @synthesize routeSelections=_routeSelections;
@@ -73,14 +73,14 @@
 - (void).cxx_destruct;
 - (void)copyTraceToCrashReporter;
 - (id)_handleOpenErrorWithPath:(id)arg1;
+@property(readonly, nonatomic) int mainTransportType; // @synthesize mainTransportType=_mainTransportType;
 - (_Bool)closeTrace;
 - (_Bool)startWritingTraceToFile:(id)arg1;
+- (_Bool)startWritingTraceToPath:(id)arg1;
 - (_Bool)createTempTraceForRecording;
 - (_Bool)openTrace:(id)arg1 outError:(id *)arg2;
 - (void)dealloc;
 - (id)init;
-- (id)_routeSetFromDirectionsRow:(id)arg1;
-- (id)routeSetsFromResponse;
 - (id)serializableBookmarks;
 
 @end

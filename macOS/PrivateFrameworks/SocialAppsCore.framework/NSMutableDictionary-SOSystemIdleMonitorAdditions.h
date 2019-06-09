@@ -9,5 +9,7 @@
 @interface NSMutableDictionary (SOSystemIdleMonitorAdditions)
 - (id)timeoutIntervalsForListener:(id)arg1;
 - (BOOL)listenerRegistered:(id)arg1 forTimeInterval:(id)arg2;
+- (void)removeTimer:(id)arg1 fromGroup:(id)arg2;
+- (void)addTimer:(id)arg1 toGroup:(id)arg2;
 @end
 

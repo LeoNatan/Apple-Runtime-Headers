@@ -15,7 +15,7 @@
     NSString *_underlyingArchiveFileName;
 }
 
-+ (void)_createStreamingPlaceholderAtPath:(id)arg1 md5Hashes:(id)arg2 hashedChunkSize:(unsigned long long)arg3 resumptionOffset:(unsigned long long *)arg4 error:(id *)arg5;
++ (BOOL)_createStreamingPlaceholderAtPath:(id)arg1 md5Hashes:(id)arg2 hashedChunkSize:(unsigned long long)arg3 resumptionOffset:(unsigned long long *)arg4 error:(id *)arg5;
 + (BOOL)_streamingPlaceholderExistsAtPath:(id)arg1 md5Hashes:(id)arg2 hashedChunkSize:(unsigned long long)arg3;
 + (void)_writeSteamingPlaceholderState:(id)arg1 atPath:(id)arg2;
 + (id)_streamingPlaceholderStateAtPath:(id)arg1;

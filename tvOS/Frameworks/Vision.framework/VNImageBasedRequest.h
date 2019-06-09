@@ -20,18 +20,17 @@
 - (_Bool)getOptionalValidatedInputFaceObservations:(id *)arg1 clippedToRegionOfInterest:(_Bool)arg2 error:(id *)arg3;
 - (id)_faceObservationsForRegionOfInterestContainingFaceObservations:(id)arg1;
 @property(copy, nonatomic) NSArray *inputFaceObservations;
+@property(readonly, copy) NSString *description;
 - (void)applyConfigurationOfRequest:(id)arg1;
 - (struct CGRect)regionOfInterestPixelRectForWidth:(unsigned long long)arg1 height:(unsigned long long)arg2;
 - (struct CGRect)regionOfInterestNonIntegralPixelRectForWidth:(unsigned long long)arg1 height:(unsigned long long)arg2;
 - (_Bool)isFullCoverageRegionOfInterest;
 - (_Bool)validateConfigurationAndReturnError:(id *)arg1;
 @property(nonatomic) struct CGRect regionOfInterest;
-- (id)initWithName:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)willAcceptCachedResultsFromRequestWithConfiguration:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

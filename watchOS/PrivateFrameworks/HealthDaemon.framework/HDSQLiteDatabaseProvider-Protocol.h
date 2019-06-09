@@ -10,6 +10,6 @@
 
 @protocol HDSQLiteDatabaseProvider <NSObject>
 - (void)checkInDatabase:(HDSQLiteDatabase *)arg1 type:(int)arg2;
-- (HDSQLiteDatabase *)databaseTransaction:(HDDatabaseTransaction *)arg1 checkOutDatabaseWithType:(int)arg2 options:(unsigned int)arg3 error:(id *)arg4;
+- (HDSQLiteDatabase *)databaseTransaction:(HDDatabaseTransaction *)arg1 checkOutDatabaseWithType:(int)arg2 error:(id *)arg3;
 @end
 

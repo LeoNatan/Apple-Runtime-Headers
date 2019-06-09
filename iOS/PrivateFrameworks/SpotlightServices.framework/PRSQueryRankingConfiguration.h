@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSSet;
+@class NSArray, NSOrderedSet;
 
 @interface PRSQueryRankingConfiguration : NSObject
 {
     _Bool _allowAnonymousDataCollection;
-    NSSet *_requiredAttributes;
+    NSOrderedSet *_requiredAttributes;
     NSArray *_rankingQueries;
     unsigned long long _strongRankingQueryCount;
     unsigned long long _dominantRankingQueryCount;
@@ -34,7 +34,7 @@
 @property unsigned long long dominantRankingQueryCount; // @synthesize dominantRankingQueryCount=_dominantRankingQueryCount;
 @property unsigned long long strongRankingQueryCount; // @synthesize strongRankingQueryCount=_strongRankingQueryCount;
 @property(retain) NSArray *rankingQueries; // @synthesize rankingQueries=_rankingQueries;
-@property(retain) NSSet *requiredAttributes; // @synthesize requiredAttributes=_requiredAttributes;
+@property(retain) NSOrderedSet *requiredAttributes; // @synthesize requiredAttributes=_requiredAttributes;
 - (void).cxx_destruct;
 
 @end

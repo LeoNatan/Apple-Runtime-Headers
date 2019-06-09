@@ -6,13 +6,15 @@
 
 #import <AppKit/NSView.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit23RingButtonContainerView : NSView
 {
     // Error parsing type: , name: ringButton
+    // Error parsing type: , name: visualEffectView
+    // Error parsing type: , name: isEnabled
 }
 
 - (void).cxx_destruct;
+- (void)layout;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

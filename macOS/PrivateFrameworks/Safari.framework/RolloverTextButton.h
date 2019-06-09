@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 
 + (id)font;
 + (void)_updateCellClass;
-- (BOOL)shouldSetFontSmoothingBackgroundColor;
 - (void)sizeToFit;
 - (id)init;
 - (id)initWithFrame:(struct CGRect)arg1;

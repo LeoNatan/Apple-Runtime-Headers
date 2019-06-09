@@ -25,7 +25,6 @@
 - (id)_internal;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)propertyList;
 - (id)initWithAsset:(id)arg1 propertyList:(id)arg2;

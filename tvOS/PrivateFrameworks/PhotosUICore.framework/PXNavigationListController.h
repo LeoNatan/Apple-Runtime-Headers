@@ -6,22 +6,22 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <PhotosUICore/PXNavigationListDataSourceManagerObserver-Protocol.h>
+#import <PhotosUICore/PXNavigationListDataSectionManagerObserver-Protocol.h>
 #import <PhotosUICore/UIGestureRecognizerDelegate-Protocol.h>
 #import <PhotosUICore/UITableViewDataSource-Protocol.h>
 #import <PhotosUICore/UITableViewDelegate-Protocol.h>
 
-@class NSString, NSUserActivity, PXNavigationListDataSource, PXNavigationListDataSourceManager, UITableView;
+@class NSString, NSUserActivity, PXNavigationListDataSection, PXNavigationListDataSectionManager, UITableView;
 @protocol PXNavigationListContainer;
 
-@interface PXNavigationListController : UIViewController <UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate, PXNavigationListDataSourceManagerObserver>
+@interface PXNavigationListController : UIViewController <UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate, PXNavigationListDataSectionManagerObserver>
 {
     _Bool __needsUpdateRowHeight;
     _Bool _isTableViewUpdating;
     UITableView *_tableView;
-    PXNavigationListDataSourceManager *_dataSourceManager;
+    PXNavigationListDataSectionManager *_dataSectionManager;
     id <PXNavigationListContainer> _container;
-    PXNavigationListDataSource *_dataSource;
+    PXNavigationListDataSection *_dataSection;
     NSUserActivity *_siriActionActivity;
     double _rowHeight;
 }
@@ -31,9 +31,9 @@
 @property(nonatomic, setter=_setNeedsUpdateRowHeight:) _Bool _needsUpdateRowHeight; // @synthesize _needsUpdateRowHeight=__needsUpdateRowHeight;
 @property(nonatomic) double rowHeight; // @synthesize rowHeight=_rowHeight;
 @property(retain, nonatomic) NSUserActivity *siriActionActivity; // @synthesize siriActionActivity=_siriActionActivity;
-@property(retain, nonatomic) PXNavigationListDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(retain, nonatomic) PXNavigationListDataSection *dataSection; // @synthesize dataSection=_dataSection;
 @property(nonatomic) __weak id <PXNavigationListContainer> container; // @synthesize container=_container;
-@property(readonly, nonatomic) PXNavigationListDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
+@property(readonly, nonatomic) PXNavigationListDataSectionManager *dataSectionManager; // @synthesize dataSectionManager=_dataSectionManager;
 - (void).cxx_destruct;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
@@ -44,18 +44,17 @@
 - (void)_updateCell:(id)arg1 atIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (long long)numberOfSectionsInTableView:(id)arg1;
 - (void)tableViewContentSizeDidChange;
 - (void)_preferredContentSizeChanged:(id)arg1;
 - (double)_rowHeightForCurrentFont;
 @property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-- (void)_setDataSource:(id)arg1 changeDetails:(id)arg2;
+- (void)_updateTableView;
 @property(nonatomic) _Bool allowsNavigation;
 @property(readonly, nonatomic) double contentHeight;
 - (id)_createTransparentFullWidthViewOfHeight:(double)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithDataSourceManager:(id)arg1;
+- (id)initWithDataSectionManager:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

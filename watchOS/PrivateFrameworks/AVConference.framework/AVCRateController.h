@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVCBasebandCongestionDetector, AVCRateControlFeedbackController, AVCStatisticsCollector, NSString, VCRateControlMediaController;
+@class AVCBasebandCongestionDetector, AVCRateControlFeedbackController, AVCStatisticsCollector, NSString, VCNWConnectionCongestionDetector, VCRateControlMediaController;
 @protocol VCRateControlAlgorithm;
 
 __attribute__((visibility("hidden")))
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     AVCStatisticsCollector *_statisticsCollector;
     AVCRateControlFeedbackController *_feedbackController;
     AVCBasebandCongestionDetector *_basebandCongestionDetector;
+    VCNWConnectionCongestionDetector *_nwConnectionCongestionDetector;
     VCRateControlMediaController *_mediaController;
     id <VCRateControlAlgorithm> _rateControlAlgorithm;
     struct AVCRateControlConfig _configuration;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
     unsigned int _rateChangeCounter;
     unsigned int _roundTripTimeMilliseconds;
     unsigned int _packetLossPercentage;
+    unsigned int _packetLossPercentageVideo;
     unsigned int _totalPacketsReceived;
     unsigned int _totalPacketsSent;
     unsigned int _totalBytesSent;
@@ -37,6 +39,7 @@ __attribute__((visibility("hidden")))
     void *_logDump;
     void *_logFeedbackDump;
     void *_logBasebandDump;
+    void *_logNWDump;
     _Bool _isDumpFileEnabled;
     NSString *_dumpID;
     _Bool _isPeriodicLoggingEnabled;
@@ -44,6 +47,8 @@ __attribute__((visibility("hidden")))
     _Bool _isForSimulation;
     _Bool _isUplink;
     _Bool _paused;
+    _Bool _useExternalThread;
+    _Bool _didConfigured;
     double _lastDefaultsReadTime;
     int _forcedTargetBitrate;
     int _forcedMaxBitrate;
@@ -66,10 +71,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) VCRateControlMediaController *mediaController; // @synthesize mediaController=_mediaController;
 @property(retain, nonatomic) AVCStatisticsCollector *statisticsCollector; // @synthesize statisticsCollector=_statisticsCollector;
 @property(retain, nonatomic) AVCRateControlFeedbackController *feedbackController; // @synthesize feedbackController=_feedbackController;
+@property(retain, nonatomic) VCNWConnectionCongestionDetector *nwConnectionCongestionDetector; // @synthesize nwConnectionCongestionDetector=_nwConnectionCongestionDetector;
 @property(retain, nonatomic) AVCBasebandCongestionDetector *basebandCongestionDetector; // @synthesize basebandCongestionDetector=_basebandCongestionDetector;
-- (void)printBasebandNotificationStatistics:(CDStruct_48a7b5a5)arg1;
-- (void)printFeedbackMessage:(CDStruct_48a7b5a5)arg1;
+- (void)printNWConnectionStatistics:(CDStruct_b3eb8f4a)arg1;
+- (void)printBasebandNotificationStatistics:(CDStruct_b3eb8f4a)arg1;
+- (void)printFeedbackMessage:(CDStruct_b3eb8f4a)arg1;
 - (void)releaseLogDumpFiles;
+- (void)createNWConnectionLogDumpFile;
 - (void)createBasebandLogDumpFile;
 - (void)createLogDumpFiles:(id)arg1;
 - (int)minTierAboveBitrate:(unsigned int)arg1 maxTierIndex:(int)arg2 minTierIndex:(int)arg3;
@@ -77,9 +85,10 @@ __attribute__((visibility("hidden")))
 - (void)loadDefaultSettings;
 - (void)reportTargetBitrateChange:(unsigned int)arg1 rateChangeCounter:(unsigned int)arg2;
 - (void)reportNetworkStatistics;
-- (void)doRateControlWithBasebandStatistics:(CDStruct_48a7b5a5)arg1;
+- (void)doRateControlWithNWConnectionStatistics:(CDStruct_b3eb8f4a)arg1;
+- (void)doRateControlWithBasebandStatistics:(CDStruct_b3eb8f4a)arg1;
 - (void)checkAndReportAbnormalSymptoms;
-- (void)doRateControlWithStatistics:(CDStruct_48a7b5a5)arg1;
+- (void)doRateControlWithStatistics:(CDStruct_b3eb8f4a)arg1;
 - (void)createVCRateControlAlgorithmWithConfiguration:(struct VCRateControlAlgorithmConfig)arg1;
 - (void)configureAlgorithmWithRestart:(_Bool)arg1;
 - (void)setDefaultAlgorithmConfiguration:(struct VCRateControlAlgorithmConfig *)arg1;
@@ -93,6 +102,7 @@ __attribute__((visibility("hidden")))
 - (void)configureWithOperatingMode:(int)arg1 isLocalCellular:(_Bool)arg2 localCellTech:(int)arg3 isRemoteCellular:(_Bool)arg4 remoteCellTech:(int)arg5 bitrateCapKbps:(unsigned int)arg6;
 - (void)deregisterPeriodicTask;
 - (void)getRealTimeStats:(struct __CFDictionary *)arg1;
+- (void)getRealTimeStatsForiPadCompanion:(struct __CFDictionary *)arg1;
 - (void)getRealTimeStatsForServerBasedRxOnly:(struct __CFDictionary *)arg1;
 - (void)getRealTimeStatsForServerBasedTxOnly:(struct __CFDictionary *)arg1;
 - (void)registerPeriodicTask;
@@ -100,7 +110,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) id reportingAgent;
 - (void)configure:(struct AVCRateControlConfig)arg1;
 - (void)dealloc;
-- (id)initWithDelegate:(id)arg1 dumpID:(id)arg2 forSimulation:(_Bool)arg3 isUplink:(_Bool)arg4 reportingAgent:(id)arg5;
+- (id)initWithDelegate:(id)arg1 dumpID:(id)arg2 forSimulation:(_Bool)arg3 isUplink:(_Bool)arg4 reportingAgent:(id)arg5 useExternalThread:(_Bool)arg6;
 - (id)initWithDelegate:(id)arg1 dumpID:(id)arg2 isUplink:(_Bool)arg3 reportingAgent:(id)arg4;
 
 @end

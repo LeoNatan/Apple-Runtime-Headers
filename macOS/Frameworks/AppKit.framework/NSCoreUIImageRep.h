@@ -9,35 +9,22 @@
 @interface NSCoreUIImageRep : NSImageRep
 {
     struct __CFDictionary *_coreUIImageOptions;
-    struct CGImage *_image;
     struct __CFString *_cocoaName;
-    unsigned long long _state;
-    int _backgroundStyle;
     BOOL _template;
-    BOOL _suppressesCache;
-    struct CGColor *_tintColor;
 }
 
-+ (id)imageRepWithCGImage:(struct CGImage *)arg1;
 + (id)imageRepWithCocoaName:(id)arg1;
 - (BOOL)draw;
 - (struct __CFDictionary *)coreUIDrawOptions;
 - (id)description;
-- (struct CGRect)boundingRectWithExtraEffectsForState:(unsigned long long)arg1 backgroundStyle:(int)arg2 context:(id)arg3;
 - (BOOL)_drawOnlyUsesOneDrawingOperation;
-@property BOOL suppressesCache;
 - (BOOL)_wantsToBeCachedForFlippedness:(BOOL)arg1;
 - (void)setTemplate:(BOOL)arg1;
 - (BOOL)isTemplate;
-@property int backgroundStyle;
-@property(copy) struct CGColor *tintColor;
-@property unsigned long long state;
-- (void)setCGImage:(struct CGImage *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;
-- (id)initWithCGImage:(struct CGImage *)arg1;
 - (id)initWithCocoaName:(id)arg1;
 - (id)initWithCoreUIDrawOptions:(struct __CFDictionary *)arg1 size:(struct CGSize)arg2;
 

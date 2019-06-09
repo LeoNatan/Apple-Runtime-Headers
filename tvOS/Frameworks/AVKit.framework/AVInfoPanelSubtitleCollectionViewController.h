@@ -6,6 +6,7 @@
 
 #import <AVKit/AVInfoPanelMediaOptionCollectionViewController.h>
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelSubtitleCollectionViewController : AVInfoPanelMediaOptionCollectionViewController
 {
 }
@@ -13,6 +14,7 @@
 - (void)_selectSubtitleAtIndex:(long long)arg1 shouldScrollToCenter:(_Bool)arg2;
 - (void)_scrollToAndSelectCurrentSubtitleOption;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

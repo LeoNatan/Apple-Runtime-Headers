@@ -11,6 +11,8 @@
 }
 
 + (void)enumerateFlightCodesInString:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
++ (void)setTestDate:(id)arg1;
++ (id)testDate;
 
 @end
 

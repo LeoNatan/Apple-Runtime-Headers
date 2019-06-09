@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_tickMarkProminence;
     double originalValue;
     double defaultValue;
+    long long trackingPressureStage;
     NSSliderAccessory *minimumValueAccessory;
     NSSliderAccessory *maximumValueAccessory;
     id <NSSliderCellMetricsStrategy> metricsStrategy;

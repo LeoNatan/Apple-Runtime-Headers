@@ -10,7 +10,6 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface NRPBSwitchRecordCollection : PBCodable <NSCopying>
 {
     NSMutableArray *_records;

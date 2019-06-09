@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface TCDumpEnum : NSObject
 {
     NSString *mTypeName;

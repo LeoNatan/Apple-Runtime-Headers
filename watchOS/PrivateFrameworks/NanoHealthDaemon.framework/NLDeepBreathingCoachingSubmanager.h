@@ -9,16 +9,17 @@
 #import <NanoHealthDaemon/NLBridgeSettingsObserver-Protocol.h>
 #import <NanoHealthDaemon/NLCoachingSubmanager-Protocol.h>
 
-@class FITypicalDayActivityModel, NLActivityAlarmMonitor, NLBridgeSettings, NSString, RTRoutineManager;
+@class FITypicalDayActivityModel, NLActivityAlarmMonitor, NLBridgeSettings, NSString;
 @protocol HDHealthDaemon, NLCoachingSubmanagerDelegate, OS_dispatch_queue;
 
 @interface NLDeepBreathingCoachingSubmanager : NSObject <NLBridgeSettingsObserver, NLCoachingSubmanager>
 {
     id <HDHealthDaemon> _healthDaemon;
     NLBridgeSettings *_bridgeSettings;
-    RTRoutineManager *_routineManager;
     NLActivityAlarmMonitor *_alarmMonitor;
     NSObject<OS_dispatch_queue> *_queue;
+    _Bool _isDeepBreathingAppInstalled;
+    struct os_unfair_lock_s _lock;
     _Bool _shouldFireOnNextPoll;
     id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate;
     FITypicalDayActivityModel *typicalDayModel;
@@ -29,6 +30,11 @@
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel;
 @property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate;
 - (void).cxx_destruct;
+- (_Bool)_hasDeepBreathingAppBeenInstalled;
+- (void)_setDeepBreathingAppInstalled:(_Bool)arg1;
+- (void)cancelScheduledTask;
+- (void)_applicationsUninstalled:(id)arg1;
+- (void)_applicationsInstalled:(id)arg1;
 - (void)privacySettingsDidChange:(id)arg1;
 - (void)settingsDidChange:(id)arg1;
 - (_Bool)requiresCoachingConditionsOnRequests;

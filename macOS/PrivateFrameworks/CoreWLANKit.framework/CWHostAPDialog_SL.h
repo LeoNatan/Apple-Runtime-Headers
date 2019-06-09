@@ -8,7 +8,7 @@
 
 #import <CoreWLANKit/NSTextFieldDelegate-Protocol.h>
 
-@class CWInterface, NSButton, NSGridView, NSImageView, NSLayoutConstraint, NSPopUpButton, NSProgressIndicator, NSSecureTextField, NSString, NSTextField, NSView, SFAuthorization;
+@class CWInterface, NSButton, NSGridView, NSImageView, NSLayoutConstraint, NSPopUpButton, NSProgressIndicator, NSString, NSTextField, NSView, SFAuthorization;
 
 @interface CWHostAPDialog_SL : NSWindowController <NSTextFieldDelegate>
 {
@@ -29,8 +29,7 @@
     NSView *networkNameView;
     NSTextField *networkNameField;
     NSView *passwordView;
-    NSSecureTextField *passwordField;
-    NSSecureTextField *confirmPasswordField;
+    NSTextField *passwordField;
     NSTextField *securityText;
     NSTextField *statusMessageLabel;
     NSButton *warningButton;
@@ -45,13 +44,14 @@
 + (id)hostAPDialogWithInterface:(id)arg1 authorization:(id)arg2;
 @property id delegate; // @synthesize delegate=delegate_;
 @property(retain) CWInterface *interface; // @synthesize interface=interface_;
+- (id)_getGeneratedDefaultPassword;
 - (BOOL)validateEntries;
-- (void)resetSecurityEntries;
 - (id)errorStringForErrorCode:(long long)arg1;
 - (void)setSecurityTypeViewForTag:(long long)arg1;
 - (void)populateHostAPChannels;
 - (void)populateSecurityTypes;
 - (id)localizedStringForKey:(id)arg1;
+- (void)_applyDefaultPassword;
 - (void)populateWiFiOptions;
 - (void)controlTextDidChange:(id)arg1;
 - (void)onSecurityTypePopupButton:(id)arg1;

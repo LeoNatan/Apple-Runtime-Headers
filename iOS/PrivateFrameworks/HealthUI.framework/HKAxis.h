@@ -47,6 +47,7 @@
 @property(retain, nonatomic) HKAxisStyle *preferredStyle; // @synthesize preferredStyle=_preferredStyle;
 @property(readonly, nonatomic) _Bool requiresScaling; // @synthesize requiresScaling=_requiresScaling;
 - (void).cxx_destruct;
+- (void)clearCache;
 - (void)clearAnnotations;
 - (long long)axisAnnotationCount;
 - (void)addAxisAnnotation:(id)arg1 textColor:(id)arg2 modelCoordinate:(id)arg3;

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 @property(retain, nonatomic, getter=_timingFunctionForAnimation) CAMediaTimingFunction *_timingFunctionForAnimation; // @synthesize _timingFunctionForAnimation=__timingFunctionForAnimation;
 - (void).cxx_destruct;
+- (_Bool)_shouldAnimateAdditivelyForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 
 // Remaining properties

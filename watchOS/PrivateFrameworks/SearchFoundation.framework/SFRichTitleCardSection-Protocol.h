@@ -6,11 +6,12 @@
 
 #import <SearchFoundation/SFTitleCardSection-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSNumber, NSString, SFActionItem, SFColor, SFImage;
+@class NSArray, NSData, NSDictionary, NSNumber, NSString, SFActionItem, SFColor, SFImage, SFRichText;
 
 @protocol SFRichTitleCardSection <SFTitleCardSection>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(retain, nonatomic) SFRichText *richSubtitle;
 @property(copy, nonatomic) NSString *footnote;
 @property(copy, nonatomic) NSArray *offers;
 @property(nonatomic) int playActionAlign;

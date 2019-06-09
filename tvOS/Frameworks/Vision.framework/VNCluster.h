@@ -6,9 +6,12 @@
 
 #import <objc/NSObject.h>
 
+#import <Vision/NSCopying-Protocol.h>
+#import <Vision/NSSecureCoding-Protocol.h>
+
 @class NSArray, NSDictionary;
 
-@interface VNCluster : NSObject
+@interface VNCluster : NSObject <NSCopying, NSSecureCoding>
 {
     _Bool _shouldUpdateRepresentative;
     NSArray *_objects;
@@ -18,6 +21,7 @@
     NSDictionary *_representativenessById;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) NSDictionary *representativenessById; // @synthesize representativenessById=_representativenessById;
 @property(retain, nonatomic) NSArray *suggestedIdsForRepresentative; // @synthesize suggestedIdsForRepresentative=_suggestedIdsForRepresentative;
 @property(nonatomic) _Bool shouldUpdateRepresentative; // @synthesize shouldUpdateRepresentative=_shouldUpdateRepresentative;
@@ -25,6 +29,9 @@
 @property(nonatomic) unsigned long long clusterId; // @synthesize clusterId=_clusterId;
 @property(retain, nonatomic) NSArray *objects; // @synthesize objects=_objects;
 - (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)description;

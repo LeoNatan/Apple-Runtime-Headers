@@ -20,8 +20,10 @@
     UIColor *_bgColor;
     double _diameter;
     double _focusedSizeIncrease;
+    UIColor *_textColor;
 }
 
+@property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(nonatomic) double focusedSizeIncrease; // @synthesize focusedSizeIncrease=_focusedSizeIncrease;
 @property(nonatomic) double diameter; // @synthesize diameter=_diameter;
 @property(retain, nonatomic) UIColor *bgColor; // @synthesize bgColor=_bgColor;

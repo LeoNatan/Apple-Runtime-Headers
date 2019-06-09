@@ -4,21 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <Metal/_MTLObjectWithLabel.h>
 
 #import <Metal/MTLFence-Protocol.h>
 
 @class MTLIOAccelDevice, NSString;
 @protocol MTLDevice;
 
-@interface MTLIOAccelFence : NSObject <MTLFence>
+@interface MTLIOAccelFence : _MTLObjectWithLabel <MTLFence>
 {
     MTLIOAccelDevice<MTLDevice> *_device;
     unsigned int _fenceIndex;
-    NSString *_label;
 }
 
-@property(copy) NSString *label; // @synthesize label=_label;
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1 fenceIndex:(unsigned int)arg2;
 @property(readonly) id <MTLDevice> device;
@@ -27,6 +25,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(copy) NSString *label; // @dynamic label;
 @property(readonly) Class superclass;
 
 @end

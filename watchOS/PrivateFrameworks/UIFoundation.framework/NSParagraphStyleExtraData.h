@@ -19,6 +19,8 @@
     NSArray *_textLists;
     unsigned long _lineBoundsOptions;
     unsigned int _lineBreakStrategy;
+    _Bool _usesDefaultHyphenation;
+    int _compositionLanguage;
 }
 
 @end

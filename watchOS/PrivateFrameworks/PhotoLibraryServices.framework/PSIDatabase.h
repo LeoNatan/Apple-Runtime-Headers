@@ -10,17 +10,16 @@
 #import <PhotoLibraryServices/PSIQueryDelegate-Protocol.h>
 #import <PhotoLibraryServices/PSITableDelegate-Protocol.h>
 
-@class NSDictionary, NSMutableArray, NSMutableString, NSString, PSIIntArray, PSIStatement, PSITokenizer, PSITripTable, PSIWordEmbeddingTable;
+@class NSDictionary, NSMutableArray, NSMutableString, NSString, PSIIntArray, PSIStatement, PSITokenizer, PSIWordEmbeddingTable;
 @protocol OS_dispatch_queue;
 
 @interface PSIDatabase : NSObject <PSITableDelegate, PSIQueryDelegate, PSIGroupCacheDelegate>
 {
     struct sqlite3 *_inqDatabase;
     _Bool _databaseIsValid;
-    NSDictionary *_inqPreparedStatements;
+    struct __CFDictionary *_inqPreparedStatements;
     PSIIntArray *_matchingIds;
     PSIWordEmbeddingTable *_inqWordEmbeddingTable;
-    PSITripTable *_inqTripTable;
     PSIStatement *_assetUUIDByAssetIdWithAssetIdsStatement;
     PSIStatement *_collectionResultByCollectionIdWithCollectionIdsStatement;
     PSIStatement *_inqAssetIdsByGroupIdForAssetIdsStatement;
@@ -60,6 +59,7 @@
 + (void)dropDatabaseAtPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) int options; // @synthesize options=_options;
 @property(readonly, copy, nonatomic) NSString *path; // @synthesize path=_path;
+- (void).cxx_destruct;
 - (void)_inqPerformBatch:(CDUnknownBlockType)arg1;
 - (void)_inqPrepareAndExecuteStatement:(const char *)arg1;
 - (void)_inqExecutePreparedStatement:(struct sqlite3_stmt *)arg1 withStatementBlock:(CDUnknownBlockType)arg2;
@@ -78,13 +78,15 @@
 - (struct __CFArray *)_inqNewAssetIdsWithDateFilter:(id)arg1;
 - (id)_inqNewSynonymTextsByOwningGroupIdWithGroupIds:(struct __CFSet *)arg1;
 - (struct __CFSet *)_inqNewGroupIdsWithOwningGroupIds:(struct __CFSet *)arg1;
-- (struct __CFSet *)_inqNewSurvivingGroupIdsForDeleteOperationWithMatchingGroupIds:(struct __CFSet *)arg1;
 - (id)_inqGroupsWithMatchingGroupIds:(struct __CFSet *)arg1 dateFilter:(id)arg2 includeObjects:(_Bool)arg3 matchingPredicateBlock:(CDUnknownBlockType)arg4;
+- (id)_inqNonFilenameGroupsWithMatchingGroupIds:(struct __CFSet *)arg1 dateFilter:(id)arg2 includeObjects:(_Bool)arg3 matchingPredicateBlock:(CDUnknownBlockType)arg4;
+- (id)_inqFilenameGroupsWithMatchingGroupIds:(struct __CFSet *)arg1 dateFilter:(id)arg2 matchingPredicateBlock:(CDUnknownBlockType)arg3;
 - (id)_inqGroupWithMatchingGroupId:(unsigned long long)arg1 dateFilter:(id)arg2;
 - (void)_inqUpdateGCTableWithGroupId:(unsigned long long)arg1 collectionId:(unsigned long long)arg2;
 - (void)_inqUpdateGATableWithGroupId:(unsigned long long)arg1 assetId:(unsigned long long)arg2;
+- (void)_inqDeleteFromSearchTableWithGroupId:(unsigned long long)arg1 textIsSearchable:(_Bool)arg2;
 - (void)_inqAddToSearchTableWithGroupId:(unsigned long long)arg1 text:(id)arg2 category:(short)arg3 textIsSearchable:(_Bool)arg4;
-- (unsigned long long)_inqGroupIdForCategory:(short)arg1 owningGroupId:(unsigned long long)arg2 contentString:(id)arg3 identifier:(id)arg4 insertIfNeeded:(_Bool)arg5 tokenOutput:(const struct tokenOutput_t *)arg6 shouldUpdateOwningGroupId:(_Bool)arg7 didUpdateGroup:(out _Bool *)arg8;
+- (unsigned long long)_inqGroupIdForCategory:(short)arg1 owningGroupId:(unsigned long long)arg2 contentString:(id)arg3 normalizedString:(id)arg4 identifier:(id)arg5 insertIfNeeded:(_Bool)arg6 tokenOutput:(const struct tokenOutput_t *)arg7 shouldUpdateOwningGroupId:(_Bool)arg8 didUpdateGroup:(out _Bool *)arg9;
 - (unsigned long long)_inqCollectionIdWithCollection:(id)arg1;
 - (unsigned long long)_inqCollectionIdForUUID:(id)arg1;
 - (unsigned long long)_inqCollectionIdForUUID:(id)arg1 uuid_0:(unsigned long long *)arg2 uuid_1:(unsigned long long *)arg3;
@@ -94,10 +96,11 @@
 - (void)_inqUpdateSearchTermsWithSearchableTermsByGroupIds:(id)arg1;
 - (void)_inqRemoveUnusedGroups;
 - (void)_inqRemoveUUID:(id)arg1 objectType:(unsigned int)arg2 isInBatch:(_Bool)arg3;
+- (void)_inqInsertToSearchTablesWithGroupId:(unsigned long long)arg1 normalizedText:(id)arg2 identifier:(id)arg3 category:(short)arg4;
 - (void)_inqInsertToSearchTablesWithGroupId:(unsigned long long)arg1 text:(id)arg2 identifier:(id)arg3 category:(short)arg4;
-- (unsigned long long)_inqUpdateGroupForText:(id)arg1 identifier:(id)arg2 category:(short)arg3 owningGroupId:(unsigned long long)arg4 shouldUpdateOwningGroupId:(_Bool)arg5 didUpdateGroup:(out _Bool *)arg6;
+- (unsigned long long)_inqUpdateGroupForText:(id)arg1 normalizedText:(id)arg2 identifier:(id)arg3 category:(short)arg4 owningGroupId:(unsigned long long)arg5 shouldUpdateOwningGroupId:(_Bool)arg6 didUpdateGroup:(out _Bool *)arg7;
 - (unsigned long long)_inqUpdateGroupForText:(id)arg1 identifier:(id)arg2 category:(short)arg3 owningGroupId:(unsigned long long)arg4 didUpdateGroup:(out _Bool *)arg5;
-- (void)_inqGetTokensFromString:(id)arg1 forIndexing:(_Bool)arg2 useWildcard:(_Bool)arg3 tokenOutput:(struct tokenOutput_t *)arg4;
+- (void)_inqGetTokensFromString:(id)arg1 category:(short)arg2 tokenOutput:(struct tokenOutput_t *)arg3;
 - (void)_prepareTokenOutput:(struct tokenOutput_t *)arg1 forIndexing:(_Bool)arg2;
 - (void)_inqRecycleGroups;
 - (id)_inqDequeueGroupObjectWithId:(unsigned long long)arg1 isCachedGroup:(_Bool *)arg2;
@@ -109,17 +112,18 @@
 - (id)_inqNumberOfAssetsByGroupIdMatchingGroupsWithIds:(id)arg1;
 - (unsigned int)_inqNumberOfAssetsMatchingGroupWithId:(unsigned long long)arg1;
 - (void)_processNextKeywordSuggestionsForQuery:(id)arg1 groupResults:(id)arg2 allowIdentifiers:(_Bool)arg3;
-- (id)tripResultByTripIdWithTripIds:(id)arg1;
 - (id)collectionResultByCollectionIdWithCollectionIds:(id)arg1;
 - (id)_inqCollectionResultByCollectionIdWithCollectionIds:(id)arg1;
 - (id)assetUUIDByAssetIdWithAssetIds:(id)arg1;
 - (id)_inqAssetUUIDByAssetIdWithAssetIds:(id)arg1;
 - (id)_inqGroupArraysFromGroupIdSets:(id)arg1 dateFilter:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
+- (id)_inqGroupWithStatement:(struct sqlite3_stmt *)arg1 dateFilter:(id)arg2 includeObjects:(_Bool)arg3 isFilenameStatement:(_Bool)arg4 excludingGroupId:(unsigned long long)arg5;
 - (id)_inqGroupWithStatement:(struct sqlite3_stmt *)arg1 dateFilter:(id)arg2 includeObjects:(_Bool)arg3;
+- (id)_inqGroupWithFilenameStatement:(struct sqlite3_stmt *)arg1 dateFilter:(id)arg2 excludingGroupId:(unsigned long long)arg3;
 - (struct __CFSet *)_inqNewGroupIdsWithCategories:(id)arg1;
 - (struct __CFSet *)_inqNewGroupIdsMatchingString:(id)arg1 categories:(id)arg2 textIsSearchable:(_Bool)arg3;
 - (struct __CFSet *)_inqNewGroupIdsMatchingString:(id)arg1 textIsSearchable:(_Bool)arg2;
-- (id)_inqGroupResultWithDateFilter:(id)arg1;
+- (id)_inqGroupResultWithDateFilter:(id)arg1 datedTokens:(id)arg2;
 - (id)_inqContentStringForGroupId:(unsigned long long)arg1;
 - (id)_inqCollectionResultsForCollectionIds:(struct __CFArray *)arg1 range:(struct _NSRange)arg2;
 - (id)_inqAssetUUIDsForAssetIds:(struct __CFSet *)arg1;
@@ -129,19 +133,14 @@
 - (id)newQueryWithSearchText:(id)arg1 identifiers:(id)arg2 useWildcardSearchText:(_Bool)arg3;
 - (id)newQueryWithSearchText:(id)arg1 representedObjects:(id)arg2 useWildcardSearchText:(_Bool)arg3;
 - (id)newQueryWithSearchText:(id)arg1;
+- (_Bool)isLookupTableOutOfSync;
 - (id)allAssetUUIDsForGroupsWithCategories:(id)arg1;
 - (id)allCollectionUUIDsWithCollectionType:(unsigned int)arg1;
-- (id)allTripUUIDs;
-- (void)removeAllTripsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_removeUUIDs:(id)arg1 objectType:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)removeTripsWithUUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)removeTripWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeCollectionsWithUUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeCollectionWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeAssetsWithUUIDs:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeAssetWithUUID:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)addTrips:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)addTrip:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)addCollections:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)addCollection:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)addAssets:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
@@ -166,11 +165,11 @@
 - (void)executeStatementFromString:(id)arg1;
 - (id)statementFromString:(id)arg1;
 - (void)fetchAssetUUIDsForAssetIDs:(struct __CFArray *)arg1 creationDateSorted:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)group:(id)arg1 fetchOwningContentString:(_Bool)arg2 assetIdRange:(struct _NSRange)arg3 collectionIdRange:(struct _NSRange)arg4 tripIdRange:(struct _NSRange)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)group:(id)arg1 fetchOwningContentString:(_Bool)arg2 assetIdRange:(struct _NSRange)arg3 collectionIdRange:(struct _NSRange)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (id)suggestionWhitelistedScenes;
 - (id)meNodeIdentifier;
 - (id)wordEmbeddingMatchesForToken:(id)arg1;
-- (id)groupResultWithDateFilter:(id)arg1;
+- (id)groupResultWithDateFilter:(id)arg1 datedTokens:(id)arg2;
 - (id)groupWithMatchingGroupId:(unsigned long long)arg1 dateFilter:(id)arg2;
 - (const struct __CFSet *)groupIdsMatchingString:(id)arg1 categories:(id)arg2 textIsSearchable:(_Bool)arg3;
 - (id)groupArraysFromGroupIdSets:(id)arg1 dateFilter:(id)arg2 progressBlock:(CDUnknownBlockType)arg3;
@@ -179,15 +178,14 @@
 @property(readonly) NSObject<OS_dispatch_queue> *groupResultsQueue;
 @property(readonly) PSITokenizer *tokenizer;
 - (unsigned long long)updateGroupForText:(id)arg1 identifier:(id)arg2 category:(short)arg3 owningGroupId:(unsigned long long)arg4 didUpdateGroup:(out _Bool *)arg5;
+- (void)deleteFromLookupTableWithGroupId:(unsigned long long)arg1;
 - (id)groupIdsInLookupTable;
 - (id)groupIdsInPrefixTable;
 - (id)allGroupIds;
-- (void)linkTripWithId:(long long)arg1 toGroupWithId:(long long)arg2;
 - (void)linkCollectionWithId:(long long)arg1 toGroupWithId:(long long)arg2;
 - (void)linkAssetWithId:(long long)arg1 toGroupWithId:(long long)arg2;
 - (void)removeUnusedGroups;
 - (long long)insertGroup:(id)arg1;
-- (long long)insertTrip:(id)arg1;
 - (long long)insertCollection:(id)arg1;
 - (long long)insertAsset:(id)arg1;
 

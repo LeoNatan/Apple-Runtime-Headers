@@ -21,6 +21,7 @@
 - (void)photosDataSource:(id)arg1 didChange:(id)arg2;
 - (void)updateWithPhotosDataSource:(id)arg1 andDataSourceChange:(id)arg2;
 - (void)dealloc;
+- (id)initWithAssetsDataSourceManager:(id)arg1;
 - (id)initWithPhotosDataSource:(id)arg1;
 - (id)init;
 

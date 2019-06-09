@@ -6,25 +6,33 @@
 
 #import <TVMLKit/_TVLabel.h>
 
-@class VUITextLayout;
+#import <VideosUI/VUILabelTopMarginCalculationProtocol-Protocol.h>
 
-@interface VUILabel : _TVLabel
+@class NSString, VUITextLayout;
+
+@interface VUILabel : _TVLabel <VUILabelTopMarginCalculationProtocol>
 {
     _Bool _selected;
     _Bool _lastSelectedOrHighlighted;
     VUITextLayout *_textLayout;
+    NSString *_labelName;
 }
 
-+ (unsigned long long)_numberOfLinesForTraitCollection:(id)arg1 textLayout:(id)arg2;
++ (id)labelWithAttributedString:(id)arg1 textLayout:(id)arg2 existingLabel:(id)arg3;
 + (id)labelWithString:(id)arg1 textLayout:(id)arg2 existingLabel:(id)arg3;
+@property(copy, nonatomic) NSString *labelName; // @synthesize labelName=_labelName;
 @property(retain, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
 - (void).cxx_destruct;
 - (void)_updateTextColor:(_Bool)arg1;
+- (void)_updateTextColor;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
+- (double)bottomMarginWithBaselineMargin:(double)arg1 maximumContentSizeCategory:(id)arg2;
 - (double)bottomMarginWithBaselineMargin:(double)arg1;
+- (double)topMarginWithBaselineMargin:(double)arg1 maximumContentSizeCategory:(id)arg2;
 - (double)topMarginWithBaselineMargin:(double)arg1;
+- (_Bool)requiresMoreThanOneLineForTextWidth:(double)arg1;
 - (double)topMarginToLabel:(id)arg1 withBaselineMargin:(double)arg2;
 - (double)baselineHeight;
 

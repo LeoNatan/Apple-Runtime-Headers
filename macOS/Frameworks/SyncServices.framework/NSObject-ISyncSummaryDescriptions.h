@@ -7,7 +7,19 @@
 #import <objc/NSObject.h>
 
 @interface NSObject (ISyncSummaryDescriptions)
++ (id)isd_propertyValueUnarchivedFromBytesEncodedForSqlite:(const void *)arg1;
++ (id)isd_propertyValueWithType:(int)arg1 bytesEncodedForSqlite:(const void *)arg2;
 - (id)isd_summary;
 - (id)isd_summaryWithIndent:(long long)arg1;
+- (void *)isd_bytesEncodedForSqliteForArchivedPropertyValue;
+- (int)isd_sqlitePropertyValueType;
+- (void *)isd_bytesEncodedForSqlite;
+- (BOOL)isd_isEqual:(id)arg1;
+- (id)isd_deepCopy;
+- (BOOL)isd_isAttributeSelfConsistent;
+- (int)isd_collectionType;
+- (int)isd_quickDirtyCoderType;
+- (void)isd_didDecodeDataWrapper:(id)arg1 forRecordWithIdentifier:(id)arg2 withPropertyName:(id)arg3;
+- (id)isd_willEncodeDataWrapper:(id)arg1 forRecordWithIdentifier:(id)arg2 withPropertyName:(id)arg3;
 @end
 

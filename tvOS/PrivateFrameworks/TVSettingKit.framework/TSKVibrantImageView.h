@@ -17,6 +17,7 @@
 @property(readonly, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(readonly, nonatomic) UIImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;
+- (id)_imageViewTintColorForUserInterfaceStyle:(long long)arg1;
 - (void)setImage:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)traitCollectionDidChange:(id)arg1;

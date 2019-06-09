@@ -6,15 +6,15 @@
 
 #import <NanoTimeKitCompanion/NTKTimelineComplicationController.h>
 
-#import <NanoTimeKitCompanion/NTKComplicationDataSourceDelegate-Protocol.h>
+#import <NanoTimeKitCompanion/CLKCComplicationDataSourceDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/NTKComplicationTimelineDelegate-Protocol.h>
 #import <NanoTimeKitCompanion/NTKTimeTravel-Protocol.h>
 
-@class CLKComplicationTemplate, NSDate, NSMutableSet, NSString, NTKComplicationDataSource, NTKComplicationTimeline, NTKTimelineDataOperation;
+@class CLKCComplicationDataSource, CLKComplicationTemplate, NSDate, NSMutableSet, NSString, NTKComplicationTimeline, NTKTimelineDataOperation;
 
-@interface NTKLocalTimelineComplicationController : NTKTimelineComplicationController <NTKComplicationDataSourceDelegate, NTKComplicationTimelineDelegate, NTKTimeTravel>
+@interface NTKLocalTimelineComplicationController : NTKTimelineComplicationController <CLKCComplicationDataSourceDelegate, NTKComplicationTimelineDelegate, NTKTimeTravel>
 {
-    NTKComplicationDataSource *_dataSource;
+    CLKCComplicationDataSource *_dataSource;
     NSDate *_timeTravelDate;
     _Bool _supportsTimeTravelForward;
     _Bool _supportsTimeTravelBackward;
@@ -28,19 +28,20 @@
     NSMutableSet *_suspendedRightBoundaryDates;
     NSMutableSet *_delayedBlocks;
     CLKComplicationTemplate *_switcherTemplate;
-    CLKComplicationTemplate *_lockedTemplate;
     _Bool _hasBeenLive;
 }
 
 + (_Bool)_acceptsComplicationType:(unsigned long long)arg1 family:(long long)arg2 forDevice:(id)arg3;
++ (Class)complicationDataSourceClassForComplication:(id)arg1 family:(long long)arg2 device:(id)arg3;
 - (void).cxx_destruct;
 - (void)_updateDimStateForCurrentTimeline;
-- (id)_currentTemplate;
+- (id)privacyTemplate;
+- (id)activeDisplayTemplate;
 - (id)_currentEntry;
 - (Class)richComplicationDisplayViewClass;
 - (id)complicationApplicationIdentifier;
-- (void)didTouchUpInside;
-- (void)didTouchDown;
+- (void)didTouchUpInsideView:(id)arg1;
+- (void)didTouchDownInView:(id)arg1;
 - (void)performTapAction;
 - (_Bool)hasTapAction;
 - (void)_startExtendLeftOperationFromDate:(id)arg1;
@@ -54,6 +55,7 @@
 - (void)_extendTimelineIfNecessaryAndPossible;
 - (void)_startSetupOperationIfPossible;
 - (void)_completeSetupOperationWithDirections:(unsigned long long)arg1 startDate:(id)arg2 endDate:(id)arg3 currentEntry:(id)arg4;
+- (void)entriesDidChangeInTimeline:(id)arg1;
 - (void)timeTravelEntryDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)nowEntryDidChangeFrom:(id)arg1 to:(id)arg2;
 - (void)invalidateSwitcherTemplate;

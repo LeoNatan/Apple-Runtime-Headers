@@ -9,6 +9,7 @@
 #import <UIKitCore/UINamedLayerImage-Protocol.h>
 
 @class NSString, UIImage;
+@protocol UINamedLayerContentProvider;
 
 __attribute__((visibility("hidden")))
 @interface _UIStackedImageSimpleImage : NSObject <UINamedLayerImage>
@@ -28,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 
 // Remaining properties
+@property(readonly, nonatomic) id <UINamedLayerContentProvider> contentProvider;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(nonatomic) _Bool fixedFrame;

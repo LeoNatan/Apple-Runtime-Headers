@@ -6,6 +6,9 @@
 
 #import <FinderKit/FI_TTextField.h>
 
+@class NSObject;
+@protocol TTagTextFieldDelegate;
+
 __attribute__((visibility("hidden")))
 @interface FI_TTagTextField : FI_TTextField
 {
@@ -13,6 +16,9 @@ __attribute__((visibility("hidden")))
 
 - (BOOL)acceptsFirstResponder;
 - (BOOL)becomeFirstResponder;
+
+// Remaining properties
+@property __weak NSObject<TTagTextFieldDelegate> *delegate; // @dynamic delegate;
 
 @end
 

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 + (id)defaultStyle;
 + (id)defaultFill;
+- (void).cxx_destruct;
 - (id)description;
 - (void)applyOverridesFrom:(id)arg1;
 - (id)shallowCopy;
@@ -24,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (id)fill;
 - (void)setBorderStyle:(id)arg1;
 - (id)borderStyle;
-- (void)dealloc;
 
 @end
 

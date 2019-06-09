@@ -16,7 +16,8 @@ __attribute__((visibility("hidden")))
     NSPersistentContainer *_persistentContainer;
 }
 
-+ (id)defaultDirectoryURL;
++ (id)directoryURL;
++ (id)legacyDirectoryURL;
 @property(retain, nonatomic) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
 @property(retain, nonatomic) NSManagedObjectContext *viewContext; // @synthesize viewContext=_viewContext;
 @property(readonly, nonatomic) long long modelVersion; // @synthesize modelVersion=_modelVersion;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 - (id)insertDeveloperIdentityProviderInContext:(id)arg1;
 - (id)init;
 - (id)initWithModelVersion:(long long)arg1;
+- (void)migrateContainerIfNecessary;
 
 @end
 

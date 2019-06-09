@@ -6,58 +6,43 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary;
-@protocol FBWorkspaceServerDelegate, OS_dispatch_queue, OS_xpc_object;
+#import <FrontBoard/FBWorkspaceServerConfiguring-Protocol.h>
 
-@interface FBWorkspaceServer : NSObject
+@class BSServiceConnection, BSServiceConnectionEndpointInjector, NSMutableArray, NSMutableDictionary;
+@protocol FBWorkspaceServerDelegate, OS_dispatch_queue;
+
+@interface FBWorkspaceServer : NSObject <FBWorkspaceServerConfiguring>
 {
+    id <FBWorkspaceServerDelegate> _weak_delegate;
     NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_xpc_object> *_connection;
-    NSMutableArray *_messagesQueuedForSend;
+    BSServiceConnectionEndpointInjector *_workspaceServiceInjector;
+    BSServiceConnection *_connection;
     _Bool _invalidated;
-    _Bool _receivedEvent;
+    NSMutableArray *_waitForConnectBlocks;
     NSMutableDictionary *_sceneIDToSceneHandlerMap;
-    id <FBWorkspaceServerDelegate> _delegate;
-    unsigned int _transactionBlockDepth;
-    _Bool _triedToSendMessageInTransaction;
 }
 
-@property(readonly, nonatomic) __weak id <FBWorkspaceServerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) __weak id <FBWorkspaceServerDelegate> delegate; // @synthesize delegate=_weak_delegate;
 - (void).cxx_destruct;
+- (oneway void)sceneID:(id)arg1 sendMessage:(id)arg2 withResponse:(CDUnknownBlockType)arg3;
+- (oneway void)sceneID:(id)arg1 didReceiveActions:(id)arg2;
+- (oneway void)sceneID:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 transitionContext:(id)arg3;
+- (oneway void)sceneID:(id)arg1 didDetachLayer:(id)arg2;
+- (oneway void)sceneID:(id)arg1 didUpdateLayer:(id)arg2;
+- (oneway void)sceneID:(id)arg1 didAttachLayer:(id)arg2;
+- (oneway void)requestSceneWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_handlerForSceneID:(id)arg1;
-- (void)_queue_deserializeEventFromMessage:(id)arg1 ofType:(Class)arg2 withHandlerBlock:(CDUnknownBlockType)arg3;
-- (void)_queue_deserializeEventFromMessage:(id)arg1 ofType:(Class)arg2 withSceneHandlerBlock:(CDUnknownBlockType)arg3;
-- (void)_queue_handleSceneDetachLayer:(id)arg1;
-- (void)_queue_handleSceneUpdateLayer:(id)arg1;
-- (void)_queue_handleSceneAttachLayer:(id)arg1;
-- (void)_queue_handleSceneDidReceiveMessage:(id)arg1;
-- (void)_queue_handleSceneDidReceiveActions:(id)arg1;
-- (void)_queue_handleSceneDidUpdateClientSettings:(id)arg1;
-- (void)_queue_handleDestroySceneRequest:(id)arg1;
-- (void)_queue_handleCreateSceneRequest:(id)arg1;
-- (void)_queue_handleConnect:(id)arg1;
-- (void)_queue_handleMessage:(id)arg1;
-- (_Bool)_queue_handleMessage:(id)arg1 withType:(long long)arg2;
-- (void)_queue_sendReplyForMessage:(id)arg1 withEvent:(id)arg2;
-- (void)_queue_sendMessage:(int)arg1 withMessagePacker:(CDUnknownBlockType)arg2 withReplyHandler:(CDUnknownBlockType)arg3;
-- (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2 withResponseEvent:(CDUnknownBlockType)arg3 ofType:(Class)arg4;
-- (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2;
+- (void)_queue_setConnection:(id)arg1;
 - (id)_queue;
-- (void)_queue_clientExited;
-- (void)_queue_setXPCConnection:(id)arg1;
-- (void)endTransaction;
-- (void)beginTransaction;
-- (void)sendMessageEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)sendSceneActionsEvent:(id)arg1;
-- (void)sendActionsEvent:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)sendDestroySceneEvent:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)sendSceneUpdateEvent:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)sendCreateSceneEvent:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)unregisterSceneEventHandler:(id)arg1 forSceneID:(id)arg2;
 - (void)registerSceneEventHandler:(id)arg1 forSceneID:(id)arg2;
+- (void)queue_enqueueConnectBlock:(CDUnknownBlockType)arg1;
 - (void)invalidate;
+- (void)setDelegate:(id)arg1;
+- (void)setQueue:(id)arg1;
 - (void)dealloc;
-- (id)initWithDelegate:(id)arg1 queue:(id)arg2;
+- (id)initWithConfigurator:(CDUnknownBlockType)arg1;
+- (id)init;
 
 @end
 

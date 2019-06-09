@@ -34,6 +34,7 @@
 - (void)_validateRecordValue:(id)arg1;
 - (void)_validateRecordKey:(id)arg1;
 - (void)_validateKeyUniquenessForKey:(id)arg1;
+- (BOOL)checkPropertiesWithModifiedPropertiesOnly:(BOOL)arg1 includingAllArrayItems:(BOOL)arg2 withValueCheckBlock:(CDUnknownBlockType)arg3;
 - (BOOL)checkProperties:(BOOL)arg1 withValueCheckBlock:(CDUnknownBlockType)arg2;
 - (void)resetChangedKeys;
 - (id)changedKeys;

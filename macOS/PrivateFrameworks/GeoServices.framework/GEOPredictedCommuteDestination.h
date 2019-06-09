@@ -14,14 +14,13 @@
     int _destinationType;
     BOOL _chosen;
     struct {
-        unsigned int confidenceScore:1;
-        unsigned int destinationType:1;
-        unsigned int chosen:1;
-    } _has;
+        unsigned int has_confidenceScore:1;
+        unsigned int has_destinationType:1;
+        unsigned int has_chosen:1;
+    } _flags;
 }
 
-@property(nonatomic) BOOL chosen; // @synthesize chosen=_chosen;
-@property(nonatomic) double confidenceScore; // @synthesize confidenceScore=_confidenceScore;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -29,14 +28,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasChosen;
+@property(nonatomic) BOOL chosen;
 @property(nonatomic) BOOL hasConfidenceScore;
+@property(nonatomic) double confidenceScore;
 - (int)StringAsDestinationType:(id)arg1;
 - (id)destinationTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasDestinationType;
-@property(nonatomic) int destinationType; // @synthesize destinationType=_destinationType;
+@property(nonatomic) int destinationType;
 
 @end
 

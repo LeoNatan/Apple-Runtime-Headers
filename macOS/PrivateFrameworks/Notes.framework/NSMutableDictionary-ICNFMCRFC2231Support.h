@@ -7,6 +7,7 @@
 #import <Foundation/NSMutableDictionary.h>
 
 @interface NSMutableDictionary (ICNFMCRFC2231Support)
-- (void)fixupRFC2231ValuesWithSender:(id)arg1 fromWindows:(BOOL)arg2;
+- (void)ic_fixupRFC2231ValuesWithSender:(id)arg1 fromWindows:(BOOL)arg2;
+- (void)ic_addObject:(id)arg1 forKey:(id)arg2;
 @end
 

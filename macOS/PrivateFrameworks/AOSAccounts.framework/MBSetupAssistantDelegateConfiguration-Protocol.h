@@ -11,6 +11,7 @@
 - (NSString *)delegateIdentifier;
 
 @optional
+- (void)updatePropertiesForAccount:(ACAccount *)arg1 store:(ACDAccountStore *)arg2 handler:(void (^)(BOOL, NSError *))arg3;
 - (void)completeSetupWithResponse:(NSDictionary *)arg1 account:(ACAccount *)arg2 store:(ACDAccountStore *)arg3 context:(long long)arg4 handler:(void (^)(BOOL, NSError *))arg5;
 - (void)completeSetupWithResponse:(NSDictionary *)arg1 account:(ACAccount *)arg2 store:(ACDAccountStore *)arg3 handler:(void (^)(BOOL, NSError *))arg4;
 - (void)terminateSetupCompletion;

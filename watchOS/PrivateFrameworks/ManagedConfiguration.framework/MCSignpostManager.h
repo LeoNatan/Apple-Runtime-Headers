@@ -10,16 +10,6 @@
 {
 }
 
-+ (void)_execute:(id)arg1;
-+ (unsigned int)_codeForFeatureIndex:(unsigned int)arg1;
-+ (unsigned int)_codeForFeature:(id)arg1;
-+ (unsigned int)_ariadneCodeForCode:(unsigned int)arg1;
-+ (id)_fileLineWithCode:(unsigned int)arg1 identifier:(id)arg2;
-+ (void)_signpostWithCode:(unsigned int)arg1 arg:(unsigned long long)arg2;
-+ (id)_parseResultsForTypeFilter:(unsigned int)arg1 featureFilter:(id)arg2 date:(id)arg3 error:(id *)arg4;
-+ (void)_endTraceAndOutputResults;
-+ (void)_startTrace;
-+ (_Bool)_generateCodesFileError:(id *)arg1;
 + (id)signpostsForTypeFilter:(unsigned int)arg1 featureFilter:(id)arg2 duration:(double)arg3 error:(id *)arg4;
 + (void)willPostEffectiveSettingsChangedNotification;
 + (void)willSetFeature:(id)arg1;

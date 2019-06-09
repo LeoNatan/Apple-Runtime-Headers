@@ -10,6 +10,7 @@
 + (id)siriui_blendEffectColor;
 + (id)siriui_colorWithAceColor:(id)arg1;
 + (id)siriui_sashOverlayBackgroundColor;
++ (id)siriui_platterOverlayDarkBackgroundColor;
 + (id)siriui_platterOverlayBackgroundColor;
 + (id)siriui_lightInsertionPointColor;
 + (id)siriui_platterInsertionPointColor;
@@ -20,6 +21,7 @@
 + (id)siriui_lightTextHighlightColor;
 + (id)siriui_textHighlightColor;
 + (id)siriui_platterSemiTransparentTextColor;
++ (id)siriui_semiTransparentLightTextColor;
 + (id)siriui_semiTransparentTextColor;
 + (id)siriui_platterLinkTextColor;
 + (id)siriui_linkTextColor;
@@ -32,7 +34,6 @@
 + (id)siriui_transparantHighlightedButtonColor;
 + (id)siriui_transparantButtonColor;
 + (id)siriui_maskingColor;
-+ (id)siriui_keylineColorStark;
 + (id)siriui_platterKeylineColor;
 + (id)siriui_lightKeylineColor;
 + (id)siriui_keylineColor;

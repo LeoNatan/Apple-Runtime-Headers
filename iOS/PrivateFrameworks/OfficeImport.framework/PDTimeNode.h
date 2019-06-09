@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) NSDictionary *attributeMap; // @synthesize attributeMap;
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -99,7 +100,6 @@ __attribute__((visibility("hidden")))
 - (id)endTimeConditions;
 - (void)setStartTimeConditions:(id)arg1;
 - (id)startTimeConditions;
-- (void)dealloc;
 - (id)init;
 - (long long)writeRepeatCount;
 - (long long)writeDuration;

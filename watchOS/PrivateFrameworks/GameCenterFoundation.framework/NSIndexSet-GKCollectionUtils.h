@@ -7,6 +7,7 @@
 #import <Foundation/NSIndexSet.h>
 
 @interface NSIndexSet (GKCollectionUtils)
++ (id)_gkIndexSetWithArray:(id)arg1;
 - (id)_gkIndexSetByAddingIndex:(int)arg1;
 - (id)_gkIndexSetByRemovingIndex:(int)arg1;
 @end

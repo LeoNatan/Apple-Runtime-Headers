@@ -14,13 +14,13 @@
     int _deviceInterfaceOrientation;
     _Bool _deviceInVehicle;
     struct {
-        unsigned int deviceBatteryState:1;
-        unsigned int deviceInterfaceOrientation:1;
-        unsigned int deviceInVehicle:1;
-    } _has;
+        unsigned int has_deviceBatteryState:1;
+        unsigned int has_deviceInterfaceOrientation:1;
+        unsigned int has_deviceInVehicle:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool deviceInVehicle; // @synthesize deviceInVehicle=_deviceInVehicle;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -28,17 +28,19 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasDeviceInVehicle;
+@property(nonatomic) _Bool deviceInVehicle;
 - (int)StringAsDeviceBatteryState:(id)arg1;
 - (id)deviceBatteryStateAsString:(int)arg1;
 @property(nonatomic) _Bool hasDeviceBatteryState;
-@property(nonatomic) int deviceBatteryState; // @synthesize deviceBatteryState=_deviceBatteryState;
+@property(nonatomic) int deviceBatteryState;
 - (int)StringAsDeviceInterfaceOrientation:(id)arg1;
 - (id)deviceInterfaceOrientationAsString:(int)arg1;
 @property(nonatomic) _Bool hasDeviceInterfaceOrientation;
-@property(nonatomic) int deviceInterfaceOrientation; // @synthesize deviceInterfaceOrientation=_deviceInterfaceOrientation;
+@property(nonatomic) int deviceInterfaceOrientation;
 
 @end
 

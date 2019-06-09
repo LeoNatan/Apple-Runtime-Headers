@@ -42,7 +42,6 @@ __attribute__((visibility("hidden")))
 - (id)_imagePickerControllerHelper;
 - (void)_updateCollectionsFetchResultIfNeeded;
 - (void)_invalidateCollectionsFetchResult;
-- (unsigned long long)supportedInterfaceOrientations;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;

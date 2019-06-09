@@ -22,8 +22,8 @@
 @property(nonatomic, getter=isComplete) _Bool complete; // @synthesize complete=_complete;
 @property(nonatomic, getter=isPartial) _Bool partial; // @synthesize partial=_partial;
 @property(retain, nonatomic) MFDataHolder *dataHolder; // @synthesize dataHolder=_dataHolder;
+- (void).cxx_destruct;
 - (void)setData:(id)arg1;
-- (void)dealloc;
 
 @end
 

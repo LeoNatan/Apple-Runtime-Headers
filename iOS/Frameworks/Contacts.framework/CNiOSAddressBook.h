@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_source> *_memoryMonitoringSource;
 }
 
++ (void *)newAddressBookWithDelegateInfo:(id)arg1;
 + (void *)newAddressBookWithURL:(id)arg1;
 + (void *)newInMemoryAddressBook;
 + (void)initialize;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)flushPool;
 - (void)performAsynchronousWorkWithInvalidatedAddressBook:(CDUnknownBlockType)arg1;
+- (id)resultWithInvalidatedAddressBook:(CDUnknownBlockType)arg1;
 - (void)performSynchronousWorkWithInvalidatedAddressBook:(CDUnknownBlockType)arg1;
 - (void *)preparedAddressBook:(void *)arg1;
 - (void)pushAddressBook:(void *)arg1;

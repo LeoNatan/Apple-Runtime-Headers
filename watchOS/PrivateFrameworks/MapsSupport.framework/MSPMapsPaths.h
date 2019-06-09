@@ -13,11 +13,12 @@
     NSURL *_libraryURL;
     NSURL *_groupLibraryURL;
     CDUnknownBlockType _invalidationHandler;
-    NSString *_fuzzyLocationStoragePath;
     NSString *_mapsDirectory;
     NSString *_cacheDirectory;
     NSString *_groupDirectory;
     NSString *_nanoDirectory;
+    NSString *_geoPinnedPlacesSettingsPath;
+    NSString *_geoCollectionsSettingsPath;
     NSString *_bookmarksSettingsPath;
     NSString *_geoBookmarksSettingsPath;
     NSString *_directionsSettingsPath;
@@ -56,6 +57,8 @@
 + (id)directionsSettingsPath;
 + (id)geoBookmarksSettingsPath;
 + (id)bookmarksSettingsPath;
++ (id)geoCollectionsSettingsPath;
++ (id)geoPinnedPlacesSettingsPath;
 + (id)nanoDirectory;
 + (id)groupDirectory;
 + (id)cacheDirectory;
@@ -66,11 +69,10 @@
 + (id)mapsApplicationContainerPaths;
 + (id)mapsApplicationContainerPathsWithInvalidationHandler:(CDUnknownBlockType)arg1;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSString *fuzzyLocationStoragePath;
 - (_Bool)deleteHistorySyncedMarkerFile;
-- (_Bool)shouldSyncMergeHistoryAfterCheckingOrCreatingMarkerFile;
+@property(readonly, nonatomic) _Bool shouldSyncMergeHistoryAfterCheckingOrCreatingMarkerFile;
 - (_Bool)deleteFavoritesSyncedMarkerFile;
-- (_Bool)shouldSyncMergeFavoritesAfterCheckingOrCreatingMarkerFile;
+@property(readonly, nonatomic) _Bool shouldSyncMergeFavoritesAfterCheckingOrCreatingMarkerFile;
 - (_Bool)_deleteSyncedFileAtPath:(id)arg1;
 - (_Bool)_shouldSyncMergeAfterCheckingOrCreatingMarkerFileAtPath:(id)arg1;
 @property(readonly, nonatomic) NSString *historySyncedMarkerFile; // @synthesize historySyncedMarkerFile=_historySyncedMarkerFile;
@@ -91,6 +93,8 @@
 @property(readonly, nonatomic) NSString *directionsSettingsPath; // @synthesize directionsSettingsPath=_directionsSettingsPath;
 @property(readonly, nonatomic) NSString *geoBookmarksSettingsPath; // @synthesize geoBookmarksSettingsPath=_geoBookmarksSettingsPath;
 @property(readonly, nonatomic) NSString *bookmarksSettingsPath; // @synthesize bookmarksSettingsPath=_bookmarksSettingsPath;
+@property(readonly, nonatomic) NSString *geoCollectionsSettingsPath; // @synthesize geoCollectionsSettingsPath=_geoCollectionsSettingsPath;
+@property(readonly, nonatomic) NSString *geoPinnedPlacesSettingsPath; // @synthesize geoPinnedPlacesSettingsPath=_geoPinnedPlacesSettingsPath;
 @property(readonly, nonatomic) NSString *nanoDirectory; // @synthesize nanoDirectory=_nanoDirectory;
 @property(readonly, nonatomic) NSString *groupDirectory; // @synthesize groupDirectory=_groupDirectory;
 @property(readonly, nonatomic) NSString *cacheDirectory; // @synthesize cacheDirectory=_cacheDirectory;

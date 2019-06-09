@@ -4,12 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <MediaPlaybackCore/NSObject-Protocol.h>
+#import <MediaPlaybackCore/MPCResponseMediaRemoteControllerChaining-Protocol.h>
 
-@class MPCMediaRemoteController, MPMiddlewareChain, MPModelGenericObject, MPPropertySet, NSArray, NSIndexPath, NSString, UIView;
+@class MPMiddlewareChain, MPModelGenericObject, MPPropertySet, NSArray, NSIndexPath, NSString, UIView;
 @protocol MPCVideoView;
 
-@protocol MPCPlayerResponseBuilder <NSObject>
+@protocol MPCPlayerResponseBuilder <MPCResponseMediaRemoteControllerChaining>
+
+@optional
 - (UIView<MPCVideoView> *)playerVideoView:(UIView<MPCVideoView> *)arg1 chain:(MPMiddlewareChain *)arg2;
 - (id)playerCommandOptionValue:(id)arg1 forKey:(NSString *)arg2 command:(unsigned int)arg3 chain:(MPMiddlewareChain *)arg4;
 - (_Bool)playerCommandEnabled:(_Bool)arg1 command:(unsigned int)arg2 chain:(MPMiddlewareChain *)arg3;
@@ -31,6 +33,5 @@
 - (long long)playerRepeatType:(long long)arg1 chain:(MPMiddlewareChain *)arg2;
 - (NSString *)tracklistUniqueIdentifier:(NSString *)arg1 chain:(MPMiddlewareChain *)arg2;
 - (long long)playerState:(long long)arg1 chain:(MPMiddlewareChain *)arg2;
-- (MPCMediaRemoteController *)controller:(MPCMediaRemoteController *)arg1 chain:(MPMiddlewareChain *)arg2;
 @end
 

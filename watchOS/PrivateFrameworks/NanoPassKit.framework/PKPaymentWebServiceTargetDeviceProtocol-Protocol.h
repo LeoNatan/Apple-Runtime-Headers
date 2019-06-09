@@ -6,12 +6,13 @@
 
 #import <NanoPassKit/NSObject-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSString, PKAppleAccountInformation, PKOSVersionRequirement, PKPass, PKPaymentPass, PKPaymentWebService, PKTrustedDeviceEnrollmentInfo, PKVerificationChannel;
+@class NSArray, NSData, NSDictionary, NSSet, NSString, PKAppleAccountInformation, PKApplePayTrustKeyRequest, PKOSVersionRequirement, PKPass, PKPassUpgradeRequest, PKPaymentPass, PKPaymentWebService, PKTrustedDeviceEnrollmentInfo, PKVerificationChannel;
 
 @protocol PKPaymentWebServiceTargetDeviceProtocol <NSObject>
 - (unsigned int)secureElementOwnershipStateForCurrentUser;
 - (void)claimSecureElementForCurrentUserWithCompletion:(void (^)(_Bool))arg1;
 - (_Bool)claimSecureElementForCurrentUser;
+- (void)paymentWebService:(PKPaymentWebService *)arg1 requestPassUpgrade:(PKPassUpgradeRequest *)arg2 pass:(PKPaymentPass *)arg3 completion:(void (^)(NSError *, PKPaymentPass *))arg4;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 validateTransferPreconditionsWithCompletion:(void (^)(_Bool, NSError *))arg2;
 - (void)downloadAllPaymentPassesForPaymentWebService:(PKPaymentWebService *)arg1;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 addPaymentPass:(PKPaymentPass *)arg2 withCompletionHandler:(void (^)(void))arg3;
@@ -44,6 +45,13 @@
 - (void)paymentWebServiceDidUpdateConfiguration:(PKPaymentWebService *)arg1;
 
 @optional
+- (void)paymentWebService:(PKPaymentWebService *)arg1 setDefaultPaymentPassUniqueIdentifier:(NSString *)arg2;
+- (void)paymentWebService:(PKPaymentWebService *)arg1 updateAccountWithIdentifier:(NSString *)arg2 completion:(void (^)(PKAccount *, NSError *))arg3;
+- (void)paymentWebService:(PKPaymentWebService *)arg1 deviceMetadataWithFields:(unsigned int)arg2 completion:(void (^)(PKPaymentDeviceMetadata *))arg3;
+- (void)featureApplicationsForProvisioningWithCompletion:(void (^)(NSArray *))arg1;
+- (void)updatedAccountsForProvisioningWithCompletion:(void (^)(NSArray *, NSArray *))arg1;
+- (NSSet *)supportedFeatureIdentifiersWithPaymentWebService:(PKPaymentWebService *)arg1;
+- (_Bool)paymentWebServiceSupportsAccounts:(PKPaymentWebService *)arg1;
 - (_Bool)paymentWebServiceSupportsPeerPaymentRegistration:(PKPaymentWebService *)arg1;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 removePass:(PKPass *)arg2 withCompletionHandler:(void (^)(_Bool, NSError *))arg3;
 - (void)paymentWebService:(PKPaymentWebService *)arg1 addPaymentPass:(PKPaymentPass *)arg2 withCompletionHandlerV2:(void (^)(PKPaymentPass *))arg3;
@@ -60,6 +68,9 @@
 - (void)startBackgroundVerificationObserverForPass:(PKPaymentPass *)arg1 verificationMethod:(PKVerificationChannel *)arg2;
 - (void)noteForegroundVerificationObserverActive:(_Bool)arg1;
 - (NSString *)cellularNetworkRegion;
+- (void)deleteApplePayTrustKeyWithIdentifier:(NSString *)arg1 completion:(void (^)(_Bool))arg2;
+- (void)createApplePayTrustKeyWithRequest:(PKApplePayTrustKeyRequest *)arg1 completion:(void (^)(PKApplePayTrustKey *, NSError *))arg2;
+- (void)applePayTrustKeyForIdentifier:(NSString *)arg1 completion:(void (^)(PKApplePayTrustKey *))arg2;
 - (void)renewAppleAccountWithCompletionHandler:(void (^)(int, PKAppleAccountInformation *))arg1;
 - (PKAppleAccountInformation *)appleAccountInformation;
 - (void)signatureForAuthToken:(NSString *)arg1 webService:(PKPaymentWebService *)arg2 completion:(void (^)(NSString *, NSError *))arg3;

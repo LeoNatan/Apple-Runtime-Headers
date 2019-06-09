@@ -13,8 +13,8 @@
 
 @interface SSApplication : NSApplication <SSInputEventSource>
 {
-    NSObject<SSInputEventConsumer> *mInputEventConsumer;
     unsigned long long mModifierFlags;
+    NSObject<SSInputEventConsumer> *mInputEventConsumer;
     unsigned long long savedGestureEventMask;
 }
 

@@ -13,7 +13,7 @@
 
 @interface AXHASecurityHelper : NSObject <AXIDCManagerSecurityDelegate>
 {
-    struct OpaqueSecIdentityRef *_appleIDIdentity;
+    struct __SecIdentity *_appleIDIdentity;
     NSObject<OS_dispatch_queue> *_securityQueue;
     NSArray *_certificateDescription;
 }
@@ -23,7 +23,7 @@
 - (void).cxx_destruct;
 - (BOOL)shouldTrustStream:(id)arg1;
 - (id)certificateChainFromTrust:(struct __SecTrust *)arg1;
-- (id)certificateChainForIdentity:(struct OpaqueSecIdentityRef *)arg1;
+- (id)certificateChainForIdentity:(struct __SecIdentity *)arg1;
 - (id)trustChain;
 - (id)securityTrustChainForStream:(id)arg1;
 - (BOOL)trustChainAvailable;

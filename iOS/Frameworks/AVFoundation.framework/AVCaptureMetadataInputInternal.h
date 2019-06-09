@@ -8,6 +8,7 @@
 
 @class AVCaptureInputPort, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureMetadataInputInternal : NSObject
 {
     AVCaptureInputPort *metadataPort;

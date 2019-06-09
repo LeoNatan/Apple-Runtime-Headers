@@ -24,8 +24,8 @@
 @property(nonatomic) unsigned long long endLocation; // @synthesize endLocation=_endLocation;
 @property(nonatomic) unsigned long long startLocation; // @synthesize startLocation=_startLocation;
 @property(retain, nonatomic) NSString *htmlString; // @synthesize htmlString=_htmlString;
-@property(nonatomic) _MFParsedHTMLNode *nextSibling; // @synthesize nextSibling=_nextSibling;
-@property(nonatomic) _MFParsedHTMLNode *parentNode; // @synthesize parentNode=_parentNode;
+@property(nonatomic) __weak _MFParsedHTMLNode *nextSibling; // @synthesize nextSibling=_nextSibling;
+@property(nonatomic) __weak _MFParsedHTMLNode *parentNode; // @synthesize parentNode=_parentNode;
 - (id)recursiveDescription;
 - (void)addRecursiveDescriptionWithLevel:(unsigned long long)arg1 toString:(id)arg2;
 - (void)collectDescendanceIntoArray:(id)arg1;

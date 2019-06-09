@@ -6,36 +6,30 @@
 
 #import <UIKitCore/UIGestureRecognizer.h>
 
-#import <UIKitCore/_UIGestureStudyParticipating-Protocol.h>
-
-@class NSString;
-
 __attribute__((visibility("hidden")))
-@interface _UIGestureStudyPressDurationGestureRecognizer : UIGestureRecognizer <_UIGestureStudyParticipating>
+@interface _UIGestureStudyPressDurationGestureRecognizer : UIGestureRecognizer
 {
-    double _startTimestamp;
     double _allowableMovement;
-    struct CGPoint _originalCentroid;
+    double _startTimestamp;
+    double _maxObservedTouchForce;
+    struct CGPoint _originalLocation;
 }
 
-@property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
-@property(nonatomic) struct CGPoint originalCentroid; // @synthesize originalCentroid=_originalCentroid;
+@property(nonatomic) double maxObservedTouchForce; // @synthesize maxObservedTouchForce=_maxObservedTouchForce;
+@property(nonatomic) struct CGPoint originalLocation; // @synthesize originalLocation=_originalLocation;
 @property(nonatomic) double startTimestamp; // @synthesize startTimestamp=_startTimestamp;
+@property(nonatomic) double allowableMovement; // @synthesize allowableMovement=_allowableMovement;
 @property(readonly, nonatomic) double movement;
 @property(readonly, nonatomic) double duration;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
-@property(readonly, nonatomic) NSString *eventName;
 - (void)reset;
+@property(readonly, nonatomic) _Bool hasForce;
+- (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (_Bool)movementExceededLimit:(double)arg1;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

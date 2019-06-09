@@ -6,9 +6,10 @@
 
 #import <MediaPlaybackCore/MPCPlayerCommand-Protocol.h>
 
-@class MPCPlayerCommandRequest, MPCPlayerResponseItem;
+@class MPCPlayerCommandRequest, MPCPlayerResponseItem, NSIndexPath;
 
 @protocol MPCPlayerReorderItemsCommand <MPCPlayerCommand>
+- (NSIndexPath *)limitedIndexPathForMovingIndexPath:(NSIndexPath *)arg1 toProprosedIndexPath:(NSIndexPath *)arg2;
 - (MPCPlayerCommandRequest *)moveItem:(MPCPlayerResponseItem *)arg1 afterItem:(MPCPlayerResponseItem *)arg2;
 - (_Bool)canMoveItem:(MPCPlayerResponseItem *)arg1;
 @end

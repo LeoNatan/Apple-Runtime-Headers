@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 @interface LabelNavRouteContextObserverProxy : NSObject <VKRouteContextObserver>
 {
     struct RouteContextChangeObserver *_observer;
-    struct vector<geo::_retain_ptr<VKRouteContext *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, geo::StdAllocator<geo::_retain_ptr<VKRouteContext *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, lhp::Allocator>> _observedContexts;
+    struct vector<geo::_retain_ptr<VKRouteContext *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, geo::StdAllocator<geo::_retain_ptr<VKRouteContext *, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc>, mdm::Allocator>> _observedContexts;
 }
 
 - (id).cxx_construct;

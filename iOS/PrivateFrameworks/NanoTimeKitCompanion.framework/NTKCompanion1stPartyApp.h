@@ -15,9 +15,11 @@
     NSString *_iconName;
 }
 
-+ (_Bool)complicationTypeMapsToRemovedSystemApp:(unsigned long long)arg1;
++ (_Bool)complicationType:(unsigned long long)arg1 mapsToRemovedSystemAppOnDevice:(id)arg2;
 + (id)companionAppWithAppInfo:(struct _NTKCompanion1stPartyInfo)arg1;
-+ (id)allApps;
++ (id)_allApps;
++ (id)allAppsForDevice:(id)arg1;
++ (id)appForBundleIdentifier:(id)arg1;
 @property(copy, nonatomic) NSString *iconName; // @synthesize iconName=_iconName;
 @property(nonatomic) unsigned long long complicationType; // @synthesize complicationType=_complicationType;
 - (void)setIcon:(id)arg1;

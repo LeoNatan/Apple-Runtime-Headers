@@ -17,10 +17,10 @@
     NSString *_nonCatalogDeviceName;
     _Bool _nonCatalogOffline;
     _Bool _nonCatalogSBEnabled;
-    unsigned int _nonCatalogSourceType;
     unsigned long long _nonCatalogStoreAccountID;
     NSString *_nonCatalogBuildVersion;
     NSString *_nonCatalogStoreFrontID;
+    unsigned int _nonCatalogSourceType;
     _Bool _shouldReportAggregateTimePlayActivityEvents;
     _Bool _shouldReportPlayActivityEvents;
     SSVPlayActivityController *_playActivityController;

@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)_requiresDatabaseMappingEntitlement;
 - (void)_enumerateWithXPCConnection:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (_Bool)bundleUnitMeetsRequirements:(unsigned int)arg1 bundleData:(const LSBundleData_7942beea *)arg2 context:(struct LSContext *)arg3;
+- (_Bool)bundleUnitMeetsRequirements:(unsigned int)arg1 bundleData:(const struct LSBundleData *)arg2 context:(struct LSContext *)arg3;
 
 @end
 

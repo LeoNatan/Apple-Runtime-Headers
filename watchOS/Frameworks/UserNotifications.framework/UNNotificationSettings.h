@@ -9,11 +9,8 @@
 #import <UserNotifications/NSCopying-Protocol.h>
 #import <UserNotifications/NSSecureCoding-Protocol.h>
 
-@class NSDictionary;
-
 @interface UNNotificationSettings : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _providesAppNotificationSettings;
     int _authorizationStatus;
     int _soundSetting;
     int _badgeSetting;
@@ -24,15 +21,17 @@
     int _alertStyle;
     int _showPreviewsSetting;
     int _criticalAlertSetting;
-    NSDictionary *_topicsSettings;
+    _Bool _providesAppNotificationSettings;
+    int _announcementSetting;
+    int _groupingSetting;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)settingsWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 criticalAlertSetting:(int)arg8 alertStyle:(int)arg9 showPreviewsSetting:(int)arg10 providesAppNotificationSettings:(_Bool)arg11 topicsSettings:(id)arg12;
-+ (id)settingsWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 criticalAlertSetting:(int)arg8 alertStyle:(int)arg9 showPreviewsSetting:(int)arg10 providesAppNotificationSettings:(_Bool)arg11;
-+ (id)settingsWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 criticalAlertSetting:(int)arg8 alertStyle:(int)arg9 showPreviewsSetting:(int)arg10;
++ (id)settingsWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 announcementSetting:(int)arg8 criticalAlertSetting:(int)arg9 alertStyle:(int)arg10 showPreviewsSetting:(int)arg11 groupingSetting:(int)arg12 providesAppNotificationSettings:(_Bool)arg13;
++ (id)settingsWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 spokenSetting:(int)arg8 criticalAlertSetting:(int)arg9 alertStyle:(int)arg10 showPreviewsSetting:(int)arg11 providesAppNotificationSettings:(_Bool)arg12;
 + (id)emptySettings;
-@property(readonly, nonatomic) NSDictionary *topicsSettings; // @synthesize topicsSettings=_topicsSettings;
+@property(readonly, nonatomic) int groupingSetting; // @synthesize groupingSetting=_groupingSetting;
+@property(readonly, nonatomic) int announcementSetting; // @synthesize announcementSetting=_announcementSetting;
 @property(readonly, nonatomic) _Bool providesAppNotificationSettings; // @synthesize providesAppNotificationSettings=_providesAppNotificationSettings;
 @property(readonly, nonatomic) int criticalAlertSetting; // @synthesize criticalAlertSetting=_criticalAlertSetting;
 @property(readonly, nonatomic) int showPreviewsSetting; // @synthesize showPreviewsSetting=_showPreviewsSetting;
@@ -44,7 +43,6 @@
 @property(readonly, nonatomic) int badgeSetting; // @synthesize badgeSetting=_badgeSetting;
 @property(readonly, nonatomic) int soundSetting; // @synthesize soundSetting=_soundSetting;
 @property(readonly, nonatomic) int authorizationStatus; // @synthesize authorizationStatus=_authorizationStatus;
-- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -52,7 +50,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
 - (_Bool)hasEnabledSettings;
-- (id)initWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 criticalAlertSetting:(int)arg8 alertStyle:(int)arg9 showPreviewsSetting:(int)arg10 providesAppNotificationSettings:(_Bool)arg11 topicsSettings:(id)arg12;
+- (id)initWithAuthorizationStatus:(int)arg1 soundSetting:(int)arg2 badgeSetting:(int)arg3 alertSetting:(int)arg4 notificationCenterSetting:(int)arg5 lockScreenSetting:(int)arg6 carPlaySetting:(int)arg7 announcementSetting:(int)arg8 criticalAlertSetting:(int)arg9 alertStyle:(int)arg10 showPreviewsSetting:(int)arg11 groupingSetting:(int)arg12 providesAppNotificationSettings:(_Bool)arg13;
 
 @end
 

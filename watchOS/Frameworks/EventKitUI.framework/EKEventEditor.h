@@ -87,6 +87,7 @@
 - (void)refreshStartAndEndDates;
 @property(retain, nonatomic) EKEvent *event;
 - (void)_updateTitleEditItemSeparatorVisibility;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;

@@ -17,12 +17,14 @@
     NSView *_accessoryView;
     NSTabBarItem *_tabBarItem;
     NSWindow *_window;
+    BOOL _showIcon;
 }
 
 @property __weak NSWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
 @property(readonly) NSTabBarItem *tabBarItem;
 @property(copy) NSAttributedString *attributedTitle;
+@property BOOL showIcon;
 @property(copy) NSImage *image;
 @property(retain) NSView *accessoryView;
 @property(copy) NSString *toolTip;

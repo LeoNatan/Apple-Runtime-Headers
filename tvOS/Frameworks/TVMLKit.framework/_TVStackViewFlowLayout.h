@@ -4,36 +4,54 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TVMLKit/_TVCollectionViewFlowLayout.h>
+#import <UIKit/UICollectionViewLayout.h>
 
-@class NSArray;
+@class IKChangeSet, NSArray, NSIndexSet;
 @protocol _TVStackViewDelegateFlowLayout;
 
-@interface _TVStackViewFlowLayout : _TVCollectionViewFlowLayout
+@interface _TVStackViewFlowLayout : UICollectionViewLayout
 {
     id <_TVStackViewDelegateFlowLayout> _stackViewDelegateFlowLayout;
     struct {
         _Bool hasShowcaseFactorDidChange;
     } _stackViewDelegateFlowLayoutFlags;
+    IKChangeSet *_changeSet;
+    NSIndexSet *_indexesAddedAtEnd;
+    struct CGPoint _initialContentOffset;
+    _Bool _isFullReplace;
+    long long _supplementaryCellSection;
     NSArray *_supplementaryCellLayoutAttributes;
     CDUnknownBlockType _onPrepareLayout;
     double _showcaseHeight;
     double _showcaseFactor;
+    NSArray *_sectionCellLayoutAttributes;
+    struct CGSize _contentSize;
 }
 
++ (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
+@property(nonatomic) struct CGSize contentSize; // @synthesize contentSize=_contentSize;
+@property(copy, nonatomic) NSArray *sectionCellLayoutAttributes; // @synthesize sectionCellLayoutAttributes=_sectionCellLayoutAttributes;
 @property(readonly, nonatomic) double showcaseFactor; // @synthesize showcaseFactor=_showcaseFactor;
 @property(nonatomic) double showcaseHeight; // @synthesize showcaseHeight=_showcaseHeight;
 @property(copy, nonatomic) CDUnknownBlockType onPrepareLayout; // @synthesize onPrepareLayout=_onPrepareLayout;
 @property(copy, nonatomic) NSArray *supplementaryCellLayoutAttributes; // @synthesize supplementaryCellLayoutAttributes=_supplementaryCellLayoutAttributes;
+@property(nonatomic) long long supplementaryCellSection; // @synthesize supplementaryCellSection=_supplementaryCellSection;
 - (void).cxx_destruct;
-- (double)_computeShowcaseFactor;
+- (double)_computeShowcaseFactorForContentOffset:(struct CGPoint)arg1;
+- (void)_prepareSectionMetrics;
+- (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
+- (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
+- (void)finalizeCollectionViewUpdates;
+- (void)prepareForCollectionViewUpdates:(id)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
-- (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
+- (struct CGSize)collectionViewContentSize;
+- (void)invalidateLayoutWithContext:(id)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect)arg1;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
 - (void)prepareLayout;
+- (id)init;
 
 @end
 

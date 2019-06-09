@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *ss_queue;
     NSObject<OS_nw_parameters> *ss_parameters;
     NSObject<OS_dispatch_queue> *ss_client_queue;
+    CDUnknownBlockType ss_state_handler;
     CDUnknownBlockType ss_error;
     NSObject<OS_nw_listener> *ss_listener;
     NSObject<OS_nw_array> *ss_socks5_connections;

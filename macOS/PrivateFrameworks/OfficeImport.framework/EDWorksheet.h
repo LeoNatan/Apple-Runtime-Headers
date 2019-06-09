@@ -8,6 +8,7 @@
 
 @class EDCollection, EDColumnInfoCollection, EDMergedCellCollection, EDPane, EDReference, EDRowBlocks, EDWarnings, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface EDWorksheet : EDSheet
 {
     EDRowBlocks *mRowBlocks;

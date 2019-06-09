@@ -9,6 +9,7 @@
 @class NSArray, NSObject, SKUIClientContext;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface SKUILoadGratisEligibilityOperation : NSOperation
 {
     NSArray *_bundleIDs;

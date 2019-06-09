@@ -9,10 +9,32 @@
 @class NSArray, NSDateComponents;
 
 @interface ABRemotePerson (SearchHelpers)
++ (id)remoteRecordWithUniqueID:(id)arg1 inAddressBook:(id)arg2;
++ (Class)publicRecordClass;
++ (id)abEntityName;
 - (id)valueForKeyPath:(id)arg1;
 @property(readonly) NSDateComponents *lunarBirthdayComponents;
 @property(readonly) long long displayFlags;
 @property(readonly) NSArray *dates;
 @property(readonly) double birthdayYearless;
+- (void)_setPropertiesFromRemotePerson:(id)arg1;
+- (void)_importContact:(id)arg1 replaceValues:(BOOL)arg2;
+- (void)_importRelationshipsFromContact:(id)arg1 replaceValues:(BOOL)arg2;
+- (void)_importMultiValueRelationshipWithName:(id)arg1 fromOtherContact:(id)arg2 replaceValues:(BOOL)arg3;
+- (void)_importAttributeWithName:(id)arg1 fromContact:(id)arg2;
+- (void)_importAttributesFromContact:(id)arg1;
+- (id)_generateContactIndex;
+- (void)_appendNote:(id)arg1;
+- (id)nts_SingleValueForProperty:(id)arg1;
+- (void)nts_SetSingleValue:(id)arg1 forProperty:(id)arg2;
+- (void)mergeContact:(id)arg1;
+- (id)displayName;
+- (void)setMultiValue:(id)arg1 forProperty:(id)arg2;
+- (id)multiValueForProperty:(id)arg1;
+- (BOOL)isNewPersonWithAddressBook:(id)arg1;
+- (BOOL)isMeWithAddressBook:(id)arg1;
+- (void)faultIfNeccessaryWithAddressBook:(id)arg1;
+@property(readonly) NSArray *emailAddresses;
+- (id)contactIndex;
 @end
 

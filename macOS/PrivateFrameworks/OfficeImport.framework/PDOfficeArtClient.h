@@ -11,6 +11,7 @@
 
 @class NSString, OADImageRecolorInfo, PDAnimationInfo, PDPlaceholder;
 
+__attribute__((visibility("hidden")))
 @interface PDOfficeArtClient : NSObject <OADClient, OADImageRecolorInfoClient>
 {
     OADImageRecolorInfo *mImageRecolorInfo;

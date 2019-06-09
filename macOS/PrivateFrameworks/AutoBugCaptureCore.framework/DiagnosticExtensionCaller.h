@@ -8,6 +8,7 @@
 
 @class DEExtensionManager, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface DiagnosticExtensionCaller : NSObject
 {
     DEExtensionManager *_manager;

@@ -8,7 +8,7 @@
 
 #import <CoreServices/NSXPCListenerDelegate-Protocol.h>
 
-@class LSInstallProgressList, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString;
+@class LSInstallProgressList, NSArray, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -20,28 +20,40 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_installIndexes;
     NSMutableOrderedSet *_orderedInstalls;
     NSMutableSet *_inactiveInstalls;
+    NSMutableDictionary *_installTypes;
     NSObject<OS_dispatch_queue> *_installControlsQueue;
     NSObject<OS_dispatch_queue> *_observersQueue;
+    NSArray *_journalledNotificationsToReplay;
+    NSMutableArray *_startupJournalledNotifications;
+    _Bool _replayingJournalToNewClients;
     _Bool _usingNetwork;
 }
 
++ (int)notificationTypeForOperation:(unsigned long long)arg1;
 + (void)beginListening;
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)dispatchJournalledNotificationsToObserver:(id)arg1;
+- (void)directlySendNotification:(int)arg1 withProxies:(id)arg2 toObserverProxy:(id)arg3;
+- (void)dispatchJournalledNotificationsToConnectedClients;
+- (void)performJournalRecovery;
+- (id)loadJournalledNotificationsFromDisk;
+- (void)addSendNotificationFenceWithTimeout:(double)arg1 fenceBlock:(CDUnknownBlockType)arg2;
 - (void)sendNetworkUsageChangedNotification;
 - (void)sendAppControlsNotificationForApp:(id)arg1 withName:(id)arg2;
 - (void)sendNotification:(int)arg1 forApps:(id)arg2 withPlugins:(_Bool)arg3;
 - (void)sendNotification:(int)arg1 forApps:(id)arg2 withPlugins:(_Bool)arg3 options:(id)arg4;
 - (id)_prepareApplicationProxiesForNotification:(int)arg1 identifiers:(id)arg2 withPlugins:(_Bool)arg3 options:(id)arg4;
 - (void)sendNotification:(int)arg1 forAppProxies:(id)arg2 Plugins:(_Bool)arg3;
+- (SEL)observerSelectorForNotification:(int)arg1;
 - (void)sendNotification:(id)arg1 ForPlugins:(id)arg2;
+- (void)_placeholdersUninstalled:(id)arg1;
 - (void)_placeholderIconUpdatedForApp:(id)arg1;
 - (void)installationFailedForApplication:(id)arg1;
 - (void)installationEndedForApplication:(id)arg1 withState:(unsigned long long)arg2;
 - (void)rebuildInstallIndexes;
-- (void)createInstallProgressForApplication:(id)arg1 withPhase:(unsigned long long)arg2 andPublishingString:(id)arg3;
+- (void)createInstallProgressForApplication:(id)arg1 withPhase:(unsigned long long)arg2 andPublishingString:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (id)parentProgressForApplication:(id)arg1 andPhase:(unsigned long long)arg2 isActive:(_Bool)arg3;
-- (void)handleCancelInstallationForApp:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

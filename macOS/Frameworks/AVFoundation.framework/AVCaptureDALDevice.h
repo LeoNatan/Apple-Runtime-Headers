@@ -6,7 +6,7 @@
 
 #import <AVFoundation/AVCaptureDevice.h>
 
-@class AVCaptureDeviceFormat, AVCaptureDeviceInputSource, NSArray, NSLock, NSObject, NSString;
+@class AVCaptureDeviceFormat, AVCaptureDeviceInputSource, NSArray, NSObject, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
@@ -19,14 +19,16 @@ __attribute__((visibility("hidden")))
     AVCaptureDeviceFormat *_activeFormat;
     CDStruct_1b6d18a9 _activeMinFrameDuration;
     CDStruct_1b6d18a9 _activeMaxFrameDuration;
+    CDStruct_1b6d18a9 _defaultActiveMinFrameDuration;
+    CDStruct_1b6d18a9 _defaultActiveMaxFrameDuration;
     BOOL _suspended;
-    NSLock *_propertiesLock;
+    struct os_unfair_lock_s _propertiesLock;
+    struct os_unfair_lock_s _internalLock;
     NSString *_localizedName;
     NSString *_modelID;
     NSString *_manufacturer;
     BOOL _automaticallyAdjustsFeatureControls;
     NSObject<OS_dispatch_queue> *_transportPropertyObserverQueue;
-    NSObject<OS_dispatch_queue> *_transportTimerQueue;
     long long _transportPropertyObserverCount;
     NSObject<OS_dispatch_source> *_transportPropertyObserverTimer;
     long long _focusMode;
@@ -40,18 +42,22 @@ __attribute__((visibility("hidden")))
     BOOL _adjustingFocus;
     BOOL _adjustingExposure;
     BOOL _adjustingWhiteBalance;
-    unsigned long long _transportType;
+    unsigned long long _DALTransportType;
     NSArray *_inputSources;
     AVCaptureDeviceInputSource *_activeInputSource;
     struct OpaqueCMClock *_deviceClock;
+    int _transportType;
 }
 
 + (id)deviceWithUniqueID:(id)arg1;
 + (id)defaultDeviceWithMediaType:(id)arg1;
++ (id)defaultDeviceWithDeviceType:(id)arg1 mediaType:(id)arg2 position:(long long)arg3;
 + (void)_putDeviceIntoInputModeIfPossible:(unsigned int)arg1;
++ (void)_ensureDeviceList;
 + (void)_refreshDevices;
 + (id)devices;
 + (void)initialize;
+- (int)transportType;
 @property(nonatomic, getter=isAdjustingWhiteBalance) BOOL adjustingWhiteBalance; // @synthesize adjustingWhiteBalance=_adjustingWhiteBalance;
 @property(nonatomic, getter=isAdjustingExposure) BOOL adjustingExposure; // @synthesize adjustingExposure=_adjustingExposure;
 @property(nonatomic, getter=isAdjustingFocus) BOOL adjustingFocus; // @synthesize adjustingFocus=_adjustingFocus;
@@ -63,12 +69,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)isHighResolutionCamera;
 - (BOOL)automaticallyAdjustsFeatureControls;
 - (void)setAutomaticallyAdjustsFeatureControls:(BOOL)arg1;
-- (void)_refreshInputSourcesFromCallback;
-- (void)_refreshSuspendedPropertyFromCallback;
-- (void)_refreshLinkedDevicesFromCallback;
-- (void)_refreshFormatsFromCallback;
-- (void)_refreshStreamsFromCallback;
-- (void)_refreshIsInUseByAnotherApplicationFromCallback;
 - (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned long long)arg3 context:(void *)arg4;
 - (void)_startupTransportPropertyObserverTimerForPlaybackMode:(long long)arg1;
@@ -85,26 +85,36 @@ __attribute__((visibility("hidden")))
 - (BOOL)isSuspended;
 - (BOOL)isConnected;
 - (BOOL)isInUseByAnotherApplication;
-- (void)_refreshInputSources;
-- (void)_refreshIsInUseByAnotherApplication;
-- (void)_refreshSuspendedAttribute;
-- (void)_refreshLinkedDevices;
-- (void)_refreshActiveFormat;
+- (void)_refreshInputSourcesAndKVONotify:(BOOL)arg1;
+- (void)_refreshIsInUseByAnotherApplicationAndKVONotify:(BOOL)arg1;
+- (void)_refreshSuspendedAttributeAndKVONotify:(BOOL)arg1;
+- (void)_refreshLinkedDevicesAndKVONotify:(BOOL)arg1;
+- (void)_refreshActiveFormatAndKVONotify:(BOOL)arg1;
 - (CDStruct_1b6d18a9)activeVideoMaxFrameDurationForStream:(unsigned int)arg1;
 - (CDStruct_1b6d18a9)activeVideoMinFrameDurationForStream:(unsigned int)arg1;
-- (void)_refreshFormats;
-- (id)deviceFormatForStream:(unsigned int)arg1 formatDescription:(struct opaqueCMFormatDescription *)arg2;
+- (void)_refreshFormatsAndKVONotify:(BOOL)arg1;
+- (id)deviceFormatForStream:(unsigned int)arg1 formatDescription:(struct opaqueCMFormatDescription *)arg2 hasAutofocus:(BOOL)arg3;
 - (id)supportedFrameRateRangesForStream:(unsigned int)arg1 formatDescription:(struct opaqueCMFormatDescription *)arg2;
-- (void)_refreshStreams;
-- (void)_refreshLocalizedName;
-- (void)_refreshManufacturer;
-- (void)_refreshModelID;
-- (void)_refreshProperties;
+- (void)_refreshStreamsAndKVONotify:(BOOL)arg1;
+- (void)_refreshLocalizedNameAndKVONotify:(BOOL)arg1;
+- (void)_refreshManufacturerAndKVONotify:(BOOL)arg1;
+- (void)_refreshModelIDAndKVONotify:(BOOL)arg1;
+- (void)_refreshTransportTypeAndKVONotify:(BOOL)arg1;
+- (void)_refreshPropertiesAndKVONotify:(BOOL)arg1;
+- (void)_refreshConnectionID:(unsigned int)arg1 KVONotify:(BOOL)arg2;
+- (void)setActiveMaxExposureDuration:(CDStruct_1b6d18a9)arg1;
+- (void)setActiveColorSpace:(long long)arg1;
+- (long long)activeColorSpace;
+- (void)cancelVideoZoomRamp;
+- (void)rampToVideoZoomFactor:(double)arg1 withRate:(float)arg2;
+- (void)setVideoZoomFactor:(double)arg1;
+- (BOOL)setTorchModeOnWithLevel:(float)arg1 error:(id *)arg2;
+- (void)setTorchMode:(long long)arg1;
+- (void)setFlashMode:(long long)arg1;
 - (void)setActiveInputSource:(id)arg1;
 - (id)activeInputSource;
 - (id)inputSources;
 - (BOOL)supportsAVCaptureSessionPreset:(id)arg1;
-- (int)transportType;
 - (void)setActiveVideoMaxFrameDuration:(CDStruct_1b6d18a9)arg1;
 - (CDStruct_1b6d18a9)activeVideoMaxFrameDuration;
 - (void)setActiveVideoMinFrameDuration:(CDStruct_1b6d18a9)arg1;
@@ -112,6 +122,7 @@ __attribute__((visibility("hidden")))
 - (void)setActiveFormat:(id)arg1;
 - (id)activeFormat;
 - (id)formats;
+- (id)deviceType;
 - (id)manufacturer;
 - (id)localizedName;
 - (id)modelID;
@@ -122,16 +133,20 @@ __attribute__((visibility("hidden")))
 - (unsigned int)connectionUnitComponentSubType;
 - (unsigned int)deviceID;
 - (long long)deviceSystem;
-- (void)dealloc;
-- (void)finalize;
 - (void)_removePropertyListeners;
+- (void)_addPropertyListeners;
+- (void)dealloc;
 - (id)initWithUniqueID:(id)arg1 connectionID:(unsigned int)arg2;
+- (void)setFocusPointOfInterest:(struct CGPoint)arg1;
 - (void)setFocusMode:(long long)arg1;
+- (long long)focusMode;
 - (BOOL)isFocusModeSupported:(long long)arg1;
+- (void)setExposurePointOfInterest:(struct CGPoint)arg1;
 - (void)setExposureMode:(long long)arg1;
 - (long long)exposureMode;
 - (BOOL)isExposureModeSupported:(long long)arg1;
 - (void)setWhiteBalanceMode:(long long)arg1;
+- (long long)whiteBalanceMode;
 - (BOOL)isWhiteBalanceModeSupported:(long long)arg1;
 - (void)setTransportControlsPlaybackMode:(long long)arg1 speed:(float)arg2;
 - (BOOL)_retrieveTransportControlsSupported;

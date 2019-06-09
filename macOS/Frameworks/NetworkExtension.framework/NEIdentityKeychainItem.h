@@ -12,8 +12,8 @@
 
 + (id)importPKCS12Data:(id)arg1 passphrase:(id)arg2;
 + (id)copyIdentities:(id)arg1 fromDomain:(long long)arg2;
-+ (id)copyPropertiesForIdentity:(struct OpaqueSecIdentityRef *)arg1 persistentReference:(id)arg2;
-+ (id)copyPersistentReferenceForIdentity:(struct OpaqueSecIdentityRef *)arg1;
++ (id)copyPropertiesForIdentity:(struct __SecIdentity *)arg1 persistentReference:(id)arg2;
++ (id)copyPersistentReferenceForIdentity:(struct __SecIdentity *)arg1;
 - (void)sync;
 - (id)copyQueryWithReturnTypes:(id)arg1;
 - (id)copyPassword;

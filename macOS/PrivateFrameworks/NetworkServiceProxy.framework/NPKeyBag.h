@@ -6,29 +6,47 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData;
+@class NSArray, NSData, NSDictionary, NSPredicate;
 
 @interface NPKeyBag : NSObject
 {
     unsigned int _index;
-    unsigned int _timestamp;
-    unsigned int _error;
     unsigned int _generation;
     NSArray *_keys;
+    long long _fallbackReason;
     NSData *_updateHash;
+    long long _TFOStatusOverride;
     double _lastUsedTimestamp;
+    NSDictionary *_onRampMap;
+    NSArray *_onRampList;
+    NSPredicate *_validOnRampPredicate;
+    NSPredicate *_validOnRampWithTFOPredicate;
 }
 
-@property double lastUsedTimestamp; // @synthesize lastUsedTimestamp=_lastUsedTimestamp;
-@property(retain) NSData *updateHash; // @synthesize updateHash=_updateHash;
-@property unsigned int generation; // @synthesize generation=_generation;
-@property unsigned int error; // @synthesize error=_error;
-@property unsigned int timestamp; // @synthesize timestamp=_timestamp;
+@property(retain) NSPredicate *validOnRampWithTFOPredicate; // @synthesize validOnRampWithTFOPredicate=_validOnRampWithTFOPredicate;
+@property(retain) NSPredicate *validOnRampPredicate; // @synthesize validOnRampPredicate=_validOnRampPredicate;
+@property(retain) NSArray *onRampList; // @synthesize onRampList=_onRampList;
+@property(retain) NSDictionary *onRampMap; // @synthesize onRampMap=_onRampMap;
+@property(nonatomic) double lastUsedTimestamp; // @synthesize lastUsedTimestamp=_lastUsedTimestamp;
+@property(nonatomic) long long TFOStatusOverride; // @synthesize TFOStatusOverride=_TFOStatusOverride;
+@property(retain, nonatomic) NSData *updateHash; // @synthesize updateHash=_updateHash;
+@property(nonatomic) unsigned int generation; // @synthesize generation=_generation;
+@property long long fallbackReason; // @synthesize fallbackReason=_fallbackReason;
 @property unsigned int index; // @synthesize index=_index;
-@property(retain) NSArray *keys; // @synthesize keys=_keys;
+@property(retain, nonatomic) NSArray *keys; // @synthesize keys=_keys;
 - (void).cxx_destruct;
+- (void)moveToOnRamp:(id)arg1;
+- (id)getOnRampForEndpoint:(id)arg1;
+- (BOOL)updateHashMatchesEdgeSet:(id)arg1;
+@property(readonly) double timeSinceLastUsed;
+- (void)logWithMessage:(id)arg1 identifier:(id)arg2;
+- (void)moveToNextOnRamp;
+- (id)copyUsableOnRamps:(BOOL)arg1 requireTFO:(BOOL)arg2;
+- (void)createOnRamps;
 - (id)data;
+- (id)initWithOnRamps:(id)arg1 currentNetworkInfo:(id)arg2 currentEdgeIndex:(long long)arg3 currentEdgeList:(id)arg4 generation:(unsigned int)arg5 identifier:(id)arg6 updateHash:(id)arg7;
 - (id)initWithData:(id)arg1;
+- (id)init;
 
 @end
 

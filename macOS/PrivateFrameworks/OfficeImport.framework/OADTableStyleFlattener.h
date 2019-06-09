@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADTableStyleResolver.h>
 
+__attribute__((visibility("hidden")))
 @interface OADTableStyleFlattener : OADTableStyleResolver
 {
 }

@@ -10,7 +10,7 @@
 #import <OSInstaller/OSIPowerControllerDelegate-Protocol.h>
 #import <OSInstaller/SKManagerListener-Protocol.h>
 
-@class IASUnifiedProgressClient, NSDate, NSError, NSMutableArray, NSNumber, NSString, NSTimer, OSIDebuggerTool, OSIPersonalizedManifests, OSIPowerButtonMonitor, OSIPowerController, OSInstallOptions, PKDistributionController;
+@class IASUnifiedProgressClient, NSDate, NSError, NSMutableArray, NSNumber, NSString, NSTimer, OSIDebuggerTool, OSIPersonalizedManifests, OSIPowerButtonMonitor, OSIPowerController, OSInstallOptions, PKDistributionController, SMPaths;
 @protocol OSInstallControllerDelegate, OS_dispatch_queue;
 
 @interface OSInstallController : NSObject <OSIPowerControllerDelegate, OSIPowerButtonMonitorDelegate, SKManagerListener>
@@ -23,6 +23,7 @@
     BOOL _showingStuckUI;
     BOOL _shouldProcessTimeRemaining;
     BOOL _shouldShowPowerButtonWarningText;
+    BOOL _hasPickedATarget;
     int _numOfCPIOExtractionRetries;
     NSError *_installCheckFailureReason;
     OSInstallOptions *_options;
@@ -37,6 +38,8 @@
     NSTimer *_progressUpdateCheckTimer;
     NSTimer *_stuckElementTimer;
     double _lastIncommingTime;
+    NSNumber *_lastTimeRemaining;
+    SMPaths *_pather;
     NSTimer *_powerButtonWarningTextTimer;
     IASUnifiedProgressClient *_progressClient;
     OSIPowerController *_powerManager;
@@ -56,6 +59,8 @@
     NSObject<OS_dispatch_queue> *_targetEvaluationQueue;
 }
 
++ (id)failureReasonForError:(id)arg1;
+@property BOOL hasPickedATarget; // @synthesize hasPickedATarget=_hasPickedATarget;
 @property(retain) NSObject<OS_dispatch_queue> *targetEvaluationQueue; // @synthesize targetEvaluationQueue=_targetEvaluationQueue;
 @property(retain, nonatomic) NSMutableArray *customizationOptions; // @synthesize customizationOptions=_customizationOptions;
 @property int numOfCPIOExtractionRetries; // @synthesize numOfCPIOExtractionRetries=_numOfCPIOExtractionRetries;
@@ -75,6 +80,8 @@
 @property(retain) IASUnifiedProgressClient *progressClient; // @synthesize progressClient=_progressClient;
 @property(retain) NSTimer *powerButtonWarningTextTimer; // @synthesize powerButtonWarningTextTimer=_powerButtonWarningTextTimer;
 @property BOOL shouldShowPowerButtonWarningText; // @synthesize shouldShowPowerButtonWarningText=_shouldShowPowerButtonWarningText;
+@property(retain) SMPaths *pather; // @synthesize pather=_pather;
+@property(retain) NSNumber *lastTimeRemaining; // @synthesize lastTimeRemaining=_lastTimeRemaining;
 @property double lastIncommingTime; // @synthesize lastIncommingTime=_lastIncommingTime;
 @property(retain) NSTimer *stuckElementTimer; // @synthesize stuckElementTimer=_stuckElementTimer;
 @property(retain) NSTimer *progressUpdateCheckTimer; // @synthesize progressUpdateCheckTimer=_progressUpdateCheckTimer;
@@ -121,7 +128,7 @@
 - (void)_evaluateDisks:(id)arg1;
 - (void)_removeDisksFromHandledTargets:(id)arg1;
 - (id)target;
-- (BOOL)setTarget:(id)arg1 error:(id *)arg2;
+- (BOOL)setDataTarget:(id)arg1 withSystemTarget:(id)arg2 error:(id *)arg3;
 - (void)initialPopulateComplete;
 - (id)visibleDiskRoles;
 - (void)disksDisappeared:(id)arg1;
@@ -132,8 +139,13 @@
 - (id)licenseAgreement;
 - (BOOL)isRestartRequiredByBootTimeInstallPackagesOnTarget:(id)arg1;
 - (void)prepareForReboot;
+- (BOOL)_setupInstallWithError:(id *)arg1;
+- (BOOL)_setupLegacyConversionInstallWithError:(id *)arg1;
 - (BOOL)startInstall;
+- (void)determineROSVAndEnableROSVPathsIfNecessary;
+- (BOOL)_flushDMLogToTarget;
 - (void)_setSUAppleUpgradeCookie;
+- (void)_setAppleInternalPermittedByDistribution:(id)arg1;
 @property(readonly) NSNumber *bytesRequiredToInstall;
 - (long long)_recursivelyUpdateStateForItem:(id)arg1;
 - (void)updateCustomizationState;

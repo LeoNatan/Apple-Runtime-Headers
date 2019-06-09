@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSString, SKUITracklistColumnData, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUITracklistHeaderCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView>
 {
     UIView *_bottomSeparatorView;

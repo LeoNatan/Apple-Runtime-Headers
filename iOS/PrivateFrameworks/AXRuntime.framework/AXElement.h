@@ -26,6 +26,7 @@
     struct CGRect _cachedVisibleFrame;
 }
 
++ (id)elementWithData:(id)arg1;
 + (id)systemWideElement;
 + (id)elementAtCoordinate:(struct CGPoint)arg1 withVisualPadding:(_Bool)arg2;
 + (void)registerNotifications:(id)arg1 withIdentifier:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
@@ -83,8 +84,13 @@
 @property(readonly, nonatomic) _Bool canPerformEscape;
 @property(readonly, nonatomic) long long scannerActivateBehavior;
 @property(readonly, nonatomic) _Bool isScannerElement;
-- (void)insertTextAtCurrentPosition:(id)arg1;
-- (void)insertText:(id)arg1 atPosition:(long long)arg2;
+@property(readonly, nonatomic) AXElement *elementForTextInsertionAndDeletion;
+- (id)alternativesForTextAtPosition:(unsigned long long)arg1;
+- (void)deleteText;
+- (void)insertTextWithAlternatives:(id)arg1;
+- (void)insertText:(id)arg1 asUndoableAction:(_Bool)arg2;
+- (void)insertText:(id)arg1;
+- (id)_uiElementForTextInsertionAndDeletion;
 - (_Bool)zoomOut;
 - (_Bool)zoomIn;
 - (_Bool)_zoomInOrOut:(_Bool)arg1;
@@ -122,14 +128,20 @@
 - (_Bool)hasAllTraits:(unsigned long long)arg1;
 - (id)previousElementsWithCount:(unsigned long long)arg1;
 - (id)nextElementsWithCount:(unsigned long long)arg1;
+- (struct CGRect)boundsForTextRange:(struct _NSRange)arg1;
+- (id)_objectForRange:(struct _NSRange)arg1 withParameterizedAttribute:(long long)arg2;
 @property(nonatomic) struct _NSRange selectedTextRange;
+@property(readonly, nonatomic) _Bool required;
+@property(readonly, nonatomic) NSString *textualContext;
 @property(readonly, nonatomic) struct _NSRange rowRange;
+@property(readonly, nonatomic) NSString *roleDescription;
 @property(readonly, nonatomic) NSArray *drops;
 @property(readonly, nonatomic) NSArray *drags;
 @property(readonly, nonatomic) NSArray *customActions;
 @property(nonatomic) _Bool assistiveTechFocused;
 @property(readonly, nonatomic) NSArray *typingCandidates;
 @property(readonly, nonatomic) NSArray *textOperations;
+- (id)_textOperationsOperator;
 @property(readonly, nonatomic) _Bool hasVariantKeys;
 @property(readonly, nonatomic) NSArray *variantKeys;
 - (_Bool)isMap;
@@ -156,11 +168,14 @@
 @property(readonly, nonatomic) struct CGPath *path;
 @property(readonly, nonatomic) NSURL *url;
 @property(nonatomic) NSString *value;
+@property(readonly, nonatomic) NSArray *userInputLabels;
+@property(readonly, nonatomic) NSString *speechInputLabel;
 @property(readonly, nonatomic) NSString *hint;
 - (id)accessibilityLocalizedStringTableName;
 - (id)accessibilityLocalizationBundlePath;
 - (id)accessibilityLocalizationBundleID;
 - (id)accessibilityLocalizedStringKey;
+@property(readonly, nonatomic) NSString *speakThisString;
 @property(readonly, nonatomic) NSString *label;
 @property(readonly, nonatomic) _Bool isVisible;
 @property(readonly, nonatomic) _Bool isAccessibleElement;
@@ -204,7 +219,9 @@
 - (_Bool)systemPressTVSelectButton;
 - (void)sendUserEventOccurred;
 @property(readonly, nonatomic) AXElement *accessibilityUIServerApplication;
+- (id)carPlaySystemApplication;
 @property(readonly, nonatomic) AXElement *systemApplication;
+@property(readonly, nonatomic) _Bool applicationIsModal;
 @property(readonly, nonatomic) AXElement *springBoardApplication;
 @property(readonly, nonatomic) NSArray *currentApplicationsIgnoringSiri;
 @property(readonly, nonatomic) NSArray *currentApplications;
@@ -213,12 +230,14 @@
 @property(readonly, nonatomic) _Bool isSystemWideElement;
 @property(readonly, nonatomic) struct __AXUIElement *elementRef;
 - (id)elementsForAttribute:(long long)arg1;
+- (id)elementsForAttribute:(long long)arg1 parameter:(id)arg2;
 - (id)elementForAttribute:(long long)arg1 parameter:(id)arg2;
 - (id)_elementForAttribute:(long long)arg1 shouldUpdateCache:(_Bool)arg2 shouldFetchAttributes:(_Bool)arg3;
 - (id)elementForAttribute:(long long)arg1;
 @property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
 - (void)dealloc;
+- (id)serializeToData;
 - (id)initWithUIElement:(id)arg1;
 - (id)initWithAXUIElement:(struct __AXUIElement *)arg1;
 - (unsigned int)contextIdForPoint:(struct CGPoint)arg1;

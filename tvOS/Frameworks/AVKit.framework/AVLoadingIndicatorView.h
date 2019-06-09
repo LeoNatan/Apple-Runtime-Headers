@@ -8,6 +8,7 @@
 
 @class UIActivityIndicatorView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface AVLoadingIndicatorView : UIView
 {
     UIActivityIndicatorView *_activityIndicatorView;

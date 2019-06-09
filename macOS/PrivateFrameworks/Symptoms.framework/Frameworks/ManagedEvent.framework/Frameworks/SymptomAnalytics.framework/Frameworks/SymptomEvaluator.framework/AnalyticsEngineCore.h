@@ -27,6 +27,7 @@
 - (id)extractQueryStringFrom:(id)arg1 isGeneric:(_Bool *)arg2;
 - (void)performQueryOnEntityCore:(id)arg1 pred:(id)arg2 sort:(id)arg3 actions:(id)arg4 service:(id)arg5 reply:(CDUnknownBlockType)arg6;
 - (void)shutdown;
+- (void)clientTransactionsRelease;
 - (void)_saveAndUnloadAllState;
 - (void)clientEvent:(id)arg1 isAddEvent:(BOOL)arg2;
 - (void)unsubscribeToNOIs:(id)arg1 connection:(id)arg2;

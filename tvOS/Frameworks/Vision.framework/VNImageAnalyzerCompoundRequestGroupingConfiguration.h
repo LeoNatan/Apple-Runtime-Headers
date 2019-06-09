@@ -11,18 +11,18 @@
 __attribute__((visibility("hidden")))
 @interface VNImageAnalyzerCompoundRequestGroupingConfiguration : NSObject
 {
-    NSMutableDictionary *_detectorConfigurationOptions;
     NSMutableArray *_originalRequests;
-    NSMutableArray *_observationClasses;
+    NSMutableDictionary *_kindToOriginalRequestsMapping;
+    NSMutableDictionary *_detectorConfigurationOptions;
 }
 
 - (void).cxx_destruct;
 - (_Bool)preferBackgroundProcessing;
 - (id)processingDevice;
-- (id)observationClasses;
+- (void)enumerateOriginalRequestsByKindUsingBlock:(CDUnknownBlockType)arg1;
 - (id)originalRequests;
 - (id)detectorConfigurationOptions;
-- (void)addOriginalRequest:(id)arg1 withObservationClass:(Class)arg2;
+- (void)addOriginalRequest:(id)arg1 forKind:(unsigned long long)arg2;
 - (void)setDetectorConfigurationOption:(id)arg1 value:(id)arg2;
 - (id)init;
 

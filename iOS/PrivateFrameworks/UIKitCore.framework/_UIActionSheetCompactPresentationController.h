@@ -68,7 +68,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)_shouldOccludeDuringPresentation;
 - (_Bool)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (_Bool)shouldPresentInFullscreen;
-- (_Bool)shouldRemovePresentersView;
 - (void)dealloc;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2 visualStyle:(id)arg3;
 

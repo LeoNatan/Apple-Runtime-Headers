@@ -8,5 +8,9 @@
 
 @interface INSendMessageIntent (_CDSpotlightRecorderAdditions)
 - (_Bool)cd_saveToPeopleStore;
+- (id)cd_derivedIntentIdentifier;
+- (id)cd_groupName;
+- (int)cd_interactionMechanism;
+- (id)cd_recipients;
 @end
 

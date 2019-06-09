@@ -7,47 +7,36 @@
 #import <objc/NSObject.h>
 
 #import <Photos/NSCopying-Protocol.h>
+#import <Photos/PHMediaRequestThreadingOptions-Protocol.h>
 
+@class NSString;
 @protocol OS_dispatch_queue;
 
-@interface PHImageRequestOptions : NSObject <NSCopying>
+@interface PHImageRequestOptions : NSObject <PHMediaRequestThreadingOptions, NSCopying>
 {
+    int _requestID;
     _Bool _networkAccessAllowed;
     _Bool _synchronous;
-    _Bool _memoryCachingAllowed;
-    _Bool _deliveryFirstResultAsynchronously;
     _Bool _allowPlaceholder;
     _Bool _allowSecondaryOpportunisticImage;
-    _Bool _routeToNewImageManager;
-    int _requestID;
+    _Bool _onlyUseFetchedAssetPropertiesDuringChoosing;
     long long _version;
     long long _deliveryMode;
     long long _resizeMode;
     CDUnknownBlockType _progressHandler;
     long long _loadingMode;
-    long long _rank;
-    double _demoteFactor;
-    double _aspectRatioHint;
-    double _downloadUpdateInterval;
-    CDUnknownBlockType _cachingCompletedHandler;
     NSObject<OS_dispatch_queue> *_resultHandlerQueue;
+    CDUnknownBlockType _cachingCompleteHandler;
     struct CGRect _normalizedCropRect;
 }
 
 + (id)defaultOptionsAllowingPlaceholder;
+@property(copy, nonatomic) CDUnknownBlockType cachingCompleteHandler; // @synthesize cachingCompleteHandler=_cachingCompleteHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resultHandlerQueue; // @synthesize resultHandlerQueue=_resultHandlerQueue;
-@property(nonatomic) _Bool routeToNewImageManager; // @synthesize routeToNewImageManager=_routeToNewImageManager;
-@property(copy, nonatomic) CDUnknownBlockType cachingCompletedHandler; // @synthesize cachingCompletedHandler=_cachingCompletedHandler;
-@property(nonatomic) double downloadUpdateInterval; // @synthesize downloadUpdateInterval=_downloadUpdateInterval;
-@property(nonatomic) double aspectRatioHint; // @synthesize aspectRatioHint=_aspectRatioHint;
-@property(nonatomic) double demoteFactor; // @synthesize demoteFactor=_demoteFactor;
-@property(nonatomic) long long rank; // @synthesize rank=_rank;
+@property(nonatomic) _Bool onlyUseFetchedAssetPropertiesDuringChoosing; // @synthesize onlyUseFetchedAssetPropertiesDuringChoosing=_onlyUseFetchedAssetPropertiesDuringChoosing;
 @property(nonatomic) _Bool allowSecondaryOpportunisticImage; // @synthesize allowSecondaryOpportunisticImage=_allowSecondaryOpportunisticImage;
 @property(nonatomic) _Bool allowPlaceholder; // @synthesize allowPlaceholder=_allowPlaceholder;
-@property(nonatomic) _Bool deliveryFirstResultAsynchronously; // @synthesize deliveryFirstResultAsynchronously=_deliveryFirstResultAsynchronously;
-@property(nonatomic, getter=isMemoryCachingAllowed) _Bool memoryCachingAllowed; // @synthesize memoryCachingAllowed=_memoryCachingAllowed;
 @property(nonatomic) long long loadingMode; // @synthesize loadingMode=_loadingMode;
-@property(nonatomic) int requestID; // @synthesize requestID=_requestID;
 @property(copy, nonatomic) CDUnknownBlockType progressHandler; // @synthesize progressHandler=_progressHandler;
 @property(nonatomic, getter=isSynchronous) _Bool synchronous; // @synthesize synchronous=_synchronous;
 @property(nonatomic, getter=isNetworkAccessAllowed) _Bool networkAccessAllowed; // @synthesize networkAccessAllowed=_networkAccessAllowed;
@@ -56,10 +45,14 @@
 @property(nonatomic) long long deliveryMode; // @synthesize deliveryMode=_deliveryMode;
 @property(nonatomic) long long version; // @synthesize version=_version;
 - (void).cxx_destruct;
-- (int)requestIDOrNextIfInvalid;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

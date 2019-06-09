@@ -13,6 +13,7 @@
 
 @class NSMultiReadUniWriteLock, NSMutableArray, NSMutableDictionary, NSNetServiceBrowser, NSString;
 
+__attribute__((visibility("hidden")))
 @interface XSBonjourComboBox : NSComboBox <NSNetServiceBrowserDelegate, NSNetServiceDelegate, NSComboBoxDataSource, NSCoding>
 {
     NSString *_serviceType;

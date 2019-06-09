@@ -20,12 +20,12 @@
 + (double)timeIntervalBeforeClearingCachedKeys;
 + (void)rewrapKeyForObject:(id)arg1 newMasterKey:(id)arg2 salt:(id)arg3 iterationCount:(unsigned int)arg4 hint:(id)arg5;
 + (void)transferSharedPassphraseFromAccount:(id)arg1 toAccount:(id)arg2;
-+ (void)rewrapNote:(id)arg1 newMasterKey:(id)arg2 salt:(id)arg3 interationCount:(unsigned int)arg4 hint:(id)arg5;
-+ (_Bool)updateAllNotesWithOldPassphrase:(id)arg1 toSharedPassphrase:(id)arg2 fromAccount:(id)arg3 progress:(id)arg4;
++ (void)rewrapNote:(id)arg1 newMasterKey:(id)arg2 salt:(id)arg3 iterationCount:(unsigned int)arg4 hint:(id)arg5;
++ (_Bool)updateAllNotesWithOldPassphrase:(id)arg1 toAccountPassphrase:(id)arg2 fromAccount:(id)arg3 progress:(id)arg4;
 + (_Bool)setPassphrase:(id)arg1 hint:(id)arg2 forAccount:(id)arg3;
-+ (_Bool)setPassphrase:(id)arg1 forAllAccountsAndNotesWithHint:(id)arg2 oldPassphrase:(id)arg3;
-+ (_Bool)setPassphrase:(id)arg1 forAllAccountsAndNotesWithHint:(id)arg2;
++ (_Bool)setPassphrase:(id)arg1 hint:(id)arg2 oldPassphrase:(id)arg3 forAccount:(id)arg4;
 + (_Bool)hasAnyCachedMasterKeys;
++ (void)refaultAllPasswordProtectedObjects;
 + (void)clearAllCachedMasterKeys;
 + (id)cachedMasterKeyForObject:(id)arg1;
 + (id)allCachedKeys;

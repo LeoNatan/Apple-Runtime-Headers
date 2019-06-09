@@ -11,6 +11,7 @@
 @class NSString, SKUIAccountButtonsView, SKUIClientContext, SKUILink;
 @protocol SKUIAccountButtonsDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAccountButtonsViewController : UIViewController <UINavigationControllerDelegate>
 {
     SKUIAccountButtonsView *_buttonsView;

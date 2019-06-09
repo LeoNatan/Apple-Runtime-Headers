@@ -6,7 +6,23 @@
 
 #import <Foundation/NSAppleEventDescriptor.h>
 
+@class NSImage, NSString;
+
 @interface NSAppleEventDescriptor (_NSKindOfAdditions_)
 - (BOOL)isNSAppleEventDescriptor__;
+- (BOOL)am_isEqualToAppleEventDescriptor:(id)arg1;
+- (id)eventDidFail:(const struct AEDesc *)arg1 withError:(id)arg2;
+@property(readonly) NSAppleEventDescriptor *am_objectDescriptorByRemovingApplicationPSN;
+@property(readonly) BOOL am_containsRecords;
+@property(readonly) BOOL am_isText;
+@property(readonly) NSImage *_am_imageRepresentation;
+- (id)typeOfAlbum;
+- (id)thumbnailPath;
+@property(readonly) NSString *am_applicationName;
+- (id)_am_humanReadableNameWithDelimiter:(id)arg1;
+- (id)am_descriptorCopyWithNullApplicationFromPath:(id *)arg1;
+- (id)_applicationPath;
+@property(readonly) NSString *am_descriptorTypeString;
+- (id)replacementObjectForPortCoder:(id)arg1;
 @end
 

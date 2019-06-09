@@ -19,7 +19,7 @@
 
 @property(readonly) id <_DKKnowledgeSaving> eventStorage; // @synthesize eventStorage=_eventStorage;
 @property(readonly) id <_CDUserContext> context; // @synthesize context=_context;
-@property(readonly) NSURL *URL; // @synthesize URL=_URL;
+@property(readonly, copy) NSURL *URL; // @synthesize URL=_URL;
 - (void).cxx_destruct;
 - (void)changeState:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)description;

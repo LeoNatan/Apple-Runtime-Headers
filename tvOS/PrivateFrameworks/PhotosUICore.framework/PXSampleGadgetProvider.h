@@ -13,9 +13,11 @@
     _Bool _includeHorizontal;
     _Bool _hasLoadedData;
     NSArray *_sampleGadgets;
+    double _minimumHeight;
 }
 
 @property(nonatomic) _Bool hasLoadedData; // @synthesize hasLoadedData=_hasLoadedData;
+@property(nonatomic) double minimumHeight; // @synthesize minimumHeight=_minimumHeight;
 @property(retain, nonatomic) NSArray *sampleGadgets; // @synthesize sampleGadgets=_sampleGadgets;
 @property(readonly, nonatomic) _Bool includeHorizontal; // @synthesize includeHorizontal=_includeHorizontal;
 - (void).cxx_destruct;
@@ -23,7 +25,7 @@
 - (unsigned long long)estimatedNumberOfGadgets;
 - (void)loadDataForGadgets;
 - (id)init;
-- (id)initWithHorizontalGadget:(_Bool)arg1;
+- (id)initWithMinimumHeight:(double)arg1;
 
 @end
 

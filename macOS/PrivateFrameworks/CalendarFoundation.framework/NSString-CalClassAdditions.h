@@ -34,6 +34,7 @@
 - (BOOL)isPathToICalData;
 - (BOOL)isPathToVCalData;
 - (BOOL)isPathToAppleScript;
+- (void)cal_enumerateCharactersUsingBlock:(CDUnknownBlockType)arg1;
 - (id)stringByDecodingSlashes;
 - (id)stringByEncodingSlashes;
 - (id)directionalityIsolatedString;
@@ -68,5 +69,6 @@
 - (id)stringByURLQuotingPaths;
 - (id)stringByURLQuoting;
 - (id)stringByURLUnquoting;
+- (id)stringByExpandingTildeToNonSandboxHome;
 @end
 

@@ -32,9 +32,14 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <BKDevicePearlDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)setSmartCoverCallback:(CDUnknownBlockType)arg1;
+- (void)setSmartCoverClosed:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)setSmartCoverClosed:(_Bool)arg1;
 - (void)setDisplayCallback:(CDUnknownBlockType)arg1;
+- (void)setDisplayState:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)setDisplayState:(_Bool)arg1;
+- (void)setSampleState:(_Bool)arg1 deliverEvent:(_Bool)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)setSampleState:(_Bool)arg1 deliverEvent:(_Bool)arg2;
+- (void)setSampleState:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)setSampleState:(_Bool)arg1;
 - (void)resetStats;
 - (void)getStatsWithBlock:(CDUnknownBlockType)arg1;

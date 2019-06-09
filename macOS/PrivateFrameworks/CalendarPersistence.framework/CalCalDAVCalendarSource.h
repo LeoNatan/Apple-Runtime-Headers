@@ -19,10 +19,10 @@
     BOOL _isOwnerMe;
 }
 
-+ (id)propertiesForListContents;
 @property BOOL isOwnerMe; // @synthesize isOwnerMe=_isOwnerMe;
 @property(retain) CALAddress *ownerAddress; // @synthesize ownerAddress=_ownerAddress;
 @property(retain) NSManagedObjectID *principalID; // @synthesize principalID=_principalID;
+- (void).cxx_destruct;
 - (BOOL)allowsSchedulingByMe;
 - (BOOL)isSourceInSameAccount:(id)arg1 ignoringOwner:(BOOL)arg2;
 - (BOOL)isSourceInSameAccount:(id)arg1;
@@ -47,7 +47,6 @@
 - (id)timeZone;
 - (BOOL)isCalDAV;
 - (id)freeBusyCache;
-- (void)dealloc;
 - (id)initWithKey:(id)arg1;
 - (BOOL)removeEntities:(id)arg1 fromServer:(BOOL)arg2 inManagedObjectContext:(id)arg3;
 - (BOOL)removeEntity:(id)arg1 fromServer:(BOOL)arg2 inManagedObjectContext:(id)arg3;

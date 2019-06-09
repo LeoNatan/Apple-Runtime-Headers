@@ -17,6 +17,7 @@
     unsigned long long _peekOutboundBytes;
 }
 
++ (id)pauseVerdict;
 + (id)filterDataVerdictWithFilterInbound:(_Bool)arg1 peekInboundBytes:(unsigned long long)arg2 filterOutbound:(_Bool)arg3 peekOutboundBytes:(unsigned long long)arg4;
 + (id)URLAppendStringVerdictWithMapKey:(id)arg1;
 + (id)remediateVerdictWithRemediationURLMapKey:(id)arg1 remediationButtonTextMapKey:(id)arg2;

@@ -7,6 +7,7 @@
 @class CTXPCServiceSubscriptionContext, NSDictionary, NSString;
 
 @protocol CTXPCServiceDeviceManagementInterface
+- (void)renamePersonalWallet:(NSString *)arg1 to:(NSString *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)listPersonalWallets:(void (^)(NSArray *, NSError *))arg1;
 - (void)deletePersonalWallet:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)getConfiguredApns:(CTXPCServiceSubscriptionContext *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;

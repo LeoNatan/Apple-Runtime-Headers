@@ -17,13 +17,12 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (_Bool)isPhotosTCCAccessRestricted;
 - (void)photoAccessPowersActive;
 - (int)photosTCCAccessStatus;
 - (_Bool)isPhotosTCCAccessNotAllowed;
 - (_Bool)isPhotosTCCAccessAllowed;
-- (_Bool)isPhotoLibraryReadAccessAllowed;
-- (_Bool)isPhotoLibrarySharingOrModificationAllowed;
 - (_Bool)isPhotosAccessAllowedWithScope:(long long)arg1 promptIfNeededWithHandler:(CDUnknownBlockType)arg2;
 - (void)isPhotosAccessAllowedWithScope:(long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (_Bool)_isPhotosAccessAllowedWithScope:(long long)arg1 forceHandler:(_Bool)arg2 accessAllowedHandler:(CDUnknownBlockType)arg3;
@@ -31,7 +30,6 @@
 - (void)_setAuthStatus:(int)arg1 scope:(long long)arg2;
 - (void)_setPreflightStatusForScope:(long long)arg1;
 - (struct __CFString *)_TCCForScope:(long long)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

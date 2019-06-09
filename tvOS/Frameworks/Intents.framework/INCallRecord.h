@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <Intents/INCacheableContainer-Protocol.h>
+#import <Intents/INJSONSerializable-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 #import <Intents/NSSecureCoding-Protocol.h>
 
 @class INPerson, NSDate, NSNumber, NSString;
 
-@interface INCallRecord : NSObject <INCacheableContainer, NSCopying, NSSecureCoding>
+@interface INCallRecord : NSObject <INCacheableContainer, INJSONSerializable, NSCopying, NSSecureCoding>
 {
     NSString *_identifier;
     NSDate *_dateCreated;
@@ -21,9 +22,12 @@
     NSNumber *_callDuration;
     NSNumber *_unseen;
     long long _callCapability;
+    NSNumber *_numberOfCalls;
 }
 
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 + (_Bool)supportsSecureCoding;
+@property(readonly, copy, nonatomic) NSNumber *numberOfCalls; // @synthesize numberOfCalls=_numberOfCalls;
 @property(readonly, nonatomic) long long callCapability; // @synthesize callCapability=_callCapability;
 @property(readonly, copy, nonatomic) NSNumber *unseen; // @synthesize unseen=_unseen;
 @property(readonly, copy, nonatomic) NSNumber *callDuration; // @synthesize callDuration=_callDuration;
@@ -35,12 +39,14 @@
 - (id)_dictionaryRepresentation;
 - (id)descriptionAtIndent:(unsigned long long)arg1;
 @property(readonly, copy) NSString *description;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)initWithIdentifier:(id)arg1 dateCreated:(id)arg2 caller:(id)arg3 callRecordType:(long long)arg4 callCapability:(long long)arg5 callDuration:(id)arg6 unseen:(id)arg7;
+- (id)initWithIdentifier:(id)arg1 dateCreated:(id)arg2 caller:(id)arg3 callRecordType:(long long)arg4 callCapability:(long long)arg5 callDuration:(id)arg6 unseen:(id)arg7 numberOfCalls:(id)arg8;
 - (void)_intents_updateContainerWithCache:(id)arg1;
 - (id)_intents_cacheableObjects;
 

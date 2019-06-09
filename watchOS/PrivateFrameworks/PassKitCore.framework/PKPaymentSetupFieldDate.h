@@ -11,13 +11,14 @@
 @interface PKPaymentSetupFieldDate : PKPaymentSetupFieldText
 {
     NSDateFormatter *_displayDateFormatter;
-    NSDate *_defaultDate;
     _Bool _showsDay;
     _Bool _showsMonth;
     _Bool _showsYear;
     NSString *_submissionFormat;
+    NSDate *_defaultDate;
 }
 
+@property(copy, nonatomic) NSDate *defaultDate; // @synthesize defaultDate=_defaultDate;
 @property(copy, nonatomic) NSString *submissionFormat; // @synthesize submissionFormat=_submissionFormat;
 @property(nonatomic) _Bool showsYear; // @synthesize showsYear=_showsYear;
 @property(nonatomic) _Bool showsMonth; // @synthesize showsMonth=_showsMonth;
@@ -27,7 +28,6 @@
 - (void)_commonUpdate;
 - (void)updateWithConfiguration:(id)arg1;
 - (id)_locale;
-@property(readonly, copy, nonatomic) NSDate *defaultDate;
 - (_Bool)submissionStringMeetsAllRequirements;
 - (id)_defaultValueAsDateForCurrentLocale;
 - (id)_submissionStringForValue:(id)arg1;

@@ -6,32 +6,40 @@
 
 #import <PepperUICore/PUICTableViewCell.h>
 
-@class NSMutableArray, NSString, UILabel;
+@class NSLayoutConstraint, NSString, UIColor, UIFont, UILabel, UILayoutGuide, UIStackView;
 
 @interface NCABContactTextCell : PUICTableViewCell
 {
-    UILabel *_titleLabel;
+    UILayoutGuide *_layoutGuide;
+    UILabel *_headerLabel;
     UILabel *_textLabel;
-    float _titleLeading;
-    NSMutableArray *_constraints;
-    _Bool _useCompactOffset;
+    UIFont *_textFont;
+    UIColor *_textColor;
+    UIStackView *_labelStackView;
+    NSLayoutConstraint *_headerLabelHeightConstraint;
+    NSLayoutConstraint *_textLabelHeightConstraint;
+    _Bool _constraintsAdded;
     NSString *_title;
     NSString *_text;
 }
 
-+ (float)sidePadding;
-+ (struct CGSize)textCellSizeThatFits:(struct CGSize)arg1 withText:(id)arg2 useCompactOffset:(_Bool)arg3;
-@property(nonatomic, getter=usesCompactOffset) _Bool useCompactOffset; // @synthesize useCompactOffset=_useCompactOffset;
++ (void)initialize;
+@property(retain, nonatomic) UIFont *textFont; // @synthesize textFont=_textFont;
+@property(retain, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
-- (void)_updateFonts;
-- (void)_contentSizeChanged:(id)arg1;
+- (float)_textHeight;
+- (void)_updateDynamicConstraints;
+- (void)_setupViewConstraints;
+- (void)_updateFontsAndColors;
+- (void)_contentSizeChanged;
 - (void)updateConstraints;
-- (void)dealloc;
+- (void)didMoveToSuperview;
 - (void)prepareForReuse;
-- (id)initWithCellIdentifier:(id)arg1;
+- (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)initWithCellIdentifier:(id)arg1;
 
 @end
 

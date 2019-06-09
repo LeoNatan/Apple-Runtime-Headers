@@ -10,6 +10,7 @@
 
 @class AnalyticsWorkspace, NSDate, NSDictionary, NSManagedObjectID, NSMutableDictionary, NSMutableSet, NSString, NSUUID, NetworkAttachmentAnalytics, SFLiveRoutePerf, SFNetworkAttachment, StopWatch;
 
+__attribute__((visibility("hidden")))
 @interface NetworkEpoch : NSObject <NSCopying>
 {
     NSDate *createdAt;
@@ -61,7 +62,7 @@
 
 + (_Bool)parsePrimaryKeyStr:(const char *)arg1 majorIDLengthInBytes:(int *)arg2 minorIDLengthInBytes:(int *)arg3;
 + (_Bool)parsePrimaryKey:(id)arg1 majorID:(id *)arg2 minorID:(id *)arg3;
-+ (void)resetDataForSSID:(id)arg1 exceptFor:(id)arg2 inWorkspace:(id)arg3;
++ (void)resetDataForSSIDs:(id)arg1 exceptFor:(id)arg2 inWorkspace:(id)arg3;
 + (void)resetDataFor:(id)arg1 exceptFor:(id)arg2 inWorkspace:(id)arg3;
 + (_Bool)pruneDataOlderThan:(id)arg1 exceptFor:(id)arg2 inWorkspace:(id)arg3;
 + (id)snapshotsIn:(id)arg1 olderThan:(id)arg2;

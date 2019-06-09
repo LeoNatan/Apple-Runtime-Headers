@@ -50,6 +50,7 @@
 - (id)objectForKey:(id)arg1;
 - (id)resultWithResourceLock:(CDUnknownBlockType)arg1;
 - (void)performWithResourceLock:(CDUnknownBlockType)arg1;
+- (id)description;
 - (id)initWithBoundingStrategies:(id)arg1 resourceScheduler:(id)arg2;
 - (id)initWithResourceScheduler:(id)arg1;
 - (id)init;

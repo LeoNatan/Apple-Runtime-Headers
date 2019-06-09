@@ -14,14 +14,16 @@
 __attribute__((visibility("hidden")))
 @interface _UIInterfaceActionBlendingSeparatorView : _UIBlendingHighlightView <UIInterfaceActionVisualSeparatorDisplaying, UIInterfaceActionVisualSectionSeparatorDisplaying>
 {
+    float _horizontalLineLeadingInset;
     _UIInterfaceActionSeparatorConstraintController *_separatorViewConstraints;
 }
 
-+ (id)plusDColor;
-+ (id)colorBurnColor;
 @property(readonly, retain, nonatomic) _UIInterfaceActionSeparatorConstraintController *separatorViewConstraints; // @synthesize separatorViewConstraints=_separatorViewConstraints;
+@property(nonatomic) float horizontalLineLeadingInset; // @synthesize horizontalLineLeadingInset=_horizontalLineLeadingInset;
 - (void).cxx_destruct;
+- (void)_updateContentDirectionalInsets;
 - (void)updateConstraints;
+- (int)constantSizedAxis;
 - (void)setConstantSizedAxis:(int)arg1;
 @property(nonatomic) float constantAxisDimension;
 - (id)init;

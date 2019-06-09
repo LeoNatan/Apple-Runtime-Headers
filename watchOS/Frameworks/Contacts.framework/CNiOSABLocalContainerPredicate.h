@@ -13,14 +13,17 @@
 __attribute__((visibility("hidden")))
 @interface CNiOSABLocalContainerPredicate : CNPredicate <CNiOSContainerPredicate>
 {
+    _Bool _includesDisabledContainer;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) _Bool includesDisabledContainer; // @synthesize includesDisabledContainer=_includesDisabledContainer;
 - (_Bool)includesDisabledContainers;
 @property(readonly, copy) NSString *description;
 - (struct __CFArray *)cn_copyContainersInAddressBook:(void *)arg1 error:(struct __CFError **)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDisabledContainerIncluded:(_Bool)arg1;
 - (id)init;
 - (id)initWithPredicate:(id)arg1;
 

@@ -31,9 +31,9 @@
 - (id)dumpDescription;
 - (id)addTransactionForHome:(id)arg1 configurationAppIdentifier:(id)arg2;
 @property(retain) HMDDevice *device; // @synthesize device=_device;
-@property(retain) HMFSoftwareVersion *softwareVersion; // @synthesize softwareVersion=_softwareVersion;
-@property(retain) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
-@property(retain) NSString *model; // @synthesize model=_model;
+@property(copy) HMFSoftwareVersion *softwareVersion; // @synthesize softwareVersion=_softwareVersion;
+@property(copy) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
+@property(copy) NSString *model; // @synthesize model=_model;
 - (id)descriptionWithPointer:(_Bool)arg1 additionalDescription:(id)arg2;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 category:(id)arg3 messageDispatcher:(id)arg4;
 

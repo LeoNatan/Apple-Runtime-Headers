@@ -17,6 +17,17 @@
 
 + (void)setLogPeakRenderCIUsuage:(BOOL)arg1;
 + (BOOL)logPeakRenderCIUsuage;
++ (void)setUpCacheNodeDirectoryWithComponent:(id)arg1;
++ (void)setRenderTransparencyOpaque:(BOOL)arg1;
++ (BOOL)renderTransparencyOpaque;
++ (void)setRenderTransparencyOverBlack:(BOOL)arg1;
++ (BOOL)renderTransparencyOverBlack;
++ (void)setDisplayDisableColorMatching:(BOOL)arg1;
++ (BOOL)displayDisableColorMatching;
++ (void)setDisplayForceDeepColor:(BOOL)arg1;
++ (BOOL)displayForceDeepColor;
++ (void)setDisplayDisableDeepColor:(BOOL)arg1;
++ (BOOL)displayDisableDeepColor;
 + (void)setImageLayerDebug:(BOOL)arg1;
 + (BOOL)imageLayerDebug;
 + (void)setPipelineSourceURL:(id)arg1;
@@ -39,6 +50,8 @@
 + (BOOL)imageSourceDisableCacheImmediately;
 + (void)setImageSourceDisableRAW:(BOOL)arg1;
 + (BOOL)imageSourceDisableRAW;
++ (void)setImageTileBorder:(long long)arg1;
++ (long long)imageTileBorder;
 + (void)setImageTileSize:(long long)arg1;
 + (long long)imageTileSize;
 + (void)setRendererUseP3Linear:(BOOL)arg1;

@@ -10,6 +10,7 @@
 #import <AVKit/NSCopying-Protocol.h>
 #import <AVKit/NSMutableCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface AVValueTiming : NSObject <NSCoding, NSCopying, NSMutableCopying>
 {
 }

@@ -6,7 +6,7 @@
 
 #import <TVHomeSharingServices/NSObject-Protocol.h>
 
-@class NSDictionary, NSNumber, NSString, NSUUID, TVHSMediaServerIdentifier, TVHSMediaServerRequest, TVHSRentalItem;
+@class NSArray, NSDictionary, NSNumber, NSString, NSUUID, TVHSMediaServerIdentifier, TVHSMediaServerRequest, TVHSRentalItem;
 
 @protocol TVHSServiceProtocol <NSObject>
 - (void)checkinRentalItem:(TVHSRentalItem *)arg1 mediaServerIdentifier:(TVHSMediaServerIdentifier *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
@@ -14,6 +14,7 @@
 - (void)synchronizeKeybagForMediaServerWithIdentifier:(TVHSMediaServerIdentifier *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)playbackDidTimeoutFromMediaServerWithIdentifier:(TVHSMediaServerIdentifier *)arg1;
 - (void)playbackURLForMediaServerWithIdentifier:(TVHSMediaServerIdentifier *)arg1 itemIdentifier:(NSNumber *)arg2 protocol:(unsigned long long)arg3 itemFormat:(NSString *)arg4 reply:(void (^)(NSURL *, NSError *))arg5;
+- (void)URLsForRequests:(NSArray *)arg1 toMediaServerWithIdentifier:(TVHSMediaServerIdentifier *)arg2 reply:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)cancelRequestWithIdentifier:(NSUUID *)arg1;
 - (void)submitRequest:(TVHSMediaServerRequest *)arg1 toMediaServerWithIdentifier:(TVHSMediaServerIdentifier *)arg2 reply:(void (^)(TVHSMediaServerResponse *, NSError *))arg3;
 - (void)mediaServerWithIdentifier:(TVHSMediaServerIdentifier *)arg1 reply:(void (^)(TVHSMediaServer *, NSError *))arg2;

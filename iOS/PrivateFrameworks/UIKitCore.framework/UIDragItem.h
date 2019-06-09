@@ -6,41 +6,49 @@
 
 #import <objc/NSObject.h>
 
-@class NSItemProvider, UITargetedDragPreview, UITextRange, _UIDragPreviewProvider, _UIDragSessionImpl, _UIDraggingItem, _UIInternalDraggingItem;
+@class NSItemProvider, UITargetedDragPreview, UITextRange, _UIDragPreviewBlockProvider;
+@protocol _UIDragDropSessionInternal, _UIDragSetDownAnimationTarget;
 
 @interface UIDragItem : NSObject
 {
-    _UIDraggingItem *_draggingItem;
-    _UIDragSessionImpl *_dragSession;
+    _Bool _dirty;
+    _Bool _deferPreviewUpdates;
     NSItemProvider *_itemProvider;
     id _localObject;
     CDUnknownBlockType _previewProvider;
-    _UIInternalDraggingItem *_internalDraggingItem;
-    _UIDragPreviewProvider *_preferredPreviewProvider;
+    _UIDragPreviewBlockProvider *_dragPreviewBlockProvider;
+    unsigned long long _preferredPreviewType;
+    unsigned long long _updatedPreviewType;
+    id <_UIDragDropSessionInternal> _dragDropSession;
     UITargetedDragPreview *_targetedLiftPreview;
+    id <_UIDragSetDownAnimationTarget> _sourceVisualTarget;
+    id <_UIDragSetDownAnimationTarget> _destinationVisualTarget;
     id _privateLocalContext;
-    CDUnknownBlockType _imageComponentsProvider;
-    CDUnknownBlockType _preferredImageComponentsProvider;
     unsigned long long __managementState;
+    struct CGSize _visibleDropItemSize;
 }
 
 @property(nonatomic) unsigned long long _managementState; // @synthesize _managementState=__managementState;
-@property(readonly, nonatomic) CDUnknownBlockType preferredImageComponentsProvider; // @synthesize preferredImageComponentsProvider=_preferredImageComponentsProvider;
-@property(readonly, nonatomic) CDUnknownBlockType imageComponentsProvider; // @synthesize imageComponentsProvider=_imageComponentsProvider;
 @property(retain, nonatomic, getter=_privateLocalContext, setter=_setPrivateLocalContext:) id privateLocalContext; // @synthesize privateLocalContext=_privateLocalContext;
-@property(retain, nonatomic, getter=_targetedLiftPreview, setter=_setTargetedLiftPreview:) UITargetedDragPreview *targetedLiftPreview; // @synthesize targetedLiftPreview=_targetedLiftPreview;
-@property(retain, nonatomic, getter=_preferredPreviewProvider, setter=_setPreferredPreviewProvider:) _UIDragPreviewProvider *preferredPreviewProvider; // @synthesize preferredPreviewProvider=_preferredPreviewProvider;
-@property(nonatomic, getter=_internalDraggingItem, setter=_setInternalDraggingItem:) __weak _UIInternalDraggingItem *internalDraggingItem; // @synthesize internalDraggingItem=_internalDraggingItem;
+@property(nonatomic, getter=_deferPreviewUpdates, setter=_setDeferPreviewUpdates:) _Bool deferPreviewUpdates; // @synthesize deferPreviewUpdates=_deferPreviewUpdates;
+@property(nonatomic, getter=_isDirty, setter=_setDirty:) _Bool dirty; // @synthesize dirty=_dirty;
+@property(nonatomic, getter=_destinationVisualTarget, setter=_setDestinationVisualTarget:) __weak id <_UIDragSetDownAnimationTarget> destinationVisualTarget; // @synthesize destinationVisualTarget=_destinationVisualTarget;
+@property(nonatomic, getter=_sourceVisualTarget, setter=_setSourceVisualTarget:) __weak id <_UIDragSetDownAnimationTarget> sourceVisualTarget; // @synthesize sourceVisualTarget=_sourceVisualTarget;
+@property(nonatomic, getter=_visibleDropItemSize, setter=_setVisibleDropItemSize:) struct CGSize visibleDropItemSize; // @synthesize visibleDropItemSize=_visibleDropItemSize;
+@property(retain, nonatomic, getter=_targetedLiftPreview) UITargetedDragPreview *targetedLiftPreview; // @synthesize targetedLiftPreview=_targetedLiftPreview;
+@property(nonatomic, getter=_dragDropSession, setter=_setDragDropSession:) __weak id <_UIDragDropSessionInternal> dragDropSession; // @synthesize dragDropSession=_dragDropSession;
+@property(nonatomic) unsigned long long updatedPreviewType; // @synthesize updatedPreviewType=_updatedPreviewType;
+@property(nonatomic) unsigned long long preferredPreviewType; // @synthesize preferredPreviewType=_preferredPreviewType;
+@property(retain, nonatomic) _UIDragPreviewBlockProvider *dragPreviewBlockProvider; // @synthesize dragPreviewBlockProvider=_dragPreviewBlockProvider;
 @property(copy, nonatomic) CDUnknownBlockType previewProvider; // @synthesize previewProvider=_previewProvider;
 @property(retain, nonatomic) id localObject; // @synthesize localObject=_localObject;
 @property(retain, nonatomic) NSItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;
-@property(nonatomic, getter=_dragSession, setter=_setDragSession:) __weak _UIDragSessionImpl *_dragSession; // @synthesize _dragSession;
-@property(retain, nonatomic, getter=_draggingItem, setter=_setDraggingItem:) _UIDraggingItem *_draggingItem; // @synthesize _draggingItem;
 - (void).cxx_destruct;
-@property(readonly, nonatomic, getter=_duiPreviewProvider) CDUnknownBlockType duiPreviewProvider;
-@property(readonly, nonatomic) struct CGSize _visibleDropItemSize;
-- (struct CGSize)_previewImageSize;
-- (void)_didSetPreferredPreviewProvider;
+- (id)_currentPreviewProvider;
+- (id)_previewProviderForType:(unsigned long long)arg1;
+- (void)_previewNeedsUpdateForType:(unsigned long long)arg1;
+- (void)_loadOriginalImageComponentProvider;
+- (void)_updatePreferredPreview;
 - (id)initWithItemProvider:(id)arg1;
 @property(retain, nonatomic, setter=_setDraggedTextRange:) UITextRange *_draggedTextRange;
 

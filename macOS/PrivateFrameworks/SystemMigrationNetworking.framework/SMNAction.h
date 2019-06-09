@@ -6,33 +6,48 @@
 
 #import <objc/NSObject.h>
 
-@class NSURL;
+@class NSDictionary, NSString, NSURL;
 
 @interface SMNAction : NSObject
 {
     int _returnCode;
     NSURL *_systemPath;
     CDUnknownBlockType _shouldContinueBlock;
+    NSString *_uniqueID;
+    NSDictionary *_result;
 }
 
-+ (BOOL)writeCompletelyToFd:(int)arg1 buffer:(const void *)arg2 length:(unsigned long long)arg3;
++ (void)sendErrorResponseOnStream:(id)arg1;
 + (BOOL)shouldCloseInboundStreamWhenDone;
 + (BOOL)shouldCloseOutboundStreamWhenDone;
-+ (BOOL)needsDirectAccessToSendOrReceiveResult;
++ (BOOL)streamsResults;
 + (id)actionWithPayload:(id)arg1;
++ (id)descriptionForActionID:(int)arg1;
 + (int)actionID;
+@property(retain) NSDictionary *result; // @synthesize result=_result;
+@property(retain) NSString *uniqueID; // @synthesize uniqueID=_uniqueID;
 @property(readonly) int returnCode; // @synthesize returnCode=_returnCode;
 @property(copy) CDUnknownBlockType shouldContinueBlock; // @synthesize shouldContinueBlock=_shouldContinueBlock;
 @property(retain) NSURL *systemPath; // @synthesize systemPath=_systemPath;
 - (void).cxx_destruct;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)receiveResultPortionOnStream:(id)arg1 error:(id *)arg2;
+- (BOOL)receivePreV4ResultPortionOnStream:(id)arg1 error:(id *)arg2;
+- (BOOL)receiveBinaryStreamOnStream:(id)arg1 error:(id *)arg2;
+- (BOOL)sendRequestPortionOnStream:(id)arg1 error:(id *)arg2;
+- (BOOL)sendActionOverStream:(id)arg1 error:(id *)arg2;
+- (BOOL)sendActionWithSession:(id)arg1 error:(id *)arg2;
 - (BOOL)receiveResultOnFd:(int)arg1 errorIsFatal:(char *)arg2;
 - (BOOL)receiveResultOnFd:(int)arg1;
 - (BOOL)sendResultOnFd:(int)arg1;
 - (id)resultData;
+- (BOOL)setResultFromDict:(id)arg1;
 - (BOOL)setResultFromData:(id)arg1;
-- (void)sendRequestPayloadOnFd:(int)arg1;
 @property(readonly) NSObject *requestPayload;
 @property(readonly) BOOL expectsAResult;
+- (void)processResultsOverStream:(id)arg1;
+- (void)sendSuccessResponseOnStream:(id)arg1;
+- (id)init;
 
 @end
 

@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, NSString;
+@class NSArray, NSHashTable, NSString;
 @protocol OS_os_log;
 
 @interface HKSynchronousObserverSet : NSObject
@@ -18,6 +18,7 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly, copy) NSArray *allObservers;
 @property(readonly) unsigned int count;
 - (void)notifyObservers:(CDUnknownBlockType)arg1;
 - (void)unregisterObserver:(id)arg1;

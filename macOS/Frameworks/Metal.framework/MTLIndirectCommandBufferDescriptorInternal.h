@@ -14,8 +14,10 @@
     unsigned long long _maxVertexBufferBindCount;
     unsigned long long _maxFragmentBufferBindCount;
     unsigned long long _maxKernelBufferBindCount;
+    unsigned long long _resourceIndex;
 }
 
+@property(nonatomic) unsigned long long resourceIndex; // @synthesize resourceIndex=_resourceIndex;
 - (void)setMaxFragmentBufferBindCount:(unsigned long long)arg1;
 - (unsigned long long)maxFragmentBufferBindCount;
 - (void)setMaxVertexBufferBindCount:(unsigned long long)arg1;

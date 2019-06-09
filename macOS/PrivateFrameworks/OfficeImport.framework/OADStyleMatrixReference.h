@@ -10,6 +10,7 @@
 
 @class OADColor;
 
+__attribute__((visibility("hidden")))
 @interface OADStyleMatrixReference : NSObject <NSCopying>
 {
     unsigned long long mMatrixIndex;

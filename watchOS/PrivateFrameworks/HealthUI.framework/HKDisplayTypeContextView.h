@@ -6,18 +6,19 @@
 
 #import <UIKit/UIView.h>
 
-#import <HealthUI/HKDisplayTypeContextCollectionViewCellDelegate-Protocol.h>
+#import <HealthUI/HKDisplayTypeContextHorizontalCollectionViewCellDelegate-Protocol.h>
 #import <HealthUI/UICollectionViewDataSource-Protocol.h>
 #import <HealthUI/UICollectionViewDelegate-Protocol.h>
 
-@class HKHorizontalFlowLayout, NSArray, NSLayoutConstraint, NSString, UICollectionView;
+@class NSArray, NSLayoutConstraint, NSString, UICollectionView, UICollectionViewFlowLayout;
 @protocol HKDisplayTypeContextViewDelegate;
 
-@interface HKDisplayTypeContextView : UIView <UICollectionViewDataSource, UICollectionViewDelegate, HKDisplayTypeContextCollectionViewCellDelegate>
+@interface HKDisplayTypeContextView : UIView <UICollectionViewDataSource, UICollectionViewDelegate, HKDisplayTypeContextHorizontalCollectionViewCellDelegate>
 {
     UICollectionView *_collectionView;
-    HKHorizontalFlowLayout *_collectionViewLayout;
+    UICollectionViewFlowLayout *_collectionViewLayout;
     NSLayoutConstraint *_collectionHeightConstraint;
+    int _lastSelectedRow;
     NSArray *_displayTypeContextItems;
     id <HKDisplayTypeContextViewDelegate> _delegate;
 }
@@ -29,12 +30,17 @@
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
+- (void)_handleSelection:(id)arg1 indexPath:(id)arg2 informDelegate:(_Bool)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (float)preferredHeight;
 - (void)selectItemAtIndex:(int)arg1 animated:(_Bool)arg2 scrollPosition:(unsigned int)arg3;
 - (struct CGSize)intrinsicContentSize;
+- (id)_backgroundColor;
+- (float)_contentHeight;
+- (id)_buildCollectionViewLayout;
 - (id)init;
 
 // Remaining properties

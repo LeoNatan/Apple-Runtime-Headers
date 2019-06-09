@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/NSUndoTextOperation.h>
+#import <UIKitCore/_UIUndoTextOperation.h>
 
 @class NSAttributedString;
 
 __attribute__((visibility("hidden")))
-@interface _UITextUndoOperationReplace : NSUndoTextOperation
+@interface _UITextUndoOperationReplace : _UIUndoTextOperation
 {
     struct _NSRange _replacementRange;
     NSAttributedString *_attributedString;

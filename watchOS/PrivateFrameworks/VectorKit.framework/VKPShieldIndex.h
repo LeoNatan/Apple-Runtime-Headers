@@ -43,8 +43,6 @@ __attribute__((visibility("hidden")))
 - (void)addEntries:(id)arg1;
 - (void)clearEntries;
 - (void)dealloc;
-- (id)defaultArtworkIdentifierForFeatureType:(int)arg1 variant:(unsigned int)arg2;
-- (id)artworkIdentifierForShieldType:(long long)arg1 textSpecificIdentifiers:(id *)arg2 variant:(unsigned int)arg3;
 
 @end
 

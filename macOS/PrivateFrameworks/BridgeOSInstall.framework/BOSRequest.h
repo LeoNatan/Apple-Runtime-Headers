@@ -78,6 +78,7 @@
 - (void)_printUsageForExecutableNamed:(id)arg1;
 - (BOOL)clientContextIsEqualTo:(id)arg1;
 - (id)clientContext;
+- (id)errorUserInfo;
 @property(readonly) NSString *actionDescription;
 - (void)dealloc;
 - (id)initWithOptions:(id)arg1;

@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)frameOfPresentedViewInContainerView;
 - (_Bool)_shouldPresentedViewControllerControlStatusBarAppearance;
 - (_Bool)_shouldRespectDefinesPresentationContext;
-- (_Bool)shouldRemovePresentersView;
 - (_Bool)shouldPresentInFullscreen;
 - (void)dealloc;
 - (long long)presentationStyle;

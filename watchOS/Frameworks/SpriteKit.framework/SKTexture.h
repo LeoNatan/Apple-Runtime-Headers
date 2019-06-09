@@ -61,6 +61,7 @@
 + (id)lookupTextureCacheForName:(id)arg1;
 + (void)registerTextureCache:(id)arg1 forName:(id)arg2;
 + (_Bool)supportsSecureCoding;
++ (id)textureWithMetalTexture:(id)arg1;
 + (id)textureWithIOSurfaceID:(unsigned int)arg1 width:(unsigned int)arg2 height:(unsigned int)arg3 format:(unsigned int)arg4;
 + (id)_textureWithGLTextureId:(unsigned int)arg1 size:(struct CGSize)arg2;
 + (id)_textureByTransferingData:(char *)arg1 size:(struct CGSize)arg2 rowLength:(unsigned int)arg3 alignment:(unsigned int)arg4;
@@ -119,6 +120,7 @@
 - (struct CGImage *)_newTextureFromGLCache;
 - (int)_convert_jet_texture_format_to_ci_format:(unsigned int)arg1;
 - (struct CGImage *)_createCGImage;
+- (id)metalTexture;
 - (int)glTextureId;
 - (id)_initWithGLTextureId:(unsigned int)arg1 size:(struct CGSize)arg2;
 @property(readonly, nonatomic) NSString *imageNameOrPath;

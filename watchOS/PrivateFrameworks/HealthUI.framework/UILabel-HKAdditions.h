@@ -8,5 +8,7 @@
 
 @interface UILabel (HKAdditions)
 + (id)hk_fontAdjustingLabel;
++ (id)_hkecg_bodyLabel;
++ (id)_hkecg_heartRateLabel;
 @end
 

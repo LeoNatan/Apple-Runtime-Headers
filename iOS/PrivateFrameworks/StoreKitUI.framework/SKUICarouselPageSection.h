@@ -14,6 +14,7 @@
 @class NSArray, NSIndexPath, NSObject, NSString, SKUICarouselPageComponent, SKUIMissingItemLoader, SKUIProgressIndicatorViewElement, SKUIViewElementLayoutContext, UICollectionView;
 @protocol OS_dispatch_source;
 
+__attribute__((visibility("hidden")))
 @interface SKUICarouselPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIMissingItemDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 {
     UICollectionView *_carouselCollectionView;

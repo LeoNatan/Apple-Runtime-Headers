@@ -15,8 +15,8 @@
     NSMutableArray *_mappings;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)mappingsType;
-@property(retain, nonatomic) NSMutableArray *mappings; // @synthesize mappings=_mappings;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -25,12 +25,14 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)mappingsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)mappingsCount;
 - (void)addMappings:(id)arg1;
 - (void)clearMappings;
+@property(retain, nonatomic) NSMutableArray *mappings;
 
 @end
 

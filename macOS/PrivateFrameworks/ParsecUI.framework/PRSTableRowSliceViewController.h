@@ -26,7 +26,7 @@
 + (double)fontSize;
 + (id)imageViewForView:(id)arg1;
 + (id)labelForView:(id)arg1;
-+ (unsigned long long)imageAlignmentForTextAlignment:(unsigned long long)arg1;
++ (unsigned long long)imageAlignmentForTextAlignment:(long long)arg1;
 @property BOOL hasHeaderContent; // @synthesize hasHeaderContent=_hasHeaderContent;
 @property long long verticalAlignment; // @synthesize verticalAlignment=_verticalAlignment;
 @property BOOL isReducedHeight; // @synthesize isReducedHeight=_isReducedHeight;
@@ -41,7 +41,7 @@
 - (double)labelTopBaselineSpacing;
 - (double)labelBottomBaselineSpacing;
 - (id)font;
-- (void)setAlignment:(unsigned long long)arg1 forView:(id)arg2;
+- (void)setAlignment:(long long)arg1 forView:(id)arg2;
 - (BOOL)shouldAllowOtherViewsToOverlap:(id)arg1;
 - (id)addImageViewWithImage:(id)arg1;
 - (id)addLabelWithAttributedText:(id)arg1;

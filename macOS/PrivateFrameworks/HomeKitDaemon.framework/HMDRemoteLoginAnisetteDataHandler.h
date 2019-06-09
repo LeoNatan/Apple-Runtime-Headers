@@ -32,6 +32,11 @@
 - (id)logIdentifier;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
+- (void)_handleLegacyAnisetteDataRequestMessage:(id)arg1;
+- (void)_handleFetchAnisetteDataRequestMessage:(id)arg1;
+- (void)_handleEraseAnisetteDataRequestMessage:(id)arg1;
+- (void)_handleSyncAnisetteDataRequestMessage:(id)arg1;
+- (void)_handleProvisionAnisetteDataRequestMessage:(id)arg1;
 - (void)registerForMessages;
 - (void)configureWithWorkQueue:(id)arg1 messageDispatcher:(id)arg2;
 - (id)initWithUUID:(id)arg1 accessory:(id)arg2;

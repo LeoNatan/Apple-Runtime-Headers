@@ -6,38 +6,33 @@
 
 #import <AppKit/NSView.h>
 
-@class NSArray, NSMapTable;
-
 @interface QTHUDGroupView : NSView
 {
-    NSArray *_items;
-    NSMapTable *_viewItemMap;
-    struct __CFRunLoopObserver *_observer;
 }
 
 + (BOOL)automaticallyNotifiesObserversOfItems;
 + (void)initialize;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
-- (void)replaceSubview:(id)arg1 with:(id)arg2;
-- (void)viewWillDraw;
-- (void)setBoundsSize:(struct CGSize)arg1;
-- (void)setBoundsOrigin:(struct CGPoint)arg1;
-- (void)setFrameSize:(struct CGSize)arg1;
-- (void)layoutIfNeeded;
-- (void)setNeedsLayout;
-- (BOOL)needsLayout;
 - (void)layoutSubviews;
 - (struct CGRect)rectForItemAtIndex:(unsigned long long)arg1;
 - (void)getRects:(struct CGRect *)arg1 forItemsAtIndexes:(id)arg2;
+- (void)resizeSubviewsWithOldSize:(struct CGSize)arg1;
+- (void)setNeedsLayout;
+- (BOOL)needsLayout;
 - (void)setItems:(id)arg1;
 - (id)items;
-- (struct CGSize)maxSize;
-- (struct CGSize)minSize;
-- (void)dealloc;
+- (void)setBoundsSize:(struct CGSize)arg1;
+- (void)viewWillDraw;
+- (void)setFrameSize:(struct CGSize)arg1;
+- (void)replaceSubview:(id)arg1 with:(id)arg2;
+- (void)layoutIfNeeded;
+- (void)setBoundsOrigin:(struct CGPoint)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (struct CGSize)maxSize;
+- (struct CGSize)minSize;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (void)dealloc;
 
 @end
 

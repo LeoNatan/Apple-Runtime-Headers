@@ -34,7 +34,6 @@
 @property(nonatomic, setter=_setShouldArchiveUIAppearanceTags:) _Bool _shouldArchiveUIAppearanceTags; // @synthesize _shouldArchiveUIAppearanceTags;
 @property(nonatomic, setter=_setHasCustomizableInstanceAppearanceModifications:) _Bool _hasCustomizableInstanceAppearanceModifications; // @synthesize _hasCustomizableInstanceAppearanceModifications;
 - (void).cxx_destruct;
-- (id)_imageForState:(unsigned int)arg1 metrics:(int)arg2 position:(int)arg3 type:(int)arg4;
 - (id)_attributedTitleForState:(unsigned int)arg1 withDefaultAttributes:(id)arg2;
 @property(readonly, nonatomic) _Bool hasImage;
 @property(readonly, nonatomic) _Bool hasTitle;

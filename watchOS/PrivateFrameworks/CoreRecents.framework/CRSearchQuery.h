@@ -18,6 +18,7 @@
     unsigned int _options;
     CDUnknownBlockType _weightDecayer;
     CDUnknownBlockType _comparator;
+    struct _NSRange _pageRange;
 }
 
 + (CDUnknownBlockType)rankedFrecencyComparatorWithPreferredSources:(id)arg1;
@@ -27,6 +28,7 @@
 + (_Bool)supportsSecureCoding;
 @property(copy, nonatomic) CDUnknownBlockType comparator; // @synthesize comparator=_comparator;
 @property(copy, nonatomic) CDUnknownBlockType weightDecayer; // @synthesize weightDecayer=_weightDecayer;
+@property(nonatomic) struct _NSRange pageRange; // @synthesize pageRange=_pageRange;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property(nonatomic) unsigned int implicitGroupThreshold; // @synthesize implicitGroupThreshold=_implicitGroupThreshold;
 @property(copy, nonatomic) NSArray *domains; // @synthesize domains=_domains;
@@ -34,6 +36,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
+- (id)init;
 
 @end
 

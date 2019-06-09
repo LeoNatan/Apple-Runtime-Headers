@@ -10,12 +10,14 @@ __attribute__((visibility("hidden")))
 @interface PUBadgeTileLayoutInfo : PUTileLayoutInfo
 {
     _Bool _isOverContent;
+    double _contentWidth;
 }
 
+@property(readonly, nonatomic) double contentWidth; // @synthesize contentWidth=_contentWidth;
 @property(readonly, nonatomic) _Bool isOverContent; // @synthesize isOverContent=_isOverContent;
 - (id)clone;
 - (_Bool)isGeometryEqualToLayoutInfo:(id)arg1;
-- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint)arg2 size:(struct CGSize)arg3 alpha:(double)arg4 transform:(struct CGAffineTransform)arg5 zPosition:(double)arg6 hitTestOutset:(struct UIEdgeInsets)arg7 coordinateSystem:(id)arg8 isOverContent:(_Bool)arg9;
+- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint)arg2 size:(struct CGSize)arg3 alpha:(double)arg4 transform:(struct CGAffineTransform)arg5 zPosition:(double)arg6 hitTestOutset:(struct UIEdgeInsets)arg7 coordinateSystem:(id)arg8 isOverContent:(_Bool)arg9 contentWidth:(double)arg10;
 - (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint)arg2 size:(struct CGSize)arg3 alpha:(double)arg4 transform:(struct CGAffineTransform)arg5 zPosition:(double)arg6 coordinateSystem:(id)arg7;
 
 @end

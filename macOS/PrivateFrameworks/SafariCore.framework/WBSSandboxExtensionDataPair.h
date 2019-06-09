@@ -16,6 +16,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithToken:(id)arg1 permissions:(id)arg2;
+- (id)initWithFirst:(id)arg1 second:(id)arg2;
 
 @end
 

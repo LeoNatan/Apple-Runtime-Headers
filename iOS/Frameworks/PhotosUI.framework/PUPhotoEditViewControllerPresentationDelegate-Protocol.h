@@ -6,10 +6,11 @@
 
 #import <PhotosUI/NSObject-Protocol.h>
 
-@class PUPhotoEditViewController;
+@class NSDate, PUPhotoEditViewController;
 @protocol PUEditableAsset;
 
 @protocol PUPhotoEditViewControllerPresentationDelegate <NSObject>
-- (void)photoEditController:(PUPhotoEditViewController *)arg1 didFinishPreparingForTransitionAfterEditingAsset:(id <PUEditableAsset>)arg2;
+- (void)editController:(PUPhotoEditViewController *)arg1 didFinishPreparingForTransitionAfterEditingVideo:(id <PUEditableAsset>)arg2 modificationDate:(NSDate *)arg3 seekTime:(CDStruct_1b6d18a9)arg4;
+- (void)editController:(PUPhotoEditViewController *)arg1 didFinishPreparingForTransitionAfterEditingPhoto:(id <PUEditableAsset>)arg2;
 @end
 

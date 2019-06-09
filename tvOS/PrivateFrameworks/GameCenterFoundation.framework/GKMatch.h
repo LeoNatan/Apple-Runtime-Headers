@@ -88,6 +88,8 @@
 - (void)session:(id)arg1 didFailWithError:(id)arg2;
 - (void)session:(id)arg1 connectionWithPeerFailed:(id)arg2 withError:(id)arg3;
 - (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
+- (id)stringForGKPeerConnectionState:(int)arg1;
+- (id)stringForGKPlayerConnectionState:(long long)arg1;
 - (void)sendHostScoreAsQuery:(_Bool)arg1;
 - (void)calculateHostScore;
 - (_Bool)selectHostIfRequestedAndAllScored;

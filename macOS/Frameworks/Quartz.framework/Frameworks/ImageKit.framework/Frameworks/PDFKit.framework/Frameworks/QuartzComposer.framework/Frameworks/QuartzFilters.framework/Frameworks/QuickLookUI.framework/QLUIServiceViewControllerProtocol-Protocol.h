@@ -4,9 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <QuickLookUI/QLUIServiceBaseViewControllerProtocol-Protocol.h>
+
 @class NSDictionary, NSString, NSValue, QLPreview;
 
-@protocol QLUIServiceViewControllerProtocol
+@protocol QLUIServiceViewControllerProtocol <QLUIServiceBaseViewControllerProtocol>
 - (void)setBundleAppearanceName:(NSString *)arg1;
 - (void)getImageRepresentation:(NSValue *)arg1 reply:(void (^)(NSData *, NSDictionary *, NSValue *))arg2;
 - (void)generateThumbnailForPage:(long long)arg1 withMaxSize:(NSValue *)arg2 resultReply:(void (^)(NSData *, NSDictionary *))arg3;
@@ -16,9 +18,9 @@
 - (void)beginTrimmingWithSandboxToken:(NSString *)arg1;
 - (void)promptSaveForClose;
 - (void)revertMarkup:(void (^)(void))arg1;
-- (void)exitMarkup:(long long)arg1 completion:(void (^)(void))arg2;
+- (void)exitMarkup:(long long)arg1 completion:(void (^)(BOOL))arg2;
 - (void)didEnterMarkup;
-- (void)enterMarkupWithSandboxToken:(NSString *)arg1;
+- (void)enterMarkupWithSandboxToken:(NSString *)arg1 saveInPlace:(BOOL)arg2;
 - (void)setOverlayControlOverlayFrame:(NSValue *)arg1 rollOverFrame:(NSValue *)arg2;
 - (void)showOverlayControls:(BOOL)arg1;
 - (void)zoomWithAction:(long long)arg1;

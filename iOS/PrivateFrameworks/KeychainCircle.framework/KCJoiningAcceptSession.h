@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class KCAESGCMDuplexSession, KCSRPServerContext, NSData, NSString;
+@class KCAESGCMDuplexSession, KCSRPServerContext, NSData, NSMutableDictionary, NSString, OTControl, OTJoiningConfiguration;
 @protocol KCJoiningAcceptCircleDelegate, KCJoiningAcceptSecretDelegate;
 
 @interface KCJoiningAcceptSession : NSObject
@@ -20,9 +20,17 @@
     KCAESGCMDuplexSession *_session;
     NSData *_startMessage;
     NSString *_piggy_uuid;
+    NSData *_octagon;
+    OTJoiningConfiguration *_joiningConfiguration;
+    OTControl *_otControl;
+    NSMutableDictionary *_defaults;
 }
 
 + (id)sessionWithInitialMessage:(id)arg1 secretDelegate:(id)arg2 circleDelegate:(id)arg3 dsid:(unsigned long long)arg4 error:(id *)arg5;
+@property(retain, nonatomic) NSMutableDictionary *defaults; // @synthesize defaults=_defaults;
+@property(retain, nonatomic) OTControl *otControl; // @synthesize otControl=_otControl;
+@property(retain, nonatomic) OTJoiningConfiguration *joiningConfiguration; // @synthesize joiningConfiguration=_joiningConfiguration;
+@property(retain) NSData *octagon; // @synthesize octagon=_octagon;
 @property int piggy_version; // @synthesize piggy_version=_piggy_version;
 @property(retain) NSString *piggy_uuid; // @synthesize piggy_uuid=_piggy_uuid;
 @property(retain) NSData *startMessage; // @synthesize startMessage=_startMessage;
@@ -33,11 +41,16 @@
 @property(readonly) NSObject<KCJoiningAcceptSecretDelegate> *secretDelegate; // @synthesize secretDelegate=_secretDelegate;
 @property(readonly) unsigned long long dsid; // @synthesize dsid=_dsid;
 - (void).cxx_destruct;
+- (void)setConfiguration:(id)arg1;
+- (void)setControlObject:(id)arg1;
 - (_Bool)isDone;
 - (id)processMessage:(id)arg1 error:(id *)arg2;
 - (id)processApplication:(id)arg1 error:(id *)arg2;
+- (id)createPairingMessageFromJoiningMessage:(id)arg1 error:(id *)arg2;
+- (id)processSOSApplication:(id)arg1 error:(id *)arg2;
 - (id)processResponse:(id)arg1 error:(id *)arg2;
 - (id)processInitialMessage:(id)arg1 error:(id *)arg2;
+- (_Bool)shouldAcceptOctagonRequests;
 - (id)copyChallengeMessage:(id *)arg1;
 - (id)description;
 - (id)stateString;

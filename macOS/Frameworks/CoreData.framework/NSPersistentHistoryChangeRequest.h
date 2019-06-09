@@ -6,7 +6,7 @@
 
 #import <CoreData/NSPersistentStoreRequest.h>
 
-@class NSArray, NSNumber, NSPersistentHistoryToken;
+@class NSArray, NSFetchRequest, NSNumber, NSPersistentHistoryToken;
 
 @interface NSPersistentHistoryChangeRequest : NSPersistentStoreRequest
 {
@@ -26,6 +26,7 @@
 + (id)deleteHistoryBeforeTransaction:(id)arg1;
 + (id)deleteHistoryBeforeToken:(id)arg1;
 + (id)deleteHistoryBeforeDate:(id)arg1;
++ (id)fetchHistoryWithFetchRequest:(id)arg1;
 + (id)fetchHistoryTransactionForToken:(id)arg1;
 + (id)fetchHistoryAfterTransaction:(id)arg1;
 + (id)fetchHistoryAfterToken:(id)arg1;
@@ -36,10 +37,12 @@
 - (id)description;
 - (id)propertiesToGroupBy;
 - (id)predicate;
+- (id)predicateForStoreIdentifier:(id)arg1;
 - (BOOL)includesSubentities;
 - (unsigned long long)fetchOffset;
 - (id)sortDescriptors;
 - (BOOL)returnsDistinctResults;
+@property(retain, nonatomic) NSFetchRequest *fetchRequest;
 - (void)setFetchBatchSize:(unsigned long long)arg1;
 - (unsigned long long)fetchBatchSize;
 - (void)setFetchLimit:(unsigned long long)arg1;
@@ -63,6 +66,7 @@
 - (id)initWithToken:(id)arg1;
 - (id)initWithTransactionID:(id)arg1 delete:(BOOL)arg2 transactionOnly:(BOOL)arg3;
 - (id)initWithTransactionIDs:(id)arg1;
+- (id)initWithFetchRequest:(id)arg1;
 - (id)initWithDate:(id)arg1 delete:(BOOL)arg2;
 - (id)initWithDate:(id)arg1;
 - (id)init;

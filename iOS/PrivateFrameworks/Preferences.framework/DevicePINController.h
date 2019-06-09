@@ -54,6 +54,7 @@
 - (id)passcodeOptionsAlertController;
 - (void)_setPINPaneToSimple:(_Bool)arg1 simpleLength:(int)arg2 numeric:(_Bool)arg3 requiresKeyboard:(int)arg4;
 - (_Bool)_shouldShowOptionsButton;
+- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;

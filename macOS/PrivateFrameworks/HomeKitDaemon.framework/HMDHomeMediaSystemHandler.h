@@ -24,7 +24,6 @@
 + (BOOL)hasMessageReceiverChildren;
 + (BOOL)supportsSecureCoding;
 + (id)preProcessMediaSystemMessage:(id)arg1 home:(id)arg2;
-+ (id)checkToHandleMessage:(id)arg1 home:(id)arg2;
 + (id)logCategory;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;

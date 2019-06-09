@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) NSData *stackData; // @synthesize stackData=_stackData;
 @property(retain, nonatomic) CUICatalog *catalog; // @synthesize catalog=_catalog;
 - (void).cxx_destruct;
-- (id)imageWithTraitCollection:(id)arg1;
+- (id)imageWithConfiguration:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 

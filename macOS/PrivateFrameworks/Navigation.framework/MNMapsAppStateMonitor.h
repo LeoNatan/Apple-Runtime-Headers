@@ -15,6 +15,7 @@
     unsigned int _state;
 }
 
++ (id)sharedMonitor;
 @property(readonly, nonatomic) unsigned int state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (void)stopObserving;

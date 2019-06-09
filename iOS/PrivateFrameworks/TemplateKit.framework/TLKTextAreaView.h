@@ -6,33 +6,30 @@
 
 #import <TemplateKit/TLKStackView.h>
 
-#import <TemplateKit/NUIContainerStackViewDelegate-Protocol.h>
 #import <TemplateKit/TLKTextAreaViewTesting-Protocol.h>
 
-@class NSMutableArray, NSString, NUIContainerStackView, TLKRichTextField, TLKTitleContainerView, UIButton;
-@protocol TLKDetailsViewDelegate;
+@class NSMutableArray, NSString, NUIContainerStackView, TLKRichTextField, TLKTextButton, TLKTitleContainerView;
+@protocol TLKTextAreaViewDelegate;
 
-@interface TLKTextAreaView : TLKStackView <NUIContainerStackViewDelegate, TLKTextAreaViewTesting>
+@interface TLKTextAreaView : TLKStackView <TLKTextAreaViewTesting>
 {
     _Bool _disableAllObservers;
-    id <TLKDetailsViewDelegate> _buttonDelegate;
+    id <TLKTextAreaViewDelegate> _buttonDelegate;
     TLKTitleContainerView *_titleContainer;
     NSMutableArray *_detailsFields;
     TLKRichTextField *_footnoteLabel;
-    UIButton *_footnoteButton;
+    TLKTextButton *_footnoteButton;
     NUIContainerStackView *_footnoteContainer;
-    unsigned long long _style;
 }
 
 + (id)footNoteLabelFont;
-@property _Bool disableAllObservers; // @synthesize disableAllObservers=_disableAllObservers;
-@property unsigned long long style; // @synthesize style=_style;
-@property(retain) NUIContainerStackView *footnoteContainer; // @synthesize footnoteContainer=_footnoteContainer;
-@property(retain) UIButton *footnoteButton; // @synthesize footnoteButton=_footnoteButton;
-@property(retain) TLKRichTextField *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
-@property(retain) NSMutableArray *detailsFields; // @synthesize detailsFields=_detailsFields;
-@property(retain) TLKTitleContainerView *titleContainer; // @synthesize titleContainer=_titleContainer;
-@property __weak id <TLKDetailsViewDelegate> buttonDelegate; // @synthesize buttonDelegate=_buttonDelegate;
+@property(nonatomic) _Bool disableAllObservers; // @synthesize disableAllObservers=_disableAllObservers;
+@property(retain, nonatomic) NUIContainerStackView *footnoteContainer; // @synthesize footnoteContainer=_footnoteContainer;
+@property(retain, nonatomic) TLKTextButton *footnoteButton; // @synthesize footnoteButton=_footnoteButton;
+@property(retain, nonatomic) TLKRichTextField *footnoteLabel; // @synthesize footnoteLabel=_footnoteLabel;
+@property(retain, nonatomic) NSMutableArray *detailsFields; // @synthesize detailsFields=_detailsFields;
+@property(retain, nonatomic) TLKTitleContainerView *titleContainer; // @synthesize titleContainer=_titleContainer;
+@property __weak id <TLKTextAreaViewDelegate> buttonDelegate; // @synthesize buttonDelegate=_buttonDelegate;
 - (void).cxx_destruct;
 - (id)footnoteLabelString;
 - (id)secondaryTitleLabelString;
@@ -48,7 +45,6 @@
 - (void)internalTextFieldsInBatchUpdate:(_Bool)arg1;
 - (void)performBatchUpdates:(CDUnknownBlockType)arg1;
 - (void)updateDetails:(id)arg1;
-- (void)styleDidChange:(unsigned long long)arg1;
 - (void)updateResultWithTitle:(id)arg1 secondaryTitle:(id)arg2 image:(id)arg3 detached:(_Bool)arg4;
 - (id)init;
 

@@ -6,6 +6,7 @@
 
 #import <Foundation/NSMutableSet.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSUMutablePointerSet : NSMutableSet
 {
     struct __CFSet *mSet;

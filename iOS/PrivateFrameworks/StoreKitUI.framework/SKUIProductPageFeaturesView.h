@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSString, SKUIClientContext, SKUIColorScheme, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageFeaturesView : UIView
 {
     UIView *_bottomBorderView;

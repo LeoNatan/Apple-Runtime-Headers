@@ -21,8 +21,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithDevices:(id)arg1 anchor:(id)arg2;
-@property(nonatomic, readonly) NSString *anchor; // @synthesize anchor;
-@property(nonatomic, readonly) NSSet *devices; // @synthesize devices;
+@property(nonatomic, readonly) NSString *anchor;
+@property(nonatomic, readonly) NSSet *devices;
 
 @end
 

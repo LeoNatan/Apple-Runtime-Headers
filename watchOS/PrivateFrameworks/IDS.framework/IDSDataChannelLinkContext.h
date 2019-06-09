@@ -14,6 +14,8 @@
 }
 
 - (void).cxx_destruct;
+@property(readonly) unsigned short localLinkFlags;
+@property(readonly) unsigned short remoteLinkFlags;
 - (void)setMaxBitrate:(unsigned int)arg1;
 - (void)setMTU:(unsigned short)arg1;
 - (void)setRATType:(unsigned int)arg1;
@@ -29,12 +31,12 @@
 @property(readonly) unsigned int RATType;
 @property(readonly) int connectionType;
 @property(readonly) unsigned char networkType;
-@property(readonly) unsigned char flags;
 @property(readonly) NSUUID *QRSessionID;
 @property(readonly) NSUUID *linkUUID;
 @property(readonly) BOOL linkID;
 - (id)description;
-- (id)initWithLinkID:(BOOL)arg1 linkUUID:(id)arg2 QRSessionID:(id)arg3 flags:(unsigned char)arg4 networkType:(unsigned char)arg5 connectionType:(int)arg6 RATType:(unsigned int)arg7 MTU:(unsigned short)arg8 remoteNetworkType:(unsigned char)arg9 remoteConnectionType:(int)arg10 remoteRATType:(unsigned int)arg11 maxBitrate:(unsigned int)arg12 relayServerProvider:(int)arg13 relaySessionToken:(id)arg14 relaySessionKey:(id)arg15 serverIsDegraded:(_Bool)arg16;
+- (id)initWithAttributes:(CDStruct_0310362a *)arg1 maxBitrate:(unsigned int)arg2 relayServerProvider:(int)arg3 relaySessionToken:(id)arg4 relaySessionKey:(id)arg5;
+- (id)initWithLinkID:(BOOL)arg1 linkUUID:(id)arg2 QRSessionID:(id)arg3 networkType:(unsigned char)arg4 connectionType:(int)arg5 RATType:(unsigned int)arg6 MTU:(unsigned short)arg7 remoteNetworkType:(unsigned char)arg8 remoteConnectionType:(int)arg9 remoteRATType:(unsigned int)arg10 maxBitrate:(unsigned int)arg11 relayServerProvider:(int)arg12 relaySessionToken:(id)arg13 relaySessionKey:(id)arg14 serverIsDegraded:(_Bool)arg15;
 - (id)initWithDummyInformation;
 
 @end

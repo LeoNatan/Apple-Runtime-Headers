@@ -22,6 +22,7 @@
 - (void)layoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)prepareForReuse;
+- (void)_updateFonts;
 - (void)_updateCellStyle;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 

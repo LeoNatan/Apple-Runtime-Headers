@@ -7,13 +7,14 @@
 #import <objc/NSObject.h>
 
 #import <HealthDaemon/CLLocationSmootherDelegate-Protocol.h>
+#import <HealthDaemon/HDDatabaseProtectedDataObserver-Protocol.h>
+#import <HealthDaemon/HDForegroundClientProcessObserver-Protocol.h>
 
 @class CLLocationSmoother, HDProfile, HDSmoothingTask, NSMutableArray, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
-@interface HDWorkoutLocationSmoother : NSObject <CLLocationSmootherDelegate>
+@interface HDWorkoutLocationSmoother : NSObject <CLLocationSmootherDelegate, HDDatabaseProtectedDataObserver, HDForegroundClientProcessObserver>
 {
-    NSString *_xpcTransactionName;
     CLLocationSmoother *_smoother;
     NSObject<OS_dispatch_queue> *_queue;
     HDProfile *_profile;
@@ -21,6 +22,8 @@
     HDSmoothingTask *_currentSmoothingTask;
     NSObject<OS_dispatch_source> *_timeoutSource;
     double _smoothingTaskTimeout;
+    _Bool _needToCheckForLocationSeriesOnUnlock;
+    _Bool _isFirstLaunchAndNotYetSmoothed;
 }
 
 - (void).cxx_destruct;
@@ -32,7 +35,7 @@
 - (_Bool)_deleteSample:(id)arg1 error:(id *)arg2;
 - (id)_createWorkoutRouteWithMetadata:(id)arg1 sourceEntity:(id)arg2 locations:(id)arg3 error:(id *)arg4;
 - (_Bool)_queue_insertInitialMetadataForRoute:(id)arg1 syncIdentifier:(id)arg2 error:(id *)arg3;
-- (void)_finishSmoothingSample;
+- (void)_finishSmoothingSampleWithTask:(id)arg1;
 - (id)_queue_createNewSeriesFromTask:(id)arg1 locations:(id)arg2 error:(id *)arg3;
 - (void)_queue_saveLocations:(id)arg1 forTask:(id)arg2 smoothingError:(id)arg3;
 - (void)_queue_smoothingDidFailForTask:(id)arg1 error:(id)arg2 shouldRetry:(_Bool)arg3;
@@ -40,7 +43,12 @@
 - (void)_queue_smoothRouteSampleForTask:(id)arg1;
 - (void)_queue_smoothNextSample;
 - (void)_queue_locationManagerDidSmoothLocations:(id)arg1 forTask:(id)arg2 error:(id)arg3;
-- (void)smoothRouteSample:(id)arg1;
+- (void)database:(id)arg1 protectedDataDidBecomeAvailable:(_Bool)arg2;
+- (void)foregroundClientProcessesDidChange:(id)arg1 previouslyForegroundBundleIdentifiers:(id)arg2;
+- (void)_queue_smoothAllUnsmoothedLocationSeries;
+- (void)_associationsSyncedForWorkout:(id)arg1;
+- (void)_setupLocationObserversIfNeeded;
+- (void)dealloc;
 - (id)initWithProfile:(id)arg1;
 
 // Remaining properties

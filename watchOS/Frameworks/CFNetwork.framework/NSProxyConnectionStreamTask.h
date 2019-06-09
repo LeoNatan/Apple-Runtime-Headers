@@ -12,7 +12,6 @@
 @class NSInputStream, NSObject, NSOutputStream, NSString, NSURLSessionStreamTask;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface NSProxyConnectionStreamTask : NSProxyConnection <NSStreamDelegate, NSURLSessionStreamDelegate>
 {
     NSObject<OS_dispatch_queue> *_queue;

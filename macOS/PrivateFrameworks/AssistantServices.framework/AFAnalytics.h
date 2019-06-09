@@ -23,6 +23,7 @@
 - (void)barrier:(CDUnknownBlockType)arg1;
 - (void)logEvents:(id)arg1;
 - (void)logEvent:(id)arg1;
+- (void)logEventWithType:(long long)arg1 machAbsoluteTime:(unsigned long long)arg2 contextResolver:(CDUnknownBlockType)arg3;
 - (void)logEventWithType:(long long)arg1 machAbsoluteTime:(unsigned long long)arg2 contextProvider:(CDUnknownBlockType)arg3 contextProvidingQueue:(id)arg4;
 - (void)logEventWithType:(long long)arg1 machAbsoluteTime:(unsigned long long)arg2 context:(id)arg3 contextNoCopy:(BOOL)arg4;
 - (void)setService:(id)arg1;
@@ -33,6 +34,7 @@
 - (void)logInstrumentation:(id)arg1 machAbsoluteTime:(unsigned long long)arg2 turnContext:(id)arg3;
 - (void)logInstrumentation:(id)arg1 machAbsoluteTime:(unsigned long long)arg2 turnIdentifier:(struct NSUUID *)arg3;
 - (void)logInstrumentation:(id)arg1 turnContext:(id)arg2;
+- (void)logEventWithType:(long long)arg1 contextResolver:(CDUnknownBlockType)arg2;
 - (void)logEventWithType:(long long)arg1 contextProvider:(CDUnknownBlockType)arg2 contextProvidingQueue:(id)arg3;
 - (void)logEventWithType:(long long)arg1 contextProvider:(CDUnknownBlockType)arg2;
 - (void)logEventWithType:(long long)arg1 context:(id)arg2 contextNoCopy:(BOOL)arg3;
@@ -41,7 +43,7 @@
 - (id)_init;
 - (id)init;
 - (void)logClientFeedbackPresented:(id)arg1;
-- (id)createTurnBasedInstrumentationContext;
+- (id)newTurnBasedInstrumentationContext;
 
 @end
 

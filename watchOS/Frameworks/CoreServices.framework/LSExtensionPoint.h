@@ -9,29 +9,32 @@
 #import <CoreServices/NSCopying-Protocol.h>
 #import <CoreServices/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSNumber, NSString, _LSLazyPropertyList;
 
 @interface LSExtensionPoint : _LSQueryResult <NSCopying, NSSecureCoding>
 {
+    unsigned int _platform;
+    _LSLazyPropertyList *_sdkEntry;
     NSString *_identifier;
     NSString *_name;
     NSString *_version;
-    NSDictionary *_sdkEntry;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)identifierForCurrentProcess;
++ (id)extensionPointForIdentifier:(id)arg1 platform:(id)arg2;
 + (id)extensionPointForIdentifier:(id)arg1;
-@property(readonly, nonatomic) NSDictionary *sdkEntry; // @synthesize sdkEntry=_sdkEntry;
 @property(readonly, nonatomic) NSString *version; // @synthesize version=_version;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+- (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
-- (id)_initWithIdentifier:(id)arg1 andData:(id)arg2;
+@property(readonly, nonatomic) NSDictionary *sdkEntry;
+@property(readonly, nonatomic) NSNumber *platform;
+- (id)_initWithIdentifier:(id)arg1 platform:(unsigned int)arg2 data:(id)arg3;
 
 @end
 

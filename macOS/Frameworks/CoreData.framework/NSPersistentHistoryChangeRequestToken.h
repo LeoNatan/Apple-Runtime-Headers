@@ -8,11 +8,12 @@
 
 #import <CoreData/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSDictionary;
+@class NSData, NSDate, NSDictionary;
 
 __attribute__((visibility("hidden")))
 @interface NSPersistentHistoryChangeRequestToken : NSObject <NSSecureCoding>
 {
+    NSData *_fetchData;
     NSDictionary *_token;
     NSDate *_date;
     long long _resultType;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) long long resultType; // @synthesize resultType=_resultType;
 @property(readonly, retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(readonly, retain, nonatomic) NSDictionary *token; // @synthesize token=_token;
+@property(readonly, retain, nonatomic) NSData *fetchData; // @synthesize fetchData=_fetchData;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;

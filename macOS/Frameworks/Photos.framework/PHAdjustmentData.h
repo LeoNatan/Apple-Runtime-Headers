@@ -15,18 +15,29 @@
     NSString *_formatIdentifier;
     NSString *_formatVersion;
     NSData *_data;
+    long long _baseVersion;
 }
 
 + (BOOL)supportsSecureCoding;
++ (long long)adjustmentBaseVersionFromVideoRequestVersion:(long long)arg1;
++ (long long)videoRequestVersionFromAdjustmentBaseVersion:(long long)arg1;
++ (long long)adjustmentBaseVersionFromImageRequestVersion:(long long)arg1;
++ (long long)imageRequestVersionFromAdjustmentBaseVersion:(long long)arg1;
++ (id)opaqueAdjustmentData;
+@property(nonatomic) long long baseVersion; // @synthesize baseVersion=_baseVersion;
 @property(readonly) NSData *data; // @synthesize data=_data;
-@property(readonly, copy) NSString *formatVersion; // @synthesize formatVersion=_formatVersion;
-@property(readonly, copy) NSString *formatIdentifier; // @synthesize formatIdentifier=_formatIdentifier;
+@property(copy, nonatomic) NSString *formatVersion; // @synthesize formatVersion=_formatVersion;
+@property(copy, nonatomic) NSString *formatIdentifier; // @synthesize formatIdentifier=_formatIdentifier;
 - (void).cxx_destruct;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)description;
-- (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, getter=isOpaque) BOOL opaque;
 - (id)initWithFormatIdentifier:(id)arg1 formatVersion:(id)arg2 data:(id)arg3;
+- (BOOL)_hasAdjustments;
+- (long long)_requiredBaseVersionWithCanHandleAdjustmentData:(BOOL)arg1 assetIsVideo:(BOOL)arg2;
+- (BOOL)_canBeHandledByClientUsingVerificationBlock:(CDUnknownBlockType)arg1;
+- (BOOL)_contentEditingHasAdjustments;
 
 @end
 

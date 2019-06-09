@@ -10,7 +10,7 @@
 #import <HMFoundation/HMFTimerDelegate-Protocol.h>
 
 @class HMFActivity, HMFTimer, HMFUnfairLock, NSDate, NSError, NSObject, NSString, NSUUID;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_queue, OS_voucher;
 
 @interface HMFOperation : NSOperation <HMFLogging, HMFTimerDelegate>
 {
@@ -19,6 +19,7 @@
     NSError *_error;
     HMFUnfairLock *_lock;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_voucher> *_voucher;
     HMFActivity *_activity;
     NSUUID *_identifier;
     HMFTimer *_timer;

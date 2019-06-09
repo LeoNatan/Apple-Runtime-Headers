@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 - (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)_updateText;
+- (void)_updateTextContainerInset;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
 - (id)initWithCoder:(id)arg1;

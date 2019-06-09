@@ -18,7 +18,6 @@
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)anchorMapWithAnchorMap:(id)arg1;
 + (id)syncAnchorMapWithSyncAnchorRangeMap:(id)arg1;
 @property(retain, nonatomic) NSMutableDictionary *anchorsByEntityIdentifier; // @synthesize anchorsByEntityIdentifier=_anchorsByEntityIdentifier;
 - (void).cxx_destruct;
@@ -31,6 +30,7 @@
 - (unsigned long long)anchorCount;
 - (void)setAnchorsFromMap:(id)arg1;
 - (void)enumerateAnchorsAndEntityIdentifiersWithBlock:(CDUnknownBlockType)arg1;
+- (id)anchorIfPresentForSyncEntityIdentifier:(id)arg1;
 - (long long)anchorForSyncEntityIdentifier:(id)arg1;
 - (long long)anchorForSyncEntityClass:(Class)arg1;
 - (void)setAnchor:(long long)arg1 forSyncEntityIdentifier:(id)arg2;

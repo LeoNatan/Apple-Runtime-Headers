@@ -15,10 +15,11 @@
     NSNumber *_persistentID;
 }
 
++ (id)artistWithDict:(id)arg1;
 @property(retain, nonatomic) NSNumber *persistentID; // @synthesize persistentID=_persistentID;
 @property(copy, nonatomic) NSString *sortName; // @synthesize sortName=_sortName;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

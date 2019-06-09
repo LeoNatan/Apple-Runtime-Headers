@@ -6,8 +6,14 @@
 
 #import <Intents/INIntent.h>
 
+@class NSArray, NSString;
+
 @interface INIntent (_CDSpotlightRecorderAdditions)
 @property(readonly) _Bool cd_saveToPeopleStore;
 @property(readonly) _Bool cd_saveToKnowledgeStore;
+@property(readonly, copy) NSString *cd_derivedIntentIdentifier;
+@property(readonly) NSString *cd_groupName;
+@property(readonly) long long cd_interactionMechanism;
+@property(readonly) NSArray *cd_recipients;
 @end
 

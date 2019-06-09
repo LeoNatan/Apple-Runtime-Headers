@@ -19,10 +19,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)beginListening;
++ (id)serviceQueue;
 @property(readonly) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(readonly) NSObject<OS_dispatch_queue> *databaseQueue; // @synthesize databaseQueue=_databaseQueue;
+- (void).cxx_destruct;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)dealloc;
 - (id)initWithQueue:(id)arg1;
 
 // Remaining properties

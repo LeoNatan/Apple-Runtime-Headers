@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSNumber, NSString, NSXPCConnection;
 
+__attribute__((visibility("hidden")))
 @interface ICDClientResource : NSObject
 {
     NSXPCConnection *_connection;
@@ -17,21 +18,24 @@
     int _pid;
     NSNumber *_transactionID;
     NSNumber *_callbackInfo;
+    struct os_unfair_lock_s _resourceLock;
 }
 
-@property(retain) NSNumber *transactionID; // @synthesize transactionID=_transactionID;
+@property(copy) NSNumber *transactionID; // @synthesize transactionID=_transactionID;
 @property BOOL openSession; // @synthesize openSession=_openSession;
 @property int pid; // @synthesize pid=_pid;
-@property(retain) NSString *name; // @synthesize name=_name;
+@property(copy) NSString *name; // @synthesize name=_name;
 @property(retain) NSMutableDictionary *notifications; // @synthesize notifications=_notifications;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
-@property(retain) NSNumber *callbackInfo; // @synthesize callbackInfo=_callbackInfo;
+@property(copy) NSNumber *callbackInfo; // @synthesize callbackInfo=_callbackInfo;
 - (void)remNotifications:(id)arg1 forProc:(id)arg2;
 - (void)addNotifications:(id)arg1 forProc:(id)arg2;
 - (id)interestedProcsForNotification:(id)arg1;
 - (void)cleanupConnection;
 - (void)dealloc;
-- (id)initWithPID:(id)arg1 andConnection:(id)arg2;
+- (void)unlock;
+- (void)lock;
+- (id)initWithConnection:(id)arg1;
 
 @end
 

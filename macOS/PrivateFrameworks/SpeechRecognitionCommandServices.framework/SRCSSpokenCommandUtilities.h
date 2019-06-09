@@ -15,12 +15,10 @@
 }
 
 + (id)sharedSpokenCommandUtilities;
+- (void).cxx_destruct;
 - (void)_flushBuiltInCommandsStringsTable;
 - (id)commandStringsTableForLocaleIdentifier:(id)arg1;
-- (id)oldOSXIDForNewCommandID:(id)arg1;
-- (id)newIDForOldOSXCommandID:(id)arg1;
 - (id)commandAttributes;
-- (void)dealloc;
 - (id)init;
 
 @end

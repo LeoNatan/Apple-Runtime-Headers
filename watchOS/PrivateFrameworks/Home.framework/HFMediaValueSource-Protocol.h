@@ -6,14 +6,14 @@
 
 #import <Home/NSObject-Protocol.h>
 
-@class NAFuture, NSError;
+@class NAFuture, NSError, NSString;
 @protocol HFMediaProfileContainer;
 
 @protocol HFMediaValueSource <NSObject>
-@property(readonly, nonatomic) NSError *cachedPlaybackStateWriteError;
-@property(readonly, nonatomic) _Bool hasPendingWrites;
-@property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer;
-- (NAFuture *)writePlaybackState:(int)arg1;
-- (int)lastPlaybackStateForProfile;
+- (NSError *)cachedPlaybackStateWriteErrorForRouteID:(NSString *)arg1;
+- (_Bool)hasPendingWritesForRouteID:(NSString *)arg1;
+- (NAFuture *)writePlaybackState:(int)arg1 forRouteID:(NSString *)arg2;
+- (int)lastPlaybackStateForProfileForRouteID:(NSString *)arg1;
+- (id <HFMediaProfileContainer>)mediaProfileContainerForRouteID:(NSString *)arg1;
 @end
 

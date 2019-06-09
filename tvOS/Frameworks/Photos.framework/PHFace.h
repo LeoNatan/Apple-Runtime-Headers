@@ -33,6 +33,7 @@
     double _centerY;
     long long _clusterSequenceNumber;
     long long _qualityMeasure;
+    double _quality;
     NSString *_personUUID;
     long long _sourceWidth;
     long long _sourceHeight;
@@ -42,6 +43,8 @@
     double _rightEyeY;
     double _mouthX;
     double _mouthY;
+    double _roll;
+    double _yaw;
     double _blurScore;
     id _adjustmentVersion;
     long long _nameSource;
@@ -53,7 +56,7 @@
 + (id)fetchFacesGroupedByAssetLocalIdentifierForAssets:(id)arg1 options:(id)arg2;
 + (id)propertySetAccessorsByPropertySet;
 + (Class)propertySetClassForPropertySet:(id)arg1;
-+ (id)fetchKeyFacesGroupedByPersonLocalIdentifierForPersonLocalIdentifiers:(id)arg1;
++ (id)fetchKeyFacesGroupedByPersonLocalIdentifierForPersonLocalIdentifiers:(id)arg1 fetchOptions:(id)arg2;
 + (id)fetchFacesForPersonsAssociatedWithFaceGroupsContainingFacesWithClusterSequenceNumbers:(id)arg1 options:(id)arg2;
 + (id)fetchFacesForFaceCrop:(id)arg1 options:(id)arg2;
 + (id)fetchRejectedFacesForPerson:(id)arg1 options:(id)arg2;
@@ -63,6 +66,7 @@
 + (id)fetchFacesOnAssetWithFace:(id)arg1 options:(id)arg2;
 + (id)fetchKeyFaceForPerson:(id)arg1 options:(id)arg2;
 + (id)fetchFacesForPerson:(id)arg1 options:(id)arg2;
++ (id)fetchFacesInAssets:(id)arg1 options:(id)arg2;
 + (id)fetchFacesInAsset:(id)arg1 options:(id)arg2;
 + (id)fetchFacesWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchFacesWithOptions:(id)arg1;
@@ -101,6 +105,8 @@
 @property(readonly, nonatomic) _Bool manual; // @synthesize manual=_manual;
 @property(readonly, nonatomic, getter=isInTrash) _Bool inTrash; // @synthesize inTrash=_inTrash;
 @property(readonly, nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
+@property(readonly, nonatomic) double yaw; // @synthesize yaw=_yaw;
+@property(readonly, nonatomic) double roll; // @synthesize roll=_roll;
 @property(readonly, nonatomic) double mouthY; // @synthesize mouthY=_mouthY;
 @property(readonly, nonatomic) double mouthX; // @synthesize mouthX=_mouthX;
 @property(readonly, nonatomic) double rightEyeY; // @synthesize rightEyeY=_rightEyeY;
@@ -111,6 +117,7 @@
 @property(readonly, nonatomic) long long sourceWidth; // @synthesize sourceWidth=_sourceWidth;
 @property(readonly, nonatomic) short confirmedFaceCropGenerationState; // @synthesize confirmedFaceCropGenerationState=_confirmedFaceCropGenerationState;
 @property(readonly, nonatomic) NSString *personUUID; // @synthesize personUUID=_personUUID;
+@property(readonly, nonatomic) double quality; // @synthesize quality=_quality;
 @property(readonly, nonatomic) long long qualityMeasure; // @synthesize qualityMeasure=_qualityMeasure;
 @property(readonly, nonatomic) long long clusterSequenceNumber; // @synthesize clusterSequenceNumber=_clusterSequenceNumber;
 @property(readonly, nonatomic) double centerY; // @synthesize centerY=_centerY;

@@ -15,12 +15,12 @@ __attribute__((visibility("hidden")))
     NSDictionary *mFills;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (id)fills;
 - (id)colors;
-- (void)dealloc;
 - (id)initWithColors:(id)arg1 fills:(id)arg2;
 
 @end

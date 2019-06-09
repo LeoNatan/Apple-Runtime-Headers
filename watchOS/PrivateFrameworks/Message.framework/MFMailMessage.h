@@ -6,58 +6,75 @@
 
 #import <MIME/MFMessage.h>
 
-#import <Message/ECMessage-Protocol.h>
+#import <Message/EDIndexableMessage-Protocol.h>
+#import <Message/EFPubliclyDescribable-Protocol.h>
 #import <Message/MFBaseMessage-Protocol.h>
-#import <Message/MFMailboxPredictionMessage-Protocol.h>
-#import <Message/MFPubliclyDescribable-Protocol.h>
 
-@class MFMailboxUid, MFMessageInfo, NSArray, NSDate, NSString, NSURL;
+@class ECAngleBracketIDHash, ECMessageFlags, ECSubject, EMMessageObjectID, MFMailboxUid, MFMessageHeaders, MFMessageInfo, MailAccount, NSArray, NSDate, NSDictionary, NSSet, NSString, NSURL;
 @protocol ECMimePart;
 
-@interface MFMailMessage : MFMessage <MFMailboxPredictionMessage, ECMessage, MFBaseMessage, MFPubliclyDescribable>
+@interface MFMailMessage : MFMessage <EFPubliclyDescribable, EDIndexableMessage, MFBaseMessage>
 {
     unsigned long long _messageFlags;
-    unsigned char _subjectPrefixLength;
     unsigned long long _modSequenceNumber;
     MFMessageInfo *_info;
     NSURL *_globalMessageURL;
+    _Bool _useInternalSourceIsManaged;
+    _Bool _sourceIsManaged;
     _Bool _shouldUseMailDrop;
 }
 
-+ (id)externalDataTypeIdentifiers;
 + (unsigned int)displayablePriorityForPriority:(int)arg1;
 + (unsigned int)validatePriority:(int)arg1;
 + (Class)dataMessageStoreToUse;
 + (id)forwardedMessagePrefixWithSpacer:(_Bool)arg1;
 @property(nonatomic) _Bool shouldUseMailDrop; // @synthesize shouldUseMailDrop=_shouldUseMailDrop;
+- (void).cxx_destruct;
+@property(readonly, nonatomic) long long libraryID;
+@property(readonly, nonatomic, getter=isKnownToHaveAttachments) _Bool knownToHaveAttachments;
+@property(readonly, nonatomic) _Bool deleted;
+@property(readonly, nonatomic) long long conversationHash; // @dynamic conversationHash;
+@property(readonly) NSSet *labels;
+@property(readonly, copy, nonatomic) NSArray *references;
+@property(readonly, copy, nonatomic) NSDictionary *headersDictionary;
+@property(readonly, nonatomic) id <ECMimePart> bodyPart;
+@property(readonly, nonatomic, getter=isPartOfExistingThread) _Bool partOfExistingThread;
+- (_Bool)conversationMuted;
+- (_Bool)conversationVIP;
+@property(readonly, nonatomic) _Bool senderVIP;
+- (_Bool)junk;
+- (_Bool)answered;
+@property(readonly, nonatomic) _Bool read;
+@property(readonly, nonatomic) _Bool flagged;
+@property(readonly, nonatomic) ECMessageFlags *flags;
+@property(readonly, copy, nonatomic) NSArray *listUnsubscribe;
+@property(readonly, copy, nonatomic) NSArray *from;
 - (_Bool)isSearchResultWithBogusRemoteId;
 - (id)bestAlternativePart:(_Bool *)arg1;
 - (id)bestAlternativePart;
-- (void)dealloc;
 - (id)externalConversationID;
 - (id)copyMessageInfo;
 - (_Bool)shouldSetSummary;
 - (void)setSummary:(id)arg1;
 - (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
 - (void)setMutableInfoFromMessage:(id)arg1;
-- (unsigned short)numberOfAttachments;
+@property(readonly, nonatomic) unsigned int numberOfAttachments;
 - (id)globalMessageURL;
 - (id)URL;
 - (id)originalMailboxURL;
 - (void)setConversationFlags:(unsigned long long)arg1;
 - (unsigned long long)conversationFlags;
 - (id)remoteMailboxURL;
-- (id)account;
-@property(readonly, copy, nonatomic) NSString *mf_publicDescription;
+@property(nonatomic) _Bool sourceIsManaged;
+@property(readonly, nonatomic) MailAccount *account;
+@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *description;
 - (id)_privacySafeDescription;
 - (id)loadMeetingMetadata;
 - (id)loadMeetingData;
 - (id)loadMeetingExternalID;
-- (void)setSubject:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *subject;
-- (id)subjectNotIncludingReAndFwdPrefix;
-- (id)subjectAndPrefixLength:(unsigned int *)arg1;
+- (id)preferredEmailAddressToReplyWith;
+- (id)preferredAccountToUseForReplying;
 @property(readonly, nonatomic) MFMailboxUid *mailbox;
 - (void)markAsNotFlagged;
 - (void)markAsFlagged;
@@ -70,41 +87,33 @@
 - (void)setPriorityFromHeaders:(id)arg1;
 - (void)setMessageFlagsWithoutCommitting:(unsigned long long)arg1;
 @property(nonatomic) unsigned long long messageFlags;
+@property(readonly, nonatomic) EMMessageObjectID *objectID;
 @property unsigned long long modSequenceNumber;
 - (id)mailMessageStore;
 - (id)messageStore;
-- (_Bool)messageNeedsReindexForFlagsUpdateFromOldFlags:(unsigned long long)arg1 toNewFlags:(unsigned long long)arg2;
-- (id)ccAddressList;
-- (id)toAddressList;
-- (id)firstSenderAddress;
-@property(readonly, nonatomic) unsigned int libraryID;
-@property(readonly, nonatomic, getter=isKnownToHaveAttachments) _Bool knownToHaveAttachments;
-@property(readonly, nonatomic) _Bool deleted;
-@property(readonly, nonatomic) long long conversationHash; // @dynamic conversationHash;
-@property(readonly, nonatomic) _Bool conversationMuted;
-@property(readonly, nonatomic) _Bool conversationVIP;
-@property(readonly, nonatomic) _Bool senderVIP;
-@property(readonly, nonatomic) _Bool junk;
-@property(readonly, nonatomic) _Bool answered;
-@property(readonly, nonatomic) _Bool read;
-@property(readonly, nonatomic) _Bool flagged;
-@property(readonly, copy, nonatomic) NSArray *from;
-@property(readonly, copy, nonatomic) NSArray *listUnsubscribe;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSArray *bcc;
 @property(readonly, copy, nonatomic) NSArray *cc;
 @property(readonly, nonatomic) long long conversationID;
 @property(readonly, nonatomic) NSDate *dateReceived;
 @property(readonly, nonatomic) unsigned int dateReceivedInterval; // @dynamic dateReceivedInterval;
+@property(readonly, nonatomic) NSDate *dateSent;
 @property(readonly, nonatomic) unsigned int dateSentInterval; // @dynamic dateSentInterval;
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) unsigned int fileSize;
 @property(readonly) unsigned int hash;
+@property(readonly, nonatomic) MFMessageHeaders *headers; // @dynamic headers;
 @property(readonly, nonatomic, getter=isLibraryMessage) _Bool libraryMessage;
-@property(readonly, nonatomic) unsigned int mailboxID; // @dynamic mailboxID;
-@property(readonly, nonatomic) id <ECMimePart> messageBody;
+@property(readonly, nonatomic) ECAngleBracketIDHash *listIDHash;
+@property(readonly, nonatomic) long long mailboxID; // @dynamic mailboxID;
 @property(readonly, nonatomic) long long messageIDHash; // @dynamic messageIDHash;
+@property(readonly, copy, nonatomic) NSString *messageIDHeader;
+@property(readonly, nonatomic) ECAngleBracketIDHash *messageIDHeaderHash;
 @property(readonly, copy, nonatomic) NSString *persistentID;
 @property(readonly, copy, nonatomic) NSString *remoteID;
+@property(readonly, copy, nonatomic) NSArray *senders;
+@property(readonly, copy, nonatomic) ECSubject *subject;
 @property(readonly) Class superclass;
 @property(readonly, copy, nonatomic) NSArray *to;
 @property(readonly, nonatomic) unsigned long uid;

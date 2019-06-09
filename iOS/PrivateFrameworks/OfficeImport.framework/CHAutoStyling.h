@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)autoStylingWithChart:(id)arg1 drawingTheme:(id)arg2;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)drawingTheme;
 - (id)initWithChart:(id)arg1 drawingTheme:(id)arg2;
 - (void)replaceStrokeAndFillInEmptyMarker:(id)arg1 withSeriesGraphicProperties:(id)arg2;

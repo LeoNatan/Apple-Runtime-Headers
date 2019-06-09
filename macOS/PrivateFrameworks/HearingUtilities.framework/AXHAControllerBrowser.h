@@ -10,24 +10,40 @@
 #import <HearingUtilities/HUIDCRemoteControllerDelegate-Protocol.h>
 #import <HearingUtilities/NSNetServiceBrowserDelegate-Protocol.h>
 
-@class AXHearingSlaveController, NSMutableArray, NSMutableDictionary, NSObject, NSString;
+@class AXHearingSlaveController, NSMutableArray, NSMutableDictionary, NSObject, NSString, RPCompanionLinkClient, RPCompanionLinkDevice;
 @protocol HUIDCManagerSecurityDelegate, OS_dispatch_queue;
 
 @interface AXHAControllerBrowser : HUIDCManager <NSNetServiceBrowserDelegate, HUIDCRemoteControllerDelegate, AXHADeviceControllerProtocol>
 {
     NSObject<OS_dispatch_queue> *_deviceUpdatesQueue;
     NSMutableDictionary *_deviceUpdatesDescription;
+    NSMutableArray *_devices;
     AXHearingSlaveController *_slaveController;
+    RPCompanionLinkClient *_client;
+    RPCompanionLinkDevice *_pairedCompanionDevice;
     NSMutableArray *_updateDeviceBlocks;
 }
 
 + (id)sharedInstance;
 @property(retain, nonatomic) NSMutableArray *updateDeviceBlocks; // @synthesize updateDeviceBlocks=_updateDeviceBlocks;
+@property(retain, nonatomic) RPCompanionLinkDevice *pairedCompanionDevice; // @synthesize pairedCompanionDevice=_pairedCompanionDevice;
+@property(retain, nonatomic) RPCompanionLinkClient *client; // @synthesize client=_client;
 @property(retain, nonatomic) AXHearingSlaveController *slaveController; // @synthesize slaveController=_slaveController;
 - (void).cxx_destruct;
+- (id)responseForRequest:(id)arg1;
+- (void)sendConnectionToCompanionIfPossible;
+- (void)mediaServerDied;
+- (void)registerMediaNotifications;
+- (void)sendMessageToPairedCompanion:(id)arg1;
+- (void)sendWriteToPairedCompanion:(id)arg1;
+- (void)removeDevice:(id)arg1;
+- (void)addDevice:(id)arg1;
+- (void)sendHearingDeviceIDChallengeToDevice:(id)arg1;
+- (void)setupRapportClient;
+- (void)resetRapportClientAndInvalidate:(BOOL)arg1;
 - (void)writePayload:(id)arg1 toControllers:(id)arg2;
 - (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 forControllers:(id)arg3;
-- (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 forDeviceID:(id)arg3;
+- (void)writeValue:(id)arg1 forProperty:(unsigned long long)arg2 andDeviceID:(id)arg3;
 - (void)updateProperty:(unsigned long long)arg1 forDeviceID:(id)arg2;
 - (void)device:(id)arg1 didUpdateProperty:(unsigned long long)arg2;
 - (void)stopPropertyUpdates;

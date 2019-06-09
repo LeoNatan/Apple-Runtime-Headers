@@ -8,6 +8,7 @@
 
 @class OITSULinkedPointerSetEntry;
 
+__attribute__((visibility("hidden")))
 @interface OITSULinkedPointerSetEnumerator : NSEnumerator
 {
     OITSULinkedPointerSetEntry *mHead;

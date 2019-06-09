@@ -19,6 +19,7 @@
     _Bool _resolveComponentTextStyles;
     _Bool _resolveTextStyles;
     _Bool _resolveAutoplacement;
+    _Bool _resolveDocumentStyle;
     id <SXConditionValidationContextFactory> _validationContextFactory;
     SXConditionalObjectResolver *_componentResolver;
     SXConditionalObjectResolver *_textStyleResolver;
@@ -27,14 +28,17 @@
     SXConditionalObjectResolver *_componentTextStyleResolver;
     SXConditionalObjectResolver *_advertisementAutoPlacementResolver;
     SXConditionalObjectResolver *_suggestedArticlesAutoPlacementResolver;
+    SXConditionalObjectResolver *_documentStyleResolver;
 }
 
+@property(readonly, nonatomic) _Bool resolveDocumentStyle; // @synthesize resolveDocumentStyle=_resolveDocumentStyle;
 @property(readonly, nonatomic) _Bool resolveAutoplacement; // @synthesize resolveAutoplacement=_resolveAutoplacement;
 @property(readonly, nonatomic) _Bool resolveTextStyles; // @synthesize resolveTextStyles=_resolveTextStyles;
 @property(readonly, nonatomic) _Bool resolveComponentTextStyles; // @synthesize resolveComponentTextStyles=_resolveComponentTextStyles;
 @property(readonly, nonatomic) _Bool resolveComponentLayouts; // @synthesize resolveComponentLayouts=_resolveComponentLayouts;
 @property(readonly, nonatomic) _Bool resolveComponentStyles; // @synthesize resolveComponentStyles=_resolveComponentStyles;
 @property(readonly, nonatomic) _Bool resolveComponents; // @synthesize resolveComponents=_resolveComponents;
+@property(readonly, nonatomic) SXConditionalObjectResolver *documentStyleResolver; // @synthesize documentStyleResolver=_documentStyleResolver;
 @property(readonly, nonatomic) SXConditionalObjectResolver *suggestedArticlesAutoPlacementResolver; // @synthesize suggestedArticlesAutoPlacementResolver=_suggestedArticlesAutoPlacementResolver;
 @property(readonly, nonatomic) SXConditionalObjectResolver *advertisementAutoPlacementResolver; // @synthesize advertisementAutoPlacementResolver=_advertisementAutoPlacementResolver;
 @property(readonly, nonatomic) SXConditionalObjectResolver *componentTextStyleResolver; // @synthesize componentTextStyleResolver=_componentTextStyleResolver;
@@ -44,6 +48,7 @@
 @property(readonly, nonatomic) SXConditionalObjectResolver *componentResolver; // @synthesize componentResolver=_componentResolver;
 @property(readonly, nonatomic) id <SXConditionValidationContextFactory> validationContextFactory; // @synthesize validationContextFactory=_validationContextFactory;
 - (void).cxx_destruct;
+- (id)resolveDocumentStyle:(id)arg1 validationContext:(id)arg2;
 - (id)resolveAutoPlacement:(id)arg1 validationContext:(id)arg2;
 - (_Bool)resolveComponentTextStyle:(id)arg1 validationContext:(id)arg2;
 - (_Bool)resolveComponentStyles:(id)arg1 validationContext:(id)arg2;
@@ -51,7 +56,7 @@
 - (_Bool)resolveTextStyles:(id)arg1 validationContext:(id)arg2;
 - (_Bool)resolveComponents:(id)arg1 validationContext:(id)arg2;
 - (id)modifyDOM:(id)arg1 context:(id)arg2;
-- (id)initWithValidationContextFactory:(id)arg1 componentResolver:(id)arg2 textStyleResolver:(id)arg3 componentStyleResolver:(id)arg4 componentLayoutResolver:(id)arg5 componentTextStyleResolver:(id)arg6 advertisementAutoPlacementResolver:(id)arg7 suggestedArticlesAutoPlacementResolver:(id)arg8;
+- (id)initWithValidationContextFactory:(id)arg1 componentResolver:(id)arg2 textStyleResolver:(id)arg3 componentStyleResolver:(id)arg4 componentLayoutResolver:(id)arg5 componentTextStyleResolver:(id)arg6 advertisementAutoPlacementResolver:(id)arg7 suggestedArticlesAutoPlacementResolver:(id)arg8 documentStyleResolver:(id)arg9;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

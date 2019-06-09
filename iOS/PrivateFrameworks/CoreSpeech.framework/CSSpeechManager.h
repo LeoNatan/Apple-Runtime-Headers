@@ -8,183 +8,62 @@
 
 #import <CoreSpeech/CSActivationEventNotifierDelegate-Protocol.h>
 #import <CoreSpeech/CSAudioRecorderDelegate-Protocol.h>
-#import <CoreSpeech/CSAudioRouteChangeMonitorDelegate-Protocol.h>
-#import <CoreSpeech/CSAudioServerCrashMonitorGibraltarDelegate-Protocol.h>
-#import <CoreSpeech/CSFirstUnlockMonitorDelegate-Protocol.h>
-#import <CoreSpeech/CSLanguageCodeUpdateMonitorDelegate-Protocol.h>
+#import <CoreSpeech/CSAudioServerCrashMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSSiriEnabledMonitorDelegate-Protocol.h>
-#import <CoreSpeech/CSSmartSiriVolumeDelegate-Protocol.h>
 #import <CoreSpeech/CSStateMachineDelegate-Protocol.h>
-#import <CoreSpeech/CSVoiceTriggerAssetDownloadMonitorDelegate-Protocol.h>
-#import <CoreSpeech/CSVoiceTriggerDelegate-Protocol.h>
+#import <CoreSpeech/CSVoiceTriggerAssetHandlerDelegate-Protocol.h>
 
-@class CSAudioCircularBuffer, CSAudioRecorder, CSRemoteVADCircularBuffer, CSSmartSiriVolume, CSStateMachine, NSDictionary, NSHashTable, NSString, NSUUID;
-@protocol CSSpeechManagerDelegate, OS_dispatch_queue, OS_dispatch_source;
+@class CSAudioRecorder, CSInvalidSATEntriesCleaner, CSOpportuneSpeakListnerTestService, CSSmartSiriVolume, CSSpIdImplicitTraining, NSMutableDictionary, NSString;
+@protocol CSSmartSiriVolumeDelegate, CSSpeechManagerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
-@interface CSSpeechManager : NSObject <CSAudioRecorderDelegate, CSStateMachineDelegate, CSVoiceTriggerDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorGibraltarDelegate, CSSmartSiriVolumeDelegate, CSActivationEventNotifierDelegate, CSAudioRouteChangeMonitorDelegate, CSFirstUnlockMonitorDelegate, CSVoiceTriggerAssetDownloadMonitorDelegate, CSLanguageCodeUpdateMonitorDelegate>
+@interface CSSpeechManager : NSObject <CSStateMachineDelegate, CSSiriEnabledMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSVoiceTriggerAssetHandlerDelegate, CSActivationEventNotifierDelegate, CSAudioRecorderDelegate>
 {
-    _Bool _isSiriEnabled;
-    _Bool _deviceRoleIsStereo;
-    _Bool _isAudioSessionActive;
-    _Bool _shouldChangeContextAfterDidStop;
-    CSAudioRecorder *_audioRecorder;
     NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_assetQueryQueue;
-    CSStateMachine *_stateMachine;
-    CSAudioCircularBuffer *_audioBuffer;
-    CSRemoteVADCircularBuffer *_remoteVADBuffer;
-    id <CSSpeechManagerDelegate> _clientController;
-    unsigned long long _secondPassStartSampleCount;
-    NSDictionary *_lastVoiceTriggerEventInfo;
     CSSmartSiriVolume *_smartSiriVolume;
-    NSHashTable *_activeAudioProcessors;
-    NSHashTable *_continuousAudioProcessors;
-    unsigned long long _lastForwardedSampleCount;
-    unsigned long long _clientStartSampleCount;
-    NSObject<OS_dispatch_source> *_listenPollingTimer;
+    NSObject<OS_dispatch_queue> *_assetQueryQueue;
+    CSAudioRecorder *_audioRecorder;
+    NSMutableDictionary *_audioProviders;
+    id <CSSpeechManagerDelegate> _clientController;
+    id <CSSmartSiriVolumeDelegate> _volumeClientController;
+    CSSpIdImplicitTraining *_voiceTriggerImplicitTraining;
+    CSInvalidSATEntriesCleaner *_voiceTriggerSATCleaner;
     NSObject<OS_dispatch_source> *_clearLoggingFileTimer;
-    long long _listenPollingTimerCount;
     long long _clearLoggingFileTimerCount;
-    NSUUID *_pendingSetRecordModeToRecordingToken;
-    CDUnknownBlockType _pendingSetRecordModeToRecordingCompletion;
-    double _audioSessionActivationDelay;
-    NSDictionary *_pendingContext;
+    CSOpportuneSpeakListnerTestService *_opportuneSpeakListnerTestService;
 }
 
-@property(retain, nonatomic) NSDictionary *pendingContext; // @synthesize pendingContext=_pendingContext;
-@property(nonatomic) _Bool shouldChangeContextAfterDidStop; // @synthesize shouldChangeContextAfterDidStop=_shouldChangeContextAfterDidStop;
-@property(nonatomic) double audioSessionActivationDelay; // @synthesize audioSessionActivationDelay=_audioSessionActivationDelay;
-@property(nonatomic) _Bool isAudioSessionActive; // @synthesize isAudioSessionActive=_isAudioSessionActive;
-@property(nonatomic) _Bool deviceRoleIsStereo; // @synthesize deviceRoleIsStereo=_deviceRoleIsStereo;
-@property(nonatomic) _Bool isSiriEnabled; // @synthesize isSiriEnabled=_isSiriEnabled;
-@property(copy, nonatomic) CDUnknownBlockType pendingSetRecordModeToRecordingCompletion; // @synthesize pendingSetRecordModeToRecordingCompletion=_pendingSetRecordModeToRecordingCompletion;
-@property(retain, nonatomic) NSUUID *pendingSetRecordModeToRecordingToken; // @synthesize pendingSetRecordModeToRecordingToken=_pendingSetRecordModeToRecordingToken;
++ (id)sharedManagerForCoreSpeechDaemon;
++ (id)sharedManager;
+@property(retain, nonatomic) CSOpportuneSpeakListnerTestService *opportuneSpeakListnerTestService; // @synthesize opportuneSpeakListnerTestService=_opportuneSpeakListnerTestService;
 @property(nonatomic) long long clearLoggingFileTimerCount; // @synthesize clearLoggingFileTimerCount=_clearLoggingFileTimerCount;
-@property(nonatomic) long long listenPollingTimerCount; // @synthesize listenPollingTimerCount=_listenPollingTimerCount;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *clearLoggingFileTimer; // @synthesize clearLoggingFileTimer=_clearLoggingFileTimer;
-@property(retain, nonatomic) NSObject<OS_dispatch_source> *listenPollingTimer; // @synthesize listenPollingTimer=_listenPollingTimer;
-@property(nonatomic) unsigned long long clientStartSampleCount; // @synthesize clientStartSampleCount=_clientStartSampleCount;
-@property(nonatomic) unsigned long long lastForwardedSampleCount; // @synthesize lastForwardedSampleCount=_lastForwardedSampleCount;
-@property(retain, nonatomic) NSHashTable *continuousAudioProcessors; // @synthesize continuousAudioProcessors=_continuousAudioProcessors;
-@property(retain, nonatomic) NSHashTable *activeAudioProcessors; // @synthesize activeAudioProcessors=_activeAudioProcessors;
-@property(retain, nonatomic) CSSmartSiriVolume *smartSiriVolume; // @synthesize smartSiriVolume=_smartSiriVolume;
-@property(retain, nonatomic) NSDictionary *lastVoiceTriggerEventInfo; // @synthesize lastVoiceTriggerEventInfo=_lastVoiceTriggerEventInfo;
-@property(nonatomic) unsigned long long secondPassStartSampleCount; // @synthesize secondPassStartSampleCount=_secondPassStartSampleCount;
+@property(retain, nonatomic) CSInvalidSATEntriesCleaner *voiceTriggerSATCleaner; // @synthesize voiceTriggerSATCleaner=_voiceTriggerSATCleaner;
+@property(retain, nonatomic) CSSpIdImplicitTraining *voiceTriggerImplicitTraining; // @synthesize voiceTriggerImplicitTraining=_voiceTriggerImplicitTraining;
+@property(nonatomic) __weak id <CSSmartSiriVolumeDelegate> volumeClientController; // @synthesize volumeClientController=_volumeClientController;
 @property(nonatomic) __weak id <CSSpeechManagerDelegate> clientController; // @synthesize clientController=_clientController;
-@property(retain, nonatomic) CSRemoteVADCircularBuffer *remoteVADBuffer; // @synthesize remoteVADBuffer=_remoteVADBuffer;
-@property(retain, nonatomic) CSAudioCircularBuffer *audioBuffer; // @synthesize audioBuffer=_audioBuffer;
-@property(retain, nonatomic) CSStateMachine *stateMachine; // @synthesize stateMachine=_stateMachine;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetQueryQueue; // @synthesize assetQueryQueue=_assetQueryQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
+@property(retain, nonatomic) NSMutableDictionary *audioProviders; // @synthesize audioProviders=_audioProviders;
 @property(retain, nonatomic) CSAudioRecorder *audioRecorder; // @synthesize audioRecorder=_audioRecorder;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetQueryQueue; // @synthesize assetQueryQueue=_assetQueryQueue;
+@property(readonly, nonatomic) CSSmartSiriVolume *smartSiriVolume; // @synthesize smartSiriVolume=_smartSiriVolume;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
-- (_Bool)_isBluetoothDeviceTriggerEvent:(unsigned long long)arg1;
-- (void)handleServerDidRestart;
-- (void)handleLostServerConnection;
 - (void)_startClearLoggingFilesTimer;
 - (void)_createClearLoggingFileTimer;
-- (void)CSSmartSiriVolumeDidReceiveTimerChanged:(long long)arg1;
-- (void)CSSmartSiriVolumeDidReceiveAlarmChanged:(long long)arg1;
-- (void)CSSmartSiriVolumeDidReceiveMusicVolumeChanged:(float)arg1;
-- (void)CSSiriEnabledMonitor:(id)arg1 didReceiveEnabled:(_Bool)arg2;
-- (float)getEstimatedTTSVolume;
-- (id)_eventName:(unsigned long long)arg1;
-- (id)_stateName:(long long)arg1;
 - (void)_reinitializeSmartSiriVolumeWithAsset:(id)arg1;
-- (void)CSLanguageCodeUpdateMonitor:(id)arg1 didReceiveLanguageCodeChanged:(id)arg2;
-- (void)CSVoiceTriggerAssetDownloadMonitor:(id)arg1 didInstallNewAsset:(_Bool)arg2;
-- (void)CSFirstUnlockMonitor:(id)arg1 didReceiveFirstUnlock:(_Bool)arg2;
-- (void)voiceTriggerDidDetectTwoShotAtTime:(double)arg1;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
-- (void)audioRecorderDisconnected:(id)arg1;
-- (void)audioRecorder:(id)arg1 didSetAudioSessionActive:(_Bool)arg2;
-- (void)audioRecorder:(id)arg1 willSetAudioSessionActive:(_Bool)arg2;
-- (void)audioRecorderEndRecordInterruption:(id)arg1;
-- (void)audioRecorderBeginRecordInterruption:(id)arg1 withContext:(id)arg2;
-- (void)audioRecorderBeginRecordInterruption:(id)arg1;
-- (void)audioRecorderDidFinishAlertPlayback:(id)arg1 ofType:(long long)arg2 error:(id)arg3;
-- (void)audioRecorderRecordHardwareConfigurationDidChange:(id)arg1 toConfiguration:(long long)arg2;
-- (void)audioRecorderDidStopRecording:(id)arg1 forReason:(long long)arg2;
-- (void)audioRecorderDidStartRecording:(id)arg1 successfully:(_Bool)arg2 error:(id)arg3;
-- (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2;
-- (void)audioRecorderBufferAvailable:(id)arg1 buffer:(id)arg2 remoteVAD:(id)arg3 atTime:(unsigned long long)arg4;
-- (id)_getClientRecordContext;
-- (void)_startForwardingToSmartSiriVolume;
-- (void)_stopForwardingToClient;
-- (void)_startForwardingToClient;
-- (void)_destroyAudioRecorderIfNeeded;
-- (void)_stopListenPolling;
-- (void)_startListenPolling;
-- (void)_createListenPollingTimer;
-- (void)didIgnoreEvent:(long long)arg1 from:(long long)arg2;
-- (void)didTransitFrom:(long long)arg1 to:(long long)arg2 by:(long long)arg3;
-- (void)mediaserverdDidRestart;
-- (void)audioRecorderLostMediaserverd:(id)arg1;
-- (void)_stopRecordingWithEvent:(unsigned long long)arg1;
-- (void)stopRecordingWithEvent:(unsigned long long)arg1;
-- (void)_startRecordingForClient:(id)arg1 error:(id *)arg2;
-- (_Bool)_startRecordingForAOPFirstPassTriggerWithSettings:(id)arg1 error:(id *)arg2;
-- (_Bool)_startListeningForBluetoothDeviceVoiceTrigger:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
-- (_Bool)_startRecordingWithSettings:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
-- (_Bool)startRecordingWithSetting:(id)arg1 event:(unsigned long long)arg2 error:(id *)arg3;
-- (void)startRecordingAsyncWithSetting:(id)arg1 event:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (_Bool)_handleJarvisFirstPassTriggerEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
-- (_Bool)_handleVoiceTriggerSwitchAOP2APEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
-- (_Bool)_handleAOPFirstPassTriggerEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
-- (_Bool)_handleBluetoothDeviceTriggerEvent:(unsigned long long)arg1 settings:(id)arg2 error:(id *)arg3;
-- (void)_enableMiniDucking:(_Bool)arg1;
-- (_Bool)_releaseAudioSessionForListening:(unsigned long long)arg1 error:(id *)arg2;
-- (void)_releaseClientAudioSession:(unsigned long long)arg1;
-- (void)releaseClientAudioSession:(unsigned long long)arg1;
-- (void)releaseClientAudioSession;
-- (_Bool)_setCurrentContext:(id)arg1 error:(id *)arg2;
-- (void)_performPendingSetRecordModeToRecordingForReason:(id)arg1;
-- (void)_cancelPendingSetRecordModeToRecordingForReason:(id)arg1;
-- (void)_scheduleSetRecordModeToRecordingWithDelay:(double)arg1 forReason:(id)arg2 validator:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
-- (_Bool)_setRecordMode:(long long)arg1 withDelay:(double)arg2 error:(id *)arg3;
-- (_Bool)_setRecordMode:(long long)arg1 error:(id *)arg2;
-- (_Bool)_startListeningWithSettings:(id)arg1 error:(id *)arg2;
-- (_Bool)_startListening:(id *)arg1;
-- (_Bool)_startRecordingWithSettings:(id)arg1 error:(id *)arg2;
-- (_Bool)prepareRecordingForClient:(id)arg1 error:(id *)arg2;
-- (_Bool)setClientContext:(id)arg1 error:(id *)arg2;
-- (_Bool)isNarrowBand;
-- (_Bool)isClientRecording;
-- (id)recordSettings;
-- (id)recordDeviceInfo;
-- (id)recordRoute;
-- (void)prewarmAudioSession;
-- (_Bool)_prepareListenWithSettings:(id)arg1 error:(id *)arg2;
-- (_Bool)_prepareRecorderWithSettings:(id)arg1 error:(id *)arg2;
-- (_Bool)_createRecorderWithContextIfNeeded:(id)arg1 error:(id *)arg2;
-- (void)_notifyEvent:(unsigned long long)arg1;
-- (void)notifyEvent:(unsigned long long)arg1;
-- (long long)getCurrentState;
-- (void)_setupStateMachine;
+- (void)voiceTriggerAssetHandler:(id)arg1 didChangeCachedAsset:(id)arg2;
+- (void)audioRecorderWillBeDestroyed:(id)arg1;
+- (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3;
+- (void)audioRecorderBufferAvailable:(id)arg1 audioStreamHandleId:(unsigned long long)arg2 buffer:(id)arg3 remoteVAD:(id)arg4 atTime:(unsigned long long)arg5;
+- (id)_getAudioRecorderWithError:(id *)arg1;
+- (id)audioProviderWithContext:(id)arg1 error:(id *)arg2;
+- (id)audioProviderWithUUID:(id)arg1;
+- (void)registerVolumeController:(id)arg1;
+- (void)registerSiriClientProxy:(id)arg1;
 - (void)registerSpeechController:(id)arg1;
-- (void)_destroyCircularBuffer;
-- (void)_createCircularBuffer;
-- (void)_setupCircularBuffer;
-- (void)_getVoiceTriggerAsset:(CDUnknownBlockType)arg1;
-- (void)_getVoiceTriggerAssetForMac:(CDUnknownBlockType)arg1;
-- (void)_reset;
-- (void)reset;
+- (void)_getVoiceTriggerAssetIfNeeded:(CDUnknownBlockType)arg1;
 - (void)startManager;
 - (void)dealloc;
-- (id)initWithVoiceTriggerFirstPass:(id)arg1 firstPassType:(unsigned long long)arg2 voicetriggerSecondPass:(id)arg3 voicetriggerEventNotifier:(id)arg4 audioRecorder:(id)arg5 stateMachineType:(unsigned long long)arg6;
 - (id)init;
-- (float)averagePowerForChannel:(unsigned long long)arg1;
-- (float)peakPowerForChannel:(unsigned long long)arg1;
-- (void)updateMeters;
-- (void)setMeteringEnabled:(_Bool)arg1;
-- (unsigned long long)alertStartTime;
-- (_Bool)playRecordStartingAlertAndResetEndpointer;
-- (_Bool)playAlertSoundForType:(long long)arg1;
-- (_Bool)setAlertSoundFromURL:(id)arg1 forType:(long long)arg2;
-- (id)metrics;
-- (id)passThruVoiceTriggerInfo;
-- (void)setDuckOthersOption:(_Bool)arg1;
-- (_Bool)duckOthersOption;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

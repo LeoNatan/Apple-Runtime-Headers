@@ -21,23 +21,25 @@
     VNFaceLandmarkRegion3D *_medianLine;
     VNFaceLandmarkRegion3D *_outerLips;
     VNFaceLandmarkRegion3D *_innerLips;
-    VNFaceLandmarkRegion3D *_leftPupil;
-    VNFaceLandmarkRegion3D *_rightPupil;
 }
 
++ (BOOL)supportsSecureCoding;
 - (void).cxx_destruct;
-@property(readonly) VNFaceLandmarkRegion3D *innerLips;
-@property(readonly) VNFaceLandmarkRegion3D *outerLips;
-@property(readonly) VNFaceLandmarkRegion3D *medianLine;
-@property(readonly) VNFaceLandmarkRegion3D *noseCrest;
-@property(readonly) VNFaceLandmarkRegion3D *nose;
-@property(readonly) VNFaceLandmarkRegion3D *rightEyebrow;
-@property(readonly) VNFaceLandmarkRegion3D *leftEyebrow;
-@property(readonly) VNFaceLandmarkRegion3D *rightEye;
-@property(readonly) VNFaceLandmarkRegion3D *leftEye;
-@property(readonly) VNFaceLandmarkRegion3D *faceContour;
-@property(readonly) VNFaceLandmarkRegion3D *allPoints;
-- (void *)createPointArray:(const int *)arg1 count:(unsigned long long)arg2;
+@property(readonly) VNFaceLandmarkRegion3D *innerLips; // @synthesize innerLips=_innerLips;
+@property(readonly) VNFaceLandmarkRegion3D *outerLips; // @synthesize outerLips=_outerLips;
+@property(readonly) VNFaceLandmarkRegion3D *medianLine; // @synthesize medianLine=_medianLine;
+@property(readonly) VNFaceLandmarkRegion3D *noseCrest; // @synthesize noseCrest=_noseCrest;
+@property(readonly) VNFaceLandmarkRegion3D *nose; // @synthesize nose=_nose;
+@property(readonly) VNFaceLandmarkRegion3D *rightEyebrow; // @synthesize rightEyebrow=_rightEyebrow;
+@property(readonly) VNFaceLandmarkRegion3D *leftEyebrow; // @synthesize leftEyebrow=_leftEyebrow;
+@property(readonly) VNFaceLandmarkRegion3D *rightEye; // @synthesize rightEye=_rightEye;
+@property(readonly) VNFaceLandmarkRegion3D *leftEye; // @synthesize leftEye=_leftEye;
+@property(readonly) VNFaceLandmarkRegion3D *faceContour; // @synthesize faceContour=_faceContour;
+@property(readonly) VNFaceLandmarkRegion3D *allPoints; // @synthesize allPoints=_allPoints;
+- (void *)_createPointArray:(const int *)arg1 count:(unsigned long long)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

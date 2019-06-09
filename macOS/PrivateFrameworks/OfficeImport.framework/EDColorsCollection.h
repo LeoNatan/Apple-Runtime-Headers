@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDColorsCollection : EDCollection <OADColorPalette>
 {
     unsigned long long mDefaultColorsCount;

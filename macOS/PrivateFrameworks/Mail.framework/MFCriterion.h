@@ -30,6 +30,7 @@
 + (BOOL)criteria:(id)arg1 areEqualToCriteria:(id)arg2;
 + (id)stringForCriterionType:(long long)arg1;
 + (long long)criterionTypeForString:(id)arg1;
++ (id)spotlightScopeAttribute;
 + (id)queryScopePathForMailbox:(id)arg1;
 + (void)logSpotlightStatus;
 + (BOOL)logCriterionConversionErrors;
@@ -92,7 +93,7 @@
 @property(readonly, nonatomic) BOOL containsVIPSendersCriterion;
 - (BOOL)_containsVIPSendersCriterionWithInFlightURLs:(id)arg1;
 @property(readonly, nonatomic) BOOL containsMailboxCriterion;
-@property(readonly, nonatomic) BOOL containsWhereFromsCriterion;
+@property(readonly, nonatomic) BOOL criterionMayFindAttachments;
 @property(readonly, nonatomic) BOOL containsSpotlightOnlyCriterion;
 @property(readonly, nonatomic) BOOL containsSpotlightCriterion;
 - (id)_qualifierString;

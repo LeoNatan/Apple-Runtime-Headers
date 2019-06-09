@@ -8,7 +8,7 @@
 
 #import <HealthDaemon/HDDiagnosticObject-Protocol.h>
 
-@class HDProfile, NSMutableDictionary, NSNumber, NSString;
+@class HDProfile, HDQuantitySeriesManager, NSMutableDictionary, NSNumber, NSString;
 @protocol OS_dispatch_queue;
 
 @interface HDDataManager : NSObject <HDDiagnosticObject>
@@ -22,13 +22,20 @@
     unsigned long long _openTransactions;
     NSMutableDictionary *_pendingObjectsBySampleType;
     NSNumber *_lastAnchor;
+    double _lastNotifyLogTime;
+    long long _notifyCount;
+    long long _samplesAddedCount;
+    long long _samplesJournaledCount;
+    HDQuantitySeriesManager *_quantitySeriesManager;
     HDProfile *_profile;
 }
 
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
+@property(readonly, nonatomic) HDQuantitySeriesManager *quantitySeriesManager; // @synthesize quantitySeriesManager=_quantitySeriesManager;
 - (void).cxx_destruct;
 - (id)diagnosticDescription;
 - (void)setBackgroundObserverFrequency:(id)arg1 forDataType:(id)arg2 frequency:(long long)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)synchronouslyCloseObserverTransactionAndNotify;
 - (void)closeObserverTransaction;
 - (void)openObserverTransaction;
 - (id)_queue_observersForDataType:(id)arg1 createIfNil:(_Bool)arg2;
@@ -59,17 +66,17 @@
 - (_Bool)deleteDataObjectsOfClass:(Class)arg1 predicate:(id)arg2 limit:(unsigned long long)arg3 deletedSampleCount:(unsigned long long *)arg4 notifyObservers:(_Bool)arg5 generateDeletedObjects:(_Bool)arg6 recursiveDeleteAuthorizationBlock:(CDUnknownBlockType)arg7 error:(id *)arg8;
 - (_Bool)deleteDataObjects:(id)arg1 restrictedSourceEntities:(id)arg2 failIfNotFound:(_Bool)arg3 recursiveDeleteAuthorizationBlock:(CDUnknownBlockType)arg4 error:(id *)arg5;
 - (_Bool)deleteObjectsWithUUIDs:(id)arg1 configuration:(id)arg2 error:(id *)arg3;
-- (void)_callObservers:(id)arg1 withObjects:(id)arg2 type:(id)arg3 anchor:(id)arg4;
-- (void)_callObservers:(id)arg1 forType:(id)arg2 source:(id)arg3 withAnchor:(id)arg4;
+- (void)_callObservers:(id)arg1 samples:(id)arg2 type:(id)arg3 anchor:(id)arg4;
 - (void)_notifyObserversWithAddedObjectsBySampleType:(id)arg1 lastAnchor:(id)arg2;
 - (void)_callObserversIfPossible;
 - (void)_shouldNotifyForDeletedSamplesOfTypes:(id)arg1 anchor:(id)arg2;
-- (void)shouldNotifyForDeletedSamplesOfTypes:(id)arg1 database:(id)arg2 anchor:(id)arg3;
+- (void)shouldNotifyForDeletedSamplesOfTypes:(id)arg1 transaction:(id)arg2 anchor:(id)arg3;
 - (void)shouldNotifyForDataObjects:(id)arg1 provenance:(id)arg2 database:(id)arg3 anchor:(id)arg4;
-- (_Bool)_insertDataObjects:(id)arg1 intoDatabase:(id)arg2 insertionContext:(id)arg3 updateSourceOrder:(_Bool)arg4 error:(id *)arg5;
+- (_Bool)_insertDataObjects:(id)arg1 transaction:(id)arg2 insertionContext:(id)arg3 updateSourceOrder:(_Bool)arg4 error:(id *)arg5;
 - (_Bool)insertDataObjects:(id)arg1 withProvenance:(id)arg2 creationDate:(double)arg3 skipInsertionFilter:(_Bool)arg4 updateSourceOrder:(_Bool)arg5 error:(id *)arg6;
 - (_Bool)insertDataObjects:(id)arg1 withProvenance:(id)arg2 creationDate:(double)arg3 skipInsertionFilter:(_Bool)arg4 error:(id *)arg5;
 - (_Bool)insertDataObjects:(id)arg1 withProvenance:(id)arg2 creationDate:(double)arg3 error:(id *)arg4;
+- (_Bool)insertDataObjects:(id)arg1 error:(id *)arg2;
 - (_Bool)insertDataObjects:(id)arg1 sourceEntity:(id)arg2 deviceEntity:(id)arg3 sourceVersion:(id)arg4 creationDate:(double)arg5 error:(id *)arg6;
 - (id)initWithProfile:(id)arg1;
 

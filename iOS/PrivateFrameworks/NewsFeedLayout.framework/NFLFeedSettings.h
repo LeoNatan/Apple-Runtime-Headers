@@ -32,7 +32,6 @@
     double _articleSelectionCornerRadius;
     double _articleSelectionInset;
     double _scaleValue;
-    double _lineHeightMultiplier;
     NFLCellGeneratorManager *_cellGeneratorManager;
     id <NFLFeedLayoutSearchConfiguration> _defaultFeedLayoutSearchConfiguration;
     NFLFontCache *_fontCache;
@@ -50,7 +49,6 @@
 @property(readonly, nonatomic) NFLFontCache *fontCache; // @synthesize fontCache=_fontCache;
 @property(copy, nonatomic) id <NFLFeedLayoutSearchConfiguration> defaultFeedLayoutSearchConfiguration; // @synthesize defaultFeedLayoutSearchConfiguration=_defaultFeedLayoutSearchConfiguration;
 @property(readonly, nonatomic) NFLCellGeneratorManager *cellGeneratorManager; // @synthesize cellGeneratorManager=_cellGeneratorManager;
-@property(nonatomic) double lineHeightMultiplier; // @synthesize lineHeightMultiplier=_lineHeightMultiplier;
 @property(readonly, nonatomic) double scaleValue; // @synthesize scaleValue=_scaleValue;
 @property(readonly, nonatomic) double articleSelectionInset; // @synthesize articleSelectionInset=_articleSelectionInset;
 @property(readonly, nonatomic) double articleSelectionCornerRadius; // @synthesize articleSelectionCornerRadius=_articleSelectionCornerRadius;
@@ -76,9 +74,9 @@
 - (double)cellWidthForColumnSpan:(long long)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithViewportSize:(struct CGSize)arg1 viewportInsets:(struct UIEdgeInsets)arg2 preferredContentSizeCategory:(id)arg3 showAccessoryText:(_Bool)arg4 lineHeightMultiplier:(double)arg5;
-- (id)initWithViewportSize:(struct CGSize)arg1 viewportInsets:(struct UIEdgeInsets)arg2 preferredContentSizeCategory:(id)arg3 showAccessoryText:(_Bool)arg4 lineHeightMultiplier:(double)arg5 layoutType:(long long)arg6 layoutOptions:(unsigned long long)arg7;
-- (id)initWithViewportSize:(struct CGSize)arg1 defaultFeedLayoutSearchConfiguration:(id)arg2 columnCount:(long long)arg3 feedGutter:(double)arg4 feedTopMargin:(double)arg5 verticalMarginInRows:(double)arg6 preferredContentSizeCategory:(id)arg7 maximumContentInset:(double)arg8 selectionCornerRadius:(double)arg9 selectionInset:(double)arg10 showAccessoryText:(_Bool)arg11 lineHeightMultiplier:(double)arg12 layoutOptions:(unsigned long long)arg13;
+- (id)initWithViewportSize:(struct CGSize)arg1 viewportInsets:(struct UIEdgeInsets)arg2 preferredContentSizeCategory:(id)arg3 showAccessoryText:(_Bool)arg4;
+- (id)initWithViewportSize:(struct CGSize)arg1 viewportInsets:(struct UIEdgeInsets)arg2 preferredContentSizeCategory:(id)arg3 showAccessoryText:(_Bool)arg4 layoutType:(long long)arg5 layoutOptions:(unsigned long long)arg6;
+- (id)initWithViewportSize:(struct CGSize)arg1 defaultFeedLayoutSearchConfiguration:(id)arg2 columnCount:(long long)arg3 feedGutter:(double)arg4 feedTopMargin:(double)arg5 verticalMarginInRows:(double)arg6 preferredContentSizeCategory:(id)arg7 maximumContentInset:(double)arg8 selectionCornerRadius:(double)arg9 selectionInset:(double)arg10 showAccessoryText:(_Bool)arg11 layoutOptions:(unsigned long long)arg12;
 - (id)init;
 
 @end

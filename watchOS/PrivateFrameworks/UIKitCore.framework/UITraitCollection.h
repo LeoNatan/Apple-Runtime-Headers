@@ -8,19 +8,31 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSSecureCoding-Protocol.h>
+#import <UIKitCore/_UIFallbackEnvironment-Protocol.h>
 
-@class NSDictionary, NSString;
+@class NSDictionary, NSString, UIImageConfiguration;
 
-@interface UITraitCollection : NSObject <NSCopying, NSSecureCoding>
+@interface UITraitCollection : NSObject <_UIFallbackEnvironment, NSCopying, NSSecureCoding>
 {
-    CDStruct_0fb76915 _builtinTraits;
+    CDStruct_f322b22e _builtinTraits;
     NSDictionary *_clientDefinedTraits;
+    NSObject *_environmentWrapper;
+    int _accessibilityContrast;
+    int _userInterfaceLevel;
 }
 
++ (id)_traitCollectionFromImageConfiguration:(id)arg1;
++ (id)_backgroundThreadFallbackTraitCollection;
++ (void)_setBackgroundThreadFallbackTraitCollection:(id)arg1;
++ (id)_fallbackTraitCollection;
 + (id)_defaultTraitCollection;
 + (id)_emptyTraitCollection;
 + (id)_traitCollectionWithValue:(id)arg1 forTraitNamed:(id)arg2;
++ (id)traitCollectionWithTextLegibility:(int)arg1;
++ (id)_traitCollectionWithEnvironmentWrapper:(id)arg1;
 + (id)traitCollectionWithPreferredContentSizeCategory:(id)arg1;
++ (id)_traitCollectionWithSemanticContext:(int)arg1;
++ (id)traitCollectionWithLegibilityWeight:(int)arg1;
 + (id)traitCollectionWithDisplayCornerRadius:(float)arg1;
 + (id)traitCollectionWithForceTouchCapability:(int)arg1;
 + (id)traitCollectionWithLayoutDirection:(int)arg1;
@@ -36,10 +48,19 @@
 + (id)traitCollectionWithUserInterfaceIdiom:(int)arg1;
 + (id)traitCollectionWithTraitsFromCollections:(id)arg1;
 + (_Bool)supportsSecureCoding;
-+ (id)traitCollectionWithBarPosition:(int)arg1;
-+ (id)traitCollectionWithBarMetrics:(int)arg1;
++ (id)_descriptionForChangeFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
+@property(readonly, nonatomic) int userInterfaceLevel; // @synthesize userInterfaceLevel=_userInterfaceLevel;
+@property(readonly, nonatomic) int accessibilityContrast; // @synthesize accessibilityContrast=_accessibilityContrast;
+- (id)imageConfiguration;
+@property(readonly, nonatomic, getter=_imageConfiguration) UIImageConfiguration *_imageConfiguration;
+- (id)_traitCollectionRelevantForImageConfiguration;
+- (id)_invertedTraitCollection;
 - (id)_traitCollectionByReplacingValue:(id)arg1 forTraitName:(id)arg2;
+- (id)_environmentWrapper;
+- (int)_textLegibility;
 @property(readonly, copy, nonatomic) NSString *preferredContentSizeCategory;
+@property(readonly, nonatomic) int _semanticContext;
+@property(readonly, nonatomic) int legibilityWeight;
 - (float)displayCornerRadius;
 @property(readonly, nonatomic) int forceTouchCapability;
 @property(readonly, nonatomic) int layoutDirection;
@@ -55,23 +76,31 @@
 @property(readonly, nonatomic) int userInterfaceIdiom;
 - (_Bool)_changedContentSizeCategoryFromTraitCollection:(id)arg1;
 - (id)_valueForTraitNamed:(id)arg1;
+- (id)_traitNamesOfIntersectionWithTraitCollection:(id)arg1;
+- (int)_countOfIntersectionWithTraitCollection:(id)arg1;
 - (_Bool)_matchesIntersectionWithTraitCollection:(id)arg1;
+- (id)_traitNamesForUnspecifiedBuiltInTraits;
 - (_Bool)containsTraitsInCollection:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)_description;
 - (id)_descriptionWithPrivateTraits:(_Bool)arg1;
+- (id)_traitsDescription;
 - (int)_compare:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (unsigned int)hash;
+@property(readonly) unsigned int hash;
 - (void)dealloc;
 - (id)init;
-- (id)_initWithBuiltinTraitStorage:(CDStruct_0fb76915 *)arg1 clientDefinedTraits:(id)arg2;
-@property(readonly, nonatomic) int barPosition;
-@property(readonly, nonatomic) int barMetrics;
+- (id)_initWithBuiltinTraitStorage:(CDStruct_f322b22e *)arg1 clientDefinedTraits:(id)arg2 environmentWrapper:(id)arg3;
+- (id)_initWithBuiltinTraitStorage:(CDStruct_f322b22e *)arg1 clientDefinedTraits:(id)arg2;
+- (id)_fallbackTraitCollection;
 - (id)_namedImageDescription;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

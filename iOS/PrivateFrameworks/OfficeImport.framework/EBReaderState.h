@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) _Bool importCSV; // @synthesize importCSV=mImportCSV;
+- (void).cxx_destruct;
 - (void)reportWarning:(id)arg1;
 - (id)oaState;
 - (id)columnWidthConvertor;
@@ -29,7 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)resumeReading;
 - (void)pauseReading;
 - (void)dealloc;
-- (id)initWithXlReader:(struct XlBinaryReader *)arg1 cancelDelegate:(id)arg2 tracing:(id)arg3;
+- (id)initWithXlReader:(struct XlBinaryReader *)arg1 cancelDelegate:(id)arg2;
 
 @end
 

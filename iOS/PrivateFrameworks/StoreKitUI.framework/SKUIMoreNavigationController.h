@@ -9,6 +9,7 @@
 @class UINavigationController, UIViewController;
 @protocol SKUIMoreNavigationControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIMoreNavigationController : UIMoreNavigationController
 {
     UINavigationController *_displayedViewController;

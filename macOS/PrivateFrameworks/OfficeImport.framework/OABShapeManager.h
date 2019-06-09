@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface OABShapeManager : OABShapeBaseManager <OABPropertiesManager>
 {
     struct EshShape *mShape;

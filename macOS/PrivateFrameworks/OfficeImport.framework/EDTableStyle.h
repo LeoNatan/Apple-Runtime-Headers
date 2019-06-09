@@ -10,6 +10,7 @@
 
 @class EDKeyedCollection, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDTableStyle : NSObject <NSCopying>
 {
     NSString *mName;

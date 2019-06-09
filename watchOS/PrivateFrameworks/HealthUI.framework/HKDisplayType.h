@@ -8,7 +8,7 @@
 
 #import <HealthUI/NSCopying-Protocol.h>
 
-@class HKDisplayCategory, HKDisplayTypeChartingRules, HKObjectType, HKSampleType, HKValueRange, NSAttributedString, NSDictionary, NSPredicate, NSSet, NSString, UIImage;
+@class HKDisplayCategory, HKDisplayTypeChartingRules, HKObjectType, HKSampleType, HKValueRange, NSArray, NSAttributedString, NSDictionary, NSPredicate, NSSet, NSString, UIImage;
 
 @interface HKDisplayType : NSObject <NSCopying>
 {
@@ -29,6 +29,8 @@
     NSString *_healthKitLocalizationTableNameOverride;
     NSString *_listIconImageNameOverride;
     UIImage *_listIconOverride;
+    NSString *_detailImageName;
+    UIImage *_detailImage;
     _Bool _summaryAttributionHasLink;
     _Bool _showAllDataHierarchically;
     _Bool _shouldDisplayUnitStringOnYAxis;
@@ -38,9 +40,9 @@
     _Bool __wheelchairUser;
     int _displayTypeIdentifier;
     int _categoryIdentifier;
+    NSArray *_secondaryCategoryIdentifiers;
     float _scalarValue;
     NSDictionary *_unitNameKeyOverrides;
-    UIImage *_detailImage;
     NSAttributedString *_attributedSummaryAttribution;
     HKDisplayTypeChartingRules *_chartingRules;
     unsigned int _statisticsMergeStrategy;
@@ -60,9 +62,9 @@
 @property(readonly, nonatomic) _Bool showAllDataHierarchically; // @synthesize showAllDataHierarchically=_showAllDataHierarchically;
 @property(readonly, nonatomic) _Bool summaryAttributionHasLink; // @synthesize summaryAttributionHasLink=_summaryAttributionHasLink;
 @property(readonly, nonatomic) NSAttributedString *attributedSummaryAttribution; // @synthesize attributedSummaryAttribution=_attributedSummaryAttribution;
-@property(readonly, nonatomic) UIImage *detailImage; // @synthesize detailImage=_detailImage;
 @property(readonly, nonatomic) NSDictionary *unitNameKeyOverrides; // @synthesize unitNameKeyOverrides=_unitNameKeyOverrides;
 @property(readonly, nonatomic) float scalarValue; // @synthesize scalarValue=_scalarValue;
+@property(readonly, nonatomic) NSArray *secondaryCategoryIdentifiers; // @synthesize secondaryCategoryIdentifiers=_secondaryCategoryIdentifiers;
 @property(readonly, nonatomic) int categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(readonly, nonatomic) int displayTypeIdentifier; // @synthesize displayTypeIdentifier=_displayTypeIdentifier;
 - (void).cxx_destruct;
@@ -85,11 +87,13 @@
 - (id)_rawLocalizedStringForKey:(id)arg1;
 - (id)_localizedStringWithKey:(id)arg1;
 @property(readonly, nonatomic) _Bool canBecomeFavorite;
+@property(readonly, nonatomic) NSArray *secondaryDisplayCategories;
 @property(readonly, nonatomic) HKDisplayCategory *displayCategory;
 @property(readonly, nonatomic) _Bool anyPortraitChartDefinition;
 @property(readonly, nonatomic) _Bool hidden;
 @property(readonly, nonatomic) _Bool supportsAssociatedSamples;
 @property(readonly, nonatomic) _Bool unitPreferencesRequireChangeConfirmation;
+- (id)listIconOverride;
 @property(readonly, nonatomic) NSString *listIconImageName;
 @property(readonly, nonatomic) UIImage *listIcon;
 @property(readonly, nonatomic) UIImage *shareIcon;
@@ -104,6 +108,7 @@
 @property(readonly, nonatomic) _Bool isCharacteristic;
 @property(readonly, nonatomic) HKSampleType *recordSampleType;
 @property(readonly, nonatomic) HKSampleType *sampleType;
+@property(readonly, nonatomic) UIImage *detailImage;
 - (unsigned int)presentationOptionsForTimeScope:(int)arg1;
 - (id)chartingPredicateForTimeScope:(int)arg1;
 - (id)defaultValuePredicate;
@@ -124,6 +129,7 @@
 - (id)hk_enumeratedValueLabels;
 - (id)hk_interactiveChartsDataSourceForTimeScope:(int)arg1 healthStore:(id)arg2 unitController:(id)arg3;
 - (id)_dataSourceForQuantityType:(id)arg1 timeScope:(int)arg2 unitController:(id)arg3 healthStore:(id)arg4;
+- (id)_audioExposureHistogramDataSourceForAudioExposureTypeIdentifier:(id)arg1 withHealthStore:(id)arg2;
 - (id)_heartRateHistogramDataSourceWithHealthStore:(id)arg1;
 - (id)_insulinDataSourceWithHealthStore:(id)arg1;
 - (id)_bloodPressureDataSourceWithHealthStore:(id)arg1;
@@ -161,11 +167,20 @@
 - (id)hk_customSeriesPointIntervalComponentsForTimeScope:(int)arg1;
 - (_Bool)hk_interactiveChartsDataSourceDependsOnTimeScope;
 - (id)hk_valueOrderForStackedCharts;
-- (id)_dimensionForChartAxisWithUnitController:(id)arg1;
+- (id)hk_dimensionForChartAxisWithUnitController:(id)arg1;
 - (id)_statFormatterItemOptionsForQuantityType:(id)arg1 timeScope:(int)arg2;
 - (id)hk_interactiveChartsFormatterForTimeScope:(int)arg1;
 - (id)hk_valueFormatterForUnit:(id)arg1 formattingContext:(int)arg2;
 - (id)hk_valueFormatterForUnit:(id)arg1;
+- (_Bool)_supportsFiveYearTimeScope;
+- (_Bool)_supportsYearTimeScope;
+- (_Bool)_supportsMonthTimeScope;
+- (_Bool)_supportsWeekTimeScope;
+- (_Bool)_supportsDayTimeScope;
+- (_Bool)_supportsHourTimeScope;
+- (_Bool)hk_isSupportedTimeScope:(int)arg1;
+- (unsigned int)hk_interactiveChartOptions;
+- (int)hk_stackedChartSectionsCountForTimeScope:(int)arg1;
 
 @end
 

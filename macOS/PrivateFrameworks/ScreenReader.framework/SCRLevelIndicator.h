@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)decrementLarge;
 - (BOOL)incrementSmall;
 - (BOOL)decrementSmall;
-- (id)statusDescriptionWithOptionsMask:(long long)arg1;
+- (id)statusDescription;
 - (id)valueDescription;
 - (BOOL)canHandleValueChange;
 

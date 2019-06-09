@@ -9,8 +9,5 @@
 @interface LSResourceProxy (UIKitPrivate)
 + (long long)_compareApplicationIconCanvasSize:(struct CGSize)arg1 withSize:(struct CGSize)arg2;
 + (struct CGSize)_applicationIconCanvasSize;
-- (struct CGSize)_defaultStyleSize:(id)arg1;
-- (id)_iconForStyle:(id)arg1;
-- (id)_iconForStyle:(id)arg1 size:(struct CGSize)arg2;
 @end
 

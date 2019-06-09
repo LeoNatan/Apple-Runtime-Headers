@@ -21,6 +21,7 @@
 - (void)stop;
 - (void)runPanel;
 - (void)runModal;
+- (id)init;
 - (id)initObjectPushWithBluetoothDevice:(id)arg1 withFiles:(id)arg2 delegate:(id)arg3;
 
 @end

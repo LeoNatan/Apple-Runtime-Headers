@@ -13,9 +13,7 @@
 + (BOOL)boolForType:(id)arg1 defaultValue:(BOOL)arg2;
 + (id)mediaKeys;
 + (void)initialize;
-- (void)removeMediaKey:(id)arg1 forType:(id)arg2;
-- (void)addMediaKey:(id)arg1 forType:(id)arg2;
-- (id)mediaKeysForType:(id)arg1;
+- (id)init;
 
 @end
 

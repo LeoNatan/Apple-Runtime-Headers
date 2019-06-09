@@ -33,7 +33,7 @@
 @property(retain, nonatomic) NSURL *contentBaseURL; // @synthesize contentBaseURL=_contentBaseURL;
 @property(retain, nonatomic) CKRecordZoneID *sourceZoneID; // @synthesize sourceZoneID=_sourceZoneID;
 - (void).cxx_destruct;
-- (BOOL)validateAndSetRecordFetchPropertiesWithAsset:(id)arg1 assetReference:(id)arg2;
+- (BOOL)validateAndSetRecordFetchPropertiesWithAsset:(id)arg1 assetReference:(id)arg2 useEncryption:(BOOL)arg3 useClearAssetEncryption:(BOOL)arg4;
 - (void)clearRecordFetchProperties;
 - (id)description;
 - (id)CKDescriptionPropertiesWithPublic:(BOOL)arg1 private:(BOOL)arg2 shouldExpand:(BOOL)arg3;

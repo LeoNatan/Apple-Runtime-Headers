@@ -38,7 +38,7 @@
 @property(readonly, nonatomic) unsigned long long age;
 @property(readonly, copy, nonatomic) NSString *lastName;
 @property(readonly, copy, nonatomic) NSString *firstName;
-@property(readonly, copy, nonatomic) NSNumber *altDSID;
+@property(readonly, copy, nonatomic) NSString *altDSID;
 @property(readonly, copy, nonatomic) NSString *hashedDSID;
 @property(readonly, copy, nonatomic) NSNumber *dsid;
 @property(readonly, copy, nonatomic) NSString *appleID;

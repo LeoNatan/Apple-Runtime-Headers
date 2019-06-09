@@ -6,16 +6,23 @@
 
 #import <PassKitUI/PKSectionTableViewController.h>
 
+#import <PassKitUI/CNContactViewControllerDelegate-Protocol.h>
 #import <PassKitUI/PKPaymentDataProviderDelegate-Protocol.h>
 #import <PassKitUI/PKPeerPaymentContactResolverDelegate-Protocol.h>
 
-@class NSArray, NSDateFormatter, NSString, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionDetailHeaderView, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentStatusResponse, UIImage;
+@class NSArray, NSDateFormatter, NSString, NSTimeZone, PKPaymentPass, PKPaymentTransaction, PKPaymentTransactionCellController, PKPaymentTransactionDetailHeaderView, PKPeerPaymentContactResolver, PKPeerPaymentController, PKPeerPaymentStatusResponse, PKTransactionDetailBottomContainer, UIImage;
 @protocol PKPaymentDataProvider;
 
-@interface PKPaymentTransactionDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate, PKPaymentDataProviderDelegate>
+@interface PKPaymentTransactionDetailViewController : PKSectionTableViewController <PKPeerPaymentContactResolverDelegate, PKPaymentDataProviderDelegate, CNContactViewControllerDelegate>
 {
-    _Bool _reportingMapsIssue;
     int _detailViewStyle;
+    _Bool _showRawName;
+    _Bool _showTransactionTimeZone;
+    _Bool _showProductTimeZone;
+    PKPaymentTransaction *_associatedRefund;
+    PKPaymentTransaction *_associatedAdjustment;
+    PKPaymentTransactionCellController *_transactionCellController;
+    _Bool _allowTransactionLinks;
     _Bool _issuerAppDeepLinkingEnabled;
     _Bool _inBridge;
     PKPaymentTransaction *_transaction;
@@ -28,8 +35,16 @@
     NSArray *_lineItems;
     PKPeerPaymentStatusResponse *_peerPaymentStatusResponse;
     NSDateFormatter *_transactionDateFormatter;
+    NSDateFormatter *_transactionLocalTimeDateFormatter;
+    NSDateFormatter *_productTimeZoneFormatter;
+    NSTimeZone *_productTimeZone;
+    PKTransactionDetailBottomContainer *_bottomContainer;
 }
 
+@property(retain, nonatomic) PKTransactionDetailBottomContainer *bottomContainer; // @synthesize bottomContainer=_bottomContainer;
+@property(retain, nonatomic) NSTimeZone *productTimeZone; // @synthesize productTimeZone=_productTimeZone;
+@property(retain, nonatomic) NSDateFormatter *productTimeZoneFormatter; // @synthesize productTimeZoneFormatter=_productTimeZoneFormatter;
+@property(retain, nonatomic) NSDateFormatter *transactionLocalTimeDateFormatter; // @synthesize transactionLocalTimeDateFormatter=_transactionLocalTimeDateFormatter;
 @property(retain, nonatomic) NSDateFormatter *transactionDateFormatter; // @synthesize transactionDateFormatter=_transactionDateFormatter;
 @property(retain, nonatomic) PKPeerPaymentStatusResponse *peerPaymentStatusResponse; // @synthesize peerPaymentStatusResponse=_peerPaymentStatusResponse;
 @property(retain, nonatomic) NSArray *lineItems; // @synthesize lineItems=_lineItems;
@@ -43,17 +58,27 @@
 @property(readonly, nonatomic) PKPaymentPass *paymentPass; // @synthesize paymentPass=_paymentPass;
 @property(readonly, nonatomic) PKPaymentTransaction *transaction; // @synthesize transaction=_transaction;
 - (void).cxx_destruct;
+- (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
+- (_Bool)contactViewController:(id)arg1 shouldPerformDefaultActionForContactProperty:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)_tableView:(id)arg1 willDisplayAmountDetailsCell:(id)arg2 atIndexPath:(id)arg3;
 - (id)_tableView:(id)arg1 cellForAmountDetailLineItemAtIndex:(int)arg2;
+- (id)_debugDetailCellForTableView:(id)arg1 atIndexPath:(id)arg2;
 - (id)_fraudRiskCellForTableView:(id)arg1;
 - (id)_transactionIdentifierCellForTableView:(id)arg1;
 - (id)_statusCellForTableView:(id)arg1;
+- (id)_amountDetailsCellForTableView:(id)arg1 atIndexPath:(id)arg2;
+- (void)_applyAmountDetailSeparatorInsetForTableView:(id)arg1 cell:(id)arg2;
+- (unsigned int)_lineItemItemForRowIndex:(unsigned int)arg1;
+- (_Bool)_amountDetailsRowIsEnabled:(unsigned int)arg1;
+- (unsigned int)_numberOfAmountDetailsRows;
+- (unsigned int)_amountDetailsRowForIndex:(unsigned int)arg1;
 - (void)_tableView:(id)arg1 didSelectMechantAddressAtIndexPath:(id)arg2;
 - (id)_mapTilePlaceholderImage;
 - (id)_merchantAddressCellForTableView:(id)arg1;
 - (id)_transactionStatusString;
+- (void)_presentReportIssue;
 - (_Bool)_transactionHasNonZeroSecondaryFundingSourceAmount;
 - (void)_openTransactionInIssuerApp;
 - (void)_openMessagesToPresentAction:(unsigned int)arg1;
@@ -68,12 +93,9 @@
 - (_Bool)_actionRowIsEnabled:(unsigned int)arg1;
 - (void)contactsDidChangeForContactResolver:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
-- (id)pkui_navigationBarTintColor;
-- (_Bool)pkui_prefersNavigationBarShadowHidden;
 - (void)_handlePeerPaymentDisplayableError:(id)arg1 withPeerPaymentController:(id)arg2;
 - (void)_performPeerPaymentAction:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (id)_subtitleCellWithTitle:(id)arg1 subtitle:(id)arg2;
-- (id)_titleValueCellWithTitle:(id)arg1 value:(id)arg2;
 - (_Bool)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
@@ -86,13 +108,16 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)_updateTableHeaderHeight;
+- (void)_handleTransactionHeaderTapRecognizer:(id)arg1;
+- (id)formattedBalanceAdjustmentAmountWithTransitDescriptors;
 - (void)_reloadTableHeaderView;
 - (void)viewWillLayoutSubviews;
 - (void)_updatePeerPaymentTransactionStatusWithCompletion:(CDUnknownBlockType)arg1;
 - (void)viewDidLoad;
 - (_Bool)shouldMapSection:(unsigned int)arg1;
+- (void)_recomputeLineItems;
 - (void)setTransaction:(id)arg1;
-- (id)initWithTransaction:(id)arg1 paymentPass:(id)arg2 contactResolver:(id)arg3 peerPaymentController:(id)arg4 paymentServiceDataProvider:(id)arg5 detailViewStyle:(int)arg6;
+- (id)initWithTransaction:(id)arg1 paymentPass:(id)arg2 contactResolver:(id)arg3 peerPaymentController:(id)arg4 paymentServiceDataProvider:(id)arg5 detailViewStyle:(int)arg6 allowTransactionLinks:(_Bool)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -8,6 +8,7 @@
 
 @class AVTrimControlsViewController, AVTrimView, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface AVTouchBarTrimControlsViewController : NSViewController
 {
     NSMutableArray *_bindings;

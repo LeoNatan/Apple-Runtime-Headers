@@ -42,6 +42,7 @@ __attribute__((visibility("hidden")))
 - (id)generateRequestOperations;
 - (id)requestOperationClasses;
 - (int)operationType;
+- (BOOL)allowsAnonymousAccount;
 - (id)initWithPreviousServerChangeTokenData:(id)arg1;
 
 // Remaining properties

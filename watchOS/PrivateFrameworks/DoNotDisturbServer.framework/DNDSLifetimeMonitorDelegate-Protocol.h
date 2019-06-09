@@ -6,11 +6,11 @@
 
 #import <DoNotDisturbServer/NSObject-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSDate;
 @protocol DNDSLifetimeMonitor;
 
 @protocol DNDSLifetimeMonitorDelegate <NSObject>
-- (void)lifetimeMonitor:(id <DNDSLifetimeMonitor>)arg1 lifetimeDidExpireForAssertionUUIDs:(NSArray *)arg2;
+- (void)lifetimeMonitor:(id <DNDSLifetimeMonitor>)arg1 lifetimeDidExpireForAssertionUUIDs:(NSArray *)arg2 expirationDate:(NSDate *)arg3;
 - (void)activeAssertionsDidChangeForLifetimeMonitor:(id <DNDSLifetimeMonitor>)arg1;
 @end
 

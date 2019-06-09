@@ -4,23 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
-
-#import <WebKit/WKFormPeripheral-Protocol.h>
+#import <WebKit/WKFormPeripheralBase.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface WKFormSelectControl : NSObject <WKFormPeripheral>
+@interface WKFormSelectControl : WKFormPeripheralBase
 {
-    struct RetainPtr<NSObject<WKFormControl>> _control;
+    RetainPtr_5ad583fd _control;
 }
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)endEditing;
-- (void)beginEditing;
-- (id)assistantView;
 - (id)initWithView:(id)arg1;
 @property(readonly, nonatomic) NSString *selectFormPopoverTitle;
 - (void)selectRow:(int)arg1 inComponent:(int)arg2 extendingSelection:(_Bool)arg3;

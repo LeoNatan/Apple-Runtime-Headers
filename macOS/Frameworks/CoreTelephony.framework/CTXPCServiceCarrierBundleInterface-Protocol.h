@@ -7,6 +7,7 @@
 @class CTBundle, CTXPCServiceSubscriptionContext, NSArray, NSDictionary, NSObject, NSString;
 
 @protocol CTXPCServiceCarrierBundleInterface
+- (void)copyBundleIdentifier:(CTXPCServiceSubscriptionContext *)arg1 bundleType:(CTBundle *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (void)copyBundleVersion:(CTXPCServiceSubscriptionContext *)arg1 bundleType:(CTBundle *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (void)getWiFiCallingSettingPreferences:(CTXPCServiceSubscriptionContext *)arg1 key:(NSString *)arg2 completion:(void (^)(NSObject *, NSError *))arg3;
 - (void)setWiFiCallingSettingPreferences:(CTXPCServiceSubscriptionContext *)arg1 key:(NSString *)arg2 value:(NSObject *)arg3 completion:(void (^)(NSError *))arg4;

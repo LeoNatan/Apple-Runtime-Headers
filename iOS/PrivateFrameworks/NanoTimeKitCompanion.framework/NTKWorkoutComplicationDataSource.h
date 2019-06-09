@@ -30,7 +30,6 @@
 + (id)_unknownTemplateForFamily:(long long)arg1;
 + (id)_workoutTintColor;
 + (id)_signatureTemplateWithHasActiveWorkout:(_Bool)arg1 hasPausedActiveWorkout:(_Bool)arg2;
-+ (Class)richComplicationDisplayViewClassForType:(unsigned long long)arg1 family:(long long)arg2 forDevice:(id)arg3;
 + (_Bool)acceptsComplicationFamily:(long long)arg1 forDevice:(id)arg2;
 + (_Bool)acceptsComplicationType:(unsigned long long)arg1 forDevice:(id)arg2;
 @property(retain, nonatomic) HKObserverQuery *workoutObservationQuery; // @synthesize workoutObservationQuery=_workoutObservationQuery;
@@ -59,10 +58,11 @@
 - (id)complicationApplicationIdentifier;
 - (void)resume;
 - (void)pause;
-- (id)lockedTemplate;
+- (id)privacyTemplate;
 - (id)currentSwitcherTemplate;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;
+- (Class)richComplicationDisplayViewClassForDevice:(id)arg1;
 - (void)dealloc;
 - (id)initWithComplication:(id)arg1 family:(long long)arg2 forDevice:(id)arg3;
 

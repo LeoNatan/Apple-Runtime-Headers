@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) int layer; // @synthesize layer=_layer;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)updateTextures:(unsigned char)arg1;
+- (void)updateTextures:(unsigned char)arg1 textureManager:(shared_ptr_f2399894 *)arg2;
 - (void)addStrokeForSection:(const struct PolygonSection *)arg1 paddedCount:(unsigned int)arg2 key:(pair_3c94251f)arg3 attributes:(id)arg4 styles:(vector_0496561e *)arg5 cullingMask:(unsigned int)arg6 accessor:(struct ResourceAccessor *)arg7;
 - (void)addWallStrokesForSection:(const struct PolygonSection *)arg1 edges:(const vector_304c695f *)arg2 attributes:(id)arg3 styles:(vector_0496561e *)arg4 cullingMask:(unsigned int)arg5 accessor:(struct ResourceAccessor *)arg6;
 - (void)addWallsForSection:(const struct PolygonSection *)arg1 edges:(const vector_304c695f *)arg2 attributes:(id)arg3 styles:(vector_0496561e *)arg4 cullingMask:(unsigned int)arg5 accessor:(struct ResourceAccessor *)arg6;
@@ -46,7 +46,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) const vector_8c4a3c5e *venueWallHorizontalStrokeMeshes;
 @property(readonly, nonatomic) const vector_da5ada59 *venueWallEndMeshes;
 @property(readonly, nonatomic) const vector_e4fc2931 *venueWallMeshes;
-- (id)initWithStyleQuery:(shared_ptr_c5d816ee *)arg1 tileZoom:(float)arg2 layer:(int)arg3 buildingId:(unsigned long long)arg4 contentScale:(float)arg5 sharedResources:(id)arg6;
+- (id)initWithStyleQuery:(shared_ptr_c5d816ee *)arg1 tileZoom:(float)arg2 layer:(int)arg3 buildingId:(unsigned long long)arg4 contentScale:(float)arg5;
 
 @end
 

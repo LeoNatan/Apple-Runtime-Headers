@@ -7,6 +7,8 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (Camera)
++ (id)cam_localizedTitleForMode:(long long)arg1 wantsCompactTitle:(_Bool)arg2;
+@property(readonly, copy) NSString *cam_capitalizedStringWithPreferredLocale;
 @property(readonly, copy) NSString *cam_uppercaseStringWithPreferredLocale;
 @end
 

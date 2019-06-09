@@ -59,7 +59,7 @@ __attribute__((visibility("hidden")))
 - (void)_activateAndInsertEdgeToEdgeConstraintForGapBetweenPrecedingItem:(id)arg1 followingItem:(id)arg2 isPrecededByVisibleItem:(_Bool)arg3 isFollowedByVisibleItem:(_Bool)arg4 isHidden:(_Bool)arg5;
 - (id)_edgeToEdgeConstraintForGapBetweenPrecedingItem:(id)arg1 followingItem:(id)arg2 isPrecededByVisibleItem:(_Bool)arg3 isFollowedByVisibleItem:(_Bool)arg4;
 - (double)_expectedEdgeToEdgeSpacingForPrecedingItem:(id)arg1 followingItem:(id)arg2 isPrecededByVisibleItem:(_Bool)arg3 isFollowedByVisibleItem:(_Bool)arg4;
-- (long long)_precedingLocationAttributeForGuideConstraint;
+- (long long)_precedingLocationAttributeForGuideConstraintRespectingBaselineRelative:(_Bool)arg1;
 - (long long)_minAttributeForGapConstraint;
 - (long long)_maxAttributeForGapConstraintRespectingBaselineRelative:(_Bool)arg1;
 - (long long)_minAttributeForGapConstraintRespectingBaselineRelative:(_Bool)arg1;

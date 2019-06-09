@@ -9,6 +9,7 @@
 @class NSString, OISFUCryptoKey;
 @protocol SFUInputStream;
 
+__attribute__((visibility("hidden")))
 @interface OISFUFileDataRepresentation : OISFUDataRepresentation
 {
     NSString *mPath;

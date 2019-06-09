@@ -8,6 +8,7 @@
 
 @class NSMutableString, WDCharacterProperties, WDDocument, WDOfficeArt, WDParagraphProperties;
 
+__attribute__((visibility("hidden")))
 @interface WDListLevel : NSObject
 {
     WDDocument *mDocument;

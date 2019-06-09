@@ -8,7 +8,7 @@
 
 #import <PhotoVision/PVPhotoLibraryProtocol-Protocol.h>
 
-@class NSMutableDictionary, NSSet, NSString, PVCVMLHelper;
+@class NSMutableDictionary, NSSet, NSString, PVVisionHelper;
 @protocol PVPhotoLibraryProtocol;
 
 @interface PVPersonClusterManager : NSObject <PVPhotoLibraryProtocol>
@@ -16,10 +16,10 @@
     NSMutableDictionary *_representativeFaceObservationForPersonIdentifier;
     NSMutableDictionary *_distancesForPersonLocalIdentifier;
     NSMutableDictionary *_distancesInCommonMomentsForPersonLocalIdentifier;
-    NSSet *_assetsToIgnore;
     id <PVPhotoLibraryProtocol> _photoLibrary;
-    PVCVMLHelper *_cvmlHelper;
+    PVVisionHelper *_visionHelper;
     NSMutableDictionary *_personClusters;
+    NSSet *_assetsToIgnore;
 }
 
 + (id)nodeSortDescriptors;
@@ -29,12 +29,12 @@
 + (id)assetSortDescriptors;
 + (id)momentSortDescriptors;
 + (id)personProcessingSortDescriptors;
+@property(retain, nonatomic) NSSet *assetsToIgnore; // @synthesize assetsToIgnore=_assetsToIgnore;
 @property(retain, nonatomic) NSMutableDictionary *personClusters; // @synthesize personClusters=_personClusters;
-@property(retain, nonatomic) PVCVMLHelper *cvmlHelper; // @synthesize cvmlHelper=_cvmlHelper;
+@property(retain, nonatomic) PVVisionHelper *visionHelper; // @synthesize visionHelper=_visionHelper;
 @property(retain, nonatomic) id <PVPhotoLibraryProtocol> photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 - (void).cxx_destruct;
 - (id)pv_lastAssetDate;
-- (BOOL)pv_isLibraryBeingSynchronized;
 - (float)pv_faceProcessingProgress;
 - (id)pv_fetchInvalidAssetIdentifiersForCommonComparison;
 - (id)pv_fetchFaceGroupsForPerson:(id)arg1;
@@ -53,7 +53,7 @@
 - (id)pv_fetchFacesForPerson:(id)arg1 inMoment:(id)arg2;
 - (id)pv_fetchFacesForPerson:(id)arg1;
 - (id)pv_fetchFacesWithLocalIdentifiers:(id)arg1;
-- (id)pv_fetchFaces;
+- (unsigned long long)pv_numberOfFacesWithFaceprints;
 - (id)pv_fetchPersonsGroupedByAssetLocalIdentifierForAssets:(id)arg1;
 - (id)pv_fetchInvalidCandidatePersonsForPerson:(id)arg1;
 - (id)pv_fetchCandidatePersonsForPerson:(id)arg1;
@@ -62,16 +62,17 @@
 - (id)pv_fetchPersonsWithLocalIdentifiers:(id)arg1;
 - (BOOL)pv_performChangesAndWait:(CDUnknownBlockType)arg1 error:(id *)arg2;
 - (id)pv_persistentStorageDirectoryURL;
-- (id)representativeFaceObservationForFaces:(id)arg1 inPerson:(id)arg2;
-- (id)_representativeFaceObservationForPerson:(id)arg1 inAssetCollections:(id)arg2;
-- (id)_representativeFaceObservationForPerson:(id)arg1;
-- (float)distanceBetweenPerson:(id)arg1 andPerson:(id)arg2 useCommonMoments:(BOOL)arg3 updateBlock:(CDUnknownBlockType)arg4 error:(id *)arg5;
-- (float)distanceWithOverlapCheckBetweenPerson:(id)arg1 andPerson:(id)arg2 useCommonMoments:(BOOL)arg3 updateBlock:(CDUnknownBlockType)arg4 error:(id *)arg5;
+- (id)representativeFaceObservationForFaces:(id)arg1 ageType:(unsigned short *)arg2 inPerson:(id)arg3;
+- (id)_representativeFaceObservationForPerson:(id)arg1 ageType:(unsigned short *)arg2 inAssetCollections:(id)arg3;
+- (id)_representativeFaceObservationForPerson:(id)arg1 ageType:(unsigned short *)arg2;
+- (float)distanceBetweenPerson:(id)arg1 andPerson:(id)arg2 useCommonMoments:(BOOL)arg3 minAgeType:(unsigned short *)arg4 updateBlock:(CDUnknownBlockType)arg5 error:(id *)arg6;
+- (float)distanceWithOverlapCheckBetweenPerson:(id)arg1 andPerson:(id)arg2 useCommonMoments:(BOOL)arg3 minAgeType:(unsigned short *)arg4 updateBlock:(CDUnknownBlockType)arg5 error:(id *)arg6;
 - (unsigned long long)numberOfMomentsInCommonBetweenPerson:(id)arg1 andPerson:(id)arg2;
 - (unsigned long long)numberOfAssetsInCommonBetweenPersonAssetIdentifiers:(id)arg1 andPersonAssetIdentifiers:(id)arg2;
 - (unsigned long long)numberOfAssetsInCommonBetweenPerson:(id)arg1 andPerson:(id)arg2;
 - (long long)assetsOverlapBetweenPersonAssetIdentifiers:(id)arg1 andPersonAssetIdentifiers:(id)arg2;
 - (long long)assetsOverlapBetweenPerson:(id)arg1 andPerson:(id)arg2;
+- (unsigned short)minAgeTypeForFaceAgeType:(unsigned short)arg1 andFaceAgeType:(unsigned short)arg2;
 - (void)mergePersons:(id)arg1 withPerson:(id)arg2;
 - (id)_mapPersonClustersToFaceGroups:(id)arg1;
 - (id)_mapPersonClustersToPersons:(id)arg1;

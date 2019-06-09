@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) _Bool ignoreFormulas; // @synthesize ignoreFormulas=mIgnoreFormulas;
+- (void).cxx_destruct;
 - (id)autoStyling;
 - (void)popDefaultTextProperties;
 - (void)pushDefaultTextProperties:(id)arg1;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 - (void)setChart:(id)arg1;
 - (id)chart;
 - (id)drawingState;
-- (void)dealloc;
 - (id)initWithDrawingState:(id)arg1;
 
 @end

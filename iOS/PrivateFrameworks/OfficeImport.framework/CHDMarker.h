@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     OADGraphicProperties *mGraphicProperties;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setSize:(unsigned int)arg1;
 - (unsigned int)size;
@@ -23,7 +24,6 @@ __attribute__((visibility("hidden")))
 - (id)graphicProperties;
 - (void)setStyle:(int)arg1;
 - (int)style;
-- (void)dealloc;
 - (id)init;
 
 @end

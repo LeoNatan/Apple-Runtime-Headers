@@ -18,6 +18,7 @@
 + (id)sharedMgr;
 + (void)showSignInError:(id)arg1 usingWindow:(id)arg2 forAccountID:(id)arg3 andPassword:(id)arg4 authenticationResults:(id)arg5;
 @property(retain, nonatomic) MMTermsOfServiceController *termsOfServiceController; // @synthesize termsOfServiceController=_termsOfServiceController;
+- (void).cxx_destruct;
 - (void)deactivateFailed:(id)arg1;
 - (void)deactivateCompleted:(id)arg1;
 - (void)serviceStatusChanged:(id)arg1;
@@ -40,7 +41,6 @@
 - (void)willSelect;
 - (void)didUnselect;
 - (void)didSelect;
-- (void)finalize;
 - (void)dealloc;
 - (void)deregisterNotifications;
 - (id)init;

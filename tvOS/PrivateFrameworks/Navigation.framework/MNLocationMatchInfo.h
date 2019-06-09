@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSData;
+
 __attribute__((visibility("hidden")))
 @interface MNLocationMatchInfo : NSObject
 {
@@ -15,15 +17,18 @@ __attribute__((visibility("hidden")))
     int _matchFormOfWay;
     int _matchRoadClass;
     _Bool _matchShifted;
+    NSData *_matchDataArray;
 }
 
+@property(readonly, nonatomic) NSData *matchDataArray; // @synthesize matchDataArray=_matchDataArray;
 @property(readonly, nonatomic) _Bool matchShifted; // @synthesize matchShifted=_matchShifted;
 @property(readonly, nonatomic) int matchRoadClass; // @synthesize matchRoadClass=_matchRoadClass;
 @property(readonly, nonatomic) int matchFormOfWay; // @synthesize matchFormOfWay=_matchFormOfWay;
 @property(readonly, nonatomic) double matchCourse; // @synthesize matchCourse=_matchCourse;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D matchCoordinate; // @synthesize matchCoordinate=_matchCoordinate;
 @property(readonly, nonatomic) long long matchQuality; // @synthesize matchQuality=_matchQuality;
-- (id)initWithMatchQuality:(long long)arg1 matchCoordinate:(struct CLLocationCoordinate2D)arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(_Bool)arg6;
+- (void).cxx_destruct;
+- (id)initWithMatchQuality:(long long)arg1 matchCoordinate:(struct CLLocationCoordinate2D)arg2 matchCourse:(double)arg3 matchFormOfWay:(int)arg4 matchRoadClass:(int)arg5 matchShifted:(_Bool)arg6 matchDataArray:(id)arg7;
 
 @end
 

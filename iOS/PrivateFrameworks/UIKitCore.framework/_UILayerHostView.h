@@ -4,20 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKitCore/UIView.h>
+#import <UIKitCore/_UIVisibilityPropagationView.h>
 
 @class CALayerHost;
 
-__attribute__((visibility("hidden")))
-@interface _UILayerHostView : UIView
+@interface _UILayerHostView : _UIVisibilityPropagationView
 {
+    int _pid;
+    unsigned int _contextID;
 }
 
 + (Class)layerClass;
 - (void)dealloc;
 @property(readonly, retain, nonatomic) CALayerHost *layerHost;
 @property(nonatomic) _Bool inheritsSecurity;
+- (void)setPid:(int)arg1 contextID:(unsigned int)arg2;
 @property(nonatomic) unsigned int contextID;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 pid:(int)arg2 contextID:(unsigned int)arg3;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

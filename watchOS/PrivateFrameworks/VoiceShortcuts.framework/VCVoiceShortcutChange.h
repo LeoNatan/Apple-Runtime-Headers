@@ -4,44 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <VoiceShortcuts/VCWorkflowChange.h>
 
-#import <VoiceShortcuts/VCLazyLoadedChange-Protocol.h>
-
-@class NSData, NSString, VCPBIntentDefinition, VCVoiceShortcut;
-
-@interface VCVoiceShortcutChange : NSObject <VCLazyLoadedChange>
+@interface VCVoiceShortcutChange : VCWorkflowChange
 {
-    VCVoiceShortcut *_voiceShortcut;
-    NSString *_voiceShortcutIdentifier;
-    unsigned int _voiceShortcutChangeType;
-    NSData *_syncMetadata;
-    VCPBIntentDefinition *_intentDefinition;
 }
 
-@property(readonly, nonatomic) VCPBIntentDefinition *intentDefinition; // @synthesize intentDefinition=_intentDefinition;
-@property(retain, nonatomic) NSData *syncMetadata; // @synthesize syncMetadata=_syncMetadata;
-@property(readonly, nonatomic) unsigned int voiceShortcutChangeType; // @synthesize voiceShortcutChangeType=_voiceShortcutChangeType;
-@property(readonly, nonatomic) NSString *voiceShortcutIdentifier; // @synthesize voiceShortcutIdentifier=_voiceShortcutIdentifier;
-@property(readonly, nonatomic) VCVoiceShortcut *voiceShortcut; // @synthesize voiceShortcut=_voiceShortcut;
-- (void).cxx_destruct;
-@property(readonly, copy) NSString *debugDescription;
-- (_Bool)isEqual:(id)arg1;
-@property(readonly) unsigned int hash;
-- (id)initWithVoiceShortcut:(id)arg1 voiceShortcutIdentifier:(id)arg2 changeType:(unsigned int)arg3 syncMetadata:(id)arg4;
-- (id)initWithDeletedVoiceShortcutIdentifier:(id)arg1 syncMetadata:(id)arg2;
-- (id)initWithVoiceShortcut:(id)arg1 changeType:(unsigned int)arg2 syncMetadata:(id)arg3;
-- (id)buildSYChange;
-@property(readonly, nonatomic) int messageType;
-@property(readonly, copy, nonatomic) NSString *uniqueID;
-- (id)initFromProtobufObject:(id)arg1;
-- (id)protobufObject;
-- (id)syncMetadataForSyncServiceWithIdentifier:(id)arg1 forManagedObject:(id)arg2;
-- (id)initWithVoiceShortcutManagedObject:(id)arg1 syncServiceIdentifier:(id)arg2 error:(id *)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *description;
-@property(readonly) Class superclass;
++ (int)messageType;
+- (_Bool)readFrom:(id)arg1 error:(id *)arg2;
+- (_Bool)writeTo:(id)arg1 error:(id *)arg2;
 
 @end
 

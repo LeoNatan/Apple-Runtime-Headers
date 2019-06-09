@@ -9,20 +9,17 @@
 #import <PhotosUICore/PXPeopleCollectionViewCellDelegate-Protocol.h>
 #import <PhotosUICore/PXPeopleDragAndDropCollectionViewDelegate-Protocol.h>
 #import <PhotosUICore/PXPeopleDragAndDropCollectionViewDelegateLayout-Protocol.h>
-#import <PhotosUICore/PXPeoplePreviewActionViewControllerDelegate-Protocol.h>
 #import <PhotosUICore/PXPeopleSectionedDataSourceChangeObserver-Protocol.h>
 #import <PhotosUICore/PXPeopleSwipeSelectionManagerDelegate-Protocol.h>
-#import <PhotosUICore/PXPeopleZoomOverlayTransitionEndPoint-Protocol.h>
 #import <PhotosUICore/UICollectionViewDelegateFlowLayout-Protocol.h>
 #import <PhotosUICore/UIGestureRecognizerDelegate-Protocol.h>
 #import <PhotosUICore/UIPopoverPresentationControllerDelegate-Protocol.h>
-#import <PhotosUICore/UIViewControllerPreviewingDelegate-Protocol.h>
 #import <PhotosUICore/UIViewControllerTransitioningDelegate-Protocol.h>
 
 @class NSArray, NSDictionary, NSIndexPath, NSMutableDictionary, NSString, PXPeopleDragAndDropCollectionViewLayout, PXPeopleMeViewController, PXPeopleProgressFooterView, PXPeopleProgressManager, PXPeopleSectionedDataSource, PXPeopleSwipeSelectionManager, UIBarButtonItem, UILongPressGestureRecognizer, UITapGestureRecognizer;
 @protocol UIViewControllerAnimatedTransitioning;
 
-@interface PXPeopleCollectionViewController : UICollectionViewController <UIViewControllerTransitioningDelegate, PXPeopleZoomOverlayTransitionEndPoint, PXPeopleDragAndDropCollectionViewDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate, UIViewControllerPreviewingDelegate, PXPeopleSectionedDataSourceChangeObserver, PXPeoplePreviewActionViewControllerDelegate, PXPeopleDragAndDropCollectionViewDelegateLayout, PXPeopleCollectionViewCellDelegate, PXPeopleSwipeSelectionManagerDelegate>
+@interface PXPeopleCollectionViewController : UICollectionViewController <PXPeopleDragAndDropCollectionViewDelegate, UIGestureRecognizerDelegate, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate, UIViewControllerTransitioningDelegate, PXPeopleSectionedDataSourceChangeObserver, PXPeopleDragAndDropCollectionViewDelegateLayout, PXPeopleCollectionViewCellDelegate, PXPeopleSwipeSelectionManagerDelegate>
 {
     _Bool _ignoreChangeUpdates;
     _Bool _needToCheckProgress;
@@ -106,11 +103,9 @@
 - (void)_progressChanged:(id)arg1;
 - (void)_stopProgressMonitoring;
 - (void)_startProgressMonitoring;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
 - (void)_resetHomeIfNeeded;
 - (void)peopleSectionedDataSource:(id)arg1 didApplyIncrementalChanges:(id)arg2;
-- (void)peopleSectionedDataSourceMembersChanged:(id)arg1;
+- (void)peopleSectionedDataSourceMembersChangedNonIncrementally:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)collectionViewDidLayout:(id)arg1;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
@@ -130,7 +125,7 @@
 - (void)_changeSelectedIndexesToPersonType:(long long)arg1;
 - (void)updateNavTitleForIndexes:(id)arg1;
 - (void)_updateToolbarItemsForIndexPaths:(id)arg1;
-- (id)_bestTargetIndexGivenMergeIndexes:(id)arg1;
+- (id)_bestTargetIndexPathGivenMergeIndexPaths:(id)arg1;
 - (_Bool)_indexPathsContainMixedSections:(id)arg1;
 - (long long)_changeTypeForIndexPaths:(id)arg1;
 - (id)_rightBarItemsForMode:(unsigned long long)arg1;
@@ -142,8 +137,6 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
-- (void)peoplePreviewActionViewController:(id)arg1 wantsToChangePerson:(id)arg2 toType:(long long)arg3;
-- (id)_personItemAtIndexPath:(id)arg1;
 - (id)_detailViewControllerAtIndexPath:(id)arg1;
 - (void)showDetailsForMemberAtIndexPath:(id)arg1;
 - (void)contentSizeCategoryDidChangeNotification:(id)arg1;
@@ -171,15 +164,6 @@
 - (id)initWithDataSource:(id)arg1 progressManager:(id)arg2;
 - (id)init;
 - (void)commonInit;
-- (id)_visibleIndexPathForTransitionContextObject:(id)arg1;
-- (void)zoomOverlayTransitionDidEndAnimationWithAnimator:(id)arg1;
-- (void)zoomOverlayTransitionWillEndAnimationWithAnimator:(id)arg1;
-- (void)zoomOverlayTransitionDidBeginAnimationWithAnimator:(id)arg1;
-- (id)snapshotRectsInScreenCoordinatesWithAnimator:(id)arg1;
-- (id)snapshotViewsForZoomingTransitionWithAnimator:(id)arg1;
-- (_Bool)shouldPerformZoomingTransitionWithAnimator:(id)arg1;
-- (id)animationControllerForDismissedController:(id)arg1;
-- (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)collectionViewDidEndInteractiveMode:(id)arg1;
 - (void)collectionViewDidEndDrag:(id)arg1;
 - (void)collectionView:(id)arg1 moveItemAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
@@ -193,7 +177,7 @@
 - (_Bool)ppt_namePerson:(id)arg1;
 - (id)ppt_randomPerson;
 - (id)ppt_bestPersonForBootstrap;
-- (long long)ppt_numCells;
+- (long long)ppt_numOfCellsLoadingImages;
 - (id)ppt_indexPathOfPersonWithMostAssets;
 @property(readonly, nonatomic) unsigned long long ppt_countOfEmptyCells;
 @property(readonly, nonatomic) NSDictionary *ppt_scrollingInformation;

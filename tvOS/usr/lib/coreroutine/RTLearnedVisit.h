@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <coreroutine/RTCoreDataTransformable-Protocol.h>
+#import <coreroutine/RTCoreDataReadable-Protocol.h>
+#import <coreroutine/RTCoreDataWritable-Protocol.h>
 
 @class NSDate, NSString, NSUUID, RTLearnedLocation;
 
-@interface RTLearnedVisit : NSObject <RTCoreDataTransformable>
+@interface RTLearnedVisit : NSObject <RTCoreDataReadable, RTCoreDataWritable>
 {
     NSUUID *_identifier;
     RTLearnedLocation *_location;
@@ -22,6 +23,9 @@
     unsigned long long _placeSource;
 }
 
++ (id)createWithLearnedLocationOfInterestVisitMO:(id)arg1;
++ (id)createWithLearnedVisitMO:(id)arg1;
++ (id)createWithManagedObject:(id)arg1;
 @property(nonatomic) unsigned long long placeSource; // @synthesize placeSource=_placeSource;
 @property(nonatomic) double placeConfidence; // @synthesize placeConfidence=_placeConfidence;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
@@ -39,8 +43,6 @@
 - (id)init;
 - (id)initWithVisit:(id)arg1 locationOfInterest:(id)arg2 creationDate:(id)arg3 expirationDate:(id)arg4;
 - (id)managedObjectWithContext:(id)arg1;
-- (id)initWithVisitMO:(id)arg1;
-- (id)initWithLocationOfInterestVisitMO:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

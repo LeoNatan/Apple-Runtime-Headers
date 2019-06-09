@@ -9,7 +9,6 @@
 @class NSMutableSet, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
-__attribute__((visibility("hidden")))
 @interface _ML3DatabaseConnectionSubPool : NSObject
 {
     NSObject<OS_dispatch_queue> *_checkoutQueue;
@@ -21,6 +20,7 @@ __attribute__((visibility("hidden")))
     int _connectionsProfilingLevel;
     int _willDeleteDatabaseNotifyToken;
     int _homeSharingCachesClearedNotifyToken;
+    _Bool _closed;
     _Bool _useReadOnlyConnections;
     _Bool _useDistantConnections;
     NSString *_databasePath;
@@ -35,6 +35,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSString *databasePath; // @synthesize databasePath=_databasePath;
 - (void).cxx_destruct;
 - (void)_handleDatabaseDeletion;
+@property(nonatomic, getter=isClosed) _Bool closed; // @synthesize closed=_closed;
+- (void)close;
 - (void)handleDiagnostic:(id)arg1;
 - (void)closeConnectionsAndWaitForBusyConnections:(_Bool)arg1;
 - (void)checkInConnection:(id)arg1;

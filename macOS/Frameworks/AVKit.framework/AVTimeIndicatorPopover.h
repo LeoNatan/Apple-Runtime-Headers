@@ -8,6 +8,7 @@
 
 @class AVTimeFormatter;
 
+__attribute__((visibility("hidden")))
 @interface AVTimeIndicatorPopover : NSPopover
 {
     AVTimeFormatter *_timeFormatter;

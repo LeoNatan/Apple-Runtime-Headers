@@ -10,15 +10,15 @@
 {
     _Bool _added;
     unsigned int _behavior;
-    CDStruct_51c09d0b _notch;
+    CDStruct_b31d0695 _notch;
 }
 
 @property _Bool added; // @synthesize added=_added;
 @property unsigned int behavior; // @synthesize behavior=_behavior;
-@property CDStruct_51c09d0b notch; // @synthesize notch=_notch;
+@property CDStruct_b31d0695 notch; // @synthesize notch=_notch;
 - (id)description;
 - (_Bool)isBehaviorAndNotchEqual:(id)arg1;
-- (id)initWithNotch:(CDStruct_51c09d0b)arg1 behavior:(unsigned int)arg2;
+- (id)initWithNotch:(CDStruct_b31d0695)arg1 behavior:(unsigned int)arg2;
 
 @end
 

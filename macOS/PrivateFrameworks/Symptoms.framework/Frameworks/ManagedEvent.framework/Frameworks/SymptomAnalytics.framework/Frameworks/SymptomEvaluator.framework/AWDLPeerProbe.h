@@ -9,6 +9,7 @@
 @class NSArray, NSMutableDictionary;
 @protocol AWDLPeerProbeDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AWDLPeerProbe : TestProbe
 {
     id <AWDLPeerProbeDelegate> _delegate;

@@ -24,7 +24,6 @@
 + (id)calendarDate;
 + (id)distantPast;
 + (id)distantFuture;
-+ (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)dateWithNaturalLanguageString:(id)arg1 date:(id)arg2 locale:(id)arg3;
 - (id)initWithString:(id)arg1 calendarFormat:(id)arg2 locale:(id)arg3;
 - (id)descriptionWithCalendarFormat:(id)arg1 locale:(id)arg2;

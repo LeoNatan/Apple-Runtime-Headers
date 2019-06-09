@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface _UIStatusBarCellularCondensedItem : _UIStatusBarCellularItem
 {
+    _Bool _reducesFontSize;
     _UIStatusBarDualCellularSignalView *_dualSignalView;
     _UIStatusBarMultilineStringView *_dualNameView;
 }
@@ -19,15 +20,20 @@ __attribute__((visibility("hidden")))
 + (id)dualSignalStrengthDisplayIdentifier;
 @property(retain, nonatomic) _UIStatusBarMultilineStringView *dualNameView; // @synthesize dualNameView=_dualNameView;
 @property(retain, nonatomic) _UIStatusBarDualCellularSignalView *dualSignalView; // @synthesize dualSignalView=_dualSignalView;
+@property(nonatomic) _Bool reducesFontSize; // @synthesize reducesFontSize=_reducesFontSize;
 - (void).cxx_destruct;
 - (id)viewForIdentifier:(id)arg1;
+- (void)_create_dualNameView;
+- (void)_create_dualSignalView;
 - (id)entryForDisplayItemWithIdentifier:(id)arg1;
 - (id)_singleCellularEntryMatching:(CDUnknownBlockType)arg1;
 - (id)_fontForEntry:(id)arg1 styleAttributes:(id)arg2 baselineOffset:(double *)arg3;
+- (id)_stringForCellularType:(long long)arg1;
 - (void)applyStyleAttributes:(id)arg1 toDisplayItem:(id)arg2;
 - (id)applyUpdate:(id)arg1 toDisplayItem:(id)arg2;
 - (_Bool)canEnableDisplayItem:(id)arg1 fromData:(id)arg2;
 - (id)dependentEntryKeys;
+- (id)initWithIdentifier:(id)arg1 statusBar:(id)arg2;
 
 @end
 

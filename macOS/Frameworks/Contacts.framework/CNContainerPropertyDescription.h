@@ -13,12 +13,16 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (BOOL)isValue:(id)arg1 equalToEmptyEquivalentOrValue:(id)arg2;
+- (id)nilValue;
 - (void)setCNValue:(id)arg1 onContainer:(id)arg2;
 - (id)CNValueForContainer:(id)arg1;
 - (BOOL)isValidValue:(id)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) Class valueClass;
 @property(readonly, nonatomic) BOOL isWritable;
 @property(readonly, copy, nonatomic) NSString *key;
+- (id)abcdContainerValueForCNValue:(id)arg1;
+- (id)abcdContainerKey;
 
 @end
 

@@ -4,21 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Preferences/PSListController.h>
+#import <ScreenTimeUI/STPINListViewController.h>
 
-@class NSObject, STContentPrivacyListController;
-@protocol STContentPrivacyViewModelCoordinator;
+@class STContentPrivacyListController;
 
-@interface STContentPrivacyStoreDetailController : PSListController
+__attribute__((visibility("hidden")))
+@interface STContentPrivacyStoreDetailController : STPINListViewController
 {
-    NSObject<STContentPrivacyViewModelCoordinator> *_coordinator;
     STContentPrivacyListController *_contentPrivacyController;
 }
 
 @property __weak STContentPrivacyListController *contentPrivacyController; // @synthesize contentPrivacyController=_contentPrivacyController;
-@property(retain, nonatomic) NSObject<STContentPrivacyViewModelCoordinator> *coordinator; // @synthesize coordinator=_coordinator;
 - (void).cxx_destruct;
+- (void)_isLoadedDidChange:(_Bool)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)setCoordinator:(id)arg1;
 - (void)dealloc;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)specifiers;

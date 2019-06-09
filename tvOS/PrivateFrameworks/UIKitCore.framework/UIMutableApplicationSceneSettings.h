@@ -8,13 +8,12 @@
 
 #import <UIKitCore/UIApplicationSceneSettings-Protocol.h>
 
-@class NSNumber, NSString;
+@class BSCornerRadiusConfiguration, NSNumber, NSString;
 
 @interface UIMutableApplicationSceneSettings : FBSMutableSceneSettings <UIApplicationSceneSettings>
 {
 }
 
-- (Class)canvasClass;
 - (_Bool)isUISubclass;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 - (id)keyDescriptionForSetting:(unsigned long long)arg1;
@@ -25,12 +24,16 @@
 @property(nonatomic) _Bool idleModeEnabled;
 @property(nonatomic) _Bool canShowAlerts;
 @property(nonatomic) _Bool deviceOrientationEventsEnabled;
+@property(retain, nonatomic) BSCornerRadiusConfiguration *cornerRadiusConfiguration;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsetsLandscapeRight;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsetsPortraitUpsideDown;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsetsLandscapeLeft;
 @property(nonatomic) double homeAffordanceOverlayAllowance;
 @property(nonatomic) struct UIEdgeInsets safeAreaInsetsPortrait;
 @property(nonatomic) double systemMinimumMargin;
+- (void)setDefaultStatusBarHeight:(double)arg1 forOrientation:(long long)arg2;
+- (double)defaultStatusBarHeightForOrientation:(long long)arg1;
+@property(nonatomic) double statusBarHeight;
 @property(nonatomic) struct CGRect statusBarAvoidanceFrame;
 @property(nonatomic) long long statusBarParts;
 @property(nonatomic) struct UIEdgeInsets peripheryInsets;
@@ -40,6 +43,7 @@
 @property(nonatomic) unsigned long long deactivationReasons;
 @property(nonatomic) int statusBarStyleOverridesToSuppress;
 @property(nonatomic) _Bool underLock;
+@property(retain, nonatomic) NSString *persistenceIdentifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

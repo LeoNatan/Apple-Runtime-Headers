@@ -40,6 +40,7 @@
 - (unsigned long long)urlsCount;
 - (void)addUrls:(id)arg1;
 - (void)clearUrls;
+- (void)clearBundleid;
 - (id)initWithFacade:(id)arg1;
 - (id)feedbackJSON;
 

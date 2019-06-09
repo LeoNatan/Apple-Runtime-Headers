@@ -55,12 +55,14 @@
 + (id)removeRequiredNonZeroLengthStringInDictionary:(id)arg1 key:(id)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id *)arg8;
 + (id)removeOptionalObjectInDictionary:(id)arg1 key:(id)arg2 type:(Class)arg3 errorDomain:(id)arg4 invalidDataCode:(int)arg5 invalidDataErrorString:(id)arg6 outError:(id *)arg7;
 + (id)removeRequiredObjectInDictionary:(id)arg1 key:(id)arg2 type:(Class)arg3 errorDomain:(id)arg4 missingDataCode:(int)arg5 missingDataErrorString:(id)arg6 invalidDataCode:(int)arg7 invalidDataErrorString:(id)arg8 outError:(id *)arg9;
-+ (id)profileWithDictionary:(id)arg1 signerCerts:(id)arg2 fileName:(id)arg3 allowEmptyPayload:(_Bool)arg4 outError:(id *)arg5;
++ (id)profileWithDictionary:(id)arg1 options:(id)arg2 signerCerts:(id)arg3 fileName:(id)arg4 allowEmptyPayload:(_Bool)arg5 outError:(id *)arg6;
 + (id)profileDictionaryFromProfileData:(id)arg1 outSignerCerts:(id *)arg2 outError:(id *)arg3;
-+ (id)profileWithData:(id)arg1 fileName:(id)arg2 allowEmptyPayload:(_Bool)arg3 outError:(id *)arg4;
++ (id)profileWithData:(id)arg1 options:(id)arg2 fileName:(id)arg3 allowEmptyPayload:(_Bool)arg4 outError:(id *)arg5;
 + (id)missingFieldErrorWithField:(id)arg1;
 + (id)badFieldTypeErrorWithField:(id)arg1;
 + (id)_malformedProfileError;
++ (id)profileWithData:(id)arg1 options:(id)arg2 outError:(id *)arg3;
++ (id)profileWithData:(id)arg1 fileName:(id)arg2 allowEmptyPayload:(_Bool)arg3 outError:(id *)arg4;
 @property(readonly, nonatomic) NSString *localizedConsentText; // @synthesize localizedConsentText=_localizedConsentText;
 @property(nonatomic) _Bool mustInstallNonInteractively; // @synthesize mustInstallNonInteractively=_mustInstallNonInteractively;
 @property(retain, nonatomic) NSDictionary *installOptions; // @synthesize installOptions=_installOptions;
@@ -115,6 +117,7 @@
 @property(readonly, nonatomic) struct __SecCertificate *signerCertificate;
 @property(readonly, nonatomic) int trustLevel;
 @property(retain, nonatomic) NSString *removalPasscode; // @synthesize removalPasscode=_removalPasscode;
+- (_Bool)isUserEnrollmentProfile;
 - (id)signatureVersion;
 - (unsigned int)countOfPayloadsOfClass:(Class)arg1;
 - (_Bool)containsOnlyPayloadsOfClasses:(id)arg1;
@@ -128,6 +131,7 @@
 @property(readonly, retain, nonatomic) NSString *profileDataFileName;
 @property(readonly, retain, nonatomic) NSString *profileIDHashFileName;
 @property(readonly, retain, nonatomic) NSString *stubFileName;
+- (id)payloadsWithClass:(Class)arg1;
 
 @end
 

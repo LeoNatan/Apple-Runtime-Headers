@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableSet, NSSet, NSString, NSUUID;
+@class HKSource, NSMutableArray, NSMutableSet, NSSet, NSString, NSUUID;
 @protocol OS_dispatch_source;
 
 @interface _HDAuthorizationRequestGroup : NSObject
@@ -14,7 +14,7 @@
     NSMutableSet *_typesToWrite;
     NSMutableSet *_typesToRead;
     _Bool _inTransaction;
-    NSString *_bundleIdentifier;
+    HKSource *_source;
     NSUUID *_promptSessionIdentifier;
     CDUnknownBlockType _promptHandler;
     NSMutableArray *_requests;
@@ -30,7 +30,7 @@
 @property(readonly, nonatomic) NSUUID *promptSessionIdentifier; // @synthesize promptSessionIdentifier=_promptSessionIdentifier;
 @property(readonly, copy, nonatomic) NSSet *typesToRead; // @synthesize typesToRead=_typesToRead;
 @property(readonly, copy, nonatomic) NSSet *typesToWrite; // @synthesize typesToWrite=_typesToWrite;
-@property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+@property(readonly, copy, nonatomic) HKSource *source; // @synthesize source=_source;
 - (void).cxx_destruct;
 - (id)description;
 - (void)_cancelTimeoutSource;
@@ -41,7 +41,8 @@
 - (void)addCompletion:(CDUnknownBlockType)arg1;
 - (void)addRequest:(id)arg1;
 @property(readonly, nonatomic) unsigned long long requestCount;
-- (id)initWithBundleIdentifier:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *bundleIdentifier;
+- (id)initWithSource:(id)arg1;
 
 @end
 

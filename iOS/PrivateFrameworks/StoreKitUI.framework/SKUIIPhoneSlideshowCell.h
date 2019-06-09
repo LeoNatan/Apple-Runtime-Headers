@@ -8,6 +8,7 @@
 
 @class UIImage, UIImageView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIIPhoneSlideshowCell : UICollectionViewCell
 {
     UIImageView *_imageView;

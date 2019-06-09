@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)deactivateDevice:(id *)arg1;
 - (BOOL)handleActivationInfo:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)createActivationInfo:(id)arg1 error:(id *)arg2;
+- (id)getUCRTActivationLockState:(id *)arg1;
 - (id)getActivationState:(id *)arg1;
 - (void)dealloc;
 - (id)init;

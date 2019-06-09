@@ -12,5 +12,6 @@
 - (unsigned long long)servicePriorityForCardRequest:(id)arg1;
 - (void)requestCard:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (_Bool)acs_needsTitleCardSection;
+- (id)acs_utteranceForCardService;
 @end
 

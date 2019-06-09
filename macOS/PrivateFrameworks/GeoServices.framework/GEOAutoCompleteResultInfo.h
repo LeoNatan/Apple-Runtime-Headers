@@ -12,10 +12,11 @@
 {
     int _suggestionsAcType;
     struct {
-        unsigned int suggestionsAcType:1;
-    } _has;
+        unsigned int has_suggestionsAcType:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -23,12 +24,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsSuggestionsAcType:(id)arg1;
 - (id)suggestionsAcTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasSuggestionsAcType;
-@property(nonatomic) int suggestionsAcType; // @synthesize suggestionsAcType=_suggestionsAcType;
+@property(nonatomic) int suggestionsAcType;
 
 @end
 

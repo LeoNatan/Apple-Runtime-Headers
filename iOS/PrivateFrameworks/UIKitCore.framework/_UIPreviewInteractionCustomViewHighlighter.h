@@ -13,9 +13,11 @@
 __attribute__((visibility("hidden")))
 @interface _UIPreviewInteractionCustomViewHighlighter : NSObject <_UIPreviewInteractionHighlighting>
 {
+    _Bool _customViewFlipsHorizontalAxis;
     UIView *_customView;
 }
 
+@property(nonatomic) _Bool customViewFlipsHorizontalAxis; // @synthesize customViewFlipsHorizontalAxis=_customViewFlipsHorizontalAxis;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
 - (void).cxx_destruct;
 - (void)finalizeHighlightForPreviewingContext:(id)arg1;

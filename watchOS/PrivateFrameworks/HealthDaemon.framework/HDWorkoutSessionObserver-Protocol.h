@@ -7,10 +7,14 @@
 #import <HealthDaemon/NSObject-Protocol.h>
 
 @class HDWorkoutSessionServer, NSDate, NSError, _HKWorkoutEvent;
+@protocol HDWorkoutDataAccumulator;
 
 @protocol HDWorkoutSessionObserver <NSObject>
 - (void)workoutSession:(HDWorkoutSessionServer *)arg1 didFailWithError:(NSError *)arg2;
 - (void)workoutSession:(HDWorkoutSessionServer *)arg1 didGenerateEvent:(_HKWorkoutEvent *)arg2;
 - (void)workoutSession:(HDWorkoutSessionServer *)arg1 didChangeToState:(int)arg2 fromState:(int)arg3 date:(NSDate *)arg4;
+
+@optional
+- (void)workoutSession:(HDWorkoutSessionServer *)arg1 didUpdateDataAccumulator:(id <HDWorkoutDataAccumulator>)arg2;
 @end
 

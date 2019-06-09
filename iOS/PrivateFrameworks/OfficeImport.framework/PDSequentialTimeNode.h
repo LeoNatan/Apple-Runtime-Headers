@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int nextAction; // @synthesize nextAction=mNextAction;
 @property(nonatomic) int previousAction; // @synthesize previousAction=mPreviousAction;
 @property(nonatomic) _Bool concurrent; // @synthesize concurrent=mConcurrent;
-- (void)dealloc;
+- (void).cxx_destruct;
 @property(retain, nonatomic) NSString *groupId;
 @property(nonatomic) double direction;
 @property(nonatomic) double delay;

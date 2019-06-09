@@ -68,7 +68,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
-- (id)peopleIdentifiers;
 - (id)additionalActions;
 - (id)additionalActivationAction;
 - (void)set_alwaysShowAlternateActionMenu:(BOOL)arg1;
@@ -148,6 +147,7 @@ __attribute__((visibility("hidden")))
 - (id)_nextFireDate;
 - (unsigned long long)hash;
 - (void)setPeopleIdentifiers:(id)arg1;
+- (id)peopleIdentifiers;
 - (void)setAdditionalActions:(id)arg1;
 - (void)_setAdditionalActivationAction:(id)arg1;
 - (void)_setAlternateActionIndex:(unsigned long long)arg1;

@@ -6,25 +6,43 @@
 
 #import <objc/NSObject.h>
 
-@class RERelevanceEngine;
+#import <RelevanceEngine/REActivityTrackerDelegate-Protocol.h>
+#import <RelevanceEngine/RERelevanceEngineSubsystemProperties-Protocol.h>
+
+@class NSString, REActivityTracker, RERelevanceEngine;
 @protocol OS_dispatch_queue;
 
-@interface RERelevanceEngineSubsystem : NSObject
+@interface RERelevanceEngineSubsystem : NSObject <RERelevanceEngineSubsystemProperties, REActivityTrackerDelegate>
 {
     NSObject<OS_dispatch_queue> *_relevanceEngineQueue;
+    REActivityTracker *_activityTracker;
     _Bool _running;
+    struct os_unfair_lock_s _lock;
     RERelevanceEngine *_relevanceEngine;
 }
 
 @property(readonly, nonatomic) __weak RERelevanceEngine *relevanceEngine; // @synthesize relevanceEngine=_relevanceEngine;
 - (void).cxx_destruct;
+- (void)activityTracker:(id)arg1 didEndActivity:(id)arg2;
+- (void)activityTracker:(id)arg1 didBeginActivity:(id)arg2;
+- (void)endActivity:(id)arg1 forObject:(id)arg2;
+- (void)beginActivity:(id)arg1 forObject:(id)arg2;
+- (void)withdrawObject:(id)arg1;
+- (void)trackObject:(id)arg1;
 - (void)setRunning:(_Bool)arg1;
+@property(readonly, nonatomic) NSString *name;
 - (void)resume;
 - (void)pause;
 @property(readonly, nonatomic, getter=isRunning) _Bool running;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue;
 - (void)dealloc;
 - (id)initWithRelevanceEngine:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

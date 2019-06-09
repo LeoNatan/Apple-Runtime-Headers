@@ -10,9 +10,9 @@
 @protocol GEOMapItem;
 
 @protocol MSPFavoritePlace <MSPFavorite>
-- (int)floorOrdinalOfDroppedPin;
-- (struct CLLocationCoordinate2D)coordinateOfDroppedPin;
-- (id <GEOMapItem>)geoMapItem;
-- (NSString *)title;
+@property(readonly, nonatomic) int floorOrdinalOfDroppedPin;
+@property(readonly, nonatomic) struct CLLocationCoordinate2D coordinateOfDroppedPin;
+@property(readonly, nonatomic) id <GEOMapItem> geoMapItem;
+@property(readonly, copy, nonatomic) NSString *title;
 @end
 

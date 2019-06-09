@@ -9,6 +9,7 @@
 @interface NSDictionary (AuthKit)
 + (id)ak_jsonDictionaryWithResponseData:(id)arg1;
 + (id)ak_dictionaryWithResponseData:(id)arg1;
+- (id)ak_toJSONString;
 - (id)ak_urlQueryString;
 - (id)ak_mapObjectsNullable:(CDUnknownBlockType)arg1;
 - (id)ak_mapObjects:(CDUnknownBlockType)arg1;

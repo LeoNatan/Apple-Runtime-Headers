@@ -22,12 +22,12 @@
 - (int)orientation;
 - (id)metadata;
 - (id)url;
-- (struct CGImage *)_largeDisplayableImageForFormatID:(int)arg1;
+- (struct CGImage *)_largeDisplayableImageForFormatID:(unsigned short)arg1;
 - (struct CGImage *)fullScreenImage;
 - (struct CGImage *)zoomableDisplayImage;
 - (struct CGImage *)fullResolutionImage;
 - (struct CGImage *)CGImageWithOptions:(id)arg1;
-- (struct CGImage *)CGImageWithOptions:(id)arg1 format:(int)arg2;
+- (struct CGImage *)CGImageWithOptions:(id)arg1 format:(unsigned short)arg2;
 - (id)_imageData;
 - (unsigned int)getBytes:(char *)arg1 fromOffset:(long long)arg2 length:(unsigned int)arg3 error:(id *)arg4;
 - (long long)size;

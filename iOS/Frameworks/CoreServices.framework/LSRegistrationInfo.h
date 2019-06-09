@@ -21,9 +21,7 @@ __attribute__((visibility("hidden")))
     unsigned int bundleClass;
     unsigned long long inoBundle;
     unsigned long long inoExec;
-    unsigned int userID;
     double contentModDate;
-    unsigned long long volumeIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;

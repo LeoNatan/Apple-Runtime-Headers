@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     void *_owner;
     // Error parsing type: ^{__C3DModelTarget={__CFRuntimeBase=QAQ}^v^vscCCB^?^?}, name: _source
     // Error parsing type: ^{__C3DModelTarget={__CFRuntimeBase=QAQ}^v^vscCCB^?^?}, name: _destination
+    CDUnknownBlockType _valueTransformer;
 }
 
 - (void)dealloc;

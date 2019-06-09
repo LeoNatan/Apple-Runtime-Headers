@@ -13,6 +13,7 @@
 
 @interface _TVMonogramView : _UIFloatingContentView <_UIFloatingContentViewDelegate, TVAuxiliaryViewSelecting>
 {
+    UIView *_placeholderView;
     UIView *_unfocusedShadowView;
     UIView *_focusedShadowView;
     _Bool _isSelected;
@@ -46,6 +47,9 @@
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;
+- (void)_updateFocusedShadowFrameAndLayerWithFrame:(struct CGRect)arg1;
+- (void)_updateUnfocusedShadowFrameAndLayerWithFrame:(struct CGRect)arg1;
+- (void)_updatePlaceholerView;
 - (id)initWithFrame:(struct CGRect)arg1 configuration:(id)arg2;
 
 // Remaining properties

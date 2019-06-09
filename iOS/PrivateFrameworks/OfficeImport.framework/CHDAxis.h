@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 @interface CHDAxis : NSObject <EDKeyedObject>
 {
     _Bool mReverseOrder;
+    _Bool mReverseOrderOverridden;
     _Bool mSecondary;
     _Bool mDateTimeFormattingFlag;
     _Bool mLineVisible;
@@ -48,6 +49,7 @@ __attribute__((visibility("hidden")))
     NSArray *mLabelEffects;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setLabelEffects:(id)arg1;
 - (id)labelEffects;
@@ -111,12 +113,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)isLineVisible;
 - (void)setSecondary:(_Bool)arg1;
 - (_Bool)isSecondary;
+- (void)setReverseOrderOverridden:(_Bool)arg1;
+- (_Bool)isReverseOrderOverridden;
 - (void)setReverseOrder:(_Bool)arg1;
 - (_Bool)isReverseOrder;
 - (void)setAxisId:(int)arg1;
 - (int)axisIdForXml;
 - (int)axisId;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (id)tickLabelColor;
 - (void)setTickLabelColorIndex:(unsigned long long)arg1;

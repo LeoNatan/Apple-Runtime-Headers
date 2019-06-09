@@ -69,6 +69,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(nonatomic) unsigned long long reachabilityState;
 @property(retain, nonatomic) id secondaryValue;
 @property(readonly) Class superclass;
 

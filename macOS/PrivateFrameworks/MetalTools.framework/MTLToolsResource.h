@@ -8,12 +8,13 @@
 
 #import <MetalTools/MTLResourceSPI-Protocol.h>
 
-@class MTLResourceAllocationInfo, NSString;
+@class MTLResourceAllocationInfo, MTLToolsHeap, NSString;
 @protocol MTLDevice, MTLHeap;
 
 @interface MTLToolsResource : MTLToolsObject <MTLResourceSPI>
 {
     unsigned long long _options;
+    MTLToolsHeap *_heap;
 }
 
 @property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
@@ -22,18 +23,24 @@
 - (void)validateCPUReadable;
 - (void)waitUntilComplete;
 - (BOOL)isComplete;
+@property(readonly) id <MTLHeap> heap;
 - (BOOL)doesAliasAnyResources:(const id *)arg1 count:(unsigned long long)arg2;
 - (BOOL)doesAliasAllResources:(const id *)arg1 count:(unsigned long long)arg2;
 - (BOOL)doesAliasResource:(id)arg1;
+- (id)initWithBaseObject:(id)arg1 parent:(id)arg2 heap:(id)arg3;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
+@property(readonly) unsigned long long protectionOptions;
 @property(readonly) MTLResourceAllocationInfo *cachedAllocationInfo;
 @property(readonly) MTLResourceAllocationInfo *sharedAllocationInfo;
 @property int responsibleProcess;
 - (BOOL)isPurgeable;
+@property(readonly) unsigned long long heapOffset;
 - (unsigned long long)setPurgeableState:(unsigned long long)arg1;
 - (void)makeAliasable;
 - (BOOL)isAliasable;
-@property(readonly) id <MTLHeap> heap;
+@property(readonly) unsigned long long unfilteredResourceOptions;
+@property(readonly) unsigned long long resourceOptions;
+@property(readonly) unsigned long long hazardTrackingMode;
 @property(readonly) unsigned long long storageMode;
 @property(readonly) unsigned long long cpuCacheMode;
 @property(copy) NSString *label;

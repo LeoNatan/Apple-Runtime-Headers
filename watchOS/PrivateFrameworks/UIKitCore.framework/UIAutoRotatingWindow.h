@@ -16,6 +16,7 @@
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_didRemoveSubview:(id)arg1;
 - (void)updateForOrientation:(int)arg1;
+- (id)_initWithFrame:(struct CGRect)arg1 debugName:(id)arg2 windowScene:(id)arg3;
 - (id)_initWithFrame:(struct CGRect)arg1 attached:(_Bool)arg2;
 - (void)commonInit;
 

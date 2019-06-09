@@ -14,8 +14,8 @@
 @interface PLAvalanche : NSObject <PLAssetContainer, PLAssetChangeObserver>
 {
     NSString *_uuid;
-    NSOrderedSet *_assets;
     PLPhotoLibrary *_photoLibrary;
+    NSOrderedSet *_assets;
     NSIndexSet *__originalAutoPickIndexes;
     NSMutableIndexSet *__autoPickIndexes;
     NSIndexSet *__originalUserFavoriteIndexes;
@@ -51,9 +51,10 @@
 @property(retain, nonatomic) NSIndexSet *_originalUserFavoriteIndexes; // @synthesize _originalUserFavoriteIndexes=__originalUserFavoriteIndexes;
 @property(retain, nonatomic) NSMutableIndexSet *_autoPickIndexes; // @synthesize _autoPickIndexes=__autoPickIndexes;
 @property(retain, nonatomic) NSIndexSet *_originalAutoPickIndexes; // @synthesize _originalAutoPickIndexes=__originalAutoPickIndexes;
-@property(retain, nonatomic) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
 @property(retain, nonatomic) NSOrderedSet *assets; // @synthesize assets=_assets;
-@property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
+@property(readonly, nonatomic) PLPhotoLibrary *photoLibrary; // @synthesize photoLibrary=_photoLibrary;
+@property(readonly, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
+- (void).cxx_destruct;
 @property(readonly, copy, nonatomic) NSArray *localizedLocationNames;
 @property(readonly, nonatomic) _Bool canShowAvalancheStacks;
 @property(readonly, nonatomic) _Bool canShowComments;

@@ -9,6 +9,7 @@
 @class IKViewElementStyle, SKUIShelfLayoutData, SKUIStorePageSectionContext, SKUIViewElementLayoutContext, UICollectionView, UIColor;
 @protocol SKUIShelfPageSectionConfigurationDataSource, UICollectionViewDataSource, UICollectionViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIShelfPageSectionConfiguration : NSObject
 {
     long long _lockupType;

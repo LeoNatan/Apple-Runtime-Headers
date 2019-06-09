@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+#import <GeoServices/NSSecureCoding-Protocol.h>
 
-@interface GEOResourceManifestConfiguration : NSObject
+@class NSArray, NSString;
+
+@interface GEOResourceManifestConfiguration : NSObject <NSSecureCoding>
 {
     unsigned int _tileGroupIdentifier;
     NSString *_os;
@@ -20,18 +22,16 @@
     NSString *_applicationVersion;
     NSString *_environment;
     NSString *_dataDirectory;
-    NSString *_disputedBorderCountryOverride;
-    NSString *_disputedBorderRegionOverride;
     int _defaultScale;
     _Bool _requiresLegacyFormat;
+    NSArray *_tileSetOverrides;
 }
 
 + (id)configurationWithPairedDevice:(id)arg1;
 + (id)defaultConfiguration;
++ (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) _Bool requiresLegacyFormat; // @synthesize requiresLegacyFormat=_requiresLegacyFormat;
 @property(readonly, nonatomic) int defaultScale; // @synthesize defaultScale=_defaultScale;
-@property(copy, nonatomic) NSString *disputedBorderRegionOverride; // @synthesize disputedBorderRegionOverride=_disputedBorderRegionOverride;
-@property(copy, nonatomic) NSString *disputedBorderCountryOverride; // @synthesize disputedBorderCountryOverride=_disputedBorderCountryOverride;
 @property(copy, nonatomic) NSString *dataDirectory; // @synthesize dataDirectory=_dataDirectory;
 @property(copy, nonatomic) NSString *environment; // @synthesize environment=_environment;
 @property(copy, nonatomic) NSString *applicationVersion; // @synthesize applicationVersion=_applicationVersion;
@@ -43,13 +43,15 @@
 @property(copy, nonatomic) NSString *os; // @synthesize os=_os;
 @property(nonatomic) unsigned int tileGroupIdentifier; // @synthesize tileGroupIdentifier=_tileGroupIdentifier;
 - (void).cxx_destruct;
+@property(copy, nonatomic) NSArray *tileSetOverrides;
 @property(readonly, nonatomic) NSString *directorySuffix;
 - (_Bool)isDefaultConfiguration;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)manifestDictionaryRepresentation;
-- (id)conciseDictionaryRepresentation;
-- (id)initWithConciseDictionaryRepresentation:(id)arg1;
+- (id)_directorySuffixParameters;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)init;
 
 @end

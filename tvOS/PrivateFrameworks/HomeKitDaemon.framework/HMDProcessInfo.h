@@ -8,27 +8,28 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 
-@class HMDApplicationInfo, NSArray, NSHashTable, NSObject, NSString;
-@protocol OS_dispatch_queue;
+@class HMDApplicationInfo, HMFLocationAuthorization, NSArray, NSHashTable, NSObject, NSString;
+@protocol HMFLocking, OS_dispatch_queue;
 
 @interface HMDProcessInfo : HMFObject <HMFLogging>
 {
+    id <HMFLocking> _lock;
     _Bool _viewService;
     int _pid;
     unsigned long long _state;
     HMDApplicationInfo *_appInfo;
+    HMFLocationAuthorization *_locationAuthorization;
     NSArray *_runningReasons;
     NSObject<OS_dispatch_queue> *_xpcQueue;
-    NSObject<OS_dispatch_queue> *_propertyQueue;
     NSHashTable *_connectionProxies;
 }
 
 + (id)logCategory;
 @property(readonly, nonatomic) NSHashTable *connectionProxies; // @synthesize connectionProxies=_connectionProxies;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *xpcQueue; // @synthesize xpcQueue=_xpcQueue;
 @property(retain, nonatomic) NSArray *runningReasons; // @synthesize runningReasons=_runningReasons;
 @property(readonly, nonatomic) int pid; // @synthesize pid=_pid;
+@property(readonly) HMFLocationAuthorization *locationAuthorization; // @synthesize locationAuthorization=_locationAuthorization;
 @property(readonly, nonatomic) __weak HMDApplicationInfo *appInfo; // @synthesize appInfo=_appInfo;
 @property(readonly, nonatomic, getter=isViewService) _Bool viewService; // @synthesize viewService=_viewService;
 - (void).cxx_destruct;

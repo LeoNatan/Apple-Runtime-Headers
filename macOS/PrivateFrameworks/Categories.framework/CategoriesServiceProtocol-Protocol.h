@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString;
+@class NSArray, NSString;
 
 @protocol CategoriesServiceProtocol
-- (void)lookupAppStoreForBundleID:(NSString *)arg1 replyHandler:(void (^)(NSString *, NSError *))arg2;
+- (void)lookupAppStoreForBundleIDs:(NSArray *)arg1 platform:(NSString *)arg2 replyHandler:(void (^)(NSDictionary *, NSError *))arg3;
+- (void)genreIDsAndCounterpartIdentifiersForInstalledBundleIDs:(NSArray *)arg1 replyHandler:(void (^)(NSDictionary *, NSError *))arg2;
 @end
 

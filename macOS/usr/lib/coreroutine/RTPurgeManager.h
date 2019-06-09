@@ -6,24 +6,29 @@
 
 #import <coreroutine/RTService.h>
 
-@class NSArray, NSObject, RTXPCActivityManager;
+@class NSArray, NSObject, RTDarwinNotificationHelper, RTXPCActivityManager;
 @protocol OS_dispatch_source;
 
 @interface RTPurgeManager : RTService
 {
     NSObject<OS_dispatch_source> *_memoryWarningDispatchSource;
     long long _pressureState;
+    RTDarwinNotificationHelper *_notificationHelper;
     NSArray *_purgers;
     RTXPCActivityManager *_xpcActivityManager;
 }
 
-+ (id)earliestRawLocationDate;
++ (id)earliestAllowedRawLocationDateWithReferenceDate:(id)arg1;
++ (id)purgeTypeToString:(long long)arg1;
 @property(readonly, nonatomic) RTXPCActivityManager *xpcActivityManager; // @synthesize xpcActivityManager=_xpcActivityManager;
 @property(retain, nonatomic) NSArray *purgers; // @synthesize purgers=_purgers;
+@property(retain, nonatomic) RTDarwinNotificationHelper *notificationHelper; // @synthesize notificationHelper=_notificationHelper;
 @property(nonatomic) long long pressureState; // @synthesize pressureState=_pressureState;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *memoryWarningDispatchSource; // @synthesize memoryWarningDispatchSource=_memoryWarningDispatchSource;
 - (void).cxx_destruct;
-- (void)_purgeWithType:(long long)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_handleLanguageChangeNotification;
+- (void)handleLanguageChangeNotification;
+- (void)_purgeWithType:(long long)arg1 referenceDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)onCoreLocationPrivacyReset;
 - (void)clearRoutineWithHandler:(CDUnknownBlockType)arg1;
 - (void)_purge:(CDUnknownBlockType)arg1;

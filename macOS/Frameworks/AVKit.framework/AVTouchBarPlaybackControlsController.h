@@ -12,9 +12,10 @@
 #import <AVKit/AVTouchBarScrubberControlling-Protocol.h>
 #import <AVKit/AVTouchBarTrackControlling-Protocol.h>
 
-@class AVThumbnailGenerator, AVTouchBarMediaSelectionOption, AVValueTiming, AVWaveformGenerator, NSArray, NSString;
+@class AVThumbnailGenerator, AVTouchBarMediaSelectionOption, AVValueTiming, AVWaveform, NSArray, NSString, NSURL;
 @protocol AVTouchBarPlaybackControlsControlling;
 
+__attribute__((visibility("hidden")))
 @interface AVTouchBarPlaybackControlsController : NSObject <AVTouchBarMediaSelectionControlling, AVTouchBarPlaybackControlsControllingInternal, AVTouchBarScrubberControlling, AVTouchBarTrackControlling, AVTimeControlling>
 {
     id <AVTouchBarPlaybackControlsControlling> _externalTouchBarPlaybackControlsController;
@@ -39,14 +40,14 @@
         char _beginTouchBarScrubbing;
         char _endTouchBarScrubbing;
         char _generateTouchBarThumbnailsForTimesToleranceSizeThumbnailHandler;
-        char _generateTouchBarAudioAmplitudeSamplesCompletionHandler;
-        char _cancelThumbnailAndAudioAmplitudeSampleGeneration;
+        char _cancelThumbnailGeneration;
         char _assetURL;
         char _controlsViewWillAppear;
         char _controlsViewDidDisappear;
     } _externalControllerRespondsTo;
     AVThumbnailGenerator *_thumbnailGenerator;
-    AVWaveformGenerator *_waveformGenerator;
+    NSURL *_currentWaveformURL;
+    AVWaveform *_audioWaveform;
 }
 
 + (id)keyPathsForValuesAffectingHasEnabledVideo;
@@ -90,9 +91,10 @@
 + (BOOL)automaticallyNotifiesObserversOfTiming;
 + (id)keyPathsForValuesAffectingContentDuration;
 + (BOOL)automaticallyNotifiesObserversOfContentDuration;
+@property(retain, nonatomic) AVWaveform *audioWaveform; // @synthesize audioWaveform=_audioWaveform;
 - (void).cxx_destruct;
-- (void)cancelThumbnailAndAudioAmplitudeSampleGenerationForRequestType:(long long)arg1;
-- (void)generateTouchBarAudioAmplitudeSamples:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_updateAudioWaveformIfNeeded;
+- (void)cancelThumbnailGenerationForRequestType:(long long)arg1;
 - (void)generateTouchBarThumbnailsForTimes:(id)arg1 tolerance:(double)arg2 size:(struct CGSize)arg3 requestType:(long long)arg4 thumbnailHandler:(CDUnknownBlockType)arg5;
 @property(readonly) BOOL hasEnabledVideo;
 @property(readonly) BOOL hasEnabledAudio;

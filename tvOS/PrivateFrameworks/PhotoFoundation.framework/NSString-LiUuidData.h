@@ -14,5 +14,6 @@
 - (id)uuidData;
 - (id)mercuryUuidString;
 - (id)canonicalUuidString;
+- (id)uniqueString;
 @end
 

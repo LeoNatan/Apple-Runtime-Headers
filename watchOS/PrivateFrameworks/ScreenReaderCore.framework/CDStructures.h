@@ -40,7 +40,7 @@ struct SCRCFingerState {
     struct SCRCMathAverageValue distancePerSample;
     float distanceTraveledWithInertiaApplied;
     _Bool dragStalled;
-    unsigned int type;
+    int type;
     struct CGPoint startTouchPoint;
     struct CGPoint mostRecentTouchPoint;
     struct CGPoint lastDownPoint;

@@ -6,6 +6,7 @@
 
 #import <UIKit/UINavigationBar.h>
 
+__attribute__((visibility("hidden")))
 @interface CKNavigationBar : UINavigationBar
 {
 }

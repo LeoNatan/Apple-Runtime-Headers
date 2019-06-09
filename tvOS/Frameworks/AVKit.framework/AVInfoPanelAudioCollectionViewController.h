@@ -6,6 +6,7 @@
 
 #import <AVKit/AVInfoPanelMediaOptionCollectionViewController.h>
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelAudioCollectionViewController : AVInfoPanelMediaOptionCollectionViewController
 {
 }

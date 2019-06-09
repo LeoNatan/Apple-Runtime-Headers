@@ -6,28 +6,39 @@
 
 #import <objc/NSObject.h>
 
+#import <Vision/NSCopying-Protocol.h>
+#import <Vision/NSSecureCoding-Protocol.h>
+#import <Vision/VNRequestRevisionProviding-Protocol.h>
+
 @class NSData;
 
-@interface VNFaceLandmarks : NSObject
+@interface VNFaceLandmarks : NSObject <NSCopying, NSSecureCoding, VNRequestRevisionProviding>
 {
     float _confidence;
     unsigned long long _pointCount;
     NSData *_pointsData;
     struct _Geometry2D_rect2D_ _alignedBBox;
     struct CGRect _userFacingBBox;
+    unsigned long long _requestRevision;
 }
 
-@property unsigned long long pointCount; // @synthesize pointCount=_pointCount;
++ (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) unsigned long long requestRevision; // @synthesize requestRevision=_requestRevision;
 @property struct CGRect userFacingBBox; // @synthesize userFacingBBox=_userFacingBBox;
 @property struct _Geometry2D_rect2D_ alignedBBox; // @synthesize alignedBBox=_alignedBBox;
 @property(retain) NSData *pointsData; // @synthesize pointsData=_pointsData;
+@property unsigned long long pointCount; // @synthesize pointCount=_pointCount;
 @property(readonly) float confidence; // @synthesize confidence=_confidence;
 - (void).cxx_destruct;
+- (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)initWithPointsData:(id)arg1 pointCount:(unsigned long long)arg2 userFacingBBox:(struct CGRect)arg3 alignedBBox:(struct _Geometry2D_rect2D_)arg4 landmarkScore:(float)arg5;
+- (id)initWithRequestRevision:(unsigned long long)arg1 pointsData:(id)arg2 pointCount:(unsigned long long)arg3 userFacingBBox:(struct CGRect)arg4 alignedBBox:(struct _Geometry2D_rect2D_)arg5 landmarkScore:(float)arg6;
 - (_Bool)isUserFacingBBoxEquivalentToAlignedBBox;
-- (void *)createPointArray:(const int *)arg1 count:(unsigned long long)arg2;
+- (void *)_createPointArray:(const int *)arg1 count:(unsigned long long)arg2;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

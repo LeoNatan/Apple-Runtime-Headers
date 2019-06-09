@@ -13,11 +13,13 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)getSelectedDeveloperDirectoryURLWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)getPreferencesWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)mapPlugInBundleIdentifiersToContainingBundleIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)mapBundleIdentifiers:(id)arg1 orMachOUUIDs:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)getLocalizationDictionaryForTypeWithIdentifier:(id)arg1 unit:(unsigned int)arg2 preferredLocalizations:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)getLocalizedNameWithBundleType:(id)arg1 bundleIdentifier:(id)arg2 bundleUUID:(id)arg3 context:(id)arg4 shortNameOnly:(BOOL)arg5 preferredLocalizations:(id)arg6 validationToken:(id)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)getKernelPackageExtensionsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)getServerStoreNonBlockingWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getServerStoreWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getServerStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)willHandleInvocation:(id)arg1 isReply:(BOOL)arg2;

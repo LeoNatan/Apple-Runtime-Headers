@@ -39,12 +39,13 @@
 - (id)appBundleInfoString;
 - (id)OSString;
 - (id)hardwareString;
+- (id)stringForSysctlKey:(id)arg1;
 - (id)OSVersion;
 - (id)UDID;
 - (Class)deletePluginClass;
-- (Class)sharingPluginClass;
 - (Class)subscriberPluginClass;
 - (Class)publisherPluginClass;
+- (Class)pluginClass;
 - (id)pathMediaStreamDir;
 - (void)logFile:(const char *)arg1 func:(const char *)arg2 line:(int)arg3 facility:(int)arg4 level:(int)arg5 format:(id)arg6 args:(struct __va_list_tag [1])arg7;
 - (void)_rereadDefaults;

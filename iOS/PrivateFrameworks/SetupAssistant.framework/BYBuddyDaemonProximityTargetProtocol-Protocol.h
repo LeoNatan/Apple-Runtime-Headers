@@ -6,10 +6,11 @@
 
 #import <SetupAssistant/NSObject-Protocol.h>
 
-@class CUMessageSession, NSArray, NSError, NSString;
+@class CUMessageSession, NSArray, NSData, NSError, NSString;
 
 @protocol BYBuddyDaemonProximityTargetProtocol <NSObject>
-- (void)receivedLanguages:(NSArray *)arg1 locale:(NSString *)arg2 model:(NSString *)arg3 deviceClass:(NSString *)arg4;
+- (void)receivedLanguages:(NSArray *)arg1 locale:(NSString *)arg2 model:(NSString *)arg3 deviceClass:(NSString *)arg4 accessibilitySettings:(NSData *)arg5;
+- (void)proximityConnectionReconnected;
 - (void)proximityConnectionTerminated;
 - (void)proximityConnectionInitiated;
 - (void)proximityConnectionPreparing:(CUMessageSession *)arg1;

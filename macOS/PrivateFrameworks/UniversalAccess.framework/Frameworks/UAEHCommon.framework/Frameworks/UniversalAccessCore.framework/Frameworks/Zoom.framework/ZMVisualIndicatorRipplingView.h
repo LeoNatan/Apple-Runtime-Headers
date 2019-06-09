@@ -10,6 +10,7 @@
 
 @class CABasicAnimation, CAShapeLayer, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ZMVisualIndicatorRipplingView : NSView <ZMVisualIndicating>
 {
     CAShapeLayer *__ringShapeLayer;

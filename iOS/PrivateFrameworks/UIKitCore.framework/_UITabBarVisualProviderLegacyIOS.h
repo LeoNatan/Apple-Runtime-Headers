@@ -6,66 +6,64 @@
 
 #import <UIKitCore/_UITabBarVisualProvider.h>
 
-@class UIMotionEffect, UIScrollView, UIView, _UIBarBackground;
+@class UIView, _UIBarBackground, _UIBarBackgroundLayout;
 
 __attribute__((visibility("hidden")))
 @interface _UITabBarVisualProviderLegacyIOS : _UITabBarVisualProvider
 {
     _UIBarBackground *_backgroundView;
+    _UIBarBackgroundLayout *_backgroundViewLayout;
     UIView *_customBackgroundView;
     UIView *_accessoryView;
-    UIScrollView *_itemsScrollView;
-    UIView *_focusedItemHighlightView;
-    UIMotionEffect *_focusedItemHighlightMotionEffect;
-    _Bool _usingHorizontalLayout;
+    double _minimumWidthForHorizontalLayout;
+    _Bool _useModernAppearance;
+    long long _style;
 }
 
 - (void).cxx_destruct;
 - (id)_focusedItemHighlightView;
-- (void)_configureFloatingDisplayStyle;
-- (void)_configureDefaultDisplayStyle;
 - (void)_shim_updateTabBarItemView:(id)arg1;
 - (void)_shim_layoutItemsOnly;
-- (void)_shim_setBackdropGroupName:(id)arg1;
-- (id)_shim_backdropGroupName;
-- (void)_shim_updateBackdropView;
-- (void)_shim_updateFocusHighlightVisibility;
-- (id)_shim_shadowView;
+- (void)_shim_setShadowHidden:(_Bool)arg1;
+- (_Bool)_shim_shadowHidden;
+- (void)_shim_setShadowAlpha:(double)arg1;
+- (double)_shim_shadowAlpha;
 - (id)_shim_accessoryView;
 - (void)_shim_setAccessoryView:(id)arg1;
 - (id)_shim_compatibilityBackgroundView;
 - (void)_shim_setCustomBackgroundView:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (_Bool)_focusedItemHighlightViewIsVisible;
-- (void)_updateFocusedItemHighlightViewWithInterfaceStyle:(long long)arg1 visible:(_Bool)arg2;
-- (void)_setFocusedItemHightlightVisible:(_Bool)arg1;
-- (void)_updateFocusedItemHighlightFrame;
-- (void)_updateHighlightMotionEffect;
 - (id)preferredFocusedView;
-- (id)_preferredFocusedViewATV;
+- (id)_preferredFocusedViewiOS;
 - (id)_preferredFocusedViewCarplay;
 - (void)setSemanticContentAttribute:(long long)arg1;
+- (id)traitCollectionForChild:(id)arg1 baseTraitCollection:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)tabBarSizeChanged:(struct CGSize)arg1;
 - (void)layoutSubviews;
+- (void)updateBackgroundGroupName;
 - (void)_updateBackground;
-- (void)_cleanupAdaptiveBackdrop;
+- (void)_updateBackgroundModern;
+- (void)_updateBackgroundLegacy;
 - (void)_layoutTabBarItems;
-- (void)_determineHorizontalLayout;
+- (long long)_styleForTraitCollection:(id)arg1;
 - (void)_configureItems:(id)arg1;
-- (id)_parentViewForItems;
 - (void)_updateAccessoryView;
 - (struct CGRect)_shadowFrameForBounds:(struct CGRect)arg1 height:(double)arg2;
 - (struct CGRect)_layoutRegion;
 - (struct CGSize)intrinsicContentSizeGivenSize:(struct CGSize)arg1;
 - (void)updateArchivedSubviews:(id)arg1;
 - (id)createViewForTabBarItem:(id)arg1;
+- (void)setMinimumWidthForHorizontalLayout:(double)arg1;
+- (double)minimumWidthForHorizontalLayout;
+- (void)setUseModernAppearance:(_Bool)arg1;
+- (_Bool)useModernAppearance;
 - (void)changeLayout;
 - (void)changeAppearance;
 - (void)changeSelectedItem:(id)arg1 fromItem:(id)arg2;
 - (id)exchangeItem:(id)arg1 withItem:(id)arg2;
 - (void)_applyAppearanceCustomizationsToItem:(id)arg1;
-- (void)changeItemsTo:(id)arg1 removingItems:(id)arg2 selectedItem:(id)arg3 animate:(_Bool)arg4;
+- (void)changeItemsTo:(id)arg1 removingItems:(id)arg2 selectedItem:(id)arg3 oldSelectedItem:(id)arg4 animate:(_Bool)arg5;
+- (void)_updateAppearanceForTransitionFromItem:(id)arg1 toItem:(id)arg2;
 - (void)teardown;
 - (void)prepare;
 

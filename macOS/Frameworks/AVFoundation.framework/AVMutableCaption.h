@@ -18,18 +18,23 @@
 @property(copy, nonatomic) NSString *text;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)removeRuby:(struct _NSRange)arg1;
+- (void)removeTextCombineInRange:(struct _NSRange)arg1;
 - (void)removeDecorationInRange:(struct _NSRange)arg1;
 - (void)removeFontStyleInRange:(struct _NSRange)arg1;
 - (void)removeFontWeightInRange:(struct _NSRange)arg1;
 - (void)removeBackgroundColorInRange:(struct _NSRange)arg1;
 - (void)removeTextColorInRange:(struct _NSRange)arg1;
 - (void)setRuby:(id)arg1 inRange:(struct _NSRange)arg2;
+- (void)setTextCombine:(long long)arg1 inRange:(struct _NSRange)arg2;
 - (void)setDecoration:(long long)arg1 inRange:(struct _NSRange)arg2;
 - (void)setFontStyle:(long long)arg1 inRange:(struct _NSRange)arg2;
 - (void)setFontWeight:(long long)arg1 inRange:(struct _NSRange)arg2;
 - (void)setBackgroundColor:(struct CGColor *)arg1 inRange:(struct _NSRange)arg2;
 - (void)setTextColor:(struct CGColor *)arg1 inRange:(struct _NSRange)arg2;
-@property(nonatomic) long long animation;
+- (void)setTextAlignment:(long long)arg1;
+- (long long)textAlignment;
+- (void)setAnimation:(long long)arg1;
+- (long long)animation;
 
 @end
 

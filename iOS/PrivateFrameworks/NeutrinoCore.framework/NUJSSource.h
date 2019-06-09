@@ -6,12 +6,15 @@
 
 #import <NeutrinoCore/NUJSProxy.h>
 
-@class NUSource;
+#import <NeutrinoCore/NUJSSourceExport-Protocol.h>
 
-@interface NUJSSource : NUJSProxy
+@class NSString, NUSource;
+
+@interface NUJSSource : NUJSProxy <NUJSSourceExport>
 {
 }
 
+@property(readonly) NSString *mediaType;
 - (id)toString;
 @property(readonly, nonatomic) NUSource *source;
 - (id)initWithRepresentedObject:(id)arg1 context:(id)arg2;

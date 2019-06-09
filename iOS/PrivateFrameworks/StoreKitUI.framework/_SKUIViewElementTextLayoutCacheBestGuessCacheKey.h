@@ -8,6 +8,7 @@
 
 @class NSString, UIFont;
 
+__attribute__((visibility("hidden")))
 @interface _SKUIViewElementTextLayoutCacheBestGuessCacheKey : NSObject
 {
     NSString *_text;

@@ -10,13 +10,13 @@
 #import <MapsSuggestions/MapsSuggestionsSourceDelegate-Protocol.h>
 
 @class MapsSuggestionsSuppressor, NSMutableDictionary, NSObject, NSString;
-@protocol MapsSuggestionsSourceDelegate, OS_dispatch_queue, OS_dispatch_source;
+@protocol MapsSuggestionsSourceDelegate, OS_dispatch_source;
 
 @interface MapsSuggestionsCompositeSource : MapsSuggestionsBaseSource <MapsSuggestionsSource, MapsSuggestionsSourceDelegate>
 {
     struct NSMutableSet *_sources;
     NSMutableDictionary *_nextUpdateTimes;
-    NSObject<OS_dispatch_queue> *_queue;
+    struct Queue _queue;
     NSObject<OS_dispatch_source> *_updateTimer;
     MapsSuggestionsSuppressor *_suppressor;
     _Bool _running;
@@ -25,19 +25,23 @@
 + (unsigned int)disposition;
 + (_Bool)isEnabled;
 @property _Bool running; // @synthesize running=_running;
+- (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)test_resetSuppressions;
+- (double)test_suppressionDurationForBehavior:(int)arg1 type:(int)arg2;
+- (id)test_dateUntilSuppressedEntry:(id)arg1;
+- (void)test_sync;
+- (struct NSSet *)children;
 - (_Bool)removeChildSource:(id)arg1;
 - (_Bool)addChildSource:(id)arg1;
 - (_Bool)detachSource:(id)arg1;
 - (_Bool)attachSource:(id)arg1;
-- (id)currentBestLocation;
-- (unsigned long)deleteEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2;
-- (unsigned long)addOrUpdateSuggestionEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2 deleteMissing:(_Bool)arg3;
-- (_Bool)_suppressEntry:(id)arg1 withTime:(double)arg2;
+- (unsigned long)addOrUpdateSuggestionEntries:(struct NSArray *)arg1 source:(struct NSString *)arg2;
+- (void)feedbackForContact:(id)arg1 action:(int)arg2;
+- (void)feedbackForMapItem:(id)arg1 action:(int)arg2;
+- (void)feedbackForEntry:(id)arg1 action:(int)arg2;
 - (_Bool)removeEntry:(id)arg1 behavior:(int)arg2 handler:(CDUnknownBlockType)arg3;
-- (double)_suppressionTimeForEntry:(id)arg1 behavior:(int)arg2;
-- (double)_hideTimeForEntry:(id)arg1;
-- (double)_snoozeTimeForEntry:(id)arg1;
+- (double)_suppressionTimeForEntry:(id)arg1 snoozeOnly:(_Bool)arg2;
 - (_Bool)canProduceEntriesOfType:(int)arg1;
 - (double)updateSuggestionEntriesOfType:(int)arg1;
 - (double)updateSuggestionEntries;

@@ -26,11 +26,11 @@
 @property(readonly) BOOL unified; // @synthesize unified=_unified;
 @property(readonly, copy, nonatomic) NSString *accountName; // @synthesize accountName=_accountName;
 @property(readonly, copy, nonatomic) NSString *fullName; // @synthesize fullName=_fullName;
+- (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithFullName:(id)arg1 accountName:(id)arg2 unified:(BOOL)arg3 identifier:(id)arg4 showName:(BOOL)arg5 isPreferredForName:(BOOL)arg6;
 
 @end

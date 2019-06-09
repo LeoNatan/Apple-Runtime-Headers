@@ -18,9 +18,9 @@
     _Bool _popoverUsesAdaptivePresentationInCompact;
 }
 
++ (void)attachDelegateToPopoverPresentationController:(id)arg1 anchoredToURLOutlineInNavigationBar:(id)arg2 usesAdaptivePresentationInCompact:(_Bool)arg3;
++ (void)attachDelegateToPopoverPresentationController:(id)arg1 anchoredToURLOutlineInNavigationBar:(id)arg2;
 + (void)attachDelegateToPopoverPresentationController:(id)arg1 anchoredToReloadButtonInNavigationBar:(id)arg2;
-+ (void)attachDelegateToPopoverPresentationController:(id)arg1 anchoredToReaderButtonInNavigationBar:(id)arg2;
-+ (void)attachDelegateToPopoverPresentationController:(id)arg1 anchoredToReaderAppearanceButtonInNavigationBar:(id)arg2;
 @property(nonatomic) _Bool popoverUsesAdaptivePresentationInCompact; // @synthesize popoverUsesAdaptivePresentationInCompact=_popoverUsesAdaptivePresentationInCompact;
 - (void).cxx_destruct;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;

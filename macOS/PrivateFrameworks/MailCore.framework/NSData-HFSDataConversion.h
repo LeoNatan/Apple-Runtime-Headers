@@ -7,7 +7,18 @@
 #import <Foundation/NSData.h>
 
 @interface NSData (HFSDataConversion)
++ (unsigned long long)quotedPrintableLengthOfHeaderBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (id)wrapperForBinHex40DataWithFileEncodingHint:(unsigned long long)arg1;
 - (id)wrapperForAppleFileDataWithFileEncodingHint:(unsigned long long)arg1;
+- (id)encodeQuotedPrintableForText:(BOOL)arg1 allowCancel:(BOOL)arg2;
+- (id)decodeQuotedPrintableForText:(BOOL)arg1;
+- (struct _NSRange)rangeOfCString:(const char *)arg1 options:(unsigned long long)arg2 range:(struct _NSRange)arg3;
+- (struct _NSRange)rangeOfCString:(const char *)arg1 options:(unsigned long long)arg2;
+- (struct _NSRange)rangeOfCString:(const char *)arg1;
+@property(readonly, nonatomic) struct _NSRange rangeOfRFC822HeaderData;
+- (id)initWithDataConvertingLineEndingsFromNetworkToUnix:(id)arg1;
+- (id)initWithDataConvertingLineEndingsFromUnixToNetwork:(id)arg1;
+- (id)uuencodedDataWithFile:(id)arg1 mode:(unsigned int)arg2;
+- (id)uudecodedDataIntoFile:(id *)arg1 mode:(unsigned int *)arg2;
 @end
 

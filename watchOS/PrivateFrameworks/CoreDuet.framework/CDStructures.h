@@ -19,8 +19,8 @@ struct NSMapTable {
 };
 
 struct _CDPerfEvent {
-    unsigned long long CDPM_startTime;
-    unsigned long long CDPM_endTime;
+    double startTime;
+    double endTime;
 };
 
 struct _cdp_prediction_result {

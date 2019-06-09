@@ -12,6 +12,7 @@
 @class NSMapTable, NSMutableArray, NSString, SKUIShapeView, SKUIViewElement, UIColor;
 @protocol SKUISignInViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUISignInView : UIView <UITextFieldDelegate, SKUIViewElementView>
 {
     UIColor *_borderColor;

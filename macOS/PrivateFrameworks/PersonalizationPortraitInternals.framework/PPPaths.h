@@ -10,6 +10,12 @@
 {
 }
 
++ (id)filename:(id)arg1 logSubdirectory:(id)arg2 createIfNeeded:(BOOL)arg3;
++ (id)logSubdirectory:(id)arg1 createIfNeeded:(BOOL)arg2;
++ (id)logDirectoryCreateIfNeeded:(BOOL)arg1;
++ (id)filename:(id)arg1 logSubdirectory:(id)arg2;
++ (id)logSubdirectory:(id)arg1;
++ (id)logDirectory;
 + (id)filename:(id)arg1 subdirectory:(id)arg2 createIfNeeded:(BOOL)arg3;
 + (id)subdirectory:(id)arg1 createIfNeeded:(BOOL)arg2;
 + (id)topDirectoryCreateIfNeeded:(BOOL)arg1;

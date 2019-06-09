@@ -15,10 +15,10 @@
     AMSBag *_bag;
 }
 
-@property(readonly, retain, nonatomic) AMSBag *bag; // @synthesize bag=_bag;
+@property(readonly, nonatomic) AMSBag *bag; // @synthesize bag=_bag;
+- (void).cxx_destruct;
 @property(readonly) AMSBagValue *iCloudDeviceOfferDeepLink;
 @property(readonly) AMSBagValue *appleMusicDeviceOfferDeepLink;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

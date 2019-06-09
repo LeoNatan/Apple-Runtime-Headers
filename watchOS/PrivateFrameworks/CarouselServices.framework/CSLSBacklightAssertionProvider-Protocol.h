@@ -8,6 +8,6 @@
 
 @protocol CSLSBacklightAssertionProvider
 - (void)releaseBacklightAssertion:(CSLSBacklightAssertionBase *)arg1;
-- (void)takeBacklightAssertion:(CSLSBacklightAssertionBase *)arg1 wasAlreadyAsserted:(_Bool)arg2;
+- (void)takeBacklightAssertion:(CSLSBacklightAssertionBase *)arg1;
 @end
 

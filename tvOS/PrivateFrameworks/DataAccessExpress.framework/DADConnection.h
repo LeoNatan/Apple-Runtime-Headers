@@ -24,6 +24,8 @@
     NSMutableDictionary *_inFlightCalendarDirectorySearches;
     NSMutableDictionary *_inFlightShareRequests;
     NSMutableDictionary *_inFlightOofSettingsRequests;
+    NSMutableDictionary *_inFlightGrantedDelegatesListRequests;
+    NSMutableDictionary *_inFlightUpdateGrantedDelegatePermissionRequests;
     _Bool _registered;
 }
 
@@ -45,6 +47,11 @@
 - (void)_calendarDirectorySearchReturnedResults:(id)arg1;
 - (void)cancelCalendarDirectorySearchWithID:(id)arg1;
 - (id)performCalendarDirectorySearchWithAccountID:(id)arg1 terms:(id)arg2 recordTypes:(id)arg3 resultLimit:(unsigned long long)arg4 resultsBlock:(CDUnknownBlockType)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (void)_updateGrantedDelegatePermissionRequestFinished:(id)arg1;
+- (id)updateGrantedDelegatePermissionForAccountID:(id)arg1 grantedDelegate:(id)arg2 resultsBlock:(CDUnknownBlockType)arg3;
+- (void)_grantedDelegatesListRequestFinished:(id)arg1;
+- (void)cancelGrantedDelegatesListRequestWithID:(id)arg1;
+- (id)requestGrantedDelegatesListForAccountID:(id)arg1 resultsBlock:(CDUnknownBlockType)arg2;
 - (void)_calendarAvailabilityRequestFinished:(id)arg1;
 - (void)_calendarAvailabilityRequestReturnedResults:(id)arg1;
 - (void)cancelCalendarAvailabilityRequestWithID:(id)arg1;
@@ -95,6 +102,7 @@
 - (_Bool)suspendWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (_Bool)resumeWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (_Bool)watchFoldersWithKeys:(id)arg1 forAccountID:(id)arg2 persistent:(_Bool)arg3;
+- (_Bool)_checkInvalidIdExistsInXPCRely:(id)arg1;
 - (_Bool)watchFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (void)_oofSettingsRequestsFinished:(id)arg1;
 - (void)_shareResponseFinished:(id)arg1;
@@ -108,6 +116,9 @@
 - (void)_policyKeyChanged:(id)arg1;
 - (id)decodedErrorFromData:(id)arg1;
 - (id)_createReplyToRequest:(id)arg1 withProperties:(id)arg2;
+- (void)_initializeXPCConnection:(id)arg1;
+- (void)_initializeConnectionWithXPCEndpoint:(id)arg1;
+- (void)_initializeConnection;
 - (id)_connection;
 - (void)_serverDiedWithReason:(id)arg1;
 - (void)_tearDownInFlightObjects;

@@ -6,31 +6,29 @@
 
 #import <objc/NSObject.h>
 
+#import <InputContext/_ICFeedbackAccepting-Protocol.h>
 #import <InputContext/_ICLexiconSourcing-Protocol.h>
 
-@class PPContactNameRecordLoadingDelegate, PPContactStore, PPEventNameRecordLoadingDelegate, PPEventStore, PPNamedEntityRecordLoadingDelegate, PPNamedEntityStore, _ICLexiconManager;
+@class PPContactNameRecordLoadingDelegate, PPContactStore, PPNamedEntityRecordLoadingDelegate, PPNamedEntityStore, _ICLexiconManager;
 
-@interface _ICPortraitLexiconSource : NSObject <_ICLexiconSourcing>
+@interface _ICPortraitLexiconSource : NSObject <_ICLexiconSourcing, _ICFeedbackAccepting>
 {
     _ICLexiconManager *_manager;
     PPContactStore *_contactStore;
     PPContactNameRecordLoadingDelegate *_contactDelegate;
-    PPEventStore *_eventStore;
-    PPEventNameRecordLoadingDelegate *_eventDelegate;
     PPNamedEntityStore *_namedEntityStore;
     PPNamedEntityRecordLoadingDelegate *_namedEntityDelegate;
 }
 
 - (void).cxx_destruct;
-- (void)_handleEventRecord:(id)arg1;
+- (void)provideFeedbackForString:(id)arg1 type:(unsigned char)arg2 style:(unsigned char)arg3;
 - (void)_reloadNamedEntityDataAfterReset;
-- (void)_reloadEventDataAfterReset;
 - (id)_makeNamedEntityDelegate;
-- (id)_makeEventDelegate;
 - (id)_makeContactDelegate;
 - (void)hibernate;
 - (void)warmUp;
 - (void)startLoadingWithManager:(id)arg1;
+- (id)_makePPNamedEntityStore;
 - (id)init;
 
 @end

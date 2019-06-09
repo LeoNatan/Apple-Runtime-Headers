@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     double _visibleHeight;
     struct __CVPixelBufferPool *_bufferPool;
     struct OpaqueVTPixelTransferSession *_transferSession;
+    unsigned int _codec;
 }
 
 @property(retain, nonatomic) NSURL *outputURL; // @synthesize outputURL=_outputURL;
@@ -57,15 +58,15 @@ __attribute__((visibility("hidden")))
 - (id)setupAssetWriterWithWidth:(int)arg1 height:(int)arg2 transactionID:(id)arg3;
 - (void)finishWritingWithHandler:(CDUnknownBlockType)arg1;
 - (void)setStillImageTime:(CDStruct_1b6d18a9)arg1;
-- (_Bool)shouldFinishWritingSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 RTPtimeStamp:(unsigned int)arg2;
-- (_Bool)shouldAppendSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 RTPtimeStamp:(unsigned int)arg2;
+- (_Bool)shouldFinishWritingSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 RTPtimeStamp:(unsigned int)arg2 mediaType:(unsigned char)arg3;
+- (_Bool)shouldAppendSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 RTPtimeStamp:(unsigned int)arg2 mediaType:(unsigned char)arg3;
 - (void)setEndRTPTimestampWithTimestamp:(unsigned int)arg1;
 - (void)appendAudioSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 mediaType:(unsigned char)arg2;
 - (void)appendVideoSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 cameraStatus:(unsigned char)arg2 mediaType:(unsigned char)arg3;
 - (void)setupContectRect:(struct CGRect)arg1 withCaptureHeight:(int)arg2;
 - (void)setupWriterWithMode:(unsigned char)arg1;
 - (void)dealloc;
-- (id)initWithOutputURL:(id)arg1 transactionID:(id)arg2;
+- (id)initWithOutputURL:(id)arg1 transactionID:(id)arg2 videoCodec:(unsigned int)arg3;
 
 @end
 

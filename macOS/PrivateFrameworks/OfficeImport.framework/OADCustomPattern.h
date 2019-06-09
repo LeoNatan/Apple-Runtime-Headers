@@ -8,6 +8,7 @@
 
 @class OADBlipRef;
 
+__attribute__((visibility("hidden")))
 @interface OADCustomPattern : OADPattern
 {
     OADBlipRef *mBlipRef;

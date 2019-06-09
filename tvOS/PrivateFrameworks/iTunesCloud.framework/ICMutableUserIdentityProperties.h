@@ -6,7 +6,7 @@
 
 #import <iTunesCloud/ICUserIdentityProperties.h>
 
-@class ICDelegateToken, NSDate, NSNumber, NSString;
+@class ICDelegateToken, NSArray, NSDate, NSDictionary, NSNumber, NSString;
 
 @interface ICMutableUserIdentityProperties : ICUserIdentityProperties
 {
@@ -14,6 +14,10 @@
 
 - (void)setICloudPersonID:(id)arg1;
 - (void)setCloudBackupEnabled:(_Bool)arg1;
+@property(copy, nonatomic) NSNumber *privateListeningEnabled; // @dynamic privateListeningEnabled;
+@property(copy, nonatomic) NSDictionary *cloudLibraryStateReason; // @dynamic cloudLibraryStateReason;
+@property(copy, nonatomic) NSArray *homeUserIdentifiers; // @dynamic homeUserIdentifiers;
+@property(copy, nonatomic) NSNumber *mergeToCloudLibraryPreference; // @dynamic mergeToCloudLibraryPreference;
 @property(copy, nonatomic) NSDate *ageVerificationExpirationDate; // @dynamic ageVerificationExpirationDate;
 @property(copy, nonatomic) NSString *username; // @dynamic username;
 @property(nonatomic, getter=isSubscriptionStatusEnabled) _Bool subscriptionStatusEnabled; // @dynamic subscriptionStatusEnabled;
@@ -28,6 +32,8 @@
 @property(copy, nonatomic) NSString *carrierBundleDeviceIdentifier; // @dynamic carrierBundleDeviceIdentifier;
 @property(copy, nonatomic) NSString *alternateDSID; // @dynamic alternateDSID;
 - (void)replaceValuesWithValuesFromProperties:(id)arg1;
+@property(nonatomic, getter=isActive) _Bool active; // @dynamic active;
+@property(nonatomic, getter=isActiveLocker) _Bool activeLocker; // @dynamic activeLocker;
 
 @end
 

@@ -20,8 +20,8 @@
 @property(copy, nonatomic) NSString *notificationNamePrefix; // @synthesize notificationNamePrefix=_notificationNamePrefix;
 @property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+- (void).cxx_destruct;
 - (void)registerForPush:(CDUnknownBlockType)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

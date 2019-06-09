@@ -9,7 +9,10 @@
 @protocol PXLayoutItemInput <NSObject>
 @property(readonly, nonatomic) struct CGRect acceptableCropRect;
 @property(readonly, nonatomic) struct CGRect preferredCropRect;
+@property(readonly, nonatomic) struct CGPoint positionOffset;
+@property(readonly, nonatomic) struct CGAffineTransform transform;
 @property(readonly, nonatomic) double weight;
 @property(readonly, nonatomic) struct CGSize size;
+- (double)weightUsingCriterion:(long long)arg1;
 @end
 

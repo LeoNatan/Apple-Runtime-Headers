@@ -20,6 +20,7 @@
 - (BOOL)validateValues:(out id *)arg1;
 - (BOOL)isValid:(out id *)arg1;
 - (BOOL)validate:(id)arg1 error:(out id *)arg2;
+@property(readonly) NSString *identityValue;
 @property(readonly) NSString *defaultValue;
 - (id)description;
 - (id)initWithValues:(id)arg1 attributes:(id)arg2;

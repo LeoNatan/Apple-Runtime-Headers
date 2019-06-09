@@ -19,9 +19,11 @@ __attribute__((visibility("hidden")))
     double _trafficStartTime;
     _Bool _changingViewSize;
     _Bool _inactive;
+    _Bool _hasRenderedSomething;
 }
 
 @property(nonatomic) _Bool inactive; // @synthesize inactive=_inactive;
+@property(nonatomic) _Bool hasRenderedSomething; // @synthesize hasRenderedSomething=_hasRenderedSomething;
 @property(readonly, nonatomic, getter=isChangingViewSize) _Bool changingViewSize; // @synthesize changingViewSize=_changingViewSize;
 @property(nonatomic) double trafficStartTime; // @synthesize trafficStartTime=_trafficStartTime;
 @property(nonatomic) double mapModeStartTime; // @synthesize mapModeStartTime=_mapModeStartTime;
@@ -46,6 +48,7 @@ __attribute__((visibility("hidden")))
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)_animateCanvasForBounds:(struct CGRect)arg1;
+- (_Bool)_canRender;
 @property(nonatomic) _Bool rendersInBackground;
 - (float)calloutContainerCanvasScale;
 - (struct CGSize)calloutContainerCanvasSize;

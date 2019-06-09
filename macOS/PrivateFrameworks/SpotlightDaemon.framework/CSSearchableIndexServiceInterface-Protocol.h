@@ -6,10 +6,9 @@
 
 #import <SpotlightDaemon/NSObject-Protocol.h>
 
-@class CSIndexJob;
+@class CSIndexJob, NSString;
 
 @protocol CSSearchableIndexServiceInterface <NSObject>
-- (void)performIndexJob:(CSIndexJob *)arg1 acknowledgementHandler:(void (^)(NSError *))arg2;
-- (void)performIndexJob:(CSIndexJob *)arg1;
+- (void)performIndexJob:(CSIndexJob *)arg1 protectionClass:(NSString *)arg2 acknowledgementHandler:(void (^)(NSError *))arg3;
 @end
 

@@ -8,6 +8,7 @@
 
 @class NSPanel, NSProgressIndicator, NSString, NSTextField;
 
+__attribute__((visibility("hidden")))
 @interface DEProgressSheetController : NSObject
 {
     NSPanel *_sheet;

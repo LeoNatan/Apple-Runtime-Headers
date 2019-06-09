@@ -8,27 +8,37 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDModuleLayoutEntry : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_applicationIds;
     NSString *_debugLayoutId;
     NSMutableArray *_modules;
     int _platformType;
     struct {
-        unsigned int platformType:1;
-    } _has;
+        unsigned int has_platformType:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_applicationIds:1;
+        unsigned int read_debugLayoutId:1;
+        unsigned int read_modules:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_applicationIds:1;
+        unsigned int wrote_debugLayoutId:1;
+        unsigned int wrote_modules:1;
+        unsigned int wrote_platformType:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)modulesType;
 + (Class)applicationIdType;
-@property(retain, nonatomic) NSMutableArray *modules; // @synthesize modules=_modules;
-@property(retain, nonatomic) NSString *debugLayoutId; // @synthesize debugLayoutId=_debugLayoutId;
-@property(retain, nonatomic) NSMutableArray *applicationIds; // @synthesize applicationIds=_applicationIds;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -37,21 +47,30 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)modulesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)modulesCount;
+- (void)_addNoFlagsModules:(id)arg1;
 - (void)addModules:(id)arg1;
 - (void)clearModules;
+@property(retain, nonatomic) NSMutableArray *modules;
+- (void)_readModules;
 - (int)StringAsPlatformType:(id)arg1;
 - (id)platformTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasPlatformType;
-@property(nonatomic) int platformType; // @synthesize platformType=_platformType;
+@property(nonatomic) int platformType;
+@property(retain, nonatomic) NSString *debugLayoutId;
 @property(readonly, nonatomic) _Bool hasDebugLayoutId;
+- (void)_readDebugLayoutId;
 - (id)applicationIdAtIndex:(unsigned long long)arg1;
 - (unsigned long long)applicationIdsCount;
+- (void)_addNoFlagsApplicationId:(id)arg1;
 - (void)addApplicationId:(id)arg1;
 - (void)clearApplicationIds;
+@property(retain, nonatomic) NSMutableArray *applicationIds;
+- (void)_readApplicationIds;
 
 @end
 

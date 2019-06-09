@@ -12,6 +12,7 @@
 {
     EKDayAllDayView *_leftAllDayView;
     EKDayAllDayView *_rightAllDayView;
+    int _targetSizeClass;
     UIView *_leftGutter;
     UIView *_rightGutter;
     EKDayView *_dayView;
@@ -26,7 +27,7 @@
 @property(readonly, nonatomic) UIView *leftGutter; // @synthesize leftGutter=_leftGutter;
 - (void).cxx_destruct;
 - (id)_createAllDayView;
-- (id)initWithFrame:(struct CGRect)arg1 dayView:(id)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 dayView:(id)arg2 sizeClass:(int)arg3;
 
 @end
 

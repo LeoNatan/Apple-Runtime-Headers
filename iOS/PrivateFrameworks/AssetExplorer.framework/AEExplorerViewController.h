@@ -7,11 +7,6 @@
 #import <UIKit/UIViewController.h>
 
 #import <AssetExplorer/AEBrowserLayoutDelegate-Protocol.h>
-#import <AssetExplorer/AECameraTileSource-Protocol.h>
-#import <AssetExplorer/CAMCameraCaptureDelegate-Protocol.h>
-#import <AssetExplorer/CAMCameraConfigurationDelegate-Protocol.h>
-#import <AssetExplorer/CAMCameraReviewDelegate-Protocol.h>
-#import <AssetExplorer/CAMCameraViewControllerPresentationDelegate-Protocol.h>
 #import <AssetExplorer/PUAssetExplorerReviewScreenViewControllerDelegate-Protocol.h>
 #import <AssetExplorer/PXAssetsSceneDelegate-Protocol.h>
 #import <AssetExplorer/PXChangeObserver-Protocol.h>
@@ -27,10 +22,10 @@
 #import <AssetExplorer/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <AssetExplorer/UIViewControllerPreviewingDelegate-Protocol.h>
 
-@class AECameraAssetPackageGenerator, AECameraTileController, AEPackageTransport, AEProgressViewModel, CAMCameraReviewAdapter, NSArray, NSIndexSet, NSMutableIndexSet, NSMutableSet, NSString, PUAssetExplorerReviewScreenViewController, PXAssetsScene, PXBasicUIViewTileAnimator, PXMediaProvider, PXPhotoKitAssetsDataSourceManager, PXTilingController, PXUIScrollViewController, UIPopoverPresentationController, UIView;
+@class AECameraAssetPackageGenerator, AEPackageTransport, AEProgressViewModel, CAMCameraReviewAdapter, NSArray, NSIndexSet, NSMutableIndexSet, NSMutableSet, NSString, PUAssetExplorerReviewScreenViewController, PXAssetsScene, PXBasicUIViewTileAnimator, PXMediaProvider, PXPhotoKitAssetsDataSourceManager, PXTilingController, PXUIScrollViewController, UIPopoverPresentationController, UIView;
 @protocol AEExplorerViewControllerDelegate, AEHostStatisticsManager, UIViewControllerPreviewing;
 
-@interface AEExplorerViewController : UIViewController <PXChangeObserver, PXTileSource, AECameraTileSource, PXReusableObjectPoolDelegate, PXAssetsSceneDelegate, PXTilingControllerScrollDelegate, PXTilingControllerTransitionDelegate, PXPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIViewControllerPreviewingDelegate, CAMCameraConfigurationDelegate, CAMCameraCaptureDelegate, CAMCameraReviewDelegate, CAMCameraViewControllerPresentationDelegate, PUAssetExplorerReviewScreenViewControllerDelegate, UIPopoverPresentationControllerDelegate, AEBrowserLayoutDelegate, PXPhotoLibraryPresenting>
+@interface AEExplorerViewController : UIViewController <PXChangeObserver, PXTileSource, PXReusableObjectPoolDelegate, PXAssetsSceneDelegate, PXTilingControllerScrollDelegate, PXTilingControllerTransitionDelegate, PXPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIViewControllerPreviewingDelegate, PUAssetExplorerReviewScreenViewControllerDelegate, UIPopoverPresentationControllerDelegate, AEBrowserLayoutDelegate, PXPhotoLibraryPresenting>
 {
     _Bool __fakeAllCloudAndVideo;
     _Bool __didPresentPhotoLibrary;
@@ -51,7 +46,6 @@
     PXTilingController *__tilingController;
     PXAssetsScene *__sceneController;
     AEProgressViewModel *__progressModel;
-    AECameraTileController *__cameraTileController;
     CAMCameraReviewAdapter *__cameraReviewAdapter;
     AECameraAssetPackageGenerator *__cameraPackageGenerator;
     UIView *__previousSuperview;
@@ -72,7 +66,6 @@
 @property(retain, nonatomic, setter=_setPreviousSuperview:) UIView *_previousSuperview; // @synthesize _previousSuperview=__previousSuperview;
 @property(readonly, nonatomic) AECameraAssetPackageGenerator *_cameraPackageGenerator; // @synthesize _cameraPackageGenerator=__cameraPackageGenerator;
 @property(readonly, nonatomic) CAMCameraReviewAdapter *_cameraReviewAdapter; // @synthesize _cameraReviewAdapter=__cameraReviewAdapter;
-@property(readonly, nonatomic) AECameraTileController *_cameraTileController; // @synthesize _cameraTileController=__cameraTileController;
 @property(readonly, nonatomic) AEProgressViewModel *_progressModel; // @synthesize _progressModel=__progressModel;
 @property(retain, nonatomic, setter=_setSceneController:) PXAssetsScene *_sceneController; // @synthesize _sceneController=__sceneController;
 @property(retain, nonatomic, setter=_setTilingController:) PXTilingController *_tilingController; // @synthesize _tilingController=__tilingController;
@@ -91,13 +84,8 @@
 @property(readonly, nonatomic) AEPackageTransport *_packageTransport; // @synthesize _packageTransport=__packageTransport;
 @property(nonatomic) __weak id <AEExplorerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) UIViewController *cameraParentViewController;
-- (void)ensureSubviewForTile:(id)arg1;
-- (void)applyExistingGeometryForTile:(id)arg1;
 - (void)checkInTile:(void *)arg1 withIdentifier:(struct PXTileIdentifier)arg2;
 - (void *)checkOutTileForIdentifier:(struct PXTileIdentifier)arg1 layout:(id)arg2;
-- (id)_createOpenPhotoLibraryButtonTileWithLayoutStyle:(long long)arg1;
-- (id)_createOpenCameraButtonTileWithLayoutStyle:(long long)arg1;
 - (void)_attachGestureRecognizersIfNeeded:(void *)arg1;
 - (id)tilingController:(id)arg1 transitionAnimationCoordinatorForChange:(id)arg2;
 - (id)tilingController:(id)arg1 tileIdentifierConverterForChange:(id)arg2;
@@ -128,22 +116,7 @@
 - (void)_handleInProgressPackageGenerator:(id)arg1 suppressLivePhotoContent:(_Bool)arg2 mediaOrigin:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)scrollView;
 - (struct CGSize)_maximumThumbnailSize;
-- (void)reviewViewController:(id)arg1 didFinishReviewingAssets:(id)arg2;
-- (void)reviewViewControllerDidRequestRetake:(id)arg1;
-- (void)reviewViewControllerDidCancelReview:(id)arg1;
-- (void)_invalidateCameraTileLayout;
-- (void)cameraViewControllerDidCompleteConfigurationForCaptureMode:(long long)arg1 captureDevice:(long long)arg2;
-- (void)cameraViewControllerWillBeginConfigurationForCaptureMode:(long long)arg1 captureDevice:(long long)arg2;
-- (void)cameraViewController:(id)arg1 didCaptureAVAsset:(id)arg2 andAudioMix:(id)arg3 withProperties:(id)arg4 error:(id)arg5;
-- (void)cameraViewController:(id)arg1 didCaptureLivePhoto:(id)arg2 withProperties:(id)arg3 error:(id)arg4;
-- (void)cameraViewController:(id)arg1 didCapturePhoto:(id)arg2 withProperties:(id)arg3 error:(id)arg4;
 - (void)_immediatelyGenerateAndStagePackageFromReviewAsset:(id)arg1 suppressLivePhoto:(_Bool)arg2 mediaOrigin:(long long)arg3;
-- (void)cameraViewControllerRequestedDismissal:(id)arg1;
-- (void)_presentCameraReviewViewControllerFromAdapter:(id)arg1 fromNavigationController:(id)arg2;
-- (void)_presentCameraReviewViewControllerFromAdapter:(id)arg1 fromViewController:(id)arg2;
-- (_Bool)_isPresentingFullscreenCamera;
-- (void)_dismissFullScreenCamera;
-- (void)_presentFullScreenCamera;
 - (struct CGRect)_sourceRectForPhotoLibraryPresentationInCoordinateSpace:(id)arg1;
 - (void)_updatePhotoLibraryPresentationIfNeeded;
 - (void)_dismissPhotoLibraryIfNeeded;
@@ -179,7 +152,7 @@
 - (_Bool)_shouldEnable3DTouchPreview;
 - (Class)assetsSceneClass;
 - (void)dealloc;
-- (id)initWithPackageTransport:(id)arg1 mediaProvider:(id)arg2 dataSourceManager:(id)arg3 cameraTileController:(id)arg4 statisticsManager:(id)arg5 additionalGestureRecognizers:(id)arg6 options:(unsigned long long)arg7;
+- (id)initWithPackageTransport:(id)arg1 mediaProvider:(id)arg2 dataSourceManager:(id)arg3 statisticsManager:(id)arg4 additionalGestureRecognizers:(id)arg5 options:(unsigned long long)arg6;
 - (_Bool)confirmAsset:(id)arg1 matchesView:(id)arg2 alertOnInternal:(_Bool)arg3;
 - (void)associateAsset:(id)arg1 withTile:(void *)arg2;
 - (void)ppt_scrollThumbnailGridWithTestName:(id)arg1 fakeExpensiveBadges:(_Bool)arg2;

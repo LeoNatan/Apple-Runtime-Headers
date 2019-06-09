@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/UIInteraction-Protocol.h>
+#import <UIKitCore/UIInteraction_Internal-Protocol.h>
 
 @class NSString, UIView;
 @protocol UIPencilInteractionDelegate;
 
-@interface UIPencilInteraction : NSObject <UIInteraction>
+@interface UIPencilInteraction : NSObject <UIInteraction_Internal, UIInteraction>
 {
     _Bool _enabled;
     id <UIPencilInteractionDelegate> _delegate;
@@ -23,15 +24,16 @@
 @property(nonatomic, getter=isEnabled) _Bool enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <UIPencilInteractionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)performDelegateDidTap;
-- (void)dealloc;
+- (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)didMoveToView:(id)arg1;
 - (void)willMoveToView:(id)arg1;
+@property(readonly, copy) NSString *description;
+- (void)performDelegateDidTap;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

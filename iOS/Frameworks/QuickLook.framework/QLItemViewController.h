@@ -10,8 +10,8 @@
 #import <QuickLook/QLToolbarButtonAction-Protocol.h>
 #import <QuickLook/UIDragInteractionDelegate_Private-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, QLAppearance, QLPreviewContext, UIDragInteraction, UIView;
-@protocol QLItemViewControllerPresentingDelegate, QLPreviewItemViewControllerDelegate;
+@class NSArray, NSMutableArray, NSObject, NSString, PUProgressIndicatorView, QLAppearance, QLPreviewContext, UIDragInteraction, UIView;
+@protocol OS_dispatch_queue, QLItemViewControllerPresentingDelegate, QLPreviewItemViewControllerDelegate;
 
 @interface QLItemViewController : UIViewController <UIDragInteractionDelegate_Private, QLLocalPreviewingController, QLToolbarButtonAction>
 {
@@ -21,6 +21,7 @@
     _Bool _didAppearOnce;
     _Bool _isLoaded;
     _Bool _loadingFailed;
+    _Bool _isSavingEdits;
     UIView *_accessoryView;
     id <QLPreviewItemViewControllerDelegate> _delegate;
     UIDragInteraction *_dragInteraction;
@@ -28,15 +29,15 @@
     QLPreviewContext *_context;
     QLAppearance *_appearance;
     id <QLItemViewControllerPresentingDelegate> _presentingDelegate;
+    PUProgressIndicatorView *_saveEditProgressView;
+    NSObject<OS_dispatch_queue> *_saveEditsQueue;
 }
 
-+ (double)maxLoadingTimeForItem:(id)arg1;
-+ (_Bool)providesCustomPrinter;
-+ (_Bool)shouldBeRemoteForContentType:(id)arg1;
-+ (id)supportedContentTypes;
-+ (Class)transformerClass;
 + (_Bool)shouldBeRemoteForMediaContentType:(id)arg1;
 + (id)supportedAudiovisualContentTypes;
+@property(nonatomic) _Bool isSavingEdits; // @synthesize isSavingEdits=_isSavingEdits;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *saveEditsQueue; // @synthesize saveEditsQueue=_saveEditsQueue;
+@property(retain, nonatomic) PUProgressIndicatorView *saveEditProgressView; // @synthesize saveEditProgressView=_saveEditProgressView;
 @property(nonatomic) __weak id <QLItemViewControllerPresentingDelegate> presentingDelegate; // @synthesize presentingDelegate=_presentingDelegate;
 @property(retain, nonatomic) QLAppearance *appearance; // @synthesize appearance=_appearance;
 @property(retain) QLPreviewContext *context; // @synthesize context=_context;
@@ -51,13 +52,20 @@
 - (void).cxx_destruct;
 - (id)additionalItemViewControllerDescription;
 @property(readonly, copy) NSString *description;
+- (void)updateInterfaceAfterSavingEdits;
+- (void)updateInterfaceForSavingEdits;
+- (void)didFinishSavingEdits;
+- (void)didStartSavingEdits;
+- (id)editProgressIndicatorMessage;
+- (void)hideSaveEditProgressIndicator;
+- (void)showSaveEditsProgressIndicatorAfterDelay;
+- (void)editedCopyToSaveChangesWithOutputType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)savePreviewEditedCopyWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (void)_addDragInteractionIfNeeded;
 - (id)draggableView;
 - (void)notifyDelegatesDidFailWithError:(id)arg1;
-- (void)endPreviewHostAppearanceTransitionIfNeeded:(_Bool)arg1;
-- (void)beginPreviewHostAppearanceTransitionIfNeeded:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)performFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (_Bool)canPerformFirstTimeAppearanceActions:(unsigned long long)arg1;
 - (void)preloadViewControllerForContext:(id)arg1;
@@ -69,8 +77,11 @@
 - (id)transitioningView;
 - (void)_scrollScrollViewByPercentualOffset:(double)arg1;
 - (void)_scrollScrollViewWithKeyCommand:(id)arg1;
+- (void)handlePerformedKeyCommandIfNeeded:(id)arg1;
+- (_Bool)supportsScrollingUpAndDownUsingKeyCommands;
 @property(readonly, nonatomic) NSArray *registeredKeyCommands;
 - (void)buttonPressedWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)prepareForInvalidationWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)presenterShouldHandleLoadingView:(id)arg1 readyToDisplay:(CDUnknownBlockType)arg2;
 - (_Bool)shouldAlwaysRunFullscreen;
 - (id)fullscreenBackgroundColor;

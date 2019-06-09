@@ -9,6 +9,6 @@
 @class _UIAutoScrollAssistant;
 
 @protocol _UIAutoScrollBehavior <NSObject>
-- (CDStruct_912d1c89)offsetForAutoScroller:(_UIAutoScrollAssistant *)arg1;
+- (CDStruct_912d1c89)offsetForAutoScroller:(_UIAutoScrollAssistant *)arg1 timeDelta:(double)arg2;
 @end
 

@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSXPCConnection, NSXPCInterface;
 
+__attribute__((visibility("hidden")))
 @interface TransactionManager : CHSynchronizedLoggable
 {
     NSXPCConnection *_connection;

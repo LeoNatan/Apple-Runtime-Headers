@@ -6,7 +6,7 @@
 
 #import <CalendarPersistence/CoreDAVTaskGroupDelegate-Protocol.h>
 
-@class CoreDAVBulkChangeTask, CoreDAVContainerSyncTaskGroup, CoreDAVDeleteTask, CoreDAVPostTask, CoreDAVPutTask, NSArray, NSData, NSDictionary, NSError, NSSet, NSString, NSURL;
+@class CoreDAVBulkChangeTask, CoreDAVContainerSyncTaskGroup, CoreDAVDeleteTask, CoreDAVPostTask, CoreDAVPropPatchTask, CoreDAVPutTask, NSArray, NSData, NSDictionary, NSError, NSSet, NSString, NSURL;
 
 @protocol CoreDAVLocalDBInfoProvider <CoreDAVTaskGroupDelegate>
 - (void)containerSyncTask:(CoreDAVContainerSyncTaskGroup *)arg1 completedWithNewCTag:(NSString *)arg2 newSyncToken:(NSString *)arg3 addedOrModified:(NSSet *)arg4 removed:(NSSet *)arg5 error:(NSError *)arg6;
@@ -19,6 +19,7 @@
 - (BOOL)syncDeleteTask:(CoreDAVDeleteTask *)arg1 error:(NSError *)arg2;
 - (BOOL)syncPostTask:(CoreDAVPostTask *)arg1 data:(NSData *)arg2 error:(NSError *)arg3;
 - (BOOL)syncPutTask:(CoreDAVPutTask *)arg1 completedWithNewETag:(NSString *)arg2 error:(NSError *)arg3;
+- (BOOL)syncPropPatchTask:(CoreDAVPropPatchTask *)arg1 parsedResponses:(NSArray *)arg2 parentTaskGroup:(CoreDAVContainerSyncTaskGroup *)arg3 completedWithError:(NSError *)arg4;
 - (BOOL)syncBulkChangeTask:(CoreDAVBulkChangeTask *)arg1 parentTaskGroup:(CoreDAVContainerSyncTaskGroup *)arg2 completedWithError:(NSError *)arg3;
 - (BOOL)syncDeleteTask:(CoreDAVDeleteTask *)arg1 parentTaskGroup:(CoreDAVContainerSyncTaskGroup *)arg2 completedWithError:(NSError *)arg3;
 - (BOOL)syncPostTask:(CoreDAVPostTask *)arg1 postedData:(NSData *)arg2 parentTaskGroup:(CoreDAVContainerSyncTaskGroup *)arg3 error:(NSError *)arg4;

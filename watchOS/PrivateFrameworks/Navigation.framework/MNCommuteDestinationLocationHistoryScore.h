@@ -10,7 +10,6 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface MNCommuteDestinationLocationHistoryScore : MNCommuteDestinationScore <MNCommuteDestinationLocationHistoryScore>
 {
     int _score;

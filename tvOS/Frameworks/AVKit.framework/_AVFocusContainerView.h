@@ -8,6 +8,7 @@
 
 @protocol _AVFocusContainerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface _AVFocusContainerView : UIView
 {
     id <_AVFocusContainerDelegate> _focusContainerDelegate;

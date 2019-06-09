@@ -10,6 +10,7 @@
 
 @class NSString, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKTransitAttributionSummaryCell : NSTableCellView <MKMultiLineLabelContainer>
 {
     _MKUILabel *_attributionLabel;

@@ -70,7 +70,6 @@
 @property(readonly, nonatomic) long long connectionState;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)init;
 - (id)initWithDevice:(id)arg1 acceptor:(BOOL)arg2;
 
 // Remaining properties

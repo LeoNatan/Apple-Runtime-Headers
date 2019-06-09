@@ -4,39 +4,27 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <CoreData/PFHistoryAnalyzerContext.h>
 
-@class CKRecordZoneID, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSSet;
+@class NSMutableSet, NSSet;
 
 __attribute__((visibility("hidden")))
-@interface PFCloudKitHistoryAnalyzerContext : NSObject
+@interface PFCloudKitHistoryAnalyzerContext : PFHistoryAnalyzerContext
 {
-    CKRecordZoneID *_zoneID;
-    NSMutableDictionary *_objectIDToState;
-    NSMutableSet *_processedTransactionIDs;
-    NSArray *_sortedStates;
-    NSDictionary *_entityNameToObjectIDs;
-    NSMutableSet *_allDeletedRecordIDs;
-    NSMutableDictionary *_objectIDToDeletedRecordID;
-    BOOL _isFinished;
-    NSSet *_deletedRecordIDs;
+    NSMutableSet *_mAllDeletedObjectIDs;
+    NSMutableSet *_mAllObjectIDs;
+    NSSet *_allDeletedObjectIDs;
+    NSSet *_allObjectIDs;
 }
 
-@property(readonly, nonatomic) NSSet *deletedRecordIDs; // @synthesize deletedRecordIDs=_deletedRecordIDs;
-@property(readonly, nonatomic) NSDictionary *objectIDToDeletedRecordID; // @synthesize objectIDToDeletedRecordID=_objectIDToDeletedRecordID;
-@property(readonly, nonatomic) NSDictionary *entityNameToObjectIDs; // @synthesize entityNameToObjectIDs=_entityNameToObjectIDs;
-@property(readonly, nonatomic) NSArray *sortedStates; // @synthesize sortedStates=_sortedStates;
-@property(readonly, nonatomic) NSSet *allDeletedRecordIDs; // @synthesize allDeletedRecordIDs=_allDeletedRecordIDs;
-@property(readonly, nonatomic) BOOL isFinished; // @synthesize isFinished=_isFinished;
-@property(readonly, nonatomic) NSSet *processedTransactionIDs; // @synthesize processedTransactionIDs=_processedTransactionIDs;
-@property(readonly, nonatomic) NSDictionary *objectIDToState; // @synthesize objectIDToState=_objectIDToState;
-@property(readonly, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
+@property(readonly, nonatomic) NSSet *allObjectIDs; // @synthesize allObjectIDs=_allObjectIDs;
+@property(readonly, nonatomic) NSSet *allDeletedObjectIDs; // @synthesize allDeletedObjectIDs=_allDeletedObjectIDs;
+- (void)resetStateForObjectID:(id)arg1;
 - (void)finishProcessing;
-- (void)processChange:(id)arg1;
-- (void)processTransaction:(id)arg1 fromImporter:(BOOL)arg2;
 - (void)reset;
+- (void)processChange:(id)arg1;
 - (void)dealloc;
-- (id)initWithZone:(id)arg1;
+- (id)initWithOptions:(id)arg1;
 
 @end
 

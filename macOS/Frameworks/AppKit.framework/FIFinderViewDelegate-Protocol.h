@@ -18,6 +18,7 @@
 - (void)finderView:(FIFinderView *)arg1 configureForGotoWithFilename:(NSString *)arg2;
 - (void)finderView:(FIFinderView *)arg1 scopeChanged:(BOOL)arg2;
 - (void)finderViewViewStyleChanged:(FIFinderView *)arg1;
+- (NSArray *)finderView:(FIFinderView *)arg1 requestMenuItemsForURLs:(NSArray *)arg2 andUTIs:(NSArray *)arg3;
 - (NSArray *)finderViewRequestRecentPlaces:(FIFinderView *)arg1;
 - (void)finderView:(FIFinderView *)arg1 clickedOnDisabledURL:(NSURL *)arg2;
 - (void)finderView:(FIFinderView *)arg1 populationInProgress:(BOOL)arg2;

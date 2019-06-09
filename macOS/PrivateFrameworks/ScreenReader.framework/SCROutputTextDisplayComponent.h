@@ -15,12 +15,12 @@ __attribute__((visibility("hidden")))
     NSLock *_currentDisplayStringLock;
 }
 
+- (void).cxx_destruct;
 - (id)expandedStringFromAction:(id)arg1;
 - (id)literalEchoStringFromAction:(id)arg1;
 - (void)handleEvent:(id)arg1;
 - (void)nonBlockingActionsAreComplete;
 - (int)preflightSequentialSteps:(id)arg1 runnerName:(id)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

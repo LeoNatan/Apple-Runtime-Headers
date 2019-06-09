@@ -8,6 +8,7 @@
 
 @class NSMutableArray, SKUIClientContext, SKUIDeveloperInfo, SKUIProductInformationView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIDeveloperInfoView : UIView
 {
     SKUIClientContext *_clientContext;

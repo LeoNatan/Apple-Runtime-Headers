@@ -6,11 +6,11 @@
 
 #import <NanoTimeKit/NTKRichComplicationRectangularBaseView.h>
 
-@class NTKColoringLabel, NTKRichComplicationLineProgressView, UIImageView;
+@class NTKColoringLabel, NTKRichComplicationImageView, NTKRichComplicationLineProgressView;
 
 @interface NTKRichComplicationRectangularTextGaugeView : NTKRichComplicationRectangularBaseView
 {
-    UIImageView *_headerImageView;
+    NTKRichComplicationImageView *_headerImageView;
     NTKColoringLabel *_headerLabel;
     NTKColoringLabel *_line1Label;
     NTKRichComplicationLineProgressView *_progressView;
@@ -18,8 +18,18 @@
 
 + (_Bool)supportsComplicationFamily:(int)arg1;
 + (_Bool)handlesComplicationTemplate:(id)arg1;
-+ (void)load;
++ (int)progressFillStyle;
++ (_Bool)isMeteredProgressView;
+@property(readonly, nonatomic) NTKRichComplicationLineProgressView *progressView; // @synthesize progressView=_progressView;
+@property(readonly, nonatomic) NTKColoringLabel *line1Label; // @synthesize line1Label=_line1Label;
+@property(readonly, nonatomic) NTKColoringLabel *headerLabel; // @synthesize headerLabel=_headerLabel;
+@property(readonly, nonatomic) NTKRichComplicationImageView *headerImageView; // @synthesize headerImageView=_headerImageView;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
+- (void)_editingDidEnd;
+- (void)_enumerateLabelsWithBlock:(CDUnknownBlockType)arg1;
+- (void)setPaused:(_Bool)arg1;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (void)layoutSubviews;
 - (id)init;

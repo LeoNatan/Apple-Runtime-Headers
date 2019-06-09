@@ -33,12 +33,16 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool allowsEditing; // @synthesize allowsEditing=_allowsEditing;
 @property(nonatomic) __weak id <EKEventDetailItemDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)eventViewController:(id)arg1 tableViewDidScroll:(id)arg2;
+@property(readonly, nonatomic) _Bool detailItemVisibilityChanged;
 @property(readonly, nonatomic) unsigned long long maximumNumberOfSubItems;
 @property(readonly, nonatomic) _Bool requiresLayoutForSubitemCount;
 - (void)editItemViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (id)editItemEventToDetach;
 - (_Bool)editItemViewControllerShouldShowDetachAlert;
 - (_Bool)editItemViewControllerSave:(id)arg1;
+- (_Bool)isPrivateEvent;
+- (_Bool)isReadOnlyDelegateCalendar;
 - (_Bool)saveAndDismissWithForce:(_Bool)arg1;
 - (void)notifySubitemDidSave:(unsigned long long)arg1;
 - (void)notifyDidEndEditing;
@@ -49,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)eventViewController:(id)arg1 didHighlightSubitem:(unsigned long long)arg2;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned long long)arg2;
 - (_Bool)hasDetailViewControllerAtIndex:(unsigned long long)arg1;
+- (id)cellForSubitemAtIndex:(unsigned long long)arg1 withTraitCollection:(id)arg2;
 - (id)cellForSubitemAtIndex:(unsigned long long)arg1;
 - (void)layoutCellsForWidth:(double)arg1 position:(int)arg2;
 - (unsigned long long)numberOfSubitems;

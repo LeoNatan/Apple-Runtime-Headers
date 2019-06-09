@@ -8,35 +8,62 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDAutocompleteParametersAddressOnly, GEOPDAutocompleteParametersAllEntries, GEOPDAutocompleteParametersAllEntriesWithBrowse, GEOPDAutocompleteParametersBrandProfileSearch, GEOPDAutocompleteParametersFullEntriesOnly, GEOPDAutocompleteParametersLocalitiesAndLandmarks, GEOPDAutocompleteParametersPoiAddressOnly, GEOPDAutocompleteParametersSiriSearch, GEOPDAutocompleteParametersVenueSearch, PBUnknownFields;
+@class GEOPDAutocompleteFilter, GEOPDAutocompleteParametersAddressOnly, GEOPDAutocompleteParametersAllEntries, GEOPDAutocompleteParametersAllEntriesWithBrowse, GEOPDAutocompleteParametersBrandProfileSearch, GEOPDAutocompleteParametersFullEntriesOnly, GEOPDAutocompleteParametersLocalitiesAndLandmarks, GEOPDAutocompleteParametersOfflineRegionSearch, GEOPDAutocompleteParametersPoiAddressOnly, GEOPDAutocompleteParametersSiriSearch, GEOPDAutocompleteParametersVenueSearch, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDAutocompleteParameters : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDAutocompleteParametersAddressOnly *_addressOnly;
-    GEOPDAutocompleteParametersAllEntries *_allEntries;
     GEOPDAutocompleteParametersAllEntriesWithBrowse *_allEntriesWithBrowse;
+    GEOPDAutocompleteParametersAllEntries *_allEntries;
+    GEOPDAutocompleteFilter *_autocompleteFilter;
     GEOPDAutocompleteParametersBrandProfileSearch *_brandProfileSearch;
     GEOPDAutocompleteParametersFullEntriesOnly *_fullEntries;
     GEOPDAutocompleteParametersLocalitiesAndLandmarks *_localitiesAndLandmarks;
+    GEOPDAutocompleteParametersOfflineRegionSearch *_offlineRegionSearch;
     GEOPDAutocompleteParametersPoiAddressOnly *_poiAddressOnly;
-    int _requestType;
     GEOPDAutocompleteParametersSiriSearch *_siriSearch;
     GEOPDAutocompleteParametersVenueSearch *_venueSearch;
-    CDStruct_7c66fec0 _has;
+    int _requestType;
+    _Bool _shouldPopulateMapsIdentifier;
+    struct {
+        unsigned int has_requestType:1;
+        unsigned int has_shouldPopulateMapsIdentifier:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_addressOnly:1;
+        unsigned int read_allEntriesWithBrowse:1;
+        unsigned int read_allEntries:1;
+        unsigned int read_autocompleteFilter:1;
+        unsigned int read_brandProfileSearch:1;
+        unsigned int read_fullEntries:1;
+        unsigned int read_localitiesAndLandmarks:1;
+        unsigned int read_offlineRegionSearch:1;
+        unsigned int read_poiAddressOnly:1;
+        unsigned int read_siriSearch:1;
+        unsigned int read_venueSearch:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_addressOnly:1;
+        unsigned int wrote_allEntriesWithBrowse:1;
+        unsigned int wrote_allEntries:1;
+        unsigned int wrote_autocompleteFilter:1;
+        unsigned int wrote_brandProfileSearch:1;
+        unsigned int wrote_fullEntries:1;
+        unsigned int wrote_localitiesAndLandmarks:1;
+        unsigned int wrote_offlineRegionSearch:1;
+        unsigned int wrote_poiAddressOnly:1;
+        unsigned int wrote_siriSearch:1;
+        unsigned int wrote_venueSearch:1;
+        unsigned int wrote_requestType:1;
+        unsigned int wrote_shouldPopulateMapsIdentifier:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDAutocompleteParametersPoiAddressOnly *poiAddressOnly; // @synthesize poiAddressOnly=_poiAddressOnly;
-@property(retain, nonatomic) GEOPDAutocompleteParametersBrandProfileSearch *brandProfileSearch; // @synthesize brandProfileSearch=_brandProfileSearch;
-@property(retain, nonatomic) GEOPDAutocompleteParametersVenueSearch *venueSearch; // @synthesize venueSearch=_venueSearch;
-@property(retain, nonatomic) GEOPDAutocompleteParametersAddressOnly *addressOnly; // @synthesize addressOnly=_addressOnly;
-@property(retain, nonatomic) GEOPDAutocompleteParametersSiriSearch *siriSearch; // @synthesize siriSearch=_siriSearch;
-@property(retain, nonatomic) GEOPDAutocompleteParametersAllEntriesWithBrowse *allEntriesWithBrowse; // @synthesize allEntriesWithBrowse=_allEntriesWithBrowse;
-@property(retain, nonatomic) GEOPDAutocompleteParametersLocalitiesAndLandmarks *localitiesAndLandmarks; // @synthesize localitiesAndLandmarks=_localitiesAndLandmarks;
-@property(retain, nonatomic) GEOPDAutocompleteParametersAllEntries *allEntries; // @synthesize allEntries=_allEntries;
-@property(retain, nonatomic) GEOPDAutocompleteParametersFullEntriesOnly *fullEntries; // @synthesize fullEntries=_fullEntries;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -45,21 +72,48 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasShouldPopulateMapsIdentifier;
+@property(nonatomic) _Bool shouldPopulateMapsIdentifier;
+@property(retain, nonatomic) GEOPDAutocompleteFilter *autocompleteFilter;
+@property(readonly, nonatomic) _Bool hasAutocompleteFilter;
+- (void)_readAutocompleteFilter;
+@property(retain, nonatomic) GEOPDAutocompleteParametersPoiAddressOnly *poiAddressOnly;
 @property(readonly, nonatomic) _Bool hasPoiAddressOnly;
+- (void)_readPoiAddressOnly;
+@property(retain, nonatomic) GEOPDAutocompleteParametersOfflineRegionSearch *offlineRegionSearch;
+@property(readonly, nonatomic) _Bool hasOfflineRegionSearch;
+- (void)_readOfflineRegionSearch;
+@property(retain, nonatomic) GEOPDAutocompleteParametersBrandProfileSearch *brandProfileSearch;
 @property(readonly, nonatomic) _Bool hasBrandProfileSearch;
+- (void)_readBrandProfileSearch;
+@property(retain, nonatomic) GEOPDAutocompleteParametersVenueSearch *venueSearch;
 @property(readonly, nonatomic) _Bool hasVenueSearch;
+- (void)_readVenueSearch;
+@property(retain, nonatomic) GEOPDAutocompleteParametersAddressOnly *addressOnly;
 @property(readonly, nonatomic) _Bool hasAddressOnly;
+- (void)_readAddressOnly;
+@property(retain, nonatomic) GEOPDAutocompleteParametersSiriSearch *siriSearch;
 @property(readonly, nonatomic) _Bool hasSiriSearch;
+- (void)_readSiriSearch;
+@property(retain, nonatomic) GEOPDAutocompleteParametersAllEntriesWithBrowse *allEntriesWithBrowse;
 @property(readonly, nonatomic) _Bool hasAllEntriesWithBrowse;
+- (void)_readAllEntriesWithBrowse;
+@property(retain, nonatomic) GEOPDAutocompleteParametersLocalitiesAndLandmarks *localitiesAndLandmarks;
 @property(readonly, nonatomic) _Bool hasLocalitiesAndLandmarks;
+- (void)_readLocalitiesAndLandmarks;
+@property(retain, nonatomic) GEOPDAutocompleteParametersAllEntries *allEntries;
 @property(readonly, nonatomic) _Bool hasAllEntries;
+- (void)_readAllEntries;
+@property(retain, nonatomic) GEOPDAutocompleteParametersFullEntriesOnly *fullEntries;
 @property(readonly, nonatomic) _Bool hasFullEntries;
+- (void)_readFullEntries;
 - (int)StringAsRequestType:(id)arg1;
 - (id)requestTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasRequestType;
-@property(nonatomic) int requestType; // @synthesize requestType=_requestType;
+@property(nonatomic) int requestType;
 
 @end
 

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *secondaryPayloads; // @synthesize secondaryPayloads=_secondaryPayloads;
 @property(readonly, nonatomic) NSArray *rules; // @synthesize rules=_rules;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (_Bool)isEqual:(id)arg1;
 - (_Bool)isPayloadSupported:(int)arg1;
 - (void)clearAudioRules;
 - (void)addAudioRules:(id)arg1;

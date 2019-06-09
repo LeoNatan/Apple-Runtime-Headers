@@ -10,7 +10,6 @@
 
 @class NSSet;
 
-__attribute__((visibility("hidden")))
 @interface NSURLSessionTaskHTTPAuthenticator : NSObject <NSCopying>
 {
     NSSet *_statusCodes;

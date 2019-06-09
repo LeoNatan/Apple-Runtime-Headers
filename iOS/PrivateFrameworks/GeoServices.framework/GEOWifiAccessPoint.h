@@ -13,20 +13,17 @@
 @interface GEOWifiAccessPoint : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
+    NSString *_macId;
     unsigned long long _scanTimestamp;
     unsigned int _age;
     int _channel;
-    NSString *_macId;
     int _rssi;
-    CDStruct_823dd0e8 _has;
+    CDStruct_e664d718 _flags;
 }
 
-@property(nonatomic) unsigned int age; // @synthesize age=_age;
-@property(nonatomic) unsigned long long scanTimestamp; // @synthesize scanTimestamp=_scanTimestamp;
-@property(nonatomic) int channel; // @synthesize channel=_channel;
-@property(nonatomic) int rssi; // @synthesize rssi=_rssi;
-@property(retain, nonatomic) NSString *macId; // @synthesize macId=_macId;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -35,12 +32,18 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasAge;
+@property(nonatomic) unsigned int age;
 @property(nonatomic) _Bool hasScanTimestamp;
+@property(nonatomic) unsigned long long scanTimestamp;
 @property(nonatomic) _Bool hasChannel;
+@property(nonatomic) int channel;
 @property(nonatomic) _Bool hasRssi;
+@property(nonatomic) int rssi;
+@property(retain, nonatomic) NSString *macId;
 @property(readonly, nonatomic) _Bool hasMacId;
 
 @end

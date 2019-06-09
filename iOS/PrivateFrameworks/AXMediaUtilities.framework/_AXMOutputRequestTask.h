@@ -6,15 +6,13 @@
 
 #import <AXMediaUtilities/AXMTask.h>
 
-@class AXMOutputRequest, AXMOutputRequestDispatchOptions;
+@class AXMOutputRequest;
 
 @interface _AXMOutputRequestTask : AXMTask
 {
     AXMOutputRequest *_request;
-    AXMOutputRequestDispatchOptions *_options;
 }
 
-@property(retain, nonatomic) AXMOutputRequestDispatchOptions *options; // @synthesize options=_options;
 @property(retain, nonatomic) AXMOutputRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
 

@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedService;
+- (_Bool)fetchReplacementVoucherPort:(unsigned int)arg1 foraccountID:(id)arg2 withTargetPort:(unsigned int *)arg3 generationSet:(_Bool)arg4 withreturnedError:(id *)arg5;
 - (id)listAllUserSessionIDSWithReturnedError:(id *)arg1;
 - (_Bool)unloadUserSession:(id)arg1 withreturnedError:(id *)arg2;
 - (_Bool)removeUserSession:(id)arg1 withreturnedError:(id *)arg2;

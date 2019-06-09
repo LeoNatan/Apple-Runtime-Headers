@@ -31,6 +31,7 @@
     unsigned long long _sortID;
     NSString *_destinationCallerID;
     NSDate *_clientSendTime;
+    NSString *_replyToGUID;
     NSString *_personCentric;
     long long _cloudKitSyncState;
     NSString *_cloudKitRecordID;
@@ -54,6 +55,7 @@
 @property(copy, nonatomic) NSString *cloudKitRecordID; // @synthesize cloudKitRecordID=_cloudKitRecordID;
 @property(nonatomic) long long cloudKitSyncState; // @synthesize cloudKitSyncState=_cloudKitSyncState;
 @property(retain, nonatomic) NSString *personCentric; // @synthesize personCentric=_personCentric;
+@property(copy, nonatomic) NSString *replyToGUID; // @synthesize replyToGUID=_replyToGUID;
 @property(retain, nonatomic) NSDate *clientSendTime; // @synthesize clientSendTime=_clientSendTime;
 @property(retain, nonatomic) NSString *destinationCallerID; // @synthesize destinationCallerID=_destinationCallerID;
 @property(nonatomic) unsigned long long sortID; // @synthesize sortID=_sortID;
@@ -74,6 +76,7 @@
 @property(readonly, nonatomic) _Bool isLastMessageCandidate;
 @property(readonly, nonatomic) _Bool isFirstMessageCandidate;
 - (unsigned long long)hash;
+- (_Bool)unsentIsFromMeItem;
 - (_Bool)isOlderThanItem:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(retain, nonatomic) NSString *personCentricID;

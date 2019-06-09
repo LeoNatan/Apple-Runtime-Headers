@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class CSLSSuspendSystemGestureAssertionConfiguration;
 
 @interface CSLSSuspendSystemGestureAssertion : NSObject
 {
-    NSString *_assertionID;
+    CSLSSuspendSystemGestureAssertionConfiguration *_configuration;
+    _Bool _ignoresForegroundStatus;
     unsigned int _edgeFlags;
 }
 
 + (id)assertionProvider;
 + (void)setAssertionProvider:(id)arg1;
+@property(nonatomic) _Bool ignoresForegroundStatus; // @synthesize ignoresForegroundStatus=_ignoresForegroundStatus;
 @property(nonatomic) unsigned int edgeFlags; // @synthesize edgeFlags=_edgeFlags;
 - (void).cxx_destruct;
 - (void)_takeAssertion;

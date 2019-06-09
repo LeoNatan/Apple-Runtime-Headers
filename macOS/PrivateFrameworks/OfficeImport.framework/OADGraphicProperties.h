@@ -11,6 +11,7 @@
 
 @class NSArray, NSString, OADFill, OADScene3D, OADShape3D, OADStroke;
 
+__attribute__((visibility("hidden")))
 @interface OADGraphicProperties : OADDrawableProperties <OADEffectsParent, OADProperties3DParent>
 {
     OADFill *mFill;

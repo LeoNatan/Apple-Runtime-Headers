@@ -4,18 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <objc/NSObject.h>
 
 #import <PhotosUICore/PXGadget-Protocol.h>
+#import <PhotosUICore/PXSampleGadgetViewDelegate-Protocol.h>
 
-@class NSString, PXGadgetSpec, UIView;
+@class NSString, PXGadgetSpec, UIColor;
 @protocol PXGadgetDelegate;
 
-@interface PXSampleGadget : UIViewController <PXGadget>
+@interface PXSampleGadget : NSObject <PXSampleGadgetViewDelegate, PXGadget>
 {
     _Bool _hasContentToDisplay;
     _Bool _expanded;
-    _Bool _hasBeenToldToLoadContent;
     long long _priority;
     id <PXGadgetDelegate> _delegate;
     unsigned long long _accessoryButtonType;
@@ -23,12 +23,11 @@
     NSString *_gadgetTitle;
     unsigned long long _preferredHeight;
     unsigned long long _preferredExpandedHeight;
-    UIView *_colorView;
+    UIColor *_backgroundColor;
 }
 
-@property(nonatomic) _Bool hasBeenToldToLoadContent; // @synthesize hasBeenToldToLoadContent=_hasBeenToldToLoadContent;
-@property(retain, nonatomic) UIView *colorView; // @synthesize colorView=_colorView;
 @property(nonatomic) _Bool expanded; // @synthesize expanded=_expanded;
+@property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) unsigned long long preferredExpandedHeight; // @synthesize preferredExpandedHeight=_preferredExpandedHeight;
 @property(nonatomic) unsigned long long preferredHeight; // @synthesize preferredHeight=_preferredHeight;
 @property(copy, nonatomic) NSString *gadgetTitle; // @synthesize gadgetTitle=_gadgetTitle;
@@ -37,20 +36,19 @@
 @property(nonatomic) __weak id <PXGadgetDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 - (void).cxx_destruct;
-- (void)userDidSelectAccessoryButton:(id)arg1;
-- (void)loadContentData;
-- (_Bool)hasLoadedContentData;
+- (void)userDidSelectAccessoryButton:(struct NSObject *)arg1;
+- (void)_prepareView:(id)arg1;
+- (void)prepareCollectionViewItem:(struct UICollectionViewCell *)arg1;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (struct NSObject *)contentViewController;
 @property(readonly, nonatomic) _Bool hasContentToDisplay; // @synthesize hasContentToDisplay=_hasContentToDisplay;
 @property(readonly, nonatomic) unsigned long long gadgetType;
 @property(readonly, nonatomic) NSString *localizedTitle;
-- (void)viewDidLayoutSubviews;
-- (void)viewDidLoad;
+- (struct CGRect)view:(id)arg1 colorFrameForBounds:(struct CGRect)arg2;
+- (id)initWithMininumHeight:(double)arg1;
 - (id)init;
 
 // Remaining properties
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;

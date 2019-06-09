@@ -29,7 +29,6 @@
     struct CGPoint _slideGestureInitialPoint;
     float _knobPosition;
     float _trackWidthProportion;
-    struct CGSize _textSize;
     _Bool _bouncing;
     _Bool _showingTrackLabel;
     _Bool _animating;
@@ -126,7 +125,6 @@
 - (float)fontSize;
 @property(readonly, retain, nonatomic) UILabel *trackLabel;
 @property(nonatomic) float trackAlpha;
-- (struct CGSize)_measureTextSize;
 @property(retain, nonatomic) UIColor *knobColor;
 - (float)_knobInset;
 - (float)_knobWidth;

@@ -17,11 +17,15 @@ __attribute__((visibility("hidden")))
     double _elapsedTime;
     long long _radioStationIdentifier;
     long long _storeAdamID;
+    long long _storeSubscriptionAdamID;
     double _timestamp;
     unsigned long long _uniqueIdentifier;
     NSString *_album;
     NSString *_artist;
     NSData *_artworkDataDigest;
+    NSString *_artworkURL;
+    NSData *_collectionInfoData;
+    NSString *_mediaType;
     float _playbackRate;
     float _preferredPlaybackRate;
     NSString *_radioStationHash;
@@ -38,6 +42,7 @@ __attribute__((visibility("hidden")))
         unsigned int elapsedTime:1;
         unsigned int radioStationIdentifier:1;
         unsigned int storeAdamID:1;
+        unsigned int storeSubscriptionAdamID:1;
         unsigned int timestamp:1;
         unsigned int uniqueIdentifier:1;
         unsigned int playbackRate:1;
@@ -51,8 +56,12 @@ __attribute__((visibility("hidden")))
     } _has;
 }
 
-@property(nonatomic) float preferredPlaybackRate; // @synthesize preferredPlaybackRate=_preferredPlaybackRate;
 @property(nonatomic) long long storeAdamID; // @synthesize storeAdamID=_storeAdamID;
+@property(retain, nonatomic) NSString *artworkURL; // @synthesize artworkURL=_artworkURL;
+@property(retain, nonatomic) NSData *collectionInfoData; // @synthesize collectionInfoData=_collectionInfoData;
+@property(retain, nonatomic) NSString *mediaType; // @synthesize mediaType=_mediaType;
+@property(nonatomic) float preferredPlaybackRate; // @synthesize preferredPlaybackRate=_preferredPlaybackRate;
+@property(nonatomic) long long storeSubscriptionAdamID; // @synthesize storeSubscriptionAdamID=_storeSubscriptionAdamID;
 @property(nonatomic) _Bool isAdvertisement; // @synthesize isAdvertisement=_isAdvertisement;
 @property(nonatomic) _Bool isAlwaysLive; // @synthesize isAlwaysLive=_isAlwaysLive;
 @property(retain, nonatomic) NSData *artworkDataDigest; // @synthesize artworkDataDigest=_artworkDataDigest;
@@ -79,8 +88,12 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(nonatomic) _Bool hasPreferredPlaybackRate;
 @property(nonatomic) _Bool hasStoreAdamID;
+@property(readonly, nonatomic) _Bool hasArtworkURL;
+@property(readonly, nonatomic) _Bool hasCollectionInfoData;
+@property(readonly, nonatomic) _Bool hasMediaType;
+@property(nonatomic) _Bool hasPreferredPlaybackRate;
+@property(nonatomic) _Bool hasStoreSubscriptionAdamID;
 @property(nonatomic) _Bool hasIsAdvertisement;
 @property(nonatomic) _Bool hasIsAlwaysLive;
 @property(readonly, nonatomic) _Bool hasArtworkDataDigest;

@@ -21,7 +21,6 @@
 - (unsigned long long)hash;
 - (_Bool)isEqualToMessageCommunication:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (id)description;
 - (id)init;
 - (id)initWithSender:(id)arg1 dateReceived:(id)arg2 messageBody:(id)arg3;
 

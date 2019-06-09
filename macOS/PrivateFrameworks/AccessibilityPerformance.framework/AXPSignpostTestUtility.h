@@ -21,8 +21,8 @@
 + (id)_parseSignpostsUsingToolWithConfiguration:(id)arg1 parseToolPath:(id)arg2;
 + (id)_argumentsForConfiguration:(id)arg1;
 + (id)_parseSignpostsWithConfiguration:(id)arg1 parseToolPath:(id)arg2;
-+ (id)parseSignpostsWithConfiguration:(id)arg1 expectedEventCount:(long long)arg2 parseToolPath:(id)arg3;
-+ (id)parseSignpostsWithConfiguration:(id)arg1 expectedEventCount:(long long)arg2 useParseTool:(BOOL)arg3;
++ (id)parseSignpostsWithConfiguration:(id)arg1 expectedEventCount:(unsigned long long)arg2 parseToolPath:(id)arg3;
++ (id)parseSignpostsWithConfiguration:(id)arg1 expectedEventCount:(unsigned long long)arg2 useParseTool:(BOOL)arg3;
 
 @end
 

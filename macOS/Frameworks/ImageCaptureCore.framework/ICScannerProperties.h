@@ -7,6 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSArray, NSMutableDictionary, NSString, NSURL;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface ICScannerProperties : NSObject
@@ -28,8 +29,10 @@ __attribute__((visibility("hidden")))
     unsigned int _maxMemoryBandSize;
     BOOL _numOpenSessionRetries;
     BOOL _available;
+    NSObject<OS_dispatch_queue> *_operationQueue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property BOOL available; // @synthesize available=_available;
 @property BOOL numOpenSessionRetries; // @synthesize numOpenSessionRetries=_numOpenSessionRetries;
 @property unsigned int maxMemoryBandSize; // @synthesize maxMemoryBandSize=_maxMemoryBandSize;

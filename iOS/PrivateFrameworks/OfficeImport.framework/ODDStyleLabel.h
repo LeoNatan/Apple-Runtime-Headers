@@ -14,9 +14,9 @@ __attribute__((visibility("hidden")))
     OADShapeStyle *mShapeStyle;
 }
 
+- (void).cxx_destruct;
 - (void)setShapeStyle:(id)arg1;
 - (id)shapeStyle;
-- (void)dealloc;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @class CAShapeLayer, SKUIImagePlaceholder, UIImage, UITapGestureRecognizer;
 
+__attribute__((visibility("hidden")))
 @interface SKUIImageView : UIImageView
 {
     UITapGestureRecognizer *_tapRecognizer;

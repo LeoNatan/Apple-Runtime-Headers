@@ -6,24 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class HKInspectableValueCollection, NSDate, NSString;
+#import <HealthKit/NSSecureCoding-Protocol.h>
 
-@interface HKInspectableValueInRange : NSObject
+@class HKInspectableValue, HKInspectableValueCollection, NSDate, NSString;
+
+@interface HKInspectableValueInRange : NSObject <NSSecureCoding>
 {
-    HKInspectableValueCollection *_lowValue;
-    HKInspectableValueCollection *_highValue;
+    HKInspectableValue *_lowValue;
+    HKInspectableValue *_highValue;
     HKInspectableValueCollection *_currentValue;
     NSString *_unitString;
     NSDate *_date;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)valueInRangeWithLow:(id)arg1 high:(id)arg2 currentValue:(id)arg3 unit:(id)arg4;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
-@property(readonly, nonatomic) NSString *unitString; // @synthesize unitString=_unitString;
+@property(readonly, copy, nonatomic) NSString *unitString; // @synthesize unitString=_unitString;
 @property(readonly, nonatomic) HKInspectableValueCollection *currentValue; // @synthesize currentValue=_currentValue;
-@property(readonly, nonatomic) HKInspectableValueCollection *highValue; // @synthesize highValue=_highValue;
-@property(readonly, nonatomic) HKInspectableValueCollection *lowValue; // @synthesize lowValue=_lowValue;
+@property(readonly, nonatomic) HKInspectableValue *highValue; // @synthesize highValue=_highValue;
+@property(readonly, nonatomic) HKInspectableValue *lowValue; // @synthesize lowValue=_lowValue;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)description;
 - (void)_setUnitString:(id)arg1;
 - (double)_doubleForValue:(id)arg1;
 - (double)_doubleForValueCollection:(id)arg1;

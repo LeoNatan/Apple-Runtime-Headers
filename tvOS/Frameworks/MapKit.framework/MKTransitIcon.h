@@ -20,7 +20,7 @@
 @property(readonly, nonatomic) unsigned int cartoID; // @synthesize cartoID=_cartoID;
 @property(readonly, nonatomic) unsigned int iconAttributeValue;
 @property(readonly, nonatomic) unsigned int iconAttributeKey;
-@property(readonly, nonatomic) long long iconType;
+@property(readonly, nonatomic) int iconType;
 - (id)initWithCartoId:(unsigned int)arg1 defaultTransitType:(unsigned int)arg2;
 
 // Remaining properties

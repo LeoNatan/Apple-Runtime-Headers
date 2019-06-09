@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSWindow, NSWindowController, OBPrivacyCombinedController, OBPrivacySplashController;
+@class NSArray, NSString, NSWindow, NSWindowController, OBPrivacyCombinedController, OBPrivacySplashController;
 
 @interface OBPrivacyPresenter : NSObject
 {
     CDUnknownBlockType _dismissHandler;
     OBPrivacySplashController *_splashController;
     OBPrivacyCombinedController *_combinedController;
+    NSString *_displayLanguage;
     NSWindow *_presentingWindow;
     struct NSWindowController *_presentedController;
     NSArray *_presentedIdentifiers;
@@ -20,11 +21,14 @@
 
 + (id)presenterForPrivacyUnifiedAboutWithIdentifiers:(id)arg1;
 + (id)presenterForPrivacyUnifiedAbout;
++ (id)presenterForPrivacySplashWithBundleAtPath:(id)arg1;
 + (id)presenterForPrivacySplashWithIdentifer:(id)arg1;
 + (id)presenterForPrivacySplashWithIdentifier:(id)arg1;
++ (id)presenterForPrivacySplashWithBundle:(id)arg1;
 @property(retain) NSArray *presentedIdentifiers; // @synthesize presentedIdentifiers=_presentedIdentifiers;
 @property(retain) NSWindowController *presentedController; // @synthesize presentedController=_presentedController;
 @property __weak NSWindow *presentingWindow; // @synthesize presentingWindow=_presentingWindow;
+@property(retain, nonatomic) NSString *displayLanguage; // @synthesize displayLanguage=_displayLanguage;
 @property(retain) OBPrivacyCombinedController *combinedController; // @synthesize combinedController=_combinedController;
 @property(retain) OBPrivacySplashController *splashController; // @synthesize splashController=_splashController;
 @property(copy) CDUnknownBlockType dismissHandler; // @synthesize dismissHandler=_dismissHandler;

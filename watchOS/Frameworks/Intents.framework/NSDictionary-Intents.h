@@ -6,8 +6,20 @@
 
 #import <Foundation/NSDictionary.h>
 
-@interface NSDictionary (Intents)
+#import <Intents/INJSONSerializable-Protocol.h>
+
+@class NSString;
+
+@interface NSDictionary (Intents) <INJSONSerializable>
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
 - (id)_intents_indexingRepresentation;
 - (id)descriptionAtIndent:(unsigned int)arg1;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 @end
 

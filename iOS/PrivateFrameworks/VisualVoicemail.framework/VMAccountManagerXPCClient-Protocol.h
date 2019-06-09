@@ -9,6 +9,6 @@
 @class NSArray;
 
 @protocol VMAccountManagerXPCClient <NSObject>
-- (oneway void)updateAccounts:(NSArray *)arg1;
+- (void)updateAccounts:(NSArray *)arg1;
 @end
 

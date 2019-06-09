@@ -43,21 +43,10 @@
 - (void)pptFinishDistributionTest;
 - (void)pptStartDistributionTest;
 - (int)pptGetNextSize;
-- (void)readExtensionResumeTestOptions;
-- (void)readPPTTestingDefaults;
-- (_Bool)isResumeTest;
-- (_Bool)isRunningExtensionTestAsPartOfResumeTest;
-- (_Bool)isRunningExtensionPPTTest;
-- (_Bool)isRunningAudioRecordingPPTTest;
 - (void)applicationWillSuspend;
-- (void)standaloneTestFinishedByExtension:(id)arg1;
-- (void)resumeTestFinishedByExtension:(id)arg1;
-- (void)extensionFinishedLaunchTest:(id)arg1;
-- (void)finishedExtendedLaunchTestWithExtraResults:(id)arg1;
-- (void)finishedTest:(id)arg1 extraResults:(id)arg2 waitForNotification:(id)arg3 withTeardownBlock:(CDUnknownBlockType)arg4;
-- (void)startedTest:(id)arg1;
-- (void)applicationDidFinishLaunching;
+- (void)extensionFinishedTest:(id)arg1;
 - (id)_extendLaunchTest;
+- (void)applicationDidFinishLaunching;
 - (id)init;
 
 // Remaining properties

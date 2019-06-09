@@ -6,10 +6,11 @@
 
 #import <ContactsUICore/NSObject-Protocol.h>
 
-@class NSString;
+@class BSServiceConnectionEndpoint, NSString;
 @protocol CNUIUserActionCurator, CNUIUserActionDialRequestOpener, CNUIUserActionRecorder, CNUIUserActionURLOpener, CNUIUserActionUserActivityOpener;
 
 @protocol CNUIUserActionContext <NSObject>
+@property(copy, nonatomic) BSServiceConnectionEndpoint *connectionEndpoint;
 @property(copy, nonatomic) NSString *channelIdentifier;
 @property(readonly, nonatomic) id <CNUIUserActionCurator> actionCurator;
 @property(readonly, nonatomic) id <CNUIUserActionRecorder> actionRecorder;

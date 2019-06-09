@@ -8,19 +8,21 @@
 
 #import <ModelIO/MDLAssetResolver-Protocol.h>
 
-@class NSDictionary, NSString, NSURL;
+@class NSMutableDictionary, NSString, NSURL;
 
 @interface MDLArchiveAssetResolver : NSObject <MDLAssetResolver>
 {
     NSURL *_archiveURL;
-    NSDictionary *_archiveDictionary;
+    NSMutableDictionary *_archiveDictionary;
     NSString *_rootUSDPath;
 }
 
 - (void).cxx_destruct;
+- (void)removeAssetNamed:(id)arg1;
+- (id)assetNamesInArchive;
 - (id)resolveInsideArchiveWithAssetNamed:(id)arg1;
 - (id)resolveAssetNamed:(id)arg1;
-- (id)firstAssetPathInArchive;
+- (void)addResolvedAssetNamed:(id)arg1 offset:(unsigned long long)arg2 fileSize:(unsigned long long)arg3;
 - (_Bool)canResolveAssetNamed:(id)arg1;
 - (id)initWithURL:(id)arg1;
 

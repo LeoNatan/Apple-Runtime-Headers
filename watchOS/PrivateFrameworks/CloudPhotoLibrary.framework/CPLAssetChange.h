@@ -24,6 +24,8 @@
     int _duration;
     CLLocation *_location;
     NSArray *_keywords;
+    NSString *_mediaMetaDataType;
+    NSData *_mediaMetaData;
     NSString *_timeZoneName;
     NSNumber *_timeZoneOffset;
     NSString *_momentIdentifier;
@@ -87,6 +89,8 @@
 @property(copy, nonatomic) NSNumber *timeZoneOffset; // @synthesize timeZoneOffset=_timeZoneOffset;
 @property(copy, nonatomic) NSString *timeZoneName; // @synthesize timeZoneName=_timeZoneName;
 @property(nonatomic, getter=isHidden) _Bool hidden; // @synthesize hidden=_hidden;
+@property(retain, nonatomic) NSData *mediaMetaData; // @synthesize mediaMetaData=_mediaMetaData;
+@property(copy, nonatomic) NSString *mediaMetaDataType; // @synthesize mediaMetaDataType=_mediaMetaDataType;
 @property(copy, nonatomic) NSArray *keywords; // @synthesize keywords=_keywords;
 @property(retain, nonatomic) CLLocation *location; // @synthesize location=_location;
 @property(nonatomic) int duration; // @synthesize duration=_duration;

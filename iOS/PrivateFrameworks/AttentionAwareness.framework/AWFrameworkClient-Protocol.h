@@ -6,13 +6,10 @@
 
 #import <AttentionAwareness/NSObject-Protocol.h>
 
-@class AWAttentionEvent;
-@protocol AWUnitTestSampler;
+@class AWAttentionAwarenessClientState, AWAttentionEvent;
 
 @protocol AWFrameworkClient <NSObject>
-- (id <AWUnitTestSampler>)unitTestSampler;
-- (void)useUnitTestSampling:(_Bool)arg1;
-- (void)notifyPollEventType:(unsigned long long)arg1 event:(AWAttentionEvent *)arg2;
-- (void)notifyEvent:(AWAttentionEvent *)arg1;
+- (void)notifyPollEventType:(unsigned long long)arg1 event:(AWAttentionEvent *)arg2 clientState:(AWAttentionAwarenessClientState *)arg3;
+- (void)notifyEvent:(AWAttentionEvent *)arg1 clientState:(AWAttentionAwarenessClientState *)arg2;
 @end
 

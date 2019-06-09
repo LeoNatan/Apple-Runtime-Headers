@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSDictionary, NSNumber, NSString, NSURL;
+@class NSData, NSDictionary, NSNumber, NSString, NSURL, OS_remote_device;
 
 __attribute__((visibility("hidden")))
 @interface PersonalizedImage : NSObject
 {
     struct _AMDevice *_device;
+    OS_remote_device *_remoteDevice;
     NSURL *_bundlePathURL;
     NSDictionary *_mountedVolumeEntry;
     NSURL *_imagePathURL;
@@ -56,16 +57,21 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSURL *imagePathURL; // @synthesize imagePathURL=_imagePathURL;
 @property(retain, nonatomic) NSDictionary *mountedVolumeEntry; // @synthesize mountedVolumeEntry=_mountedVolumeEntry;
 @property(retain, nonatomic) NSURL *bundlePathURL; // @synthesize bundlePathURL=_bundlePathURL;
+@property(nonatomic) OS_remote_device *remoteDevice; // @synthesize remoteDevice=_remoteDevice;
 @property(nonatomic) struct _AMDevice *device; // @synthesize device=_device;
 - (int)mountImage:(id *)arg1;
+- (int)mountImageBridgeOS:(id)arg1 serverTicket:(id)arg2 imageDigest:(id)arg3 error:(id *)arg4;
 - (int)mountImage:(id)arg1 serverTicket:(id)arg2 imageDigest:(id)arg3 error:(id *)arg4;
+- (BOOL)initializeBridgeDeviceAttributes:(id *)arg1;
 - (BOOL)initializeDeviceAttributes:(id *)arg1;
 - (BOOL)initializeImageProperties:(id *)arg1;
 - (id)digestFile:(id)arg1 digestLength:(unsigned int)arg2 error:(id *)arg3;
 - (id)digestFileSha384:(id)arg1 error:(id *)arg2;
 - (id)digestFileSha1:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
+- (id)initWithRemoteDevice:(id)arg1 bundleURL:(id)arg2 imageVariant:(id)arg3 options:(id)arg4;
 - (id)initWithDevice:(struct _AMDevice *)arg1 bundleURL:(id)arg2 imageVariant:(id)arg3 options:(id)arg4;
+- (id)initWithDevice:(struct _AMDevice *)arg1 remoteDevice:(id)arg2 bundleURL:(id)arg3 imageVariant:(id)arg4 options:(id)arg5;
 
 @end
 

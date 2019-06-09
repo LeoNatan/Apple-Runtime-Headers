@@ -10,6 +10,7 @@
 
 @class NSString, WMFPlayer;
 
+__attribute__((visibility("hidden")))
 @interface WMFReader : NSObject <MFReader>
 {
     int m_recordsRead;

@@ -8,12 +8,11 @@
 
 #import <Photos/ICCameraDeviceDelegate-Protocol.h>
 
-@class ICCameraDevice, ICCameraDeviceRemovedItemsCoalescer, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSProgress, NSString;
+@class ICCameraDevice, ICCameraDeviceRemovedItemsCoalescer, NSArray, NSDate, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSProgress, NSString;
 @protocol OS_dispatch_queue, OS_dispatch_source;
 
 @interface PHImportDeviceSource : PHImportSource <ICCameraDeviceDelegate>
 {
-    NSMutableDictionary *_assetsByName;
     double _idleTimeout;
     NSDate *_timeoutStart;
     NSObject<OS_dispatch_source> *_idleTimer;
@@ -23,27 +22,27 @@
     NSMutableArray *_assetMetadataRequests;
     _Bool _waitingForAssetMetadataRequest;
     NSMutableArray *_assetThumbnailHighPriorityRequests;
+    NSMapTable *_assetDataRequestsByCameraItem;
     NSObject<OS_dispatch_queue> *_assetDataRequestQueue;
     _Bool _isEjecting;
     _Bool _ejectAfterDelete;
-    ICCameraDevice *_camera;
     NSObject<OS_dispatch_queue> *_deleteEjectQueue;
     ICCameraDeviceRemovedItemsCoalescer *_removalCoalescer;
     NSMutableSet *_removedCameraFiles;
     NSMutableDictionary *_assetByCameraFile;
     NSObject<OS_dispatch_queue> *_assetByCameraFileAccess;
-    CDUnknownBlockType _openSessionHandler;
     NSProgress *_deleteProgress;
     NSArray *_avchdAssets;
     NSObject<OS_dispatch_queue> *_serialHackQueue;
     NSMutableArray *_deleteJobs;
+    ICCameraDevice *_camera;
 }
 
+@property(retain) ICCameraDevice *camera; // @synthesize camera=_camera;
 @property(retain, nonatomic) NSMutableArray *deleteJobs; // @synthesize deleteJobs=_deleteJobs;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialHackQueue; // @synthesize serialHackQueue=_serialHackQueue;
 @property(retain, nonatomic) NSArray *avchdAssets; // @synthesize avchdAssets=_avchdAssets;
 @property(retain, nonatomic) NSProgress *deleteProgress; // @synthesize deleteProgress=_deleteProgress;
-@property(copy, nonatomic) CDUnknownBlockType openSessionHandler; // @synthesize openSessionHandler=_openSessionHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *assetByCameraFileAccess; // @synthesize assetByCameraFileAccess=_assetByCameraFileAccess;
 @property(retain, nonatomic) NSMutableDictionary *assetByCameraFile; // @synthesize assetByCameraFile=_assetByCameraFile;
 @property(nonatomic) _Bool ejectAfterDelete; // @synthesize ejectAfterDelete=_ejectAfterDelete;
@@ -51,9 +50,11 @@
 @property(retain, nonatomic) NSMutableSet *removedCameraFiles; // @synthesize removedCameraFiles=_removedCameraFiles;
 @property(retain, nonatomic) ICCameraDeviceRemovedItemsCoalescer *removalCoalescer; // @synthesize removalCoalescer=_removalCoalescer;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *deleteEjectQueue; // @synthesize deleteEjectQueue=_deleteEjectQueue;
-@property(retain) ICCameraDevice *camera; // @synthesize camera=_camera;
 - (void).cxx_destruct;
 - (void)deviceFinishedEnumeratingItems:(id)arg1;
+- (void)cameraDevice:(id)arg1 didReceiveMetadataForItem:(id)arg2;
+- (void)cameraDevice:(id)arg1 didReceiveThumbnailForItem:(id)arg2;
+- (void)cameraDeviceDidChangeCapability:(id)arg1;
 - (void)cameraDevice:(id)arg1 didRemoveItems:(id)arg2;
 - (void)cameraDevice:(id)arg1 didAddItems:(id)arg2;
 - (void)device:(id)arg1 didEncounterError:(id)arg2;
@@ -62,13 +63,15 @@
 - (void)deviceDidBecomeReady:(id)arg1;
 - (void)device:(id)arg1 didOpenSessionWithError:(id)arg2;
 - (void)didRemoveDevice:(id)arg1;
+- (_Bool)canReference;
 - (_Bool)isAvailable;
-- (id)uuid;
 - (void)eject;
 - (id)volumePath;
-- (_Bool)canEject;
+- (_Bool)isConnectedDevice;
+- (_Bool)canAutolaunch;
 - (_Bool)canDeleteContent;
 - (_Bool)isAppleDevice;
+- (struct CGImage *)icon;
 - (id)path;
 - (id)productKind;
 - (id)name;
@@ -76,7 +79,7 @@
 - (id)deleteImportAssets:(id)arg1 isConfirmed:(_Bool)arg2 isCancelable:(_Bool)arg3 atEnd:(CDUnknownBlockType)arg4;
 - (void)cancelAssetLoading;
 - (void)endWork;
-- (id)processItem:(id)arg1 applyingBlock:(CDUnknownBlockType)arg2;
+- (id)assetsByProcessingItem:(id)arg1;
 - (void)removeAssetForCameraFile:(id)arg1;
 - (id)importAssetForCameraFile:(id)arg1 create:(_Bool)arg2;
 - (void)beginWork;
@@ -88,6 +91,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dispatchAssetDataRequestAsync:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)setupDeviceTimeoutHandler;
+- (id)uuid;
 - (id)initWithDevice:(id)arg1;
 
 // Remaining properties

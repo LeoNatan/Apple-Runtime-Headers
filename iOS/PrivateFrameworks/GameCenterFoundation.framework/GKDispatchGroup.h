@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class GKThreadsafeDictionary, NSError, NSString;
+@class GKActivity, GKThreadsafeDictionary, NSError, NSString;
 @protocol OS_dispatch_group;
 
 @interface GKDispatchGroup : NSObject
@@ -19,6 +19,7 @@
     int _sequence;
     _Bool _loggingEnabled;
     id _result;
+    GKActivity *_activity;
 }
 
 + (id)mainQueue;
@@ -27,6 +28,7 @@
 + (id)dispatchGroup;
 + (id)dispatchGroupWithName:(id)arg1;
 + (void)waitUntilDone:(CDUnknownBlockType)arg1;
+@property(retain) GKActivity *activity; // @synthesize activity=_activity;
 @property(nonatomic, getter=isLoggingEnabled) _Bool loggingEnabled; // @synthesize loggingEnabled=_loggingEnabled;
 @property(retain) id result; // @synthesize result=_result;
 @property(retain) NSError *error; // @synthesize error=_error;
@@ -35,8 +37,8 @@
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)_values;
 - (void)join:(id)arg1 queue:(id)arg2 block:(CDUnknownBlockType)arg3;
-- (void)_waitWithDispatchTimeout:(unsigned long long)arg1;
-- (void)waitWithTimeout:(double)arg1;
+- (long long)_waitWithDispatchTimeout:(unsigned long long)arg1;
+- (long long)waitWithTimeout:(double)arg1;
 - (void)wait;
 - (void)notifyOnMainQueueWithBlock:(CDUnknownBlockType)arg1;
 - (void)notifyOnQueue:(id)arg1 block:(CDUnknownBlockType)arg2;

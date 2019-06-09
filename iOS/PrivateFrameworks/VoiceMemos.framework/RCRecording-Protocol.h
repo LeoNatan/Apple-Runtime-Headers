@@ -12,6 +12,8 @@
 @protocol RCRecording <NSFetchRequestResult, UIActivityItemSource>
 @property(readonly, nonatomic) AVAsset *avAsset;
 @property(readonly, nonatomic) _Bool uploaded;
+@property(nonatomic) _Bool recordedOnWatch;
+@property(readonly, nonatomic) _Bool downloading;
 @property(readonly, nonatomic) _Bool evicted;
 @property(readonly, nonatomic) _Bool editing;
 @property(readonly, nonatomic) _Bool manuallyRenamed;

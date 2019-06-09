@@ -20,6 +20,8 @@
     unsigned short _informative;
     unsigned int _command;
     NFApplet *_applet;
+    NSString *_keyIdentifier;
+    NSString *_readerIdentifier;
     NSString *_transactionIdentifier;
     NSDecimalNumber *_amount;
     NSString *_currency;
@@ -42,6 +44,8 @@
 @property(readonly, nonatomic) unsigned int command; // @synthesize command=_command;
 @property(readonly, nonatomic) BOOL didError; // @synthesize didError=_didError;
 @property(readonly, nonatomic) NSString *transactionIdentifier; // @synthesize transactionIdentifier=_transactionIdentifier;
+@property(readonly, nonatomic) NSString *readerIdentifier; // @synthesize readerIdentifier=_readerIdentifier;
+@property(readonly, nonatomic) NSString *keyIdentifier; // @synthesize keyIdentifier=_keyIdentifier;
 @property(readonly, nonatomic) NFApplet *applet; // @synthesize applet=_applet;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

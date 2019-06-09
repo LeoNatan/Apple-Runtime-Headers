@@ -8,15 +8,15 @@
 
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFMessageReceiver-Protocol.h>
-#import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDHome, HMFMessageDispatcher, HMFTimer, NSArray, NSMutableArray, NSObject, NSString, NSUUID;
+@class HMDHome, HMFMessageDispatcher, NSArray, NSMutableArray, NSObject, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
-@interface HMDAssistantCommandHelper : HMFObject <HMFMessageReceiver, HMFTimerDelegate, HMFLogging>
+@interface HMDAssistantCommandHelper : HMFObject <HMFMessageReceiver, HMFLogging>
 {
     _Bool _executingActionSet;
     CDUnknownBlockType _responseHandler;
+    CDUnknownBlockType _mediaResponseHandler;
     NSUUID *_messageId;
     HMDHome *_home;
     NSObject<OS_dispatch_queue> *_queue;
@@ -24,13 +24,15 @@
     NSUUID *_uuid;
     NSMutableArray *_responses;
     unsigned int _numErrors;
-    HMFTimer *_actionTimer;
     NSArray *_requests;
+    NSArray *_mediaRequests;
+    NSMutableArray *_mediaResponses;
 }
 
 + (id)logCategory;
+@property(retain, nonatomic) NSMutableArray *mediaResponses; // @synthesize mediaResponses=_mediaResponses;
+@property(retain, nonatomic) NSArray *mediaRequests; // @synthesize mediaRequests=_mediaRequests;
 @property(retain, nonatomic) NSArray *requests; // @synthesize requests=_requests;
-@property(retain, nonatomic) HMFTimer *actionTimer; // @synthesize actionTimer=_actionTimer;
 @property(nonatomic) _Bool executingActionSet; // @synthesize executingActionSet=_executingActionSet;
 @property(nonatomic) unsigned int numErrors; // @synthesize numErrors=_numErrors;
 @property(retain, nonatomic) NSMutableArray *responses; // @synthesize responses=_responses;
@@ -39,19 +41,18 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) NSUUID *messageId; // @synthesize messageId=_messageId;
+@property(copy, nonatomic) CDUnknownBlockType mediaResponseHandler; // @synthesize mediaResponseHandler=_mediaResponseHandler;
 @property(copy, nonatomic) CDUnknownBlockType responseHandler; // @synthesize responseHandler=_responseHandler;
 - (void).cxx_destruct;
 - (void)removeResponses:(id)arg1;
 - (void)addActionSetRequest:(id)arg1 actionSet:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)addWriteRequests:(id)arg1 home:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)addReadRequests:(id)arg1 home:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_handleAccessoryCharacteristicsChangedNotification:(id)arg1;
+- (void)addMediaWriteRequests:(id)arg1 withRequestProperty:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)__handleAccessoryCharacteristicsChangedNotification:(id)arg1;
 - (void)_reportResponses;
-- (void)timerDidFire:(id)arg1;
-- (void)_resetActionTimer;
-- (void)_startActionTimerWithTimeInterval:(double)arg1;
-- (void)_startReadWriteActionTimer;
-- (void)_startActionSetTimer;
+- (void)_reportResponsesForMediaRequests;
+- (void)timeoutAndReportResults;
 - (void)_register;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;

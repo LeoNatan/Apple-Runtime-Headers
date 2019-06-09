@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 + (id)bitwiseXor:(id)arg1 with:(id)arg2;
 + (id)bitwiseOr:(id)arg1 with:(id)arg2;
 + (id)bitwiseAnd:(id)arg1 with:(id)arg2;
++ (id)canonical:(id)arg1;
 + (id)distanceToLocation:(id)arg1 fromLocation:(id)arg2;
 + (id)now;
 + (id)objectFrom:(id)arg1 withIndex:(id)arg2;

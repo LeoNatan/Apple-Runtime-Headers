@@ -44,6 +44,7 @@
 - (oneway void)session:(id)arg1 player:(id)arg2 didChangeConnectionState:(long long)arg3;
 - (oneway void)session:(id)arg1 removedPlayer:(id)arg2;
 - (oneway void)session:(id)arg1 addedPlayer:(id)arg2;
+- (oneway void)localPlayerAcceptedCustomTournamentInvite;
 - (oneway void)didReceiveData:(id)arg1 reliably:(BOOL)arg2 forRecipients:(id)arg3 fromSender:(id)arg4;
 - (oneway void)didDisconnectFromParticipantWithID:(id)arg1;
 - (oneway void)didConnectToParticipantWithID:(id)arg1;
@@ -71,6 +72,7 @@
 - (oneway void)beginNetworkActivity;
 - (oneway void)getAuthenticatedPlayerIDWithHandler:(CDUnknownBlockType)arg1;
 - (oneway void)getAccountNameWithHandler:(CDUnknownBlockType)arg1;
+- (BOOL)restrictionEnabledForKey:(id)arg1;
 - (id)authenticatedLocalPlayersWithStatus:(unsigned long long)arg1;
 - (id)authenticatedPlayerInfo;
 - (BOOL)hasAuthenticatedAccount;

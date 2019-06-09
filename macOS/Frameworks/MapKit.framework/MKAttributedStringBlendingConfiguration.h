@@ -8,6 +8,7 @@
 
 @class MKAttributedStringVibrancySplitter;
 
+__attribute__((visibility("hidden")))
 @interface MKAttributedStringBlendingConfiguration : NSObject
 {
     MKAttributedStringVibrancySplitter *_vibrancySplitter;

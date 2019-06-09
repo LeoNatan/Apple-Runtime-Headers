@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADColor.h>
 
+__attribute__((visibility("hidden")))
 @interface OADSystemColor : OADColor
 {
     int mSystemColorID;

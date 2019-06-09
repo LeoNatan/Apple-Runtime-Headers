@@ -4,6 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#pragma mark Blocks
+
+typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
+
 #pragma mark Named Structures
 
 struct CATransform3D {
@@ -106,8 +110,18 @@ struct vector<unsigned short, std::__1::allocator<unsigned short>> {
 #pragma mark Typedef'd Structures
 
 typedef struct {
+    unsigned long long footprint;
+    unsigned long long peak;
+} CDStruct_ba838cea;
+
+typedef struct {
     float _field1;
 } CDStruct_37a3040a;
+
+typedef struct {
+    long long colorModel;
+    long long pixelEncoding;
+} CDStruct_e791d03f;
 
 typedef struct CDStruct_183601bc;
 

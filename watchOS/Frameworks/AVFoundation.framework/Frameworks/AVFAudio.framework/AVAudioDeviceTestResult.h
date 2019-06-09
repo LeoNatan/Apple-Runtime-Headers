@@ -15,16 +15,18 @@
     int _inputID;
     int _outputID;
     NSData *_data;
+    double _sampleRate;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) double sampleRate; // @synthesize sampleRate=_sampleRate;
 @property(readonly, nonatomic) NSData *data; // @synthesize data=_data;
 @property(nonatomic) int outputID; // @synthesize outputID=_outputID;
 @property(nonatomic) int inputID; // @synthesize inputID=_inputID;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithData:(id)arg1 inputID:(int)arg2 outputID:(int)arg3;
+- (id)initWithData:(id)arg1 inputID:(int)arg2 outputID:(int)arg3 sampleRate:(double)arg4;
 
 @end
 

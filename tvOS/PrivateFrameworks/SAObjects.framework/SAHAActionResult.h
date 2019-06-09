@@ -6,7 +6,7 @@
 
 #import <SAObjects/SADomainObject.h>
 
-@class NSString, SAHAAttributeValue, SAHAEntity;
+@class NSArray, NSString, SAHAAttributeValue, SAHAEntity;
 
 @interface SAHAActionResult : SADomainObject
 {
@@ -16,6 +16,8 @@
 + (id)actionResult;
 @property(retain, nonatomic) SAHAAttributeValue *resultValue;
 @property(copy, nonatomic) NSString *resultAttribute;
+@property(copy, nonatomic) NSString *requestActionId;
+@property(copy, nonatomic) NSArray *relatedEntityIds;
 @property(copy, nonatomic) NSString *outcome;
 @property(retain, nonatomic) SAHAEntity *entity;
 - (id)encodedClassName;

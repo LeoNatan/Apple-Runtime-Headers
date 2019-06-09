@@ -18,7 +18,6 @@
     struct _NSRange _compressedRange;
 }
 
-+ (id)_inflateError:(int)arg1;
 + (id)archiveEntryWithCentralHeader:(struct CentralHeader *)arg1 archiveData:(id)arg2;
 + (id)archiveEntry;
 @property(retain) NSData *contents; // @synthesize contents=_contents;
@@ -27,13 +26,11 @@
 @property struct _NSRange compressedRange; // @synthesize compressedRange=_compressedRange;
 @property long long uncompressedSize; // @synthesize uncompressedSize=_uncompressedSize;
 @property(retain) NSString *path; // @synthesize path=_path;
-- (id)inflate;
-- (void)inflateWithWriter:(CDUnknownBlockType)arg1;
+- (void).cxx_destruct;
 - (void)merge:(id)arg1;
 - (long long)compressedSize;
 - (id)fileName;
 - (id)description;
-- (void)dealloc;
 - (id)initWithDirectoryPath:(id)arg1;
 - (id)initWithContents:(id)arg1 path:(id)arg2;
 

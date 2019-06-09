@@ -25,6 +25,8 @@
 @property(nonatomic) _Bool resetsTransform; // @synthesize resetsTransform=_resetsTransform;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) CAAnimation *transformAnimation;
+- (id)decomposedTransformAnimation;
+- (_Bool)isScaleRotateTransformOrder;
 - (void)clearTransformStack;
 -     // Error parsing type: {?=[4]}16@0:4d8, name: localTransformAtTime:
 -     // Error parsing type: v72@0:4{?=[4]}8, name: setLocalTransform:
@@ -36,6 +38,7 @@
 -     // Error parsing type: {?=[4]}16@0:4d8, name: float4x4AtTime:
 - (unsigned int)count;
 - (id)animatedValueWithName:(id)arg1;
+- (id)addOrientOp:(id)arg1 inverse:(_Bool)arg2;
 - (id)addMatrixOp:(id)arg1 inverse:(_Bool)arg2;
 - (id)addScaleOp:(id)arg1 inverse:(_Bool)arg2;
 - (id)addRotateOp:(id)arg1 order:(unsigned int)arg2 inverse:(_Bool)arg3;
@@ -45,6 +48,7 @@
 - (id)addTranslateOp:(id)arg1 inverse:(_Bool)arg2;
 - (id)animatedScalarWithName:(id)arg1 shouldCreateIfMissing:(_Bool)arg2;
 - (id)animatedMatrix4x4WithName:(id)arg1 shouldCreateIfMissing:(_Bool)arg2;
+- (id)animatedQuaternionWithName:(id)arg1 shouldCreateIfMissing:(_Bool)arg2;
 - (id)animatedVector4WithName:(id)arg1 shouldCreateIfMissing:(_Bool)arg2;
 - (id)animatedVector3WithName:(id)arg1 shouldCreateIfMissing:(_Bool)arg2;
 - (id)init;

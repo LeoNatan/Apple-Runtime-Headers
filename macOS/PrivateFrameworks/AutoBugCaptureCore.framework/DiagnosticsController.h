@@ -8,6 +8,7 @@
 
 @class DiagCollectionClient, NSMutableDictionary, NSNumber, NSString;
 
+__attribute__((visibility("hidden")))
 @interface DiagnosticsController : NSObject
 {
     DiagCollectionClient *deCollector;

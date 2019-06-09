@@ -28,7 +28,7 @@
 @property(nonatomic) unsigned long long season; // @synthesize season=_season;
 @property(copy, nonatomic) NSString *sortSeries; // @synthesize sortSeries=_sortSeries;
 @property(copy, nonatomic) NSString *series; // @synthesize series=_series;
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end
 

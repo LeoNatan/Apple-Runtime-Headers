@@ -8,27 +8,32 @@
 
 #import <AccessibilityFoundation/AXFScreenSource-Protocol.h>
 
-@class NSArray, NSString;
-@protocol AXFScreen, NSLocking;
+@class AXFScreen, NSArray, NSString;
+@protocol AXFScreenSourceDelegate, NSLocking;
 
 @interface _AXFScreenSourceHardware : NSObject <AXFScreenSource>
 {
+    BOOL __started;
+    id <AXFScreenSourceDelegate> _delegate;
     NSArray *_screens;
-    id <AXFScreen> _mainScreen;
+    AXFScreen *_mainScreen;
     id <NSLocking> __screenInfoCacheLock;
     struct CGRect _totalScreenBounds;
 }
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 @property(retain, nonatomic) id <NSLocking> _screenInfoCacheLock; // @synthesize _screenInfoCacheLock=__screenInfoCacheLock;
+@property(nonatomic) BOOL _started; // @synthesize _started=__started;
+@property(nonatomic) struct CGRect totalScreenBounds; // @synthesize totalScreenBounds=_totalScreenBounds;
+@property(retain, nonatomic) AXFScreen *mainScreen; // @synthesize mainScreen=_mainScreen;
+@property(retain, nonatomic) NSArray *screens; // @synthesize screens=_screens;
+@property(nonatomic) __weak id <AXFScreenSourceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_refreshScreenInfos;
 - (void)_activeDisplayDidChange:(id)arg1;
-- (void)_screenParametersDidChange:(id)arg1;
-@property(readonly) struct CGRect totalScreenBounds; // @synthesize totalScreenBounds=_totalScreenBounds;
-@property(readonly) NSArray *screens; // @synthesize screens=_screens;
-@property(readonly) id <AXFScreen> mainScreen; // @synthesize mainScreen=_mainScreen;
-- (void)dealloc;
+- (void)_didChangeScreenParameters:(id)arg1;
+- (void)stop;
+- (void)start;
 - (id)init;
 
 // Remaining properties

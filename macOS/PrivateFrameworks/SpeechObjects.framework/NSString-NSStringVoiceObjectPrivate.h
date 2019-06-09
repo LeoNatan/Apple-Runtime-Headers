@@ -9,5 +9,7 @@
 @interface NSString (NSStringVoiceObjectPrivate)
 - (BOOL)containsWords:(id)arg1;
 - (BOOL)containsWordStem:(id)arg1;
+- (BOOL)containsWords:(id)arg1;
+- (BOOL)containsWordStem:(id)arg1;
 @end
 

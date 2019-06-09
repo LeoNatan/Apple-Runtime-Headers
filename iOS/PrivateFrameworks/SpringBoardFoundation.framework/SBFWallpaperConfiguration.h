@@ -10,7 +10,7 @@
 #import <SpringBoardFoundation/NSCopying-Protocol.h>
 #import <SpringBoardFoundation/NSSecureCoding-Protocol.h>
 
-@class NSData, NSDictionary, NSString, NSURL, SBFWallpaperOptions, SBWallpaperImage, UIColor, UIImage;
+@class NSData, NSDictionary, NSString, NSURL, SBFGradient, SBFWallpaperOptions, SBWallpaperImage, UIColor, UIImage;
 @protocol SBFProceduralWallpaper;
 
 @interface SBFWallpaperConfiguration : NSObject <NSCopying, BSDescriptionProviding, NSSecureCoding>
@@ -21,17 +21,20 @@
     UIImage *_wallpaperOriginalImage;
     UIImage *_wallpaperThumbnailImage;
     NSData *_wallpaperThumbnailImageData;
+    NSData *_wallpaperImageHashData;
     SBFWallpaperOptions *_wallpaperOptions;
     NSDictionary *_proceduralWallpaperInfo;
     NSURL *_videoURL;
     NSURL *_originalVideoURL;
     UIColor *_wallpaperColor;
     NSString *_wallpaperColorName;
+    SBFGradient *_wallpaperGradient;
     long long _variant;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) long long variant; // @synthesize variant=_variant;
+@property(copy, nonatomic) SBFGradient *wallpaperGradient; // @synthesize wallpaperGradient=_wallpaperGradient;
 @property(copy, nonatomic) NSString *wallpaperColorName; // @synthesize wallpaperColorName=_wallpaperColorName;
 @property(copy, nonatomic) UIColor *wallpaperColor; // @synthesize wallpaperColor=_wallpaperColor;
 @property(copy, nonatomic) NSURL *originalVideoURL; // @synthesize originalVideoURL=_originalVideoURL;
@@ -39,6 +42,7 @@
 @property(copy, nonatomic) NSDictionary *proceduralWallpaperInfo; // @synthesize proceduralWallpaperInfo=_proceduralWallpaperInfo;
 @property(retain, nonatomic) id <SBFProceduralWallpaper> proceduralWallpaper; // @synthesize proceduralWallpaper=_proceduralWallpaper;
 @property(copy, nonatomic) SBFWallpaperOptions *wallpaperOptions; // @synthesize wallpaperOptions=_wallpaperOptions;
+@property(copy, nonatomic) NSData *wallpaperImageHashData; // @synthesize wallpaperImageHashData=_wallpaperImageHashData;
 @property(copy, nonatomic) NSData *wallpaperThumbnailImageData; // @synthesize wallpaperThumbnailImageData=_wallpaperThumbnailImageData;
 @property(retain, nonatomic) UIImage *wallpaperThumbnailImage; // @synthesize wallpaperThumbnailImage=_wallpaperThumbnailImage;
 @property(retain, nonatomic) UIImage *wallpaperOriginalImage; // @synthesize wallpaperOriginalImage=_wallpaperOriginalImage;

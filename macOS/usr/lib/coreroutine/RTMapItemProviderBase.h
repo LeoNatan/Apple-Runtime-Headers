@@ -15,6 +15,8 @@
 
 @property(readonly, nonatomic) RTDistanceCalculator *distanceCalculator; // @synthesize distanceCalculator=_distanceCalculator;
 - (void).cxx_destruct;
+- (id)filterInferredMapItems:(id)arg1 byDistance:(double)arg2 fromLocation:(id)arg3 error:(id *)arg4;
+- (id)filterInferredMapItems:(id)arg1 byDistance:(double)arg2 fromLocation:(id)arg3 andAppendSource:(unsigned long long)arg4 error:(id *)arg5;
 - (id)filter:(id)arg1 byDistance:(double)arg2 fromLocation:(id)arg3 error:(id *)arg4;
 - (id)filter:(id)arg1 byDistance:(double)arg2 fromLocation:(id)arg3 andAppendSource:(unsigned long long)arg4 error:(id *)arg5;
 - (id)initWithDistanceCalculator:(id)arg1;

@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class NSString, NUCacheNodeRegistry, NUGLContext, NUGLContextPool, NUJSContextPool, NUPlatform, NUPurgeableStoragePool, NURenderNodeCache, NURenderPipelineRegistry, NUScheduler, NUSchemaRegistry;
-@protocol NUStorageFactory;
+@protocol NUSlowMotionVideoFactory, NUStorageFactory;
 
 @interface NUFactory : NSObject
 {
@@ -25,11 +25,13 @@
     NUPlatform *_platform;
     NUJSContextPool *_sharedJavaScriptContextPool;
     NUCacheNodeRegistry *_cacheNodeRegistry;
+    id <NUSlowMotionVideoFactory> _slomoFactory;
 }
 
 + (void)reset;
 + (void)setSharedFactory:(id)arg1;
 + (id)sharedFactory;
+@property(retain, nonatomic) id <NUSlowMotionVideoFactory> slomoFactory; // @synthesize slomoFactory=_slomoFactory;
 @property(retain, nonatomic) NUCacheNodeRegistry *cacheNodeRegistry; // @synthesize cacheNodeRegistry=_cacheNodeRegistry;
 @property(retain, nonatomic) NUJSContextPool *sharedJavaScriptContextPool; // @synthesize sharedJavaScriptContextPool=_sharedJavaScriptContextPool;
 @property(retain, nonatomic) NUPlatform *platform; // @synthesize platform=_platform;

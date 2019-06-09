@@ -23,6 +23,7 @@
 @property(copy, nonatomic) NSArray *displayTypeContextItems; // @synthesize displayTypeContextItems=_displayTypeContextItems;
 - (void).cxx_destruct;
 - (void)contextView:(id)arg1 didTapOnInfoButtonAtIndex:(int)arg2;
+- (void)contextView:(id)arg1 didDeselectItemAtIndex:(int)arg2;
 - (void)contextView:(id)arg1 didSelectItemAtIndex:(int)arg2;
 - (void)selectItemAtIndex:(int)arg1 animated:(_Bool)arg2 scrollPosition:(unsigned int)arg3;
 - (void)setupView;

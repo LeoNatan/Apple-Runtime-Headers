@@ -60,7 +60,7 @@
 - (NSArray *)facesFromAsset:(PHAsset *)arg1;
 - (NSSet *)unverifiedVisibleFacesFromFaceGroupContainingFacesWithClusterSequenceNumbers:(NSArray *)arg1 withFaceprintVersion:(unsigned int)arg2;
 - (NSArray *)deterministicallyOrderedFaceIdentifiersWithLocalIdentifiers:(NSArray *)arg1 faceprintVersion:(unsigned int)arg2;
-- (NSArray *)facesForClusteringWithLocalIdentifiers:(NSArray *)arg1 faceprintVersion:(unsigned int)arg2 excludeClustered:(_Bool)arg3;
+- (NSArray *)facesForClusteringWithLocalIdentifiers:(NSArray *)arg1 faceprintVersion:(unsigned int)arg2 excludeClustered:(_Bool)arg3 groupingIdentifiers:(NSMutableArray *)arg4;
 - (NSSet *)unclusteredClusteringEligibleFaceLocalIdentifiers:(id *)arg1;
 - (NSSet *)faceLocalIdentifiersInFaceGroupWithLocalIdentifier:(NSString *)arg1 error:(id *)arg2;
 - (NSSet *)facesForFaceLocalIdentifiers:(NSArray *)arg1 error:(id *)arg2;

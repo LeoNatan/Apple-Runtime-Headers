@@ -6,15 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class CSIndexConnection, CSIndexingQueue, NSMutableArray, NSString;
+@class CSIndexConnection, CSIndexingQueue, NSMutableArray, NSNumber, NSString;
 @protocol CSSearchableIndexDelegate, OS_dispatch_queue;
 
 @interface CSSearchableIndex : NSObject
 {
     CSIndexingQueue *_activityQueue;
     _Bool _batchOpen;
-    int _awakeNotifyToken;
-    int _indexID;
     id <CSSearchableIndexDelegate> _indexDelegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     NSString *_name;
@@ -23,11 +21,13 @@
     NSMutableArray *_batchedItemsToIndex;
     NSMutableArray *_batchedItemIdentifiersToDelete;
     long long _options;
+    NSNumber *_indexID;
 }
 
 + (_Bool)activityShouldBeIndexed:(id)arg1 bundleID:(id)arg2;
 + (id)mainBundleLocalizedString;
 + (id)mainBundleID;
++ (void)volumeMountedAtURL:(id)arg1 withOptions:(id)arg2;
 + (void)_setLastUpdateTime;
 + (double)lastUpdateTime;
 + (void)notifyIndexDelegates;
@@ -38,9 +38,8 @@
 + (id)codedUniqueIdentifiers:(id)arg1;
 + (void)initialize;
 + (_Bool)isIndexingAvailable;
-@property(readonly, nonatomic) int indexID; // @synthesize indexID=_indexID;
+@property(readonly, nonatomic) NSNumber *indexID; // @synthesize indexID=_indexID;
 @property(nonatomic) _Bool batchOpen; // @synthesize batchOpen=_batchOpen;
-@property(nonatomic) int awakeNotifyToken; // @synthesize awakeNotifyToken=_awakeNotifyToken;
 @property(nonatomic) long long options; // @synthesize options=_options;
 @property(retain, nonatomic) NSMutableArray *batchedItemIdentifiersToDelete; // @synthesize batchedItemIdentifiersToDelete=_batchedItemIdentifiersToDelete;
 @property(retain, nonatomic) NSMutableArray *batchedItemsToIndex; // @synthesize batchedItemsToIndex=_batchedItemsToIndex;
@@ -63,9 +62,7 @@
 - (void)deleteInteractionsWithIdentifiers:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)addInteraction:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addInteraction:(id)arg1 bundleID:(id)arg2 protectionClass:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)performIndexJob:(id)arg1;
-- (void)performIndexJob:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
-- (void)_performIndexJob:(id)arg1 acknowledgementHandler:(CDUnknownBlockType)arg2;
+- (void)performIndexJob:(id)arg1 protectionClass:(id)arg2 acknowledgementHandler:(CDUnknownBlockType)arg3;
 - (void)performDataMigrationWithTimeout:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)flushUserActivities;
 - (void)deleteUserActivitiesWithPersistentIdentifiers:(id)arg1 bundleID:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -88,6 +85,7 @@
 - (void)deleteSearchableItemsWithDomainIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteSearchableItemsWithIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_standardizeItems:(id)arg1;
+- (void)_setFPAttributes:(id)arg1;
 - (void)_setMailMessageAttributes:(id)arg1;
 - (void)willModifySearchableItemsWithIdentifiers:(id)arg1 protectionClass:(id)arg2 forBundleID:(id)arg3 options:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)willModifySearchableItemsWithIdentifiers:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -106,10 +104,8 @@
 - (void)beginIndexBatch;
 - (_Bool)_supportsBatching;
 @property __weak id <CSSearchableIndexDelegate> indexDelegate; // @synthesize indexDelegate=_indexDelegate;
-- (void)_checkInWithIndexDelegate:(id)arg1 reason:(id)arg2;
+- (void)_delegateCheckIn:(id)arg1;
 - (id)xpc_dictionary_for_command:(const char *)arg1 requiresInitialization:(_Bool)arg2;
-- (void)_registerAwakeNotifyToken;
-- (void)_cancelAwakeNotifyToken;
 @property(readonly, nonatomic) CSIndexingQueue *activityQueue;
 - (void)_makeActivityQueueIfNecessary;
 - (void)dealloc;

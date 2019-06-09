@@ -13,20 +13,22 @@
 {
     CSLPISystemSleepObserver *_systemSleepObserver;
     CSLSConcurrentObserverStore<CSLPISystemSleepGlobalObserverObserver> *_observerStore;
+    _Bool _sleepImminent;
 }
 
 + (id)sharedInstance;
+@property(getter=isSleepImminent) _Bool sleepImminent; // @synthesize sleepImminent=_sleepImminent;
 - (void).cxx_destruct;
 - (void)_stopObserving;
 - (void)_startObserving;
-- (void)_systemWake;
-- (void)_sleepImminent;
+- (void)_hasPoweredOn;
+- (void)_willSleep;
 - (_Bool)_canSleep;
 - (_Bool)_observeWithAction:(unsigned int)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
-@property(readonly, getter=isSleepImminent) _Bool sleepImminent;
 - (id)description;
+- (void)dealloc;
 - (id)init;
 
 @end

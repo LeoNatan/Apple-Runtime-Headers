@@ -10,7 +10,6 @@
 
 @class NSArray;
 
-__attribute__((visibility("hidden")))
 @interface IPAImageTransformSequence : NSObject <IPAImageTransform>
 {
     NSArray *_transforms;

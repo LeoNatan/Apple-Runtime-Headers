@@ -13,5 +13,6 @@
 - (_Bool)safari_toggleBoolForKey:(id)arg1;
 - (void)safari_setDate:(id)arg1 forKey:(id)arg2;
 - (id)safari_dateForKey:(id)arg1;
+- (id)safari_numberForKey:(id)arg1;
 @end
 

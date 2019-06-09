@@ -10,6 +10,7 @@
 
 @protocol SGSuggestHistoryObserver <NSObject>
 - (void)hashesDidChange;
+- (void)processNewConfirmedOrRejectedReminderHashes:(NSSet *)arg1;
 - (void)processNewConfirmOrRejectEventHashes:(NSSet *)arg1;
 @end
 

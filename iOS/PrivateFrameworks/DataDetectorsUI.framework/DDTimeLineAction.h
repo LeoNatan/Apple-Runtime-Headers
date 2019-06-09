@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 + (id)viewControllerProviderClass;
 - (void).cxx_destruct;
 - (id)commitURL;
+- (id)menuActionClasses;
 - (id)previewActions;
 - (id)platterTitle;
 - (id)startDate;

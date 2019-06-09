@@ -8,23 +8,34 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, PBUnknownFields;
+@class NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDBatchSpatialLookupResult : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_spatialEventLookupResults;
     NSMutableArray *_spatialPlaceLookupResults;
     int _statusCode;
-    CDStruct_bcb1eac0 _has;
+    struct {
+        unsigned int has_statusCode:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_spatialEventLookupResults:1;
+        unsigned int read_spatialPlaceLookupResults:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_spatialEventLookupResults:1;
+        unsigned int wrote_spatialPlaceLookupResults:1;
+        unsigned int wrote_statusCode:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)spatialEventLookupResultType;
 + (Class)spatialPlaceLookupResultType;
-@property(retain, nonatomic) NSMutableArray *spatialEventLookupResults; // @synthesize spatialEventLookupResults=_spatialEventLookupResults;
-@property(retain, nonatomic) NSMutableArray *spatialPlaceLookupResults; // @synthesize spatialPlaceLookupResults=_spatialPlaceLookupResults;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,20 +44,27 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)spatialEventLookupResultAtIndex:(unsigned long long)arg1;
 - (unsigned long long)spatialEventLookupResultsCount;
+- (void)_addNoFlagsSpatialEventLookupResult:(id)arg1;
 - (void)addSpatialEventLookupResult:(id)arg1;
 - (void)clearSpatialEventLookupResults;
+@property(retain, nonatomic) NSMutableArray *spatialEventLookupResults;
+- (void)_readSpatialEventLookupResults;
 - (id)spatialPlaceLookupResultAtIndex:(unsigned long long)arg1;
 - (unsigned long long)spatialPlaceLookupResultsCount;
+- (void)_addNoFlagsSpatialPlaceLookupResult:(id)arg1;
 - (void)addSpatialPlaceLookupResult:(id)arg1;
 - (void)clearSpatialPlaceLookupResults;
+@property(retain, nonatomic) NSMutableArray *spatialPlaceLookupResults;
+- (void)_readSpatialPlaceLookupResults;
 - (int)StringAsStatusCode:(id)arg1;
 - (id)statusCodeAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatusCode;
-@property(nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
+@property(nonatomic) int statusCode;
 
 @end
 

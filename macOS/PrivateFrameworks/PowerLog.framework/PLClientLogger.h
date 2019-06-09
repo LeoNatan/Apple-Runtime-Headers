@@ -9,6 +9,7 @@
 @class NSMutableArray, NSMutableDictionary, NSSet, NSString;
 @protocol OS_dispatch_queue, OS_xpc_object;
 
+__attribute__((visibility("hidden")))
 @interface PLClientLogger : NSObject
 {
     BOOL _clientDebug;
@@ -23,6 +24,7 @@
     NSMutableDictionary *_permissionCache;
     NSMutableDictionary *_pendingTaskCache;
     NSMutableArray *_batchedTaskCache;
+    NSMutableDictionary *_eventFilterSaved;
     NSObject<OS_dispatch_queue> *_xpcConnectionQueue;
     NSObject<OS_dispatch_queue> *_xpcConnectionHelperQueue;
     NSObject<OS_xpc_object> *_xpcConnection;
@@ -44,6 +46,7 @@
 @property(retain, nonatomic) NSObject<OS_xpc_object> *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(retain) NSObject<OS_dispatch_queue> *xpcConnectionHelperQueue; // @synthesize xpcConnectionHelperQueue=_xpcConnectionHelperQueue;
 @property(retain) NSObject<OS_dispatch_queue> *xpcConnectionQueue; // @synthesize xpcConnectionQueue=_xpcConnectionQueue;
+@property(retain) NSMutableDictionary *eventFilterSaved; // @synthesize eventFilterSaved=_eventFilterSaved;
 @property(retain) NSMutableArray *batchedTaskCache; // @synthesize batchedTaskCache=_batchedTaskCache;
 @property(retain) NSMutableDictionary *pendingTaskCache; // @synthesize pendingTaskCache=_pendingTaskCache;
 @property(retain) NSMutableDictionary *permissionCache; // @synthesize permissionCache=_permissionCache;

@@ -10,8 +10,11 @@
 {
 }
 
++ (_Bool)_isSerializableAccessibilityElement;
++ (void)_accessibilityPerformValidations:(id)arg1;
 + (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
+- (_Bool)_accessibilityIsFKARunningForFocusItem;
 - (_Bool)_accessibilitySupportsHandwriting;
 - (id)_accessibilityUserTestingVisibleAncestor;
 - (_Bool)_accessibilityViewHierarchyHasNativeFocus;

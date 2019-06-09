@@ -8,21 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDResolvedItem, PBUnknownFields;
+@class GEOPDResolvedItem, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDDirectionIntent : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDResolvedItem *_destination;
     GEOPDResolvedItem *_origin;
     int _transportType;
-    CDStruct_a995201b _has;
+    struct {
+        unsigned int has_transportType:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_destination:1;
+        unsigned int read_origin:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_destination:1;
+        unsigned int wrote_origin:1;
+        unsigned int wrote_transportType:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDResolvedItem *destination; // @synthesize destination=_destination;
-@property(retain, nonatomic) GEOPDResolvedItem *origin; // @synthesize origin=_origin;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -31,14 +42,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsTransportType:(id)arg1;
 - (id)transportTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasTransportType;
-@property(nonatomic) int transportType; // @synthesize transportType=_transportType;
+@property(nonatomic) int transportType;
+@property(retain, nonatomic) GEOPDResolvedItem *destination;
 @property(readonly, nonatomic) _Bool hasDestination;
+- (void)_readDestination;
+@property(retain, nonatomic) GEOPDResolvedItem *origin;
 @property(readonly, nonatomic) _Bool hasOrigin;
+- (void)_readOrigin;
 
 @end
 

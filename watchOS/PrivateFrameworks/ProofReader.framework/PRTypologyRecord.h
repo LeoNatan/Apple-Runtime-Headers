@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableArray, NSString, NSValue;
 
+__attribute__((visibility("hidden")))
 @interface PRTypologyRecord : NSObject
 {
     NSString *_string;

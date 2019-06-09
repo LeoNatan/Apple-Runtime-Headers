@@ -6,25 +6,55 @@
 
 #import <Photos/PHObject.h>
 
-@class NSString;
+@class NSArray, NSDate, NSManagedObjectID, NSSortDescriptor, NSString;
 
 @interface PHCollection : PHObject
 {
-    NSString *_transientIdentifier;
+    BOOL _customSortAscending;
+    unsigned int _customSortKey;
+    unsigned long long _estimatedPhotosCount;
+    unsigned long long _estimatedVideosCount;
+    NSDate *_creationDate;
+    NSString *_localizedSubtitle;
 }
 
-+ (id)photoLibraryFromCollection:(id)arg1 defaultToSharedLibrary:(BOOL)arg2;
++ (id)fetchMomentsForPersonsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
++ (id)fetchMomentsForFacesWithLocalIdentifiers:(id)arg1 options:(id)arg2;
++ (id)fetchMomentsForAssetsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
 + (id)fetchTopLevelUserCollectionsWithOptions:(id)arg1;
 + (id)fetchCollectionsInCollectionList:(id)arg1 options:(id)arg2;
++ (id)transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
++ (id)entityKeyMap;
++ (BOOL)managedObjectSupportsTrashedState;
++ (id)fetchType;
++ (id)managedEntityName;
+@property(readonly, nonatomic) unsigned int customSortKey; // @synthesize customSortKey=_customSortKey;
+@property(readonly, nonatomic) BOOL customSortAscending; // @synthesize customSortAscending=_customSortAscending;
+@property(readonly, nonatomic) NSString *localizedSubtitle; // @synthesize localizedSubtitle=_localizedSubtitle;
+@property(readonly, nonatomic) NSDate *creationDate; // @synthesize creationDate=_creationDate;
+@property(readonly, nonatomic) unsigned long long estimatedVideosCount; // @synthesize estimatedVideosCount=_estimatedVideosCount;
+@property(readonly, nonatomic) unsigned long long estimatedPhotosCount; // @synthesize estimatedPhotosCount=_estimatedPhotosCount;
 - (void).cxx_destruct;
 - (id)description;
-@property(readonly, nonatomic) NSString *transientIdentifier;
-@property(readonly, nonatomic) NSString *localizedSubtitle;
+@property(readonly, nonatomic) BOOL isUserSmartAlbum;
+@property(readonly, nonatomic) BOOL isAlbumContentTitleSort;
+@property(readonly, nonatomic) BOOL isAlbumContentSort;
+@property(readonly, copy, nonatomic) NSSortDescriptor *defaultSortDescriptor;
+@property(readonly, copy, nonatomic) NSString *effectiveCustomSortKey;
+- (id)_effectiveSortDescriptorsFromCustomSortKey:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *effectiveCustomSortDescriptors;
+- (unsigned long long)ancestryIndexOfCollectionList:(id)arg1 context:(id)arg2;
+@property(readonly, nonatomic) NSManagedObjectID *parentFolderID;
+- (unsigned long long)collectionFixedOrderPriority;
+- (BOOL)collectionHasFixedOrder;
+@property(readonly, nonatomic, getter=isTrashed) BOOL trashed;
+@property(readonly, nonatomic) BOOL hasLocationInfo;
+@property(readonly, nonatomic) BOOL hasLocalizedTitle;
 @property(readonly, nonatomic) NSString *localizedTitle;
 - (BOOL)canPerformEditOperation:(long long)arg1;
 @property(readonly, nonatomic) BOOL canContainCollections;
 @property(readonly, nonatomic) BOOL canContainAssets;
-- (id)initWithModel:(id)arg1 photoLibrary:(id)arg2;
+- (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 
 @end
 

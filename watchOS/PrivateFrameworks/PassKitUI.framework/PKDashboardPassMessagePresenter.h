@@ -7,19 +7,23 @@
 #import <objc/NSObject.h>
 
 #import <PassKitUI/PKDashboardItemPresenter-Protocol.h>
+#import <PassKitUI/PKDashboardMessagesViewDelegate-Protocol.h>
 
-@class NSMutableArray, NSString, PKDashboardMessagesView, PKPassGroupView, UICollectionView, UIScrollView;
+@class NSMutableArray, NSString, PKDashboardMessagesView, PKPassGroupView, UIScrollView;
 
-@interface PKDashboardPassMessagePresenter : NSObject <PKDashboardItemPresenter>
+@interface PKDashboardPassMessagePresenter : NSObject <PKDashboardMessagesViewDelegate, PKDashboardItemPresenter>
 {
     PKPassGroupView *_groupView;
     PKDashboardMessagesView *_sampleMessageView;
-    UICollectionView *_collectionView;
     NSMutableArray *_tablesViews;
     UIScrollView *_scrollView;
+    unsigned int _currentIndex;
+    NSString *_currentIdentifier;
 }
 
 - (void).cxx_destruct;
+- (unsigned int)_indexForIdentifier:(id)arg1 inMessages:(id)arg2;
+- (void)messagesView:(id)arg1 scrolledToMessageWithIdentifier:(id)arg2;
 - (void)traitCollectionDidChangeFromTrait:(id)arg1 toTrait:(id)arg2 inCollectionView:(id)arg3;
 - (void)_configureCell:(id)arg1 forItem:(id)arg2 inCollectionView:(id)arg3 forIndexPath:(id)arg4;
 - (void)didSelectItem:(id)arg1 inCollectionView:(id)arg2 atIndexPath:(id)arg3;

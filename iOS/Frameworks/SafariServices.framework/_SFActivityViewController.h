@@ -6,37 +6,54 @@
 
 #import <UIKit/UIActivityViewController.h>
 
-@class LPMetadataProvider, NSString, NSURL, _SFPrintController, _SFSafariSharingExtensionController;
+#import <SafariServices/_SFActivityItemCustomizationDelegate-Protocol.h>
+
+@class NSArray, NSString, NSURL, _SFActivityItemCustomizationController, _SFActivityItemProviderCollection, _SFPrintController, _SFSafariSharingExtensionController;
 @protocol _SFActivityViewControllerDelegate;
 
-@interface _SFActivityViewController : UIActivityViewController
+@interface _SFActivityViewController : UIActivityViewController <_SFActivityItemCustomizationDelegate>
 {
-    LPMetadataProvider *_pendingMessageMetadataProvider;
     _SFPrintController *_printController;
+    _SFActivityItemProviderCollection *_itemProviderCollection;
+    NSArray *_initialApplicationActivities;
     _SFSafariSharingExtensionController *_sharingExtensionController;
     id <_SFActivityViewControllerDelegate> _delegate;
+    _SFActivityItemCustomizationController *_customizationController;
     NSURL *_sharingURL;
+    NSArray *_activityItemProviders;
     NSString *_currentExtensionIdentifier;
 }
 
 + (id)activeWebPageExtensionItemForURL:(id)arg1 withPreviewImageHandler:(CDUnknownBlockType)arg2;
 @property(copy, nonatomic) NSString *currentExtensionIdentifier; // @synthesize currentExtensionIdentifier=_currentExtensionIdentifier;
+@property(readonly, nonatomic) NSArray *activityItemProviders; // @synthesize activityItemProviders=_activityItemProviders;
 @property(retain, nonatomic) NSURL *sharingURL; // @synthesize sharingURL=_sharingURL;
+@property(retain, nonatomic) _SFActivityItemCustomizationController *customizationController; // @synthesize customizationController=_customizationController;
 @property(nonatomic) __weak id <_SFActivityViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) __weak _SFSafariSharingExtensionController *sharingExtensionController; // @synthesize sharingExtensionController=_sharingExtensionController;
 - (void).cxx_destruct;
-- (void)prepareMessageActivity:(id)arg1 withWebView:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)customizationControllerCustomizationsDidChange:(id)arg1;
 - (void)_processJavaScriptFinalizeReturnedItems:(id)arg1 forExtension:(id)arg2;
 - (id)_extensionItemForExtensionActivity:(id)arg1;
 - (id)_javaScriptProcessingFileURLInExtension:(id)arg1;
 - (void)prepareJavaScriptExtensionItemForActivity:(id)arg1;
+- (void)_updateActivityItems:(id)arg1;
 - (void)_preparePrint:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_prepareActivity:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_performActivity:(id)arg1;
 - (void)_executeActivity;
+- (_Bool)_containsProviderForDownloadActivityAndGetMIMEType:(id *)arg1 uti:(id *)arg2;
 - (void)activityDidComplete:(id)arg1 withReturnedItems:(id)arg2 success:(_Bool)arg3;
 - (void)_updatePrintControllerWithActivityItems:(id)arg1;
 - (void)dealloc;
 - (id)initWithActivityItems:(id)arg1 applicationActivities:(id)arg2 sharingURL:(id)arg3 sourceURL:(id)arg4;
+- (id)initWithActivityItemProviderCollection:(id)arg1 applicationActivities:(id)arg2 sharingURL:(id)arg3 sourceURL:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

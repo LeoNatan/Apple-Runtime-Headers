@@ -18,6 +18,8 @@
 + (id)disambiguationWithDateComponentsRangesToDisambiguate:(id)arg1;
 + (id)successWithResolvedDateComponentsRange:(id)arg1;
 + (id)unsupportedWithReason:(unsigned int)arg1 alternativeDateComponentsRanges:(id)arg2;
+- (id)_vocabularyValueForObject:(id)arg1 slotDescription:(id)arg2;
+- (id)_intentSlotValueForObject:(id)arg1 slotDescription:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

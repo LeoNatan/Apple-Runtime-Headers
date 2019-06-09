@@ -8,19 +8,19 @@
 
 #import <GeoServices/_GEODirectionsRequesterServerProxy-Protocol.h>
 
-@class NSMutableArray, NSString;
-@protocol OS_dispatch_queue;
+@class NSMutableArray, NSString, geo_isolater;
 
 __attribute__((visibility("hidden")))
 @interface _GEODirectionsRequesterServerRemoteProxy : NSObject <_GEODirectionsRequesterServerProxy>
 {
-    NSObject<OS_dispatch_queue> *_queue;
+    geo_isolater *_isolater;
     NSMutableArray *_pendingRequests;
 }
 
 - (void).cxx_destruct;
+- (_Bool)_finishRequest:(id)arg1;
 - (void)cancelRequest:(id)arg1;
-- (void)startRequest:(id)arg1 auditToken:(id)arg2 isDoomRequest:(_Bool)arg3 requestPriority:(id)arg4 finished:(CDUnknownBlockType)arg5 networkActivity:(CDUnknownBlockType)arg6 error:(CDUnknownBlockType)arg7;
+- (void)startRequest:(id)arg1 auditToken:(id)arg2 isDoomRequest:(_Bool)arg3 requestPriority:(id)arg4 callbackQueue:(id)arg5 finished:(CDUnknownBlockType)arg6 networkActivity:(CDUnknownBlockType)arg7 error:(CDUnknownBlockType)arg8;
 - (id)init;
 
 // Remaining properties

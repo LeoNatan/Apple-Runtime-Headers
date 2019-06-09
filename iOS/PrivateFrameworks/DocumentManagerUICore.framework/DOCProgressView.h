@@ -6,30 +6,35 @@
 
 #import <UIKit/UIView.h>
 
-@class DOCDeterminateProgressRingView, DOCGhostRingView, DOCIndeterminateProgressRingView, NSOperationQueue, NSProgress, UIColor;
+@class DOCDeterminateProgressRingView, DOCGhostRingView, DOCIndeterminateProgressRingView, NSOperationQueue, NSProgress, UIColor, UITapGestureRecognizer;
 
 @interface DOCProgressView : UIView
 {
     NSOperationQueue *_pendingAnimationQueue;
-    _Bool _graduallyIncreasingProgress;
-    double _progress;
     _Bool _canShowStopButton;
+    _Bool _graduallyIncreasingProgress;
     UIColor *_inactiveStrokeColor;
     UIColor *_activeStrokeColor;
     NSProgress *_observedProgress;
     DOCGhostRingView *_ghostRingView;
     DOCDeterminateProgressRingView *_determinateProgressRingView;
     DOCIndeterminateProgressRingView *_indeterminateProgressRingView;
+    double _progress;
+    UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
+@property(retain, nonatomic) UITapGestureRecognizer *tapGestureRecognizer; // @synthesize tapGestureRecognizer=_tapGestureRecognizer;
+@property(nonatomic) _Bool graduallyIncreasingProgress; // @synthesize graduallyIncreasingProgress=_graduallyIncreasingProgress;
+@property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) DOCIndeterminateProgressRingView *indeterminateProgressRingView; // @synthesize indeterminateProgressRingView=_indeterminateProgressRingView;
 @property(retain, nonatomic) DOCDeterminateProgressRingView *determinateProgressRingView; // @synthesize determinateProgressRingView=_determinateProgressRingView;
 @property(retain, nonatomic) DOCGhostRingView *ghostRingView; // @synthesize ghostRingView=_ghostRingView;
 @property(nonatomic) _Bool canShowStopButton; // @synthesize canShowStopButton=_canShowStopButton;
 @property(retain, nonatomic) NSProgress *observedProgress; // @synthesize observedProgress=_observedProgress;
-@property(retain, nonatomic) UIColor *activeStrokeColor; // @synthesize activeStrokeColor=_activeStrokeColor;
-@property(retain, nonatomic) UIColor *inactiveStrokeColor; // @synthesize inactiveStrokeColor=_inactiveStrokeColor;
+@property(copy, nonatomic) UIColor *activeStrokeColor; // @synthesize activeStrokeColor=_activeStrokeColor;
+@property(copy, nonatomic) UIColor *inactiveStrokeColor; // @synthesize inactiveStrokeColor=_inactiveStrokeColor;
 - (void).cxx_destruct;
+- (void)handleTap:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
 - (void)layoutSubviews;
 - (void)animateToFullRingAndHideWithCompletion:(CDUnknownBlockType)arg1;

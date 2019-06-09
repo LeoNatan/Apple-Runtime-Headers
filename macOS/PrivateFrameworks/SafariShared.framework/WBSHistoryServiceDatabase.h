@@ -9,7 +9,7 @@
 #import <SafariShared/WBSHistoryServiceDatabaseProtocol-Protocol.h>
 #import <SafariShared/WBSSQLiteDatabaseDelegate-Protocol.h>
 
-@class NSDictionary, NSMapTable, NSMutableArray, NSMutableSet, NSString, NSURL, WBSHistoryCrypto, WBSHistoryServiceURLCompletion, WBSSQLiteDatabase, WBSSQLiteStatementCache;
+@class NSDictionary, NSMapTable, NSMutableArray, NSMutableSet, NSString, NSURL, WBSHistoryCrypto, WBSHistoryServiceURLCompletion, WBSHistoryTagDatabaseController, WBSSQLiteDatabase, WBSSQLiteStatementCache;
 @protocol OS_dispatch_queue, WBSFileLock;
 
 @interface WBSHistoryServiceDatabase : NSObject <WBSSQLiteDatabaseDelegate, WBSHistoryServiceDatabaseProtocol>
@@ -32,6 +32,7 @@
     // Error parsing type: {atomic<bool>="__a_"AB}, name: _integrityCheckPending
     NSURL *_clearHistoryInProgressFileURL;
     CDUnknownBlockType _pendingVisitsTimeout;
+    WBSHistoryTagDatabaseController *_tagController;
     NSString *_databaseID;
     NSURL *_databaseURL;
     WBSHistoryServiceURLCompletion *_urlCompletion;
@@ -42,6 +43,9 @@
 @property(readonly, copy, nonatomic) NSString *databaseID; // @synthesize databaseID=_databaseID;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)setTitle:(id)arg1 ofTagWithID:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)assignHistoryItemWithID:(long long)arg1 toTopicTagsWithIDs:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)createTagsForIdentifiers:(id)arg1 withTitles:(id)arg2 type:(unsigned long long)arg3 level:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)updateDatabaseAfterSuccessfulSyncWithGeneration:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)visitsAndTombstonesNeedingSyncWithVisitSyncWindow:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resetCloudHistoryDataWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -61,6 +65,7 @@
 - (id)_fetchListenerNamesFromDatabase:(id *)arg1;
 - (void)computeFrequentlyVisitedSites:(unsigned long long)arg1 minimalVisitCountScore:(unsigned long long)arg2 blacklist:(id)arg3 whitelist:(id)arg4 options:(unsigned long long)arg5 currentTime:(double)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)searchForUserTypedString:(id)arg1 options:(unsigned long long)arg2 currentTime:(double)arg3 writeHandle:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)vacuumHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performMaintenanceWithAgeLimit:(double)arg1 itemCountLimit:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_executePlan:(struct DeletionPlan *)arg1 outDeletedItemCount:(unsigned long long *)arg2 outDeletedVisitCount:(unsigned long long *)arg3;
 - (id)_collectDeletedURLsForPlan:(struct DeletionPlan *)arg1;
@@ -142,6 +147,8 @@
 - (void)fetchDomainExpansions:(CDUnknownBlockType)arg1;
 - (void)fetchWithOptions:(unsigned long long)arg1 predicate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_fetchTombstonesWithOptions:(unsigned long long)arg1 predicate:(id)arg2 writeDescriptor:(int)arg3;
+- (id)_fetchObjectToTagMappingsWithOptions:(unsigned long long)arg1 predicate:(id)arg2 writeDescriptor:(int)arg3;
+- (id)_fetchTagsWithOptions:(unsigned long long)arg1 predicate:(id)arg2 writeDescriptor:(int)arg3;
 - (id)_fetchVisitsWithOptions:(unsigned long long)arg1 predicate:(id)arg2 writeDescriptor:(int)arg3;
 - (id)_recomputeLatestVisitsForItems:(const unordered_set_da619913 *)arg1;
 - (void)ensureLatestVisitsAreComputed:(CDUnknownBlockType)arg1;
@@ -150,11 +157,13 @@
 - (void)database:(id)arg1 hadSevereError:(id)arg2;
 - (void)fetchDatabaseURL:(CDUnknownBlockType)arg1;
 - (void)close;
+- (void)_closeTagController;
 - (BOOL)isOpen;
 - (void)addDelegate:(id)arg1 listenerName:(id)arg2 forConnection:(id)arg3;
 - (long long)allocateTemporaryIDRange:(long long *)arg1;
 - (int)_migrateToCurrentSchemaVersionIfNeeded;
 - (BOOL)_reopenDatabase:(id *)arg1;
+- (void)_registerHistoryTagFrecencyScoringFunction;
 - (BOOL)_prepareDatabase:(id *)arg1;
 - (id)initWithID:(id)arg1 url:(id)arg2 options:(id)arg3 lock:(id)arg4 error:(id *)arg5;
 - (id)init;

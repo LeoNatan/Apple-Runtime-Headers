@@ -8,6 +8,7 @@
 
 @protocol SKUIScrollingSegmentedControllerCollectionViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIScrollingSegmentedControllerCollectionView : SKUIViewControllerContainerCollectionView
 {
     _Bool _performingLayout;

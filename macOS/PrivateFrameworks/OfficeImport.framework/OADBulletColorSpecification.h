@@ -8,6 +8,7 @@
 
 @class OADColor;
 
+__attribute__((visibility("hidden")))
 @interface OADBulletColorSpecification : OADBulletColor
 {
     OADColor *mColor;

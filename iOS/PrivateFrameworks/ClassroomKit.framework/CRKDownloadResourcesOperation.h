@@ -37,6 +37,7 @@
 - (void)main;
 - (_Bool)isAsynchronous;
 - (id)initWithResources:(id)arg1 clientIdentity:(id)arg2 trustedAnchorCertificates:(id)arg3;
+- (id)initWithResources:(id)arg1 clientIdentity:(id)arg2 trustedCertificates:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

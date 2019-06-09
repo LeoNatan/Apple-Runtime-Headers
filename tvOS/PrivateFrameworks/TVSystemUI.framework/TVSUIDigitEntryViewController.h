@@ -49,7 +49,7 @@
 @property(readonly, nonatomic) TVSUIDigitGroupView *digitGroupView; // @synthesize digitGroupView=_digitGroupView;
 - (void)updateViewConstraints;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
-- (id)preferredFocusedView;
+- (id)preferredFocusEnvironments;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)dealloc;

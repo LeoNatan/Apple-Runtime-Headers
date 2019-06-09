@@ -9,6 +9,7 @@
 @class NSObject, OITSUProgressContext;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface OITSUProgressContextProgress : OITSUProgress
 {
     OITSUProgressContext *mProgressContext;

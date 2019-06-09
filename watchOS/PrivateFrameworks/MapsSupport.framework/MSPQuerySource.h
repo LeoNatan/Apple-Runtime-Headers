@@ -11,7 +11,6 @@
 
 @class MSPContainer, NSHashTable, NSString, _MSPQueryState;
 
-__attribute__((visibility("hidden")))
 @interface MSPQuerySource : NSObject <MSPContainerObserver, MSPQuerySourceObserver>
 {
     MSPContainer *_owningContainer;

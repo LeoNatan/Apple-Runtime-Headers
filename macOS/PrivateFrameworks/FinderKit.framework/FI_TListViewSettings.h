@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 + (id)columnDictionaryForWidth:(long long)arg1 index:(long long)arg2 sortOrder:(_Bool)arg3 visibility:(_Bool)arg4;
 @property(retain, nonatomic) NSMutableDictionary *columnSettings; // @synthesize columnSettings=_columnSettings;
 @property(retain, nonatomic) NSMutableDictionary *settings; // @synthesize settings=_settings;
+- (void).cxx_destruct;
 - (_Bool)isEquivalentTo:(id)arg1;
 @property(nonatomic) _Bool userDidChangeSort;
 @property(nonatomic) struct CGPoint scrollPosition;

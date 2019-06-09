@@ -11,5 +11,6 @@
 @protocol SOEffectPickerViewControllerDelegate <NSObject>
 - (void)effectPickerViewControllerWasCancelled:(SOEffectPickerViewController *)arg1;
 - (void)effectPickerViewController:(SOEffectPickerViewController *)arg1 didChooseEffect:(NSString *)arg2;
+- (void)effectPickerViewController:(SOEffectPickerViewController *)arg1 didPreviewEffect:(NSString *)arg2;
 @end
 

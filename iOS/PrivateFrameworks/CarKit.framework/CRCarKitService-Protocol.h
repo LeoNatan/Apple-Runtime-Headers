@@ -7,9 +7,17 @@
 @class CRVehicle, NSArray, NSData, NSDictionary, NSString, NSURL;
 
 @protocol CRCarKitService
-- (void)handleCarPlayDiagnosticsWithDeviceScreenshotURL:(NSURL *)arg1 carScreenshotURL:(NSURL *)arg2 attachmentURLs:(NSArray *)arg3 reply:(void (^)(void))arg4;
+- (void)setSessionInstrumentClusterURLs:(NSArray *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
+- (void)fetchCurrentAccessoryDetailsWithReply:(void (^)(NSDictionary *, NSError *))arg1;
+- (void)unregisterInstrumentClusterURL:(NSURL *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
+- (void)registerInstrumentClusterURL:(NSURL *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
+- (void)fetchSessionInstrumentClusterURLsWithReply:(void (^)(NSArray *, NSError *))arg1;
+- (void)fetchInstrumentClusterURLsWithReply:(void (^)(NSArray *, NSError *))arg1;
+- (void)vehicleIdentifierForCertificateSerial:(NSData *)arg1 reply:(void (^)(NSString *, NSError *))arg2;
+- (void)handleCarPlayDiagnosticsWithDeviceScreenshotURL:(NSURL *)arg1 carScreenshotURL:(NSURL *)arg2 attachmentURLs:(NSArray *)arg3 activeBundleIdentifier:(NSString *)arg4 reply:(void (^)(void))arg5;
 - (void)isCarPlayAllowedWithReply:(void (^)(_Bool, NSError *))arg1;
 - (void)handleCarPlayRestrictionChangedWithReply:(void (^)(void))arg1;
+- (void)isEnhancedIntegrationEnabledWithCertificateSerial:(NSData *)arg1 reply:(void (^)(unsigned long long, NSError *))arg2;
 - (void)isPairedWithCertificateSerial:(NSData *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)allowsConnectionsForCertificateSerial:(NSData *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)allowsConnectionsForWiFiUUID:(NSString *)arg1 reply:(void (^)(_Bool, NSError *))arg2;

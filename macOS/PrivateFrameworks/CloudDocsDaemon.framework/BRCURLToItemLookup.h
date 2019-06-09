@@ -110,7 +110,6 @@
 - (void)_moveMissingItemAsideInNamespace:(unsigned char)arg1;
 - (CDStruct_177058d5)_pathMatchInNamespace:(unsigned char)arg1;
 - (void)_clearNamespace:(unsigned char)arg1;
-- (BOOL)_bounceBouncesHiddenByFault:(id)arg1;
 
 @end
 

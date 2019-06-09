@@ -10,7 +10,7 @@
 - (id)mf_firstPartNumber;
 - (id)mf_lastPartNumber;
 - (id)mf_partNumbers;
-- (unsigned int)mf_rowID;
+- (long long)mf_rowID;
 - (_Bool)mf_isResourceURL;
 - (_Bool)mf_isValidAttachmentURL;
 @end

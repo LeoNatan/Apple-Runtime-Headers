@@ -15,7 +15,7 @@
 }
 
 + (id)dataWithContentsOfFile:(id)arg1;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (const void *)bytes;
 - (unsigned long long)length;
 - (void)_loadData;

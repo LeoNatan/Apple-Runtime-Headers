@@ -12,7 +12,8 @@
 @interface GEOTilePool : NSObject
 {
     NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
-    struct _GEOGenericContainer<_GEOTileKey, id, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, geo::GEOGenericContainerWeakReferenceTag, 0, 0, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> _pool;
+    struct _GEOGenericContainer<_GEOTileKey, GEOTileData *, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, geo::GEOGenericContainerWeakReferenceTag, 0, 0, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> _pool;
+    struct _GEOGenericContainer<_GEOTileKey, id, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, geo::GEOGenericContainerWeakReferenceTag, 0, 0, geo::GEOGenericContainerLockingTag, detail::_default_pointer_type> _decodedPool;
     GEOTileCache *_cache;
 }
 
@@ -28,7 +29,6 @@
 - (void)removeAllObjects;
 - (void)removeTilesWithKeys:(id)arg1;
 - (void)removeTileForKey:(const struct _GEOTileKey *)arg1;
-- (void)setNullForKey:(const struct _GEOTileKey *)arg1;
 - (void)setTile:(id)arg1 forKey:(const struct _GEOTileKey *)arg2 cost:(unsigned long long)arg3;
 - (id)tileForKey:(const struct _GEOTileKey *)arg1;
 - (id)init;

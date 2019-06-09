@@ -6,11 +6,33 @@
 
 #import <UIKit/UIView.h>
 
-@interface UIView (HUAdditions)
+#import <HomeUI/HULayoutAnchorProviding-Protocol.h>
+
+@class NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSString;
+
+@interface UIView (HUAdditions) <HULayoutAnchorProviding>
 + (void)hu_enableAnimations:(_Bool)arg1 forBlock:(CDUnknownBlockType)arg2;
 - (_Bool)hu_isHomeAffordancePresent;
 - (void)hu_autoSizeByConstrainingWidth:(double)arg1;
 - (void)hu_traverseViewHierarchy:(CDUnknownBlockType)arg1;
 - (void)hu_setFramePreservingTransform:(struct CGRect)arg1;
+- (struct CGRect)hu_frameInGlobalCoordinateSpace;
+- (struct CGPoint)hu_centerInGlobalCoordinateSpace;
+
+// Remaining properties
+@property(readonly, nonatomic) NSLayoutYAxisAnchor *bottomAnchor;
+@property(readonly, nonatomic) NSLayoutXAxisAnchor *centerXAnchor;
+@property(readonly, nonatomic) NSLayoutYAxisAnchor *centerYAnchor;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) NSLayoutDimension *heightAnchor;
+@property(readonly, nonatomic) NSLayoutXAxisAnchor *leadingAnchor;
+@property(readonly, nonatomic) NSLayoutXAxisAnchor *leftAnchor;
+@property(readonly, nonatomic) NSLayoutXAxisAnchor *rightAnchor;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic) NSLayoutYAxisAnchor *topAnchor;
+@property(readonly, nonatomic) NSLayoutXAxisAnchor *trailingAnchor;
+@property(readonly, nonatomic) NSLayoutDimension *widthAnchor;
 @end
 

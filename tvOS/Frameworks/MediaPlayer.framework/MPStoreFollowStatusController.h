@@ -22,14 +22,13 @@
     NSDate *_lastAutoFollowingUpdate;
 }
 
-+ (id)activeDSID;
 + (id)sharedController;
 - (void).cxx_destruct;
 - (void)setAutoFollowStatus:(_Bool)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)autoFollowStatusIsEnabled:(CDUnknownBlockType)arg1;
 - (_Bool)_shouldUpdate;
 - (void)_updateFollowsFromStoreDictionary:(id)arg1;
-- (id)_autofollowStatusURLFromBag:(id)arg1;
+- (id)_autofollowStatusURLFromBag:(id)arg1 accountDSID:(id)arg2;
 - (id)_enableAutofollowURLFromBag:(id)arg1 enable:(_Bool)arg2;
 - (id)_followingURLFromBag:(id)arg1 accountDSID:(id)arg2;
 - (id)_displayFollows;

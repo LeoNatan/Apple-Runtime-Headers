@@ -37,6 +37,16 @@ struct IMAssociatedMessageGeometryDescriptor {
     float _field7;
 };
 
+struct IMBalloonDescriptor_t {
+    char shape;
+    char tailShape;
+    char style;
+    unsigned long long orientation;
+    unsigned long long corners;
+    char color;
+    char attributes;
+};
+
 struct NSEdgeInsets {
     double top;
     double left;

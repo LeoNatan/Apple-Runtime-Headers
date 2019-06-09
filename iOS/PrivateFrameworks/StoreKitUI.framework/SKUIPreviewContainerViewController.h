@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPreviewContainerViewController : UIViewController <SKUIViewControllerPreviewing>
 {
     UIViewController *_childViewController;

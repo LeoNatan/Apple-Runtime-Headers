@@ -6,7 +6,7 @@
 
 #import <MediaPlayer/MPMediaItem.h>
 
-@class NSDate, NSNumber, NSObject, NSString, NSURL, VUIContentRating, VUIMediaEntityType, VUIMediaItemCredits;
+@class HSHomeSharingLibrary, NSDate, NSNumber, NSObject, NSSet, NSString, NSURL, VUIMediaEntityType, VUIMediaItemCredits, _TVContentRating;
 @protocol VUIMediaEntityIdentifier;
 
 @interface MPMediaItem (VideosUI)
@@ -18,10 +18,17 @@
 + (long long)vui_MPMediaItemColorCapabilityFromVUIMediaEntityColorCapability:(unsigned long long)arg1;
 + (unsigned long long)vui_VUIMediaEntityResolutionFromMPMediaItemVideoQuality:(long long)arg1;
 + (long long)vui_MPMediaItemVideoQualityFromVUIMediaEntityResolution:(unsigned long long)arg1;
++ (id)wlk_JStvShowProperties;
++ (id)wlk_JSmovieProperties;
++ (id)wlk_JSgenericProperties;
++ (id)wlk_mediaItemForStoreIdentifier:(id)arg1;
++ (id)wlk_mediaItemForPersistentIdentifier:(id)arg1;
 - (id)_vui_imageIdentifierWithImageType:(unsigned long long)arg1;
 - (id)vui_imageLoadParamsWithImageType:(unsigned long long)arg1;
 - (id)vui_artworkCatalogWithImageType:(unsigned long long)arg1;
 - (id)vui_imageIdentifierWithImageType:(unsigned long long)arg1;
+@property(readonly, nonatomic) HSHomeSharingLibrary *vui_homeSharingLibrary;
+@property(readonly, nonatomic) _Bool vui_isHomeSharingMediaItem;
 - (id)vui_assetTypeIgnoringLocalAsset:(_Bool)arg1;
 @property(readonly, nonatomic) NSNumber *vui_assetType;
 @property(readonly, nonatomic) NSDate *vui_rentalExpirationDate;
@@ -31,7 +38,7 @@
 @property(readonly, nonatomic) NSURL *vui_extrasURL;
 @property(readonly, nonatomic) NSNumber *vui_isLocal;
 @property(readonly, nonatomic) NSNumber *vui_isPlayable;
-@property(readonly, nonatomic) VUIContentRating *vui_contentRating;
+@property(readonly, nonatomic) _TVContentRating *vui_contentRating;
 @property(readonly, nonatomic) VUIMediaItemCredits *vui_credits;
 @property(readonly, nonatomic) NSString *vui_studio;
 @property(readonly, nonatomic) NSObject<VUIMediaEntityIdentifier> *vui_seasonIdentifier;
@@ -45,5 +52,10 @@
 @property(readonly, nonatomic) NSNumber *vui_colorCapability;
 @property(readonly, nonatomic) NSNumber *vui_resolution;
 @property(readonly, nonatomic) VUIMediaEntityType *vui_mediaEntityType;
+- (id)wlk_stringIdentifierForSeason;
+@property(readonly, copy, nonatomic, getter=wlk_playState) NSString *playState;
+- (id)wlk_stringIdentifierForProperty:(id)arg1;
+@property(readonly, copy, nonatomic, getter=wlk_mediaTypeString) NSString *mediaTypeString;
+@property(readonly, nonatomic, getter=wlk_jsPropertyStrings) NSSet *jsPropertyStrings;
 @end
 

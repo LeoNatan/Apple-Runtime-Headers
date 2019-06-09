@@ -8,7 +8,7 @@
 
 #import <AppKit/NSCoding-Protocol.h>
 
-@class NSEvent, NSMutableArray, NSMutableSet, NSPressureConfiguration, NSView;
+@class NSEvent, NSMutableArray, NSMutableSet, NSPressureConfiguration, NSTouchDevice, NSView;
 @protocol NSGestureRecognizerDelegate;
 
 @interface NSGestureRecognizer : NSObject <NSCoding>
@@ -29,7 +29,21 @@
     NSMutableSet *_dynamicFailureRequirements;
     NSMutableSet *_dynamicFailureDependents;
     id _failureMap;
-    id _reserved;
+    NSPressureConfiguration *_activePressureConfiguration;
+    NSTouchDevice *_touchDevice;
+    long long _touchContextId;
+    unsigned long long _allowedTouchTypes;
+    struct {
+        unsigned int sendsActionWhenPossible:1;
+        unsigned int privateDelegateShouldSendActionWhenPossibleConcurrentlyWithRecognizer:1;
+        unsigned int delegateShouldSendActionWhenPossibleConcurrentlyWithRecognizer:1;
+        unsigned int viewIsUnsafeUnretained:1;
+        unsigned int delegateIsUnsafeUnretained:1;
+        unsigned int targetIsUnsafeUnretained:1;
+        unsigned int privateDelegateShouldReceiveTouch:1;
+        unsigned int delegateShouldReceiveTouch:1;
+        unsigned int reserved:24;
+    } _additionalFlags;
 }
 
 + (id)_mostCompatibleRecognizerFromConfigured:(id)arg1;
@@ -38,6 +52,7 @@
 @property(readonly, nonatomic) NSMutableSet *_failureDependents; // @synthesize _failureDependents;
 @property(readonly, nonatomic) NSMutableSet *_failureRequirements; // @synthesize _failureRequirements;
 @property SEL action; // @synthesize action=_action;
+- (void).cxx_destruct;
 - (struct CGPoint)locationInView:(id)arg1;
 - (BOOL)_affectedByGesture:(id)arg1;
 - (void)_invalidate;
@@ -157,8 +172,6 @@
 - (void)_removeActiveGestureRecognizerFromTouchDevice;
 - (void)_setTouchDevice:(id)arg1;
 - (id)_touchDevice;
-- (id)_auxiliaryStorage;
-- (void)_deallocAuxiliaryStorage;
 - (void)dealloc;
 - (BOOL)shouldBeArchived;
 - (void)encodeWithCoder:(id)arg1;

@@ -26,6 +26,7 @@
     BOOL _shouldShowInMapsButtons;
     BOOL _shouldWaitUntilLaunchForRefresh;
     BOOL _shouldDisableRefetching;
+    BOOL _shouldRefetchIfRefetchingNotDisabled;
     BOOL _fetchAsynchronously;
     BOOL _isMakingChangesOutsideOfEditMode;
     AKCardViewDataSource *_dataSource;
@@ -74,6 +75,7 @@
 @property(nonatomic) __weak id <CNContactCardViewControllerDelegate> contactCardControllerDelegate; // @synthesize contactCardControllerDelegate=_contactCardControllerDelegate;
 @property(readonly, nonatomic) BOOL isMakingChangesOutsideOfEditMode; // @synthesize isMakingChangesOutsideOfEditMode=_isMakingChangesOutsideOfEditMode;
 @property(nonatomic) BOOL fetchAsynchronously; // @synthesize fetchAsynchronously=_fetchAsynchronously;
+@property(nonatomic) BOOL shouldRefetchIfRefetchingNotDisabled; // @synthesize shouldRefetchIfRefetchingNotDisabled=_shouldRefetchIfRefetchingNotDisabled;
 @property(nonatomic) BOOL shouldDisableRefetching; // @synthesize shouldDisableRefetching=_shouldDisableRefetching;
 @property(nonatomic) BOOL shouldWaitUntilLaunchForRefresh; // @synthesize shouldWaitUntilLaunchForRefresh=_shouldWaitUntilLaunchForRefresh;
 @property(nonatomic) BOOL shouldShowInMapsButtons; // @synthesize shouldShowInMapsButtons=_shouldShowInMapsButtons;
@@ -136,9 +138,6 @@
 - (BOOL)canEditContactKey:(id)arg1;
 - (BOOL)canEditContact;
 - (void)addTemplateItemForKey:(id)arg1;
-- (void)loadInstantReplayModel:(id)arg1;
-- (id)persistentCardModel;
-- (void)exportInstantReplay:(id)arg1;
 - (void)contactDetailsViewControllerKeyViewLoopNeedsUpdate:(id)arg1;
 - (void)contactNameViewController:(id)arg1 willLoseFocusInDirection:(unsigned long long)arg2;
 - (void)avatarViewControllerDidFinishEditing:(id)arg1 cancelled:(BOOL)arg2;
@@ -198,6 +197,7 @@
 - (id)generateFetchDescriptionForContact:(id)arg1;
 - (void)fetchContact;
 - (void)refreshData;
+@property(readonly, nonatomic) CNContact *editedContact;
 - (void)finishSwichingToDefaultModeFromMode:(unsigned long long)arg1;
 - (void)finishSwichingToEditModeAndRefocusOnNameView:(BOOL)arg1;
 - (void)switchModeFromMode:(unsigned long long)arg1 toMode:(unsigned long long)arg2 refocusOnNameView:(BOOL)arg3;
@@ -211,8 +211,9 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;
-- (void)commonInit;
+- (void)commonInitWithContactStore:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithContactStore:(id)arg1;
 - (id)init;
 
 // Remaining properties

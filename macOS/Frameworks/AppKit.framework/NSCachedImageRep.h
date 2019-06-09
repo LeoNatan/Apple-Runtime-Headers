@@ -27,7 +27,6 @@
 - (void)setAlpha:(BOOL)arg1;
 - (void)_computeParams;
 - (void)encodeWithCoder:(id)arg1;
-- (id)_cachedImageRepByResizingToSize:(struct CGSize)arg1 rescalingContent:(BOOL)arg2;
 - (BOOL)_keepCacheWindow;
 - (void)_setKeepCacheWindow:(BOOL)arg1;
 - (void)_resizeCache:(struct CGSize)arg1 cachedSeparately:(BOOL)arg2 bps:(long long)arg3 numColors:(long long)arg4 hasAlpha:(BOOL)arg5;

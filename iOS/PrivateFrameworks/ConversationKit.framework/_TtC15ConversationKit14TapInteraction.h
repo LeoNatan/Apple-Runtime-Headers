@@ -10,7 +10,6 @@
 
 @class UIView;
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit14TapInteraction : NSObject <UIInteraction>
 {
     // Error parsing type: , name: view

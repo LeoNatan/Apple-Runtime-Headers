@@ -6,13 +6,13 @@
 
 #import <GeoServices/NSObject-Protocol.h>
 
-@class GEOTileDB, NSData;
+@class GEOTileDB, GEOTileData;
 @protocol _GEOTileDBWriteOperation;
 
 @protocol _GEOTileDBWriteOperation <NSObject>
-@property(readonly) unsigned long long sizeInBytes;
+@property(readonly, nonatomic) unsigned long long sizeInBytes;
 - (_Bool)canIncreaseDataSizeInDB;
-- (NSData *)dataForKey:(const struct _GEOTileKey *)arg1 ETag:(id *)arg2 originalLoadReason:(unsigned char *)arg3 isKnownNotToExist:(_Bool *)arg4;
+- (GEOTileData *)dataForKey:(const struct _GEOTileKey *)arg1 ETag:(id *)arg2 originalLoadReason:(unsigned char *)arg3 isKnownNotToExist:(_Bool *)arg4;
 - (_Bool)isSupercededByOperation:(id <_GEOTileDBWriteOperation>)arg1;
 - (void)performWithDB:(GEOTileDB *)arg1;
 @end

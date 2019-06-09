@@ -7,7 +7,7 @@
 @class NSString;
 
 @protocol AVTEventCoalescer
-- (void)eventDidOccur;
+- (void)eventDidOccur:(void (^)(_Bool))arg1;
 - (void)registerEventForCoalescingWithLabel:(NSString *)arg1 handler:(void (^)(void))arg2;
 @end
 

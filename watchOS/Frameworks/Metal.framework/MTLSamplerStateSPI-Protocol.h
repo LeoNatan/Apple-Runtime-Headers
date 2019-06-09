@@ -10,6 +10,6 @@
 
 @optional
 @property(readonly) unsigned int uniqueIdentifier;
-- (unsigned long long)resourceIndex;
+@property(nonatomic) unsigned long long resourceIndex;
 @end
 

@@ -10,7 +10,7 @@
 
 @protocol SBUIPowerDownViewInterface <NSObject>
 @property(nonatomic) __weak id <SBUIPowerDownViewDelegate> delegate;
-- (void)hideAnimated:(_Bool)arg1;
-- (void)showAnimated:(_Bool)arg1;
+- (void)hideAnimated:(_Bool)arg1 completion:(void (^)(void))arg2;
+- (void)showAnimated:(_Bool)arg1 completion:(void (^)(void))arg2;
 @end
 

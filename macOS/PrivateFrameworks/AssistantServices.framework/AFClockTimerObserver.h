@@ -40,7 +40,7 @@
 - (void)timersAdded:(id)arg1;
 - (void)clockItemStorageDidUpdate:(id)arg1 insertedItemIDs:(id)arg2 updatedItemIDs:(id)arg3 deletedItemIDs:(id)arg4;
 - (void)invalidate;
-- (void)getNotifiedFiringTimerIDsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)getFiringTimerIDsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getTimerSnapshotWithCompletion:(CDUnknownBlockType)arg1;
 - (void)removeListener:(id)arg1;
 - (void)addListener:(id)arg1;

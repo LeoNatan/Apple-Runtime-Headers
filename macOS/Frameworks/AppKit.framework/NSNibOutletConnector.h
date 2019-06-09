@@ -6,13 +6,17 @@
 
 #import <AppKit/NSNibConnector.h>
 
+@class NSString;
+
 @interface NSNibOutletConnector : NSNibConnector
 {
+    NSString *_childControllerCreationSelectorName;
 }
 
 + (void)initialize;
 - (void)establishConnection;
 - (BOOL)_shouldUseSelector:(SEL)arg1 forOutlet:(id)arg2 source:(id)arg3;
+- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

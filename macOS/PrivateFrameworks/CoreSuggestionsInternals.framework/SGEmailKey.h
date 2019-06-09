@@ -15,7 +15,7 @@
 }
 
 + (BOOL)isSupportedEntityType:(long long)arg1;
-@property(readonly) NSString *messageId; // @dynamic messageId;
+@property(readonly) NSString *messageId;
 @property(readonly, copy) NSString *description;
 - (BOOL)isEqualToEmailKey:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

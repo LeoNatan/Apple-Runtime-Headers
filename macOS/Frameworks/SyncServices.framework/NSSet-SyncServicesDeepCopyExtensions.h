@@ -8,5 +8,9 @@
 
 @interface NSSet (SyncServicesDeepCopyExtensions)
 - (id)isd_deepCopy;
+- (int)isd_quickDirtyCoderType;
+- (int)isd_collectionType;
+- (id)isd_setByRemovingSet:(id)arg1;
+- (id)isd_createArrayWithAllObjects;
 @end
 

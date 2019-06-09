@@ -6,28 +6,30 @@
 
 #import <SpringBoardServices/SBSAbstractSystemService.h>
 
-@class NSMutableArray;
+@class BSMutableIntegerMap;
 
 @interface SBSHardwareButtonService : SBSAbstractSystemService
 {
-    NSMutableArray *_consumers;
-    struct SBSHardwareButtonServiceButtonConfiguration _homeButtonConfiguration;
-    struct SBSHardwareButtonServiceButtonConfiguration _lockButtonConfiguration;
+    BSMutableIntegerMap *_consumersPerKind;
+    BSMutableIntegerMap *_buttonConfigurationsPerKind;
+    BSMutableIntegerMap *_requestHIDAssertionsPerKind;
 }
 
 + (id)sharedInstance;
-@property(nonatomic) struct SBSHardwareButtonServiceButtonConfiguration lockButtonConfiguration; // @synthesize lockButtonConfiguration=_lockButtonConfiguration;
-@property(nonatomic) struct SBSHardwareButtonServiceButtonConfiguration homeButtonConfiguration; // @synthesize homeButtonConfiguration=_homeButtonConfiguration;
-@property(retain, nonatomic) NSMutableArray *consumers; // @synthesize consumers=_consumers;
+@property(retain, nonatomic) BSMutableIntegerMap *requestHIDAssertionsPerKind; // @synthesize requestHIDAssertionsPerKind=_requestHIDAssertionsPerKind;
+@property(retain, nonatomic) BSMutableIntegerMap *buttonConfigurationsPerKind; // @synthesize buttonConfigurationsPerKind=_buttonConfigurationsPerKind;
+@property(retain, nonatomic) BSMutableIntegerMap *consumersPerKind; // @synthesize consumersPerKind=_consumersPerKind;
 - (void).cxx_destruct;
+- (void)consumerInfoWillInvalidate:(id)arg1;
 - (void)handleButtonPressMessage:(int)arg1 forButtonKind:(int)arg2 priority:(int)arg3;
 - (void)fetchHapticTypeForButtonKind:(int)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setHapticType:(int)arg1 forButtonKind:(int)arg2;
-- (void)consumerInfoWillInvalidate:(id)arg1;
+- (id)deferHIDEventsForButtonKind:(int)arg1 toToken:(id)arg2;
+- (int)toggleStateForButtonKind:(int)arg1;
 - (id)beginConsumingPressesForButtonKind:(int)arg1 eventConsumer:(id)arg2 priority:(int)arg3;
 - (void)_mainQueue_handleButtonPressMessage:(int)arg1 forButtonKind:(int)arg2 priority:(int)arg3;
 - (void)_addEventConsumerInfo:(id)arg1;
-- (id)_viableConsumerForEvent:(int)arg1 priority:(int)arg2;
+- (id)_viableConsumerForButtonKind:(int)arg1 event:(int)arg2 priority:(int)arg3;
 - (void)_resetEventMaskForButtonKind:(int)arg1;
 - (void)_setApplicationClientEventMask:(unsigned int)arg1 buttonKind:(int)arg2 priority:(int)arg3;
 - (id)description;

@@ -13,10 +13,12 @@
     _Bool _showSegmentTitles;
     unsigned long long _numberOfSegments;
     unsigned long long _stepperBehavior;
+    unsigned long long _stepperStyle;
     NSArray *_segmentTitles;
 }
 
 @property(copy, nonatomic) NSArray *segmentTitles; // @synthesize segmentTitles=_segmentTitles;
+@property(nonatomic) unsigned long long stepperStyle; // @synthesize stepperStyle=_stepperStyle;
 @property(nonatomic) _Bool showSegmentTitles; // @synthesize showSegmentTitles=_showSegmentTitles;
 @property(nonatomic) unsigned long long stepperBehavior; // @synthesize stepperBehavior=_stepperBehavior;
 @property(nonatomic) unsigned long long numberOfSegments; // @synthesize numberOfSegments=_numberOfSegments;

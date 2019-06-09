@@ -47,6 +47,7 @@
 - (id)_connectionForIdentifier:(id)arg1;
 - (id)_generateDiagnostic;
 - (void)_closeAllConnectionsAndWaitForBusyConnections:(_Bool)arg1;
+- (void)close;
 - (void)unlock;
 - (void)lock;
 - (void)closeAllConnections;

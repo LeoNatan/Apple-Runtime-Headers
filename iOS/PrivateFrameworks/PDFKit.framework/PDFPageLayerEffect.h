@@ -15,19 +15,15 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)createFlashEffectForPDFLinkAnnotation:(id)arg1 withLayer:(id)arg2 forType:(long long)arg3;
++ (id)createPDFNoteLayerEffectForAnnotation:(id)arg1 withLayer:(id)arg2;
 + (id)createPDFMarkupLayerEffectsForAnnotation:(id)arg1 withLayer:(id)arg2;
 + (id)createPDFAnnotationLayerEffectForAnnotation:(id)arg1 withLayer:(id)arg2;
 + (id)createPDFCoachmarkLayerEffectsWithFrame:(struct CGRect)arg1 withLayer:(id)arg2;
-+ (id)createPDFSelectionLayerEffectsForSelection:(id)arg1 withLayer:(id)arg2;
++ (id)createPDFSelectionLayerEffectsForSelections:(id)arg1 withLayer:(id)arg2;
 - (void).cxx_destruct;
-- (void)enableTextSelectionHandles;
-- (void)clearTextSelectionHandles;
-- (void)setLollipopMagnifierPagePoint:(struct CGPoint)arg1;
-- (void)clearLollipopMagnifier;
-- (void)setTextSelectionMagnifierPagePoint:(struct CGPoint)arg1;
-- (void)clearTextSelectionMagnifier;
-- (void)setSelection:(id)arg1;
-- (id)selection;
+- (id)pdfResult;
+- (void)addSelection:(id)arg1;
+- (void)setSelections:(id)arg1;
 - (id)annotation;
 - (_Bool)shouldRotateContent;
 - (void)update;

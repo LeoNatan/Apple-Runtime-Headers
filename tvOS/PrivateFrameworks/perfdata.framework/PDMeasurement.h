@@ -11,9 +11,12 @@
 @interface PDMeasurement : NSObject
 {
     _Bool _largerBetter;
+    _Bool _summary;
+    _Bool _context;
     NSString *_metric;
     NSString *_unitString;
     NSDictionary *_variables;
+    NSDictionary *_labels;
     unsigned long long _group;
     NSNumber *_value;
     NSNumber *_sampleCount;
@@ -29,6 +32,8 @@
 @property(retain, nonatomic) NSString *cachedMetricFilter; // @synthesize cachedMetricFilter=_cachedMetricFilter;
 @property(nonatomic) __weak PDContainer *container; // @synthesize container=_container;
 @property(retain, nonatomic) NSDictionary *measurement; // @synthesize measurement=_measurement;
+@property(nonatomic, getter=isContext) _Bool context; // @synthesize context=_context;
+@property(nonatomic, getter=isSummary) _Bool summary; // @synthesize summary=_summary;
 @property(retain, nonatomic) NSNumber *maximum; // @synthesize maximum=_maximum;
 @property(retain, nonatomic) NSNumber *minimum; // @synthesize minimum=_minimum;
 @property(retain, nonatomic) NSNumber *standardDeviation; // @synthesize standardDeviation=_standardDeviation;
@@ -37,6 +42,7 @@
 @property(retain, nonatomic) NSNumber *value; // @synthesize value=_value;
 @property(nonatomic) unsigned long long group; // @synthesize group=_group;
 @property(nonatomic) _Bool largerBetter; // @synthesize largerBetter=_largerBetter;
+@property(retain, nonatomic) NSDictionary *labels; // @synthesize labels=_labels;
 @property(retain, nonatomic) NSDictionary *variables; // @synthesize variables=_variables;
 @property(retain, nonatomic) NSString *unitString; // @synthesize unitString=_unitString;
 @property(retain, nonatomic) NSString *metric; // @synthesize metric=_metric;

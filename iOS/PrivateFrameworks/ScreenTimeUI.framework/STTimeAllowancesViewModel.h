@@ -8,6 +8,7 @@
 
 @class NSDictionary, STAlwaysAllowList, STDeviceBedtime;
 
+__attribute__((visibility("hidden")))
 @interface STTimeAllowancesViewModel : NSObject
 {
     _Bool _allAllowancesEnabled;

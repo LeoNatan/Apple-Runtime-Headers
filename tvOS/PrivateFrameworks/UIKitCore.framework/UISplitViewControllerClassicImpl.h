@@ -26,13 +26,11 @@ __attribute__((visibility("hidden")))
     UIResponder *_postTransitionResponder;
     UISnapshotView *_collapsingMasterSnapshotView;
     UISnapshotView *_collapsingDetailSnapshotView;
-    double _masterColumnWidth;
     float _gutterWidth;
     long long _rotatingFromOrientation;
     long long _lastPresentedOrientation;
     struct CGRect _rotatingFromMasterViewFrame;
     struct CGRect _rotatingToMasterViewFrame;
-    NSArray *_cornerImageViews;
     UIView *_underBarSeparatorView;
     UITraitCollection *_traitCollectionWhenRemovedFromWindow;
     _Bool _presentsWithGesture;
@@ -109,6 +107,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool presentsWithGesture; // @synthesize presentsWithGesture=_presentsWithGesture;
 @property(nonatomic) __weak id <UISplitViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+@property(nonatomic) long long primaryBackgroundStyle;
+- (long long)primaryIsSidebar;
+- (id)_traitCollectionForChildEnvironment:(id)arg1;
 - (id)_additionalViewControllersToCheckForUserActivity;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
@@ -139,8 +140,10 @@ __attribute__((visibility("hidden")))
 - (_Bool)_handlesCounterRotationForPresentation;
 - (_Bool)_hasPreferredInterfaceOrientationForPresentation;
 - (unsigned long long)supportedInterfaceOrientations;
-- (_Bool)_shouldSynthesizeSupportedOrientations;
 - (_Bool)shouldAutorotateToInterfaceOrientation:(long long)arg1;
+- (long long)preferredTrailingStatusBarStyle;
+- (long long)preferredLeadingStatusBarStyle;
+- (id)childViewControllerForStatusBarStyle;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (_Bool)shouldUpdateFocusInContext:(id)arg1;
@@ -167,7 +170,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)_shouldPreventAutorotation;
 - (void)_layoutContainerViewDidMoveToWindow:(id)arg1;
 - (_Bool)_optsOutOfPopoverControllerHierarchyCheck;
-- (void)purgeMemoryForReason:(int)arg1;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
@@ -191,9 +193,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)_layoutPrimaryOnRight;
 @property(nonatomic) long long primaryEdge;
 - (_Bool)_effectivePresentsWithGesture;
-@property(readonly, nonatomic) _Bool _presentsInFadingPopover;
 @property(nonatomic) float gutterWidth;
-@property(nonatomic) float masterColumnWidth;
 - (double)_masterPresentationAnimationDuration;
 - (void)_showMasterViewAnimated:(_Bool)arg1;
 @property(nonatomic) _Bool hidesMasterViewInPortrait;
@@ -241,8 +241,6 @@ __attribute__((visibility("hidden")))
 - (double)primaryColumnWidth;
 - (void)_viewControllerHiding:(id)arg1;
 - (void)_setupHiddenPopoverControllerWithViewController:(id)arg1;
-- (void)_removeRoundedCorners;
-- (void)_setupRoundedCorners;
 - (struct CGRect)_detailViewFrame;
 - (struct CGRect)_detailViewFrame:(struct CGRect)arg1;
 - (struct CGRect)_masterViewFrame;

@@ -10,6 +10,7 @@
 
 @interface HLPHelpSearchResult : NSObject
 {
+    double _relevanceScore;
     long long _weight;
     long long _matchCount;
     NSString *_identifier;
@@ -18,6 +19,7 @@
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long matchCount; // @synthesize matchCount=_matchCount;
 @property(nonatomic) long long weight; // @synthesize weight=_weight;
+@property(nonatomic) double relevanceScore; // @synthesize relevanceScore=_relevanceScore;
 - (void).cxx_destruct;
 - (id)debugDescription;
 - (id)copyWithZone:(struct _NSZone *)arg1;

@@ -8,11 +8,10 @@
 
 #import <MediaPlayer/MPAVRoutingControllerDelegate-Protocol.h>
 #import <MediaPlayer/MPRTCReportingItemSessionContaining-Protocol.h>
-#import <MediaPlayer/MPShuffleControllerDataSource-Protocol.h>
 
-@class MPMediaItem, MPMediaLibraryConnectionAssertion, MPMediaQuery, MPShuffleController, MSVMutableBidirectionalDictionary, NSArray, NSDictionary, NSString;
+@class MPMediaItem, MPMediaLibraryConnectionAssertion, MPMediaQuery, MSVMutableBidirectionalDictionary, NSArray, NSDictionary, NSString;
 
-@interface MPMediaQueryQueueFeeder : MPQueueFeeder <MPAVRoutingControllerDelegate, MPRTCReportingItemSessionContaining, MPShuffleControllerDataSource>
+@interface MPMediaQueryQueueFeeder : MPQueueFeeder <MPAVRoutingControllerDelegate, MPRTCReportingItemSessionContaining>
 {
     MPMediaLibraryConnectionAssertion *_connectionAssertion;
     unsigned long long _feederRevisionID;
@@ -20,7 +19,6 @@
     _Bool _isSiriInitiated;
     MPMediaQuery *_query;
     NSArray *_queryItems;
-    MPShuffleController *_shuffleController;
     vector_bbba3654 _itemPIDs;
     MSVMutableBidirectionalDictionary *_indexToIdentifierCache;
     unsigned long long _currentInvalidationRevision;
@@ -30,21 +28,17 @@
     MPMediaItem *_cloudDialogAllowedMediaItem;
 }
 
-+ (id)_itemsForQuery:(id)arg1 shuffleType:(long long)arg2;
 + (Class)playbackItemMetadataClass;
-+ (id)audioSessionModeForMediaType:(unsigned long long)arg1;
-+ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) MPMediaItem *cloudDialogAllowedMediaItem; // @synthesize cloudDialogAllowedMediaItem=_cloudDialogAllowedMediaItem;
 @property(copy, nonatomic) MPMediaQuery *query; // @synthesize query=_query;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (unsigned long long)_playbackIndexByApplyShuffleType:(long long)arg1 withStartIndex:(unsigned long long)arg2 startIndexMediaItem:(id)arg3 shouldKeepConsistentQueueOrder:(_Bool)arg4;
+- (unsigned long long)_playbackIndexWithStartIndex:(unsigned long long)arg1 startIndexMediaItem:(id)arg2 shouldKeepConsistentQueueOrder:(_Bool)arg3;
 - (id)_identifierAtIndex:(unsigned long long)arg1;
 - (void)_verifyQueueInvalidationCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_reloadQueryItems;
 - (id)_mediaItemForPID:(unsigned long long)arg1;
 - (void)_invalidateMediaLibraryValues;
-- (unsigned long long)_indexForSongShuffledIndex:(unsigned long long)arg1;
 - (unsigned long long)_indexForPersistentID:(unsigned long long)arg1;
 - (void)_handleMediaLibraryDidChange;
 - (id)_currentEmptyQueueError;
@@ -54,33 +48,19 @@
 - (id)mediaItemAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexOfMediaItem:(id)arg1;
 - (id)modelPlayEvent;
-- (unsigned long long)shuffleController:(id)arg1 countOfItemIdentifier:(id)arg2 withMaximumCount:(unsigned long long)arg3;
-- (id)shuffleController:(id)arg1 identifierForItemAtIndex:(unsigned long long)arg2;
-- (unsigned long long)itemCountForShuffleController:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *rtcReportingPlayQueueSourceIdentifier;
-- (_Bool)supportsAddToQueue;
 - (id)playbackInfoForIdentifier:(id)arg1;
-- (unsigned long long)initialPlaybackQueueDepthForStartingIndex:(unsigned long long)arg1;
 - (id)identifierAtIndex:(unsigned long long)arg1;
 - (unsigned long long)indexOfItemWithIdentifier:(id)arg1;
-- (void)shuffleItemsWithAnchor:(unsigned long long *)arg1;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)player:(id)arg1 currentItemWillChangeFromItem:(id)arg2;
-- (id)pathAtIndex:(unsigned long long)arg1;
-- (long long)itemTypeForIndex:(unsigned long long)arg1;
+- (void)player:(id)arg1 currentItemDidChangeToItem:(id)arg2;
 - (id)itemForIdentifier:(id)arg1;
 - (unsigned long long)itemCount;
-- (Class)itemClass;
-- (_Bool)hasValidItemAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) Class itemClass;
 - (id)copyRawItemAtIndex:(unsigned long long)arg1;
 - (void)applyVolumeNormalizationForItem:(id)arg1;
-- (id)audioSessionModeForItemAtIndex:(unsigned long long)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (_Bool)shouldReuseQueueFeederForPlaybackContext:(id)arg1;
 - (void)dealloc;
 - (id)init;
-- (void)_commonInit;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,10 +6,41 @@
 
 #import <AVFoundation/AVPlayerItem.h>
 
+@class AVMediaContentRating, NSArray;
+
 @interface AVPlayerItem (AVKitPrivateAdditions)
 - (id)_avkitDescription;
 - (_Bool)_isPlayerScrubbingSupported;
 - (_Bool)_avkitIsStreamingWithoutIFrames;
 - (_Bool)_avkitIsStreaming;
+- (void)cancelPlaybackRestrictionsAuthorizationRequest;
+- (void)requestPlaybackRestrictionsAuthorization:(CDUnknownBlockType)arg1;
+- (_Bool)_isValidatedForMediaContentRating:(id)arg1;
+- (void)setValidatedMediaContentRating:(id)arg1;
+- (id)validatedMediaContentRating;
+- (void)_setValidatedDate:(id)arg1;
+- (id)validatedDate;
+- (void)setAVKitMediaType:(long long)arg1;
+- (long long)avkitMediaType;
+- (void)setAirPlayedContent:(_Bool)arg1;
+- (_Bool)isAirPlayedContent;
+- (void)setOverrideForReversePlaybackEndTime:(CDStruct_1b6d18a9)arg1;
+- (CDStruct_1b6d18a9)overrideForReversePlaybackEndTime;
+- (void)setOverrideForForwardPlaybackEndTime:(CDStruct_1b6d18a9)arg1;
+- (CDStruct_1b6d18a9)overrideForForwardPlaybackEndTime;
+- (void)setImageGeneratorForScrubbing:(CDUnknownBlockType)arg1;
+- (CDUnknownBlockType)imageGeneratorForScrubbing;
+- (void)setPlayerItemForScrubbing:(id)arg1;
+- (id)playerItemForScrubbing;
+- (void)setNextContentProposal:(id)arg1;
+- (id)nextContentProposal;
+- (void)setSelectedExternalSubtitleOptionLanguage:(id)arg1;
+- (id)selectedExternalSubtitleOptionLanguage;
+- (void)setExternalSubtitleOptionLanguages:(id)arg1;
+- (id)externalSubtitleOptionLanguages;
+@property(copy, nonatomic) NSArray *interstitialTimeRanges;
+@property(copy, nonatomic) NSArray *externalMetadata;
+@property(copy, nonatomic) NSArray *navigationMarkerGroups;
+@property(readonly, nonatomic) AVMediaContentRating *mediaContentRating;
 @end
 

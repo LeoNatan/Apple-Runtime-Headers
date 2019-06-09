@@ -6,21 +6,25 @@
 
 #import <AppKit/NSControl.h>
 
-@class FI_TTagEditorController, NSArray;
+@class FI_TTagEditorController, NSArray, NSObject;
 @protocol FITagEditorDelegate;
 
 @interface FITagEditorView : NSControl
 {
-    id <FITagEditorDelegate> _delegate;
+    NSObject<FITagEditorDelegate> *_delegate;
     id _controller;
     id _reserved;
     id _reserved2;
     id _reserved3;
+    struct TNotificationCenterObserver _tagEditorDidFinishEditingObserver;
+    struct TNotificationCenterObserver _suggestionsWillShowObserver;
 }
 
 + (_Bool)accessibilityIsSingleCelled;
 @property(retain, nonatomic) FI_TTagEditorController *controller; // @synthesize controller=_controller;
-@property id <FITagEditorDelegate> delegate; // @synthesize delegate=_delegate;
+@property __weak NSObject<FITagEditorDelegate> *delegate; // @synthesize delegate=_delegate;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (BOOL)accessibilityIsIgnored;
 - (void)selectText:(id)arg1;
 - (void)setSelectable:(_Bool)arg1;
@@ -40,8 +44,8 @@
 - (id)target;
 - (void)setOptions:(id)arg1;
 @property(copy) NSArray *tags; // @dynamic tags;
-- (void)didFinishEditing:(id)arg1;
-- (void)suggestionsWindowWillShow:(id)arg1;
+- (void)didFinishEditing;
+- (void)suggestionsWindowWillShow;
 - (id)taggingTokenField;
 - (void)dealloc;
 - (void)viewDidChangeEffectiveAppearance;

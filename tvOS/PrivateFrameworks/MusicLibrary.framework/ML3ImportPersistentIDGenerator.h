@@ -8,7 +8,6 @@
 
 @class NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface ML3ImportPersistentIDGenerator : ML3PersistentIDGenerator
 {
     NSMutableDictionary *_pregeneratedIdMappings;

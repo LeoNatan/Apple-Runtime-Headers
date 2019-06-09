@@ -41,6 +41,7 @@
 + (id)shortDescription;
 + (id)removeUserManagementOperationForUser:(id)arg1 accessory:(id)arg2 model:(id)arg3;
 + (id)addUserManagementOperationForUser:(id)arg1 accessory:(id)arg2 model:(id)arg3;
++ (void)initialize;
 @property(readonly, nonatomic) NSDictionary *accessoryInvitationInformation; // @synthesize accessoryInvitationInformation=_accessoryInvitationInformation;
 @property(readonly, nonatomic) HMDAccessoryInvitation *accessoryInvitation; // @synthesize accessoryInvitation=_accessoryInvitation;
 @property(retain, nonatomic) HMFTimer *backoffTimer; // @synthesize backoffTimer=_backoffTimer;
@@ -48,7 +49,7 @@
 @property(readonly, nonatomic) HMFTimer *expirationTimer; // @synthesize expirationTimer=_expirationTimer;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
-@property(retain, nonatomic) HAPPairingIdentity *ownerPairingIdentity; // @synthesize ownerPairingIdentity=_ownerPairingIdentity;
+@property(copy, nonatomic) HAPPairingIdentity *ownerPairingIdentity; // @synthesize ownerPairingIdentity=_ownerPairingIdentity;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(retain, nonatomic) HMDAccessory *accessory; // @synthesize accessory=_accessory;
 @property(readonly, nonatomic) HMDUser *user; // @synthesize user=_user;

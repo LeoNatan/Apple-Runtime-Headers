@@ -14,6 +14,7 @@
     _Bool _supportsLockScreen;
     _Bool _supportsNotificationCenter;
     _Bool _supportsCarPlay;
+    _Bool _supportsSpoken;
     _Bool _modalAlertStyle;
     _Bool _alwaysShowPreviews;
     _Bool _providesAppNotificationSettings;
@@ -23,6 +24,7 @@
 @property(nonatomic) _Bool providesAppNotificationSettings; // @synthesize providesAppNotificationSettings=_providesAppNotificationSettings;
 @property(nonatomic) _Bool alwaysShowPreviews; // @synthesize alwaysShowPreviews=_alwaysShowPreviews;
 @property(nonatomic) _Bool modalAlertStyle; // @synthesize modalAlertStyle=_modalAlertStyle;
+@property(nonatomic) _Bool supportsSpoken; // @synthesize supportsSpoken=_supportsSpoken;
 @property(nonatomic) _Bool supportsCarPlay; // @synthesize supportsCarPlay=_supportsCarPlay;
 @property(nonatomic) _Bool supportsNotificationCenter; // @synthesize supportsNotificationCenter=_supportsNotificationCenter;
 @property(nonatomic) _Bool supportsLockScreen; // @synthesize supportsLockScreen=_supportsLockScreen;

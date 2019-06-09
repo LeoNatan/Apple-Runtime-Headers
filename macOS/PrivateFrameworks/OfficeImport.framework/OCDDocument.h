@@ -8,6 +8,7 @@
 
 @class NSData, NSMutableArray, OADBlipCollection, OADGraphicStyleCache, OADTableStyleCollection, OADTextListStyle, OADTheme, OCDReader, OCDSummary, OCDWriter, OITSUPointerKeyDictionary;
 
+__attribute__((visibility("hidden")))
 @interface OCDDocument : NSObject
 {
     OCDWriter *mWriter;

@@ -8,41 +8,54 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOMapRegion, NSData, NSMutableArray, NSString, PBUnknownFields;
+@class GEOMapRegion, NSData, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOPlaceSearchResponse : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
-    double _turnaroundTime;
     GEOMapRegion *_mapRegion;
     NSMutableArray *_namedFeatures;
     NSString *_nearbySectionHeader;
     NSMutableArray *_placeResults;
-    int _status;
-    int _statusCodeInfo;
     NSMutableArray *_suggestionEntryLists;
     NSData *_suggestionMetadata;
+    double _turnaroundTime;
+    int _statusCodeInfo;
+    int _status;
     _Bool _isChainResultSet;
     struct {
-        unsigned int turnaroundTime:1;
-        unsigned int statusCodeInfo:1;
-        unsigned int isChainResultSet:1;
-    } _has;
+        unsigned int has_turnaroundTime:1;
+        unsigned int has_statusCodeInfo:1;
+        unsigned int has_isChainResultSet:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_mapRegion:1;
+        unsigned int read_namedFeatures:1;
+        unsigned int read_nearbySectionHeader:1;
+        unsigned int read_placeResults:1;
+        unsigned int read_suggestionEntryLists:1;
+        unsigned int read_suggestionMetadata:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_mapRegion:1;
+        unsigned int wrote_namedFeatures:1;
+        unsigned int wrote_nearbySectionHeader:1;
+        unsigned int wrote_placeResults:1;
+        unsigned int wrote_suggestionEntryLists:1;
+        unsigned int wrote_suggestionMetadata:1;
+        unsigned int wrote_turnaroundTime:1;
+        unsigned int wrote_statusCodeInfo:1;
+        unsigned int wrote_status:1;
+        unsigned int wrote_isChainResultSet:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)namedFeaturesType;
 + (Class)suggestionEntryListsType;
 + (Class)placeResultType;
-@property(nonatomic) _Bool isChainResultSet; // @synthesize isChainResultSet=_isChainResultSet;
-@property(retain, nonatomic) NSString *nearbySectionHeader; // @synthesize nearbySectionHeader=_nearbySectionHeader;
-@property(nonatomic) double turnaroundTime; // @synthesize turnaroundTime=_turnaroundTime;
-@property(retain, nonatomic) NSMutableArray *namedFeatures; // @synthesize namedFeatures=_namedFeatures;
-@property(retain, nonatomic) NSData *suggestionMetadata; // @synthesize suggestionMetadata=_suggestionMetadata;
-@property(retain, nonatomic) NSMutableArray *suggestionEntryLists; // @synthesize suggestionEntryLists=_suggestionEntryLists;
-@property(retain, nonatomic) GEOMapRegion *mapRegion; // @synthesize mapRegion=_mapRegion;
-@property(retain, nonatomic) NSMutableArray *placeResults; // @synthesize placeResults=_placeResults;
-@property(nonatomic) int status; // @synthesize status=_status;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -51,31 +64,50 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasIsChainResultSet;
+@property(nonatomic) _Bool isChainResultSet;
+@property(retain, nonatomic) NSString *nearbySectionHeader;
 @property(readonly, nonatomic) _Bool hasNearbySectionHeader;
+- (void)_readNearbySectionHeader;
 @property(nonatomic) _Bool hasTurnaroundTime;
+@property(nonatomic) double turnaroundTime;
 - (int)StringAsStatusCodeInfo:(id)arg1;
 - (id)statusCodeInfoAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatusCodeInfo;
-@property(nonatomic) int statusCodeInfo; // @synthesize statusCodeInfo=_statusCodeInfo;
+@property(nonatomic) int statusCodeInfo;
 - (id)namedFeaturesAtIndex:(unsigned int)arg1;
 - (unsigned int)namedFeaturesCount;
+- (void)_addNoFlagsNamedFeatures:(id)arg1;
 - (void)addNamedFeatures:(id)arg1;
 - (void)clearNamedFeatures;
+@property(retain, nonatomic) NSMutableArray *namedFeatures;
+- (void)_readNamedFeatures;
+@property(retain, nonatomic) NSData *suggestionMetadata;
 @property(readonly, nonatomic) _Bool hasSuggestionMetadata;
+- (void)_readSuggestionMetadata;
 - (id)suggestionEntryListsAtIndex:(unsigned int)arg1;
 - (unsigned int)suggestionEntryListsCount;
+- (void)_addNoFlagsSuggestionEntryLists:(id)arg1;
 - (void)addSuggestionEntryLists:(id)arg1;
 - (void)clearSuggestionEntryLists;
+@property(retain, nonatomic) NSMutableArray *suggestionEntryLists;
+- (void)_readSuggestionEntryLists;
+@property(retain, nonatomic) GEOMapRegion *mapRegion;
 @property(readonly, nonatomic) _Bool hasMapRegion;
+- (void)_readMapRegion;
 - (id)placeResultAtIndex:(unsigned int)arg1;
 - (unsigned int)placeResultsCount;
+- (void)_addNoFlagsPlaceResult:(id)arg1;
 - (void)addPlaceResult:(id)arg1;
 - (void)clearPlaceResults;
+@property(retain, nonatomic) NSMutableArray *placeResults;
+- (void)_readPlaceResults;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
+@property(nonatomic) int status;
 
 @end
 

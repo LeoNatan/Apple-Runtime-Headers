@@ -67,7 +67,7 @@
 - (void)syncSession:(id)arg1 didEndWithError:(id)arg2;
 - (void)syncSession:(id)arg1 applyChanges:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (long long)syncSession:(id)arg1 enqueueChanges:(CDUnknownBlockType)arg2 error:(id *)arg3;
-- (void)serviceDidPairDevice:(id)arg1;
+- (void)service:(id)arg1 didSwitchFromPairingID:(id)arg2 toPairingID:(id)arg3;
 - (_Bool)service:(id)arg1 startSession:(id)arg2 error:(id *)arg3;
 - (void)_setHasChangesAvailable;
 - (void)setNeedsFullSync;

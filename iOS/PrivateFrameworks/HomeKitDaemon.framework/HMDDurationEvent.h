@@ -21,7 +21,7 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)logCategory;
-@property(retain, nonatomic) NSNumber *duration; // @synthesize duration=_duration;
+@property(copy, nonatomic) NSNumber *duration; // @synthesize duration=_duration;
 - (void).cxx_destruct;
 - (id)metricData;
 - (id)_nextTimerDate;

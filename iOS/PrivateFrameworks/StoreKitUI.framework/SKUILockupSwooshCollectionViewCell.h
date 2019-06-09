@@ -8,6 +8,7 @@
 
 @class SKUILockupSwooshCellLayout;
 
+__attribute__((visibility("hidden")))
 @interface SKUILockupSwooshCollectionViewCell : SKUIItemCollectionViewCell
 {
     SKUILockupSwooshCellLayout *_layout;

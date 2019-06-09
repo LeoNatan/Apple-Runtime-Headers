@@ -25,11 +25,14 @@
 - (id)expressState;
 - (void)disableExpressModeForPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)enableExpressModeWithPassInformation:(id)arg1 credential:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)upgradeExpressModeForPass:(id)arg1 withCredential:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)validExpressModeUpgradeRequestForPass:(id)arg1;
+- (id)expressModeUpgradeRequestForPass:(id)arg1;
+- (_Bool)supportsLowPowerExpressMode;
 - (_Bool)isExpressModeEnabledForPass:(id)arg1;
 - (void)conflictingExpressPassesWithPassInformation:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)expressModeSupportedForPass:(id)arg1;
 - (id)initWithPaymentDataProvider:(id)arg1 passLibraryDataProvider:(id)arg2 isForWatch:(_Bool)arg3;
-- (id)init;
 
 @end
 

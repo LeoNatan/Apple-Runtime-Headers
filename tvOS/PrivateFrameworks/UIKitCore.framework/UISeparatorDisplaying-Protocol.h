@@ -7,6 +7,7 @@
 #import <UIKitCore/NSObject-Protocol.h>
 
 @protocol UISeparatorDisplaying <NSObject>
+@property(nonatomic) double horizontalLineLeadingInset;
 @property(nonatomic) double constantAxisDimension;
 - (void)setConstantSizedAxis:(long long)arg1;
 @end

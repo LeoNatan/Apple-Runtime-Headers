@@ -6,7 +6,7 @@
 
 #import <ConfigurationEngineModel/CEMPayloadBase.h>
 
-@class NSNumber, NSString;
+@class NSArray, NSNumber, NSString;
 
 @interface CEMNetworkVPNDeclaration_Proxies : CEMPayloadBase
 {
@@ -21,11 +21,13 @@
     NSNumber *_payloadProxyAutoConfigEnable;
     NSNumber *_payloadProxyAutoDiscoveryEnable;
     NSString *_payloadProxyAutoConfigURLString;
+    NSArray *_payloadSupplementalMatchDomains;
 }
 
 + (id)buildRequiredOnly;
-+ (id)buildWithHTTPEnable:(id)arg1 withHTTPPort:(id)arg2 withHTTPProxy:(id)arg3 withHTTPProxyPassword:(id)arg4 withHTTPProxyUsername:(id)arg5 withHTTPSEnable:(id)arg6 withHTTPSPort:(id)arg7 withHTTPSProxy:(id)arg8 withProxyAutoConfigEnable:(id)arg9 withProxyAutoDiscoveryEnable:(id)arg10 withProxyAutoConfigURLString:(id)arg11;
++ (id)buildWithHTTPEnable:(id)arg1 withHTTPPort:(id)arg2 withHTTPProxy:(id)arg3 withHTTPProxyPassword:(id)arg4 withHTTPProxyUsername:(id)arg5 withHTTPSEnable:(id)arg6 withHTTPSPort:(id)arg7 withHTTPSProxy:(id)arg8 withProxyAutoConfigEnable:(id)arg9 withProxyAutoDiscoveryEnable:(id)arg10 withProxyAutoConfigURLString:(id)arg11 withSupplementalMatchDomains:(id)arg12;
 + (id)allowedPayloadKeys;
+@property(copy, nonatomic) NSArray *payloadSupplementalMatchDomains; // @synthesize payloadSupplementalMatchDomains=_payloadSupplementalMatchDomains;
 @property(copy, nonatomic) NSString *payloadProxyAutoConfigURLString; // @synthesize payloadProxyAutoConfigURLString=_payloadProxyAutoConfigURLString;
 @property(copy, nonatomic) NSNumber *payloadProxyAutoDiscoveryEnable; // @synthesize payloadProxyAutoDiscoveryEnable=_payloadProxyAutoDiscoveryEnable;
 @property(copy, nonatomic) NSNumber *payloadProxyAutoConfigEnable; // @synthesize payloadProxyAutoConfigEnable=_payloadProxyAutoConfigEnable;

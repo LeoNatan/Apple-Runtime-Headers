@@ -10,29 +10,46 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBAddTasksIntent-Protocol.h>
 
-@class NSArray, NSString, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTaskList, _INPBTemporalEventTrigger;
+@class NSArray, NSString, _INPBContactEventTrigger, _INPBIntent, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTaskList, _INPBTemporalEventTrigger;
 
 @interface _INPBAddTasksIntent : PBCodable <_INPBAddTasksIntent, NSSecureCoding, NSCopying>
 {
-    struct _has;
+    struct {
+        unsigned int priority:1;
+        unsigned int taskReference:1;
+    } _has;
+    int _priority;
+    int _taskReference;
+    _INPBContactEventTrigger *_contactEventTrigger;
+    _INPBIntent *_intent;
     _INPBIntentMetadata *_intentMetadata;
     _INPBSpatialEventTrigger *_spatialEventTrigger;
     _INPBTaskList *_targetTaskList;
+    NSArray *_targetTaskListMembers;
     NSArray *_taskTitles;
     _INPBTemporalEventTrigger *_temporalEventTrigger;
 }
 
++ (BOOL)supportsSecureCoding;
 + (Class)taskTitlesType;
++ (Class)targetTaskListMembersType;
 @property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger; // @synthesize temporalEventTrigger=_temporalEventTrigger;
 @property(copy, nonatomic) NSArray *taskTitles; // @synthesize taskTitles=_taskTitles;
+@property(nonatomic) int taskReference; // @synthesize taskReference=_taskReference;
+@property(copy, nonatomic) NSArray *targetTaskListMembers; // @synthesize targetTaskListMembers=_targetTaskListMembers;
 @property(retain, nonatomic) _INPBTaskList *targetTaskList; // @synthesize targetTaskList=_targetTaskList;
 @property(retain, nonatomic) _INPBSpatialEventTrigger *spatialEventTrigger; // @synthesize spatialEventTrigger=_spatialEventTrigger;
+@property(nonatomic) int priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(retain, nonatomic) _INPBIntent *intent; // @synthesize intent=_intent;
+@property(retain, nonatomic) _INPBContactEventTrigger *contactEventTrigger; // @synthesize contactEventTrigger=_contactEventTrigger;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 @property(readonly, nonatomic) BOOL hasTemporalEventTrigger;
@@ -40,9 +57,21 @@
 @property(readonly, nonatomic) unsigned long long taskTitlesCount;
 - (void)addTaskTitles:(id)arg1;
 - (void)clearTaskTitles;
+- (int)StringAsTaskReference:(id)arg1;
+- (id)taskReferenceAsString:(int)arg1;
+@property(nonatomic) BOOL hasTaskReference;
+- (id)targetTaskListMembersAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long targetTaskListMembersCount;
+- (void)addTargetTaskListMembers:(id)arg1;
+- (void)clearTargetTaskListMembers;
 @property(readonly, nonatomic) BOOL hasTargetTaskList;
 @property(readonly, nonatomic) BOOL hasSpatialEventTrigger;
+- (int)StringAsPriority:(id)arg1;
+- (id)priorityAsString:(int)arg1;
+@property(nonatomic) BOOL hasPriority;
 @property(readonly, nonatomic) BOOL hasIntentMetadata;
+@property(readonly, nonatomic) BOOL hasIntent;
+@property(readonly, nonatomic) BOOL hasContactEventTrigger;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

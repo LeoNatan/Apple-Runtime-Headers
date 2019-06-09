@@ -19,6 +19,8 @@ __attribute__((visibility("hidden")))
     NSUUID *_UUID;
     struct CGColorSpace *_colorSpace;
     double _maxHDRValue;
+    double _maxPotentialHDRValue;
+    double _maxReferenceHDRValue;
 }
 
 + (BOOL)displaysWillChange;
@@ -32,6 +34,8 @@ __attribute__((visibility("hidden")))
 + (void)addDisplayChangedHandler:(CDUnknownBlockType)arg1;
 @property(readonly) struct CGColorSpace *colorSpace; // @synthesize colorSpace=_colorSpace;
 @property(readonly, copy) NSUUID *UUID; // @synthesize UUID=_UUID;
+@property(readonly) double maxReferenceHDRValue; // @synthesize maxReferenceHDRValue=_maxReferenceHDRValue;
+@property(readonly) double maxPotentialHDRValue; // @synthesize maxPotentialHDRValue=_maxPotentialHDRValue;
 @property(readonly) double maxHDRValue; // @synthesize maxHDRValue=_maxHDRValue;
 @property(readonly) struct CGSize devicePixelCounts; // @synthesize devicePixelCounts=_devicePixelCounts;
 @property(readonly) double backingPixelsPerPoint; // @synthesize backingPixelsPerPoint=_backingPixelsPerPoint;

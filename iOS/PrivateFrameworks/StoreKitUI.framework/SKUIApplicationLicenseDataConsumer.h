@@ -6,6 +6,7 @@
 
 #import <StoreServices/SSVURLProtocolConsumer.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIApplicationLicenseDataConsumer : SSVURLProtocolConsumer
 {
 }

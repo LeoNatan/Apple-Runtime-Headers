@@ -29,6 +29,7 @@ struct CXCallUpdateHasSet {
     unsigned int audioMode:1;
     unsigned int audioInterruptionProvider:1;
     unsigned int audioInterruptionOperationMode:1;
+    unsigned int verificationStatus:1;
     unsigned int requiresInCallSounds:1;
     unsigned int inCallSoundRegion:1;
     unsigned int supportsHolding:1;
@@ -41,6 +42,7 @@ struct CXCallUpdateHasSet {
     unsigned int videoStreamToken:1;
     unsigned int crossDeviceIdentifier:1;
     unsigned int localSenderIdentityUUID:1;
+    unsigned int localSenderIdentityAccountUUID:1;
     unsigned int remoteParticipantHandles:1;
     unsigned int activeRemoteParticipantHandles:1;
     unsigned int handoffContext:1;
@@ -48,5 +50,14 @@ struct CXCallUpdateHasSet {
     unsigned int prefersExclusiveAccessToCellularNetwork:1;
     unsigned int remoteUplinkMuted:1;
     unsigned int shouldSuppressInCallUI:1;
+    unsigned int requiresAuthentication:1;
+};
+
+struct CXVoicemailUpdateHasSet {
+    unsigned int sender:1;
+    unsigned int dateReceived:1;
+    unsigned int audioFileURL:1;
+    unsigned int played:1;
+    unsigned int trashed:1;
 };
 

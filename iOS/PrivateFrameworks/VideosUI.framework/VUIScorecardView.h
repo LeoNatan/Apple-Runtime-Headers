@@ -14,23 +14,23 @@ __attribute__((visibility("hidden")))
 {
     _Bool _didCalculatedSize;
     _Bool _delegateRespondsToBackgroundImageForScorecardViewMaterial;
-    _Bool _delegateRespondsToBackgroundBlendModeForElementInRowAtIndex;
+    _Bool _delegateRespondsToBackgroundBlendModeForScoreValueInRowAtIndex;
     id <VUIScorecardViewDelegate> _delegate;
     VUIScoreboardLayout *_scoreboardLayout;
     double _interitemSpacing;
-    NSArray *_rowElementSizes;
+    NSArray *_rowScoreValueSizes;
     NSArray *_columnWidths;
     NSArray *_rowHeights;
     UIImage *_darkMaterialImage;
     struct CGSize _scorecardSize;
 }
 
-@property(nonatomic) _Bool delegateRespondsToBackgroundBlendModeForElementInRowAtIndex; // @synthesize delegateRespondsToBackgroundBlendModeForElementInRowAtIndex=_delegateRespondsToBackgroundBlendModeForElementInRowAtIndex;
+@property(nonatomic) _Bool delegateRespondsToBackgroundBlendModeForScoreValueInRowAtIndex; // @synthesize delegateRespondsToBackgroundBlendModeForScoreValueInRowAtIndex=_delegateRespondsToBackgroundBlendModeForScoreValueInRowAtIndex;
 @property(nonatomic) _Bool delegateRespondsToBackgroundImageForScorecardViewMaterial; // @synthesize delegateRespondsToBackgroundImageForScorecardViewMaterial=_delegateRespondsToBackgroundImageForScorecardViewMaterial;
 @property(retain, nonatomic) UIImage *darkMaterialImage; // @synthesize darkMaterialImage=_darkMaterialImage;
 @property(retain, nonatomic) NSArray *rowHeights; // @synthesize rowHeights=_rowHeights;
 @property(retain, nonatomic) NSArray *columnWidths; // @synthesize columnWidths=_columnWidths;
-@property(retain, nonatomic) NSArray *rowElementSizes; // @synthesize rowElementSizes=_rowElementSizes;
+@property(retain, nonatomic) NSArray *rowScoreValueSizes; // @synthesize rowScoreValueSizes=_rowScoreValueSizes;
 @property(nonatomic) double interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(nonatomic) struct CGSize scorecardSize; // @synthesize scorecardSize=_scorecardSize;
 @property(nonatomic) _Bool didCalculatedSize; // @synthesize didCalculatedSize=_didCalculatedSize;

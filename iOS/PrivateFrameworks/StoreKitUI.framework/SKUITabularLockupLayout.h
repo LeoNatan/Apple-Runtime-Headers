@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface SKUITabularLockupLayout : NSObject
 {
     NSArray *_columns;

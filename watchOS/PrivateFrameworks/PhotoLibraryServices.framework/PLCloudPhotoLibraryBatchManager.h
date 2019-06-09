@@ -17,6 +17,7 @@
     unsigned long long _resourceBudget;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (_Bool)isAboveMaximumResourceBudget;
 - (int)currentBatchCount;

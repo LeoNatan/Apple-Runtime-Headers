@@ -17,6 +17,8 @@
     UIView *_platter;
     UIView *_highlightView;
     NSDate *_timeTravelDate;
+    UIColor *_computedForegroundColor;
+    UIColor *_computedPlatterColor;
     _Bool canUseCurvedText;
     _Bool _useRoundedFontDesign;
     _Bool _usesMediumLayout;
@@ -61,6 +63,12 @@
 - (void)_updateImageViewColor:(id)arg1;
 - (void)_updateColorChange;
 - (void)_updateLabelsForFontChange;
+- (void)_updatePlatterColor;
+- (void)_updateForegroundColor;
+- (id)_computedPlatterColor;
+- (void)_computePlatterColor;
+- (id)_computedForegroundColor;
+- (void)_computeForegroundColor;
 - (_Bool)pointInside:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

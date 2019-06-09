@@ -6,45 +6,32 @@
 
 #import <objc/NSObject.h>
 
-#import <AttentionAwareness/AWScheduler-Protocol.h>
-#import <AttentionAwareness/NSXPCListenerDelegate-Protocol.h>
-
-@class AWAttentionSampler, NSMutableArray, NSString;
-@protocol OS_dispatch_queue, OS_dispatch_source;
+@class AWAttentionSampler, NSMutableArray;
+@protocol AWSchedulerObserver, OS_dispatch_queue, OS_dispatch_source;
 
 __attribute__((visibility("hidden")))
-@interface AWScheduler : NSObject <AWScheduler, NSXPCListenerDelegate>
+@interface AWScheduler : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_timer;
     NSMutableArray *_clients;
     AWAttentionSampler *_attentionSampler;
-    AWAttentionSampler *_unitTestSampler;
+    id <AWSchedulerObserver> _observer;
 }
 
++ (id)unitTestScheduler;
 + (id)sharedScheduler;
+@property(readonly, nonatomic) AWAttentionSampler *attentionSampler; // @synthesize attentionSampler=_attentionSampler;
+@property(nonatomic) __weak id <AWSchedulerObserver> observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
-- (void)createUnitTestSampler;
-- (void)getUnitTestSamplerWithReply:(CDUnknownBlockType)arg1;
-- (void)outputPowerLogWithReply:(CDUnknownBlockType)arg1;
-- (void)setDebugPreference:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)getDebugPreferences:(CDUnknownBlockType)arg1;
 - (void)armEvents;
 - (void)setSmartCoverClosed:(_Bool)arg1;
-- (void)processHIDEvent:(unsigned long long)arg1 timestamp:(unsigned long long)arg2;
-- (void)removeClientsForConnection:(id)arg1;
+- (void)processHIDEvent:(struct __IOHIDEvent *)arg1 mask:(unsigned long long)arg2 timestamp:(unsigned long long)arg3;
 - (void)removeInvalidClients;
 - (void)removeInvalidClientsWithConnection:(id)arg1;
-- (void)addClient:(id)arg1 clientConfig:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (void)getSupportedEventsWithReply:(CDUnknownBlockType)arg1;
-- (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+- (void)addClient:(id)arg1;
+- (id)description;
+- (id)initForUnitTest:(_Bool)arg1;
 
 @end
 

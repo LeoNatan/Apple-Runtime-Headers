@@ -7,6 +7,8 @@
 @class NSData, NSDictionary, NSNumber, NSString, NSUUID;
 
 @protocol NRXPCPairingDelegate
+- (void)xpcIsAssertionActive:(NSString *)arg1 withCompletion:(void (^)(_Bool, NSError *))arg2;
+- (void)xpcIsPhoneReadyToMigrateDevice:(NSUUID *)arg1 withCompletion:(void (^)(unsigned long long, NSError *))arg2;
 - (void)xpcGetMigrationCountForPairingID:(NSUUID *)arg1 completion:(void (^)(unsigned long long, NSError *))arg2;
 - (void)xpcGetLastSwitchIndex:(void (^)(unsigned long long, NSError *))arg1;
 - (void)xpcFakePairedSyncIsCompleteWithCompletion:(void (^)(NSError *))arg1;
@@ -29,7 +31,7 @@
 - (void)xpcPairWithSimulator:(NSUUID *)arg1 withCompletion:(void (^)(NSError *))arg2;
 - (void)xpcBeginMigrationWithCompletion:(void (^)(NSError *))arg1;
 - (void)xpcBeginMigrationWithDeviceID:(NSUUID *)arg1 completion:(void (^)(NSError *))arg2;
-- (void)xpcActiveDeviceAssertions:(void (^)(NSUUID *, NSArray *))arg1;
+- (void)xpcActiveDeviceAssertions:(void (^)(NSDictionary *))arg1;
 - (void)xpcInvalidateSwitchAssertionWithIdentifier:(NSString *)arg1 block:(void (^)(NSError *))arg2;
 - (void)xpcSwitchActiveDeviceWithDeviceID:(NSUUID *)arg1 withAssertionHandler:(void (^)(NSError *, NSString *))arg2;
 - (void)xpcSwitchActiveDeviceWithDeviceID:(NSUUID *)arg1 isMagicSwitch:(_Bool)arg2 operationHasCompleted:(void (^)(NSError *))arg3;

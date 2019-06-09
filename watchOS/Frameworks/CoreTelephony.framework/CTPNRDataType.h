@@ -29,6 +29,7 @@
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToCTPNRDataType:(id)arg1;
 - (id)init;
+- (id)description;
 
 @end
 

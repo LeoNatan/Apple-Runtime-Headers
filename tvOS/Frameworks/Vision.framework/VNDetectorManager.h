@@ -34,12 +34,13 @@ __attribute__((visibility("hidden")))
 - (id)wisdomParametersForMetalDeviceWithName:(id)arg1;
 - (Class)_detectorClassForDetectorType:(id)arg1 options:(id)arg2 detectorCreationOptions:(id *)arg3 error:(id *)arg4;
 - (id)_detectorOfClass:(Class)arg1 type:(id)arg2 configuredWithOptions:(id)arg3 error:(id *)arg4;
-- (id)_specialCaseLookUpOfExistingDetectorType:(id)arg1 configuredWithOptions:(id)arg2;
+- (_Bool)_specialCaseLookUpOfExistingDetector:(id *)arg1 forType:(id)arg2 configuredWithOptions:(id)arg3 error:(id *)arg4;
 - (id)_synchronizationQueueForDetectorType:(id)arg1;
 - (Class)_detectorClassForDetectorType:(id)arg1 error:(id *)arg2;
 - (void)_flushMetalDeviceWisdomParametersCache;
 - (id)_cachedMetalDeviceWisdomParameters;
 - (id)init;
+- (id)saliencyHeatmapBoundingBoxGeneratorForDetector:(id)arg1 withOptions:(id)arg2 error:(id *)arg3;
 
 @end
 

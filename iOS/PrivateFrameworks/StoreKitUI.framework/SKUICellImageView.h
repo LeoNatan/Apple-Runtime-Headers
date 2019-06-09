@@ -8,6 +8,7 @@
 
 @class UIColor;
 
+__attribute__((visibility("hidden")))
 @interface SKUICellImageView : UIImageView
 {
     UIColor *_cachedBackgroundColor;

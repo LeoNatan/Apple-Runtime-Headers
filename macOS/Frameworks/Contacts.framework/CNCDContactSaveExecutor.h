@@ -26,6 +26,8 @@ __attribute__((visibility("hidden")))
 - (void)updateUnifiedContacts:(id)arg1;
 - (void)updateNonUnifiedContacts:(id)arg1;
 - (void)updateContacts;
+- (void)unlinkContacts;
+- (void)linkContacts;
 - (void)updateCacheWithAddedContacts;
 - (void)addContacts;
 - (void)saveContacts;

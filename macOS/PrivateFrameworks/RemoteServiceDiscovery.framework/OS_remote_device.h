@@ -28,20 +28,20 @@ __attribute__((visibility("hidden")))
     OS_remote_device *_disconnected_callback_self_retain;
 }
 
-@property(retain) OS_remote_device *disconnected_callback_self_retain; // @synthesize disconnected_callback_self_retain=_disconnected_callback_self_retain;
-@property(retain) NSObject<OS_dispatch_queue> *disconnected_callback_queue; // @synthesize disconnected_callback_queue=_disconnected_callback_queue;
-@property(copy) CDUnknownBlockType disconnected_callback; // @synthesize disconnected_callback=_disconnected_callback;
-@property(retain) OS_remote_device *connected_callback_self_retain; // @synthesize connected_callback_self_retain=_connected_callback_self_retain;
-@property(retain) NSObject<OS_dispatch_queue> *connected_callback_queue; // @synthesize connected_callback_queue=_connected_callback_queue;
-@property(copy) CDUnknownBlockType connected_callback; // @synthesize connected_callback=_connected_callback;
-@property(retain) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
+@property(retain, nonatomic) OS_remote_device *disconnected_callback_self_retain; // @synthesize disconnected_callback_self_retain=_disconnected_callback_self_retain;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *disconnected_callback_queue; // @synthesize disconnected_callback_queue=_disconnected_callback_queue;
+@property(copy, nonatomic) CDUnknownBlockType disconnected_callback; // @synthesize disconnected_callback=_disconnected_callback;
+@property(retain, nonatomic) OS_remote_device *connected_callback_self_retain; // @synthesize connected_callback_self_retain=_connected_callback_self_retain;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *connected_callback_queue; // @synthesize connected_callback_queue=_connected_callback_queue;
+@property(copy, nonatomic) CDUnknownBlockType connected_callback; // @synthesize connected_callback=_connected_callback;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *connection; // @synthesize connection=_connection;
 @property(nonatomic) unsigned long long messaging_protocol_version; // @synthesize messaging_protocol_version=_messaging_protocol_version;
 @property(nonatomic) unsigned long long device_id; // @synthesize device_id=_device_id;
 @property(nonatomic) char *uuid; // @synthesize uuid=_uuid;
-@property unsigned int type; // @synthesize type=_type;
-@property(retain) NSObject<OS_xpc_object> *properties; // @synthesize properties=_properties;
-@property unsigned int state; // @synthesize state=_state;
-@property(retain) NSObject<OS_dispatch_queue> *dq; // @synthesize dq=_dq;
+@property(nonatomic) unsigned int type; // @synthesize type=_type;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *properties; // @synthesize properties=_properties;
+@property(nonatomic) unsigned int state; // @synthesize state=_state;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *dq; // @synthesize dq=_dq;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;

@@ -16,7 +16,6 @@
 - (void)_detatchFromPlayerItem;
 - (_Bool)_attachToPlayerItem:(id)arg1;
 - (id)_weakReference;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

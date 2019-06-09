@@ -8,20 +8,28 @@
 
 #import <TinCanShared/TCSContactsObserver-Protocol.h>
 
-@class CNContactStore, NSArray, NSMutableSet, NSString, TCSContacts;
+@class CNContactStore, NSArray, NSDictionary, NSMutableSet, NSString, TCSContacts;
 @protocol TCSContactsDataSourceDelegate;
 
 @interface TCSContactsDataSource : NSObject <TCSContactsObserver>
 {
     TCSContacts *_contacts;
-    NSMutableSet *_contactIdentifiers;
-    int _firstUnlockToken;
+    NSMutableSet *_whitelistedContactIdentifiers;
+    NSMutableSet *_inviterContactIdentifiers;
+    NSDictionary *_whitelistedContactMap;
+    NSDictionary *_inviterContactMap;
+    NSDictionary *_inviteeContactMap;
+    int _namePrefChangeToken;
     id <TCSContactsDataSourceDelegate> _delegate;
     CNContactStore *_contactStore;
     NSArray *_sortedContacts;
+    NSArray *_sortedInviters;
+    NSArray *_sortedInvitees;
 }
 
 + (id)descriptorForRequiredKeys;
+@property(retain, nonatomic) NSArray *sortedInvitees; // @synthesize sortedInvitees=_sortedInvitees;
+@property(retain, nonatomic) NSArray *sortedInviters; // @synthesize sortedInviters=_sortedInviters;
 @property(retain, nonatomic) NSArray *sortedContacts; // @synthesize sortedContacts=_sortedContacts;
 @property(readonly, nonatomic) TCSContacts *contacts; // @synthesize contacts=_contacts;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
@@ -31,16 +39,26 @@
 - (void)_handlePersonNamePreferencesChangeNotification;
 - (void)_handleContactStoreDidChange:(id)arg1;
 - (_Bool)_contactArray:(id)arg1 differsFromArray:(id)arg2;
+- (int)_sectionForContact:(id)arg1;
+- (id)_contactsForSection:(int)arg1;
 - (id)_sortedContactsArrayFromArray:(id)arg1;
+- (id)_sortedContactsArrayFromArray:(id)arg1 forSection:(int)arg2;
 - (id)_unsortedContactsArray;
 - (void)_notifyDelegateRecencyChanged;
 - (void)_notifyDelegateContactsChanged;
+- (void)_logSortedContacts;
 - (void)_updateSortedContactsAndNotifyIfChanged:(_Bool)arg1;
+- (id)_contactMapFromArray:(id)arg1;
+- (void)contactBecameAccepted:(id)arg1;
 - (void)recencyDidChange:(id)arg1;
 - (void)destinationsDidChange:(id)arg1;
+- (id)contactWithIdentifier:(id)arg1;
+- (_Bool)isContactAnInviter:(id)arg1;
 - (_Bool)isContactWhitelisted:(id)arg1;
+- (void)removeContact:(id)arg1 inSection:(int)arg2;
 - (void)removeContact:(id)arg1;
-- (int)addContact:(id)arg1;
+- (int)inviteContact:(id)arg1;
+@property(readonly, nonatomic) unsigned int sectionCount;
 - (void)dealloc;
 - (id)initWithContactStore:(id)arg1 contacts:(id)arg2;
 

@@ -8,7 +8,6 @@
 
 @class EKEvent;
 
-__attribute__((visibility("hidden")))
 @interface EKEventDetailCell : UITableViewCell
 {
     EKEvent *_event;

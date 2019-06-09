@@ -8,17 +8,23 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBUnknownFields;
+
 @interface GEOLaneArrowhead : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
     int _angle;
     int _category;
     struct {
-        unsigned int angle:1;
-        unsigned int category:1;
-    } _has;
+        unsigned int has_angle:1;
+        unsigned int has_category:1;
+    } _flags;
 }
 
-@property(nonatomic) int angle; // @synthesize angle=_angle;
++ (_Bool)isValid:(id)arg1;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -26,13 +32,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsCategory:(id)arg1;
 - (id)categoryAsString:(int)arg1;
 @property(nonatomic) _Bool hasCategory;
-@property(nonatomic) int category; // @synthesize category=_category;
+@property(nonatomic) int category;
 @property(nonatomic) _Bool hasAngle;
+@property(nonatomic) int angle;
 
 @end
 

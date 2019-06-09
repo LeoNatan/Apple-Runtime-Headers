@@ -8,6 +8,7 @@
 
 #import <ChatKit/CKAssociatedMessageTranscriptCellDelegate-Protocol.h>
 #import <ChatKit/CKAudioControllerDelegate-Protocol.h>
+#import <ChatKit/CKBalloonViewDelegate-Protocol.h>
 #import <ChatKit/CKFullScreenEffectManagerDelegate-Protocol.h>
 #import <ChatKit/CKLocationShareBalloonViewDelegate-Protocol.h>
 #import <ChatKit/CKLocationSharingDelegate-Protocol.h>
@@ -21,11 +22,12 @@
 #import <ChatKit/UICollectionViewDataSource-Protocol.h>
 #import <ChatKit/UICollectionViewDelegate-Protocol.h>
 #import <ChatKit/UICollectionViewDelegateFlowLayout-Protocol.h>
+#import <ChatKit/UICollectionViewDelegate_Private-Protocol.h>
 
 @class CKAudioController, CKConversation, CKFullScreenEffectManager, CKImpactEffectManager, CKPluginPlaybackManager, CKTranscriptCollectionView, IMChat, NSArray, NSIndexPath, NSIndexSet, NSMutableSet, NSObject, NSString, UITapGestureRecognizer, UIView;
 @protocol CKFullscreenEffectView, CKGradientReferenceView, CKTranscriptCollectionViewControllerDelegate, OS_dispatch_group, UIDragInteractionDelegate;
 
-@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKLocationSharingDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, CNAvatarViewDelegate, UIAlertViewDelegate, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CKFullScreenEffectManagerDelegate, CKPluginPlaybackManagerDelegate, CKAssociatedMessageTranscriptCellDelegate, CKSendAnimationManagerDelegate>
+@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKLocationSharingDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, CNAvatarViewDelegate, UIAlertViewDelegate, UICollectionViewDelegate, UICollectionViewDelegate_Private, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, CKFullScreenEffectManagerDelegate, CKPluginPlaybackManagerDelegate, CKAssociatedMessageTranscriptCellDelegate, CKBalloonViewDelegate, CKSendAnimationManagerDelegate>
 {
     NSIndexPath *_itemIndexPathToHighlight;
     _Bool _initialLoad;
@@ -56,7 +58,7 @@
     NSString *___CurrentTestName;
     id <UIDragInteractionDelegate> _dragInteractionDelegate;
     UITapGestureRecognizer *_loggingTapGestureRecognizer;
-    NSArray *_bulletins;
+    NSArray *_notifications;
     CKTranscriptCollectionView *_collectionView;
     CKAudioController *_audioController;
     CKPluginPlaybackManager *_pluginPlaybackManager;
@@ -92,7 +94,7 @@
 @property(retain, nonatomic) CKPluginPlaybackManager *pluginPlaybackManager; // @synthesize pluginPlaybackManager=_pluginPlaybackManager;
 @property(retain, nonatomic) CKAudioController *audioController; // @synthesize audioController=_audioController;
 @property(retain, nonatomic) CKTranscriptCollectionView *collectionView; // @synthesize collectionView=_collectionView;
-@property(copy, nonatomic) NSArray *bulletins; // @synthesize bulletins=_bulletins;
+@property(copy, nonatomic) NSArray *notifications; // @synthesize notifications=_notifications;
 @property(retain, nonatomic) UITapGestureRecognizer *loggingTapGestureRecognizer; // @synthesize loggingTapGestureRecognizer=_loggingTapGestureRecognizer;
 @property(nonatomic) __weak id <UIDragInteractionDelegate> dragInteractionDelegate; // @synthesize dragInteractionDelegate=_dragInteractionDelegate;
 @property(retain, nonatomic, setter=__setCurrentTestName:) NSString *__CurrentTestName; // @synthesize __CurrentTestName=___CurrentTestName;
@@ -165,10 +167,10 @@
 - (void)loadMoreRecentMessages;
 - (void)setChatItems:(id)arg1 removedAssociatedIndexes:(id *)arg2 insertedAssociatedIndexes:(id *)arg3;
 - (void)_diffAssociatedItemsWithOldAssociatedItems:(id)arg1 removedAssociatedIndexes:(id *)arg2 insertedAssociatedIndexes:(id *)arg3;
-- (id)chatItemWithIMChatItem:(id)arg1;
+- (id)chatItemWithIMChatItem:(id)arg1 traitCollection:(id)arg2;
 - (id)chatItemsWithIMChatItems:(id)arg1;
-- (id)chatItemWithBulletin:(id)arg1;
-- (id)chatItemsWithBulletins:(id)arg1;
+- (id)chatItemWithNotification:(id)arg1;
+- (id)chatItemsWithNotifications:(id)arg1;
 - (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(_Bool)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)updateTranscriptChatItems:(id)arg1 inserted:(id)arg2 removed:(id)arg3 reload:(id)arg4 regenerate:(id)arg5 animated:(_Bool)arg6 checkFiltered:(_Bool)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)_updatePluginPlaybackManagerForInsertedChatItems:(id)arg1;
@@ -227,6 +229,8 @@
 - (void)collectionViewDidInset:(id)arg1;
 - (void)collectionViewWillInset:(id)arg1 targetContentInset:(inout struct UIEdgeInsets *)arg2;
 - (_Bool)collectionView:(id)arg1 isEditableItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didBeginMultipleSelectionInteractionAtIndexPath:(id)arg2;
+- (_Bool)collectionView:(id)arg1 shouldBeginMultipleSelectionInteractionAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
@@ -262,7 +266,7 @@
 - (void)reloadData;
 - (void)_prewarmBalloonControllers;
 - (void)sizeFullTranscriptIfNecessary;
-- (void)invalidateChatItemLayoutWithBalloonMaxWidth:(double)arg1 marginInsets:(struct UIEdgeInsets)arg2;
+- (void)invalidateChatItemLayoutWithBalloonMaxWidth:(double)arg1 marginInsets:(struct UIEdgeInsets)arg2 traitCollection:(id)arg3;
 - (void)setScrollAnchor:(double)arg1;
 - (void)deleteSelectedItems:(id)arg1;
 - (void)setSelectedItems:(id)arg1;
@@ -270,8 +274,8 @@
 - (void)highlightItemAtIndexPathWhenDisplayed:(id)arg1;
 - (void)_highlightCell:(id)arg1;
 @property(readonly, nonatomic) IMChat *chat;
-- (id)initWithConversation:(id)arg1 bulletins:(id)arg2 balloonMaxWidth:(double)arg3 marginInsets:(struct UIEdgeInsets)arg4;
-- (id)initWithConversation:(id)arg1 balloonMaxWidth:(double)arg2 marginInsets:(struct UIEdgeInsets)arg3;
+- (id)initWithConversation:(id)arg1 delegate:(id)arg2 notifications:(id)arg3 balloonMaxWidth:(double)arg4 marginInsets:(struct UIEdgeInsets)arg5;
+- (id)initWithConversation:(id)arg1 delegate:(id)arg2 balloonMaxWidth:(double)arg3 marginInsets:(struct UIEdgeInsets)arg4;
 - (void)_prewarmTranscriptAssetsIfNecessary;
 - (void)viewDidAppearDeferredSetup;
 - (void)viewDidAppear:(_Bool)arg1;

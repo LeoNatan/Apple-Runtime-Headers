@@ -6,6 +6,7 @@
 
 #import <ChatKit/CKAttachmentItem.h>
 
+__attribute__((visibility("hidden")))
 @interface CKQuickLookThumbnailAttachmentItem : CKAttachmentItem
 {
 }

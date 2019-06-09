@@ -22,7 +22,7 @@
 - (id)accessibilityDescription;
 - (BOOL)isGroupItem;
 - (double)rowHeight;
-- (unsigned long long)textAlignment;
+- (long long)textAlignment;
 - (id)tableViewIdentifier;
 - (id)initWithName:(id)arg1 account:(id)arg2 children:(id)arg3;
 - (id)initWithName:(id)arg1;

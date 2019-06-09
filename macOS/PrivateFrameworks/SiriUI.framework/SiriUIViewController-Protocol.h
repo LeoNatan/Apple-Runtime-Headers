@@ -16,6 +16,8 @@
 - (void)siriWillActivateFromSource:(long long)arg1;
 
 @optional
+- (void)siriDidStopSpeakingWithIdentifier:(NSString *)arg1 speechQueueIsEmpty:(BOOL)arg2;
+- (void)siriDidStartSpeakingWithIdentifier:(NSString *)arg1;
 - (void)endEditingAndCorrect:(BOOL)arg1;
 - (NSString *)navigationTitle;
 - (double)desiredHeightForWidth:(double)arg1;

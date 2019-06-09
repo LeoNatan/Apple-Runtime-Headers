@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)scrollViewDidScroll:(id)arg1;
+- (id)tabBarObservedScrollView;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (id)indexPathForPreferredFocusedViewInCollectionView:(id)arg1;

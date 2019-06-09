@@ -8,6 +8,7 @@
 
 @class NSArray, NSInvocation, NSString;
 
+__attribute__((visibility("hidden")))
 @interface _PBProperty : NSObject
 {
     NSString *_name;

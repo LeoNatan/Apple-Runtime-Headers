@@ -57,6 +57,7 @@
 - (void)_updateDayDuration;
 - (id)resourceProviderKey;
 - (id)provideAtlasBacking:(id)arg1;
+- (void)_finalizeForSnapshotting:(CDUnknownBlockType)arg1;
 - (_Bool)_supportsUnadornedSnapshot;
 - (long long)_keylineStyleForComplicationSlot:(id)arg1;
 - (struct CGRect)_keylineFrameForCustomEditMode:(long long)arg1 slot:(id)arg2;
@@ -73,7 +74,6 @@
 - (void)_cleanupAfterTransitionComplicationSlot:(id)arg1 selectedComplication:(id)arg2;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
-- (id)_editOptionThatHidesAllComplications;
 - (double)_verticalPaddingForStatusBar;
 - (struct CGPoint)_contentCenterOffset;
 - (long long)_legacyLayoutOverrideforComplicationType:(unsigned long long)arg1 slot:(id)arg2;
@@ -83,7 +83,7 @@
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(long long)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
-- (void)_configureReusableTimeView:(id)arg1;
+- (void)_configureTimeView:(id)arg1;
 - (double)_kaleidoscopeTimeForAsset:(unsigned long long)arg1;
 - (void)quadViewWillDisplay:(id)arg1 forTime:(double)arg2;
 - (_Bool)slotUsesCurvedText:(id)arg1;
@@ -91,7 +91,7 @@
 - (void)_enableCrown;
 - (void)_applyDataMode;
 - (void)_applyFrozen;
-- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)_updateWithAsset:(unsigned long long)arg1;

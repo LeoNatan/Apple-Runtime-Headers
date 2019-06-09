@@ -10,6 +10,7 @@
 
 @class NSString, PSSpecifier, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface STEnableScreenTimeGroupSpecifierProvider : STRootGroupSpecifierProvider <MCProfileConnectionObserver>
 {
     PSSpecifier *_setupScreenTimeSpecifier;

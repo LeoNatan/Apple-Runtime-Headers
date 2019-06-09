@@ -14,7 +14,7 @@
 #import <InputMethodKit/IMKUICandidateListViewState-Protocol.h>
 #import <InputMethodKit/IMKUICandidateSortingBarDelegate-Protocol.h>
 
-@class IMKCandidate, IMKCandidateListDictionary, IMKUICandidateItemLayout, IMKUICandidateLayoutTraits, IMKUICandidateSortingBarView, NSAppearance, NSArray, NSMutableDictionary, NSString, NSView;
+@class IMKCandidate, IMKCandidateListDictionary, IMKUICandidateItemLayout, IMKUICandidateLayoutTraits, IMKUICandidateSortingBarView, IMKUIPanelMask, NSAppearance, NSArray, NSMutableDictionary, NSString, NSView;
 @protocol IMKUICandidateControllerDelegate;
 
 @interface IMKUICandidateWindowController : NSWindowController <IMKUIAbstractCandidateController, IMKUICandidateItemViewHandling, IMKUICandidateLayoutDelegate, IMKUICandidateListViewState, IMKUICandidateSortingBarDelegate, IMKUICandidateAccessibilityDelegate, IMKUICandidateAccessibilityTarget>
@@ -38,28 +38,36 @@
     IMKUICandidateLayoutTraits *_layoutTraits;
     long long _movementStyle;
     unsigned long long _numberOfFixedWidthCandidates;
+    IMKUIPanelMask *_panelMask;
     IMKCandidate *_selectedCandidate;
     long long _selectionKeyAlignment;
     NSMutableDictionary *_selectionKeyToCandidateCache;
+    BOOL _showsRadarButtonInSortingBar;
     BOOL _singleClickCommitsCandidate;
     IMKUICandidateSortingBarView *_sortingBarView;
     NSString *_selectedSortingMode;
     NSArray *_selectionKeys;
     NSArray *_sortingModes;
+    unsigned long long _truncatedNumberOfCandidates;
     Class _UICandidateClass;
     unsigned long long _windowLevel;
+    BOOL _windowShouldAdjustToTotalCandidateSize;
 }
 
+@property(nonatomic) BOOL windowShouldAdjustToTotalCandidateSize; // @synthesize windowShouldAdjustToTotalCandidateSize=_windowShouldAdjustToTotalCandidateSize;
 @property(nonatomic) unsigned long long windowLevel; // @synthesize windowLevel=_windowLevel;
 @property(nonatomic) Class UICandidateClass; // @synthesize UICandidateClass=_UICandidateClass;
+@property(nonatomic) unsigned long long truncatedNumberOfCandidates; // @synthesize truncatedNumberOfCandidates=_truncatedNumberOfCandidates;
 @property(copy, nonatomic) NSString *selectedSortingMode; // @synthesize selectedSortingMode=_selectedSortingMode;
 @property(retain, nonatomic) NSArray *sortingModes; // @synthesize sortingModes=_sortingModes;
 @property(retain, nonatomic) IMKUICandidateSortingBarView *sortingBarView; // @synthesize sortingBarView=_sortingBarView;
 @property(nonatomic) BOOL singleClickCommitsCandidate; // @synthesize singleClickCommitsCandidate=_singleClickCommitsCandidate;
+@property(nonatomic) BOOL showsRadarButtonInSortingBar; // @synthesize showsRadarButtonInSortingBar=_showsRadarButtonInSortingBar;
 @property(retain, nonatomic) NSMutableDictionary *selectionKeyToCandidateCache; // @synthesize selectionKeyToCandidateCache=_selectionKeyToCandidateCache;
 @property(retain, nonatomic) NSArray *selectionKeys; // @synthesize selectionKeys=_selectionKeys;
 @property(nonatomic) long long selectionKeyAlignment; // @synthesize selectionKeyAlignment=_selectionKeyAlignment;
 @property(retain, nonatomic) IMKCandidate *selectedCandidate; // @synthesize selectedCandidate=_selectedCandidate;
+@property(retain, nonatomic) IMKUIPanelMask *panelMask; // @synthesize panelMask=_panelMask;
 @property(nonatomic) unsigned long long numberOfFixedWidthCandidates; // @synthesize numberOfFixedWidthCandidates=_numberOfFixedWidthCandidates;
 @property(copy, nonatomic) NSString *noCandidatesMessage; // @synthesize noCandidatesMessage=_noCandidatesMessage;
 @property(nonatomic) long long movementStyle; // @synthesize movementStyle=_movementStyle;
@@ -80,9 +88,11 @@
 @property(retain, nonatomic) NSAppearance *appearance; // @synthesize appearance=_appearance;
 @property(retain, nonatomic) NSArray *accessibilityItems; // @synthesize accessibilityItems=_accessibilityItems;
 - (void).cxx_destruct;
+- (void)radarButtonPressed;
 - (void)updateAppearanceView;
 - (id)appearanceView;
 - (id)candidatesSelectableByKeyboard;
+- (id)identifier;
 - (void)elementQueried:(id)arg1;
 - (void)elementPressed:(id)arg1;
 - (id)visibleCandidates;
@@ -98,10 +108,12 @@
 - (id)parentView;
 - (void)addCandidatesToPasteboard;
 - (void)clearPasteboard;
+@property(readonly, nonatomic) BOOL showsGroups;
 - (void)hide;
 - (void)didSelectSortingMethodAtIndex:(unsigned long long)arg1;
 - (void)selectPreviousSortingMode;
 - (void)selectNextSortingMode;
+- (void)setSelectedSortingMode:(id)arg1 userInitiated:(BOOL)arg2;
 - (void)visibleIndicesChanged:(id)arg1 sender:(id)arg2;
 - (void)didRemoveFromSuperview:(id)arg1;
 - (void)resetSelectionKeys;
@@ -136,10 +148,12 @@
 - (void)moveUp:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (void)keyPressed:(id)arg1;
+- (void)updateMaskImageBasedOnPositioning:(id)arg1;
 - (struct CGPoint)preferredWindowPositionForSize:(struct CGSize)arg1;
 - (struct CGRect)preferredContentFrameForWindowWithSize:(struct CGSize)arg1;
 - (struct CGSize)preferredWindowSize;
 - (struct CGSize)recommendedWindowSize;
+@property(readonly, nonatomic, getter=isFlipped) BOOL flipped;
 - (void)loadWindow;
 - (void)showCandidates;
 - (void)didShowCandidates;

@@ -16,20 +16,22 @@
     NSXPCConnection *_connection;
     id <PKInstallService> _proxy;
     id <PKInstallService> _blockingProxy;
-    NSObject<OS_dispatch_semaphore> *_sema;
     NSObject<OS_dispatch_queue> *_connectionQueue;
     BOOL _isSilent;
+    NSObject<OS_dispatch_semaphore> *_inProcessSema;
+    BOOL _isInProcessInstall;
+    BOOL _isRecursive;
 }
 
+@property BOOL isRecursive; // @synthesize isRecursive=_isRecursive;
 @property(setter=setSilent:) BOOL isSilent; // @synthesize isSilent=_isSilent;
 - (void)installDidEndForToken:(id)arg1;
 - (void)installDidBeginCommitForToken:(id)arg1;
 - (void)installDidBeginForToken:(id)arg1;
 - (void)_unprotectedInvalidate;
 - (void)invalidate;
-- (BOOL)waitUntilDoneOrTimedOut;
-- (BOOL)waitUntilDone;
-- (void)signal;
+- (void)inProcessSignal;
+- (BOOL)inProcessWaitUntilDone;
 - (id)_unprotectedBlockingProxy;
 - (id)blockingProxy;
 - (id)_unprotectedProxy;

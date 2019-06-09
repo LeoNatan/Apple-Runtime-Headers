@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (id)copy;
 @property(readonly, copy) NSString *debugDescription;
-- (void)_dispose;
+- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *description;

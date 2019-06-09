@@ -21,7 +21,7 @@
 - (void)_setQuery:(id)arg1;
 - (id)_item;
 - (void)dealloc;
-- (id)_init:(CDUnion_7d5f215e)arg1;
+- (id)_init:(id)arg1;
 - (id)initWithURL:(id)arg1;
 
 @end

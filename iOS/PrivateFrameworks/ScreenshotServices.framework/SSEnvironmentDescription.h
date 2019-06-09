@@ -7,26 +7,37 @@
 #import <objc/NSObject.h>
 
 #import <ScreenshotServices/BSXPCCoding-Protocol.h>
+#import <ScreenshotServices/SSLoggable-Protocol.h>
 
 @class BSSettings, NSArray, NSDate, NSString, SSEnvironmentDescriptionAppleInternalOptions, SSImageSurface, SSUIServiceOptions;
 
-@interface SSEnvironmentDescription : NSObject <BSXPCCoding>
+@interface SSEnvironmentDescription : NSObject <SSLoggable, BSXPCCoding>
 {
     NSArray *_elements;
     NSString *_identifier;
     NSString *_sessionIdentifier;
     unsigned long long _presentationMode;
+    _Bool _canAutosaveToFiles;
+    unsigned int _externalFlashLayerContextID;
     SSImageSurface *_imageSurface;
     double _imageScale;
     SSUIServiceOptions *_serviceOptions;
     NSDate *_date;
+    unsigned long long _externalFlashLayerRenderID;
     SSEnvironmentDescriptionAppleInternalOptions *_appleInternalOptions;
+    NSString *_betaApplicationBundleID;
+    NSString *_betaApplicationName;
     struct CGSize _imagePixelSize;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool canAutosaveToFiles; // @synthesize canAutosaveToFiles=_canAutosaveToFiles;
+@property(copy, nonatomic) NSString *betaApplicationName; // @synthesize betaApplicationName=_betaApplicationName;
+@property(copy, nonatomic) NSString *betaApplicationBundleID; // @synthesize betaApplicationBundleID=_betaApplicationBundleID;
 @property(retain, nonatomic) SSEnvironmentDescriptionAppleInternalOptions *appleInternalOptions; // @synthesize appleInternalOptions=_appleInternalOptions;
 @property(copy, nonatomic) NSString *sessionIdentifier; // @synthesize sessionIdentifier=_sessionIdentifier;
+@property(nonatomic) unsigned int externalFlashLayerContextID; // @synthesize externalFlashLayerContextID=_externalFlashLayerContextID;
+@property(nonatomic) unsigned long long externalFlashLayerRenderID; // @synthesize externalFlashLayerRenderID=_externalFlashLayerRenderID;
 @property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(retain, nonatomic) SSUIServiceOptions *serviceOptions; // @synthesize serviceOptions=_serviceOptions;
 @property(nonatomic) unsigned long long presentationMode; // @synthesize presentationMode=_presentationMode;
@@ -37,11 +48,11 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BSSettings *bsSettings;
-@property(readonly, nonatomic) NSArray *elementUnitRects;
 @property(readonly, nonatomic) struct CGSize imagePointSize;
-@property(readonly, nonatomic) NSString *briefDescription;
+@property(readonly, nonatomic) NSString *loggableDescription;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
+- (void)setDebugElements:(id)arg1;
 - (void)takeElementsFromDisplayLayout:(id)arg1;
 - (id)init;
 

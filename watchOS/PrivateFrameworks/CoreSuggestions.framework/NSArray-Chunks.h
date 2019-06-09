@@ -7,6 +7,6 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (Chunks)
-- (void)enumerateChunksOfSize:(unsigned int)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)sg_enumerateChunksOfSize:(unsigned int)arg1 usingBlock:(CDUnknownBlockType)arg2;
 @end
 

@@ -8,19 +8,19 @@
 
 #import <ScreenshotServices/BSXPCCoding-Protocol.h>
 
-@class NSString, UIImage;
+@class NSString;
 
 @interface SSImageSurface : NSObject <BSXPCCoding>
 {
-    UIImage *_backingSurface;
+    struct __IOSurface *_backingSurface;
     double _scale;
     long long _orientation;
 }
 
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) double scale; // @synthesize scale=_scale;
-@property(retain, nonatomic) UIImage *backingSurface; // @synthesize backingSurface=_backingSurface;
-- (void).cxx_destruct;
+@property(nonatomic) struct __IOSurface *backingSurface; // @synthesize backingSurface=_backingSurface;
+- (void)dealloc;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)init;

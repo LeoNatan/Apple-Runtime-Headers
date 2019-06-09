@@ -8,6 +8,7 @@
 
 @class NSArray, UILayoutGuide;
 
+__attribute__((visibility("hidden")))
 @interface STTableViewHeaderFooterView : UITableViewHeaderFooterView
 {
     UILayoutGuide *_contentLayoutGuide;

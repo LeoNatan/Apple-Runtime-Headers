@@ -25,11 +25,9 @@
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
 - (id)connectionMediaTypes;
 @property(nonatomic) float volume;
-- (void)_updateVolumeFromPropertyListener;
-- (void)_updateVolume;
+- (void)_updateVolume:(float)arg1;
 @property(copy, nonatomic) NSString *outputDeviceUniqueID;
-- (void)_updateOutputDeviceUniqueIDFromPropertyListener;
-- (void)_updateOutputDeviceUniqueID;
+- (void)_updateOutputDeviceUniqueID:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

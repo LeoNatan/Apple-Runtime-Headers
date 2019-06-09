@@ -47,7 +47,6 @@
 - (void)_removeWatchListApp:(id)arg1;
 - (id)_appsForChannelID:(id)arg1;
 - (void)_accountStoreChangedNotification:(id)arg1;
-- (void)_updateDisplayNamesForUI:(CDUnknownBlockType)arg1;
 - (void)_attemptCullingOfObsoleteApp:(id)arg1;
 - (_Bool)synchronize:(unsigned long long)arg1;
 - (void)synchronize:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
@@ -59,8 +58,12 @@
 - (void)_writeToDisk;
 - (void)_readFromDisk;
 - (id)_dictionaryRepresentationDataOnly;
+- (id)_dictionaryRepresentationCopyingItems:(_Bool)arg1;
 - (id)_dictionaryRepresentation;
 - (void)refresh;
+- (void)_updateDisplayNamesForUI:(CDUnknownBlockType)arg1;
+- (id)_watchListAppsFiltered;
+- (id)watchListAppsFiltered;
 - (id)description;
 @property(copy, nonatomic) NSString *pushToken;
 - (void)setLastSyncToCloudDate:(id)arg1;
@@ -75,7 +78,6 @@
 - (id)settingsForChannelID:(id)arg1 externalID:(id)arg2;
 - (id)deniedBrands;
 - (id)consentedBrands;
-- (id)watchListAppsFiltered;
 - (id)watchListApps;
 - (void)dealloc;
 - (id)init;

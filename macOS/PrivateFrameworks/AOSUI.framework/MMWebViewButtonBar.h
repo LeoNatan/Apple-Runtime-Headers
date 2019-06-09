@@ -21,14 +21,15 @@
     NSTextField *_spinnerTitle;
     NSButton *_helpButton;
     NSDictionary *_buttonBarDict;
-    id <MMWebViewButtonBarDelegate> _delegate;
     NSArray *_buttonArray;
+    id <MMWebViewButtonBarDelegate> _delegate;
     iCloudTouchBarController *_touchBarController;
 }
 
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property id <MMWebViewButtonBarDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSDictionary *buttonBarDict; // @synthesize buttonBarDict=_buttonBarDict;
+- (void).cxx_destruct;
 - (void)updateDefaultButtons;
 - (void)updateButtonBarDict:(id)arg1;
 - (void)disableSpinner;
@@ -39,7 +40,6 @@
 - (void)button1Pressed:(id)arg1;
 - (id)buttonBarView;
 @property(readonly) NSTouchBar *touchBar;
-- (void)dealloc;
 - (id)initWithDict:(id)arg1;
 - (id)init;
 

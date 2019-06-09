@@ -26,7 +26,7 @@
     NSObject<OS_dispatch_semaphore> *_semaphore;
     ARImageData *_lastImageData;
     // Error parsing type: {?="columns"[4]}, name: _lastCameraTransform
-    vector_478e3a44 _lastPlanes;
+    vector_f1799d67 _lastPlanes;
     ARCubemapGenerator *_cubemapGenerator;
     _Bool _isReady;
     long long _mode;
@@ -36,10 +36,9 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)requestTextureForProbe:(id)arg1;
--     // Error parsing type: @40@0:8@16r^{?={array<unsigned char, 16>=[16C]}Q{?=[4]}{array<float __attribute__((ext_vector_type(3))), 4>=[4]}{set<std::__1::array<unsigned char, 16>, std::__1::less<std::__1::array<unsigned char, 16> >, std::__1::allocator<std::__1::array<unsigned char, 16> > >={__tree<std::__1::array<unsigned char, 16>, std::__1::less<std::__1::array<unsigned char, 16> >, std::__1::allocator<std::__1::array<unsigned char, 16> > >=^{__tree_end_node<std::__1::__tree_node_base<void *> *>}{__compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *> *>, std::__1::allocator<std::__1::__tree_node<std::__1::array<unsigned char, 16>, void *> > >={__tree_end_node<std::__1::__tree_node_base<void *> *>=^{__tree_node_base<void *>}}}{__compressed_pair<unsigned long, std::__1::less<std::__1::array<unsigned char, 16> > >=Q}}}@}24@32, name: probeWithIdentifier:onPlane:planeIdentifier:
 - (_Bool)addProbeWithAnchor:(id)arg1 timestamp:(double)arg2 textureImmediately:(_Bool)arg3;
 - (void)updateProbesFromExistingAnchors:(id)arg1;
-- (id)updateProbesForTimestamp:(double)arg1 planes:(vector_478e3a44)arg2 imageData:(id)arg3 pose:(id)arg4 addedAnchors:(id)arg5 removedAnchors:(id)arg6;
+- (id)updateProbesForTimestamp:(double)arg1 planes:(vector_f1799d67)arg2 imageData:(id)arg3 pose:(id)arg4 addedAnchors:(id)arg5 removedAnchors:(id)arg6;
 - (void)insertIntoQueue:(id)arg1;
 - (id)initWithMode:(long long)arg1;
 

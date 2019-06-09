@@ -8,6 +8,7 @@
 
 @class NSIndexPath;
 
+__attribute__((visibility("hidden")))
 @interface SKUICarouselCollectionViewLayout : UICollectionViewFlowLayout
 {
     NSIndexPath *_startScrollingIndexPath;

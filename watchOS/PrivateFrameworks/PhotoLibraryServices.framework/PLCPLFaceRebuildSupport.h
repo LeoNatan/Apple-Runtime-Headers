@@ -19,6 +19,7 @@
 }
 
 + (void)rebuildDeferredFacesForAsset:(id)arg1 inManagedObjectContext:(id)arg2;
+- (void).cxx_destruct;
 - (id)fetchPersonForDeferredFace:(id)arg1;
 - (id)fetchDeferredFacesToRebuild;
 - (void)rebuildHiddenFace:(id)arg1;
@@ -26,7 +27,6 @@
 - (void)rebuildDetectedFace:(id)arg1;
 - (void)rebuildFace:(id)arg1;
 - (void)rebuildAllFaces;
-- (void)dealloc;
 - (id)initWithAsset:(id)arg1 managedObjectContext:(id)arg2;
 
 @end

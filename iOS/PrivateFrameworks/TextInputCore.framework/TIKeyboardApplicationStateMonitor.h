@@ -11,6 +11,8 @@
 
 @interface TIKeyboardApplicationStateMonitor : NSObject
 {
+    double _appActivityTimeDurationThreshold;
+    double _appActivityKeyboardUsageFractionThreshold;
     NSObject<TIKeyboardApplicationStateResponses> *_delegate;
     BKSApplicationStateMonitor *_applicationStateMonitor;
     NSString *_activeAppBundleID;
@@ -21,6 +23,7 @@
     NSMutableSet *_imSuppressingBundleIDs;
     NSLock *_activeStateDataLock;
     NSLock *_databaseInUseLock;
+    NSDate *_timeOfLastFlushToDisk;
     NSCalendar *_utcCalendar;
     NSMutableArray *_keyboardUsageTimes;
     double _activeKeyboardStartTime;
@@ -29,6 +32,7 @@
 @property(nonatomic) double activeKeyboardStartTime; // @synthesize activeKeyboardStartTime=_activeKeyboardStartTime;
 @property(retain, nonatomic) NSMutableArray *keyboardUsageTimes; // @synthesize keyboardUsageTimes=_keyboardUsageTimes;
 @property(retain, nonatomic) NSCalendar *utcCalendar; // @synthesize utcCalendar=_utcCalendar;
+@property(retain, nonatomic) NSDate *timeOfLastFlushToDisk; // @synthesize timeOfLastFlushToDisk=_timeOfLastFlushToDisk;
 @property(retain, nonatomic) NSLock *databaseInUseLock; // @synthesize databaseInUseLock=_databaseInUseLock;
 @property(retain, nonatomic) NSLock *activeStateDataLock; // @synthesize activeStateDataLock=_activeStateDataLock;
 @property(retain, nonatomic) NSMutableSet *imSuppressingBundleIDs; // @synthesize imSuppressingBundleIDs=_imSuppressingBundleIDs;
@@ -41,6 +45,8 @@
 @property(nonatomic) __weak NSObject<TIKeyboardApplicationStateResponses> *delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (_Bool)ignoreAppExtension:(id)arg1;
+- (_Bool)flushPendingChangesToDisk;
+- (_Bool)threadUnsafeFlushChangesToDiskWithImmediacy:(_Bool)arg1;
 - (id)databaseLocation;
 - (void)keyboardNoLongerInUse;
 - (void)keyboardInUse;
@@ -49,6 +55,7 @@
 - (void)startANewKeyboardActivity:(id)arg1;
 - (void)handleApplicationStateChange:(id)arg1;
 - (void)applicationUninstalled:(id)arg1;
+- (id)initWithAppActivityTimeDurationThreshold:(double)arg1 keyboardUsageFractionThreshold:(double)arg2;
 - (id)init;
 
 @end

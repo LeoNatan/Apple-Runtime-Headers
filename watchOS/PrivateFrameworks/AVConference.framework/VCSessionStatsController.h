@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 @class AVCStatisticsCollector, VCConnectionManager, VCTransportStream;
-@protocol OS_dispatch_source;
+@protocol OS_dispatch_source, VCSessionStatsControllerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface VCSessionStatsController : NSObject
 {
+    id <VCSessionStatsControllerDelegate> _weakDelegate;
     AVCStatisticsCollector *_uplinkStatisticsCollector;
     AVCStatisticsCollector *_downlinkStatisticsCollector;
     CDStruct_2756d7ac _remoteStats;
@@ -26,11 +27,15 @@ __attribute__((visibility("hidden")))
     struct tagVCRealTimeThread *_statsReceiveThread;
     unsigned short _streamID;
     unsigned short _statsArrayIndex;
+    _Bool _enableStatsReceiveThread;
     unsigned int _previousTotalPacketSent;
     unsigned int _previousTotalPacketReceived;
     unsigned int _uplinkMostRecentSendTimestamp;
     unsigned int _downlinkMostRecentSendTimestamp;
     _Bool _didReceiveServerStatsResponse;
+    _Bool _enableStatsReporting;
+    double _statsReportingInterval;
+    double _lastStatsReportTime;
     int _lastProcessedBytesSent;
     int _bytesSentToReport;
     int _maxSentRate;
@@ -53,11 +58,13 @@ __attribute__((visibility("hidden")))
     double _lastHealthPrintTime;
 }
 
+@property(nonatomic) double statsReportingInterval; // @synthesize statsReportingInterval=_statsReportingInterval;
 - (void)flushRealTimeReportingStats;
 - (void)deregisterPeriodicTask;
 - (void)periodicTask:(void *)arg1;
 - (void)registerPeriodicTask;
 @property(readonly) id reportingAgent;
+@property(readonly) id strongDelegate;
 - (void)resetHealthPrintCounters;
 - (void)healthPrintForServerStats;
 - (void)handleRemoteSessionStats:(CDStruct_88f6cd69 *)arg1;
@@ -68,12 +75,12 @@ __attribute__((visibility("hidden")))
 - (void)updateRemoteSessionStats:(CDStruct_2756d7ac)arg1;
 - (void)stopLocalSessionStatsUpdate;
 - (void)startLocalSessionStatsSend;
-- (long)startLocalSessionStatsReceive;
+- (void)startLocalSessionStatsReceive;
 - (void)startLocalSessionStatsUpdate;
 - (void)sendLocalStats;
 - (void)reset;
 - (void)dealloc;
-- (id)initWithConnectionManager:(id)arg1 uplinkStatsCollector:(id)arg2 downlinkStatsCollector:(id)arg3 reportingAgent:(struct opaqueRTCReporting *)arg4 transportSessionID:(unsigned long)arg5 streamID:(unsigned short)arg6 mediaQueue:(struct tagVCMediaQueue *)arg7;
+- (id)initWithDelegate:(id)arg1 connectionManager:(id)arg2 uplinkStatsCollector:(id)arg3 downlinkStatsCollector:(id)arg4 reportingAgent:(struct opaqueRTCReporting *)arg5 transportSessionID:(unsigned long)arg6 streamID:(unsigned short)arg7 mediaQueue:(struct tagVCMediaQueue *)arg8;
 
 @end
 

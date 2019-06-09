@@ -13,17 +13,21 @@ __attribute__((visibility("hidden")))
 {
     int _style;
     _Bool _invertAutomaticStyle;
+    _Bool _ignoreSimpleVibrancy;
     UIVibrancyEffect *_effect;
 }
 
 @property(nonatomic) UIVibrancyEffect *effect; // @synthesize effect=_effect;
 - (void)appendDescriptionTo:(id)arg1;
-- (_Bool)_needsUpdateForTransitionFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
-- (void)_updateEffectNode:(id)arg1 forTraitCollection:(id)arg2;
+- (_Bool)_needsUpdateForTransitionFromEnvironment:(id)arg1 toEnvironment:(id)arg2 usage:(int)arg3;
+- (void)_updateEffectDescriptor:(id)arg1 forEnvironment:(id)arg2 usage:(int)arg3;
 - (id)implementationForUserInterfaceStyle:(int)arg1;
 - (_Bool)invertAutomaticStyle;
 - (int)style;
+- (_Bool)isEqual:(id)arg1;
+- (unsigned int)hash;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithStyle:(int)arg1 invertAutomaticStyle:(_Bool)arg2 ignoreSimpleVibrancy:(_Bool)arg3;
 - (id)initWithStyle:(int)arg1 invertAutomaticStyle:(_Bool)arg2;
 
 @end

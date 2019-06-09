@@ -6,24 +6,39 @@
 
 #import <UIKit/UIView.h>
 
-@class MTVibrantStylingProvider, NSArray, UIInterfaceActionGroupView;
+#import <PlatterKit/MTVisualStylingProviderObservingPrivate-Protocol.h>
+#import <PlatterKit/MTVisualStylingRequiring-Protocol.h>
 
-@interface PLInterfaceActionGroupView : UIView
+@class MTVisualStylingProvider, NSArray, NSMutableDictionary, NSString, UIInterfaceActionGroupView;
+
+@interface PLInterfaceActionGroupView : UIView <MTVisualStylingProviderObservingPrivate, MTVisualStylingRequiring>
 {
     UIInterfaceActionGroupView *_actionsGroupView;
     _Bool _actionsDirty;
-    MTVibrantStylingProvider *_vibrantStylingProvider;
+    NSMutableDictionary *_categoriesToProviders;
     double _cornerRadius;
 }
 
++ (void)initialize;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-@property(retain, nonatomic) MTVibrantStylingProvider *vibrantStylingProvider; // @synthesize vibrantStylingProvider=_vibrantStylingProvider;
 - (void).cxx_destruct;
+- (void)providedStylesDidChangeForProvider:(id)arg1;
+- (void)setVisualStylingProvider:(id)arg1 forCategory:(long long)arg2;
+@property(readonly, copy, nonatomic) NSArray *requiredVisualStyleCategories;
+- (id)visualStylingProviderForCategory:(long long)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 @property(retain, nonatomic) NSArray *actions;
 - (id)_newInterfaceActionGroupViewWithActions:(id)arg1;
+- (void)_updateStylingOfInterfaceActionGroupView:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
+@property(readonly, nonatomic) MTVisualStylingProvider *visualStylingProvider;
 
 @end
 

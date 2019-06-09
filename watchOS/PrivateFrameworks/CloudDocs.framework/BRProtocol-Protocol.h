@@ -38,6 +38,7 @@
 - (void)_t_removeAllSyncUpBlockingForContainerID:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)_t_blockSyncForContainerID:(NSString *)arg1 withPendingUpgradeToOSName:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)_t_blockSyncUpOfItemWithID:(NSString *)arg1 containerID:(NSString *)arg2 withPendingUpgradeToOSName:(NSString *)arg3 reply:(void (^)(NSError *))arg4;
+- (void)getShareOptionsOfItemIdentifier:(NSString *)arg1 reply:(void (^)(_Bool, _Bool, _Bool, NSError *))arg2;
 - (void)capabilityWhenTryingToReparentItemAtURL:(NSURL *)arg1 toNewParent:(NSURL *)arg2 reply:(void (^)(unsigned short, NSError *))arg3;
 - (void)moveBRSecurityBookmarkAtURL:(NSURL *)arg1 toURL:(NSURL *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)refreshSharingStateForItemIdentifier:(NSString *)arg1 reply:(void (^)(NSError *))arg2;
@@ -46,6 +47,7 @@
 - (void)overwriteAccessTimeForItemAtURL:(NSURL *)arg1 atime:(unsigned long long)arg2 reply:(void (^)(NSError *))arg3;
 - (void)boostFilePresenterAtURL:(NSURL *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)trashItemAtURL:(NSURL *)arg1 reply:(void (^)(NSURL *, NSError *))arg2;
+- (void)topLevelSharedFolderForURL:(NSURL *)arg1 reply:(void (^)(NSURL *, NSError *))arg2;
 - (void)removeItemFromDisk:(NSURL *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)presentAcceptDialogsForShareMetadata:(CKShareMetadata *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)startOperation:(NSObject<BROperationClient> *)arg1 toCopyShareURLForShare:(CKShare *)arg2 appName:(NSString *)arg3 reply:(void (^)(CKShare *, NSURL *, NSError *))arg4;
@@ -63,7 +65,7 @@
 - (void)copyCurrentUserNameAndEmailWithReply:(void (^)(NSPersonNameComponents *, NSString *, NSError *))arg1;
 - (void)copyCurrentUserIdentifierWithReply:(void (^)(NSString *, NSError *))arg1;
 - (void)startOperation:(NSObject<BROperationClient> *)arg1 toEvictItemAtURL:(NSURL *)arg2 reply:(void (^)(NSError *))arg3;
-- (void)startOperation:(NSObject<BROperationClient> *)arg1 toCleanShareSubitemsAtURL:(NSURL *)arg2 reply:(void (^)(NSError *))arg3;
+- (void)startOperation:(NSObject<BROperationClient> *)arg1 toProcessSubitemsAtURL:(NSURL *)arg2 maxSubsharesFailures:(unsigned long long)arg3 processType:(unsigned int)arg4 reply:(void (^)(NSError *))arg5;
 - (void)startOperation:(NSObject<BROperationClient> *)arg1 toPrepFolderForSharingAt:(NSURL *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)startOperation:(NSObject<BROperationClient> *)arg1 toUploadAllFilesInContainer:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)startOperation:(NSObject<BROperationClient> *)arg1 toCopyAvailableQuotaWithReply:(void (^)(NSNumber *, NSError *))arg2;
@@ -75,7 +77,6 @@
 - (void)getiWorkPublishingInfoAtURL:(NSURL *)arg1 reply:(void (^)(_Bool, _Bool, NSString *, NSError *))arg2;
 - (void)setiWorkPublishingInfoAtURL:(NSURL *)arg1 publish:(_Bool)arg2 readonly:(_Bool)arg3 reply:(void (^)(NSError *))arg4;
 - (void)enumerateWorkingSetChangesFromChangeToken:(NSData *)arg1 limit:(unsigned int)arg2 completion:(void (^)(NSArray *, NSArray *, NSData *, NSError *))arg3;
-- (void)enumerateAllFoldersWithSortOrder:(unsigned char)arg1 offset:(unsigned long long)arg2 limit:(unsigned long long)arg3 completion:(void (^)(NSArray *, unsigned long long, NSError *))arg4;
 - (void)enumerateItemsInFolder:(BRFileObjectID *)arg1 sortOrder:(unsigned char)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 completion:(void (^)(NSArray *, unsigned long long, NSError *))arg5;
 - (void)currentNotifRankWithReply:(void (^)(unsigned long long, NSError *))arg1;
 - (void)getIsContainerWithIDOverQuota:(NSString *)arg1 reply:(void (^)(NSNumber *, NSError *))arg2;

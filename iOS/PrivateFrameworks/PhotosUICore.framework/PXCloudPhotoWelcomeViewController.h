@@ -4,55 +4,49 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIViewController.h>
+#import <OnBoardingKit/OBWelcomeController.h>
 
 #import <PhotosUICore/AAUIGenericTermsRemoteUIDelegate-Protocol.h>
 #import <PhotosUICore/PSCloudStorageOffersManagerDelegate-Protocol.h>
 #import <PhotosUICore/PXCloudPhotoWelcomeNavigationControllerDismissDelegate-Protocol.h>
-#import <PhotosUICore/PXCloudPhotoWelcomeViewDelegate-Protocol.h>
 
-@class AAUIGenericTermsRemoteUI, NSString, PSCloudStorageOffersManager, PXCloudPhotoWelcomeView;
+@class AAUIGenericTermsRemoteUI, NSArray, NSString, PSCloudStorageOffersManager;
 
-@interface PXCloudPhotoWelcomeViewController : UIViewController <PXCloudPhotoWelcomeViewDelegate, PSCloudStorageOffersManagerDelegate, AAUIGenericTermsRemoteUIDelegate, PXCloudPhotoWelcomeNavigationControllerDismissDelegate>
+@interface PXCloudPhotoWelcomeViewController : OBWelcomeController <PSCloudStorageOffersManagerDelegate, AAUIGenericTermsRemoteUIDelegate, PXCloudPhotoWelcomeNavigationControllerDismissDelegate>
 {
-    PSCloudStorageOffersManager *_offersManager;
-    AAUIGenericTermsRemoteUI *_termsManager;
-    _Bool _requireStorageUpgrade;
-    _Bool _enableOnAppear;
-    PXCloudPhotoWelcomeView *_welcomeView;
+    _Bool __requireStorageUpgrade;
+    _Bool __enableOnAppear;
+    NSArray *__buttons;
+    PSCloudStorageOffersManager *__offersManager;
+    AAUIGenericTermsRemoteUI *__termsManager;
 }
 
-+ (_Bool)shouldPresentCloudPhotoWelcomeViewController:(_Bool *)arg1;
-@property(retain, nonatomic) PXCloudPhotoWelcomeView *welcomeView; // @synthesize welcomeView=_welcomeView;
+@property(nonatomic, setter=_setEnableOnAppear:) _Bool _enableOnAppear; // @synthesize _enableOnAppear=__enableOnAppear;
+@property(nonatomic, setter=_setRequireStorageUpgrade:) _Bool _requireStorageUpgrade; // @synthesize _requireStorageUpgrade=__requireStorageUpgrade;
+@property(retain, nonatomic, setter=_setTermsManager:) AAUIGenericTermsRemoteUI *_termsManager; // @synthesize _termsManager=__termsManager;
+@property(retain, nonatomic, setter=_setOffersManager:) PSCloudStorageOffersManager *_offersManager; // @synthesize _offersManager=__offersManager;
+@property(retain, nonatomic, setter=_setButtons:) NSArray *_buttons; // @synthesize _buttons=__buttons;
 - (void).cxx_destruct;
 - (void)navigationControllerDidDismissViewController:(id)arg1;
-- (void)_handleEnableError:(id)arg1;
 - (void)genericTermsRemoteUI:(id)arg1 didFinishWithSuccess:(_Bool)arg2;
 - (void)managerDidCancel:(id)arg1;
 - (void)manager:(id)arg1 loadDidFailWithError:(id)arg2;
 - (void)manager:(id)arg1 willPresentViewController:(id)arg2;
-- (void)cloudPhotoWelcomeViewLearnMoreTapped:(id)arg1;
-- (void)cloudPhotoWelcomeViewNotNowButtonTapped:(id)arg1;
-- (void)cloudPhotoWelcomeViewGoButtonTapped:(id)arg1;
-- (id)presentingViewControllerTraitCollection;
-- (void)_handleGoButtonTapped;
-- (void)_continueWithoutStoragePurchase:(id)arg1;
-- (void)_enableCPLDataClass;
+- (void)_setButtonsEnabled:(_Bool)arg1;
+- (void)_handleEnableError:(id)arg1;
+- (void)_enableCloudPhotoLibraryWithoutCheck;
 - (void)_enableCloudPhotoLibrary;
-- (void)_dismiss;
-- (void)_presentStoragePurchaseController;
-- (void)_enableButtons;
+- (void)_cloudPhotoWelcomeViewLearnMoreTapped:(id)arg1;
+- (void)_cloudPhotoWelcomeViewNotNowButtonTapped:(id)arg1;
+- (void)_cloudPhotoWelcomeViewGoButtonTapped:(id)arg1;
+- (void)_continueWithoutStoragePurchase:(id)arg1;
 - (void)_updateCurrentActivity;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (_Bool)shouldAutorotate;
-- (long long)preferredInterfaceOrientationForPresentation;
-- (unsigned long long)supportedInterfaceOrientations;
-- (void)viewWillLayoutSubviews;
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)viewWillAppear:(_Bool)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
-- (void)viewDidAppear:(_Bool)arg1;
+- (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (id)initWithDefaultTitle;
+- (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3 contentLayout:(long long)arg4;
+- (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

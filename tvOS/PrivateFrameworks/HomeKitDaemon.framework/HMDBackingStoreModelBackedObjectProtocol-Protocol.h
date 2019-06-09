@@ -9,13 +9,15 @@
 @class HMDBackingStoreModelObject, NSArray, NSUUID;
 
 @protocol HMDBackingStoreModelBackedObjectProtocol <NSObject>
-@property(readonly, nonatomic) NSUUID *modelParentIdentifier;
-@property(readonly, nonatomic) NSUUID *modelIdentifier;
+@property(readonly, copy, nonatomic) NSUUID *modelParentIdentifier;
+@property(readonly, copy, nonatomic) NSUUID *modelIdentifier;
+@property(readonly) Class modelClass;
 - (NSArray *)modelBackedObjects;
 - (NSArray *)backingStoreObjectsWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (HMDBackingStoreModelObject *)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 
 @optional
 - (_Bool)isBackingStorageEqual:(id)arg1;
+- (id)initWithModelObject:(HMDBackingStoreModelObject *)arg1 parent:(id)arg2 error:(id *)arg3;
 @end
 

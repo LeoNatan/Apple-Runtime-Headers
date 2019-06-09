@@ -9,7 +9,7 @@
 #import <Mail/IMAPMailboxDelegate-Protocol.h>
 #import <Mail/IMAPMessageDataSource-Protocol.h>
 
-@class IMAPCommandPipeline, IMAPDownloadCache, IMAPMailbox, MFIMAPAccount, MFMailbox, NSArray, NSDate, NSMutableArray, NSString;
+@class EDMessageChangeManager, EDServerMessagePersistence, IMAPCommandPipeline, IMAPDownloadCache, IMAPMailbox, MFIMAPAccount, MFMailbox, NSArray, NSDate, NSMutableArray, NSString;
 
 @interface MFLibraryIMAPStore : MFRemoteStore <IMAPMailboxDelegate, IMAPMessageDataSource>
 {
@@ -27,7 +27,6 @@
     NSString *_mailboxName;
 }
 
-+ (id)flagChangeQueue;
 + (id)largeDeleteLog;
 @property(copy) NSString *mailboxName; // @synthesize mailboxName=_mailboxName;
 @property(nonatomic) BOOL supportsCustomPermanentFlags; // @synthesize supportsCustomPermanentFlags=_supportsCustomPermanentFlags;
@@ -35,6 +34,7 @@
 @property BOOL supportsModificationSequences; // @synthesize supportsModificationSequences=_supportsModificationSequences;
 @property unsigned long long totalCount; // @synthesize totalCount=_totalCount;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy, nonatomic) NSString *stateStringForDiagnostics;
 - (void)updateUidValidityFromMailbox:(id)arg1;
 - (void)updateComputedHighestModificationSequence:(unsigned long long)arg1 forMailbox:(id)arg2;
@@ -56,11 +56,6 @@
 - (BOOL)hasValidCacheFileForUid:(unsigned int)arg1;
 - (BOOL)hasValidCacheFileForMessage:(id)arg1;
 - (id)_preferredOrderForFetchingMessageBodies:(id)arg1;
-- (void)addMessageDetails:(id)arg1;
-- (void)setResultsForLabelChangeAction:(long long)arg1 uids:(id)arg2 labelsToAdd:(id)arg3 labelsToRemove:(id)arg4;
-- (void)setResultsForFlagChangeAction:(long long)arg1 uids:(id)arg2 flags:(long long)arg3 mask:(long long)arg4;
-- (void)setResultsForAppendAction:(long long)arg1 newMessageDetails:(id)arg2;
-- (void)setResultsForCopyAction:(long long)arg1 newMessageDetails:(id)arg2 lastBatch:(BOOL)arg3;
 - (void)forceResync;
 - (void)fixMessagesAndResetIMAPMessages;
 - (BOOL)mailboxHasInconsistencies;
@@ -70,6 +65,8 @@
 @property(nonatomic) unsigned int uidNextStatus;
 @property(nonatomic) unsigned int uidValidityStatus;
 - (id)_uidIndexSetForMessages:(id)arg1;
+@property(readonly) EDMessageChangeManager *messageChangeManager;
+@property(readonly) EDServerMessagePersistence *serverMessagePersistence;
 - (id)messagesWithRemoteIDs:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *duplicateRemoteIDs;
 - (id)copyOfAllMessagesWithOptions:(unsigned int)arg1;
@@ -79,10 +76,9 @@
 - (id)messageWithRemoteID:(id)arg1 inRemoteMailbox:(id)arg2;
 - (id)messagesForMailbox:(id)arg1 where:(id)arg2 sortedBy:(id)arg3 ascending:(BOOL)arg4 options:(unsigned int)arg5;
 - (void)compactMailbox:(id)arg1;
-@property(readonly, nonatomic) unsigned long long syncedMessageCount;
+@property(readonly, nonatomic) unsigned long long serverMessageCount;
 - (unsigned long long)totalCountAndUnseenCount:(unsigned long long *)arg1 adjustedUnreadCount:(unsigned long long *)arg2;
 @property(readonly, nonatomic) unsigned long long totalCountOfMessages;
-- (id)getDetailsForMessagesWithUIDs:(id)arg1 waitForWrites:(BOOL)arg2;
 @property(readonly, nonatomic) unsigned int maximumUID;
 - (id)messageForMessageID:(id)arg1;
 - (id)colorForMessage:(id)arg1;
@@ -95,30 +91,15 @@
 - (id)messagesWithRowIDs:(id)arg1;
 - (id)messageWithLibraryID:(long long)arg1 options:(unsigned int)arg2;
 - (id)messageWithDefaultLoadOptionsAndRowID:(long long)arg1;
-- (void)reflectGmailLabelsFromDictionary:(id)arg1 forMessages:(id)arg2 messageDetails:(id)arg3;
-- (void)reflectFlagChanges:(id)arg1 forMessages:(id)arg2 withUIDs:(id)arg3;
-- (void)_addFlagChangeActionForFlagChanges:(id)arg1 messages:(id)arg2;
-- (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
-- (void)async_setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
-- (id)setGmailLabelsFromDictionary:(id)arg1 forMessages:(id)arg2;
-- (void)async_setGmailLabelsFromDictionary:(id)arg1 forMessages:(id)arg2;
-- (void)imapActionReceivedError:(id)arg1 imapError:(id)arg2 missedMessages:(id)arg3;
-- (void)createAppendActionForMessageFromFailedCopy:(id)arg1 activityType:(id)arg2 userInitiated:(BOOL)arg3;
+- (void)undeleteMessagesWithDetails:(id)arg1;
 - (void)deleteMessages:(id)arg1 moveToTrash:(BOOL)arg2;
-- (void)reflectAddedIMAPMessages:(id)arg1 oldMessagesByNewMessage:(id)arg2;
 - (BOOL)_isAppleOriCloudAccount;
-- (id)newDictionaryForLocalFlags:(long long)arg1 serverFlags:(long long)arg2 existingDictionary:(id)arg3;
-- (id)_uidSearchForMessageIds:(id)arg1 destinationUidNext:(unsigned int)arg2 withSyncHandler:(id)arg3;
-- (long long)_addMessages:(id)arg1 fromStore:(id)arg2 missedMessages:(id)arg3 newMessages:(id)arg4 newDocumentIDsByOld:(id)arg5 flagsToSet:(id)arg6 appendReason:(long long)arg7 userInitiated:(BOOL)arg8 error:(id *)arg9;
-- (BOOL)_copyMessagesByID:(id)arg1 toStore:(id)arg2 appendReason:(long long)arg3 userInitiated:(BOOL)arg4 settingFlags:(id)arg5 newMessages:(id *)arg6 error:(id *)arg7;
-- (void)_copyFlagsFromMessages:(id)arg1 flagsByMessage:(id)arg2 toMessagesWithUids:(id)arg3 withSyncHandler:(id)arg4 usedFlags:(id)arg5;
+- (id)flagChangeFromLocalFlags:(id)arg1 toServerFlags:(id)arg2;
 - (BOOL)allowsOverwrite;
 - (BOOL)allowsAppend;
 - (BOOL)shouldSendUserNotificationForMessage:(id)arg1;
-- (void)undeleteMessagesWithUIDs:(id)arg1;
 - (void)deleteLastMessageWithHeaders:(id)arg1 compactWhenDone:(BOOL)arg2;
 - (void)deleteMessagesOlderThanNumberOfDays:(long long)arg1 compact:(BOOL)arg2;
-- (void)reflectDeletedIMAPMessagesWithUIDs:(id)arg1;
 - (void)doCompact;
 @property(readonly, nonatomic) BOOL canCompact;
 @property(readonly, nonatomic) MFMailbox *mailbox;
@@ -153,6 +134,7 @@
 @property(readonly, copy, nonatomic) NSString *displayName;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) BOOL isTrash;
+@property(readonly, nonatomic) long long mailboxID;
 @property(readonly) Class superclass;
 
 @end

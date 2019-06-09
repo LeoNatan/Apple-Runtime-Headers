@@ -6,6 +6,7 @@
 
 #import <OfficeImport/EDAnchor.h>
 
+__attribute__((visibility("hidden")))
 @interface EDTwoCellAnchor : EDAnchor
 {
     struct EDCellAnchorMarker mFrom;

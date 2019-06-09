@@ -26,8 +26,8 @@
 - (void)setFont:(id)arg1;
 - (double)preferredTextFieldWidth;
 - (void)setPreferredTextFieldWidth:(double)arg1;
-- (void)setTextAlignment:(unsigned long long)arg1;
-- (void)setTitleAlignment:(unsigned long long)arg1;
+- (void)setTextAlignment:(long long)arg1;
+- (void)setTitleAlignment:(long long)arg1;
 - (void)setBezeled:(BOOL)arg1;
 - (void)setBordered:(BOOL)arg1;
 - (void)setInterlineSpacing:(double)arg1;

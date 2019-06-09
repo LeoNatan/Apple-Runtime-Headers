@@ -18,7 +18,7 @@
 }
 
 - (void).cxx_destruct;
-- (id)contextualDescriptionWithDateCache:(id)arg1;
+- (id)lastUpdatedDescriptionWithDateCache:(id)arg1;
 - (id)attributedStringWithDisplayType:(id)arg1 unitController:(id)arg2 valueFont:(id)arg3 unitFont:(id)arg4 dateCache:(id)arg5;
 - (id)date;
 - (id)_quantityForType:(id)arg1 correlation:(id)arg2;

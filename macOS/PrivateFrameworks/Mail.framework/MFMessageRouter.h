@@ -27,7 +27,6 @@
 
 + (void)saveRulesIfNeeded;
 + (void)addInvitationsToCalendarFromMessages:(id)arg1;
-+ (BOOL)_addCalendarRule;
 + (void)setAddInvitationsToCalendarAutomatically:(BOOL)arg1;
 + (BOOL)addInvitationsToCalendarAutomatically;
 + (void)applyRulesAsynchronouslyToMailboxes:(id)arg1;
@@ -38,6 +37,8 @@
 + (void)setJunkMailEvaluationAfterRules:(BOOL)arg1;
 + (BOOL)junkMailEvaluationAfterRules;
 + (void)reloadRules;
++ (id)calendarRule;
++ (id)blockedSenderRule;
 + (id)_safeToMarkAsNotJunkRule;
 + (void)setJunkMailRule:(id)arg1;
 + (id)junkMailRule;
@@ -54,6 +55,8 @@
 + (void)tryToReconnectAutoDeactivatedRules;
 + (void)_updateUnrecognizedRulesAfterRemovingIndex:(unsigned long long)arg1;
 + (void)_updateUnrecognizedRulesAfterAddingIndex:(unsigned long long)arg1;
++ (unsigned long long)numberOfDefaultRules;
++ (id)defaultRules;
 + (void)removeRule:(id)arg1;
 + (void)addRule:(id)arg1;
 + (void)insertRule:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -70,8 +73,6 @@
 + (id)_setupSortRules;
 + (id)_sortRuleDictionaryRepresentationsIncludingPII:(BOOL)arg1;
 + (id)_sortRulesFromDictionaryRepresentations:(id)arg1;
-+ (BOOL)_setCalendarRule:(id)arg1;
-+ (id)_calendarRule;
 + (id)_defaultSortRules;
 + (id)defaultAppleEmailAddresses;
 + (void)_mailboxWasRenamed:(id)arg1;
@@ -91,6 +92,7 @@
 + (void)_unScheduleWriteRules;
 + (void)scheduleWriteRules;
 + (void)_setWriteRulesTimer:(id)arg1;
++ (id)writeRulesScheduler;
 + (void)initialize;
 + (id)log;
 @property(nonatomic) unsigned long long numMessagesRoutedSoFar; // @synthesize numMessagesRoutedSoFar=_numMessagesRoutedSoFar;

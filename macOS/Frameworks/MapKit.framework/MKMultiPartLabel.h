@@ -19,12 +19,12 @@
     MKMultiPartAttributedString *_multiPartString;
     NSFont *_font;
     NSColor *_textColor;
-    unsigned long long _textAlignment;
+    long long _textAlignment;
     _MKMultiPartLabelMetrics *_data;
 }
 
 @property(retain, nonatomic) _MKMultiPartLabelMetrics *data; // @synthesize data=_data;
-@property(nonatomic) unsigned long long textAlignment; // @synthesize textAlignment=_textAlignment;
+@property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) NSFont *font; // @synthesize font=_font;
 @property(retain, nonatomic) MKMultiPartAttributedString *multiPartString; // @synthesize multiPartString=_multiPartString;
@@ -32,7 +32,7 @@
 - (BOOL)allowsVibrancy;
 - (struct CGRect)frameForAlignmentRect:(struct CGRect)arg1;
 - (struct CGRect)alignmentRectForFrame:(struct CGRect)arg1;
-@property double preferredMaxLayoutWidth; // @synthesize preferredMaxLayoutWidth=_preferredMaxLayoutWidth;
+@property(nonatomic) double preferredMaxLayoutWidth; // @synthesize preferredMaxLayoutWidth=_preferredMaxLayoutWidth;
 - (double)lastBaselineOffsetFromBottom;
 - (double)firstBaselineOffsetFromTop;
 - (struct CGSize)intrinsicContentSize;

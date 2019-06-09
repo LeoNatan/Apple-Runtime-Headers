@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     int mValueType;
 }
 
+- (void).cxx_destruct;
 - (void)setValueType:(int)arg1;
 - (int)valueType;
 - (_Bool)hasValueType;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (id)from;
 - (void)setTo:(id)arg1;
 - (id)to;
-- (void)dealloc;
 - (id)init;
 
 @end

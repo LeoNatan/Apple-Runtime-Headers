@@ -8,10 +8,14 @@
 
 @interface CKMultiCache : IMMultiDict
 {
+    _Bool _cacheEligibleForPrewarm;
     unsigned int _limit;
 }
 
+@property(nonatomic) _Bool cacheEligibleForPrewarm; // @synthesize cacheEligibleForPrewarm=_cacheEligibleForPrewarm;
 @property(nonatomic) unsigned int limit; // @synthesize limit=_limit;
+- (void)markCacheAsPrewarmed;
+- (void)removeAllObjects;
 - (void)pushObject:(id)arg1 forKey:(id)arg2;
 - (id)init;
 - (void)dealloc;

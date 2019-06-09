@@ -6,7 +6,7 @@
 
 #import <TVPlayback/NSObject-Protocol.h>
 
-@class AVContentProposal, AVInterstitialTimeRange, AVMediaSelectionGroup, AVMediaSelectionOption, AVPlayerViewController, NSString;
+@class AVContentProposal, AVInterstitialTimeRange, AVMediaSelectionGroup, AVMediaSelectionOption, AVPlayerViewController, NSString, UIViewController;
 @protocol AVPlayerViewControllerAnimationCoordinator;
 
 @protocol AVPlayerViewControllerDelegate <NSObject>
@@ -16,6 +16,10 @@
 - (void)playerViewController:(AVPlayerViewController *)arg1 didRejectContentProposal:(AVContentProposal *)arg2;
 - (void)playerViewController:(AVPlayerViewController *)arg1 didAcceptContentProposal:(AVContentProposal *)arg2;
 - (_Bool)playerViewController:(AVPlayerViewController *)arg1 shouldPresentContentProposal:(AVContentProposal *)arg2;
+- (UIViewController *)previousChannelInterstitialViewControllerForPlayerViewController:(AVPlayerViewController *)arg1;
+- (UIViewController *)nextChannelInterstitialViewControllerForPlayerViewController:(AVPlayerViewController *)arg1;
+- (void)playerViewController:(AVPlayerViewController *)arg1 skipToPreviousChannel:(void (^)(_Bool))arg2;
+- (void)playerViewController:(AVPlayerViewController *)arg1 skipToNextChannel:(void (^)(_Bool))arg2;
 - (void)skipToPreviousItemForPlayerViewController:(AVPlayerViewController *)arg1;
 - (void)skipToNextItemForPlayerViewController:(AVPlayerViewController *)arg1;
 - (void)playerViewController:(AVPlayerViewController *)arg1 didSelectExternalSubtitleOptionLanguage:(NSString *)arg2;

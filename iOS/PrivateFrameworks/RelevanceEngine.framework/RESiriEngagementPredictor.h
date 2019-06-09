@@ -6,11 +6,12 @@
 
 #import <RelevanceEngine/REPredictor.h>
 
+#import <RelevanceEngine/RESiriEngagementPredictorProperties-Protocol.h>
 #import <RelevanceEngine/REUpNextSiriObserver-Protocol.h>
 
 @class NSString, REUpNextTimer;
 
-@interface RESiriEngagementPredictor : REPredictor <REUpNextSiriObserver>
+@interface RESiriEngagementPredictor : REPredictor <REUpNextSiriObserver, RESiriEngagementPredictorProperties>
 {
     REUpNextTimer *_siriDecayTimer;
     NSString *_lastSiriDomain;
@@ -19,10 +20,11 @@
 
 + (id)supportedFeatures;
 - (void).cxx_destruct;
-- (void)collectLoggableState:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) float siriInfluence;
+@property(readonly, nonatomic) NSString *lastSiriDomain;
 - (void)siriServer:(id)arg1 receivedCompletedRequestDomain:(id)arg2;
 - (id)featureValueForFeature:(id)arg1 element:(id)arg2 engine:(id)arg3 trainingContext:(id)arg4;
-- (id)init;
+- (id)_init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

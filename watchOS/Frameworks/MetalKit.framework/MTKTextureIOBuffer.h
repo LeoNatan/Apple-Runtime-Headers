@@ -11,7 +11,6 @@
 @class NSString;
 @protocol MTLBuffer;
 
-__attribute__((visibility("hidden")))
 @interface MTKTextureIOBuffer : NSObject <TXRBuffer>
 {
     id <MTLBuffer> _buffer;

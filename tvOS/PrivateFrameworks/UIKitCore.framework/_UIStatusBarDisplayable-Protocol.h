@@ -13,6 +13,7 @@
 @optional
 @property(readonly, nonatomic) UIAccessibilityHUDItem *accessibilityHUDRepresentation;
 @property(readonly, nonatomic) long long overriddenVerticalAlignment;
+@property(readonly, nonatomic) _Bool prefersBaselineAlignment;
 @property(readonly, nonatomic) _Bool wantsCrossfade;
 - (void)applyStyleAttributes:(_UIStatusBarStyleAttributes *)arg1;
 @end

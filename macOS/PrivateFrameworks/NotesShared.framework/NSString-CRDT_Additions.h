@@ -11,6 +11,7 @@
 #import <NotesShared/CREquatable-Protocol.h>
 
 @interface NSString (CRDT_Additions) <CRDataType, CREquatable, CRCoding>
++ (id)ic_NSAttachmentCharacterString;
 - (id)tombstone;
 - (void)realizeLocalChangesIn:(id)arg1;
 - (void)setDocument:(id)arg1;
@@ -19,6 +20,46 @@
 - (void)encodeWithCRCoder:(id)arg1;
 - (id)initWithCRCoder:(id)arg1;
 - (void)mergeWith:(id)arg1;
+- (id)dictionaryFromQueryComponents;
+- (id)stringByEncodingURLFormat;
+- (id)stringByDecodingURLFormat;
+@property(readonly, nonatomic) NSString *ic_quotedString;
+- (id)ic_truncatedStringWithMaxLength:(unsigned long long)arg1 truncated:(char *)arg2;
+- (id)ic_stringByTrimmingLeadingCharactersInSet:(id)arg1;
+- (unsigned long long)ic_countOfCharactersInSet:(id)arg1;
+- (struct _NSRange)ic_safeCharacterRangeForRange:(struct _NSRange)arg1;
+- (BOOL)ic_isLastCharacterInRangeANewlineForRange:(struct _NSRange)arg1;
+- (unsigned long long)lengthOfLongestLine;
+- (struct _NSRange)paragraphRangeForRange:(struct _NSRange)arg1 contentEnd:(unsigned long long *)arg2;
+- (id)ic_stringByReplacingCharactersInStringMap:(id)arg1;
+- (id)ic_stringByReplacingCharactersInSet:(id)arg1 withString:(id)arg2;
+- (id)ic_stringByReplacingNewlineCharactersWithWhiteSpace;
+- (id)ic_checkedSubstringWithRange:(struct _NSRange)arg1;
+- (id)ic_substringWithRange:(struct _NSRange)arg1;
+- (id)ic_substringToIndex:(unsigned long long)arg1;
+- (id)ic_substringFromIndex:(unsigned long long)arg1;
+- (void)enumerateContentLineRangesInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)enumerateParagraphsInRange:(struct _NSRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (BOOL)ic_containsAlphanumericCharacters;
+- (BOOL)ic_containsNonWhitespaceCharacters;
+- (id)ic_uniqueWordsWithMinLength:(unsigned long long)arg1;
+- (unsigned long long)numberOfLines;
+@property(readonly, nonatomic) BOOL ic_isLastCharacterANewline;
+@property(readonly, nonatomic) NSString *ic_stringByRemovingAttachmentCharacters;
+@property(readonly, nonatomic) NSString *ic_stringReplacingUnsafeXMLCharacters;
+@property(readonly, nonatomic) NSString *ic_stringReplacingUnsafeHTMLCharacters;
+- (BOOL)ic_rangeIsValid:(struct _NSRange)arg1;
+@property(readonly, nonatomic) NSString *ic_sanitizedFilenameString;
+@property(readonly, nonatomic) NSString *ic_whitespaceAndNewlineCoalescedString;
+@property(readonly, nonatomic) NSString *ic_leadingTrimmedString;
+@property(readonly, nonatomic) NSString *ic_trailingTrimmedString;
+@property(readonly, nonatomic) NSString *ic_trimmedString;
+@property(readonly, nonatomic) NSString *ic_htmlStringEscapingQuotesAndLineBreaks;
+- (id)ic_md5;
+@property(readonly, nonatomic) struct _NSRange ic_range;
+- (id)_HTMLTagNameClosing:(char *)arg1;
+- (struct _NSRange)_HTMLRangeOfLastTagBeforeIndex:(unsigned long long)arg1;
+- (unsigned long long)ic_HTMLInsertionPoint;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -20,6 +20,7 @@
 + (_Bool)supportsSecureCoding;
 + (id)_profileWithUUID:(id)arg1 type:(long long)arg2;
 + (id)primaryProfile;
++ (_Bool)isValidSecondaryProfileType:(long long)arg1;
 - (void).cxx_destruct;
 @property(readonly) long long type;
 @property(readonly, copy) NSUUID *identifier;

@@ -8,6 +8,7 @@
 
 @class NSString, SKUIAnimatorDOMFeature;
 
+__attribute__((visibility("hidden")))
 @interface SKUITextInputViewElement : SKUIInputViewElement
 {
     long long _keyboardType;

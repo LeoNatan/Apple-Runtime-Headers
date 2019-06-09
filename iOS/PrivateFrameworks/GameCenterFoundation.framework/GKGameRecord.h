@@ -13,6 +13,7 @@
     GKPlayer *_player;
 }
 
++ (void)loadGameRecordsForPlayer:(id)arg1 bundleIDs:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 + (void)loadGameRecordsForPlayer:(id)arg1 games:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 + (void)loadGameRecordForPlayer:(id)arg1 game:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 + (id)gameRecordForPlayer:(id)arg1 game:(id)arg2;
@@ -21,6 +22,7 @@
 + (id)internalRepresentationCache;
 + (id)cacheKeyForPlayer:(id)arg1 internal:(id)arg2;
 + (id)cacheKeyForPlayer:(id)arg1 game:(id)arg2;
++ (id)cacheKeyForPlayer:(id)arg1 bundleIdentifier:(id)arg2;
 + (_Bool)supportsSecureCoding;
 + (void)partitionGameRecords:(id)arg1 returniOS:(id *)arg2 returnMac:(id *)arg3;
 @property(retain, nonatomic) GKPlayer *player; // @synthesize player=_player;
@@ -31,6 +33,7 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1 player:(id)arg2;
 

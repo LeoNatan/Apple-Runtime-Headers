@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, SKUILayoutCache;
 
+__attribute__((visibility("hidden")))
 @interface SKUIViewElementTextLayoutCache : NSObject
 {
     SKUILayoutCache *_layoutCache;

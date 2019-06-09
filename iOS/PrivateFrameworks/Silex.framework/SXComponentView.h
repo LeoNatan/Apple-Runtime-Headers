@@ -26,6 +26,7 @@
     _Bool _allowViewHierarchyRemoval;
     _Bool _hasAnimation;
     _Bool _hasBehaviors;
+    _Bool _hasRenderedComponentStyle;
     CDStruct_1cc9d0d0 _presentationChanges;
     id <SXComponentLayout> _componentLayout;
     id <SXComponent> _component;
@@ -56,6 +57,7 @@
 @property(nonatomic) struct CGRect presentationFrame; // @synthesize presentationFrame=_presentationFrame;
 @property(nonatomic) unsigned long long componentIndex; // @synthesize componentIndex=_componentIndex;
 @property(nonatomic) __weak id <SXComponentHosting> componentHost; // @synthesize componentHost=_componentHost;
+@property(nonatomic) _Bool hasRenderedComponentStyle; // @synthesize hasRenderedComponentStyle=_hasRenderedComponentStyle;
 @property(nonatomic) _Bool hasBehaviors; // @synthesize hasBehaviors=_hasBehaviors;
 @property(nonatomic) _Bool hasAnimation; // @synthesize hasAnimation=_hasAnimation;
 @property(nonatomic) _Bool allowViewHierarchyRemoval; // @synthesize allowViewHierarchyRemoval=_allowViewHierarchyRemoval;
@@ -108,6 +110,10 @@
 @property(readonly, nonatomic) struct CGRect transitionContentFrame;
 - (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
 - (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
+- (void)invalidateComponentStyle;
+- (void)renderComponentStyle;
+- (void)prepareComponentStyleRendererForStyle:(id)arg1;
+- (void)setupComponentStyleRendererForStyle:(id)arg1;
 - (void)updateAllowHierarchyRemovalWithComponent:(id)arg1 componentStyle:(id)arg2;
 - (_Bool)allowHierarchyRemoval;
 - (void)restoreBehavior;
@@ -115,13 +121,15 @@
 - (id)contentViewForBehavior:(id)arg1;
 - (void)visibilityStateDidChangeFromState:(long long)arg1;
 - (void)presentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
-- (void)willPresentComponent;
+- (void)willPresentComponentWithChanges:(CDStruct_1cc9d0d0)arg1;
+- (void)renderContentsIfNeeded;
 - (void)discardContents;
 - (void)renderContents;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (void)configure;
 - (void)loadComponent:(id)arg1;
+- (void)didReceiveMemoryWarning;
 - (id)initWithDOMObjectProvider:(id)arg1 viewport:(id)arg2 presentationDelegate:(id)arg3 componentStyleRendererFactory:(id)arg4;
 
 // Remaining properties

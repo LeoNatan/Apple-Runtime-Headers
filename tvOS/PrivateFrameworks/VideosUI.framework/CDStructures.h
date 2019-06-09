@@ -32,6 +32,12 @@ struct TVCornerRadii {
     double bottomRight;
 };
 
+struct TVShowcaseConfig {
+    long long _field1;
+    long long _field2;
+    double _field3;
+};
+
 struct UIEdgeInsets {
     double top;
     double left;
@@ -43,4 +49,23 @@ struct _NSRange {
     unsigned long long location;
     unsigned long long length;
 };
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    long long _field1;
+    int _field2;
+    unsigned int _field3;
+    long long _field4;
+} CDStruct_198678f7;
+
+typedef struct {
+    struct UIEdgeInsets _field1;
+    struct UIEdgeInsets _field2;
+    struct UIEdgeInsets _field3;
+} CDStruct_fe9bf7bc;
 

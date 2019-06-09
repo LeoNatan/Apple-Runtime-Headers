@@ -20,10 +20,13 @@
     double _totalSUTimeRemaining;
     double _suAmountDeducted;
     NSTimer *_initialSUProgressTimer;
+    BOOL _isSoftwareUpdate;
 }
 
+@property BOOL isSoftwareUpdate; // @synthesize isSoftwareUpdate=_isSoftwareUpdate;
 @property BOOL isOSInstall; // @synthesize isOSInstall=_isOSInstall;
 - (void).cxx_destruct;
+- (BOOL)_isValidCompatibilityUpdatePackage:(id)arg1;
 - (void)updateSUProgress;
 - (double)estimatedTimeToComplete;
 - (void)installClientDidFinish:(id)arg1;
@@ -34,7 +37,7 @@
 - (id)localizedStatusString;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;
-- (id)initWithOptions:(id)arg1 packageSpecifiers:(id)arg2 isOSInstall:(BOOL)arg3;
+- (id)initWithOptions:(id)arg1 packageSpecifiers:(id)arg2 isOSInstall:(BOOL)arg3 isSoftwareUpdate:(BOOL)arg4;
 
 @end
 

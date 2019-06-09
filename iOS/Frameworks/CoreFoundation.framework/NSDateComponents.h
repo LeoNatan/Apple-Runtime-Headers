@@ -49,7 +49,9 @@
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
 - (void)dealloc;
+-     // Error parsing type: @24@0:8^{__CFDateComponents={__CFRuntimeBase=QAQ}^{__CFCalendar}^{__CFTimeZone}qqqqqqqqqqqqqqqq}16, name: _initWithCFDateComponents:
 - (id)init;
+-     // Error parsing type: ^{__CFDateComponents={__CFRuntimeBase=QAQ}^{__CFCalendar}^{__CFTimeZone}qqqqqqqqqqqqqqqq}16@0:8, name: _dateComponents
 
 @end
 

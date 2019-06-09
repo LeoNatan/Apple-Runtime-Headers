@@ -12,6 +12,7 @@
 @protocol _UINavigationBarDelegatePrivate <UINavigationBarDelegate>
 
 @optional
+- (_Bool)_navigationBarLayoutIsInInteractiveScroll;
 - (_Bool)_navigationBarShouldUpdateProgress;
 - (struct CGRect)_incomingNavigationBarFrame;
 - (void)_navigationItemDidUpdateSearchController:(UINavigationItem *)arg1 oldSearchController:(UISearchController *)arg2;
@@ -27,8 +28,11 @@
 - (_Bool)_willPerformCustomNavigationTransitionForPop;
 - (id <UIViewControllerTransitionCoordinator>)_transitionCoordinator;
 - (_Bool)_hasInterruptibleNavigationTransition;
+- (void)_navigationBar:(UINavigationBar *)arg1 itemEnabledAutoScrollTransition:(UINavigationItem *)arg2;
+- (double)_navigationBar:(UINavigationBar *)arg1 preferredHeightForTransitionToHeightRange:(CDStruct_39925896)arg2;
 - (struct NSDirectionalEdgeInsets)_layoutMarginsforNavigationBar:(UINavigationBar *)arg1;
 - (void)_navigationBarWillBeginCoordinatedTransitionAnimations:(UINavigationBar *)arg1;
+- (void)_popNavigationBar:(UINavigationBar *)arg1 item:(UINavigationItem *)arg2;
 - (void)_navigationBarChangedSize:(UINavigationBar *)arg1;
 - (void)_navigationBarDidChangeStyle:(UINavigationBar *)arg1;
 - (void)navigationBarDidChangeOpacity:(UINavigationBar *)arg1;

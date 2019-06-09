@@ -6,26 +6,33 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, NSXPCConnection, ScreenSaverViewController;
+@class NSString, NSXPCConnection, ScreenSaverConfigurationViewController, ScreenSaverViewController;
 
 @interface ScreenSaverExtensionManager : NSObject
 {
     BOOL _isAnimating;
+    BOOL _isPreview;
     ScreenSaverViewController *_viewController;
+    ScreenSaverConfigurationViewController *_configurationViewViewController;
     NSXPCConnection *_connection;
     NSString *_bundleIdentifier;
 }
 
 + (id)sharedManager;
++ (void)setSharedClassName:(id)arg1;
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
+@property __weak ScreenSaverConfigurationViewController *configurationViewViewController; // @synthesize configurationViewViewController=_configurationViewViewController;
 @property __weak ScreenSaverViewController *viewController; // @synthesize viewController=_viewController;
+@property BOOL isPreview; // @synthesize isPreview=_isPreview;
 @property BOOL isAnimating; // @synthesize isAnimating=_isAnimating;
 - (void).cxx_destruct;
 - (void)stopAnimation;
 - (void)startAnimation;
+- (void)configurationViewViewControllerDidAwake:(id)arg1;
 - (void)serviceViewControllerDidAwake:(id)arg1;
 - (void)resumeConnectionWithEndpoint:(id)arg1;
+- (id)processExtensionRequest:(id)arg1 replyInfo:(id)arg2;
 - (void)dealloc;
 
 @end

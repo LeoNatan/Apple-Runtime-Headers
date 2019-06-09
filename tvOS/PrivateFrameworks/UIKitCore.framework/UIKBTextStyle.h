@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 @interface UIKBTextStyle : NSObject <NSCopying>
 {
     _Bool _ignoreTextMarginOnKey;
-    int _anchorCorner;
     NSString *_fontName;
     double _fontSize;
     double _imageScale;
@@ -26,6 +25,7 @@ __attribute__((visibility("hidden")))
     long long _alignment;
     double _pathWeight;
     double _fontWeight;
+    unsigned long long _anchorCorner;
     long long _selector;
     struct CGPoint _textOffset;
     struct CGPoint _etchOffset;
@@ -35,7 +35,7 @@ __attribute__((visibility("hidden")))
 + (id)styleWithFontName:(id)arg1 withFontSize:(double)arg2;
 @property(nonatomic) _Bool ignoreTextMarginOnKey; // @synthesize ignoreTextMarginOnKey=_ignoreTextMarginOnKey;
 @property(nonatomic) long long selector; // @synthesize selector=_selector;
-@property(nonatomic) int anchorCorner; // @synthesize anchorCorner=_anchorCorner;
+@property(nonatomic) unsigned long long anchorCorner; // @synthesize anchorCorner=_anchorCorner;
 @property(nonatomic) double fontWeight; // @synthesize fontWeight=_fontWeight;
 @property(nonatomic) double pathWeight; // @synthesize pathWeight=_pathWeight;
 @property(nonatomic) struct CGPoint etchOffset; // @synthesize etchOffset=_etchOffset;

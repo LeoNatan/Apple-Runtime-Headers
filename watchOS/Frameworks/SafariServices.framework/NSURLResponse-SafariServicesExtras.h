@@ -7,6 +7,9 @@
 #import <CFNetwork/NSURLResponse.h>
 
 @interface NSURLResponse (SafariServicesExtras)
+@property(readonly, nonatomic) _Bool _sf_hasAttachmentWithFilename;
+@property(readonly, nonatomic) _Bool _sf_allowedToOverrideContentDispositionAttachment;
+- (_Bool)sf_shouldDownloadDueToContentDisposition:(_Bool)arg1;
 - (_Bool)sf_hasXMLAttachment;
 @end
 

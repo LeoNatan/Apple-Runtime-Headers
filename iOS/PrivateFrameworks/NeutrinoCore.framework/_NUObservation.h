@@ -21,6 +21,7 @@
 @property(readonly, nonatomic) long long key; // @synthesize key=_key;
 @property(readonly, nonatomic) __weak id observer; // @synthesize observer=_observer;
 - (void).cxx_destruct;
+- (void)notifyWithBlock:(CDUnknownBlockType)arg1;
 - (id)initWithObserver:(id)arg1 key:(long long)arg2 queue:(id)arg3 block:(CDUnknownBlockType)arg4;
 - (id)init;
 

@@ -11,18 +11,21 @@
 __attribute__((visibility("hidden")))
 @interface SCRMIGHelper : NSObject
 {
-    NSThread *_migMessageHandlingThread;
     struct __CFRunLoop *_migMessageHandlingRunLoop;
-    unsigned int _startupPort;
-    unsigned int _runningPort;
     struct __CFRunLoopSource *_SCRQuitDefsServerSource;
     struct __CFRunLoopSource *_SCRStartDefsServerSource;
+    unsigned int __startupPort;
+    unsigned int __runningPort;
+    NSThread *__migMessageHandlingThread;
 }
 
+@property(nonatomic, setter=_setRunningPort:) unsigned int _runningPort; // @synthesize _runningPort=__runningPort;
+@property(nonatomic, setter=_setStartupPort:) unsigned int _startupPort; // @synthesize _startupPort=__startupPort;
+@property(retain, nonatomic, setter=_setMIGMessageHandlingThread:) NSThread *_migMessageHandlingThread; // @synthesize _migMessageHandlingThread=__migMessageHandlingThread;
+- (void).cxx_destruct;
 - (void)_mht_stop;
 - (void)_mht_main;
 - (void)stop;
-- (void)dealloc;
 - (id)initWithStartupPort:(unsigned int)arg1 runningPort:(unsigned int)arg2;
 
 @end

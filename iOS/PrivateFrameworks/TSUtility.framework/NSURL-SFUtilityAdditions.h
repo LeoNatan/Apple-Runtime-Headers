@@ -6,11 +6,30 @@
 
 #import <Foundation/NSURL.h>
 
-@interface NSURL (SFUtilityAdditions)
+#import <TSUtility/TSUDownloadItem-Protocol.h>
+
+@class NSString;
+
+@interface NSURL (SFUtilityAdditions) <TSUDownloadItem>
 + (id)filePathURLWithEscapes:(id)arg1;
 + (id)relativeURLWithEscapes:(id)arg1;
 + (id)improperlyEscapedString:(id)arg1;
 + (id)properlyEscapedString:(id)arg1;
++ (void)downloadManager:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
++ (void)downloadManager:(id)arg1 task:(id)arg2 didFinishDownloadingToURL:(id)arg3;
++ (_Bool)canHandleDownloadTask:(id)arg1;
 - (_Bool)isRelative;
+- (_Bool)tsu_conformsToUTI:(id)arg1;
+@property(readonly, nonatomic) NSString *tsu_UTI;
+@property(readonly, nonatomic) long long totalBytesExpectedToBeDownloaded;
+@property(readonly, nonatomic) NSURL *downloadURL;
+@property(readonly, nonatomic) NSString *downloadTaskDescription;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) _Bool needsDownload;
+@property(readonly) Class superclass;
 @end
 

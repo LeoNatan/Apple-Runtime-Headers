@@ -9,6 +9,7 @@
 @protocol FPUIActionExtensionViewControllerProtocol
 - (void)_setBrowserUserInterfaceStyle:(unsigned long long)arg1;
 - (void)_configureWithDomainIdentifier:(NSString *)arg1;
+- (void)_prepareAuthenticationUsingServerURL:(NSURL *)arg1;
 - (void)_prepareAuthenticationUsingURL:(NSURL *)arg1;
 - (void)_prepareForError:(NSError *)arg1;
 - (void)_prepareForServerCreation;

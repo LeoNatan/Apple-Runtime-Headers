@@ -8,6 +8,7 @@
 
 @class OITSUImage;
 
+__attribute__((visibility("hidden")))
 @interface MFPhoneBitmap : MFBitmap
 {
     OITSUImage *m_image;

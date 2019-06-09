@@ -6,6 +6,7 @@
 
 #import <Social/SLWebUserInfoResponse.h>
 
+__attribute__((visibility("hidden")))
 @interface SLYahooUserInfoResponse : SLWebUserInfoResponse
 {
 }

@@ -19,6 +19,8 @@
 + (BOOL)carrierBuild;
 + (BOOL)internalBuild;
 + (double)defaultBatteryEnergyCapacity;
++ (BOOL)shouldShowBatteryGraphs;
++ (BOOL)isHomePod;
 + (BOOL)isMac;
 + (BOOL)isWatch;
 + (BOOL)isiPod;

@@ -13,7 +13,8 @@
 @interface CHStrokeGroupingResult : NSObject <NSCopying>
 {
     NSArray *_strokeGroupsSortedTopBottomLeftRight;
-    NSArray *_strokeGroupsSortedTopBottomLeftRightRespectingWritingOrientation;
+    NSArray *_textStrokeGroupsSortedByWritingOrientation;
+    NSArray *_strokeGroupsSortedByWritingOrientation;
     NSSet *_textStrokeGroups;
     NSSet *_strokeGroups;
     NSSet *_createdStrokeGroups;
@@ -24,6 +25,8 @@
 @property(readonly, copy, nonatomic) NSSet *createdStrokeGroups; // @synthesize createdStrokeGroups=_createdStrokeGroups;
 @property(readonly, copy, nonatomic) NSSet *strokeGroups; // @synthesize strokeGroups=_strokeGroups;
 @property(readonly, copy, nonatomic) NSSet *textStrokeGroups;
+- (id)_sortedStrokeGroupsByWritingOrientationTextOnly:(_Bool)arg1;
+@property(readonly, copy, nonatomic) NSArray *strokeGroupsSortedByWritingOrientation;
 @property(readonly, copy, nonatomic) NSArray *textStrokeGroupsSortedByWritingOrientation;
 @property(readonly, copy, nonatomic) NSArray *textStrokeGroupsSortedTopBottomLeftRight;
 - (id)description;

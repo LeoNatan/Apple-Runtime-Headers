@@ -10,14 +10,20 @@
 {
     struct OpaqueVTPixelTransferSession *_vtPixelTransferSession;
     struct __CVPixelBufferPool *_scaledPixelBufferPool;
+    _Bool _shouldUseScaleFactor;
     unsigned char _downscaleFactor;
+    unsigned int _conversionPixelFormatType;
+    struct CGSize _scaledSize;
 }
 
 @property(readonly, nonatomic) unsigned char downscaleFactor; // @synthesize downscaleFactor=_downscaleFactor;
+@property(nonatomic) unsigned int conversionPixelFormatType; // @synthesize conversionPixelFormatType=_conversionPixelFormatType;
+@property(readonly, nonatomic) struct CGSize scaledSize; // @synthesize scaledSize=_scaledSize;
 - (_Bool)isEqual:(id)arg1;
 - (id)processData:(id)arg1;
 - (unsigned long long)requiredSensorDataTypes;
 - (void)dealloc;
+- (id)initWithScaledSize:(struct CGSize)arg1;
 - (id)initWithDownscaleFactor:(unsigned char)arg1;
 
 @end

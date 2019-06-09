@@ -9,13 +9,18 @@
 @protocol NMCPlayerPlaybackIntent;
 
 @interface NMROrigin (Playback)
-- (void)startPlaybackOfIntent:(id)arg1 fromViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (id)_appBundleIdentifier;
 - (void)_showCuratedQueueReplaceIntentOptionsAlertFromViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_showConnectionFailedMessageForViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_insertPlaybackIntent:(id)arg1 intoPlaybackQueueAtInsertionPosition:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_resumePlaybackWithIntent:(id)arg1 fromViewController:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_startPlaybackWithIntent:(id)arg1 preventingAutomaticPlayback:(_Bool)arg2 fromViewController:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)insertPlaybackIntent:(id)arg1 intoPlaybackQueueAtInsertionPosition:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)replacePlaybackQueueWithIntent:(id)arg1 preventingAutomaticPlayback:(_Bool)arg2 fromViewController:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 @property(retain, nonatomic) id <NMCPlayerPlaybackIntent> currentPlaybackIntent;
+- (id)_displayName;
+- (id)pickerImage;
+- (id)statusBarImage;
+- (id)localizedShortDisplayName;
+- (id)localizedDisplayName;
 @end
 

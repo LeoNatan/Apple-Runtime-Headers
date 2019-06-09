@@ -6,23 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class FBSSystemAppProxy;
+@class FBSOpenApplicationService, FBSSystemAppProxy;
 
 @interface FBSSystemService : NSObject
 {
     FBSSystemAppProxy *_systemAppProxy;
+    FBSOpenApplicationService *_defaultOpenApplicationService;
 }
 
 + (id)clientCallbackQueue;
 + (id)sharedService;
 - (void).cxx_destruct;
-- (void)_openApplication:(id)arg1 withOptions:(id)arg2 clientHandle:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)setKeyboardFocusApplicationPID:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)setKeyboardFocusApplicationPID:(int)arg1 deferringToken:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setKeyboardFocusApplicationWithBundleID:(id)arg1 pid:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)shutdownWithOptions:(id)arg1;
 - (void)shutdown;
 - (void)reboot;
 - (void)dataResetWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)deleteAllSnapshotsForApplication:(id)arg1;
 - (void)setBadgeValue:(id)arg1 forBundleID:(id)arg2;
 - (id)badgeValueForBundleID:(id)arg1;
 - (id)processHandleForApplication:(id)arg1;
@@ -40,6 +41,8 @@
 - (int)pidForApplication:(id)arg1;
 - (_Bool)isPasscodeLockedOrBlocked;
 - (id)systemApplicationBundleIdentifier;
+- (void)dealloc;
+- (id)initWithEndpoint:(id)arg1;
 - (id)init;
 
 @end

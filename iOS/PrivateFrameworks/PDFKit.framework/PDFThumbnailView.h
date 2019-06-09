@@ -7,52 +7,33 @@
 #import <UIKit/UIView.h>
 
 #import <PDFKit/NSCoding-Protocol.h>
-#import <PDFKit/PDFCollectionViewDataSource-Protocol.h>
-#import <PDFKit/PDFCollectionViewDelegate-Protocol.h>
 
-@class NSArray, NSString, PDFThumbnailViewPrivateVars, PDFView, UIColor;
+@class NSArray, PDFThumbnailViewPrivate, PDFView, UIColor;
 
-@interface PDFThumbnailView : UIView <PDFCollectionViewDelegate, PDFCollectionViewDataSource, NSCoding>
+@interface PDFThumbnailView : UIView <NSCoding>
 {
-    PDFThumbnailViewPrivateVars *_private;
-    struct UIEdgeInsets _contentInset;
+    PDFThumbnailViewPrivate *_private;
 }
 
-@property(nonatomic) struct UIEdgeInsets contentInset; // @synthesize contentInset=_contentInset;
 - (void).cxx_destruct;
-- (void)setPdfView:(id)arg1;
-- (id)pdfView;
-- (CDUnknownBlockType)_newIconSetterBlockForIconView:(id)arg1 andIndexPath:(id)arg2;
-- (void)_pdfDocumentWasUnlocked:(id)arg1;
-- (void)didEndDisplayingItem:(id)arg1;
-- (id)scrubbingAtFraction:(double)arg1 betweenIndexPath:(id)arg2 andIndexPath:(id)arg3 outDiscreteFraction:(double *)arg4;
-- (void)didSelectItemAtIndexPath:(id)arg1;
-- (void)selectionChanged;
-- (void)configureItem:(id)arg1 forRepresentedObject:(id)arg2 andViewIndexPath:(id)arg3 usingOptionalImage:(id)arg4;
-- (id)indexPathForRepresentedObject:(id)arg1;
-- (id)representedObjectAtIndexPath:(id)arg1;
-- (id)currentIndexPath;
-- (long long)numberOfItemsInSection:(long long)arg1;
-- (void)setHorizontalMode:(_Bool)arg1;
+- (void)pageChanged:(id)arg1;
+- (void)currentPageChanged:(id)arg1;
+- (void)documentMutated:(id)arg1;
+- (void)documentUnlocked:(id)arg1;
+- (void)documentChanged:(id)arg1;
+- (void)_updateLayout;
+@property(nonatomic) struct UIEdgeInsets contentInset;
 @property(nonatomic) long long layoutMode;
 @property(nonatomic) struct CGSize thumbnailSize;
 @property(readonly, nonatomic) NSArray *selectedPages;
 @property(copy, nonatomic) UIColor *backgroundColor;
-@property(retain, nonatomic) PDFView *PDFView;
-- (void)documentChanged;
-- (void)documentUnlocked;
+@property(nonatomic) __weak PDFView *PDFView;
 - (void)dealloc;
+- (void)_commonInit;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
-- (void)_commonInit;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

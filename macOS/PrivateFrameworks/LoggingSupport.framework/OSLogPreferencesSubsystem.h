@@ -22,9 +22,14 @@
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (void)_resetCategory:(id)arg1;
+- (void)_setSignpostPersisted:(BOOL)arg1 forCategory:(id)arg2;
+- (void)_setSignpostEnabled:(BOOL)arg1 forCategory:(id)arg2;
 - (void)_setPersistedLevel:(long long)arg1 forCategory:(id)arg2;
 - (void)_setEnabledLevel:(long long)arg1 forCategory:(id)arg2;
 - (id)_levelPrefsForCategory:(id)arg1;
+- (id)_prefsForCategory:(id)arg1;
+- (BOOL)_signpostPersistedForCategory:(id)arg1;
+- (BOOL)_signpostEnabledForCategory:(id)arg1;
 - (long long)_persistedLevelForCategory:(id)arg1;
 - (long long)_enabledLevelForCategory:(id)arg1;
 - (long long)_defaultPersistedLevelForCategory:(id)arg1;

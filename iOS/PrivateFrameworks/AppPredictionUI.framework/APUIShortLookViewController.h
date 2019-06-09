@@ -15,12 +15,13 @@
 #import <AppPredictionUI/PLPreviewInteractionPresenting-Protocol.h>
 #import <AppPredictionUI/SearchUIResultShortLook-Protocol.h>
 
-@class APUIIntentHandlingViewController, APUILongLookViewController, ATXAction, CRKCardPresentation, INIntent, INInteraction, NSString, NSUserActivity, NSUserDefaults, PLPreviewInteractionManager, SFSearchResult, UIView;
+@class APUIIntentHandlingViewController, APUILongLookViewController, APUITVIntentHandler, ATXAction, CRKCardPresentation, INIntent, INInteraction, NSString, NSUserActivity, NSUserDefaults, PLPreviewInteractionManager, SFSearchResult, UIView;
 @protocol APUIShortLookViewControllerDelegate, CRKCardViewControllerDelegate, CRKCardViewControlling, PLPreviewInteractionPresentable;
 
 @interface APUIShortLookViewController : UIViewController <APUIIntentHandlingViewControllerDelegate, CRKCardPresentationDelegate, CRKCardViewControllerDelegate, PLPreviewInteractionPresenting, PLPreviewInteractionManagerDelegate, APUILongLookViewControllerDataSource, APUILongLookViewControllerDelegate, SearchUIResultShortLook>
 {
     APUILongLookViewController<PLPreviewInteractionPresentable> *_presentableViewController;
+    APUITVIntentHandler *_tvIntentHandler;
     _Bool _safeToReleaseLongLookViewController;
     double _preferredPlatterContentHeight;
     _Bool _acceptPlatterTaps;
@@ -63,6 +64,7 @@
 - (void)cardViewControllerDidLoad:(id)arg1;
 - (void)longLookPlatterDidTapUtilityButton:(id)arg1;
 - (_Bool)longLookPlatterShouldShowUtilityButton:(id)arg1;
+- (void)handOverIntentHandlingToApp;
 - (void)longLookPlatterDidReceiveTap:(id)arg1;
 - (double)preferredContentHeightForLongLook:(id)arg1;
 - (_Bool)fetchViewControllerForContentViewInLongLook:(id)arg1 completion:(CDUnknownBlockType)arg2;

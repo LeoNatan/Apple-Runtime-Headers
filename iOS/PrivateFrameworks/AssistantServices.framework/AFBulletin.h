@@ -12,9 +12,12 @@
 
 @interface AFBulletin : NSObject <NSSecureCoding>
 {
+    _Bool _availableOnLockScreen;
+    _Bool _supportsSpokenNotification;
     _Bool _read;
     _Bool _allDay;
     _Bool _previewRestricted;
+    NSString *_displayName;
     BBBulletin *_bbBulletin;
     NSString *_bulletinID;
     NSString *_recordID;
@@ -30,11 +33,14 @@
     NSString *_title;
     NSArray *_intentIDs;
     NSString *_publisherBulletinID;
-    NSString *_displayName;
+    NSString *_threadID;
+    NSString *_internalID;
 }
 
 + (_Bool)supportsSecureCoding;
-@property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
++ (id)internalIDForBBBulletinID:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *internalID; // @synthesize internalID=_internalID;
+@property(readonly, copy, nonatomic) NSString *threadID; // @synthesize threadID=_threadID;
 @property(readonly, nonatomic) _Bool previewRestricted; // @synthesize previewRestricted=_previewRestricted;
 @property(readonly, copy, nonatomic) NSString *publisherBulletinID; // @synthesize publisherBulletinID=_publisherBulletinID;
 @property(readonly, copy, nonatomic) NSArray *intentIDs; // @synthesize intentIDs=_intentIDs;
@@ -53,10 +59,15 @@
 @property(readonly, copy, nonatomic) NSString *bulletinID; // @synthesize bulletinID=_bulletinID;
 @property(readonly, nonatomic) BBBulletin *bbBulletin; // @synthesize bbBulletin=_bbBulletin;
 @property(nonatomic, getter=isRead) _Bool read; // @synthesize read=_read;
+@property(nonatomic) _Bool supportsSpokenNotification; // @synthesize supportsSpokenNotification=_supportsSpokenNotification;
+@property(nonatomic) _Bool availableOnLockScreen; // @synthesize availableOnLockScreen=_availableOnLockScreen;
+@property(copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)setNotification:(id)arg1 fromSourceApp:(id)arg2;
 - (void)setBulletin:(id)arg1;
+- (id)_displayNameForBulletin:(id)arg1;
 
 @end
 

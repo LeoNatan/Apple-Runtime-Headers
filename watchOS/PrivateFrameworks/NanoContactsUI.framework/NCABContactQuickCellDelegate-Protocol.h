@@ -9,6 +9,7 @@
 @class NCABContactQuickCell;
 
 @protocol NCABContactQuickCellDelegate <NSObject>
+- (void)quickCellDidSelectWalkieTalkie:(NCABContactQuickCell *)arg1;
 - (void)quickCellDidSelectMail:(NCABContactQuickCell *)arg1;
 - (void)quickCellDidSelectMessage:(NCABContactQuickCell *)arg1;
 - (void)quickCellDidSelectCall:(NCABContactQuickCell *)arg1;

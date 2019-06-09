@@ -6,35 +6,10 @@
 
 #import <QTKit/QTCaptureOutput.h>
 
-@class QTCaptureAudioPreviewOutputInternal;
-
 @interface QTCaptureAudioPreviewOutput : QTCaptureOutput
 {
-    QTCaptureAudioPreviewOutputInternal *_internal;
-    long long _reserved4;
-    long long _reserved5;
-    long long _reserved6;
 }
 
-- (BOOL)getAudioMixerNode:(int *)arg1 andUnitElement:(unsigned int *)arg2 forConnection:(id)arg3;
-- (unsigned int)connectionUnitInputNumberForConnection:(id)arg1;
-- (int)connectionGraphNodeForConnection:(id)arg1;
-- (void)removeOutputUnitsForConnection:(id)arg1 fromGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3;
-- (BOOL)addOutputUnitsForConnection:(id)arg1 toGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3 error:(id *)arg4;
-- (void)removeConnection:(id)arg1;
-- (id)addConnection:(id)arg1 error:(id *)arg2;
-- (id)connections;
-- (BOOL)canAddConnectionForMediaType:(id)arg1;
-- (id)connectionMediaTypes;
-- (void)setVolume:(float)arg1;
-- (float)volume;
-- (void)_updateVolumeFromPropertyListener;
-- (void)_updateVolume;
-- (void)setOutputDeviceUniqueID:(id)arg1;
-- (id)outputDeviceUniqueID;
-- (void)_updateOutputDeviceUniqueIDFromPropertyListener;
-- (void)_updateOutputDeviceUniqueID;
-- (void)dealloc;
 - (id)init;
 
 @end

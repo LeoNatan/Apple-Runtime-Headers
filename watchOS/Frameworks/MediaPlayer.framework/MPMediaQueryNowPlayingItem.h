@@ -10,7 +10,5 @@
 {
 }
 
-+ (void)applyVolumeNormalizationWithSoundCheckEnabled:(_Bool)arg1 forQueuedItems:(id)arg2 currentQuery:(id)arg3;
-
 @end
 

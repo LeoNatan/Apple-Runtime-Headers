@@ -29,6 +29,10 @@ __attribute__((visibility("hidden")))
 - (id)findPageViewControllerForPageIndex:(long long)arg1;
 - (id)_pageViewControllerCreate:(int)arg1;
 - (id)_pageViewController:(id)arg1 nextViewController:(int)arg2 forViewController:(id)arg3;
+- (void)_documentChanged;
+- (void)_documentWasUnlocked;
+- (void)_loadDocument;
+- (void)_setupDocument;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)viewWillLayoutSubviews;
@@ -39,8 +43,6 @@ __attribute__((visibility("hidden")))
 - (id)pageViewController:(id)arg1 viewControllerBeforeViewController:(id)arg2;
 - (void)pageViewController:(id)arg1 didFinishAnimating:(_Bool)arg2 previousViewControllers:(id)arg3 transitionCompleted:(_Bool)arg4;
 - (void)pageViewController:(id)arg1 willTransitionToViewControllers:(id)arg2;
-- (void)enableTextSelectionHandles;
-- (void)clearTextSelectionHandles;
 - (struct CGPoint)_convertPoint:(struct CGPoint)arg1 fromPDFPageViewController:(id)arg2;
 - (struct CGPoint)convertPoint:(struct CGPoint)arg1 fromPage:(id)arg2;
 - (struct CGPoint)_convertPoint:(struct CGPoint)arg1 toPDFPageViewController:(id)arg2;

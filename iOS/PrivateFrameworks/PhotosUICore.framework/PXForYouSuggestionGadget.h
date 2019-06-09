@@ -6,12 +6,13 @@
 
 #import <objc/NSObject.h>
 
+#import <PhotosUICore/PXDiagnosticsEnvironment-Protocol.h>
 #import <PhotosUICore/PXGadget-Protocol.h>
 
 @class NSString, PXForYouSuggestionGadgetContentView, PXGadgetSpec, PXRegionOfInterest, PXUIMediaProvider, UIImage;
 @protocol PXDisplayAsset, PXDisplaySuggestion, PXForYouSuggestionGadgetDelegate;
 
-@interface PXForYouSuggestionGadget : NSObject <PXGadget>
+@interface PXForYouSuggestionGadget : NSObject <PXDiagnosticsEnvironment, PXGadget>
 {
     _Bool _contentHidden;
     _Bool _blursDegradedContent;
@@ -49,6 +50,7 @@
 @property(nonatomic) long long priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) PXGadgetSpec *gadgetSpec; // @synthesize gadgetSpec=_gadgetSpec;
 - (void).cxx_destruct;
+- (id)px_diagnosticsItemProvidersForPoint:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
 - (void)_updateKeyAsset;
 - (void)_markSuggestionAsDeclined;
 - (void)_markSuggestionAsActive;
@@ -59,7 +61,8 @@
 - (void)_updateContentViewMode;
 - (void)didDismissPreviewViewController:(id)arg1 committing:(_Bool)arg2;
 - (void)commitPreviewViewController:(id)arg1;
-- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2 outSourceRect:(out struct CGRect *)arg3;
+- (struct NSObject *)targetPreviewViewForLocation:(struct CGPoint)arg1 inCoordinateSpace:(id)arg2;
+- (struct NSObject *)previewViewControllerAtLocation:(struct CGPoint)arg1 fromSourceView:(struct NSObject *)arg2;
 - (id)debugDictionary;
 - (id)debugURLsForDiagnostics;
 - (void)contentViewDidDisappear;
@@ -78,9 +81,9 @@
 - (id)init;
 
 // Remaining properties
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

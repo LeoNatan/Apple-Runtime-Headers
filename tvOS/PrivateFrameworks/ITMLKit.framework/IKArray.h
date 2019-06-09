@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)_setupWithNSArray:(id)arg1;
 - (id)toNSArray;
+- (id)objectAtIndexedSubscript:(long long)arg1;
 - (void)enumerateObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)objectEnumerator;
 - (id)lastObject;

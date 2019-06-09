@@ -8,18 +8,24 @@
 
 @interface SSFrameBufferAVConferenceView : SSFrameBufferView
 {
+    unsigned int _layerRotation;
+    struct CGPoint _scrollPoint;
     struct CGRect _windowDimensions;
 }
 
+@property struct CGPoint scrollPoint; // @synthesize scrollPoint=_scrollPoint;
+@property unsigned int layerRotation; // @synthesize layerRotation=_layerRotation;
 @property struct CGRect windowDimensions; // @synthesize windowDimensions=_windowDimensions;
+- (void)scrollPoint:(struct CGPoint)arg1;
+- (void)setAVConferenceLayerRotation:(unsigned int)arg1;
 - (struct SSPoint)frameBufferCoordinatesFromWindowCoordinates:(struct CGPoint)arg1;
 - (struct SSPoint)frameBufferCoordinatesFromNSEvent:(id)arg1;
 - (void)sendMouseButtonEventWithWindowCoordinates:(struct CGPoint)arg1 withButton:(unsigned long long)arg2 withState:(int)arg3 withClickCount:(long long)arg4;
 - (void)sendMouseButtonEvent:(id)arg1 withButton:(unsigned long long)arg2 withState:(int)arg3;
-- (void)updateSubviews;
 - (void)mouseMoved:(id)arg1;
-- (void)setFrame:(struct CGRect)arg1;
+- (void)mouseDragged:(id)arg1;
 - (void)setUseCachedImage:(BOOL)arg1;
+- (BOOL)useCachedImage;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

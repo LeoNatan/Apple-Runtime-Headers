@@ -12,7 +12,6 @@
 @class NSString, NSURLSession, NSURLSessionDataTask;
 @protocol OS_dispatch_semaphore;
 
-__attribute__((visibility("hidden")))
 @interface UnitTestBackgroundSessionTester : NSObject <NSURLSessionDelegate, NSURLSessionDataDelegate>
 {
     NSURLSession *session;

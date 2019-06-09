@@ -7,11 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <PlugInKit/NSXPCListenerDelegate-Protocol.h>
+#import <PlugInKit/RBSAssertionObserving-Protocol.h>
 
 @class NSArray, NSMutableDictionary, NSString, NSXPCListener, PKServicePersonality;
 @protocol OS_dispatch_queue, OS_dispatch_source, PKServiceDelegate;
 
-@interface PKService : NSObject <NSXPCListenerDelegate>
+@interface PKService : NSObject <RBSAssertionObserving, NSXPCListenerDelegate>
 {
     _Bool _shared;
     id <PKServiceDelegate> _delegate;
@@ -49,7 +50,7 @@
 - (id)defaultsForPlugInNamed:(id)arg1;
 - (void)copyAppStoreReceipt:(CDUnknownBlockType)arg1;
 - (void)launchContainingApplicationForPlugInNamed:(id)arg1;
-- (id)discoverSubsystemNamed:(id)arg1 logMissing:(_Bool)arg2;
+- (id)discoverSubsystemNamed:(id)arg1 options:(id)arg2 logMissing:(_Bool)arg3;
 - (void)mergeSubsystemList:(id)arg1 from:(id)arg2;
 - (void)mergeSubsystems:(id)arg1 from:(id)arg2;
 - (id)configuredSubsystemList;
@@ -59,6 +60,9 @@
 - (void)_prepareToRun;
 - (void)run;
 - (id)init;
+- (void)beganUsing;
+- (void)checkIn;
+- (void)assertion:(id)arg1 didInvalidateWithError:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

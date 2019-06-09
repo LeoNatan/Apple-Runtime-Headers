@@ -4,19 +4,21 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WatchListKit/WLKNetworkRequestOperation.h>
+#import <WatchListKit/WLKUTSNetworkRequestOperation.h>
 
-@class NSDictionary;
+@class NSDictionary, WLKSiriSearchResponse;
 
-@interface WLKSiriSearchRequestOperation : WLKNetworkRequestOperation
+@interface WLKSiriSearchRequestOperation : WLKUTSNetworkRequestOperation
 {
-    NSDictionary *_options;
+    NSDictionary *_query;
+    WLKSiriSearchResponse *_response;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *options; // @synthesize options=_options;
+@property(readonly, nonatomic) WLKSiriSearchResponse *response; // @synthesize response=_response;
+@property(readonly, copy, nonatomic) NSDictionary *query; // @synthesize query=_query;
 - (void).cxx_destruct;
-- (id)responseProcessor;
-- (id)initWithOptions:(id)arg1;
+- (void)processResponse;
+- (id)initWithQuery:(id)arg1 caller:(id)arg2;
 
 @end
 

@@ -17,11 +17,10 @@
     NSObject<OS_dispatch_source> *_scanTimer;
     double _scanInterval;
     NSArray *_ssidList;
-    long long _ssidListIndex;
+    unsigned long long _ssidListIndex;
     id _delegate;
 }
 
-+ (id)displayedScanResultsForInterface:(id)arg1 networks:(id)arg2 anqpElements:(id)arg3 tetherDevices:(id)arg4;
 @property(nonatomic) __weak id delegate; // @synthesize delegate=_delegate;
 - (void)stopScanning;
 - (void)startScanning;
@@ -30,7 +29,6 @@
 - (void)startTimer;
 - (void)stopTimer;
 - (void)performScan;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

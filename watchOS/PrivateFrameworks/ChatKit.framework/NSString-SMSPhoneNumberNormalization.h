@@ -8,5 +8,10 @@
 
 @interface NSString (SMSPhoneNumberNormalization)
 - (id)unformattedPhoneNumber;
+- (struct _NSRange)__ck_rangeOfSequenceOfCharactersFromSet:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange)arg3;
+- (_Bool)__ck_containsOnlyCharactersFromSet:(id)arg1;
+- (_Bool)__ck_shouldUseBigEmoji;
+- (id)__ck_stringByExpandingTildeInPath;
+- (_Bool)isAddressBookLabel;
 @end
 

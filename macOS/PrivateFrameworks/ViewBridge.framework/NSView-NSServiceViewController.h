@@ -10,5 +10,6 @@
 
 @interface NSView (NSServiceViewController) <NSServiceViewControllerActionResponder>
 - (BOOL)respondsToAction:(SEL)arg1 fromTask:(CDStruct_6ad76789)arg2;
+- (void)swizzledViewDidChangeAppearance:(id)arg1;
 @end
 

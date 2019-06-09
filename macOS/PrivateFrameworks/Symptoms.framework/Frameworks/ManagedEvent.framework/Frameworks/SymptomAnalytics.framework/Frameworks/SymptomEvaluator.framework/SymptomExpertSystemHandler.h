@@ -11,7 +11,7 @@
 #import <SymptomEvaluator/SymptomsFileCleanerDelegate-Protocol.h>
 #import <SymptomEvaluator/WiFiShimDelegate-Protocol.h>
 
-@class CLIPSShim, CellFallbackHandler, NSArray, NSDataDetector, NSDate, NSMutableArray, NSMutableDictionary, NSObject, NSString, NSXPCConnection, NetworkAnalyticsStateRelay, PowerStateRelay, ProbeManager, SDRDiagnosticReporter, SymptomExpertSystemState, SymptomsFileCleaner, SystemProperties, SystemSettingsRelay;
+@class CLIPSShim, CellFallbackHandler, NSArray, NSDataDetector, NSDate, NSMutableArray, NSMutableDictionary, NSNumber, NSObject, NSString, NSXPCConnection, NetworkAnalyticsStateRelay, PowerStateRelay, ProbeManager, SDRDiagnosticReporter, SymptomExpertSystemState, SymptomsFileCleaner, SystemProperties, SystemSettingsRelay;
 @protocol OS_dispatch_source;
 
 @interface SymptomExpertSystemHandler : ExpertSystemHandlerCore <ProbeManagerDelegate, CLIPSShimDelegate, WiFiShimDelegate, SymptomsFileCleanerDelegate>
@@ -39,6 +39,8 @@
     CDStruct_b4efbafe systemSymptomRelayContext;
     CDStruct_b4efbafe hardwareRelayContext;
     NSString *_airdropID;
+    unsigned long long _asyncKVOCount;
+    BOOL _pendingEngineRun;
     CLIPSShim *ruleEngine;
     BOOL _loadedCLIPSRulesAndFacts;
     BOOL _failedToLoadDefaultRules;
@@ -50,8 +52,12 @@
     unsigned long long idsNoteMessageCount;
     NSDate *idsNoteMessageLastCLIPSIngestible;
     BOOL _observingAutoBugCaptureEnabled;
-    BOOL _observingSettingsRelays;
+    BOOL _internalBuild;
+    BOOL _carrierSeedBuild;
+    BOOL _internalOrCarrierSeedBuild;
+    BOOL _customerSeedBuild;
     unsigned long long _stepper;
+    NSNumber *_apSleep;
     NSMutableArray *_incomingSymptoms;
     NSMutableArray *_processedSymptoms;
     NSString *_diagnosticSessionIdentifier;
@@ -68,6 +74,7 @@
     NSObject<OS_dispatch_source> *_clipsReleaseMemoryTimer;
     NSObject<OS_dispatch_source> *_clipsAWDObserverTimer;
     NSObject<OS_dispatch_source> *_loadDefaultRulesTimer;
+    NSObject<OS_dispatch_source> *_loggingProfileTimeoutTimer;
     NSMutableDictionary *_clipsFactsWaitTimers;
     ProbeManager *_probeManager;
     NSDate *_completedInitializationDate;
@@ -82,12 +89,17 @@
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
 + (id)libtraceInfo:(id)arg1;
+@property(nonatomic) BOOL customerSeedBuild; // @synthesize customerSeedBuild=_customerSeedBuild;
+@property(nonatomic) BOOL internalOrCarrierSeedBuild; // @synthesize internalOrCarrierSeedBuild=_internalOrCarrierSeedBuild;
+@property(nonatomic) BOOL carrierSeedBuild; // @synthesize carrierSeedBuild=_carrierSeedBuild;
+@property(nonatomic) BOOL internalBuild; // @synthesize internalBuild=_internalBuild;
 @property(retain, nonatomic) SymptomsFileCleaner *abcCleaner; // @synthesize abcCleaner=_abcCleaner;
 @property(retain, nonatomic) NSXPCConnection *privateConnection; // @synthesize privateConnection=_privateConnection;
 @property(retain, nonatomic) SDRDiagnosticReporter *sdrReporter; // @synthesize sdrReporter=_sdrReporter;
 @property(retain, nonatomic) NSDate *completedInitializationDate; // @synthesize completedInitializationDate=_completedInitializationDate;
 @property(retain, nonatomic) ProbeManager *probeManager; // @synthesize probeManager=_probeManager;
 @property(retain, nonatomic) NSMutableDictionary *clipsFactsWaitTimers; // @synthesize clipsFactsWaitTimers=_clipsFactsWaitTimers;
+@property(retain, nonatomic) NSObject<OS_dispatch_source> *loggingProfileTimeoutTimer; // @synthesize loggingProfileTimeoutTimer=_loggingProfileTimeoutTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *loadDefaultRulesTimer; // @synthesize loadDefaultRulesTimer=_loadDefaultRulesTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *clipsAWDObserverTimer; // @synthesize clipsAWDObserverTimer=_clipsAWDObserverTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *clipsReleaseMemoryTimer; // @synthesize clipsReleaseMemoryTimer=_clipsReleaseMemoryTimer;
@@ -104,7 +116,7 @@
 @property(retain, nonatomic) NSString *diagnosticSessionIdentifier; // @synthesize diagnosticSessionIdentifier=_diagnosticSessionIdentifier;
 @property(retain, nonatomic) NSMutableArray *processedSymptoms; // @synthesize processedSymptoms=_processedSymptoms;
 @property(retain, nonatomic) NSMutableArray *incomingSymptoms; // @synthesize incomingSymptoms=_incomingSymptoms;
-@property(nonatomic) BOOL observingSettingsRelays; // @synthesize observingSettingsRelays=_observingSettingsRelays;
+@property(retain, nonatomic) NSNumber *apSleep; // @synthesize apSleep=_apSleep;
 @property unsigned long long stepper; // @synthesize stepper=_stepper;
 - (void).cxx_destruct;
 - (void)startLoadDefaultRulesTimer:(double)arg1;
@@ -114,6 +126,9 @@
 - (id)obfuscatedEndpoint:(id)arg1;
 - (void)resetPreviousObfuscations;
 - (struct _NSRange)rangeOfValueForSlotName:(id)arg1 in:(id)arg2;
+- (id)getBatteryPercentage:(id)arg1;
+- (id)deParamsDictForDiagnosticExtension:(id)arg1 withDEParams:(id)arg2;
+- (void)requestCoreTelephonyDumpViaDiagnosticExtension:(id)arg1 folderPrefix:(id)arg2 dumpReason:(id)arg3;
 - (void)deactivateModule:(id)arg1;
 - (void)unloadModule:(id)arg1;
 - (void)unloadAWDObservedModules;
@@ -131,7 +146,7 @@
 - (void)checkObfuscationsInAllCaseSignatures;
 - (void)endDiagnosticSession:(id)arg1;
 - (void)cancelDiagnosticSession:(id)arg1;
-- (void)addDiagnosticSession:(id)arg1 symptomIndex:(id)arg2 hasDictionary:(id)arg3 endSession:(id)arg4;
+- (void)addDiagnosticSession:(id)arg1 hasDictionary:(id)arg2 endSession:(id)arg3;
 - (void)snapshotDiagnosticSessionWithDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 subTypeContext:(id)arg4 processID:(id)arg5 processName:(id)arg6 bundleID:(id)arg7 interfaceType:(id)arg8 threshold:(id)arg9 sessionDuration:(id)arg10;
 - (void)startDiagnosticSessionWithDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 subTypeContext:(id)arg4 processID:(id)arg5 processName:(id)arg6 bundleID:(id)arg7 interfaceType:(id)arg8 threshold:(id)arg9 sessionDuration:(id)arg10 triggerRemoteCase:(id)arg11;
 - (void)startDiagnosticSessionWithDomain:(id)arg1 type:(id)arg2 subType:(id)arg3 subTypeContext:(id)arg4 processID:(id)arg5 processName:(id)arg6 bundleID:(id)arg7 interfaceType:(id)arg8 threshold:(id)arg9 sessionDuration:(id)arg10;
@@ -140,17 +155,16 @@
 - (void)serviceRemoved:(id)arg1 type:(long long)arg2;
 - (void)serviceUpdated:(id)arg1 type:(long long)arg2;
 - (void)serviceAdded:(id)arg1 type:(long long)arg2;
-- (void)probeFactString:(id)arg1 module:(id)arg2 run:(BOOL)arg3;
+- (void)probeFactString:(id)arg1 module:(id)arg2 goIntoDiagnosing:(BOOL)arg3 run:(BOOL)arg4;
 - (void)probeOutputFilePaths:(id)arg1 forDiagSessionUUID:(id)arg2;
 - (void)probeStatusUpdate:(id)arg1;
 - (BOOL)postAWDEvent:(id)arg1;
 - (void)assertFactAsSymptom:(id)arg1 module:(id)arg2;
 - (void)assertFactAndRun:(id)arg1 module:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)runEngine;
 - (void)retractFact:(void *)arg1 moduleName:(id)arg2 run:(BOOL)arg3;
-- (void)retractFact:(void *)arg1;
 - (void)retractFacts:(id)arg1 runAfterLastFact:(BOOL)arg2;
 - (void *)assertFactString:(id)arg1 moduleName:(id)arg2 run:(BOOL)arg3;
-- (void *)assertFactString:(id)arg1;
 - (void)setDefaultFacts;
 - (BOOL)loadModule:(id)arg1 requiresBasebandModule:(BOOL)arg2;
 - (BOOL)loadDefaultRules;
@@ -182,13 +196,15 @@
 - (void)processWiFiAssociationChange:(BOOL)arg1 atTime:(id)arg2;
 - (void)onDisruptiveFlowChange:(id)arg1;
 - (void)releaseAllRelayFacts;
+- (void)assertRelayFact:(id)arg1 forRelayKey:(id)arg2 moduleName:(id)arg3;
 - (void)processRelayStateChange:(id)arg1 key:(id)arg2 relay:(id)arg3 scalar:(BOOL)arg4;
 - (void)_dumpState;
 - (void)fileCleanupComplete;
 - (void)_removeDebuggabilityFolder;
 - (void)dealloc;
+- (void)_removeExternalRelayObservers;
 - (void)_removeAllObservers;
-- (void)_addRelayObservers;
+- (void)_addExternalRelayObservers;
 - (void)_addAllObservers;
 - (void)_administrativeDisable;
 - (void)_administrativeEnable;

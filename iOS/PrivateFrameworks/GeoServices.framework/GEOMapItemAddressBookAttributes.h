@@ -8,27 +8,37 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOMapItemAddressBookAttributes : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_addressIdentifier;
-    int _addressType;
     NSString *_name;
     NSString *_spokenName;
+    int _addressType;
     _Bool _isMe;
     struct {
-        unsigned int addressType:1;
-        unsigned int isMe:1;
-    } _has;
+        unsigned int has_addressType:1;
+        unsigned int has_isMe:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_addressIdentifier:1;
+        unsigned int read_name:1;
+        unsigned int read_spokenName:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_addressIdentifier:1;
+        unsigned int wrote_name:1;
+        unsigned int wrote_spokenName:1;
+        unsigned int wrote_addressType:1;
+        unsigned int wrote_isMe:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *addressIdentifier; // @synthesize addressIdentifier=_addressIdentifier;
-@property(nonatomic) _Bool isMe; // @synthesize isMe=_isMe;
-@property(retain, nonatomic) NSString *spokenName; // @synthesize spokenName=_spokenName;
-@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -37,16 +47,24 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *addressIdentifier;
 @property(readonly, nonatomic) _Bool hasAddressIdentifier;
+- (void)_readAddressIdentifier;
 @property(nonatomic) _Bool hasIsMe;
+@property(nonatomic) _Bool isMe;
+@property(retain, nonatomic) NSString *spokenName;
 @property(readonly, nonatomic) _Bool hasSpokenName;
+- (void)_readSpokenName;
+@property(retain, nonatomic) NSString *name;
 @property(readonly, nonatomic) _Bool hasName;
+- (void)_readName;
 - (int)StringAsAddressType:(id)arg1;
 - (id)addressTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasAddressType;
-@property(nonatomic) int addressType; // @synthesize addressType=_addressType;
+@property(nonatomic) int addressType;
 
 @end
 

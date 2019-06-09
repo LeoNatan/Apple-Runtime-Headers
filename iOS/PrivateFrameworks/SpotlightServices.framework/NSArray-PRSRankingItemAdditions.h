@@ -8,5 +8,6 @@
 
 @interface NSArray (PRSRankingItemAdditions)
 - (id)stringRepresentation;
+- (id)mapNonEmpty:(CDUnknownBlockType)arg1;
 @end
 

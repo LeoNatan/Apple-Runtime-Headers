@@ -8,30 +8,38 @@
 
 #import <PackageKit/NSURLConnectionDelegate-Protocol.h>
 
-@class NSMutableData, NSString, NSURLResponse;
+@class NSFileHandle, NSMutableData, NSString, NSThread, NSURLResponse;
 @protocol OS_dispatch_queue;
 
 @interface _PKURLConnectionDelegate : NSObject <NSURLConnectionDelegate>
 {
-    NSURLResponse *response;
-    NSMutableData *data;
-    NSObject<OS_dispatch_queue> *notifyQueue;
-    CDUnknownBlockType notifyBlock;
+    NSObject<OS_dispatch_queue> *_notifyQueue;
+    NSThread *_notifyThread;
+    NSString *_destinationDirectory;
+    CDUnknownBlockType _notifyBlock;
+    CDUnknownBlockType _challengeBlock;
+    CDUnknownBlockType _redirectResponseBlock;
+    CDUnknownBlockType _bytesReceivedBlock;
+    NSURLResponse *_response;
+    NSMutableData *_data;
+    NSFileHandle *_fileHandle;
+    long long _fullDownloadSize;
 }
 
-@property(retain) NSMutableData *data; // @synthesize data;
-@property(retain) NSURLResponse *response; // @synthesize response;
-- (BOOL)_wantHTTPLogging;
+@property long long fullDownloadSize; // @synthesize fullDownloadSize=_fullDownloadSize;
+@property(retain) NSFileHandle *fileHandle; // @synthesize fileHandle=_fileHandle;
+@property(retain) NSMutableData *data; // @synthesize data=_data;
+@property(retain) NSURLResponse *response; // @synthesize response=_response;
+- (void)_notifyCompletionHandlerWithData:(id)arg1 withURLResponse:(id)arg2 withError:(id)arg3;
+- (void)cancel;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connection:(id)arg1 didCancelAuthenticationChallenge:(id)arg2;
-- (void)connection:(id)arg1 didReceiveAuthenticationChallenge:(id)arg2;
-- (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
+- (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
 - (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)dealloc;
-- (id)initWithNotifyQueue:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)initWithNotifyQueue:(id)arg1 withNotifyThread:(id)arg2 withDestinationDirectory:(id)arg3 withAuthenticationHandler:(CDUnknownBlockType)arg4 withRedirectResponseHandler:(CDUnknownBlockType)arg5 withBytesReceivedHandler:(CDUnknownBlockType)arg6 usingBlock:(CDUnknownBlockType)arg7;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

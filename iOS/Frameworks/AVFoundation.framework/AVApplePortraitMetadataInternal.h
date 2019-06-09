@@ -8,6 +8,7 @@
 
 @class NSData, NSIndexSet;
 
+__attribute__((visibility("hidden")))
 @interface AVApplePortraitMetadataInternal : NSObject
 {
     int version;

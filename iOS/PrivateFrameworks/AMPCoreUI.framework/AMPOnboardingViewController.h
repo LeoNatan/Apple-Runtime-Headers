@@ -8,7 +8,7 @@
 
 #import <AMPCoreUI/UIScrollViewDelegate-Protocol.h>
 
-@class AMPOnboardingHeaderView, AMPOnboardingMultiFeatureHeaderView, AMPTintedBackgroundButton, NSObject, NSString, OBPrivacyLinkController, UIImage, UITraitCollection, UIVisualEffectView, _UIBackdropView;
+@class AMSUIOnboardingViewController, NSObject, NSString, OBPrivacyLinkController, UIImage, UITraitCollection, UIVisualEffectView, _UIBackdropView;
 @protocol OS_dispatch_queue;
 
 @interface AMPOnboardingViewController : UIViewController <UIScrollViewDelegate>
@@ -16,9 +16,11 @@
     _Bool _viewHasAppeared;
     OBPrivacyLinkController *_privacyLinkController;
     CDUnknownBlockType _primaryButtonCallback;
-    AMPOnboardingHeaderView *_headerView;
-    AMPOnboardingMultiFeatureHeaderView *_multiFeatureHeaderView;
-    AMPTintedBackgroundButton *_primaryButton;
+    AMSUIOnboardingViewController *_onboardingController;
+    UIImage *_image;
+    NSString *_titleText;
+    NSString *_descriptionText;
+    NSString *_primaryButtonText;
     UIVisualEffectView *_statusBarVisualEffectView;
     _UIBackdropView *_backdropView;
     NSObject<OS_dispatch_queue> *_metricsQueue;
@@ -28,31 +30,27 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *metricsQueue; // @synthesize metricsQueue=_metricsQueue;
 @property(retain, nonatomic) _UIBackdropView *backdropView; // @synthesize backdropView=_backdropView;
 @property(retain, nonatomic) UIVisualEffectView *statusBarVisualEffectView; // @synthesize statusBarVisualEffectView=_statusBarVisualEffectView;
-@property(retain, nonatomic) AMPTintedBackgroundButton *primaryButton; // @synthesize primaryButton=_primaryButton;
-@property(retain, nonatomic) AMPOnboardingMultiFeatureHeaderView *multiFeatureHeaderView; // @synthesize multiFeatureHeaderView=_multiFeatureHeaderView;
-@property(retain, nonatomic) AMPOnboardingHeaderView *headerView; // @synthesize headerView=_headerView;
+@property(retain, nonatomic) NSString *primaryButtonText; // @synthesize primaryButtonText=_primaryButtonText;
+@property(retain, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
+@property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
+@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(retain, nonatomic) AMSUIOnboardingViewController *onboardingController; // @synthesize onboardingController=_onboardingController;
 @property(copy, nonatomic) CDUnknownBlockType primaryButtonCallback; // @synthesize primaryButtonCallback=_primaryButtonCallback;
-@property(retain, nonatomic) OBPrivacyLinkController *privacyLinkController; // @synthesize privacyLinkController=_privacyLinkController;
+@property(readonly, nonatomic) OBPrivacyLinkController *privacyLinkController; // @synthesize privacyLinkController=_privacyLinkController;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isPresentedInFormSheet;
 - (void)didTapPrimaryButton:(id)arg1;
-@property(readonly, nonatomic) NSString *primaryButtonText;
-@property(readonly, nonatomic) NSString *descriptionText;
-@property(readonly, nonatomic) NSString *titleText;
 @property(readonly, nonatomic) UIImage *headerImage;
-- (void)updateBackdropMaterialForScrollView:(id)arg1;
-- (void)scrollViewDidChangeAdjustedContentInset:(id)arg1;
-- (void)scrollViewDidScroll:(id)arg1;
 - (void)updateOverrideTraits;
 - (id)childTraitCollectionForViewController:(id)arg1;
 @property(readonly, nonatomic) UITraitCollection *cappedTraitCollection;
+- (_Bool)isModalInPresentation;
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)viewWillLayoutSubviews;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
-- (void)commonInitWithPrimaryButtonText:(id)arg1 privacyLinkController:(id)arg2;
 - (id)initWithTitleText:(id)arg1 features:(id)arg2 primaryButtonText:(id)arg3 privacyLinkController:(id)arg4;
 - (id)initWithHeaderImage:(id)arg1 titleText:(id)arg2 descriptionText:(id)arg3 primaryButtonText:(id)arg4 privacyLinkController:(id)arg5;
 

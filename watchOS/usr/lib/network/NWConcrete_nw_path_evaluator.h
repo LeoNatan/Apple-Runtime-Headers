@@ -9,7 +9,7 @@
 #import <network/OS_nw_path_evaluator-Protocol.h>
 
 @class NSString, NWConcrete_nw_path;
-@protocol OS_dispatch_queue, OS_nw_browse_descriptor, OS_nw_endpoint, OS_nw_parameters;
+@protocol OS_dispatch_queue, OS_nw_advertise_descriptor, OS_nw_browse_descriptor, OS_nw_endpoint, OS_nw_parameters;
 
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_path_evaluator : NSObject <OS_nw_path_evaluator>
@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_nw_parameters> *parameters;
     NSObject<OS_nw_endpoint> *endpoint;
     NSObject<OS_nw_browse_descriptor> *descriptor;
+    NSObject<OS_nw_advertise_descriptor> *advertise_descriptor;
     NWConcrete_nw_path *path;
     NSObject<OS_dispatch_queue> *client_queue;
     CDUnknownBlockType update_block;
@@ -24,8 +25,11 @@ __attribute__((visibility("hidden")))
     unsigned char client_id[16];
     struct os_unfair_lock_s lock;
     unsigned int flow_count;
+    unsigned short custom_ethertype;
+    unsigned char custom_ip_protocol;
     unsigned int is_default:1;
     unsigned int is_listener:1;
+    unsigned int is_interpose:1;
     unsigned int started:1;
     unsigned int cancelled:1;
 }

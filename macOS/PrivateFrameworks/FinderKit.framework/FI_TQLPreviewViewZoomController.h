@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     FI_TQLPreviewView *_previewView;
 }
 
+- (void).cxx_destruct;
 - (_Bool)isBackupBrowser;
 - (_Bool)quickLookHandleEvent:(id)arg1;
 - (id)seamlessCloserSourcePreviewViewForPreviewItem:(id)arg1;

@@ -20,7 +20,6 @@
 @property(readonly, nonatomic) int minimumCutOffFrequency;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)sweepFilterEffectWithSweepValue:(float)arg1;
 - (id)initWithMinimumCutOffFrequency:(unsigned int)arg1 maximumCutOffFrequency:(unsigned int)arg2 bypassThreshold:(float)arg3 sweepValue:(float)arg4;

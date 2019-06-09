@@ -6,10 +6,9 @@
 
 #import <objc/NSObject.h>
 
-@class AMSPromise;
+@class AMSPromise, NSMutableArray;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface AMSUniqueExecutionQueue : NSObject
 {
     CDUnknownBlockType _block;
@@ -17,8 +16,10 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_executeBlockQueue;
     AMSPromise *_executionPromise;
     NSObject<OS_dispatch_queue> *_executionPromiseAccessQueue;
+    NSMutableArray *_subsequentCompletionBlocks;
 }
 
+@property(readonly) NSMutableArray *subsequentCompletionBlocks; // @synthesize subsequentCompletionBlocks=_subsequentCompletionBlocks;
 @property(readonly) NSObject<OS_dispatch_queue> *executionPromiseAccessQueue; // @synthesize executionPromiseAccessQueue=_executionPromiseAccessQueue;
 @property(retain) AMSPromise *executionPromise; // @synthesize executionPromise=_executionPromise;
 @property(retain) NSObject<OS_dispatch_queue> *executeBlockQueue; // @synthesize executeBlockQueue=_executeBlockQueue;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (id)_createExecutionPromise;
 - (void)_beginExecutingBlockWithPromise:(id)arg1;
+- (void)addCompletionBlockForSubsequentExecution:(CDUnknownBlockType)arg1;
 - (void)addCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 

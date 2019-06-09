@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class BSDispatchSource;
+#import <BaseBoard/BSTimer-Protocol.h>
+
+@class BSDispatchSource, NSString;
 @protocol OS_dispatch_queue;
 
-@interface BSTimer : NSObject
+@interface BSTimer : NSObject <BSTimer>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_callOutQueue;
@@ -38,6 +40,12 @@
 - (void)dealloc;
 - (id)initWithFireInterval:(double)arg1 repeatInterval:(double)arg2 leewayInterval:(double)arg3 queue:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (id)initWithFireInterval:(double)arg1 queue:(id)arg2 handler:(CDUnknownBlockType)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

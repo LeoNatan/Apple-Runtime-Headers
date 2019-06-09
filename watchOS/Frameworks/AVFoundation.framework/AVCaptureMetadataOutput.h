@@ -27,7 +27,7 @@
 - (void)setFaceTrackingMetadataObjectTypesAvailable:(_Bool)arg1;
 - (_Bool)isFaceTrackingMetadataObjectTypesAvailable;
 - (_Bool)isFaceTrackingSupported;
-- (_Bool)canAddConnectionForMediaType:(id)arg1;
+- (_Bool)canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (id)connectionMediaTypes;
 @property(nonatomic) struct CGRect rectOfInterest;
 - (id)_metadataIdentifiers;

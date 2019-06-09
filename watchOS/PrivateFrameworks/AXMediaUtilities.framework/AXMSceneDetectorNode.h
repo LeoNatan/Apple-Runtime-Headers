@@ -8,18 +8,18 @@
 
 @interface AXMSceneDetectorNode : AXMEvaluationNode
 {
+    unsigned int _taxonomyOptions;
 }
 
 + (id)possibleSceneClassifications;
 + (id)title;
 + (_Bool)isSupported;
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) unsigned int taxonomyOptions; // @synthesize taxonomyOptions=_taxonomyOptions;
 - (void)evaluate:(id)arg1;
 - (_Bool)validateVisionKitSoftLinkSymbols;
-- (_Bool)requiresVisionFramework;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)nodeInitialize;
 
 @end
 

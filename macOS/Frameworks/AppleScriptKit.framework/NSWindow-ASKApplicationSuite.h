@@ -68,5 +68,7 @@
 - (id)currentFieldEditor;
 - (BOOL)needsDisplay;
 - (id)objectName_ask;
+- (void)close_askWindow;
+- (void)_removeViewsFromMaps_ask:(id)arg1;
 @end
 

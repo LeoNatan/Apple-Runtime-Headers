@@ -9,8 +9,8 @@
 @class NSString;
 
 @protocol ACFCertificateStoragePolicy <NSObject>
-- (struct OpaqueSecCertificateRef *)certificateWithLabel:(NSString *)arg1 realm:(NSString *)arg2;
-- (BOOL)storeCertificate:(struct OpaqueSecCertificateRef *)arg1 realm:(NSString *)arg2;
+- (struct __SecCertificate *)certificateWithLabel:(NSString *)arg1 realm:(NSString *)arg2;
+- (BOOL)storeCertificate:(struct __SecCertificate *)arg1 realm:(NSString *)arg2;
 - (BOOL)removeCertificateWithLabel:(NSString *)arg1 realm:(NSString *)arg2;
 @end
 

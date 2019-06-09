@@ -8,6 +8,5 @@
 
 @interface UIAlertController (ScreenTimeAdditions)
 + (id)alertControllerForFeatureNotAvailable;
-+ (id)alertControllerForUnimplementedFeatureRadar:(id)arg1;
 @end
 

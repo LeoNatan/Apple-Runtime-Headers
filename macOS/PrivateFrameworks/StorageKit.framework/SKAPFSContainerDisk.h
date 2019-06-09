@@ -23,13 +23,18 @@
 @property BOOL isFusion; // @synthesize isFusion=_isFusion;
 @property(retain) NSString *apfsUUID; // @synthesize apfsUUID=_apfsUUID;
 - (void).cxx_destruct;
+- (void)removeAPFSVolumeGroup:(id)arg1 completetionBlock:(CDUnknownBlockType)arg2;
+- (void)createAPFSVolumeGroupWithDisks:(id)arg1 completetionBlock:(CDUnknownBlockType)arg2;
 - (void)removeContainerWithProgressBlock:(CDUnknownBlockType)arg1 completetionBlock:(CDUnknownBlockType)arg2;
+- (void)addSystemVolumeWithName:(id)arg1 dataVolume:(id)arg2 caseSensitive:(BOOL)arg3 minSize:(unsigned long long)arg4 maxSize:(unsigned long long)arg5 password:(id)arg6 passwordHint:(id)arg7 progressBlock:(CDUnknownBlockType)arg8 completetionBlock:(CDUnknownBlockType)arg9;
+- (void)addVolumeWithName:(id)arg1 caseSensitive:(BOOL)arg2 minSize:(unsigned long long)arg3 maxSize:(unsigned long long)arg4 password:(id)arg5 passwordHint:(id)arg6 apfsRole:(id)arg7 progressBlock:(CDUnknownBlockType)arg8 completetionBlock:(CDUnknownBlockType)arg9;
 - (void)addVolumeWithName:(id)arg1 caseSensitive:(BOOL)arg2 minSize:(unsigned long long)arg3 maxSize:(unsigned long long)arg4 password:(id)arg5 passwordHint:(id)arg6 progressBlock:(CDUnknownBlockType)arg7 completetionBlock:(CDUnknownBlockType)arg8;
 - (void)addVolumeWithName:(id)arg1 caseSensitive:(BOOL)arg2 minSize:(unsigned long long)arg3 maxSize:(unsigned long long)arg4 password:(id)arg5 progressBlock:(CDUnknownBlockType)arg6 completetionBlock:(CDUnknownBlockType)arg7;
 - (id)designatedPhysicalStore;
 - (id)volumes;
 - (id)physicalStores;
 - (id)description;
+- (BOOL)matchesDictionary:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)minimalDictionaryRepresentation;
 - (void)updateWithDictionary:(id)arg1;

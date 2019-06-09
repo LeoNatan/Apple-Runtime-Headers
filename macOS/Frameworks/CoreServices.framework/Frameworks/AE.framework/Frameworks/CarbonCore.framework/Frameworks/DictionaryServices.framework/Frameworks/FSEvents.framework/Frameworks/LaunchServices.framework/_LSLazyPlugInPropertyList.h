@@ -18,11 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)supportsSecureCoding;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)_getValue:(id *)arg1 forPropertyListKey:(id)arg2;
 - (BOOL)_getPropertyList:(id *)arg1;
-- (void)dealloc;
 - (id)initWithInfoPlist:(id)arg1 SDKPlist:(id)arg2;
 
 @end

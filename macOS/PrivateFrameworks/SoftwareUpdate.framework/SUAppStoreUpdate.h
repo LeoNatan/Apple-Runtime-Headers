@@ -31,10 +31,13 @@
 @property(readonly, retain) NSString *customTextForPostInstallNotification;
 @property(readonly, retain) NSString *customTitleForPostInstallNotification;
 @property(readonly) BOOL showPostInstallNotification;
+@property(readonly, retain) NSString *customTextForUpdateAvailableNotification;
+@property(readonly, retain) NSString *customTitleForUpdateAvailableNotification;
 @property(readonly) long long autoInstallWithDelayInHours;
 @property(readonly) BOOL isMajorOSUpdateInternal;
 @property(readonly, retain) SUMajorProduct *majorProduct;
 @property(readonly) BOOL isMajorOSUpdate;
+@property(readonly) BOOL isConfigData;
 @property(readonly) BOOL isCritical;
 @property(readonly) BOOL allowedToUseInstallLater;
 @property(readonly) NSDate *adminDeferredToDate;
@@ -50,7 +53,9 @@
 @property(readonly, retain) NSAttributedString *licenseAgreement;
 @property(readonly, retain) NSString *currentLocalization;
 @property(readonly) long long action;
+@property(readonly, retain) NSAttributedString *longAttributedDescription;
 @property(readonly, retain) NSString *longDescription;
+@property(readonly, retain) NSDate *postDate;
 @property(readonly) long long downloadSize;
 @property(readonly, retain) NSString *versionString;
 @property(readonly, retain) NSString *title;

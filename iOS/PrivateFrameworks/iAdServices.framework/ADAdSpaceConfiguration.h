@@ -34,10 +34,10 @@
 @property(nonatomic) float containerWidth; // @synthesize containerWidth=_containerWidth;
 @property(copy, nonatomic) NSString *adSpaceContextJSON; // @synthesize adSpaceContextJSON=_adSpaceContextJSON;
 @property(copy, nonatomic) NSSet *context; // @synthesize context=_context;
-@property(copy, nonatomic) NSString *authenticationUserName; // @synthesize authenticationUserName=_authenticationUserName;
-@property(copy, nonatomic) NSString *advertisingSection; // @synthesize advertisingSection=_advertisingSection;
-@property(copy, nonatomic) NSURL *serverURL; // @synthesize serverURL=_serverURL;
-@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(retain, nonatomic) NSString *authenticationUserName; // @synthesize authenticationUserName=_authenticationUserName;
+@property(retain, nonatomic) NSString *advertisingSection; // @synthesize advertisingSection=_advertisingSection;
+@property(retain, nonatomic) NSURL *serverURL; // @synthesize serverURL=_serverURL;
+@property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) long long options; // @synthesize options=_options;
 @property(nonatomic) int creativeType; // @synthesize creativeType=_creativeType;
 - (id)copyWithZone:(struct _NSZone *)arg1;

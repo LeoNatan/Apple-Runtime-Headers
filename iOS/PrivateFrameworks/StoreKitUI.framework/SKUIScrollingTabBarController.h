@@ -162,6 +162,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) UIViewController *floatingOverlayViewController;
+@property(nonatomic) long long forcedUserInterfaceStyle;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) UINavigationController *moreNavigationController;
 @property(readonly) Class superclass;

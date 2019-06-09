@@ -16,11 +16,10 @@
 + (void)removeTintFromButton:(id)arg1;
 + (void)applyTintToButton:(id)arg1 tint:(id)arg2;
 + (id)touchBarAppearance;
-+ (id)buttonGroupButtonFromButton:(id)arg1 preferredWidth:(double)arg2;
-+ (id)buttonGroupButtonFromButton:(id)arg1;
 + (id)expandingButtonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4 size:(double)arg5;
 + (id)buttonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4 size:(double)arg5;
 + (id)buttonWithTitle:(id)arg1 image:(id)arg2 target:(id)arg3 action:(SEL)arg4;
++ (id)touchBarButtonFromButton:(id)arg1;
 + (id)stackView;
 + (id)scrollViewWithView:(id)arg1;
 + (id)itemWithIdentifier:(id)arg1 view:(id)arg2;

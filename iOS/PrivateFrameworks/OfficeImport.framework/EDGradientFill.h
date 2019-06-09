@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 
 + (id)gradientWithType:(int)arg1 degree:(double)arg2 focusRect:(struct CGRect)arg3 stops:(id)arg4 resources:(id)arg5;
 + (id)gradientWithType:(int)arg1 degree:(double)arg2 top:(double)arg3 bottom:(double)arg4 right:(double)arg5 left:(double)arg6 stops:(id)arg7 resources:(id)arg8;
+- (void).cxx_destruct;
 - (id)colorForStopAtPosition:(id)arg1;
 - (struct CGRect)focusRect;
 - (id)stops;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEqual:(id)arg1;
 - (_Bool)isEqualToGradientFill:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (id)initWithType:(int)arg1 degree:(double)arg2 focusRect:(struct CGRect)arg3 stops:(id)arg4 resources:(id)arg5;
 - (id)initWithType:(int)arg1 degree:(double)arg2 top:(double)arg3 bottom:(double)arg4 right:(double)arg5 left:(double)arg6 stops:(id)arg7 resources:(id)arg8;

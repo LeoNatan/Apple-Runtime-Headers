@@ -15,8 +15,10 @@
 {
     NSArray *_staticApplicationShortcutItems;
     NSArray *_dynamicApplicationShortcutItems;
+    NSArray *_composedApplicationShortcutItems;
 }
 
+@property(readonly, nonatomic) NSArray *composedApplicationShortcutItems; // @synthesize composedApplicationShortcutItems=_composedApplicationShortcutItems;
 @property(readonly, nonatomic) NSArray *dynamicApplicationShortcutItems; // @synthesize dynamicApplicationShortcutItems=_dynamicApplicationShortcutItems;
 @property(readonly, nonatomic) NSArray *staticApplicationShortcutItems; // @synthesize staticApplicationShortcutItems=_staticApplicationShortcutItems;
 - (void).cxx_destruct;
@@ -26,7 +28,7 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)init;
-- (id)initWithStaticApplicationShortcutItems:(id)arg1 dynamicApplicationShortcutItems:(id)arg2;
+- (id)initWithStaticApplicationShortcutItems:(id)arg1 dynamicApplicationShortcutItems:(id)arg2 composedApplicationShortcutItems:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

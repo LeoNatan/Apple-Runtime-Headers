@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) id <TUVideoDeviceControllerProvider><TUVideoEffectsProvider> provider; // @synthesize provider=_provider;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 - (void).cxx_destruct;
+- (void)provider:(id)arg1 cameraZoomAvailabilityDidChange:(_Bool)arg2;
 - (void)captureDevicesChangedForProvider:(id)arg1;
 - (void)didStopPreviewForProvider:(id)arg1;
 - (void)provider:(id)arg1 didChangeLocalVideoAttributes:(id)arg2;
@@ -39,6 +40,8 @@
 - (void)noteBeginAnimationToPIP;
 - (void)noteEndAnimationToPreview;
 - (void)noteBeginAnimationToPreview;
+- (void)rampCameraZoomFactor:(float)arg1 withRate:(float)arg2;
+- (void)setCameraZoomFactor:(float)arg1;
 - (void)pausePreview;
 - (void)stopPreview;
 - (void)startPreview;

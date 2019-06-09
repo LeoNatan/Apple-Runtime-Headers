@@ -6,35 +6,48 @@
 
 #import <objc/NSObject.h>
 
-@class AXFUIElement, NSArray, NSMutableArray;
-@protocol AXFApplicationManagerDelegate, OS_dispatch_queue;
+#import <AccessibilityFoundation/_AXFEventProviderDelegate-Protocol.h>
+#import <AccessibilityFoundation/_AXFLaunchServicesProviderDelegate-Protocol.h>
 
-@interface AXFApplicationManager : NSObject
+@class AXFDispatchQueue, AXFUIElement, NSArray, NSMutableArray, NSOperationQueue, NSString, _AXFEventProvider, _AXFLaunchServicesProvider;
+@protocol AXFApplicationManagerDelegate;
+
+@interface AXFApplicationManager : NSObject <_AXFLaunchServicesProviderDelegate, _AXFEventProviderDelegate>
 {
+    int __updateGen;
+    AXFUIElement *__focusedApplication;
     id <AXFApplicationManagerDelegate> _delegate;
-    void *__lsNotificationID;
+    _AXFLaunchServicesProvider *__launchServicesProvider;
+    CDUnknownBlockType __launchServicesProviderProvider;
+    _AXFEventProvider *__eventProvider;
+    CDUnknownBlockType __eventProviderProvider;
     AXFUIElement *__frontmostApplication;
     NSMutableArray *__runningApplications;
-    NSObject<OS_dispatch_queue> *__applicationQueue;
-    NSObject<OS_dispatch_queue> *__delegateQueue;
-    id __focusChangeNotificationToken;
-    id __frontmostChangeNotificationToken;
+    AXFDispatchQueue *__applicationManagerQueue;
+    AXFDispatchQueue *__delegateQueue;
+    NSOperationQueue *__updateQueue;
 }
 
-+ (void)_registerConnectionAndPortIfNeeded;
 + (id)shared;
 + (id)sharedManager;
-@property(retain, nonatomic, setter=_setFrontmostChangeNotificationToken:) id _frontmostChangeNotificationToken; // @synthesize _frontmostChangeNotificationToken=__frontmostChangeNotificationToken;
-@property(retain, nonatomic, setter=_setFocusChangeNotificationToken:) id _focusChangeNotificationToken; // @synthesize _focusChangeNotificationToken=__focusChangeNotificationToken;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_delegateQueue; // @synthesize _delegateQueue=__delegateQueue;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *_applicationQueue; // @synthesize _applicationQueue=__applicationQueue;
++ (BOOL)automaticallyNotifiesObserversOfApplicationWithMenubar;
++ (BOOL)automaticallyNotifiesObserversOfFrontmostApplication;
++ (BOOL)automaticallyNotifiesObserversOfRunningApplications;
+@property(nonatomic) int _updateGen; // @synthesize _updateGen=__updateGen;
+@property(readonly, nonatomic) NSOperationQueue *_updateQueue; // @synthesize _updateQueue=__updateQueue;
+@property(readonly, nonatomic) AXFDispatchQueue *_delegateQueue; // @synthesize _delegateQueue=__delegateQueue;
+@property(readonly, nonatomic) AXFDispatchQueue *_applicationManagerQueue; // @synthesize _applicationManagerQueue=__applicationManagerQueue;
 @property(retain, nonatomic, setter=_setRunningApplications:) NSMutableArray *_runningApplications; // @synthesize _runningApplications=__runningApplications;
 @property(retain, nonatomic, setter=_setFrontmostApplication:) AXFUIElement *_frontmostApplication; // @synthesize _frontmostApplication=__frontmostApplication;
-@property(nonatomic, setter=_setLSNotificationID:) void *_lsNotificationID; // @synthesize _lsNotificationID=__lsNotificationID;
+@property(copy, nonatomic, setter=_setEventProviderProvider:) CDUnknownBlockType _eventProviderProvider; // @synthesize _eventProviderProvider=__eventProviderProvider;
+@property(retain, nonatomic, setter=_setEventProvider:) _AXFEventProvider *_eventProvider; // @synthesize _eventProvider=__eventProvider;
+@property(copy, nonatomic, setter=_setLaunchServicesProviderProvider:) CDUnknownBlockType _launchServicesProviderProvider; // @synthesize _launchServicesProviderProvider=__launchServicesProviderProvider;
+@property(retain, nonatomic, setter=_setLaunchServicesProvider:) _AXFLaunchServicesProvider *_launchServicesProvider; // @synthesize _launchServicesProvider=__launchServicesProvider;
 @property __weak id <AXFApplicationManagerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic, setter=_setFocusedApplication:) AXFUIElement *_focusedApplication; // @synthesize _focusedApplication=__focusedApplication;
 - (void).cxx_destruct;
-- (void)_assertNotApplicationQueue;
-- (void)_assertApplicationQueue;
+- (void)_assertNotApplicationManagerQueue;
+- (void)_assertApplicationManagerQueue;
 - (id)_applicationWithProcessIdentifier:(int)arg1 applicationIdentifier:(id)arg2;
 - (id)applicationWithProcessIdentifier:(int)arg1 applicationIdentifier:(id)arg2;
 - (id)_applicationWithProcessSerialNumber:(struct ProcessSerialNumber)arg1 applicationIdentifier:(id)arg2;
@@ -43,27 +56,38 @@
 - (void)_notifyRunningApplicationsDidChangeHandler;
 @property(readonly, copy) NSArray *runningApplications;
 - (void)_registerCurrentlyRunningApplications;
+- (void)_notifyFocusedApplicationDidChangeHandler;
+@property(readonly) AXFUIElement *focusedApplication;
 - (void)_notifyFrontmostApplicationDidChangeHandler;
+- (void)_setFrontmostApplication:(id)arg1 preflight:(BOOL)arg2;
 @property(readonly) AXFUIElement *frontmostApplication;
-- (BOOL)_isPSNPermittedFrontmost:(struct ProcessSerialNumber)arg1;
-- (void)_updateFrontmostApplication;
-- (struct ProcessSerialNumber)_frontmostPSNAccordingToSystemUsingDefault:(char *)arg1;
+- (void)_updateFrontmostAndFocusedApplications;
 - (void)_stopObservingApplications;
 - (void)stopObservingApplications;
 - (void)_startObservingApplications;
+- (id)_newEventProvider;
+- (id)_newLaunchServicesProvider;
 - (void)startObservingApplications;
 - (void)_appendApplication:(id)arg1;
 - (void)_removeApplicationWithPSN:(struct ProcessSerialNumber)arg1;
 - (void)_createApplicationWithPSNIfNeeded:(struct ProcessSerialNumber)arg1;
-- (id)_newApplicationWithPSN:(struct ProcessSerialNumber)arg1;
 - (id)_knownApplicationWithElement:(id)arg1;
 - (id)_knownApplicationWithPSN:(struct ProcessSerialNumber)arg1;
-- (void)_performBlockOnApplicationQueueAndWait:(CDUnknownBlockType)arg1;
-- (void)_performBlockOnApplicationQueue:(CDUnknownBlockType)arg1;
-- (void)_handleNotification:(int)arg1 dictionary:(struct __CFDictionary *)arg2;
-- (void)_unregisterCGEventsNotifications;
-- (void)_registerCGEventsNotifications;
+- (void)_performBlockOnApplicationManagerQueueAndWait:(CDUnknownBlockType)arg1;
+- (void)_performBlockOnApplicationManagerQueue:(CDUnknownBlockType)arg1;
+- (void)eventProviderNewFront:(id)arg1;
+- (void)eventProviderKeyFocusChanged:(id)arg1;
+- (void)launchServicesProvider:(id)arg1 applicationWithProcessSerialNumberBecameFrontMost:(struct ProcessSerialNumber)arg2;
+- (void)launchServicesProvider:(id)arg1 applicationWithProcessSerialNumberDied:(struct ProcessSerialNumber)arg2;
+- (void)launchServicesProvider:(id)arg1 applicationWithProcessSerialNumberReady:(struct ProcessSerialNumber)arg2;
+- (id)initWithLaunchServicesProvider:(CDUnknownBlockType)arg1 eventProvider:(CDUnknownBlockType)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

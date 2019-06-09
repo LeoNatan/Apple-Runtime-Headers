@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     float mCameraCalibrationMatrix[9];
 }
 
++ (id)configurationOptionKeysForDetectorKey;
 - (id)processWithOptions:(id)arg1 regionOfInterest:(struct CGRect)arg2 warningRecorder:(id)arg3 error:(id *)arg4;
 - (BOOL)completeInitializationAndReturnError:(id *)arg1;
 

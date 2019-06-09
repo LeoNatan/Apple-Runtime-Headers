@@ -11,14 +11,21 @@
 }
 
 + (id)sharedPreferences;
+- (BOOL)companionSyncVoiceTriggerUtterancesEnabled;
+- (id)fakeHearstModelPath;
 - (void)setHearstSecondPassModelVersion:(id)arg1;
 - (void)setHearstFirstPassModelVersion:(id)arg1;
 - (float)overwritingRemoteVADScore;
 - (BOOL)shouldOverwriteRemoteVADScore;
+- (BOOL)iOSBargeInSupportEnabled;
+- (BOOL)iOSBargeInPowerSavingEnabled;
+- (BOOL)useSiriActivationSPIForwatchOS;
 - (BOOL)useSiriActivationSPIForHomePod;
 - (unsigned long long)maxNumLoggingFiles;
 - (double)audioSessionActivationDelay;
 - (BOOL)smartSiriVolumeSoftVolumeEnabled;
+- (unsigned long long)speakerIdScoreReportingType;
+- (BOOL)speakerIdiTunesAccountSigninEnabled;
 - (BOOL)speakerIdEnabled;
 - (id)audioInjectionFilePath;
 - (void)setAudioInjectionFilePath:(id)arg1;
@@ -29,31 +36,9 @@
 - (id)interstitialRelativeDirForLevel:(long long)arg1;
 - (double)remoteVoiceTriggerEndpointTimeoutWithDefault:(double)arg1;
 - (double)remoteVoiceTriggerDelayTime;
-- (void)notifyUserVoiceProfileDownloadReadyForUser:(id)arg1 getData:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)notifyUserVoiceProfileUploadComplete:(id)arg1;
-- (void)uploadUserVoiceProfile:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)markSATEnrollmentSuccessForLanguageCode:(id)arg1;
-- (BOOL)_markSATEnrollmentWithMarker:(id)arg1 forLanguage:(id)arg2;
-- (BOOL)_markSATEnrollmentMigratedForLanguageCode:(id)arg1;
-- (BOOL)_markSATEnrollmentSuccessForLanguageCode:(id)arg1;
-- (void)notifyUserVoiceProfileUpdateReady;
-- (id)_getUserVoiceProfileUpdateDirectoryWithUpdatePath:(id)arg1;
-- (id)getUserVoiceProfileUpdateDirectory;
-- (id)getUserVoiceProfileUpdateDirectoryForNewerZone;
 - (BOOL)_isDirectory:(id)arg1;
-- (void)notifyUserVoiceProfileUploadComplete;
-- (BOOL)_encryptPHSMigratedFileAt:(id)arg1 andSaveTo:(id)arg2 error:(id *)arg3;
-- (BOOL)_decryptFileForPHSMigrationAt:(id)arg1 andSaveTo:(id)arg2 error:(id *)arg3;
-- (BOOL)_copyPHSMigratedFilesAt:(id)arg1 andSaveTo:(id)arg2 error:(id *)arg3;
-- (id)getUserVoiceProfileUploadPathWithEnrolledLanguageList:(id *)arg1;
-- (id)getUserVoiceProfileFileList;
-- (id)_getEnrolledLanguageList;
-- (id)_CSSATLegacyUploadPath;
-- (id)_CSSATUploadPath;
-- (id)_CSSATDownloadPathForNewerZone;
-- (id)_CSSATDownloadPath;
-- (id)CSSATBasePath;
-- (void)_secureSatBasePathAt:(id)arg1;
+- (id)getStartOfSpeechAudioLogFilePath;
+- (BOOL)startOfSpeechAudioLoggingEnabled;
 - (long long)getJarvisTriggerMode;
 - (void)setJarvisTriggerMode:(long long)arg1;
 - (BOOL)jarvisAudioLoggingEnabled;
@@ -68,7 +53,11 @@
 - (void)setFileLoggingIsEnabled:(BOOL)arg1;
 - (BOOL)_storeModeEnabled;
 - (BOOL)twoShotNotificationEnabled;
+- (BOOL)corespeechDaemonEnabled;
 - (BOOL)voiceTriggerInCoreSpeech;
+- (BOOL)isAttentiveSiriAudioLoggingEnabled;
+- (BOOL)isAttentiveSiriEnabled;
+- (BOOL)phraseSpotterEnabled;
 - (BOOL)voiceTriggerEnabled;
 
 @end

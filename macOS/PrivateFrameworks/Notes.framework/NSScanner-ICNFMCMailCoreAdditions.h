@@ -7,10 +7,7 @@
 #import <Foundation/NSScanner.h>
 
 @interface NSScanner (ICNFMCMailCoreAdditions)
-- (BOOL)scanUpAndOverString:(id)arg1;
-- (id)nextTokenWithPunctuation:(id)arg1;
-- (BOOL)scanEndIntoString:(id *)arg1;
-- (BOOL)betterScanUpToCharactersFromSet:(id)arg1 intoString:(id *)arg2;
-- (BOOL)scanStringOfLength:(unsigned long long)arg1 intoString:(id *)arg2;
+- (BOOL)ic_scanUpAndOverString:(id)arg1;
+- (id)ic_nextTokenWithPunctuation:(id)arg1;
 @end
 

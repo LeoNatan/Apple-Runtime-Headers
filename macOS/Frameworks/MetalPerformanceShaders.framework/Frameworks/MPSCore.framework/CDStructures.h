@@ -28,6 +28,17 @@ struct MPSDeviceSpecificInfo {
     unsigned long long _field3;
 };
 
+struct MPSDimensionSlice {
+    unsigned long long _field1;
+    unsigned long long _field2;
+};
+
+struct MPSImageCoordinate {
+    unsigned long long _field1;
+    unsigned long long _field2;
+    unsigned long long _field3;
+};
+
 struct MPSKernelInfo;
 
 struct MPSKey_data;
@@ -71,6 +82,7 @@ struct MPSLibraryInfo {
     struct MPSDeviceSpecificInfo _field19;
     struct MPSDeviceSpecificInfo _field20;
     struct MPSDeviceSpecificInfo _field21;
+    struct MPSDeviceSpecificInfo _field22;
 };
 
 struct MPSPixelInfo {
@@ -92,7 +104,8 @@ struct MPSPixelInfo {
     unsigned int isCompressed:1;
     unsigned int chunkSizePlane2:6;
     unsigned int log2MinAlignment:4;
-    unsigned int _padding:5;
+    unsigned int featureChannelFormat:3;
+    unsigned int _padding:2;
 };
 
 struct MPSStateTextureInfo {
@@ -120,6 +133,15 @@ struct ResourceNode {
     id _field2;
 };
 
+struct UserBufferBindingData_s {
+    id userBoundBuffer;
+    char userBoundBuffer_set;
+    void *userBoundBytes;
+    unsigned long long userBoundBytes_length;
+    char userBoundBytes_set;
+    unsigned long long userBoundOffset;
+};
+
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -128,6 +150,13 @@ struct _NSRange {
 struct atomic<MPSKey_data *>;
 
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned char _field1;
+    unsigned char _field2;
+    unsigned char _field3;
+    unsigned char _field4;
+} CDStruct_a06f635e;
 
 typedef struct {
     unsigned long long _field1;

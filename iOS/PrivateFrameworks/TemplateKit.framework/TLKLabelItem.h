@@ -8,15 +8,16 @@
 
 #import <TemplateKit/TLKGridArrangementItem-Protocol.h>
 
-@class NSString, NUISizeCache, TLKFormattedText;
+@class NSString, NUISizeCache, TLKRichText;
 
+__attribute__((visibility("hidden")))
 @interface TLKLabelItem : NSObject <TLKGridArrangementItem>
 {
     unsigned long long row;
     double horizontalHuggingPriority;
     double horizontalCompressionResistance;
     NUISizeCache *sizeCache;
-    TLKFormattedText *_formattedText;
+    TLKRichText *_richText;
     struct _NSRange columnRange;
     struct CGRect frame;
 }
@@ -25,15 +26,16 @@
 + (double)minimumWidthForLabelItem;
 + (void)setFontValues;
 + (void)initialize;
-@property __weak TLKFormattedText *formattedText; // @synthesize formattedText=_formattedText;
-@property(retain) NUISizeCache *sizeCache; // @synthesize sizeCache;
-@property double horizontalCompressionResistance; // @synthesize horizontalCompressionResistance;
-@property double horizontalHuggingPriority; // @synthesize horizontalHuggingPriority;
-@property unsigned long long row; // @synthesize row;
-@property struct _NSRange columnRange; // @synthesize columnRange;
-@property struct CGRect frame;
+@property(retain, nonatomic) TLKRichText *richText; // @synthesize richText=_richText;
+@property(retain, nonatomic) NUISizeCache *sizeCache; // @synthesize sizeCache;
+@property(nonatomic) double horizontalCompressionResistance; // @synthesize horizontalCompressionResistance;
+@property(nonatomic) double horizontalHuggingPriority; // @synthesize horizontalHuggingPriority;
+@property(nonatomic) unsigned long long row; // @synthesize row;
+@property(nonatomic) struct _NSRange columnRange; // @synthesize columnRange;
+@property(nonatomic) struct CGRect frame;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
+- (id)attributedString;
 - (struct CGSize)sizeForTargetSize:(struct CGSize)arg1;
 - (float)contentHuggingPriorityForAxis:(long long)arg1;
 - (float)contentCompressionResistancePriorityForAxis:(long long)arg1;

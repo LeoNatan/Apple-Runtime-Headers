@@ -10,7 +10,7 @@
 #import <NanoCelebrations/CSLSUIProvider-Protocol.h>
 #import <NanoCelebrations/NCEBulletinsLiaisonTriggerDelegate-Protocol.h>
 
-@class CSLSBacklightAssertion, NCEFireVector, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString;
+@class CSLSBacklightAssertion, NCEFireVector, NCENotificationManager, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSString;
 @protocol NCEClockCelebrationViewControllerDelegate, OS_dispatch_queue, OS_dispatch_source, OS_os_log;
 
 @interface NCEClockCelebrationViewController : UIViewController <CSLSUIProvider, NCEBulletinsLiaisonTriggerDelegate, CSLPIButtonHandlerProtocol>
@@ -31,8 +31,10 @@
     NSObject<OS_dispatch_source> *_fireDelayTimer;
     NSObject<OS_dispatch_source> *_sendStatsTimer;
     NSMutableDictionary *_ncStats;
+    NCENotificationManager *_notificationManager;
 }
 
+@property(retain, nonatomic) NCENotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(retain, nonatomic) NSMutableDictionary *ncStats; // @synthesize ncStats=_ncStats;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *sendStatsTimer; // @synthesize sendStatsTimer=_sendStatsTimer;
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *fireDelayTimer; // @synthesize fireDelayTimer=_fireDelayTimer;

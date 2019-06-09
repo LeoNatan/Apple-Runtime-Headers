@@ -28,12 +28,15 @@
 - (long long)userSpecifiedDisplayModeForWidget:(id)arg1;
 - (void)remoteViewControllerViewDidAppearForWidget:(id)arg1;
 - (void)remoteViewControllerDidConnectForWidget:(id)arg1;
+- (void)unregisterWidgetForRefreshEvents:(id)arg1;
+- (void)registerWidgetForRefreshEvents:(id)arg1;
 - (struct CGSize)maxSizeForWidget:(id)arg1 forDisplayMode:(long long)arg2;
 - (void)_addWidgetButtonTapped:(id)arg1;
 - (id)_platterViewIfLoaded;
 - (id)_platterViewLoadingIfNecessary:(_Bool)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)loadView;

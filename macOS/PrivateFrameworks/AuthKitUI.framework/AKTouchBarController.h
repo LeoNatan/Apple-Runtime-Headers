@@ -8,26 +8,21 @@
 
 #import <AuthKitUI/NSTouchBarProvider-Protocol.h>
 
-@class NSButtonGroupTouchBarItem, NSMutableDictionary, NSMutableOrderedSet, NSString, NSTouchBar;
+@class NSGroupTouchBarItem, NSMutableDictionary, NSMutableOrderedSet, NSString, NSTouchBar;
 
 @interface AKTouchBarController : NSObject <NSTouchBarProvider>
 {
     NSTouchBar *_akTouchBar;
-    NSButtonGroupTouchBarItem *_buttonGroup;
+    NSGroupTouchBarItem *_buttonGroup;
     NSMutableDictionary *_buttonDictionary;
-    NSMutableDictionary *_buttonBarItemDictionary;
     NSMutableOrderedSet *_buttonIdentifiers;
 }
 
 @property(retain, nonatomic) NSMutableOrderedSet *buttonIdentifiers; // @synthesize buttonIdentifiers=_buttonIdentifiers;
-@property(retain) NSMutableDictionary *buttonBarItemDictionary; // @synthesize buttonBarItemDictionary=_buttonBarItemDictionary;
 @property(retain) NSMutableDictionary *buttonDictionary; // @synthesize buttonDictionary=_buttonDictionary;
-@property(retain) NSButtonGroupTouchBarItem *buttonGroup; // @synthesize buttonGroup=_buttonGroup;
+@property(retain) NSGroupTouchBarItem *buttonGroup; // @synthesize buttonGroup=_buttonGroup;
 @property(retain) NSTouchBar *akTouchBar; // @synthesize akTouchBar=_akTouchBar;
 - (void).cxx_destruct;
-- (void)updateTouchBarButton:(id)arg1 forAlertButton:(id)arg2;
-- (void)updateTouchBar;
-- (id)makeTouchBarItemWithButton:(id)arg1;
 @property(readonly) NSTouchBar *touchBar;
 - (id)initWithButtonDictionary:(id)arg1 withOrderedIdentifiers:(id)arg2;
 

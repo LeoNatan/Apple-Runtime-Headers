@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     struct CGSize _minSize;
     struct CGSize _preferredSize;
     struct CGSize _maxSize;
-    unsigned int _hasCachedMinMaxSize:1;
+    BOOL _hasCachedMinMaxSize;
 }
 
 + (id)paletteItemForBarItem:(id)arg1 customizability:(long long)arg2;

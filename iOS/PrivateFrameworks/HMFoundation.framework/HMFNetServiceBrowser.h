@@ -8,14 +8,14 @@
 
 #import <HMFoundation/NSNetServiceBrowserDelegate-Protocol.h>
 
-@class HMFUnfairLock, NSArray, NSHashTable, NSNetServiceBrowser, NSObject, NSString;
+@class HMFUnfairLock, NSArray, NSHashTable, NSMutableOrderedSet, NSNetServiceBrowser, NSObject, NSString;
 @protocol HMFNetServiceBrowserDelegate, OS_dispatch_queue;
 
 @interface HMFNetServiceBrowser : HMFObject <NSNetServiceBrowserDelegate>
 {
     HMFUnfairLock *_lock;
-    NSHashTable *_cachedNetServices;
-    _Bool _shouldCache;
+    NSHashTable *_netServices;
+    NSMutableOrderedSet *_cachedNetServices;
     _Bool _browsing;
     id <HMFNetServiceBrowserDelegate> _delegate;
     NSString *_domain;
@@ -45,10 +45,9 @@
 - (void)stopBrowsing;
 - (void)startBrowsingWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(nonatomic, getter=isBrowsing) _Bool browsing; // @synthesize browsing=_browsing;
-- (void)removeNetServiceFromCache:(id)arg1;
 - (void)addNetServiceToCache:(id)arg1;
 @property(readonly, copy, nonatomic) NSArray *cachedNetServices;
-@property(nonatomic) _Bool shouldCache; // @synthesize shouldCache=_shouldCache;
+@property(nonatomic) _Bool shouldCache;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
 - (id)descriptionWithPointer:(_Bool)arg1;

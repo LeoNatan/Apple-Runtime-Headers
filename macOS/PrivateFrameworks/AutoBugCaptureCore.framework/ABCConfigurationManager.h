@@ -8,30 +8,45 @@
 
 #import <AutoBugCaptureCore/ABCConfigurationProtocol-Protocol.h>
 
-@class NSDictionary, NSNumber, NSString, SymptomsPreferences;
+@class ABCPreferences, NSDictionary, NSNumber, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ABCConfigurationManager : NSObject <ABCConfigurationProtocol>
 {
+    BOOL _autoBugCaptureEnabled;
     BOOL _apns_enable;
     BOOL _apns_dev_environment;
-    NSNumber *_autoBugCaptureEnabled;
-    SymptomsPreferences *_preferences;
+    ABCPreferences *_preferences;
     NSNumber *_disable_internal_build;
     NSNumber *_carrier_seed_flag;
+    NSNumber *_seed_flag;
     NSDictionary *_previousConfiguration;
 }
 
++ (id)defaultLibraryDirectory;
++ (id)autoBugCapturePrefix;
 @property(retain, nonatomic) NSDictionary *previousConfiguration; // @synthesize previousConfiguration=_previousConfiguration;
+@property(retain, nonatomic) NSNumber *seed_flag; // @synthesize seed_flag=_seed_flag;
 @property(retain, nonatomic) NSNumber *carrier_seed_flag; // @synthesize carrier_seed_flag=_carrier_seed_flag;
 @property(retain, nonatomic) NSNumber *disable_internal_build; // @synthesize disable_internal_build=_disable_internal_build;
-@property(retain, nonatomic) SymptomsPreferences *preferences; // @synthesize preferences=_preferences;
 @property(nonatomic) BOOL apns_dev_environment; // @synthesize apns_dev_environment=_apns_dev_environment;
 @property(nonatomic) BOOL apns_enable; // @synthesize apns_enable=_apns_enable;
+@property(retain, nonatomic) ABCPreferences *preferences; // @synthesize preferences=_preferences;
 - (void).cxx_destruct;
 - (id)currentDiagnosticActions;
 - (id)defaultDiagnosticActions;
 - (id)loadEmbeddedConfigurationPlist:(const char *)arg1;
+@property(readonly, nonatomic) BOOL autoFeedbackAssistantEnable; // @dynamic autoFeedbackAssistantEnable;
+@property(readonly, nonatomic) unsigned long long cloudKitFallbackMaximumLogCount;
+@property(readonly, nonatomic) double cloudKitTimeoutIntervalForRequest;
+@property(readonly, nonatomic) double cloudKitTimeoutIntervalForResource;
+@property(readonly, nonatomic) BOOL cloudKitPrefersAnonymous;
+@property(readonly, nonatomic) NSString *cloudKitContainerIdentifier;
+@property(readonly, nonatomic) BOOL cloudKitSandboxEnvironment;
+@property(readonly, nonatomic) BOOL cloudKitEnabled;
 @property(readonly, nonatomic) double apiLimitWindow;
+@property(readonly, nonatomic) BOOL apnsSandboxEnvironment;
+@property(readonly, nonatomic) BOOL apnsEnabled;
 @property(readonly, nonatomic) double apiRateLimit;
 @property(readonly, nonatomic) BOOL disableAPIRateLimit;
 @property(readonly, nonatomic) unsigned long long dampeningRestrictionFactor;
@@ -40,17 +55,19 @@
 @property(readonly, nonatomic) unsigned long long arbitratorDailyCountLimit;
 @property(readonly, nonatomic) unsigned long long maxUploadRetryCount;
 @property(readonly, nonatomic) unsigned long long dampenedIPSLimit;
-@property(readonly, nonatomic) NSNumber *logArchiveGID; // @dynamic logArchiveGID;
-@property(readonly, nonatomic) NSNumber *logArchiveUID; // @dynamic logArchiveUID;
+@property(readonly, nonatomic) NSString *databaseContainerPath; // @dynamic databaseContainerPath;
+@property(readonly, nonatomic) unsigned int logArchiveGID; // @dynamic logArchiveGID;
+@property(readonly, nonatomic) unsigned int logArchiveUID; // @dynamic logArchiveUID;
 @property(readonly, nonatomic) NSString *logArchivePath; // @dynamic logArchivePath;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureEnabled; // @synthesize autoBugCaptureEnabled=_autoBugCaptureEnabled;
+@property(readonly, nonatomic) BOOL autoBugCaptureEnabled; // @synthesize autoBugCaptureEnabled=_autoBugCaptureEnabled;
 - (int)autoBugCaptureFeatures;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureUploadPreapproved; // @dynamic autoBugCaptureUploadPreapproved;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureSensitivePayloads; // @dynamic autoBugCaptureSensitivePayloads;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureRegularPayloads; // @dynamic autoBugCaptureRegularPayloads;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureSignature; // @dynamic autoBugCaptureSignature;
-@property(readonly, nonatomic) NSNumber *autoBugCaptureAvailable; // @dynamic autoBugCaptureAvailable;
+@property(readonly, nonatomic) BOOL autoBugCaptureUploadPreapproved; // @dynamic autoBugCaptureUploadPreapproved;
+@property(readonly, nonatomic) BOOL autoBugCaptureSensitivePayloads; // @dynamic autoBugCaptureSensitivePayloads;
+@property(readonly, nonatomic) BOOL autoBugCaptureRegularPayloads; // @dynamic autoBugCaptureRegularPayloads;
+@property(readonly, nonatomic) BOOL autoBugCaptureSignature; // @dynamic autoBugCaptureSignature;
+@property(readonly, nonatomic) BOOL autoBugCaptureAvailable; // @dynamic autoBugCaptureAvailable;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)initializeOverrides;
 - (id)getAutoBugCaptureConfiguration;
 - (void)dealloc;
 - (id)init;

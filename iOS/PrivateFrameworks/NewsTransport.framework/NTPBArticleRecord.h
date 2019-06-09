@@ -14,6 +14,7 @@
 {
     long long _backendArticleVersion;
     long long _behaviorFlags;
+    long long _bodyTextLength;
     unsigned long long _halfLifeMilliseconds;
     long long _minimumNewsVersion;
     long long _publisherArticleVersion;
@@ -88,6 +89,7 @@
     struct {
         unsigned int backendArticleVersion:1;
         unsigned int behaviorFlags:1;
+        unsigned int bodyTextLength:1;
         unsigned int halfLifeMilliseconds:1;
         unsigned int minimumNewsVersion:1;
         unsigned int publisherArticleVersion:1;
@@ -125,6 +127,7 @@
 + (Class)iAdKeywordsType;
 + (Class)iAdCategoriesType;
 + (Class)flintFontResourceIDsType;
+@property(nonatomic) long long bodyTextLength; // @synthesize bodyTextLength=_bodyTextLength;
 @property(nonatomic) _Bool isIssueOnly; // @synthesize isIssueOnly=_isIssueOnly;
 @property(retain, nonatomic) NSMutableArray *linkedIssueIDs; // @synthesize linkedIssueIDs=_linkedIssueIDs;
 @property(retain, nonatomic) NSMutableArray *linkedArticleIDs; // @synthesize linkedArticleIDs=_linkedArticleIDs;
@@ -203,6 +206,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasBodyTextLength;
 @property(nonatomic) _Bool hasIsIssueOnly;
 - (id)linkedIssueIDsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)linkedIssueIDsCount;

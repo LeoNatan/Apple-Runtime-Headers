@@ -6,21 +6,23 @@
 
 #import <objc/NSObject.h>
 
-#import <PhotosUI/PLDismissableViewController-Protocol.h>
 #import <PhotosUI/PUAvalancheReviewControllerDelegate-Protocol.h>
 #import <PhotosUI/PUCollectionViewLayoutProvider-Protocol.h>
 #import <PhotosUI/PUFunEffectsViewControllerObserver-Protocol.h>
 #import <PhotosUI/PUOneUpPhotosSharingTransitionDelegate-Protocol.h>
+#import <PhotosUI/PUOneUpSharingAnimationControllerDelegate-Protocol.h>
 #import <PhotosUI/PUPhotoEditViewControllerPresentationDelegate-Protocol.h>
 #import <PhotosUI/PUPhotoMarkupViewControllerObserver-Protocol.h>
 #import <PhotosUI/PUPhotosSharingViewControllerDelegate-Protocol.h>
 #import <PhotosUI/PUSlideshowViewControllerDelegate-Protocol.h>
-#import <PhotosUI/PUVideoEditViewControllerPresentationDelegate-Protocol.h>
+#import <PhotosUI/PXActivitySharingControllerDelegate-Protocol.h>
+#import <PhotosUI/PXForcedDismissableViewController-Protocol.h>
+#import <PhotosUI/UIViewControllerTransitioningDelegate-Protocol.h>
 
-@class NSHashTable, NSString, PUAssetReference, PUAvalancheReviewController, PUEditViewController, PUFunEffectsViewController, PUPhotoMarkupViewController, PUPhotosSharingViewController, PUSlideshowViewController;
+@class NSHashTable, NSString, PUActivitySharingController, PUAssetReference, PUAvalancheReviewController, PUEditViewController, PUFunEffectsViewController, PUPhotoMarkupViewController, PUPhotosSharingViewController, PUSlideshowViewController;
 @protocol PUOverOneUpPresentationSessionBarsDelegate, PUOverOneUpPresentationSessionDelegate;
 
-@interface PUOverOneUpPresentationSession : NSObject <PUPhotoEditViewControllerPresentationDelegate, PUVideoEditViewControllerPresentationDelegate, PUSlideshowViewControllerDelegate, PUAvalancheReviewControllerDelegate, PUPhotosSharingViewControllerDelegate, PUOneUpPhotosSharingTransitionDelegate, PUCollectionViewLayoutProvider, PLDismissableViewController, PUPhotoMarkupViewControllerObserver, PUFunEffectsViewControllerObserver>
+@interface PUOverOneUpPresentationSession : NSObject <PUPhotoEditViewControllerPresentationDelegate, PUSlideshowViewControllerDelegate, PUAvalancheReviewControllerDelegate, PUPhotosSharingViewControllerDelegate, PXActivitySharingControllerDelegate, PUOneUpPhotosSharingTransitionDelegate, PUCollectionViewLayoutProvider, PXForcedDismissableViewController, PUPhotoMarkupViewControllerObserver, PUFunEffectsViewControllerObserver, UIViewControllerTransitioningDelegate, PUOneUpSharingAnimationControllerDelegate>
 {
     struct {
         _Bool respondsToTilingView;
@@ -46,8 +48,10 @@
     PUFunEffectsViewController *__funEffectsViewController;
     PUAssetReference *__stashedAssetReference;
     struct NSHashTable *__presentedViewControllers;
+    PUActivitySharingController *_activitySharingController;
 }
 
+@property(retain, nonatomic) PUActivitySharingController *activitySharingController; // @synthesize activitySharingController=_activitySharingController;
 @property(nonatomic, setter=_setNeedsUpdatePresentedViewControllers:) _Bool _needsUpdatePresentedViewControllers; // @synthesize _needsUpdatePresentedViewControllers=__needsUpdatePresentedViewControllers;
 @property(retain, nonatomic, setter=_setPresentedViewControllers:) NSHashTable *_presentedViewControllers; // @synthesize _presentedViewControllers=__presentedViewControllers;
 @property(copy, nonatomic, setter=_setStashedAssetReference:) PUAssetReference *_stashedAssetReference; // @synthesize _stashedAssetReference=__stashedAssetReference;
@@ -77,6 +81,7 @@
 - (struct CGSize)collectionViewContentSize;
 - (long long)_tileCountForCurrentModalViewController;
 - (id)_assetCollectionsDataSourceForCurrentModalViewController;
+- (void)oneUpSharingAnimationController:(id)arg1 setVisibility:(_Bool)arg2 forAssetReference:(id)arg3;
 - (void)photosSharingTransitionWillAnimateDismissal:(id)arg1;
 - (void)photosSharingTransitionWillAnimatePresentation:(id)arg1;
 - (id)photosSharingTransitionTransitioningView:(id)arg1;
@@ -86,6 +91,13 @@
 - (struct CGRect)_frameAtIndexPath:(id)arg1;
 - (struct CGRect)_frameForAssetReference:(id)arg1;
 - (struct CGRect)_frameForItemAtIndexPath:(id)arg1 inAssetCollectionsDataSource:(id)arg2 allowZoom:(_Bool)arg3;
+- (void)_activitySharingController:(id)arg1 didCompleteWithActivityType:(id)arg2 success:(_Bool)arg3;
+- (void)_activitySharingControllerDidCancel:(id)arg1;
+- (void)_activitySharingControllerWillDismissActivityViewController:(id)arg1;
+- (void)_prepareForActivitySharingControllerDismiss:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)activitySharingController:(id)arg1 didCompleteWithActivityType:(id)arg2 success:(_Bool)arg3;
+- (void)activitySharingControllerWillDismissActivityViewController:(id)arg1;
+- (void)activitySharingControllerDidCancel:(id)arg1;
 - (void)_finalizeSharingViewControllerDismiss;
 - (void)photosSharingViewController:(id)arg1 didCompleteWithActivityType:(id)arg2 success:(_Bool)arg3 withAsset:(id)arg4;
 - (void)photosSharingViewControllerDidCancel:(id)arg1 needsDismiss:(_Bool)arg2;
@@ -96,13 +108,14 @@
 - (void)avalancheReviewControllerDidComplete:(id)arg1 withAsset:(id)arg2 animated:(_Bool)arg3;
 - (void)funEffectsViewController:(id)arg1 didSaveAsset:(id)arg2 withCompletion:(unsigned long long)arg3;
 - (void)photoMarkupController:(id)arg1 didFinishWithSavedAsset:(id)arg2;
-- (void)videoEditViewController:(id)arg1 didFinishPreparingForTransitionAfterEditingAsset:(id)arg2 modificationDate:(id)arg3 seekTime:(CDStruct_1b6d18a9)arg4;
-- (void)photoEditController:(id)arg1 didFinishPreparingForTransitionAfterEditingAsset:(id)arg2;
+- (void)editController:(id)arg1 didFinishPreparingForTransitionAfterEditingVideo:(id)arg2 modificationDate:(id)arg3 seekTime:(CDStruct_1b6d18a9)arg4;
+- (void)editController:(id)arg1 didFinishPreparingForTransitionAfterEditingPhoto:(id)arg2;
 - (void)slideshowViewControllerDidFinish:(id)arg1 withVisibleAssets:(id)arg2;
 - (void)_performNavigationRequestForAssetDisplayDescriptor:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_assetReferenceFromAsset:(id)arg1 hintIndexPath:(id)arg2 hintCollection:(id)arg3;
 - (_Bool)prepareForDismissingForced:(_Bool)arg1;
 - (_Bool)_dismissAvalancheReviewController:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (_Bool)_dismissActivityViewController:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)_dismissPhotosSharingViewController:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)_dismissFunEffectsViewController:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (_Bool)_dismissPhotoMarkupViewController:(id)arg1 animated:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -113,6 +126,8 @@
 - (_Bool)_presentSlideshowViewController:(id)arg1;
 - (_Bool)_presentAvalancheReviewController:(id)arg1;
 - (_Bool)_presentPhotosSharingViewController:(id)arg1;
+- (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (_Bool)_presentActivityViewController:(id)arg1;
 - (_Bool)_presentFunEffectsViewController:(id)arg1 animated:(_Bool)arg2;
 - (_Bool)_presentPhotoMarkupViewController:(id)arg1;
 - (_Bool)_presentEditViewController:(id)arg1;
@@ -122,7 +137,7 @@
 - (id)_viewModel;
 - (id)_tilingView;
 - (id)viewController;
-- (void)finishOverOneUpPresentationSessionDismissForced:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)_finishOverOneUpPresentationSessionDismissForced:(_Bool)arg1 animated:(_Bool)arg2;
 - (_Bool)isPresentingAnOverOneUpViewController;
 - (void)_updatePresentedViewControllersIfNeeded;
 - (void)_invalidatePresentedViewControllers;

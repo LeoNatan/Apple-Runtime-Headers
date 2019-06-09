@@ -8,18 +8,18 @@
 
 #import <UsageTracking/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDictionary, NSString;
+@class NSArray, NSString;
 
 @interface USCategoryUsageReport : NSObject <NSSecureCoding>
 {
     NSString *_categoryIdentifier;
     double _totalUsageTime;
     NSArray *_applicationUsage;
-    NSDictionary *_webUsageByDomain;
+    NSArray *_webUsage;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, copy) NSDictionary *webUsageByDomain; // @synthesize webUsageByDomain=_webUsageByDomain;
+@property(readonly, copy) NSArray *webUsage; // @synthesize webUsage=_webUsage;
 @property(readonly, copy) NSArray *applicationUsage; // @synthesize applicationUsage=_applicationUsage;
 @property(readonly) double totalUsageTime; // @synthesize totalUsageTime=_totalUsageTime;
 @property(readonly, copy) NSString *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
@@ -27,8 +27,8 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)_usCategoryUsageReportCommonInitWithTotalUsageTime:(double)arg1 applicationUsage:(id)arg2 webUsageByDomain:(id)arg3;
-- (id)initWithCategoryIdentifier:(id)arg1 totalUsageTime:(double)arg2 applicationUsage:(id)arg3 webUsageByDomain:(id)arg4;
+- (void)_usCategoryUsageReportCommonInitWithTotalUsageTime:(double)arg1 applicationUsage:(id)arg2 webUsage:(id)arg3;
+- (id)initWithCategoryIdentifier:(id)arg1 totalUsageTime:(double)arg2 applicationUsage:(id)arg3 webUsage:(id)arg4;
 
 @end
 

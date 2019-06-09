@@ -10,6 +10,7 @@
 {
 }
 
+- (void)sampleCountersInBuffer:(id)arg1 atSampleIndex:(unsigned long long)arg2 withBarrier:(BOOL)arg3;
 - (void)executeCommandsInBuffer:(id)arg1 indirectBuffer:(id)arg2 indirectBufferOffset:(unsigned long long)arg3;
 - (void)executeCommandsInBuffer:(id)arg1 withRange:(struct _NSRange)arg2;
 - (void)memoryBarrierWithResources:(const id *)arg1 count:(unsigned long long)arg2 afterStages:(unsigned long long)arg3 beforeStages:(unsigned long long)arg4;
@@ -20,6 +21,10 @@
 - (void)setEmulationVertexTextures:(const id *)arg1 withRange:(struct _NSRange)arg2;
 - (void)setEmulationFragmentBuffers:(const id *)arg1 offsets:(const unsigned long long *)arg2 withRange:(struct _NSRange)arg3;
 - (void)setEmulationVertexBuffers:(const id *)arg1 offsets:(const unsigned long long *)arg2 withRange:(struct _NSRange)arg3;
+- (void)useHeaps:(const id *)arg1 count:(unsigned long long)arg2 stages:(unsigned long long)arg3;
+- (void)useHeap:(id)arg1 stages:(unsigned long long)arg2;
+- (void)useResources:(const id *)arg1 count:(unsigned long long)arg2 usage:(unsigned long long)arg3 stages:(unsigned long long)arg4;
+- (void)useResource:(id)arg1 usage:(unsigned long long)arg2 stages:(unsigned long long)arg3;
 - (void)useHeaps:(const id *)arg1 count:(unsigned long long)arg2;
 - (void)useHeap:(id)arg1;
 - (void)useResources:(const id *)arg1 count:(unsigned long long)arg2 usage:(unsigned long long)arg3;
@@ -28,6 +33,8 @@
 - (id)getRenderPipelineState;
 - (void *)getFragmentBufferContentsAtIndex:(unsigned long long)arg1;
 - (void *)getVertexBufferContentsAtIndex:(unsigned long long)arg1;
+- (void)setStencilCleared;
+- (void)setDepthCleared;
 - (void)waitForFence:(id)arg1 beforeStages:(unsigned long long)arg2;
 - (void)updateFence:(id)arg1 afterStages:(unsigned long long)arg2;
 - (void)setDepthClipModeSPI:(unsigned long long)arg1;

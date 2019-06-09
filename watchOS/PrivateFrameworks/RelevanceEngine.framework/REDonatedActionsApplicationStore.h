@@ -8,8 +8,8 @@
 
 #import <RelevanceEngine/REDonatedActionFilteredCacheDelegate-Protocol.h>
 
-@class NSMutableSet, NSString, REDonatedActionFilteredCache, REUpNextScheduler;
-@protocol OS_dispatch_queue;
+@class NSMutableSet, NSString, REDonatedActionFilteredCache, RERelevanceEngine, REUpNextScheduler;
+@protocol OS_dispatch_queue, REMLElementRanker;
 
 @interface REDonatedActionsApplicationStore : NSObject <REDonatedActionFilteredCacheDelegate>
 {
@@ -18,6 +18,8 @@
     REUpNextScheduler *_applicationScheduler;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableSet *_applications;
+    RERelevanceEngine *_filteringEngine;
+    id <REMLElementRanker> _elementRanker;
 }
 
 - (void).cxx_destruct;
@@ -32,10 +34,11 @@
 - (void)fetchPerformedTodayCountForActionWithBundleIdentifer:(id)arg1 actionIdentifier:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)fetchPerformedCountForAction:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAllUniqueDonationsWithBlock:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
-- (_Bool)_shouldFilterDonation:(id)arg1 date:(id)arg2 location:(id)arg3;
-- (void)fetchTopDonationsForApplications:(id)arg1 fromOnlyRecentPlatform:(_Bool)arg2 currentDate:(id)arg3 currentLocation:(id)arg4 block:(CDUnknownBlockType)arg5;
+- (_Bool)_shouldFilterDonation:(id)arg1;
+- (void)fetchTopDonationsForApplications:(id)arg1 fromOnlyRecentPlatform:(_Bool)arg2 block:(CDUnknownBlockType)arg3;
 - (void)fetchDonationWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchApplicationsProvidingDonations:(CDUnknownBlockType)arg1;
+- (id)initWithLocationManager:(id)arg1;
 - (id)init;
 
 // Remaining properties

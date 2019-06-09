@@ -8,7 +8,7 @@
 
 #import <EventKitUI/EKCalendarEditItemDelegate-Protocol.h>
 
-@class EKCalendar, EKCalendarShareesEditItem, EKEventStore, EKSource, NSArray, NSString, UITableView;
+@class EKCalendar, EKCalendarColorEditItem, EKCalendarShareesEditItem, EKEventStore, EKSource, NSArray, NSString, UITableView;
 @protocol EKCalendarEditorDelegate, EKStyleProvider;
 
 @interface EKCalendarEditor : UIViewController <EKCalendarEditItemDelegate>
@@ -16,8 +16,9 @@
     UITableView *_tableView;
     NSArray *_editItems;
     EKCalendarShareesEditItem *_shareesEditItem;
-    EKSource *_source;
+    EKCalendarColorEditItem *_colorEditItem;
     unsigned long long _entityType;
+    EKSource *_limitedToSource;
     _Bool _isNewCalendar;
     EKEventStore *_eventStore;
     EKCalendar *_calendar;
@@ -53,6 +54,7 @@
 - (void)_presentValidationAlert:(id)arg1;
 - (id)_editItems;
 - (void)setupForCalendar;
+- (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)preferredContentSize;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
@@ -62,8 +64,7 @@
 - (void)_eventStoreChanged:(id)arg1;
 - (void)_localeChanged;
 - (void)dealloc;
-- (id)initWithSource:(id)arg1 eventStore:(id)arg2 entityType:(unsigned long long)arg3;
-- (id)initWithCalendar:(id)arg1 eventStore:(id)arg2 entityType:(unsigned long long)arg3;
+- (id)initWithCalendar:(id)arg1 eventStore:(id)arg2 entityType:(unsigned long long)arg3 limitedToSource:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

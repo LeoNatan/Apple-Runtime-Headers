@@ -33,7 +33,6 @@
     AWDServerConnection *_awdServerConnection;
     _Bool _logSettingsAtNextUnlock;
     _Bool _daemonReady;
-    int _lastBatteryState;
     NSDictionary *_ingestionTrackers;
 }
 
@@ -77,7 +76,6 @@
 - (void)_queue_updateEvent:(id)arg1 withWeeklySummaryInfo:(id)arg2 lastResponseInfo:(id)arg3 recommendedGoal:(double)arg4;
 - (void)_queue_updateEvent:(id)arg1 withAchievement:(id)arg2;
 - (void)_queue_updateEvent:(id)arg1 withExperimentInstance:(id)arg2;
-- (void)batteryStateDidChange:(id)arg1;
 - (void)_onQueueIfEnabled:(CDUnknownBlockType)arg1;
 - (id)_logDirectoryPath;
 - (void)_registerForActivityAppLaunchNotifications;

@@ -8,6 +8,7 @@
 
 @class NSUUID;
 
+__attribute__((visibility("hidden")))
 @interface SHKBlockUUIDTuple : NSObject
 {
     CDUnknownBlockType _block;

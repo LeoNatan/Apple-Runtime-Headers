@@ -6,8 +6,12 @@
 
 #import <objc/NSObject.h>
 
+@class MTLRenderPassDescriptor;
+
 @interface SCNRendererViewPoint : NSObject
 {
+    MTLRenderPassDescriptor *_passDescriptor;
+    CDStruct_4b2885c7 _viewport;
     struct SCNMatrix4 viewMatrix;
     struct SCNMatrix4 projectionMatrix;
 }
@@ -15,6 +19,10 @@
 @property(nonatomic) struct SCNMatrix4 projectionMatrix; // @synthesize projectionMatrix;
 @property(nonatomic) struct SCNMatrix4 viewMatrix; // @synthesize viewMatrix;
 - (void)dealloc;
+- (void)setPassDescriptor:(id)arg1;
+- (id)passDescriptor;
+- (void)setViewport:(CDStruct_4b2885c7)arg1;
+- (CDStruct_4b2885c7)viewport;
 
 @end
 

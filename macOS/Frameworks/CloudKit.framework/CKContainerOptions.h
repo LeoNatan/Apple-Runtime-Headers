@@ -6,33 +6,42 @@
 
 #import <objc/NSObject.h>
 
-@class CKAccountOverrideInfo, NSString;
+#import <CloudKit/NSSecureCoding-Protocol.h>
 
-@interface CKContainerOptions : NSObject
+@class CKAccountOverrideInfo, CKRepairContainerOverrides, NSString;
+
+@interface CKContainerOptions : NSObject <NSSecureCoding>
 {
     BOOL _captureResponseHTTPHeaders;
     BOOL _useZoneWidePCS;
     BOOL _wantsSiloedContext;
     BOOL _returnPCSMetadata;
-    BOOL _useMMCSEncryptionV2;
     BOOL _bypassPCSEncryption;
     BOOL _enforceNamedOperationGroups;
     BOOL _forceEnableReadOnlyManatee;
     CKAccountOverrideInfo *_accountInfoOverride;
+    unsigned long long _mmcsEncryptionSupport;
     NSString *_encryptionServiceName;
+    CKRepairContainerOverrides *_repairContainerOverrides;
 }
 
++ (BOOL)supportsSecureCoding;
+@property(retain, nonatomic) CKRepairContainerOverrides *repairContainerOverrides; // @synthesize repairContainerOverrides=_repairContainerOverrides;
 @property(nonatomic) BOOL forceEnableReadOnlyManatee; // @synthesize forceEnableReadOnlyManatee=_forceEnableReadOnlyManatee;
 @property(nonatomic) BOOL enforceNamedOperationGroups; // @synthesize enforceNamedOperationGroups=_enforceNamedOperationGroups;
 @property(nonatomic) BOOL bypassPCSEncryption; // @synthesize bypassPCSEncryption=_bypassPCSEncryption;
 @property(retain, nonatomic) NSString *encryptionServiceName; // @synthesize encryptionServiceName=_encryptionServiceName;
-@property(nonatomic) BOOL useMMCSEncryptionV2; // @synthesize useMMCSEncryptionV2=_useMMCSEncryptionV2;
+@property(nonatomic) unsigned long long mmcsEncryptionSupport; // @synthesize mmcsEncryptionSupport=_mmcsEncryptionSupport;
 @property(nonatomic) BOOL returnPCSMetadata; // @synthesize returnPCSMetadata=_returnPCSMetadata;
 @property(copy, nonatomic) CKAccountOverrideInfo *accountInfoOverride; // @synthesize accountInfoOverride=_accountInfoOverride;
 @property(nonatomic) BOOL wantsSiloedContext; // @synthesize wantsSiloedContext=_wantsSiloedContext;
 @property(nonatomic) BOOL useZoneWidePCS; // @synthesize useZoneWidePCS=_useZoneWidePCS;
 @property(nonatomic) BOOL captureResponseHTTPHeaders; // @synthesize captureResponseHTTPHeaders=_captureResponseHTTPHeaders;
 - (void).cxx_destruct;
+- (void)setUseMMCSEncryptionV2:(BOOL)arg1;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 
 @end
 

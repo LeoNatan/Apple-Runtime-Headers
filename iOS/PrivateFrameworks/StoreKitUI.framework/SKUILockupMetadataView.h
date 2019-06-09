@@ -8,6 +8,7 @@
 
 @class NSString, SKUIBadgeLabel, SKUIClientContext, UIColor, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUILockupMetadataView : UIView
 {
     UILabel *_artistNameLabel;

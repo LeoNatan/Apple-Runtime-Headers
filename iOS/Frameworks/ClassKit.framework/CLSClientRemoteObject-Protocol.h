@@ -4,9 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ClassKit/CLSClientCancalable-Protocol.h>
+#import <ClassKit/CLSClientCancelable-Protocol.h>
 
-@protocol CLSClientRemoteObject <CLSClientCancalable>
+@protocol CLSClientRemoteObject <CLSClientCancelable>
 - (oneway void)clientRemote_deliverObject:(id)arg1;
 @end
 

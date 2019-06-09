@@ -8,20 +8,28 @@
 
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface TCPProgressProbe : NSObject
 {
     NSObject<OS_dispatch_queue> *lqueue;
     const char *interfaceName;
-    unsigned long long interfaceIndex;
     unsigned int state;
+    BOOL _localFlowTracking;
+    unsigned long long _interfaceIndex;
 }
 
++ (void)forceInvalidationFor:(id)arg1 periods:(unsigned long long)arg2;
 + (id)progressPrettyPrintUtility:(struct xtcpprogress_indicators *)arg1;
 + (id)probeForInterface:(id)arg1;
++ (void)initialize;
+@property(readonly, nonatomic) unsigned long long interfaceIndex; // @synthesize interfaceIndex=_interfaceIndex;
+@property(nonatomic) BOOL localFlowTracking; // @synthesize localFlowTracking=_localFlowTracking;
 - (void).cxx_destruct;
+- (BOOL)interfaceMappingIsCurrent;
 - (BOOL)fetchMetricsForFlowsAged:(double)arg1 metrics:(struct xtcpprogress_indicators *)arg2;
 - (BOOL)manage:(unsigned int)arg1 outValue:(unsigned int *)arg2;
 - (id)_initForInterface:(id)arg1;
+- (void)dealloc;
 - (id)description;
 
 @end

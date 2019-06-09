@@ -8,7 +8,7 @@
 
 #import <ViceroyTrace/VCAdaptiveLearningDelegate-Protocol.h>
 
-@class NSString;
+@class NSNumber, NSString;
 @protocol OS_dispatch_queue, VCAggregatorDelegate;
 
 __attribute__((visibility("hidden")))
@@ -16,16 +16,20 @@ __attribute__((visibility("hidden")))
 {
     int _interval;
     int _frequency;
-    _Bool _isDuplicationEnabled;
     NSString *_localInterfaceType;
     NSString *_connectionType;
     unsigned int _switchIntoDupCount;
+    unsigned int _direction;
+    NSNumber *_streamToken;
     NSObject<OS_dispatch_queue> *_stateQueue;
+    NSObject<OS_dispatch_queue> *_notificationQueue;
     id <VCAggregatorDelegate> _delegate;
+    CDUnknownBlockType _periodicAggregationOccuredHandler;
 }
 
+@property(readonly) unsigned int direction; // @synthesize direction=_direction;
+@property(readonly) NSNumber *streamToken; // @synthesize streamToken=_streamToken;
 - (_Bool)didUpdateStringFrom:(id *)arg1 toString:(id)arg2;
-- (_Bool)changeDuplication:(_Bool)arg1;
 - (int)previousISBRForSegment:(id)arg1;
 - (int)shortTermAverageBWEForSegment:(id)arg1;
 - (int)longTermAverageBWEForSegment:(id)arg1;
@@ -49,8 +53,10 @@ __attribute__((visibility("hidden")))
 - (id)aggregatedSegmentReport:(int)arg1;
 - (void)initAdaptiveLearningWithParameters:(id)arg1;
 - (void)flushCurrentSegment;
+- (unsigned int)RTPeriod;
 - (void)throwNotSupportedExceptionForMethod:(id)arg1;
 @property(readonly) id <VCAggregatorDelegate> delegate;
+- (void)setPeriodicAggregationOccuredHandler:(CDUnknownBlockType)arg1;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 

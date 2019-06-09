@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 - (void)_valueDidChange:(id)arg1;
 - (BOOL)shouldListenForValueChanges;
 - (id)focusedUIElement;
-- (unsigned long long)majorVersionNumberForiWorkApplicationVersion:(int)arg1;
+- (unsigned long long)majorVersionNumberForiWorkApplicationVersion:(long long)arg1;
 - (BOOL)isPagesApplication;
 
 @end

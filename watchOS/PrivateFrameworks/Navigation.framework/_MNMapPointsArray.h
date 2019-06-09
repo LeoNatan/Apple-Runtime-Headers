@@ -10,10 +10,10 @@ __attribute__((visibility("hidden")))
 @interface _MNMapPointsArray : NSObject
 {
     unsigned int _count;
-    CDStruct_2c43369c *_mapPoints;
+    CDStruct_c3b9c2ee *_mapPoints;
 }
 
-@property(readonly, nonatomic) CDStruct_2c43369c *mapPoints; // @synthesize mapPoints=_mapPoints;
+@property(readonly, nonatomic) CDStruct_c3b9c2ee *mapPoints; // @synthesize mapPoints=_mapPoints;
 @property(readonly, nonatomic) unsigned int count; // @synthesize count=_count;
 - (void)dealloc;
 - (id)initWithCapacity:(unsigned int)arg1;

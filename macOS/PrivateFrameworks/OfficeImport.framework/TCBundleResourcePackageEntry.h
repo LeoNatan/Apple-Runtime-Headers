@@ -8,6 +8,7 @@
 
 @class OISFUZipEntry;
 
+__attribute__((visibility("hidden")))
 @interface TCBundleResourcePackageEntry : NSObject
 {
     OISFUZipEntry *mZipEntry;

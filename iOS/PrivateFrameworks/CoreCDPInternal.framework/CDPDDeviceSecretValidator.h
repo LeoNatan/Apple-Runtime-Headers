@@ -41,7 +41,7 @@
 - (void)cancelApproveFromAnotherDevice;
 - (void)resetAccountCDPState;
 - (void)_performSingleiCSCRecoveryWithSecret:(id)arg1 type:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_handleMultiCSCRecoveryResults:(id)arg1 type:(unsigned long long)arg2 secret:(id)arg3 device:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_handleMultiCSCRecoveryResults:(id)arg1 clique:(id)arg2 type:(unsigned long long)arg3 secret:(id)arg4 device:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (_Bool)_isFailedSecret:(id)arg1 forDevice:(id)arg2;
 - (id)_failedSingleICSCs;
 - (id)_failedSecretsForDevice:(id)arg1;

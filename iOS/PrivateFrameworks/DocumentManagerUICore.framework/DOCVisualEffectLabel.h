@@ -4,26 +4,28 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UIView.h>
+#import <UIKit/UIVisualEffectView.h>
 
-@class UILabel, UIVisualEffect, UIVisualEffectView;
+@class NSString, UIColor, UIFont, UILabel;
 
-@interface DOCVisualEffectLabel : UIView
+@interface DOCVisualEffectLabel : UIVisualEffectView
 {
     UILabel *_label;
-    UIVisualEffectView *_visualEffectView;
 }
 
-@property(readonly, nonatomic) UIVisualEffectView *visualEffectView; // @synthesize visualEffectView=_visualEffectView;
-@property(readonly, nonatomic) UILabel *label; // @synthesize label=_label;
+@property(retain, nonatomic) UILabel *label; // @synthesize label=_label;
 - (void).cxx_destruct;
+@property(nonatomic) long long textAlignment;
+@property(nonatomic) long long numberOfLines;
+@property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @dynamic adjustsFontForContentSizeCategory;
+@property(nonatomic) long long lineBreakMode; // @dynamic lineBreakMode;
+@property(copy, nonatomic) UIFont *font; // @dynamic font;
+@property(copy, nonatomic) UIColor *textColor;
+@property(copy, nonatomic) NSString *text; // @dynamic text;
+- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1;
+- (struct CGSize)intrinsicContentSize;
 - (id)viewForLastBaselineLayout;
-@property(copy, nonatomic) UIVisualEffect *effect;
-- (void)DOCVisualEffectLabelSharedInitWithEffect:(id)arg1;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1 effect:(id)arg2;
 - (id)initWithEffect:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
 
 @end
 

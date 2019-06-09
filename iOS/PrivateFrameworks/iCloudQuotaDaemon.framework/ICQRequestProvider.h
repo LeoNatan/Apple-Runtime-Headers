@@ -13,6 +13,7 @@
     ACAccount *_account;
 }
 
++ (id)stringTimeOfLastBackup;
 + (void)addEntriesToPostDictionary:(id)arg1 forStub:(id)arg2;
 + (_Bool)attemptSetRequest:(id)arg1 toPostWithJSONDict:(id)arg2;
 - (void).cxx_destruct;

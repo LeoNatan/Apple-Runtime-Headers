@@ -56,7 +56,7 @@
 - (void)willBeginSplitTransition;
 - (struct CGSize)_defaultSize;
 - (float)_additionalClipHeight;
-- (int)_clipCornersOfView:(id)arg1;
+- (unsigned int)_clipCornersOfView:(id)arg1;
 - (void)_updateClipCorners;
 - (id)_toolbarBorderedBackground;
 - (id)_splitBorderedBackgroundWithCorners:(unsigned int)arg1;

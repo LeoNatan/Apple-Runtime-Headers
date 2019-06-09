@@ -18,7 +18,6 @@
 - (void)redoIt;
 - (void)undoIt;
 - (void)_swapName;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithGroup:(id)arg1 newName:(id)arg2 addressBook:(id)arg3;
 

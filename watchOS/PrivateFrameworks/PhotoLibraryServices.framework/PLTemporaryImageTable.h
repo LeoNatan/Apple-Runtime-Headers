@@ -6,26 +6,29 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSString, PLImageTable;
+@class NSMutableArray, NSString;
+@protocol PLThumbPersistenceManager;
 
 @interface PLTemporaryImageTable : NSObject
 {
-    PLImageTable *_imageTable;
+    id <PLThumbPersistenceManager> _imageTable;
     unsigned int _nextTableEntryIndex;
     NSMutableArray *_itemIndexToThumbEntryMapping;
     NSString *_imageTablePath;
-    int _imageFormat;
+    unsigned short _imageFormat;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)reset;
 - (void)_cleanup;
 - (void)removeItemAtIndex:(unsigned int)arg1;
 - (void)insertItemAtIndex:(unsigned int)arg1;
-- (id)imageForItemAtIndex:(unsigned int)arg1;
+- (struct NSObject *)imageForItemAtIndex:(unsigned int)arg1;
 - (unsigned int)_imageTableIndexForItemIndex:(unsigned int)arg1;
-- (void)setImage:(id)arg1 forItemAtIndex:(unsigned int)arg2;
-- (id)initWithWithPath:(id)arg1 imageFormat:(int)arg2;
+- (void)setImage:(struct NSObject *)arg1 forItemAtIndex:(unsigned int)arg2;
+- (id)initWithWithPath:(id)arg1 imageFormat:(unsigned short)arg2;
+- (void)_positional_setThumbnailsWithIdentifier:(id)arg1 thumbnailIndex:(unsigned int)arg2 image:(id)arg3 assetUUID:(id)arg4;
 
 @end
 

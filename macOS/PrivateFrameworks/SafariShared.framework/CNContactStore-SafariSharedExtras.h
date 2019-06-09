@@ -8,5 +8,6 @@
 
 @interface CNContactStore (SafariSharedExtras)
 + (id)safari_sharedContactStore;
+- (id)safari_contactForHandle:(id)arg1 error:(id *)arg2;
 @end
 

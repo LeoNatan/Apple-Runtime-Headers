@@ -54,7 +54,6 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithName:(id)arg1 tagNode:(const struct TFENode *)arg2 label:(short)arg3 isVisible:(const struct TriStateBool *)arg4;
 - (id)initWithName:(id)arg1;
-- (id)init;
 - (void)syncFromTag:(id)arg1;
 - (id)tagAttributes;
 

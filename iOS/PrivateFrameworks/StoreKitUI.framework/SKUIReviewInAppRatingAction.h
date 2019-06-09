@@ -6,6 +6,7 @@
 
 #import <UIKit/UIInterfaceAction.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIReviewInAppRatingAction : UIInterfaceAction
 {
     CDUnknownBlockType _beforeDismissHandler;

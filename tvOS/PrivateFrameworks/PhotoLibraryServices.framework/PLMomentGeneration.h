@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSSet, PLMomentAnalyzer;
-@protocol OS_dispatch_queue, PLMomentGenerationDataManagement;
+@class NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, PLFrequentLocationManager, PLLocalCreationDateCreator;
+@protocol OS_dispatch_queue, PLMomentGenerationDataManagement><PLHighlightItemModelReader;
 
 @interface PLMomentGeneration : NSObject
 {
@@ -15,27 +15,21 @@
     unsigned long long _inProgressCount;
     NSMutableOrderedSet *_pendingInsertsAndUpdates;
     NSMutableDictionary *_pendingDeletes;
+    NSMutableOrderedSet *_pendingUpdatesForHighlights;
+    NSMutableOrderedSet *_pendingMomentUpdatesForHighlights;
     NSMutableArray *_pendingCompletionBlocks;
     NSObject<OS_dispatch_queue> *_incrementalGenerationStateQueue;
-    PLMomentAnalyzer *_pairedAnalyzer;
-    PLMomentAnalyzer *_analyzer;
-    _Bool _isInStressTestMode;
-    NSSet *_clusteringDeletedClusters;
-    id <PLMomentGenerationDataManagement> _momentGenerationDataManager;
+    PLFrequentLocationManager *_frequentLocationManager;
+    PLLocalCreationDateCreator *_localCreationDateCreator;
+    id <PLMomentGenerationDataManagement><PLHighlightItemModelReader> _momentGenerationDataManager;
 }
 
-+ (id)_insertYearMomentListsForMoments:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 inMomentDataManager:(id)arg4;
-+ (id)_insertMegaMomentListsForMoments:(id)arg1 inMomentDataManager:(id)arg2;
-+ (void)_updateMoment:(id)arg1 fromCluster:(id)arg2 inManager:(id)arg3;
-+ (id)generateSplitCustomMomentUUID;
-+ (id)generateMergeCustomMomentUUID;
-+ (_Bool)_rebuildAllMomentListsWithDataManager:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) id <PLMomentGenerationDataManagement> momentGenerationDataManager; // @synthesize momentGenerationDataManager=_momentGenerationDataManager;
-@property(retain, nonatomic) NSSet *clusteringDeletedClusters; // @synthesize clusteringDeletedClusters=_clusteringDeletedClusters;
-- (void)clearUserInfluencedMoments;
++ (id)dateIntervalsAroundSortedDates:(id)arg1 minimumIntervalDuration:(double)arg2;
+@property(readonly, nonatomic) __weak id <PLMomentGenerationDataManagement><PLHighlightItemModelReader> momentGenerationDataManager; // @synthesize momentGenerationDataManager=_momentGenerationDataManager;
+- (void).cxx_destruct;
+- (void)validateLibraryWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)allMomentsMetadataWriteToFile:(id)arg1;
 - (id)_detailsForMoment:(id)arg1;
-- (id)_nameForMomentGenerationType:(short)arg1;
 - (id)allAssetMetadataWriteToFile:(id)arg1;
 - (id)_logEntryForAssets:(id)arg1 isBatchUpdate:(_Bool)arg2;
 - (void)_appendAssetsToReplayLog:(id)arg1 forBatchUpdate:(_Bool)arg2;
@@ -43,27 +37,21 @@
 - (id)_detailsForAsset:(id)arg1 simpleOnly:(_Bool)arg2;
 - (_Bool)_writeDetails:(id)arg1 toFilepath:(id)arg2 withDefaultFilename:(id)arg3;
 - (id)momentGenerationStatus;
-- (id)_insertYearMomentListsForMoments:(id)arg1 earliestDate:(id)arg2 latestDate:(id)arg3 inMomentDataManager:(id)arg4;
-- (id)_insertMegaMomentListsForMoments:(id)arg1 inMomentDataManager:(id)arg2;
-- (void)_cleanUpMoment:(id)arg1;
-- (id)_insertAndUpdateRemainingMomentsInManager:(id)arg1 withAffectedMoments:(id)arg2;
-- (id)_insertMomentsForMomentClusters:(id)arg1 inManager:(id)arg2;
-- (id)_momentClustersForAssets:(id)arg1 inManager:(id)arg2 updateDeletedClusters:(_Bool)arg3;
-- (void)rebuildAllMomentLists:(CDUnknownBlockType)arg1;
-- (void)_processMomentsWithAssets:(id)arg1 hiddenAssets:(id)arg2 inManager:(id)arg3 affectedMoments:(id)arg4 updatedMoments:(id *)arg5;
-- (_Bool)_rebuildAllMomentsInManager:(id)arg1 shouldAnalyze:(_Bool)arg2 error:(id *)arg3;
-- (_Bool)_deleteAllMomentDataInManager:(id)arg1 incremental:(_Bool)arg2 error:(id *)arg3;
+- (void)invalidateHighlightSubtitlesAndRegenerateHighlightTitlesWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)cleanupEmptyHighlightsWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)updateHighlightTitlesWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)processUnprocessedMomentLocationsWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)processRecentHighlightsWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)rebuildAllHighlightsWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)rebuildAllMomentsWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_runMomentAndHighlightGenerationForAssets:(id)arg1 hiddenAssets:(id)arg2 updatedAssetIDsForHighlights:(id)arg3 updatedMomentIDsForHighlights:(id)arg4 affectedMoments:(id)arg5 insertedOrUpdatedMoments:(id *)arg6;
 - (void)_runIncrementalGenerationPassWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)_refreshObjects:(id)arg1 withDataManager:(id)arg2;
 - (void)generateWithIncrementalDataCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)generateWithAssetInsertsAndUpdates:(id)arg1 assetDeletes:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)saveChangesForAssetInsertsAndUpdates:(id)arg1 assetDeletes:(id)arg2;
+- (void)generateWithAssetInsertsAndUpdates:(id)arg1 assetDeletes:(id)arg2 assetUpdatesForHighlights:(id)arg3 momentUpdatesForHighlights:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)saveChangesForAssetInsertsAndUpdates:(id)arg1 assetDeletes:(id)arg2 assetUpdatesForHighlights:(id)arg3 momentUpdatesForHighlights:(id)arg4;
 - (_Bool)_isAsset:(id)arg1 identicalToAssetForMoments:(id)arg2;
 - (id)_newPublicGlobalUUIDsToAssetsMappingWithAssets:(id)arg1;
 - (void)_updateIncrementalMomentGeneration;
-- (void)dealloc;
-@property(nonatomic) PLMomentAnalyzer *analyzer;
 - (id)initWithMomentGenerationDataManager:(id)arg1;
 - (_Bool)rebuildAllMomentsWithManager:(id)arg1 error:(id *)arg2;
 

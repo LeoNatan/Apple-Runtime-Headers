@@ -37,7 +37,7 @@
 - (void)menuDidClose:(id)arg1;
 - (void)menuWillOpen:(id)arg1;
 - (void)menuNeedsUpdate:(id)arg1;
-- (void)idStatusUpdatedForDestinations:(id)arg1;
+- (void)batchQueryController:(id)arg1 updatedDestinationsStatus:(id)arg2 onService:(id)arg3 error:(id)arg4;
 - (id)_alternativeHandlesIncludingABCombinations:(BOOL)arg1;
 - (id)_actionItemsForHandle:(id)arg1 errorCode:(unsigned long long)arg2;
 - (void)_loginToIMessage:(id)arg1;

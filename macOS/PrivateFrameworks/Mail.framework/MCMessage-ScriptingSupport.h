@@ -6,11 +6,12 @@
 
 #import <MailCore/MCMessage.h>
 
+#import <Mail/MCActivityTarget-Protocol.h>
 #import <Mail/MFScriptingMessage-Protocol.h>
 
-@class NSArray, NSScriptObjectSpecifier, NSString;
+@class MFMailAccount, MFMailbox, NSArray, NSIndexSet, NSScriptObjectSpecifier, NSString;
 
-@interface MCMessage (ScriptingSupport) <MFScriptingMessage>
+@interface MCMessage (ScriptingSupport) <MFScriptingMessage, MCActivityTarget>
 - (id)valueInAppleScriptAttachmentsWithUniqueID:(id)arg1;
 - (id)appleScriptAttachments;
 - (id)appleScriptHeaders;
@@ -50,10 +51,23 @@
 @property(readonly, copy, nonatomic) NSArray *bccRecipients;
 @property(readonly, copy, nonatomic) NSArray *ccRecipients;
 @property(readonly, copy, nonatomic) NSArray *toRecipients;
+@property(readonly, copy) NSString *backupID;
+@property(readonly, nonatomic) long long libraryID;
+@property(readonly, nonatomic) MFMailAccount *mailAccount;
+@property(readonly, nonatomic) MFMailbox *mailMailbox;
+@property(readonly, nonatomic) NSIndexSet *appliedFlagColors;
+@property(readonly, nonatomic) int conversationPosition;
+@property(readonly, nonatomic) long long conversationID;
+- (void)setPermissionRequestState:(long long)arg1;
+@property(readonly, nonatomic) BOOL isChildRequestMessage;
+- (BOOL)isChildRequestMessage:(id)arg1 requestIsForSenders:(char *)arg2 childAddress:(id *)arg3 permissionRequestState:(long long *)arg4;
+- (BOOL)isParentResponseMessage:(char *)arg1 isRejected:(char *)arg2 requestedAddresses:(id)arg3 requestIsForSenders:(char *)arg4;
 
 // Remaining properties
+@property(readonly, nonatomic) unsigned long long conversationFlags;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSString *displayName;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 @end

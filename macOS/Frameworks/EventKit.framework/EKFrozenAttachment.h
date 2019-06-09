@@ -14,6 +14,7 @@
 {
     NSString *attachmentIDOnServer;
     NSString *contentType;
+    NSString *contentTypeFromServer;
     NSString *filenameSuggestedByServer;
     NSNumber *isAutoArchivedNumber;
     NSURL *urlOnDisk;
@@ -27,6 +28,7 @@
 @property(readonly, retain) NSURL *urlOnDisk; // @synthesize urlOnDisk;
 @property(readonly, retain) NSNumber *isAutoArchivedNumber; // @synthesize isAutoArchivedNumber;
 @property(readonly, retain) NSString *filenameSuggestedByServer; // @synthesize filenameSuggestedByServer;
+@property(readonly, retain) NSString *contentTypeFromServer; // @synthesize contentTypeFromServer;
 @property(readonly, retain) NSString *contentType; // @synthesize contentType;
 @property(readonly, retain) NSString *attachmentIDOnServer; // @synthesize attachmentIDOnServer;
 - (void).cxx_destruct;

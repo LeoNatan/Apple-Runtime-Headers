@@ -9,7 +9,7 @@
 #import <EventKit/EKJunkInvitationProtocol_Private-Protocol.h>
 #import <EventKit/EKMutableEventOccurrenceProtocol-Protocol.h>
 
-@class EKEventStore, EKParticipant, EKStructuredLocation, EKSuggestedEventInfo, NSArray, NSData, NSDate, NSDictionary, NSManagedObjectID, NSNumber, NSString, NSTimeZone, NSURL;
+@class EKCalendarDate, EKEventStore, EKParticipant, EKStructuredLocation, EKSuggestedEventInfo, NSArray, NSData, NSDate, NSDictionary, NSManagedObjectID, NSNumber, NSString, NSTimeZone, NSURL;
 @protocol CalendarModelProtocol, EKProtocolParticipant, EKProtocolStructuredLocation;
 
 @interface EKEvent : EKCalendarItem <EKMutableEventOccurrenceProtocol, EKJunkInvitationProtocol_Private>
@@ -17,10 +17,8 @@
     BOOL isYearlessBirthday;
     BOOL isYearlessLeapMonthBirthday;
     BOOL _isPhantom;
-    NSString *lunarCalendarString;
     unsigned long long participantsStatus;
     NSString *sliceParentID;
-    NSString *birthdayTitle;
     NSString *nameForBirthday;
     long long _birthdayPersonID;
     NSDate *_sliceDate;
@@ -57,22 +55,17 @@
 + (unsigned long long)hashForObject:(id)arg1;
 + (Class)frozenClass;
 + (id)eventWithEventStore:(id)arg1;
-+ (id)actionStringsPluralDisplayName;
-+ (id)actionStringsDisplayName;
 + (id)_locationStringForLocations:(id)arg1;
-@property(nonatomic) BOOL isPhantom; // @synthesize isPhantom=_isPhantom;
 @property(retain) NSString *futureLocalUidForSliceChild; // @synthesize futureLocalUidForSliceChild=_futureLocalUidForSliceChild;
+@property(nonatomic) BOOL isPhantom; // @synthesize isPhantom=_isPhantom;
 @property(retain, nonatomic) NSDate *sliceDate; // @synthesize sliceDate=_sliceDate;
 @property(readonly, nonatomic) long long birthdayPersonID; // @synthesize birthdayPersonID=_birthdayPersonID;
 @property(readonly, nonatomic) BOOL isYearlessLeapMonthBirthday; // @synthesize isYearlessLeapMonthBirthday;
 @property(readonly, nonatomic) BOOL isYearlessBirthday; // @synthesize isYearlessBirthday;
 @property(readonly, nonatomic) NSString *nameForBirthday; // @synthesize nameForBirthday;
-- (void)setBirthdayTitle:(id)arg1;
-@property(readonly, copy, nonatomic) NSString *birthdayTitle;
 - (void)setSliceParentID:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *sliceParentID;
 @property(readonly, nonatomic) unsigned long long participantsStatus; // @synthesize participantsStatus;
-@property(readonly, nonatomic) NSString *lunarCalendarString; // @synthesize lunarCalendarString;
 - (void).cxx_destruct;
 - (void)willSave;
 - (BOOL)_reset;
@@ -107,6 +100,9 @@
 - (BOOL)_requirementsToMoveOrCopyToCalendarHelperAllowedToMoveOrCopyEventFromCalendar:(id)arg1 toCalendar:(id)arg2;
 - (BOOL)_canMoveOrCopyFromCalendar:(id)arg1 toCalendar:(id)arg2 allowedRequirements:(long long)arg3 error:(id *)arg4;
 - (BOOL)_allowsAnyModificationsByAttendeesAndBeStrict:(BOOL)arg1;
+- (void)_respondToProposedTimeFromAttendee:(id)arg1 shouldAccept:(BOOL)arg2 shouldCommit:(BOOL)arg3;
+- (void)declineProposedTimeNotificationFromAttendee:(id)arg1 shouldCommit:(BOOL)arg2;
+- (void)acceptProposedTimeNotificationFromAttendee:(id)arg1 shouldCommit:(BOOL)arg2;
 - (BOOL)shouldBeIncluded:(long long)arg1;
 - (BOOL)shouldBeIncludedIfIntersectsRange:(id)arg1 exclusionOptions:(long long)arg2;
 - (id)occurrenceForDate:(id)arg1;
@@ -241,9 +237,12 @@
 - (id)responseCommentForDisplay;
 @property(readonly, copy, nonatomic) NSString *responseComment;
 - (id)externalURI;
+- (id)calendarItemExternalIdentifier;
+- (id)calendarItemIdentifier;
 @property(readonly, nonatomic) NSString *eventIdentifier;
 - (BOOL)isBirthday;
 @property(readonly, nonatomic) NSString *birthdayPersonUniqueID;
+- (void)setBirthdayContact:(id)arg1;
 @property(readonly, nonatomic) NSString *birthdayContactIdentifier;
 - (long long)compareStartDateWithEvent:(id)arg1;
 - (BOOL)isEvent;
@@ -251,6 +250,7 @@
 @property(nonatomic, getter=isAllDay) BOOL allDay; // @dynamic allDay;
 - (id)defaultAlarms;
 @property(copy, nonatomic) NSDate *endDate;
+- (void)_setStartDate:(id)arg1 andClearProposedTimes:(BOOL)arg2;
 @property(copy, nonatomic) NSDate *startDate; // @dynamic startDate;
 - (id)_updatedEndDateForNewTimeZone:(id)arg1;
 - (void)_updateEndTimeZoneForNewTimeZone:(id)arg1;
@@ -319,6 +319,7 @@
 - (void)setDontSendNotificationForChanges:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL dontSendNotificationForChanges;
 @property(copy, nonatomic) NSString *title;
+- (id)rawTitle;
 @property(nonatomic) double travelTime;
 @property(copy, nonatomic) NSTimeZone *endTimeZone;
 - (void)setNeedsGeocoding:(BOOL)arg1;
@@ -335,6 +336,8 @@
 @property(readonly, nonatomic) EKStructuredLocation *preferredLocationWithoutPrediction;
 @property(readonly, nonatomic) NSString *locationWithoutPrediction;
 - (BOOL)_startDateIsOnSameDayAsOtherEventInSeries;
+- (void)setLunarCalendarString:(id)arg1;
+@property(readonly, copy, nonatomic) NSString *lunarCalendarString;
 - (void)setConferenceURL:(id)arg1;
 @property(readonly, nonatomic) NSURL *conferenceURL;
 - (void)setPrivacyLevelString:(id)arg1;
@@ -349,9 +352,32 @@
 @property(readonly, nonatomic, getter=isPrivacySetInDelegateOrSharedToMeCalendar) BOOL privacySetInDelegateOrSharedToMeCalendar;
 @property(readonly, nonatomic, getter=isPrivacySet) BOOL privacySet;
 - (unsigned long long)entityType;
-- (id)actionStringsDisplayTitle;
-- (BOOL)removeWithSpan:(long long)arg1 error:(id *)arg2;
-- (BOOL)saveWithSpan:(long long)arg1 error:(id *)arg2;
+- (BOOL)conformsToRecurrenceRules:(id)arg1;
+- (BOOL)_isSimpleRepeatingEvent;
+- (BOOL)allowsSpansOtherThanThisEvent;
+- (id)startDateForRecurrence;
+@property(readonly, nonatomic) BOOL canBeRespondedTo;
+@property(readonly, nonatomic) BOOL isAllDayDirty;
+@property(readonly, nonatomic) long long travelRoutingMode;
+- (BOOL)supportsAddingAttachments;
+- (BOOL)serverSupportedProposeNewTime;
+- (void)overrideStartDate:(id)arg1;
+- (BOOL)isProposedTimeEvent;
+@property(readonly, nonatomic) BOOL isStatusDirty;
+- (id)_effectiveTimeZone;
+@property(readonly, nonatomic) EKCalendarDate *endCalendarDate;
+@property(readonly, nonatomic) EKCalendarDate *startCalendarDate;
+@property(readonly, nonatomic) double durationIncludingTravel;
+@property(readonly, nonatomic) BOOL allowsPrivacyLevelModifications;
+@property(readonly, nonatomic) EKCalendarDate *startCalendarDateIncludingTravelTime;
+- (long long)compareStartDateIncludingTravelWithEvent:(id)arg1;
+@property(readonly, nonatomic) BOOL canDetachSingleOccurrence;
+@property(readonly, nonatomic) NSURL *externalURL;
+- (BOOL)validateRecurrenceRule:(id)arg1 error:(id *)arg2;
+- (BOOL)hasAttendeeProposedTimes;
+- (BOOL)changingAllDayPropertyIsAllowed;
+@property(readonly, nonatomic) BOOL responseMustApplyToAll;
+@property(nonatomic) unsigned long long invitationStatus;
 - (BOOL)_canWriteConferenceURL;
 - (void)_updateConferenceURL;
 - (BOOL)_hasChangesForConferenceURLDetection;

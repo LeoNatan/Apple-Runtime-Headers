@@ -9,6 +9,6 @@
 @class HKQueryServerConfiguration, NSString, NSUUID;
 
 @protocol HDQueryControlServerInterface <NSObject>
-- (void)remote_createQueryServerForIdentifier:(NSString *)arg1 queryUUID:(NSUUID *)arg2 configuration:(HKQueryServerConfiguration *)arg3 completion:(void (^)(NSXPCListenerEndpoint *, NSError *))arg4;
+- (void)remote_createQueryServerEndpointForIdentifier:(NSString *)arg1 queryUUID:(NSUUID *)arg2 configuration:(HKQueryServerConfiguration *)arg3 completion:(void (^)(NSXPCListenerEndpoint *, NSError *))arg4;
 @end
 

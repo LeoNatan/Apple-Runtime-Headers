@@ -19,7 +19,9 @@
 - (void).cxx_destruct;
 - (void)_handleUserIdentityStoreDidChangeNotification:(id)arg1;
 - (_Bool)_privacyAcknowledgementRequiredForIdentifier:(id)arg1;
+- (_Bool)privacyAcknowledgementRequiredForSystemApplicationType:(int)arg1;
 @property(readonly, nonatomic) _Bool privacyAcknowledgementRequiredForApplications;
+@property(readonly, nonatomic) _Bool privacyAcknowledgementRequiredForPodcasts;
 @property(readonly, nonatomic) _Bool privacyAcknowledgementRequiredForBooks;
 @property(readonly, nonatomic) _Bool privacyAcknowledgementRequiredForVideos;
 @property(readonly, nonatomic) _Bool privacyAcknowledgementRequiredForMusic;

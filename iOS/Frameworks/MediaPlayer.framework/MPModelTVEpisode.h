@@ -12,6 +12,7 @@
 {
 }
 
++ (id)__downloadedDate_KEY;
 + (id)__artworkCatalogBlock_KEY;
 + (id)__keepLocalManagedStatus_KEY;
 + (id)__keepLocalEnableState_KEY;
@@ -57,6 +58,7 @@
 // Remaining properties
 @property(copy, nonatomic) CDUnknownBlockType artworkCatalogBlock; // @dynamic artworkCatalogBlock;
 @property(copy, nonatomic) NSString *descriptionText; // @dynamic descriptionText;
+@property(readonly, copy, nonatomic) NSDate *downloadedDate; // @dynamic downloadedDate;
 @property(nonatomic) double duration; // @dynamic duration;
 @property(nonatomic) long long episodeNumber; // @dynamic episodeNumber;
 @property(nonatomic) long long episodeType; // @dynamic episodeType;

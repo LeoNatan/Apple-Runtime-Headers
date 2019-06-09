@@ -19,20 +19,20 @@ __attribute__((visibility("hidden")))
     BKFaceDetectOperation *_pendingPresenceOperation;
     BKFaceDetectOperation *_finishingPresenceOperation;
     NSObject<OS_dispatch_source> *_operationStalledTimer;
-    _Bool _operationStalledTimerResumed;
     unsigned long long _operationCreateTime;
     unsigned long long _currentDeadline;
     unsigned long long _lastErrorTime;
     int _displayNotifyToken;
     _Bool _displayState;
     _Bool _smartCoverClosed;
+    NSObject<OS_dispatch_source> *_pearlAttentionSamplerErrorTimer;
 }
 
 - (void).cxx_destruct;
 - (id)unitTestSampler;
-- (void)device:(id)arg1 pearlStateChanged:(long long)arg2;
 - (void)operation:(id)arg1 presenceStateChanged:(_Bool)arg2;
 - (void)operation:(id)arg1 stateChanged:(long long)arg2;
+- (void)device:(id)arg1 pearlStateChanged:(long long)arg2;
 - (void)device:(id)arg1 pearlEventOccurred:(long long)arg2;
 - (void)operation:(id)arg1 finishedWithReason:(long long)arg2;
 - (void)operation:(id)arg1 faceDetectStateChanged:(id)arg2;
@@ -42,12 +42,18 @@ __attribute__((visibility("hidden")))
 - (void)setDisplayState:(_Bool)arg1;
 - (void)setDisplayStateFromNotification;
 - (void)updateSuppressedMaskWithDisplayState:(_Bool)arg1 smartCoverClosed:(_Bool)arg2;
-- (void)updateFaceState:(_Bool)arg1;
 - (void)cancelStalledTimer;
+- (void)startStalledTimerForOperation:(id)arg1;
+- (void)cancelPearlAttentionSamplerErrorTimer;
+- (void)startPearlAttentionSamplerErrorTimer;
+- (void)setCurrentState:(int)arg1;
+- (void)pearlAttentionSamplerErrorOccurred:(_Bool)arg1;
+- (void)updateFaceState:(int)arg1 withFaceMetadata:(struct AWFaceDetectMetadata *)arg2;
+- (void)updateFaceState:(int)arg1;
 - (void)shouldSample:(_Bool)arg1 withDeadline:(unsigned long long)arg2;
 - (void)cancelFaceDetect:(id)arg1;
 - (void)finishingFaceDetect:(id)arg1;
-- (void)faceDetectStalled;
+- (void)faceDetectStalled:(id)arg1;
 - (void)triggerFaceDetectWithDeadline:(unsigned long long)arg1;
 - (id)init;
 - (id)initForUnitTest:(_Bool)arg1;

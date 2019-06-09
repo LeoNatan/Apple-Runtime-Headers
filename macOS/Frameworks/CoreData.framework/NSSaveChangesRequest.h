@@ -6,7 +6,7 @@
 
 #import <CoreData/NSPersistentStoreRequest.h>
 
-@class NSSet;
+@class NSNotification, NSSet;
 
 @interface NSSaveChangesRequest : NSPersistentStoreRequest
 {
@@ -15,7 +15,7 @@
     NSSet *_deletedObjects;
     NSSet *_optimisticallyLockedObjects;
     unsigned long long _flags;
-    void *_reserved1;
+    NSNotification *_mutatedObjectIDsNotification;
 }
 
 + (void)initialize;
@@ -28,6 +28,8 @@
 - (id)init;
 - (void)dealloc;
 - (id)initWithInsertedObjects:(id)arg1 updatedObjects:(id)arg2 deletedObjects:(id)arg3 lockedObjects:(id)arg4;
+- (id)_changedObjectIDsNotification;
+- (void)_setChangedObjectIDsNotification:(id)arg1;
 - (BOOL)_secureOperation;
 - (void)_setSecureOperation:(BOOL)arg1;
 - (void)_setRetryHandlerCount:(BOOL)arg1;

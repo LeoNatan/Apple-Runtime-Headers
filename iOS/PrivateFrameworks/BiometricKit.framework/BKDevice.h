@@ -45,6 +45,7 @@
 - (id)createEnrollOperationWithError:(id *)arg1;
 - (id)createMatchOperationWithError:(id *)arg1;
 - (id)identitiesDatabaseHashForUser:(unsigned int)arg1 error:(id *)arg2;
+- (_Bool)extendedBioLockoutState:(long long *)arg1 forUser:(unsigned int)arg2 error:(id *)arg3;
 - (_Bool)bioLockoutState:(long long *)arg1 forUser:(unsigned int)arg2 error:(id *)arg3;
 - (id)identitiesWithError:(id *)arg1;
 

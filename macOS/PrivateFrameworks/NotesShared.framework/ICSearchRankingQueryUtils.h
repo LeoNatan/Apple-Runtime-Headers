@@ -13,6 +13,10 @@
 + (id)rankingQueryForDescriptor:(id)arg1 searchString:(id)arg2;
 + (id)rankingQueriesForSearchString:(id)arg1 withRankingQueryDefinition:(id)arg2;
 + (long long)bitOfRankingQueryDescriptor:(id)arg1 inRankingQueryBitDictionary:(id)arg2;
++ (id)spotlightMixedRankingQueryBitDictionary;
++ (id)spotlightMixedRankingQueryDefinition;
++ (id)spotlightSubstringRankingQueryBitDictionary;
++ (id)spotlightSubstringRankingQueryDefinition;
 + (id)spotlightPrefixRankingQueryBitDictionary;
 + (id)spotlightPrefixRankingQueryDefinition;
 

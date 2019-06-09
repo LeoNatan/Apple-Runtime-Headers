@@ -12,6 +12,7 @@
 
 @interface AIDAServiceOwnersManager : NSObject <AIDAServiceOwnerProtocol>
 {
+    struct os_unfair_lock_s _serviceOwnersLock;
     ACAccountStore *_accountStore;
     NSDictionary *_serviceOwners;
 }
@@ -26,6 +27,7 @@
 - (id)DSIDForAccount:(id)arg1 service:(id)arg2;
 - (id)altDSIDForAccount:(id)arg1 service:(id)arg2;
 - (id)accountForService:(id)arg1;
+- (id)_buildServiceOwnerMapping;
 - (id)initWithAccountStore:(id)arg1;
 - (id)init;
 

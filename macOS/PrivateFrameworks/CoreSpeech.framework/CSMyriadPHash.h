@@ -6,13 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreSpeech/CSSelfTriggerDetectorDelegate-Protocol.h>
 #import <CoreSpeech/CSVoiceTriggerDelegate-Protocol.h>
 
 @class NSString;
-@protocol CSMyriadPHashDelegate;
 
-@interface CSMyriadPHash : NSObject <CSVoiceTriggerDelegate, CSSelfTriggerDetectorDelegate>
+@interface CSMyriadPHash : NSObject <CSVoiceTriggerDelegate>
 {
     float *_hammingWindow;
     struct OpaqueFFTSetup *_setup;
@@ -20,30 +18,27 @@
     struct OpaqueFFTSetup *_snrSetup;
     unsigned char _signalFractional;
     short _signalEstimate;
-    id <CSMyriadPHashDelegate> _delegate;
 }
 
 + (id)lastHash;
++ (void)notifyAudioHashlessNotification;
 + (void)notifyAudioHashNotification;
 + (BOOL)writeHashResultIntoFile:(id)arg1;
 + (BOOL)writeHashlessResult:(unsigned long long)arg1;
 + (id)createHashResult:(unsigned short)arg1 goodness:(unsigned char)arg2 confidence:(unsigned char)arg3 absTime:(unsigned long long)arg4 frac:(unsigned char)arg5;
 + (void)notifyHashlessTrigger:(unsigned long long)arg1;
 + (id)currentMyriadPHash;
-@property(nonatomic) __weak id <CSMyriadPHashDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) unsigned char signalFractional; // @synthesize signalFractional=_signalFractional;
 @property(nonatomic) short signalEstimate; // @synthesize signalEstimate=_signalEstimate;
-- (void).cxx_destruct;
-- (void)selfTriggerDetector:(id)arg1 didDetectSelfTrigger:(id)arg2;
 - (void)voiceTriggerDidDetectSpeakerReject:(id)arg1;
 - (void)voiceTriggerDidDetectNearMiss:(id)arg1;
 - (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
 - (id)_audioLogDirectory;
-- (id)_generateMyriadInfo:(unsigned long long)arg1 score:(float)arg2 triggerSource:(id)arg3 channel:(unsigned long long)arg4 absoluteTime:(unsigned long long)arg5;
+- (id)_generateMyriadInfo:(unsigned long long)arg1 score:(float)arg2 triggerSource:(id)arg3 channel:(unsigned long long)arg4 audioProviderUUID:(id)arg5 absoluteTime:(unsigned long long)arg6;
 - (id)cachedHash;
 - (unsigned short)pHash:(float *)arg1 length:(int)arg2;
 - (void)dealloc;
-- (id)initWithAudioBuffer:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

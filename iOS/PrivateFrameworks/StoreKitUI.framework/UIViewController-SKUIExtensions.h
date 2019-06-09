@@ -6,7 +6,19 @@
 
 #import <UIKit/UIViewController.h>
 
+@class SKUIScrollingSegmentedController, SKUIScrollingTabBarController, SKUIStackedBar, _UIBackdropView;
+
 @interface UIViewController (SKUIExtensions)
 - (id)_SKUIView;
+- (void)unregisterForPreviewing:(id)arg1;
+- (id)registerForPreviewingFromSourceView:(id)arg1 handler:(CDUnknownBlockType)arg2;
+@property(nonatomic) double SKUIStackedBarSplit;
+@property(readonly, nonatomic) SKUIStackedBar *SKUIStackedBar;
+- (void)setNeedsNestedPagingScrollViewUpdate;
+@property(readonly, nonatomic) SKUIScrollingTabBarController *scrollingTabBarController;
+- (void)setNeedsScrollingSegmentContentScrollViewUpdate;
+@property(readonly, nonatomic) SKUIScrollingSegmentedController *scrollingSegmentedController;
+@property(readonly, nonatomic) _UIBackdropView *SKUIPinnedHeaderView;
+- (void)setNeedsNavigationBarAppearanceUpdate;
 @end
 

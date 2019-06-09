@@ -6,19 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSUUID;
+@class NSUUID;
 
+__attribute__((visibility("hidden")))
 @interface NWUUIDMapper : NSObject
 {
-    NSDate *_lastAccessDate;
+    double _lastAccessDate;
     NSUUID *_externalUUID;
     unsigned long long _usageFlags;
 }
 
 @property(nonatomic) unsigned long long usageFlags; // @synthesize usageFlags=_usageFlags;
 @property(retain, nonatomic) NSUUID *externalUUID; // @synthesize externalUUID=_externalUUID;
-@property(retain, nonatomic) NSDate *lastAccessDate; // @synthesize lastAccessDate=_lastAccessDate;
+@property(nonatomic) double lastAccessDate; // @synthesize lastAccessDate=_lastAccessDate;
 - (void).cxx_destruct;
+- (void)ensureReportDestinationsConfigured;
+- (void)inheritReportDestinations:(id)arg1;
+@property(readonly, nonatomic) BOOL reportDestinationsConfigured;
 - (id)description;
 
 @end

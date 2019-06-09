@@ -20,11 +20,14 @@
     int _conditionalOperator;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(nonatomic) int conditionalOperator; // @synthesize conditionalOperator=_conditionalOperator;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned int hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (int)StringAsConditionalOperator:(id)arg1;

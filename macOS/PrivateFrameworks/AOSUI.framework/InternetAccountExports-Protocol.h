@@ -14,6 +14,14 @@
 @property(readonly, nonatomic) NSDictionary *account;
 @property(readonly, nonatomic) NSDictionary *environment;
 @property(readonly, nonatomic) unsigned long long protocolVersion;
+- (void)getIcon:(NSString *)arg1 bundleIconName:(NSString *)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 callback:(JSValue *)arg5;
+- (void)selectFile:(NSString *)arg1 inFolder:(NSString *)arg2;
+- (void)openPrefPane:(NSString *)arg1 userInfo:(NSDictionary *)arg2;
+- (void)updateName:(NSString *)arg1 lastName:(NSString *)arg2 middleName:(NSString *)arg3 firstNamePronounce:(NSString *)arg4 lastNamePronounce:(NSString *)arg5;
+- (void)refreshDeviceListAndSelectOverview;
+- (void)setDataclassState:(BOOL)arg1 dataclass:(NSString *)arg2;
+- (void)getDataclassState:(NSString *)arg1 callback:(JSValue *)arg2;
+- (void)openApplicationWithBundleID:(NSString *)arg1;
 - (void)setAuthKitDataValue:(NSString *)arg1 forKey:(NSString *)arg2;
 - (void)setRecoveryKeyState:(BOOL)arg1 callback:(JSValue *)arg2;
 - (void)openAccountDetailsToSection:(NSString *)arg1;
@@ -66,6 +74,13 @@
 - (void)log:(NSString *)arg1 message:(NSString *)arg2;
 
 @optional
+- (void)getIcon:(NSString *)arg1 bundleIconName:(NSString *)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 callback:(JSValue *)arg5 __JS_EXPORT_AS__getIcon:(id)arg6;
+- (void)selectFile:(NSString *)arg1 inFolder:(NSString *)arg2 __JS_EXPORT_AS__selectFile:(id)arg3;
+- (void)openPrefPane:(NSString *)arg1 userInfo:(NSDictionary *)arg2 __JS_EXPORT_AS__openPrefPane:(id)arg3;
+- (void)updateName:(NSString *)arg1 lastName:(NSString *)arg2 middleName:(NSString *)arg3 firstNamePronounce:(NSString *)arg4 lastNamePronounce:(NSString *)arg5 __JS_EXPORT_AS__updateName:(id)arg6;
+- (void)setDataclassState:(BOOL)arg1 dataclass:(NSString *)arg2 __JS_EXPORT_AS__setDataclassState:(id)arg3;
+- (void)getDataclassState:(NSString *)arg1 callback:(JSValue *)arg2 __JS_EXPORT_AS__getDataclassState:(id)arg3;
+- (void)openApplicationWithBundleID:(NSString *)arg1 __JS_EXPORT_AS__openApplicationWithBundleID:(id)arg2;
 - (void)setAuthKitDataValue:(NSString *)arg1 forKey:(NSString *)arg2 __JS_EXPORT_AS__setAuthKitDataValue:(id)arg3;
 - (void)openAccountDetailsToSection:(NSString *)arg1 __JS_EXPORT_AS__openAccountDetailsToSection:(id)arg2;
 - (void)openPurchaseStorageWithQueryParams:(JSValue *)arg1 __JS_EXPORT_AS__openPurchaseStorageWithQueryParams:(id)arg2;

@@ -6,7 +6,10 @@
 
 #import <Message/NSObject-Protocol.h>
 
+@class EFSQLRow;
+
 @protocol MFMessageIterationFilter <NSObject>
+- (_Bool)filterMessageWithRow:(EFSQLRow *)arg1;
 - (_Bool)filterMessageWithStatement:(struct sqlite3_stmt *)arg1;
 @end
 

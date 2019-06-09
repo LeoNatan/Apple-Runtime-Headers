@@ -10,15 +10,18 @@
 
 @protocol WiFiShimDelegate;
 
+__attribute__((visibility("hidden")))
 @interface WiFiShim : NSObject <CWEventDelegate>
 {
     BOOL _registeredForCallbacks;
     BOOL _awdlLinkUp;
+    BOOL _monitorBradycardia;
     id <WiFiShimDelegate> _delegate;
 }
 
 + (id)sharedInstance;
 @property(retain, nonatomic) id <WiFiShimDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) BOOL monitorBradycardia; // @synthesize monitorBradycardia=_monitorBradycardia;
 @property(readonly) BOOL awdlLinkUp; // @synthesize awdlLinkUp=_awdlLinkUp;
 - (void).cxx_destruct;
 - (id)getAWDLPeerList;
@@ -26,6 +29,7 @@
 - (void)linkQualityDidChangeForWiFiInterfaceWithName:(id)arg1 rssi:(long long)arg2 transmitRate:(double)arg3;
 - (void)unregisterForCallbacks;
 - (void)registerForCallbacks;
+- (BOOL)toggleLQMIntervalOn:(id)arg1 toFast:(BOOL)arg2;
 - (long long)phyModeForInterfaceWithName:(id)arg1;
 - (BOOL)isHotSpotOnInterfaceWithName:(id)arg1;
 - (id)bssidForInterfaceWithName:(id)arg1;

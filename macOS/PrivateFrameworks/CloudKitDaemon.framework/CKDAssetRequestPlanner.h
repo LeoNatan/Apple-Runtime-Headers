@@ -16,12 +16,14 @@
     NSArray *_assetTokenRequests;
     NSMutableDictionary *_rerefAssetBatchesByZoneID;
     NSMutableDictionary *_assetBatchesByZoneID;
+    unsigned long long _mmcsEncryptionSupport;
     NSMutableOrderedSet *_items;
     NSMutableDictionary *_assetZoneByKey;
 }
 
 @property(retain, nonatomic) NSMutableDictionary *assetZoneByKey; // @synthesize assetZoneByKey=_assetZoneByKey;
 @property(retain, nonatomic) NSMutableOrderedSet *items; // @synthesize items=_items;
+@property(nonatomic) unsigned long long mmcsEncryptionSupport; // @synthesize mmcsEncryptionSupport=_mmcsEncryptionSupport;
 @property(retain, nonatomic) NSMutableDictionary *assetBatchesByZoneID; // @synthesize assetBatchesByZoneID=_assetBatchesByZoneID;
 @property(retain, nonatomic) NSMutableDictionary *rerefAssetBatchesByZoneID; // @synthesize rerefAssetBatchesByZoneID=_rerefAssetBatchesByZoneID;
 @property(retain, nonatomic) NSArray *assetTokenRequests; // @synthesize assetTokenRequests=_assetTokenRequests;
@@ -41,7 +43,7 @@
 - (void)addMMCSSectionItem:(id)arg1;
 - (void)addRereferencedMMCSItem:(id)arg1;
 - (void)addMMCSItem:(id)arg1;
-- (id)init;
+- (id)initWithMMCSEncryptionSupport:(unsigned long long)arg1;
 
 @end
 

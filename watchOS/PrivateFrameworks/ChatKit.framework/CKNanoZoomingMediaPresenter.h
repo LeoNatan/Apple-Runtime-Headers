@@ -8,6 +8,7 @@
 
 @class UIScrollView, UITapGestureRecognizer;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoZoomingMediaPresenter : CKNanoMediaPresenter
 {
     struct CGRect _aspectFitContentFrame;

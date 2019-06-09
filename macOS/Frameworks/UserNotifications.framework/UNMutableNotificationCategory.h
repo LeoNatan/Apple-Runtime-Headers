@@ -6,7 +6,7 @@
 
 #import <UserNotifications/UNNotificationCategory.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, UNNotificationAction;
 
 @interface UNMutableNotificationCategory : UNNotificationCategory
 {
@@ -15,9 +15,11 @@
 @property unsigned long long listPriority; // @dynamic listPriority;
 @property unsigned long long backgroundStyle; // @dynamic backgroundStyle;
 @property unsigned long long options; // @dynamic options;
+@property(copy) NSString *actionsMenuTitle; // @dynamic actionsMenuTitle;
 @property(copy) NSString *categorySummaryFormat; // @dynamic categorySummaryFormat;
 @property(copy) NSString *hiddenPreviewsBodyPlaceholder; // @dynamic hiddenPreviewsBodyPlaceholder;
 @property(copy) NSArray *intentIdentifiers; // @dynamic intentIdentifiers;
+@property(copy) UNNotificationAction *alternateAction; // @dynamic alternateAction;
 @property(copy) NSArray *minimalActions; // @dynamic minimalActions;
 @property(copy) NSArray *actions; // @dynamic actions;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

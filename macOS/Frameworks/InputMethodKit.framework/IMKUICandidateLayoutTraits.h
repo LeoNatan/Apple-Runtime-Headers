@@ -11,6 +11,7 @@
     long long _alignment;
     double _candidateLeadingEdge;
     double _candidateSpacing;
+    double _groupHeaderFontSize;
     double _groupHeaderThickness;
     double _lineDefaultCount;
     double _lineDefaultLength;
@@ -20,8 +21,12 @@
     double _paddingForIndex;
     BOOL _shrinksToFit;
     double _spaceBetweenCandidates;
+    double _sortingBarFontSize;
+    double _titleFontSize;
 }
 
+@property(nonatomic) double titleFontSize; // @synthesize titleFontSize=_titleFontSize;
+@property(nonatomic) double sortingBarFontSize; // @synthesize sortingBarFontSize=_sortingBarFontSize;
 @property(nonatomic) double spaceBetweenCandidates; // @synthesize spaceBetweenCandidates=_spaceBetweenCandidates;
 @property(nonatomic) BOOL shrinksToFit; // @synthesize shrinksToFit=_shrinksToFit;
 @property(nonatomic) double paddingForIndex; // @synthesize paddingForIndex=_paddingForIndex;
@@ -31,6 +36,7 @@
 @property(nonatomic) double lineDefaultLength; // @synthesize lineDefaultLength=_lineDefaultLength;
 @property(nonatomic) double lineDefaultCount; // @synthesize lineDefaultCount=_lineDefaultCount;
 @property(nonatomic) double groupHeaderThickness; // @synthesize groupHeaderThickness=_groupHeaderThickness;
+@property(nonatomic) double groupHeaderFontSize; // @synthesize groupHeaderFontSize=_groupHeaderFontSize;
 @property(nonatomic) double candidateSpacing; // @synthesize candidateSpacing=_candidateSpacing;
 @property(nonatomic) double candidateLeadingEdge; // @synthesize candidateLeadingEdge=_candidateLeadingEdge;
 @property(nonatomic) long long alignment; // @synthesize alignment=_alignment;

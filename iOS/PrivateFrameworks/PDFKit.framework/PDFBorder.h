@@ -23,13 +23,13 @@
 - (void)updateCornerBorderStyle;
 - (double)horizontalCornerRadius;
 - (_Bool)setBorderCharacteristicsFromArray:(struct CGPDFArray *)arg1;
-- (void)setDashFromArray:(struct CGPDFArray *)arg1;
-- (void)setStyleFromDictionary:(struct CGPDFDictionary *)arg1;
+- (void)_setDashFromArray:(struct CGPDFArray *)arg1;
+- (void)_setStyleFromDictionary:(struct CGPDFDictionary *)arg1;
 - (void)drawInRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2;
 - (unsigned int)dashCountRaw;
-- (void)setDashPatternRaw;
+- (void)_updateDashPatternRaw;
 - (const double *)dashPatternRaw;
-- (_Bool)isRectangular;
+- (_Bool)_isRectangular;
 - (void)setAnnotation:(id)arg1;
 - (id)createDictionaryRef;
 - (id)initWithAnnotationDictionary:(struct CGPDFDictionary *)arg1 forPage:(id)arg2;

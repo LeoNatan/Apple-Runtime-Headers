@@ -8,23 +8,27 @@
 
 #import <GeoServices/NSSecureCoding-Protocol.h>
 
-@class GEODirectionsResponse, GEOETATrafficUpdateResponse;
+@class GEODirectionsResponse, GEOETATrafficUpdateResponse, GEORouteAttributes, NSArray;
 
 @interface GEORouteInitializerData : NSObject <NSSecureCoding>
 {
+    NSArray *_waypoints;
     GEODirectionsResponse *_directionsResponse;
     GEOETATrafficUpdateResponse *_etaTrafficUpdateResponse;
+    GEORouteAttributes *_routeAttributes;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) NSArray *waypoints; // @synthesize waypoints=_waypoints;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) GEOETATrafficUpdateResponse *etaTrafficUpdateResponse;
-@property(readonly, nonatomic) GEODirectionsResponse *directionsResponse;
+@property(readonly, nonatomic) GEORouteAttributes *routeAttributes; // @synthesize routeAttributes=_routeAttributes;
+@property(readonly, nonatomic) GEOETATrafficUpdateResponse *etaTrafficUpdateResponse; // @synthesize etaTrafficUpdateResponse=_etaTrafficUpdateResponse;
+@property(readonly, nonatomic) GEODirectionsResponse *directionsResponse; // @synthesize directionsResponse=_directionsResponse;
 - (BOOL)_MapsCarPlay_isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithETATrafficUpdateResponse:(id)arg1;
-- (id)initWithDirectionsResponse:(id)arg1;
+- (id)initWithWaypoints:(id)arg1 routeAttributes:(id)arg2 ETATrafficUpdateResponse:(id)arg3;
+- (id)initWithWaypoints:(id)arg1 routeAttributes:(id)arg2 directionsResponse:(id)arg3;
 
 @end
 

@@ -6,6 +6,7 @@
 
 #import <IMCore/IMBalloonBrowserPlugin.h>
 
+__attribute__((visibility("hidden")))
 @interface CKMoreBrowserPlugin : IMBalloonBrowserPlugin
 {
 }

@@ -11,18 +11,19 @@
 #import <MapKit/GEOTransitShieldDataSource-Protocol.h>
 
 @class NSString;
-@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource;
+@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource, GEOTransitTextDataSource;
 
 @interface VKImageSourceKey (MKTransitArtworkExtras) <GEOTransitArtworkDataSource, GEOTransitIconDataSource, GEOTransitShieldDataSource>
+@property(readonly, nonatomic) id <GEOTransitTextDataSource> textDataSource;
 @property(readonly, nonatomic) NSString *accessibilityText;
 @property(readonly, nonatomic) _Bool hasRoutingIncidentBadge;
-@property(readonly, nonatomic) long long iconType;
+@property(readonly, nonatomic) int iconType;
 @property(readonly, nonatomic) NSString *shieldColorString;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> iconFallbackShieldDataSource;
 @property(readonly, nonatomic) id <GEOTransitIconDataSource> iconDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> shieldDataSource;
-@property(readonly, nonatomic) long long artworkUseType;
-@property(readonly, nonatomic) long long artworkSourceType;
+@property(readonly, nonatomic) int artworkUseType;
+@property(readonly, nonatomic) int artworkSourceType;
 
 // Remaining properties
 @property(readonly, nonatomic) unsigned int cartoID;

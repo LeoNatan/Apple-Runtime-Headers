@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADImageFillTechnique.h>
 
+__attribute__((visibility("hidden")))
 @interface OADTileTechnique : OADImageFillTechnique
 {
     float mOffsetX;

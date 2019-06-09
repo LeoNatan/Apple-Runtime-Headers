@@ -52,7 +52,7 @@ __attribute__((visibility("hidden")))
 - (void)setBorderColor:(id)arg1;
 - (void)setBorderWidth:(double)arg1;
 - (void)setVerticalAlignment:(unsigned long long)arg1;
-- (void)setHorizontalAlignment:(unsigned long long)arg1;
+- (void)setHorizontalAlignment:(long long)arg1;
 - (void)splitCells;
 - (void)splitCell:(id)arg1 range:(struct _NSRange)arg2;
 - (void)mergeCells;

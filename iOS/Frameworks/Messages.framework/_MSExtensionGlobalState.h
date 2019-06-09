@@ -8,6 +8,7 @@
 
 @protocol _MSMessageComposeExtensionImplProtocol;
 
+__attribute__((visibility("hidden")))
 @interface _MSExtensionGlobalState : NSObject
 {
     id <_MSMessageComposeExtensionImplProtocol> _activeExtensionContext;

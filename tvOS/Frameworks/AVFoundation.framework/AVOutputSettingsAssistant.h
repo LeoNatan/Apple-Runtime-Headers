@@ -31,7 +31,6 @@
 @property(readonly, nonatomic) NSDictionary *videoSettings;
 @property(readonly, nonatomic) NSDictionary *audioSettings;
 @property(readonly, nonatomic) NSString *outputFileType;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithPreset:(id)arg1;
 - (id)init;

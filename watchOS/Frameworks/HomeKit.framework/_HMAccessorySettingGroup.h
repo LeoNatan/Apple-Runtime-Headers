@@ -14,6 +14,7 @@
 @class HMAccessorySettings, HMFUnfairLock, NSArray, NSMutableSet, NSString, NSUUID, _HMContext;
 @protocol OS_dispatch_queue, _HMAccesorySettingGroupDelegate;
 
+__attribute__((visibility("hidden")))
 @interface _HMAccessorySettingGroup : NSObject <HMFLogging, HMFMessageReceiver, NSSecureCoding, HMFMerging>
 {
     HMFUnfairLock *_lock;

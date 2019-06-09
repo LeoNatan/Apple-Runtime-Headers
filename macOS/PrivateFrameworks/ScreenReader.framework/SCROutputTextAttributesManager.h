@@ -16,6 +16,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultManager;
+- (void).cxx_destruct;
+- (long long)_getPositiveIntegerFromNumberValue:(id)arg1;
+- (id)_validatedStringFromStringValue:(id)arg1;
+- (id)_validatedNumberFromNumberValue:(id)arg1;
 - (id)_attributesWithResolvedFontTraitsFromAttributes:(id)arg1;
 - (id)_deltaTextAttributesWithAttributes:(id)arg1 previousAttributes:(id)arg2;
 - (id)_stringDescribingAttributes:(id)arg1 isSpeechComponent:(BOOL)arg2;
@@ -24,10 +28,17 @@ __attribute__((visibility("hidden")))
 - (id)previousAttributesForTargetComponent:(id)arg1;
 - (void)setPreviousAttributes:(id)arg1 targetComponent:(id)arg2;
 - (id)_annotationElementDescriptionForElement:(id)arg1;
-- (id)_actionForComponent:(id)arg1 category:(id)arg2 message:(long long)arg3 string:(id)arg4 variants:(id)arg5;
 - (id)_annotationDescriptionWithLabel:(id)arg1 elementDescription:(id)arg2 position:(long long)arg3 context:(id)arg4;
+- (id)_getContextStringFromAction:(id)arg1 isBrailleComponent:(BOOL)arg2 effectiveRange:(struct _NSRange)arg3 limitRange:(struct _NSRange)arg4;
+- (id)_stringFromAction:(id)arg1 isBrailleComponent:(BOOL)arg2;
+- (id)_attributedStringFromAction:(id)arg1 isBrailleComponent:(BOOL)arg2;
+- (id)_copyOfAction:(id)arg1 withNewString:(id)arg2 isBrailleComponent:(BOOL)arg3;
+- (id)_copyOfAction:(id)arg1 isBrailleComponent:(BOOL)arg2 withoutRange:(struct _NSRange)arg3 orRange:(struct _NSRange)arg4;
+- (id)_lowerPitchCopyOfAction:(id)arg1 effectiveRange:(struct _NSRange)arg2 limitRange:(struct _NSRange)arg3;
+- (id)_basicActionForTargetComponent:(id)arg1;
+- (id)_actionForString:(id)arg1 targetComponent:(id)arg2 encounteredKey:(long long)arg3 encounteredAttribute:(id)arg4 isLowerPitch:(BOOL)arg5;
+- (id)_actionForSound:(id)arg1 encounteredKey:(long long)arg2 encounteredAttribute:(id)arg3;
 - (id)createActionsByExpandingTextAttributesInAction:(id)arg1 targetComponent:(id)arg2;
-- (void)dealloc;
 - (id)init;
 
 @end

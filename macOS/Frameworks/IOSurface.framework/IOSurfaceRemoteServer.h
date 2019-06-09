@@ -13,14 +13,10 @@
 {
     NSObject<OS_xpc_object> *_listener;
     NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_logQueue;
-    CDUnknownBlockType _logBlock;
     NSMutableArray *_clients;
 }
 
 @property(retain, nonatomic) NSMutableArray *clients; // @synthesize clients=_clients;
-@property(copy, nonatomic) CDUnknownBlockType logBlock; // @synthesize logBlock=_logBlock;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *logQueue; // @synthesize logQueue=_logQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSObject<OS_xpc_object> *listener; // @synthesize listener=_listener;
 - (void).cxx_destruct;

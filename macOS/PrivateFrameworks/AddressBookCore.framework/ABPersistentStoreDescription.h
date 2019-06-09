@@ -19,7 +19,6 @@
 
 + (id)modelUrlForName:(id)arg1;
 + (id)modelFutureWithName:(id)arg1;
-+ (id)mailRecentsStoreDescription;
 + (id)addressBookStoreDescription;
 @property(readonly) float version; // @synthesize version=_version;
 @property(readonly) int dataType; // @synthesize dataType=_dataType;

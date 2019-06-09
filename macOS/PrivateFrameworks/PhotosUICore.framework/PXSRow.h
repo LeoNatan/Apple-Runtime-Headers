@@ -11,13 +11,17 @@
 @interface PXSRow : PXSItem
 {
     PXSRowAction *_action;
+    CDUnknownBlockType _valueValidatator;
 }
 
 + (id)rowWithTitle:(id)arg1 valueKeyPath:(id)arg2;
+@property(copy, nonatomic) CDUnknownBlockType valueValidatator; // @synthesize valueValidatator=_valueValidatator;
 @property(retain, nonatomic) PXSRowAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
+- (id)valueValidator:(CDUnknownBlockType)arg1;
 - (id)conditionFormat:(id)arg1;
 - (id)condition:(id)arg1;
+- (id)px_increment:(double)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) NSPredicate *condition; // @dynamic condition;

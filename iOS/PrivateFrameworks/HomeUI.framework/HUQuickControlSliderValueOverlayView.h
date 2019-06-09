@@ -6,26 +6,36 @@
 
 #import <UIKit/UIView.h>
 
-@class CAShapeLayer;
+@class CAShapeLayer, UIColor;
 
 @interface HUQuickControlSliderValueOverlayView : UIView
 {
     _Bool _off;
     _Bool _hasSecondGrabber;
     _Bool _showGrabbers;
+    UIColor *_layerColor;
     unsigned long long _primaryGrabberLocation;
+    unsigned long long _controlSize;
+    CAShapeLayer *_primaryGrabberShadowLayer;
+    CAShapeLayer *_secondaryGrabberShadowLayer;
 }
 
 + (Class)layerClass;
+@property(nonatomic) __weak CAShapeLayer *secondaryGrabberShadowLayer; // @synthesize secondaryGrabberShadowLayer=_secondaryGrabberShadowLayer;
+@property(retain, nonatomic) CAShapeLayer *primaryGrabberShadowLayer; // @synthesize primaryGrabberShadowLayer=_primaryGrabberShadowLayer;
+@property(nonatomic) unsigned long long controlSize; // @synthesize controlSize=_controlSize;
 @property(nonatomic) unsigned long long primaryGrabberLocation; // @synthesize primaryGrabberLocation=_primaryGrabberLocation;
 @property(nonatomic) _Bool showGrabbers; // @synthesize showGrabbers=_showGrabbers;
 @property(nonatomic) _Bool hasSecondGrabber; // @synthesize hasSecondGrabber=_hasSecondGrabber;
 @property(nonatomic, getter=isOff) _Bool off; // @synthesize off=_off;
+- (void).cxx_destruct;
 - (_Bool)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)layoutSubviews;
 - (void)_updateBlendMode;
+- (id)_createGrabberShadowLayer;
 - (void)_updateShape;
 - (id)initWithFrame:(struct CGRect)arg1;
+@property(retain, nonatomic) UIColor *layerColor; // @synthesize layerColor=_layerColor;
 
 // Remaining properties
 @property(readonly, nonatomic) CAShapeLayer *layer; // @dynamic layer;

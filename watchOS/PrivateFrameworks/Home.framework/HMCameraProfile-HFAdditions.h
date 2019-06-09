@@ -6,9 +6,32 @@
 
 #import <HomeKit/HMCameraProfile.h>
 
-@class HFCameraManager;
+#import <Home/HFUserNotificationServiceSettingsProviding-Protocol.h>
 
-@interface HMCameraProfile (HFAdditions)
+@class HFCameraManager, HFUserNotificationServiceSettings, NSString, NSUUID;
+
+@interface HMCameraProfile (HFAdditions) <HFUserNotificationServiceSettingsProviding>
++ (unsigned int)notificationEventTriggersForPredicate:(id)arg1;
++ (unsigned int)hf_cameraNotificationMotionDetectionSettingsForCameraProfiles:(id)arg1;
++ (unsigned int)hf_cameraMotionDetectionSettingsForCameraProfiles:(id)arg1;
++ (unsigned int)hf_cameraAccessModeSelectedOptionForCameraProfiles:(id)arg1 presenceType:(unsigned int)arg2;
++ (unsigned int)hf_cameraRecordingSelectedIntervalForCameraProfiles:(id)arg1;
+@property(readonly, nonatomic) _Bool hf_cameraIsNotSetToRecord;
+@property(readonly, nonatomic) _Bool hf_cameraSupportsRecording;
+@property(readonly, nonatomic) _Bool hf_cameraSupportsBidirectionalAudio;
 @property(readonly, nonatomic) HFCameraManager *hf_cameraManager;
+- (id)hf_updateUserNotificationSettings:(id)arg1;
+@property(readonly, copy, nonatomic) HFUserNotificationServiceSettings *hf_userNotificationSettings;
+- (id)hf_bulletinNotifications;
+- (id)_hf_smartDetectionBulletinNotification;
+- (id)_hf_legacyMotionSensorBulletinNotification;
+- (id)_hf_doorbellBulletinNotification;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
+@property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier;
 @end
 

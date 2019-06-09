@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSHashTable, NSLock;
+@class NSHashTable;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface _GEOResourceManifestTileGroupObserverProxy : NSObject
 {
     NSHashTable *_observers;
-    NSLock *_observersLock;
+    struct os_unfair_lock_s _observersLock;
     NSObject<OS_dispatch_queue> *_queue;
 }
 

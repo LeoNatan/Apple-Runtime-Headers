@@ -8,10 +8,14 @@
 #import <CoreSuggestionsInternals/SGDSuggestManagerEventsProtocol-Protocol.h>
 #import <CoreSuggestionsInternals/SGDSuggestManagerFidesProtocol-Protocol.h>
 #import <CoreSuggestionsInternals/SGDSuggestManagerInternalProtocol-Protocol.h>
+#import <CoreSuggestionsInternals/SGDSuggestManagerIpsosProtocol-Protocol.h>
 #import <CoreSuggestionsInternals/SGDSuggestManagerMailProtocol-Protocol.h>
 #import <CoreSuggestionsInternals/SGDSuggestManagerMessagesProtocol-Protocol.h>
+#import <CoreSuggestionsInternals/SGDSuggestManagerRemindersProtocol-Protocol.h>
+#import <CoreSuggestionsInternals/SGDSuggestManagerURLsProtocol-Protocol.h>
 #import <CoreSuggestionsInternals/_SGDSuggestManagerBaseProtocol-Protocol.h>
+#import <CoreSuggestionsInternals/_SGSuggestManagerFoundInAppsProtocol-Protocol.h>
 
-@protocol SGDSuggestManagerAllProtocol <_SGDSuggestManagerBaseProtocol, SGDSuggestManagerMailProtocol, SGDSuggestManagerContactsProtocol, SGDSuggestManagerEventsProtocol, SGDSuggestManagerInternalProtocol, SGDSuggestManagerMessagesProtocol, SGDSuggestManagerFidesProtocol>
+@protocol SGDSuggestManagerAllProtocol <_SGDSuggestManagerBaseProtocol, _SGSuggestManagerFoundInAppsProtocol, SGDSuggestManagerMailProtocol, SGDSuggestManagerContactsProtocol, SGDSuggestManagerURLsProtocol, SGDSuggestManagerEventsProtocol, SGDSuggestManagerRemindersProtocol, SGDSuggestManagerIpsosProtocol, SGDSuggestManagerInternalProtocol, SGDSuggestManagerMessagesProtocol, SGDSuggestManagerFidesProtocol>
 @end
 

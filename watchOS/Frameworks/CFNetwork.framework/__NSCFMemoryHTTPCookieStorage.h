@@ -6,7 +6,6 @@
 
 #import <CFNetwork/NSHTTPCookieStorage.h>
 
-__attribute__((visibility("hidden")))
 @interface __NSCFMemoryHTTPCookieStorage : NSHTTPCookieStorage
 {
 }

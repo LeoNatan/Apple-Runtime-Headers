@@ -8,6 +8,7 @@
 
 @class PDAnimationTarget;
 
+__attribute__((visibility("hidden")))
 @interface PDParallelTimeNodeBuildInfo : NSObject
 {
     PDAnimationTarget *mTarget;

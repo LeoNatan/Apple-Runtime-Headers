@@ -18,14 +18,15 @@ __attribute__((visibility("hidden")))
     int _labelType;
     int _status;
     struct {
-        unsigned int confidence:1;
-        unsigned int labelType:1;
-        unsigned int status:1;
-    } _has;
+        unsigned int has_confidence:1;
+        unsigned int has_labelType:1;
+        unsigned int has_status:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int confidence; // @synthesize confidence=_confidence;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -34,17 +35,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) BOOL hasConfidence;
+@property(nonatomic) unsigned int confidence;
 - (int)StringAsLabelType:(id)arg1;
 - (id)labelTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasLabelType;
-@property(nonatomic) int labelType; // @synthesize labelType=_labelType;
+@property(nonatomic) int labelType;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) BOOL hasStatus;
-@property(nonatomic) int status; // @synthesize status=_status;
+@property(nonatomic) int status;
 
 @end
 

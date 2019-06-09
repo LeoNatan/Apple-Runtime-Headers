@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
     _Bool _commandKeyIsDown;
 }
 
++ (void)dismissHUD;
++ (void)clearHUDPopTimer;
 + (id)sharedKeyCommandDiscoverabilityHUD;
 - (void).cxx_destruct;
 - (void)_dismissHUD;
@@ -26,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)_didTakeScreenshot;
 - (void)_scheduleHUDPresentation;
 - (void)handlePhysicalKeyboardEvent:(id)arg1;
+- (void)_clearHUDPopTimer;
 - (void)dealloc;
 
 @end

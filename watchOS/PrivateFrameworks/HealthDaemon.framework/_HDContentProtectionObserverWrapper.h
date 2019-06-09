@@ -8,6 +8,7 @@
 
 @protocol HDContentProtectionObserver, OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface _HDContentProtectionObserverWrapper : NSObject
 {
     id <HDContentProtectionObserver> _observer;

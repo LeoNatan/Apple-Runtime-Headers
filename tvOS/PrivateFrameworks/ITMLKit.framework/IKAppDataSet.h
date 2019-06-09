@@ -8,26 +8,24 @@
 
 #import <ITMLKit/NSCopying-Protocol.h>
 
-@class NSArray, NSIndexSet;
+@class NSArray, NSDictionary;
 
 __attribute__((visibility("hidden")))
 @interface IKAppDataSet : NSObject <NSCopying>
 {
-    NSArray *_dataItems;
     NSArray *_itemIDs;
-    NSIndexSet *_updatedIndexes;
-    struct _NSRange _visibleIndexRange;
+    NSArray *_items;
+    NSDictionary *_usedPrototypesByIdentifier;
+    NSDictionary *_indexTitles;
 }
 
-@property(copy, nonatomic) NSIndexSet *updatedIndexes; // @synthesize updatedIndexes=_updatedIndexes;
-@property(nonatomic) struct _NSRange visibleIndexRange; // @synthesize visibleIndexRange=_visibleIndexRange;
-@property(readonly, copy, nonatomic) NSArray *itemIDs; // @synthesize itemIDs=_itemIDs;
-@property(copy, nonatomic) NSArray *dataItems; // @synthesize dataItems=_dataItems;
+@property(readonly, copy, nonatomic) NSDictionary *indexTitles; // @synthesize indexTitles=_indexTitles;
+@property(readonly, copy, nonatomic) NSDictionary *usedPrototypesByIdentifier; // @synthesize usedPrototypesByIdentifier=_usedPrototypesByIdentifier;
+@property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;
-- (id)dataSetByUpdatingDataItemsAtIndexes:(id)arg1 withDataItems:(id)arg2;
-- (id)dataSetByUpdatingVisibleIndexRange:(struct _NSRange)arg1;
+@property(readonly, copy, nonatomic) NSArray *itemIDs; // @synthesize itemIDs=_itemIDs;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithDataItems:(id)arg1 itemIDs:(id)arg2;
+- (id)initWithItems:(id)arg1 usedPrototypesByIdentifier:(id)arg2 indexTitles:(id)arg3;
 
 @end
 

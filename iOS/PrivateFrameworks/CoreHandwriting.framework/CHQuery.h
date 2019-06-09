@@ -9,22 +9,25 @@
 #import <CoreHandwriting/CHRecognitionSessionObserver-Protocol.h>
 
 @class CHRecognitionSession, CHRecognitionSessionResult, NSString;
-@protocol CHQueryDelegate, OS_dispatch_queue;
+@protocol CHQueryDelegate, CHStrokeProviderVersion, OS_dispatch_queue;
 
 @interface CHQuery : NSObject <CHRecognitionSessionObserver>
 {
     NSObject<OS_dispatch_queue> *_processingQueue;
-    CHRecognitionSessionResult *_lastProcessedSessionResult;
+    CHRecognitionSessionResult *_currentProcessingSessionResult;
+    double _lastProcessedTime;
     _Bool __queryActive;
     id <CHQueryDelegate> _delegate;
     CHRecognitionSession *_recognitionSession;
+    id <CHStrokeProviderVersion> _lastProcessedStrokeProviderVersion;
+    double _preferredUpdatesInterval;
 }
 
 @property(nonatomic) _Bool _queryActive; // @synthesize _queryActive=__queryActive;
+@property(nonatomic) double preferredUpdatesInterval; // @synthesize preferredUpdatesInterval=_preferredUpdatesInterval;
+@property(copy) id <CHStrokeProviderVersion> lastProcessedStrokeProviderVersion; // @synthesize lastProcessedStrokeProviderVersion=_lastProcessedStrokeProviderVersion;
 @property(readonly, retain, nonatomic) CHRecognitionSession *recognitionSession; // @synthesize recognitionSession=_recognitionSession;
 @property(nonatomic) id <CHQueryDelegate> delegate; // @synthesize delegate=_delegate;
-- (void)recognitionSessionDidUpdateRecognitionResult:(id)arg1;
-- (_Bool)wantsHighFrequencyNotifications;
 - (void)_updateForRecognitionSessionResultChangeIfNeeded;
 - (void)waitForPendingUpdates;
 - (void)pause;
@@ -32,6 +35,8 @@
 - (void)dealloc;
 - (id)initWithRecognitionSession:(id)arg1;
 - (id)init;
+- (void)recognitionSessionDidUpdateRecognitionResult:(id)arg1;
+- (double)preferredRecognitionResultUpdatesInterval;
 @property(readonly, retain, nonatomic) NSString *debugName;
 @property(readonly, retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue;
 - (id)q_sessionResult;

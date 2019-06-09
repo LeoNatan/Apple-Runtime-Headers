@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     _Bool mIsBoundsSet;
 }
 
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (_Bool)hasText;
 - (void)setComment:(id)arg1;
@@ -42,7 +43,6 @@ __attribute__((visibility("hidden")))
 - (id)anchor;
 - (void)setClientState:(id)arg1;
 - (id)clientState;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

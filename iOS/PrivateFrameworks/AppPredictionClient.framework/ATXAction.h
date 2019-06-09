@@ -10,7 +10,7 @@
 #import <AppPredictionClient/NSCopying-Protocol.h>
 #import <AppPredictionClient/NSSecureCoding-Protocol.h>
 
-@class ATXActionCriteria, CSSearchableItemAttributeSet, INIntent, NSDictionary, NSString, NSUUID, NSUserActivity;
+@class ATXAVRouteInfo, ATXActionCriteria, CSSearchableItemAttributeSet, INIntent, NSDictionary, NSString, NSUUID, NSUserActivity;
 
 @interface ATXAction : NSObject <CRContent, NSSecureCoding, NSCopying>
 {
@@ -20,6 +20,7 @@
     NSString *_subtitle;
     ATXActionCriteria *_criteria;
     _Bool _isFutureMedia;
+    _Bool _isTVWhiteListedLongFormMedia;
     NSString *_bundleId;
     unsigned long long _actionType;
     NSUUID *_actionUUID;
@@ -29,6 +30,7 @@
     INIntent *_intent;
     NSString *_userActivityString;
     CSSearchableItemAttributeSet *_contentAttributeSet;
+    ATXAVRouteInfo *_routeInfo;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -37,9 +39,12 @@
 + (id)getDateFromUserActivityString:(id)arg1 forActionKey:(id)arg2;
 + (id)getActionKeyForBundleId:(id)arg1 actionType:(id)arg2;
 + (unsigned long long)_userActivityHashForUserInfoDict:(id)arg1 activityType:(id)arg2 webpageURL:(id)arg3;
++ (_Bool)_isTVWhiteListedLongFormMediaIntent:(id)arg1 bundleId:(id)arg2;
+@property(readonly, nonatomic) ATXAVRouteInfo *routeInfo; // @synthesize routeInfo=_routeInfo;
 @property(readonly, nonatomic) CSSearchableItemAttributeSet *contentAttributeSet; // @synthesize contentAttributeSet=_contentAttributeSet;
 @property(readonly, nonatomic) NSString *userActivityString; // @synthesize userActivityString=_userActivityString;
 @property(readonly, nonatomic) INIntent *intent; // @synthesize intent=_intent;
+@property(readonly, nonatomic) _Bool isTVWhiteListedLongFormMedia; // @synthesize isTVWhiteListedLongFormMedia=_isTVWhiteListedLongFormMedia;
 @property(readonly, nonatomic) _Bool isFutureMedia; // @synthesize isFutureMedia=_isFutureMedia;
 @property(readonly, nonatomic) NSDictionary *heuristicMetadata; // @synthesize heuristicMetadata=_heuristicMetadata;
 @property(readonly, nonatomic) NSString *heuristic; // @synthesize heuristic=_heuristic;
@@ -65,6 +70,8 @@
 - (id)dateForAction;
 - (id)actionSubtitle;
 - (_Bool)hasActionTitle;
+@property(readonly, nonatomic) NSString *customSubtitle;
+@property(readonly, nonatomic) NSString *customTitle;
 - (id)actionTitle;
 - (id)actionDescription;
 @property(readonly, nonatomic) _Bool isHeuristic;
@@ -73,13 +80,12 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqualToAction:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
-- (id)initWithActivity:(id)arg1 activityString:(id)arg2 itemIdentifier:(id)arg3 contentAttributeSet:(id)arg4 intent:(id)arg5 actionUUID:(id)arg6 bundleId:(id)arg7 type:(unsigned long long)arg8 heuristic:(id)arg9 heuristicMetadata:(id)arg10 criteria:(id)arg11 isFutureMedia:(_Bool)arg12 title:(id)arg13 subtitle:(id)arg14;
-- (id)initWithNSUserActivityString:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 itemIdentifier:(id)arg4 contentAttributeSet:(id)arg5 heuristic:(id)arg6 isFutureMedia:(_Bool)arg7 title:(id)arg8 subtitle:(id)arg9;
+- (id)initWithActivity:(id)arg1 activityString:(id)arg2 itemIdentifier:(id)arg3 contentAttributeSet:(id)arg4 intent:(id)arg5 actionUUID:(id)arg6 bundleId:(id)arg7 type:(unsigned long long)arg8 heuristic:(id)arg9 heuristicMetadata:(id)arg10 criteria:(id)arg11 isFutureMedia:(_Bool)arg12 routeInfo:(id)arg13 title:(id)arg14 subtitle:(id)arg15;
+- (id)initWithNSUserActivityString:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 itemIdentifier:(id)arg4 contentAttributeSet:(id)arg5 heuristic:(id)arg6 heuristicMetadata:(id)arg7 isFutureMedia:(_Bool)arg8 title:(id)arg9 subtitle:(id)arg10;
 - (id)initWithNSUserActivity:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 contentAttributeSet:(id)arg4 itemIdentifier:(id)arg5 heuristic:(id)arg6 heuristicMetadata:(id)arg7 criteria:(id)arg8 isFutureMedia:(_Bool)arg9 title:(id)arg10 subtitle:(id)arg11;
-- (id)initWithNSUserActivity:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 contentAttributeSet:(id)arg4 itemIdentifier:(id)arg5 heuristic:(id)arg6 criteria:(id)arg7 isFutureMedia:(_Bool)arg8 title:(id)arg9 subtitle:(id)arg10;
 - (id)initWithIntent:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 heuristic:(id)arg4 heuristicMetadata:(id)arg5 criteria:(id)arg6 isFutureMedia:(_Bool)arg7 title:(id)arg8 subtitle:(id)arg9;
-- (id)initWithIntent:(id)arg1 actionUUID:(id)arg2 bundleId:(id)arg3 heuristic:(id)arg4 criteria:(id)arg5 isFutureMedia:(_Bool)arg6 title:(id)arg7 subtitle:(id)arg8;
 - (id)init;
+- (id)atx_actionWithRouteInfo:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

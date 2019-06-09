@@ -54,7 +54,7 @@
     void *_tabViewUnused2;
 }
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (Class)_classToCheckForRequiresConstraintBasedLayout;
 + (void)_setUsesToolTipsWhenTruncated:(BOOL)arg1;
 + (BOOL)_usesToolTipsWhenTruncated;
 + (void)initialize;
@@ -172,6 +172,7 @@
 - (id)_currentBackgroundColor;
 - (struct CGRect)focusRingMaskBounds;
 - (void)drawFocusRingMask;
+- (void)_accessibilityUpdateKeyboardFocusRingForTabViewItem:(id)arg1;
 - (void)_setKeyboardFocusRingNeedsDisplayForTabViewItem:(id)arg1;
 - (void)_setNeedsDisplayForTabViewItem:(id)arg1;
 - (struct CGRect)_tabRectAdjustedForOverlap:(struct CGRect)arg1;

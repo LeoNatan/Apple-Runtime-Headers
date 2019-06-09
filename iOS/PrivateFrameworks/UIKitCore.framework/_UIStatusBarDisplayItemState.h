@@ -8,7 +8,7 @@
 
 #import <UIKitCore/_UIStatusBarPrioritized-Protocol.h>
 
-@class NSMutableArray, NSMutableSet, NSSet, _UIStatusBar, _UIStatusBarAnimation, _UIStatusBarDisplayItemPlacementState, _UIStatusBarIdentifier, _UIStatusBarStyleAttributes;
+@class NSArray, NSMutableArray, NSMutableSet, _UIStatusBar, _UIStatusBarAnimation, _UIStatusBarDisplayItem, _UIStatusBarDisplayItemPlacementState, _UIStatusBarIdentifier, _UIStatusBarItem, _UIStatusBarStyleAttributes;
 
 __attribute__((visibility("hidden")))
 @interface _UIStatusBarDisplayItemState : NSObject <_UIStatusBarPrioritized>
@@ -17,8 +17,10 @@ __attribute__((visibility("hidden")))
     _Bool _wasVisible;
     _Bool _dataEnabled;
     _Bool _floating;
+    _UIStatusBarDisplayItem *_displayItem;
     _UIStatusBarIdentifier *_identifier;
     _UIStatusBar *_statusBar;
+    _UIStatusBarItem *_item;
     NSMutableArray *_placementStates;
     long long _preferredPlacementStateIndex;
     long long _currentPlacementStateIndex;
@@ -51,18 +53,20 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long currentPlacementStateIndex; // @synthesize currentPlacementStateIndex=_currentPlacementStateIndex;
 @property(nonatomic) long long preferredPlacementStateIndex; // @synthesize preferredPlacementStateIndex=_preferredPlacementStateIndex;
 @property(retain, nonatomic) NSMutableArray *placementStates; // @synthesize placementStates=_placementStates;
+@property(nonatomic) __weak _UIStatusBarItem *item; // @synthesize item=_item;
 @property(nonatomic) __weak _UIStatusBar *statusBar; // @synthesize statusBar=_statusBar;
 @property(copy, nonatomic) _UIStatusBarIdentifier *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic) __weak _UIStatusBarDisplayItem *displayItem; // @synthesize displayItem=_displayItem;
 - (void).cxx_destruct;
 - (id)description;
 @property(readonly, nonatomic) long long priority;
-@property(readonly, copy, nonatomic) NSSet *potentialPlacementRegionIdentifiers;
+@property(readonly, copy, nonatomic) NSArray *potentialPlacementRegionIdentifiers;
 - (_Bool)isCurrentPlacement:(id)arg1;
-- (_Bool)prepareAnimation:(id)arg1 withDisplayItem:(id)arg2;
-- (id)_animationForDisplayItem:(id)arg1 withUpdateAnimation:(id)arg2;
+- (_Bool)prepareAnimation:(id)arg1;
+- (id)_animationWithUpdateAnimation:(id)arg1;
 - (void)_cancelObsoleteAnimations;
 @property(readonly, nonatomic, getter=_animationType) long long animationType;
-- (id)_effectiveStyleAttributesFromStyleAttributes:(id)arg1;
+- (id)_effectiveStyleAttributesFromStyleAttributes:(id)arg1 data:(id)arg2 styleAttributesChanged:(_Bool *)arg3;
 - (id)_updateForUpdatedData:(id)arg1 updatedStyleAttributes:(id)arg2 updatedEnability:(id)arg3;
 - (id)_updateForItem:(id)arg1 data:(id)arg2 styleAttributes:(id)arg3;
 - (id)updateWithData:(id)arg1 styleAttributes:(id)arg2;

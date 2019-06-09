@@ -7,7 +7,7 @@
 #import <Foundation/NSArray.h>
 
 @interface NSArray (NCSLogging)
-- (id)nanoDescriptionForCalendars;
-- (id)nanoDescriptionForEvents;
+- (id)nanoPrivacyAwareDescriptionForCalendars;
+- (id)nanoPrivacyAwareDescriptionForEvents;
 @end
 

@@ -13,13 +13,16 @@ __attribute__((visibility("hidden")))
 {
     FI_TTextField *_titleField;
     FI_TTagEditorController *_tagEditorController;
-    FI_TTaggingTokenField *_tokenField;
+    struct TNSWeakPtr<FI_TTaggingTokenField, void> _weakTokenField;
     FI_TUpdateLayerView *_suggestionsTableViewWrapper;
 }
 
-@property(readonly, retain) FI_TTaggingTokenField *tokenField; // @synthesize tokenField=_tokenField;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)cancelOperation:(id)arg1;
 - (void)setNodes:(const struct TFENodeVector *)arg1;
+- (void)setTokenField:(id)arg1;
+@property(readonly) __weak FI_TTaggingTokenField *tokenField; // @dynamic tokenField;
 - (id)nibName;
 - (void)viewLoaded;
 

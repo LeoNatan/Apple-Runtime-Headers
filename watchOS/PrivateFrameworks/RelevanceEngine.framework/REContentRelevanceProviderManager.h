@@ -21,11 +21,11 @@
 - (void).cxx_destruct;
 - (void)predictorDidUpdate:(id)arg1;
 - (void)modelManagerDidUpdateModel:(id)arg1;
-- (void)_closeDataStoresAndObserveChanges;
-- (void)_openDataStoresAndObserveChanges;
+- (void)pause;
+- (void)resume;
 - (_Bool)_suppportsSentimentAnalysis;
 - (_Bool)_suppportsPortarit;
-- (id)_valueForProvider:(id)arg1 feature:(id)arg2;
+- (id)_valuesForProvider:(id)arg1 context:(id)arg2 features:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

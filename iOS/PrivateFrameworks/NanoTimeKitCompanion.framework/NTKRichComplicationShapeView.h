@@ -6,21 +6,30 @@
 
 #import <UIKit/UIView.h>
 
-@class CAGradientLayer, CAShapeLayer, CLKDevice, NSArray;
+#import <NanoTimeKitCompanion/CLKMonochromeComplicationView-Protocol.h>
 
-@interface NTKRichComplicationShapeView : UIView
+@class CAGradientLayer, CAShapeLayer, CLKDevice, NSArray, NSString;
+@protocol CLKMonochromeFilterProvider;
+
+@interface NTKRichComplicationShapeView : UIView <CLKMonochromeComplicationView>
 {
     CLKDevice *_device;
     struct CGRect _previousBounds;
     CAShapeLayer *_shapeLayer;
     CAGradientLayer *_gradientLayer;
     NSArray *_gradientLocations;
+    _Bool _allowsOverflowProgress;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     NSArray *_gradientColors;
     double _progress;
+    long long _filterStyle;
 }
 
+@property(readonly, nonatomic) long long filterStyle; // @synthesize filterStyle=_filterStyle;
 @property(nonatomic) double progress; // @synthesize progress=_progress;
+@property(nonatomic) _Bool allowsOverflowProgress; // @synthesize allowsOverflowProgress=_allowsOverflowProgress;
 @property(retain, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
 - (id)device;
 - (_Bool)_shouldReverseGradient;
@@ -29,12 +38,21 @@
 - (struct CGPoint)_pointAtProgress:(float)arg1;
 - (double)_shapeLineWidth;
 - (void)_setupGradientLayer:(id)arg1;
+- (void)_setupShapeLayer:(id)arg1;
 - (void)_updateGradient;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 - (void)_updatePath;
 - (struct CGPoint)pointAtProgress:(float)arg1;
 - (void)setGradientColors:(id)arg1 locations:(id)arg2;
 - (void)layoutSubviews;
-- (id)initForDevice:(id)arg1;
+- (id)initForDevice:(id)arg1 withFilterStyle:(long long)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

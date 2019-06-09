@@ -21,6 +21,7 @@
 - (id)dataForKey:(id)arg1 inKnowledgeStoreWithName:(id)arg2;
 - (void)setDomainObject:(id)arg1 forKey:(id)arg2;
 - (id)domainObjectForKey:(id)arg1;
+- (id)_synchronousManagedStoreServiceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_managedStoreServiceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_managedStoreService;
 - (id)_connection;

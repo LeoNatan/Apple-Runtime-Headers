@@ -49,12 +49,13 @@
 - (void)didBeginSearchOfType:(long long)arg1 withQuery:(id)arg2 endpoint:(unsigned long long)arg3;
 - (void)didReceiveLocalResultsForQuery:(id)arg1;
 - (void)didReceiveWebSuggestionsForQuery:(id)arg1 fromSearchProvider:(id)arg2 responseSize:(long long)arg3 statusCode:(long long)arg4 networkTimingData:(id)arg5;
-- (void)userTypedGoToSearch:(id)arg1 endpoint:(unsigned long long)arg2;
-- (void)userTypedURLDirectly:(id)arg1;
+- (void)userTypedGoToSearch:(id)arg1 endpoint:(unsigned long long)arg2 forQueryID:(unsigned long long)arg3;
+- (void)userTypedURLDirectlyForQuery:(id)arg1;
 - (void)userDidEngageWithCompletionListItem:(id)arg1 onActionButton:(_Bool)arg2 method:(long long)arg3 doesMatchSiriSuggestion:(_Bool)arg4;
 - (void)userDidEngageWithCompletionListItem:(id)arg1 onActionButton:(_Bool)arg2 method:(long long)arg3;
 - (void)didDisplayCompletionListItems:(id)arg1 forQuery:(id)arg2 forEvent:(long long)arg3;
-- (void)_postFeedbackOnFeedbackQueue:(id)arg1;
+- (void)_postFeedbackOnFeedbackQueue:(id)arg1 forQueryID:(long long)arg2;
+- (void)postFeedback:(id)arg1 forQueryID:(long long)arg2;
 - (void)postFeedback:(id)arg1;
 - (id)initWithSession:(id)arg1;
 

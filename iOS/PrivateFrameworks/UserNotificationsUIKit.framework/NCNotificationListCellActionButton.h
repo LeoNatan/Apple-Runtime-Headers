@@ -6,54 +6,44 @@
 
 #import <UIKit/UIControl.h>
 
-#import <UserNotificationsUIKit/NCMaterialsAdjusting-Protocol.h>
+#import <UserNotificationsUIKit/MTMaterialGrouping-Protocol.h>
 #import <UserNotificationsUIKit/PLContentSizeCategoryAdjusting-Protocol.h>
 
 @class BSUIFontProvider, MTMaterialView, NCNotificationAction, NSString, UILabel, UIView;
 
-@interface NCNotificationListCellActionButton : UIControl <PLContentSizeCategoryAdjusting, NCMaterialsAdjusting>
+@interface NCNotificationListCellActionButton : UIControl <PLContentSizeCategoryAdjusting, MTMaterialGrouping>
 {
     _Bool _adjustsFontForContentSizeCategory;
     NSString *_preferredContentSizeCategory;
+    NSString *_materialGroupNameBase;
     NCNotificationAction *_notificationAction;
     NSString *_title;
-    NSString *_backgroundGroupName;
+    long long _backgroundMaterialRecipe;
     BSUIFontProvider *_fontProvider;
     UILabel *_titleLabel;
-    long long _materialRecipe;
-    unsigned long long _backgroundMaterialOptions;
-    unsigned long long _overlayMaterialOptions;
     MTMaterialView *_backgroundView;
-    MTMaterialView *_backgroundOverlayView;
     UIView *_backgroundHighlightView;
 }
 
 @property(retain, nonatomic) UIView *backgroundHighlightView; // @synthesize backgroundHighlightView=_backgroundHighlightView;
-@property(retain, nonatomic) MTMaterialView *backgroundOverlayView; // @synthesize backgroundOverlayView=_backgroundOverlayView;
 @property(retain, nonatomic) MTMaterialView *backgroundView; // @synthesize backgroundView=_backgroundView;
-@property(nonatomic) unsigned long long overlayMaterialOptions; // @synthesize overlayMaterialOptions=_overlayMaterialOptions;
-@property(nonatomic) unsigned long long backgroundMaterialOptions; // @synthesize backgroundMaterialOptions=_backgroundMaterialOptions;
-@property(nonatomic) long long materialRecipe; // @synthesize materialRecipe=_materialRecipe;
 @property(retain, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(retain, nonatomic, getter=_fontProvider, setter=_setFontProvider:) BSUIFontProvider *fontProvider; // @synthesize fontProvider=_fontProvider;
-@property(copy, nonatomic) NSString *backgroundGroupName; // @synthesize backgroundGroupName=_backgroundGroupName;
+@property(nonatomic) long long backgroundMaterialRecipe; // @synthesize backgroundMaterialRecipe=_backgroundMaterialRecipe;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(retain, nonatomic) NCNotificationAction *notificationAction; // @synthesize notificationAction=_notificationAction;
+@property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 @property(copy, nonatomic) NSString *preferredContentSizeCategory; // @synthesize preferredContentSizeCategory=_preferredContentSizeCategory;
 @property(nonatomic) _Bool adjustsFontForContentSizeCategory; // @synthesize adjustsFontForContentSizeCategory=_adjustsFontForContentSizeCategory;
 - (void).cxx_destruct;
-- (void)adjustForChangeInMaterialRecipe:(long long)arg1 backgroundMaterialOptions:(unsigned long long)arg2 overlayMaterialOptions:(unsigned long long)arg3;
-- (void)traitCollectionDidChange:(id)arg1;
 - (_Bool)adjustForContentSizeCategoryChange;
 - (void)_unHighlightButton:(id)arg1;
 - (void)_highlightButton:(id)arg1;
 - (long long)_wordCountForText:(id)arg1;
 - (void)_layoutTitleLabel;
 - (void)_layoutBackgroundHighlightView;
-- (void)_layoutBackgroundOverlayView;
 - (void)_layoutBackgroundView;
 - (void)_configureBackgroundHighlightViewIfNecessary;
-- (void)_configureBackgroundOverlayViewIfNecessary;
 - (void)_configureBackgroundViewIfNecessary;
 - (void)_configureTitleLabelIfNecessary;
 - (void)_configureTitleLabelEffects;

@@ -4,77 +4,52 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSOperation.h>
+#import <WatchListKit/WLKAsyncOperation.h>
 
-@class NSDictionary, NSError, NSString, NSURL, NSXPCConnection, SSURLConnectionResponse;
+@class AMSURLRequestEncoder, AMSURLSession, NSData, NSDate, NSError, NSHTTPURLResponse, NSString, NSURLRequest, NSURLSessionDataTask;
 
-@interface WLKNetworkRequestOperation : NSOperation
+@interface WLKNetworkRequestOperation : WLKAsyncOperation
 {
-    NSError *_error;
-    id _response;
-    unsigned long long _numRetries;
-    NSXPCConnection *_connection;
-    _Bool _allowAuthentication;
-    _Bool _requiresMescal;
-    _Bool _encodeQueryParams;
-    _Bool _runsInDaemon;
-    NSDictionary *_additionalHeaderFields;
-    NSString *_serverRouteKey;
-    NSDictionary *_serverRouteReplacements;
-    NSDictionary *_queryParameters;
-    double _timeout;
     NSString *_identifier;
-    CDUnknownBlockType _requestCompletionBlock;
-    NSString *_endpoint;
-    NSString *_httpMethod;
-    SSURLConnectionResponse *_fullResponse;
-    NSString *_callerOverride;
-    NSURL *_baseURL;
+    NSURLRequest *_request;
+    long long _options;
+    NSHTTPURLResponse *_httpResponse;
+    long long _responseStatusCode;
+    NSData *_data;
+    NSError *_error;
+    AMSURLRequestEncoder *_encoder;
+    AMSURLSession *_session;
+    NSURLSessionDataTask *_task;
+    NSDate *_startDate;
+    unsigned long long _signpostIdentifier;
 }
 
-+ (void)logNetworkHeaders:(id)arg1 identifier:(id)arg2;
-+ (void)_networkRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
-+ (id)_runSSVNetworkOperationWithProperties:(id)arg1 requiresMescal:(_Bool)arg2 outError:(id *)arg3;
-+ (id)_defaultBaseURL;
-+ (unsigned long long)preferredCachePolicy;
-@property(copy, nonatomic) NSURL *baseURL; // @synthesize baseURL=_baseURL;
-@property(nonatomic) _Bool runsInDaemon; // @synthesize runsInDaemon=_runsInDaemon;
-@property(retain, nonatomic) NSString *callerOverride; // @synthesize callerOverride=_callerOverride;
-@property(readonly, copy, nonatomic) SSURLConnectionResponse *fullResponse; // @synthesize fullResponse=_fullResponse;
-@property(readonly, copy, nonatomic) NSString *httpMethod; // @synthesize httpMethod=_httpMethod;
-@property(readonly, copy, nonatomic) NSString *endpoint; // @synthesize endpoint=_endpoint;
-@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-@property(readonly, nonatomic) id response; // @synthesize response=_response;
-@property(copy, nonatomic) CDUnknownBlockType requestCompletionBlock; // @synthesize requestCompletionBlock=_requestCompletionBlock;
-@property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
-@property(readonly, nonatomic) double timeout; // @synthesize timeout=_timeout;
-@property(readonly, copy, nonatomic) NSDictionary *queryParameters; // @synthesize queryParameters=_queryParameters;
-@property(readonly, copy, nonatomic) NSDictionary *serverRouteReplacements; // @synthesize serverRouteReplacements=_serverRouteReplacements;
-@property(readonly, copy, nonatomic) NSString *serverRouteKey; // @synthesize serverRouteKey=_serverRouteKey;
-@property(copy, nonatomic) NSDictionary *additionalHeaderFields; // @synthesize additionalHeaderFields=_additionalHeaderFields;
-@property(nonatomic) _Bool encodeQueryParams; // @synthesize encodeQueryParams=_encodeQueryParams;
-@property(nonatomic) _Bool requiresMescal; // @synthesize requiresMescal=_requiresMescal;
-@property(nonatomic) _Bool allowAuthentication; // @synthesize allowAuthentication=_allowAuthentication;
+@property(nonatomic) unsigned long long signpostIdentifier; // @synthesize signpostIdentifier=_signpostIdentifier;
+@property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(retain, nonatomic) NSURLSessionDataTask *task; // @synthesize task=_task;
+@property(retain, nonatomic) AMSURLSession *session; // @synthesize session=_session;
+@property(retain, nonatomic) AMSURLRequestEncoder *encoder; // @synthesize encoder=_encoder;
+@property(retain, nonatomic) NSError *error; // @synthesize error=_error;
+@property(retain, nonatomic) NSData *data; // @synthesize data=_data;
+@property(nonatomic) long long responseStatusCode; // @synthesize responseStatusCode=_responseStatusCode;
+@property(retain, nonatomic) NSHTTPURLResponse *httpResponse; // @synthesize httpResponse=_httpResponse;
+@property(readonly, nonatomic) long long options; // @synthesize options=_options;
+@property(copy, nonatomic) NSURLRequest *request; // @synthesize request=_request;
+@property(copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (id)_connection;
-- (id)_runNetworkOperationAndReturnError:(id *)arg1;
-- (void)_didFailWithError:(id)arg1;
-- (void)_didFinishWithResponse:(id)arg1;
-- (id)_requestPropertiesWithServerRouteKey:(id)arg1 queryParameters:(id)arg2 additionalHeaderFields:(id)arg3;
-- (id)_requestPropertiesWithAPIEndpoint:(id)arg1 baseURL:(id)arg2 queryParameters:(id)arg3 httpMethod:(id)arg4 additionalHeaderFields:(id)arg5;
-- (id)responseProcessor;
-@property(readonly, copy, nonatomic) NSURL *defaultBaseURL;
-- (void)didFail;
-- (void)didFinish;
-- (void)main;
+- (void)cancel;
+- (void)finishExecutionIfPossible;
+- (void)executionDidBegin;
+- (long long)_statusCodeForAMSResult:(id)arg1 error:(id)arg2;
+- (void)_finishExecutionIfPossibleWithError:(id)arg1;
+- (void)_startNetworkRequest;
+- (void)handleResult:(id)arg1 error:(id)arg2;
+- (void)processResponse;
+- (void)prepareAndStartNetworkRequest;
+- (void)configureSession;
+- (void)prepareURLRequest:(CDUnknownBlockType)arg1;
+- (id)initWithURLRequest:(id)arg1 options:(long long)arg2;
 - (id)init;
-- (id)initWithServerRouteKey:(id)arg1 serverRouteReplacements:(id)arg2 queryParameters:(id)arg3 timeout:(double)arg4;
-- (id)initWithServerRouteKey:(id)arg1 serverRouteReplacements:(id)arg2 queryParameters:(id)arg3;
-- (id)initWithServerRouteKey:(id)arg1 serverRouteReplacements:(id)arg2;
-- (id)initWithServerRouteKey:(id)arg1;
-- (id)initWithEndpoint:(id)arg1 queryParameters:(id)arg2 httpMethod:(id)arg3 timeout:(double)arg4;
-- (id)initWithEndpoint:(id)arg1 queryParameters:(id)arg2 httpMethod:(id)arg3;
-- (id)initWithEndpoint:(id)arg1 queryParameters:(id)arg2;
 
 @end
 

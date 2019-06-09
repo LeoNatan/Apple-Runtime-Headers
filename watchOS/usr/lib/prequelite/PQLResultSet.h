@@ -66,7 +66,6 @@
 - (BOOL)charAtIndex:(int)arg1;
 - (_Bool)boolAtIndex:(int)arg1;
 - (id)objectOfClass:(Class)arg1 atIndex:(int)arg2;
-- (struct sqlite3_value *)sqliteValueAtIndex:(int)arg1;
 - (id)columnNameAtIndex:(int)arg1;
 - (id)description;
 - (id)nextObject;

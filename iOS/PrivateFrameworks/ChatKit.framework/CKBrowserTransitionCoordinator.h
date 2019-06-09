@@ -66,7 +66,6 @@
 @property(readonly, nonatomic, getter=isPresentingFullScreenModal) _Bool presentingFullScreenModal;
 - (void)presentPluginFullScreenModal:(id)arg1 animated:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dismissCurrentFullscreenBrowserAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)presentCurrentBrowserFullscreenAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transitionCurrentBrowserToCollapsedPresentationAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transitionCurrentBrowserToExpandedPresentationAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)releaseOwnershipOfBrowserForConsumer:(long long)arg1;

@@ -8,7 +8,7 @@
 
 #import <CoreParsec/PARClientXPC-Protocol.h>
 
-@class NSMutableArray, NSString, NSXPCConnection, NSXPCListenerEndpoint, PARImageLoader, PARSessionConfiguration, QueryIdMapper;
+@class NSMutableArray, NSString, NSXPCConnection, NSXPCListenerEndpoint, PARImageLoader, PARSessionConfiguration;
 @protocol OS_dispatch_queue, PARDaemonXPC;
 
 @interface PARSearchClient : NSObject <PARClientXPC>
@@ -17,8 +17,6 @@
     NSMutableArray *_sessions;
     NSObject<OS_dispatch_queue> *_queue;
     // Error parsing type: AB, name: _configured
-    NSObject<OS_dispatch_queue> *_idQueue;
-    QueryIdMapper *_idMapper;
     PARSessionConfiguration *_configuration;
     NSXPCConnection *_connection;
     PARImageLoader *_imageLoader;
@@ -39,7 +37,7 @@
 - (void)listSessions:(CDUnknownBlockType)arg1;
 - (void)reportFeedback:(id)arg1 feedback:(id)arg2 queryId:(unsigned long long)arg3;
 - (unsigned long long)request:(id)arg1 request:(id)arg2 reply:(CDUnknownBlockType)arg3;
-- (unsigned long long)_queryId:(unsigned long long)arg1 forObject:(id)arg2;
+- (void)forceFetchBag:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)bag:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)configure:(id)arg1;
 @property(retain) NSXPCListenerEndpoint *endpoint;

@@ -10,6 +10,7 @@
 
 @class IKColor, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIButtonBorderStyle : NSObject <NSCopying>
 {
     IKColor *_borderColor;

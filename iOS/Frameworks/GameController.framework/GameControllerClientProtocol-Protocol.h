@@ -17,5 +17,8 @@
 - (void)removeController:(GCController *)arg1;
 - (void)addController:(GCController *)arg1;
 - (void)replyConnectedHosts:(NSArray *)arg1;
+
+@optional
+- (void)addControllerForAppStoreRemote:(GCController *)arg1;
 @end
 

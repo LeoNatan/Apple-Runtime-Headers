@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)isPitching;
 - (_Bool)isGesturing;
 - (void)endPitch:(struct CGPoint)arg1;
+- (_Bool)tapAtPoint:(struct CGPoint)arg1;
 - (void)stopPitchingWithFocusPoint:(struct CGPoint)arg1;
 - (void)updatePitch:(struct CGPoint)arg1 translation:(double)arg2;
 - (void)updatePitchWithFocusPoint:(struct CGPoint)arg1 translation:(double)arg2;

@@ -23,6 +23,7 @@
 @property(readonly, nonatomic) NSString *targetProcessName; // @synthesize targetProcessName=_targetProcessName;
 - (void).cxx_destruct;
 - (void)availableRelevanceEnginesDidChange;
+- (id)relevanceEngine:(id)arg1 encodedObjectAtPath:(id)arg2;
 - (id)diagnosticLogFileForRelevanceEngine:(id)arg1;
 - (id)fetchAllElementsInRelevanceEngine:(id)arg1;
 - (id)fetchAllElementIdentifiersInRelevanceEngine:(id)arg1;
@@ -33,7 +34,9 @@
 - (void)_handleInvalidation;
 - (void)_handleInterruption;
 - (void)dealloc;
+- (id)initWithConnection:(id)arg1 delegate:(id)arg2;
 - (id)initWithTargetProcessName:(id)arg1 delegate:(id)arg2;
+- (id)initWithServiceName:(id)arg1 delegate:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

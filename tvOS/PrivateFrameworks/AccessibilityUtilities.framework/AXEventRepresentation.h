@@ -46,6 +46,7 @@
     unsigned long long _additionalFlags;
     long long _generationCount;
     struct __IOHIDEvent *_creatorHIDEvent;
+    struct __IOHIDServiceClient *_creatorHIDServiceClient;
     AXEventData *_accessibilityData;
     void *_window;
     NSData *_data;
@@ -55,12 +56,15 @@
 
 + (id)touchPadRepresentationWithHandType:(unsigned int)arg1 normalizedLocation:(struct CGPoint)arg2;
 + (id)touchRepresentationWithHandType:(unsigned int)arg1 location:(struct CGPoint)arg2;
++ (id)gestureRepresentationWithHandType:(unsigned int)arg1 locations:(id)arg2;
 + (id)iosmacPointerRepresentationWithTypeWithPointerInfo:(id)arg1;
 + (id)buttonRepresentationWithType:(unsigned int)arg1;
 + (id)keyRepresentationWithType:(unsigned int)arg1;
 + (id)accelerometerRepresentation:(id)arg1;
 + (id)representationWithEventRecord:(CDStruct_7f3c0925 *)arg1;
++ (id)representationWithHIDEvent:(struct __IOHIDEvent *)arg1 serviceClient:(struct __IOHIDServiceClient *)arg2 hidStreamIdentifier:(id)arg3 clientID:(id)arg4 taskPort:(unsigned int)arg5;
 + (id)representationWithHIDEvent:(struct __IOHIDEvent *)arg1 hidStreamIdentifier:(id)arg2 clientID:(id)arg3 taskPort:(unsigned int)arg4;
++ (id)representationWithHIDEvent:(struct __IOHIDEvent *)arg1 serviceClient:(struct __IOHIDServiceClient *)arg2 hidStreamIdentifier:(id)arg3;
 + (id)representationWithHIDEvent:(struct __IOHIDEvent *)arg1 hidStreamIdentifier:(id)arg2;
 + (id)representationWithLocation:(struct CGPoint)arg1 windowLocation:(struct CGPoint)arg2 handInfo:(id)arg3;
 + (id)_pointerControllerEvent:(struct __IOHIDEvent *)arg1;
@@ -79,6 +83,7 @@
 @property(nonatomic, getter=isSystemDrag) _Bool systemDrag; // @synthesize systemDrag=_systemDrag;
 @property(nonatomic) _Bool setTouchFlagOnSubevents; // @synthesize setTouchFlagOnSubevents=_setTouchFlagOnSubevents;
 @property(nonatomic, getter=isRedirectEvent) _Bool redirectEvent; // @synthesize redirectEvent=_redirectEvent;
+@property(retain, nonatomic) struct __IOHIDServiceClient *creatorHIDServiceClient; // @synthesize creatorHIDServiceClient=_creatorHIDServiceClient;
 @property(retain, nonatomic) struct __IOHIDEvent *creatorHIDEvent; // @synthesize creatorHIDEvent=_creatorHIDEvent;
 @property(nonatomic) _Bool useOriginalHIDTime; // @synthesize useOriginalHIDTime=_useOriginalHIDTime;
 @property(nonatomic) _Bool isGeneratedEvent; // @synthesize isGeneratedEvent=_isGeneratedEvent;
@@ -116,6 +121,7 @@
 - (struct __IOHIDEvent *)_accessibilityEventFromRealEvent:(struct __IOHIDEvent *)arg1;
 - (_Bool)_HIDEventIsAccessibilityEvent:(struct __IOHIDEvent *)arg1;
 - (void)applyAccessibilityDataToCreatorHIDEvent;
+- (unsigned char)screenEdgeForPoint:(struct CGPoint)arg1;
 @property(readonly, nonatomic) _Bool isCancel;
 @property(readonly, nonatomic) _Bool isInRangeLift;
 @property(readonly, nonatomic) _Bool isInRange;

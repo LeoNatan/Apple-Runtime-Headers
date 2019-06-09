@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     MFPCustomLineCap *mCustomEndCap;
 }
 
+- (void).cxx_destruct;
 - (void)strokePath:(id)arg1;
 - (void)applyDashCapToPath:(id)arg1;
 - (void)applyLineCapToPath:(id)arg1;

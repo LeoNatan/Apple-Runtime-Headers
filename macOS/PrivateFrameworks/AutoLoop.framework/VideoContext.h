@@ -8,7 +8,6 @@
 
 @class CIContext, NSDictionary, VideoWriter;
 
-__attribute__((visibility("hidden")))
 @interface VideoContext : NSObject
 {
     _Bool _colorManagement;
@@ -27,12 +26,13 @@ __attribute__((visibility("hidden")))
 @property(readonly) CIContext *ciCtx; // @synthesize ciCtx;
 - (void).cxx_destruct;
 - (int)appendFrame:(id)arg1 frameTime:(CDStruct_1b6d18a9)arg2 srcPixBuf:(struct __CVBuffer *)arg3;
+- (_Bool)pixelBuffer:(struct __CVBuffer *)arg1 conformsToImage:(id)arg2;
 - (struct __CVBuffer *)pixelBufferFromImage:(id)arg1;
 - (struct __CVBuffer *)pixelBufferFromImage:(id)arg1 withAttachFrom:(struct __CVBuffer *)arg2;
 - (struct __CVBuffer *)createPixelBuffer;
 - (struct __CVBuffer *)createPixelBuffer:(unsigned long long)arg1 height:(unsigned long long)arg2;
-- (id)initWithWriter:(id)arg1 pixelFormatFlags:(unsigned int)arg2 colorManagement:(_Bool)arg3;
 - (id)initWithWriter:(id)arg1 pixelFormatFlags:(unsigned int)arg2;
+- (id)initWithWriter:(id)arg1 pixelFormatFlags:(unsigned int)arg2 colorManagement:(_Bool)arg3;
 
 @end
 

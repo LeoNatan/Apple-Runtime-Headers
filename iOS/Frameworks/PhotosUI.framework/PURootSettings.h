@@ -6,12 +6,13 @@
 
 #import <PhotosUICore/PXSettings.h>
 
-@class PUAirPlaySettings, PUAlbumListSettings, PUFeedSettings, PUImportSettings, PUIrisSettings, PUMedusaSettings, PUMemoriesSettings, PUMomentsSettings, PUOneUpSettings, PUPerformanceDiagnosticsSettings, PUPhotoEditProtoSettings, PUPhotosGridSettings, PUSceneSettings, PUSearchSettings, PUSlideshowSettings, PUTabbedLibrarySettings, PUTilingViewSettings, PUWelcomeSettings, PUWorkaroundSettings;
+@class NSString, PUAirPlaySettings, PUAlbumListSettings, PUAudioClassificationSettings, PUCompositeVideoSettings, PUCurationSettings, PUFeedSettings, PUIrisSettings, PUMedusaSettings, PUMemoriesSettings, PUMomentsSettings, PUOneUpSettings, PUPerformanceDiagnosticsSettings, PUPhotoEditProtoSettings, PUPhotosGridSettings, PUSceneSettings, PUSlideshowSettings, PUTabbedLibrarySettings, PUTilingViewSettings, PUWelcomeSettings, PUWorkaroundSettings, PXImportSettings, PXSharingSettings, UIImage;
 
 @interface PURootSettings : PXSettings
 {
     _Bool _enforceDisableIrisUI;
     _Bool _allowIrisUI;
+    PUCompositeVideoSettings *_compositeVideoSettings;
     PUTabbedLibrarySettings *_tabbedLibrarySettings;
     PUPhotosGridSettings *_photosGridSettings;
     PUPhotoEditProtoSettings *_photoEditingSettings;
@@ -28,14 +29,19 @@
     PUWelcomeSettings *_welcomeSettings;
     PUWorkaroundSettings *_workaroundSettings;
     PUSceneSettings *_sceneSettings;
-    PUSearchSettings *_searchSettings;
+    PUAudioClassificationSettings *_audioClassificationSettings;
+    PXSharingSettings *_sharingSettings;
+    PUCurationSettings *_curation;
     PUIrisSettings *_irisSettings;
     Class _orbInterfaceThemeClass;
     PUPerformanceDiagnosticsSettings *_performanceDiagnosticsSettings;
-    PUImportSettings *_importSettings;
+    PXImportSettings *_importSettings;
+    NSString *__internal_libraryStateBriefDescription;
+    UIImage *__internal_libraryStateImage;
 }
 
 + (void)_deleteAllDiagnosticFiles;
++ (id)_audioClassificationSettings;
 + (id)_memoriesRelatedSettings;
 + (id)_photosUICoreSettings;
 + (id)_photoKitSettings;
@@ -46,14 +52,21 @@
 + (id)_debugRowsForViewControllerStack:(id)arg1;
 + (void)dismissSettingsController:(id)arg1;
 + (void)presentSettingsController;
++ (void)_presentTapToRadar;
++ (id)_saveScreenshot:(id)arg1;
 + (void)setupStatusBarDoubleTapOnInternalDevices;
++ (void)setupStatusBarInternalSettingsGestureOnInternalDevices;
 + (id)settingsControllerModule;
 + (id)sharedInstance;
-@property(retain, nonatomic) PUImportSettings *importSettings; // @synthesize importSettings=_importSettings;
+@property(retain, nonatomic) UIImage *_internal_libraryStateImage; // @synthesize _internal_libraryStateImage=__internal_libraryStateImage;
+@property(retain, nonatomic) NSString *_internal_libraryStateBriefDescription; // @synthesize _internal_libraryStateBriefDescription=__internal_libraryStateBriefDescription;
+@property(retain, nonatomic) PXImportSettings *importSettings; // @synthesize importSettings=_importSettings;
 @property(retain, nonatomic) PUPerformanceDiagnosticsSettings *performanceDiagnosticsSettings; // @synthesize performanceDiagnosticsSettings=_performanceDiagnosticsSettings;
 @property(retain, nonatomic) Class orbInterfaceThemeClass; // @synthesize orbInterfaceThemeClass=_orbInterfaceThemeClass;
 @property(retain, nonatomic) PUIrisSettings *irisSettings; // @synthesize irisSettings=_irisSettings;
-@property(retain, nonatomic) PUSearchSettings *searchSettings; // @synthesize searchSettings=_searchSettings;
+@property(retain, nonatomic) PUCurationSettings *curation; // @synthesize curation=_curation;
+@property(retain, nonatomic) PXSharingSettings *sharingSettings; // @synthesize sharingSettings=_sharingSettings;
+@property(retain, nonatomic) PUAudioClassificationSettings *audioClassificationSettings; // @synthesize audioClassificationSettings=_audioClassificationSettings;
 @property(retain, nonatomic) PUSceneSettings *sceneSettings; // @synthesize sceneSettings=_sceneSettings;
 @property(retain, nonatomic) PUWorkaroundSettings *workaroundSettings; // @synthesize workaroundSettings=_workaroundSettings;
 @property(retain, nonatomic) PUWelcomeSettings *welcomeSettings; // @synthesize welcomeSettings=_welcomeSettings;
@@ -70,6 +83,7 @@
 @property(retain, nonatomic) PUPhotoEditProtoSettings *photoEditingSettings; // @synthesize photoEditingSettings=_photoEditingSettings;
 @property(retain, nonatomic) PUPhotosGridSettings *photosGridSettings; // @synthesize photosGridSettings=_photosGridSettings;
 @property(retain, nonatomic) PUTabbedLibrarySettings *tabbedLibrarySettings; // @synthesize tabbedLibrarySettings=_tabbedLibrarySettings;
+@property(retain, nonatomic) PUCompositeVideoSettings *compositeVideoSettings; // @synthesize compositeVideoSettings=_compositeVideoSettings;
 @property(nonatomic) _Bool allowIrisUI; // @synthesize allowIrisUI=_allowIrisUI;
 - (void).cxx_destruct;
 - (void)setEnforceDisableIrisUI:(_Bool)arg1;

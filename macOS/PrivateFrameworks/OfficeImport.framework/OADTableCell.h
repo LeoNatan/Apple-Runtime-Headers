@@ -8,6 +8,7 @@
 
 @class OADTableCellProperties, OADTextBody;
 
+__attribute__((visibility("hidden")))
 @interface OADTableCell : NSObject
 {
     OADTextBody *mTextBody;

@@ -33,7 +33,7 @@
 - (void)_switchLogsAction:(id)arg1;
 - (void)viewDidLoad;
 - (void)_setupWithDictionary:(id)arg1;
-- (id)initWithMemory:(id)arg1;
+- (id)initWithMemory:(id)arg1 memoryInfo:(id)arg2;
 - (id)_debugDictionary;
 
 // Remaining properties

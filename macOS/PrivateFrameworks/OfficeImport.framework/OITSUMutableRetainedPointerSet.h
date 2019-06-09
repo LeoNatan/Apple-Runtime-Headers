@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OITSUMutablePointerSet.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSUMutableRetainedPointerSet : OITSUMutablePointerSet
 {
 }

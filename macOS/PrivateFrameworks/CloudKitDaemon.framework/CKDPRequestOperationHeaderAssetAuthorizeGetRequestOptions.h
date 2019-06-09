@@ -14,9 +14,7 @@
 {
     unsigned long long _contentRequestAuthorizeGetOptions;
     NSMutableArray *_contentRequestHeaders;
-    struct {
-        unsigned int contentRequestAuthorizeGetOptions:1;
-    } _has;
+    CDStruct_3f29eb26 _has;
 }
 
 + (Class)contentRequestHeadersType;

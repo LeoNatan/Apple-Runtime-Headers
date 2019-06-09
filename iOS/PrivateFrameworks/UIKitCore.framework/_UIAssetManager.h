@@ -23,10 +23,13 @@
     CUIMutableCatalog *_runtimeCatalog;
     struct os_unfair_lock_s _runtimeCatalogCreationLock;
     UITraitCollection *_preferredTraitCollection;
-    _Bool _isStarkAssetManager;
-    _Bool _isStandaloneAssetManager;
     struct os_unfair_lock_s _assetMapLock;
-    _Bool _managingUIKitAssets;
+    struct {
+        unsigned int isStarkAssetManager:1;
+        unsigned int isStandaloneAssetManager:1;
+        unsigned int isUIKitAssetsManager:1;
+        unsigned int isCoreGlyphsManager:1;
+    } _assetManagerFlags;
     _UIAssetManager *_nextAssetManager;
 }
 
@@ -47,20 +50,27 @@
 + (void)_saveAssetManager:(id)arg1 forBundle:(id)arg2 lock:(_Bool)arg3;
 + (void)_executeUnitTestWithAssetManagerCache:(CDUnknownBlockType)arg1;
 + (id)_assetManagerCache;
-@property(readonly, nonatomic, getter=_managingUIKitAssets) _Bool managingUIKitAssets; // @synthesize managingUIKitAssets=_managingUIKitAssets;
 @property(retain, nonatomic) UITraitCollection *preferredTraitCollection; // @synthesize preferredTraitCollection=_preferredTraitCollection;
 @property(nonatomic) double preferredScale; // @synthesize preferredScale=_preferredScale;
 @property(retain, nonatomic) _UIAssetManager *nextAssetManager; // @synthesize nextAssetManager=_nextAssetManager;
 @property(readonly, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
+- (id)_lookUpObjectForTraitCollection:(id)arg1 withAccessorWithAppearanceName:(CDUnknownBlockType)arg2;
+- (id)_translateAppearanceNameToNative:(id)arg1;
+- (id)_defaultAppearanceNames;
+- (id)_appearanceNames;
+- (_Bool)_hasMultipleAppearances;
 - (id)stackImageWithData:(id)arg1 forTraitCollection:(id)arg2;
 - (id)stackImageWithContentsOfFile:(id)arg1 forTraitCollection:(id)arg2;
 - (id)description;
 - (void)_disconnectImageAssets;
+- (id)_allImageNames;
+- (_Bool)_imageIsSystemImage:(id)arg1;
+- (_Bool)_imageBelongsToCoreGlyphs:(id)arg1;
 - (_Bool)_imageBelongsToUIKit:(id)arg1;
 - (void)_clearCachedResources;
 - (void)_clearCachedResources:(id)arg1;
 @property(readonly, nonatomic) CUIMutableCatalog *runtimeCatalog;
-- (id)_assetForName:(id)arg1 shouldCreateWhenNotPresent:(_Bool)arg2;
+- (id)_assetForName:(id)arg1;
 - (id)_insertAssetIntoMap:(id)arg1 forName:(id)arg2 lock:(_Bool)arg3;
 - (id)_insertAssetIntoMap:(id)arg1 forName:(id)arg2;
 - (id)_assetFromMapForName:(id)arg1 lock:(_Bool)arg2;
@@ -69,14 +79,19 @@
 - (void)disableCacheFlushing;
 @property(readonly, nonatomic) NSString *carFileName;
 - (id)_catalog;
+- (id)resolvedColorNamed:(id)arg1 withTraitCollection:(id)arg2;
 - (id)colorNamed:(id)arg1 withTraitCollection:(id)arg2;
 - (id)dataNamed:(id)arg1;
+- (id)imageNamed:(id)arg1 configuration:(id)arg2;
 - (id)imageNamed:(id)arg1 withTrait:(id)arg2;
 - (id)imageNamed:(id)arg1;
 - (id)imageNamed:(id)arg1 idiom:(long long)arg2;
 - (id)imageNamed:(id)arg1 idiom:(long long)arg2 subtype:(unsigned long long)arg3;
 - (id)imageNamed:(id)arg1 scale:(double)arg2 idiom:(long long)arg3 subtype:(unsigned long long)arg4;
-- (id)imageNamed:(id)arg1 scale:(double)arg2 gamut:(long long)arg3 layoutDirection:(long long)arg4 idiom:(long long)arg5 userInterfaceStyle:(long long)arg6 subtype:(unsigned long long)arg7 cachingOptions:(unsigned long long)arg8 sizeClassPair:(CDStruct_d58201db)arg9 attachCatalogImage:(_Bool)arg10;
+- (id)imageNamed:(id)arg1 configuration:(id)arg2 cachingOptions:(unsigned long long)arg3 attachCatalogImage:(_Bool)arg4;
+- (_Bool)_isSystemAssetManager;
+@property(readonly, nonatomic, getter=_managingCoreGlyphs) _Bool managingCoreGlyphs;
+@property(readonly, nonatomic, getter=_managingUIKitAssets) _Bool managingUIKitAssets;
 - (id)_starkAssetManager;
 - (void)dealloc;
 - (id)initManagerWithoutCatalogWithName:(id)arg1;

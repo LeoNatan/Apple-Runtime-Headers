@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)dealloc;
 - (void)automateLiveScrollOfScrollView:(id)arg1;
 - (void)scrollView:(id)arg1 boundsChangedForClipView:(id)arg2;
 - (void)snapRubberBandOfScrollView:(id)arg1;

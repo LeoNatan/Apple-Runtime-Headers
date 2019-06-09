@@ -9,11 +9,12 @@
 #import <InputMethodKit/IMKTextInput-Protocol.h>
 #import <InputMethodKit/IMKUnicodeTextInput-Protocol.h>
 #import <InputMethodKit/IMTSMSupport-Protocol.h>
+#import <InputMethodKit/TIPropertyProvider-Protocol.h>
 
 @class NSAppearance, NSMutableDictionary, NSString, NSXPCConnection;
 @protocol NSObject><IMKTextInput><IMKUnicodeTextInput><IMTSMSupport;
 
-@interface IPMDServerClientWrapper : NSObject <IMKTextInput, IMKUnicodeTextInput, IMTSMSupport>
+@interface IPMDServerClientWrapper : NSObject <IMKTextInput, IMKUnicodeTextInput, IMTSMSupport, TIPropertyProvider>
 {
     id <NSObject><IMKTextInput><IMKUnicodeTextInput><IMTSMSupport> _clientDOProxy;
     NSXPCConnection *_xpcConnection;
@@ -90,6 +91,9 @@
 - (id)currentInputSourceBundleID;
 - (void)selectInputMode:(id)arg1;
 - (id)bundleIdentifier;
+- (id)getApplicationPropertyValue:(unsigned long long)arg1;
+- (void)setApplicationProperty:(unsigned long long)arg1 withValue:(id)arg2 waitUntilDone:(BOOL)arg3;
+- (BOOL)_TIPropertyValueIsValid:(unsigned long long)arg1;
 - (BOOL)supportsUnicode;
 - (int)windowLevel;
 - (void)overrideKeyboardWithKeyboardNamed:(id)arg1;

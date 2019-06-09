@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, OITSUNoCopyDictionary;
 
+__attribute__((visibility("hidden")))
 @interface TCImportFontCache : NSObject
 {
     OITSUNoCopyDictionary *mFontCache;

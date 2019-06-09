@@ -8,36 +8,49 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOTimezone, NSMutableArray, NSString, PBUnknownFields;
+@class GEOTimezone, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDMessageLink : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_hoursOfOperations;
     NSString *_messageId;
     NSString *_messageUrl;
     NSString *_navBackgroundColor;
     NSString *_navTintColor;
-    int _responseTime;
     GEOTimezone *_timezone;
+    int _responseTime;
     _Bool _isVerified;
     struct {
-        unsigned int responseTime:1;
-        unsigned int isVerified:1;
-    } _has;
+        unsigned int has_responseTime:1;
+        unsigned int has_isVerified:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_hoursOfOperations:1;
+        unsigned int read_messageId:1;
+        unsigned int read_messageUrl:1;
+        unsigned int read_navBackgroundColor:1;
+        unsigned int read_navTintColor:1;
+        unsigned int read_timezone:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_hoursOfOperations:1;
+        unsigned int wrote_messageId:1;
+        unsigned int wrote_messageUrl:1;
+        unsigned int wrote_navBackgroundColor:1;
+        unsigned int wrote_navTintColor:1;
+        unsigned int wrote_timezone:1;
+        unsigned int wrote_responseTime:1;
+        unsigned int wrote_isVerified:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)hoursOfOperationType;
 + (id)messageLinkForPlaceData:(id)arg1;
-@property(retain, nonatomic) NSString *navTintColor; // @synthesize navTintColor=_navTintColor;
-@property(retain, nonatomic) NSString *navBackgroundColor; // @synthesize navBackgroundColor=_navBackgroundColor;
-@property(nonatomic) _Bool isVerified; // @synthesize isVerified=_isVerified;
-@property(retain, nonatomic) GEOTimezone *timezone; // @synthesize timezone=_timezone;
-@property(retain, nonatomic) NSMutableArray *hoursOfOperations; // @synthesize hoursOfOperations=_hoursOfOperations;
-@property(retain, nonatomic) NSString *messageUrl; // @synthesize messageUrl=_messageUrl;
-@property(retain, nonatomic) NSString *messageId; // @synthesize messageId=_messageId;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -46,22 +59,37 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *navTintColor;
 @property(readonly, nonatomic) _Bool hasNavTintColor;
+- (void)_readNavTintColor;
+@property(retain, nonatomic) NSString *navBackgroundColor;
 @property(readonly, nonatomic) _Bool hasNavBackgroundColor;
+- (void)_readNavBackgroundColor;
 @property(nonatomic) _Bool hasIsVerified;
+@property(nonatomic) _Bool isVerified;
+@property(retain, nonatomic) GEOTimezone *timezone;
 @property(readonly, nonatomic) _Bool hasTimezone;
+- (void)_readTimezone;
 - (id)hoursOfOperationAtIndex:(unsigned long long)arg1;
 - (unsigned long long)hoursOfOperationsCount;
+- (void)_addNoFlagsHoursOfOperation:(id)arg1;
 - (void)addHoursOfOperation:(id)arg1;
 - (void)clearHoursOfOperations;
+@property(retain, nonatomic) NSMutableArray *hoursOfOperations;
+- (void)_readHoursOfOperations;
 - (int)StringAsResponseTime:(id)arg1;
 - (id)responseTimeAsString:(int)arg1;
 @property(nonatomic) _Bool hasResponseTime;
-@property(nonatomic) int responseTime; // @synthesize responseTime=_responseTime;
+@property(nonatomic) int responseTime;
+@property(retain, nonatomic) NSString *messageUrl;
 @property(readonly, nonatomic) _Bool hasMessageUrl;
+- (void)_readMessageUrl;
+@property(retain, nonatomic) NSString *messageId;
 @property(readonly, nonatomic) _Bool hasMessageId;
+- (void)_readMessageId;
 
 @end
 

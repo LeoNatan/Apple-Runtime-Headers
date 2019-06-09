@@ -10,7 +10,6 @@
 
 @interface OBPrivacySplashListView : UIStackView
 {
-    _Bool _darkMode;
     _Bool _displayingPrivacyPane;
     UITextView *_footerTextView;
     NSMutableArray *_textViews;
@@ -21,9 +20,9 @@
 @property(retain, nonatomic) NSMutableArray *textViews; // @synthesize textViews=_textViews;
 @property _Bool displayingPrivacyPane; // @synthesize displayingPrivacyPane=_displayingPrivacyPane;
 @property(readonly, nonatomic) UITextView *footerTextView; // @synthesize footerTextView=_footerTextView;
-@property(nonatomic, getter=isDarkMode) _Bool darkMode; // @synthesize darkMode=_darkMode;
 - (void).cxx_destruct;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)updateTextAlignment;
 - (void)updateFonts;
 - (void)updateSpacing;
 - (id)initWithContentList:(id)arg1 dataDetectorTypes:(unsigned long long)arg2 displayingPrivacyPane:(_Bool)arg3;

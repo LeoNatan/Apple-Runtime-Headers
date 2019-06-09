@@ -11,6 +11,7 @@
 @protocol AEMessagesShelfLayoutDelegate <NSObject>
 - (_Bool)layoutShouldShowVideoDuration:(AEMessagesShelfLayout *)arg1;
 - (double)layout:(AEMessagesShelfLayout *)arg1 itemAtIndexPathDuration:(struct PXSimpleIndexPath)arg2;
+- (_Bool)layout:(AEMessagesShelfLayout *)arg1 itemAtIndexPathIsAnimatedImage:(struct PXSimpleIndexPath)arg2;
 - (_Bool)layout:(AEMessagesShelfLayout *)arg1 itemAtIndexPathIsLoop:(struct PXSimpleIndexPath)arg2;
 - (_Bool)layout:(AEMessagesShelfLayout *)arg1 itemAtIndexPathIsVideo:(struct PXSimpleIndexPath)arg2;
 - (long long)layout:(AEMessagesShelfLayout *)arg1 irisToggleStateForItemAtIndexPath:(struct PXSimpleIndexPath)arg2;

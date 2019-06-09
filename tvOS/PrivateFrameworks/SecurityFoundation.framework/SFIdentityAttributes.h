@@ -13,11 +13,13 @@
 @interface SFIdentityAttributes : NSObject <SFKeychainItemAttributes>
 {
     id _identityAttributesInternal;
+    NSString *persistentIdentifier;
     struct NSString *_privateKeyDomain;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSString *privateKeyDomain; // @synthesize privateKeyDomain=_privateKeyDomain;
+@property(readonly, copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool hasCertificate;
 @property(copy, nonatomic) NSString *identityName;
@@ -33,7 +35,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, copy, nonatomic) NSString *persistentIdentifier;
 @property(readonly) Class superclass;
 
 @end

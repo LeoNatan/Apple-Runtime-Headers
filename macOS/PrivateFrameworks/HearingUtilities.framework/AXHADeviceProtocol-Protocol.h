@@ -58,6 +58,7 @@
 @property(nonatomic) BOOL keepInSync;
 @property(readonly, nonatomic) BOOL isConnecting;
 @property(readonly, nonatomic) BOOL isPaired;
+- (unsigned long long)deviceType;
 - (id)valueForProperty:(unsigned long long)arg1;
 - (void)setValue:(id)arg1 forProperty:(unsigned long long)arg2;
 - (NSIndexSet *)selectedProgramIndexes;

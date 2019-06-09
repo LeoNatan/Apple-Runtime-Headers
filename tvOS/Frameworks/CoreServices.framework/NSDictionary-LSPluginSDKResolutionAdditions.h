@@ -8,5 +8,10 @@
 
 @interface NSDictionary (LSPluginSDKResolutionAdditions)
 - (id)ls_resolvePlugInKitInfoPlistWithDictionary:(id)arg1;
+- (unsigned long long)ls_hashQuery;
+- (id)ls_parseQueryForIdentifiers:(id)arg1;
+- (id)ls_insertExtensionPointVersion:(id)arg1;
+- (unsigned long long)_LS_integerForKey:(id)arg1;
+- (_Bool)_LS_BoolForKey:(id)arg1;
 @end
 

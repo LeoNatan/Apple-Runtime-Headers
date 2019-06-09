@@ -9,11 +9,11 @@
 #import <SearchUI/CNActionViewDelegate-Protocol.h>
 #import <SearchUI/CNContactInlineActionsViewControllerDelegate-Protocol.h>
 #import <SearchUI/CNUIObjectViewControllerDelegate-Protocol.h>
-#import <SearchUI/NUIContainerStackViewDelegate-Protocol.h>
+#import <SearchUI/NUIContainerViewDelegate-Protocol.h>
 
 @class CNContactInlineActionsViewController, NSData, NSString, NSURL, UIView;
 
-@interface SearchUIInlineActionsViewController : SearchUIAccessoryViewController <CNContactInlineActionsViewControllerDelegate, CNUIObjectViewControllerDelegate, CNActionViewDelegate, NUIContainerStackViewDelegate>
+@interface SearchUIInlineActionsViewController : SearchUIAccessoryViewController <CNContactInlineActionsViewControllerDelegate, CNUIObjectViewControllerDelegate, CNActionViewDelegate, NUIContainerViewDelegate>
 {
     CNContactInlineActionsViewController *_inlineActionsViewController;
     UIView *_messageButton;
@@ -26,24 +26,24 @@
 }
 
 + (id)directionsButtonImage;
-+ (_Bool)regionIsBlocked;
-+ (_Bool)supportsResult:(id)arg1;
-@property double longitude; // @synthesize longitude=_longitude;
-@property double latitude; // @synthesize latitude=_latitude;
-@property(retain) NSString *name; // @synthesize name=_name;
-@property(retain) NSData *mapsData; // @synthesize mapsData=_mapsData;
-@property(retain) UIView *directionsButton; // @synthesize directionsButton=_directionsButton;
-@property(retain) NSURL *messageURL; // @synthesize messageURL=_messageURL;
-@property(retain) UIView *messageButton; // @synthesize messageButton=_messageButton;
-@property(retain) CNContactInlineActionsViewController *inlineActionsViewController; // @synthesize inlineActionsViewController=_inlineActionsViewController;
++ (_Bool)supportsRowModel:(id)arg1;
+@property(nonatomic) double longitude; // @synthesize longitude=_longitude;
+@property(nonatomic) double latitude; // @synthesize latitude=_latitude;
+@property(retain, nonatomic) NSString *name; // @synthesize name=_name;
+@property(retain, nonatomic) NSData *mapsData; // @synthesize mapsData=_mapsData;
+@property(retain, nonatomic) UIView *directionsButton; // @synthesize directionsButton=_directionsButton;
+@property(retain, nonatomic) NSURL *messageURL; // @synthesize messageURL=_messageURL;
+@property(retain, nonatomic) UIView *messageButton; // @synthesize messageButton=_messageButton;
+@property(retain, nonatomic) CNContactInlineActionsViewController *inlineActionsViewController; // @synthesize inlineActionsViewController=_inlineActionsViewController;
 - (void).cxx_destruct;
+- (unsigned long long)type;
 - (void)contactInlineActionsViewController:(id)arg1 willPerformActionOfType:(id)arg2;
 - (id)hostingViewControllerForController:(id)arg1;
-- (void)updateWithContact:(id)arg1;
-- (void)updateWithResult:(id)arg1;
+- (void)updateWithContacts:(id)arg1;
+- (void)updateWithRowModel:(id)arg1;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
 - (void)didPressActionView:(id)arg1 longPress:(_Bool)arg2;
-- (id)setupViewWithStyle:(unsigned long long)arg1;
+- (id)setupView;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

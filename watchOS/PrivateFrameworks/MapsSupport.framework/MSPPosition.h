@@ -21,6 +21,7 @@
 + (id)positionBetweenPosition:(id)arg1 andPosition:(id)arg2 clientIdentifier:(id)arg3;
 + (_Bool)_hasSpaceForInsertionAtDepth:(unsigned int)arg1 betweenEarlierPosition:(id)arg2 andLaterPosition:(id)arg3 clientIdentifier:(id)arg4;
 + (int)_strategyForAllocationAtDepth:(unsigned int)arg1;
++ (_Bool)_randBoolForStrategy:(unsigned int)arg1;
 + (id)finalSignpostWithClientIdentifier:(id)arg1;
 + (id)initialSignpostWithClientIdentifier:(id)arg1;
 + (id)finalPositionWithClientIdentifier:(id)arg1;

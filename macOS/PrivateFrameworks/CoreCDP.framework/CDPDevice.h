@@ -44,6 +44,8 @@
 @property(retain, nonatomic) NSNumber *coolOffPeriod; // @synthesize coolOffPeriod=_coolOffPeriod;
 @property(nonatomic) unsigned long long recoveryStatus; // @synthesize recoveryStatus=_recoveryStatus;
 @property(copy, nonatomic) NSString *localizedDescription; // @synthesize localizedDescription=_localizedDescription;
+@property(copy, nonatomic) NSString *enclosureColor; // @synthesize enclosureColor=_enclosureColor;
+@property(copy, nonatomic) NSString *deviceColor; // @synthesize deviceColor=_deviceColor;
 @property(nonatomic) BOOL isCurrentDevice; // @synthesize isCurrentDevice=_isCurrentDevice;
 @property(copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(nonatomic) unsigned long long remainingAttempts; // @synthesize remainingAttempts=_remainingAttempts;

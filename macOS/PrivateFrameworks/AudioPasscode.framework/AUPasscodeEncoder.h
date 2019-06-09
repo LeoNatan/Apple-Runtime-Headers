@@ -6,7 +6,7 @@
 
 #import <AudioToolbox/AUAudioUnit.h>
 
-@class AUAudioUnitBus, AUAudioUnitBusArray, AUPasscodeCodecConfiguration, NSData, NSDictionary, NSObject;
+@class AUAudioUnitBus, AUAudioUnitBusArray, AUPasscodeCodecConfiguration, NSData, NSMutableDictionary, NSObject;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     unsigned int _fadeOutNumSamples;
     unsigned int _fadeOutSampleIndex;
     unsigned long long _loopNumber;
+    unsigned long long _beginningTime;
     BOOL _silenceOutputOnNextAssetEnding;
     BOOL _triggerFadeOut;
     BOOL _embedPasscode;
@@ -35,13 +36,13 @@ __attribute__((visibility("hidden")))
     unsigned long long _numLoopsToStopAfter;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     CDUnknownBlockType _assetEndedAndSilencedHandler;
-    NSDictionary *_carrierInfo;
+    NSMutableDictionary *_passcodeEmbedInfo;
 }
 
 + (void)registerAU;
 + (struct AudioComponentDescription)getAUDesc;
 + (id)supportedEncoders;
-@property(retain, nonatomic) NSDictionary *carrierInfo; // @synthesize carrierInfo=_carrierInfo;
+@property(retain, nonatomic) NSMutableDictionary *passcodeEmbedInfo; // @synthesize passcodeEmbedInfo=_passcodeEmbedInfo;
 @property(copy, nonatomic) CDUnknownBlockType assetEndedAndSilencedHandler; // @synthesize assetEndedAndSilencedHandler=_assetEndedAndSilencedHandler;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(nonatomic) BOOL embedPasscode; // @synthesize embedPasscode=_embedPasscode;

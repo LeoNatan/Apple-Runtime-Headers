@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (id)accessibilityIdentifier;
 + (id)buttonImage;
 
 @end

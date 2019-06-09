@@ -14,12 +14,19 @@
 }
 
 + (id)sharedConnection;
-@property(readonly) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
+@property(readonly, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 - (void).cxx_destruct;
+- (unsigned int)installabilityForDeletableSystemAppWithBundleID:(id)arg1 error:(id *)arg2;
+- (_Bool)deletableSystemAppCanBeInstalledOnWatchWithBundleID:(id)arg1 error:(id *)arg2;
+- (_Bool)counterpartApplicationisInstalledOnCompanionForWatchBundleID:(id)arg1 error:(id *)arg2;
+- (_Bool)applicationIsInstalledOnCompanionWithBundleID:(id)arg1 error:(id *)arg2;
+- (void)reconcileAppsOnPairing:(CDUnknownBlockType)arg1;
+- (_Bool)fetchApplicationDatabaseSyncInformationReturningDatabaseUUID:(id *)arg1 lastSequenceNumber:(unsigned int *)arg2 error:(id *)arg3;
 - (void)iconForApplicationWithBundleID:(id)arg1 variant:(unsigned int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)compatibleWatchApplicationsOnCompanionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)installApplicationWithBundleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeApplicationUserData:(CDUnknownBlockType)arg1;
+- (id)_synchronousProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)_proxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)init;
 

@@ -19,7 +19,6 @@
 @property(nonatomic) _Bool usesLockScreenRules; // @synthesize usesLockScreenRules=_usesLockScreenRules;
 @property(nonatomic) _Bool disablesWarn; // @synthesize disablesWarn=_disablesWarn;
 @property(nonatomic) double autoLockTimeout; // @synthesize autoLockTimeout=_autoLockTimeout;
-@property(nonatomic) _Bool disablesAttentionAwareness;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

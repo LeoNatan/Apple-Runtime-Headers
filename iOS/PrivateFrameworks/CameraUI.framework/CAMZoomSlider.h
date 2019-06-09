@@ -50,7 +50,7 @@
 - (void)_endAutozooming;
 - (void)_updateAutozooming;
 - (void)_beginAutozooming;
-- (_Bool)_isMinimumOrMaximumAutozooming;
+@property(readonly, nonatomic, getter=isAutozooming) _Bool autozooming;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (_Bool)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

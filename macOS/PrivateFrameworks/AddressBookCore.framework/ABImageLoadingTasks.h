@@ -14,7 +14,6 @@
 + (id)directoryServicesImageTaskWithRequest:(id)arg1;
 + (id)libraryDirectoryImageTaskWithRequest:(id)arg1;
 + (id)remoteImageTaskWithRequest:(id)arg1;
-+ (id)imageIdentifiersForRequest:(id)arg1;
 + (id)localLargeImageTaskWithRequest:(id)arg1;
 + (id)localThumbnailImageTaskWithRequest:(id)arg1;
 + (id)imageLoadingTaskForPerson:(id)arg1 emails:(id)arg2;

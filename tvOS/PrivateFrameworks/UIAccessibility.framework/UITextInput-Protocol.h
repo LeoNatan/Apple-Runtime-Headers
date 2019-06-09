@@ -6,7 +6,7 @@
 
 #import <UIAccessibility/UIKeyInput-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, UITextPosition, UITextRange, UIView;
+@class NSArray, NSAttributedString, NSDictionary, NSString, UITextPlaceholder, UITextPosition, UITextRange, UIView;
 @protocol UITextInputDelegate, UITextInputTokenizer;
 
 @protocol UITextInput <UIKeyInput>
@@ -44,6 +44,10 @@
 - (void)endFloatingCursor;
 - (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (void)beginFloatingCursorAtPoint:(struct CGPoint)arg1;
+- (void)removeTextPlaceholder:(UITextPlaceholder *)arg1;
+- (UITextPlaceholder *)insertTextPlaceholderWithSize:(struct CGSize)arg1;
+- (void)setAttributedMarkedText:(NSAttributedString *)arg1 selectedRange:(struct _NSRange)arg2;
+- (void)insertText:(NSString *)arg1 alternatives:(NSArray *)arg2 style:(long long)arg3;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(_Bool)arg2;
 - (struct CGRect)frameForDictationResultPlaceholder:(id)arg1;
 - (void)dictationRecognitionFailed;

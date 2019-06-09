@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
 - (id)captionDescription;
 - (id)iBooksMoveToTextElementWithEvent:(id)arg1 request:(id)arg2 direction:(long long)arg3;
 - (void)iBooksAdvanceToNextTextElementWithEvent:(id)arg1 request:(id)arg2;
-- (void)addTextBoundryToRequest:(id)arg1 edge:(int)arg2;
+- (void)addTextBoundryToRequest:(id)arg1 edge:(long long)arg2;
 - (BOOL)addContentSummaryToRequest:(id)arg1;
 - (id)sentenceEndMarkerAfterPosition:(id)arg1;
 - (BOOL)handleReadContentsCallbackForEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactLeftWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactRightShiftWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactLeftShiftWithEvent:(id)arg1 request:(id)arg2;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (id)iBooksInteractWithoutBoundaryCheckWithEvent:(id)arg1 request:(id)arg2 direction:(long long)arg3;
 - (id)iBooksFocusIntoTextUIElement:(id)arg1 withEvent:(id)arg2 request:(id)arg3 direction:(long long)arg4;
 - (BOOL)iBooksHasReachedEndOfTextElementWithGranularity:(long long)arg1;

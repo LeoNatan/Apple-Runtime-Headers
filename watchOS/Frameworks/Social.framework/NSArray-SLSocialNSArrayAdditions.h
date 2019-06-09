@@ -10,5 +10,8 @@
 - (id)objectsPassingTest:(CDUnknownBlockType)arg1;
 - (id)firstObjectPassingTest:(CDUnknownBlockType)arg1;
 - (unsigned int)countObjectsPassingTest:(CDUnknownBlockType)arg1;
+- (id)objectsPassingTest:(CDUnknownBlockType)arg1;
+- (id)firstObjectPassingTest:(CDUnknownBlockType)arg1;
+- (unsigned int)countObjectsPassingTest:(CDUnknownBlockType)arg1;
 @end
 

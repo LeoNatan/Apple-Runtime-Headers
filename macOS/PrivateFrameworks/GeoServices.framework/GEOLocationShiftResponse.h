@@ -13,7 +13,7 @@
     struct GEOPixelPoint _shiftedPixel;
 }
 
-@property(nonatomic) struct GEOPixelPoint shiftedPixel; // @synthesize shiftedPixel=_shiftedPixel;
++ (BOOL)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -21,8 +21,10 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) struct GEOPixelPoint shiftedPixel;
 
 @end
 

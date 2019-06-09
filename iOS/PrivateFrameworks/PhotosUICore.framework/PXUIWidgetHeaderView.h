@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class NSArray, NSString, PXViewLayoutHelper, UIButton, UIColor, UIFont, UILabel, UIVisualEffectView;
+@class NSArray, NSString, UIButton, UIColor, UIFont, UILabel, UIVisualEffectView;
 @protocol PXUIWidgetHeaderViewDelegate;
 
 @interface PXUIWidgetHeaderView : UIView
@@ -26,7 +26,6 @@
     _Bool _allowUserInteractionWithSubtitle;
     _Bool _allowUserInteractionWithCaption;
     _Bool __hasContent;
-    PXViewLayoutHelper *_layoutHelper;
     id <PXUIWidgetHeaderViewDelegate> _delegate;
     NSString *_title;
     NSString *_subtitle;
@@ -91,7 +90,6 @@
 - (void)_handleSubtitleButton:(id)arg1;
 - (_Bool)_canComposeTitleWithSubtitle;
 - (_Bool)_hasSubtitle;
-@property(readonly, nonatomic) PXViewLayoutHelper *layoutHelper; // @synthesize layoutHelper=_layoutHelper;
 - (id)_captionButtonCreateIfNeeded:(_Bool)arg1;
 - (id)_captionLabelCreateIfNeeded:(_Bool)arg1;
 - (id)_subtitleButtonCreateIfNeeded:(_Bool)arg1;

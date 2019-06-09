@@ -10,7 +10,7 @@
 #import <SpringBoardFoundation/NSCopying-Protocol.h>
 #import <SpringBoardFoundation/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSString, NSURL, UIColor;
+@class NSDictionary, NSString, NSURL, SBFGradient, UIColor;
 
 @interface SBFWallpaperDefaultConfiguration : NSObject <NSCopying, BSDescriptionProviding, NSSecureCoding>
 {
@@ -21,9 +21,11 @@
     NSDictionary *_proceduralWallpaperOptions;
     UIColor *_wallpaperColor;
     NSString *_wallpaperColorName;
+    SBFGradient *_wallpaperGradient;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, copy, nonatomic) SBFGradient *wallpaperGradient; // @synthesize wallpaperGradient=_wallpaperGradient;
 @property(readonly, copy, nonatomic) NSString *wallpaperColorName; // @synthesize wallpaperColorName=_wallpaperColorName;
 @property(readonly, copy, nonatomic) UIColor *wallpaperColor; // @synthesize wallpaperColor=_wallpaperColor;
 @property(readonly, copy, nonatomic) NSDictionary *proceduralWallpaperOptions; // @synthesize proceduralWallpaperOptions=_proceduralWallpaperOptions;
@@ -43,6 +45,7 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)init;
+- (id)initGradientWithGradient:(id)arg1;
 - (id)initColorWithColorName:(id)arg1;
 - (id)initColorWithColor:(id)arg1;
 - (id)initProceduralWithIdentifier:(id)arg1 options:(id)arg2;

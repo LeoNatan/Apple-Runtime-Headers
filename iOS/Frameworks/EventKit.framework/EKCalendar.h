@@ -14,6 +14,7 @@
 }
 
 + (id)typeDescription:(long long)arg1;
++ (id)_eventKitBundle;
 + (id)calendarForEntityTypes:(unsigned long long)arg1 eventStore:(id)arg2;
 + (id)calendarForEntityType:(unsigned long long)arg1 eventStore:(id)arg2;
 + (id)calendarWithEventStore:(id)arg1;
@@ -29,7 +30,9 @@
 - (id)sendersPhoneNumber;
 - (id)sendersEmail;
 - (_Bool)isManaged;
+- (_Bool)removeAllCalendarItemsWithError:(id *)arg1;
 - (_Bool)remove:(id *)arg1;
+- (_Bool)_validateDeletable:(id *)arg1;
 - (_Bool)commit:(id *)arg1;
 - (_Bool)validate:(id *)arg1;
 - (_Bool)automaticEventLocationGeocodingAllowed;
@@ -53,6 +56,8 @@
 - (id)ownerIdentityPhoneNumber;
 - (void)setOwnerIdentityEmail:(id)arg1;
 - (id)ownerIdentityEmail;
+- (void)setOwnerIdentityId:(id)arg1;
+- (int)ownerIdentityId;
 - (void)setOwnerIdentityDisplayName:(id)arg1;
 - (id)ownerIdentityDisplayName;
 - (void)setSelfIdentityLastName:(id)arg1;
@@ -97,6 +102,7 @@
 - (void)_setSource:(id)arg1;
 @property(retain, nonatomic) EKSource *source;
 - (id)externalURI;
+- (id)selectionSyncIdentifier;
 - (id)syncHash;
 - (void)setExternalRepresentation:(id)arg1;
 - (id)externalRepresentation;
@@ -108,6 +114,8 @@
 - (id)externalIDTag;
 - (void)setExternalID:(id)arg1;
 - (id)externalID;
+- (void)setIsAffectingAvailability:(_Bool)arg1;
+- (_Bool)isAffectingAvailability;
 - (void)setIsIgnoringSharedCalendarNotifications:(_Bool)arg1;
 - (_Bool)isIgnoringSharedCalendarNotifications;
 - (_Bool)allowsIgnoringSharedEventChangeNotifications;
@@ -118,7 +126,9 @@
 - (_Bool)isNaturalLanguageSuggestedEventCalendar;
 - (_Bool)isSuggestedEventCalendar;
 - (_Bool)isSuggestionsCalendar;
+- (void)setMarkedImmutableSharees:(_Bool)arg1;
 - (_Bool)isMarkedImmutableSharees;
+- (void)setMarkedUndeletable:(_Bool)arg1;
 - (_Bool)isMarkedUndeletable;
 - (void)setFamilyCalendar:(_Bool)arg1;
 - (_Bool)isFamilyCalendar;
@@ -156,6 +166,7 @@
 - (void)setAllowsScheduling:(_Bool)arg1;
 - (_Bool)allowsScheduling;
 - (void)setImmutable:(_Bool)arg1;
+- (_Bool)isImmutableRaw;
 @property(readonly, nonatomic, getter=isImmutable) _Bool immutable;
 - (void)setHidden:(_Bool)arg1;
 - (_Bool)isHidden;
@@ -185,10 +196,13 @@
 - (_Bool)getColorRed:(int *)arg1 green:(int *)arg2 blue:(int *)arg3;
 - (void)setColorString:(id)arg1;
 - (id)colorString;
+- (void)setColorStringRaw:(id)arg1;
+- (id)colorStringRaw;
 - (void)setSymbolicColorName:(id)arg1;
 - (id)symbolicColorName;
 @property(copy, nonatomic) NSString *title;
 - (id)unlocalizedTitle;
+- (_Bool)_reset;
 - (void)reset;
 - (int)entityType;
 - (id)init;

@@ -14,7 +14,7 @@
 @property(copy, nonatomic) NSArray *overriddenActions;
 @property(readonly, nonatomic) unsigned long long coalesceCount;
 @property(readonly, nonatomic) _Bool showsTextInputOnAppearance;
-@property(readonly, nonatomic) unsigned long long messageNumberOfLines;
+@property(readonly, nonatomic, getter=isNumberOfLinesInfinite) _Bool numberOfLinesInfinite;
 @property(readonly, nonatomic) NSArray *interfaceActions;
 @property(readonly, copy, nonatomic) CDUnknownBlockType defaultAction;
 @property(readonly, copy, nonatomic) CDUnknownBlockType closeAction;

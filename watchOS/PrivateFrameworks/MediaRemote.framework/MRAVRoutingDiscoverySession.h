@@ -18,6 +18,7 @@
 }
 
 + (id)discoverySessionWithEndpointFeatures:(unsigned int)arg1;
++ (id)discoverySessionWithEndpointFeatures:(unsigned int)arg1 enableThrottling:(_Bool)arg2;
 @property(nonatomic) _Bool alwaysAllowUpdates; // @synthesize alwaysAllowUpdates=_alwaysAllowUpdates;
 - (void).cxx_destruct;
 - (void)removeOutputDevicesChangedCallback:(id)arg1;

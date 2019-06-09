@@ -8,32 +8,28 @@
 
 #import <AppSupportUI/_NUIGridArrangementContainer-Protocol.h>
 
-@class NSMutableArray, NSString;
-@protocol NUIContainerStackViewDelegate;
+@class NSString;
 
 @interface NUIContainerStackView : NUIContainerView <_NUIGridArrangementContainer>
 {
-    NSMutableArray *_spacingViews;
-    struct vector<float, std::__1::allocator<float>> _spacingAfter;
-    struct _NUIGridArrangement _visibleArrangement;
-    struct CGSize _visibleCount;
+    struct _NUIGridArrangement _arrangement;
+    CDStruct_0d6b4eb6 _visibleCount;
+    struct map<UIView *, float, std::__1::less<UIView *>, std::__1::allocator<std::__1::pair<UIView *const, float>>> _customSpacings;
     struct {
-        unsigned int delegateMinSpacing:1;
-        unsigned int delegateMinDirectionalSpacing:1;
-        unsigned int delegateAlignment:1;
+        unsigned int alignment:8;
+        unsigned int distribution:8;
+        unsigned int axis:4;
     } _stackViewFlags;
-    int _axis;
-    int _distribution;
-    int _alignment;
     float _spacing;
 }
 
++ (id)verticalContainerStackViewWithArrangedSubviews:(id)arg1;
++ (id)horizontalContainerStackViewWithArrangedSubviews:(id)arg1;
++ (id)containerStackViewWithAxis:(int)arg1 arrangedSubviews:(id)arg2;
 @property(nonatomic) float spacing; // @synthesize spacing=_spacing;
-@property(nonatomic) int alignment; // @synthesize alignment=_alignment;
-@property(nonatomic) int distribution; // @synthesize distribution=_distribution;
-@property(nonatomic) int axis; // @synthesize axis=_axis;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)debugDictionary;
 - (id)arrangedDescription;
 - (void)layoutArrangedSubviewsInBounds:(struct CGRect)arg1;
 - (struct CGSize)calculateArrangedSizeFittingSize:(struct CGSize)arg1;
@@ -41,20 +37,22 @@
 - (void)populateGridArrangementDimension:(vector_b8a5df6e *)arg1 withCells:(const vector_f8404f95 *)arg2 axis:(int)arg3;
 - (void)populateGridArrangementCells:(vector_f8404f95 *)arg1;
 - (int)_effectiveAlignmentForArrangedSubview:(id)arg1;
+- (_Bool)setNeedsInvalidation:(int)arg1;
 - (void)didRemoveArrangedSubview:(id)arg1 atIndex:(int)arg2;
-- (void)didInsertArrangedSubview:(id)arg1 atIndex:(int)arg2;
-- (_Bool)invalidateIntrinsicContentSizeRequiringArrangedSubviewRemeasurement:(_Bool)arg1;
+- (void)setSpacing:(float)arg1 afterArrangedSubviewAtIndex:(int)arg2;
+- (void)setCustomSpacing:(float)arg1 afterView:(id)arg2;
+- (float)customSpacingAfterView:(id)arg1;
+@property(nonatomic) int alignment;
+@property(nonatomic) int distribution;
+@property(nonatomic) int axis;
 - (void)setBaselineRelativeArrangement:(_Bool)arg1;
-@property(nonatomic) __weak id <NUIContainerStackViewDelegate> delegate; // @dynamic delegate;
-- (id)viewForLastBaselineLayout;
-- (id)viewForFirstBaselineLayout;
+- (id)calculateViewForLastBaselineLayout;
+- (id)calculateViewForFirstBaselineLayout;
 - (id)_baselineViewVendForFirstBaseline:(_Bool)arg1;
 - (void)dealloc;
 - (id)initWithArrangedSubviews:(id)arg1;
-- (float)customSpacingAfterView:(id)arg1;
-- (void)setCustomSpacing:(float)arg1 afterView:(id)arg2;
-- (float)spacingAfterArrangedSubviewAtIndex:(int)arg1;
-- (void)setSpacing:(float)arg1 afterArrangedSubviewAtIndex:(int)arg2;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (_Bool)needsBaselineDebugBoundingBoxesForArrangedSubview:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

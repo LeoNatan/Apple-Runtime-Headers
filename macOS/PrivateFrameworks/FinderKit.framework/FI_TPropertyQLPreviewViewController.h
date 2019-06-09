@@ -8,12 +8,11 @@
 
 #import <FinderKit/FIAliasResolution-Protocol.h>
 #import <FinderKit/QLPreviewViewDelegate-Protocol.h>
-#import <FinderKit/TMarkTornDown-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface FI_TPropertyQLPreviewViewController : FI_IPropertyValueController <QLPreviewViewDelegate, FIAliasResolution, TMarkTornDown>
+@interface FI_TPropertyQLPreviewViewController : FI_IPropertyValueController <QLPreviewViewDelegate, FIAliasResolution>
 {
     TNSRef_87bff19e _multiPreviewView;
     struct shared_ptr<TQLPreviewViewQTEjectHelper> _ejectHelper;
@@ -22,10 +21,8 @@ __attribute__((visibility("hidden")))
     struct shared_ptr<TDisableScreenUpdatesInWindow> _previewDrawingSynchronizer;
     struct TNotificationCenterObserver _timeMachineWillStartObserver;
     struct TKeyValueBinder _previewItemBinder;
-    _Bool _isTornDown;
 }
 
-@property(readonly, getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)alias:(const struct TFENode *)arg1 resolvedAs:(const struct TFENode *)arg2 temporaryNode:(const struct TFENode *)arg3;

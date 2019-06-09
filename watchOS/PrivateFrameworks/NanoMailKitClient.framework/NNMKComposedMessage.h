@@ -20,10 +20,12 @@
     NSString *_subject;
     NSString *_body;
     NSString *_referenceMessageId;
+    NSString *_standaloneReferenceMessageId;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool includeAttachments; // @synthesize includeAttachments=_includeAttachments;
+@property(retain, nonatomic) NSString *standaloneReferenceMessageId; // @synthesize standaloneReferenceMessageId=_standaloneReferenceMessageId;
 @property(retain, nonatomic) NSString *referenceMessageId; // @synthesize referenceMessageId=_referenceMessageId;
 @property(retain, nonatomic) NSString *body; // @synthesize body=_body;
 @property(retain, nonatomic) NSString *subject; // @synthesize subject=_subject;

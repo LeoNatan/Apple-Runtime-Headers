@@ -6,11 +6,64 @@
 
 #import <UIKit/UIViewController.h>
 
+@class PUModalTransition, PUNavigationTransition, PUToolbarViewModel, PUViewModel, UIToolbar;
+@protocol PUDisplayAsset;
+
 @interface UIViewController (PHViewControllerChrome)
++ (void)_pu_ensureLocalAssets:(id)arg1 forReason:(id)arg2 completion:(CDUnknownBlockType)arg3;
++ (void)pu_copyAssets:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
++ (id)pu_currentViewControllerStack;
 - (void)_ph_updateBarAppearanceAnimated:(_Bool)arg1;
 - (void)ph_enableChromeManagement;
 @property(readonly, nonatomic) long long ph_preferredChromeAnimation;
 - (void)ph_setNeedsChromeUpdate;
 @property(readonly, nonatomic) unsigned long long ph_preferredChrome;
+- (_Bool)ph_isPreparedForTransition;
+- (void)ph_prepareForTransition;
+- (_Bool)ph_viewContainsTransitionSourcePlaceholderView;
+- (void)ph_loadTransitionSourcePlaceholderViewUsingFactory:(CDUnknownBlockType)arg1;
+- (_Bool)ph_isTransitionOverlayView:(id)arg1;
+- (struct CGRect)ph_rectOfInterestForTransitionInCoordinateSpace:(id)arg1;
+- (struct CGRect)ph_rectOfInterestForTransitionInCoordinateSpace:(id)arg1 withInfo:(id)arg2;
+- (double)px_effectiveImageModulationIntensityWithProposedValue:(double)arg1;
+@property(readonly, nonatomic) long long pu_preferredBarStyle;
+- (void)ppt_performBlockAfterNextNavigationAnimation:(CDUnknownBlockType)arg1;
+- (id)pu_navigationController;
+- (id)px_sharePresentation;
+@property(readonly, nonatomic) _Bool pu_shouldActAsTabRootViewController;
+- (_Bool)pu_scrollToInitialPositionAnimated:(_Bool)arg1;
+- (_Bool)pu_handleSecondTabTap;
+@property(readonly, nonatomic) PUToolbarViewModel *pu_toolbarViewModel;
+@property(nonatomic, setter=pu_debugSetTransient:) _Bool pu_debugIsTransient;
+- (void)pu_dismissViewControllerAnimated:(_Bool)arg1 interactive:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)pu_presentViewController:(id)arg1 transition:(id)arg2 animated:(_Bool)arg3 interactive:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
+@property(readonly, nonatomic) PUNavigationTransition *pu_currentInteractiveNavigationTransition;
+@property(readonly, nonatomic) PUModalTransition *pu_currentInteractiveModalTransition;
+- (void)pu_restoreNavigationTransition;
+- (void)pu_removeNavigationTransition;
+@property(retain, nonatomic, setter=pu_setNavigationTransition:) PUNavigationTransition *pu_navigationTransition;
+@property(retain, nonatomic, setter=pu_setModalTransition:) PUModalTransition *pu_modalTransition;
+@property(readonly, nonatomic) PUViewModel *pu_debugCurrentViewModel;
+@property(readonly, nonatomic) id <PUDisplayAsset> pu_debugCurrentAsset;
+@property(readonly, nonatomic) UIToolbar *pu_footerToolbar;
+- (id)_pu_offersTableView;
+- (void)pu_removeFooterToolbar;
+- (void)pu_insertFooterToolbarWithItems:(id)arg1;
+- (void)pu_ensureLocalAssetsForCloudPhotoSharing:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)pu_copyAssets:(id)arg1;
+@property(readonly, nonatomic) _Bool pu_isPresenting;
+- (void)_pu_setPreferredStatusBarUpdateAnimation:(long long)arg1;
+- (void)_pu_setTabBarVisible:(_Bool)arg1 withAnimationSettings:(struct PUBarAnimationSettings)arg2;
+- (void)_pu_setToolbarVisible:(_Bool)arg1 withAnimationSettings:(struct PUBarAnimationSettings)arg2;
+- (void)_pu_setNavigationBarVisible:(_Bool)arg1 withAnimationSettings:(struct PUBarAnimationSettings)arg2;
+- (void)_pu_updateStatusBarVisibilityWithAnimationSettings:(struct PUBarAnimationSettings)arg1;
+- (void)_pu_performBarsVisibilityUpdatesWithAnimationSettings:(struct PUBarAnimationSettings)arg1 isStatusBarHidden:(_Bool)arg2;
+- (void)pu_performBarsVisibilityUpdatesWithAnimationSettings:(struct PUBarAnimationSettings)arg1;
+@property(readonly, nonatomic) long long pu_preferredStatusBarUpdateAnimation;
+- (void)pu_setupInitialBarsVisibilityOnViewWillAppearAnimated:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool pu_wantsTabBarVisible;
+@property(readonly, nonatomic) _Bool pu_wantsToolbarVisible;
+@property(readonly, nonatomic) _Bool pu_wantsNavigationBarVisible;
+- (_Bool)pu_isForceTouchEnabled;
 @end
 

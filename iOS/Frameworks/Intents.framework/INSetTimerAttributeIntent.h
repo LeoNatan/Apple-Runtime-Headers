@@ -8,7 +8,7 @@
 
 #import <Intents/INSetTimerAttributeIntentExport-Protocol.h>
 
-@class INTimer, NSString;
+@class INSpeakableString, INTimer, NSString;
 
 @interface INSetTimerAttributeIntent : INIntent <INSetTimerAttributeIntentExport>
 {
@@ -22,11 +22,13 @@
 - (id)domain;
 - (void)_redactForMissingPrivacyEntitlementOptions:(unsigned long long)arg1 containingAppBundleId:(id)arg2;
 - (id)_dictionaryRepresentation;
+- (void)setToLabel:(id)arg1;
+@property(readonly, copy, nonatomic) INSpeakableString *toLabel;
 - (void)setToDuration:(double)arg1;
 @property(readonly, nonatomic) double toDuration;
 - (void)setTargetTimer:(id)arg1;
 @property(readonly, copy, nonatomic) INTimer *targetTimer;
-- (id)initWithTargetTimer:(id)arg1 toDuration:(double)arg2;
+- (id)initWithTargetTimer:(id)arg1 toDuration:(double)arg2 toLabel:(id)arg3;
 - (id)_categoryVerb;
 - (long long)_intentCategory;
 - (void)_setMetadata:(id)arg1;

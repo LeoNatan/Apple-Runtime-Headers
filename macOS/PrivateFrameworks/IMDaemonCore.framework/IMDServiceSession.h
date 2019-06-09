@@ -136,6 +136,7 @@
 - (BOOL)isAwaitingStorageTimer;
 - (void)didReceiveBalloonPayload:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 messageGUID:(id)arg4 account:(id)arg5;
 - (void)didSendBalloonPayload:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 messageGUID:(id)arg4 account:(id)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (void)_postMessagesFromStorage:(id)arg1;
 - (void)_storageTimerFired;
 - (void)_updateStorageTimerWithInterval:(double)arg1;
 - (void)_checkMessageForOneTimeCodes:(id)arg1;
@@ -174,9 +175,12 @@
 - (void)didUpdateChatStatus:(int)arg1 chat:(id)arg2 style:(unsigned char)arg3 account:(id)arg4;
 - (void)didUpdateChatStatus:(int)arg1 chat:(id)arg2 style:(unsigned char)arg3;
 - (void)didReceiveInvitation:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
-- (void)_storeMessage:(id)arg1 chatIdentifier:(id)arg2 localChat:(id)arg3 style:(unsigned char)arg4 account:(id)arg5 messagesToPostArray:(id)arg6;
+- (BOOL)_storeMessage:(id)arg1 chatIdentifier:(id)arg2 localChat:(id)arg3 style:(unsigned char)arg4 account:(id)arg5 messagesToPostArray:(id)arg6;
 - (BOOL)testOverrideTextValidationDidFail;
-- (void)didReceiveMessages:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 account:(id)arg4;
+- (BOOL)didReceiveMessages:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 account:(id)arg4;
+- (BOOL)_isActivated;
+- (void)_setSortIDForMessage:(id)arg1 forChat:(id)arg2;
+- (void)_setReplyGUIDOnMessage:(id)arg1 forChat:(id)arg2;
 - (id)_transcodeController;
 - (void)didReceiveMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 account:(id)arg4;
 - (void)didReceiveMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
@@ -259,6 +263,9 @@
 - (id)chatRoomForGroupChatIdentifier:(id)arg1;
 - (id)groupChatIdentifierForChatRoom:(id)arg1;
 - (void)useChatRoom:(id)arg1 forGroupChatIdentifier:(id)arg2;
+- (id)_sharedMessageStore;
+- (id)_sharedAccountController;
+- (void)_IMDStoreMessage:(id)arg1 inMessage:(id)arg2 forceReplace:(BOOL)arg3 modifyError:(BOOL)arg4 modifyFlags:(BOOL)arg5 calculateUnreadCount:(BOOL)arg6 flagMask:(unsigned long long)arg7 shouldStoreBlock:(CDUnknownBlockType)arg8 didStoreBlock:(CDUnknownBlockType)arg9 block:(CDUnknownBlockType)arg10;
 - (void)changeLocalProperty:(id)arg1 ofBuddy:(id)arg2 to:(id)arg3;
 - (id)localPropertiesOfBuddy:(id)arg1;
 - (void)clearLocalProperties;
@@ -277,6 +284,7 @@
 - (id)pictureKeyForBuddy:(id)arg1;
 - (id)pictureOfBuddy:(id)arg1;
 @property(readonly, retain, nonatomic) NSDictionary *buddyPictures;
+- (void)sendNicknameUpdatesToPeerDevices:(id)arg1;
 - (void)closeSessionChatID:(id)arg1 identifier:(id)arg2 style:(unsigned char)arg3;
 - (void)setProperties:(id)arg1 ofParticipant:(id)arg2 inChatID:(id)arg3 identifier:(id)arg4 style:(unsigned char)arg5;
 - (void)sendLogDumpMessageAtFilePath:(id)arg1 toRecipient:(id)arg2 shouldDeleteFile:(BOOL)arg3 withCompletion:(CDUnknownBlockType)arg4;

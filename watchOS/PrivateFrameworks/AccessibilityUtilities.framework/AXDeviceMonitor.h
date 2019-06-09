@@ -17,6 +17,7 @@
     id <AXDeviceMonitorDelegate> _delegate;
 }
 
++ (id)bluetoothKeyboardDevices;
 @property(nonatomic) __weak id <AXDeviceMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)informDelegate;
@@ -24,6 +25,8 @@
 - (void)begin;
 - (id)copyDevices;
 - (void)dealloc;
+- (void)_commonInitWithRunLoop:(id)arg1;
+- (id)initWithMatchingMultiple:(id)arg1 callbackRunLoop:(id)arg2;
 - (id)initWithMatchingDictionary:(id)arg1 callbackRunLoop:(id)arg2;
 
 @end

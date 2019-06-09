@@ -6,14 +6,13 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class NSString, UIColor, UILabel, UIView, WBSSavedPassword;
+@class NSString, UILabel, UIView, WBSSavedPassword;
 
 __attribute__((visibility("hidden")))
 @interface SFPasswordTableViewCell : UITableViewCell
 {
     UILabel *_monogramLabel;
     UIView *_monogramBackgroundView;
-    UIColor *_monogramBackgroundColor;
     WBSSavedPassword *_savedPassword;
     NSString *_searchPattern;
 }
@@ -24,9 +23,6 @@ __attribute__((visibility("hidden")))
 - (void)safari_copyPassword;
 - (void)safari_copyUserName;
 - (void)setSavedPassword:(id)arg1 searchPattern:(id)arg2;
-- (void)setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
-- (void)_refreshMonogramViewBackgroundColorIfNeeded;
 - (void)showPlaceholderImageForDomain:(id)arg1 backgroundColor:(id)arg2;
 - (void)setIcon:(id)arg1;
 

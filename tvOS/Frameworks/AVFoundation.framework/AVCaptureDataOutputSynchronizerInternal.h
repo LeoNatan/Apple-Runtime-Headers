@@ -6,14 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class AVWeakReference, AVWeakReferencingDelegateStorage, NSArray;
-@protocol OS_dispatch_queue;
+@class AVCaptureDataOutputDelegateCallbackHelper, AVWeakReference, NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureDataOutputSynchronizerInternal : NSObject
 {
+    AVCaptureDataOutputDelegateCallbackHelper *delegateCallbackHelper;
     AVWeakReference *weakReference;
-    AVWeakReferencingDelegateStorage *delegateStorage;
-    NSObject<OS_dispatch_queue> *dataOutputQueue;
     NSArray *dataOutputs;
     struct OpaqueFigSimpleMutex *dataOutputsStorageMutex;
     NSArray *dataOutputsStorage;

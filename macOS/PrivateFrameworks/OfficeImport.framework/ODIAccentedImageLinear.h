@@ -6,6 +6,7 @@
 
 #import <OfficeImport/ODIImageLinear.h>
 
+__attribute__((visibility("hidden")))
 @interface ODIAccentedImageLinear : ODIImageLinear
 {
 }

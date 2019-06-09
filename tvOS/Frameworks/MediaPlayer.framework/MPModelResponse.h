@@ -24,6 +24,7 @@
 @property(readonly, copy, nonatomic) MPModelRequest *request; // @synthesize request=_request;
 - (void).cxx_destruct;
 - (void)_invalidate;
+@property(readonly, nonatomic, getter=isEmpty) _Bool empty;
 - (void)getChangeDetailsFromPreviousResponse:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)description;
 - (id)debugDescription;

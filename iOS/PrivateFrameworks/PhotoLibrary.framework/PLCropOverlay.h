@@ -37,6 +37,7 @@
     _Bool _displayedInPopover;
     PLContactPhotoOverlay *_contactPhotoOverlay;
     NSString *_defaultOKButtonTitle;
+    NSString *_defaultCancelButtonTitle;
     id <PLCropOverlayDelegate> _delegate;
     PLCropOverlayBottomBar *__bottomBar;
     UIButton *__cameraCancelButton;
@@ -45,6 +46,7 @@
 @property(readonly, nonatomic) UIButton *_cameraCancelButton; // @synthesize _cameraCancelButton=__cameraCancelButton;
 @property(readonly, nonatomic) PLCropOverlayBottomBar *_bottomBar; // @synthesize _bottomBar=__bottomBar;
 @property(nonatomic) __weak id <PLCropOverlayDelegate> delegate; // @synthesize delegate=_delegate;
+@property(copy, nonatomic) NSString *defaultCancelButtonTitle; // @synthesize defaultCancelButtonTitle=_defaultCancelButtonTitle;
 @property(copy, nonatomic) NSString *defaultOKButtonTitle; // @synthesize defaultOKButtonTitle=_defaultOKButtonTitle;
 @property(nonatomic, getter=isDisplayedInPopover) _Bool displayedInPopover; // @synthesize displayedInPopover=_displayedInPopover;
 @property(nonatomic) _Bool isEditingLockScreen; // @synthesize isEditingLockScreen=_isEditingLockScreen;
@@ -57,6 +59,7 @@
 - (id)_newOverlayViewWithFrame:(struct CGRect)arg1 lighterEdgeOnTop:(_Bool)arg2;
 - (void)_updateCropRectInRect:(struct CGRect)arg1;
 - (void)_updateToolbarItems:(_Bool)arg1;
+- (void)_updateEditImageCancelButtonTitle;
 - (void)_updateEditImageDoneButtonTitle;
 - (void)_updateTitle;
 @property(nonatomic) _Bool previewMode;
@@ -115,7 +118,7 @@
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1 mode:(int)arg2 offsettingStatusBar:(_Bool)arg3;
 - (void)_savePhotoFinished:(id)arg1;
-- (void)_backgroundSavePhoto:(id)arg1;
+- (void)_backgroundSavePhoto:(id)arg1 cropRect:(struct CGRect)arg2 minimalCropDimension:(double)arg3;
 - (void)beginBackgroundSaveWithTile:(id)arg1 progressTitle:(id)arg2 completionCallbackTarget:(id)arg3 options:(int)arg4;
 
 @end

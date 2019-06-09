@@ -7,7 +7,7 @@
 #import <ContactsPersistence/CNCDPersistenceStack.h>
 
 @interface CNCDPersistenceStack (CNCDAddressBookBackend)
-+ (id)persistenceStackWithAddressBookURL:(id)arg1;
++ (id)persistenceStackWithAddressBookOptions:(id)arg1;
 + (id)persistenceStackWithAddressBook:(id)arg1;
 + (id)persistenceStackWithSharedAddressBook;
 @end

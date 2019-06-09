@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUActivity.h>
+#import <PhotosUICore/PXActivity.h>
 
 @class PUAlbumPickerViewController;
 
 __attribute__((visibility("hidden")))
-@interface PUAddToAlbumActivity : PUActivity
+@interface PUAddToAlbumActivity : PXActivity
 {
     PUAlbumPickerViewController *_albumPickerViewController;
 }
@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 - (void)prepareWithActivityItems:(id)arg1;
 - (_Bool)canPerformWithActivityItems:(id)arg1;
 - (id)_activityBundleImageConfiguration;
+- (id)_systemImageName;
 - (id)activityTitle;
 - (id)activityType;
 

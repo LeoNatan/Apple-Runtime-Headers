@@ -8,5 +8,8 @@
 
 @interface NSPopUpButton (ASKContainerName)
 + (id)containerName_ask;
+- (void)setPreferredEdge_ask:(unsigned long long)arg1;
+- (unsigned long long)preferredEdge_ask;
+- (void)setSelectedItem:(id)arg1;
 @end
 

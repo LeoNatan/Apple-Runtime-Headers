@@ -6,7 +6,7 @@
 
 #import <Navigation/NSObject-Protocol.h>
 
-@class GEOStep, MNGuidanceEventFeedback, MNGuidanceLaneInfo, MNGuidanceSignInfo, NSArray, NSString, NSUUID;
+@class GEOStep, MNGuidanceEventFeedback, MNGuidanceJunctionViewInfo, MNGuidanceLaneInfo, MNGuidanceSignInfo, NSArray, NSString, NSUUID;
 @protocol MNGuidanceManager;
 
 @protocol MNGuidanceManagerDelegate <NSObject>
@@ -21,10 +21,12 @@
 - (void)guidanceManager:(id <MNGuidanceManager>)arg1 updatedGuidanceEventFeedback:(MNGuidanceEventFeedback *)arg2;
 - (void)guidanceManager:(id <MNGuidanceManager>)arg1 newGuidanceEventFeedback:(MNGuidanceEventFeedback *)arg2;
 - (void)guidanceManager:(id <MNGuidanceManager>)arg1 triggerHaptics:(int)arg2;
-- (void)guidanceManager:(id <MNGuidanceManager>)arg1 announce:(NSString *)arg2 shortPromptType:(unsigned long long)arg3 stage:(unsigned long long)arg4 hasSecondaryManeuver:(_Bool)arg5 completionBlock:(void (^)(int))arg6;
+- (void)guidanceManager:(id <MNGuidanceManager>)arg1 announce:(NSString *)arg2 shortPromptType:(unsigned long long)arg3 ignorePromptStyle:(_Bool)arg4 stage:(unsigned long long)arg5 hasSecondaryManeuver:(_Bool)arg6 completionBlock:(void (^)(int))arg7;
 - (void)guidanceManager:(id <MNGuidanceManager>)arg1 willAnnounce:(unsigned long long)arg2 inSeconds:(double)arg3;
 - (void)guidanceManager:(id <MNGuidanceManager>)arg1 usePersistentDisplay:(_Bool)arg2;
 - (void)guidanceManager:(id <MNGuidanceManager>)arg1 updateSignsWithInfo:(MNGuidanceSignInfo *)arg2;
+- (void)guidanceManager:(id <MNGuidanceManager>)arg1 hideJunctionViewForId:(NSUUID *)arg2;
+- (void)guidanceManager:(id <MNGuidanceManager>)arg1 showJunctionView:(MNGuidanceJunctionViewInfo *)arg2;
 - (void)guidanceManager:(id <MNGuidanceManager>)arg1 hideLaneDirectionsForId:(NSUUID *)arg2;
 - (void)guidanceManager:(id <MNGuidanceManager>)arg1 showLaneDirections:(MNGuidanceLaneInfo *)arg2;
 - (void)guidanceManagerEndGuidanceUpdate:(id <MNGuidanceManager>)arg1;

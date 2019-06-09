@@ -50,7 +50,6 @@ __attribute__((visibility("hidden")))
 - (void)_updateDestination;
 - (void)updateETA;
 - (void)updateComparisonDestination:(id)arg1 ofType:(unsigned int)arg2;
-- (void)updateMapsActive:(_Bool)arg1;
 - (void)updateLocationHistory:(id)arg1;
 - (void)updateForLocation:(id)arg1;
 - (void)stop;

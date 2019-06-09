@@ -28,7 +28,6 @@
 @property(readonly, nonatomic) NSDictionary *audioSettings;
 @property(readonly, nonatomic) NSArray *audioTracks;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithAudioTracks:(id)arg1 audioSettings:(id)arg2;
 - (id)init;

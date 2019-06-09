@@ -7,6 +7,7 @@
 #import <PassKitCore/PKPaymentAuthorizationDataModel.h>
 
 @interface PKPaymentAuthorizationDataModel (NanoPassKit)
+- (_Bool)npkIsCardOnFilePayment;
 - (_Bool)_hasNonPeerPaymentAcceptedPasses;
 - (_Bool)npkIsSplitPeerPaymentWithoutAnotherPaymentMethod;
 - (_Bool)npkIsSplitPeerPaymentWithAnotherPaymentMethod;

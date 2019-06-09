@@ -34,9 +34,9 @@
 - (id)_defaultOptions;
 - (void)_checkIfDownloadIsRequiredForAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_cancelPreviousDownloadsForAsset:(id)arg1;
+- (_Bool)isAnyPickerAssetDownloading:(id)arg1;
 - (void)checkIfDownloadIsRequiredForAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)handleDownloadOfAssetIfNeeded:(id)arg1 inCollection:(id)arg2 withSuccessHandler:(CDUnknownBlockType)arg3;
-- (void)handleDownloadOfAsset:(id)arg1 inCollection:(id)arg2 withSuccessHandler:(CDUnknownBlockType)arg3;
 - (id)initWithGridViewController:(id)arg1;
 - (id)init;
 

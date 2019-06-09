@@ -18,12 +18,17 @@
 
 + (BOOL)supportsSecureCoding;
 - (id)description;
+@property(readonly, nonatomic) long long alignment;
+@property(readonly, nonatomic) long long position;
 @property(readonly, nonatomic) NSString *text;
+- (const struct OpaqueFigCaptionData *)copyFigCaptionData;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithFigCaptionData:(const struct OpaqueFigCaptionData *)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithText:(id)arg1 position:(long long)arg2 alignment:(long long)arg3;
 - (id)initWithText:(id)arg1;
 - (id)init;
 

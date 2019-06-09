@@ -11,7 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)autocorrectionContextWithData:(id)arg1 markedText:(id)arg2 selectedText:(id)arg3 afterText:(id)arg4 selectedRangeInMarkedText:(struct _NSRange)arg5;
++ (id)autocorrectionContextWithWebContext:(const struct WebAutocorrectionContext *)arg1;
++ (id)emptyAutocorrectionContext;
 
 @end
 

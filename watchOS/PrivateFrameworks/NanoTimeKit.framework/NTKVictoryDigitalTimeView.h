@@ -20,6 +20,7 @@
     _Bool _flipViewIsLower;
     CLKTimeFormatter *_timeFormatter;
     _Bool _frozen;
+    _Bool _invertedColors;
     unsigned int _style;
     unsigned int _color;
 }
@@ -27,6 +28,7 @@
 + (id)transitionTimingFunction;
 @property(nonatomic) unsigned int color; // @synthesize color=_color;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
+@property(nonatomic) _Bool invertedColors; // @synthesize invertedColors=_invertedColors;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 - (void).cxx_destruct;
 - (void)timeFormatterTextDidChange:(id)arg1;
@@ -34,12 +36,15 @@
 - (void)layoutSubviews;
 - (void)setTimeOffset:(double)arg1;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
-- (void)applyTransitionFraction:(float)arg1 fromColor:(unsigned int)arg2 toColor:(unsigned int)arg3;
+- (void)applyTransitionFraction:(float)arg1 fromColor:(id)arg2 toColor:(id)arg3;
+- (void)setBackgroundColor:(id)arg1;
 - (int)_lowerDigitAppearanceForStyle:(unsigned int)arg1;
 - (int)_upperDigitAppearanceForStyle:(unsigned int)arg1;
 - (void)_setFlipViewIsLower:(_Bool)arg1;
 - (void)applyTransitionFraction:(float)arg1 fromStyle:(unsigned int)arg2 toStyle:(unsigned int)arg3;
 - (void)_resetDigitAppearanceForStyle:(unsigned int)arg1;
+- (int)defaultAppearance;
+- (void)_setupFlipDigitsView;
 - (void)clearEditingTransitions;
 - (void)willBeginEditing;
 - (id)initForDevice:(id)arg1;

@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
     unsigned int _lastRateChangeCounter;
     unsigned int _remoteBandwidthEstimation;
     unsigned int _localBandwidthEstimation;
-    CDStruct_714379fe _owrdList;
+    CDStruct_55dce769 _owrdList;
     BOOL _isOWRDListReady;
     BOOL _isOWRDConstant;
     double _owrd;
@@ -87,6 +87,7 @@ __attribute__((visibility("hidden")))
     void *_logDump;
     void *_logBasebandDump;
     BOOL _isPeriodicLoggingEnabled;
+    double _packetLossRateVideo;
 }
 
 @property(readonly, nonatomic) unsigned int actualBitrate; // @synthesize actualBitrate=_actualBitrate;
@@ -95,6 +96,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL isNewRateSentOut; // @synthesize isNewRateSentOut=_isNewRateSentOut;
 @property(readonly, nonatomic) double roundTripTime; // @synthesize roundTripTime=_roundTripTime;
 @property(readonly, nonatomic) unsigned int totalPacketReceived; // @synthesize totalPacketReceived=_totalPacketReceived;
+@property(readonly, nonatomic) double packetLossRateVideo; // @synthesize packetLossRateVideo=_packetLossRateVideo;
 @property(readonly, nonatomic) double packetLossRate; // @synthesize packetLossRate=_packetLossRate;
 @property(readonly, nonatomic) unsigned int mostBurstLoss; // @synthesize mostBurstLoss=_mostBurstLoss;
 @property(retain, nonatomic) VCRateControlMediaController *mediaController; // @synthesize mediaController=_mediaController;
@@ -113,8 +115,6 @@ __attribute__((visibility("hidden")))
 - (void)resetLossEventBuffer;
 - (int)lossEventCount;
 - (void)updateLossEvent:(double)arg1 time:(double)arg2;
-- (double)calculateNOWRDWithDuration:(double)arg1;
-- (BOOL)prepareOWRDList:(double)arg1 time:(double)arg2;
 - (void)calculateCongestionMetricsFromOWRD:(double)arg1 time:(double)arg2;
 - (void)checkActualBitrates;
 - (BOOL)keepOvershootingRampDownBandwidth;
@@ -133,8 +133,9 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldRampUp;
 - (void)checkPaused;
 - (void)checkCongestionStatus;
-- (void)doRateControlWithBasebandStatistics:(CDStruct_48a7b5a5)arg1;
-- (BOOL)doRateControlWithStatistics:(CDStruct_48a7b5a5)arg1;
+- (BOOL)doRateControlWithBasebandStatistics:(CDStruct_b3eb8f4a)arg1;
+- (BOOL)doRateControlWithVCRCStatistics:(CDStruct_b3eb8f4a)arg1;
+- (BOOL)doRateControlWithStatistics:(CDStruct_b3eb8f4a)arg1;
 - (void)enableBasebandDump:(void *)arg1;
 - (void)enableLogDump:(void *)arg1 enablePeriodicLogging:(BOOL)arg2;
 - (void)configure:(struct VCRateControlAlgorithmConfig)arg1 restartRequired:(BOOL)arg2;

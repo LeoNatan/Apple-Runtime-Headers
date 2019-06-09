@@ -14,13 +14,33 @@ __attribute__((visibility("hidden")))
     double _rollAngle;
     BOOL _hasYawAngle;
     double _yawAngle;
+    BOOL _hasLeftEyeClosedConfidence;
+    int _leftEyeClosedConfidence;
+    BOOL _hasRightEyeClosedConfidence;
+    int _rightEyeClosedConfidence;
+    BOOL _hasSmileConfidence;
+    int _smileConfidence;
+    BOOL _hasLeftEyeBounds;
+    struct CGRect _leftEyeBounds;
+    BOOL _hasRightEyeBounds;
+    struct CGRect _rightEyeBounds;
 }
 
-@property double yawAngle; // @synthesize yawAngle=_yawAngle;
-@property BOOL hasYawAngle; // @synthesize hasYawAngle=_hasYawAngle;
-@property double rollAngle; // @synthesize rollAngle=_rollAngle;
-@property BOOL hasRollAngle; // @synthesize hasRollAngle=_hasRollAngle;
-@property long long faceID; // @synthesize faceID=_faceID;
+@property(nonatomic) struct CGRect rightEyeBounds; // @synthesize rightEyeBounds=_rightEyeBounds;
+@property(nonatomic) BOOL hasRightEyeBounds; // @synthesize hasRightEyeBounds=_hasRightEyeBounds;
+@property(nonatomic) struct CGRect leftEyeBounds; // @synthesize leftEyeBounds=_leftEyeBounds;
+@property(nonatomic) BOOL hasLeftEyeBounds; // @synthesize hasLeftEyeBounds=_hasLeftEyeBounds;
+@property(nonatomic) int smileConfidence; // @synthesize smileConfidence=_smileConfidence;
+@property(nonatomic) BOOL hasSmileConfidence; // @synthesize hasSmileConfidence=_hasSmileConfidence;
+@property(nonatomic) int rightEyeClosedConfidence; // @synthesize rightEyeClosedConfidence=_rightEyeClosedConfidence;
+@property(nonatomic) BOOL hasRightEyeClosedConfidence; // @synthesize hasRightEyeClosedConfidence=_hasRightEyeClosedConfidence;
+@property(nonatomic) int leftEyeClosedConfidence; // @synthesize leftEyeClosedConfidence=_leftEyeClosedConfidence;
+@property(nonatomic) BOOL hasLeftEyeClosedConfidence; // @synthesize hasLeftEyeClosedConfidence=_hasLeftEyeClosedConfidence;
+@property(nonatomic) double yawAngle; // @synthesize yawAngle=_yawAngle;
+@property(nonatomic) BOOL hasYawAngle; // @synthesize hasYawAngle=_hasYawAngle;
+@property(nonatomic) double rollAngle; // @synthesize rollAngle=_rollAngle;
+@property(nonatomic) BOOL hasRollAngle; // @synthesize hasRollAngle=_hasRollAngle;
+@property(nonatomic) long long faceID; // @synthesize faceID=_faceID;
 
 @end
 

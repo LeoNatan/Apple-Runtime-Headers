@@ -13,9 +13,12 @@
 @interface CKDPRequestedFields : PBCodable <NSCopying>
 {
     NSMutableArray *_fields;
+    NSMutableArray *_listFields;
 }
 
++ (Class)listFieldType;
 + (Class)fieldsType;
+@property(retain, nonatomic) NSMutableArray *listFields; // @synthesize listFields=_listFields;
 @property(retain, nonatomic) NSMutableArray *fields; // @synthesize fields=_fields;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
@@ -27,6 +30,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)listFieldAtIndex:(unsigned long long)arg1;
+- (unsigned long long)listFieldsCount;
+- (void)addListField:(id)arg1;
+- (void)clearListFields;
 - (id)fieldsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)fieldsCount;
 - (void)addFields:(id)arg1;

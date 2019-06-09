@@ -28,7 +28,6 @@
     long long _textSizeMode;
 }
 
-+ (id)logHandle;
 @property(nonatomic) _Bool shouldUseVerticalLayout; // @synthesize shouldUseVerticalLayout=_shouldUseVerticalLayout;
 @property(nonatomic) _Bool disableButtonHighlights; // @synthesize disableButtonHighlights=_disableButtonHighlights;
 @property(nonatomic) long long textSizeMode; // @synthesize textSizeMode=_textSizeMode;

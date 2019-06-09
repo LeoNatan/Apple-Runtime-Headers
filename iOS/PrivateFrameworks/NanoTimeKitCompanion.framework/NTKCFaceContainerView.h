@@ -32,7 +32,9 @@
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic) struct CGSize faceSize; // @synthesize faceSize=_faceSize;
 - (void).cxx_destruct;
+- (void)_updateOutlineColor;
 - (double)_outlineLineWidth;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

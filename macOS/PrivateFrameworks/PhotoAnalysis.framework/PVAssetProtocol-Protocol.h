@@ -13,6 +13,10 @@
 @property(readonly, nonatomic) NSData *distanceIdentity;
 @property(readonly, nonatomic) struct CLLocationCoordinate2D locationCoordinate;
 @property(readonly, nonatomic) NSDate *creationDate;
+@property(readonly, nonatomic) unsigned long long pixelHeight;
+@property(readonly, nonatomic) unsigned long long pixelWidth;
+@property(readonly, nonatomic) NSString *originalFilename;
+@property(readonly, nonatomic) NSString *filename;
 @property(readonly, nonatomic) NSString *cloudIdentifier;
 @property(readonly, nonatomic) NSString *localIdentifier;
 @end

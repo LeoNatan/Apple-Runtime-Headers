@@ -6,7 +6,13 @@
 
 #import <AppKit/NSViewController.h>
 
+@class NCNotificationExtensionContext;
+
 @interface NSViewController (NCWidgetProvidingPresentationStyles)
 - (void)presentViewControllerInWidget:(id)arg1;
+- (void)_invalidatePreferredContentSize;
+- (void)_animatePreferredContentSize:(CDUnknownBlockType)arg1 animationStart:(CDUnknownBlockType)arg2 animationComplete:(CDUnknownBlockType)arg3;
+@property struct CGSize _preferredContentSize;
+@property(readonly, nonatomic) NCNotificationExtensionContext *notificationExtensionContext;
 @end
 

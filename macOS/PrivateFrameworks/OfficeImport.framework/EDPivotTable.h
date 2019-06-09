@@ -8,6 +8,7 @@
 
 @class EDCollection, EDReference, EDResources, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDPivotTable : NSObject
 {
     EDResources *mResources;

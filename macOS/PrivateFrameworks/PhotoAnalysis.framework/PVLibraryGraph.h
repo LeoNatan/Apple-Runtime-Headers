@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosGraph/MAGraph.h>
+#import <KnowledgeGraphKit/MAGraph.h>
 
 #import <PhotoAnalysis/PVPhotoLibraryProtocol-Protocol.h>
 
@@ -21,8 +21,8 @@
 + (id)graphForFacesDataSnapshotAtPath:(id)arg1;
 + (id)originGraphForFacesDataSnapshotAtPath:(id)arg1;
 + (id)graphForLibrary:(id)arg1 ingestPeople:(BOOL)arg2;
-+ (Class)edgeClass;
-+ (Class)nodeClass;
++ (Class)edgeClassForLabel:(id)arg1 domain:(unsigned short)arg2;
++ (Class)nodeClassForLabel:(id)arg1 domain:(unsigned short)arg2;
 @property(retain, nonatomic) NSDictionary *distanceIdentityDictionary; // @synthesize distanceIdentityDictionary=_distanceIdentityDictionary;
 @property(retain, nonatomic) NSDictionary *faceprintDictionary; // @synthesize faceprintDictionary=_faceprintDictionary;
 - (void).cxx_destruct;
@@ -37,7 +37,6 @@
 - (BOOL)saveFacesDataSnapshotAtPath:(id)arg1 error:(id *)arg2;
 - (unsigned long long)getPeopleTypeForFaceGroupNode:(id)arg1;
 - (id)pv_lastAssetDate;
-- (BOOL)pv_isLibraryBeingSynchronized;
 - (float)pv_faceProcessingProgress;
 - (id)pv_fetchInvalidAssetIdentifiersForCommonComparison;
 - (id)pv_fetchFaceGroupsForPerson:(id)arg1;
@@ -56,7 +55,7 @@
 - (id)pv_fetchFacesForPerson:(id)arg1 inMoment:(id)arg2;
 - (id)pv_fetchFacesForPerson:(id)arg1;
 - (id)pv_fetchFacesWithLocalIdentifiers:(id)arg1;
-- (id)pv_fetchFaces;
+- (unsigned long long)pv_numberOfFacesWithFaceprints;
 - (id)pv_fetchPersonsGroupedByAssetLocalIdentifierForAssets:(id)arg1;
 - (id)pv_fetchInvalidCandidatePersonsForPerson:(id)arg1;
 - (id)pv_fetchCandidatePersonsForPerson:(id)arg1;

@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (id)_colorForFeedback:(id)arg1;
 - (id)_colorForEngineState:(long long)arg1;
 - (id)_colorForEngine:(id)arg1;
+- (id)_monogramForEngine:(id)arg1;
 - (id)init;
 
 @end

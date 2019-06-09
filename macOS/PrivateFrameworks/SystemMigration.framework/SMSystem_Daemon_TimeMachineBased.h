@@ -6,7 +6,8 @@
 
 #import <SystemMigration/SMSystem_Daemon.h>
 
-@class NSDate, NSString;
+@class NSDate, NSString, TMSession;
+@protocol TMMachineStoreInfo, TMVolumeStoreInfo;
 
 @interface SMSystem_Daemon_TimeMachineBased : SMSystem_Daemon
 {
@@ -16,9 +17,15 @@
     NSString *_machineName;
     NSString *_storageVolume;
     NSDate *_backupCompletedDate;
+    TMSession *_timeMachineSession;
+    id <TMMachineStoreInfo> _machineStoreInfo;
+    id <TMVolumeStoreInfo> _volumeStoreInfo;
 }
 
 + (unsigned long long)requiredScannerState;
+@property(retain) id <TMVolumeStoreInfo> volumeStoreInfo; // @synthesize volumeStoreInfo=_volumeStoreInfo;
+@property(retain) id <TMMachineStoreInfo> machineStoreInfo; // @synthesize machineStoreInfo=_machineStoreInfo;
+@property(retain) TMSession *timeMachineSession; // @synthesize timeMachineSession=_timeMachineSession;
 @property(retain) NSDate *backupCompletedDate; // @synthesize backupCompletedDate=_backupCompletedDate;
 @property(retain) NSString *storageVolume; // @synthesize storageVolume=_storageVolume;
 @property(retain) NSString *machineName; // @synthesize machineName=_machineName;
@@ -36,7 +43,7 @@
 - (id)displayState;
 - (unsigned long long)systemType;
 - (id)description;
-- (id)initWithPath:(id)arg1 onVolume:(id)arg2 onMachine:(id)arg3 backedUpOnVolume:(id)arg4;
+- (id)initWithTimeMachineSession:(id)arg1 volumeStoreInfo:(id)arg2 machineStoreInfo:(id)arg3;
 
 @end
 

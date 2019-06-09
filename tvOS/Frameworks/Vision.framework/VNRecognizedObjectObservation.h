@@ -15,6 +15,8 @@
 
 @property(readonly, copy, nonatomic) NSArray *labels; // @synthesize labels=_labels;
 - (void).cxx_destruct;
+- (id)initWithRequestRevision:(unsigned long long)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithRequestRevision:(unsigned long long)arg1 boundingBox:(struct CGRect)arg2 confidence:(float)arg3 labels:(id)arg4;
 
 @end

@@ -8,6 +8,7 @@
 
 @class NSArray, NSLayoutGuide, NSMutableArray;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceEncyclopedicRowView : MKPlaceSectionRowView
 {
     NSMutableArray *_factoidViews;
@@ -15,10 +16,12 @@
     NSLayoutGuide *_leftMetricGuide;
     NSLayoutGuide *_rightMetricGuide;
     unsigned long long _columnCount;
+    BOOL _isStandAlone;
     NSArray *_items;
     NSMutableArray *_labelConstraints;
 }
 
+@property(nonatomic) BOOL isStandAlone; // @synthesize isStandAlone=_isStandAlone;
 @property(retain, nonatomic) NSMutableArray *labelConstraints; // @synthesize labelConstraints=_labelConstraints;
 @property(retain, nonatomic) NSArray *items; // @synthesize items=_items;
 - (void).cxx_destruct;

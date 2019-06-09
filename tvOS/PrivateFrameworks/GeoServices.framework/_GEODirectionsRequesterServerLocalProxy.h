@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (id)_validateResponse:(id)arg1;
 - (void)cancelRequest:(id)arg1;
-- (void)startRequest:(id)arg1 auditToken:(id)arg2 isDoomRequest:(_Bool)arg3 requestPriority:(id)arg4 finished:(CDUnknownBlockType)arg5 networkActivity:(CDUnknownBlockType)arg6 error:(CDUnknownBlockType)arg7;
+- (void)startRequest:(id)arg1 auditToken:(id)arg2 isDoomRequest:(_Bool)arg3 requestPriority:(id)arg4 callbackQueue:(id)arg5 finished:(CDUnknownBlockType)arg6 networkActivity:(CDUnknownBlockType)arg7 error:(CDUnknownBlockType)arg8;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

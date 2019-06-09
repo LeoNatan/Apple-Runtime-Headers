@@ -8,6 +8,7 @@
 
 @class DirectoryEditorViewController, NSButton, NSPanel, NSTextField, ODNode;
 
+__attribute__((visibility("hidden")))
 @interface AuthToNodeSheetController : NSObject
 {
     NSPanel *_authSheet;

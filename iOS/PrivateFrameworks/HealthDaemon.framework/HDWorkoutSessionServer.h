@@ -11,8 +11,8 @@
 #import <HealthDaemon/HKDataFlowLinkProcessor-Protocol.h>
 #import <HealthDaemon/HKStateMachineDelegate-Protocol.h>
 
-@class BKSProcessAssertion, HDProfile, HDWorkoutManager, HDWorkoutSessionEntity, HDWorkoutSessionTaskServer, HDXPCClient, HKDataFlowLink, HKObserverSet, HKSource, HKStateMachine, HKWorkoutConfiguration, NSDate, NSString, NSUUID, _HKExpiringCompletionTimer;
-@protocol HDWorkoutDataAccumulator, HDWorkoutSessionController, OS_dispatch_queue;
+@class BKSProcessAssertion, HDHealthStoreClient, HDProfile, HDWorkoutManager, HDWorkoutSessionEntity, HDWorkoutSessionTaskServer, HKDataFlowLink, HKObserverSet, HKSource, HKStateMachine, HKWorkoutConfiguration, NSDate, NSString, NSUUID, _HKCurrentWorkoutSnapshot, _HKExpiringCompletionTimer;
+@protocol HDWorkoutDataAccumulator, HDWorkoutSessionController, OS_dispatch_queue, OS_dispatch_source;
 
 @interface HDWorkoutSessionServer : NSObject <HKDataFlowLinkProcessor, HKStateMachineDelegate, HDWorkoutSessionStateController, HDWorkoutDataSource>
 {
@@ -30,18 +30,20 @@
     HKStateMachine *_stateMachine;
     HKStateMachine *_targetStateMachine;
     _Bool _hasFailed;
+    _HKCurrentWorkoutSnapshot *_currentWorkoutSnapshot;
+    NSObject<OS_dispatch_source> *_latestActivityUpdateTimer;
     NSUUID *_identifier;
     HKWorkoutConfiguration *_workoutConfiguration;
     NSString *_applicationIdentifier;
     HDWorkoutSessionTaskServer *_taskServer;
-    HDXPCClient *_client;
+    HDHealthStoreClient *_client;
     NSString *_clientProcessBundleIdentifier;
     HKSource *_clientSource;
     NSDate *_startDate;
     NSDate *_stopDate;
 }
 
-+ (Class)_sessionControllerClassFromWorkoutConfiguration:(id)arg1;
++ (Class)_sessionControllerClassFromWorkoutConfiguration:(id)arg1 clientApplicationIdentifier:(id)arg2;
 + (void)unitTest_setDefaultStopEventGenerationWaitInterval:(double)arg1;
 + (id)clientTargetStateMachineForConfiguration:(id)arg1 sessionUUID:(id)arg2;
 + (id)workoutSessionServerStateMachineForConfiguration:(id)arg1 sessionUUID:(id)arg2;
@@ -54,12 +56,15 @@
 @property(readonly, copy, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, copy, nonatomic) HKSource *clientSource; // @synthesize clientSource=_clientSource;
 @property(readonly, copy, nonatomic) NSString *clientProcessBundleIdentifier; // @synthesize clientProcessBundleIdentifier=_clientProcessBundleIdentifier;
-@property(retain, nonatomic) HDXPCClient *client; // @synthesize client=_client;
+@property(retain, nonatomic) HDHealthStoreClient *client; // @synthesize client=_client;
 @property(nonatomic) __weak HDWorkoutSessionTaskServer *taskServer; // @synthesize taskServer=_taskServer;
 @property(readonly, copy, nonatomic) NSString *applicationIdentifier; // @synthesize applicationIdentifier=_applicationIdentifier;
 @property(readonly, copy, nonatomic) HKWorkoutConfiguration *workoutConfiguration; // @synthesize workoutConfiguration=_workoutConfiguration;
 @property(readonly, copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (void)_queue_latestActivityUpdateTimerDidFire;
+- (void)_queue_stopLatestActivityUpdateTimer;
+- (void)_queue_startLatestActivityUpdateTimer;
 - (void)_queue_setupSessionController;
 - (id)_queue_currentWorkoutSessionConfiguration;
 - (void)_queue_invalidationTimerDidFire;
@@ -67,12 +72,13 @@
 - (void)_queue_startInvalidationTimer;
 - (void)_queue_cacheClientIdentifiers;
 - (void)_queue_processStopEvent:(id)arg1;
+- (void)_queue_generateMetadata:(id)arg1;
 - (void)_queue_generateError:(id)arg1;
-- (id)_defaultConfigurationWithWorkoutConfiguration:(id)arg1;
 - (void)_queue_generateEventWithType:(long long)arg1 date:(id)arg2;
 - (void)_queue_generateEvent:(id)arg1;
-- (void)_deleteSessionAndFinishAssociatedBuilderAtDate:(id)arg1;
+- (void)_queue_deleteSessionAndFinishAssociatedBuilderAtDate:(id)arg1;
 - (void)_queue_evaluateRequestedTargetStateAtDate:(id)arg1;
+- (_Bool)unitTest_updateLatestActivityDate:(id)arg1;
 - (void)unitTest_generateStopEvent;
 - (void)unitTest_setStopEventGenerationWaitInterval:(double)arg1;
 - (void)unitTest_setSessionController:(id)arg1;
@@ -80,6 +86,7 @@
 - (id)_retrieveSessionControllerStateForRecoveryIdentifier:(id)arg1 error:(id *)arg2;
 - (_Bool)storeSessionControllerState:(id)arg1 forRecoveryIdentifier:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) id <HDWorkoutDataAccumulator> workoutDataAccumulator;
+- (void)generateMetadata:(id)arg1;
 - (void)generateError:(id)arg1;
 - (void)generateEvent:(id)arg1;
 - (void)finishAggregationWithDate:(id)arg1;
@@ -107,12 +114,13 @@
 - (void)workoutDataDestination:(id)arg1 requestsFinalDataFrom:(id)arg2 to:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)workoutDataDestination:(id)arg1 didChangeFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
 - (void)workoutDataDestination:(id)arg1 requestsDataFrom:(id)arg2 to:(id)arg3;
-- (_Bool)_resendWorkoutEventsToDataDestination:(id)arg1 error:(id *)arg2;
+- (_Bool)_persistenceQueue_resendWorkoutEventsToDataDestination:(id)arg1 error:(id *)arg2;
 @property(readonly, copy) NSUUID *workoutDataProcessorUUID;
 @property(readonly) HKDataFlowLink *workoutDataFlowLink;
 - (id)taskServerConfigurationForRecoveryWithError:(id *)arg1;
-- (void)_recoverPersistedState;
+- (_Bool)_recoverPersistedState;
 - (void)_loadOrCreatePersistentEntity;
+- (id)currentWorkoutSnapshot;
 - (void)setWorkoutDataAccumulator:(id)arg1;
 - (void)setAssociatedWorkoutBuilderEntity:(id)arg1;
 @property(readonly, nonatomic) _Bool isActive;

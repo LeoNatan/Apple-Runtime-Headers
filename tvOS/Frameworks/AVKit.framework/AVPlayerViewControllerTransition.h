@@ -11,6 +11,7 @@
 
 @class AVPlayerViewController, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVPlayerViewControllerTransition : NSObject <UIViewControllerTransitioningDelegate, UIViewControllerAnimatedTransitioning>
 {
     AVPlayerViewController *_playerViewController;

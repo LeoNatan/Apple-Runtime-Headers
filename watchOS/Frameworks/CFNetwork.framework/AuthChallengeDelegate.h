@@ -10,7 +10,6 @@
 
 @class NSString;
 
-__attribute__((visibility("hidden")))
 @interface AuthChallengeDelegate : NSObject <NSURLSessionTaskDelegate>
 {
     _Bool _didReceiveChallenge;

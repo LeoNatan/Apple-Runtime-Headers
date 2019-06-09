@@ -6,33 +6,40 @@
 
 #import <objc/NSObject.h>
 
-@interface PPNamedEntityStore : NSObject
+#import <PersonalizationPortrait/PPClientStore-Protocol.h>
+#import <PersonalizationPortrait/PPFeedbackAccepting-Protocol.h>
+
+@class NSString;
+
+@interface PPNamedEntityStore : NSObject <PPFeedbackAccepting, PPClientStore>
 {
 }
 
 + (id)defaultStore;
-- (_Bool)donateLocationNamedEntities:(id)arg1 bundleId:(id)arg2 error:(id *)arg3;
-- (_Bool)clearWithError:(id *)arg1;
+@property(retain, nonatomic) NSString *clientIdentifier;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (_Bool)donateLocationNamedEntities:(id)arg1 bundleId:(id)arg2 groupId:(id)arg3 error:(id *)arg4;
+- (_Bool)clearWithError:(id *)arg1 deletedCount:(unsigned long long *)arg2;
+- (_Bool)cloudSyncWithError:(id *)arg1;
 - (_Bool)removeMapItemsBeforeCutoffDate:(id)arg1 error:(id *)arg2;
 - (_Bool)removeMapItemForPlaceName:(id)arg1 error:(id *)arg2;
 - (id)mapItemForPlaceName:(id)arg1 error:(id *)arg2;
 - (_Bool)donateMapItem:(id)arg1 forPlaceName:(id)arg2 error:(id *)arg3;
-- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 olderThan:(id)arg3 error:(id *)arg4;
-- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 error:(id *)arg2;
-- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 error:(id *)arg3;
-- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 error:(id *)arg3;
+- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 olderThan:(id)arg3 deletedCount:(unsigned long long *)arg4 error:(id *)arg5;
+- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 deletedCount:(unsigned long long *)arg2 error:(id *)arg3;
+- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
+- (_Bool)deleteAllNamedEntitiesFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
 - (_Bool)flushDonationsWithError:(id *)arg1;
+- (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 sentimentScore:(double)arg6 error:(id *)arg7;
 - (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(_Bool)arg4 decayRate:(double)arg5 error:(id *)arg6;
 - (_Bool)donateNamedEntities:(id)arg1 source:(id)arg2 algorithm:(unsigned long long)arg3 cloudSync:(_Bool)arg4 error:(id *)arg5;
-- (void)feedbackNamedEntitiesOverallEngagement:(id)arg1;
-- (void)feedbackEngagedNamedEntities:(id)arg1;
-- (void)feedbackUsedNamedEntities:(id)arg1;
 - (_Bool)loadNamedEntityRecordsAndMonitorChangesWithDelegate:(id)arg1 error:(id *)arg2;
 - (id)namedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2;
 - (_Bool)iterNamedEntityRecordsWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (id)rankedNamedEntitiesWithQuery:(id)arg1 error:(id *)arg2;
 - (_Bool)iterRankedNamedEntitiesWithQuery:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
-- (id)_init;
+- (id)_initFromSubclass;
+- (id)init;
 
 @end
 

@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)companionRoutingControllerWithAudioCategory:(id)arg1;
 + (id)proxyRoutingControllerWithAudioCategory:(id)arg1;
 + (id)localRoutingControllerWithAudioCategory:(id)arg1;
 

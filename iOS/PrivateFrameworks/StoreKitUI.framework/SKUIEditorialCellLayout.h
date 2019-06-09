@@ -10,6 +10,7 @@
 
 @class NSString, SKUIEditorialLinkView, SKUITextBoxView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIEditorialCellLayout : SKUICellLayout <SKUIEditorialLinkViewDelegate>
 {
     struct UIEdgeInsets _contentInset;

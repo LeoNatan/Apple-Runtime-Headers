@@ -15,7 +15,9 @@
 
 + (id)sharedAssetManager;
 - (void).cxx_destruct;
-- (void)removePersistable:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)recordEditsToPersistableForPDF:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)removePersistable:(id)arg1 deleteOptions:(unsigned long long)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
+- (void)recordPersistableToTemporaryLocation:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)recordEditsToPersistable:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (void)imageWithPreviouslyRegisteredIdentifier:(id)arg1 withAccessBlock:(CDUnknownBlockType)arg2;
 - (void)registerImageForPersistable:(id)arg1 options:(id)arg2 withRegistrationBlock:(CDUnknownBlockType)arg3;

@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-__attribute__((visibility("hidden")))
 @interface SKGlobalSharedContextRegistry : NSObject
 {
 }
 
++ (void)setGlobalMetalDevice:(id)arg1;
++ (id)globalMetalDevice;
 + (void)setGlobalGLSharedContext:(id)arg1;
 + (id)globalGLSharedContext;
 + (_Bool)getPrefersOpenGL;

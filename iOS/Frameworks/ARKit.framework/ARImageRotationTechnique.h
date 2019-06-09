@@ -14,8 +14,11 @@
     long long _mirrorMode;
 }
 
+@property(readonly, nonatomic) long long mirrorMode; // @synthesize mirrorMode=_mirrorMode;
+@property(readonly, nonatomic) long long rotationAngle; // @synthesize rotationAngle=_rotationAngle;
 - (_Bool)isEqual:(id)arg1;
 - (id)processData:(id)arg1;
+- (int)_rotateAccelerate:(struct __CVBuffer *)arg1 pOutputBuffer:(struct __CVBuffer **)arg2;
 - (unsigned long long)requiredSensorDataTypes;
 - (void)dealloc;
 - (id)initWithRotation:(long long)arg1 mirror:(long long)arg2;

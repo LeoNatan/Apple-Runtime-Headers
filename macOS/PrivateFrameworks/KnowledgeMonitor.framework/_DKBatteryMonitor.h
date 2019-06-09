@@ -6,28 +6,26 @@
 
 #import <KnowledgeMonitor/_DKMonitor.h>
 
-@class NSObject;
-@protocol OS_os_log;
-
 @interface _DKBatteryMonitor : _DKMonitor
 {
     unsigned int _powerService;
     unsigned int _batteryNotification;
     struct IONotificationPort *_notifyPort;
+    BOOL _hasInternalBattery;
+    BOOL _previouslyFullyCharged;
     int _immediateShutdownThreshold;
-    NSObject<OS_os_log> *_log;
     double _previousPercentage;
 }
 
-+ (id)_eventWithBatteryPercentage:(double)arg1;
++ (id)_eventWithBatteryPercentage:(double)arg1 isFullyCharged:(BOOL)arg2;
 + (void)setCurrentBatteryPercentage:(double)arg1;
 + (id)entitlements;
 + (id)eventStream;
+@property(nonatomic) BOOL previouslyFullyCharged; // @synthesize previouslyFullyCharged=_previouslyFullyCharged;
 @property(nonatomic) double previousPercentage; // @synthesize previousPercentage=_previousPercentage;
+@property(nonatomic) BOOL hasInternalBattery; // @synthesize hasInternalBattery=_hasInternalBattery;
 @property(nonatomic) int immediateShutdownThreshold; // @synthesize immediateShutdownThreshold=_immediateShutdownThreshold;
-@property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
-- (void).cxx_destruct;
-- (void)_handleBatteryNotification;
+- (BOOL)fullyChargedFromPowerSourceDictionary:(id)arg1;
 - (double)batteryPercentageFromPowerSourceDictionary:(id)arg1;
 - (double)currentBatteryPercentage;
 - (BOOL)newBatteryState:(id)arg1 differsSignificantlyFromState:(id)arg2;
@@ -41,8 +39,11 @@
 - (id)getBatteryProperties;
 - (void)synchronouslyReflectCurrentValue;
 - (void)postImminentShutdownNotification:(double)arg1;
+- (void)deactivate;
 - (void)stop;
 - (void)start;
+- (void)_handleBatteryNotification;
+- (void)dealloc;
 
 @end
 

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     AUPasscodeCodecConfiguration *_codecConfig;
 }
 
++ (id)listenerWithCodecConfig:(id)arg1 queue:(id)arg2 dataReceivedHandler:(CDUnknownBlockType)arg3 resultData:(id)arg4 error:(id *)arg5;
 + (id)listenerWithCodecConfig:(id)arg1 queue:(id)arg2 dataReceivedHandler:(CDUnknownBlockType)arg3 error:(id *)arg4;
 - (void).cxx_destruct;
 - (void)stopEngine;
@@ -25,7 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)makeEngineConnections;
 - (void)createEngineAndAttachNodes;
 - (void)setupAudioSession;
-- (id)initWithCodecConfig:(id)arg1 queue:(id)arg2 dataReceivedHandler:(CDUnknownBlockType)arg3 error:(id *)arg4;
+- (id)initWithCodecConfig:(id)arg1 queue:(id)arg2 dataReceivedHandler:(CDUnknownBlockType)arg3 resultData:(id)arg4 error:(id *)arg5;
 - (id)createAU:(struct AudioComponentDescription)arg1;
 
 @end

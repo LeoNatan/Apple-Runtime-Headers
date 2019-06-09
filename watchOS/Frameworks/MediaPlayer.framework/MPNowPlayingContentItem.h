@@ -86,6 +86,7 @@
 @property(copy, nonatomic) NSDictionary *userInfo;
 @property(copy, nonatomic) NSDictionary *deviceSpecificUserInfo;
 @property(copy, nonatomic) NSDate *releaseDate;
+- (id)copyWithNewIdentifier:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

@@ -15,8 +15,7 @@
     int _status;
 }
 
-@property(nonatomic) double radius; // @synthesize radius=_radius;
-@property(nonatomic) int status; // @synthesize status=_status;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -24,8 +23,10 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) double radius;
 - (void)setParameters:(double *)arg1 count:(unsigned long long)arg2;
 - (double)parametersAtIndex:(unsigned long long)arg1;
 - (void)addParameters:(double)arg1;
@@ -34,6 +35,7 @@
 @property(readonly, nonatomic) unsigned long long parametersCount;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
+@property(nonatomic) int status;
 - (void)dealloc;
 
 @end

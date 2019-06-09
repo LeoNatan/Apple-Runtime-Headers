@@ -8,7 +8,7 @@
 
 #import <Mail/MCAttachmentDataSource-Protocol.h>
 
-@class NSString;
+@class ECAngleBracketIDHash, NSString;
 @protocol MCRemoteAttachmentDataSource;
 
 @interface MFLibraryAttachmentDataSource : NSObject <MCAttachmentDataSource>
@@ -19,7 +19,7 @@
     id <MCRemoteAttachmentDataSource> _remoteDataSource;
     long long _messageID;
     NSString *_mimePartNumber;
-    NSString *_contentIDHash;
+    ECAngleBracketIDHash *_contentIDHash;
     NSString *_attachmentFilename;
 }
 
@@ -28,7 +28,7 @@
 @property(readonly, nonatomic) BOOL isMailDropImageThumbnail; // @synthesize isMailDropImageThumbnail=_isMailDropImageThumbnail;
 @property(readonly, nonatomic) BOOL isMailDropImageArchive; // @synthesize isMailDropImageArchive=_isMailDropImageArchive;
 @property(readonly, copy, nonatomic) NSString *attachmentFilename; // @synthesize attachmentFilename=_attachmentFilename;
-@property(readonly, copy, nonatomic) NSString *contentIDHash; // @synthesize contentIDHash=_contentIDHash;
+@property(readonly, copy, nonatomic) ECAngleBracketIDHash *contentIDHash; // @synthesize contentIDHash=_contentIDHash;
 @property(readonly, copy, nonatomic) NSString *mimePartNumber; // @synthesize mimePartNumber=_mimePartNumber;
 @property(readonly, nonatomic) long long messageID; // @synthesize messageID=_messageID;
 @property(readonly, nonatomic) id <MCRemoteAttachmentDataSource> remoteDataSource; // @synthesize remoteDataSource=_remoteDataSource;

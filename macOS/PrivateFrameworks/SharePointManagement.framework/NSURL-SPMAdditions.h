@@ -12,7 +12,6 @@
 - (BOOL)__spm_isHFSStandard;
 - (id)__spm_volumeURL;
 - (id)__spm_ownerUUIDString;
-- (id)__spm_fsPermissionArray;
 - (BOOL)__spm_supportsPermissions;
 - (BOOL)__spm_isWriteable;
 - (id)__spm_fileSecurity;

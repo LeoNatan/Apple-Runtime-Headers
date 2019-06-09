@@ -30,7 +30,6 @@
 - (void)_playQueuedUpVideo;
 - (id)_nextListing;
 - (void)_resetVideoForListing;
-- (void)didAddSubview:(id)arg1;
 - (id)_onDeckPosterImageView;
 - (id)_onDeckPosterImageViewWithTheme:(unsigned int)arg1;
 - (id)_posterImageView;

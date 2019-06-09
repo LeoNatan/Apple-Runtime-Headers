@@ -274,6 +274,7 @@ struct MSRCSC_t {
 struct MSRHDRContext {
     unsigned int contentType;
     unsigned int displayType;
+    int processingType;
     unsigned int operation;
     unsigned int inputFormat;
     unsigned int outputFormat;
@@ -283,6 +284,7 @@ struct MSRHDRContext {
     long long outputTransferFunctionType;
     char enableReshaping;
     char enableToneMapping;
+    struct _HDR10DpcParam dpcParam;
 };
 
 struct ProcessingControlV0_t {
@@ -322,6 +324,7 @@ struct SourceToRGB_t {
 
 struct ToneCurve_Control {
     double targetMaxLinear;
+    double targetMinLinear;
     float maxEDRValue;
     float EDRFactor;
     float AmbientLight;
@@ -329,11 +332,62 @@ struct ToneCurve_Control {
     _Bool HDRProcessingFullAmbientAdaptation;
     struct __CFString *targetColorPrimaries;
     unsigned int outputPixelFormat;
+    int hdr10_tm_mode;
     float forwardDM_tMaxPq;
     float forwardDM_tMinPq;
     float mid;
     float crush;
     float clip;
+    struct _HDR10AuxData auxData;
+    struct _HDR10TMParam tmParam;
+    struct _HDR10AmbAdaptationParam ambAdaptationParam;
+};
+
+struct _HDR10AmbAdaptationParam {
+    unsigned short numPs;
+    float AsC[3];
+    float PsC[3];
+    float MsC[3];
+    float aL;
+    float bL;
+};
+
+struct _HDR10AuxData {
+    unsigned int processingType;
+    float target_display_contrast_ratio;
+    float target_display_reflection_ratio;
+    unsigned int amb_adaptation_mode;
+    float amb_adaptation_lux2nits_ratio;
+    unsigned int dpc_mode;
+    float dpc_gain;
+    float Smin_nits;
+    float Smax_nits;
+    float Tmin_nits;
+    float targetMaxLinear;
+    float EDRFactor;
+    float maxEDRValue;
+    float ambientNits;
+};
+
+struct _HDR10DpcParam {
+    float alpha;
+    float alpha_prime;
+    float gain;
+};
+
+struct _HDR10TMParam {
+    float tm_Smin_nits;
+    float tm_Smax_nits;
+    float tm_Tmin_nits;
+    float tm_Tmax_nits;
+    float tm_Smin_C;
+    float tm_Smax_C;
+    float tm_Tmin_C;
+    float tm_Tmax_C;
+    unsigned short numPs;
+    float AsC[3];
+    float PsC[3];
+    float MsC[3];
 };
 
 struct __CFString;
@@ -438,7 +492,10 @@ typedef struct {
     unsigned int maxMasteringNits;
     float minMasteringNits;
     unsigned int transferFunction_RGhA;
-} CDStruct_d4eae393;
+    unsigned int source_RGhA;
+    unsigned int displayPipelineCompensationType;
+    float displayPipelineGammaValue;
+} CDStruct_d76a58a8;
 
 typedef struct {
     unsigned short display_primaries_xg;
@@ -492,54 +549,6 @@ typedef struct {
     double _field3;
     double _field4;
 } CDStruct_d2b197d1;
-
-typedef struct {
-    float ycc_to_rgb_offset__r_scale__g_scale__b_scale__LMStoRGB_coef0__LMStoRGB_coef1__LMStoRGB_coef2__RGBtoLMS_coef0__RGBtoLMS_coef1__RGBtoLMS_coef2__RGBtoY_coefs__RGBtoRGB_coef0__RGBtoRGB_coef1__RGBtoRGB_coef2__rangeInv;
-    float rangeMinTimesInvRange;
-    unsigned int signal_eotf;
-    float signal_eotf_gamma;
-    float signal_eotf_a;
-    float signal_eotf_b;
-    float signal_eotf_cbt;
-    float sl;
-    float c_1;
-    float c_2;
-    float c_3;
-    unsigned int signal_oetf;
-    float signal_oetf_gamma;
-    float signal_oetf_a;
-    float signal_oetf_b;
-    float signal_oetf_cbt;
-    float l2pq_mid_point;
-    float l2pq_max_point;
-    float l2pq_normalize_low;
-    float l2pq_normalize_high;
-    float OutputScale;
-    float narrow_range_scale;
-    float narrow_range_offset;
-    float Saturation;
-    float Boost;
-    float Anchor;
-    _Bool apply_srgb_gamma;
-    float maxEDRValue;
-    float edrFactor;
-    _Bool target_p3_d65;
-    float sourceContentSDRMaxBrightnessInNits;
-    int transfer_function_input;
-    unsigned int maxMasteringNits;
-    float trim_slope;
-    float trim_offset;
-    float trim_power;
-    float trim_sat;
-    float s2t_ratio;
-    float sat2_p1;
-    float sat2_p2;
-    float sat2_p3;
-    float sat2_p4;
-    float sat2_p5;
-    float brightAdjBySat2;
-    float gamma;
-} CDStruct_bd901e1f;
 
 typedef struct {
     unsigned char dm_metadata_id;
@@ -704,6 +713,68 @@ typedef struct {
 } CDStruct_f4857302;
 
 typedef struct {
+    float ycc_to_rgb_offset__r_scale__g_scale__b_scale__LMStoRGB_coef0__LMStoRGB_coef1__LMStoRGB_coef2__RGBtoLMS_coef0__RGBtoLMS_coef1__RGBtoLMS_coef2__rangeInv;
+    float rangeMinTimesInvRange;
+    unsigned int signal_eotf;
+    float signal_eotf_gamma;
+    float signal_eotf_a;
+    float signal_eotf_b;
+    float signal_eotf_cbt;
+    float sl;
+    float c_1;
+    float c_2;
+    float c_3;
+    unsigned int signal_oetf;
+    float signal_oetf_gamma;
+    float signal_oetf_a;
+    float signal_oetf_b;
+    float signal_oetf_cbt;
+    float l2pq_mid_point;
+    float l2pq_max_point;
+    float l2pq_normalize_low;
+    float l2pq_normalize_high;
+    float OutputScale;
+    float narrow_range_scale;
+    float narrow_range_offset;
+    float Saturation;
+    float Boost;
+    float Anchor;
+    float maxEDRValue;
+    unsigned int maxMasteringNits;
+    float targetMaxNits;
+    float targetMaxPq;
+    float trim_slope;
+    float trim_offset;
+    float trim_power;
+    float trim_sat;
+    float s2t_ratio;
+    float sat2_p1;
+    float sat2_p2;
+    float sat2_p3;
+    float sat2_p4;
+    float sat2_p5;
+    float brightAdjBySat2;
+    float gamma;
+    float target_brightness;
+    float ambientNits;
+    _Bool apply_macos_gamma;
+    float macos_gamma;
+    float edrFactor;
+    _Bool target_p3_d65;
+    float sourceContentSDRMaxBrightnessInNits;
+    int transfer_function_input;
+    _Bool force_passthrough;
+    _Bool apply_lldovi;
+    int src_content_type;
+    _Bool disable_hlg_headroom;
+    _Bool force_srgb_engamma;
+    int input_texture_format;
+    _Bool hdr10_applyDPCompensationS;
+    struct _HDR10DpcParam preRGBtoRGB_coef0__preRGBtoRGB_coef1__preRGBtoRGB_coef2__RGBtoY_coefs__postRGBtoRGB_coef0__postRGBtoRGB_coef1__postRGBtoRGB_coef2__dpcParam;
+    _Bool llUseDM31;
+} CDStruct_9def633c;
+
+typedef struct {
     float _field1;
     float _field2;
     float _field3;
@@ -746,9 +817,9 @@ typedef struct {
     CDStruct_895ff2bf composerData;
     CDStruct_f4857302 dmData;
     struct ToneCurve_Control tcControl;
-    CDStruct_d4eae393 hdrControl;
+    CDStruct_d76a58a8 hdrControl;
     CDStruct_52986d3b infoFrameData;
-} CDStruct_192e2d5f;
+} CDStruct_37b44a95;
 
 typedef struct {
     int version;

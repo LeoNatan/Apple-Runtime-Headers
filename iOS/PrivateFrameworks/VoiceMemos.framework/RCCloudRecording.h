@@ -19,6 +19,7 @@
 + (id)playablePredicate;
 + (id)searchableItemIdentifierForSavedRecordingURI:(id)arg1;
 + (id)savedRecordingURIForSearchableItemIdentifier:(id)arg1;
+@property(retain, nonatomic) AVAsset *avAsset; // @synthesize avAsset=_avAsset;
 - (void).cxx_destruct;
 - (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize)arg3;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
@@ -26,7 +27,6 @@
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)_activityURLCreateIfNecessary:(_Bool)arg1;
 - (void)_validatePath;
-@property(readonly, nonatomic) AVAsset *avAsset;
 - (id)_detailLabel;
 - (id)_labelAllowingEmptyString:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool isContentBeingModified;
@@ -37,6 +37,9 @@
 - (void)setName:(id)arg1;
 @property(readonly, copy, nonatomic) NSURL *URIRepresentation;
 @property(readonly, copy, nonatomic) NSURL *url;
+@property(nonatomic) _Bool recordedOnWatch;
+- (void)setDownloading:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool downloading;
 - (void)setEditing:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool editing;
 - (void)setManuallyRenamed:(_Bool)arg1;
@@ -52,6 +55,7 @@
 @property(readonly, copy, nonatomic) CLLocation *location;
 @property(copy, nonatomic) NSDate *evictionDate; // @dynamic evictionDate;
 @property(copy, nonatomic) NSString *path; // @dynamic path;
+- (_Bool)synchronizeRecordingMetadata:(id *)arg1;
 - (void)willSave;
 - (void)awakeFromFetch;
 - (void)awakeFromInsert;

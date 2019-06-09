@@ -25,6 +25,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (id)_activeAudioCall;
 - (id)_activeFaceTimeCall;
 - (_Bool)_hasActiveAudioCall;
@@ -50,12 +51,11 @@
 - (void)_removeIMAVChatFromChatList:(id)arg1;
 - (void)_addIMAVChatToChatList:(id)arg1;
 - (id)_nonRetainingChatList;
-@property(readonly, retain, nonatomic) NSArray *_FTCalls;
+@property(readonly, nonatomic) NSArray *_FTCalls;
 - (id)_copyMutableFTCalls;
 - (id)_mutableFTCalls;
-@property(readonly, retain, nonatomic) NSArray *calls;
+@property(readonly, nonatomic) NSArray *calls;
 - (id)_calls;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -6,7 +6,11 @@
 
 #import <UIKit/UIViewController.h>
 
+@class NSString;
+
 @interface UIViewController (MPUViewControllerFactory)
 - (id)MPUViewControllerConfiguration;
+- (id)_childViewControllerWithRestorationIdentifier:(id)arg1;
+@property(copy, nonatomic, getter=MPU_identifier, setter=MPU_setIdentifier:) NSString *MPU_identifier;
 @end
 

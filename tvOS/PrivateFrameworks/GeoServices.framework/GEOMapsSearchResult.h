@@ -8,19 +8,26 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOAddress, GEOPlaceActionDetails;
+@class GEOAddress, GEOPlaceActionDetails, PBDataReader;
 
 @interface GEOMapsSearchResult : PBCodable <NSCopying>
 {
-    unsigned long long _muid;
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     GEOAddress *_address;
+    unsigned long long _muid;
     GEOPlaceActionDetails *_placeActionDetails;
-    CDStruct_e99c65f7 _has;
+    struct {
+        unsigned int has_muid:1;
+        unsigned int read_address:1;
+        unsigned int read_placeActionDetails:1;
+        unsigned int wrote_address:1;
+        unsigned int wrote_muid:1;
+        unsigned int wrote_placeActionDetails:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPlaceActionDetails *placeActionDetails; // @synthesize placeActionDetails=_placeActionDetails;
-@property(retain, nonatomic) GEOAddress *address; // @synthesize address=_address;
-@property(nonatomic) unsigned long long muid; // @synthesize muid=_muid;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -29,11 +36,17 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPlaceActionDetails *placeActionDetails;
 @property(readonly, nonatomic) _Bool hasPlaceActionDetails;
+- (void)_readPlaceActionDetails;
+@property(retain, nonatomic) GEOAddress *address;
 @property(readonly, nonatomic) _Bool hasAddress;
+- (void)_readAddress;
 @property(nonatomic) _Bool hasMuid;
+@property(nonatomic) unsigned long long muid;
 
 @end
 

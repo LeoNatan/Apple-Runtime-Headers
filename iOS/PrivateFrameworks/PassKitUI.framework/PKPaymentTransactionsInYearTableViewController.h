@@ -7,12 +7,12 @@
 #import <UIKit/UITableViewController.h>
 
 #import <PassKitUI/CNAvatarViewDelegate-Protocol.h>
-#import <PassKitUI/UIViewControllerPreviewingDelegate-Protocol.h>
+#import <PassKitUI/_UIContextMenuInteractionDelegate-Protocol.h>
 
-@class NSArray, NSCalendar, NSDate, NSDateFormatter, NSString, PKPaymentPass, PKPaymentTransactionCellController, PKPeerPaymentContactResolver, PKPeerPaymentController;
+@class NSArray, NSCalendar, NSDate, NSDateFormatter, NSString, PKDashboardTransactionFetcher, PKPaymentPass, PKPaymentTransactionCellController, PKPaymentTransactionDetailsFactory, PKPeerPaymentContactResolver, PKPeerPaymentController;
 @protocol PKPaymentDataProvider;
 
-@interface PKPaymentTransactionsInYearTableViewController : UITableViewController <CNAvatarViewDelegate, UIViewControllerPreviewingDelegate>
+@interface PKPaymentTransactionsInYearTableViewController : UITableViewController <CNAvatarViewDelegate, _UIContextMenuInteractionDelegate>
 {
     NSDate *_dateFromYear;
     NSCalendar *_calendar;
@@ -24,6 +24,8 @@
     PKPeerPaymentController *_peerPaymentController;
     NSDateFormatter *_transactionMonthFormatter;
     long long _detailViewStyle;
+    PKDashboardTransactionFetcher *_transactionFetcher;
+    PKPaymentTransactionDetailsFactory *_transactionDetailsFactory;
 }
 
 - (void).cxx_destruct;
@@ -32,8 +34,9 @@
 - (id)_transactionsInYearTitleString;
 - (id)_transactionDetailViewControllerForTransaction:(id)arg1;
 - (id)presentingViewControllerForAvatarView:(id)arg1;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
+- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
+- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

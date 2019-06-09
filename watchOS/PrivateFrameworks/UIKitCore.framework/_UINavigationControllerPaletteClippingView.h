@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (_Bool)_isTransparentFocusRegion;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 
 @end

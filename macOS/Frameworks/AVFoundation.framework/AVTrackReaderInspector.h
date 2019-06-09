@@ -6,14 +6,14 @@
 
 #import <AVFoundation/AVAssetTrackInspector.h>
 
-@class AVWeakReference;
+@class AVDispatchOnce, AVWeakReference;
 
 __attribute__((visibility("hidden")))
 @interface AVTrackReaderInspector : AVAssetTrackInspector
 {
     struct OpaqueFigFormatReader *_formatReader;
     struct OpaqueFigTrackReader *_trackReader;
-    long long _copySampleCursorServiceOnce;
+    AVDispatchOnce *_copySampleCursorServiceOnce;
     struct OpaqueFigSampleCursorService *_figSampleCursorService;
     BOOL _sampleCursorTimeAccuracyIsExact;
     int _trackID;
@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (id)metadataForFormat:(id)arg1;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
+- (CDStruct_1b6d18a9)latentBaseDecodeTimeStampOfFirstTrackFragment;
 - (id)segmentForTrackTime:(CDStruct_1b6d18a9)arg1;
 - (id)segments;
 - (CDStruct_1b6d18a9)minSampleDuration;
@@ -44,8 +45,10 @@ __attribute__((visibility("hidden")))
 - (id)extendedLanguageTag;
 - (id)mediaCharacteristics;
 - (id)languageCode;
+- (float)peakDataRate;
 - (float)estimatedDataRate;
 - (int)naturalTimeScale;
+- (BOOL)hasAudioSampleDependencies;
 - (BOOL)requiresFrameReordering;
 - (CDStruct_e83c9415)timeRange;
 - (long long)totalSampleDataLength;
@@ -63,7 +66,6 @@ __attribute__((visibility("hidden")))
 - (unsigned int)_figMediaType;
 - (int)trackID;
 - (id)asset;
-- (void)finalize;
 - (void)dealloc;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long long)arg3;
 

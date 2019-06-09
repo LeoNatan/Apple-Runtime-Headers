@@ -13,16 +13,18 @@
 #import <SockPuppetGizmo/PUICQuickboardViewControllerDelegate-Protocol.h>
 #import <SockPuppetGizmo/PUICSnapshotDelegate-Protocol.h>
 #import <SockPuppetGizmo/SPExtensionConnectionDelegate-Protocol.h>
+#import <SockPuppetGizmo/SPHostingViewControllerDelegate-Protocol.h>
 #import <SockPuppetGizmo/SPInterfaceViewControllerDelegate-Protocol.h>
 #import <SockPuppetGizmo/SPMediaPlayerViewControllerDelegate-Protocol.h>
-#import <SockPuppetGizmo/SPPageViewControllerDelegate-Protocol.h>
+#import <SockPuppetGizmo/SPViewControllerDelegate-Protocol.h>
 #import <SockPuppetGizmo/UIApplicationDelegate-Protocol.h>
+#import <SockPuppetGizmo/UINavigationControllerDelegate-Protocol.h>
 #import <SockPuppetGizmo/UNUserNotificationCenterDelegate-Protocol.h>
 
-@class AVAudioRecorderViewController, CSLSActivatingUIAssertion, CSLSUnblankingSynchronizer, NPKAddPassesViewController, NSArray, NSDictionary, NSMutableDictionary, NSString, NSTimer, PUICQuickboardViewController, SPExtensionConnection, SPInterfaceViewController, SPMediaPlayerViewController, SPPageViewController, UIColor, UIView, UIWindow;
+@class AVAudioRecorderViewController, CSLSActivatingUIAssertion, CSLSUnblankingSynchronizer, NPKAddPassesViewController, NSArray, NSDictionary, NSMutableDictionary, NSString, NSTimer, PUICPageViewController, PUICQuickboardViewController, SPExtensionConnection, SPFullScreenWindow, SPMediaPlayerViewController, SPViewController, UIColor, UIView, UIWindow;
 @protocol OS_dispatch_source;
 
-@interface SPApplicationDelegate : NSObject <SPInterfaceViewControllerDelegate, SPExtensionConnectionDelegate, PUICQuickboardViewControllerDelegate, PUICActionSheetControllerDelegate, NPKAddPassesViewControllerDelegate, PUICQuickboardEmojiViewControllerDelegate, SPMediaPlayerViewControllerDelegate, AVAudioRecorderViewControllerDelegate, PUICSnapshotDelegate, UNUserNotificationCenterDelegate, SPPageViewControllerDelegate, UIApplicationDelegate>
+@interface SPApplicationDelegate : NSObject <SPViewControllerDelegate, SPInterfaceViewControllerDelegate, SPHostingViewControllerDelegate, SPExtensionConnectionDelegate, PUICQuickboardViewControllerDelegate, PUICActionSheetControllerDelegate, NPKAddPassesViewControllerDelegate, PUICQuickboardEmojiViewControllerDelegate, SPMediaPlayerViewControllerDelegate, AVAudioRecorderViewControllerDelegate, PUICSnapshotDelegate, UNUserNotificationCenterDelegate, UINavigationControllerDelegate, UIApplicationDelegate>
 {
     _Bool _displayingFirstUnlockScreen;
     _Bool _displayingDisconnectedScreen;
@@ -40,18 +42,19 @@
     _Bool _hasReceivedDidFinishLaunching;
     _Bool _waitingForHandleActivityReply;
     _Bool _waitingForHandleActivityViewControllerActivation;
+    _Bool _showOverlayWindow;
     UIWindow *_window;
     SPExtensionConnection *_extensionConnection;
     NSDictionary *_interfaceDescription;
     NSMutableDictionary *_pendingBSActions;
-    SPInterfaceViewController *_pendingBSRefreshActionViewController;
-    SPInterfaceViewController *_pendingBSSnapshotActionViewController;
+    SPViewController *_pendingBSRefreshActionViewController;
+    SPViewController *_pendingBSSnapshotActionViewController;
     CDUnknownBlockType _pendingBSSnapshotCallback;
-    SPInterfaceViewController *_pendingBSURLSessionActionViewController;
+    SPViewController *_pendingBSURLSessionActionViewController;
     CDUnknownBlockType _pendingBSURLSessionCallback;
     NSString *_stringsFileName;
     UIColor *_applicationColor;
-    SPPageViewController *_pageViewController;
+    PUICPageViewController *_pageViewController;
     PUICQuickboardViewController *_textInputViewController;
     NSString *_textInputViewControllerClientIdentifier;
     NSArray *_textInputViewControllerSuggestions;
@@ -69,11 +72,14 @@
     CSLSActivatingUIAssertion *_activatingUIAssertion;
     NSObject<OS_dispatch_source> *_activatingAssertionTimer;
     CDUnknownBlockType _alertSheetCancelAction;
-    SPInterfaceViewController *_initialSPIVC;
+    SPFullScreenWindow *_overlayWindow;
+    SPViewController *_initialViewController;
     double _busyDisplayTime;
 }
 
-@property(nonatomic) __weak SPInterfaceViewController *initialSPIVC; // @synthesize initialSPIVC=_initialSPIVC;
+@property(nonatomic) __weak SPViewController *initialViewController; // @synthesize initialViewController=_initialViewController;
+@property(nonatomic) _Bool showOverlayWindow; // @synthesize showOverlayWindow=_showOverlayWindow;
+@property(retain, nonatomic) SPFullScreenWindow *overlayWindow; // @synthesize overlayWindow=_overlayWindow;
 @property(copy, nonatomic) CDUnknownBlockType alertSheetCancelAction; // @synthesize alertSheetCancelAction=_alertSheetCancelAction;
 @property(nonatomic, getter=isWaitingForHandleActivityViewControllerActivation) _Bool waitingForHandleActivityViewControllerActivation; // @synthesize waitingForHandleActivityViewControllerActivation=_waitingForHandleActivityViewControllerActivation;
 @property(nonatomic, getter=isWaitingForHandleActivityReply) _Bool waitingForHandleActivityReply; // @synthesize waitingForHandleActivityReply=_waitingForHandleActivityReply;
@@ -102,17 +108,17 @@
 @property(copy, nonatomic) NSArray *textInputViewControllerSuggestions; // @synthesize textInputViewControllerSuggestions=_textInputViewControllerSuggestions;
 @property(copy, nonatomic) NSString *textInputViewControllerClientIdentifier; // @synthesize textInputViewControllerClientIdentifier=_textInputViewControllerClientIdentifier;
 @property(retain, nonatomic) PUICQuickboardViewController *textInputViewController; // @synthesize textInputViewController=_textInputViewController;
-@property(retain, nonatomic) SPPageViewController *pageViewController; // @synthesize pageViewController=_pageViewController;
+@property(retain, nonatomic) PUICPageViewController *pageViewController; // @synthesize pageViewController=_pageViewController;
 @property(retain, nonatomic) UIColor *applicationColor; // @synthesize applicationColor=_applicationColor;
 @property(copy, nonatomic) NSString *stringsFileName; // @synthesize stringsFileName=_stringsFileName;
 @property(copy, nonatomic) CDUnknownBlockType pendingBSURLSessionCallback; // @synthesize pendingBSURLSessionCallback=_pendingBSURLSessionCallback;
 @property(nonatomic) _Bool pendingBSURLSessionPrevDeferTransitions; // @synthesize pendingBSURLSessionPrevDeferTransitions=_pendingBSURLSessionPrevDeferTransitions;
-@property(nonatomic) __weak SPInterfaceViewController *pendingBSURLSessionActionViewController; // @synthesize pendingBSURLSessionActionViewController=_pendingBSURLSessionActionViewController;
+@property(nonatomic) __weak SPViewController *pendingBSURLSessionActionViewController; // @synthesize pendingBSURLSessionActionViewController=_pendingBSURLSessionActionViewController;
 @property(copy, nonatomic) CDUnknownBlockType pendingBSSnapshotCallback; // @synthesize pendingBSSnapshotCallback=_pendingBSSnapshotCallback;
 @property(nonatomic) _Bool pendingBSSnapshotPrevDeferTransitions; // @synthesize pendingBSSnapshotPrevDeferTransitions=_pendingBSSnapshotPrevDeferTransitions;
-@property(nonatomic) __weak SPInterfaceViewController *pendingBSSnapshotActionViewController; // @synthesize pendingBSSnapshotActionViewController=_pendingBSSnapshotActionViewController;
+@property(nonatomic) __weak SPViewController *pendingBSSnapshotActionViewController; // @synthesize pendingBSSnapshotActionViewController=_pendingBSSnapshotActionViewController;
 @property(nonatomic) _Bool pendingBSRefreshPrevDeferTransitions; // @synthesize pendingBSRefreshPrevDeferTransitions=_pendingBSRefreshPrevDeferTransitions;
-@property(nonatomic) __weak SPInterfaceViewController *pendingBSRefreshActionViewController; // @synthesize pendingBSRefreshActionViewController=_pendingBSRefreshActionViewController;
+@property(nonatomic) __weak SPViewController *pendingBSRefreshActionViewController; // @synthesize pendingBSRefreshActionViewController=_pendingBSRefreshActionViewController;
 @property(retain, nonatomic) NSMutableDictionary *pendingBSActions; // @synthesize pendingBSActions=_pendingBSActions;
 @property(retain, nonatomic) NSDictionary *interfaceDescription; // @synthesize interfaceDescription=_interfaceDescription;
 @property(retain) SPExtensionConnection *extensionConnection; // @synthesize extensionConnection=_extensionConnection;
@@ -121,8 +127,10 @@
 @property(nonatomic) _Bool displayingFirstUnlockScreen; // @synthesize displayingFirstUnlockScreen=_displayingFirstUnlockScreen;
 @property(retain, nonatomic) UIWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+- (id)extendLaunchTest;
 - (_Bool)runTest:(id)arg1 options:(id)arg2;
-- (void)pageViewControllerWillGoAway:(id)arg1;
+- (void)viewControllerDidUpdateFullScreen:(id)arg1;
+- (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(_Bool)arg3;
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)userNotificationCenter:(id)arg1 willPresentNotification:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_updateAppState:(int)arg1;
@@ -137,14 +145,6 @@
 - (void)application:(id)arg1 handleEventsForBackgroundURLSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)visibleViewControllerID;
 - (id)prepareTaskKeysForActions:(id)arg1;
-- (void)viewController:(id)arg1 actionTapped:(id)arg2;
-- (id)cancelActionFromWKActions:(id)arg1;
-- (id)actionSheetItemsFromWKActions:(id)arg1 viewController:(id)arg2 skippingActions:(id)arg3;
-- (void)actionContentControllerCancel:(id)arg1;
-- (void)presentActionSheetFromViewController:(id)arg1 title:(id)arg2 message:(id)arg3 actions:(id)arg4;
-- (void)presentDefaultAlertFromViewController:(id)arg1 title:(id)arg2 message:(id)arg3 actions:(id)arg4;
-- (void)presentSideBySideAlertFromViewController:(id)arg1 title:(id)arg2 message:(id)arg3 actions:(id)arg4;
-- (void)handlePresentAlertMessageForViewController:(id)arg1 info:(id)arg2;
 - (void)_cancelActivatingAssertionTimer;
 - (void)_startActivatingAssertionTimer;
 - (void)_clearBusy;
@@ -153,7 +153,8 @@
 - (void)_releaseActivityAssertion;
 - (void)_endHandleActivityAssertion;
 - (void)_beginHandleActivityAssertion:(_Bool)arg1;
-- (void)audioRecorderViewControllerDidStart:(id)arg1;
+- (id)timerSupportViewControllerForHostingViewController:(id)arg1;
+- (id)timerSupportActionItemsForHostingViewController:(id)arg1;
 - (void)fireAudioRecorderViewControllerBacklightAssertionTimer:(id)arg1;
 - (void)audioRecorderViewControllerRequestsBacklightAssertionRelease:(id)arg1;
 - (void)audioRecorderViewControllerRequestsBacklightAssertionCreate:(id)arg1;
@@ -169,30 +170,30 @@
 - (void)quickboard:(id)arg1 languageDidChange:(id)arg2;
 - (void)quickboardInputCancelled:(id)arg1;
 - (void)quickboard:(id)arg1 textEntered:(id)arg2;
-- (void)xpcInterfaceViewController:(id)arg1 setProperties:(id)arg2 forInterfaceObjectNamed:(id)arg3;
-- (void)xpcInterfaceViewController:(id)arg1 crownData:(id)arg2;
+- (void)viewController:(id)arg1 crownData:(id)arg2;
 - (void)xpcInterfaceViewController:(id)arg1 gestureData:(id)arg2;
+- (id)interfaceControllerForViewController:(id)arg1;
 - (void)interfaceViewController:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
-- (void)interfaceViewController:(id)arg1 sendAction:(id)arg2 withValue:(id)arg3;
+- (void)viewController:(id)arg1 sendAction:(id)arg2 withValue:(id)arg3 actionTarget:(id)arg4;
 - (void)appWithRootInterfaceViewController:(id)arg1 performActionWithItemID:(id)arg2 forNotificationID:(id)arg3 userInfo:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (void)interfaceViewControllerDidAppearAfterModalDismissal:(id)arg1;
-- (void)interfaceViewControllerDidDisappearAfterModalPresentation:(id)arg1;
-- (void)interfaceViewControllerPurgeAndRecreate:(id)arg1;
+- (void)viewControllerDidAppearAfterModalDismissal:(id)arg1;
+- (void)viewControllerDidDisappearAfterModalPresentation:(id)arg1;
 - (void)interfaceDidEndScrollingAnimation:(id)arg1;
 - (void)interfaceContentSystemMinimumLayoutMargins:(id)arg1 withValue:(struct NSDirectionalEdgeInsets)arg2;
 - (void)interfaceContentSafeAreaInsets:(id)arg1 withValue:(struct UIEdgeInsets)arg2;
 - (void)interfaceOffsetDidScrollToBottom:(id)arg1;
 - (void)interfaceOffsetDidScrollToTop:(id)arg1;
 - (void)interfaceDidScrollToTop:(id)arg1;
-- (void)interfaceViewControllerWillDisappear:(id)arg1;
-- (void)interfaceViewControllerDidAppear:(id)arg1;
-- (void)interfaceViewControllerDidDeactivate:(id)arg1;
 - (void)interfaceViewControllerDidHideDisconnectedView:(id)arg1;
 - (void)interfaceViewControllerDidShowDisconnectedView:(id)arg1;
+- (void)viewController:(id)arg1 tappedActionWithUUID:(id)arg2;
+- (void)viewControllerWillDisappear:(id)arg1;
+- (void)viewControllerDidAppear:(id)arg1;
+- (void)viewControllerDidDeactivate:(id)arg1;
 - (void)interfaceViewControllerDidActivate:(id)arg1;
-- (void)interfaceViewControllerWillActivate:(id)arg1;
-- (void)interfaceViewControllerRelease:(id)arg1;
-- (void)interfaceViewController:(id)arg1 createCompanionControllerClass:(id)arg2 properties:(id)arg3 initializationContextID:(id)arg4;
+- (void)viewControllerWillActivate:(id)arg1;
+- (void)viewControllerDidRelease:(id)arg1;
+- (void)viewController:(id)arg1 createWKInterfaceControllerClass:(id)arg2 properties:(id)arg3 contextID:(id)arg4 creationCompletion:(CDUnknownBlockType)arg5;
 - (void)extensionConnection:(id)arg1 receivedPPTTestAction:(id)arg2;
 - (void)extensionConnectionApplicationDidEndSuspendedLaunch:(id)arg1;
 - (void)extensionConnectionApplicationBeginBackgroundUIUpdate:(id)arg1;
@@ -207,10 +208,13 @@
 - (void)extensionConnection:(id)arg1 openSystemURL:(id)arg2;
 - (void)extensionConnection:(id)arg1 didReceiveUserActivity:(id)arg2;
 - (void)extensionConnection:(id)arg1 didReceiveUserActivityDict:(id)arg2;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setupDynamicInterfaceObject:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)extensionConnection:(id)arg1 interfaceViewControllerDismissViewController:(id)arg2;
 - (void)cleanupTextInputController;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 presentViewControllers:(id)arg3 initializationContextIDs:(id)arg4;
 - (void)addPassesViewControllerDidFinish:(id)arg1 withAddPassData:(id)arg2;
+- (_Bool)_interfaceDescriptionContainsOnlyTable:(id)arg1;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 presentTimerSupportInterfaceWithControllerClass:(Class)arg3 presentCompletion:(CDUnknownBlockType)arg4 dismissCompletion:(CDUnknownBlockType)arg5;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 presentViewController:(id)arg3 info:(id)arg4 initializationContextID:(id)arg5;
 - (void)extensionConnection:(id)arg1 removeRootInterfaceViewControllerAtIndexes:(id)arg2;
 - (void)extensionConnection:(id)arg1 moveRootInterfaceViewControllerAtIndex:(int)arg2 toIndex:(int)arg3;
@@ -221,8 +225,15 @@
 - (void)extensionConnection:(id)arg1 interfaceViewControllerPopToRootViewController:(id)arg2;
 - (void)extensionConnection:(id)arg1 interfaceViewControllerPopViewController:(id)arg2;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushPagingScrollTableRow:(int)arg3 seguesByRowName:(id)arg4 rowNamesAndContextIDs:(id)arg5;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setTimerSupportVC:(id)arg3;
+- (void)_extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushTimerSupportViewController:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushTimerSupportInterfaceWithControllerClass:(Class)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushTimerSupportInterfaceWithName:(id)arg3 initializationContextID:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 pushViewController:(id)arg3 initializationContextID:(id)arg4;
 - (void)extensionConnection:(id)arg1 interfaceViewController:(id)arg2 setValue:(id)arg3 forKey:(id)arg4 property:(id)arg5;
+- (void)application:(id)arg1 didReceiveRemoteNotification:(id)arg2 fetchCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)application:(id)arg1 didFailToRegisterForRemoteNotificationsWithError:(id)arg2;
+- (void)application:(id)arg1 didRegisterForRemoteNotificationsWithDeviceToken:(id)arg2;
 - (void)_handleNotificationResponse:(id)arg1 actionItemID:(id)arg2 isFGAction:(_Bool)arg3 annotation:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (_Bool)application:(id)arg1 continueUserActivity:(id)arg2 restorationHandler:(CDUnknownBlockType)arg3;
 - (void)application:(id)arg1 handleIntent:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -235,6 +246,7 @@
 - (void)_setupSignalHandlers;
 - (_Bool)_animateViewControllerPresentations;
 - (_Bool)_loadRootViewController;
+- (id)createViewControllerWithInterfaceDescription:(id)arg1 initializationContextID:(id)arg2;
 - (_Bool)application:(id)arg1 _didFinishLaunchingWithOptions:(id)arg2;
 - (void)_terminateWK1App:(id)arg1;
 - (_Bool)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;

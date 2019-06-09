@@ -17,11 +17,10 @@ __attribute__((visibility("hidden")))
     _Bool _textGrowsUpwards;
     unsigned long long _maxUniChars;
     long long _maxNumLines;
-    FI_TShrinkToFitController *_controller;
+    struct TNSWeakPtr<FI_TShrinkToFitController, void> _weakSTFController;
 }
 
 @property(nonatomic) _Bool textGrowsUpwards; // @synthesize textGrowsUpwards=_textGrowsUpwards;
-@property(nonatomic) FI_TShrinkToFitController *controller; // @synthesize controller=_controller;
 @property(nonatomic) long long maxNumLines; // @synthesize maxNumLines=_maxNumLines;
 @property(nonatomic) unsigned long long maxUniChars; // @synthesize maxUniChars=_maxUniChars;
 @property(nonatomic) struct CGRect maxGlobalFrame; // @synthesize maxGlobalFrame=_maxGlobalFrame;
@@ -44,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)setString:(id)arg1;
 - (void)setConstrainedFrameSize:(struct CGSize)arg1;
 - (void)configureAttributes;
+@property(nonatomic) __weak FI_TShrinkToFitController *stfController; // @dynamic stfController;
 @property(retain, nonatomic) NSWindow *parentWindow;
 - (void)dealloc;
 - (id)init;

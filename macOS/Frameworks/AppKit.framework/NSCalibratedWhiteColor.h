@@ -14,10 +14,8 @@ __attribute__((visibility("hidden")))
     struct CGColor *_cachedCGColor;
 }
 
-+ (id)_cachedLookupWithWhite:(double)arg1 alpha:(double)arg2;
 + (id)newWithCoder:(id)arg1 zone:(struct _NSZone *)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1 colorSpaceCode:(BOOL)arg2;
 - (Class)classForCoder;
 - (BOOL)isUniform;
 - (unsigned long long)hash;

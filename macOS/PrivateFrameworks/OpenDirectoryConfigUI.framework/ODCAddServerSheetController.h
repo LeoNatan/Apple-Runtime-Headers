@@ -10,6 +10,7 @@
 
 @class NSButton, NSData, NSPanel, NSProgressIndicator, NSStackView, NSString, NSTextField, NSTimer, NSWindow, ODCAction, ODCGetODServerInfoAction, ODCServerComboBox, ODCViewControllerBase, SFAuthorizationView, XSDisablingTextField;
 
+__attribute__((visibility("hidden")))
 @interface ODCAddServerSheetController : NSObject <NSTextFieldDelegate>
 {
     NSPanel *_sheet;

@@ -8,15 +8,18 @@
 
 #import <CloudKitDaemon/NSCopying-Protocol.h>
 
-@class CKDPRecordFieldIdentifier, CKDPRecordFieldValue;
+@class CKDPRecordFieldIdentifier, CKDPRecordFieldValue, NSMutableArray;
 
 @interface CKDPRecordField : PBCodable <NSCopying>
 {
+    NSMutableArray *_actions;
     CKDPRecordFieldIdentifier *_identifier;
     CKDPRecordFieldValue *_value;
 }
 
++ (Class)actionType;
 + (id)emptyFieldWithKey:(id)arg1;
+@property(retain, nonatomic) NSMutableArray *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) CKDPRecordFieldValue *value; // @synthesize value=_value;
 @property(retain, nonatomic) CKDPRecordFieldIdentifier *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
@@ -29,6 +32,10 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)actionAtIndex:(unsigned long long)arg1;
+- (unsigned long long)actionsCount;
+- (void)addAction:(id)arg1;
+- (void)clearActions;
 @property(readonly, nonatomic) _Bool hasValue;
 @property(readonly, nonatomic) _Bool hasIdentifier;
 - (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;

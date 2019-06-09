@@ -6,24 +6,30 @@
 
 #import <AppKit/NSWindow.h>
 
-@interface AXVWindow : NSWindow
+#import <AccessibilityVisuals/AXFScreenManagerObserving-Protocol.h>
+
+@class NSString;
+
+@interface AXVWindow : NSWindow <AXFScreenManagerObserving>
 {
+    BOOL __listeningForScreenParametersChangedNotification;
 }
 
-- (void)_moveWindowIntoSharedSpace;
-- (struct CGPoint)windowOriginToCenterContent:(struct CGRect)arg1;
-- (struct CGRect)contentFrameWithinVoiceOverStyleBorder;
-- (id)_maskImageWithCornerRadius:(double)arg1;
-- (void)enableVoiceOverVisualStyle;
+@property(nonatomic) BOOL _listeningForScreenParametersChangedNotification; // @synthesize _listeningForScreenParametersChangedNotification=__listeningForScreenParametersChangedNotification;
+- (void)screenManager:(id)arg1 screensChanged:(id)arg2;
+- (void)handleScreenParametersChanged;
+- (void)hide;
+- (void)show;
+@property(nonatomic) struct CGSize frameSize;
+@property(nonatomic) struct CGPoint frameCenter;
 - (void)_setTrustedForObscuring;
-- (void)_registerForNotifications;
-- (void)screenParametersDidChange:(id)arg1;
-- (void)hideWindow;
-- (void)showWindow;
-- (void)removeView:(id)arg1;
-- (void)addView:(id)arg1;
-- (void)dealloc;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

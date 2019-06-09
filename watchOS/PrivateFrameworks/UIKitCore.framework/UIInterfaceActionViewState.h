@@ -8,7 +8,7 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 
-@class UIColor, UIInterfaceAction;
+@class UIInterfaceAction;
 
 __attribute__((visibility("hidden")))
 @interface UIInterfaceActionViewState : UIInterfaceActionVisualStyleViewState <NSCopying>
@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     UIInterfaceAction *_action;
     id _actionViewStateContext;
     unsigned int _visualCornerPosition;
-    UIColor *_legacyPresentationTintColor;
 }
 
 + (id)viewStateRepresentingPreferredAction;
@@ -29,7 +28,6 @@ __attribute__((visibility("hidden")))
 + (id)viewStateForActionRepresentationViewDescendantView:(id)arg1 action:(id)arg2;
 + (id)viewStateForActionRepresentationView:(id)arg1 action:(id)arg2;
 + (id)_nullViewStateForActionType:(int)arg1;
-@property(readonly, nonatomic) UIColor *legacyPresentationTintColor; // @synthesize legacyPresentationTintColor=_legacyPresentationTintColor;
 @property(readonly, nonatomic) unsigned int visualCornerPosition; // @synthesize visualCornerPosition=_visualCornerPosition;
 @property(readonly, nonatomic) id actionViewStateContext; // @synthesize actionViewStateContext=_actionViewStateContext;
 @property(readonly, nonatomic) _Bool isPreferred; // @synthesize isPreferred=_isPreferred;
@@ -39,7 +37,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIInterfaceAction *action; // @synthesize action=_action;
 - (void).cxx_destruct;
 - (_Bool)_stateEqualToActionViewState:(id)arg1;
-- (id)_legacyPresentationTintColorForActionRepresentationDescendantView:(id)arg1;
 - (void)_collectStateFromActionViewState:(id)arg1;
 - (void)_collectStateFromAction:(id)arg1;
 - (void)_collectStateFromActionRepresentationView:(id)arg1;

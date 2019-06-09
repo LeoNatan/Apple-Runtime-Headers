@@ -27,6 +27,7 @@
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(nonatomic) BOOL color; // @synthesize color=_color;
 - (void).cxx_destruct;
+- (void)setImage:(id)arg1;
 - (void)prepareForDisplay;
 - (void)setNeedsPrepareForDisplay;
 - (void)prepareForDisplayIfNeeded;

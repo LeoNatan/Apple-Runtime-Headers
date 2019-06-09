@@ -15,6 +15,8 @@
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool isLandscape; // @synthesize isLandscape=_isLandscape;
 @property(nonatomic) _Bool isLeftToRightSwipe; // @synthesize isLeftToRightSwipe=_isLeftToRightSwipe;
+- (unsigned long long)hash;
+- (_Bool)isEqual:(id)arg1;
 - (void)updateForLandscape:(_Bool)arg1;
 - (_Bool)arePointsDeviceRelative;
 - (double)forceForFingerIdentifier:(id)arg1 atEventIndex:(unsigned long long)arg2;

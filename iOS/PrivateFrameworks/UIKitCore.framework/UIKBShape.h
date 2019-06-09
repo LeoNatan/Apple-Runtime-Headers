@@ -16,7 +16,7 @@
     UIKBGeometry *m_geometry;
     struct CGRect m_frame;
     struct CGRect m_paddedFrame;
-    int m_concaveCorner;
+    unsigned long long m_concaveCorner;
     struct CGSize m_concaveCornerOffset;
     unsigned long long m_uid;
     _Bool m_scaled;
@@ -30,7 +30,7 @@
 @property(nonatomic) _Bool scaled; // @synthesize scaled=m_scaled;
 @property(readonly, nonatomic) unsigned long long uid; // @synthesize uid=m_uid;
 @property(nonatomic) struct CGSize concaveCornerOffset; // @synthesize concaveCornerOffset=m_concaveCornerOffset;
-@property(nonatomic) int concaveCorner; // @synthesize concaveCorner=m_concaveCorner;
+@property(nonatomic) unsigned long long concaveCorner; // @synthesize concaveCorner=m_concaveCorner;
 @property(nonatomic) struct CGRect paddedFrame; // @synthesize paddedFrame=m_paddedFrame;
 @property(nonatomic) struct CGRect frame; // @synthesize frame=m_frame;
 @property(retain, nonatomic) UIKBGeometry *geometry; // @synthesize geometry=m_geometry;
@@ -52,7 +52,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)initWithGeometry:(id)arg1 frame:(struct CGRect)arg2 paddedFrame:(struct CGRect)arg3 concaveCorner:(int)arg4 concaveCornerOffset:(struct CGSize)arg5;
+- (id)initWithGeometry:(id)arg1 frame:(struct CGRect)arg2 paddedFrame:(struct CGRect)arg3 concaveCorner:(unsigned long long)arg4 concaveCornerOffset:(struct CGSize)arg5;
 - (id)initWithGeometry:(id)arg1 frame:(struct CGRect)arg2 paddedFrame:(struct CGRect)arg3;
 - (id)init;
 

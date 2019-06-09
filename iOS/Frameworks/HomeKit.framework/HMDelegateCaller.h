@@ -6,15 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@protocol OS_dispatch_queue;
-
 @interface HMDelegateCaller : NSObject
 {
-    NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-- (void).cxx_destruct;
++ (id)delegateCallerWithOperationQueue:(id)arg1;
 - (void)callCompletion:(CDUnknownBlockType)arg1 value:(_Bool)arg2 conflictName:(id)arg3 error:(id)arg4;
 - (void)callCompletion:(CDUnknownBlockType)arg1 error:(id)arg2 mediaSystem:(id)arg3;
 - (void)callCompletion:(CDUnknownBlockType)arg1 error:(id)arg2 proxiedDevice:(id)arg3;
@@ -41,6 +37,7 @@
 - (void)invokeBlock:(CDUnknownBlockType)arg1;
 - (id)_localizedError:(id)arg1;
 - (id)initWithQueue:(id)arg1;
+- (id)init;
 
 @end
 

@@ -19,6 +19,7 @@
     TUCallProviderManager *_callProviderManager;
     NSObject<OS_dispatch_queue> *_queue;
     NSMapTable *_delegateToQueue;
+    unsigned long long _dataSourceExclusions;
 }
 
 + (_Bool)useFakeData;
@@ -26,6 +27,7 @@
 + (id)channelStringFromSenderIdentity:(id)arg1;
 + (id)descriptorForRequiredKeys;
 + (_Bool)deviceSupportsGemini;
+@property(nonatomic) unsigned long long dataSourceExclusions; // @synthesize dataSourceExclusions=_dataSourceExclusions;
 @property(retain, nonatomic) NSMapTable *delegateToQueue; // @synthesize delegateToQueue=_delegateToQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) TUCallProviderManager *callProviderManager; // @synthesize callProviderManager=_callProviderManager;

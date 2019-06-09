@@ -20,6 +20,7 @@
 @property int error; // @synthesize error=_error;
 @property(readonly) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(readonly) id <MobileGestaltHelper> helper; // @synthesize helper=_helper;
+- (_Bool)proxyRebuildCache;
 - (void)invalidate;
 - (id)init;
 - (void)dealloc;

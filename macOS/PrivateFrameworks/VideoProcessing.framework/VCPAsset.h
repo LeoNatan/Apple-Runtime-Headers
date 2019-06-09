@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) float exposureTimeSeconds;
 @property(readonly, nonatomic) BOOL hadFlash;
 - (id)originalMovie;
+- (id)streamedMovie;
 - (id)movie;
 @property(readonly, nonatomic) float timelapseRate;
 @property(readonly, nonatomic) float slowmoRate;

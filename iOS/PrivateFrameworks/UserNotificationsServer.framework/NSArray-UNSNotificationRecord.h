@@ -8,5 +8,6 @@
 
 @interface NSArray (UNSNotificationRecord)
 - (_Bool)uns_containsSimilarRecord:(id)arg1;
+- (id)uns_map:(CDUnknownBlockType)arg1 usingLibrarian:(id)arg2;
 @end
 

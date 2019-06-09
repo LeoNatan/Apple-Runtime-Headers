@@ -8,16 +8,17 @@
 
 @class NSMutableString;
 
+__attribute__((visibility("hidden")))
 @interface OADRegularTextRun : OADTextRun
 {
     NSMutableString *mText;
 }
 
+- (void).cxx_destruct;
 - (_Bool)isSimilarToTextRun:(id)arg1;
 - (id)text;
 - (unsigned long long)characterCount;
 - (_Bool)isEmpty;
-- (void)dealloc;
 - (id)init;
 
 @end

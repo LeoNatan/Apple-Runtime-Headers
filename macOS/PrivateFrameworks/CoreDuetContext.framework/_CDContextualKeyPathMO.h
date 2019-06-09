@@ -18,7 +18,7 @@
 
 // Remaining properties
 @property(retain, nonatomic) NSDate *creationDate; // @dynamic creationDate;
-@property(nonatomic) unsigned long long deviceID; // @dynamic deviceID;
+@property(retain, nonatomic) NSString *deviceIDString; // @dynamic deviceIDString;
 @property(nonatomic) BOOL isEphemeral; // @dynamic isEphemeral;
 @property(nonatomic) BOOL isUserCentric; // @dynamic isUserCentric;
 @property(retain, nonatomic) NSString *key; // @dynamic key;

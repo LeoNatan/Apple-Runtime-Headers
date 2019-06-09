@@ -6,14 +6,18 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary;
+
 __attribute__((visibility("hidden")))
 @interface SCROutputExceptionsDBManager : NSObject
 {
-    struct __CFDictionary *_applicationExceptionsDBCacheTable;
+    NSMutableDictionary *__applicationExceptionsDBCacheTable;
 }
 
 + (id)defaultManager;
-- (struct __CFDictionary *)_databaseForName:(struct __CFString *)arg1;
+@property(retain, nonatomic, setter=_setApplicationExceptionsDBCacheTable:) NSMutableDictionary *_applicationExceptionsDBCacheTable; // @synthesize _applicationExceptionsDBCacheTable=__applicationExceptionsDBCacheTable;
+- (void).cxx_destruct;
+- (id)_databaseForName:(struct __CFString *)arg1;
 - (struct __CFString *)_bestStringFromAlternatesTable:(struct __CFDictionary *)arg1 usingAlternateKeys:(struct __CFArray *)arg2;
 - (struct __CFString *)_copyBestAlternateStringFromTextSectionOfDatabase:(struct __CFDictionary *)arg1 valueKey:(struct __CFString *)arg2 alternateKeys:(struct __CFArray *)arg3;
 - (struct __CFString *)_copyBestAlternateStringFromDatabase:(struct __CFDictionary *)arg1 uiElementRole:(struct __CFString *)arg2 uiElementSubRole:(struct __CFString *)arg3 valueKey:(struct __CFString *)arg4 alternateKeys:(struct __CFArray *)arg5;

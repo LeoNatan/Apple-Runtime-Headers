@@ -6,22 +6,40 @@
 
 #import <UIKit/UIColor.h>
 
+@class NSString;
+
 @interface UIColor (IC)
 + (struct UIColor *)ic_colorFromString:(id)arg1;
++ (struct UIColor *)ic_paperTextureForTraitCollection:(id)arg1;
++ (struct UIColor *)ic_lightPaperTexture;
++ (struct UIColor *)ic_paperTexture;
++ (struct UIImage *)ic_lightPaperImage;
++ (struct UIImage *)ic_paperImage;
++ (id)ic_dynamicWhiteBlackColor;
++ (id)ic_quaternaryLabelColor;
++ (id)ic_tertiaryLabelColor;
++ (id)ic_secondaryLabelColor;
++ (id)ic_labelColor;
++ (struct UIColor *)ICSearchHeaderBackgroundColor;
++ (struct UIColor *)ICSearchHeaderTextColor;
++ (struct UIColor *)ICDefaultFindBarColor;
++ (struct UIColor *)ICNoteListDropHighlightColor;
 + (struct UIColor *)ICAccountHeaderLabelColor;
++ (struct UIColor *)ICShareFolderActionBackgroundColor;
++ (struct UIColor *)ICMoveActionBackgroundColor;
 + (struct UIColor *)ICDrawingToolsBottomMarginColor;
 + (struct UIColor *)ICNoteEditorToolbarColor;
 + (struct UIColor *)ICActiveTintedSelectionColor;
++ (struct UIColor *)ICTintedSelectionColor;
 + (struct UIColor *)ICExtractedDocumentViewControllerBackgroundColor;
++ (struct UIColor *)ICNotesListHeaderTextColor;
 + (struct UIColor *)ICLearnMoreButtonPressedColor;
 + (struct UIColor *)ICLearnMoreButtonUnpressedColor;
 + (struct UIColor *)ICFindInNoteHighlightColor;
-+ (struct UIColor *)ICTintedSelectionColor;
 + (struct UIColor *)ICNotesListFolderIconColor;
 + (struct UIColor *)ICLockIconColorList;
 + (struct UIColor *)ICListStatusIndicatorColor;
 + (struct UIColor *)ICLockIconColor;
-+ (struct UIColor *)ICYellowTodoButtonHighlightColor;
 + (struct UIColor *)ICYellowTodoButtonColor;
 + (struct UIColor *)ICGrayTodoButtonHighlightColor;
 + (struct UIColor *)ICGrayTodoButtonColor;
@@ -34,6 +52,24 @@
 + (struct UIColor *)ic_colorWith256Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)ic_darkerAccessibilityColorForColor:(id)arg1;
 + (id)ICDarkenedTintColor;
++ (id)icaxHueNameForValue:(double)arg1;
++ (id)ic_notesDefaultTextColor;
++ (id)ic_notesAppYellowColor;
 - (id)ic_colorString;
+@property(readonly, nonatomic) UIColor *ic_resolvedColor;
+@property(readonly, nonatomic) _Bool ic_isBlack;
+- (id)_icaxLightnessSaturationHueFormatString;
+- (id)_icaxSaturationHueFormatString;
+- (id)_icaxLightnessHueFormatString;
+- (id)_icaxColorDescriptionForHue:(id)arg1 saturation:(id)arg2 lightness:(id)arg3;
+@property(readonly, nonatomic) NSString *icaxDescriptionWithLuma;
+- (id)icaxSaturationModifier;
+- (id)icaxLightnessModifier;
+- (id)icaxHueName;
+@property(readonly, nonatomic) NSString *icaxApproximateColorDescription;
+@property(readonly, nonatomic) double icaxLuma;
+- (double)icaxSaturation;
+- (double)icaxHue;
+@property(retain, nonatomic, setter=_icaxSetCachedApproximateColorDescription:) NSString *_icaxCachedApproximateColorDescription;
 @end
 

@@ -7,6 +7,7 @@
 #import <Foundation/NSString.h>
 
 @interface NSString (WeatherStringAdditions)
++ (id)stringWithFormat:(id)arg1 andArguments:(id)arg2;
 - (struct CGSize)sizeWithDegreeWithFont:(id)arg1 degreeFont:(id)arg2 degreeOffset:(struct CGSize)arg3;
 - (void)drawWithDegreeAtPoint:(struct CGPoint)arg1 font:(id)arg2 degreeFont:(id)arg3 degreeOffset:(struct CGSize)arg4;
 - (void)drawAtPoint:(struct CGPoint)arg1 forWidth:(float)arg2 withFont:(id)arg3 fontColor:(id)arg4 shadowColor:(id)arg5;

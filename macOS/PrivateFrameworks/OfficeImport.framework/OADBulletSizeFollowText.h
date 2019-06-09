@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OADBulletSize.h>
 
+__attribute__((visibility("hidden")))
 @interface OADBulletSizeFollowText : OADBulletSize
 {
 }

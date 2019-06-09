@@ -18,9 +18,11 @@
     NSNumber *_batteryLife;
     NSNumber *_signalStrength;
     unsigned long long _networkType;
+    unsigned long long _deviceGroup;
 }
 
 + (BOOL)supportsSecureCoding;
+@property unsigned long long deviceGroup; // @synthesize deviceGroup=_deviceGroup;
 @property unsigned long long networkType; // @synthesize networkType=_networkType;
 @property(copy) NSNumber *signalStrength; // @synthesize signalStrength=_signalStrength;
 @property(copy) NSNumber *batteryLife; // @synthesize batteryLife=_batteryLife;

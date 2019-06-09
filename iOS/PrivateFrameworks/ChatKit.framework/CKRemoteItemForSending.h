@@ -10,6 +10,7 @@
 
 @class MSMessage, NSData, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface CKRemoteItemForSending : NSObject <NSSecureCoding>
 {
     _Bool _previewIsFullyRealizedByChatKit;

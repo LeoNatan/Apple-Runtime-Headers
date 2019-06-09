@@ -6,11 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSXPCConnection;
+@class NSMutableDictionary, NSXPCConnection;
 
 @interface CSLSModalAppService : NSObject
 {
     NSXPCConnection *_connection;
+    NSMutableDictionary *_activeModalApps;
+    struct os_unfair_recursive_lock_s _lock;
 }
 
 + (void)terminateModalAppWithBundleIdentifier:(id)arg1;
@@ -20,6 +22,8 @@
 - (void).cxx_destruct;
 - (void)terminateModalAppWithBundleIdentifier:(id)arg1;
 - (void)startModalAppWithOptions:(id)arg1;
+- (void)_restartModalApps;
+- (void)_withLock:(CDUnknownBlockType)arg1;
 - (id)_serviceWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)init;
 

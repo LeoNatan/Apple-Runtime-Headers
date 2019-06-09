@@ -68,6 +68,8 @@
 - (void)quickLookWithEvent:(id)arg1;
 - (long long)conversationIdentifier;
 - (id)hitTest:(struct CGPoint)arg1;
+- (id)accessibilityParameterizedAttributeNames;
+- (id)accessibilityAttributeValue:(id)arg1 forParameter:(id)arg2;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (BOOL)accessibilityIsIgnored;

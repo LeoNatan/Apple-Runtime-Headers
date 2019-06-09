@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)_configureToBeOff;
 - (void)_configureToUseDefaultValues;
 - (id)initWithConfiguration:(id)arg1;
+- (id)init;
 
 @end
 

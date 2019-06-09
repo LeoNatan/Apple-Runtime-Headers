@@ -16,6 +16,7 @@
     CDUnknownBlockType _helpHandler;
 }
 
+- (void).cxx_destruct;
 - (BOOL)alertShowHelp:(id)arg1;
 - (void)beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2 helpHandler:(CDUnknownBlockType)arg3;
 

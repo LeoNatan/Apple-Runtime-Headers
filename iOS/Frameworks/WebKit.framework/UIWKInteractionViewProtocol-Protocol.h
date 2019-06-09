@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSArray, NSAttributedString, NSString, UIView;
+@class NSArray, NSAttributedString, NSString, UITextPlaceholder, UIView, UIWKDocumentRequest;
 
 @protocol UIWKInteractionViewProtocol
 - (void)selectWordForReplacement;
@@ -29,6 +29,17 @@
 - (void)changeSelectionWithGestureAt:(struct CGPoint)arg1 withGesture:(long long)arg2 withState:(long long)arg3;
 
 @optional
+- (_Bool)shouldAllowHidingSelectionCommands;
+- (void)willFinishIgnoringCalloutBarFadeAfterPerformingAction;
+- (void)pasteWithCompletionHandler:(void (^)(void))arg1;
+- (void)removeAnnotation:(NSString *)arg1 forSelectionOffset:(long long)arg2 length:(unsigned long long)arg3;
+- (void)replaceSelectionOffset:(long long)arg1 length:(unsigned long long)arg2 withAnnotatedString:(NSAttributedString *)arg3 relativeReplacementRange:(struct _NSRange)arg4;
+- (void)removeTextPlaceholder:(UITextPlaceholder *)arg1 willInsertText:(_Bool)arg2 completionHandler:(void (^)(void))arg3;
+- (void)insertTextPlaceholderWithSize:(struct CGSize)arg1 completionHandler:(void (^)(UITextPlaceholder *))arg2;
+- (void)selectPositionAtPoint:(struct CGPoint)arg1 withContextRequest:(UIWKDocumentRequest *)arg2 completionHandler:(void (^)(UIWKDocumentContext *))arg3;
+- (void)requestDocumentContext:(UIWKDocumentRequest *)arg1 completionHandler:(void (^)(UIWKDocumentContext *))arg2;
+- (void)adjustSelectionWithDelta:(struct _NSRange)arg1 completionHandler:(void (^)(void))arg2;
+- (void)requestRectsToEvadeForSelectionCommandsWithCompletionHandler:(void (^)(NSArray *))arg1;
 - (void)moveSelectionAtBoundary:(id)arg1 inDirection:(long long)arg2 completionHandler:(void (^)(void))arg3;
 - (void)selectPositionAtBoundary:(long long)arg1 inDirection:(long long)arg2 fromPoint:(struct CGPoint)arg3 completionHandler:(void (^)(void))arg4;
 - (void)moveByOffset:(long long)arg1;
@@ -43,6 +54,7 @@
 - (void)replaceDictatedText:(NSString *)arg1 withText:(NSString *)arg2;
 - (void)clearSelection;
 - (void)changeSelectionWithTouchAt:(struct CGPoint)arg1 withSelectionTouch:(long long)arg2 baseIsStart:(_Bool)arg3 withFlags:(long long)arg4;
+- (_Bool)shouldSuppressUpdateCandidateView;
 - (NSAttributedString *)attributedMarkedText;
 @end
 

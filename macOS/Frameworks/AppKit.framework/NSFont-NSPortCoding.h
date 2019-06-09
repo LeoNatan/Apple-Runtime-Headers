@@ -8,5 +8,7 @@
 
 @interface NSFont (NSPortCoding)
 - (id)replacementObjectForPortCoder:(id)arg1;
+- (double)_trackingNecessaryToScaleToFontOfSize:(double)arg1;
+@property(readonly) double _spaceGlyphAdvance;
 @end
 

@@ -8,6 +8,7 @@
 
 @class NSArray, UIStackView, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUITrendingSearchView : UIScrollView
 {
     UIView *_trendingTitleView;

@@ -16,25 +16,32 @@
     NSString *_bundlePath;
     NSArray *_morphVariants;
     NSString *_ao;
-    NSString *_highlights;
-    unsigned long long _numberOfEditableColor;
+    NSDictionary *_highlights;
     unsigned long long _refCount;
     SCNNode *_cachedNode;
     _Bool _forceHighTessellation;
     NSDictionary *_specializationSettings;
+    NSDictionary *_layers;
+    NSDictionary *_perAssetMain;
+    double _imageScale;
+    struct CGSize _imageOffset;
+    _Bool _imageMirror;
 }
 
 @property(readonly) NSString *ao; // @synthesize ao=_ao;
+@property(readonly) _Bool imageMirror; // @synthesize imageMirror=_imageMirror;
+@property(readonly) struct CGSize imageOffset; // @synthesize imageOffset=_imageOffset;
+@property(readonly) double imageScale; // @synthesize imageScale=_imageScale;
 @property(readonly) _Bool forceHighTessellation; // @synthesize forceHighTessellation=_forceHighTessellation;
+@property(readonly) NSDictionary *layers; // @synthesize layers=_layers;
 @property(readonly) NSDictionary *specializationSettings; // @synthesize specializationSettings=_specializationSettings;
 @property(readonly) NSArray *morphVariants; // @synthesize morphVariants=_morphVariants;
-@property(readonly) unsigned long long numberOfEditableColor; // @synthesize numberOfEditableColor=_numberOfEditableColor;
-@property(readonly) NSString *highlights; // @synthesize highlights=_highlights;
 @property(readonly) NSString *uid; // @synthesize uid=_uid;
 @property(readonly) long long type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (void)setCachedNode:(id)arg1;
 - (id)cachedNode;
+- (id)perAssetMain;
 - (id)assetInfo;
 - (id)componentPath;
 - (void)setBundlePath:(id)arg1;

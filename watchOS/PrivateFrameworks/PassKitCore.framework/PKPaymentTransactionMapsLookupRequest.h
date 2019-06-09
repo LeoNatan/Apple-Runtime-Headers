@@ -7,13 +7,17 @@
 #import <objc/NSObject.h>
 
 @class PKPaymentApplication, PKPaymentTransaction;
+@protocol OS_dispatch_queue;
 
 @interface PKPaymentTransactionMapsLookupRequest : NSObject
 {
     PKPaymentTransaction *_transaction;
     PKPaymentApplication *_paymentApplication;
+    NSObject<OS_dispatch_queue> *_internalQueue;
+    _Bool _clearingAttempt;
 }
 
+@property(nonatomic, getter=isClearingAttempt) _Bool clearingAttempt; // @synthesize clearingAttempt=_clearingAttempt;
 - (void).cxx_destruct;
 - (id)_brandFromMapItem:(id)arg1;
 - (id)_merchantFromMapItem:(id)arg1;

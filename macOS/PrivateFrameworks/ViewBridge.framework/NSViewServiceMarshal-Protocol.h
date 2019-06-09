@@ -6,7 +6,7 @@
 
 #import <ViewBridge/NSVB_ViewServiceUIBehaviorInterface-Protocol.h>
 
-@class NSAppearance, NSBitmapImageRep, NSColor, NSData, NSDictionary, NSNumber, NSObject, NSString;
+@class NSAppearance, NSBitmapImageRep, NSData, NSDictionary, NSNumber, NSObject, NSString;
 @protocol NSSecureCoding;
 
 @protocol NSViewServiceMarshal <NSVB_ViewServiceUIBehaviorInterface>
@@ -19,7 +19,6 @@
 - (void)allowAppNap:(BOOL)arg1;
 - (void)serviceViewControllerProxy:(void (^)(NSProxy<NSXPCProxyCreating> *, NSProxy<NSXPCProxyCreating> *))arg1;
 - (void)accessibilityTokenForFocusedUIElement:(void (^)(NSData *))arg1;
-- (void)setFontSmoothingBackgroundColor:(NSColor *)arg1;
 - (void)hostWindowReceivedEventType:(unsigned long long)arg1;
 - (void)setRemoteAccessoryViewCanBecomeKeyView:(BOOL)arg1;
 - (void)setAccessoryViewSize:(struct CGSize)arg1 alignmentRectInsets:(struct NSEdgeInsets)arg2;
@@ -28,7 +27,6 @@
 - (void)willBecomeAssociatedWithHostWindow:(unsigned int)arg1 atLevel:(long long)arg2 isFunctionRow:(BOOL)arg3;
 - (void)advanceToRunPhase:(void (^)(BOOL))arg1;
 - (void)remoteViewContainingWindowOcclusionStateDidChange:(unsigned long long)arg1;
-- (void)remoteViewDidMove:(struct CGPoint)arg1;
 - (void)hostWindowLevelDidChange:(long long)arg1;
 - (void)hostWindowResignedKeyFocus:(BOOL)arg1 inActiveApp:(BOOL)arg2 isContentView:(BOOL)arg3;
 - (void)hostWindowBecameKeyInActiveApp:(BOOL)arg1 firstResponderState:(unsigned char)arg2 isContentView:(BOOL)arg3;
@@ -45,10 +43,10 @@
 - (void)performAction:(NSString *)arg1 forTarget:(NSString *)arg2;
 - (void)validateAction:(NSString *)arg1 withReply:(void (^)(BOOL, NSString *, struct, struct, NSString *))arg2;
 - (void)endHostModalSession:(NSString *)arg1;
-- (void)beginHostModalSession:(NSString *)arg1 title:(NSString *)arg2 size:(struct CGSize)arg3 withReply:(void (^)(NSError *))arg4;
+- (void)beginHostAppModalSession:(NSString *)arg1 parameters:(const CDStruct_9fbe0e86 *)arg2 title:(NSString *)arg3 style:(unsigned long long)arg4 size:(struct CGSize)arg5 withReply:(void (^)(NSError *))arg6;
 - (void)setRemoteViewEffectiveAppearance:(NSAppearance *)arg1;
 - (void)setViewVibrantBlendingStyle:(unsigned long long)arg1;
-- (void)bootstrap:(CDStruct_e2fa5527)arg1 withReply:(void (^)(NSString *, struct, NSProxy<NSXPCProxyCreating> *, NSProxy<NSXPCProxyCreating> *))arg2;
+- (void)bootstrap:(CDStruct_278a5119)arg1 withReply:(void (^)(NSString *, struct, NSProxy<NSXPCProxyCreating> *, NSProxy<NSXPCProxyCreating> *))arg2;
 - (void)snapshot:(void (^)(NSError *, NSBitmapImageRep *))arg1;
 - (void)endPrivateEventLoop;
 @end

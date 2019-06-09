@@ -9,6 +9,7 @@
 @class NSArray, NSDictionary, NSError, NSString, NSURL;
 @protocol OS_dispatch_queue, OS_xpc_object;
 
+__attribute__((visibility("hidden")))
 @interface TCExternalResourceAccessor : NSObject
 {
     NSURL *mDocumentURL;

@@ -19,7 +19,8 @@ __attribute__((visibility("hidden")))
 @property(getter=isActive) BOOL active; // @synthesize active=_active;
 @property(getter=isEmphasized) BOOL emphasized; // @synthesize emphasized=_emphasized;
 @property(getter=isSelected) BOOL selected; // @synthesize selected=_selected;
-- (void)_drawMappingAlignmentRectToRect:(struct CGRect)arg1 withState:(unsigned long long)arg2 backgroundStyle:(int)arg3 operation:(unsigned long long)arg4 fraction:(double)arg5 flip:(BOOL)arg6 hints:(id)arg7;
+- (id)name;
+- (void)_drawMappingAlignmentRectToRect:(struct CGRect)arg1 withState:(unsigned long long)arg2 backgroundStyle:(int)arg3 tintColor:(id)arg4 operation:(unsigned long long)arg5 fraction:(double)arg6 flip:(BOOL)arg7 hints:(id)arg8;
 - (BOOL)isTemplate;
 - (void)drawInRect:(struct CGRect)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4 respectFlipped:(BOOL)arg5 hints:(id)arg6;
 - (void)drawInRect:(struct CGRect)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4;

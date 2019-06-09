@@ -8,6 +8,7 @@
 
 @class NSArray, NSMutableArray, NSMutableDictionary, NSOperationQueue, NSRegularExpression;
 
+__attribute__((visibility("hidden")))
 @interface SKUITemplateLoader : NSObject
 {
     SKUITemplateLoader *_retainSelf;

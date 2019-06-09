@@ -7,10 +7,11 @@
 #import <NewsCore/NFCopying-Protocol.h>
 #import <NewsCore/NSObject-Protocol.h>
 
-@class FCAssetHandle, FCColor, FCPurchaseOfferableConfiguration, NSArray, NSData, NSDate, NSString, NSURL, NTPBPublisherPaidDescriptionStrings;
+@class FCAssetHandle, FCColor, FCPurchaseOfferableConfiguration, FCSubscriptionButtonConfiguration, NSArray, NSData, NSDate, NSString, NSURL, NTPBPublisherPaidDescriptionStrings;
 @protocol FCChannelProviding, FCFeedTheming, FCSectionProviding, FCTagProviding, FCTopicProviding;
 
 @protocol FCTagProviding <NSObject, NFCopying>
+@property(readonly, copy, nonatomic) FCSubscriptionButtonConfiguration *paidBundleSubscriptionButtonConfiguration;
 @property(readonly, nonatomic) NSDate *publisherSpecifiedArticleIDsModifiedDate;
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs;
 @property(readonly, nonatomic) NSString *articleRecirculationConfigJSON;
@@ -40,6 +41,7 @@
 @property(readonly, nonatomic) NSArray *blockedStorefrontIDs;
 @property(readonly, nonatomic) NSArray *iAdKeywords;
 @property(readonly, nonatomic) NSArray *iAdCategories;
+@property(readonly, copy, nonatomic) FCColor *groupDarkStyleTitleColor;
 @property(readonly, copy, nonatomic) FCColor *groupTitleColor;
 @property(readonly, copy, nonatomic) id <FCFeedTheming> theme;
 @property(readonly, copy, nonatomic) NSString *coverArticleListID;

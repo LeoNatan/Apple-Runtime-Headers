@@ -28,23 +28,12 @@
     int _resourceFetchType;
     BOOL _proxyConnection;
     BOOL _reusedConnection;
-    CDStruct_63f2c340 _has;
+    CDStruct_60b58840 _flags;
 }
 
-@property(nonatomic) BOOL reusedConnection; // @synthesize reusedConnection=_reusedConnection;
-@property(nonatomic) BOOL proxyConnection; // @synthesize proxyConnection=_proxyConnection;
-@property(nonatomic) double responseEnd; // @synthesize responseEnd=_responseEnd;
-@property(nonatomic) double responseStart; // @synthesize responseStart=_responseStart;
-@property(nonatomic) double requestEnd; // @synthesize requestEnd=_requestEnd;
-@property(nonatomic) double requestStart; // @synthesize requestStart=_requestStart;
-@property(nonatomic) double connectEnd; // @synthesize connectEnd=_connectEnd;
-@property(nonatomic) double secureConnectEnd; // @synthesize secureConnectEnd=_secureConnectEnd;
-@property(nonatomic) double secureConnectStart; // @synthesize secureConnectStart=_secureConnectStart;
-@property(nonatomic) double connectStart; // @synthesize connectStart=_connectStart;
-@property(nonatomic) double domainLookupEnd; // @synthesize domainLookupEnd=_domainLookupEnd;
-@property(nonatomic) double domainLookupStart; // @synthesize domainLookupStart=_domainLookupStart;
-@property(nonatomic) double fetchStart; // @synthesize fetchStart=_fetchStart;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -53,29 +42,43 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsResourceFetchType:(id)arg1;
 - (id)resourceFetchTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasResourceFetchType;
-@property(nonatomic) int resourceFetchType; // @synthesize resourceFetchType=_resourceFetchType;
+@property(nonatomic) int resourceFetchType;
 @property(nonatomic) BOOL hasReusedConnection;
+@property(nonatomic) BOOL reusedConnection;
 @property(nonatomic) BOOL hasProxyConnection;
+@property(nonatomic) BOOL proxyConnection;
 - (int)StringAsProtocolName:(id)arg1;
 - (id)protocolNameAsString:(int)arg1;
 @property(nonatomic) BOOL hasProtocolName;
-@property(nonatomic) int protocolName; // @synthesize protocolName=_protocolName;
+@property(nonatomic) int protocolName;
 @property(nonatomic) BOOL hasResponseEnd;
+@property(nonatomic) double responseEnd;
 @property(nonatomic) BOOL hasResponseStart;
+@property(nonatomic) double responseStart;
 @property(nonatomic) BOOL hasRequestEnd;
+@property(nonatomic) double requestEnd;
 @property(nonatomic) BOOL hasRequestStart;
+@property(nonatomic) double requestStart;
 @property(nonatomic) BOOL hasConnectEnd;
+@property(nonatomic) double connectEnd;
 @property(nonatomic) BOOL hasSecureConnectEnd;
+@property(nonatomic) double secureConnectEnd;
 @property(nonatomic) BOOL hasSecureConnectStart;
+@property(nonatomic) double secureConnectStart;
 @property(nonatomic) BOOL hasConnectStart;
+@property(nonatomic) double connectStart;
 @property(nonatomic) BOOL hasDomainLookupEnd;
+@property(nonatomic) double domainLookupEnd;
 @property(nonatomic) BOOL hasDomainLookupStart;
+@property(nonatomic) double domainLookupStart;
 @property(nonatomic) BOOL hasFetchStart;
+@property(nonatomic) double fetchStart;
 
 @end
 

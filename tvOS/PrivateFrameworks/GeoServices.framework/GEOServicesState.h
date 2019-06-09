@@ -15,7 +15,7 @@
     NSString *_bogusFieldForTestingPurposes;
 }
 
-@property(retain, nonatomic) NSString *bogusFieldForTestingPurposes; // @synthesize bogusFieldForTestingPurposes=_bogusFieldForTestingPurposes;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -24,8 +24,10 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *bogusFieldForTestingPurposes;
 @property(readonly, nonatomic) _Bool hasBogusFieldForTestingPurposes;
 
 @end

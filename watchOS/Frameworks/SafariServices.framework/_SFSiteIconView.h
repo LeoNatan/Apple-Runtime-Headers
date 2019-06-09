@@ -7,6 +7,7 @@
 #import <UIKit/UIImageView.h>
 
 @class UIImage, UILabel, WebBookmark;
+@protocol _SFSiteIconViewUpdateObserver;
 
 @interface _SFSiteIconView : UIImageView
 {
@@ -16,8 +17,10 @@
     id _touchIconRequestToken;
     WebBookmark *_bookmark;
     UIImage *_leadingImage;
+    id <_SFSiteIconViewUpdateObserver> _updateObserver;
 }
 
+@property(nonatomic) __weak id <_SFSiteIconViewUpdateObserver> updateObserver; // @synthesize updateObserver=_updateObserver;
 @property(retain, nonatomic) UIImage *leadingImage; // @synthesize leadingImage=_leadingImage;
 @property(retain, nonatomic) WebBookmark *bookmark; // @synthesize bookmark=_bookmark;
 - (void).cxx_destruct;
@@ -25,6 +28,7 @@
 - (void)_setMonogramWithString:(id)arg1 backgroundColor:(id)arg2;
 - (int)_inferredIconSize;
 - (void)_updateMonogramLabelSizeAndFont;
+- (float)_monogramFontSize;
 - (id)_tintedFolderImage;
 - (void)_setGlyph:(id)arg1 withBackgroundColor:(id)arg2;
 - (void)_clearGlyph;
@@ -32,6 +36,7 @@
 - (void)_setImage:(id)arg1 withBackgroundColor:(id)arg2;
 - (void)_cancelTouchIconRequest;
 - (void)_updateSiteIconViewWithTouchIconResponse:(id)arg1;
+- (void)_displayDefaultFolderIcon;
 - (void)updateBookmarkData;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -20,7 +20,9 @@
 @property(retain, nonatomic) FKFriendsManager *sosFriendsManager; // @synthesize sosFriendsManager=_sosFriendsManager;
 @property(nonatomic) __weak HDProfile *profile; // @synthesize profile=_profile;
 - (void).cxx_destruct;
+- (id)unitTest_medicalIDData;
 - (void)badgeHealthAppForEmergencyContactConsolidationWithCompletion:(CDUnknownBlockType)arg1;
+- (_Bool)isDateSavedEarlierForMedicalID:(id)arg1 originalMedicalID:(id)arg2;
 - (_Bool)_migrateMedicalIDLocationIfNecessary:(id *)arg1;
 - (id)_medicalIDURLWithDirectoryPath:(id)arg1;
 - (id)_medicalIDURL;
@@ -28,9 +30,13 @@
 - (id)_unarchiveMedicalIDDataWithRawData:(id)arg1;
 - (_Bool)obliterateMedicalIDDataWithReason:(id)arg1 error:(id *)arg2;
 - (_Bool)deleteMedicalIDDataWithError:(id *)arg1;
+- (_Bool)_persistMedicalIDData:(id)arg1 syncProvenance:(id)arg2 error:(id *)arg3;
+- (_Bool)updateMedicalIDData:(id)arg1 syncProvenance:(long long)arg2 error:(id *)arg3;
 - (_Bool)updateMedicalIDData:(id)arg1 error:(id *)arg2;
 - (id)medicalIDEmergencyContacts;
 - (id)medicalIDDataCreateIfNecessary:(_Bool)arg1;
+- (id)fetchMedicalIDIfExists;
+- (id)_fetchMedicalID;
 - (id)initWithProfile:(id)arg1;
 
 @end

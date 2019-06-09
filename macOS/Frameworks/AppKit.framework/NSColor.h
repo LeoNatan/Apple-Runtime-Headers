@@ -34,6 +34,7 @@
 + (id)colorWithDisplayP3Red:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)colorWithSRGBRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
 + (id)colorWithGenericGamma22White:(double)arg1 alpha:(double)arg2;
++ (id)colorWithName:(id)arg1 dynamicProvider:(CDUnknownBlockType)arg2;
 + (id)colorWithColorSpace:(id)arg1 components:(const double *)arg2 count:(long long)arg3;
 + (id)colorWithPatternImage:(id)arg1;
 + (id)colorNamed:(id)arg1 bundle:(id)arg2;
@@ -85,6 +86,7 @@
 + (id)placeholderTextColor;
 + (id)alternateSelectionGraphiteColor;
 + (id)alternateSelectionBlueColor;
++ (id)systemIndigoColor;
 + (id)systemTealColor;
 + (id)systemMintColor;
 + (id)systemGrayColor;

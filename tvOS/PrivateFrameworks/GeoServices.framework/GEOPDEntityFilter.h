@@ -17,14 +17,14 @@ __attribute__((visibility("hidden")))
     _Bool _includeName;
     _Bool _includeSpokenNames;
     struct {
-        unsigned int includeName:1;
-        unsigned int includeSpokenNames:1;
-    } _has;
+        unsigned int has_includeName:1;
+        unsigned int has_includeSpokenNames:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool includeName; // @synthesize includeName=_includeName;
-@property(nonatomic) _Bool includeSpokenNames; // @synthesize includeSpokenNames=_includeSpokenNames;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,10 +33,13 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasIncludeName;
+@property(nonatomic) _Bool includeName;
 @property(nonatomic) _Bool hasIncludeSpokenNames;
+@property(nonatomic) _Bool includeSpokenNames;
 
 @end
 

@@ -21,6 +21,7 @@
     int _accessoryTitleAlignment;
     UIView *_customContentView;
     UIColor *_customBackgroundColor;
+    UIColor *_customTitleColor;
     UILabel *_accessoryTitleLabel;
     PUICActivityIndicatorView *_activityIndicator;
     UIView *_currentAccessoryView;
@@ -37,6 +38,7 @@
 @property(retain, nonatomic) UIView *currentAccessoryView; // @synthesize currentAccessoryView=_currentAccessoryView;
 @property(retain, nonatomic) PUICActivityIndicatorView *activityIndicator; // @synthesize activityIndicator=_activityIndicator;
 @property(retain, nonatomic) UILabel *accessoryTitleLabel; // @synthesize accessoryTitleLabel=_accessoryTitleLabel;
+@property(retain, nonatomic) UIColor *customTitleColor; // @synthesize customTitleColor=_customTitleColor;
 @property(retain, nonatomic) UIColor *customBackgroundColor; // @synthesize customBackgroundColor=_customBackgroundColor;
 @property(retain, nonatomic) UIView *customContentView; // @synthesize customContentView=_customContentView;
 @property(nonatomic) _Bool blurredBackground; // @synthesize blurredBackground=_blurredBackground;

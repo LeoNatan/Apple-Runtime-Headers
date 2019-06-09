@@ -23,11 +23,14 @@
 
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitionPowerState;
++ (id)entryEventForwardDefinitionUserIdle;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventPointDefinitionCurrentMachWakeTime;
 + (id)entryEventPointDefinitionCurrentKernelWakeTime;
 + (id)entryEventPointDefinitionWakeGesture;
 + (id)entryEventPointDefinitions;
++ (id)entryEventNoneDefinitionPowerNapConfig;
++ (id)entryEventNoneDefinitions;
 + (id)railDefinitions;
 + (void)load;
 @property(retain) PLEventForwardPowerStateEntry *lastWakeEntry; // @synthesize lastWakeEntry=_lastWakeEntry;
@@ -40,13 +43,16 @@
 @property unsigned int pmNotifier; // @synthesize pmNotifier=_pmNotifier;
 @property unsigned int rootDomainConnect; // @synthesize rootDomainConnect=_rootDomainConnect;
 - (void).cxx_destruct;
+- (void)logEventNonePowerNapConfig;
 - (id)getSleepStatisticsApps;
 - (id)getLastWakeEntry;
 - (id)getLastSleepEntry;
 - (id)wakeTriggersSubclass;
 - (id)wakeTriggers;
+- (id)sleepTriggers;
 - (unsigned long long)getSleepSubclassKey;
 - (unsigned int)getIOPMRootDomain;
+- (void)registerForUserIdleNotification;
 - (void)registerForDarkwakeEvent;
 - (id)wakeReasonsAsNSString;
 - (id)wakeReasons;
@@ -59,6 +65,7 @@
 - (void)systemPoweredOn:(_Bool)arg1 withCapabilities:(unsigned int)arg2;
 - (void)systemPoweredOn:(_Bool)arg1;
 - (short)getSleepState;
+- (void)logEventForwardUserIdle:(BOOL)arg1;
 - (void)logEventPointWakeGesture:(id)arg1;
 - (void)log;
 - (void)initOperatorDependancies;

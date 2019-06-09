@@ -12,7 +12,7 @@
 {
 }
 
-+ (struct CGImage *)_scaledCGImage:(struct CGImage *)arg1 forICSNSizeAtScale:(unsigned int)arg2 template:(BOOL)arg3;
++ (struct CGImage *)_scaledCGImage:(struct CGImage *)arg1 forICSNSizeAtScale:(unsigned int)arg2 template:(BOOL)arg3 scaleToFit:(BOOL)arg4;
 + (int)_iconIndexSmallerThanSize:(struct CGSize)arg1 scale:(unsigned int)arg2 template:(BOOL)arg3;
 - (void)setVariant:(id)arg1 named:(id)arg2;
 - (void)setData:(id)arg1 atIndex:(int)arg2;
@@ -27,6 +27,7 @@
 - (BOOL)addCGImage:(struct CGImage *)arg1 scale:(unsigned int)arg2 error:(id *)arg3;
 - (BOOL)addImageData:(id)arg1 iconIndex:(int)arg2;
 - (id)initWithType:(unsigned int)arg1 imageProviderBlock:(CDUnknownBlockType)arg2;
+- (id)_initWithType:(unsigned int)arg1 scaleToFit:(BOOL)arg2 imageProviderBlock:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(copy) NSString *name; // @dynamic name;

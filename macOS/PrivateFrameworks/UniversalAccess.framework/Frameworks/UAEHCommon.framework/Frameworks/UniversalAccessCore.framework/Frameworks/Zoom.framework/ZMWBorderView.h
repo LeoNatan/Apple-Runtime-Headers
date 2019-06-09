@@ -6,6 +6,7 @@
 
 #import <Zoom/ZMWView.h>
 
+__attribute__((visibility("hidden")))
 @interface ZMWBorderView : ZMWView
 {
 }

@@ -19,8 +19,10 @@
     double _lastChunkSentTime;
     unsigned long long _messagesLoaded;
     struct sqlite3 *_database;
+    long long _countOfMessagesProcessed;
 }
 
+@property(nonatomic) long long countOfMessagesProcessed; // @synthesize countOfMessagesProcessed=_countOfMessagesProcessed;
 @property(nonatomic) struct sqlite3 *database; // @synthesize database=_database;
 @property(nonatomic) unsigned int options; // @synthesize options=_options;
 @property(nonatomic) unsigned long long messagesLoaded; // @synthesize messagesLoaded=_messagesLoaded;

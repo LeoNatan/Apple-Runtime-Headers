@@ -7,9 +7,11 @@
 #import <Intents/JSExport-Protocol.h>
 #import <Intents/NSObject-Protocol.h>
 
-@class INSpeakableString, INVoiceCommandDeviceInformation;
+@class INIntentExecutionResult, INSpeakableString, INVoiceCommandDeviceInformation, NSString;
 
 @protocol INRunVoiceCommandIntentExport <NSObject, JSExport>
+@property(copy, nonatomic) NSString *previousIntentIdentifier;
+@property(copy, nonatomic) INIntentExecutionResult *executionResult;
 @property(copy, nonatomic) INVoiceCommandDeviceInformation *originDevice;
 @property(copy, nonatomic) INSpeakableString *voiceCommand;
 - (id)init;

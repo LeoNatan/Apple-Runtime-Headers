@@ -37,13 +37,14 @@ __attribute__((visibility("hidden")))
 - (void)showJavaScriptPromptWithMessage:(id)arg1 defaultResponse:(id)arg2 originStringForAccessibility:(id)arg3 responseHandler:(CDUnknownBlockType)arg4;
 - (void)showJavaScriptConfirmWithMessage:(id)arg1 originStringForAccessibility:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)showJavaScriptAlertWithMessage:(id)arg1 originStringForAccessibility:(id)arg2 responseHandler:(CDUnknownBlockType)arg3;
+- (void)cancelAllDialogsFromOwningWebViewOnCommittedNavigationWithURL:(id)arg1;
 - (void)unblockWebProcess:(int)arg1;
 - (void)cancelAllDialogsFromOwningWebView;
 - (void)owningWebViewWillNavigate;
 @property(readonly, nonatomic) long long currentTabDialogType;
 @property(readonly, nonatomic, getter=isShowingTabDialog) BOOL showingTabDialog;
 - (void)dismissTabDialog;
-- (void)presentTabDialogWithConfiguration:(id)arg1 dismissalBlock:(CDUnknownBlockType)arg2 blocksWebProcessUntilDismissed:(BOOL)arg3;
+- (void)presentTabDialogWithConfiguration:(id)arg1 dismissalBlock:(CDUnknownBlockType)arg2 blocksWebProcessUntilDismissed:(BOOL)arg3 cancellationExemptions:(id)arg4;
 - (void)stopRedirectingTabDialogs;
 - (void)startRedirectingTabDialogPresentationForBrowserViewController:(id)arg1;
 

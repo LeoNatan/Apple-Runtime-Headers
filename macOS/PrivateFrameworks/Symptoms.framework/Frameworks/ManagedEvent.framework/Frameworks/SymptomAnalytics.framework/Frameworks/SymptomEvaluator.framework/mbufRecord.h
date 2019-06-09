@@ -8,6 +8,7 @@
 
 @class NSDate;
 
+__attribute__((visibility("hidden")))
 @interface mbufRecord : NSObject
 {
     NSDate *_reportTime;

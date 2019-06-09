@@ -17,7 +17,7 @@
     _Bool _alwaysReportFailures;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (_Bool)shouldRetryRequest;
 - (void)taskFailed:(id)arg1 statusCode:(int)arg2 error:(id)arg3;
 - (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;

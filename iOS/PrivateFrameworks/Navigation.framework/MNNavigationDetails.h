@@ -8,30 +8,38 @@
 
 #import <Navigation/NSSecureCoding-Protocol.h>
 
-@class GEOComposedRoute, GEONavigationGuidanceState, MNActiveRouteDetails, MNActiveRouteInfo, MNLocation, MNRoutePlanningDetails, NSArray, NSMapTable, NSMutableDictionary, NSString;
+@class GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsResponse, GEONavigationGuidanceState, MNActiveRouteInfo, MNLocation, MNStartNavigationDetails, NSArray, NSMapTable, NSMutableDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface MNNavigationDetails : NSObject <NSSecureCoding>
 {
-    MNActiveRouteDetails *_activeRouteDetails;
+    MNStartNavigationDetails *_startNavigationDetails;
+    unsigned long long _state;
+    int _navigationType;
+    int _desiredNavigationType;
+    int _desiredTransportType;
     MNLocation *_location;
     unsigned long long _routeIndex;
     _Bool _isDetour;
     GEONavigationGuidanceState *_guidanceState;
+    MNActiveRouteInfo *_currentRoute;
+    NSArray *_previewRoutes;
+    NSArray *_alternateRoutes;
+    GEOComposedWaypoint *_originalOrigin;
+    GEOComposedWaypoint *_originalDestination;
+    NSArray *_possibleCommuteDestinations;
     NSMapTable *_routeIDLookup;
     NSMutableDictionary *_routeLookup;
-    MNActiveRouteInfo *_currentRoute;
-    NSArray *_alternateRoutes;
-    NSArray *_possibleCommuteDestinations;
     NSMutableDictionary *_trafficIncidentAlerts;
     _Bool _guidancePromptsEnabled;
-    _Bool _isInVehicle;
+    _Bool _isInPreArrivalState;
     _Bool _traceIsPlaying;
     int _headingOrientation;
     int _navigationState;
-    unsigned long long _state;
-    MNRoutePlanningDetails *_routePlanningDetails;
+    GEODirectionsRequest *_directionsRequest;
+    GEODirectionsResponse *_directionsResponse;
     unsigned long long _reconnectionRouteIndex;
+    unsigned long long _selectedPreviewRouteIndex;
     double _proceedToRouteDistance;
     NSString *_displayString;
     double _remainingTime;
@@ -50,13 +58,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain) NSMutableDictionary *trackedCommuteDestinations; // @synthesize trackedCommuteDestinations=_trackedCommuteDestinations;
+@property(retain, nonatomic) NSMutableDictionary *trackedCommuteDestinations; // @synthesize trackedCommuteDestinations=_trackedCommuteDestinations;
 @property(retain, nonatomic) NSArray *traceBookmarks; // @synthesize traceBookmarks=_traceBookmarks;
 @property(nonatomic) double tracePosition; // @synthesize tracePosition=_tracePosition;
 @property(nonatomic) double traceDuration; // @synthesize traceDuration=_traceDuration;
 @property(nonatomic) _Bool traceIsPlaying; // @synthesize traceIsPlaying=_traceIsPlaying;
 @property(copy, nonatomic) NSString *tracePath; // @synthesize tracePath=_tracePath;
-@property(nonatomic) _Bool isInVehicle; // @synthesize isInVehicle=_isInVehicle;
 @property(readonly, nonatomic) NSArray *possibleCommuteDestinations; // @synthesize possibleCommuteDestinations=_possibleCommuteDestinations;
 @property(retain, nonatomic) NSString *currentVoiceLanguage; // @synthesize currentVoiceLanguage=_currentVoiceLanguage;
 @property(nonatomic) double timeUntilManeuver; // @synthesize timeUntilManeuver=_timeUntilManeuver;
@@ -68,32 +75,44 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double remainingTime; // @synthesize remainingTime=_remainingTime;
 @property(retain, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
 @property(nonatomic) double proceedToRouteDistance; // @synthesize proceedToRouteDistance=_proceedToRouteDistance;
+@property(retain, nonatomic) GEOComposedWaypoint *originalDestination; // @synthesize originalDestination=_originalDestination;
+@property(retain, nonatomic) GEOComposedWaypoint *originalOrigin; // @synthesize originalOrigin=_originalOrigin;
+@property(readonly, nonatomic) unsigned long long selectedPreviewRouteIndex; // @synthesize selectedPreviewRouteIndex=_selectedPreviewRouteIndex;
 @property(readonly, nonatomic) unsigned long long reconnectionRouteIndex; // @synthesize reconnectionRouteIndex=_reconnectionRouteIndex;
 @property(readonly, nonatomic) unsigned long long routeIndex; // @synthesize routeIndex=_routeIndex;
+@property(nonatomic) _Bool isInPreArrivalState; // @synthesize isInPreArrivalState=_isInPreArrivalState;
 @property(retain, nonatomic) GEONavigationGuidanceState *guidanceState; // @synthesize guidanceState=_guidanceState;
 @property(nonatomic) int navigationState; // @synthesize navigationState=_navigationState;
 @property(nonatomic) int headingOrientation; // @synthesize headingOrientation=_headingOrientation;
 @property(nonatomic) _Bool isDetour; // @synthesize isDetour=_isDetour;
 @property(nonatomic) _Bool guidancePromptsEnabled; // @synthesize guidancePromptsEnabled=_guidancePromptsEnabled;
 @property(retain, nonatomic) MNLocation *location; // @synthesize location=_location;
-@property(retain, nonatomic) MNRoutePlanningDetails *routePlanningDetails; // @synthesize routePlanningDetails=_routePlanningDetails;
-@property(readonly, nonatomic) MNActiveRouteDetails *activeRouteDetails; // @synthesize activeRouteDetails=_activeRouteDetails;
+@property(retain, nonatomic) GEODirectionsResponse *directionsResponse; // @synthesize directionsResponse=_directionsResponse;
+@property(retain, nonatomic) GEODirectionsRequest *directionsRequest; // @synthesize directionsRequest=_directionsRequest;
+@property(nonatomic) int desiredTransportType; // @synthesize desiredTransportType=_desiredTransportType;
+@property(nonatomic) int desiredNavigationType; // @synthesize desiredNavigationType=_desiredNavigationType;
+@property(nonatomic) int navigationType; // @synthesize navigationType=_navigationType;
 @property(nonatomic) unsigned long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) NSMutableDictionary *routeLookup;
+@property(readonly, nonatomic) NSMapTable *routeIDLookup;
 - (void)_updateRouteIDLookup;
 - (id)removeTrafficIncidentAlertWithDetails:(id)arg1;
 - (id)updateWithTrafficIncidentAlertDetails:(id)arg1;
+- (id)routeLookupIDs;
 - (id)routeInfoForRoute:(id)arg1;
 - (id)routeInfoForID:(id)arg1;
+- (void)updateLocationFromDetails:(id)arg1;
 - (void)updateETAResponseForRoute:(id)arg1;
 - (void)setAlternateRoutes:(id)arg1;
-- (void)setActiveRouteDetails:(id)arg1 withAlternateRoutes:(id)arg2;
+- (void)setCurrentRoute:(id)arg1 withAlternateRoutes:(id)arg2;
+- (void)setPreviewRoutes:(id)arg1 withSelectedRouteIndex:(unsigned long long)arg2;
 - (void)updatePossibleCommuteDestinations:(id)arg1;
 @property(readonly, nonatomic) unsigned long long legIndex;
 @property(readonly, nonatomic) unsigned long long stepIndex;
-@property(readonly, nonatomic) int navigationType;
 @property(readonly, nonatomic) NSArray *alternateRoutes;
+@property(readonly, nonatomic) NSArray *previewRoutes;
 @property(readonly, nonatomic) GEOComposedRoute *currentRoute;
 - (void)copySerializableValuesFrom:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

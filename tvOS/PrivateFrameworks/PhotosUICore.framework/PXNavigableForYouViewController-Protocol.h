@@ -4,17 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUICore/PXNavigableGadgetViewController-Protocol.h>
-
 @class NSString, PXMemoriesFeedUIViewController, UIViewController;
 
-@protocol PXNavigableForYouViewController <PXNavigableGadgetViewController>
-- (void)navigateToInvitationCMMWithUUID:(NSString *)arg1 animated:(_Bool)arg2;
-- (void)navigateToSuggestedCMMWithUUID:(NSString *)arg1 animated:(_Bool)arg2;
+@protocol PXNavigableForYouViewController
 - (PXMemoriesFeedUIViewController *)navigateToShowAllMemoriesFeedAnimated:(_Bool)arg1;
 - (UIViewController *)navigateToDetailsForMemoryWithLocalIdentifier:(NSString *)arg1;
-- (void)navigateToRevealTheMostRecentMemoryAnimated:(_Bool)arg1;
-- (void)navigateToSharedAlbumInviteWithUUID:(NSString *)arg1 animated:(_Bool)arg2;
-- (void)navigateToSharedAlbumInvitesAnimated:(_Bool)arg1;
 @end
 

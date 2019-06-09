@@ -4,8 +4,6 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSMutableArray, NSMutableSet;
-
 #pragma mark Blocks
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
@@ -45,61 +43,35 @@ struct NSObject {
     Class _field1;
 };
 
-struct PLImageTableEntryFooter_s {
-    struct {
-        unsigned char _field1;
-        unsigned char _field2;
-        unsigned char _field3;
-        unsigned char _field4;
-        unsigned char _field5;
-        unsigned char _field6;
-        unsigned char _field7;
-        unsigned char _field8;
-        unsigned char _field9;
-        unsigned char _field10;
-        unsigned char _field11;
-        unsigned char _field12;
-        unsigned char _field13;
-        unsigned char _field14;
-        unsigned char _field15;
-        unsigned char _field16;
-    } _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    int _field4;
-};
-
-struct PLPrimaryDataStoreKeyStrategy_FilePath_KeyStruct {
+struct PLPrimaryDataStoreKeyStrategy_FilePath_KeyStruct_V1 {
     unsigned int strategy:8;
+    unsigned int version:2;
     unsigned int relation:3;
 };
 
-struct PLPrimaryDataStore_CPLKeyStrategy_KeyStruct {
+struct PLPrimaryDataStore_ReferenceFileStrategy_KeyStruct_V1 {
     unsigned int strategy:8;
-    unsigned int isMutation:1;
-    unsigned int isMasterThumb:1;
-    unsigned int cplType:5;
-    unsigned int fileType:2;
+    unsigned int version:2;
+    unsigned int resourceType:4;
 };
 
-struct PLPrimaryDataStore_DCIMCaptureStrategy_KeyStruct {
+struct PLPrimaryDataStore_UniformFileStrategy_KeyStruct_V1 {
     unsigned int strategy:8;
-    unsigned int directoryNumber:10;
-    unsigned int fileNumber:14;
-    unsigned int fileType:7;
-    unsigned int isMasterThumb:1;
+    unsigned int version:2;
+    unsigned int resourceVersion:2;
+    unsigned int resourceType:5;
+    unsigned int recipeClass:4;
+    unsigned int recipeVariationID:15;
+    unsigned int isDerivative:1;
+    unsigned int extensionCasing:2;
+    unsigned int fileType:8;
 };
 
-struct PLSharedStreamsDataStoreKeyStruct {
-    unsigned int resourceType:8;
-    char albumCloudGUID[37];
-    char cloudPersonID[11];
-    char filename[13];
-};
-
-struct PLThumbnailDataStoreKeyStruct {
+struct PLThumbnailDataStoreKeyStruct_V1 {
+    unsigned int version:2;
     unsigned int type:3;
-    unsigned int index:29;
+    unsigned int isCurated:1;
+    unsigned int index:27;
 };
 
 struct _NSRange {
@@ -107,27 +79,53 @@ struct _NSRange {
     unsigned int length;
 };
 
-struct changeList_s {
-    NSMutableSet *inserted;
-    NSMutableSet *updated;
-    NSMutableSet *deleted;
+struct aligned_storage_impl<4, 1> {
+    char _field1[4];
 };
 
-struct contentChanges_s {
-    NSMutableArray *container;
-    NSMutableArray *updatedContent;
+struct basic_managed_mapped_file<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, bipc::iset_index>;
+
+struct fsid {
+    int val[2];
 };
 
-struct flock {
-    long long _field1;
-    long long _field2;
-    int _field3;
-    short _field4;
-    short _field5;
+struct members_holder {
+    struct offset_ptr<boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>, int, unsigned long, 0> _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    struct offset_ptr<boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::geometry::index::quadratic<32, 8>, boost::geometry::model::box<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::interprocess::allocator<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>, std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::geometry::index::quadratic<32, 8>, boost::geometry::model::box<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::geometry::index::quadratic<32, 8>, boost::geometry::model::box<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::interprocess::allocator<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>, std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::geometry::index::quadratic<32, 8>, boost::geometry::model::box<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>, int, unsigned long, 0> _field4;
+};
+
+struct offset_ptr<boost::container::basic_string<char, std::__1::char_traits<char>, boost::interprocess::allocator<char, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>>, int, unsigned long, 0> {
+    union offset_ptr_internal<unsigned long, 0> _field1;
+};
+
+struct offset_ptr<boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>, int, unsigned long, 0> {
+    union offset_ptr_internal<unsigned long, 0> _field1;
+};
+
+struct offset_ptr<boost::variant<boost::geometry::index::detail::rtree::variant_leaf<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::geometry::index::quadratic<32, 8>, boost::geometry::model::box<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::interprocess::allocator<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>, std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::geometry::index::quadratic<32, 8>, boost::geometry::model::box<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::variant_internal_node<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::geometry::index::quadratic<32, 8>, boost::geometry::model::box<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::allocators<boost::interprocess::allocator<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>, std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::geometry::index::quadratic<32, 8>, boost::geometry::model::box<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>>, boost::geometry::index::detail::rtree::node_variant_static_tag>, boost::geometry::index::detail::rtree::node_variant_static_tag>>, int, unsigned long, 0> {
+    union offset_ptr_internal<unsigned long, 0> _field1;
+};
+
+struct option {
+    char *_field1;
+    int _field2;
+    int *_field3;
+    int _field4;
 };
 
 struct os_unfair_lock_s {
     unsigned int _os_unfair_lock_opaque;
+};
+
+struct os_unfair_recursive_lock_s {
+    struct os_unfair_lock_s ourl_lock;
+    unsigned int ourl_count;
+};
+
+struct rtree<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::geometry::index::quadratic<32, 8>, boost::geometry::index::indexable<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>>, boost::geometry::index::equal_to<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>>, boost::interprocess::allocator<std::__1::pair<boost::geometry::model::point<float, 2, boost::geometry::cs::cartesian>, unsigned short>, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>> {
+    struct members_holder _field1;
 };
 
 struct tokenOutput_t {
@@ -142,6 +140,23 @@ struct tokenOutput_t {
     int _field9;
 };
 
+struct unique_ptr<boost::interprocess::basic_managed_mapped_file<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, bipc::iset_index>, std::__1::default_delete<boost::interprocess::basic_managed_mapped_file<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, bipc::iset_index>>> {
+    struct __compressed_pair<boost::interprocess::basic_managed_mapped_file<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, bipc::iset_index>*, std::__1::default_delete<boost::interprocess::basic_managed_mapped_file<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, bipc::iset_index>>> {
+        struct basic_managed_mapped_file<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, bipc::iset_index> *__value_;
+    } __ptr_;
+};
+
+struct vector<boost::container::basic_string<char, std::__1::char_traits<char>, boost::interprocess::allocator<char, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>>, boost::interprocess::allocator<boost::container::basic_string<char, std::__1::char_traits<char>, boost::interprocess::allocator<char, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>>, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>> {
+    struct vector_alloc_holder<boost::interprocess::allocator<boost::container::basic_string<char, std::__1::char_traits<char>, boost::interprocess::allocator<char, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>>, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>, boost::move_detail::integral_constant<unsigned int, 2>> _field1;
+};
+
+struct vector_alloc_holder<boost::interprocess::allocator<boost::container::basic_string<char, std::__1::char_traits<char>, boost::interprocess::allocator<char, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>>, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>, boost::move_detail::integral_constant<unsigned int, 2>> {
+    struct offset_ptr<boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>, int, unsigned long, 0> _field1;
+    struct offset_ptr<boost::container::basic_string<char, std::__1::char_traits<char>, boost::interprocess::allocator<char, boost::interprocess::segment_manager<char, boost::interprocess::rbtree_best_fit<boost::interprocess::null_mutex_family, boost::interprocess::offset_ptr<void, int, unsigned long, 0>, 0>, iset_index>>>, int, unsigned long, 0> _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -152,15 +167,8 @@ typedef struct {
 } CDStruct_11f37819;
 
 typedef struct {
-    double _field1;
-    double _field2;
-} CDStruct_c3b9c2ee;
-
-typedef struct {
-    float _field1;
-    float _field2;
-    float _field3;
-} CDStruct_869f9c67;
+    unsigned int val[8];
+} CDStruct_4c969caf;
 
 typedef struct {
     int location;
@@ -168,18 +176,27 @@ typedef struct {
 } CDStruct_dff5684f;
 
 typedef struct {
-    long long value;
-    int timescale;
-    unsigned int flags;
-    long long epoch;
-} CDStruct_1b6d18a9;
+    long long _field1;
+    int _field2;
+    unsigned int _field3;
+    long long _field4;
+} CDStruct_198678f7;
 
 typedef struct CDStruct_183601bc;
 
 typedef struct {
-    CDStruct_1b6d18a9 _field1;
-    CDStruct_1b6d18a9 _field2;
-} CDStruct_5c5366e1;
+    struct __CFString *_field1;
+    int _field2;
+    struct tokenOutput_t *_field3;
+    unsigned short *_field4;
+    unsigned short *_field5;
+    int _field6;
+} CDStruct_6d183dde;
+
+typedef struct {
+    CDStruct_198678f7 _field1;
+    CDStruct_198678f7 _field2;
+} CDStruct_3c1748cc;
 
 typedef struct {
     int _field1;
@@ -193,4 +210,11 @@ typedef struct {
     float _field9[4];
     unsigned int _field10;
 } CDStruct_39c0191a;
+
+#pragma mark Named Unions
+
+union offset_ptr_internal<unsigned long, 0> {
+    unsigned long _field1;
+    struct aligned_storage_impl<4, 1> _field2;
+};
 

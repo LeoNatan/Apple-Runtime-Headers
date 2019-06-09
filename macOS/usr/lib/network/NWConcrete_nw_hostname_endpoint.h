@@ -7,14 +7,16 @@
 #import <network/NWConcrete_nw_endpoint.h>
 
 @class NSObject;
-@protocol OS_xpc_object;
+@protocol OS_nw_txt_record;
 
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_hostname_endpoint : NWConcrete_nw_endpoint
 {
     char *hostname;
     unsigned short port;
-    NSObject<OS_xpc_object> *txt_record;
+    unsigned short priority;
+    unsigned short weight;
+    NSObject<OS_nw_txt_record> *txt_record;
 }
 
 - (void).cxx_destruct;
@@ -22,6 +24,11 @@ __attribute__((visibility("hidden")))
 - (id)copyEndpoint;
 - (BOOL)isEqualToEndpoint:(id)arg1 matchInterface:(_Bool)arg2 matchParent:(_Bool)arg3;
 - (char *)createDescription:(_Bool)arg1;
+- (void)setWeight:(unsigned short)arg1;
+- (unsigned short)weight;
+- (void)setPriority:(unsigned short)arg1;
+- (unsigned short)priority;
+- (const char *)hostname;
 - (unsigned short)port;
 - (const char *)domainForPolicy;
 - (id)copyDictionary;

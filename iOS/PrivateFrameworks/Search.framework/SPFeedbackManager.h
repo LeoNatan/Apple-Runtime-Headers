@@ -9,12 +9,20 @@
 #import <Search/SFFeedbackListener-Protocol.h>
 
 @class NSString;
+@protocol OS_dispatch_queue, SFFeedbackListener;
 
 @interface SPFeedbackManager : NSObject <SFFeedbackListener>
 {
+    NSObject<SFFeedbackListener> *_feedbackListener;
+    NSObject<OS_dispatch_queue> *_feedbackQueue;
+    unsigned long long _lastQueryId;
 }
 
 + (id)sharedManager;
+@property(nonatomic) unsigned long long lastQueryId; // @synthesize lastQueryId=_lastQueryId;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *feedbackQueue; // @synthesize feedbackQueue=_feedbackQueue;
+@property(retain, nonatomic) NSObject<SFFeedbackListener> *feedbackListener; // @synthesize feedbackListener=_feedbackListener;
+- (void).cxx_destruct;
 - (void)reportFeedback:(id)arg1 queryId:(long long)arg2;
 - (void)didReportUserResponseFeedback:(id)arg1;
 - (void)cardViewDidAppear:(id)arg1;
@@ -39,6 +47,7 @@
 - (void)searchViewDidAppear:(id)arg1;
 - (void)_sendFeedback:(id)arg1 type:(long long)arg2;
 - (void)_sendFeedback:(id)arg1 type:(long long)arg2 queryId:(unsigned long long)arg3;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

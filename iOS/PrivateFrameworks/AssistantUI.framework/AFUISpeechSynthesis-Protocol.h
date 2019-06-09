@@ -6,7 +6,7 @@
 
 #import <AssistantUI/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, SAUIAudioData;
+@class NSDictionary, NSString, SAUIAudioData;
 
 @protocol AFUISpeechSynthesis <NSObject>
 - (void)prewarmIfNeeded;
@@ -17,7 +17,6 @@
 - (void)enqueuePhaticWithCompletion:(void (^)(long long))arg1;
 - (void)enqueueAudioData:(SAUIAudioData *)arg1 identifier:(NSString *)arg2 provisionally:(_Bool)arg3 eligibleAfterDuration:(double)arg4 completion:(void (^)(long long))arg5;
 - (void)enqueueText:(NSString *)arg1 identifier:(NSString *)arg2 completion:(void (^)(long long))arg3;
-- (void)enqueueText:(NSString *)arg1 identifier:(NSString *)arg2 language:(NSString *)arg3 gender:(NSString *)arg4 isPhonetic:(_Bool)arg5 provisionally:(_Bool)arg6 eligibleAfterDuration:(double)arg7 delayed:(_Bool)arg8 preparationIdentifier:(NSString *)arg9 completion:(void (^)(long long))arg10 animationIdentifier:(NSString *)arg11 analyticsContext:(NSDictionary *)arg12 speakableContextInfo:(NSDictionary *)arg13;
-- (void)presynthesizeDialogStrings:(NSArray *)arg1 speakableContext:(NSDictionary *)arg2;
+- (void)enqueueText:(NSString *)arg1 identifier:(NSString *)arg2 language:(NSString *)arg3 gender:(NSString *)arg4 isPhonetic:(_Bool)arg5 provisionally:(_Bool)arg6 eligibleAfterDuration:(double)arg7 delayed:(_Bool)arg8 canUseServerTTS:(_Bool)arg9 preparationIdentifier:(NSString *)arg10 completion:(void (^)(long long))arg11 animationIdentifier:(NSString *)arg12 analyticsContext:(NSDictionary *)arg13 speakableContextInfo:(NSDictionary *)arg14;
 @end
 

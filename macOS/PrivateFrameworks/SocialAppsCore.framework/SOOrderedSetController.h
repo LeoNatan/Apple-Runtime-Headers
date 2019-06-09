@@ -72,6 +72,7 @@
 - (void)moveObjectFromContentsAtIndex:(unsigned long long)arg1 toIndex:(unsigned long long)arg2;
 - (void)removeObjectFromContentsAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 inContentsAtIndex:(unsigned long long)arg2;
+- (void)updateFilteredContentsWith:(id)arg1;
 - (void)restoreContents:(id)arg1;
 - (id)objectInContentsAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long countOfContents;

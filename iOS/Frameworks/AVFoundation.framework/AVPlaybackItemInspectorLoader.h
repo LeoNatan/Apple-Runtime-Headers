@@ -29,7 +29,6 @@ __attribute__((visibility("hidden")))
 - (id)assetInspector;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (void)_removeFigObjectNotifications;
 - (void)_addFigObjectNotifications;

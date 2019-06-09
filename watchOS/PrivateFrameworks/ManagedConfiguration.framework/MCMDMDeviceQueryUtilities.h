@@ -10,6 +10,7 @@
 {
 }
 
++ (id)allowedDeviceQueriesWithUserEnrollment;
 + (id)allowedDeviceQueriesOnUserChannelForAccessRights:(int)arg1;
 + (id)allowedDeviceQueriesForAccessRights:(int)arg1;
 

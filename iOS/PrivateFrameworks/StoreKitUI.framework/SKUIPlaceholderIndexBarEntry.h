@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIIndexBarEntry.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIPlaceholderIndexBarEntry : SKUIIndexBarEntry
 {
     struct CGSize _placeholderSize;

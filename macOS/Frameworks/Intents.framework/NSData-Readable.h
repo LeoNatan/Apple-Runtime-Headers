@@ -6,7 +6,20 @@
 
 #import <Foundation/NSData.h>
 
-@interface NSData (Readable)
-- (id)_intents_readableDescriptionForLanguage:(id)arg1;
+#import <Intents/INJSONSerializable-Protocol.h>
+
+@class NSString;
+
+@interface NSData (Readable) <INJSONSerializable>
++ (id)_intents_decodeWithJSONDecoder:(id)arg1 from:(id)arg2;
+- (id)_intents_readableDescriptionForLanguage:(id)arg1 withMetadata:(id)arg2;
+- (void)_in_writeDataToPathForImage:(id)arg1 storeType:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_intents_encodeWithJSONEncoder:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

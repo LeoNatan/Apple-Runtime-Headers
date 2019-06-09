@@ -24,7 +24,7 @@
 @property(retain, nonatomic) CLLocation *nearestLOI; // @synthesize nearestLOI=_nearestLOI;
 @property(nonatomic) unsigned long long numOfIterations; // @synthesize numOfIterations=_numOfIterations;
 @property(retain, nonatomic) CLLocation *selectedHomeLocation; // @synthesize selectedHomeLocation=_selectedHomeLocation;
-@property(retain, nonatomic) NSArray *tuples; // @synthesize tuples=_tuples;
+@property(copy, nonatomic) NSArray *tuples; // @synthesize tuples=_tuples;
 - (void).cxx_destruct;
 - (id)awdLocationFromLocationTuple:(id)arg1;
 - (id)metricForAWD;

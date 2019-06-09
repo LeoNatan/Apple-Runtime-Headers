@@ -9,13 +9,12 @@
 #import <TVMLKit/TVAuxiliaryViewSelecting-Protocol.h>
 #import <TVMLKit/_UIFloatingContentViewDelegate-Protocol.h>
 
-@class NSString, UIImage, UIImageView, UIView;
+@class NSString, UIImage, UIView;
 
 @interface _TVCardFloatingContentView : _UIFloatingContentView <_UIFloatingContentViewDelegate, TVAuxiliaryViewSelecting>
 {
     UIView *_unfocusedShadowView;
     UIView *_focusedShadowView;
-    UIImageView *_bgImageView;
     double _unfocusedAlpha;
     _Bool _isSelected;
     double _unfocusedShadowAlpha;
@@ -23,15 +22,18 @@
     UIImage *_unfocusedShadowImage;
     UIImage *_focusedShadowImage;
     CDUnknownBlockType _pressCompletionBlock;
+    struct CGSize _focusedShadowCardSize;
+    struct CGSize _unfocusedShadowCardSize;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType pressCompletionBlock; // @synthesize pressCompletionBlock=_pressCompletionBlock;
+@property(nonatomic) struct CGSize unfocusedShadowCardSize; // @synthesize unfocusedShadowCardSize=_unfocusedShadowCardSize;
+@property(nonatomic) struct CGSize focusedShadowCardSize; // @synthesize focusedShadowCardSize=_focusedShadowCardSize;
 @property(retain, nonatomic) UIImage *focusedShadowImage; // @synthesize focusedShadowImage=_focusedShadowImage;
 @property(retain, nonatomic) UIImage *unfocusedShadowImage; // @synthesize unfocusedShadowImage=_unfocusedShadowImage;
 @property(nonatomic) double focusedShadowAlpha; // @synthesize focusedShadowAlpha=_focusedShadowAlpha;
 @property(nonatomic) double unfocusedShadowAlpha; // @synthesize unfocusedShadowAlpha=_unfocusedShadowAlpha;
 - (void).cxx_destruct;
-- (void)_setBgImageWithColor:(id)arg1 cornerRadius:(double)arg2;
 - (struct UIEdgeInsets)selectionMarginsForSize:(struct CGSize)arg1;
 - (void)floatingContentView:(id)arg1 didFinishTransitioningToState:(unsigned long long)arg2;
 - (void)floatingContentView:(id)arg1 isTransitioningFromState:(unsigned long long)arg2 toState:(unsigned long long)arg3;
@@ -39,6 +41,8 @@
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)prepareForReuse;
 - (void)setBgColor:(id)arg1 highlightBgColor:(id)arg2 cornerRadius:(double)arg3;
+- (void)_updateForAccessibilityChange;
+- (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableDictionary, WDCharacterProperties, WDDocument, WDParagraphProperties, WDStyle;
 
+__attribute__((visibility("hidden")))
 @interface WDStyleSheet : NSObject
 {
     NSMutableDictionary *mStyleDictionary;

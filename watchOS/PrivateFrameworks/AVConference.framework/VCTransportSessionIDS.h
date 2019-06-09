@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     _Bool _requireEncryptionInfo;
     VCIDSSessionInfoSynchronizer *_sessionInfoSynchronizer;
     _Bool _isIDSDCEventUsageErrorReported;
+    _Bool _isWiFiAssistActive;
 }
 
 @property(readonly, nonatomic) VCIDSSessionInfoSynchronizer *sessionInfoSynchronizer; // @synthesize sessionInfoSynchronizer=_sessionInfoSynchronizer;
@@ -49,6 +50,7 @@ __attribute__((visibility("hidden")))
 - (id)connectionSetupPiggybackBlob;
 - (void)setPiggybackBlobPreference;
 - (void)setConnectionSetupPiggybackBlob:(id)arg1;
+- (void)setWiFiAssist:(_Bool)arg1;
 - (void)stop;
 - (void)start;
 - (void)dispatchedProcessDatagramChannelEventInfo:(id)arg1;

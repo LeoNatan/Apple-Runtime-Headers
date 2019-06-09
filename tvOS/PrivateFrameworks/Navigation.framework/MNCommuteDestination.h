@@ -9,7 +9,7 @@
 #import <Navigation/NSCopying-Protocol.h>
 #import <Navigation/NSSecureCoding-Protocol.h>
 
-@class GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEOETARoute, GEOETATrafficUpdateResponse, GEORouteSet, MNCommuteDestinationSuggestion, MNLocation, MNObserverHashTable, NSDictionary, NSString;
+@class GEOComposedRoute, GEOComposedRouteTraffic, GEOComposedWaypoint, GEODirectionsRequest, GEOETARoute, GEOETATrafficUpdateResponse, MNCommuteDestinationSuggestion, MNLocation, MNObserverHashTable, NSDictionary, NSString;
 
 @interface MNCommuteDestination : NSObject <NSSecureCoding, NSCopying>
 {
@@ -18,7 +18,7 @@
     _Bool _rerouting;
     MNCommuteDestinationSuggestion *_suggestion;
     GEOComposedRoute *_route;
-    GEORouteSet *_routeSet;
+    GEOComposedRouteTraffic *_traffic;
     GEODirectionsRequest *_directionsRequest;
     MNLocation *_lastMatchedLocation;
     GEOETARoute *_etaRoute;
@@ -32,7 +32,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
-@property(retain) MNObserverHashTable *observers; // @synthesize observers=_observers;
+@property(retain, nonatomic) MNObserverHashTable *observers; // @synthesize observers=_observers;
 @property(copy, nonatomic) NSDictionary *scores; // @synthesize scores=_scores;
 @property(nonatomic) long long score; // @synthesize score=_score;
 @property(retain, nonatomic) MNLocation *lastLocation; // @synthesize lastLocation=_lastLocation;
@@ -43,7 +43,7 @@
 @property(retain, nonatomic) GEOETARoute *etaRoute; // @synthesize etaRoute=_etaRoute;
 @property(retain, nonatomic) MNLocation *lastMatchedLocation; // @synthesize lastMatchedLocation=_lastMatchedLocation;
 @property(retain, nonatomic) GEODirectionsRequest *directionsRequest; // @synthesize directionsRequest=_directionsRequest;
-@property(retain, nonatomic) GEORouteSet *routeSet; // @synthesize routeSet=_routeSet;
+@property(retain, nonatomic) GEOComposedRouteTraffic *traffic; // @synthesize traffic=_traffic;
 @property(retain, nonatomic) GEOComposedRoute *route; // @synthesize route=_route;
 @property(retain, nonatomic) MNCommuteDestinationSuggestion *suggestion; // @synthesize suggestion=_suggestion;
 @property(nonatomic) _Bool invalid; // @synthesize invalid=_invalid;

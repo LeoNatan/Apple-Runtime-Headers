@@ -16,10 +16,16 @@
     CBXpcConnection *_connection;
     CBPairingAgent *_pairingAgent;
     long long _state;
+    long long _authorization;
     NSData *_advertisingAddress;
+    NSString *_localAddressString;
+    NSString *_localName;
 }
 
+@property(readonly) NSString *localName; // @synthesize localName=_localName;
+@property(readonly) NSString *localAddressString; // @synthesize localAddressString=_localAddressString;
 @property(copy, nonatomic) NSData *advertisingAddress; // @synthesize advertisingAddress=_advertisingAddress;
+@property(nonatomic) long long authorization; // @synthesize authorization=_authorization;
 @property(nonatomic) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
 - (id)peerWithInfo:(id)arg1;
@@ -27,18 +33,21 @@
 - (void)xpcConnectionDidReceiveMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)xpcConnectionIsInvalid;
 - (void)xpcConnectionDidReset;
+- (void)handleLocalDeviceStateUpdatedMsg:(id)arg1;
 - (void)handleMsg:(unsigned short)arg1 args:(id)arg2;
 - (BOOL)isMsgAllowedAlways:(unsigned short)arg1;
 - (BOOL)isMsgAllowedWhenOff:(unsigned short)arg1;
 - (void)handlePairingAgentMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)handleStateUpdatedMsg:(id)arg1;
 - (id)sendSyncMsg:(unsigned short)arg1 args:(id)arg2;
+- (void)_handleAdvertisingAddressChanged:(id)arg1;
 - (void)closeL2CAPChannelForPeerUUID:(id)arg1 withPsm:(unsigned short)arg2;
 - (BOOL)sendMsg:(unsigned short)arg1 args:(id)arg2;
 - (id)sendDebugSyncMsg:(unsigned short)arg1 args:(id)arg2;
 - (BOOL)sendDebugMsg:(unsigned short)arg1 args:(id)arg2;
 - (BOOL)sendRawCommand:(unsigned short)arg1 data:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)startWithQueue:(id)arg1 options:(id)arg2 sessionType:(int)arg3;
+- (void)extractLocalDeviceStatesDictionary:(id)arg1;
 - (void)setConnectionTargetQueue:(id)arg1;
 @property(readonly, retain, nonatomic) CBPairingAgent *sharedPairingAgent; // @dynamic sharedPairingAgent;
 - (void)dealloc;

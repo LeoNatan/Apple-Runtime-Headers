@@ -6,7 +6,6 @@
 
 #import <CFNetwork/__NSURLBackgroundSession.h>
 
-__attribute__((visibility("hidden")))
 @interface __NSURLAVBackgroundSession : __NSURLBackgroundSession
 {
 }

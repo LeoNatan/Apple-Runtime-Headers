@@ -16,10 +16,9 @@
 @property(nonatomic) __weak id <VUIMediaEntityAssetControllerDelegate> delegate;
 @property(readonly, copy, nonatomic) VUIMediaEntityType *mediaEntityType;
 @property(readonly, copy, nonatomic) NSObject<VUIMediaEntityIdentifier> *mediaEntityIdentifier;
-- (void)removeDownloadWithCompletion:(void (^)(_Bool, NSError *))arg1;
+- (void)cancelAndRemoveDownload;
 - (void)resumeDownload;
 - (void)pauseDownload;
-- (void)cancelDownload;
 - (void)startDownloadWithCompletion:(void (^)(_Bool, NSError *))arg1;
 - (void)invalidate;
 @end

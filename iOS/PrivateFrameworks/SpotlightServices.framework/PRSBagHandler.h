@@ -18,7 +18,6 @@
     PARBag *_bag;
     NSObject<OS_dispatch_queue> *_bagQueue;
     _Bool _active;
-    _Bool _enabled;
     _Bool _disableAsTypedSuggestion;
     _Bool _collectAnonymousData;
     _Bool _collectScores;
@@ -66,12 +65,11 @@
 @property(nonatomic) _Bool collectAnonymousData; // @synthesize collectAnonymousData=_collectAnonymousData;
 @property(nonatomic) _Bool disableAsTypedSuggestion; // @synthesize disableAsTypedSuggestion=_disableAsTypedSuggestion;
 @property(retain, nonatomic) NSArray *enabledDomains; // @synthesize enabledDomains=_enabledDomains;
-@property(nonatomic) _Bool enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) NSSet *appBlacklist; // @synthesize appBlacklist=_appBlacklist;
 @property(retain) PRSRankingServerKnobs *ranking_server_knobs; // @synthesize ranking_server_knobs=_ranking_server_knobs;
 @property(retain) SSPlistDataReader *cep_server_values; // @synthesize cep_server_values=_cep_server_values;
-@property(nonatomic) double suggestionsRenderTimeout; // @synthesize suggestionsRenderTimeout=_suggestionsRenderTimeout;
-@property(nonatomic) double searchRenderTimeout; // @synthesize searchRenderTimeout=_searchRenderTimeout;
+@property double suggestionsRenderTimeout; // @synthesize suggestionsRenderTimeout=_suggestionsRenderTimeout;
+@property double searchRenderTimeout; // @synthesize searchRenderTimeout=_searchRenderTimeout;
 @property(nonatomic) long long status; // @synthesize status=_status;
 @property __weak id <PRSSessionController> client; // @synthesize client=_client;
 @property(nonatomic) _Bool active; // @synthesize active=_active;

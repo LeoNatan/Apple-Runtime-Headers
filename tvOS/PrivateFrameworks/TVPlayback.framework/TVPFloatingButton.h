@@ -8,30 +8,33 @@
 
 #import <TVPlayback/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString, UILongPressGestureRecognizer, UIView, _UIFloatingContentView;
+@class NSString, UILongPressGestureRecognizer, UIView, UIVisualEffectView, _UIFloatingContentView;
 
 @interface TVPFloatingButton : UIControl <UIGestureRecognizerDelegate>
 {
     _UIFloatingContentView *_floatingView;
+    UIVisualEffectView *_backgroundEffectView;
     UILongPressGestureRecognizer *_selectRecognizer;
+    _Bool _alwaysAllowFocus;
+    double _cornerRadius;
     CDUnknownBlockType _primaryActionHandler;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType primaryActionHandler; // @synthesize primaryActionHandler=_primaryActionHandler;
+@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
+@property(nonatomic) _Bool alwaysAllowFocus; // @synthesize alwaysAllowFocus=_alwaysAllowFocus;
 - (void).cxx_destruct;
 - (void)_updateFloatingTintColor;
 - (void)_selectButtonAction:(id)arg1;
 - (void)_handlePrimaryAction;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (void)setSelected:(_Bool)arg1;
 - (void)setHighlighted:(_Bool)arg1;
+- (_Bool)_isEligibleForFocusInteraction;
 - (_Bool)canBecomeFocused;
 - (id)preferredFocusEnvironments;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 @property(readonly, nonatomic) UIView *contentView;
-@property(nonatomic) double cornerRadius;
-- (_Bool)_isEligibleForFocusInteraction;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

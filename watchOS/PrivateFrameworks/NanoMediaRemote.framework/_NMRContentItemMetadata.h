@@ -8,20 +8,40 @@
 
 #import <NanoMediaRemote/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSData, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _NMRContentItemMetadata : PBCodable <NSCopying>
 {
     double _duration;
+    double _elapsedTime;
+    double _elapsedTimeTimestamp;
     NSString *_album;
     NSString *_artist;
+    unsigned int _mediaSubType;
+    unsigned int _mediaType;
+    float _playbackRate;
     NSString *_title;
+    NSData *_userInfoData;
+    _Bool _hasArtworkData;
     struct {
         unsigned int duration:1;
+        unsigned int elapsedTime:1;
+        unsigned int elapsedTimeTimestamp:1;
+        unsigned int mediaSubType:1;
+        unsigned int mediaType:1;
+        unsigned int playbackRate:1;
+        unsigned int hasArtworkData:1;
     } _has;
 }
 
+@property(nonatomic) float playbackRate; // @synthesize playbackRate=_playbackRate;
+@property(nonatomic) double elapsedTimeTimestamp; // @synthesize elapsedTimeTimestamp=_elapsedTimeTimestamp;
+@property(nonatomic) double elapsedTime; // @synthesize elapsedTime=_elapsedTime;
+@property(nonatomic) _Bool hasArtworkData; // @synthesize hasArtworkData=_hasArtworkData;
+@property(retain, nonatomic) NSData *userInfoData; // @synthesize userInfoData=_userInfoData;
+@property(nonatomic) unsigned int mediaSubType; // @synthesize mediaSubType=_mediaSubType;
+@property(nonatomic) unsigned int mediaType; // @synthesize mediaType=_mediaType;
 @property(nonatomic) double duration; // @synthesize duration=_duration;
 @property(retain, nonatomic) NSString *album; // @synthesize album=_album;
 @property(retain, nonatomic) NSString *artist; // @synthesize artist=_artist;
@@ -36,6 +56,13 @@ __attribute__((visibility("hidden")))
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasPlaybackRate;
+@property(nonatomic) _Bool hasElapsedTimeTimestamp;
+@property(nonatomic) _Bool hasElapsedTime;
+@property(nonatomic) _Bool hasHasArtworkData;
+@property(readonly, nonatomic) _Bool hasUserInfoData;
+@property(nonatomic) _Bool hasMediaSubType;
+@property(nonatomic) _Bool hasMediaType;
 @property(nonatomic) _Bool hasDuration;
 @property(readonly, nonatomic) _Bool hasAlbum;
 @property(readonly, nonatomic) _Bool hasArtist;

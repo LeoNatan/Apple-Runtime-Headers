@@ -19,6 +19,8 @@
     NSLayoutConstraint *_gutsBottomConstraint;
     NSLayoutConstraint *_gutsWidthConstraint;
     NSArray *_collapseAnimationConstraints;
+    struct TNotificationCenterObserver _windowDidBecomeKeyObserver;
+    struct TNotificationCenterObserver _windowWillOrderOnScreenObserver;
 }
 
 + (void)checkForLeaksAfterCloseAll;
@@ -28,6 +30,8 @@
 @property(retain, nonatomic) NSLayoutConstraint *gutsBottomConstraint; // @synthesize gutsBottomConstraint=_gutsBottomConstraint;
 @property(nonatomic) _Bool downloadsUbiquitousContents; // @synthesize downloadsUbiquitousContents=_downloadsUbiquitousContents;
 @property(retain, nonatomic) FIFinderViewGutsController *controller; // @synthesize controller=_controller;
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (double)fauxToolbarHeightForAppCentric:(BOOL)arg1 runningAsAService:(BOOL)arg2;
 - (BOOL)hasCollapseButton;
 - (BOOL)shouldEnableTagsButton;
@@ -87,7 +91,7 @@
 - (void)ourWindowDidBecomeKey;
 @property(readonly) struct CGSize minimumViewSize;
 - (id)activeContainer;
-@property id <FIFinderViewDelegate> delegate; // @dynamic delegate;
+@property __weak id <FIFinderViewDelegate> delegate; // @dynamic delegate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 options:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;

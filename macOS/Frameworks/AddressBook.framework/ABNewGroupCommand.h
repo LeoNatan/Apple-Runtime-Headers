@@ -20,7 +20,6 @@
 - (BOOL)doIt;
 - (void)redoIt;
 - (void)undoIt;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithPeople:(id)arg1 parentGroup:(id)arg2 addressBook:(id)arg3;
 

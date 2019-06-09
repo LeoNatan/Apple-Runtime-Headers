@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Foundation/NSString.h>
+#import <Foundation/NSMutableString.h>
 
 #import <AXRuntime/NSCopying-Protocol.h>
 
-@interface AXAttributedString : NSString <NSCopying>
+@interface AXAttributedString : NSMutableString <NSCopying>
 {
     struct __CFAttributedString *_string;
 }
@@ -49,12 +49,14 @@
 - (void)replaceString:(struct __CFString *)arg1;
 - (void)replaceCharactersInRange:(struct _NSRange)arg1 withString:(id)arg2;
 - (unsigned short)characterAtIndex:(unsigned int)arg1;
+- (id)substringWithRange:(struct _NSRange)arg1;
 - (void)getCharacters:(unsigned short *)arg1 range:(struct _NSRange)arg2;
 - (unsigned int)length;
 - (void)convertAttachmentsWithBlock:(CDUnknownBlockType)arg1;
 - (id)stringByTrimmingCharactersInSet:(id)arg1;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)initWithStringOrAttributedString:(id)arg1;
 - (id)initWithCFAttributedString:(struct __CFAttributedString *)arg1;
 - (id)initWithString:(id)arg1;

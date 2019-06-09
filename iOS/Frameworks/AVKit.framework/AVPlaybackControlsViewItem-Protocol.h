@@ -12,6 +12,7 @@
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) _Bool collapsedOrExcluded;
 @property(nonatomic, getter=isIncluded) _Bool included;
 @property(nonatomic, getter=isCollapsed) _Bool collapsed;
+@property(nonatomic, getter=isRemoved) _Bool removed;
 @property(nonatomic) struct CGSize extrinsicContentSize;
 @end
 

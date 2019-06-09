@@ -8,6 +8,7 @@
 
 @class OITSUColor, OITSUImage;
 
+__attribute__((visibility("hidden")))
 @interface MFPImageBrush : MFPBrush
 {
     OITSUImage *mPhoneImage;

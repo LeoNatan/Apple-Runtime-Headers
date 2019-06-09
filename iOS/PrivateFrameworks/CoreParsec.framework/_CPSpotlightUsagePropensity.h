@@ -13,30 +13,28 @@
 
 @interface _CPSpotlightUsagePropensity : PBCodable <_CPSpotlightUsagePropensity, NSSecureCoding>
 {
-    int _configuredLookbackTimeInDays;
     float _appLaunch;
-    float _onDevicePersonalData;
-    float _parsec;
+    float _onDeviceAddressBookData;
+    float _onDeviceOtherPersonalData;
     float _punchout;
     float _thirdPartyInAppContent;
+    float _parsec;
+    float _querySuggestion;
     float _other;
     int _totalEngagements;
-    int _totalSessions;
-    long long _collectionStartTimestamp;
-    long long _collectionEndTimestamp;
+    float _siriSuggestions;
 }
 
-@property(nonatomic) int totalSessions; // @synthesize totalSessions=_totalSessions;
+@property(nonatomic) float siriSuggestions; // @synthesize siriSuggestions=_siriSuggestions;
 @property(nonatomic) int totalEngagements; // @synthesize totalEngagements=_totalEngagements;
 @property(nonatomic) float other; // @synthesize other=_other;
+@property(nonatomic) float querySuggestion; // @synthesize querySuggestion=_querySuggestion;
+@property(nonatomic) float parsec; // @synthesize parsec=_parsec;
 @property(nonatomic) float thirdPartyInAppContent; // @synthesize thirdPartyInAppContent=_thirdPartyInAppContent;
 @property(nonatomic) float punchout; // @synthesize punchout=_punchout;
-@property(nonatomic) float parsec; // @synthesize parsec=_parsec;
-@property(nonatomic) float onDevicePersonalData; // @synthesize onDevicePersonalData=_onDevicePersonalData;
+@property(nonatomic) float onDeviceOtherPersonalData; // @synthesize onDeviceOtherPersonalData=_onDeviceOtherPersonalData;
+@property(nonatomic) float onDeviceAddressBookData; // @synthesize onDeviceAddressBookData=_onDeviceAddressBookData;
 @property(nonatomic) float appLaunch; // @synthesize appLaunch=_appLaunch;
-@property(nonatomic) int configuredLookbackTimeInDays; // @synthesize configuredLookbackTimeInDays=_configuredLookbackTimeInDays;
-@property(nonatomic) long long collectionEndTimestamp; // @synthesize collectionEndTimestamp=_collectionEndTimestamp;
-@property(nonatomic) long long collectionStartTimestamp; // @synthesize collectionStartTimestamp=_collectionStartTimestamp;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithJSON:(id)arg1;
 @property(readonly, nonatomic) NSData *jsonData;

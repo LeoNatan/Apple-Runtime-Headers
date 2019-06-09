@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVCapturePreparedPhotoSettingsArrayRequest : NSObject
 {
     unsigned long long _requestID;

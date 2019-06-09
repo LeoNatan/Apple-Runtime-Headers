@@ -17,6 +17,7 @@
     BOOL _createsJobs;
     BOOL _displaysOnLockScreen;
     BOOL _installUniversalVariant;
+    BOOL _isUpdate;
     BOOL _isBackgroundUpdate;
     BOOL _isRedownload;
     BOOL _shouldCancelForInstalledBundleItems;
@@ -58,6 +59,7 @@
 @property(copy, nonatomic) NSString *referrerURL; // @synthesize referrerURL=_referrerURL;
 @property(copy, nonatomic) NSString *referrerName; // @synthesize referrerName=_referrerName;
 @property(nonatomic) BOOL isBackgroundUpdate; // @synthesize isBackgroundUpdate=_isBackgroundUpdate;
+@property(nonatomic) BOOL isUpdate; // @synthesize isUpdate=_isUpdate;
 @property(nonatomic) BOOL installUniversalVariant; // @synthesize installUniversalVariant=_installUniversalVariant;
 @property(copy, nonatomic) NSArray *gratisIdentifiers; // @synthesize gratisIdentifiers=_gratisIdentifiers;
 @property long long extensionsToEnable; // @synthesize extensionsToEnable=_extensionsToEnable;

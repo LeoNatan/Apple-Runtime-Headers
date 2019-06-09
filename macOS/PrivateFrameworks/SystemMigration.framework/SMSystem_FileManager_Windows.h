@@ -8,14 +8,20 @@
 
 #import <SystemMigration/SMSystem_FileManagerProtocol-Protocol.h>
 
-@class NSURL, SMSystem_Daemon_Windows;
+@class NSString, NSURL, SMSystem_Daemon_Windows;
 
 @interface SMSystem_FileManager_Windows : NSObject <SMSystem_FileManagerProtocol>
 {
+    NSString *productVersion;
+    NSURL *userContentRoot;
+    NSURL *userHomeRoot;
     SMSystem_Daemon_Windows *_system;
 }
 
 @property(retain) SMSystem_Daemon_Windows *system; // @synthesize system=_system;
+@property(readonly) NSURL *userHomeRoot; // @synthesize userHomeRoot;
+@property(readonly) NSURL *userContentRoot; // @synthesize userContentRoot;
+@property(readonly) NSString *productVersion; // @synthesize productVersion;
 - (void).cxx_destruct;
 - (id)bundleInformationAtPaths:(id)arg1;
 - (id)resourceValuesForKeys:(id)arg1 onPaths:(id)arg2 error:(id *)arg3;

@@ -19,10 +19,9 @@
 - (BOOL)writeToDiskAndCompact:(BOOL)arg1;
 - (BOOL)_writeOutKeyFormatWithWorkaround;
 - (BOOL)_saveBitmapInfo;
-- (void)setZeroCodeBezelInformation:(CDStruct_c0454aff)arg1 forKey:(const void *)arg2 withLength:(unsigned long long)arg3;
-- (void)setZeroCodeGlyphInformation:(CDStruct_c0454aff)arg1 forKey:(const void *)arg2 withLength:(unsigned long long)arg3;
-- (void)_setZeroCodeInfo:(CDStruct_c0454aff)arg1 forKey:(const void *)arg2 withLength:(unsigned long long)arg3 inTree:(const void *)arg4;
 - (void)setRenditionKey:(const struct _renditionkeytoken *)arg1 hotSpot:(struct CGPoint)arg2 forName:(const char *)arg3;
+- (BOOL)removeAssetNameKey:(const void *)arg1 withLength:(unsigned long long)arg2;
+- (BOOL)removeAssetName:(id)arg1;
 - (void)removeAssetForKey:(const void *)arg1 withLength:(unsigned long long)arg2;
 - (void)removeAssetForKey:(id)arg1;
 - (void)setExternalTags:(id)arg1;
@@ -30,6 +29,7 @@
 - (void)setFontName:(id)arg1 baselineOffset:(float)arg2 forFontSelector:(id)arg3;
 - (void)setColor:(struct _rgbquad)arg1 forName:(const char *)arg2 excludeFromFilter:(BOOL)arg3;
 - (void)updateBitmapInfo;
+- (void)setLocalizationIdentifier:(unsigned short)arg1 forName:(id)arg2;
 - (void)setAppearanceIdentifier:(unsigned short)arg1 forName:(id)arg2;
 - (void)setCatalogGlobalData:(id)arg1;
 - (BOOL)setAsset:(id)arg1 forKey:(const void *)arg2 withLength:(unsigned long long)arg3;

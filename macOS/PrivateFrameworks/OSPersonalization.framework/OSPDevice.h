@@ -16,6 +16,7 @@
     BOOL _productionMode;
     BOOL _securityMode;
     BOOL _targetDiskMode;
+    BOOL _internalUseOnlyUnit;
     unsigned int _boardID;
     unsigned int _chipID;
     unsigned int _securityDomain;
@@ -23,6 +24,7 @@
     unsigned long long _ecid;
     NSString *_hardwareModel;
     NSString *_buildVersion;
+    NSString *_bridgeVersion;
     NSURL *_mountPointURL;
 }
 
@@ -34,6 +36,8 @@
 + (id)deviceWithTDMBackedVolumeMountPoint:(id)arg1;
 + (id)deviceWithRunningSystem;
 @property(retain) NSURL *mountPointURL; // @synthesize mountPointURL=_mountPointURL;
+@property BOOL internalUseOnlyUnit; // @synthesize internalUseOnlyUnit=_internalUseOnlyUnit;
+@property(retain) NSString *bridgeVersion; // @synthesize bridgeVersion=_bridgeVersion;
 @property(retain) NSString *buildVersion; // @synthesize buildVersion=_buildVersion;
 @property BOOL targetDiskMode; // @synthesize targetDiskMode=_targetDiskMode;
 @property unsigned int securityDomain; // @synthesize securityDomain=_securityDomain;
@@ -50,6 +54,7 @@
 - (void).cxx_destruct;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)_getBridgeVersion;
 - (id)_getBuildVersion;
 @property(readonly) NSDictionary *apParameters;
 - (id)description;

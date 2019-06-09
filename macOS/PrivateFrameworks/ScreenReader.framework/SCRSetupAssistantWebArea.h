@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
     struct {
         unsigned int handlingBeginFocus:1;
         unsigned int canWrap:1;
-        unsigned int reserved:30;
     } _srsawaFlags;
 }
 

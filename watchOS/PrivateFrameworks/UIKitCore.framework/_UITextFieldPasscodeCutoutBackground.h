@@ -44,7 +44,7 @@ __attribute__((visibility("hidden")))
 - (float)_pathInset;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 active:(_Bool)arg2;
-- (id)_layer;
+- (id)_shapeLayer;
 
 @end
 

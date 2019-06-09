@@ -6,20 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class _UTDeclaredType;
+@class _LSDatabase, _UTDeclaredType;
 
 __attribute__((visibility("hidden")))
 @interface _UTDeclaredTypeSortableWrapper : NSObject
 {
     _UTDeclaredType *_declaredType;
-    // Error parsing type: ^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[15{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}}, name: _database
-    const CDStruct_2b3aadc0 *_utypeData;
+    _LSDatabase *_database;
+    const CDStruct_3253f94e *_utypeData;
 }
 
-@property(nonatomic) const CDStruct_2b3aadc0 *utypeData; // @synthesize utypeData=_utypeData;
-// Error parsing type for property database:
-// Property attributes: T^{LSDatabase={__CFRuntimeBase=QAQ}^{LSDBImpl}^{__CSStore}{LSSchema=I{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}I}{?=II}IIII{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}}[15{?={CSMap=I{CSMapCallbacks=^?^?^?^?^?^?}^{CSMapContext}{os_unfair_lock_s=I}I^{_CSMapHeader}^I^I}^{?}^{?}IC}]IIIIIII^{_LSSchemaCache}}},N,V_database
-
+@property(nonatomic) const CDStruct_3253f94e *utypeData; // @synthesize utypeData=_utypeData;
+@property(nonatomic) _LSDatabase *database; // @synthesize database=_database;
 @property(retain, nonatomic) _UTDeclaredType *declaredType; // @synthesize declaredType=_declaredType;
 - (void).cxx_destruct;
 - (long long)compare:(id)arg1;

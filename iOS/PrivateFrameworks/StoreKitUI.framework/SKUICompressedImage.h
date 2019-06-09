@@ -8,6 +8,7 @@
 
 @class UIColor;
 
+__attribute__((visibility("hidden")))
 @interface SKUICompressedImage : UIImage
 {
     long long _cornerType;

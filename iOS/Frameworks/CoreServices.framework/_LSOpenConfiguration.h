@@ -6,24 +6,34 @@
 
 #import <objc/NSObject.h>
 
+#import <CoreServices/NSCopying-Protocol.h>
 #import <CoreServices/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSURL;
+@class BSServiceConnectionEndpoint, NSDictionary, NSURL;
 
-@interface _LSOpenConfiguration : NSObject <NSSecureCoding>
+@interface _LSOpenConfiguration : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _ignoreOpenStrategy;
+    _Bool _ignoreAppLinkEnabledProperty;
+    _Bool _sensitive;
+    _Bool _allowURLOverrides;
     NSDictionary *_frontBoardOptions;
     NSURL *_referrerURL;
+    BSServiceConnectionEndpoint *_targetConnectionEndpoint;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) BSServiceConnectionEndpoint *targetConnectionEndpoint; // @synthesize targetConnectionEndpoint=_targetConnectionEndpoint;
+@property(nonatomic) _Bool allowURLOverrides; // @synthesize allowURLOverrides=_allowURLOverrides;
+@property(nonatomic, getter=isSensitive) _Bool sensitive; // @synthesize sensitive=_sensitive;
 @property(copy, nonatomic) NSURL *referrerURL; // @synthesize referrerURL=_referrerURL;
-@property(nonatomic) _Bool ignoreOpenStrategy; // @synthesize ignoreOpenStrategy=_ignoreOpenStrategy;
+@property(nonatomic) _Bool ignoreAppLinkEnabledProperty; // @synthesize ignoreAppLinkEnabledProperty=_ignoreAppLinkEnabledProperty;
 @property(copy, nonatomic) NSDictionary *frontBoardOptions; // @synthesize frontBoardOptions=_frontBoardOptions;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)dealloc;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+@property(nonatomic) _Bool ignoreOpenStrategy;
+- (id)init;
 
 @end
 

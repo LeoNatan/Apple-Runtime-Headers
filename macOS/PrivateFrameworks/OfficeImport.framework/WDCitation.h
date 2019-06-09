@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSString, WDDocument;
 
+__attribute__((visibility("hidden")))
 @interface WDCitation : NSObject
 {
     NSString *mSourceType;

@@ -55,9 +55,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool hasSupportedPayloads;
 @property(nonatomic) _Bool hasMaxNetworkBitrate;
 - (void)printWithLogFile:(void *)arg1;
-- (id)newAudioRuleCollectionWithAudioRuleCollection:(id)arg1;
-- (void)setPayloadFlagsWithAudioRuleCollection:(id)arg1;
-- (id)initWithMultiwayConfig:(id)arg1;
+- (id)newMultiwayAudioStream;
+- (void)setPayloadFlagsWithPayloads:(id)arg1;
+- (id)initWithStreamConfig:(id)arg1;
 
 @end
 

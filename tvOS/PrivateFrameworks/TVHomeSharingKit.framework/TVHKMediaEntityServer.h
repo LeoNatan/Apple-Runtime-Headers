@@ -76,6 +76,7 @@
 - (unsigned long long)hash;
 - (id)saveMediaEntity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)enqueueSearchRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)enqueueImageURLsFetchRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)enqueueFetchRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)enqueueKeepAliveWithCompletion:(CDUnknownBlockType)arg1;
 - (id)availableMediaCategoryTypesWithCompletionHandler:(CDUnknownBlockType)arg1;

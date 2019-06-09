@@ -8,6 +8,7 @@
 
 @class NSLock, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface OITSUDateFormatter_FormatterCache : NSObject
 {
     NSLock *_dateFormatterCacheLock;

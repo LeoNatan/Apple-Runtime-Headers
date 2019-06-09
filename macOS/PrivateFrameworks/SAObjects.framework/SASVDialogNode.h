@@ -17,6 +17,7 @@
 + (id)dialogNodeWithDictionary:(id)arg1 context:(id)arg2;
 + (id)dialogNode;
 @property(copy, nonatomic) NSString *value;
+@property(copy, nonatomic) NSString *nodeTypeHint;
 @property(copy, nonatomic) NSArray *children;
 - (id)encodedClassName;
 - (id)groupIdentifier;

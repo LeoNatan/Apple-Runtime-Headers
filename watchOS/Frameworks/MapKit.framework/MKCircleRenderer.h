@@ -6,12 +6,24 @@
 
 #import <MapKit/MKOverlayPathRenderer.h>
 
-@class MKCircle;
+@class MKCircle, VKVectorOverlayCircle;
 
 @interface MKCircleRenderer : MKOverlayPathRenderer
 {
+    VKVectorOverlayCircle *_vectorData;
 }
 
++ (Class)_mapkitLeafClass;
+- (void).cxx_destruct;
+- (void)_updateRenderColors;
+- (id)vectorDataForOverlay:(id)arg1;
+- (_Bool)overlayCanProvideVectorData:(id)arg1;
+- (id)_vectorData;
+- (_Bool)_canProvideVectorGeometry;
+- (void)setAlpha:(float)arg1;
+- (void)setStrokeColor:(id)arg1;
+- (void)setFillColor:(id)arg1;
+- (void)setLineWidth:(float)arg1;
 - (void)createPath;
 @property(readonly, nonatomic) MKCircle *circle;
 - (id)initWithCircle:(id)arg1;

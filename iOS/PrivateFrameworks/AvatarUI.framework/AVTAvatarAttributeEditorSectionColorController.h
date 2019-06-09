@@ -30,13 +30,11 @@
     UICollectionViewFlowLayout *_collectionViewLayout;
     AVTAvatarColorSliderContainerView *_sliderContainerView;
     AVTUIEnvironment *_environment;
-    AVTAvatarAttributeEditorSectionColorController *_subController;
-    UIView *_subControllerView;
     AVTAttributeEditorSectionHeaderView *_headerView;
 }
 
 + (struct CGPoint)clampedContentOffsetForOffset:(struct CGPoint)arg1 collectionView:(id)arg2;
-+ (_Bool)updateCollectionViewLayout:(id)arg1 containerSize:(struct CGSize)arg2 environment:(id)arg3 forExtended:(_Bool)arg4 withSlider:(_Bool)arg5 subSection:(_Bool)arg6 subSectionHeight:(double)arg7 numberOfItems:(long long)arg8;
++ (_Bool)updateCollectionViewLayout:(id)arg1 containerSize:(struct CGSize)arg2 environment:(id)arg3 forExtended:(_Bool)arg4 withSlider:(_Bool)arg5 numberOfItems:(long long)arg6;
 + (struct CGSize)cellSizeFittingWidth:(double)arg1 environment:(id)arg2;
 + (double)edgeLengthFittingWidth:(double)arg1 environment:(id)arg2;
 + (_Bool)supportsSelection;
@@ -44,8 +42,6 @@
 @property(nonatomic) _Bool needsScrollToSelected; // @synthesize needsScrollToSelected=_needsScrollToSelected;
 @property(nonatomic) _Bool dontAnimateSelection; // @synthesize dontAnimateSelection=_dontAnimateSelection;
 @property(readonly, nonatomic) _Bool showsHeader; // @synthesize showsHeader=_showsHeader;
-@property(retain, nonatomic) UIView *subControllerView; // @synthesize subControllerView=_subControllerView;
-@property(retain, nonatomic) AVTAvatarAttributeEditorSectionColorController *subController; // @synthesize subController=_subController;
 @property(readonly, nonatomic) AVTUIEnvironment *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) AVTAvatarColorSliderContainerView *sliderContainerView; // @synthesize sliderContainerView=_sliderContainerView;
 @property(retain, nonatomic) UICollectionViewFlowLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
@@ -56,6 +52,7 @@
 @property(nonatomic) long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
 @property(readonly, nonatomic) id <AVTAvatarAttributeEditorSection> section; // @synthesize section=_section;
 - (void).cxx_destruct;
+- (void)selectIndexPath:(id)arg1;
 - (void)attributeEditorSectionControllerNeedsLayoutUpdate:(id)arg1;
 - (void)attributeEditorSectionController:(id)arg1 didUpdateSectionItem:(id)arg2;
 - (void)attributeEditorSectionController:(id)arg1 didSelectSectionItem:(id)arg2;
@@ -73,6 +70,7 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
+- (_Bool)evaluateDisplayCondition:(id)arg1;
 - (void)didUnhighlightItemAtIndex:(long long)arg1 cell:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)didHighlightItemAtIndex:(long long)arg1 cell:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)didSelectItemAtIndex:(long long)arg1 cell:(id)arg2;
@@ -82,6 +80,7 @@
 - (void)cell:(id)arg1 willDisplayAtIndex:(long long)arg2;
 - (unsigned long long)indexForItem:(id)arg1;
 - (struct CGSize)sizeForItemAtIndex:(long long)arg1 fittingSize:(struct CGSize)arg2;
+- (double)heightForCollectionViewFittingWidth:(double)arg1;
 - (double)heightForSectionHeaderFittingWidth:(double)arg1;
 - (long long)numberOfItems;
 - (id)prefetchingSectionItemForIndex:(long long)arg1;
@@ -92,11 +91,10 @@
 - (void)reloadData;
 - (void)scrollCollectionViewToOrigin;
 - (void)scrollCollectionViewToSelectedColor;
-- (void)updateCollectionViewLayoutWithSizeChanged:(_Bool)arg1 containerSize:(struct CGSize)arg2;
+- (void)updateCollectionViewLayoutWithContainerSize:(struct CGSize)arg1;
 - (void)animateWithSpringAnimations:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)hideSliderAnimated:(_Bool)arg1;
 - (void)showSliderAnimated:(_Bool)arg1;
-- (void)prepareSubControllerView;
 - (void)createSliderContainerView;
 - (void)createCollectionView;
 @property(nonatomic) double currentRelativeContentOffsetX;

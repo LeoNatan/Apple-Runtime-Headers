@@ -8,6 +8,7 @@
 
 @class SKUILockupItemCellLayout;
 
+__attribute__((visibility("hidden")))
 @interface SKUILockupItemTableViewCell : SKUIItemTableViewCell
 {
     SKUILockupItemCellLayout *_layout;

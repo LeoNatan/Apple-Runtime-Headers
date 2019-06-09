@@ -6,21 +6,23 @@
 
 #import <Safari/FormAutoFillCompletionControllerObjCAdapter.h>
 
-#import <Safari/LAUIDelegate-Protocol.h>
+#import <Safari/AutoFillLocalAuthenticationOperationDelegate-Protocol.h>
 #import <Safari/WBSOneTimeCodeMonitorObserver-Protocol.h>
 
-@class AutoFillAuthorizationController, LAContext, NSString, WBSOneTimeCodeMonitor;
+@class AutoFillAuthorizationController, AutoFillLocalAuthenticationOperation, NSString, WBSOneTimeCodeMonitor;
 
 __attribute__((visibility("hidden")))
-@interface FormCompletionControllerObjCAdapter : FormAutoFillCompletionControllerObjCAdapter <LAUIDelegate, WBSOneTimeCodeMonitorObserver>
+@interface FormCompletionControllerObjCAdapter : FormAutoFillCompletionControllerObjCAdapter <AutoFillLocalAuthenticationOperationDelegate, WBSOneTimeCodeMonitorObserver>
 {
     WBSOneTimeCodeMonitor *_cachedOneTimeCodeMonitor;
     AutoFillAuthorizationController *_autoFillAuthorizationController;
-    LAContext *_currentLAContext;
     BOOL _hasUserInteractedWithTouchID;
+    AutoFillLocalAuthenticationOperation *_currentLocalAuthenticationOperation;
     BOOL _isBiometricAuthenticationAvailable;
+    BOOL __biometricAuthenticationStillInUse;
 }
 
+@property(nonatomic) BOOL _biometricAuthenticationStillInUse; // @synthesize _biometricAuthenticationStillInUse=__biometricAuthenticationStillInUse;
 @property(nonatomic, getter=isBiometricAuthenticationAvailable, setter=setIsBiometricAuthenticationAvailable:) BOOL _isBiometricAuthenticationAvailable; // @synthesize _isBiometricAuthenticationAvailable;
 - (void).cxx_destruct;
 - (void)_updateTouchIDAvailabilityIfNecessary:(id)arg1;
@@ -35,12 +37,12 @@ __attribute__((visibility("hidden")))
 - (void)_presentAuthenticationSheetWithCompletionListItem:(const struct CompletionListItem *)arg1;
 - (id)_itemNameForAutoFillAuthorizationSheetWithItem:(const struct CompletionListItem *)arg1;
 - (id)currentExternalizedContext;
-- (void)_invalidateCurrentLAContext;
+- (void)_cancelCurrentLAOperation;
 - (void)_cancelBiometricAuthentication;
+- (void)_cancelBiometricAuthenticationIfPossible;
+- (void)operation:(id)arg1 attemptedAuthenticationWithResult:(long long)arg2;
 - (void)_requestBiometricAuthenticationIfNecessary;
 - (BOOL)isAskingForBiometricAuthentication;
-- (void)_updateTouchIDFeedbackWithParameters:(id)arg1;
-- (void)event:(long long)arg1 params:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)completionWindowDidHide;
 - (void)completionWindowDidShow;
 - (BOOL)shouldShowAuthenticationSheetForCompletionListItem:(const struct CompletionListItem *)arg1;

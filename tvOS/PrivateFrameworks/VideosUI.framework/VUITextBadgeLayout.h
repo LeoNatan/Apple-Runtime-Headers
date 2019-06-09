@@ -4,28 +4,35 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <TVMLKit/TVViewLayout.h>
 
-#import <VideosUI/NSCopying-Protocol.h>
-
-@class UIColor, VUITextLayout;
+@class NSArray, TVImageLayout, VUITextLayout;
 
 __attribute__((visibility("hidden")))
-@interface VUITextBadgeLayout : NSObject <NSCopying>
+@interface VUITextBadgeLayout : TVViewLayout
 {
-    UIColor *_bgColor;
+    unsigned long long _badgeKind;
     double _cornerRadius;
+    NSArray *_gradientBgColors;
     VUITextLayout *_textLayout;
-    unsigned long long _badgeStyle;
-    struct UIEdgeInsets _padding;
+    TVImageLayout *_imageLayout;
 }
 
-@property(nonatomic) unsigned long long badgeStyle; // @synthesize badgeStyle=_badgeStyle;
-@property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
++ (id)_textBadgeLayoutWithViewElement:(id)arg1 withBadgeType:(unsigned long long)arg2;
++ (id)_spotlightBadgeLayoutWithViewElement:(id)arg1;
++ (id)_glyphImageLayoutWithTintColor:(id)arg1 viewElement:(id)arg2;
++ (long long)_badgeSizeForElement:(id)arg1;
++ (unsigned long long)textBadgeTypeFromString:(id)arg1;
++ (id)layoutWithViewElement:(id)arg1 withTextBadgeType:(unsigned long long)arg2;
++ (id)layoutWithViewElement:(id)arg1;
+@property(retain, nonatomic) TVImageLayout *imageLayout; // @synthesize imageLayout=_imageLayout;
 @property(retain, nonatomic) VUITextLayout *textLayout; // @synthesize textLayout=_textLayout;
+@property(retain, nonatomic) NSArray *gradientBgColors; // @synthesize gradientBgColors=_gradientBgColors;
 @property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
-@property(retain, nonatomic) UIColor *bgColor; // @synthesize bgColor=_bgColor;
+@property(nonatomic) unsigned long long badgeKind; // @synthesize badgeKind=_badgeKind;
 - (void).cxx_destruct;
+- (void)_updateTextColorWithViewElement:(id)arg1 defaultColor:(id)arg2;
+- (void)_updateBgColorWithViewElement:(id)arg1 defaultColor:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

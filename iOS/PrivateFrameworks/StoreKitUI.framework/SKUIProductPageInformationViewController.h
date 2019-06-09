@@ -10,6 +10,7 @@
 
 @class NSOperationQueue, NSString, SKUIClientContext, SKUIContentRatingArtworkResourceLoader, SKUIProductInformationView, SKUIProductPageItem, SKUIProductPageProductInfo;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageInformationViewController : UIViewController <SKUIContentRatingArtworkLoaderObserver>
 {
     SKUIClientContext *_clientContext;

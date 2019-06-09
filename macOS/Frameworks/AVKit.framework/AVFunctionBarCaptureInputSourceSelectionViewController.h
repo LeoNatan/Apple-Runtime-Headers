@@ -9,6 +9,7 @@
 @class AVFunctionBarCaptureInputSourceItem, NSArray, NSMutableArray, NSSegmentedControl, NSStackView, NSString, NSView;
 @protocol AVFunctionBarCaptureInputSourceSelectionViewControllerDelegate, AVFunctionBarRecordingControlsControllingInternal;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarCaptureInputSourceSelectionViewController : NSViewController
 {
     NSMutableArray *_bindings;

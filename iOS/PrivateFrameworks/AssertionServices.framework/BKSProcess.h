@@ -6,15 +6,25 @@
 
 #import <objc/NSObject.h>
 
-#import <AssertionServices/BKSProcessClientDelegate-Protocol.h>
 #import <AssertionServices/BSDescriptionProviding-Protocol.h>
 
-@class BKSLaunchdJobSpecification, BKSProcessClient, BKSProcessExitContext, BSProcessHandle, NSString;
-@protocol BKSProcessDelegate, OS_dispatch_queue;
+@class BKSLaunchdJobSpecification, BKSProcessAssertion, BKSProcessExitContext, BSProcessHandle, NSString, RBSAssertion, RBSProcessHandle, RBSProcessIdentity, RBSProcessMonitor;
+@protocol BKSProcessDelegate;
 
-@interface BKSProcess : NSObject <BKSProcessClientDelegate, BSDescriptionProviding>
+@interface BKSProcess : NSObject <BSDescriptionProviding>
 {
+    struct os_unfair_lock_s _lock;
     _Bool _bootstrapped;
+    RBSProcessIdentity *_identity;
+    RBSProcessHandle *_processHandle;
+    BKSLaunchdJobSpecification *_jobSpec;
+    RBSAssertion *_assertion;
+    RBSProcessMonitor *_monitor;
+    BKSProcessExitContext *_lastExitContext;
+    BKSProcessAssertion *_mediaAssertion;
+    BKSProcessAssertion *_audioAssertion;
+    BKSProcessAssertion *_accessoryAssertion;
+    RBSAssertion *_visibilityAssertion;
     _Bool _workspaceLocked;
     _Bool _connectedToExternalAccessories;
     _Bool _nowPlayingWithAudio;
@@ -22,35 +32,19 @@
     id <BKSProcessDelegate> _delegate;
     long long _visibility;
     long long _taskState;
-    BSProcessHandle *_handle;
-    BKSProcessExitContext *_lastExitContext;
-    NSString *_bundleID;
-    NSString *_jobLabel;
-    BKSProcessClient *_client;
-    NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_callOutQueue;
-    BKSLaunchdJobSpecification *_jobSpec;
     long long _terminationReason;
+    BSProcessHandle *_handle;
 }
 
 + (id)busyExtensionInstances:(id)arg1;
 + (double)backgroundTimeRemaining;
 + (id)currentProcess;
-@property(nonatomic) long long terminationReason; // @synthesize terminationReason=_terminationReason;
 @property(nonatomic) _Bool recordingAudio; // @synthesize recordingAudio=_recordingAudio;
 @property(nonatomic) _Bool nowPlayingWithAudio; // @synthesize nowPlayingWithAudio=_nowPlayingWithAudio;
 @property(nonatomic) _Bool connectedToExternalAccessories; // @synthesize connectedToExternalAccessories=_connectedToExternalAccessories;
 @property(nonatomic) _Bool workspaceLocked; // @synthesize workspaceLocked=_workspaceLocked;
-@property(nonatomic) _Bool bootstrapped; // @synthesize bootstrapped=_bootstrapped;
-@property(retain, nonatomic) BKSLaunchdJobSpecification *jobSpec; // @synthesize jobSpec=_jobSpec;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *callOutQueue; // @synthesize callOutQueue=_callOutQueue;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
-@property(retain, nonatomic) BKSProcessClient *client; // @synthesize client=_client;
-@property(retain, nonatomic) NSString *jobLabel; // @synthesize jobLabel=_jobLabel;
-@property(retain, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
-@property(retain, nonatomic) BKSProcessExitContext *lastExitContext; // @synthesize lastExitContext=_lastExitContext;
-@property(readonly, retain, nonatomic) BSProcessHandle *handle; // @synthesize handle=_handle;
-@property(readonly, nonatomic) long long taskState; // @synthesize taskState=_taskState;
+@property(readonly, nonatomic) BSProcessHandle *handle; // @synthesize handle=_handle;
+@property(nonatomic) long long terminationReason; // @synthesize terminationReason=_terminationReason;
 @property(nonatomic) long long visibility; // @synthesize visibility=_visibility;
 - (void).cxx_destruct;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -58,22 +52,21 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
-- (void)processAssertionExpirationImminentForClient:(id)arg1;
-- (void)client:(id)arg1 processDidExitWithContext:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)client:(id)arg1 processDidChangeDebuggingState:(_Bool)arg2;
-- (void)client:(id)arg1 processDidChangeTaskState:(long long)arg2;
-- (void)_sendMessageType:(int)arg1 withMessage:(CDUnknownBlockType)arg2;
-- (void)_sendMessageType:(int)arg1 withMessage:(CDUnknownBlockType)arg2 withReplyHandler:(CDUnknownBlockType)arg3 waitForReply:(_Bool)arg4;
 - (_Bool)_bootstrapWithError:(out id *)arg1;
+- (void)_lock_configureMonitor;
+- (void)_lock_updateVisibility;
+@property(readonly, nonatomic) BKSProcessExitContext *lastExitContext;
 @property(readonly, nonatomic) double backgroundTimeRemaining;
 @property(nonatomic) __weak id <BKSProcessDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly, nonatomic) long long taskState; // @synthesize taskState=_taskState;
 - (void)invalidate;
 - (_Bool)bootstrapWithSpecification:(id)arg1 error:(out id *)arg2;
 - (_Bool)bootstrapWithProcessHandle:(id)arg1 error:(out id *)arg2;
-- (void)dealloc;
 - (id)initWithPID:(int)arg1 bundlePath:(id)arg2 visibility:(long long)arg3 workspaceLocked:(_Bool)arg4 queue:(id)arg5;
+- (id)initWithProcessIdentity:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)init;
+- (void)bootstrapCurrentProcess;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

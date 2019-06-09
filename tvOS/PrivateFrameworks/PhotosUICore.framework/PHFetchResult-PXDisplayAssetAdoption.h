@@ -7,11 +7,12 @@
 #import <Photos/PHFetchResult.h>
 
 #import <PhotosUICore/PXDisplayAssetFetchResult-Protocol.h>
+#import <PhotosUICore/PXPeopleFetchResult-Protocol.h>
 
 @class NSString;
 @protocol PXDisplayAsset;
 
-@interface PHFetchResult (PXDisplayAssetAdoption) <PXDisplayAssetFetchResult>
+@interface PHFetchResult (PXDisplayAssetAdoption) <PXDisplayAssetFetchResult, PXPeopleFetchResult>
 
 // Remaining properties
 @property(readonly, nonatomic) long long count;

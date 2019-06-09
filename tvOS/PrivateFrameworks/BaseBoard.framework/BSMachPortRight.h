@@ -14,18 +14,20 @@
 
 @interface BSMachPortRight : NSObject <BSXPCCoding, NSSecureCoding, BSInvalidatable>
 {
-    unsigned int _queue_port;
+    struct os_unfair_lock_s _lock;
+    unsigned int _lock_port;
     unsigned int _rawPort;
     int _owner;
     NSString *_trace;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (void)_queue_destroyPort:(unsigned int)arg1;
-+ (void)_queue_invalidatePortPointer:(unsigned int *)arg1 owner:(int)arg2;
-+ (id)_descriptionForPort:(unsigned int)arg1 owner:(int)arg2 tag:(id)arg3 trace:(id)arg4;
++ (void)_unsafe_destroyPort:(unsigned int)arg1;
++ (_Bool)_unsafe_isUsablePort:(unsigned int)arg1;
++ (unsigned int)_unsafe_decodePort:(id)arg1;
++ (struct _xpc_type_s *)_decodeType;
 + (id)_rightDescription;
-+ (void)_serialize:(CDUnknownBlockType)arg1;
++ (id)_descriptionForPort:(unsigned int)arg1 owner:(int)arg2 tag:(id)arg3 trace:(id)arg4;
 @property(readonly, copy, nonatomic) NSString *trace; // @synthesize trace=_trace;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
@@ -33,10 +35,11 @@
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 @property(readonly, copy) NSString *description;
-- (void)_queue_invalidateForOwner:(int)arg1;
-- (void)_queue_invalidate;
-- (_Bool)_queue_isUsable;
-- (unsigned int)_queue_port;
+- (id)_lock_encodePort:(unsigned int)arg1;
+- (void)_lock_invalidateForOwner:(int)arg1;
+- (void)_lock_invalidate;
+- (_Bool)_lock_isUsable;
+- (void)_critical:(CDUnknownBlockType)arg1;
 - (unsigned int)rawPort;
 - (void)invalidate;
 - (_Bool)isUsable;

@@ -23,6 +23,7 @@
 @property(copy, nonatomic) NSString *pageTitle; // @synthesize pageTitle=_pageTitle;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
 - (void).cxx_destruct;
+- (id)activityViewControllerLinkPresentationMetadata:(id)arg1;
 - (id)activityViewController:(id)arg1 thumbnailImageForActivityType:(id)arg2 suggestedSize:(struct CGSize)arg3;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (void)main;

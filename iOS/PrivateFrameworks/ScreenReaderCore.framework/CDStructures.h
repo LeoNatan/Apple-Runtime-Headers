@@ -32,15 +32,15 @@ struct ProcessSerialNumber {
 
 struct SCRCFingerState {
     unsigned long long identifier;
-    int xDirection;
-    int yDirection;
+    long long xDirection;
+    long long yDirection;
     struct SCRCMathAverageValue normalizedVelocityPerSample;
     struct SCRCMathAverageValue deltaXPerSample;
     struct SCRCMathAverageValue deltaYPerSample;
     struct SCRCMathAverageValue distancePerSample;
     double distanceTraveledWithInertiaApplied;
     _Bool dragStalled;
-    unsigned long long type;
+    long long type;
     struct CGPoint startTouchPoint;
     struct CGPoint mostRecentTouchPoint;
     struct CGPoint lastDownPoint;
@@ -73,8 +73,8 @@ struct __va_list_tag {
 #pragma mark Typedef'd Structures
 
 typedef struct {
-    int _field1;
-    int _field2;
+    long long _field1;
+    long long _field2;
     double _field3;
     double _field4;
     double _field5;
@@ -95,5 +95,5 @@ typedef struct {
     struct CGPoint _field20;
     struct CGPoint _field21;
     double _field22;
-} CDStruct_ddbe7a84;
+} CDStruct_fc320275;
 

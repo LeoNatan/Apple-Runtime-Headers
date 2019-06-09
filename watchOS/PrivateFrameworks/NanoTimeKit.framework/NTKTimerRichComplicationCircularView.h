@@ -28,10 +28,11 @@
 }
 
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)_pause;
 - (void)_resume;
 - (void)_updateDialProgress;
-- (id)_textProviderWithIsPaused:(_Bool)arg1;
 - (void)_applyPausedUpdate;
 - (void)_handleTemplate:(id)arg1 reason:(int)arg2;
 - (void)layoutSubviews;

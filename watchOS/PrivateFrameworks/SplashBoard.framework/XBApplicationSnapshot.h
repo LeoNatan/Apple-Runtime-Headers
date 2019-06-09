@@ -35,6 +35,7 @@
     struct CGSize _referenceSize;
     struct CGRect _contentFrame;
     int _interfaceOrientation;
+    int _userInterfaceStyle;
     int _contentType;
     int _fileFormat;
     float _imageScale;
@@ -58,6 +59,7 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (struct CGImage *)_createCGImageWithPreferredOptions:(id)arg1 fromCGImage:(struct CGImage *)arg2;
 + (id)dataForImage:(id)arg1 withFormat:(int)arg2;
 + (id)_allSecureCodingClassesIncludingDefaultAndClientSpecified;
 + (void)setSecureCodableCustomExtendedDataClasses:(id)arg1;
@@ -78,6 +80,7 @@
 @property(nonatomic) int compatibilityMode; // @synthesize compatibilityMode=_compatibilityMode;
 @property(nonatomic) int classicMode; // @synthesize classicMode=_classicMode;
 @property(copy, nonatomic) XBStatusBarSettings *statusBarSettings; // @synthesize statusBarSettings=_statusBarSettings;
+@property(nonatomic) int userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(nonatomic) int interfaceOrientation; // @synthesize interfaceOrientation=_interfaceOrientation;
 @property(nonatomic) struct CGSize referenceSize; // @synthesize referenceSize=_referenceSize;
 @property(nonatomic, getter=isFullScreen) _Bool fullScreen; // @synthesize fullScreen=_fullScreen;

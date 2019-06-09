@@ -16,7 +16,7 @@
 @protocol UIWebFileUploadPanelDelegate, WebOpenPanelResultListener;
 
 __attribute__((visibility("hidden")))
-@interface UIWebFileUploadPanel : UIViewController <UIDocumentMenuDelegate, UIDocumentPickerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate>
+@interface UIWebFileUploadPanel : UIViewController <UIDocumentPickerDelegate, UIDocumentMenuDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate>
 {
     UIDocumentMenuViewController *_documentMenuController;
     UIImagePickerController *_imagePicker;

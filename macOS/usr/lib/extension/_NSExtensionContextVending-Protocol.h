@@ -10,5 +10,11 @@
 
 @protocol _NSExtensionContextVending <NSObject>
 - (void)_beginRequestWithExtensionItems:(NSArray *)arg1 listenerEndpoint:(NSXPCListenerEndpoint *)arg2 withContextUUID:(NSUUID *)arg3 completion:(void (^)(NSUUID *, NSError *))arg4;
+
+@optional
+- (void)_hostDidBecomeActiveForContextUUID:(NSUUID *)arg1 completion:(void (^)(void))arg2;
+- (void)_hostWillResignActiveForContextUUID:(NSUUID *)arg1 completion:(void (^)(void))arg2;
+- (void)_hostWillEnterForegroundForContextUUID:(NSUUID *)arg1 completion:(void (^)(void))arg2;
+- (void)_hostDidEnterBackgroundForContextUUID:(NSUUID *)arg1 completion:(void (^)(void))arg2;
 @end
 

@@ -25,8 +25,8 @@
 - (BOOL)animating;
 - (id)windowController;
 - (id)window;
-- (void)setTitleAlignment:(unsigned long long)arg1;
-- (unsigned long long)titleAlignment;
+- (void)setTitleAlignment:(long long)arg1;
+- (long long)titleAlignment;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (void)setBubbleFrame:(struct CGRect)arg1;
@@ -93,8 +93,8 @@
 - (id)effect;
 - (BOOL)mouseDragged:(id)arg1;
 - (BOOL)mouseDown:(id)arg1;
-- (void)setControlAlignment:(unsigned long long)arg1;
-- (unsigned long long)controlAlignment;
+- (void)setControlAlignment:(long long)arg1;
+- (long long)controlAlignment;
 - (void)performBubbleAction:(id)arg1;
 - (BOOL)controlsAtBottom;
 - (void)setControlsAtBottom:(BOOL)arg1;

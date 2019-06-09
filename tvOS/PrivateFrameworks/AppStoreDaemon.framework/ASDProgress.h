@@ -13,6 +13,7 @@
 
 @interface ASDProgress : NSObject <NSCopying, NSSecureCoding>
 {
+    _Bool _reportRemotely;
     NSString *_bundleID;
     long long _completedUnitCount;
     long long _totalUnitCount;
@@ -20,6 +21,7 @@
 
 + (_Bool)supportsSecureCoding;
 @property long long totalUnitCount; // @synthesize totalUnitCount=_totalUnitCount;
+@property _Bool reportRemotely; // @synthesize reportRemotely=_reportRemotely;
 @property long long completedUnitCount; // @synthesize completedUnitCount=_completedUnitCount;
 @property(retain) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;

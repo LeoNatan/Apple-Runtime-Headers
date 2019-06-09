@@ -7,10 +7,10 @@
 #import <C2/C2MetricOptions.h>
 
 @interface C2MetricOptions (CKMetricOptionAdditions)
-+ (id)metricOptionsForEventMetric:(id)arg1 metricType:(int)arg2 proxy:(id)arg3 config:(id)arg4;
++ (id)metricOptionsForEventMetric:(id)arg1 metricType:(int)arg2 proxy:(id)arg3 config:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 + (id)metricOptionsForNetworkRequest:(id)arg1;
 + (id)metricOptionsForNetworkOperation:(id)arg1;
 - (void)_attributeCurrentProxy:(id)arg1 config:(id)arg2;
-- (void)_setupC2MetricsEndpointWithAccount:(id)arg1;
+- (void)_setupC2MetricsEndpointWithContext:(id)arg1;
 @end
 

@@ -12,7 +12,9 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)urlForURL:(id)arg1 result:(struct __DDResult *)arg2;
++ (id)previewActionsWithURL:(id)arg1 validatedURL:(id)arg2 result:(struct __DDResult *)arg3 context:(id)arg4;
 + (_Bool)handlesUrl:(id)arg1 result:(struct __DDResult *)arg2;
+- (id)menuActions;
 - (id)commitURL;
 - (_Bool)requiresEmbeddingNavigationController;
 - (id)createViewController;

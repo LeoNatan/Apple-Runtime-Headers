@@ -9,7 +9,7 @@
 #import <CoreWLAN/NSCopying-Protocol.h>
 #import <CoreWLAN/NSSecureCoding-Protocol.h>
 
-@class CWNetwork, CWNetworkProfile, NSArray, NSDate, NSError, NSString;
+@class NSArray, NSDate, NSError, NSString;
 
 @interface CWAutoJoinStatistics : NSObject <NSCopying, NSSecureCoding>
 {
@@ -22,21 +22,9 @@
     NSArray *_joinAttempts;
     NSError *_error;
     BOOL _result;
-    CWNetworkProfile *_profile;
-    CWNetwork *_network;
-    double _assocStartedAt;
-    double _assocEndedAt;
-    double _authEndedAt;
-    double _ipAssignedAt;
 }
 
 + (BOOL)supportsSecureCoding;
-@property double ipAssignedAt; // @synthesize ipAssignedAt=_ipAssignedAt;
-@property double authEndedAt; // @synthesize authEndedAt=_authEndedAt;
-@property double assocEndedAt; // @synthesize assocEndedAt=_assocEndedAt;
-@property double assocStartedAt; // @synthesize assocStartedAt=_assocStartedAt;
-@property(copy) CWNetwork *network; // @synthesize network=_network;
-@property(copy) CWNetworkProfile *profile; // @synthesize profile=_profile;
 @property BOOL result; // @synthesize result=_result;
 @property(copy) NSError *error; // @synthesize error=_error;
 @property double scanDuration; // @synthesize scanDuration=_scanDuration;

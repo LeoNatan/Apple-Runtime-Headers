@@ -16,7 +16,6 @@
 
 @interface NCNotificationListViewController : UICollectionViewController <NCNotificationListCellDelegate, UIGestureRecognizerDelegate, NCNotificationViewControllerDelegatePrivate, NCNotificationListCollectionViewDelegate>
 {
-    _Bool _backgroundBlurred;
     _Bool _needsReloadData;
     _Bool _notificationRequestRemovedWhilePossiblyInLongLook;
     _Bool _notificationRequestRemovedWhileInLongLook;
@@ -33,11 +32,11 @@
     NCNotificationListCell *_cellWithRevealedActions;
     NCAnimationCoordinator *_childPreferredContentSizeChangeCoordinatorForCurrentTransaction;
     NSMutableArray *_childPreferredContentSizeChangeCoordinators;
-    CDStruct_ef5db9df _destinationDelegateFlags;
+    CDStruct_a7a354cd _destinationDelegateFlags;
     struct UIEdgeInsets _insetMargins;
 }
 
-@property(nonatomic) CDStruct_ef5db9df destinationDelegateFlags; // @synthesize destinationDelegateFlags=_destinationDelegateFlags;
+@property(nonatomic) CDStruct_a7a354cd destinationDelegateFlags; // @synthesize destinationDelegateFlags=_destinationDelegateFlags;
 @property(nonatomic) CDStruct_27a46a9e userInteractionDelegateFlags; // @synthesize userInteractionDelegateFlags=_userInteractionDelegateFlags;
 @property(retain, nonatomic) NSMutableArray *childPreferredContentSizeChangeCoordinators; // @synthesize childPreferredContentSizeChangeCoordinators=_childPreferredContentSizeChangeCoordinators;
 @property(retain, nonatomic) NCAnimationCoordinator *childPreferredContentSizeChangeCoordinatorForCurrentTransaction; // @synthesize childPreferredContentSizeChangeCoordinatorForCurrentTransaction=_childPreferredContentSizeChangeCoordinatorForCurrentTransaction;
@@ -53,7 +52,6 @@
 @property(retain, nonatomic) NCNotificationViewController *viewControllerPresentingLongLook; // @synthesize viewControllerPresentingLongLook=_viewControllerPresentingLongLook;
 @property(readonly, nonatomic) struct UIEdgeInsets insetMargins; // @synthesize insetMargins=_insetMargins;
 @property(retain, nonatomic) NCNotificationViewController *notificationViewControllerForSizing; // @synthesize notificationViewControllerForSizing=_notificationViewControllerForSizing;
-@property(nonatomic, getter=isBackgroundBlurred) _Bool backgroundBlurred; // @synthesize backgroundBlurred=_backgroundBlurred;
 @property(nonatomic) __weak id <NCNotificationListViewControllerDestinationDelegate> destinationDelegate; // @synthesize destinationDelegate=_destinationDelegate;
 @property(nonatomic) __weak id <NCNotificationListViewControllerUserInteractionDelegate> userInteractionDelegate; // @synthesize userInteractionDelegate=_userInteractionDelegate;
 - (void).cxx_destruct;
@@ -63,16 +61,14 @@
 - (id)homeAffordancePanGesture;
 - (void)setHomeAffordanceVisible:(_Bool)arg1;
 - (_Bool)isHomeAffordanceVisible;
-- (_Bool)_isPresentingNotificationManagementSuggestionForNotificationRequest:(id)arg1;
 - (_Bool)_isContentSuppressedForNotificationRequest:(id)arg1;
 - (void)_hintSideSwipeForDefaultActionForNotificationRequest:(id)arg1;
 - (id)_notificationRequestForCell:(id)arg1;
-- (id)_groupName;
 - (void)_reloadRequestsAtIndices:(id)arg1;
 - (void)_removeCachedSizesForNotificationRequest:(id)arg1;
 - (void)_performCollectionViewOperationBlockIfNecessary:(CDUnknownBlockType)arg1;
 - (void)_performCollectionViewOperationBlock:(CDUnknownBlockType)arg1;
-- (_Bool)_forwardRequestToLongLookIfPresented:(id)arg1 forCoalescedNotification:(id)arg2;
+- (_Bool)_forwardRequestToLongLookIfPresented:(id)arg1;
 - (_Bool)_isPointInWindowSpace:(struct CGPoint)arg1 insideCell:(id)arg2;
 - (void)_handleEatenTouch:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
@@ -94,6 +90,7 @@
 - (void)longLookWillPresentForNotificationViewController:(id)arg1;
 - (void)notificationViewControllerDidEndUserInteraction:(id)arg1;
 - (void)notificationViewControllerWillBeginUserInteraction:(id)arg1;
+- (_Bool)notificationViewControllerHasCaptureOnlyBackgroundViewForShadow:(id)arg1;
 - (id)settleHomeAffordanceAnimationBehaviorDescriptionForNotificationViewController:(id)arg1;
 - (id)unhideHomeAffordanceAnimationSettingsForNotificationViewController:(id)arg1;
 - (id)hideHomeAffordanceAnimationSettingsForNotificationViewController:(id)arg1;
@@ -104,7 +101,6 @@
 - (_Bool)notificationViewControllerShouldAllowInteractionGesture:(id)arg1;
 - (id)notificationViewController:(id)arg1 auxiliaryOptionsContentProviderForNotificationRequest:(id)arg2 withLongLook:(_Bool)arg3;
 - (id)notificationViewController:(id)arg1 staticContentProviderForNotificationRequest:(id)arg2;
-- (_Bool)notificationViewControllerShouldBlurShortLook:(id)arg1;
 - (void)notificationViewController:(id)arg1 shouldFinishLongLookTransitionWithCompletionBlock:(CDUnknownBlockType)arg2;
 - (id)notificationUsageTrackingStateForNotificationViewController:(id)arg1;
 - (void)notificationViewController:(id)arg1 executeAction:(id)arg2 withParameters:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -138,7 +134,7 @@
 - (id)_notificationListCellAtIndexPath:(id)arg1;
 - (_Bool)isNotificationListCellVisibleForNotificationRequest:(id)arg1;
 - (void)listViewControllerPresentedByUserAction;
-@property(readonly, nonatomic) NSString *backgroundGroupName;
+@property(readonly, nonatomic) NSString *backgroundGroupNameBase;
 @property(readonly, nonatomic) double itemSpacing;
 - (id)notificationRequestsPassingTest:(CDUnknownBlockType)arg1;
 - (void)_forceTouchAvailabilityDidChange:(id)arg1;
@@ -167,9 +163,9 @@
 - (void)clearAll;
 - (id)indexPathForNotificationRequest:(id)arg1;
 - (id)notificationRequestAtIndexPath:(id)arg1;
-- (void)removeNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
-- (_Bool)modifyNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
-- (_Bool)insertNotificationRequest:(id)arg1 forCoalescedNotification:(id)arg2;
+- (void)removeNotificationRequest:(id)arg1;
+- (_Bool)modifyNotificationRequest:(id)arg1;
+- (_Bool)insertNotificationRequest:(id)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(_Bool)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
@@ -180,7 +176,7 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)init;
-- (id)captureOnlyMaterialViewForCurrentState;
+- (id)newCaptureOnlyMaterialViewController;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

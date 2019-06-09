@@ -16,7 +16,9 @@
     NSMutableSet *_characteristicsToRead;
     NSMutableSet *_writeCharacteristicRequests;
     NSMutableSet *_actionSetsToExecute;
+    NSMutableSet *_actionsToExecute;
     NSDictionary *_actionSetErrorsKeyedByUUID;
+    NSError *_actionsError;
     NSError *_overallReadError;
     NSError *_overallWriteError;
     NSMutableDictionary *_readFuturesKeyedByCharacteristicIdentifier;
@@ -36,7 +38,9 @@
 @property(retain, nonatomic) NSMutableDictionary *readFuturesKeyedByCharacteristicIdentifier; // @synthesize readFuturesKeyedByCharacteristicIdentifier=_readFuturesKeyedByCharacteristicIdentifier;
 @property(retain, nonatomic) NSError *overallWriteError; // @synthesize overallWriteError=_overallWriteError;
 @property(retain, nonatomic) NSError *overallReadError; // @synthesize overallReadError=_overallReadError;
+@property(retain, nonatomic) NSError *actionsError; // @synthesize actionsError=_actionsError;
 @property(retain, nonatomic) NSDictionary *actionSetErrorsKeyedByUUID; // @synthesize actionSetErrorsKeyedByUUID=_actionSetErrorsKeyedByUUID;
+@property(retain, nonatomic) NSMutableSet *actionsToExecute; // @synthesize actionsToExecute=_actionsToExecute;
 @property(retain, nonatomic) NSMutableSet *actionSetsToExecute; // @synthesize actionSetsToExecute=_actionSetsToExecute;
 @property(retain, nonatomic) NSMutableSet *writeCharacteristicRequests; // @synthesize writeCharacteristicRequests=_writeCharacteristicRequests;
 @property(retain, nonatomic) NSMutableSet *characteristicsToRead; // @synthesize characteristicsToRead=_characteristicsToRead;

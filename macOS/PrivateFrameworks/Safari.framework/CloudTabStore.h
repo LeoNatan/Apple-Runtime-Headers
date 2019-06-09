@@ -43,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)_setDictionaryInKeyValueStore:(long long)arg1 dictionary:(id)arg2 forKey:(id)arg3;
 - (id)_keyValueStoreDictionaryRepresentation:(long long)arg1;
 - (id)_currentDeviceUUID;
-- (void)didUpdateDevicesAndCloseRequestsFromCloudKitForCloudTabStore:(id)arg1;
+- (void)didUpdateDevicesAndCloseRequestsFromCloudKitForCloudTabStore:(id)arg1 error:(id)arg2;
 - (void)_cloudKitDataWasUpdatedOnServer:(id)arg1;
 - (BOOL)_shouldUseCloudKitForSavingCurrentDevice;
 - (void)_keyValueStoreDictionaryRepresentationDidChange:(id)arg1;

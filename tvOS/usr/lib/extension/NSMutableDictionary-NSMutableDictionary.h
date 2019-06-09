@@ -7,8 +7,13 @@
 #import <Foundation/NSMutableDictionary.h>
 
 @interface NSMutableDictionary (NSMutableDictionary)
+- (id)initWithContentsOfURL:(id)arg1 error:(id *)arg2;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)initWithContentsOfFile:(id)arg1;
 - (Class)classForCoder;
+- (void)setValue:(id)arg1 forKey:(id)arg2;
+- (void)_web_setObject:(id)arg1 forUncopiedKey:(id)arg2;
+- (void)_web_setBool:(_Bool)arg1 forKey:(id)arg2;
+- (void)_web_setInt:(int)arg1 forKey:(id)arg2;
 @end
 

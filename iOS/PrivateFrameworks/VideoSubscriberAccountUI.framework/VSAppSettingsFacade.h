@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSOperation, NSOperationQueue, VSIdentityProvider, VSOptional, VSPersistentStorage, VSRestrictionsCenter;
+@class NSArray, NSOperation, NSOperationQueue, VSAppSettingsViewModel, VSIdentityProvider, VSOptional, VSPersistentStorage, VSRestrictionsCenter;
 
 @interface VSAppSettingsFacade : NSObject
 {
@@ -23,8 +23,10 @@
     NSArray *_featuredAdamIDs;
     NSArray *_knownAppBundles;
     NSArray *_unredeemedVouchers;
+    VSAppSettingsViewModel *_mvpdAppSettingsViewModel;
 }
 
+@property(retain, nonatomic) VSAppSettingsViewModel *mvpdAppSettingsViewModel; // @synthesize mvpdAppSettingsViewModel=_mvpdAppSettingsViewModel;
 @property(nonatomic) int registrationToken; // @synthesize registrationToken=_registrationToken;
 @property(nonatomic) _Bool needsUpdateApps; // @synthesize needsUpdateApps=_needsUpdateApps;
 @property(copy, nonatomic) NSArray *unredeemedVouchers; // @synthesize unredeemedVouchers=_unredeemedVouchers;
@@ -39,6 +41,8 @@
 @property(copy, nonatomic) NSArray *decidedApps; // @synthesize decidedApps=_decidedApps;
 @property(retain, nonatomic) VSIdentityProvider *identityProvider; // @synthesize identityProvider=_identityProvider;
 - (void).cxx_destruct;
+- (void)presentMVPDAppInstallPromptFromViewController:(id)arg1;
+- (_Bool)shouldShowMVPDAppInstallPrompt;
 - (void)_setNeedsUpdateApps;
 - (void)_updateApps;
 - (id)_fetchOperationForAdamIDs:(id)arg1;

@@ -8,5 +8,7 @@
 
 @interface NSSlider (ASKContainerName)
 + (id)containerName_ask;
+- (void)setTickMarkPosition_ask:(unsigned long long)arg1;
+- (unsigned long long)tickMarkPosition_ask;
 @end
 

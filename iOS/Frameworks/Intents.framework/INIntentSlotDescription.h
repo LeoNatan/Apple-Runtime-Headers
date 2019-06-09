@@ -9,12 +9,13 @@
 #import <Intents/INIntentSlotDescriptionExport-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 
-@class NSArray, NSString;
+@class INCodableAttribute, NSArray, NSString;
 
 @interface INIntentSlotDescription : NSObject <INIntentSlotDescriptionExport, NSCopying>
 {
     _Bool _isExtended;
     _Bool _isPrivate;
+    Class _resolutionResultClass;
     NSString *_name;
     unsigned long long _tag;
     NSString *_facadePropertyName;
@@ -22,8 +23,14 @@
     long long _valueType;
     long long _valueStyle;
     NSArray *_resolveSelectorStrings;
+    NSArray *_provideOptionsSelectorStrings;
+    NSArray *_defaultValueSelectorStrings;
+    INCodableAttribute *_codableAttribute;
 }
 
+@property(readonly, copy, nonatomic) INCodableAttribute *codableAttribute; // @synthesize codableAttribute=_codableAttribute;
+@property(readonly, copy, nonatomic) NSArray *defaultValueSelectorStrings; // @synthesize defaultValueSelectorStrings=_defaultValueSelectorStrings;
+@property(readonly, copy, nonatomic) NSArray *provideOptionsSelectorStrings; // @synthesize provideOptionsSelectorStrings=_provideOptionsSelectorStrings;
 @property(readonly, copy, nonatomic) NSArray *resolveSelectorStrings; // @synthesize resolveSelectorStrings=_resolveSelectorStrings;
 @property(readonly, nonatomic) _Bool isPrivate; // @synthesize isPrivate=_isPrivate;
 @property(readonly, nonatomic) _Bool isExtended; // @synthesize isExtended=_isExtended;
@@ -37,12 +44,13 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (_Bool)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) Class resolutionResultClass; // @synthesize resolutionResultClass=_resolutionResultClass;
 @property(readonly, nonatomic) SEL deprecatedResolveSelector;
 @property(readonly, nonatomic) SEL resolveSelector;
-- (id)initWithName:(id)arg1 tag:(unsigned long long)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 valueType:(long long)arg5 valueStyle:(long long)arg6 isExtended:(_Bool)arg7 isPrivate:(_Bool)arg8 resolveSelector:(SEL)arg9;
-- (id)initWithName:(id)arg1 tag:(unsigned long long)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 valueType:(long long)arg5 valueStyle:(long long)arg6 isExtended:(_Bool)arg7 isPrivate:(_Bool)arg8 resolveSelector:(SEL)arg9 deprecatedResolveSelector:(SEL)arg10;
-- (id)initWithName:(id)arg1 tag:(unsigned long long)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 isExtended:(_Bool)arg5 isPrivate:(_Bool)arg6 valueType:(long long)arg7 valueStyle:(long long)arg8 resolveSelectors:(SEL)arg9;
+- (id)initWithName:(id)arg1 tag:(unsigned long long)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 isExtended:(_Bool)arg5 isPrivate:(_Bool)arg6 valueType:(long long)arg7 valueStyle:(long long)arg8 defaultValueSelectorStrings:(id)arg9 provideOptionsSelectorStrings:(id)arg10 resolutionResultClass:(Class)arg11 resolveSelectors:(SEL)arg12;
 - (id)initWithName:(id)arg1 tag:(unsigned long long)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 valueType:(long long)arg5 valueStyle:(long long)arg6 isExtended:(_Bool)arg7 isPrivate:(_Bool)arg8 resolveSelectors:(SEL)arg9;
+- (id)initWithName:(id)arg1 tag:(unsigned long long)arg2 facadePropertyName:(id)arg3 dataPropertyName:(id)arg4 isExtended:(_Bool)arg5 isPrivate:(_Bool)arg6 valueType:(long long)arg7 valueStyle:(long long)arg8 codableAttribute:(id)arg9 defaultValueSelectorStrings:(id)arg10 provideOptionsSelectorStrings:(id)arg11 resolutionResultClass:(Class)arg12 resolveSelectors:(SEL)arg13;
+@property(readonly, nonatomic) _Bool isEnum;
 - (id)localizeValue:(id)arg1 forLanguage:(id)arg2;
 - (void)setValue:(id)arg1 forSlotComposer:(id)arg2;
 - (id)valueForSlotComposer:(id)arg1;

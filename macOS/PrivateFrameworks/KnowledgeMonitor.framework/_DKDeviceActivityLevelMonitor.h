@@ -46,9 +46,11 @@
 - (void)updateActivityInUseState:(unsigned long long)arg1;
 - (void)handleUserActivity:(int)arg1;
 - (void)synchronouslyReflectCurrentValue;
+- (void)deactivate;
 - (void)stop;
 - (void)start;
 - (void)setLastActivityDate:(id)arg1;
+- (void)dealloc;
 
 @end
 

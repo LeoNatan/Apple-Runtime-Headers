@@ -22,6 +22,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)dictionaryEncoding;
 - (id)initWithDictionary:(id)arg1;
+- (id)initWithKeywords:(id)arg1;
 - (id)initWithContent:(id)arg1;
 - (id)init;
 

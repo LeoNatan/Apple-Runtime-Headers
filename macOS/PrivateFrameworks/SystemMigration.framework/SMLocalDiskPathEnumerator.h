@@ -20,8 +20,12 @@
     NSMutableSet *_hardlinkInodes;
     NSString *_basePath;
     NSURL *_basePathURL;
+    NSString *_alternateBasePath;
+    NSURL *_alternateBasePathURL;
 }
 
+@property(retain) NSURL *alternateBasePathURL; // @synthesize alternateBasePathURL=_alternateBasePathURL;
+@property(retain) NSString *alternateBasePath; // @synthesize alternateBasePath=_alternateBasePath;
 @property(retain) NSURL *basePathURL; // @synthesize basePathURL=_basePathURL;
 @property(retain) NSString *basePath; // @synthesize basePath=_basePath;
 @property(retain) NSMutableSet *hardlinkInodes; // @synthesize hardlinkInodes=_hardlinkInodes;

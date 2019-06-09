@@ -19,7 +19,7 @@
 - (BOOL)addCell;
 - (BOOL)addProfileTuple:(id)arg1;
 - (BOOL)addProfileTuple:(int)arg1 data:(int)arg2 profile:(long long)arg3;
-- (id)newGrowableItem;
+- (id)createGrowableItem;
 - (id)growableItems;
 - (BOOL)canGrow;
 - (id)profileNamesForDataType:(int)arg1 numToSkip:(long long *)arg2;

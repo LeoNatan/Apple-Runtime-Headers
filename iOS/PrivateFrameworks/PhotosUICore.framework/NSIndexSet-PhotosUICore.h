@@ -14,5 +14,6 @@
 - (id)px_indexSetAdjustedForDeletions:(id)arg1;
 - (id)px_intersectionWithIndexSet:(id)arg1;
 @property(readonly, nonatomic) NSString *px_shortDescription;
+- (id)px_indexesInRange:(struct _NSRange)arg1;
 @end
 

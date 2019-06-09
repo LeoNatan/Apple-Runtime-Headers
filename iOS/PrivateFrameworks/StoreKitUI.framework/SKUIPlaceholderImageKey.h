@@ -8,6 +8,7 @@
 
 @class IKColor;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPlaceholderImageKey : NSObject
 {
     long long _height;

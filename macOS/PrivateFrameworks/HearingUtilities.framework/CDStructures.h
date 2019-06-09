@@ -8,12 +8,6 @@
 
 typedef void (^CDUnknownBlockType)(void); // return type and parameters are unknown
 
-#pragma mark Named Structures
-
-struct ComponentInstanceRecord {
-    long long _field1[1];
-};
-
 #pragma mark Typedef'd Structures
 
 typedef struct {

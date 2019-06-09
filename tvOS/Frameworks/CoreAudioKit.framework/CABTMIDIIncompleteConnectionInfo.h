@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AMSBTLEPeripheral *peripheral; // @synthesize peripheral=_peripheral;
 @property unsigned long long timeOutInterval; // @synthesize timeOutInterval=_timeOutInterval;
 @property(getter=isConnecting) _Bool connecting; // @synthesize connecting=_connecting;
+- (void)dealloc;
 - (id)initWithPeripheral:(id)arg1 isConnecting:(_Bool)arg2;
 
 @end

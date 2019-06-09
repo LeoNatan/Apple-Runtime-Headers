@@ -4,35 +4,32 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <WorkflowKit/MTLModel.h>
 
-#import <VoiceShortcuts/NSCopying-Protocol.h>
-#import <VoiceShortcuts/NSSecureCoding-Protocol.h>
-#import <VoiceShortcuts/VCPBIntentDefinitionHashable-Protocol.h>
+#import <VoiceShortcuts/MTLJSONSerializing-Protocol.h>
 
-@class NSNumber, NSString;
+@class NSDictionary, NSNumber, NSString, NSUUID;
 
-@interface VCIntentDefinitionSyncState : NSObject <NSSecureCoding, NSCopying, VCPBIntentDefinitionHashable>
+@interface VCIntentDefinitionSyncState : MTLModel <MTLJSONSerializing>
 {
-    NSString *_checksum;
-    NSNumber *_lastModifiedDate;
-    NSString *_appBundleID;
-    NSString *_serviceID;
+    NSUUID *_databaseUUID;
+    NSNumber *_sequenceNumber;
+    NSDictionary *_applications;
 }
 
-+ (_Bool)supportsSecureCoding;
-@property(retain, nonatomic) NSString *serviceID; // @synthesize serviceID=_serviceID;
-@property(retain, nonatomic) NSString *appBundleID; // @synthesize appBundleID=_appBundleID;
-@property(retain, nonatomic) NSNumber *lastModifiedDate; // @synthesize lastModifiedDate=_lastModifiedDate;
-@property(retain, nonatomic) NSString *checksum; // @synthesize checksum=_checksum;
++ (id)applicationsJSONTransformer;
++ (id)JSONKeyPathsByPropertyKey;
+@property(copy, nonatomic) NSDictionary *applications; // @synthesize applications=_applications;
+@property(copy, nonatomic) NSNumber *sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
+@property(copy, nonatomic) NSUUID *databaseUUID; // @synthesize databaseUUID=_databaseUUID;
 - (void).cxx_destruct;
-- (unsigned int)hash;
-- (_Bool)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithCoder:(id)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)associatedBundleID;
-- (double)associatedAppRegistrationDate;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, copy, nonatomic) NSDictionary *dictionaryValue;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,9 +6,10 @@
 
 #import <AppKit/NSButton.h>
 
-@class AVPlayerControlsViewController, NSSlider, NSTrackingArea, NSView, NSVisualEffectView, NSWindow;
+@class AVControlsViewController, NSSlider, NSTrackingArea, NSView, NSVisualEffectView, NSWindow;
 @protocol AVVolumeButtonDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVVolumeButton : NSButton
 {
     BOOL _tracking;
@@ -18,12 +19,12 @@
     NSView *_sliderView;
     NSVisualEffectView *_sliderViewVisualEffectView;
     NSSlider *_volumeSlider;
-    AVPlayerControlsViewController *_controlsViewController;
+    AVControlsViewController *_controlsViewController;
     id <AVVolumeButtonDelegate> _delegate;
 }
 
 @property __weak id <AVVolumeButtonDelegate> delegate; // @synthesize delegate=_delegate;
-@property __weak AVPlayerControlsViewController *controlsViewController; // @synthesize controlsViewController=_controlsViewController;
+@property __weak AVControlsViewController *controlsViewController; // @synthesize controlsViewController=_controlsViewController;
 - (void).cxx_destruct;
 - (void)_hideVolumeSlider;
 - (void)volumeSliderChanged:(id)arg1;

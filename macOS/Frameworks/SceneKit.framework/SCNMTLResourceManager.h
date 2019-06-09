@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_availableStageDescriptors;
     struct os_unfair_lock_s _stageDescriptorsLock;
     id _nullStageDescriptor;
+    id <MTLTexture> _areaLightPrecomputedDataTexture;
     id <MTLTexture> _specularDFGTexture;
     // Error parsing type: ^{__C3DFXMetalProgram={__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}[2^{__CFString}]^{__CFString}^{__CFDictionary}^v^{__CFDictionary}^v^{__CFString}}, name: _defaultProgram
     // Error parsing type: ^{__C3DFXMetalProgram={__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}[2^{__CFString}]^{__CFString}^{__CFDictionary}^v^{__CFDictionary}^v^{__CFString}}, name: _defaultProgramForTessellation
@@ -72,7 +73,7 @@ __attribute__((visibility("hidden")))
 - (id)newBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (id)newBufferWithBytes:(const void *)arg1 length:(unsigned long long)arg2 options:(unsigned long long)arg3;
 - (id)newConstantBufferWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2;
--     // Error parsing type: @48@0:8^{__C3DRendererElement=I^{__C3DNode}^{__C3DGeometry}^{__C3DMesh}^v^{__C3DMaterial}^{__C3DFXTechnique}{?=[8C]}iIb8b1b1b1b1b1b1b3b1b3}16^{__C3DEngineContext=}24^{__C3DFXPassInstance=^{__C3DFXPass}q^{__C3DFXPassInstance}CBC[6^{__C3DArray}]{__C3DCullingContext=^{__C3DEnginePipeline}[6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})]ICCCB^{__C3DFXPass}^v^{__C3DNode}^{__C3DNode}BBBBBBBQQ^v^{__C3DScene}^{__C3DEngineContext}dd(?={?=ffff})(C3DMatrix4x4=[16f][4]{?=[4]})(C3DMatrix4x4=[16f][4]{?=[4]})[6{?=^{?}II}]B^?}^{__C3DNode}}32Q40, name: wireframeResourceForRendererElement:engineContext:passInstance:hashPass:
+-     // Error parsing type: @48@0:8^{__C3DRendererElement=I^{__C3DNode}^{__C3DGeometry}^{__C3DMesh}^v^{__C3DMaterial}^{__C3DFXTechnique}{?=[8C]}iIb8b1b1b1b1b1b1b3b1b3}16^{__C3DEngineContext=}24^{__C3DFXPassInstance=^{__C3DFXPass}q^{__C3DFXPassInstance}CBC[6^{__C3DArray}]{__C3DCullingContext=^{__C3DEnginePipeline}[6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6{?=[6(?={?=ffff})]}][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})][6(C3DMatrix4x4=[16f][4]{?=[4]})]ICCCB^{__C3DFXPass}^v^{__C3DNode}^{__C3DNode}BBBBBBBBBBQQ^v^{__C3DScene}^{__C3DEngineContext}dd(?={?=ffff})(C3DMatrix4x4=[16f][4]{?=[4]})(C3DMatrix4x4=[16f][4]{?=[4]})[6{?=^{?}II}]B^?}^{__C3DNode}}32Q40, name: wireframeResourceForRendererElement:engineContext:passInstance:hashPass:
 -     // Error parsing type: @24@0:8^{__C3DGeometry={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DMesh}^{__C3DMaterial}^{__CFArray}^{__CFSet}^{__CFArray}^{?}b1^?{?=CB{?=BCCC}^{__C3DMeshElement}^{__C3DMeshSource}^{__C3DMesh}^v^v}{?=CfIC(?={?=ff}{?=f}{?=f}{?=Cb1b1})}C}16, name: renderResourceForTessellatedGeometry:
 -     // Error parsing type: @40@0:8^{__C3DSkinner=}16^{__C3DMesh=}24^{__C3DGeometry={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DMesh}^{__C3DMaterial}^{__CFArray}^{__CFSet}^{__CFArray}^{?}b1^?{?=CB{?=BCCC}^{__C3DMeshElement}^{__C3DMeshSource}^{__C3DMesh}^v^v}{?=CfIC(?={?=ff}{?=f}{?=f}{?=Cb1b1})}C}32, name: renderResourceForSkinner:baseMesh:baseGeometry:
 -     // Error parsing type: @32@0:8^{__C3DMorph=}16^{__C3DGeometry={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DMesh}^{__C3DMaterial}^{__CFArray}^{__CFSet}^{__CFArray}^{?}b1^?{?=CB{?=BCCC}^{__C3DMeshElement}^{__C3DMeshSource}^{__C3DMesh}^v^v}{?=CfIC(?={?=ff}{?=f}{?=f}{?=Cb1b1})}C}24, name: renderResourceForMorph:baseGeometry:
@@ -82,12 +83,13 @@ __attribute__((visibility("hidden")))
 -     // Error parsing type: @24@0:8^{__C3DMeshSource={__C3DGenericSource={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}^{__C3DSourceAccessor}(?=^{__CFData}^v^v)qb1b1b1}SCC}16, name: renderResourceForMeshSource:
 - (id)_bufferForData:(struct __CFData *)arg1 bytesPerIndex:(unsigned long long)arg2;
 - (id)renderResourceForRasterizerState:(struct __C3DRasterizerStates *)arg1 reverseZ:(BOOL)arg2;
+- (void)resetRasterizerStates;
 - (void)removeAllShaders;
 - (void)_geometryWillDie:(id)arg1;
 - (void)_materialWillDie:(id)arg1;
 - (void)_passWillDie:(id)arg1;
 - (void)_programWillDie:(id)arg1;
--     // Error parsing type: v32@0:8^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}16^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[4{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[5f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}24, name: _removeMatchingProgram:pass:
+-     // Error parsing type: v32@0:8^{__C3DFXProgram={__C3DEntity={__CFRuntimeBase=QAQ}^v^{__CFString}^{__CFString}^{__CFDictionary}^{__C3DScene}q}ib1b1^{__C3DFXProgramDelegate}}16^{__C3DFXPass={__CFRuntimeBase=QAQ}^{__CFString}iiB^{__C3DFXTechnique}^{__CFString}^{__CFString}^{__CFString}^{__CFString}B^{__C3DFXProgram}^{__C3DMaterial}^{__C3DBlendStates}^{__C3DRasterizerStates}{C3DColor4=(?=[4f]{?=ffff})}CIb1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1b1^{__C3DRendererElement}QQ{?=^?^?^?^?^?^?^?^?^v}{?=[8{?=CCCb1b1b1b1b1b1[4C]}]{?=CCCb1b1b1b1b1b1[4C]}b3b1b1}{CGPoint=dd}[9f]^{?}I^{__C3DNode}^{__C3DNode}^{__CFArray}^{__C3DNode}C^{__CFString}^{__CFString}^{__CFString}^^{__C3DFXPassInput}qq^{__CFDictionary}@?@?^{__CFDictionary}^v}24, name: _removeMatchingProgram:pass:
 - (void)_imageProxyWillDie:(id)arg1;
 - (void)_imageWillDie:(id)arg1;
 - (void)_skinWillDie:(id)arg1;
@@ -99,7 +101,7 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1;
 - (id)textureForSamplingTexture:(id)arg1 atSize:(unsigned long long)arg2 mipmapLevelCount:(unsigned long long *)arg3 renderContext:(id)arg4;
-- (id)reflectionProbeTextureForScene:(struct __C3DScene *)arg1 engineContext:(struct __C3DEngineContext *)arg2 commandBuffer:(id)arg3;
+- (id)areaLightPrecomputedDataTexture;
 - (id)specularDFGTextureWithRenderContext:(id)arg1;
 - (id)radianceTextureForEnvironmentTexture:(id)arg1 engineContext:(struct __C3DEngineContext *)arg2 commandBuffer:(id)arg3;
 - (id)newRadianceTextureForEnvironmentTexture:(id)arg1 engineContext:(struct __C3DEngineContext *)arg2 cpuAccessible:(BOOL)arg3 commandBuffer:(id)arg4;
@@ -120,8 +122,8 @@ __attribute__((visibility("hidden")))
 - (id)newComputePipelineStateForDesc:(CDStruct_4cea7480)arg1 library:(id)arg2;
 - (void)_configureComputePipeline:(id)arg1 withDescriptor:(id)arg2;
 - (id)_newComputeDescriptorForPipelineDesc:(CDStruct_4cea7480)arg1 library:(id)arg2;
-- (id)newRenderPipelineStateWithDesc:(CDStruct_0fd8ad93)arg1;
-- (void)_createPipelineStateWithDescriptor:(id)arg1 desc:(CDStruct_0fd8ad93)arg2 pipeline:(id)arg3;
+- (id)newRenderPipelineStateWithDesc:(CDStruct_2e1f3d1e)arg1;
+- (void)_createPipelineStateWithDescriptor:(id)arg1 desc:(CDStruct_2e1f3d1e)arg2 pipeline:(id)arg3;
 - (struct __C3DFXProgram *)defaultProgramUsingTessellation:(BOOL)arg1;
 - (id)renderResourceForProgramDesc:(CDStruct_089bc920)arg1 renderPassDescriptor:(id)arg2;
 - (id)iesTextureForProfile:(id)arg1 renderContext:(id)arg2;

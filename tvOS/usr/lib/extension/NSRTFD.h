@@ -40,7 +40,7 @@
 - (unsigned long long)internalWritePath:(id)arg1 errorHandler:(id)arg2 remapContents:(_Bool)arg3 hardLinkPath:(id)arg4;
 - (unsigned long long)writePath:(id)arg1 docInfo:(id)arg2 errorHandler:(id)arg3 remapContents:(_Bool)arg4 hardLinkPath:(id)arg5;
 - (unsigned long long)writePath:(id)arg1 docInfo:(id)arg2 errorHandler:(id)arg3 remapContents:(_Bool)arg4 markBusy:(_Bool)arg5 hardLinkPath:(id)arg6;
-- (unsigned long long)initFromDocument:(id)arg1;
+- (id)initFromDocument:(id)arg1 error:(unsigned long long *)arg2;
 - (unsigned long long)initUnixFile:(id)arg1;
 - (id)setPackage:(_Bool)arg1;
 - (_Bool)isPackage;

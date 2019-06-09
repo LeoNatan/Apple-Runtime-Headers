@@ -31,7 +31,7 @@
 + (id)sharedInstance;
 + (void)setSharedInstanceQueue:(id)arg1;
 - (void)enableTestMode;
-- (struct BTDeviceImpl *)deviceFromIdentifier:(id)arg1;
+- (id)deviceFromIdentifier:(id)arg1;
 - (_Bool)isServiceSupported:(unsigned int)arg1;
 - (id)connectedDeviceNamesThatMayBeBlacklisted;
 - (void)_updateBluetoothState;
@@ -81,6 +81,7 @@
 - (id)addDeviceIfNeeded:(struct BTDeviceImpl *)arg1;
 - (_Bool)isAnyoneAdvertising;
 - (_Bool)isAnyoneScanning;
+- (void)_notifyFirstDeviceUnlockCompleted;
 - (void)_updateBlacklistMode;
 - (void)_updateAirplaneModeStatus;
 - (void)_powerChanged;

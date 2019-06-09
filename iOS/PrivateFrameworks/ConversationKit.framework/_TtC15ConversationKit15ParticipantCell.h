@@ -8,7 +8,6 @@
 
 @class NSString, _TtC15ConversationKit15ParticipantView;
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit15ParticipantCell : UICollectionViewCell
 {
     // Error parsing type: , name: participantIdentifier
@@ -17,7 +16,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-@property(nonatomic, copy) NSString *accessibilityDisplayName; // @synthesize accessibilityDisplayName;
+@property(nonatomic, copy) NSString *accessibilityDisplayName;
 - (void)prepareForReuse;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

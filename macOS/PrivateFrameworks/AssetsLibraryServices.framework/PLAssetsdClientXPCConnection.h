@@ -8,7 +8,7 @@
 
 #import <AssetsLibraryServices/PLXPCProxyCreating-Protocol.h>
 
-@class NSString, NSXPCConnection, PLXPCMessageLogger;
+@class NSString, NSXPCConnection, PLAssetsdClientService, PLXPCMessageLogger;
 @protocol OS_dispatch_queue;
 
 @interface PLAssetsdClientXPCConnection : NSObject <PLXPCProxyCreating>
@@ -16,6 +16,7 @@
     NSObject<OS_dispatch_queue> *_isolationQueue;
     NSXPCConnection *_connection;
     PLXPCMessageLogger *_connectionLogger;
+    PLAssetsdClientService *_assetsdClientService;
     BOOL _isShuttingDown;
 }
 
@@ -29,6 +30,7 @@
 - (void)prepareToShutdown;
 - (void)handleInvalidation;
 - (void)handleInterruption;
+- (void)addPhotoLibraryUnavailabilityHandler:(CDUnknownBlockType)arg1;
 - (id)init;
 
 // Remaining properties

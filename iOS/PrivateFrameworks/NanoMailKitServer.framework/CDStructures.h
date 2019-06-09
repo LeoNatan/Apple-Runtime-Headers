@@ -208,3 +208,7 @@ typedef struct {
     unsigned int fullSyncVersion:1;
 } CDStruct_a125a100;
 
+typedef struct {
+    unsigned int requestTime:1;
+} CDStruct_b7a4e4f9;
+

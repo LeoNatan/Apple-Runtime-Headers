@@ -6,7 +6,7 @@
 
 #import <ARKit/ARTechnique.h>
 
-@class ARTimeKeyedList, ARWorldAlignmentData, NSObject;
+@class ARTimeKeyedList, ARWorldAlignmentData, CMMotionManager, NSObject;
 @protocol OS_dispatch_semaphore;
 
 @interface ARWorldAlignmentTechnique : ARTechnique
@@ -26,8 +26,10 @@
     NSObject<OS_dispatch_semaphore> *_dataSemaphore;
     long long _alignment;
     long long _cameraPosition;
+    CMMotionManager *_motionManager;
 }
 
+@property(retain, nonatomic) CMMotionManager *motionManager; // @synthesize motionManager=_motionManager;
 @property(readonly, nonatomic) long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
 @property(readonly, nonatomic) long long alignment; // @synthesize alignment=_alignment;
 - (void).cxx_destruct;

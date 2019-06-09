@@ -11,7 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface _SchemaRenditionTuple : NSObject
 {
-    struct _renditionkeytoken key[18];
+    struct _renditionkeytoken key[22];
     NSMutableDictionary *info;
 }
 

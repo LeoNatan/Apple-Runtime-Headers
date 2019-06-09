@@ -8,7 +8,7 @@
 
 #import <MapsSupport/MSPHistoryEntryRoute-Protocol.h>
 
-@class NSString;
+@class GEOComposedWaypoint, GEOURLRouteHandle, NSDate, NSString;
 @protocol MSPRouteInformationSource;
 
 @interface MSPMutableHistoryEntryRoute : MSPMutableHistoryEntry <MSPHistoryEntryRoute>
@@ -25,10 +25,11 @@
 - (BOOL)_isUserVisibleDuplicateOfSameClassObject:(id)arg1;
 - (id)transferToImmutableIfValidWithError:(out id *)arg1;
 @property(nonatomic, getter=navigationWasInterrupted) BOOL navigationInterrupted;
-- (id)routeHandle;
-- (long long)transportType;
-- (id)endWaypoint;
-- (id)startWaypoint;
+@property(readonly, nonatomic) BOOL navigationWasInterrupted;
+@property(readonly, nonatomic) GEOURLRouteHandle *routeHandle;
+@property(readonly, nonatomic) long long transportType;
+@property(readonly, nonatomic) GEOComposedWaypoint *endWaypoint;
+@property(readonly, nonatomic) GEOComposedWaypoint *startWaypoint;
 - (id)_routeRequestStorage;
 - (id)initWithStorage:(id)arg1;
 
@@ -37,6 +38,8 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) BOOL tracksRAPReportingOnly;
+@property(readonly, copy, nonatomic) NSDate *usageDate;
 
 @end
 

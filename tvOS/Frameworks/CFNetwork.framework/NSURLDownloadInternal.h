@@ -8,7 +8,6 @@
 
 @class NSOperationQueue, NSURLAuthenticationChallenge;
 
-__attribute__((visibility("hidden")))
 @interface NSURLDownloadInternal : NSObject
 {
     struct _CFURLDownload *cfDownload;

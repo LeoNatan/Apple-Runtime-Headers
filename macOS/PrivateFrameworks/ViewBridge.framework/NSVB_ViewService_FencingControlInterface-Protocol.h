@@ -11,6 +11,6 @@
 @optional
 - (void)__forgetFencingMessages;
 - (void)__endFencingMessagesForSendRight:(NSVB_ViewServiceXPCMachSendRight *)arg1;
-- (void)__beginFencingMessagesWithSendRight:(NSVB_ViewServiceXPCMachSendRight *)arg1;
+- (void)__beginFencingMessagesWithSendRight:(NSVB_ViewServiceXPCMachSendRight *)arg1 withReply:(void (^)(BOOL))arg2;
 @end
 

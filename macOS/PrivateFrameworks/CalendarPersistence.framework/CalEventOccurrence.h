@@ -8,7 +8,7 @@
 
 #import <CalendarPersistence/CalCacheableEventOccurrence-Protocol.h>
 
-@class CalManagedCalendar, CoreCalendarSource, NSColor, NSDate, NSManagedObjectID, NSMutableDictionary, NSNumber, NSString, NSTimeZone, NSURL;
+@class CalManagedCalendar, CoreCalendarSource, NSDate, NSManagedObjectID, NSMutableDictionary, NSNumber, NSString, NSTimeZone, NSURL;
 
 @interface CalEventOccurrence : NSObject <CalCacheableEventOccurrence>
 {
@@ -35,7 +35,6 @@
     NSNumber *_isAllDay;
     NSNumber *_travelDuration;
     NSString *_travelRouteType;
-    NSString *_birthdayTitle;
     NSNumber *_needsReply;
     NSNumber *_permission;
     NSNumber *_invitationMode;
@@ -124,7 +123,7 @@
 - (BOOL)isPrivateAndDelegateOrCalendarSharedToMe;
 - (BOOL)isPrivate;
 @property(readonly, nonatomic) unsigned long long calendarOrder;
-@property(readonly, retain, nonatomic) NSColor *color;
+@property(readonly, retain, nonatomic) NSString *color;
 @property(readonly, retain, nonatomic) CalManagedCalendar *calendar;
 - (BOOL)isValid;
 - (id)managedCalendarInUserOrChildContext;
@@ -136,13 +135,6 @@
 - (id)userOrChildContext;
 - (id)managedEventInUserOrChildContext;
 - (void)discardEditing;
-- (BOOL)deleteWithDelegate:(id)arg1;
-- (id)commitDateTimeChangeWithDelegate:(id)arg1 withEntityTimeZone:(BOOL)arg2;
-- (id)commitDateTimeChangeWithDelegate:(id)arg1;
-- (id)commitWithDelegate:(id)arg1 commitWholeRecurrence:(BOOL)arg2;
-- (id)commitWithDelegate:(id)arg1;
-- (id)commitEditingWithDelegate:(id)arg1;
-- (id)commitEditing;
 - (BOOL)validateForCommit;
 - (id)_entityPropertyForChangedKey:(id)arg1;
 - (id)_entityValueForValue:(id)arg1;

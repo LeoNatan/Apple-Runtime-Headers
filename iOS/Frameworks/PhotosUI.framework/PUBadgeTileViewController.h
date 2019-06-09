@@ -20,13 +20,16 @@ __attribute__((visibility("hidden")))
     _Bool __shouldAnimateNextBadgeViewUpdate;
     PUAssetViewModel *_assetViewModel;
     PXUIAssetBadgeView *__badgeView;
+    double __contentWidth;
     struct PXAssetBadgeInfo __badgeInfo;
 }
 
-+ (void)_configureBadgeView:(id)arg1 withBadgeInfo:(struct PXAssetBadgeInfo)arg2 isOverContent:(_Bool)arg3 animated:(_Bool)arg4;
-+ (struct CGSize)_badgeTileSizeForBadgeInfo:(struct PXAssetBadgeInfo)arg1;
-+ (struct CGSize)badgeTileSizeForAssetViewModel:(id)arg1;
++ (id)badgeSizeCacheKeyValueFromBadgeInfo:(struct PXAssetBadgeInfo)arg1 contentWidth:(double)arg2;
++ (void)_configureBadgeView:(id)arg1 withBadgeInfo:(struct PXAssetBadgeInfo)arg2 isOverContent:(_Bool)arg3 contentWidth:(double)arg4 animated:(_Bool)arg5;
++ (struct CGSize)_badgeTileSizeForBadgeInfo:(struct PXAssetBadgeInfo)arg1 contentWidth:(double)arg2;
++ (struct CGSize)badgeTileSizeForAssetViewModel:(id)arg1 contentWidth:(double)arg2;
 @property(nonatomic, setter=_setShouldAnimateNextBadgeViewUpdate:) _Bool _shouldAnimateNextBadgeViewUpdate; // @synthesize _shouldAnimateNextBadgeViewUpdate=__shouldAnimateNextBadgeViewUpdate;
+@property(nonatomic, setter=_setContentWidth:) double _contentWidth; // @synthesize _contentWidth=__contentWidth;
 @property(nonatomic, setter=_setOverContent:) _Bool _isOverContent; // @synthesize _isOverContent=__isOverContent;
 @property(readonly, nonatomic) PXUIAssetBadgeView *_badgeView; // @synthesize _badgeView=__badgeView;
 @property(nonatomic, setter=_setBadgeInfo:) struct PXAssetBadgeInfo _badgeInfo; // @synthesize _badgeInfo=__badgeInfo;

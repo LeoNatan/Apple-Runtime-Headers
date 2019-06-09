@@ -18,6 +18,7 @@
     NSURL *_url;
 }
 
++ (id)pauseVerdict;
 + (id)dataVerdictWithPassBytes:(unsigned long long)arg1 peekBytes:(unsigned long long)arg2;
 + (id)remediateVerdictWithRemediationURLMapKey:(id)arg1 remediationButtonTextMapKey:(id)arg2;
 + (id)dropVerdict;

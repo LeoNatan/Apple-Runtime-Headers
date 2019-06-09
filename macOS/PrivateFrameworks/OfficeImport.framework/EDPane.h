@@ -8,6 +8,7 @@
 
 @class EDReference;
 
+__attribute__((visibility("hidden")))
 @interface EDPane : NSObject
 {
     double mXSplitPosition;

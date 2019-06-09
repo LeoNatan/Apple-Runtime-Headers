@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (void)progressStateMachine:(id)arg1 ignoredEvent:(unsigned int)arg2;
 - (void)progressStateMachine:(id)arg1 didTransitionToState:(unsigned int)arg2 fromState:(unsigned int)arg3 forEvent:(unsigned int)arg4;
+- (_Bool)_canShowWhileLocked;
 - (void)loadView;
 - (_Bool)_shouldAcceptEventsFromStateMachine:(id)arg1;
 - (id)_stateMachine;

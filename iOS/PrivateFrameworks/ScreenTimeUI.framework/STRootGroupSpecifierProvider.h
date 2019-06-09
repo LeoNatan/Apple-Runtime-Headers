@@ -9,6 +9,7 @@
 @class NSObject;
 @protocol STRootViewModelCoordinator;
 
+__attribute__((visibility("hidden")))
 @interface STRootGroupSpecifierProvider : STGroupSpecifierProvider
 {
     NSObject<STRootViewModelCoordinator> *_coordinator;

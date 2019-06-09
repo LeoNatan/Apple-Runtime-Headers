@@ -10,20 +10,24 @@
 {
 }
 
++ (void)resumeNotificationQueue;
++ (void)suspendNotificationQueue;
 + (id)defaultsForTests;
 + (void)setUseMLModelForSelfIdForTests:(_Bool)arg1;
 + (void)setMessagesToProcessImmediatelyForTests:(int)arg1;
 + (void)setSyncHistoryToCloudForTests:(_Bool)arg1;
 + (void)setAllowGeocodeForTests:(_Bool)arg1;
-+ (void)setShowEventsFoundInMailForTests:(_Bool)arg1;
-+ (void)setShowContactsFoundInMailForTests:(_Bool)arg1;
 + (void)setContactsDetectionEnabledForTests:(_Bool)arg1;
++ (void)setRemindersDetectionEnabledForTests:(_Bool)arg1;
 + (void)setStructuredEventsDetectionEnabledForTests:(_Bool)arg1;
 + (void)setNLEventsDetectionEnabledForTests:(_Bool)arg1;
-+ (void)setProactiveEnabledForTests:(_Bool)arg1;
 + (void)setShowCancelledEventsForTests:(_Bool)arg1;
 + (void)setHidePastEventsForTests:(_Bool)arg1;
 + (_Bool)hidePastEventsForTests;
++ (void)setShowOperatingSystemVersionInSnippets:(_Bool)arg1;
++ (_Bool)showOperatingSystemVersionInSnippets;
++ (void)setUseManateeSaltForHistory:(_Bool)arg1;
++ (_Bool)useManateeSaltForHistory;
 + (void)setCloudKitPersistedState:(id)arg1;
 + (id)cloudKitPersistedState;
 + (_Bool)shouldHarvestEvents;
@@ -31,17 +35,20 @@
 + (void)setFirstPartyCalendarAppIsInstalled:(_Bool)arg1;
 + (void)setParsecFlightCachingAPIBaseURL:(id)arg1;
 + (id)parsecFlightCachingAPIBaseURL;
++ (void)setDetectReminders:(_Bool)arg1;
 + (void)setDetectContacts:(_Bool)arg1;
 + (void)setDetectNLEvents:(_Bool)arg1;
 + (void)setDetectStructuredEvents:(_Bool)arg1;
++ (void)updateDetection:(_Bool)arg1 forKey:(id)arg2;
++ (_Bool)detectReminders;
 + (_Bool)detectStructuredEvents;
 + (_Bool)detectNLEvents;
 + (_Bool)detectContacts;
-+ (void)setUseMLModelForSelfId:(_Bool)arg1;
 + (void)setContactSharingNegativeSamplingRate:(float)arg1;
 + (float)contactSharingNegativeSamplingRate;
 + (void)setUseMLModelForContactSharing:(_Bool)arg1;
 + (_Bool)useMLModelForContactSharing;
++ (void)setUseMLModelForSelfId:(_Bool)arg1;
 + (_Bool)useMLModelForSelfId;
 + (void)setUseMLModelForContacts:(_Bool)arg1;
 + (_Bool)useMLModelForContacts;
@@ -49,8 +56,6 @@
 + (_Bool)allowAgeBasedPruning;
 + (void)setAllowGeocode:(_Bool)arg1;
 + (_Bool)allowGeocode;
-+ (void)setShowEventsFoundInMail:(_Bool)arg1;
-+ (void)setShowContactsFoundInMail:(_Bool)arg1;
 + (void)setSyncHistoryToCloud:(_Bool)arg1;
 + (_Bool)syncHistoryToCloud;
 + (void)setMessagesToProcessImmediately:(int)arg1;
@@ -61,8 +66,6 @@
 + (_Bool)showSuggestionsCalendar;
 + (void)setHashedSessionsLogging:(int)arg1;
 + (int)hashedSessionsLogging;
-+ (_Bool)showEventsFoundInMail;
-+ (_Bool)showContactsFoundInMail;
 + (void)setOnlyShowSignificantNLEvents:(_Bool)arg1;
 + (_Bool)onlyShowSignificantNLEvents;
 + (void)setOnlyShowSignificantPseudoContacts:(_Bool)arg1;
@@ -75,6 +78,10 @@
 + (_Bool)showPastEvents;
 + (int)suggestionsLogLevel;
 + (void)resetAllPreferences;
++ (void)setShowEventsFoundInMail:(_Bool)arg1;
++ (_Bool)showEventsFoundInMail;
++ (void)setShowContactsFoundInMail:(_Bool)arg1;
++ (_Bool)showContactsFoundInMail;
 
 @end
 

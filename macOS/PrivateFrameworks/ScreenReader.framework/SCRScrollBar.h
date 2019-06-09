@@ -19,11 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (BOOL)brailleLineAllowsChildren;
-- (id)brailleLineElementForUIElement:(id)arg1;
-- (void)updateBrailleLineWithFocusedElement:(id)arg1;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
-- (void)sendBrailleLineWithElement:(id)arg1 focusThrough:(BOOL)arg2 forceRebuild:(BOOL)arg3;
+- (long long)brailleLineType;
 - (id)description;
 - (id)_defaultLocalizedStringForCommandKey:(id)arg1;
 - (id)typeDescription;
@@ -38,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactLeftWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactUpWithEvent:(id)arg1 request:(id)arg2;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)isControlElement;
 - (BOOL)isInteractive;
 - (BOOL)isVertical;

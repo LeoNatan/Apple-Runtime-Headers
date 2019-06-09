@@ -13,6 +13,7 @@
 
 @interface HDCodableFitnessFriendWorkout : PBCodable <HDDecoding, NSCopying>
 {
+    long long _amm;
     double _duration;
     double _goal;
     long long _goalType;
@@ -28,6 +29,7 @@
     NSData *_friendUUID;
     HDCodableSample *_sample;
     struct {
+        unsigned int amm:1;
         unsigned int duration:1;
         unsigned int goal:1;
         unsigned int goalType:1;
@@ -40,6 +42,7 @@
     } _has;
 }
 
+@property(nonatomic) long long amm; // @synthesize amm=_amm;
 @property(retain, nonatomic) NSString *deviceModel; // @synthesize deviceModel=_deviceModel;
 @property(retain, nonatomic) NSString *deviceManufacturer; // @synthesize deviceManufacturer=_deviceManufacturer;
 @property(nonatomic) long long isIndoorWorkout; // @synthesize isIndoorWorkout=_isIndoorWorkout;
@@ -64,6 +67,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(nonatomic) _Bool hasAmm;
 @property(readonly, nonatomic) _Bool hasDeviceModel;
 @property(readonly, nonatomic) _Bool hasDeviceManufacturer;
 @property(nonatomic) _Bool hasIsIndoorWorkout;

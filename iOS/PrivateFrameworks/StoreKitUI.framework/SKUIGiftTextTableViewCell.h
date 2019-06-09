@@ -10,6 +10,7 @@
 
 @class NSString, UILabel, UITextView, UIView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftTextTableViewCell : UITableViewCell <UITextViewDelegate>
 {
     UIView *_bottomBorderView;
@@ -18,9 +19,11 @@
     UILabel *_placeholderLabel;
     UITextView *_textView;
     UIView *_topBorderView;
+    _Bool _leftToRight;
 }
 
 + (id)newTextView;
+@property(nonatomic) _Bool leftToRight; // @synthesize leftToRight=_leftToRight;
 @property(retain, nonatomic) UITextView *textView; // @synthesize textView=_textView;
 @property(nonatomic) long long maximumCharacterCount; // @synthesize maximumCharacterCount=_maximumCharacterCount;
 - (void).cxx_destruct;

@@ -14,6 +14,10 @@
     CDStruct_1b6d18a9 _frameDuration;
 }
 
++ (int)fadeLengthForTrimRange:(CDStruct_5c5366e1)arg1 frameDuration:(CDStruct_1b6d18a9)arg2;
++ (int)loopPeriodForTrimRange:(CDStruct_5c5366e1)arg1 frameDuration:(CDStruct_1b6d18a9)arg2;
++ (int)loopStartForTrimRange:(CDStruct_5c5366e1)arg1 frameDuration:(CDStruct_1b6d18a9)arg2;
++ (id)loopParamsForTrimRange:(CDStruct_5c5366e1)arg1 frameDuration:(CDStruct_1b6d18a9)arg2;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 frameDuration; // @synthesize frameDuration=_frameDuration;
 @property(readonly, nonatomic) int fadeLength; // @synthesize fadeLength=_fadeLength;
 @property(readonly, nonatomic) int loopPeriod; // @synthesize loopPeriod=_loopPeriod;
@@ -32,7 +36,7 @@
 @property(readonly, nonatomic) CDStruct_1b6d18a9 startTime;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 loopDuration;
 @property(readonly, nonatomic) NURenderNode *input;
-- (id)initWithInput:(id)arg1 frameDuration:(CDStruct_1b6d18a9)arg2 settings:(id)arg3;
+- (id)initWithInput:(id)arg1 frameDuration:(CDStruct_1b6d18a9)arg2 trimRange:(CDStruct_5c5366e1)arg3 settings:(id)arg4;
 - (id)initWithSettings:(id)arg1 inputs:(struct NSDictionary *)arg2;
 
 @end

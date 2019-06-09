@@ -6,63 +6,63 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, _AXFScreenSourceHardware;
-@protocol AXFScreen, AXFScreenSource;
+#import <AccessibilityFoundation/AXFScreenSourceDelegate-Protocol.h>
 
-@interface AXFScreenManager : NSObject
+@class AXFScreen, NSArray, NSPointerArray, NSString, _AXFScreenSourceHardware;
+@protocol AXFScreenSource, OS_dispatch_queue;
+
+@interface AXFScreenManager : NSObject <AXFScreenSourceDelegate>
 {
     id <AXFScreenSource> _screenSource;
     _AXFScreenSourceHardware *__hardware;
+    NSPointerArray *__observers;
+    NSObject<OS_dispatch_queue> *__localQueue;
 }
 
-+ (void)applicationManager:(id)arg1 didUpdateRunningApplications:(id)arg2;
-+ (void)applicationManager:(id)arg1 didUpdateFrontmostApplication:(id)arg2;
-+ (void)_updateSpaceLevelIfSetupAssistantIsRunningApplication:(id)arg1;
-+ (void)_screenUnlocked:(id)arg1;
-+ (void)_screenLocked:(id)arg1;
-+ (void)_sessionDidMoveOffConsole:(id)arg1;
-+ (void)_fastUserSwitchingEnded:(id)arg1;
-+ (void)_fastUserSwitchingStarted:(id)arg1;
-+ (void)_updateSpaceLevels;
-+ (void)_updateInitialSessionState;
-+ (void)_setSpaceLevel:(int)arg1 forSpaceWithUUID:(id)arg2;
-+ (void)_updateLockScreenMonitoring;
-+ (unsigned long long)_multiMonitorSpaceIDFromUUID:(id)arg1;
-+ (void)stopAutomaticallyUpdatingMultiMonitorSpaceForLockScreenVisibility:(id)arg1;
-+ (void)automaticallyUpdateMultiMonitorSpaceForLockScreenVisibility:(id)arg1;
-+ (void)hideMultiMonitorSpace:(id)arg1;
-+ (void)showMultiMonitorSpace:(id)arg1;
-+ (void)moveWindow:(id)arg1 awayFromMultiMonitorSpace:(id)arg2;
-+ (void)moveWindow:(id)arg1 toMultiMonitorSpace:(id)arg2;
-+ (id)sharedManager;
 + (id)shared;
 + (id)keyPathsForValuesAffectingMainScreen;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *_localQueue; // @synthesize _localQueue=__localQueue;
+@property(retain, nonatomic) NSPointerArray *_observers; // @synthesize _observers=__observers;
 @property(retain, nonatomic) _AXFScreenSourceHardware *_hardware; // @synthesize _hardware=__hardware;
-@property(nonatomic) __weak id <AXFScreenSource> screenSource; // @synthesize screenSource=_screenSource;
 - (void).cxx_destruct;
-- (id)_screenContainingPoint:(struct CGPoint)arg1 usingRuleForTopLeftOriginCoordinateSpace:(BOOL)arg2;
-- (struct CGPoint)_pointOnScreen:(id)arg1 closestToPoint:(struct CGPoint)arg2;
+- (void)_enumerateNonNilObserversOnLocalQueueAndPerform:(CDUnknownBlockType)arg1;
+- (void)_signalMainScreenChanged:(id)arg1;
+- (void)_signalScreensChanged:(id)arg1;
+- (id)_screenClosestToRect:(struct CGRect)arg1;
+- (id)_screenContainingPoint:(struct CGPoint)arg1 exclusingEdges:(unsigned long long)arg2;
 - (id)_screenAtIndex:(unsigned long long)arg1;
 - (struct CGRect)_invertYCoordinateOfRectInScreenSpace:(struct CGRect)arg1;
-- (struct CGPoint)validScreenPointClosestToPoint:(struct CGPoint)arg1;
+- (void)screenSource:(id)arg1 mainScreenChanged:(id)arg2;
+- (void)screenSource:(id)arg1 screensChanged:(id)arg2;
+- (struct CGRect)fullyOnScreenRectClosestToRect:(struct CGRect)arg1 consideringPriorRect:(struct CGRect)arg2;
+- (struct CGRect)fullyOnScreenRectClosestToRect:(struct CGRect)arg1;
+- (struct CGPoint)onScreenPointClosestToPoint:(struct CGPoint)arg1 consideringPriorPoint:(struct CGPoint)arg2;
+- (struct CGPoint)onScreenPointClosestToPoint:(struct CGPoint)arg1;
 - (id)screenContainingMostOfRect:(struct CGRect)arg1;
 - (id)screenContainingPoint:(struct CGPoint)arg1;
 - (BOOL)isPointOnAnyScreen:(struct CGPoint)arg1;
 - (struct CGRect)convertRectToTopLeftOriginScreenCoordinateSpace:(struct CGRect)arg1;
 - (struct CGRect)convertRectToBottomLeftOriginScreenCoordinateSpace:(struct CGRect)arg1;
 - (struct CGPoint)convertPointToTopLeftOriginScreenCoordinateSpace:(struct CGPoint)arg1;
-- (struct CGPoint)convertToTopLeftOriginScreenCoordinateSpace:(struct CGPoint)arg1;
 - (struct CGPoint)convertPointToBottomLeftOriginScreenCoordinateSpace:(struct CGPoint)arg1;
-- (struct CGPoint)convertToBottomLeftOriginScreenCoordinateSpace:(struct CGPoint)arg1;
-- (struct CGRect)invertYCoordinateOfRectInScreenSpace:(struct CGRect)arg1;
-- (struct CGPoint)invertYCoordinateOfPointInScreenSpace:(struct CGPoint)arg1;
-- (id)init;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
+@property(retain, nonatomic) id <AXFScreenSource> screenSource; // @synthesize screenSource=_screenSource;
+@property(readonly, nonatomic) double maximumBackingScaleFactor;
 @property(readonly, nonatomic) struct CGRect totalScreenBounds;
 @property(readonly, nonatomic) NSArray *allScreenFrames;
 @property(readonly, nonatomic) NSArray *allScreens;
-@property(readonly) id <AXFScreen> mainScreen;
-@property(readonly, nonatomic) id <AXFScreen> primaryScreen;
+@property(readonly, nonatomic) AXFScreen *mouseScreen;
+@property(readonly) AXFScreen *mainScreen;
+@property(readonly, nonatomic) AXFScreen *primaryScreen;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

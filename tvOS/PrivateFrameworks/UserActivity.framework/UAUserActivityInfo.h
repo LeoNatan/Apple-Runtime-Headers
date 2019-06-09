@@ -24,6 +24,7 @@
     _Bool _dirty;
     _Bool _payloadAvailable;
     _Bool _payloadRequested;
+    _Bool _isActive;
     NSUUID *_uuid;
     unsigned long long _type;
     NSString *_title;
@@ -44,6 +45,7 @@
     NSString *_persistentIdentifier;
     NSError *_error;
     SFPeerDevice *_peerDevice;
+    NSString *_peerDeviceType;
     NSString *_bundleIdentifier;
     _LSUserActivityWasContinuedInfo *_wasContinuedInfo;
 }
@@ -52,7 +54,9 @@
 + (_Bool)supportsSecureCoding;
 @property(retain) _LSUserActivityWasContinuedInfo *wasContinuedInfo; // @synthesize wasContinuedInfo=_wasContinuedInfo;
 @property(copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
+@property(copy) NSString *peerDeviceType; // @synthesize peerDeviceType=_peerDeviceType;
 @property(retain) SFPeerDevice *peerDevice; // @synthesize peerDevice=_peerDevice;
+@property _Bool isActive; // @synthesize isActive=_isActive;
 @property(getter=isPayloadRequested) _Bool payloadRequested; // @synthesize payloadRequested=_payloadRequested;
 @property(getter=isPayloadAvailable) _Bool payloadAvailable; // @synthesize payloadAvailable=_payloadAvailable;
 @property(readonly, getter=isDirty) _Bool dirty; // @synthesize dirty=_dirty;
@@ -90,6 +94,7 @@
 - (void)clearPayload;
 - (_Bool)wasResumedOnAnotherDeviceWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (_Bool)requestPayloadWithCompletionHandlerEvenIfClean:(_Bool)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchAllNearbyAppSuggestions:(CDUnknownBlockType)arg1;
 - (_Bool)requestPayloadWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)optionalUserActivityData;
 - (id)secondaryUserActivityString;

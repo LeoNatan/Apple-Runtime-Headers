@@ -6,14 +6,15 @@
 
 #import <ControlCenterUI/NSObject-Protocol.h>
 
-@class CCUIContentModuleContainerViewController, CCUIModuleCollectionViewController, UIView;
+@class CCUIContentModuleContainerViewController, CCUIModuleCollectionViewController, UIViewController;
 @protocol CCUIContentModule;
 
 @protocol CCUIModuleCollectionViewControllerDelegate <NSObject>
 - (void)moduleCollectionViewController:(CCUIModuleCollectionViewController *)arg1 didUpdateHomeGestureDismissalAllowed:(_Bool)arg2;
-- (UIView *)obscuringBackgroundViewForModuleCollectionViewController:(CCUIModuleCollectionViewController *)arg1;
 - (void)moduleCollectionViewController:(CCUIModuleCollectionViewController *)arg1 willRemoveModuleContainerViewController:(CCUIContentModuleContainerViewController *)arg2;
 - (void)moduleCollectionViewController:(CCUIModuleCollectionViewController *)arg1 didAddModuleContainerViewController:(CCUIContentModuleContainerViewController *)arg2;
+- (void)moduleCollectionViewController:(CCUIModuleCollectionViewController *)arg1 willDismissViewController:(UIViewController *)arg2;
+- (void)moduleCollectionViewController:(CCUIModuleCollectionViewController *)arg1 willPresentViewController:(UIViewController *)arg2;
 - (void)moduleCollectionViewController:(CCUIModuleCollectionViewController *)arg1 didCloseExpandedModule:(id <CCUIContentModule>)arg2;
 - (void)moduleCollectionViewController:(CCUIModuleCollectionViewController *)arg1 willCloseExpandedModule:(id <CCUIContentModule>)arg2;
 - (void)moduleCollectionViewController:(CCUIModuleCollectionViewController *)arg1 didOpenExpandedModule:(id <CCUIContentModule>)arg2;

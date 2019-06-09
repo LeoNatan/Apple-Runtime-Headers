@@ -25,6 +25,7 @@
 + (id)canonicalRequestForRequest:(id)arg1;
 + (_Bool)canInitWithRequest:(id)arg1;
 + (id)_makeRequestCanonicalByMakingRequestURLCanonical:(id)arg1;
++ (Class)_protocolClassForRequest:(id)arg1 skipAppSSO:(_Bool)arg2;
 + (Class)_protocolClassForRequest:(id)arg1;
 - (id)initWithTask:(id)arg1 cachedResponse:(id)arg2 client:(id)arg3;
 - (void)stopLoading;
@@ -34,6 +35,7 @@
 @property(readonly, copy) NSURLRequest *request;
 @property(readonly, retain) id <NSURLProtocolClient> client;
 - (id)initWithRequest:(id)arg1 cachedResponse:(id)arg2 client:(id)arg3;
+- (id)init;
 
 @end
 

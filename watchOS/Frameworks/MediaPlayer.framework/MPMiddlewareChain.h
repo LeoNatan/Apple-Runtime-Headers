@@ -11,11 +11,13 @@
 @interface MPMiddlewareChain : NSObject
 {
     NSEnumerator *_middlewareEnumerator;
+    SEL _builderSelector;
 }
 
 + (void)_addBuilderProtocol:(id)arg1;
 + (void)registerReturnType:(const char *)arg1 returnValueBlock:(id)arg2;
 + (id)builderProxyForProtocol:(id)arg1;
+@property(nonatomic) SEL builderSelector; // @synthesize builderSelector=_builderSelector;
 - (void).cxx_destruct;
 - (id)nextObject;
 - (id)initWithMiddleware:(id)arg1 protocol:(id)arg2;

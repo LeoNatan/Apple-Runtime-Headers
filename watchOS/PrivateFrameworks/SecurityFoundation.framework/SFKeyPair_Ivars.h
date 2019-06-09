@@ -8,7 +8,7 @@
 
 @interface SFKeyPair_Ivars : NSObject
 {
-    struct __SecKey *secKey;
+    // Error parsing type: ^{__SecKey={__CFRuntimeBase=IAI}^{__SecKeyDescriptor}^v}, name: secKey
     struct NSString *privateKeyDomain;
 }
 

@@ -8,7 +8,6 @@
 
 @class NSData;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFURLLocalStreamTaskWorkRead : __NSCFURLLocalStreamTaskWork
 {
     unsigned int _minBytes;

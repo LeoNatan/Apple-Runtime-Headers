@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <UIKit/UICollectionViewFlowLayout.h>
+#import <UIKit/UICollectionViewLayout.h>
 
 #import <PassKitUI/PKDashboardLayout-Protocol.h>
 #import <PassKitUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class NSString;
+@class NSMutableDictionary, NSString;
 
-@interface PKDashboardPassFlowLayout : UICollectionViewFlowLayout <UIGestureRecognizerDelegate, PKDashboardLayout>
+@interface PKDashboardPassFlowLayout : UICollectionViewLayout <UIGestureRecognizerDelegate, PKDashboardLayout>
 {
     _Bool _needsCustomLocation;
     _Bool _userIsActivelyDragging;
@@ -22,10 +22,15 @@
     _Bool _showNonPassCells;
     float _revealingContentOffset;
     struct CGSize _passCellSize;
+    NSMutableDictionary *_attributesPerIndexPath;
+    struct CGSize _currentSize;
+    _Bool _isCompactUI;
+    _Bool _preventLayoutComputation;
     _Bool _fade;
 }
 
 @property(nonatomic) _Bool fade; // @synthesize fade=_fade;
+- (void).cxx_destruct;
 - (void)passPanDidEnd;
 - (void)passPanDidBegin;
 - (id)_customAttribuesForPassAtTheTop:(id)arg1;
@@ -36,14 +41,14 @@
 - (struct UIEdgeInsets)insetsForSection:(int)arg1;
 - (struct CGSize)collectionViewContentSize;
 - (void)finalizeCollectionViewUpdates;
-- (void)_adjustFrameForRevealingWithAttributes:(id)arg1;
-- (id)initialLayoutAttributesForAppearingDecorationElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)initialLayoutAttributesForAppearingItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForElementsInRect:(struct CGRect)arg1;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect)arg1;
 - (_Bool)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
+- (void)_adjustItems:(id)arg1 withLateralMove:(float)arg2;
 - (void)prepareLayout;
+- (void)invalidateLayoutWithContext:(id)arg1;
 - (id)init;
 
 // Remaining properties

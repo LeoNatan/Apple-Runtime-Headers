@@ -9,7 +9,6 @@
 @class BookmarksUndoController, BookmarksViewController;
 
 @protocol BookmarksViewControllerDelegate <NSObject>
-- (struct TabPlacementHint)tabPlacementHintForBookmarksViewController:(BookmarksViewController *)arg1;
 - (BookmarksUndoController *)bookmarksUndoControllerForBookmarksViewController:(BookmarksViewController *)arg1;
 - (void)bookmarksViewControllerDidChangePageTitle:(BookmarksViewController *)arg1;
 - (BOOL)shouldUsePrivateBrowsingInBookmarksViewController:(BookmarksViewController *)arg1;

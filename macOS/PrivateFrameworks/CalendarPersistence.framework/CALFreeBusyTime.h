@@ -20,6 +20,7 @@
 @property int freeBusyType; // @synthesize freeBusyType=_freeBusyType;
 @property(retain) CALTimeRange *freeBusyTimeRange; // @synthesize freeBusyTimeRange=_freeBusyTimeRange;
 - (void).cxx_destruct;
+- (id)description;
 - (id)freeBusyDateRange;
 - (id)initWithTimeRange:(id)arg1;
 - (id)initWithDateRange:(id)arg1;

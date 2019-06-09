@@ -11,6 +11,7 @@
 }
 
 + (id)errorWithCode:(long long)arg1;
++ (id)errorWithCode:(long long)arg1 underlyingPOSIXErrorCode:(long long)arg2;
 + (id)errorWithCode:(long long)arg1 underlyingRestoreErrorCode:(long long)arg2 userInfo:(id)arg3;
 + (id)errorWithCode:(long long)arg1 underlyingError:(id)arg2 userInfo:(id)arg3;
 + (id)localizedInternalRecoverySuggestionForErrorCode:(long long)arg1 userInfo:(id)arg2;

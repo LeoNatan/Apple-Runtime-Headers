@@ -9,11 +9,11 @@
 #import <AddressBookCore/ABMetadataInfoFileDelegate-Protocol.h>
 #import <AddressBookCore/ABMetadataManager-Protocol.h>
 
-@class ABAddressBook, ABMetadataIgnoredDirectories, ABMetadataInfoFile, ABMetadataOperationSanityChecker, ABProcessSharedLock, NSMutableDictionary, NSOperationQueue, NSString;
+@class ABAddressBook, ABMetadataIgnoredDirectories, ABMetadataInfoFile, ABMetadataOperationSanityChecker, CNProcessSharedLock, NSMutableDictionary, NSOperationQueue, NSString;
 
 @interface ABMetadataOperationController : NSObject <ABMetadataInfoFileDelegate, ABMetadataManager>
 {
-    ABProcessSharedLock *_metadataSharedLock;
+    CNProcessSharedLock *_metadataSharedLock;
     NSString *_metadataDirectory;
     ABMetadataInfoFile *_infoFile;
     ABAddressBook *_weakAddressBook;
@@ -83,6 +83,8 @@
 - (BOOL)lockInfo;
 - (void)postpone;
 - (void)_postpone;
+- (void)init_prepareMetadataLock;
+- (void)init_prepareMetadataDirectory;
 - (id)initWithAddressBook:(id)arg1 ignoredDirectories:(id)arg2;
 - (id)initWithAddressBook:(id)arg1;
 - (id)currentChecksumForDatabase;

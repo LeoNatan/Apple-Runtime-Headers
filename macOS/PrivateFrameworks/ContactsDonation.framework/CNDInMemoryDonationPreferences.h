@@ -15,6 +15,7 @@
     BOOL _donationsEnabled;
 }
 
++ (id)observableWithPreferences:(id)arg1 notificationCenter:(id)arg2 schedulerProvider:(id)arg3;
 @property(nonatomic, getter=isDonationsEnabled) BOOL donationsEnabled; // @synthesize donationsEnabled=_donationsEnabled;
 
 // Remaining properties

@@ -6,52 +6,82 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSString, NSURLRequest, NSURLResponse, NSUUID;
+#import <CFNetwork/NSSecureCoding-Protocol.h>
 
-@interface NSURLSessionTaskTransactionMetrics : NSObject
+@class NSDate, NSNumber, NSString, NSURLRequest, NSURLResponse, NSUUID, __CFN_TransactionMetrics;
+
+@interface NSURLSessionTaskTransactionMetrics : NSObject <NSSecureCoding>
 {
+    BOOL __connectionTimingCached;
+    BOOL __forCache;
+    __CFN_TransactionMetrics *__metrics;
+    CDStruct_2e8cb519 __connectionTiming;
 }
 
-- (void)dealloc;
-- (id)_initWithPerformanceTiming:(struct __PerformanceTiming *)arg1;
-- (id)initWithNoInit;
++ (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) BOOL _forCache; // @synthesize _forCache=__forCache;
+@property(readonly, nonatomic) __CFN_TransactionMetrics *_metrics; // @synthesize _metrics=__metrics;
+@property(nonatomic) BOOL _connectionTimingCached; // @synthesize _connectionTimingCached=__connectionTimingCached;
+@property(nonatomic) CDStruct_2e8cb519 _connectionTiming; // @synthesize _connectionTiming=__connectionTiming;
+- (void).cxx_destruct;
+- (id)description;
+@property(readonly, getter=isMultipath) BOOL multipath;
+@property(readonly, getter=isConstrained) BOOL constrained;
+@property(readonly, getter=isExpensive) BOOL expensive;
+@property(readonly, getter=isCellular) BOOL cellular;
+@property(readonly, copy) NSNumber *negotiatedTLSCipherSuite;
+@property(readonly, copy) NSNumber *negotiatedTLSProtocolVersion;
+@property(readonly, copy) NSNumber *remotePort;
+@property(readonly, copy) NSString *remoteAddress;
+@property(readonly, copy) NSNumber *localPort;
+@property(readonly, copy) NSString *localAddress;
+@property(readonly) long long countOfResponseBodyBytesAfterDecoding;
+@property(readonly) long long countOfResponseBodyBytesReceived;
+@property(readonly) long long countOfResponseHeaderBytesReceived;
+@property(readonly) long long countOfRequestBodyBytesBeforeEncoding;
+@property(readonly) long long countOfRequestBodyBytesSent;
+@property(readonly) long long countOfRequestHeaderBytesSent;
+@property(readonly) long long resourceFetchType;
+@property(readonly, getter=isReusedConnection) BOOL reusedConnection;
+@property(readonly, getter=isProxyConnection) BOOL proxyConnection;
+@property(readonly, copy) NSString *networkProtocolName;
+@property(readonly, copy) NSDate *responseEndDate;
+@property(readonly, copy) NSDate *responseStartDate;
+@property(readonly, copy) NSDate *requestEndDate;
+@property(readonly, copy) NSDate *requestStartDate;
+@property(readonly, copy) NSDate *connectEndDate;
+@property(readonly, copy) NSDate *secureConnectionEndDate;
+@property(readonly, copy) NSDate *secureConnectionStartDate;
+@property(readonly, copy) NSDate *connectStartDate;
+@property(readonly, copy) NSDate *domainLookupEndDate;
+@property(readonly, copy) NSDate *domainLookupStartDate;
+@property(readonly, copy) NSDate *fetchStartDate;
+@property(readonly, copy) NSURLResponse *response;
+@property(readonly, copy) NSURLRequest *request;
+- (void)translateConnectionTiming;
+- (id)initWithMetrics:(id)arg1 forCache:(BOOL)arg2;
 - (id)init;
-
-// Remaining properties
-@property BOOL _apsRelayAttempted; // @dynamic _apsRelayAttempted;
-@property BOOL _apsRelaySucceeded; // @dynamic _apsRelaySucceeded;
-@property BOOL _cellular; // @dynamic _cellular;
-@property(copy) NSUUID *_connectionIdentifier; // @dynamic _connectionIdentifier;
-@property BOOL _connectionRace; // @dynamic _connectionRace;
-@property(copy) NSString *_localAddressAndPort; // @dynamic _localAddressAndPort;
-@property BOOL _localCache; // @dynamic _localCache;
-@property unsigned int _redirected; // @dynamic _redirected;
-@property(copy) NSString *_remoteAddressAndPort; // @dynamic _remoteAddressAndPort;
-@property long long _requestHeaderBytesSent; // @dynamic _requestHeaderBytesSent;
-@property long long _responseBodyBytesDecoded; // @dynamic _responseBodyBytesDecoded;
-@property long long _responseBodyBytesReceived; // @dynamic _responseBodyBytesReceived;
-@property long long _responseHeaderBytesReceived; // @dynamic _responseHeaderBytesReceived;
-@property BOOL _secureConnection; // @dynamic _secureConnection;
-@property BOOL _serverPush; // @dynamic _serverPush;
-@property long long _totalBytesReceived; // @dynamic _totalBytesReceived;
-@property long long _totalBytesSent; // @dynamic _totalBytesSent;
-@property(copy) NSDate *connectEndDate; // @dynamic connectEndDate;
-@property(copy) NSDate *connectStartDate; // @dynamic connectStartDate;
-@property(copy) NSDate *domainLookupEndDate; // @dynamic domainLookupEndDate;
-@property(copy) NSDate *domainLookupStartDate; // @dynamic domainLookupStartDate;
-@property(copy) NSDate *fetchStartDate; // @dynamic fetchStartDate;
-@property(copy) NSString *networkProtocolName; // @dynamic networkProtocolName;
-@property(getter=isProxyConnection) BOOL proxyConnection; // @dynamic proxyConnection;
-@property(copy) NSURLRequest *request; // @dynamic request;
-@property(copy) NSDate *requestEndDate; // @dynamic requestEndDate;
-@property(copy) NSDate *requestStartDate; // @dynamic requestStartDate;
-@property long long resourceFetchType; // @dynamic resourceFetchType;
-@property(copy) NSURLResponse *response; // @dynamic response;
-@property(copy) NSDate *responseEndDate; // @dynamic responseEndDate;
-@property(copy) NSDate *responseStartDate; // @dynamic responseStartDate;
-@property(getter=isReusedConnection) BOOL reusedConnection; // @dynamic reusedConnection;
-@property(copy) NSDate *secureConnectionEndDate; // @dynamic secureConnectionEndDate;
-@property(copy) NSDate *secureConnectionStartDate; // @dynamic secureConnectionStartDate;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+@property(readonly) BOOL _usesMultipath;
+@property(readonly) unsigned int _negotiatedTLSCipher;
+@property(readonly) int _negotiatedTLSProtocol;
+@property(readonly) long long _totalBytesReceived;
+@property(readonly) long long _totalBytesSent;
+@property(readonly) BOOL _apsRelaySucceeded;
+@property(readonly) BOOL _apsRelayAttempted;
+@property(readonly) long long _responseBodyBytesDecoded;
+@property(readonly) long long _responseBodyBytesReceived;
+@property(readonly) long long _responseHeaderBytesReceived;
+@property(readonly) long long _requestHeaderBytesSent;
+@property(readonly, copy) NSUUID *_connectionIdentifier;
+@property(readonly, copy) NSString *_remoteAddressAndPort;
+@property(readonly, copy) NSString *_localAddressAndPort;
+@property(readonly) unsigned int _redirected;
+@property(readonly) BOOL _connectionRace;
+@property(readonly) BOOL _serverPush;
+@property(readonly) BOOL _localCache;
+@property(readonly) BOOL _secureConnection;
 
 @end
 

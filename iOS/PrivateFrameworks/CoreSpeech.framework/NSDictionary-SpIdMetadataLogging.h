@@ -8,5 +8,8 @@
 
 @interface NSDictionary (SpIdMetadataLogging)
 - (void)logSpeakerIdMetadataAtFilepath:(id)arg1 additionalMetadata:(id)arg2;
+- (id)speakerIdDetected;
+- (id)_cs_xpcObject;
+- (id)_cs_initWithXPCObject:(id)arg1;
 @end
 

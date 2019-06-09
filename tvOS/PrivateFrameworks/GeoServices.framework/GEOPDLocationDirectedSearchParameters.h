@@ -8,31 +8,44 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLatLng, GEOPDNearestTransitParameters, GEOPDViewportInfo, NSString, PBUnknownFields;
+@class GEOLatLng, GEOPDNearestTransitParameters, GEOPDViewportInfo, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDLocationDirectedSearchParameters : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
-    unsigned int _maxResults;
     GEOPDNearestTransitParameters *_nearestTransitParameters;
     GEOLatLng *_searchLocation;
     NSString *_searchString;
+    GEOPDViewportInfo *_viewportInfo;
+    unsigned int _maxResults;
     int _searchType;
     int _sortOrder;
-    GEOPDViewportInfo *_viewportInfo;
     struct {
-        unsigned int maxResults:1;
-        unsigned int searchType:1;
-        unsigned int sortOrder:1;
-    } _has;
+        unsigned int has_maxResults:1;
+        unsigned int has_searchType:1;
+        unsigned int has_sortOrder:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_nearestTransitParameters:1;
+        unsigned int read_searchLocation:1;
+        unsigned int read_searchString:1;
+        unsigned int read_viewportInfo:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_nearestTransitParameters:1;
+        unsigned int wrote_searchLocation:1;
+        unsigned int wrote_searchString:1;
+        unsigned int wrote_viewportInfo:1;
+        unsigned int wrote_maxResults:1;
+        unsigned int wrote_searchType:1;
+        unsigned int wrote_sortOrder:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDNearestTransitParameters *nearestTransitParameters; // @synthesize nearestTransitParameters=_nearestTransitParameters;
-@property(retain, nonatomic) GEOLatLng *searchLocation; // @synthesize searchLocation=_searchLocation;
-@property(retain, nonatomic) GEOPDViewportInfo *viewportInfo; // @synthesize viewportInfo=_viewportInfo;
-@property(retain, nonatomic) NSString *searchString; // @synthesize searchString=_searchString;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -41,22 +54,31 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDNearestTransitParameters *nearestTransitParameters;
 @property(readonly, nonatomic) _Bool hasNearestTransitParameters;
+- (void)_readNearestTransitParameters;
 - (int)StringAsSearchType:(id)arg1;
 - (id)searchTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasSearchType;
-@property(nonatomic) int searchType; // @synthesize searchType=_searchType;
+@property(nonatomic) int searchType;
+@property(retain, nonatomic) GEOLatLng *searchLocation;
 @property(readonly, nonatomic) _Bool hasSearchLocation;
+- (void)_readSearchLocation;
+@property(retain, nonatomic) GEOPDViewportInfo *viewportInfo;
 @property(readonly, nonatomic) _Bool hasViewportInfo;
+- (void)_readViewportInfo;
+@property(retain, nonatomic) NSString *searchString;
 @property(readonly, nonatomic) _Bool hasSearchString;
+- (void)_readSearchString;
 @property(nonatomic) _Bool hasMaxResults;
-@property(nonatomic) unsigned int maxResults; // @synthesize maxResults=_maxResults;
+@property(nonatomic) unsigned int maxResults;
 - (int)StringAsSortOrder:(id)arg1;
 - (id)sortOrderAsString:(int)arg1;
 @property(nonatomic) _Bool hasSortOrder;
-@property(nonatomic) int sortOrder; // @synthesize sortOrder=_sortOrder;
+@property(nonatomic) int sortOrder;
 - (id)initWithSearchURLQuery:(id)arg1 coordinate:(CDStruct_c3b9c2ee)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
 
 @end

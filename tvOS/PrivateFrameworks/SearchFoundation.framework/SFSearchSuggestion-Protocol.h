@@ -11,6 +11,7 @@
 @protocol SFSearchSuggestion <NSObject>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(copy, nonatomic) NSString *utteranceText;
 @property(copy, nonatomic) NSString *scopedSearchApplicationBundleIdentifier;
 @property(copy, nonatomic) NSString *fbr;
 @property(nonatomic) _Bool previouslyEngaged;

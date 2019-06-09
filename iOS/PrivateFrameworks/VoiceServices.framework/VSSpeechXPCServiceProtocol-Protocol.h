@@ -6,16 +6,17 @@
 
 #import <VoiceServices/NSObject-Protocol.h>
 
-@class NSArray, NSString, VSPresynthesizedAudioRequest, VSSpeechRequest, VSVoiceAsset;
+@class NSArray, NSString, SATTSSpeechSynthesisStreaming, VSPresynthesizedAudioRequest, VSSpeechRequest, VSVoiceAsset;
 
 @protocol VSSpeechXPCServiceProtocol <NSObject>
+- (oneway void)forwardStreamObject:(SATTSSpeechSynthesisStreaming *)arg1;
 - (oneway void)getTTSServerVoicesWithFilter:(VSVoiceAsset *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
 - (oneway void)getLogToFile:(void (^)(_Bool))arg1;
 - (oneway void)setLogToFile:(_Bool)arg1;
 - (oneway void)getVoiceInfoForLanguageCode:(NSString *)arg1 footprint:(long long)arg2 gender:(long long)arg3 type:(long long)arg4 reply:(void (^)(VSVoiceAsset *))arg5;
 - (oneway void)getVoiceResourceForLanguage:(NSString *)arg1 reply:(void (^)(VSVoiceResourceAsset *))arg2;
-- (oneway void)getAutoDownloadedVoiceAssets:(void (^)(NSArray *))arg1;
-- (oneway void)setAutoDownloadedVoiceAssets:(NSArray *)arg1;
+- (oneway void)getAutoDownloadedVoiceAssetsWithClientID:(NSString *)arg1 reply:(void (^)(NSArray *))arg2;
+- (oneway void)setAutoDownloadedVoiceAssets:(NSArray *)arg1 withClientID:(NSString *)arg2;
 - (oneway void)getLocalVoiceResourcesReply:(void (^)(NSArray *, NSError *))arg1;
 - (oneway void)getLocalVoicesReply:(void (^)(NSArray *, NSError *))arg1;
 - (oneway void)cleanUnusedAssets:(void (^)(NSError *))arg1;

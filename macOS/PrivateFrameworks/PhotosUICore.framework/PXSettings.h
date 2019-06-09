@@ -6,31 +6,40 @@
 
 #import <UXKit/_UXSettings.h>
 
-@class NSMutableSet;
+@class NSMutableSet, NSSet;
 
 @interface PXSettings : _UXSettings
 {
     NSMutableSet *_archivedSettings;
+    NSSet *_cachedTransientProperties;
     long long _version;
 }
 
 + (id)_signatureDictionaryWithDefaultSettings:(id *)arg1;
 + (id)_defaultsKey;
 + (id)_userDefaults;
++ (id)transientProperties;
 + (id)createSharedInstance;
 + (id)sharedInstance;
++ (void)setSuiteName:(id)arg1;
++ (id)suiteName;
 + (id)settingsControllerModule;
 @property(nonatomic) long long version; // @synthesize version=_version;
 - (void).cxx_destruct;
+- (void)addDeferredKeyPathObserver:(id)arg1;
+- (void)addDeferredKeyObserver:(id)arg1;
 - (void)removeKeyPathObserver:(id)arg1;
 - (void)addKeyPathObserver:(id)arg1;
 - (void)removeKeyObserver:(id)arg1;
 - (void)addKeyObserver:(id)arg1;
 - (void)defaultValueDidChangeForKey:(id)arg1;
 - (void)performPostSaveActions;
+- (void)applyArchiveValue:(id)arg1 forKey:(id)arg2;
 - (id)archiveValueForKey:(id)arg1;
+- (void)_validateArchivableValue:(id)arg1 forKey:(id)arg2;
 - (void)save;
 - (void)_resetValuesThatChangedBetweenCurrentDefaultValues:(id)arg1 andArchivedDefaultValues:(id)arg2 defaultSettings:(id)arg3;
+- (BOOL)_isTransientKey:(id)arg1;
 - (id)parentSettings;
 
 @end

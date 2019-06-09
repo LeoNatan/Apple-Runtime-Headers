@@ -6,7 +6,7 @@
 
 #import <SAObjects/SAUIButton.h>
 
-@class NSArray, NSString;
+@class NSArray, NSString, NSURL;
 
 @interface SAVCSContentButton : SAUIButton
 {
@@ -14,6 +14,7 @@
 
 + (id)contentButtonWithDictionary:(id)arg1 context:(id)arg2;
 + (id)contentButton;
+@property(copy, nonatomic) NSURL *url;
 @property(copy, nonatomic) NSArray *togglePlayPauseCommands;
 @property(copy, nonatomic) NSString *contentType;
 @property(copy, nonatomic) NSString *canonicalId;

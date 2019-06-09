@@ -9,5 +9,7 @@
 @interface NSWindow (QLPreviewPanelAdditions)
 - (BOOL)_qlIgnoreWindowForPreviewPanel:(id)arg1;
 - (id)_qlControllerCandidateForPreviewPanel:(id)arg1;
+- (BOOL)ql_isDesktopWindow;
+- (long long)_ql_windowNumberCreateIfNeeded;
 @end
 

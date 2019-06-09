@@ -7,13 +7,12 @@
 #import <UIKit/UIViewController.h>
 
 #import <PhotoLibrary/PLCropOverlayDelegate-Protocol.h>
-#import <PhotoLibrary/PLImageLoadingQueueDelegate-Protocol.h>
 #import <PhotoLibrary/PLPhotoTileViewControllerDelegate-Protocol.h>
 #import <PhotoLibrary/PLVideoViewDelegate-Protocol.h>
 
-@class NSString, NSURL, PLCropOverlay, PLImageCache, PLImageLoadingQueue, PLImageSource, PLManagedAsset, PLPhotoTileViewController, PLProgressView, PLVideoRemaker, PLVideoView, UIImage;
+@class NSString, NSURL, PLCropOverlay, PLManagedAsset, PLPhotoTileViewController, PLProgressView, PLVideoRemaker, PLVideoView, UIImage;
 
-@interface PLUIImageViewController : UIViewController <PLVideoViewDelegate, PLImageLoadingQueueDelegate, PLPhotoTileViewControllerDelegate, PLCropOverlayDelegate>
+@interface PLUIImageViewController : UIViewController <PLVideoViewDelegate, PLPhotoTileViewControllerDelegate, PLCropOverlayDelegate>
 {
     PLManagedAsset *_photo;
     struct CGImage *_imageRef;
@@ -25,9 +24,6 @@
     PLVideoRemaker *_remaker;
     PLProgressView *_progressView;
     NSURL *_videoURL;
-    PLImageCache *_imageCache;
-    PLImageLoadingQueue *_imageLoadingQueue;
-    PLImageSource *_imageSource;
     long long _previousStatusBarStyle;
     long long _newStatusBarStyle;
     unsigned int _allowEditing:1;
@@ -39,6 +35,9 @@
 
 - (unsigned long long)imagePickerSavingOptions;
 - (_Bool)imagePickerAllowsEditing;
+- (id)maxZoomScaleOverride;
+- (id)customBackgroundColor;
+- (id)cancelButtonTitle;
 - (id)chooseButtonTitle;
 - (_Bool)force1XCroppedImage;
 - (_Bool)forceNativeScreenScale;
@@ -50,7 +49,6 @@
 - (_Bool)doNotTranscode;
 - (void)handleVideoSelectionWithURL:(id)arg1 args:(id)arg2;
 - (void)handleMediaSelectionUsingTile:(id)arg1 managedAsset:(id)arg2 args:(id)arg3 includeEditing:(_Bool)arg4;
-- (void)imageLoadingQueue:(id)arg1 didLoadImage:(id)arg2 forAsset:(id)arg3 fromSource:(id)arg4;
 - (_Bool)photoTileViewControllerAllowsEditing:(id)arg1;
 - (void)photoTileViewControllerDidEndGesture:(id)arg1;
 - (void)photoTileViewControllerWillBeginGesture:(id)arg1;
@@ -59,7 +57,7 @@
 - (void)photoTileViewControllerRequestsFullSizeImage:(id)arg1;
 - (void)photoTileViewControllerCancelImageRequests:(id)arg1;
 - (void)photoTileViewControllerRequestsFullScreenImage:(id)arg1;
-- (int)imageFormat;
+- (unsigned short)imageFormat;
 - (void)photoTileViewController:(id)arg1 didDisappear:(_Bool)arg2;
 - (void)photoTileViewController:(id)arg1 didAppear:(_Bool)arg2;
 - (void)photoTileViewController:(id)arg1 willAppear:(_Bool)arg2;
@@ -91,7 +89,6 @@
 - (void)setAllowsEditing:(_Bool)arg1;
 - (void)_removedAsTopViewController;
 - (void)attachScrubberPalette;
-- (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (long long)_imagePickerStatusBarStyle;
 - (void)viewDidAppear:(_Bool)arg1;
@@ -102,6 +99,7 @@
 - (_Bool)prefersStatusBarHidden;
 - (long long)desiredStatusBarAnimation;
 - (_Bool)wantsStatusBarVisible;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillLayoutSubviews;
 - (void)loadView;
 - (Class)_viewClass;

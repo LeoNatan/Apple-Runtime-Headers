@@ -8,10 +8,12 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, PBUnknownFields;
+@class NSMutableArray, PBDataReader, PBUnknownFields;
 
 @interface GEORegionalResourceRegion : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     struct GEOTileSetRegion *_tileRanges;
     unsigned int _tileRangesCount;
@@ -19,15 +21,26 @@
     NSMutableArray *_attributions;
     NSMutableArray *_iconChecksums;
     NSMutableArray *_icons;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_tileRanges:1;
+        unsigned int read_attributions:1;
+        unsigned int read_iconChecksums:1;
+        unsigned int read_icons:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_tileRanges:1;
+        unsigned int wrote_attributions:1;
+        unsigned int wrote_iconChecksums:1;
+        unsigned int wrote_icons:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)iconChecksumType;
 + (Class)attributionType;
 + (Class)iconType;
-@property(retain, nonatomic) NSMutableArray *iconChecksums; // @synthesize iconChecksums=_iconChecksums;
-@property(retain, nonatomic) NSMutableArray *attributions; // @synthesize attributions=_attributions;
-@property(retain, nonatomic) NSMutableArray *icons; // @synthesize icons=_icons;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -36,26 +49,38 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)iconChecksumAtIndex:(unsigned int)arg1;
 - (unsigned int)iconChecksumsCount;
+- (void)_addNoFlagsIconChecksum:(id)arg1;
 - (void)addIconChecksum:(id)arg1;
 - (void)clearIconChecksums;
+@property(retain, nonatomic) NSMutableArray *iconChecksums;
+- (void)_readIconChecksums;
 - (id)attributionAtIndex:(unsigned int)arg1;
 - (unsigned int)attributionsCount;
+- (void)_addNoFlagsAttribution:(id)arg1;
 - (void)addAttribution:(id)arg1;
 - (void)clearAttributions;
+@property(retain, nonatomic) NSMutableArray *attributions;
+- (void)_readAttributions;
 - (id)iconAtIndex:(unsigned int)arg1;
 - (unsigned int)iconsCount;
+- (void)_addNoFlagsIcon:(id)arg1;
 - (void)addIcon:(id)arg1;
 - (void)clearIcons;
+@property(retain, nonatomic) NSMutableArray *icons;
+- (void)_readIcons;
 - (void)setTileRanges:(struct GEOTileSetRegion *)arg1 count:(unsigned int)arg2;
 - (struct GEOTileSetRegion)tileRangeAtIndex:(unsigned int)arg1;
+- (void)_addNoFlagsTileRange:(struct GEOTileSetRegion)arg1;
 - (void)addTileRange:(struct GEOTileSetRegion)arg1;
 - (void)clearTileRanges;
 @property(readonly, nonatomic) struct GEOTileSetRegion *tileRanges;
 @property(readonly, nonatomic) unsigned int tileRangesCount;
+- (void)_readTileRanges;
 - (void)dealloc;
 
 @end

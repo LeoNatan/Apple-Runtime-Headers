@@ -10,9 +10,6 @@
 
 @interface NSDictionaryController : NSArrayController
 {
-    void *_reserved5;
-    void *_reserved6;
-    void *_reserved7;
     id _contentDictionary;
     NSString *_initialKey;
     id _initialValue;

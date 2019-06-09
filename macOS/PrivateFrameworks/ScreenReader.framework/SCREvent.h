@@ -14,33 +14,33 @@
 __attribute__((visibility("hidden")))
 @interface SCREvent : NSObject <NSCopying, NSSecureCoding>
 {
-    unsigned long long _type;
+    long long _type;
     SCRKeyboardKey *_key;
     NSSet *_commands;
-    long long _modifier;
+    unsigned long long _modifier;
     double _creationTime;
     SCRCIndexMap *_info;
-    unsigned long long _priority;
+    long long _priority;
     unsigned long long _keyRepeatCount;
     struct __flags {
         unsigned int isModalEvent:1;
         unsigned int isKeyRepeatEvent:1;
         unsigned int isEndingEvent:1;
-        unsigned int reserved:29;
     } _flags;
-    unsigned long long _insertionPointAffinity;
+    long long _insertionPointAffinity;
 }
 
-+ (id)titleForTag:(int)arg1;
++ (id)titleForTag:(long long)arg1;
 + (id)_tagTitleMap;
 + (BOOL)supportsSecureCoding;
-@property(nonatomic) unsigned long long insertionPointAffinity; // @synthesize insertionPointAffinity=_insertionPointAffinity;
+@property(nonatomic) long long insertionPointAffinity; // @synthesize insertionPointAffinity=_insertionPointAffinity;
+- (void).cxx_destruct;
 - (id)description;
 - (BOOL)isDFROriginatedEvent;
 - (BOOL)isGestureEvent;
 - (long long)commandDirection;
 - (BOOL)isInvertedTEvent;
-- (BOOL)containsModifier:(long long)arg1;
+- (BOOL)containsModifier:(unsigned long long)arg1;
 - (BOOL)containsKeyIgnoringCount:(id)arg1;
 - (BOOL)containsKey:(id)arg1;
 - (BOOL)containsCharacters:(id)arg1;
@@ -52,21 +52,21 @@ __attribute__((visibility("hidden")))
 - (id)argumentString;
 - (id)argument;
 - (void)setCommands:(id)arg1;
-- (BOOL)containsTag:(int)arg1;
-- (int)tag;
-- (void)setTag:(int)arg1;
+- (BOOL)containsTag:(long long)arg1;
+- (long long)tag;
+- (void)setTag:(long long)arg1;
 - (id)guideAction;
 - (BOOL)isGuideEventForTarget:(id)arg1;
 - (id)guideTarget;
 - (void)setGuideTarget:(id)arg1;
 - (id)outputString;
 - (double)creationTime;
-- (unsigned long long)priority;
+- (long long)priority;
 - (void)setInfoObject:(id)arg1 forIndex:(unsigned int)arg2;
 - (id)info;
-- (long long)modifier;
+- (unsigned long long)modifier;
 - (id)key;
-- (unsigned long long)type;
+- (long long)type;
 - (BOOL)isQuickNavSelectionEvent;
 - (BOOL)isOutputEvent;
 - (BOOL)isEchoEvent;
@@ -79,17 +79,16 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned long long keyRepeatCount;
 - (void)setKeyRepeatCount:(unsigned long long)arg1;
 - (void)incrementKeyRepeatCount;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initGuideEventWithTarget:(id)arg1 action:(id)arg2 tag:(int)arg3 info:(id)arg4 priority:(unsigned long long)arg5;
-- (id)initOutputEventWithString:(id)arg1 info:(id)arg2 priority:(unsigned long long)arg3;
-- (id)initEchoEventWithKey:(id)arg1 modifier:(long long)arg2 info:(id)arg3 priority:(unsigned long long)arg4;
-- (id)initTagEventWithTag:(int)arg1 key:(id)arg2 modifier:(long long)arg3 info:(id)arg4 priority:(unsigned long long)arg5;
-- (id)initActivatorEventWithKey:(id)arg1 modifier:(long long)arg2 info:(id)arg3 priority:(unsigned long long)arg4;
+- (id)initGuideEventWithTarget:(id)arg1 action:(id)arg2 tag:(long long)arg3 info:(id)arg4 priority:(long long)arg5;
+- (id)initOutputEventWithString:(id)arg1 info:(id)arg2 priority:(long long)arg3;
+- (id)initEchoEventWithKey:(id)arg1 modifier:(unsigned long long)arg2 info:(id)arg3 priority:(long long)arg4;
+- (id)initTagEventWithTag:(long long)arg1 key:(id)arg2 modifier:(unsigned long long)arg3 info:(id)arg4 priority:(long long)arg5;
+- (id)initActivatorEventWithKey:(id)arg1 modifier:(unsigned long long)arg2 info:(id)arg3 priority:(long long)arg4;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithType:(unsigned long long)arg1 key:(id)arg2 modifier:(long long)arg3 info:(id)arg4 priority:(unsigned long long)arg5;
-- (id)initWithType:(unsigned long long)arg1;
+- (id)initWithType:(long long)arg1 key:(id)arg2 modifier:(unsigned long long)arg3 info:(id)arg4 priority:(long long)arg5;
+- (id)initWithType:(long long)arg1;
 - (id)init;
 
 @end

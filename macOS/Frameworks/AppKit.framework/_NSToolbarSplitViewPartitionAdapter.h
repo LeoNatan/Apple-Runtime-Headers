@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSToolbarItem *_toolbarItem;
     long long _dividerIndex;
     struct CGRect _dividerFrame;
+    BOOL _inManualResize;
 }
 
 @property(nonatomic) NSToolbarItem *toolbarItem; // @synthesize toolbarItem=_toolbarItem;

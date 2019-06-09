@@ -8,26 +8,30 @@
 
 #import <HealthKit/HKFeatureAvailabilityDataSource-Protocol.h>
 
-@class NSString;
+@class NRPairedDeviceRegistry, NSString;
 
 @interface HKActiveWatchFeatureAvailabilityDataSource : NSObject <HKFeatureAvailabilityDataSource>
 {
     NSString *_electrocardiogramOnboardingCountryCode;
     NSString *_atrialFibrillationDetectionOnboardingCountryCode;
+    NRPairedDeviceRegistry *_pairedDeviceRegistry;
 }
 
+@property(retain, nonatomic) NRPairedDeviceRegistry *pairedDeviceRegistry; // @synthesize pairedDeviceRegistry=_pairedDeviceRegistry;
 @property(copy, nonatomic) NSString *atrialFibrillationDetectionOnboardingCountryCode; // @synthesize atrialFibrillationDetectionOnboardingCountryCode=_atrialFibrillationDetectionOnboardingCountryCode;
 @property(copy, nonatomic) NSString *electrocardiogramOnboardingCountryCode; // @synthesize electrocardiogramOnboardingCountryCode=_electrocardiogramOnboardingCountryCode;
 - (void).cxx_destruct;
 - (CDStruct_4bb15e50)_operatingSystemVersionForWatchOSVersion:(unsigned int)arg1;
 - (CDStruct_4bb15e50)watchElectrocardiogramVersion;
 - (CDStruct_4bb15e50)watchAtrialFibrillationDetectionVersion;
+- (id)watchCompanionDevicePlatform;
 - (id)watchOSBuildVersion;
 - (id)watchProductType;
 - (id)watchBuildType;
 - (id)watchModelNumber;
 - (id)watchRegion;
 - (CDStruct_4bb15e50)watchOSVersion;
+- (id)_activeWatch;
 - (id)init;
 
 // Remaining properties

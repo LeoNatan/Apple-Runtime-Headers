@@ -29,9 +29,11 @@ __attribute__((visibility("hidden")))
 - (struct __CFString *)domainIdentifier;
 - (struct __CFString *)userIdentifier;
 - (void)setFileProtectionClass:(int)arg1;
+- (void)setBackupDisabled:(_Bool)arg1;
 - (void)setAccessRestricted:(_Bool)arg1;
 - (void)setDaemonCacheEnabled:(_Bool)arg1;
 - (void)alreadylocked_clearCache;
+- (_Bool)shouldEnableDirectMode;
 - (_Bool)isVolatile;
 - (_Bool)managed;
 - (void)unlock;
@@ -41,11 +43,13 @@ __attribute__((visibility("hidden")))
 - (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 retryCount:(int)arg4 error:(_Bool *)arg5;
 - (id)createRequestNewContentMessageForDaemon:(int)arg1;
 - (void)fullCloudSynchronizeWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)mergeIntoDictionary:(struct __CFDictionary *)arg1 sourceDictionary:(struct __CFDictionary *)arg2;
+- (void)mergeIntoDictionary:(struct __CFDictionary *)arg1 sourceDictionary:(struct __CFDictionary *)arg2 cloudKeyEvaluator:(CDUnknownBlockType)arg3;
 - (struct __CFDictionary *)copyDictionary;
 - (struct __CFDictionary *)alreadylocked_copyDictionary;
 - (struct __CFArray *)copyKeyList;
 - (struct __CFArray *)alreadylocked_copyKeyList;
+- (_Bool)enabled;
+- (void)setEnabled:(_Bool)arg1;
 - (void)setStoreName:(struct __CFString *)arg1;
 - (void)setConfigurationPath:(struct __CFString *)arg1;
 - (_Bool)synchronize;
@@ -59,13 +63,11 @@ __attribute__((visibility("hidden")))
 - (void)setValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long)arg3 copyValues:(_Bool)arg4 from:(id)arg5;
 - (void)setValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long)arg3 copyValues:(_Bool)arg4 removeValuesForKeys:(const struct __CFString **)arg5 count:(long)arg6 from:(id)arg7;
 - (void)alreadylocked_setPrecopiedValues:(const void **)arg1 forKeys:(const struct __CFString **)arg2 count:(long)arg3 from:(id)arg4;
-- (void)handleRemoteChangeNotificationForDomainIdentifier:(struct __CFString *)arg1;
-- (void)alreadylocked_updateObservingRemoteChanges;
-- (void)removePreferencesObserver:(id)arg1;
-- (void)alreadylocked_removePreferencesObserver:(id)arg1;
+- (id)alreadylocked_createObserverUpdateMessageWithOperation:(int)arg1 forRole:(int *)arg2;
+- (int)alreadylocked_updateObservingRemoteChanges;
+- (int)alreadylocked_removePreferencesObserver:(id)arg1;
 - (void)forEachObserver:(CDUnknownBlockType)arg1;
-- (void)addPreferencesObserver:(id)arg1;
-- (void)alreadylocked_addPreferencesObserver:(id)arg1;
+- (int)alreadylocked_addPreferencesObserver:(id)arg1;
 - (id)initWithContainingPreferences:(id)arg1;
 
 @end

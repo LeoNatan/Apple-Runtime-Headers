@@ -64,6 +64,7 @@ __attribute__((visibility("hidden")))
     BOOL queryStringChangesAreTransient;
     unsigned long long oldStringLength;
     unsigned long long maximumEffectiveInputLength;
+    long long searchQueryIndex;
     CDUnknownBlockType _didFindSuggestionsCallback;
 }
 

@@ -4,48 +4,41 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <TVMLKit/TVViewLayout.h>
 
 @class UIColor, VUITextLayout;
 
 __attribute__((visibility("hidden")))
-@interface VUIProductMetadataLayout : NSObject
+@interface VUIProductMetadataLayout : TVViewLayout
 {
-    _Bool _isRTL;
     VUITextLayout *_headerTextLayout;
-    VUITextLayout *_footerTextLayout;
     VUITextLayout *_infoHeaderTextLayout;
     VUITextLayout *_infoBodyTextLayout;
     VUITextLayout *_infoDescriptionTextLayout;
-    double _sectionHeaderBottomSpace;
-    double _sectionDataViewBottomSpace;
-    double _sectionFooterTopSpace;
-    double _sectionFooterBottomSpace;
-    double _sectionInfoViewBottomSpace;
-    double _infoTableMiddleSpacing;
+    VUITextLayout *_footerTextLayout;
+    double _descriptionLineSpacing;
     UIColor *_seeMoreTextColor;
-    struct UIEdgeInsets _mainViewMargin;
+    UIColor *_darkSeeMoreTextColor;
+    UIColor *_highlightedDescriptionText;
+    UIColor *_darkHighlightedDescriptionText;
 }
 
-@property(nonatomic) _Bool isRTL; // @synthesize isRTL=_isRTL;
-@property(readonly, nonatomic) struct UIEdgeInsets mainViewMargin; // @synthesize mainViewMargin=_mainViewMargin;
++ (id)layoutWithLayout:(id)arg1 element:(id)arg2;
+@property(readonly, nonatomic) UIColor *darkHighlightedDescriptionText; // @synthesize darkHighlightedDescriptionText=_darkHighlightedDescriptionText;
+@property(readonly, nonatomic) UIColor *highlightedDescriptionText; // @synthesize highlightedDescriptionText=_highlightedDescriptionText;
+@property(readonly, nonatomic) UIColor *darkSeeMoreTextColor; // @synthesize darkSeeMoreTextColor=_darkSeeMoreTextColor;
 @property(readonly, nonatomic) UIColor *seeMoreTextColor; // @synthesize seeMoreTextColor=_seeMoreTextColor;
-@property(readonly, nonatomic) double infoTableMiddleSpacing; // @synthesize infoTableMiddleSpacing=_infoTableMiddleSpacing;
-@property(readonly, nonatomic) double sectionInfoViewBottomSpace; // @synthesize sectionInfoViewBottomSpace=_sectionInfoViewBottomSpace;
-@property(readonly, nonatomic) double sectionFooterBottomSpace; // @synthesize sectionFooterBottomSpace=_sectionFooterBottomSpace;
-@property(readonly, nonatomic) double sectionFooterTopSpace; // @synthesize sectionFooterTopSpace=_sectionFooterTopSpace;
-@property(readonly, nonatomic) double sectionDataViewBottomSpace; // @synthesize sectionDataViewBottomSpace=_sectionDataViewBottomSpace;
-@property(readonly, nonatomic) double sectionHeaderBottomSpace; // @synthesize sectionHeaderBottomSpace=_sectionHeaderBottomSpace;
+@property(readonly, nonatomic) double descriptionLineSpacing; // @synthesize descriptionLineSpacing=_descriptionLineSpacing;
+@property(readonly, nonatomic) VUITextLayout *footerTextLayout; // @synthesize footerTextLayout=_footerTextLayout;
 @property(readonly, nonatomic) VUITextLayout *infoDescriptionTextLayout; // @synthesize infoDescriptionTextLayout=_infoDescriptionTextLayout;
 @property(readonly, nonatomic) VUITextLayout *infoBodyTextLayout; // @synthesize infoBodyTextLayout=_infoBodyTextLayout;
 @property(readonly, nonatomic) VUITextLayout *infoHeaderTextLayout; // @synthesize infoHeaderTextLayout=_infoHeaderTextLayout;
-@property(readonly, nonatomic) VUITextLayout *footerTextLayout; // @synthesize footerTextLayout=_footerTextLayout;
 @property(readonly, nonatomic) VUITextLayout *headerTextLayout; // @synthesize headerTextLayout=_headerTextLayout;
 - (void).cxx_destruct;
 - (void)_setupLayouts;
+@property(readonly, nonatomic) _Bool isTVOS;
 @property(readonly, nonatomic) _Bool isDynamicTextEnabled;
 @property(readonly, nonatomic) _Bool isHorizontal;
-@property(readonly, nonatomic) long long type;
 - (id)init;
 
 @end

@@ -15,6 +15,7 @@
 + (void)createCachePathIfNecessaryWithPairedDeviceStorePath:(id)arg1;
 + (id)cacheDirPathForAppBundleID:(id)arg1 withPairedDeviceStorePath:(id)arg2;
 + (id)cacheDirPathForPairedDeviceStorePath:(id)arg1;
++ (id)cacheDirPathForPairedDevice;
 + (void)invalidatePairedDevice:(id)arg1;
 + (void)invalidateBundleID:(id)arg1 withPairedDeviceStorePath:(id)arg2;
 + (id)iconForIconVariant:(int)arg1 inBundleID:(id)arg2 withPairedDeviceStorePath:(id)arg3;

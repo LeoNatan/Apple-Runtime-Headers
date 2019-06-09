@@ -34,8 +34,10 @@ __attribute__((visibility("hidden")))
     _Bool _shouldPinContentToTopChanged;
     _Bool _shouldLayoutReviewScreenControlBarVerticallyChanged;
     _Bool _shouldPlaceScrubberInScrubberBarChanged;
+    _Bool _shouldDisplayMuteButtonsChanged;
 }
 
+@property(nonatomic, setter=_setShouldDisplayMuteButtonsChanged:) _Bool shouldDisplayMuteButtonsChanged; // @synthesize shouldDisplayMuteButtonsChanged=_shouldDisplayMuteButtonsChanged;
 @property(nonatomic, setter=_setShouldPlaceScrubberInScrubberBarChanged:) _Bool shouldPlaceScrubberInScrubberBarChanged; // @synthesize shouldPlaceScrubberInScrubberBarChanged=_shouldPlaceScrubberInScrubberBarChanged;
 @property(nonatomic, setter=_setShouldLayoutReviewScreenControlBarVerticallyChanged:) _Bool shouldLayoutReviewScreenControlBarVerticallyChanged; // @synthesize shouldLayoutReviewScreenControlBarVerticallyChanged=_shouldLayoutReviewScreenControlBarVerticallyChanged;
 @property(nonatomic, setter=_setShouldPinContentToTopChanged:) _Bool shouldPinContentToTopChanged; // @synthesize shouldPinContentToTopChanged=_shouldPinContentToTopChanged;

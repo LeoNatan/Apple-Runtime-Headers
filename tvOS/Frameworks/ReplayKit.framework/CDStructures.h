@@ -10,20 +10,23 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
-struct AudioBuffer {
-    unsigned int _field1;
-    unsigned int _field2;
-    void *_field3;
-};
+struct AudioQueueBuffer;
 
-struct AudioBufferList {
-    unsigned int _field1;
-    struct AudioBuffer _field2[1];
+struct AudioStreamBasicDescription {
+    double mSampleRate;
+    unsigned int mFormatID;
+    unsigned int mFormatFlags;
+    unsigned int mBytesPerPacket;
+    unsigned int mFramesPerPacket;
+    unsigned int mBytesPerFrame;
+    unsigned int mChannelsPerFrame;
+    unsigned int mBitsPerChannel;
+    unsigned int mReserved;
 };
 
 struct CGPoint {
-    double x;
-    double y;
+    double _field1;
+    double _field2;
 };
 
 struct CGRect {
@@ -35,4 +38,20 @@ struct CGSize {
     double _field1;
     double _field2;
 };
+
+struct OpaqueAudioFileID;
+
+struct OpaqueAudioQueue;
+
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    struct OpaqueAudioQueue *_field1;
+    struct AudioStreamBasicDescription _field2;
+    struct AudioQueueBuffer *_field3[10];
+    struct OpaqueAudioFileID *_field4;
+    unsigned int _field5;
+    long long _field6;
+    _Bool _field7;
+} CDStruct_ad6583bf;
 

@@ -8,16 +8,25 @@
 
 #import <IMSharedUtilities/XCTestObservation-Protocol.h>
 
-@class NSString;
+@class IMUnitTestBundleLoader, IMUnitTestFrameworkLoader, IMUnitTestLogger, NSArray, NSMutableArray, NSString;
 @protocol IMUnitTestRunnerDelegate;
 
 @interface IMUnitTestRunner : NSObject <XCTestObservation>
 {
+    NSMutableArray *_failedTests;
     id <IMUnitTestRunnerDelegate> _delegate;
+    IMUnitTestBundleLoader *_bundleLoader;
+    IMUnitTestLogger *_logger;
+    IMUnitTestFrameworkLoader *_frameworkLoader;
 }
 
-@property(nonatomic) __weak id <IMUnitTestRunnerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly) IMUnitTestFrameworkLoader *frameworkLoader; // @synthesize frameworkLoader=_frameworkLoader;
+@property(readonly) IMUnitTestLogger *logger; // @synthesize logger=_logger;
+@property(readonly) IMUnitTestBundleLoader *bundleLoader; // @synthesize bundleLoader=_bundleLoader;
+@property __weak id <IMUnitTestRunnerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(readonly) NSArray *failedTests; // @synthesize failedTests=_failedTests;
 - (void).cxx_destruct;
+- (void)log:(id)arg1;
 - (void)testCaseDidFinish:(id)arg1;
 - (void)testCase:(id)arg1 didFailWithDescription:(id)arg2 inFile:(id)arg3 atLine:(unsigned long long)arg4;
 - (void)testCaseWillStart:(id)arg1;
@@ -26,16 +35,16 @@
 - (void)testSuiteWillStart:(id)arg1;
 - (id)descriptionFromResult:(id)arg1;
 - (id)dateFormatter;
-- (void)testLogWithFormat:(id)arg1 arguments:(struct __va_list_tag [1])arg2;
-- (void)writeOutputToStdout:(id)arg1;
-- (void)testLogWithFormat:(id)arg1;
-- (id)logFileHandle;
 - (id)runTestsInBundleNamed:(id)arg1 error:(id *)arg2;
 - (id)pathToPluginBundle:(id)arg1;
+- (long long)runTestsInBundleAtPath:(id)arg1;
+- (void)logBanner:(id)arg1;
 - (id)runTestsInBundleAtPath:(id)arg1 error:(id *)arg2;
-- (_Bool)loadXCTestFramework;
-@property(readonly, nonatomic) NSString *defaultPathToXCTestFramework;
-- (id)loadTestBundle:(id)arg1 error:(id *)arg2;
+- (_Bool)_loadFrameworksIfNeeded:(id *)arg1;
+- (void)testLogWithFormat:(id)arg1;
+- (id)init;
+- (id)initWithLogger:(id)arg1 bundleLoader:(id)arg2 frameworkLoader:(id)arg3;
+- (id)initWithLogger:(id)arg1 bundleLoader:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

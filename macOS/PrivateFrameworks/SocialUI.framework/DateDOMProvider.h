@@ -17,7 +17,6 @@
     NSMutableArray *_timeOrDateFragments;
 }
 
-+ (void)initialize;
 @property(retain) NSMutableArray *timeOrDateFragments; // @synthesize timeOrDateFragments=_timeOrDateFragments;
 @property(retain) NSMutableArray *timeFragments; // @synthesize timeFragments=_timeFragments;
 @property(retain) NSMutableArray *dateFragments; // @synthesize dateFragments=_dateFragments;

@@ -6,56 +6,64 @@
 
 #import <objc/NSObject.h>
 
-@class NSAlert, NSArray, NSSet, NSString, NSWindow;
-@protocol OS_dispatch_queue;
+@class NSAlert, NSArray, NSMutableArray, NSMutableSet, NSWindow;
 
 @interface PUKApplicationCloser : NSObject
 {
-    NSArray *_bundleIdentifiers;
-    NSArray *_openApplications;
-    NSArray *_openPlugIns;
-    NSSet *_obtainedPlugInHolds;
-    NSObject<OS_dispatch_queue> *_openApplicationsQueue;
     BOOL _ignoreOtherUsers;
+    NSArray *_customAppSortDescriptors;
+    NSMutableSet *_appsToTerminate;
+    NSMutableSet *_observedApps;
+    NSMutableArray *_terminatedApps;
+    NSMutableArray *_relaunchBundleURLs;
+    NSMutableArray *_pluginsToTerminate;
+    NSArray *_bundleIdentifiers;
+    NSMutableArray *_pluginHoldsToRelease;
+    NSMutableArray *_usersWhoFailedToQuit;
     NSAlert *_alert;
-    NSString *_waitingTitle;
-    BOOL _isModal;
-    BOOL _isWaitingOffConsole;
-    BOOL _shouldSendQuitEvents;
-    NSWindow *_windowForSheet;
-    id _modalDelegate;
-    SEL _modalDelegateEndSelector;
-    void *_modalDelegateContextInfo;
-    CDUnknownBlockType _completionHandler;
+    NSWindow *_window;
+    CDUnknownBlockType _completion;
 }
 
+@property(copy) CDUnknownBlockType completion; // @synthesize completion=_completion;
+@property(retain) NSWindow *window; // @synthesize window=_window;
+@property(retain) NSAlert *alert; // @synthesize alert=_alert;
+@property(retain) NSMutableArray *usersWhoFailedToQuit; // @synthesize usersWhoFailedToQuit=_usersWhoFailedToQuit;
+@property(retain) NSMutableArray *pluginHoldsToRelease; // @synthesize pluginHoldsToRelease=_pluginHoldsToRelease;
+@property(retain) NSArray *bundleIdentifiers; // @synthesize bundleIdentifiers=_bundleIdentifiers;
+@property(retain) NSMutableArray *pluginsToTerminate; // @synthesize pluginsToTerminate=_pluginsToTerminate;
+@property(retain) NSMutableArray *relaunchBundleURLs; // @synthesize relaunchBundleURLs=_relaunchBundleURLs;
+@property(retain) NSMutableArray *terminatedApps; // @synthesize terminatedApps=_terminatedApps;
+@property(retain) NSMutableSet *observedApps; // @synthesize observedApps=_observedApps;
+@property(retain) NSMutableSet *appsToTerminate; // @synthesize appsToTerminate=_appsToTerminate;
+@property(retain) NSArray *customAppSortDescriptors; // @synthesize customAppSortDescriptors=_customAppSortDescriptors;
 @property BOOL ignoreOtherUsers; // @synthesize ignoreOtherUsers=_ignoreOtherUsers;
+- (void).cxx_destruct;
+- (void)_removeObserversFromApp:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)_didReturnToConsoleAfterSwitchUser:(id)arg1;
-- (BOOL)_sendQuitEventTo:(id)arg1;
-- (void)_sendQuitEventsToOpenApplications;
-- (void)_cancelModalWithCode:(id)arg1;
-- (void)_startMonitoringOpenApplicationsForCurrentUser;
-- (void)_handleSwitchUser;
-- (void)_didClickRetryButton:(id)arg1;
-- (BOOL)_buildAlertForOpenApplications;
-- (BOOL)_buildAlertForOpenPlugIns;
-- (BOOL)_buildAlertForLogout;
-- (BOOL)_buildNextAlert;
-- (id)_userNamesForIdentifiers:(id)arg1 omittingUser:(unsigned int)arg2 count:(long long *)arg3;
-- (id)_bundleIdentifierForExecutablePath:(id)arg1 bundlePath:(id *)arg2;
-- (id)_executablePathForPID:(int)arg1;
-- (void)_updateOpenApplicationsAndPlugIns;
-- (long long)_actionForProcessWithInfo:(id)arg1;
-- (id)_updateProcessInfo:(id)arg1 recurse:(BOOL)arg2;
-- (id)_currentRunningProcesses;
-- (id)_currentOpenApplications;
-- (id)_currentOpenPlugIns;
+- (void)_switchUser;
+- (id)_alertForLogout:(id)arg1;
+- (id)_alertForPlugins:(id)arg1 appName:(id)arg2;
+- (id)_alertForOpenApplications:(id)arg1;
+- (void)_sendAppleQuitEventUsingPid:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_sendAsyncAppleQuitEventUsingPid:(int)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)loggedInUsers;
+- (void)_updatePluginsForBundleIdentifiers:(id)arg1 vendingBundleIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_prioritizedLoudestAppsToQuit;
+- (id)_prioritizedQuietestAppsToQuit;
+- (id)_alphaSortedAppsToQuit;
+- (void)_updateOpenApplicationsAndPlugInsWithCompletion:(CDUnknownBlockType)arg1;
+- (BOOL)relaunchTerminatedApps;
+- (BOOL)_checkForAppsAndPluginsForOtherUsers:(id)arg1;
+- (void)_terminateAppsAndPlugInsShouldFailWithImmortalApps:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)quitAllAppsAndPlugInsWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_alertDidEnd:(id)arg1 returnCode:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (id)_determineAlert;
+- (void)_beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)runModalWithCompletion:(CDUnknownBlockType)arg1;
+- (void)beginSheetModalForWindow:(id)arg1 completionResponseHandler:(CDUnknownBlockType)arg2;
 - (void)beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)beginSheetModalForWindow:(id)arg1 modalDelegate:(id)arg2 didEndSelector:(SEL)arg3 contextInfo:(void *)arg4;
-- (void)_alertDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
-- (void)cancelModal;
-- (BOOL)runModal;
 - (void)dealloc;
 - (id)initWithBundleIdentifiers:(id)arg1;
 

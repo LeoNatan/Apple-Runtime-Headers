@@ -6,12 +6,12 @@
 
 #import <Foundation/NSFormatter.h>
 
-@class NSSavePanel;
+@class NSLocalSavePanel;
 
 __attribute__((visibility("hidden")))
 @interface NSNavNameFieldFormatter : NSFormatter
 {
-    NSSavePanel *_panel;
+    NSLocalSavePanel *_panel;
     BOOL _autoAddExtensionToNextInput;
 }
 

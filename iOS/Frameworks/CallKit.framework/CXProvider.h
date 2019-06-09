@@ -23,6 +23,7 @@
 }
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (_Bool)isSupported;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) NSMutableArray *mutablePendingTransactions; // @synthesize mutablePendingTransactions=_mutablePendingTransactions;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *completionQueue; // @synthesize completionQueue=_completionQueue;
@@ -32,6 +33,7 @@
 - (void)handleMediaServicesWereResetNotification:(id)arg1;
 - (oneway void)handleAudioSessionActivationStateChangedTo:(_Bool)arg1;
 - (oneway void)handleActionTimeout:(id)arg1;
+- (void)_performAction:(id)arg1;
 - (oneway void)commitTransaction:(id)arg1;
 - (void)actionCompleted:(id)arg1;
 - (void)_performDelegateCallback:(CDUnknownBlockType)arg1;

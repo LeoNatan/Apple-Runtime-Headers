@@ -14,6 +14,7 @@
 @interface CLKImageProvider : NSObject <NSSecureCoding, NSCopying>
 {
     _Bool _finalized;
+    _Bool _foregroundAccentImageTinted;
     UIImage *_onePieceImage;
     UIColor *_tintColor;
     UIImage *_twoPieceImageBackground;
@@ -29,9 +30,10 @@
 + (id)imageProviderWithImageViewCreationHandler:(CDUnknownBlockType)arg1;
 + (id)imageProviderWithOnePieceImage:(id)arg1 twoPieceImageBackground:(id)arg2 twoPieceImageForeground:(id)arg3;
 + (id)imageProviderWithOnePieceImage:(id)arg1;
-@property(readonly, nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
+@property(nonatomic, getter=isForegroundAccentImageTinted) _Bool foregroundAccentImageTinted; // @synthesize foregroundAccentImageTinted=_foregroundAccentImageTinted;
 @property(retain, nonatomic) UIColor *foregroundAccentImageColor; // @synthesize foregroundAccentImageColor=_foregroundAccentImageColor;
 @property(retain, nonatomic) UIImage *foregroundAccentImage; // @synthesize foregroundAccentImage=_foregroundAccentImage;
+@property(readonly, nonatomic) struct CGSize maxSize; // @synthesize maxSize=_maxSize;
 @property(copy, nonatomic) CDUnknownBlockType imageViewCreationHandler; // @synthesize imageViewCreationHandler=_imageViewCreationHandler;
 @property(retain, nonatomic) NSString *accessibilityLabel; // @synthesize accessibilityLabel=_accessibilityLabel;
 @property(retain, nonatomic) UIImage *twoPieceImageForeground; // @synthesize twoPieceImageForeground=_twoPieceImageForeground;
@@ -39,6 +41,7 @@
 @property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(retain, nonatomic) UIImage *onePieceImage; // @synthesize onePieceImage=_onePieceImage;
 - (void).cxx_destruct;
+- (void)_resizeImagesIfNecessaryWithCornerRadius:(double)arg1;
 - (void)_resizeImagesIfNecessaryAndMaskToCircle:(_Bool)arg1;
 - (id)JSONObjectRepresentationWritingResourcesToBundlePath:(id)arg1;
 - (id)initWithJSONObjectRepresentation:(id)arg1 bundle:(id)arg2;
@@ -46,7 +49,9 @@
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)init;
 - (void)encodeWithCoder:(id)arg1;
+- (void)finalizeWithMaxSize:(struct CGSize)arg1 cornerRadius:(double)arg2;
 - (void)finalizeWithMaxSize:(struct CGSize)arg1 maskToCircle:(_Bool)arg2;
 - (void)validate;
 

@@ -9,5 +9,7 @@
 @interface NTPBRecordBase (FCAssetURLExpiration)
 @property(readonly, nonatomic) _Bool hasExpiredAssetURLs;
 @property(readonly, nonatomic) _Bool needsAssetURLRefresh;
+- (_Bool)fc_isCachedAgeLessThan:(double)arg1;
+- (_Bool)fc_isCachedAgeGreaterThan:(double)arg1;
 @end
 

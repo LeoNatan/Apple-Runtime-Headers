@@ -10,6 +10,7 @@
 {
 }
 
++ (unsigned long long)serverLoggingChannelBitset;
 + (float)remoteVADDuration;
 + (float)daysBeforeRemovingLogFiles;
 + (int)csAudioProcessingQueuePriority;

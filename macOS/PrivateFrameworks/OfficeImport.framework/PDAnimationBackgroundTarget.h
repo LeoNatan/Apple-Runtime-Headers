@@ -6,6 +6,7 @@
 
 #import <OfficeImport/PDAnimationShapeTarget.h>
 
+__attribute__((visibility("hidden")))
 @interface PDAnimationBackgroundTarget : PDAnimationShapeTarget
 {
 }

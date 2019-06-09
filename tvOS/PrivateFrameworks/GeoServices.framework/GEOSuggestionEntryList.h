@@ -8,20 +8,30 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString, PBUnknownFields;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOSuggestionEntryList : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_localizedSectionHeader;
     NSMutableArray *_suggestionEntries;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_localizedSectionHeader:1;
+        unsigned int read_suggestionEntries:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_localizedSectionHeader:1;
+        unsigned int wrote_suggestionEntries:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)suggestionEntriesType;
-@property(retain, nonatomic) NSString *localizedSectionHeader; // @synthesize localizedSectionHeader=_localizedSectionHeader;
-@property(retain, nonatomic) NSMutableArray *suggestionEntries; // @synthesize suggestionEntries=_suggestionEntries;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -30,13 +40,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *localizedSectionHeader;
 @property(readonly, nonatomic) _Bool hasLocalizedSectionHeader;
+- (void)_readLocalizedSectionHeader;
 - (id)suggestionEntriesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)suggestionEntriesCount;
+- (void)_addNoFlagsSuggestionEntries:(id)arg1;
 - (void)addSuggestionEntries:(id)arg1;
 - (void)clearSuggestionEntries;
+@property(retain, nonatomic) NSMutableArray *suggestionEntries;
+- (void)_readSuggestionEntries;
 
 @end
 

@@ -11,6 +11,7 @@
 @interface CCUICAPackageView : UIView
 {
     CAStateController *_stateController;
+    UIView *_packageContentView;
     CALayer *_packageLayer;
     CAPackage *_package;
     CCUICAPackageDescription *_packageDescription;

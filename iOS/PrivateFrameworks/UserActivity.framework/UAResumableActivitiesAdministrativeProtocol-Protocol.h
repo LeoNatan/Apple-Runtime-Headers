@@ -10,16 +10,13 @@
 @protocol NSSecureCoding;
 
 @protocol UAResumableActivitiesAdministrativeProtocol <NSObject>
+- (void)doGetPairedDevices:(NSDictionary *)arg1 completionHandler:(void (^)(NSArray *, NSArray *, NSError *))arg2;
 - (void)doGetSFActivityAdvertisement:(NSDictionary *)arg1 completionHandler:(void (^)(NSData *, NSDate *, NSUUID *, NSError *))arg2;
 - (void)doSetLocalPasteboardReflection:(_Bool)arg1;
 - (void)doSetRemotePasteboardAvalible:(_Bool)arg1;
 - (void)doReplayCommands:(NSArray *)arg1 completionHandler:(void (^)(_Bool, NSError *))arg2;
-- (void)getCurrentPeersAndClear:(_Bool)arg1 completionHandler:(void (^)(UAPingResults *))arg2;
-- (void)stopAdvertisingPing;
-- (void)startAdvertisingPingWithTimeInterval:(double)arg1;
 - (void)doSetupRendevous:(NSString *)arg1 domain:(NSString *)arg2 activate:(_Bool)arg3;
 - (void)doSetupNetworkedPairs:(NSString *)arg1 port:(long long)arg2;
-- (void)doBroadcastPing:(void (^)(UAPingResults *))arg1;
 - (void)doWillSaveDelegate:(NSUUID *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)doSetDefaults:(NSString *)arg1 value:(NSObject<NSSecureCoding> *)arg2;
 - (void)doCopyDefaults:(_Bool)arg1 completionHandler:(void (^)(NSDictionary *, NSError *))arg2;
@@ -28,6 +25,7 @@
 - (void)doGetCurrentAdvertisedItemUUID:(void (^)(NSUUID *))arg1;
 - (void)doTerminateServer;
 - (void)doCopyDynamicUserActivitiesString:(NSDictionary *)arg1 completionHandler:(void (^)(NSString *))arg2;
+- (void)doFetchMoreAppSuggestions;
 - (void)doCopyStatusString:(NSString *)arg1 options:(NSDictionary *)arg2 completionHandler:(void (^)(NSString *))arg3;
 - (void)doCopyRecentActions:(NSDictionary *)arg1 completionHandler:(void (^)(NSArray *))arg2;
 - (void)doCopyDebuggingInfo:(NSDictionary *)arg1 completionHandler:(void (^)(NSDictionary *))arg2;

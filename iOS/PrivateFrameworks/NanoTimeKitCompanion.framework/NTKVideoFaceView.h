@@ -26,7 +26,6 @@
 - (id)_nextListing;
 - (id)_defaultListing;
 - (void)_selectDefaultListing;
-- (void)didAddSubview:(id)arg1;
 - (id)_onDeckPosterImageView;
 - (id)_posterImageView;
 - (id)_posterImageViewWithTheme:(unsigned long long)arg1;

@@ -12,9 +12,7 @@
 {
 }
 
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
-+ (id)insertInManagedObjectContext:(id)arg1;
 - (void)delete;
 @property(nonatomic) struct CGRect relativeRect;
 

@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)conditionalFormattingRuleWithResources:(id)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setAppliesToDateOnly:(_Bool)arg1;
 - (_Bool)appliesToDateOnly;
@@ -63,7 +64,6 @@ __attribute__((visibility("hidden")))
 - (void)setType:(int)arg1;
 - (int)type;
 - (long long)compareToOtherRuleUsingPriority:(id)arg1;
-- (void)dealloc;
 - (id)initWithResources:(id)arg1;
 - (void)setDifferentialStyleIndex:(unsigned long long)arg1;
 - (unsigned long long)differentialStyleIndex;

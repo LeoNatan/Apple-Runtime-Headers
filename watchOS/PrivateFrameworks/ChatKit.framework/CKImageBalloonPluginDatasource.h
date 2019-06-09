@@ -8,6 +8,7 @@
 
 @class CKBalloonView, CKMediaObject;
 
+__attribute__((visibility("hidden")))
 @interface CKImageBalloonPluginDatasource : IMBalloonPluginDataSource
 {
     CKBalloonView *_balloonView;

@@ -16,6 +16,7 @@
 @property(retain, nonatomic) NPKPaymentReadyDotsView *dotsView; // @synthesize dotsView=_dotsView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
+- (id)initWithAnimationCoordinator:(id)arg1 titleLabel:(id)arg2;
 - (id)initWithAnimationCoordinator:(id)arg1;
 
 @end

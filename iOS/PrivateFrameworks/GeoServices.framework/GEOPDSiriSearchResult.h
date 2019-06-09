@@ -8,24 +8,34 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, PBUnknownFields;
+@class NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDSiriSearchResult : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_disambiguationLabels;
     NSMutableArray *_resultDetourInfos;
     _Bool _isChainResultSet;
-    CDStruct_5984ff81 _has;
+    struct {
+        unsigned int has_isChainResultSet:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_disambiguationLabels:1;
+        unsigned int read_resultDetourInfos:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_disambiguationLabels:1;
+        unsigned int wrote_resultDetourInfos:1;
+        unsigned int wrote_isChainResultSet:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)resultDetourInfoType;
 + (Class)disambiguationLabelType;
-@property(nonatomic) _Bool isChainResultSet; // @synthesize isChainResultSet=_isChainResultSet;
-@property(retain, nonatomic) NSMutableArray *resultDetourInfos; // @synthesize resultDetourInfos=_resultDetourInfos;
-@property(retain, nonatomic) NSMutableArray *disambiguationLabels; // @synthesize disambiguationLabels=_disambiguationLabels;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -34,17 +44,25 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasIsChainResultSet;
+@property(nonatomic) _Bool isChainResultSet;
 - (id)resultDetourInfoAtIndex:(unsigned long long)arg1;
 - (unsigned long long)resultDetourInfosCount;
+- (void)_addNoFlagsResultDetourInfo:(id)arg1;
 - (void)addResultDetourInfo:(id)arg1;
 - (void)clearResultDetourInfos;
+@property(retain, nonatomic) NSMutableArray *resultDetourInfos;
+- (void)_readResultDetourInfos;
 - (id)disambiguationLabelAtIndex:(unsigned long long)arg1;
 - (unsigned long long)disambiguationLabelsCount;
+- (void)_addNoFlagsDisambiguationLabel:(id)arg1;
 - (void)addDisambiguationLabel:(id)arg1;
 - (void)clearDisambiguationLabels;
+@property(retain, nonatomic) NSMutableArray *disambiguationLabels;
+- (void)_readDisambiguationLabels;
 
 @end
 

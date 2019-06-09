@@ -6,27 +6,35 @@
 
 #import <iTunesLibrary/ITLibMediaEntity.h>
 
-@class NSArray, NSMutableArray, NSNumber, NSString;
+@class NSArray, NSDate, NSMutableArray, NSNumber, NSString;
+@protocol ITLibPlaylistDelegate;
 
 @interface ITLibPlaylist : ITLibMediaEntity
 {
     NSMutableArray *_items;
+    NSArray *_itemIDs;
+    id <ITLibPlaylistDelegate> _delegate;
 }
 
++ (id)playlistWithDict:(id)arg1;
+@property(nonatomic) __weak id <ITLibPlaylistDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) NSArray *itemIDs; // @synthesize itemIDs=_itemIDs;
+- (void).cxx_destruct;
+- (BOOL)containsMediaKind:(unsigned long long)arg1;
 - (id)artwork;
-@property(nonatomic) unsigned long long kind; // @dynamic kind;
+@property(nonatomic) unsigned long long kind;
 - (id)valueForProperty:(id)arg1;
 - (void)enumerateValuesExceptForProperties:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)enumerateValuesForProperties:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)addMediaItem:(id)arg1;
-@property(nonatomic) unsigned long long distinguishedKind; // @dynamic distinguishedKind;
-@property(readonly, retain, nonatomic) NSArray *items; // @synthesize items=_items;
-@property(nonatomic, getter=isAllItemsPlaylist) BOOL allItemsPlaylist; // @dynamic allItemsPlaylist;
-@property(nonatomic, getter=isVisible) BOOL visible; // @dynamic visible;
-@property(retain, nonatomic) NSNumber *parentID; // @dynamic parentID;
-@property(nonatomic, getter=isMaster) BOOL master; // @dynamic master;
-@property(copy, nonatomic) NSString *name; // @dynamic name;
-- (void)dealloc;
+@property(nonatomic) unsigned long long distinguishedKind;
+@property(readonly, retain, nonatomic) NSArray *items;
+@property(readonly, nonatomic, getter=isAllItemsPlaylist) BOOL allItemsPlaylist;
+@property(nonatomic, getter=isVisible) BOOL visible;
+@property(retain, nonatomic) NSDate *addedDate;
+@property(retain, nonatomic) NSNumber *parentID;
+@property(nonatomic, getter=isMaster) BOOL master;
+@property(copy, nonatomic) NSString *name;
 - (id)init;
 
 @end

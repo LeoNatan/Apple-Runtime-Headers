@@ -8,5 +8,6 @@
 
 @interface AceObject (AFUISiriSession)
 - (long long)_afui_usefulUserResultType;
+- (id)afui_insertionContext;
 @end
 

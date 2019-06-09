@@ -6,6 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <AvatarUI/AVTAttributeEditorSectionHeaderViewDelegate-Protocol.h>
 #import <AvatarUI/AVTAvatarAttributeEditorControllerSubSelectionDelegate-Protocol.h>
 #import <AvatarUI/AVTCollapsibleHeaderControllerDelegate-Protocol.h>
 #import <AvatarUI/AVTFaceTrackingManagerDelegate-Protocol.h>
@@ -19,11 +20,12 @@
 @class AVTAttributeEditorAnimationCoordinator, AVTAvatarAttributeEditorDataSource, AVTAvatarAttributeEditorModelManager, AVTAvatarRecord, AVTCollapsibleHeaderController, AVTGroupDial, AVTImageTransitioningContainerView, AVTShadowView, AVTTransition, AVTUIEnvironment, AVTViewSession, AVTViewSessionProvider, AVTViewThrottler, CALayer, NSString, UICollectionView, UILabel, UITapGestureRecognizer, UIView, _AVTAvatarRecordImageProvider;
 @protocol AVTAvatarAttributeEditorLayout, AVTAvatarAttributeEditorViewControllerDelegate, AVTTaskScheduler;
 
-@interface AVTAvatarAttributeEditorViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDataSourcePrefetching, UICollectionViewDelegateFlowLayout, AVTAvatarAttributeEditorControllerSubSelectionDelegate, AVTGroupDialDelegate, AVTCollapsibleHeaderControllerDelegate, AVTTransitionModel, AVTNotifyingContainerViewDelegate, AVTFaceTrackingManagerDelegate>
+@interface AVTAvatarAttributeEditorViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDataSourcePrefetching, UICollectionViewDelegateFlowLayout, AVTAvatarAttributeEditorControllerSubSelectionDelegate, AVTGroupDialDelegate, AVTCollapsibleHeaderControllerDelegate, AVTTransitionModel, AVTNotifyingContainerViewDelegate, AVTFaceTrackingManagerDelegate, AVTAttributeEditorSectionHeaderViewDelegate>
 {
     _Bool _isCreating;
     _Bool _hasMadeAnySelection;
     _Bool _isAnimatingHighlight;
+    _Bool _allowFacetracking;
     id <AVTAvatarAttributeEditorViewControllerDelegate> _delegate;
     id <AVTAvatarAttributeEditorLayout> _currentLayout;
     AVTAvatarAttributeEditorModelManager *_modelManager;
@@ -53,6 +55,7 @@
 
 + (id)attributeRowIdentifier;
 + (id)colorRowIdentifier;
+@property(nonatomic) _Bool allowFacetracking; // @synthesize allowFacetracking=_allowFacetracking;
 @property(copy, nonatomic) CDUnknownBlockType pendingUnhighlightBlock; // @synthesize pendingUnhighlightBlock=_pendingUnhighlightBlock;
 @property(nonatomic) _Bool isAnimatingHighlight; // @synthesize isAnimatingHighlight=_isAnimatingHighlight;
 @property(retain, nonatomic) AVTTransition *currentTransition; // @synthesize currentTransition=_currentTransition;
@@ -84,6 +87,9 @@
 - (void).cxx_destruct;
 - (long long)interfaceOrientationForFaceTrackingManager:(id)arg1;
 - (void)updateForChangedSelectionIfNeeded;
+- (void)rebuildUIModelAfterSelectionInSection:(id)arg1 senderRect:(struct CGRect)arg2;
+- (void)updateForSelectionOfAccessoryItem:(id)arg1 senderRect:(struct CGRect)arg2;
+- (void)updateForSelectionOfItem:(id)arg1 inSection:(id)arg2 senderRect:(struct CGRect)arg3;
 - (void)updateForSelectionOfItem:(id)arg1 controller:(id)arg2;
 - (void)attributeEditorSectionControllerNeedsLayoutUpdate:(id)arg1;
 - (void)attributeEditorSectionController:(id)arg1 didUpdateSectionItem:(id)arg2;
@@ -93,6 +99,8 @@
 - (id)presetSectionItemForIndexPath:(id)arg1;
 - (void)collectionView:(id)arg1 cancelPrefetchingForItemsAtIndexPaths:(id)arg2;
 - (void)collectionView:(id)arg1 prefetchItemsAtIndexPaths:(id)arg2;
+- (void)presentActionSheetForSelection:(id)arg1 sender:(id)arg2;
+- (void)sectionHeaderView:(id)arg1 didTapAccessorySelection:(id)arg2 sender:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (_Bool)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didUnhighlightItemAtIndexPath:(id)arg2;
@@ -101,6 +109,7 @@
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
+- (id)selectedItemInSection:(id)arg1;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(long long)arg3;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(long long)arg3;
@@ -127,17 +136,20 @@
 - (void)tearDownThrottler;
 - (void)configureThrottlerForAVTView:(id)arg1;
 - (void)beginAVTViewSessionWithDidBeginBlock:(CDUnknownBlockType)arg1;
+- (void)setupImageView;
+- (void)setupPreview:(CDUnknownBlockType)arg1;
 - (void)applyFullAlpha;
 - (void)applyBaseAlpha;
 - (id)liveView;
 - (void)transitionLiveViewToFront;
 - (void)transitionStaticViewToFront;
 - (void)transitionToLiveViewAnimated:(_Bool)arg1;
-- (void)updateImageViewWithPosedAvatarRecord;
+- (void)updateImageViewWithPosedAvatarRecordForcingRender:(_Bool)arg1;
 - (void)prepareForAnimatedTransitionWithLayout:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)notifyingContainerViewDidChangeSize:(struct CGSize)arg1;
 - (void)notifyingContainerViewWillChangeSize:(struct CGSize)arg1;
 - (struct UIEdgeInsets)adjustedSafeAreaInsets;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
@@ -146,6 +158,9 @@
 @property(readonly, nonatomic) AVTAvatarRecord *avatarRecord;
 - (id)initWithAvatarRecord:(id)arg1 avtViewSessionProvider:(id)arg2 environment:(id)arg3 isCreating:(_Bool)arg4;
 - (id)init;
+- (void)configurePPTMemoji:(CDUnknownBlockType)arg1;
+- (void)prepareForPresetsScrollTestOnCategory:(id)arg1 readyHandler:(CDUnknownBlockType)arg2;
+- (void)selectCategory:(id)arg1 withCompletionDelay:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -10,7 +10,6 @@
 {
 }
 
-- (void)_handleButton:(id)arg1;
 - (void)prepareValueViewForReuse:(id)arg1;
 - (void)updateValueView:(id)arg1;
 - (id)createValueView;

@@ -4,33 +4,45 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NanoTimeKit/NTKFaceView.h>
+#import <NanoTimeKit/NTKDigitalFaceView.h>
 
-@class NTKLayoutRule, NTKTimeModuleView;
+#import <NanoTimeKit/CLKMonochromeFilterProvider-Protocol.h>
+#import <NanoTimeKit/NTKRichComplicationRectangularBaseViewDelegate-Protocol.h>
 
-@interface NTKWhistlerDigitalFaceView : NTKFaceView
+@class NSString;
+
+@interface NTKWhistlerDigitalFaceView : NTKDigitalFaceView <NTKRichComplicationRectangularBaseViewDelegate, CLKMonochromeFilterProvider>
 {
-    NTKTimeModuleView *_timeModuleView;
-    NTKLayoutRule *_timeLayoutRuleNormal;
-    NTKLayoutRule *_timeLayoutRuleEditing;
     _Bool _is24HourMode;
+    unsigned int _faceColor;
 }
 
-- (void).cxx_destruct;
+- (id)_defaultDateAccentColor;
+- (id)_defaultDateTextColor;
+- (void)setFaceColor:(unsigned int)arg1;
 - (void)_updateLocale;
-- (void)complicationDisplayWrapperView:(id)arg1 startCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 completionBlock:(CDUnknownBlockType)arg5;
-- (_Bool)complicationDisplayWrapperView:(id)arg1 shouldStartCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4;
-- (void)_scrubToDate:(id)arg1 animated:(_Bool)arg2;
+- (void)rectangularViewDidEndInteractive:(id)arg1;
+- (void)rectangularViewDidBecomeInteractive:(id)arg1;
+- (void)complicationDisplayWrapperView:(id)arg1 updateCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5 animationDuration:(double)arg6 animationFraction:(float)arg7;
+- (void)complicationDisplayWrapperView:(id)arg1 prepareCustomDataAnimation:(id)arg2 fromEarlierView:(id)arg3 laterView:(id)arg4 isForward:(_Bool)arg5 animationType:(unsigned int)arg6;
+- (_Bool)complicationDisplayWrapperView:(id)arg1 shouldStartCustomDataAnimationFromEarlierView:(id)arg2 laterView:(id)arg3 isForward:(_Bool)arg4 animationType:(unsigned int)arg5;
 - (_Bool)_supportsTimeScrubbing;
+- (id)complicationPickerViewForSlot:(id)arg1;
 - (float)_minimumBreathingScaleForComplicationSlot:(id)arg1;
 - (float)_keylineCornerRadiusForComplicationSlot:(id)arg1;
 - (int)complicationFamilyForSlot:(id)arg1;
-- (void)_configureForTransitionFraction:(float)arg1 fromEditMode:(int)arg2 toEditMode:(int)arg3;
-- (void)_cleanupAfterZoom;
-- (void)_prepareToZoomWithIconView:(id)arg1 minDiameter:(float)arg2 maxDiameter:(float)arg3;
-- (void)_layoutForegroundContainerView;
 - (int)_keylineStyleForComplicationSlot:(id)arg1;
 - (unsigned int)_keylineLabelAlignmentForComplicationSlot:(id)arg1;
+- (void)_applyRubberBandingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
+- (void)_applyBreathingFraction:(float)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
+- (_Bool)_keylineLabelShouldShowIndividualOptionNamesForCustomEditMode:(int)arg1;
+- (struct UIEdgeInsets)_keylineLabelActiveAreaInsetsForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (unsigned int)_keylineLabelAlignmentForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (struct CGRect)_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (id)_keylineViewForCustomEditMode:(int)arg1 slot:(id)arg2;
+- (void)_applyTransitionFraction:(float)arg1 fromColor:(unsigned int)arg2 toColor:(unsigned int)arg3;
+- (void)_applyTransitionFraction:(float)arg1 fromOption:(id)arg2 toOption:(id)arg3 forCustomEditMode:(int)arg4 slot:(id)arg5;
+- (void)_applyOption:(id)arg1 forCustomEditMode:(int)arg2 slot:(id)arg3;
 - (void)_loadLayoutRulesForState:(int)arg1 withTopGap:(float)arg2 largeModuleHeight:(float)arg3;
 - (void)_loadLayoutRules;
 - (_Bool)_needsForegroundContainerView;
@@ -38,7 +50,15 @@
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
+- (unsigned int)_timeLabelOptions;
+- (id)_digitalTimeLabelStyleFromViewMode:(int)arg1 faceBounds:(struct CGRect)arg2;
 - (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

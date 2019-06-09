@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUISettingDescription.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIDefaultSettingDescription : SKUISettingDescription
 {
 }

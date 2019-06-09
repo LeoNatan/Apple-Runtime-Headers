@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class CAKeyframeAnimation, CALayer, CIContext, CIFilter, CIImage, IKCenteringClipView, IKImageRenderInfo, IKImageView2, IKImageViewLayerQueue, NSData, NSDictionary, NSMutableArray, NSTimer, NSURL;
+@class CALayer, CIContext, CIFilter, CIImage, IKCenteringClipView, IKImageRenderInfo, IKImageView2, IKImageViewLayerQueue, NSData, NSDictionary, NSMutableArray, NSTimer, NSURL;
 
 __attribute__((visibility("hidden")))
 @interface IKImageContentView : NSView
@@ -66,7 +66,6 @@ __attribute__((visibility("hidden")))
     BOOL _canAnimateImage;
     NSURL *_imgURL;
     NSData *_imgData;
-    CAKeyframeAnimation *_gifAnimation;
     IKImageView2 *_imageView;
     IKCenteringClipView *_clipView;
     CIFilter *_softProofFilter;
@@ -74,12 +73,14 @@ __attribute__((visibility("hidden")))
     BOOL _scrollingLoadsTiles;
     unsigned long long _imageIndex;
     BOOL _ignoreWindowUpdates;
+    BOOL _animatingImageContent;
 }
 
 + (BOOL)isCompatibleWithResponsiveScrolling;
 + (int)_flipTypeForExif:(long long)arg1;
 + (double)rotationDegreeForExif:(long long)arg1;
 + (id)_clampImageAlphaTo01:(id)arg1 colorSpace:(struct CGColorSpace *)arg2;
+@property(getter=isAnimatingImageContent) BOOL animatingImageContent; // @synthesize animatingImageContent=_animatingImageContent;
 @property BOOL ignoreWindowUpdates; // @synthesize ignoreWindowUpdates=_ignoreWindowUpdates;
 @property(nonatomic) BOOL alwaysHidesScrollers; // @synthesize alwaysHidesScrollers=_alwaysHidesScrollers;
 @property(retain) IKImageRenderInfo *renderInfo; // @synthesize renderInfo=_renderInfo;

@@ -19,7 +19,6 @@
 @property BOOL standby; // @synthesize standby=_standby;
 @property unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 - (id)commandArguments;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -108,7 +108,6 @@
 - (void)_replaceScrollerImp;
 - (void)_setLionScrollerStyle:(long long)arg1;
 - (long long)_lionScrollerStyle;
-- (unsigned int)_CAViewFlags;
 - (void)_windowChangedKeyState;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -8,6 +8,7 @@
 
 @class UIImage;
 
+__attribute__((visibility("hidden")))
 @interface TPLCDSubImageView : UIView
 {
     UIImage *_image;

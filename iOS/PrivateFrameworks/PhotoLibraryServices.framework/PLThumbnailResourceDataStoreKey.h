@@ -13,22 +13,28 @@
 
 @interface PLThumbnailResourceDataStoreKey : NSObject <PLResourceDataStoreKey, PLTableThumbResourceKey>
 {
-    struct PLThumbnailDataStoreKeyStruct _keyStruct;
+    struct PLThumbnailDataStoreKeyStruct_V1 _keyStruct;
 }
 
 + (_Bool)representsSquareResourceForPayloadKeyData:(unsigned long long)arg1;
-+ (struct CGImage *)newTableThumbImageForPayloadKeyData:(unsigned long long)arg1;
++ (unsigned int)recipeIDForTableType:(unsigned int)arg1 inStore:(id)arg2;
 + (id)fileURLForPayloadKeyData:(unsigned long long)arg1 assetID:(id)arg2;
-@property(nonatomic) struct PLThumbnailDataStoreKeyStruct keyStruct; // @synthesize keyStruct=_keyStruct;
+@property(nonatomic) struct PLThumbnailDataStoreKeyStruct_V1 keyStruct; // @synthesize keyStruct=_keyStruct;
 - (id)descriptionForAssetID:(id)arg1;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToKey:(id)arg1;
 @property(readonly, nonatomic) unsigned int tableType; // @dynamic tableType;
 @property(readonly, nonatomic) int index; // @dynamic index;
+- (_Bool)isDerivative;
+- (unsigned int)resourceVersion;
+- (unsigned int)resourceType;
+- (void)tableType:(unsigned int *)arg1 index:(int *)arg2;
 - (_Bool)representsSquareResource;
-- (struct CGImage *)newTableThumbImage;
+- (id)uniformTypeIdentifier;
 - (id)fileURLForAssetID:(id)arg1;
-- (_Bool)isValid;
 - (id)keyData;
 - (id)initWithKeyStruct:(const void *)arg1;
+- (id)validateForAssetID:(id)arg1 resourceIdentity:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

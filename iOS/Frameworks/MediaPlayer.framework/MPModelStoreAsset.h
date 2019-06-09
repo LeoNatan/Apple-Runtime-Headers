@@ -12,6 +12,7 @@
 {
 }
 
++ (id)__needsUserUpload_KEY;
 + (id)__subscriptionRequired_KEY;
 + (id)__shouldReportPlayEvents_KEY;
 + (id)__accountIdentifier_KEY;
@@ -23,6 +24,7 @@
 // Remaining properties
 @property(nonatomic) unsigned long long accountIdentifier; // @dynamic accountIdentifier;
 @property(nonatomic) long long endpointType; // @dynamic endpointType;
+@property(readonly, nonatomic) _Bool needsUserUpload; // @dynamic needsUserUpload;
 @property(copy, nonatomic) NSString *redownloadParameters; // @dynamic redownloadParameters;
 @property(nonatomic, getter=isRedownloadable) _Bool redownloadable; // @dynamic redownloadable;
 @property(nonatomic) _Bool shouldReportPlayEvents; // @dynamic shouldReportPlayEvents;

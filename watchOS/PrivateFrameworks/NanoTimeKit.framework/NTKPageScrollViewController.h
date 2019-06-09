@@ -43,6 +43,7 @@
     _Bool _swipeToDeleteInProgress;
     unsigned int _swipeToDeleteIndex;
     PUICPagedScrollViewNotchProvider *_notchProvider;
+    int _reorderPageIndex;
     _Bool _scrollEnabled;
     id <NTKPageScrollViewControllerDataSource> _dataSource;
     id <NTKPageScrollViewControllerDelegate> _delegate;
@@ -74,6 +75,7 @@
 - (void)_handlePageDidAppear:(unsigned int)arg1;
 - (void)_handlePageWillDisappear:(unsigned int)arg1;
 - (void)_handlePageWillAppear:(unsigned int)arg1;
+- (void)_handleDidReorderPageFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (void)_updateScrollViewHandlers;
 - (void)_configureBehaviorsForPage:(id)arg1 atIndex:(unsigned int)arg2;
 - (unsigned int)_indexOfPage:(id)arg1;

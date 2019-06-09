@@ -37,6 +37,8 @@
 - (void)setLineChartUsesValueAxisAnnotation:(_Bool)arg1 forTimeScope:(int)arg2;
 - (_Bool)lineChartUsesPointMarkerImageForTimeScope:(int)arg1;
 - (void)setLineChartUsesPointMarkerImage:(_Bool)arg1 forTimeScope:(int)arg2;
+- (_Bool)lineChartExtendFirstValueForTimeScope:(int)arg1;
+- (void)setLineChartExtendFirstValue:(_Bool)arg1 forTimeScope:(int)arg2;
 - (_Bool)lineChartExtendLastValueForTimeScope:(int)arg1;
 - (void)setLineChartExtendLastValue:(_Bool)arg1 forTimeScope:(int)arg2;
 - (_Bool)lineChartFlatLastValueForTimeScope:(int)arg1;

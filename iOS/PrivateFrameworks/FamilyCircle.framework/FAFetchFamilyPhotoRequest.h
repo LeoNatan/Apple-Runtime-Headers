@@ -45,7 +45,6 @@
 - (id)initWithFamilyMemberHashedDSID:(id)arg1 size:(unsigned long long)arg2 localFallback:(_Bool)arg3;
 - (id)initWithFamilyMemberDSID:(id)arg1 size:(unsigned long long)arg2 localFallback:(_Bool)arg3 connectionProvider:(id)arg4;
 - (id)initWithFamilyMemberDSID:(id)arg1 size:(unsigned long long)arg2 localFallback:(_Bool)arg3;
-@property long long monogramStyle;
 
 @end
 

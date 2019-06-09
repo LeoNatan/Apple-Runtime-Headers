@@ -26,6 +26,7 @@
 // Remaining properties
 @property(getter=isOverviewVisible) BOOL overviewVisible; // @dynamic overviewVisible;
 @property __weak NSWindow *selectedWindow; // @dynamic selectedWindow;
+@property BOOL shouldShowTabBarWithOneItem; // @dynamic shouldShowTabBarWithOneItem;
 @property(readonly, getter=isTabBarVisible) BOOL tabBarVisible; // @dynamic tabBarVisible;
 @property(readonly, copy) NSArray *windows; // @dynamic windows;
 

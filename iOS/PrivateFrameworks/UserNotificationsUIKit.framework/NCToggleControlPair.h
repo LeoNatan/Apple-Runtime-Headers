@@ -6,18 +6,19 @@
 
 #import <UIKit/UIView.h>
 
+#import <UserNotificationsUIKit/MTMaterialGrouping-Protocol.h>
 #import <UserNotificationsUIKit/PLContentSizeCategoryAdjusting-Protocol.h>
 
 @class NSArray, NSString;
 
-@interface NCToggleControlPair : UIView <PLContentSizeCategoryAdjusting>
+@interface NCToggleControlPair : UIView <PLContentSizeCategoryAdjusting, MTMaterialGrouping>
 {
+    NSString *_materialGroupNameBase;
     NSArray *_toggleControls;
-    NSString *_backgroundGroupName;
 }
 
-@property(copy, nonatomic) NSString *backgroundGroupName; // @synthesize backgroundGroupName=_backgroundGroupName;
 @property(readonly, nonatomic) NSArray *toggleControls; // @synthesize toggleControls=_toggleControls;
+@property(copy, nonatomic) NSString *materialGroupNameBase; // @synthesize materialGroupNameBase=_materialGroupNameBase;
 - (void).cxx_destruct;
 - (void)_handleTouchUpInside:(id)arg1 withEvent:(id)arg2;
 - (double)_effectiveInterControlPadding;

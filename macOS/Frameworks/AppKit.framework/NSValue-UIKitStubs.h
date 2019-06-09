@@ -8,5 +8,6 @@
 
 @interface NSValue (UIKitStubs)
 + (id)_valueWithCGRect:(struct CGRect)arg1;
++ (id)_valueWithCGPoint:(struct CGPoint)arg1;
 @end
 

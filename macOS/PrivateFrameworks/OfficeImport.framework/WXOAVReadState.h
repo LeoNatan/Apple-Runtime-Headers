@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, WDParagraph, WXReadState;
 
+__attribute__((visibility("hidden")))
 @interface WXOAVReadState : OAVReadState
 {
     WXReadState *mWxState;

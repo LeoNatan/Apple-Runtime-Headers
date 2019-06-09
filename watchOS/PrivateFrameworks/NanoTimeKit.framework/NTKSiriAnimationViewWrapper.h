@@ -6,11 +6,13 @@
 
 #import <UIKit/UIView.h>
 
+#import <NanoTimeKit/CLKFullColorImageView-Protocol.h>
 #import <NanoTimeKit/NTKComplicationImageView-Protocol.h>
 
 @class CLKDevice, CLKImageProvider, NSString, NTKSiriAnimationView, NTKTaskScheduler, UIColor, UIImageView;
+@protocol CLKMonochromeFilterProvider;
 
-@interface NTKSiriAnimationViewWrapper : UIView <NTKComplicationImageView>
+@interface NTKSiriAnimationViewWrapper : UIView <NTKComplicationImageView, CLKFullColorImageView>
 {
     CLKDevice *_device;
     NTKTaskScheduler *_taskScheduler;
@@ -22,13 +24,21 @@
     UIColor *_color;
     CLKImageProvider *_imageProvider;
     UIColor *_overrideColor;
+    id <CLKMonochromeFilterProvider> _filterProvider;
 }
 
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 @property(nonatomic) _Bool usesLegibility; // @synthesize usesLegibility=_usesLegibility;
 @property(retain, nonatomic) UIColor *overrideColor; // @synthesize overrideColor=_overrideColor;
 @property(retain, nonatomic) CLKImageProvider *imageProvider; // @synthesize imageProvider=_imageProvider;
 @property(retain, nonatomic) UIColor *color; // @synthesize color=_color;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
+- (void)configureWithImageProvider:(id)arg1 reason:(int)arg2;
+- (void)resumeLiveFullColorImageView;
+- (void)pauseLiveFullColorImageView;
+- (id)initFullColorImageViewWithDevice:(id)arg1;
 - (_Bool)supportedFamily:(int)arg1;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

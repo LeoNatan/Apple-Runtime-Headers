@@ -14,19 +14,18 @@ __attribute__((visibility("hidden")))
 @interface GEOPDVenueLevel : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    unsigned long long _levelId;
     GEOPDVenueLabel *_label;
+    unsigned long long _levelId;
     int _ordinal;
     struct {
-        unsigned int levelId:1;
-        unsigned int ordinal:1;
-    } _has;
+        unsigned int has_levelId:1;
+        unsigned int has_ordinal:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDVenueLabel *label; // @synthesize label=_label;
-@property(nonatomic) int ordinal; // @synthesize ordinal=_ordinal;
-@property(nonatomic) unsigned long long levelId; // @synthesize levelId=_levelId;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -35,11 +34,15 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDVenueLabel *label;
 @property(readonly, nonatomic) BOOL hasLabel;
 @property(nonatomic) BOOL hasOrdinal;
+@property(nonatomic) int ordinal;
 @property(nonatomic) BOOL hasLevelId;
+@property(nonatomic) unsigned long long levelId;
 
 @end
 

@@ -6,23 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <MapsSuggestions/MapsSuggestionsObject-Protocol.h>
-
-@class NSString;
-
-@interface MapsSuggestionsCache : NSObject <MapsSuggestionsObject>
+@interface MapsSuggestionsCache : NSObject
 {
 }
 
 + (_Bool)saveToFilePath:(id)arg1 storage:(struct NSMutableDictionary *)arg2 ETAValidUntilDate:(id)arg3;
 + (_Bool)loadFromFilePath:(id)arg1 storage:(struct NSMutableDictionary **)arg2 ETAValidUntilDate:(id *)arg3;
-@property(readonly, nonatomic) NSString *uniqueName;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

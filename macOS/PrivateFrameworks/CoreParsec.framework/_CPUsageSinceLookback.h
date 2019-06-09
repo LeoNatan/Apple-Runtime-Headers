@@ -17,11 +17,13 @@
     int _totalUsagesInCollectionPeriod;
     int _configuredLookbackTimeInDays;
     int _activeDaysInCollectionPeriod;
+    int _totalEngagements;
     long long _collectionStartTimestamp;
     long long _collectionEndTimestamp;
     _CPDeviceContext *_context;
 }
 
+@property(nonatomic) int totalEngagements; // @synthesize totalEngagements=_totalEngagements;
 @property(nonatomic) int activeDaysInCollectionPeriod; // @synthesize activeDaysInCollectionPeriod=_activeDaysInCollectionPeriod;
 @property(nonatomic) int configuredLookbackTimeInDays; // @synthesize configuredLookbackTimeInDays=_configuredLookbackTimeInDays;
 @property(retain, nonatomic) _CPDeviceContext *context; // @synthesize context=_context;

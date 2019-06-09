@@ -6,11 +6,7 @@
 
 #import <UIKitCore/_UIForceLevelClassifier.h>
 
-#import <UIKitCore/UIDebuggingInformationObserver-Protocol.h>
-
-@class NSString;
-
-@interface _UILinearForceLevelClassifier : _UIForceLevelClassifier <UIDebuggingInformationObserver>
+@interface _UILinearForceLevelClassifier : _UIForceLevelClassifier
 {
     float _smoothedForce;
     _Bool _anyForceObservations;
@@ -44,12 +40,6 @@
 - (void)debuggingPropertyForKey:(id)arg1 changedToValue:(id)arg2;
 - (void)touchForceMultiplierDidChange;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
 
 @end
 

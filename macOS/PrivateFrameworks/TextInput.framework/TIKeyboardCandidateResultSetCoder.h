@@ -35,6 +35,8 @@
 - (void)encodeUInt64:(unsigned long long)arg1;
 - (unsigned int)decodeUInt32;
 - (void)encodeUInt32:(unsigned int)arg1;
+- (double)decodeDouble;
+- (void)encodeDouble:(double)arg1;
 - (unsigned short)decodeShort;
 - (void)encodeShort:(unsigned short)arg1;
 - (unsigned char)decodeByte;

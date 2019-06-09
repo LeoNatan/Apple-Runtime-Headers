@@ -10,6 +10,7 @@
 
 @protocol AXBackBoardServerInstance <NSObject>
 + (id <AXBackBoardServerInstance>)backBoardServerInstanceIfExists;
+- (struct AXBColorFilterDescription)colorFilterFromLastUpdate;
 - (void)resetAccessibilityFeatures;
 - (void)forceLoadGAXBundle;
 - (_Bool)supportsAdaptation;
@@ -18,7 +19,6 @@
 - (_Bool)blueLightStatusEnabled;
 - (_Bool)brightnessFiltersEnabled;
 - (void)disableBrightnessFilters;
-- (_Bool)supportsBlueLightReduction;
 - (_Bool)_sessionIsLoginSession;
 - (_Bool)_inCheckerBoardMode;
 - (_Bool)_inPreBoardMode;

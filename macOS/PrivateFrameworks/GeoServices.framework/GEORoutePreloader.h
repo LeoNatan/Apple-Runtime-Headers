@@ -37,7 +37,7 @@
 @property(copy, nonatomic) CDUnknownBlockType batteryHandler; // @synthesize batteryHandler=_batteryHandler;
 @property(nonatomic) unsigned long long networkQuality; // @synthesize networkQuality=_networkQuality;
 @property(readonly, nonatomic) GEOComposedRoute *route; // @synthesize route=_route;
-@property __weak id <GEORoutePreloadSessionDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak id <GEORoutePreloadSessionDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;

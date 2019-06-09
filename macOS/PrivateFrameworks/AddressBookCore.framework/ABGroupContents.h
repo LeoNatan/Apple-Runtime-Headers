@@ -21,7 +21,6 @@
 - (id)nts_GroupUID;
 - (id)nts_MemberUID;
 - (void)nts_InsertInArray:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)nts_InitWithGroupUID:(id)arg1 memberUID:(id)arg2 addressBook:(id)arg3;
 - (id)description;

@@ -7,31 +7,33 @@
 #import <FrontBoardServices/FBSSceneSettings.h>
 
 #import <UIKitCore/UIApplicationSceneSettings-Protocol.h>
-#import <UIKitCore/_UIDisplayEdgeInfoProviding-Protocol.h>
+#import <UIKitCore/_UIDisplayInfoProviding-Protocol.h>
 
-@class NSNumber, NSString;
+@class BSCornerRadiusConfiguration, FBSDisplayConfiguration, NSNumber, NSString;
 
-@interface UIApplicationSceneSettings : FBSSceneSettings <_UIDisplayEdgeInfoProviding, UIApplicationSceneSettings>
+@interface UIApplicationSceneSettings : FBSSceneSettings <_UIDisplayInfoProviding, UIApplicationSceneSettings>
 {
 }
 
-- (Class)canvasClass;
 - (_Bool)isUISubclass;
 - (id)valueDescriptionForFlag:(long long)arg1 object:(id)arg2 ofSetting:(unsigned long long)arg3;
 - (id)keyDescriptionForSetting:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) unsigned long long artworkSubtype;
+@property(nonatomic) unsigned long long artworkSubtype;
 @property(readonly, nonatomic) long long deviceOrientation;
 @property(readonly, nonatomic) _Bool statusBarDisabled;
 @property(readonly, nonatomic) _Bool idleModeEnabled;
 @property(readonly, nonatomic) _Bool canShowAlerts;
 @property(readonly, nonatomic) _Bool deviceOrientationEventsEnabled;
+@property(readonly, nonatomic) BSCornerRadiusConfiguration *cornerRadiusConfiguration;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsetsLandscapeRight;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsetsPortraitUpsideDown;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsetsLandscapeLeft;
 @property(readonly, nonatomic) double homeAffordanceOverlayAllowance;
 @property(readonly, nonatomic) struct UIEdgeInsets safeAreaInsetsPortrait;
 @property(readonly, nonatomic) double systemMinimumMargin;
+- (double)defaultStatusBarHeightForOrientation:(long long)arg1;
+@property(readonly, nonatomic) double statusBarHeight;
 @property(readonly, nonatomic) struct CGRect statusBarAvoidanceFrame;
 @property(readonly, nonatomic) long long statusBarParts;
 @property(readonly, nonatomic) struct UIEdgeInsets peripheryInsets;
@@ -41,10 +43,12 @@
 @property(readonly, nonatomic) unsigned long long deactivationReasons;
 @property(readonly, nonatomic) int statusBarStyleOverridesToSuppress;
 @property(readonly, nonatomic) _Bool underLock;
+@property(readonly, nonatomic) NSString *persistenceIdentifier;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) FBSDisplayConfiguration *displayConfiguration;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

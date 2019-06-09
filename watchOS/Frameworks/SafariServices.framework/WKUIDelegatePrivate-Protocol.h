@@ -12,6 +12,7 @@
 @protocol WKUIDelegatePrivate <WKUIDelegate>
 
 @optional
+- (void)_webView:(WKWebView *)arg1 shouldAllowDeviceOrientationAndMotionAccessRequestedByFrame:(WKFrameInfo *)arg2 decisionHandler:(void (^)(_Bool))arg3;
 - (void)_webView:(WKWebView *)arg1 didDismissFocusedElementViewController:(UIViewController *)arg2;
 - (void)_webView:(WKWebView *)arg1 didPresentFocusedElementViewController:(UIViewController *)arg2;
 - (void)_webView:(WKWebView *)arg1 didChangeSafeAreaShouldAffectObscuredInsets:(_Bool)arg2;
@@ -60,11 +61,12 @@
 - (void)_webView:(WKWebView *)arg1 mediaCaptureStateDidChange:(unsigned int)arg2;
 - (void)_webView:(WKWebView *)arg1 checkUserMediaPermissionForURL:(NSURL *)arg2 mainFrameURL:(NSURL *)arg3 frameIdentifier:(unsigned int)arg4 decisionHandler:(void (^)(NSString *, _Bool))arg5;
 - (void)_webView:(WKWebView *)arg1 requestUserMediaAuthorizationForDevices:(unsigned int)arg2 url:(NSURL *)arg3 mainFrameURL:(NSURL *)arg4 decisionHandler:(void (^)(_Bool))arg5;
+- (void)_webView:(WKWebView *)arg1 includeSensitiveMediaDeviceDetails:(void (^)(_Bool))arg2;
+- (void)_webView:(WKWebView *)arg1 requestMediaCaptureAuthorization:(unsigned int)arg2 decisionHandler:(void (^)(_Bool))arg3;
 - (NSDictionary *)_dataDetectionContextForWebView:(WKWebView *)arg1;
 - (void)_webView:(WKWebView *)arg1 imageOrMediaDocumentSizeChanged:(struct CGSize)arg2;
 - (void)_webView:(WKWebView *)arg1 hasVideoInPictureInPictureDidChange:(_Bool)arg2;
 - (void)_webViewDidLosePointerLock:(WKWebView *)arg1;
-- (void)_webViewDidClickGoBackFromSafeBrowsingWarning:(WKWebView *)arg1;
 - (void)_webViewDidShowSafeBrowsingWarning:(WKWebView *)arg1;
 - (void)_webViewDidRequestPointerLock:(WKWebView *)arg1 completionHandler:(void (^)(_Bool))arg2;
 - (void)_webViewRequestPointerLock:(WKWebView *)arg1;

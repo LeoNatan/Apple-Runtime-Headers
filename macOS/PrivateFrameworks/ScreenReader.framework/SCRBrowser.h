@@ -6,7 +6,7 @@
 
 #import <ScreenReader/SCRElement.h>
 
-@class SCRBrailleLineManager, SCRList, SCRUIElement;
+@class SCRList, SCRUIElement;
 
 __attribute__((visibility("hidden")))
 @interface SCRBrowser : SCRElement
@@ -17,15 +17,14 @@ __attribute__((visibility("hidden")))
     SCRUIElement *_readContentsColumnUIElement;
     unsigned long long _readContentsColumnIndex;
     SCRList *_keyboardFocusedList;
-    SCRBrailleLineManager *_brailleLineManager;
     struct {
         unsigned int isRepeatEvent:1;
         unsigned int isKeyboardEvent:1;
-        unsigned int reserved:30;
     } _srbFlags;
 }
 
 - (void).cxx_destruct;
+- (BOOL)handleScrollByPageWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)trackElementWithGestureEvent:(id)arg1 request:(id)arg2;
 - (void)prepareGestureTrackingChildren;
 - (id)childAfterElement:(id)arg1;
@@ -44,10 +43,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)readContentsElementCount;
 - (void)_setReadContentsColumnUIElement:(id)arg1;
 - (void)_setReadContentsElement:(id)arg1;
-- (id)brailleLineElementForUIElement:(id)arg1;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
-- (void)updateBrailleLineWithFocusedElement:(id)arg1;
-- (id)brailleLineManager;
 - (BOOL)childrenShouldAddIndexToDescription;
 - (void)addElementEnclosureSummaryToRequest:(id)arg1;
 - (void)addOverviewWithInfo:(struct SCRBrowserInfo)arg1 toRequest:(id)arg2;
@@ -71,10 +66,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldAllowAutoFocusInto;
 - (id)uiElementWithContextualMenu;
 - (BOOL)_handleNavigationEvent:(id)arg1 request:(id)arg2 commandKey:(id)arg3 selector:(SEL)arg4 canScroll:(BOOL)arg5 canWrap:(BOOL)arg6;
-- (BOOL)jumpRightEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
-- (BOOL)jumpLeftEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
-- (BOOL)jumpBottomEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
-- (BOOL)jumpTopEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
 - (BOOL)isSectionView;
 - (BOOL)_moveToColumn:(long long)arg1;
 - (id)_moveLastWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
@@ -94,7 +85,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactUpWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)isInteractive;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)showRect:(struct CGRect)arg1;
 - (void)setPercentage:(double)arg1 forUIScrollBar:(id)arg2;
 - (void)_setFocusedItemWithUIElement:(id)arg1 browserInfo:(struct SCRBrowserInfo)arg2 withScrolling:(BOOL)arg3 withSelection:(BOOL)arg4;

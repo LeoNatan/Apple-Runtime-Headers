@@ -113,6 +113,7 @@
 @property(retain, nonatomic) _CPSearchViewDisappearFeedback *searchViewDisappearFeedback; // @synthesize searchViewDisappearFeedback=_searchViewDisappearFeedback;
 @property(retain, nonatomic) _CPSearchViewAppearFeedback *searchViewAppearFeedback; // @synthesize searchViewAppearFeedback=_searchViewAppearFeedback;
 @property(retain, nonatomic) _CPFeedback *feedback; // @synthesize feedback=_feedback;
+- (void)clearContained_Feedback;
 @property(readonly, nonatomic) PBCodable<_CPProcessableFeedback> *codable;
 @property(readonly, nonatomic) int type;
 - (id)initWithCodable:(id)arg1;

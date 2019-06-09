@@ -13,7 +13,6 @@
 
 @interface TTYCall : NSObject <AVCVirtualTTYDeviceDelegate>
 {
-    long long _ttyMode;
     NSObject<OS_dispatch_queue> *_callQueue;
     id <TTYCallDelegate> _delegate;
     TTYConversation *_conversation;
@@ -26,13 +25,12 @@
 @property(retain, nonatomic) AVCVirtualTTYDevice *ttyDevice; // @synthesize ttyDevice=_ttyDevice;
 @property(retain, nonatomic) TUCall *call; // @synthesize call=_call;
 @property(retain, nonatomic) TTYConversation *conversation; // @synthesize conversation=_conversation;
-@property(nonatomic) __weak id <TTYCallDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) id <TTYCallDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)device:(id)arg1 didReceiveCharacter:(unsigned short)arg2;
-- (void)device:(id)arg1 didReceiveText:(struct NSString *)arg2;
 - (void)deviceDidStop:(id)arg1;
 - (void)device:(id)arg1 didStart:(BOOL)arg2 error:(id)arg3;
-- (void)sendString:(id)arg1;
+- (void)sendCharacter:(unsigned short)arg1;
 - (void)stop;
 - (void)start;
 - (void)recreateTTYDevice:(id)arg1;

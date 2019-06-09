@@ -8,6 +8,7 @@
 
 @class NSString, SKUIColorScheme, UIImage, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIProductPageFeatureView : UIView
 {
     UIImageView *_iconView;

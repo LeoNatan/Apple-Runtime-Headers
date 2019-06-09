@@ -7,9 +7,10 @@
 #import <MetalTools/MTLSamplerState-Protocol.h>
 
 @protocol MTLSamplerStateSPI <MTLSamplerState>
+@property(readonly, nonatomic) unsigned long long pixelFormat;
 
 @optional
 @property(readonly) unsigned long long uniqueIdentifier;
-- (unsigned long long)resourceIndex;
+@property(nonatomic) unsigned long long resourceIndex;
 @end
 

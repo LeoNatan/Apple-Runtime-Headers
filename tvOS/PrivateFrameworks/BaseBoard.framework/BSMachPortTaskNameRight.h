@@ -11,7 +11,7 @@
 @interface BSMachPortTaskNameRight : BSMachPortSendRight
 {
     int _pid;
-    BSAuditToken *_auditToken;
+    BSAuditToken *_critical_auditToken;
 }
 
 + (_Bool)supportsSecureCoding;
@@ -22,7 +22,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-@property(readonly, nonatomic) BSAuditToken *auditToken; // @synthesize auditToken=_auditToken;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) BSAuditToken *auditToken; // @dynamic auditToken;
 - (id)initWithPID:(int)arg1;
 - (id)init;
 

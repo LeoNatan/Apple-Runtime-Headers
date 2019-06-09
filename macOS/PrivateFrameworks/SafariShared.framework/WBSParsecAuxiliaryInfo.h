@@ -22,6 +22,7 @@
 @property(readonly, copy, nonatomic) NSString *middleText; // @synthesize middleText=_middleText;
 @property(readonly, copy, nonatomic) NSString *topText; // @synthesize topText=_topText;
 - (void).cxx_destruct;
+- (id)initWithSFSearchResult:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 
 @end

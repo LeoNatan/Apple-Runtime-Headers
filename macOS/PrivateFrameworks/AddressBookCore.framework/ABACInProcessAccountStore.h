@@ -39,7 +39,10 @@
 - (id)accountWithABAccountIdentifier:(id)arg1;
 - (id)accountsWithAccountType:(id)arg1 error:(id *)arg2;
 - (id)accountTypeWithIdentifier:(id)arg1;
-- (id)allContactsAccounts;
+- (id)accountsWithAccountTypeIdentifiers:(id)arg1;
+- (id)ldapAccounts;
+- (id)cardDAVAndExchangeAccounts;
+- (id)contactsAccountsWithFetchOptions:(unsigned long long)arg1;
 - (id)initWithAccountStore:(id)arg1 scheduler:(id)arg2;
 - (id)init;
 

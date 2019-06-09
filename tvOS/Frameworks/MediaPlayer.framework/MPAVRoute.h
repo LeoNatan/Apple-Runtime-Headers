@@ -67,8 +67,8 @@
 - (unsigned long long)hash;
 @property(readonly, nonatomic) _Bool supportsWirelessDisplay;
 @property(readonly, nonatomic, getter=isB444Route) _Bool b444Route;
-@property(readonly, nonatomic, getter=isB238Route) _Bool b238Route;
 @property(readonly, nonatomic, getter=isW2Route) _Bool w2Route;
+@property(readonly, nonatomic, getter=isH1Route) _Bool h1Route;
 @property(readonly, nonatomic, getter=isAirPlayRoute) _Bool airPlayRoute;
 @property(readonly, nonatomic, getter=isW1Route) _Bool w1Route;
 @property(readonly, nonatomic, getter=isTVRoute) _Bool tvRoute;
@@ -87,6 +87,9 @@
 @property(retain, nonatomic) MPAVRoute *wirelessDisplayRoute;
 @property(readonly, nonatomic, getter=isRoutingToWirelessDevice) _Bool routingToWirelessDevice;
 @property(nonatomic, getter=isPicked) _Bool picked;
+@property(readonly, nonatomic) long long numberOfOutputDevices;
+@property(readonly, nonatomic, getter=isSplitRoute) _Bool splitRoute;
+@property(readonly, nonatomic, getter=isSplitterCapable) _Bool splitterCapable;
 @property(readonly, nonatomic) _Bool supportsRemoteControl;
 @property(readonly, nonatomic) _Bool supportsGrouping;
 @property(readonly, nonatomic, getter=isVolumeControlAvailable) _Bool volumeControlAvailable;
@@ -102,6 +105,9 @@
 @property(readonly, nonatomic) NSString *designatedGroupLeaderName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+
+// Remaining properties
+@property(readonly, nonatomic) _Bool isSplitRoute;
 
 @end
 

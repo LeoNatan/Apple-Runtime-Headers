@@ -13,6 +13,7 @@
 @property(readonly) NSString *errorMessage;
 @property(readonly) NSError *error;
 @property(readonly) NSDate *expiryDate;
+@property(readonly) NSString *idToken;
 @property(readonly) NSString *refreshToken;
 @property(readonly) NSString *token;
 @property(readonly) NSDictionary *data;

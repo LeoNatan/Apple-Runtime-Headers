@@ -17,6 +17,7 @@
     NSXPCConnection *_connection;
     NSMutableDictionary *_assertionsDictionary;
     NSMutableDictionary *_brightnessAssertionsDictionary;
+    NSMutableDictionary *_backlightOnRequests;
     int _currentBacklightState;
     NSPointerArray *_observersNeedingInitialState;
 }
@@ -30,12 +31,13 @@
 - (void)backlightDidChangeFrom:(int)arg1 to:(int)arg2 forReason:(unsigned int)arg3;
 - (void)_informObserver:(id)arg1 oldState:(int)arg2 newState:(int)arg3 reason:(unsigned int)arg4;
 - (void)_dropConnection;
+- (void)_attemptReconnect;
 - (void)_attemptConnect;
 - (id)_createConnectionIfNecessary;
 - (void)_releaseMinimumBrightnessAssertion:(id)arg1;
 - (void)_takeMinimumBrightnessAssertion:(id)arg1;
 - (void)releaseBacklightAssertion:(id)arg1;
-- (void)takeBacklightAssertion:(id)arg1 wasAlreadyAsserted:(_Bool)arg2;
+- (void)takeBacklightAssertion:(id)arg1;
 - (void)offForIdentifier:(id)arg1 reason:(unsigned int)arg2 isUserInitiated:(_Bool)arg3;
 - (void)onForIdentifier:(id)arg1 reason:(unsigned int)arg2 isUserInitiated:(_Bool)arg3;
 - (void)removeObserver:(id)arg1;

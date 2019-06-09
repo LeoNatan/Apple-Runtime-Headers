@@ -7,14 +7,14 @@
 #import <WatchKit/WKInterfaceObject.h>
 
 #import <WatchKit/SCNSceneRenderer-Protocol.h>
+#import <WatchKit/WKInterfaceObjectDynamicCreatable-Protocol.h>
 
-@class AVAudioEngine, AVAudioEnvironmentNode, CAContext, NSString, SCNNode, SCNScene, SCNView, SKScene;
+@class AVAudioEngine, AVAudioEnvironmentNode, NSString, SCNNode, SCNScene, SCNView, SKScene;
 @protocol SCNSceneRendererDelegate;
 
-@interface WKInterfaceSCNScene : WKInterfaceObject <SCNSceneRenderer>
+@interface WKInterfaceSCNScene : WKInterfaceObject <WKInterfaceObjectDynamicCreatable, SCNSceneRenderer>
 {
     SCNView *_sceneView;
-    CAContext *_context;
 }
 
 - (void).cxx_destruct;
@@ -29,7 +29,8 @@
 @property(retain, nonatomic) SCNNode *audioListener;
 @property(readonly, nonatomic) AVAudioEnvironmentNode *audioEnvironmentNode;
 @property(readonly, nonatomic) AVAudioEngine *audioEngine;
-@property(readonly, nonatomic) void *context;
+@property(nonatomic) _Bool usesReverseZ;
+@property(nonatomic, getter=isTemporalAntialiasingEnabled) _Bool temporalAntialiasingEnabled;
 @property(readonly, nonatomic) unsigned int renderingAPI;
 @property(retain, nonatomic) SKScene *overlaySKScene;
 @property(nonatomic) unsigned int debugOptions;
@@ -46,19 +47,20 @@
 - (id)nodesInsideFrustumWithPointOfView:(id)arg1;
 - (_Bool)isNodeInsideFrustum:(id)arg1 withPointOfView:(id)arg2;
 - (id)hitTest:(struct CGPoint)arg1 options:(id)arg2;
-@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
 @property(nonatomic) double sceneTime;
 - (void)presentScene:(id)arg1 withTransition:(id)arg2 incomingPointOfView:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 @property(retain, nonatomic) SCNScene *scene;
-- (void)remoteSetHeight:(float)arg1;
-- (void)remoteSetWidth:(float)arg1;
+- (id)interfaceDescriptionForDynamicCreation;
 - (void)setHeight:(float)arg1;
 - (void)setWidth:(float)arg1;
 - (void)_setupWithDescription:(id)arg1 forController:(id)arg2;
 - (void)didRegisterWithRemoteInterface;
 - (id)_initWithInterfaceProperty:(id)arg1 viewControllerID:(id)arg2 propertyIndex:(int)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5;
+- (id)init;
 
 // Remaining properties
+@property(readonly, nonatomic) struct CGRect currentViewport;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;

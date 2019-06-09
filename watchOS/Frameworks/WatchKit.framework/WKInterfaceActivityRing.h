@@ -6,11 +6,23 @@
 
 #import <WatchKit/WKInterfaceObject.h>
 
-@interface WKInterfaceActivityRing : WKInterfaceObject
+#import <WatchKit/WKInterfaceObjectDynamicCreatable-Protocol.h>
+
+@class NSString;
+
+@interface WKInterfaceActivityRing : WKInterfaceObject <WKInterfaceObjectDynamicCreatable>
 {
 }
 
+- (id)interfaceDescriptionForDynamicCreation;
 - (void)setActivitySummary:(id)arg1 animated:(_Bool)arg2;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

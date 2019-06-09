@@ -18,6 +18,7 @@
 + (id)attachmentWithContentID:(id)arg1 inNote:(id)arg2 context:(id)arg3;
 - (id)compactDescription;
 @property(readonly) __weak NSImage *icon;
+@property(readonly) __weak NSString *mimeType;
 @property(readonly) __weak NSString *filename;
 @property(readonly) __weak NSURL *cidURL;
 - (BOOL)validateFileURL:(inout id *)arg1 error:(out id *)arg2;

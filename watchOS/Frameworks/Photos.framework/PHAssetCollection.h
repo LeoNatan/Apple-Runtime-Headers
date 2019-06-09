@@ -6,7 +6,7 @@
 
 #import <Photos/PHCollection.h>
 
-@class CLLocation, NSArray, NSDate, NSString, NSURL, PHQuery;
+@class CLLocation, NSArray, NSDate, NSManagedObjectID, NSString, NSURL, PHQuery, PLQuery;
 
 @interface PHAssetCollection : PHCollection
 {
@@ -21,6 +21,9 @@
     PHQuery *_query;
     NSString *_transientIdentifier;
     _Bool _canShowCloudComments;
+    NSManagedObjectID *_parentFolderObjectID;
+    _Bool _didFetchDates;
+    struct os_unfair_lock_s _datesLock;
     _Bool _isPendingPhotoStreamAlbum;
     _Bool _shouldDeleteWhenEmpty;
     _Bool _isLibrary;
@@ -34,6 +37,7 @@
     _Bool _isSmartCollection;
     _Bool _hasUnseenContentBoolValue;
     _Bool _canContributeToCloudSharedAlbum;
+    PLQuery *_userQuery;
     NSString *_titleFontName;
     int _plAlbumKind;
     NSString *_transientSubtitle;
@@ -59,11 +63,14 @@
 + (id)defaultTitleFontNames;
 + (id)graphOptionsForTransientAssetCollection:(id)arg1 needsCompleteMomentsInfo:(_Bool)arg2 options:(id)arg3;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2 identifier:(id)arg3;
-+ (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2 identifier:(id)arg3;
++ (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2 identifier:(id)arg3 photoLibrary:(id)arg4;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 subtype:(int)arg2;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2 subtitle:(id)arg3 titleFontName:(id)arg4;
 + (id)transientAssetCollectionWithAssetFetchResult:(id)arg1 title:(id)arg2;
 + (id)transientAssetCollectionWithAssets:(id)arg1 title:(id)arg2;
++ (id)fetchMomentsInHighlight:(id)arg1 options:(id)arg2;
++ (id)fetchPhotosHighlightsContainingMomentsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
++ (id)fetchPhotosHighlightsContainingMoments:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsBackingSuggestion:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsBackingMemory:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsWithOptions:(id)arg1;
@@ -72,7 +79,6 @@
 + (id)fetchSuggestedContributionsForFileURLs:(id)arg1 options:(id)arg2;
 + (id)fetchSuggestedContributionsForAssetsFetchResult:(id)arg1 options:(id)arg2;
 + (id)fetchSuggestedContributionsForCMMPhotoLibrary:(id)arg1 options:(id)arg2;
-+ (id)fetchSharingSuggestionsWithOptions:(id)arg1;
 + (id)fetchUserLibraryAlbumWithOptions:(id)arg1;
 + (id)fetchAssetCollectionsWithObjectIDs:(id)arg1 options:(id)arg2;
 + (id)fetchAssetCollectionsWithALAssetGroupURLs:(id)arg1 options:(id)arg2;
@@ -91,10 +97,9 @@
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
 + (id)_composePropertiesToFetchWithHint:(unsigned int)arg1;
 + (id)corePropertiesToFetch;
-+ (id)sharingSuggestionWithRandomPick:(_Bool)arg1 fallbackToRecentMoments:(_Bool)arg2 needsNotification:(_Bool)arg3;
 + (id)posterImageForAssetCollection:(id)arg1;
-+ (id)pl_PHAssetCollectionForAssetContainer:(id)arg1 includeTrash:(_Bool)arg2;
-+ (id)pl_PHAssetCollectionForAssetContainer:(id)arg1;
++ (id)pl_PHAssetCollectionForAssetContainer:(id)arg1 photoLibrary:(id)arg2 includeTrash:(_Bool)arg3;
++ (id)pl_PHAssetCollectionForAssetContainer:(id)arg1 photoLibrary:(id)arg2;
 @property(readonly, nonatomic) NSString *transientIdentifier; // @synthesize transientIdentifier=_transientIdentifier;
 @property(readonly, nonatomic) _Bool canContributeToCloudSharedAlbum; // @synthesize canContributeToCloudSharedAlbum=_canContributeToCloudSharedAlbum;
 @property(readonly, nonatomic) _Bool hasUnseenContentBoolValue; // @synthesize hasUnseenContentBoolValue=_hasUnseenContentBoolValue;
@@ -123,11 +128,10 @@
 @property(readonly, nonatomic) NSArray *assetOids; // @synthesize assetOids=_assetOids;
 @property(readonly, nonatomic) NSString *transientSubtitle; // @synthesize transientSubtitle=_transientSubtitle;
 @property(readonly, nonatomic) int plAlbumKind; // @synthesize plAlbumKind=_plAlbumKind;
+@property(retain, nonatomic) PLQuery *userQuery; // @synthesize userQuery=_userQuery;
 @property(nonatomic, getter=_canShowCloudComments, setter=_setCanShowCloudComments:) _Bool _canShowCloudComments; // @synthesize _canShowCloudComments;
 @property(readonly, nonatomic) NSArray *localizedLocationNames; // @synthesize localizedLocationNames=_localizedLocationNames;
 @property(readonly, nonatomic) CLLocation *approximateLocation; // @synthesize approximateLocation=_approximateLocation;
-@property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
-@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, nonatomic) PHQuery *query; // @synthesize query=_query;
 @property(readonly, nonatomic) int assetCollectionSubtype; // @synthesize assetCollectionSubtype=_assetCollectionSubtype;
 @property(readonly, nonatomic) int assetCollectionType; // @synthesize assetCollectionType=_assetCollectionType;
@@ -135,7 +139,7 @@
 - (id)description;
 @property(readonly, nonatomic) unsigned int titleFontNameHash;
 @property(readonly, nonatomic) NSString *titleFontName; // @synthesize titleFontName=_titleFontName;
-- (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 subtitle:(id)arg4 titleFontName:(id)arg5 identifier:(id)arg6 albumKind:(int)arg7 subtype:(int)arg8;
+- (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 subtitle:(id)arg4 titleFontName:(id)arg5 identifier:(id)arg6 albumKind:(int)arg7 subtype:(int)arg8 photoLibrary:(id)arg9;
 - (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4 albumKind:(int)arg5 subtype:(int)arg6;
 - (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4 albumKind:(int)arg5;
 - (id)initTransientWithAssets:(id)arg1 orFetchResult:(id)arg2 title:(id)arg3 identifier:(id)arg4;
@@ -146,12 +150,22 @@
 @property(readonly, nonatomic) _Bool canShowAvalancheStacks;
 - (_Bool)canContainAssets;
 - (_Bool)canPerformEditOperation:(int)arg1;
+- (_Bool)isAlbumContentTitleSort;
+- (_Bool)isAlbumContentSort;
+- (id)effectiveCustomSortKey;
+- (id)parentFolderID;
+@property(readonly, nonatomic) _Bool isUserSmartAlbum;
 @property(readonly, nonatomic) _Bool isPlacesAlbum;
 @property(readonly, nonatomic) _Bool isTrashBin;
 @property(readonly, nonatomic) _Bool isLastImportedAlbum;
 - (unsigned int)collectionFixedOrderPriority;
 - (_Bool)collectionHasFixedOrder;
 - (id)localizedSharedByLabelAllowsEmail:(_Bool)arg1;
+@property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
+@property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+- (void)_fetchDatesIfNeeded;
+- (id)_fetchAggregateDatesForSmartAlbum;
+- (_Bool)_shouldFetchDatesIfNeeded;
 - (unsigned int)estimatedVideosCount;
 - (unsigned int)estimatedPhotosCount;
 @property(readonly, nonatomic) unsigned int estimatedAssetCount;

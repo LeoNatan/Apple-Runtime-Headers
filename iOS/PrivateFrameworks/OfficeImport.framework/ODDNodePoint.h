@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     ODDTransitionPoint *mSiblingTransition;
 }
 
+- (void).cxx_destruct;
 - (void)setSiblingTransition:(id)arg1;
 - (id)siblingTransition;
 - (void)setParentTransition:(id)arg1;
@@ -25,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (id)children;
 - (id)parent;
 - (void)setType:(int)arg1;
-- (void)dealloc;
 
 @end
 

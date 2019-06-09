@@ -21,6 +21,7 @@
     unsigned long long _optionsWhenLastSymbolicated;
     _Bool _hadSymbolOwnerWhenLastSymbolicated;
     _Bool _symbolOwnerWasDsymWhenLastSymbolicated;
+    unsigned long long _numInstructionsWhenLastBulkSymbolicated;
     BOOL _hasTextExecSegment;
     NSUUID *_uuid;
     unsigned long long _textSegmentLength;
@@ -41,6 +42,7 @@
 + (void)_doDsymPathsWork:(CDUnknownBlockType)arg1;
 + (id)binaryWithCSSymbolOwner:(struct _CSTypeRef)arg1;
 + (id)binaryWithCSSymbolOwner:(struct _CSTypeRef)arg1 isSparse:(BOOL)arg2;
++ (id)binaryWithUUID:(id)arg1 pid:(int)arg2;
 + (id)binaryWithUUID:(id)arg1;
 + (void)enableImmediateCleanupOfCSSymbolOwners;
 + (void)clearCoreSymbolicationCaches;
@@ -74,6 +76,8 @@
 - (id)symbolWithOffsetIntoTextSegment:(unsigned long long)arg1;
 - (id)instructionAtOffsetIntoTextSegment:(unsigned long long)arg1;
 - (void)checkForNewSymbolForInstruction:(id)arg1;
+- (void)addBulkSymbolicationSymbols:(id)arg1;
+- (BOOL)mightBenefitFromBulkSymbolication;
 - (void)addTailspinSymbols:(id)arg1;
 - (void)addPath:(id)arg1;
 @property(retain) NSString *name;

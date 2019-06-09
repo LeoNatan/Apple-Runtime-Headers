@@ -16,7 +16,6 @@
 }
 
 + (id)defaultCloudBookmarksEligibleOperatingSystemRanges;
-+ (id)rangeWithCloudBookmarksMigrationRampSettingsDictionary:(id)arg1;
 @property(readonly, nonatomic) CDStruct_f6aba300 maximumVersion; // @synthesize maximumVersion=_maximumVersion;
 @property(readonly, nonatomic) CDStruct_f6aba300 minimumVersion; // @synthesize minimumVersion=_minimumVersion;
 @property(readonly, nonatomic) NSString *family; // @synthesize family=_family;

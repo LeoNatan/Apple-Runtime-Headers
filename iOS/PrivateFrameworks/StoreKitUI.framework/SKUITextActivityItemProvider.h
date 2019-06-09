@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIDeferredActivityItemProvider.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUITextActivityItemProvider : SKUIDeferredActivityItemProvider
 {
 }

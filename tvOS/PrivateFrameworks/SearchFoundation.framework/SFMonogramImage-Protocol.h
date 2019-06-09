@@ -11,6 +11,7 @@
 @protocol SFMonogramImage <SFImage>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(nonatomic) int monogramStyle;
 @property(copy, nonatomic) NSString *monogramLetters;
 @end
 

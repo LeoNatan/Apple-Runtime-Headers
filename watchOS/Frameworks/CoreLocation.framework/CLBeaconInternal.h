@@ -16,6 +16,7 @@
     int proximity;
     double accuracy;
     int rssi;
+    double timestamp;
 }
 
 @end

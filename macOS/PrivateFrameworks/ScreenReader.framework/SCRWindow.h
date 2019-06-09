@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     struct {
         unsigned int isNew:1;
         unsigned int ignoreSheet:1;
-        unsigned int reserved:31;
     } _srwFlags;
     BOOL _isFocusingIntoWindow;
     BOOL __registeredFocusedTabChangedNotification;
@@ -44,6 +43,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setMinimizeUIElement:) SCRUIElement *_minimizeUIElement; // @synthesize _minimizeUIElement=__minimizeUIElement;
 @property(readonly, nonatomic) BOOL isFocusingIntoWindow; // @synthesize isFocusingIntoWindow=_isFocusingIntoWindow;
 @property(retain, nonatomic, setter=setCloseUIElement:) SCRUIElement *closeUIElement; // @synthesize closeUIElement=_closeUIElement;
+- (void).cxx_destruct;
 - (void)_removeTrackedElementsForKey:(id)arg1;
 - (void)setTrackedElement:(id)arg1 key:(id)arg2;
 - (id)trackedElementsForKey:(id)arg1;
@@ -57,7 +57,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactRightWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactUpShiftWithEvent:(id)arg1 request:(id)arg2;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)_canNavigateToSheet;
 - (BOOL)focusInto:(id)arg1 event:(id)arg2;
 - (BOOL)handleTaggedOperationWithEvent:(id)arg1 request:(id)arg2;
@@ -78,6 +78,8 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)enclosingBounds;
 - (id)stringForCommand:(id)arg1 withExtension:(id)arg2;
 - (BOOL)supportsPositionalPrecision;
+- (void)describePositionChangeFromPosition:(id)arg1;
+- (id)_descriptionFromTopLeftCornerWithOrigin:(struct CGPoint)arg1 unit:(long long)arg2;
 - (id)descriptionForOrigin;
 - (id)containerDescription;
 - (BOOL)addSelectionDescriptionToRequest:(id)arg1;
@@ -86,6 +88,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)showInGuide;
 - (id)titleDescription;
 - (id)alternateOrderedChildrenForMappedChildren:(id)arg1;
+- (void)setIsNew:(BOOL)arg1;
 - (void)setIgnoreSheet:(BOOL)arg1;
 - (id)toolbar;
 - (BOOL)zoom;

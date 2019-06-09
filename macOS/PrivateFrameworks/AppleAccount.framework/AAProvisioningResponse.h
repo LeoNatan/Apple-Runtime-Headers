@@ -20,6 +20,9 @@
 @property(readonly, nonatomic, getter=isNotesMigrated) BOOL notesMigrated;
 @property(readonly, nonatomic, getter=isManagedAppleID) BOOL managedAppleID;
 @property(readonly, nonatomic) NSDictionary *regionInfo;
+@property(readonly, nonatomic) NSString *fmipAppToken;
+@property(readonly, nonatomic) NSString *keyTransparencyToken;
+@property(readonly, nonatomic) NSString *searchPartyToken;
 @property(readonly, nonatomic) NSString *fmipSiriToken;
 @property(readonly, nonatomic) NSString *fmipAuthToken;
 @property(readonly, nonatomic) NSString *iCloudAuthToken;

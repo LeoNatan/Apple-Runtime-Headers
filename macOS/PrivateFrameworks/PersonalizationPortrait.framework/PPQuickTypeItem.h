@@ -43,6 +43,8 @@
 @property(nonatomic) unsigned char source; // @synthesize source=_source;
 @property(nonatomic) double score; // @synthesize score=_score;
 - (void).cxx_destruct;
+- (long long)reverseCompare:(id)arg1;
+- (long long)compare:(id)arg1;
 - (BOOL)isEqualToQuickTypeItem:(id)arg1;
 - (BOOL)hasScoreSimilarToItem:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

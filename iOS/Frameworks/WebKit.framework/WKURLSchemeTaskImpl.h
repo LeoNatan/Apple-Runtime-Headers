@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 - (void)didFinish;
 - (void)didReceiveData:(id)arg1;
 - (void)didReceiveResponse:(id)arg1;
+@property(readonly, nonatomic) _Bool _requestOnlyIfCached;
 @property(readonly, copy, nonatomic) NSURLRequest *request;
 - (void)dealloc;
 

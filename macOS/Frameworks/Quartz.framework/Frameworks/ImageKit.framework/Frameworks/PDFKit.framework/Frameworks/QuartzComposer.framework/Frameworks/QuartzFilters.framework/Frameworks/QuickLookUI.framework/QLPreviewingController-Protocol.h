@@ -6,11 +6,12 @@
 
 #import <QuickLookUI/NSObject-Protocol.h>
 
-@class NSString;
+@class NSString, NSURL;
 
 @protocol QLPreviewingController <NSObject>
 
 @optional
+- (void)preparePreviewOfFileAtURL:(NSURL *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)preparePreviewOfSearchableItemWithIdentifier:(NSString *)arg1 queryString:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 @end
 

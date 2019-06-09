@@ -110,7 +110,6 @@
 - (void)_willResignActivePlayerItem;
 - (void)_willBecomeActivePlayerItem;
 - (long long)_persistedLikedState;
-- (void)_loadMediaItemWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_handleUpdatedLikedState:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_currentPlaybackRateDidChange:(float)arg1;
 - (id)playbackInfo;

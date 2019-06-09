@@ -8,6 +8,7 @@
 
 @class SKUIIndexBarControl, UICollectionViewLayout, UIRefreshControl;
 
+__attribute__((visibility("hidden")))
 @interface SKUICollectionView : UICollectionView
 {
     _Bool _delegateWantsWillLayoutSubviews;

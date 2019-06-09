@@ -24,7 +24,6 @@
         unsigned int rightIsWildcard:1;
         unsigned int reserved:30;
     } _ptFlags;
-    id _patternReserved;
 }
 
 + (id)_bestMatchForPredicate:(id)arg1 inTemplates:(id)arg2 quality:(double *)arg3;

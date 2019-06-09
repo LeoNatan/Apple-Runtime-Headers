@@ -8,7 +8,6 @@
 
 @class NSMutableArray;
 
-__attribute__((visibility("hidden")))
 @interface GEOMutableURLQueryItems : NSObject
 {
     NSMutableArray *_items;

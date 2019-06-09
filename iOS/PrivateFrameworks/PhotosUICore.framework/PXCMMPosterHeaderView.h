@@ -6,10 +6,11 @@
 
 #import <UIKit/UIView.h>
 
-@class NSString, PXCMMImageView, PXCMMPosterHeaderViewSpec, PXGradientView, UIImageView, UILabel;
-@protocol PXDisplayAsset, PXUIImageProvider;
+#import <PhotosUICore/PXChangeObserver-Protocol.h>
 
-@interface PXCMMPosterHeaderView : UIView
+@class NSString, PXCMMImageView, PXCMMPosterHeaderViewModel, PXCMMPosterHeaderViewSpec, PXGradientView, UIImageView, UILabel;
+
+@interface PXCMMPosterHeaderView : UIView <PXChangeObserver>
 {
     PXCMMPosterHeaderViewSpec *_spec;
     PXCMMImageView *_imageView;
@@ -19,29 +20,37 @@
     UILabel *_subtitleLabel;
     UILabel *_statusLabel;
     UIImageView *_statusCheckmark;
-    _Bool _showStatusCheckmark;
-    NSString *_title;
-    NSString *_subtitle;
-    NSString *_statusString;
+    PXCMMPosterHeaderViewModel *_viewModel;
+    long long _presentationStyle;
 }
 
++ (void)preheatSharedValuesForPresentationStyle:(long long)arg1;
 + (double)preferredHeightForWidth:(double)arg1 traitCollection:(id)arg2 screen:(id)arg3;
-@property(nonatomic) _Bool showStatusCheckmark; // @synthesize showStatusCheckmark=_showStatusCheckmark;
-@property(copy, nonatomic) NSString *statusString; // @synthesize statusString=_statusString;
-@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
-@property(copy, nonatomic) NSString *title; // @synthesize title=_title;
+@property(readonly, nonatomic) long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
+@property(retain, nonatomic) PXCMMPosterHeaderViewModel *viewModel; // @synthesize viewModel=_viewModel;
 - (void).cxx_destruct;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
+- (_Bool)test_showStatusCheckmark;
+- (id)test_statusString;
+- (id)test_subtitle;
+- (id)test_title;
 - (void)_updateFonts;
+- (void)_updateStatusString;
+- (void)_updateSubtitle;
+- (void)_updateTitle;
 - (void)_performLayoutWithSize:(struct CGSize)arg1;
 - (void)layoutSubviews;
+- (id)initWithPresentationStyle:(long long)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-@property(readonly, nonatomic) id <PXUIImageProvider> mediaProvider;
-@property(readonly, nonatomic) id <PXDisplayAsset> asset;
-- (void)setAsset:(id)arg1 mediaProvider:(id)arg2;
-@property(nonatomic, getter=isHighlighted) _Bool highlighted;
-- (id)initWithPresentationStyle:(long long)arg1;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

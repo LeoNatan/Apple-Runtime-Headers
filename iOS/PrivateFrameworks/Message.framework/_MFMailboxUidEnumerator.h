@@ -14,9 +14,9 @@
     unsigned long long _index;
 }
 
+- (void).cxx_destruct;
 - (id)nextObject;
 - (id)initWithMailbox:(id)arg1;
-- (void)dealloc;
 
 @end
 

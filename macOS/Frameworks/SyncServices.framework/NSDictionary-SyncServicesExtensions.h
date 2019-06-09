@@ -7,11 +7,17 @@
 #import <Foundation/NSDictionary.h>
 
 @interface NSDictionary (SyncServicesExtensions)
++ (id)isd_propertyValueWithType:(int)arg1 bytesEncodedForSqlite:(const void *)arg2;
 - (id)isd_dictionarySubsetWithKeys:(id)arg1;
 - (int)isd_collectionType;
 - (id)allDistinctValues;
 - (id)isd_reverseDictionaryMapping;
 - (id)isd_reversedDictionaryUsingStrings;
 - (id)isd_reversedDictionaryUsingSets;
+- (id)isd_summaryWithIndent:(long long)arg1;
+- (int)isd_sqlitePropertyValueType;
+- (void *)isd_bytesEncodedForSqlite;
+- (id)isd_deepCopy;
+- (int)isd_quickDirtyCoderType;
 @end
 

@@ -8,15 +8,15 @@
 
 struct os_trace_blob_s {
     union {
-        char *_field1;
-        void *_field2;
-        char *_field3;
-        char *_field4;
-    } _field1;
-    unsigned int _field2;
-    unsigned int _field3;
-    unsigned int _field4;
-    unsigned short _field5;
-    _Bool _field6;
+        char *ob_b;
+        void *ob_v;
+        char *ob_s;
+        char *ob_c;
+    } ;
+    unsigned int ob_len;
+    unsigned int ob_size;
+    unsigned int ob_maxsize;
+    unsigned short ob_flags;
+    _Bool ob_binary;
 };
 

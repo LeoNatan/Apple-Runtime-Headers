@@ -28,7 +28,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)checkNumChannels:(unsigned short)arg1;
-- (void)applyChannelBins:(id)arg1 channelID:(unsigned short)arg2;
+- (void)applyChannelBins:(struct _VCAudioPowerSpectrumEntry *)arg1 binCount:(unsigned int)arg2 channelID:(unsigned short)arg3;
 
 @end
 

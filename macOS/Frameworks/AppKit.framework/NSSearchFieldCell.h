@@ -8,7 +8,7 @@
 
 #import <AppKit/CALayerDelegate-Protocol.h>
 
-@class NSArray, NSButtonCell, NSMenu, NSMutableArray, NSString, NSTimer;
+@class NSArray, NSButtonCell, NSImage, NSMenu, NSMutableArray, NSString, NSTimer;
 
 @interface NSSearchFieldCell : NSTextFieldCell <CALayerDelegate>
 {
@@ -38,10 +38,10 @@
     NSMutableArray *_recentSearches;
     NSMenu *_searchMenu;
     NSTimer *_partialStringTimer;
-    unsigned int _reserved1;
-    unsigned int _reserved2;
-    unsigned int _reserved3;
-    unsigned int _reserved4;
+    NSImage *_activeSearchImage;
+    NSImage *_inactiveSearchImage;
+    NSImage *_activeCancelImage;
+    NSImage *_inactiveCancelImage;
 }
 
 + (BOOL)automaticTextCompletionEnabled;
@@ -50,7 +50,7 @@
 - (void)_controlViewDidChangeEffectiveAppearance:(id)arg1;
 - (void)_windowChangedKeyStateInView:(id)arg1;
 - (void)drawLayer:(id)arg1 inContext:(struct CGContext *)arg2;
-- (unsigned long long)_interiorContentAppearanceInView:(id)arg1;
+- (long long)_interiorContentStateInView:(id)arg1;
 - (long long)interiorBackgroundStyle;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)updateLayerWithFrame:(struct CGRect)arg1 inView:(id)arg2;
@@ -62,7 +62,6 @@
 - (void)_resetResignTransition;
 - (struct CGRect)_searchMenuButtonLayerFrameForBounds:(struct CGRect)arg1 focus:(BOOL)arg2;
 - (void)_invalidateButtonLayers;
-- (id)_searchMenuButtonLayerWithMenu;
 - (id)_searchMenuButtonLayer;
 - (id)_cancelButtonLayer;
 - (id)initWithCoder:(id)arg1;
@@ -109,6 +108,7 @@
 - (BOOL)_isEmpty;
 - (BOOL)_usesCenteredLook;
 - (id)_defaultPlaceholderString;
+- (void)setUserInterfaceLayoutDirection:(long long)arg1;
 - (void)setControlSize:(unsigned long long)arg1;
 - (void)resetCancelButtonCell;
 - (void)resetSearchButtonCell;

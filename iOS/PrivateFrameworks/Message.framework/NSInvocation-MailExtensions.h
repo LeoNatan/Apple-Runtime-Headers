@@ -6,10 +6,21 @@
 
 #import <Foundation/NSInvocation.h>
 
-@interface NSInvocation (MailExtensions)
+#import <Message/EFLoggable-Protocol.h>
+
+@class NSString;
+
+@interface NSInvocation (MailExtensions) <EFLoggable>
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object1:(id)arg3 object2:(id)arg4;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2 object:(id)arg3;
 + (id)mf_invocationWithSelector:(SEL)arg1 target:(id)arg2;
++ (id)log;
 - (_Bool)mf_shouldLogInvocation;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 @end
 

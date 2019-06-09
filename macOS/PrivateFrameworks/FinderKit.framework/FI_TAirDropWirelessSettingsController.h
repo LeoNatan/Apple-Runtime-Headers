@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (void)_setWifiEnabledForUpdateState:(_Bool)arg1;
 - (void)_setBluetoothEnabledForUpdateState:(_Bool)arg1;
 - (void)dealloc;
-- (id)init;
 - (id)_init;
 
 // Remaining properties

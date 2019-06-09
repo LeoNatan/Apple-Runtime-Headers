@@ -10,6 +10,7 @@
 
 @class NSString, UIPopoverController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIPopoverObserver : NSObject <UIPopoverControllerDelegate>
 {
     UIPopoverController *_popoverController;

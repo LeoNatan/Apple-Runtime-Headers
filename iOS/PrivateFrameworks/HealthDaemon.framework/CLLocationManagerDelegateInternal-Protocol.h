@@ -6,7 +6,7 @@
 
 #import <HealthDaemon/CLLocationManagerDelegate-Protocol.h>
 
-@class CLLocation, CLLocationManager, CLRegion, NSArray, NSDictionary, NSError, _CLRangingPeer;
+@class CLLocation, CLLocationManager, NSArray, NSDictionary, NSError, _CLRangingPeer;
 
 @protocol CLLocationManagerDelegateInternal <CLLocationManagerDelegate>
 
@@ -15,8 +15,6 @@
 - (void)locationManager:(CLLocationManager *)arg1 didStopRangingForPeer:(_CLRangingPeer *)arg2;
 - (void)locationManager:(CLLocationManager *)arg1 didStartRangingForPeer:(_CLRangingPeer *)arg2;
 - (void)locationManager:(CLLocationManager *)arg1 didRangePeers:(NSArray *)arg2;
-- (void)locationManager:(CLLocationManager *)arg1 didExitRegion:(CLRegion *)arg2 withLocation:(CLLocation *)arg3;
-- (void)locationManager:(CLLocationManager *)arg1 didEnterRegion:(CLRegion *)arg2 withLocation:(CLLocation *)arg3;
 - (void)locationManager:(CLLocationManager *)arg1 didFailFindingPlacemarkForLocation:(CLLocation *)arg2 withError:(NSError *)arg3;
 - (void)locationManager:(CLLocationManager *)arg1 didFindPlacemark:(NSDictionary *)arg2 forLocation:(CLLocation *)arg3;
 - (void)locationManager:(CLLocationManager *)arg1 didChangeStatusForTechnology:(int)arg2 active:(_Bool)arg3;

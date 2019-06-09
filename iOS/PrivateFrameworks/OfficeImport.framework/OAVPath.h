@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 + (void)readPath:(id)arg1 toGeometry:(id)arg2;
 + (struct EshComputedValue)parseParam:(const char **)arg1 first:(_Bool)arg2;
 + (int)parseCommand:(const char **)arg1;
++ (struct EshComputedValue)noneParam;
 
 @end
 

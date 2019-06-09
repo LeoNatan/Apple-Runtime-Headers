@@ -15,6 +15,7 @@
 }
 
 - (id)moveItem:(id)arg1 afterItem:(id)arg2;
+- (id)limitedIndexPathForMovingIndexPath:(id)arg1 toProprosedIndexPath:(id)arg2;
 - (_Bool)canMoveItem:(id)arg1;
 
 // Remaining properties

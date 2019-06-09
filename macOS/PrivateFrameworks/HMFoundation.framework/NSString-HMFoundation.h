@@ -8,6 +8,6 @@
 
 @interface NSString (HMFoundation)
 @property(readonly, getter=hmf_isInteger) BOOL hmf_integer;
-@property(readonly, getter=hmf_isNumeric) BOOL hmf_mumeric;
+@property(readonly, getter=hmf_isNumeric) BOOL hmf_numeric;
 @end
 

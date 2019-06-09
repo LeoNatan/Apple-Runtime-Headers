@@ -34,6 +34,8 @@
 - (void)dispatchGroup:(id)arg1 notify:(CDUnknownBlockType)arg2;
 - (void)dispatchGroup:(id)arg1 async:(CDUnknownBlockType)arg2;
 - (void)dispatchAfter:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
+- (void)dispatchBarrierAsyncWithQOS:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
+- (void)dispatchAsyncWithQOS:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
 - (void)dispatchBarrierAsync:(CDUnknownBlockType)arg1;
 - (void)dispatchBarrierSync:(CDUnknownBlockType)arg1;
 - (void)dispatchAsync:(CDUnknownBlockType)arg1;
@@ -55,18 +57,12 @@
 - (id)dispatchCancellableAfterInterval:(double)arg1 block:(CDUnknownBlockType)arg2;
 - (id)dispatchCancellableAfterDelay:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (id)dispatchCancellable:(CDUnknownBlockType)arg1;
-- (void)dispatchBarrierAsyncWithQOS:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
-- (void)dispatchBarrierAsyncWithCurrentQOS:(CDUnknownBlockType)arg1;
-- (void)dispatchAsyncWithQOS:(unsigned int)arg1 block:(CDUnknownBlockType)arg2;
-- (void)dispatchAsyncWithCurrentQOS:(CDUnknownBlockType)arg1;
 - (void)dispatchAfterInterval:(double)arg1 block:(CDUnknownBlockType)arg2;
 - (void)dispatchAfterDelay:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (void)removeAllQueuedBlocksAndWait;
 - (void)removeAllQueuedBlocks;
 - (void)runBlock:(CDUnknownBlockType)arg1;
 - (BOOL)onQueue;
-- (void)showQueueUsageByEnqueueSite;
-- (void)showQueueUsageByExecutionTime;
 
 @end
 

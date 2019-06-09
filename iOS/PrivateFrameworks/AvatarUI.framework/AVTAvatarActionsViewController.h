@@ -84,6 +84,7 @@
 - (void)loadView;
 - (void)configureAVTViewSession:(id)arg1 withAvatarRecord:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)initWithAVTViewSessionProvider:(id)arg1 actionsModel:(id)arg2 environment:(id)arg3;
+- (void)performEdit;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

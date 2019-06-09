@@ -31,8 +31,8 @@
 @property(nonatomic) _Bool wantsDefaultMusicFallbackPlaybackIntent; // @synthesize wantsDefaultMusicFallbackPlaybackIntent=_wantsDefaultMusicFallbackPlaybackIntent;
 @property(nonatomic) _Bool wantsRadioSupport; // @synthesize wantsRadioSupport=_wantsRadioSupport;
 - (void).cxx_destruct;
-- (void)startPlaybackWithIntent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)preparePlaybackWithIntent:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)performMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)performMediaRemoteCommand:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_configureDefaultFallbackPlaybackIntentIfNeededWithPlaybackEngine:(id)arg1;
 - (void)_configureLocalOriginObserverAndCommandHandler;
 - (void)engine:(id)arg1 didFailToPlayItem:(id)arg2 withError:(id)arg3;
@@ -50,9 +50,8 @@
 - (void)setSystemMusicApplication:(_Bool)arg1;
 - (void)removeErrorHandler:(id)arg1;
 - (void)addErrorHandler:(id)arg1;
-- (void)performMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)performMediaRemoteCommand:(unsigned int)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)clearPlaybackQueueWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)insertPlaybackIntent:(id)arg1 intoPlaybackQueueAtInsertionPosition:(unsigned int)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)replacePlaybackQueueWithIntent:(id)arg1 preventingAutomaticPlayback:(_Bool)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)prepareToHandleMediaRemoteCommands;
 - (void)setupPlaybackEngine;

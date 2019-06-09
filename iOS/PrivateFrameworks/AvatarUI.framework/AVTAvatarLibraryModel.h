@@ -30,7 +30,7 @@
 - (void).cxx_destruct;
 - (void)avatarEditorViewControllerDidCancel:(id)arg1;
 - (void)avatarEditorViewController:(id)arg1 didFinishWithAvatarRecord:(id)arg2;
-- (void)presetShareSheetWithRecords:(id)arg1;
+- (void)presetShareSheetWithRecords:(id)arg1 fromItem:(id)arg2;
 - (long long)indexForRecord:(id)arg1;
 - (void)updateForEditedRecord:(id)arg1;
 - (void)updateForCreatedRecord:(id)arg1;

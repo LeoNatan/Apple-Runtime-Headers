@@ -16,11 +16,11 @@
     NSString *_stringValue;
     NSColor *_textColor;
     NSFont *_textFont;
-    unsigned long long _alignment;
+    long long _alignment;
 }
 
 @property BOOL hasSyncedAttributes; // @synthesize hasSyncedAttributes=_hasSyncedAttributes;
-@property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
+@property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(retain, nonatomic) NSFont *textFont; // @synthesize textFont=_textFont;
 @property(retain, nonatomic) NSColor *textColor; // @synthesize textColor=_textColor;
 @property(retain, nonatomic) NSString *stringValue; // @synthesize stringValue=_stringValue;
@@ -33,7 +33,7 @@
 - (void)syncAttributes;
 - (double)height;
 - (void)awakeFromNib;
-- (id)initWithString:(id)arg1 font:(id)arg2 color:(id)arg3 alignment:(unsigned long long)arg4;
+- (id)initWithString:(id)arg1 font:(id)arg2 color:(id)arg3 alignment:(long long)arg4;
 - (id)initWithString:(id)arg1 font:(id)arg2 color:(id)arg3;
 - (id)initWithString:(id)arg1 font:(id)arg2;
 - (id)initWithString:(id)arg1;

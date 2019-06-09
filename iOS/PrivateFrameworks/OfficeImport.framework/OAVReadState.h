@@ -12,13 +12,15 @@ __attribute__((visibility("hidden")))
 @interface OAVReadState : OCXReadState
 {
     Class mClient;
-    OAXDrawingState *mOAXState;
     OCPPackagePart *mPackagePart;
     NSMutableDictionary *mShapeTypes;
     NSMutableDictionary *mShapeIdMap;
     NSMutableSet *mDualDrawables;
+    OAXDrawingState *mOAXState;
 }
 
+@property __weak OAXDrawingState *oaxState; // @synthesize oaxState=mOAXState;
+- (void).cxx_destruct;
 - (id)blipRefForURL:(id)arg1;
 - (unsigned int)officeArtShapeIdWithVmlShapeId:(id)arg1;
 - (_Bool)isDualDrawable:(id)arg1;
@@ -29,11 +31,8 @@ __attribute__((visibility("hidden")))
 - (unsigned short)shapeTypeForId:(id)arg1;
 - (void)setPackagePart:(id)arg1;
 - (id)packagePart;
-- (void)setOAXState:(id)arg1;
-- (id)oaxState;
 - (Class)client;
 - (void)resetForNewDrawing;
-- (void)dealloc;
 - (id)initWithClient:(Class)arg1 packagePart:(id)arg2;
 
 @end

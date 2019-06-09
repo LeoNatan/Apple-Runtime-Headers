@@ -6,12 +6,16 @@
 
 #import <SoftwareUpdateServicesUI/NSObject-Protocol.h>
 
+@class NSNumber;
+
 @protocol SUSUICommandLineToolServerInterface <NSObject>
+- (void)setPasscodePolicy:(unsigned long long)arg1;
 - (void)simulateComingFromOTAUpdate;
 - (void)reboot:(_Bool)arg1;
 - (void)toggleSettingsBadge:(_Bool)arg1;
 - (void)showEmergencyCallUIWithOptions:(unsigned long long)arg1 result:(void (^)(_Bool, NSError *))arg2;
 - (void)showAuthenticationUIWithOptions:(unsigned long long)arg1 result:(void (^)(_Bool, NSError *))arg2;
-- (void)showMiniAlert:(unsigned long long)arg1 usingFakeData:(_Bool)arg2;
+- (void)showFollowUp:(unsigned long long)arg1;
+- (void)showMiniAlert:(unsigned long long)arg1 usingFakeData:(_Bool)arg2 errorCode:(NSNumber *)arg3;
 @end
 

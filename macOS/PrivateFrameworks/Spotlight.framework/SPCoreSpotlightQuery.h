@@ -6,25 +6,28 @@
 
 #import <Spotlight/SPMetadataQuery.h>
 
-@class CSSearchQuery, NSArray, NSMutableArray;
+@class CSSearchQuery, NSMutableArray, PRSRankingItemRanker, SPMetadataPattern;
 
 @interface SPCoreSpotlightQuery : SPMetadataQuery
 {
     NSMutableArray *_results;
+    NSMutableArray *_sections;
+    PRSRankingItemRanker *_ranker;
     CSSearchQuery *_csQuery;
-    NSArray *_rankingTerms;
+    SPMetadataPattern *_queryPattern;
 }
 
 + (id)defaultPrefetchedAttributes;
-@property(retain) NSArray *rankingTerms; // @synthesize rankingTerms=_rankingTerms;
+@property(readonly) SPMetadataPattern *queryPattern; // @synthesize queryPattern=_queryPattern;
 @property(retain) CSSearchQuery *csQuery; // @synthesize csQuery=_csQuery;
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)executeQuery;
 - (void)initQuery;
-- (void)setRankingQueries:(id)arg1;
 - (void)completed:(id)arg1;
 - (void)foundItems:(id)arg1;
+- (BOOL)isCoreSpotlightQuery;
+- (BOOL)isDocumentQuery;
 
 @end
 

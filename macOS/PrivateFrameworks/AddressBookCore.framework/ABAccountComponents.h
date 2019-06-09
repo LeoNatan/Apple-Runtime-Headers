@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class ABACAccount, NSString;
+@class ABACAccount, NSNumber, NSString;
 @protocol ABACAccountStore;
 
 @interface ABAccountComponents : NSObject
@@ -15,17 +15,24 @@
     NSString *_path;
     ABACAccount *_account;
     id <ABACAccountStore> _store;
+    ABACAccount *_parentAccount;
+    NSNumber *_dsid;
+    NSString *_altDSID;
 }
 
++ (id)componentsWithIdentifier:(id)arg1 path:(id)arg2 account:(id)arg3 parentAccount:(id)arg4 store:(id)arg5;
 + (id)componentsWithIdentifier:(id)arg1 path:(id)arg2 account:(id)arg3 store:(id)arg4;
 + (id)componentsWithIdentifier:(id)arg1;
+@property(readonly) NSString *altDSID; // @synthesize altDSID=_altDSID;
+@property(readonly) NSNumber *dsid; // @synthesize dsid=_dsid;
 @property(readonly) id <ABACAccountStore> store; // @synthesize store=_store;
+@property(readonly) ABACAccount *parentAccount; // @synthesize parentAccount=_parentAccount;
 @property(readonly) ABACAccount *account; // @synthesize account=_account;
 @property(readonly) NSString *path; // @synthesize path=_path;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initWithIdentifier:(id)arg1 path:(id)arg2 account:(id)arg3 store:(id)arg4;
+- (id)initWithIdentifier:(id)arg1 path:(id)arg2 account:(id)arg3 parentAccount:(id)arg4 store:(id)arg5;
 
 @end
 

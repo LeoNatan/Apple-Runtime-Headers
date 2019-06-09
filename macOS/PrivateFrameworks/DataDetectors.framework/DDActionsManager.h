@@ -6,12 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, NSMutableSet;
+@class NSMutableSet;
 @protocol DDActionsManagerDelegateProtocol;
 
 @interface DDActionsManager : NSObject
 {
-    NSMutableDictionary *_actionsDictionary;
     NSMutableSet *_uiElementsInUse;
     BOOL _forceWindowAnimationsFromRight;
     BOOL _containsAnchoredElement;
@@ -28,7 +27,6 @@
 @property __weak id <DDActionsManagerDelegateProtocol> delegate; // @synthesize delegate=_delegate;
 @property BOOL forceWindowAnimationsFromRight; // @synthesize forceWindowAnimationsFromRight=_forceWindowAnimationsFromRight;
 - (void).cxx_destruct;
-- (void)_load;
 - (id)runActionForDictionary:(id)arg1;
 - (void)requestBubbleClosureUnanchorOnFailure:(BOOL)arg1;
 - (void)unanchorBubbles;
@@ -41,6 +39,7 @@
 - (id)defaultActionForType:(id)arg1;
 - (id)actionsForType:(id)arg1;
 - (id)actionsForType:(id)arg1 actionContext:(id)arg2;
+-     // Error parsing type: @32@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24, name: prependActionsForResult:actions:
 -     // Error parsing type: c32@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16@24, name: hasActionsForResult:actionContext:
 -     // Error parsing type: @24@0:8^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}16, name: actionsForResult:
 -     // Error parsing type: @56@0:8@16^{__DDResult={__CFRuntimeBase=QAQ}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=qq}q^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}qCf}24@32@40@48, name: menuItemsForRootType:result:textCheckingResult:URL:context:

@@ -19,8 +19,7 @@
 + (id)currentPlatform;
 + (id)defaultPlatform;
 + (void)setDefaultPlatform:(id)arg1;
-+ (void)setPrequeliteStoreImplementationForPlatform:(id)arg1;
-+ (void)setDirectClientImplementationForPlatform:(id)arg1;
++ (void)setProxyImplementationForPlatform:(id)arg1;
 @property(copy, nonatomic) NSString *suffix; // @synthesize suffix=_suffix;
 - (void).cxx_destruct;
 - (id)description;

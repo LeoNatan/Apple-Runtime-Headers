@@ -7,11 +7,12 @@
 #import <GeoServices/NSObject-Protocol.h>
 
 @class NSString;
-@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource;
+@protocol GEOTransitIconDataSource, GEOTransitShieldDataSource, GEOTransitTextDataSource;
 
 @protocol GEOTransitArtworkDataSource <NSObject>
 @property(readonly, nonatomic) NSString *accessibilityText;
 @property(readonly, nonatomic) _Bool hasRoutingIncidentBadge;
+@property(readonly, nonatomic) id <GEOTransitTextDataSource> textDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> iconFallbackShieldDataSource;
 @property(readonly, nonatomic) id <GEOTransitIconDataSource> iconDataSource;
 @property(readonly, nonatomic) id <GEOTransitShieldDataSource> shieldDataSource;

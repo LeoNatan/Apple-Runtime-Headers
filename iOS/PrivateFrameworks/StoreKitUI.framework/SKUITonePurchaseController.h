@@ -10,6 +10,7 @@
 
 @class CNContactPickerViewController, NSString, SKUIClientContext, SKUIItem, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUITonePurchaseController : NSObject <CNContactPickerDelegate>
 {
     SKUIClientContext *_clientContext;

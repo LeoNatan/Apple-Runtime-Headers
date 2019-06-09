@@ -22,6 +22,7 @@
     UIImage *_fullsizeAppIcon;
     NSString *_title;
     NSString *_subtitle;
+    UIImage *_monochromeBodyImage;
     NSUserActivity *_userActivity;
     INIntent *_intent;
     INRelevantShortcut *_relevantShortcut;
@@ -32,6 +33,7 @@
 @property(readonly, nonatomic) INRelevantShortcut *relevantShortcut; // @synthesize relevantShortcut=_relevantShortcut;
 @property(readonly, nonatomic) INIntent *intent; // @synthesize intent=_intent;
 @property(readonly, nonatomic) NSUserActivity *userActivity; // @synthesize userActivity=_userActivity;
+@property(readonly, nonatomic) UIImage *monochromeBodyImage; // @synthesize monochromeBodyImage=_monochromeBodyImage;
 @property(readonly, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(readonly, nonatomic) NSString *title; // @synthesize title=_title;
 @property(readonly, nonatomic) _Bool displayAppName; // @synthesize displayAppName=_displayAppName;
@@ -53,6 +55,8 @@
 @property(readonly, nonatomic) UIImage *bodyImage;
 @property(readonly, nonatomic, getter=isLocalDonation) _Bool localDonation;
 - (id)_placeholderImageNameForBundleID:(id)arg1;
+@property(readonly, nonatomic) _Bool supportsBackgroundExecution;
+- (_Bool)_hasLocalExtensionForIntentExecution;
 @property(readonly, nonatomic) _Bool supportsLocalIntentExecution;
 @property(readonly, nonatomic) _Bool requiresRemoteExecution;
 - (_Bool)_isPodcastsDonation;

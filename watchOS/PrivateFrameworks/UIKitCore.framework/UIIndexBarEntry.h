@@ -8,7 +8,6 @@
 
 @class NSIndexPath, NSString, UIImage;
 
-__attribute__((visibility("hidden")))
 @interface UIIndexBarEntry : NSObject
 {
     NSString *_title;

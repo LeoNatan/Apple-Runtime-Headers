@@ -8,6 +8,7 @@
 
 @class OITSUColor;
 
+__attribute__((visibility("hidden")))
 @interface MFPSolidBrush : MFPBrush
 {
     OITSUColor *mColor;

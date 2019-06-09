@@ -213,11 +213,6 @@ struct cssm_keyheader {
     unsigned int Reserved;
 };
 
-struct cssm_x509_algorithm_identifier {
-    struct cssm_data _field1;
-    struct cssm_data _field2;
-};
-
 struct cssm_x509_name {
     unsigned int _field1;
     struct cssm_x509_rdn *_field2;
@@ -239,4 +234,9 @@ typedef struct {
         long long subsetCount;
     } authenticationPolicy;
 } CDStruct_9d0d652d;
+
+typedef struct {
+    struct cssm_data _field1;
+    struct cssm_data _field2;
+} CDStruct_b9cef19c;
 

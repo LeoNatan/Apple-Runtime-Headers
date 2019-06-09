@@ -23,8 +23,10 @@
     NSString *_type;
     _SFPBColor *_backgroundColor;
     NSArray *_cardSections;
+    unsigned long long _numberOfRows;
 }
 
+@property(nonatomic) unsigned long long numberOfRows; // @synthesize numberOfRows=_numberOfRows;
 @property(copy, nonatomic) NSArray *cardSections; // @synthesize cardSections=_cardSections;
 @property(retain, nonatomic) _SFPBColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) int separatorStyle; // @synthesize separatorStyle=_separatorStyle;

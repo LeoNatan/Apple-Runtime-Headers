@@ -23,6 +23,7 @@
 - (CDStruct_0ea41ea9)currentChunkInfo;
 - (CDStruct_43f4b5b8)currentChunkStorageRange;
 - (id)currentChunkStorageURL;
+- (CDStruct_56eee5a4)currentSampleAudioDependencyInfo;
 - (CDStruct_53793daa)currentSampleDependencyInfo;
 - (CDStruct_550fdc95)currentSampleSyncInfo;
 - (const struct opaqueCMFormatDescription *)copyCurrentSampleFormatDescription;
@@ -43,7 +44,6 @@
 - (long long)stepInDecodeOrderByCount:(long long)arg1;
 - (struct OpaqueFigSampleCursor *)_figSampleCursor;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)description;
 - (id)initWithFigSampleCursor:(struct OpaqueFigSampleCursor *)arg1;

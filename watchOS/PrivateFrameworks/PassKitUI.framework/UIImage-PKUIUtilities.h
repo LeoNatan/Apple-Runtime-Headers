@@ -7,6 +7,7 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (PKUIUtilities)
++ (id)pkui_imageWithColor:(id)arg1;
 + (id)imageWithPKImage:(id)arg1;
 - (struct CGSize)alignmentSize;
 - (id)pkui_imageWithAlpha:(float)arg1;

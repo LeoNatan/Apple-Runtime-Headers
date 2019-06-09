@@ -4,13 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ARKit/ARTechnique.h>
+#import <ARKit/ARImageBasedTechnique.h>
 
-@interface ARFaceTrackingInternalTechnique : ARTechnique
+@interface ARFaceTrackingInternalTechnique : ARImageBasedTechnique
 {
+    long long _maximumNumberOfTrackedFaces;
 }
 
 + (_Bool)isSupported;
+@property(readonly, nonatomic) long long maximumNumberOfTrackedFaces; // @synthesize maximumNumberOfTrackedFaces=_maximumNumberOfTrackedFaces;
 - (id)initWithOptions:(id)arg1;
 
 @end

@@ -9,9 +9,9 @@
 @class MTDisableAlarmIntent;
 
 @protocol MTDisableAlarmIntentHandling <NSObject>
-- (void)handleMTDisableAlarm:(MTDisableAlarmIntent *)arg1 completion:(void (^)(MTDisableAlarmIntentResponse *))arg2;
+- (void)handleDisableAlarm:(MTDisableAlarmIntent *)arg1 completion:(void (^)(MTDisableAlarmIntentResponse *))arg2;
 
 @optional
-- (void)confirmMTDisableAlarm:(MTDisableAlarmIntent *)arg1 completion:(void (^)(MTDisableAlarmIntentResponse *))arg2;
+- (void)confirmDisableAlarm:(MTDisableAlarmIntent *)arg1 completion:(void (^)(MTDisableAlarmIntentResponse *))arg2;
 @end
 

@@ -4,23 +4,19 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WatchListKit/WLKNetworkRequestOperation.h>
+#import <WatchListKit/WLKUTSNetworkRequestOperation.h>
 
-@class NSDictionary, NSString;
+@class NSString;
 
-@interface WLKPlayActivityDecorateLiveOperation : WLKNetworkRequestOperation
+@interface WLKPlayActivityDecorateLiveOperation : WLKUTSNetworkRequestOperation
 {
     NSString *_channelID;
     NSString *_serviceID;
-    NSDictionary *_scheduleDictionary;
 }
 
-@property(readonly, copy, nonatomic) NSDictionary *scheduleDictionary; // @synthesize scheduleDictionary=_scheduleDictionary;
 @property(readonly, copy, nonatomic) NSString *serviceID; // @synthesize serviceID=_serviceID;
 @property(readonly, copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
 - (void).cxx_destruct;
-- (void)didFinish;
-- (id)responseProcessor;
 - (id)initWithChannelID:(id)arg1 serviceID:(id)arg2;
 
 @end

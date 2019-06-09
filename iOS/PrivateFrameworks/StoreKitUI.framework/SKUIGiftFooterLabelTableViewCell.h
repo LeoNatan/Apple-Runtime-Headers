@@ -8,6 +8,7 @@
 
 @class NSString, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftFooterLabelTableViewCell : UITableViewCell
 {
     UILabel *_footerLabel;

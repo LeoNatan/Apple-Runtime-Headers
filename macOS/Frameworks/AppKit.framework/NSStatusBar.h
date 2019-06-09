@@ -10,7 +10,6 @@
 {
     id _items;
     void *_fReserved1;
-    void *_fReserved2;
     long long _registeredForNote;
 }
 

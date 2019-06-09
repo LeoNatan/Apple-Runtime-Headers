@@ -6,6 +6,7 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <PhotosUI/PLCloudFeedNavigating-Protocol.h>
 #import <PhotosUI/PUAlbumStreamActivityDelegate-Protocol.h>
 #import <PhotosUI/PUFeedCaptionCellDelegate-Protocol.h>
 #import <PhotosUI/PUFeedCollectionViewLayoutDelegate-Protocol.h>
@@ -16,7 +17,6 @@
 #import <PhotosUI/PUOneUpPresentationHelperDelegate-Protocol.h>
 #import <PhotosUI/PUPhotoBrowserZoomTransitionDelegate-Protocol.h>
 #import <PhotosUI/PUScrollViewSpeedometerDelegate-Protocol.h>
-#import <PhotosUI/PXCloudFeedNavigating-Protocol.h>
 #import <PhotosUI/PXFeedSectionInfosManagerDelegate-Protocol.h>
 #import <PhotosUI/PXNavigableCloudFeedViewController-Protocol.h>
 #import <PhotosUI/PXSettingsKeyObserver-Protocol.h>
@@ -25,14 +25,12 @@
 #import <PhotosUI/UICollectionViewDragSource-Protocol.h>
 #import <PhotosUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <PhotosUI/UIPopoverPresentationControllerDelegate-Protocol.h>
-#import <PhotosUI/UIViewControllerPreviewingDelegate-Protocol.h>
-#import <PhotosUI/UIViewControllerPreviewingDelegate_Private-Protocol.h>
+#import <PhotosUI/_UIContextMenuInteractionDelegate-Protocol.h>
 #import <PhotosUI/_UISettingsKeyObserver-Protocol.h>
 
-@class NSDictionary, NSIndexPath, NSMutableArray, NSMutableSet, NSString, PHCachingImageManager, PLCloudSharedAlbum, PLCloudSharedComment, PLManagedAlbumList, PLManagedAsset, PUAlbumStreamActivity, PUFeedAssetContainerList, PUFeedViewControllerRestorableState, PUFeedViewControllerSpec, PUOneUpPresentationHelper, PUPhotoBrowserOneUpPresentationAdaptor, PUPhotoPinchGestureRecognizer, PUPhotosPickerViewController, PUScrollViewSpeedometer, PXFeedDateFormatter, PXFeedSectionInfosManager, UIBarButtonItem, UICollectionView, UITapGestureRecognizer, _UIContentUnavailableView;
-@protocol UIViewControllerPreviewing;
+@class NSDictionary, NSIndexPath, NSMutableArray, NSMutableSet, NSString, PHCachingImageManager, PLCloudSharedAlbum, PLCloudSharedComment, PLManagedAlbumList, PLManagedAsset, PUAlbumStreamActivity, PUFeedViewControllerRestorableState, PUFeedViewControllerSpec, PUOneUpPresentationHelper, PUPhotoBrowserOneUpPresentationAdaptor, PUPhotoPinchGestureRecognizer, PUPhotosPickerViewController, PUScrollViewSpeedometer, PXFeedAssetContainerList, PXFeedDateFormatter, PXFeedSectionInfosManager, UIBarButtonItem, UICollectionView, UITapGestureRecognizer, _UIContentUnavailableView;
 
-@interface PUFeedViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIPopoverPresentationControllerDelegate, PUFeedCollectionViewLayoutDelegate, PXFeedSectionInfosManagerDelegate, PUPhotoBrowserZoomTransitionDelegate, PUFeedImageCellDelegate, PUFeedPlayerCellDelegate, PUFeedTextCellDelegate, PUFeedInvitationCellDelegate, PUFeedCaptionCellDelegate, UIGestureRecognizerDelegate, PUAlbumStreamActivityDelegate, _UISettingsKeyObserver, PUScrollViewSpeedometerDelegate, PUOneUpPresentationHelperDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private, PXSettingsKeyObserver, UICollectionViewDragSource, PXCloudFeedNavigating, PXNavigableCloudFeedViewController>
+@interface PUFeedViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIPopoverPresentationControllerDelegate, PUFeedCollectionViewLayoutDelegate, PXFeedSectionInfosManagerDelegate, PUPhotoBrowserZoomTransitionDelegate, PUFeedImageCellDelegate, PUFeedPlayerCellDelegate, PUFeedTextCellDelegate, PUFeedInvitationCellDelegate, PUFeedCaptionCellDelegate, UIGestureRecognizerDelegate, PUAlbumStreamActivityDelegate, _UISettingsKeyObserver, PUScrollViewSpeedometerDelegate, PUOneUpPresentationHelperDelegate, PXSettingsKeyObserver, UICollectionViewDragSource, _UIContextMenuInteractionDelegate, PLCloudFeedNavigating, PXNavigableCloudFeedViewController>
 {
     _Bool __flowDirectionReversed;
     _Bool __collectionViewScrolledToNewest;
@@ -79,15 +77,14 @@
     PUAlbumStreamActivity *__albumStreamActivity;
     PLManagedAsset *__browsingSelectedAsset;
     PLCloudSharedComment *__browsingSelectedComment;
-    PUFeedAssetContainerList *__browsingAssetContainerList;
+    PXFeedAssetContainerList *__browsingAssetContainerList;
     NSDictionary *__justLikedSections;
     NSMutableSet *__sectionInfosWithCommentChanges;
     NSMutableSet *__updatedAssets;
     double __preheatingWindowSize;
     PUOneUpPresentationHelper *__oneUpPresentationHelper;
     PUPhotoBrowserOneUpPresentationAdaptor *__photoBrowserOneUpPresentationAdaptor;
-    PUFeedAssetContainerList *__oneUpPresentationAssetContainerList;
-    id <UIViewControllerPreviewing> __previewingItem;
+    PXFeedAssetContainerList *__oneUpPresentationAssetContainerList;
     NSMutableSet *_imageCellsPlayingVideo;
     CDUnknownBlockType _onNextViewLayout;
     struct CGSize __targetSize;
@@ -100,11 +97,10 @@
 @property(copy, nonatomic) CDUnknownBlockType onNextViewLayout; // @synthesize onNextViewLayout=_onNextViewLayout;
 @property(readonly, nonatomic) NSMutableSet *imageCellsPlayingVideo; // @synthesize imageCellsPlayingVideo=_imageCellsPlayingVideo;
 @property(nonatomic) _Bool observingPopoverContentSizeChange; // @synthesize observingPopoverContentSizeChange=_observingPopoverContentSizeChange;
-@property(retain, nonatomic, setter=_setPreviewingItem:) id <UIViewControllerPreviewing> _previewingItem; // @synthesize _previewingItem=__previewingItem;
 @property(nonatomic, setter=_setHasAppeared:) _Bool _hasAppeared; // @synthesize _hasAppeared=__hasAppeared;
 @property(nonatomic, setter=_setNeedsUpdateLayout:) _Bool _needsUpdateLayout; // @synthesize _needsUpdateLayout=__needsUpdateLayout;
 @property(nonatomic, getter=_isOneUpDataSourceUpdateScheduled, setter=_setOneUpDataSourceUpdateScheduled:) _Bool _oneUpDataSourceUpdateScheduled; // @synthesize _oneUpDataSourceUpdateScheduled=__oneUpDataSourceUpdateScheduled;
-@property(retain, nonatomic, setter=_setOneUpPresentationAssetContainerList:) PUFeedAssetContainerList *_oneUpPresentationAssetContainerList; // @synthesize _oneUpPresentationAssetContainerList=__oneUpPresentationAssetContainerList;
+@property(retain, nonatomic, setter=_setOneUpPresentationAssetContainerList:) PXFeedAssetContainerList *_oneUpPresentationAssetContainerList; // @synthesize _oneUpPresentationAssetContainerList=__oneUpPresentationAssetContainerList;
 @property(retain, nonatomic, setter=_setPhotoBrowserOneUpPresentationAdaptor:) PUPhotoBrowserOneUpPresentationAdaptor *_photoBrowserOneUpPresentationAdaptor; // @synthesize _photoBrowserOneUpPresentationAdaptor=__photoBrowserOneUpPresentationAdaptor;
 @property(retain, nonatomic, setter=_setOneUpPresentationHelper:) PUOneUpPresentationHelper *_oneUpPresentationHelper; // @synthesize _oneUpPresentationHelper=__oneUpPresentationHelper;
 @property(nonatomic, setter=_setAssetsAddedCachedSectionHeaderSize:) struct CGSize _assetsAddedCachedSectionHeaderSize; // @synthesize _assetsAddedCachedSectionHeaderSize=__assetsAddedCachedSectionHeaderSize;
@@ -116,7 +112,7 @@
 @property(retain, nonatomic, setter=_setSectionInfosWithCommentChanges:) NSMutableSet *_sectionInfosWithCommentChanges; // @synthesize _sectionInfosWithCommentChanges=__sectionInfosWithCommentChanges;
 @property(nonatomic, getter=_isInterfaceBatchUpdateScheduled, setter=_setInterfaceBatchUpdateScheduled:) _Bool _interfaceBatchUpdateScheduled; // @synthesize _interfaceBatchUpdateScheduled=__interfaceBatchUpdateScheduled;
 @property(retain, nonatomic, setter=_setJustLikedSections:) NSDictionary *_justLikedSections; // @synthesize _justLikedSections=__justLikedSections;
-@property(retain, nonatomic, setter=_setBrowsingAssetContainerList:) PUFeedAssetContainerList *_browsingAssetContainerList; // @synthesize _browsingAssetContainerList=__browsingAssetContainerList;
+@property(retain, nonatomic, setter=_setBrowsingAssetContainerList:) PXFeedAssetContainerList *_browsingAssetContainerList; // @synthesize _browsingAssetContainerList=__browsingAssetContainerList;
 @property(retain, nonatomic, setter=_setBrowsingSelectedComment:) PLCloudSharedComment *_browsingSelectedComment; // @synthesize _browsingSelectedComment=__browsingSelectedComment;
 @property(retain, nonatomic, setter=_setBrowsingSelectedAsset:) PLManagedAsset *_browsingSelectedAsset; // @synthesize _browsingSelectedAsset=__browsingSelectedAsset;
 @property(retain, nonatomic, setter=_setAlbumStreamActivity:) PUAlbumStreamActivity *_albumStreamActivity; // @synthesize _albumStreamActivity=__albumStreamActivity;
@@ -205,7 +201,7 @@
 - (void)_didTapCommentButtonInFeedCell:(id)arg1;
 - (void)didTapOverlayPlayButtonInFeedImageCell:(id)arg1;
 - (void)didTapFeedCell:(id)arg1;
-- (_Bool)pu_handleSecondTabTap;
+- (_Bool)pu_scrollToInitialPositionAnimated:(_Bool)arg1;
 - (_Bool)prepareForDismissingForced:(_Bool)arg1;
 - (void)_endPlayingVideoInCellIfNeeded:(id)arg1;
 - (void)_handleVideoRequestResult:(id)arg1 forCellAtIndexPath:(id)arg2 withTag:(long long)arg3;
@@ -318,11 +314,10 @@
 - (void)_tearDownBrowsing;
 - (void)_setupBrowsingFromAsset:(id)arg1 orComment:(id)arg2;
 - (_Bool)_setupBrowsingFromItemAtIndexPath:(id)arg1 inCollectionView:(id)arg2;
-- (void)didDismissPreviewViewController:(id)arg1 committing:(_Bool)arg2;
-- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint)arg2 inSourceView:(id)arg3;
-- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
-- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint)arg2;
 - (id)_indexPathForPosition:(struct CGPoint)arg1 inCollectionView:(id)arg2 outHitCell:(id *)arg3;
+- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
+- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
 - (void)_stopObservingPopoverContentSizeIfNecessary;
 - (void)_startObservingPopoverContentSizeIfNecessary;
 - (void)_configureSpeedometer:(id)arg1;
@@ -379,7 +374,6 @@
 - (_Bool)_isCollectionViewEmpty:(id)arg1;
 - (id)_collectionViews;
 - (id)_suppressionContexts;
-- (_Bool)_appAllowsSupressionOfAlerts;
 - (struct CGSize)preferredContentSize;
 - (void)viewSafeAreaInsetsDidChange;
 - (_Bool)canBecomeFirstResponder;

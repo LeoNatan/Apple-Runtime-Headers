@@ -8,55 +8,36 @@
 
 #import <CoreSpeech/CSEndpointAnalyzer-Protocol.h>
 #import <CoreSpeech/CSEndpointAnalyzerDelegate-Protocol.h>
+#import <CoreSpeech/CSEndpointAnalyzerImplDelegate-Protocol.h>
 
 @class NSString;
 @protocol CSEndpointAnalyzerDelegate, CSEndpointAnalyzerImpl;
 
-@interface CSEndpointerProxy : NSObject <CSEndpointAnalyzerDelegate, CSEndpointAnalyzer>
+@interface CSEndpointerProxy : NSObject <CSEndpointAnalyzerDelegate, CSEndpointAnalyzerImplDelegate, CSEndpointAnalyzer>
 {
-    BOOL _didEnterTwoshot;
     BOOL _recordingDidStop;
-    BOOL _vad2SaveSamplesSeenInReset;
     id <CSEndpointAnalyzerDelegate> _endpointerDelegate;
     id <CSEndpointAnalyzerImpl> _hybridEndpointer;
-    id <CSEndpointAnalyzerImpl> _vad2Endpointer;
+    id <CSEndpointAnalyzerImpl> _nnvadEndpointer;
     id <CSEndpointAnalyzerImpl> _activeEndpointer;
-    long long _vad2EndpointStyle;
-    long long _vad2EndpointtMode;
-    double _vad2StartWaitTime;
-    double _vad2EndWaitTime;
-    double _vad2InterspeechWaitTime;
-    double _vad2Delay;
-    double _vad2AutomaticEndpointingSuspensionEndTime;
-    double _vad2MinimumDurationForEndpointer;
 }
 
-@property(nonatomic) BOOL vad2SaveSamplesSeenInReset; // @synthesize vad2SaveSamplesSeenInReset=_vad2SaveSamplesSeenInReset;
-@property(nonatomic) double vad2MinimumDurationForEndpointer; // @synthesize vad2MinimumDurationForEndpointer=_vad2MinimumDurationForEndpointer;
-@property(nonatomic) double vad2AutomaticEndpointingSuspensionEndTime; // @synthesize vad2AutomaticEndpointingSuspensionEndTime=_vad2AutomaticEndpointingSuspensionEndTime;
-@property(nonatomic) double vad2Delay; // @synthesize vad2Delay=_vad2Delay;
-@property(nonatomic) double vad2InterspeechWaitTime; // @synthesize vad2InterspeechWaitTime=_vad2InterspeechWaitTime;
-@property(nonatomic) double vad2EndWaitTime; // @synthesize vad2EndWaitTime=_vad2EndWaitTime;
-@property(nonatomic) double vad2StartWaitTime; // @synthesize vad2StartWaitTime=_vad2StartWaitTime;
-@property(nonatomic) long long vad2EndpointtMode; // @synthesize vad2EndpointtMode=_vad2EndpointtMode;
-@property(nonatomic) long long vad2EndpointStyle; // @synthesize vad2EndpointStyle=_vad2EndpointStyle;
 @property(nonatomic) BOOL recordingDidStop; // @synthesize recordingDidStop=_recordingDidStop;
-@property(nonatomic) BOOL didEnterTwoshot; // @synthesize didEnterTwoshot=_didEnterTwoshot;
 @property(nonatomic) __weak id <CSEndpointAnalyzerImpl> activeEndpointer; // @synthesize activeEndpointer=_activeEndpointer;
-@property(retain, nonatomic) id <CSEndpointAnalyzerImpl> vad2Endpointer; // @synthesize vad2Endpointer=_vad2Endpointer;
+@property(retain, nonatomic) id <CSEndpointAnalyzerImpl> nnvadEndpointer; // @synthesize nnvadEndpointer=_nnvadEndpointer;
 @property(retain, nonatomic) id <CSEndpointAnalyzerImpl> hybridEndpointer; // @synthesize hybridEndpointer=_hybridEndpointer;
 @property(nonatomic) __weak id <CSEndpointAnalyzerDelegate> endpointerDelegate; // @synthesize endpointerDelegate=_endpointerDelegate;
 - (void).cxx_destruct;
 - (void)reset;
 @property(nonatomic) BOOL saveSamplesSeenInReset;
 @property(nonatomic) double minimumDurationForEndpointer;
-@property(nonatomic) double automaticEndpointingSuspensionEndTime;
 @property(nonatomic) double delay;
 @property(nonatomic) double interspeechWaitTime;
-@property(nonatomic) double endWaitTime;
-@property(nonatomic) double startWaitTime;
 @property(nonatomic) long long endpointMode;
 @property(nonatomic) long long endpointStyle;
+@property(nonatomic) double automaticEndpointingSuspensionEndTime;
+@property(nonatomic) double endWaitTime;
+@property(nonatomic) double startWaitTime;
 - (void)shouldAcceptEagerResultForDuration:(double)arg1 resultsCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)updateEndpointerDelayedTrigger:(BOOL)arg1;
 - (void)updateEndpointerThreshold:(float)arg1;
@@ -64,19 +45,18 @@
 - (void)processServerEndpointFeatures:(id)arg1;
 - (unsigned long long)endPointAnalyzerType;
 - (double)elapsedTimeWithNoSpeech;
-- (BOOL)_shouldEnterTwoShotAtEndPointTime:(double)arg1;
-- (BOOL)_shouldUseVAD2ForTwoShot;
+- (void)endpointer:(id)arg1 detectedTwoShotAtTime:(double)arg2;
 - (void)endpointer:(id)arg1 didDetectHardEndpointAtTime:(double)arg2 withMetrics:(id)arg3;
 - (void)endpointer:(id)arg1 didDetectStartpointAtTime:(double)arg2;
 @property(readonly, nonatomic) double lastEndOfVoiceActivityTime;
 @property(readonly, nonatomic) double lastStartOfVoiceActivityTime;
-- (void)recordingStoppedForReason:(unsigned long long)arg1;
+- (void)recordingStoppedForReason:(long long)arg1;
 - (void)processAudioSamplesAsynchronously:(id)arg1;
 - (void)preheat;
 - (void)setActiveChannel:(unsigned long long)arg1;
 - (void)resetForVoiceTriggerTwoShotWithSampleRate:(unsigned long long)arg1;
-- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2;
-- (void)_setupVAD2Endpointer;
+- (void)resetForNewRequestWithSampleRate:(unsigned long long)arg1 recordContext:(id)arg2 recordSettings:(id)arg3;
+- (void)_setupNNVADEndpointer;
 - (id)init;
 
 // Remaining properties

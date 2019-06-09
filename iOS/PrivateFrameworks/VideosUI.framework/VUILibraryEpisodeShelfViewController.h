@@ -12,15 +12,13 @@
 #import <VideosUI/VUIDialogInteractionControllerDelegate-Protocol.h>
 #import <VideosUI/VUIEpisodeDetailViewControllerDelegate-Protocol.h>
 #import <VideosUI/VUILibraryDownloadPopoverViewControllerDelegate-Protocol.h>
-#import <VideosUI/VUILibraryEpisodeListCellDelegate-Protocol.h>
 #import <VideosUI/VUILocalContentProtocol-Protocol.h>
-#import <VideosUI/VUIMediaEntityAssetControllerDelegate-Protocol.h>
 
 @class NSArray, NSIndexPath, NSString, VUIDialogInteractionController, VUIEpisodeDetailViewController, VUILibraryEpisodeListCell;
 @protocol VUILibraryEpisodeShelfViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface VUILibraryEpisodeShelfViewController : VUIShelfViewController <UICollectionViewDataSource, UICollectionViewDelegate, TVShelfViewLayoutDelegate, VUIEpisodeDetailViewControllerDelegate, VUIMediaEntityAssetControllerDelegate, VUILibraryEpisodeListCellDelegate, VUIDialogInteractionControllerDelegate, VUILibraryDownloadPopoverViewControllerDelegate, VUILocalContentProtocol>
+@interface VUILibraryEpisodeShelfViewController : VUIShelfViewController <UICollectionViewDataSource, UICollectionViewDelegate, TVShelfViewLayoutDelegate, VUIEpisodeDetailViewControllerDelegate, VUIDialogInteractionControllerDelegate, VUILibraryDownloadPopoverViewControllerDelegate, VUILocalContentProtocol>
 {
     VUILibraryEpisodeListCell *_sizingCell;
     VUIDialogInteractionController *_dialogInteractionController;
@@ -41,8 +39,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_updateHeaderView;
 - (_Bool)_canRemoveEpisodeAtIndexPath:(id)arg1;
-- (void)_updateCell:(id)arg1 withAssetController:(id)arg2;
-- (id)_assetControllerForCell:(id)arg1;
 - (void)_configureShelfLayout:(id)arg1;
 - (id)_episodeWithIdentifier:(id)arg1;
 - (id)_episodeViewModelsWithFetchedEpisodes:(id)arg1;
@@ -57,9 +53,6 @@ __attribute__((visibility("hidden")))
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)episodeDetailViewControllerWasDismissed:(id)arg1;
-- (void)episodeListCellDidRequestCancelDownload:(id)arg1;
-- (void)episodeListCellDidRequestStartDownload:(id)arg1;
-- (void)mediaEntityAssetController:(id)arg1 stateDidChange:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;

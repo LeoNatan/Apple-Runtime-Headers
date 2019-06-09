@@ -6,6 +6,7 @@
 
 #import <GameplayKit/GKNoiseModifier.h>
 
+__attribute__((visibility("hidden")))
 @interface GKScaleNoiseModifier : GKNoiseModifier
 {
     // Error parsing type: , name: _factor

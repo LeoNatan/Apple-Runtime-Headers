@@ -41,6 +41,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)dieForTesting;
 - (void)snapshotWKAppInCompanionAppID:(id)arg1 toURL:(id)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)setAppLaunchStateForApp:(id)arg1 enable:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getAppMetadataForApp:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updatePlaceholderMetadataForApp:(id)arg1 installType:(unsigned int)arg2 failureReason:(unsigned int)arg3 underlyingError:(id)arg4 failureSource:(unsigned int)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)updateiTunesMetadataForLSWithIdentifier:(id)arg1 options:(id)arg2 plistData:(id)arg3 completion:(CDUnknownBlockType)arg4;
@@ -52,7 +53,6 @@ __attribute__((visibility("hidden")))
 - (void)processRestoredContainerWithIdentifier:(id)arg1 ofType:(int)arg2 options:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)fetchDiskUsageForIdentifiers:(id)arg1 withOptions:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)enumerateInstalledAppsWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchInstalledAppsWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchInstalledDeveloperAppsWithMountPath:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)updateSystemAppStateForIdentifier:(id)arg1 appState:(int)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)lookupSystemAppStateWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;

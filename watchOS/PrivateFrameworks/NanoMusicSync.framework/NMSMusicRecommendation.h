@@ -33,6 +33,7 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)_stringForDayOfWeek:(int)arg1;
 - (id)_artworkCatalogsForLibraryRecommendationAlbumsWithCount:(unsigned int)arg1;
 - (id)_artworkCatalogsForLibraryRecommendationPlaylistsWithCount:(unsigned int)arg1;
 @property(readonly, nonatomic) MPArtworkCatalog *artworkCatalog;

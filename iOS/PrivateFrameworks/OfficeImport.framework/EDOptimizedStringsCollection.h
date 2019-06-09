@@ -14,10 +14,10 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mStringDictionary;
 }
 
+- (void).cxx_destruct;
 - (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (unsigned long long)addOrEquivalentObject:(id)arg1;
 - (unsigned long long)addObject:(id)arg1;
-- (void)dealloc;
 - (id)init;
 
 @end

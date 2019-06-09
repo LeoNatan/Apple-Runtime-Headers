@@ -14,6 +14,7 @@
 @interface PHImportSidecarAsset : PHImportAsset <NSFilePresenter, PHImportSidecarAsset>
 {
     unsigned long long _sidecarType;
+    PHImportAsset *_primaryAsset;
     NSURL *_primaryPresentedItemURL;
     NSOperationQueue *_presentedItemOperationQueue;
 }
@@ -21,16 +22,17 @@
 + (unsigned long long)sidecarType:(id)arg1;
 @property(readonly, retain) NSOperationQueue *presentedItemOperationQueue; // @synthesize presentedItemOperationQueue=_presentedItemOperationQueue;
 @property(readonly, copy) NSURL *primaryPresentedItemURL; // @synthesize primaryPresentedItemURL=_primaryPresentedItemURL;
+@property(nonatomic) __weak PHImportAsset *primaryAsset; // @synthesize primaryAsset=_primaryAsset;
 @property(readonly, nonatomic) unsigned long long sidecarType; // @synthesize sidecarType=_sidecarType;
 - (void).cxx_destruct;
 @property(readonly, copy) NSURL *presentedItemURL;
 @property(readonly, nonatomic) _Bool isValid;
+- (id)filePresenter;
 - (id)getMetadataForImportRecord:(id)arg1 fileData:(id)arg2;
 - (id)thumbnailForSize:(unsigned long long)arg1 atEnd:(CDUnknownBlockType)arg2;
 - (void)loadMetadataSync;
-- (_Bool)canReference;
 - (void)dealloc;
-- (id)initWithSidecarFile:(id)arg1 relatedToImportAsset:(id)arg2;
+- (id)initWithSource:(id)arg1 sidecarFile:(id)arg2 relatedToImportAsset:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

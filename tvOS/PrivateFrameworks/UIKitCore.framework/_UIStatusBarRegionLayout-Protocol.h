@@ -6,7 +6,7 @@
 
 #import <UIKitCore/NSObject-Protocol.h>
 
-@class NSArray, UIView, _UIStatusBarRegion;
+@class NSArray, _UIStatusBarRegion;
 
 @protocol _UIStatusBarRegionLayout <NSObject>
 @property(readonly, nonatomic) _Bool fitsAllItems;
@@ -15,7 +15,6 @@
 - (void)invalidate;
 
 @optional
-@property(readonly, nonatomic) UIView *containerView;
 - (_Bool)mayFitDisplayItems:(NSArray *)arg1;
 @end
 

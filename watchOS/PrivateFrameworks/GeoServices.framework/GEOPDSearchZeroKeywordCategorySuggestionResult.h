@@ -8,21 +8,31 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, PBUnknownFields;
+@class NSMutableArray, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDSearchZeroKeywordCategorySuggestionResult : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     PBUnknownFields *_unknownFields;
     NSMutableArray *_categorys;
     NSMutableArray *_zeroKeywordEntrys;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_categorys:1;
+        unsigned int read_zeroKeywordEntrys:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_categorys:1;
+        unsigned int wrote_zeroKeywordEntrys:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)zeroKeywordEntryType;
 + (Class)categoryType;
-@property(retain, nonatomic) NSMutableArray *zeroKeywordEntrys; // @synthesize zeroKeywordEntrys=_zeroKeywordEntrys;
-@property(retain, nonatomic) NSMutableArray *categorys; // @synthesize categorys=_categorys;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -31,16 +41,23 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)zeroKeywordEntryAtIndex:(unsigned int)arg1;
 - (unsigned int)zeroKeywordEntrysCount;
+- (void)_addNoFlagsZeroKeywordEntry:(id)arg1;
 - (void)addZeroKeywordEntry:(id)arg1;
 - (void)clearZeroKeywordEntrys;
+@property(retain, nonatomic) NSMutableArray *zeroKeywordEntrys;
+- (void)_readZeroKeywordEntrys;
 - (id)categoryAtIndex:(unsigned int)arg1;
 - (unsigned int)categorysCount;
+- (void)_addNoFlagsCategory:(id)arg1;
 - (void)addCategory:(id)arg1;
 - (void)clearCategorys;
+@property(retain, nonatomic) NSMutableArray *categorys;
+- (void)_readCategorys;
 
 @end
 

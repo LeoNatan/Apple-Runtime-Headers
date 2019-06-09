@@ -6,6 +6,7 @@
 
 #import <SymptomEvaluator/ExpertSystemStateCore.h>
 
+__attribute__((visibility("hidden")))
 @interface ArbitratorExpertSystemState : ExpertSystemStateCore
 {
 }

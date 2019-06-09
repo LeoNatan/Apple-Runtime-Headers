@@ -6,6 +6,7 @@
 
 #import <AppKit/NSPressGestureRecognizer.h>
 
+__attribute__((visibility("hidden")))
 @interface _MKAnnotationDragGestureRecognizer : NSPressGestureRecognizer
 {
     struct CGPoint _dragLocation;

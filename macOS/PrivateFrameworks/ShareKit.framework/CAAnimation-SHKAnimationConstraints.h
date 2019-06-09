@@ -6,7 +6,21 @@
 
 #import <QuartzCore/CAAnimation.h>
 
+@class CALayer;
+
 @interface CAAnimation (SHKAnimationConstraints)
++ (id)SHK_firstSubViewBoundsAnimationForView:(id)arg1 fromBounds:(struct CGRect)arg2 toBounds:(struct CGRect)arg3;
++ (id)SHK_keyFramAnimationFromRect:(struct CGRect)arg1 toRect:(struct CGRect)arg2 deltaY:(double)arg3;
++ (id)SHK_positionAnimationFromRect:(struct CGRect)arg1 toRect:(struct CGRect)arg2;
++ (id)SHK_boundsAnimationFromRect:(struct CGRect)arg1 toRect:(struct CGRect)arg2;
++ (id)SHK_disappearanceAnimation;
++ (id)SHK_appearanceAnimationStartingWithAnimation:(id)arg1;
++ (id)SHK_appearanceAnimation;
++ (id)SHK_fadeAnimationFromValue:(id)arg1 toValue:(id)arg2;
++ (id)SHK_viewFrameAnimationFromRect:(struct CGRect)arg1 toRect:(struct CGRect)arg2 delegate:(id)arg3;
++ (id)SHK_viewFrameAnimationFromRect:(struct CGRect)arg1 toRect:(struct CGRect)arg2 deltaY:(double)arg3 delegate:(id)arg4;
++ (id)SHK_viewFrameAnimationFromRect:(struct CGRect)arg1 toRect:(struct CGRect)arg2;
++ (id)SHK_viewFrameAnimationFromRect:(struct CGRect)arg1 toRect:(struct CGRect)arg2 deltaY:(double)arg3;
 - (void)SHK_cleanup;
 - (void)setSHK_constrainedToStartWithNode:(id)arg1;
 - (id)SHK_constrainedToStartWithNode;
@@ -32,5 +46,10 @@
 - (id)SHK_allSiblingsWithMarkedSet:(id)arg1;
 - (void)SHK_constrainAnimation:(id)arg1 toConstraintList:(id)arg2;
 - (void)_SHK_assertConstrainedToAMaxOf1Node;
+@property(copy) CDUnknownBlockType SHK_completionBlock;
+@property(copy) CDUnknownBlockType SHK_preparationBlock;
+@property __weak CALayer *SHK_targetLayer;
+- (void)SHK_setInternalDelegate;
+- (void)SHK_animate;
 @end
 

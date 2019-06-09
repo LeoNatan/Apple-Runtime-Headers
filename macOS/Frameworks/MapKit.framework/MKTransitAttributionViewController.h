@@ -8,12 +8,11 @@
 
 #import <MapKit/GEOResourceManifestTileGroupObserver-Protocol.h>
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
-#import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
 @class MKMapItem, NSString;
 @protocol GEOTransitLineItem, MKTransitAttributionViewControllerDelegate;
 
-@interface MKTransitAttributionViewController : _MKClickableTableViewController <GEOResourceManifestTileGroupObserver, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol>
+@interface MKTransitAttributionViewController : _MKClickableTableViewController <GEOResourceManifestTileGroupObserver, MKModuleViewControllerProtocol>
 {
     BOOL _isAttributionURLAvailable;
     MKMapItem *_mapItem;

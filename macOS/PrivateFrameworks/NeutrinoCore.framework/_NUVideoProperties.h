@@ -17,9 +17,11 @@
     NSDictionary *_colorProperties;
     CDStruct_d58201db _size;
     CDStruct_1b6d18a9 _livePhotoKeyFrameTime;
+    CDStruct_1b6d18a9 _duration;
     CDStruct_996ac03c _cleanAperture;
 }
 
+@property(nonatomic) CDStruct_1b6d18a9 duration; // @synthesize duration=_duration;
 @property(nonatomic) CDStruct_1b6d18a9 livePhotoKeyFrameTime; // @synthesize livePhotoKeyFrameTime=_livePhotoKeyFrameTime;
 @property(retain, nonatomic) NSDictionary *colorProperties; // @synthesize colorProperties=_colorProperties;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;

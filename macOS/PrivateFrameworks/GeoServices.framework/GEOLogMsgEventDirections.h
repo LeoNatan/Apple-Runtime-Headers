@@ -8,34 +8,43 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLocation, NSMutableArray;
+@class GEOLocation, NSMutableArray, PBDataReader;
 
 @interface GEOLogMsgEventDirections : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     struct GEONavigationAudioFeedback _navigationAudioFeedback;
     struct GEOSessionID _navSessionId;
-    double _durationOfTrip;
     NSMutableArray *_directionsFeedbacks;
     NSMutableArray *_durationInNavigationModes;
+    double _durationOfTrip;
     GEOLocation *_finalLocation;
+    unsigned int _originalEta;
     BOOL _arrivedAtDestination;
     struct {
-        unsigned int navigationAudioFeedback:1;
-        unsigned int navSessionId:1;
-        unsigned int durationOfTrip:1;
-        unsigned int arrivedAtDestination:1;
-    } _has;
+        unsigned int has_navigationAudioFeedback:1;
+        unsigned int has_navSessionId:1;
+        unsigned int has_durationOfTrip:1;
+        unsigned int has_originalEta:1;
+        unsigned int has_arrivedAtDestination:1;
+        unsigned int read_directionsFeedbacks:1;
+        unsigned int read_durationInNavigationModes:1;
+        unsigned int read_finalLocation:1;
+        unsigned int wrote_navigationAudioFeedback:1;
+        unsigned int wrote_navSessionId:1;
+        unsigned int wrote_directionsFeedbacks:1;
+        unsigned int wrote_durationInNavigationModes:1;
+        unsigned int wrote_durationOfTrip:1;
+        unsigned int wrote_finalLocation:1;
+        unsigned int wrote_originalEta:1;
+        unsigned int wrote_arrivedAtDestination:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)durationInNavigationModeType;
 + (Class)directionsFeedbackType;
-@property(retain, nonatomic) NSMutableArray *durationInNavigationModes; // @synthesize durationInNavigationModes=_durationInNavigationModes;
-@property(nonatomic) struct GEOSessionID navSessionId; // @synthesize navSessionId=_navSessionId;
-@property(nonatomic) double durationOfTrip; // @synthesize durationOfTrip=_durationOfTrip;
-@property(nonatomic) struct GEONavigationAudioFeedback navigationAudioFeedback; // @synthesize navigationAudioFeedback=_navigationAudioFeedback;
-@property(nonatomic) BOOL arrivedAtDestination; // @synthesize arrivedAtDestination=_arrivedAtDestination;
-@property(retain, nonatomic) GEOLocation *finalLocation; // @synthesize finalLocation=_finalLocation;
-@property(retain, nonatomic) NSMutableArray *directionsFeedbacks; // @synthesize directionsFeedbacks=_directionsFeedbacks;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -44,21 +53,36 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasOriginalEta;
+@property(nonatomic) unsigned int originalEta;
 - (id)durationInNavigationModeAtIndex:(unsigned long long)arg1;
 - (unsigned long long)durationInNavigationModesCount;
+- (void)_addNoFlagsDurationInNavigationMode:(id)arg1;
 - (void)addDurationInNavigationMode:(id)arg1;
 - (void)clearDurationInNavigationModes;
+@property(retain, nonatomic) NSMutableArray *durationInNavigationModes;
+- (void)_readDurationInNavigationModes;
 @property(nonatomic) BOOL hasNavSessionId;
+@property(nonatomic) struct GEOSessionID navSessionId;
 @property(nonatomic) BOOL hasDurationOfTrip;
+@property(nonatomic) double durationOfTrip;
 @property(nonatomic) BOOL hasNavigationAudioFeedback;
+@property(nonatomic) struct GEONavigationAudioFeedback navigationAudioFeedback;
 @property(nonatomic) BOOL hasArrivedAtDestination;
+@property(nonatomic) BOOL arrivedAtDestination;
+@property(retain, nonatomic) GEOLocation *finalLocation;
 @property(readonly, nonatomic) BOOL hasFinalLocation;
+- (void)_readFinalLocation;
 - (id)directionsFeedbackAtIndex:(unsigned long long)arg1;
 - (unsigned long long)directionsFeedbacksCount;
+- (void)_addNoFlagsDirectionsFeedback:(id)arg1;
 - (void)addDirectionsFeedback:(id)arg1;
 - (void)clearDirectionsFeedbacks;
+@property(retain, nonatomic) NSMutableArray *directionsFeedbacks;
+- (void)_readDirectionsFeedbacks;
 
 @end
 

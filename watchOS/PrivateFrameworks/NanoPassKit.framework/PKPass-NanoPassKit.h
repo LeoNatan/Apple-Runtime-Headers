@@ -21,5 +21,6 @@
 @property(readonly) _Bool npkSupportsHidingAccessory;
 @property(readonly) PKBarcode *npkWatchBarcode;
 - (int)npkAccessoryType;
+- (id)npkArchiveData;
 @end
 

@@ -7,13 +7,14 @@
 #import <UIKit/UIView.h>
 
 @class CADisplayLink;
+@protocol TVPMusicNowPlayingSnapshotBackgroundViewDelegate;
 
 @interface TVPMusicNowPlayingSnapshotBackgroundView : UIView
 {
     double _lastSnapshot;
     double _updateRate;
     double _fadeDuration;
-    _Bool _snapshotPaused;
+    id <TVPMusicNowPlayingSnapshotBackgroundViewDelegate> _delegate;
     UIView *_targetView;
     CADisplayLink *_displayLink;
     UIView *_currentSnapshot;
@@ -23,8 +24,8 @@
 @property(retain, nonatomic) UIView *capturedSnapshot; // @synthesize capturedSnapshot=_capturedSnapshot;
 @property(retain, nonatomic) UIView *currentSnapshot; // @synthesize currentSnapshot=_currentSnapshot;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
-@property(nonatomic, getter=isSnapshotPaused) _Bool snapshotPaused; // @synthesize snapshotPaused=_snapshotPaused;
 @property(retain, nonatomic) UIView *targetView; // @synthesize targetView=_targetView;
+@property(nonatomic) __weak id <TVPMusicNowPlayingSnapshotBackgroundViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_updateSnapshot:(id)arg1;
 - (void)didMoveToWindow;

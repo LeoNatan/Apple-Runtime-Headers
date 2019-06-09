@@ -74,7 +74,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStream:(id)arg1 source:(id)arg2 startDate:(id)arg3 endDate:(id)arg4 value:(id)arg5 confidence:(double)arg6 metadata:(id)arg7;
-- (id)relevantAction;
 - (id)toPBCodable;
 - (void)fetchInteractionWithPopulatedKeyImage:(CDUnknownBlockType)arg1;
 - (id)interaction;

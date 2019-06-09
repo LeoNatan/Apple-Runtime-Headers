@@ -26,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (void)startObserving;
 - (void)dealloc;
 - (id)_init;
-- (id)init;
 
 @end
 

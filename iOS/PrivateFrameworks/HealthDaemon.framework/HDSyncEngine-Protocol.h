@@ -19,5 +19,6 @@
 - (_Bool)applySyncChange:(id <HDSyncChange>)arg1 forStore:(id <HDSyncStore>)arg2 error:(id *)arg3;
 - (void)resetAnchorsWithFailedChanges:(NSArray *)arg1 store:(id <HDSyncStore>)arg2;
 - (_Bool)performSyncSession:(HDSyncSession *)arg1 error:(id *)arg2;
+- (long long)session:(HDSyncSession *)arg1 requiresSyncWithAnchors:(id <HDSyncAnchorMap>)arg2 error:(id *)arg3;
 @end
 

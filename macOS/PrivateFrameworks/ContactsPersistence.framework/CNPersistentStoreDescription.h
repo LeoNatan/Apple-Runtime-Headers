@@ -20,13 +20,12 @@ __attribute__((visibility("hidden")))
 + (id)bundleForName:(id)arg1;
 + (id)modelUrlForName:(id)arg1;
 + (id)modelFutureWithName:(id)arg1;
-+ (id)mailRecentsStoreDescription;
 + (id)addressBookStoreDescription;
 @property(readonly) float version; // @synthesize version=_version;
 @property(readonly) unsigned long long dataType; // @synthesize dataType=_dataType;
 @property(readonly, copy) NSString *modelName; // @synthesize modelName=_modelName;
-@property(readonly, retain) NSManagedObjectModel *model;
-- (void)dealloc;
+- (void).cxx_destruct;
+@property(readonly) NSManagedObjectModel *model;
 - (id)initWithModelName:(id)arg1 dataType:(unsigned long long)arg2 version:(float)arg3;
 
 @end

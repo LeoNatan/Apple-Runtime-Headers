@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain) id queue; // @synthesize queue=_queue;
+- (void)dealloc;
 
 @end
 

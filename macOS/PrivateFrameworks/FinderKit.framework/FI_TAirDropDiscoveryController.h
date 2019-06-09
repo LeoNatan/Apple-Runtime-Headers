@@ -18,9 +18,11 @@ __attribute__((visibility("hidden")))
     long long _discoverableMode;
     _Bool _isLegacyModeEnabled;
     _Bool _isLegacyModeSettable;
+    _Bool _isLegacyModeSupported;
 }
 
 + (id)controller;
+@property(readonly, nonatomic, getter=isLegacyModeSupported) _Bool legacyModeSupported; // @synthesize legacyModeSupported=_isLegacyModeSupported;
 @property(readonly, nonatomic, getter=isLegacyModeSettable) _Bool legacyModeSettable; // @synthesize legacyModeSettable=_isLegacyModeSettable;
 @property(nonatomic, getter=isLegacyModeEnabled) _Bool legacyModeEnabled; // @synthesize legacyModeEnabled=_isLegacyModeEnabled;
 @property(nonatomic) long long discoverableMode; // @synthesize discoverableMode=_discoverableMode;

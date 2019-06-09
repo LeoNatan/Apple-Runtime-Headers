@@ -6,13 +6,15 @@
 
 #import <SockPuppetGizmo/SPNotificationInterfaceController.h>
 
+#import <SockPuppetGizmo/SPHostingViewControllerDelegate-Protocol.h>
 #import <SockPuppetGizmo/SPInterfaceViewControllerDelegate-Protocol.h>
 #import <SockPuppetGizmo/SPRemoteNotificationViewService-Protocol.h>
+#import <SockPuppetGizmo/SPViewControllerDelegate-Protocol.h>
 
 @class CAContext, NSDictionary, NSString, SPRemoteNotificationHostedWindow, WKUserNotificationInterfaceController;
 @protocol SPRemoteNotificationViewHost;
 
-@interface SPRemoteNotificationInterfaceController : SPNotificationInterfaceController <SPInterfaceViewControllerDelegate, SPRemoteNotificationViewService>
+@interface SPRemoteNotificationInterfaceController : SPNotificationInterfaceController <SPInterfaceViewControllerDelegate, SPHostingViewControllerDelegate, SPViewControllerDelegate, SPRemoteNotificationViewService>
 {
     _Bool _hasAppeared;
     CAContext *_layerContext;
@@ -20,10 +22,12 @@
     NSString *_hostClientIdentifier;
     NSDictionary *_dynamicInterface;
     id <SPRemoteNotificationViewHost> _strongHost;
+    struct CGRect _lastViewControllerSetNeedsLayoutFrame;
 }
 
 + (id)serviceInterface;
 + (id)hostInterface;
+@property(nonatomic) struct CGRect lastViewControllerSetNeedsLayoutFrame; // @synthesize lastViewControllerSetNeedsLayoutFrame=_lastViewControllerSetNeedsLayoutFrame;
 @property(retain, nonatomic) id <SPRemoteNotificationViewHost> strongHost; // @synthesize strongHost=_strongHost;
 @property(nonatomic) _Bool hasAppeared; // @synthesize hasAppeared=_hasAppeared;
 @property(retain, nonatomic) NSDictionary *dynamicInterface; // @synthesize dynamicInterface=_dynamicInterface;
@@ -31,28 +35,34 @@
 @property(retain) SPRemoteNotificationHostedWindow *hostedWindow; // @synthesize hostedWindow=_hostedWindow;
 @property(retain) CAContext *layerContext; // @synthesize layerContext=_layerContext;
 - (void).cxx_destruct;
+- (id)timerSupportViewControllerForHostingViewController:(id)arg1;
+- (id)timerSupportActionItemsForHostingViewController:(id)arg1;
+- (id)interfaceControllerForViewController:(id)arg1;
 - (void)interfaceContentSystemMinimumLayoutMargins:(id)arg1 withValue:(struct NSDirectionalEdgeInsets)arg2;
 - (void)interfaceContentSafeAreaInsets:(id)arg1 withValue:(struct UIEdgeInsets)arg2;
 - (void)interfaceOffsetDidScrollToBottom:(id)arg1;
 - (void)interfaceOffsetDidScrollToTop:(id)arg1;
 - (void)interfaceDidScrollToTop:(id)arg1;
-- (void)xpcInterfaceViewController:(id)arg1 setProperties:(id)arg2 forInterfaceObjectNamed:(id)arg3;
-- (void)xpcInterfaceViewController:(id)arg1 crownData:(id)arg2;
+- (void)viewController:(id)arg1 crownData:(id)arg2;
 - (void)xpcInterfaceViewController:(id)arg1 gestureData:(id)arg2;
 - (void)interfaceViewController:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
-- (void)interfaceViewController:(id)arg1 sendAction:(id)arg2 withValue:(id)arg3;
+- (void)viewController:(id)arg1 sendAction:(id)arg2 withValue:(id)arg3 actionTarget:(id)arg4;
+- (void)viewControllerDidDisappearAfterModalPresentation:(id)arg1;
+- (void)viewControllerDidAppearAfterModalDismissal:(id)arg1;
 - (void)interfaceViewControllerDidUpdateInterfaceValues:(id)arg1;
-- (void)interfaceViewControllerWillDisappear:(id)arg1;
-- (void)interfaceViewControllerDidAppear:(id)arg1;
-- (void)interfaceViewControllerDidDeactivate:(id)arg1;
-- (void)interfaceViewControllerWillActivate:(id)arg1;
-- (void)interfaceViewControllerRelease:(id)arg1;
-- (void)interfaceViewController:(id)arg1 createCompanionControllerClass:(id)arg2 properties:(id)arg3 initializationContextID:(id)arg4;
-- (void)vendInterface:(id)arg1 readyToGo:(_Bool)arg2 customizeHandler:(CDUnknownBlockType)arg3;
+- (void)viewControllerDidUpdateFullScreen:(id)arg1;
+- (void)viewController:(id)arg1 tappedActionWithUUID:(id)arg2;
+- (void)viewControllerWillDisappear:(id)arg1;
+- (void)viewControllerDidAppear:(id)arg1;
+- (void)viewControllerDidDeactivate:(id)arg1;
+- (void)viewControllerWillActivate:(id)arg1;
+- (void)viewControllerDidRelease:(id)arg1;
+- (void)viewController:(id)arg1 createWKInterfaceControllerClass:(id)arg2 properties:(id)arg3 contextID:(id)arg4 creationCompletion:(CDUnknownBlockType)arg5;
+- (void)_vendInterface:(id)arg1 isTimerSupport:(_Bool)arg2;
+- (void)_setHostActiveService;
 - (void)takeSnapshot:(CDUnknownBlockType)arg1;
 - (void)sizeThatFits:(struct CGSize)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setFrame:(struct CGRect)arg1;
-- (void)setHostActiveService;
 - (void)vendBulletin:(id)arg1 forceStatic:(_Bool)arg2;
 - (void)receiveAdditionalBulletinData:(id)arg1 bulletinForLocal:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2 property:(id)arg3;

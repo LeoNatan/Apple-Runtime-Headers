@@ -18,7 +18,6 @@
 - (void).cxx_destruct;
 - (void)removeRentalMediaItem:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (unsigned long long)assetTypeForRentalMediaItem:(id)arg1;
-- (void)startFullScreenPlaybackWithMediaItem:(id)arg1;
 - (void)overrideCellularPlaybackQuality:(unsigned long long)arg1 forMediaItem:(id)arg2;
 - (void)clearCellularPlaybackQualityOverrides;
 - (_Bool)shouldWarnAboutPlaybackQualityForRentalMediaItem:(id)arg1;

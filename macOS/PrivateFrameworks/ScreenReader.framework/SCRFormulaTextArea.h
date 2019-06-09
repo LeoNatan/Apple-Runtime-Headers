@@ -11,17 +11,16 @@
 __attribute__((visibility("hidden")))
 @interface SCRFormulaTextArea : SCRStandardText
 {
-    struct {
-        unsigned int registeredTextEntryDeniedNotification:1;
-        unsigned int registeredTokenForKeyboardInsertionDeletedNotification:1;
-        unsigned int suppressEchoContentChange:1;
-        unsigned int reserved:29;
-    } _formulaTextAreaFlags;
     SCRElement *_completionToken;
     struct _NSRange _completionTokenRange;
     NSString *_lastCompletionTokenTitleForOutput;
     NSString *_lastCompletionTokenTitleForWordEcho;
     NSArray *_lastReferencedCellUIElementsForMovingReference;
+    struct {
+        unsigned int registeredTextEntryDeniedNotification:1;
+        unsigned int registeredTokenForKeyboardInsertionDeletedNotification:1;
+        unsigned int suppressEchoContentChange:1;
+    } _formulaTextAreaFlags;
 }
 
 @property(retain, nonatomic) NSArray *lastReferencedCellUIElementsForMovingReference; // @synthesize lastReferencedCellUIElementsForMovingReference=_lastReferencedCellUIElementsForMovingReference;

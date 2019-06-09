@@ -10,6 +10,7 @@
 @protocol UIDragSession;
 
 @protocol _UITableViewDragControllerDelegate <NSObject>
+- (_Bool)_dragSessionAllowsSystemDrag:(id <UIDragSession>)arg1;
 - (_Bool)_dragSessionIsRestrictedToDraggingApplication:(id <UIDragSession>)arg1;
 - (_Bool)_dragSessionAllowsMoveOperation:(id <UIDragSession>)arg1;
 - (void)_endAnimatingDropOfCell:(UITableViewCell *)arg1;

@@ -6,7 +6,7 @@
 
 #import <GeoServices/NSObject-Protocol.h>
 
-@class GEOTileKeyList, GEOTileServerProxy, NSData, NSDictionary, NSError;
+@class GEOTileData, GEOTileKeyList, GEOTileServerProxy, NSDictionary, NSError;
 
 @protocol GEOTileServerProxyDelegate <NSObject>
 - (void)proxy:(GEOTileServerProxy *)arg1 didShrinkDiskCacheByAmount:(unsigned long long)arg2;
@@ -14,7 +14,7 @@
 - (void)proxy:(GEOTileServerProxy *)arg1 willGoToNetworkForTiles:(GEOTileKeyList *)arg2;
 - (void)proxy:(GEOTileServerProxy *)arg1 failedToLoadAllPendingTilesWithError:(NSError *)arg2;
 - (void)proxy:(GEOTileServerProxy *)arg1 failedToLoadTiles:(GEOTileKeyList *)arg2 error:(NSError *)arg3;
-- (void)proxy:(GEOTileServerProxy *)arg1 loadedTile:(NSData *)arg2 forKey:(const struct _GEOTileKey *)arg3 info:(NSDictionary *)arg4;
+- (void)proxy:(GEOTileServerProxy *)arg1 loadedTile:(GEOTileData *)arg2 forKey:(const struct _GEOTileKey *)arg3 info:(NSDictionary *)arg4;
 
 @optional
 - (void)proxyDidDownloadRegionalResources:(GEOTileServerProxy *)arg1;

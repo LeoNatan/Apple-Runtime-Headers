@@ -28,8 +28,6 @@
 - (id)felicaAppletState:(id)arg1;
 - (BOOL)stopCardEmulation:(id *)arg1;
 - (BOOL)stopCardEmulation;
-- (BOOL)startHostCardEmulation:(id *)arg1;
-- (BOOL)startHostCardEmulation;
 - (BOOL)startDeferredCardEmulationWithAuthorization:(id)arg1 error:(id *)arg2;
 - (BOOL)startDeferredCardEmulationWithAuthorization:(id)arg1;
 - (BOOL)startCardEmulationWithAuthorization:(id)arg1 error:(id *)arg2;

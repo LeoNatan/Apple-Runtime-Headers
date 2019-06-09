@@ -6,6 +6,7 @@
 
 #import <OfficeImport/OITSUPointerSet.h>
 
+__attribute__((visibility("hidden")))
 @interface OITSURetainedPointerSet : OITSUPointerSet
 {
 }

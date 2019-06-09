@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 + (id)elementWithRole:(id)arg1 subrole:(id)arg2 index:(long long)arg3 parent:(id)arg4;
 + (id)elementWithRole:(id)arg1 index:(long long)arg2 parent:(id)arg3;
+- (id)accessibilityParentViewAndGetFrame:(struct CGRect *)arg1;
 - (id)associatedAccessibilityLabel;
 - (void)setAssociatedAccessibilityLabel:(id)arg1;
 - (unsigned long long)hash;

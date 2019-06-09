@@ -8,38 +8,53 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLocation, GEOPDMapsIdentifier, NSString;
+@class GEOLocation, GEOPDMapsIdentifier, NSString, PBDataReader;
 
 @interface GEORPMerchantLookupContext : PBCodable <NSCopying>
 {
-    long long _merchantIndustryCode;
-    double _transactionTime;
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
+    NSString *_correlationId;
     NSString *_merchantAdamId;
     NSString *_merchantFormattedAddress;
     GEOPDMapsIdentifier *_merchantId;
     NSString *_merchantIndustryCategory;
+    long long _merchantIndustryCode;
     NSString *_merchantName;
     NSString *_merchantRawName;
     NSString *_merchantUrl;
     GEOLocation *_transactionLocation;
+    double _transactionTime;
     NSString *_transactionType;
     struct {
-        unsigned int merchantIndustryCode:1;
-        unsigned int transactionTime:1;
-    } _has;
+        unsigned int has_merchantIndustryCode:1;
+        unsigned int has_transactionTime:1;
+        unsigned int read_correlationId:1;
+        unsigned int read_merchantAdamId:1;
+        unsigned int read_merchantFormattedAddress:1;
+        unsigned int read_merchantId:1;
+        unsigned int read_merchantIndustryCategory:1;
+        unsigned int read_merchantName:1;
+        unsigned int read_merchantRawName:1;
+        unsigned int read_merchantUrl:1;
+        unsigned int read_transactionLocation:1;
+        unsigned int read_transactionType:1;
+        unsigned int wrote_correlationId:1;
+        unsigned int wrote_merchantAdamId:1;
+        unsigned int wrote_merchantFormattedAddress:1;
+        unsigned int wrote_merchantId:1;
+        unsigned int wrote_merchantIndustryCategory:1;
+        unsigned int wrote_merchantIndustryCode:1;
+        unsigned int wrote_merchantName:1;
+        unsigned int wrote_merchantRawName:1;
+        unsigned int wrote_merchantUrl:1;
+        unsigned int wrote_transactionLocation:1;
+        unsigned int wrote_transactionTime:1;
+        unsigned int wrote_transactionType:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOLocation *transactionLocation; // @synthesize transactionLocation=_transactionLocation;
-@property(retain, nonatomic) NSString *transactionType; // @synthesize transactionType=_transactionType;
-@property(nonatomic) double transactionTime; // @synthesize transactionTime=_transactionTime;
-@property(retain, nonatomic) NSString *merchantAdamId; // @synthesize merchantAdamId=_merchantAdamId;
-@property(retain, nonatomic) NSString *merchantFormattedAddress; // @synthesize merchantFormattedAddress=_merchantFormattedAddress;
-@property(retain, nonatomic) NSString *merchantUrl; // @synthesize merchantUrl=_merchantUrl;
-@property(retain, nonatomic) NSString *merchantIndustryCategory; // @synthesize merchantIndustryCategory=_merchantIndustryCategory;
-@property(retain, nonatomic) NSString *merchantRawName; // @synthesize merchantRawName=_merchantRawName;
-@property(retain, nonatomic) NSString *merchantName; // @synthesize merchantName=_merchantName;
-@property(retain, nonatomic) GEOPDMapsIdentifier *merchantId; // @synthesize merchantId=_merchantId;
-@property(nonatomic) long long merchantIndustryCode; // @synthesize merchantIndustryCode=_merchantIndustryCode;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -48,19 +63,43 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *correlationId;
+@property(readonly, nonatomic) _Bool hasCorrelationId;
+- (void)_readCorrelationId;
+@property(retain, nonatomic) GEOLocation *transactionLocation;
 @property(readonly, nonatomic) _Bool hasTransactionLocation;
+- (void)_readTransactionLocation;
+@property(retain, nonatomic) NSString *transactionType;
 @property(readonly, nonatomic) _Bool hasTransactionType;
+- (void)_readTransactionType;
 @property(nonatomic) _Bool hasTransactionTime;
+@property(nonatomic) double transactionTime;
+@property(retain, nonatomic) NSString *merchantAdamId;
 @property(readonly, nonatomic) _Bool hasMerchantAdamId;
+- (void)_readMerchantAdamId;
+@property(retain, nonatomic) NSString *merchantFormattedAddress;
 @property(readonly, nonatomic) _Bool hasMerchantFormattedAddress;
+- (void)_readMerchantFormattedAddress;
+@property(retain, nonatomic) NSString *merchantUrl;
 @property(readonly, nonatomic) _Bool hasMerchantUrl;
+- (void)_readMerchantUrl;
+@property(retain, nonatomic) NSString *merchantIndustryCategory;
 @property(readonly, nonatomic) _Bool hasMerchantIndustryCategory;
+- (void)_readMerchantIndustryCategory;
+@property(retain, nonatomic) NSString *merchantRawName;
 @property(readonly, nonatomic) _Bool hasMerchantRawName;
+- (void)_readMerchantRawName;
+@property(retain, nonatomic) NSString *merchantName;
 @property(readonly, nonatomic) _Bool hasMerchantName;
+- (void)_readMerchantName;
+@property(retain, nonatomic) GEOPDMapsIdentifier *merchantId;
 @property(readonly, nonatomic) _Bool hasMerchantId;
+- (void)_readMerchantId;
 @property(nonatomic) _Bool hasMerchantIndustryCode;
+@property(nonatomic) long long merchantIndustryCode;
 
 @end
 

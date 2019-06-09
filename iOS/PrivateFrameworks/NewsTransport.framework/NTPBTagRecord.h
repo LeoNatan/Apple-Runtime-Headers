@@ -47,6 +47,7 @@
     NSString *_nameImageMaskWidgetLQURL;
     NSData *_nameImageMetadata;
     NSString *_nameImageURL;
+    NSString *_paidBundleSubscriptionButtonConfigurationJson;
     NSString *_parentID;
     NSString *_primaryAudience;
     NSString *_publisherPaidAuthorizationURL;
@@ -101,6 +102,7 @@
 + (Class)allowedStorefrontIDsType;
 + (Class)blockedStorefrontIDsType;
 + (Class)iAdCategoriesType;
+@property(retain, nonatomic) NSString *paidBundleSubscriptionButtonConfigurationJson; // @synthesize paidBundleSubscriptionButtonConfigurationJson=_paidBundleSubscriptionButtonConfigurationJson;
 @property(retain, nonatomic) NSString *magazineGenre; // @synthesize magazineGenre=_magazineGenre;
 @property(retain, nonatomic) NSString *language; // @synthesize language=_language;
 @property(retain, nonatomic) NSString *archiveIssueListID; // @synthesize archiveIssueListID=_archiveIssueListID;
@@ -165,6 +167,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasPaidBundleSubscriptionButtonConfigurationJson;
 @property(readonly, nonatomic) _Bool hasMagazineGenre;
 @property(readonly, nonatomic) _Bool hasLanguage;
 @property(readonly, nonatomic) _Bool hasArchiveIssueListID;

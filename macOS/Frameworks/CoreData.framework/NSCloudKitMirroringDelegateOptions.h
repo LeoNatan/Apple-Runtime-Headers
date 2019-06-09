@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CKContainerOptions, NSNumber, NSString;
+@class CKContainerOptions, CKNotificationListener, CKScheduler, NSNumber, NSString, PFCloudKitContainerProvider;
 
 @interface NSCloudKitMirroringDelegateOptions : NSObject
 {
@@ -15,10 +15,28 @@
     BOOL _useEncryptedStorage;
     BOOL _initializeSchema;
     BOOL _automaticallyDownloadFileBackedFutures;
+    BOOL _automaticallyScheduleImportAndExportOperations;
     NSNumber *_operationMemoryThresholdBytes;
     CKContainerOptions *_containerOptions;
+    CKScheduler *_scheduler;
+    CKNotificationListener *_notificationListener;
+    BOOL _skipCloudKitSetup;
+    PFCloudKitContainerProvider *_containerProvider;
+    NSString *_apsConnectionMachServiceName;
+    BOOL _useDaemon;
+    BOOL _useTestDaemon;
+    BOOL _preserveLegacyRecordMetadataBehavior;
 }
 
+@property(retain, nonatomic) NSString *apsConnectionMachServiceName; // @synthesize apsConnectionMachServiceName=_apsConnectionMachServiceName;
+@property(nonatomic) BOOL preserveLegacyRecordMetadataBehavior; // @synthesize preserveLegacyRecordMetadataBehavior=_preserveLegacyRecordMetadataBehavior;
+@property(nonatomic) BOOL useTestDaemon; // @synthesize useTestDaemon=_useTestDaemon;
+@property(nonatomic) BOOL useDaemon; // @synthesize useDaemon=_useDaemon;
+@property(retain, nonatomic) PFCloudKitContainerProvider *containerProvider; // @synthesize containerProvider=_containerProvider;
+@property(nonatomic) BOOL skipCloudKitSetup; // @synthesize skipCloudKitSetup=_skipCloudKitSetup;
+@property(retain, nonatomic) CKNotificationListener *notificationListener; // @synthesize notificationListener=_notificationListener;
+@property(retain, nonatomic) CKScheduler *scheduler; // @synthesize scheduler=_scheduler;
+@property(nonatomic) BOOL automaticallyScheduleImportAndExportOperations; // @synthesize automaticallyScheduleImportAndExportOperations=_automaticallyScheduleImportAndExportOperations;
 @property(nonatomic) BOOL automaticallyDownloadFileBackedFutures; // @synthesize automaticallyDownloadFileBackedFutures=_automaticallyDownloadFileBackedFutures;
 @property(retain, nonatomic) CKContainerOptions *containerOptions; // @synthesize containerOptions=_containerOptions;
 @property(retain, nonatomic) NSNumber *operationMemoryThresholdBytes; // @synthesize operationMemoryThresholdBytes=_operationMemoryThresholdBytes;
@@ -29,7 +47,9 @@
 - (id)description;
 - (void)dealloc;
 - (id)copy;
+- (id)initWithCloudKitContainerOptions:(id)arg1;
 - (id)initWithContainerIdentifier:(id)arg1;
+- (id)init;
 
 @end
 

@@ -6,10 +6,12 @@
 
 #import <Sharing/NSObject-Protocol.h>
 
-@class NSDictionary;
+@class UISUIActivityExtensionItemDataRequest;
 
 @protocol SFAirDropViewServiceHostProtocol <NSObject>
 - (void)airDropViewServiceDidRequestDismissal;
-- (void)airDropViewServiceRequestingSharedItemsWithOptions:(NSDictionary *)arg1 completionHandler:(void (^)(UISUIActivityExtensionItemData *))arg2;
+- (void)airDropViewServiceRequestingSharedItemsWithDataRequest:(UISUIActivityExtensionItemDataRequest *)arg1 completionHandler:(void (^)(UISUIActivityExtensionItemData *))arg2;
+- (void)airDropViewServiceDidSuccessfullyCompleteTransfer;
+- (void)airDropViewServiceDidSuccessfullyStartTransfer;
 @end
 

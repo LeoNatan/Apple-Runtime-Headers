@@ -22,6 +22,7 @@
     NSString *_bundleVersion;
     NSString *_cohort;
     NSString *_deviceVendorID;
+    NSNumber *_downloaderID;
     NSNumber *_externalVersionIdentifier;
     NSNumber *_installOrder;
     NSNumber *_itemID;
@@ -42,6 +43,7 @@
 @property(copy, nonatomic) NSNumber *installOrder; // @synthesize installOrder=_installOrder;
 @property(nonatomic) BOOL isBeta; // @synthesize isBeta=_isBeta;
 @property(copy, nonatomic) NSNumber *externalVersionIdentifier; // @synthesize externalVersionIdentifier=_externalVersionIdentifier;
+@property(copy, nonatomic) NSNumber *downloaderID; // @synthesize downloaderID=_downloaderID;
 @property(copy, nonatomic) NSString *deviceVendorID; // @synthesize deviceVendorID=_deviceVendorID;
 @property(copy, nonatomic) NSString *cohort; // @synthesize cohort=_cohort;
 @property(copy, nonatomic) NSString *bundleVersion; // @synthesize bundleVersion=_bundleVersion;
@@ -51,11 +53,11 @@
 @property(copy, nonatomic) NSNumber *accountID; // @synthesize accountID=_accountID;
 @property(copy, nonatomic) NSString *accountName; // @synthesize accountName=_accountName;
 - (void).cxx_destruct;
-- (id)initWithCoder:(id)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithBundleID:(id)arg1;
-- (id)init;
 
 @end
 

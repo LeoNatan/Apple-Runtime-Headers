@@ -25,14 +25,16 @@
 
 + (id)logCategory;
 + (id)protocolName;
+@property(retain, nonatomic) NSMapTable *activeBulkSendSessions; // @synthesize activeBulkSendSessions=_activeBulkSendSessions;
 @property(nonatomic) unsigned int nextSessionIdentifier; // @synthesize nextSessionIdentifier=_nextSessionIdentifier;
 @property(nonatomic) BOOL isConnected; // @synthesize isConnected=_isConnected;
-@property(retain, nonatomic) NSMapTable *activeBulkSendSessions; // @synthesize activeBulkSendSessions=_activeBulkSendSessions;
 @property(retain, nonatomic) NSMapTable *listeners; // @synthesize listeners=_listeners;
 @property(nonatomic) __weak id accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(nonatomic) __weak id <HMDDataStreamProtocolDelegate> dataStream; // @synthesize dataStream=_dataStream;
 - (void).cxx_destruct;
+- (void)_startSessionForFileType:(id)arg1 queue:(id)arg2 callback:(CDUnknownBlockType)arg3;
+- (void)startSessionForFileType:(id)arg1 queue:(id)arg2 callback:(CDUnknownBlockType)arg3;
 - (void)_sendAckMessageWithIdentifier:(id)arg1;
 - (void)_sendCloseMessageWithIdentifier:(id)arg1 reason:(unsigned short)arg2;
 - (void)_cancelSessionWithIdentifier:(id)arg1 reason:(unsigned short)arg2 hadReceivedEof:(BOOL)arg3;

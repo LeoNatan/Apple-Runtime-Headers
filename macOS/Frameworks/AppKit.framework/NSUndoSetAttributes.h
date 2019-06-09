@@ -15,7 +15,7 @@
 
 - (void)undoRedo:(id)arg1;
 - (void)dealloc;
-- (id)initWithAffectedRange:(struct _NSRange)arg1 layoutManager:(id)arg2 undoManager:(id)arg3;
+- (id)initWithAffectedRange:(struct _NSRange)arg1 textStorage:(id)arg2 undoManager:(id)arg3;
 
 @end
 

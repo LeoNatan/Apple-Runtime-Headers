@@ -6,106 +6,72 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <NanoMediaUI/NACVolumeControllerDelegate-Protocol.h>
-#import <NanoMediaUI/NMCConnectivityObserver-Protocol.h>
 #import <NanoMediaUI/NMROriginObserverDelegate-Protocol.h>
 #import <NanoMediaUI/NMUNowPlayingFeedbackViewControllerDelegate-Protocol.h>
 #import <NanoMediaUI/NMUNowPlayingViewControllerDelegate-Protocol.h>
+#import <NanoMediaUI/NMUNowPlayingViewDataSource-Protocol.h>
 #import <NanoMediaUI/NMUNowPlayingViewDelegate-Protocol.h>
 #import <NanoMediaUI/NMUSnapshotCapableInterface-Protocol.h>
-#import <NanoMediaUI/NMUTransportControlsViewDelegate-Protocol.h>
+#import <NanoMediaUI/NMUVolumeIndicatorControlDelegate-Protocol.h>
 #import <NanoMediaUI/PUICActionSheetControllerDelegate-Protocol.h>
-#import <NanoMediaUI/PUICSliderDelegate-Protocol.h>
 
-@class MPArtworkCatalog, NMRNowPlayingController, NMRNowPlayingState, NMROrigin, NMUNowPlayingArtwork, NMUNowPlayingArtworkView, NMUNowPlayingFeedbackViewController, NMUNowPlayingView, NMUTransportControlProvider, NSMutableDictionary, NSNumber, NSString, NSTimer, NSUserActivity, UIImage, _NMUTransportControlOptimisticState;
-@protocol NACVolumeController, NMUNowPlayingViewControllerDelegate, NMUNowPlayingViewControllerPerfTestingDelegate;
+@class MPArtworkCatalog, NMRNowPlayingController, NMRNowPlayingState, NMROrigin, NMUNowPlayingArtwork, NMUNowPlayingFeedbackViewController, NMUNowPlayingTrackListTableViewController, NMUNowPlayingView, NMUOriginTitleView, NSMutableDictionary, NSNumber, NSString, NSTimer, NSUserActivity;
+@protocol NACVolumeController, NMUNowPlayingViewControllerDelegate;
 
-@interface NMUNowPlayingViewController : UIViewController <NACVolumeControllerDelegate, NMUNowPlayingViewDelegate, NMUTransportControlsViewDelegate, PUICActionSheetControllerDelegate, PUICSliderDelegate, NMUNowPlayingViewControllerDelegate, NMUNowPlayingFeedbackViewControllerDelegate, NMCConnectivityObserver, NMUSnapshotCapableInterface, NMROriginObserverDelegate>
+@interface NMUNowPlayingViewController : UIViewController <PUICActionSheetControllerDelegate, NMUNowPlayingViewControllerDelegate, NMUNowPlayingFeedbackViewControllerDelegate, NMUVolumeIndicatorControlDelegate, NMUSnapshotCapableInterface, NMROriginObserverDelegate, NMUNowPlayingViewDataSource, NMUNowPlayingViewDelegate>
 {
+    NMUOriginTitleView *_originTitleView;
     NMUNowPlayingView *_nowPlayingView;
     int _nowPlayingViewStyle;
     NMRNowPlayingController *_nowPlayingController;
-    NMUNowPlayingArtworkView *_artworkView;
     NSMutableDictionary *_actionItemsByMediaRemoteFeedbackCommands;
     NMUNowPlayingFeedbackViewController *_nowPlayingFeedbackActionController;
-    NMUNowPlayingFeedbackViewController *_nowPlayingMoreMenuActionController;
     _Bool _canEnableMarqueeForNowPlayingView;
     _Bool _currentNowPlayingInfoIsOverridingSupportedCommands;
     id <NACVolumeController> _volumeController;
     NSNumber *_currentArtworkImagePersistentID;
     MPArtworkCatalog *_currentArtworkCatalog;
     NMUNowPlayingArtwork *_currentArtwork;
-    UIImage *_pendingArtworkSourceImage;
     MPArtworkCatalog *_pendingArtworkCatalog;
     NSNumber *_pendingArtworkItemPersistentID;
     _Bool _shouldObserveVolumeChanges;
     int _viewAppearanceState;
     NSNumber *_optimisticPlaybackState;
     NSTimer *_optimisticPlaybackStateExpiryTimer;
-    _NMUTransportControlOptimisticState *_optimisticAddToLibraryState;
-    _NMUTransportControlOptimisticState *_optimisticLikeState;
-    NMUTransportControlProvider *_transportControlProvider;
-    _Bool _shouldShowStatusBarIndicator;
-    NSTimer *_volumeStyleOverrideTimer;
     NSNumber *_placeholderPlaybackState;
     NSNumber *_placeholderPreferredPlaybackRate;
-    NSTimer *_placeholderNowPlayingStateTimeoutTimer;
-    _Bool _waitForMatchingPlaceholderNowPlayingInfo;
     id <NMUNowPlayingViewControllerDelegate> _nowPlayingTrackTapDelegate;
     NSString *_placeholderArtworkTemplateImageName;
     NMRNowPlayingState *_placeholderNowPlayingState;
     NMROrigin *_currentOrigin;
+    NMUNowPlayingTrackListTableViewController *_nowPlayingTrackListTableViewController;
     NSUserActivity *_currentUserActivity;
-    id <NMUNowPlayingViewControllerPerfTestingDelegate> _perfTestingDelegate;
-    double _placeholderNowPlayingStateTimeout;
 }
 
-+ (void)_asyncPrewarm;
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
-@property(nonatomic) __weak id <NMUNowPlayingViewControllerPerfTestingDelegate> perfTestingDelegate; // @synthesize perfTestingDelegate=_perfTestingDelegate;
 @property(retain, nonatomic) NSUserActivity *currentUserActivity; // @synthesize currentUserActivity=_currentUserActivity;
+@property(readonly, nonatomic) NMUNowPlayingTrackListTableViewController *nowPlayingTrackListTableViewController; // @synthesize nowPlayingTrackListTableViewController=_nowPlayingTrackListTableViewController;
 @property(nonatomic) __weak NMROrigin *currentOrigin; // @synthesize currentOrigin=_currentOrigin;
-@property(nonatomic) double placeholderNowPlayingStateTimeout; // @synthesize placeholderNowPlayingStateTimeout=_placeholderNowPlayingStateTimeout;
-@property(nonatomic) _Bool waitForMatchingPlaceholderNowPlayingInfo; // @synthesize waitForMatchingPlaceholderNowPlayingInfo=_waitForMatchingPlaceholderNowPlayingInfo;
 @property(retain, nonatomic) NMRNowPlayingState *placeholderNowPlayingState; // @synthesize placeholderNowPlayingState=_placeholderNowPlayingState;
 @property(retain, nonatomic) NSString *placeholderArtworkTemplateImageName; // @synthesize placeholderArtworkTemplateImageName=_placeholderArtworkTemplateImageName;
 @property(nonatomic) __weak id <NMUNowPlayingViewControllerDelegate> nowPlayingTrackTapDelegate; // @synthesize nowPlayingTrackTapDelegate=_nowPlayingTrackTapDelegate;
 - (void).cxx_destruct;
-- (void)_notifyPerfTestingDidUpdateUI;
-- (void)_stopPlayback;
-- (void)_startPlayback;
-- (void)_updateUIForConnectivityState;
-- (void)manager:(id)arg1 connectivityDidChange:(_Bool)arg2;
-- (void)_primeAudioRoutingManagerIfNecessary;
+- (void)_presentTVRemoteViewController;
 - (void)_updateVolumeControllerObservationStatus;
 - (void)_setShouldObserveVolumeChanges:(_Bool)arg1;
 - (void)_updateVolumeController;
-- (void)_virtualAudioRoutesDidChangeNotification:(id)arg1;
-- (void)_updateVolumeControlVisibilityAnimated:(_Bool)arg1;
-- (void)_updateEULimit;
-- (void)volumeControllerDidUpdateVolumeWarningEnabled:(id)arg1;
-- (void)volumeControllerDidUpdateEUVolumeLimit:(id)arg1;
-- (void)volumeControllerDidUpdateVolumeControlAvailibility:(id)arg1;
-- (void)volumeControllerDidUpdateVolumeValue:(id)arg1;
-- (void)_volumeValueDidChange;
 - (void)_togglePlaybackRate;
-- (void)_handleVolumeStyleOverrideTimer;
-- (void)_invalidateVolumeStyleOverrideTimer;
-- (void)_scheduleVolumeStyleOverrideTimer;
-- (void)_handleAirPlayAction;
-- (id)actionController;
-- (_Bool)canProvideActionController;
-- (_Bool)shouldProvideAirPlayControls;
-- (void)slider:(id)arg1 didTapTouchTarget:(int)arg2;
-- (void)sliderDidEndCrownInteraction:(id)arg1;
-- (void)sliderDidRequestFocus:(id)arg1;
 - (void)feedbackActionSheetController:(id)arg1 willDismissForTappedAction:(int)arg2;
 - (void)_sendMediaRemoteCommandForToggledFeedbackAction:(int)arg1;
-- (void)_sendMediaRemoteCommandForToggledAddToLibraryAction;
-- (void)transportControlsView:(id)arg1 tapOnControlType:(int)arg2;
 - (void)_sendMediaRemoteCommand:(unsigned int)arg1 options:(id)arg2 launchApp:(_Bool)arg3;
+- (void)_updateAirPlayButtonSelectedState;
+- (void)_handleOriginConnectionStateDidChangeNotification:(id)arg1;
+- (void)_handleVirtualAudioRoutesDidChangeNotification:(id)arg1;
+- (void)volumeIndicatorDidEndAdjustingVolume:(id)arg1;
 - (void)nowPlayingViewReceivedTapOnTrackTitles:(id)arg1;
+- (void)nowPlayingView:(id)arg1 didTapButtonWithActionType:(unsigned int)arg2;
+- (id)actionsForNowPlayingView:(id)arg1;
 - (void)_artworkViewTapGestureRecognized:(id)arg1;
 - (void)_toggleUnprocessedArtworkImageVisibility;
 - (void)_setUnprocessedArtworkVisible:(_Bool)arg1 animated:(_Bool)arg2;
@@ -116,22 +82,20 @@
 - (void)originObserver:(id)arg1 didUpdateElapsedTimeForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdatePlaybackStateForOrigin:(id)arg2;
 - (void)originObserver:(id)arg1 didUpdateNowPlayingInfoForOrigin:(id)arg2;
-- (_Bool)_shouldShowOriginName;
-- (_Bool)_shouldUseExtendedTransportControls;
+- (void)_updatePlaybackProgress;
+- (void)_updateTitleView;
+- (_Bool)_shouldShowOriginTitleView;
+- (id)_navigationContextActionItemsWithActionSheetController:(id)arg1;
 - (void)_presentMoreMenuActionController;
-- (void)_updateMoreMenuActionController;
 - (void)_presentLikeBanViewController;
 - (void)_updateNowPlayingFeedbackController;
 - (void)_updateAvailableAndHighlightedControls;
-- (void)_updateTransportControlProvider;
 - (void)_updateTrackTitleMarqueeForAppearanceAndPlaybackState;
 - (void)_pauseMarquee;
 - (void)_setViewAppearanceState:(int)arg1;
 - (void)_refreshArtworkRelatedViewsForArtworkImageUpdate;
-- (void)_updatePlaybackStateDisplay;
-- (void)_updateArtworkImageWithSourceImage:(id)arg1 artworkCatalog:(id)arg2 itemPersistentID:(id)arg3;
+- (void)_updateArtworkImageWithArtworkCatalog:(id)arg1 itemPersistentID:(id)arg2;
 - (void)_updateArtworkImageWithPlaceholderImage;
-- (void)_updateOptimisticNowPlayingInfo;
 - (void)_updateNowPlayingInfoDisplay;
 - (void)_updateUIAnimated:(_Bool)arg1;
 - (id)_currentRadioTrackMediaRemoteOptions;
@@ -143,8 +107,6 @@
 - (void)_viewDidAppear;
 - (void)_viewWillAppear;
 - (void)prepareForSnapshot;
-- (void)_optimisticallySetLikeBanActive:(_Bool)arg1 controlsView:(id)arg2;
-- (void)_optimisticallySetAddToLibraryActive:(_Bool)arg1 controlsView:(id)arg2;
 - (void)_handleOptimisticPlaybackStateExpiryTimer;
 - (void)_invalidateOptimisticPlaybackStateExpiryTimer;
 - (void)setOptimisticPlaybackState:(id)arg1;
@@ -156,12 +118,10 @@
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)loadView;
 - (id)_nowPlayingController;
-- (void)_handlePlaceholderNowPlayingStateTimeout;
-- (void)_schedulePlaceholderNowPlayingTimeoutTimerIfNeeded;
-- (void)_invalidatePlaceholderNowPlayingStateTimeoutTimerIfNeeded;
+- (void)dismissTrackListAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)presentTrackListAnimated:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NMUNowPlayingView *nowPlayingView;
 - (void)dealloc;
-- (id)initWithNowPlayingController:(id)arg1 viewStyle:(int)arg2 transportControlProvider:(id)arg3;
 - (id)initWithNowPlayingController:(id)arg1 viewStyle:(int)arg2;
 
 // Remaining properties

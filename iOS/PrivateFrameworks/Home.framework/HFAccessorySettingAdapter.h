@@ -6,35 +6,35 @@
 
 #import <objc/NSObject.h>
 
-#import <Home/HFAccessorySettingsObserver-Protocol.h>
+#import <Home/HFHomeKitSettingsObserver-Protocol.h>
 #import <Home/HFMediaObjectObserver-Protocol.h>
 
-@class HFHomeKitDispatcher, HFMediaProfileContainerSettingsValueManager, HMAccessory, HMAccessorySettings, HMHome, NSMutableDictionary, NSSet, NSString;
-@protocol HFMediaProfileContainer;
+@class HFHomeKitDispatcher, HFHomeKitSettingsValueManager, HMAccessory, HMHome, HMSettings, NSMutableDictionary, NSSet, NSString;
+@protocol HFHomeKitSettingsVendor;
 
-@interface HFAccessorySettingAdapter : NSObject <HFAccessorySettingsObserver, HFMediaObjectObserver>
+@interface HFAccessorySettingAdapter : NSObject <HFHomeKitSettingsObserver, HFMediaObjectObserver>
 {
-    HFMediaProfileContainerSettingsValueManager *_valueManager;
+    HFHomeKitSettingsValueManager *_valueManager;
     unsigned long long _mode;
-    id <HFMediaProfileContainer> _mediaProfileContainer;
+    id <HFHomeKitSettingsVendor> _homeKitSettingsVendor;
     NSSet *_keyPaths;
     CDUnknownBlockType _updateHandler;
     HFHomeKitDispatcher *_dispatcher;
     NSMutableDictionary *_watchedSettings;
     NSMutableDictionary *_keyPathStringToFuture;
     HMAccessory *_accessory;
-    HMAccessorySettings *_accessorySettings;
+    HMSettings *_settings;
 }
 
 + (id)createDefaultHomeSettingAdapterCollectionForProfile:(id)arg1;
-@property(readonly, nonatomic) HMAccessorySettings *accessorySettings; // @synthesize accessorySettings=_accessorySettings;
+@property(readonly, nonatomic) HMSettings *settings; // @synthesize settings=_settings;
 @property(readonly, nonatomic) HMAccessory *accessory; // @synthesize accessory=_accessory;
 @property(retain, nonatomic) NSMutableDictionary *keyPathStringToFuture; // @synthesize keyPathStringToFuture=_keyPathStringToFuture;
 @property(retain, nonatomic) NSMutableDictionary *watchedSettings; // @synthesize watchedSettings=_watchedSettings;
 @property(retain, nonatomic) HFHomeKitDispatcher *dispatcher; // @synthesize dispatcher=_dispatcher;
 @property(readonly, copy, nonatomic) CDUnknownBlockType updateHandler; // @synthesize updateHandler=_updateHandler;
 @property(readonly, copy, nonatomic) NSSet *keyPaths; // @synthesize keyPaths=_keyPaths;
-@property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
+@property(readonly, nonatomic) id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 - (void).cxx_destruct;
 - (id)_endMonitoringSettingsKeyPath:(id)arg1;
@@ -50,19 +50,20 @@
 - (_Bool)_updateRootAccessorySettingsIfNeeded;
 - (void)mediaObject:(id)arg1 didUpdateSettings:(id)arg2;
 - (void)settingsDidUpdate:(id)arg1;
-- (void)accessorySettings:(id)arg1 didUpdateSetting:(id)arg2;
-- (void)accessorySettings:(id)arg1 didWriteValueForSettings:(id)arg2 failedSettings:(id)arg3;
-- (void)accessorySettings:(id)arg1 willWriteValueForSettings:(id)arg2;
+- (void)settings:(id)arg1 didUpdateSetting:(id)arg2;
+- (void)settings:(id)arg1 didWriteValueForSettings:(id)arg2 failedSettings:(id)arg3;
+- (void)settings:(id)arg1 willWriteValueForSettings:(id)arg2;
 - (id)settingForKeyPath:(id)arg1;
 - (id)updateSetting:(id)arg1 value:(id)arg2;
-- (void)accessorySettingWasUpdated:(id)arg1 value:(id)arg2;
-@property(readonly, nonatomic) HFMediaProfileContainerSettingsValueManager *valueManager; // @synthesize valueManager=_valueManager;
+- (void)homeKitSettingWasUpdated:(id)arg1 value:(id)arg2;
+@property(readonly, nonatomic) HFHomeKitSettingsValueManager *valueManager; // @synthesize valueManager=_valueManager;
 @property(readonly, nonatomic) HMHome *home; // @dynamic home;
 - (id)settingWatchFutureForKeyPath:(id)arg1;
 - (id)updateSettingWithKeyPath:(id)arg1 value:(id)arg2;
-- (id)initWithMediaProfileContainer:(id)arg1 keyPaths:(id)arg2;
-- (id)initWithMediaProfileContainer:(id)arg1 keyPaths:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
-- (id)initWithMediaProfileContainer:(id)arg1 keyPaths:(id)arg2 mode:(unsigned long long)arg3 updateHandler:(CDUnknownBlockType)arg4;
+- (id)initWithHomeKitSettingsVendor:(id)arg1 keyPaths:(id)arg2;
+- (id)initWithHomeKitSettingsVendor:(id)arg1 keyPaths:(id)arg2 updateHandler:(CDUnknownBlockType)arg3;
+- (id)initWithHomeKitSettingsVendor:(id)arg1 keyPaths:(id)arg2 updateHandlerBlock:(CDUnknownBlockType)arg3;
+- (id)initWithHomeKitSettingsVendor:(id)arg1 keyPaths:(id)arg2 mode:(unsigned long long)arg3 updateHandler:(CDUnknownBlockType)arg4;
 - (id)init;
 
 // Remaining properties

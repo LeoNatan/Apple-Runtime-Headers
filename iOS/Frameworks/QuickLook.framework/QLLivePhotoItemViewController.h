@@ -27,9 +27,6 @@ __attribute__((visibility("hidden")))
     _Bool _shouldPlayHint;
 }
 
-+ (_Bool)shouldBeRemoteForContentType:(id)arg1;
-+ (id)supportedContentTypes;
-+ (Class)transformerClass;
 - (void).cxx_destruct;
 - (_Bool)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)livePhotoView:(id)arg1 didEndPlaybackWithStyle:(long long)arg2;

@@ -7,6 +7,7 @@
 @class CNContact, CNKFaceTimeInCallControlsViewController;
 
 @protocol CNKFaceTimeInCallControlsViewControllerDelegate
+- (void)didCreateTableViewForInCallControlsViewController:(CNKFaceTimeInCallControlsViewController *)arg1;
 - (void)inCallControlsViewController:(CNKFaceTimeInCallControlsViewController *)arg1 didTap:(long long)arg2;
 
 @optional

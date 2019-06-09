@@ -8,6 +8,7 @@
 
 @class PDSlide;
 
+__attribute__((visibility("hidden")))
 @interface PBSlideObjAndMasterPair : NSObject
 {
     PDSlide *mSlide;

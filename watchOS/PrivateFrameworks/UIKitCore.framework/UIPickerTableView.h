@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     NSMutableIndexSet *_checkedRows;
     float _lastClickedOffset;
     int _lastSelectedRow;
-    _Bool _usesModernStyle;
     UIColor *_textColor;
     struct CGRect _visibleRect;
     NSMutableArray *_referencingCells;
@@ -36,6 +35,7 @@ __attribute__((visibility("hidden")))
     _Bool _generatorActivated;
 }
 
++ (_Bool)_isInternalTableView;
 @property(nonatomic) _Bool generatorActivated; // @synthesize generatorActivated=_generatorActivated;
 @property(getter=_playsFeedback, setter=_setPlaysFeedback:) _Bool playsFeedback; // @synthesize playsFeedback=_playsFeedback;
 @property(nonatomic) int lastSelectedRow; // @synthesize lastSelectedRow=_lastSelectedRow;
@@ -43,7 +43,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (_Bool)_shouldWrapCells;
 @property(retain, nonatomic, getter=_textColor, setter=_setTextColor:) UIColor *_textColor;
-@property(getter=_usesModernStyle, setter=_setUsesModernStyle:) _Bool _usesModernStyle;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

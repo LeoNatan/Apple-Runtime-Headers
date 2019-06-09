@@ -4,16 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FileProvider/FPTransferOperation.h>
+#import <FileProvider/FPMoveOperation.h>
 
-@interface FPCopyOperation : FPTransferOperation
+@interface FPCopyOperation : FPMoveOperation
 {
 }
 
-- (id)initWithSourceURLsAndNames:(id)arg1 destinationFolder:(id)arg2;
-- (id)initWithNamesAndSourceURLs:(id)arg1 destinationFolder:(id)arg2;
-- (id)initWithItems:(id)arg1 destinationFolder:(id)arg2;
-- (id)initWithSourceURLs:(id)arg1 destinationFolder:(id)arg2;
+- (unsigned long long)defaultLastUsedDatePolicy;
+- (_Bool)byCopy;
 
 @end
 

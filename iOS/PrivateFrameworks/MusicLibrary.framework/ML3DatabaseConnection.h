@@ -57,7 +57,7 @@
 - (void)_executeTransactionCommitBlocks:(_Bool)arg1;
 - (void)_resetUnfinalizedStatements;
 - (void)_finalizeAllStatements;
-- (_Bool)_isSharedMediaLibraryDatabase;
+- (_Bool)_isDeviceMediaLibraryDatabase;
 - (void)_updateProfilingLevel;
 - (void)_logDatabaseFileDebugInformation;
 - (void)_logCurrentError;
@@ -81,6 +81,7 @@
 - (_Bool)_alreadyAttemptedCorruptionRecovery;
 - (void)_setTransactionLevel:(unsigned long long)arg1;
 - (unsigned long long)_transactionLevel;
+- (int)_distrustQueriesDuringBlock:(CDUnknownBlockType)arg1;
 - (id)_databaseFilePaths;
 - (_Bool)_handleDiskIOError;
 - (_Bool)_handleBusyLockWithNumberOfRetries:(int)arg1;

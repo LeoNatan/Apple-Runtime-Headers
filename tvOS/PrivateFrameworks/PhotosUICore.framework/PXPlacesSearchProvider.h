@@ -6,21 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class PKExtendedTraitCollection, PXPlacesSnapshotFactory;
+@class PXPlacesSnapshotFactory;
 @protocol OS_dispatch_queue;
 
 @interface PXPlacesSearchProvider : NSObject
 {
     PXPlacesSnapshotFactory *_factory;
-    PKExtendedTraitCollection *_extendedTraitCollection;
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
-@property(retain, nonatomic) PKExtendedTraitCollection *extendedTraitCollection; // @synthesize extendedTraitCollection=_extendedTraitCollection;
 @property(retain, nonatomic) PXPlacesSnapshotFactory *factory; // @synthesize factory=_factory;
 - (void).cxx_destruct;
-- (void)requestMapSnapshotForQuery:(id)arg1 ofSize:(struct CGSize)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)requestMapSnapshotForQuery:(id)arg1 ofSize:(struct CGSize)arg2 traitCollectionForSnapshot:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)init;
 
 @end

@@ -13,6 +13,7 @@
 @class CKAudioMediaObject, CKConversation, CKNanoChatController, NSString, NSURL, UIViewController;
 @protocol CKNanoReplyViewControllerProtocol;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoSendController : NSObject <PUICQuickboardViewControllerDelegate, PUICDictationViewControllerDelegatePrivate, PUICQuickboardEmojiViewControllerDelegatePrivate>
 {
     CKConversation *_conversation;

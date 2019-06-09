@@ -6,20 +6,31 @@
 
 #import <objc/NSObject.h>
 
-@class QLExtensionManager;
+#import <QuickLookSupport/QLThumbnailSurfaceGeneratorProtocol-Protocol.h>
 
-@interface QLExtensionThumbnailGenerator : NSObject
+@class NSString, QLExtensionManager;
+
+@interface QLExtensionThumbnailGenerator : NSObject <QLThumbnailSurfaceGeneratorProtocol>
 {
     QLExtensionManager *_extensionManager;
 }
 
++ (_Bool)hasThirdPartyThumbnailGeneratorForContentType:(id)arg1;
 + (_Bool)hasThirdPartyThumbnailGeneratorForItem:(id)arg1;
 @property(retain, nonatomic) QLExtensionManager *extensionManager; // @synthesize extensionManager=_extensionManager;
 - (void).cxx_destruct;
+- (void)ioSurfaceWithSize:(struct CGSize)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)generatePlatformImageThumbnailForExtensionThumbnailItem:(id)arg1 ofSize:(struct CGSize)arg2 minimumSize:(double)arg3 scale:(double)arg4 badgeType:(unsigned long long)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (void)generateThumbnailForExtensionThumbnailItem:(id)arg1 ofSize:(struct CGSize)arg2 minimumSize:(double)arg3 scale:(double)arg4 badgeType:(unsigned long long)arg5 completionBlock:(CDUnknownBlockType)arg6;
 - (id)_generateImageFromURL:(id)arg1 withSize:(struct CGSize)arg2 scale:(double)arg3;
 - (id)_generateImageFromRawData:(id)arg1 withContextSize:(struct CGSize)arg2 scale:(double)arg3;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

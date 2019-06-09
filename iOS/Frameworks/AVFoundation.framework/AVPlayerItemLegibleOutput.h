@@ -28,7 +28,6 @@
 - (_Bool)_attachToPlayerItem:(id)arg1;
 - (void)_signalFlush;
 - (void)_pushAttributedStrings:(id)arg1 andSampleBuffers:(id)arg2 atItemTime:(CDStruct_1b6d18a9)arg3;
-- (void)finalize;
 - (void)dealloc;
 - (void)_collectUncollectables;
 - (id)initWithDependencyFactory:(id)arg1 mediaSubtypesForNativeRepresentation:(id)arg2;

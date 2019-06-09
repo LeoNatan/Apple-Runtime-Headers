@@ -10,5 +10,7 @@
 - (struct CATransform3D)SCNMatrix4Value;
 - (struct SCNVector4)SCNVector4Value;
 - (struct SCNVector3)SCNVector3Value;
+- (id)SCNMutableDeepCopy;
+- (unsigned long long)SCN_safeHash;
 @end
 

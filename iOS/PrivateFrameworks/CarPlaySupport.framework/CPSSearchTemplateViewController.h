@@ -13,13 +13,14 @@
 #import <CarPlaySupport/UISearchControllerDelegate-Protocol.h>
 #import <CarPlaySupport/UISearchResultsUpdating-Protocol.h>
 
-@class CPSearchTemplate, CPTemplate, NSString;
+@class CPSearchTemplate, CPTemplate, NAFuture, NSString;
 @protocol CPSTemplateViewControllerDelegate, CPSearchClientTemplateDelegate, CPTemplateDelegate;
 
 @interface CPSSearchTemplateViewController : UISearchContainerViewController <UISearchResultsUpdating, UISearchBarDelegate, UISearchControllerDelegate, CPListTemplateDelegate, CPSBaseTemplateViewController, CPSearchTemplateProviding>
 {
     _Bool _didPop;
     _Bool _didDisappear;
+    NAFuture *_templateProviderFuture;
     id <CPSTemplateViewControllerDelegate> _viewControllerDelegate;
     CPTemplate *_associatedTemplate;
     id <CPTemplateDelegate> _templateDelegate;
@@ -30,6 +31,7 @@
 @property(retain, nonatomic) id <CPTemplateDelegate> templateDelegate; // @synthesize templateDelegate=_templateDelegate;
 @property(retain, nonatomic) CPTemplate *associatedTemplate; // @synthesize associatedTemplate=_associatedTemplate;
 @property(nonatomic) __weak id <CPSTemplateViewControllerDelegate> viewControllerDelegate; // @synthesize viewControllerDelegate=_viewControllerDelegate;
+@property(readonly, nonatomic) NAFuture *templateProviderFuture; // @synthesize templateProviderFuture=_templateProviderFuture;
 - (void).cxx_destruct;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)didDismissSearchController:(id)arg1;

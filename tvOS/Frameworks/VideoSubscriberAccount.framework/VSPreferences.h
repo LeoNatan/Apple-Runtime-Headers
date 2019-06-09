@@ -25,6 +25,7 @@
 - (id)setTopBoxInfoProviderIdOverride;
 - (_Bool)setTopBoxInfoIsSetTopBoxOverride;
 - (void)noteIsInSTBMode:(_Bool)arg1;
+- (_Bool)shouldIgnoreExtendedValidation;
 - (_Bool)isInSTBMode;
 - (void)noteDesiredApp:(id)arg1;
 - (_Bool)hasChosenDesiredApp;

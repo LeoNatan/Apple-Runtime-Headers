@@ -6,10 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSOrderedSet, NSString;
+#import <CoreML/NSSecureCoding-Protocol.h>
 
-@interface MLModelDescription : NSObject
+@class NSDictionary, NSOrderedSet, NSString, NSURL;
+
+@interface MLModelDescription : NSObject <NSSecureCoding>
 {
+    NSURL *_modelURL;
     NSDictionary *_inputDescriptionsByName;
     NSDictionary *_outputDescriptionsByName;
     NSString *_predictedFeatureName;
@@ -19,6 +22,7 @@
     NSOrderedSet *_outputFeatureNames;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)metadataWithFormat:(struct _MLModelMetadataSpecification *)arg1;
 + (id)metadataWithSpecification:(struct _MLModelSpecification *)arg1;
 @property(retain) NSOrderedSet *outputFeatureNames; // @synthesize outputFeatureNames=_outputFeatureNames;
@@ -28,7 +32,10 @@
 @property(readonly, copy, nonatomic) NSString *predictedFeatureName; // @synthesize predictedFeatureName=_predictedFeatureName;
 @property(readonly, nonatomic) NSDictionary *outputDescriptionsByName; // @synthesize outputDescriptionsByName=_outputDescriptionsByName;
 @property(readonly, nonatomic) NSDictionary *inputDescriptionsByName; // @synthesize inputDescriptionsByName=_inputDescriptionsByName;
+@property(retain, nonatomic) NSURL *modelURL; // @synthesize modelURL=_modelURL;
 - (void).cxx_destruct;
+- (id)initWithCoder:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (_Bool)verifyInput:(id)arg1 error:(id *)arg2;
 - (_Bool)isEqualToDescription:(id)arg1;
 - (_Bool)isEqual:(id)arg1;

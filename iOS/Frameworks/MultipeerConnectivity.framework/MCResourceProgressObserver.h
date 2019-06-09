@@ -8,6 +8,7 @@
 
 @class NSProgress, NSString;
 
+__attribute__((visibility("hidden")))
 @interface MCResourceProgressObserver : NSObject
 {
     _Bool _progressObserversSet;

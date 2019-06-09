@@ -9,7 +9,8 @@
 #import <CloudKit/NSCopying-Protocol.h>
 #import <CloudKit/NSSecureCoding-Protocol.h>
 
-@class CKContainer, NSDictionary, NSString;
+@class CKContainer, CKSchedulerActivity, NSDictionary, NSString;
+@protocol OS_xpc_object;
 
 @interface CKOperationConfiguration : NSObject <NSSecureCoding, NSCopying>
 {
@@ -17,6 +18,8 @@
     _Bool _longLived;
     _Bool _preferAnonymousRequests;
     _Bool _automaticallyRetryNetworkFailures;
+    _Bool _xpcActivityAutomaticallyDefer;
+    _Bool _discretionarySchedulingForEntireOperation;
     _Bool _allowsBackgroundNetworking;
     _Bool _shouldSkipZonePCSUpdate;
     _Bool _hasContainer;
@@ -26,6 +29,10 @@
     _Bool _hasTimeoutIntervalForResource;
     _Bool _hasAutomaticallyRetryNetworkFailures;
     _Bool _hasDiscretionaryNetworkBehavior;
+    _Bool _hasXPCActivity;
+    _Bool _hasXPCActivityAutomaticallyDefer;
+    _Bool _hasSchedulerActivity;
+    _Bool _hasDiscretionarySchedulingForEntireOperation;
     _Bool _hasPreferAnonymousRequests;
     _Bool _hasAllowsBackgroundNetworking;
     _Bool _hasSourceApplicationBundleIdentifier;
@@ -36,21 +43,28 @@
     CKContainer *_container;
     int _qualityOfService;
     unsigned int _discretionaryNetworkBehavior;
+    NSObject<OS_xpc_object> *_xpcActivity;
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
     NSDictionary *_additionalRequestHTTPHeaders;
+    CKSchedulerActivity *_schedulerActivity;
     double _timeoutIntervalForRequest;
     double _timeoutIntervalForResource;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) _Bool hasQualityOfService; // @synthesize hasQualityOfService=_hasQualityOfService;
+@property(retain, nonatomic) CKSchedulerActivity *schedulerActivity; // @synthesize schedulerActivity=_schedulerActivity;
 @property(nonatomic) _Bool hasShouldSkipZonePCSUpdate; // @synthesize hasShouldSkipZonePCSUpdate=_hasShouldSkipZonePCSUpdate;
 @property(nonatomic) _Bool hasAdditionalRequestHTTPHeaders; // @synthesize hasAdditionalRequestHTTPHeaders=_hasAdditionalRequestHTTPHeaders;
 @property(nonatomic) _Bool hasSourceApplicationSecondaryIdentifier; // @synthesize hasSourceApplicationSecondaryIdentifier=_hasSourceApplicationSecondaryIdentifier;
 @property(nonatomic) _Bool hasSourceApplicationBundleIdentifier; // @synthesize hasSourceApplicationBundleIdentifier=_hasSourceApplicationBundleIdentifier;
 @property(nonatomic) _Bool hasAllowsBackgroundNetworking; // @synthesize hasAllowsBackgroundNetworking=_hasAllowsBackgroundNetworking;
 @property(nonatomic) _Bool hasPreferAnonymousRequests; // @synthesize hasPreferAnonymousRequests=_hasPreferAnonymousRequests;
+@property(nonatomic) _Bool hasDiscretionarySchedulingForEntireOperation; // @synthesize hasDiscretionarySchedulingForEntireOperation=_hasDiscretionarySchedulingForEntireOperation;
+@property(nonatomic) _Bool hasSchedulerActivity; // @synthesize hasSchedulerActivity=_hasSchedulerActivity;
+@property(nonatomic) _Bool hasXPCActivityAutomaticallyDefer; // @synthesize hasXPCActivityAutomaticallyDefer=_hasXPCActivityAutomaticallyDefer;
+@property(nonatomic) _Bool hasXPCActivity; // @synthesize hasXPCActivity=_hasXPCActivity;
 @property(nonatomic) _Bool hasDiscretionaryNetworkBehavior; // @synthesize hasDiscretionaryNetworkBehavior=_hasDiscretionaryNetworkBehavior;
 @property(nonatomic) _Bool hasAutomaticallyRetryNetworkFailures; // @synthesize hasAutomaticallyRetryNetworkFailures=_hasAutomaticallyRetryNetworkFailures;
 @property(nonatomic) _Bool hasTimeoutIntervalForResource; // @synthesize hasTimeoutIntervalForResource=_hasTimeoutIntervalForResource;
@@ -58,7 +72,10 @@
 @property(nonatomic) _Bool hasLongLived; // @synthesize hasLongLived=_hasLongLived;
 @property(nonatomic) _Bool hasAllowsCellularAccess; // @synthesize hasAllowsCellularAccess=_hasAllowsCellularAccess;
 @property(nonatomic) _Bool hasContainer; // @synthesize hasContainer=_hasContainer;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *xpcActivity; // @synthesize xpcActivity=_xpcActivity;
 - (void).cxx_destruct;
+- (id)CKDescriptionPropertiesWithPublic:(_Bool)arg1 private:(_Bool)arg2 shouldExpand:(_Bool)arg3;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -68,7 +85,10 @@
 @property(nonatomic) _Bool allowsBackgroundNetworking; // @synthesize allowsBackgroundNetworking=_allowsBackgroundNetworking;
 @property(nonatomic) _Bool shouldSkipZonePCSUpdate; // @synthesize shouldSkipZonePCSUpdate=_shouldSkipZonePCSUpdate;
 @property(nonatomic) _Bool preferAnonymousRequests; // @synthesize preferAnonymousRequests=_preferAnonymousRequests;
+@property(nonatomic) _Bool discretionarySchedulingForEntireOperation; // @synthesize discretionarySchedulingForEntireOperation=_discretionarySchedulingForEntireOperation;
+@property(nonatomic) _Bool xpcActivityAutomaticallyDefer; // @synthesize xpcActivityAutomaticallyDefer=_xpcActivityAutomaticallyDefer;
 @property(nonatomic) unsigned int discretionaryNetworkBehavior; // @synthesize discretionaryNetworkBehavior=_discretionaryNetworkBehavior;
+- (void)setAutomaticallyRetryNetworkFailuresIfNotSet:(_Bool)arg1;
 @property(nonatomic) _Bool automaticallyRetryNetworkFailures; // @synthesize automaticallyRetryNetworkFailures=_automaticallyRetryNetworkFailures;
 @property(nonatomic) double timeoutIntervalForResource; // @synthesize timeoutIntervalForResource=_timeoutIntervalForResource;
 @property(nonatomic) double timeoutIntervalForRequest; // @synthesize timeoutIntervalForRequest=_timeoutIntervalForRequest;

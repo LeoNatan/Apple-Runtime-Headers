@@ -8,5 +8,11 @@
 
 @interface NSTextField (ASKContainerName)
 + (id)containerName_ask;
+- (void)setIsSelectable:(BOOL)arg1;
+- (void)setIsEditable:(BOOL)arg1;
+- (void)setIsBordered:(BOOL)arg1;
+- (void)setIsBezeled:(BOOL)arg1;
+- (void)textDidEndEditing_askTextField:(id)arg1;
+- (void)textDidBeginEditing_askTextField:(id)arg1;
 @end
 

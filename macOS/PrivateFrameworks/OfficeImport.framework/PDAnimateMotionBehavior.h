@@ -8,6 +8,7 @@
 
 @class NSString, OITSUBezierPath;
 
+__attribute__((visibility("hidden")))
 @interface PDAnimateMotionBehavior : PDAnimateScaleBehavior
 {
     OITSUBezierPath *mPath;

@@ -37,7 +37,7 @@
 @property(readonly) double duration;
 @property(readonly) AVAudioFormat *format;
 @property(readonly) NSDictionary *settings;
-@property id <AVAudioPlayerDelegate> delegate;
+@property __weak id <AVAudioPlayerDelegate> delegate;
 @property(readonly) NSData *data;
 @property(readonly) NSURL *url;
 @property(readonly, getter=isPlaying) _Bool playing;

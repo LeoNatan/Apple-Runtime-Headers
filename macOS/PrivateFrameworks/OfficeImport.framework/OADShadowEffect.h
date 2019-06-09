@@ -8,6 +8,7 @@
 
 @class OADColor;
 
+__attribute__((visibility("hidden")))
 @interface OADShadowEffect : OADEffect
 {
     OADColor *mColor;

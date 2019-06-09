@@ -8,20 +8,26 @@
 
 @interface PXGridLayoutMetrics : PXLayoutMetrics
 {
+    BOOL _displaysHeaderTile;
     long long _axis;
+    unsigned long long _additionalTileCount;
     struct CGSize _itemSize;
     struct CGSize _interItemSpacing;
     struct CGSize _headerSize;
+    struct CGSize _headerSpacing;
     struct CGSize _footerSize;
     struct NSEdgeInsets _contentInsets;
 }
 
+@property(nonatomic) unsigned long long additionalTileCount; // @synthesize additionalTileCount=_additionalTileCount;
 @property(nonatomic) struct CGSize footerSize; // @synthesize footerSize=_footerSize;
+@property(nonatomic) struct CGSize headerSpacing; // @synthesize headerSpacing=_headerSpacing;
 @property(nonatomic) struct CGSize headerSize; // @synthesize headerSize=_headerSize;
+@property(nonatomic) BOOL displaysHeaderTile; // @synthesize displaysHeaderTile=_displaysHeaderTile;
 @property(nonatomic) struct NSEdgeInsets contentInsets; // @synthesize contentInsets=_contentInsets;
 @property(nonatomic) struct CGSize interItemSpacing; // @synthesize interItemSpacing=_interItemSpacing;
 @property(nonatomic) struct CGSize itemSize; // @synthesize itemSize=_itemSize;
-@property long long axis; // @synthesize axis=_axis;
+@property(nonatomic) long long axis; // @synthesize axis=_axis;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 
 @end

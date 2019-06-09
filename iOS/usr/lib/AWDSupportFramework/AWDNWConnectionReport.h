@@ -8,7 +8,7 @@
 
 #import <AWDSupportFramework/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class AWDNWL2Report, NSMutableArray, NSString;
 
 @interface AWDNWConnectionReport : PBCodable <NSCopying>
 {
@@ -56,6 +56,7 @@
     NSString *_connectionUUID;
     int _failureReason;
     int _firstAddressFamily;
+    AWDNWL2Report *_l2Report;
     NSString *_processName;
     int _stackLevel;
     int _tlsVersion;
@@ -66,7 +67,11 @@
     _Bool _ipv4Available;
     _Bool _ipv6Available;
     _Bool _isDaemon;
+    _Bool _isPathConstrained;
+    _Bool _isPathExpensive;
     _Bool _multipathConfigured;
+    _Bool _prohibitsConstrained;
+    _Bool _prohibitsExpensive;
     _Bool _resolutionRequired;
     _Bool _synthesizedExtraIPv6Address;
     _Bool _synthesizedIPv6Address;
@@ -74,6 +79,7 @@
     _Bool _tfoConfigured;
     _Bool _tfoUsed;
     _Bool _tlsConfigured;
+    _Bool _tlsHandshakeTimedOut;
     _Bool _tlsVersionTimeout;
     _Bool _triggeredPath;
     _Bool _usedFallback;
@@ -130,7 +136,11 @@
         unsigned int ipv4Available:1;
         unsigned int ipv6Available:1;
         unsigned int isDaemon:1;
+        unsigned int isPathConstrained:1;
+        unsigned int isPathExpensive:1;
         unsigned int multipathConfigured:1;
+        unsigned int prohibitsConstrained:1;
+        unsigned int prohibitsExpensive:1;
         unsigned int resolutionRequired:1;
         unsigned int synthesizedExtraIPv6Address:1;
         unsigned int synthesizedIPv6Address:1;
@@ -138,6 +148,7 @@
         unsigned int tfoConfigured:1;
         unsigned int tfoUsed:1;
         unsigned int tlsConfigured:1;
+        unsigned int tlsHandshakeTimedOut:1;
         unsigned int tlsVersionTimeout:1;
         unsigned int triggeredPath:1;
         unsigned int usedFallback:1;
@@ -146,6 +157,12 @@
 }
 
 + (Class)activitiesType;
+@property(retain, nonatomic) AWDNWL2Report *l2Report; // @synthesize l2Report=_l2Report;
+@property(nonatomic) _Bool prohibitsConstrained; // @synthesize prohibitsConstrained=_prohibitsConstrained;
+@property(nonatomic) _Bool prohibitsExpensive; // @synthesize prohibitsExpensive=_prohibitsExpensive;
+@property(nonatomic) _Bool isPathConstrained; // @synthesize isPathConstrained=_isPathConstrained;
+@property(nonatomic) _Bool isPathExpensive; // @synthesize isPathExpensive=_isPathExpensive;
+@property(nonatomic) _Bool tlsHandshakeTimedOut; // @synthesize tlsHandshakeTimedOut=_tlsHandshakeTimedOut;
 @property(retain, nonatomic) NSString *connectionUUID; // @synthesize connectionUUID=_connectionUUID;
 @property(retain, nonatomic) NSMutableArray *activities; // @synthesize activities=_activities;
 @property(retain, nonatomic) NSString *processName; // @synthesize processName=_processName;
@@ -211,6 +228,12 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) _Bool hasL2Report;
+@property(nonatomic) _Bool hasProhibitsConstrained;
+@property(nonatomic) _Bool hasProhibitsExpensive;
+@property(nonatomic) _Bool hasIsPathConstrained;
+@property(nonatomic) _Bool hasIsPathExpensive;
+@property(nonatomic) _Bool hasTlsHandshakeTimedOut;
 @property(readonly, nonatomic) _Bool hasConnectionUUID;
 - (id)activitiesAtIndex:(unsigned long long)arg1;
 - (unsigned long long)activitiesCount;

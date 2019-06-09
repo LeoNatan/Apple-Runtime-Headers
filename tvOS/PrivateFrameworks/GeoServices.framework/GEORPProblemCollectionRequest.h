@@ -8,10 +8,12 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOLocation, GEORPUserCredentials, NSData, NSMutableArray, NSString;
+@class GEOLocation, GEORPUserCredentials, NSData, NSMutableArray, NSString, PBDataReader;
 
 @interface GEORPProblemCollectionRequest : PBRequest <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_countryCode;
     NSData *_devicePushToken;
     NSString *_hwMachine;
@@ -21,18 +23,30 @@
     GEORPUserCredentials *_userCredentials;
     NSString *_userEmail;
     GEOLocation *_userLocation;
+    struct {
+        unsigned int read_countryCode:1;
+        unsigned int read_devicePushToken:1;
+        unsigned int read_hwMachine:1;
+        unsigned int read_inputLanguage:1;
+        unsigned int read_osRelease:1;
+        unsigned int read_requestElements:1;
+        unsigned int read_userCredentials:1;
+        unsigned int read_userEmail:1;
+        unsigned int read_userLocation:1;
+        unsigned int wrote_countryCode:1;
+        unsigned int wrote_devicePushToken:1;
+        unsigned int wrote_hwMachine:1;
+        unsigned int wrote_inputLanguage:1;
+        unsigned int wrote_osRelease:1;
+        unsigned int wrote_requestElements:1;
+        unsigned int wrote_userCredentials:1;
+        unsigned int wrote_userEmail:1;
+        unsigned int wrote_userLocation:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)requestElementType;
-@property(retain, nonatomic) GEOLocation *userLocation; // @synthesize userLocation=_userLocation;
-@property(retain, nonatomic) NSString *userEmail; // @synthesize userEmail=_userEmail;
-@property(retain, nonatomic) NSData *devicePushToken; // @synthesize devicePushToken=_devicePushToken;
-@property(retain, nonatomic) GEORPUserCredentials *userCredentials; // @synthesize userCredentials=_userCredentials;
-@property(retain, nonatomic) NSString *inputLanguage; // @synthesize inputLanguage=_inputLanguage;
-@property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
-@property(retain, nonatomic) NSString *osRelease; // @synthesize osRelease=_osRelease;
-@property(retain, nonatomic) NSString *hwMachine; // @synthesize hwMachine=_hwMachine;
-@property(retain, nonatomic) NSMutableArray *requestElements; // @synthesize requestElements=_requestElements;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -43,20 +57,40 @@
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLocation *userLocation;
 @property(readonly, nonatomic) _Bool hasUserLocation;
+- (void)_readUserLocation;
+@property(retain, nonatomic) NSString *userEmail;
 @property(readonly, nonatomic) _Bool hasUserEmail;
+- (void)_readUserEmail;
+@property(retain, nonatomic) NSData *devicePushToken;
 @property(readonly, nonatomic) _Bool hasDevicePushToken;
+- (void)_readDevicePushToken;
+@property(retain, nonatomic) GEORPUserCredentials *userCredentials;
 @property(readonly, nonatomic) _Bool hasUserCredentials;
+- (void)_readUserCredentials;
+@property(retain, nonatomic) NSString *inputLanguage;
 @property(readonly, nonatomic) _Bool hasInputLanguage;
+- (void)_readInputLanguage;
+@property(retain, nonatomic) NSString *countryCode;
 @property(readonly, nonatomic) _Bool hasCountryCode;
+- (void)_readCountryCode;
+@property(retain, nonatomic) NSString *osRelease;
 @property(readonly, nonatomic) _Bool hasOsRelease;
+- (void)_readOsRelease;
+@property(retain, nonatomic) NSString *hwMachine;
 @property(readonly, nonatomic) _Bool hasHwMachine;
+- (void)_readHwMachine;
 - (id)requestElementAtIndex:(unsigned long long)arg1;
 - (unsigned long long)requestElementsCount;
+- (void)_addNoFlagsRequestElement:(id)arg1;
 - (void)addRequestElement:(id)arg1;
 - (void)clearRequestElements;
+@property(retain, nonatomic) NSMutableArray *requestElements;
+- (void)_readRequestElements;
 
 @end
 

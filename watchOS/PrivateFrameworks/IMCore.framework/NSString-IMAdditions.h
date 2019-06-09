@@ -11,5 +11,6 @@
 - (id)__im_handleIdentifiers;
 - (id)__im_IDForHandleIdentifierString;
 - (id)__im_rangesOfHandleIdentifierStrings;
+- (id)idsFormat;
 @end
 

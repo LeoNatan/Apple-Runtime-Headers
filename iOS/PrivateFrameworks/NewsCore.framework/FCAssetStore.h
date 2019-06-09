@@ -29,6 +29,7 @@
 - (id)fileURLForKey:(id)arg1;
 - (id)filePathForKey:(id)arg1;
 - (_Bool)removeAllFiles;
+- (_Bool)removeAllFilesExceptKeys:(id)arg1;
 - (_Bool)removeFileWithKey:(id)arg1;
 - (id)copyData:(id)arg1 withKey:(id)arg2;
 - (id)moveFileAtPath:(id)arg1 withKey:(id)arg2;

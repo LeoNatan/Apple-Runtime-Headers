@@ -9,7 +9,8 @@
 @class PLPTPAsset, PLPTPConversionResult;
 
 @protocol PLPTPConversionSupport <NSObject>
-@property(readonly, nonatomic) _Bool supportsTranscodeChoice;
+@property(readonly, nonatomic) _Bool peerSupportsAdjustmentBaseResources;
+@property(readonly, nonatomic) _Bool peerSupportsTranscodeChoice;
 - (PLPTPConversionResult *)conversionResultForAsset:(PLPTPAsset *)arg1 isVideo:(_Bool)arg2 isRender:(_Bool)arg3 forceLegacyConversion:(_Bool)arg4;
 @end
 

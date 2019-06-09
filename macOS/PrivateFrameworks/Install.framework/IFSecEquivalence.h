@@ -20,8 +20,8 @@
 - (void)gatherApplicationSecRefsForPaths:(id)arg1;
 - (void)dealloc;
 - (id)initWithTargetVolume:(id)arg1;
-- (void)setApplicationSecRef:(struct OpaqueSecTrustedApplicationRef *)arg1 forPath:(id)arg2;
-- (struct OpaqueSecTrustedApplicationRef *)applicationSecRefForPath:(id)arg1;
+- (void)setApplicationSecRef:(struct __SecTrustedApplication *)arg1 forPath:(id)arg2;
+- (struct __SecTrustedApplication *)applicationSecRefForPath:(id)arg1;
 
 @end
 

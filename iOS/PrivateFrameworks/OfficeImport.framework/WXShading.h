@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 + (id)getColorFromCString:(const char *)arg1;
 + (id)getColorFromString:(id)arg1;
 + (void)readFrom:(struct _xmlNode *)arg1 to:(id)arg2 state:(id)arg3;
-+ (void)initialize;
++ (id)shadingStylesEnumMap;
 
 @end
 

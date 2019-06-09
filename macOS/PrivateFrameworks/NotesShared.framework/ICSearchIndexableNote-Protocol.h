@@ -10,9 +10,14 @@
 
 @protocol ICSearchIndexableNote <ICSearchIndexable>
 @property(readonly, nonatomic) id folder;
+@property(readonly, nonatomic) NSArray *noteCellKeyPaths;
 @property(readonly, nonatomic) BOOL isModernNote;
+- (NSString *)identifier;
 - (NSString *)accountName;
+- (NSString *)folderNameForNoteList;
 - (NSString *)folderName;
+- (BOOL)isSharedReadOnly;
+- (BOOL)isSharedViaICloudFolder;
 - (BOOL)isSharedViaICloud;
 - (NSDate *)dateForCurrentSortType;
 - (NSString *)contentInfoText;
@@ -20,6 +25,5 @@
 - (NSString *)trimmedTitle;
 - (NSString *)title;
 - (BOOL)isPasswordProtected;
-- (NSArray *)searchableContentKeyPaths;
 @end
 

@@ -26,7 +26,7 @@
 - (id)_imageLoaderIdentifier;
 - (void)_cancelAllImageLoads;
 - (void)cancelLoad:(id)arg1;
-- (id)loadImageForObject:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)loadImageForObject:(id)arg1 scaleToSize:(struct CGSize)arg2 cropToFit:(_Bool)arg3 imageDirection:(long long)arg4 requestLoader:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (id)imageKeyForObject:(id)arg1;
 - (void)dealloc;
 - (id)init;

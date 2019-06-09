@@ -24,7 +24,7 @@
 
 - (void).cxx_destruct;
 - (void)operationThrottlerPerformOperation:(id)arg1;
-- (void)networkInterfaceDidChange:(id)arg1;
+- (void)wifiReachabilityDidChange:(id)arg1;
 - (void)_visitEventGroupsFromDate:(id)arg1 toDate:(id)arg2 block:(CDUnknownBlockType)arg3;
 - (int)_cacheStateFromEvent:(id)arg1;
 - (id)_respondingPOPFromEvent:(id)arg1;

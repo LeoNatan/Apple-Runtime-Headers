@@ -8,28 +8,42 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOEnrouteNotice : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     NSMutableArray *_guidances;
+    NSString *_objectIdentifier;
     unsigned int _highlightDistance;
     unsigned int _objectGroupId;
-    NSString *_objectIdentifier;
+    unsigned int _priority;
     int _type;
     struct {
-        unsigned int highlightDistance:1;
-        unsigned int objectGroupId:1;
-        unsigned int type:1;
-    } _has;
+        unsigned int has_highlightDistance:1;
+        unsigned int has_objectGroupId:1;
+        unsigned int has_priority:1;
+        unsigned int has_type:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_guidances:1;
+        unsigned int read_objectIdentifier:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_guidances:1;
+        unsigned int wrote_objectIdentifier:1;
+        unsigned int wrote_highlightDistance:1;
+        unsigned int wrote_objectGroupId:1;
+        unsigned int wrote_priority:1;
+        unsigned int wrote_type:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
 + (Class)guidanceType;
-@property(nonatomic) unsigned int objectGroupId; // @synthesize objectGroupId=_objectGroupId;
-@property(nonatomic) unsigned int highlightDistance; // @synthesize highlightDistance=_highlightDistance;
-@property(retain, nonatomic) NSMutableArray *guidances; // @synthesize guidances=_guidances;
-@property(retain, nonatomic) NSString *objectIdentifier; // @synthesize objectIdentifier=_objectIdentifier;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -37,19 +51,29 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasPriority;
+@property(nonatomic) unsigned int priority;
 @property(nonatomic) BOOL hasObjectGroupId;
+@property(nonatomic) unsigned int objectGroupId;
 @property(nonatomic) BOOL hasHighlightDistance;
+@property(nonatomic) unsigned int highlightDistance;
 - (id)guidanceAtIndex:(unsigned long long)arg1;
 - (unsigned long long)guidancesCount;
+- (void)_addNoFlagsGuidance:(id)arg1;
 - (void)addGuidance:(id)arg1;
 - (void)clearGuidances;
+@property(retain, nonatomic) NSMutableArray *guidances;
+- (void)_readGuidances;
+@property(retain, nonatomic) NSString *objectIdentifier;
 @property(readonly, nonatomic) BOOL hasObjectIdentifier;
+- (void)_readObjectIdentifier;
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) BOOL hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) int type;
 
 @end
 

@@ -53,14 +53,16 @@ __attribute__((visibility("hidden")))
 - (void)_t_blockSyncUpOfItemWithID:(id)arg1 containerID:(id)arg2 withPendingUpgradeToOSName:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)boostFilePresenterAtURL:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)trashItemAtURL:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)topLevelSharedFolderForURL:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)removeItemFromDisk:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)handleCloudKitShareMetadata:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (oneway void)willAcceptShareAtURL:(id)arg1;
 - (void)_presentAcceptDialogsWithMetadata:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)presentAcceptDialogsForShareMetadata:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)getShareOptionsOfItemIdentifier:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)startOperation:(id)arg1 toCopyShareURLForShare:(id)arg2 appName:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)copyBulkShareIDsAtURLs:(id)arg1 reply:(CDUnknownBlockType)arg2;
-- (void)startOperation:(id)arg1 toCleanShareSubitemsAtURL:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)startOperation:(id)arg1 toProcessSubitemsAtURL:(id)arg2 maxSubsharesFailures:(unsigned long long)arg3 processType:(unsigned long long)arg4 reply:(CDUnknownBlockType)arg5;
 - (void)startOperation:(id)arg1 toPrepFolderForSharingAt:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)startOperation:(id)arg1 toCopyEtagAtURL:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)startOperation:(id)arg1 toCopyShortTokenAtURL:(id)arg2 reply:(CDUnknownBlockType)arg3;
@@ -88,9 +90,8 @@ __attribute__((visibility("hidden")))
 - (void)forceConflictForURL:(id)arg1 bookmarkData:(id)arg2 forcedEtag:(id)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)getPublishedURLForItemAtURL:(id)arg1 forStreaming:(_Bool)arg2 requestedTTL:(unsigned long long)arg3 reply:(CDUnknownBlockType)arg4;
 - (void)enumerateWorkingSetChangesFromChangeToken:(id)arg1 limit:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)enumerateAllFoldersWithSortOrder:(unsigned char)arg1 offset:(unsigned long long)arg2 limit:(unsigned long long)arg3 completion:(CDUnknownBlockType)arg4;
-- (_Bool)_enumerateFoldersWithParent:(id)arg1 depth:(unsigned long long)arg2 session:(id)arg3 db:(id)arg4 handler:(CDUnknownBlockType)arg5;
 - (void)enumerateItemsInFolder:(id)arg1 sortOrder:(unsigned char)arg2 offset:(unsigned long long)arg3 limit:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)_finishItemsEnumerationWithParent:(id)arg1 appLibrary:(id)arg2 sortOrder:(unsigned char)arg3 waitForFaults:(_Bool)arg4 offset:(unsigned long long)arg5 limit:(unsigned long long)arg6 db:(id)arg7 queryItems:(id)arg8 completion:(CDUnknownBlockType)arg9;
 - (void)_enumerateContainersForEnumerationWithDB:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)currentNotifRankWithReply:(CDUnknownBlockType)arg1;
 - (void)getIsContainerWithIDOverQuota:(id)arg1 reply:(CDUnknownBlockType)arg2;

@@ -9,23 +9,28 @@
 #import <ControlCenterServices/CCSRemoteServiceServerProtocol-Protocol.h>
 #import <ControlCenterServices/NSXPCListenerDelegate-Protocol.h>
 
-@class CCSModuleRepository, CCSModuleSettingsProvider, NSString, NSXPCListener;
+@class CCSModuleRepository, CCSModuleSettingsProvider, NSHashTable, NSString, NSXPCListener;
 
 @interface CCSRemoteServiceProvider : NSObject <NSXPCListenerDelegate, CCSRemoteServiceServerProtocol>
 {
     CCSModuleRepository *_moduleRepository;
     CCSModuleSettingsProvider *_settingsProvider;
     NSXPCListener *_listener;
+    NSHashTable *_presentationEndpoints;
 }
 
 + (id)sharedInstance;
 + (void)initialize;
 - (void).cxx_destruct;
+- (void)enumerateEndpointsUsingBlock:(CDUnknownBlockType)arg1;
+- (void)presentModuleWithIdentifier:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)requestAvailableModuleIdentifiersWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)requestEnableModuleWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getEnabledStateOfModuleWithIdentifier:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (_Bool)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)invalidate;
 - (void)resume;
+- (void)registerEndpoint:(id)arg1;
 - (void)dealloc;
 - (id)_init;
 

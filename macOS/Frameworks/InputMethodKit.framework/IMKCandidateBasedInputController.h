@@ -56,6 +56,7 @@
 - (BOOL)shouldHandleTouchBarPresentationManually;
 - (void)setMarkedText:(id)arg1 selectionRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3;
 - (void)insertText:(id)arg1 replacementRange:(struct _NSRange)arg2;
+- (void)updateWindowLevel;
 - (id)functionRowItemTextInputViewController;
 - (id)currentInlineText;
 - (id)textClient;
@@ -84,6 +85,7 @@
 - (void)invalidateClientSideInfoCache;
 - (void)showCandidates:(id)arg1;
 - (void)showCandidateListDictionary:(id)arg1 sortingModes:(id)arg2;
+- (void)showCandidateListDictionary:(id)arg1 sortingModes:(id)arg2 selectedSortingMode:(id)arg3;
 - (void)updateCandidateController:(id)arg1;
 - (id)makeScrubbingCandidateController;
 - (id)makeTouchBarCandidateController;

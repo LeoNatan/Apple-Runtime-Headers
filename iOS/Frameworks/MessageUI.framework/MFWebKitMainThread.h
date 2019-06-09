@@ -15,6 +15,7 @@
 }
 
 + (id)sharedInstance;
+- (void).cxx_destruct;
 - (int)dictValueForMimeType:(id)arg1;
 - (void)_mainThreadPopulateDictForMimeType:(id)arg1;
 - (void)dealloc;

@@ -6,12 +6,15 @@
 
 #import <UIKitCore/UIImageView.h>
 
+#import <UIKitCore/CAAnimationDelegate-Protocol.h>
+
 @class NSArray, NSString, UIView, _UIBadgeView, _UIFloatingContentView, _UISegmentedControlAppearanceStorage;
 
 __attribute__((visibility("hidden")))
-@interface UISegment : UIImageView
+@interface UISegment : UIImageView <CAAnimationDelegate>
 {
     UIView *_info;
+    UIImageView *_selectionImageView;
     _UISegmentedControlAppearanceStorage *_appearanceStorage;
     _UIFloatingContentView *_floatingContentView;
     double _width;
@@ -22,7 +25,6 @@ __attribute__((visibility("hidden")))
     _UIBadgeView *_badgeView;
     id _objectValue;
     struct {
-        unsigned int style:3;
         unsigned int size:2;
         unsigned int selected:1;
         unsigned int highlighted:1;
@@ -34,12 +36,13 @@ __attribute__((visibility("hidden")))
         unsigned int wasSelected:1;
         unsigned int needsBackgroundAndContentViewUpdate:1;
         unsigned int usesAXTextSize:1;
+        unsigned int controlHighlighted:1;
     } _segmentFlags;
     NSArray *_infoConstraints;
     double _requestedScaleFactor;
 }
 
-+ (id)_backgroundImageWithStorage:(id)arg1 style:(long long)arg2 mini:(_Bool)arg3 state:(unsigned long long)arg4 position:(unsigned int)arg5 drawMode:(int *)arg6 defaultBlock:(CDUnknownBlockType)arg7;
++ (id)_backgroundImageWithStorage:(id)arg1 mini:(_Bool)arg2 state:(unsigned long long)arg3 position:(unsigned int)arg4 drawMode:(int *)arg5 isCustom:(_Bool *)arg6 defaultBlock:(CDUnknownBlockType)arg7;
 @property(nonatomic) double requestedScaleFactor; // @synthesize requestedScaleFactor=_requestedScaleFactor;
 @property(copy, nonatomic, setter=_setInfoConstraints:) NSArray *_infoConstraints; // @synthesize _infoConstraints;
 - (void).cxx_destruct;
@@ -76,7 +79,6 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)_contentRectForBounds:(struct CGRect)arg1;
 - (void)animateRemoveForWidth:(double)arg1;
 - (void)animateAdd:(_Bool)arg1;
-- (_Bool)_shouldUsePadMomentaryAppearance;
 - (void)setShowDivider:(_Bool)arg1;
 - (_Bool)showDivider;
 @property int controlSize;
@@ -85,10 +87,14 @@ __attribute__((visibility("hidden")))
 @property(readonly) UIView *badgeView;
 @property(copy, nonatomic) NSString *badgeValue;
 - (void)tintColorDidChange;
+- (void)_setControlHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setControlHighlighted:(_Bool)arg1;
+- (_Bool)isControlHighlighted;
 - (void)_setHighlighted:(_Bool)arg1 animated:(_Bool)arg2;
 - (void)setHighlighted:(_Bool)arg1;
 - (_Bool)isHighlighted;
 @property(getter=isSelected) _Bool selected;
+- (void)setSelected:(_Bool)arg1 highlighted:(_Bool)arg2;
 - (void)setEnabled:(_Bool)arg1;
 - (void)_setEnabledAppearance:(_Bool)arg1;
 - (void)setAutosizeText:(_Bool)arg1;
@@ -101,17 +107,24 @@ __attribute__((visibility("hidden")))
 - (void)setWasSelected:(_Bool)arg1;
 - (void)updateMasking;
 - (_Bool)_hasSelectedColor;
-- (id)_currentOptionsStyleTextShadowColor;
-- (id)_currentOptionsStyleTextColor;
 - (void)_updateBackgroundAndContentViews;
+- (void)_updateSelectionIndicator;
+- (void)_updateHighlight;
+- (void)_updateSelectionToTransform:(struct CATransform3D)arg1 hideSelection:(_Bool)arg2 shouldAnimate:(_Bool)arg3;
+- (void)_insertSelectionView;
+- (id)_selectionOpacityAnimationFromValue:(float)arg1 toValue:(float)arg2;
+- (id)_selectionPopAnimationForKey:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
+- (void)animationDidStop:(id)arg1 finished:(_Bool)arg2;
+- (struct CATransform3D)_highlightTranform;
+- (struct CATransform3D)_hiddenTranform;
+- (struct CGRect)_selectionFrame;
 - (void)_updateBackgroundAndContentViewsIfNeeded;
 - (void)updateDividerViewForChangedSegment:(id)arg1;
 - (void)insertDividerView;
 - (id)_dividerImage;
-- (void)updateForAppearance:(id)arg1 style:(int)arg2;
+- (void)updateForAppearance:(id)arg1;
 - (id)_dividerImageIsCustom:(_Bool *)arg1;
 - (unsigned long long)_segmentState;
-- (_Bool)_isInMiniBar;
 - (void)setNeedsBackgroundAndContentViewUpdate;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)dealloc;
@@ -119,9 +132,16 @@ __attribute__((visibility("hidden")))
 - (void)_populateArchivedSubviews:(id)arg1;
 - (id)_encodableSubviews;
 - (id)_tintColorArchivingKey;
+- (Class)_segmentedControlClass;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInfo:(id)arg1 style:(long long)arg2 size:(int)arg3 barStyle:(long long)arg4 tintColor:(id)arg5 appearanceStorage:(id)arg6 position:(unsigned int)arg7 autosizeText:(_Bool)arg8;
+- (id)initWithInfo:(id)arg1 size:(int)arg2 barStyle:(long long)arg3 tintColor:(id)arg4 appearanceStorage:(id)arg5 position:(unsigned int)arg6 autosizeText:(_Bool)arg7;
 - (void)_commonSegmentInit;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

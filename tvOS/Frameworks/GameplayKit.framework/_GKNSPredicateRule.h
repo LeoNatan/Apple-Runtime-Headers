@@ -8,6 +8,7 @@
 
 @protocol NSObject;
 
+__attribute__((visibility("hidden")))
 @interface _GKNSPredicateRule : GKNSPredicateRule
 {
     id <NSObject> _fact;

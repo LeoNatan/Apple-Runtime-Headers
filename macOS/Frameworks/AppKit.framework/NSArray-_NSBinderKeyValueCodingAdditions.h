@@ -8,5 +8,14 @@
 
 @interface NSArray (_NSBinderKeyValueCodingAdditions)
 - (void)_invokeSelector:(SEL)arg1 withArguments:(id)arg2 onKeyPath:(id)arg3 ofObjectAtIndex:(unsigned long long)arg4;
+- (BOOL)_getRangeIndex:(unsigned long long *)arg1 atIndex:(unsigned long long)arg2;
+- (BOOL)rangesContainLocation:(unsigned long long)arg1;
+- (unsigned long long)indexOfFirstRangeContainingOrFollowing:(unsigned long long)arg1;
+- (struct _NSRange)rangeAtIndex:(unsigned long long)arg1;
+- (struct _NSRange)maximumRange;
+- (struct _NSRange)lastRange;
+- (struct _NSRange)firstRange;
+- (BOOL)NS_isIdenticalToArray:(id)arg1;
+- (BOOL)NS_containsObjectIdenticalTo:(id)arg1;
 @end
 

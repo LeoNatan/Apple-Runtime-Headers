@@ -6,21 +6,23 @@
 
 #import <ConsoleKit/CSKStreamSource.h>
 
-#import <ConsoleKit/OSLogPersistenceDelegate-Protocol.h>
+@class CSKDatabaseHandle, CSKLoadRange, CSKStreamArchiveStatistics, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject, NSString, NSTimeZone, NSURL, OSLogEventSource, OSLogEventStore, OSLogEventStream, OSLogEventStreamPosition;
+@protocol OS_dispatch_group, OS_dispatch_queue;
 
-@class CSKDatabaseHandle, CSKStreamArchiveStatistics, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSObject, NSString, NSURL, OSLogPersistence;
-@protocol OS_dispatch_queue;
-
-@interface CSKStreamSQLSource : CSKStreamSource <OSLogPersistenceDelegate>
+@interface CSKStreamSQLSource : CSKStreamSource
 {
     NSObject<OS_dispatch_queue> *_sql_dispatchQueue;
     NSObject<OS_dispatch_queue> *_osLogFetch_dispatchQueue;
+    NSObject<OS_dispatch_queue> *_store_dispatchQueue;
+    NSObject<OS_dispatch_group> *_group;
     CSKDatabaseHandle *_logArchive_DB;
     CSKDatabaseHandle *_messagesReadonlyDBHandle;
     CSKDatabaseHandle *_activitiesReadonlyDBHandle;
     CSKDatabaseHandle *_searchMessagesDBHandle;
     CSKDatabaseHandle *_searchActivitiesDBHandle;
     CSKDatabaseHandle *_sortDBHandle;
+    CSKLoadRange *_loadRange;
+    CSKLoadRange *_previousLoadRange;
     struct sqlite3_stmt *_insertMessageStament_Cache;
     struct sqlite3_stmt *_insertActivityStament_Cache;
     struct sqlite3_stmt *_insertChildrenActivityStament_Cache;
@@ -33,37 +35,61 @@
     NSMutableDictionary *_titleIDSet;
     NSMutableDictionary *_categoryIDSet;
     NSString *_tzName;
-    NSArray *_archiveLogArray;
+    NSMutableDictionary *_streamTimeZones;
     BOOL _skipUIUpdatesForEvents;
     BOOL _ignoresStatistics;
     BOOL _wantsToStop;
     BOOL _useBigTimeChunk;
     NSURL *_archiveURL;
-    NSDate *_endDate;
-    NSDate *_startDate;
     unsigned long long _loadingStatus;
     NSDictionary *_loadInfo;
+    CSKLoadRange *_maxLoadRange;
+    CSKLoadRange *_currentLoadRange;
     CSKStreamArchiveStatistics *_processStatistics;
-    OSLogPersistence *_persistenceStream;
+    NSTimeZone *_streamStartTimeZone;
+    NSTimeZone *_streamEndTimeZone;
+    NSTimeZone *_streamTimeZone;
+    NSDate *_streamStartDate;
+    NSDate *_streamEndDate;
+    NSDate *_startDate;
+    NSDate *_endDate;
     NSDate *_previousEndDate;
+    OSLogEventStreamPosition *_previousStreamPosition;
     unsigned long long _previousTotal;
     double _timeChunk;
+    NSMutableArray *_orderedEvents;
+    OSLogEventStore *_eventStore;
+    OSLogEventSource *_eventSource;
+    OSLogEventStream *_stream;
+    OSLogEventStreamPosition *_position;
 }
 
-+ (id)_loadAllInfo;
-+ (id)_defaultLoadInfo:(double)arg1;
+@property(retain, nonatomic) OSLogEventStreamPosition *position; // @synthesize position=_position;
+@property(retain, nonatomic) OSLogEventStream *stream; // @synthesize stream=_stream;
+@property(retain, nonatomic) OSLogEventSource *eventSource; // @synthesize eventSource=_eventSource;
+@property(retain, nonatomic) OSLogEventStore *eventStore; // @synthesize eventStore=_eventStore;
+@property(retain, nonatomic) NSMutableArray *orderedEvents; // @synthesize orderedEvents=_orderedEvents;
 @property(nonatomic) BOOL useBigTimeChunk; // @synthesize useBigTimeChunk=_useBigTimeChunk;
 @property(nonatomic) double timeChunk; // @synthesize timeChunk=_timeChunk;
 @property(nonatomic) unsigned long long previousTotal; // @synthesize previousTotal=_previousTotal;
+@property(retain, nonatomic) OSLogEventStreamPosition *previousStreamPosition; // @synthesize previousStreamPosition=_previousStreamPosition;
 @property(retain, nonatomic) NSDate *previousEndDate; // @synthesize previousEndDate=_previousEndDate;
+@property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
+@property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) BOOL wantsToStop; // @synthesize wantsToStop=_wantsToStop;
-@property(readonly, nonatomic) OSLogPersistence *persistenceStream; // @synthesize persistenceStream=_persistenceStream;
+@property(retain, nonatomic) NSDate *streamEndDate; // @synthesize streamEndDate=_streamEndDate;
+@property(retain, nonatomic) NSDate *streamStartDate; // @synthesize streamStartDate=_streamStartDate;
+@property(retain, nonatomic) NSTimeZone *streamTimeZone; // @synthesize streamTimeZone=_streamTimeZone;
+@property(retain, nonatomic) NSTimeZone *streamEndTimeZone; // @synthesize streamEndTimeZone=_streamEndTimeZone;
+@property(retain, nonatomic) NSTimeZone *streamStartTimeZone; // @synthesize streamStartTimeZone=_streamStartTimeZone;
 @property(retain, nonatomic) CSKStreamArchiveStatistics *processStatistics; // @synthesize processStatistics=_processStatistics;
+@property(copy, nonatomic) CSKLoadRange *currentLoadRange; // @synthesize currentLoadRange=_currentLoadRange;
+@property(retain, nonatomic) CSKLoadRange *maxLoadRange; // @synthesize maxLoadRange=_maxLoadRange;
+@property(retain, nonatomic) CSKLoadRange *loadRange; // @synthesize loadRange=_loadRange;
 @property(retain, nonatomic) NSDictionary *loadInfo; // @synthesize loadInfo=_loadInfo;
 @property(nonatomic) BOOL ignoresStatistics; // @synthesize ignoresStatistics=_ignoresStatistics;
 @property(nonatomic) unsigned long long loadingStatus; // @synthesize loadingStatus=_loadingStatus;
-@property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
-@property(retain, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
+@property(readonly, nonatomic) NSDictionary *streamTimeZones; // @synthesize streamTimeZones=_streamTimeZones;
 @property(readonly, nonatomic) NSURL *archiveURL; // @synthesize archiveURL=_archiveURL;
 @property(readonly, nonatomic) CSKDatabaseHandle *sortDBHandle; // @synthesize sortDBHandle=_sortDBHandle;
 @property(readonly, nonatomic) CSKDatabaseHandle *searchActivitiesDBHandle; // @synthesize searchActivitiesDBHandle=_searchActivitiesDBHandle;
@@ -71,33 +97,26 @@
 @property(readonly, nonatomic) CSKDatabaseHandle *searchMessagesDBHandle; // @synthesize searchMessagesDBHandle=_searchMessagesDBHandle;
 @property(readonly, nonatomic) CSKDatabaseHandle *messagesReadonlyDBHandle; // @synthesize messagesReadonlyDBHandle=_messagesReadonlyDBHandle;
 - (void).cxx_destruct;
-- (void)_handleActivityEvents:(id)arg1 usingTimeZone:(id)arg2 fromBackward:(BOOL)arg3;
-- (void)persistenceDidFinishReadingForStartDate:(id)arg1 endDate:(id)arg2;
-- (BOOL)persistence:(id)arg1 results:(id)arg2 error:(id)arg3;
-- (void)_failByInvalidatingPersistenceStreamFirst;
+- (id)_cskEventFromLogEventProxy:(id)arg1;
+- (void)_updateDBWithStreamEvents:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)_resetAllCachedObjects;
-- (void)_readLogsWithStartTime:(id)arg1 endTime:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)_startEventStreamWithLoadRange:(id)arg1;
 - (BOOL)_canReadLogsInReverse;
+- (id)loadRangeValue;
+- (void)_createDatabaseForArchiveURL:(id)arg1 inMemory:(BOOL)arg2 backgroundCopy:(BOOL)arg3;
+- (id)_rangeToLoadFromCustomRange:(id)arg1;
+- (void)_updateEndDateAndTimezone;
+- (void)_updateStartDateAndTimezone;
 - (void)dealloc;
 - (void)finish;
 - (void)stop;
+- (void)loadMoreWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resume;
-- (void)loadLogs;
-- (void)loadMore;
-- (id)loadRangeValue;
-- (id)loadRangeValueItems;
-- (id)availableLoadItems;
-- (void)_createDatabaseForArchiveURL:(id)arg1 inMemory:(BOOL)arg2 backgroundCopy:(BOOL)arg3;
+- (id)availableLoadRanges;
 - (id)initWithArchiveURL:(id)arg1 loadInfo:(id)arg2 inMemory:(BOOL)arg3 backgroundCopy:(BOOL)arg4;
 - (id)initWithArchiveURL:(id)arg1 loadInfo:(id)arg2;
 - (id)initWithArchiveURL:(id)arg1;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

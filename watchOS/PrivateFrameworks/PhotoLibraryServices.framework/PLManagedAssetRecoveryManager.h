@@ -23,7 +23,6 @@
 + (id)_jpegImagesPredicate;
 + (id)_imagesWithZeroWidthHeightPredicate;
 + (id)_predicateForSupportedAssetTypesForUpload;
-+ (id)sharedManager;
 @property(nonatomic) int state; // @synthesize state=_state;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *resourceDownloadIsolationQueue; // @synthesize resourceDownloadIsolationQueue=_resourceDownloadIsolationQueue;
@@ -41,10 +40,10 @@
 - (void)_downloadResources:(id)arg1 forAsset:(id)arg2 usingCloudPhotoLibraryManager:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)_performAssetRecoveryTaskForInconsistentState:(id)arg1 state:(long long)arg2 usingCloudPhotoLibraryManager:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_recoverAsset:(id)arg1 usingCloudPhotoLibraryManager:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void)_setCloudRecoveryState:(long long)arg1 forAssetsWithFetchRequestPredicate:(id)arg2 resultFilterBlock:(CDUnknownBlockType)arg3;
+- (void)_setCloudRecoveryState:(long long)arg1 forAssetsWithFetchRequestPredicate:(id)arg2 resultsFilterPredicate:(id)arg3;
 - (void)startRecoveryOfAssetsInInconsistentCloudStateUsingCloudPhotoLibraryManager:(id)arg1;
 - (void)identifyAssetsInInconsistentCloudState;
-- (id)init;
+- (id)initWithPhotoLibrary:(id)arg1;
 
 @end
 

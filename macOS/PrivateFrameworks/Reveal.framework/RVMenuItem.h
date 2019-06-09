@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
     RVDocumentContext *_documentContext;
     RVPresentingContext *_presentingContext;
     NSDictionary *_options;
+    BOOL _forceLookup;
 }
 
+@property(nonatomic) BOOL forceLookup; // @synthesize forceLookup=_forceLookup;
 - (void).cxx_destruct;
 - (long long)tagForType;
 - (void)_rvMenuItemAction;

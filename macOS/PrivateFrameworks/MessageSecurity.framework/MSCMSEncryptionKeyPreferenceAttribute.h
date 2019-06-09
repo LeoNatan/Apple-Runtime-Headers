@@ -11,15 +11,15 @@
 __attribute__((visibility("hidden")))
 @interface MSCMSEncryptionKeyPreferenceAttribute : NSObject <MSCMSAttributeCoder>
 {
-    struct OpaqueSecCertificateRef *_encryptionCertificate;
+    struct __SecCertificate *_encryptionCertificate;
 }
 
-@property(readonly) struct OpaqueSecCertificateRef *encryptionCertificate; // @synthesize encryptionCertificate=_encryptionCertificate;
+@property(readonly) struct __SecCertificate *encryptionCertificate; // @synthesize encryptionCertificate=_encryptionCertificate;
 - (void)dealloc;
 - (id)encodeAttributeWithError:(id *)arg1;
 - (id)initWithEmailAddress:(id)arg1;
-- (id)initWithIdentity:(struct OpaqueSecIdentityRef *)arg1;
-- (id)initWithCertificate:(struct OpaqueSecCertificateRef *)arg1;
+- (id)initWithIdentity:(struct __SecIdentity *)arg1;
+- (id)initWithCertificate:(struct __SecCertificate *)arg1;
 - (id)initWithAttribute:(id)arg1 error:(id *)arg2;
 
 @end

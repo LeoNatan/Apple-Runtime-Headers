@@ -9,6 +9,7 @@
 @class NSDate;
 @protocol ISVitalitySettings;
 
+__attribute__((visibility("hidden")))
 @interface ISVitalityFilter : NSObject
 {
     _Bool _isVisible;

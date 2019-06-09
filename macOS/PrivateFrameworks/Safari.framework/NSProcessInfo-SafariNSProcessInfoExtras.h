@@ -8,6 +8,7 @@
 
 @interface NSProcessInfo (SafariNSProcessInfoExtras)
 - (BOOL)_safari_systemIsMojaveUpdate4AndAbove;
+@property(readonly, nonatomic) BOOL safari_systemSupportsGlobalSafeBrowsingSetting;
 @property(readonly, nonatomic) BOOL safari_systemSupportsTouchIDAutoFillInSystemPreferences;
 @property(readonly, nonatomic, getter=safari_isRunningAutomatedTests) BOOL runningAutomatedTests;
 @property(readonly, nonatomic, getter=safari_wasLaunchedByWebDriver) BOOL wasLaunchedByWebDriver;

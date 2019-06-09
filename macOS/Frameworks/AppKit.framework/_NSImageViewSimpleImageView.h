@@ -15,10 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
-- (int)backgroundStyle;
 - (void)performBlockWithLayerContents:(CDUnknownBlockType)arg1;
-- (id)tintColor;
-- (unsigned long long)state;
+- (id)imageContentStyle;
 - (id)image;
 - (long long)userInterfaceLayoutDirection;
 - (BOOL)allowsVibrancy;

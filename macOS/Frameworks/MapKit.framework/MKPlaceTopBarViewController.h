@@ -9,6 +9,7 @@
 @class NSButton, _MKPlaceViewController;
 @protocol MKPlaceCardActionControllerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceTopBarViewController : NSViewController
 {
     BOOL _favorited;

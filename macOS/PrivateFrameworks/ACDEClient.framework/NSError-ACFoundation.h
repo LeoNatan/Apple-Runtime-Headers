@@ -12,6 +12,11 @@
 + (id)appleConnectErrorWithDomain:(id)arg1 code:(long long)arg2 underlyingError:(id)arg3;
 + (id)appleConnectErrorWithDomain:(id)arg1 code:(long long)arg2 description:(id)arg3;
 + (id)appleConnectErrorWithDomain:(id)arg1 code:(long long)arg2;
++ (id)appleConnectErrorWithCCCryptorStatus:(int)arg1 debugDescriptionFormat:(id)arg2 arguments:(struct __va_list_tag [1])arg3;
++ (id)appleConnectErrorWithCCCryptorStatus:(int)arg1 debugDescriptionFormat:(id)arg2;
++ (id)appleConnectErrorWithSecurityErrorCode:(int)arg1 debugDescriptionFormat:(id)arg2 arguments:(struct __va_list_tag [1])arg3;
++ (id)appleConnectErrorWithSecurityErrorCode:(int)arg1 debugDescriptionFormat:(id)arg2;
++ (id)appleConnectErrorWithSecurityErrorCode:(int)arg1;
 - (id)appleConnectErrorUnderlyingError;
 @end
 

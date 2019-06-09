@@ -8,7 +8,7 @@
 
 #import <Search/NSCopying-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, SFSearchSuggestion;
+@class NSArray, NSString, SFSearchSuggestion;
 
 @interface SPSearchQuery : NSObject <NSCopying>
 {
@@ -16,27 +16,27 @@
     NSString *_searchString;
     NSString *_keyboardLanguage;
     NSString *_keyboardPrimaryLanguage;
+    double _scaleFactor;
     NSArray *markedTextArray;
     _Bool _finished;
-    _Bool _internal;
     _Bool _promoteLocalResults;
     _Bool _promoteParsecResults;
     double _creationTime;
     double _cancellationTime;
     unsigned long long _creationStamp;
     // Error parsing type: AB, name: _cancelled
-    _Bool _dictationStable;
     _Bool _grouped;
     _Bool _noTokenize;
     _Bool _infinitePatience;
     _Bool _isWideScreen;
     _Bool _isPasscodeLocked;
+    _Bool _internalDebug;
+    _Bool _internalValidation;
     NSArray *_searchDomains;
     NSArray *_markedTextArray;
     SFSearchSuggestion *_engagedSuggestion;
     NSArray *_disabledDomains;
     NSArray *_searchEntities;
-    NSDictionary *_dictationResponse;
     long long _maxCount;
     NSArray *_disabledBundles;
     NSArray *_disabledApps;
@@ -49,6 +49,8 @@
 @property(readonly, nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
 @property(readonly, nonatomic) unsigned long long creationStamp; // @synthesize creationStamp=_creationStamp;
 @property(nonatomic) long long contentFilters; // @synthesize contentFilters=_contentFilters;
+@property(nonatomic) _Bool internalValidation; // @synthesize internalValidation=_internalValidation;
+@property(nonatomic) _Bool internalDebug; // @synthesize internalDebug=_internalDebug;
 @property(nonatomic) _Bool promoteParsecResults; // @synthesize promoteParsecResults=_promoteParsecResults;
 @property(nonatomic) _Bool promoteLocalResults; // @synthesize promoteLocalResults=_promoteLocalResults;
 @property(nonatomic) unsigned long long queryIdent; // @synthesize queryIdent=_queryIdent;
@@ -59,13 +61,11 @@
 @property(nonatomic) _Bool noTokenize; // @synthesize noTokenize=_noTokenize;
 @property(retain, nonatomic) NSArray *disabledApps; // @synthesize disabledApps=_disabledApps;
 @property(retain, nonatomic) NSArray *disabledBundles; // @synthesize disabledBundles=_disabledBundles;
-@property(nonatomic) _Bool internal; // @synthesize internal=_internal;
 @property(nonatomic) long long maxCount; // @synthesize maxCount=_maxCount;
 @property(nonatomic) _Bool grouped; // @synthesize grouped=_grouped;
-@property(nonatomic) _Bool dictationStable; // @synthesize dictationStable=_dictationStable;
-@property(retain, nonatomic) NSDictionary *dictationResponse; // @synthesize dictationResponse=_dictationResponse;
 @property(readonly, nonatomic) NSArray *searchEntities; // @synthesize searchEntities=_searchEntities;
 @property(readonly, nonatomic) NSArray *disabledDomains; // @synthesize disabledDomains=_disabledDomains;
+@property(readonly, nonatomic) double scaleFactor; // @synthesize scaleFactor=_scaleFactor;
 @property(readonly, nonatomic) SFSearchSuggestion *engagedSuggestion; // @synthesize engagedSuggestion=_engagedSuggestion;
 @property(readonly, nonatomic) NSArray *markedTextArray; // @synthesize markedTextArray=_markedTextArray;
 @property(readonly, nonatomic) NSArray *searchDomains; // @synthesize searchDomains=_searchDomains;

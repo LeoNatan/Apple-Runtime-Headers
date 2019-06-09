@@ -19,8 +19,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool showingTouch; // @synthesize showingTouch=_showingTouch;
 @property(nonatomic) unsigned long long searchBarStyle; // @synthesize searchBarStyle=_searchBarStyle;
 @property(nonatomic) long long barStyle; // @synthesize barStyle=_barStyle;
-- (void)updateView;
 - (id)_ultralightFillColorForOverlayFilter:(_Bool)arg1 active:(_Bool)arg2;
+- (id)_automaticFillColorForActive:(_Bool)arg1;
 - (id)_fillColor:(_Bool)arg1;
 - (id)_strokeColor:(_Bool)arg1;
 - (void)setCornerRadius:(double)arg1;

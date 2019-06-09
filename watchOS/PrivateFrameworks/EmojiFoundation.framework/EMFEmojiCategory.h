@@ -26,9 +26,7 @@
 + (_Bool)_isSkinToneEmoji:(id)arg1;
 + (_Bool)_isNoneVariantEmoji:(id)arg1;
 + (_Bool)_isDingbatsVariantEmoji:(id)arg1;
-+ (id)localizedSkinToneEmojiDescriptionForLocale:(id)arg1;
 + (id)localizedSkinToneEmojiDescription;
-+ (id)localizedRecentsDescriptionForLocale:(id)arg1;
 + (id)localizedRecentsDescription;
 + (id)computeEmojiFlagsSortedByLanguage;
 + (id)insertionFlagsForCountryCodes:(id)arg1 inSortedCountryCodes:(id)arg2;
@@ -53,8 +51,6 @@
 @property(readonly, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)emojiTokensForLocaleData:(id)arg1;
-- (id)shortLocalizedNameForLocale:(id)arg1;
-- (id)localizedNameForLocale:(id)arg1;
 @property(readonly, nonatomic) NSString *shortLocalizedName;
 @property(readonly, nonatomic) NSString *localizedName;
 - (void)dealloc;

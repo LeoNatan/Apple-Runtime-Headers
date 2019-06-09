@@ -6,8 +6,11 @@
 
 #import <Foundation/NSURL.h>
 
-@interface NSURL (CKUtilsAdditions)
+#import <CloudKit/CKXPCSuitableString-Protocol.h>
+
+@interface NSURL (CKUtilsAdditions) <CKXPCSuitableString>
 + (id)databaseRPCURLWithCodeServicesURL:(id)arg1 inEnvironment:(long long)arg2;
 - (id)CKSharingURLSubscheme;
+- (id)CKXPCSuitableString;
 @end
 

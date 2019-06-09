@@ -18,10 +18,10 @@
     NSDate *_startLoadingDate;
     unsigned long long _displayStyle;
     id <FUFlightViewControllerDelegate> _delegate;
-    FUFlightView *_regularFlightView;
-    FUFlightView *_compactFlightView;
     _Bool _requiresDataLoad;
     _Bool _viewLoaded;
+    FUFlightView *_regularFlightView;
+    FUFlightView *_compactFlightView;
     _Bool _highlightCurrentFlightLeg;
     _Bool _showInfoPanel;
     NSArray *_flights;

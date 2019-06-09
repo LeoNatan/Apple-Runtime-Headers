@@ -62,6 +62,7 @@
     NSOpenGLContext *__openGLContext;
     SCNMTLRenderContext *_renderContext;
     unsigned int _jitteringEnabled:1;
+    unsigned int _temporalAntialiasingEnabled:1;
     unsigned int _frozen:1;
     unsigned int _privateRendererShouldForwardSceneRendererDelegationMessagesToOwner:1;
     CDStruct_f76d274b _privateRendererOwnerDelegationConformance;
@@ -99,7 +100,9 @@
 - (struct CGImage *)createSnapshot:(double)arg1;
 - (void)_installGLContextAndSetViewport;
 - (void)render;
+- (void)renderWithViewpoints:(id)arg1 events:(id)arg2;
 - (void)renderAtTime:(double)arg1 commandBuffer:(id)arg2 viewPoints:(id)arg3;
+- (void)renderWithCommandBuffer:(id)arg1 viewPoints:(id)arg2;
 - (void)renderAtTime:(double)arg1 viewport:(struct CGRect)arg2 encoder:(id)arg3 passDescriptor:(id)arg4 commandQueue:(id)arg5;
 - (void)_renderAtTime:(double)arg1 viewport:(struct CGRect)arg2 encoder:(id)arg3 passDescriptor:(id)arg4 commandQueue:(id)arg5 commandBuffer:(id)arg6;
 - (void)renderAtTime:(double)arg1 viewport:(struct CGRect)arg2 commandBuffer:(id)arg3 passDescriptor:(id)arg4;
@@ -123,6 +126,8 @@
 - (void)set_drawableSafeAreaInsets: /* Error: Ran out of types for this method. */;
 -     // Error parsing type: 16@0:8, name: _drawableSafeAreaInsets
 - (void)set_viewport:(struct SCNVector4)arg1;
+- (struct CGRect)viewport;
+@property(readonly, nonatomic) struct CGRect currentViewport;
 - (struct SCNVector4)_viewport;
 - (id)_authoringEnvironment;
 - (void)setupAuthoringEnvironement;
@@ -131,11 +136,14 @@
 - (id)_compilationErrors;
 - (void)set_collectCompilationErrors:(BOOL)arg1;
 - (BOOL)_collectCompilationErrors;
+- (void)set_enableARMode:(BOOL)arg1;
+- (BOOL)_enableARMode;
 - (void)set_disableLinearRendering:(BOOL)arg1;
 - (BOOL)_disableLinearRendering;
 - (void)set_enablesDeferredShading:(BOOL)arg1;
 - (BOOL)_enablesDeferredShading;
 - (void)_reloadDebugOptions;
+@property(nonatomic) BOOL usesReverseZ;
 @property(nonatomic) unsigned long long debugOptions;
 - (void)_presentFramebuffer;
 - (void)_runningInExtension;
@@ -145,6 +153,8 @@
 - (id)_copyPerformanceStatistics;
 - (void)setFrozen:(BOOL)arg1;
 - (BOOL)frozen;
+- (BOOL)temporalAntialiasingEnabled;
+@property(nonatomic, getter=isTemporalAntialiasingEnabled) BOOL temporalAntialiasingEnabled;
 - (BOOL)jitteringEnabled;
 @property(nonatomic, getter=isJitteringEnabled) BOOL jitteringEnabled;
 @property(nonatomic) BOOL loops;
@@ -182,7 +192,7 @@
 - (void)updateCurrentTimeIfPlayingWithSystemTime:(double)arg1;
 - (void)set_privateRendererShouldForwardSceneRendererDelegationMessagesToOwner:(BOOL)arg1;
 - (BOOL)_privateRendererShouldForwardSceneRendererDelegationMessagesToOwner;
-@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
 - (void)_updateEngineCallbacks;
 - (id)programWithNode:(id)arg1 withMaterial:(id)arg2;
 - (void)prepareObjects:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -196,8 +206,6 @@
 - (void)set_recordWithoutExecute:(BOOL)arg1;
 - (BOOL)_recordWithoutExecute;
 - (void)_renderGraphFrameRecordingAtPath:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (BOOL)_renderGraphEnabled;
-- (void)set_renderGraphEnabled:(BOOL)arg1;
 - (id)_copyRenderGraphDescription;
 - (id)_copyPassDescription;
 @property(copy, nonatomic) SCNTechnique *technique;
@@ -229,7 +237,7 @@
 - (struct SCNVector3)_unprojectPoint:(struct SCNVector3)arg1 viewport:(struct SCNVector4)arg2;
 - (struct SCNVector3)_projectPoint:(struct SCNVector3)arg1 viewport:(struct SCNVector4)arg2;
 - (void)_projectPoints:(struct SCNVector3 *)arg1 count:(unsigned long long)arg2 viewport:(struct SCNVector4)arg3;
--     // Error parsing type: 32@0:816, name: viewportWithLetterboxingIfNeeded:
+-     // Error parsing type: 32@0:816, name: adjustViewportForRendering:
 - (id)pointOfCulling;
 - (void)setPointOfCulling:(id)arg1;
 @property(retain, nonatomic) SCNNode *pointOfView;

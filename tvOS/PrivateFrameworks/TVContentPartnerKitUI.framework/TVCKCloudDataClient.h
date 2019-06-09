@@ -6,18 +6,15 @@
 
 #import <TVContentPartnerKitUI/TVCKDataClient.h>
 
-#import <TVContentPartnerKitUI/TVCKPushNotificationListener-Protocol.h>
-
-@class HSCloudClient, ML3MusicLibrary, NSArray, NSDictionary, NSLock, NSMapTable, NSMutableDictionary, NSNumber, NSObject, NSString, NSTimer, TVSBackgroundTask, TVSDocumentLoader;
+@class HSCloudClient, ML3MusicLibrary, NSArray, NSDictionary, NSLock, NSMapTable, NSMutableDictionary, NSNumber, NSObject, NSTimer, TVSBackgroundTask, TVSDocumentLoader;
 @protocol OS_dispatch_queue;
 
-@interface TVCKCloudDataClient : TVCKDataClient <TVCKPushNotificationListener>
+@interface TVCKCloudDataClient : TVCKDataClient
 {
     struct mach_timebase_info _timebaseInfo;
     _Bool _servicesInitialized;
     NSObject<OS_dispatch_queue> *_artworkProcessingQueue;
     unsigned short _concurrentArtworkRequestCount;
-    _Bool _deauthenticationInProgress;
     _Bool _shouldInitializeMusicAfterDeauthentication;
     _Bool _waitingForURLBag;
     NSArray *_rentalDataItemsFromPendingSongs;
@@ -149,7 +146,7 @@
 - (void)_updateSyncProgress;
 - (void)_setSagaEnabled:(_Bool)arg1;
 - (_Bool)_shouldSyncSaga;
-- (void)_deleteCloudDatabase;
+- (void)_disableCloudDatabase;
 - (void)_registerForMLDatabaseUpdates;
 - (void)_syncSaga;
 - (_Bool)_shouldSyncCloudLibrary;
@@ -158,16 +155,7 @@
 - (void)_getJaliscoDatabaseRevision:(CDUnknownBlockType)arg1;
 - (void)_disableMusic;
 - (void)_deinitializeMusic;
-- (void)_deleteDatabaseWithMainThreadCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_initializeMusic;
-- (void)pushNotificationServerTokenDidChange:(id)arg1;
-- (void)pushNotificationServer:(id)arg1 didReceiveMessageForTopic:(id)arg2 userInfo:(id)arg3;
-- (void)_handleSagaPushNotification:(id)arg1;
-- (void)_handleJaliscoPushNotification:(id)arg1;
-- (void)_unregisterSagaPush;
-- (void)_registerSagaPushForUser:(id)arg1;
-- (void)_unregisterJaliscoPush;
-- (void)_registerJaliscoPushForUser:(id)arg1;
 - (void)handleGeniusQuery:(id)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)queryCompleted:(id)arg1 withError:(id)arg2 completionQueue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)handleDeleteQuery:(id)arg1 completionQueue:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -234,12 +222,6 @@
 - (void)_updateRentals:(_Bool)arg1;
 - (void)_deinitializeRentals;
 - (void)_initializeRentals;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

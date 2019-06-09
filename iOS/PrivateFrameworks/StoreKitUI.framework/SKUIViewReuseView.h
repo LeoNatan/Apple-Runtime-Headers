@@ -8,6 +8,7 @@
 
 @class NSArray, SKUIViewReusePool;
 
+__attribute__((visibility("hidden")))
 @interface SKUIViewReuseView : UIView
 {
     SKUIViewReusePool *_viewReusePool;

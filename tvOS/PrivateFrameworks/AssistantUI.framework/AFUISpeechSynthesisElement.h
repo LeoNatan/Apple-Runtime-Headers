@@ -17,6 +17,7 @@
     _Bool _eligibleForProcessing;
     _Bool _provisional;
     _Bool _delayed;
+    _Bool _canUseServerTTS;
     _Bool _shouldCache;
     _Bool _synthesizesWhileRecording;
     _Bool _preparationBlockCompleted;
@@ -47,6 +48,7 @@
 @property(nonatomic) long long synthesisResult; // @synthesize synthesisResult=_synthesisResult;
 @property(retain, nonatomic) VSPresynthesizedAudioRequest *presynthesizedAudioRequest; // @synthesize presynthesizedAudioRequest=_presynthesizedAudioRequest;
 @property(retain, nonatomic) VSSpeechRequest *speechRequest; // @synthesize speechRequest=_speechRequest;
+@property(nonatomic) _Bool canUseServerTTS; // @synthesize canUseServerTTS=_canUseServerTTS;
 @property(nonatomic, getter=isDelayed) _Bool delayed; // @synthesize delayed=_delayed;
 @property(readonly, nonatomic, getter=isProvisional) _Bool provisional; // @synthesize provisional=_provisional;
 @property(nonatomic, getter=isEligibleForProcessing, setter=_setEligibleForProcessing:) _Bool eligibleForProcessing; // @synthesize eligibleForProcessing=_eligibleForProcessing;
@@ -62,7 +64,7 @@
 - (void)executeCompletion;
 - (id)description;
 - (id)init;
-- (id)initWithText:(id)arg1 audioData:(id)arg2 identifier:(id)arg3 language:(id)arg4 gender:(id)arg5 provisional:(_Bool)arg6 eligibleAfterDuration:(double)arg7 delayed:(_Bool)arg8 preparation:(CDUnknownBlockType)arg9 completion:(CDUnknownBlockType)arg10 animationIdentifier:(id)arg11 analyticsContext:(id)arg12 speakableContextInfo:(id)arg13;
+- (id)initWithText:(id)arg1 audioData:(id)arg2 identifier:(id)arg3 language:(id)arg4 gender:(id)arg5 provisional:(_Bool)arg6 eligibleAfterDuration:(double)arg7 delayed:(_Bool)arg8 preparation:(CDUnknownBlockType)arg9 completion:(CDUnknownBlockType)arg10 animationIdentifier:(id)arg11 analyticsContext:(id)arg12 speakableContextInfo:(id)arg13 canUseServerTTS:(_Bool)arg14;
 
 @end
 

@@ -22,10 +22,9 @@
     void *_hiView;
     struct CGSize _minimumViewSize;
     id _rememberedFirstResponder;
-    id _itemViewerReserved[2];
 }
 
-+ (BOOL)requiresConstraintBasedLayout;
++ (Class)_classToCheckForRequiresConstraintBasedLayout;
 + (struct __CFString *)_getMenuItemViewerHIViewClassRegisteringIfNecessary;
 - (void)_displayFromCarbonIgnoringOpacity;
 - (void)_displayRectIgnoringOpacity:(struct CGRect)arg1 isVisibleRect:(BOOL)arg2 rectIsVisibleRectForView:(id)arg3;

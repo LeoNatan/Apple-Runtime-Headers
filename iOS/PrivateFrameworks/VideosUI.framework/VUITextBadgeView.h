@@ -6,29 +6,34 @@
 
 #import <UIKit/UIView.h>
 
-@class NSAttributedString, UIColor, UIImage, VUITextBadgeLayout;
+@class NSAttributedString, UIImage, VUITextBadgeLayout, _TVImageView;
 
 __attribute__((visibility("hidden")))
 @interface VUITextBadgeView : UIView
 {
     double _strokeSize;
     UIImage *_backgroundImage;
+    _TVImageView *_imageView;
     VUITextBadgeLayout *_badgeLayout;
     NSAttributedString *_attributedTitle;
-    UIColor *_tintColor;
+    struct CGSize _glyphSize;
 }
 
-@property(retain, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
++ (_Bool)badgeElementHasContent:(id)arg1;
+@property(nonatomic) struct CGSize glyphSize; // @synthesize glyphSize=_glyphSize;
 @property(copy, nonatomic) NSAttributedString *attributedTitle; // @synthesize attributedTitle=_attributedTitle;
 @property(retain, nonatomic) VUITextBadgeLayout *badgeLayout; // @synthesize badgeLayout=_badgeLayout;
+@property(retain, nonatomic) _TVImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) UIImage *backgroundImage; // @synthesize backgroundImage=_backgroundImage;
 @property(nonatomic) double strokeSize; // @synthesize strokeSize=_strokeSize;
 - (void).cxx_destruct;
+- (void)_imageLoaded;
 - (struct CGSize)_textSize;
 - (void)drawRect:(struct CGRect)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (void)dealloc;
 - (void)reset;
-- (void)setText:(id)arg1 withBadgeLayout:(id)arg2;
+- (void)setElement:(id)arg1 withBadgeLayout:(id)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

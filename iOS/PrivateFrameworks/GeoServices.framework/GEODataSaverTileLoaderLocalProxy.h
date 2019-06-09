@@ -9,14 +9,11 @@
 #import <GeoServices/GEODataSaverTileLoaderProxy-Protocol.h>
 
 @class NSString;
-@protocol OS_dispatch_queue;
 
 @interface GEODataSaverTileLoaderLocalProxy : NSObject <GEODataSaverTileLoaderProxy>
 {
-    NSObject<OS_dispatch_queue> *_isolationQueue;
 }
 
-- (void).cxx_destruct;
 - (void)_debug_initiateDataSaverPreload;
 @property(readonly, nonatomic, getter=isDataSaverEnabled) _Bool dataSaverEnabled;
 - (void)_removeOldRegionStateFromDisk;

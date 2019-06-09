@@ -7,6 +7,7 @@
 @class VCRecommendedNetworkSettings;
 
 @protocol VCNetworkFeedbackControllerDelegate
+- (void)reportingIntervalChanged:(double)arg1;
 - (void)recommendedSettingsChanged:(VCRecommendedNetworkSettings *)arg1;
 @end
 

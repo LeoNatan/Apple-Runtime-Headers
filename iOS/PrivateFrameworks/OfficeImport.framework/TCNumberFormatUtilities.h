@@ -12,7 +12,6 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)cleanDateTimeFormatString:(id)arg1 withMappings:(id)arg2;
-+ (id)cleanDateTimeFormat:(CDStruct_730f14de *)arg1 withMappings:(id)arg2;
 + (id)cleanDateTimeSubstring:(id)arg1 withMappings:(id)arg2;
 
 @end

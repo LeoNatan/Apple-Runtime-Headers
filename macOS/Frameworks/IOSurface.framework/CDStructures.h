@@ -36,5 +36,9 @@ typedef struct {
     unsigned char isAllocated;
     unsigned char isWired;
     unsigned char pad;
-} CDStruct_0dba196d;
+    unsigned int morePad;
+    unsigned long long detachModeCode;
+    unsigned long long initDetachModeCodeTime;
+    unsigned long long protectionOptions;
+} CDStruct_0bcbbf48;
 

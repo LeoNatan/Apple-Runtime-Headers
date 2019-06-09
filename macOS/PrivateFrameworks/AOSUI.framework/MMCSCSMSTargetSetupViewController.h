@@ -13,34 +13,35 @@
 
 @interface MMCSCSMSTargetSetupViewController : NSViewController <NSTouchBarProvider>
 {
+    MMPhoneNumberFormatter *_smsTargetFormatter;
     id <MMCSCSMSTargetSetupViewControllerDelegate> _delegate;
     NSImageView *_smsTargetImageView;
-    NSPopUpButton *_smsTargetCountryMenu;
-    NSTextField *_smsTargetTextField;
-    NSButton *_smsTargetCancelButton;
-    NSButton *_smsTargetConfirmButton;
     NSTextField *_smsTargetTitle;
     NSTextField *_smsTargetMessage;
     NSTextField *_smsTargetCountryLabel;
+    NSPopUpButton *_smsTargetCountryMenu;
     NSTextField *_smsTargetNumberLabel;
+    NSTextField *_smsTargetTextField;
+    NSButton *_smsTargetCancelButton;
+    NSButton *_smsTargetConfirmButton;
     NSButton *_smsTargetHelpButton;
-    MMPhoneNumberFormatter *_smsTargetFormatter;
     iCloudTouchBarController *_touchBarController;
 }
 
 @property(retain) iCloudTouchBarController *touchBarController; // @synthesize touchBarController=_touchBarController;
 @property(retain) MMPhoneNumberFormatter *smsTargetFormatter; // @synthesize smsTargetFormatter=_smsTargetFormatter;
-@property NSButton *smsTargetHelpButton; // @synthesize smsTargetHelpButton=_smsTargetHelpButton;
-@property NSButton *smsTargetConfirmButton; // @synthesize smsTargetConfirmButton=_smsTargetConfirmButton;
-@property NSButton *smsTargetCancelButton; // @synthesize smsTargetCancelButton=_smsTargetCancelButton;
-@property NSTextField *smsTargetTextField; // @synthesize smsTargetTextField=_smsTargetTextField;
-@property NSTextField *smsTargetNumberLabel; // @synthesize smsTargetNumberLabel=_smsTargetNumberLabel;
-@property NSPopUpButton *smsTargetCountryMenu; // @synthesize smsTargetCountryMenu=_smsTargetCountryMenu;
-@property NSTextField *smsTargetCountryLabel; // @synthesize smsTargetCountryLabel=_smsTargetCountryLabel;
-@property NSTextField *smsTargetMessage; // @synthesize smsTargetMessage=_smsTargetMessage;
-@property NSTextField *smsTargetTitle; // @synthesize smsTargetTitle=_smsTargetTitle;
-@property NSImageView *smsTargetImageView; // @synthesize smsTargetImageView=_smsTargetImageView;
+@property __weak NSButton *smsTargetHelpButton; // @synthesize smsTargetHelpButton=_smsTargetHelpButton;
+@property __weak NSButton *smsTargetConfirmButton; // @synthesize smsTargetConfirmButton=_smsTargetConfirmButton;
+@property __weak NSButton *smsTargetCancelButton; // @synthesize smsTargetCancelButton=_smsTargetCancelButton;
+@property __weak NSTextField *smsTargetTextField; // @synthesize smsTargetTextField=_smsTargetTextField;
+@property __weak NSTextField *smsTargetNumberLabel; // @synthesize smsTargetNumberLabel=_smsTargetNumberLabel;
+@property __weak NSPopUpButton *smsTargetCountryMenu; // @synthesize smsTargetCountryMenu=_smsTargetCountryMenu;
+@property __weak NSTextField *smsTargetCountryLabel; // @synthesize smsTargetCountryLabel=_smsTargetCountryLabel;
+@property __weak NSTextField *smsTargetMessage; // @synthesize smsTargetMessage=_smsTargetMessage;
+@property __weak NSTextField *smsTargetTitle; // @synthesize smsTargetTitle=_smsTargetTitle;
+@property __weak NSImageView *smsTargetImageView; // @synthesize smsTargetImageView=_smsTargetImageView;
 @property id <MMCSCSMSTargetSetupViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)controlTextDidChange:(id)arg1;
 - (void)_selectCountryCodeInPopUpMenu:(id)arg1;
 @property(readonly) NSString *smsTarget;
@@ -51,7 +52,6 @@
 - (void)confirmButtonClicked:(id)arg1;
 - (void)setup;
 @property(readonly) NSTouchBar *touchBar;
-- (void)dealloc;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

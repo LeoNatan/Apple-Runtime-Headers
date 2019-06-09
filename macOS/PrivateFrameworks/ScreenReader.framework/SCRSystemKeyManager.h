@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_outputEventQueue;
 }
 
+- (void).cxx_destruct;
 - (void)_pressSystemKeyDown:(int)arg1 keyUp:(int)arg2 keyDownFlags:(unsigned int)arg3 keyUpFlags:(unsigned int)arg4;
 - (void)_pressSystemKeyDown:(int)arg1 keyUp:(int)arg2;
 - (void)increaseSystemVolume;

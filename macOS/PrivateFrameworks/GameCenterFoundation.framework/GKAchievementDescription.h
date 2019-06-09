@@ -9,12 +9,12 @@
 #import <GameCenterFoundation/NSCoding-Protocol.h>
 #import <GameCenterFoundation/NSSecureCoding-Protocol.h>
 
-@class GKAchievementInternal, NSString, UIImage;
+@class GKAchievementInternal, NSImage, NSString;
 
 @interface GKAchievementDescription : NSObject <NSCoding, NSSecureCoding>
 {
     GKAchievementInternal *_internal;
-    UIImage *_image;
+    NSImage *_image;
 }
 
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
@@ -24,7 +24,7 @@
 + (id)_achievementDescriptionFromGame:(id)arg1 propertyListDictionary:(id)arg2;
 + (void)loadAchievementDescriptionsWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
+@property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(retain) GKAchievementInternal *internal; // @synthesize internal=_internal;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;

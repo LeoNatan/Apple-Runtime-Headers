@@ -8,6 +8,7 @@
 
 @class NSArray, NSDictionary, NSString, NSURL;
 
+__attribute__((visibility("hidden")))
 @interface AVCapturePhotoSettingsInternal : NSObject
 {
     NSDictionary *format;
@@ -19,9 +20,10 @@
     _Bool autoRedEyeReductionEnabled;
     long long HDRMode;
     _Bool EV0PhotoDeliveryEnabled;
-    _Bool autoStillImageStabilizationEnabled;
+    long long photoQualityPrioritization;
+    _Bool photoQualityPrioritizationIsSetByClient;
     _Bool autoDualCameraFusionEnabled;
-    _Bool dualCameraDualPhotoDeliveryEnabled;
+    NSArray *dualCameraDualPhotoDeliveryEnabled;
     _Bool highResolutionPhotoEnabled;
     _Bool depthDataDeliveryEnabled;
     _Bool embedsDepthDataInPhoto;
@@ -29,6 +31,8 @@
     _Bool cameraCalibrationDataDeliveryEnabled;
     _Bool portraitEffectsMatteDeliveryEnabled;
     _Bool embedsPortraitEffectsMatteInPhoto;
+    NSArray *enabledSemanticSegmentationMatteTypes;
+    _Bool embedsSemanticSegmentationMattesInPhoto;
     NSDictionary *metadata;
     NSURL *livePhotoMovieFileURL;
     NSURL *livePhotoMovieFileURLForOriginalPhoto;
@@ -45,6 +49,10 @@
     NSArray *adjustedPhotoFilters;
     unsigned int shutterSound;
     unsigned long long userInitiatedPhotoRequestTime;
+    NSURL *HEICSFileURL;
+    NSURL *videoFileURL;
+    NSDictionary *videoFormat;
+    NSArray *videoFileMetadata;
     NSString *livePhotoContentIdentifier;
     NSString *livePhotoContentIdentifierForOriginalPhoto;
 }

@@ -8,7 +8,6 @@
 
 @class NSError;
 
-__attribute__((visibility("hidden")))
 @interface __NSCFURLLocalStreamTaskWork : NSObject
 {
     const char *_static_description;

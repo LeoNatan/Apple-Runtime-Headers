@@ -33,10 +33,9 @@
 - (id)geometryKinds;
 - (void)dealloc;
 - (id)initWithMetrics:(id)arg1;
-- (id)init;
 
 // Remaining properties
-@property(readonly, copy, nonatomic) PXEditorialLayoutMetrics *metrics; // @dynamic metrics;
+@property(copy, nonatomic) PXEditorialLayoutMetrics *metrics; // @dynamic metrics;
 
 @end
 

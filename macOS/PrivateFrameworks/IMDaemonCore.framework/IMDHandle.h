@@ -14,8 +14,10 @@
     NSString *_unformattedID;
     NSString *_countryCode;
     NSString *_personCentricID;
+    NSString *_CNContactID;
 }
 
+@property(copy, nonatomic) NSString *CNContactID; // @synthesize CNContactID=_CNContactID;
 @property(retain, nonatomic) NSString *unformattedID; // @synthesize unformattedID=_unformattedID;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(retain, nonatomic) NSString *ID; // @synthesize ID=_id;

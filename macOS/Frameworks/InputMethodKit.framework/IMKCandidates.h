@@ -13,6 +13,11 @@
     IMKCandidatesPrivate *_private;
 }
 
+- (void)collapse;
+- (void)expand;
+- (BOOL)windowIsExpandable;
+- (id)visibleCandidates;
+- (id)expandableWindowController;
 - (BOOL)singleClickCommitsCandidate;
 - (void)setSingleClickCommitsCandidate:(BOOL)arg1;
 - (id)fittingCandidatesForCandidates:(id)arg1;
@@ -22,14 +27,19 @@
 - (void)selectCurrentlyFocusedItem;
 - (void)selectPreviousSortingMethod;
 - (void)selectNextSortingMethod;
+- (BOOL)windowShouldAdjustToTotalCandidateSize;
+- (void)setWindowShouldAdjustToTotalCandidateSize:(BOOL)arg1;
 - (unsigned long long)windowLevel;
 - (void)setWindowLevel:(unsigned long long)arg1;
 - (void)setTopVisibleLine:(unsigned long long)arg1;
 - (unsigned long long)topVisibleLine;
 - (void)setSortingModes:(id)arg1;
 - (id)sortingModes;
+- (void)setShowsRadarButtonInSortingBar:(BOOL)arg1;
+- (BOOL)showsRadarButtonInSortingBar;
 - (void)setShowsChevron:(BOOL)arg1;
 - (BOOL)showsChevron;
+- (void)setSelectedSortingMode:(id)arg1 userInitiated:(BOOL)arg2;
 - (void)setSelectedSortingMode:(id)arg1;
 - (id)selectedSortingMode;
 - (BOOL)presentsAutomatically;
@@ -51,6 +61,8 @@
 - (id)focusedCandidate;
 - (void)setDelegate:(id)arg1;
 - (id)delegate;
+- (void)setChangesSizeWhenScrolling:(BOOL)arg1;
+- (BOOL)changesSizeWhenScrolling;
 - (void)setAppearance:(id)arg1;
 - (id)appearance;
 - (void)setAlignment:(long long)arg1;

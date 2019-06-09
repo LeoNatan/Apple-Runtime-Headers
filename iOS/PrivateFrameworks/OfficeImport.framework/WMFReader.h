@@ -20,13 +20,12 @@ __attribute__((visibility("hidden")))
     unsigned int m_cursor;
 }
 
+- (void).cxx_destruct;
 - (int)moveDataCursor:(unsigned int)arg1;
 - (int)checkBytesAvailable:(unsigned int)arg1;
 - (int)playRecord;
 - (int)playHeaders;
 - (int)play:(id)arg1;
-- (oneway void)release;
-- (void)dealloc;
 - (id)initWithWMFPlayer:(id)arg1;
 
 // Remaining properties

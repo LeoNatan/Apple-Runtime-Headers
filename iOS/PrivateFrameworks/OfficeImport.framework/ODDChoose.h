@@ -15,12 +15,12 @@ __attribute__((visibility("hidden")))
     ODDOtherwise *mOtherwise;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)setOtherwise:(id)arg1;
 - (id)otherwise;
 - (void)addWhen:(id)arg1;
 - (id)whens;
-- (void)dealloc;
 - (id)init;
 
 @end

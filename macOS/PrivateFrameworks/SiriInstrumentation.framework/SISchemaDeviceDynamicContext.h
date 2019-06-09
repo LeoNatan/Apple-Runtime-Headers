@@ -6,36 +6,35 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaDeviceDynamicContext-Protocol.h>
 
-@class NSString, SISchemaLocation;
+@class NSData, NSString, SISchemaLocation;
 
-@interface SISchemaDeviceDynamicContext : PBCodable <NSCopying>
+@interface SISchemaDeviceDynamicContext : PBCodable <SISchemaDeviceDynamicContext, NSSecureCoding>
 {
-    double _timeIntervalSince1970;
-    NSString *_countryCode;
     SISchemaLocation *_location;
-    struct {
-        unsigned int timeIntervalSince1970:1;
-    } _has;
+    NSString *_countryCode;
+    double _timeIntervalSince1970;
 }
 
 @property(nonatomic) double timeIntervalSince1970; // @synthesize timeIntervalSince1970=_timeIntervalSince1970;
-@property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
+@property(copy, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
 @property(retain, nonatomic) SISchemaLocation *location; // @synthesize location=_location;
 - (void).cxx_destruct;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) BOOL hasTimeIntervalSince1970;
-@property(readonly, nonatomic) BOOL hasCountryCode;
-@property(readonly, nonatomic) BOOL hasLocation;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

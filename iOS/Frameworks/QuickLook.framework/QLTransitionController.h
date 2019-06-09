@@ -9,7 +9,7 @@
 #import <QuickLook/QLTransitionControllerProtocol-Protocol.h>
 #import <QuickLook/UIViewControllerAnimatedTransitioning-Protocol.h>
 
-@class NSString, QLPreviewController, QLTransitionContext, UINavigationController, UIView, UIViewController;
+@class NSDate, NSString, QLPreviewController, QLTransitionContext, UINavigationController, UIView, UIViewController;
 @protocol QLCustomTransitioning, UIViewControllerContextTransitioning;
 
 __attribute__((visibility("hidden")))
@@ -19,14 +19,18 @@ __attribute__((visibility("hidden")))
     UINavigationController *_disabledNavigationController;
     CDUnknownBlockType _startTransitionBlock;
     _Bool _showing;
+    _Bool _hasPerformedTransition;
     QLTransitionContext *_quickLookTransitionContext;
     UIViewController<QLCustomTransitioning> *_animatedController;
     id <UIViewControllerContextTransitioning> _transitionContext;
     id _transitionDriver;
     double _duration;
     unsigned long long _transitionState;
+    NSDate *_setupDate;
 }
 
+@property(nonatomic) _Bool hasPerformedTransition; // @synthesize hasPerformedTransition=_hasPerformedTransition;
+@property(retain, nonatomic) NSDate *setupDate; // @synthesize setupDate=_setupDate;
 @property unsigned long long transitionState; // @synthesize transitionState=_transitionState;
 @property double duration; // @synthesize duration=_duration;
 @property(readonly) id transitionDriver; // @synthesize transitionDriver=_transitionDriver;
@@ -35,6 +39,8 @@ __attribute__((visibility("hidden")))
 @property(retain) QLTransitionContext *quickLookTransitionContext; // @synthesize quickLookTransitionContext=_quickLookTransitionContext;
 @property _Bool showing; // @synthesize showing=_showing;
 - (void).cxx_destruct;
+- (void)_performForcedDismissal;
+- (_Bool)forceDismissalIfNeeded;
 - (void)_view:(id)arg1 applyFrameFromTransitionContextAsFinalFrame:(_Bool)arg2 isToView:(_Bool)arg3;
 - (void)_completeBackgroundTransition:(_Bool)arg1;
 - (void)_completeOverlayTransition:(_Bool)arg1;
@@ -51,6 +57,7 @@ __attribute__((visibility("hidden")))
 - (void)tearDownTransition:(_Bool)arg1;
 - (void)completeTransition:(_Bool)arg1;
 - (void)_performStartBlockIfNeeded;
+- (void)_prepareTimedForcedDismissal;
 - (void)setUpWithTransitionContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 
 // Remaining properties

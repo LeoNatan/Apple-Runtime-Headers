@@ -39,7 +39,6 @@
 @property(readonly, nonatomic) long long status;
 - (void)_transitionToFailedStatusWithOSStatus:(int)arg1;
 - (void)_transitionToStatus:(long long)arg1 error:(id)arg2;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (void)_uninstallNotificationHandlers;

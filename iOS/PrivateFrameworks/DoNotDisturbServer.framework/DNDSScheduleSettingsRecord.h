@@ -23,6 +23,7 @@
     NSNumber *_bedtimeBehaviorEnabledSetting;
 }
 
++ (id)newWithDictionaryRepresentation:(id)arg1;
 + (id)migrateDictionaryRepresentation:(id)arg1 fromVersionNumber:(unsigned long long)arg2 toVersionNumber:(unsigned long long)arg3;
 + (id)recordForLegacyBehaviorOverride:(id)arg1 lastUpdated:(id)arg2;
 + (id)_recordWithEncodedInfo:(id)arg1 error:(id *)arg2;
@@ -35,7 +36,6 @@
 @property(readonly, copy, nonatomic) NSNumber *lastUpdatedTimestamp; // @synthesize lastUpdatedTimestamp=_lastUpdatedTimestamp;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
-- (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, copy) NSString *description;

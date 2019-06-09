@@ -9,7 +9,7 @@
 #import <TextInputCore/TIKeyboardActivityObserving-Protocol.h>
 #import <TextInputCore/TIUserDictionaryServing-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, NSUUID;
+@class NSArray, NSMutableArray, NSString, NSUUID, _KSTextReplacementServer;
 @protocol OS_dispatch_queue;
 
 @interface TIUserDictionaryServer : NSObject <TIKeyboardActivityObserving, TIUserDictionaryServing>
@@ -22,12 +22,14 @@
     unsigned long long _keyboardActivityState;
     long long _recentClientCount;
     NSUUID *_userDictionaryUUID;
+    _KSTextReplacementServer *_textReplacementServer;
 }
 
 + (double)decrementClientDelay;
 + (id)singletonInstance;
 + (id)sharedInstance;
 + (void)setSharedInstance:(id)arg1;
+@property(retain, nonatomic) _KSTextReplacementServer *textReplacementServer; // @synthesize textReplacementServer=_textReplacementServer;
 @property(copy, nonatomic) NSUUID *userDictionaryUUID; // @synthesize userDictionaryUUID=_userDictionaryUUID;
 - (void).cxx_destruct;
 - (void)handleIdleTimeout;
@@ -41,6 +43,7 @@
 - (void)getPhraseShortcutPairs:(CDUnknownBlockType)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)addObserver:(CDUnknownBlockType)arg1;
+- (void)startServer;
 - (id)init;
 - (void)dealloc;
 

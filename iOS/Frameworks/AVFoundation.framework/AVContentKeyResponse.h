@@ -13,7 +13,9 @@
     AVContentKeyResponseInternal *_keyResponse;
 }
 
++ (id)contentKeyResponseWithAuthorizationTokenData:(id)arg1;
 + (id)contentKeyResponseWithClearKeyData:(id)arg1 initializationVector:(id)arg2;
++ (id)contentKeyResponseWithFairPlayStreamingKeyResponseData:(id)arg1 renewalDate:(id)arg2;
 + (id)contentKeyResponseWithFairPlayStreamingKeyResponseData:(id)arg1;
 - (id)keySystem;
 - (void)dealloc;

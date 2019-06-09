@@ -24,6 +24,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)isEqual:(id)arg1;
+- (_Bool)_compoundFilterAcceptsObjectWithEvaluation:(CDUnknownBlockType)arg1;
+- (_Bool)acceptsDataObjectWithStartTimestamp:(double)arg1 endTimestamp:(double)arg2 valueInCanonicalUnit:(double)arg3;
+- (_Bool)acceptsActivitySummary:(id)arg1;
 - (_Bool)acceptsDataObject:(id)arg1;
 - (id)_subfilters;
 

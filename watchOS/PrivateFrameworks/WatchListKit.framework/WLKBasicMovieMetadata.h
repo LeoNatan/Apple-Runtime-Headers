@@ -6,11 +6,10 @@
 
 #import <WatchListKit/WLKBasicContentMetadata.h>
 
-@class NSArray, NSDate, NSString, WLKMovieContentRating, WLKRottenTomatoesRating;
+@class NSDate, NSString, WLKMovieContentRating, WLKRottenTomatoesRating;
 
 @interface WLKBasicMovieMetadata : WLKBasicContentMetadata
 {
-    NSArray *_genres;
     NSString *_studio;
     WLKRottenTomatoesRating *_rottenTomatoesRating;
     WLKMovieContentRating *_contentRating;
@@ -23,7 +22,6 @@
 @property(readonly, nonatomic) WLKMovieContentRating *contentRating; // @synthesize contentRating=_contentRating;
 @property(readonly, nonatomic) WLKRottenTomatoesRating *rottenTomatoesRating; // @synthesize rottenTomatoesRating=_rottenTomatoesRating;
 @property(readonly, copy, nonatomic) NSString *studio; // @synthesize studio=_studio;
-@property(readonly, copy, nonatomic) NSArray *genres; // @synthesize genres=_genres;
 - (void).cxx_destruct;
 - (id)initWithDictionary:(id)arg1;
 

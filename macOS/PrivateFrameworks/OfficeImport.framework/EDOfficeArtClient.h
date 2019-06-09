@@ -11,6 +11,7 @@
 
 @class EDAnchor, EDComment, EDSheet, EDTextBox, NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDOfficeArtClient : NSObject <OADClient, OADTextClient>
 {
     EDSheet *mSheet;

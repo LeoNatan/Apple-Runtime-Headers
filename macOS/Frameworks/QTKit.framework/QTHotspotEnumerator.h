@@ -6,22 +6,13 @@
 
 #import <Foundation/NSEnumerator.h>
 
-@class QTNode;
-
 @interface QTHotspotEnumerator : NSEnumerator
 {
-    QTNode *_node;
-    unsigned int _index;
-    long long _reserved1;
-    long long _reserved2;
-    long long _reserved3;
 }
 
 + (id)hotspotEnumeratorWithNode:(id)arg1;
-- (id)nextObject;
-- (void)dealloc;
+- (id)init;
 - (id)initWithNode:(id)arg1;
-- (void)setNode:(id)arg1;
 
 @end
 

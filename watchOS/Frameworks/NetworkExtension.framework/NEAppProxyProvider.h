@@ -10,6 +10,7 @@
 {
 }
 
+- (_Bool)handleNewUDPFlow:(id)arg1 initialRemoteEndpoint:(id)arg2;
 - (_Bool)handleNewFlow:(id)arg1;
 - (void)cancelProxyWithError:(id)arg1;
 - (void)stopProxyWithReason:(int)arg1 completionHandler:(CDUnknownBlockType)arg2;

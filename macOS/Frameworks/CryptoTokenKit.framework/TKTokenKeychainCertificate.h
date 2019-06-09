@@ -30,7 +30,8 @@
 @property(readonly, copy) NSData *data; // @synthesize data=_data;
 - (void).cxx_destruct;
 - (id)keychainAttributes;
-- (id)initWithCertificate:(struct OpaqueSecCertificateRef *)arg1 objectID:(id)arg2;
+- (id)initWithItemInfo:(id)arg1;
+- (id)initWithCertificate:(struct __SecCertificate *)arg1 objectID:(id)arg2;
 
 @end
 

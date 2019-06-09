@@ -15,11 +15,11 @@
     GEOMapsServerMetadata *_serverMetadata;
     int _tappedItemIndex;
     struct {
-        unsigned int tappedItemIndex:1;
-    } _has;
+        unsigned int has_tappedItemIndex:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOMapsServerMetadata *serverMetadata; // @synthesize serverMetadata=_serverMetadata;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,10 +28,12 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasTappedItemIndex;
-@property(nonatomic) int tappedItemIndex; // @synthesize tappedItemIndex=_tappedItemIndex;
+@property(nonatomic) int tappedItemIndex;
+@property(retain, nonatomic) GEOMapsServerMetadata *serverMetadata;
 @property(readonly, nonatomic) _Bool hasServerMetadata;
 
 @end

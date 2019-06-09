@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AccessibilityVisuals/AXVWindow.h>
+#import <AccessibilityVisuals/AXVVoiceOverStyleWindow.h>
 
 #import <AccessibilityVisuals/AXVViewMouseEventDelegate-Protocol.h>
 
 @class AXVTextField, NSString;
 @protocol AXVTitleWindowMouseEventDelegate;
 
-@interface AXVTitleWindow : AXVWindow <AXVViewMouseEventDelegate>
+@interface AXVTitleWindow : AXVVoiceOverStyleWindow <AXVViewMouseEventDelegate>
 {
     double _baseFontSize;
     id <AXVTitleWindowMouseEventDelegate> _mouseEventDelegate;

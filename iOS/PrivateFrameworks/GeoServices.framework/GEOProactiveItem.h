@@ -18,21 +18,17 @@
     _Bool _tapped;
     _Bool _visible;
     struct {
-        unsigned int proactiveItemType:1;
-        unsigned int timeSinceStart:1;
-        unsigned int deleted:1;
-        unsigned int edited:1;
-        unsigned int shared:1;
-        unsigned int tapped:1;
-        unsigned int visible:1;
-    } _has;
+        unsigned int has_proactiveItemType:1;
+        unsigned int has_timeSinceStart:1;
+        unsigned int has_deleted:1;
+        unsigned int has_edited:1;
+        unsigned int has_shared:1;
+        unsigned int has_tapped:1;
+        unsigned int has_visible:1;
+    } _flags;
 }
 
-@property(nonatomic) _Bool deleted; // @synthesize deleted=_deleted;
-@property(nonatomic) _Bool edited; // @synthesize edited=_edited;
-@property(nonatomic) _Bool shared; // @synthesize shared=_shared;
-@property(nonatomic) _Bool tapped; // @synthesize tapped=_tapped;
-@property(nonatomic) _Bool visible; // @synthesize visible=_visible;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -40,19 +36,25 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasDeleted;
+@property(nonatomic) _Bool deleted;
 @property(nonatomic) _Bool hasEdited;
+@property(nonatomic) _Bool edited;
 @property(nonatomic) _Bool hasShared;
+@property(nonatomic) _Bool shared;
 @property(nonatomic) _Bool hasTapped;
+@property(nonatomic) _Bool tapped;
 @property(nonatomic) _Bool hasVisible;
+@property(nonatomic) _Bool visible;
 @property(nonatomic) _Bool hasTimeSinceStart;
-@property(nonatomic) int timeSinceStart; // @synthesize timeSinceStart=_timeSinceStart;
+@property(nonatomic) int timeSinceStart;
 - (int)StringAsProactiveItemType:(id)arg1;
 - (id)proactiveItemTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasProactiveItemType;
-@property(nonatomic) int proactiveItemType; // @synthesize proactiveItemType=_proactiveItemType;
+@property(nonatomic) int proactiveItemType;
 
 @end
 

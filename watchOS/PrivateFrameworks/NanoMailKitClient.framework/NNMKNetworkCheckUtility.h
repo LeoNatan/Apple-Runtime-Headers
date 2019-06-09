@@ -25,6 +25,7 @@
 - (void)_updateCapabilities;
 - (void)_registerForCapabilityNotifications;
 - (_Bool)isNetworkConnectionAllowed;
+- (_Bool)isNetworkNonRestricted;
 - (id)init;
 
 @end

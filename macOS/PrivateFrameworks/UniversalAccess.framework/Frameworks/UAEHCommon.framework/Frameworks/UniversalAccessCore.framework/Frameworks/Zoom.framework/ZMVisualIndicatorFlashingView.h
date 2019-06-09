@@ -10,6 +10,7 @@
 
 @class CAAnimationGroup, CAKeyframeAnimation, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ZMVisualIndicatorFlashingView : NSView <ZMVisualIndicating>
 {
     CAKeyframeAnimation *__pulseAnimation;

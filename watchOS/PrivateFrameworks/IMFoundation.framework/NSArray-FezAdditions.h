@@ -21,5 +21,7 @@
 - (_Bool)__imIsMutable;
 - (id)__imSetFromArray;
 - (id)__IMStripPotentialTokenURIs;
+- (void)differencesFromArray:(id)arg1 usingComparator:(CDUnknownBlockType)arg2 removedIndexes:(id *)arg3 insertedIndexes:(id *)arg4;
+- (void)differencesFromArray:(id)arg1 removedIndexes:(id *)arg2 insertedIndexes:(id *)arg3;
 @end
 

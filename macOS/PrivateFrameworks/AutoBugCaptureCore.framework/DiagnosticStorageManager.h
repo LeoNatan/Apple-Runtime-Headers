@@ -12,6 +12,7 @@
 @class ABCPersistentStoreController, NSMutableArray, NSMutableDictionary, NSString, SymptomsFileCleaner;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface DiagnosticStorageManager : NSObject <SymptomsFileCleanerDelegate, DiagnosticCaseManagerStorageDelegate>
 {
     unsigned long long _lastCalculatedDiskUsageSize;
@@ -38,10 +39,9 @@
 - (void)deleteAttachmentsForCases:(id)arg1;
 - (void)removeCaseStorageAndAttachmentsForCasesWithUUIDs:(id)arg1;
 - (void)_purgeCasesWithCaseIDs:(id)arg1;
-- (void)_calculatePurgableSizeForDiskUsageLimit:(unsigned long long)arg1 caseIDs:(id *)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)_calculatePurgableSizeForRequestedPurgeSize:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)_performSizedPurge:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
-- (unsigned long long)performPurgeToMeetDiskUsageLimit:(unsigned long long)arg1;
-- (unsigned long long)calculatePurgableSizeForDiskUsageLimit:(unsigned long long)arg1;
+- (unsigned long long)performPurgeToMeetDiskUsageLimit:(unsigned long long)arg1 calculateOnly:(BOOL)arg2;
 - (unsigned long long)performPeriodicPurge;
 - (void)invalidateDiskUsageStatistics;
 - (unsigned long long)allowableDiskUsageSize;

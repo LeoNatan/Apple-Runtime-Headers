@@ -6,30 +6,46 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class NSArray, NSDictionary, NSMutableDictionary;
+@protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
 @interface FPStitchingSession : NSObject
 {
+    NSMutableDictionary *_stitchedFields;
     NSMutableDictionary *_originalItems;
     NSMutableDictionary *_stitchedItems;
     NSMutableDictionary *_stitchedPlaceholders;
     NSMutableDictionary *_deletedItems;
     _Bool _started;
+    _Bool _finished;
+    NSObject<OS_dispatch_queue> *_queue;
+    CDUnknownBlockType _placeholdersCreationBlock;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType placeholdersCreationBlock; // @synthesize placeholdersCreationBlock=_placeholdersCreationBlock;
 - (void).cxx_destruct;
-- (void)replacePlaceholderWith:(id)arg1;
-- (void)operationCompletedWithItem:(id)arg1 error:(id)arg2;
-- (void)operationCompletedWithItems:(id)arg1 error:(id)arg2;
+- (id)createPlaceholderWithName:(id)arg1 typeIdentifier:(id)arg2 contentAccessDate:(id)arg3 underParent:(id)arg4 inProviderDomainID:(id)arg5;
+- (id)createPlaceholderWithName:(id)arg1 isFolder:(_Bool)arg2 contentAccessDate:(id)arg3 underParent:(id)arg4 inProviderDomainID:(id)arg5;
+- (id)createArchivePlaceholderForItem:(id)arg1 underParent:(id)arg2 inProviderDomainID:(id)arg3;
+- (id)createGenericArchivePlaceholderUnderParent:(id)arg1 inProviderDomainID:(id)arg2;
+- (id)createPlaceholderWithCopyOfExistingItem:(id)arg1 lastUsageUpdatePolicy:(unsigned long long)arg2 underParent:(id)arg3 inProviderDomainID:(id)arg4;
+- (void)replacePlaceholderWithID:(id)arg1 withItem:(id)arg2;
+- (id)itemWithPlaceholderID:(id)arg1;
+- (void)associateItem:(id)arg1 withPlaceholderID:(id)arg2;
+- (void)finishWithItem:(id)arg1 error:(id)arg2;
+- (void)finishWithItems:(id)arg1 error:(id)arg2;
+- (void)_finishWithItems:(id)arg1 error:(id)arg2;
 - (void)deleteItems:(id)arg1;
 - (void)transformItems:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)attachProgress:(id)arg1 toPlaceholder:(id)arg2;
-- (id)createPlaceholderWithName:(id)arg1 isFolder:(_Bool)arg2 contentAccessDate:(id)arg3 underParent:(id)arg4 inProvider:(id)arg5;
-- (id)createPlaceholderWithCopyOfExistingItem:(id)arg1 lastUsageUpdatePolicy:(unsigned long long)arg2 underParent:(id)arg3 inProvider:(id)arg4;
 - (void)flush;
-- (void)stop;
+- (void)finish;
+- (void)_finish;
 - (void)start;
+@property(readonly, nonatomic) NSDictionary *stitchedFieldsAndItemsByItemIDs;
+@property(readonly, nonatomic) NSArray *placeholderItems;
+- (void)_clear;
+- (void)dealloc;
 - (id)init;
 
 @end

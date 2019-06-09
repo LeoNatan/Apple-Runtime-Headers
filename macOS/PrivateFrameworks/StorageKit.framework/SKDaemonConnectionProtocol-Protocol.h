@@ -9,6 +9,8 @@
 @class NSArray, NSData, NSDictionary, NSString, NSURL;
 
 @protocol SKDaemonConnectionProtocol <NSObject>
+- (void)removeAPFSVolumeGroup:(NSString *)arg1 container:(NSDictionary *)arg2 completetionBlock:(void (^)(BOOL, NSError *))arg3;
+- (void)createAPFSVolumeGroupWithDisks:(NSArray *)arg1 container:(NSDictionary *)arg2 completetionBlock:(void (^)(BOOL, NSError *, NSString *))arg3;
 - (void)deleteSnapshots:(NSArray *)arg1 disk:(NSDictionary *)arg2 completionBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)revertToSnapshot:(NSString *)arg1 disk:(NSDictionary *)arg2 completionBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)renameSnapshot:(NSString *)arg1 toName:(NSString *)arg2 disk:(NSDictionary *)arg3 completionBlock:(void (^)(BOOL, NSError *))arg4;
@@ -20,8 +22,9 @@
 - (void)repairRAID:(NSDictionary *)arg1 spareDisk:(NSDictionary *)arg2 handlingProgressForOperationUUID:(NSString *)arg3 completionBlock:(void (^)(BOOL, NSError *))arg4;
 - (void)convertToAPFS:(NSDictionary *)arg1 isDryRun:(BOOL)arg2 options:(NSDictionary *)arg3 handlingProgressForOperationUUID:(NSString *)arg4 andCompletionHandler:(void (^)(NSDictionary *, NSDictionary *, NSError *))arg5;
 - (void)convertToAPFS:(NSDictionary *)arg1 isDryRun:(BOOL)arg2 handlingProgressForOperationUUID:(NSString *)arg3 andCompletionHandler:(void (^)(NSDictionary *, NSDictionary *, NSError *))arg4;
+- (void)setAPFSRole:(NSString *)arg1 forDisk:(NSDictionary *)arg2 completionBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)deleteAPFSVolume:(NSDictionary *)arg1 optionsDictionary:(NSDictionary *)arg2 handlingProgressForOperationUUID:(NSString *)arg3 completionBlock:(void (^)(BOOL, NSError *))arg4;
-- (void)addChildVolumeToAPFSContainer:(NSDictionary *)arg1 optionsDictionary:(NSDictionary *)arg2 handlingProgressForOperationUUID:(NSString *)arg3 completionBlock:(void (^)(BOOL, NSError *))arg4;
+- (void)addChildVolumeToAPFSContainer:(NSDictionary *)arg1 optionsDictionary:(NSDictionary *)arg2 handlingProgressForOperationUUID:(NSString *)arg3 completionBlock:(void (^)(BOOL, NSDictionary *, NSError *))arg4;
 - (void)deleteAPFSContainer:(NSDictionary *)arg1 handlingProgressForOperationUUID:(NSString *)arg2 completionBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)createAPFSContainerWithDisks:(NSArray *)arg1 progressUUID:(NSString *)arg2 callbackBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)volumesForAPFSPS:(NSDictionary *)arg1 completionBlock:(void (^)(NSArray *))arg2;
@@ -60,6 +63,7 @@
 - (void)ejectDisk:(NSDictionary *)arg1 withCompletionBlock:(void (^)(NSError *))arg2;
 - (void)enableJournalingOnDisk:(NSDictionary *)arg1 withCompletionBlock:(void (^)(NSDictionary *, BOOL))arg2;
 - (void)enablePermissionsOnDisk:(NSDictionary *)arg1 withCompletionBlock:(void (^)(NSDictionary *, BOOL))arg2;
+- (void)unEnsureRecoveryForDisk:(NSDictionary *)arg1 handlingProgressForOperationUUID:(NSString *)arg2 callbackBlock:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)ensureRecoveryForDisk:(NSDictionary *)arg1 withRecoverySystemPath:(NSString *)arg2 chunkkList:(NSString *)arg3 diagnostics:(NSString *)arg4 ignoreBlacklist:(BOOL)arg5 handlingProgressForOperationUUID:(NSString *)arg6 callbackBlock:(void (^)(NSDictionary *, NSError *))arg7;
 - (void)blessDisk:(NSDictionary *)arg1 options:(NSDictionary *)arg2 withCallbackBlock:(void (^)(BOOL, NSError *))arg3;
 - (void)compositeDisks:(NSArray *)arg1 volumeName:(NSString *)arg2 handlingProgressForOperationUUID:(NSString *)arg3 callbackBlock:(void (^)(NSError *))arg4;
@@ -67,7 +71,7 @@
 - (void)resize:(NSDictionary *)arg1 toSize:(unsigned long long)arg2 handlingProgressForOperationUUID:(NSString *)arg3 withCompletionHandler:(void (^)(NSError *))arg4;
 - (void)splitDisk:(NSDictionary *)arg1 toSize:(unsigned long long)arg2 newDiskRole:(NSString *)arg3 name:(NSString *)arg4 caseSensitive:(BOOL)arg5 password:(NSString *)arg6 handlingProgressForOperationUUID:(NSString *)arg7 withCompletionBlock:(void (^)(NSDictionary *, NSDictionary *, NSError *))arg8;
 - (void)splitDisk:(NSDictionary *)arg1 toSize:(unsigned long long)arg2 newDiskType:(NSString *)arg3 name:(NSString *)arg4 caseSensitive:(BOOL)arg5 password:(NSString *)arg6 handlingProgressForOperationUUID:(NSString *)arg7 withCompletionBlock:(void (^)(NSDictionary *, NSDictionary *, NSError *))arg8;
-- (void)mountDisk:(NSDictionary *)arg1 options:(NSArray *)arg2 withCompletionBlock:(void (^)(NSError *))arg3;
+- (void)mountDisk:(NSDictionary *)arg1 options:(NSDictionary *)arg2 withCompletionBlock:(void (^)(NSError *))arg3;
 - (void)unmountDisk:(NSDictionary *)arg1 options:(NSDictionary *)arg2 withCompletionBlock:(void (^)(NSError *))arg3;
 - (void)renameDisk:(NSDictionary *)arg1 to:(NSString *)arg2 withCompletionBlock:(void (^)(NSError *))arg3;
 - (void)secureEraseDisk:(NSDictionary *)arg1 withEraseLevel:(int)arg2 handlingProgressForOperationUUID:(NSString *)arg3 withCompletionBlock:(void (^)(NSDictionary *, NSError *))arg4;

@@ -13,7 +13,6 @@
     _Bool _includeExtensiveClusters;
     _Bool _removeExtensiveClustersObjectsFromDataset;
     _Bool _removeExtensiveClustersContainingDefiniteClusters;
-    _Bool _clusterAllRemainingObjects;
     unsigned int _algorithm;
     unsigned int _definiteClusterMinimumNumberOfObjects;
     unsigned int _extensiveClusterMinimumNumberOfObjects;
@@ -25,7 +24,6 @@
     double _extensiveClusterMinimumNumberOfObjectsPercent;
 }
 
-@property(nonatomic) _Bool clusterAllRemainingObjects; // @synthesize clusterAllRemainingObjects=_clusterAllRemainingObjects;
 @property(nonatomic) _Bool removeExtensiveClustersContainingDefiniteClusters; // @synthesize removeExtensiveClustersContainingDefiniteClusters=_removeExtensiveClustersContainingDefiniteClusters;
 @property(nonatomic) _Bool removeExtensiveClustersObjectsFromDataset; // @synthesize removeExtensiveClustersObjectsFromDataset=_removeExtensiveClustersObjectsFromDataset;
 @property(nonatomic) unsigned int extensiveClusterMinimumNumberOfObjects; // @synthesize extensiveClusterMinimumNumberOfObjects=_extensiveClusterMinimumNumberOfObjects;

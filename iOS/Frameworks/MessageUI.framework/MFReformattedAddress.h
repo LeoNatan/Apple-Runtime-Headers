@@ -15,12 +15,12 @@
 }
 
 @property(nonatomic) struct _NSRange middleTruncationRange; // @synthesize middleTruncationRange=_middleTruncationRange;
+- (void).cxx_destruct;
 - (id)attributedStringWithFontSize:(double)arg1 maximumWidth:(double)arg2 options:(unsigned long long)arg3;
 - (double)widthWithFontSize:(double)arg1 maximumWidth:(double)arg2 options:(unsigned long long)arg3;
 @property(readonly, nonatomic) NSString *domainPart;
 @property(readonly, nonatomic) NSString *localPart;
 - (id)description;
-- (void)dealloc;
 - (id)initWithAddress:(id)arg1;
 
 @end

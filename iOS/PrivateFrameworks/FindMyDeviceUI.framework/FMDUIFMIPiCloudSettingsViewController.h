@@ -6,20 +6,27 @@
 
 #import <Preferences/PSListController.h>
 
-@class ACAccount, PSSpecifier, RemoteUIController, UIProgressHUD;
+@class ACAccount, NSObject, PSSpecifier, RemoteUIController, UIProgressHUD;
+@protocol SPSettingsConfigurating;
 
 @interface FMDUIFMIPiCloudSettingsViewController : PSListController
 {
     _Bool _firstTimeSetup;
     _Bool _togglingFMIPSwitch;
     _Bool _activityInProgress;
+    _Bool _offlineFindingEnabled;
+    _Bool _offlineFindingDisabledDueToNotHSA2;
     ACAccount *_account;
     PSSpecifier *_fmipSpecifier;
     PSSpecifier *_sendLastLocationSpecifier;
     RemoteUIController *_ruiController;
     UIProgressHUD *_hud;
+    NSObject<SPSettingsConfigurating> *_spSession;
 }
 
+@property(nonatomic) _Bool offlineFindingDisabledDueToNotHSA2; // @synthesize offlineFindingDisabledDueToNotHSA2=_offlineFindingDisabledDueToNotHSA2;
+@property(nonatomic) _Bool offlineFindingEnabled; // @synthesize offlineFindingEnabled=_offlineFindingEnabled;
+@property(retain, nonatomic) NSObject<SPSettingsConfigurating> *spSession; // @synthesize spSession=_spSession;
 @property(nonatomic) _Bool activityInProgress; // @synthesize activityInProgress=_activityInProgress;
 @property(retain, nonatomic) UIProgressHUD *hud; // @synthesize hud=_hud;
 @property(retain, nonatomic) RemoteUIController *ruiController; // @synthesize ruiController=_ruiController;
@@ -41,11 +48,19 @@
 - (void)_reloadSpecifiersOnMainQueue;
 - (id)_sendLastLocationSwitchOnForSpecifier:(id)arg1;
 - (void)_setSendLastLocationSwitchOn:(id)arg1 forSpecifier:(id)arg2;
+- (void)_showOfflineFindingAlertWhenTurningOff;
+- (void)_setOfflineFindingSwitchOn:(id)arg1 forSpecifier:(id)arg2;
+- (id)_offlineFindingSwitchOnForSpecifier:(id)arg1;
 - (id)_fmipSwitchOnForSpecifier:(id)arg1;
 - (void)_setFMIPSwitchOn:(id)arg1 forSpecifier:(id)arg2;
 - (void)_showFMIPPrivacyPage;
+- (void)_showOfflineFindingLearnMorePage;
 - (id)_groupSpecifierForSendLastLocation;
 - (id)_specifierForSendLastLocation;
+- (void)presentHSA2UpgradeForOfflineFinding;
+- (void)showHSA2UpgradeAlert;
+- (id)_groupSpecifierForOfflineFinding;
+- (id)_specifierForOfflineFinding;
 - (id)_groupSpecifierForFMIP;
 - (id)_specifierForFMIP;
 - (id)specifiers;
@@ -53,6 +68,10 @@
 - (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
 - (void)viewDidLoad;
+- (_Bool)FMWLANEnabled;
+- (void)setSearchPartyConfigurationActive:(_Bool)arg1;
+- (void)_loadSearchPartyConfiguration;
+- (id)init;
 
 @end
 

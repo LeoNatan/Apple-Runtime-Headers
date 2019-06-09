@@ -8,6 +8,7 @@
 
 @class EDReferenceCollection, EDWorkbook;
 
+__attribute__((visibility("hidden")))
 @interface CHDFormula : EDFormula
 {
     EDReferenceCollection *mReferences;

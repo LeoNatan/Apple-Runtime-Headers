@@ -8,7 +8,7 @@
 
 #import <CloudServices/NSSecureCoding-Protocol.h>
 
-@class NSData, NSDate, NSDictionary, NSError, NSString, SESWrapper;
+@class EscrowPrerecord, NSData, NSDate, NSDictionary, NSError, NSString, SESWrapper;
 @protocol OS_dispatch_queue;
 
 @interface SecureBackup : NSObject <NSSecureCoding>
@@ -55,11 +55,18 @@
     NSError *_error;
     NSString *_activityLabel;
     NSString *_activityUUID;
+    NSString *_hsa2CachedPrerecordUUID;
+    EscrowPrerecord *_prerecord;
     SESWrapper *_ses;
 }
 
++ (unsigned int)daemonPasscodeRequestOpinion:(id *)arg1;
++ (unsigned int)needPasscodeForHSA2EscrowRecordUpdate:(id *)arg1;
 + (_Bool)supportsSecureCoding;
++ (id)_ClassCreateSecureBackupConnection;
 @property(retain, nonatomic) SESWrapper *ses; // @synthesize ses=_ses;
+@property(retain, nonatomic) EscrowPrerecord *prerecord; // @synthesize prerecord=_prerecord;
+@property(copy, nonatomic) NSString *hsa2CachedPrerecordUUID; // @synthesize hsa2CachedPrerecordUUID=_hsa2CachedPrerecordUUID;
 @property(copy, nonatomic) NSString *activityUUID; // @synthesize activityUUID=_activityUUID;
 @property(copy, nonatomic) NSString *activityLabel; // @synthesize activityLabel=_activityLabel;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
@@ -103,7 +110,11 @@
 @property(copy, nonatomic) NSString *authToken; // @synthesize authToken=_authToken;
 @property(copy, nonatomic) NSString *appleID; // @synthesize appleID=_appleID;
 - (void).cxx_destruct;
+- (id)beginHSA2PasscodeRequest:(_Bool)arg1 uuid:(id)arg2 error:(id *)arg3;
+- (id)beginHSA2PasscodeRequest:(_Bool)arg1 error:(id *)arg2;
+- (void)prepareHSA2EscrowRecordContents:(_Bool)arg1 reply:(CDUnknownBlockType)arg2;
 - (id)srpRecoveryBlobFromSRPInitResponse:(id)arg1;
+- (void)srpRecoveryUpdateDSID:(id)arg1 recoveryPassphrase:(id)arg2;
 - (id)srpInitNonce;
 - (void)notificationOccurred:(id)arg1;
 - (void)setBackOffDateWithInfo:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;

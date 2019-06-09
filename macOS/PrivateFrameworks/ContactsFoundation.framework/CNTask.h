@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)recover:(CDUnknownBlockType)arg1;
+- (id)map:(CDUnknownBlockType)arg1;
 - (id)flatMap:(CDUnknownBlockType)arg1;
 - (id)run;
 - (id)run:(id *)arg1;

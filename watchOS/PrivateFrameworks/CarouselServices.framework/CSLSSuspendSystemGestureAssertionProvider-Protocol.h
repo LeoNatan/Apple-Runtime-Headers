@@ -6,10 +6,10 @@
 
 #import <CarouselServices/NSObject-Protocol.h>
 
-@class NSString;
+@class CSLSSuspendSystemGestureAssertionConfiguration;
 
 @protocol CSLSSuspendSystemGestureAssertionProvider <NSObject>
-- (void)releaseSuspendSystemGestureAssertion:(NSString *)arg1 pid:(int)arg2;
-- (void)takeSuspendSystemGestureAssertion:(NSString *)arg1 withEdges:(unsigned int)arg2 pid:(int)arg3;
+- (void)releaseSuspendSystemGestureAssertionWithConfiguration:(CSLSSuspendSystemGestureAssertionConfiguration *)arg1;
+- (void)takeSuspendSystemGestureAssertionWithConfiguration:(CSLSSuspendSystemGestureAssertionConfiguration *)arg1;
 @end
 

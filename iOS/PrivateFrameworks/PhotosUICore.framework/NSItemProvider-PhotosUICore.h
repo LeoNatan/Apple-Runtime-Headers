@@ -7,13 +7,12 @@
 #import <Foundation/NSItemProvider.h>
 
 @interface NSItemProvider (PhotosUICore)
-+ (id)_px_temporaryURLFromURL:(id)arg1;
 + (id)px_itemProvidersForFetchResult:(id)arg1;
 + (id)px_itemProvidersForCollection:(id)arg1;
 + (void)_px_recursivelyCollectCollectionsIn:(id)arg1 fetchResult:(id)arg2;
-+ (id)_itemProviderForAsset:(id)arg1;
 + (id)_fileProviderItemProviderForAsset:(id)arg1;
 + (id)px_itemProviderForAsset:(id)arg1;
++ (id)px_itemProviderForDisplayAsset:(id)arg1;
 - (long long)_px_shareMediaTypeFromUniformTypeIdentifier:(id)arg1;
 - (id)_px_sharedMediaVideoComplementFromURL:(id)arg1;
 - (id)_px_assetResourceBagsFromUniformTypeIdentifier:(id)arg1 atURL:(id)arg2;

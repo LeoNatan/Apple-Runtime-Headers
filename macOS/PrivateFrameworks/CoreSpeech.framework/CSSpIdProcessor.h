@@ -6,41 +6,23 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreSpeech/CSSpIdSpeakerVectorGeneratorDelegate-Protocol.h>
+@class NSString;
 
-@class CSSpIdSpeakerVectorGenerator, NSArray, NSString;
-@protocol CSSpIdProcessorDelegate;
-
-@interface CSSpIdProcessor : NSObject <CSSpIdSpeakerVectorGeneratorDelegate>
+@interface CSSpIdProcessor : NSObject
 {
-    unsigned long long _spIdType;
-    NSString *_spIdTypeStr;
-    id <CSSpIdProcessorDelegate> _delegate;
-    CSSpIdSpeakerVectorGenerator *_spIdSvg;
-    NSArray *_satAnalyzers;
+    NSString *_sysConfigFilepath;
 }
 
-@property(retain, nonatomic) NSArray *satAnalyzers; // @synthesize satAnalyzers=_satAnalyzers;
-@property(retain, nonatomic) CSSpIdSpeakerVectorGenerator *spIdSvg; // @synthesize spIdSvg=_spIdSvg;
-@property(nonatomic) __weak id <CSSpIdProcessorDelegate> delegate; // @synthesize delegate=_delegate;
-@property(retain, nonatomic) NSString *spIdTypeStr; // @synthesize spIdTypeStr=_spIdTypeStr;
-@property(nonatomic) unsigned long long spIdType; // @synthesize spIdType=_spIdType;
+@property(readonly, nonatomic) NSString *sysConfigFilepath; // @synthesize sysConfigFilepath=_sysConfigFilepath;
 - (void).cxx_destruct;
-- (void)speakerVectorGenerator:(id)arg1 finishedWithFinalSpeakerVector:(id)arg2 speakerVectorSize:(unsigned long long)arg3 processedAudioDurationMs:(unsigned long long)arg4;
-- (void)speakerVectorGenerator:(id)arg1 hasSpeakerVector:(id)arg2 speakerVectorSize:(unsigned long long)arg3 processedAudioDurationMs:(unsigned long long)arg4;
-- (void)_processSpeakerVector:(id)arg1 withSize:(unsigned long long)arg2 processedAudioDurationMs:(unsigned long long)arg3 isFinal:(BOOL)arg4;
+- (void)logUtteranceUnderDirectory:(id)arg1 withScores:(id)arg2 withWinner:(id)arg3;
+- (void)rejectUtterance;
+- (void)updateModelWithBestScoreUser:(id)arg1;
 - (void)endProcessing;
 - (void)processAudioData:(id)arg1;
-@property(readonly, nonatomic) NSString *sysConfigFilepath;
 @property(readonly, nonatomic) float satScoreThreshold;
-- (void)dealloc;
-- (id)initWithSpIdContext:(id)arg1 forSpIdType:(unsigned long long)arg2 delegate:(id)arg3;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+@property(readonly, nonatomic) unsigned long long spIdType;
+- (id)initWithCSSpIdType:(unsigned long long)arg1 delegate:(id)arg2;
 
 @end
 

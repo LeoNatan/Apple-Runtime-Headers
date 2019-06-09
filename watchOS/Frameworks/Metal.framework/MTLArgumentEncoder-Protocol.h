@@ -7,7 +7,7 @@
 #import <Metal/NSObject-Protocol.h>
 
 @class NSString;
-@protocol MTLArgumentEncoder, MTLBuffer, MTLDevice, MTLIndirectCommandBuffer, MTLRenderPipelineState, MTLSamplerState, MTLTexture;
+@protocol MTLArgumentEncoder, MTLBuffer, MTLComputePipelineState, MTLDevice, MTLIndirectCommandBuffer, MTLRenderPipelineState, MTLSamplerState, MTLTexture;
 
 @protocol MTLArgumentEncoder <NSObject>
 @property(readonly) unsigned int alignment;
@@ -17,6 +17,8 @@
 - (id <MTLArgumentEncoder>)newArgumentEncoderForBufferAtIndex:(unsigned int)arg1;
 - (void)setIndirectCommandBuffers:(const id *)arg1 withRange:(struct _NSRange)arg2;
 - (void)setIndirectCommandBuffer:(id <MTLIndirectCommandBuffer>)arg1 atIndex:(unsigned int)arg2;
+- (void)setComputePipelineStates:(const id *)arg1 withRange:(struct _NSRange)arg2;
+- (void)setComputePipelineState:(id <MTLComputePipelineState>)arg1 atIndex:(unsigned int)arg2;
 - (void)setRenderPipelineStates:(const id *)arg1 withRange:(struct _NSRange)arg2;
 - (void)setRenderPipelineState:(id <MTLRenderPipelineState>)arg1 atIndex:(unsigned int)arg2;
 - (void *)constantDataAtIndex:(unsigned int)arg1;

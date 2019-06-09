@@ -32,6 +32,7 @@
     NSButton *_forgotButtonForStandardAuthentication;
     NSButton *_forgotButtonForReauthentication;
     NSButton *_helpButton;
+    NSTextField *_usernameTitle;
     NSTextField *_usernameField;
     AKPaddedTextFieldCell *_paddedUsernameCell;
     NSTextField *_passwordTitle;
@@ -132,6 +133,7 @@
 @property(retain) NSTextField *passwordTitle; // @synthesize passwordTitle=_passwordTitle;
 @property(retain) AKPaddedTextFieldCell *paddedUsernameCell; // @synthesize paddedUsernameCell=_paddedUsernameCell;
 @property(retain) NSTextField *usernameField; // @synthesize usernameField=_usernameField;
+@property(retain) NSTextField *usernameTitle; // @synthesize usernameTitle=_usernameTitle;
 @property(retain) NSButton *helpButton; // @synthesize helpButton=_helpButton;
 @property(retain) NSButton *forgotButtonForReauthentication; // @synthesize forgotButtonForReauthentication=_forgotButtonForReauthentication;
 @property(retain) NSButton *forgotButtonForStandardAuthentication; // @synthesize forgotButtonForStandardAuthentication=_forgotButtonForStandardAuthentication;

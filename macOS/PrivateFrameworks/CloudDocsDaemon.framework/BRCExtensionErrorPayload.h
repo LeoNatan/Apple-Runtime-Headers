@@ -13,8 +13,12 @@
 @interface BRCExtensionErrorPayload : PBCodable <NSCopying>
 {
     NSString *_minimumOSName;
+    NSString *_recordId;
+    NSString *_zoneNeedsPrep;
 }
 
+@property(retain, nonatomic) NSString *recordId; // @synthesize recordId=_recordId;
+@property(retain, nonatomic) NSString *zoneNeedsPrep; // @synthesize zoneNeedsPrep=_zoneNeedsPrep;
 @property(retain, nonatomic) NSString *minimumOSName; // @synthesize minimumOSName=_minimumOSName;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
@@ -26,6 +30,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(readonly, nonatomic) BOOL hasRecordId;
+@property(readonly, nonatomic) BOOL hasZoneNeedsPrep;
 @property(readonly, nonatomic) BOOL hasMinimumOSName;
 
 @end

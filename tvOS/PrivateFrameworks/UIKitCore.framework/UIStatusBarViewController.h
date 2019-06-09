@@ -23,10 +23,8 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_statusBarViewControllerKeyboardDidHide:(id)arg1;
 - (void)_statusBarViewControllerKeyboardWillShow:(id)arg1;
-- (void)_changeStatusBarOrientationFinished:(id)arg1 finished:(_Bool)arg2 context:(void *)arg3;
 - (void)_finishStatusBarOrientationChange;
 - (void)_changeStatusBarOrientationFrom:(long long)arg1 toOrientation:(long long)arg2;
-- (void)_statusBarHideAnimationFinished:(id)arg1 finished:(_Bool)arg2 hidden:(id)arg3;
 - (struct CGSize)_statusBarSizeForOrientation:(long long)arg1;
 - (void)_updateStatusBarForRotationFromInterfaceOrientation:(long long)arg1 toInterfaceOrientation:(long long)arg2 style:(long long)arg3 hidden:(_Bool)arg4 slideUp:(_Bool)arg5;
 - (void)_updateStatusBarGeometryForRotationFromInterfaceOrientation:(long long)arg1 toInterfaceOrientation:(long long)arg2 hidden:(_Bool)arg3 slideUp:(_Bool)arg4;
@@ -35,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (void)setStatusBarOrientation:(long long)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarStyle:(long long)arg1 animationParameters:(id)arg2;
 - (void)setStatusBarHidden:(_Bool)arg1 animationParameters:(id)arg2;
-- (void)viewDidLoad;
 - (void)loadView;
 - (_Bool)isClassicControlWindow:(id)arg1;
 - (void)dealloc;

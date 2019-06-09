@@ -6,13 +6,10 @@
 
 #import <objc/NSObject.h>
 
-#import <PhotoLibrary/NSSecureCoding-Protocol.h>
-
 @class NSArray, NSDictionary, NSString, PHLIngestAsset;
 
-@interface PHLIngestRequest : NSObject <NSSecureCoding>
+@interface PHLIngestRequest : NSObject
 {
-    unsigned short _importedByType;
     NSString *_uuid;
     PHLIngestAsset *_masterAsset;
     PHLIngestAsset *_alternateMasterAsset;
@@ -26,11 +23,9 @@
     PHLIngestAsset *_videoComplementAsset;
 }
 
-+ (BOOL)supportsSecureCoding;
 @property(retain) PHLIngestAsset *videoComplementAsset; // @synthesize videoComplementAsset=_videoComplementAsset;
 @property(retain) PHLIngestAsset *miniThumbnailAsset; // @synthesize miniThumbnailAsset=_miniThumbnailAsset;
-@property unsigned short importedByType; // @synthesize importedByType=_importedByType;
-@property long long options; // @synthesize options=_options;
+@property(readonly) long long options; // @synthesize options=_options;
 @property(retain) NSDictionary *userInfo; // @synthesize userInfo=_userInfo;
 @property(retain) NSDictionary *metadataProperties; // @synthesize metadataProperties=_metadataProperties;
 @property(retain) NSArray *adjustments; // @synthesize adjustments=_adjustments;
@@ -40,9 +35,6 @@
 @property(retain) PHLIngestAsset *masterAsset; // @synthesize masterAsset=_masterAsset;
 @property(readonly) NSString *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
-- (BOOL)isOptionSet:(long long)arg1;
-- (void)encodeWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithMasterAsset:(id)arg1 alternateMasterAsset:(id)arg2 renderedAsset:(id)arg3 thumbnailAsset:(id)arg4 miniThumbnailAsset:(id)arg5 videoComplement:(id)arg6 adjustments:(id)arg7 metadataProperties:(id)arg8 userInfo:(id)arg9 options:(long long)arg10;
 - (id)initWithMasterAsset:(id)arg1 renderedAsset:(id)arg2 thumbnailAsset:(id)arg3 videoComplement:(id)arg4 adjustments:(id)arg5 metadataProperties:(id)arg6 userInfo:(id)arg7;
 - (id)initWithMasterAsset:(id)arg1 renderedAsset:(id)arg2 thumbnailAsset:(id)arg3 adjustments:(id)arg4 metadataProperties:(id)arg5 userInfo:(id)arg6;

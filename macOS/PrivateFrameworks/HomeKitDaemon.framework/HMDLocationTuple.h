@@ -18,7 +18,7 @@
 }
 
 + (id)tupleWithLocation:(id)arg1 reachableIPAccessory:(unsigned long long)arg2 reachableBTLEAccessory:(unsigned long long)arg3 reachableMediaAccessory:(unsigned long long)arg4 date:(id)arg5;
-@property(retain, nonatomic) NSDate *date; // @synthesize date=_date;
+@property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 @property(nonatomic) unsigned long long numberOfreachableMediaAccessory; // @synthesize numberOfreachableMediaAccessory=_numberOfreachableMediaAccessory;
 @property(nonatomic) unsigned long long numberOfReachableBTLEAccessory; // @synthesize numberOfReachableBTLEAccessory=_numberOfReachableBTLEAccessory;
 @property(nonatomic) unsigned long long numberOfReachableIPAccessory; // @synthesize numberOfReachableIPAccessory=_numberOfReachableIPAccessory;

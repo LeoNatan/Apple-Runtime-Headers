@@ -6,12 +6,11 @@
 
 #import <AppKit/NSWindowController.h>
 
-@class CWNetwork, NSButton, NSString, NSTextField;
+@class CWDisplayedScanResult, NSButton, NSTextField;
 
 @interface CWErrorDialog : NSWindowController
 {
-    NSString *_networkName;
-    CWNetwork *_network;
+    CWDisplayedScanResult *_scanResult;
     NSTextField *_title;
     NSTextField *_description;
     NSButton *_runDiagnosticsButton;
@@ -21,8 +20,7 @@
     BOOL _installerContext;
 }
 
-@property(readonly, copy) NSString *networkName; // @synthesize networkName=_networkName;
-@property(readonly, copy) CWNetwork *network; // @synthesize network=_network;
+@property(readonly, copy) CWDisplayedScanResult *scanResult; // @synthesize scanResult=_scanResult;
 @property __weak id delegate; // @synthesize delegate=_delegate;
 - (void)windowDidLoad;
 - (void)awakeFromNib;
@@ -31,7 +29,7 @@
 - (void)onOKButton:(id)arg1;
 - (id)localizedStringForKey:(id)arg1;
 - (void)dealloc;
-- (id)initWithNetwork:(id)arg1 networkName:(id)arg2;
+- (id)initWithScanResult:(id)arg1;
 
 @end
 

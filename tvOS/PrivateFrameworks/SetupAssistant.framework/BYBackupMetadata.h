@@ -10,7 +10,6 @@
 
 @class NSData;
 
-__attribute__((visibility("hidden")))
 @interface BYBackupMetadata : PBCodable <NSCopying>
 {
     unsigned int _appAnalyticsOptIn;

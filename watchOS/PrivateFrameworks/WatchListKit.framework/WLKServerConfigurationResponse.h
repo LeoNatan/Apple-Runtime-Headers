@@ -9,16 +9,18 @@
 #import <WatchListKit/NSCopying-Protocol.h>
 #import <WatchListKit/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSString;
+@class NSDate, NSDictionary, NSNumber, NSString, NSURL;
 
 @interface WLKServerConfigurationResponse : NSObject <NSSecureCoding, NSCopying>
 {
     NSDictionary *_responseDictionary;
     NSDate *_expirationDate;
     unsigned int _environmentHash;
+    NSDictionary *_endpointsDictionary;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(readonly, nonatomic) NSDictionary *endpointsDictionary; // @synthesize endpointsDictionary=_endpointsDictionary;
 @property(readonly, nonatomic) unsigned int environmentHash; // @synthesize environmentHash=_environmentHash;
 @property(readonly, nonatomic) NSDate *expirationDate; // @synthesize expirationDate=_expirationDate;
 @property(readonly, nonatomic) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
@@ -29,15 +31,18 @@
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (id)APIBaseURL;
+- (id)utsc;
 - (_Bool)isValid;
-@property(readonly, nonatomic, getter=isActiveUser) _Bool activeUser;
-@property(readonly, copy, nonatomic) NSString *ek;
-@property(readonly, nonatomic) NSString *vppaStatus;
-@property(readonly, nonatomic) NSArray *orderedChannels;
-@property(readonly, nonatomic) NSDictionary *requiredRequestKeyValuePairsDictionary;
-@property(readonly, nonatomic) NSDictionary *serverRoutesDictionary;
-@property(readonly, nonatomic) NSDictionary *endpointsDictionary;
 - (id)dictionaryRepresentation;
+@property(readonly, copy, nonatomic) NSNumber *vppaSessionDurationInMillis;
+@property(readonly, nonatomic, getter=isActiveUser) _Bool activeUser;
+@property(readonly, nonatomic) NSDictionary *features;
+@property(readonly, copy, nonatomic) NSString *utsk;
+@property(readonly, nonatomic) NSURL *playActivityURL;
+@property(readonly, nonatomic) int vppaStatus;
+@property(readonly, nonatomic) NSString *vppaStatusString;
+@property(readonly, nonatomic) NSDictionary *requiredRequestKeyValuePairsDictionary;
 - (id)initWithServerResponseDictionary:(id)arg1 expirationDate:(id)arg2 environmentHash:(unsigned int)arg3;
 - (id)initWithDictionary:(id)arg1;
 

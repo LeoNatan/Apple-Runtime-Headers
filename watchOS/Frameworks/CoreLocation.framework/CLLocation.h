@@ -9,7 +9,7 @@
 #import <CoreLocation/NSCopying-Protocol.h>
 #import <CoreLocation/NSSecureCoding-Protocol.h>
 
-@class CLFloor, CLLocationMatchInfo, NSDate, NSString;
+@class CLFloor, CLLocationMatchInfo, NSDate, NSString, _CLLocationGroundAltitude;
 
 @interface CLLocation : NSObject <NSCopying, NSSecureCoding>
 {
@@ -17,6 +17,8 @@
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)locationByReductivelyFilteringLocations:(id)arg1;
+- (id)initWithClientLocation:(CDStruct_05ee51d2)arg1 matchInfo:(id)arg2 trustedTimestamp:(double)arg3 groundAltitude:(id)arg4;
 - (void)setHorizontalAccuracy:(double)arg1;
 @property(readonly, nonatomic) NSString *iso6709Notation;
 - (id)propagateLocationToTime:(double)arg1;
@@ -46,6 +48,7 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithClientLocation:(CDStruct_05ee51d2)arg1 clientLocationPrivate:(CDStruct_f185aced)arg2;
 - (id)initWithClientLocation:(CDStruct_05ee51d2)arg1;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 timestamp:(id)arg5;
@@ -56,6 +59,7 @@
 @property(readonly, nonatomic) CLLocationMatchInfo *matchInfo;
 - (id)initWithClientLocation:(CDStruct_05ee51d2)arg1 matchInfo:(id)arg2 trustedTimestamp:(double)arg3;
 - (id)initWithClientLocation:(CDStruct_05ee51d2)arg1 matchInfo:(id)arg2;
+@property(readonly, nonatomic) _CLLocationGroundAltitude *_groundAltitude;
 
 @end
 

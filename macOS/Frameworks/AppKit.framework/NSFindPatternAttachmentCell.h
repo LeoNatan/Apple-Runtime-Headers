@@ -44,7 +44,6 @@ __attribute__((visibility("hidden")))
 - (id)textColor;
 - (id)tokenColor;
 - (long long)interiorBackgroundStyle;
-- (BOOL)_isActiveInView:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(retain) NSFindPattern *findPattern; // @synthesize findPattern=_findPattern;
 - (id)_attributedString;

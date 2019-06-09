@@ -9,6 +9,7 @@
 @class NSMutableDictionary;
 @protocol BonjourProbeDelegate, DNSResolverProbeErrorDelegate;
 
+__attribute__((visibility("hidden")))
 @interface DNSResolverProbe : TestProbe
 {
     BOOL _includeAWDL;

@@ -10,6 +10,7 @@
 
 @class HMHome, HMUserListRemoteViewController, _UIAsyncInvocation;
 
+__attribute__((visibility("hidden")))
 @interface HMUserListViewController : UIViewController <HMUserManagementRemoteHost>
 {
     _Bool _shouldPresentWhenLoaded;

@@ -25,9 +25,11 @@
     NSString *_title;
     NSURL *_url;
     NSUUID *_uuid;
+    NSString *_sceneID;
 }
 
-+ (id)_dictionaryWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(_Bool)arg4 readerScrollPosition:(id)arg5 isPinned:(_Bool)arg6;
++ (id)_dictionaryWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(_Bool)arg4 readerScrollPosition:(id)arg5 isPinned:(_Bool)arg6 sceneID:(id)arg7;
+@property(readonly, copy, nonatomic) NSString *sceneID; // @synthesize sceneID=_sceneID;
 @property(nonatomic, getter=isPinned) _Bool pinned; // @synthesize pinned=_pinned;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) NSURL *url; // @synthesize url=_url;
@@ -50,7 +52,7 @@
 @property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(_Bool)arg4 readerScrollPosition:(id)arg5 isPinned:(_Bool)arg6;
-- (id)initWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(_Bool)arg4 readerScrollPosition:(id)arg5;
+- (id)initWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(_Bool)arg4 readerScrollPosition:(id)arg5 sceneID:(id)arg6;
 - (id)initWithDictionaryFromUserActivityUserInfo:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
 

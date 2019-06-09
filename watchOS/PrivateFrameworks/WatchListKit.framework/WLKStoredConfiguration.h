@@ -19,7 +19,7 @@
 @property(nonatomic) _Bool activeUser; // @synthesize activeUser=_activeUser;
 @property(retain, nonatomic) NSDictionary *requiredRequestKeyValuePairs; // @synthesize requiredRequestKeyValuePairs=_requiredRequestKeyValuePairs;
 - (void).cxx_destruct;
-@property(readonly, copy, nonatomic) NSString *ek;
+@property(readonly, nonatomic) NSString *utsk;
 - (id)description;
 
 @end

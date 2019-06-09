@@ -6,18 +6,21 @@
 
 #import <NanoPassKit/NPKPaymentProvisioningFlowStepContext.h>
 
-@class NSError;
+@class NSError, PKPaymentPass;
 
 @interface NPKPaymentProvisioningFlowControllerProvisioningResultStepContext : NPKPaymentProvisioningFlowStepContext
 {
     _Bool _cardAdded;
+    PKPaymentPass *_provisionedPass;
     NSError *_error;
 }
 
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;
+@property(retain, nonatomic) PKPaymentPass *provisionedPass; // @synthesize provisionedPass=_provisionedPass;
 @property(nonatomic) _Bool cardAdded; // @synthesize cardAdded=_cardAdded;
 - (void).cxx_destruct;
 - (id)description;
+- (id)initWithRequestContext:(id)arg1;
 
 @end
 

@@ -25,6 +25,7 @@
 - (struct CGRect)previewVisibleRect;
 - (BOOL)isPreviewVideoMirrored;
 - (void)highISOAdjustExposure;
+- (struct CGPoint)convertCameraPointOCR:(struct CGPoint)arg1 toLayer:(CALayer *)arg2 flipped:(BOOL)arg3;
 - (struct CGRect)convertCameraRect:(struct CGRect)arg1 fromLayer:(CALayer *)arg2;
 - (struct CGPoint)convertCameraPoint:(struct CGPoint)arg1 toLayer:(CALayer *)arg2 flipped:(BOOL)arg3;
 - (struct CGPoint)convertCameraPoint:(struct CGPoint)arg1 toLayer:(CALayer *)arg2;

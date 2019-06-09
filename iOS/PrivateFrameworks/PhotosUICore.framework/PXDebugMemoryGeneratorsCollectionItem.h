@@ -23,7 +23,7 @@
 @property(readonly) NSString *description; // @synthesize description=_description;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
-- (id)initWithMemory:(id)arg1;
+- (id)initWithMemory:(id)arg1 memoryInfo:(id)arg2;
 - (id)initWithOptions:(id)arg1;
 
 @end

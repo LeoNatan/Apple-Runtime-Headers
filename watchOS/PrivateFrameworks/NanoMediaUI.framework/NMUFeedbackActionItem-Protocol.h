@@ -4,10 +4,9 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSString, UIColor;
+@class NSString;
 
 @protocol NMUFeedbackActionItem
-@property(copy, nonatomic) UIColor *accessoryViewActiveTintColor;
 @property(copy, nonatomic) NSString *title;
 @property(nonatomic, getter=isVisible) _Bool visible;
 @property(nonatomic, getter=isEnabled) _Bool enabled;

@@ -7,52 +7,55 @@
 #import <objc/NSObject.h>
 
 #import <NanoWeatherKit/NWKForecastManagerObservable-Protocol.h>
+#import <NanoWeatherKit/NWKMonitor-Protocol.h>
 
-@class CLLocationManager, NSString, NWKForecastManager, NWKLocationForecast, WFLocation;
-@protocol NWKSelectedLocationWeatherMonitorObserver, OS_dispatch_queue;
+@class NSHashTable, NSString, NWKForecastManager, NWKLocationForecast, WFLocation;
+@protocol NWKSelectedLocationWeatherMonitorDelegate, OS_dispatch_queue;
 
-@interface NWKSelectedLocationWeatherMonitor : NSObject <NWKForecastManagerObservable>
+@interface NWKSelectedLocationWeatherMonitor : NSObject <NWKForecastManagerObservable, NWKMonitor>
 {
-    int _notifynanoweatherdForecastUpdatedToken;
     _Bool _waitingOnData;
-    WFLocation *_locked_currentLocation;
     WFLocation *_locked_selectedLocation;
-    id <NWKSelectedLocationWeatherMonitorObserver> _observer;
-    NSObject<OS_dispatch_queue> *_workQ;
-    CLLocationManager *_noOpLocationManager;
     NWKForecastManager *_forecastManager;
+    NSObject<OS_dispatch_queue> *_operationQueue;
+    unsigned int _loggingCategory;
+    id <NWKSelectedLocationWeatherMonitorDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_lockQueue;
+    NSHashTable *_locked_observers;
+    unsigned int _locked_forecastTypes;
     NWKLocationForecast *_locked_selectedLocationForecast;
 }
 
 @property(retain, nonatomic) NWKLocationForecast *locked_selectedLocationForecast; // @synthesize locked_selectedLocationForecast=_locked_selectedLocationForecast;
+@property(nonatomic) unsigned int locked_forecastTypes; // @synthesize locked_forecastTypes=_locked_forecastTypes;
+@property(retain, nonatomic) NSHashTable *locked_observers; // @synthesize locked_observers=_locked_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *lockQueue; // @synthesize lockQueue=_lockQueue;
-@property(readonly, nonatomic) NWKForecastManager *forecastManager; // @synthesize forecastManager=_forecastManager;
-@property(readonly, nonatomic) CLLocationManager *noOpLocationManager; // @synthesize noOpLocationManager=_noOpLocationManager;
-@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQ; // @synthesize workQ=_workQ;
-@property(readonly, nonatomic) __weak id <NWKSelectedLocationWeatherMonitorObserver> observer; // @synthesize observer=_observer;
+@property(nonatomic) __weak id <NWKSelectedLocationWeatherMonitorDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) unsigned int loggingCategory; // @synthesize loggingCategory=_loggingCategory;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(getter=isWaitingOnData) _Bool waitingOnData; // @synthesize waitingOnData=_waitingOnData;
+@property(readonly, nonatomic) NWKForecastManager *forecastManager; // @synthesize forecastManager=_forecastManager;
 @property(retain, nonatomic) WFLocation *locked_selectedLocation; // @synthesize locked_selectedLocation=_locked_selectedLocation;
-@property(retain, nonatomic) WFLocation *locked_currentLocation; // @synthesize locked_currentLocation=_locked_currentLocation;
 - (void).cxx_destruct;
-- (void)manager:(id)arg1 updatedStaticLocationsFrom:(id)arg2 to:(id)arg3;
-- (void)manager:(id)arg1 updatedSelectedLocationFrom:(id)arg2 to:(id)arg3;
-- (void)manager:(id)arg1 updatedLocalLocationFrom:(id)arg2 to:(id)arg3;
-- (void)manager:(id)arg1 updateForecastWithToken:(unsigned int)arg2 currentConditions:(id)arg3 currentAirQualityConditions:(id)arg4 hourlyForecasts:(id)arg5 dailyForecasts:(id)arg6 forLocation:(id)arg7;
-- (void)manager:(id)arg1 updatedDisplayName:(id)arg2 forLocation:(id)arg3;
-- (void)_temperaturePreferenceChanged:(id)arg1;
-- (void)_handleLocaleChange:(id)arg1;
-- (void)_workQ_resume;
-- (void)_locked_populateSelectedLocationForecastConditionsWithSelectedLocation;
-- (void)_performBlockAsyncOnWorkQueue:(CDUnknownBlockType)arg1;
-- (void)_workQ_pause;
-@property(readonly, nonatomic) NWKLocationForecast *selectedLocationForecast;
-@property(readonly, nonatomic) WFLocation *selectedLocation;
-@property(readonly, nonatomic) WFLocation *currentLocation;
 - (void)resume;
 - (void)pause;
-- (void)dealloc;
-- (id)initWithObserver:(id)arg1 operationQueue:(id)arg2;
+- (void)manager:(id)arg1 updatedTimeZone:(id)arg2 forLocation:(id)arg3;
+- (void)manager:(id)arg1 updatedStaticLocationsFrom:(id)arg2 to:(id)arg3;
+- (void)manager:(id)arg1 updatedSelectedLocationFrom:(id)arg2 to:(id)arg3;
+- (void)manager:(id)arg1 updateForecastWithToken:(unsigned int)arg2 currentConditions:(id)arg3 currentAirQualityConditions:(id)arg4 hourlyForecasts:(id)arg5 dailyForecasts:(id)arg6 forLocation:(id)arg7;
+- (void)manager:(id)arg1 updatedDisplayName:(id)arg2 forLocation:(id)arg3;
+- (void)managerReceivedLocationConnectionInterrupt:(id)arg1;
+- (void)manager:(id)arg1 receivedForecastConnectionInterruptForLocation:(id)arg2;
+@property(readonly, nonatomic) NWKLocationForecast *selectedLocationForecast;
+@property(readonly, nonatomic) WFLocation *selectedLocation;
+- (void)setForecastTypes:(unsigned int)arg1;
+- (unsigned int)forecastTypes;
+- (void)_locked_recalculateForecastTypes;
+- (void)_locked_notifyObservers:(CDUnknownBlockType)arg1;
+- (void)removeObserver:(id)arg1;
+- (void)addObserver:(id)arg1;
+- (id)initWithOperationQueue:(id)arg1 loggingCategory:(unsigned int)arg2 delegate:(id)arg3;
+- (id)initWithLoggingCategory:(unsigned int)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

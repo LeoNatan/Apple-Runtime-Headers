@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)attachmentFrameAtCharacterIndex:(unsigned long long)arg1 relativeToLineFragment:(_Bool)arg2;
 - (struct CGRect)attachmentFrameAtCharacterIndex:(unsigned long long)arg1;
 - (struct CGRect)attachmentFrameAtGlyphIndex:(unsigned long long)arg1 relativeToLineFragment:(_Bool)arg2;
-- (void)showCGGlyphs:(const unsigned short *)arg1 positions:(const struct CGPoint *)arg2 count:(unsigned long long)arg3 font:(id)arg4 matrix:(id)arg5 attributes:(id)arg6 inContext:(id)arg7;
+- (void)showCGGlyphs:(const unsigned short *)arg1 positions:(const struct CGPoint *)arg2 count:(long long)arg3 font:(id)arg4 textMatrix:(struct CGAffineTransform)arg5 attributes:(id)arg6 inContext:(struct CGContext *)arg7;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <GeoServices/GEOMapServiceSearchTicket-Protocol.h>
 
-@class GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSDictionary, NSString;
+@class GEOCategorySearchResultSection, GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEOPDMerchantLookupResult, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _GEOReverseGeocodeRequestTicket : _GEOPlaceRequestTicket <GEOMapServiceSearchTicket>
@@ -24,8 +24,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *browseCategories;
 @property(nonatomic) unsigned int cachePolicy;
 @property(readonly, nonatomic, getter=isCancelled) _Bool cancelled;
+@property(readonly, nonatomic) GEOCategorySearchResultSection *categorySearchResultSection;
 @property(readonly, nonatomic, getter=isChainResultSet) _Bool chainResultSet;
 @property(readonly, nonatomic) GEOResolvedItem *clientResolvedResult;
+@property(readonly, nonatomic) CDStruct_d1a7ebee dataRequestKind;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, nonatomic) GEORelatedSearchSuggestion *defaultRelatedSuggestion;
 @property(readonly, copy) NSString *description;
@@ -33,12 +35,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSArray *displayHeaderSubstitutes;
 @property(readonly, nonatomic) unsigned int dymSuggestionVisibleTime;
 @property(readonly) unsigned int hash;
+@property(readonly, nonatomic) GEOPDMerchantLookupResult *merchantLookupResult;
 @property(readonly, nonatomic) NSArray *relatedSearchSuggestions;
 @property(readonly, nonatomic) NSDictionary *responseUserInfo;
 @property(readonly, nonatomic) GEOMapRegion *resultBoundingRegion;
 @property(readonly, nonatomic) NSString *resultDisplayHeader;
 @property(readonly, nonatomic) NSString *resultSectionHeader;
 @property(readonly, nonatomic) NSArray *retainedSearchMetadata;
+@property(readonly, nonatomic) NSArray *searchResultSections;
 @property(readonly, nonatomic) int searchResultType;
 @property(readonly, nonatomic) _Bool shouldEnableRedoSearch;
 @property(readonly, nonatomic) _Bool showDymSuggestionCloseButton;

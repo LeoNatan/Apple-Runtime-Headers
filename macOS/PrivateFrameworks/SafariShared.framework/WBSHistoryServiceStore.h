@@ -10,7 +10,7 @@
 #import <SafariShared/WBSHistoryServiceDatabaseDelegate-Protocol.h>
 #import <SafariShared/WBSHistoryStore-Protocol.h>
 
-@class NSData, NSDate, NSMutableDictionary, NSMutableSet, NSString, NSURL, WBSHistoryCrypto, WBSHistoryObjectCache, WBSPeriodicActivityScheduler;
+@class NSDate, NSMutableDictionary, NSMutableSet, NSString, NSURL, WBSHistoryCrypto, WBSHistoryObjectCache, WBSPeriodicActivityScheduler;
 @protocol OS_dispatch_queue, OS_dispatch_source, WBSHistoryConnectionProxy, WBSHistoryServiceDatabaseProtocol, WBSHistoryStoreDelegate;
 
 @interface WBSHistoryServiceStore : NSObject <WBSHistoryConnectionProxyDelegate, WBSHistoryStore, WBSHistoryServiceDatabaseDelegate>
@@ -37,28 +37,18 @@
     struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler>> _suddenTerminationDisabler;
     BOOL _makeTestDriveVisitsPermanentOnNextWrite;
     NSMutableSet *_pendingAddsOrUpdates;
-    BOOL _pushNotificationsAreInitialized;
     id <WBSHistoryStoreDelegate> _delegate;
     double _historyAgeLimit;
-    NSData *_pushThrottlerData;
-    NSData *_fetchThrottlerData;
-    NSData *_syncCircleSizeRetrievalThrottlerData;
-    NSData *_longLivedSaveOperationData;
-    unsigned long long _cachedNumberOfDevicesInSyncCircle;
     WBSHistoryCrypto *_crypto;
 }
 
 @property(readonly, nonatomic) WBSHistoryCrypto *crypto; // @synthesize crypto=_crypto;
-@property(nonatomic) BOOL pushNotificationsAreInitialized; // @synthesize pushNotificationsAreInitialized=_pushNotificationsAreInitialized;
-@property(nonatomic) unsigned long long cachedNumberOfDevicesInSyncCircle; // @synthesize cachedNumberOfDevicesInSyncCircle=_cachedNumberOfDevicesInSyncCircle;
-@property(copy, nonatomic) NSData *longLivedSaveOperationData; // @synthesize longLivedSaveOperationData=_longLivedSaveOperationData;
-@property(copy, nonatomic) NSData *syncCircleSizeRetrievalThrottlerData; // @synthesize syncCircleSizeRetrievalThrottlerData=_syncCircleSizeRetrievalThrottlerData;
-@property(copy, nonatomic) NSData *fetchThrottlerData; // @synthesize fetchThrottlerData=_fetchThrottlerData;
-@property(copy, nonatomic) NSData *pushThrottlerData; // @synthesize pushThrottlerData=_pushThrottlerData;
 @property(nonatomic) double historyAgeLimit; // @synthesize historyAgeLimit=_historyAgeLimit;
 @property(nonatomic) __weak id <WBSHistoryStoreDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)releaseCloudHistory:(CDUnknownBlockType)arg1;
+- (void)initializeCloudHistoryWithConfiguration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)connectionProxyConnectionWasInterrupted:(id)arg1;
 - (void)computeFrequentlyVisitedSites:(unsigned long long)arg1 minimalVisitCountScore:(unsigned long long)arg2 blacklist:(id)arg3 whitelist:(id)arg4 options:(unsigned long long)arg5 currentTime:(double)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (void)searchForUserTypedString:(id)arg1 options:(unsigned long long)arg2 currentTime:(double)arg3 enumerationBlock:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
@@ -90,14 +80,22 @@
 - (id)_lastSeenDateForCloudClientVersionOnDatabaseQueue:(unsigned long long)arg1;
 - (BOOL)_shouldEmitLegacyTombstones;
 - (BOOL)shouldEmitLegacyTombstones;
-- (void)resetCloudHistoryDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)_incrementCurrentGeneration;
 - (void)_setLastSyncedGeneration:(unsigned long long)arg1;
 - (void)_updateGenerationForVisits:(id)arg1;
 - (void)pruneTombstonesWithEndDatePriorToDate:(id)arg1;
 - (void)replayAndAddTombstones:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getAllTombstonesWithCompletion:(CDUnknownBlockType)arg1;
+- (void)setTitle:(id)arg1 ofTag:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchTopicsFromStartDate:(id)arg1 toEndDate:(id)arg2 limit:(unsigned long long)arg3 minimumItemCount:(unsigned long long)arg4 sortOrder:(long long)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)fetchTopicsFromStartDate:(id)arg1 toEndDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_fetchHistoryItemsForTopics:(id)arg1 fromStartDate:(id)arg2 toEndDate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)assignHistoryItem:(id)arg1 toTopicTags:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)tagsWithIdentifiers:(id)arg1 type:(unsigned long long)arg2 level:(long long)arg3 creatingIfNecessary:(BOOL)arg4 withTitles:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
+- (void)_createTagsForIdentifiers:(id)arg1 withTitles:(id)arg2 type:(unsigned long long)arg3 level:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)_fetchTags:(unsigned long long)arg1 fromStartDate:(id)arg2 toEndDate:(id)arg3 withIdentifiers:(id)arg4 limit:(unsigned long long)arg5 minimumItemCount:(unsigned long long)arg6 sortOrder:(long long)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)addAutocompleteTrigger:(id)arg1 forItem:(id)arg2;
+- (void)dealloc;
 - (void)closeWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performMaintenance:(CDUnknownBlockType)arg1;
 - (void)_performMaintenance:(CDUnknownBlockType)arg1;
@@ -106,6 +104,7 @@
 - (void)_recomputeDerivedVisitCountScores;
 - (void)_scheduleMaintenance;
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)vacuumHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)visitTitleWasUpdated:(id)arg1;
 - (void)visitsWereModified:(id)arg1;

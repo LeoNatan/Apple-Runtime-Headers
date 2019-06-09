@@ -8,5 +8,26 @@
 
 @interface NSString (CALExtensions)
 + (id)ellipsisString;
++ (id)stringWithContentsOfFile:(id)arg1 usingEncoding:(unsigned long long)arg2;
++ (id)stringWithFileSystemRepresentation:(const char *)arg1;
+- (id)stringByDecodingSlashes;
+- (id)stringByEncodingSlashes;
+- (id)appendSlashIfNeeded;
+- (id)removeSlashIfNeeded;
+- (id)safeFilename;
+- (id)searchAndReplaceString:(id)arg1 withString:(id)arg2;
+- (id)unquote;
+- (id)trimChar:(unsigned short)arg1;
+- (id)trimFirstChar:(unsigned short)arg1;
+- (id)trimFinalChar:(unsigned short)arg1;
+- (id)trimCommas;
+- (id)trimFirstComma;
+- (id)trimFinalComma;
+- (id)trimWhiteSpace;
+- (id)quote;
+- (id)stringByURLUnquoting;
+- (id)stringByURLQuoting;
+- (id)stringByURLQuotingPaths;
+- (id)stringByXMLUnquoting;
 @end
 

@@ -8,23 +8,19 @@
 
 #import <PassKitUI/PKLinkedApplicationObserver-Protocol.h>
 
-@class NSString, PKLinkedApplication, UIImage, UIVisualEffectView, WLEasyToHitCustomButton;
+@class NSString, PKLinkedApplication, UIImage, WLEasyToHitCustomButton;
 
 @interface PKLinkedAppIconView : UIView <PKLinkedApplicationObserver>
 {
     WLEasyToHitCustomButton *_iconButton;
     UIImage *_iconImage;
-    UIVisualEffectView *_blurView;
-    _Bool _translucent;
     PKLinkedApplication *_linkedApplication;
 }
 
-@property(nonatomic, getter=isTranslucent) _Bool translucent; // @synthesize translucent=_translucent;
 @property(readonly, nonatomic) PKLinkedApplication *linkedApplication; // @synthesize linkedApplication=_linkedApplication;
 - (void).cxx_destruct;
 - (void)linkedApplicationDidChangeState:(id)arg1;
 - (void)tapped:(id)arg1;
-- (void)_updateBlurMask;
 - (void)_updateWithIconImage:(id)arg1 animated:(_Bool)arg2;
 - (void)layoutSubviews;
 - (struct CGSize)intrinsicContentSize;

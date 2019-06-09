@@ -6,6 +6,7 @@
 
 #import <AppKit/NSTableRowView.h>
 
+__attribute__((visibility("hidden")))
 @interface SCTTableRowView : NSTableRowView
 {
 }

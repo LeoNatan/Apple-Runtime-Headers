@@ -12,7 +12,7 @@
 #import <MediaControls/MediaControlsCollectionViewDelegate-Protocol.h>
 #import <MediaControls/MediaControlsEndpointsManagerDelegate-Protocol.h>
 
-@class MPAVEndpointRoute, MPAVOutputDeviceRoutingDataSource, MPAVRoutingViewController, MPMediaControlsConfiguration, MediaControlsEndpointsManager, NSString;
+@class AVExternalPlaybackMonitor, MPAVEndpointRoute, MPAVOutputDeviceRoutingDataSource, MPAVRoutingViewController, MPMediaControlsConfiguration, MediaControlsEndpointsManager, NSString, UIViewPropertyAnimator;
 
 @interface MediaControlsEndpointsViewController : MediaControlsCollectionViewController <MRPlatterViewControllerDelegate, MediaControlsCollectionViewDataSource, MediaControlsCollectionViewDelegate, MediaControlsEndpointsManagerDelegate, CCUIContentModuleContentViewController>
 {
@@ -22,6 +22,7 @@
     _Bool _shouldReselectActiveSystemRoute;
     _Bool _prewarming;
     _Bool _shouldTransitionToVisibleWhenReady;
+    _Bool _didTransitionToVisible;
     _Bool _shouldPresentUsingViewService;
     _Bool _dismissing;
     _Bool _onScreen;
@@ -32,8 +33,11 @@
     MPAVRoutingViewController *_routingViewController;
     MPAVEndpointRoute *_selectedRoute;
     NSString *_routingContextUID;
+    AVExternalPlaybackMonitor *_externalPlaybackMonitor;
 }
 
++ (_Bool)_shouldTransitionEarlyOnSystemRoute;
+@property(retain, nonatomic) AVExternalPlaybackMonitor *externalPlaybackMonitor; // @synthesize externalPlaybackMonitor=_externalPlaybackMonitor;
 @property(copy, nonatomic) NSString *routingContextUID; // @synthesize routingContextUID=_routingContextUID;
 @property(retain, nonatomic) MPAVEndpointRoute *selectedRoute; // @synthesize selectedRoute=_selectedRoute;
 @property(retain, nonatomic) MPAVRoutingViewController *routingViewController; // @synthesize routingViewController=_routingViewController;
@@ -50,7 +54,8 @@
 - (_Bool)_isReadyForAppearanceTransition;
 - (void)_selectActiveSystemRouteIfNeeded;
 - (void)_routeDidChangeNotification:(id)arg1;
-- (void)_setSelectedRoute:(id)arg1 isUserSelected:(_Bool)arg2;
+- (void)_setSelectedRoute:(id)arg1 isUserSelected:(_Bool)arg2 animated:(_Bool)arg3;
+- (void)endUpdates;
 - (void)_setupRoutingViewController;
 - (void)_setupEndpointsManager;
 - (void)_updateSupportedModesForSelectedPlatterViewController;
@@ -92,6 +97,7 @@
 - (void)stopPrewarming;
 - (void)startPrewarming;
 - (void)didSelectEndpoint:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
@@ -101,9 +107,11 @@
 - (id)init;
 
 // Remaining properties
+@property(readonly, nonatomic) UIViewPropertyAnimator *customAnimator;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) double preferredExpandedContinuousCornerRadius;
 @property(readonly) Class superclass;
 
 @end

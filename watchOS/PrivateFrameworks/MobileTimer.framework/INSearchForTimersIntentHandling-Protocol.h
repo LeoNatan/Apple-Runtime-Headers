@@ -12,6 +12,7 @@
 - (void)handleSearchForTimers:(INSearchForTimersIntent *)arg1 completion:(void (^)(INSearchForTimersIntentResponse *))arg2;
 
 @optional
+- (void)resolveTypeForSearchForTimers:(INSearchForTimersIntent *)arg1 withCompletion:(void (^)(INTimerTypeResolutionResult *))arg2;
 - (void)resolveStateForSearchForTimers:(INSearchForTimersIntent *)arg1 withCompletion:(void (^)(INTimerStateResolutionResult *))arg2;
 - (void)resolveDurationForSearchForTimers:(INSearchForTimersIntent *)arg1 withCompletion:(void (^)(INTimeIntervalResolutionResult *))arg2;
 - (void)resolveLabelForSearchForTimers:(INSearchForTimersIntent *)arg1 withCompletion:(void (^)(INSpeakableStringResolutionResult *))arg2;

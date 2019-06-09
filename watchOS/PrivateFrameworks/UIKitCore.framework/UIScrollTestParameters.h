@@ -6,35 +6,37 @@
 
 #import <objc/NSObject.h>
 
+#import <UIKitCore/NSCopying-Protocol.h>
+
 @class CADisplayLink, NSString;
 
-__attribute__((visibility("hidden")))
-@interface UIScrollTestParameters : NSObject
+@interface UIScrollTestParameters : NSObject <NSCopying>
 {
+    NSString *_testName;
     int _iterations;
-    int _delta;
-    int _scrollLength;
-    float _startOffset;
-    NSString *_currentTest;
+    float _delta;
+    float _length;
     int _axis;
-    CADisplayLink *_displayLink;
     CDUnknownBlockType _extraResultsBlock;
+    float _startOffset;
+    CADisplayLink *_displayLink;
     CDUnknownBlockType _completionBlock;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType completionBlock; // @synthesize completionBlock=_completionBlock;
-@property(copy, nonatomic) CDUnknownBlockType extraResultsBlock; // @synthesize extraResultsBlock=_extraResultsBlock;
 @property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
-@property(retain, nonatomic) NSString *currentTest; // @synthesize currentTest=_currentTest;
-@property(nonatomic) int axis; // @synthesize axis=_axis;
 @property(nonatomic) float startOffset; // @synthesize startOffset=_startOffset;
-@property(nonatomic) int scrollLength; // @synthesize scrollLength=_scrollLength;
-@property(nonatomic) int delta; // @synthesize delta=_delta;
+@property(copy, nonatomic) CDUnknownBlockType extraResultsBlock; // @synthesize extraResultsBlock=_extraResultsBlock;
+@property(nonatomic) int axis; // @synthesize axis=_axis;
+@property(nonatomic) float length; // @synthesize length=_length;
+@property(nonatomic) float delta; // @synthesize delta=_delta;
 @property(nonatomic) int iterations; // @synthesize iterations=_iterations;
+@property(copy, nonatomic) NSString *testName; // @synthesize testName=_testName;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) float endOffset;
 - (void)dealloc;
-- (id)initWithName:(id)arg1 iterations:(int)arg2 delta:(int)arg3 length:(int)arg4 startOffset:(float)arg5 scrollAxis:(int)arg6;
+- (id)init;
 
 @end
 

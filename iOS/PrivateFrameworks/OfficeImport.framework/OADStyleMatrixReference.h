@@ -18,13 +18,13 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)styleMatrixReferenceWithMatrixIndex:(unsigned long long)arg1 color:(id)arg2;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setColor:(id)arg1;
 - (id)color;
 - (void)setMatrixIndex:(unsigned long long)arg1;
 - (unsigned long long)matrixIndex;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)dealloc;
 - (id)initWithMatrixIndex:(unsigned long long)arg1 color:(id)arg2;
 
 @end

@@ -8,5 +8,11 @@
 
 @interface NSObject (ISS_DAVXMLNode)
 - (id)ISS_xmlStringWithBag:(id)arg1;
+- (void)ISS__ay_performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3 inThread:(id)arg4 beforeDate:(id)arg5;
+- (void)ISS__ay_performSelector:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3 inThread:(id)arg4;
+- (void)ISS__ay_performSelector:(SEL)arg1 withObject:(id)arg2 inThread:(id)arg3 beforeDate:(id)arg4;
+- (void)ISS__ay_performSelector:(SEL)arg1 withObject:(id)arg2 inThread:(id)arg3;
+- (void)ISS__ay_performSelector:(SEL)arg1 inThread:(id)arg2 beforeDate:(id)arg3;
+- (void)ISS__ay_performSelector:(SEL)arg1 inThread:(id)arg2;
 @end
 

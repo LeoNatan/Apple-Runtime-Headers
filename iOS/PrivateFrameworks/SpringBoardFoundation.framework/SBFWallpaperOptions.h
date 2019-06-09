@@ -22,12 +22,17 @@
     double _parallaxFactor;
     double _zoomScale;
     double _stillTimeInVideo;
+    long long _wallpaperMode;
+    long long _wallpaperStatus;
     struct CGRect _cropRect;
 }
 
 + (_Bool)supportsSecureCoding;
++ (id)optionsWithName:(id)arg1 parallaxFactor:(double)arg2 zoomScale:(double)arg3 supportsCropping:(_Bool)arg4 cropRect:(struct CGRect)arg5 portrait:(_Bool)arg6 hasVideo:(_Bool)arg7 stillTimeInVideo:(double)arg8 wallpaperMode:(long long)arg9 wallpaperStatus:(long long)arg10;
 + (id)optionsWithName:(id)arg1 parallaxFactor:(double)arg2 zoomScale:(double)arg3 supportsCropping:(_Bool)arg4 cropRect:(struct CGRect)arg5 portrait:(_Bool)arg6 hasVideo:(_Bool)arg7 stillTimeInVideo:(double)arg8;
 + (id)optionsWithName:(id)arg1 parallaxFactor:(double)arg2 zoomScale:(double)arg3 supportsCropping:(_Bool)arg4 cropRect:(struct CGRect)arg5 portrait:(_Bool)arg6;
+@property(nonatomic) long long wallpaperStatus; // @synthesize wallpaperStatus=_wallpaperStatus;
+@property(nonatomic) long long wallpaperMode; // @synthesize wallpaperMode=_wallpaperMode;
 @property(nonatomic) double stillTimeInVideo; // @synthesize stillTimeInVideo=_stillTimeInVideo;
 @property(nonatomic) _Bool hasVideo; // @synthesize hasVideo=_hasVideo;
 @property(nonatomic, getter=isPortrait) _Bool portrait; // @synthesize portrait=_portrait;
@@ -58,7 +63,7 @@
 - (id)initWithPersistentDataRepresentation:(id)arg1;
 - (id)initWithContentsOfURL:(id)arg1;
 - (id)init;
-- (id)initWithName:(id)arg1 parallaxFactor:(double)arg2 zoomScale:(double)arg3 supportsCropping:(_Bool)arg4 cropRect:(struct CGRect)arg5 portrait:(_Bool)arg6 hasVideo:(_Bool)arg7 stillTimeInVideo:(double)arg8;
+- (id)initWithName:(id)arg1 parallaxFactor:(double)arg2 zoomScale:(double)arg3 supportsCropping:(_Bool)arg4 cropRect:(struct CGRect)arg5 portrait:(_Bool)arg6 hasVideo:(_Bool)arg7 stillTimeInVideo:(double)arg8 wallpaperMode:(long long)arg9 wallpaperStatus:(long long)arg10;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -9,6 +9,9 @@
 @interface NSURL (CALExtensions)
 + (id)iDiskSmallNameCompatibleNameForFilename:(id)arg1;
 + (id)davCompatibleFilenameForFilename:(id)arg1;
++ (id)URLWithDirtyString:(id)arg1;
++ (id)URLWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 uri:(id)arg4;
++ (int)classicPortForScheme:(id)arg1;
 - (id)pathWithoutDecodingAndRemovingTrailingSlash;
 - (id)pathWithoutTrailingRemovingSlash;
 - (_Bool)isEqualToURL:(id)arg1;
@@ -17,5 +20,11 @@
 - (id)initWithScheme:(id)arg1 host:(id)arg2 port:(int)arg3 path:(id)arg4;
 - (id)URLWithUsername:(id)arg1 withPassword:(id)arg2;
 - (id)queryParameters;
+- (_Bool)absoluteURLisEqual:(id)arg1;
+- (id)URLWithoutPassword;
+- (id)URLWithoutUsername;
+- (id)URLWithUsername:(id)arg1;
+- (id)uri;
+- (id)initWithDirtyString:(id)arg1;
 @end
 

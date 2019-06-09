@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (CDStruct_1b6d18a9)overallDurationHint;
+- (int)fragmentCount;
+- (int)firstFragmentSequenceNumber;
 - (_Bool)containsFragments;
 - (_Bool)canContainFragments;
 - (_Bool)isComposable;
@@ -29,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (id)alternateTrackGroups;
 - (long)trackCount;
 - (_Bool)providesPreciseDurationAndTiming;
+- (CDStruct_1b6d18a9)minimumTimeOffsetFromLive;
 - (int)naturalTimeScale;
 - (struct CGSize)naturalSize;
 - (struct CGAffineTransform)preferredTransform;
@@ -40,7 +43,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, getter=_formatReader, setter=_setFormatReader:) struct OpaqueFigFormatReader *formatReader;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithFormatReader:(struct OpaqueFigFormatReader *)arg1;
 

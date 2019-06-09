@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)cloudKitAuthTokenWithError:(id *)arg1;
 - (id)_accountCredentialForAccount:(id)arg1 withError:(id *)arg2;
 - (_Bool)isDataclassEnabled:(id)arg1;
-- (_Bool)canAuthWithCloudKit;
+- (_Bool)isPrimaryEmailVerified;
 - (id)displayedHostname;
 - (id)fullName;
 - (id)identifier;

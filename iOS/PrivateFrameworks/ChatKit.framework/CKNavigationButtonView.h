@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CNContactInlineActionsViewController, NSString, UIButton, UIImage, UILabel;
+@class NSString, UIButton, UIImage, UILabel, UIVisualEffect, UIVisualEffectView;
 
 @interface CKNavigationButtonView : UIView
 {
@@ -20,12 +20,14 @@
     UIImage *_disabledImage;
     UIButton *_imageButton;
     UILabel *_textLabel;
+    UIVisualEffectView *_vibrancyView;
+    UIVisualEffect *_vibrancyEffect;
     NSString *_text;
-    CNContactInlineActionsViewController *_contactVC;
 }
 
-@property(retain, nonatomic) CNContactInlineActionsViewController *contactVC; // @synthesize contactVC=_contactVC;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
+@property(retain, nonatomic) UIVisualEffect *vibrancyEffect; // @synthesize vibrancyEffect=_vibrancyEffect;
+@property(retain, nonatomic) UIVisualEffectView *vibrancyView; // @synthesize vibrancyView=_vibrancyView;
 @property(retain, nonatomic) UILabel *textLabel; // @synthesize textLabel=_textLabel;
 @property(retain, nonatomic) UIButton *imageButton; // @synthesize imageButton=_imageButton;
 @property(retain, nonatomic) UIImage *disabledImage; // @synthesize disabledImage=_disabledImage;

@@ -6,13 +6,13 @@
 
 #import <PhotosUICore/PXHorizontalCollectionGadget.h>
 
-#import <PhotosUI/PLNavigableCollectionContainer-Protocol.h>
 #import <PhotosUI/PUCloudSharedAlbumViewControllerDelegate-Protocol.h>
 #import <PhotosUI/PUStackedAlbumTransitionDelegate-Protocol.h>
+#import <PhotosUI/PXNavigableCollectionContainer-Protocol.h>
 
 @class NSString, NSUserActivity, PUAlbumDropSessionController, PUAlbumListViewControllerSpec, PUAlbumsGadgetProvider, PUPhotoPinchGestureRecognizer, PUSessionInfo;
 
-@interface PUHorizontalAlbumListGadget : PXHorizontalCollectionGadget <PUStackedAlbumTransitionDelegate, PUCloudSharedAlbumViewControllerDelegate, PLNavigableCollectionContainer>
+@interface PUHorizontalAlbumListGadget : PXHorizontalCollectionGadget <PUStackedAlbumTransitionDelegate, PUCloudSharedAlbumViewControllerDelegate, PXNavigableCollectionContainer>
 {
     PUAlbumsGadgetProvider *_provider;
     PUSessionInfo *_sessionInfo;
@@ -38,7 +38,6 @@
 - (void)stackedAlbumTransition:(id)arg1 setVisibility:(_Bool)arg2 forCollection:(id)arg3;
 - (void)gadget:(id)arg1 didChange:(unsigned long long)arg2;
 - (void)setGadgetSpec:(id)arg1;
-- (const struct __CFString *)accessoryButtonEventTrackerKey;
 - (id)accessoryButtonTitle;
 - (unsigned long long)accessoryButtonType;
 - (unsigned long long)gadgetType;

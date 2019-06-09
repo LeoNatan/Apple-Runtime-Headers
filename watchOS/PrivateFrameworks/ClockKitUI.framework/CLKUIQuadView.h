@@ -16,17 +16,21 @@
     struct {
         unsigned int quadViewWillDisplay:1;
     } _delegateRespondsTo;
+    unsigned long long _frameNum;
+    unsigned int _debugIdentifier;
     id <CLKUIQuadViewDelegate> _delegate;
 }
 
 + (id)quadViewWithFrame:(struct CGRect)arg1;
 + (id)quadViewWithFrame:(struct CGRect)arg1 options:(unsigned int)arg2;
++ (id)quadViewWithFrame:(struct CGRect)arg1 options:(unsigned int)arg2 colorSpace:(int)arg3;
 @property(nonatomic) __weak id <CLKUIQuadViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_discardContents;
+- (void)discardContents;
 - (void)_handleQuadArrayChange:(id)arg1;
-- (void)_display;
+- (_Bool)_displayWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_snapshotInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3;
+- (void)setDebugIdentifier:(id)arg1;
 - (id)snapshotInRect:(struct CGRect)arg1 scale:(float)arg2 time:(double)arg3;
 - (void)_prerenderForTime:(double)arg1;
 - (void)removeAllQuads;
@@ -34,12 +38,14 @@
 - (void)addQuadsFromArray:(id)arg1;
 - (void)addQuad:(id)arg1;
 @property(readonly, nonatomic) NSArray *quads;
+@property(readonly, nonatomic) unsigned long long frameNum;
 @property(nonatomic, getter=isPaused) _Bool paused;
 @property(nonatomic) int preferredFramesPerSecond;
-- (void)_prepareAndRenderForTime:(double)arg1;
+- (_Bool)_prepareAndRenderForTime:(double)arg1 inGroup:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (_Bool)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (_Bool)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 
 @end
 

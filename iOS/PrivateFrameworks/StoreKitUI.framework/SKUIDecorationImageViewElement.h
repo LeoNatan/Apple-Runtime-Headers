@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIImageViewElement.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIDecorationImageViewElement : SKUIImageViewElement
 {
 }

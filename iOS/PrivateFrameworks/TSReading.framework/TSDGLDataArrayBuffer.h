@@ -8,7 +8,7 @@
 
 #import <TSReading/TSDGLDataBufferAccessor-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface TSDGLDataArrayBuffer : NSObject <TSDGLDataBufferAccessor>
 {
@@ -16,12 +16,15 @@
     unsigned long long mVertexCount;
     unsigned long long _dataTypeSizeInBytes;
     unsigned int _bufferUsage;
+    _Bool _usesMetalBuffer;
     long long *mNeedsUpdateFirstIndex;
     long long *mNeedsUpdateLastIndex;
     char *mGLData;
     _Bool mGLDataBufferHasBeenSetup;
     unsigned int *mGLDataBuffers;
     NSMutableDictionary *mAttributeOffsetsDictionary;
+    NSArray *_metalDataBuffers;
+    unsigned long long _bufferIndex;
     unsigned long long _GLDataBufferEntrySize;
     unsigned long long _bufferCount;
     unsigned long long _currentBufferIndex;
@@ -30,6 +33,7 @@
 @property(nonatomic) unsigned long long currentBufferIndex; // @synthesize currentBufferIndex=_currentBufferIndex;
 @property(readonly, nonatomic) unsigned long long bufferCount; // @synthesize bufferCount=_bufferCount;
 @property(readonly, nonatomic) unsigned long long GLDataBufferEntrySize; // @synthesize GLDataBufferEntrySize=_GLDataBufferEntrySize;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 - (void)setGLPoint4D:(CDStruct_f2e236b6)arg1 forAttribute:(id)arg2 atIndex:(unsigned long long)arg3;
 - (CDStruct_f2e236b6)GLPoint4DForAttribute:(id)arg1 atIndex:(unsigned long long)arg2;
@@ -40,6 +44,10 @@
 - (void)setCGFloat:(double)arg1 forAttribute:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)setGLfloat:(float)arg1 forAttribute:(id)arg2 atIndex:(unsigned long long)arg3;
 - (float)GLfloatForAttribute:(id)arg1 atIndex:(unsigned long long)arg2;
+- (char *)dataPointer;
+- (void)swapGPUDataBuffers;
+- (void)encodeArrayBufferWithEncoder:(id)arg1 atIndex:(long long)arg2;
+- (void)enableArrayBufferWithDevice:(id)arg1;
 - (unsigned long long)vertexCount;
 @property(readonly, nonatomic) _Bool hasUpdatedData;
 - (char *)GLDataPointer;
@@ -52,6 +60,7 @@
 - (void)dealloc;
 - (id)initWithVertexAttributes:(id)arg1 vertexCount:(unsigned long long)arg2 bufferCount:(unsigned long long)arg3;
 - (unsigned long long)p_bufferOffsetOfAttribute:(id)arg1 atIndex:(unsigned long long)arg2 component:(unsigned long long)arg3;
+- (void)p_setupMetalDataBufferIfNecessaryWithDevice:(id)arg1;
 - (void)updateDataBufferIfNecessary;
 - (void)p_setupGLDataBufferIfNecessary;
 

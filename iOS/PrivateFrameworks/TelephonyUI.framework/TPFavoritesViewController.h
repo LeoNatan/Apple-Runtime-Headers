@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewController.h>
 
-@class CNAvatarViewControllerSettings, CNContactFormatter, NSArray, NSIndexSet, TPFavoritesController, UIView;
+@class CNContactFormatter, NSArray, NSIndexSet, TPFavoritesController, UIView;
 
 @interface TPFavoritesViewController : UICollectionViewController
 {
@@ -14,23 +14,27 @@
     TPFavoritesController *_favoritesController;
     UIView *_contentUnavailableView;
     NSArray *_favoritesEntries;
-    CNAvatarViewControllerSettings *_avatarViewControllerSettings;
     CNContactFormatter *_contactFormatter;
     NSIndexSet *_sections;
 }
 
++ (id)avatarViewControllerSettings;
 @property(retain, nonatomic) NSIndexSet *sections; // @synthesize sections=_sections;
 @property(retain, nonatomic) CNContactFormatter *contactFormatter; // @synthesize contactFormatter=_contactFormatter;
-@property(retain, nonatomic) CNAvatarViewControllerSettings *avatarViewControllerSettings; // @synthesize avatarViewControllerSettings=_avatarViewControllerSettings;
 @property(copy, nonatomic) NSArray *favoritesEntries; // @synthesize favoritesEntries=_favoritesEntries;
 @property(retain, nonatomic) UIView *contentUnavailableView; // @synthesize contentUnavailableView=_contentUnavailableView;
 @property(nonatomic) _Bool contentUnavailable; // @synthesize contentUnavailable=_contentUnavailable;
 @property(readonly, nonatomic) TPFavoritesController *favoritesController; // @synthesize favoritesController=_favoritesController;
 - (void).cxx_destruct;
+- (void)relayoutCollectionView;
 - (void)refreshViewAnimated:(_Bool)arg1;
 - (void)refreshView;
 - (void)handleFavoritesControllerFavoritesEntriesDidChangeNotification:(id)arg1;
 - (void)handleContentSizeCategoryDidChangeNotification:(id)arg1;
+- (id)cellHeightToFitWidgetContainedCollectionView:(id)arg1 layout:(id)arg2;
+- (struct CGSize)accessibleCellSizeFor:(id)arg1 layout:(id)arg2;
+- (struct CGSize)cellSizeFor:(id)arg1 layout:(id)arg2;
+- (_Bool)useAccessibileLayout;
 - (void)postCNContactsClientDidDisplayFavoritesNotification;
 - (id)favoritesEntryAtIndex:(long long)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;

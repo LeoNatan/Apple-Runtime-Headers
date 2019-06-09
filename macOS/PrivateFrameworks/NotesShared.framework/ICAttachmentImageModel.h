@@ -15,10 +15,13 @@
 - (id)attributesForSharingHTMLWithTagName:(id *)arg1 textContent:(id *)arg2;
 - (struct CGAffineTransform)previewImageOrientationTransform;
 - (BOOL)supportsQuickLook;
+- (struct CGSize)sizeByCroppingSize:(struct CGSize)arg1;
 - (void)updateAttachmentSize;
 - (void)addLocation;
 - (void)updateFileBasedAttributes;
 - (BOOL)shouldCropImage;
+- (BOOL)supportsImageClassification;
+- (BOOL)supportsOCR;
 - (BOOL)needsFullSizePreview;
 - (id)generateHardLinkURLIfNecessaryForURL:(id)arg1;
 - (BOOL)canSaveURL;

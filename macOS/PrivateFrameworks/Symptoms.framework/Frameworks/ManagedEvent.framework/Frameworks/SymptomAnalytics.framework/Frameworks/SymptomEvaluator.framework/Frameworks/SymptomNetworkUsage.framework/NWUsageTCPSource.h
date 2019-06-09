@@ -8,14 +8,15 @@
 
 @class NSDictionary;
 
+__attribute__((visibility("hidden")))
 @interface NWUsageTCPSource : NWUsageSource
 {
-    struct nstat_msg_src_update_tcp _nstatTCPUpdate;
+    struct updater_nstat_msg_src_update_tcp _nstatTCPUpdate;
     NSDictionary *_lookupResults;
 }
 
 - (void).cxx_destruct;
-- (id)currentSnapshot;
+- (id)createSnapshot:(int)arg1;
 - (BOOL)updateWithUpdate:(struct nstat_msg_src_update_convenient *)arg1 monitor:(id)arg2;
 - (id)initWithUpdate:(struct nstat_msg_src_update_convenient *)arg1 monitor:(id)arg2;
 - (void)deriveAttribution:(id)arg1;

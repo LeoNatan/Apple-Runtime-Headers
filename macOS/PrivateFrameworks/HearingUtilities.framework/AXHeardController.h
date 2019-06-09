@@ -8,18 +8,16 @@
 
 #import <HearingUtilities/HCHeardControllerProtocol-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString;
+@class NSArray, NSDictionary, NSString;
 
 @interface AXHeardController : NSObject <HCHeardControllerProtocol>
 {
-    NSMutableArray *_clients;
-    NSMutableDictionary *_handlers;
+    NSArray *_clients;
+    NSDictionary *_handlers;
 }
 
 + (id)entitlementsForMessageID:(unsigned long long)arg1;
 + (id)sharedServer;
-@property(retain, nonatomic) NSMutableDictionary *handlers; // @synthesize handlers=_handlers;
-@property(retain, nonatomic) NSMutableArray *clients; // @synthesize clients=_clients;
 - (void).cxx_destruct;
 - (void)registerFakeClient:(id)arg1;
 - (void)handleMessage:(id)arg1 forIdentifier:(unsigned long long)arg2;
@@ -29,6 +27,8 @@
 - (void)sendUpdateMessage:(id)arg1 forIdentifier:(unsigned long long)arg2;
 - (BOOL)sendMessage:(id)arg1 withError:(id *)arg2;
 - (void)handleNewConnection:(id)arg1;
+@property(retain, nonatomic) NSDictionary *handlers; // @synthesize handlers=_handlers;
+@property(retain, nonatomic) NSArray *clients; // @synthesize clients=_clients;
 - (BOOL)connection:(id)arg1 hasEntitlementForMessage:(unsigned long long)arg2;
 - (void)dealloc;
 - (void)startServer;

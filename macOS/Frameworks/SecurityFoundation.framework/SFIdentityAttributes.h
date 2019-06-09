@@ -14,11 +14,13 @@ __attribute__((visibility("hidden")))
 @interface SFIdentityAttributes : NSObject <SFKeychainItemAttributes>
 {
     id _identityAttributesInternal;
+    NSString *persistentIdentifier;
     struct NSString *_privateKeyDomain;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSString *privateKeyDomain; // @synthesize privateKeyDomain=_privateKeyDomain;
+@property(readonly, copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL hasCertificate;
 @property(copy, nonatomic) NSString *identityName;
@@ -34,7 +36,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, copy, nonatomic) NSString *persistentIdentifier;
 @property(readonly) Class superclass;
 
 @end

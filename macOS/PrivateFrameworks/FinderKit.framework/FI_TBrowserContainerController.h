@@ -10,7 +10,8 @@
 #import <FinderKit/TNodeObserverProtocol-Protocol.h>
 #import <FinderKit/TTagColumnTableViewControllerDelegate-Protocol.h>
 
-@class FI_TBrowserViewController, FI_TContainerLayoutManager, FI_TNodeViewSettings, FI_TSidebarSplitViewController, NSString, NSViewController, TBackupContainerDelegate;
+@class FI_TBrowserViewController, FI_TContainerLayoutManager, FI_TNodeViewSettings, FI_TSidebarSplitViewController, NSObject, NSString, NSViewController, TBackupContainerDelegate;
+@protocol BrowserContainerTargeting><BrowserContainerSearching><BrowserContainerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface FI_TBrowserContainerController : FI_TViewController <TNodeObserverProtocol, TMarkTornDown, TTagColumnTableViewControllerDelegate>
@@ -20,7 +21,7 @@ __attribute__((visibility("hidden")))
     _Bool _browserViewIsBeingDestroyed;
     _Bool _switchingViewStyleBeforeRecreatingBrowserView;
     _Bool _isTornDown;
-    struct NSObject *_delegate;
+    struct TNSWeakPtr<NSObject<BrowserContainerDelegate, BrowserContainerSearching, BrowserContainerTargeting>, void> _weakDelegate;
     struct TNSRef<FI_TBrowserViewController, void> _browserViewController;
     struct TFENodeVector _targetPath;
     struct shared_ptr<TNodeObserverCocoaBridge> _targetPathObserver;
@@ -55,18 +56,19 @@ __attribute__((visibility("hidden")))
     unsigned long long _serialID;
     struct TString _suggestionsScopeQuery;
     _Bool _usesSuggestions;
-    FI_TContainerLayoutManager *_containerLayoutManager;
+    struct TNSRef<NSTimer, void> _spinnerStartTimer;
+    struct TNSRef<NSTimer, void> _spinnerEndCheckTimer;
+    _Bool _wantToShowSpinner;
+    struct TNSRef<FI_TContainerLayoutManager, void> _containerLayoutManager;
     struct TNotificationCenterObserver _iCloudOverQuotaChangedObserver;
     struct TNotificationCenterObserver _viewDidMoveToWindowObserver;
     struct TNotificationCenterObserver _dataSourceBusyObserver;
     struct TKeyValueBinder _groupByBinder;
     struct TKeyValueBinder _selectedNodesCountBinder;
     struct TKeyValueBinder _itemCountBinder;
-    TNSWeakPtr_a131d41e _delayNextPreviewPaneRetargetToken;
     struct TNSRef<FI_TSidebarSplitViewController, void> _sidebarSplitViewController;
     struct TNotificationCenterObserver _isSidebarCollapsedObserver;
     _Bool _showSidebar;
-    _Bool _previewVisibleState;
     _Bool _flushDataSourceAllowed;
 }
 
@@ -84,7 +86,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int defaultViewStyle; // @synthesize defaultViewStyle=_defaultViewStyle;
 @property(nonatomic) unsigned long long selectedNodesCount; // @synthesize selectedNodesCount=_selectedNodesCount;
 @property(nonatomic) unsigned long long itemCount; // @synthesize itemCount=_itemCount;
-@property(readonly, getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown=_isTornDown;
 @property(readonly, nonatomic) _Bool containerIsBeingCreated; // @synthesize containerIsBeingCreated=_containerIsBeingCreated;
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -144,10 +146,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)validateToggleSearchSlices:(id)arg1;
 - (void)tagColumnTableViewController:(id)arg1 selectedTagNodeChanged:(const struct TFENode *)arg2;
 - (id)browserViewControllerForTagColumn:(id)arg1;
-- (void)cmdTogglePathBar:(id)arg1;
-- (_Bool)validateTogglePathBar:(id)arg1;
-- (void)cmdRemoveFromSidebar:(id)arg1;
-- (_Bool)validateRemoveFromSidebar:(id)arg1;
 - (void)cmdOpenSaveToggleSidebar:(id)arg1;
 - (_Bool)validateOpenSaveToggleSidebar:(id)arg1;
 - (void)cmdToggleSidebar:(id)arg1;
@@ -158,6 +156,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)validateViewAsList:(id)arg1;
 - (void)cmdViewAsIcons:(id)arg1;
 - (_Bool)validateViewAsIcons:(id)arg1;
+- (_Bool)targetAllowsStandardViewStyles;
 - (void)computeMarkForMenuItem:(id)arg1 viewStyle:(int)arg2;
 - (void)cmdViewAsSubmenu:(id)arg1;
 - (BOOL)validateMenuItem:(id)arg1 withObject:(id)arg2;
@@ -188,7 +187,6 @@ __attribute__((visibility("hidden")))
 - (void)rememberSpringState;
 - (void)retargetOnDeletedNode:(struct TFENode)arg1;
 - (void)configureSidebarForMode:(_Bool)arg1;
-- (id)containingOpenPanel;
 - (id)window;
 - (_Bool)inBrowseMode;
 - (void)windowDidEndLiveResize:(id)arg1;
@@ -250,6 +248,14 @@ __attribute__((visibility("hidden")))
 - (void)initCommon;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (void)configureLoadingSpinner:(_Bool)arg1;
+- (void)startLoadingSpinner;
+- (void)checkSpinnerEnd;
+- (void)stopSpinnerEndCheckTimer;
+- (void)stopSpinnerStartTimer;
+- (_Bool)shouldShowLoadingSpinner;
+- (void)populationOccurredTo:(unsigned long long)arg1 isTarget:(_Bool)arg2;
+- (_Bool)isLoadingSpinnerInProgress;
 - (struct TFENode)parentNodeToOpen:(const struct TFENode *)arg1;
 - (struct TString)pathPrettyStringForNode:(struct TFENode)arg1;
 - (void)popupPathForNode:(const struct TFENode *)arg1 outPath:(struct TFENodeVector *)arg2;
@@ -311,6 +317,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canMoveItemsToTrash;
 - (_Bool)canRenameItems;
 - (_Bool)canDuplicateItems;
+@property(retain, nonatomic) FI_TContainerLayoutManager *containerLayoutManager; // @dynamic containerLayoutManager;
 @property(readonly, nonatomic) FI_TSidebarSplitViewController *sidebarSplitViewController;
 - (void)reloadGroupView;
 - (void)resolveReplicaNodesInTargetPath;
@@ -340,6 +347,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidFullyPopulate;
 - (void)viewDidSyncToDataSource:(const vector_274a36ec *)arg1;
 @property(readonly, retain, nonatomic) FI_TBrowserViewController *browserViewController; // @dynamic browserViewController;
+@property(nonatomic) __weak NSObject<BrowserContainerTargeting><BrowserContainerSearching><BrowserContainerDelegate> *delegate;
 
 // Remaining properties
 @property(retain, nonatomic) TBackupContainerDelegate *backupDelegate; // @dynamic backupDelegate;

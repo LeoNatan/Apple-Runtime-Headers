@@ -29,7 +29,7 @@
 - (void)handleAppMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setInitialFlowDivertControlSocket:(id)arg1;
 - (void)flowDivertNewFlow:(struct _NEFlow *)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)flowDivertMatchAppRulesWithFlow:(unsigned int)arg1 pid:(int)arg2 uuid:(unsigned char [16])arg3 signingIdentifier:(struct __CFString *)arg4;
+- (void)flowDivertMatchAppRulesWithFlow:(unsigned int)arg1 auditToken:(struct __CFData *)arg2 signingIdentifier:(struct __CFString *)arg3;
 - (void)flowDivertOpenControlSocket;
 - (void)setDelegateInterface:(unsigned int)arg1;
 - (void)stop;

@@ -6,10 +6,16 @@
 
 #import <objc/NSObject.h>
 
+@protocol MTLDeviceSPI;
+
 @interface _MTLIndirectArgumentBufferLayout : NSObject
 {
+    struct _MTLIndirectArgumentBufferLayoutPrivate *_private;
 }
 
+@property(readonly, nonatomic) id <MTLDeviceSPI> device;
+- (void)setStructType:(id)arg1 withDevice:(id)arg2;
+- (id)bufferLayoutForResourceAtIndex:(unsigned int)arg1;
 - (unsigned int)constantOffsetAtIndex:(unsigned int)arg1;
 @property(readonly) unsigned int hashSignature;
 @property(readonly) unsigned int hashMask;

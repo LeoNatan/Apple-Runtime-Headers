@@ -38,7 +38,7 @@
 - (BOOL)_isErrorCountingForARetry:(id)arg1;
 - (void)_launchNecessaryDownloadTasksWithTransaction:(id)arg1;
 - (void)_finishTaskLocked;
-- (id)initWithEngineLibrary:(id)arg1;
+- (id)initWithEngineLibrary:(id)arg1 session:(id)arg2;
 
 @end
 

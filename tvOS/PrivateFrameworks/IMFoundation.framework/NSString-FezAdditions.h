@@ -56,5 +56,9 @@
 - (unsigned int)hexValue;
 - (_Bool)isDirectory;
 - (_Bool)isEqualToIgnoringCase:(id)arg1;
+- (id)_imInitWithFormat:(id)arg1 arguments:(struct __va_list_tag [1])arg2;
+@property(readonly, nonatomic) NSString *stripMobileMSuffixIfPresent;
+@property(readonly, nonatomic) _Bool hasMobileMeSuffix;
+@property(readonly, nonatomic) NSString *mobileMeDomain;
 @end
 

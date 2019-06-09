@@ -45,6 +45,7 @@
 - (void)setReturnType:(int)arg1;
 - (void)awakeFromNib;
 - (void)dealloc;
+- (id)init;
 - (void)_displayPasskey;
 - (void)_displayPasskeyIndicator;
 - (id)fauxUIElementValue:(id)arg1;
@@ -55,6 +56,7 @@
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (BOOL)accessibilityIsIgnored;
+- (id)init;
 
 @end
 

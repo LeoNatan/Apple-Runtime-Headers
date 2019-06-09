@@ -17,7 +17,6 @@
 - (BOOL)hasFilenames;
 - (id)imageURL;
 - (id)fileURLs;
-- (id)filePaths;
 - (id)_URLsFromiTunesDrag:(id)arg1;
 @end
 

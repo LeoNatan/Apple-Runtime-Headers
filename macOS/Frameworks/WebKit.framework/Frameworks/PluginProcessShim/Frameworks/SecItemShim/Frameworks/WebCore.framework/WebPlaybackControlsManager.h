@@ -49,10 +49,10 @@
 - (void)setAudioMediaSelectionIndex:(unsigned long long)arg1;
 - (void)setLegibleMediaSelectionOptions:(const Vector_68c27e8a *)arg1 withSelectedIndex:(unsigned long long)arg2;
 - (void)setAudioMediaSelectionOptions:(const Vector_68c27e8a *)arg1 withSelectedIndex:(unsigned long long)arg2;
-@property AVTouchBarMediaSelectionOption *currentLegibleTouchBarMediaSelectionOption;
+@property(retain) AVTouchBarMediaSelectionOption *currentLegibleTouchBarMediaSelectionOption;
 - (void)setLegibleTouchBarMediaSelectionOptions:(id)arg1;
 @property(readonly) NSArray *legibleTouchBarMediaSelectionOptions;
-@property AVTouchBarMediaSelectionOption *currentAudioTouchBarMediaSelectionOption;
+@property(retain) AVTouchBarMediaSelectionOption *currentAudioTouchBarMediaSelectionOption;
 - (void)setAudioTouchBarMediaSelectionOptions:(id)arg1;
 @property(readonly) NSArray *audioTouchBarMediaSelectionOptions;
 - (void)endTouchBarScrubbing;

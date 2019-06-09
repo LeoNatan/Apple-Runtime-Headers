@@ -12,6 +12,7 @@
 - (void)handleSetTimerAttribute:(INSetTimerAttributeIntent *)arg1 completion:(void (^)(INSetTimerAttributeIntentResponse *))arg2;
 
 @optional
+- (void)resolveToLabelForSetTimerAttribute:(INSetTimerAttributeIntent *)arg1 withCompletion:(void (^)(INSpeakableStringResolutionResult *))arg2;
 - (void)resolveToDurationForSetTimerAttribute:(INSetTimerAttributeIntent *)arg1 withCompletion:(void (^)(INTimeIntervalResolutionResult *))arg2;
 - (void)resolveTargetTimerForSetTimerAttribute:(INSetTimerAttributeIntent *)arg1 withCompletion:(void (^)(INSetTimerAttributeTargetTimerResolutionResult *))arg2;
 - (void)confirmSetTimerAttribute:(INSetTimerAttributeIntent *)arg1 completion:(void (^)(INSetTimerAttributeIntentResponse *))arg2;

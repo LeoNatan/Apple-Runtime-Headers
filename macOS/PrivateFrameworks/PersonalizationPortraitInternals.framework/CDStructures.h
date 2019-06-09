@@ -18,6 +18,14 @@ struct PPMBoolOption_ {
     unsigned long long _field1;
 };
 
+struct PPMLocationAlgorithm_ {
+    unsigned long long _field1;
+};
+
+struct PPMLocationDonationSource_ {
+    unsigned long long _field1;
+};
+
 struct PPMNamedEntityAlgorithm_ {
     unsigned long long _field1;
 };
@@ -26,15 +34,15 @@ struct PPMNamedEntityDonationSource_ {
     unsigned long long _field1;
 };
 
+struct PPMObjectDonationSource_ {
+    unsigned long long _field1;
+};
+
 struct PPMPortraitComponent_ {
     unsigned long long _field1;
 };
 
-struct PPMPortraitDomain_ {
-    unsigned long long _field1;
-};
-
-struct PPMPortraitFeedbackType_ {
+struct PPMTopicAlgorithm_ {
     unsigned long long _field1;
 };
 
@@ -50,9 +58,17 @@ struct PPMTypeSafeBool_ {
     unsigned long long _field1;
 };
 
+struct PPScoredItem {
+    Class _field1;
+};
+
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
+};
+
+struct _PASDBIterAction_ {
+    char _field1;
 };
 
 struct header_s {

@@ -8,5 +8,10 @@
 
 @interface NSFileManager (TSUTemporaryDirectoryAdditions)
 - (BOOL)tsu_grantUserWritePosixPermissionAtPath:(id)arg1 error:(id *)arg2;
+- (BOOL)sfu_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(BOOL)arg3 error:(id *)arg4;
+- (BOOL)sfup_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(BOOL)arg3 error:(id *)arg4 shouldUpdateAttributesHandler:(CDUnknownBlockType)arg5;
+- (unsigned long long)sfu_pathUsage:(id)arg1;
+- (unsigned long long)sfu_directoryUsage:(id)arg1;
+- (BOOL)tsu_linkOrCopyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 @end
 

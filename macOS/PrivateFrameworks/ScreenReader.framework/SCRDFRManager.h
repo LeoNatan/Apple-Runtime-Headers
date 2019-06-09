@@ -32,7 +32,7 @@ __attribute__((visibility("hidden")))
     AXETrackingTapGestureRecognizer *__doubleTapGestureRecognizer;
     AXETrackingHoldGestureRecognizer *__singleTapAndHoldGestureRecognizer;
     AXETrackingSplitTapGestureRecognizer *__splitTapGestureRecognizer;
-    unsigned long long __currentState;
+    long long __currentState;
     SCRElement *__elementUnderFinger;
     NSDate *__lastEmptyHitTimestamp;
     AXETrackingTouchEvent *__lastTapEvent;
@@ -56,7 +56,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct CGPoint _lastEmptyHitPoint; // @synthesize _lastEmptyHitPoint=__lastEmptyHitPoint;
 @property(retain, nonatomic) SCRElement *_elementUnderFinger; // @synthesize _elementUnderFinger=__elementUnderFinger;
 @property(nonatomic) int _currentTouchCount; // @synthesize _currentTouchCount=__currentTouchCount;
-@property(nonatomic) unsigned long long _currentState; // @synthesize _currentState=__currentState;
+@property(nonatomic) long long _currentState; // @synthesize _currentState=__currentState;
 @property(nonatomic) BOOL _singleTapAndHoldGestureRecognizerAborted; // @synthesize _singleTapAndHoldGestureRecognizerAborted=__singleTapAndHoldGestureRecognizerAborted;
 @property(nonatomic) BOOL _flickGestureRecognizerAborted; // @synthesize _flickGestureRecognizerAborted=__flickGestureRecognizerAborted;
 @property(retain, nonatomic) AXETrackingSplitTapGestureRecognizer *_splitTapGestureRecognizer; // @synthesize _splitTapGestureRecognizer=__splitTapGestureRecognizer;
@@ -71,9 +71,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) SCRDFRFocusManager *_dfrFocusManager; // @synthesize _dfrFocusManager=__dfrFocusManager;
 @property(retain, nonatomic) SCRCThreadKey *_threadKey; // @synthesize _threadKey=__threadKey;
 @property(nonatomic) BOOL isProcessingDFRGestureEvents; // @synthesize isProcessingDFRGestureEvents=_isProcessingDFRGestureEvents;
+- (void).cxx_destruct;
 - (void)_sendDFRBrailleLine;
-- (void)_buildDFRBrailleLineWithFocusedElement:(id)arg1 topLevelFunctionRow:(id)arg2;
-- (void)_updateDFRBrailleLineWithFocusedElement:(id)arg1 topLevelFunctionRow:(id)arg2;
 - (void)_drawFocusRingAroundAndAnnounceElement:(id)arg1;
 - (void)_drawFocusRingAroundElement:(id)arg1;
 - (struct CGPoint)_dfrCoordinateFromNormalizedCoordinate:(struct CGPoint)arg1;
@@ -84,7 +83,7 @@ __attribute__((visibility("hidden")))
 - (void)_echoFocusedElement:(id)arg1;
 - (void)_moveFocusToPoint:(struct CGPoint)arg1;
 - (void)_trySwitchingToTrackingMode;
-- (void)_transitionToState:(unsigned long long)arg1;
+- (void)_transitionToState:(long long)arg1;
 - (void)_resetLastEmptyHitPointAndTimestamp;
 - (void)handleRefreshBrailleLineEvent:(id)arg1;
 - (void)handleDFRBrailleRoutingEvent:(id)arg1 request:(id)arg2 uiElement:(id)arg3;

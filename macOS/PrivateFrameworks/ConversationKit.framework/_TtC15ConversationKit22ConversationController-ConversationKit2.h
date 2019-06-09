@@ -6,8 +6,13 @@
 
 #import <ConversationKit/_TtC15ConversationKit22ConversationController.h>
 
-@interface _TtC15ConversationKit22ConversationController (ConversationKit2)
-- (void)handleScreenConnectionDidUpdate:(id)arg1;
-- (void)handleLocalVideoPreviewFirstFrameArrived:(id)arg1;
+#import <ConversationKit/AVCRemoteVideoClientDelegate-Protocol.h>
+
+@interface _TtC15ConversationKit22ConversationController (ConversationKit2) <AVCRemoteVideoClientDelegate>
+- (void)remoteVideoClient:(id)arg1 remoteVideoAttributesDidChange:(id)arg2;
+- (void)remoteVideoClient:(id)arg1 videoDidDegrade:(BOOL)arg2;
+- (void)remoteVideoClient:(id)arg1 remoteVideoDidPause:(BOOL)arg2;
+- (void)remoteVideoClient:(id)arg1 videoDidSuspend:(BOOL)arg2;
+- (void)remoteVideoClientDidReceiveFirstFrame:(id)arg1;
 @end
 

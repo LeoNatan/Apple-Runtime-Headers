@@ -14,8 +14,11 @@
     NSMutableArray *_matchRanges;
     short _category;
     NSString *_contentString;
+    NSString *_normalizedString;
     NSString *_lookupIdentifier;
+    NSArray *_groupRanges;
     PSIDateFilter *_dateFilter;
+    NSArray *_datedTokens;
     unsigned long long _groupId;
     unsigned long long _owningGroupId;
 }
@@ -23,15 +26,24 @@
 @property(readonly, nonatomic) unsigned long long owningGroupId; // @synthesize owningGroupId=_owningGroupId;
 @property(readonly, nonatomic) unsigned long long groupId; // @synthesize groupId=_groupId;
 @property(readonly, nonatomic) short category; // @synthesize category=_category;
+@property(readonly, nonatomic) NSArray *datedTokens; // @synthesize datedTokens=_datedTokens;
 @property(readonly, copy, nonatomic) PSIDateFilter *dateFilter; // @synthesize dateFilter=_dateFilter;
+@property(readonly, nonatomic) NSArray *groupRanges; // @synthesize groupRanges=_groupRanges;
 @property(readonly, copy, nonatomic) NSString *lookupIdentifier; // @synthesize lookupIdentifier=_lookupIdentifier;
+@property(readonly, copy, nonatomic) NSString *normalizedString; // @synthesize normalizedString=_normalizedString;
 @property(readonly, copy, nonatomic) NSString *contentString; // @synthesize contentString=_contentString;
-@property(readonly, retain, nonatomic) NSArray *matchRanges; // @synthesize matchRanges=_matchRanges;
-@property(readonly, retain, nonatomic) NSArray *tokens; // @synthesize tokens=_tokens;
+@property(readonly, nonatomic) NSArray *matchRanges; // @synthesize matchRanges=_matchRanges;
+@property(readonly, nonatomic) NSArray *tokens; // @synthesize tokens=_tokens;
+- (void).cxx_destruct;
+- (_Bool)isDateFilterFromImplicitToken;
+- (_Bool)isDateFilterPartiallyFromFullSearchText;
+- (_Bool)isDateFilterFromFullSearchText;
 - (void)addMatchRange:(id)arg1;
 - (void)addToken:(id)arg1;
-- (void)dealloc;
-- (id)initWithContentString:(id)arg1 token:(id)arg2 category:(short)arg3 lookupIdentifier:(id)arg4 dateFilter:(id)arg5 groupId:(unsigned long long)arg6 owningGroupId:(unsigned long long)arg7;
+- (id)initWithContentString:(id)arg1 lookupIdentifier:(id)arg2 category:(short)arg3;
+- (id)initWithDateFilter:(id)arg1 datedTokens:(id)arg2;
+- (id)initWithGroup:(id)arg1 token:(id)arg2;
+- (id)initWithContentString:(id)arg1 normalizedString:(id)arg2 token:(id)arg3 category:(short)arg4 lookupIdentifier:(id)arg5 dateFilter:(id)arg6 groupId:(unsigned long long)arg7 owningGroupId:(unsigned long long)arg8 groupRanges:(id)arg9 datedTokens:(id)arg10;
 
 @end
 

@@ -8,11 +8,13 @@
 
 #import <CommunicationsSetupUI/AKAppleIDAuthenticationDelegate-Protocol.h>
 #import <CommunicationsSetupUI/CNFRegWizardControllerDelegate-Protocol.h>
+#import <CommunicationsSetupUI/CNMeCardSharingPickerViewControllerDelegate-Protocol.h>
+#import <CommunicationsSetupUI/IMCCNMeCardSharingSettingsViewControllerDelegate-Protocol.h>
 #import <CommunicationsSetupUI/IMCloudKitEventHandler-Protocol.h>
 
 @class CKFilteringListController, CKMultipleCTSubscriptionsController, CKNSExtension, IMCTXPCServiceSubscriptionInfo, NSString;
 
-@interface CKSettingsMessagesController : CNFRegListController <CNFRegWizardControllerDelegate, AKAppleIDAuthenticationDelegate, IMCloudKitEventHandler>
+@interface CKSettingsMessagesController : CNFRegListController <CNFRegWizardControllerDelegate, AKAppleIDAuthenticationDelegate, IMCloudKitEventHandler, CNMeCardSharingPickerViewControllerDelegate, IMCCNMeCardSharingSettingsViewControllerDelegate>
 {
     _Bool _showingChildViewController;
     int _profileToken;
@@ -25,6 +27,7 @@
 }
 
 + (id)currentKeepMessages;
++ (id)removeFirstPartyExtensionFromArray:(id)arg1;
 + (int)currentMessageAutoKeepOptionForType:(int)arg1;
 + (_Bool)currentMessageAutoKeepForType:(int)arg1;
 @property(retain, nonatomic) CKNSExtension *ckExtension; // @synthesize ckExtension=_ckExtension;
@@ -69,6 +72,19 @@
 - (_Bool)shouldShowReadReceipts;
 - (id)smsRelaySettingsSpecifierIdentifiers;
 - (_Bool)shouldShowSMSRelaySettings;
+- (void)sharingSettingsViewController:(id)arg1 didSelectSharingAudience:(unsigned long long)arg2;
+- (void)sharingSettingsViewController:(id)arg1 didUpdateSharingState:(_Bool)arg2;
+- (void)sharingSettingsViewControllerDidUpdateContact:(id)arg1;
+- (void)sharingPickerDidFinish:(id)arg1;
+- (void)sharingPicker:(id)arg1 didSelectNameFormat:(unsigned long long)arg2;
+- (void)sharingPicker:(id)arg1 didSelectSharingAudience:(unsigned long long)arg2;
+- (void)sharingPicker:(id)arg1 didChangeSharingState:(_Bool)arg2;
+- (unsigned long long)_meCardSharingAudience;
+- (unsigned long long)_meCardSharingNameFormat;
+- (_Bool)_meCardSharingEnabled;
+- (void)_showSetupMeCardAlert;
+- (id)getNameAndPhotoSharingSpecifierSummary:(id)arg1;
+- (void)nameAndPhotoSharingForSpecifier:(id)arg1;
 - (id)contactPhotoSettingsSpecifierIdentifiers;
 - (_Bool)shouldShowContactPhotoSettings;
 - (id)audioMessageSettingsSpecifierIdentifiers;
@@ -101,9 +117,7 @@
 - (id)_switchFooterText:(_Bool *)arg1;
 - (void)setMadridEnabled:(id)arg1 specifier:(id)arg2;
 - (id)isMadridEnabled:(id)arg1;
-- (id)madridAccountsMultipleSubscriptionsSpecifierIdentifiers;
 - (id)madridSwitchSpecifierIdentifiers;
-- (_Bool)shouldShowIDSSubscriptions;
 - (_Bool)shouldShowMadridSwitch;
 - (_Bool)_isMadridSwitchOn;
 - (_Bool)_isMadridAccountOperational;

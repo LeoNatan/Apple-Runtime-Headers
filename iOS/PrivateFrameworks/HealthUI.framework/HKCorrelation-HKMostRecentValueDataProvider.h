@@ -8,5 +8,8 @@
 
 @interface HKCorrelation (HKMostRecentValueDataProvider)
 - (id)dataProviderValue;
+- (void)_hk_bloodPressureDetailRowForSampleType:(id)arg1 title:(id)arg2 section:(id)arg3;
+- (void)_hk_bloodPressureDetailRowsWithSection:(id)arg1;
+- (void)addDetailValuesToSection:(id)arg1;
 @end
 

@@ -6,27 +6,36 @@
 
 #import <UIKitCore/UITextInteraction.h>
 
+@class UITextGestureTuning;
+
 __attribute__((visibility("hidden")))
 @interface UITextSelectionInteraction : UITextInteraction
 {
     double _lastTapTimestamp;
     struct CGPoint _lastTapLocation;
     int _previousRepeatedGranularity;
+    UITextGestureTuning *_gestureTuning;
 }
 
+- (void).cxx_destruct;
 - (_Bool)shouldHandleOneFingerTapInUneditable:(id)arg1;
 - (_Bool)interaction_gestureRecognizerShouldBegin:(id)arg1;
 - (void)setHybridSelectionWithPoint:(struct CGPoint)arg1;
 - (void)twoFingerRangedSelectGesture:(id)arg1;
 - (void)tapAndAHalf:(id)arg1;
+- (void)_createGestureTuningIfNecessary;
 - (void)confirmMarkedText:(id)arg1;
+- (void)_updateTapGestureHistoryWithLocation:(struct CGPoint)arg1;
 - (void)oneFingerTap:(id)arg1;
 - (void)oneFingerTapSelectsAll:(id)arg1;
 - (void)performTapActionAtPoint:(struct CGPoint)arg1 granularity:(int)arg2 modifierFlags:(int)arg3;
-- (void)performTapActionAtPoint:(struct CGPoint)arg1 granularity:(int)arg2;
-- (_Bool)isNowWithinRepeatedTapTime;
+- (int)_textGranularityForRepeatedTap:(int)arg1;
+- (_Bool)_isRepeatedTap:(id)arg1 gestureLocationOut:(struct CGPoint *)arg2;
+- (_Bool)_isNowWithinRepeatedTapTime;
 - (_Bool)_isShiftKeyBeingHeldForGesture:(id)arg1;
 - (void)oneFingerDoubleTap:(id)arg1;
+- (void)oneFingerTripleTap:(id)arg1;
+- (void)finishSetup;
 - (id)initWithMode:(int)arg1;
 
 @end

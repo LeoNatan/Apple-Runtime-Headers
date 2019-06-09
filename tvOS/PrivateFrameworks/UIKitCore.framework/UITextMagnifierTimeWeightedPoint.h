@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
     } m_points[16];
 }
 
+- (struct CGPoint)diffFromLastPoint;
+- (_Bool)isPlacedCarefully;
 - (float)distanceCoveredInInterval:(double)arg1 priorTo:(double)arg2;
 - (struct CGSize)displacementInInterval:(double)arg1 priorTo:(double)arg2;
 - (struct CGSize)displacementInInterval:(double)arg1;

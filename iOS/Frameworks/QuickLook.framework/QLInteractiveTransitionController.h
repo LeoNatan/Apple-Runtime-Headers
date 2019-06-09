@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(nonatomic) double completeProgress; // @synthesize completeProgress=_completeProgress;
+- (void)_performForcedDismissal;
 - (void)completeTransition:(_Bool)arg1 withDuration:(double)arg2;
 - (void)updateTransitionWithProgress:(double)arg1 isFinal:(_Bool)arg2;
 - (void)updateTransitionWithProgress:(double)arg1;

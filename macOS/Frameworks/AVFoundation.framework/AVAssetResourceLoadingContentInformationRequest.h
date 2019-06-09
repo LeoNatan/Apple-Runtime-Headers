@@ -22,7 +22,6 @@
 @property(copy, nonatomic) NSString *contentType;
 - (id)propertyList;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithLoadingRequest:(id)arg1 allowedContentTypes:(id)arg2;
 - (id)init;

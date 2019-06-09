@@ -6,20 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@class QTCGContextRenderer, QTMovie;
-
 @interface QTVideoRendererWebKitOnly : NSObject
 {
-    QTMovie *_movie;
-    QTCGContextRenderer *_renderer;
 }
 
-- (void)newImageAvailable;
-- (void)drawInRect:(struct CGRect)arg1;
-- (void)setMovie:(id)arg1;
-- (id)movie;
-- (void)finalize;
-- (void)dealloc;
 - (id)init;
 
 @end

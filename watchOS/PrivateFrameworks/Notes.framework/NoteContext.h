@@ -47,6 +47,7 @@
 + (id)storeOptions;
 + (id)generateGUID;
 + (id)defaultNotesSortDescriptors;
++ (id)fileURLProtectionOption;
 + (id)fileProtectionOption;
 + (void)clearTestsNotesRootPath;
 + (void)setTestsNotesRootPath:(id)arg1;

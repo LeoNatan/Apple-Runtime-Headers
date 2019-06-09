@@ -10,7 +10,7 @@
 
 @interface NSCFRunLoopSemaphore : NSObject
 {
-    void *_mode;
+    struct __CFString *_mode;
     NSString *_legend;
     NSString *_loggingDomain;
     unsigned int _waiting:1;
@@ -26,13 +26,14 @@
 + (id)invocations;
 + (struct __CFString *)currentRunLoopMode;
 + (void)initialize;
-@property(readonly) NSString *mode; // @synthesize mode=_mode;
+@property(readonly) struct __CFString *mode; // @synthesize mode=_mode;
 @property(copy) NSString *loggingDomain; // @synthesize loggingDomain=_loggingDomain;
 @property(copy) NSString *legend; // @synthesize legend=_legend;
 - (void)wait;
 - (BOOL)wait:(double)arg1;
 - (void)signal;
 - (void)_log:(id)arg1;
+- (void)_log:(id)arg1 force:(BOOL)arg2;
 - (void)dealloc;
 - (oneway void)release;
 - (void)__vbSuperRelease;

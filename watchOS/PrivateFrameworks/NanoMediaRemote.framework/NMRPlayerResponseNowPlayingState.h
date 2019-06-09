@@ -10,16 +10,12 @@
 
 @class MPCPlayerResponse;
 
-__attribute__((visibility("hidden")))
 @interface NMRPlayerResponseNowPlayingState : NMRNowPlayingState <NSCopying>
 {
-    MPCPlayerResponse *_response;
-    unsigned int _addStatus;
+    MPCPlayerResponse *_playerResponse;
 }
 
-+ (_Bool)isAddToLibraryCommandEqualBetweenAddStatus:(unsigned int)arg1 andAddStatus:(unsigned int)arg2;
-+ (_Bool)_isAddToLibraryCommandActiveFromAddStatus:(unsigned int)arg1;
-+ (_Bool)_isAddToLibraryCommandEnabledFromAddStatus:(unsigned int)arg1;
+@property(readonly, nonatomic) MPCPlayerResponse *playerResponse; // @synthesize playerResponse=_playerResponse;
 - (void).cxx_destruct;
 - (id)_nowPlayingRadioStation;
 - (id)_nowPlayingSong;
@@ -27,11 +23,8 @@ __attribute__((visibility("hidden")))
 - (double)fastForwardTimeInterval;
 - (_Bool)isSkipBackwardCommandEnabled;
 - (_Bool)isSkipForwardCommandEnabled;
-- (id)previousTrackCommandEnabled;
-- (id)nextTrackCommandEnabled;
-- (_Bool)isAddToLibraryActive;
-- (_Bool)isAddToLibraryCommandEnabled;
-- (_Bool)isAddToLibraryCommandSupported;
+- (_Bool)isPreviousTrackCommandEnabled;
+- (_Bool)isNextTrackCommandEnabled;
 - (id)localizedBookmarkTitle;
 - (_Bool)isBookmarkedActive;
 - (_Bool)isBookmarkCommandEnabled;
@@ -53,12 +46,12 @@ __attribute__((visibility("hidden")))
 - (_Bool)isRepeatModeCommandSupported;
 - (id)applicationBundleIdentifier;
 - (id)applicationDisplayName;
-- (id)artworkImageData;
 - (_Bool)isAlwaysLive;
 - (_Bool)isAdvertisement;
 - (id)radioStationHash;
 - (id)radioStationIdentifier;
 - (id)radioStationName;
+- (id)collectionTitle;
 - (id)artworkCatalog;
 - (_Bool)isExplicitTrack;
 - (id)album;
@@ -69,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (id)itemCompanionPersistentID;
 - (id)itemPersistentID;
 - (id)identifiers;
+- (_Bool)hasNowPlayingInfo;
 - (double)elapsedTimeAtLastUpdate;
 - (unsigned int)playbackState;
 - (float)preferredPlaybackRate;
@@ -76,7 +70,7 @@ __attribute__((visibility("hidden")))
 - (double)duration;
 - (id)timestamp;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithPlayerResponse:(id)arg1 libraryAddStatus:(unsigned int)arg2;
+- (id)initWithPlayerResponse:(id)arg1;
 
 @end
 

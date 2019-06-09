@@ -6,13 +6,14 @@
 
 #import <FinderKit/FI_TPropertyImageViewController.h>
 
+#import <FinderKit/TDraggingSource-Protocol.h>
 #import <FinderKit/TPropertyThumbnailExtractorDelegate-Protocol.h>
 #import <FinderKit/TThumbnailExtractorDelegate-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface FI_TPropertyColumnPreviewSmallIconController : FI_TPropertyImageViewController <TPropertyThumbnailExtractorDelegate, TThumbnailExtractorDelegate>
+@interface FI_TPropertyColumnPreviewSmallIconController : FI_TPropertyImageViewController <TPropertyThumbnailExtractorDelegate, TDraggingSource, TThumbnailExtractorDelegate>
 {
     struct TFENodeVector _nodes;
     unordered_set_931aff12 _pendingKeyNodes;
@@ -30,6 +31,12 @@ __attribute__((visibility("hidden")))
 @property _Bool wantsToWaitForThumbnails; // @synthesize wantsToWaitForThumbnails=_wantsToWaitForThumbnails;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)dragFlockingImageComponentsForNode:(const struct TFENode *)arg1;
+- (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
+- (id)beginDraggingNodes:(const struct TFENodeVector *)arg1 mouseDownEvent:(id)arg2;
+- (void)draggingSession:(id)arg1 endedAtPoint:(struct CGPoint)arg2 operation:(unsigned long long)arg3;
+- (void)startDragInView:(id)arg1 withEvent:(id)arg2;
+- (_Bool)isAllowedToDragNodes:(const struct TFENodeVector *)arg1;
 - (void)waitForThumbnail:(const struct TFENode *)arg1;
 - (void)timesUpWaitingForThumbs;
 - (struct TFENode)thumbnailTargetNodeForNode:(const struct TFENode *)arg1;

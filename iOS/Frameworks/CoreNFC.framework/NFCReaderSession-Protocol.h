@@ -11,6 +11,7 @@
 @protocol NFCReaderSession <NSObject>
 @property(copy, nonatomic) NSString *alertMessage;
 @property(readonly, nonatomic, getter=isReady) _Bool ready;
+- (void)invalidateSessionWithErrorMessage:(NSString *)arg1;
 - (void)invalidateSession;
 - (void)beginSession;
 @end

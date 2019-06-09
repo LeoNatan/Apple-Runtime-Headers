@@ -10,12 +10,6 @@
 {
 }
 
-+ (void)globalAPIUnlockForAddressBook:(id)arg1 inFile:(const char *)arg2 line:(unsigned long long)arg3;
-+ (void)globalAPILockForAddressBook:(id)arg1 inFile:(const char *)arg2 line:(unsigned long long)arg3;
-+ (id)managedObjectContextForAddressBook:(id)arg1;
-+ (id)builtInProperties;
-- (void)unlock;
-- (void)lock;
 - (id)remoteLocation;
 - (BOOL)isSubscribed;
 - (id)parentGroupsIncludingSubscriptions;
@@ -27,8 +21,6 @@
 - (id)valueForProperty:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1 addressBook:(id)arg2;
 - (id)description;
-- (BOOL)_shouldAssignNewDatabaseImplToPrimaryStore;
-- (id)_table;
 
 @end
 

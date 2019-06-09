@@ -13,8 +13,10 @@
 @interface WKNavigation : NSObject <WKObject>
 {
     struct ObjectStorage<API::Navigation> _navigation;
+    long long _effectiveContentMode;
 }
 
+@property(readonly, nonatomic) long long effectiveContentMode; // @synthesize effectiveContentMode=_effectiveContentMode;
 @property(readonly) struct Object *_apiObject;
 - (id)_request;
 - (void)dealloc;

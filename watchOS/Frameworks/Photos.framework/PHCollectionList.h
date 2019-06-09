@@ -6,7 +6,7 @@
 
 #import <Photos/PHCollection.h>
 
-@class NSArray, NSDate, NSString, PHQuery;
+@class NSArray, NSDate, NSManagedObjectID, NSString, PHQuery;
 
 @interface PHCollectionList : PHCollection
 {
@@ -19,6 +19,7 @@
     NSArray *_collections;
     PHQuery *_query;
     NSString *_transientIdentifier;
+    NSManagedObjectID *_parentFolderObjectID;
     int _plAlbumKind;
     CDUnknownBlockType _childCollectionsSortingComparator;
     unsigned int _unreadAssetCollectionsCount;
@@ -33,9 +34,11 @@
 + (id)transientCollectionListWithCollections:(id)arg1 title:(id)arg2 identifier:(id)arg3;
 + (id)transientCollectionListWithCollectionsFetchResult:(id)arg1 title:(id)arg2;
 + (id)transientCollectionListWithCollections:(id)arg1 title:(id)arg2;
++ (id)transientCollectionListWithCollections:(id)arg1 title:(id)arg2 identifier:(id)arg3 photoLibrary:(id)arg4;
 + (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)fetchMomentListsWithSubtype:(int)arg1 options:(id)arg2;
 + (id)fetchMomentListsWithSubtype:(int)arg1 containingMoment:(id)arg2 options:(id)arg3;
++ (id)fetchRootProjectCollectionListWithOptions:(id)arg1;
 + (id)fetchRootAlbumCollectionListWithOptions:(id)arg1;
 + (id)fetchCollectionListsWithType:(int)arg1 subtype:(int)arg2 options:(id)arg3;
 + (id)fetchCollectionListsWithType:(int)arg1 localIdentifiers:(id)arg2 options:(id)arg3;
@@ -61,7 +64,9 @@
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 - (void).cxx_destruct;
 - (id)description;
-- (id)initTransientWithCollections:(id)arg1 orQuery:(id)arg2 title:(id)arg3 identifier:(id)arg4;
+- (id)initTransientWithCollections:(id)arg1 orQuery:(id)arg2 title:(id)arg3 identifier:(id)arg4 photoLibrary:(id)arg5;
+- (id)effectiveCustomSortKey;
+- (id)parentFolderID;
 - (_Bool)hasLocationInfo;
 @property(readonly, nonatomic) _Bool keyCollectionsAtEnd;
 - (unsigned int)collectionFixedOrderPriority;

@@ -10,16 +10,11 @@
 {
 }
 
-+ (id)px_bestMessagingTransportForContact:(id)arg1;
 + (_Bool)bootstrapPersonSuggestion:(id)arg1 withContact:(id)arg2 error:(id *)arg3;
 + (id)composeRecipientForRecipient:(id)arg1;
 + (id)composeRecipientForAddress:(id)arg1 kind:(long long)arg2;
 + (id)composeRecipientForContact:(id)arg1;
 + (id)composeRecipientForPersonSuggestion:(id)arg1;
-+ (long long)px_addressKindFromString:(id)arg1;
-+ (id)px_validPhoneNumberFromString:(id)arg1;
-+ (_Bool)px_IsEmailAddress:(id)arg1 equalToEmailAddress:(id)arg2;
-+ (_Bool)px_IsValidEmailAddress:(id)arg1;
 
 @end
 

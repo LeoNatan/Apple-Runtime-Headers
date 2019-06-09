@@ -12,6 +12,9 @@
 
 + (id)_localizedNameOverrideForCustomEditMode:(int)arg1 forDevice:(id)arg2;
 + (_Bool)_customEditMode:(int)arg1 hasActionForOption:(id)arg2 forDevice:(id)arg3;
++ (id)_orderedComplicationSlots;
++ (id)_complicationSlotDescriptors;
+- (id)editOptionThatHidesAllComplications;
 - (void)_updateForResourceDirectoryChange:(id)arg1;
 - (id)_resourceDirectorySnapshotKey;
 - (Class)_optionClassForCustomEditMode:(int)arg1 resourceDirectoryExists:(_Bool)arg2;
@@ -21,8 +24,6 @@
 - (unsigned int)_numberOfOptionsForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_defaultOptionForCustomEditMode:(int)arg1 slot:(id)arg2;
 - (id)_customEditModes;
-- (id)_orderedComplicationSlots;
-- (id)_complicationSlotDescriptors;
 
 @end
 

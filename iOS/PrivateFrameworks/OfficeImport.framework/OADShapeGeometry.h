@@ -15,7 +15,9 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *mAdjustValues;
 }
 
+- (void).cxx_destruct;
 - (id)description;
+- (id)adjustValues;
 - (unsigned long long)adjustValueCount;
 - (_Bool)hasAdjustValueAtIndex:(unsigned int)arg1;
 - (int)adjustValueAtIndex:(unsigned int)arg1;
@@ -24,8 +26,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)isEscher;
 - (id)equivalentCustomGeometry;
 - (int)type;
-- (id)adjustValues;
-- (void)dealloc;
 - (id)init;
 
 @end

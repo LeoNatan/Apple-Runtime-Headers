@@ -7,35 +7,41 @@
 #import <objc/NSObject.h>
 
 #import <NewsCore/FCAppActivityObserving-Protocol.h>
+#import <NewsCore/FCPurchaseProviderType-Protocol.h>
 #import <NewsCore/FCUserInfoObserving-Protocol.h>
 #import <NewsCore/NSURLSessionDelegate-Protocol.h>
 
-@class FCCloudContext, FCKeyValueStore, FCPurchaseLookUpEntriesManager, NSDate, NSDictionary, NSMutableDictionary, NSSet, NSString, NSURLSession;
-@protocol OS_dispatch_queue;
+@class FCAsyncSerialQueue, FCCloudContext, FCKeyValueStore, FCPurchaseLookUpEntriesManager, NSDate, NSDictionary, NSMutableDictionary, NSSet, NSString, NSURLSession;
+@protocol FCEntitlementsOverrideProviderType, OS_dispatch_queue;
 
-@interface FCPurchaseController : NSObject <FCUserInfoObserving, NSURLSessionDelegate, FCAppActivityObserving>
+@interface FCPurchaseController : NSObject <FCUserInfoObserving, NSURLSessionDelegate, FCAppActivityObserving, FCPurchaseProviderType>
 {
     NSSet *_purchasesDiscoveredTagIDs;
     NSMutableDictionary *_webAccessEntriesByTagID;
+    id <FCEntitlementsOverrideProviderType> _entitlementsOverrideProvider;
     FCCloudContext *_cloudContext;
     NSURLSession *_session;
     FCKeyValueStore *_localStore;
     FCPurchaseLookUpEntriesManager *_purchaseLookupEntriesManager;
     NSDictionary *_readOnlyPurchaseLookUpEntriesByTagID;
     NSDate *_lastEntitlementCheckTime;
-    NSObject<OS_dispatch_queue> *_readWriteQueue;
+    NSObject<OS_dispatch_queue> *_accessQueue;
+    FCAsyncSerialQueue *_entitlementQueue;
 }
 
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *readWriteQueue; // @synthesize readWriteQueue=_readWriteQueue;
+@property(retain, nonatomic) FCAsyncSerialQueue *entitlementQueue; // @synthesize entitlementQueue=_entitlementQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *accessQueue; // @synthesize accessQueue=_accessQueue;
 @property(copy, nonatomic) NSDate *lastEntitlementCheckTime; // @synthesize lastEntitlementCheckTime=_lastEntitlementCheckTime;
 @property(copy) NSDictionary *readOnlyPurchaseLookUpEntriesByTagID; // @synthesize readOnlyPurchaseLookUpEntriesByTagID=_readOnlyPurchaseLookUpEntriesByTagID;
 @property(retain, nonatomic) FCPurchaseLookUpEntriesManager *purchaseLookupEntriesManager; // @synthesize purchaseLookupEntriesManager=_purchaseLookupEntriesManager;
 @property(retain, nonatomic) FCKeyValueStore *localStore; // @synthesize localStore=_localStore;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) FCCloudContext *cloudContext; // @synthesize cloudContext=_cloudContext;
+@property(retain, nonatomic) id <FCEntitlementsOverrideProviderType> entitlementsOverrideProvider; // @synthesize entitlementsOverrideProvider=_entitlementsOverrideProvider;
 @property(retain, nonatomic) NSMutableDictionary *webAccessEntriesByTagID; // @synthesize webAccessEntriesByTagID=_webAccessEntriesByTagID;
 @property(retain, nonatomic) NSSet *purchasesDiscoveredTagIDs; // @synthesize purchasesDiscoveredTagIDs=_purchasesDiscoveredTagIDs;
 - (void).cxx_destruct;
+@property(readonly, copy, nonatomic) NSSet *purchasedTagIDs;
 - (void)submitWebAccessWithTagID:(id)arg1 purchaseID:(id)arg2 emailAddress:(id)arg3 purchaseReceipt:(id)arg4 serialCompletion:(CDUnknownBlockType)arg5 completion:(CDUnknownBlockType)arg6;
 - (void)handleWebAcccessFailureWithTagID:(id)arg1 purchaseID:(id)arg2 email:(id)arg3 purchaseReceipt:(id)arg4;
 - (void)handleWebAccessSuccessWithTagID:(id)arg1;
@@ -76,10 +82,8 @@
 - (void)fetchChannelIDsForPurchaseIDs:(id)arg1 callbackQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)fetchOperationForPurchaseLookupWithPurchaseIDs:(id)arg1;
 - (void)addAppStoreDiscoveredChannelsToFavorites:(id)arg1;
-- (void)_entitlementCheckWithIgnoreCache:(_Bool)arg1 restorableBundleIAPs:(id)arg2 callbackQueue:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)_entitlementCheckWithIgnoreCache:(_Bool)arg1 callbackQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_entitlementCheckWithIgnoreCache:(_Bool)arg1 restorableBundleIAPs:(id)arg2 callbackQueue:(id)arg3 completion:(CDUnknownBlockType)arg4 serialCompletion:(CDUnknownBlockType)arg5;
 - (void)performEntitlementCheckWithIgnoreCache:(_Bool)arg1 callbackQueue:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)feldsparEntitlementCheckWithCallbackQueue:(id)arg1 ignoreCache:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)webAccessOptedInTagIDs;
 - (id)subscriptionNotSupportedChannelIDs;
 - (id)expiredPurchaseChannelIDs;

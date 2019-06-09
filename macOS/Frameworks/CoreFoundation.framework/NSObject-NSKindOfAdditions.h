@@ -19,5 +19,6 @@
 - (BOOL)isNSData__;
 - (BOOL)isNSCFConstantString__;
 - (BOOL)isNSArray__;
+- (unsigned long long)_cfTypeID;
 @end
 

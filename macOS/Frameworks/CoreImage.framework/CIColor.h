@@ -50,7 +50,6 @@
 @property(readonly) double alpha;
 @property(readonly) const double *components;
 @property(readonly) unsigned long long numberOfComponents;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4 colorSpace:(struct CGColorSpace *)arg5;
 - (id)initWithRed:(double)arg1 green:(double)arg2 blue:(double)arg3 colorSpace:(struct CGColorSpace *)arg4;

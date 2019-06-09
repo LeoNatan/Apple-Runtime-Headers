@@ -12,14 +12,14 @@ __attribute__((visibility("hidden")))
 @interface _CFPasteboardPendingPromise : NSObject
 {
     _CFPasteboardEntry *_entry;
-    // Error parsing type: ^{__CFPasteboard={__CFRuntimeBase=QAQ}^{__CFString}@^{__CFUUID}^{__CFArray}C@@CCCC}, name: _pboard
+    // Error parsing type: ^{__CFPasteboard={__CFRuntimeBase=QAQ}^{__CFString}@^{__CFUUID}^{__CFArray}C@@AQCCCC}, name: _pboard
 }
 
 // Error parsing type for property pasteboard:
-// Property attributes: T^{__CFPasteboard={__CFRuntimeBase=QAQ}^{__CFString}@^{__CFUUID}^{__CFArray}C@@CCCC},R,V_pboard
+// Property attributes: T^{__CFPasteboard={__CFRuntimeBase=QAQ}^{__CFString}@^{__CFUUID}^{__CFArray}C@@AQCCCC},R,V_pboard
 
 - (void)dealloc;
--     // Error parsing type: @32@0:8@16^{__CFPasteboard={__CFRuntimeBase=QAQ}^{__CFString}@^{__CFUUID}^{__CFArray}C@@CCCC}24, name: initWithEntry:pasteboard:
+-     // Error parsing type: @32@0:8@16^{__CFPasteboard={__CFRuntimeBase=QAQ}^{__CFString}@^{__CFUUID}^{__CFArray}C@@AQCCCC}24, name: initWithEntry:pasteboard:
 
 @end
 

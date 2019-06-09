@@ -9,7 +9,7 @@
 #import <SymptomPresentationFeed/NSCopying-Protocol.h>
 #import <SymptomPresentationFeed/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSDate, NSPredicate;
+@class NSArray, NSDate, NSPredicate, NWNetworkAdviceUpdate;
 
 @interface NWNetworkOfInterest : NSObject <NSSecureCoding, NSCopying>
 {
@@ -21,6 +21,7 @@
     long long _interface;
     NSPredicate *_customSignature;
     long long _considerAlternate;
+    NWNetworkAdviceUpdate *_considerAlternateUpdate;
     long long _linkQuality;
     long long _powerCostDL;
     long long _powerCostUL;
@@ -40,6 +41,7 @@
 @property long long powerCostUL; // @synthesize powerCostUL=_powerCostUL;
 @property long long powerCostDL; // @synthesize powerCostDL=_powerCostDL;
 @property long long linkQuality; // @synthesize linkQuality=_linkQuality;
+@property(retain) NWNetworkAdviceUpdate *considerAlternateUpdate; // @synthesize considerAlternateUpdate=_considerAlternateUpdate;
 @property long long considerAlternate; // @synthesize considerAlternate=_considerAlternate;
 @property BOOL discretionaryTrafficInvited; // @synthesize discretionaryTrafficInvited=_discretionaryTrafficInvited;
 @property BOOL willGetDiscretionaryTrafficInvites; // @synthesize willGetDiscretionaryTrafficInvites=_willGetDiscretionaryTrafficInvites;

@@ -15,11 +15,11 @@ __attribute__((visibility("hidden")))
     PBPresentationReaderState *mLegacyPresentationState;
 }
 
+- (void).cxx_destruct;
 - (void)setLegacyPresentationState:(id)arg1;
 - (id)legacyPresentationState;
 - (void)setLegacyTextGlobals:(id)arg1;
 - (id)legacyTextGlobals;
-- (void)dealloc;
 
 @end
 

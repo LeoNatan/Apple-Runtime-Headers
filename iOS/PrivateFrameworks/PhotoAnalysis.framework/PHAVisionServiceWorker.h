@@ -27,7 +27,9 @@
 
 + (CDUnknownBlockType)assetResourceSmallestToLargestComparator;
 + (CDUnknownBlockType)assetResourceLargestToSmallestComparator;
++ (void)disableANEForRequest:(id)arg1;
 + (id)defaultImageCreationOptions;
++ (id)analysisLog;
 + (void)initialize;
 @property _Bool analysisJobCancelled; // @synthesize analysisJobCancelled=_analysisJobCancelled;
 @property(nonatomic) unsigned int visionAlgorithmUmbrellaVersion; // @synthesize visionAlgorithmUmbrellaVersion=_visionAlgorithmUmbrellaVersion;

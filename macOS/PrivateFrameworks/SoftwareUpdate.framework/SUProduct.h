@@ -16,7 +16,7 @@
     PKDistribution *_distribution;
     NSDictionary *_extraInfo;
     NSDictionary *_packageInfoForPackagePathString;
-    NSDictionary *_integrityDataForPackagePathString;
+    NSDictionary *_packageIntegrityInformationForPackagePathURL;
     NSDate *_postDate;
     BOOL _majorOSUpdate;
     SUMajorProduct *_majorProduct;
@@ -34,6 +34,7 @@
     NSArray *_extraPackageSpecifiersToInstall;
     NSMutableDictionary *_extraPackageIdentifiersToVersions;
     NSURL *_bridgeOSSoftwareUpdateEventRecordingServiceURL;
+    NSURL *_originatingCatalogURL;
     NSMutableDictionary *_packageReferenceForPackageIdentifier;
     PKDistributionChoice *_swuChoice;
     NSDictionary *_distributionEnv;
@@ -69,6 +70,7 @@
 - (id)packageURLs;
 - (BOOL)hasInstallablePackages;
 - (id)packageReferenceForPackageIdentifier:(id)arg1;
+- (id)packageIntegrityInformationForRefURL:(id)arg1;
 - (id)packageInfoForPackageRefURL:(id)arg1;
 - (void)invalidatePackageIdentifierInCache:(id)arg1;
 - (id)packageIdentifiersToInstall;
@@ -93,7 +95,7 @@
 - (id)distribution;
 - (id)productKey;
 - (id)description;
-- (BOOL)setIntegrityDataByPackageURL:(id)arg1 preserveOriginalData:(BOOL)arg2;
+- (void)setIntegrityInformation:(id)arg1 preserveOriginalData:(BOOL)arg2;
 - (BOOL)setPKMDataByPackageURL:(id)arg1 preserveOriginalData:(BOOL)arg2;
 - (void)_cacheDataFromDistributionController:(id)arg1;
 - (void)dealloc;
@@ -108,6 +110,8 @@
 - (id)_distributionEnvironment;
 - (void)_setExtraInfo:(id)arg1;
 - (id)_extraInfo;
+- (id)_originatingCatalogURL;
+- (void)_setOriginatingCatalogURL:(id)arg1;
 - (id)_bridgeOSSoftwareUpdateEventRecordingServiceURL;
 - (void)_setBridgeOSSoftwareUpdateEventRecordingServiceURL:(id)arg1;
 - (id)_extraPackageIdentifiersToVersions;
@@ -140,7 +144,7 @@
 - (id)_deferredEnablementDate;
 - (BOOL)_isVisibleForPredicateOnly;
 - (BOOL)_isDeferrable;
-- (void)_addBridgeOSUpdatePackagesFromCatalogAtURL:(id)arg1 isDevelopmentCatalog:(BOOL)arg2 downloadingToDirectory:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)_addBridgeOSUpdatePackagesFromCatalogAtURL:(id)arg1 isDevelopmentCatalog:(BOOL)arg2 enforceEV:(BOOL)arg3 downloadingToDirectory:(id)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (BOOL)_willSearchForBridgeOSUpdatePackages;
 - (id)_minimumRequiredBridgeVersion;
 - (BOOL)_isMacOSUpdate;
@@ -154,7 +158,6 @@
 - (BOOL)_isIgnored;
 - (BOOL)_isStandardVisibleRecommendedProduct;
 - (BOOL)_requiresPKMData;
-- (BOOL)_installsBundlePackages;
 - (id)_disabledGroupID;
 - (id)_labelVersion;
 - (id)_label;

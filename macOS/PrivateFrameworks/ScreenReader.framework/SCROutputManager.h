@@ -6,28 +6,21 @@
 
 #import <ScreenReader/SCROutputThreadedObject.h>
 
-@class AXFDispatchQueue, NSLock, NSMutableArray, NSMutableDictionary, NSString, SCROutputRequest;
+@class AXFDispatchQueue, NSLock, NSMutableArray, NSMutableDictionary, NSString, SCRCUserDefaults, SCROutputRequest;
 
 @interface SCROutputManager : SCROutputThreadedObject
 {
     NSMutableDictionary *_categoryPrefsCache;
     NSMutableDictionary *_categoryConfigOverrides;
     NSLock *_prefCacheLock;
-    struct __CFDictionary *_requestRunners;
-    struct __CFDictionary *_components;
-    NSLock *_componentsLock;
     unsigned long long _nextRequestUniqueID;
     NSLock *_requestUniqueIDLock;
     NSString *_lastSpeechAttribute;
     NSString *_clientIdentifier;
     struct __CFArray *_queuedOutputRequests;
-    struct __CFDictionary *_queuedObjectsByQueueID;
     struct __CFDictionary *_queuedObjectsByOutputID;
     NSLock *_queuedObjectsLock;
     NSMutableArray *_announcementHistory;
-    struct __CFArray *_savedOutputRequests;
-    BOOL _savedOutputIsRunning;
-    long long _savedOutputLeftInQueue;
     AXFDispatchQueue *_savedOutputDispatchQueue;
     unsigned long long _blockingRequestUniqueID;
     SCROutputRequest *_synchronousOutputRequest;
@@ -46,6 +39,15 @@
     BOOL _isAudioRunning;
     // Error parsing type: Ad, name: _lastTimeStopped
     BOOL _ignoringRequests;
+    BOOL __savedOutputIsRunning;
+    unsigned char __initializationState;
+    NSMutableDictionary *__components;
+    NSLock *__componentsLock;
+    NSMutableDictionary *__requestRunners;
+    NSMutableDictionary *__queuedObjectsByQueueID;
+    NSMutableArray *__savedOutputRequests;
+    long long __savedOutputLeftInQueue;
+    SCRCUserDefaults *__userDefaults;
 }
 
 + (id)voiceConfigurableCategories;
@@ -56,10 +58,19 @@
 + (void)_matchVoiceOverLanguageToLanguage:(id)arg1;
 + (BOOL)_allVoicesMatchLanguage:(id)arg1;
 + (id)availableVoices;
-+ (id)defaultManager;
 + (id)_supportedSynthesizerCharactersForVoice:(id)arg1;
 + (void)_setCachedSupportedSynthesizerCharacters:(id)arg1 forVoice:(id)arg2;
 + (id)_getCachedSupportedSynthesizerCharactersForVoice:(id)arg1;
+@property(retain, nonatomic, setter=_setUserDefaults:) SCRCUserDefaults *_userDefaults; // @synthesize _userDefaults=__userDefaults;
+@property(nonatomic, setter=_setInitializationState:) unsigned char _initializationState; // @synthesize _initializationState=__initializationState;
+@property(nonatomic, setter=_setSavedOutputLeftInQueue:) long long _savedOutputLeftInQueue; // @synthesize _savedOutputLeftInQueue=__savedOutputLeftInQueue;
+@property(nonatomic, setter=_setSavedOutputIsRunning:) BOOL _savedOutputIsRunning; // @synthesize _savedOutputIsRunning=__savedOutputIsRunning;
+@property(retain, nonatomic, setter=_setSavedOutputRequests:) NSMutableArray *_savedOutputRequests; // @synthesize _savedOutputRequests=__savedOutputRequests;
+@property(retain, nonatomic, setter=_setQueuedObjectsByQueueID:) NSMutableDictionary *_queuedObjectsByQueueID; // @synthesize _queuedObjectsByQueueID=__queuedObjectsByQueueID;
+@property(retain, nonatomic, setter=_setRequestRunners:) NSMutableDictionary *_requestRunners; // @synthesize _requestRunners=__requestRunners;
+@property(retain, nonatomic, setter=_setComponentsLock:) NSLock *_componentsLock; // @synthesize _componentsLock=__componentsLock;
+@property(retain, nonatomic, setter=_setComponents:) NSMutableDictionary *_components; // @synthesize _components=__components;
+- (void).cxx_destruct;
 - (void)_logRecentOutputRequestFailed;
 - (void)_compressAndMoveLogOutput;
 - (void)_logRecentOutputRequestsFinished;
@@ -122,7 +133,7 @@
 - (void)stopSpeechAndSound:(BOOL)arg1 exclusions:(id)arg2;
 - (void)stopSpeechAndSound:(BOOL)arg1;
 - (void)pauseOrContinueSpeech;
-- (float)lastSpeechAttributeValue:(unsigned long long)arg1 category:(id)arg2;
+- (float)lastSpeechAttributeValue:(long long)arg1 category:(id)arg2;
 - (id)customizedCategoryForCategory:(id)arg1;
 - (id)synthesizerLocaleStringForCategory:(id)arg1;
 - (id)synthesizerLocaleForCategory:(id)arg1;
@@ -177,7 +188,8 @@
 - (void)_turnOnDucking;
 - (BOOL)startAudioGraph;
 - (void)dealloc;
-- (id)init;
+- (void)completeInitialization;
+- (id)initWithUserDefaults:(id)arg1;
 - (long long)punctuationRepeatLimitForCategory:(id)arg1;
 - (long long)punctuationRepeateModeForCategory:(id)arg1;
 - (long long)punctuationVerbosityLevelForCategory:(id)arg1;
@@ -194,7 +206,7 @@
 - (void)clearConfigurationCache;
 - (id)_keysToObserve;
 - (void)removeConfigurationObservers;
-- (void)initializeOutputeManagerConfiguration;
+- (void)initializeOutputManagerConfiguration;
 
 @end
 

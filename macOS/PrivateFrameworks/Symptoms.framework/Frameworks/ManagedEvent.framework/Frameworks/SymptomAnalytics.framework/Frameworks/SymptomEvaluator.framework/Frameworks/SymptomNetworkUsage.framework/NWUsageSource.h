@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface NWUsageSource : NSObject
 {
     int _pidForAttribution;
@@ -16,6 +17,7 @@
     BOOL _removed;
     BOOL _removing;
     BOOL _newSnapshotAvailable;
+    BOOL _isADaemon;
     BOOL _startScreenStateOn;
     BOOL _updateScreenStateOn;
     unsigned int _seqno;
@@ -27,12 +29,15 @@
     unsigned long long _reference;
     double _creationTimestamp;
     NSString *_attributedEntity;
+    NSString *_delegateName;
 }
 
 @property BOOL updateScreenStateOn; // @synthesize updateScreenStateOn=_updateScreenStateOn;
 @property BOOL startScreenStateOn; // @synthesize startScreenStateOn=_startScreenStateOn;
 @property unsigned int updateAppState; // @synthesize updateAppState=_updateAppState;
 @property unsigned int startAppState; // @synthesize startAppState=_startAppState;
+@property(retain) NSString *delegateName; // @synthesize delegateName=_delegateName;
+@property BOOL isADaemon; // @synthesize isADaemon=_isADaemon;
 @property int epidForAttribution; // @synthesize epidForAttribution=_epidForAttribution;
 @property int pidForAttribution; // @synthesize pidForAttribution=_pidForAttribution;
 @property int attributionReason; // @synthesize attributionReason=_attributionReason;
@@ -51,7 +56,7 @@
 - (void)saveOldValues:(struct nstat_counts *)arg1;
 - (id)_createNSUUIDForBytes:(unsigned char [16])arg1;
 @property(readonly, nonatomic) struct update_subset_for_deltas *prevItemsPtr;
-- (id)currentSnapshot;
+- (id)createSnapshot:(int)arg1;
 - (unsigned int)flagsForProvider:(unsigned int)arg1 sockaddr:(struct sockaddr *)arg2;
 
 @end

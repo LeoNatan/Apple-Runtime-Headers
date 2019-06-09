@@ -10,6 +10,7 @@
 
 @class SKUIStorePageSplit;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStorePageSplitsDescription : NSObject <NSCopying>
 {
     SKUIStorePageSplit *_bottomSplit;

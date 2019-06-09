@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class AVConferenceXPCClient;
-@protocol OS_dispatch_queue;
+@protocol AVCEffectsDelegate, OS_dispatch_queue;
 
 @interface AVCEffects : NSObject
 {
@@ -26,8 +26,7 @@
 - (void)avcVideoFrameDidRelease:(id)arg1;
 - (void)deregisterBlocksForNotifications;
 - (void)registerBlocksForNotifications;
-- (id)delegate;
-- (void)setDelegate:(id)arg1;
+@property(nonatomic) id <AVCEffectsDelegate> delegate; // @synthesize delegate=_delegate;
 - (void)dealloc;
 - (id)initWithDelegate:(id)arg1;
 

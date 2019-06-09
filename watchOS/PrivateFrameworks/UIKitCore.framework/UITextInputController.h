@@ -9,19 +9,19 @@
 #import <UIKitCore/UIResponderStandardEditActions-Protocol.h>
 #import <UIKitCore/UITextInput-Protocol.h>
 #import <UIKitCore/UITextInputAdditions-Protocol.h>
+#import <UIKitCore/UITextInputPrivate-Protocol.h>
 #import <UIKitCore/UITextInput_Internal-Protocol.h>
 
-@class NSArray, NSDictionary, NSHashTable, NSLayoutManager, NSSet, NSString, UIResponder, UITextChecker, UITextInputPasswordRules, UITextInputTraits, UITextPosition, UITextRange, UIView, _UIDictationAttachment, _UITextInputControllerTokenizer, _UITextKitTextRange, _UITextServiceSession, _UITextUndoManager, _UITextUndoOperationTyping;
-@protocol UITextInput, UITextInputControllerDelegate, UITextInputDelegate, UITextInputPrivate, UITextInputTokenizer;
+@class NSArray, NSDictionary, NSHashTable, NSIndexSet, NSLayoutManager, NSSet, NSString, RTIInputSystemSourceSession, UIColor, UIImage, UIInputContextHistory, UIResponder, UITextChecker, UITextInputPasswordRules, UITextInputTraits, UITextInteractionAssistant, UITextPlaceholder, UITextPosition, UITextRange, UIView, _UITextInputControllerTokenizer, _UITextKitTextRange, _UITextServiceSession, _UITextUndoManager, _UITextUndoOperationTyping;
+@protocol UITextInput, UITextInputControllerDelegate, UITextInputDelegate, UITextInputPrivate, UITextInputSuggestionDelegate, UITextInputTokenizer;
 
-@interface UITextInputController : NSObject <UITextInput_Internal, UITextInput, UITextInputAdditions, UIResponderStandardEditActions>
+@interface UITextInputController : NSObject <UITextInput_Internal, UITextInput, UITextInputAdditions, UIResponderStandardEditActions, UITextInputPrivate>
 {
     id <UITextInputDelegate> _inputDelegate;
     _UITextKitTextRange *_selectedTextRange;
     _UITextInputControllerTokenizer *_tokenizer;
     NSLayoutManager *_layoutManager;
     NSHashTable *_observedScrollViews;
-    _UITextServiceSession *_definitionSession;
     _UITextServiceSession *_learnSession;
     _UITextServiceSession *_shareSession;
     _UITextServiceSession *_lookupSession;
@@ -51,16 +51,20 @@
     _UITextUndoOperationTyping *_undoOperationForCoalescing;
     UITextChecker *_textChecker;
     NSSet *_whitelistedTypingAttributes;
-    _UIDictationAttachment *_dictationPlaceholder;
+    UITextPlaceholder *_textPlaceholder;
     _Bool _allowsEditingTextAttributes;
     _Bool _continuousSpellCheckingEnabled;
+    _Bool _shouldStartUndoGroup;
     NSDictionary *_emptyStringAttributes;
     NSDictionary *_typingAttributes;
     id <UITextInputControllerDelegate> _delegate;
+    int _currentUndoGroupType;
     struct _NSRange _previousSelectedRange;
 }
 
 + (_Bool)_pasteboardHasStrings;
+@property(nonatomic) _Bool shouldStartUndoGroup; // @synthesize shouldStartUndoGroup=_shouldStartUndoGroup;
+@property(nonatomic) int currentUndoGroupType; // @synthesize currentUndoGroupType=_currentUndoGroupType;
 @property(nonatomic) struct _NSRange previousSelectedRange; // @synthesize previousSelectedRange=_previousSelectedRange;
 @property(nonatomic) _Bool continuousSpellCheckingEnabled; // @synthesize continuousSpellCheckingEnabled=_continuousSpellCheckingEnabled;
 @property(nonatomic) __weak id <UITextInputControllerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -75,10 +79,17 @@
 - (id)_textInputTraits;
 - (void)_resetShowingTextStyle:(id)arg1;
 - (void)_showTextStyleOptions:(id)arg1;
+- (void)validateCommand:(id)arg1;
+- (void)_validateCommand:(id)arg1 forFont:(id)arg2 traits:(int)arg3;
+- (void)alignRight:(id)arg1;
+- (void)alignJustified:(id)arg1;
+- (void)alignCenter:(id)arg1;
+- (void)alignLeft:(id)arg1;
+- (void)_changeTextAlignment:(int)arg1 undoString:(id)arg2;
 - (void)toggleUnderline:(id)arg1;
 - (void)toggleItalics:(id)arg1;
 - (void)toggleBoldface:(id)arg1;
-- (void)_toggleFontTrait:(int)arg1;
+- (void)_toggleFontTrait:(unsigned int)arg1;
 - (void)_addShortcut:(id)arg1;
 - (void)_clearSelectionUI;
 - (_Bool)_isDisplayingShareViewController;
@@ -94,9 +105,11 @@
 - (void)_promptForReplace:(id)arg1;
 - (void)selectAll:(id)arg1;
 - (void)select:(id)arg1;
+- (void)updateTextAttributesWithConversionHandler:(CDUnknownBlockType)arg1;
 - (void)decreaseSize:(id)arg1;
 - (void)increaseSize:(id)arg1;
 - (void)_pasteRawAttributedString:(id)arg1 asRichText:(_Bool)arg2;
+- (void)_pasteAttributedString:(id)arg1 toRange:(id)arg2 animator:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_pasteAttributedString:(id)arg1 pasteAsRichText:(_Bool)arg2;
 - (id)_attributedStringForInsertionOfAttributedString:(id)arg1;
 - (_Bool)_pasteFromPasteboard:(id)arg1 andMatchStyle:(_Bool)arg2;
@@ -122,8 +135,13 @@
 - (id)metadataDictionariesForDictationResults;
 - (id)rangeWithTextAlternatives:(id *)arg1 atPosition:(id)arg2;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(_Bool)arg2;
+- (void)removeTextPlaceholder:(id)arg1;
+- (void)removeTextPlaceholder:(id)arg1 notifyInputDelegate:(_Bool)arg2;
 - (struct CGRect)frameForDictationResultPlaceholder:(id)arg1;
+- (struct CGRect)frameForTextPlaceholder:(id)arg1;
 @property(readonly, nonatomic) id insertDictationResultPlaceholder;
+- (id)insertTextPlaceholderWithSize:(struct CGSize)arg1;
+- (id)insertTextPlaceholderWithSize:(struct CGSize)arg1 embeddingType:(int)arg2;
 - (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
 - (void)_insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2 replacingRange:(struct _NSRange)arg3 resultLength:(unsigned int *)arg4;
 - (void)_setSelectedRangeToEndIfNecessary;
@@ -136,7 +154,10 @@
 - (void)undoDidChangeText;
 - (void)undoWillChangeText;
 - (void)registerUndoOperationForType:(int)arg1 actionName:(id)arg2 affectedRange:(struct _NSRange)arg3 replacementText:(id)arg4;
-- (void)coalesceInTextView:(id)arg1 affectedRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3;
+- (void)scheduleUndoOperationForType:(int)arg1 actionName:(id)arg2 previousSelectedRange:(struct _NSRange)arg3 replacementText:(id)arg4;
+- (_Bool)shouldStartNewUndoGroup:(id)arg1 textGranularity:(int)arg2 operationType:(int)arg3;
+- (void)appendUndoOperation:(id)arg1 newGroup:(_Bool)arg2;
+- (void)coalesceInTextView:(id)arg1 affectedRange:(struct _NSRange)arg2 replacementRange:(struct _NSRange)arg3 replacementText:(id)arg4;
 - (void)_undoManagerWillUndo:(id)arg1;
 - (id)undoManager;
 - (id)textStylingAtPosition:(id)arg1 inDirection:(int)arg2;
@@ -178,6 +199,8 @@
 @property(copy) UITextRange *selectedTextRange;
 - (void)_performWhileSuppressingDelegateNotifications:(CDUnknownBlockType)arg1;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
+- (void)_replaceRange:(id)arg1 withAttributedTextFromKeyboard:(id)arg2 addingUnderlinesForAlternatives:(_Bool)arg3;
+- (void)replaceRange:(id)arg1 withAttributedText:(id)arg2;
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (id)attributedTextInRange:(id)arg1;
 - (id)textInRange:(id)arg1;
@@ -210,8 +233,8 @@
 - (id)_filteredAttributedTextInRange:(struct _NSRange)arg1;
 - (void)_insertAttributedTextWithoutClosingTyping:(id)arg1;
 - (void)_insertAttributedText:(id)arg1 fromKeyboard:(_Bool)arg2;
-- (void)addTextAlternativesDisplayStyleToRange:(struct _NSRange)arg1;
 - (void)insertAttributedText:(id)arg1;
+- (void)addTextAlternativesDisplayStyle:(int)arg1 toRange:(struct _NSRange)arg2;
 - (void)insertText:(id)arg1;
 - (void)removeAlternativesForCurrentWord;
 @property(readonly, nonatomic) _Bool hasText;
@@ -220,6 +243,7 @@
 @property(readonly, nonatomic, getter=isEditable) _Bool editable;
 @property(copy, nonatomic) NSDictionary *markedTextStyle;
 - (void)_insertText:(id)arg1 fromKeyboard:(_Bool)arg2;
+- (struct _NSRange)_rangeToReplaceWhenInsertingText;
 - (int)atomStyle;
 - (_Bool)drawsAsAtom;
 @property(nonatomic) struct _NSRange selectedRange;
@@ -229,10 +253,11 @@
 - (struct _NSRange)_selectedRange;
 - (void)_setSelectedRange:(struct _NSRange)arg1;
 - (void)_selectionDidScroll:(id)arg1;
-- (id)interactionAssistant;
+@property(readonly, nonatomic) UITextInteractionAssistant *interactionAssistant;
 - (id)_firstTextView;
 - (void)_selectionGeometryChanged;
 - (void)_textStorageDidProcessEditing:(id)arg1;
+- (_Bool)supportLetterByLetterUndo;
 - (void)_updateFirstTextView;
 - (_Bool)_shouldConsiderTextViewForGeometry:(id)arg1;
 - (void)_textContainerDidChangeView:(id)arg1;
@@ -281,6 +306,7 @@
 - (id)_textColorForCaretSelection;
 - (id)_rangeFromCurrentRangeWithDelta:(struct _NSRange)arg1;
 - (id)_clampedpositionFromPosition:(id)arg1 offset:(int)arg2;
+- (id)_rangeOfSmartSelectionIncludingRange:(id)arg1;
 - (id)_findPleasingWordBoundaryFromPosition:(id)arg1;
 - (id)_intersectionOfRange:(id)arg1 andRange:(id)arg2;
 - (_Bool)_range:(id)arg1 intersectsRange:(id)arg2;
@@ -293,11 +319,14 @@
 - (id)_rangeOfEnclosingWord:(id)arg1;
 - (id)_rangeOfTextUnit:(int)arg1 enclosingPosition:(id)arg2;
 - (id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2;
+- (id)_normalizedStringForRangeComparison:(id)arg1;
 - (void)_scrollRectToVisible:(struct CGRect)arg1 animated:(_Bool)arg2;
 - (void)_replaceDocumentWithText:(id)arg1;
 - (void)_replaceCurrentWordWithText:(id)arg1;
+- (void)_transpose;
 - (void)_deleteForwardAndNotify:(_Bool)arg1;
 - (void)_deleteBackwardAndNotify:(_Bool)arg1;
+- (void)_deleteToEndOfParagraph;
 - (void)_deleteToEndOfLine;
 - (void)_deleteToStartOfLine;
 - (void)_deleteByWord;
@@ -331,30 +360,81 @@
 - (void)_selectAll;
 - (struct _NSRange)_selectedRangeWithinMarkedText;
 - (struct _NSRange)_selectedNSRange;
-- (id)textInputSuggestionDelegate;
+@property(readonly, nonatomic) id <UITextInputSuggestionDelegate> textInputSuggestionDelegate;
 - (id)_keyInput;
 @property(readonly, nonatomic, getter=_proxyTextInput) UIResponder<UITextInput> *__content;
 
 // Remaining properties
+@property(copy, nonatomic) NSIndexSet *PINEntrySeparatorIndexes;
+@property(readonly, nonatomic) RTIInputSystemSourceSession *_rtiSourceSession;
+@property(nonatomic) int _textInputSource;
 @property(readonly, nonatomic) UIView<UITextInputPrivate> *_textSelectingContainer;
+@property(nonatomic) _Bool acceptsDictationSearchResults;
+@property(nonatomic) _Bool acceptsEmoji;
+@property(nonatomic) _Bool acceptsFloatingKeyboard;
+@property(nonatomic) _Bool acceptsPayloads;
+@property(nonatomic) _Bool acceptsSplitKeyboard;
 @property(nonatomic) int autocapitalizationType;
+@property(copy, nonatomic) NSString *autocorrectionContext;
 @property(nonatomic) int autocorrectionType;
+@property(nonatomic) _Bool contentsIsSingleValue;
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) _Bool deferBecomingResponder;
 @property(readonly, copy) NSString *description;
+@property(nonatomic, getter=isDevicePasscodeEntry) _Bool devicePasscodeEntry;
+@property(nonatomic) _Bool disableInputBars;
+@property(nonatomic) _Bool disablePrediction;
+@property(nonatomic) _Bool displaySecureEditsUsingPlainText;
+@property(nonatomic) _Bool displaySecureTextUsingPlainText;
+@property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically;
+@property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) _Bool forceDefaultDictationInfo;
+@property(nonatomic) int forceDictationKeyboardType;
+@property(nonatomic) _Bool forceDisableDictation;
+@property(nonatomic) _Bool forceEnableDictation;
+@property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned int hash;
+@property(nonatomic) _Bool hidePrediction;
+@property(retain, nonatomic) UIInputContextHistory *inputContextHistory;
+@property(retain, nonatomic) UIColor *insertionPointColor;
+@property(nonatomic) unsigned int insertionPointWidth;
+@property(nonatomic) _Bool isCarPlayIdiom;
+@property(nonatomic) _Bool isSingleLineDocument;
 @property(nonatomic) int keyboardAppearance;
 @property(nonatomic) int keyboardType;
+@property(nonatomic) _Bool learnsCorrections;
+@property(nonatomic) _Bool loadKeyboardsForSiriLanguage;
 @property(copy, nonatomic) UITextInputPasswordRules *passwordRules;
+@property(copy, nonatomic) NSString *recentInputIdentifier;
+@property(copy, nonatomic) NSString *responseContext;
+@property(nonatomic) _Bool returnKeyGoesToNextResponder;
 @property(nonatomic) int returnKeyType;
 @property(nonatomic, getter=isSecureTextEntry) _Bool secureTextEntry;
+@property(retain, nonatomic) UIColor *selectionBarColor;
+@property(retain, nonatomic) UIImage *selectionDragDotImage;
+@property(nonatomic) int selectionGranularity;
+@property(retain, nonatomic) UIColor *selectionHighlightColor;
+@property(nonatomic) int shortcutConversionType;
+@property(nonatomic) _Bool showDictationButton;
 @property(nonatomic) int smartDashesType;
 @property(nonatomic) int smartInsertDeleteType;
 @property(nonatomic) int smartQuotesType;
 @property(nonatomic) int spellCheckingType;
 @property(readonly) Class superclass;
+@property(nonatomic) _Bool suppressReturnKeyStyling;
 @property(copy, nonatomic) NSString *textContentType;
 @property(readonly, nonatomic) UIView *textInputView;
+@property(nonatomic) int textLoupeVisibility;
+@property(nonatomic) int textScriptType;
+@property(nonatomic) int textSelectionBehavior;
+@property(nonatomic) id textSuggestionDelegate;
+@property(nonatomic) struct __CFCharacterSet *textTrimmingSet;
+@property(retain, nonatomic) UIColor *underlineColorForSpelling;
+@property(retain, nonatomic) UIColor *underlineColorForTextAlternatives;
+@property(nonatomic) _Bool useAutomaticEndpointing;
+@property(nonatomic) _Bool useInterfaceLanguageForLocalization;
+@property(nonatomic) struct _NSRange validTextRange;
 
 @end
 

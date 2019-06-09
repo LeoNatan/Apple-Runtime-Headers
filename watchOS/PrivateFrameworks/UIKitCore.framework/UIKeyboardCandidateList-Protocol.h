@@ -27,8 +27,8 @@
 
 @optional
 - (TIKeyboardSecureCandidateRenderTraits *)secureCandidateRenderTraits;
-- (unsigned int)rowForCandidateAtIndex:(unsigned int)arg1;
-- (unsigned int)viewOffsetForCandidateAtIndex:(unsigned int)arg1;
+- (int)rowForCandidateAtIndex:(unsigned int)arg1;
+- (int)viewOffsetForCandidateAtIndex:(unsigned int)arg1;
 - (NSString *)inlineText;
 - (TIKeyboardCandidateResultSet *)candidates;
 - (void)revealHiddenCandidates;

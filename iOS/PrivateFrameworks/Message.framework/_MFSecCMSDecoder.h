@@ -23,6 +23,7 @@
 
 @property(readonly, nonatomic) NSArray *signers; // @synthesize signers=_signers;
 @property(readonly, nonatomic) int lastSecCMSError; // @synthesize lastSecCMSError=_SecCMSError;
+- (void).cxx_destruct;
 - (_Bool)containsSignedContent;
 - (id)signedData;
 - (_Bool)isContentSigned;

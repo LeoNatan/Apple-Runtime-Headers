@@ -8,12 +8,12 @@
 
 #import <VectorKit/VKLabelNavFeature-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, VKLabelNavRoad, VKLabelNavRoadLabel, VKLabelTile;
+@class NSArray, NSMutableArray, NSString, VKLabelNavRoad, VKLabelNavRoadLabel;
 
 __attribute__((visibility("hidden")))
 @interface VKLabelNavJunction : NSObject <VKLabelNavFeature>
 {
-    VKLabelTile *_tile;
+    shared_ptr_702c344d _tile;
     Matrix_8746f91e _tileCoordinate;
     CDStruct_3b01f0aa *_geoJunction;
     struct PolylineCoordinate _routeOffset;
@@ -32,21 +32,24 @@ __attribute__((visibility("hidden")))
     struct {
         CDStruct_e41bf108 _field1;
         CDStruct_b2fbf00d _field2;
-        CDStruct_b2fbf00d _field3;
-        unsigned long long _field4;
+        float _field3;
+        CDStruct_b2fbf00d _field4;
         unsigned long long _field5;
         unsigned long long _field6;
         unsigned long long _field7;
-        short _field8;
-        unsigned char _field9;
-        CDStruct_183601bc *_field10;
-        float _field11;
+        unsigned long long _field8;
+        short _field9;
+        short _field10;
+        unsigned char _field11;
         float _field12;
-        unsigned int _field13;
-        unsigned char _field14;
-        char _field15;
+        float _field13;
+        unsigned int _field14;
+        unsigned char _field15;
         char _field16;
         char _field17;
+        char _field18;
+        char _field19;
+        char _field20;
     } *_labelFeature;
     NSString *_name;
     VKLabelNavRoadLabel *_junctionSign;
@@ -63,6 +66,7 @@ __attribute__((visibility("hidden")))
     BOOL _isRouteRefineJunction;
 }
 
+@property(readonly, nonatomic) const shared_ptr_702c344d *tile; // @synthesize tile=_tile;
 @property(nonatomic) BOOL isPicked; // @synthesize isPicked=_isPicked;
 @property(readonly, nonatomic) VKLabelNavRoadLabel *junctionSign; // @synthesize junctionSign=_junctionSign;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
@@ -81,8 +85,8 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct PolylineCoordinate routeOffset; // @synthesize routeOffset=_routeOffset;
 @property(readonly, nonatomic) Matrix_8746f91e tileCoordinate; // @synthesize tileCoordinate=_tileCoordinate;
 @property(readonly, nonatomic) const CDStruct_3b01f0aa *geoJunction; // @synthesize geoJunction=_geoJunction;
-@property(readonly, nonatomic) VKLabelTile *tile; // @synthesize tile=_tile;
 - (id).cxx_construct;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL isTrafficCameraFeature;
 @property(readonly, nonatomic) BOOL isEtaFeature;
 @property(readonly, nonatomic) BOOL isGuidanceStepStart;
@@ -118,8 +122,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)matchesLocationForJunction:(id)arg1;
 - (id)description;
 - (void)dealloc;
-- (id)initWithRoadEdge:(const CDStruct_91f75a7f *)arg1 atA:(BOOL)arg2 routeOffset:(struct PolylineCoordinate)arg3 tile:(id)arg4;
-- (id)initWithGEOJunction:(CDStruct_3b01f0aa *)arg1 routeOffset:(struct PolylineCoordinate)arg2 tile:(id)arg3;
+- (id)initWithRoadEdge:(const CDStruct_91f75a7f *)arg1 atA:(BOOL)arg2 routeOffset:(struct PolylineCoordinate)arg3 tile:(const shared_ptr_702c344d *)arg4;
+- (id)initWithGEOJunction:(CDStruct_3b01f0aa *)arg1 routeOffset:(struct PolylineCoordinate)arg2 tile:(const shared_ptr_702c344d *)arg3;
 
 @end
 

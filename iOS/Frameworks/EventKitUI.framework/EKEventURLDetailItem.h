@@ -6,14 +6,17 @@
 
 #import <EventKitUI/EKEventDetailItem.h>
 
-@class UITableViewCell;
+@class NSURL, SGSuggestedEventLaunchInfo, UITableViewCell;
 
 __attribute__((visibility("hidden")))
 @interface EKEventURLDetailItem : EKEventDetailItem
 {
     UITableViewCell *_cell;
+    SGSuggestedEventLaunchInfo *_launchInfo;
+    NSURL *_url;
 }
 
++ (Class)_SGSuggestionsServiceClass;
 - (void).cxx_destruct;
 - (_Bool)hasDetailViewControllerAtIndex:(unsigned long long)arg1;
 - (id)cellForSubitemAtIndex:(unsigned long long)arg1;

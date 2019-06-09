@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 @property(copy) NSDate *modificationDate; // @synthesize modificationDate=_modificationDate;
 @property(retain) NSMutableDictionary *privateUserInfo; // @synthesize privateUserInfo=_privateUserInfo;
 @property(retain) NSMutableDictionary *publicUserInfo; // @synthesize publicUserInfo=_publicUserInfo;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

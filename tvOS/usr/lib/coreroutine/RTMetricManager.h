@@ -22,9 +22,6 @@
 
 + (id)metricForType:(unsigned long long)arg1;
 + (id)productionMetrics;
-+ (id)addonMetricFromAddon:(id)arg1;
-+ (int)modelTypeFromSupportingEventClass:(Class)arg1;
-+ (id)addonStringFromType:(int)arg1;
 + (double)doubleWithSignificantDigits:(double)arg1 digits:(int)arg2;
 + (int)intWithSignificantDigits:(int)arg1 digits:(int)arg2;
 + (int)doubleToInt:(double)arg1 shifts:(int)arg2;
@@ -42,8 +39,6 @@
 - (void)_submitMetric:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)submitMetric:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)submitMetric:(id)arg1;
-- (void)_submitMetricWithIdentifier:(id)arg1 dictionary:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)submitMetricWithIdentifier:(id)arg1 dictionary:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_releaseMetricPlaceholderForMetric:(id)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)_registerQueriableMetric:(unsigned long long)arg1 withHandler:(CDUnknownBlockType)arg2;
 - (void)registerQueriableMetric:(unsigned long long)arg1 withHandler:(CDUnknownBlockType)arg2;
@@ -55,7 +50,6 @@
 - (id)initWithAWDServerConnection:(id)arg1 configuredClasses:(id)arg2 managedConfigurationManager:(id)arg3 platform:(id)arg4;
 - (id)initWithPlatform:(id)arg1;
 - (id)init;
-- (id)convertMetricWithIdentifier:(id)arg1 dictionary:(id)arg2;
 
 @end
 

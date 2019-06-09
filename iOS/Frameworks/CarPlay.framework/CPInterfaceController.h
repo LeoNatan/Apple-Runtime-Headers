@@ -10,31 +10,34 @@
 #import <CarPlay/CPTemplateServiceClientInterface-Protocol.h>
 
 @class CPTemplate, CPWindow, NSArray, NSMutableArray, NSString, NSXPCConnection;
-@protocol CPInterfaceControllerDelegate, CPTemplateProviding;
+@protocol CPInterfaceControllerDelegate, CPTemplateProviding, CPWindowProviding;
 
 @interface CPInterfaceController : NSObject <CPTemplateDelegate, CPTemplateServiceClientInterface>
 {
+    _Bool _prefersDarkUserInterfaceStyle;
     id <CPInterfaceControllerDelegate> _delegate;
     CPTemplate *_rootTemplate;
     NSXPCConnection *_connection;
     id <CPTemplateProviding> _templateProvider;
-    CPWindow *_carWindow;
     NSMutableArray *_templateStack;
     CPTemplate *_presentedTemplate;
     CPTemplate *_lastPresentedTemplate;
+    CPWindow *_carWindow;
+    id <CPWindowProviding> _windowProvider;
 }
 
 + (id)_templateClientInterface;
 + (void)_whitelistClassesForBaseTemplateProvider:(id)arg1;
 + (id)_templateProvidingInterface;
-+ (void)load;
+@property(nonatomic) __weak id <CPWindowProviding> windowProvider; // @synthesize windowProvider=_windowProvider;
+@property(retain, nonatomic) CPWindow *carWindow; // @synthesize carWindow=_carWindow;
 @property(retain, nonatomic) CPTemplate *lastPresentedTemplate; // @synthesize lastPresentedTemplate=_lastPresentedTemplate;
 @property(retain, nonatomic) CPTemplate *presentedTemplate; // @synthesize presentedTemplate=_presentedTemplate;
 @property(retain, nonatomic) NSMutableArray *templateStack; // @synthesize templateStack=_templateStack;
-@property(retain, nonatomic) CPWindow *carWindow; // @synthesize carWindow=_carWindow;
 @property(retain, nonatomic) id <CPTemplateProviding> templateProvider; // @synthesize templateProvider=_templateProvider;
 @property(retain, nonatomic) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(retain, nonatomic) CPTemplate *rootTemplate; // @synthesize rootTemplate=_rootTemplate;
+@property(nonatomic) _Bool prefersDarkUserInterfaceStyle; // @synthesize prefersDarkUserInterfaceStyle=_prefersDarkUserInterfaceStyle;
 @property(nonatomic) __weak id <CPInterfaceControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)bannerTappedWithIdentifier:(id)arg1;
@@ -45,6 +48,7 @@
 - (void)templateIdentifierDidPop:(id)arg1;
 - (void)clientExceededHierarchyDepthLimit;
 - (void)updateInterestingLayoutGuideWithInsets:(struct UIEdgeInsets)arg1;
+- (_Bool)isCarPlayCanvasActive;
 - (void)templateDidDismiss:(id)arg1;
 - (void)templateDidDisappear:(id)arg1 animated:(_Bool)arg2;
 - (void)templateWillDisappear:(id)arg1 animated:(_Bool)arg2;
@@ -55,12 +59,9 @@
 - (void)_connectionInterrupted;
 - (void)_connectionInvalidated;
 - (void)_connectToListenerEndpoint:(id)arg1;
-- (void)_handleDisconnectedCanvas:(id)arg1;
-- (void)_handleConnectedCanvas:(id)arg1;
+- (void)_invalidate;
+- (void)_sceneConnect:(id)arg1 withBlock:(CDUnknownBlockType)arg2;
 - (_Bool)_applicationHasMapsEntitlement;
-- (id)_windowForCarScreen:(id)arg1;
-- (void)_canvasWillDisconnect:(id)arg1;
-- (void)_canvasDidConnect:(id)arg1;
 - (void)_presentAlertTemplate:(id)arg1 animated:(_Bool)arg2;
 - (void)_presentActionSheetTemplate:(id)arg1 animated:(_Bool)arg2;
 - (void)_pushSearchTemplate:(id)arg1 presentationStyle:(unsigned long long)arg2 animated:(_Bool)arg3;

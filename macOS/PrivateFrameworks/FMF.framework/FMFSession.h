@@ -52,6 +52,7 @@
 @property(copy) NSSet *handles;
 - (oneway void)modelDidLoad;
 - (oneway void)networkReachabilityUpdated:(BOOL)arg1;
+- (oneway void)didUpdatePreferences:(id)arg1;
 - (oneway void)didUpdateFences:(id)arg1;
 - (oneway void)didUpdateLocations:(id)arg1;
 - (oneway void)didUpdateFollowing:(id)arg1;
@@ -94,6 +95,7 @@
 - (void)getDataForPerformanceRequest:(CDUnknownBlockType)arg1;
 - (void)sessionHandleReport:(CDUnknownBlockType)arg1;
 - (void)dumpStateWithCompletion:(CDUnknownBlockType)arg1;
+- (void)sendIDSMessage:(id)arg1 toIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)sendIDSPacket:(id)arg1 toHandle:(id)arg2;
 - (void)isIn5XXGracePeriodWithCompletion:(CDUnknownBlockType)arg1;
 - (void)exit5XXGracePeriod;
@@ -119,6 +121,9 @@
 - (void)getPendingMappingPacketsForHandle:(id)arg1 groupId:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)canGetLocationForHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)canShareLocationWithHandle:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)getAccountEmailAddress:(CDUnknownBlockType)arg1;
+- (void)isAllowFriendRequestsEnabled:(CDUnknownBlockType)arg1;
+- (void)setAllowFriendRequestsEnabled:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)isMyLocationEnabled:(CDUnknownBlockType)arg1;
 - (void)setHideMyLocationEnabled:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getHandlesFollowingMyLocationWithGroupId:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -151,6 +156,7 @@
 - (void)_sendAutoSwitchMeDevice;
 - (void)_sendFriendshipOfferToHandles:(id)arg1 groupId:(id)arg2 callerId:(id)arg3 endDate:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (BOOL)_isNoMappingPacketReturnedError:(id)arg1;
+- (void)triggerWithUUID:(id)arg1 forFenceWithID:(id)arg2 withStatus:(id)arg3 forDate:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)fencesForHandles:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getFences:(CDUnknownBlockType)arg1;
 - (void)deleteFence:(id)arg1 completion:(CDUnknownBlockType)arg2;

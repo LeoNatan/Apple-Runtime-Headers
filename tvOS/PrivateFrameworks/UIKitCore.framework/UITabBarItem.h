@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIBarItem.h>
 
-@class NSString, UIColor, UIImage, UITabBarButton, _UITabBarItemAppearanceStorage;
+@class NSString, UIColor, UIImage, UITabBarAppearance, UITabBarButton, _UITabBarItemAppearanceStorage;
 
 @interface UITabBarItem : UIBarItem
 {
@@ -34,6 +34,9 @@
         unsigned int customUnselectedImage:1;
     } _tabBarItemFlags;
     _Bool _springLoaded;
+    struct UIOffset _badgeOffset;
+    struct UIOffset _landscapePhoneBadgeOffset;
+    UITabBarAppearance *_standardAppearance;
     long long __barMetrics;
     long long __imageStyle;
     UIColor *__tintColor;
@@ -43,18 +46,18 @@
 @property(retain, nonatomic, setter=_setTintColor:) UIColor *_tintColor; // @synthesize _tintColor=__tintColor;
 @property(nonatomic, setter=_setImageStyle:) long long _imageStyle; // @synthesize _imageStyle=__imageStyle;
 @property(nonatomic, setter=_setBarMetrics:) long long _barMetrics; // @synthesize _barMetrics=__barMetrics;
+@property(copy, nonatomic) UITabBarAppearance *standardAppearance; // @synthesize standardAppearance=_standardAppearance;
 @property(copy, nonatomic) NSString *badgeValue; // @synthesize badgeValue=_badgeValue;
 - (void).cxx_destruct;
 - (void)_updateView;
 - (void)_updateViewAndPositionItems:(_Bool)arg1;
 - (id)_createViewForTabBar:(id)arg1 asProxyView:(_Bool)arg2;
 - (void)_setTitleTextAttributeValue:(id)arg1 forAttributeKey:(id)arg2 state:(unsigned long long)arg3;
-- (id)_updateImageWithTintColor:(id)arg1 isSelected:(_Bool)arg2 getImageOffset:(struct UIOffset *)arg3;
-- (void)_updateButtonForTintColor:(id)arg1 selected:(_Bool)arg2;
 - (id)_internalLandscapeTemplateImage;
 - (void)_setInternalLandscapeTemplateImage:(id)arg1;
 - (id)_internalTemplateImage;
 - (void)_setInternalTemplateImage:(id)arg1;
+- (id)_internalTitleForTabBarDisplayStyle:(long long)arg1;
 - (id)_internalTitle;
 - (void)_setInternalTitle:(id)arg1;
 - (SEL)action;
@@ -75,14 +78,12 @@
 @property(nonatomic) struct UIOffset titlePositionAdjustment;
 - (id)titleTextAttributesForState:(unsigned long long)arg1;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned long long)arg2;
-- (id)_imageForState:(unsigned long long)arg1 metrics:(long long)arg2 position:(long long)arg3 type:(long long)arg4;
 - (id)resolvedTitle;
 - (_Bool)hasTitle;
 - (id)finishedUnselectedImage;
 - (id)finishedSelectedImage;
 - (void)setFinishedSelectedImage:(id)arg1 withFinishedUnselectedImage:(id)arg2;
-- (void)setLandscapeSelectedImagePhone:(id)arg1;
-- (id)landscapeSelectedImagePhone;
+@property(retain, nonatomic) UIImage *landscapeSelectedImagePhone;
 @property(readonly, nonatomic) UIImage *_internalLandscapeSelectedImagePhone;
 @property(retain, nonatomic) UIImage *selectedImage;
 - (void)setLargeContentSizeImageInsets:(struct UIEdgeInsets)arg1;
@@ -109,8 +110,11 @@
 - (id)initWithTitle:(id)arg1 image:(id)arg2 selectedImage:(id)arg3;
 - (id)initWithTitle:(id)arg1 image:(id)arg2 tag:(long long)arg3;
 - (id)init;
+- (id)_internalTemplateImagesForTabBarDisplayStyle:(long long)arg1;
 - (id)_internalTemplateImages;
 - (void)_updateToMatchCurrentState;
+@property(nonatomic) struct UIOffset landscapePhoneBadgeOffset;
+@property(nonatomic) struct UIOffset badgeOffset;
 - (void)_updateViewBadge;
 - (void)_showSelectedIndicator:(_Bool)arg1 changeSelection:(_Bool)arg2;
 @property(nonatomic, getter=_isSelected, setter=_setSelected:) _Bool _selected;

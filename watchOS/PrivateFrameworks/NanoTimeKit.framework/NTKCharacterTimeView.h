@@ -8,37 +8,32 @@
 
 #import <NanoTimeKit/NTKTimeView-Protocol.h>
 
-@class AXCharacterVoiceSynthesizer, CLKDevice, EAGLContext, NSString, NTKCharacterDisplayLink, NTKCharacterFrameBuffer, NTKCharacterRenderer, NTKCharacterResourceLoader, PUICClientSideAnimation;
+@class CLKDevice, CLKUIQuadView, NSString, NTKCharacterQuad, NTKCharacterRenderer, NTKCharacterResourceLoader, PUICClientSideAnimation;
 
 @interface NTKCharacterTimeView : UIView <NTKTimeView>
 {
     CLKDevice *_device;
     NTKCharacterResourceLoader *_loader;
-    EAGLContext *_context;
-    NTKCharacterDisplayLink *_displayLink;
+    NTKCharacterQuad *_characterQuad;
+    CLKUIQuadView *_characterQuadView;
     PUICClientSideAnimation *_dateInterpolationAnimation;
-    AXCharacterVoiceSynthesizer *_mickeySynthesizer;
+    NTKCharacterRenderer *_renderers[2];
+    NTKCharacterRenderer *_renderer;
+    unsigned int _character;
     unsigned int _isRenderOneFrameRequested:1;
     unsigned int _isAnimating:1;
     unsigned int _isBackgrounded:1;
     unsigned int _renderWasIgnored:1;
     unsigned int _layoutWasIgnored:1;
-    unsigned int _character;
-    NTKCharacterFrameBuffer *_framebuffer;
-    NTKCharacterRenderer *_renderers[2];
-    NTKCharacterRenderer *_renderer;
     _Bool _frozen;
 }
 
-+ (Class)layerClass;
 @property(nonatomic, getter=isFrozen) _Bool frozen; // @synthesize frozen=_frozen;
 - (void).cxx_destruct;
 - (void)endScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_endScrubbing;
 - (void)scrubToDate:(id)arg1;
 - (void)startScrubbingAnimated:(_Bool)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)speakTime;
-- (void)_render;
 - (void)_layoutRenderer;
 - (void)layoutSubviews;
 - (void)_willEnterForeground;
@@ -56,7 +51,7 @@
 - (void)prepareToZoom;
 - (void)_stopAnimation;
 - (void)_startAnimation;
-- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)setTimeOffset:(double)arg1;
 - (void)enumarateRenderers:(CDUnknownBlockType)arg1;
 - (void)setOverrideDate:(id)arg1;
@@ -64,6 +59,7 @@
 - (void)setOverrideDate:(id)arg1 animated:(_Bool)arg2 enteringOrb:(_Bool)arg3;
 - (void)setOverrideDate:(id)arg1 duration:(double)arg2;
 - (void)setAnimationFrameInterval:(int)arg1;
+@property(readonly, nonatomic) CLKUIQuadView *quadView;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 forDevice:(id)arg2;
 

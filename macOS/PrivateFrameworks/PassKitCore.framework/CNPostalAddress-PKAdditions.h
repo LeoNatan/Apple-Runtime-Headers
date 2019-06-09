@@ -14,6 +14,7 @@
 - (id)suggestedCountryCode;
 - (id)redactedPostalAddress;
 - (id)redactedStreetAddress;
+- (id)webServiceDictionaryRepresentation;
 - (id)backwardsCompatibleDictionaryRepresentation;
 @end
 

@@ -8,6 +8,7 @@
 
 @class NSString, SKUIItem;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftTemplateViewElement : SKUIViewElement
 {
     long long _giftType;

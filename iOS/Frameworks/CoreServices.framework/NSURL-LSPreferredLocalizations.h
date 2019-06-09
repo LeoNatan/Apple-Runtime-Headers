@@ -10,5 +10,19 @@
 
 @interface NSURL (LSPreferredLocalizations)
 @property(retain, setter=ls_setPreferredLocalizations:) NSArray *ls_preferredLocalizations;
+- (id)iCloudSharingURL_noFragment;
+- (id)iCloudSharingURL;
+- (id)keynoteLiveURL_noFragment;
+- (id)keynoteLiveURL;
+- (id)photosURL;
+- (id)iCloudEmailPrefsURL;
+- (id)iTunesStoreURL;
+- (id)fmipURL;
+- (id)fmfURL;
+- (id)mapsURL;
+- (id)iWorkDocumentName;
+- (id)iWorkApplicationName;
+@property(readonly, getter=isiWorkURL) _Bool iWorkURL;
+- (_Bool)conformsToOverridePatternWithKey:(id)arg1;
 @end
 

@@ -8,6 +8,7 @@
 
 @class AVFocusableScrollView, AVPlayerController, NSString, UILabel, UIVisualEffectView;
 
+__attribute__((visibility("hidden")))
 @interface AVInfoPanelFullScreenSummaryViewController : UIViewController
 {
     AVFocusableScrollView *_scrollView;

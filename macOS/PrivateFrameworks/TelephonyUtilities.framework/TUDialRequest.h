@@ -9,11 +9,12 @@
 #import <TelephonyUtilities/NSCopying-Protocol.h>
 #import <TelephonyUtilities/NSSecureCoding-Protocol.h>
 #import <TelephonyUtilities/TUCallRequest-Protocol.h>
+#import <TelephonyUtilities/TUFilteredRequest-Protocol.h>
 #import <TelephonyUtilities/TUVideoRequest-Protocol.h>
 
-@class CNContactStore, IDSDestination, NSArray, NSDate, NSString, NSURL, NSUUID, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle, TUSenderIdentity, TUSenderIdentityClient;
+@class IDSDestination, NSArray, NSDate, NSString, NSURL, NSUUID, NSUserActivity, TUCallProvider, TUCallProviderManager, TUHandle, TUSenderIdentity, TUSenderIdentityClient;
 
-@interface TUDialRequest : NSObject <TUCallRequest, TUVideoRequest, NSSecureCoding, NSCopying>
+@interface TUDialRequest : NSObject <TUCallRequest, TUVideoRequest, TUFilteredRequest, NSSecureCoding, NSCopying>
 {
     BOOL _video;
     BOOL _performDialAssist;
@@ -42,6 +43,8 @@
     NSUUID *_localSenderIdentityUUID;
     NSUUID *_localSenderIdentityAccountUUID;
     long long _originatingUIType;
+    NSString *_successNotification;
+    NSString *_failureNotification;
     struct CGSize _localPortraitAspectRatio;
     struct CGSize _localLandscapeAspectRatio;
 }
@@ -49,9 +52,10 @@
 + (BOOL)supportsSecureCoding;
 + (void)setCallProviderManagerGeneratorBlock:(CDUnknownBlockType)arg1;
 + (CDUnknownBlockType)callProviderManagerGeneratorBlock;
++ (id)contactStore;
 + (long long)originatingUITypeForString:(id)arg1;
 + (id)stringForOriginatingUIType:(long long)arg1;
-+ (id)providerForIntentPreferredCallProvider:(long long)arg1 providerManager:(id)arg2;
++ (id)providerForIntentPreferredCallProvider:(long long)arg1 callCapability:(long long)arg2 providerManager:(id)arg3;
 + (long long)ttyTypeForIntentTTYType:(long long)arg1;
 + (long long)intentTTYTypeForTTYType:(long long)arg1;
 + (long long)dialRequestTypeForIntentDestinationType:(long long)arg1;
@@ -59,6 +63,8 @@
 + (id)stringForTTYType:(long long)arg1;
 + (long long)handleTypeForQueryItem:(id)arg1;
 + (id)stringForDialType:(long long)arg1;
+@property(copy, nonatomic) NSString *failureNotification; // @synthesize failureNotification=_failureNotification;
+@property(copy, nonatomic) NSString *successNotification; // @synthesize successNotification=_successNotification;
 @property(nonatomic) BOOL shouldSuppressInCallUI; // @synthesize shouldSuppressInCallUI=_shouldSuppressInCallUI;
 @property(nonatomic, getter=isRedial) BOOL redial; // @synthesize redial=_redial;
 @property(nonatomic, getter=isSOS, setter=setSOS:) BOOL sos; // @synthesize sos=_sos;
@@ -94,7 +100,7 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqualToDialRequest:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id)_contactFromINPerson:(id)arg1 bestGuessHandle:(id *)arg2;
+- (id)_contactFromINPerson:(id)arg1 contactsDataSource:(id)arg2 bestGuessHandle:(id *)arg3;
 - (id)dialRequestByReplacingProvider:(id)arg1;
 - (id)validityErrorForSOS;
 - (id)validityErrorForUnsupportedHandleType;
@@ -108,6 +114,8 @@
 @property(readonly, copy, nonatomic) NSArray *validityErrors;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
 @property(readonly, nonatomic) NSUserActivity *userActivity;
+- (id)failureNotificationQueryItem;
+- (id)successNotificationQueryItem;
 - (id)shouldSuppressInCallUIQueryItem;
 - (id)endpointIDSDestinationURIQueryItem;
 - (id)redialURLQueryItem;
@@ -135,16 +143,18 @@
 - (id)destinationIDFromURL:(id)arg1;
 - (id)callProviderFromURLComponents:(id)arg1 video:(char *)arg2;
 - (BOOL)boolValueForQueryItemWithName:(id)arg1 inURLComponents:(id)arg2;
+- (id)handles;
+- (id)bundleIdentifier;
 @property(readonly, nonatomic) IDSDestination *endpointIDSDestination;
 @property(copy, nonatomic) NSString *destinationID;
 @property(readonly, nonatomic) TUSenderIdentityClient *senderIdentityClient; // @synthesize senderIdentityClient=_senderIdentityClient;
 @property(readonly, copy, nonatomic) TUSenderIdentity *localSenderIdentity;
-@property(readonly, nonatomic) CNContactStore *contactStore;
 @property(readonly, nonatomic) BOOL useTTY;
 @property(readonly, nonatomic) int service;
 @property(readonly, copy) NSString *description;
 - (id)init;
-- (id)initWithDialIntent:(id)arg1 providerManager:(id)arg2;
+- (id)initWithDialIntent:(id)arg1 providerManager:(id)arg2 contactsDataSource:(id)arg3 senderIdentityClient:(id)arg4;
+- (id)initWithUserActivity:(id)arg1 providerManager:(id)arg2 contactsDataSource:(id)arg3 senderIdentityClient:(id)arg4;
 - (id)initWithUserActivity:(id)arg1 providerManager:(id)arg2;
 - (id)initWithUserActivity:(id)arg1;
 - (id)initWithURL:(id)arg1;

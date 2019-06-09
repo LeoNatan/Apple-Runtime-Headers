@@ -16,7 +16,7 @@
     struct NSDictionary *_storage;
 }
 
-+ (void)createColorsForPaletteCategory:(long long)arg1 inCache:(id)arg2;
++ (void)createColorsForPaletteCategory:(long long)arg1 inCache:(id)arg2 withDerivedPaletteCategories:(id)arg3;
 + (id)buildAllColors;
 @property(readonly, nonatomic) NSDictionary *storage; // @synthesize storage=_storage;
 @property(retain, nonatomic) AVTAvatarColorVariationStore *variationStore; // @synthesize variationStore=_variationStore;

@@ -34,6 +34,7 @@
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;
 - (void)reportConnectionForService:(id)arg1 accounts:(id)arg2 devices:(id)arg3;
+- (void)updateConnectivityTimer:(id)arg1;
 - (void)transportBecameUnreachable;
 - (void)transportBecameReachable;
 - (void)resetTransportReachabilityTimer;

@@ -14,6 +14,8 @@
 {
 }
 
+- (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (id)objectForKeyedSubscript:(id)arg1;
 - (BOOL)removeValueForKey:(id)arg1 error:(id *)arg2;
 - (BOOL)setValue:(id)arg1 forKey:(id)arg2 error:(id *)arg3;
 - (id)valueForKey:(id)arg1;

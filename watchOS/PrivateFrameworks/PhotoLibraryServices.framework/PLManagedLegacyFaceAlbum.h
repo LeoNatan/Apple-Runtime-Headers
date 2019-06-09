@@ -10,9 +10,7 @@
 {
 }
 
-+ (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
-+ (id)insertInManagedObjectContext:(id)arg1;
 
 // Remaining properties
 @property(nonatomic) short keyAssetFaceIdentifier; // @dynamic keyAssetFaceIdentifier;

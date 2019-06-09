@@ -48,6 +48,7 @@
     struct _NSRange _trackingRange;
 }
 
++ (id)fullwidthToHalfwidthPunctuationMapping;
 @property(readonly, nonatomic) BOOL shouldOptimizeLayoutForFixedSize; // @synthesize shouldOptimizeLayoutForFixedSize=_shouldOptimizeLayoutForFixedSize;
 @property(nonatomic, getter=isShowingSubstitutionCandidatesInTouchBar) BOOL showingSubstitutionCandidatesInTouchBar; // @synthesize showingSubstitutionCandidatesInTouchBar=_showingSubstitutionCandidatesInTouchBar;
 @property(nonatomic) BOOL shouldShowInlineTextAsSecondaryCandidate; // @synthesize shouldShowInlineTextAsSecondaryCandidate=_shouldShowInlineTextAsSecondaryCandidate;

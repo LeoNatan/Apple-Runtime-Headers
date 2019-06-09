@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSLayoutManager, NSLock, NSMutableDictionary, NSString, NSTextStorage, NSUUID, PDFAKAnnotationAdaptor, PDFAccessibilityNode, PDFAnnotation, PDFPage, UIColor;
+@class NSArray, NSDictionary, NSIndexSet, NSLayoutManager, NSLock, NSMutableDictionary, NSString, NSTextStorage, NSUUID, PDFAKAnnotationAdaptor, PDFAccessibilityNode, PDFAnnotation, PDFPage, UIColor;
 @protocol NSCopying;
 
 __attribute__((visibility("hidden")))
 @interface PDFAnnotationPrivateVars : NSObject
 {
     _Bool loggingEnabled;
-    _Bool export;
+    _Bool shouldExport;
     PDFPage *page;
     struct CGPDFDictionary *sourceDictionary;
     struct __CFDictionary *dictionaryRef;
@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     _Bool saveAppearance;
     _Bool isSelected;
     _Bool isHighlighted;
+    NSIndexSet *quadPointsIndexSet;
     PDFAnnotation *parent;
     PDFAnnotation *popup;
     struct CGPDFDictionary *popupDictionary;

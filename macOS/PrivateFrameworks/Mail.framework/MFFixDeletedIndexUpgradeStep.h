@@ -10,7 +10,7 @@
 {
 }
 
-+ (BOOL)needToPerformFromMinorVersion:(unsigned long long)arg1 initialLastWriteMinorVersion:(unsigned long long)arg2 fromBackBooting:(char *)arg3;
++ (BOOL)needToPerformFromMinorVersion:(unsigned long long)arg1 initialLastWriteMinorVersion:(unsigned long long)arg2;
 + (unsigned long long)targetVersion;
 - (void)runWithRowIDsNeedingConversationRecalculation:(id)arg1;
 

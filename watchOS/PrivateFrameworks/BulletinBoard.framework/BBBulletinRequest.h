@@ -6,7 +6,7 @@
 
 #import <BulletinBoard/BBBulletin.h>
 
-@class BBAccessoryIcon, BBAction, BBAttachmentMetadata, BBContent, BBSectionIcon, BBSound, NSArray, NSDate, NSDictionary, NSSet, NSString, NSTimeZone;
+@class BBAccessoryIcon, BBAction, BBAttachmentMetadata, BBContent, BBImage, BBSectionIcon, BBSound, NSArray, NSDate, NSDictionary, NSSet, NSString, NSTimeZone;
 
 @interface BBBulletinRequest : BBBulletin
 {
@@ -38,9 +38,9 @@
 
 // Remaining properties
 @property(retain, nonatomic) BBAccessoryIcon *accessoryIconMask; // @dynamic accessoryIconMask;
+@property(retain, nonatomic) BBImage *accessoryImage; // @dynamic accessoryImage;
 @property(copy, nonatomic) BBAction *acknowledgeAction; // @dynamic acknowledgeAction;
 @property(copy, nonatomic) NSArray *additionalAttachments; // @dynamic additionalAttachments;
-@property(nonatomic) int addressBookRecordID; // @dynamic addressBookRecordID;
 @property(copy, nonatomic) NSSet *alertSuppressionAppIDs_deprecated; // @dynamic alertSuppressionAppIDs_deprecated;
 @property(copy, nonatomic) NSSet *alertSuppressionContexts; // @dynamic alertSuppressionContexts;
 @property(copy, nonatomic) BBAction *alternateAction; // @dynamic alternateAction;
@@ -76,6 +76,8 @@
 @property(retain, nonatomic) BBContent *modalAlertContent; // @dynamic modalAlertContent;
 @property(copy, nonatomic) NSString *parentSectionID; // @dynamic parentSectionID;
 @property(copy, nonatomic) NSArray *peopleIDs; // @dynamic peopleIDs;
+@property(nonatomic) _Bool preemptsPresentedAlert; // @dynamic preemptsPresentedAlert;
+@property(nonatomic) _Bool preemptsSTAR; // @dynamic preemptsSTAR;
 @property(nonatomic) _Bool preventAutomaticRemovalFromLockScreen; // @dynamic preventAutomaticRemovalFromLockScreen;
 @property(copy, nonatomic) BBAttachmentMetadata *primaryAttachment; // @dynamic primaryAttachment;
 @property(retain, nonatomic) NSDate *publicationDate; // @dynamic publicationDate;

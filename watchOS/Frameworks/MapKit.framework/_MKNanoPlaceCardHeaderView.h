@@ -6,7 +6,7 @@
 
 #import <UIKit/UITableViewCell.h>
 
-@class MKMapItem, MKStarRatingView, MKTransitInfoLabelView, NSMutableArray, UIFont, UIImageView, UILabel, UIView;
+@class MKMapItem, MKTransitInfoLabelView, NSMutableArray, UIFont, UIImageView, UILabel, UIView;
 
 @interface _MKNanoPlaceCardHeaderView : UITableViewCell
 {
@@ -19,7 +19,7 @@
     UIImageView *_iconView;
     UIView *_displayedInfoView;
     MKTransitInfoLabelView *_transitInfoView;
-    MKStarRatingView *_ratingView;
+    UILabel *_ratingAndPriceLabel;
     UIImageView *_keyLine;
     UIFont *_bodyFont;
     NSMutableArray *_fontBasedConstraints;

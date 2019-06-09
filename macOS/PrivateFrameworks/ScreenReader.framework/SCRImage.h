@@ -6,19 +6,16 @@
 
 #import <ScreenReader/SCRElement.h>
 
-@class NSString, SCRBrailleLineManager;
+@class NSString;
 
 __attribute__((visibility("hidden")))
 @interface SCRImage : SCRElement
 {
     NSString *_localizedPhotoEvaluationString;
-    SCRBrailleLineManager *__brailleLineManager;
 }
 
-@property(retain, nonatomic, setter=_setBrailleLineManager:) SCRBrailleLineManager *_brailleLineManager; // @synthesize _brailleLineManager=__brailleLineManager;
 - (void).cxx_destruct;
-- (id)brailleLineManager;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
 - (BOOL)shouldMapElement:(id)arg1;
 - (id)typeDescription;
 - (id)persistentUserLabel;

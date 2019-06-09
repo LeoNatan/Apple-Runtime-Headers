@@ -71,7 +71,6 @@
 - (id)reviewAssetProviderRequestForDisplayAsset:(id)arg1;
 - (void)funEffectsViewController:(id)arg1 didSaveAsset:(id)arg2 withCompletion:(unsigned long long)arg3;
 - (void)photoMarkupController:(id)arg1 didFinishWithSavedAsset:(id)arg2;
-- (void)videoEditViewController:(id)arg1 didFinishEditingSessionForAsset:(id)arg2 completed:(_Bool)arg3;
 - (void)photoEditController:(id)arg1 didFinishEditingSessionForAsset:(id)arg2 completed:(_Bool)arg3;
 - (id)reviewScreenBarsModelForAssetExplorerReviewScreenActionManager:(id)arg1;
 - (void)assetExplorerReviewScreenActionManagerDidPressSend:(id)arg1;

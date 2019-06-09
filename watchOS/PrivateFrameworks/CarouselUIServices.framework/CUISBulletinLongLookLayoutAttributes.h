@@ -22,7 +22,6 @@
 @property(readonly, nonatomic) CUISBulletinTextAttributes *subtitleTextAttributes;
 @property(readonly, nonatomic) CUISBulletinTextAttributes *titleTextAttributes;
 @property(readonly, nonatomic) float scrollViewBottomInset;
-@property(readonly, nonatomic) float actionMenuBottomPadding;
 @property(readonly, nonatomic) float actionMenuOffset;
 @property(readonly, nonatomic) UIColor *headerPlatterColor;
 @property(readonly, nonatomic) float headerPlatterHeight;

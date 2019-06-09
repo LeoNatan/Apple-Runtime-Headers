@@ -10,6 +10,7 @@
 
 @class NSArray, NSMapTable, NSMutableArray, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStorePageSplitCollectionViewLayout : _UICollectionViewCompositionLayout <SKUIStorePageCollectionViewLayout>
 {
     NSString *_backdropGroupName;

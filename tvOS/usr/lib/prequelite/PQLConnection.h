@@ -31,34 +31,43 @@
     struct cache_s *_preparedStatements;
     NSObject<OS_dispatch_source> *_stmtCacheSource;
     NSMutableArray *_stmtCacheCleanupQueue;
+    long long _changesOverride;
     NSObject<OS_dispatch_queue> *_targetQueue;
     _Bool _traced;
     _Bool _crashIfUsedAfterClose;
+    _Bool _shouldUseWALJournalMode;
     int _batchTransactionType;
     NSString *_label;
     NSURL *_url;
     CDUnknownBlockType _lockedHandler;
+    CDUnknownBlockType _busyHandler;
     CDUnknownBlockType _autoRollbackHandler;
     CDUnknownBlockType _sqliteErrorHandler;
     CDUnknownBlockType _preFlushHook;
     CDUnknownBlockType _postFlushHook;
     CDUnknownBlockType _profilingHook;
+    CDUnknownBlockType _willBeginBatchingHook;
+    CDUnknownBlockType _didFinishBatchingHook;
     NSObject<OS_dispatch_queue> *_serialQueue;
     NSError *_lastError;
 }
 
 + (void)initialize;
+@property(nonatomic) _Bool shouldUseWALJournalMode; // @synthesize shouldUseWALJournalMode=_shouldUseWALJournalMode;
 @property(nonatomic) int batchTransactionType; // @synthesize batchTransactionType=_batchTransactionType;
 @property(nonatomic) _Bool crashIfUsedAfterClose; // @synthesize crashIfUsedAfterClose=_crashIfUsedAfterClose;
 @property(nonatomic, getter=isTraced) _Bool traced; // @synthesize traced=_traced;
 @property(retain, nonatomic) NSError *lastError; // @synthesize lastError=_lastError;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *serialQueue; // @synthesize serialQueue=_serialQueue;
 @property(readonly, nonatomic) struct sqlite3 *dbHandle; // @synthesize dbHandle=_db;
+@property(copy, nonatomic) CDUnknownBlockType didFinishBatchingHook; // @synthesize didFinishBatchingHook=_didFinishBatchingHook;
+@property(copy, nonatomic) CDUnknownBlockType willBeginBatchingHook; // @synthesize willBeginBatchingHook=_willBeginBatchingHook;
 @property(copy, nonatomic) CDUnknownBlockType profilingHook; // @synthesize profilingHook=_profilingHook;
 @property(copy, nonatomic) CDUnknownBlockType postFlushHook; // @synthesize postFlushHook=_postFlushHook;
 @property(copy, nonatomic) CDUnknownBlockType preFlushHook; // @synthesize preFlushHook=_preFlushHook;
 @property(copy, nonatomic) CDUnknownBlockType sqliteErrorHandler; // @synthesize sqliteErrorHandler=_sqliteErrorHandler;
 @property(copy, nonatomic) CDUnknownBlockType autoRollbackHandler; // @synthesize autoRollbackHandler=_autoRollbackHandler;
+@property(copy, nonatomic) CDUnknownBlockType busyHandler; // @synthesize busyHandler=_busyHandler;
 @property(copy, nonatomic) CDUnknownBlockType lockedHandler; // @synthesize lockedHandler=_lockedHandler;
 @property(readonly, copy, nonatomic) NSURL *url; // @synthesize url=_url;
 @property(copy, nonatomic) NSString *label; // @synthesize label=_label;
@@ -79,6 +88,7 @@
 - (_Bool)execute:(id)arg1 args:(struct __va_list_tag [1])arg2;
 - (_Bool)execute:(id)arg1;
 - (_Bool)_execute:(id)arg1 mustSucceed:(_Bool)arg2 bindings:(struct __va_list_tag [1])arg3;
+- (_Bool)_executeStmt:(id)arg1 mustSucceed:(_Bool)arg2;
 - (id)_newStatementForFormat:(id)arg1 arguments:(struct __va_list_tag [1])arg2;
 @property(readonly, nonatomic) long long changes;
 @property(nonatomic) unsigned long long synchronousMode;
@@ -126,6 +136,11 @@
 @property(readonly, copy) NSString *debugDescription;
 - (id)_description:(_Bool)arg1;
 - (id)init;
+- (id)fetchObjectSwift:(CDUnknownBlockType)arg1 query:(CDUnknownBlockType)arg2 error:(id *)arg3;
+- (id)fetchObjectOfClassSwift:(Class)arg1 query:(CDUnknownBlockType)arg2 error:(id *)arg3;
+- (id)fetchSwift:(CDUnknownBlockType)arg1 error:(id *)arg2;
+- (_Bool)executeSwift:(CDUnknownBlockType)arg1 error:(id *)arg2;
+- (id)_newStatementForBuilder:(CDUnknownBlockType)arg1;
 
 @end
 

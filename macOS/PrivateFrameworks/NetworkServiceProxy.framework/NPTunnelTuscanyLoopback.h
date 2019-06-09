@@ -18,7 +18,7 @@
 @property void *window; // @synthesize window=_window;
 - (void).cxx_destruct;
 - (void)pingWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)sendUsageReportWithSuccess:(BOOL)arg1 rtt:(unsigned long long)arg2 geohash:(id)arg3 fallbackReason:(long long)arg4;
+- (void)sendUsageReportWithRTT:(unsigned long long)arg1 geohash:(id)arg2 fallbackReason:(long long)arg3;
 - (void)cancelConnection;
 - (void)cancelConnectionTimer;
 - (void)startConnectionTimer;
@@ -32,7 +32,7 @@
 - (unsigned int)dayPassSessionCounter;
 - (void)createTuscanyClient;
 - (void)dealloc;
-- (id)initWithConfiguration:(id)arg1 endpoint:(id)arg2 parameters:(id)arg3 appRule:(id)arg4 flowProperties:(id)arg5 delegate:(id)arg6;
+- (id)initWithEndpoint:(id)arg1 parameters:(id)arg2 appRule:(id)arg3 flowProperties:(id)arg4 onRamp:(id)arg5 delegate:(id)arg6;
 
 @end
 

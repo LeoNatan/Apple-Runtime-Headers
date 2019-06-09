@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class AAGrandSlamSigner, AAUIAccountManager, NSOperationQueue;
+@class AAGrandSlamSigner, AIDAAccountManager, NSOperationQueue;
 
 @interface FAFamilyEligibilityRequester : NSObject
 {
     AAGrandSlamSigner *_grandSlamSigner;
-    AAUIAccountManager *_accountManager;
+    AIDAAccountManager *_accountManager;
     NSOperationQueue *_networkActivityQueue;
 }
 

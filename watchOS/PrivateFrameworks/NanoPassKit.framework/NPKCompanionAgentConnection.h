@@ -7,14 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <NanoPassKit/NPKCompanionClientProtocol-Protocol.h>
+#import <NanoPassKit/PKXPCServiceDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSMutableSet, NSString, NSXPCConnection, PKPaymentWebServiceContext;
+@class NSMutableDictionary, NSMutableSet, NSString, PKPaymentWebServiceContext, PKXPCService;
 @protocol NPKCompanionAgentConnectionDelegate, OS_dispatch_queue;
 
-@interface NPKCompanionAgentConnection : NSObject <NPKCompanionClientProtocol>
+@interface NPKCompanionAgentConnection : NSObject <NPKCompanionClientProtocol, PKXPCServiceDelegate>
 {
-    NSXPCConnection *_xpcConnection;
-    NSObject<OS_dispatch_queue> *_xpcConnectionQueue;
     NSObject<OS_dispatch_queue> *_cacheQueue;
     int _notifyToken;
     _Bool _queueAppropriateFailedActions;
@@ -24,6 +23,7 @@
     NSMutableDictionary *_cachedPasses;
     NSMutableDictionary *_connectionAvailableActions;
     PKPaymentWebServiceContext *_connectionUnavailableWebServiceContext;
+    PKXPCService *_remoteService;
 }
 
 + (id)watchPeerPaymentWebService;
@@ -32,6 +32,7 @@
 + (_Bool)isSetupAssistantProvisioningSupported;
 + (id)watchProvisioningURLForPaymentPass:(id)arg1;
 + (id)watchProvisioningURL;
+@property(retain, nonatomic) PKXPCService *remoteService; // @synthesize remoteService=_remoteService;
 @property(retain, nonatomic) PKPaymentWebServiceContext *connectionUnavailableWebServiceContext; // @synthesize connectionUnavailableWebServiceContext=_connectionUnavailableWebServiceContext;
 @property(retain, nonatomic) NSMutableDictionary *connectionAvailableActions; // @synthesize connectionAvailableActions=_connectionAvailableActions;
 @property(retain) NSMutableDictionary *cachedPasses; // @synthesize cachedPasses=_cachedPasses;
@@ -40,6 +41,9 @@
 @property(nonatomic) _Bool hasQueuedPaymentPasses; // @synthesize hasQueuedPaymentPasses=_hasQueuedPaymentPasses;
 @property(nonatomic) _Bool queueAppropriateFailedActions; // @synthesize queueAppropriateFailedActions=_queueAppropriateFailedActions;
 - (void).cxx_destruct;
+- (void)remoteService:(id)arg1 didInterruptConnection:(id)arg2;
+- (void)remoteService:(id)arg1 didEstablishConnection:(id)arg2;
+- (void)paymentPassWithUniqueIdentifier:(id)arg1 didEnableMessageService:(_Bool)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithBalances:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didUpdateWithTransitPassProperties:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
@@ -59,10 +63,16 @@
 - (id)_remoteObjectProxyWithFailureHandler:(CDUnknownBlockType)arg1;
 - (void)_sharedPaymentWebServiceContextForDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)trustedDeviceEnrollmentSignatureWithAccountDSID:(id)arg1 sessionData:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)noteForegroundVerificationObserverActive:(_Bool)arg1;
+- (void)startBackgroundVerificationObserverForPass:(id)arg1 verificationMethod:(id)arg2;
+- (void)setCommutePlanReminderInterval:(double)arg1 forCommutePlan:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)commutePlanReminderIntervalForCommutePlan:(id)arg1 pass:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)setBalanceReminder:(id)arg1 forBalance:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)balanceReminderForBalance:(id)arg1 pass:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)balancesForPaymentPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)transitStateWithPassUniqueIdentifier:(id)arg1 paymentApplication:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)deletePaymentTransactionWithIdentifier:(id)arg1 passUniqueIdentifier:(id)arg2 fromDevice:(id)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned int)arg2 withBackingData:(unsigned int)arg3 limit:(int)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)transactionsForPaymentPassWithUniqueIdentifier:(id)arg1 withTransactionSource:(unsigned int)arg2 withBackingData:(unsigned int)arg3 startDate:(id)arg4 endDate:(id)arg5 orderedByDate:(int)arg6 limit:(int)arg7 completion:(CDUnknownBlockType)arg8;
 - (void)markAllAppletsForDeletionWithCompletion:(CDUnknownBlockType)arg1;
 - (void)initiateLostModeExitAuthWithCompletion:(CDUnknownBlockType)arg1;
 - (void)updateSettings:(unsigned int)arg1 forPassWithUniqueID:(id)arg2;
@@ -75,6 +85,7 @@
 - (void)setSharedPaymentWebServiceContext:(id)arg1 forDevice:(id)arg2;
 - (id)sharedPaymentWebServiceContext;
 - (id)sharedPaymentWebServiceContextForDevice:(id)arg1;
+- (void)handlePeerPaymentTermsAndConditionsRequestFromGizmo;
 - (void)handlePendingiCloudSignoutWithCompletion:(CDUnknownBlockType)arg1;
 - (void)handlePendingUnpairingWithCompletion:(CDUnknownBlockType)arg1;
 - (void)redownloadAllPaymentPassesWithCompletion:(CDUnknownBlockType)arg1;
@@ -91,12 +102,13 @@
 - (void)paymentPassUniqueIDs:(CDUnknownBlockType)arg1;
 - (void)noteProvisioningPreflightCompleteWithSuccess:(_Bool)arg1 error:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)registerDeviceWithCompletion:(CDUnknownBlockType)arg1;
+- (void)provisionPassForAccountIdentifier:(id)arg1 makeDefault:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)handleDeviceUnlockedForPendingProvisioningRequestFromGizmo;
 - (void)beginProvisioningFromWatchOfferForPaymentPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)noteWatchOfferShownForPaymentPass:(id)arg1;
 - (void)shouldShowWatchOfferForPaymentPass:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)_handleDefaultCardChanged:(id)arg1;
 - (void)_handleServerPaymentPassesChanged:(id)arg1;
-@property(readonly) NSXPCConnection *xpcConnection;
 - (void)dealloc;
 - (id)init;
 

@@ -31,9 +31,9 @@
     _Bool _supportsUnambiguousMultiPartyState;
     _Bool _supportsAddCall;
     _Bool _supportsSendingToVoicemail;
+    _Bool _requiresAuthentication;
     CXHandle *_remoteHandle;
     NSString *_localizedCallerName;
-    struct CXCallUpdateHasSet _hasSet;
     NSUUID *_UUID;
     int _ttyType;
     int _inCallSoundRegion;
@@ -41,17 +41,21 @@
     NSString *_audioMode;
     int _audioInterruptionProvider;
     int _audioInterruptionOperationMode;
+    int _verificationStatus;
     NSString *_crossDeviceIdentifier;
     NSUUID *_localSenderIdentityUUID;
+    NSUUID *_localSenderIdentityAccountUUID;
     NSSet *_remoteParticipantHandles;
     NSSet *_activeRemoteParticipantHandles;
     CXHandoffContext *_handoffContext;
     NSDictionary *_context;
     int _videoStreamToken;
+    struct CXCallUpdateHasSet _hasSet;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)callUpdateWithDefaultValuesSet;
+@property(nonatomic) _Bool requiresAuthentication; // @synthesize requiresAuthentication=_requiresAuthentication;
 @property(nonatomic) int videoStreamToken; // @synthesize videoStreamToken=_videoStreamToken;
 @property(nonatomic) _Bool supportsSendingToVoicemail; // @synthesize supportsSendingToVoicemail=_supportsSendingToVoicemail;
 @property(nonatomic) _Bool supportsAddCall; // @synthesize supportsAddCall=_supportsAddCall;
@@ -63,8 +67,10 @@
 @property(retain, nonatomic) CXHandoffContext *handoffContext; // @synthesize handoffContext=_handoffContext;
 @property(copy, nonatomic) NSSet *activeRemoteParticipantHandles; // @synthesize activeRemoteParticipantHandles=_activeRemoteParticipantHandles;
 @property(copy, nonatomic) NSSet *remoteParticipantHandles; // @synthesize remoteParticipantHandles=_remoteParticipantHandles;
+@property(copy, nonatomic) NSUUID *localSenderIdentityAccountUUID; // @synthesize localSenderIdentityAccountUUID=_localSenderIdentityAccountUUID;
 @property(copy, nonatomic) NSUUID *localSenderIdentityUUID; // @synthesize localSenderIdentityUUID=_localSenderIdentityUUID;
 @property(copy, nonatomic) NSString *crossDeviceIdentifier; // @synthesize crossDeviceIdentifier=_crossDeviceIdentifier;
+@property(nonatomic) int verificationStatus; // @synthesize verificationStatus=_verificationStatus;
 @property(nonatomic) int audioInterruptionOperationMode; // @synthesize audioInterruptionOperationMode=_audioInterruptionOperationMode;
 @property(nonatomic) int audioInterruptionProvider; // @synthesize audioInterruptionProvider=_audioInterruptionProvider;
 @property(copy, nonatomic) NSString *audioMode; // @synthesize audioMode=_audioMode;

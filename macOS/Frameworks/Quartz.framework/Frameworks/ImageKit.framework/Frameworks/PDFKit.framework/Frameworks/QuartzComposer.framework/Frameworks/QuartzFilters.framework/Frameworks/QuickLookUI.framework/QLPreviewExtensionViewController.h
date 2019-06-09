@@ -4,23 +4,33 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ViewBridge/NSServiceViewController.h>
+#import <QuickLookUI/QLUIServiceBaseViewController.h>
 
-@class QLPreviewExtensionContext;
+@class NSViewController, QLPreviewExtensionContext;
+@protocol QLPreviewingController;
 
-@interface QLPreviewExtensionViewController : NSServiceViewController
+@interface QLPreviewExtensionViewController : QLUIServiceBaseViewController
 {
+    int mode;
     QLPreviewExtensionContext *_extensionContext;
 }
 
 @property(nonatomic) __weak QLPreviewExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
+@property(nonatomic) int mode; // @synthesize mode;
 - (void).cxx_destruct;
+- (struct CGRect)sourceFrame;
+- (void)getImageRepresentationWithFrame:(struct CGRect)arg1 completion:(CDUnknownBlockType)arg2;
+- (struct CGRect)borderFrame;
+- (id)draggedURL;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+@property(readonly) NSViewController<QLPreviewingController> *previewViewController;
+- (void)setPreviewMode:(long long)arg1;
 - (void)setupWithController:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)hookUpToExtensionContextWithUUID:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
+- (id)exportedInterface;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (void)loadView;
-- (id)exportedInterface;
 
 @end
 

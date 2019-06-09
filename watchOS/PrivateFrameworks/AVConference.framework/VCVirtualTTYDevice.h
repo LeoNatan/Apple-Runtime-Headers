@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
     NSObject<VCMediaStreamDelegate> *delegate;
     NSObject<OS_dispatch_queue> *delegateNotificationQueue;
     struct _opaque_pthread_mutex_t sessionLock;
-    int state;
+    int _state;
     VCAudioPayload *_currentAudioPayload;
     VCAudioIO *_audioIO;
     struct SoundDec_t *_decoder;
@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) NSObject<VCMediaStreamDelegate> *delegate; // @synthesize delegate;
 @property int deviceRole; // @synthesize deviceRole;
 @property _Bool isValid; // @synthesize isValid;
+- (void)didUpdateBasebandCodec:(const struct _VCRemoteCodecInfo *)arg1;
 - (void)didResumeAudioIO:(id)arg1;
 - (void)didSuspendAudioIO:(id)arg1;
 - (void)setCanProcessAudio:(_Bool)arg1;

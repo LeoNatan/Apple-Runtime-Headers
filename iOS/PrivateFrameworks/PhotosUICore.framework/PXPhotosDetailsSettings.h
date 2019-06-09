@@ -27,6 +27,7 @@
     _Bool _allowZoomTransitions;
     _Bool _allowPinchTransitions;
     _Bool _purgeOnMemoryWarning;
+    _Bool _useCuratedLibraryLayout;
     _Bool _editorialLayoutEdit;
     _Bool _editorialLayoutAvoidSmallestTile;
     _Bool _allowEditorialLayoutStressTest;
@@ -37,7 +38,6 @@
     double _defaultPriorityWidgetsLoadingDelay;
     long long _detailViewsToKeepLoaded;
     long long _curationAlgorithm;
-    long long _layoutWeight;
     long long _editorialLayoutColumns;
     long long _editorialLayoutTargetRowsForChunk;
     long long _editorialLayoutActivityFeedItemCountThreshold;
@@ -54,6 +54,7 @@
 }
 
 + (id)sharedInstance;
++ (id)valueFromPXAssetBadgeInfo:(struct PXAssetBadgeInfo)arg1;
 + (id)settingsControllerModule;
 @property(nonatomic) double addToTabEndRotation; // @synthesize addToTabEndRotation=_addToTabEndRotation;
 @property(nonatomic) double addToTabFadeOutDelay; // @synthesize addToTabFadeOutDelay=_addToTabFadeOutDelay;
@@ -75,7 +76,7 @@
 @property(nonatomic) long long editorialLayoutTargetRowsForChunk; // @synthesize editorialLayoutTargetRowsForChunk=_editorialLayoutTargetRowsForChunk;
 @property(nonatomic) long long editorialLayoutColumns; // @synthesize editorialLayoutColumns=_editorialLayoutColumns;
 @property(nonatomic) _Bool editorialLayoutEdit; // @synthesize editorialLayoutEdit=_editorialLayoutEdit;
-@property(nonatomic) long long layoutWeight; // @synthesize layoutWeight=_layoutWeight;
+@property(nonatomic) _Bool useCuratedLibraryLayout; // @synthesize useCuratedLibraryLayout=_useCuratedLibraryLayout;
 @property(nonatomic) long long curationAlgorithm; // @synthesize curationAlgorithm=_curationAlgorithm;
 @property(nonatomic) long long detailViewsToKeepLoaded; // @synthesize detailViewsToKeepLoaded=_detailViewsToKeepLoaded;
 @property(nonatomic) _Bool purgeOnMemoryWarning; // @synthesize purgeOnMemoryWarning=_purgeOnMemoryWarning;

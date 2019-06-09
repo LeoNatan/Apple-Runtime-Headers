@@ -22,6 +22,7 @@
 + (id)dateWithTimeIntervalSinceReferenceDate:(double)arg1;
 + (id)date;
 + (id)allocWithZone:(struct _NSZone *)arg1;
++ (id)now;
 + (id)distantPast;
 + (id)distantFuture;
 + (double)timeIntervalSinceReferenceDate;

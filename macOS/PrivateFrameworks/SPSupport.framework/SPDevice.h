@@ -15,6 +15,9 @@
     NSMutableArray *volumes;
 }
 
+- (void).cxx_destruct;
+- (int)devicePowerState:(const char *)arg1 outPowerState:(unsigned int *)arg2;
+- (id)deviceACPIPath:(const char *)arg1;
 - (id)dictionaryRepresentation;
 - (id)anonymousDictionaryRepresentationForVolume:(struct __DADisk *)arg1;
 - (id)dictionaryRepresentationForVolume:(struct __DADisk *)arg1;

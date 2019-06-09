@@ -24,6 +24,9 @@
 - (void)collectionView:(UICollectionView *)arg1 tableLayout:(UICollectionViewTableLayout *)arg2 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)arg3;
 - (double)collectionView:(UICollectionView *)arg1 heightForFooterViewInTableLayout:(UICollectionViewTableLayout *)arg2;
 - (double)collectionView:(UICollectionView *)arg1 heightForHeaderViewInTableLayout:(UICollectionViewTableLayout *)arg2;
+- (double)collectionView:(UICollectionView *)arg1 tableLayout:(UICollectionViewTableLayout *)arg2 estimatedHeightForFooterInSection:(long long)arg3;
+- (double)collectionView:(UICollectionView *)arg1 tableLayout:(UICollectionViewTableLayout *)arg2 estimatedHeightForHeaderInSection:(long long)arg3;
+- (double)collectionView:(UICollectionView *)arg1 tableLayout:(UICollectionViewTableLayout *)arg2 estimatedHeightForRowAtIndexPath:(NSIndexPath *)arg3;
 - (double)collectionView:(UICollectionView *)arg1 tableLayout:(UICollectionViewTableLayout *)arg2 heightForFooterInSection:(long long)arg3;
 - (double)collectionView:(UICollectionView *)arg1 tableLayout:(UICollectionViewTableLayout *)arg2 heightForHeaderInSection:(long long)arg3;
 - (double)collectionView:(UICollectionView *)arg1 tableLayout:(UICollectionViewTableLayout *)arg2 heightForRowAtIndexPath:(NSIndexPath *)arg3;

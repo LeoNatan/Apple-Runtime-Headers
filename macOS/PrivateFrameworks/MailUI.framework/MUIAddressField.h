@@ -101,7 +101,7 @@
 - (BOOL)_hasFocus;
 - (void)contactPickerDidClose:(id)arg1;
 - (void)contactPickerWillClose:(id)arg1;
-- (void)contactPicker:(id)arg1 didChooseCompatibilityContact:(id)arg2 key:(id)arg3 value:(id)arg4;
+- (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
 - (void)_showContactPicker:(id)arg1;
 - (void)_tokenFieldGainedFocus:(id)arg1;
 - (void)_tokenFieldMouseAction:(id)arg1;

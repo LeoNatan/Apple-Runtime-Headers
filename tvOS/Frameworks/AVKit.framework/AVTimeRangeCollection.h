@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface AVTimeRangeCollection : NSObject
 {
     NSArray *_timeRanges;

@@ -10,37 +10,54 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBSetTaskAttributeIntent-Protocol.h>
 
-@class NSString, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTask, _INPBTemporalEventTrigger;
+@class NSString, _INPBContactEventTrigger, _INPBDataString, _INPBIntentMetadata, _INPBSpatialEventTrigger, _INPBTask, _INPBTemporalEventTrigger;
 
 @interface _INPBSetTaskAttributeIntent : PBCodable <_INPBSetTaskAttributeIntent, NSSecureCoding, NSCopying>
 {
-    CDStruct_47fe53f2 _has;
+    struct {
+        unsigned int priority:1;
+        unsigned int status:1;
+    } _has;
+    int _priority;
     int _status;
+    _INPBContactEventTrigger *_contactEventTrigger;
     _INPBIntentMetadata *_intentMetadata;
     _INPBSpatialEventTrigger *_spatialEventTrigger;
     _INPBTask *_targetTask;
+    _INPBDataString *_taskTitle;
     _INPBTemporalEventTrigger *_temporalEventTrigger;
 }
 
++ (_Bool)supportsSecureCoding;
 @property(retain, nonatomic) _INPBTemporalEventTrigger *temporalEventTrigger; // @synthesize temporalEventTrigger=_temporalEventTrigger;
+@property(retain, nonatomic) _INPBDataString *taskTitle; // @synthesize taskTitle=_taskTitle;
 @property(retain, nonatomic) _INPBTask *targetTask; // @synthesize targetTask=_targetTask;
 @property(nonatomic) int status; // @synthesize status=_status;
 @property(retain, nonatomic) _INPBSpatialEventTrigger *spatialEventTrigger; // @synthesize spatialEventTrigger=_spatialEventTrigger;
+@property(nonatomic) int priority; // @synthesize priority=_priority;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
+@property(retain, nonatomic) _INPBContactEventTrigger *contactEventTrigger; // @synthesize contactEventTrigger=_contactEventTrigger;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(readonly, nonatomic) _Bool hasTemporalEventTrigger;
+@property(readonly, nonatomic) _Bool hasTaskTitle;
 @property(readonly, nonatomic) _Bool hasTargetTask;
 - (int)StringAsStatus:(id)arg1;
 - (id)statusAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatus;
 @property(readonly, nonatomic) _Bool hasSpatialEventTrigger;
+- (int)StringAsPriority:(id)arg1;
+- (id)priorityAsString:(int)arg1;
+@property(nonatomic) _Bool hasPriority;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;
+@property(readonly, nonatomic) _Bool hasContactEventTrigger;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,7 +6,8 @@
 
 #import <AccessibilityKit/AXKElementController.h>
 
-@class NSMutableDictionary, NSMutableSet, NSOperationQueue;
+@class AXKMenuController, NSMutableDictionary, NSMutableSet, NSOperationQueue;
+@protocol AXKApplicationControllerDelegate;
 
 @interface AXKApplicationController : AXKElementController
 {
@@ -14,31 +15,53 @@
     BOOL _hasOpenMenus;
     BOOL __didRegisterFocusedUIElementNotification;
     BOOL __didRegisterFocusedWindowNotification;
-    BOOL __didRegisterFocusedMenuOpenedNotification;
-    BOOL __didRegisterFocusedMenuClosedNotification;
+    BOOL __didRegisterMenuOpenedNotification;
+    BOOL __didRegisterMenuClosedNotification;
+    BOOL __didRegisterWindowDidMovedNotification;
+    BOOL __didRegisterWindowDidResizeNotification;
+    BOOL __didRegisterWindowDidMiniaturizeNotification;
+    BOOL __didRegisterWindowDidDeminiaturizeNotification;
+    id <AXKApplicationControllerDelegate> _delegate;
+    AXKMenuController *_activeMenuController;
     NSMutableDictionary *__elementCache;
-    NSOperationQueue *__applicationQueue;
-    NSMutableSet *__menuSet;
+    NSMutableSet *__openMenuControllers;
+    AXKElementController *__previousFocusedElementController;
+    AXKElementController *__focusedElementController;
+    NSOperationQueue *_applicationQueue;
 }
 
-@property(retain, nonatomic) NSMutableSet *_menuSet; // @synthesize _menuSet=__menuSet;
-@property(nonatomic) BOOL _didRegisterFocusedMenuClosedNotification; // @synthesize _didRegisterFocusedMenuClosedNotification=__didRegisterFocusedMenuClosedNotification;
-@property(nonatomic) BOOL _didRegisterFocusedMenuOpenedNotification; // @synthesize _didRegisterFocusedMenuOpenedNotification=__didRegisterFocusedMenuOpenedNotification;
+@property(readonly, nonatomic) NSOperationQueue *applicationQueue; // @synthesize applicationQueue=_applicationQueue;
+@property(retain, nonatomic, setter=_setFocusedElementController:) AXKElementController *_focusedElementController; // @synthesize _focusedElementController=__focusedElementController;
+@property(retain, nonatomic, setter=_setPreviousFocusedElementController:) AXKElementController *_previousFocusedElementController; // @synthesize _previousFocusedElementController=__previousFocusedElementController;
+@property(retain, nonatomic, setter=_setOpenMenuControllers:) NSMutableSet *_openMenuControllers; // @synthesize _openMenuControllers=__openMenuControllers;
+@property(nonatomic) BOOL _didRegisterWindowDidDeminiaturizeNotification; // @synthesize _didRegisterWindowDidDeminiaturizeNotification=__didRegisterWindowDidDeminiaturizeNotification;
+@property(nonatomic) BOOL _didRegisterWindowDidMiniaturizeNotification; // @synthesize _didRegisterWindowDidMiniaturizeNotification=__didRegisterWindowDidMiniaturizeNotification;
+@property(nonatomic) BOOL _didRegisterWindowDidResizeNotification; // @synthesize _didRegisterWindowDidResizeNotification=__didRegisterWindowDidResizeNotification;
+@property(nonatomic) BOOL _didRegisterWindowDidMovedNotification; // @synthesize _didRegisterWindowDidMovedNotification=__didRegisterWindowDidMovedNotification;
+@property(nonatomic) BOOL _didRegisterMenuClosedNotification; // @synthesize _didRegisterMenuClosedNotification=__didRegisterMenuClosedNotification;
+@property(nonatomic) BOOL _didRegisterMenuOpenedNotification; // @synthesize _didRegisterMenuOpenedNotification=__didRegisterMenuOpenedNotification;
 @property(nonatomic) BOOL _didRegisterFocusedWindowNotification; // @synthesize _didRegisterFocusedWindowNotification=__didRegisterFocusedWindowNotification;
 @property(nonatomic) BOOL _didRegisterFocusedUIElementNotification; // @synthesize _didRegisterFocusedUIElementNotification=__didRegisterFocusedUIElementNotification;
-@property(retain, nonatomic) NSOperationQueue *_applicationQueue; // @synthesize _applicationQueue=__applicationQueue;
-@property(retain, nonatomic) NSMutableDictionary *_elementCache; // @synthesize _elementCache=__elementCache;
-@property BOOL hasOpenMenus; // @synthesize hasOpenMenus=_hasOpenMenus;
+@property(readonly, nonatomic) NSMutableDictionary *_elementCache; // @synthesize _elementCache=__elementCache;
+@property(retain, nonatomic) AXKMenuController *activeMenuController; // @synthesize activeMenuController=_activeMenuController;
+@property(nonatomic) BOOL hasOpenMenus; // @synthesize hasOpenMenus=_hasOpenMenus;
+@property(nonatomic) __weak id <AXKApplicationControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)_assertApplicationQueue;
+- (void)assertApplicationQueue;
 - (BOOL)removeObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 element:(id)arg4;
 - (BOOL)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 element:(id)arg4;
-- (BOOL)isSpotlight;
-- (BOOL)isNotificationCenter;
-- (BOOL)isSystemUIServer;
+@property(readonly, nonatomic) BOOL isTerminal;
+@property(readonly, nonatomic) BOOL isMail;
+@property(readonly, nonatomic) BOOL isFinder;
+@property(readonly, nonatomic) BOOL isDock;
+@property(readonly, nonatomic) BOOL isSpotlight;
+@property(readonly, nonatomic) BOOL isNotificationCenter;
+@property(readonly, nonatomic) BOOL isSystemUIServer;
 - (BOOL)_thirdPartyMenuExtraIsOpen:(id)arg1;
 - (void)_openThirdPartyMenuExtra:(id)arg1;
 - (void)_performPressOnMenuExtra:(id)arg1;
+- (void)_menuDidClose:(id)arg1;
+- (void)_menuDidOpen:(id)arg1;
 - (void)openMenuExtra:(id)arg1;
 - (void)closeAllMenus;
 - (void)menuDidClose:(id)arg1;
@@ -52,17 +75,20 @@
 - (void)resignFrontmostApplication;
 - (void)_becomeFrontmostApplication;
 - (void)becomeFrontmostApplication;
-@property(nonatomic, getter=isFrontmost, setter=setFrontmost:) BOOL frontmost; // @synthesize frontmost=_frontmost;
+@property(nonatomic, getter=isFrontmost) BOOL frontmost; // @synthesize frontmost=_frontmost;
 - (void)_removeElementFromCache:(id)arg1;
 - (void)_elementDidInvalidate:(id)arg1;
 - (void)_elementDestroyed:(id)arg1;
-- (id)performBlockOnApplicationQueue:(CDUnknownBlockType)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (id)performBlockOnApplicationQueue:(CDUnknownBlockType)arg1;
 - (id)elementControllerWithElement:(id)arg1;
+- (void)_windowDeminiaturizedNotification:(id)arg1;
+- (void)_windowMiniaturizedNotification:(id)arg1;
+- (void)_windowResizedNotification:(id)arg1;
+- (void)_windowMovedNotification:(id)arg1;
 - (void)_menuClosedNotification:(id)arg1;
 - (void)_menuOpenedNotification:(id)arg1;
 - (void)_focusedWindowNotification:(id)arg1;
 - (void)_focusedUIElementNotification:(id)arg1;
+- (void)_unregisterObservers;
 - (void)_registerObservers;
 - (void)dealloc;
 - (id)initWithApplicationElement:(id)arg1;

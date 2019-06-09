@@ -16,7 +16,6 @@
 - (void)clearAdvertisingIdentifier;
 @property(readonly, nonatomic) NSUUID *advertisingIdentifier;
 @property(readonly, nonatomic, getter=isAdvertisingTrackingEnabled) BOOL advertisingTrackingEnabled;
-- (id)init;
 
 @end
 

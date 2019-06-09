@@ -40,7 +40,7 @@ __attribute__((visibility("hidden")))
     BOOL neverResize;
     BOOL mouseDownCanMoveBubble;
     BOOL bubbleWasManuallyMoved;
-    unsigned long long controlAlignment;
+    long long controlAlignment;
     CDUnknownBlockType activateMonitorBlock;
     id eventMonitor;
     BOOL open;

@@ -16,14 +16,14 @@
     unsigned long long _timeRoundedToHour;
     float _timezoneOffsetFromGmtInHours;
     struct {
-        unsigned int timeRoundedToHour:1;
-        unsigned int timezoneOffsetFromGmtInHours:1;
-    } _has;
+        unsigned int has_timeRoundedToHour:1;
+        unsigned int has_timezoneOffsetFromGmtInHours:1;
+    } _flags;
 }
 
-@property(nonatomic) float timezoneOffsetFromGmtInHours; // @synthesize timezoneOffsetFromGmtInHours=_timezoneOffsetFromGmtInHours;
-@property(nonatomic) unsigned long long timeRoundedToHour; // @synthesize timeRoundedToHour=_timeRoundedToHour;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -32,10 +32,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasTimezoneOffsetFromGmtInHours;
+@property(nonatomic) float timezoneOffsetFromGmtInHours;
 @property(nonatomic) _Bool hasTimeRoundedToHour;
+@property(nonatomic) unsigned long long timeRoundedToHour;
 - (id)initWithCFAbsoluteTime:(double)arg1;
 - (id)initWithDate:(id)arg1;
 

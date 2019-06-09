@@ -21,21 +21,17 @@
     int _style;
     int _type;
     struct {
-        unsigned int featureIndex:1;
-        unsigned int featureTileX:1;
-        unsigned int featureTileY:1;
-        unsigned int featureTileZ:1;
-        unsigned int identifier:1;
-        unsigned int style:1;
-        unsigned int type:1;
-    } _has;
+        unsigned int has_featureIndex:1;
+        unsigned int has_featureTileX:1;
+        unsigned int has_featureTileY:1;
+        unsigned int has_featureTileZ:1;
+        unsigned int has_identifier:1;
+        unsigned int has_style:1;
+        unsigned int has_type:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int identifier; // @synthesize identifier=_identifier;
-@property(nonatomic) unsigned int featureTileZ; // @synthesize featureTileZ=_featureTileZ;
-@property(nonatomic) unsigned int featureTileY; // @synthesize featureTileY=_featureTileY;
-@property(nonatomic) unsigned int featureTileX; // @synthesize featureTileX=_featureTileX;
-@property(nonatomic) unsigned int featureIndex; // @synthesize featureIndex=_featureIndex;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -43,6 +39,7 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)setStyleAttributes:(struct GEORPFeatureHandleStyleAttribute *)arg1 count:(unsigned long long)arg2;
@@ -54,16 +51,21 @@
 - (int)StringAsType:(id)arg1;
 - (id)typeAsString:(int)arg1;
 @property(nonatomic) _Bool hasType;
-@property(nonatomic) int type; // @synthesize type=_type;
+@property(nonatomic) int type;
 @property(nonatomic) _Bool hasIdentifier;
+@property(nonatomic) unsigned int identifier;
 - (int)StringAsStyle:(id)arg1;
 - (id)styleAsString:(int)arg1;
 @property(nonatomic) _Bool hasStyle;
-@property(nonatomic) int style; // @synthesize style=_style;
+@property(nonatomic) int style;
 @property(nonatomic) _Bool hasFeatureTileZ;
+@property(nonatomic) unsigned int featureTileZ;
 @property(nonatomic) _Bool hasFeatureTileY;
+@property(nonatomic) unsigned int featureTileY;
 @property(nonatomic) _Bool hasFeatureTileX;
+@property(nonatomic) unsigned int featureTileX;
 @property(nonatomic) _Bool hasFeatureIndex;
+@property(nonatomic) unsigned int featureIndex;
 - (void)dealloc;
 
 @end

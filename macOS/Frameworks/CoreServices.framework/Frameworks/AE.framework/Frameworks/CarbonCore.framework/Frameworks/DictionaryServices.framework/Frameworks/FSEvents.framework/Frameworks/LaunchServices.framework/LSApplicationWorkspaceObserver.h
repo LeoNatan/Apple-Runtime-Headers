@@ -18,6 +18,8 @@
 
 + (BOOL)supportsSecureCoding;
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
+- (void).cxx_destruct;
+- (void)deviceManagementPolicyDidChange:(id)arg1;
 - (void)networkUsageChanged:(BOOL)arg1;
 - (void)applicationIconDidChange:(id)arg1;
 - (void)applicationStateDidChange:(id)arg1;

@@ -6,11 +6,12 @@
 
 #import <CarPlaySupport/NSObject-Protocol.h>
 
-@class CARSession;
+@class CARSession, CARSessionConfiguration;
 
 @protocol CARSessionObserving <NSObject>
 
 @optional
+- (void)session:(CARSession *)arg1 didUpdateConfiguration:(CARSessionConfiguration *)arg2;
 - (void)sessionDidDisconnect:(CARSession *)arg1;
 - (void)sessionDidConnect:(CARSession *)arg1;
 - (void)cancelledConnectionAttemptOnTransport:(unsigned long long)arg1;

@@ -15,11 +15,8 @@
     _Bool _useYardsForShortDistances;
     NSNumberFormatter *_floatNumberFormatter;
     double _magicNumbers[3];
-    UIColor *_lightSegmentColorRegular;
-    UIColor *_darkSegmentColorRegular;
     UIColor *_borderColorRegular;
-    UIColor *_lightSegmentColorSatellite;
-    UIColor *_darkSegmentColorSatellite;
+    UIColor *_borderColorDarkMode;
     UIColor *_borderColorSatellite;
     NSMutableArray *_segments;
     _MKScaleUnitsView *_unitsView;
@@ -40,12 +37,14 @@
     int _layoutCounter;
     _Bool _useLightText;
     _Bool _isVisible;
+    _Bool _usedInternallyByMapView;
     MKMapView *_mapView;
     int _scaleVisibility;
     int _legendAlignment;
 }
 
 + (id)scaleViewWithMapView:(id)arg1;
+@property(nonatomic) _Bool usedInternallyByMapView; // @synthesize usedInternallyByMapView=_usedInternallyByMapView;
 @property(nonatomic) int legendAlignment; // @synthesize legendAlignment=_legendAlignment;
 @property(nonatomic) int scaleVisibility; // @synthesize scaleVisibility=_scaleVisibility;
 @property(nonatomic) __weak MKMapView *mapView; // @synthesize mapView=_mapView;
@@ -64,6 +63,7 @@
 - (void)memoryWarning:(id)arg1;
 - (void)updateLocale:(id)arg1;
 - (void)_updateStrings;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateVisibility;
 - (void)shouldUpdateScaleNotification:(id)arg1;
 - (void)dealloc;

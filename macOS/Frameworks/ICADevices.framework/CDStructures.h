@@ -18,10 +18,6 @@ struct BulkNewPropertyData {
     unsigned int _field3;
 };
 
-struct FSRef {
-    unsigned char hidden[80];
-};
-
 struct ICAHeader {
     short _field1;
     unsigned long long _field2;
@@ -154,4 +150,8 @@ struct ICD_ScannerStatusPB {
 };
 
 struct __CFDictionary;
+
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
 

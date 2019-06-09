@@ -6,46 +6,88 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
+#import <GeoServices/GEOComposedRouteTransitDisplayStrings-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOFormattedString, NSMutableArray;
+@class GEOFormattedString, NSArray, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
+@protocol GEOServerFormattedString;
 
-@interface GEOTransitRouteDisplayStrings : PBCodable <NSCopying>
+@interface GEOTransitRouteDisplayStrings : PBCodable <GEOComposedRouteTransitDisplayStrings, NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
+    PBUnknownFields *_unknownFields;
     NSMutableArray *_advisorys;
     GEOFormattedString *_badge;
-    GEOFormattedString *_duration;
     GEOFormattedString *_durationList;
+    GEOFormattedString *_duration;
     GEOFormattedString *_planningDescription;
     GEOFormattedString *_travelDescription;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_advisorys:1;
+        unsigned int read_badge:1;
+        unsigned int read_durationList:1;
+        unsigned int read_duration:1;
+        unsigned int read_planningDescription:1;
+        unsigned int read_travelDescription:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_advisorys:1;
+        unsigned int wrote_badge:1;
+        unsigned int wrote_durationList:1;
+        unsigned int wrote_duration:1;
+        unsigned int wrote_planningDescription:1;
+        unsigned int wrote_travelDescription:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)advisoryType;
-@property(retain, nonatomic) GEOFormattedString *badge; // @synthesize badge=_badge;
-@property(retain, nonatomic) NSMutableArray *advisorys; // @synthesize advisorys=_advisorys;
-@property(retain, nonatomic) GEOFormattedString *travelDescription; // @synthesize travelDescription=_travelDescription;
-@property(retain, nonatomic) GEOFormattedString *durationList; // @synthesize durationList=_durationList;
-@property(retain, nonatomic) GEOFormattedString *duration; // @synthesize duration=_duration;
-@property(retain, nonatomic) GEOFormattedString *planningDescription; // @synthesize planningDescription=_planningDescription;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, copy) NSString *description;
+@property(retain, nonatomic) GEOFormattedString *badge;
 @property(readonly, nonatomic) _Bool hasBadge;
+- (void)_readBadge;
 - (id)advisoryAtIndex:(unsigned long long)arg1;
 - (unsigned long long)advisorysCount;
+- (void)_addNoFlagsAdvisory:(id)arg1;
 - (void)addAdvisory:(id)arg1;
 - (void)clearAdvisorys;
+@property(retain, nonatomic) NSMutableArray *advisorys;
+- (void)_readAdvisorys;
+@property(retain, nonatomic) GEOFormattedString *travelDescription;
 @property(readonly, nonatomic) _Bool hasTravelDescription;
+- (void)_readTravelDescription;
+@property(retain, nonatomic) GEOFormattedString *durationList;
 @property(readonly, nonatomic) _Bool hasDurationList;
+- (void)_readDurationList;
+@property(retain, nonatomic) GEOFormattedString *duration;
 @property(readonly, nonatomic) _Bool hasDuration;
+- (void)_readDuration;
+@property(retain, nonatomic) GEOFormattedString *planningDescription;
 @property(readonly, nonatomic) _Bool hasPlanningDescription;
+- (void)_readPlanningDescription;
+@property(readonly, nonatomic) id <GEOServerFormattedString> transitRouteBadge;
+@property(readonly, nonatomic) NSArray *transitAdvisories;
+@property(readonly, nonatomic) id <GEOServerFormattedString> transitDescriptionFormatString;
+@property(readonly, nonatomic) id <GEOServerFormattedString> pickingDurationFormatString;
+@property(readonly, nonatomic) id <GEOServerFormattedString> previewDurationFormatString;
+@property(readonly, nonatomic) id <GEOServerFormattedString> planningDescriptionFormatString;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

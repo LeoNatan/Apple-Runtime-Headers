@@ -15,6 +15,9 @@
     _Bool _atomic;
     _Bool _shouldOnlySaveAssetContent;
     _Bool _shouldReportRecordsInFlight;
+    _Bool _originatingFromDaemon;
+    _Bool _markAsParticipantNeedsNewInvitationToken;
+    _Bool _shouldSkipPCSRetryBehavior;
     NSArray *_recordsToSave;
     NSArray *_recordIDsToDelete;
     NSData *_clientChangeTokenData;
@@ -22,9 +25,16 @@
     NSDictionary *_recordIDsToDeleteToEtags;
     NSDictionary *_conflictLosersToResolveByRecordID;
     NSDictionary *_pluginFieldsForRecordDeletesByID;
+    NSDictionary *_assetUUIDToExpectedProperties;
+    NSDictionary *_packageUUIDToExpectedProperties;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool shouldSkipPCSRetryBehavior; // @synthesize shouldSkipPCSRetryBehavior=_shouldSkipPCSRetryBehavior;
+@property(nonatomic) _Bool markAsParticipantNeedsNewInvitationToken; // @synthesize markAsParticipantNeedsNewInvitationToken=_markAsParticipantNeedsNewInvitationToken;
+@property(nonatomic) _Bool originatingFromDaemon; // @synthesize originatingFromDaemon=_originatingFromDaemon;
+@property(copy, nonatomic) NSDictionary *packageUUIDToExpectedProperties; // @synthesize packageUUIDToExpectedProperties=_packageUUIDToExpectedProperties;
+@property(copy, nonatomic) NSDictionary *assetUUIDToExpectedProperties; // @synthesize assetUUIDToExpectedProperties=_assetUUIDToExpectedProperties;
 @property(nonatomic) _Bool shouldReportRecordsInFlight; // @synthesize shouldReportRecordsInFlight=_shouldReportRecordsInFlight;
 @property(copy, nonatomic) NSDictionary *pluginFieldsForRecordDeletesByID; // @synthesize pluginFieldsForRecordDeletesByID=_pluginFieldsForRecordDeletesByID;
 @property(retain, nonatomic) NSDictionary *conflictLosersToResolveByRecordID; // @synthesize conflictLosersToResolveByRecordID=_conflictLosersToResolveByRecordID;

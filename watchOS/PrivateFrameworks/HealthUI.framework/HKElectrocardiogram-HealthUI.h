@@ -18,7 +18,9 @@
 + (id)hk_defaultNumSymptomsTextColor;
 + (id)hk_defaultBPMTextColor;
 + (id)hk_defaultTimeStampCompositingFilter;
++ (id)hk_abnormalTimeStampTextColor;
 + (id)hk_defaultTimeStampTextColor;
++ (id)hk_abnormalClassificationTextColor;
 + (id)hk_defaultClassificationTextColor;
 + (id)hk_defaultCardBackgroundColor;
 + (id)hk_defaultCardHeaderColor;

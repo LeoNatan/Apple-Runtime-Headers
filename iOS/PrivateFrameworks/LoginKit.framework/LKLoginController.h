@@ -21,9 +21,11 @@
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (id)recentUsers;
+- (void)isReadyToLoginWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)saveClassConfiguration:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)loginAppleID:(id)arg1 password:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)chooseUserWithIdentifier:(id)arg1 inClassWithID:(id)arg2 password:(id)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
+- (void)logoutWithLogoutType:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)proxy;
 - (id)init;
 

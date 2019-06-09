@@ -25,9 +25,9 @@ __attribute__((visibility("hidden")))
 + (void)_performClearWithPayload:(id)arg1;
 + (void)userNotification:(id)arg1 selectedButtonAction:(id)arg2;
 + (BOOL)shouldSkipAccountCheck;
-+ (void)handleNotificationPayload:(id)arg1 config:(id)arg2 bagContract:(id)arg3;
++ (void)handleNotificationPayload:(id)arg1 config:(id)arg2 bag:(id)arg3;
 + (BOOL)isDeviceOfferNotification:(id)arg1;
-+ (void)removeDeviceOfferWithPayload:(id)arg1 logKey:(id)arg2 bagContract:(id)arg3;
++ (void)removeDeviceOfferWithPayload:(id)arg1 logKey:(id)arg2 bag:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

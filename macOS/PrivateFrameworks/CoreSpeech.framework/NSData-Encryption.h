@@ -13,5 +13,7 @@
 - (id)decryptedDataWithAESGCMKey:(id)arg1 ivData:(id)arg2 tagData:(id)arg3 error:(id *)arg4;
 - (void)encryptedDataWithAESGCMKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)saveEncryptedDataUsingAESKey:(id)arg1 atFilepath:(id)arg2;
+- (id)_cs_xpcObject;
+- (id)_cs_initWithXPCObject:(id)arg1;
 @end
 

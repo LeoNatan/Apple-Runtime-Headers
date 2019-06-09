@@ -15,11 +15,22 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_memoryStore;
     NSMutableDictionary *_nameIdentifierStore;
     int _maxNameIdentifier;
+    NSMutableDictionary *_apperanceNameIdentifierStore;
+    int _maxApperanceNameIdentifier;
+    NSMutableDictionary *_renditionInfoStore;
 }
 
+- (id)appearances;
+- (id)nameForAppearanceIdentifier:(unsigned short)arg1;
+- (unsigned short)appearanceIdentifierForName:(id)arg1;
+- (id)defaultAppearanceName;
+- (id)renditionInfoForIdentifier:(unsigned short)arg1;
 - (void)clearRenditionCache;
 - (void)removeImageNamed:(id)arg1 withDescription:(id)arg2;
 - (void)insertCGImage:(struct CGImage *)arg1 withName:(id)arg2 andDescription:(id)arg3;
+- (void)_removeRenditionInfoForImageWithName:(id)arg1;
+- (void)_addRenditionInfoForImageWithName:(id)arg1 andKey:(struct _renditionkeytoken *)arg2;
+- (struct _renditionkeytoken *)renditionKeyForAssetWithName:(id)arg1 withDescription:(id)arg2;
 - (id)renditionWithKey:(const struct _renditionkeytoken *)arg1 usingKeySignature:(id)arg2;
 - (id)renditionWithKey:(const struct _renditionkeytoken *)arg1;
 - (_Bool)canGetRenditionWithKey:(const struct _renditionkeytoken *)arg1 isFPO:(_Bool *)arg2;

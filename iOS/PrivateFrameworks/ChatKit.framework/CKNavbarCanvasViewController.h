@@ -7,14 +7,16 @@
 #import <UIKit/UIViewController.h>
 
 #import <ChatKit/CKDetailsContactsManagerDelegate-Protocol.h>
+#import <ChatKit/CKNavigationBarCanvasViewDelegate-Protocol.h>
 #import <ChatKit/UIGestureRecognizerDelegate-Protocol.h>
 
 @class CKAvatarPickerViewController, CKCanvasBackButtonView, CKConversation, CKDetailsContactsManager, CKLabel, CKNavigationBarCanvasView, CNContactStore, NSString, UIButton, UINavigationController;
 @protocol CKNavbarCanvasViewControllerDelegate;
 
-@interface CKNavbarCanvasViewController : UIViewController <UIGestureRecognizerDelegate, CKDetailsContactsManagerDelegate>
+@interface CKNavbarCanvasViewController : UIViewController <UIGestureRecognizerDelegate, CKDetailsContactsManagerDelegate, CKNavigationBarCanvasViewDelegate>
 {
     _Bool _canShowBackButtonView;
+    _Bool _shouldShowDoneButton;
     _Bool _editing;
     id <CKNavbarCanvasViewControllerDelegate> _delegate;
     UIButton *_callButton;
@@ -27,6 +29,7 @@
     UIButton *_detailsButton;
     UIButton *_clearAllButtonView;
     UIButton *_editCancelButtonView;
+    UIButton *_doneButton;
     UINavigationController *_proxyNavigationController;
     long long _indicatorType;
     CNContactStore *_suggestionsEnabledContactStore;
@@ -38,6 +41,7 @@
 @property(nonatomic) long long indicatorType; // @synthesize indicatorType=_indicatorType;
 @property(nonatomic) _Bool editing; // @synthesize editing=_editing;
 @property(nonatomic) __weak UINavigationController *proxyNavigationController; // @synthesize proxyNavigationController=_proxyNavigationController;
+@property(retain, nonatomic) UIButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(retain, nonatomic) UIButton *editCancelButtonView; // @synthesize editCancelButtonView=_editCancelButtonView;
 @property(retain, nonatomic) UIButton *clearAllButtonView; // @synthesize clearAllButtonView=_clearAllButtonView;
 @property(retain, nonatomic) UIButton *detailsButton; // @synthesize detailsButton=_detailsButton;
@@ -46,11 +50,13 @@
 @property(retain, nonatomic) CKAvatarPickerViewController *avatarPickerViewController; // @synthesize avatarPickerViewController=_avatarPickerViewController;
 @property(retain, nonatomic) CKConversation *conversation; // @synthesize conversation=_conversation;
 @property(retain, nonatomic) NSString *navbarTitle; // @synthesize navbarTitle=_navbarTitle;
+@property(nonatomic) _Bool shouldShowDoneButton; // @synthesize shouldShowDoneButton=_shouldShowDoneButton;
 @property(nonatomic) _Bool canShowBackButtonView; // @synthesize canShowBackButtonView=_canShowBackButtonView;
 @property(retain, nonatomic) CKNavigationBarCanvasView *canvasView; // @synthesize canvasView=_canvasView;
 @property(retain, nonatomic) UIButton *callButton; // @synthesize callButton=_callButton;
 @property(nonatomic) __weak id <CKNavbarCanvasViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (struct NSDirectionalEdgeInsets)systemMinimumLayoutMarginsForView:(id)arg1;
 - (void)contactsManager:(id)arg1 didRequestCallTypeForEntity:(id)arg2 addresses:(id)arg3 abLabels:(id)arg4 faceTimeAudioEnabled:(_Bool)arg5;
 - (void)contactsManagerViewModelsDidChange:(id)arg1;
 - (void)_buttonPressed:(id)arg1;
@@ -75,6 +81,7 @@
 - (_Bool)isFaceTimeVideoSupported;
 - (_Bool)isMultiwayFaceTimeAudioSupported;
 - (void)_notifyDelegateThatViewControllerWantsResize;
+- (void)_handleAddressBookChange:(id)arg1;
 - (void)_updateMultiwayButtonStateWithConversation:(id)arg1;
 - (void)multiwayStateChanged:(id)arg1;
 - (void)accessibilitySizeCategoryDidChange:(id)arg1;
@@ -82,8 +89,11 @@
 - (void)viewDidLoad;
 - (void)viewDidLayoutSubviews;
 - (void)handleCloseNavBarAnimationCompleteNotification:(id)arg1;
+- (_Bool)_isFaceTimeSupportedForIndividualCalls;
 - (void)_userDidTapNavigationBar:(id)arg1;
+- (_Bool)_isMuliwayAvaialble;
 - (void)toggleExpansionState;
+- (void)collapse;
 - (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)loadView;
 - (id)navigationItem;
@@ -91,6 +101,7 @@
 - (double)_preferredHeightForTraitCollection:(id)arg1;
 - (id)_windowTraitCollection;
 - (void)startAudioCommunicationUsingPreferredRouteIfAvailable:(_Bool)arg1;
+- (id)navBarTitleFromConversation:(id)arg1;
 - (void)dealloc;
 - (id)initWithConversation:(id)arg1 navigationController:(id)arg2;
 - (id)initWithConversation:(id)arg1;

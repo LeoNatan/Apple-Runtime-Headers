@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <VectorKit/GEOComposedRouteObserver-Protocol.h>
-#import <VectorKit/VKOverlay-Protocol.h>
+#import <VectorKit/VKRouteOverlay-Protocol.h>
 
-@class GEOComposedRoute, GEOMapRegion, NSString, VKRouteLine;
+@class GEOComposedRoute, GEOComposedRouteTraffic, GEOMapRegion, NSString, VKRouteLine;
 @protocol VKPolylineOverlayRouteRibbonObserver;
 
-@interface VKPolylineOverlay : NSObject <VKOverlay, GEOComposedRouteObserver>
+@interface VKPolylineOverlay : NSObject <VKRouteOverlay, GEOComposedRouteObserver>
 {
     struct __CFSet *_observers;
     GEOComposedRoute *_composedRoute;
@@ -20,25 +20,31 @@
     VKRouteLine *_routeRibbon;
     id <VKPolylineOverlayRouteRibbonObserver> _routeRibbonObserver;
     double _trafficTimeStamp;
-    struct TrafficSegmentsAlongRoute *_trafficSegments;
+    struct unique_ptr<md::TrafficSegmentsAlongRoute, std::__1::default_delete<md::TrafficSegmentsAlongRoute>> _trafficSegments;
     _Bool _selected;
+    _Bool _hasFocus;
     _Bool _showTraffic;
+    GEOComposedRouteTraffic *_traffic;
 }
 
 @property(nonatomic) _Bool showTraffic; // @synthesize showTraffic=_showTraffic;
+@property(nonatomic) _Bool hasFocus; // @synthesize hasFocus=_hasFocus;
 @property(nonatomic) _Bool selected; // @synthesize selected=_selected;
 @property(nonatomic) id <VKPolylineOverlayRouteRibbonObserver> routeRibbonObserver; // @synthesize routeRibbonObserver=_routeRibbonObserver;
 @property(nonatomic) VKRouteLine *routeRibbon; // @synthesize routeRibbon=_routeRibbon;
 @property(readonly, nonatomic) double trafficTimeStamp; // @synthesize trafficTimeStamp=_trafficTimeStamp;
+@property(readonly, nonatomic) GEOComposedRouteTraffic *traffic; // @synthesize traffic=_traffic;
 @property(readonly, nonatomic) GEOComposedRoute *composedRoute; // @synthesize composedRoute=_composedRoute;
+- (id).cxx_construct;
+- (void).cxx_destruct;
+- (void)composedRoute:(id)arg1 appliedTransitRouteUpdates:(id)arg2;
 - (void)composedRoute:(id)arg1 changedSelectedRideInClusteredLeg:(id)arg2 fromIndex:(unsigned long long)arg3 toIndex:(unsigned long long)arg4;
 - (void)composedRoute:(id)arg1 selectedSections:(id)arg2 deselectedSections:(id)arg3;
-- (void)composedRouteUpdatedTraffic:(id)arg1;
 - (void)composedRouteUpdatedSnappedPaths:(id)arg1;
 - (_Bool)isSnappingForSceneTiles;
 - (id)getPathsForRenderRegion:(id)arg1 shouldSnapToRoads:(_Bool)arg2 verifySnapping:(_Bool)arg3 observer:(id)arg4;
 - (void)clearSnappedPathsForObserver:(id)arg1;
-- (void)_updateTraffic;
+- (void)updateTraffic:(id)arg1;
 - (struct _NSRange)sectionRangeForBounds:(Box_3d7e3c2c)arg1;
 @property(readonly, nonatomic) GEOMapRegion *boundingMapRegion;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee coordinate;
@@ -47,7 +53,7 @@
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)dealloc;
-- (id)initWithComposedRoute:(id)arg1;
+- (id)initWithComposedRoute:(id)arg1 traffic:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

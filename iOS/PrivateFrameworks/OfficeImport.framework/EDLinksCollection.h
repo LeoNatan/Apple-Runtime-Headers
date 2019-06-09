@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     NSMutableArray *mReferences;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (void)addOrEquivalentExternalAddInName:(id)arg1 linkReferenceIndex:(unsigned long long *)arg2 nameIndex:(unsigned long long *)arg3;
 - (unsigned long long)addOrEquivalentLinkReferenceOfType:(int)arg1 firstSheetIndex:(unsigned long long)arg2 lastSheetIndex:(unsigned long long)arg3;
@@ -29,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)indexOfFirstLinkWithType:(int)arg1;
 - (id)linkAtIndex:(unsigned long long)arg1;
 - (unsigned long long)linksCount;
-- (void)dealloc;
 - (id)init;
 
 @end

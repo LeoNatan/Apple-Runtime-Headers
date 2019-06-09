@@ -8,7 +8,7 @@
 
 #import <PersonalizationPortraitInternals/PPNamedEntityReadOnlyServerProtocol-Protocol.h>
 
-@class NSString, PPBundleIdResolver, PPXPCServerPipelinedBatchQueryManager;
+@class NSString, PPXPCServerPipelinedBatchQueryManager, _PASBundleIdResolver;
 @protocol PPNamedEntityClientProtocol;
 
 @interface PPNamedEntityReadOnlyServerRequestHandler : NSObject <PPNamedEntityReadOnlyServerProtocol>
@@ -16,16 +16,14 @@
     id <PPNamedEntityClientProtocol> _clientProxy;
     PPXPCServerPipelinedBatchQueryManager *_queryManager;
     NSString *_clientProcessName;
-    PPBundleIdResolver *_bundleIdResolver;
+    _PASBundleIdResolver *_bundleIdResolver;
 }
 
-@property(retain, nonatomic) PPBundleIdResolver *bundleIdResolver; // @synthesize bundleIdResolver=_bundleIdResolver;
+@property(retain, nonatomic) _PASBundleIdResolver *bundleIdResolver; // @synthesize bundleIdResolver=_bundleIdResolver;
 @property(copy, nonatomic) NSString *clientProcessName; // @synthesize clientProcessName=_clientProcessName;
 - (void).cxx_destruct;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)mapItemForPlaceName:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)feedbackNamedEntitiesOverallEngagement:(id)arg1;
-- (void)feedbackEngagedNamedEntities:(id)arg1;
-- (void)feedbackUsedNamedEntities:(id)arg1;
 - (void)namedEntityRecordsWithQuery:(id)arg1 queryId:(unsigned long long)arg2;
 - (void)rankedNamedEntitiesWithQuery:(id)arg1 queryId:(unsigned long long)arg2;
 - (void)setRemoteObjectProxy:(id)arg1;

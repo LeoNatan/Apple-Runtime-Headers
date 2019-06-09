@@ -15,7 +15,7 @@
 #import <Safari/TableViewPlusDelegate-Protocol.h>
 #import <Safari/TableViewPlusScrollDelegate-Protocol.h>
 
-@class AddPasswordSheetController, NSArray, NSButton, NSCache, NSImageView, NSSearchField, NSSharingService, NSString, NSTextField, PasswordsAuditingPopoverViewController, PasswordsDetailSheetController, TableViewPlus, WBSAutoFillQuirksManager, WBSFaviconRequestsController, WBSSavedPasswordAuditor, WBSSavedPasswordStore, WBSSiteMetadataManager;
+@class AddPasswordSheetController, NSArray, NSButton, NSCache, NSImageView, NSSearchField, NSSharingService, NSString, NSTextField, PasswordsAuditingPopoverViewController, PasswordsDetailSheetController, TableViewPlus, WBSAutoFillQuirksManager, WBSFaviconRequestsController, WBSPasswordEvaluator, WBSSavedPasswordAuditor, WBSSavedPasswordStore, WBSSiteMetadataManager;
 @protocol AggregatedPasswordsViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -36,6 +36,8 @@ __attribute__((visibility("hidden")))
     PasswordsAuditingPopoverViewController *_passwordsAuditingPopoverViewController;
     NSCache *_savedPasswordIsReusedPassword;
     NSSharingService *_sharingService;
+    WBSPasswordEvaluator *_passwordEvaluator;
+    NSCache *_savedPasswordIsWeakPassword;
     id <AggregatedPasswordsViewControllerDelegate> _delegate;
     NSTextField *_emptyTablePlaceholderText;
     NSSearchField *_searchField;
@@ -60,8 +62,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <AggregatedPasswordsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)_window;
+- (BOOL)_isWeakPassword:(id)arg1;
 - (BOOL)_isDuplicatedPassword:(id)arg1;
-- (void)_updateReusedPasswordsWarningColumnAndTextVisibility:(BOOL)arg1;
+- (BOOL)shouldDisplayWarningAboutSavedPassword:(id)arg1;
 - (void)_copySelectedPassword;
 - (void)_copySelectedUserName;
 - (void)_copySelectedDomain;
@@ -91,7 +94,8 @@ __attribute__((visibility("hidden")))
 - (void)_updateRows:(id)arg1 selected:(BOOL)arg2;
 - (void)_passwordStoreDidChange:(id)arg1;
 - (void)changePasswordForSavedPassword:(id)arg1;
-- (id)passwordsReusedWarningStringForSavedPassword:(id)arg1;
+- (id)_warningTextForSavedPassword:(id)arg1;
+- (id)warningStringForSavedPassword:(id)arg1;
 - (void)_updateDuplicatedPasswordsWarningVisibility:(BOOL)arg1;
 - (void)aggregatedPasswordsAuditingTableCellViewAuditingButtonWasClicked:(id)arg1;
 - (void)passwordsDetailSheetControllerDoesNotWantLockPolicyDeferral:(id)arg1;

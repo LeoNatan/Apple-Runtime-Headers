@@ -10,8 +10,6 @@
 {
 }
 
-+ (BOOL)isFileNotFoundError:(id)arg1;
-+ (BOOL)isCancelledError:(id)arg1;
 + (id)ifResultIsNil:(id)arg1 setOutputError:(id *)arg2 withBlock:(CDUnknownBlockType)arg3;
 + (id)ifResultIsNil:(id)arg1 setOutputError:(id *)arg2 toError:(id)arg3;
 + (id)multipleErrorsErrorWithErrors:(id)arg1;

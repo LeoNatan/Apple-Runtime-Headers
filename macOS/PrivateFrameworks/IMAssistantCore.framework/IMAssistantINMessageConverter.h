@@ -14,6 +14,9 @@
 + (id)INPersonsForSPIHandles:(id)arg1 personProvider:(id)arg2;
 + (id)__INSpeakableStringForMessage:(id)arg1;
 + (id)__INMessageLinkMetadataForLPLinkMetadata:(id)arg1;
++ (id)expressiveSendIdFromMessageEffectType:(long long)arg1;
++ (long long)messageEffectTypeFromExpressiveSendId:(id)arg1;
++ (id)messageEffectTypeToExpressiveSendIdDictionary;
 
 @end
 

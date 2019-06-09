@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 @interface VNFaceBBoxAligner : VNDetector
 {
     struct shared_ptr<vision::mod::FaceBoxPoseAligner<signed char>> mFaceBoxPoseAlignerImpl;
-    BOOL modelFilesWereMemmapped;
+    BOOL _modelFilesWereMemmapped;
     id <VNModelFile> mFaceBoxAlignerModelFileHandle;
 }
 

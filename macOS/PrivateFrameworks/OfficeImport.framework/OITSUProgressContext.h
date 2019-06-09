@@ -8,6 +8,7 @@
 
 @class NSDate, OITSUProgressStage;
 
+__attribute__((visibility("hidden")))
 @interface OITSUProgressContext : NSObject
 {
     OITSUProgressStage *m_currentStage;

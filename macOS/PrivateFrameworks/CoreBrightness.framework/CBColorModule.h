@@ -28,7 +28,7 @@ __attribute__((visibility("hidden")))
     struct {
         struct ColorEffects *cfx;
         _Bool blueReductionEnabled;
-        _Bool blueReductionFactor;
+        float blueReductionFactor;
         _Bool nightModeSupported;
         _Bool fadeInProgress;
         _Bool enforceSlowRamps;
@@ -37,7 +37,9 @@ __attribute__((visibility("hidden")))
         double enablementTs;
         _Bool forceSnapping;
         float currentChromaticitySensitivity;
-        _Bool harmonySupported;
+        _Bool harmonyHWSupported;
+        _Bool harmonyNativeSupported;
+        _Bool harmonySystemSupported;
         _Bool harmonyEnabled;
         _Bool harmonyActive;
         _Bool harmonyAvailable;
@@ -55,11 +57,18 @@ __attribute__((visibility("hidden")))
     } _reportContext;
     BOOL _displayOn;
     CBColorFilter *_colorFilter;
+    NSMutableDictionary *_aggregatedConfig;
+    unsigned long long _colorFilterModeOverride;
     unsigned long long _moduleType;
 }
 
 @property(readonly) unsigned long long moduleType; // @synthesize moduleType=_moduleType;
 - (id)copyIdentifiers;
+- (id)newAggregatedConfigFromSerializedConfig:(id)arg1;
+- (id)newSerializedConfigFromAggregatedConfig:(id)arg1;
+- (void)updateAggregatedConfigWithObject:(id)arg1 forKey:(id)arg2;
+- (void)initializeAggregatedConfig;
+- (void)notifyAndStoreAggregatedConfig;
 - (id)newArrayFromIntegers:(int *)arg1 size:(int)arg2;
 - (id)newArrayFromDoubles:(double *)arg1 size:(int)arg2;
 - (BOOL)isDFR;
@@ -77,11 +86,12 @@ __attribute__((visibility("hidden")))
 - (BOOL)parseAdaptationModeMappingArray:(id)arg1 strengths:(float *)arg2 strengthNum:(int)arg3;
 - (BOOL)parseAdaptationModeMappingDictionary:(id)arg1 strengths:(float *)arg2 strengthNum:(int)arg3;
 - (void)initColorStruct;
-- (void)colorRampRoutine:(const CDStruct_7bd4ac66 *)arg1;
+- (void)colorRampRoutine:(const CDStruct_0384f68a *)arg1;
 - (void)sendNotificationForKey:(id)arg1 andValue:(id)arg2;
 - (void)updateActivity;
 - (void)updateAvailability;
 - (void)updateClamshellState:(_Bool)arg1;
+- (void)updateHarmonySupport;
 - (_Bool)setProperty:(id)arg1 forKey:(id)arg2;
 - (id)copyPropertyInternalForKey:(id)arg1;
 - (id)copyPropertyForKey:(id)arg1;
@@ -94,13 +104,14 @@ __attribute__((visibility("hidden")))
 - (_Bool)removeHIDServiceClient:(struct __IOHIDServiceClient *)arg1;
 - (_Bool)addHIDServiceClient:(struct __IOHIDServiceClient *)arg1;
 - (_Bool)handleHIDEvent:(struct __IOHIDEvent *)arg1 from:(struct __IOHIDServiceClient *)arg2;
+- (void)updateSensorPolicy;
+- (void)updateColorFilterMode;
 - (float)absoluteDifferenceForCurrentColor:(CDStruct_b2fbf00d)arg1 andDeltaError:(CDStruct_b2fbf00d)arg2;
 - (BOOL)setColorSensitivity:(float)arg1 forALS:(struct __IOHIDServiceClient *)arg2;
 - (void)updateSensorSensitivity:(struct __IOHIDServiceClient *)arg1;
 - (void)handleHIDEventInternal:(struct __IOHIDEvent *)arg1 from:(struct __IOHIDServiceClient *)arg2;
 - (void)processColorSample:(id)arg1;
 - (_Bool)setPropertyInternal:(id)arg1 forKey:(id)arg2;
-- (BOOL)colorFilterSensorPolicyHandler:(id)arg1;
 - (BOOL)colorFilterModeHandler:(id)arg1;
 - (BOOL)CoreDisplayInitialisedPropertyHandler:(id)arg1;
 - (BOOL)CAModeMapping:(id)arg1;

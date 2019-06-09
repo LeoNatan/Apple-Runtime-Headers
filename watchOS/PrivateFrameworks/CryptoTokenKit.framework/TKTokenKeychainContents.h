@@ -6,25 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSString;
+@class NSArray, NSDictionary, NSString, TKTokenConfiguration;
 
 @interface TKTokenKeychainContents : NSObject
 {
-    NSMutableDictionary *_certificates;
-    NSMutableDictionary *_keys;
+    NSArray *_items;
+    TKTokenConfiguration *_configuration;
     NSString *_tokenID;
 }
 
-@property(readonly, copy) NSDictionary *certificates; // @synthesize certificates=_certificates;
-@property(readonly, copy) NSDictionary *keys; // @synthesize keys=_keys;
 @property(readonly) NSString *tokenID; // @synthesize tokenID=_tokenID;
+@property(readonly) TKTokenConfiguration *configuration; // @synthesize configuration=_configuration;
 - (void).cxx_destruct;
 - (id)certificateForKey:(id)arg1;
 - (id)keyForObjectID:(id)arg1 error:(id *)arg2;
 - (id)certificateForObjectID:(id)arg1 error:(id *)arg2;
+@property(readonly, copy) NSDictionary *keys;
+@property(readonly, copy) NSDictionary *certificates;
 @property(readonly, copy) NSArray *items;
 - (void)fillWithItems:(id)arg1;
 - (id)initWithTokenID:(id)arg1;
+- (id)initWithConfiguration:(id)arg1;
 
 @end
 

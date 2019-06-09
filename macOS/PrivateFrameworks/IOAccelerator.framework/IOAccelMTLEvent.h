@@ -8,15 +8,16 @@
 
 @interface IOAccelMTLEvent : NSObject
 {
-    // Error parsing type: ^{__IOAccelShared={__CFRuntimeBase=QAQ}^{__IOAccelDevice}I@?Q{os_unfair_lock_s=I}^{IOAcceldirtyRingRO}^{IOAcceldirtyRingRW}^{IOAccelDirtyResourceCommand}I}, name: _sharedRef
+    // Error parsing type: ^{__IOAccelShared={__CFRuntimeBase=QAQ}^{__IOAccelDevice}I@?Q{os_unfair_lock_s=I}^{IOAcceldirtyRingRO}^{IOAcceldirtyRingRW}^{IOAccelDirtyResourceCommand}I{os_unfair_lock_s=I}{shmemlog_list=^{_s_shmemlog_}}}, name: _sharedRef
     unsigned int _eventName;
     unsigned long long _globalTraceObjectID;
 }
 
+- (unsigned int)encodeKernelWaitEventCommandArgs:(struct IOAccelKernelCommandSignalOrWaitEventArgs *)arg1 value:(unsigned long long)arg2 timeout:(unsigned int)arg3;
 - (unsigned int)encodeKernelWaitEventCommandArgs:(struct IOAccelKernelCommandSignalOrWaitEventArgs *)arg1 value:(unsigned long long)arg2;
 - (unsigned int)encodeKernelSignalEventCommandArgs:(struct IOAccelKernelCommandSignalOrWaitEventArgs *)arg1 value:(unsigned long long)arg2;
 - (void)dealloc;
--     // Error parsing type: @24@0:8^{__IOAccelShared={__CFRuntimeBase=QAQ}^{__IOAccelDevice}I@?Q{os_unfair_lock_s=I}^{IOAcceldirtyRingRO}^{IOAcceldirtyRingRW}^{IOAccelDirtyResourceCommand}I}16, name: initWithShared:
+-     // Error parsing type: @24@0:8^{__IOAccelShared={__CFRuntimeBase=QAQ}^{__IOAccelDevice}I@?Q{os_unfair_lock_s=I}^{IOAcceldirtyRingRO}^{IOAcceldirtyRingRW}^{IOAccelDirtyResourceCommand}I{os_unfair_lock_s=I}{shmemlog_list=^{_s_shmemlog_}}}16, name: initWithShared:
 
 @end
 

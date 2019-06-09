@@ -6,9 +6,11 @@
 
 #import <IDSFoundation/IDSSocketPairMessage.h>
 
-@class NSData;
+#import <IDSFoundation/IDSSocketPairMessage-Protocol.h>
 
-@interface IDSSocketPairOTRMessage : IDSSocketPairMessage
+@class NSData, NSDate, NSString;
+
+@interface IDSSocketPairOTRMessage : IDSSocketPairMessage <IDSSocketPairMessage>
 {
     unsigned long long _offset;
     unsigned char _versionNumber;
@@ -21,7 +23,7 @@
     NSData *_data;
 }
 
-@property(readonly, nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
+@property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(readonly, nonatomic) unsigned short priority; // @synthesize priority=_priority;
 @property(nonatomic) unsigned short streamID; // @synthesize streamID=_streamID;
 @property(readonly, nonatomic) unsigned char protectionClass; // @synthesize protectionClass=_protectionClass;
@@ -35,6 +37,13 @@
 - (id)description;
 - (id)initWithVersion:(unsigned char)arg1 encrypted:(_Bool)arg2 shouldEncrypt:(_Bool)arg3 protectionClass:(unsigned char)arg4 streamID:(unsigned short)arg5 priority:(unsigned short)arg6 sequenceNumber:(unsigned int)arg7 data:(id)arg8;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
+
+// Remaining properties
+@property(readonly, nonatomic) _Bool expectsPeerResponse;
+@property(retain, nonatomic) NSDate *expiryDate;
+@property(readonly, nonatomic) NSString *messageUUID;
+@property(readonly, nonatomic) NSString *peerResponseIdentifier;
+@property(readonly, nonatomic) _Bool wantsAppAck;
 
 @end
 

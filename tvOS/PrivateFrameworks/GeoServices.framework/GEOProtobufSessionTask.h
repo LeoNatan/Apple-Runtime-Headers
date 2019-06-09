@@ -8,7 +8,7 @@
 
 #import <GeoServices/GEODataSessionTaskDelegate-Protocol.h>
 
-@class GEOClientMetrics, GEOProtobufSession, NSError, NSString, PBCodable;
+@class GEOApplicationAuditToken, GEOClientMetrics, GEODataRequestThrottlerToken, GEOProtobufSession, NSError, NSString, PBCodable;
 @protocol GEODataSessionTask, GEOProtobufSessionTaskDelegate, OS_dispatch_queue;
 
 @interface GEOProtobufSessionTask : NSObject <GEODataSessionTaskDelegate>
@@ -22,8 +22,10 @@
     PBCodable *_response;
     unsigned long long _taskIdentifier;
     unsigned int _requestTypeCode;
-    int _requestKind;
+    CDStruct_d1a7ebee _requestKind;
+    GEOApplicationAuditToken *_auditToken;
     _Bool _completedAsCancelled;
+    GEODataRequestThrottlerToken *_throttleToken;
 }
 
 @property(nonatomic) __weak id <GEOProtobufSessionTaskDelegate> delegate; // @synthesize delegate=_delegate;
@@ -37,15 +39,17 @@
 @property(readonly, nonatomic) Class responseClass; // @synthesize responseClass=_responseClass;
 @property(readonly, nonatomic) unsigned long long taskIdentifier; // @synthesize taskIdentifier=_taskIdentifier;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) _Bool mptcpNegotiated;
+@property(readonly, nonatomic) unsigned long long requestedMultipathServiceType;
 @property(readonly, nonatomic) GEOClientMetrics *clientMetrics;
 @property(readonly, nonatomic) NSString *remoteAddressAndPort;
 @property(readonly, nonatomic) unsigned long long incomingPayloadSize;
 @property(readonly, nonatomic) unsigned long long outgoingPayloadSize;
 - (void)cancel;
 - (void)start;
-@property(readonly, nonatomic) int requestKind;
+@property(readonly, nonatomic) CDStruct_d1a7ebee requestKind;
 @property(readonly, copy) NSString *debugDescription;
-- (id)initWithSession:(id)arg1 taskIdentifier:(unsigned long long)arg2 requestTypeCode:(unsigned int)arg3 responseClass:(Class)arg4 delegate:(id)arg5 delegateQueue:(id)arg6 requestKind:(int)arg7;
+- (id)initWithSession:(id)arg1 taskIdentifier:(unsigned long long)arg2 requestTypeCode:(unsigned int)arg3 responseClass:(Class)arg4 delegate:(id)arg5 delegateQueue:(id)arg6 requestKind:(CDStruct_d1a7ebee)arg7 auditToken:(id)arg8 throttleToken:(id)arg9;
 - (id)init;
 - (void)completeWithCancelled:(_Bool)arg1 error:(id)arg2 response:(id)arg3;
 - (void)completeWithErrorCode:(long long)arg1;

@@ -32,7 +32,6 @@
 - (void)setBounds:(struct CGRect)arg1;
 @property(copy) NSString *videoGravity;
 @property(retain) struct OpaqueCMTimebase *controlTimebase;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 - (void)_removeFigVideoQueueListeners;
@@ -50,6 +49,9 @@
 - (void)_setControlTimebase:(struct OpaqueCMTimebase *)arg1;
 - (void)stopRequestingMediaData;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (void)prerollDecodeWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_completedDecodeForPrerollForRequestID:(int)arg1;
+- (void)_callOldPrerollCompletionHandlerWithSuccess:(_Bool)arg1 andSetNewPrerollCompletionHandler:(CDUnknownBlockType)arg2 forRequestID:(int)arg3;
 - (void)_flushComplete;
 - (void)flushWithRemovalOfDisplayedImage:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)flushAndRemoveImage;
@@ -60,6 +62,7 @@
 - (id)videoPerformanceMetrics;
 @property(readonly, nonatomic) _Bool outputObscuredDueToInsufficientExternalProtection;
 @property(nonatomic) _Bool preventsCapture;
+@property(nonatomic) _Bool preventsDisplaySleepDuringVideoPlayback;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

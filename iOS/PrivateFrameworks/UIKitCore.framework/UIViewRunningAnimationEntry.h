@@ -16,7 +16,6 @@ __attribute__((visibility("hidden")))
     NSObject<OS_dispatch_queue> *_transactionQueue;
     CDUnknownBlockType _completionCallback;
     _Bool _invalidated;
-    _Bool _shouldNotRemovePresentationModifier;
     _Bool _running;
     UIViewAnimationState *_animationState;
     id <UIViewAnimationComposing> _composer;
@@ -25,7 +24,6 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <UIViewAnimationComposing> composer; // @synthesize composer=_composer;
 @property(nonatomic) __weak UIViewAnimationState *animationState; // @synthesize animationState=_animationState;
 @property(nonatomic) _Bool running; // @synthesize running=_running;
-@property(nonatomic) _Bool shouldNotRemovePresentationModifier; // @synthesize shouldNotRemovePresentationModifier=_shouldNotRemovePresentationModifier;
 - (void).cxx_destruct;
 - (void)performWithoutLock:(CDUnknownBlockType)arg1;
 - (void)performWithLock:(CDUnknownBlockType)arg1;

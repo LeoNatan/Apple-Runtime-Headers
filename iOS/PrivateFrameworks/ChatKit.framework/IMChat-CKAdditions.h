@@ -7,6 +7,8 @@
 #import <IMCore/IMChat.h>
 
 @interface IMChat (CKAdditions)
++ (id)configureMessageSummaryInfoForChatItem:(id)arg1;
++ (unsigned char)associatedMessageContentTypeFromCKMediaType:(int)arg1;
 - (void)__ck_setSendReadReceipts:(_Bool)arg1;
 - (_Bool)__ck_sendReadReceipts;
 - (void)__ck_setMuteUntilDate:(id)arg1;
@@ -16,5 +18,7 @@
 - (void)__ck_updateWatermarkToMessageID:(long long)arg1 date:(id)arg2;
 - (id)__ck_watermarkDate;
 - (long long)__ck_watermarkMessageID;
+- (void)sendMessageAcknowledgment:(long long)arg1 forChatItem:(id)arg2 withGuid:(id)arg3;
+- (void)sendMessageAcknowledgment:(long long)arg1 forChatItem:(id)arg2;
 @end
 

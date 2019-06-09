@@ -9,16 +9,18 @@
 @class NSSet;
 @protocol NSDraggingDestination;
 
+__attribute__((visibility("hidden")))
 @interface PHProjectExtensionDragStealingWindow : NSWindow
 {
-    NSSet *_dragTypesToSteal;
+    NSSet *_photosDragTypes;
     id <NSDraggingDestination> _stealingDraggingDestination;
 }
 
 @property(nonatomic) __weak id <NSDraggingDestination> stealingDraggingDestination; // @synthesize stealingDraggingDestination=_stealingDraggingDestination;
-@property(copy, nonatomic) NSSet *dragTypesToSteal; // @synthesize dragTypesToSteal=_dragTypesToSteal;
+@property(copy, nonatomic) NSSet *photosDragTypes; // @synthesize photosDragTypes=_photosDragTypes;
 - (void).cxx_destruct;
 - (id)_findDragTargetFrom:(id)arg1;
+- (BOOL)_containsPhotosDragTypes:(id)arg1;
 
 @end
 

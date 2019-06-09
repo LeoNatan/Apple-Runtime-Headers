@@ -4,10 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class _SFSingleBookmarkNavigationController;
+@class WebBookmark, _SFSingleBookmarkNavigationController;
 
 @protocol _SFSingleBookmarkNavigationControllerDelegate
 - (_Bool)addBookmarkNavControllerCanSaveBookmarkChanges:(_SFSingleBookmarkNavigationController *)arg1;
-- (void)addBookmarkNavController:(_SFSingleBookmarkNavigationController *)arg1 didFinishWithResult:(_Bool)arg2;
+- (void)addBookmarkNavController:(_SFSingleBookmarkNavigationController *)arg1 didFinishWithResult:(_Bool)arg2 bookmark:(WebBookmark *)arg3;
 @end
 

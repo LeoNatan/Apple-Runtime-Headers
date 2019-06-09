@@ -6,20 +6,24 @@
 
 #import <GameController/NSObject-Protocol.h>
 
-@class GCController, GCControllerElement, GCMotion, NSString;
+@class GCController, GCControllerButtonInput, GCControllerDirectionPad, GCMotion, NSString;
 
 @protocol GCNamedProfile <NSObject>
+@property(retain) GCMotion *_motion;
 @property(readonly) NSString *name;
+- (void)handleEvent:(struct __IOHIDEvent *)arg1;
+- (NSString *)productCategory;
 - (void (^)(id, GCControllerElement *))valueChangedHandler;
 - (void)setController:(GCController *)arg1;
 - (void)setPlayerIndex:(long long)arg1;
 - (id)initWithController:(GCController *)arg1;
-- (GCControllerElement *)inputForElement:(struct __IOHIDElement *)arg1;
 
 @optional
+- (void)setButton:(GCControllerButtonInput *)arg1 pressed:(_Bool)arg2;
+- (void)setButton:(GCControllerButtonInput *)arg1 value:(double)arg2;
+- (void)setDpad:(GCControllerDirectionPad *)arg1 x:(double)arg2 y:(double)arg3;
 - (void)appDidBecomeActive;
 - (void)appWillResignActive;
-- (void)set_motion:(GCMotion *)arg1;
 - (unsigned int)sampleRate;
 @end
 

@@ -9,11 +9,13 @@
 #import <AppKit/NSGestureRecognizerDelegate-Protocol.h>
 #import <AppKit/NSScrollViewDelegate-Protocol.h>
 
-@class NSButton, NSColor, NSPanGestureRecognizer, NSPressGestureRecognizer, NSScrollView, NSScrubberLayout, NSScrubberPendingChanges, NSScrubberSelectionStyle, NSString, NSTimer;
+@class NSButton, NSColor, NSPanGestureRecognizer, NSPressGestureRecognizer, NSScrollView, NSScrubberLayout, NSScrubberPendingChanges, NSScrubberSelectionStyle, NSString, NSTimer, _NSBoxCustomView;
 @protocol NSScrubberDataSource, NSScrubberDelegate;
 
 @interface NSScrubber : NSView <NSScrollViewDelegate, NSGestureRecognizerDelegate>
 {
+    _NSBoxCustomView *_dividerLeft;
+    _NSBoxCustomView *_dividerRight;
     id _delegate;
     id _dataSource;
     id _tx;
@@ -22,6 +24,7 @@
     NSPanGestureRecognizer *_scrubGestureRecognizer;
     NSPanGestureRecognizer *_scrollGestureRecognizer;
     NSPressGestureRecognizer *_pressGestureRecognizer;
+    BOOL _showsArrowButtons;
     NSButton *_arrowLeft;
     NSButton *_arrowRight;
     NSView *_backgroundView;
@@ -121,6 +124,7 @@
 @property(copy) NSColor *backgroundColor;
 - (id)itemViewForItemAtIndex:(long long)arg1;
 - (void)scrollItemAtIndex:(long long)arg1 toAlignment:(long long)arg2;
+- (void)scrollItemAtIndex:(long long)arg1 toAlignment:(long long)arg2 animated:(BOOL)arg3;
 - (void)setHighlightedIndex:(long long)arg1;
 @property(readonly) long long highlightedIndex;
 @property long long selectedIndex;

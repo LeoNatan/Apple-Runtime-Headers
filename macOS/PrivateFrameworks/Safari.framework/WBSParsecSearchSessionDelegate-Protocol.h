@@ -11,6 +11,7 @@
 
 @protocol WBSParsecSearchSessionDelegate <NSObject>
 - (void)session:(id <WBSParsecSearchSession>)arg1 didReceiveResults:(NSArray *)arg2 forQuery:(WBSCompletionQuery *)arg3;
+- (NSString *)currentKeyboardIdentifierWithLayoutsForSession:(id <WBSParsecSearchSession>)arg1;
 - (NSString *)currentInputTypeForSession:(id <WBSParsecSearchSession>)arg1;
 @end
 

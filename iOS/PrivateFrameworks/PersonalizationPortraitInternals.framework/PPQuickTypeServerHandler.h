@@ -12,6 +12,7 @@
 {
 }
 
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)hibernateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)warmUpWithCompletion:(CDUnknownBlockType)arg1;
 - (void)recentQuickTypeItemsForRecipients:(id)arg1 completion:(CDUnknownBlockType)arg2;

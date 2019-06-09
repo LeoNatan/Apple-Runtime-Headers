@@ -12,6 +12,7 @@
 - (id)_accessibilityAXAttributedName;
 - (_Bool)_accessibilityMatchesCustomActionIdentifier:(id)arg1;
 - (id)_accessibilityCustomActionIdentifier;
+@property(retain, nonatomic) NSString *localizedActionRotorCategory;
 @property(nonatomic) _Bool ignoreWhenVoiceOverTouches;
 @property(nonatomic) _Bool shouldSuppressActionHint;
 @property(retain, nonatomic, getter=_accessibilityInternalCustomActionIdentifier, setter=_accessibilitySetInternalCustomActionIdentifier:) NSString *internalCustomActionIdentifier;

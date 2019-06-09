@@ -23,6 +23,7 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
+- (unsigned int)indexOfSection:(id)arg1;
 - (void)removeSectionAtIndex:(int)arg1;
 - (void)insertSection:(id)arg1 atIndex:(int)arg2;
 - (void)addSection:(id)arg1;

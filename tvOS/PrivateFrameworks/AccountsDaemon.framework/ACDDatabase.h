@@ -6,55 +6,42 @@
 
 #import <objc/NSObject.h>
 
-@class NSManagedObjectContext, NSPersistentStore, NSString;
+#import <AccountsDaemon/ACDDatabaseConnectionDelegate-Protocol.h>
+#import <AccountsDaemon/ACDDatabaseProtocol-Protocol.h>
 
-@interface ACDDatabase : NSObject
+@class NSDictionary, NSPersistentStoreCoordinator, NSString, NSURL;
+
+@interface ACDDatabase : NSObject <ACDDatabaseConnectionDelegate, ACDDatabaseProtocol>
 {
-    NSString *_path;
-    NSManagedObjectContext *_context;
-    NSPersistentStore *_store;
-    id _contextDidSaveNotificationObserver;
+    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
+    NSDictionary *_storeOptions;
+    NSURL *_databaseURL;
 }
 
-+ (void)_resetPeristentStoreCoordinator;
-+ (id)_optionsForOpeningPersistentStore;
-+ (_Bool)_isUnrecoverableDatabaseError:(id)arg1;
-+ (void)_removePersistentStoreAtURL:(id)arg1 forStoreCoordinator:(id)arg2;
-+ (void)_replacePersistentStoreAtURL:(id)arg1 withCleanStoreForCoordinator:(id)arg2;
-+ (_Bool)_addPersistentStoreWithURL:(id)arg1 toStoreCoordinator:(id)arg2 withOptions:(id)arg3 error:(id *)arg4;
-+ (id)_sharedPersistentCoordinatorForStoreAtPath:(id)arg1;
-+ (id)_managedObjectModel;
-+ (struct __CFString *)_copyRootPath;
-+ (id)defaultPath;
-@property(readonly, nonatomic) NSString *path; // @synthesize path=_path;
++ (id)new;
+@property(readonly, nonatomic) NSURL *databaseURL; // @synthesize databaseURL=_databaseURL;
 - (void).cxx_destruct;
-- (_Bool)_createLocalBackupCopy:(id *)arg1;
-- (id)_localBackupStorePath;
-- (id)_localBackupDirectoryURL;
-- (id)_localBackupDirectoryPath;
-- (void)_handleManagedObjectContextDidSaveNotification:(id)arg1;
-- (_Bool)_databaseFileExists;
-- (id)_store;
-- (void)_setupManagedObjectContext;
-- (_Bool)saveWithError:(id *)arg1 rollbackOnFailure:(_Bool)arg2;
-- (_Bool)saveWithError:(id *)arg1;
-- (id)managedObjectIDForURI:(id)arg1;
-- (void)setAccountPropertyWithKey:(id)arg1 value:(id)arg2 owner:(id)arg3;
-- (void)deleteAccountPropertyWithKey:(id)arg1 owner:(id)arg2;
-- (id)_accountPropertyWithKey:(id)arg1 owner:(id)arg2;
-- (unsigned long long)countOfEntityNamed:(id)arg1 withPredicate:(id)arg2;
-- (id)existingObjectWithURI:(id)arg1;
-- (id)objectForObjectURI:(id)arg1;
-- (id)fetchObjectsForEntityNamed:(id)arg1 withPredicate:(id)arg2 sortDescriptor:(id)arg3;
-- (id)fetchObjectsForEntityNamed:(id)arg1 withPredicate:(id)arg2;
-- (id)fetchObjectsForEntityNamed:(id)arg1;
-@property(nonatomic) long long keychainVersion;
-@property(nonatomic) long long version; // @dynamic version;
-@property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @dynamic managedObjectContext;
-- (void)dealloc;
-- (id)initWithTimeMachineHomeFolderPath:(id)arg1;
-- (id)initWithPath:(id)arg1;
-- (id)initWithDefaultPath;
+- (id)createConnection;
+- (void)databaseConnection:(id)arg1 encounteredUnrecoverableError:(id)arg2;
+@property(readonly, copy) NSString *description;
+- (_Bool)_persistentStoreCoodinator_resetPersistentStoreCoordinatorWithError:(id *)arg1;
+- (_Bool)_validateDatabaseAtURL:(id)arg1 error:(id *)arg2;
+- (_Bool)_performBackupToURL:(id)arg1 unverifiedBackupURL:(id)arg2 error:(id *)arg3;
+- (_Bool)_shouldResetPersistentStoreAfterError:(id)arg1;
+- (id)_addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id *)arg5;
+- (_Bool)resetReturningError:(id *)arg1;
+- (_Bool)restoreFromBackupReturningError:(id *)arg1;
+- (_Bool)performBackupReturningError:(id *)arg1;
+- (id)_unverifiedBackupURL;
+- (id)_backupURL;
+- (id)initWithDatabaseURL:(id)arg1 storeOptions:(id)arg2;
+- (id)initWithDatabaseURL:(id)arg1;
+- (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

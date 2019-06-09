@@ -10,8 +10,8 @@
 
 @interface NSPredicateEditor : NSRuleEditor
 {
-    id _allTemplates;
     NSArray *_rootTrees;
+    id _allTemplates;
     NSArray *_rootHeaderTrees;
     id _predicateTarget;
     SEL _predicateAction;

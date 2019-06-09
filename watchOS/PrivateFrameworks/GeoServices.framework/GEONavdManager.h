@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class GEONavdServerProxy, NSLock, NSMutableArray;
+@class GEONavdServerProxy, NSMutableArray;
 
 @interface GEONavdManager : NSObject
 {
     GEONavdServerProxy *_proxy;
     NSMutableArray *_openers;
-    NSLock *_openersLock;
+    struct os_unfair_lock_s _openersLock;
 }
 
 + (id)navdManagerClientIdentifier:(id)arg1;

@@ -28,7 +28,7 @@
 - (id)transcriptString;
 - (id)lastUtteranceForMe:(BOOL)arg1;
 - (id)processBackspaceForMe:(BOOL)arg1;
-- (id)appendStringFromOtherContactPath:(id)arg1;
+- (id)appendCharacter:(unsigned short)arg1;
 - (void)addUtterance:(id)arg1;
 - (id)mergeUtterancesIfPossible;
 - (id)otherContactPath;

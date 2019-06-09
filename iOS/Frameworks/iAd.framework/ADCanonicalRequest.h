@@ -17,8 +17,9 @@
 
 + (id)sharedInstance;
 @property(nonatomic) _Bool didLeaveGroup; // @synthesize didLeaveGroup=_didLeaveGroup;
-@property(nonatomic) NSObject<OS_dispatch_group> *signingGroup; // @synthesize signingGroup=_signingGroup;
-@property(nonatomic) NSObject<OS_dispatch_queue> *signingQueue; // @synthesize signingQueue=_signingQueue;
+@property(retain, nonatomic) NSObject<OS_dispatch_group> *signingGroup; // @synthesize signingGroup=_signingGroup;
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *signingQueue; // @synthesize signingQueue=_signingQueue;
+- (void).cxx_destruct;
 - (id)canonicalRequestForRequest:(id)arg1;
 - (id)init;
 

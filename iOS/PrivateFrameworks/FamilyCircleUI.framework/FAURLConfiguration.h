@@ -11,6 +11,7 @@
 }
 
 + (id)urlForKey:(id)arg1 error:(id *)arg2;
++ (id)familyRepairURL;
 + (id)getFamilyInvitationsUIURL;
 + (id)addFamilyMemberInlineV2URL;
 + (id)familyMemberDetailsUIV2URL;

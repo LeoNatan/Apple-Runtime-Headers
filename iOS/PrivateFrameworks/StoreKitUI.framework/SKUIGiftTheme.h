@@ -10,6 +10,7 @@
 
 @class NSString, NSURL, UIColor, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftTheme : NSObject <NSCopying>
 {
     UIColor *_backgroundColor;

@@ -13,19 +13,19 @@
 
 @interface BTMBackgroundItem : NSObject <BTMBackgroundItem, NSSecureCoding>
 {
-    id _identifier;
-    id _bookmark;
+    NSUUID *_identifier;
+    NSData *_bookmark;
     long long _userElection;
     unsigned long long _type;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly) unsigned long long type; // @synthesize type=_type;
-@property(readonly) long long userElection; // @synthesize userElection=_userElection;
-@property(readonly) NSData *bookmark; // @synthesize bookmark=_bookmark;
-@property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
+@property unsigned long long type; // @synthesize type=_type;
+@property long long userElection; // @synthesize userElection=_userElection;
+@property(retain) NSData *bookmark; // @synthesize bookmark=_bookmark;
+@property(retain) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-@property(readonly) NSString *name; // @dynamic name;
+@property(readonly) NSString *name;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned long long)arg2 bookmark:(id)arg3 userElection:(long long)arg4;

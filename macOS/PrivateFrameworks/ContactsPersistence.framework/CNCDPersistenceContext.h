@@ -17,7 +17,13 @@
     id <CNCDPersistenceChangesNotifier> _changesNotifier;
 }
 
+@property(readonly, nonatomic) id <CNCDPersistenceChangesNotifier> changesNotifier; // @synthesize changesNotifier=_changesNotifier;
+@property(readonly, nonatomic) id owningAddressBook; // @synthesize owningAddressBook=_owningAddressBook;
+@property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
+@property(readonly, nonatomic) id <CNCDPersistenceBackend> persistenceBackend; // @synthesize persistenceBackend=_persistenceBackend;
+- (void).cxx_destruct;
 - (id)defaultPersistentStore;
+- (void)applyDiff:(id)arg1 toContainerWithIdentifier:(id)arg2;
 - (id)defaultContainer;
 - (id)exchangeAccountContainers;
 - (id)accountContainers;
@@ -33,7 +39,6 @@
 - (unsigned long long)countForFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)executeFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)notificationID;
-- (void)dealloc;
 - (id)initWithPersistenceBackend:(id)arg1 managedObjectContext:(id)arg2 owningAddressBook:(id)arg3 changesNotifier:(id)arg4;
 - (id)initWithPersistenceBackend:(id)arg1 managedObjectContext:(id)arg2 changesNotifier:(id)arg3;
 - (id)initWithPersistenceBackend:(id)arg1 managedObjectContext:(id)arg2;

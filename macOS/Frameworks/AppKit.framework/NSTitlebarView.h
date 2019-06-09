@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property NSThemeFrame *associatedThemeFrame; // @synthesize associatedThemeFrame=_associatedThemeFrame;
+- (void)layout;
 - (id)_titleTextFieldView;
 - (id)menuForEvent:(id)arg1;
 - (void)rightMouseDown:(id)arg1;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (void)viewDidMoveToWindow;
 - (id)_preferredAppearance;
 - (BOOL)_isHUDWindow;
-- (BOOL)shouldSetFontSmoothingBackgroundColor;
 - (void)dealloc;
 - (void)setFrameSize:(struct CGSize)arg1;
 - (void)resizeWithOldSuperviewSize:(struct CGSize)arg1;

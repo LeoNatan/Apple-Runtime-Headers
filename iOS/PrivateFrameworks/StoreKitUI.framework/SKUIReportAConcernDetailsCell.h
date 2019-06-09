@@ -10,6 +10,7 @@
 
 @class NSString, UITextView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIReportAConcernDetailsCell : UITableViewCell <UITextViewDelegate>
 {
     NSString *_placeholderText;

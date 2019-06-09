@@ -22,8 +22,8 @@
 - (void)_showSiriDisabledDialog;
 - (void)resumeAnimations;
 - (void)pauseAnimations;
-- (void)didTouchUpInside;
-- (void)didTouchDown;
+- (void)didTouchUpInsideView:(id)arg1;
+- (void)didTouchDownInView:(id)arg1;
 - (id)currentSwitcherTemplate;
 - (void)getCurrentTimelineEntryWithHandler:(CDUnknownBlockType)arg1;
 - (void)getSupportedTimeTravelDirectionsWithHandler:(CDUnknownBlockType)arg1;

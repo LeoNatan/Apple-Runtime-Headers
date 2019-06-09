@@ -29,7 +29,7 @@
     UIActivityIndicatorView *_loadingIndicator;
     MPTVOutWindow *_tvOutWindow;
     unsigned long long _backgroundTaskId;
-    int _artworkImageStyle;
+    long long _artworkImageStyle;
     UIImage *_posterImage;
     unsigned int _canAnimateControlsOverlay:1;
     unsigned int _canShowControlsOverlay:1;
@@ -56,7 +56,7 @@
 @property(nonatomic) unsigned long long disabledParts; // @synthesize disabledParts=_disabledParts;
 @property(nonatomic) unsigned long long desiredParts; // @synthesize desiredParts=_desiredParts;
 @property(retain, nonatomic) UIColor *backstopColor; // @synthesize backstopColor=_backstopColor;
-@property(nonatomic) int artworkImageStyle; // @synthesize artworkImageStyle=_artworkImageStyle;
+@property(nonatomic) long long artworkImageStyle; // @synthesize artworkImageStyle=_artworkImageStyle;
 - (void).cxx_destruct;
 - (void)_updateProgressControlForItem:(id)arg1;
 - (void)_updateIdleTimerDisabledFromPlaybackState:(long long)arg1;
@@ -159,7 +159,7 @@
 - (long long)_itemTypeWithActualTypePreference;
 - (struct CGRect)calculateArtworkImageViewFrame;
 - (struct CGRect)calculateFullScreenArtworkImageViewFrame;
-- (int)displayArtworkImageStyle;
+- (long long)displayArtworkImageStyle;
 - (_Bool)isFullscreenForLayoutPurposes;
 - (void)crossedTimeMakerWithEvent:(id)arg1;
 - (_Bool)canHideOverlay:(_Bool)arg1;

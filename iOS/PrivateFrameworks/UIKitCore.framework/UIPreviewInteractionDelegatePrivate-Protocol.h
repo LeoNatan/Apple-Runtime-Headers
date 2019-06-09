@@ -6,15 +6,15 @@
 
 #import <UIKitCore/UIPreviewInteractionDelegate-Protocol.h>
 
-@class UIPreviewInteraction, UIView, UIViewController, _UIPreviewInteractionHighlighter, _UIPreviewInteractionViewControllerPresentation;
+@class UIPreviewInteraction, UIViewController, _UIPreviewInteractionHighlighter, _UIPreviewInteractionViewControllerPresentation, _UITargetedPreview;
 
 @protocol UIPreviewInteractionDelegatePrivate <UIPreviewInteractionDelegate>
 
 @optional
-- (UIView *)_previewInteractionOverrideViewForCommitPhase:(UIPreviewInteraction *)arg1;
 - (_Bool)_previewInteractionShouldAutomaticallyTransitionToPreviewAfterDelay:(UIPreviewInteraction *)arg1;
+- (_UIPreviewInteractionHighlighter *)_previewInteractionHighlighterForPreviewTransition:(UIPreviewInteraction *)arg1;
+- (_UITargetedPreview *)_previewInteraction:(UIPreviewInteraction *)arg1 targetedPreviewForPreviewingAtLocation:(struct CGPoint)arg2;
 - (_Bool)_previewInteractionShouldFinishTransitionToPreview:(UIPreviewInteraction *)arg1;
 - (_UIPreviewInteractionViewControllerPresentation *)_previewInteraction:(UIPreviewInteraction *)arg1 viewControllerPresentationForPresentingViewController:(UIViewController *)arg2;
-- (_UIPreviewInteractionHighlighter *)_previewInteractionHighlighterForPreviewTransition:(UIPreviewInteraction *)arg1;
 @end
 

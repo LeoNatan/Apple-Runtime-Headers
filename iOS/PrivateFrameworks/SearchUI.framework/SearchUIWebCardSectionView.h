@@ -6,23 +6,31 @@
 
 #import <SearchUI/SearchUICardSectionView.h>
 
-#import <SearchUI/NUIContainerBoxViewDelegate-Protocol.h>
-#import <SearchUI/UIWebViewDelegate-Protocol.h>
+#import <SearchUI/NUIContainerViewDelegate-Protocol.h>
+#import <SearchUI/WKNavigationDelegate-Protocol.h>
+#import <SearchUI/WKScriptMessageHandler-Protocol.h>
 
-@class NSString, NUIContainerBoxView;
+@class NSString, NUIContainerBoxView, WKWebView;
 
-@interface SearchUIWebCardSectionView : SearchUICardSectionView <UIWebViewDelegate, NUIContainerBoxViewDelegate>
+@interface SearchUIWebCardSectionView : SearchUICardSectionView <NUIContainerViewDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 {
+    double _contentHeight;
+    WKWebView *_webView;
 }
 
-- (void)webViewDidFinishLoad:(id)arg1;
+@property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
+@property(nonatomic) double contentHeight; // @synthesize contentHeight=_contentHeight;
+- (void).cxx_destruct;
+- (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
 - (id)setupContentView;
 - (id)replaceSemanticColor:(id)arg1 withColor:(id)arg2 inString:(id)arg3;
-- (id)initWithRowModel:(id)arg1 style:(unsigned long long)arg2 feedbackDelegate:(id)arg3;
+- (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2;
+- (void)tlk_updateForAppearance:(id)arg1;
+- (id)initWithRowModel:(id)arg1 feedbackDelegate:(id)arg2;
 
 // Remaining properties
-@property(retain) NUIContainerBoxView *contentView; // @dynamic contentView;
+@property(retain, nonatomic) NUIContainerBoxView *contentView; // @dynamic contentView;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

@@ -59,12 +59,14 @@
 - (void)removeOutputDevice:(id)arg1;
 - (void)addOutputDevice:(id)arg1;
 - (void)addOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)setOutputDevices:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setOutputDevices:(id)arg1;
-- (void)outputContextImplDidChangeOutputDevices:(id)arg1;
+- (void)outputContextImpl:(id)arg1 didChangeOutputDevicesWithInitiator:(id)arg2;
 - (id)outputDevices;
+- (BOOL)supportsMultipleBluetoothOutputDevices;
 - (BOOL)supportsMultipleOutputDevices;
 - (void)outputContextImplDidChangeGlobalOutputDeviceConfiguration:(id)arg1;
-- (void)outputContextImplDidChangeOutputDevice:(id)arg1;
+- (void)outputContextImpl:(id)arg1 didChangeOutputDeviceWithInitiator:(id)arg2;
 - (void)outputContextImpl:(id)arg1 didInitiateDestinationChange:(id)arg2;
 - (void)setOutputDevice:(id)arg1 options:(id)arg2;
 - (BOOL)setOutputDevice:(id)arg1 forFeatures:(unsigned long long)arg2;

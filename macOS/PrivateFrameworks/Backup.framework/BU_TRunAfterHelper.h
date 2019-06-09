@@ -13,7 +13,6 @@
 __attribute__((visibility("hidden")))
 @interface BU_TRunAfterHelper : NSObject <TMarkTornDown>
 {
-    unsigned long long _validatorID;
     unique_function_63952f55 _functor;
     _Bool _onMainThread;
     struct TNSRef<BU_TRunAfterHelper, void> _strongSelf;
@@ -21,13 +20,13 @@ __attribute__((visibility("hidden")))
     _Bool _cancelled;
 }
 
-+ (TNSWeakPtr_6f98b07a)postFunctor:(unique_function_63952f55 *)arg1 withValidatorID:(unsigned long long)arg2 delayInSec:(double)arg3 onMainThread:(_Bool)arg4;
++ (TNSWeakPtr_6f98b07a)postFunctor:(unique_function_63952f55 *)arg1 delayInSec:(double)arg2 onMainThread:(_Bool)arg3;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)post;
-@property(readonly, getter=isTornDown) _Bool tornDown;
-- (id)initWithFunctor:(unique_function_63952f55 *)arg1 withValidatorID:(unsigned long long)arg2 onMainThread:(_Bool)arg3;
+@property(getter=isTornDown) _Bool tornDown; // @dynamic tornDown;
+- (id)initWithFunctor:(unique_function_63952f55 *)arg1 onMainThread:(_Bool)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

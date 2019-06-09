@@ -6,29 +6,31 @@
 
 #import <UIKitCore/_UIButtonBarButtonVisualProvider.h>
 
-@class NSArray, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, UIButton, UIImageView, _UIBackButtonContainerView, _UIModernBarButton;
+@class NSArray, NSLayoutConstraint, NSMutableDictionary, UIButton, UIImageView, _UIBackButtonContainerView, _UIModernBarButton;
 @protocol _UIButtonBarAppearanceDelegate;
 
 __attribute__((visibility("hidden")))
 @interface _UIButtonBarButtonVisualProviderIOS : _UIButtonBarButtonVisualProvider
 {
+    NSMutableDictionary *_currentConstraints;
+    NSMutableDictionary *_oldConstraints;
     UIButton *_backIndicatorButton;
     _UIBackButtonContainerView *_titleContainer;
     _UIModernBarButton *_titleButton;
     _UIModernBarButton *_imageButton;
     UIImageView *_backgroundImage;
     UIImageView *_selectedImage;
-    NSMutableArray *_constraints;
-    NSLayoutConstraint *_backButtonContentLeadingConstraint;
-    NSLayoutConstraint *_backButtonContentTrailingContraint;
     id <_UIButtonBarAppearanceDelegate> _appearanceDelegate;
     NSArray *_titleAttributes;
     NSMutableDictionary *_backgroundImages;
-    _Bool _skipAttributedTitle;
-    int _barButtonStyle;
     NSArray *_titleContent;
     NSMutableDictionary *_titleLookup;
     NSLayoutConstraint *_backButtonTitleMaxWidthConstraint;
+    struct {
+        unsigned int skipAttributedTitle:1;
+        unsigned int imageHasBaseline:1;
+        unsigned int style:3;
+    } _flags;
 }
 
 - (void).cxx_destruct;
@@ -36,41 +38,31 @@ __attribute__((visibility("hidden")))
 - (void)configureButton:(id)arg1 fromBarButtonItem:(id)arg2;
 - (void)_setupAlternateTitlesFromBarButtonItem:(id)arg1;
 - (id)_titleContentForTitle:(id)arg1;
-- (struct UIOffset)_backButtonTitlePositionAdjustmentForBarMetrics:(int)arg1;
-- (void)_configureBackButtonButton:(id)arg1;
-- (void)_configureTextBackButtonButton:(id)arg1 withOffset:(struct UIOffset)arg2;
-- (void)_configureImageBackButtonButton:(id)arg1 withInsets:(struct UIEdgeInsets)arg2;
-- (void)_configureTextButton:(id)arg1 withOffset:(struct UIOffset)arg2 additionalPadding:(struct UIEdgeInsets)arg3;
-- (struct UIOffset)_titlePositionAdjustmentForBarMetrics:(int)arg1;
-- (void)_configureImageButton:(id)arg1 withInsets:(struct UIEdgeInsets)arg2 paddingEdges:(unsigned int)arg3 additionalPadding:(float)arg4;
-- (void)_addVerticalConstraintsForImageButton:(id)arg1 withInsets:(struct UIEdgeInsets)arg2;
-- (void)_addVerticalConstraintsForTextButton:(id)arg1 withOffset:(float)arg2;
-- (void)_addVerticalConstraintsForBackIndicatorInButton:(id)arg1 withOffset:(float)arg2;
-- (void)_addHorizontalConstraintsForImageButton:(id)arg1 withInsets:(struct UIEdgeInsets)arg2 paddingEdges:(unsigned int)arg3 additionalPadding:(float)arg4;
-- (void)_addHorizontalConstraintsForTextButton:(id)arg1 withOffset:(float)arg2 additionalPadding:(struct UIEdgeInsets)arg3;
-- (void)_addHorizontalConstraintsForBackButton:(id)arg1 contentButton:(id)arg2 withOffset:(float)arg3;
+- (void)_configureBackButtonWithBackButtonLayoutInsets:(struct NSDirectionalEdgeInsets)arg1;
+- (void)_configureTextBackButtonWithTitlePositionAdjustment:(struct UIOffset)arg1 backButtonLayoutInsets:(struct NSDirectionalEdgeInsets)arg2;
+- (void)_configureImageBackButtonWithImageInsets:(struct UIEdgeInsets)arg1 backButtonLayoutInsets:(struct NSDirectionalEdgeInsets)arg2;
+- (void)_configureTextWithOffset:(struct UIOffset)arg1 additionalPadding:(struct UIEdgeInsets)arg2;
+- (void)_configureImageWithInsets:(struct UIEdgeInsets)arg1 paddingEdges:(unsigned int)arg2 additionalPadding:(float)arg3;
+- (void)_addVerticalConstraintsForImageWithInsets:(struct UIEdgeInsets)arg1;
+- (void)_addVerticalConstraintsForTextWithOffset:(float)arg1;
+- (void)_addVerticalConstraintsForBackIndicatorWithTitleOffset:(float)arg1 backButtonLayoutInsets:(struct NSDirectionalEdgeInsets)arg2;
+- (void)_addHorizontalConstraintsForImageWithInsets:(struct UIEdgeInsets)arg1 paddingEdges:(unsigned int)arg2 additionalPadding:(float)arg3;
+- (void)_addHorizontalConstraintsForTextWithOffset:(float)arg1 additionalPadding:(struct UIEdgeInsets)arg2;
+- (void)_addHorizontalConstraintsForContentButton:(id)arg1 titleOffset:(float)arg2 backButtonLayoutInsets:(struct NSDirectionalEdgeInsets)arg3;
 - (void)configureButton:(id)arg1 withAppearanceDelegate:(id)arg2 fromBarItem:(id)arg3;
-- (id)_backIndicatorMask;
-- (id)_backIndicatorImageForBarMetrics:(int)arg1;
-- (id)_imageWithActiveStylesFromImage:(id)arg1;
 - (id)_imageWithActiveStylesFromImage:(id)arg1 tintColor:(id)arg2;
-- (struct UIEdgeInsets)_imageInsetsForBarButtonItem:(id)arg1 barMetrics:(int)arg2 isBackButton:(_Bool)arg3;
+- (struct UIEdgeInsets)_imageInsetsForBarButtonItem:(id)arg1 compact:(_Bool)arg2 isBackButton:(_Bool)arg3;
 - (float)_defaultPaddingForInsets:(struct UIEdgeInsets)arg1;
-- (float)_offsetFromBackIndicatorToContentButton;
-- (float)_offsetBelowBaselineForBackIndicatorForMetrics:(int)arg1;
-- (struct UIEdgeInsets)_insetsForBarMetrics:(int)arg1;
+- (float)_defaultBackIndicatorBaselineInsetCompact:(_Bool)arg1;
+- (struct UIEdgeInsets)_insetsForCompact:(_Bool)arg1;
 - (void)_addConstraintsForBackgroundImageWithOffset:(float)arg1 isBackButton:(_Bool)arg2;
-- (void)_configureBackgroundForButton:(id)arg1 fromBarButtonItem:(id)arg2 isBackButton:(_Bool)arg3;
-- (void)_configureImageOrTitleFromBarButtonItem:(id)arg1 forMetrics:(int)arg2;
+- (void)_configureBackgroundFromBarButtonItem:(id)arg1 isBackButton:(_Bool)arg2;
+- (void)_configureImageOrTitleFromBarButtonItem:(id)arg1 compact:(_Bool)arg2;
 - (void)_removeTitleButton;
 - (void)_setTitle:(id)arg1;
 - (void)_computeTextAttributesForBarButtonItem:(id)arg1;
 - (id)_titleAttributesForState:(unsigned int)arg1;
 - (id)_defaultTitleAttributesForState:(unsigned int)arg1 style:(int)arg2;
-- (void)_invalidateTextAttributes;
-- (void)button:(id)arg1 traitCollectionDidChange:(id)arg2;
-- (void)setBackButtonConstraintsActive:(_Bool)arg1;
-- (_Bool)backButtonConstraintsActive;
 - (id)contentView;
 - (id)backIndicatorView;
 - (_Bool)supportsBackButtons;
@@ -78,11 +70,26 @@ __attribute__((visibility("hidden")))
 - (void)updateButton:(id)arg1 forHighlightedState:(_Bool)arg2;
 - (void)updateButton:(id)arg1 forSelectedState:(_Bool)arg2;
 - (_Bool)buttonSelectionState:(id)arg1 forRequestedState:(_Bool)arg2;
-- (id)_appearanceStorage;
 @property(nonatomic) _Bool backButtonMaskEnabled;
-@property(readonly, nonatomic) UIImageView *backgroundImageView;
-@property(readonly, nonatomic) UIButton *imageButton;
-@property(readonly, nonatomic) UIButton *textButton;
+- (void)activateHeightMinimizer;
+- (void)activateWidthMinimizer;
+- (void)addActiveConstraint:(id)arg1 named:(id)arg2;
+- (void)updateActiveConstraints:(CDUnknownBlockType)arg1;
+- (void)resetButtonHasHighlighted;
+- (id)_backIndicatorMaskForCompact:(_Bool)arg1;
+- (id)_backIndicatorImageForCompact:(_Bool)arg1;
+- (struct UIOffset)backButtonTitlePositionOffsetForCompact:(_Bool)arg1;
+- (struct UIOffset)titlePositionOffsetForCompact:(_Bool)arg1;
+- (id)tintColor;
+- (struct UIOffset)backButtonBackgroundVerticalAdjustmentForCompact:(_Bool)arg1;
+- (struct UIOffset)backgroundVerticalAdjustmentForCompact:(_Bool)arg1;
+- (id)backButtonBackgroundImageForState:(unsigned int)arg1 compact:(_Bool)arg2;
+- (id)backgroundImageForState:(unsigned int)arg1 compact:(_Bool)arg2;
+- (id)symbolConfigurationCompact:(_Bool)arg1;
+- (id)titleTextAttributesForState:(unsigned int)arg1;
+- (id)backgroundImageView;
+- (id)imageButton;
+- (id)textButton;
 
 @end
 

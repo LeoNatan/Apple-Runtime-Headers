@@ -10,6 +10,7 @@
 
 @class NSString, SKUIDividerView, SKUISegmentedControlViewElementController;
 
+__attribute__((visibility("hidden")))
 @interface SKUISegmentedControlCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView>
 {
     SKUIDividerView *_bottomDividerView;

@@ -11,7 +11,7 @@
 #import <RemoteUI/RUIPasscodeViewDelegate-Protocol.h>
 #import <RemoteUI/RUITableViewDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSTimer, NSURL, RUIAlertView, RUIPage, RUIStyle;
+@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSTimer, NSURL, RUIAlertView, RUIElement, RUIPage, RUIStyle;
 @protocol RUIObjectModelDelegate;
 
 @interface RUIObjectModel : NSObject <RUITableViewDelegate, RUIPasscodeViewDelegate, RUIPageDelegate, RUIAlertViewDelegate>
@@ -40,6 +40,7 @@
     NSString *_authPasswordFieldID;
     _Bool _parseFinished;
     CDUnknownBlockType _webViewDoneHandler;
+    RUIElement *_activeElement;
     id <RUIObjectModelDelegate> _delegate;
     NSString *_identifier;
     RUIStyle *_style;

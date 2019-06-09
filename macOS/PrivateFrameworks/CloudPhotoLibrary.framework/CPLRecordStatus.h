@@ -22,6 +22,7 @@
             unsigned int uploading:1;
             unsigned int waitingForUpdate:1;
             unsigned int updating:1;
+            unsigned int confirmed:1;
         } status;
         unsigned int packedStatus;
     } _status;
@@ -38,6 +39,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecord:(id)arg1 generation:(unsigned long long)arg2;
+@property(nonatomic, getter=isConfirmed) BOOL confirmed;
 @property(nonatomic, getter=isUpdating) BOOL updating;
 @property(nonatomic, getter=isWaitingForUpdate) BOOL waitingForUpdate;
 @property(nonatomic, getter=isUploading) BOOL uploading;
@@ -46,7 +48,6 @@
 @property(nonatomic, getter=isResetting) BOOL resetting;
 @property(nonatomic, getter=isQuarantined) BOOL quarantined;
 @property(nonatomic, getter=isUnknown) BOOL unknown;
-- (id)initFromPQLResultSet:(id)arg1 center:(id)arg2 error:(id *)arg3;
 
 @end
 

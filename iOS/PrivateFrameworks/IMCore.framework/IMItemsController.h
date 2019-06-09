@@ -28,6 +28,7 @@
 - (id)_member:(id)arg1;
 - (unsigned long long)_indexOfItem:(id)arg1;
 - (void)_setSortID:(id)arg1;
+- (void)_resortItems;
 - (void)_replaceStaleTypingMessage;
 - (void)_removeAllItems;
 - (void)_replaceItems:(id)arg1;
@@ -36,6 +37,8 @@
 - (void)_itemsDidChange:(id)arg1;
 - (id)_items;
 - (id)_initWithItems:(id)arg1;
+- (_Bool)_shouldPinUnsentMessagesToBottom;
+- (void)assignSortIDsToItems:(id)arg1 shouldRecalculateSortIDForAllMessages:(_Bool)arg2;
 - (void)assignSortIDsToItems:(id)arg1;
 @property(readonly, nonatomic) _Bool isMoreToLoad;
 - (void)dealloc;

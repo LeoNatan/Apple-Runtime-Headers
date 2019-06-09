@@ -22,6 +22,8 @@
 - (id)properties;
 - (id)lastOperationError;
 - (BOOL)supportsPush;
+- (BOOL)allowsTasks;
+- (BOOL)allowsEvents;
 - (void)setSupportsDefaultAlarms:(BOOL)arg1;
 - (BOOL)supportsDefaultAlarms;
 - (BOOL)supportsJunkReporting;

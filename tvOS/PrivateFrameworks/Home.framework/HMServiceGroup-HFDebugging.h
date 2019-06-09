@@ -6,17 +6,41 @@
 
 #import <HomeKit/HMServiceGroup.h>
 
+#import <Home/HFFavoritable-Protocol.h>
+#import <Home/HFHomeKitObject-Protocol.h>
+#import <Home/HFHomeStatusVisible-Protocol.h>
+#import <Home/HFReorderableHomeKitObject-Protocol.h>
 #import <Home/HFStateDumpBuildable-Protocol.h>
+#import <Home/HFUserNotificationServiceSettingsProviding-Protocol.h>
 
-@class NSString;
+@class HFServiceDescriptor, HFServiceNameComponents, HFUserNotificationServiceSettings, NSDate, NSString, NSUUID;
 
-@interface HMServiceGroup (HFDebugging) <HFStateDumpBuildable>
+@interface HMServiceGroup (HFDebugging) <HFStateDumpBuildable, HFHomeStatusVisible, HFFavoritable, HFHomeKitObject, HFUserNotificationServiceSettingsProviding, HFReorderableHomeKitObject>
 - (id)hf_stateDumpBuilderWithContext:(id)arg1;
+@property(readonly, nonatomic) HFServiceDescriptor *hf_serviceDescriptor;
+@property(readonly, nonatomic) _Bool hf_isSupported;
+- (id)hf_updateIsVisibleInHomeStatus:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool hf_hasSetVisibleInHomeStatus;
+@property(readonly, nonatomic) _Bool hf_isVisibleInHomeStatus;
+@property(readonly, nonatomic) _Bool hf_supportsHomeStatus;
+- (id)hf_updateIsFavorite:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool hf_shouldShowInFavorites;
+@property(readonly, nonatomic) _Bool hf_hasSetFavorite;
+@property(readonly, nonatomic) _Bool hf_isFavorite;
+- (_Bool)hf_isValidObject;
+- (id)hf_updateUserNotificationSettings:(id)arg1;
+@property(readonly, copy, nonatomic) HFUserNotificationServiceSettings *hf_userNotificationSettings;
+- (id)_hf_allBulletinBoardNotifications;
+- (id)hf_updateDateAdded:(id)arg1;
+@property(readonly, copy, nonatomic) NSDate *hf_dateAdded;
+@property(readonly, nonatomic) HFServiceNameComponents *hf_serviceNameComponents;
+@property(readonly, copy, nonatomic) NSString *hf_displayName;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, copy, nonatomic) NSUUID *uniqueIdentifier;
 @end
 

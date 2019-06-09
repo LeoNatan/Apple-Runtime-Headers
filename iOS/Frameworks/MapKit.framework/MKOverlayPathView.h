@@ -41,6 +41,7 @@
 @property double lineWidth;
 @property(retain) UIColor *strokeColor;
 @property(retain) UIColor *fillColor;
+- (void)_performInitialConfiguration;
 
 @end
 

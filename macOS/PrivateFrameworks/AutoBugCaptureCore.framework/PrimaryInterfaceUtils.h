@@ -6,27 +6,30 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate;
+@class NSDate, NSString;
 
+__attribute__((visibility("hidden")))
 @interface PrimaryInterfaceUtils : NSObject
 {
     BOOL _hasPrimaryInterface;
     NSDate *_interfaceBecamePrimaryDate;
+    NSDate *_estimatedInterfaceBecamePrimaryDate;
     long long _primaryInterfaceType;
 }
 
-+ (long long)interfaceTypeForString:(id)arg1;
-+ (id)stringForInterfaceType:(long long)arg1;
 + (id)sharedInstance;
-@property(readonly, nonatomic) long long primaryInterfaceType; // @synthesize primaryInterfaceType=_primaryInterfaceType;
-@property(readonly, nonatomic) NSDate *interfaceBecamePrimaryDate; // @synthesize interfaceBecamePrimaryDate=_interfaceBecamePrimaryDate;
-@property(readonly, nonatomic) BOOL hasPrimaryInterface; // @synthesize hasPrimaryInterface=_hasPrimaryInterface;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSString *primaryInterfaceTypeString; // @dynamic primaryInterfaceTypeString;
+@property(readonly, nonatomic) NSDate *estimatedInterfaceBecamePrimaryDate; // @synthesize estimatedInterfaceBecamePrimaryDate=_estimatedInterfaceBecamePrimaryDate;
+- (void)_setEstimatedInterfaceBecamePrimaryDate:(id)arg1;
+@property(readonly, nonatomic) NSDate *interfaceBecamePrimaryDate; // @synthesize interfaceBecamePrimaryDate=_interfaceBecamePrimaryDate;
 - (void)_setInterfaceBecamePrimaryDate:(id)arg1;
+@property(readonly, nonatomic) long long primaryInterfaceType; // @synthesize primaryInterfaceType=_primaryInterfaceType;
 - (void)_setPrimaryInterfaceType:(long long)arg1;
+@property(readonly, nonatomic) BOOL hasPrimaryInterface; // @synthesize hasPrimaryInterface=_hasPrimaryInterface;
 - (void)_setHasPrimaryInterface:(BOOL)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
-- (void)getInitialDefaultPathInfo;
+- (void)getDefaultPathInfoUsingSecondsSinceChange;
 - (id)init;
 
 @end

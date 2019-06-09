@@ -30,7 +30,7 @@
 + (void)flushDynamicLearningCaches;
 + (void)clearDynamicLearningCaches;
 + (void)clearDynamicResourcesAtPath:(id)arg1;
-+ (id)sharedLanguageModelLoaderForInputMode:(id)arg1 dynamicResourcePath:(id)arg2 mobileAssets:(id)arg3 usesLinguisticContext:(_Bool)arg4;
++ (id)sharedLanguageModelLoaderForInputMode:(id)arg1 staticResourcePaths:(id)arg2 dynamicResourcePath:(id)arg3 mobileAssets:(id)arg4 usesLinguisticContext:(_Bool)arg5;
 + (id)recipientRecords;
 + (id)knownClients;
 + (shared_ptr_e9f752ce)stubForLocale:(id)arg1 adaptationContext:(id)arg2 staticResourcePaths:(id)arg3 dynamicResourcePath:(id)arg4;
@@ -62,7 +62,7 @@
 - (void)flushDynamicLearningCaches;
 - (void)clearDynamicLearningCaches;
 @property(readonly, nonatomic) NSArray *staticResourcePaths;
-- (id)initWithInputMode:(id)arg1 dynamicResourcePath:(id)arg2 mobileAssets:(id)arg3 usesLinguisticContext:(_Bool)arg4;
+- (id)initWithInputMode:(id)arg1 staticResourcePaths:(id)arg2 dynamicResourcePath:(id)arg3 mobileAssets:(id)arg4 usesLinguisticContext:(_Bool)arg5;
 
 @end
 

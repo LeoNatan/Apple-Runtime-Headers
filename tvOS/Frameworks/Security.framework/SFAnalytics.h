@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary, SFAnalyticsSQLiteStore;
+#import <Security/SFAnalyticsProtocol-Protocol.h>
+
+@class NSMutableDictionary, NSString, SFAnalyticsSQLiteStore;
 @protocol OS_dispatch_queue;
 
-@interface SFAnalytics : NSObject
+@interface SFAnalytics : NSObject <SFAnalyticsProtocol>
 {
     SFAnalyticsSQLiteStore *_database;
     NSObject<OS_dispatch_queue> *_queue;
@@ -28,6 +30,7 @@
 - (void).cxx_destruct;
 - (void)logMetric:(id)arg1 withName:(id)arg2 oncePerReport:(_Bool)arg3;
 - (void)logMetric:(id)arg1 withName:(id)arg2;
+- (id)startLogSystemMetricsForActivityNamed:(id)arg1;
 - (id)logSystemMetricsForActivityNamed:(id)arg1 withAction:(CDUnknownBlockType)arg2;
 - (void)removeMultiSamplerForName:(id)arg1;
 - (void)removeMetricSamplerForName:(id)arg1;
@@ -47,6 +50,12 @@
 - (id)datePropertyForKey:(id)arg1;
 - (void)setDateProperty:(id)arg1 forKey:(id)arg2;
 - (void)removeState;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

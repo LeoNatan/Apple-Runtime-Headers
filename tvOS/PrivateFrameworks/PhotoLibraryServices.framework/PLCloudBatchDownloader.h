@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class PLCloudPhotoLibraryManager, PLKeywordManager, PLPhotoLibrary;
+@class PLCloudPhotoLibraryManager, PLPhotoLibrary;
 
 @interface PLCloudBatchDownloader : NSObject
 {
     PLPhotoLibrary *_photoLibrary;
     PLCloudPhotoLibraryManager *_manager;
-    PLKeywordManager *_keywordManager;
 }
 
 + (id)_adjustmentStateDictionaryForComparingIncomingFaceRecordForAsset:(id)arg1;
@@ -42,7 +41,7 @@
 - (void)_dropDeferredRebuildFacesInPhotoLibrary:(id)arg1;
 - (id)_handlePersonRecords:(id)arg1 inLibrary:(id)arg2 includesTiboSchema:(_Bool *)arg3;
 - (void)_saveIfNeeded;
-- (id)initWithLibrary:(id)arg1 withManager:(id)arg2;
+- (id)initWithLibrary:(id)arg1 manager:(id)arg2;
 
 @end
 

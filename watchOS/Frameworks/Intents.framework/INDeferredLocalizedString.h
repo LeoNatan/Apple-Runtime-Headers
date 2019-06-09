@@ -38,6 +38,7 @@
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned int)hash;
+- (id)_localizeForLanguage:(id)arg1 bundleRef:(struct __CFBundle *)arg2;
 - (id)localizeForLanguage:(id)arg1;
 - (id)initWithDeferredFormat:(id)arg1 fromTable:(id)arg2 bundle:(id)arg3 arguments:(char *)arg4;
 - (id)_intents_encodeForProto;

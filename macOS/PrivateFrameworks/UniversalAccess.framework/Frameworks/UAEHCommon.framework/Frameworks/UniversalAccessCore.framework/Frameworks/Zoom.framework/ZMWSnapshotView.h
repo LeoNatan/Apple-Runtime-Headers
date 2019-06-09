@@ -8,6 +8,7 @@
 
 @class NSString, ZMWCursorView, ZMWMainWindow;
 
+__attribute__((visibility("hidden")))
 @interface ZMWSnapshotView : ZMWView
 {
     double _scaleFactor;

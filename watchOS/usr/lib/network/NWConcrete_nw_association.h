@@ -9,13 +9,13 @@
 #import <network/OS_nw_association-Protocol.h>
 
 @class NSString;
-@protocol OS_nw_endpoint, OS_nw_parameters, OS_nw_path, OS_nw_path_evaluator;
+@protocol OS_nw_endpoint, OS_nw_path, OS_nw_path_evaluator, OS_nw_path_parameters;
 
 __attribute__((visibility("hidden")))
 @interface NWConcrete_nw_association : NSObject <OS_nw_association>
 {
     NSObject<OS_nw_endpoint> *endpoint;
-    NSObject<OS_nw_parameters> *parameters;
+    NSObject<OS_nw_path_parameters> *path_parameters;
     NSObject<OS_nw_path_evaluator> *evaluator;
     NSObject<OS_nw_path> *previous_path;
     struct nw_hash_table *handles;
@@ -23,7 +23,8 @@ __attribute__((visibility("hidden")))
     struct nw_hash_table *cache_entries;
     void *deactivation_timer;
     unsigned int dormant:1;
-    unsigned int __pad_bits:7;
+    unsigned int in_force_update:1;
+    unsigned int __pad_bits:6;
 }
 
 - (void).cxx_destruct;

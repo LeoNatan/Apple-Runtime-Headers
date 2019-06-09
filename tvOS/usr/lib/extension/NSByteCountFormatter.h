@@ -20,6 +20,7 @@
     int _reserved[5];
 }
 
++ (id)stringFromMeasurement:(id)arg1 countStyle:(long long)arg2;
 + (id)stringFromByteCount:(long long)arg1 countStyle:(long long)arg2;
 @property _Bool zeroPadsFractionDigits; // @synthesize zeroPadsFractionDigits=_zeroPadsFractionDigits;
 @property(getter=isAdaptive) _Bool adaptive; // @synthesize adaptive=_adaptive;
@@ -36,6 +37,7 @@
 - (_Bool)getObjectValue:(out id *)arg1 forString:(id)arg2 errorDescription:(out id *)arg3;
 - (id)stringForObjectValue:(id)arg1;
 - (_Bool)_mayDecorateAttributedStringForObjectValue:(id)arg1;
+- (id)stringFromMeasurement:(id)arg1;
 - (id)stringFromByteCount:(long long)arg1;
 - (unsigned long long)_options;
 @property long long countStyle;

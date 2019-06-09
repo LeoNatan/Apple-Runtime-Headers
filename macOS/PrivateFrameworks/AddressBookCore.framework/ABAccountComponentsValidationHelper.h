@@ -17,6 +17,7 @@
     id <ABAccountComponentFileValidator> _fileManager;
 }
 
++ (id)os_log;
 - (void).cxx_destruct;
 - (id)accountName;
 - (id)className;

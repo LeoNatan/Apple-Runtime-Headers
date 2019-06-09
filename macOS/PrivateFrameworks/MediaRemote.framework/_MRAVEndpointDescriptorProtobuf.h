@@ -17,6 +17,7 @@
     NSString *_instanceIdentifier;
     NSString *_name;
     NSMutableArray *_outputDevices;
+    NSMutableArray *_personalOutputDevices;
     NSString *_uniqueIdentifier;
     BOOL _canModifyGroupMembership;
     BOOL _isLocalEndpoint;
@@ -29,7 +30,9 @@
     } _has;
 }
 
++ (Class)personalOutputDevicesType;
 + (Class)outputDevicesType;
+@property(retain, nonatomic) NSMutableArray *personalOutputDevices; // @synthesize personalOutputDevices=_personalOutputDevices;
 @property(nonatomic) BOOL canModifyGroupMembership; // @synthesize canModifyGroupMembership=_canModifyGroupMembership;
 @property(nonatomic) BOOL isProxyGroupPlayer; // @synthesize isProxyGroupPlayer=_isProxyGroupPlayer;
 @property(retain, nonatomic) NSString *instanceIdentifier; // @synthesize instanceIdentifier=_instanceIdentifier;
@@ -48,6 +51,10 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (id)personalOutputDevicesAtIndex:(unsigned long long)arg1;
+- (unsigned long long)personalOutputDevicesCount;
+- (void)addPersonalOutputDevices:(id)arg1;
+- (void)clearPersonalOutputDevices;
 @property(nonatomic) BOOL hasCanModifyGroupMembership;
 - (int)StringAsConnectionType:(id)arg1;
 - (id)connectionTypeAsString:(int)arg1;

@@ -43,10 +43,9 @@
 - (void).cxx_destruct;
 - (BOOL)panelHasFunctionKeys:(id)arg1;
 - (BOOL)_panelHasMostOfKeyCodesInSystemKeyboardPanel:(id)arg1;
+- (id)templateKeyboardPanelWithUndoManager:(id)arg1 functionKeyMode:(unsigned long long)arg2;
 - (id)systemKeyboardPanelWithUndoManager:(id)arg1;
 - (id)functionKeyPanelWithUndoManager:(id)arg1;
-- (id)templateKeyboardPanelWithUndoManager:(id)arg1 functionKeyMode:(unsigned long long)arg2;
-- (id)templateKeyboardPanelWithUndoManager:(id)arg1;
 - (id)_panelWithKeyboardPanelDictionary:(id)arg1 showLocation:(unsigned long long)arg2 panelIdentifier:(id)arg3 undoManager:(id)arg4;
 @property(readonly, nonatomic) ACSHKeyboardLayout *keyboardLayout;
 @property(readonly, nonatomic) BOOL _isBestSystemKeyboard;

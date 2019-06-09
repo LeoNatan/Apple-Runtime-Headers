@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <PersonalizationPortrait/PPEventClientProtocol-Protocol.h>
+
 @class PPXPCClientHelper, PPXPCClientPipelinedBatchQueryManager;
 
-@interface PPEventClient : NSObject
+@interface PPEventClient : NSObject <PPEventClientProtocol>
 {
     PPXPCClientHelper *_clientHelper;
     PPXPCClientPipelinedBatchQueryManager *_queryManager;
@@ -16,6 +18,7 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)sendRTCLogsWithError:(id *)arg1;
 - (void)interactionSummaryMetricsBatch:(id)arg1 isLast:(BOOL)arg2 error:(id)arg3 queryId:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (BOOL)interactionSummaryMetricsWithError:(id *)arg1 handleBatch:(CDUnknownBlockType)arg2;

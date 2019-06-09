@@ -27,7 +27,7 @@
 - (void)_initializeButtonStyle;
 - (void)sizeToFit;
 - (void)setFont:(id)arg1;
-- (void)setAlignment:(unsigned long long)arg1;
+- (void)setAlignment:(long long)arg1;
 - (void)updateTrackingAreas;
 - (void)awakeFromNib;
 - (id)init;

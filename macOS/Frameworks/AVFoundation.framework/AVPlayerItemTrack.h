@@ -31,6 +31,7 @@
 - (id)videoEnhancementFilterOptions;
 - (void)setLoudnessInfo:(id)arg1;
 - (void)_transferLoudnessInfoToFig;
+- (id)effectiveLoudnessInfo;
 - (id)loudnessInfo;
 @property(copy, nonatomic) NSString *videoFieldMode;
 - (void)_transferVideoFieldModeToFig;
@@ -45,7 +46,6 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
-- (void)finalize;
 - (void)dealloc;
 - (id)_initWithFigPlaybackItem:(struct OpaqueFigPlaybackItem *)arg1 readyForInspection:(BOOL)arg2 trackID:(int)arg3 asset:(id)arg4 playerItem:(id)arg5;
 

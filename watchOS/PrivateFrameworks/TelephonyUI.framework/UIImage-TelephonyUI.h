@@ -10,20 +10,22 @@
 + (id)telephonyUI_AudioControlsGlyphForDeviceType:(int)arg1;
 + (id)telephonyUI_AudioRouteGlyphForDeviceType:(int)arg1;
 + (id)telephonyUI_speakerAudioRouteGlyphImage;
-+ (id)telephonyUI_BluetoothAudioControlGlyphImage;
++ (id)telephonyUI_BluetoothAudioControlsGlyphImage;
 + (id)telephonyUI_BluetoothAudioRouteGlyphImage;
 + (id)telephonyUI_muteAudioRouteGlyphImage;
 + (id)telephonyUI_CarPlayAudioRouteGlyphImage;
++ (id)telephonyUI_headphonesAudioControlsGlyphImage;
 + (id)telephonyUI_headphonesAudioRouteGlyphImage;
 + (id)telephonyUI_iPodAudioRouteGlyphImage;
 + (id)telephonyUI_iPadAudioRouteGlyphImage;
 + (id)telephonyUI_iPhoneAudioRouteGlyphImage;
-+ (id)favoritesWidgetVideoGlyphImage;
-+ (id)favoritesWidgetTTYRelayGlyphImage;
-+ (id)favoritesWidgetTTYDirectGlyphImage;
-+ (id)favoritesWidgetMessageGlyphImage;
-+ (id)favoritesWidgetMailGlyphImage;
-+ (id)favoritesWidgetAudioGlyphImage;
++ (id)recentsGlyphForSymbolType:(int)arg1;
++ (id)recentsTTYGlyphImage;
++ (id)recentsTTYRelayGlyphImage;
++ (id)recentsTTYDirectGlyphImage;
++ (id)recentsOutgoingVideoCallGlyphImage;
++ (id)recentsOutgoingAudioCallGlyphImage;
++ (id)favoritesGlyphForSymbolType:(int)arg1;
 + (id)favoritesVideoGlyphImage;
 + (id)favoritesTTYRelayGlyphImage;
 + (id)favoritesTTYDirectGlyphImage;
@@ -33,7 +35,15 @@
 + (id)telephonyUIImageNamed:(id)arg1;
 + (id)telephonyUIUnreadIndicatorGlyphImage;
 + (id)telephonyUIActionButtonGlyphImage;
++ (id)systemImageNameForSymbolType:(int)arg1;
++ (id)tpImageForSymbolType:(int)arg1 configuration:(id)arg2;
++ (id)tpImageForSymbolType:(int)arg1 pointSize:(float)arg2;
++ (id)tpImageForSymbolType:(int)arg1 textStyle:(id)arg2 scale:(int)arg3 isStaticSize:(_Bool)arg4;
++ (int)scaleForTPScale:(int)arg1;
++ (id)tpImageNamed:(id)arg1 inBundle:(id)arg2;
++ (id)_tpImageNamed:(id)arg1 inBundle:(id)arg2 compatibleWithTraitCollection:(id)arg3;
 - (id)imageWithShadow:(id)arg1;
 - (id)imageWithEtchedBorderOfColor:(id)arg1 radius:(float)arg2;
+- (id)tpFlattenedWithColor:(id)arg1;
 @end
 

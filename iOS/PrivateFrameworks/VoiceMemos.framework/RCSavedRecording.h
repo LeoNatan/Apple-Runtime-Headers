@@ -30,11 +30,13 @@
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
-- (id)_activityURLCreateIfNecessary:(_Bool)arg1;
 - (void)_validatePath;
 @property(readonly, nonatomic) AVAsset *avAsset;
 @property(readonly, nonatomic) _Bool uploaded;
 @property(readonly, nonatomic) _Bool evicted;
+@property(nonatomic) _Bool recordedOnWatch;
+- (void)setDownloading:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool downloading;
 - (void)setEditing:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool editing;
 - (void)setManuallyRenamed:(_Bool)arg1;

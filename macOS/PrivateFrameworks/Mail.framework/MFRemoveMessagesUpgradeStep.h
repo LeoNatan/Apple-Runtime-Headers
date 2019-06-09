@@ -19,8 +19,8 @@
 - (void).cxx_destruct;
 - (void)cleanUpAfterRemovingMessagesWithRowIDs:(id)arg1 subjects:(id)arg2 senders:(id)arg3 recalculateMessageCounts:(BOOL)arg4;
 - (void)removeMessagesWithRowIDs:(id)arg1 rowIDsByMailboxURLStrings:(id)arg2;
-- (id)initWithSQLHandle:(id)arg1;
-- (id)initWithSQLHandle:(id)arg1 accounts:(id)arg2;
+- (id)initWithDatabaseConnection:(id)arg1;
+- (id)initWithDatabaseConnection:(id)arg1 accounts:(id)arg2;
 
 @end
 

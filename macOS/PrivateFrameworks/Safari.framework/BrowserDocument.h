@@ -46,8 +46,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL wasRestored;
 - (void)restoreDocumentWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) unsigned long long numberOfBrowserViewControllers;
-- (id)makeBrowserViewControllerRelatedToPage:(const struct Page *)arg1 withWebsiteDataStore:(id)arg2;
-- (id)makeBrowserViewControllerRelatedToPage:(const struct Page *)arg1;
 - (id)makeBrowserViewControllerWithConfiguration:(id)arg1;
 - (id)makeBrowserViewController;
 @property(retain, nonatomic) BrowserViewController *currentBrowserViewController;
@@ -61,7 +59,6 @@ __attribute__((visibility("hidden")))
 - (id)source;
 - (void)setURLString:(id)arg1;
 - (id)URLString;
-- (void)createWebClip:(id)arg1;
 - (void)setShouldOpenWindowBehindFrontmost:(BOOL)arg1;
 - (BOOL)shouldOpenWindowBehindFrontmost;
 - (void)tryMultipleURLs:(unique_ptr_aba2cdfe)arg1 httpReferrer:(id)arg2;
@@ -71,7 +68,6 @@ __attribute__((visibility("hidden")))
 - (void)viewSource:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
 - (BOOL)canSave;
-- (BOOL)canCreateWebClip;
 - (BOOL)canViewSource;
 - (BOOL)_isDocumentHTML;
 - (void)clearAllStatus;
@@ -94,8 +90,6 @@ __attribute__((visibility("hidden")))
 - (void)safari_printDocument:(id)arg1;
 - (BOOL)canPrint;
 - (void)printCurrentPage;
-- (void)setPrintInfo:(id)arg1;
-- (id)printInfo;
 - (void)printDocumentWithSettings:(id)arg1 showPrintPanel:(BOOL)arg2 delegate:(id)arg3 didPrintSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (BOOL)isShowingLoadErrorPage;
 - (void)stopLoading:(id)arg1;
@@ -162,10 +156,17 @@ __attribute__((visibility("hidden")))
 - (void)dealloc;
 - (void)_commonBrowserDocumentInitWithContentsOfRequest:(id)arg1 browserViewController:(id)arg2;
 - (id)initWithContentsOfURL:(id)arg1 ofType:(id)arg2;
-- (id)initWithBrowsingMode:(unsigned long long)arg1 relatedToPage:(const struct Page *)arg2 websiteDataStore:(id)arg3 isPopupWindow:(BOOL)arg4 restoringFromLastSession:(BOOL)arg5;
-- (id)initWithBrowsingMode:(unsigned long long)arg1 configuration:(id)arg2 isPopupWindow:(BOOL)arg3;
+- (id)initWithBrowsingMode:(unsigned long long)arg1 configuration:(id)arg2 isPopupWindow:(BOOL)arg3 restoringFromLastSession:(BOOL)arg4;
 - (id)init;
 - (id)initWithContentsOfRequest:(id)arg1 browsingMode:(unsigned long long)arg2;
+- (BOOL)validate_setShowTabAncestryInTabTitle:(id)arg1;
+- (void)setShowTabAncestryInTabTitle:(id)arg1;
+- (BOOL)validate_setSuppressRelatingNewBlankTabs:(id)arg1;
+- (void)setSuppressRelatingNewBlankTabs:(id)arg1;
+- (BOOL)validate_setApplyPositionToSpawnedTabs:(id)arg1;
+- (void)setApplyPositionToSpawnedTabs:(id)arg1;
+- (BOOL)validate_updateNewTabPositionValue:(id)arg1;
+- (void)updateNewTabPositionValue:(id)arg1;
 - (BOOL)validate_saveSamplingProfilerOutput:(id)arg1;
 - (void)saveSamplingProfilerOutput:(id)arg1;
 - (BOOL)validate_getBytecodeProfile:(id)arg1;
@@ -207,6 +208,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)validate_showWebInspector:(id)arg1;
 - (void)showWebInspector:(id)arg1;
 - (BOOL)validate_toggleExperimentalFeature:(id)arg1;
+- (void)resetAllExperimentalFeaturesToDefaultValues:(id)arg1;
 - (void)toggleExperimentalFeature:(id)arg1;
 - (BOOL)validate_showOtherUserAgentSheet:(id)arg1;
 - (void)showOtherUserAgentSheet:(id)arg1;

@@ -12,7 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (int)transportType;
-- (void)updateGuidanceForProceedToRouteAtLocation:(CDStruct_2c43369c)arg1 routeMatch:(id)arg2 remainingTime:(double)arg3 distanceUntilDestination:(double)arg4;
+- (void)updateGuidanceForProceedToRouteAtLocation:(CDStruct_c3b9c2ee)arg1 routeMatch:(id)arg2 remainingTime:(double)arg3 distanceUntilDestination:(double)arg4;
 - (BOOL)_updateConsiderExecuteAnnouncement:(id)arg1 location:(id)arg2;
 - (void)_updatePrepareForNextStep;
 - (id)_combinedGuidanceForStep:(id)arg1 withType:(int)arg2;

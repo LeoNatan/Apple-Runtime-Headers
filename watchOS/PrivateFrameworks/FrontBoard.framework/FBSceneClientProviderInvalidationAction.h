@@ -6,10 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class BSAction;
+@class BSAction, BSAtomicSignal;
 
 @interface FBSceneClientProviderInvalidationAction : NSObject
 {
+    BSAtomicSignal *_invalidated;
     BSAction *_action;
 }
 

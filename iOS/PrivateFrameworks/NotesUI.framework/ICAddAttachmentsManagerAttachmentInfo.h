@@ -19,10 +19,8 @@
     NSString *_mediaFilenameExtension;
     struct UIImage *_image;
     NSAttributedString *_attributedContentText;
-    NSDictionary *_webScrapeResults;
 }
 
-@property(retain, nonatomic) NSDictionary *webScrapeResults; // @synthesize webScrapeResults=_webScrapeResults;
 @property(retain, nonatomic) NSAttributedString *attributedContentText; // @synthesize attributedContentText=_attributedContentText;
 @property(retain, nonatomic) UIImage *image; // @synthesize image=_image;
 @property(retain, nonatomic) NSString *mediaFilenameExtension; // @synthesize mediaFilenameExtension=_mediaFilenameExtension;
@@ -34,7 +32,10 @@
 @property(retain, nonatomic) ICAttachment *attachment; // @synthesize attachment=_attachment;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) _Bool isVideo;
+@property(readonly, nonatomic) _Bool isPhoto;
 - (unsigned long long)mediaSize;
+- (id)attachmentIfExistsForAccount:(id)arg1;
 - (id)initWithFileURL:(id)arg1;
 
 @end

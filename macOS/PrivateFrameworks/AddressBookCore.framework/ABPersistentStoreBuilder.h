@@ -27,7 +27,7 @@
 
 + (id)mergeDictionary:(id)arg1 withDictionary:(id)arg2;
 + (id)proxyLockStoreOptionsForDatabaseAtUrl:(id)arg1 isReadOnly:(BOOL)arg2;
-+ (id)readOnlyStoreOptionsWithBoolValue:(BOOL)arg1;
++ (id)optionsForStoreWithReadOnly:(BOOL)arg1;
 + (id)coordinatorWithLastUnconstrainedModel;
 + (id)os_log;
 @property(copy) NSError *error; // @synthesize error=_error;
@@ -51,14 +51,12 @@
 - (id)optionsWithoutMigrationForStoreAtUrl:(id)arg1;
 - (void)_coreDataR10319914Hack:(id)arg1;
 - (void)addSqlitePersistentStoreWithUrl:(id)arg1;
-- (void)migrateMailRecentsToInMemoryIfNeeded;
 - (void)migrateContactIndex;
 - (void)migrateOrphanProperties;
 - (void)migratePhoneNumbers;
 - (void)migrateLabels;
 - (void)migrateCustomPropertiesInStore:(id)arg1;
 - (BOOL)databaseMigrationNeeded;
-- (void)migrateMailRecentsToInMemory;
 - (void)logPersistentStoreTracerFailureWithMessage:(id)arg1 error:(id)arg2;
 - (id)urlByCopyingToTemporaryUrl:(id)arg1;
 - (id)contactStoreForGroupCleanup;

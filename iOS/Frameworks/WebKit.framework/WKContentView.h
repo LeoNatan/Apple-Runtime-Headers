@@ -9,7 +9,6 @@
 #import <WebKit/UIDragInteractionDelegate-Protocol.h>
 #import <WebKit/UIDropInteractionDelegate-Protocol.h>
 #import <WebKit/UIGestureRecognizerDelegate-Protocol.h>
-#import <WebKit/UIPreviewItemDelegate-Protocol.h>
 #import <WebKit/UITextAutoscrolling-Protocol.h>
 #import <WebKit/UITextInputMultiDocument-Protocol.h>
 #import <WebKit/UITextInputPrivate-Protocol.h>
@@ -18,24 +17,29 @@
 #import <WebKit/UIWebTouchEventsGestureRecognizerDelegate-Protocol.h>
 #import <WebKit/WKActionSheetAssistantDelegate-Protocol.h>
 #import <WebKit/WKFileUploadPanelDelegate-Protocol.h>
+#import <WebKit/WKKeyboardScrollViewAnimatorDelegate-Protocol.h>
 #import <WebKit/WKShareSheetDelegate-Protocol.h>
+#import <WebKit/_UIContextMenuInteractionDelegate-Protocol.h>
 #import <WebKit/_WKWebViewPrintProvider-Protocol.h>
 
 @class NSArray, NSDictionary, NSIndexSet, NSString, RTIInputSystemSourceSession, UIColor, UIImage, UIInputContextHistory, UITextInputAssistantItem, UITextInputPasswordRules, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIWebFormAccessory, WKBrowsingContextController, WKFormInputControl, WKWebView;
 @protocol UITextInputDelegate, UITextInputSuggestionDelegate, UITextInputTokenizer, WKFormControl;
 
 __attribute__((visibility("hidden")))
-@interface WKContentView : WKApplicationStateTrackingView <_WKWebViewPrintProvider, UIGestureRecognizerDelegate, UITextAutoscrolling, UITextInputMultiDocument, UITextInputPrivate, UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, UIWKInteractionViewProtocol, WKActionSheetAssistantDelegate, WKFileUploadPanelDelegate, WKShareSheetDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, UIPreviewItemDelegate>
+@interface WKContentView : WKApplicationStateTrackingView <_WKWebViewPrintProvider, UIGestureRecognizerDelegate, UITextAutoscrolling, UITextInputMultiDocument, UITextInputPrivate, UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, UIWKInteractionViewProtocol, WKActionSheetAssistantDelegate, WKFileUploadPanelDelegate, WKKeyboardScrollViewAnimatorDelegate, WKShareSheetDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, _UIContextMenuInteractionDelegate>
 {
     RefPtr_a805eeb8 _page;
     WKWebView *_webView;
     struct RetainPtr<UIWebTouchEventsGestureRecognizer> _touchEventGestureRecognizer;
     _Bool _canSendTouchEventsAsynchronously;
-    struct RetainPtr<WKSyntheticClickTapGestureRecognizer> _singleTapGestureRecognizer;
+    _Bool _preventsPanningInXAxis;
+    _Bool _preventsPanningInYAxis;
+    struct RetainPtr<WKSyntheticTapGestureRecognizer> _singleTapGestureRecognizer;
     struct RetainPtr<_UIWebHighlightLongPressGestureRecognizer> _highlightLongPressGestureRecognizer;
     struct RetainPtr<UILongPressGestureRecognizer> _longPressGestureRecognizer;
-    struct RetainPtr<UITapGestureRecognizer> _doubleTapGestureRecognizer;
+    struct RetainPtr<WKSyntheticTapGestureRecognizer> _doubleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _nonBlockingDoubleTapGestureRecognizer;
+    struct RetainPtr<UITapGestureRecognizer> _doubleTapGestureRecognizerForDoubleClick;
     struct RetainPtr<UITapGestureRecognizer> _twoFingerDoubleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _twoFingerSingleTapGestureRecognizer;
     struct RetainPtr<UITapGestureRecognizer> _stylusSingleTapGestureRecognizer;
@@ -55,7 +59,7 @@ __attribute__((visibility("hidden")))
     struct RetainPtr<UIGestureRecognizer> _previewGestureRecognizer;
     struct RetainPtr<UIGestureRecognizer> _previewSecondaryGestureRecognizer;
     struct Vector<bool, 0, WTF::CrashOnOverflow, 16> _focusStateStack;
-    struct RetainPtr<UIPreviewItemController> _previewItemController;
+    struct RetainPtr<_UIContextMenuInteraction> _contextMenuInteraction;
     struct unique_ptr<WebKit::SmartMagnificationController, std::__1::default_delete<WebKit::SmartMagnificationController>> _smartMagnificationController;
     struct WeakObjCPtr<id<UITextInputDelegate>> _inputDelegate;
     unsigned long long _latestTapID;
@@ -64,7 +68,6 @@ __attribute__((visibility("hidden")))
     struct InteractionInformationAtPosition _positionInformation;
     struct FocusedElementInformation _focusedElementInformation;
     struct RetainPtr<NSObject<WKFormPeripheral>> _inputPeripheral;
-    struct RetainPtr<UIEvent> _uiEventBeingResent;
     struct BlockPtr<void (WebEvent *, bool)> _keyWebEventHandler;
     struct CGPoint _lastInteractionLocation;
     unsigned long long _layerTreeTransactionIdAtLastTouchStart;
@@ -73,6 +76,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _positionInformationCallbackDepth;
     struct Vector<WTF::Optional<std::__1::pair<WebKit::InteractionInformationRequest, WTF::BlockPtr<void (WebKit::InteractionInformationAtPosition)>>>, 0, WTF::CrashOnOverflow, 16> _pendingPositionInformationHandlers;
     struct unique_ptr<WebKit::InputViewUpdateDeferrer, std::__1::default_delete<WebKit::InputViewUpdateDeferrer>> _inputViewUpdateDeferrer;
+    struct RetainPtr<WKKeyboardScrollViewAnimator> _keyboardScrollingAnimator;
     struct RetainPtr<UIView<WKFormControl>> _dataListTextSuggestionsInputView;
     struct RetainPtr<NSArray<UITextSuggestion *>> _dataListTextSuggestions;
     _Bool _isEditable;
@@ -81,7 +85,7 @@ __attribute__((visibility("hidden")))
     _Bool _isTapHighlightIDValid;
     _Bool _potentialTapInProgress;
     _Bool _isDoubleTapPending;
-    _Bool _highlightLongPressCanClick;
+    _Bool _longPressCanClick;
     _Bool _hasTapHighlightForPotentialTap;
     _Bool _selectionNeedsUpdate;
     _Bool _shouldRestoreSelection;
@@ -91,41 +95,52 @@ __attribute__((visibility("hidden")))
     _Bool _didAccessoryTabInitiateFocus;
     _Bool _isExpectingFastSingleTapCommit;
     _Bool _showDebugTapHighlightsForFastClicking;
-    _Bool _isZoomingToRevealFocusedElement;
     _Bool _keyboardDidRequestDismissal;
+    _Bool _candidateViewNeedsUpdate;
     _Bool _becomingFirstResponder;
     _Bool _resigningFirstResponder;
     _Bool _needsDeferredEndScrollingSelectionUpdate;
     _Bool _isChangingFocus;
-    _Bool _isBlurringFocusedNode;
+    _Bool _isBlurringFocusedElement;
     _Bool _focusRequiresStrongPasswordAssistance;
+    _Bool _waitingForEditDragSnapshot;
     _Bool _hasSetUpInteractions;
+    unsigned long long _ignoreSelectionCommandFadeCount;
+    CompletionHandler_2aa2525f _domPasteRequestHandler;
+    struct BlockPtr<void (UIWKAutocorrectionContext *)> _pendingAutocorrectionContextHandler;
     struct DragDropInteractionState _dragDropInteractionState;
     struct RetainPtr<UIDragInteraction> _dragInteraction;
     struct RetainPtr<UIDropInteraction> _dropInteraction;
     _Bool _shouldRestoreCalloutBarAfterDrop;
-    _Bool _isAnimatingConcludeEditDrag;
     struct RetainPtr<UIView> _visibleContentViewSnapshot;
+    struct RetainPtr<UIView> _unselectedContentSnapshot;
     struct RetainPtr<_UITextDragCaretView> _editDropCaretView;
+    struct BlockPtr<void ()> _actionToPerformAfterReceivingEditDragSnapshot;
     struct unique_ptr<WebKit::PageClientImpl, std::__1::default_delete<WebKit::PageClientImpl>> _pageClient;
     struct RetainPtr<WKBrowsingContextController> _browsingContextController;
     struct RetainPtr<UIView> _rootContentView;
     struct RetainPtr<UIView> _fixedClippingView;
     struct RetainPtr<WKInspectorIndicationView> _inspectorIndicationView;
     struct RetainPtr<WKInspectorHighlightView> _inspectorHighlightView;
+    struct RetainPtr<_UILayerHostView> _visibilityPropagationView;
     struct HistoricalVelocityData _historicalKinematicData;
     struct RetainPtr<NSUndoManager> _undoManager;
+    struct RetainPtr<WKQuirkyNSUndoManager> _quirkyUndoManager;
     _Bool _isPrintingToPDF;
     struct RetainPtr<CGPDFDocument *> _printedDocument;
     _Bool _sizeChangedSinceLastVisibleContentRectUpdate;
 }
 
++ (Class)_fileUploadPanelClass;
 @property(nonatomic) _Bool sizeChangedSinceLastVisibleContentRectUpdate; // @synthesize sizeChangedSinceLastVisibleContentRectUpdate=_sizeChangedSinceLastVisibleContentRectUpdate;
 @property(readonly, nonatomic, getter=isResigningFirstResponder) _Bool resigningFirstResponder; // @synthesize resigningFirstResponder=_resigningFirstResponder;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationWillResignActive:(id)arg1;
+- (double)_targetContentZoomScaleForRect:(const struct FloatRect *)arg1 currentScale:(double)arg2 fitEntireRect:(_Bool)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5;
+- (double)_contentZoomScale;
+- (double)_initialScaleFactor;
 - (void)_zoomToInitialScaleWithOrigin:(struct CGPoint)arg1;
 - (void)_zoomOutWithOrigin:(struct CGPoint)arg1;
 - (_Bool)_zoomToRect:(struct CGRect)arg1 withOrigin:(struct CGPoint)arg2 fitEntireRect:(_Bool)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 minimumScrollDistance:(double)arg6;
@@ -135,10 +150,11 @@ __attribute__((visibility("hidden")))
 - (void)_layerTreeCommitComplete;
 - (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction *)arg1;
 - (void)_didCommitLoadForMainFrame;
+- (void)_processDidCreateContextForVisibilityPropagation;
 - (void)_didRelaunchProcess;
 - (void)_processWillSwap;
 - (void)_processDidExit;
--     // Error parsing type: {unique_ptr<WebKit::DrawingAreaProxy, std::__1::default_delete<WebKit::DrawingAreaProxy> >={__compressed_pair<WebKit::DrawingAreaProxy *, std::__1::default_delete<WebKit::DrawingAreaProxy> >=^{DrawingAreaProxy}}}24@0:8^{WebProcessProxy=^^?^^?{Vector<std::__1::pair<std::__1::unique_ptr<IPC::Encoder, std::__1::default_delete<IPC::Encoder> >, WTF::OptionSet<IPC::SendOption> >, 0, WTF::CrashOnOverflow, 16>=^{pair<std::__1::unique_ptr<IPC::Encoder, std::__1::default_delete<IPC::Encoder> >, WTF::OptionSet<IPC::SendOption> >}II}{RefPtr<WebKit::ProcessLauncher, WTF::DumbPtrTraits<WebKit::ProcessLauncher> >=^{ProcessLauncher}}{RefPtr<IPC::Connection, WTF::DumbPtrTraits<IPC::Connection> >=^{Connection}}{MessageReceiverMap={HashMap<IPC::StringReference, IPC::MessageReceiver *, IPC::StringReference::Hash, WTF::HashTraits<IPC::StringReference>, WTF::HashTraits<IPC::MessageReceiver *> >={HashTable<IPC::StringReference, WTF::KeyValuePair<IPC::StringReference, IPC::MessageReceiver *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<IPC::StringReference, IPC::MessageReceiver *> >, IPC::StringReference::Hash, WTF::HashMap<IPC::StringReference, IPC::MessageReceiver *, IPC::StringReference::Hash, WTF::HashTraits<IPC::StringReference>, WTF::HashTraits<IPC::MessageReceiver *> >::KeyValuePairTraits, WTF::HashTraits<IPC::StringReference> >=^{KeyValuePair<IPC::StringReference, IPC::MessageReceiver *>}IIII}}{HashMap<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *, WTF::PairHash<IPC::StringReference, unsigned long long>, WTF::HashTraits<std::__1::pair<IPC::StringReference, unsigned long long> >, WTF::HashTraits<IPC::MessageReceiver *> >={HashTable<std::__1::pair<IPC::StringReference, unsigned long long>, WTF::KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *> >, WTF::PairHash<IPC::StringReference, unsigned long long>, WTF::HashMap<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *, WTF::PairHash<IPC::StringReference, unsigned long long>, WTF::HashTraits<std::__1::pair<IPC::StringReference, unsigned long long> >, WTF::HashTraits<IPC::MessageReceiver *> >::KeyValuePairTraits, WTF::HashTraits<std::__1::pair<IPC::StringReference, unsigned long long> > >=^{KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *>}IIII}}}B{ObjectIdentifier<WebCore::ProcessIdentifierType>=Q}^^?{atomic<unsigned int>=AI}{WeakPtrFactory<WebKit::WebProcessProxy>={RefPtr<WTF::WeakReference<WebKit::WebProcessProxy>, WTF::DumbPtrTraits<WTF::WeakReference<WebKit::WebProcessProxy> > >=^{WeakReference<WebKit::WebProcessProxy>}}}^^?{ResponsivenessTimer=^{Client}B{Timer<WebKit::ResponsivenessTimer>=^^?{Ref<WTF::RunLoop, WTF::DumbPtrTraits<WTF::RunLoop> >=^{RunLoop}}{RetainPtr<__CFRunLoopTimer *>=^v}^{ResponsivenessTimer}}}{BackgroundProcessResponsivenessTimer=^{WebProcessProxy}{Seconds=d}{Timer<WebKit::BackgroundProcessResponsivenessTimer>=^^?{Ref<WTF::RunLoop, WTF::DumbPtrTraits<WTF::RunLoop> >=^{RunLoop}}{RetainPtr<__CFRunLoopTimer *>=^v}^{BackgroundProcessResponsivenessTimer}}{Timer<WebKit::BackgroundProcessResponsivenessTimer>=^^?{Ref<WTF::RunLoop, WTF::DumbPtrTraits<WTF::RunLoop> >=^{RunLoop}}{RetainPtr<__CFRunLoopTimer *>=^v}^{BackgroundProcessResponsivenessTimer}}B}{RefPtr<WebKit::WebConnectionToWebProcess, WTF::DumbPtrTraits<WebKit::WebConnectionToWebProcess> >=^{WebConnectionToWebProcess}}{WeakOrStrongPtr<WebKit::WebProcessPool>=i{WeakPtr<WebKit::WebProcessPool>={RefPtr<WTF::WeakReference<WebKit::WebProcessPool>, WTF::DumbPtrTraits<WTF::WeakReference<WebKit::WebProcessPool> > >=^{WeakReference<WebKit::WebProcessPool>}}}{RefPtr<WebKit::WebProcessPool, WTF::DumbPtrTraits<WebKit::WebProcessPool> >=^{WebProcessPool}}}B{HashSet<WTF::String, WTF::StringHash, WTF::HashTraits<WTF::String> >={HashTable<WTF::String, WTF::String, WTF::IdentityExtractor, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String> >=^{String}IIII}}{HashMap<unsigned long long, WebKit::WebPageProxy *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebPageProxy *> >={HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::WebPageProxy *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::WebPageProxy *> >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::WebPageProxy *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebPageProxy *> >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> >=^{KeyValuePair<unsigned long long, WebKit::WebPageProxy *>}IIII}}{HashMap<unsigned long long, WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> > > >={HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> >=^{KeyValuePair<unsigned long long, WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> > >}IIII}}{HashSet<WebKit::ProvisionalPageProxy *, WTF::PtrHash<WebKit::ProvisionalPageProxy *>, WTF::HashTraits<WebKit::ProvisionalPageProxy *> >={HashTable<WebKit::ProvisionalPageProxy *, WebKit::ProvisionalPageProxy *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::ProvisionalPageProxy *>, WTF::HashTraits<WebKit::ProvisionalPageProxy *>, WTF::HashTraits<WebKit::ProvisionalPageProxy *> >=^^{ProvisionalPageProxy}IIII}}{HashMap<unsigned long long, WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> > > >={HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> >=^{KeyValuePair<unsigned long long, WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> > >}IIII}}{HashSet<WebKit::VisitedLinkStore *, WTF::PtrHash<WebKit::VisitedLinkStore *>, WTF::HashTraits<WebKit::VisitedLinkStore *> >={HashTable<WebKit::VisitedLinkStore *, WebKit::VisitedLinkStore *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::VisitedLinkStore *>, WTF::HashTraits<WebKit::VisitedLinkStore *>, WTF::HashTraits<WebKit::VisitedLinkStore *> >=^^{VisitedLinkStore}IIII}}{HashSet<WebKit::WebUserContentControllerProxy *, WTF::PtrHash<WebKit::WebUserContentControllerProxy *>, WTF::HashTraits<WebKit::WebUserContentControllerProxy *> >={HashTable<WebKit::WebUserContentControllerProxy *, WebKit::WebUserContentControllerProxy *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::WebUserContentControllerProxy *>, WTF::HashTraits<WebKit::WebUserContentControllerProxy *>, WTF::HashTraits<WebKit::WebUserContentControllerProxy *> >=^^{WebUserContentControllerProxy}IIII}}i{ProcessThrottler=^^?^{ProcessThrottlerClient}{unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion> >={__compressed_pair<WebKit::ProcessAssertion *, std::__1::default_delete<WebKit::ProcessAssertion> >=^{ProcessAssertion}}}{Timer<WebKit::ProcessThrottler>=^^?{Ref<WTF::RunLoop, WTF::DumbPtrTraits<WTF::RunLoop> >=^{RunLoop}}{RetainPtr<__CFRunLoopTimer *>=^v}^{ProcessThrottler}}{RefCounter<WebKit::ProcessThrottler::ForegroundActivityCounterType>={Function<void (WTF::RefCounterEvent)>={unique_ptr<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase> >={__compressed_pair<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase> >=^{CallableWrapperBase}}}}^{Count}}{RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>={Function<void (WTF::RefCounterEvent)>={unique_ptr<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase> >={__compressed_pair<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase> >=^{CallableWrapperBase}}}}^{Count}}iB}{RefPtr<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count> >=^{Count}}{RefPtr<WTF::RefCounter<WebKit::ForegroundWebProcessCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ForegroundWebProcessCounterType>::Count> >=^{Count}}{RefPtr<WTF::RefCounter<WebKit::BackgroundWebProcessCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::BackgroundWebProcessCounterType>::Count> >=^{Count}}{HashMap<WTF::String, unsigned long long, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned long long> >={HashTable<WTF::String, WTF::KeyValuePair<WTF::String, unsigned long long>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::String, unsigned long long> >, WTF::StringHash, WTF::HashMap<WTF::String, unsigned long long, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned long long> >::KeyValuePairTraits, WTF::HashTraits<WTF::String> >=^{KeyValuePair<WTF::String, unsigned long long>}IIII}}{Optional<WTF::String>=B(storage_t<WTF::String>=C{String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}})}Bi{Vector<WTF::CompletionHandler<void (bool)>, 0, WTF::CrashOnOverflow, 16>=^{CompletionHandler<void (bool)>}II}{RefCounter<WebKit::VisibleWebPageCounterType>={Function<void (WTF::RefCounterEvent)>={unique_ptr<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase, std::__1::default_delete<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase> >={__compressed_pair<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase *, std::__1::default_delete<WTF::Function<void (WTF::RefCounterEvent)>::CallableWrapperBase> >=^{CallableWrapperBase}}}}^{Count}}{Ref<WebKit::WebsiteDataStore, WTF::DumbPtrTraits<WebKit::WebsiteDataStore> >=^{WebsiteDataStore}}B{unique_ptr<WebKit::UserMediaCaptureManagerProxy, std::__1::default_delete<WebKit::UserMediaCaptureManagerProxy> >={__compressed_pair<WebKit::UserMediaCaptureManagerProxy *, std::__1::default_delete<WebKit::UserMediaCaptureManagerProxy> >=^{UserMediaCaptureManagerProxy}}}{HashSet<WebCore::MessagePortIdentifier, WTF::MessagePortIdentifierHash, WTF::HashTraits<WebCore::MessagePortIdentifier> >={HashTable<WebCore::MessagePortIdentifier, WebCore::MessagePortIdentifier, WTF::IdentityExtractor, WTF::MessagePortIdentifierHash, WTF::HashTraits<WebCore::MessagePortIdentifier>, WTF::HashTraits<WebCore::MessagePortIdentifier> >=^{MessagePortIdentifier}IIII}}{HashMap<unsigned long long, WTF::Function<void ()>, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::Function<void ()> > >={HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WTF::Function<void ()> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WTF::Function<void ()> > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WTF::Function<void ()>, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::Function<void ()> > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> >=^{KeyValuePair<unsigned long long, WTF::Function<void ()> >}IIII}}{HashMap<unsigned long long, WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)>, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)> > >={HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)> > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)>, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)> > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> >=^{KeyValuePair<unsigned long long, WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)> >}IIII}}IBB}16, name: _createDrawingAreaProxy:
+-     // Error parsing type: {unique_ptr<WebKit::DrawingAreaProxy, std::__1::default_delete<WebKit::DrawingAreaProxy> >={__compressed_pair<WebKit::DrawingAreaProxy *, std::__1::default_delete<WebKit::DrawingAreaProxy> >=^{DrawingAreaProxy}}}24@0:8^{WebProcessProxy=^^?^^?{Vector<std::__1::pair<std::__1::unique_ptr<IPC::Encoder, std::__1::default_delete<IPC::Encoder> >, WTF::OptionSet<IPC::SendOption> >, 0, WTF::CrashOnOverflow, 16>=^{pair<std::__1::unique_ptr<IPC::Encoder, std::__1::default_delete<IPC::Encoder> >, WTF::OptionSet<IPC::SendOption> >}II}{RefPtr<WebKit::ProcessLauncher, WTF::DumbPtrTraits<WebKit::ProcessLauncher> >=^{ProcessLauncher}}{RefPtr<IPC::Connection, WTF::DumbPtrTraits<IPC::Connection> >=^{Connection}}{MessageReceiverMap={HashMap<IPC::StringReference, IPC::MessageReceiver *, IPC::StringReference::Hash, WTF::HashTraits<IPC::StringReference>, WTF::HashTraits<IPC::MessageReceiver *> >={HashTable<IPC::StringReference, WTF::KeyValuePair<IPC::StringReference, IPC::MessageReceiver *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<IPC::StringReference, IPC::MessageReceiver *> >, IPC::StringReference::Hash, WTF::HashMap<IPC::StringReference, IPC::MessageReceiver *, IPC::StringReference::Hash, WTF::HashTraits<IPC::StringReference>, WTF::HashTraits<IPC::MessageReceiver *> >::KeyValuePairTraits, WTF::HashTraits<IPC::StringReference> >=^{KeyValuePair<IPC::StringReference, IPC::MessageReceiver *>}IIII}}{HashMap<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *, WTF::PairHash<IPC::StringReference, unsigned long long>, WTF::HashTraits<std::__1::pair<IPC::StringReference, unsigned long long> >, WTF::HashTraits<IPC::MessageReceiver *> >={HashTable<std::__1::pair<IPC::StringReference, unsigned long long>, WTF::KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *> >, WTF::PairHash<IPC::StringReference, unsigned long long>, WTF::HashMap<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *, WTF::PairHash<IPC::StringReference, unsigned long long>, WTF::HashTraits<std::__1::pair<IPC::StringReference, unsigned long long> >, WTF::HashTraits<IPC::MessageReceiver *> >::KeyValuePairTraits, WTF::HashTraits<std::__1::pair<IPC::StringReference, unsigned long long> > >=^{KeyValuePair<std::__1::pair<IPC::StringReference, unsigned long long>, IPC::MessageReceiver *>}IIII}}}B{ObjectIdentifier<WebCore::ProcessIdentifierType>=Q}^^?{atomic<unsigned int>=AI}{WeakPtrFactory<WebKit::WebProcessProxy>={RefPtr<WTF::WeakReference<WebKit::WebProcessProxy>, WTF::DumbPtrTraits<WTF::WeakReference<WebKit::WebProcessProxy> > >=^{WeakReference<WebKit::WebProcessProxy>}}}^^?{ResponsivenessTimer=^{Client}{Timer<WebKit::ResponsivenessTimer>=^^?{Ref<WTF::RunLoop, WTF::DumbPtrTraits<WTF::RunLoop> >=^{RunLoop}}{RetainPtr<__CFRunLoopTimer *>=^v}^{ResponsivenessTimer}}{MonotonicTime=d}BBB}{BackgroundProcessResponsivenessTimer=^{WebProcessProxy}{Seconds=d}{Timer<WebKit::BackgroundProcessResponsivenessTimer>=^^?{Ref<WTF::RunLoop, WTF::DumbPtrTraits<WTF::RunLoop> >=^{RunLoop}}{RetainPtr<__CFRunLoopTimer *>=^v}^{BackgroundProcessResponsivenessTimer}}{Timer<WebKit::BackgroundProcessResponsivenessTimer>=^^?{Ref<WTF::RunLoop, WTF::DumbPtrTraits<WTF::RunLoop> >=^{RunLoop}}{RetainPtr<__CFRunLoopTimer *>=^v}^{BackgroundProcessResponsivenessTimer}}B}{RefPtr<WebKit::WebConnectionToWebProcess, WTF::DumbPtrTraits<WebKit::WebConnectionToWebProcess> >=^{WebConnectionToWebProcess}}{WeakOrStrongPtr<WebKit::WebProcessPool>=i{WeakPtr<WebKit::WebProcessPool>={RefPtr<WTF::WeakReference<WebKit::WebProcessPool>, WTF::DumbPtrTraits<WTF::WeakReference<WebKit::WebProcessPool> > >=^{WeakReference<WebKit::WebProcessPool>}}}{RefPtr<WebKit::WebProcessPool, WTF::DumbPtrTraits<WebKit::WebProcessPool> >=^{WebProcessPool}}}B{HashSet<WTF::String, WTF::StringHash, WTF::HashTraits<WTF::String> >={HashTable<WTF::String, WTF::String, WTF::IdentityExtractor, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<WTF::String> >=^{String}IIII}}{HashMap<unsigned long long, WebKit::WebPageProxy *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebPageProxy *> >={HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WebKit::WebPageProxy *>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WebKit::WebPageProxy *> >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WebKit::WebPageProxy *, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WebKit::WebPageProxy *> >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> >=^{KeyValuePair<unsigned long long, WebKit::WebPageProxy *>}IIII}}{HashMap<unsigned long long, WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> > > >={HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> >=^{KeyValuePair<unsigned long long, WTF::RefPtr<WebKit::WebFrameProxy, WTF::DumbPtrTraits<WebKit::WebFrameProxy> > >}IIII}}{HashSet<WebKit::ProvisionalPageProxy *, WTF::PtrHash<WebKit::ProvisionalPageProxy *>, WTF::HashTraits<WebKit::ProvisionalPageProxy *> >={HashTable<WebKit::ProvisionalPageProxy *, WebKit::ProvisionalPageProxy *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::ProvisionalPageProxy *>, WTF::HashTraits<WebKit::ProvisionalPageProxy *>, WTF::HashTraits<WebKit::ProvisionalPageProxy *> >=^^{ProvisionalPageProxy}IIII}}{HashMap<unsigned long long, WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> > > >={HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> >=^{KeyValuePair<unsigned long long, WTF::RefPtr<API::UserInitiatedAction, WTF::DumbPtrTraits<API::UserInitiatedAction> > >}IIII}}{HashMap<WebKit::VisitedLinkStore *, WTF::HashSet<unsigned long long, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long> >, WTF::PtrHash<WebKit::VisitedLinkStore *>, WTF::HashTraits<WebKit::VisitedLinkStore *>, WTF::HashTraits<WTF::HashSet<unsigned long long, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long> > > >={HashTable<WebKit::VisitedLinkStore *, WTF::KeyValuePair<WebKit::VisitedLinkStore *, WTF::HashSet<unsigned long long, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WebKit::VisitedLinkStore *, WTF::HashSet<unsigned long long, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long> > > >, WTF::PtrHash<WebKit::VisitedLinkStore *>, WTF::HashMap<WebKit::VisitedLinkStore *, WTF::HashSet<unsigned long long, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long> >, WTF::PtrHash<WebKit::VisitedLinkStore *>, WTF::HashTraits<WebKit::VisitedLinkStore *>, WTF::HashTraits<WTF::HashSet<unsigned long long, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long> > > >::KeyValuePairTraits, WTF::HashTraits<WebKit::VisitedLinkStore *> >=^{KeyValuePair<WebKit::VisitedLinkStore *, WTF::HashSet<unsigned long long, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long> > >}IIII}}{HashSet<WebKit::WebUserContentControllerProxy *, WTF::PtrHash<WebKit::WebUserContentControllerProxy *>, WTF::HashTraits<WebKit::WebUserContentControllerProxy *> >={HashTable<WebKit::WebUserContentControllerProxy *, WebKit::WebUserContentControllerProxy *, WTF::IdentityExtractor, WTF::PtrHash<WebKit::WebUserContentControllerProxy *>, WTF::HashTraits<WebKit::WebUserContentControllerProxy *>, WTF::HashTraits<WebKit::WebUserContentControllerProxy *> >=^^{WebUserContentControllerProxy}IIII}}i{ProcessThrottler=^^?^{ProcessThrottlerClient}{unique_ptr<WebKit::ProcessAssertion, std::__1::default_delete<WebKit::ProcessAssertion> >={__compressed_pair<WebKit::ProcessAssertion *, std::__1::default_delete<WebKit::ProcessAssertion> >=^{ProcessAssertion}}}{Timer<WebKit::ProcessThrottler>=^^?{Ref<WTF::RunLoop, WTF::DumbPtrTraits<WTF::RunLoop> >=^{RunLoop}}{RetainPtr<__CFRunLoopTimer *>=^v}^{ProcessThrottler}}{RefCounter<WebKit::ProcessThrottler::ForegroundActivityCounterType>={Function<void (WTF::RefCounterEvent)>={unique_ptr<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent> > >=^{CallableWrapperBase<void, WTF::RefCounterEvent>}}}}^{Count}}{RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>={Function<void (WTF::RefCounterEvent)>={unique_ptr<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent> > >=^{CallableWrapperBase<void, WTF::RefCounterEvent>}}}}^{Count}}iBB}{RefPtr<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ProcessThrottler::BackgroundActivityCounterType>::Count> >=^{Count}}{RefPtr<WTF::RefCounter<WebKit::ForegroundWebProcessCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::ForegroundWebProcessCounterType>::Count> >=^{Count}}{RefPtr<WTF::RefCounter<WebKit::BackgroundWebProcessCounterType>::Count, WTF::DumbPtrTraits<WTF::RefCounter<WebKit::BackgroundWebProcessCounterType>::Count> >=^{Count}}B{unique_ptr<WebCore::DeferrableOneShotTimer, std::__1::default_delete<WebCore::DeferrableOneShotTimer> >={__compressed_pair<WebCore::DeferrableOneShotTimer *, std::__1::default_delete<WebCore::DeferrableOneShotTimer> >=^{DeferrableOneShotTimer}}}I{HashMap<WTF::String, unsigned long long, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned long long> >={HashTable<WTF::String, WTF::KeyValuePair<WTF::String, unsigned long long>, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<WTF::String, unsigned long long> >, WTF::StringHash, WTF::HashMap<WTF::String, unsigned long long, WTF::StringHash, WTF::HashTraits<WTF::String>, WTF::HashTraits<unsigned long long> >::KeyValuePairTraits, WTF::HashTraits<WTF::String> >=^{KeyValuePair<WTF::String, unsigned long long>}IIII}}{Optional<WebCore::RegistrableDomain>=B(storage_t<WebCore::RegistrableDomain>=C{RegistrableDomain={String={RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl> >=^{StringImpl}}}})}Bi{Vector<WTF::CompletionHandler<void (bool)>, 0, WTF::CrashOnOverflow, 16>=^{CompletionHandler<void (bool)>}II}{RefCounter<WebKit::VisibleWebPageCounterType>={Function<void (WTF::RefCounterEvent)>={unique_ptr<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent>, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent> > >={__compressed_pair<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent> *, std::__1::default_delete<WTF::Detail::CallableWrapperBase<void, WTF::RefCounterEvent> > >=^{CallableWrapperBase<void, WTF::RefCounterEvent>}}}}^{Count}}{RefPtr<WebKit::WebsiteDataStore, WTF::DumbPtrTraits<WebKit::WebsiteDataStore> >=^{WebsiteDataStore}}B{unique_ptr<WebKit::UserMediaCaptureManagerProxy, std::__1::default_delete<WebKit::UserMediaCaptureManagerProxy> >={__compressed_pair<WebKit::UserMediaCaptureManagerProxy *, std::__1::default_delete<WebKit::UserMediaCaptureManagerProxy> >=^{UserMediaCaptureManagerProxy}}}{HashSet<WebCore::MessagePortIdentifier, WTF::MessagePortIdentifierHash, WTF::HashTraits<WebCore::MessagePortIdentifier> >={HashTable<WebCore::MessagePortIdentifier, WebCore::MessagePortIdentifier, WTF::IdentityExtractor, WTF::MessagePortIdentifierHash, WTF::HashTraits<WebCore::MessagePortIdentifier>, WTF::HashTraits<WebCore::MessagePortIdentifier> >=^{MessagePortIdentifier}IIII}}{HashMap<unsigned long long, WTF::Function<void ()>, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::Function<void ()> > >={HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WTF::Function<void ()> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WTF::Function<void ()> > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WTF::Function<void ()>, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::Function<void ()> > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> >=^{KeyValuePair<unsigned long long, WTF::Function<void ()> >}IIII}}{HashMap<unsigned long long, WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)>, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)> > >={HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)> > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)>, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)> > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> >=^{KeyValuePair<unsigned long long, WTF::CompletionHandler<void (WebCore::MessagePortChannelProvider::HasActivity)> >}IIII}}IBBBI}16, name: _createDrawingAreaProxy:
 - (void)_webViewDestroyed;
 - (void)_accessibilityRegisterUIProcessTokens;
 - (void)_setAccessibilityWebProcessToken:(id)arg1;
@@ -149,7 +165,7 @@ __attribute__((visibility("hidden")))
 - (void)willStartZoomOrScroll;
 - (void)didInterruptScrolling;
 - (void)didFinishScrolling;
-- (void)didUpdateVisibleRect:(struct CGRect)arg1 unobscuredRect:(struct CGRect)arg2 unobscuredRectInScrollViewCoordinates:(struct CGRect)arg3 obscuredInsets:(struct UIEdgeInsets)arg4 unobscuredSafeAreaInsets:(struct UIEdgeInsets)arg5 inputViewBounds:(struct CGRect)arg6 scale:(double)arg7 minimumScale:(double)arg8 inStableState:(_Bool)arg9 isChangingObscuredInsetsInteractively:(_Bool)arg10 enclosedInScrollableAncestorView:(_Bool)arg11;
+- (void)didUpdateVisibleRect:(struct CGRect)arg1 unobscuredRect:(struct CGRect)arg2 contentInsets:(struct UIEdgeInsets)arg3 unobscuredRectInScrollViewCoordinates:(struct CGRect)arg4 obscuredInsets:(struct UIEdgeInsets)arg5 unobscuredSafeAreaInsets:(struct UIEdgeInsets)arg6 inputViewBounds:(struct CGRect)arg7 scale:(double)arg8 minimumScale:(double)arg9 inStableState:(_Bool)arg10 isChangingObscuredInsetsInteractively:(_Bool)arg11 enclosedInScrollableAncestorView:(_Bool)arg12;
 - (struct CGRect)_computeUnobscuredContentRectRespectingInputViewBounds:(struct CGRect)arg1 inputViewBounds:(struct CGRect)arg2;
 - (void)_didExitStableState;
 - (void)updateFixedClippingView:(struct FloatRect)arg1;
@@ -164,11 +180,16 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct WebPageProxy *page;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 processPool:(struct WebProcessPool *)arg2 configuration:(Ref_1d7364d1 *)arg3 webView:(id)arg4;
+- (void)_removeVisibilityPropagationView;
+- (void)_setupVisibilityPropagationView;
 - (id)_commonInitializationWithProcessPool:(struct WebProcessPool *)arg1 configuration:(Ref_1d7364d1 *)arg2;
 @property(readonly, nonatomic) struct CGPDFDocument *_wk_printedDocument;
 - (unsigned long long)_wk_pageCountForPrintFormatter:(id)arg1;
 - (void)dropInteraction:(id)arg1 sessionDidEnd:(id)arg2;
+- (void)_dropInteraction:(id)arg1 delayedPreviewProviderForDroppingItem:(id)arg2 previewProvider:(CDUnknownBlockType)arg3;
 - (id)dropInteraction:(id)arg1 previewForDroppingItem:(id)arg2 withDefault:(id)arg3;
+- (void)dropInteraction:(id)arg1 concludeDrop:(id)arg2;
+- (void)dropInteraction:(id)arg1 item:(id)arg2 willAnimateDropWithAnimator:(id)arg3;
 - (void)dropInteraction:(id)arg1 performDrop:(id)arg2;
 - (void)dropInteraction:(id)arg1 sessionDidExit:(id)arg2;
 - (id)dropInteraction:(id)arg1 sessionDidUpdate:(id)arg2;
@@ -188,23 +209,30 @@ __attribute__((visibility("hidden")))
 - (void)_dragInteraction:(id)arg1 itemsForAddingToSession:(id)arg2 withTouchAtPoint:(struct CGPoint)arg3 completion:(CDUnknownBlockType)arg4;
 - (long long)_dragInteraction:(id)arg1 dataOwnerForSession:(id)arg2;
 - (_Bool)_dragInteraction:(id)arg1 shouldDelayCompetingGestureRecognizer:(id)arg2;
+- (void)selectPositionAtPoint:(struct CGPoint)arg1 withContextRequest:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)requestDocumentContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)adjustSelectionWithDelta:(struct _NSRange)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_autofillContext;
+- (id)textEffectsWindow;
 - (id)_itemsForBeginningOrAddingToSessionWithRegistrationList:(id)arg1 stagedDragSource:(const struct DragSourceState *)arg2;
 - (void)_restoreCalloutBarIfNeeded;
 - (id)currentDragOrDropSession;
+- (int)_allowedDragSourceActions;
 - (unsigned long long)_dragDestinationActionForDropSession:(id)arg1;
 - (void)_prepareToDragPromisedAttachment:(const struct PromisedAttachmentInfo *)arg1;
-- (void)_didChangeDataInteractionCaretRect:(struct CGRect)arg1 currentRect:(struct CGRect)arg2;
+- (void)_didChangeDragCaretRect:(struct CGRect)arg1 currentRect:(struct CGRect)arg2;
 - (void)_didPerformDragOperation:(_Bool)arg1;
-- (void)_didConcludeEditDataInteraction:(Optional_bb099823)arg1;
+- (void)_deliverDelayedDropPreviewIfPossible:(Optional_bb099823)arg1;
+- (void)_didReceiveEditDragSnapshot:(Optional_bb099823)arg1;
+- (void)_willReceiveEditDragSnapshot;
 - (void)cleanUpDragSourceSessionState;
 - (struct DragData)dragDataForDropSession:(id)arg1 dragDestinationAction:(unsigned long long)arg2;
 - (void)computeClientAndGlobalPointsForDropSession:(id)arg1 outClientPoint:(struct CGPoint *)arg2 outGlobalPoint:(struct CGPoint *)arg3;
-- (void)_didHandleStartDataInteractionRequest:(_Bool)arg1;
+- (void)_didHandleDragStartRequest:(_Bool)arg1;
 - (void)_didHandleAdditionalDragItemsRequest:(_Bool)arg1;
 - (void)_startDrag:(RetainPtr_c27edd19)arg1 item:(const struct DragItem *)arg2;
-- (void)teardownDataInteractionDelegates;
-- (void)setupDataInteractionDelegates;
+- (void)teardownDragAndDropInteractions;
+- (void)setupDragAndDropInteractions;
 - (id)webViewUIDelegate;
 - (double)dragLiftDelay;
 - (void)_didChangeDragInteractionPolicy;
@@ -221,14 +249,14 @@ __attribute__((visibility("hidden")))
 - (void)actionSheetAssistant:(id)arg1 openElementAtLocation:(struct CGPoint)arg2;
 - (void)actionSheetAssistant:(id)arg1 performAction:(int)arg2;
 - (void)updatePositionInformationForActionSheetAssistant:(id)arg1;
-- (Optional_4d2ea4a9)positionInformationForActionSheetAssistant:(id)arg1;
+- (Optional_ae404958)positionInformationForActionSheetAssistant:(id)arg1;
 - (_Bool)isAnyTouchOverActiveArea:(id)arg1;
 - (_Bool)gestureRecognizer:(id)arg1 shouldIgnoreWebTouchWithEvent:(id)arg2;
 - (_Bool)shouldIgnoreWebTouch;
 - (void)_preserveFocusWithToken:(id)arg1 destructively:(_Bool)arg2;
 - (_Bool)_restoreFocusWithToken:(id)arg1;
 - (void)shareSheetDidDismiss:(id)arg1;
-- (void)_showShareSheet:(const struct ShareDataWithParsedURL *)arg1 completionHandler:(CompletionHandler_dde7f840 *)arg2;
+- (void)_showShareSheet:(const struct ShareDataWithParsedURL *)arg1 inRect:(Optional_93f3c085)arg2 completionHandler:(CompletionHandler_e3f3fa93 *)arg3;
 - (void)fileUploadPanelDidDismiss:(id)arg1;
 - (void)_showRunOpenPanel:(struct OpenPanelParameters *)arg1 resultListener:(struct WebOpenPanelResultListenerProxy *)arg2;
 - (void)_showPlaybackTargetPicker:(_Bool)arg1 fromRect:(const struct IntRect *)arg2 routeSharingPolicy:(unsigned char)arg3 routingContextUID:(id)arg4;
@@ -236,24 +264,31 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSArray *dataListTextSuggestions;
 @property(retain, nonatomic) UIView<WKFormControl> *dataListTextSuggestionsInputView;
 - (void)_stopSuppressingSelectionAssistantForReason:(unsigned char)arg1;
-- (void)_beginSuppressingSelectionAssistantForReason:(unsigned char)arg1;
+- (void)_startSuppressingSelectionAssistantForReason:(unsigned char)arg1;
 - (_Bool)_shouldSuppressSelectionCommands;
+- (_Bool)hasHiddenContentEditable;
+- (_Bool)shouldAllowHidingSelectionCommands;
 - (void)_updateChangedSelection:(_Bool)arg1;
 - (void)_updateChangedSelection;
 - (void)selectWordForReplacement;
 - (void)_selectionChanged;
+- (void)_updateSelectionAssistantSuppressionState;
 - (void)_wheelChangedWithEvent:(id)arg1;
 - (void)reloadContextViewForPresentedListViewController;
-- (void)updateCurrentFocusedElementInformation:(Function_f7a043c0 *)arg1;
+- (void)updateCurrentFocusedElementInformation:(Function_da50b38b *)arg1;
 - (void)_updateInitialWritingDirectionIfNecessary;
 - (void)_didReceiveEditorStateUpdateAfterFocus;
+- (void)_requestDOMPasteAccessWithElementRect:(const struct IntRect *)arg1 originIdentifier:(const struct String *)arg2 completionHandler:(CompletionHandler_2aa2525f *)arg3;
+- (void)hideGlobalMenuController;
+- (void)showGlobalMenuControllerInRect:(struct CGRect)arg1;
+- (void)_didUpdateInputMode:(unsigned char)arg1;
+- (void)_hardwareKeyboardAvailabilityChanged;
 - (void)_elementDidBlur;
-- (void)_elementDidFocus:(const struct FocusedElementInformation *)arg1 userIsInteracting:(_Bool)arg2 blurPreviousNode:(_Bool)arg3 changingActivityState:(_Bool)arg4 userObject:(id)arg5;
-@property(readonly, nonatomic) UIWebFormAccessory *formAccessoryView;
+- (void)_elementDidFocus:(const struct FocusedElementInformation *)arg1 userIsInteracting:(_Bool)arg2 blurPreviousNode:(_Bool)arg3 activityStateChanges:(OptionSet_05ce0fa5)arg4 userObject:(id)arg5;
 - (Vector_116a0919 *)focusedSelectElementOptions;
 @property(readonly, nonatomic) const struct FocusedElementInformation *focusedElementInformation;
-- (void)_stopAssistingKeyboard;
-- (void)_startAssistingKeyboard;
+- (void)_hideKeyboard;
+- (void)_showKeyboard;
 - (void)takeTraitsFrom:(id)arg1;
 - (id)rangeEnclosingPosition:(id)arg1 withGranularity:(long long)arg2 inDirection:(long long)arg3;
 - (_Bool)isPosition:(id)arg1 withinTextUnit:(long long)arg2 inDirection:(long long)arg3;
@@ -288,19 +323,27 @@ __attribute__((visibility("hidden")))
 - (id)_moveLeft:(_Bool)arg1 withHistory:(id)arg2;
 - (id)_moveDown:(_Bool)arg1 withHistory:(id)arg2;
 - (id)_moveUp:(_Bool)arg1 withHistory:(id)arg2;
+- (void)_transpose;
+- (void)_deleteToEndOfParagraph;
 - (void)_deleteForwardAndNotify:(_Bool)arg1;
 - (void)_deleteToEndOfLine;
 - (void)_deleteToStartOfLine;
 - (void)_deleteByWord;
 - (void)executeEditCommandWithCallback:(id)arg1;
+- (void)keyboardScrollViewAnimatorDidFinishScrolling:(id)arg1;
+- (void)keyboardScrollViewAnimatorWillScroll:(id)arg1;
+- (double)keyboardScrollViewAnimator:(id)arg1 distanceForIncrement:(unsigned char)arg2 inDirection:(unsigned char)arg3;
+- (_Bool)isScrollableForKeyboardScrollViewAnimator:(id)arg1;
+- (void)dismissFilePicker;
 - (_Bool)_interpretKeyEvent:(id)arg1 isCharEvent:(_Bool)arg2;
-- (Optional_e2240183)_scrollOffsetForEvent:(id)arg1;
 - (void)_didHandleKeyEvent:(id)arg1 eventWasHandled:(_Bool)arg2;
 - (void)handleKeyWebEvent:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)handleKeyWebEvent:(id)arg1;
-- (void)handleKeyEvent:(id)arg1;
+- (void)generateSyntheticEditingCommand:(unsigned char)arg1;
 - (void)_handleKeyUIEvent:(id)arg1;
 - (_Bool)requiresKeyEvents;
+- (_Bool)shouldSuppressUpdateCandidateView;
+- (void)modifierFlagsDidChangeFrom:(long long)arg1 to:(long long)arg2;
 - (struct CGRect)rectContainingCaretSelection;
 - (void)replaceRangeWithTextWithoutClosingTyping:(id)arg1 replacementText:(id)arg2;
 - (void)setSelectedDOMRange:(id)arg1 affinityDownstream:(_Bool)arg2;
@@ -342,22 +385,26 @@ __attribute__((visibility("hidden")))
 - (void)replaceRange:(id)arg1 withText:(id)arg2;
 - (id)textInRange:(id)arg1;
 - (void)insertTextSuggestion:(id)arg1;
+- (void)_didChangeWebViewEditability;
+- (void)willFinishIgnoringCalloutBarFadeAfterPerformingAction;
 - (void)endSelectionChange;
 - (void)beginSelectionChange;
 - (_Bool)_allowAnimatedUpdateSelectionRectViews;
 - (void)_updateAccessory;
-- (void)accessoryClear;
+- (void)accessoryOpen;
+@property(readonly, nonatomic) UIWebFormAccessory *formAccessoryView;
 - (void)accessoryAutoFill;
+- (void)accessoryTab:(_Bool)arg1;
+- (void)accessoryDone;
+- (void)accessoryClear;
 - (void)_setDoubleTapGesturesEnabled:(_Bool)arg1;
 - (struct Color)_tapHighlightColorForFastClick:(_Bool)arg1;
 - (void)_becomeFirstResponderWithSelectionMovingForward:(_Bool)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)accessoryTab:(_Bool)arg1;
 - (void)_previousAccessoryTabForWebView:(id)arg1;
 - (void)_nextAccessoryTabForWebView:(id)arg1;
-- (void)_arrowKeyForWebView:(id)arg1;
-- (id)keyCommands;
-- (void)accessoryDone;
+- (void)_handleAutocorrectionContext:(const struct WebAutocorrectionContext *)arg1;
 - (void)requestAutocorrectionContextWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_invokePendingAutocorrectionContextHandler:(id)arg1;
 - (void)applyAutocorrection:(id)arg1 toString:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)requestDictationContext:(CDUnknownBlockType)arg1;
 - (void)replaceDictatedText:(id)arg1 withText:(id)arg2;
@@ -373,6 +420,7 @@ __attribute__((visibility("hidden")))
 - (void)moveSelectionAtBoundary:(long long)arg1 inDirection:(long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)selectPositionAtBoundary:(long long)arg1 inDirection:(long long)arg2 fromPoint:(struct CGPoint)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)selectPositionAtPoint:(struct CGPoint)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)requestRectsToEvadeForSelectionCommandsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)requestAutocorrectionRectsForString:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) const struct WKAutoCorrectionData *autocorrectionData;
 - (void)moveByOffset:(long long)arg1;
@@ -381,6 +429,9 @@ __attribute__((visibility("hidden")))
 - (void)changeSelectionWithGestureAt:(struct CGPoint)arg1 withGesture:(long long)arg2 withState:(long long)arg3 withFlags:(long long)arg4;
 - (void)changeSelectionWithGestureAt:(struct CGPoint)arg1 withGesture:(long long)arg2 withState:(long long)arg3;
 - (_Bool)_isInteractingWithFocusedElement;
+- (void)_didPerformAction:(SEL)arg1 sender:(id)arg2;
+- (void)_willPerformAction:(SEL)arg1 sender:(id)arg2;
+- (_Bool)_handleDOMPasteRequestWithResult:(unsigned char)arg1;
 - (void)_accessibilityClearSelection;
 - (void)_accessibilityStoreSelection;
 - (void)_accessibilityRetrieveRectsAtSelectionOffset:(long long)arg1 withText:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -400,7 +451,8 @@ __attribute__((visibility("hidden")))
 - (void)cutForWebView:(id)arg1;
 - (void)copyForWebView:(id)arg1;
 - (void)_keyboardDidRequestDismissal:(id)arg1;
-- (void)_resetShowingTextStyle:(id)arg1;
+- (void)_didHideMenu:(id)arg1;
+- (void)_willHideMenu:(id)arg1;
 - (id)targetForActionForWebView:(SEL)arg1 withSender:(id)arg2;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (_Bool)canPerformActionForWebView:(SEL)arg1 withSender:(id)arg2;
@@ -449,6 +501,8 @@ __attribute__((visibility("hidden")))
 - (void)selectWordBackward;
 - (void)replaceText:(id)arg1 withText:(id)arg2;
 - (_Bool)isReplaceAllowed;
+- (void)makeTextWritingDirectionRightToLeftForWebView:(id)arg1;
+- (void)makeTextWritingDirectionLeftToRightForWebView:(id)arg1;
 - (void)makeTextWritingDirectionNaturalForWebView:(id)arg1;
 - (id)selectedText;
 - (void)_addShortcutForWebView:(id)arg1;
@@ -470,6 +524,8 @@ __attribute__((visibility("hidden")))
 - (void)_alignLeft:(id)arg1;
 - (void)_alignJustified:(id)arg1;
 - (void)_alignCenter:(id)arg1;
+- (void)makeTextWritingDirectionRightToLeft:(id)arg1;
+- (void)makeTextWritingDirectionLeftToRight:(id)arg1;
 - (void)makeTextWritingDirectionNatural:(id)arg1;
 - (void)pasteAndMatchStyle:(id)arg1;
 - (void)decreaseSize:(id)arg1;
@@ -491,11 +547,9 @@ __attribute__((visibility("hidden")))
 - (void)_promptForReplace:(id)arg1;
 - (void)_lookup:(id)arg1;
 - (void)_define:(id)arg1;
-- (void)_arrowKey:(id)arg1;
 - (void)_addShortcut:(id)arg1;
 - (id)supportedPasteboardTypesForCurrentSelection;
 - (id)inputAccessoryView;
-- (void)_ensureFormAccessoryView;
 @property(readonly, nonatomic) UITextInputAssistantItem *inputAssistantItemForWebView;
 - (id)inputAssistantItem;
 - (_Bool)requiresAccessoryView;
@@ -504,18 +558,21 @@ __attribute__((visibility("hidden")))
 - (void)_willStartScrollingOrZooming;
 - (void)_positionInformationDidChange:(const struct InteractionInformationAtPosition *)arg1;
 - (void)clearSelection;
+- (void)pasteWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setUpTextSelectionAssistant;
-- (void)_attemptClickAtLocation:(struct CGPoint)arg1;
+- (void)_attemptClickAtLocation:(struct CGPoint)arg1 modifierFlags:(long long)arg2;
 - (void)_twoFingerDoubleTapRecognized:(id)arg1;
+- (void)_doubleTapRecognizedForDoubleClick:(id)arg1;
 - (void)_nonBlockingDoubleTapRecognized:(id)arg1;
 - (void)_resetIsDoubleTapPending;
 - (void)_doubleTapRecognized:(id)arg1;
-- (void)_singleTapCommited:(id)arg1;
+- (void)_singleTapRecognized:(id)arg1;
 - (void)_didCompleteSyntheticClick;
 - (void)_didNotHandleTapAsClick:(const struct IntPoint *)arg1;
 - (void)_commitPotentialTapFailed;
+- (void)_doubleTapDidFail:(id)arg1;
 - (void)_singleTapDidReset:(id)arg1;
-- (void)_singleTapRecognized:(id)arg1;
+- (void)_singleTapIdentified:(id)arg1;
 - (void)_endPotentialTapAndEnableDoubleTapGesturesIfNecessary;
 - (void)_longPressRecognized:(id)arg1;
 - (void)_stylusSingleTapRecognized:(id)arg1;
@@ -555,10 +612,15 @@ __attribute__((visibility("hidden")))
 - (void)_zoomToRevealFocusedElement;
 - (_Bool)_requiresKeyboardResetOnReload;
 - (_Bool)_requiresKeyboardWhenFirstResponder;
+- (_Bool)_disableAutomaticKeyboardUI;
+- (_Bool)_shouldShowAutomaticKeyboardUIIgnoringInputMode;
+- (_Bool)shouldShowAutomaticKeyboardUI;
 - (void)_scrollingNodeScrollingDidEnd;
 - (void)_scrollingNodeScrollingWillBegin;
 - (void)_didScroll;
+- (void)_cancelTouchEventGestureRecognizer;
 - (void)_cancelLongPressGestureRecognizer;
+- (void)_handleSmartMagnificationInformationForPotentialTap:(unsigned long long)arg1 renderRect:(const struct FloatRect *)arg2 fitEntireRect:(_Bool)arg3 viewportMinimumScale:(double)arg4 viewportMaximumScale:(double)arg5;
 - (void)_disableDoubleTapGesturesDuringTapIfNecessary:(unsigned long long)arg1;
 - (_Bool)_mayDisableDoubleTapGesturesDuringSingleTap;
 - (void)_didGetTapHighlightForRequest:(unsigned long long)arg1 color:(const struct Color *)arg2 quads:(const Vector_c1077595 *)arg3 topLeftRadius:(const struct IntSize *)arg4 topRightRadius:(const struct IntSize *)arg5 bottomLeftRadius:(const struct IntSize *)arg6 bottomRightRadius:(const struct IntSize *)arg7 nodeHasBuiltInClickHandling:(_Bool)arg8;
@@ -566,13 +628,21 @@ __attribute__((visibility("hidden")))
 - (void)_updateTapHighlight;
 - (void)_webTouchEvent:(const struct NativeWebTouchEvent *)arg1 preventsNativeGestures:(_Bool)arg2;
 - (void)_inspectorNodeSearchRecognized:(id)arg1;
+- (void)_resetPanningPreventionFlags;
+- (void)_handleTouchActionsForTouchEvent:(const struct NativeWebTouchEvent *)arg1;
 - (void)_webTouchEventsRecognized:(id)arg1;
+- (Optional_6686b3f7)activeTouchIdentifierForGestureRecognizer:(id)arg1;
+- (void)cancelPointersForGestureRecognizer:(id)arg1;
 - (_Bool)resignFirstResponderForWebView;
+- (void)endEditingAndUpdateFocusAppearanceWithReason:(long long)arg1;
 - (_Bool)resignFirstResponder;
 - (_Bool)becomeFirstResponderForWebView;
 - (_Bool)becomeFirstResponder;
 - (_Bool)canBecomeFirstResponderForWebView;
 - (_Bool)canBecomeFirstResponder;
+- (void)_resetInputViewDeferral;
+- (void)_scheduleResetInputViewDeferralAfterBecomingFirstResponder;
+- (void)_cancelPreviousResetInputViewDeferralRequest;
 - (void)_endEditing;
 - (_Bool)setIsEditable:(_Bool)arg1;
 @property(readonly, nonatomic) _Bool isEditable;
@@ -598,6 +668,8 @@ __attribute__((visibility("hidden")))
 - (void)_createAndConfigureLongPressGestureRecognizer;
 - (void)_createAndConfigureDoubleTapGestureRecognizer;
 - (id)_formInputSession;
+@property(readonly, nonatomic) _Bool preventsPanningInYAxis;
+@property(readonly, nonatomic) _Bool preventsPanningInXAxis;
 - (id)_contentsOfUserInterfaceItem:(id)arg1;
 - (void)setTimePickerValueToHour:(long long)arg1 minute:(long long)arg2;
 @property(readonly, nonatomic) NSString *formInputLabel;
@@ -607,19 +679,19 @@ __attribute__((visibility("hidden")))
 - (void)_simulateLongPressActionAtLocation:(struct CGPoint)arg1;
 - (void)_simulateTextEntered:(id)arg1;
 @property(readonly, nonatomic) WKFormInputControl *formInputControl;
-- (void)_previewItemControllerDidCancelPreview:(id)arg1;
-- (id)_presentationRectsForPreviewItemController:(id)arg1;
-- (id)_presentationSnapshotForPreviewItemController:(id)arg1;
-- (void)_previewItemController:(id)arg1 didDismissPreview:(id)arg2 committing:(_Bool)arg3;
-- (void)_interactionStoppedFromPreviewItemController:(id)arg1;
-- (void)_interactionStartedFromPreviewItemController:(id)arg1;
-- (void)_previewItemController:(id)arg1 commitPreview:(id)arg2;
-- (id)_presentedViewControllerForPreviewItemController:(id)arg1;
-- (struct CGRect)_presentationRectForPreviewItemController:(id)arg1;
-- (id)_dataForPreviewItemController:(id)arg1 atPosition:(struct CGPoint)arg2 type:(long long *)arg3;
-- (_Bool)_interactionShouldBeginFromPreviewItemController:(id)arg1 forPosition:(struct CGPoint)arg2;
+- (void)_doAfterReceivingEditDragSnapshotForTesting:(CDUnknownBlockType)arg1;
+- (void)contextMenuInteractionDidEnd:(id)arg1;
+- (void)contextMenuInteractionWillPresent:(id)arg1;
+- (id)targetedPreviewForDismissingContextMenuInteraction:(id)arg1;
+- (void)contextMenuInteraction:(id)arg1 commitPreview:(id)arg2;
+- (void)contextMenuInteraction:(id)arg1 commitCompactLinkPreviewAtLocation:(struct CGPoint)arg2;
+- (id)contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3;
+- (id)_contextMenuInteraction:(id)arg1 actionsForMenuAtLocation:(struct CGPoint)arg2 withSuggestedActions:(id)arg3 presentingWithStyle:(long long)arg4;
+- (id)contextMenuInteraction:(id)arg1 previewForHighlightingAtLocation:(struct CGPoint)arg2;
+- (_Bool)contextMenuInteractionShouldBegin:(id)arg1;
 - (void)_unregisterPreview;
 - (void)_registerPreview;
+@property(readonly, nonatomic) _Bool shouldUsePreviewForLongPress;
 
 // Remaining properties
 @property(copy, nonatomic) NSIndexSet *PINEntrySeparatorIndexes;
@@ -645,10 +717,12 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) _Bool enablesReturnKeyAutomatically;
 @property(nonatomic) _Bool enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) _Bool forceDefaultDictationInfo;
 @property(nonatomic) long long forceDictationKeyboardType;
 @property(nonatomic) _Bool forceDisableDictation;
 @property(nonatomic) _Bool forceEnableDictation;
+@property(nonatomic) _Bool forceFloatingKeyboard;
 @property(nonatomic) _Bool hasDefaultContents;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) _Bool hidePrediction;
@@ -670,6 +744,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long selectionAffinity;
 @property(retain, nonatomic) UIImage *selectionDragDotImage;
 @property(nonatomic) int shortcutConversionType;
+@property(nonatomic) _Bool showDictationButton;
 @property(nonatomic) long long smartDashesType;
 @property(nonatomic) long long smartInsertDeleteType;
 @property(nonatomic) long long smartQuotesType;
@@ -686,6 +761,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) struct __CFCharacterSet *textTrimmingSet;
 @property(retain, nonatomic) UIColor *underlineColorForSpelling;
 @property(retain, nonatomic) UIColor *underlineColorForTextAlternatives;
+@property(nonatomic) _Bool useAutomaticEndpointing;
 @property(nonatomic) _Bool useInterfaceLanguageForLocalization;
 @property(nonatomic) struct _NSRange validTextRange;
 

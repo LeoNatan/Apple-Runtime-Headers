@@ -8,6 +8,7 @@
 
 @class EDCollection, EDColorsCollection, EDContentFormatsCollection, EDFontsCollection, EDLinksCollection, EDStylesCollection, EDTableStylesCollection;
 
+__attribute__((visibility("hidden")))
 @interface EDResources : NSObject
 {
     EDCollection *mStrings;
@@ -26,6 +27,7 @@
     EDTableStylesCollection *mTableStyles;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 - (id)tableStyles;
 - (id)differentialStyles;
@@ -41,7 +43,6 @@
 - (id)fonts;
 - (id)contentFormats;
 - (id)strings;
-- (void)dealloc;
 - (id)initWithStringOptimization:(_Bool)arg1;
 - (void)setThemes:(id)arg1;
 - (void)setColors:(id)arg1;

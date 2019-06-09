@@ -8,5 +8,6 @@
 
 @interface UIWindow (Isolation)
 - (id)sbui_effectiveWindowForIsolation;
+- (id)sb_coronaAnimationController;
 @end
 

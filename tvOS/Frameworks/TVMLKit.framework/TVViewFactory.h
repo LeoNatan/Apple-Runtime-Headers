@@ -10,7 +10,11 @@
 {
 }
 
-+ (id)imageViewWithElement:(id)arg1 existingView:(id)arg2 size:(struct CGSize)arg3 scaleMode:(long long)arg4;
++ (id)imageViewWithDescription:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
++ (id)imageStackViewWithDescription:(id)arg1 layout:(id)arg2 existingView:(id)arg3;
++ (struct CGSize)decorateImageProxy:(id)arg1 forLayout:(id)arg2;
++ (id)imageProxyWithURL:(id)arg1;
++ (id)imageURLWithDescription:(id)arg1;
 
 @end
 

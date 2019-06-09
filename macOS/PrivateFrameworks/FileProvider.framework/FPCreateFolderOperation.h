@@ -20,7 +20,7 @@
 - (void).cxx_destruct;
 - (void)presendNotifications;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (void)mainWithExtensionProxy:(id)arg1;
+- (void)actionMain;
 - (id)initWithParentItem:(id)arg1 folderName:(id)arg2;
 
 @end

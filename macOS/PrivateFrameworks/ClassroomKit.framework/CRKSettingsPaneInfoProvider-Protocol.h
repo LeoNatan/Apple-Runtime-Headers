@@ -6,10 +6,11 @@
 
 #import <ClassroomKit/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary;
+@class NSArray, NSDictionary, NSSet;
 
 @protocol CRKSettingsPaneInfoProvider <NSObject>
 @property(readonly, nonatomic) NSDictionary *observingInstructorIdentifiersByCourseIdentifiers;
+@property(readonly, copy, nonatomic) NSSet *acceptedInvitationIdentifiers;
 @property(readonly, copy, nonatomic) NSArray *courseInvitations;
 @property(readonly, copy, nonatomic) NSArray *courses;
 @end

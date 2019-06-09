@@ -9,8 +9,8 @@
 #import <CoreRecognition/AVCaptureVideoDataOutputSampleBufferDelegate-Protocol.h>
 #import <CoreRecognition/CAAnimationDelegate-Protocol.h>
 
-@class AVCaptureDevice, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, BoxLayer, CALayer, ErrorLayer, NSDate, NSDictionary, NSObject, NSString, NSTimer;
-@protocol CALayerDelegate><CRCodeRedeemerLayerDelegate><CRCodeRedeemerLayerDelegatePrivate, CRCodeRedeemerLayerDebuggingDelegate, OS_dispatch_queue;
+@class AVCaptureDevice, AVCaptureSession, AVCaptureVideoDataOutput, AVCaptureVideoPreviewLayer, BoxLayer, CALayer, ErrorLayer, NSDate, NSDictionary, NSString, NSTimer;
+@protocol CALayerDelegate><CRCodeRedeemerLayerDelegate><CRCodeRedeemerLayerDelegatePrivate, CRCodeRedeemerLayerDebuggingDelegate;
 
 @interface _CRCodeRedeemerLayer : CRCodeRedeemerLayer <AVCaptureVideoDataOutputSampleBufferDelegate, CAAnimationDelegate>
 {
@@ -58,7 +58,6 @@
     NSDictionary *_lastRectangleInfos;
     BOOL _foundBoundingBox;
     id <CALayerDelegate><CRCodeRedeemerLayerDelegate><CRCodeRedeemerLayerDelegatePrivate> _delegate;
-    NSObject<OS_dispatch_queue> *_videoQueue;
     BOOL _videoQueueSuspended;
 }
 
@@ -67,7 +66,6 @@
 + (id)defaultSupportedDevice;
 + (void)loadFonts;
 @property BOOL videoQueueSuspended; // @synthesize videoQueueSuspended=_videoQueueSuspended;
-@property NSObject<OS_dispatch_queue> *videoQueue; // @synthesize videoQueue=_videoQueue;
 @property(retain, nonatomic) NSDictionary *lastRectangleInfos; // @synthesize lastRectangleInfos=_lastRectangleInfos;
 @property(nonatomic) unsigned long long cameraModel; // @synthesize cameraModel=_cameraModel;
 @property(nonatomic) unsigned long long numberOfLinesInErrorText; // @synthesize numberOfLinesInErrorText=_numberOfLinesInErrorText;

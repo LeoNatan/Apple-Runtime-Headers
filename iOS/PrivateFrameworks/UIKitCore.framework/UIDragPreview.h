@@ -8,27 +8,16 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 
-@class NSArray, NSDictionary, UIColor, UIDragPreviewParameters, UIView, _DUIPreview;
+@class NSDictionary, NSValue, UIDragPreviewParameters, UIView, _DUIPreview;
 
 @interface UIDragPreview : NSObject <NSCopying>
 {
-    _Bool _marginsEnabled;
-    _Bool _precisionInput;
-    _Bool _scalesOnLift;
-    _Bool _translatesOnLift;
-    _Bool _hidesSourceView;
-    _Bool _viewCornersAreContinuous;
+    NSValue *_preferredAnchorPoint;
+    _Bool _avoidAnimation;
     _Bool __springboardPlatterStyle;
     UIView *_view;
     UIDragPreviewParameters *_parameters;
-    NSArray *_clippingRects;
-    UIView *_container;
-    UIColor *_backgroundColor;
-    UIView *_maskView;
-    double _viewCornerRadius;
     NSDictionary *__springboardParameters;
-    struct CGSize _originalSize;
-    struct CGPoint _originalCenter;
 }
 
 + (struct CGSize)textBoundingSize;
@@ -37,24 +26,12 @@
 + (id)previewForURL:(id)arg1;
 @property(copy, nonatomic) NSDictionary *_springboardParameters; // @synthesize _springboardParameters=__springboardParameters;
 @property(nonatomic) _Bool _springboardPlatterStyle; // @synthesize _springboardPlatterStyle=__springboardPlatterStyle;
-@property(readonly, nonatomic) _Bool viewCornersAreContinuous; // @synthesize viewCornersAreContinuous=_viewCornersAreContinuous;
-@property(readonly, nonatomic) double viewCornerRadius; // @synthesize viewCornerRadius=_viewCornerRadius;
-@property(nonatomic) _Bool hidesSourceView; // @synthesize hidesSourceView=_hidesSourceView;
-@property(nonatomic) _Bool translatesOnLift; // @synthesize translatesOnLift=_translatesOnLift;
-@property(nonatomic) _Bool scalesOnLift; // @synthesize scalesOnLift=_scalesOnLift;
-@property(nonatomic) _Bool precisionInput; // @synthesize precisionInput=_precisionInput;
-@property(readonly, nonatomic) struct CGPoint originalCenter; // @synthesize originalCenter=_originalCenter;
-@property(readonly, nonatomic) struct CGSize originalSize; // @synthesize originalSize=_originalSize;
-@property(readonly, nonatomic) UIView *maskView; // @synthesize maskView=_maskView;
-@property(nonatomic) _Bool marginsEnabled; // @synthesize marginsEnabled=_marginsEnabled;
-@property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
-@property(readonly, nonatomic) UIView *container; // @synthesize container=_container;
-@property(copy, nonatomic) NSArray *clippingRects; // @synthesize clippingRects=_clippingRects;
+@property(nonatomic) _Bool avoidAnimation; // @synthesize avoidAnimation=_avoidAnimation;
 @property(readonly, copy, nonatomic) UIDragPreviewParameters *parameters; // @synthesize parameters=_parameters;
 @property(readonly, nonatomic) UIView *view; // @synthesize view=_view;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)_setOriginalCenter:(struct CGPoint)arg1;
+@property(nonatomic) struct CGPoint preferredAnchorPoint;
 @property(readonly, nonatomic) _DUIPreview *_duiPreview;
 - (id)initWithView:(id)arg1;
 - (id)initWithView:(id)arg1 parameters:(id)arg2;

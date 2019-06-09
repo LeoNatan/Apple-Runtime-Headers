@@ -8,6 +8,7 @@
 
 @class CMStyle, ECColumnWidthConvertor, EDWorksheet;
 
+__attribute__((visibility("hidden")))
 @interface EMWorksheetMapper : EMSheetMapper
 {
     EDWorksheet *edWorksheet;

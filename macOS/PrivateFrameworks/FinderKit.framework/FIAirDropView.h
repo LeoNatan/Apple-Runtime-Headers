@@ -31,7 +31,8 @@
 @property(copy) NSImage *mediumThumbnail;
 @property(copy) NSImage *largeThumbnail; // @dynamic largeThumbnail;
 @property(copy) NSArray *urlsToSend; // @dynamic urlsToSend;
-@property id <FIAirDropViewDelegate> delegate; // @dynamic delegate;
+@property __weak id <FIAirDropViewDelegate> delegate; // @dynamic delegate;
+- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_commonAirDropViewInit;

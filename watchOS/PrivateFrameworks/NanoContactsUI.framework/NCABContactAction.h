@@ -8,34 +8,46 @@
 
 #import <NanoContactsUI/CNContactChangesObserver-Protocol.h>
 #import <NanoContactsUI/NCABIDSDestinationsStatusControllerDelegate-Protocol.h>
+#import <NanoContactsUI/PUICActionContentControllerDelegate-Protocol.h>
 #import <NanoContactsUI/PUICActionSheetControllerDelegate-Protocol.h>
+#import <NanoContactsUI/TUCallCapabilitiesDelegate-Protocol.h>
 
-@class CNContact, NCABIDSDestinationsStatusController, NSArray, NSString, PUICActionSheetController, TUCallProviderManager, UIViewController;
+@class CNContact, CNContactStore, NCABIDSDestinationsStatusController, NSArray, NSString, PUICActionSheetController, TUCallProviderManager, UIViewController;
 @protocol NCABContactActionDelegate, OS_dispatch_queue;
 
-@interface NCABContactAction : NSObject <PUICActionSheetControllerDelegate, NCABIDSDestinationsStatusControllerDelegate, CNContactChangesObserver>
+@interface NCABContactAction : NSObject <PUICActionSheetControllerDelegate, NCABIDSDestinationsStatusControllerDelegate, CNContactChangesObserver, TUCallCapabilitiesDelegate, PUICActionContentControllerDelegate>
 {
     UIViewController *_viewController;
+    CNContactStore *_contactStore;
     NSObject<OS_dispatch_queue> *_bestHandleQueue;
     CDUnknownBlockType _disambiguationCompletionBlock;
+    _Bool _walkieTalkieIsAvailable;
     _Bool _useBestHandleLookupsForMessaging;
+    _Bool _walkieTalkieAvailable;
     id <NCABContactActionDelegate> _delegate;
     CNContact *_contact;
     NSArray *_suggestedReplies;
     void *_record;
     NSString *_destinationID;
-    NCABIDSDestinationsStatusController *_destinationsStatusController;
+    NCABIDSDestinationsStatusController *_destinationsStatusControllerFTA;
+    NCABIDSDestinationsStatusController *_destinationsStatusControllerTC;
     PUICActionSheetController *_disambiguationActionSheet;
     unsigned int _disambiguationActionType;
     TUCallProviderManager *_providerManager;
+    id _tinCanContacts;
 }
 
 + (id)_keysToFetchForContactAction;
 + (id)_contactFromDestination:(id)arg1;
++ (_Bool)_allowedByScreenTime:(id)arg1;
++ (void)initialize;
+@property(retain, nonatomic) id tinCanContacts; // @synthesize tinCanContacts=_tinCanContacts;
+@property(nonatomic, getter=isWalkieTalkieAvailable) _Bool walkieTalkieAvailable; // @synthesize walkieTalkieAvailable=_walkieTalkieAvailable;
 @property(retain, nonatomic) TUCallProviderManager *providerManager; // @synthesize providerManager=_providerManager;
 @property(nonatomic) unsigned int disambiguationActionType; // @synthesize disambiguationActionType=_disambiguationActionType;
 @property(nonatomic) __weak PUICActionSheetController *disambiguationActionSheet; // @synthesize disambiguationActionSheet=_disambiguationActionSheet;
-@property(readonly, nonatomic) NCABIDSDestinationsStatusController *destinationsStatusController; // @synthesize destinationsStatusController=_destinationsStatusController;
+@property(readonly, nonatomic) NCABIDSDestinationsStatusController *destinationsStatusControllerTC; // @synthesize destinationsStatusControllerTC=_destinationsStatusControllerTC;
+@property(readonly, nonatomic) NCABIDSDestinationsStatusController *destinationsStatusControllerFTA; // @synthesize destinationsStatusControllerFTA=_destinationsStatusControllerFTA;
 @property(readonly, nonatomic) NSString *destinationID; // @synthesize destinationID=_destinationID;
 @property(readonly, nonatomic) void *record; // @synthesize record=_record;
 @property(copy, nonatomic) NSArray *suggestedReplies; // @synthesize suggestedReplies=_suggestedReplies;
@@ -46,18 +58,32 @@
 - (void)_mailDestination:(id)arg1;
 - (void)_messageDestination:(id)arg1;
 - (id)_allPhoneAndEmailContactProperties;
+- (void)_startWalkieTalkieSession;
+- (id)_messageForWalkieTalkieInvitePrompt;
+- (void)_promptToInviteToWalkieTalkie;
 - (void)_callDestination:(id)arg1 withProvider:(id)arg2;
 - (void)_presentActionSheetForAction:(unsigned int)arg1;
 - (id)_actionItemsForAction:(unsigned int)arg1;
 - (void)_disambiguateLabeledValuesForAction:(unsigned int)arg1;
 - (void)_faceTimeAvailabilityDidChange:(id)arg1;
+- (id)_canWalkieTalkie;
 - (id)_canFaceTimeAudio;
+- (_Bool)_hasFTASupport;
 - (void)_refreshPresentedActionSheetIfNecessary;
+- (_Bool)_isContactAddedToWalkieTalkie;
+- (void)_initiateStatusQueryForWalkieTalkie;
 - (void)_initiateStatusQueryForFaceTimeAudio;
+- (void)_initiateStatusQueries;
+- (void)_canWalkieTalkieDidChange;
+- (void)_canFaceTimeAudioDidChange;
+- (void)didChangeFaceTimeAudioCallingSupport;
 - (void)contactDidChange:(id)arg1;
 - (void)actionSheetController:(id)arg1 didDismissWithActionAtIndexPath:(id)arg2;
-- (void)_canFaceTimeAudioDidChange;
 - (void)idsDestinationsStatusControllerStatusDidChange:(id)arg1;
+- (void)actionContentControllerCancel:(id)arg1;
+- (void)_showBlockedContactViewController:(id)arg1;
+- (void)walkieTalkie;
+- (_Bool)canWalkieTalkie;
 - (void)mail;
 - (_Bool)canMail;
 - (void)message;
@@ -67,7 +93,7 @@
 - (void)dealloc;
 - (id)initWithViewController:(id)arg1 record:(void *)arg2 delegate:(id)arg3;
 - (id)initWithViewController:(id)arg1 destinationID:(id)arg2 delegate:(id)arg3;
-- (id)initWithViewController:(id)arg1 contact:(id)arg2 delegate:(id)arg3;
+- (id)initWithViewController:(id)arg1 contact:(id)arg2 contactStore:(id)arg3 delegate:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

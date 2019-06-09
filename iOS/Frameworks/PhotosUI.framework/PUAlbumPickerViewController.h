@@ -13,6 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface PUAlbumPickerViewController : UIViewController <PUSessionInfoObserver>
 {
+    _Bool _didLoadSubviews;
     UINavigationController *_contentNavigationController;
     PHCollectionList *_collectionList;
     CDUnknownBlockType _completionHandler;
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic, setter=_setAlbumListViewController:) PUAlbumListViewController *_albumListViewController; // @synthesize _albumListViewController=__albumListViewController;
+@property(nonatomic) _Bool didLoadSubviews; // @synthesize didLoadSubviews=_didLoadSubviews;
 @property(retain, nonatomic, setter=_setSessionInfo:) PUAlbumPickerSessionInfo *albumPickerSessionInfo; // @synthesize albumPickerSessionInfo=_albumPickerSessionInfo;
 @property(retain, nonatomic, setter=_setSpec:) PUAlbumPickerViewControllerSpec *spec; // @synthesize spec=_spec;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
@@ -29,12 +31,16 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic, setter=_setContentNavigationController:) UINavigationController *contentNavigationController; // @synthesize contentNavigationController=_contentNavigationController;
 - (void).cxx_destruct;
 - (void)sessionInfoStatusDidChange:(id)arg1;
+- (void)_loadSubviewsIfNeeded;
 - (unsigned long long)supportedInterfaceOrientations;
 - (_Bool)shouldAutorotate;
-- (void)didReceiveMemoryWarning;
-- (void)loadView;
+- (void)viewWillLayoutSubviews;
+- (void)viewDidLoad;
 - (void)dealloc;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithSpec:(id)arg1 sessionInfo:(id)arg2;
+- (id)initWithSessionInfo:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

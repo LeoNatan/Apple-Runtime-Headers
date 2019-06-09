@@ -9,9 +9,12 @@
 @class PKPaymentPassActionWidgetButton;
 
 @protocol PKPaymentPassActionWidgetViewDelegate <NSObject>
+- (void)openBusinessChat;
 - (void)performPaymentPassAction:(PKPaymentPassActionWidgetButton *)arg1;
 - (void)transferToBank;
 - (void)addMoney;
+- (void)presentContactIssuerSheet;
+- (void)emailIssuer;
 - (void)openIssuerWebsite;
 - (void)callIssuer;
 @end

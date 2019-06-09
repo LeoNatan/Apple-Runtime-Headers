@@ -11,6 +11,7 @@
 @class NSString, SKUIAttributedStringLayout, SKUIAttributedStringView, SKUIButtonBorderStyle, SKUIImageView, SKUIItemOfferButton, SKUIShapeView, UIImageView;
 @protocol SKUIItemOfferButtonDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStyledButton : UIControl <SKUIViewElementOfferButton>
 {
     SKUIAttributedStringView *_attributedStringView;

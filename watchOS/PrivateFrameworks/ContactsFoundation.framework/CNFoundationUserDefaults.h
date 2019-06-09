@@ -8,7 +8,7 @@
 
 #import <ContactsFoundation/CNFoundationUserDefaults-Protocol.h>
 
-@class CNUserDefaults, NSString;
+@class CNUserDefaults, NSDictionary, NSString;
 
 @interface CNFoundationUserDefaults : NSObject <CNFoundationUserDefaults>
 {
@@ -20,6 +20,8 @@
 + (id)registeredDefaults;
 + (id)makeRegisteredDefaults;
 @property(retain) CNUserDefaults *userDefaults; // @synthesize userDefaults=_userDefaults;
+- (void).cxx_destruct;
+@property(nonatomic) NSDictionary *filteredAccountsAndContainers;
 @property(nonatomic, getter=isShortNameFormatEnabled) _Bool shortNameFormatEnabled;
 @property unsigned int shortNameFormat;
 @property _Bool preferNickname;
@@ -27,7 +29,6 @@
 - (id)countryCode;
 - (unsigned int)sortOrder;
 - (unsigned int)newContactNameOrder;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

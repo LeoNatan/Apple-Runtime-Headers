@@ -40,8 +40,6 @@
     SFImage *_image;
     SFRichText *_leadingText;
     SFRichText *_trailingText;
-    NSString *_leftText;
-    NSString *_rightText;
     SFImage *_attributionImage;
     NSString *_key;
     NSNumber *_keyWeight;
@@ -62,8 +60,6 @@
 @property(nonatomic) BOOL keyNoWrap; // @synthesize keyNoWrap=_keyNoWrap;
 @property(copy, nonatomic) NSString *key; // @synthesize key=_key;
 @property(retain, nonatomic) SFImage *attributionImage; // @synthesize attributionImage=_attributionImage;
-@property(copy, nonatomic) NSString *rightText; // @synthesize rightText=_rightText;
-@property(copy, nonatomic) NSString *leftText; // @synthesize leftText=_leftText;
 @property(retain, nonatomic) SFRichText *trailingText; // @synthesize trailingText=_trailingText;
 @property(retain, nonatomic) SFRichText *leadingText; // @synthesize leadingText=_leadingText;
 @property(nonatomic) BOOL imageIsRightAligned; // @synthesize imageIsRightAligned=_imageIsRightAligned;

@@ -6,6 +6,7 @@
 
 #import <UIKit/UIMoreListController.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIMoreListController : UIMoreListController
 {
 }

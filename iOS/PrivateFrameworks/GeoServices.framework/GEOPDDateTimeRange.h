@@ -14,20 +14,20 @@ __attribute__((visibility("hidden")))
 @interface GEOPDDateTimeRange : PBCodable <NSCopying>
 {
     PBUnknownFields *_unknownFields;
-    unsigned long long _endDate;
-    unsigned long long _startDate;
     struct GEOPDLocalTimeRange *_timeRanges;
     unsigned long long _timeRangesCount;
     unsigned long long _timeRangesSpace;
+    unsigned long long _endDate;
+    unsigned long long _startDate;
     struct {
-        unsigned int endDate:1;
-        unsigned int startDate:1;
-    } _has;
+        unsigned int has_endDate:1;
+        unsigned int has_startDate:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned long long endDate; // @synthesize endDate=_endDate;
-@property(nonatomic) unsigned long long startDate; // @synthesize startDate=_startDate;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)setTimeRanges:(struct GEOPDLocalTimeRange *)arg1 count:(unsigned long long)arg2;
@@ -45,7 +46,9 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct GEOPDLocalTimeRange *timeRanges;
 @property(readonly, nonatomic) unsigned long long timeRangesCount;
 @property(nonatomic) _Bool hasEndDate;
+@property(nonatomic) unsigned long long endDate;
 @property(nonatomic) _Bool hasStartDate;
+@property(nonatomic) unsigned long long startDate;
 - (void)dealloc;
 @property(readonly, nonatomic) _Bool hasValidStartAndEndDates;
 

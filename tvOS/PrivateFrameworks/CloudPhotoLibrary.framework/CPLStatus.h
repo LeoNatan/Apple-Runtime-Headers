@@ -18,17 +18,19 @@
     id <CPLStatusDelegate> _delegate;
 }
 
-+ (id)statusForSharedLibrary;
 @property(nonatomic) __weak id <CPLStatusDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 @property(copy, nonatomic) NSArray *disabledFeatures;
 @property(copy, nonatomic) NSData *accountFlagsData;
 @property(readonly, nonatomic) CPLAccountFlags *accountFlags;
-@property(nonatomic, getter=isConnectedToNetwork) _Bool connectedToNetwork;
+@property(nonatomic) _Bool lowDiskSpace;
+- (void)setConnectedToNetwork:(_Bool)arg1;
+@property(readonly, nonatomic) _Bool isConstrainedNetwork;
+@property(readonly, nonatomic, getter=isConnectedToNetwork) _Bool connectedToNetwork;
 @property(readonly, nonatomic) _Bool hasBatteryBudget;
 @property(readonly, nonatomic) _Bool hasCellularBudget;
 @property(readonly, nonatomic) _Bool hasValidSystemBudget;
-- (void)setHasCellularBudget:(_Bool)arg1 hasBatteryBudget:(_Bool)arg2 isBudgetValid:(_Bool)arg3;
+- (void)setHasCellularBudget:(_Bool)arg1 hasBatteryBudget:(_Bool)arg2 isConstrainedNetwork:(_Bool)arg3 isBudgetValid:(_Bool)arg4;
 - (id)statusDescription;
 - (void)_statusDidChange;
 @property(readonly, nonatomic) NSDate *cloudAssetCountPerTypeLastCheckDate;

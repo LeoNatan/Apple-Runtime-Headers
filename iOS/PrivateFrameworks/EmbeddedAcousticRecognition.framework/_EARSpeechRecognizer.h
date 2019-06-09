@@ -11,11 +11,15 @@
 
 @interface _EARSpeechRecognizer : NSObject
 {
+    NSObject<OS_dispatch_queue> *_formatterQueue;
+    _EARFormatter *_formatter;
     struct unique_ptr<quasar::SpeechRecognizer, std::__1::default_delete<quasar::SpeechRecognizer>> _recognizer;
     struct unique_ptr<quasar::TextTokenizer, std::__1::default_delete<quasar::TextTokenizer>> _tokenizer;
     _EARSpeechRecognitionAudioBuffer *_currentAudioBuffer;
-    _EARFormatter *_formatter;
-    NSObject<OS_dispatch_queue> *_formatterQueue;
+    struct weak_ptr<ResultStreamWrapper> _currentResultStreamWrapper;
+    NSString *_currentLanguage;
+    NSString *_currentTask;
+    unsigned long long _currentSamplingRate;
     NSObject<OS_dispatch_queue> *_recognitionQueue;
     NSString *_configPath;
     _Bool _detectUtterances;
@@ -30,12 +34,22 @@
     NSDictionary *_recognitionConfidenceSubtraction;
     NSArray *_leftContext;
     NSString *_inputOrigin;
+    NSString *_deviceId;
+    NSString *_refTranscriptForErrorBlaming;
+    NSString *_bluetoothDeviceId;
+    NSString *_userId;
+    NSString *_sessionId;
 }
 
 + (id)rawTokenResultsFromRecognitionResults:(id)arg1;
 + (id)maximumSupportedConfigurationVersion;
 + (id)minimumSupportedConfigurationVersion;
 + (void)initialize;
+@property(copy, nonatomic) NSString *sessionId; // @synthesize sessionId=_sessionId;
+@property(copy, nonatomic) NSString *userId; // @synthesize userId=_userId;
+@property(copy, nonatomic) NSString *bluetoothDeviceId; // @synthesize bluetoothDeviceId=_bluetoothDeviceId;
+@property(copy, nonatomic) NSString *refTranscriptForErrorBlaming; // @synthesize refTranscriptForErrorBlaming=_refTranscriptForErrorBlaming;
+@property(copy, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;
 @property(copy, nonatomic) NSString *inputOrigin; // @synthesize inputOrigin=_inputOrigin;
 @property(copy, nonatomic) NSArray *leftContext; // @synthesize leftContext=_leftContext;
 @property(copy, nonatomic) NSDictionary *recognitionConfidenceSubtraction; // @synthesize recognitionConfidenceSubtraction=_recognitionConfidenceSubtraction;
@@ -56,9 +70,12 @@
 - (void)cancelRecognition;
 - (id)recognitionResultsWithAudioData:(id)arg1 userProfileData:(id)arg2 language:(id)arg3 task:(id)arg4 samplingRate:(unsigned long long)arg5 extraLanguageModel:(id)arg6;
 - (id)recognitionResultsWithAudioData:(id)arg1 userProfileData:(id)arg2 language:(id)arg3 task:(id)arg4 samplingRate:(unsigned long long)arg5;
+- (void)_restartActiveRecognition;
+- (shared_ptr_809f9c31)_audioBufferWithLangauge:(id)arg1 task:(id)arg2 samplingRate:(unsigned long long)arg3 userProfileData:(id)arg4 resultStream:(shared_ptr_5cb47a18)arg5;
 - (id)runRecognitionWithResultStream:(id)arg1 language:(id)arg2 task:(id)arg3 samplingRate:(unsigned long long)arg4 userProfileData:(id)arg5;
 - (id)runRecognitionWithResultStream:(id)arg1 language:(id)arg2 task:(id)arg3 samplingRate:(unsigned long long)arg4;
 - (shared_ptr_9f04d411)requestParametersWithUserProfileData:(id)arg1 task:(id)arg2 samplingRate:(unsigned long long)arg3 resultStream:(shared_ptr_5cb47a18)arg4 extraLanguageModel:(id)arg5 symbolTableList:(const shared_ptr_ca83464d *)arg6;
+- (void)updateJitProfileData:(id)arg1;
 - (void)updateUserProfileData:(id)arg1;
 - (id)runRecognitionWithResultStream:(id)arg1;
 - (void)setLeftContextText:(id)arg1;

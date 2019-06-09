@@ -52,7 +52,6 @@
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)updatePreviewHeader;
 - (void)addWebView:(id)arg1;
-@property(readonly, nonatomic) float navigationBarOffset;
 - (void)updateDismissButtonStyle:(int)arg1;
 - (void)updateNavigationBarTintColor:(id)arg1;
 - (void)updateToolbarTintColor:(id)arg1;

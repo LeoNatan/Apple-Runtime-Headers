@@ -4,17 +4,43 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <PhotoLibraryServices/PLAbstractLibraryServicesManagerService.h>
 
 #import <PhotoLibraryServices/PLAssetsdLibraryServiceProtocol-Protocol.h>
 
-@class NSString;
+@class NSString, PLAssetsdConnectionAuthorization, PLAssetsdService, PLPhotoLibraryBundleController, PLProgressFollower;
 
-@interface PLAssetsdLibraryService : NSObject <PLAssetsdLibraryServiceProtocol>
+@interface PLAssetsdLibraryService : PLAbstractLibraryServicesManagerService <PLAssetsdLibraryServiceProtocol>
 {
+    PLAssetsdConnectionAuthorization *_connectionAuthorization;
+    PLProgressFollower *_preRunningProgressFollower;
+    PLProgressFollower *_postRunningProgressFollower;
+    PLPhotoLibraryBundleController *_libraryBundleController;
+    PLAssetsdService *_assetsdService;
 }
 
++ (long long)requiredLibraryServicesState;
+- (void).cxx_destruct;
+- (_Bool)lightweightPermissionCheckWithPath:(id)arg1 isDir:(_Bool)arg2;
+- (_Bool)lightweightPermissionCheckWithError:(id *)arg1;
+- (id)libraryBundle;
+- (void)pendingEventsForRequest:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)publishRemoteChangeEvent:(id)arg1 delayedSaveActionsDetail:(id)arg2 reply:(CDUnknownBlockType)arg3;
+- (void)automaticallyDeleteEmptyAlbumWithObjectURI:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)updateThumbnailsForPhotos:(id)arg1 assignNewIndex:(_Bool)arg2 forceRefresh:(_Bool)arg3 reply:(CDUnknownBlockType)arg4;
+- (void)repairSingletonObjectsWithReply:(CDUnknownBlockType)arg1;
+- (void)recoverFromCrashIfNeeded;
+- (void)importFileSystemAssetsWithReason:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)getPhotoLibraryStoreXPCListenerEndpointWithReply:(CDUnknownBlockType)arg1;
+- (void)shutdownPhotoLibraryDatabaseWithReply:(CDUnknownBlockType)arg1;
+- (void)_sendClientReply:(CDUnknownBlockType)arg1 sandboxExtensionsByPath:(id)arg2 error:(id)arg3;
+- (id)upgradePhotoLibraryDatabaseWithOptions:(unsigned long long)arg1 reply:(CDUnknownBlockType)arg2;
+- (id)postOpenProgressWithReply:(CDUnknownBlockType)arg1;
+- (void)openPhotoLibraryDatabaseWithReply:(CDUnknownBlockType)arg1;
+- (void)createPhotoLibraryDatabaseWithReply:(CDUnknownBlockType)arg1;
+- (void)getCurrentModelVersionWithReply:(CDUnknownBlockType)arg1;
 - (void)launchAssetsd;
+- (id)initWithLibraryServicesManager:(id)arg1 bundleController:(id)arg2 connectionAuthorization:(id)arg3 assetsdService:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

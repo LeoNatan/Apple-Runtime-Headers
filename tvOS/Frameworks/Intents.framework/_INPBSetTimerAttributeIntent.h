@@ -10,7 +10,7 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBSetTimerAttributeIntent-Protocol.h>
 
-@class NSString, _INPBIntentMetadata, _INPBTimer;
+@class NSString, _INPBDataString, _INPBIntentMetadata, _INPBTimer;
 
 @interface _INPBSetTimerAttributeIntent : PBCodable <_INPBSetTimerAttributeIntent, NSSecureCoding, NSCopying>
 {
@@ -20,8 +20,11 @@
     _INPBIntentMetadata *_intentMetadata;
     _INPBTimer *_targetTimer;
     double _toDuration;
+    _INPBDataString *_toLabel;
 }
 
++ (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) _INPBDataString *toLabel; // @synthesize toLabel=_toLabel;
 @property(nonatomic) double toDuration; // @synthesize toDuration=_toDuration;
 @property(retain, nonatomic) _INPBTimer *targetTimer; // @synthesize targetTimer=_targetTimer;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
@@ -30,8 +33,11 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+@property(readonly, nonatomic) _Bool hasToLabel;
 @property(nonatomic) _Bool hasToDuration;
 @property(readonly, nonatomic) _Bool hasTargetTimer;
 @property(readonly, nonatomic) _Bool hasIntentMetadata;

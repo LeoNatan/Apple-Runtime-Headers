@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface OverrideTrackerPolicy : NSObject
 {
     NSMutableDictionary *_maxConnectionPolicyOverrides;
@@ -18,6 +19,7 @@
 - (void).cxx_destruct;
 - (id)maxRRCTimePolicyForTarget:(id)arg1;
 - (id)maxConnectionPolicyForTarget:(id)arg1;
+- (BOOL)useFullActivityBitmaps;
 - (id)init;
 
 @end

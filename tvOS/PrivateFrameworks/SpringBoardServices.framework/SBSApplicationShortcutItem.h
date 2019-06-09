@@ -19,11 +19,13 @@
     SBSApplicationShortcutIcon *_icon;
     unsigned long long _activationMode;
     NSString *_bundleIdentifierToLaunch;
+    NSString *_targetContentIdentifier;
     NSData *_userInfoData;
 }
 
 + (id)_staticApplicationShortcutItemsFromInfoPlistEntry:(id)arg1;
 @property(retain, nonatomic) NSData *userInfoData; // @synthesize userInfoData=_userInfoData;
+@property(copy, nonatomic) NSString *targetContentIdentifier; // @synthesize targetContentIdentifier=_targetContentIdentifier;
 @property(copy, nonatomic) NSString *bundleIdentifierToLaunch; // @synthesize bundleIdentifierToLaunch=_bundleIdentifierToLaunch;
 @property(nonatomic) unsigned long long activationMode; // @synthesize activationMode=_activationMode;
 @property(copy, nonatomic) SBSApplicationShortcutIcon *icon; // @synthesize icon=_icon;

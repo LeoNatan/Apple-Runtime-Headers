@@ -17,6 +17,7 @@
 + (id)suggestersForContainerAtPath:(id)arg1;
 + (id)suggestersForFiles;
 + (id)suggestersForMailsWithMailLibraryPath:(id)arg1;
++ (id)suggestersForMailsUsingSearchQueryIndex:(long long)arg1;
 + (id)suggestersForMails;
 - (void).cxx_destruct;
 - (id)_suggestionWithDisplayName:(id)arg1 attributeNames:(id)arg2 values:(id)arg3 scope:(long long)arg4 representedObjectAsPlist:(id)arg5;
@@ -28,6 +29,7 @@
 @property(readonly) NSArray *staticSuggestions;
 @property(readonly) BOOL canHaveStaticSuggestions;
 @property __weak id <SGTSuggesterDelegate> delegate;
+- (void)setInput:(id)arg1 withGroup:(id)arg2;
 - (void)setInput:(id)arg1;
 - (id)init;
 - (void)_searchFieldDidValidateSuggestion:(id)arg1;

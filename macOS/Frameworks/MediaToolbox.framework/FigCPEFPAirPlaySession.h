@@ -15,6 +15,7 @@
     unsigned int _fairPlayContext;
     NSDictionary *_protectionInfo;
     NSDictionary *_contentInfo;
+    struct __CFAllocator *_fairPlayDeallocator;
     struct OpaqueFigEndpointPlaybackSession *_playbackSession;
     NSString *_mediaControlUUID;
     unsigned int _vodkaVersion;
@@ -31,7 +32,6 @@
 - (id)mediaControlParamsWithStoreResponse:(id)arg1;
 - (id)sicWithPic:(id)arg1;
 - (id)createPicRequestWithError:(id *)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithFairPlayContext:(unsigned int)arg1 routeInfo:(id)arg2 playbackSession:(struct OpaqueFigEndpointPlaybackSession *)arg3 mediaControlUUID:(id)arg4;
 - (id)initWithFairPlayContext:(unsigned int)arg1 contentInfo:(id)arg2 routeInfo:(id)arg3 playbackSession:(struct OpaqueFigEndpointPlaybackSession *)arg4 mediaControlUUID:(id)arg5;

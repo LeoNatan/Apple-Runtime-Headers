@@ -8,6 +8,7 @@
 
 @class SKUIProgressIndicatorViewElement;
 
+__attribute__((visibility("hidden")))
 @interface SKUICarouselViewElement : SKUIViewElement
 {
     double _displayInterval;

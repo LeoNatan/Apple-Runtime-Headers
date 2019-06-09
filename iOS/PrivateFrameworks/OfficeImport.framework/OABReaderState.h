@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 }
 
 @property(retain, nonatomic) ESDContainer *bstoreContainerHolder; // @synthesize bstoreContainerHolder=mBstoreContainerHolder;
+- (void).cxx_destruct;
 - (_Bool)useXmlBlobs;
 - (id)xmlDrawingState;
 - (void)resetForNewDrawing;
@@ -32,12 +33,11 @@ __attribute__((visibility("hidden")))
 - (int)groupDepth;
 - (void)setColorPalette:(id)arg1;
 - (id)colorPalette;
-- (void)setEshContent:(struct EshContent *)arg1 forId:(int)arg2;
-- (struct EshContent *)eshContentForId:(int)arg1;
+- (void)setContentObject:(id)arg1 forId:(int)arg2;
+- (id)contentObjectForId:(int)arg1;
 - (void)setDrawable:(id)arg1 forShapeId:(unsigned int)arg2;
 - (id)drawableForShapeId:(int)arg1;
 - (Class)client;
-- (void)dealloc;
 - (id)initWithClient:(Class)arg1;
 - (id)init;
 

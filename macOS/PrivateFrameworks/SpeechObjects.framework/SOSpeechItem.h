@@ -17,6 +17,7 @@
     NSString *_variant;
     NSString *_version;
     NSString *_tagName;
+    NSString *_engineIdentifier;
     unsigned long long _visibility;
     unsigned long long _downloadStatus;
     double _downloadPercentComplete;
@@ -38,6 +39,7 @@
 + (BOOL)isSameLocaleIdentifier:(id)arg1 secondLocaleIdentifier:(id)arg2;
 + (id)systemLocaleIdentifier;
 + (id)componentsFromLocaleIdentifier:(id)arg1;
+@property(readonly, retain) NSString *engineIdentifier; // @synthesize engineIdentifier=_engineIdentifier;
 @property BOOL offlineDictationOnly; // @synthesize offlineDictationOnly=_offlineDictationOnly;
 @property BOOL downloadFullSize; // @synthesize downloadFullSize=_downloadFullSize;
 @property(readonly) NSString *fullSizeTagName; // @synthesize fullSizeTagName=_fullSizeTagName;

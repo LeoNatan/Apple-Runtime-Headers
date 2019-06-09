@@ -43,7 +43,6 @@
 - (void)registerDataRepresentationForTypeIdentifier:(id)arg1 loadHandler:(CDUnknownBlockType)arg2;
 - (void)registerFileRepresentationForTypeIdentifier:(id)arg1 fileOptions:(long long)arg2 options:(id)arg3 loadHandler:(CDUnknownBlockType)arg4;
 - (void)registerDataRepresentationForTypeIdentifier:(id)arg1 options:(id)arg2 loadHandler:(CDUnknownBlockType)arg3;
-- (void)registerFileProviderItemForTypeIdentifier:(id)arg1 visibility:(long long)arg2 loadHandler:(CDUnknownBlockType)arg3;
 - (id)initWithPBItem:(id)arg1;
 
 @end

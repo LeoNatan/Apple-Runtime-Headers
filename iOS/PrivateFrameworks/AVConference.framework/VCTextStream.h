@@ -15,13 +15,11 @@
 __attribute__((visibility("hidden")))
 @interface VCTextStream : VCMediaStream <VCTextSender, VCTextReceiverDelegate>
 {
-    long long _streamToken;
     VCTextReceiver *_textReceiver;
     VCTextTransmitter *_textTransmitter;
     id <VCTextReceiverDelegate> _receiveDelegate;
 }
 
-@property(readonly, nonatomic) long long streamToken; // @synthesize streamToken=_streamToken;
 - (double)rtcpHeartbeatLeeway;
 @property(readonly, nonatomic) double lastReceivedRTCPPacketTime;
 @property(readonly, nonatomic) double lastReceivedRTPPacketTime;

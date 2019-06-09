@@ -15,6 +15,7 @@
     AVOutputDevice *_avOutputDevice;
     MRAVOutputDeviceSourceInfo *_sourceInfo;
     NSString *_uid;
+    _Bool _overrideUID;
     NSString *_modelID;
     NSString *_firmwareVersion;
     NSString *_logicalDeviceID;
@@ -30,6 +31,7 @@
 - (void)_onqueue_clearCachedAVOutputDeviceProperties;
 - (_Bool)_isOutputDevice:(id)arg1 belongToOutputContext:(id)arg2;
 - (id)_outputContext;
+- (id)bluetoothID;
 - (void)setVolume:(float)arg1;
 - (float)volume;
 - (_Bool)isVolumeControlAvailable;
@@ -43,6 +45,7 @@
 - (_Bool)isPickedOnPairedDevice;
 - (_Bool)isDeviceGroupable;
 - (_Bool)isProxyGroupPlayer;
+- (_Bool)supportsBluetoothSharing;
 - (_Bool)isGroupable;
 - (id)parentGroupIdentifier;
 - (_Bool)parentGroupContainsDiscoverableLeader;

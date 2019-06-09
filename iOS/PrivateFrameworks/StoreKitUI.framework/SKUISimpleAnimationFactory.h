@@ -10,6 +10,7 @@
 
 @class CAMediaTimingFunction, NSString;
 
+__attribute__((visibility("hidden")))
 @interface SKUISimpleAnimationFactory : NSObject <_UIBasicAnimationFactory>
 {
     CAMediaTimingFunction *_timingFunction;

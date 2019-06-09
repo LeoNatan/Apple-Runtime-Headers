@@ -16,14 +16,16 @@
 
 - (void).cxx_destruct;
 - (void)runDaemonSide;
+- (void)setClientConnection:(id)arg1;
 - (void)cancelAll;
 - (long long)daemonOperation;
 - (_Bool)shouldRunOnDaemonSerialQueue;
 - (void)run;
 - (id)description;
 - (void)encodeToXPCObject:(id)arg1;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;
 - (void)addRequest:(id)arg1;
+- (id)initWithPhotoLibrary:(id)arg1;
 
 @end
 

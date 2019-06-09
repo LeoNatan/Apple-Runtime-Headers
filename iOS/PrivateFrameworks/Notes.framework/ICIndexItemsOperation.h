@@ -21,12 +21,10 @@
 @property(copy, nonatomic) NSArray *dataSources; // @synthesize dataSources=_dataSources;
 @property(retain, nonatomic) CSSearchableIndex *searchableIndex; // @synthesize searchableIndex=_searchableIndex;
 - (void).cxx_destruct;
-- (_Bool)shouldDeleteAllItemsBeforeIndexing;
-- (id)searchableItemIdentifiersToDeleteFromDataSource:(id)arg1;
+- (id)objectIDURIsToDeleteFromDataSource:(id)arg1;
 - (id)objectIDsToIndexFromDataSource:(id)arg1;
 - (void)indexItems;
 - (void)deleteItems;
-- (void)deleteAllItems;
 - (void)main;
 - (id)initWithSearchableIndex:(id)arg1 dataSources:(id)arg2;
 - (id)init;

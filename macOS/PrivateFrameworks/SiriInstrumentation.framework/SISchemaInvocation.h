@@ -6,41 +6,35 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaInvocation-Protocol.h>
 
-@class SISchemaViewContainer;
+@class NSData, NSString, SISchemaViewContainer;
 
-@interface SISchemaInvocation : PBCodable <NSCopying>
+@interface SISchemaInvocation : PBCodable <SISchemaInvocation, NSSecureCoding>
 {
     int _invocationAction;
     int _invocationSource;
     SISchemaViewContainer *_viewContainer;
-    struct {
-        unsigned int invocationAction:1;
-        unsigned int invocationSource:1;
-    } _has;
 }
 
 @property(retain, nonatomic) SISchemaViewContainer *viewContainer; // @synthesize viewContainer=_viewContainer;
+@property(nonatomic) int invocationSource; // @synthesize invocationSource=_invocationSource;
+@property(nonatomic) int invocationAction; // @synthesize invocationAction=_invocationAction;
 - (void).cxx_destruct;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(readonly, nonatomic) BOOL hasViewContainer;
-- (int)StringAsInvocationSource:(id)arg1;
-- (id)invocationSourceAsString:(int)arg1;
-@property(nonatomic) BOOL hasInvocationSource;
-@property(nonatomic) int invocationSource; // @synthesize invocationSource=_invocationSource;
-- (int)StringAsInvocationAction:(id)arg1;
-- (id)invocationActionAsString:(int)arg1;
-@property(nonatomic) BOOL hasInvocationAction;
-@property(nonatomic) int invocationAction; // @synthesize invocationAction=_invocationAction;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

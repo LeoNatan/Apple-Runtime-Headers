@@ -58,7 +58,7 @@
 - (BOOL)isValidRow:(long long)arg1;
 - (void)programaticallyChangeSelectionWithBlock:(CDUnknownBlockType)arg1;
 - (void)reloadAndRestoreSelection;
-- (void)setInitialSelection;
+- (void)performInitialSelection;
 - (void)groupEntriesDidChange:(id)arg1;
 - (void)registerForDraggedTypes:(id)arg1;
 - (void)setupListView;

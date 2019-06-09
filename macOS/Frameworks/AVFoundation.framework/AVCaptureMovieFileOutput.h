@@ -11,14 +11,12 @@
 @interface AVCaptureMovieFileOutput : AVCaptureFileOutput
 {
     AVCaptureMovieFileOutputInternal *_internal;
-    NSArray *_availableVideoCodecTypes;
 }
 
 + (BOOL)updateMovieMetadataInFile:(id)arg1 withMetadata:(id)arg2 error:(id *)arg3;
 + (id)commonMetadataForAVMetadataItemArray:(id)arg1;
 + (id)new;
 + (void)initialize;
-@property(readonly, nonatomic) NSArray *availableVideoCodecTypes; // @synthesize availableVideoCodecTypes=_availableVideoCodecTypes;
 - (CDStruct_1b6d18a9)_syncTime;
 - (int)_compressorDidRenderConnection:(id)arg1 busNumber:(unsigned int)arg2 processHints:(unsigned int *)arg3 sampleBuffer:(struct opaqueCMSampleBuffer **)arg4;
 - (void)_operationFailed:(id)arg1;
@@ -48,11 +46,15 @@
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
 - (id)connectionMediaTypes;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)setRecordsVideoOrientationAndMirroringChanges:(BOOL)arg1 asMetadataTrackForConnection:(id)arg2;
+- (BOOL)recordsVideoOrientationAndMirroringChangesAsMetadataTrackForConnection:(id)arg1;
 - (void)_updateCompressorNodesForConnection:(id)arg1;
 - (void)_updateVideoFrameRateGovernorNodeForConnection:(id)arg1;
 - (void)_updateVideoDecompressorNodeForConnection:(id)arg1;
 - (void)setOutputSettings:(id)arg1 forConnection:(id)arg2;
 - (id)outputSettingsForConnection:(id)arg1;
+- (id)supportedOutputSettingsKeysForConnection:(id)arg1;
+@property(readonly, nonatomic) NSArray *availableVideoCodecTypes;
 @property(copy, nonatomic) NSArray *metadata;
 @property(nonatomic) CDStruct_1b6d18a9 movieFragmentInterval;
 - (long long)recordedFileSize;

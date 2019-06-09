@@ -26,6 +26,7 @@
 - (_Bool)calendarUsageFor:(id)arg1 nameKind:(id)arg2 dayResolution:(id)arg3 daySlot:(unsigned short)arg4 weekSlot:(unsigned short)arg5 reply:(CDUnknownBlockType)arg6;
 - (_Bool)typicalUsageFor:(id)arg1 nameKind:(id)arg2 intervalKind:(unsigned int)arg3 reply:(CDUnknownBlockType)arg4;
 - (_Bool)usageToDateWithOptionsFor:(id)arg1 nameKind:(id)arg2 options:(id)arg3 reply:(CDUnknownBlockType)arg4;
+- (_Bool)networkBitmapsToDateWithOptionsFor:(id)arg1 startTime:(unsigned long long)arg2 endTime:(unsigned long long)arg3 options:(id)arg4 reply:(CDUnknownBlockType)arg5;
 - (_Bool)usageToDateFor:(id)arg1 nameKind:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (id)_usagePresentation:(id)arg1 nameKind:(id)arg2 altName:(id)arg3 altNameKind:(id)arg4 source:(double *)arg5 since:(id)arg6;
 - (id)_composePredicateLineWithName:(id)arg1 keyPath:(id)arg2 isSweep:(_Bool *)arg3 wantGeneric:(_Bool)arg4 gotGeneric:(_Bool *)arg5;
@@ -33,7 +34,7 @@
 - (void)prepProcessDataFractionWithTag:(unsigned int)arg1 from:(id)arg2 until:(id)arg3 pollInterval:(float)arg4;
 - (id)_performRollUp:(unsigned int)arg1 andMetadata:(unsigned int)arg2 from:(id)arg3 until:(id)arg4;
 - (void)_rollValuesFrom:(id)arg1 toDict:(id)arg2;
-- (_Bool)_rollUsageValuesFromDict:(id)arg1 toDict:(id)arg2 forKey:(id)arg3;
+- (_Bool)_rollUsageValuesFromDict:(id)arg1 toDict:(id)arg2 forKey:(id)arg3 subscriberTag:(unsigned int)arg4;
 - (void)dealloc;
 - (id)initWithWorkspace:(id)arg1;
 

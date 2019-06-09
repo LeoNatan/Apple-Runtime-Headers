@@ -13,7 +13,6 @@ __attribute__((visibility("hidden")))
 {
     NSThemeFrame *_associatedThemeFrame;
     BOOL _inFullScreen;
-    BOOL _updating;
     double _revealAmount;
     NSView *_floatingTrailingWidget;
     NSTitlebarAccessoryViewController *_floatingTrailingWidgetSource;

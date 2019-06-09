@@ -11,6 +11,8 @@
 @class NSString;
 
 @interface PHAsset (PXPlacesAdditions) <PXPlacesGeotaggable>
++ (id)pk_fetchPlacesAssetsInAssetCollection:(id)arg1 options:(id)arg2;
+- (long long)pk_isContentEqualTo:(id)arg1;
 - (long long)compareTo:(id)arg1;
 - (struct CLLocationCoordinate2D)coordinate;
 

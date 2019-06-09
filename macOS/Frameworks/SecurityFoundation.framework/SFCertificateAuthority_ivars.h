@@ -20,10 +20,10 @@ __attribute__((visibility("hidden")))
     CAKeyUsageExtension *_caKeyUsageExtension;
     CASubjectAltNameExtension *_caSubjAltNameExtension;
     CABasicConstraintsExtension *_caBasicConstraintsExtension;
-    struct OpaqueSecIdentityRef *_chosenIssuer;
+    struct __SecIdentity *_chosenIssuer;
     struct cssm_x509_name *_issuerX509Name;
     NSData *_issuerHashPublicKey;
-    struct OpaqueSecCertificateRef *_caResultingCertificate;
+    struct __SecCertificate *_caResultingCertificate;
     struct cssm_data _resultingCertData;
     struct cssm_data *_issuerX509NameField;
     NSString *_caName;
@@ -33,8 +33,8 @@ __attribute__((visibility("hidden")))
     long long _tpHand;
     SFCSR *_csr;
     NSURL *_webURL;
-    struct OpaqueSecKeychainRef *_destKeychain;
-    struct OpaqueSecCertificateRef *_CACert;
+    struct __SecKeychain *_destKeychain;
+    struct __SecCertificate *_CACert;
     NSArray *_crlDistributionPoints;
     char *_crlDistribPointsArray;
     int _numCRLDistribPointNames;

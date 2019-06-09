@@ -13,10 +13,12 @@
 
 @interface SBFWallpaperDirectoryDataStore : NSObject <SBFWallpaperDataStore, BSDescriptionProviding>
 {
+    _Bool _supportsWallpaperOptions;
     NSURL *_directoryURL;
 }
 
 + (id)defaultDirectoryURL;
+@property(nonatomic) _Bool supportsWallpaperOptions; // @synthesize supportsWallpaperOptions=_supportsWallpaperOptions;
 @property(readonly, copy, nonatomic) NSURL *directoryURL; // @synthesize directoryURL=_directoryURL;
 - (void).cxx_destruct;
 - (id)succinctDescriptionBuilder;
@@ -24,14 +26,18 @@
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 @property(readonly, copy) NSString *description;
+- (void)removeWallpaperGradientForVariants:(long long)arg1;
+- (_Bool)setWallpaperGradient:(id)arg1 forVariants:(long long)arg2;
+- (id)wallpaperGradientForVariant:(long long)arg1;
 - (void)removeWallpaperColorForVariants:(long long)arg1;
 - (_Bool)setWallpaperColorName:(id)arg1 forVariants:(long long)arg2;
 - (_Bool)setWallpaperColor:(id)arg1 forVariants:(long long)arg2;
 - (id)wallpaperColorNameForVariant:(long long)arg1;
 - (id)wallpaperColorForVariant:(long long)arg1;
 - (void)removeWallpaperOptionsForVariants:(long long)arg1;
-- (_Bool)setWallpaperOptions:(id)arg1 forVariants:(long long)arg2;
-- (id)wallpaperOptionsForVariant:(long long)arg1;
+- (_Bool)setWallpaperOptions:(id)arg1 forVariants:(long long)arg2 wallpaperMode:(long long)arg3;
+- (id)wallpaperOptionsForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (id)wallpaperOptionsURLForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (void)removeProceduralWallpaperForVariants:(long long)arg1;
 - (_Bool)setProceduralWallpaperInfo:(id)arg1 forVariants:(long long)arg2;
 - (id)proceduralWallpaperInfoForVariant:(long long)arg1;
@@ -44,22 +50,25 @@
 - (id)unverifiedVideoURLForVariant:(long long)arg1;
 - (id)wallpaperOriginalVideoURLForVariant:(long long)arg1;
 - (id)wallpaperVideoURLForVariant:(long long)arg1;
+- (void)removeWallpaperImageHashDataForVariants:(long long)arg1;
+- (id)wallpaperImageHashDataForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (_Bool)setWallpaperImageHashData:(id)arg1 forVariants:(long long)arg2 wallpaperMode:(long long)arg3;
 - (void)removeWallpaperImageDataTypes:(unsigned long long)arg1 forVariants:(long long)arg2;
 - (void)moveWallpaperImageDataTypes:(unsigned long long)arg1 fromVariant:(long long)arg2 toVariant:(long long)arg3;
-- (_Bool)setWallpaperThumbnailData:(id)arg1 forVariant:(long long)arg2;
-- (_Bool)setWallpaperOriginalImage:(id)arg1 forVariant:(long long)arg2;
-- (_Bool)setWallpaperImage:(id)arg1 forVariant:(long long)arg2;
+- (_Bool)setWallpaperThumbnailData:(id)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (_Bool)setWallpaperOriginalImage:(id)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
+- (_Bool)setWallpaperImage:(id)arg1 forVariant:(long long)arg2 wallpaperMode:(long long)arg3;
 - (void)didWriteFileToURL:(id)arg1;
 - (void)createDirectory;
 @property(readonly, copy, nonatomic) NSDictionary *directoryCreationAttributes;
-- (id)wallpaperOriginalImageForVariant:(long long)arg1;
-- (id)wallpaperThumbnailDataForVariant:(long long)arg1;
-- (_Bool)hasWallpaperImageForVariant:(long long)arg1;
-- (id)wallpaperImageForVariant:(long long)arg1;
-- (id)wallpaperImageDataForVariant:(long long)arg1 error:(id *)arg2;
-- (id)wallpaperThumbnailURLForVariant:(long long)arg1;
-- (id)wallpaperOriginalImageURLForVariant:(long long)arg1;
-- (id)wallpaperImageURLForVariant:(long long)arg1;
+- (id)wallpaperOriginalImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (id)wallpaperThumbnailDataForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (_Bool)hasWallpaperImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (id)wallpaperImageForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (id)wallpaperImageDataForVariant:(long long)arg1 wallpaperMode:(long long)arg2 error:(id *)arg3;
+- (id)wallpaperThumbnailURLForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (id)wallpaperOriginalImageURLForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
+- (id)wallpaperImageURLForVariant:(long long)arg1 wallpaperMode:(long long)arg2;
 - (id)init;
 - (id)initWithDirectoryURL:(id)arg1;
 

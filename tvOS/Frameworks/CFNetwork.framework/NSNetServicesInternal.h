@@ -9,7 +9,6 @@
 @class NSMutableArray;
 @protocol OS_tcp_listener;
 
-__attribute__((visibility("hidden")))
 @interface NSNetServicesInternal : NSObject
 {
     NSMutableArray *_monitors;
@@ -23,7 +22,6 @@ __attribute__((visibility("hidden")))
 - (id)listener;
 - (void)setScheduledRunLoop:(struct __CFRunLoop *)arg1 andMode:(struct __CFString *)arg2;
 - (void)copyScheduledRunLoop:(struct __CFRunLoop **)arg1 andMode:(const struct __CFString **)arg2;
-- (void)finalize;
 - (void)dealloc;
 
 @end

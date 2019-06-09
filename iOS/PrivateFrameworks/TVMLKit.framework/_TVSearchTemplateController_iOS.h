@@ -21,11 +21,16 @@
     IKViewElement *_nonResultsElement;
     IKViewElement *_collectionListElement;
     struct CGRect _keyboardFrame;
+    double _impressionThreshold;
     IKViewElement *_viewElement;
 }
 
 @property(readonly, nonatomic) IKViewElement *viewElement; // @synthesize viewElement=_viewElement;
 - (void).cxx_destruct;
+- (id)impressionableElementsContainedInDocument:(id)arg1;
+- (void)_recordImpressionsForVisibleView;
+- (void)_cancelImpressionsUpdate;
+- (void)_updateImpressions;
 - (id)_sanitizedText;
 - (_Bool)_isAtWordEnd;
 - (void)_keyboardDidChangeFrame:(id)arg1;

@@ -23,7 +23,6 @@
     NTKDigitalTimeLabelStyle *_timeTravelStyle;
     UIView *_timeTravelExitView;
     UITapGestureRecognizer *_timeTravelExitRecognizer;
-    _Bool _statusBarIsVisible;
     _Bool _viewsOffsetForStatusBar;
     _Bool _isEditing;
     _Bool _complicationIsVisible;
@@ -33,6 +32,8 @@
 
 + (id)_swatchImageForColorOption:(id)arg1 forDevice:(id)arg2;
 - (void).cxx_destruct;
+- (void)_removeTimeViews;
+- (void)_createTimeViews;
 - (void)_initLargeTimeLabelIfNecessary;
 - (void)_initSmallTimeLabelIfNecessary;
 - (void)_applyShowContentForUnadornedSnapshot;

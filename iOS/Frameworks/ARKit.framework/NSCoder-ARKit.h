@@ -17,5 +17,7 @@
 -     // Error parsing type: v72@0:8{?=[3]}16@64, name: encodeMatrix3x3:forKey:
 -     // Error parsing type: 24@0:8@16, name: decodeVector3ForKey:
 - (void)encodeVector3:(id)arg1 forKey: /* Error: Ran out of types for this method. */;
+-     // Error parsing type: 24@0:8@16, name: decodeVector2ForKey:
+- (void)encodeVector2:(id)arg1 forKey: /* Error: Ran out of types for this method. */;
 @end
 

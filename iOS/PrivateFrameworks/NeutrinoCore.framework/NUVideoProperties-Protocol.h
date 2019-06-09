@@ -9,6 +9,7 @@
 @class NSArray, NSDictionary;
 
 @protocol NUVideoProperties <NSObject>
+@property(readonly) CDStruct_1b6d18a9 duration;
 @property(readonly) CDStruct_1b6d18a9 livePhotoKeyFrameTime;
 @property(readonly) NSDictionary *colorProperties;
 @property(readonly) long long orientation;

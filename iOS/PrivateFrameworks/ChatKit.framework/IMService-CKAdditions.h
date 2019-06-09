@@ -7,6 +7,7 @@
 #import <IMCore/IMService.h>
 
 @interface IMService (CKAdditions)
+- (BOOL)__ck_serviceType;
 - (BOOL)__ck_displayColor;
 - (long long)__ck_maxRecipientCountForHandle:(id)arg1 simID:(id)arg2;
 - (id)__ck_displayName;

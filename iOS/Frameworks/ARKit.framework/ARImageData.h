@@ -16,19 +16,24 @@
 @interface ARImageData : NSObject <ARDictionaryCoding, ARSensorData, NSCopying, NSSecureCoding>
 {
     _Bool _mirrored;
+    _Bool _secondary;
     float _exposureTargetOffset;
     float _temperature;
+    float _signalToNoiseRatio;
+    float _ISO;
     double _timestamp;
     NSDate *_captureDate;
     double _currentCaptureTimestamp;
     struct __CVBuffer *_pixelBuffer;
     unsigned long long _lensType;
     double _exposureDuration;
+    long long _deviceOrientation;
     ARFaceData *_faceData;
     AVDepthData *_depthData;
     double _depthDataTimestamp;
     struct __CVBuffer *_visionData;
     long long _cameraPosition;
+    NSString *_cameraType;
     long long _captureFramesPerSecond;
     struct CGSize _imageResolution;
     // Error parsing type: , name: _tangentialDistortion
@@ -38,12 +43,17 @@
 
 + (_Bool)supportsSecureCoding;
 + (id)captureDateFromPresentationTimestamp:(CDStruct_1b6d18a9)arg1 session:(id)arg2;
+@property(nonatomic, getter=isSecondary) _Bool secondary; // @synthesize secondary=_secondary;
 @property(nonatomic) long long captureFramesPerSecond; // @synthesize captureFramesPerSecond=_captureFramesPerSecond;
+@property(retain, nonatomic) NSString *cameraType; // @synthesize cameraType=_cameraType;
 @property(nonatomic) long long cameraPosition; // @synthesize cameraPosition=_cameraPosition;
 @property(nonatomic) struct __CVBuffer *visionData; // @synthesize visionData=_visionData;
 @property(nonatomic) double depthDataTimestamp; // @synthesize depthDataTimestamp=_depthDataTimestamp;
 @property(retain, nonatomic) AVDepthData *depthData; // @synthesize depthData=_depthData;
 @property(retain, nonatomic) ARFaceData *faceData; // @synthesize faceData=_faceData;
+@property(nonatomic) long long deviceOrientation; // @synthesize deviceOrientation=_deviceOrientation;
+@property(nonatomic) float ISO; // @synthesize ISO=_ISO;
+@property(nonatomic) float signalToNoiseRatio; // @synthesize signalToNoiseRatio=_signalToNoiseRatio;
 @property(nonatomic) float temperature; // @synthesize temperature=_temperature;
 @property(nonatomic) float exposureTargetOffset; // @synthesize exposureTargetOffset=_exposureTargetOffset;
 @property(nonatomic) double exposureDuration; // @synthesize exposureDuration=_exposureDuration;
@@ -69,16 +79,18 @@
 - (id)initWithDictionary:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(readonly, copy) NSString *description;
 - (_Bool)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
+- (_Bool)matchesPixelBufferPointerRecursively:(void *)arg1;
 @property(readonly, nonatomic) ARImageData *originalImage;
 - (void)dealloc;
+-     // Error parsing type: @128@0:8^{__CVBuffer=}16q24@32@40{?=qiIq}48{?=[3]}72@120, name: initWithPixelBuffer:captureFramePerSecond:captureDevice:captureSession:timestamp:intrinsics:exif:
 - (id)initWithSampleBuffer:(struct opaqueCMSampleBuffer *)arg1 captureFramePerSecond:(long long)arg2 captureDevice:(id)arg3 captureSession:(id)arg4;
 - (id)initWithImageData:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

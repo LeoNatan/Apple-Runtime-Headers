@@ -10,6 +10,7 @@
 
 @class ACDQueueDictionary, NSString, NSXPCListener;
 
+__attribute__((visibility("hidden")))
 @interface ACDAuthenticationDialogManager : NSObject <ACDAuthenticationDialogManagerProtocol>
 {
     NSXPCListener *_authenticationDialogListener;

@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)_buildCompleteEdge;
 - (unsigned long long)_maxTileCount;
 - (void)dealloc;
-- (id)initWithMap:(id)arg1 roadFeature:(CDStruct_a2ef2718 *)arg2 shouldFlip:(_Bool)arg3;
+- (id)initWithMap:(id)arg1 roadFeature:(CDStruct_c8b5ad3f *)arg2 shouldFlip:(_Bool)arg3;
 
 @end
 

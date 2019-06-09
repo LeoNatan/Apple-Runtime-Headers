@@ -8,6 +8,7 @@
 
 #import <CallHistory/NSCopying-Protocol.h>
 
+__attribute__((visibility("hidden")))
 @interface AWDCallHistoryMissingCloudChangeToken : PBCodable <NSCopying>
 {
     unsigned long long _timestamp;

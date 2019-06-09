@@ -29,6 +29,9 @@
 - (id)messageReceiverChildren;
 - (void)sessionAudioControlUpdated:(id)arg1;
 - (void)handleSessionPlaybackStateUpdatedNotification:(id)arg1;
+- (void)_handleSetPower:(id)arg1;
+- (void)_handleSetValue:(id)arg1 withRequestProperty:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
+- (void)handleSetValue:(id)arg1 withRequestProperty:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)_sessionPlaybackStateUpdated:(id)arg1 notifyXPCClients:(BOOL)arg2;
 - (void)updateWithResponses:(id)arg1 message:(id)arg2;
 - (void)_handleMediaSessionSetAudioControl:(id)arg1;
@@ -39,9 +42,11 @@
 @property(nonatomic) __weak HMDMediaSystem *mediaSystem; // @synthesize mediaSystem=_mediaSystem;
 @property(readonly) __weak HMDAppleMediaAccessory *mediaAccessory;
 - (void)registerForMessages;
-- (void)configureWithMessageDispatcher:(id)arg1;
+- (void)configureWithMessageDispatcher:(id)arg1 configurationTracker:(id)arg2;
 - (id)initWithAccessory:(id)arg1;
 - (id)initWithAccessory:(id)arg1 uniqueIdentifier:(id)arg2 services:(id)arg3;
+- (id)assistantObject;
+- (id)url;
 
 @end
 

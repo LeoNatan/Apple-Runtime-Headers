@@ -16,7 +16,6 @@
 + (id)secAccessControlObjectWithCreationFlag:(unsigned long long)arg1 error:(id *)arg2;
 + (_Bool)addItemWithoutGuardian:(id)arg1 forIdentifier:(id)arg2 error:(id *)arg3;
 + (_Bool)addDevicePasscodeGuardedItem:(id)arg1 forIdentifier:(id)arg2 error:(id *)arg3;
-+ (_Bool)addTouchIDGuardedItem:(id)arg1 forIdentifier:(id)arg2 error:(id *)arg3;
 + (_Bool)biometricIDIsEnrolled;
 + (_Bool)looselyAuthenticateWithDevicePasscodeWithAlertText:(id)arg1;
 + (void)endEvaluatePolicyReplyBlock;

@@ -9,15 +9,18 @@
 #import <GeoServices/GEOResourceManifestTileGroupObserver-Protocol.h>
 #import <GeoServices/_GEOCountryConfigurationServerProxyDelegate-Protocol.h>
 
-@class NSMutableArray, NSMutableDictionary, NSString;
-@protocol OS_dispatch_queue, _GEOCountryConfigurationServerProxy;
+@class NSMutableArray, NSMutableDictionary, NSString, geo_isolater;
+@protocol _GEOCountryConfigurationServerProxy;
 
 @interface GEOCountryConfiguration : NSObject <GEOResourceManifestTileGroupObserver, _GEOCountryConfigurationServerProxyDelegate>
 {
-    NSObject<OS_dispatch_queue> *_isolationQueue;
+    geo_isolater *_isolater;
     NSString *_countryCode;
     NSMutableArray *_updateCompletionHandlers;
     NSMutableDictionary *_supportedFeatures;
+    geo_isolater *_currentCountrySupportsNavigationIsolater;
+    BOOL _currentCountrySupportsNavigation;
+    BOOL _determinedCurrentCountrySupportsNavigation;
     double _urlAuthenticationTimeToLive;
     BOOL _hasURLAuthenticationTimeToLive;
     id <_GEOCountryConfigurationServerProxy> _serverProxy;
@@ -49,12 +52,14 @@
 - (BOOL)currentCountrySupportsFeature:(long long)arg1;
 - (BOOL)countryCode:(id)arg1 supportsFeature:(long long)arg2;
 - (void)_resetSupportedFeatures;
-- (void)_updateCountryConfiguration:(CDUnknownBlockType)arg1 callbackQueue:(id)arg2;
 - (void)updateCountryConfiguration:(CDUnknownBlockType)arg1 callbackQueue:(id)arg2;
 - (void)updateCountryConfiguration:(CDUnknownBlockType)arg1;
 - (void)updateProvidersForCurrentCountry;
 - (void)dealloc;
 - (id)init;
+@property(readonly, nonatomic) BOOL zilchPointsSupported;
+@property(readonly, nonatomic) BOOL shouldUseGuidanceEventManager;
+@property(readonly, nonatomic) BOOL shouldRequestLaneGuidance;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

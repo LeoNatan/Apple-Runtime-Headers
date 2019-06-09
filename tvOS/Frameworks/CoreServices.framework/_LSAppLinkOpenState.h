@@ -6,30 +6,33 @@
 
 #import <objc/NSObject.h>
 
+#import <CoreServices/NSCopying-Protocol.h>
 #import <CoreServices/NSSecureCoding-Protocol.h>
 
-@class NSDictionary, NSString, NSURL, _LSOpenConfiguration;
+@class NSDictionary, NSString, NSURL, NSXPCConnection, _LSOpenConfiguration;
 
 __attribute__((visibility("hidden")))
-@interface _LSAppLinkOpenState : NSObject <NSSecureCoding>
+@interface _LSAppLinkOpenState : NSObject <NSCopying, NSSecureCoding>
 {
-    _Bool _openStrategyChanged;
     NSURL *_URL;
     NSString *_bundleIdentifier;
     _LSOpenConfiguration *_openConfiguration;
+    NSXPCConnection *_XPCConnection;
     NSDictionary *_browserState;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(copy) NSDictionary *browserState; // @synthesize browserState=_browserState;
-@property _Bool openStrategyChanged; // @synthesize openStrategyChanged=_openStrategyChanged;
+@property(retain) NSXPCConnection *XPCConnection; // @synthesize XPCConnection=_XPCConnection;
 @property(retain) _LSOpenConfiguration *openConfiguration; // @synthesize openConfiguration=_openConfiguration;
 @property(copy) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(copy) NSURL *URL; // @synthesize URL=_URL;
+- (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)debugDescription;
-- (void)dealloc;
+@property(readonly) const CDStruct_4c969caf *auditToken;
 
 @end
 

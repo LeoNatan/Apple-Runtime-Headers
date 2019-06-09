@@ -10,5 +10,8 @@
 + (id)hk_minimumDateForBirthDateWithCalendar:(id)arg1;
 - (double)doubleValue;
 - (id)hk_dateWithTruncatedSecond;
+- (id)hk_dateBeforeDateForCalendar:(id)arg1 rangeUnit:(unsigned int)arg2;
+- (id)hk_midPointToValue:(id)arg1 percentage:(float)arg2;
+- (_Bool)hk_animatable;
 @end
 

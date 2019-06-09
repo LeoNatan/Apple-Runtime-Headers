@@ -8,8 +8,11 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class PBUnknownFields;
+
 @interface GEOJunctionInfo : PBCodable <NSCopying>
 {
+    PBUnknownFields *_unknownFields;
     struct GEOJunctionElement *_junctionElements;
     unsigned long long _junctionElementsCount;
     unsigned long long _junctionElementsSpace;
@@ -17,12 +20,16 @@
     int _junctionType;
     int _maneuverType;
     struct {
-        unsigned int drivingSide:1;
-        unsigned int junctionType:1;
-        unsigned int maneuverType:1;
-    } _has;
+        unsigned int has_drivingSide:1;
+        unsigned int has_junctionType:1;
+        unsigned int has_maneuverType:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
+- (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
+@property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -30,20 +37,21 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (int)StringAsDrivingSide:(id)arg1;
 - (id)drivingSideAsString:(int)arg1;
 @property(nonatomic) BOOL hasDrivingSide;
-@property(nonatomic) int drivingSide; // @synthesize drivingSide=_drivingSide;
+@property(nonatomic) int drivingSide;
 - (int)StringAsManeuverType:(id)arg1;
 - (id)maneuverTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasManeuverType;
-@property(nonatomic) int maneuverType; // @synthesize maneuverType=_maneuverType;
+@property(nonatomic) int maneuverType;
 - (int)StringAsJunctionType:(id)arg1;
 - (id)junctionTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasJunctionType;
-@property(nonatomic) int junctionType; // @synthesize junctionType=_junctionType;
+@property(nonatomic) int junctionType;
 - (void)setJunctionElements:(struct GEOJunctionElement *)arg1 count:(unsigned long long)arg2;
 - (struct GEOJunctionElement)junctionElementAtIndex:(unsigned long long)arg1;
 - (void)addJunctionElement:(struct GEOJunctionElement)arg1;

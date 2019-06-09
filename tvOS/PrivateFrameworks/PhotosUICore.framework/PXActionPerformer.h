@@ -6,8 +6,8 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, UIViewController;
-@protocol PXActionPerformerDelegate;
+@class NSString;
+@protocol PXActionPerformerDelegate, PXAnonymousViewController;
 
 @interface PXActionPerformer : NSObject
 {
@@ -15,9 +15,10 @@
     _Bool _success;
     _Bool _cancellable;
     NSString *_actionType;
+    id _sender;
     unsigned long long _state;
     id <PXActionPerformerDelegate> _delegate;
-    UIViewController *_presentedViewController;
+    struct NSObject *_presentedViewController;
     CDUnknownBlockType _viewControllerPresenter;
     CDUnknownBlockType _viewControllerDismisser;
 }
@@ -25,10 +26,11 @@
 + (_Bool)canPerformBlacklistingOnAssetCollection:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType viewControllerDismisser; // @synthesize viewControllerDismisser=_viewControllerDismisser;
 @property(copy, nonatomic) CDUnknownBlockType viewControllerPresenter; // @synthesize viewControllerPresenter=_viewControllerPresenter;
-@property(readonly, nonatomic) UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
+@property(readonly, nonatomic) NSObject<PXAnonymousViewController> *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 @property(nonatomic) __weak id <PXActionPerformerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long state; // @synthesize state=_state;
 @property(readonly, nonatomic, getter=isCancellable) _Bool cancellable; // @synthesize cancellable=_cancellable;
+@property(nonatomic) __weak id sender; // @synthesize sender=_sender;
 @property(readonly, nonatomic) _Bool success; // @synthesize success=_success;
 @property(readonly, nonatomic) NSString *actionType; // @synthesize actionType=_actionType;
 - (void).cxx_destruct;
@@ -38,16 +40,20 @@
 - (void)completeBackgroundTaskWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)performBackgroundTask;
 - (void)completeUserInteractionTaskWithSuccess:(_Bool)arg1 error:(id)arg2;
-- (_Bool)dismissViewController:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (_Bool)presentViewController:(id)arg1;
+- (_Bool)dismissViewController:(struct NSObject *)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (_Bool)presentViewController:(struct NSObject *)arg1;
 - (void)performUserInteractionTask;
 - (void)_completeUnlockTaskWithSuccess:(_Bool)arg1 error:(id)arg2;
 - (void)_performUnlockIfNeeded;
 - (_Bool)requiresUnlockedDevice;
+- (id)description;
+- (_Bool)performerResetsAfterCompletion;
 - (void)cancelActionWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performActionWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)localizedTitleForUseCase:(unsigned long long)arg1;
 - (id)initWithActionType:(id)arg1;
 - (id)init;
+- (id)alertAction;
 
 @end
 

@@ -22,7 +22,9 @@
     NSMutableDictionary *_cachedPlaceholders;
 }
 
-+ (id)cachedSnapshotPath;
++ (id)_cachedSnapshotPathForFilename:(id)arg1;
++ (id)_cachedSnapshotPathDark;
++ (id)_cachedSnapshotPathLight;
 @property(retain, nonatomic) NSMutableDictionary *cachedPlaceholders; // @synthesize cachedPlaceholders=_cachedPlaceholders;
 @property(retain, nonatomic) PHAssetCollection *placesCollection; // @synthesize placesCollection=_placesCollection;
 @property(retain, nonatomic) id <PXPlacesSnapshotFactoryDelegate> factoryDelegate; // @synthesize factoryDelegate=_factoryDelegate;
@@ -32,12 +34,12 @@
 - (id)backgroundImageNameForType:(unsigned long long)arg1 usingTraitCollection:(id)arg2;
 - (id)createAlbumPlaceHolderImageUsingTraitCollection:(id)arg1;
 - (_Bool)_imageExistsWithLocalIdentifier:(id)arg1;
-- (_Bool)_fetchCachedSnapshotImage:(out id *)arg1 andIdentifier:(out id *)arg2;
+- (_Bool)_fetchCachedSnapshotImage:(out id *)arg1 andIdentifier:(out id *)arg2 forUserInterfaceStyle:(long long)arg3;
 - (id)_placeHolderImageForExtendedTraitCollection:(id)arg1;
 - (void)requestAssetCountWithForcedRefresh:(_Bool)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)requestPlacesAlbumCover:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestPlacesAlbumCover:(id)arg1 snapshotTraitCollection:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)preloadPlaceholderForTraitCollection:(id)arg1;
-- (void)preloadCachedSnapshot;
+- (void)preloadCachedSnapshotForUserInterfaceStyle:(long long)arg1;
 - (id)initWithDelegate:(id)arg1 andPlacesCollection:(id)arg2;
 
 @end

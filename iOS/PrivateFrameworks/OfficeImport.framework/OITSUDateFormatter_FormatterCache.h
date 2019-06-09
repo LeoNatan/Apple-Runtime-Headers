@@ -16,8 +16,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)dateFormatterStringFromDate:(id)arg1 withFormat:(id)arg2 locale:(id)arg3;
+- (void).cxx_destruct;
 - (id)dateFormatterStringFromDate:(id)arg1 withFormat:(id)arg2 locale:(id)arg3;
-- (void)dealloc;
 - (id)init;
 
 @end

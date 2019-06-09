@@ -9,11 +9,13 @@
 #import <PhotoFoundation/PFLoggerBackend-Protocol.h>
 
 @class NSString;
+@protocol OS_os_transaction;
 
 @interface PFLoggerBackendAdapter : NSObject <PFLoggerBackend>
 {
+    // Error parsing type: AQ, name: _pendingTransactionCount
+    NSObject<OS_os_transaction> *_transaction;
     BOOL _runningUnderDebugger;
-    long long _pendingTransactionCount;
 }
 
 + (long long)parseByteSizeValueForKey:(id)arg1 inString:(id)arg2;
@@ -21,8 +23,8 @@
 + (long long)fileSizeMaxBytesFromString:(id)arg1;
 + (id)pathWithoutParametersFromString:(id)arg1;
 + (id)backendsFromUserDefaultsWithLogLevel:(int)arg1;
-@property long long pendingTransactionCount; // @synthesize pendingTransactionCount=_pendingTransactionCount;
 @property BOOL runningUnderDebugger; // @synthesize runningUnderDebugger=_runningUnderDebugger;
+- (void).cxx_destruct;
 - (void)flushWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL outputsToDebuggerConsole;
 @property(readonly, nonatomic) BOOL formatsMessage;

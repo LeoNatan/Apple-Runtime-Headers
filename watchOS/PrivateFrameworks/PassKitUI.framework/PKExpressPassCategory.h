@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <PassKitUI/NSCopying-Protocol.h>
+
 @class NSArray, NSString, UIImage;
 
-@interface PKExpressPassCategory : NSObject
+@interface PKExpressPassCategory : NSObject <NSCopying>
 {
     UIImage *_categoryImage;
     NSString *_categoryTitle;
@@ -25,6 +27,7 @@
 @property(retain, nonatomic) NSString *categoryTitle; // @synthesize categoryTitle=_categoryTitle;
 @property(retain, nonatomic) UIImage *categoryImage; // @synthesize categoryImage=_categoryImage;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)init;
 
 @end

@@ -6,15 +6,15 @@
 
 #import <TelephonyUtilities/NSObject-Protocol.h>
 
-@class NSString;
+@class NSDictionary, NSString;
 @protocol TUMomentsControllerDataSourceDelegate;
 
 @protocol TUMomentsControllerDataSource <NSObject>
 @property(nonatomic) __weak id <TUMomentsControllerDataSourceDelegate> delegate;
 - (void)invalidate;
 - (void)endRequestWithTransactionID:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
-- (void)startRequestWithMediaType:(int)arg1 forStreamToken:(long long)arg2 completion:(void (^)(NSString *, NSError *))arg3;
+- (void)startRequestWithMediaType:(int)arg1 forStreamToken:(long long)arg2 requesteeID:(NSString *)arg3 completion:(void (^)(NSString *, NSError *))arg4;
 - (void)unregisterStreamToken:(long long)arg1 completion:(void (^)(NSError *))arg2;
-- (void)registerStreamToken:(long long)arg1 remoteIDSDestination:(NSString *)arg2 remoteMomentsAvailable:(_Bool)arg3 completion:(void (^)(TUMomentsCapabilities *, NSError *))arg4;
+- (void)registerStreamToken:(long long)arg1 requesterID:(NSString *)arg2 remoteIDSDestinations:(NSDictionary *)arg3 remoteMomentsAvailable:(_Bool)arg4 completion:(void (^)(TUMomentsCapabilities *, NSError *))arg5;
 @end
 

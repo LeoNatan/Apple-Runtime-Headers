@@ -6,49 +6,48 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDictionary, NSIndexSet, NSMutableArray, NSMutableIndexSet, PHFetchResult;
+@class NSArray, NSIndexSet, PHFetchResult;
 
 @interface PHFetchResultChangeDetails : NSObject
 {
-    PHFetchResult *_resultBeforeChanges;
-    PHFetchResult *_resultAfterChanges;
-    NSArray *_modelChangeGroups;
-    NSDictionary *_changeDescriptorsByIdentifier;
-    NSMutableIndexSet *_insertedIndexes;
-    NSMutableIndexSet *_updatedIndexes;
-    NSMutableIndexSet *_deletedIndexes;
-    NSMutableIndexSet *_movedIndexes;
-    NSMutableArray *_insertedObjects;
-    NSMutableArray *_updatedObjects;
-    NSMutableArray *_deletedObjects;
-    NSMutableArray *_movedFromIndexes;
-    BOOL _hasMoves;
-    BOOL _hasInserts;
-    BOOL _hasUpdates;
-    BOOL _hasDeletes;
+    PHFetchResult *_fetchResultBeforeChanges;
+    PHFetchResult *_fetchResultAfterChanges;
+    NSArray *_previousItems;
+    NSArray *_currentItems;
+    NSIndexSet *_removedIndexes;
+    NSIndexSet *_insertedIndexes;
+    NSIndexSet *_movedIndexes;
+    struct __CFArray *_movedFromIndexes;
+    NSArray *_changedItems;
+    NSIndexSet *_changedIndexes;
+    BOOL _skipIncrementalChanges;
 }
 
++ (id)_identifiersForPHObjects:(id)arg1;
 + (id)changeDetailsFromFetchResult:(id)arg1 toFetchResult:(id)arg2 changedObjects:(id)arg3;
-@property(readonly, nonatomic) BOOL hasDeletes; // @synthesize hasDeletes=_hasDeletes;
-@property(readonly, nonatomic) BOOL hasUpdates; // @synthesize hasUpdates=_hasUpdates;
-@property(readonly, nonatomic) BOOL hasInserts; // @synthesize hasInserts=_hasInserts;
-@property(readonly) BOOL hasMoves; // @synthesize hasMoves=_hasMoves;
 - (void).cxx_destruct;
-- (void)diffResults;
-- (id)combinedResultsWithBeforeFetchResults:(id)arg1 afterFetchResults:(id)arg2;
-- (void)calculateFetchResultAfterChanges;
+- (id)description;
+- (BOOL)hasDiffs;
+- (void)calculateDiffs;
+- (unsigned long long)snapshotIndexForContainedObject:(id)arg1;
+@property(readonly) BOOL hasMoves;
 - (void)enumerateMovesWithBlock:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) const struct __CFArray *movedFromIndexes;
+@property(readonly, nonatomic) NSIndexSet *movedIndexes;
 @property(readonly) NSArray *changedObjects;
 @property(readonly) NSIndexSet *changedIndexes;
 @property(readonly) NSArray *insertedObjects;
 @property(readonly) NSIndexSet *insertedIndexes;
 @property(readonly) NSArray *removedObjects;
 @property(readonly) NSIndexSet *removedIndexes;
-@property(readonly, nonatomic) BOOL hasDiffs;
-@property(readonly) BOOL hasIncrementalChanges;
+- (id)currentItems;
 @property(readonly) PHFetchResult *fetchResultAfterChanges;
 @property(readonly) PHFetchResult *fetchResultBeforeChanges;
-- (id)initWithFetchResult:(id)arg1 changeGroups:(id)arg2 changeDescriptors:(id)arg3;
+@property(readonly) BOOL hasIncrementalChanges;
+- (BOOL)shouldReload;
+- (void)dealloc;
+- (id)initWithManualFetchResultAfterChanges:(id)arg1;
+- (id)initWithFetchResult:(id)arg1 currentFetchResult:(id)arg2 changedItems:(id)arg3 unknownMergeEvent:(BOOL)arg4;
 
 @end
 

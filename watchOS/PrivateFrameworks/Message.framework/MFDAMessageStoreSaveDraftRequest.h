@@ -16,11 +16,10 @@
     NSString *_folderID;
 }
 
-- (id)deferredOperation;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) _Bool isUserRequested;
 @property(readonly, nonatomic) _Bool shouldSend;
 - (unsigned long long)generationNumber;
-- (void)dealloc;
 - (id)initWithMessage:(id)arg1 mailbox:(id)arg2;
 
 @end

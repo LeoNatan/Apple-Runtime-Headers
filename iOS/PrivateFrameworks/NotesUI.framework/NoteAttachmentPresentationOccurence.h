@@ -20,7 +20,6 @@
 @property(readonly, nonatomic) NoteAttachmentPresentation *presentation; // @synthesize presentation=_presentation;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NSURL *previewItemURL;
-- (_Bool)showsUpInRange:(id)arg1;
 - (id)initWithPresentation:(id)arg1 element:(id)arg2;
 - (id)init;
 

@@ -8,6 +8,7 @@
 
 @class WBReader, WXReadState;
 
+__attribute__((visibility("hidden")))
 @interface WBOfficeArtReaderState : OABReaderState
 {
     WBReader *mReader;

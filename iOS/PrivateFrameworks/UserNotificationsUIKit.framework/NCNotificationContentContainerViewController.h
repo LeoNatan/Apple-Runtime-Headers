@@ -10,7 +10,7 @@
 #import <UserNotificationsUIKit/NCNotificationCustomContentDelegate-Protocol.h>
 #import <UserNotificationsUIKit/NCNotificationTextInputViewDelegate-Protocol.h>
 
-@class NCNotificationAction, NCNotificationRequest, NCNotificationTextInputView, NSString;
+@class NCNotificationRequest, NCNotificationTextInputView, NSString;
 @protocol NCNotificationCustomContent, NCNotificationCustomContentDelegate;
 
 @interface NCNotificationContentContainerViewController : UIViewController <NCNotificationCustomContentDelegate, NCNotificationTextInputViewDelegate, NCNotificationCustomContent>
@@ -34,9 +34,8 @@
 - (void)_setupContentViewController:(id)arg1;
 - (void)notificationTextInputView:(id)arg1 didConfirmText:(id)arg2 forAction:(id)arg3;
 - (id)cancelTouches;
-- (void)playAudioMessage;
+- (void)playMedia;
 @property(readonly, nonatomic) NSString *contentExtensionIdentifier;
-- (void)loadAudioAccessoryView;
 - (unsigned long long)customContentLocation;
 - (_Bool)userInteractionEnabled;
 - (_Bool)allowManualDismiss;
@@ -50,7 +49,6 @@
 - (void)customContent:(id)arg1 didUpdateUserNotificationActions:(id)arg2;
 - (void)customContentDidUpdateTitle:(id)arg1;
 - (void)customContentDidLoadExtension:(id)arg1;
-- (void)customContent:(id)arg1 didLoadAudioAccessoryView:(id)arg2;
 - (void)customContentRequestsDismiss:(id)arg1;
 - (void)customContentRequestsDefaultAction:(id)arg1;
 - (void)customContent:(id)arg1 forwardAction:(id)arg2 forNotification:(id)arg3 withUserInfo:(id)arg4;
@@ -58,6 +56,7 @@
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (struct CGSize)sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize)arg2;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
+- (_Bool)_canShowWhileLocked;
 @property(readonly, copy, nonatomic) NSString *title;
 - (void)viewWillDisappear:(_Bool)arg1;
 - (void)viewDidLoad;
@@ -69,7 +68,6 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(nonatomic) __weak NCNotificationAction *presentationSourceAction;
 @property(readonly) Class superclass;
 
 @end

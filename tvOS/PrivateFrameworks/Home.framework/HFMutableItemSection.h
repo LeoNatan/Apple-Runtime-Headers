@@ -12,6 +12,7 @@
 {
 }
 
+- (void)setItemsUsingDefaultSortComparator:(id)arg1;
 - (void)setItems:(id)arg1 filteringToDisplayedItems:(id)arg2;
 
 // Remaining properties

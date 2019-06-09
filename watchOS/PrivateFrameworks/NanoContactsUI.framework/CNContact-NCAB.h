@@ -6,9 +6,26 @@
 
 #import <Contacts/CNContact.h>
 
+@class NSArray, NSData, NSString;
+
 @interface CNContact (NCAB)
++ (id)contactWithStateRestorationCoder:(id)arg1 store:(id)arg2 keys:(id)arg3;
++ (id)multiValuePropertiesSupportingPredicateValidation;
++ (id)descriptorForAllUIKeys;
++ (_Bool)settableMeCardEnabled;
++ (_Bool)contactRemindersEnabled;
++ (_Bool)quickActionsEnabled;
++ (_Bool)suggestionsShownInEditMode;
++ (_Bool)suggestionsEnabled;
+- (id)allPhoneNumbersAndEmails;
 @property(readonly, nonatomic, getter=isMailable) _Bool mailable;
 @property(readonly, nonatomic, getter=isMessagable) _Bool messagable;
 @property(readonly, nonatomic, getter=isUnknown) _Bool unknown;
+@property(readonly, nonatomic) NSData *vCardRepresentation;
+- (id)validPropertiesByEvaluatingPredicate:(id)arg1 onMultiValueProperties:(id)arg2;
+@property(readonly, nonatomic) NSArray *birthdays;
+@property(readonly, nonatomic) NSString *personName;
+@property(readonly, nonatomic) _Bool supportsInstantMessageService;
+@property(readonly, nonatomic) _Bool hasNonPersistedData;
 @end
 

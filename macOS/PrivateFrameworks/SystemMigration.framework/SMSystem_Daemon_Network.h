@@ -118,7 +118,6 @@
 - (Class)networkProxyClass;
 - (BOOL)connectSession;
 - (BOOL)isMounted;
-- (void)waitForAllActionDeparture;
 - (void)unmount;
 - (void)mountWithCredentials:(id)arg1;
 - (void)mount;

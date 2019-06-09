@@ -12,7 +12,7 @@
 #import <NewsCore/FCTagProviding-Protocol.h>
 #import <NewsCore/FCTopicProviding-Protocol.h>
 
-@class FCAssetHandle, FCColor, FCHeadlineTemplate, FCInterestToken, FCTagBanner, FCTextInfo, NSArray, NSData, NSDate, NSString, NTPBFeedConfiguration, NTPBPublisherPaidDescriptionStrings, NTPBTagRecord;
+@class FCAssetHandle, FCColor, FCHeadlineTemplate, FCInterestToken, FCSubscriptionButtonConfiguration, FCTagBanner, FCTextInfo, NSArray, NSData, NSDate, NSString, NTPBFeedConfiguration, NTPBPublisherPaidDescriptionStrings, NTPBTagRecord;
 @protocol FCChannelProviding, FCFeedTheming, FCSectionProviding, FCTopicProviding;
 
 @interface FCTag : NSObject <FCTagProviding, FCChannelProviding, FCSectionProviding, FCTopicProviding, FCFeedTheming>
@@ -79,13 +79,17 @@
     unsigned long long _groupingEligibility;
     NSArray *_publisherSpecifiedArticleIDs;
     NSDate *_publisherSpecifiedArticleIDsModifiedDate;
+    FCSubscriptionButtonConfiguration *_paidBundleSubscriptionButtonConfiguration;
     NSString *_pptFeedIDOverride;
     FCInterestToken *_tagInterestToken;
     NTPBFeedConfiguration *_feedConfiguration;
     NSArray *_sectionFeedConfigurations;
     NSString *_backgroundColorHexString;
+    NSString *_darkStyleBackgroundColorHexString;
     NSString *_foregroundColorHexString;
+    NSString *_darkStyleForegroundColorHexString;
     NSString *_groupTitleColorHexString;
+    NSString *_groupDarkStyleTitleColorHexString;
     NSDate *_loadDate;
     NTPBTagRecord *_tagRecord;
     FCInterestToken *_tagRecordInterestToken;
@@ -100,13 +104,17 @@
 @property(readonly, nonatomic) FCInterestToken *tagRecordInterestToken; // @synthesize tagRecordInterestToken=_tagRecordInterestToken;
 @property(readonly, nonatomic) NTPBTagRecord *tagRecord; // @synthesize tagRecord=_tagRecord;
 @property(retain, nonatomic) NSDate *loadDate; // @synthesize loadDate=_loadDate;
+@property(copy, nonatomic) NSString *groupDarkStyleTitleColorHexString; // @synthesize groupDarkStyleTitleColorHexString=_groupDarkStyleTitleColorHexString;
 @property(copy, nonatomic) NSString *groupTitleColorHexString; // @synthesize groupTitleColorHexString=_groupTitleColorHexString;
+@property(copy, nonatomic) NSString *darkStyleForegroundColorHexString; // @synthesize darkStyleForegroundColorHexString=_darkStyleForegroundColorHexString;
 @property(copy, nonatomic) NSString *foregroundColorHexString; // @synthesize foregroundColorHexString=_foregroundColorHexString;
+@property(copy, nonatomic) NSString *darkStyleBackgroundColorHexString; // @synthesize darkStyleBackgroundColorHexString=_darkStyleBackgroundColorHexString;
 @property(copy, nonatomic) NSString *backgroundColorHexString; // @synthesize backgroundColorHexString=_backgroundColorHexString;
 @property(copy, nonatomic) NSArray *sectionFeedConfigurations; // @synthesize sectionFeedConfigurations=_sectionFeedConfigurations;
 @property(copy, nonatomic) NTPBFeedConfiguration *feedConfiguration; // @synthesize feedConfiguration=_feedConfiguration;
 @property(retain, nonatomic) FCInterestToken *tagInterestToken; // @synthesize tagInterestToken=_tagInterestToken;
 @property(copy, nonatomic) NSString *pptFeedIDOverride; // @synthesize pptFeedIDOverride=_pptFeedIDOverride;
+@property(readonly, copy, nonatomic) FCSubscriptionButtonConfiguration *paidBundleSubscriptionButtonConfiguration; // @synthesize paidBundleSubscriptionButtonConfiguration=_paidBundleSubscriptionButtonConfiguration;
 @property(readonly, nonatomic) NSDate *publisherSpecifiedArticleIDsModifiedDate; // @synthesize publisherSpecifiedArticleIDsModifiedDate=_publisherSpecifiedArticleIDsModifiedDate;
 @property(readonly, nonatomic) NSArray *publisherSpecifiedArticleIDs; // @synthesize publisherSpecifiedArticleIDs=_publisherSpecifiedArticleIDs;
 @property(readonly, nonatomic) _Bool isArticleReadCountReportingEnabled; // @synthesize isArticleReadCountReportingEnabled=_isArticleReadCountReportingEnabled;
@@ -176,8 +184,11 @@
 @property(readonly, nonatomic) _Bool supportsNotifications;
 @property(readonly, nonatomic) NSData *backingTagRecordData;
 - (void)ppt_overrideFeedID:(id)arg1;
+@property(readonly, copy, nonatomic) FCColor *groupDarkStyleTitleColor;
 @property(readonly, copy, nonatomic) FCColor *groupTitleColor;
+@property(readonly, nonatomic) FCColor *darkStyleForegroundColor;
 @property(readonly, nonatomic) FCColor *foregroundColor;
+@property(readonly, nonatomic) FCColor *darkStyleBackgroundColor;
 @property(readonly, nonatomic) FCColor *backgroundColor;
 @property(readonly, nonatomic) FCTagBanner *compactBannerImage; // @synthesize compactBannerImage=_compactBannerImage;
 @property(readonly, nonatomic) FCTagBanner *bannerImageForThemeBackground; // @synthesize bannerImageForThemeBackground=_bannerImageForThemeBackground;

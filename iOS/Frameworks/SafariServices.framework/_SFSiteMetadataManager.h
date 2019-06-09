@@ -6,18 +6,22 @@
 
 #import <WebUI/WBSSiteMetadataManager.h>
 
-@class _SFFaviconProvider, _SFPasswordTouchIconCache, _SFTouchIconCache;
+@class WBSLeadImageCache, _SFFaviconProvider, _SFLinkPresentationIconCache, _SFPasswordTouchIconCache, _SFTouchIconCache;
 
 @interface _SFSiteMetadataManager : WBSSiteMetadataManager
 {
     _SFFaviconProvider *_faviconProvider;
     _SFPasswordTouchIconCache *_passwordTouchIconCache;
     _SFTouchIconCache *_touchIconCache;
+    WBSLeadImageCache *_leadImageCache;
+    _SFLinkPresentationIconCache *_linkPresentationIconCache;
 }
 
 + (id)sharedSiteMetadataManager;
 + (void)setSharedSiteMetadataManagerProvider:(id)arg1;
 + (void)setSharedSiteMetadataManager:(id)arg1;
+@property(readonly, nonatomic) _SFLinkPresentationIconCache *linkPresentationIconCache; // @synthesize linkPresentationIconCache=_linkPresentationIconCache;
+@property(readonly, nonatomic) WBSLeadImageCache *leadImageCache; // @synthesize leadImageCache=_leadImageCache;
 @property(readonly, nonatomic) _SFTouchIconCache *touchIconCache; // @synthesize touchIconCache=_touchIconCache;
 @property(readonly, nonatomic) _SFPasswordTouchIconCache *passwordTouchIconCache; // @synthesize passwordTouchIconCache=_passwordTouchIconCache;
 @property(readonly, nonatomic) _SFFaviconProvider *faviconProvider; // @synthesize faviconProvider=_faviconProvider;

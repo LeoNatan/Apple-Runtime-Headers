@@ -19,7 +19,7 @@
     BOOL _needsListCleanup;
     unsigned int _style;
     unsigned int _hints;
-    unsigned long long _alignment;
+    long long _alignment;
     long long _writingDirection;
     unsigned long long _indent;
     unsigned long long _startingItemNumber;
@@ -29,8 +29,8 @@
 + (id)paragraphStyleNamed:(unsigned int)arg1;
 + (id)defaultParagraphStyle;
 + (BOOL)supportsSecureCoding;
-+ (int)paragraphStyleAlignmentForTextAlignment:(unsigned long long)arg1;
-+ (unsigned long long)textAlignmentForParagraphStyleAlignment:(int)arg1;
++ (int)paragraphStyleAlignmentForTextAlignment:(long long)arg1;
++ (long long)textAlignmentForParagraphStyleAlignment:(int)arg1;
 @property(nonatomic) BOOL needsListCleanup; // @synthesize needsListCleanup=_needsListCleanup;
 @property(nonatomic) BOOL needsParagraphCleanup; // @synthesize needsParagraphCleanup=_needsParagraphCleanup;
 @property(nonatomic) unsigned int hints; // @synthesize hints=_hints;
@@ -38,7 +38,7 @@
 @property(nonatomic) unsigned long long startingItemNumber; // @synthesize startingItemNumber=_startingItemNumber;
 @property(nonatomic) unsigned long long indent; // @synthesize indent=_indent;
 @property(nonatomic) long long writingDirection; // @synthesize writingDirection=_writingDirection;
-@property(nonatomic) unsigned long long alignment; // @synthesize alignment=_alignment;
+@property(nonatomic) long long alignment; // @synthesize alignment=_alignment;
 @property(nonatomic) unsigned int style; // @synthesize style=_style;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *description;

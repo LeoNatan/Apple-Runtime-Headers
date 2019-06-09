@@ -8,6 +8,7 @@
 
 @class NSArray, NSColor;
 
+__attribute__((visibility("hidden")))
 @interface AVFunctionBarAudioTrackView : AVFunctionBarTrackView
 {
     double _normalizedCurrentValue;

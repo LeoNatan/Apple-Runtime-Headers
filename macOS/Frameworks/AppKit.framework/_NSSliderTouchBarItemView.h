@@ -9,7 +9,7 @@
 #import <AppKit/NSSliderAccessoryContainer-Protocol.h>
 #import <AppKit/NSUserInterfaceCompression-Protocol.h>
 
-@class NSSlider, NSSliderAccessory, NSStackView, NSString, NSUserInterfaceCompressionOptions;
+@class NSLayoutConstraint, NSSlider, NSSliderAccessory, NSStackView, NSString, NSUserInterfaceCompressionOptions;
 
 @interface _NSSliderTouchBarItemView : NSView <NSSliderAccessoryContainer, NSUserInterfaceCompression>
 {
@@ -22,11 +22,14 @@
     NSSliderAccessory *_minimumValueAccessory;
     NSSliderAccessory *_maximumValueAccessory;
     double _valueAccessoryWidth;
-    unsigned int _modelCollapsed:1;
-    unsigned int _presentationCollapsed:1;
-    unsigned int _reservedFlags:30;
-    unsigned int _showsValueAccessories:1;
-    unsigned int _showsLabel:1;
+    double _minimumSliderWidth;
+    double _maximumSliderWidth;
+    BOOL _modelCollapsed;
+    BOOL _presentationCollapsed;
+    BOOL _showsValueAccessories;
+    BOOL _showsLabel;
+    NSLayoutConstraint *_minimumSliderWidthConstraint;
+    NSLayoutConstraint *_maximumSliderWidthConstraint;
 }
 
 + (BOOL)automaticallyNotifiesObserversOfCollapsed;
@@ -37,6 +40,8 @@
 + (id)keyPathsForValuesAffecting_labelIsHidden;
 + (id)keyPathsForValuesAffecting_layoutEdgeInsets;
 + (id)keyPathsForValuesAffecting_hasStepBehaviorContext;
+@property double maximumSliderWidth; // @synthesize maximumSliderWidth=_maximumSliderWidth;
+@property double minimumSliderWidth; // @synthesize minimumSliderWidth=_minimumSliderWidth;
 @property BOOL _showsValueAccessories; // @synthesize _showsValueAccessories;
 @property BOOL _showsLabel; // @synthesize _showsLabel;
 @property(readonly) NSStackView *_layoutView; // @synthesize _layoutView;
@@ -59,6 +64,7 @@
 - (void)_maxValueAccessoryDidFire:(id)arg1;
 - (void)_minValueAccessoryDidFire:(id)arg1;
 - (void)_sliderDidChange:(id)arg1;
+- (void)updateConstraints;
 - (void)_loadViewHierarchy;
 @property(retain) NSSlider *slider;
 @property(readonly) BOOL _maxValueAccessoryIsHidden;

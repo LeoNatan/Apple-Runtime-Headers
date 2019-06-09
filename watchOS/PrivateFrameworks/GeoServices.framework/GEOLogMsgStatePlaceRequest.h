@@ -4,22 +4,22 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ProtocolBuffer/PBRequest.h>
+#import <ProtocolBuffer/PBCodable.h>
 
 #import <GeoServices/NSCopying-Protocol.h>
 
 @class GEOPDPlaceRequest;
 
-@interface GEOLogMsgStatePlaceRequest : PBRequest <NSCopying>
+@interface GEOLogMsgStatePlaceRequest : PBCodable <NSCopying>
 {
     GEOPDPlaceRequest *_placeDataRequest;
     int _placeRequestType;
     struct {
-        unsigned int placeRequestType:1;
-    } _has;
+        unsigned int has_placeRequestType:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDPlaceRequest *placeDataRequest; // @synthesize placeDataRequest=_placeDataRequest;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -28,13 +28,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDPlaceRequest *placeDataRequest;
 @property(readonly, nonatomic) _Bool hasPlaceDataRequest;
 - (int)StringAsPlaceRequestType:(id)arg1;
 - (id)placeRequestTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasPlaceRequestType;
-@property(nonatomic) int placeRequestType; // @synthesize placeRequestType=_placeRequestType;
+@property(nonatomic) int placeRequestType;
 
 @end
 

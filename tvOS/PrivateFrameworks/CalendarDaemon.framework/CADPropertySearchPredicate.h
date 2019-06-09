@@ -14,13 +14,13 @@
 {
     int _entityType;
     NSArray *_filters;
-    CADObjectID *_calendarID;
+    NSArray *_calendarRowIDs;
     CADObjectID *_sourceID;
 }
 
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) CADObjectID *sourceID; // @synthesize sourceID=_sourceID;
-@property(readonly, nonatomic) CADObjectID *calendarID; // @synthesize calendarID=_calendarID;
+@property(readonly, nonatomic) NSArray *calendarRowIDs; // @synthesize calendarRowIDs=_calendarRowIDs;
 @property(readonly, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(readonly, nonatomic) int entityType; // @synthesize entityType=_entityType;
 - (void).cxx_destruct;
@@ -29,11 +29,12 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (_Bool)validate;
-- (id)initWithEntityType:(int)arg1 filters:(id)arg2 calendar:(id)arg3 source:(id)arg4;
+- (id)initWithEntityType:(int)arg1 filters:(id)arg2 calendars:(id)arg3 source:(id)arg4;
+- (id)initWithEntityType:(int)arg1 filters:(id)arg2 calendars:(id)arg3;
 - (id)initWithEntityType:(int)arg1 filters:(id)arg2 source:(id)arg3;
 - (id)initWithEntityType:(int)arg1 filters:(id)arg2 calendar:(id)arg3;
 - (id)predicateFormat;
--     // Error parsing type: @24@0:8^{CalDatabase={__CFRuntimeBase=QAQ}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=q[56c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=q[56c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}B@B}16, name: copyMatchingItemsWithDatabase:
+-     // Error parsing type: @24@0:8^{CalDatabase={__CFRuntimeBase=QAQ}i^{CPRecordStore}^{CalEventOccurrenceCache}^{CalScheduledTaskCache}^{__CFDictionary}^{__CFDictionary}{_opaque_pthread_mutex_t=q[56c]}II^{__CFArray}^{__CFString}^{__CFArray}ii^{__CFString}^{__CFString}^{__CFString}i@?{_opaque_pthread_mutex_t=q[56c]}B^{__CFArray}^{__CFArray}^{__CFArray}^{__CFArray}@B^{__CFSet}@B}16, name: copyMatchingItemsWithDatabase:
 - (id)buildWhereClauseWithValues:(id)arg1 andTypes:(id)arg2;
 - (id)extendWhereClauseWithCalendarOrSourceLimitation:(id)arg1 withValues:(id)arg2 andTypes:(id)arg3;
 - (id)extendWhereClauseWithEntityTypeLimitation:(id)arg1 withValues:(id)arg2 andTypes:(id)arg3;

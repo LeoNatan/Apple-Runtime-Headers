@@ -11,6 +11,7 @@
 @class NSMutableArray, NSString;
 @protocol SyndromeHandlerProtocol;
 
+__attribute__((visibility("hidden")))
 @interface SimpleSyndromeHandler : NSObject <ConfigurableObjectProtocol>
 {
     double lastReportTime;

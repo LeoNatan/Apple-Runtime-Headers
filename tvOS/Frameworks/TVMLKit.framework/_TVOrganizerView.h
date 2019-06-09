@@ -44,6 +44,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canBecomeFocused;
 - (void)tv_setShowcaseFactor:(double)arg1;
 - (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2;
+- (void)setSelected:(_Bool)arg1 animated:(_Bool)arg2 withAnimationCoordinator:(id)arg3;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct UIEdgeInsets)tv_alignmentInsetsForExpectedWidth:(double)arg1;

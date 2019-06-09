@@ -10,7 +10,7 @@
 #import <MediaControls/UITableViewDataSource-Protocol.h>
 #import <MediaControls/UITableViewDelegate-Protocol.h>
 
-@class MPRequestResponseController, NSArray, NSString, UITableView, UIView;
+@class MPRequestResponseController, MTVisualStylingProvider, NSArray, NSString, UITableView, UIView;
 @protocol MediaControlsLanguageOptionsViewControllerDelegate;
 
 @interface MediaControlsLanguageOptionsViewController : UIViewController <MPRequestResponseControllerDelegate, UITableViewDataSource, UITableViewDelegate>
@@ -20,8 +20,10 @@
     MPRequestResponseController *_requestResponseController;
     UIView *_materialView;
     UITableView *_tableView;
+    MTVisualStylingProvider *_visualStylingProvider;
 }
 
+@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 @property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
 @property(retain, nonatomic) UIView *materialView; // @synthesize materialView=_materialView;
 @property(retain, nonatomic) MPRequestResponseController *requestResponseController; // @synthesize requestResponseController=_requestResponseController;
@@ -38,6 +40,7 @@
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (struct CGSize)preferredContentSize;
+- (_Bool)_canShowWhileLocked;
 - (void)viewWillLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithRouteUID:(id)arg1;

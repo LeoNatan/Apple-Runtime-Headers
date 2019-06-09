@@ -9,6 +9,7 @@
 @class UIButton;
 @protocol CKInlineAudioReplyButtonDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKInlineAudioReplyButtonController : NSObject
 {
     _Bool _started;

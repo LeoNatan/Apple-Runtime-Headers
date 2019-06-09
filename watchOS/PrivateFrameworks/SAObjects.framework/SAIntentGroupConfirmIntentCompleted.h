@@ -17,6 +17,7 @@
 + (id)confirmIntentCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)confirmIntentCompleted;
 - (_Bool)requiresResponse;
+@property(copy, nonatomic) NSString *jsonEncodedIntentResponse;
 @property(retain, nonatomic) SAIntentGroupProtobufMessage *intentResponse;
 - (id)encodedClassName;
 - (id)groupIdentifier;

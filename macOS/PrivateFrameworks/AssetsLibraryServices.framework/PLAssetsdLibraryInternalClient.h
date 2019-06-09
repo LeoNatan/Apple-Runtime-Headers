@@ -10,6 +10,12 @@
 {
 }
 
+- (BOOL)invalidateBehavioralScoreOnAllAssetsWithError:(id *)arg1;
+- (void)deleteiTunesSyncedContentWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)getBackgroundJobServiceBundlesInQueueDictionaryWithError:(id *)arg1;
+- (unsigned long long)getBackgroundJobServiceStateWithError:(id *)arg1;
+- (BOOL)registerBackgroundJobServiceIfNecessaryOnLibraryPath:(id)arg1 error:(id *)arg2;
+- (BOOL)invalidateReverseLocationDataOnAllAssetsWithError:(id *)arg1;
 - (BOOL)setKeywords:(id)arg1 forAssetWithUUID:(id)arg2;
 - (void)applySearchIndexGraphUpdates:(id)arg1 supportingData:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)applySearchIndexUpdates:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -17,17 +23,16 @@
 - (void)getSearchIndexProgress:(CDUnknownBlockType)arg1;
 - (BOOL)synchronouslyMarkPersonAsNeedingKeyFace:(id)arg1 error:(id *)arg2;
 - (void)markPersonAsNeedingKeyFace:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)updateUnverifiedFaceCountThreshold;
 - (BOOL)resetPendingAnalysisStatesWithError:(id *)arg1;
 - (BOOL)markAnalysisStatesProcessedForWorkerType:(short)arg1 error:(id *)arg2;
 - (BOOL)removeAnalysisRecordsForDeletedAssetsWithUUIDs:(id)arg1 workerType:(short)arg2 error:(id *)arg3;
-- (void)analyzeMomentID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)reloadMomentGenerationOptions;
 - (BOOL)repairMemoriesWithUUIDs:(id)arg1 error:(id *)arg2;
 - (BOOL)previewAssetLocalIdentifiers:(id *)arg1 error:(id *)arg2;
 - (BOOL)previewRenderedContentURLAtIndex:(unsigned long long)arg1 previewRenderedContentURL:(id *)arg2 error:(id *)arg3;
 - (BOOL)previewRenderedContentURLCount:(unsigned long long *)arg1 error:(id *)arg2;
 - (void)updateAssetLocationDataWithUUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)synchronouslyGetSizeOfResourcesToUploadByCPL:(long long *)arg1 error:(id *)arg2;
 - (BOOL)synchronouslyGetLibrarySizesFromDB:(BOOL)arg1 sizes:(id *)arg2 error:(id *)arg3;
 - (void)getLibrarySizesFromDB:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getAssetCountsWithReply:(CDUnknownBlockType)arg1;

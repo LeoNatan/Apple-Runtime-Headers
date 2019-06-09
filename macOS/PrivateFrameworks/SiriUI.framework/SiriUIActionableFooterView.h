@@ -9,7 +9,6 @@
 @class NSButton, NSString, SiriUIKeyline, SiriUISnippetViewController;
 @protocol SiriUIActionableFooterViewDelegate;
 
-__attribute__((visibility("hidden")))
 @interface SiriUIActionableFooterView : SiriUIReusableFooterView
 {
     NSButton *_button;

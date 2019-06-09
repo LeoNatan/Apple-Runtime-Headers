@@ -8,6 +8,7 @@
 
 @class WDFont;
 
+__attribute__((visibility("hidden")))
 @interface WDSymbol : WDRunWithCharacterProperties
 {
     WDFont *mFont;

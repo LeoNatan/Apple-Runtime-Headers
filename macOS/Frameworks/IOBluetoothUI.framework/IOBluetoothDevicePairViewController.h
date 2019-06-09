@@ -25,6 +25,7 @@
 @property(retain) IOBluetoothDevicePair *devicePair; // @synthesize devicePair=_devicePair;
 @property(retain) IOBluetoothDevice *device; // @synthesize device=_device;
 @property __weak id <IOBluetoothDevicePairDelegate> delegate; // @synthesize delegate=_delegate;
+- (void).cxx_destruct;
 - (void)devicePairingKeypressNotification:(id)arg1 type:(unsigned char)arg2;
 - (void)deviceSimplePairingComplete:(id)arg1 status:(unsigned char)arg2;
 - (void)devicePairingFinished:(id)arg1 error:(int)arg2;

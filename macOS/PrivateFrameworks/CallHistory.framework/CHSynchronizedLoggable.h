@@ -6,12 +6,9 @@
 
 #import <objc/NSObject.h>
 
-#import <CallHistory/CHLoggerProtocol-Protocol.h>
-#import <CallHistory/CHSynchronizableProtocol-Protocol.h>
-
 @class CHLogger, CHSynchronizable;
 
-@interface CHSynchronizedLoggable : NSObject <CHSynchronizableProtocol, CHLoggerProtocol>
+@interface CHSynchronizedLoggable : NSObject
 {
     CHLogger *_logger;
     CHSynchronizable *_synchronizable;

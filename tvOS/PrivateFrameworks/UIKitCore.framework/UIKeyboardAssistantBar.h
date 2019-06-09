@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     UIKeyboardBIUImageGenerator *m_BIUImageGenerator;
     UIBarButtonItemGroup *m_dismissGroup;
     UIBarButtonItem *m_dismissButton;
+    UIBarButtonItem *m_showKeyboardButton;
     UIBarButtonItem *m_writeboardButton;
     UIBarButtonItemGroup *m_predictionGroup;
     NSLayoutConstraint *m_predictionWidthConstraint;
@@ -30,6 +31,9 @@ __attribute__((visibility("hidden")))
     struct CGRect m_splitGap;
     _Bool m_suppressAXSHairlineThickening;
     _Bool m_setShowsCandidateInline;
+    _Bool m_updatingBar;
+    _Bool m_settingShow;
+    double m_assistantBarHeight;
     _Bool _hideAssistantBar;
     _Bool _shouldShow;
 }
@@ -59,7 +63,9 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) _Bool show;
 - (void)updateButtons;
 - (double)sideBarWidthForOrientation:(long long)arg1;
+- (void)assistantReturn;
 - (void)assistantWriteboard;
+- (void)assistantShowKeyboard;
 - (void)assistantDismiss;
 - (void)assistantUnderline;
 - (void)assistantItalic;
@@ -73,6 +79,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)canPerformAction:(int)arg1;
 - (SEL)action:(int)arg1;
 - (double)assistantBarHeight;
+- (void)setBarHeight:(double)arg1;
 - (double)assistantBarHeightForOrientation:(long long)arg1;
 - (double)assistantBarWidth;
 - (double)deleteKeyWidth;
@@ -88,6 +95,7 @@ __attribute__((visibility("hidden")))
 - (id)deleteButtonItem;
 - (id)BIUGenerator;
 - (void)layoutSubviews;
+- (void)setFrame:(struct CGRect)arg1;
 - (_Bool)pointInside:(struct CGPoint)arg1 forEvent:(struct __GSEvent *)arg2;
 
 @end

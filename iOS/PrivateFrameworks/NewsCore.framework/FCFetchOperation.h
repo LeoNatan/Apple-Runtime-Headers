@@ -7,12 +7,11 @@
 #import <NewsCore/FCOperation.h>
 
 @class FCFetchOperationResult, NSObject;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore;
+@protocol OS_dispatch_queue;
 
 @interface FCFetchOperation : FCOperation
 {
     FCFetchOperationResult *_result;
-    NSObject<OS_dispatch_semaphore> *_finishedSemaphore;
     _Bool _wifiOnly;
     _Bool _shouldFailOnMissingObjects;
     _Bool _canSendFetchCompletionSynchronously;
@@ -38,7 +37,6 @@
 - (void)finishExecutingWithStatus:(unsigned long long)arg1;
 - (void)finishExecutingWithFetchedObject:(id)arg1;
 - (void)finishExecutingWithResult:(id)arg1;
-- (_Bool)waitUntilFinishedWithTimeout:(double)arg1;
 - (void)cancel;
 - (id)init;
 

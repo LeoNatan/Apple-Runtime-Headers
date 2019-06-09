@@ -22,7 +22,7 @@
 @property(readonly, nonatomic) unsigned long long bytesRead; // @synthesize bytesRead=_bytesRead;
 @property(readonly, nonatomic) long long status; // @synthesize status=_status;
 @property(retain, nonatomic) MFError *error; // @synthesize error=_error;
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)actionFailed:(long long)arg1 forTask:(id)arg2 error:(id)arg3;
 - (void)messageDidSendWithContext:(id)arg1 sentBytesCount:(unsigned long long)arg2 receivedBytesCount:(unsigned long long)arg3;
 

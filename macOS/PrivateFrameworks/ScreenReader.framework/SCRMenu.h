@@ -6,7 +6,7 @@
 
 #import <ScreenReader/SCRElement.h>
 
-@class NSMutableArray, SCRBrailleLineManager, SCRMenuItem, SCRTable;
+@class NSMutableArray, SCRMenuItem, SCRTable;
 
 __attribute__((visibility("hidden")))
 @interface SCRMenu : SCRElement
@@ -15,7 +15,6 @@ __attribute__((visibility("hidden")))
     SCRMenu *_currentMenu;
     SCRMenuItem *_selectedSubmenuItem;
     NSMutableArray *_uiMenuItems;
-    SCRBrailleLineManager *_brailleLineManager;
     SCRTable *_shortcutTable;
     SCRElement *_shortcutSearchField;
     struct {
@@ -27,7 +26,6 @@ __attribute__((visibility("hidden")))
         unsigned int justOpened:1;
         unsigned int isInApplicationMenuExtraBar:1;
         unsigned int isApplicationMenuExtraBar:1;
-        unsigned int reserved:20;
     } _srmFlags;
 }
 
@@ -51,8 +49,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)handleUntaggedOperationWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)closeMenuWithRequest:(id)arg1;
 - (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;
-- (BOOL)jumpBottomEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
-- (BOOL)jumpTopEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
+- (void)_jumpBottomEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
+- (void)_jumpTopEdgeWithEvent:(id)arg1 request:(id)arg2 visibleOnly:(BOOL)arg3;
 - (BOOL)_moveToShortcutTable:(id)arg1 row:(unsigned long long)arg2 request:(id)arg3;
 - (BOOL)_moveNextWithEvent:(id)arg1 request:(id)arg2 wrap:(BOOL)arg3;
 - (BOOL)_movePreviousWithEvent:(id)arg1 request:(id)arg2 wrap:(BOOL)arg3;
@@ -70,14 +68,12 @@ __attribute__((visibility("hidden")))
 - (BOOL)interactLeftWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactDownWithEvent:(id)arg1 request:(id)arg2;
 - (BOOL)interactUpWithEvent:(id)arg1 request:(id)arg2;
-- (unsigned long long)groupBehavior;
+- (long long)groupBehavior;
+- (void)_delayedSelectItem;
 - (id)_handleEventForPrevOrNextKeyCommand:(BOOL)arg1 request:(id)arg2;
 - (BOOL)handleEvent:(id)arg1 request:(id)arg2;
 - (BOOL)chainEvent:(id)arg1 request:(id)arg2;
-- (id)brailleLineElementForUIElement:(id)arg1;
-- (void)buildBrailleLineWithFocusedElement:(id)arg1;
-- (void)updateBrailleLineWithFocusedElement:(id)arg1;
-- (id)brailleLineManager;
+- (void)setBrailleLineWithFocusedElement:(id)arg1 forceRebuild:(BOOL)arg2;
 - (void)addItemDescriptionToRequest:(id)arg1;
 - (BOOL)addSelectionDescriptionToRequest:(id)arg1;
 - (void)addElementSummaryToRequest:(id)arg1;

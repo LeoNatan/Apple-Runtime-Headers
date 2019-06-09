@@ -14,6 +14,7 @@
 @class MKMapItem, MKPlaceSectionRowView, NSMutableArray, NSString;
 @protocol MKPlaceActionManagerProtocol, _MKPlaceItem;
 
+__attribute__((visibility("hidden")))
 @interface MKPlaceInfoViewController : MKPlaceSectionViewController <MKOfflineModeViewController, NSGestureRecognizerDelegate, _MKInfoCardChildViewControllerAnalyticsDelegate, MKModuleViewControllerProtocol>
 {
     NSMutableArray *_rows;
@@ -31,6 +32,7 @@
 @property(nonatomic) BOOL bottomHairlineHidden; // @synthesize bottomHairlineHidden=_bottomHairlineHidden;
 @property(nonatomic) BOOL offlineMode; // @synthesize offlineMode=_offlineMode;
 - (void).cxx_destruct;
+- (id)infoCardChildUnactionableUIElements;
 - (id)infoCardChildPossibleActions;
 - (void)_launchMapsDirectionsWithSource:(id)arg1 destination:(id)arg2 directionsMode:(id)arg3;
 - (void)_shareAddress:(id)arg1 fromView:(id)arg2;

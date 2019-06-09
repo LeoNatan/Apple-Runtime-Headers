@@ -15,12 +15,14 @@
 {
     NSString *_identifier;
     NSString *_displayName;
-    unsigned long long _options;
+    unsigned long long _priority;
+    NSString *_sortIdentifier;
 }
 
 + (_Bool)supportsSecureCoding;
-+ (id)topicWithIdentifier:(id)arg1 displayName:(id)arg2 options:(unsigned long long)arg3;
-@property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
++ (id)topicWithIdentifier:(id)arg1 displayName:(id)arg2 priority:(unsigned long long)arg3 sortIdentifier:(id)arg4;
+@property(readonly, copy, nonatomic) NSString *sortIdentifier; // @synthesize sortIdentifier=_sortIdentifier;
+@property(readonly, nonatomic) unsigned long long priority; // @synthesize priority=_priority;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
@@ -31,7 +33,7 @@
 - (id)_description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)_initWithIdentifier:(id)arg1 displayName:(id)arg2 options:(unsigned long long)arg3;
+- (id)_initWithIdentifier:(id)arg1 displayName:(id)arg2 priority:(unsigned long long)arg3 sortIdentifier:(id)arg4;
 
 @end
 

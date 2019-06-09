@@ -14,6 +14,7 @@
 
 @interface CSSearchableItem : NSObject <CSIndexQueuableItem, NSSecureCoding, NSCopying>
 {
+    NSString *_filePath;
     BOOL _shouldSetSpotlightMailMessageAttributes;
     CSSearchableItemAttributeSet *_attributeSet;
     unsigned long long _machTime;
@@ -50,6 +51,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithUniqueIdentifier:(id)arg1 domainIdentifier:(id)arg2 attributeSet:(id)arg3;
 - (id)init;
+- (id)filePath;
 - (void)_updateWithSearchableItem:(id)arg1;
 - (id)filteredSpotlightAttributes;
 - (void)_standardizeSiriShortcuts:(id)arg1;
@@ -64,6 +66,7 @@
 - (void)_parseEmailHeadersForFeatures:(id)arg1;
 - (void)standardizeAttributes;
 - (id)initWithAttributeSet:(id)arg1;
+- (id)initWithMDItem:(struct __MDItem *)arg1 attributes:(id)arg2;
 - (id)searchableItem;
 
 @end

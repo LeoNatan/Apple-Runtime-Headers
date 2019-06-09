@@ -8,20 +8,19 @@
 
 #import <PhotosUI/CNContactPickerDelegate-Protocol.h>
 #import <PhotosUI/IDSBatchIDQueryControllerDelegate-Protocol.h>
-#import <PhotosUI/MFComposeRecipientViewDelegate-Protocol.h>
+#import <PhotosUI/MFComposeRecipientTextViewDelegate-Protocol.h>
 #import <PhotosUI/MFContactsSearchConsumer-Protocol.h>
 #import <PhotosUI/UIPopoverPresentationControllerDelegate-Protocol.h>
 #import <PhotosUI/UITableViewDataSource-Protocol.h>
 #import <PhotosUI/UITableViewDelegate-Protocol.h>
 
-@class CNContactPickerViewController, CNContactStore, IDSBatchIDQueryController, MFComposeRecipientView, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSMutableSet, NSNumber, NSString, UIScrollView, UITableView;
+@class CNContactPickerViewController, CNContactStore, IDSBatchIDQueryController, MFComposeRecipientTextView, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSMutableSet, NSNumber, NSString, UIScrollView, UITableView;
 
-@interface PUPhotoStreamRecipientViewController : UIViewController <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate, CNContactPickerDelegate, UIPopoverPresentationControllerDelegate, MFComposeRecipientViewDelegate, IDSBatchIDQueryControllerDelegate>
+@interface PUPhotoStreamRecipientViewController : UIViewController <MFContactsSearchConsumer, UITableViewDataSource, UITableViewDelegate, CNContactPickerDelegate, UIPopoverPresentationControllerDelegate, MFComposeRecipientTextViewDelegate, IDSBatchIDQueryControllerDelegate>
 {
     UITableView *_searchResultsTable;
-    MFComposeRecipientView *_recipientView;
+    MFComposeRecipientTextView *_recipientView;
     UIScrollView *_recipientContainerView;
-    NSArray *_properties;
     MFContactsSearchManager *_searchManager;
     MFContactsSearchResultsModel *_searchResultsModel;
     NSNumber *_currentSearchTaskID;
@@ -48,37 +47,31 @@
 - (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;
-- (void)_addRecipientFromSelectedContactProperty:(id)arg1;
+- (void)_addRecipientForContact:(id)arg1 address:(id)arg2 kind:(unsigned long long)arg3;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (void)idStatusUpdatedForDestinations:(id)arg1;
+- (void)batchQueryController:(id)arg1 updatedDestinationsStatus:(id)arg2 onService:(id)arg3 error:(id)arg4;
 - (void)_setSearchResults:(id)arg1;
 - (id)_selectedNormalizedPhoneForRecipient:(id)arg1;
 - (void)endedNetworkActivity;
 - (void)beganNetworkActivity;
 - (void)finishedTaskWithID:(id)arg1;
-- (void)finishedSearchingForType:(unsigned long long)arg1;
-- (void)consumeSearchResults:(id)arg1 type:(unsigned long long)arg2 taskID:(id)arg3;
-- (void *)_addressBook;
+- (void)finishedSearchingForAutocompleteResults;
+- (void)consumeAutocompleteSearchResults:(id)arg1 taskID:(id)arg2;
 - (id)_searchManager;
 - (void)_searchForRecipientWithText:(id)arg1;
-- (void)composeRecipientViewReturnPressed:(id)arg1;
-- (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void *)arg2 property:(int)arg3 identifier:(int)arg4;
-- (id)composeRecipientView:(id)arg1 composeRecipientForRecord:(void *)arg2 identifier:(int)arg3;
 - (id)composeRecipientView:(id)arg1 composeRecipientForAddress:(id)arg2;
 - (void)composeRecipientView:(id)arg1 showPersonCardForAtom:(id)arg2;
 - (void)composeRecipientViewDidFinishPickingRecipient:(id)arg1;
-- (void)composeRecipientView:(id)arg1 didRemoveRecipient:(id)arg2;
-- (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
-- (_Bool)composeRecipientViewIsShowingPeoplePicker:(id)arg1;
 - (void)composeRecipientViewRequestAddRecipient:(id)arg1;
 - (void)composeRecipientView:(id)arg1 didChangeSize:(struct CGSize)arg2;
-- (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
-- (void)composeRecipientView:(id)arg1 requestDeleteRecipientAtIndex:(int)arg2;
 - (void)composeRecipientView:(id)arg1 textDidChange:(id)arg2;
+- (void)composeRecipientView:(id)arg1 didRemoveRecipient:(id)arg2;
+- (void)composeRecipientView:(id)arg1 didFinishEnteringAddress:(id)arg2;
+- (void)composeRecipientView:(id)arg1 didAddRecipient:(id)arg2;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(readonly, nonatomic) NSArray *recipients;
 - (void)viewWillLayoutSubviews;

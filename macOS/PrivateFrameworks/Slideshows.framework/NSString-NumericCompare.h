@@ -8,5 +8,8 @@
 
 @interface NSString (NumericCompare)
 - (long long)numericCompare:(id)arg1;
+- (id)decodeFromHexidecimal;
+- (id)trimWhitespace;
+- (const char *)xmlChar;
 @end
 

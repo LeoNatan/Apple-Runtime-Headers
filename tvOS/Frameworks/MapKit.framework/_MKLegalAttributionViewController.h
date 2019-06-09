@@ -6,12 +6,12 @@
 
 #import <UIKit/UIViewController.h>
 
-#import <MapKit/NUIContainerStackViewDelegate-Protocol.h>
+#import <MapKit/NUIContainerViewDelegate-Protocol.h>
 
 @class NSString, NSURL, NSURLSessionDataTask, NUIContainerStackView, UIActivityIndicatorView, UITextView;
 
 __attribute__((visibility("hidden")))
-@interface _MKLegalAttributionViewController : UIViewController <NUIContainerStackViewDelegate>
+@interface _MKLegalAttributionViewController : UIViewController <NUIContainerViewDelegate>
 {
     NSURL *_url;
     NUIContainerStackView *_stackView;

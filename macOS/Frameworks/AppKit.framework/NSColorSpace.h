@@ -28,6 +28,7 @@
 + (id)availableColorSpacesWithModel:(long long)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)colorSpaceForColorSpaceName:(id)arg1;
++ (id)colorSpaceForCGColorSpace:(struct CGColorSpace *)arg1;
 + (id)_invertedDeviceGrayColorSpace;
 + (id)_invertedGenericGrayColorSpace;
 + (id)extendedLinearSRGBColorSpace;
@@ -61,6 +62,7 @@
 @property(readonly) long long colorSpaceModel;
 @property(readonly) long long numberOfColorComponents;
 - (id)colorProfile;
+- (int)_colorSpaceID;
 @property(readonly) void *colorSyncProfile;
 @property(readonly) struct CGColorSpace *CGColorSpace;
 - (void)_createProfileFor:(struct __CFString *)arg1;

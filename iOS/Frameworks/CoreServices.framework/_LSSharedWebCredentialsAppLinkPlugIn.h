@@ -11,12 +11,11 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)getAppLinksWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (void)getAppLinksForServiceAtIndex:(unsigned long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)appLinksWithContext:(struct LSContext *)arg1 error:(id *)arg2;
 - (id)callingBundleIdentifier;
-- (id)appLinksForSWCResults:(id)arg1 useDetailsDictionary:(_Bool)arg2;
-- (id)applicationProxiesForSWCResults:(id)arg1 useDetailsDictionary:(_Bool)arg2;
-- (_Bool)appHasApproval:(id)arg1;
+- (id)appLinksWithContext:(struct LSContext *)arg1 forSWCResults:(id)arg2;
+- (void)enumerateBindingsWithContext:(struct LSContext *)arg1 forSWCResults:(id)arg2 block:(CDUnknownBlockType)arg3;
+- (optional_430a8fae)bindingWithContext:(struct LSContext *)arg1 forServiceDetails:(id)arg2 callingBundleIdentifier:(id)arg3;
 - (id)init;
 
 @end

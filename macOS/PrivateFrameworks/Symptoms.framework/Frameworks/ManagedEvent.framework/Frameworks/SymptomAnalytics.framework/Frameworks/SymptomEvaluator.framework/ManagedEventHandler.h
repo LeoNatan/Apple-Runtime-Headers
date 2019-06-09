@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)feedbackForEventId:(unsigned long long)arg1;
 - (void)populateReply:(id)arg1 ForId:(unsigned long long)arg2 Count:(unsigned long long)arg3;
+- (void)sendNotificationWithId:(unsigned long long)arg1;
 - (void)didReceiveSyndrome:(id)arg1;
 - (id)initWithName:(id)arg1;
 - (id)description;

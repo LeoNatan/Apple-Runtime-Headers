@@ -6,11 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class IKColor, NSMutableDictionary;
 
 @interface TVAppStyle : NSObject
 {
     NSMutableDictionary *_stylesMap;
+    IKColor *_backgroundColor;
     CDStruct_81add385 _width;
     CDStruct_81add385 _minWidth;
     CDStruct_81add385 _maxWidth;
@@ -21,8 +22,11 @@
     CDStruct_81add385 _margin;
     CDStruct_81add385 _interitemSpacing;
     CDStruct_81add385 _fontSize;
+    CDStruct_81add385 _borderRadius;
 }
 
+@property(retain, nonatomic) IKColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
+@property(nonatomic) CDStruct_81add385 borderRadius; // @synthesize borderRadius=_borderRadius;
 @property(nonatomic) CDStruct_81add385 fontSize; // @synthesize fontSize=_fontSize;
 @property(nonatomic) CDStruct_81add385 interitemSpacing; // @synthesize interitemSpacing=_interitemSpacing;
 @property(nonatomic) CDStruct_81add385 margin; // @synthesize margin=_margin;

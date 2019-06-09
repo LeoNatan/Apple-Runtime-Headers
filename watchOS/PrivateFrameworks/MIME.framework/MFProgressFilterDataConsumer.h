@@ -15,8 +15,8 @@
 
 @property(readonly) unsigned int expectedSize; // @synthesize expectedSize=_expectedSize;
 @property(copy, nonatomic) CDUnknownBlockType progressBlock; // @synthesize progressBlock=_progressBlock;
+- (void).cxx_destruct;
 - (int)appendData:(id)arg1;
-- (void)dealloc;
 - (id)initWithConsumers:(id)arg1 expectedSize:(unsigned int)arg2;
 - (id)initWithConsumer:(id)arg1 expectedSize:(unsigned int)arg2;
 

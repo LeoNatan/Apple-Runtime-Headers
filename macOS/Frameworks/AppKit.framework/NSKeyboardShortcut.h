@@ -30,7 +30,9 @@
 @property(readonly) NSString *localizedModifierMaskDisplayName;
 - (BOOL)_keyEquivalentIsUpperCase;
 @property(readonly) NSString *localizedKeyEquivalentDisplayName;
+- (id)localizedExtendedDisplayName:(BOOL)arg1;
 @property(readonly) NSString *localizedDisplayName;
+- (BOOL)isFunctionKey;
 - (BOOL)isEmpty;
 - (id)initWithKeyEquivalent:(id)arg1 modifierMask:(unsigned long long)arg2;
 

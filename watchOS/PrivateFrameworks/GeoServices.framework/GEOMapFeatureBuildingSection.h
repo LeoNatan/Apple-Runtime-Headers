@@ -12,7 +12,7 @@
     unsigned int _coordinateCount;
     double _baseHeight;
     double _height;
-    CDStruct_4b3b14e6 *_feature;
+    CDStruct_b326a3d5 *_feature;
     unsigned int _sectionIndex;
 }
 
@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) unsigned int coordinateCount;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee *coordinates;
 - (void)dealloc;
-- (id)initWithFeature:(CDStruct_4b3b14e6 *)arg1 sectionIndex:(unsigned int)arg2;
+- (id)initWithFeature:(CDStruct_b326a3d5 *)arg1 sectionIndex:(unsigned int)arg2;
 
 @end
 

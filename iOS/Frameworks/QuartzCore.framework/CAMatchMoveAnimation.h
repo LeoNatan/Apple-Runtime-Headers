@@ -18,6 +18,7 @@
 @property _Bool appliesScale;
 @property _Bool appliesY;
 @property _Bool appliesX;
+@property _Bool usesNormalizedCoordinates;
 @property _Bool targetsSuperlayer;
 @property(copy) NSString *keyPath;
 @property(copy) NSArray *sourcePoints;

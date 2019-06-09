@@ -6,36 +6,37 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
-#import <SiriInstrumentation/NSCopying-Protocol.h>
+#import <SiriInstrumentation/NSSecureCoding-Protocol.h>
+#import <SiriInstrumentation/SISchemaClientEventMetadata-Protocol.h>
 
 @class NSData, NSString;
 
-@interface SISchemaClientEventMetadata : PBCodable <NSCopying>
+@interface SISchemaClientEventMetadata : PBCodable <SISchemaClientEventMetadata, NSSecureCoding>
 {
-    long long _eventGeneratedRelativeToBootTimeTimestampNs;
-    NSString *_eventGeneratedTimestampRefId;
     NSData *_turnID;
-    struct {
-        unsigned int eventGeneratedRelativeToBootTimeTimestampNs:1;
-    } _has;
+    NSData *_siriDeviceID;
+    NSString *_eventGeneratedTimestampRefId;
+    long long _eventGeneratedRelativeToBootTimeTimestampNs;
 }
 
 @property(nonatomic) long long eventGeneratedRelativeToBootTimeTimestampNs; // @synthesize eventGeneratedRelativeToBootTimeTimestampNs=_eventGeneratedRelativeToBootTimeTimestampNs;
-@property(retain, nonatomic) NSString *eventGeneratedTimestampRefId; // @synthesize eventGeneratedTimestampRefId=_eventGeneratedTimestampRefId;
-@property(retain, nonatomic) NSData *turnID; // @synthesize turnID=_turnID;
+@property(copy, nonatomic) NSString *eventGeneratedTimestampRefId; // @synthesize eventGeneratedTimestampRefId=_eventGeneratedTimestampRefId;
+@property(copy, nonatomic) NSData *siriDeviceID; // @synthesize siriDeviceID=_siriDeviceID;
+@property(copy, nonatomic) NSData *turnID; // @synthesize turnID=_turnID;
 - (void).cxx_destruct;
-- (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+- (id)initWithDictionary:(id)arg1;
+- (id)initWithJSON:(id)arg1;
+@property(readonly, nonatomic) NSData *jsonData;
+- (id)dictionaryRepresentation;
+@property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
-- (id)dictionaryRepresentation;
-- (id)description;
-@property(nonatomic) _Bool hasEventGeneratedRelativeToBootTimeTimestampNs;
-@property(readonly, nonatomic) _Bool hasEventGeneratedTimestampRefId;
-@property(readonly, nonatomic) _Bool hasTurnID;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

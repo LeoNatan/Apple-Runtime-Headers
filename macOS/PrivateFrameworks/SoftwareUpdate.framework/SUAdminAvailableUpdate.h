@@ -14,6 +14,7 @@
     BOOL _configDataUpdate;
     BOOL _firmwareUpdate;
     BOOL _macOSUpdate;
+    BOOL _majorOSUpdate;
     BOOL _restartRequiredUpdate;
     BOOL _allowedToUseDoItLater;
     BOOL _isRecommended;
@@ -34,8 +35,16 @@
     NSError *_lastError;
     double _downloadPercentComplete;
     long long _downloadSize;
+    NSString *_majorOSVersion;
+    NSString *_majorOSBundleIdentifier;
+    NSString *_humanReadableName;
+    NSString *_majorOSBundleShortVersion;
 }
 
+@property(retain) NSString *majorOSBundleShortVersion; // @synthesize majorOSBundleShortVersion=_majorOSBundleShortVersion;
+@property(retain) NSString *humanReadableName; // @synthesize humanReadableName=_humanReadableName;
+@property(retain) NSString *majorOSBundleIdentifier; // @synthesize majorOSBundleIdentifier=_majorOSBundleIdentifier;
+@property(retain) NSString *majorOSVersion; // @synthesize majorOSVersion=_majorOSVersion;
 @property(readonly) long long downloadSize; // @synthesize downloadSize=_downloadSize;
 @property(readonly) double downloadPercentComplete; // @synthesize downloadPercentComplete=_downloadPercentComplete;
 @property(readonly) NSError *lastError; // @synthesize lastError=_lastError;
@@ -56,6 +65,7 @@
 @property(readonly) BOOL isRecommended; // @synthesize isRecommended=_isRecommended;
 @property(readonly) BOOL allowedToUseDoItLater; // @synthesize allowedToUseDoItLater=_allowedToUseDoItLater;
 @property(readonly) BOOL restartRequiredUpdate; // @synthesize restartRequiredUpdate=_restartRequiredUpdate;
+@property(readonly) BOOL majorOSUpdate; // @synthesize majorOSUpdate=_majorOSUpdate;
 @property(readonly) BOOL macOSUpdate; // @synthesize macOSUpdate=_macOSUpdate;
 @property(readonly) BOOL firmwareUpdate; // @synthesize firmwareUpdate=_firmwareUpdate;
 @property(readonly) BOOL configDataUpdate; // @synthesize configDataUpdate=_configDataUpdate;

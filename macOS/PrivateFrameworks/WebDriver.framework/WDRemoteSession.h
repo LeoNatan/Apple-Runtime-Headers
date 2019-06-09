@@ -24,9 +24,7 @@
     WDBrowsingContext *_currentBrowsingContext;
     NSMutableDictionary *_lastSelectedFilesPerElement;
     NSMutableDictionary *_cachedElementsPerBrowsingContext;
-    struct CGPoint _currentMouseCursorPosition;
-    long long _currentMouseCursorButtons;
-    long long _currentWDKeyModifiers;
+    long long _currentKeyModifiers;
     unsigned long long _pageLoadTimeout;
     unsigned long long _elementSearchTimeout;
     unsigned long long _asynchronousScriptTimeout;
@@ -59,7 +57,6 @@
 - (void)cancelInteractionsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)performInteractions:(id)arg1 withInputSources:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)performKeyboardInteractions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)performMouseInteraction:(long long)arg1 atPosition:(struct CGPoint)arg2 usingButton:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)fetchSelectedFilesForFileInputElement:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)chooseFiles:(id)arg1 forFileInputElement:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setUserInput:(id)arg1 forCurrentJavaScriptPromptWithCompletionHandler:(CDUnknownBlockType)arg2;
@@ -103,9 +100,7 @@
 @property(nonatomic) unsigned long long asynchronousScriptTimeout;
 @property(nonatomic) unsigned long long elementSearchTimeout;
 @property(nonatomic) unsigned long long pageLoadTimeout;
-@property(readonly, nonatomic) long long currentPressedWDKeyModifiers;
-@property(readonly, nonatomic) long long currentPressedMouseButtons;
-@property(readonly, nonatomic) struct CGPoint currentMouseCursorPosition;
+@property(readonly, nonatomic) long long currentPressedKeyModifiers;
 @property(readonly, copy, nonatomic) WDBrowsingContext *currentBrowsingContext;
 @property(readonly, copy, nonatomic) WDToplevelBrowsingContext *currentToplevelBrowsingContext;
 @property(nonatomic) BOOL automaticProfilingEnabled;

@@ -8,6 +8,7 @@
 
 @class CHDData;
 
+__attribute__((visibility("hidden")))
 @interface CHDBubbleSeries : CHDSeries
 {
     CHDData *mSizeData;

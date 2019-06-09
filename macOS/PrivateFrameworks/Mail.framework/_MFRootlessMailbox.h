@@ -11,7 +11,6 @@
 }
 
 - (id)storeForMailbox:(id)arg1 createIfNeeded:(BOOL)arg2;
-- (id)tildeAbbreviatedPath;
 - (id)fullPath;
 - (id)displayName;
 

@@ -21,8 +21,8 @@
     _Bool _incomplete;
 }
 
+- (void).cxx_destruct;
 - (id)data;
-- (void)dealloc;
 - (void)done;
 - (long long)appendData:(id)arg1;
 - (id)pathForStorage;

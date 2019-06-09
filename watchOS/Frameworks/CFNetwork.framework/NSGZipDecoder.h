@@ -30,7 +30,6 @@
 - (_Bool)isFinishedDecoding;
 - (_Bool)decodeDownloadData:(id)arg1 dataForkData:(id *)arg2 resourceForkData:(id *)arg3;
 - (id)decodeData:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

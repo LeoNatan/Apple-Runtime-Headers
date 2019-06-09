@@ -10,30 +10,21 @@
 
 @interface __NSFontTypefaceInfo : NSObject
 {
-    long long _retainCount;
     NSFontDescriptor *_normalizedFontDescriptor;
-    NSMapTable *_liveInstances;
+    NSMapTable *_liveInstances[3];
     struct __CFString *_postscriptName;
     struct __CFString *_familyName;
-    struct __CFCharacterSet *_characterCoverage;
     double *_glyphAdvancementCache;
     struct CGSize *_verticalOriginDeltaCache;
-    unsigned short *_latin1MappingTable;
     unsigned long long _hash;
     struct {
-        unsigned int _isDefaultFace:1;
-        unsigned int _hasKernPair:1;
-        unsigned int _checkedLatin1Table:1;
         unsigned int _isSymbol:1;
         unsigned int _isDingbats:1;
         unsigned int _isDefaultFixedPitch:1;
-        unsigned int _isIdealMetricsOnly:1;
-        unsigned int _hasColorGlyphs:1;
         unsigned int _needValidation:1;
         unsigned int _hasVerticalMetrics:2;
-        unsigned int _isLucidaGrande:1;
-        unsigned int _isHiragino:1;
-        unsigned int _reserved:19;
+        unsigned int _isSystemFont:1;
+        unsigned int _reserved:25;
     } _tiFlags;
 }
 
@@ -42,33 +33,23 @@
 + (id)typefaceInfoForKnownFontDescriptor:(id)arg1;
 + (id)typefaceInfoForFontDescriptor:(id)arg1;
 + (void)initialize;
-- (const unsigned short *)_latin1MappingTableWithPlatformFont:(struct __CTFont *)arg1 hasKernPair:(_Bool *)arg2;
+- (id)newFontInstanceForRenderingMode:(unsigned long long)arg1 key:(id)arg2;
 - (struct CGSize *)_verticalOriginDeltaCache:(long long)arg1;
 - (double *)_glyphAdvancementCache:(long long)arg1;
 - (BOOL)_hasVerticalMetricsWithPlatformFont:(struct __CTFont *)arg1;
-- (BOOL)_hasColorGlyphs;
-- (BOOL)_isIdealMetricsOnly;
 - (BOOL)_isDefaultFixedPitch;
 - (BOOL)_isDingbats;
 - (BOOL)_isSymbol;
-- (BOOL)_isHiragino;
-- (BOOL)_isLucidaGrande;
-- (BOOL)_isDefaultFace;
-- (id)_nominalCharacterCoverage;
+- (BOOL)_isSystemFont;
 - (id)_familyName;
 - (id)_postscriptName;
 - (id)normalizedFontDescriptor;
-- (void)detachInstanceInfo:(id)arg1;
+- (id)fontInstanceForKey:(id)arg1 renderingMode:(unsigned long long)arg2;
 - (id)fontInstanceForFontDescriptor:(id)arg1 size:(double)arg2 affineTransform:(id)arg3 renderingMode:(unsigned long long)arg4;
+- (struct __CTFont *)newPlatformFontWithKey:(id)arg1;
 - (unsigned long long)hash;
 - (id)initWithFontDescriptor:(id)arg1;
-- (void)finalize;
 - (void)dealloc;
-- (unsigned long long)retainCount;
-- (oneway void)release;
-- (id)retain;
-- (BOOL)_isDeallocating;
-- (BOOL)_tryRetain;
 - (void)_setNeedsValidation:(BOOL)arg1;
 - (BOOL)_validate;
 

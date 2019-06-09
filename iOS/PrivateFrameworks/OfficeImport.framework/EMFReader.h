@@ -16,9 +16,8 @@ __attribute__((visibility("hidden")))
     EMFPlayer *m_player;
 }
 
+- (void).cxx_destruct;
 - (int)play:(id)arg1;
-- (oneway void)release;
-- (void)dealloc;
 - (id)initWithEMFPlayer:(id)arg1;
 
 // Remaining properties

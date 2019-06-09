@@ -8,10 +8,12 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOABSecondPartyPlaceRequestClientMetaData, GEOPDAnalyticMetadata, GEORPClientCapabilities, GEORPUserCredentials, GEOServicesState, NSMutableArray, NSString;
+@class GEOABSecondPartyPlaceRequestClientMetaData, GEOPDAnalyticMetadata, GEORPClientCapabilities, GEORPUserCredentials, GEOServicesState, NSMutableArray, NSString, PBDataReader;
 
 @interface GEORPProblemStatusRequest : PBRequest <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     GEOABSecondPartyPlaceRequestClientMetaData *_abAssignmentMetadata;
     GEOPDAnalyticMetadata *_analyticMetadata;
     GEORPClientCapabilities *_clientCapabilities;
@@ -19,16 +21,26 @@
     GEOServicesState *_servicesState;
     NSString *_statusNotificationId;
     GEORPUserCredentials *_userCredentials;
+    struct {
+        unsigned int read_abAssignmentMetadata:1;
+        unsigned int read_analyticMetadata:1;
+        unsigned int read_clientCapabilities:1;
+        unsigned int read_problemIds:1;
+        unsigned int read_servicesState:1;
+        unsigned int read_statusNotificationId:1;
+        unsigned int read_userCredentials:1;
+        unsigned int wrote_abAssignmentMetadata:1;
+        unsigned int wrote_analyticMetadata:1;
+        unsigned int wrote_clientCapabilities:1;
+        unsigned int wrote_problemIds:1;
+        unsigned int wrote_servicesState:1;
+        unsigned int wrote_statusNotificationId:1;
+        unsigned int wrote_userCredentials:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)problemIdType;
-@property(retain, nonatomic) GEOServicesState *servicesState; // @synthesize servicesState=_servicesState;
-@property(retain, nonatomic) GEOABSecondPartyPlaceRequestClientMetaData *abAssignmentMetadata; // @synthesize abAssignmentMetadata=_abAssignmentMetadata;
-@property(retain, nonatomic) GEOPDAnalyticMetadata *analyticMetadata; // @synthesize analyticMetadata=_analyticMetadata;
-@property(retain, nonatomic) GEORPClientCapabilities *clientCapabilities; // @synthesize clientCapabilities=_clientCapabilities;
-@property(retain, nonatomic) NSMutableArray *problemIds; // @synthesize problemIds=_problemIds;
-@property(retain, nonatomic) NSString *statusNotificationId; // @synthesize statusNotificationId=_statusNotificationId;
-@property(retain, nonatomic) GEORPUserCredentials *userCredentials; // @synthesize userCredentials=_userCredentials;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -39,18 +51,34 @@
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOServicesState *servicesState;
 @property(readonly, nonatomic) _Bool hasServicesState;
+- (void)_readServicesState;
+@property(retain, nonatomic) GEOABSecondPartyPlaceRequestClientMetaData *abAssignmentMetadata;
 @property(readonly, nonatomic) _Bool hasAbAssignmentMetadata;
+- (void)_readAbAssignmentMetadata;
+@property(retain, nonatomic) GEOPDAnalyticMetadata *analyticMetadata;
 @property(readonly, nonatomic) _Bool hasAnalyticMetadata;
+- (void)_readAnalyticMetadata;
+@property(retain, nonatomic) GEORPClientCapabilities *clientCapabilities;
 @property(readonly, nonatomic) _Bool hasClientCapabilities;
+- (void)_readClientCapabilities;
 - (id)problemIdAtIndex:(unsigned long long)arg1;
 - (unsigned long long)problemIdsCount;
+- (void)_addNoFlagsProblemId:(id)arg1;
 - (void)addProblemId:(id)arg1;
 - (void)clearProblemIds;
+@property(retain, nonatomic) NSMutableArray *problemIds;
+- (void)_readProblemIds;
+@property(retain, nonatomic) NSString *statusNotificationId;
 @property(readonly, nonatomic) _Bool hasStatusNotificationId;
+- (void)_readStatusNotificationId;
+@property(retain, nonatomic) GEORPUserCredentials *userCredentials;
 @property(readonly, nonatomic) _Bool hasUserCredentials;
+- (void)_readUserCredentials;
 - (void)populateAnalyticsMetadata;
 
 @end

@@ -18,8 +18,11 @@
     NSString *_name;
 }
 
++ (id)reminderMetadata:(id)arg1;
 + (id)testTag:(int)arg1;
 + (id)allTags;
++ (id)poiFilters:(id)arg1;
++ (id)reminderHash:(id)arg1;
 + (id)eventHash:(id)arg1;
 + (id)domain:(id)arg1;
 + (id)extractedFromTemplateWithName:(id)arg1;
@@ -35,6 +38,7 @@
 + (id)mailingListId:(id)arg1;
 + (id)url:(id)arg1;
 + (id)tagForPrefix:(id)arg1 value:(id)arg2;
++ (id)nonUserFacingUpdate;
 + (id)fullyDissected;
 + (id)isPartiallyDownloaded;
 + (id)fromReply;
@@ -48,6 +52,7 @@
 + (id)fromSync;
 + (id)fromTextMessage;
 + (id)eventMetadata:(id)arg1;
++ (id)reservationItemReferences:(id)arg1;
 + (id)schemaOrg:(id)arg1;
 + (id)messagesAppUsageLevel:(unsigned char)arg1;
 + (id)mailAppUsageLevel:(unsigned char)arg1;
@@ -72,6 +77,10 @@
 + (id)allDay;
 + (id)extractedEventCancellation;
 + (id)fromExtractedDomain;
++ (id)geocodingModeAddressWithCanonicalSearch;
++ (id)geocodingModeAddressThenPOI;
++ (id)geocodingModePOIOnly;
++ (id)geocodingModeAddressOnly;
 + (id)categoryTagWithCategoryType:(unsigned long long)arg1;
 + (id)extractedSocial;
 + (id)extractedFood;
@@ -93,13 +102,18 @@
 @property(readonly, nonatomic) _Bool indexed; // @synthesize indexed=_indexed;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+- (id)reminderMetadata;
+- (_Bool)isReminderMetadata;
 - (_Bool)isExtractedEventCategory;
+- (_Bool)isPOIFilters;
+- (_Bool)isReminderHash;
 - (_Bool)isEventHash;
 - (_Bool)isDomain;
 - (_Bool)isTemplateName;
 - (_Bool)isTemplateShortName;
 - (id)eventMetadata;
 - (_Bool)isEventMetadata;
+- (_Bool)isReservationItemReferences;
 - (_Bool)isSchemaOrg;
 - (_Bool)isMessagesAppUsageLevel;
 - (_Bool)isMailAppUsageLevel;
@@ -115,6 +129,9 @@
 - (_Bool)isContactDetail;
 - (_Bool)isMailingListId;
 - (_Bool)isUrl;
+- (_Bool)isInteractionBundleId;
+- (_Bool)isInteractionGroupId;
+- (_Bool)isInteractionId;
 - (id)description;
 - (id)value;
 - (_Bool)isEqualToEntityTag:(id)arg1;

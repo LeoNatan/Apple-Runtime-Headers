@@ -6,21 +6,28 @@
 
 #import <UIKit/UIView.h>
 
-@class CAGradientLayer, CAShapeLayer, CLKDevice, NSArray;
+#import <NanoTimeKit/CLKMonochromeComplicationView-Protocol.h>
 
-@interface NTKRichComplicationShapeView : UIView
+@class CAGradientLayer, CAShapeLayer, CLKDevice, NSArray, NSString;
+@protocol CLKMonochromeFilterProvider;
+
+@interface NTKRichComplicationShapeView : UIView <CLKMonochromeComplicationView>
 {
     CLKDevice *_device;
     struct CGRect _previousBounds;
     CAShapeLayer *_shapeLayer;
     CAGradientLayer *_gradientLayer;
     NSArray *_gradientLocations;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     NSArray *_gradientColors;
     float _progress;
+    int _filterStyle;
 }
 
+@property(readonly, nonatomic) int filterStyle; // @synthesize filterStyle=_filterStyle;
 @property(nonatomic) float progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) NSArray *gradientColors; // @synthesize gradientColors=_gradientColors;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
 - (id)device;
 - (_Bool)_shouldReverseGradient;
@@ -29,12 +36,21 @@
 - (struct CGPoint)_pointAtProgress:(float)arg1;
 - (float)_shapeLineWidth;
 - (void)_setupGradientLayer:(id)arg1;
+- (void)_setupShapeLayer:(id)arg1;
 - (void)_updateGradient;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(float)arg1;
 - (void)_updatePath;
 - (struct CGPoint)pointAtProgress:(float)arg1;
 - (void)setGradientColors:(id)arg1 locations:(id)arg2;
 - (void)layoutSubviews;
-- (id)initForDevice:(id)arg1;
+- (id)initForDevice:(id)arg1 withFilterStyle:(int)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

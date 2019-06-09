@@ -12,14 +12,19 @@
 
 @protocol PXNavigationListItem <NSObject, NSCopying>
 @property(readonly, nonatomic) NSString *visualDescription;
+@property(readonly, nonatomic) id representedObject;
 @property(readonly, nonatomic) PHCollection *collection;
 @property(readonly, nonatomic) long long indentationLevel;
 @property(readonly, nonatomic, getter=isExpanded) _Bool expanded;
+@property(readonly, nonatomic, getter=isGroup) _Bool group;
 @property(readonly, nonatomic, getter=isExpandable) _Bool expandable;
-@property(readonly, nonatomic) NSString *identifier;
-@property(readonly, nonatomic) NSString *imageName;
+@property(readonly, nonatomic, getter=isRenamable) _Bool renamable;
+@property(readonly, nonatomic, getter=isRemovable) _Bool removable;
+@property(readonly, nonatomic, getter=isDraggable) _Bool draggable;
+@property(readonly, nonatomic) NSString *glyphImageName;
 @property(readonly, nonatomic) NSString *accessoryTitle;
 @property(readonly, nonatomic) NSString *title;
+@property(readonly, nonatomic) NSString *identifier;
 
 @optional
 - (struct NSObject *)viewControllerForCollectionWithGridPresentation:(id <PXGridPresentation>)arg1;

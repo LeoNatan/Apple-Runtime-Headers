@@ -6,16 +6,27 @@
 
 #import <objc/NSObject.h>
 
-@protocol DNDSPairedDeviceStateMonitorDelegate;
+@class DNDSPairedDevice;
+@protocol DNDSPairedDeviceStateMonitorDelegate, OS_dispatch_queue;
 
 @interface DNDSPairedDeviceStateMonitor : NSObject
 {
+    NSObject<OS_dispatch_queue> *_queue;
+    DNDSPairedDevice *_currentPairedDevice;
+    int _pairedDeviceDidChangeNotificationToken;
     id <DNDSPairedDeviceStateMonitorDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <DNDSPairedDeviceStateMonitorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)_pairedDeviceStateChanged:(id)arg1;
+- (void)_endMonitoringForChanges;
+- (void)_beginMonitoringForChanges;
+- (id)_getCurrentPairedDevice;
+- (void)_updatePairedState;
 - (id)pairedDeviceWithError:(id *)arg1;
+- (void)dealloc;
+- (id)init;
 
 @end
 

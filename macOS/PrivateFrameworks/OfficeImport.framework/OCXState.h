@@ -8,6 +8,7 @@
 
 @class CXNamespace;
 
+__attribute__((visibility("hidden")))
 @interface OCXState : NSObject
 {
     int mXMLFormat;

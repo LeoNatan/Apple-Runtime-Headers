@@ -22,6 +22,7 @@
 @property(copy) NSString *tag; // @synthesize tag=_tag;
 - (id)accountWithIdentifier:(id)arg1;
 @property(readonly) ABAccount *defaultAccount;
+@property(readonly, copy) NSArray *hiddenAccounts;
 @property(readonly, copy) NSArray *persistentAccounts;
 @property(readonly, copy) NSArray *enabledAccounts;
 @property(readonly, copy) NSArray *allAccounts;

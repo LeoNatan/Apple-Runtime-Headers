@@ -19,6 +19,8 @@
     NSObject<OS_dispatch_queue> *_queue;
     _Bool _forceShow;
     int _forceShowNotifyToken;
+    _Bool _isDeepBreathingAppInstalled;
+    struct os_unfair_lock_s _lock;
     FITypicalDayActivityModel *typicalDayModel;
     id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate;
 }
@@ -30,6 +32,10 @@
 @property(nonatomic) __weak id <NLCoachingSubmanagerDelegate> coachingSubmanagerDelegate; // @synthesize coachingSubmanagerDelegate;
 @property(nonatomic) __weak FITypicalDayActivityModel *typicalDayModel; // @synthesize typicalDayModel;
 - (void).cxx_destruct;
+- (_Bool)_hasDeepBreathingAppBeenInstalled;
+- (void)_setDeepBreathingAppInstalled:(_Bool)arg1;
+- (void)triggerScheduleTask;
+- (void)cancelScheduledTask;
 - (_Bool)requiresCoachingConditionsOnRequests;
 - (int)minimumRecentActiveDays;
 - (_Bool)requiresMoveGoal;
@@ -47,6 +53,8 @@
 - (void)coachingAlertRequestDidCompleteWithResponse:(id)arg1;
 - (void)wristOnStateChangedTo:(_Bool)arg1;
 - (void)daemonAndCoachingManagerReady;
+- (void)_applicationsUninstalled:(id)arg1;
+- (void)_applicationsInstalled:(id)arg1;
 - (void)privacySettingsDidChange:(id)arg1;
 - (void)settingsDidChange:(id)arg1;
 - (void)protectedDataDidBecomeAvailable:(_Bool)arg1;

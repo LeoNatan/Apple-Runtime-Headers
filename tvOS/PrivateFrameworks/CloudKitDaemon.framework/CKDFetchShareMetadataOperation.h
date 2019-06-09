@@ -6,7 +6,7 @@
 
 #import <CloudKitDaemon/CKDOperation.h>
 
-@class NSMutableArray, NSMutableDictionary, NSSet;
+@class NSDictionary, NSMutableArray, NSMutableDictionary, NSSet;
 
 __attribute__((visibility("hidden")))
 @interface CKDFetchShareMetadataOperation : CKDOperation
@@ -19,8 +19,10 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_shareURLsToFetch;
     NSMutableDictionary *_shareTokenMetadatasToFetchByURL;
     NSSet *_rootRecordDesiredKeysSet;
+    NSDictionary *_shareInvitationTokensByShareURL;
 }
 
+@property(retain, nonatomic) NSDictionary *shareInvitationTokensByShareURL; // @synthesize shareInvitationTokensByShareURL=_shareInvitationTokensByShareURL;
 @property(nonatomic) _Bool clientWillDisplaySystemAcceptPrompt; // @synthesize clientWillDisplaySystemAcceptPrompt=_clientWillDisplaySystemAcceptPrompt;
 @property(retain, nonatomic) NSSet *rootRecordDesiredKeysSet; // @synthesize rootRecordDesiredKeysSet=_rootRecordDesiredKeysSet;
 @property(nonatomic) _Bool shouldFetchRootRecord; // @synthesize shouldFetchRootRecord=_shouldFetchRootRecord;
@@ -33,7 +35,9 @@ __attribute__((visibility("hidden")))
 - (void)main;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_prepareShortTokens;
+- (_Bool)_currentUserIsOONForShareMetadata:(id)arg1;
 - (void)_decryptRootRecordsForShareURL:(id)arg1 withMetadata:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_continueHandlingFetchedShareMetadata:(id)arg1 shareURL:(id)arg2;
 - (void)_handleTokenResolveWithLookupInfo:(id)arg1 shareMetadata:(id)arg2 responseCode:(id)arg3 urlByShortTokenLookupInfos:(id)arg4 tokensToFetchByURL:(id)arg5;
 - (void)_fetchShortTokenMetadata;
 - (id)_decodeProtectedFullToken:(id)arg1 tokenMetadata:(id)arg2;

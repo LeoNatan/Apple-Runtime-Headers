@@ -78,7 +78,6 @@
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 orderingTerms:(id)arg3 propertyToCount:(id)arg4 options:(long long)arg5;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 orderingTerms:(id)arg3 propertyToCount:(id)arg4;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 orderingTerms:(id)arg3;
-+ (id)directCollectionQueryWithAggregateQuery:(id)arg1 predicate:(id)arg2 usingSections:(_Bool)arg3;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 usingSections:(_Bool)arg3;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2 options:(long long)arg3;
 + (id)queryWithLibrary:(id)arg1 predicate:(id)arg2;

@@ -17,6 +17,7 @@
     BOOL isVideoSourceScreen;
     BOOL isDuplexAudioOnly;
     BOOL isDuplexVideoOnly;
+    BOOL isHalfDuplexAudio;
     BOOL isKeyExchangeEnabled;
     BOOL isRelayEnabled;
     BOOL isRelayForced;
@@ -33,6 +34,7 @@
 + (id)VideoOnlyVCCapabilities;
 + (id)AudioOnlyVCCapabilities;
 + (id)DataOnlyVCCapabilities;
+@property BOOL isHalfDuplexAudio; // @synthesize isHalfDuplexAudio;
 @property int deviceRole; // @synthesize deviceRole;
 @property BOOL isDTLSEnabled; // @synthesize isDTLSEnabled;
 @property BOOL requiresWifi; // @synthesize requiresWifi;

@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 - (id)newSerializedVertexDataWithFlags:(unsigned long long)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (id)newSerializedVertexDataWithFlags:(unsigned long long)arg1 error:(id *)arg2;
 - (id)serializeFragmentData;
+- (id)newSerializedFragmentDataWithFlags:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (void)validateWithDevice:(id)arg1;
 - (void)setStencilAttachmentPixelFormat:(unsigned long long)arg1;
 - (unsigned long long)stencilAttachmentPixelFormat;
@@ -110,6 +111,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)maxTessellationFactor;
 - (void)setTessellationPartitionMode:(unsigned long long)arg1;
 - (unsigned long long)tessellationPartitionMode;
+@property(nonatomic) _Bool forceSoftwareVertexFetch;
 - (id)description;
 - (id)formattedDescription:(unsigned long long)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;

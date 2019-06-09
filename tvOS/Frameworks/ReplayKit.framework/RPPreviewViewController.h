@@ -7,11 +7,12 @@
 #import <UIKit/UIViewController.h>
 
 #import <ReplayKit/RPVideoEditorViewControllerDelegate-Protocol.h>
+#import <ReplayKit/ReplayKitMacHelperDelegate-Protocol.h>
 
-@class NSURL, RPVideoEditorHostViewController;
+@class NSString, NSURL, RPVideoEditorHostViewController;
 @protocol RPPreviewViewControllerDelegate;
 
-@interface RPPreviewViewController : UIViewController <RPVideoEditorViewControllerDelegate>
+@interface RPPreviewViewController : UIViewController <RPVideoEditorViewControllerDelegate, ReplayKitMacHelperDelegate>
 {
     _Bool _wasStatusBarHidden;
     id <RPPreviewViewControllerDelegate> _previewControllerDelegate;
@@ -29,11 +30,19 @@
 @property(nonatomic) long long mode; // @synthesize mode=_mode;
 @property(nonatomic) __weak id <RPPreviewViewControllerDelegate> previewControllerDelegate; // @synthesize previewControllerDelegate=_previewControllerDelegate;
 - (void).cxx_destruct;
+- (void)replayKitMacHelper:(id)arg1 didDismissVideoEditorSheetWithActivityTypes:(id)arg2;
 - (void)extensionDidFinishWithActivityTypes:(id)arg1;
 - (void)videoEditor:(id)arg1 didFinishWithActivityTypes:(id)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;
+- (void)viewDidAppear:(_Bool)arg1;
 - (void)viewWillAppear:(_Bool)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

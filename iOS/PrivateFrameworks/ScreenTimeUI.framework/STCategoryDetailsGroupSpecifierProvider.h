@@ -9,6 +9,7 @@
 @class NSObject, STUsageDetailsViewModel;
 @protocol STRootViewModelCoordinator;
 
+__attribute__((visibility("hidden")))
 @interface STCategoryDetailsGroupSpecifierProvider : STGroupSpecifierProvider
 {
     STUsageDetailsViewModel *_usageDetailsViewModel;

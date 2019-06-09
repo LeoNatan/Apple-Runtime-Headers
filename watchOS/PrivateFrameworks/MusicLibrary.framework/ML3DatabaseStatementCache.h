@@ -8,7 +8,6 @@
 
 @class ML3StatementCacheList, NSMutableDictionary;
 
-__attribute__((visibility("hidden")))
 @interface ML3DatabaseStatementCache : NSObject
 {
     NSMutableDictionary *_statementsDictionary;

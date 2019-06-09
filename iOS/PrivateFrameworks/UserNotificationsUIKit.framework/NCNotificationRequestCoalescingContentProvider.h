@@ -14,8 +14,10 @@
     NCNotificationSummaryBuilder *_summaryBuilder;
     _Bool _deviceAuthenticated;
     NSMutableArray *_coalescedNotificationRequests;
+    NCNotificationSummaryBuilder *_overridenSummaryBuilder;
 }
 
+@property(retain, nonatomic) NCNotificationSummaryBuilder *overridenSummaryBuilder; // @synthesize overridenSummaryBuilder=_overridenSummaryBuilder;
 @property(nonatomic, getter=isDeviceAuthenticated) _Bool deviceAuthenticated; // @synthesize deviceAuthenticated=_deviceAuthenticated;
 @property(retain, nonatomic) NSMutableArray *coalescedNotificationRequests; // @synthesize coalescedNotificationRequests=_coalescedNotificationRequests;
 - (void).cxx_destruct;

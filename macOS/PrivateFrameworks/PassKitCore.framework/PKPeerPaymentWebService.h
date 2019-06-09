@@ -8,7 +8,7 @@
 
 #import <PassKitCore/NSURLSessionTaskDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSObject, NSString, NSURL, PKPeerPaymentService, PKPeerPaymentWebServiceContext, PKSecureElement;
+@class NSMutableDictionary, NSObject, NSString, NSURL, PKPaymentDevice, PKPeerPaymentService, PKPeerPaymentWebServiceContext, PKSecureElement;
 @protocol OS_dispatch_queue, PKPeerPaymentWebServiceArchiver, PKPeerPaymentWebServiceTargetDeviceProtocol;
 
 @interface PKPeerPaymentWebService : PKWebService <NSURLSessionTaskDelegate>
@@ -16,6 +16,7 @@
     PKSecureElement *_secureElement;
     NSMutableDictionary *_prewarmedDeviceScorers;
     NSObject<OS_dispatch_queue> *_prewarmedDeviceScorersQueue;
+    PKPaymentDevice *_paymentDevice;
     BOOL _sharedService;
     PKPeerPaymentWebServiceContext *_context;
     id <PKPeerPaymentWebServiceArchiver> _archiver;
@@ -41,7 +42,7 @@
 - (void)prewarmDeviceScoreForEndpoint:(id)arg1;
 - (void)_renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_appleAccountInformation;
-- (id)_deviceMetadata;
+- (void)_peerPaymentDeviceMetadataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_deviceRegistrationDataWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_deviceIdentifier;
 - (unsigned long long)disbursementVoucherWithRequest:(id)arg1 certificates:(id)arg2 completion:(CDUnknownBlockType)arg3;

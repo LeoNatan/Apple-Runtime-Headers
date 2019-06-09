@@ -15,6 +15,8 @@
 - (void)cancelOperation:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (BOOL)canBecomeKeyWindow;
+- (BOOL)canBecomeMainWindow;
+- (struct CGRect)constrainFrameRect:(struct CGRect)arg1 toScreen:(id)arg2;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
 
 @end

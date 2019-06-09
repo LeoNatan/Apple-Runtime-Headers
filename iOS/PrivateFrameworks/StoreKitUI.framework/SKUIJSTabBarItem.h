@@ -10,6 +10,7 @@
 
 @class IKJSNavigationDocument, JSManagedValue, NSString, SKUITabBarItem;
 
+__attribute__((visibility("hidden")))
 @interface SKUIJSTabBarItem : IKJSObject <SKUIJSTabBarItem>
 {
     JSManagedValue *_managedNavigationDocument;

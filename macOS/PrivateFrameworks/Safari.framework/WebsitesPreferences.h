@@ -104,6 +104,7 @@ __attribute__((visibility("hidden")))
 - (id)_domainsForCurrentlyOpenTabs;
 - (void)_getCurrentlyOpenAndConfiguredDomainsForPreference:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (double)_bestWidthOfPreferenceContent;
+- (id)_selectedRowsAfterRestoringPreviousSelection:(id)arg1;
 - (void)_updatePolicies;
 - (void)_updateTableContainerWidth;
 - (void)_updatePreferencePaneForSelectedPreference;

@@ -11,6 +11,7 @@
 @class CKNanoReplyButtonsView, NSString;
 @protocol CKNanoReplyButtonsCellDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoReplyButtonsCell : CKTranscriptCell <CKNanoReplyButtonsViewDelegate>
 {
     id <CKNanoReplyButtonsCellDelegate> _replyDelegate;

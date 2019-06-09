@@ -20,11 +20,12 @@
     unsigned long long __activeTimerID;
     CAGradientLayer *__gradientLayer;
     CAMStageLightAnimator *__animator;
+    struct CGRect _viewportFrame;
 }
 
-+ (struct CGRect)circleFrameForBounds:(struct CGRect)arg1 orientation:(long long)arg2 bottomContentInset:(double)arg3;
-+ (double)_circleDiameterForBounds:(struct CGRect)arg1 orientation:(long long)arg2;
-+ (_Bool)_useLargeLayoutForBounds:(struct CGRect)arg1;
++ (struct CGRect)circleFrameForViewport:(struct CGRect)arg1 orientation:(long long)arg2 bottomContentInset:(double)arg3;
++ (double)_circleDiameterForViewportSize:(struct CGSize)arg1 orientation:(long long)arg2;
++ (_Bool)_useLargeLayoutForViewportSize:(struct CGSize)arg1;
 @property(retain, nonatomic, setter=_setAnimator:) CAMStageLightAnimator *_animator; // @synthesize _animator=__animator;
 @property(readonly, nonatomic) CAGradientLayer *_gradientLayer; // @synthesize _gradientLayer=__gradientLayer;
 @property(nonatomic, setter=_setActiveTimerID:) unsigned long long _activeTimerID; // @synthesize _activeTimerID=__activeTimerID;
@@ -32,6 +33,7 @@
 @property(readonly, nonatomic) UIImageView *_vignetteView; // @synthesize _vignetteView=__vignetteView;
 @property(readonly, nonatomic) UIView *_tintView; // @synthesize _tintView=__tintView;
 @property(nonatomic) double bottomContentInset; // @synthesize bottomContentInset=_bottomContentInset;
+@property(nonatomic) struct CGRect viewportFrame; // @synthesize viewportFrame=_viewportFrame;
 @property(nonatomic) long long orientation; // @synthesize orientation=_orientation;
 @property(nonatomic, getter=isVisible) _Bool visible; // @synthesize visible=_visible;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;

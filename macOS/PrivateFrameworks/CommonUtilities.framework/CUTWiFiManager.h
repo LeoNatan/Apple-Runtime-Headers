@@ -71,7 +71,6 @@
 @property(readonly, nonatomic) BOOL willTryToAutoAssociateWiFiNetwork;
 @property(readonly, nonatomic) BOOL isHostingWiFiHotSpot; // @synthesize isHostingWiFiHotSpot=_isHostingHotSpot;
 - (void)_createDynamicStore;
-- (void)_createWiFiManager;
 - (void)_adjustWoWState;
 - (BOOL)hasWoWClient:(id)arg1;
 - (void)removeWoWClient:(id)arg1;

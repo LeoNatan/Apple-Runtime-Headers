@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
     CFPrefsPlistSource *_standardSetTarget;
     CFPrefsCloudSource *_cloudSetTarget;
     BOOL initialized;
-    // Error parsing type: Ac, name: _isRebuildingCache
 }
 
 + (void)preloadDomainsForIdentifiers:(const struct __CFString **)arg1 containers:(const struct __CFString **)arg2 cloudConfigurationURLs:(const struct __CFURL **)arg3 count:(long long)arg4 containingPreferences:(id)arg5;
@@ -44,7 +43,9 @@ __attribute__((visibility("hidden")))
 - (long long)generationCount;
 - (void)handleRemoteChangeNotificationForDomainIdentifier:(struct __CFString *)arg1;
 - (long long)alreadylocked_generationCountFromListOfSources:(id *)arg1 count:(long long)arg2;
+- (void)synchronouslySendDaemonMessage:(id)arg1 andAgentMessage:(id)arg2 replyHandler:(CDUnknownBlockType)arg3;
 - (id)createRequestNewContentMessageForDaemon:(int)arg1;
+- (id)createMultiMessageWithContainedMessages:(id)arg1;
 - (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 retryCount:(int)arg4 error:(char *)arg5;
 - (struct __CFArray *)alreadylocked_copyKeyList;
 - (BOOL)synchronize;
@@ -60,6 +61,7 @@ __attribute__((visibility("hidden")))
 - (void)addCloudSourceForIdentifier:(struct __CFString *)arg1 configurationPath:(struct __CFString *)arg2 storeName:(struct __CFString *)arg3 container:(struct __CFString *)arg4;
 - (void)addSourceForIdentifier:(struct __CFString *)arg1 user:(struct __CFString *)arg2 byHost:(BOOL)arg3 container:(struct __CFString *)arg4;
 - (void)addManagedSourceForIdentifier:(struct __CFString *)arg1 user:(struct __CFString *)arg2;
+- (BOOL)shouldEnableDirectMode;
 - (void)unlock;
 - (void)lock;
 - (id)copyWithZone:(struct _NSZone *)arg1;

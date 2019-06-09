@@ -9,11 +9,14 @@
 @class NSArray, NSData, NSDate, NSDictionary, NSString;
 
 @protocol MCXPCProtocol <NSObject>
+- (void)createMDMUnlockTokenIfNeededWithPasscode:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
+- (void)isPasscodeCompliantWithNamedPolicy:(NSString *)arg1 completion:(void (^)(_Bool, NSError *))arg2;
 - (void)mayShareToAirDropForOriginatingAppBundleID:(NSString *)arg1 originatingAccountIsManaged:(_Bool)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)mayShareToMessagesForOriginatingAppBundleID:(NSString *)arg1 originatingAccountIsManaged:(_Bool)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)cancelFeaturePromptWithIdentifier:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)showFeaturePromptForSetting:(NSString *)arg1 configurationUUID:(NSString *)arg2 promptOptions:(NSDictionary *)arg3 promptIdentifier:(NSString *)arg4 completion:(void (^)(int, NSError *))arg5;
 - (void)shutDownWithCompletion:(void (^)(NSError *))arg1;
+- (void)recomputeProfileRestrictionsWithCompletionBlock:(void (^)(NSError *))arg1;
 - (void)validateAppBundleIDs:(NSArray *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setupAssistantDidFinishCompletion:(void (^)(NSError *))arg1;
 - (void)loadMailAccountsWithFilteringEnabled:(_Bool)arg1 sourceAccountManagement:(int)arg2 completion:(void (^)(NSArray *, NSError *))arg3;
@@ -49,11 +52,12 @@
 - (void)removeValueSetting:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)removeBoolSetting:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setParametersForSettingsByType:(NSDictionary *)arg1 configurationUUID:(NSString *)arg2 toSystem:(_Bool)arg3 user:(_Bool)arg4 passcode:(NSString *)arg5 credentialSet:(NSData *)arg6 completion:(void (^)(NSError *))arg7;
-- (void)migratePostMDMDataMigratorWithContext:(int)arg1 completion:(void (^)(NSError *))arg2;
+- (void)migrateCleanupMigratorWithContext:(int)arg1 completion:(void (^)(NSError *))arg2;
 - (void)migrateWithContext:(int)arg1 passcodeWasSetInBackup:(_Bool)arg2 completion:(void (^)(NSError *))arg3;
 - (void)managedWiFiNetworkNamesWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 - (void)managedSystemConfigurationServiceIDsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
 - (void)removeOrphanedClientRestrictionsWithCompletion:(void (^)(NSError *))arg1;
+- (void)resetPasscodeMetadataWithCompletion:(void (^)(NSError *))arg1;
 - (void)clearPasscodeWithEscrowKeybagData:(NSData *)arg1 secret:(NSData *)arg2 completion:(void (^)(NSError *))arg3;
 - (void)changePasscode:(NSString *)arg1 oldPasscode:(NSString *)arg2 completion:(void (^)(_Bool, NSError *))arg3;
 - (void)applyRestrictionDictionary:(NSDictionary *)arg1 appsAndOptions:(NSArray *)arg2 clientType:(NSString *)arg3 clientUUID:(NSString *)arg4 localizedClientDescription:(NSString *)arg5 localizedWarningMessage:(NSString *)arg6 completion:(void (^)(_Bool, _Bool, NSError *))arg7;
@@ -76,6 +80,7 @@
 - (void)setAllowedURLStrings:(NSArray *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setSpellCheckAllowed:(_Bool)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setKeyboardShortcutsAllowed:(_Bool)arg1 completion:(void (^)(NSError *))arg2;
+- (void)setContinuousPathKeyboardAllowed:(_Bool)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setPredictiveKeyboardAllowed:(_Bool)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setSmartPunctuationAllowed:(_Bool)arg1 completion:(void (^)(NSError *))arg2;
 - (void)setAutoCorrectionAllowed:(_Bool)arg1 completion:(void (^)(NSError *))arg2;

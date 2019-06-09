@@ -52,7 +52,6 @@
 - (id)onDiskVersionForBundlePath:(id)arg1;
 - (id)bundleForRemovableVoice:(id)arg1 passingBackTagName:(id *)arg2;
 - (id)downloadableVoiceUpgradeForVoice:(id)arg1 fromDownloadableVoices:(id)arg2;
-- (id)downloadableVoicesAllowCustomVoices:(BOOL)arg1;
 - (id)downloadableVoices;
 - (BOOL)isAutoDownloadProhibitedForDownloadableVoiceObject:(id)arg1;
 - (void)markDownloadableVoiceObject:(id)arg1 withAutoDownloadProhibitFlag:(BOOL)arg2;

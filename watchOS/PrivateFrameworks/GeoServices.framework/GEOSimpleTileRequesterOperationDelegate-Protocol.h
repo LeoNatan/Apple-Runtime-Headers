@@ -11,6 +11,7 @@
 @protocol GEOSimpleTileRequesterOperationDelegate <NSObject>
 - (NSData *)verifyDataIntegrity:(NSData *)arg1 checksumMethod:(int)arg2;
 - (int)checksumMethodForIncomingTileDataWithKey:(const struct _GEOTileKey *)arg1;
+- (_Bool)shouldAllowEmptyDataForTileKey:(const struct _GEOTileKey *)arg1;
 - (void)operationFailed:(_GEOSimpleTileRequesterOperation *)arg1 error:(NSError *)arg2;
 - (void)operationFinished:(_GEOSimpleTileRequesterOperation *)arg1;
 @end

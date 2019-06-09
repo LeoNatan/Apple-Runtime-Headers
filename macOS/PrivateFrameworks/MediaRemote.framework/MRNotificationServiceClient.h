@@ -33,7 +33,6 @@
 - (void)_handleApplicationDidForegroundNotification:(id)arg1;
 - (void)_handleApplicationDisplayNameDidChangeNotification:(id)arg1;
 - (void)_handleApplicationClientStateDidChangeNotification:(id)arg1;
-- (void)_handleAnyApplicationIsPlayingDidChangeNotification:(id)arg1;
 - (void)_handleApplicationDidUnregisterNotification:(id)arg1;
 - (void)_handleApplicationDidRegisterNotification:(id)arg1;
 - (void)_handleActiveApplicationDidChangeNotification:(id)arg1;
@@ -44,13 +43,15 @@
 - (void)_notificationFired:(id)arg1 playerPathNotifcation:(id)arg2 originNotification:(id)arg3 nowPlayingNotification:(id)arg4;
 - (BOOL)_processNeedsNonPlayerPathBasedNotificationsForBackwardCompatabilitySupport;
 - (BOOL)_shouldPostNotifications;
-- (void)_processActivePlayerPathChanges:(id)arg1;
-- (void)_processPlayerChanges:(id)arg1;
-- (void)_processApplicationChanges:(id)arg1;
-- (void)_processOriginChanges:(id)arg1;
-- (void)_processActivePlayerChanges:(id)arg1;
-- (void)_processActiveApplicationChanges:(id)arg1;
-- (void)_processActiveOriginChanges:(id)arg1;
+- (void)_postDefaultOriginNotifications:(id)arg1;
+- (void)_postDefaultAppilicationNotifications:(id)arg1;
+- (void)_postDefaultPlayerNotificationsWithUserInfo:(id)arg1 object:(id)arg2;
+- (void)_processPlayerInvalidationHandlersForNotification:(id)arg1;
+- (void)_processApplicationInvalidationHandlersForNotification:(id)arg1;
+- (void)_processOriginInvalidationHandlersForNotification:(id)arg1;
+- (void)_processActivePlayerInvalidationHandlersForNotification:(id)arg1;
+- (void)_processActiveApplicationInvalidationHandlersForNotification:(id)arg1;
+- (void)_processActiveOriginInvalidationHandlersForNotification:(id)arg1;
 - (id)initWithServiceClient:(id)arg1;
 
 @end

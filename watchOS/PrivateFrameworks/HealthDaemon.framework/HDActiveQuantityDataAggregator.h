@@ -16,9 +16,9 @@
 @property(readonly, copy, nonatomic) HKQuantityType *quantityType; // @synthesize quantityType=_quantityType;
 - (void).cxx_destruct;
 - (id)description;
-- (id)aggregateSensorData:(id)arg1 collector:(id)arg2 device:(id)arg3 requestedAggregationDate:(id)arg4 mode:(int)arg5 error:(id *)arg6;
+- (id)_aggregateForState:(id)arg1 collector:(id)arg2 device:(id)arg3 requestedAggregationDate:(id)arg4 mode:(int)arg5 interval:(double)arg6;
+- (id)aggregateForState:(id)arg1 collector:(id)arg2 device:(id)arg3 requestedAggregationDate:(id)arg4 mode:(int)arg5 freezeSeries:(_Bool)arg6 error:(id *)arg7;
 - (Class)sensorDatumClass;
-- (double)defaultDataCollectionInterval;
 - (id)objectType;
 - (id)initForQuantityType:(id)arg1 dataCollectionManager:(id)arg2;
 

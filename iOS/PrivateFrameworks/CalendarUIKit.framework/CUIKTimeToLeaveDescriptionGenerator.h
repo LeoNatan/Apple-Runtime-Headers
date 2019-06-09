@@ -42,6 +42,8 @@
 + (id)timeToLeaveStringWithEta:(double)arg1 transportType:(int)arg2 runningLate:(_Bool)arg3;
 + (id)timeToLeaveStringWithHypothesis:(id)arg1 eta:(id)arg2 location:(id)arg3;
 + (id)timeToLeaveStringWithHypothesis:(id)arg1 location:(id)arg2;
++ (id)_travelAdvisoryDescriptionOfType:(unsigned long long)arg1 hypothesis:(id)arg2 eta:(id)arg3 location:(id)arg4;
++ (id)travelAdvisoryDescriptionOfType:(unsigned long long)arg1 hypothesis:(id)arg2 location:(id)arg3;
 + (id)explanatoryText;
 
 @end

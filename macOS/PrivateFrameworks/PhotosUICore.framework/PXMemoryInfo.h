@@ -30,7 +30,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) PHAsset *primaryAsset;
 @property(readonly, nonatomic) double score;
-@property(readonly, nonatomic) long long category;
+@property(readonly, nonatomic) unsigned long long category;
 - (id)memoryInfoWithUpdatedKeyAssetFetchResult:(id)arg1;
 
 @end

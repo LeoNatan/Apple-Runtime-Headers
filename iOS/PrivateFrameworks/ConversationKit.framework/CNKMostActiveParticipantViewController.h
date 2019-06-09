@@ -6,7 +6,6 @@
 
 #import <UIKit/UIViewController.h>
 
-__attribute__((visibility("hidden")))
 @interface CNKMostActiveParticipantViewController : UIViewController
 {
     // Error parsing type: , name: participants

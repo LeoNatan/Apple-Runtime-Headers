@@ -24,8 +24,12 @@
     _Bool _chromeVisibilityDidChange;
     _Bool _presentingOverOneUpDidChange;
     _Bool _reviewScreenBarsModelDidChange;
+    _Bool _videoOverlayPlayStateDidChange;
+    _Bool _isScrubbingActivationDidChange;
 }
 
+@property(nonatomic, setter=_setIsScrubbingActivationDidChange:) _Bool isScrubbingActivationDidChange; // @synthesize isScrubbingActivationDidChange=_isScrubbingActivationDidChange;
+@property(nonatomic, setter=_setVideoOverlayPlayStateDidChange:) _Bool videoOverlayPlayStateDidChange; // @synthesize videoOverlayPlayStateDidChange=_videoOverlayPlayStateDidChange;
 @property(nonatomic, setter=_setReviewScreenBarsModelDidChange:) _Bool reviewScreenBarsModelDidChange; // @synthesize reviewScreenBarsModelDidChange=_reviewScreenBarsModelDidChange;
 @property(nonatomic, setter=_setPresentingOverOneUpDidChange:) _Bool presentingOverOneUpDidChange; // @synthesize presentingOverOneUpDidChange=_presentingOverOneUpDidChange;
 @property(nonatomic, setter=_setChromeVisibilityDidChange:) _Bool chromeVisibilityDidChange; // @synthesize chromeVisibilityDidChange=_chromeVisibilityDidChange;

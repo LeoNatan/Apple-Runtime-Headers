@@ -19,8 +19,6 @@ __attribute__((visibility("hidden")))
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (_Bool)_forwardsToParentScroller;
 - (void)setBounds:(struct CGRect)arg1;
-- (void)handleSwipeBeginning:(id)arg1;
-- (_Bool)gestureRecognizerShouldBegin:(id)arg1;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;

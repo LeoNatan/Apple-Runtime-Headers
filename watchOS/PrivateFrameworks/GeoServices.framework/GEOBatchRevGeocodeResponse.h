@@ -8,34 +8,42 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray;
+@class NSMutableArray, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOBatchRevGeocodeResponse : PBCodable <NSCopying>
 {
-    double _timestamp;
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     NSMutableArray *_batchPlaceResults;
     NSMutableArray *_clusters;
+    double _timestamp;
+    NSMutableArray *_versionDomains;
     int _statusCode;
     unsigned int _ttl;
     unsigned int _version;
-    NSMutableArray *_versionDomains;
     struct {
-        unsigned int timestamp:1;
-        unsigned int statusCode:1;
-        unsigned int ttl:1;
-        unsigned int version:1;
-    } _has;
+        unsigned int has_timestamp:1;
+        unsigned int has_statusCode:1;
+        unsigned int has_ttl:1;
+        unsigned int has_version:1;
+        unsigned int read_batchPlaceResults:1;
+        unsigned int read_clusters:1;
+        unsigned int read_versionDomains:1;
+        unsigned int wrote_batchPlaceResults:1;
+        unsigned int wrote_clusters:1;
+        unsigned int wrote_timestamp:1;
+        unsigned int wrote_versionDomains:1;
+        unsigned int wrote_statusCode:1;
+        unsigned int wrote_ttl:1;
+        unsigned int wrote_version:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)versionDomainType;
 + (Class)batchPlaceResultType;
 + (Class)clusterType;
-@property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
-@property(nonatomic) unsigned int version; // @synthesize version=_version;
-@property(retain, nonatomic) NSMutableArray *versionDomains; // @synthesize versionDomains=_versionDomains;
-@property(retain, nonatomic) NSMutableArray *batchPlaceResults; // @synthesize batchPlaceResults=_batchPlaceResults;
-@property(retain, nonatomic) NSMutableArray *clusters; // @synthesize clusters=_clusters;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -44,28 +52,40 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasTimestamp;
+@property(nonatomic) double timestamp;
 @property(nonatomic) _Bool hasVersion;
+@property(nonatomic) unsigned int version;
 - (id)versionDomainAtIndex:(unsigned int)arg1;
 - (unsigned int)versionDomainsCount;
+- (void)_addNoFlagsVersionDomain:(id)arg1;
 - (void)addVersionDomain:(id)arg1;
 - (void)clearVersionDomains;
+@property(retain, nonatomic) NSMutableArray *versionDomains;
+- (void)_readVersionDomains;
 @property(nonatomic) _Bool hasTtl;
-@property(nonatomic) unsigned int ttl; // @synthesize ttl=_ttl;
+@property(nonatomic) unsigned int ttl;
 - (id)batchPlaceResultAtIndex:(unsigned int)arg1;
 - (unsigned int)batchPlaceResultsCount;
+- (void)_addNoFlagsBatchPlaceResult:(id)arg1;
 - (void)addBatchPlaceResult:(id)arg1;
 - (void)clearBatchPlaceResults;
+@property(retain, nonatomic) NSMutableArray *batchPlaceResults;
+- (void)_readBatchPlaceResults;
 - (id)clusterAtIndex:(unsigned int)arg1;
 - (unsigned int)clustersCount;
+- (void)_addNoFlagsCluster:(id)arg1;
 - (void)addCluster:(id)arg1;
 - (void)clearClusters;
+@property(retain, nonatomic) NSMutableArray *clusters;
+- (void)_readClusters;
 - (int)StringAsStatusCode:(id)arg1;
 - (id)statusCodeAsString:(int)arg1;
 @property(nonatomic) _Bool hasStatusCode;
-@property(nonatomic) int statusCode; // @synthesize statusCode=_statusCode;
+@property(nonatomic) int statusCode;
 
 @end
 

@@ -21,6 +21,7 @@
 
 + (id)CNToABCNKeyMap;
 + (id)descriptorForRequiredKeys;
++ (id)os_log;
 @property(nonatomic) double desiredHeight; // @synthesize desiredHeight=_desiredHeight;
 @property(nonatomic) __weak id <CNContactViewControllerDelegate> contactViewControllerDelegate; // @synthesize contactViewControllerDelegate=_contactViewControllerDelegate;
 @property(copy) CNContact *primitiveContact; // @synthesize primitiveContact=_primitiveContact;

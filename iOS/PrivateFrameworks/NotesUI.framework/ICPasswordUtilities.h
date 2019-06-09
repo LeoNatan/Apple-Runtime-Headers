@@ -12,7 +12,7 @@
 {
     _Bool _authenticationInProgress;
     UIAlertController *_displayedAlertController;
-    NSString *_divergedSharedPassword;
+    NSString *_divergedAccountPassword;
 }
 
 + (id)faceIDFailurePrompt;
@@ -20,7 +20,8 @@
 + (void)warnUserCannotPasswordProtectNoteDueToSharedNoteInViewController:(id)arg1;
 + (void)warnUserCannotPasswordProtectNoteDueToUnsupportedAttachmentsInViewController:(id)arg1;
 + (void)showFirstTimePasswordProtectNoteAlertForDisplayWindow:(id)arg1;
-+ (void)authenticateiCloudPasswordFromRootViewController:(id)arg1 confirmButtonTitle:(id)arg2 reason:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
++ (void)authenticateForMovingNotes:(id)arg1 toNoteContainer:(id)arg2 displayWindow:(id)arg3 authenticateFailureHandler:(CDUnknownBlockType)arg4 movingBlock:(CDUnknownBlockType)arg5;
++ (void)authenticateiCloudPasswordFromRootViewController:(id)arg1 account:(id)arg2 confirmButtonTitle:(id)arg3 reason:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 + (_Bool)authenticateDevicePasscodeIfNecessaryWithReason:(id)arg1;
 + (void)setFaceIDEnabledForSharedPassword:(_Bool)arg1;
 + (_Bool)faceIDEnabledForSharedPassword;
@@ -39,7 +40,7 @@
 + (_Bool)biometricIDHardwareIsAvailable;
 + (struct UIImage *)imageForCurrentDecryptedStatusForNote:(id)arg1;
 + (id)sharedInstance;
-@property(retain, nonatomic) NSString *divergedSharedPassword; // @synthesize divergedSharedPassword=_divergedSharedPassword;
+@property(retain, nonatomic) NSString *divergedAccountPassword; // @synthesize divergedAccountPassword=_divergedAccountPassword;
 @property(nonatomic) __weak UIAlertController *displayedAlertController; // @synthesize displayedAlertController=_displayedAlertController;
 @property(nonatomic) _Bool authenticationInProgress; // @synthesize authenticationInProgress=_authenticationInProgress;
 - (void).cxx_destruct;
@@ -54,13 +55,13 @@
 - (_Bool)_keychainContainsValidItemForSyncingObject:(id)arg1;
 - (_Bool)keychainContainsValidItemForAccount:(id)arg1;
 - (_Bool)keychainContainsValidItemForNote:(id)arg1;
-- (void)addTitleAndMessageToAlert:(id)arg1 intent:(unsigned long long)arg2 note:(id)arg3 incorrectAttempts:(long long)arg4 passwordDiverged:(_Bool)arg5;
-- (void)showUpdateDivergedPasswordForSharedPassword:(id)arg1 oldPassword:(id)arg2 displayWindow:(id)arg3;
-- (void)_authenticatePasswordWithIntent:(unsigned long long)arg1 note:(id)arg2 incorrectAttempts:(long long)arg3 passwordDiverged:(_Bool)arg4 displayWindow:(id)arg5 completionHandler:(CDUnknownBlockType)arg6;
-- (void)authenticatePasswordWithIntent:(unsigned long long)arg1 note:(id)arg2 displayWindow:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)addTitleAndMessageToAlert:(id)arg1 intent:(unsigned long long)arg2 note:(id)arg3 incorrectAttempts:(long long)arg4 passwordDiverged:(_Bool)arg5 wrongAccountName:(id)arg6;
+- (void)showUpdateDivergedPasswordForAccountPassword:(id)arg1 oldPassword:(id)arg2 account:(id)arg3 displayWindow:(id)arg4;
+- (void)_authenticatePasswordWithIntent:(unsigned long long)arg1 note:(id)arg2 incorrectAttempts:(long long)arg3 passwordDiverged:(_Bool)arg4 wrongAccountName:(id)arg5 displayWindow:(id)arg6 failedAttemptHandler:(CDUnknownBlockType)arg7 completionHandler:(CDUnknownBlockType)arg8;
+- (void)authenticatePasswordWithIntent:(unsigned long long)arg1 note:(id)arg2 displayWindow:(id)arg3 failedAttemptHandler:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)showPasswordSetUpSheetForAccount:(id)arg1 displayWindow:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)showPasswordEntrySheetWithIntent:(unsigned long long)arg1 note:(id)arg2 displayWindow:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)showChangePasswordDialogueFromDisplayWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)showPasswordEntrySheetWithIntent:(unsigned long long)arg1 note:(id)arg2 displayWindow:(id)arg3 failedAttemptHandler:(CDUnknownBlockType)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)showChangePasswordDialogueFromDisplayWindow:(id)arg1 account:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)applicationDidEnterBackground:(id)arg1;
 - (void)dealloc;
 - (id)init;

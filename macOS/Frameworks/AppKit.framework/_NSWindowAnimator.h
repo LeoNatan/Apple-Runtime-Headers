@@ -6,6 +6,7 @@
 
 #import <AppKit/_NSObjectAnimator.h>
 
+__attribute__((visibility("hidden")))
 @interface _NSWindowAnimator : _NSObjectAnimator
 {
 }

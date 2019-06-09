@@ -10,8 +10,24 @@
 {
 }
 
++ (id)appBundleIdentifierDictionary;
 + (id)sharedManager;
-- (_Bool)shouldEnableDataclass:(id)arg1 forAccount:(id)arg2;
+- (void)attemptToEnableDataclasses:(id)arg1 forAccount:(id)arg2 inStore:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (_Bool)shouldProvisionNotesForAccount:(id)arg1;
+- (_Bool)shouldProvisionDataclass:(id)arg1 forAccount:(id)arg2;
+- (_Bool)shouldAutoEnableDataclass:(id)arg1 forAccount:(id)arg2;
+- (_Bool)_isRunningInStoreDemoMode;
+- (_Bool)_isApplicationSupportedForCurrentRegion:(id)arg1;
+- (_Bool)_hideDataclassWhenAppRemoved:(id)arg1;
+- (_Bool)isSystemAppRestrictedOrRemovedForDataclass:(id)arg1;
+- (_Bool)_isRestrictedForDataclass:(id)arg1;
+- (id)appBundleIdentifierForDataclass:(id)arg1;
+- (id)filteredServerProvidedFeatures:(id)arg1 forAccount:(id)arg2;
+- (id)_filteredDataclassesForAccountClass:(id)arg1;
+- (id)_blackListedMacOSDataclasses;
+- (id)_userVisibleDataclasses;
+- (id)whitelistedDataclassesForAppleAccountClassFull;
+- (id)whitelistedDataclassesForAppleAccountClassBasic;
 
 @end
 

@@ -10,6 +10,7 @@
 
 @class NSString, SKUIAdornedImageViewReuseView;
 
+__attribute__((visibility("hidden")))
 @interface SKUIAdornedImageView : SKUIImageView <SKUIViewElementView>
 {
     SKUIAdornedImageViewReuseView *_reuseView;

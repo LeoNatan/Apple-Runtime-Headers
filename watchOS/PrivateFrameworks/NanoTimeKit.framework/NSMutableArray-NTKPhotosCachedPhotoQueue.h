@@ -9,5 +9,7 @@
 @interface NSMutableArray (NTKPhotosCachedPhotoQueue)
 - (id)dequeueCachedPhoto;
 - (void)enqueueCachedPhoto:(id)arg1;
+- (id)dequeueAtom;
+- (void)enqueueAtom:(id)arg1;
 @end
 

@@ -8,18 +8,28 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOCountryRegionTuple : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_countryCode;
     NSString *_region;
+    struct {
+        unsigned int read_unknownFields:1;
+        unsigned int read_countryCode:1;
+        unsigned int read_region:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_countryCode:1;
+        unsigned int wrote_region:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSString *region; // @synthesize region=_region;
-@property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -28,10 +38,15 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *region;
 @property(readonly, nonatomic) _Bool hasRegion;
+- (void)_readRegion;
+@property(retain, nonatomic) NSString *countryCode;
 @property(readonly, nonatomic) _Bool hasCountryCode;
+- (void)_readCountryCode;
 
 @end
 

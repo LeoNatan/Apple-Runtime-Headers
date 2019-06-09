@@ -10,12 +10,12 @@
 
 @interface NTKNowPlayingIndicatorProvider : CLKImageProvider
 {
-    _Bool _paused;
     UIColor *_tintColor;
+    _Bool _paused;
 }
 
 + (id)nowPlayingIndicatorProviderWithTintColor:(id)arg1 family:(int)arg2 state:(int)arg3;
-@property(readonly, nonatomic) _Bool paused; // @synthesize paused=_paused;
+@property(nonatomic) _Bool paused; // @synthesize paused=_paused;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned int)hash;

@@ -24,7 +24,7 @@
 - (_Bool)canDisplayOptionsInPopover;
 - (long long)cellBannerTextAlignment;
 - (long long)cellFillMode;
-- (int)thumbnailImageFormat;
+- (unsigned short)thumbnailImageFormat;
 - (struct CGSize)baseInterItemSpacing;
 - (unsigned long long)supportedInterfaceOrientations;
 

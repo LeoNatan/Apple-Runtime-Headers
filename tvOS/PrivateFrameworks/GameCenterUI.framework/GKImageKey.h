@@ -12,19 +12,19 @@
 {
     NSString *_filePath;
     NSString *_cacheKey;
-    NSString *_imageID;
     NSString *_basename;
+    NSString *_imageID;
     struct CGSize _size;
 }
 
 + (id)keyForImageIdentifier:(id)arg1 withImageSource:(id)arg2;
 + (id)fileNameWithIdentifierInImageSource:(id)arg1;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
-@property(retain, nonatomic) NSString *basename; // @synthesize basename=_basename;
 @property(retain, nonatomic) NSString *imageID; // @synthesize imageID=_imageID;
+@property(retain, nonatomic) NSString *basename; // @synthesize basename=_basename;
+- (void).cxx_destruct;
 @property(readonly, nonatomic) NSString *cacheKey;
 @property(readonly, nonatomic) NSString *filePath;
-- (void)dealloc;
 
 @end
 

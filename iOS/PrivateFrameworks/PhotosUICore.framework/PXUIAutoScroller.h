@@ -10,10 +10,10 @@
 
 @interface PXUIAutoScroller : PXAutoScroller
 {
-    CADisplayLink *__displayLink;
+    CADisplayLink *_displayLink;
 }
 
-@property(retain, nonatomic, setter=_setDisplayLink:) CADisplayLink *_displayLink; // @synthesize _displayLink=__displayLink;
+@property(retain, nonatomic) CADisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 - (void).cxx_destruct;
 - (void)updateWithGestureRecognizer:(id)arg1;
 - (_Bool)autoscrollWithOffset:(struct CGPoint)arg1;

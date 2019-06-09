@@ -12,6 +12,7 @@
     unsigned long long _currentAvailability;
 }
 
++ (_Bool)onlyDrawWithApplePencil;
 @property unsigned long long currentAvailability; // @synthesize currentAvailability=_currentAvailability;
 - (void)stopMonitoringForPeripheralConnection;
 - (void)startMonitoringForPeripheralConnection;

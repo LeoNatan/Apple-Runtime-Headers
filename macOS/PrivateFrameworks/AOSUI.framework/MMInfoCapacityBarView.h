@@ -33,9 +33,10 @@
 @property(retain) CALayer *maskLayer; // @synthesize maskLayer=_maskLayer;
 @property(retain) CALayer *foregroundLayer; // @synthesize foregroundLayer=_foregroundLayer;
 @property(retain) CALayer *backgroundLayer; // @synthesize backgroundLayer=_backgroundLayer;
-@property(retain) NSMutableArray *categories; // @synthesize categories=_categories;
+@property(retain, nonatomic) NSMutableArray *categories; // @synthesize categories=_categories;
 @property(nonatomic, setter=setQuotaInfoDictionary:) NSDictionary *quotaDictionary; // @synthesize quotaDictionary=_quotaDictionary;
 @property unsigned long long capacity; // @synthesize capacity=_capacity;
+- (void).cxx_destruct;
 - (BOOL)isVoiceOverEnabled;
 - (void)createPopover;
 - (struct CGRect)rectForItem:(id)arg1;
@@ -49,7 +50,6 @@
 - (BOOL)wantsUpdateLayer;
 - (void)addCategoryWithDictionary:(id)arg1 atIndex:(unsigned long long)arg2;
 - (void)resetValues;
-- (void)dealloc;
 - (void)awakeFromNib;
 - (void)initCategories;
 - (id)initWithFrame:(struct CGRect)arg1;

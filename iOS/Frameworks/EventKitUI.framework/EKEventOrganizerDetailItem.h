@@ -13,11 +13,14 @@ __attribute__((visibility("hidden")))
 @interface EKEventOrganizerDetailItem : EKEventDetailItem
 {
     UITableViewCell *_cell;
+    _Bool _hideDisclosureIndicator;
     id <EKIdentityProtocol> _organizerOverride;
 }
 
+@property(nonatomic) _Bool hideDisclosureIndicator; // @synthesize hideDisclosureIndicator=_hideDisclosureIndicator;
 @property(retain) id <EKIdentityProtocol> organizerOverride; // @synthesize organizerOverride=_organizerOverride;
 - (void).cxx_destruct;
+- (void)_updateDisclosureIndicator;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned long long)arg2;
 - (id)cellForSubitemAtIndex:(unsigned long long)arg1;
 - (_Bool)configureWithCalendar:(id)arg1 preview:(_Bool)arg2;

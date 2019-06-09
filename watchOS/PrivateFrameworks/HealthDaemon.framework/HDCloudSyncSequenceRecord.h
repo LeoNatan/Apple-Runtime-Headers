@@ -6,7 +6,7 @@
 
 #import <HealthDaemon/HDCloudSyncRecord.h>
 
-@class HDSyncAnchorMap, NSSet;
+@class CKRecordID, HDSyncAnchorMap, NSSet;
 
 @interface HDCloudSyncSequenceRecord : HDCloudSyncRecord
 {
@@ -16,7 +16,7 @@
     int _protocolVersion;
     int _slot;
     unsigned long long _changeIndex;
-    unsigned long long _baselineEpoch;
+    long long _baselineEpoch;
     unsigned long long _childRecordCount;
 }
 
@@ -25,26 +25,33 @@
 + (_Bool)isSequenceRecord:(id)arg1;
 + (id)recordIDsWithZoneID:(id)arg1;
 + (id)recordIDWithZoneID:(id)arg1 sequenceSlot:(int)arg2;
++ (id)_recordNameForSequenceSlot:(int)arg1;
 + (id)recordWithCKRecord:(id)arg1 error:(id *)arg2;
 @property(nonatomic) int slot; // @synthesize slot=_slot;
 @property(readonly, nonatomic) int protocolVersion; // @synthesize protocolVersion=_protocolVersion;
-@property(readonly, nonatomic) NSSet *includedIdentifiers; // @synthesize includedIdentifiers=_includedIdentifiers;
+@property(readonly, copy, nonatomic) NSSet *includedIdentifiers; // @synthesize includedIdentifiers=_includedIdentifiers;
 @property(readonly, nonatomic) HDSyncAnchorMap *syncAnchorMap; // @synthesize syncAnchorMap=_syncAnchorMap;
 @property(readonly, nonatomic) unsigned long long childRecordCount; // @synthesize childRecordCount=_childRecordCount;
-@property(readonly, nonatomic) unsigned long long baselineEpoch; // @synthesize baselineEpoch=_baselineEpoch;
+@property(readonly, nonatomic) long long baselineEpoch; // @synthesize baselineEpoch=_baselineEpoch;
 @property(readonly, nonatomic) unsigned long long changeIndex; // @synthesize changeIndex=_changeIndex;
 @property(nonatomic, getter=isActive) _Bool active; // @synthesize active=_active;
 - (void).cxx_destruct;
 - (void)_unitTest_setChildRecordCount:(unsigned long long)arg1;
 - (id)description;
+- (void)decrementChildRecordCount:(unsigned long long)arg1;
 - (void)incrementChildRecordCount;
+- (void)updateFrozenSyncAnchorMapWithSyncAnchorMap:(id)arg1;
+- (void)replaceSyncAnchorMapWithSyncAnchorMap:(id)arg1;
 - (void)updateSyncAnchorMapWithSyncAnchorMap:(id)arg1;
+- (void)resetChangeIndex:(unsigned long long)arg1;
 - (void)incrementChangeIndex;
+@property(copy, nonatomic) CKRecordID *firstUnfrozenChangeRecord;
+@property(readonly, nonatomic) HDSyncAnchorMap *frozenSyncAnchorMap;
 - (void)setProtocolVersion:(int)arg1;
 - (unsigned int)hash;
 - (_Bool)isEqual:(id)arg1;
-- (id)initForSequenceSlot:(int)arg1 syncAnchorMap:(id)arg2 active:(_Bool)arg3 changeIndex:(unsigned long long)arg4 childRecordCount:(unsigned long long)arg5 baselineEpoch:(unsigned long long)arg6 includedIdentifiers:(id)arg7 protocolVersion:(int)arg8 storeRecordID:(id)arg9 record:(id)arg10 schemaVersion:(int)arg11;
-- (id)initForSequenceSlot:(int)arg1 syncAnchorMap:(id)arg2 changeIndex:(unsigned long long)arg3 baselineEpoch:(unsigned long long)arg4 includedIdentifiers:(id)arg5 storeRecord:(id)arg6;
+- (id)initForSequenceSlot:(int)arg1 syncAnchorMap:(id)arg2 active:(_Bool)arg3 changeIndex:(unsigned long long)arg4 childRecordCount:(unsigned long long)arg5 baselineEpoch:(long long)arg6 includedIdentifiers:(id)arg7 protocolVersion:(int)arg8 storeRecordID:(id)arg9 record:(id)arg10 schemaVersion:(int)arg11;
+- (id)initForSequenceSlot:(int)arg1 syncAnchorMap:(id)arg2 changeIndex:(unsigned long long)arg3 baselineEpoch:(long long)arg4 includedIdentifiers:(id)arg5 storeRecord:(id)arg6;
 
 @end
 

@@ -8,6 +8,7 @@
 
 @protocol AVScrubberValueTransformerDelegate;
 
+__attribute__((visibility("hidden")))
 @interface AVScrubberValueTransformer : NSValueTransformer
 {
     id <AVScrubberValueTransformerDelegate> _delegate;

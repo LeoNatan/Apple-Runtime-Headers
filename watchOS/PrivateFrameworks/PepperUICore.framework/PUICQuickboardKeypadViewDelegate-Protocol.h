@@ -11,6 +11,7 @@
 @protocol PUICQuickboardKeypadViewDelegate <NSObject>
 
 @optional
+- (void)keypadViewDidSelectDelete:(PUICQuickboardKeypadView *)arg1;
 - (void)keypadView:(PUICQuickboardKeypadView *)arg1 didSelectNumberPadCharacter:(int)arg2;
 - (void)keypadView:(PUICQuickboardKeypadView *)arg1 didSelectOK:(NSString *)arg2;
 @end

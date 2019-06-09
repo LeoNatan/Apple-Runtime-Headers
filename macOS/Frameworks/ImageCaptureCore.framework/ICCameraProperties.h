@@ -47,7 +47,6 @@ __attribute__((visibility("hidden")))
     unsigned int _aptpObjectLimit;
     BOOL _automaticallyRetrieveData;
     NSMutableIndexSet *_enumeratedObjectIndexes;
-    BOOL _delegateSupportsEnumerationDisplay;
     NSMutableArray *_originalMediaFiles;
     NSMutableArray *_convertedMediaFiles;
     NSMutableArray *_universalMediaFiles;
@@ -62,8 +61,12 @@ __attribute__((visibility("hidden")))
     NSString *_virtualCameraLocation;
     long long _appleRelatedUUIDSupport;
     struct os_unfair_lock_s _mediaLock;
+    BOOL _preheatMetadata;
 }
 
+@property BOOL preheatMetadata; // @synthesize preheatMetadata=_preheatMetadata;
+@property BOOL operationQueueSuspended; // @synthesize operationQueueSuspended=_operationQueueSuspended;
+@property(readonly) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain) NSObject<OS_dispatch_queue> *mediaProcessingQueue; // @synthesize mediaProcessingQueue=_mediaProcessingQueue;
 @property(copy) NSString *virtualCameraLocation; // @synthesize virtualCameraLocation=_virtualCameraLocation;
 @property(retain) NSMutableDictionary *virtualCameraManifest; // @synthesize virtualCameraManifest=_virtualCameraManifest;
@@ -78,14 +81,9 @@ __attribute__((visibility("hidden")))
 @property(retain) NSMutableArray *universalMediaFiles; // @synthesize universalMediaFiles=_universalMediaFiles;
 @property(retain) NSMutableArray *convertedMediaFiles; // @synthesize convertedMediaFiles=_convertedMediaFiles;
 @property(retain) NSMutableArray *originalMediaFiles; // @synthesize originalMediaFiles=_originalMediaFiles;
-@property BOOL delegateSupportsEnumerationDisplay; // @synthesize delegateSupportsEnumerationDisplay=_delegateSupportsEnumerationDisplay;
 @property BOOL automaticallyRetrieveData; // @synthesize automaticallyRetrieveData=_automaticallyRetrieveData;
-@property unsigned long long operationType; // @synthesize operationType=_operationType;
-@property(retain) NSMutableDictionary *operationDict; // @synthesize operationDict=_operationDict;
 @property unsigned int iCloudPhotosEnabled; // @synthesize iCloudPhotosEnabled=_iCloudPhotosEnabled;
 @property unsigned int aptpObjectLimit; // @synthesize aptpObjectLimit=_aptpObjectLimit;
-@property BOOL operationQueueSuspended; // @synthesize operationQueueSuspended=_operationQueueSuspended;
-@property(readonly) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(retain) NSMutableArray *aptpRequestedFiles; // @synthesize aptpRequestedFiles=_aptpRequestedFiles;
 @property NSArray *supportedSidecarFiles; // @synthesize supportedSidecarFiles=_supportedSidecarFiles;
 @property(retain) NSMutableDictionary *mobdevProperties; // @synthesize mobdevProperties=_mobdevProperties;
@@ -107,7 +105,7 @@ __attribute__((visibility("hidden")))
 @property unsigned long long batteryLevel; // @synthesize batteryLevel=_batteryLevel;
 @property BOOL batteryLevelAvailable; // @synthesize batteryLevelAvailable=_batteryLevelAvailable;
 @property unsigned long long contentCatalogPercentCompleted; // @synthesize contentCatalogPercentCompleted=_contentCatalogPercentCompleted;
-@property(retain) NSString *mountPoint; // @synthesize mountPoint=_mountPoint;
+@property(copy) NSString *mountPoint; // @synthesize mountPoint=_mountPoint;
 - (void)unlockNotificationQueue;
 - (void)lockNotificationQueue;
 - (void)setteardownPhase:(BOOL)arg1;
@@ -115,7 +113,11 @@ __attribute__((visibility("hidden")))
 - (void)waitForActivityCompletion;
 - (BOOL)processNotificationWithBlock:(CDUnknownBlockType)arg1;
 - (BOOL)processOperationWithBlock:(CDUnknownBlockType)arg1 gated:(BOOL)arg2;
+@property(retain) NSMutableDictionary *operationDict; // @synthesize operationDict=_operationDict;
+@property unsigned long long operationType; // @synthesize operationType=_operationType;
+- (void)dispatchAsyncForOperationType:(unsigned long long)arg1 block:(CDUnknownBlockType)arg2;
 - (void)resumeOperationQueue;
+- (void)updateOperationDict:(id)arg1 operationType:(unsigned long long)arg2;
 - (void)suspendOperationQueue;
 - (void)resumeNotificationQueue;
 - (void)suspendNotificationQueue;

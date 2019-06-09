@@ -50,6 +50,7 @@
 - (oneway void)receiverXPCServerDidUpdateAccount:(id)arg1;
 - (oneway void)receiverXPCServerDidAddNewAccount:(id)arg1;
 - (oneway void)receiverXPCServerDidUpdateMailboxWithId:(id)arg1 lastUpdate:(id)arg2;
+- (oneway void)receiverXPCServerChangeAccountValidationStatus:(unsigned int)arg1 accountName:(id)arg2;
 - (oneway void)receiverXPCServerDidFailWithError:(id)arg1;
 - (oneway void)receiverXPCServerDidReportProgress:(int)arg1 forComposedMessageWithId:(id)arg2 referenceMessageId:(id)arg3;
 - (oneway void)receiverXPCServerDidReceiveImageAttachmentForMessageWithId:(id)arg1 contentId:(id)arg2;
@@ -65,10 +66,12 @@
 - (oneway void)receiverXPCServerDidReplyWithIsConnected:(_Bool)arg1;
 - (oneway void)receiverXPCServerDidReplyWithFailedComposedMessageIdsAndSubjects:(id)arg1;
 - (oneway void)receiverXPCServerDidReplyWithComposedMessageIds:(id)arg1 progress:(id)arg2;
+- (oneway void)receiverXPCServerDidReplyWithEnabledMailboxFeatures:(id)arg1;
 - (oneway void)receiverXPCServerDidReplyWithAccounts:(id)arg1 error:(id)arg2;
 - (oneway void)receiverXPCServerDidReplyWithMailboxSelection:(id)arg1;
 - (oneway void)receiverXPCServerDidFailSyncingAttachment:(id)arg1 messageId:(id)arg2;
 - (oneway void)receiverXPCServerDidReplyWithMessageContentLoadFailedForMessageWithId:(id)arg1;
+- (oneway void)receiverXPCServerDidReplyWithAddedSubsectionId:(id)arg1 inParentSectionId:(id)arg2;
 - (oneway void)receiverXPCServerDidReplyWithMessageContent:(id)arg1;
 - (oneway void)receiverXPCServerDidReplyWithMessage:(id)arg1;
 - (oneway void)receiverXPCServerDidReplyWithConversationOperations:(id)arg1 totalConversationsCount:(unsigned int)arg2 willFetch:(_Bool)arg3 error:(id)arg4 reloadCache:(_Bool)arg5 lastUpdateByMailboxId:(id)arg6;
@@ -77,6 +80,9 @@
 - (void)deleteAllMessages;
 - (void)requestMessagesCount;
 - (void)addMailbox:(id)arg1;
+- (void)removeSubsectionWithId:(id)arg1;
+- (void)addSubsectionEnabledNotifications:(_Bool)arg1;
+- (void)addMessageContent:(id)arg1 preview:(id)arg2 messageId:(id)arg3;
 - (void)addMessage:(id)arg1;
 - (void)notifyWhenDoneProcessingWithBlock:(CDUnknownBlockType)arg1;
 - (void)resendComposedMessageWithId:(id)arg1;
@@ -97,9 +103,11 @@
 - (void)requestFirstUnreadMessagesWithContent:(unsigned int)arg1 sinceDate:(id)arg2 fromAccountsWithIds:(id)arg3 orVIPs:(_Bool)arg4 orNotifyConversation:(_Bool)arg5 excludingMessageIds:(id)arg6;
 - (void)requestFailedComposedMessages;
 - (void)requestSendingProgress;
+- (void)requestEnabledMailboxFeatures;
 - (void)requestAccounts;
 - (void)notifyOpenedMessageWithId:(id)arg1;
 - (void)requestMessageWithId:(id)arg1;
+- (void)setupContentForUITest:(id)arg1;
 - (void)requestMoreMessagesForConversationWithId:(id)arg1;
 - (void)requestConversationsReceivedBefore:(id)arg1 count:(unsigned int)arg2;
 - (void)requestFirstConversations:(unsigned int)arg1 forMailboxFilter:(id)arg2;

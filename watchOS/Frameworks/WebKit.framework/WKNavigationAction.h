@@ -16,6 +16,7 @@
 }
 
 @property(readonly) struct Object *_apiObject;
+@property(readonly, nonatomic) int modifierFlags;
 @property(readonly, nonatomic) struct CGPoint _clickLocationInRootViewCoordinates;
 @property(readonly, nonatomic) int _syntheticClickType;
 @property(readonly, copy, nonatomic) NSURLRequest *request;
@@ -28,6 +29,7 @@
 @property(readonly, nonatomic) _Bool _isRedirect;
 @property(readonly, nonatomic) _WKUserInitiatedAction *_userInitiatedAction;
 @property(readonly, nonatomic) _Bool _shouldOpenExternalURLs;
+@property(readonly, nonatomic) _Bool _shouldPerformDownload;
 @property(readonly, nonatomic) _Bool _shouldOpenAppLinks;
 @property(readonly, nonatomic) _Bool _shouldOpenExternalSchemes;
 @property(readonly, nonatomic) _Bool _canHandleRequest;

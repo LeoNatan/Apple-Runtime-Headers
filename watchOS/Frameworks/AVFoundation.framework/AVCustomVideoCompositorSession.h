@@ -39,15 +39,19 @@ __attribute__((visibility("hidden")))
 - (struct OpaqueFigVideoCompositor *)_copyFigVideoCompositor;
 - (void)setVideoComposition:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (void)_willDeallocOrFinalize;
 - (void)detachVideoComposition;
+- (_Bool)commitCustomVideoCompositorPropertiesAndReturnError:(id *)arg1;
+- (_Bool)_validateRequiredPixelBufferAttributesForRenderContext:(id)arg1 andReturnException:(id *)arg2;
+- (_Bool)_validateSourcePixelBufferAttributes:(id)arg1 andReturnException:(id *)arg2;
 - (id)customVideoCompositor;
 - (id)initWithVideoComposition:(id)arg1;
 - (void)_cleanupFigCallbacks;
 - (long)_setupFigCallbacks;
 - (void)_customCompositorFigPropertyDidChange;
 - (long)_customCompositorShouldCancelPendingFrames;
+- (long)_customCompositorShouldPrerollForRenderingFromTime:(CDStruct_1b6d18a9)arg1 toTime:(CDStruct_1b6d18a9)arg2 andThenFromTime:(CDStruct_1b6d18a9)arg3 toTime:(CDStruct_1b6d18a9)arg4 requestID:(int)arg5;
+- (long)_customCompositorShouldAnticipateRenderingFromTime:(CDStruct_1b6d18a9)arg1 toTime:(CDStruct_1b6d18a9)arg2 andThenFromTime:(CDStruct_1b6d18a9)arg3 toTime:(CDStruct_1b6d18a9)arg4;
 - (long)_compositionFrame:(struct OpaqueFigVideoCompositorFrame *)arg1 atTime:(CDStruct_1b6d18a9)arg2 requiresRenderUsingSources:(id)arg3 withInstruction:(void *)arg4;
 
 @end

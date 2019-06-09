@@ -13,7 +13,6 @@
 + (id)transformNodeWithInput:(id)arg1 transform:(id)arg2 error:(out id *)arg3;
 - (BOOL)requiresVideoComposition;
 - (id)descriptionSubClassHook;
-- (id)_evaluateImageGeometry:(out id *)arg1;
 - (id)_evaluateGeometrySpaceMap:(out id *)arg1;
 - (id)_transformWithError:(out id *)arg1;
 - (BOOL)shouldCacheNodeForPipelineState:(id)arg1;

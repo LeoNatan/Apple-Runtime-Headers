@@ -36,6 +36,7 @@
 - (void)_unload;
 - (void)historyStore:(id)arg1 didRemoveItems:(id)arg2;
 - (void)historyStore:(id)arg1 didRemoveVisits:(id)arg2;
+- (void)historyStore:(id)arg1 didAddVisits:(id)arg2;
 - (void)historyStoreDidFailDatabaseIntegrityCheck:(id)arg1;
 - (_Bool)historyStoreShouldCheckDatabaseIntegrity:(id)arg1;
 - (void)_dispatchHistoryVisitAdded:(id)arg1;
@@ -62,6 +63,7 @@
 - (void)close;
 - (void)performMaintenance:(CDUnknownBlockType)arg1;
 - (void)performMaintenance;
+- (void)vacuumHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearHistoryWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)clearHistory;
 - (void)clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
@@ -83,6 +85,7 @@
 - (void)pruneTombstonesWithEndDatePriorToDate:(id)arg1;
 - (void)replayAndAddTombstones:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getAllTombstonesWithCompletion:(CDUnknownBlockType)arg1;
+@property(nonatomic) _Bool syncsWithManateeContainer;
 @property(nonatomic) _Bool pushNotificationsAreInitialized;
 @property(nonatomic) unsigned int cachedNumberOfDevicesInSyncCircle;
 @property(copy, nonatomic) NSData *longLivedSaveOperationData;
@@ -110,6 +113,7 @@
 - (void)_removeItemsInResponseToUserAction:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_removeHistoryItemsInResponseToUserAction:(id)arg1;
 - (void)removeItemsInResponseToUserAction:(id)arg1;
+- (id)itemForURLString:(id)arg1 createIfNeeded:(_Bool)arg2;
 - (id)itemForURLString:(id)arg1;
 - (id)init;
 

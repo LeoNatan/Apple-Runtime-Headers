@@ -30,7 +30,10 @@
 - (id)_dictionaryForIgnoredEventID:(id)arg1;
 - (void)_handleResults:(id)arg1 resultsBlock:(CDUnknownBlockType)arg2 ignoredEventID:(id)arg3;
 - (void)cancelAvailabilityRequestWithID:(id)arg1;
+- (id)cachedAvailabilityInDateRange:(id)arg1 ignoredEventID:(id)arg2 addresses:(id)arg3;
 - (id)requestAvailabilityBetweenStartDate:(id)arg1 endDate:(id)arg2 ignoredEventID:(id)arg3 addresses:(id)arg4 resultsBlock:(CDUnknownBlockType)arg5 completionBlock:(CDUnknownBlockType)arg6;
+- (BOOL)_validateRequestStartDate:(id)arg1 endDate:(id)arg2 addresses:(id)arg3 error:(id *)arg4;
+- (id)_cachedSpanResultsBetweenStartDate:(id)arg1 endDate:(id)arg2 ignoredEventID:(id)arg3 addresses:(id)arg4;
 - (id)description;
 - (id)initWithSource:(id)arg1;
 - (id)init;

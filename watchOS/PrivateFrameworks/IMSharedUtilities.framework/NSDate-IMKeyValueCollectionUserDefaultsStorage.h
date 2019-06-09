@@ -7,6 +7,15 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (IMKeyValueCollectionUserDefaultsStorage)
++ (_Bool)useCourierTime;
++ (id)__im_dateWithCurrentServerTime;
++ (id)__im_dateWithNanosecondTimeIntervalSinceReferenceDate:(long long)arg1;
 - (_Bool)isArchivable_im;
+- (int)minutesDifferenceFromDate:(id)arg1;
+- (int)hoursDifferenceFromDate:(id)arg1;
+- (int)differenceFromDate:(id)arg1;
+- (_Bool)isToday;
+- (long long)__im_nanosecondTimeIntervalSinceEpochTime;
+- (long long)__im_nanosecondTimeInterval;
 @end
 

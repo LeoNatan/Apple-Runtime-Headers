@@ -8,6 +8,7 @@
 
 @class NSMutableDictionary, NSMutableString, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CMDictArchiveManager : CMStylingArchiveManager
 {
     NSMutableDictionary *mResources;

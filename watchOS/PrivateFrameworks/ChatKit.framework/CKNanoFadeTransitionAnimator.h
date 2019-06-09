@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface CKNanoFadeTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning>
 {
     _Bool _appearing;

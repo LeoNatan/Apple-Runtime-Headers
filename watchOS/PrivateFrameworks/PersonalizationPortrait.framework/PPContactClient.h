@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
+#import <PersonalizationPortrait/PPContactClientProtocol-Protocol.h>
+
 @class PPXPCClientHelper, PPXPCClientPipelinedBatchQueryManager;
 
-@interface PPContactClient : NSObject
+@interface PPContactClient : NSObject <PPContactClientProtocol>
 {
     PPXPCClientHelper *_clientHelper;
     PPXPCClientPipelinedBatchQueryManager *_queryManager;
@@ -21,6 +23,10 @@
 - (void)contactNameRecordChangesForClient:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)contactNameRecordBatch:(id)arg1 isLast:(_Bool)arg2 error:(id)arg3 queryId:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
 - (_Bool)contactNameRecordsForClient:(id)arg1 error:(id *)arg2 handleBatch:(CDUnknownBlockType)arg3;
+- (void)feedbackDisambiguationResultWithChoicesIdentifiers:(id)arg1 chosenContactIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)rankedContactsBatch:(id)arg1 isLast:(_Bool)arg2 error:(id)arg3 queryId:(unsigned long long)arg4 completion:(CDUnknownBlockType)arg5;
+- (_Bool)rankedContactsWithQuery:(id)arg1 error:(id *)arg2 handleBatch:(CDUnknownBlockType)arg3;
 - (id)_remoteObjectProxy;
 - (void)_unblockPendingQueries;
 - (id)init;

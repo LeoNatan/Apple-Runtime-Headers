@@ -12,7 +12,6 @@
 - (void)createSafeHarborWithIdentifier:(NSString *)arg1 containerType:(long long)arg2 andMigrateDataFrom:(NSURL *)arg3 completion:(void (^)(NSError *))arg4;
 - (void)stageItemAtURL:(NSURL *)arg1 options:(NSDictionary *)arg2 completion:(void (^)(NSURL *, _Bool, NSError *))arg3;
 - (void)wipeStagingRootWithCompletion:(void (^)(NSError *))arg1;
-- (void)migrateSystemAppDataWithCompletion:(void (^)(NSError *))arg1;
 - (void)migrateMobileContentWithCompletion:(void (^)(NSError *))arg1;
 @end
 

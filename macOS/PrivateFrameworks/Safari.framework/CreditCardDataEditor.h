@@ -4,44 +4,62 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Safari/SheetWithTableController.h>
+#import <AppKit/NSViewController.h>
 
 #import <Safari/CreditCardDataEditorCellViewDelegate-Protocol.h>
 #import <Safari/NSTableViewDataSource-Protocol.h>
 #import <Safari/NSTableViewDelegate-Protocol.h>
 #import <Safari/PanelPlusDelegate-Protocol.h>
 
-@class AuthorizationRequest, CreditCardNumberFieldEditor, NSArray, NSButton, NSLayoutConstraint, NSString, NSTextField;
+@class AuthorizationRequest, CreditCardNumberFieldEditor, NSArray, NSButton, NSLayoutConstraint, NSString, NSTableView, NSTextField;
+@protocol CreditCardDataEditorDelegate;
 
 __attribute__((visibility("hidden")))
-@interface CreditCardDataEditor : SheetWithTableController <PanelPlusDelegate, CreditCardDataEditorCellViewDelegate, NSTableViewDataSource, NSTableViewDelegate>
+@interface CreditCardDataEditor : NSViewController <PanelPlusDelegate, CreditCardDataEditorCellViewDelegate, NSTableViewDataSource, NSTableViewDelegate>
 {
     BOOL _shouldPreventResigningFirstResponder;
     unsigned long long _ignoringCreditCardDataChangeNotifications;
     AuthorizationRequest *_canShowCardNumbersAuthorizationRequest;
     CreditCardNumberFieldEditor *_creditCardNumberFieldEditor;
+    NSArray *_virtualCardData;
+    NSArray *_creditCardAndVirtualCardData;
+    id <CreditCardDataEditorDelegate> _delegate;
     NSArray *_creditCardData;
+    NSTableView *_tableView;
     NSTextField *_emptyTablePlaceholderText;
     NSButton *_addCreditCardButton;
+    NSButton *_removeCreditCardButton;
     NSLayoutConstraint *_addRemoveButtonEqualWidthsConstraint;
 }
 
 + (id)_creditCardIconForNumberAllowingPartialMatch:(id)arg1;
 @property(nonatomic) __weak NSLayoutConstraint *addRemoveButtonEqualWidthsConstraint; // @synthesize addRemoveButtonEqualWidthsConstraint=_addRemoveButtonEqualWidthsConstraint;
+@property(nonatomic) __weak NSButton *removeCreditCardButton; // @synthesize removeCreditCardButton=_removeCreditCardButton;
 @property(nonatomic) __weak NSButton *addCreditCardButton; // @synthesize addCreditCardButton=_addCreditCardButton;
 @property(nonatomic) __weak NSTextField *emptyTablePlaceholderText; // @synthesize emptyTablePlaceholderText=_emptyTablePlaceholderText;
+@property(nonatomic) __weak NSTableView *tableView; // @synthesize tableView=_tableView;
 @property(copy, nonatomic) NSArray *creditCardData; // @synthesize creditCardData=_creditCardData;
+@property(nonatomic) __weak id <CreditCardDataEditorDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)creditCardDataEditorCellView:(id)arg1 willAbortEditingForTextFieldWithIdentifier:(id)arg2;
 - (void)creditCardDataEditorCellView:(id)arg1 didSetObjectValue:(id)arg2 forTextFieldWithIdentifier:(id)arg3;
 - (void)creditCardDataEditorCellView:(id)arg1 textDidChangeInFieldEditor:(id)arg2 forTextFieldWithIdentifier:(id)arg3;
 - (BOOL)creditCardDataEditorCellView:(id)arg1 shouldEndEditingTextInFieldEditor:(id)arg2 forTextFieldWithIdentifier:(id)arg3;
-- (BOOL)panelPlus:(id)arg1 shouldMakeFirstResponder:(id)arg2;
 - (BOOL)_isCreditCardNumberTextField:(id)arg1;
 - (id)windowWillReturnFieldEditor:(id)arg1 toObject:(id)arg2;
-- (void)windowDidResignKey:(id)arg1;
+- (long long)_virtualCardOffsetInTableView;
+- (id)_cardDataAtRowIndex:(long long)arg1;
+- (id)_groupCellViewForTableView:(id)arg1 row:(long long)arg2;
+- (void)tableViewSelectionDidChange:(id)arg1;
+- (BOOL)tableView:(id)arg1 keyDown:(id)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+- (BOOL)tableView:(id)arg1 shouldSelectRow:(long long)arg2;
+- (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
+- (BOOL)tableView:(id)arg1 isGroupRow:(long long)arg2;
 - (long long)numberOfRowsInTableView:(id)arg1;
+- (BOOL)_canRemoveSelectedItems;
+- (void)_updateRemoveButtons;
+- (void)_reloadTableData;
 - (void)_updateCreditCard:(id)arg1 withCreditCardData:(id)arg2;
 - (BOOL)_shouldSetNumberOfCreditCardData:(id)arg1 toCreditCardNumber:(id)arg2;
 - (id)_indexesOfCreditCardsWithNumber:(id)arg1 excludingCard:(id)arg2;
@@ -50,19 +68,20 @@ __attribute__((visibility("hidden")))
 - (void)_performBlockIgnoringCreditCardDataChangeNotifications:(CDUnknownBlockType)arg1;
 - (void)addCreditCard:(id)arg1;
 - (void)_addCreditCard:(id)arg1;
-- (BOOL)_canShowCardNumbers;
 - (void)removeSelectedItems:(id)arg1;
 - (void)_removeCreditCardsAtIndexes:(id)arg1;
 - (void)_updateVisibilityOfPlaceholderText;
 - (void)hideSheet:(id)arg1;
-- (void)showSheetInWindow:(id)arg1;
+- (void)viewWillAppear;
 - (void)awakeFromNib;
 - (void)dealloc;
 - (void)unregisterForNotifications;
 - (void)registerForNotifications;
 - (void)creditCardDataChanged;
 - (void)resetCreditCardData;
-- (id)windowNibName;
+- (void)_updateCreditCardAndVirtualCardData;
+- (void)_addVirtualCardData;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

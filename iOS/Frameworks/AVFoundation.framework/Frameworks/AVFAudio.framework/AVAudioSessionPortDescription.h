@@ -14,7 +14,7 @@
 }
 
 + (id)privateCreateArray:(id)arg1 owningSession:(id)arg2;
-- (id)initWithPortType:(id)arg1;
+- (id)initWithPortType:(id)arg1 owningSession:(id)arg2;
 - (void)configureChannelsAndDataSources:(id)arg1;
 - (id)initWithRawPortDescription:(id)arg1 owningSession:(id)arg2;
 - (id)privateGetID;

@@ -20,6 +20,9 @@ __attribute__((visibility("hidden")))
     unsigned long long sequenceNumber;
     unsigned long long uniqueID;
     unsigned char uuid[16];
+    unsigned char signature[64];
+    char *incomingReqBytesToVerify;
+    unsigned int incomingReqBytesToVerifyLen;
     NWConcrete_nw_connection *connection;
     NSObject<OS_nw_path_evaluator> *pathEvaluator;
     CDUnknownBlockType requestCompletionBlock;
@@ -28,6 +31,8 @@ __attribute__((visibility("hidden")))
     unsigned int pendingRequestAccepted:1;
     unsigned int isWaitingForListenerReady:1;
     unsigned int isWaitingForActiveConnection:1;
+    unsigned int hasRequestedPubKey:1;
+    unsigned int hasBeenProcessed:1;
 }
 
 - (void).cxx_destruct;

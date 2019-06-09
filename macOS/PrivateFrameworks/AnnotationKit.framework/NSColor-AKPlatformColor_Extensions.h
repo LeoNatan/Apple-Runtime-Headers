@@ -26,10 +26,14 @@
 + (id)akColorWithCIColor:(id)arg1;
 + (id)akColorWithWhite:(double)arg1 alpha:(double)arg2;
 + (id)akColorWithSRGBRed:(double)arg1 green:(double)arg2 blue:(double)arg3 alpha:(double)arg4;
++ (struct CGColorSpace *)_getCIELABColorSpace;
++ (id)im_colorWithSRGBDescription:(id)arg1;
 - (id)akBlendedColorWithFraction:(double)arg1 ofColor:(id)arg2;
 - (id)colorUsingSRGBColorSpace;
 - (BOOL)akHasHueEqualToColor:(id)arg1 withTolerance:(double)arg2;
 - (BOOL)akIsEqualToColor:(id)arg1;
 - (double)akAlphaComponent;
+- (void)getL:(double *)arg1 a:(double *)arg2 b:(double *)arg3;
+- (double)akDistanceFromColor:(id)arg1;
 @end
 

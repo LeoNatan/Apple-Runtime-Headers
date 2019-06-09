@@ -13,7 +13,7 @@ __attribute__((visibility("hidden")))
 
 - (double)_textVerticalAdjust;
 - (double)_textVerticalInset;
-- (struct __CFDictionary *)_coreUIDrawOptionsWithFrame:(struct CGRect)arg1 inView:(id)arg2;
+- (BOOL)_isToolbarComboBox;
 - (BOOL)drawsBackground;
 
 @end

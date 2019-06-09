@@ -6,11 +6,13 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
+#import <NanoTimeKitCompanion/CLKMonochromeComplicationView-Protocol.h>
 #import <NanoTimeKitCompanion/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CALayer, CLKDevice, NSHashTable, NSString, REContent, UIImage, UIImageView, UIView;
+@class CALayer, CLKDevice, NSHashTable, NSString, REContent, UIColor, UIImage, UIImageView, UIView;
+@protocol CLKMonochromeFilterProvider;
 
-@interface NTKUpNextBaseCell : UICollectionViewCell <UIGestureRecognizerDelegate>
+@interface NTKUpNextBaseCell : UICollectionViewCell <UIGestureRecognizerDelegate, CLKMonochromeComplicationView>
 {
     struct CGSize _shadowSize;
     UIImageView *_shadowView;
@@ -21,24 +23,31 @@
     REContent *_content;
     NSHashTable *_layerProviders;
     _Bool _paused;
+    id <CLKMonochromeFilterProvider> _filterProvider;
     CLKDevice *_device;
     UIImage *_contentImage;
     UIImage *_overrideContentImage;
     NSString *_representedElementIdentifier;
+    UIColor *_imageColor;
 }
 
++ (Class)suggestedCellClassForContent:(id)arg1;
 + (double)cornerRadiusForDevice:(id)arg1;
 + (struct CGSize)suggestedBodyImageSizeForDevice:(id)arg1;
 + (struct CGSize)suggestedHeaderImageSizeForDevice:(id)arg1;
 + (void)clearLabel:(id)arg1;
 @property(nonatomic, getter=isPaused) _Bool paused; // @synthesize paused=_paused;
+@property(retain, nonatomic) UIColor *imageColor; // @synthesize imageColor=_imageColor;
 @property(readonly, nonatomic) CALayer *imageLayer; // @synthesize imageLayer=_imageLayer;
 @property(retain, nonatomic) NSString *representedElementIdentifier; // @synthesize representedElementIdentifier=_representedElementIdentifier;
 @property(readonly, nonatomic) REContent *content; // @synthesize content=_content;
 @property(retain, nonatomic) UIImage *overrideContentImage; // @synthesize overrideContentImage=_overrideContentImage;
 @property(readonly, nonatomic) UIImage *contentImage; // @synthesize contentImage=_contentImage;
 @property(readonly, nonatomic) CLKDevice *device; // @synthesize device=_device;
+@property(nonatomic) __weak id <CLKMonochromeFilterProvider> filterProvider; // @synthesize filterProvider=_filterProvider;
 - (void).cxx_destruct;
+- (void)updateMonochromeColor;
+- (void)transitionToMonochromeWithFraction:(double)arg1;
 - (id)transitionContextInView:(id)arg1;
 - (void)_updateColorOverlay;
 - (void)applyLayoutAttributes:(id)arg1;

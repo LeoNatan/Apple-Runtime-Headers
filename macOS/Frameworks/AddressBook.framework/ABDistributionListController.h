@@ -24,6 +24,7 @@
 + (void)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)sharedDistributionListController;
 @property __weak NSTextField *informativeText; // @synthesize informativeText=_informativeText;
+- (void).cxx_destruct;
 - (void)setGroup:(id)arg1;
 - (void)showSheetForWindow:(id)arg1;
 - (void)labelSelected:(id)arg1;
@@ -38,7 +39,6 @@
 - (void)windowFrameChanged:(id)arg1;
 - (void)awakeFromNib;
 - (void)_reloadLabelPopUp;
-- (void)finalize;
 - (void)dealloc;
 - (id)init;
 

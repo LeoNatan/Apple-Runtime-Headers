@@ -9,6 +9,9 @@
 @class AXFApplicationManager, AXFUIElement, NSArray;
 
 @protocol AXFApplicationManagerDelegate <NSObject>
+
+@optional
+- (void)applicationManager:(AXFApplicationManager *)arg1 didUpdateFocusedApplication:(AXFUIElement *)arg2;
 - (void)applicationManager:(AXFApplicationManager *)arg1 didUpdateFrontmostApplication:(AXFUIElement *)arg2;
 - (void)applicationManager:(AXFApplicationManager *)arg1 didUpdateRunningApplications:(NSArray *)arg2;
 @end

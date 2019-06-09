@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)write:(id)arg1 to:(struct WrdShading *)arg2;
++ (struct CsColour)fixedUpVersionOfColor:(struct CsColour)arg1;
 + (void)readFrom:(struct WrdShading *)arg1 to:(id)arg2;
 + (void)setToSolidWhite:(id)arg1;
 

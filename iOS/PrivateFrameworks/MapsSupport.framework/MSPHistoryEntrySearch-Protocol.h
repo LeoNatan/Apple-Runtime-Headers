@@ -9,9 +9,9 @@
 @class GEOMapRegion, NSString;
 
 @protocol MSPHistoryEntrySearch <MSPHistoryEntry>
-- (GEOMapRegion *)mapRegion;
-- (NSString *)languageCode;
-- (NSString *)locationDisplayString;
-- (NSString *)query;
+@property(readonly, copy, nonatomic) GEOMapRegion *mapRegion;
+@property(readonly, copy, nonatomic) NSString *languageCode;
+@property(readonly, copy, nonatomic) NSString *locationDisplayString;
+@property(readonly, copy, nonatomic) NSString *query;
 @end
 

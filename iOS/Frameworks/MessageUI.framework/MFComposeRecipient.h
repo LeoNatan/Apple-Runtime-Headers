@@ -7,13 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <MessageUI/NSCopying-Protocol.h>
+#import <MessageUI/NSItemProviderReading-Protocol.h>
+#import <MessageUI/NSItemProviderWriting-Protocol.h>
 #import <MessageUI/NSSecureCoding-Protocol.h>
-#import <MessageUI/UIItemProviderReading-Protocol.h>
-#import <MessageUI/UIItemProviderWriting-Protocol.h>
 
 @class CNAutocompleteResult, CNContact, MFComposeRecipientOriginContext, NSArray, NSString;
 
-@interface MFComposeRecipient : NSObject <UIItemProviderReading, UIItemProviderWriting, NSCopying, NSSecureCoding>
+@interface MFComposeRecipient : NSObject <NSItemProviderReading, NSItemProviderWriting, NSCopying, NSSecureCoding>
 {
     void *_record;
     int _recordID;
@@ -43,27 +43,27 @@
 + (id)recipientWithRecord:(void *)arg1 recordID:(int)arg2 property:(int)arg3 identifier:(int)arg4;
 + (_Bool)supportsSecureCoding;
 + (id)composeRecipientWithAutocompleteResult:(id)arg1;
++ (id)mf_recipientWithGALResult:(id)arg1;
 + (id)writableTypeIdentifiersForItemProvider;
 + (id)objectWithItemProviderData:(id)arg1 typeIdentifier:(id)arg2 error:(id *)arg3;
 + (id)readableTypeIdentifiersForItemProvider;
-+ (id)mf_recipientWithGALResult:(id)arg1;
 @property(readonly, nonatomic) unsigned long long kind; // @synthesize kind=_kind;
 @property(retain, nonatomic) CNAutocompleteResult *autocompleteResult; // @synthesize autocompleteResult=_autocompleteResult;
 @property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
-@property(retain, nonatomic) NSString *valueIdentifier; // @synthesize valueIdentifier=_valueIdentifier;
-@property(retain, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
-@property(retain, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
-@property(retain, nonatomic) NSString *unlocalizedLabel; // @synthesize unlocalizedLabel=_unlocalizedLabel;
-@property(retain, nonatomic) NSString *label; // @synthesize label=_label;
-@property(readonly, nonatomic) MFComposeRecipientOriginContext *originContext; // @synthesize originContext=_originContext;
+@property(copy, nonatomic) NSString *valueIdentifier; // @synthesize valueIdentifier=_valueIdentifier;
+@property(copy, nonatomic) NSString *contactIdentifier; // @synthesize contactIdentifier=_contactIdentifier;
+@property(copy, nonatomic) NSString *displayString; // @synthesize displayString=_displayString;
+@property(copy, nonatomic) NSString *unlocalizedLabel; // @synthesize unlocalizedLabel=_unlocalizedLabel;
+@property(copy, nonatomic) NSString *label; // @synthesize label=_label;
+@property(retain, nonatomic) MFComposeRecipientOriginContext *originContext; // @synthesize originContext=_originContext;
 @property(retain, nonatomic) NSString *countryCode; // @synthesize countryCode=_countryCode;
+- (void).cxx_destruct;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)labeledValueIdentifier;
 - (id)_unformattedAddress;
-- (void)setOriginContext:(id)arg1;
 @property(readonly, nonatomic) NSString *uncommentedAddress; // @dynamic uncommentedAddress;
 @property(readonly, nonatomic) NSString *placeholderName; // @dynamic placeholderName;
 @property(readonly, nonatomic) NSString *shortName; // @dynamic shortName;
@@ -94,7 +94,6 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContact:(id)arg1 address:(id)arg2 kind:(unsigned long long)arg3;
 - (id)init;
-- (void)dealloc;
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 
 // Remaining properties

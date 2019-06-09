@@ -12,23 +12,39 @@
 @interface PPSettings : NSObject
 {
     NSUserDefaults *_portraitDefaults;
-    NSUserDefaults *_spotlightDefaults;
+    NSUserDefaults *_canLearnFromAppDefaults;
     _PASLock *_lock;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_semaphore> *_initializationComplete;
-    PPKVOObserver *_spotlightKVOObserver;
-    PPKVOObserver *_portraitKVOObserver;
+    PPKVOObserver *_canLearnFromAppKVOObserver;
+    PPKVOObserver *_weightKVOObserver;
+    PPKVOObserver *_abGroupKVObserver;
+    PPKVOObserver *_queryPlanLoggingKVOObserver;
 }
 
 + (void)clearTestSettings;
 + (void)disableBundleIdentifier:(id)arg1;
++ (id)cloudSyncDisabledFirstPartyBundleIds;
 + (id)sharedInstance;
 + (void)initialize;
 + (_Bool)isVoiceAssistantEnabled;
 - (void).cxx_destruct;
 - (void)_clearTestSettings;
+- (void)deregisterQueryPlanLoggingChangeHandlerWithToken:(int)arg1;
+- (int)registerQueryPlanLoggingChangeHandler:(CDUnknownBlockType)arg1;
+- (void)_updateQueryPlanLogging;
+- (_Bool)queryPlanLoggingEnabled;
+- (void)setQueryPlanLoggingEnabled:(_Bool)arg1;
+- (id)assetDefaultBundleOverridePathForAssetIdentifier:(id)arg1;
+- (void)setAssetDefaultBundleOverridePath:(id)arg1 assetIdentifier:(id)arg2;
+- (double)assetMetadataRefreshIntervalSeconds;
+- (void)clearAssetMetadataRefreshIntervalSeconds;
+- (void)setAssetMetadataRefreshIntervalSeconds:(double)arg1;
+- (id)abGroupOverride;
 - (_Bool)bundleIdentifierIsEnabledForCloudKit:(id)arg1;
 - (_Bool)bundleIdentifierIsEnabledForDonation:(id)arg1;
+- (id)entitiesMappingPreviousTrieSha256;
+- (id)entitiesBackfilledTimestamp;
 - (double)weightMultiplier;
 - (id)userDefaults;
 - (void)_refreshCloudKitDisabledBundleIds;
@@ -39,7 +55,6 @@
 -     // Error parsing type: v32@0:8^Ai16@?24, name: _triggerDelayedOperationWithCoalescingToken:operation:
 - (void)_purgeRecordsForDisabledBundleIdsAsync;
 - (void)rewriteSyncStateForDisabledBundleIdsAsync;
-- (void)_rewriteSyncStateToDisableBundleId:(id)arg1;
 - (void)registerDisabledBundleIdPurgeHandler;
 - (void)registerCloudKitDisabledBundleIdRewriteHandler;
 - (id)_cloudKitDisabledBundleIds;
@@ -49,6 +64,8 @@
 - (void)deregisterDisabledBundleIdentifierChangeHandlerWithToken:(int)arg1;
 - (int)registerDisabledBundleIdentifierChangeHandler:(CDUnknownBlockType)arg1;
 - (_Bool)showLocationsFoundInApps;
+- (void)setEntitiesMappingTrieSha256:(id)arg1;
+- (void)setEntitiesBackfilledTimestamp:(id)arg1;
 - (void)_updateAppConnectionsSettings;
 @property(nonatomic, getter=isAppConnectionsLocationsEnabled) _Bool appConnectionsLocationsEnabled;
 - (id)init;

@@ -15,9 +15,11 @@
     IASLocalSecretPrompt *_promptController;
 }
 
+- (void).cxx_destruct;
 - (id)userFullName;
 - (void)secretEntered:(id)arg1;
 - (void)secretEntryCancelled;
+- (void)getLocalSecretWithWindow:(id)arg1 withTitle:(id)arg2 withMessage:(id)arg3 withSheetIcon:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (void)getLocalSecretWithWindow:(id)arg1 withTitle:(id)arg2 withMessage:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (void)getLocalSecretWithWindow:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 

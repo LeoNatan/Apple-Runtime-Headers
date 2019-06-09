@@ -8,7 +8,7 @@
 
 #import <AssetsLibraryServices/PLThumbPersistenceManager-Protocol.h>
 
-@class NSString;
+@class NSString, PLImageFormat;
 
 @interface PLPositionalImageTable : NSObject <PLThumbPersistenceManager>
 {
@@ -21,11 +21,13 @@
     int _descriptor;
     NSString *_path;
     unsigned long long _entryLength;
+    PLImageFormat *_format;
     long long _entryCapacity;
 }
 
 @property(nonatomic) long long entryCapacity; // @synthesize entryCapacity=_entryCapacity;
 @property(nonatomic) int descriptor; // @synthesize descriptor=_descriptor;
+@property(readonly, nonatomic) PLImageFormat *format; // @synthesize format=_format;
 @property(readonly, nonatomic) BOOL isReadOnly; // @synthesize isReadOnly=_isReadOnly;
 @property(nonatomic) BOOL formatIsCropped; // @synthesize formatIsCropped=_formatIsCropped;
 @property(nonatomic) int formatSideLen; // @synthesize formatSideLen=_formatSideLen;
@@ -39,9 +41,11 @@
 - (BOOL)usesThumbIdentifiers;
 - (void)touchEntriesInRange:(struct _NSRange)arg1;
 - (BOOL)writeEntryData:(id)arg1 toIndex:(unsigned long long)arg2;
+- (void)preheatDataForThumbnailIndexes:(id)arg1;
 - (id)imageDataWithIdentifier:(id)arg1 orIndex:(unsigned long long)arg2 width:(int *)arg3 height:(int *)arg4 bytesPerRow:(int *)arg5 dataWidth:(int *)arg6 dataHeight:(int *)arg7 dataOffset:(int *)arg8;
 - (struct CGImage *)createImageWithIdentifier:(id)arg1 orIndex:(unsigned long long)arg2 decodeSession:(void *)arg3;
 - (id)_debugDescription;
+- (long long)fileLength;
 - (void)dealloc;
 - (id)initWithPath:(id)arg1 readOnly:(BOOL)arg2 format:(id)arg3;
 - (BOOL)_setEntryCapacity:(long long)arg1;

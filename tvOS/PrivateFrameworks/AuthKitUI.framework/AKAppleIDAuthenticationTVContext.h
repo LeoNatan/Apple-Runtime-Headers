@@ -21,6 +21,7 @@
 - (void)signInViewControllerDidDismiss:(id)arg1;
 - (void)signInViewControllerWillDismiss:(id)arg1;
 - (void)signInViewControllerDidPresent:(id)arg1;
+- (void)presentBiometricOrPasscodeValidationForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)dismissKeepUsingUIWithCompletion:(CDUnknownBlockType)arg1;
 - (void)presentKeepUsingUIForAppleID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)presentSecondFactorAlertWithError:(id)arg1 title:(id)arg2 message:(id)arg3 completion:(CDUnknownBlockType)arg4;

@@ -14,10 +14,13 @@
     NTKRichComplicationRingView *_backgroundView;
     NTKRichComplicationRingView *_foregroundView;
     _Bool _clockwise;
+    _Bool _hidesOverlapShadow;
 }
 
+@property(nonatomic) _Bool hidesOverlapShadow; // @synthesize hidesOverlapShadow=_hidesOverlapShadow;
 @property(nonatomic) _Bool clockwise; // @synthesize clockwise=_clockwise;
 - (void).cxx_destruct;
+- (id)initWithCurveWidth:(double)arg1 padding:(double)arg2 overlapStrokeWidth:(double)arg3 forDevice:(id)arg4;
 - (id)initWithCurveWidth:(double)arg1 padding:(double)arg2 forDevice:(id)arg3;
 
 @end

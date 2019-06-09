@@ -6,35 +6,21 @@
 
 #import <objc/NSObject.h>
 
-#import <DoNotDisturbServer/DNDSModeAssertionProviderObserver-Protocol.h>
-#import <DoNotDisturbServer/DNDSModeAssertionTransformer-Protocol.h>
+@class DNDSModeAssertionManager, DNDSScheduleSettings;
+@protocol DNDSScheduleManagerDataSource;
 
-@class DNDSLocalAssertionManager, DNDSScheduleSettings, NSString, NSUUID;
-@protocol DNDSScheduleManagerDataSource, OS_dispatch_queue;
-
-@interface DNDSScheduleManager : NSObject <DNDSModeAssertionProviderObserver, DNDSModeAssertionTransformer>
+@interface DNDSScheduleManager : NSObject
 {
-    NSObject<OS_dispatch_queue> *_queue;
-    DNDSLocalAssertionManager *_localAssertionManager;
-    NSUUID *_currentAssertionUUID;
+    DNDSModeAssertionManager *_modeAssertionManager;
     DNDSScheduleSettings *_currentScheduleSettings;
     id <DNDSScheduleManagerDataSource> _dataSource;
 }
 
 @property(nonatomic) __weak id <DNDSScheduleManagerDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
-- (void)_queue_refreshWithDate:(id)arg1;
-- (id)transformedModeIdentifierForModeAssertion:(id)arg1;
-- (id)transformedLifetimeForModeAssertion:(id)arg1;
-- (void)modeAssertionProvider:(id)arg1 didPerformInvalidations:(id)arg2;
-- (void)refresh;
-- (id)initWithLocalAssertionManager:(id)arg1;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
+- (void)_refreshForUserInteraction:(_Bool)arg1 scheduleSettings:(id)arg2 context:(id)arg3;
+- (void)refreshForUserInteraction:(_Bool)arg1;
+- (id)initWithModeAssertionManager:(id)arg1;
 
 @end
 

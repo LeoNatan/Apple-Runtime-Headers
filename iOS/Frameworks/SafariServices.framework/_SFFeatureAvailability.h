@@ -10,6 +10,7 @@
 {
 }
 
++ (_Bool)supportsCVV;
 + (_Bool)isTabBarAvailableForScreenSize:(struct CGSize)arg1;
 + (_Bool)_shouldShowChineseFeatures;
 

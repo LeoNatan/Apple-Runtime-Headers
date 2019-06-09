@@ -27,7 +27,7 @@ struct CGSize {
 
 struct CLKUIAtlasBackingStructure {
     void *bytes;
-    unsigned int length;
+    unsigned int bytesLength;
     unsigned int width;
     unsigned int height;
     unsigned int planes;
@@ -40,21 +40,9 @@ struct CLKUIAtlasBackingStructure {
     _Bool mipmaps;
 };
 
-struct CLKUIGLUniforms {
-    int rotation;
-    int dialRadius;
-    int sampleRadius;
-    int sampleCenter;
-    int primaryTexture;
-    int primaryTextureRect;
-    int secondaryTexture;
-    int secondaryTextureRect;
-    int aspect;
-};
-
 struct CLKUIQuadSize {
-    int _field1;
-    int _field2;
+    int width;
+    int height;
 };
 
 struct NSNumber {
@@ -66,6 +54,11 @@ struct UIEdgeInsets {
     double left;
     double bottom;
     double right;
+};
+
+struct _NSRange {
+    unsigned long long _field1;
+    unsigned long long _field2;
 };
 
 #pragma mark Typedef'd Structures

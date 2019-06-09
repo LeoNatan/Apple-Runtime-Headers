@@ -18,7 +18,6 @@
 + (id)mapTable;
 - (void).cxx_destruct;
 - (id)allKeys;
-- (void)lockedEnumerateKeysAndObjectsUsingBlock:(CDUnknownBlockType)arg1;
 - (void)removeAllObjects;
 - (unsigned long long)count;
 - (void)setObject:(id)arg1 forKey:(id)arg2;

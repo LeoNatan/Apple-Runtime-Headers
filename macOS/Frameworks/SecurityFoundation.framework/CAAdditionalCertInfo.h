@@ -14,7 +14,7 @@
     NSNumber *_caValidityPeriod;
     int _caCreateCAWebSite;
     int _signInvite;
-    struct OpaqueSecIdentityRef *_caChosenIdentityToSignInvitation;
+    struct __SecIdentity *_caChosenIdentityToSignInvitation;
     NSString *_alternateLocationForCAWebSite;
 }
 
@@ -24,8 +24,8 @@
 - (void)_setAlternateLocationForCAWebSite:(id)arg1;
 - (id)_validityPeriod;
 - (void)_setValidityPeriod:(id)arg1;
-- (void)setChosenIdentityToSignInvitation:(struct OpaqueSecIdentityRef *)arg1;
-- (struct OpaqueSecIdentityRef *)_chosenIdentityToSignInvitation;
+- (void)setChosenIdentityToSignInvitation:(struct __SecIdentity *)arg1;
+- (struct __SecIdentity *)_chosenIdentityToSignInvitation;
 - (void)_setToDefaults;
 - (int)_signInvitation;
 - (int)_createCAWebSite;

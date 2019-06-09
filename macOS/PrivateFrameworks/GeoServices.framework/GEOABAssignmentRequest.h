@@ -8,21 +8,32 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDClientMetadata, NSString, PBUnknownFields;
+@class GEOPDClientMetadata, NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOABAssignmentRequest : PBRequest <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     GEOPDClientMetadata *_clientMetadata;
     NSString *_guid;
     int _requestType;
-    CDStruct_7c66fec0 _has;
+    struct {
+        unsigned int has_requestType:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_clientMetadata:1;
+        unsigned int read_guid:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_clientMetadata:1;
+        unsigned int wrote_guid:1;
+        unsigned int wrote_requestType:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) GEOPDClientMetadata *clientMetadata; // @synthesize clientMetadata=_clientMetadata;
-@property(retain, nonatomic) NSString *guid; // @synthesize guid=_guid;
++ (BOOL)isValid:(id)arg1;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,14 +44,19 @@ __attribute__((visibility("hidden")))
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOPDClientMetadata *clientMetadata;
 @property(readonly, nonatomic) BOOL hasClientMetadata;
+- (void)_readClientMetadata;
 - (int)StringAsRequestType:(id)arg1;
 - (id)requestTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasRequestType;
-@property(nonatomic) int requestType; // @synthesize requestType=_requestType;
+@property(nonatomic) int requestType;
+@property(retain, nonatomic) NSString *guid;
 @property(readonly, nonatomic) BOOL hasGuid;
+- (void)_readGuid;
 
 @end
 

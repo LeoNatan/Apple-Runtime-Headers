@@ -6,6 +6,7 @@
 
 #import <UIKit/UINavigationController.h>
 
+__attribute__((visibility("hidden")))
 @interface STIntroNavigationController : UINavigationController
 {
     CDUnknownBlockType _dismissHandler;

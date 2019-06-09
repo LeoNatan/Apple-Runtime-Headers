@@ -28,6 +28,7 @@
     _Bool _presented;
     _Bool _ignoresQuietMode;
     _Bool _suppressForKeynote;
+    unsigned long long _presentationState;
     UIImage *_headerImage;
     UIImage *_attachmentImage;
 }
@@ -37,6 +38,7 @@
 @property(retain, nonatomic, setter=_setAttachmentImage:) UIImage *_attachmentImage; // @synthesize _attachmentImage;
 @property(retain, nonatomic, setter=_setHeaderImage:) UIImage *_headerImage; // @synthesize _headerImage;
 @property(nonatomic, getter=_isPresented, setter=_setPresented:) _Bool presented; // @synthesize presented=_presented;
+@property(nonatomic, setter=_setPresentationState:) unsigned long long _presentationState; // @synthesize _presentationState;
 @property(retain, nonatomic, getter=_iconImagePath) NSString *iconImagePath; // @synthesize iconImagePath=_iconImagePath;
 @property(retain, nonatomic, setter=setIconImage:) UIImage *iconImage; // @synthesize iconImage=_iconImage;
 @property(nonatomic, setter=_setIgnoresQuietMode:) _Bool _ignoresQuietMode; // @synthesize _ignoresQuietMode;
@@ -67,6 +69,7 @@
 - (void)_clearAlertController;
 - (id)_alertController;
 - (void)_deactivationCompleted;
+- (void)presentationStateDidChangeFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2;
 - (void)doCleanupAfterDeactivationAnimation;
 - (_Bool)dismissesOverlaysOnLockScreen;
 - (int)alertPriority;

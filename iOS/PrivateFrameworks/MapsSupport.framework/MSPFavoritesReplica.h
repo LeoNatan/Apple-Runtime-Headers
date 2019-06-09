@@ -6,13 +6,15 @@
 
 #import <MapsSupport/MSPOrderedReplica.h>
 
+#import <MapsSupport/MSPCloudReplica-Protocol.h>
 #import <MapsSupport/MSPContainerStateSnapshot-Protocol.h>
 #import <MapsSupport/MSPPropertyListReplicaDataSerialization-Protocol.h>
+#import <MapsSupport/MSPPropertyListReplicaSerialization-Protocol.h>
 #import <MapsSupport/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSData, NSString;
 
-@interface MSPFavoritesReplica : MSPOrderedReplica <NSSecureCoding, MSPPropertyListReplicaDataSerialization, MSPContainerStateSnapshot>
+@interface MSPFavoritesReplica : MSPOrderedReplica <NSSecureCoding, MSPPropertyListReplicaDataSerialization, MSPPropertyListReplicaSerialization, MSPContainerStateSnapshot, MSPCloudReplica>
 {
 }
 
@@ -27,6 +29,9 @@
 - (id)propertyListRepresentationDecoratingRecordsWithBlock:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) id propertyListRepresentation;
 @property(readonly, copy, nonatomic) NSArray *contents;
+- (Class)replicaRecordClass;
+- (id)mergeOptionsWithLastSyncDate:(id)arg1;
+- (id)changesMergingCloudChanges:(id)arg1 withReplica:(id)arg2 lastSyncDate:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

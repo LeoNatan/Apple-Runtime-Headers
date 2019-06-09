@@ -80,7 +80,7 @@
 - (BOOL)_cell:(id)arg1 isLastSelectedInMatrix:(id)arg2;
 - (void)_initializeControls;
 - (id)_byDayArray:(int)arg1 weekItemSelected:(int)arg2;
-- (int)_weekNumberFromSelectedIndex:(int)arg1;
+- (long long)_weekNumberFromSelectedIndex:(long long)arg1;
 - (struct CGRect)_frameForDeltaHeight:(double)arg1;
 - (void)_resetFrameFromViews;
 - (void)_openWithAnimation:(BOOL)arg1;

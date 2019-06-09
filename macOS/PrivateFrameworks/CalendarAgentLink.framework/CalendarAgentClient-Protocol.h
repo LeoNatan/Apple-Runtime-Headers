@@ -8,7 +8,6 @@
 
 @protocol CalendarAgentClient
 - (void)agentUpdatedCache:(NSDictionary *)arg1;
-- (void)calMeCardChanged;
 - (void)calPersistanceNotification:(NSString *)arg1 userInfo:(NSDictionary *)arg2;
 - (void)calDavSharedUIDChanged:(NSArray *)arg1;
 @end

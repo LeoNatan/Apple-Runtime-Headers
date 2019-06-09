@@ -15,6 +15,8 @@
     NSString *_userAccountName;
     NSString *_userAccountHomeDirectoryPath;
     NSString *_userAccountHomeDirectoryRealPath;
+    NSString *_personaVolumePath;
+    NSString *_personaVolumeRealPath;
     NSString *_mainExecutableBundlePath;
     NSArray *_systemProfileSnippetsInfoDicts;
     NSArray *_otherProfileSnippetPaths;
@@ -25,8 +27,6 @@
 
 + (id)appSandboxRequestForApplicationAtURL:(id)arg1 error:(id *)arg2;
 + (id)appSandboxRequestForPid:(int)arg1 error:(id *)arg2;
-+ (id)implicitIosmacProfilePaths;
-+ (id)implicitMacosProfilePaths;
 + (id)implicitProfilePaths;
 + (id)profileSnippetFileName;
 + (BOOL)_setFatalError:(id *)arg1 withMessage:(id)arg2;
@@ -36,6 +36,8 @@
 @property(retain, nonatomic) NSArray *otherProfileSnippetPaths; // @synthesize otherProfileSnippetPaths=_otherProfileSnippetPaths;
 @property(retain, nonatomic) NSArray *systemProfileSnippetsInfoDicts; // @synthesize systemProfileSnippetsInfoDicts=_systemProfileSnippetsInfoDicts;
 @property(copy, nonatomic) NSString *mainExecutableBundlePath; // @synthesize mainExecutableBundlePath=_mainExecutableBundlePath;
+@property(copy, nonatomic) NSString *personaVolumeRealPath; // @synthesize personaVolumeRealPath=_personaVolumeRealPath;
+@property(copy, nonatomic) NSString *personaVolumePath; // @synthesize personaVolumePath=_personaVolumePath;
 @property(copy, nonatomic) NSString *userAccountHomeDirectoryRealPath; // @synthesize userAccountHomeDirectoryRealPath=_userAccountHomeDirectoryRealPath;
 @property(copy, nonatomic) NSString *userAccountHomeDirectoryPath; // @synthesize userAccountHomeDirectoryPath=_userAccountHomeDirectoryPath;
 @property(copy, nonatomic) NSString *userAccountName; // @synthesize userAccountName=_userAccountName;

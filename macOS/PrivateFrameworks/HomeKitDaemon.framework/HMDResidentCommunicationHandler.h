@@ -9,7 +9,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDCentralMessageDispatcher, HMDDevice, HMFTimer, NSMapTable, NSMutableArray, NSObject, NSString, NSUUID;
+@class HMDDevice, HMDMessageDispatcher, HMFTimer, NSMapTable, NSMutableArray, NSObject, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDResidentCommunicationHandler : HMFObject <HMFLogging, HMFTimerDelegate>
@@ -20,7 +20,7 @@
     NSMapTable *_dispatchedReadRequests;
     HMFTimer *_multiReadCoalesceTimer;
     NSUUID *_homeUUID;
-    HMDCentralMessageDispatcher *_remoteDispatcher;
+    HMDMessageDispatcher *_remoteDispatcher;
 }
 
 + (id)logCategory;
@@ -28,7 +28,7 @@
 + (void)_clearAllGeneratedRequests:(id)arg1 error:(id)arg2;
 + (id)createResponseSubset:(id)arg1 overallError:(id)arg2 readRequest:(id)arg3 error:(id *)arg4;
 + (void)_processResponseForMultireadRequest:(id)arg1 overallError:(id)arg2 response:(id)arg3;
-@property(readonly, nonatomic) __weak HMDCentralMessageDispatcher *remoteDispatcher; // @synthesize remoteDispatcher=_remoteDispatcher;
+@property(readonly, nonatomic) __weak HMDMessageDispatcher *remoteDispatcher; // @synthesize remoteDispatcher=_remoteDispatcher;
 @property(readonly, nonatomic) NSUUID *homeUUID; // @synthesize homeUUID=_homeUUID;
 @property(retain, nonatomic) HMFTimer *multiReadCoalesceTimer; // @synthesize multiReadCoalesceTimer=_multiReadCoalesceTimer;
 @property(readonly, nonatomic) NSMapTable *dispatchedReadRequests; // @synthesize dispatchedReadRequests=_dispatchedReadRequests;

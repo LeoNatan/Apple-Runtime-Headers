@@ -14,6 +14,7 @@
     MMPinFieldView *_parent;
 }
 
+- (void).cxx_destruct;
 - (id)accessibilityHitTest:(struct CGPoint)arg1;
 - (id)accessibilityFocusedUIElement;
 - (id)accessibilityActionNames;

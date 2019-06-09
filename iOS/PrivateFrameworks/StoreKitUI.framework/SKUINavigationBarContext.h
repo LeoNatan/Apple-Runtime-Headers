@@ -8,6 +8,7 @@
 
 @class NSOperationQueue, SKUIClientContext, SKUILayoutCache, SKUIResourceLoader, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUINavigationBarContext : NSObject
 {
     SKUIClientContext *_clientContext;

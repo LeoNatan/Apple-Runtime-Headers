@@ -6,7 +6,7 @@
 
 #import <UIKit/UICollectionViewCell.h>
 
-@class NSArray, NSLayoutConstraint, NSObject, NSProgress, NSString, SFAirDropNode, SFCircleProgressView, SFPersonImageView, UIColor, UIImpactFeedbackGenerator, UILabel, UINotificationFeedbackGenerator, UISelectionFeedbackGenerator;
+@class NSArray, NSLayoutConstraint, NSObject, NSProgress, NSString, SFAirDropNode, SFCircleProgressView, SFPersonImageView, UIColor, UIImpactFeedbackGenerator, UILabel, UINotificationFeedbackGenerator, UISelectionFeedbackGenerator, UIView;
 @protocol SFPersonCollectionViewCellDelegate;
 
 @interface SFPersonCollectionViewCell : UICollectionViewCell
@@ -20,6 +20,7 @@
     NSObject<SFPersonCollectionViewCellDelegate> *_delegate;
     double _activitySheetWidth;
     SFPersonImageView *_imageView;
+    UIView *_badgedContactView;
     SFCircleProgressView *_circleProgressView;
     id _progressToken;
     NSArray *_progressKeyPaths;
@@ -60,6 +61,7 @@
 @property(retain, nonatomic) NSArray *progressKeyPaths; // @synthesize progressKeyPaths=_progressKeyPaths;
 @property(retain, nonatomic) id progressToken; // @synthesize progressToken=_progressToken;
 @property(retain, nonatomic) SFCircleProgressView *circleProgressView; // @synthesize circleProgressView=_circleProgressView;
+@property(retain, nonatomic) UIView *badgedContactView; // @synthesize badgedContactView=_badgedContactView;
 @property(retain, nonatomic) SFPersonImageView *imageView; // @synthesize imageView=_imageView;
 @property(nonatomic) double activitySheetWidth; // @synthesize activitySheetWidth=_activitySheetWidth;
 @property(nonatomic) __weak NSObject<SFPersonCollectionViewCellDelegate> *delegate; // @synthesize delegate=_delegate;
@@ -93,6 +95,7 @@
 - (void)setSelected:(_Bool)arg1;
 - (void)layoutSubviews;
 - (void)prepareForReuse;
+- (void)setupConstraintsYukon;
 - (void)setupConstraints;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1;

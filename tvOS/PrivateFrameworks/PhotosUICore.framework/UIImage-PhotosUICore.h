@@ -16,7 +16,7 @@
 + (id)px_imageNamed:(id)arg1;
 - (id)px_predrawnImage;
 - (id)px_backdropImageWithStyle:(long long)arg1;
-- (id)px_debugImageWithStrokeRect:(struct CGRect)arg1;
+- (id)px_debugImageWithStrokeRect:(struct CGRect)arg1 color:(id)arg2;
 - (id)px_ASTCCompressedImageWithBlockSize:(unsigned int)arg1;
 - (id)px_extractPlayOverlayBackgroundImageFromLocation:(struct CGPoint)arg1 inViewportWithSize:(struct CGSize)arg2 contentMode:(long long)arg3 contentsRect:(struct CGRect)arg4 asynchronously:(_Bool)arg5 handler:(CDUnknownBlockType)arg6;
 - (void)px_drawInRect:(struct CGRect)arg1 withContentMode:(long long)arg2;

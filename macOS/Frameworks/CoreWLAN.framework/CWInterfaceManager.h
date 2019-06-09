@@ -25,7 +25,6 @@
 @property(readonly) NSSet *interfaces; // @dynamic interfaces;
 - (id)interfaceWithName:(id)arg1;
 - (void)dealloc;
-- (void)finalize;
 - (id)init;
 
 @end

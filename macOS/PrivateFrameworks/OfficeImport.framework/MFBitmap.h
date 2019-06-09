@@ -8,6 +8,7 @@
 
 @class NSMutableData;
 
+__attribute__((visibility("hidden")))
 @interface MFBitmap : NSObject
 {
     int m_width;

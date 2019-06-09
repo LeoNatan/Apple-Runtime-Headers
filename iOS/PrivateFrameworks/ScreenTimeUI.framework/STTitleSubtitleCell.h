@@ -6,6 +6,7 @@
 
 #import <ScreenTimeUI/STAppTitleSubtitleCell.h>
 
+__attribute__((visibility("hidden")))
 @interface STTitleSubtitleCell : STAppTitleSubtitleCell
 {
 }

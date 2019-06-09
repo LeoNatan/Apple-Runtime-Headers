@@ -16,11 +16,13 @@
     double _confidence;
     NSArray *_schemaOrg;
     NSArray *_participants;
+    NSArray *_eventActivities;
 }
 
 + (unsigned char)eventTypeFromString:(id)arg1;
 + (id)describeType:(unsigned char)arg1;
 + (id)eventMetadataFromEKEvent:(id)arg1;
+@property(readonly, nonatomic) NSArray *eventActivities; // @synthesize eventActivities=_eventActivities;
 @property(readonly, nonatomic) NSArray *participants; // @synthesize participants=_participants;
 @property(readonly, nonatomic) NSArray *schemaOrg; // @synthesize schemaOrg=_schemaOrg;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
@@ -30,6 +32,7 @@
 - (void).cxx_destruct;
 - (id)jsonObject;
 - (id)toJsonString;
+- (id)initWithType:(unsigned char)arg1 categoryDescription:(id)arg2 originBundleId:(id)arg3 confidence:(double)arg4 schemaOrg:(id)arg5 participants:(id)arg6 eventActivities:(id)arg7;
 - (id)initWithType:(unsigned char)arg1 categoryDescription:(id)arg2 originBundleId:(id)arg3 confidence:(double)arg4 schemaOrg:(id)arg5 participants:(id)arg6;
 
 @end

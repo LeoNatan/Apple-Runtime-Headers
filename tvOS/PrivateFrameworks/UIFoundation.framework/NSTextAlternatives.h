@@ -15,9 +15,11 @@
     NSString *_primaryString;
     NSArray *_alternativeStrings;
     id _internal;
+    _Bool _isLowConfidence;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(nonatomic) _Bool isLowConfidence; // @synthesize isLowConfidence=_isLowConfidence;
 - (id)identifier;
 - (id)alternativeAtIndex:(unsigned long long)arg1;
 - (id)alternatives;
@@ -33,7 +35,9 @@
 - (void)dealloc;
 - (id)initWithOriginalText:(id)arg1 alternatives:(id)arg2 identifier:(id)arg3;
 - (id)initWithOriginalText:(id)arg1 alternatives:(id)arg2;
+- (id)initWithPrimaryString:(id)arg1 alternativeStrings:(id)arg2 identifier:(id)arg3 isLowConfidence:(_Bool)arg4;
 - (id)initWithPrimaryString:(id)arg1 alternativeStrings:(id)arg2 identifier:(id)arg3;
+- (id)initWithPrimaryString:(id)arg1 alternativeStrings:(id)arg2 isLowConfidence:(_Bool)arg3;
 - (id)initWithPrimaryString:(id)arg1 alternativeStrings:(id)arg2;
 
 @end

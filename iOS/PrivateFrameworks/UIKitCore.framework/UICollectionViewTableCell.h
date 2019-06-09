@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UITable_UITableViewCellDelegate-Protocol.h>
 
-@class NSArray, NSString, UICollectionViewLayout, UICollectionViewTableLayout, UICollectionViewTableLayoutAttributes, UIColor, UIImageView, UILabel, UIScrollView, UIShadowView, UITableViewCell, UITableViewCollectionCell, UIView;
+@class NSMutableSet, NSString, UICollectionViewLayout, UICollectionViewTableLayout, UICollectionViewTableLayoutAttributes, UIColor, UIImageView, UILabel, UIScrollView, UIShadowView, UITableViewCell, UITableViewCollectionCell, UIView;
 
 @interface UICollectionViewTableCell : UICollectionViewCell <UITable_UITableViewCellDelegate>
 {
@@ -17,15 +17,16 @@
     UIShadowView *_borderShadowBottomView;
     UIView *_selectedBackgroundViewToRestoreWhenInteractiveMoveEnds;
     long long _accessoryType;
+    NSMutableSet *_trackedAnimators;
     _Bool _editing;
     double _reorderingCenterX;
-    double _offsetForRevealingDeleteConfirmationButton;
     _Bool _interactiveMoveEffectsVisible;
     _Bool _borderShadowVisible;
     _Bool _transitioningLayouts;
     UITableViewCell *_swipeToDeleteCell;
     UITableViewCollectionCell *_tableViewCell;
     UICollectionViewLayout *_currentLayout;
+    double _offsetForRevealingDeleteConfirmationButton;
 }
 
 @property(nonatomic, getter=_offsetForRevealingDeleteConfirmationButton, setter=_setOffsetForRevealingDeleteConfirmationButton:) double offsetForRevealingDeleteConfirmationButton; // @synthesize offsetForRevealingDeleteConfirmationButton=_offsetForRevealingDeleteConfirmationButton;
@@ -56,6 +57,8 @@
 - (void)setSelected:(_Bool)arg1;
 - (_Bool)isSelected;
 @property(nonatomic) long long selectionStyle;
+- (void)setBackgroundColor:(id)arg1;
+- (id)backgroundColor;
 @property(retain, nonatomic) UIView *multipleSelectionBackgroundView;
 - (void)setSelectedBackgroundView:(id)arg1;
 - (id)selectedBackgroundView;
@@ -64,15 +67,13 @@
 @property(readonly, nonatomic) UILabel *detailTextLabel;
 @property(readonly, nonatomic) UILabel *textLabel;
 @property(readonly, nonatomic) UIImageView *imageView;
-- (void)_endSwipeToDeleteRowDidDelete:(_Bool)arg1;
 - (_Bool)_shouldHaveFooterViewForSection:(long long)arg1;
 - (_Bool)_shouldHaveHeaderViewForSection:(long long)arg1;
 - (long long)_numberOfRowsInSection:(long long)arg1;
-@property(readonly, nonatomic) UIColor *multiselectCheckmarkColor;
+@property(readonly, nonatomic, getter=_multiselectCheckmarkColor) UIColor *multiselectCheckmarkColor;
 @property(readonly, nonatomic, getter=_accessoryBaseColor) UIColor *accessoryBaseColor;
 @property(readonly, nonatomic, getter=_sectionContentInsetFollowsLayoutMargins) _Bool sectionContentInsetFollowsLayoutMargins;
 @property(readonly, nonatomic, getter=_sectionCornerRadius) double sectionCornerRadius;
-@property(readonly, nonatomic, getter=_sectionBorderWidth) double sectionBorderWidth;
 @property(readonly, nonatomic, getter=_rawSectionContentInset) struct UIEdgeInsets rawSectionContentInset;
 @property(readonly, nonatomic, getter=_sectionContentInset) struct UIEdgeInsets sectionContentInset;
 @property(readonly, nonatomic, getter=_indexBarExtentFromEdge) double indexBarExtentFromEdge;
@@ -82,6 +83,7 @@
 @property(readonly, nonatomic, getter=_topPadding) double topPadding;
 - (_Bool)insetsContentViewsToSafeArea;
 @property(readonly, nonatomic) _Bool cellLayoutMarginsFollowReadableWidth;
+@property(readonly, nonatomic, getter=_cellSafeAreaInsets) struct UIEdgeInsets cellSafeAreaInsets;
 @property(readonly, nonatomic, getter=_backgroundInset) double backgroundInset;
 @property(readonly, nonatomic) _Bool overlapsSectionHeaderViews;
 @property(readonly, nonatomic) _Bool usesVariableMargins;
@@ -96,7 +98,7 @@
 @property(readonly, nonatomic) _Bool allowsMultipleSelection;
 @property(readonly, nonatomic, getter=_numberOfSections) long long numberOfSections;
 @property(readonly, nonatomic, getter=_scrollView) UIScrollView *scrollView;
-@property(readonly, nonatomic, getter=_style) long long style;
+@property(readonly, nonatomic, getter=_tableStyle) long long tableStyle;
 @property(readonly, nonatomic, getter=_rawSeparatorInset) struct UIEdgeInsets rawSeparatorInset;
 @property(readonly, nonatomic, getter=_rowSpacing) double rowSpacing;
 @property(readonly, nonatomic, getter=_tableAttributes) UICollectionViewTableLayoutAttributes *tableAttributes;
@@ -111,8 +113,6 @@
 - (void)_animateDeletionOfRowWithCell:(id)arg1;
 - (void)_animateDeletionOfRowAtIndexPath:(id)arg1;
 - (id)_titleForDeleteConfirmationButton:(id)arg1;
-- (void)_removeWasCanceledForCell:(id)arg1;
-- (void)_finishedRemovingRemovalButtonForTableCell:(id)arg1;
 - (void)_didInsertRowForTableCell:(id)arg1;
 - (void)_endReorderingForCell:(id)arg1 wasCancelled:(_Bool)arg2 animated:(_Bool)arg3;
 - (void)_updateCollectionViewInteractiveMovementTargetPositionForTouch:(id)arg1;
@@ -121,20 +121,8 @@
 - (_Bool)_isReorderControlActiveForCell:(id)arg1;
 - (_Bool)_isCellReorderable:(id)arg1;
 - (id)_reorderingCell;
-- (double)_deleteConfirmationHorizontalVelocity;
-- (double)_deleteConfirmationHorizontalOffset;
-- (void)_configureDeleteConfirmationDecelerationRate:(double)arg1;
-- (void)_revealDeleteConfirmationButtonWithWidth:(double)arg1;
-- (void)_endSwipeToDeleteGesture:(_Bool)arg1;
-- (void)_animateSwipeCancelation;
-- (void)_installSwipeToDeleteGobbler;
-- (void)_actionButton:(id)arg1 pushedInCell:(id)arg2;
-- (void)_swipeAccessoryButtonPushedInCell:(id)arg1;
 @property(readonly, nonatomic, getter=_isEditingForSwipeDeletion) _Bool editingForSwipeDeletion;
-- (void)_setSwipeToDeleteCell:(id)arg1 installGobbler:(_Bool)arg2;
 - (void)_swipeToDeleteCell:(id)arg1;
-@property(readonly, nonatomic, getter=_usesModernSwipeActions) _Bool usesModernSwipeActions;
-@property(readonly, nonatomic, getter=_swipeActionButtons) NSArray *swipeActionButtons;
 - (struct CGRect)_calloutTargetRectForCell:(id)arg1;
 - (void)_performAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
 - (_Bool)_canPerformAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
@@ -154,6 +142,7 @@
 @property(readonly, nonatomic) _Bool canBeEdited;
 @property(readonly, nonatomic, getter=isInTableLayout) _Bool inTableLayout;
 - (void)prepareForReuse;
+- (void)_trackAnimator:(id)arg1;
 - (void)didTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (void)willTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (void)_updateInternalCellForTableLayout:(_Bool)arg1 animated:(_Bool)arg2;
@@ -166,11 +155,12 @@
 - (_Bool)_isInteractiveMoveShadowInstalled;
 - (void)_layoutInteractiveMoveShadow;
 - (void)_layoutTableViewCell;
-- (struct CGRect)_contentViewFrame;
+- (struct UIEdgeInsets)_contentViewInset;
 @property(readonly, nonatomic) UIView *swipeableView;
 - (void)awakeFromNib;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (void)_commonSetupTableCell;
+- (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

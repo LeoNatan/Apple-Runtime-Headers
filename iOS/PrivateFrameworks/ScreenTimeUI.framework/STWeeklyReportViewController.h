@@ -6,23 +6,26 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class NSArray, STUsageReport;
+@class NSArray, NSLayoutConstraint, STUsageReport;
 
 @interface STWeeklyReportViewController : UITableViewController
 {
     STUsageReport *_report;
     NSArray *_tableViewCells;
+    NSLayoutConstraint *_heightConstraint;
 }
 
+@property(retain) NSLayoutConstraint *heightConstraint; // @synthesize heightConstraint=_heightConstraint;
 @property(retain, nonatomic) NSArray *tableViewCells; // @synthesize tableViewCells=_tableViewCells;
 @property(readonly, nonatomic) STUsageReport *report; // @synthesize report=_report;
 - (void).cxx_destruct;
 - (void)_heightDidChange:(id)arg1;
-- (struct CGSize)preferredContentSize;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)viewDidLoad;
+- (void)dealloc;
 - (id)initWithUsageReport:(id)arg1;
 - (id)initWithData:(id)arg1;
 

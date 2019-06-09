@@ -6,8 +6,72 @@
 
 #import <UIKit/UIViewController.h>
 
+@class SUStorePageProtocol, SUViewControllerFactory;
+
 @interface UIViewController (SUTabBarControllerAdditions)
++ (id)transitionSafetyDelegate;
++ (id)transitionSafePerformer:(id)arg1;
++ (void)endTransitionSafety;
++ (void)beginTransitionSafety;
++ (void)_iTunesStoreUI_timeoutTransitionSafety;
++ (void)_iTunesStoreUI_enqueueTransitionSafeInvocation:(id)arg1;
++ (void)_iTunesStoreUI_dequeueTransitionSafeInvocations;
 - (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 - (void)tabBarControllerDidLongPressTabBarItem:(id)arg1;
+@property(readonly, nonatomic) long long ITunesStoreUIBarStyle;
+- (id)su_closestNavigationController;
+@property(readonly, nonatomic) SUViewControllerFactory *viewControllerFactory;
+@property(readonly, nonatomic) _Bool shouldInvalidateForMemoryPurge;
+- (void)setBadgeValue:(id)arg1 animated:(_Bool)arg2 blink:(_Bool)arg3;
+- (id)section;
+- (id)_sectionForViewController:(id)arg1;
+- (void)restoreArchivableContext:(id)arg1;
+- (void)resetRestoredContext;
+- (void)parentViewControllerHierarchyDidChange;
+- (void)keyboardWillShowWithInfo:(id)arg1;
+- (void)keyboardWillHideWithInfo:(id)arg1;
+- (void)keyboardDidShowWithInfo:(id)arg1;
+- (void)keyboardDidHideWithInfo:(id)arg1;
+- (_Bool)isRootViewController;
+@property(readonly, nonatomic, getter=isSkLoading) _Bool skLoading;
+@property(readonly, nonatomic, getter=isSkLoaded) _Bool skLoaded;
+- (_Bool)isInMoreList;
+- (_Bool)isDescendantOfViewController:(id)arg1;
+- (void)iTunesStoreUI_dismissAction:(id)arg1;
+- (void)dismissAnimated:(_Bool)arg1;
+- (id)copyArchivableJetsamContext;
+- (id)copyArchivableContext;
+- (_Bool)reloadWithURLRequestProperties:(id)arg1;
+- (_Bool)pushStorePage:(id)arg1 withTarget:(long long)arg2 animated:(_Bool)arg3;
+- (_Bool)loadMoreWithURL:(id)arg1;
+- (_Bool)hasDisplayableContent;
+- (void)handleStoreFailureWithError:(id)arg1;
+- (_Bool)viewIsReady;
+- (void)storePageProtocolDidChange;
+@property(retain, nonatomic) SUStorePageProtocol *storePageProtocol;
+- (void)storePageCleanupBeforeTearDown;
+- (void)reloadWithStorePage:(id)arg1 forURL:(id)arg2;
+@property(readonly, nonatomic) struct CGRect documentBounds;
+- (id)displayedURL;
+- (id)setDisplayedSectionGroup:(id)arg1;
+- (_Bool)reloadForSectionsWithGroup:(id)arg1;
+- (_Bool)canDisplaySectionGroup:(id)arg1;
+- (void)transitionSafePresentModalViewController:(id)arg1 animated:(_Bool)arg2;
+- (id)copyObjectForScriptFromPoolWithClass:(Class)arg1;
+- (id)copyScriptViewController;
+- (_Bool)showsBackgroundShadow;
+- (void)setShowsBackgroundShadow:(_Bool)arg1;
+- (_Bool)presentViewController:(id)arg1 inOverlayWithConfiguration:(id)arg2;
+- (_Bool)presentOverlayViewController:(id)arg1 withTransition:(id)arg2;
+- (_Bool)presentOverlayBackgroundViewController:(id)arg1;
+- (id)overlayBackgroundViewController;
+- (void)dismissOverlayBackgroundViewController;
+- (id)scriptWindowContext;
+- (id)overlayViewController;
+- (id)storeSplitViewController;
+- (struct CGSize)minimumViewSize;
+- (struct CGSize)maximumViewSize;
+- (id)navigationItemForScriptInterface;
+- (id)iTunesStoreUI_searchFieldController;
 @end
 

@@ -7,24 +7,40 @@
 #import <objc/NSObject.h>
 
 #import <nfshared/NFTag-Protocol.h>
+#import <nfshared/NFTagA-Protocol.h>
+#import <nfshared/NFTagB-Protocol.h>
+#import <nfshared/NFTagF-Protocol.h>
 #import <nfshared/NSSecureCoding-Protocol.h>
 
 @class NSArray, NSData, NSString;
+@protocol NFTagA, NFTagB, NFTagF;
 
-@interface NFTagInternal : NSObject <NSSecureCoding, NFTag>
+@interface NFTagInternal : NSObject <NSSecureCoding, NFTag, NFTagA, NFTagB, NFTagF>
 {
     unsigned int _type;
     unsigned int _technology;
     NSData *_tagID;
-    NSData *_IDm;
-    NSData *_PMm;
-    NSData *_SystemCode;
+    NSData *_idm;
+    NSData *_pmm;
     NSArray *_allSystemCodes;
-    NSData *_AppData;
-    NSData *_UID;
+    NSData *_appData;
+    NSData *_uid;
+    unsigned int _ndefAvailability;
+    unsigned long long _ndefMessageSize;
+    unsigned long long _ndefContainerSize;
+    NSData *_atqa;
+    NSData *_sak;
+    NSData *_historicalBytes;
 }
 
 + (_Bool)supportsSecureCoding;
+- (void)_setSelectedAID:(id)arg1;
+- (void)_setHistoricalBytes:(id)arg1;
+- (void)_setSak:(id)arg1;
+- (void)_setAtqa:(id)arg1;
+- (void)_setNDEFContainerSize:(unsigned long long)arg1;
+- (void)_setNDEFMessageSize:(unsigned long long)arg1;
+- (void)_setNDEFAvailability:(unsigned int)arg1;
 - (id)_getSystemCodeListString;
 - (void)_setSystemCodes:(id)arg1;
 - (void)_setAppData:(id)arg1;
@@ -35,21 +51,36 @@
 - (void)_setSystemCode:(id)arg1;
 - (void)_setPMm:(id)arg1;
 - (void)_setIDm:(id)arg1;
+- (_Bool)isEqualToNFTag:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDictionary:(id)arg1;
 - (id)initWithNFTagForUIDOnly:(id)arg1;
 - (id)initWithNFTag:(id)arg1;
+@property(readonly, nonatomic) id <NFTagF> tagF;
+@property(readonly, nonatomic) id <NFTagB> tagB;
+@property(readonly, nonatomic) id <NFTagA> tagA;
 @property(readonly, copy) NSString *description;
-@property(readonly, copy, nonatomic) NSData *UID;
+@property(readonly, nonatomic) unsigned long long ndefContainerSize;
+@property(readonly, nonatomic) unsigned long long ndefMessageSize;
+@property(readonly, nonatomic) unsigned int ndefAvailability;
 @property(readonly, copy, nonatomic) NSData *AppData;
+@property(readonly, copy, nonatomic) NSData *tagID;
+@property(readonly, copy, nonatomic) NSData *UID;
+@property(readonly, nonatomic) unsigned int technology;
+@property(readonly, nonatomic) unsigned int type;
 @property(readonly, copy, nonatomic) NSArray *allSystemCodes;
 @property(readonly, copy, nonatomic) NSData *SystemCode;
 @property(readonly, copy, nonatomic) NSData *PMm;
 @property(readonly, copy, nonatomic) NSData *IDm;
-@property(readonly, copy, nonatomic) NSData *tagID;
-@property(readonly, nonatomic) unsigned int technology;
-@property(readonly, nonatomic) unsigned int type;
+@property(readonly, nonatomic) _Bool applicationDataCoding;
+@property(readonly, copy, nonatomic) NSData *applicationData;
+@property(readonly, copy, nonatomic) NSData *pupi;
+@property(readonly, copy, nonatomic) NSData *selectedAID;
+@property(readonly, copy, nonatomic) NSData *historicalBytes;
+@property(readonly, copy, nonatomic) NSData *sak;
+@property(readonly, copy, nonatomic) NSData *atqa;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

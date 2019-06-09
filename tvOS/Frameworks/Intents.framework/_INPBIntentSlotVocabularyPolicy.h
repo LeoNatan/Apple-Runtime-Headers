@@ -19,6 +19,7 @@
     NSArray *_intentSlotVocabularyConcepts;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)intentSlotVocabularyConceptsType;
 @property(copy, nonatomic) NSArray *intentSlotVocabularyConcepts; // @synthesize intentSlotVocabularyConcepts=_intentSlotVocabularyConcepts;
 @property(copy, nonatomic) NSArray *intentSlotNames; // @synthesize intentSlotNames=_intentSlotNames;
@@ -27,6 +28,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 - (id)intentSlotVocabularyConceptsAtIndex:(unsigned long long)arg1;

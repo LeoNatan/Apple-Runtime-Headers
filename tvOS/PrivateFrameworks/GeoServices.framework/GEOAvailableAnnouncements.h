@@ -8,17 +8,24 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, PBDataReader;
 
 @interface GEOAvailableAnnouncements : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_announcements;
     NSString *_languageCode;
+    struct {
+        unsigned int read_announcements:1;
+        unsigned int read_languageCode:1;
+        unsigned int wrote_announcements:1;
+        unsigned int wrote_languageCode:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)announcementType;
-@property(retain, nonatomic) NSString *languageCode; // @synthesize languageCode=_languageCode;
-@property(retain, nonatomic) NSMutableArray *announcements; // @synthesize announcements=_announcements;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -27,13 +34,19 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *languageCode;
 @property(readonly, nonatomic) _Bool hasLanguageCode;
+- (void)_readLanguageCode;
 - (id)announcementAtIndex:(unsigned long long)arg1;
 - (unsigned long long)announcementsCount;
+- (void)_addNoFlagsAnnouncement:(id)arg1;
 - (void)addAnnouncement:(id)arg1;
 - (void)clearAnnouncements;
+@property(retain, nonatomic) NSMutableArray *announcements;
+- (void)_readAnnouncements;
 
 @end
 

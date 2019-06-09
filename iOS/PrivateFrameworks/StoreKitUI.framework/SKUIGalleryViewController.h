@@ -14,6 +14,7 @@
 @class NSMapTable, NSObject, NSString, SKUIGalleryPageComponent, SKUIMediaComponent, SKUIResourceLoader, UIPageControl, UIPageViewController, UITapGestureRecognizer;
 @protocol OS_dispatch_source, SKUIEmbeddedMediaViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIGalleryViewController : UIViewController <SKUIArtworkRequestDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, UIScrollViewDelegate>
 {
     SKUIResourceLoader *_artworkLoader;

@@ -6,10 +6,9 @@
 
 #import <objc/NSObject.h>
 
-@class MRAVRoutingClientController, MRMediaRemoteService, MRNotificationClient, MRNotificationServiceClient, NSArray, NSMutableArray, NSMutableDictionary, NSString, _MRNowPlayingPlayerPathProtobuf;
+@class MRAVRoutingClientController, MRMediaRemoteService, MRNotificationClient, MRNotificationServiceClient, NSArray, NSMutableArray, NSMutableSet, _MRNowPlayingPlayerPathProtobuf;
 @protocol OS_dispatch_queue;
 
-__attribute__((visibility("hidden")))
 @interface MRMediaRemoteServiceClient : NSObject
 {
     NSObject<OS_dispatch_queue> *_serialQueue;
@@ -17,8 +16,7 @@ __attribute__((visibility("hidden")))
     MRAVRoutingClientController *_routingClientController;
     _MRNowPlayingPlayerPathProtobuf *_activePlayerPath;
     int _notifyRestoreClientStateForLaunch;
-    NSString *_preparedBundleID;
-    NSMutableDictionary *_playerPathInvalidationHandlers;
+    NSMutableSet *_playerPathInvalidationHandlers;
     MRNotificationServiceClient *_notificationService;
     MRMediaRemoteService *_service;
     MRNotificationClient *_notificationClient;
@@ -30,7 +28,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) MRNotificationClient *notificationClient; // @synthesize notificationClient=_notificationClient;
 @property(readonly, nonatomic) MRMediaRemoteService *service; // @synthesize service=_service;
 - (void).cxx_destruct;
-- (void)registerCallbacks;
 - (void)_callInvalidationHandler:(id)arg1;
 - (void)_processPlayerPathInvalidationHandlersWithBlock:(CDUnknownBlockType)arg1;
 - (void)_onQueue_processPlayerPathInvalidationHandlersWithBlock:(CDUnknownBlockType)arg1;
@@ -47,6 +44,8 @@ __attribute__((visibility("hidden")))
 - (void)_onQueue_setActivePlayerPath:(id)arg1;
 @property(readonly, nonatomic) NSArray *registeredOrigins;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workerQueue;
+- (id)debugDescription;
+- (void)_initializeConnection;
 - (void)dealloc;
 - (id)init;
 

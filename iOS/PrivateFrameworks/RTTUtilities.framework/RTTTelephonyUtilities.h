@@ -9,7 +9,7 @@
 #import <RTTUtilities/CoreTelephonyClientCarrierBundleDelegate-Protocol.h>
 #import <RTTUtilities/TUCallCapabilitiesDelegatePrivate-Protocol.h>
 
-@class ACAccountStore, CTXPCServiceSubscriptionContext, CoreTelephonyClient, NSString;
+@class ACAccountStore, CNContactStore, CTXPCServiceSubscriptionContext, CoreTelephonyClient, NSString;
 @protocol OS_dispatch_queue;
 
 @interface RTTTelephonyUtilities : NSObject <CoreTelephonyClientCarrierBundleDelegate, TUCallCapabilitiesDelegatePrivate>
@@ -18,6 +18,7 @@
     _Bool _headphoneJackSupportsTTY;
     CTXPCServiceSubscriptionContext *_defaultVoiceContext;
     unsigned long long _activeContextCount;
+    CNContactStore *_contactStore;
     CoreTelephonyClient *_telephonyClient;
     NSObject<OS_dispatch_queue> *_telephonyUpdateQueue;
 }
@@ -46,6 +47,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *telephonyUpdateQueue; // @synthesize telephonyUpdateQueue=_telephonyUpdateQueue;
 @property(retain, nonatomic) CoreTelephonyClient *telephonyClient; // @synthesize telephonyClient=_telephonyClient;
 @property(nonatomic) _Bool headphoneJackSupportsTTY; // @synthesize headphoneJackSupportsTTY=_headphoneJackSupportsTTY;
+@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) unsigned long long activeContextCount; // @synthesize activeContextCount=_activeContextCount;
 @property(retain, nonatomic) CTXPCServiceSubscriptionContext *defaultVoiceContext; // @synthesize defaultVoiceContext=_defaultVoiceContext;
 - (void).cxx_destruct;
@@ -66,6 +68,7 @@
 - (void)activeSubscriptionsDidChange;
 - (void)subscriptionInfoDidChange;
 - (void)carrierSettingsDidChange;
+- (id)labelFromUUID:(id)arg1;
 - (id)phoneNumberFromUUID:(id)arg1;
 - (id)contactPathForCall:(id)arg1;
 - (_Bool)contactPathIsMe:(id)arg1;

@@ -11,6 +11,7 @@
 
 @class NSArray, NSIndexSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface OITSUCustomFormatData : NSObject <NSCopying, NSMutableCopying>
 {
     unsigned char _minimumIntegerWidth;

@@ -13,9 +13,9 @@
 
 @interface CSSearchQueryContext : NSObject <NSSecureCoding, NSCopying>
 {
+    NSArray *_fetchAttributes;
     unsigned char _flags;
     NSString *_clientBundleID;
-    NSArray *_fetchAttributes;
     NSArray *_protectionClasses;
     NSArray *_bundleIDs;
     NSArray *_rankingQueries;
@@ -35,6 +35,9 @@
     int _queryID;
     NSString *_completionString;
     NSArray *_completionAttributes;
+    unsigned int _qos;
+    NSArray *_mountPoints;
+    NSArray *_scopes;
     unsigned long long _fuzzyMask;
     unsigned long long _fuzzyMatch;
     double _currentTime;
@@ -42,7 +45,10 @@
 
 + (_Bool)supportsSecureCoding;
 @property(nonatomic) unsigned char flags; // @synthesize flags=_flags;
+@property(retain, nonatomic) NSArray *scopes; // @synthesize scopes=_scopes;
+@property(retain, nonatomic) NSArray *mountPoints; // @synthesize mountPoints=_mountPoints;
 @property(nonatomic) double currentTime; // @synthesize currentTime=_currentTime;
+@property(nonatomic) unsigned int qos; // @synthesize qos=_qos;
 @property(retain, nonatomic) NSArray *completionAttributes; // @synthesize completionAttributes=_completionAttributes;
 @property(retain, nonatomic) NSString *completionString; // @synthesize completionString=_completionString;
 @property(nonatomic) unsigned long long fuzzyMatch; // @synthesize fuzzyMatch=_fuzzyMatch;
@@ -64,7 +70,6 @@
 @property(retain, nonatomic) NSArray *rankingQueries; // @synthesize rankingQueries=_rankingQueries;
 @property(retain, nonatomic) NSArray *bundleIDs; // @synthesize bundleIDs=_bundleIDs;
 @property(retain, nonatomic) NSArray *protectionClasses; // @synthesize protectionClasses=_protectionClasses;
-@property(retain, nonatomic) NSArray *fetchAttributes; // @synthesize fetchAttributes=_fetchAttributes;
 @property(retain, nonatomic) NSString *clientBundleID; // @synthesize clientBundleID=_clientBundleID;
 - (void).cxx_destruct;
 - (id)debugDescription;
@@ -75,12 +80,15 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)xpc_dictionary;
+@property(nonatomic) _Bool parseUserQuery;
 @property(nonatomic) _Bool lowPriority;
 @property(nonatomic) _Bool attribute;
 @property(nonatomic) _Bool counting;
 @property(nonatomic) _Bool live;
 @property(nonatomic) _Bool grouped;
 @property(nonatomic) _Bool internal;
+@property(retain, nonatomic) NSArray *fetchAttributes;
+- (id)initWithQoS:(unsigned int)arg1;
 - (id)init;
 
 @end

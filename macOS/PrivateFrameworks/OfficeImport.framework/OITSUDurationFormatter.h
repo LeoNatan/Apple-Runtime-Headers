@@ -8,6 +8,7 @@
 
 @class NSString, OITSULocale;
 
+__attribute__((visibility("hidden")))
 @interface OITSUDurationFormatter : NSFormatter
 {
     NSString *mFormat;

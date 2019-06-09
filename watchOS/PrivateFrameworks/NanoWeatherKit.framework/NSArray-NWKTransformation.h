@@ -9,5 +9,9 @@
 @interface NSArray (NWKTransformation)
 - (void)nwkTransformationsToLocationArray:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 - (void)nwkTransformationsToArray:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)nwkDialForecastArrayStartingAtIndex:(unsigned int)arg1 withCurrentHour:(unsigned int)arg2 forecastGlyphBlock:(CDUnknownBlockType)arg3 emptyPlaceholderBlock:(CDUnknownBlockType)arg4;
+- (id)nwkCircularArrayFromOffset:(unsigned int)arg1 withBlock:(CDUnknownBlockType)arg2;
+- (void)nwkEnumerateObjectsFromCircularIndex:(unsigned int)arg1 usingBlock:(CDUnknownBlockType)arg2;
+- (id)arrayByEnumeratingWithBlock:(CDUnknownBlockType)arg1;
 @end
 

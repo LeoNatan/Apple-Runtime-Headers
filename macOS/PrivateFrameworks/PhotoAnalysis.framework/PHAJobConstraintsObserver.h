@@ -11,21 +11,20 @@
 
 @interface PHAJobConstraintsObserver : NSObject
 {
+    BOOL _shutdownRequested;
     id <PHAJobConstraintsObserverDelegate> _delegate;
     PHAJobConstraints *_currentConstraints;
 }
 
 @property(retain, nonatomic) PHAJobConstraints *currentConstraints; // @synthesize currentConstraints=_currentConstraints;
+@property BOOL shutdownRequested; // @synthesize shutdownRequested=_shutdownRequested;
 @property(nonatomic) __weak id <PHAJobConstraintsObserverDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)acceptConstraints:(id)arg1 mask:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)dealloc;
 - (id)init;
 - (id)initWithInitialConstraints:(id)arg1 delegate:(id)arg2;
-- (void)_handleBackgroundProcessingDisallowedOnSleepWakeNotification:(id)arg1;
-- (void)_handleBackgroundProcessingAllowedOnSleepWakeNotification:(id)arg1;
-- (void)_handleBackgroundProcessingDisallowedNotification:(id)arg1;
-- (void)_handleBackgroundProcessingAllowedNotification:(id)arg1;
+- (void)setShutdownRequested;
 
 @end
 

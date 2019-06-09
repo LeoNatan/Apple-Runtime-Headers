@@ -27,8 +27,9 @@
 - (void)_canAutomaticallyRegisterWithWebService:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_peerPaymentRegisterWithURL:(id)arg1 paymentWebService:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_handleDeviceRegistrationCompletedWithResult:(unsigned int)arg1;
-- (void)_performDeviceRegistrationWithReason:(id)arg1;
-- (void)performDeviceRegistrationForReason:(id)arg1 action:(int)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_performDeviceRegistrationWithReason:(id)arg1 forceRegister:(_Bool)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_performDeviceRegistrationWithReason:(id)arg1 forceRegister:(_Bool)arg2;
+- (void)performDeviceRegistrationForReason:(id)arg1 action:(int)arg2 forceRegister:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)notePasscodeChanged;
 - (void)dealloc;
 - (id)initWithPaymentWebServiceCoordinator:(id)arg1 peerPaymentWebServiceCoordinator:(id)arg2;

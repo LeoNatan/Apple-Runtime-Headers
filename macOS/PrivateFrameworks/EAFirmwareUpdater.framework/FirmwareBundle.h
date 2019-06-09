@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSString;
+@class NSData, NSDictionary, NSString;
 
 @interface FirmwareBundle : NSObject
 {
@@ -15,6 +15,7 @@
     unsigned int _firmwareImageBaseAddress;
     unsigned int _firmwareImageSize;
     NSData *_firmwareImage;
+    NSDictionary *_buildManifest;
     NSData *_hash;
     NSData *_certificate;
     NSData *_signature;
@@ -23,10 +24,11 @@
 + (id)defaultBundlePath;
 @property(readonly) unsigned int firmwareImageSize; // @synthesize firmwareImageSize=_firmwareImageSize;
 @property(readonly) unsigned int firmwareImageBaseAddress; // @synthesize firmwareImageBaseAddress=_firmwareImageBaseAddress;
-@property(readonly) unsigned int productIDCode; // @synthesize productIDCode=_productIDCode;
+@property unsigned int productIDCode; // @synthesize productIDCode=_productIDCode;
 @property(readonly) NSData *signature; // @synthesize signature=_signature;
 @property(readonly) NSData *certificate; // @synthesize certificate=_certificate;
 @property(readonly) NSData *hash; // @synthesize hash=_hash;
+@property(retain, nonatomic) NSDictionary *buildManifest; // @synthesize buildManifest=_buildManifest;
 @property(readonly) NSData *firmwareImage; // @synthesize firmwareImage=_firmwareImage;
 - (id)description;
 - (void)dealloc;
@@ -39,6 +41,7 @@
 - (id)initWithBundlePath:(id)arg1;
 - (id)initWithBundle:(id)arg1;
 - (id)initWithData:(id)arg1 hashData:(id)arg2 signatureData:(id)arg3 certData:(id)arg4;
+- (void)calculateHash;
 
 @end
 

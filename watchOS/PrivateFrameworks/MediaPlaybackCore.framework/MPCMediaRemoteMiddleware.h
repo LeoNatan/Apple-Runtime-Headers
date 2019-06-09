@@ -7,12 +7,14 @@
 #import <objc/NSObject.h>
 
 #import <MediaPlaybackCore/MPCPlayerResponseBuilder-Protocol.h>
+#import <MediaPlaybackCore/MPCPlayerSessionResponseBuilder-Protocol.h>
+#import <MediaPlaybackCore/MPCResponseMediaRemoteControllerChaining-Protocol.h>
 #import <MediaPlaybackCore/MPMiddleware-Protocol.h>
 
 @class MPCMediaRemoteController, MPSectionedCollection, NSArray, NSIndexPath, NSString;
 @protocol MPCSupportedCommands;
 
-@interface MPCMediaRemoteMiddleware : NSObject <MPCPlayerResponseBuilder, MPMiddleware>
+@interface MPCMediaRemoteMiddleware : NSObject <MPCResponseMediaRemoteControllerChaining, MPCPlayerResponseBuilder, MPCPlayerSessionResponseBuilder, MPMiddleware>
 {
     NSArray *_invalidationObservers;
     MPCMediaRemoteController *_controller;
@@ -33,13 +35,14 @@
 @property(retain, nonatomic) MPCMediaRemoteController *controller; // @synthesize controller=_controller;
 @property(retain, nonatomic) NSArray *invalidationObservers; // @synthesize invalidationObservers=_invalidationObservers;
 - (void).cxx_destruct;
+- (id)operationsForSessionRequest:(id)arg1;
 - (id)operationsForPlayerRequest:(id)arg1;
 - (id)operationsForRequest:(id)arg1;
 - (id)init;
+- (id)controller:(id)arg1 chain:(id)arg2;
 - (float)_playbackRateForContentItem:(id)arg1;
 - (id)_supportedCommands:(unsigned int)arg1 infoValueForKey:(id)arg2;
 - (id)tracklistUniqueIdentifier:(id)arg1 chain:(id)arg2;
-- (id)playerVideoView:(id)arg1 chain:(id)arg2;
 - (id)playerCommandOptionValue:(id)arg1 forKey:(id)arg2 command:(unsigned int)arg3 chain:(id)arg4;
 - (_Bool)playerCommandEnabled:(_Bool)arg1 command:(unsigned int)arg2 chain:(id)arg3;
 - (_Bool)playerCommandSupported:(_Bool)arg1 command:(unsigned int)arg2 chain:(id)arg3;
@@ -59,7 +62,10 @@
 - (int)playerShuffleType:(int)arg1 chain:(id)arg2;
 - (int)playerRepeatType:(int)arg1 chain:(id)arg2;
 - (int)playerState:(int)arg1 chain:(id)arg2;
-- (id)controller:(id)arg1 chain:(id)arg2;
+- (id)sessionMetadataObject:(id)arg1 atIndexPath:(id)arg2 chain:(id)arg3;
+- (id)sessionPlayerPath:(id)arg1 atIndex:(int)arg2 chain:(id)arg3;
+- (int)sessionNumberOfSessions:(int)arg1 forPlayerPathAtIndex:(int)arg2 chain:(id)arg3;
+- (int)sessionNumberOfPlayerPaths:(int)arg1 chain:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

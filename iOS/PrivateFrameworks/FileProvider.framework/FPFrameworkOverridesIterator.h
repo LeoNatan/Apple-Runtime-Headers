@@ -16,6 +16,9 @@
     NSInvocation *_invocation;
 }
 
++ (void)removeOverride:(id)arg1;
++ (void)addOverride:(id)arg1;
++ (id)overrideDirectoryURL;
 + (id)allOverrides;
 + (id)newIteratorWithNotFoundHandler:(CDUnknownBlockType)arg1;
 - (void).cxx_destruct;

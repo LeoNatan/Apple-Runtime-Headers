@@ -26,16 +26,22 @@
 - (id)ticketForBrandLookupWithIMessageUid:(id)arg1 traits:(id)arg2;
 - (id)ticketForProblemResubmission:(id)arg1 traits:(id)arg2;
 - (id)ticketForProblem:(id)arg1 mapItemForProblemContext:(id)arg2 userCredentials:(id)arg3 pushToken:(id)arg4 allowContactBackAtEmailAddress:(id)arg5 traits:(id)arg6;
+- (id)ticketForFeedbackRequestData:(id)arg1 traits:(id)arg2;
+- (id)ticketForFeedbackRequest:(id)arg1 traits:(id)arg2;
+- (id)ticketForFeedbackRequestParameters:(id)arg1 mapItemForProblemContext:(id)arg2 userCredentials:(id)arg3 pushToken:(id)arg4 allowContactBackAtEmailAddress:(id)arg5 traits:(id)arg6;
 - (void)_mapItemsForResponseData:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (id)_mk_ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 traits:(id)arg3;
+- (id)_mk_ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 traits:(id)arg3 filters:(id)arg4;
 - (id)ticketForSearchFieldPlaceholderWithTraits:(id)arg1;
 - (id)ticketForPopularNearbyForSearchCategory:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)ticketForSearchCategory:(id)arg1 venueIdentifier:(id)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
-- (id)ticketForSearchCategory:(id)arg1 searchString:(id)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
+- (id)ticketForSearchQuery:(id)arg1 filters:(id)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
 - (id)ticketForSearchAlongRouteWithCategory:(id)arg1 zilchData:(id)arg2 sessionState:(id)arg3 routeId:(id)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
 - (id)ticketForCategory:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)ticketForDFRCategoryListWithTraits:(id)arg1;
-- (id)ticketForCategoryListWithTraits:(id)arg1;
+- (id)ticketForRelatedPlaceList:(id)arg1 traits:(id)arg2;
+- (id)ticketForTransitScheduleStationIdentifier:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripID:(unsigned long long)arg3 traits:(id)arg4;
+- (id)ticketForSearchPoisForCollectionMUID:(unsigned long long)arg1 traits:(id)arg2;
+- (id)ticketForCategoryListWithTraits:(id)arg1 isFromNoQueryState:(BOOL)arg2;
 - (id)ticketForSearchPoisForBrandMUID:(unsigned long long)arg1 traits:(id)arg2;
 - (id)ticketForURLQuery:(id)arg1 identifier:(id)arg2 resultProviderId:(int)arg3 contentProvider:(id)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
 - (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 relatedSearchSuggestion:(id)arg3 maxResults:(unsigned int)arg4 traits:(id)arg5;
@@ -69,8 +75,6 @@
 - (id)defaultTraitsWithTransportType:(unsigned long long)arg1;
 - (id)defaultTraits;
 - (id)init;
-- (id)stylingForWalletCategory:(id)arg1;
-- (id)ticketForWalletMerchantLookupRequest:(id)arg1 traits:(id)arg2;
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 selectedReportAnIssueIndex:(unsigned int)arg4;
 - (void)capturePlaceCardUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 mapItem:(id)arg4 timestamp:(double)arg5 placeCardType:(int)arg6 categoriesDisplayed:(id)arg7 categorySelected:(id)arg8;
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 categoriesDisplayed:(id)arg4 categorySelected:(id)arg5;
@@ -85,6 +89,7 @@
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 routeDetails:(id)arg4;
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 mapRegion:(id)arg4 zoomLevel:(double)arg5 mapType:(int)arg6;
 - (void)captureMapLaunchEventWithLaunchUrl:(id)arg1 sourceAppId:(id)arg2 isLaunchedFromTTL:(BOOL)arg3 ttlEventTime:(id)arg4;
+- (void)captureUserAction:(int)arg1 onTarget:(int)arg2 queryString:(id)arg3;
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3;
 - (void)captureExtensionStateWithIsTableBookingAppsInstalled:(BOOL)arg1 isTableBookingAppsEnabled:(BOOL)arg2;
 - (void)captureExtensionStateWithIsRideBookingAppsInstalled:(BOOL)arg1 isRideBookingAppsEnabled:(BOOL)arg2;
@@ -102,6 +107,9 @@
 - (void)captureMapUIStateWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2 numberOfTabs:(unsigned int)arg3 currentTabIndex:(unsigned int)arg4;
 - (void)captureMapUIStateWithLayoutInfo:(int)arg1 layoutStyle:(int)arg2;
 - (id)problemTicketForWalletRAPReport:(id)arg1;
+- (id)feedbackTicketForWalletRAPReport:(id)arg1;
+- (id)stylingForWalletCategory:(id)arg1;
+- (id)ticketForWalletMerchantLookupRequest:(id)arg1 traits:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

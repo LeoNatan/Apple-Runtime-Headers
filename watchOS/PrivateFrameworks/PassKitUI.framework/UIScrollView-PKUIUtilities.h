@@ -8,6 +8,8 @@
 
 @interface UIScrollView (PKUIUtilities)
 - (struct CGRect)pkui_naturalRestingBounds;
-- (void)pkui_adjustNavigationBarShadow:(id)arg1;
+- (void)pkui_adjustManualScrollEdgeAppearanceProgressForNavigationItem:(id)arg1;
+- (void)pk_applyAppearance:(id)arg1;
+- (id)pk_childrenForAppearance;
 @end
 

@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     AVWeakReference *_weakReference;
     NSObject<OS_dispatch_source> *_timerSource;
     struct OpaqueCMTimebase *_timebase;
+    BOOL _isObservingTimebase;
     double _lastRate;
     double _currentRate;
     BOOL _invalid;

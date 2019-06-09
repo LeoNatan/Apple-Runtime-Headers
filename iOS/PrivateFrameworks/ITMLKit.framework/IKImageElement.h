@@ -6,27 +6,32 @@
 
 #import <ITMLKit/IKViewElement.h>
 
-@class NSArray, NSDictionary, NSURL, UIColor;
+@class IKSrcSetRule, NSArray, NSDictionary, NSURL, UIColor;
 
 @interface IKImageElement : IKViewElement
 {
     double _srcWidth;
     double _srcHeight;
+    IKImageElement *_fallbackImageElement;
     NSDictionary *_srcset;
     unsigned long long _imageType;
     double _aspectRatio;
     NSURL *_resolvedURL;
     NSArray *_srcsetRules;
+    IKSrcSetRule *_bestRule;
 }
 
++ (unsigned long long)_imageTypeForTagName:(id)arg1;
 + (_Bool)shouldParseChildDOMElements;
+@property(retain, nonatomic) IKSrcSetRule *bestRule; // @synthesize bestRule=_bestRule;
 @property(retain, nonatomic) NSArray *srcsetRules; // @synthesize srcsetRules=_srcsetRules;
 @property(retain, nonatomic) NSURL *resolvedURL; // @synthesize resolvedURL=_resolvedURL;
 @property(readonly, nonatomic) double aspectRatio; // @synthesize aspectRatio=_aspectRatio;
 @property(readonly, nonatomic) unsigned long long imageType; // @synthesize imageType=_imageType;
 @property(readonly, retain, nonatomic) NSDictionary *srcset; // @synthesize srcset=_srcset;
 - (void).cxx_destruct;
-- (unsigned long long)_imageTypeForTagName:(id)arg1;
+- (void)_resolveURL;
+- (void)_initCommon;
 - (void)_parseSrcset:(id)arg1;
 - (void)appDocumentDidMarkStylesDirty;
 @property(readonly, nonatomic) long long reflect;
@@ -37,6 +42,9 @@
 @property(readonly, nonatomic) double height;
 @property(readonly, nonatomic) double width;
 @property(readonly, nonatomic) NSURL *url;
+@property(readonly, nonatomic) IKImageElement *fallbackImageElement; // @synthesize fallbackImageElement=_fallbackImageElement;
+- (id)initWithOriginalElement:(id)arg1;
+- (id)initWithPrototypeElement:(id)arg1 parent:(id)arg2 appDataItem:(id)arg3;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 
 @end

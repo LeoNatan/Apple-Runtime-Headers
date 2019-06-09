@@ -15,6 +15,7 @@
 }
 
 - (id)stringForExpression:(id)arg1 containsPrivacySensitiveContents:(char *)arg2;
+- (id)stringForExpression:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

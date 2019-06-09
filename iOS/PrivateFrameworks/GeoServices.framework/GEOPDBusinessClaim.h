@@ -8,26 +8,35 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOPDBusinessClaim : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
     NSString *_buttonLabel;
     NSString *_descriptionText;
     NSString *_titleText;
     _Bool _buttonEnabled;
     struct {
-        unsigned int buttonEnabled:1;
-    } _has;
+        unsigned int has_buttonEnabled:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_buttonLabel:1;
+        unsigned int read_descriptionText:1;
+        unsigned int read_titleText:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_buttonLabel:1;
+        unsigned int wrote_descriptionText:1;
+        unsigned int wrote_titleText:1;
+        unsigned int wrote_buttonEnabled:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (id)businessClaimForPlaceData:(id)arg1;
-@property(retain, nonatomic) NSString *descriptionText; // @synthesize descriptionText=_descriptionText;
-@property(retain, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-@property(nonatomic) _Bool buttonEnabled; // @synthesize buttonEnabled=_buttonEnabled;
-@property(retain, nonatomic) NSString *buttonLabel; // @synthesize buttonLabel=_buttonLabel;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,12 +45,20 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *descriptionText;
 @property(readonly, nonatomic) _Bool hasDescriptionText;
+- (void)_readDescriptionText;
+@property(retain, nonatomic) NSString *titleText;
 @property(readonly, nonatomic) _Bool hasTitleText;
+- (void)_readTitleText;
 @property(nonatomic) _Bool hasButtonEnabled;
+@property(nonatomic) _Bool buttonEnabled;
+@property(retain, nonatomic) NSString *buttonLabel;
 @property(readonly, nonatomic) _Bool hasButtonLabel;
+- (void)_readButtonLabel;
 
 @end
 

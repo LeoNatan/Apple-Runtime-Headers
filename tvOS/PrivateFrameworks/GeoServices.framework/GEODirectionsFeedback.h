@@ -8,26 +8,36 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSData, NSMutableArray;
+@class NSData, NSMutableArray, PBDataReader;
 
 @interface GEODirectionsFeedback : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSMutableArray *_alightNotificationFeedbacks;
     NSData *_directionResponseID;
     NSMutableArray *_guidanceFeedbacks;
     NSMutableArray *_stepFeedbacks;
     NSMutableArray *_trafficRerouteFeedbacks;
+    struct {
+        unsigned int read_alightNotificationFeedbacks:1;
+        unsigned int read_directionResponseID:1;
+        unsigned int read_guidanceFeedbacks:1;
+        unsigned int read_stepFeedbacks:1;
+        unsigned int read_trafficRerouteFeedbacks:1;
+        unsigned int wrote_alightNotificationFeedbacks:1;
+        unsigned int wrote_directionResponseID:1;
+        unsigned int wrote_guidanceFeedbacks:1;
+        unsigned int wrote_stepFeedbacks:1;
+        unsigned int wrote_trafficRerouteFeedbacks:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)guidanceFeedbackType;
 + (Class)alightNotificationFeedbackType;
 + (Class)trafficRerouteFeedbackType;
 + (Class)stepFeedbackType;
-@property(retain, nonatomic) NSMutableArray *guidanceFeedbacks; // @synthesize guidanceFeedbacks=_guidanceFeedbacks;
-@property(retain, nonatomic) NSMutableArray *alightNotificationFeedbacks; // @synthesize alightNotificationFeedbacks=_alightNotificationFeedbacks;
-@property(retain, nonatomic) NSMutableArray *trafficRerouteFeedbacks; // @synthesize trafficRerouteFeedbacks=_trafficRerouteFeedbacks;
-@property(retain, nonatomic) NSMutableArray *stepFeedbacks; // @synthesize stepFeedbacks=_stepFeedbacks;
-@property(retain, nonatomic) NSData *directionResponseID; // @synthesize directionResponseID=_directionResponseID;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,25 +46,40 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)guidanceFeedbackAtIndex:(unsigned long long)arg1;
 - (unsigned long long)guidanceFeedbacksCount;
+- (void)_addNoFlagsGuidanceFeedback:(id)arg1;
 - (void)addGuidanceFeedback:(id)arg1;
 - (void)clearGuidanceFeedbacks;
+@property(retain, nonatomic) NSMutableArray *guidanceFeedbacks;
+- (void)_readGuidanceFeedbacks;
 - (id)alightNotificationFeedbackAtIndex:(unsigned long long)arg1;
 - (unsigned long long)alightNotificationFeedbacksCount;
+- (void)_addNoFlagsAlightNotificationFeedback:(id)arg1;
 - (void)addAlightNotificationFeedback:(id)arg1;
 - (void)clearAlightNotificationFeedbacks;
+@property(retain, nonatomic) NSMutableArray *alightNotificationFeedbacks;
+- (void)_readAlightNotificationFeedbacks;
 - (id)trafficRerouteFeedbackAtIndex:(unsigned long long)arg1;
 - (unsigned long long)trafficRerouteFeedbacksCount;
+- (void)_addNoFlagsTrafficRerouteFeedback:(id)arg1;
 - (void)addTrafficRerouteFeedback:(id)arg1;
 - (void)clearTrafficRerouteFeedbacks;
+@property(retain, nonatomic) NSMutableArray *trafficRerouteFeedbacks;
+- (void)_readTrafficRerouteFeedbacks;
 - (id)stepFeedbackAtIndex:(unsigned long long)arg1;
 - (unsigned long long)stepFeedbacksCount;
+- (void)_addNoFlagsStepFeedback:(id)arg1;
 - (void)addStepFeedback:(id)arg1;
 - (void)clearStepFeedbacks;
+@property(retain, nonatomic) NSMutableArray *stepFeedbacks;
+- (void)_readStepFeedbacks;
+@property(retain, nonatomic) NSData *directionResponseID;
 @property(readonly, nonatomic) _Bool hasDirectionResponseID;
+- (void)_readDirectionResponseID;
 
 @end
 

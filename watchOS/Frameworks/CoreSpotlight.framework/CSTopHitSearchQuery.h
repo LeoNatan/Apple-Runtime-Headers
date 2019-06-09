@@ -4,36 +4,32 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <CoreSpotlight/CSUserQuery.h>
 
-@class CSSearchQuery, NSArray, NSString;
+@class NSMutableArray;
 
-@interface CSTopHitSearchQuery : NSObject
+@interface CSTopHitSearchQuery : CSUserQuery
 {
+    NSMutableArray *_batches;
     unsigned int _foundItemCount;
-    NSArray *_filterQueries;
-    CDUnknownBlockType _foundItemsHandler;
-    CDUnknownBlockType _completionHandler;
-    CSSearchQuery *_query;
+    CDUnknownBlockType foundItemsHandler;
+    CDUnknownBlockType completionHandler;
 }
 
-+ (id)_makeUniqueFetchAttributesWithAttributes:(id)arg1;
-@property(retain, nonatomic) CSSearchQuery *query; // @synthesize query=_query;
-@property(copy) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
-@property(copy) CDUnknownBlockType foundItemsHandler; // @synthesize foundItemsHandler=_foundItemsHandler;
-@property(copy) NSArray *filterQueries; // @synthesize filterQueries=_filterQueries;
+- (void)setCompletionHandler:(CDUnknownBlockType)arg1;
+- (CDUnknownBlockType)completionHandler;
+- (void)setFoundItemsHandler:(CDUnknownBlockType)arg1;
+- (CDUnknownBlockType)foundItemsHandler;
 - (void).cxx_destruct;
 - (void)userEngagedWithResult:(id)arg1 interactionType:(int)arg2;
-- (void)start;
+- (unsigned int)foundItemCount;
+- (void)handleCompletion:(id)arg1;
+- (_Bool)isTopHitQuery;
+- (void)handleFoundItems:(id)arg1;
 - (void)_handleBatches:(id)arg1;
-@property(readonly) unsigned int foundItemCount;
-- (void)cancel;
-@property(readonly, getter=isCancelled) _Bool cancelled;
-@property(copy) NSArray *protectionClasses;
-@property(copy, nonatomic) NSArray *bundleIDs;
-@property(readonly) NSString *keyboardLanguage;
+- (id)filterQueries;
+- (void)setFilterQueries:(id)arg1;
 - (id)initWithSearchString:(id)arg1 keyboardLanguage:(id)arg2 attributes:(id)arg3 hitCount:(unsigned int)arg4;
-- (id)initWithQueryString:(id)arg1 context:(id)arg2;
 
 @end
 

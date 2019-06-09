@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)pivotPageField;
+- (void).cxx_destruct;
 - (id)description;
 - (void)setCap:(id)arg1;
 - (id)cap;
@@ -24,7 +25,6 @@ __attribute__((visibility("hidden")))
 - (id)name;
 - (void)setFieldId:(unsigned long long)arg1;
 - (unsigned long long)fieldId;
-- (void)dealloc;
 - (id)init;
 
 @end

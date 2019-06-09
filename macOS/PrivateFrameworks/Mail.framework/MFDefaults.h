@@ -13,9 +13,6 @@
 }
 
 + (id)defaultNameForFlagColor:(BOOL)arg1;
-+ (unsigned long long)deferredPreferredWindowBackingLocation;
-+ (unsigned long long)preferredWindowBackingLocation;
-+ (void)setPreferredWindowBackingLocation:(unsigned long long)arg1;
 + (id)sharedInstance;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 - (long long)integerForKey:(id)arg1;

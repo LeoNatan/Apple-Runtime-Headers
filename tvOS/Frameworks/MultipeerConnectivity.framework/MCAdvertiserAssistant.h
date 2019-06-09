@@ -7,12 +7,11 @@
 #import <objc/NSObject.h>
 
 #import <MultipeerConnectivity/MCNearbyServiceAdvertiserDelegate-Protocol.h>
-#import <MultipeerConnectivity/UIAlertViewDelegate-Protocol.h>
 
 @class MCAlertController, MCNearbyServiceAdvertiser, MCPeerID, MCSession, NSBundle, NSDictionary, NSMutableArray, NSString;
 @protocol MCAdvertiserAssistantDelegate;
 
-@interface MCAdvertiserAssistant : NSObject <MCNearbyServiceAdvertiserDelegate, UIAlertViewDelegate>
+@interface MCAdvertiserAssistant : NSObject <MCNearbyServiceAdvertiserDelegate>
 {
     id <MCAdvertiserAssistantDelegate> _delegate;
     _Bool _isAdvertising;

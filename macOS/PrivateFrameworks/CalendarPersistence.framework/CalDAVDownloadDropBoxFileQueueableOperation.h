@@ -28,7 +28,7 @@
 - (BOOL)_isLowPriority;
 - (void)performOperation;
 - (void)_doFetchAtNextURL;
-- (id)_popNextURLToTry;
+- (id)_popNextURLWrapperToTry;
 - (void)_addURLToTry:(id)arg1;
 - (void)_handleDownloadResponseHeaders:(id)arg1 url:(id)arg2 error:(id)arg3;
 - (void)_processFileWithContentType:(id)arg1 etag:(id)arg2;

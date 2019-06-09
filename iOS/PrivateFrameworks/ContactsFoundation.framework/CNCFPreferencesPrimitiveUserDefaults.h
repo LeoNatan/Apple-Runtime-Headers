@@ -16,6 +16,7 @@
     long long _autosyncTimerIsActive;
 }
 
+- (void).cxx_destruct;
 - (void)setupAutosync;
 - (_Bool)synchronize;
 - (void)primitiveRemoveObjectForKey:(id)arg1;
@@ -23,7 +24,6 @@
 - (long long)primitiveIntegerValueForKey:(id)arg1 keyExists:(_Bool *)arg2;
 - (void)setPrimitiveObject:(id)arg1 forKey:(id)arg2;
 - (id)primitiveObjectForKey:(id)arg1;
-- (void)dealloc;
 - (struct __CFString *)CFApplicationID;
 - (id)initWithApplicationID:(id)arg1;
 

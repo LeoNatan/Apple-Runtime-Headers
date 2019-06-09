@@ -10,6 +10,8 @@
 
 @interface UIKeyboardPreferencesController : NSObject
 {
+    struct CGPoint _floatingKeyboardPosition;
+    unsigned long long _floatingKeyboardDockedEdge;
 }
 
 + (id)sharedPreferencesController;
@@ -23,9 +25,10 @@
 - (void)performedFirstReachableKeyboardInteraction;
 - (_Bool)isFirstReachableKeyboardInteraction;
 @property long long handBias;
+@property(readonly) _Bool usesNovoPredictionBar;
+@property _Bool enableProKeyboard;
 - (_Bool)spaceConfirmationEnabled;
 - (double)rivenSizeFactor:(double)arg1;
-- (_Bool)typologyEnabled;
 - (_Bool)allEnabledInputModesAreValid;
 - (void)setLanguageAwareInputModeLastUsed:(id)arg1;
 - (void)saveInputModes:(id)arg1;

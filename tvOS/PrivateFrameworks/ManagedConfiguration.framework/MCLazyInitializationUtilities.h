@@ -15,11 +15,8 @@
 + (void)initCoreServices;
 + (void)initSetupAssistant;
 + (void)initLoggingSupport;
-+ (void)initDAEAS;
-+ (void)initDataAccess;
 + (void)initCoreText;
 + (void)initImageIO;
-+ (void)initAddressBook;
 + (void)loadNSBundleAtURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 + (void)loadBundleAtURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 

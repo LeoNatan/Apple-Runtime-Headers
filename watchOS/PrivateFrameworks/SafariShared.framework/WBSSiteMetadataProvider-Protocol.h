@@ -6,7 +6,7 @@
 
 #import <SafariShared/NSObject-Protocol.h>
 
-@class NSOperation, WBSSiteMetadataRequest, WBSSiteMetadataResponse;
+@class WBSSiteMetadataRequest, WBSSiteMetadataResponse;
 @protocol WBSSiteMetadataProviderDelegate;
 
 @protocol WBSSiteMetadataProvider <NSObject>
@@ -21,6 +21,5 @@
 - (void)savePendingChangesBeforeTermination;
 - (void)emptyCaches;
 - (void)stopWatchingUpdatesForRequest:(WBSSiteMetadataRequest *)arg1;
-- (NSOperation *)operationForRequest:(WBSSiteMetadataRequest *)arg1;
 @end
 

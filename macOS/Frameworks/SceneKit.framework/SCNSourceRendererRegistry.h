@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 + (id)sharedRegistry;
 - (void)removeSourceRenderersForSource:(id)arg1;
 - (void)removeSourceRenderersForEngineContext:(struct __C3DEngineContext *)arg1;
-- (id)sourceRendererForEngineContext:(struct __C3DEngineContext *)arg1 source:(id)arg2 textureSource:(id)arg3;
+- (id)sourceRendererForEngineContext:(struct __C3DEngineContext *)arg1 source:(id)arg2 textureSource:(id)arg3 targetTexture:(id)arg4;
 - (void)rendererDidChange:(id)arg1;
 - (void)dealloc;
 - (id)init;

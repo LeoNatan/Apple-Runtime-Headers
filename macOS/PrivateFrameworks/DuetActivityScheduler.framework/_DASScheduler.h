@@ -8,20 +8,22 @@
 
 #import <DuetActivityScheduler/NSXPCListenerDelegate-Protocol.h>
 #import <DuetActivityScheduler/_DASActivityBackgroundLaunchScheduler-Protocol.h>
+#import <DuetActivityScheduler/_DASActivityBackgroundTasksScheduler-Protocol.h>
 #import <DuetActivityScheduler/_DASActivityGroupScheduler-Protocol.h>
 #import <DuetActivityScheduler/_DASActivityMetering-Protocol.h>
 #import <DuetActivityScheduler/_DASActivitySchedulerIntrospecting-Protocol.h>
 
 @class NSMutableDictionary, NSString, NSXPCConnection, NSXPCListenerEndpoint, _DASSubmissionRateLimiter;
-@protocol OS_dispatch_queue, OS_os_log;
+@protocol OS_dispatch_queue, OS_os_log, _DASActivityBackgroundTasksSchedulerDelegate;
 
-@interface _DASScheduler : NSObject <NSXPCListenerDelegate, _DASActivityGroupScheduler, _DASActivitySchedulerIntrospecting, _DASActivityBackgroundLaunchScheduler, _DASActivityMetering>
+@interface _DASScheduler : NSObject <NSXPCListenerDelegate, _DASActivityGroupScheduler, _DASActivitySchedulerIntrospecting, _DASActivityBackgroundLaunchScheduler, _DASActivityMetering, _DASActivityBackgroundTasksScheduler>
 {
     BOOL _interrupted;
     int _resubmitToken;
     NSXPCConnection *_xpcConnection;
     NSXPCListenerEndpoint *_endpoint;
     NSMutableDictionary *_submittedActivities;
+    NSMutableDictionary *_delayedStartTasks;
     NSMutableDictionary *_startedActivities;
     NSMutableDictionary *_activityToDataMap;
     _DASSubmissionRateLimiter *_rateLimiter;
@@ -29,11 +31,14 @@
     NSObject<OS_dispatch_queue> *_connectionCreationQueue;
     NSObject<OS_dispatch_queue> *_runQueue;
     NSObject<OS_os_log> *_dasFrameworkLog;
+    id <_DASActivityBackgroundTasksSchedulerDelegate> _backgroundTaskSchedulerDelegate;
 }
 
++ (id)log;
 + (id)schedulerWithEndpoint:(id)arg1;
 + (id)sharedScheduler;
 + (id)scheduler;
+@property(nonatomic) __weak id <_DASActivityBackgroundTasksSchedulerDelegate> backgroundTaskSchedulerDelegate; // @synthesize backgroundTaskSchedulerDelegate=_backgroundTaskSchedulerDelegate;
 @property(retain, nonatomic) NSObject<OS_os_log> *dasFrameworkLog; // @synthesize dasFrameworkLog=_dasFrameworkLog;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *runQueue; // @synthesize runQueue=_runQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionCreationQueue; // @synthesize connectionCreationQueue=_connectionCreationQueue;
@@ -41,6 +46,7 @@
 @property(retain, nonatomic) _DASSubmissionRateLimiter *rateLimiter; // @synthesize rateLimiter=_rateLimiter;
 @property(retain, nonatomic) NSMutableDictionary *activityToDataMap; // @synthesize activityToDataMap=_activityToDataMap;
 @property(retain, nonatomic) NSMutableDictionary *startedActivities; // @synthesize startedActivities=_startedActivities;
+@property(retain, nonatomic) NSMutableDictionary *delayedStartTasks; // @synthesize delayedStartTasks=_delayedStartTasks;
 @property(retain, nonatomic) NSMutableDictionary *submittedActivities; // @synthesize submittedActivities=_submittedActivities;
 @property(nonatomic) int resubmitToken; // @synthesize resubmitToken=_resubmitToken;
 @property(nonatomic) BOOL interrupted; // @synthesize interrupted=_interrupted;
@@ -50,19 +56,35 @@
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)activityStoppedWithParameters:(id)arg1;
 - (void)activityStartedWithParameters:(id)arg1;
+- (void)completeTaskRequest:(id)arg1;
+- (void)willExpireBGTaskActivities:(id)arg1;
+- (void)handleLaunchFromDaemonForActivities:(id)arg1;
+- (void)connectToDaemon:(BOOL)arg1;
+- (void)setBackgroundTasksSchedulerDelegate:(id)arg1;
+- (void)cancelAllTaskRequests;
+- (void)cancelTaskRequestWithIdentifier:(id)arg1;
+- (void)getPendingTaskRequestsWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)submitTaskRequest:(id)arg1;
 - (void)setMinimumBackgroundFetchInterval:(double)arg1 forApp:(id)arg2;
-- (void)setBalance:(double)arg1 forBudgetWithName:(id)arg2;
-- (double)remainingBalanceForBudgetWithName:(id)arg1;
-- (id)currentPredictions;
+- (void)activity:(id)arg1 blockedOnPolicies:(id)arg2;
+- (void)activity:(id)arg1 runWithoutHonoringPolicies:(id)arg2;
 - (void)cancelActivities:(id)arg1;
 - (void)suspendActivities:(id)arg1;
 - (void)runActivities:(id)arg1;
+- (void)runActivitiesWithDelayedStart:(id)arg1;
 - (void)pauseWithParameters:(id)arg1;
+- (void)enterTestModeWithParameters:(id)arg1;
+- (id)blockingPoliciesWithParameters:(id)arg1;
+- (id)policies;
+- (void)setBalance:(double)arg1 forBudgetWithName:(id)arg2;
+- (double)remainingBalanceForBudgetWithName:(id)arg1;
+- (id)currentPredictions;
 - (id)activityRunStatistics;
 - (id)scoresForActivityWithName:(id)arg1;
 - (void)forceRunActivities:(id)arg1;
 - (id)runningGroupActivities;
 - (id)runningActivities;
+- (id)delayedRunningActivities;
 - (void)submitActivity:(id)arg1 inGroup:(id)arg2;
 - (void)submitActivity:(id)arg1 inGroupWithName:(id)arg2;
 - (void)createActivityGroup:(id)arg1;
@@ -70,9 +92,9 @@
 - (void)updateActivity:(id)arg1 withParameters:(id)arg2;
 - (void)activityCompleted:(id)arg1;
 - (void)activityCanceled:(id)arg1;
+- (void)activityStarted:(id)arg1;
 - (void)handleNoLongerRunningActivities:(id)arg1;
 - (void)handleRescindedActivity:(id)arg1;
-- (void)activityStarted:(id)arg1;
 - (void)submitActivities:(id)arg1;
 - (void)submitActivity:(id)arg1;
 - (void)submitActivitiesInternal:(id)arg1;
@@ -80,10 +102,12 @@
 - (void)handleEligibleActivities:(CDUnknownBlockType)arg1;
 - (id)currentConnection;
 - (void)unprotectedEstablishDaemonConnectionIfInterrupted;
+- (void)resubmitPendingStartActivities;
 - (void)resubmitPendingActivities;
 - (void)resubmitRunningActivities;
 - (id)submittedTaskState;
 - (void)dealloc;
+- (id)init;
 - (id)initWithListenerEndpoint:(id)arg1;
 - (void)setupXPCConnectionWithEndpoint:(id)arg1;
 

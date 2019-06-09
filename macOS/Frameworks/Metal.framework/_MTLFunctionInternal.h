@@ -20,6 +20,8 @@ __attribute__((visibility("hidden")))
     long long _lineNumber;
 }
 
+- (id).cxx_construct;
+- (id)functionInputs;
 - (unsigned long long)renderTargetArrayIndexType;
 - (long long)lineNumber;
 - (void)setLineNumber:(long long)arg1;
@@ -29,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (id)filePath;
 - (void)setFilePath:(id)arg1;
 - (void)initializePrivateMetadata;
+- (id)newFunctionWithPluginData:(id)arg1 bitcodeType:(unsigned char)arg2;
 - (id)newSpecializedFunctionWithRequestType:(int)arg1 llvmTargetVersion:(unsigned int)arg2 constants:(id)arg3 functionCache:(id)arg4 error:(id *)arg5;
 - (void)newSpecializedFunctionWithRequestType:(int)arg1 llvmTargetVersion:(unsigned int)arg2 constants:(id)arg3 functionCache:(id)arg4 sync:(_Bool)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)setSourceArchiveOffset:(unsigned long long)arg1;
@@ -51,6 +54,9 @@ __attribute__((visibility("hidden")))
 - (void)initializePublicMetadata;
 - (long long)patchControlPointCount;
 - (unsigned long long)patchType;
+- (void)setPluginData:(id)arg1;
+- (id)pluginData;
+- (void)setBitcodeType:(unsigned char)arg1;
 - (unsigned char)bitcodeType;
 - (unsigned long long)bitCodeOffset;
 - (const struct MTLFunctionData *)functionData;

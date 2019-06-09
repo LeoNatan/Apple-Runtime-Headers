@@ -16,11 +16,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)linkWithType:(int)arg1;
+- (void).cxx_destruct;
 - (id)description;
 - (id)externalNames;
 - (void)setType:(int)arg1;
 - (int)type;
-- (void)dealloc;
 - (id)initWithType:(int)arg1;
 
 @end

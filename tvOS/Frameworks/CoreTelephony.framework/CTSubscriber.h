@@ -23,12 +23,13 @@
 @property(nonatomic) __weak id <CTSubscriberDelegate> delegate; // @synthesize delegate=_delegate;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)authTokenChanged:(id)arg1;
+- (id)typeAllocationCode;
 - (void)authenticateWithInfo:(id)arg1 handleResult:(CDUnknownBlockType)arg2;
 - (void)authenticate:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)refreshCarrierToken;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly, retain, nonatomic) NSData *carrierToken; // @dynamic carrierToken;
-- (void)authTokenChanged:(id)arg1;
 - (id)init;
 - (id)initWithDescriptor:(id)arg1;
 - (id)initWithDescriptor:(id)arg1 client:(id)arg2;

@@ -22,7 +22,6 @@
 - (void)restoreGraphicsState;
 - (void)saveGraphicsState;
 - (void)dealloc;
-- (unsigned int)contextID;
 - (void)setColorRenderingIntent:(long long)arg1;
 - (long long)colorRenderingIntent;
 - (unsigned long long)compositingOperation;

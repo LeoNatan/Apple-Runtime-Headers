@@ -11,6 +11,7 @@
 
 @class EDCollection, EDDifferentialStyle, NSString;
 
+__attribute__((visibility("hidden")))
 @interface EDTableStyleElement : NSObject <EDKeyedObject, NSCopying>
 {
     EDCollection *mDifferentialStyles;

@@ -8,6 +8,7 @@
 
 @class NSError, SKUIClientContext, SKUIRedeemConfiguration, SSAccount, SSVRedeemCodeMetadata;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemPreflightResult : NSObject
 {
     SSAccount *_account;

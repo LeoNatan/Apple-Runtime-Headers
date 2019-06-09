@@ -33,7 +33,7 @@
 - (void)setDisplayedKeys:(id)arg1;
 - (void)setAccounts:(id)arg1;
 - (void)setPickerScope:(id)arg1;
-- (void)setInitialSelection;
+- (void)performInitialSelection;
 @property(readonly) ABPersonListSearchController *searchController;
 @property(readonly) CNContactListController *contactListController;
 - (void)pickerDidCreate;

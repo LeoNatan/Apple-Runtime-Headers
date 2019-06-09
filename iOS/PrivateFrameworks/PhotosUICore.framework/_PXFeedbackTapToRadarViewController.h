@@ -6,16 +6,20 @@
 
 #import <UIKit/UIViewController.h>
 
-@class UISwitch;
+@class UISegmentedControl, UISwitch;
 @protocol _PXFeedbackTapToRadarViewControllerDelegate;
 
 @interface _PXFeedbackTapToRadarViewController : UIViewController
 {
     UISwitch *_screenshotSwitch;
+    UISwitch *_diagnoseSwitch;
     id <_PXFeedbackTapToRadarViewControllerDelegate> _delegate;
+    UISegmentedControl *_segmentedControl;
 }
 
+@property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
 @property(retain, nonatomic) id <_PXFeedbackTapToRadarViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(retain, nonatomic) UISwitch *diagnoseSwitch; // @synthesize diagnoseSwitch=_diagnoseSwitch;
 @property(retain, nonatomic) UISwitch *screenshotSwitch; // @synthesize screenshotSwitch=_screenshotSwitch;
 - (void).cxx_destruct;
 - (void)_didSelectFileRadarButton:(id)arg1;

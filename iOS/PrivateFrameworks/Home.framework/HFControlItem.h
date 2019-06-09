@@ -39,8 +39,10 @@
 - (id)valueForCharacteristicType:(id)arg1 inBatchReadResponse:(id)arg2;
 - (id)characteristicValuesForValue:(id)arg1;
 - (id)valueForCharacteristicValues:(id)arg1;
+- (id)_tintColor;
+- (long long)_primaryStateForValue:(id)arg1;
 - (id)_standardResultsForResultValue:(id)arg1 characteristicValuesByType:(id)arg2;
-- (id)_characteristicValuesByTypeForBatchReadResponse:(id)arg1;
+- (id)characteristicValuesByTypeForBatchReadResponse:(id)arg1;
 - (id)resultsForBatchReadResponse:(id)arg1;
 - (id)readValueAndPopulateStandardResults;
 - (id)_subclass_updateWithOptions:(id)arg1;

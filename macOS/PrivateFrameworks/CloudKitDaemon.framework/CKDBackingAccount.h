@@ -10,9 +10,10 @@
 
 @interface CKDBackingAccount : NSObject
 {
-    BOOL _canAuthWithCloudKit;
+    BOOL _isPrimaryEmailVerified;
 }
 
++ (void)deviceCountForAccount:(id)arg1 ignoreCache:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (void)ensureCloudKitChildAccountOnParentAccount:(id)arg1 inStore:(id)arg2;
 + (BOOL)_lockedEnsureCloudKitChildAccountOnParentAccount:(id)arg1 inStore:(id)arg2;
 + (id)accountQueue;
@@ -20,17 +21,20 @@
 + (id)primaryAccountInStore:(id)arg1;
 + (id)accountWithIdentifier:(id)arg1 inStore:(id)arg2;
 + (Class)_platformBackingAccountClass;
-@property(readonly, nonatomic) BOOL canAuthWithCloudKit; // @synthesize canAuthWithCloudKit=_canAuthWithCloudKit;
-@property(readonly, nonatomic) NSURL *privateDatabaseRPCServiceURL;
+@property(readonly, nonatomic) BOOL isPrimaryEmailVerified; // @synthesize isPrimaryEmailVerified=_isPrimaryEmailVerified;
+- (void)deviceCountWithCompletionHandler:(CDUnknownBlockType)arg1;
+@property(readonly, nonatomic) NSString *personaIdentifier;
 @property(readonly, nonatomic) NSString *sharingURLHostname;
+@property(readonly, nonatomic) NSURL *privateDatabaseRPCServiceURL;
 @property(readonly, nonatomic) NSURL *privateMetricsServiceURL;
+- (id)privateCodeServiceURLPreferringGateway:(BOOL)arg1;
 @property(readonly, nonatomic) NSURL *privateCodeServiceURL;
 @property(readonly, nonatomic) NSURL *privateDeviceServiceURL;
 @property(readonly, nonatomic) NSURL *privateShareServiceURL;
 @property(readonly, nonatomic) NSURL *privateCloudDBURL;
 - (id)urlForDataclass:(id)arg1;
+- (id)urlForDataclass:(id)arg1 preferringGateway:(BOOL)arg2;
 - (id)accountPropertiesForDataclass:(id)arg1;
-- (void)displayAuthenticationPromptWithReason:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)validateVettingToken:(id)arg1 vettingEmail:(id)arg2 vettingPhone:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)updateAccountPropertiesAndSaveAccountInStore:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)renewAuthTokenInStore:(id)arg1 withOptions:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

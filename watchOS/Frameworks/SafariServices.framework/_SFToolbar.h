@@ -9,40 +9,39 @@
 #import <SafariServices/_SFBarCommon-Protocol.h>
 #import <SafariServices/_SFBarRegistrationObserving-Protocol.h>
 
-@class NSString, UIView, _UIBackdropView, _UIBackdropViewSettings;
+@class NSString, UIBlurEffect, UIView, UIVisualEffectView;
 @protocol _SFBarRegistrationToken;
 
 @interface _SFToolbar : UIToolbar <_SFBarCommon, _SFBarRegistrationObserving>
 {
-    _UIBackdropView *_backgroundView;
-    _UIBackdropViewSettings *_customBackdropSettings;
+    UIVisualEffectView *_backgroundView;
+    UIBlurEffect *_customBackdropEffect;
     UIView *_separator;
-    _Bool _usesDarkTheme;
     int _placement;
     unsigned int _tintStyle;
     id <_SFBarRegistrationToken> _barRegistration;
+    UIView *_superviewOwningLayout;
 }
 
++ (float)baselineOffsetAdjustment;
+@property(nonatomic) __weak UIView *superviewOwningLayout; // @synthesize superviewOwningLayout=_superviewOwningLayout;
 @property(nonatomic) __weak id <_SFBarRegistrationToken> barRegistration; // @synthesize barRegistration=_barRegistration;
 @property(nonatomic) unsigned int tintStyle; // @synthesize tintStyle=_tintStyle;
 @property(readonly, nonatomic) int placement; // @synthesize placement=_placement;
 - (void).cxx_destruct;
+- (void)didChangeArrangedBarItems:(id)arg1;
 - (void)didCompleteBarRegistrationWithToken:(id)arg1;
 - (id)popoverSourceInfoForBarItem:(int)arg1;
 - (void)animateLinkImage:(struct CGImage *)arg1 fromRect:(struct CGRect)arg2 inView:(id)arg3 toBarItem:(int)arg4 afterImageDisappearsBlock:(CDUnknownBlockType)arg5 afterDestinationLayerBouncesBlock:(CDUnknownBlockType)arg6;
 - (void)animateSafariIconLinkFromPoint:(struct CGPoint)arg1 inView:(id)arg2;
 - (void)_cancelLinkAnimations;
-- (void)updateBackdropSettings:(id)arg1;
-- (_Bool)_tintUsesDarkTheme;
+- (void)updateBackdropEffect:(id)arg1;
 - (id)_controlsTintColor;
 - (void)updateTintColor;
 - (_Bool)isMinibar;
-- (id)_backdropInputSettings;
+- (id)_backdropEffect;
 @property(copy, nonatomic) NSString *backdropGroupName;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
-@property(readonly, nonatomic) float URLFieldHorizontalMargin;
-@property(readonly, nonatomic) int toolbarSize;
 - (void)setItems:(id)arg1 animated:(_Bool)arg2;
 - (void)dealloc;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;

@@ -11,5 +11,7 @@
 - (_Bool)hasAssociatedReport;
 - (id)hk_localizedStringForAssociatedDistanceQuantity:(id)arg1 displayTypeController:(id)arg2 unitController:(id)arg3;
 - (id)hk_defaultDistanceQuantityType;
+- (id)hk_midPointToValue:(id)arg1 percentage:(double)arg2;
+- (_Bool)hk_animatable;
 @end
 

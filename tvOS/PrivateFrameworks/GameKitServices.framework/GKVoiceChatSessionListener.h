@@ -15,7 +15,7 @@
     GKRWLock *_rwlock;
 }
 
-- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(int)arg3;
+- (void)session:(id)arg1 peer:(id)arg2 didChangeState:(unsigned int)arg3;
 - (void)receivedNewVoiceChatOOBMessage:(id)arg1 fromPeerID:(id)arg2;
 - (id)currentSessions;
 - (void)removeSession:(id)arg1;

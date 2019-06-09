@@ -6,26 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
-
 @interface EKStringFactory : NSObject
 {
-    struct __CFDateFormatter *_dayFormatter;
-    struct __CFDateFormatter *_abbrevDayFormatter;
-    struct __CFDateFormatter *_timeFormatter;
     struct __CFDateFormatter *_standardTimeFormatter;
     struct __CFDateFormatter *_customFormatter;
-    struct __CFDateFormatter *_fullStyleDateFormatter;
-    struct __CFDateFormatter *_dayOfWeekFormatter;
-    NSMutableDictionary *_longFormatters;
 }
 
-+ (id)_dateBeforeTodayLastWeekFormatStringForDayOfWeek:(long long)arg1 generateLowercaseString:(_Bool)arg2;
-+ (id)_dateBeforeTodayThisWeekFormatStringForDayOfWeek:(long long)arg1 generateLowercaseString:(_Bool)arg2;
-+ (id)_dateAfterTodayThisWeekFormatStringForDayOfWeek:(long long)arg1 generateLowercaseString:(_Bool)arg2;
-+ (id)_dateAfterTodayNextWeekFormatStringForDayOfWeek:(long long)arg1 generateLowercaseString:(_Bool)arg2;
 + (id)sharedInstance;
-- (void).cxx_destruct;
 - (id)_dateStringForEventInvitationWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(_Bool)arg4 withFormat:(unsigned long long)arg5 showTimeZone:(_Bool)arg6;
 - (id)dateStringForSuggestedEventWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(_Bool)arg4 showTimeZone:(_Bool)arg5;
 - (id)dateStringForEventInvitationWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 allDay:(_Bool)arg4;
@@ -35,16 +22,7 @@
 - (id)dateStringForDate:(double)arg1 allDay:(_Bool)arg2 standalone:(_Bool)arg3 shortFormat:(_Bool)arg4;
 - (id)dateStringForDate:(double)arg1 allDay:(_Bool)arg2 shortFormat:(_Bool)arg3;
 - (id)timeStringForDate:(double)arg1 inTimeZone:(id)arg2;
-- (id)_timeStringForDate:(double)arg1;
-- (id)_dayStringForDate:(double)arg1 allDay:(_Bool)arg2 shortFormat:(_Bool)arg3 lowercase:(_Bool)arg4;
-- (id)_stringForDay:(CDStruct_79f9e052)arg1 withLongFormatString:(id)arg2 useAbbreviatedFormats:(_Bool)arg3 lowerCase:(_Bool)arg4;
-- (struct __CFDateFormatter *)formatterForLongFormat:(id)arg1;
-- (struct __CFDateFormatter *)dayOfWeekFormatter;
-- (struct __CFDateFormatter *)fullStyleDateFormatter;
 - (struct __CFDateFormatter *)standardTimeFormatter;
-- (struct __CFDateFormatter *)abbreviatedDayFormatter;
-- (struct __CFDateFormatter *)dayFormatter;
-- (struct __CFDateFormatter *)timeFormatter;
 - (struct __CFDateFormatter *)_customFormatter;
 - (void)_localeChanged:(id)arg1;
 - (void)_invalidateFormatters;

@@ -14,11 +14,18 @@
 {
     unsigned long long _timeDeltaFromReference;
     unsigned long long _timestamp;
+    unsigned int _pollingConfig;
     unsigned int _type;
     NSData *_uuidReference;
-    CDStruct_2d66f2f7 _has;
+    struct {
+        unsigned int timeDeltaFromReference:1;
+        unsigned int timestamp:1;
+        unsigned int pollingConfig:1;
+        unsigned int type:1;
+    } _has;
 }
 
+@property(nonatomic) unsigned int pollingConfig; // @synthesize pollingConfig=_pollingConfig;
 @property(nonatomic) unsigned int type; // @synthesize type=_type;
 @property(nonatomic) unsigned long long timeDeltaFromReference; // @synthesize timeDeltaFromReference=_timeDeltaFromReference;
 @property(retain, nonatomic) NSData *uuidReference; // @synthesize uuidReference=_uuidReference;
@@ -32,6 +39,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasPollingConfig;
 @property(nonatomic) BOOL hasType;
 @property(nonatomic) BOOL hasTimeDeltaFromReference;
 @property(readonly, nonatomic) BOOL hasUuidReference;

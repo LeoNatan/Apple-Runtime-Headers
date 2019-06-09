@@ -12,7 +12,10 @@
 {
 }
 
+- (id)localizedStringForLabel:(id)arg1;
+@property(readonly, nonatomic) NSArray *managedLabels;
 @property(readonly, nonatomic) NSArray *standardLabels;
+- (id)standardLabelsWithOptions:(unsigned long long)arg1;
 @property(readonly, nonatomic) CDUnknownBlockType fromPlistTransform;
 @property(readonly, nonatomic) CDUnknownBlockType plistTransform;
 - (id)valueWithResetIdentifiers:(id)arg1;

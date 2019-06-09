@@ -8,5 +8,6 @@
 
 @interface NSManagedObject (ABXMLAdditions)
 - (id)abElementForAttribute:(id)arg1 nodeName:(id)arg2;
+- (BOOL)abHasAddressBookContent;
 @end
 

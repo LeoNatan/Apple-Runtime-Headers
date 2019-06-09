@@ -18,7 +18,7 @@
     float _balloonAlpha;
     float _contentAlpha;
     CAFilter *_textCompositingFilter;
-    UIColor *_textColor;
+    struct UIColor *_textColor;
 }
 
 @property(copy, nonatomic) UIColor *textColor; // @synthesize textColor=_textColor;

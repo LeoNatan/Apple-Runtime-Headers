@@ -24,8 +24,18 @@
 @property(nonatomic) unsigned long long maxDistance; // @synthesize maxDistance=_maxDistance;
 @property(retain, nonatomic) NSString *targetString; // @synthesize targetString=_targetString;
 - (void).cxx_destruct;
+@property(readonly) unsigned long long hash;
+- (_Bool)isEqual:(id)arg1;
+- (_Bool)isEqualToTokenDistanceMappingTransformer:(id)arg1;
+- (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
+- (id)toPlistWithChunks:(id)arg1;
 - (id)transform:(id)arg1;
 - (id)initWithTarget:(id)arg1 maxDistance:(unsigned long long)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

@@ -6,36 +6,36 @@
 
 #import <UIKitCore/UIView.h>
 
-#import <UIKitCore/_UINavigationBarTitleViewDataSource-Protocol.h>
 #import <UIKitCore/_UINavigationBarTransitionContextParticipant-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, UIFontMetrics, _UINavigationBarLargeTitleViewLayout, _UINavigationBarTransitionContext, _UINavigationControllerRefreshControlHost;
+@class NSArray, NSDictionary, NSString, _UINavigationBarLargeTitleViewLayout, _UINavigationBarTransitionContext, _UINavigationControllerRefreshControlHost;
 
 __attribute__((visibility("hidden")))
-@interface _UINavigationBarLargeTitleView : UIView <_UINavigationBarTitleViewDataSource, _UINavigationBarTransitionContextParticipant>
+@interface _UINavigationBarLargeTitleView : UIView <_UINavigationBarTransitionContextParticipant>
 {
-    _UINavigationBarLargeTitleViewLayout *_layout;
     _UINavigationBarTransitionContext *_transitionContext;
     NSArray *_titleCandidates;
     NSString *__effectiveTitle;
-    _Bool _supportsTwoLines;
+    _Bool _providesExtraSpaceForExcessiveLineHeights;
     _Bool _alignAccessoryViewToTitleBaseline;
     int _titleType;
     NSString *_title;
     NSArray *_alternateTitles;
     NSDictionary *_titleAttributes;
+    unsigned int _twoLineMode;
     UIView *_accessoryView;
     unsigned int _accessoryViewHorizontalAlignment;
     _UINavigationControllerRefreshControlHost *_refreshControlHost;
-    UIFontMetrics *_fontMetrics;
+    _UINavigationBarLargeTitleViewLayout *_layout;
 }
 
-@property(readonly, nonatomic) UIFontMetrics *fontMetrics; // @synthesize fontMetrics=_fontMetrics;
+@property(readonly, nonatomic) _UINavigationBarLargeTitleViewLayout *layout; // @synthesize layout=_layout;
 @property(retain, nonatomic) _UINavigationControllerRefreshControlHost *refreshControlHost; // @synthesize refreshControlHost=_refreshControlHost;
 @property(nonatomic) unsigned int accessoryViewHorizontalAlignment; // @synthesize accessoryViewHorizontalAlignment=_accessoryViewHorizontalAlignment;
 @property(nonatomic) _Bool alignAccessoryViewToTitleBaseline; // @synthesize alignAccessoryViewToTitleBaseline=_alignAccessoryViewToTitleBaseline;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
-@property(nonatomic) _Bool supportsTwoLines; // @synthesize supportsTwoLines=_supportsTwoLines;
+@property(nonatomic) _Bool providesExtraSpaceForExcessiveLineHeights; // @synthesize providesExtraSpaceForExcessiveLineHeights=_providesExtraSpaceForExcessiveLineHeights;
+@property(nonatomic) unsigned int twoLineMode; // @synthesize twoLineMode=_twoLineMode;
 @property(copy, nonatomic) NSDictionary *titleAttributes; // @synthesize titleAttributes=_titleAttributes;
 @property(retain, nonatomic) NSArray *alternateTitles; // @synthesize alternateTitles=_alternateTitles;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -45,29 +45,21 @@ __attribute__((visibility("hidden")))
 - (void)ensureBackButtonTruncationOccursWithContext:(id)arg1;
 - (void)recordToStateForTransition:(id)arg1;
 - (void)recordFromStateForTransition:(id)arg1;
-- (void)titleViewChangedPreferredDisplaySize:(id)arg1;
-- (void)titleViewChangedStandardDisplayItems:(id)arg1;
-- (void)titleViewChangedHeight:(id)arg1;
-- (void)titleViewChangedUnderlayContent:(id)arg1;
-- (void)titleView:(id)arg1 needsUpdatedContentOverlayRects:(id)arg2;
 @property(nonatomic) float restingHeightOfRefreshControl; // @dynamic restingHeightOfRefreshControl;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateContent;
 - (void)_updateContentAndInvalidate:(_Bool)arg1;
 - (id)_effectiveTitle;
 - (id)_titleForCurrentWidth;
-- (void)_updateFontMetrics;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1 titleType:(int)arg2;
 - (struct CGSize)intrinsicContentSize;
 @property(readonly, nonatomic) float restingHeightOfTitleView;
 - (id)_layoutForMeasurement;
-- (void)_setupTitle;
 @property(readonly, nonatomic) UIView *accessibilityTitleView;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)_newLayout;
-- (id)_newTitleLabel;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

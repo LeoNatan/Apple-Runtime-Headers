@@ -8,7 +8,7 @@
 
 #import <SharePointManagement/NSCopying-Protocol.h>
 
-@class NSArray, NSString, NSURL, NSUUID;
+@class NSFileSecurity, NSString, NSURL, NSUUID;
 
 @interface SPMSharePoint : NSObject <NSCopying>
 {
@@ -20,7 +20,7 @@
     NSURL *_url;
     NSUUID *_accountID;
     NSUUID *_ownerID;
-    NSArray *_permissions;
+    NSFileSecurity *_fileSecurity;
     NSUUID *_groupID;
     NSString *_smbName;
     unsigned long long _smbCreateMask;
@@ -35,7 +35,7 @@
 @property(readonly) unsigned long long smbCreateMask; // @synthesize smbCreateMask=_smbCreateMask;
 @property(readonly) NSString *smbName; // @synthesize smbName=_smbName;
 @property(readonly) NSUUID *groupID; // @synthesize groupID=_groupID;
-@property(retain) NSArray *permissions; // @synthesize permissions=_permissions;
+@property(copy) NSFileSecurity *fileSecurity; // @synthesize fileSecurity=_fileSecurity;
 @property(readonly) NSUUID *ownerID; // @synthesize ownerID=_ownerID;
 @property(readonly) BOOL available; // @synthesize available=_available;
 @property(readonly) NSUUID *accountID; // @synthesize accountID=_accountID;

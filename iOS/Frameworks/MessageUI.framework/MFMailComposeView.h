@@ -6,32 +6,30 @@
 
 #import <UIKit/UITransitionView.h>
 
-#import <MessageUI/MFAutocompleteResultsTableViewControllerDelegate-Protocol.h>
+#import <MessageUI/CNAutocompleteResultsTableViewControllerDelegate-Protocol.h>
+#import <MessageUI/CNComposeDragSourceDelegate-Protocol.h>
+#import <MessageUI/CNComposeDropTargetDelegate-Protocol.h>
+#import <MessageUI/CNComposeHeaderViewDelegate-Protocol.h>
 #import <MessageUI/MFComposeBodyFieldDelegate-Protocol.h>
-#import <MessageUI/MFComposeHeaderViewDelegate-Protocol.h>
-#import <MessageUI/MFDragSourceDelegate-Protocol.h>
-#import <MessageUI/MFDropTargetDelegate-Protocol.h>
 #import <MessageUI/MFMailComposeContactsSearchControllerDelegate-Protocol.h>
 #import <MessageUI/UIPopoverControllerDelegate-Protocol.h>
 #import <MessageUI/UIScrollViewDelegate-Protocol.h>
 #import <MessageUI/UITextContentViewDelegate-Protocol.h>
 
-@class MFAutocompleteResultsTableViewController, MFComposeFromView, MFComposeImageSizeView, MFComposeMultiView, MFComposeRecipientTextView, MFComposeSubjectView, MFFromAddressViewController, MFMailComposeContactsSearchController, NSInvocation, NSMutableArray, NSString, UIPickerView, UIResponder, UIScrollView, UIView, UIViewController;
-@protocol MFComposeBodyField, MFComposeRecipientTextViewDelegate, MFMailComposeToFieldDelegate, MFMailComposeViewDelegate;
+@class CNAutocompleteResultsTableViewController, MFComposeDisplayMetrics, MFComposeFromView, MFComposeImageSizeView, MFComposeMultiView, MFComposeSubjectView, MFFromAddressViewController, MFMailComposeContactsSearchController, MFMailComposeRecipientTextView, MFMailComposeToField, NSInvocation, NSMutableArray, NSString, UIPickerView, UIResponder, UIScrollView, UIView, UIViewController;
+@protocol MFComposeBodyField, MFMailComposeRecipientTextViewDelegate, MFMailComposeToFieldDelegate, MFMailComposeViewDelegate;
 
-@interface MFMailComposeView : UITransitionView <MFComposeHeaderViewDelegate, MFAutocompleteResultsTableViewControllerDelegate, UIPopoverControllerDelegate, MFDragSourceDelegate, MFDropTargetDelegate, UITextContentViewDelegate, UIScrollViewDelegate, MFMailComposeContactsSearchControllerDelegate, MFComposeBodyFieldDelegate>
+@interface MFMailComposeView : UITransitionView <CNComposeHeaderViewDelegate, CNAutocompleteResultsTableViewControllerDelegate, UIPopoverControllerDelegate, CNComposeDragSourceDelegate, CNComposeDropTargetDelegate, UITextContentViewDelegate, UIScrollViewDelegate, MFMailComposeContactsSearchControllerDelegate, MFComposeBodyFieldDelegate>
 {
     UIScrollView *_bodyScroller;
     UIView *_headerView;
     UIView *_contentView;
-    id <MFComposeRecipientTextViewDelegate> _composeRecipientViewDelegate;
-    id <MFMailComposeViewDelegate> _mailComposeViewDelegate;
     UIView *_shadowView;
-    MFComposeRecipientTextView *_toField;
-    MFComposeRecipientTextView *_ccField;
-    MFComposeRecipientTextView *_bccField;
-    MFComposeRecipientTextView *_lastChangedRecipientView;
-    MFComposeRecipientTextView *_activeRecipientView;
+    MFMailComposeToField *_toField;
+    MFMailComposeRecipientTextView *_ccField;
+    MFMailComposeRecipientTextView *_bccField;
+    MFMailComposeRecipientTextView *_lastChangedRecipientView;
+    MFMailComposeRecipientTextView *_activeRecipientView;
     MFComposeSubjectView *_subjectField;
     MFComposeFromView *_fromField;
     MFComposeMultiView *_multiField;
@@ -45,8 +43,8 @@
     UIResponder *_pinningResponder;
     NSInvocation *_delayedPopoverInvocation;
     MFMailComposeContactsSearchController *_searchController;
-    MFAutocompleteResultsTableViewController *_searchViewController;
-    MFAutocompleteResultsTableViewController *_corecipientsSearchViewController;
+    CNAutocompleteResultsTableViewController *_searchViewController;
+    CNAutocompleteResultsTableViewController *_corecipientsSearchViewController;
     UIView *_corecipientsSearchTableViewSeparator;
     double _offsetBeforeSearch;
     double _keyboardIntersection;
@@ -61,14 +59,19 @@
     unsigned int _isClosing:1;
     unsigned int _isForEditing:1;
     unsigned int _isAnimationDisabled:1;
+    unsigned int _isDisambiguating:1;
     unsigned int _shouldShowOptionalHeaders:1;
     unsigned int _hasAppeared:1;
     unsigned int _corecipientsTableVisible:1;
+    id <MFMailComposeViewDelegate> _mailComposeViewDelegate;
+    id <MFMailComposeRecipientTextViewDelegate> _composeRecipientViewDelegate;
     UIViewController *_popoverOwner;
     id <MFMailComposeToFieldDelegate> _toFieldDelegate;
+    MFComposeDisplayMetrics *_displayMetrics;
 }
 
 + (unsigned long long)expectedFromAddressPickerDisplayModeForTraitCollection:(id)arg1;
+@property(retain, nonatomic) MFComposeDisplayMetrics *displayMetrics; // @synthesize displayMetrics=_displayMetrics;
 @property(readonly, nonatomic) unsigned long long fromAddressPickerDisplayMode; // @synthesize fromAddressPickerDisplayMode=_fromAddressPickerDisplayMode;
 @property(readonly, nonatomic) MFMailComposeContactsSearchController *searchController; // @synthesize searchController=_searchController;
 @property(readonly, nonatomic) UIScrollView *bodyScroller; // @synthesize bodyScroller=_bodyScroller;
@@ -76,15 +79,18 @@
 @property(readonly, nonatomic) MFComposeImageSizeView *imageSizeField; // @synthesize imageSizeField=_imageSizeField;
 @property(readonly, nonatomic) MFComposeFromView *fromField; // @synthesize fromField=_fromField;
 @property(readonly, nonatomic) MFComposeSubjectView *subjectField; // @synthesize subjectField=_subjectField;
-@property(readonly, nonatomic) MFComposeRecipientTextView *bccField; // @synthesize bccField=_bccField;
-@property(readonly, nonatomic) MFComposeRecipientTextView *ccField; // @synthesize ccField=_ccField;
-@property(readonly, nonatomic) MFComposeRecipientTextView *toField; // @synthesize toField=_toField;
-@property(nonatomic) id <MFMailComposeToFieldDelegate> toFieldDelegate; // @synthesize toFieldDelegate=_toFieldDelegate;
-@property(nonatomic) UIViewController *popoverOwner; // @synthesize popoverOwner=_popoverOwner;
-@property(nonatomic) id <MFComposeRecipientTextViewDelegate> composeRecipientDelegate; // @synthesize composeRecipientDelegate=_composeRecipientViewDelegate;
-@property(nonatomic) id <MFMailComposeViewDelegate> composeViewDelegate; // @synthesize composeViewDelegate=_mailComposeViewDelegate;
+@property(readonly, nonatomic) MFMailComposeRecipientTextView *bccField; // @synthesize bccField=_bccField;
+@property(readonly, nonatomic) MFMailComposeRecipientTextView *ccField; // @synthesize ccField=_ccField;
+@property(readonly, nonatomic) MFMailComposeToField *toField; // @synthesize toField=_toField;
+@property(nonatomic) __weak id <MFMailComposeToFieldDelegate> toFieldDelegate; // @synthesize toFieldDelegate=_toFieldDelegate;
+@property(nonatomic) __weak UIViewController *popoverOwner; // @synthesize popoverOwner=_popoverOwner;
+@property(nonatomic) __weak id <MFMailComposeRecipientTextViewDelegate> composeRecipientDelegate; // @synthesize composeRecipientDelegate=_composeRecipientViewDelegate;
+@property(nonatomic) __weak id <MFMailComposeViewDelegate> composeViewDelegate; // @synthesize composeViewDelegate=_mailComposeViewDelegate;
+- (void).cxx_destruct;
+- (void)_displayMetricsDidChange;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)layoutMarginsDidChange;
+- (void)traitCollectionDidChange:(id)arg1;
 - (struct CGPoint)_headerViewOriginWithScrollViewOffsetCalculation;
 - (void)textContentView:(id)arg1 didChangeSize:(struct CGSize)arg2;
 - (_Bool)textContentView:(id)arg1 shouldChangeSizeForContentSize:(struct CGSize)arg2;
@@ -98,9 +104,12 @@
 - (void)composeContactsSearchController:(id)arg1 finishedWithResults:(_Bool)arg2;
 - (void)composeContactsSearchController:(id)arg1 didSortResults:(id)arg2;
 - (id)sendingAccountProxyForComposeContactsSearchController:(id)arg1;
+- (void)autocompleteResultsController:(id)arg1 didAskToRemoveRecipient:(id)arg2;
 - (void)autocompleteResultsController:(id)arg1 didRequestInfoAboutRecipient:(id)arg2;
 - (void)autocompleteResultsController:(id)arg1 didSelectRecipient:(id)arg2 atIndex:(unsigned long long)arg3;
 - (void)didIgnoreSearchResults;
+- (void)dismissSearchResultsIfDisambiguating;
+- (void)disambiguateRecipient:(id)arg1 recipientView:(id)arg2;
 - (void)findCorecipientsWithRecipientView:(id)arg1;
 - (void)invalidateSearchResultRecipient:(id)arg1;
 - (void)clearSearchForActiveRecipientView;
@@ -172,7 +181,7 @@
 - (void)_adjustHeaderFieldsPreferredContentSize;
 - (void)_updateMultiField;
 - (void)_updateFromField;
-- (void)_setupField:(id *)arg1 withLabel:(id)arg2 navTitle:(id)arg3 frame:(struct CGRect)arg4;
+- (void)_setupField:(id)arg1 withLabel:(id)arg2 navTitle:(id)arg3;
 - (void)_multiFieldClicked;
 @property(nonatomic, getter=isShowingPeoplePicker) _Bool showingPeoplePicker;
 @property(nonatomic, getter=isChangingRecipients) _Bool changingRecipients;
@@ -217,7 +226,7 @@
 - (void)_cancelAnimations;
 - (id)_corecipientResultsTable;
 - (id)_searchResultsTable;
-@property(readonly, nonatomic) MFAutocompleteResultsTableViewController *searchViewController; // @synthesize searchViewController=_searchViewController;
+@property(readonly, nonatomic) CNAutocompleteResultsTableViewController *searchViewController; // @synthesize searchViewController=_searchViewController;
 - (_Bool)_presentsSearchResultsTableAsPopover;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 options:(unsigned long long)arg2;

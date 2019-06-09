@@ -29,7 +29,6 @@
 - (id)accountTypeTitleForSource:(id)arg1;
 - (id)accountTypeTitleForSourceWithExternalId:(id)arg1;
 - (id)titleForSource:(id)arg1 forBeginningOfSentence:(_Bool)arg2;
-- (id)_localizedTitleForLocalSourceUsedAtBeginningOfSentence:(_Bool)arg1;
 - (id)_displayAccountForAccountWithIdentifier:(id)arg1;
 - (id)_accountForAccountIdentifier:(id)arg1;
 - (void)_localeDidChange:(id)arg1;

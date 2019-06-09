@@ -8,10 +8,11 @@
 
 #import <CoreServices/NSSecureCoding-Protocol.h>
 
-@class NSDate, NSDictionary, NSString, NSUUID;
+@class LSExtensionPoint, NSDate, NSDictionary, NSNumber, NSString, NSUUID;
 
 @interface LSPlugInKitProxy : LSBundleProxy <NSSecureCoding>
 {
+    unsigned int _platform;
     _Bool _onSystemPartition;
     NSString *_signerOrganization;
     NSString *_pluginIdentifier;
@@ -37,6 +38,9 @@
 @property(readonly, nonatomic) NSString *originalIdentifier; // @synthesize originalIdentifier=_originalIdentifier;
 @property(readonly, nonatomic) NSString *pluginIdentifier; // @synthesize pluginIdentifier=_pluginIdentifier;
 - (id)signerOrganization;
+- (void).cxx_destruct;
+- (_Bool)_usesSystemPersona;
+- (id)_managedPersonas;
 - (id)description;
 - (id)_valueForEqualityTesting;
 @property(readonly, nonatomic) NSString *teamID; // @dynamic teamID;
@@ -44,16 +48,17 @@
 - (_Bool)profileValidated;
 - (id)iconDataForVariant:(int)arg1 withOptions:(int)arg2;
 - (id)boundIconsDictionary;
-- (_Bool)pluginCanProvideIcon;
+@property(readonly, nonatomic) LSExtensionPoint *extensionPoint;
+@property(readonly, nonatomic) _Bool pluginCanProvideIcon;
 @property(readonly, nonatomic) NSDictionary *infoPlist;
 @property(readonly, nonatomic) NSDictionary *pluginKitDictionary;
+@property(readonly, nonatomic) NSNumber *platform;
 - (id)objectForInfoDictionaryKey:(id)arg1 ofClass:(Class)arg2 inScope:(unsigned long long)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (void)dealloc;
 - (id)_initWithUUID:(id)arg1 bundleIdentifier:(id)arg2 pluginIdentifier:(id)arg3 effectiveIdentifier:(id)arg4 version:(id)arg5 bundleURL:(id)arg6;
 - (id)_initWithPlugin:(unsigned int)arg1 andContext:(struct LSContext *)arg2;
-- (id)localizedNameWithPreferredLocalizations:(id)arg1 useShortNameOnly:(_Bool)arg2;
+- (id)_localizedNameWithPreferredLocalizations:(id)arg1 useShortNameOnly:(_Bool)arg2;
 
 @end
 

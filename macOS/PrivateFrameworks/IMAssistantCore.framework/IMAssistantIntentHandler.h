@@ -16,7 +16,6 @@
 - (void).cxx_destruct;
 - (void)updateRecentlyUsedHandlersWithHandler:(id)arg1;
 - (id)existingHandlerForIntentIdentifier:(id)arg1;
-- (id)currentApplicationContext;
 - (id)handlerForIntent:(id)arg1;
 - (id)init;
 

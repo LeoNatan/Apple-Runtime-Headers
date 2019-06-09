@@ -26,6 +26,8 @@
 - (void)makeSecureTokenForExpirationDateOfPersistableContentKey:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)renewExpiringResponseDataForContentKeyRequest:(id)arg1;
 - (void)processContentKeyRequestWithIdentifier:(id)arg1 initializationData:(id)arg2 options:(id)arg3;
+- (void)_processContentKeyRequestWithIdentifier:(id)arg1 initializationData:(id)arg2 options:(id)arg3;
+- (id)_extractCryptKeyIdentifiersFromInitializationData:(id)arg1;
 @property(readonly) NSData *contentProtectionSessionIdentifier;
 - (void)expire;
 @property(readonly) NSString *keySystem;
@@ -37,8 +39,8 @@
 @property(readonly) NSObject<OS_dispatch_queue> *delegateQueue;
 @property(readonly) __weak id <AVContentKeySessionDelegate> delegate;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
+- (id)description;
 - (void)dealloc;
-- (void)finalize;
 - (void)_willDeallocOrFinalize;
 - (id)initWithKeySystem:(id)arg1 storageDirectoryAtURL:(id)arg2;
 - (id)initWithStorageDirectoryAtURL:(id)arg1;
@@ -48,6 +50,7 @@
 - (void)removeStreamDataParser:(id)arg1;
 - (void)addStreamDataParser:(id)arg1;
 - (void)_handleSecureStopDidFinalizeRecordCallback;
+- (BOOL)_setAuthorizationToken:(id)arg1 forIdentifier:(id)arg2 error:(id *)arg3;
 - (void)_invokeDelegateCallbackWithBlock:(CDUnknownBlockType)arg1 synchronouslyWhenDelegateQueueIsNULL:(BOOL)arg2;
 - (void)_removeContentKeyRequestForCryptorUUID:(id)arg1 cryptorKeyRequestID:(unsigned long long)arg2;
 - (id)_contentKeyRequestForCryptorUUID:(id)arg1 cryptorKeyRequestID:(unsigned long long)arg2;
@@ -55,8 +58,8 @@
 - (id)_internalQueue;
 - (void)issueContentKeyRequestWithPreloadingRequestOptions:(id)arg1 identifier:(id)arg2 initializationData:(id)arg3 providesPersistableKey:(BOOL)arg4;
 - (void)issueContentKeyRequestWithCustomURLHandler:(struct OpaqueFigCustomURLHandler *)arg1 identifier:(id)arg2 requestInfo:(struct __CFDictionary *)arg3 requestID:(unsigned long long)arg4 providesPersistableKey:(BOOL)arg5;
-- (void)issueContentKeyRequestWithCustomURLProviderContext:(id)arg1 identifier:(id)arg2 initializationData:(id)arg3 providesPersistableKey:(BOOL)arg4;
-- (void)issueContentKeyRequest:(id)arg1;
+- (void)failProcessingContentKeyRequestWithIdentifier:(id)arg1 initializationData:(id)arg2 error:(id)arg3;
+- (void)issueContentKeyRequest:(id)arg1 forKeyRenewal:(BOOL)arg2;
 - (BOOL)clientCanReceivePersistableContentKeyRequest;
 - (void)createProtectorSessionIdentifierIfNecessary;
 - (int)setAppIdentifier:(id)arg1;

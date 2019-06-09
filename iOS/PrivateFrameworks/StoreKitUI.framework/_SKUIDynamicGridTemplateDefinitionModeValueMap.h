@@ -8,6 +8,7 @@
 
 @class NSMutableArray, NSMutableDictionary;
 
+__attribute__((visibility("hidden")))
 @interface _SKUIDynamicGridTemplateDefinitionModeValueMap : NSObject
 {
     NSMutableArray *_defaultTemplateDefinitionViewElements;

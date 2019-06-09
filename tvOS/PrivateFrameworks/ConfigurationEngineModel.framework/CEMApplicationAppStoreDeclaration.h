@@ -8,13 +8,13 @@
 
 #import <ConfigurationEngineModel/CEMRegisteredTypeProtocol-Protocol.h>
 
-@class CEMAssetBaseDescriptor, NSString;
+@class CEMAssetBaseDescriptor, NSNumber, NSString;
 
 @interface CEMApplicationAppStoreDeclaration : CEMAssetBase <CEMRegisteredTypeProtocol>
 {
     CEMAssetBaseDescriptor *_payloadDescriptor;
     NSString *_payloadBundleIdentifier;
-    NSString *_payloadITunesStoreID;
+    NSNumber *_payloadITunesStoreID;
 }
 
 + (id)buildRequiredOnlyWithIdentifier:(id)arg1 withDescriptor:(id)arg2 withBundleIdentifier:(id)arg3 withITunesStoreID:(id)arg4;
@@ -22,7 +22,7 @@
 + (id)allowedPayloadKeys;
 + (id)registeredIdentifier;
 + (id)registeredClassName;
-@property(copy, nonatomic) NSString *payloadITunesStoreID; // @synthesize payloadITunesStoreID=_payloadITunesStoreID;
+@property(copy, nonatomic) NSNumber *payloadITunesStoreID; // @synthesize payloadITunesStoreID=_payloadITunesStoreID;
 @property(copy, nonatomic) NSString *payloadBundleIdentifier; // @synthesize payloadBundleIdentifier=_payloadBundleIdentifier;
 @property(copy, nonatomic) CEMAssetBaseDescriptor *payloadDescriptor; // @synthesize payloadDescriptor=_payloadDescriptor;
 - (void).cxx_destruct;

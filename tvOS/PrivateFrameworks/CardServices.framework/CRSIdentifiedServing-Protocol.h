@@ -5,11 +5,10 @@
 //
 
 #import <CardServices/CRSServing-Protocol.h>
-#import <CardServices/NSSecureCoding-Protocol.h>
 
 @class NSString;
 
-@protocol CRSIdentifiedServing <CRSServing, NSSecureCoding>
+@protocol CRSIdentifiedServing <CRSServing>
 @property(readonly, copy, nonatomic) NSString *serviceIdentifier;
 @end
 

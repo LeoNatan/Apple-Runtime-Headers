@@ -6,23 +6,28 @@
 
 #import <UIKit/UIViewController.h>
 
+#import <NotesUI/ICNotePreviewing-Protocol.h>
 #import <NotesUI/UITextViewDelegate-Protocol.h>
 
-@class NSString, NoteContentLayer, NoteObject, NotesBackgroundView;
+@class ICSearchResult, NSString, NoteContentLayer, NoteObject, NotesBackgroundView;
 
-@interface NotePreviewController : UIViewController <UITextViewDelegate>
+@interface NotePreviewController : UIViewController <UITextViewDelegate, ICNotePreviewing>
 {
-    NoteObject *_note;
     NoteContentLayer *_contentLayer;
+    NoteObject *_note;
+    ICSearchResult *_searchResult;
 }
 
-@property(retain, nonatomic) NoteContentLayer *contentLayer; // @synthesize contentLayer=_contentLayer;
+@property(retain, nonatomic) ICSearchResult *searchResult; // @synthesize searchResult=_searchResult;
 @property(retain, nonatomic) NoteObject *note; // @synthesize note=_note;
+@property(retain, nonatomic) NoteContentLayer *contentLayer; // @synthesize contentLayer=_contentLayer;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) NotesBackgroundView *backgroundView;
-- (void)setupHTMLNotePreviewWithFrame:(struct CGRect)arg1;
-- (void)setupHTMLNotePreview;
-- (void)viewDidLoad;
+- (id)attachmentContentIDs;
+- (void)setupPreviewWithInitialFrame:(struct CGRect)arg1;
+- (void)setupPreview;
+- (id)initWithNote:(id)arg1;
+- (id)initWithNote:(id)arg1 searchResult:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

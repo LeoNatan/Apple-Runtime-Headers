@@ -6,7 +6,12 @@
 
 #import <Foundation/NSFileManager.h>
 
+@class NSArray;
+
 @interface NSFileManager (AMCocoaExtensions)
++ (id)am_cachedNumberFormatter;
 - (BOOL)am_createDirectoryAtPath:(id)arg1;
+- (id)am_fileURLForBaseName:(id)arg1 extension:(id)arg2 isDuplicate:(BOOL)arg3 number:(long long *)arg4 unique:(BOOL)arg5 directoryURL:(id)arg6;
+@property(readonly, nonatomic) NSArray *am_mountedLocalVolumePaths;
 @end
 

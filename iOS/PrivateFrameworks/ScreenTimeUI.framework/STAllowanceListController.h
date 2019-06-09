@@ -4,28 +4,33 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Preferences/PSListController.h>
+#import <ScreenTimeUI/STPINListViewController.h>
 
 #import <ScreenTimeUI/STAllowanceDetailListControllerDelegate-Protocol.h>
-#import <ScreenTimeUI/STAllowanceSetupListControllerDelegate-Protocol.h>
 
-@class NSArray, NSObject, NSString;
+@class NSArray, NSObject, NSString, PSSpecifier;
 @protocol STRootViewModelCoordinator;
 
-@interface STAllowanceListController : PSListController <STAllowanceDetailListControllerDelegate, STAllowanceSetupListControllerDelegate>
+__attribute__((visibility("hidden")))
+@interface STAllowanceListController : STPINListViewController <STAllowanceDetailListControllerDelegate>
 {
     NSObject<STRootViewModelCoordinator> *_coordinator;
     NSArray *_allowanceSpecifiers;
+    PSSpecifier *_enableAllAllowancesSpecifier;
 }
 
+@property(retain) PSSpecifier *enableAllAllowancesSpecifier; // @synthesize enableAllAllowancesSpecifier=_enableAllAllowancesSpecifier;
 @property(copy) NSArray *allowanceSpecifiers; // @synthesize allowanceSpecifiers=_allowanceSpecifiers;
 @property(retain, nonatomic) NSObject<STRootViewModelCoordinator> *coordinator; // @synthesize coordinator=_coordinator;
 - (void).cxx_destruct;
 - (void)showStoreDemoAlert;
-- (void)allowanceSetupListControllerDidCancel:(id)arg1;
-- (void)allowanceSetupListController:(id)arg1 didSelectAllowanceIdentifiers:(id)arg2;
 - (void)allowanceDetailController:(id)arg1 didDeleteAllowance:(id)arg2;
 - (void)allowanceDetailController:(id)arg1 didSaveAllowance:(id)arg2;
+- (void)deleteAllowance:(id)arg1;
+- (void)_showConfirmDeletionView:(id)arg1;
+- (void)confirmDeletion:(id)arg1;
+- (void)tableView:(id)arg1 commitEditingStyle:(long long)arg2 forRowAtIndexPath:(id)arg3;
+- (long long)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (void)addAllowance:(id)arg1;
 - (void)_showAllowanceDetailController:(id)arg1;
 - (id)_subtitleTextForAllowance:(id)arg1;

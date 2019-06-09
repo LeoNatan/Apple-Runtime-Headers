@@ -11,6 +11,7 @@
 @class NSString, SKStarRatingControl, SKUIComposeTextFieldListView, SKUIReviewMetadata, UIResponder;
 @protocol SKUIComposeReviewHeaderDelegate;
 
+__attribute__((visibility("hidden")))
 @interface SKUIComposeReviewHeaderView : UIView <SKUIComposeTextFieldListViewDelegate>
 {
     id <SKUIComposeReviewHeaderDelegate> _delegate;

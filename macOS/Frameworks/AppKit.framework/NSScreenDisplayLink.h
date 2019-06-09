@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     struct __CFRunLoopTimer *_timer;
     struct os_unfair_lock_s _lock;
     unsigned long long _scheduleCount;
-    CDStruct_c75109f2 _targetTime;
+    unsigned long long _targetTime;
     unsigned int _paused:1;
     unsigned int _firing:1;
 }

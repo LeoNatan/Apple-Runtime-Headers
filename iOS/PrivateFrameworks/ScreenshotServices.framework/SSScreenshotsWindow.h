@@ -24,7 +24,6 @@
 
 + (_Bool)_isSecure;
 - (void).cxx_destruct;
-- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_deviceBacklightChanged:(unsigned long long)arg1;
 - (void)_deviceLockStateChanged:(unsigned long long)arg1;
 - (void)handleStatusBarChangeFromHeight:(double)arg1 toHeight:(double)arg2;

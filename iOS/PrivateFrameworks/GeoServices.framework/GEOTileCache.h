@@ -23,7 +23,6 @@
 - (void)removeTilesWithKeys:(id)arg1;
 - (void)removeTileForKey:(const struct _GEOTileKey *)arg1;
 - (void)_removeTileForKey:(const struct _GEOTileKey *)arg1;
-- (void)setNullForKey:(const struct _GEOTileKey *)arg1;
 - (void)setTile:(id)arg1 forKey:(const struct _GEOTileKey *)arg2 cost:(unsigned long long)arg3;
 - (_Bool)containsKey:(const struct _GEOTileKey *)arg1 cost:(unsigned long long *)arg2;
 - (id)tileForKey:(const struct _GEOTileKey *)arg1;
@@ -35,8 +34,8 @@
 - (id)_description;
 - (void)dealloc;
 - (id)init;
-@property(readonly) unsigned long long currentCost;
-@property(readonly) unsigned long long currentCount;
+@property(readonly, nonatomic) unsigned long long currentCost;
+@property(readonly, nonatomic) unsigned long long currentCount;
 
 @end
 

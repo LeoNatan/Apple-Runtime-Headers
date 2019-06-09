@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-+ (id)autocorrectionRectsWithRects:(struct CGRect)arg1 lastRect:(struct CGRect)arg2;
++ (id)autocorrectionRectsWithFirstCGRect:(struct CGRect)arg1 lastCGRect:(struct CGRect)arg2;
 
 @end
 

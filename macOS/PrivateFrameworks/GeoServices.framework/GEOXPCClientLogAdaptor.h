@@ -6,15 +6,15 @@
 
 #import <GeoServices/GEOBaseLogAdaptor.h>
 
-@class NSLock, NSMutableArray, NSObject;
+@class NSMutableArray, NSObject;
 @protocol OS_dispatch_queue;
 
 @interface GEOXPCClientLogAdaptor : GEOBaseLogAdaptor
 {
-    NSObject<OS_dispatch_queue> *_serverConnectionQueue;
+    NSObject<OS_dispatch_queue> *_queue;
     BOOL _flushLogsFailed;
     NSMutableArray *_failedLogMessages;
-    NSLock *_failedLogMessagesLock;
+    struct os_unfair_lock_s _failedLogMessagesLock;
 }
 
 - (void).cxx_destruct;

@@ -8,5 +8,17 @@
 
 @interface NSString (IKCocoaFixes)
 + (id)IKStringFromSize:(long long)arg1;
++ (id)delegate;
+- (id)delegate;
+- (id)stringByLeftPaddingToLength:(unsigned long long)arg1 withString:(id)arg2 startingAtIndex:(unsigned long long)arg3;
+- (id)viewWithPriorityAtIndex:(long long)arg1;
+- (id)lastViewNameWithPriority;
+- (id)firstViewNameWithPriority;
+- (id)viewAtIndex:(long long)arg1;
+- (long long)viewCount;
+- (id)lastViewName;
+- (id)firstViewName;
+- (id)viewWithPriorityArray;
+- (id)viewArray;
 @end
 

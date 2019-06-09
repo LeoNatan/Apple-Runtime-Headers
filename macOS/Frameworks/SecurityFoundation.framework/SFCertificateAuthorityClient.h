@@ -12,7 +12,7 @@
 }
 
 + (id)sharedCertificateAuthorityClient;
-- (id)certificateSigningRequestWithInvitation:(id)arg1 publicKey:(struct OpaqueSecKeyRef *)arg2 privateKey:(struct OpaqueSecKeyRef *)arg3 keychain:(struct OpaqueSecKeychainRef *)arg4 user:(id)arg5 emailAddress:(id)arg6 accessRef:(struct OpaqueSecAccessRef *)arg7 inputParms:(id)arg8 error:(id *)arg9;
+-     // Error parsing type: @88@0:8@16^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}24^{__SecKey={__CFRuntimeBase=QAQ}^{__SecKeyDescriptor}^v}32^{__SecKeychain=}40@48@56^{__SecAccess=}64@72^@80, name: certificateSigningRequestWithInvitation:publicKey:privateKey:keychain:user:emailAddress:accessRef:inputParms:error:
 - (id)certificateAuthorityCertificatesFromInvitation:(id)arg1 sharedSecret:(id)arg2 inputParms:(id)arg3 error:(id *)arg4;
 
 @end

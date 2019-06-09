@@ -25,15 +25,18 @@
     unsigned long long _defaultRule;
     unsigned long long _defaultMask;
     unsigned long long _ignoreMask;
+    BOOL _isDataROSP;
 }
 
 - (void)dump;
 - (id)filterDataForMountDepth:(int)arg1;
 - (struct _MDPlistContainer *)copyFilterMDPlistForMountDepth:(int)arg1;
+- (void)addRules:(CDStruct_bcaf8faf *)arg1 withPrefix:(id)arg2 tableMapping:(id)arg3;
 - (void)addRules:(CDStruct_bcaf8faf *)arg1 withPrefix:(id)arg2;
 - (void)addNamed:(id)arg1 auxValue:(unsigned long long)arg2 forPath:(id)arg3;
 - (void)addNamed:(id)arg1 field:(int)arg2 value:(int)arg3 forPath:(id)arg4 permitLink:(BOOL)arg5;
 - (void)addNamed:(id)arg1 field:(int)arg2 value:(int)arg3 hasAuxValue:(BOOL)arg4 auxValue:(unsigned long long)arg5 forPath:(id)arg6 permitLink:(BOOL)arg7 copyParentWildcardLink:(BOOL)arg8;
+- (void)markDataROSP;
 - (void)setAtBundleField:(unsigned int)arg1 inBundleField:(unsigned int)arg2;
 - (void)addMappedExtensions:(id)arg1;
 - (void)dealloc;

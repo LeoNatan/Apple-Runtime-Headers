@@ -6,18 +6,23 @@
 
 #import <objc/NSObject.h>
 
+#import <MediaPlayer/NSSecureCoding-Protocol.h>
+
 @class NSString;
 
-@interface MPSectionedIdentifierListEntryPositionKey : NSObject
+@interface MPSectionedIdentifierListEntryPositionKey : NSObject <NSSecureCoding>
 {
     NSString *_deviceIdentifier;
     NSString *_generation;
 }
 
++ (_Bool)supportsSecureCoding;
 + (id)positionKeyWithDeviceIdentifier:(id)arg1 generation:(id)arg2;
 @property(copy, nonatomic) NSString *generation; // @synthesize generation=_generation;
 @property(copy, nonatomic) NSString *deviceIdentifier; // @synthesize deviceIdentifier=_deviceIdentifier;
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (long long)compare:(id)arg1;
 
 @end

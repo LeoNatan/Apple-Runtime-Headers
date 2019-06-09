@@ -6,18 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <Message/ECMailbox-Protocol.h>
-#import <Message/MFMailboxPredictionMailbox-Protocol.h>
-#import <Message/MFPubliclyDescribable-Protocol.h>
+#import <Message/EDIndexableMailbox-Protocol.h>
+#import <Message/EFPubliclyDescribable-Protocol.h>
 #import <Message/NSCopying-Protocol.h>
 
-@class MFInvocationQueue, MFMessageCriterion, MFWeakReferenceHolder, MailAccount, NSArray, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
+@class EMObjectID, MFInvocationQueue, MFMessageCriterion, MFWeakReferenceHolder, MailAccount, NSArray, NSMutableArray, NSMutableDictionary, NSNumber, NSString, NSURL;
 
-@interface MFMailboxUid : NSObject <MFMailboxPredictionMailbox, ECMailbox, NSCopying, MFPubliclyDescribable>
+@interface MFMailboxUid : NSObject <NSCopying, EFPubliclyDescribable, EDIndexableMailbox>
 {
     NSString *uniqueId;
-    unsigned int _mailboxID;
-    MFWeakReferenceHolder *_account;
+    long long _mailboxID;
+    MailAccount *_account;
     NSString *_pathComponent;
     unsigned int _attributes;
     MFWeakReferenceHolder *_parent;
@@ -39,7 +38,9 @@
 + (_Bool)isStandardizedMailboxUidType:(int)arg1;
 + (id)specialNameForType:(int)arg1;
 + (id)fileURLForMailboxURL:(id)arg1;
++ (id)defaultScheduler;
 @property(retain, nonatomic) NSArray *extraAttributes; // @synthesize extraAttributes=_extraAttributes;
+- (void).cxx_destruct;
 - (void)updateSuggestionsLostMessageSearchResultCount:(unsigned int)arg1;
 @property(readonly, nonatomic) double suggestionsLostMessageSearchTimestamp;
 @property(readonly, nonatomic) unsigned int suggestionsLostMessageSearchResultCount;
@@ -63,23 +64,25 @@
 - (id)userInfoObjectForKey:(id)arg1;
 - (id)_loadUserInfo;
 - (_Bool)isVisible;
-- (void)setType:(int)arg1;
+- (void)setMailboxType:(int)arg1;
 @property(readonly, nonatomic) int type;
-@property(readonly, copy, nonatomic) NSString *mf_publicDescription;
+- (int)mailboxType;
+@property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 - (id)_privacySafeDescription;
 @property(readonly, copy) NSString *description;
 - (_Bool)isDescendantOfMailbox:(id)arg1;
 - (int)indexToInsertChildMailboxUid:(id)arg1;
 - (int)compareWithMailboxUid:(id)arg1;
 - (id)URLStringNonNil;
-- (unsigned int)mailboxID;
-- (id)URLString;
+@property(readonly, copy, nonatomic) NSString *persistentID;
+- (long long)mailboxID;
+@property(readonly, nonatomic) EMObjectID *objectID;
+@property(readonly, copy, nonatomic) NSString *URLString;
 - (id)oldURLString;
-- (id)URLStringWithAccount:(id)arg1;
-- (id)URL;
+- (id)URLWithAccount:(id)arg1;
+@property(readonly, nonatomic) NSURL *URL;
 - (id)pathRelativeToMailboxForDisplay:(id)arg1;
 - (id)pathRelativeToMailbox:(id)arg1;
-- (id)tildeAbbreviatedPath;
 - (id)realFullPath;
 - (id)fullPath;
 - (id)accountRelativePath;
@@ -140,9 +143,7 @@
 - (id)_initWithName:(id)arg1 attributes:(unsigned int)arg2 forAccount:(id)arg3;
 - (id)initWithAccount:(id)arg1;
 - (id)init;
-- (void)dealloc;
 @property(readonly, nonatomic) MFInvocationQueue *attachmentDownloadQueue;
-@property(readonly, copy, nonatomic) NSString *persistentID;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

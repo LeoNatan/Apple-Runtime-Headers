@@ -25,6 +25,7 @@
     NSArray *_recipients;
 }
 
++ (_Bool)supportsSecureCoding;
 + (Class)recipientsType;
 @property(nonatomic) _Bool success; // @synthesize success=_success;
 @property(nonatomic) int shareMode; // @synthesize shareMode=_shareMode;
@@ -35,6 +36,8 @@
 @property(readonly) unsigned long long hash;
 - (_Bool)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
 @property(nonatomic) _Bool hasSuccess;

@@ -37,7 +37,6 @@
 @property(readonly, copy, nonatomic) NSDictionary *infoDictionary;
 @property(readonly, copy, nonatomic) NSString *extensionPointIdentifier;
 - (id)initWithExtensionIdentifier:(id)arg1 extensionProvider:(id)arg2;
-- (void)startRideSharingSearchRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)handleRequest:(id)arg1 requestDispatcher:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)startSendingUpdatesForRequest:(id)arg1 requestDispatcher:(id)arg2 toObserver:(id)arg3;
 - (void)startExtensionServiceWithInputItems:(id)arg1 begin:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;

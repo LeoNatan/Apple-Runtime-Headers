@@ -25,6 +25,7 @@
 }
 
 + (id)listVersionsOfDocumentAtURL:(id)arg1;
++ (id)allocWithZone:(struct _NSZone *)arg1;
 @property(nonatomic) _Bool hasThumbnail; // @synthesize hasThumbnail=_hasThumbnail;
 @property(readonly, nonatomic) NSPersonNameComponents *lastEditorNameComponents; // @synthesize lastEditorNameComponents=_lastEditorNameComponents;
 @property(readonly, nonatomic) NSString *lastEditorDeviceName; // @synthesize lastEditorDeviceName=_lastEditorDeviceName;

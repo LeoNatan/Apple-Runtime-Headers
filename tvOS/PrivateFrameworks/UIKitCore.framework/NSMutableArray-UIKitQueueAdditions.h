@@ -10,5 +10,16 @@
 - (id)_ui_peek;
 - (id)_ui_dequeue;
 - (void)_ui_enqueue:(id)arg1;
+- (void)removeViewsFromSuperview;
+- (void)_kb_reverse;
+- (void)_uikbrtRemove:(id)arg1;
+- (void)_uikbrtInsert:(id)arg1 beforeItemPassingTest:(CDUnknownBlockType)arg2;
+- (void)_uikbrtInsert:(id)arg1 after:(id)arg2;
+- (void)_uikbrtInsert:(id)arg1 before:(id)arg2;
+- (void)_set_syncQueue:(id)arg1;
+- (id)_syncQueue;
+- (void)_set_listContainsOrderedItems:(_Bool)arg1;
+- (_Bool)_listContainsOrderedItems;
+- (void)_addObjectsFromArray:(id)arg1 range:(struct _NSRange)arg2;
 @end
 

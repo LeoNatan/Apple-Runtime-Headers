@@ -17,6 +17,7 @@
 + (id)unitTestDatabaseDirectoryPath:(id)arg1;
 + (id)unitTestOutputDirectoryPath;
 + (id)unitTestInputDirectoryPath;
++ (id)submissionServiceAccessEntitlement;
 + (id)bitValueMapDirectoryPath;
 + (id)runtimeBlacklistDirectoryPath;
 + (id)systemBlacklistDirectoryPath;
@@ -26,9 +27,14 @@
 + (id)budgetPropertiesPath;
 + (id)keyPropertiesPath;
 + (id)keyNamesPath;
++ (BOOL)appleInternalConfigExists;
++ (id)configDirectoryPath;
 + (id)reportsDirectoryPath;
 + (id)databaseDirectoryPath;
-+ (id)machServiceName;
++ (id)sandboxName;
++ (id)agentMachServiceName;
++ (id)daemonMachServiceName;
++ (BOOL)isDPrivacyAgentD;
 
 @end
 

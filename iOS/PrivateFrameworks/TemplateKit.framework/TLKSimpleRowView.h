@@ -6,11 +6,11 @@
 
 #import <TemplateKit/TLKView.h>
 
-#import <TemplateKit/NUIContainerGridViewDelegate-Protocol.h>
+#import <TemplateKit/NUIContainerViewDelegate-Protocol.h>
 
-@class NSString, NUIContainerGridView, TLKImage, TLKImageView, TLKRichText, TLKVibrantLabel;
+@class NSString, NUIContainerGridView, TLKImage, TLKImageView, TLKLabel, TLKRichText;
 
-@interface TLKSimpleRowView : TLKView <NUIContainerGridViewDelegate>
+@interface TLKSimpleRowView : TLKView <NUIContainerViewDelegate>
 {
     TLKImage *_leadingImage;
     TLKRichText *_leadingTitle;
@@ -19,22 +19,20 @@
     TLKRichText *_trailingTitle;
     TLKRichText *_trailingSubtitle;
     TLKImageView *_leadingImageView;
-    TLKVibrantLabel *_leadingTitleLabel;
-    TLKVibrantLabel *_leadingSubtitleLabel;
-    TLKVibrantLabel *_trailingTitleLabel;
-    TLKVibrantLabel *_trailingSubtitleLabel;
+    TLKLabel *_leadingTitleLabel;
+    TLKLabel *_leadingSubtitleLabel;
+    TLKLabel *_trailingTitleLabel;
+    TLKLabel *_trailingSubtitleLabel;
     TLKImageView *_trailingImageView;
-    NUIContainerGridView *_containerView;
 }
 
 + (void)applyText:(id)arg1 toLabel:(id)arg2;
-@property(retain) NUIContainerGridView *containerView; // @synthesize containerView=_containerView;
-@property(retain) TLKImageView *trailingImageView; // @synthesize trailingImageView=_trailingImageView;
-@property(retain) TLKVibrantLabel *trailingSubtitleLabel; // @synthesize trailingSubtitleLabel=_trailingSubtitleLabel;
-@property(retain) TLKVibrantLabel *trailingTitleLabel; // @synthesize trailingTitleLabel=_trailingTitleLabel;
-@property(retain) TLKVibrantLabel *leadingSubtitleLabel; // @synthesize leadingSubtitleLabel=_leadingSubtitleLabel;
-@property(retain) TLKVibrantLabel *leadingTitleLabel; // @synthesize leadingTitleLabel=_leadingTitleLabel;
-@property(retain) TLKImageView *leadingImageView; // @synthesize leadingImageView=_leadingImageView;
+@property(retain, nonatomic) TLKImageView *trailingImageView; // @synthesize trailingImageView=_trailingImageView;
+@property(retain, nonatomic) TLKLabel *trailingSubtitleLabel; // @synthesize trailingSubtitleLabel=_trailingSubtitleLabel;
+@property(retain, nonatomic) TLKLabel *trailingTitleLabel; // @synthesize trailingTitleLabel=_trailingTitleLabel;
+@property(retain, nonatomic) TLKLabel *leadingSubtitleLabel; // @synthesize leadingSubtitleLabel=_leadingSubtitleLabel;
+@property(retain, nonatomic) TLKLabel *leadingTitleLabel; // @synthesize leadingTitleLabel=_leadingTitleLabel;
+@property(retain, nonatomic) TLKImageView *leadingImageView; // @synthesize leadingImageView=_leadingImageView;
 @property(retain, nonatomic) TLKRichText *trailingSubtitle; // @synthesize trailingSubtitle=_trailingSubtitle;
 @property(retain, nonatomic) TLKRichText *trailingTitle; // @synthesize trailingTitle=_trailingTitle;
 @property(retain, nonatomic) TLKImage *trailingImage; // @synthesize trailingImage=_trailingImage;
@@ -45,6 +43,7 @@
 - (id)bottomRowViews;
 - (id)topRowViews;
 - (double)widthOfColumnAtIndex:(unsigned long long)arg1;
+- (id)fontForTextInLabel:(id)arg1;
 - (id)trailingSubtitleLabelFont;
 - (id)trailingTitleLabelFont;
 - (id)leadingTitleLabelFont;
@@ -57,11 +56,12 @@
 - (struct CGRect)containerView:(id)arg1 layoutFrameForArrangedSubview:(id)arg2 withProposedFrame:(struct CGRect)arg3;
 - (_Bool)hasSubtitles;
 - (void)observedPropertiesChanged;
-- (void)styleDidChange:(unsigned long long)arg1;
 - (id)gridOfAllViews;
-- (id)init;
+- (_Bool)usesDefaultInsets;
+- (id)setupContentView;
 
 // Remaining properties
+@property(retain, nonatomic) NUIContainerGridView *contentView; // @dynamic contentView;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

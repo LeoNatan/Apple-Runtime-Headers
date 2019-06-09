@@ -21,8 +21,6 @@
     NSMutableOrderedSet *_remainingMomentShareObjectIDsToFetch;
 }
 
-+ (id)mockOutgoingDataSourceManager;
-+ (id)mockIncomingDataSourceManager;
 + (id)dataSourceManager;
 + (id)_dataSourceManagerWithPredicate:(id)arg1;
 + (id)emptyDataSourceManager;

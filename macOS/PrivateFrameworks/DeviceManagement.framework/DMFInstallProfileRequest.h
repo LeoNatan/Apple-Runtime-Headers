@@ -14,12 +14,14 @@
     unsigned long long _type;
     NSString *_managingProfileIdentifier;
     NSData *_profileData;
+    NSString *_personaID;
 }
 
 + (BOOL)supportsSecureCoding;
 + (BOOL)isPermittedOnUserConnection;
 + (BOOL)isPermittedOnSystemConnection;
 + (id)permittedPlatforms;
+@property(copy, nonatomic) NSString *personaID; // @synthesize personaID=_personaID;
 @property(copy, nonatomic) NSData *profileData; // @synthesize profileData=_profileData;
 @property(copy, nonatomic) NSString *managingProfileIdentifier; // @synthesize managingProfileIdentifier=_managingProfileIdentifier;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;

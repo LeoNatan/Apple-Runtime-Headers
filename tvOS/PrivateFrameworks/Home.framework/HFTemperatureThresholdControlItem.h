@@ -11,6 +11,7 @@
 }
 
 + (id)readOnlyCharacteristicTypes;
+- (id)numberValueFormatter;
 - (id)targetCharacteristicTypeWithCharacteristicValuesKeyedByType:(id)arg1;
 - (unsigned long long)rangeModeWithCharacteristicValuesKeyedByType:(id)arg1;
 - (id)initWithValueSource:(id)arg1 displayResults:(id)arg2;

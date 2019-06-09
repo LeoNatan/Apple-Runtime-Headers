@@ -28,12 +28,12 @@
 @property(retain, nonatomic) IMKUICandidateArrowButton *arrowButton; // @synthesize arrowButton=_arrowButton;
 - (void).cxx_destruct;
 - (id)appearanceView;
+- (long long)accessibilityOrientation;
 - (id)candidatesSelectableByKeyboard;
 - (id)visibleCandidates;
 - (id)parentView;
 - (struct CGRect)frameForAccessibilityElement:(id)arg1;
 - (void)moveAccessibilityElementToVisibleArea:(id)arg1;
-- (void)setSelectedSortingMode:(id)arg1;
 - (void)keyPressed:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (void)hide;
@@ -43,8 +43,10 @@
 - (void)moveToBeginning;
 - (void)moveBackwardOnePage;
 - (void)moveForwardOnePage;
+- (BOOL)selectedLineIsInVisibleRange:(long long)arg1;
 - (void)moveBackwardOneLine;
 - (void)moveForwardOneLine;
+- (unsigned long long)lineIndexForSelectedCandidate;
 - (void)moveBackwardOneElement;
 - (void)moveForwardOneElement;
 - (id)stringIdentifiersForVisibleItemsInFirstLine;
@@ -63,6 +65,7 @@
 - (void)loadWindow;
 - (void)updateVisualElements;
 - (void)updateArrowButtonVisibility;
+- (struct CGRect)arrowButtonFrameWithExpansion:(BOOL)arg1;
 - (void)updateLayout;
 - (void)updateLayoutTraits;
 - (void)updateWindowSize:(struct CGSize)arg1 withAnimation:(BOOL)arg2;
@@ -73,6 +76,7 @@
 - (unsigned long long)topVisibleLine;
 - (void)setCandidateGroups:(id)arg1;
 - (id)candidateItemForCandidate:(id)arg1 layout:(id)arg2;
+- (id)init;
 
 @end
 

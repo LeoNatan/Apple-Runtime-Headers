@@ -33,8 +33,8 @@
 - (void)syncServiceTransport:(id)arg1 didFailSendingProtobufWithIdentifier:(id)arg2 errorCode:(int)arg3;
 - (void)syncServiceTransport:(id)arg1 didSendProtobufSuccessfullyWithIdentifier:(id)arg2;
 - (void)syncServiceTransport:(id)arg1 didReadProtobufData:(id)arg2 type:(unsigned int)arg3;
-- (id)sendProtobufData:(id)arg1 type:(unsigned int)arg2 priority:(unsigned int)arg3 repeatPreventionId:(id)arg4 shortTimeout:(_Bool)arg5 allowCloudDelivery:(_Bool)arg6;
-- (id)sendProtobufData:(id)arg1 type:(unsigned int)arg2 priority:(unsigned int)arg3 shortTimeout:(_Bool)arg4 allowCloudDelivery:(_Bool)arg5;
+- (id)sendProtobufData:(id)arg1 type:(unsigned int)arg2 priority:(unsigned int)arg3 repeatPreventionId:(id)arg4 timeoutCategory:(unsigned int)arg5 allowCloudDelivery:(_Bool)arg6;
+- (id)sendProtobufData:(id)arg1 type:(unsigned int)arg2 priority:(unsigned int)arg3 timeoutCategory:(unsigned int)arg4 allowCloudDelivery:(_Bool)arg5;
 - (id)sendProtobufData:(id)arg1 type:(unsigned int)arg2 priority:(unsigned int)arg3 timeout:(double)arg4 allowCloudDelivery:(_Bool)arg5;
 - (void)spaceBecameAvailable;
 - (void)connectivityChanged;

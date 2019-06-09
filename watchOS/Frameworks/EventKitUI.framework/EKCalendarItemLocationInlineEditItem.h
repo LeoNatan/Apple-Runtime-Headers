@@ -11,26 +11,22 @@
 #import <EventKitUI/EKEventDetailPredictedLocationCellDelegate-Protocol.h>
 #import <EventKitUI/UITextFieldDelegate-Protocol.h>
 
-@class EKEventDetailPredictedLocationCell, EKParticipant, EKRequestAvailabilityOperation, EKUILocationEditItemCell, NSArray, NSString, UITableViewCell, UIView;
+@class NSMutableArray, NSMutableDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface EKCalendarItemLocationInlineEditItem : EKCalendarItemEditItem <UITextFieldDelegate, EKEditItemViewControllerDelegate, EKEventDetailPredictedLocationCellDelegate, EKCalendarItemInlineEditItem>
 {
-    UITableViewCell *_nonConferenceLocationCell;
-    EKUILocationEditItemCell *_conferenceLocationCell;
-    EKEventDetailPredictedLocationCell *_suggestedLocationCell;
+    NSMutableArray *_locationsAndCells;
     _Bool _sourceSupportsAvailabilityRequests;
-    UIView *_clearButtonView;
-    EKRequestAvailabilityOperation *_availabilityRequest;
-    NSArray *_availabilitySpansForLocation;
-    EKParticipant *_conferenceRoom;
-    int _conferenceRoomAvailabilityType;
+    NSMutableDictionary *_conferenceRoomInfos;
 }
 
 + (id)_locationPlaceholder;
++ (id)conferenceRoomNameForLocation:(id)arg1;
 - (void).cxx_destruct;
-- (_Bool)_showSuggestedLocationCell;
-- (_Bool)_showConferenceLocationCell;
+- (id)participantForConferenceRoomName:(id)arg1;
+- (_Bool)_showSuggestedLocation:(id)arg1;
+- (_Bool)_showConferenceLocation:(id)arg1;
 - (id)searchStringForEventAutocomplete;
 - (_Bool)textFieldShouldClear:(id)arg1;
 - (_Bool)textFieldShouldReturn:(id)arg1;
@@ -43,13 +39,16 @@ __attribute__((visibility("hidden")))
 - (_Bool)isSubitemAtIndexSaveable:(unsigned int)arg1;
 - (_Bool)forceRefreshStartAndEndDatesOnSave;
 - (_Bool)saveAndDismissWithForce:(_Bool)arg1;
-- (void)_clearButtonTapped;
+- (void)_clearLocation:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)_clearButtonTapped:(id)arg1;
 - (void)_updateAvailabilityInformation;
-- (id)_clearButtonView;
-- (void)_refreshConferenceRoomCell;
-- (void)_setNewStructuredLocation:(id)arg1;
-- (void)_updateLocationWithConferenceRoom:(id)arg1;
-- (void)_updateLocationWithStructuredLocation:(id)arg1;
+- (id)_clearButtonView:(unsigned int)arg1;
+- (void)_refreshConferenceRoomCell:(id)arg1;
+- (id)locationCellPairForCell:(id)arg1;
+- (void)_updateLocation:(id)arg1 withConferenceRoom:(id)arg2;
+- (void)_updateLocation:(id)arg1 withStructuredLocation:(id)arg2;
+- (void)_updateCalendarItemLocation;
+- (void)_updateAuxiliaryLocationsForNewLocation:(id)arg1;
 - (id)detailViewControllerWithFrame:(struct CGRect)arg1 forSubitemAtIndex:(unsigned int)arg2;
 - (_Bool)usesDetailViewControllerForSubitem:(unsigned int)arg1;
 - (_Bool)editor:(id)arg1 canSelectSubitem:(unsigned int)arg2;

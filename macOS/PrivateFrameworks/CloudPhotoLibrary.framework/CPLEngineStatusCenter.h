@@ -21,11 +21,12 @@
 }
 
 - (void).cxx_destruct;
+- (id)allStatusChanges;
 - (id)status;
 - (id)recordForStatusWithScopedIdentifier:(id)arg1;
 - (id)_statusFromCachesWithRecordScopedIdentifier:(id)arg1;
 - (void)_fillStatus:(id)arg1;
-- (void)_fillStatus:(id)arg1 withClientCacheRecord:(id)arg2 cloudCacheRecord:(id)arg3 isConfirmed:(BOOL)arg4 isInIDMapping:(BOOL)arg5;
+- (void)_fillStatus:(id)arg1 withClientCacheRecord:(id)arg2 cloudCacheRecord:(id)arg3 isConfirmed:(BOOL)arg4 isStaged:(BOOL)arg5 isInIDMapping:(BOOL)arg6;
 - (void)writeTransactionDidSucceed;
 - (void)writeTransactionDidFail;
 - (BOOL)discardNotificationForRecordWithScopedIdentifier:(id)arg1 error:(id *)arg2;

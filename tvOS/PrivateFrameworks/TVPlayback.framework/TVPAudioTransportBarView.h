@@ -31,7 +31,6 @@ __attribute__((visibility("hidden")))
 - (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)preferredFocusEnvironments;
 @property(readonly, nonatomic) _Bool isScrubberFocused;
-- (_Bool)_isEligibleForFocusInteraction;
 - (void)layoutSubviews;
 
 @end

@@ -8,6 +8,7 @@
 
 @class CHDChart, NSData;
 
+__attribute__((visibility("hidden")))
 @interface EBEscherShape : ESDObject
 {
     NSData *mChartData;

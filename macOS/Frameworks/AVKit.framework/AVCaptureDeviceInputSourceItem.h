@@ -8,6 +8,7 @@
 
 @class AVCaptureDevice, AVCaptureDeviceInputSource, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AVCaptureDeviceInputSourceItem : NSObject
 {
     BOOL _builtIn;

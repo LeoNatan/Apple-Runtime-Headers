@@ -32,7 +32,6 @@
     NSColor *_backgroundColor;
     NSColor *_textColor;
     int _indexOfSelectedSubfield;
-    int _reserved0;
     id _reserved1;
     id _reserved2;
     id _reserved3;
@@ -69,6 +68,7 @@
 @property(copy) NSCalendar *calendar;
 @property unsigned long long datePickerElements;
 @property unsigned long long datePickerMode;
+- (id)_defaultFont;
 - (void)setFont:(id)arg1;
 @property(copy) NSColor *textColor;
 @property(copy) NSColor *backgroundColor;
@@ -152,7 +152,7 @@
 - (void)_getTextAreaFrame:(struct CGRect *)arg1 stepperCellFrame:(struct CGRect *)arg2 forDatePickerCellFrame:(struct CGRect)arg3;
 - (double)_stepperCellTopAndBottomTrim;
 - (struct CGSize)_desiredTextAreaSize;
-- (unsigned long long)_textFieldAlignment;
+- (long long)_textFieldAlignment;
 - (BOOL)_stepperIsRTL;
 - (BOOL)_shouldShowFocusRingInView:(id)arg1;
 - (BOOL)_hasFocusRingInView:(id)arg1;

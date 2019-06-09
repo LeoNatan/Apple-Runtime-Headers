@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int coordinateCount; // @synthesize coordinateCount=_coordinateCount;
 @property(readonly, nonatomic) CDStruct_c3b9c2ee *coordinates; // @synthesize coordinates=_coordinates;
 - (void)dealloc;
-- (id)initWithFeature:(CDStruct_4b3b14e6 *)arg1 sectionIndex:(unsigned int)arg2;
+- (id)initWithFeature:(CDStruct_b326a3d5 *)arg1 sectionIndex:(unsigned int)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

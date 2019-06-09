@@ -8,17 +8,21 @@
 
 #import <DataDetectorsCore/NSSecureCoding-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSString, NSURL;
 
 @interface DDScannerResult : NSObject <NSSecureCoding>
 {
     // Error parsing type: ^{__DDResult={__CFRuntimeBase=IAI}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=ii}i^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}iCf}, name: _coreResult
     NSArray *_subResultsCache;
+    NSURL *_cachedURL;
+    _Bool _hasCachedURL;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)resultsFromCoreResults:(struct __CFArray *)arg1;
 +     // Error parsing type: @12@0:4^{__DDResult={__CFRuntimeBase=IAI}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=ii}i^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}iCf}8, name: resultFromCoreResult:
+- (void).cxx_destruct;
+@property(readonly, nonatomic) NSURL *url;
 - (void)offsetRangeBy:(int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -34,16 +38,19 @@
 - (id)subResults;
 - (_Bool)isEqual:(id)arg1;
 - (id)description;
-- (id)matchedString;
+@property(readonly, nonatomic) NSString *matchedString;
 - (id)contextualData;
 - (id)location;
 - (id)rawValue;
-- (id)value;
+@property(readonly, nonatomic) NSString *value;
 - (void)setType:(id)arg1;
-- (id)type;
+@property(readonly, nonatomic) NSString *type;
+- (_Bool)typeIs:(struct __CFString *)arg1;
 - (long)score;
 - (CDStruct_1ef3fb1f)cfRange;
 @property struct _NSRange range;
+@property(readonly, nonatomic) int category;
+@property(readonly, nonatomic) struct _NSRange urlificationRange;
 -     // Error parsing type: ^{__DDResult={__CFRuntimeBase=IAI}{__DDQueryRange={__DDQueryOffset=b32b32}{__DDQueryOffset=b32b32}}{?=ii}i^{__CFArray}^{__CFString}^{__CFString}^v^{__CFDictionary}iCf}8@0:4, name: coreResult
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)dealloc;

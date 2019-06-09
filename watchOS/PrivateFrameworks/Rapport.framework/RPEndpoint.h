@@ -8,7 +8,7 @@
 
 #import <Rapport/NSSecureCoding-Protocol.h>
 
-@class CUBonjourDevice, NSString, SFDevice;
+@class CUBonjourDevice, IDSDevice, NSArray, NSString, SFDevice;
 
 @interface RPEndpoint : NSObject <NSSecureCoding>
 {
@@ -21,20 +21,26 @@
     NSString *_mediaRouteIdentifier;
     NSString *_model;
     NSString *_name;
+    NSArray *_serviceTypes;
     unsigned long long _statusFlags;
     NSString *_sourceVersion;
     _Bool _present;
     NSString *_homeKitUserIdentifier;
     int _proximity;
+    NSString *_serviceType;
+    IDSDevice *_idsDevice;
 }
 
 + (_Bool)supportsSecureCoding;
 + (id)nullEndpoint;
 @property(nonatomic) _Bool present; // @synthesize present=_present;
+@property(retain, nonatomic) IDSDevice *idsDevice; // @synthesize idsDevice=_idsDevice;
 @property(retain, nonatomic) CUBonjourDevice *bonjourDevice; // @synthesize bonjourDevice=_bonjourDevice;
 @property(retain, nonatomic) SFDevice *bleDevice; // @synthesize bleDevice=_bleDevice;
 @property(copy, nonatomic) NSString *sourceVersion; // @synthesize sourceVersion=_sourceVersion;
 @property(nonatomic) unsigned long long statusFlags; // @synthesize statusFlags=_statusFlags;
+@property(copy, nonatomic) NSArray *serviceTypes; // @synthesize serviceTypes=_serviceTypes;
+@property(readonly, copy, nonatomic) NSString *serviceType; // @synthesize serviceType=_serviceType;
 @property(readonly, nonatomic) int proximity; // @synthesize proximity=_proximity;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
@@ -47,6 +53,8 @@
 - (void).cxx_destruct;
 - (_Bool)removeSFDevice:(id)arg1;
 - (unsigned int)updateWithSFDevice:(id)arg1;
+- (unsigned int)removeIDSDevice;
+- (unsigned int)updateWithIDSDevice:(id)arg1;
 - (_Bool)removeBonjourDevice:(id)arg1;
 - (unsigned int)updateWithBonjourDevice:(id)arg1;
 - (id)descriptionWithLevel:(int)arg1;

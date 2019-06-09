@@ -79,6 +79,7 @@ __attribute__((visibility("hidden")))
 - (void)_cloudEnabledStatusDidChange:(id)arg1;
 - (void)_prepareForDisplayWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_setSourceIsManaged:(_Bool)arg1;
+- (void)_setIsContentManaged:(_Bool)arg1;
 - (void)_setUploadURLWrapper:(id)arg1;
 - (void)_updateDefaultPicker;
 - (void)_showDefaultPicker;

@@ -13,6 +13,7 @@
     NSDictionary *_properties;
 }
 
+- (void).cxx_destruct;
 @property(readonly, nonatomic) id mailAccount;
 - (_Bool)_isRestricted;
 - (_Bool)_isActive;
@@ -29,7 +30,6 @@
 @property(readonly, nonatomic) NSString *username;
 @property(readonly, nonatomic) NSString *fullUserName;
 @property(readonly, nonatomic) _Bool isDefaultDeliveryAccount;
-- (void)dealloc;
 - (id)_initWithProperties:(id)arg1;
 
 @end

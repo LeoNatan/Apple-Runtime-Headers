@@ -8,23 +8,21 @@
 
 #import <PhotoLibraryServices/PLPhotoBakedThumbnailsDelegate-Protocol.h>
 
-@class NSCountedSet, NSMutableArray, NSMutableDictionary, NSRecursiveLock, PLXPCTransaction;
+@class PLIndicatorFileCoordinator, PLLibraryServicesManager, PLSimpleDCIMDirectory;
+@protocol OS_dispatch_queue, OS_os_transaction;
 
 @interface PLImageWriter : NSObject <PLPhotoBakedThumbnailsDelegate>
 {
-    NSMutableArray *_highPriorityJobs;
-    NSCountedSet *_unfinishedHighPriorityJobs;
-    unsigned long long _highPrioritySequentialJobCount;
-    NSMutableArray *_lowPriorityJobs;
-    NSCountedSet *_unfinishedLowPriorityJobs;
-    NSRecursiveLock *_jobsLock;
-    int _unfinishedJobCount;
     int _unfinishedJobsRequiringIndicatorCount;
-    int _jobQueueAvailabilityToken;
-    _Bool _writerThreadRunning;
     _Bool _databaseIsCorrupt;
-    PLXPCTransaction *_transaction;
-    NSMutableDictionary *_inProgressAvalancheFds;
+    NSObject<OS_dispatch_queue> *_jobQueue;
+    struct os_unfair_recursive_lock_s _jobCountLock;
+    struct os_unfair_lock_s _transactionLock;
+    unsigned long long _transactionCounter;
+    NSObject<OS_os_transaction> *_transaction;
+    PLSimpleDCIMDirectory *_iTunesSyncedAssetsDCIMDirectory;
+    PLIndicatorFileCoordinator *_indicatorFileCoordinator;
+    PLLibraryServicesManager *_libraryServicesManager;
 }
 
 + (void)decorateThumbnailInRect:(struct CGRect)arg1 size:(struct CGSize)arg2 duration:(id)arg3 inContext:(struct CGContext *)arg4 format:(id)arg5;
@@ -32,18 +30,22 @@
 + (_Bool)_hasPrimaryAssetAndAdjustmentsFilesWithType:(short)arg1 inIncomingFilenames:(id)arg2 forAssetUUID:(id)arg3;
 + (id)_assetUUIDFromIncomingFilename:(id)arg1;
 + (id)_pathsByAssetUUIDFromIncomingCrashRecoveryPaths:(id)arg1;
-+ (_Bool)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 adjustmentDataPath:(id)arg3 filteredImagePath:(id)arg4 isSubstandardRender:(_Bool)arg5;
++ (_Bool)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 cameraAdjustmentData:(id)arg3 adjustmentDataPath:(id)arg4 filteredImagePath:(id)arg5 isSubstandardRender:(_Bool)arg6;
++ (id)_assetAdjustmentsFromCameraAdjustmentData:(id)arg1 exportProperties:(id)arg2;
++ (id)_assetAdjustmentsFromCameraAdjustments:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsFromCameraAdjustmentsFileAtPath:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsFromCameraFilters:(id)arg1 portraitMetadata:(id)arg2 exportProperties:(id)arg3;
-+ (id)_assetAdjustmentsFromPhotoEditModel:(id)arg1 exportProperties:(id)arg2;
++ (id)_assetAdjustmentsFromCompositionController:(id)arg1 exportProperties:(id)arg2;
 + (id)_assetAdjustmentsWithEffectFilterName:(id)arg1 exportProperties:(id)arg2;
 + (_Bool)_requiresIndicatorFileForJobType:(id)arg1;
-+ (id)sharedWriter;
-- (void)_writerThread;
+- (void).cxx_destruct;
+- (void)enqueueAutoDeleteEmptyAlbumJobWithAlbumID:(id)arg1;
+- (void)saveAssetJob:(id)arg1 imageSurface:(id)arg2 previewImageSurface:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (_Bool)imageWriterJob:(id)arg1 hasValidPathsWithConnection:(id)arg2;
 - (void)_processJob:(id)arg1;
 - (void)_processSyncedVideoSaveJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_processVideoSaveJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2;
+- (void)_setAdjustmentsForNewVideo:(id)arg1 withAdjustmentsDictionary:(id)arg2 renderedContentPath:(id)arg3;
 - (void)_processVideoJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (_Bool)_transferVideoFromIncomingPath:(id)arg1 toDestinationPath:(id)arg2 shouldRemoveIncoming:(_Bool *)arg3 error:(id *)arg4;
 - (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext *)arg2;
@@ -56,9 +58,13 @@
 - (void)_handleCameraAdjustments:(id)arg1 fullsizeRenders:(id)arg2;
 - (void)_handlePhotoIrisCrashRecoveryForVideos:(id)arg1;
 - (id)_fetchPhotoAssetForUUID:(id)arg1 moc:(id)arg2;
-- (id)_fetchPhotoAssetForMediaGroupUUID:(id)arg1 moc:(id)arg2;
 - (void)_handleAvalancheCrashRecovery:(id)arg1;
 - (void)_processIngestedSyncedAssetJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)cleanupFilesInLibrary:(id)arg1 afteriTunesSyncBeforeDate:(id)arg2;
+- (void)processSyncSaveJob:(id)arg1 library:(id)arg2 albumMap:(id)arg3;
+- (void)_resetSyncedAssetsDCIMDirectory;
+- (id)iTunesSyncedAssetsDCIMDirectory;
+- (_Bool)_isHeifUTI:(struct __CFString *)arg1;
 - (void)_processSavePhotoStreamImageToCameraRollJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_processReenqueueAssetUUIDsToPhotoStreamJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_enablePhotoStreamJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -71,9 +77,10 @@
 - (void)_processBatchImageJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_removeInProgressExtendedAttributesForFileAtURL:(id)arg1;
 - (void)_processImageJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)_pathForFilteredPreviewWithBaseName:(id)arg1 imageData:(id)arg2 orImage:(id)arg3;
-- (void)setAvalancheInProgress:(_Bool)arg1 uuid:(id)arg2;
+- (void)_linkDiagnosticFileWithSourcePath:(id)arg1 forPhotoDestinationURL:(id)arg2;
+- (id)_pathForFilteredPreviewWithBaseName:(id)arg1 imageData:(id)arg2 orImage:(struct NSObject *)arg3;
 - (void)_removeTransientKeys:(id)arg1;
+- (id)pathForOriginalMyPhotoStreamAssetWithJob:(id)arg1;
 - (id)pathForNewAssetPathAtAlbumDirectoryPath:(id)arg1 assetType:(unsigned int)arg2 extension:(id)arg3;
 - (id)_pathForNewAssetWithPath:(id)arg1 withExtension:(id)arg2;
 - (id)pathForNewAssetWithDirectoryPath:(id)arg1 fileName:(id)arg2 extension:(id)arg3;
@@ -81,10 +88,10 @@
 - (_Bool)enqueueJob:(id)arg1;
 - (void)_decrementJobCount:(id)arg1;
 - (void)_incrementJobCount:(id)arg1;
-- (void)_postJobQueueNotificationIsAvailable:(_Bool)arg1;
+- (id)indicatorFileCoordinator;
 - (_Bool)canEnqueueJob:(id)arg1;
 - (_Bool)_isHighPriorityJob:(id)arg1;
-- (void)dealloc;
+- (id)initWithLibraryServicesManager:(id)arg1;
 - (id)init;
 
 @end

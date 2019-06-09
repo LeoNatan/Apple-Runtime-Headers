@@ -8,24 +8,35 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSMutableArray, NSString;
+@class NSMutableArray, NSString, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOBatchRevGeocodeRequest : PBRequest <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_30d0674c _readerMark;
     CDStruct_56d48c16 _additionalPlaceTypes;
     NSString *_deviceCountryCode;
     NSString *_displayRegion;
     NSMutableArray *_locations;
     NSMutableArray *_serviceTags;
+    struct {
+        unsigned int read_additionalPlaceTypes:1;
+        unsigned int read_deviceCountryCode:1;
+        unsigned int read_displayRegion:1;
+        unsigned int read_locations:1;
+        unsigned int read_serviceTags:1;
+        unsigned int wrote_additionalPlaceTypes:1;
+        unsigned int wrote_deviceCountryCode:1;
+        unsigned int wrote_displayRegion:1;
+        unsigned int wrote_locations:1;
+        unsigned int wrote_serviceTags:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (Class)serviceTagType;
 + (Class)locationType;
-@property(retain, nonatomic) NSMutableArray *serviceTags; // @synthesize serviceTags=_serviceTags;
-@property(retain, nonatomic) NSString *displayRegion; // @synthesize displayRegion=_displayRegion;
-@property(retain, nonatomic) NSString *deviceCountryCode; // @synthesize deviceCountryCode=_deviceCountryCode;
-@property(retain, nonatomic) NSMutableArray *locations; // @synthesize locations=_locations;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)hash;
@@ -36,26 +47,39 @@ __attribute__((visibility("hidden")))
 - (unsigned int)requestTypeCode;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (id)serviceTagAtIndex:(unsigned int)arg1;
 - (unsigned int)serviceTagsCount;
+- (void)_addNoFlagsServiceTag:(id)arg1;
 - (void)addServiceTag:(id)arg1;
 - (void)clearServiceTags;
+@property(retain, nonatomic) NSMutableArray *serviceTags;
+- (void)_readServiceTags;
+@property(retain, nonatomic) NSString *displayRegion;
 @property(readonly, nonatomic) _Bool hasDisplayRegion;
+- (void)_readDisplayRegion;
+@property(retain, nonatomic) NSString *deviceCountryCode;
 @property(readonly, nonatomic) _Bool hasDeviceCountryCode;
+- (void)_readDeviceCountryCode;
 - (int)StringAsAdditionalPlaceTypes:(id)arg1;
 - (id)additionalPlaceTypesAsString:(int)arg1;
 - (void)setAdditionalPlaceTypes:(int *)arg1 count:(unsigned int)arg2;
 - (int)additionalPlaceTypeAtIndex:(unsigned int)arg1;
+- (void)_addNoFlagsAdditionalPlaceType:(int)arg1;
 - (void)addAdditionalPlaceType:(int)arg1;
 - (void)clearAdditionalPlaceTypes;
 @property(readonly, nonatomic) int *additionalPlaceTypes;
 @property(readonly, nonatomic) unsigned int additionalPlaceTypesCount;
+- (void)_readAdditionalPlaceTypes;
 - (id)locationAtIndex:(unsigned int)arg1;
 - (unsigned int)locationsCount;
+- (void)_addNoFlagsLocation:(id)arg1;
 - (void)addLocation:(id)arg1;
 - (void)clearLocations;
+@property(retain, nonatomic) NSMutableArray *locations;
+- (void)_readLocations;
 - (void)dealloc;
 
 @end

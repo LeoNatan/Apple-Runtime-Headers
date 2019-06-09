@@ -22,6 +22,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=_assetAnalysisMessages) NSArray *assetAnalysisMessages;
 @property(readonly, nonatomic) _Bool supportsAnalysisReporting;
 @property(readonly, nonatomic) CDStruct_1b6d18a9 overallDurationHint;
+@property(readonly, nonatomic) int fragmentCount;
+@property(readonly, nonatomic) int firstFragmentSequenceNumber;
 @property(readonly, nonatomic) _Bool containsFragments;
 @property(readonly, nonatomic) _Bool canContainFragments;
 @property(readonly, nonatomic) NSData *SHA1Digest;
@@ -30,6 +32,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic, getter=isComposable) _Bool composable;
 @property(readonly, nonatomic, getter=isReadable) _Bool readable;
 @property(readonly, nonatomic, getter=isExportable) _Bool exportable;
+- (_Bool)isCompatibleWithPhotosTranscodingServiceWithOptions:(id)arg1;
 @property(readonly, nonatomic, getter=isPlayable) _Bool playable;
 - (_Bool)hasProtectedContent;
 @property(readonly, nonatomic, getter=_instanceIdentifier) NSString *instanceIdentifier;
@@ -48,6 +51,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool providesPreciseDurationAndTiming;
 @property(readonly, nonatomic) int naturalTimeScale;
 @property(readonly, nonatomic) struct CGSize naturalSize;
+@property(readonly, nonatomic) CDStruct_1b6d18a9 minimumTimeOffsetFromLive;
 @property(readonly, nonatomic) struct CGAffineTransform preferredTransform;
 @property(readonly, nonatomic) float preferredSoundCheckVolumeNormalization;
 @property(readonly, nonatomic) float preferredVolume;

@@ -23,6 +23,7 @@
 @property(readonly, nonatomic) long long sortOrder;
 @property(nonatomic) long long displayNameOrder;
 - (long long)newContactDisplayNameOrder;
+- (id)changeNotificationName;
 - (id)init;
 
 @end

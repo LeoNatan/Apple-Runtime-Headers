@@ -6,9 +6,11 @@
 
 #import <IDSFoundation/IDSSocketPairMessage.h>
 
-@class NSData;
+#import <IDSFoundation/IDSSocketPairMessage-Protocol.h>
 
-@interface IDSSocketPairOTREncryptedMessage : IDSSocketPairMessage
+@class NSData, NSDate, NSString;
+
+@interface IDSSocketPairOTREncryptedMessage : IDSSocketPairMessage <IDSSocketPairMessage>
 {
     unsigned int _offset;
     unsigned char _versionNumber;
@@ -22,7 +24,7 @@
 
 @property(readonly, nonatomic) _Bool fileXfer; // @synthesize fileXfer=_fileXfer;
 @property(nonatomic) unsigned short streamID; // @synthesize streamID=_streamID;
-@property(readonly, nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
+@property(nonatomic) unsigned int sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
 @property(readonly, nonatomic) unsigned short priority; // @synthesize priority=_priority;
 @property(readonly, nonatomic) unsigned char versionNumber; // @synthesize versionNumber=_versionNumber;
 @property(readonly, nonatomic) _Bool encrypted; // @synthesize encrypted=_encrypted;
@@ -33,6 +35,13 @@
 - (id)description;
 - (id)initWithVersion:(unsigned char)arg1 encrypted:(_Bool)arg2 streamID:(unsigned short)arg3 priority:(unsigned short)arg4 sequenceNumber:(unsigned int)arg5 fileXfer:(_Bool)arg6 data:(id)arg7;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
+
+// Remaining properties
+@property(readonly, nonatomic) _Bool expectsPeerResponse;
+@property(retain, nonatomic) NSDate *expiryDate;
+@property(readonly, nonatomic) NSString *messageUUID;
+@property(readonly, nonatomic) NSString *peerResponseIdentifier;
+@property(readonly, nonatomic) _Bool wantsAppAck;
 
 @end
 

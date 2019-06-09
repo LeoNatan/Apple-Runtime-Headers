@@ -31,6 +31,8 @@
 - (CDUnknownBlockType)willDoWriteMixBlock;
 - (CDUnknownBlockType)willDoReadInputBlock;
 - (CDUnknownBlockType)getZeroTimestampBlock;
+- (unsigned int)outputLatency;
+- (unsigned int)inputLatency;
 - (BOOL)clockIsStable;
 - (unsigned int)clockAlgorithm;
 - (unsigned int)clockDomain;

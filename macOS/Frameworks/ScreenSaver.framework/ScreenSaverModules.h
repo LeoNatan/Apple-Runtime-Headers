@@ -12,10 +12,12 @@
 {
     NSMutableDictionary *_modules;
     NSMutableDictionary *_times;
-    unsigned long long _searchDomains;
+    BOOL _isPreview;
 }
 
++ (id)homeFolder;
 + (id)sharedInstance;
+@property BOOL isPreview; // @synthesize isPreview=_isPreview;
 - (void)_dropCrashReporterBreadCrumbForModule:(id)arg1;
 - (id)defaultModuleName;
 - (Class)classForModule:(id)arg1;
@@ -38,7 +40,6 @@
 - (id)moduleNames;
 - (BOOL)modulePathIsAppleModule:(id)arg1;
 - (id)_directoriesInSearchDomain;
-- (void)setModuleSearchDomains:(unsigned long long)arg1;
 - (unsigned long long)moduleSearchDomains;
 - (void)dealloc;
 - (id)init;

@@ -27,11 +27,17 @@
             unsigned int usesAutoDeleteWord:1;
             unsigned int usesCandidateSelection:1;
             unsigned int commitsAcceptedCandidate:1;
+            unsigned int newInputAcceptsUserSelectedCandidate:1;
             unsigned int nextInputWouldStartSentence:1;
             unsigned int inputStringIsExemptFromChecker:1;
             unsigned int suppressPlaceholderCandidate:1;
             unsigned int usesAutocorrectionLists:1;
             unsigned int autoquoteType:2;
+            unsigned int usesContinuousPath:1;
+            unsigned int usesContinuousPathProgressiveCandidates:1;
+            unsigned int usesPunctuationKeysForRowNavigation:1;
+            unsigned int insertsSpaceAfterPredictiveInput:1;
+            unsigned int shouldFixupIncompleteRomaji:1;
         } fields;
     } _mask;
     BOOL _shouldAddModifierSymbolsToWordCharacters;
@@ -81,6 +87,10 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+@property(nonatomic) BOOL shouldFixupIncompleteRomaji;
+@property(nonatomic) BOOL insertsSpaceAfterPredictiveInput;
+@property(nonatomic) BOOL usesContinuousPathProgressiveCandidates;
+@property(nonatomic) BOOL usesContinuousPath;
 @property(nonatomic) unsigned long long autoquoteType;
 @property(nonatomic) BOOL suppressPlaceholderCandidate;
 @property(nonatomic) BOOL usesAutocorrectionLists;
@@ -88,12 +98,14 @@
 @property(nonatomic) BOOL usesAutoDeleteWord;
 @property(nonatomic) BOOL suppressCompletionsForFieldEditor;
 @property(nonatomic) BOOL supportsSetPhraseBoundary;
+@property(nonatomic) BOOL usesPunctuationKeysForRowNavigation;
 @property(nonatomic) BOOL supportsNumberKeySelection;
 @property(nonatomic) BOOL suppliesCompletions;
 @property(nonatomic) BOOL shouldExtendPriorWord;
 @property(nonatomic) BOOL nextInputWouldStartSentence;
 @property(nonatomic) BOOL inputStringIsExemptFromChecker;
 @property(nonatomic) BOOL ignoresDeadKeys;
+@property(nonatomic) BOOL newInputAcceptsUserSelectedCandidate;
 @property(nonatomic) BOOL commitsAcceptedCandidate;
 @property(nonatomic) BOOL canHandleKeyHitTest;
 

@@ -6,8 +6,9 @@
 
 #import <UIKit/UIView.h>
 
-@class MPButton, MPCPlayerPath, MPUMarqueeView, MTMaterialView, MediaControlsRouteLabel, MediaControlsRoutingButtonView, NSString, UIButton, UIImageView, UILabel;
+@class MPButton, MPCPlayerPath, MPRouteLabel, MPUMarqueeView, MTMaterialView, MTVisualStylingProvider, MediaControlsRoutingButtonView, NSString, UIButton, UIImageView, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsHeaderView : UIView
 {
     _Bool _transitioning;
@@ -18,13 +19,14 @@
     UIImageView *_artworkView;
     UIImageView *_placeholderArtworkView;
     long long _style;
-    MediaControlsRouteLabel *_routeLabel;
+    MPRouteLabel *_routeLabel;
     NSString *_primaryString;
     NSString *_secondaryString;
     MediaControlsRoutingButtonView *_routingButton;
     MPButton *_doneButton;
     UIButton *_launchNowPlayingAppButton;
     long long _buttonType;
+    MTVisualStylingProvider *_visualStylingProvider;
     MTMaterialView *_artworkBackground;
     UIView *_shadow;
     MPUMarqueeView *_primaryMarqueeView;
@@ -42,6 +44,7 @@
 @property(retain, nonatomic) UIView *shadow; // @synthesize shadow=_shadow;
 @property(retain, nonatomic) MTMaterialView *artworkBackground; // @synthesize artworkBackground=_artworkBackground;
 @property(nonatomic) struct CGSize overrideSize; // @synthesize overrideSize=_overrideSize;
+@property(retain, nonatomic) MTVisualStylingProvider *visualStylingProvider; // @synthesize visualStylingProvider=_visualStylingProvider;
 @property(nonatomic, getter=isRouting) _Bool routing; // @synthesize routing=_routing;
 @property(nonatomic) long long buttonType; // @synthesize buttonType=_buttonType;
 @property(nonatomic) _Bool marqueeEnabled; // @synthesize marqueeEnabled=_marqueeEnabled;
@@ -50,7 +53,7 @@
 @property(retain, nonatomic) MediaControlsRoutingButtonView *routingButton; // @synthesize routingButton=_routingButton;
 @property(copy, nonatomic) NSString *secondaryString; // @synthesize secondaryString=_secondaryString;
 @property(copy, nonatomic) NSString *primaryString; // @synthesize primaryString=_primaryString;
-@property(retain, nonatomic) MediaControlsRouteLabel *routeLabel; // @synthesize routeLabel=_routeLabel;
+@property(retain, nonatomic) MPRouteLabel *routeLabel; // @synthesize routeLabel=_routeLabel;
 @property(nonatomic) long long style; // @synthesize style=_style;
 @property(nonatomic, getter=isTransitioning) _Bool transitioning; // @synthesize transitioning=_transitioning;
 @property(retain, nonatomic) UIImageView *placeholderArtworkView; // @synthesize placeholderArtworkView=_placeholderArtworkView;

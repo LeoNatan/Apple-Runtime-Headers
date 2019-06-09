@@ -10,10 +10,10 @@
 {
 }
 
-+ (struct OpaqueSecPolicyRef *)createSMIMEPolicyForAddress:(id)arg1 keyUsage:(void *)arg2;
-+ (struct OpaqueSecPolicyRef *)createSMIMEPolicyForAddress:(id)arg1 keyUsage:(void *)arg2 ignoreExpiration:(BOOL)arg3;
-+ (struct OpaqueSecCertificateRef *)copyEncryptionCertificateForAddress:(id)arg1;
-+ (struct OpaqueSecIdentityRef *)copySigningIdentityForAddress:(id)arg1 error:(id *)arg2;
++ (struct __SecPolicy *)createSMIMEPolicyForAddress:(id)arg1 keyUsage:(void *)arg2;
++ (struct __SecPolicy *)createSMIMEPolicyForAddress:(id)arg1 keyUsage:(void *)arg2 ignoreExpiration:(BOOL)arg3;
++ (struct __SecCertificate *)copyEncryptionCertificateForAddress:(id)arg1;
++ (struct __SecIdentity *)copySigningIdentityForAddress:(id)arg1 error:(id *)arg2;
 + (id)copyTLSClientIdentities;
 + (void)setSessionTrustedCertificates:(id)arg1 forHost:(id)arg2;
 + (id)sessionTrustedCertificatesForHost:(id)arg1;

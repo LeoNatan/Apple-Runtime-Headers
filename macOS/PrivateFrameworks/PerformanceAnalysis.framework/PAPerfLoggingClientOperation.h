@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PerformanceAnalysis/PAPerfLoggingOperation.h>
+#import <PerformanceAnalysis/PAPerfLoggingCoreOperation.h>
 
 @class NSObject;
 @protocol OS_dispatch_source;
 
-@interface PAPerfLoggingClientOperation : PAPerfLoggingOperation
+@interface PAPerfLoggingClientOperation : PAPerfLoggingCoreOperation
 {
     BOOL _shouldLogResultsToSystemLog;
     BOOL _shouldMonitorWSUpdates;

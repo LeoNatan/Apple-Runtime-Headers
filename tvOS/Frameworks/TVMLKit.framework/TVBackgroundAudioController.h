@@ -24,6 +24,7 @@
 - (void)_applicationWillAddDeactivationReason:(id)arg1;
 - (void)_stop;
 - (void)stop;
+- (void)pause;
 @property(readonly, nonatomic) TVPPlaybackState *state;
 - (void)setCurrentMediaItemFromAudioElement:(id)arg1;
 - (_Bool)playWithDelay:(double)arg1;

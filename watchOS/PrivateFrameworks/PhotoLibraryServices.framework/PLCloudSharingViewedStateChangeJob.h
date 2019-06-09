@@ -30,6 +30,7 @@
 @property(nonatomic) _Bool albumHasUnseenContent; // @synthesize albumHasUnseenContent=_albumHasUnseenContent;
 @property(retain, nonatomic) NSString *albumGUID; // @synthesize albumGUID=_albumGUID;
 @property(nonatomic) long long jobType; // @synthesize jobType=_jobType;
+- (void).cxx_destruct;
 - (void)_executeAssetLastViewedCommentDateChangedWithGroup;
 - (void)_executeAssetCommentsReadStateChangedWithGroup;
 - (void)_executeAlbumUnviewedAssetCountChangedWithGroup;
@@ -37,9 +38,8 @@
 - (void)runDaemonSide;
 - (void)run;
 - (long long)daemonOperation;
-- (void)dealloc;
 - (id)description;
-- (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
+- (id)initFromXPCObject:(id)arg1 libraryServicesManager:(id)arg2;
 - (void)encodeToXPCObject:(id)arg1;
 
 @end

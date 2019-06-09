@@ -8,26 +8,38 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEORPPhotoWithMetadata, NSData, NSString;
+@class GEORPPhotoWithMetadata, NSData, NSString, PBDataReader;
 
 @interface GEORPInstructionCorrection : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     NSString *_comments;
+    NSString *_photoId;
     GEORPPhotoWithMetadata *_photo;
-    unsigned int _routeStepIndex;
     NSData *_routeStepScreenshotImageData;
+    NSString *_routeStepScreenshotImageId;
+    unsigned int _routeStepIndex;
     unsigned int _routeStepSubstepIndex;
     struct {
-        unsigned int routeStepIndex:1;
-        unsigned int routeStepSubstepIndex:1;
-    } _has;
+        unsigned int has_routeStepIndex:1;
+        unsigned int has_routeStepSubstepIndex:1;
+        unsigned int read_comments:1;
+        unsigned int read_photoId:1;
+        unsigned int read_photo:1;
+        unsigned int read_routeStepScreenshotImageData:1;
+        unsigned int read_routeStepScreenshotImageId:1;
+        unsigned int wrote_comments:1;
+        unsigned int wrote_photoId:1;
+        unsigned int wrote_photo:1;
+        unsigned int wrote_routeStepScreenshotImageData:1;
+        unsigned int wrote_routeStepScreenshotImageId:1;
+        unsigned int wrote_routeStepIndex:1;
+        unsigned int wrote_routeStepSubstepIndex:1;
+    } _flags;
 }
 
-@property(retain, nonatomic) NSData *routeStepScreenshotImageData; // @synthesize routeStepScreenshotImageData=_routeStepScreenshotImageData;
-@property(nonatomic) unsigned int routeStepSubstepIndex; // @synthesize routeStepSubstepIndex=_routeStepSubstepIndex;
-@property(retain, nonatomic) GEORPPhotoWithMetadata *photo; // @synthesize photo=_photo;
-@property(retain, nonatomic) NSString *comments; // @synthesize comments=_comments;
-@property(nonatomic) unsigned int routeStepIndex; // @synthesize routeStepIndex=_routeStepIndex;
++ (_Bool)isValid:(id)arg1;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -36,13 +48,28 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *routeStepScreenshotImageId;
+@property(readonly, nonatomic) _Bool hasRouteStepScreenshotImageId;
+- (void)_readRouteStepScreenshotImageId;
+@property(retain, nonatomic) NSString *photoId;
+@property(readonly, nonatomic) _Bool hasPhotoId;
+- (void)_readPhotoId;
+@property(retain, nonatomic) NSData *routeStepScreenshotImageData;
 @property(readonly, nonatomic) _Bool hasRouteStepScreenshotImageData;
+- (void)_readRouteStepScreenshotImageData;
 @property(nonatomic) _Bool hasRouteStepSubstepIndex;
+@property(nonatomic) unsigned int routeStepSubstepIndex;
+@property(retain, nonatomic) GEORPPhotoWithMetadata *photo;
 @property(readonly, nonatomic) _Bool hasPhoto;
+- (void)_readPhoto;
+@property(retain, nonatomic) NSString *comments;
 @property(readonly, nonatomic) _Bool hasComments;
+- (void)_readComments;
 @property(nonatomic) _Bool hasRouteStepIndex;
+@property(nonatomic) unsigned int routeStepIndex;
 
 @end
 

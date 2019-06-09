@@ -33,6 +33,7 @@
 @property(readonly, nonatomic) __weak TVViewElement *parentViewElement;
 @property(readonly, nonatomic) NSString *elementName;
 @property(readonly, nonatomic) NSString *elementIdentifier;
+@property(readonly, nonatomic) NSDictionary *elementData;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithViewElement:(id)arg1;
 

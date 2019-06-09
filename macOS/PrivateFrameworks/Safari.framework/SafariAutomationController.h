@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _WKAutomationSession *automationSession; // @synthesize automationSession=_automationSession;
 @property(nonatomic) BOOL userInteractionAllowed; // @synthesize userInteractionAllowed=_userInteractionAllowed;
 - (void).cxx_destruct;
+- (long long)_automationSession:(id)arg1 currentPresentationForWebView:(id)arg2;
 - (long long)_automationSession:(id)arg1 typeOfCurrentJavaScriptDialogForWebView:(id)arg2;
 - (void)_automationSession:(id)arg1 setUserInput:(id)arg2 forCurrentJavaScriptDialogForWebView:(id)arg3;
 - (id)_automationSession:(id)arg1 messageOfCurrentJavaScriptDialogForWebView:(id)arg2;

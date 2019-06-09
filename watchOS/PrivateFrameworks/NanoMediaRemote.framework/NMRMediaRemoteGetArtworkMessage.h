@@ -21,7 +21,7 @@
 - (id)initWithProtobufData:(id)arg1;
 @property(readonly, nonatomic) NSNumber *originIdentifier;
 @property(readonly, nonatomic) NSDate *serializationDate;
-- (id)initWithOriginIdentifier:(id)arg1;
+- (id)_initWithOriginIdentifier:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

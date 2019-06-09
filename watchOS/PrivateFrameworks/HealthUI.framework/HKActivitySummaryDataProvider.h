@@ -29,15 +29,16 @@
 @property(readonly, nonatomic) HKDateCache *dateCache; // @synthesize dateCache=_dateCache;
 @property(readonly, nonatomic) HKHealthStore *healthStore; // @synthesize healthStore=_healthStore;
 - (void).cxx_destruct;
+- (id)_predicateForStartDate:(id)arg1 endDate:(id)arg2 calendar:(id)arg3;
 - (void)_hourlyActivityDataForStartDate:(id)arg1 endDate:(id)arg2 healthStore:(id)arg3 calendar:(id)arg4 handler:(CDUnknownBlockType)arg5;
-- (id)_hourlySummariesFromStartDate:(id)arg1 endDate:(id)arg2 calendar:(id)arg3 moveData:(id)arg4 exerciseData:(id)arg5 standData:(id)arg6 dayGoalData:(id)arg7;
+- (id)_hourlySummariesFromStartDate:(id)arg1 endDate:(id)arg2 calendar:(id)arg3 activeEnergyData:(id)arg4 appleMoveTimeData:(id)arg5 exerciseData:(id)arg6 standData:(id)arg7 dayGoalData:(id)arg8;
 - (id)_buildHourlyActivitySummaryFromDate:(id)arg1 calendar:(id)arg2 moveQuantity:(id)arg3 exerciseQuantity:(id)arg4 standQuantity:(id)arg5 moveGoal:(id)arg6 exerciseGoal:(id)arg7 standGoal:(id)arg8;
 - (void)_hourActivitySummariesForDateRange:(id)arg1 pageHandler:(CDUnknownBlockType)arg2;
 - (void)_hourlyActivityPageDataArrived:(id)arg1 pageNumber:(id)arg2 error:(id)arg3;
 - (void)_hourlyPageInProgress:(id)arg1;
 - (void)_submitHourlyQueryForPageNumber:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
 - (id)_hourActivitySummariesForDateRange:(id)arg1;
-- (id)_buildActivitySummaryFromAverages:(struct _WDActivitySummaryAverages)arg1 startDate:(id)arg2 calendar:(id)arg3 energyUnit:(id)arg4 exerciseUnit:(id)arg5 standHourUnit:(id)arg6;
+- (id)_buildActivitySummaryFromAverages:(struct _WDActivitySummaryAverages)arg1 startDate:(id)arg2 calendar:(id)arg3 energyUnit:(id)arg4 standHourUnit:(id)arg5;
 - (void)_monthActivitySummariesForCachedData:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (id)_monthActivitySummariesForDateRange:(id)arg1;
 - (id)_dayActivitySummariesForDateRange:(id)arg1;

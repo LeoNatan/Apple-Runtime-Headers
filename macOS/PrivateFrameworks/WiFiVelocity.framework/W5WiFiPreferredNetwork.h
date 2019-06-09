@@ -28,8 +28,6 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)preferredNetworksList;
-+ (id)__preferredNetworkForOSXPreferredNetwork:(id)arg1;
-+ (id)__identifierForPreferredNetwork:(id)arg1;
 @property(copy, nonatomic) NSDate *lastJoinedTimestamp; // @synthesize lastJoinedTimestamp=_lastJoinedTimestamp;
 @property(nonatomic) BOOL isMultiAP; // @synthesize isMultiAP=_isMultiAP;
 @property(nonatomic) BOOL isHidden; // @synthesize isHidden=_isHidden;

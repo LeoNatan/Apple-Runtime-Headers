@@ -6,7 +6,7 @@
 
 #import <Foundation/NSOperation.h>
 
-@class NSError, NSObject, NSString, NSURL, PFAssetAdjustments;
+@class CLLocation, NSDate, NSError, NSObject, NSString, NSURL, PFAssetAdjustments;
 @protocol OS_dispatch_queue;
 
 @interface PFPhotoSharingOperation : NSOperation
@@ -20,18 +20,25 @@
     _Bool _shouldStripMetadata;
     NSURL *_outputDirectoryURL;
     NSString *_outputFilename;
+    CLLocation *_customLocation;
+    NSDate *_customDate;
     NSString *_customAccessibilityLabel;
     NSURL *_imageURL;
+    NSURL *_resultingFileURL;
     PFAssetAdjustments *__adjustments;
 }
 
++ (_Bool)outputSupportedForTypeIdentifier:(struct __CFString *)arg1;
 @property(retain, nonatomic, setter=_setAdjustments:) PFAssetAdjustments *_adjustments; // @synthesize _adjustments=__adjustments;
+@property(readonly, copy, nonatomic) NSURL *resultingFileURL; // @synthesize resultingFileURL=_resultingFileURL;
 @property(copy, nonatomic, setter=_setImageURL:) NSURL *imageURL; // @synthesize imageURL=_imageURL;
 @property(nonatomic) _Bool shouldStripMetadata; // @synthesize shouldStripMetadata=_shouldStripMetadata;
+@property(copy, nonatomic) NSDate *customDate; // @synthesize customDate=_customDate;
 - (void).cxx_destruct;
 @property(nonatomic) _Bool shouldConvertToSRGB; // @synthesize shouldConvertToSRGB=_shouldConvertToSRGB;
 @property(nonatomic) _Bool shouldStripLocation; // @synthesize shouldStripLocation=_shouldStripLocation;
 @property(copy, nonatomic) NSString *customAccessibilityLabel; // @synthesize customAccessibilityLabel=_customAccessibilityLabel;
+@property(copy, nonatomic) CLLocation *customLocation; // @synthesize customLocation=_customLocation;
 @property(copy, nonatomic) NSString *outputFilename; // @synthesize outputFilename=_outputFilename;
 @property(copy, nonatomic) NSURL *outputDirectoryURL; // @synthesize outputDirectoryURL=_outputDirectoryURL;
 @property(readonly, nonatomic) _Bool success;

@@ -16,8 +16,8 @@
 + (id)schemaHashRoot;
 
 // Remaining properties
-@property(retain, nonatomic) NSNumber *type; // @dynamic type;
-@property(retain, nonatomic) NSData *value; // @dynamic value;
+@property(copy, nonatomic) NSNumber *type; // @dynamic type;
+@property(copy, nonatomic) NSData *value; // @dynamic value;
 
 @end
 

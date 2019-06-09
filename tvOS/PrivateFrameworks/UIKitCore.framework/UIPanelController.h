@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UILayoutContainerViewDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, UILayoutContainerView, UISlidingBarConfiguration, UISlidingBarState, UISlidingBarStateRequest, UIView, UIViewController, _UIPanelInternalState;
+@class NSArray, NSMutableArray, NSString, UILayoutContainerView, UISlidingBarConfiguration, UISlidingBarState, UISlidingBarStateRequest, UIView, UIViewController, UIVisualEffectView, _UIPanelInternalState;
 @protocol UIPanelControllerDelegate;
 
 __attribute__((visibility("hidden")))
@@ -44,12 +44,16 @@ __attribute__((visibility("hidden")))
     UIView *__trailingBorderView;
     UIView *__sourceTransitionView;
     UIView *__destTransitionView;
+    UIVisualEffectView *__leadingBackgroundView;
+    UIVisualEffectView *__trailingBackgroundView;
     struct CGSize __lastViewSize;
 }
 
 @property(nonatomic, setter=_setChangingViewControllerParentage:) _Bool _changingViewControllerParentage; // @synthesize _changingViewControllerParentage=__changingViewControllerParentage;
 @property(nonatomic, setter=_setNeedsFirstTimeUpdateForTraitCollection:) _Bool _needsFirstTimeUpdateForTraitCollection; // @synthesize _needsFirstTimeUpdateForTraitCollection=__needsFirstTimeUpdateForTraitCollection;
 @property(nonatomic, setter=_setHasUpdatedForTraitCollection:) _Bool _hasUpdatedForTraitCollection; // @synthesize _hasUpdatedForTraitCollection=__hasUpdatedForTraitCollection;
+@property(retain, nonatomic, setter=_setTrailingBackgroundView:) UIVisualEffectView *_trailingBackgroundView; // @synthesize _trailingBackgroundView=__trailingBackgroundView;
+@property(retain, nonatomic, setter=_setLeadingBackgroundView:) UIVisualEffectView *_leadingBackgroundView; // @synthesize _leadingBackgroundView=__leadingBackgroundView;
 @property(retain, nonatomic, setter=_setDestinationTransitionView:) UIView *_destTransitionView; // @synthesize _destTransitionView=__destTransitionView;
 @property(retain, nonatomic, setter=_setSourceTransitionView:) UIView *_sourceTransitionView; // @synthesize _sourceTransitionView=__sourceTransitionView;
 @property(retain, nonatomic, setter=_setTrailingBorderView:) UIView *_trailingBorderView; // @synthesize _trailingBorderView=__trailingBorderView;
@@ -69,7 +73,11 @@ __attribute__((visibility("hidden")))
 - (void)_stopObservingKeyboardNotifications;
 - (void)_observeKeyboardNotificationsOnScreen:(id)arg1;
 - (void)animateToRequest:(id)arg1;
+- (_Bool)isTrailingViewControllerVisibleAfterAnimation;
+- (_Bool)isLeadingViewControllerVisibleAfterAnimation;
 - (void)_animateFromRequest:(id)arg1 toRequest:(id)arg2 withAffectedSides:(long long)arg3;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)_setBorderViewsObserveViewBackgroundColor:(_Bool)arg1;
 - (id)_createBorderView;
 - (void)_updateToNewPublicState:(id)arg1 withSize:(struct CGSize)arg2;
 - (void)_performWrappedUpdate:(CDUnknownBlockType)arg1;
@@ -104,8 +112,12 @@ __attribute__((visibility("hidden")))
 @property(copy, nonatomic) UISlidingBarConfiguration *configuration;
 @property(nonatomic) __weak id <UIPanelControllerDelegate> delegate;
 @property(readonly, nonatomic) UIViewController *collapsedViewController;
+@property(retain, nonatomic) UIViewController *preservedDetailController;
+- (void)setTrailingViewController:(id)arg1 changingParentage:(_Bool)arg2;
 @property(retain, nonatomic) UIViewController *trailingViewController;
+- (void)setLeadingViewController:(id)arg1 changingParentage:(_Bool)arg2;
 @property(retain, nonatomic) UIViewController *leadingViewController;
+- (void)setMainViewController:(id)arg1 changingParentage:(_Bool)arg2;
 @property(retain, nonatomic) UIViewController *mainViewController;
 - (void)dealloc;
 - (id)initWithOwningViewController:(id)arg1;

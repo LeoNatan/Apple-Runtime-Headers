@@ -8,20 +8,24 @@
 
 #import <Contacts/CNDataMapper-Protocol.h>
 
-@class CNCDPersistenceStack, NSString;
+@class CNCDChangeHistoryStore, CNCDPersistenceStack, NSString;
 
 @interface CNCoreDataMapperX : NSObject <CNDataMapper>
 {
     CNCDPersistenceStack *_persistenceStack;
+    CNCDChangeHistoryStore *_changeHistoryStore;
 }
 
 + (id)defaultContactsStoreDirectoryURL;
-+ (BOOL)useAddressBookStack;
+@property(readonly) CNCDChangeHistoryStore *changeHistoryStore; // @synthesize changeHistoryStore=_changeHistoryStore;
 - (void).cxx_destruct;
-- (BOOL)clearChangeHistoryForClientIdentifier:(id)arg1 toChangeAnchor:(id)arg2 error:(id *)arg3;
+- (BOOL)hasMultipleGroupsOrAccounts;
+- (id)sectionListOffsetsForSortOrder:(long long)arg1 error:(id *)arg2;
+- (id)currentHistoryToken;
+- (BOOL)executeChangeHistoryClearRequest:(id)arg1 error:(id *)arg2;
 - (id)changeHistoryWithFetchRequest:(id)arg1 error:(id *)arg2;
-- (BOOL)unregisterChangeHistoryClientIdentifier:(id)arg1 error:(id *)arg2;
-- (BOOL)registerChangeHistoryClientIdentifier:(id)arg1 error:(id *)arg2;
+- (BOOL)unregisterChangeHistoryClientIdentifier:(id)arg1 forContainerIdentifier:(id)arg2 error:(id *)arg3;
+- (BOOL)registerChangeHistoryClientIdentifier:(id)arg1 forContainerIdentifier:(id)arg2 error:(id *)arg3;
 - (id)_smartGroupsMatchingPredicate:(id)arg1 contactStore:(id)arg2;
 - (id)_smartGroupsForAccountsWithIdentifiers:(id)arg1 contactStore:(id)arg2;
 - (BOOL)_saveCustomPropertyValuesForRemoteRecords:(id)arg1 error:(id *)arg2;
@@ -42,6 +46,7 @@
 - (id)accountsMatchingPredicate:(id)arg1 error:(id *)arg2;
 - (id)containersMatchingPredicate:(id)arg1 error:(id *)arg2;
 - (BOOL)executeSaveRequest:(id)arg1 response:(id *)arg2 error:(id *)arg3;
+- (BOOL)executeSaveRequest:(id)arg1 response:(id *)arg2 authorizationContext:(id)arg3 error:(id *)arg4;
 - (BOOL)executeSaveRequest:(id)arg1 error:(id *)arg2;
 - (BOOL)setMeContact:(id)arg1 error:(id *)arg2;
 - (id)meContactIdentifiers:(id *)arg1;
@@ -55,6 +60,8 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(retain, nonatomic) NSString *legacyTetheredSyncComputerAnchor;
+@property(retain, nonatomic) NSString *legacyTetheredSyncDeviceAnchor;
 @property(readonly) Class superclass;
 
 @end

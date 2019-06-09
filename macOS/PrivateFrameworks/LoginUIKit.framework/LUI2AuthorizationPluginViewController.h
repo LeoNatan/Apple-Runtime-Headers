@@ -6,13 +6,13 @@
 
 #import <LoginUIKit/LUI2PasswordViewController.h>
 
-@class LUI2TextFieldBackgroundView, NSLayoutConstraint, NSView, SFAuthorizationPluginView;
+@class LUI2View, NSLayoutConstraint, NSView, SFAuthorizationPluginView;
 
 @interface LUI2AuthorizationPluginViewController : LUI2PasswordViewController
 {
     int _viewTypeInternal;
     SFAuthorizationPluginView *_authorizationPluginView;
-    LUI2TextFieldBackgroundView *_containerView;
+    LUI2View *_containerView;
     NSLayoutConstraint *_containerViewWidthConstraint;
     NSLayoutConstraint *_containerViewHeightConstraint;
     NSView *_authPluginView;
@@ -22,7 +22,7 @@
 @property int viewTypeInternal; // @synthesize viewTypeInternal=_viewTypeInternal;
 @property(retain) NSLayoutConstraint *containerViewHeightConstraint; // @synthesize containerViewHeightConstraint=_containerViewHeightConstraint;
 @property(retain) NSLayoutConstraint *containerViewWidthConstraint; // @synthesize containerViewWidthConstraint=_containerViewWidthConstraint;
-@property(retain) LUI2TextFieldBackgroundView *containerView; // @synthesize containerView=_containerView;
+@property(retain) LUI2View *containerView; // @synthesize containerView=_containerView;
 @property(readonly) SFAuthorizationPluginView *authorizationPluginView; // @synthesize authorizationPluginView=_authorizationPluginView;
 - (void)dealloc;
 - (id)initWithAuthorizationPluginView:(id)arg1;

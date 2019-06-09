@@ -13,12 +13,7 @@
     unsigned short *_glyphs;
     long long *_props;
     unsigned long long *_charIndexes;
-    struct {
-        unsigned int _usesScreenFonts:1;
-        unsigned int _syncAlignmentToDirection:1;
-        unsigned int _mirrorsTextAlignment:1;
-        unsigned int _reserved:29;
-    } _slFlags;
+    CDStruct_1f053566 _slFlags;
 }
 
 + (_Bool)_validateAttributes:(id)arg1 measuringOnly:(_Bool)arg2;

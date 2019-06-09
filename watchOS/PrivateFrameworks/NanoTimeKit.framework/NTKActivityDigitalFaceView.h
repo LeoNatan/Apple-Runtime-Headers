@@ -4,30 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <NanoTimeKit/NTKFaceView.h>
+#import <NanoTimeKit/NTKDigitalFaceView.h>
 
 #import <NanoTimeKit/NTKActivityFaceViewFactoryDelegate-Protocol.h>
 
-@class HKRingsView, NSDate, NSString, NTKActivityFaceViewFactory, NTKActivitySignificantRingChangeModel, NTKDigitalTimeLabel, NTKFaceViewTapControl, NTKPolygonCylinderView, UILabel, UIView;
+@class ARUIRingsView, NSDate, NSString, NTKActivityFaceViewFactory, NTKActivitySignificantRingChangeModel, NTKFaceViewTapControl, NTKPolygonCylinderView, UILabel, UIView;
 
-@interface NTKActivityDigitalFaceView : NTKFaceView <NTKActivityFaceViewFactoryDelegate>
+@interface NTKActivityDigitalFaceView : NTKDigitalFaceView <NTKActivityFaceViewFactoryDelegate>
 {
     NTKActivityFaceViewFactory *_faceViewFactory;
-    HKRingsView *_ringsView;
-    UILabel *_energyLabel;
-    UILabel *_briskMinutesLabel;
-    UILabel *_standHoursLabel;
+    ARUIRingsView *_ringsView;
+    UILabel *_moveLabel;
+    UILabel *_exerciseLabel;
+    UILabel *_standLabel;
     NTKFaceViewTapControl *_tapToLaunchButton;
     UIView *_timeLabelBackgroundView;
     NTKPolygonCylinderView *_densityEditingPolygonView;
     NSDate *_timeDensityEditingOverrideDate;
     struct RingLayout _currentRingLayout;
-    float _lastEnergyPercentage;
-    float _lastBriskPercentage;
-    float _lastSedentaryPercentage;
+    float _lastMovePercentage;
+    float _lastExercisePercentage;
+    float _lastStandPercentage;
     float _blinkerAndSecondsWidth;
-    int _energyStringMetricWidth;
-    int _briskStringMetricWidth;
+    int _moveStringMetricWidth;
+    int _exerciseStringMetricWidth;
     int _standStringMetricWidth;
     NTKActivitySignificantRingChangeModel *_significantRingChangeModel;
     _Bool _showSeconds;
@@ -40,9 +40,10 @@
 @property(nonatomic) float rightTimeViewInset; // @synthesize rightTimeViewInset=_rightTimeViewInset;
 - (void).cxx_destruct;
 - (id)_additionalPrelaunchApplicationIdentifiers;
-- (id)_ringGroupController;
-- (void)_recenterTimeView;
 - (float)_blinkerAndSecondsWidth;
+- (void)_removeActivityRelatedUIs;
+- (void)_createActivityRelatedUIs;
+- (id)_newActivitySubviewWithTextColor:(id)arg1;
 - (void)_enumerateActivityLabels:(CDUnknownBlockType)arg1;
 - (void)_updateTimeViewSecondsDisplayState;
 - (_Bool)slotUsesCurvedText:(id)arg1;
@@ -94,7 +95,10 @@
 - (void)_applyCurrentRingLayout;
 - (void)_updateCurrentRingLayoutIfNecessary;
 - (void)_layoutForegroundContainerView;
-- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)layoutSubviews;
+- (id)_digitalTimeLabelStyleFromViewMode:(int)arg1 faceBounds:(struct CGRect)arg2;
+- (unsigned int)_timeLabelOptions;
+- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)dealloc;
@@ -105,7 +109,6 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned int hash;
 @property(readonly) Class superclass;
-@property(retain, nonatomic) NTKDigitalTimeLabel *timeView; // @dynamic timeView;
 
 @end
 

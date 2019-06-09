@@ -7,22 +7,18 @@
 #import <objc/NSObject.h>
 
 #import <Navigation/MNLocationManagerObserver-Protocol.h>
-#import <Navigation/MNMapsAppStateMonitorObserver-Protocol.h>
 #import <Navigation/MNNavigationStateInterface-Protocol.h>
 #import <Navigation/MNSuggestionsManagerObserver-Protocol.h>
-#import <Navigation/MNVehicleDetectorObserver-Protocol.h>
 
-@class GEOApplicationAuditToken, MNCommuteSession, MNMapsAppStateMonitor, MNNavigationState, MNObserverHashTable, MNResourceManager, MNSuggestionsManager, NSString;
+@class GEOApplicationAuditToken, MNCommuteSession, MNNavigationState, MNObserverHashTable, MNSuggestionsManager, NSString;
 @protocol MNNavigationSessionManagerDelegate;
 
-@interface MNNavigationStateManager : NSObject <MNMapsAppStateMonitorObserver, MNLocationManagerObserver, MNVehicleDetectorObserver, MNSuggestionsManagerObserver, MNNavigationStateInterface>
+@interface MNNavigationStateManager : NSObject <MNLocationManagerObserver, MNSuggestionsManagerObserver, MNNavigationStateInterface>
 {
     _Bool _isStarted;
     MNNavigationState *_currentState;
-    MNMapsAppStateMonitor *_mapsAppStateMonitor;
     MNSuggestionsManager *_suggestionsManager;
     MNCommuteSession *_commuteSession;
-    MNResourceManager *_resourceManager;
     MNObserverHashTable *_navigationStateObservers;
     GEOApplicationAuditToken *_auditToken;
     id <MNNavigationSessionManagerDelegate> _navigationDelegate;
@@ -35,12 +31,18 @@
 @property(nonatomic) __weak id <MNNavigationSessionManagerDelegate> navigationDelegate; // @synthesize navigationDelegate=_navigationDelegate;
 @property(readonly, nonatomic) GEOApplicationAuditToken *auditToken; // @synthesize auditToken=_auditToken;
 - (void).cxx_destruct;
+- (void)resumeRealtimeUpdatesForSubscriber:(id)arg1;
+- (void)pauseRealtimeUpdatesForSubscriber:(id)arg1;
+- (void)checkinForNavigationService;
+- (void)updateGuidanceWithData:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)interfaceHashesWithHandler:(CDUnknownBlockType)arg1;
+- (void)recordPedestrianTracePath:(id)arg1;
 - (void)recordTraceBookmarkAtCurrentPositionWthScreenshotData:(id)arg1;
 - (void)setTracePosition:(double)arg1;
 - (void)setTracePlaybackSpeed:(double)arg1;
 - (void)setTraceIsPlaying:(_Bool)arg1;
 - (void)acceptReroute:(_Bool)arg1 forTrafficIncidentAlertDetails:(id)arg2;
+- (void)setJunctionViewImageWidth:(double)arg1 height:(double)arg2;
 - (void)setRideIndex:(unsigned int)arg1 forLegIndex:(unsigned int)arg2;
 - (void)setDisplayedStepIndex:(unsigned int)arg1;
 - (void)setIsConnectedToCarplay:(_Bool)arg1;
@@ -54,14 +56,16 @@
 - (void)repeatCurrentGuidanceWithReply:(CDUnknownBlockType)arg1;
 - (void)changeSettings:(id)arg1;
 - (void)setFullGuidanceMode:(_Bool)arg1;
-- (void)switchToRouteWithDetails:(id)arg1;
+- (void)switchToRoute:(id)arg1;
 - (void)resumeOriginalDestination;
 - (void)updateDestination:(id)arg1;
 - (void)stopPredictingDestinations;
 - (void)startPredictingDestinationsWithHandler:(CDUnknownBlockType)arg1;
 - (void)stopNavigation;
-- (void)startNavigationForRouteDetails:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)prepareNavigationWithRouteDetails:(id)arg1;
+- (void)startNavigationWithDetails:(id)arg1 activeBlock:(CDUnknownBlockType)arg2;
+- (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned int)arg2;
+- (void)cancelDirectionsRequestWithIdentifier:(id)arg1;
+- (void)requestDirections:(id)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)suggestionsManager:(id)arg1 didAddSuggestion:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateVehicleHeading:(double)arg2 timestamp:(id)arg3;
 - (void)locationManager:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
@@ -71,25 +75,20 @@
 - (void)locationManagerDidReset:(id)arg1;
 - (void)locationManagerFailedToUpdateLocation:(id)arg1 withError:(id)arg2;
 - (void)locationManagerUpdatedLocation:(id)arg1;
-- (void)vehicleDetector:(id)arg1 didChangeStateTo:(unsigned int)arg2;
-- (_Bool)isVehicleDetected;
-- (void)mapsAppStateMonitor:(id)arg1 didChangeToState:(unsigned int)arg2;
-- (_Bool)isMapsActive;
 - (id)_initialState;
 - (void)_replayStateForNewObserver:(id)arg1;
 - (void)commuteSessionDidArrive:(id)arg1;
 - (void)commuteSession:(id)arg1 didUpdateDestinations:(id)arg2;
 @property(readonly, nonatomic) MNCommuteSession *commuteSession;
-- (id)navSessionDestination;
-@property(readonly, nonatomic) int currentStateType;
+@property(readonly, nonatomic) unsigned int currentStateType;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)start;
 - (void)dealloc;
 - (id)init;
-- (int)_stateTypeForState:(id)arg1;
-- (void)_changeToDesiredLocationProviderType;
-- (void)_acquireDesiredResourcePolicyAfterDelay:(double)arg1;
+- (id)navSessionDestination;
+- (unsigned int)_stateTypeForState:(id)arg1;
+- (void)_changeToDesiredLocationProviderTypeForState:(id)arg1;
 - (void)transitionToState:(id)arg1;
 - (void)setCurrentState:(id)arg1;
 

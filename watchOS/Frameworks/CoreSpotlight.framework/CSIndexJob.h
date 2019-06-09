@@ -9,7 +9,7 @@
 #import <CoreSpotlight/NSCopying-Protocol.h>
 #import <CoreSpotlight/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSString;
+@class CSSearchContext, NSArray, NSData, NSString;
 
 @interface CSIndexJob : NSObject <NSSecureCoding, NSCopying>
 {
@@ -21,9 +21,13 @@
     NSString *_providerIdentifier;
     NSString *_providerType;
     NSString *_extensionBundleID;
+    CSSearchContext *_searchContext;
+    NSData *_importData;
 }
 
 + (_Bool)supportsSecureCoding;
+@property(retain, nonatomic) NSData *importData; // @synthesize importData=_importData;
+@property(retain, nonatomic) CSSearchContext *searchContext; // @synthesize searchContext=_searchContext;
 @property(retain, nonatomic) NSString *extensionBundleID; // @synthesize extensionBundleID=_extensionBundleID;
 @property(retain, nonatomic) NSString *providerType; // @synthesize providerType=_providerType;
 @property(retain, nonatomic) NSString *providerIdentifier; // @synthesize providerIdentifier=_providerIdentifier;

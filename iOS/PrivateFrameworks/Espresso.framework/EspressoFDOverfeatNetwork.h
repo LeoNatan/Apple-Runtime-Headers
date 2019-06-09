@@ -44,22 +44,24 @@
     shared_ptr_ae8b808b _context_cpu;
 }
 
+@property(nonatomic) shared_ptr_ae8b808b context_cpu; // @synthesize context_cpu=_context_cpu;
+@property(nonatomic) shared_ptr_ae8b808b context_metal; // @synthesize context_metal=_context_metal;
 @property(nonatomic) int cpin; // @synthesize cpin=_cpin;
 @property(nonatomic) int mode; // @synthesize mode=_mode;
 @property(nonatomic) int scaleConfig; // @synthesize scaleConfig=_scaleConfig;
 @property(retain, nonatomic) NSString *weights; // @synthesize weights=_weights;
 @property(retain, nonatomic) NSString *basename; // @synthesize basename=_basename;
 @property(nonatomic) int forceMaxNScales; // @synthesize forceMaxNScales=_forceMaxNScales;
-@property(nonatomic) shared_ptr_ae8b808b context_cpu; // @synthesize context_cpu=_context_cpu;
-@property(nonatomic) shared_ptr_ae8b808b context_metal; // @synthesize context_metal=_context_metal;
 @property(nonatomic) float maxScale; // @synthesize maxScale=_maxScale;
 @property(nonatomic) int scalingMode; // @synthesize scalingMode=_scalingMode;
 @property(nonatomic) _Bool useGPUScaler; // @synthesize useGPUScaler=_useGPUScaler;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)setContextCpu:(id)arg1;
+- (void)setContextMetal:(id)arg1;
 - (id)errorForLayers;
 - (_Bool)needRetiling:(int)arg1;
-- (void)storeDataForPruning:(shared_ptr_86ba3c2c)arg1 prob:(float)arg2;
+- (void)storeDataForPruning:(shared_ptr_acd4b298)arg1 prob:(float)arg2;
 - (void)forward_cpu_network_at_index:(int)arg1 pyr:(const shared_ptr_7fb9d9f9 *)arg2;
 - (void)retile_and_forward_espresso_network_at_index:(int)arg1 net:(const shared_ptr_d082c67d *)arg2 pyr:(const shared_ptr_7fb9d9f9 *)arg3;
 - (void)retile_and_forward_espresso_gpu_network_at_index:(int)arg1 net:(const shared_ptr_d082c67d *)arg2 pyr:(const shared_ptr_7fb9d9f9 *)arg3;
@@ -68,16 +70,17 @@
 - (void)processPyramid:(shared_ptr_7fb9d9f9)arg1 gpu_resizer:(id)arg2;
 - (void)processPyramid:(shared_ptr_7fb9d9f9)arg1;
 - (void)processBlobNoRotation:(const shared_ptr_5e9c0076 *)arg1 tex:(id)arg2 doBGRA2RGBA:(_Bool)arg3;
+- (void)processVimageNoRotation:(const struct vImage_Buffer *)arg1 tex:(id)arg2 doBGRA2RGBA:(_Bool)arg3;
 - (void)processBlob:(const shared_ptr_5e9c0076 *)arg1 tex:(id)arg2;
 - (void)generatePyramid:(const shared_ptr_5e9c0076 *)arg1 tex:(id)arg2;
 - (shared_ptr_dc6ac1b7)boxBlobForScale:(int)arg1;
 - (shared_ptr_dc6ac1b7)probBlobForScale:(int)arg1;
 - (int)getNumScales;
 - (void)retryLoadingCaffeNet:(shared_ptr_d082c67d *)arg1 name:(id)arg2 weights:(id)arg3 context:(shared_ptr_ae8b808b)arg4 cp:(int)arg5;
-- (void)autoSetupNetBaseName:(id)arg1 weights:(id)arg2 scaleConfig:(int)arg3 setupMode:(int)arg4 computePath:(int)arg5 autoAspectRatio:(float)arg6 forceReset:(_Bool)arg7 useLowPriorityMode:(_Bool)arg8 gpuPriority:(int)arg9;
+- (void)autoSetupNetBaseName:(id)arg1 weights:(id)arg2 scaleConfig:(int)arg3 setupMode:(int)arg4 computePath:(int)arg5 autoAspectRatio:(float)arg6 forceReset:(_Bool)arg7 useLowPriorityMode:(_Bool)arg8 gpuPriority:(unsigned int)arg9;
 - (void)wipeLayersMemory;
 - (void)reset;
-- (void)autoResizeForAspectRatio:(float)arg1 useLowPriorityMode:(_Bool)arg2 gpuPriority:(int)arg3;
+- (void)autoResizeForAspectRatio:(float)arg1 useLowPriorityMode:(_Bool)arg2 gpuPriority:(unsigned int)arg3;
 - (struct net_strides_configuration)strideConfiguration;
 - (double)getScale:(int)arg1;
 - (void)dealloc;

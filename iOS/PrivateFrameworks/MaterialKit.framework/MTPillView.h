@@ -10,9 +10,9 @@
 {
 }
 
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 settings:(id)arg2;
 
 @end
 

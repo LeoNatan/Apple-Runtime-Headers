@@ -21,7 +21,10 @@
 - (void).cxx_destruct;
 - (void)applicationInstallsDidStart:(id)arg1;
 - (_Bool)proxiesContainClassroomApp:(id)arg1;
-- (void)_fetchListenerEndpointWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)establishEndpointWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)beginExtensionRequestWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)configureInstructorExtensionAfterFetchError:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)fetchListenerEndpointFromClassroomBundleWithURL:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)fetchListenerEndpointWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (void)resetExtension;
 - (id)init;

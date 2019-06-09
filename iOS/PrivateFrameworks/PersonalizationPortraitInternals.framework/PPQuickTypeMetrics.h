@@ -15,9 +15,6 @@
 
 + (void)eventsMatches:(unsigned long long)arg1;
 + (void)contactMatchesWithContactsCount:(unsigned long long)arg1 foundInAppsCount:(unsigned long long)arg2;
-+ (void)autocompleteGoalConverted:(_Bool)arg1 queryType:(id)arg2;
-+ (void)discoverySuggesterGoalConverted:(_Bool)arg1 queryType:(id)arg2;
-+ (void)peopleSuggesterGoalConverted:(_Bool)arg1 queryType:(id)arg2;
 + (void)initializationLatency:(unsigned long long)arg1 servant:(id)arg2;
 + (void)quickTypeMetricsWithLatency:(unsigned long long)arg1 servant:(id)arg2 hasResults:(_Bool)arg3;
 + (void)frameworkError:(id)arg1 errorCode:(long long)arg2;

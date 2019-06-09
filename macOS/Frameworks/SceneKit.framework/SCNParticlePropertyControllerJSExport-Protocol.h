@@ -11,7 +11,7 @@
 @protocol SCNParticlePropertyControllerJSExport <JSExport>
 + (id)controllerWithAnimation:(CAAnimation *)arg1;
 @property(copy, nonatomic) NSString *inputProperty;
-@property(nonatomic) __weak SCNNode *inputOrigin;
+@property(nonatomic) SCNNode *inputOrigin;
 @property(nonatomic) double inputBias;
 @property(nonatomic) double inputScale;
 @property(nonatomic) long long inputMode;

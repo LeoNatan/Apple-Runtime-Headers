@@ -6,6 +6,7 @@
 
 #import <StoreKitUI/SKUIMenuBarViewElement.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIDynamicMenuBarViewElement : SKUIMenuBarViewElement
 {
 }

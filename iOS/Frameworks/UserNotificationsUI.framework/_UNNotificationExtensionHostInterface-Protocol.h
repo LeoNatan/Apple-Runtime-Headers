@@ -8,8 +8,6 @@
 
 @protocol _UNNotificationExtensionHostInterface
 - (void)_extensionSetUserNotificationActions:(NSArray *)arg1;
-- (void)_extensionAudioAccessoryViewContextId:(unsigned int)arg1;
-- (void)_extensionRequestsToSetDismissEnabled:(_Bool)arg1;
 - (void)_extensionSetTitle:(NSString *)arg1;
 - (void)_extensionRequestsDismiss;
 - (void)_extensionRequestsDefaultAction;

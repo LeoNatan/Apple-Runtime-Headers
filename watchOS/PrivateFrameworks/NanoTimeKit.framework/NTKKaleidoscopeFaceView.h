@@ -61,6 +61,8 @@
 - (float)_handAlphaForEditMode:(int)arg1;
 - (_Bool)_wantsMinorDetents;
 - (void)_updateFramerate;
+- (void)screenWillTurnOn;
+- (void)screenDidTurnOff;
 - (void)crownInputSequencerDidEndDecelerating:(id)arg1;
 - (void)crownInputSequencerIdleDidChange:(id)arg1;
 - (void)crownInputSequencerOffsetDidChange:(id)arg1;
@@ -69,12 +71,13 @@
 - (void)_updateDayDuration;
 - (void)_updateDayDurationOnNextRunloopTurn;
 - (void)_resetCrownOffset;
-- (void)_backlightDidTurnOff;
+- (void)handleScreenBlanked;
 - (void)_performWristRaiseAnimation;
 - (void)_prepareWristRaiseAnimation;
 - (id)resourceProviderKey;
 - (id)provideAtlasBacking:(id)arg1;
 - (void)_updateForResourceDirectoryChange:(id)arg1;
+- (void)_finalizeForSnapshotting:(CDUnknownBlockType)arg1;
 - (_Bool)_supportsUnadornedSnapshot;
 - (int)_keylineStyleForComplicationSlot:(id)arg1;
 - (struct CGRect)_keylineFrameForCustomEditMode:(int)arg1 slot:(id)arg2;
@@ -91,7 +94,6 @@
 - (void)_cleanupAfterTransitionComplicationSlot:(id)arg1 selectedComplication:(id)arg2;
 - (void)_cleanupAfterEditing;
 - (void)_prepareForEditing;
-- (id)_editOptionThatHidesAllComplications;
 - (float)_verticalPaddingForStatusBar;
 - (struct CGPoint)_contentCenterOffset;
 - (int)_legacyLayoutOverrideforComplicationType:(unsigned int)arg1 slot:(id)arg2;
@@ -101,7 +103,7 @@
 - (void)_configureComplicationView:(id)arg1 forSlot:(id)arg2;
 - (id)_newLegacyViewForComplication:(id)arg1 family:(int)arg2 slot:(id)arg3;
 - (void)_loadLayoutRules;
-- (void)_configureReusableTimeView:(id)arg1;
+- (void)_configureTimeView:(id)arg1;
 - (double)_kaleidoscopeTimeForAsset:(unsigned int)arg1;
 - (void)quadViewWillDisplay:(id)arg1 forTime:(double)arg2;
 - (_Bool)slotUsesCurvedText:(id)arg1;
@@ -109,7 +111,7 @@
 - (void)_enableCrown;
 - (void)_applyDataMode;
 - (void)_applyFrozen;
-- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1;
+- (void)_renderSynchronouslyWithImageQueueDiscard:(_Bool)arg1 inGroup:(id)arg2;
 - (void)_unloadSnapshotContentViews;
 - (void)_loadSnapshotContentViews;
 - (void)_updateWithAsset:(unsigned int)arg1;

@@ -6,27 +6,28 @@
 
 #import <UIKitCore/_UIStatusBarVisualProvider_Phone.h>
 
-@class NSDictionary, NSLayoutConstraint, NSTimer, UILayoutGuide, _UIStatusBarDisplayItemPlacement, _UIStatusBarDisplayItemPlacementGroup;
+#import <UIKitCore/_UIStatusBarCellularItemTypeStringProvider-Protocol.h>
 
-@interface _UIStatusBarVisualProvider_Split : _UIStatusBarVisualProvider_Phone
+@class NSDictionary, NSLayoutConstraint, NSString, NSTimer, UILayoutGuide, _UIStatusBarDisplayItemPlacement, _UIStatusBarDisplayItemPlacementGroup;
+
+@interface _UIStatusBarVisualProvider_Split : _UIStatusBarVisualProvider_Phone <_UIStatusBarCellularItemTypeStringProvider>
 {
     NSDictionary *_orderedDisplayItemPlacements;
     _UIStatusBarDisplayItemPlacement *_serviceNamePlacement;
     _UIStatusBarDisplayItemPlacement *_dualServiceNamePlacement;
     _UIStatusBarDisplayItemPlacementGroup *_lowerWifiGroup;
-    _UIStatusBarDisplayItemPlacement *_pillIconPlacement;
     _UIStatusBarDisplayItemPlacement *_batteryChargingPlacement;
     UILayoutGuide *_cutoutLayoutGuide;
     UILayoutGuide *_mainRegionsLayoutGuide;
     NSLayoutConstraint *_leadingBottomConstraint;
     NSLayoutConstraint *_expandedLeadingLowerTopConstraint;
     NSLayoutConstraint *_expandedTrailingBottomConstraint;
-    NSTimer *_pillTimer;
     NSTimer *_systemUpdatesTimer;
     NSTimer *_batteryExpansionTimer;
     NSTimer *_airplaneModeIgnoreChangesTimer;
 }
 
++ (double)condensedPointSizeForCellularType:(long long)arg1 defaultPointSize:(double)arg2 baselineOffset:(double *)arg3;
 + (struct CGSize)intrinsicContentSizeForOrientation:(long long)arg1;
 + (id)expandedFont;
 + (id)normalFont;
@@ -35,13 +36,19 @@
 + (struct NSDirectionalEdgeInsets)leadingEdgeInsets;
 + (struct NSDirectionalEdgeInsets)_edgeInsetsFromCenteringEdgeInset:(double)arg1 trailing:(_Bool)arg2;
 + (double)baseIconScale;
++ (double)bottomLeadingTopOffset;
++ (double)bottomLeadingWidth;
 + (double)lowerExpandedBaselineOffset;
 + (double)baselineBottomInset;
++ (id)pillSmallFont;
 + (id)pillFont;
++ (struct CGSize)smallPillSize;
 + (struct CGSize)pillSize;
 + (double)pillCenteringEdgeInset;
 + (double)trailingCenteringEdgeInset;
 + (double)leadingCenteringEdgeInset;
++ (double)leadingSmallPillSpacing;
++ (double)leadingItemSpacing;
 + (double)notchBottomCornerRadius;
 + (double)notchTopCornerRadius;
 + (struct CGSize)notchSize;
@@ -53,14 +60,12 @@
 @property(retain, nonatomic) NSTimer *airplaneModeIgnoreChangesTimer; // @synthesize airplaneModeIgnoreChangesTimer=_airplaneModeIgnoreChangesTimer;
 @property(retain, nonatomic) NSTimer *batteryExpansionTimer; // @synthesize batteryExpansionTimer=_batteryExpansionTimer;
 @property(retain, nonatomic) NSTimer *systemUpdatesTimer; // @synthesize systemUpdatesTimer=_systemUpdatesTimer;
-@property(retain, nonatomic) NSTimer *pillTimer; // @synthesize pillTimer=_pillTimer;
 @property(retain, nonatomic) NSLayoutConstraint *expandedTrailingBottomConstraint; // @synthesize expandedTrailingBottomConstraint=_expandedTrailingBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *expandedLeadingLowerTopConstraint; // @synthesize expandedLeadingLowerTopConstraint=_expandedLeadingLowerTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *leadingBottomConstraint; // @synthesize leadingBottomConstraint=_leadingBottomConstraint;
 @property(retain, nonatomic) UILayoutGuide *mainRegionsLayoutGuide; // @synthesize mainRegionsLayoutGuide=_mainRegionsLayoutGuide;
 @property(retain, nonatomic) UILayoutGuide *cutoutLayoutGuide; // @synthesize cutoutLayoutGuide=_cutoutLayoutGuide;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *batteryChargingPlacement; // @synthesize batteryChargingPlacement=_batteryChargingPlacement;
-@property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *pillIconPlacement; // @synthesize pillIconPlacement=_pillIconPlacement;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacementGroup *lowerWifiGroup; // @synthesize lowerWifiGroup=_lowerWifiGroup;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *dualServiceNamePlacement; // @synthesize dualServiceNamePlacement=_dualServiceNamePlacement;
 @property(retain, nonatomic) _UIStatusBarDisplayItemPlacement *serviceNamePlacement; // @synthesize serviceNamePlacement=_serviceNamePlacement;
@@ -87,18 +92,12 @@
 - (double)airplaneShouldFadeForAnimationType:(long long)arg1;
 - (double)airplaneSpeedForAnimationType:(long long)arg1;
 - (double)airplaneTravelOffsetInProposedPartWithIdentifier:(id *)arg1 animationType:(long long)arg2;
-- (id)_animationForBackgroundActivityPill;
-- (id)_animationForBackgroundActivityIcon;
-- (void)_switchPillToTimeWithUpdate:(_Bool)arg1;
-- (void)_updateBackgroundActivityWithEntry:(id)arg1 timeEntry:(id)arg2 needsUpdate:(_Bool)arg3;
-- (void)_updateDataForBackgroundActivity:(id)arg1;
 - (void)_updateSystemNavigationWithData:(id)arg1;
 - (void)updateDataForSystemNavigation:(id)arg1;
 - (void)updateDataForService:(id)arg1;
 - (_Bool)canFixupDisplayItemAttributes;
 - (id)displayItemIdentifiersForPartWithIdentifier:(id)arg1;
 - (id)regionIdentifiersForPartWithIdentifier:(id)arg1;
-- (void)actionable:(id)arg1 highlighted:(_Bool)arg2 initialPress:(_Bool)arg3;
 - (id)removalAnimationForDisplayItemWithIdentifier:(id)arg1 itemAnimation:(id)arg2;
 - (id)additionAnimationForDisplayItemWithIdentifier:(id)arg1 itemAnimation:(id)arg2;
 - (void)statusBarRegionsUpdated;
@@ -107,10 +106,19 @@
 - (void)orientationUpdatedFromOrientation:(long long)arg1;
 - (id)region:(id)arg1 willSetDisplayItems:(id)arg2;
 - (id)willUpdateWithData:(id)arg1;
+- (id)condensedFontForCellularType:(long long)arg1 defaultFont:(id)arg2 baselineOffset:(double *)arg3;
+- (id)stringForCellularType:(long long)arg1 condensed:(_Bool)arg2;
+- (void)itemCreated:(id)arg1;
 - (id)overriddenStyleAttributesForDisplayItemWithIdentifier:(id)arg1;
-- (id)styleAttributes;
+- (id)styleAttributesForStyle:(long long)arg1;
 - (id)orderedDisplayItemPlacementsInRegionWithIdentifier:(id)arg1;
 - (id)setupInContainerView:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

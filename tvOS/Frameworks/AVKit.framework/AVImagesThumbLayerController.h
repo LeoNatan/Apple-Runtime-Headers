@@ -10,6 +10,7 @@
 
 @class AVFrame, AVFrameSet, NSString, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface AVImagesThumbLayerController : NSObject <AVThumbLayerController>
 {
     double _desiredTimeInterval;

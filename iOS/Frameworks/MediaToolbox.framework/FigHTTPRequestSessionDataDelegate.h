@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface FigHTTPRequestSessionDataDelegate : NSObject <NSURLSessionDataDelegate>
 {
     NSMutableDictionary *_taskToFigHTTPRequest;

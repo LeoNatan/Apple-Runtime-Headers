@@ -9,8 +9,7 @@
 #import <GeoServices/GEOETAUpdaterDelegate-Protocol.h>
 #import <GeoServices/NSSecureCoding-Protocol.h>
 
-@class GEOCommonOptions, GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsRequestFeedback, GEOETARoute, GEOETAUpdater, GEOLocation, GEOMapRegion, GEOMapServiceTraits, GEORouteAttributes, GEORouteHypothesis, GEORouteHypothesizerAnalyticsStore, GEORouteMatch, NSDate, NSMutableArray, NSString;
-@protocol GEOTTLTraceRecorder, OS_dispatch_queue;
+@class GEOCommonOptions, GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequest, GEODirectionsRequestFeedback, GEOETARoute, GEOETAUpdater, GEOLocation, GEOMapRegion, GEOMapServiceTraits, GEORouteAttributes, GEORouteHypothesis, GEORouteHypothesizerAnalyticsStore, GEORouteMatch, NSDate, NSMutableArray, NSString, geo_isolater;
 
 @interface GEORouteHypothesisMonitor : NSObject <GEOETAUpdaterDelegate, NSSecureCoding>
 {
@@ -31,7 +30,7 @@
     GEOMapServiceTraits *_traits;
     GEORouteHypothesizerAnalyticsStore *_analyticsStore;
     GEOComposedRoute *_route;
-    NSObject<OS_dispatch_queue> *_requestIsolationQueue;
+    geo_isolater *_requestIsolater;
     GEODirectionsRequest *_currentRequest;
     BOOL _needReroute;
     NSMutableArray *_rerouteEntries;
@@ -42,12 +41,9 @@
     double _travelScore;
     GEOMapRegion *_arrivalMapRegion;
     NSString *_traceName;
-    id <GEOTTLTraceRecorder> _traceRecorder;
 }
 
 + (id)monitorWithSource:(id)arg1 toDestination:(id)arg2 transportType:(int)arg3 arrivalDate:(id)arg4 traceName:(id)arg5 traits:(id)arg6;
-+ (void)setTTLTraceRecorderFactory:(id)arg1;
-+ (id)ttlTraceRecorderFactory;
 + (void)setServerFormattedStringFormatter:(id)arg1;
 + (id)serverFormattedStringFormatter;
 + (void)setUserPreferencesProvider:(id)arg1;
@@ -94,7 +90,6 @@
 @property(readonly, nonatomic) BOOL supportsLiveTraffic;
 @property(readonly, nonatomic) NSString *routeName;
 @property(readonly, copy) NSString *description;
-- (void)_recordTraceForEvent:(long long)arg1 parameters:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (void)dealloc;
 - (void)_finishEtaUpdaterInit;

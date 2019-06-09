@@ -6,25 +6,15 @@
 
 #import <objc/NSObject.h>
 
-#import <PhotoAnalysis/NSUserNotificationCenterDelegate-Protocol.h>
-
-@class NSString, NSUserNotificationCenter;
-
-@interface PHALocalNotificationInterface : NSObject <NSUserNotificationCenterDelegate>
+@interface PHALocalNotificationInterface : NSObject
 {
-    NSUserNotificationCenter *_notificationCenter;
+    BOOL _isNotificationRegistered;
 }
 
 + (id)localNotificationInterface;
-- (void).cxx_destruct;
+@property BOOL isNotificationRegistered; // @synthesize isNotificationRegistered=_isNotificationRegistered;
 - (void)fireLocalNotificationWithOptions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

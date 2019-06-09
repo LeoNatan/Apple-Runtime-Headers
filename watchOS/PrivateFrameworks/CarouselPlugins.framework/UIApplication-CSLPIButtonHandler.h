@@ -8,7 +8,6 @@
 
 @interface UIApplication (CSLPIButtonHandler)
 - (id)activityForButtonMask:(unsigned int)arg1 event:(unsigned int)arg2;
-- (id)_walkResponderChainToHandleButton:(unsigned int)arg1 eventType:(unsigned int)arg2 firstDownTime:(unsigned long long)arg3 lastUpTime:(unsigned long long)arg4 firstResponder:(id)arg5 handlersChecked:(id)arg6;
 - (id)_firstResponderForWindow:(id)arg1;
 - (void)postCSLButton:(unsigned int)arg1 eventType:(unsigned int)arg2 firstDownTime:(unsigned long long)arg3 lastUpTime:(unsigned long long)arg4;
 - (void)removeButtonHandlerOverride:(id)arg1;

@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 @property(nonatomic) __weak id <TKVibrationRecorderViewControllerDelegate> vibrationRecorderViewControllerDelegate;
+- (_Bool)_canShowWhileLocked;
 - (void)dealloc;
 - (id)initWithVibratorController:(id)arg1;
 - (_Bool)canBeShownFromSuspendedState;

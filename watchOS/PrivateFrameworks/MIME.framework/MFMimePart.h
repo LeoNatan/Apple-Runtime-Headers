@@ -119,6 +119,7 @@
 - (void)_clearParent;
 - (void)_clearNextAndSibling;
 - (void)dealloc;
+- (void)_setObjectInOtherIvars:(id)arg1 forKey:(id)arg2;
 - (_Bool)parseMimeBodyDownloadIfNecessary:(_Bool)arg1;
 - (_Bool)parseMimeBody;
 - (id)partNumber;
@@ -133,6 +134,7 @@
 - (id)contentsForTextSystemToOffset:(unsigned int)arg1 resultOffset:(unsigned int *)arg2 downloadIfNecessary:(_Bool)arg3 asHTML:(_Bool)arg4;
 - (_Bool)hasContents;
 - (id)contentsForTextSystemToOffset:(unsigned int)arg1 resultOffset:(unsigned int *)arg2 downloadIfNecessary:(_Bool)arg3 asHTML:(_Bool)arg4 isComplete:(_Bool *)arg5;
+- (SEL)_selectorForCString:(char *)arg1;
 - (void)_contents:(id *)arg1 toOffset:(unsigned int)arg2 resultOffset:(unsigned int *)arg3 downloadIfNecessary:(_Bool)arg4 asHTML:(_Bool)arg5 isComplete:(_Bool *)arg6;
 - (id)decodeText;
 - (id)_fullMimeTypeEvenInsideAppleDouble;

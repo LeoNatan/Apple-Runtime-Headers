@@ -30,7 +30,7 @@
 - (void)_updateViewControllerInsets;
 - (struct NSObject *)contentViewController;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
-- (void)userDidSelectAccessoryButton:(id)arg1;
+- (void)userDidSelectAccessoryButton:(struct NSObject *)arg1;
 @property(readonly, nonatomic) NSString *accessoryButtonTitle;
 @property(readonly, nonatomic) unsigned long long accessoryButtonType;
 - (_Bool)hasLoadedContentData;
@@ -40,7 +40,7 @@
 @property(readonly, nonatomic) NSString *localizedTitle;
 
 // Remaining properties
-@property(readonly, nonatomic) const struct __CFString *accessoryButtonEventTrackerKey;
+@property(readonly, nonatomic) Class collectionViewItemClass;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

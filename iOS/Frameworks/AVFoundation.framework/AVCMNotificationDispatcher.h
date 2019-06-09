@@ -25,7 +25,6 @@
 - (void)addListenerWithWeakReference:(id)arg1 callback:(CDUnknownFunctionPointerType)arg2 name:(struct __CFString *)arg3 object:(const void *)arg4 flags:(unsigned int)arg5;
 @property(readonly, nonatomic) struct opaqueCMNotificationCenter *CMNotificationCenter;
 @property(readonly, nonatomic, getter=_callbackContextRegistry) AVCallbackContextRegistry *callbackContextRegistry;
-- (void)finalize;
 - (void)dealloc;
 - (id)initWithCMNotificationCenter:(struct opaqueCMNotificationCenter *)arg1;
 - (id)init;

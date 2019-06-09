@@ -8,5 +8,7 @@
 
 @interface _UINavigationControllerPalette (rdar27259889)
 - (void)resetBackgroundConstraints;
+- (void)SKUI_endHidingPaletteShadow;
+- (void)SKUI_beginHidingPaletteShadow;
 @end
 

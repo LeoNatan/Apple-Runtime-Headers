@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface MediaControlsAnimationController : NSObject <UIViewControllerAnimatedTransitioning>
 {
     _Bool _presenting;

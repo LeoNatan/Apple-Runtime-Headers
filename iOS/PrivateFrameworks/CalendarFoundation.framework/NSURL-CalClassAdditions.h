@@ -7,8 +7,17 @@
 #import <Foundation/NSURL.h>
 
 @interface NSURL (CalClassAdditions)
++ (id)URLForNoTel;
++ (id)URLForNoMail;
++ (_Bool)_isValidURI:(id)arg1;
++ (id)_URLForAddress:(id)arg1 scheme:(id)arg2 noAddress:(id)arg3;
++ (id)URLForTel:(id)arg1;
++ (id)URLForMail:(id)arg1;
 + (id)davCompatibleFilenameForFilename:(id)arg1;
-+ (id)URLWithAddressBookUID:(id)arg1;
++ (id)URLWithContactIdentifier:(id)arg1;
+- (_Bool)_hasDescription:(id)arg1;
+- (_Bool)isNoTel;
+- (_Bool)isNoMail;
 - (_Bool)cal_isEquivalentToPhoneNumber:(id)arg1;
 - (_Bool)cal_isEquivalentToEmailAddress:(id)arg1;
 - (id)cal_phoneNumberString;

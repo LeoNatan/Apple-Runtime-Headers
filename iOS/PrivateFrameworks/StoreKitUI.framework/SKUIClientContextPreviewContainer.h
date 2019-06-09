@@ -10,6 +10,7 @@
 
 @class SKUIClientContext, SKUIPreviewContainerViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUIClientContextPreviewContainer : IKJSObject <SKUIClientContextPreviewContainer>
 {
     SKUIClientContext *_clientContext;

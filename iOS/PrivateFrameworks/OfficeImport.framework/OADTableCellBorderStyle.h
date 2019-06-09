@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 + (id)defaultStyle;
 + (id)defaultObliqueStroke;
 + (id)defaultAxisParallelStroke;
+- (void).cxx_destruct;
 - (id)description;
 - (void)applyOverridesFrom:(id)arg1;
 - (id)shallowCopy;
@@ -45,7 +46,6 @@ __attribute__((visibility("hidden")))
 - (id)leftStroke;
 - (void)setStrokeOfType:(int)arg1 toValue:(id)arg2;
 - (id)stroke:(int)arg1;
-- (void)dealloc;
 
 @end
 

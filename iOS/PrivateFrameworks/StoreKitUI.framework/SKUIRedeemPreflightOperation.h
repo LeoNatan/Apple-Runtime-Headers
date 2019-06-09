@@ -9,6 +9,7 @@
 @class NSObject, NSString, SKUIClientContext, SKUIRedeemConfiguration, SKUIRedeemViewControllerLegacy;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemPreflightOperation : NSOperation
 {
     SKUIClientContext *_clientContext;

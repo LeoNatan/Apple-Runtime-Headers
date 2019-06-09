@@ -42,7 +42,6 @@
     CDUnknownBlockType _networkActivity;
     _Bool _enabled;
     _Bool _useCourseForHeading;
-    _Bool _logStartStopLocationUpdates;
     double _lastVehicleHeading;
     double _lastVehicleSpeed;
     double _lastVehicleHeadingUpdateTime;
@@ -59,14 +58,15 @@
     NSLock *_observersLock;
     _Bool _hasCustomDesiredAccuracy;
     _Bool _continuesWhileInactive;
+    _Bool _logStartStopLocationUpdates;
     NSError *_locationError;
 }
 
 + (id)timeoutError;
 + (id)sharedLocationManager;
 + (void)setCanMonitorWiFiStatus:(_Bool)arg1;
-@property(nonatomic) double minimumLocationUpdateInterval; // @synthesize minimumLocationUpdateInterval=_minimumLocationUpdateInterval;
 @property(nonatomic) _Bool logStartStopLocationUpdates; // @synthesize logStartStopLocationUpdates=_logStartStopLocationUpdates;
+@property(nonatomic) double minimumLocationUpdateInterval; // @synthesize minimumLocationUpdateInterval=_minimumLocationUpdateInterval;
 @property(nonatomic) _Bool allowOldLocations; // @synthesize allowOldLocations=_allowOldLocations;
 @property(readonly, nonatomic, getter=wasLastLocationPushed) _Bool lastLocationPushed; // @synthesize lastLocationPushed=_lastLocationPushed;
 @property(copy, nonatomic) CDUnknownBlockType locationCorrector; // @synthesize locationCorrector=_locationCorrector;
@@ -94,6 +94,7 @@
 - (id)singleLocationUpdateWithHandler:(CDUnknownBlockType)arg1;
 - (void)_waitForAccurateLocationsTimerFired:(id)arg1;
 - (void)waitForAccurateLocationWithHandler:(CDUnknownBlockType)arg1;
+- (id)observersDescription;
 - (void)stopLocationUpdateWithObserver:(id)arg1;
 - (void)startLocationUpdateWithObserver:(id)arg1;
 - (void)_startLocationUpdateWithObserver:(id)arg1 desiredAccuracy:(double)arg2;

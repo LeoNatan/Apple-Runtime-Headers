@@ -15,7 +15,10 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)sharedInstance;
-- (int)getMomentsCapabilitiesForSupportedDevices;
+- (BOOL)isSupportedChipID;
+- (BOOL)isSupportedDeviceClass;
+- (id)getMomentsVideoCodecs;
+- (id)getMomentsImageTypes;
 - (int)getMomentsCapabilities;
 - (id)initWithHardwareSettings:(id)arg1;
 

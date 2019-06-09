@@ -20,7 +20,7 @@
 + (void)initialize;
 - (void)setDelegateOverride:(id)arg1 delegateOverrideCallbackQueue:(id)arg2;
 @property(readonly, nonatomic) id delegateOverride;
-- (_Bool)canAddConnectionForMediaType:(id)arg1;
+- (_Bool)canAddConnection:(id)arg1 failureReason:(id *)arg2;
 - (id)connectionMediaTypes;
 - (id)recommendedAudioSettingsForAssetWriterWithOutputFileType:(id)arg1;
 - (id)supportedAssetWriterOutputFileTypes;

@@ -6,6 +6,7 @@
 
 #import <ICADevices/ICDBaseCommandImp.h>
 
+__attribute__((visibility("hidden")))
 @interface ICDScannerStatusImp : ICDBaseCommandImp
 {
     struct ICD_ScannerStatusPB _scannerStatusPB;

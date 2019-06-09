@@ -16,6 +16,7 @@
 + (id)dataProviderWithPath:(id)arg1;
 + (id)dataProviderWithURL:(id)arg1;
 @property(retain) NSURL *url; // @synthesize url=_url;
+- (void).cxx_destruct;
 - (id)data;
 - (_Bool)save:(id)arg1;
 - (id)_fileAttributes:(id)arg1;
@@ -23,7 +24,6 @@
 - (_Bool)_isFileURL;
 - (id)_path;
 - (id)errorWithMessage:(id)arg1 code:(long long)arg2;
-- (void)dealloc;
 - (id)initWithURL:(id)arg1;
 
 @end

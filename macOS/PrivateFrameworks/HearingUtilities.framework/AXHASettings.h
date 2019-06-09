@@ -25,6 +25,7 @@
 - (BOOL)isDeviceIDOnCloudBlacklist:(id)arg1;
 - (void)removeDeviceIDFromCloudBlacklist:(id)arg1;
 - (void)addDeviceIDToCloudBlacklist:(id)arg1;
+@property(nonatomic) long long complicationPreferredDisplayMode;
 @property(nonatomic) BOOL multideviceAudioEnabled;
 @property(nonatomic) BOOL multideviceSettingsEnabled;
 @property(nonatomic) BOOL exportsLiveListenToFile;
@@ -45,6 +46,7 @@
 - (id)_notificationForPreferenceKey:(id)arg1;
 - (void)_handlePreferenceChanged:(id)arg1;
 - (void)pushLocalHearingAidsToiCloud;
+- (BOOL)shouldPushLocalAidsToiCloud;
 - (void)setLocalHearingAidsFromiCloud:(id)arg1;
 - (void)iCloudAccountDidChange:(id)arg1;
 - (void)icloudHearingSettingsDidChange:(id)arg1;
@@ -53,6 +55,7 @@
 - (BOOL)isiCloudPaired;
 - (BOOL)isPairedWithFakeHearingAids;
 - (void)dealloc;
+- (void)_initializeICloudSetup;
 - (id)init;
 
 @end

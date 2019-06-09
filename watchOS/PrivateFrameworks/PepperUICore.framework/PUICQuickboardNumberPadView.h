@@ -16,6 +16,7 @@
     UIView *_keypad;
     PUICQuickboardKeypadButton *_okButton;
     PUICQuickboardKeypadButton *_cancelButton;
+    int _mode;
     _Bool _dialer;
     id <PUICQuickboardNumberPadViewDelegate> _delegate;
     PUICQuickboardKeypadButton *_deleteButton;
@@ -39,7 +40,7 @@
 - (void)layoutSubviews;
 - (void)_configureAccessibleKeypadButton:(id)arg1;
 - (void)_initKeypad;
-- (id)initWithFrame:(struct CGRect)arg1 asDialer:(_Bool)arg2;
+- (id)initWithFrame:(struct CGRect)arg1 mode:(int)arg2;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 

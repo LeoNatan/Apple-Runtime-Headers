@@ -24,7 +24,6 @@
 @property(nonatomic) BOOL doNotDrawThirdSeparationLine; // @synthesize doNotDrawThirdSeparationLine=_doNotDrawThirdSeparationLine;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;
-- (BOOL)isInNotificationCenter;
 - (void)drawBevelInRect:(struct CGRect)arg1;
 - (void)drawBevel;
 - (void)drawScalableImage:(id)arg1 scaleTopLeft:(struct CGPoint)arg2 scaleBottomRight:(struct CGPoint)arg3 inFrame:(struct CGRect)arg4;

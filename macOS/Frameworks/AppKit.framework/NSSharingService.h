@@ -17,11 +17,14 @@
 + (void)_addRecentEmailServiceToDefaultsWithSubject:(id)arg1 recipients:(id)arg2;
 + (id)sharingServicesForAttributedString:(id)arg1 range:(struct _NSRange)arg2 mask:(unsigned long long)arg3;
 + (id)sharingServicesForItems:(id)arg1;
++ (void)getSharingServicesForItems:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (id)sharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2;
 + (void)getSharingServicesForItems:(id)arg1 mask:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)_filteredSharingServices:(id)arg1 forCloudSharingWithItems:(id)arg2;
 + (id)_urlFromItem:(id)arg1;
 + (id)sharingServiceNamed:(id)arg1;
++ (void)getSharingServiceNamed:(id)arg1 completion:(CDUnknownBlockType)arg2;
++ (void)getSharingServiceNamed:(id)arg1 allowInactive:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 + (id)_sharingServiceNamed:(id)arg1 allowInactive:(BOOL)arg2;
 + (BOOL)_usesItemProvider;
 + (Class)_SHKSharingServicePickerClass;
@@ -58,6 +61,7 @@
 - (BOOL)canPerformWithItems:(id)arg1;
 - (void)dealloc;
 - (id)initWithTitle:(id)arg1 image:(id)arg2 alternateImage:(id)arg3 handler:(CDUnknownBlockType)arg4;
+- (id)initWithName:(id)arg1 title:(id)arg2 image:(id)arg3 alternateImage:(id)arg4 type:(long long)arg5 handler:(CDUnknownBlockType)arg6;
 - (id)init;
 - (void)_commonInit;
 - (void)_setSecondaryCheckboxState:(long long)arg1;

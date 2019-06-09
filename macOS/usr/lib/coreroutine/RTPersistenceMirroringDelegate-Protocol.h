@@ -6,9 +6,10 @@
 
 #import <coreroutine/NSObject-Protocol.h>
 
-@class NSPersistentStore;
+@class NSManagedObjectContext, NSPersistentStore;
 
 @protocol RTPersistenceMirroringDelegate <NSObject>
+- (void)performMirroringRequestWithType:(long long)arg1 affectedStore:(NSPersistentStore *)arg2 qualityOfService:(long long)arg3 managedObjectContext:(NSManagedObjectContext *)arg4 handler:(void (^)(BOOL, NSError *))arg5;
 - (void)performMirroringRequestWithType:(long long)arg1 affectedStore:(NSPersistentStore *)arg2 qualityOfService:(long long)arg3 handler:(void (^)(BOOL, NSError *))arg4;
 @end
 

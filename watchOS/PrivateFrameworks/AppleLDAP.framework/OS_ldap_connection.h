@@ -4,15 +4,24 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <System/OS_object.h>
+#import <objc/NSObject.h>
+
+#import <AppleLDAP/OS_ldap_connection-Protocol.h>
+
+@class NSString;
 
 __attribute__((visibility("hidden")))
-@interface OS_ldap_connection : OS_object
+@interface OS_ldap_connection : NSObject <OS_ldap_connection>
 {
 }
 
-- (void)_dispose;
-- (void)_xref_dispose;
+- (void)dealloc;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned int hash;
+@property(readonly) Class superclass;
 
 @end
 

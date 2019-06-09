@@ -11,13 +11,15 @@
 @interface NTKWhistlerAnalogColorPalette : NSObject
 {
     CLKDevice *_device;
+    _Bool _canShowMonochrome;
 }
 
 + (id)swatchColorForColor:(unsigned long long)arg1;
 - (void).cxx_destruct;
 - (id)mainColorForColor:(unsigned long long)arg1;
 - (id)complicationForegroundColor:(unsigned long long)arg1;
-- (id)dialPlatterTextColorForColor:(unsigned long long)arg1;
+- (id)platterTextColorForColor:(unsigned long long)arg1;
+- (id)bezelTextColorForColor:(unsigned long long)arg1;
 - (id)dialFillColorForColor:(unsigned long long)arg1;
 - (id)minuteTicksColorForColor:(unsigned long long)arg1;
 - (id)hourTicksColorForColor:(unsigned long long)arg1;

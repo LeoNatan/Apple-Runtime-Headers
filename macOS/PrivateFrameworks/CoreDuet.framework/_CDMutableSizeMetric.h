@@ -8,20 +8,10 @@
 
 @interface _CDMutableSizeMetric : _CDSizeMetric
 {
-    // Error parsing type: ^{XSPerfCollection={_opaque_pthread_mutex_t=q[56c]}IIIAS^{XSPerfCounter}^{XSPerfMetric}^{XSPerfString}*}, name: _stats
 }
 
 - (id)description;
-- (id)sizeHistogram;
-- (id)lastUpdate;
-- (id)firstUpdate;
-- (double)averageSize;
-- (unsigned long long)maximumSize;
-- (unsigned long long)minimumSize;
-- (unsigned long long)lastSize;
-- (unsigned long long)firstSize;
-- (unsigned long long)count;
-- (void)dealloc;
+- (void)addBytes:(unsigned int)arg1;
 - (id)initWithName:(id)arg1 string:(id)arg2 scale:(unsigned long long)arg3 family:(id)arg4;
 
 @end

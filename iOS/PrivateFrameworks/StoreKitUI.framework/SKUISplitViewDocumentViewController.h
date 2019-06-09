@@ -11,6 +11,7 @@
 
 @class NSString, SKUINavigationDocumentController, SKUISplitViewTemplateElement, UISplitViewController, UIViewController;
 
+__attribute__((visibility("hidden")))
 @interface SKUISplitViewDocumentViewController : SKUIViewController <SKUINavigationDocumentDelegate, SKUIDocumentViewController>
 {
     UIViewController *_delayingPresentationViewController;

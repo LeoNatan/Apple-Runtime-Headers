@@ -11,24 +11,28 @@
 
 @class NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface DataStallHandler : NSObject <ConfigurableObjectProtocol, SymptomAdditionalProtocol>
 {
     NSMutableDictionary *_store;
     id _triggerDisconnectObserver;
+    id _primaryObserver;
     BOOL _gateOpen;
     BOOL _forceNoGate;
+    long long _primaryInterfaceType;
 }
 
-+ (unsigned long long)uniqForegroundCount;
++ (unsigned long long)uniqForegroundCountForInterfaceType:(long long)arg1 stallType:(unsigned long long)arg2;
 + (id)configureClass:(id)arg1;
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (int)read:(id)arg1 returnedValues:(id)arg2;
+- (void)processStall:(id)arg1 procName:(id)arg2 endpoint:(id)arg3 foreground:(id)arg4 interfaceType:(long long)arg5 stallType:(unsigned long long)arg6;
 - (_Bool)noteSymptom:(id)arg1;
 - (int)configureInstance:(id)arg1;
-- (void)_reset:(id)arg1;
-- (void)_pruneStaleEndpointsFor:(id)arg1;
-- (unsigned long long)_uniqForegroundCount;
+- (void)_reset:(id)arg1 interfaceType:(long long)arg2 stallType:(unsigned long long)arg3;
+- (void)_pruneStaleEndpointsFor:(id)arg1 onInterfaceType:(long long)arg2 stallType:(unsigned long long)arg3;
+- (unsigned long long)_uniqForegroundCountForInterfaceType:(long long)arg1 stallType:(unsigned long long)arg2;
 - (void)dealloc;
 - (id)init;
 @property(readonly, copy) NSString *description;

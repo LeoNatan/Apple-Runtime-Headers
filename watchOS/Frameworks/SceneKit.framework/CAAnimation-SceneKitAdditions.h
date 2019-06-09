@@ -6,17 +6,15 @@
 
 #import <QuartzCore/CAAnimation.h>
 
+@class NSArray;
+
 @interface CAAnimation (SceneKitAdditions)
 + (id)animationWithSCNAnimation:(id)arg1;
-- (id)animationEvents;
-- (void)setAnimationEvents:(id)arg1;
+@property(copy, nonatomic) NSArray *animationEvents;
 - (void)setCommitsOnCompletion:(_Bool)arg1;
 - (_Bool)commitsOnCompletion;
-- (void)setFadeOutDuration:(float)arg1;
-- (float)fadeOutDuration;
-- (void)setFadeInDuration:(float)arg1;
-- (float)fadeInDuration;
-- (void)setUsesSceneTimeBase:(_Bool)arg1;
-- (_Bool)usesSceneTimeBase;
+@property float fadeOutDuration;
+@property float fadeInDuration;
+@property _Bool usesSceneTimeBase;
 @end
 

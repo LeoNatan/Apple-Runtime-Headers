@@ -22,6 +22,7 @@
 @property(copy, nonatomic) CDUnknownBlockType upsellCompletionHandler; // @synthesize upsellCompletionHandler=_upsellCompletionHandler;
 @property(retain, nonatomic) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;
 @property(retain, nonatomic) NSWindow *parentWindow; // @synthesize parentWindow=_parentWindow;
+- (void).cxx_destruct;
 - (void)mmWebKitViewControllerDidDismiss:(id)arg1;
 - (void)mmWebKitViewControllerDidFinishLoading:(id)arg1;
 - (void)mmWebKitViewControllerDidFailLoading:(id)arg1 error:(id)arg2;
@@ -30,7 +31,6 @@
 - (void)closeUpsellWindow;
 - (void)runUpsellWebKitViewControllerForWindow:(id)arg1 accountID:(id)arg2 librarySize:(long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)runUpsellWebKitViewControllerForWindow:(id)arg1 accountID:(id)arg2 librarySizeAsNumber:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)dealloc;
 - (id)init;
 
 // Remaining properties

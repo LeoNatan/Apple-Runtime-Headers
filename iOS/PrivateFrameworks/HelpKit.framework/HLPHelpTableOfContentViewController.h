@@ -15,11 +15,12 @@
 
 @interface HLPHelpTableOfContentViewController : UITableViewController <UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate>
 {
+    UIView *_tableBackgroundView;
+    UIView *_tableFooterSeparatorView;
     UILabel *_copyrightFooterLabel;
     UIButton *_footerViewOverlayButton;
     NSLayoutConstraint *_copyrightFooterLabelHeightConstraint;
     NSLayoutConstraint *_copyrightFooterLabelTopConstraint;
-    HLPHelpSearchResultTableViewController *_searchResultTableViewController;
     _Bool _fullBookView;
     id <HLPHelpTableOfContentViewControllerDelegate> _delegate;
     NSArray *_searchTerms;
@@ -31,8 +32,10 @@
     UISearchController *_searchController;
     UIView *_tableFooterView;
     HLPHelpSearchIndexController *_helpSearchIndexController;
+    HLPHelpSearchResultTableViewController *_searchResultTableViewController;
 }
 
+@property(retain, nonatomic) HLPHelpSearchResultTableViewController *searchResultTableViewController; // @synthesize searchResultTableViewController=_searchResultTableViewController;
 @property(retain, nonatomic) HLPHelpSearchIndexController *helpSearchIndexController; // @synthesize helpSearchIndexController=_helpSearchIndexController;
 @property(retain, nonatomic) UIView *tableFooterView; // @synthesize tableFooterView=_tableFooterView;
 @property(retain, nonatomic) UISearchController *searchController; // @synthesize searchController=_searchController;
@@ -45,9 +48,12 @@
 @property(nonatomic) __weak id <HLPHelpTableOfContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) _Bool fullBookView; // @synthesize fullBookView=_fullBookView;
 - (void).cxx_destruct;
+- (void)spotlightSearchDelay;
+- (void)cancelSpotlightSearchDelay;
 - (void)updateSearchResultsForSearchController:(id)arg1;
 - (void)willDismissSearchController:(id)arg1;
 - (void)willPresentSearchController:(id)arg1;
+- (void)updateSearchResultViewSeparatorValue;
 - (void)closeSectionItem:(id)arg1;
 - (void)openHelpItem:(id)arg1 animated:(_Bool)arg2;
 - (long long)numberOfVisibleHelpItemForSectionItem:(id)arg1;
@@ -65,6 +71,8 @@
 - (void)copyrightButtonTapped;
 - (void)showHelpBookInfo;
 - (void)scrollToHelpItem:(id)arg1 deselectImmediately:(_Bool)arg2 animated:(_Bool)arg3;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)updateFooterViewBackgroundColor;
 - (void)deselectCurrentRow;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)viewDidLayoutSubviews;

@@ -10,6 +10,7 @@
 
 @class AVDoneButton, AVLabel, AVPlayPauseButton, AVPlaybackProgressIndicator, AVVolumeSlider, NSDictionary, NSLayoutConstraint, NSString, UIButton, UILabel;
 
+__attribute__((visibility("hidden")))
 @interface AVWatchPlaybackControlsViewController : AVPlaybackControlsViewController <PUICSliderDelegate>
 {
     _Bool _playing;

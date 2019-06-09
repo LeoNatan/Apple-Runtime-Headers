@@ -9,5 +9,7 @@
 @interface NSArray (UICollectionAdditions_Performance)
 - (void)_makeObjectsPerformSelector:(SEL)arg1 object:(id)arg2 range:(struct _NSRange)arg3;
 - (id)_initWithObjectsFromArray:(id)arg1 range:(struct _NSRange)arg2;
+- (id)ui_arrayByRemovingLastObjectEqualTo:(id)arg1;
+- (id)_uikit_complayout_NSArrayAdditions_apiRepresentations;
 @end
 

@@ -6,17 +6,21 @@
 
 #import <objc/NSObject.h>
 
-@class NSDateInterval;
+#import <RelevanceEngine/_REPeriodOfDayProperties-Protocol.h>
 
-@interface _REPeriodOfDay : NSObject
+@class NSDate, NSDateInterval;
+
+@interface _REPeriodOfDay : NSObject <_REPeriodOfDayProperties>
 {
-    NSDateInterval *_interval;
     unsigned long long _periodOfDay;
+    NSDateInterval *_interval;
 }
 
-@property(readonly, nonatomic) unsigned long long periodOfDay; // @synthesize periodOfDay=_periodOfDay;
 @property(readonly, nonatomic) NSDateInterval *interval; // @synthesize interval=_interval;
+@property(readonly, nonatomic) unsigned long long periodOfDay; // @synthesize periodOfDay=_periodOfDay;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) NSDate *endDate;
+@property(readonly, nonatomic) NSDate *startDate;
 - (id)description;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;

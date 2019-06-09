@@ -7,6 +7,9 @@
 @class NSArray, NSString, _SFAccessPolicy, _SFCredential;
 
 @protocol SFKeychainServerProtocol
+
+@optional
+- (void)rpcReplaceCredential:(_SFCredential *)arg1 withNewCredential:(_SFCredential *)arg2 reply:(void (^)(_Bool, NSError *))arg3;
 - (void)rpcReplaceOldCredential:(_SFCredential *)arg1 withNewCredential:(_SFCredential *)arg2 reply:(void (^)(NSString *, NSError *))arg3;
 - (void)rpcRemoveCredentialWithPersistentIdentifier:(NSString *)arg1 reply:(void (^)(_Bool, NSError *))arg2;
 - (void)rpcLookupCredentialsForServiceIdentifiers:(NSArray *)arg1 reply:(void (^)(NSArray *, NSError *))arg2;

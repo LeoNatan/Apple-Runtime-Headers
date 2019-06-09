@@ -24,6 +24,7 @@
 @property(readonly, nonatomic) unsigned long long category; // @synthesize category=_category;
 @property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) double sentimentScore;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToNamedEntity:(id)arg1;

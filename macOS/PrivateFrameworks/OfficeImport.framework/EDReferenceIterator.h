@@ -8,6 +8,7 @@
 
 @class EDCollection, EDReference, EDRowBlock, EDRowBlocks, EDWorkbook, EDWorksheet;
 
+__attribute__((visibility("hidden")))
 @interface EDReferenceIterator : NSObject
 {
     EDWorkbook *mWorkbook;

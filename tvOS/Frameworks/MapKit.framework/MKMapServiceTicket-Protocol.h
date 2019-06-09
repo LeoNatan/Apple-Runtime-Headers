@@ -6,10 +6,12 @@
 
 #import <MapKit/NSObject-Protocol.h>
 
-@class GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEORPCorrectedSearch, GEORPPlaceInfo, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSError, NSObject, NSString;
+@class GEOCategorySearchResultSection, GEODirectionIntent, GEOMapRegion, GEOMapServiceTraits, GEORPCorrectedSearch, GEORPPlaceInfo, GEORelatedSearchSuggestion, GEOResolvedItem, NSArray, NSError, NSObject, NSString;
 @protocol OS_dispatch_queue;
 
 @protocol MKMapServiceTicket <NSObject>
+@property(readonly, nonatomic) GEOCategorySearchResultSection *categorySearchResultSection;
+@property(readonly, nonatomic) NSArray *searchResultSections;
 @property(readonly, nonatomic) NSString *sectionHeader;
 @property(readonly, nonatomic) double requestResponseTime;
 @property(readonly, nonatomic) _Bool showDymSuggestionCloseButton;

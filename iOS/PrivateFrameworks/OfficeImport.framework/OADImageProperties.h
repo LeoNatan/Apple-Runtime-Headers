@@ -15,12 +15,12 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)defaultProperties;
+- (void).cxx_destruct;
 - (id)description;
 - (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (_Bool)hasImageFill;
 - (void)setImageFill:(id)arg1;
 - (id)imageFill;
-- (void)dealloc;
 
 @end
 

@@ -36,6 +36,7 @@
 @property(copy, nonatomic) NSString *inputMode; // @synthesize inputMode=_inputMode;
 - (void).cxx_destruct;
 - (void)setInterfaceIdiomIsPad;
+@property(readonly, nonatomic) NSString *softwareLayout;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)description;

@@ -7,6 +7,24 @@
 #import <Foundation/NSDate.h>
 
 @interface NSDate (CALDateOnlyConversion)
++ (id)dateFromIsoString:(id)arg1;
++ (id)dateInFloatingTimeZoneFromDate:(id)arg1 inTimeZone:(id)arg2;
++ (id)dateInTimeZone:(id)arg1 fromFloatingDateInGMT:(id)arg2;
++ (void)_initCustomCalendar;
++ (id)midnightsInCalendar:(id)arg1 fromStart:(id)arg2 toEnd:(id)arg3;
 - (id)CALDateOnly;
+- (id)CALDateTime;
+- (id)CALFloatingDateTime;
+- (id)representationID;
+- (id)legacyDateAsType:(int)arg1 timeZone:(id)arg2;
+- (id)convertToCALDateFromTimeZone:(id)arg1 toTimeZone:(id)arg2 isDateOnly:(BOOL)arg3;
+- (id)CALDateInTimeZone:(id)arg1 isDateOnly:(BOOL)arg2;
+- (id)CALDateOnlyInGMT;
+- (id)CALDateOnlyInTimeZone:(id)arg1;
+- (id)CALFloatingDateTimeInGMT;
+- (id)CALFloatingDateTimeInTimeZone:(id)arg1;
+- (id)CALDateTimeInTimeZone:(id)arg1;
+- (id)deltaDays:(long long)arg1 inCalendar:(id)arg2;
+- (id)midnightInCalendar:(id)arg1;
 @end
 

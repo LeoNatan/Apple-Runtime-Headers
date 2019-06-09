@@ -15,9 +15,8 @@
 
 + (id)shared;
 - (void).cxx_destruct;
+@property(nonatomic) _Bool syntheticTravelAdvisoriesEnabled;
 @property(nonatomic) _Bool shouldBypassTravelEngineThrottle;
-@property(nonatomic) _Bool showVerboseMessagesForTimeToLeave;
-@property(nonatomic) _Bool useAverageETAForTimeToLeave;
 @property(nonatomic) _Bool showDepartureDateForTransitTimeToLeave;
 @property(nonatomic) _Bool verifyIntegrityOfAvailabilityTimeSearchTimelines;
 @property(nonatomic) _Bool performAgendaEntryEqualityChecksInTravelEngine;

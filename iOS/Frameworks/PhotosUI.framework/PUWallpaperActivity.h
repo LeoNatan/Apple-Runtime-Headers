@@ -4,19 +4,18 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PhotosUI/PUActivity.h>
+#import <PhotosUICore/PXActivity.h>
 
 @class UIViewController;
 
 __attribute__((visibility("hidden")))
-@interface PUWallpaperActivity : PUActivity
+@interface PUWallpaperActivity : PXActivity
 {
     UIViewController *_wallpaperActivityViewController;
     _Bool __wallpaperModificationAllowed;
     _Bool __needsUpdateWallpaperModificationAllowed;
 }
 
-+ (_Bool)_isCapabilityBasedActivity;
 @property(nonatomic, setter=_setNeedsUpdateWallpaperModificationAllowed:) _Bool _needsUpdateWallpaperModificationAllowed; // @synthesize _needsUpdateWallpaperModificationAllowed=__needsUpdateWallpaperModificationAllowed;
 @property(nonatomic, getter=_isWallpaperModificationAllowed, setter=_setWallpaperModificationAllowed:) _Bool _wallpaperModificationAllowed; // @synthesize _wallpaperModificationAllowed=__wallpaperModificationAllowed;
 - (void).cxx_destruct;

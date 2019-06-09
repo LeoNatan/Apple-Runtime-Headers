@@ -24,6 +24,8 @@
 @property(readonly, nonatomic, getter=isStillImageStabilizationActive) BOOL stillImageStabilizationActive; // @synthesize stillImageStabilizationActive=_stillImageStabilizationActive;
 @property(nonatomic) BOOL automaticallyEnablesStillImageStabilizationWhenAvailable; // @synthesize automaticallyEnablesStillImageStabilizationWhenAvailable=_automaticallyEnablesStillImageStabilizationWhenAvailable;
 @property(readonly, nonatomic, getter=isStillImageStabilizationSupported) BOOL stillImageStabilizationSupported; // @synthesize stillImageStabilizationSupported=_stillImageStabilizationSupported;
+- (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
+- (BOOL)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
 - (BOOL)supportsVideoMaxFrameDurationForConnection:(id)arg1;
 - (BOOL)supportsVideoMinFrameDurationForConnection:(id)arg1;
 - (long long)defaultVideoFieldModeForConnection:(id)arg1;

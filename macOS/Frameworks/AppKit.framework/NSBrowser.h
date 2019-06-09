@@ -387,6 +387,7 @@
 - (void)_setFocusRingNeedsDisplay;
 - (BOOL)_hasKeyboardFocus;
 - (BOOL)_shouldDrawFocus;
+- (void)setControlSize:(unsigned long long)arg1;
 - (void)_setUsesSmallTitleFont:(BOOL)arg1;
 - (void)setTitle:(id)arg1 ofColumn:(long long)arg2;
 - (void)_setTitle:(id)arg1 ofColumn:(long long)arg2;

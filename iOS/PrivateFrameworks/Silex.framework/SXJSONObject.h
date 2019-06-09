@@ -21,11 +21,11 @@
 + (CDUnknownBlockType)objectValueClassBlockForPropertyWithName:(id)arg1;
 + (CDUnknownBlockType)valueClassBlockForPropertyWithName:(id)arg1;
 + (id)jsonPropertyNameForObjCPropertyName:(id)arg1;
++ (void)unlock;
++ (void)lock;
 + (id)protocolPropertyDefinitions;
 + (id)propertyDefinitions;
 + (id)propertyHashTable;
-+ (void)initializeObject;
-+ (void)initializeJSONObject;
 + (void)initialize;
 + (Class)classOverrideAtInitialization:(Class)arg1 type:(id)arg2;
 @property(readonly, nonatomic) struct os_unfair_lock_s unfairLock; // @synthesize unfairLock=_unfairLock;

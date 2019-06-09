@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface AWDMultipeerSessionMaxPeersInfo : PBCodable <NSCopying>
 {
     unsigned long long _timestamp;

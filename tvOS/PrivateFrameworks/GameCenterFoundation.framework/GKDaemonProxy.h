@@ -44,6 +44,7 @@
 - (oneway void)session:(id)arg1 player:(id)arg2 didChangeConnectionState:(long long)arg3;
 - (oneway void)session:(id)arg1 removedPlayer:(id)arg2;
 - (oneway void)session:(id)arg1 addedPlayer:(id)arg2;
+- (oneway void)localPlayerAcceptedCustomTournamentInvite;
 - (oneway void)didReceiveData:(id)arg1 reliably:(_Bool)arg2 forRecipients:(id)arg3 fromSender:(id)arg4;
 - (oneway void)didDisconnectFromParticipantWithID:(id)arg1;
 - (oneway void)didConnectToParticipantWithID:(id)arg1;

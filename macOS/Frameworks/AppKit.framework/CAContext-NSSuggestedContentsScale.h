@@ -7,6 +7,11 @@
 #import <QuartzCore/CAContext.h>
 
 @interface CAContext (NSSuggestedContentsScale)
++ (id)NS_functionRowContext;
++ (BOOL)automaticallyNotifiesObserversOfNS_visibleRect;
++ (id)keyPathsForValuesAffectingNS_tiledLayerVisibleRect;
 - (void)_NS_accumulateSuggestedScaleBelow:(double *)arg1:(double *)arg2;
+@property(getter=NS_defaultContentsScale, setter=NS_setDefaultContentsScale:) double NS_defaultContentsScale;
+@property(setter=NS_setVisibleRect:) struct CGRect NS_visibleRect;
 @end
 

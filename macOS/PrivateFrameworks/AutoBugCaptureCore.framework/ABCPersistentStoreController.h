@@ -9,6 +9,7 @@
 @class AnalyticsWorkspace;
 @protocol ABCPersistentStoreControllerDelegate, OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface ABCPersistentStoreController : NSObject
 {
     AnalyticsWorkspace *_workspace;
@@ -18,7 +19,6 @@
     id <ABCPersistentStoreControllerDelegate> _delegate;
 }
 
-+ (id)defaultContainerDirectory;
 @property(nonatomic) __weak id <ABCPersistentStoreControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)removeAllCaseStorages;
@@ -38,6 +38,7 @@
 - (id)prepareDataDirectoryWithName:(id)arg1 containerPath:(id)arg2;
 @property(readonly, nonatomic) AnalyticsWorkspace *workspace; // @dynamic workspace;
 - (id)init;
+- (id)initWithDirectory:(id)arg1;
 - (id)initWithName:(id)arg1 inDirectory:(id)arg2;
 
 @end

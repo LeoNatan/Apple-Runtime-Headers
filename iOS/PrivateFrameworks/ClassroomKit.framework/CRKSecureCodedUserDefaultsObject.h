@@ -15,6 +15,7 @@
 
 @property(readonly, copy, nonatomic) NSSet *classes; // @synthesize classes=_classes;
 - (void).cxx_destruct;
+- (void)registerDefaultValue:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
 - (_Bool)setValue:(id)arg1 error:(id *)arg2;

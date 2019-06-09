@@ -8,11 +8,28 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
+@class GEOTFTrafficSnapshot;
+
 __attribute__((visibility("hidden")))
 @interface GEOETARequestExtension : PBCodable <NSCopying>
 {
+    GEOTFTrafficSnapshot *_trafficSnapshot;
+    BOOL _needServerLatency;
+    BOOL _useLiveTrafficAsFallback;
+    struct {
+        unsigned int has_needServerLatency:1;
+        unsigned int has_useLiveTrafficAsFallback:1;
+    } _flags;
 }
 
++ (BOOL)isValid:(id)arg1;
+- (void).cxx_destruct;
+@property(nonatomic) BOOL hasNeedServerLatency;
+@property(nonatomic) BOOL needServerLatency;
+@property(nonatomic) BOOL hasUseLiveTrafficAsFallback;
+@property(nonatomic) BOOL useLiveTrafficAsFallback;
+@property(retain, nonatomic) GEOTFTrafficSnapshot *trafficSnapshot;
+@property(readonly, nonatomic) BOOL hasTrafficSnapshot;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -20,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 

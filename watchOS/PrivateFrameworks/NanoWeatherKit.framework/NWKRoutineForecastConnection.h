@@ -18,11 +18,10 @@
 + (id)createAndSetupConnectionWithObserver:(id)arg1 completion:(CDUnknownBlockType)arg2;
 @property(retain, nonatomic) NWKXPCConnectionWrapper *connectionWrapper; // @synthesize connectionWrapper=_connectionWrapper;
 - (void).cxx_destruct;
-- (void)stopMonitoringRoutineForecast;
-- (void)startMonitoringRoutineForecastWithStartDate:(id)arg1 endDate:(id)arg2;
-- (void)observeMonitoredRoutineForecast;
+- (void)resumeMonitoringForInterval:(id)arg1 lastUpdateToken:(unsigned int)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)invalidateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)resumeWithCompletion:(CDUnknownBlockType)arg1;
+- (void)cleanup;
 - (id)initWithObserver:(id)arg1;
 - (id)init;
 

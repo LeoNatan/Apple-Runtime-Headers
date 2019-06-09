@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSNumber *searchSystemFiles; // @synthesize searchSystemFiles=_searchSystemFiles;
 @property(retain) NSArray *scope; // @synthesize scope=_scope;
 @property(retain) NSString *filter; // @synthesize filter=_filter;
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;

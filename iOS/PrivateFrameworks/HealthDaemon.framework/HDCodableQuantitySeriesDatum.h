@@ -10,16 +10,15 @@
 
 @interface HDCodableQuantitySeriesDatum : PBCodable <NSCopying>
 {
-    double _timestamp;
+    double _endDate;
+    double _startDate;
     double _value;
-    struct {
-        unsigned int timestamp:1;
-        unsigned int value:1;
-    } _has;
+    CDStruct_2d5b04fb _has;
 }
 
+@property(nonatomic) double startDate; // @synthesize startDate=_startDate;
 @property(nonatomic) double value; // @synthesize value=_value;
-@property(nonatomic) double timestamp; // @synthesize timestamp=_timestamp;
+@property(nonatomic) double endDate; // @synthesize endDate=_endDate;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -29,8 +28,9 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) _Bool hasStartDate;
 @property(nonatomic) _Bool hasValue;
-@property(nonatomic) _Bool hasTimestamp;
+@property(nonatomic) _Bool hasEndDate;
 
 @end
 

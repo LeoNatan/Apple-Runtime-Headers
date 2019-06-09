@@ -10,7 +10,8 @@
 {
 }
 
-+ (BOOL)isDeviceSupportedForPhotoSharingIntentDetection:(id)arg1;
++ (id)canonicalLanguageAndScriptCodeIdentifierForIdentifier:(id)arg1;
++ (id)addLikelySubtagsForLocaleIdentifier:(id)arg1;
 + (BOOL)isDeviceSupportedForLSTMBasedLanguageIdentification:(id)arg1;
 + (id)getDeviceModel;
 + (BOOL)suffixInArray:(id)arg1 withArray:(id)arg2;

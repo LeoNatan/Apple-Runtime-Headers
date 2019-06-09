@@ -7,22 +7,19 @@
 #import <objc/NSObject.h>
 
 #import <AppKit/NSCoding-Protocol.h>
+#import <AppKit/NSCopying-Protocol.h>
 
 @class NSImage;
 
 __attribute__((visibility("hidden")))
-@interface _NSButtonImage : NSObject <NSCoding>
+@interface _NSButtonImage : NSObject <NSCopying, NSCoding>
 {
     NSImage *image;
-    NSImage *focusRingImage;
-    unsigned long long bezelStyle;
-    BOOL isBordered;
-    BOOL isOpaque;
     BOOL useDisabledEffect;
     BOOL useHighlightEffect;
 }
 
-+ (id)image:(id)arg1 focus:(id)arg2;
++ (id)image:(id)arg1;
 + (void)initialize;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

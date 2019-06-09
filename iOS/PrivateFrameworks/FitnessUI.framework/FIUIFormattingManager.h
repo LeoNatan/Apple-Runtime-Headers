@@ -20,6 +20,7 @@
 + (id)stringWithNumber:(id)arg1 decimalPrecision:(unsigned long long)arg2;
 @property(readonly, nonatomic) FIUIUnitManager *unitManager; // @synthesize unitManager=_unitManager;
 - (void).cxx_destruct;
+- (id)localizedInSessionDescriptionForGroundElevation:(unsigned long long)arg1;
 - (id)localizedInSessionDescriptionForElevation:(unsigned long long)arg1;
 - (id)localizedDistanceByStrokeStyle:(id)arg1 isPoolSwim:(_Bool)arg2;
 - (id)localizedHeartRateUnitString;
@@ -40,6 +41,8 @@
 - (id)localizedGoalDescriptionForGoalType:(unsigned long long)arg1 goalValue:(double)arg2 activityType:(id)arg3;
 - (_Bool)_workoutSupportsDistanceMetricForGoalDisplay:(id)arg1;
 - (unsigned long long)_effectiveGoalTypeForWorkout:(id)arg1;
+- (id)_localizedEnergyDescriptionForWorkout:(id)arg1 withValue:(id *)arg2 appendActivityType:(_Bool)arg3 activityTypeString:(id)arg4;
+- (id)_localizedTimeDescriptionForWorkout:(id)arg1 withValue:(id *)arg2 appendActivityType:(_Bool)arg3 activityTypeString:(id)arg4;
 - (id)localizedGoalDescriptionForWorkout:(id)arg1 withValue:(id *)arg2 appendActivityType:(_Bool)arg3;
 - (id)_energyBurnedUnitStringForUnit:(id)arg1 useShortString:(_Bool)arg2;
 - (id)localizedLongActiveEnergyUnitStringWithTextCase:(unsigned long long)arg1;
@@ -50,6 +53,8 @@
 - (id)localizedStringWithEnergy:(id)arg1 energyType:(unsigned long long)arg2 unitStyle:(unsigned long long)arg3;
 - (id)localizedStringWithActiveEnergy:(id)arg1 unitStyle:(unsigned long long)arg2;
 - (id)localizedStringWithActiveEnergy:(id)arg1;
+- (id)localizedStringWithActiveHours:(id)arg1;
+- (id)localizedStringWithBriskMinutes:(id)arg1;
 - (double)caloriesForEnergyBurnedInUserUnit:(double)arg1;
 - (double)energyBurnedInUserUnitForCalories:(double)arg1;
 - (double)roundedDailyMoveGoalForCalories:(double)arg1;

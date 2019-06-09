@@ -6,14 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableArray, NSTimer, QTCaptureSession;
+#import <ImageKit/AVCaptureVideoDataOutputSampleBufferDelegate-Protocol.h>
+
+@class NSMutableArray, NSString, NSTimer;
 
 __attribute__((visibility("hidden")))
-@interface IKDVGrabber : NSObject
+@interface IKDVGrabber : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate>
 {
     NSMutableArray *_listeners;
     struct __CVBuffer *_currentImage;
-    QTCaptureSession *_session;
+    struct AVCaptureSession *_session;
     char *_baseAddr;
     long long _length;
     struct CGImage *_imageRef;
@@ -26,6 +28,8 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)cameraIsBusy;
++ (struct AVCaptureDevice *)captureDevice;
++ (BOOL)hasCameraAccess;
 + (void)releaseSharedDVGrabber;
 + (id)sharedDVGrabber;
 - (void)setMirrorMode:(BOOL)arg1;
@@ -33,7 +37,8 @@ __attribute__((visibility("hidden")))
 - (void)stopCapture;
 - (BOOL)startCapture;
 - (BOOL)isGrabbing;
-- (void)captureOutput:(id)arg1 didOutputVideoFrame:(struct __CVBuffer *)arg2 withSampleBuffer:(id)arg3 fromConnection:(id)arg4;
+- (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer *)arg2 fromConnection:(id)arg3;
+- (void)captureDidOutputVideoFrame:(struct __CVBuffer *)arg1;
 - (void)notifyListenersForUpdate:(struct __CVBuffer *)arg1;
 - (id)currentFrameAsNSImage;
 - (id)currentFrameAsCIImage;
@@ -49,6 +54,12 @@ __attribute__((visibility("hidden")))
 - (void)freeGrabberIfNeeded;
 - (void)QTKitErrorNotification:(id)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

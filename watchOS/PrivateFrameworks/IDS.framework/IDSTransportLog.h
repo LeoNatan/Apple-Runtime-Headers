@@ -10,7 +10,14 @@
 {
 }
 
++ (id)NRPairing;
++ (id)IDSReportSpam;
++ (id)IDSLocalSetup;
 + (id)IDSDataChannels;
++ (id)IDSDeviceConnection;
++ (id)IDSConnection;
++ (id)QRAllocator;
++ (id)IDSService;
 
 @end
 

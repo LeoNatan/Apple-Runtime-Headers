@@ -6,20 +6,21 @@
 
 #import <UIKit/UIView.h>
 
-@class CALayer, RCWaveformDataSource;
+@class CALayer, RCWaveformRenderer;
 
 __attribute__((visibility("hidden")))
 @interface RCView : UIView
 {
     _Bool _isCreatingSnapshot;
     CALayer *_waveformLayer;
-    RCWaveformDataSource *_delegate;
+    RCWaveformRenderer *_renderer;
 }
 
-@property(nonatomic) __weak RCWaveformDataSource *delegate; // @synthesize delegate=_delegate;
+@property(nonatomic) __weak RCWaveformRenderer *renderer; // @synthesize renderer=_renderer;
 @property(readonly, nonatomic) CALayer *waveformLayer; // @synthesize waveformLayer=_waveformLayer;
 @property(readonly, nonatomic) _Bool isCreatingSnapshot; // @synthesize isCreatingSnapshot=_isCreatingSnapshot;
 - (void).cxx_destruct;
+- (void)setBounds:(struct CGRect)arg1;
 - (void)setFrame:(struct CGRect)arg1;
 - (id)snapshot;
 - (void)_setNeedsVisibleTimeRangeRendering;

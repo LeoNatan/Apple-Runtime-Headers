@@ -94,7 +94,7 @@
 - (void)setContraint:(id)arg1 attached:(BOOL)arg2 toView:(id)arg3;
 - (void)addBuyOptions:(id)arg1 addActionButton:(id)arg2 locallyAvailable:(BOOL)arg3 forCardSection:(id)arg4;
 - (void)openURL:(id)arg1;
-- (void)alignTitle:(unsigned long long)arg1;
+- (void)alignTitle:(long long)arg1;
 - (void)processChanges;
 - (void)setAuxiliaryInfoWithTopText:(id)arg1 middleText:(id)arg2 bottomText:(id)arg3 color:(id)arg4;
 - (void)setOverlayImage:(id)arg1;

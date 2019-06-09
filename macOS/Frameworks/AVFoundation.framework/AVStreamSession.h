@@ -25,7 +25,6 @@
 @property(readonly) NSData *appIdentifier;
 @property(readonly) NSURL *storageURL;
 - (void)dealloc;
-- (void)finalize;
 - (void)_willDeallocOrFinalize;
 - (id)initWithStorageDirectoryAtURL:(id)arg1;
 - (id)init;

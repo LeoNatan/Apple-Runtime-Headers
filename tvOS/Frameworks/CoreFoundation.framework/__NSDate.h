@@ -14,7 +14,6 @@ __attribute__((visibility("hidden")))
 
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (_Bool)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (id)__new:(double)arg1;
 - (id)initWithTimeIntervalSinceReferenceDate:(double)arg1;
 - (void)dealloc;
 - (double)timeIntervalSinceReferenceDate;

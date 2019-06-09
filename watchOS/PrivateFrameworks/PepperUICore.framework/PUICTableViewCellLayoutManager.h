@@ -17,6 +17,7 @@
 + (float)_labelBaselineFromTopDefault;
 + (float)_contentSubviewXInset;
 + (float)_likelyFirstLineBaselineOffsetForLabel:(id)arg1;
++ (_Bool)requiresLegacyLayout;
 + (id)layoutManagerForTableViewCellStyle:(int)arg1;
 + (void)_setUsesConstraintBasedLayout:(_Bool)arg1;
 + (_Bool)_usesConstraintBasedLayout;

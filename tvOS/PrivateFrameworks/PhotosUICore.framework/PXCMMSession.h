@@ -9,11 +9,12 @@
 #import <PhotosUICore/PXTapToRadar-Protocol.h>
 
 @class NSDictionary, NSSet, NSString, PXAssetsDataSourceManager, PXCMMActionManager, PXCMMPeopleSuggestionsDataSourceManager, PXCMMPeopleSuggestionsMediaProvider, PXCMMSendBackSuggestionSource, PXCMMViewModel, PXUIMediaProvider;
-@protocol PXImportStatusManager;
+@protocol PXAssetImportStatusManager;
 
 @interface PXCMMSession : NSObject <PXTapToRadar>
 {
     _Bool _hideActionMenu;
+    _Bool _publishOriginals;
     _Bool _ppt_presentComposeRecipientView;
     _Bool _ppt_scrollComposeRecipientsView;
     PXAssetsDataSourceManager *_dataSourceManager;
@@ -34,6 +35,7 @@
 @property(readonly, nonatomic) _Bool ppt_presentComposeRecipientView; // @synthesize ppt_presentComposeRecipientView=_ppt_presentComposeRecipientView;
 @property(nonatomic) double ppt_delay; // @synthesize ppt_delay=_ppt_delay;
 @property(readonly, nonatomic) PXCMMViewModel *viewModel; // @synthesize viewModel=_viewModel;
+@property(readonly, nonatomic) _Bool publishOriginals; // @synthesize publishOriginals=_publishOriginals;
 @property(readonly, nonatomic) _Bool hideActionMenu; // @synthesize hideActionMenu=_hideActionMenu;
 @property(readonly, nonatomic) unsigned long long sourceType; // @synthesize sourceType=_sourceType;
 @property(readonly, nonatomic) unsigned long long activityType; // @synthesize activityType=_activityType;
@@ -45,12 +47,12 @@
 @property(readonly, nonatomic) PXUIMediaProvider *mediaProvider; // @synthesize mediaProvider=_mediaProvider;
 @property(readonly, nonatomic) PXAssetsDataSourceManager *dataSourceManager; // @synthesize dataSourceManager=_dataSourceManager;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSDictionary *diagnosticDictionary;
-@property(readonly, nonatomic) id <PXImportStatusManager> importStatusManager;
+@property(readonly, nonatomic) id <PXAssetImportStatusManager> importStatusManager;
 @property(readonly, nonatomic) NSSet *notificationSuppressionContexts;
-- (id)assetsProgressListenerWithPresentationStyle:(long long)arg1;
+- (id)momentShareStatusPresentationWithPresentationStyle:(long long)arg1;
 - (id)initWithContext:(id)arg1;
 - (id)init;
+@property(readonly, nonatomic) NSDictionary *diagnosticDictionary;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -13,13 +13,12 @@
     unsigned int _currentTabIndex;
     unsigned int _numberOfTabsOpen;
     struct {
-        unsigned int currentTabIndex:1;
-        unsigned int numberOfTabsOpen:1;
-    } _has;
+        unsigned int has_currentTabIndex:1;
+        unsigned int has_numberOfTabsOpen:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int currentTabIndex; // @synthesize currentTabIndex=_currentTabIndex;
-@property(nonatomic) unsigned int numberOfTabsOpen; // @synthesize numberOfTabsOpen=_numberOfTabsOpen;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -27,10 +26,13 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasCurrentTabIndex;
+@property(nonatomic) unsigned int currentTabIndex;
 @property(nonatomic) _Bool hasNumberOfTabsOpen;
+@property(nonatomic) unsigned int numberOfTabsOpen;
 
 @end
 

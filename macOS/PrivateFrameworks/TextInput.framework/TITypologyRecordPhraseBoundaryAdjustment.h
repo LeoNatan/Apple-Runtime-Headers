@@ -22,7 +22,10 @@
 @property(nonatomic) int granularity; // @synthesize granularity=_granularity;
 @property(nonatomic) BOOL forwardAdjustment; // @synthesize forwardAdjustment=_forwardAdjustment;
 - (void).cxx_destruct;
+- (void)replaceDocumentState:(id)arg1;
 - (id)shortDescription;
+- (void)removeContextFromKeyboardState;
+- (id)currentKeyboardState;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)applyToStatistic:(id)arg1;

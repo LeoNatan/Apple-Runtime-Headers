@@ -29,7 +29,6 @@
 - (void)downloadAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)assetTypeForCurrentDevice;
 - (id)assetFeatureValueForFeature:(long long)arg1;
-- (void)retrieveMovieForFeature:(long long)arg1 language:(id)arg2 useWorldwide:(_Bool)arg3 useLocalAssets:(_Bool)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)retrieveMovieForFeature:(long long)arg1 language:(id)arg2 useWorldwide:(_Bool)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)retrieveMovieForFeature:(long long)arg1 language:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)retrieveMovieForFeature:(long long)arg1 completion:(CDUnknownBlockType)arg2;

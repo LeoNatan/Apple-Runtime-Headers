@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
 + (struct CGRect)boundsInLogicalUnits:(id)arg1;
 + (struct CGRect)windowBounds:(id)arg1;
 + (struct CGRect)placeableBounds:(const char *)arg1;
+- (void).cxx_destruct;
 - (id)parseRegion:(unsigned int)arg1 in_pData:(const char *)arg2;
 - (int)playIntersectClipRect:(unsigned int)arg1 in_pRecord:(const char *)arg2;
 - (int)playExcludeClipRect:(unsigned int)arg1 in_pRecord:(const char *)arg2;
@@ -88,7 +89,6 @@ __attribute__((visibility("hidden")))
 - (void)done;
 - (int)play:(unsigned int)arg1 in_pRecord:(const char *)arg2;
 - (int)records;
-- (void)dealloc;
 - (id)initWithGraphicsDevice:(id)arg1;
 
 @end

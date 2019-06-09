@@ -18,6 +18,7 @@
     unsigned long long _peekBytes;
 }
 
++ (id)pauseVerdict;
 + (id)dataVerdictWithPassBytes:(unsigned int)arg1 peekBytes:(unsigned int)arg2;
 + (id)remediateVerdictWithRemediationURLMapKey:(id)arg1 remediationButtonTextMapKey:(id)arg2;
 + (id)dropVerdict;

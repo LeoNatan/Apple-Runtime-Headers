@@ -18,8 +18,8 @@
     BOOL _maintainsInput;
     BOOL _supportsAccurateWordCallbacks;
     BOOL _audioSessionIDIsValid;
-    BOOL _useVoiceBooster;
     BOOL _useMonarchStyleRate;
+    BOOL _synthesizeSilently;
     unsigned int _audioSessionID;
     unsigned int _audioQueueFlags;
     NSString *_text;
@@ -34,7 +34,9 @@
     double _dispatchTime;
     double _handledTime;
     NSArray *_channels;
+    unsigned long long _synthesizerInstanceID;
     void *_clientContext;
+    CDUnknownBlockType _audioBufferCallback;
     NSString *_originalString;
     NSMutableArray *_originalWordRanges;
     NSMutableArray *_processedWordRanges;
@@ -43,15 +45,17 @@
 }
 
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL synthesizeSilently; // @synthesize synthesizeSilently=_synthesizeSilently;
 @property(nonatomic) long long wordRangeCallbacksDispatched; // @synthesize wordRangeCallbacksDispatched=_wordRangeCallbacksDispatched;
 @property(retain, nonatomic) NSMutableArray *replacedWords; // @synthesize replacedWords=_replacedWords;
 @property(retain, nonatomic) NSMutableArray *processedWordRanges; // @synthesize processedWordRanges=_processedWordRanges;
 @property(retain, nonatomic) NSMutableArray *originalWordRanges; // @synthesize originalWordRanges=_originalWordRanges;
 @property(retain, nonatomic) NSString *originalString; // @synthesize originalString=_originalString;
+@property(copy, nonatomic) CDUnknownBlockType audioBufferCallback; // @synthesize audioBufferCallback=_audioBufferCallback;
 @property(nonatomic) void *clientContext; // @synthesize clientContext=_clientContext;
+@property(nonatomic) unsigned long long synthesizerInstanceID; // @synthesize synthesizerInstanceID=_synthesizerInstanceID;
 @property(retain, nonatomic) NSArray *channels; // @synthesize channels=_channels;
 @property(nonatomic) BOOL useMonarchStyleRate; // @synthesize useMonarchStyleRate=_useMonarchStyleRate;
-@property(nonatomic) BOOL useVoiceBooster; // @synthesize useVoiceBooster=_useVoiceBooster;
 @property(nonatomic) double handledTime; // @synthesize handledTime=_handledTime;
 @property(nonatomic) double dispatchTime; // @synthesize dispatchTime=_dispatchTime;
 @property(nonatomic) double latency; // @synthesize latency=_latency;
@@ -69,6 +73,7 @@
 @property(copy, nonatomic) NSAttributedString *attributedText; // @synthesize attributedText=_attributedText;
 @property(copy, nonatomic) NSString *text; // @synthesize text=_text;
 @property(retain, nonatomic) TTSSpeechChannel *speechChannel; // @synthesize speechChannel=_speechChannel;
+- (void)speechRequestDidSynthesizeSilentlyToURL:(id)arg1 forService:(id)arg2;
 - (void)speechRequestDidStopWithSuccess:(BOOL)arg1 phonemesSpoken:(id)arg2 forService:(id)arg3 error:(id)arg4;
 - (void)speechRequestMark:(long long)arg1 didStartForRange:(struct _NSRange)arg2 forService:(id)arg3;
 - (void)speechRequestDidContinueForService:(id)arg1;

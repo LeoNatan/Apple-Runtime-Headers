@@ -51,13 +51,14 @@
 - (void)_displayIntervalTimerFired:(id)arg1;
 - (void)_updateBackgroundImageWithIndex:(unsigned long long)arg1;
 - (void)_fetchNext;
-- (void)_dispatchEvent:(unsigned long long)arg1;
+- (void)_dispatchEvent:(id)arg1 sender:(id)arg2;
 - (void)_onMenuItemPlay:(id)arg1;
 - (void)_onMenuItemSelect:(id)arg1;
 - (void)_configureMenuBarWithElement:(id)arg1;
 - (void)_updateWithViewElement:(id)arg1 update:(_Bool)arg2;
 - (void)_hideSpinner;
 - (void)_showSpinner;
+- (void)_stopOrPausePlaybackNotification:(id)arg1;
 - (void)_playerStateDidChange:(id)arg1;
 - (void)_playerDidPlayToEnd;
 - (void)_applicationDidRemoveDeactivationReason:(id)arg1;

@@ -14,6 +14,16 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct AVCaptureDevice {
+    Class _field1;
+    id _field2;
+};
+
+struct AVCaptureSession {
+    Class _field1;
+    id _field2;
+};
+
 struct CATransform3D {
     double m11;
     double m12;
@@ -1094,6 +1104,7 @@ struct _CGLContextObject {
         CDUnknownFunctionPointerType _field972;
         CDUnknownFunctionPointerType _field973;
         CDUnknownFunctionPointerType _field974;
+        CDUnknownFunctionPointerType _field975;
     } _field2;
     struct _CGLPrivateObject *_field3;
     void *_field4;

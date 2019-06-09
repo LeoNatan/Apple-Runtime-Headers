@@ -10,40 +10,46 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBControlHomeIntent-Protocol.h>
 
-@class NSArray, NSString, _INPBHomeAttribute, _INPBIntentMetadata;
+@class NSArray, NSString, _INPBDateTimeRange, _INPBHomeUserTask, _INPBIntentMetadata;
 
 @interface _INPBControlHomeIntent : PBCodable <_INPBControlHomeIntent, NSSecureCoding, NSCopying>
 {
     struct _has;
-    _INPBHomeAttribute *_attribute;
     NSArray *_contents;
-    NSArray *_entities;
+    NSArray *_filters;
     _INPBIntentMetadata *_intentMetadata;
+    _INPBDateTimeRange *_time;
+    _INPBHomeUserTask *_userTask;
 }
 
-+ (Class)entitiesType;
++ (BOOL)supportsSecureCoding;
++ (Class)filtersType;
 + (Class)contentsType;
+@property(retain, nonatomic) _INPBHomeUserTask *userTask; // @synthesize userTask=_userTask;
+@property(retain, nonatomic) _INPBDateTimeRange *time; // @synthesize time=_time;
 @property(retain, nonatomic) _INPBIntentMetadata *intentMetadata; // @synthesize intentMetadata=_intentMetadata;
-@property(copy, nonatomic) NSArray *entities; // @synthesize entities=_entities;
+@property(copy, nonatomic) NSArray *filters; // @synthesize filters=_filters;
 @property(copy, nonatomic) NSArray *contents; // @synthesize contents=_contents;
-@property(retain, nonatomic) _INPBHomeAttribute *attribute; // @synthesize attribute=_attribute;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+@property(readonly, nonatomic) BOOL hasUserTask;
+@property(readonly, nonatomic) BOOL hasTime;
 @property(readonly, nonatomic) BOOL hasIntentMetadata;
-- (id)entitiesAtIndex:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long entitiesCount;
-- (void)addEntities:(id)arg1;
-- (void)clearEntities;
+- (id)filtersAtIndex:(unsigned long long)arg1;
+@property(readonly, nonatomic) unsigned long long filtersCount;
+- (void)addFilters:(id)arg1;
+- (void)clearFilters;
 - (id)contentsAtIndex:(unsigned long long)arg1;
 @property(readonly, nonatomic) unsigned long long contentsCount;
 - (void)addContents:(id)arg1;
 - (void)clearContents;
-@property(readonly, nonatomic) BOOL hasAttribute;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

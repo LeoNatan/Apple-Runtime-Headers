@@ -6,6 +6,9 @@
 
 #import <QuickLookUI/NSObject-Protocol.h>
 
+@class NSArray;
+
 @protocol QLPreviewExtensionHostContextProtocol <NSObject>
+- (void)requestAccessToAdditionalResources:(NSArray *)arg1 completion:(void (^)(NSArray *, NSError *))arg2;
 @end
 

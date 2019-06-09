@@ -7,23 +7,25 @@
 #import <FinderKit/FI_TTableViewController.h>
 
 #import <FinderKit/NSMenuDelegate-Protocol.h>
+#import <FinderKit/TMarkTornDown-Protocol.h>
 
-@class FI_TContainerLayoutManager, NSString;
+@class FI_TContainerLayoutManager, NSObject, NSString;
 @protocol TTagColumnTableViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface FI_TTagColumnTableViewController : FI_TTableViewController <NSMenuDelegate>
+@interface FI_TTagColumnTableViewController : FI_TTableViewController <NSMenuDelegate, TMarkTornDown>
 {
-    id <TTagColumnTableViewControllerDelegate> _delegate;
+    struct TNSWeakPtr<NSObject<TTagColumnTableViewControllerDelegate>, void> _weakDelegate;
     struct TFENode _selectedNode;
     struct TFENode _clickedNodeForMenuEvent;
     struct TFENode _editedNode;
     struct TKeyValueObserver _selectedObjectsObserver;
     struct TKeyValueObserver _contentInsetsDidChangeObserver;
-    FI_TContainerLayoutManager *_containerLayoutManager;
+    struct TNSRef<FI_TContainerLayoutManager, void> _containerLayoutManager;
+    _Bool tornDown;
 }
 
-@property(nonatomic) id <TTagColumnTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+@property(getter=isTornDown) _Bool tornDown; // @synthesize tornDown;
 @property(nonatomic) struct TFENode selectedNode; // @synthesize selectedNode=_selectedNode;
 @property(nonatomic) struct TFENode editedNode; // @synthesize editedNode=_editedNode;
 - (id).cxx_construct;
@@ -40,10 +42,12 @@ __attribute__((visibility("hidden")))
 - (void)tableView:(id)arg1 didRemoveRowView:(id)arg2 forRow:(long long)arg3;
 - (void)tableView:(id)arg1 didAddRowView:(id)arg2 forRow:(long long)arg3;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
+@property(retain, nonatomic) FI_TContainerLayoutManager *containerLayoutManager;
 - (id)tagColumnDataSource;
 - (Class)dataSourceClass;
 - (void)updateSubviewContentInsets:(struct NSEdgeInsets)arg1;
 - (id)nibName;
+@property(nonatomic) __weak NSObject<TTagColumnTableViewControllerDelegate> *delegate; // @dynamic delegate;
 - (void)aboutToTearDown;
 - (void)dealloc;
 - (void)viewLoaded;

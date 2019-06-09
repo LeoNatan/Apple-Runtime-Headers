@@ -14,13 +14,12 @@
     unsigned int _directionsResponseIndex;
     unsigned int _directionsResponseSuggestedRoutesIndex;
     struct {
-        unsigned int directionsResponseIndex:1;
-        unsigned int directionsResponseSuggestedRoutesIndex:1;
-    } _has;
+        unsigned int has_directionsResponseIndex:1;
+        unsigned int has_directionsResponseSuggestedRoutesIndex:1;
+    } _flags;
 }
 
-@property(nonatomic) unsigned int directionsResponseSuggestedRoutesIndex; // @synthesize directionsResponseSuggestedRoutesIndex=_directionsResponseSuggestedRoutesIndex;
-@property(nonatomic) unsigned int directionsResponseIndex; // @synthesize directionsResponseIndex=_directionsResponseIndex;
++ (_Bool)isValid:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
 - (_Bool)isEqual:(id)arg1;
@@ -28,6 +27,7 @@
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 - (void)setClusteredRouteRideSelections:(unsigned int *)arg1 count:(unsigned long long)arg2;
@@ -37,7 +37,9 @@
 @property(readonly, nonatomic) unsigned int *clusteredRouteRideSelections;
 @property(readonly, nonatomic) unsigned long long clusteredRouteRideSelectionsCount;
 @property(nonatomic) _Bool hasDirectionsResponseSuggestedRoutesIndex;
+@property(nonatomic) unsigned int directionsResponseSuggestedRoutesIndex;
 @property(nonatomic) _Bool hasDirectionsResponseIndex;
+@property(nonatomic) unsigned int directionsResponseIndex;
 - (void)dealloc;
 
 @end

@@ -51,7 +51,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL storeIsUbiquitized; // @synthesize storeIsUbiquitized=_storeIsUbiquitized;
 - (void)executeEpilogue;
 - (void)addFaultsThatWereFired:(id)arg1;
-- (void)executeRequestCore:(id *)arg1;
+- (BOOL)executeRequestCore:(id *)arg1;
 - (void)executePrologue;
 - (void)_preparePredicate:(id)arg1;
 - (void)visitPredicateExpression:(id)arg1;

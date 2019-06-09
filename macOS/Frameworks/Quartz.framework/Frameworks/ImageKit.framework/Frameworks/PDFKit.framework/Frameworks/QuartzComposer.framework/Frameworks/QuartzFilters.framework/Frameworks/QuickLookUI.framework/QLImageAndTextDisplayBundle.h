@@ -29,6 +29,7 @@
 - (struct CGRect)contentViewBorderFrame;
 - (struct CGRect)contentFrame;
 - (id)sizingConstraints;
+@property(readonly) BOOL showsScreenTimeLockout;
 @property(readonly) BOOL hasLargeProperties;
 @property(readonly) BOOL hasDarkBackground;
 - (void)setHighlighted:(BOOL)arg1;
@@ -49,8 +50,10 @@
 @property(readonly) NSString *subTitle;
 @property(readonly) NSString *title;
 - (void)didShow;
+- (void)_updateAccessibilityElementLayout;
 - (void)forceUpdateLayoutItems;
 - (void)updateText;
+- (id)_attributedTitleWithHourglass;
 - (id)_attributedStringForValue:(id)arg1 attributes:(id)arg2 label:(id)arg3 space:(float)arg4;
 - (void)set_QLBundleAppearance:(id)arg1;
 - (void)dealloc;
@@ -60,7 +63,7 @@
 - (BOOL)_setupDefaultModeIfNecessary;
 - (void)teardownTextView;
 - (void)setupTextView;
-- (id)initWithPreview:(struct __QLPreview *)arg1 owner:(id)arg2;
+- (id)initWithPreview:(id)arg1 owner:(id)arg2;
 - (void)setQuickLookFrame:(struct CGRect)arg1;
 - (struct CGRect)frameForUIElement:(id)arg1;
 - (struct CGRect)frameForUIElementInParentSpace:(id)arg1;

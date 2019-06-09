@@ -8,7 +8,6 @@
 
 @interface SSInputEvent : NSObject
 {
-    void *mReservedForInstanceVariables;
 }
 
 + (void)initialize;

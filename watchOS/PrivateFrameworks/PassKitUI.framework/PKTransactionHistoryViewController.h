@@ -6,14 +6,22 @@
 
 #import <PassKitUI/PKDashboardViewController.h>
 
-@class NSString, PKPaymentPass, PKPaymentTransaction, UIBarButtonItem;
+@class NSString, PKAnimatedNavigationBarTitleView, PKContinuousButton, PKNavigationController, PKPaymentPass, PKPaymentTransaction, PKSpendingSummaryFooterContainer, PKSpendingSummaryFooterView, UIImageView;
 
 @interface PKTransactionHistoryViewController : PKDashboardViewController
 {
+    PKSpendingSummaryFooterView *_footer;
+    PKSpendingSummaryFooterContainer *_footerContainer;
     _Bool _loadingMapsViewController;
-    UIBarButtonItem *_spinnerButtonItem;
-    UIBarButtonItem *_detailsButtonItem;
-    float _merchantHanderHeight;
+    PKContinuousButton *_detailsButton;
+    PKContinuousButton *_phoneButton;
+    PKContinuousButton *_messageButton;
+    struct UIEdgeInsets _lastContentInset;
+    float _headerHeight;
+    PKNavigationController *_pkNavigationController;
+    float _merchantHeaderAnimationProgress;
+    PKAnimatedNavigationBarTitleView *_titleView;
+    UIImageView *_titleIconImageView;
     NSString *_titleText;
     PKPaymentTransaction *_transaction;
     PKPaymentPass *_paymentPass;
@@ -26,19 +34,23 @@
 - (void).cxx_destruct;
 - (void)_showMapsDetailsViewController;
 - (void)_showContactDetailsViewController;
+- (void)_handlePhoneButtonTapped:(id)arg1;
+- (void)_handleMessageButtonTapped:(id)arg1;
 - (void)_handleInfoButtonTapped:(id)arg1;
-- (void)_showSpinner:(_Bool)arg1 forButtonItem:(id)arg2;
 - (id)_barButtonItems;
 - (id)pkui_navigationBarItemTintColor;
-- (id)pkui_navigationBarTintColor;
+- (void)_updateNavigationBarIconWithLogoURL:(id)arg1;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)contentIsLoaded;
 - (int)preferredStatusBarStyle;
+- (void)didMoveToParentViewController:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillLayoutSubviews;
 - (void)viewWillAppear:(_Bool)arg1;
+- (void)_updateNavigationBarIconForNavigationBarAppeared:(_Bool)arg1;
 - (void)viewDidLoad;
-- (id)initWithTransactionGroupItem:(id)arg1;
-- (id)initWithTransaction:(id)arg1 paymentPass:(id)arg2;
+- (id)initWithTransactionGroup:(id)arg1 paymentPass:(id)arg2 transactionHistory:(id)arg3;
+- (id)initWithFetcher:(id)arg1 paymentPass:(id)arg2 featuredTransaction:(id)arg3 selectedTransactions:(id)arg4 transactionHistory:(id)arg5;
 
 @end
 

@@ -6,24 +6,25 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, REFeature, REFeatureValue;
+@class NSArray, REFeature;
 
 @interface _REFeatureValuePair : NSObject
 {
     REFeature *_feature;
-    REFeatureValue *_value;
+    unsigned long long _value;
     unsigned long long _index;
     NSArray *_rootFeatures;
 }
 
 @property(readonly, nonatomic) NSArray *rootFeatures; // @synthesize rootFeatures=_rootFeatures;
 @property(readonly, nonatomic) unsigned long long index; // @synthesize index=_index;
-@property(readonly, nonatomic) REFeatureValue *value; // @synthesize value=_value;
+@property(readonly, nonatomic) unsigned long long value; // @synthesize value=_value;
 @property(readonly, nonatomic) REFeature *feature; // @synthesize feature=_feature;
 - (void).cxx_destruct;
 - (_Bool)isEqual:(id)arg1;
 - (unsigned long long)hash;
-- (id)initWithFeature:(id)arg1 value:(id)arg2 index:(unsigned long long)arg3 rootFeatures:(id)arg4;
+- (void)dealloc;
+- (id)initWithFeature:(id)arg1 value:(unsigned long long)arg2 index:(unsigned long long)arg3 rootFeatures:(id)arg4;
 
 @end
 

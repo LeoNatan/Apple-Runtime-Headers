@@ -17,6 +17,11 @@ __attribute__((visibility("hidden")))
 - (BOOL)setSingleSelectionWithRequest:(id)arg1;
 - (id)elementToSpeakAfterMove;
 - (BOOL)_moveToContentSibling:(id)arg1;
+- (unsigned long long)indexOfElement:(id)arg1;
+- (BOOL)needToRebuildChildren;
+- (BOOL)childrenShouldAddIndexToDescription;
+- (unsigned long long)numberOfChildren:(BOOL)arg1;
+- (id)onlyChild;
 
 @end
 

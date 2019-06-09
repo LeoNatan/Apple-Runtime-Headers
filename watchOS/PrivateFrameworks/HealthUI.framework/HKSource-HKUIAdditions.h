@@ -7,6 +7,6 @@
 #import <HealthKit/HKSource.h>
 
 @interface HKSource (HKUIAdditions)
-- (id)hkui_fetchAppBundleWithError:(out id *)arg1;
+- (id)hk_fetchBundleWithError:(id *)arg1;
 @end
 

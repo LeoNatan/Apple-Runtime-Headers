@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface SKUIRedeemResultLinksTableViewSection : SKUITableViewSection
 {
     NSArray *_links;

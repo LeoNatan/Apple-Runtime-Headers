@@ -12,7 +12,7 @@
 #import <QuickLook/UIScrollViewDelegate-Protocol.h>
 #import <QuickLook/WKNavigationDelegate-Protocol.h>
 
-@class NSCache, NSLayoutConstraint, NSOperationQueue, NSString, QLScrubView, WBUPrintPageRenderer, WKWebView;
+@class NSCache, NSLayoutConstraint, NSOperationQueue, NSString, QLScrubView, UIPrintPageRenderer, WKWebView;
 @protocol QLWebKitPaginator, QLWebKitThumbnailGenerator;
 
 __attribute__((visibility("hidden")))
@@ -21,7 +21,7 @@ __attribute__((visibility("hidden")))
     NSString *_previewContentType;
     struct CGPoint _scrollViewTopOffset;
     CDUnknownBlockType _completionHandler;
-    WBUPrintPageRenderer *_renderer;
+    UIPrintPageRenderer *_renderer;
     _Bool _fullScreen;
     id <QLWebKitThumbnailGenerator> _thumbnailGenerator;
     id <QLWebKitPaginator> _paginator;
@@ -37,8 +37,7 @@ __attribute__((visibility("hidden")))
     WKWebView *_webView;
 }
 
-+ (_Bool)providesCustomPrinter;
-+ (Class)transformerClass;
++ (_Bool)_shouldDisableJavaScriptForContentType:(id)arg1;
 @property(retain, nonatomic) WKWebView *webView; // @synthesize webView=_webView;
 @property(retain, nonatomic) NSCache *indexToThumbnailsCache; // @synthesize indexToThumbnailsCache=_indexToThumbnailsCache;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
@@ -48,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)transitionDidStart:(_Bool)arg1;
 - (id)transitioningView;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)provideCurrentPageAndVisibleRectWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)pdfDataForPageAtIndex:(long long)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)prepareForDrawingPages:(struct _NSRange)arg1 ofSize:(struct CGSize)arg2;
 - (void)numberOfPagesWithSize:(struct CGSize)arg1 completionHandler:(CDUnknownBlockType)arg2;

@@ -10,10 +10,17 @@
 {
 }
 
++ (id)_reversedDefaultIdentifiersAndKeyCommands;
 + (id)_defaultIdentifiersAndKeyCommands;
 + (id)sharedInstance;
-- (id)defaultKeyCommandsExcluding:(id)arg1;
+- (_Bool)canPerformAction:(SEL)arg1 withSender:(id)arg2 defaultBehavior:(_Bool)arg3;
+- (void)_registerForKeyCommandWithIdentifier:(id)arg1 viewController:(id)arg2 withHandler:(CDUnknownBlockType)arg3;
+- (void)_postNotificationForKeyCommandIdentifier:(id)arg1 modifierFlags:(long long)arg2;
+- (void)registerForKeyCommandWithIdentifiers:(id)arg1 viewController:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)keyCommandWasPerformed:(id)arg1;
+- (id)dismissingKeyCommandsWithAction:(SEL)arg1;
+- (id)dismissingKeyCommands;
+- (id)defaultKeyCommandsByExcludingKeyCommandsWithIdentifiers:(id)arg1;
 
 @end
 

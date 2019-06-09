@@ -10,6 +10,7 @@
 
 @class CNContactStore, NSString;
 
+__attribute__((visibility("hidden")))
 @interface CHPhoneBookIOSManager : NSObject <CHPhoneBookManagerProtocol>
 {
     CNContactStore *_fContactsStore;

@@ -8,6 +8,7 @@
 
 @class UIColor, UIImage;
 
+__attribute__((visibility("hidden")))
 @interface SKUIStackViewItemView : UIView
 {
     UIColor *_borderColor;

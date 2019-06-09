@@ -14,8 +14,8 @@ __attribute__((visibility("hidden")))
     NSString *mImagePresentationName;
 }
 
+- (void).cxx_destruct;
 - (void)mapPoint:(id)arg1 bounds:(struct CGRect)arg2;
-- (void)dealloc;
 - (id)initWithImagePresentationName:(id)arg1 state:(id)arg2;
 
 @end

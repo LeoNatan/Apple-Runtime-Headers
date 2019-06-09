@@ -12,6 +12,7 @@
 {
     _Bool _completeDataPromise;
     _Bool _createsPlaceholders;
+    _Bool _createAsMobileBackup;
     _Bool _restoreApplicationData;
     NSArray *_items;
 }
@@ -19,6 +20,7 @@
 + (_Bool)supportsSecureCoding;
 @property(readonly, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(nonatomic) _Bool restoreApplicationData; // @synthesize restoreApplicationData=_restoreApplicationData;
+@property(nonatomic) _Bool createAsMobileBackup; // @synthesize createAsMobileBackup=_createAsMobileBackup;
 @property(nonatomic) _Bool createsPlaceholders; // @synthesize createsPlaceholders=_createsPlaceholders;
 @property(nonatomic) _Bool completeDataPromise; // @synthesize completeDataPromise=_completeDataPromise;
 - (void).cxx_destruct;

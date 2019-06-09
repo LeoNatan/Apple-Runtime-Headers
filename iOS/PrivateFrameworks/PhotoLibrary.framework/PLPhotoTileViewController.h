@@ -10,7 +10,7 @@
 #import <PhotoLibrary/UIGestureRecognizerDelegate-Protocol.h>
 #import <PhotoLibrary/UIScrollViewDelegate-Protocol.h>
 
-@class NSArray, NSObject, NSString, PHAsset, PHCachingImageManager, PLExpandableImageView, PLImageScrollView, PLTileContainerView, PLVideoView, UIGestureRecognizer, UIImage, UIImageView, UIView;
+@class NSArray, NSNumber, NSObject, NSString, PHAsset, PHCachingImageManager, PLExpandableImageView, PLImageScrollView, PLTileContainerView, PLVideoView, UIGestureRecognizer, UIImage, UIImageView, UIView;
 @protocol OS_dispatch_source, PLPhotoTileViewControllerDelegate, PLTilePlaceholderView;
 
 @interface PLPhotoTileViewController : UIViewController <UIScrollViewDelegate, UIGestureRecognizerDelegate, PLPhotoTileCloudPlaceholderViewDelegate>
@@ -84,6 +84,8 @@
     _Bool _picked;
     _Bool _shouldHideProgressIndicator;
     _Bool _shouldSupressViewWillTransitionToSize;
+    int _inflightFullSizeImageRequestID;
+    NSNumber *_maxZoomScaleOverride;
     UIView *__customCenterOverlay;
     struct UIEdgeInsets _overlayInsets;
 }
@@ -101,7 +103,9 @@
 @property(nonatomic) _Bool picked; // @synthesize picked=_picked;
 @property(nonatomic) _Bool reviewing; // @synthesize reviewing=_reviewing;
 @property(nonatomic) _Bool wantsCompactLayout; // @synthesize wantsCompactLayout=_wantsCompactLayout;
+@property(retain, nonatomic) NSNumber *maxZoomScaleOverride; // @synthesize maxZoomScaleOverride=_maxZoomScaleOverride;
 @property(nonatomic) struct UIEdgeInsets overlayInsets; // @synthesize overlayInsets=_overlayInsets;
+@property(nonatomic) int inflightFullSizeImageRequestID; // @synthesize inflightFullSizeImageRequestID=_inflightFullSizeImageRequestID;
 @property(nonatomic) _Bool force1XCroppedImage; // @synthesize force1XCroppedImage=_force1XCroppedImage;
 @property(nonatomic) _Bool forceNativeScreenScale; // @synthesize forceNativeScreenScale=_forceNativeScreenScale;
 @property(retain, nonatomic) UIImage *unscaledImage; // @synthesize unscaledImage=_unscaledImage;
@@ -115,6 +119,7 @@
 - (int)imageOrientation;
 - (void)setAllowsZoomToFill:(_Bool)arg1;
 - (void)updateZoomScales;
+- (void)reloadZoomScale;
 - (void)_setDefaultZoomScale;
 - (void)setOrientationDelegate:(id)arg1;
 - (_Bool)isZoomedOut;
@@ -130,6 +135,7 @@
 - (void)_setDidEndZoomingBlock:(CDUnknownBlockType)arg1;
 - (void)zoomToScale:(double)arg1 animated:(_Bool)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)dictionaryWithCroppedImageForRect:(struct CGRect)arg1 minimalCropDimension:(double)arg2 withOptions:(int)arg3;
+- (id)_newImageForAsset:(id)arg1 targetSize:(struct CGSize)arg2 cropRect:(struct CGRect)arg3 fullSize:(struct CGSize)arg4;
 - (id)newImageWithCropRect:(struct CGRect)arg1 minimalCropDimension:(double)arg2 croppedImageData:(id *)arg3 fullScreenImageData:(id *)arg4 fullScreenImage:(struct CGImage **)arg5 imageCropRect:(struct CGRect *)arg6 intersectCropWithFullRect:(_Bool)arg7;
 - (void)_handleDoubleTap:(id)arg1;
 - (void)_handleFullSizeImageRequestResult:(id)arg1 dataUTI:(id)arg2 orientation:(long long)arg3;
@@ -208,7 +214,7 @@
 - (void)setVideoView:(id)arg1;
 - (id)videoView;
 - (id)scrollView;
-- (id)newCGImageBackedUIImage;
+- (id)_newCGImageBackedUIImageFromImage:(id)arg1;
 - (id)image;
 - (id)imageView;
 - (id)expandableImageView;

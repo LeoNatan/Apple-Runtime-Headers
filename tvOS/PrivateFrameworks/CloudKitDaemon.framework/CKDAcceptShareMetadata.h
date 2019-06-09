@@ -21,9 +21,11 @@ __attribute__((visibility("hidden")))
     unsigned long long _publicKeyVersion;
     NSData *_oonProtectionInfo;
     NSString *_oonParticipantID;
+    NSData *_dugongInvitationProtectionInfo;
 }
 
 @property(nonatomic) _Bool acceptedInProcess; // @synthesize acceptedInProcess=_acceptedInProcess;
+@property(retain, nonatomic) NSData *dugongInvitationProtectionInfo; // @synthesize dugongInvitationProtectionInfo=_dugongInvitationProtectionInfo;
 @property(retain, nonatomic) NSString *oonParticipantID; // @synthesize oonParticipantID=_oonParticipantID;
 @property(retain, nonatomic) NSData *oonProtectionInfo; // @synthesize oonProtectionInfo=_oonProtectionInfo;
 @property(nonatomic) unsigned long long publicKeyVersion; // @synthesize publicKeyVersion=_publicKeyVersion;

@@ -6,6 +6,7 @@
 
 #import <UIKit/UICollectionViewFlowLayout.h>
 
+__attribute__((visibility("hidden")))
 @interface SKUIGiftThemePickerFlowLayout : UICollectionViewFlowLayout
 {
     long long _currentPage;

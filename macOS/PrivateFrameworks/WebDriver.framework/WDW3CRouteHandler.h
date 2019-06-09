@@ -21,7 +21,6 @@
 }
 
 - (void).cxx_destruct;
-- (void)_handleNewWindow:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_handleAttachDebugger:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_handleSetPermissions:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_handleGetPermissions:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
@@ -42,7 +41,7 @@
 - (void)_handleExecuteScript:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_handleGetPageSource:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_handleElementSendKeys:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
-- (void)_ensureElementIsInteractable:(id)arg1 inSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_ensureElementIsKeyboardInteractable:(id)arg1 inSession:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_keyInteractionsFromSequence:(id)arg1 inSession:(id)arg2;
 - (void)_selectLocalFiles:(id)arg1 forFileInputElement:(id)arg2 allowsMultipleSelection:(BOOL)arg3 inSession:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_handleElementClear:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
@@ -71,6 +70,7 @@
 - (void)_handleSwitchToParentFrame:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_handleSwitchToFrame:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_switchToParentBrowsingContextInSession:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)_handleNewWindow:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_handleGetWindowHandles:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_handleSwitchToWindow:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
 - (void)_handleCloseWindow:(id)arg1 response:(id)arg2 relatedSession:(id)arg3;
@@ -113,11 +113,11 @@
 - (BOOL)_findSession:(id *)arg1 fromRequest:(id)arg2 orSendResponse:(id)arg3;
 - (BOOL)_ensureSessionErrorIsEmpty:(id)arg1 forRequest:(id)arg2 orSendResponse:(id)arg3 relatedSession:(id)arg4;
 - (BOOL)_ensureHandlerErrorIsEmpty:(id)arg1 orSendResponse:(id)arg2 relatedSession:(id)arg3;
-- (BOOL)_ensurePayload:(id)arg1 hasOptionalParameter:(id)arg2 ofClass:(Class)arg3;
-- (BOOL)_ensurePayload:(id)arg1 fromRequest:(id)arg2 hasOptionalParameter:(id)arg3 allowedClasses:(id)arg4 orSendResponse:(id)arg5 withErrorCode:(long long)arg6 relatedSession:(id)arg7;
-- (BOOL)_ensurePayload:(id)arg1 fromRequest:(id)arg2 hasOptionalParameter:(id)arg3 ofClass:(Class)arg4 orSendResponse:(id)arg5 withErrorCode:(long long)arg6 relatedSession:(id)arg7;
-- (BOOL)_ensurePayload:(id)arg1 fromRequest:(id)arg2 hasRequiredParameter:(id)arg3 ofClass:(Class)arg4 orSendResponse:(id)arg5 withErrorCode:(long long)arg6 relatedSession:(id)arg7;
-- (BOOL)_ensureRequest:(id)arg1 hasURLParameter:(id)arg2 ofClass:(Class)arg3 orSendResponse:(id)arg4 withErrorCode:(long long)arg5 relatedSession:(id)arg6;
+- (BOOL)_ensurePayload:(id)arg1 hasOptionalParameter:(id)arg2 ofType:(long long)arg3;
+- (BOOL)_ensurePayload:(id)arg1 fromRequest:(id)arg2 hasOptionalParameter:(id)arg3 allowedTypes:(id)arg4 orSendResponse:(id)arg5 withErrorCode:(long long)arg6 relatedSession:(id)arg7;
+- (BOOL)_ensurePayload:(id)arg1 fromRequest:(id)arg2 hasOptionalParameter:(id)arg3 ofType:(long long)arg4 orSendResponse:(id)arg5 withErrorCode:(long long)arg6 relatedSession:(id)arg7;
+- (BOOL)_ensurePayload:(id)arg1 fromRequest:(id)arg2 hasRequiredParameter:(id)arg3 ofType:(long long)arg4 orSendResponse:(id)arg5 withErrorCode:(long long)arg6 relatedSession:(id)arg7;
+- (BOOL)_ensureRequest:(id)arg1 hasURLParameter:(id)arg2 ofType:(long long)arg3 orSendResponse:(id)arg4 withErrorCode:(long long)arg5 relatedSession:(id)arg6;
 - (BOOL)_parsePayload:(id *)arg1 fromRequest:(id)arg2 orSendResponse:(id)arg3 relatedSession:(id)arg4;
 - (void)_maybeProcessEnqueuedRequestForSession:(id)arg1;
 - (void)_addHandlerForSessionCommandWithMethod:(long long)arg1 path:(id)arg2 target:(id)arg3 selector:(SEL)arg4;

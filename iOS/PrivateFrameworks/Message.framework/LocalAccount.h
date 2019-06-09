@@ -41,8 +41,9 @@
 - (id)primaryMailboxUid;
 - (id)mailboxPathExtension;
 - (Class)storeClass;
-- (id)uniqueId;
+- (id)uniqueID;
 - (_Bool)isActive;
+- (_Bool)isLocalAccount;
 - (id)initWithLibrary:(id)arg1 persistentAccount:(id)arg2;
 - (id)legacySQLExpressionToMatchAllMailboxes;
 

@@ -14,10 +14,10 @@
 }
 
 - (id)debugName;
-- (_Bool)wantsHighFrequencyNotifications;
 @property(retain, setter=_setIndexableContent:) CHRecognitionSessionIndexableContent *indexableContent; // @synthesize indexableContent=_indexableContent;
 - (void)q_updateQueryResult;
 - (void)dealloc;
+- (id)initWithRecognitionSession:(id)arg1;
 
 @end
 

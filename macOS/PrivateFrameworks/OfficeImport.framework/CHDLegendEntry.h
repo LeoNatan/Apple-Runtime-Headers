@@ -8,6 +8,7 @@
 
 @class EDResources;
 
+__attribute__((visibility("hidden")))
 @interface CHDLegendEntry : NSObject
 {
     unsigned long long mFontIndex;

@@ -12,6 +12,7 @@
 {
 }
 
++ (id)__downloadedDate_KEY;
 + (id)__cloudVersionHash_KEY;
 + (id)__lastDevicePlaybackDate_KEY;
 + (id)__keepLocalManagedStatus_KEY;
@@ -70,6 +71,7 @@
 @property(copy, nonatomic) MPModelCurator *curator; // @dynamic curator;
 @property(nonatomic, getter=isCuratorPlaylist) _Bool curatorPlaylist; // @dynamic curatorPlaylist;
 @property(copy, nonatomic) NSString *descriptionText; // @dynamic descriptionText;
+@property(readonly, copy, nonatomic) NSDate *downloadedDate; // @dynamic downloadedDate;
 @property(copy, nonatomic) NSString *editorNotes; // @dynamic editorNotes;
 @property(copy, nonatomic) CDUnknownBlockType editorialArtworkCatalogBlock; // @dynamic editorialArtworkCatalogBlock;
 @property(nonatomic) _Bool hasCleanContent; // @dynamic hasCleanContent;

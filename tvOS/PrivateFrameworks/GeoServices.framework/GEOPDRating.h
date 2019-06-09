@@ -19,17 +19,17 @@ __attribute__((visibility("hidden")))
     int _numRatingsUsedForScore;
     int _ratingType;
     struct {
-        unsigned int maxScore:1;
-        unsigned int score:1;
-        unsigned int numRatingsUsedForScore:1;
-        unsigned int ratingType:1;
-    } _has;
+        unsigned int has_maxScore:1;
+        unsigned int has_score:1;
+        unsigned int has_numRatingsUsedForScore:1;
+        unsigned int has_ratingType:1;
+    } _flags;
 }
 
++ (_Bool)isValid:(id)arg1;
 + (id)ratingForPlaceData:(id)arg1 type:(int)arg2;
-@property(nonatomic) int numRatingsUsedForScore; // @synthesize numRatingsUsedForScore=_numRatingsUsedForScore;
-@property(nonatomic) double score; // @synthesize score=_score;
 - (void).cxx_destruct;
+- (void)clearUnknownFields:(_Bool)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -38,16 +38,19 @@ __attribute__((visibility("hidden")))
 - (void)copyTo:(id)arg1;
 - (void)writeTo:(id)arg1;
 - (_Bool)readFrom:(id)arg1;
+- (void)readAll:(_Bool)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
 @property(nonatomic) _Bool hasNumRatingsUsedForScore;
+@property(nonatomic) int numRatingsUsedForScore;
 @property(nonatomic) _Bool hasMaxScore;
-@property(nonatomic) double maxScore; // @synthesize maxScore=_maxScore;
+@property(nonatomic) double maxScore;
 @property(nonatomic) _Bool hasScore;
+@property(nonatomic) double score;
 - (int)StringAsRatingType:(id)arg1;
 - (id)ratingTypeAsString:(int)arg1;
 @property(nonatomic) _Bool hasRatingType;
-@property(nonatomic) int ratingType; // @synthesize ratingType=_ratingType;
+@property(nonatomic) int ratingType;
 
 @end
 

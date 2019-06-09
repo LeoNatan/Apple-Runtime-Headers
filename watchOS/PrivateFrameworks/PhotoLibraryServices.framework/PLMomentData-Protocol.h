@@ -7,26 +7,30 @@
 #import <PhotoLibraryServices/PLMomentProtocol-Protocol.h>
 #import <PhotoLibraryServices/PLMomentRefreshable-Protocol.h>
 
-@class CLLocation, NSArray, NSData, NSDate, NSObject, NSOrderedSet, NSString;
-@protocol NSCopying, PLMomentAssetData, PLMomentListData;
+@class CLLocation, NSArray, NSDate, NSObject, NSOrderedSet, NSString;
+@protocol NSCopying, PLMomentAssetData, PLMomentListData, PLPhotosHighlightData;
 
 @protocol PLMomentData <PLMomentRefreshable, PLMomentProtocol>
 + (NSArray *)sortByTimeSortDescriptors;
-@property(retain, nonatomic) NSArray *userTitles;
 @property(retain, nonatomic) NSString *uuid;
-@property(nonatomic) _Bool usedLocationsOfInterest;
-@property(nonatomic) short generationType;
-@property(nonatomic) _Bool reverseLocationDataContainsLocation;
-@property(nonatomic) _Bool reverseLocationDataIsValid;
-@property(retain, nonatomic) NSData *reverseLocationData;
+@property(nonatomic) int cachedVideosCount;
+@property(nonatomic) int cachedPhotosCount;
 @property(nonatomic) int cachedCount;
 @property(retain, nonatomic) id <PLMomentListData> megaMomentList;
 @property(retain, nonatomic) id <PLMomentListData> yearMomentList;
+@property(readonly, nonatomic) id <PLPhotosHighlightData> highlight;
 @property(readonly, retain, nonatomic) NSArray *batchedAssets;
 @property(retain, nonatomic) NSOrderedSet *assets;
+@property(nonatomic) float aggregationScore;
+@property(nonatomic) unsigned short processedLocation;
 @property(retain, nonatomic) CLLocation *approximateLocation;
+@property(nonatomic) double approximateLongitude;
+@property(nonatomic) double approximateLatitude;
 @property(readonly, retain, nonatomic) NSObject<NSCopying> *uniqueObjectID;
 @property(retain, nonatomic) NSDate *representativeDate;
+@property(readonly, retain, nonatomic) NSDate *localEndDate;
+@property(readonly, retain, nonatomic) NSDate *localStartDate;
+@property(nonatomic) int timeZoneOffset;
 @property(retain, nonatomic) NSDate *endDate;
 @property(retain, nonatomic) NSDate *startDate;
 - (void)removeAssetData:(id <PLMomentAssetData>)arg1;
@@ -35,6 +39,6 @@
 - (_Bool)isDeleted;
 
 @optional
-@property(readonly, retain, nonatomic) NSString *title;
+@property(retain, nonatomic) NSString *title;
 @end
 

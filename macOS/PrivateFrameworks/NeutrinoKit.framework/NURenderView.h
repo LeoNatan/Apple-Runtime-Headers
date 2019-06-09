@@ -24,6 +24,7 @@
 @property(nonatomic) BOOL debugMode;
 - (void)transitionToSize:(struct CGSize)arg1 offset:(struct CGPoint)arg2 duration:(double)arg3 animationCurve:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)transitionToSize:(struct CGSize)arg1 duration:(double)arg2 animationCurve:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)renderFrameReachedTargetSize;
 - (void)viewDidChangeBackingProperties;
 - (struct CGRect)convertRectToImage:(struct CGRect)arg1;
 - (id)_containerLayer;

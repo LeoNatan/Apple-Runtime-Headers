@@ -13,6 +13,6 @@
 - (void)sendBulletinSummary:(BLTPBBulletinSummary *)arg1;
 - (void)getWillNanoPresentNotificationForSectionID:(NSString *)arg1 subsectionIDs:(NSSet *)arg2 completion:(void (^)(_Bool))arg3;
 - (void)unsubscribeFromSectionID:(NSString *)arg1;
-- (void)subscribeToSectionID:(NSString *)arg1 forFullBulletins:(_Bool)arg2 withAck:(_Bool)arg3;
+- (void)subscribeToSectionID:(NSString *)arg1 forFullBulletins:(_Bool)arg2 withAck:(_Bool)arg3 ackAllowedOnLocalConnection:(_Bool)arg4;
 @end
 

@@ -10,6 +10,7 @@
 
 @class MKImageView, NSBox, NSDate, NSImage, NSLayoutConstraint, NSString, _MKUILabel;
 
+__attribute__((visibility("hidden")))
 @interface MKTransitIncidentSummaryCell : MKTableViewCell <MKMultiLineLabelContainer>
 {
     _MKUILabel *_titleLabel;

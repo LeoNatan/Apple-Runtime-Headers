@@ -6,6 +6,7 @@
 
 #import <IMCore/IMTranscriptChatItemRules.h>
 
+__attribute__((visibility("hidden")))
 @interface CKNanoNotificationTranscriptChatItemRules : IMTranscriptChatItemRules
 {
 }

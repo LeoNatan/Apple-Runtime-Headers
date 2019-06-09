@@ -25,13 +25,14 @@
 - (id)_rawMethodVersionForSettings:(id)arg1 error:(out id *)arg2;
 - (_Bool)load:(out id *)arg1;
 - (id)_evaluateImageWithSourceOptions:(id)arg1 subsampleFactor:(long long *)arg2 error:(out id *)arg3;
+- (id)_evaluateImageGeometryWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (id)_evaluateImagePropertiesWithSourceOptions:(id)arg1 error:(out id *)arg2;
 - (void)_processRAWProperties:(id)arg1;
 - (id)_RAWCameraSpaceProperties:(id)arg1 RAWProperties:(id)arg2;
 - (void)_addDefaultFinalizedSourceOptions:(id)arg1;
 - (id)resolvedNodeWithCachedInputs:(struct NSDictionary *)arg1 settings:(id)arg2 pipelineState:(id)arg3 error:(out id *)arg4;
 - (id)initWithURL:(id)arg1 UTI:(id)arg2 settings:(id)arg3;
-- (id)initWithURL:(id)arg1 UTI:(id)arg2;
+- (id)initWithURL:(id)arg1 UTI:(id)arg2 identifier:(id)arg3;
 - (id)initWithImageSource:(struct CGImageSource *)arg1 identifier:(id)arg2;
 
 @end

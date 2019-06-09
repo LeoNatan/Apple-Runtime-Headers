@@ -16,6 +16,7 @@
     long long _extractionVersion;
     double _modifiedDate;
     HDCodableFHIRIdentifier *_fHIRIdentifier;
+    NSString *_locale;
     NSString *_note;
     HDCodableSample *_sample;
     HDCodableSemanticDate *_sortDate;
@@ -27,6 +28,7 @@
     } _has;
 }
 
+@property(retain, nonatomic) NSString *locale; // @synthesize locale=_locale;
 @property(nonatomic) long long extractionVersion; // @synthesize extractionVersion=_extractionVersion;
 @property(retain, nonatomic) HDCodableSemanticDate *sortDate; // @synthesize sortDate=_sortDate;
 @property(retain, nonatomic) HDCodableFHIRIdentifier *fHIRIdentifier; // @synthesize fHIRIdentifier=_fHIRIdentifier;
@@ -44,6 +46,7 @@
 - (_Bool)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 @property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) _Bool hasLocale;
 @property(nonatomic) _Bool hasExtractionVersion;
 @property(readonly, nonatomic) _Bool hasSortDate;
 @property(readonly, nonatomic) _Bool hasFHIRIdentifier;

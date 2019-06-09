@@ -17,6 +17,7 @@
 - (id)makeJSValue:(id)arg1 context:(id)arg2 error:(out id *)arg3;
 - (_Bool)isValid:(out id *)arg1;
 - (_Bool)validate:(id)arg1 error:(out id *)arg2;
+@property(readonly) NSNumber *identityValue;
 @property(readonly) NSNumber *defaultValue;
 
 @end

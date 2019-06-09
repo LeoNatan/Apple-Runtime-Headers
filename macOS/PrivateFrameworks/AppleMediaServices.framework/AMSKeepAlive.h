@@ -12,17 +12,22 @@ __attribute__((visibility("hidden")))
 @interface AMSKeepAlive : NSObject
 {
     NSString *_name;
+    long long _style;
 }
 
-+ (void)interrupt;
++ (void)interruptForName:(id)arg1 style:(long long)arg2;
++ (void)interruptForName:(id)arg1;
 + (void)removeKeepAliveForName:(id)arg1;
 + (void)addKeepAliveForName:(id)arg1;
++ (id)keepAliveWithName:(id)arg1 style:(long long)arg2;
 + (id)keepAliveWithName:(id)arg1;
 + (id)keepAliveWithFormat:(id)arg1;
+@property(readonly) long long style; // @synthesize style=_style;
 @property(readonly) NSString *name; // @synthesize name=_name;
 - (void).cxx_destruct;
 - (id)description;
 - (void)dealloc;
+- (id)initWithName:(id)arg1 style:(long long)arg2;
 - (id)initWithName:(id)arg1;
 
 @end

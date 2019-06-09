@@ -8,5 +8,6 @@
 
 @interface NSWindow (AppKit_SkyglowSupport)
 @property(readonly, nonatomic) BOOL cn_isSkyglowEnabled;
+- (void)com_apple_addressBook_dumpResponderChain:(id)arg1;
 @end
 

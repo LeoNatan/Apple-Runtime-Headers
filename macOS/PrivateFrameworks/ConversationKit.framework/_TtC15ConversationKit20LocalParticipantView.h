@@ -6,14 +6,14 @@
 
 #import <AppKit/NSView.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC15ConversationKit20LocalParticipantView : NSView
 {
     // Error parsing type: , name: participantView
-    // Error parsing type: , name: style
+    // Error parsing type: , name: isInRoster
 }
 
 - (void).cxx_destruct;
+- (void)layout;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 

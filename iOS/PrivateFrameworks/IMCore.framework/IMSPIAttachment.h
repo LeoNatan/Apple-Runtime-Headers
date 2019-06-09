@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDictionary, NSString, NSURL;
+@class NSDate, NSDictionary, NSString, NSURL;
 
 @interface IMSPIAttachment : NSObject
 {
@@ -17,8 +17,10 @@
     _Bool _isSticker;
     _Bool _isOutgoing;
     NSDictionary *_attributionInfo;
+    NSDate *_creationDate;
 }
 
+@property(readonly) NSDate *creationDate; // @synthesize creationDate=_creationDate;
 @property(retain) NSDictionary *attributionInfo; // @synthesize attributionInfo=_attributionInfo;
 @property _Bool isOutgoing; // @synthesize isOutgoing=_isOutgoing;
 @property _Bool isSticker; // @synthesize isSticker=_isSticker;
@@ -29,7 +31,7 @@
 - (void).cxx_destruct;
 - (id)description;
 - (id)bundleID;
-- (id)initWithGuid:(id)arg1 fileUrl:(id)arg2 transferState:(long long)arg3 uti:(id)arg4 isSticker:(_Bool)arg5 isOutgoing:(_Bool)arg6 attributionInfo:(id)arg7;
+- (id)initWithGuid:(id)arg1 fileUrl:(id)arg2 transferState:(long long)arg3 uti:(id)arg4 isSticker:(_Bool)arg5 isOutgoing:(_Bool)arg6 attributionInfo:(id)arg7 creationDate:(id)arg8;
 
 @end
 

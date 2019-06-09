@@ -10,6 +10,7 @@
 {
 }
 
++ (double)timeByAddingUnit:(unsigned long long)arg1 value:(long long)arg2 toTime:(double)arg3;
 + (id)adjustedDateInterval:(id)arg1 betweenMinDate:(id)arg2 maxDate:(id)arg3 strideDays:(unsigned long long)arg4;
 + (id)adjustedDate:(id)arg1 betweenMinDate:(id)arg2 maxDate:(id)arg3 strideDays:(unsigned long long)arg4 outDeltaDays:(long long *)arg5;
 + (id)adjustedDate:(id)arg1 betweenMinDate:(id)arg2 maxDate:(id)arg3 strideDays:(unsigned long long)arg4;

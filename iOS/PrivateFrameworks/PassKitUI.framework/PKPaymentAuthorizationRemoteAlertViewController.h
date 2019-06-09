@@ -64,6 +64,8 @@
 - (void)authorizationDidSelectPaymentMethod:(id)arg1;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
 - (void)authorizationDidSelectShippingMethod:(id)arg1;
+- (void)authorizationDidUpdateAccountServicePaymentMethod:(id)arg1;
+- (void)authorizationDidAuthorizeApplePayTrustSignature:(id)arg1;
 - (void)authorizationDidAuthorizeDisbursement:(id)arg1;
 - (void)authorizationDidAuthorizePeerPaymentQuote:(id)arg1;
 - (void)authorizationDidAuthorizePurchase:(id)arg1;
@@ -79,7 +81,7 @@
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)consumeDoublePressUpForButtonKind:(long long)arg1;
 - (void)consumeSinglePressUpForButtonKind:(long long)arg1;
-- (void)handleHomeButtonPressed;
+- (void)handleButtonActions:(id)arg1;
 - (_Bool)_shouldBlockHardwareCancels;
 - (void)sendAuthorizationDidPresentIfNecessary;
 - (void)_updatePearlViews;
@@ -99,15 +101,13 @@
 - (void)_presentPaymentSetup;
 - (void)_handlePaymentRequestPresentationResultType:(long long)arg1 relevantUniqueID:(id)arg2 firstAttempt:(_Bool)arg3;
 - (void)_canPresentPaymentRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)setUserInfo:(id)arg1;
-- (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)paymentSetupDidFinish:(id)arg1;
 - (id)_configuredPaymentSetupNavigationController;
 - (id)_provisioningController;
 - (void)_setStatusBarHidden:(_Bool)arg1;
 - (int)_preferredStatusBarVisibility;
 - (_Bool)_shouldRemoveViewFromHierarchyOnDisappear;
-- (void)_willAppearInRemoteViewController;
+- (void)configureWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)viewDidDisappear:(_Bool)arg1;
 - (void)viewWillDisappear:(_Bool)arg1;

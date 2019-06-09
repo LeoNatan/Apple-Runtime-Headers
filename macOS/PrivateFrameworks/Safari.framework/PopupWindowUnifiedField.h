@@ -13,10 +13,10 @@ __attribute__((visibility("hidden")))
 
 + (double)mediaIndicatorYOffset;
 + (double)urlTextYOffset;
-+ (double)marginBeforeFirstComponent;
 - (void)_windowChangedKeyState;
 - (void)setNeedsDisplay:(BOOL)arg1;
 - (BOOL)_shouldShowAlternativeStaticURLForAboutBlank;
+- (long long)_muteButtonStateForAudioIndicator;
 - (id)_mediaCaptureIndicatorWithColor:(id)arg1;
 - (BOOL)willHandleMouseDraggedEvent:(id)arg1;
 - (BOOL)allowsVibrancy;

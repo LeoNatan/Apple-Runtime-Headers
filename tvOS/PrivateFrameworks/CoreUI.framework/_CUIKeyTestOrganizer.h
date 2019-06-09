@@ -11,10 +11,10 @@
 __attribute__((visibility("hidden")))
 @interface _CUIKeyTestOrganizer : NSObject
 {
-    struct _renditionkeytoken originalKey[18];
+    struct _renditionkeytoken originalKey[22];
     NSArray *orderedNonZeroFlexibleAttributes;
     unsigned long long flexAttributesCount;
-    struct _renditionkeytoken testKey[18];
+    struct _renditionkeytoken testKey[22];
     unsigned long long chooseCount;
     unsigned long long subchooseCount;
 }

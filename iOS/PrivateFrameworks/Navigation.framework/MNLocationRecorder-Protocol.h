@@ -6,7 +6,7 @@
 
 #import <Navigation/NSObject-Protocol.h>
 
-@class CLLocation, NSDate, NSError;
+@class CLLocation, MNLocation, NSDate, NSError;
 
 @protocol MNLocationRecorder <NSObject>
 - (void)recordCompassHeading:(double)arg1 magneticHeading:(double)arg2 accuracy:(double)arg3 timestamp:(NSDate *)arg4;
@@ -16,6 +16,7 @@
 - (void)recordLocationUpdateResume;
 - (void)recordLocationUpdatePause;
 - (void)recordError:(NSError *)arg1;
+- (void)recordLocation:(MNLocation *)arg1;
 - (void)recordLocation:(CLLocation *)arg1 correctedLocation:(CLLocation *)arg2;
 @end
 

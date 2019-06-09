@@ -10,5 +10,6 @@
 - (struct __IOHIDEvent *)_puic_crownHIDEvent;
 @property(readonly, nonatomic, getter=_puic_percentRotationDelta) double percentRotationDelta;
 @property(readonly, nonatomic, getter=_puic_isCrownEvent) _Bool crownEvent;
+- (float)puic_forceValue;
 @end
 

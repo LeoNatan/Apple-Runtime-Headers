@@ -16,13 +16,17 @@
 }
 
 - (void).cxx_destruct;
+- (oneway void)languageDetectorFailedWithError:(id)arg1;
+- (oneway void)speechDidRecognizeMultilingualSpeech:(id)arg1;
+- (oneway void)speechDidDetectLanguage:(id)arg1 confidenceScores:(id)arg2 isConfident:(BOOL)arg3;
 - (oneway void)speechDidReceiveSearchResults:(id)arg1 recognitionText:(id)arg2 stable:(BOOL)arg3 final:(BOOL)arg4;
 - (oneway void)speechDidFinishWritingAudioFile:(id)arg1 error:(id)arg2;
 - (oneway void)speechRecognitionDidFinishWithError:(id)arg1;
 - (oneway void)speechDidRecognizeTranscriptionObjects:(id)arg1 usingSpeechModel:(id)arg2;
 - (oneway void)speechDidProcessAudioDuration:(double)arg1;
+- (oneway void)speechDidRecognizePartialResult:(id)arg1 usingSpeechModel:(id)arg2;
 - (oneway void)speechDidRecognizeTokens:(id)arg1 usingSpeechModel:(id)arg2;
-- (oneway void)speechDidRecognizePhrases:(id)arg1 usingSpeechModel:(id)arg2 correctionContext:(id)arg3;
+- (oneway void)speechDidRecognizePhrases:(id)arg1 utterances:(id)arg2 usingSpeechModel:(id)arg3 correctionContext:(id)arg4 audioAnalytics:(id)arg5;
 - (oneway void)speechDidRecognizePackage:(id)arg1;
 - (oneway void)speechRecordingDidFail:(id)arg1;
 - (oneway void)speechRecordingDidCancel;

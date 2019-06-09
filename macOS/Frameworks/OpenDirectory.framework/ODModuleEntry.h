@@ -28,6 +28,7 @@
 - (id)option:(id)arg1;
 - (void)setOption:(id)arg1 value:(id)arg2;
 @property(readonly, copy) NSArray *supportedOptions;
+- (void)dealloc;
 - (id)init;
 
 @end

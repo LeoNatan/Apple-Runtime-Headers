@@ -11,6 +11,7 @@
 @class NSLayoutConstraint, NSString, UIColor, UIImageView, UITextView;
 @protocol CKDetailsDownloadAttachmentsHeaderFooterViewDelegate;
 
+__attribute__((visibility("hidden")))
 @interface CKDetailsDownloadAttachmentsHeaderFooterView : UITableViewHeaderFooterView <CKDetailsHeaderFooterView>
 {
     _Bool _logoHidden;
@@ -40,6 +41,7 @@
 @property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
 - (void).cxx_destruct;
 - (void)handleUserTap:(id)arg1;
+- (void)layoutSubviews;
 - (id)initWithReuseIdentifier:(id)arg1;
 
 // Remaining properties
