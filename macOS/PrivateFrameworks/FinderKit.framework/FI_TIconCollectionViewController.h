@@ -141,7 +141,7 @@ __attribute__((visibility("hidden")))
 - (void)updateInlineProgressForIconView:(id)arg1 node:(const struct TFENode *)arg2;
 - (void)configureIconView:(id)arg1 forNode:(const struct TFENode *)arg2;
 - (void)configureCollectionViewItem:(id)arg1 forNode:(const struct TFENode *)arg2;
-- (id)iconImageForNode:(const struct TFENode *)arg1;
+- (id)iconImageForNode:(const struct TFENode *)arg1 includeBadge:(_Bool)arg2;
 - (id)iconCollectionView;
 - (int)viewStyle;
 - (id)nibName;

@@ -12,6 +12,7 @@
 
 @interface NSViewController (PXViewController) <PXAnonymousViewController>
 + (void)_px_prepareClassForExtendedTraitCollection;
+@property(readonly, nonatomic) struct CGSize px_referenceSize;
 @property(readonly, nonatomic) struct NSEdgeInsets px_layoutMargins;
 @property(readonly, nonatomic) struct NSEdgeInsets px_safeAreaInsets;
 - (void)_pxswizzled_viewControllerTraitCollection_viewWillTransitionToSize:(struct CGSize)arg1;

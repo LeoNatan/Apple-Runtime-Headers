@@ -13,6 +13,7 @@
     AVCaptureDeviceInternal *_internal;
 }
 
++ (id)extrinsicMatrixFromDevice:(id)arg1 toDevice:(id)arg2;
 + (id)_linkedDevicesLock;
 + (void)initialize;
 + (void)requestAccessForMediaType:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -58,6 +59,8 @@
 - (struct OpaqueCMIOUnit *)connectionUnit;
 - (unsigned int)deviceID;
 - (long long)deviceSystem;
+- (id)constituentDevices;
+- (BOOL)isVirtualDevice;
 - (id)systemPressureState;
 - (void)setTransportControlsPlaybackMode:(long long)arg1 speed:(float)arg2;
 - (float)transportControlsSpeed;

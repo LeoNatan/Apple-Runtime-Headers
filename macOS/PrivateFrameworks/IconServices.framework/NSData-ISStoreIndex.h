@@ -17,13 +17,13 @@
 - (BOOL)_ISStoreIndex_enumerateValuesForKey:(unsigned long long)arg1 bock:(CDUnknownBlockType)arg2;
 - (void)_ISStoreIndex_enumerateValuesWithBock:(CDUnknownBlockType)arg1;
 - (unsigned int)_ISStoreIndex_nodeIndexForKey:(unsigned long long)arg1;
-- (CDStruct_92a6f89f *)_ISStoreIndex_nodeAtIndex:(unsigned int)arg1;
-- (CDStruct_92a6f89f *)_ISStoreIndex_nodes;
+- (CDStruct_155cdb8f *)_ISStoreIndex_nodeAtIndex:(unsigned int)arg1;
+- (CDStruct_155cdb8f *)_ISStoreIndex_nodes;
 - (unsigned int *)_ISStoreIndex_hashTable;
 - (BOOL)_ISStoreIndex_isValid;
 - (CDStruct_00287ae1 *)_ISStoreIndex_hashTableHeader;
 - (BOOL)_ISMutableStoreIndex_addBlob:(CDUnion_698d0922)arg1 forKey:(unsigned long long)arg2;
-- (BOOL)_ISMutableStoreIndex_addValue:(CDStruct_1a8ce9d4 *)arg1 forKey:(unsigned long long)arg2;
+- (BOOL)_ISMutableStoreIndex_addValue:(CDStruct_be136439 *)arg1 forKey:(unsigned long long)arg2;
 - (BOOL)_ISStoreIndex_setNodeIndex:(unsigned int)arg1 forKey:(unsigned long long)arg2;
 - (void)_ISStoreIndex_enumerateBlobsWithBock:(CDUnknownBlockType)arg1;
 - (id)_ISStoreIndex_blobDataForID:(CDUnion_698d0922)arg1;
@@ -36,6 +36,6 @@
 - (id)__is__bookmarkResourcePropertyForKey:(id)arg1;
 - (struct CGImageBlockSet *)__IS_copyCGImageBlockSetWithProvider:(struct CGImageProvider *)arg1;
 - (void)__IS_getImageBuffer:(void **)arg1 size:(unsigned long long *)arg2;
-- (CDStruct_9d4bab76 *)__IS_imageHeader;
+- (CDStruct_601877e8 *)__IS_imageHeader;
 @end
 

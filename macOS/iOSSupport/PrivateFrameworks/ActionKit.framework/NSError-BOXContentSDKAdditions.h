@@ -7,7 +7,6 @@
 #import <Foundation/NSError.h>
 
 @interface NSError (BOXContentSDKAdditions)
-+ (id)mco_errorWithErrorCode:(int)arg1;
 - (id)box_localizedShortFailureReasonString;
 - (id)box_localizedFailureReasonString;
 @end

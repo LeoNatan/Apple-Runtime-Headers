@@ -6,37 +6,40 @@
 
 #import <objc/NSObject.h>
 
+#import <WiFiPolicy/NSCopying-Protocol.h>
 #import <WiFiPolicy/TBFetchRequestDescriptor-Protocol.h>
 
-@class CLCircularRegion, GEOWiFiQualityLocationSearch, NSDate, NSPredicate, NSString;
-@protocol TBLocalFetchRequestDescriptor;
+@class NSDate, NSPredicate, NSSet, NSString, PBCodable, TBLocalFetchRequestDescriptor;
 
-@interface TBLocationFetchRequestDescriptor : NSObject <TBFetchRequestDescriptor>
+@interface TBLocationFetchRequestDescriptor : NSObject <TBFetchRequestDescriptor, NSCopying>
 {
-    CLCircularRegion *_searchRegion;
     NSPredicate *_localFetchPredicate;
-    GEOWiFiQualityLocationSearch *_remoteRequest;
+    PBCodable *_remoteRequest;
     unsigned long long _type;
     NSDate *_maxCacheAge;
-    id <TBLocalFetchRequestDescriptor> _localFetchDescriptor;
-    id <TBLocalFetchRequestDescriptor> _preferLocalFetchDescriptor;
-    unsigned long long _tileKey;
+    TBLocalFetchRequestDescriptor *_localFetchDescriptor;
+    TBLocalFetchRequestDescriptor *_preferLocalFetchDescriptor;
+    NSSet *_tileItems;
+    unsigned long long _primaryTileKey;
+    double _latitude;
+    double _longitude;
 }
 
-@property(nonatomic) unsigned long long tileKey; // @synthesize tileKey=_tileKey;
-@property(readonly, nonatomic) id <TBLocalFetchRequestDescriptor> preferLocalFetchDescriptor; // @synthesize preferLocalFetchDescriptor=_preferLocalFetchDescriptor;
-@property(readonly, nonatomic) id <TBLocalFetchRequestDescriptor> localFetchDescriptor; // @synthesize localFetchDescriptor=_localFetchDescriptor;
+@property(nonatomic) double longitude; // @synthesize longitude=_longitude;
+@property(nonatomic) double latitude; // @synthesize latitude=_latitude;
+@property(nonatomic) unsigned long long primaryTileKey; // @synthesize primaryTileKey=_primaryTileKey;
+@property(retain, nonatomic) NSSet *tileItems; // @synthesize tileItems=_tileItems;
+@property(retain, nonatomic) TBLocalFetchRequestDescriptor *preferLocalFetchDescriptor; // @synthesize preferLocalFetchDescriptor=_preferLocalFetchDescriptor;
+@property(retain, nonatomic) TBLocalFetchRequestDescriptor *localFetchDescriptor; // @synthesize localFetchDescriptor=_localFetchDescriptor;
 @property(retain, nonatomic) NSDate *maxCacheAge; // @synthesize maxCacheAge=_maxCacheAge;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
-@property(retain, nonatomic) GEOWiFiQualityLocationSearch *remoteRequest; // @synthesize remoteRequest=_remoteRequest;
 @property(retain, nonatomic) NSPredicate *localFetchPredicate; // @synthesize localFetchPredicate=_localFetchPredicate;
-@property(retain, nonatomic) CLCircularRegion *searchRegion; // @synthesize searchRegion=_searchRegion;
 - (void).cxx_destruct;
-- (double)longitude;
-- (double)lattitude;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)_preferLocalCacheFetchRequest;
 - (id)_localFetchRequest;
 @property(readonly, nonatomic) Class remoteRequestClass;
+@property(readonly, nonatomic) PBCodable *remoteRequest; // @synthesize remoteRequest=_remoteRequest;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2 radius:(double)arg3 maxCacheAge:(id)arg4;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2 maxCacheAge:(id)arg3;

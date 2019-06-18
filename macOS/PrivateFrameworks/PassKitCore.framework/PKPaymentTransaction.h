@@ -9,7 +9,7 @@
 #import <PassKitCore/NSSecureCoding-Protocol.h>
 #import <PassKitCore/PKCloudStoreCoding-Protocol.h>
 
-@class CLLocation, NSArray, NSData, NSDate, NSDecimalNumber, NSDictionary, NSNumber, NSOrderedSet, NSSet, NSString, NSTimeZone, NSUUID, PKCurrencyAmount, PKMerchant, PKPaymentTransactionFees, PKPaymentTransactionForeignExchangeInformation, PKPaymentTransactionRewards;
+@class CLLocation, NSArray, NSData, NSDate, NSDecimalNumber, NSDictionary, NSNumber, NSOrderedSet, NSSet, NSString, NSTimeZone, NSUUID, PKAccountEvent, PKCurrencyAmount, PKMerchant, PKPaymentTransactionFees, PKPaymentTransactionForeignExchangeInformation, PKPaymentTransactionRewards;
 
 @interface PKPaymentTransaction : NSObject <NSSecureCoding, PKCloudStoreCoding>
 {
@@ -93,6 +93,7 @@
     NSSet *_questions;
     NSOrderedSet *_servicingEvents;
     NSArray *_payments;
+    PKAccountEvent *_redemptionEvent;
     NSDictionary *_metadata;
     NSDate *_lastMerchantReprocessingDate;
     long long _transactionStatus;
@@ -124,6 +125,7 @@
 @property(nonatomic) BOOL processedForLocation; // @synthesize processedForLocation=_processedForLocation;
 @property(nonatomic) BOOL isCloudKitArchived; // @synthesize isCloudKitArchived=_isCloudKitArchived;
 @property(copy, nonatomic) NSDictionary *metadata; // @synthesize metadata=_metadata;
+@property(retain, nonatomic) PKAccountEvent *redemptionEvent; // @synthesize redemptionEvent=_redemptionEvent;
 @property(retain, nonatomic) NSArray *payments; // @synthesize payments=_payments;
 @property(retain, nonatomic) NSOrderedSet *servicingEvents; // @synthesize servicingEvents=_servicingEvents;
 @property(retain, nonatomic) NSSet *questions; // @synthesize questions=_questions;
@@ -228,6 +230,7 @@
 @property(readonly, nonatomic) unsigned long long effectiveTransactionSource;
 @property(readonly, nonatomic) BOOL hasTransactionSource;
 @property(nonatomic) long long peerPaymentStatus;
+@property(readonly, nonatomic) CLLocation *preferredLocation;
 @property(retain, nonatomic) CLLocation *location;
 @property(readonly, nonatomic) __weak NSString *displayLocation;
 - (unsigned long long)itemType;

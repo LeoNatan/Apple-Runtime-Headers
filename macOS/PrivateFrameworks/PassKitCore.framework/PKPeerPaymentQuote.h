@@ -25,6 +25,7 @@
     NSDecimalNumber *_totalFees;
     NSString *_totalFeesCurrency;
     NSDate *_validUntil;
+    unsigned long long _riskLevel;
     PKPeerPaymentRecipient *_recipient;
     NSString *_bankName;
     NSString *_routingNumber;
@@ -36,6 +37,7 @@
 @property(copy, nonatomic) NSString *routingNumber; // @synthesize routingNumber=_routingNumber;
 @property(copy, nonatomic) NSString *bankName; // @synthesize bankName=_bankName;
 @property(retain, nonatomic) PKPeerPaymentRecipient *recipient; // @synthesize recipient=_recipient;
+@property(readonly, nonatomic) unsigned long long riskLevel; // @synthesize riskLevel=_riskLevel;
 @property(readonly, copy, nonatomic) NSDate *validUntil; // @synthesize validUntil=_validUntil;
 @property(readonly, copy, nonatomic) NSString *totalFeesCurrency; // @synthesize totalFeesCurrency=_totalFeesCurrency;
 @property(readonly, copy, nonatomic) NSDecimalNumber *totalFees; // @synthesize totalFees=_totalFees;

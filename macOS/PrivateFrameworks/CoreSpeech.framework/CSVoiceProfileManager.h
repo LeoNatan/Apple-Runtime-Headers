@@ -19,7 +19,7 @@
 @property(nonatomic) unsigned long long currentDeviceCategory; // @synthesize currentDeviceCategory=_currentDeviceCategory;
 - (void).cxx_destruct;
 - (void)_createAndSendImplicitUtterenceXPCMessage:(id)arg1 withRecordDeviceInfo:(id)arg2 withRecordCtxt:(id)arg3 withVoiceTriggerCtxt:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
-- (id)_CSSATUploadPath;
+- (id)_CSSATUploadPathForSiriProfileId:(id)arg1;
 - (id)_CSSATDownloadPath;
 - (id)_CSSATCachePath;
 - (BOOL)_encryptPHSMigratedFileAt:(id)arg1 andSaveTo:(id)arg2 error:(id *)arg3;
@@ -47,14 +47,17 @@
 - (id)devicesWithVoiceProfileIniCloudForLanguage:(id)arg1;
 - (void)enableVoiceTriggerUponVoiceProfileSyncForLanguage:(id)arg1;
 - (BOOL)hasVoiceProfileIniCloudForLanguageCode:(id)arg1;
+- (void)isVoiceProfileUploadedToiCloudForLanguageCode:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
 - (BOOL)hasVoiceProfileIniCloudForLanguageCode:(id)arg1 withBackupMetaBlob:(id)arg2;
 - (id)getCachedVoiceProfileAvailabilityMetaBlob;
 - (id)_getEnrolledLanguageList;
-- (id)_prepareVoiceProfilesForUpload:(CDUnknownBlockType)arg1;
+- (id)_prepareVoiceProfileWithSiriProfileId:(id)arg1 withUploadBlock:(CDUnknownBlockType)arg2;
 - (id)_copyVoiceProfileAtPath:(id)arg1 toPath:(id)arg2;
-- (id)_getVoiceProfilePathsToBeUploaded;
+- (id)_getVoiceProfilePathsToBeUploadedForSiriProfileId:(id)arg1;
 - (void)notifyUserVoiceProfileUploadComplete;
 - (id)getUserVoiceProfileUploadPathWithEnrolledLanguageList:(id *)arg1;
+- (void)uploadUserVoiceProfileForSiriProfileId:(id)arg1 withUploadTrigger:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)notifyUserVoiceProfileUploadCompleteForSiriProfileId:(id)arg1 withError:(id)arg2;
 - (void)notifyUserVoiceProfileUploadComplete:(id)arg1;
 - (void)uploadUserVoiceProfile:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_getUserVoiceProfileDownloadCacheDirectoryWithUpdatePath:(id)arg1;

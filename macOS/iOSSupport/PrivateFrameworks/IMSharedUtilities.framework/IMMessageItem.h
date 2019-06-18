@@ -41,6 +41,7 @@
     NSDictionary *_messageSummaryInfo;
     NSDictionary *_bizIntent;
     NSString *_locale;
+    NSString *_retryToParticipant;
     NSString *_notificationIDSTokenURI;
     NSString *_suggestedAuthorName;
     NSString *_suggestedAuthorAvatarPath;
@@ -56,6 +57,7 @@
 @property(nonatomic) BOOL backwardsCompatibleVersion; // @synthesize backwardsCompatibleVersion=_backwardsCompatibleVersion;
 @property(nonatomic, getter=isUpdatingDataSourcePayload) BOOL updatingDataSourcePayload; // @synthesize updatingDataSourcePayload=_updatingDataSourcePayload;
 @property(retain, nonatomic) NSString *notificationIDSTokenURI; // @synthesize notificationIDSTokenURI=_notificationIDSTokenURI;
+@property(retain, nonatomic) NSString *retryToParticipant; // @synthesize retryToParticipant=_retryToParticipant;
 @property(nonatomic) BOOL isBeingRetried; // @synthesize isBeingRetried=_isBeingRetried;
 @property(nonatomic) BOOL blockingRichLinks; // @synthesize blockingRichLinks=_blockingRichLinks;
 @property(retain, nonatomic) NSString *locale; // @synthesize locale=_locale;

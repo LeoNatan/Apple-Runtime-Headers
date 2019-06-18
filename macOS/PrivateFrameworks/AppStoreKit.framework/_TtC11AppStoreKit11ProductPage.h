@@ -13,6 +13,7 @@
     // Error parsing type: , name: uberArtwork
     // Error parsing type: , name: uberVideo
     // Error parsing type: , name: uberStyle
+    // Error parsing type: , name: logoArtwork
     // Error parsing type: , name: media
     // Error parsing type: , name: badges
     // Error parsing type: , name: isComplete
@@ -28,6 +29,7 @@
     // Error parsing type: , name: externalVersionIdentifier
     // Error parsing type: , name: updateBuyParams
     // Error parsing type: , name: titleOfferDisplayProperties
+    // Error parsing type: , name: bannerText
     // Error parsing type: , name: shelfMapping
     // Error parsing type: , name: purchasedOrdering
     // Error parsing type: , name: notPurchasedOrdering

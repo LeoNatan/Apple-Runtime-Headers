@@ -16,6 +16,9 @@ __attribute__((visibility("hidden")))
     NSMutableOrderedSet *_mutableOrderedSet;
 }
 
++ (Class)classForKeyedUnarchiver;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (BOOL)_reorderObjectsToLocationsByOrderKey:(id)arg1 error:(id *)arg2;
 - (id)_orderedObjectsAndKeys;
 - (void)sortRange:(struct _NSRange)arg1 options:(unsigned long long)arg2 usingComparator:(CDUnknownBlockType)arg3;

@@ -10,6 +10,7 @@
 {
 }
 
++ (id)downtimeSharingEnabledWarningTextColor;
 + (id)downtimeWhitelistContactTypeTextColor;
 + (id)downtimeWhitelistUnrachableContactTextColor;
 + (id)downtimeWhitelistNotPersistedContactTextColor;

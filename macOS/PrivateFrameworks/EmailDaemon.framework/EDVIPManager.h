@@ -19,12 +19,14 @@
     CNContactStore *_contactStore;
     NSUbiquitousKeyValueStore *_keyValueStore;
     NSObject<OS_dispatch_queue> *_operationQueue;
+    NSObject<OS_dispatch_queue> *_notificationQueue;
     NSURL *_plistURL;
 }
 
 + (id)_contactDescriptors;
 + (id)log;
 @property(readonly, nonatomic) NSURL *plistURL; // @synthesize plistURL=_plistURL;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *notificationQueue; // @synthesize notificationQueue=_notificationQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(readonly, nonatomic) NSUbiquitousKeyValueStore *keyValueStore; // @synthesize keyValueStore=_keyValueStore;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;

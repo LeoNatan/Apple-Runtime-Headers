@@ -4,14 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ActivityRingsUI/ARUIRenderState.h>
+#import <ActivityRingsUI/ARUIPrecompiledRenderState.h>
 
 #import <ActivityRingsUI/ARUIRingsState-Protocol.h>
 
 @class NSString;
 
 __attribute__((visibility("hidden")))
-@interface ARUIRingsRenderState : ARUIRenderState <ARUIRingsState>
+@interface ARUIRingsRenderState : ARUIPrecompiledRenderState <ARUIRingsState>
 {
     unsigned long long _renderArea;
     long long _centeredAroundPercentSegmentDrawCount;
@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long centeredAroundPercentSegmentDrawCount; // @synthesize centeredAroundPercentSegmentDrawCount=_centeredAroundPercentSegmentDrawCount;
 @property(nonatomic) unsigned long long renderArea; // @synthesize renderArea=_renderArea;
 - (BOOL)shouldRunStateForRing:(id)arg1;
-- (id)initWithDevice:(id)arg1 library:(id)arg2;
+- (id)initWithPipelineLibrary:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

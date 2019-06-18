@@ -6,15 +6,17 @@
 
 #import <WorkflowKit/WFAction.h>
 
+#import <ActionKit/SFSafariViewControllerDelegate-Protocol.h>
 #import <ActionKit/WFWebViewControllerDelegate-Protocol.h>
 
 @class NSString;
 
-@interface WFShowWebPageAction : WFAction <WFWebViewControllerDelegate>
+@interface WFShowWebPageAction : WFAction <WFWebViewControllerDelegate, SFSafariViewControllerDelegate>
 {
 }
 
 - (void)webViewControllerDidFinish:(id)arg1;
+- (void)safariViewControllerDidFinish:(id)arg1;
 - (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
 
 // Remaining properties

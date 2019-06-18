@@ -30,6 +30,7 @@
 + (BOOL)isEnablingCloudLibraryDestructive;
 + (void)migrateCellularDataPreferencesIfNeeded;
 + (BOOL)isMediaApplication;
++ (id)controllerWithUserIdentity:(id)arg1;
 + (id)sharedCloudController;
 @property(readonly, nonatomic, getter=isJaliscoGeniusEnabled) BOOL jaliscoGeniusEnabled; // @synthesize jaliscoGeniusEnabled=_jaliscoGeniusEnabled;
 @property(readonly, nonatomic) ICCloudClient *cloudClient; // @synthesize cloudClient=_cloudClient;
@@ -114,6 +115,7 @@
 - (void)canShowCloudTracksDidChangeNotification:(id)arg1;
 - (void)canShowCloudDownloadButtonsDidChangeNotification:(id)arg1;
 - (void)dealloc;
+- (id)initWithUserIdentity:(id)arg1;
 - (id)init;
 
 @end

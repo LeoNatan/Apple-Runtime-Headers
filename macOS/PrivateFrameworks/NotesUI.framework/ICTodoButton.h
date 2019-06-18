@@ -12,6 +12,7 @@
 @interface ICTodoButton : NSButton
 {
     BOOL _done;
+    BOOL _isRTL;
     ICTrackedParagraph *_trackedParagraph;
     double _zoomFactor;
     id <ICTodoButtonDragDelegate> _dragDelegate;
@@ -26,6 +27,7 @@
 @property(retain) NSImageView *doneImageView; // @synthesize doneImageView=_doneImageView;
 @property(retain) NSImageView *undoneImageView; // @synthesize undoneImageView=_undoneImageView;
 @property(nonatomic) struct CGSize defaultImageSize; // @synthesize defaultImageSize=_defaultImageSize;
+@property(nonatomic) BOOL isRTL; // @synthesize isRTL=_isRTL;
 @property(nonatomic) struct CGSize defaultSize; // @synthesize defaultSize=_defaultSize;
 @property(nonatomic) __weak id <ICTodoButtonDragDelegate> dragDelegate; // @synthesize dragDelegate=_dragDelegate;
 @property(nonatomic) double zoomFactor; // @synthesize zoomFactor=_zoomFactor;

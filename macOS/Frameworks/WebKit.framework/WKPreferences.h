@@ -37,6 +37,7 @@
 @property(nonatomic, setter=_setShouldEnableTextAutosizingBoost:) BOOL _shouldEnableTextAutosizingBoost;
 @property(nonatomic, setter=_setDOMPasteAllowed:) BOOL _domPasteAllowed;
 @property(nonatomic, setter=_setJavaScriptCanAccessClipboard:) BOOL _javaScriptCanAccessClipboard;
+@property(nonatomic, setter=_setAppNapEnabled:) BOOL _appNapEnabled;
 @property(nonatomic, setter=_setAggressiveTileRetentionEnabled:) BOOL _aggressiveTileRetentionEnabled;
 @property(nonatomic, setter=_setWebAudioEnabled:) BOOL _webAudioEnabled;
 @property(nonatomic, setter=_setWantsBalancedSetDefersLoadingBehavior:) BOOL _wantsBalancedSetDefersLoadingBehavior;

@@ -20,8 +20,10 @@
 - (id)predicateForObjectsNotFromCurrentDevice;
 - (id)predicateForObjectsFromCurrentDevice;
 - (void)_associatePlacesToVisits:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)logLocationsOfInterestWithHandler:(CDUnknownBlockType)arg1;
-- (void)_logLocationsOfInterestWithHandler:(CDUnknownBlockType)arg1;
+- (void)logCloudStoreWithReason:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_logCloudStoreWithReason:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)logLocalStoreWithReason:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_logLocalStoreWithReason:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)enumerateStoredLocationsOfInterestWithOptions:(id)arg1 enumerationBlock:(CDUnknownBlockType)arg2;
 - (void)_fetchEntityAsDictionaryWithEntityName:(id)arg1 propertiesToFetch:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)replaceWithLocationsOfInterest:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -67,6 +69,8 @@
 - (void)_fetchMetricsWithHandler:(CDUnknownBlockType)arg1;
 - (void)fetchLocationOfInterestTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_fetchLocationOfInterestTransitionsBetweenStartDate:(id)arg1 endDate:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)fetchLocationsOfInterestWithVisitsWithinDistance:(double)arg1 location:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_fetchLocationsOfInterestWithVisitsWithinDistance:(double)arg1 location:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)fetchLocationOfInterestWithPlace:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_fetchLocationOfInterestWithPlace:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)fetchLocationOfInterestWithMapItem:(id)arg1 handler:(CDUnknownBlockType)arg2;

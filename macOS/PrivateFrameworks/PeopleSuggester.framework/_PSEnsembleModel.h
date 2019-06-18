@@ -8,13 +8,35 @@
 
 #import <PeopleSuggester/_PSModel-Protocol.h>
 
+@class CNContactStore, NSArray, NSUserDefaults, _CDInteractionStore, _PSKNNModel, _PSRuleMiningModel;
+@protocol _DKKnowledgeQuerying><_DKKnowledgeSaving;
+
 @interface _PSEnsembleModel : NSObject <_PSModel>
 {
+    struct os_unfair_lock_s _lock;
+    _CDInteractionStore *_interactionStore;
+    id <_DKKnowledgeQuerying><_DKKnowledgeSaving> _knowledgeStore;
+    NSUserDefaults *_peopleSuggesterDefaults;
+    CNContactStore *_contactStore;
+    NSArray *_contactKeysToFetch;
+    _PSRuleMiningModel *_ruleMiningModel;
+    _PSKNNModel *_knnModel;
 }
 
-- (id)suggestionArrayWithArray:(id)arg1 appendingUniqueElementsFromArray:(id)arg2;
-- (id)knnSuggestionsWithPredictionContext:(id)arg1 withMaxSuggestions:(unsigned long long)arg2 filterByBundleIds:(id)arg3;
-- (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 filterByBundleIds:(id)arg3;
+@property(retain, nonatomic) _PSKNNModel *knnModel; // @synthesize knnModel=_knnModel;
+@property(retain, nonatomic) _PSRuleMiningModel *ruleMiningModel; // @synthesize ruleMiningModel=_ruleMiningModel;
+@property(retain, nonatomic) NSArray *contactKeysToFetch; // @synthesize contactKeysToFetch=_contactKeysToFetch;
+@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
+@property(retain, nonatomic) NSUserDefaults *peopleSuggesterDefaults; // @synthesize peopleSuggesterDefaults=_peopleSuggesterDefaults;
+@property(retain, nonatomic) id <_DKKnowledgeQuerying><_DKKnowledgeSaving> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
+@property(retain, nonatomic) _CDInteractionStore *interactionStore; // @synthesize interactionStore=_interactionStore;
+- (void).cxx_destruct;
+- (id)suggestionArrayWithArray:(id)arg1 appendingUniqueElementsFromArray:(id)arg2 meContactIdentifier:(id)arg3;
+- (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2;
+- (void)populateCachesWithSupportedBundleIDs:(id)arg1;
+- (void)populateCaches;
+- (id)fetchShareSheetSupportedBundleIDs;
+- (id)init;
 
 @end
 

@@ -20,7 +20,11 @@
 + (id)nonDirectURLForImgurURL:(id)arg1;
 + (id)youTubeVideoURLForEmbedURL:(id)arg1;
 + (id)nonMobileYouTubeURLForURL:(id)arg1;
++ (BOOL)isAppleMapsCollectionURL:(id)arg1;
++ (BOOL)isAppleMapsURL:(id)arg1;
 + (BOOL)isAppStoreStoryURL:(id)arg1;
++ (BOOL)isiTunesStoreOrAdjacentURL:(id)arg1;
++ (BOOL)isiCloudURL:(id)arg1;
 + (BOOL)isAppleNewsURL:(id)arg1;
 + (BOOL)isAppleTVURL:(id)arg1;
 + (BOOL)isYouTubeURL:(id)arg1;

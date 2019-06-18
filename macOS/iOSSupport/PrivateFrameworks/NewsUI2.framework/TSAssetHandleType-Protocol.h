@@ -5,11 +5,15 @@
 //
 
 @class NSString, OS_dispatch_group, UIImage;
+@protocol TSAssetDataProviderType;
 
 @protocol TSAssetHandleType
 - (void)downloadWithGroup:(OS_dispatch_group *)arg1;
 @property(nonatomic, readonly) NSString *uniqueKey;
 @property(nonatomic, readonly) UIImage *fallbackImage;
 @property(nonatomic, readonly) NSString *filePath;
+
+@optional
+@property(nonatomic, readonly) id <TSAssetDataProviderType> assetDataProvider;
 @end
 

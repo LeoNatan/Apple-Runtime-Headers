@@ -12,15 +12,22 @@
 @protocol MTLDevice <NSObject>
 @property(readonly) NSArray *counterSets;
 @property(readonly) unsigned long long maxBufferLength;
+@property(readonly) unsigned int peerCount;
+@property(readonly) unsigned int peerIndex;
+@property(readonly) unsigned long long peerGroupID;
 @property(readonly, getter=areProgrammableSamplePositionsSupported) BOOL programmableSamplePositionsSupported;
 @property(readonly) unsigned long long maxArgumentBufferSamplerCount;
 @property(readonly) unsigned long long maxThreadgroupMemoryLength;
 @property(readonly) unsigned long long currentAllocatedSize;
+@property(readonly) BOOL supportsShaderBarycentricCoordinates;
 @property(readonly, getter=areBarycentricCoordsSupported) BOOL barycentricCoordsSupported;
 @property(readonly, getter=areRasterOrderGroupsSupported) BOOL rasterOrderGroupsSupported;
 @property(readonly) unsigned long long argumentBuffersSupport;
 @property(readonly) unsigned long long readWriteTextureSupport;
 @property(readonly, getter=isDepth24Stencil8PixelFormatSupported) BOOL depth24Stencil8PixelFormatSupported;
+@property(readonly) unsigned long long maxTransferRate;
+@property(readonly) unsigned long long locationNumber;
+@property(readonly) unsigned long long location;
 @property(readonly) unsigned long long recommendedMaxWorkingSetSize;
 @property(readonly) BOOL hasUnifiedMemory;
 @property(readonly, getter=isRemovable) BOOL removable;

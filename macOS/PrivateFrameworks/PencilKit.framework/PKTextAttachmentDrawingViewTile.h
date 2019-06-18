@@ -17,7 +17,6 @@
     BOOL _scheduled;
     BOOL _valid;
     NSImage *_image;
-    NSImage *_cachedDrawingImage;
     PKMacLinedPaperView *_linedPaperView;
     struct CGRect _drawingFrame;
 }
@@ -25,7 +24,6 @@
 @property(retain, nonatomic) PKMacLinedPaperView *linedPaperView; // @synthesize linedPaperView=_linedPaperView;
 @property(nonatomic, getter=isValid) BOOL valid; // @synthesize valid=_valid;
 @property(nonatomic) struct CGRect drawingFrame; // @synthesize drawingFrame=_drawingFrame;
-@property(retain, nonatomic) NSImage *cachedDrawingImage; // @synthesize cachedDrawingImage=_cachedDrawingImage;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
 @property(nonatomic) BOOL scheduled; // @synthesize scheduled=_scheduled;
 @property(nonatomic) BOOL bottomTile; // @synthesize bottomTile=_bottomTile;

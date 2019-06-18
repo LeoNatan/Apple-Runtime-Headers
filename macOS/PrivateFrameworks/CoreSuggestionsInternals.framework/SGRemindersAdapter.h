@@ -26,6 +26,7 @@
 - (id)sourceUniqueIdentifierForStorageReminder:(id)arg1;
 - (id)_remindersFoundInAppsListInREMStore:(id)arg1;
 - (void)rejectReminder:(id)arg1;
+- (void)orphanReminder:(id)arg1;
 - (void)rejectReminderFromOtherDevice:(id)arg1;
 - (void)confirmReminderFromOtherDevice:(id)arg1;
 - (void)reminderAlarmTriggeredFromThisDevice:(id)arg1;

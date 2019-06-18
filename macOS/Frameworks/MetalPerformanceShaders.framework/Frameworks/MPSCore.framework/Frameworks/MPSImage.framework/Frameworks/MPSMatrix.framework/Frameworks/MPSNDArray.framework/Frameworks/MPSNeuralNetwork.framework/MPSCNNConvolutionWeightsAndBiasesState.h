@@ -13,17 +13,28 @@
     unsigned long long _numberOfWeights;
     unsigned long long _numberOfBiases;
     unsigned int _weightsDataType;
+    unsigned int _weightsLayout;
+    unsigned long long _weightsOffset;
+    unsigned long long _biasesOffset;
 }
 
 + (id)temporaryCNNConvolutionWeightsAndBiasesStateWithCommandBuffer:(id)arg1 cnnConvolutionDescriptor:(id)arg2;
++ (id)temporaryCNNConvolutionWeightsAndBiasesStateWithCommandBuffer:(id)arg1 cnnConvolutionDescriptor:(id)arg2 weightsDataType:(unsigned int)arg3 weightsLayout:(unsigned int)arg4;
 + (id)temporaryCNNConvolutionWeightsAndBiasesStateWithCommandBuffer:(id)arg1 cnnConvolutionDescriptor:(id)arg2 weightsDataType:(unsigned int)arg3;
+- (id)initWithWeights:(id)arg1 weightsOffset:(unsigned long long)arg2 weightsDataType:(unsigned int)arg3 weightsLayout:(unsigned int)arg4 biases:(id)arg5 biasesOffset:(unsigned long long)arg6 cnnConvolutionDescriptor:(id)arg7;
+- (id)initWithWeights:(id)arg1 weightsOffset:(unsigned long long)arg2 biases:(id)arg3 biasesOffset:(unsigned long long)arg4 cnnConvolutionDescriptor:(id)arg5;
 - (id)initWithDevice:(id)arg1 cnnConvolutionDescriptor:(id)arg2;
 - (id)initWithWeights:(id)arg1 biases:(id)arg2;
+- (id)initWithDevice:(id)arg1 cnnConvolutionDescriptor:(id)arg2 weightsDataType:(unsigned int)arg3 weightsLayout:(unsigned int)arg4;
 - (id)initWithDevice:(id)arg1 cnnConvolutionDescriptor:(id)arg2 weightsDataType:(unsigned int)arg3;
+- (id)initWithWeights:(id)arg1 biases:(id)arg2 weightsDataType:(unsigned int)arg3 weightsLayout:(unsigned int)arg4;
 - (id)initWithWeights:(id)arg1 biases:(id)arg2 weightsDataType:(unsigned int)arg3;
-- (void)initializeWithWeights:(id)arg1 biases:(id)arg2 weightsDataType:(unsigned int)arg3;
+- (void)initializeWithWeightsCount:(unsigned long long)arg1 weightsOffset:(unsigned long long)arg2 weightsDataType:(unsigned int)arg3 weightsLayout:(unsigned int)arg4 biasesCount:(unsigned long long)arg5 biasesOffset:(unsigned long long)arg6;
+@property(readonly, nonatomic) unsigned long long biasesOffset;
+@property(readonly, nonatomic) unsigned long long weightsOffset;
 @property(readonly, nonatomic) id <MTLBuffer> biases;
 @property(readonly, nonatomic) id <MTLBuffer> weights;
+@property(readonly, nonatomic) unsigned int weightsLayout;
 @property(readonly, nonatomic) unsigned int weightsDataType;
 @property(readonly, nonatomic) unsigned long long numberOfBiases;
 @property(readonly, nonatomic) unsigned long long numberOfWeights;

@@ -41,6 +41,7 @@
 - (void)resetEditing;
 - (void)asyncResetEditing;
 - (void)_resetEditing;
+- (void)_didResetEditing;
 - (void)flushEditing:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)flushEditingMainThread:(CDUnknownBlockType)arg1;
 - (BOOL)flushEditing:(id *)arg1;

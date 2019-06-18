@@ -12,17 +12,19 @@
 
 @interface PXGViewEnvironment : NSObject <NSCopying>
 {
-    BOOL _windowHasKeyAppearance;
+    BOOL _emphasized;
     NSColor *_backgroundColor;
     NSColor *_tintColor;
     id _traitCollection;
+    long long _userInterfaceStyle;
     struct CGColor *_selectionHighlightColor;
     NSAppearance *_effectiveAppearance;
 }
 
 @property(readonly, nonatomic) NSAppearance *effectiveAppearance; // @synthesize effectiveAppearance=_effectiveAppearance;
-@property(readonly, nonatomic) BOOL windowHasKeyAppearance; // @synthesize windowHasKeyAppearance=_windowHasKeyAppearance;
+@property(readonly, nonatomic) BOOL emphasized; // @synthesize emphasized=_emphasized;
 @property(readonly, nonatomic) struct CGColor *selectionHighlightColor; // @synthesize selectionHighlightColor=_selectionHighlightColor;
+@property(readonly, nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(readonly, nonatomic) id traitCollection; // @synthesize traitCollection=_traitCollection;
 @property(readonly, nonatomic) NSColor *tintColor; // @synthesize tintColor=_tintColor;
 @property(readonly, nonatomic) NSColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;

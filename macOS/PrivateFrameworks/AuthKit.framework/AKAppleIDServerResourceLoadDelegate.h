@@ -8,12 +8,13 @@
 
 #import <AuthKit/NSSecureCoding-Protocol.h>
 
-@class AKAnisetteData, AKAttestationData, AKDevice, NSArray, NSNumber, NSString;
+@class AKAnisetteData, AKAnisetteProvisioningController, AKAttestationData, AKDevice, NSArray, NSNumber, NSString;
 @protocol AKAnisetteServiceProtocol;
 
 @interface AKAppleIDServerResourceLoadDelegate : NSObject <NSSecureCoding>
 {
     NSString *_altDSID;
+    AKAnisetteProvisioningController *_proxiedProvisioningController;
     BOOL _shouldSendEphemeralAuthHeader;
     BOOL _shouldSendICSCIntentHeader;
     BOOL _shouldSendLocalUserHasAppleIDLoginHeader;
@@ -82,6 +83,7 @@
 - (void)signRequestWithCommonHeaders:(id)arg1;
 - (void)_signRequest:(id)arg1;
 - (id)signingController;
+- (id)_proxiedProvisioningController;
 - (void)signRequest:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)signRequest:(id)arg1;
 @property(nonatomic) BOOL shouldSendAbsintheHeader;

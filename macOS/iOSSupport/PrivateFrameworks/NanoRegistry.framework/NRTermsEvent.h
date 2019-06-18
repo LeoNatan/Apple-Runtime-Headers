@@ -45,6 +45,7 @@
 - (id)initWithDeviceID:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)saveTerms;
+- (id)termsText;
 - (id)description;
 
 @end

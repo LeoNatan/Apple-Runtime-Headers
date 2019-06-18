@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 @interface CNPhotoPickerMonogramProviderItem : CNPhotoPickerProviderItem
 {
     BOOL _isContactImage;
+    BOOL _hasUnknownColor;
     BOOL _isVariantOptionItem;
     CNContact *_contact;
     CNAvatarImageRenderer *_avatarRenderer;
@@ -22,6 +23,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) BOOL isVariantOptionItem; // @synthesize isVariantOptionItem=_isVariantOptionItem;
 @property(retain, nonatomic) NSData *monogramData; // @synthesize monogramData=_monogramData;
+@property(nonatomic) BOOL hasUnknownColor; // @synthesize hasUnknownColor=_hasUnknownColor;
 @property(nonatomic) BOOL isContactImage; // @synthesize isContactImage=_isContactImage;
 @property(retain, nonatomic) id <CNAvatarImageRenderingScope> renderingScope; // @synthesize renderingScope=_renderingScope;
 @property(retain, nonatomic) CNAvatarImageRenderer *avatarRenderer; // @synthesize avatarRenderer=_avatarRenderer;

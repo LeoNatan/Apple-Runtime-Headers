@@ -15,8 +15,9 @@
 - (void)getContentFromInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)getRecipients:(CDUnknownBlockType)arg1;
 - (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (id)localizedKeyParameterDisplayName;
 - (id)supportedAppIdentifiers;
-- (unsigned long long)minimumSupportedClientVersion;
+- (id)minimumSupportedClientVersion;
 - (BOOL)skipsProcessingHiddenParameters;
 - (BOOL)opensInApp;
 

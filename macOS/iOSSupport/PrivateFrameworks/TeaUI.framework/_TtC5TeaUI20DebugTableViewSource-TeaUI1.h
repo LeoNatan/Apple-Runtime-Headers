@@ -8,5 +8,6 @@
 
 @interface _TtC5TeaUI20DebugTableViewSource (TeaUI1)
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (id)tableView:(id)arg1 titleForHeaderInSection:(long long)arg2;
 @end
 

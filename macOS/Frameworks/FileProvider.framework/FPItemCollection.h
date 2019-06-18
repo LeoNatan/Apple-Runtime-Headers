@@ -65,6 +65,7 @@
 - (void)_replaceContentsWithVendorItems:(id)arg1;
 @property(retain, nonatomic) NSPredicate *itemFilteringPredicate;
 - (BOOL)isHiddenItem:(id)arg1;
+- (void)updateRootItem:(id)arg1;
 - (BOOL)isRootItem:(id)arg1;
 - (BOOL)isCollectionValidForItem:(id)arg1;
 - (id)scopedSearchQuery;

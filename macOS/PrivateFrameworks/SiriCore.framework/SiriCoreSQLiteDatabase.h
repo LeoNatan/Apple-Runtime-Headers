@@ -45,15 +45,15 @@
 - (BOOL)createTable:(id)arg1 error:(id *)arg2;
 - (id)fetchTableWithName:(id)arg1 error:(id *)arg2;
 - (id)fetchTableNamesWithError:(id *)arg1;
-- (unsigned long long)countValuesInTableWithName:(id)arg1 columnName:(id)arg2 behavior:(long long)arg3 criterion:(id)arg4 range:(id)arg5 error:(id *)arg6;
-- (id)selectValuesFromTableWithName:(id)arg1 columnName:(id)arg2 behavior:(long long)arg3 criterion:(id)arg4 order:(id)arg5 range:(id)arg6 error:(id *)arg7;
-- (id)selectRecordsFromTableWithName:(id)arg1 columnNames:(id)arg2 behavior:(long long)arg3 criterion:(id)arg4 order:(id)arg5 range:(id)arg6 recordBuilder:(id)arg7 error:(id *)arg8;
-- (id)selectValueMapsFromTableWithName:(id)arg1 columnNames:(id)arg2 behavior:(long long)arg3 criterion:(id)arg4 order:(id)arg5 range:(id)arg6 error:(id *)arg7;
-- (id)selectValueTuplesFromTableWithName:(id)arg1 columnNames:(id)arg2 behavior:(long long)arg3 criterion:(id)arg4 order:(id)arg5 range:(id)arg6 error:(id *)arg7;
+- (unsigned long long)countValuesInTableWithName:(id)arg1 columnName:(id)arg2 behavior:(long long)arg3 indexedBy:(id)arg4 criterion:(id)arg5 range:(id)arg6 error:(id *)arg7;
+- (id)selectValuesFromTableWithName:(id)arg1 columnName:(id)arg2 behavior:(long long)arg3 indexedBy:(id)arg4 criterion:(id)arg5 order:(id)arg6 range:(id)arg7 error:(id *)arg8;
+- (id)selectRecordsFromTableWithName:(id)arg1 columnNames:(id)arg2 behavior:(long long)arg3 indexedBy:(id)arg4 criterion:(id)arg5 order:(id)arg6 range:(id)arg7 recordBuilder:(id)arg8 error:(id *)arg9;
+- (id)selectValueMapsFromTableWithName:(id)arg1 columnNames:(id)arg2 behavior:(long long)arg3 indexedBy:(id)arg4 criterion:(id)arg5 order:(id)arg6 range:(id)arg7 error:(id *)arg8;
+- (id)selectValueTuplesFromTableWithName:(id)arg1 columnNames:(id)arg2 behavior:(long long)arg3 indexedBy:(id)arg4 criterion:(id)arg5 order:(id)arg6 range:(id)arg7 error:(id *)arg8;
 - (BOOL)insertIntoTableWithName:(id)arg1 record:(id)arg2 error:(id *)arg3;
 - (BOOL)insertIntoTableWithName:(id)arg1 valueMap:(id)arg2 error:(id *)arg3;
 - (BOOL)updateTableWithName:(id)arg1 valueMap:(id)arg2 criterion:(id)arg3 error:(id *)arg4;
-- (BOOL)deleteFromTableWithName:(id)arg1 criterion:(id)arg2 error:(id *)arg3;
+- (BOOL)deleteFromTableWithName:(id)arg1 indexedBy:(id)arg2 criterion:(id)arg3 error:(id *)arg4;
 
 @end
 

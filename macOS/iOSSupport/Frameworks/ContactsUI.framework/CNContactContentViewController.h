@@ -63,6 +63,7 @@
     BOOL _hideCardActions;
     BOOL _saveWasAuthorized;
     BOOL _outOfProcessSetupComplete;
+    BOOL _isPresentingFullscreenForOutOfProcess;
     BOOL _didSetFirstResponder;
     BOOL _contactSupportsTTYCalls;
     BOOL _runningPPT;
@@ -210,6 +211,7 @@
 @property(retain, nonatomic) CNUIUserActionListDataSource *actionsDataSource; // @synthesize actionsDataSource=_actionsDataSource;
 @property(retain, nonatomic) NSArray *highlightedProperties; // @synthesize highlightedProperties=_highlightedProperties;
 @property(nonatomic) BOOL didSetFirstResponder; // @synthesize didSetFirstResponder=_didSetFirstResponder;
+@property(nonatomic) BOOL isPresentingFullscreenForOutOfProcess; // @synthesize isPresentingFullscreenForOutOfProcess=_isPresentingFullscreenForOutOfProcess;
 @property(nonatomic) BOOL outOfProcessSetupComplete; // @synthesize outOfProcessSetupComplete=_outOfProcessSetupComplete;
 @property(retain, nonatomic) NSDictionary *userActivityUserInfo; // @synthesize userActivityUserInfo=_userActivityUserInfo;
 @property(retain, nonatomic) id <CNCancelable> faceTimeIDSLookupToken; // @synthesize faceTimeIDSLookupToken=_faceTimeIDSLookupToken;
@@ -454,6 +456,8 @@
 - (void)sender:(id)arg1 dismissViewController:(id)arg2;
 - (long long)_modalPresentationStyleForViewController:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (void)updateOutOfProcessFullscreenPresentationIfNeeded;
+- (void)shouldPresentFullscreen:(BOOL)arg1;
 - (void)sender:(id)arg1 presentViewController:(id)arg2;
 - (void)tableView:(id)arg1 accessoryButtonTappedForRowWithIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;
@@ -506,6 +510,7 @@
 - (BOOL)editRequiresAuthorization;
 - (BOOL)editingChangeRequiresAuthorization;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)resetAuthorizationState;
 - (void)finishEditing:(id)arg1;
 - (void)toggleEditing:(id)arg1;
 - (void)toggleEditing;
@@ -549,6 +554,7 @@
 @property(nonatomic) BOOL isMailVIP; // @synthesize isMailVIP=_isMailVIP;
 @property(readonly, nonatomic) CNContactHeaderView *contactHeaderView;
 @property(readonly, nonatomic) CNContactView *contactView;
+- (BOOL)_canShowWhileLocked;
 - (void)dealloc;
 - (id)initWithContact:(id)arg1;
 - (id)initWithEnvironment:(id)arg1;

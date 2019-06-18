@@ -9,7 +9,7 @@
 #import <Intents/INIntentSlotDescriptionExport-Protocol.h>
 #import <Intents/NSCopying-Protocol.h>
 
-@class INCodableAttribute, NSArray, NSString;
+@class INCodableAttribute, NSArray, NSNumber, NSString;
 
 @interface INIntentSlotDescription : NSObject <INIntentSlotDescriptionExport, NSCopying>
 {
@@ -26,8 +26,10 @@
     NSArray *_provideOptionsSelectorStrings;
     NSArray *_defaultValueSelectorStrings;
     INCodableAttribute *_codableAttribute;
+    NSNumber *_rank;
 }
 
+@property(retain, nonatomic) NSNumber *rank; // @synthesize rank=_rank;
 @property(readonly, copy, nonatomic) INCodableAttribute *codableAttribute; // @synthesize codableAttribute=_codableAttribute;
 @property(readonly, copy, nonatomic) NSArray *defaultValueSelectorStrings; // @synthesize defaultValueSelectorStrings=_defaultValueSelectorStrings;
 @property(readonly, copy, nonatomic) NSArray *provideOptionsSelectorStrings; // @synthesize provideOptionsSelectorStrings=_provideOptionsSelectorStrings;

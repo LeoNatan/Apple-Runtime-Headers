@@ -16,12 +16,14 @@
     NSString *_section_header;
     NSNumber *_groupNumber;
     NSArray *_rankingPatterns;
+    NSString *_threadId;
     NSArray *_rankingTerms;
     CSSearchableItem *_item;
 }
 
 @property(readonly, nonatomic) CSSearchableItem *item; // @synthesize item=_item;
 @property(retain) NSArray *rankingTerms; // @synthesize rankingTerms=_rankingTerms;
+@property(retain, nonatomic) NSString *threadId; // @synthesize threadId=_threadId;
 - (void).cxx_destruct;
 - (id)quickLookItemForQueryString:(id)arg1;
 - (id)providerDataTypes;

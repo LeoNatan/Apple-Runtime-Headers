@@ -9,7 +9,7 @@
 #import <AVKit/AVExternalGestureRecognizerPreventing-Protocol.h>
 #import <AVKit/AVPlaybackControlsViewItem-Protocol.h>
 
-@class AVMicaPackage, NSString, NSTimer, UISelectionFeedbackGenerator, UIViewPropertyAnimator;
+@class AVMicaPackage, NSString, NSTimer, UIImageView, UISelectionFeedbackGenerator, UIViewPropertyAnimator;
 
 __attribute__((visibility("hidden")))
 @interface AVVolumeButtonControl : UIControl <AVExternalGestureRecognizerPreventing, AVPlaybackControlsViewItem>
@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     UIViewPropertyAnimator *_highlightAnimator;
     UISelectionFeedbackGenerator *_feedbackGenerator;
     AVMicaPackage *_micaPackage;
+    UIImageView *_imageView;
     NSTimer *_longPressTimer;
     struct CGSize _extrinsicContentSize;
     struct CGPoint _translationOfPanFromPreviousTouch;
@@ -39,6 +40,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) long long trackingState; // @synthesize trackingState=_trackingState;
 @property(nonatomic) __weak NSTimer *longPressTimer; // @synthesize longPressTimer=_longPressTimer;
 @property(nonatomic) struct CGPoint initialPreciseLocationOfTouch; // @synthesize initialPreciseLocationOfTouch=_initialPreciseLocationOfTouch;
+@property(retain, nonatomic) UIImageView *imageView; // @synthesize imageView=_imageView;
 @property(retain, nonatomic) AVMicaPackage *micaPackage; // @synthesize micaPackage=_micaPackage;
 @property(readonly, nonatomic) UISelectionFeedbackGenerator *feedbackGenerator; // @synthesize feedbackGenerator=_feedbackGenerator;
 @property(nonatomic) __weak UIViewPropertyAnimator *highlightAnimator; // @synthesize highlightAnimator=_highlightAnimator;
@@ -66,8 +68,9 @@ __attribute__((visibility("hidden")))
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)willMoveToWindow:(id)arg1;
 - (BOOL)avkit_shouldPreventExternalGestureRecognizerAtPoint:(struct CGPoint)arg1;
+- (id)imageNameForMicaPackageState;
+- (void)setNeedsUpdateGlyphRenderingMode;
 - (void)triggerSelectionChangedFeedback;
 @property(readonly, nonatomic, getter=isCollapsedOrExcluded) BOOL collapsedOrExcluded;
 - (id)initWithFrame:(struct CGRect)arg1;

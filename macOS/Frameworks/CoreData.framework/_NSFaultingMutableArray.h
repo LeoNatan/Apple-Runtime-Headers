@@ -18,9 +18,12 @@ __attribute__((visibility("hidden")))
     struct _NSFaultingMutableArrayFlags _flags;
 }
 
++ (Class)classForKeyedUnarchiver;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)alloc;
 + (BOOL)accessInstanceVariablesDirectly;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (id)valueForKeyPath:(id)arg1;
 - (id)valueForKey:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;

@@ -13,7 +13,6 @@
 
 @interface PPLocationQuery : NSObject <NSCopying, NSSecureCoding>
 {
-    BOOL _overrideDecayRate;
     BOOL _excludingWithoutSentiment;
     unsigned long long _limit;
     NSDate *_fromDate;
@@ -22,6 +21,7 @@
     NSSet *_matchingSourceBundleIds;
     NSSet *_excludingSourceBundleIds;
     unsigned long long _deviceFilter;
+    double _perRecordDecayRate;
     double _decayRate;
     NSString *_fuzzyMatchingString;
     NSSet *_fuzzyMatchingFields;
@@ -41,7 +41,7 @@
 @property(retain, nonatomic) NSSet *fuzzyMatchingFields; // @synthesize fuzzyMatchingFields=_fuzzyMatchingFields;
 @property(retain, nonatomic) NSString *fuzzyMatchingString; // @synthesize fuzzyMatchingString=_fuzzyMatchingString;
 @property(nonatomic) double decayRate; // @synthesize decayRate=_decayRate;
-@property(nonatomic) BOOL overrideDecayRate; // @synthesize overrideDecayRate=_overrideDecayRate;
+@property(nonatomic) double perRecordDecayRate; // @synthesize perRecordDecayRate=_perRecordDecayRate;
 @property(nonatomic) unsigned long long deviceFilter; // @synthesize deviceFilter=_deviceFilter;
 @property(retain, nonatomic) NSSet *excludingSourceBundleIds; // @synthesize excludingSourceBundleIds=_excludingSourceBundleIds;
 @property(retain, nonatomic) NSSet *matchingSourceBundleIds; // @synthesize matchingSourceBundleIds=_matchingSourceBundleIds;

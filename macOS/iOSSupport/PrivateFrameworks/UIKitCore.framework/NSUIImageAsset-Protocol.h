@@ -11,7 +11,7 @@
 
 @protocol NSUIImageAsset <NSObject>
 + (id)_dynamicAssetNamed:(NSString *)arg1 generator:(id <NSUIImage> (^)(id <NSUIImageAsset>, id <NSUIImageConfiguration>, id <NSUIImage>))arg2;
-- (void)_drawInRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2 usingScale:(double)arg3 layoutDirection:(long long)arg4 style:(long long)arg5 idiom:(long long)arg6 displayGamut:(long long)arg7;
+- (void)_drawInRect:(struct CGRect)arg1 inContext:(struct CGContext *)arg2 usingScale:(double)arg3 layoutDirection:(long long)arg4 style:(long long)arg5 displayGamut:(long long)arg6;
 - (id <NSUIImage>)imageWithTraitCollection:(id <NSUITraitCollection>)arg1;
 @end
 

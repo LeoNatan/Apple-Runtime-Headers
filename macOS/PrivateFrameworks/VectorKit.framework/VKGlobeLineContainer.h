@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     id <VKGlobeLineContainerDelegate> _delegate;
     set_f5697f57 _overlays;
     set_f5697f57 _persistentOverlays;
+    set_f5697f57 _nonPersistentOverlays;
     struct RouteRenderLayer *_routeRenderLayer;
     struct map<VKPolylineOverlay *, std::__1::weak_ptr<altitude::RouteLineData>, std::__1::less<VKPolylineOverlay *>, std::__1::allocator<std::__1::pair<VKPolylineOverlay *const, std::__1::weak_ptr<altitude::RouteLineData>>>> _polylinesToRoutes;
     VKPolylineOverlay *_selectedPolyline;
@@ -34,14 +35,17 @@ __attribute__((visibility("hidden")))
 - (void)clearLineSelection;
 - (void)removeLine:(id)arg1;
 - (void)addLine:(id)arg1;
+- (const set_f5697f57 *)nonPersistentOverlays;
 - (const set_f5697f57 *)persistentOverlays;
 - (const set_f5697f57 *)overlays;
+- (void)removeNonPersistentOverlay:(id)arg1;
 - (void)removePersistentOverlay:(id)arg1;
 - (BOOL)hasPersistentOverlay:(id *)arg1;
 - (BOOL)hasNonPersistentOverlay:(id *)arg1;
-- (void)removeOverlay:(id)arg1;
+- (void)_removeOverlay:(id)arg1;
+- (void)addNonPersistentOverlay:(id)arg1;
 - (void)addPersistentOverlay:(id)arg1;
-- (void)addOverlay:(id)arg1;
+- (void)_addOverlay:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)initWithRouteRenderLayer:(struct RouteRenderLayer *)arg1;

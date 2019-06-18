@@ -46,7 +46,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) BOOL canSetVolume;
 @property(readonly) float volume;
 @property(readonly) BOOL providesControlForAllVolumeFeatures;
-- (void)removeOutputDevice:(id)arg1;
+- (void)removeOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)addOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setOutputDevices:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setOutputDevices:(id)arg1;

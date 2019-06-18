@@ -6,15 +6,15 @@
 
 #import <objc/NSObject.h>
 
+#import <UIKitMacHelper/NSWindowRestoration-Protocol.h>
 #import <UIKitMacHelper/UINSApplicationDelegate-Protocol.h>
 
 @class NSArray, NSBundle, NSDictionary, NSMutableDictionary, NSString, UINSApplicationLifecycleController, UINSPrintingController, USSBackgroundLaunchRequest, USSUserActivityContinuationRequest, USSUserNotificationResponseRequest;
 @protocol NSObject, UINSApplicationShortcutItemMenuController, UINSMenuController, UINSSceneUtilities, UINSShareSheetController, UINSSystemAppearance, UINSWindow;
 
-@interface UINSApplicationDelegate : NSObject <UINSApplicationDelegate>
+@interface UINSApplicationDelegate : NSObject <NSWindowRestoration, UINSApplicationDelegate>
 {
     NSMutableDictionary *_sceneWindowControllers;
-    BOOL _wantsDarkWindowChrome;
     id _viewFrameDidChangeNotificationToken;
     id _windowDidMoveNotificationToken;
     NSString *_restorationSceneIdentifier;
@@ -141,12 +141,13 @@
 - (id)applicationDockMenu:(id)arg1;
 @property(readonly, nonatomic) int pid;
 @property(readonly, nonatomic) NSBundle *bundle;
-- (void)invokeMainSceneWindowRestorationHandlerIfNeeded;
+- (void)restoreWindowWithIdentifier:(id)arg1 state:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_createNewSceneOfSize:(struct CGSize)arg1 persistenceIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)sceneWindowControllerWithIdentifier:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)implicitTabbingIdentifierForSceneIdentifier:(id)arg1;
 - (void)_closeWindowControllerForSceneIdentifier:(id)arg1;
 - (void)didDestroySceneWithSceneIdentifier:(id)arg1;
-- (BOOL)shouldCloseWindowWithSceneIdentifier:(id)arg1;
+- (BOOL)shouldCloseWindowWithSceneIdentifier:(id)arg1 persistentIdentifier:(id)arg2;
 - (void)didCreateSceneWithSceneIdentifier:(id)arg1 persistentIdentifier:(id)arg2;
 - (void)didReceiveLaunchActions;
 - (void)dealloc;

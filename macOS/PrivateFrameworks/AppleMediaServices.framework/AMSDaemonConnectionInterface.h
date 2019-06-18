@@ -11,6 +11,8 @@
 }
 
 + (id)_securityServiceInterface;
++ (id)_securityClientInterface;
++ (void)_configureURLPresentationDelegateClasses:(id)arg1;
 + (id)_deviceMessengerServiceInterface;
 + (id)_deviceMessengerClientInterface;
 + (id)interface;

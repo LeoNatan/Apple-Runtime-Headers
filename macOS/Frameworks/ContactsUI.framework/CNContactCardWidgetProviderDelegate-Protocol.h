@@ -6,11 +6,12 @@
 
 #import <ContactsUI/NSObject-Protocol.h>
 
-@class CNContactActionsViewController, CNContactCardWidgetProvider;
+@class CNContactActionsViewController, CNContactCardWidgetProvider, CNContactSharingEnabledWarningViewController;
 
 @protocol CNContactCardWidgetProviderDelegate <NSObject>
 
 @optional
+- (BOOL)widgetProvider:(CNContactCardWidgetProvider *)arg1 shouldIncludeSharingEnabledWarningViewController:(CNContactSharingEnabledWarningViewController *)arg2;
 - (void)widgetProvider:(CNContactCardWidgetProvider *)arg1 willCreateActionsViewController:(CNContactActionsViewController *)arg2;
 @end
 

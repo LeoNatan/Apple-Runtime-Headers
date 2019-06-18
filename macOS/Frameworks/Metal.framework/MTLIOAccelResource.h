@@ -45,6 +45,7 @@
 @property(readonly) id <MTLDevice> device;
 - (void)dealloc;
 - (id)initWithResource:(id)arg1;
+- (id)initWithDevice:(id)arg1 remoteStorageResource:(id)arg2 options:(unsigned long long)arg3 args:(struct IOAccelNewResourceArgs *)arg4 argsSize:(unsigned int)arg5;
 - (id)initWithDevice:(id)arg1 options:(unsigned long long)arg2 args:(struct IOAccelNewResourceArgs *)arg3 argsSize:(unsigned int)arg4;
 - (id)initStandinWithDevice:(id)arg1;
 - (void)waitUntilComplete;

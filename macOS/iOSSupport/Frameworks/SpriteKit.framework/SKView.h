@@ -163,6 +163,7 @@
 - (void)CBApplicationWillResignActive;
 - (void)_commonInit;
 - (void)_ensureRenderer;
+- (void)syncMetalLayerPixelFormat;
 - (void)remakeFramebuffer;
 - (void)debugPrint;
 - (id)captureToFile:(id)arg1;

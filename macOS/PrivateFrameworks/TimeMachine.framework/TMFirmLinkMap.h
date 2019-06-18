@@ -15,6 +15,7 @@
     NSDictionary *_firmLinkDictionary;
 }
 
++ (id)currentRootFirmLinkMap;
 @property(retain) NSDictionary *firmLinkDictionary; // @synthesize firmLinkDictionary=_firmLinkDictionary;
 @property(readonly, copy) NSString *dataVolumeMountPoint; // @synthesize dataVolumeMountPoint=_dataVolumeMountPoint;
 @property(readonly, copy) NSString *systemVolumeMountPoint; // @synthesize systemVolumeMountPoint=_systemVolumeMountPoint;
@@ -24,6 +25,7 @@
 @property(readonly, copy) NSArray *firmLinkPathsOnSystemVolume;
 - (id)_parseFirmLinkFile:(id)arg1;
 - (void)dealloc;
+- (id)initWithSystemMountPoint:(id)arg1 dataMountPoint:(id)arg2 firmLinkDictionary:(id)arg3;
 - (id)initWithMountPoint:(id)arg1;
 
 @end

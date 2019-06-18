@@ -112,6 +112,8 @@
 - (void)_containerSafeAreaInsetsDidChange:(id)arg1;
 - (void)safeAreaInsetsDidChange;
 - (void)layoutMarginsDidChange;
+- (void)_getOverrideContentInsets:(struct UIEdgeInsets *)arg1 overriddenEdges:(unsigned long long *)arg2;
+- (void)_setOverrideContentInsets:(struct UIEdgeInsets)arg1 forRectEdges:(unsigned long long)arg2;
 - (struct UIEdgeInsets)contentInset;
 - (void)setContentInset:(struct UIEdgeInsets)arg1;
 - (void)_setShadowVisibleIfNecessary:(BOOL)arg1;
@@ -137,6 +139,7 @@
 - (void)_animateTransitionToSearchLayoutState:(long long)arg1;
 - (void)_prepareForTransitionToSearchLayoutState:(long long)arg1;
 - (void)_driveTransitionToSearchLayoutState:(long long)arg1;
+- (void)_navigationBarTraitCollectionDidChangeTo:(id)arg1 from:(id)arg2;
 - (void)_navigationBarTransitionCompleted:(long long)arg1 willBeDisplayed:(BOOL)arg2;
 - (void)_performNavigationBarTransition:(long long)arg1 willBeDisplayed:(BOOL)arg2;
 - (void)_navigationBarTransitionWillBegin:(long long)arg1 willBeDisplayed:(BOOL)arg2;
@@ -302,10 +305,12 @@
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) BOOL enablesReturnKeyAutomatically; // @dynamic enablesReturnKeyAutomatically;
 @property(nonatomic) BOOL enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) BOOL forceDefaultDictationInfo;
 @property(nonatomic) long long forceDictationKeyboardType;
 @property(nonatomic) BOOL forceDisableDictation;
 @property(nonatomic) BOOL forceEnableDictation;
+@property(nonatomic) BOOL forceFloatingKeyboard;
 @property(nonatomic) BOOL hasDefaultContents;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) BOOL hidePrediction;

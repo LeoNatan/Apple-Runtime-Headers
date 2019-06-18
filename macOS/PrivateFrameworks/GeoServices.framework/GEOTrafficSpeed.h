@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOTrafficPath, GEOTrafficPredictedSpeeds, PBDataReader;
+@class GEOTrafficPath, GEOTrafficPredictedPaces, PBDataReader;
 
 __attribute__((visibility("hidden")))
 @interface GEOTrafficSpeed : PBCodable <NSCopying>
@@ -16,7 +16,7 @@ __attribute__((visibility("hidden")))
     PBDataReader *_reader;
     CDStruct_158f0f88 _readerMark;
     GEOTrafficPath *_path;
-    GEOTrafficPredictedSpeeds *_predictedSpeeds;
+    GEOTrafficPredictedPaces *_predictedPaces;
     int _color;
     unsigned int _confidence;
     float _freeFlowSpeedKph;
@@ -29,9 +29,9 @@ __attribute__((visibility("hidden")))
         unsigned int has_observationCount:1;
         unsigned int has_speedKph:1;
         unsigned int read_path:1;
-        unsigned int read_predictedSpeeds:1;
+        unsigned int read_predictedPaces:1;
         unsigned int wrote_path:1;
-        unsigned int wrote_predictedSpeeds:1;
+        unsigned int wrote_predictedPaces:1;
         unsigned int wrote_color:1;
         unsigned int wrote_confidence:1;
         unsigned int wrote_freeFlowSpeedKph:1;
@@ -52,9 +52,9 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(retain, nonatomic) GEOTrafficPredictedSpeeds *predictedSpeeds;
-@property(readonly, nonatomic) BOOL hasPredictedSpeeds;
-- (void)_readPredictedSpeeds;
+@property(retain, nonatomic) GEOTrafficPredictedPaces *predictedPaces;
+@property(readonly, nonatomic) BOOL hasPredictedPaces;
+- (void)_readPredictedPaces;
 @property(nonatomic) BOOL hasObservationCount;
 @property(nonatomic) unsigned int observationCount;
 @property(nonatomic) BOOL hasFreeFlowSpeedKph;

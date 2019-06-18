@@ -42,6 +42,7 @@
 - (void)submitSceneActiveRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)submitSceneResizeRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)submitSceneResizeRequest:(id)arg1 error:(id *)arg2;
+- (void)createNewSceneOfSize:(struct CGSize)arg1 persistenceIdentifier:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)createNewSceneOfSize:(struct CGSize)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)connectWithCompletionQueue:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)connect;

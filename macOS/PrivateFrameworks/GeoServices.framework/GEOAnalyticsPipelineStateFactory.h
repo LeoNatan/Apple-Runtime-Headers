@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 + (id)sharedFactory;
 - (void).cxx_destruct;
 - (void)deviceCountryChanged:(id)arg1;
-- (id)sessionStateForType:(int)arg1;
+- (id)sessionStateForType:(long long)arg1;
 - (id)_emptyUserSessionState;
 - (id)stateForType:(long long)arg1;
 - (id)placeRequest;

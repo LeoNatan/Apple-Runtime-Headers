@@ -47,6 +47,8 @@ __attribute__((visibility("hidden")))
 - (void)invalidateAsync;
 - (void)invalidate;
 - (void)_invalidate;
+- (void)fetchCurrentIndexingAnchorWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (void)_fetchCurrentIndexingAnchorWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)indexOneBatchFromAmchor:(id)arg1 toAnchor:(id)arg2 updatedItems:(id)arg3 deletedItems:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_indexOneBatchFromAmchor:(id)arg1 toAnchor:(id)arg2 updatedItems:(id)arg3 deletedItems:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)indexOneBatchWithCompletionHandler:(CDUnknownBlockType)arg1;

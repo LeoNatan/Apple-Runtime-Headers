@@ -15,6 +15,7 @@
 {
     BOOL _enabled;
     BOOL _prefersNoWrapping;
+    BOOL _standaloneTextAttachment;
     WFSlotIdentifier *_identifier;
     NSString *_placeholder;
     NSAttributedString *_contentAttributedString;
@@ -26,6 +27,7 @@
 + (id)addingSlotWithKey:(id)arg1;
 @property(readonly, nonatomic) NSMutableDictionary *backgroundColorsByState; // @synthesize backgroundColorsByState=_backgroundColorsByState;
 @property(readonly, nonatomic) NSMutableDictionary *titleColorsByState; // @synthesize titleColorsByState=_titleColorsByState;
+@property(nonatomic) BOOL standaloneTextAttachment; // @synthesize standaloneTextAttachment=_standaloneTextAttachment;
 @property(nonatomic) BOOL prefersNoWrapping; // @synthesize prefersNoWrapping=_prefersNoWrapping;
 @property(copy, nonatomic) NSAttributedString *contentAttributedString; // @synthesize contentAttributedString=_contentAttributedString;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
@@ -41,6 +43,7 @@
 - (void)setTitleColor:(id)arg1 forControlState:(unsigned long long)arg2;
 @property(readonly, nonatomic, getter=isPopulated) BOOL populated;
 - (id)initWithPlaceholder:(id)arg1 identifier:(id)arg2;
+- (void)applyErrorColors;
 - (void)populateWithVariableString:(id)arg1;
 - (void)populateWithVariable:(id)arg1;
 - (void)populateWithIcon:(id)arg1 string:(id)arg2;

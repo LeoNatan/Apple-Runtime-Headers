@@ -15,6 +15,7 @@
 
 @property(nonatomic) __weak id <CNContactCardWidgetProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (BOOL)widgetProvider:(id)arg1 shouldIncludeSharingEnabledWarningViewController:(id)arg2;
 - (void)widgetProvider:(id)arg1 willCreateActionsViewController:(id)arg2;
 - (id)initWithDelegate:(id)arg1;
 

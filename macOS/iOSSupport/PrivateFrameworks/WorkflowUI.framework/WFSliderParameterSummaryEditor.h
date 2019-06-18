@@ -18,7 +18,7 @@
 + (BOOL)supportsLongPressGestureForSlotWithIdentifier:(id)arg1;
 @property(nonatomic) __weak UIViewController *presentedViewController; // @synthesize presentedViewController=_presentedViewController;
 - (void).cxx_destruct;
-- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (id)stateByReplacingVariableFromInitialState:(id)arg1 withVariable:(id)arg2;
 - (void)sliderTouchUp:(id)arg1;

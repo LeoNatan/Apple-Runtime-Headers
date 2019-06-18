@@ -19,7 +19,8 @@
 
 @interface PXCuratedLibraryAllPhotosLayout : PXGSplitLayout <PXAssetsDataSourceManagerObserver, PXChangeObserver, PXCuratedLibraryViewModelPresenter, PXGDisplayAssetSource, PXCuratedLibraryInlineHeadersLayoutGeometrySource, PXGItemsLayoutDelegate, PXCuratedLibraryBodyLayout>
 {
-    CDStruct_5f1286c4 _updateFlags;
+    CDStruct_5f1286c4 _preUpdateFlags;
+    CDStruct_5f1286c4 _postUpdateFlags;
     PXGZoomLayout *_zoomLayout;
     PXGPinchEffect *_pinchEffect;
     unsigned int _pinchEffectCaptureSpriteIndex;
@@ -81,7 +82,7 @@
 - (id)displayAssetRequestObserverForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(id)arg2;
 - (id)displayAssetFetchResultForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 inLayout:(struct PXGItemsLayout *)arg2;
 - (struct CGSize)minSpriteSizeForPresentationStyle:(unsigned long long)arg1;
-@property(readonly, nonatomic) unsigned long long supportedDisplayAssetPresentationStyles;
+- (unsigned long long)supportedDisplayAssetPresentationStylesInLayout:(struct PXGItemsLayout *)arg1;
 - (CDUnknownBlockType)locationNamesFutureForContentInRect:(struct CGRect)arg1;
 - (CDUnknownBlockType)dateIntervalFutureForContentInRect:(struct CGRect)arg1;
 - (BOOL)_layoutWantsSingleDateTitle;
@@ -116,7 +117,7 @@
 - (BOOL)_layoutIsAspectFit:(struct PXGItemsLayout *)arg1;
 - (void)_configureLayout:(struct PXGItemsLayout *)arg1;
 - (struct PXGItemsLayout *)_createLayoutWithNumberOfColumns:(long long)arg1;
-- (struct CGSize)_scaleForLayout:(struct PXGItemsLayout *)arg1 stickEdges:(BOOL)arg2;
+- (struct CGSize)_scaleForLayout:(struct PXGItemsLayout *)arg1;
 - (unsigned long long)zoomBehavior;
 - (BOOL)isAnimating;
 - (id)hitTestResultForSpriteIndex:(unsigned int)arg1;

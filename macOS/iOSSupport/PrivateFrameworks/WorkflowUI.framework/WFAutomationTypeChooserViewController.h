@@ -22,7 +22,7 @@
 - (void).cxx_destruct;
 - (void)chooseHomeAutomation:(id)arg1;
 - (void)choosePersonalAutomation:(id)arg1;
-- (BOOL)isModalInPopover;
+- (BOOL)isModalInPresentation;
 - (void)viewDidLoad;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 

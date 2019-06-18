@@ -88,6 +88,7 @@
 - (id)newSharedTextureHandle;
 - (void)replaceRegion:(CDStruct_4c83c94d)arg1 mipmapLevel:(unsigned long long)arg2 withBytes:(const void *)arg3 bytesPerRow:(unsigned long long)arg4;
 - (void)replaceRegion:(CDStruct_4c83c94d)arg1 mipmapLevel:(unsigned long long)arg2 slice:(unsigned long long)arg3 withBytes:(const void *)arg4 bytesPerRow:(unsigned long long)arg5 bytesPerImage:(unsigned long long)arg6;
+@property(readonly) id <MTLTexture> remoteStorageTexture;
 @property(readonly) id <MTLResource> rootResource;
 @property(readonly) id <MTLTexture> parentTexture;
 @property(readonly) id <MTLHeap> heap;

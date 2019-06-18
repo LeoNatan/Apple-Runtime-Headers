@@ -89,7 +89,7 @@ __attribute__((visibility("hidden")))
         unsigned int accessibilityTracksRowAndCellIndexes:1;
         unsigned int floatsHeaderView:1;
         unsigned int drawingOverhangRect:1;
-        unsigned int registeredForDistNote:1;
+        unsigned int registeredForRowSizeStyleNote:1;
         unsigned int inDesignMode:1;
         unsigned int updatingRowData:1;
         unsigned int scheduledSwitch:1;

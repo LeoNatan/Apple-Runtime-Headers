@@ -10,6 +10,7 @@
 @class NSSet, NSString;
 
 @protocol WiFiCandidateNetwork <NSObject, TBScorable>
+@property(nonatomic) BOOL matched;
 @property(readonly, nonatomic) NSSet *attributes;
 @property(readonly, nonatomic) long long source;
 @property(readonly, copy, nonatomic) NSString *password;

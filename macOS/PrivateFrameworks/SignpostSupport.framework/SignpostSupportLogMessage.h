@@ -49,7 +49,7 @@
 - (unsigned long long)durationMachContinuousTime;
 - (unsigned long long)endMachContinuousTime;
 - (unsigned long long)startMachContinuousTime;
-- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
+- (id)_descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2 asBegin:(BOOL)arg3;
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3 unixDate:(struct timeval *)arg4 unixTimeZone:(struct timezone *)arg5;
 - (id)initWithDictionary:(id)arg1;
 - (id)_dictionaryRepresentationWithIsHumanReadable:(BOOL)arg1 shouldRedact:(BOOL)arg2;

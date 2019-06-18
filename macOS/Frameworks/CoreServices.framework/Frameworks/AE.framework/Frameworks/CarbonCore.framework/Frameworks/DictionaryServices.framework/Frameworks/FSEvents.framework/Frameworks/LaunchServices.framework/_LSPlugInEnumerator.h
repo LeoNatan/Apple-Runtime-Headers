@@ -6,13 +6,15 @@
 
 #import <LaunchServices/_LSDBEnumerator.h>
 
-@class NSString;
+@class LSPropertyList, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _LSPlugInEnumerator : _LSDBEnumerator
 {
     NSString *_extensionPointID;
     unsigned long long _options;
+    CDUnknownBlockType _filterBlock;
+    LSPropertyList *_propertyList;
     struct vector<unsigned int, std::__1::allocator<unsigned int>> _plugins;
 }
 
@@ -20,6 +22,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (BOOL)_getObject:(id *)arg1 atIndex:(unsigned long long)arg2 context:(struct LSContext *)arg3;
 - (BOOL)_prepareWithContext:(struct LSContext *)arg1 error:(id *)arg2;
+- (id)initWithExtensionPointIdentifier:(id)arg1 options:(unsigned long long)arg2 filter:(CDUnknownBlockType)arg3;
 - (id)initWithExtensionPointIdentifier:(id)arg1 options:(unsigned long long)arg2;
 - (BOOL)_evaluatePluginNoIO:(unsigned int)arg1 data:(const struct LSPluginData *)arg2 extensionPointID:(unsigned int)arg3 context:(struct LSContext *)arg4;
 - (BOOL)_getExtensionPointID:(unsigned int *)arg1 context:(struct LSContext *)arg2 error:(id *)arg3;

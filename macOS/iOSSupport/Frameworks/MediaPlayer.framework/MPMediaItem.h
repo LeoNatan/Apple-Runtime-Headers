@@ -17,6 +17,7 @@
 + (id)dynamicProperties;
 + (id)fallbackTitlePropertyForGroupingType:(long long)arg1;
 + (id)titlePropertyForGroupingType:(long long)arg1;
++ (id)ULIDPropertyForGroupingType:(long long)arg1;
 + (id)persistentIDPropertyForGroupingType:(long long)arg1;
 + (BOOL)canFilterByProperty:(id)arg1;
 + (BOOL)supportsSecureCoding;

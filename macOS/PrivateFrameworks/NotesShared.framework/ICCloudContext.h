@@ -13,6 +13,8 @@
 {
     BOOL _fetchOperationsPending;
     BOOL _needsToUpdateSubscriptions;
+    BOOL _enableLongLivedOperations;
+    BOOL _disableAutomaticallyRetryNetworkFailures;
     BOOL _disabled;
     BOOL _disabledInternal;
     BOOL _needsToProcessAllObjects;
@@ -83,6 +85,8 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *processingQueue; // @synthesize processingQueue=_processingQueue;
 @property(retain, nonatomic) NSOperationQueue *operationQueue; // @synthesize operationQueue=_operationQueue;
 @property(getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
+@property(nonatomic) BOOL disableAutomaticallyRetryNetworkFailures; // @synthesize disableAutomaticallyRetryNetworkFailures=_disableAutomaticallyRetryNetworkFailures;
+@property(nonatomic) BOOL enableLongLivedOperations; // @synthesize enableLongLivedOperations=_enableLongLivedOperations;
 @property(nonatomic) unsigned long long discretionaryNetworkBehavior; // @synthesize discretionaryNetworkBehavior=_discretionaryNetworkBehavior;
 @property(nonatomic) long long qualityOfService; // @synthesize qualityOfService=_qualityOfService;
 @property BOOL needsToUpdateSubscriptions; // @synthesize needsToUpdateSubscriptions=_needsToUpdateSubscriptions;

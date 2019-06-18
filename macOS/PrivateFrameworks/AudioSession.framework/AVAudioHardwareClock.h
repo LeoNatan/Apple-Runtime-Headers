@@ -6,7 +6,7 @@
 
 #import <AudioSession/AVAudioHardwareObject.h>
 
-@class NSSet, NSString;
+@class NSArray, NSString;
 
 @interface AVAudioHardwareClock : AVAudioHardwareObject
 {
@@ -14,8 +14,8 @@
 
 @property(readonly, nonatomic) NSString *modelUID;
 @property(readonly, nonatomic) NSString *hardwareUID;
-@property(readonly, nonatomic) NSSet *controls;
-@property(readonly, nonatomic) NSSet *availableSampleRates;
+@property(readonly, nonatomic) NSArray *controls;
+@property(readonly, nonatomic) NSArray *availableSampleRates;
 @property(readonly, nonatomic) double sampleRate;
 - (BOOL)setSampleRate:(double)arg1 controller:(id)arg2 error:(id *)arg3;
 @property(readonly, nonatomic) unsigned long long outputLatency;

@@ -77,6 +77,7 @@
 - (id)hearstRTModelWithMajorVersion:(unsigned long long)arg1 minorVersion:(unsigned long long)arg2 locale:(id)arg3;
 - (id)latestHearstRTModelForLocale:(id)arg1;
 - (id)RTModelWithFallbackLanguage:(id)arg1;
+- (id)createRTModelWithLocale:(id)arg1;
 - (float)VTSecondPassMinimumPhraseLengthForVADGating:(id)arg1;
 - (float)VTSecondPassRemoteVADMyriadThresholdFrom:(id)arg1;
 - (float)VTSecondPassRemoteVADThresholdFrom:(id)arg1;

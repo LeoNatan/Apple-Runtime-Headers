@@ -24,6 +24,7 @@
 + (id)keyPathsForValuesAffectingFollowKeyboardFocus;
 + (id)keyPathsForValuesAffectingLargerBookmarkedZoomScale;
 + (id)keyPathsForValuesAffectingSmallerBookmarkedZoomScale;
++ (id)keyPathsForValuesAffectingLastZoomDisplayID;
 + (id)keyPathsForValuesAffectingZoomDisplayID;
 + (id)keyPathsForValuesAffectingZoomWindowSize;
 + (id)keyPathsForValuesAffectingDesiredZoomScale;
@@ -79,6 +80,8 @@
 @property(nonatomic) double largerBookmarkedZoomScale;
 @property(readonly, nonatomic) BOOL canSetSmallerBookmarkedZoomScale;
 @property(nonatomic) double smallerBookmarkedZoomScale;
+@property(readonly, nonatomic) BOOL canSetLastZoomDisplayID;
+@property(nonatomic) int lastZoomDisplayID;
 @property(readonly, nonatomic) BOOL canSetZoomDisplayID;
 @property(nonatomic) int zoomDisplayID;
 @property(readonly, nonatomic) BOOL canSetZoomWindowSize;

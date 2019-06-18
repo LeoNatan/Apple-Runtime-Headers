@@ -12,10 +12,7 @@
 @interface CLLocationManager : NSObject
 {
     id _internal;
-    BOOL _allowsBackgroundLocationUpdates;
-    BOOL _showsBackgroundLocationIndicator;
     BOOL _allowsAlteredAccessoryLocations;
-    NSSet *_rangedBeaconConstraints;
 }
 
 + (BOOL)bundleSupported:(id)arg1;
@@ -71,9 +68,6 @@
 + (BOOL)isStatusBarIconEnabledForLocationEntityClass:(unsigned long long)arg1;
 + (void)setStatusBarIconEnabled:(BOOL)arg1 forLocationEntityClass:(unsigned long long)arg2;
 @property(nonatomic) BOOL allowsAlteredAccessoryLocations; // @synthesize allowsAlteredAccessoryLocations=_allowsAlteredAccessoryLocations;
-@property(readonly, copy, nonatomic) NSSet *rangedBeaconConstraints; // @synthesize rangedBeaconConstraints=_rangedBeaconConstraints;
-@property(nonatomic) BOOL showsBackgroundLocationIndicator; // @synthesize showsBackgroundLocationIndicator=_showsBackgroundLocationIndicator;
-@property(nonatomic) BOOL allowsBackgroundLocationUpdates; // @synthesize allowsBackgroundLocationUpdates=_allowsBackgroundLocationUpdates;
 - (void)setIsActuallyAWatchKitExtension:(BOOL)arg1;
 - (void)registerAsLocationClient;
 @property(nonatomic, getter=isDynamicAccuracyReductionEnabled) BOOL dynamicAccuracyReductionEnabled;
@@ -120,6 +114,9 @@
 - (void)respondToRangingFromPeers:(id)arg1 timeoutSeconds:(double)arg2;
 - (void)requestRangingToPeers:(id)arg1 timeoutSeconds:(double)arg2;
 @property(readonly, copy, nonatomic) NSSet *rangedRegions;
+@property(readonly, copy, nonatomic) NSSet *rangedBeaconConstraints;
+- (void)stopRangingBeaconsSatisfyingConstraint:(id)arg1;
+- (void)startRangingBeaconsSatisfyingConstraint:(id)arg1;
 @property(readonly, copy, nonatomic) NSSet *monitoredRegions;
 @property(readonly, nonatomic) double maximumRegionMonitoringDistance;
 - (void)requestStateForRegion:(id)arg1;
@@ -158,6 +155,8 @@
 @property(readonly, nonatomic) BOOL locationServicesEnabled;
 @property(readonly, nonatomic) BOOL locationServicesAvailable;
 @property(readonly, copy, nonatomic) CLLocation *location;
+@property(nonatomic) BOOL showsBackgroundLocationIndicator;
+@property(nonatomic) BOOL allowsBackgroundLocationUpdates;
 @property(nonatomic) BOOL pausesLocationUpdatesAutomatically;
 @property(nonatomic) double desiredAccuracy;
 @property(nonatomic) double distanceFilter;
@@ -176,6 +175,9 @@
 - (void)startUpdatingVehicleSpeed;
 - (void)_setGroundAltitudeEnabled:(BOOL)arg1;
 - (BOOL)_isGroundAltitudeEnabled;
+- (void)_startLeechingVisits;
+- (void)stopMonitoringVisits;
+- (void)startMonitoringVisits;
 - (void)_fetchPlaceInferencesWithFidelityPolicy:(unsigned long long)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_updateLSLHeadingEstimation:(id)arg1;
 - (void)_updateARSessionState:(unsigned long long)arg1;

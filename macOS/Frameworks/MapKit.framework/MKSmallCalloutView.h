@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
     BOOL _shouldPositionTitleForMapsTransitionMovingSideways;
     _MKSmallCalloutPassthroughButton *_maskedContainerView;
     NSView *_unmaskedContainerView;
-    CDStruct_51745937 _mapDisplayStyle;
     BOOL _needsPreferredContentSizeUpdate;
     NSLayoutConstraint *_minWidthConstraint;
     NSLayoutConstraint *_maxWidthConstraint;
@@ -42,7 +41,6 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_leftViewCenterContentMarginConstraint;
     NSLayoutGuide *_leftViewTopSpacer;
     NSLayoutGuide *_leftViewLeftSpacer;
-    NSLayoutConstraint *_rightViewMinCalloutWidthConstraint;
     NSLayoutConstraint *_rightViewHorizontalPositionConstraint;
     NSLayoutConstraint *_rightViewTopSpacerBottomConstraint;
     NSLayoutConstraint *_rightViewCenterContentMarginConstraint;
@@ -64,9 +62,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
 @property(readonly, nonatomic) NSView *titlesContainerView; // @synthesize titlesContainerView=_titlesContainerView;
 @property(nonatomic) struct NSEdgeInsets layoutMargins; // @synthesize layoutMargins=_layoutMargins;
-@property(nonatomic) CDStruct_51745937 mapDisplayStyle; // @synthesize mapDisplayStyle=_mapDisplayStyle;
 - (void).cxx_destruct;
-- (void)_updateAccessoryViewStyles;
 - (BOOL)canDisplayCompleteTitleWhenExpanded;
 - (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
 @property(retain, nonatomic) NSView *detailView;

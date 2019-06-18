@@ -48,7 +48,7 @@
 - (void)recacheDisk:(SKDisk *)arg1 withCallbackBlock:(void (^)(void))arg2;
 - (void)enclosingDiskAtLevel:(unsigned long long)arg1 withCallbackBlock:(void (^)(SKDisk *))arg2;
 - (void)enclosingVolumeCount:(void (^)(unsigned long long))arg1;
-- (void)getFDEUsersFromDisk:(SKDisk *)arg1 withCompletionBlock:(void (^)(NSArray *, NSError *))arg2;
+- (void)getFDEUsersFromDisk:(SKDisk *)arg1 retrieveImageData:(BOOL)arg2 withCompletionBlock:(void (^)(NSArray *, NSError *))arg3;
 - (void)convertDiskToFDE:(SKDisk *)arg1 withRecipe:(NSArray *)arg2 handlingProgress:(void (^)(float, NSString *))arg3 withCompletionBlock:(void (^)(NSError *))arg4;
 - (void)changePasswordForDisk:(SKDisk *)arg1 oldPassword:(NSString *)arg2 newPassword:(NSString *)arg3 passwordHint:(NSString *)arg4 withCompletionBlock:(void (^)(BOOL))arg5;
 - (void)decryptVolume:(SKDisk *)arg1 withPassword:(NSString *)arg2 forUser:(NSString *)arg3 withCompletionBlock:(void (^)(NSError *))arg4;

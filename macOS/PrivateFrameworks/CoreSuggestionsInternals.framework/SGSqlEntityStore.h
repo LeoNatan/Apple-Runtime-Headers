@@ -181,6 +181,7 @@
 - (BOOL)deleteURLsFromBundleIdentifier:(id)arg1;
 - (BOOL)deleteURLsOlderThanDate:(id)arg1;
 - (BOOL)trimURLTableDownToLimit:(long long)arg1;
+- (BOOL)trimURLs;
 - (BOOL)writeURL:(id)arg1;
 - (struct _PASDBIterAction_)_updateURLs:(id)arg1 stmt:(struct sqlite3_stmt *)arg2;
 - (id)_columnList;
@@ -456,9 +457,12 @@
 - (BOOL)tombstoneExistsForSpotlightReferenceWithBundleIdentifier:(id)arg1 uniqueIdentifier:(id)arg2 domainIdentifier:(id)arg3;
 - (void)clearAllTombstonesForSpotlightReferences;
 - (void)writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1;
+- (void)writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1 uniqueIdentifiers:(id)arg2;
 - (void)writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1 uniqueIdentifier:(id)arg2;
+- (void)writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1 domainIdentifiers:(id)arg2;
 - (void)writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1 domainIdentifier:(id)arg2;
-- (void)_writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1 uniqueIdentifier:(id)arg2 domainIdentifier:(id)arg3;
+- (BOOL)_tombstoneExistsForBundleIdentifier:(id)arg1;
+- (id)_selectingDomainsForDomainIdentifier:(id)arg1;
 - (void)deleteSpotlightReferencesWithNoBundleIdentifier;
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(id)arg1;
 - (void)deleteSpotlightReferencesWithBundleIdentifier:(id)arg1 domainIdentifiers:(id)arg2;

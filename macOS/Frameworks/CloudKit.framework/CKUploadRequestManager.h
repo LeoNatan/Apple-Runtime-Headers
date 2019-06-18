@@ -9,7 +9,7 @@
 #import <CloudKit/CKAssetRepairSchedulerDelegate-Protocol.h>
 #import <CloudKit/CKSyncEngineDataSource-Protocol.h>
 
-@class CKAssetRepairScheduler, CKContainer, CKRepairContainerOverrides, CKSchedulerActivity, CKSyncEngine, CKUploadRequestManagerStateMachine, CKUploadRequestPersistentStore, NSString;
+@class CKAssetRepairScheduler, CKContainer, CKSchedulerActivity, CKSyncEngine, CKUploadRequestConfiguration, CKUploadRequestManagerStateMachine, CKUploadRequestPersistentStore, NSString;
 @protocol NSObject, OS_dispatch_queue;
 
 @interface CKUploadRequestManager : NSObject <CKAssetRepairSchedulerDelegate, CKSyncEngineDataSource>
@@ -24,7 +24,7 @@
     NSString *_machServiceName;
     CKContainer *_container;
     CKContainer *_repairContainer;
-    CKRepairContainerOverrides *_repairContainerOverrides;
+    CKUploadRequestConfiguration *_repairContainerOverrides;
     CKSyncEngine *_repairZoneSyncEngine;
     NSString *_assignedMachServiceName;
     CKAssetRepairScheduler *_repairProcessor;
@@ -71,7 +71,7 @@
 @property(nonatomic) BOOL hasRegisteredActivity; // @synthesize hasRegisteredActivity=_hasRegisteredActivity;
 @property(retain, nonatomic) NSString *assignedMachServiceName; // @synthesize assignedMachServiceName=_assignedMachServiceName;
 @property(retain, nonatomic) CKSyncEngine *repairZoneSyncEngine; // @synthesize repairZoneSyncEngine=_repairZoneSyncEngine;
-@property(retain, nonatomic) CKRepairContainerOverrides *repairContainerOverrides; // @synthesize repairContainerOverrides=_repairContainerOverrides;
+@property(retain, nonatomic) CKUploadRequestConfiguration *repairContainerOverrides; // @synthesize repairContainerOverrides=_repairContainerOverrides;
 @property(retain, nonatomic) CKContainer *repairContainer; // @synthesize repairContainer=_repairContainer;
 @property(nonatomic) __weak CKContainer *container; // @synthesize container=_container;
 @property(readonly, nonatomic) BOOL ignoringSystemConditions; // @synthesize ignoringSystemConditions=_ignoringSystemConditions;

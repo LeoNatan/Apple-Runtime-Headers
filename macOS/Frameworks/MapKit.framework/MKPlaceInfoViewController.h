@@ -48,6 +48,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL hasContent;
 - (void)viewDidLoad;
 - (id)initWithPlaceItem:(id)arg1;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

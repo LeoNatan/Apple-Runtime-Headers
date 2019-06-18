@@ -39,7 +39,7 @@
 + (void)_stopDeferredTrackingObjectsWithIdentifiers;
 + (void)_startDeferredTrackingObjectsWithIdentifiers;
 + (id)objectWithRestorationIdentifierPath:(id)arg1;
-- (long long)undoOption;
+@property(readonly, nonatomic) long long editingInteractionConfiguration;
 - (void)_setDropDataOwner:(long long)arg1;
 - (long long)_dropDataOwner;
 - (void)_setDragDataOwner:(long long)arg1;
@@ -137,8 +137,9 @@
 - (void)_define:(id)arg1;
 - (id)validationForCommand:(id)arg1;
 - (void)validateCommand:(id)arg1;
-- (void)_buildCommandsFromChainWithBuilder:(id)arg1;
+- (void)_buildMenuFromChainWithBuilder:(id)arg1;
 - (void)buildCommandsWithBuilder:(id)arg1;
+- (void)buildMenuWithBuilder:(id)arg1;
 - (id)targetForAction:(SEL)arg1 withSender:(id)arg2;
 - (id)_targetCanPerformBlock:(CDUnknownBlockType)arg1;
 - (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;

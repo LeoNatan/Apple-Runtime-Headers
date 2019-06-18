@@ -19,7 +19,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)recipientForINPerson:(id)arg1 contactStore:(id)arg2;
++ (id)recipientForINPerson:(id)arg1 contactResolver:(id)arg2;
 @property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(readonly, copy, nonatomic) NSString *displayName; // @synthesize displayName=_displayName;
 @property(readonly, copy, nonatomic) NSString *handle; // @synthesize handle=_handle;

@@ -18,7 +18,6 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_sharedSessions;
     NSMutableDictionary *_sharedNavStates;
     NSMutableDictionary *_temporaryNavStates;
-    NSMutableDictionary *_forceUpdateNotification;
     NSMutableDictionary *_notificationRules;
     NSDictionary *_groupStorage;
     MapsNotificationCenter *_mapsNotificationCenter;
@@ -41,11 +40,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_allowMessageWithState:(id)arg1 forGroup:(id)arg2 fromID:(id)arg3;
 - (void)_resolveContactIfNeeded:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_showOrUpdateNotificationIfNeeded:(id)arg1;
-- (void)unblockAllSenders;
-- (void)unblockSharedTripFromSenders:(id)arg1;
-- (void)blockSharedTripFromSenders:(id)arg1;
-- (void)unmuteSharedTripUpdatesForSharedTrip:(id)arg1;
-- (void)muteSharedTripUpdatesForSharedTrip:(id)arg1;
+- (void)blockSharedTrip:(id)arg1;
 - (void)unsubscribeFromUpdatesToSharedTrip:(id)arg1;
 - (void)subscribeToUpdatesToSharedTrip:(id)arg1;
 @property(readonly, nonatomic) NSArray *allTrips;

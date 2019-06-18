@@ -10,15 +10,17 @@
 #import <SPFinder/SPBeaconPayloadCaching-Protocol.h>
 
 @class FMXPCServiceDescription, FMXPCSession, NSString;
-@protocol SPAdvertisementCacheXPCProtocol;
+@protocol OS_dispatch_queue, SPAdvertisementCacheXPCProtocol;
 
 @interface SPAdvertisementCache : NSObject <SPAdvertisementCaching, SPBeaconPayloadCaching>
 {
     FMXPCServiceDescription *_serviceDescription;
     FMXPCSession *_session;
     id <SPAdvertisementCacheXPCProtocol> _proxy;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <SPAdvertisementCacheXPCProtocol> proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) FMXPCSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) FMXPCServiceDescription *serviceDescription; // @synthesize serviceDescription=_serviceDescription;

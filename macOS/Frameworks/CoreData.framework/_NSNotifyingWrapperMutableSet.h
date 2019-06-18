@@ -16,6 +16,9 @@ __attribute__((visibility("hidden")))
     NSMutableSet *_mutableSet;
 }
 
++ (Class)classForKeyedUnarchiver;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (void)unionSet:(id)arg1;
 - (void)setSet:(id)arg1;
 - (void)removeObject:(id)arg1;

@@ -12,8 +12,6 @@
 @interface SPMetadataQuery : SPKQuery
 {
     NSString *_queryString;
-    NSArray *_queryTerms;
-    _Bool _highConfidenceNL;
     NSDictionary *_NLPRankingTerms;
     int _performanceFeedbackCount;
     NSMutableDictionary *_performanceFeedbackResults;
@@ -23,10 +21,12 @@
     BOOL _isRewrite;
     BOOL _persistent;
     _Bool _definiteLocalQuery;
+    _Bool _highConfidenceNL;
     NSString *_correctedQuery;
     NSArray *_bitMasksForNLPRankingTerms;
     NSArray *_prefetchedAttributes;
     NSArray *_sortingAttributes;
+    NSArray *_queryTerms;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSMutableArray *_results;
     CSFilesSearchQuery *_query;
@@ -59,6 +59,8 @@
 @property(readonly) CSFilesSearchQuery *query; // @synthesize query=_query;
 @property(retain, nonatomic) NSMutableArray *results; // @synthesize results=_results;
 @property(readonly) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
+@property _Bool highConfidenceNL; // @synthesize highConfidenceNL=_highConfidenceNL;
+@property(retain) NSArray *queryTerms; // @synthesize queryTerms=_queryTerms;
 @property(readonly) NSArray *sortingAttributes; // @synthesize sortingAttributes=_sortingAttributes;
 @property(readonly) NSArray *prefetchedAttributes; // @synthesize prefetchedAttributes=_prefetchedAttributes;
 @property _Bool definiteLocalQuery; // @synthesize definiteLocalQuery=_definiteLocalQuery;

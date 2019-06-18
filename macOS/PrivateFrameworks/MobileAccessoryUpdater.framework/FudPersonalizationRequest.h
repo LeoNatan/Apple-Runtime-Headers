@@ -12,6 +12,7 @@
 {
     BOOL _cproSet;
     BOOL _csecSet;
+    BOOL _cepoSet;
     BOOL _globalSigning;
     BOOL _productionMode;
     BOOL _securityMode;
@@ -25,6 +26,7 @@
     NSString *_requestName;
     NSString *_requestPrefix;
     unsigned long long _ecID;
+    NSData *_extEcID;
     NSData *_nonceHash;
     NSDictionary *_customManifestProperties;
     NSArray *_objectList;
@@ -42,12 +44,14 @@
 @property(nonatomic) BOOL productionMode; // @synthesize productionMode=_productionMode;
 @property(nonatomic) unsigned int securityDomain; // @synthesize securityDomain=_securityDomain;
 @property(nonatomic) BOOL globalSigning; // @synthesize globalSigning=_globalSigning;
+@property(retain, nonatomic) NSData *extEcID; // @synthesize extEcID=_extEcID;
 @property(nonatomic) unsigned long long ecID; // @synthesize ecID=_ecID;
 @property(nonatomic) unsigned int chipID; // @synthesize chipID=_chipID;
 @property(nonatomic) unsigned int boardID; // @synthesize boardID=_boardID;
 @property(nonatomic) int responseFormat; // @synthesize responseFormat=_responseFormat;
 @property(retain, nonatomic) NSString *requestPrefix; // @synthesize requestPrefix=_requestPrefix;
 @property(readonly, copy, nonatomic) NSString *requestName; // @synthesize requestName=_requestName;
+- (BOOL)isChipEpochSet;
 - (BOOL)isProductionModeSet;
 - (BOOL)isSecurityModeSet;
 - (void)dealloc;

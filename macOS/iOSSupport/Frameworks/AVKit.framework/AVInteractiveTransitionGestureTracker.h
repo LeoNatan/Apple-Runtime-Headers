@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     BOOL _waitingToContinue;
     BOOL _hasContinued;
     BOOL _hasRotated;
+    UIPanGestureRecognizer *_contentTransitioningViewGestureRecognizer;
     id <AVTransitionDriverDelegate> _transitionDriverDelegate;
     double _previousPinchScale;
     UIPanGestureRecognizer *_panGestureRecognizer;
@@ -51,6 +52,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isPinchToDismissEnabled) BOOL pinchToDismissEnabled; // @synthesize pinchToDismissEnabled=_pinchToDismissEnabled;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(nonatomic) __weak id <AVTransitionDriverDelegate> transitionDriverDelegate; // @synthesize transitionDriverDelegate=_transitionDriverDelegate;
+@property(nonatomic) __weak UIPanGestureRecognizer *contentTransitioningViewGestureRecognizer; // @synthesize contentTransitioningViewGestureRecognizer=_contentTransitioningViewGestureRecognizer;
 - (void).cxx_destruct;
 - (void)_reset;
 - (void)_resetGestures;
@@ -60,6 +62,7 @@ __attribute__((visibility("hidden")))
 - (void)_handlePanGesture:(id)arg1;
 - (void)_handleRotationGesture:(id)arg1;
 - (void)_handlePinchGesture:(id)arg1;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;

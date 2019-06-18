@@ -8,7 +8,7 @@
 
 #import <CloudKit/NSSecureCoding-Protocol.h>
 
-@class CKAccountOverrideInfo, CKRepairContainerOverrides, NSString;
+@class CKAccountOverrideInfo, CKUploadRequestConfiguration, NSString;
 
 @interface CKContainerOptions : NSObject <NSSecureCoding>
 {
@@ -22,11 +22,11 @@
     CKAccountOverrideInfo *_accountInfoOverride;
     unsigned long long _mmcsEncryptionSupport;
     NSString *_encryptionServiceName;
-    CKRepairContainerOverrides *_repairContainerOverrides;
+    CKUploadRequestConfiguration *_uploadRequestConfiguration;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(retain, nonatomic) CKRepairContainerOverrides *repairContainerOverrides; // @synthesize repairContainerOverrides=_repairContainerOverrides;
+@property(retain, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 @property(nonatomic) BOOL forceEnableReadOnlyManatee; // @synthesize forceEnableReadOnlyManatee=_forceEnableReadOnlyManatee;
 @property(nonatomic) BOOL enforceNamedOperationGroups; // @synthesize enforceNamedOperationGroups=_enforceNamedOperationGroups;
 @property(nonatomic) BOOL bypassPCSEncryption; // @synthesize bypassPCSEncryption=_bypassPCSEncryption;

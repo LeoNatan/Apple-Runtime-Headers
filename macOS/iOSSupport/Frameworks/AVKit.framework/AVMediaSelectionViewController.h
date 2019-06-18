@@ -14,7 +14,6 @@
 }
 
 - (void).cxx_destruct;
-- (void)viewWillLayoutSubviews;
 - (id)mediaSelectionTableViewController;
 - (id)initWithPlayerController:(id)arg1 doneButtonTarget:(id)arg2 doneButtonAction:(SEL)arg3;
 

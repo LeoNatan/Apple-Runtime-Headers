@@ -8,23 +8,28 @@
 
 #import <Email/EMUserProfileProvider-Protocol.h>
 
-@class CNContactStore, EFLazyCache, NSSet, NSString;
+@class CNContactStore, NSDictionary, NSSet, NSString;
+@protocol OS_dispatch_queue;
 
 @interface EMUserProfileProvider : NSObject <EMUserProfileProvider>
 {
-    EFLazyCache *_cache;
+    struct os_unfair_lock_s _cacheLock;
+    NSObject<OS_dispatch_queue> *_cacheQueue;
+    int _outstandingCacheRefreshes;
+    NSDictionary *_cache;
     CNContactStore *_contactStore;
 }
 
 + (BOOL)doesAddressList:(id)arg1 containAddressInSet:(id)arg2;
 @property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
-@property(readonly, nonatomic) EFLazyCache *cache; // @synthesize cache=_cache;
+@property(retain, nonatomic) NSDictionary *cache; // @synthesize cache=_cache;
 - (void).cxx_destruct;
 - (id)_contactEmailAddresses;
 - (id)_accountsEmailAddresses;
 - (void)_contactsChanged:(id)arg1;
 - (void)_accountsChanged:(id)arg1;
-- (void)invalidateCachedValues;
+- (void)waitForOutstandingCacheRefreshes;
+- (void)refreshCachedValues;
 - (BOOL)isMyEmailAddressContainedInAddressList:(id)arg1;
 @property(readonly, copy) NSSet *allEmailAddresses;
 - (id)contactWithKeysToFetch:(id)arg1;

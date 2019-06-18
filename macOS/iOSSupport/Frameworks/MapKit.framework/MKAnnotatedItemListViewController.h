@@ -49,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithTextItemContainer:(id)arg1 title:(id)arg2 attribution:(id)arg3;
 - (id)initWithPictureItemContainer:(id)arg1 title:(id)arg2 attribution:(id)arg3;
 - (id)initWithChildViewController:(id)arg1 title:(id)arg2 attribution:(id)arg3;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

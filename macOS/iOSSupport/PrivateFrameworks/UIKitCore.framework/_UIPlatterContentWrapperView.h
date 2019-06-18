@@ -6,7 +6,7 @@
 
 #import <UIKitCore/UIView.h>
 
-@class _UIPortalView;
+@class UITargetedPreview, _UIPortalView;
 
 __attribute__((visibility("hidden")))
 @interface _UIPlatterContentWrapperView : UIView
@@ -15,13 +15,13 @@ __attribute__((visibility("hidden")))
     BOOL _matchesAlpha;
     BOOL _appliesMinificationFilter;
     BOOL _didTakeOwnershipOfSourceView;
-    UIView *_sourceView;
+    UITargetedPreview *_sourcePreview;
     _UIPortalView *_portalView;
 }
 
 @property(nonatomic) BOOL didTakeOwnershipOfSourceView; // @synthesize didTakeOwnershipOfSourceView=_didTakeOwnershipOfSourceView;
 @property(retain, nonatomic) _UIPortalView *portalView; // @synthesize portalView=_portalView;
-@property(retain, nonatomic) UIView *sourceView; // @synthesize sourceView=_sourceView;
+@property(retain, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
 @property(nonatomic) BOOL appliesMinificationFilter; // @synthesize appliesMinificationFilter=_appliesMinificationFilter;
 @property(nonatomic) BOOL matchesAlpha; // @synthesize matchesAlpha=_matchesAlpha;
 @property(nonatomic) BOOL hidesSourceView; // @synthesize hidesSourceView=_hidesSourceView;
@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateMinificationFilter;
 - (void)didMoveToWindow;
 - (void)layoutSubviews;
+@property(readonly, nonatomic) UIView *sourceView;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 @end

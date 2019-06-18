@@ -59,10 +59,9 @@
 @property(readonly) float volume;
 - (void)_canUseForRoutingContextDidChangeForRoutingContextWIthID:(struct __CFString *)arg1;
 @property(readonly) BOOL providesControlForAllVolumeFeatures;
-- (void)removeOutputDevice:(id)arg1;
+- (void)removeOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)addOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setOutputDevices:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)setOutputDevices:(id)arg1;
 @property(readonly) NSArray *outputDevices;
 @property(readonly) BOOL supportsMultipleBluetoothOutputDevices;
 @property(readonly) BOOL supportsMultipleOutputDevices;

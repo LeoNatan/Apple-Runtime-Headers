@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: titleLabel
     // Error parsing type: , name: descriptionTextView
     // Error parsing type: , name: subscribeButton
+    // Error parsing type: , name: webAuthButton
 }
 
 - (void).cxx_destruct;

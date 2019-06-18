@@ -24,8 +24,6 @@
 @property(retain, nonatomic) SFSession *sfSession; // @synthesize sfSession=_sfSession;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 - (void).cxx_destruct;
-- (void)cdpContext:(id)arg1 promptToInformUserOfAccountUnlockWithCompletion:(CDUnknownBlockType)arg2;
-- (void)cdpContext:(id)arg1 promptToInformUserOfAccountLockOutWithCompletion:(CDUnknownBlockType)arg2;
 - (void)cdpContext:(id)arg1 promptForRemoteSecretWithDevices:(id)arg2 offeringRemoteApproval:(BOOL)arg3 validator:(id)arg4;
 - (void)cdpContext:(id)arg1 promptForLocalSecretWithHandler:(id)arg2;
 - (void)cdpContext:(id)arg1 promptForInteractiveAuthenticationWithCompletion:(CDUnknownBlockType)arg2;

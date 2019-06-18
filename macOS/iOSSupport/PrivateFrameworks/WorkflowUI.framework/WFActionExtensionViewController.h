@@ -4,62 +4,43 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WorkflowUI/WFLibraryViewController.h>
+#import <UIKit/UIViewController.h>
 
-#import <WorkflowUI/UICollectionViewDelegateFlowLayout-Protocol.h>
-#import <WorkflowUI/UINavigationControllerDelegate-Protocol.h>
 #import <WorkflowUI/WFRunWorkflowViewControllerDelegate-Protocol.h>
 
-@class NSDictionary, NSString, UICollectionViewCell, WFActionExtensionResultsController, WFContentCollection, WFRunWorkflowViewController;
+@class NSDictionary, NSString, WFRunWorkflowToolbar, WFRunWorkflowViewController;
 @protocol WFActionExtensionViewControllerDelegate;
 
-@interface WFActionExtensionViewController : WFLibraryViewController <UICollectionViewDelegateFlowLayout, UINavigationControllerDelegate, WFRunWorkflowViewControllerDelegate>
+@interface WFActionExtensionViewController : UIViewController <WFRunWorkflowViewControllerDelegate>
 {
-    WFContentCollection *_input;
-    NSString *_singleUseWorkflowToken;
     NSDictionary *_eventDictionary;
     id <WFActionExtensionViewControllerDelegate> _delegate;
     WFRunWorkflowViewController *_workflowViewController;
-    NSString *_runSource;
-    UICollectionViewCell *_lastHighlightedCell;
+    WFRunWorkflowToolbar *_toolbar;
 }
 
-+ (Class)resultsControllerClass;
-@property(nonatomic) __weak UICollectionViewCell *lastHighlightedCell; // @synthesize lastHighlightedCell=_lastHighlightedCell;
-@property(copy, nonatomic) NSString *runSource; // @synthesize runSource=_runSource;
-@property(nonatomic) __weak WFRunWorkflowViewController *workflowViewController; // @synthesize workflowViewController=_workflowViewController;
+@property(retain, nonatomic) WFRunWorkflowToolbar *toolbar; // @synthesize toolbar=_toolbar;
+@property(retain, nonatomic) WFRunWorkflowViewController *workflowViewController; // @synthesize workflowViewController=_workflowViewController;
 @property(nonatomic) __weak id <WFActionExtensionViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(copy, nonatomic) NSDictionary *eventDictionary; // @synthesize eventDictionary=_eventDictionary;
-@property(retain, nonatomic) NSString *singleUseWorkflowToken; // @synthesize singleUseWorkflowToken=_singleUseWorkflowToken;
-@property(retain, nonatomic) WFContentCollection *input; // @synthesize input=_input;
 - (void).cxx_destruct;
-- (void)handleDropOfItems:(id)arg1 ontoWorkflow:(id)arg2;
 - (void)handoffWithWorkflowControllerState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (id)runWorkflowToolbarForWorkflowViewController:(id)arg1;
 - (BOOL)workflowViewController:(id)arg1 handleUnsupportedUserInterfaceForAction:(id)arg2 currentState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (BOOL)workflowViewController:(id)arg1 handleUnsupportedEnvironmentForAction:(id)arg2 currentState:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
-- (struct UIEdgeInsets)collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(long long)arg3;
-- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 referenceSizeForFooterInSection:(long long)arg3;
-- (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)workflowFinishedWithOutput:(id)arg1 error:(id)arg2;
 - (void)workflowCancelled;
 - (void)cancelPressed;
 - (void)cleanup;
-- (void)runWorkflow:(id)arg1 withAnimatedPresentation:(BOOL)arg2;
-- (void)runWorkflowReference:(id)arg1 withAnimatedPresentation:(BOOL)arg2;
-- (void)runWorkflowReference:(id)arg1;
-- (BOOL)needsTopPadding;
-- (void)traitCollectionDidChange:(id)arg1;
-- (void)viewWillAppear:(BOOL)arg1;
-- (void)runSingleUseWorkflowIfNecessary;
-- (void)viewDidLoad;
+- (void)runWithInput:(id)arg1;
 - (void)loadView;
+- (id)initWithSingleUseWorkflowToken:(id)arg1 error:(id *)arg2;
+- (id)initWithWorkflow:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
-@property(readonly, nonatomic) WFActionExtensionResultsController *resultsController; // @dynamic resultsController;
 @property(readonly) Class superclass;
 
 @end

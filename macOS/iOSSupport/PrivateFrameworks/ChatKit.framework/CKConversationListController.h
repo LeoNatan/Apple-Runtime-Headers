@@ -21,7 +21,7 @@
 #import <ChatKit/UITableViewDropDelegate-Protocol.h>
 #import <ChatKit/_UIContextMenuInteractionDelegate-Protocol.h>
 
-@class CKCloudKitSyncProgressViewController, CKConversation, CKConversationList, CKConversationSearchResultsController, CKMessagesController, CKScheduledUpdater, CKSearchViewController, CNContact, CNContactStore, NSArray, NSIndexPath, NSString, UIBarButtonItem, UIButton, UISearchController, UITableView, UIView, _UIContextMenuInteraction;
+@class CKCloudKitSyncProgressViewController, CKConversation, CKConversationList, CKConversationSearchResultsController, CKLargeTitleAccessoryView, CKMessagesController, CKNavigationBarTitleView, CKScheduledUpdater, CKSearchViewController, CNContact, CNContactStore, NSArray, NSIndexPath, NSString, UIBarButtonItem, UIButton, UISearchController, UITableView, UIView, _UIContextMenuInteraction;
 
 @interface CKConversationListController : UITableViewController <UISearchControllerDelegate, UISearchBarDelegate, CKCloudKitSyncProgressViewControllerDelegate, IMCloudKitEventHandler, CKConversationResultsControllerDelegate, CKContainerSearchControllerDelegate, CKConversationListCellDelegate, UITableViewDropDelegate, UITableViewDragDelegate, _UIContextMenuInteractionDelegate, UITableViewDataSource, UITableViewDelegate, UITableViewDelegatePrivate, UIActionSheetDelegate>
 {
@@ -38,6 +38,8 @@
     CKConversationList *_conversationList;
     CKMessagesController *_messagesController;
     CKCloudKitSyncProgressViewController *_syncProgressViewController;
+    CKNavigationBarTitleView *_navigationBarTitleView;
+    CKLargeTitleAccessoryView *_largeTitleAccessoryView;
     CKScheduledUpdater *_updater;
     UIView *_noMessagesDialogView;
     NSArray *_frozenConversations;
@@ -82,6 +84,8 @@
 @property(retain, nonatomic) UIView *noMessagesDialogView; // @synthesize noMessagesDialogView=_noMessagesDialogView;
 @property(retain, nonatomic) CKScheduledUpdater *updater; // @synthesize updater=_updater;
 @property(nonatomic) BOOL isShowingSwipeDeleteConfirmation; // @synthesize isShowingSwipeDeleteConfirmation=_isShowingSwipeDeleteConfirmation;
+@property(retain, nonatomic) CKLargeTitleAccessoryView *largeTitleAccessoryView; // @synthesize largeTitleAccessoryView=_largeTitleAccessoryView;
+@property(retain, nonatomic) CKNavigationBarTitleView *navigationBarTitleView; // @synthesize navigationBarTitleView=_navigationBarTitleView;
 @property(retain, nonatomic) CKCloudKitSyncProgressViewController *syncProgressViewController; // @synthesize syncProgressViewController=_syncProgressViewController;
 @property(retain, nonatomic) NSIndexPath *previouslySelectedIndexPath; // @synthesize previouslySelectedIndexPath=_previouslySelectedIndexPath;
 @property(nonatomic) __weak CKMessagesController *messagesController; // @synthesize messagesController=_messagesController;
@@ -161,11 +165,12 @@
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
 - (long long)preferredStatusBarStyle;
 - (void)optionsButtonTapped:(id)arg1;
+- (void)showMultiplePhoneNumbersAlertForNicknames;
+- (void)showAccountMismatachAlertForNicknames;
 - (void)composeButtonClicked:(id)arg1;
 - (void)_endHoldingUpdatesForBatchEditing:(BOOL)arg1;
 - (void)_updateToolbarItems;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)_configureBarButton:(id)arg1;
 - (id)inputAccessoryView;
 - (void)_getRotationContentSettings:(CDStruct_86ec5795 *)arg1;
 - (unsigned long long)supportedInterfaceOrientations;
@@ -198,6 +203,7 @@
 - (void)_updateNonPlaceholderConverationLists;
 - (void)_updateFilteredConversationLists;
 - (void)_updateConversationFilteredFlagsAndReportSpam;
+- (BOOL)shouldCleanupFilter;
 - (void)updateNoMessagesDialog;
 - (void)updateMarginWidth;
 - (void)_updateConversationListNeedsResort:(BOOL)arg1;
@@ -215,6 +221,7 @@
 - (void)conversationWillBeMarkedRead:(id)arg1;
 - (void)updateConversationSelection;
 - (void)doneButtonTapped:(id)arg1;
+- (void)updateTitleViews:(BOOL)arg1;
 - (void)updateNavigationItems;
 - (BOOL)_shouldKeepSelection;
 - (void)_groupsChanged:(id)arg1;

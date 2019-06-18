@@ -9,17 +9,16 @@
 @interface VCPCNNBlurAnalyzer : VCPImageAnalyzer
 {
     BOOL _sdof;
-    float _contrast;
 }
 
 + (id)analyzer;
-- (int)computeCNNBasedSharpness:(struct __CVBuffer *)arg1 sharpnessScore:(float *)arg2 textureScore:(float *)arg3 cancel:(CDUnknownBlockType)arg4;
-- (float)calculateScoreFromNetworkOutput:(float *)arg1 outChannel:(int)arg2 outHeight:(int)arg3 outWidth:(int)arg4 textureness:(char *)arg5 imgWidth:(int)arg6;
+@property BOOL sdof; // @synthesize sdof=_sdof;
+- (int)computeCNNBasedSharpness:(struct __CVBuffer *)arg1 sharpnessScore:(float *)arg2 textureScore:(float *)arg3 contrast:(float)arg4 cancel:(CDUnknownBlockType)arg5;
+- (float)calculateScoreFromNetworkOutput:(float *)arg1 outChannel:(int)arg2 outHeight:(int)arg3 outWidth:(int)arg4 textureness:(char *)arg5 contrast:(float)arg6 imgWidth:(int)arg7;
 - (int)initInputFromCVPixelBuffer:(struct __CVBuffer *)arg1 cnnInputHeight:(int)arg2 cnnInputWidth:(int)arg3 rect:(struct CGRect *)arg4 input:(float *)arg5;
 - (int)computeSharpnessScore:(float *)arg1 textureness:(char *)arg2 contrast:(float)arg3 imgWidth:(int)arg4 cancel:(CDUnknownBlockType)arg5;
 - (float *)getInputBuffer:(int)arg1 srcWidth:(int)arg2 cnnInputHeight:(int *)arg3 cnnInputWidth:(int *)arg4;
 - (int)initModel:(int)arg1 srcWidth:(int)arg2;
-- (id)initWithParameters:(BOOL)arg1 contrast:(float)arg2;
 
 @end
 

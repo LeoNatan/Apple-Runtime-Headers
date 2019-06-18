@@ -10,9 +10,11 @@
 
 @interface ISiOSAppRecipe : NSObject <ISCompositorRecipe>
 {
+    BOOL _shouldDrawBorder;
     unsigned long long _options;
 }
 
+@property BOOL shouldDrawBorder; // @synthesize shouldDrawBorder=_shouldDrawBorder;
 @property(nonatomic) unsigned long long options; // @synthesize options=_options;
 @property BOOL shouldApplyMask;
 - (id)layerTreeForSize:(struct CGSize)arg1 scale:(double)arg2;

@@ -27,7 +27,6 @@
 
 + (id)ratingAsAttributedString:(double)arg1 baseFont:(id)arg2 style:(long long)arg3 theme:(id)arg4;
 + (id)ratingShortAsAttributedString:(double)arg1 baseFont:(id)arg2 theme:(id)arg3;
-+ (id)ratingShortForCarPlayAsAttributedString:(double)arg1 baseFont:(id)arg2 isFocused:(BOOL)arg3;
 + (id)colorForRating:(double)arg1;
 @property(retain, nonatomic) NSImage *emptyStarHighlightedImage; // @synthesize emptyStarHighlightedImage=_emptyStarHighlightedImage;
 @property(retain, nonatomic) NSImage *halfStarHighlightedImage; // @synthesize halfStarHighlightedImage=_halfStarHighlightedImage;

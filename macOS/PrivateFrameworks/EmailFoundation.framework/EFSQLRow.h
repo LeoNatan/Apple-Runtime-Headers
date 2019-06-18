@@ -24,7 +24,6 @@
 @property(readonly, nonatomic) struct sqlite3_stmt *statement; // @synthesize statement=_statement;
 - (void).cxx_destruct;
 - (id)_queryString;
-- (void)_initializeAllNamedColumns;
 - (id)debugDescription;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)columnNames;

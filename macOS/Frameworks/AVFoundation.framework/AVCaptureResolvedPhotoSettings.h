@@ -21,6 +21,7 @@
 @property(readonly, getter=isDualCameraFusionEnabled) BOOL dualCameraFusionEnabled;
 @property(readonly, getter=isRedEyeReductionEnabled) BOOL redEyeReductionEnabled;
 @property(readonly, getter=isFlashEnabled) BOOL flashEnabled;
+- (CDStruct_79c71658)dimensionsForSemanticSegmentationMatteOfType:(id)arg1;
 @property(readonly) CDStruct_79c71658 portraitEffectsMatteDimensions;
 @property(readonly) CDStruct_79c71658 livePhotoMovieDimensions;
 @property(readonly) CDStruct_79c71658 rawPhotoDimensions;

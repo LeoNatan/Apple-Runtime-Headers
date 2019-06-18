@@ -13,6 +13,7 @@
     // Error parsing type: , name: delegate
     // Error parsing type: , name: serverContext
     // Error parsing type: , name: lastActiveTimestamp
+    // Error parsing type: , name: networkInitializationCompleted
 }
 
 @end

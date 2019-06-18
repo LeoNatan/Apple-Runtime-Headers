@@ -68,7 +68,7 @@
 - (void)setAnimating:(BOOL)arg1;
 - (struct CGImage *)imageRef;
 - (void)setCGImageRef:(struct CGImage *)arg1;
-@property(nonatomic) int drawMode;
+@property(nonatomic) unsigned int drawMode;
 - (void)_drawImageEffectsForImage:(id)arg1 inRect:(struct CGRect)arg2 suppressColor:(BOOL)arg3;
 - (BOOL)_getDrawModeCompositeOperation:(int *)arg1 whiteComponent:(double *)arg2 drawingAlpha:(double *)arg3;
 - (BOOL)_needsImageEffectsForImage:(id)arg1 suppressColorizing:(BOOL)arg2;
@@ -122,6 +122,7 @@
 - (void)setFrame:(struct CGRect)arg1;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setContentMode:(long long)arg1;
+@property(readonly, nonatomic) BOOL _hasContentGravity;
 @property(readonly, nonatomic) BOOL _layoutShouldFlipHorizontalOrientations;
 @property(readonly, nonatomic) double preferredContentScaleFactor;
 - (void)setContentScaleFactor:(double)arg1;

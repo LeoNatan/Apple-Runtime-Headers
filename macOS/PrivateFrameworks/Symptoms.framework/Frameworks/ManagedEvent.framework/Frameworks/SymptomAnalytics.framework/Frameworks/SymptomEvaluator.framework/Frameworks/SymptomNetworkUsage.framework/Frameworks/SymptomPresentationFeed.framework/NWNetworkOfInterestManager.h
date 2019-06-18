@@ -15,8 +15,6 @@
     NSMutableSet *registryNOI;
     int notifyToken;
     BOOL closing;
-    BOOL hasPrimaryInterface;
-    BOOL activeDaemonRegardlessPrimaryInterface;
     id _delegate;
     NSXPCConnection *_connection;
     id <ServiceInterface> _service;

@@ -31,6 +31,7 @@
 - (id)createTempRowIdTableForRecordsSourcedFromBundleId:(id)arg1 txnWitness:(id)arg2;
 - (id)createTempRowIdTableForRecordsSourcedFromBundleId:(id)arg1 groupIds:(id)arg2 txnWitness:(id)arg3;
 - (id)createTempRowIdTableForRecordsSourcedFromBundleId:(id)arg1 documentIds:(id)arg2 txnWitness:(id)arg3;
+- (void)deleteAllRemotelyGeneratedRecordsMissingInDuetWithTxnWitness:(id)arg1;
 - (BOOL)deleteAllRecordsSourcedFromBundleId:(id)arg1 groupId:(id)arg2 olderThanDate:(id)arg3 algorithm:(unsigned int)arg4 txnWitness:(id)arg5 atLeastOneRecordClusterRemoved:(char *)arg6 deletedCount:(unsigned long long *)arg7 error:(id *)arg8;
 - (BOOL)deleteAllRecordsSourcedFromBundleId:(id)arg1 groupId:(id)arg2 olderThanDate:(id)arg3 txnWitness:(id)arg4 atLeastOneRecordClusterRemoved:(char *)arg5 deletedCount:(unsigned long long *)arg6 error:(id *)arg7;
 - (BOOL)deleteAllRecordsSourcedFromBundleId:(id)arg1 algorithm:(unsigned int)arg2 txnWitness:(id)arg3 atLeastOneRecordClusterRemoved:(char *)arg4 deletedCount:(unsigned long long *)arg5 error:(id *)arg6;
@@ -52,6 +53,7 @@
 - (void)truncateRecordsByDroppingOldestMakingRoomForCount:(unsigned int)arg1 txnWitness:(id)arg2;
 - (BOOL)clearWithDatabase:(id)arg1 client:(unsigned char)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4 clearExternalTableReferences:(CDUnknownBlockType)arg5;
 - (id)uuidForStatement:(id)arg1 referencingBlobInColumn:(int)arg2;
+- (id)blobFromUUID:(id)arg1;
 - (id)initWithName:(id)arg1 table:(id)arg2 clusterIdentifierColumn:(id)arg3 maxRecords:(unsigned int)arg4 duetStorage:(id)arg5 duetStream:(id)arg6;
 - (id)init;
 

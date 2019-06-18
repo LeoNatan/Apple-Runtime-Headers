@@ -13,20 +13,22 @@
 @interface VCPBWorkflow : PBCodable <NSCopying>
 {
     double _creationDate;
-    unsigned long long _lastMigratedClientVersion;
-    unsigned long long _minimumClientVersion;
+    unsigned long long _integerLastMigratedClientVersion;
+    unsigned long long _integerMinimumClientVersion;
     double _modificationDate;
     NSData *_actionsData;
     unsigned int _iconColor;
     unsigned int _iconGlyph;
     NSData *_importQuestionsData;
     NSMutableArray *_inputClasses;
+    NSString *_lastMigratedClientVersion;
+    NSString *_minimumClientVersion;
     NSString *_name;
     NSMutableArray *_workflowTypes;
     struct {
         unsigned int creationDate:1;
-        unsigned int lastMigratedClientVersion:1;
-        unsigned int minimumClientVersion:1;
+        unsigned int integerLastMigratedClientVersion:1;
+        unsigned int integerMinimumClientVersion:1;
         unsigned int modificationDate:1;
         unsigned int iconColor:1;
         unsigned int iconGlyph:1;
@@ -35,8 +37,10 @@
 
 + (Class)inputClassesType;
 + (Class)workflowTypesType;
-@property(nonatomic) unsigned long long lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
-@property(nonatomic) unsigned long long minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
+@property(retain, nonatomic) NSString *lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
+@property(retain, nonatomic) NSString *minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
+@property(nonatomic) unsigned long long integerLastMigratedClientVersion; // @synthesize integerLastMigratedClientVersion=_integerLastMigratedClientVersion;
+@property(nonatomic) unsigned long long integerMinimumClientVersion; // @synthesize integerMinimumClientVersion=_integerMinimumClientVersion;
 @property(retain, nonatomic) NSData *importQuestionsData; // @synthesize importQuestionsData=_importQuestionsData;
 @property(retain, nonatomic) NSData *actionsData; // @synthesize actionsData=_actionsData;
 @property(retain, nonatomic) NSMutableArray *inputClasses; // @synthesize inputClasses=_inputClasses;
@@ -56,8 +60,10 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(nonatomic) BOOL hasLastMigratedClientVersion;
-@property(nonatomic) BOOL hasMinimumClientVersion;
+@property(readonly, nonatomic) BOOL hasLastMigratedClientVersion;
+@property(readonly, nonatomic) BOOL hasMinimumClientVersion;
+@property(nonatomic) BOOL hasIntegerLastMigratedClientVersion;
+@property(nonatomic) BOOL hasIntegerMinimumClientVersion;
 @property(readonly, nonatomic) BOOL hasImportQuestionsData;
 @property(readonly, nonatomic) BOOL hasActionsData;
 - (id)inputClassesAtIndex:(unsigned long long)arg1;

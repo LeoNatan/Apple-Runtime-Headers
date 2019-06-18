@@ -4,12 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <AudioResourceArbitration/NSObject-Protocol.h>
 #import <AudioResourceArbitration/aura_Object-Protocol.h>
 
 @protocol aura_SelectorControl;
 
-@protocol aura_Clock <NSObject, aura_Object>
+@protocol aura_Clock <aura_Object>
 @property(readonly, nonatomic) id <aura_SelectorControl> clockSourceControl;
 @property(readonly, nonatomic) unsigned int clockDomain;
 @property(readonly, nonatomic) optional_cd8a9b08 modelUID;

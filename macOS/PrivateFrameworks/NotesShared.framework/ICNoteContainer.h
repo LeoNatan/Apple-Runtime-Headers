@@ -34,6 +34,7 @@
 @property(readonly, nonatomic) BOOL isTrashFolder;
 - (BOOL)isModernCustomFolder;
 @property(readonly, nonatomic) BOOL supportsEditingNotes;
+@property(readonly, nonatomic) NSString *containerIdentifier;
 - (id)accountName;
 - (id)cloudAccount;
 @property(readonly, nonatomic) ICAccount *noteContainerAccount;

@@ -11,6 +11,7 @@
 
 @class AudioDSPManager, AudioHistoryObject, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AudioDSPManagerProxy : NSObject <AudioHistoryObjectDelegate, dspd_DSPDelegate>
 {
     AudioDSPManager *_audioDSPManager;
@@ -29,6 +30,7 @@
 - (expected_60ac6007)virtualMasterVolume:(unsigned long long)arg1;
 - (struct error_code)setVirtualMasterVolume:(unsigned long long)arg1 scalarVolume:(float)arg2;
 - (expected_336b2855)volumeCapabilities:(unsigned long long)arg1;
+- (struct error_code)setGraphVolumeDelegate:(id)arg1;
 - (struct error_code)setVolumeNotificationDelegate:(id)arg1;
 - (struct error_code)setHardwareVolumeDelegate:(id)arg1;
 @property(readonly, nonatomic) vector_df89e1f1 scalarVolumeRecords;
@@ -60,8 +62,8 @@
 - (expected_af0f637c)simulateConfigurationChanges:(const vector_d47d98e2 *)arg1;
 - (expected_af0f637c)simulateConfigurationChange:(id)arg1;
 - (expected_025c1a52)configurationChangeComplete:(int)arg1 dspMutation:(function_71b6729b)arg2;
-- (expected_a78876cb)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
-- (expected_a78876cb)adaptToConfigurationChange:(id)arg1;
+- (expected_6c7599df)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
+- (expected_6c7599df)adaptToConfigurationChange:(id)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChanges:(const vector_d47d98e2 *)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChange:(id)arg1;
 - (id)supportedPublicStreamFormatRequest;

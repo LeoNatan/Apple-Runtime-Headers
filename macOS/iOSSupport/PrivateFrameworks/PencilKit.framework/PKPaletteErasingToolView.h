@@ -18,6 +18,7 @@
 
 @property(nonatomic, getter=isBitmapEraser) BOOL bitmapEraser; // @synthesize bitmapEraser=_bitmapEraser;
 - (void).cxx_destruct;
+- (void)_updateAttributesViewController;
 - (id)attributeViewController;
 - (void)toggleErasingBehavior;
 - (id)toolIdentifier;

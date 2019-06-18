@@ -13,6 +13,7 @@
 
 @interface WFActionDrawerSiriSuggestionsTableViewCell : UITableViewCell <WFActionDrawerSiriSuggestionsCollectionViewManagerDelegate>
 {
+    BOOL _configuredForDailyRoutines;
     WFActionDrawerSection *_section;
     id <WFActionDrawerSiriSuggestionsTableViewCellDelegate> _delegate;
     UIViewController *_containingViewController;
@@ -34,13 +35,13 @@
 @property(nonatomic) __weak UIButton *infoButton; // @synthesize infoButton=_infoButton;
 @property(nonatomic) __weak UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) __weak UIImageView *iconImageView; // @synthesize iconImageView=_iconImageView;
+@property(nonatomic) BOOL configuredForDailyRoutines; // @synthesize configuredForDailyRoutines=_configuredForDailyRoutines;
 @property(nonatomic) __weak UIViewController *containingViewController; // @synthesize containingViewController=_containingViewController;
 @property(nonatomic) __weak id <WFActionDrawerSiriSuggestionsTableViewCellDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WFActionDrawerSection *section; // @synthesize section=_section;
 - (void).cxx_destruct;
 - (void)infoButtonPressed;
 - (void)siriSuggestionsCollectionViewManager:(id)arg1 didSelectAction:(id)arg2;
-- (void)setInfoButtonHidden:(BOOL)arg1;
 - (void)configureLoading;
 - (void)configureWithActionDrawerSection:(id)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;

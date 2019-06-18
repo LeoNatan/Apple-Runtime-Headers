@@ -6,14 +6,14 @@
 
 #import <AssistantServices/NSObject-Protocol.h>
 
-@class AFAudioPlaybackRequest, AFSpeechInterpretation, AFXPCWrapper, AceObject, INImage, NSArray, NSDictionary, NSError, NSString, NSURL, SASSpeechPartialResult, SASSpeechRecognized;
+@class AFAudioPlaybackRequest, AFSpeechInterpretation, AFXPCWrapper, AceObject, INImage, INIntent, NSArray, NSDictionary, NSError, NSString, NSURL, SASSpeechPartialResult, SASSpeechRecognized;
 @protocol SAAceCommand;
 
 @protocol AFClientServiceDelegate <NSObject>
 - (oneway void)audioSessionDidBecomeActive:(BOOL)arg1;
 - (oneway void)audioSessionWillBecomeActive:(BOOL)arg1;
 - (oneway void)startPlaybackDidFail:(long long)arg1;
-- (oneway void)willProcessStartPlayback:(long long)arg1 completion:(void (^)(BOOL))arg2;
+- (oneway void)willProcessStartPlayback:(long long)arg1 intent:(INIntent *)arg2 completion:(void (^)(BOOL, BOOL))arg3;
 - (oneway void)audioPlaybackRequestDidStop:(AFAudioPlaybackRequest *)arg1 error:(NSError *)arg2;
 - (oneway void)audioPlaybackRequestDidNotStart:(AFAudioPlaybackRequest *)arg1 error:(NSError *)arg2;
 - (oneway void)audioPlaybackRequestDidStart:(AFAudioPlaybackRequest *)arg1;

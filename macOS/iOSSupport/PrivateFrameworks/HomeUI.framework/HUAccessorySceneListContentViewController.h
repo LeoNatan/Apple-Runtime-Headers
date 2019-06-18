@@ -18,13 +18,11 @@
     unsigned long long _contentSource;
     unsigned long long _selectionType;
     HFItem<HFServiceLikeItem> *_serviceLikeItem;
-    id <HUAccessorySceneListContentViewControllerDelegate> _delegate;
 }
 
 + (id)computeNumberOfItemsToDisplayForContentSource:(unsigned long long)arg1 serviceLikeItem:(id)arg2 home:(id)arg3;
 @property(nonatomic) BOOL persistAddedSuggestions; // @synthesize persistAddedSuggestions=_persistAddedSuggestions;
 @property(nonatomic) BOOL includeTopMargin; // @synthesize includeTopMargin=_includeTopMargin;
-@property(nonatomic) __weak id <HUAccessorySceneListContentViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, copy, nonatomic) HFItem<HFServiceLikeItem> *serviceLikeItem; // @synthesize serviceLikeItem=_serviceLikeItem;
 @property(readonly, nonatomic) unsigned long long selectionType; // @synthesize selectionType=_selectionType;
 @property(readonly, nonatomic) unsigned long long contentSource; // @synthesize contentSource=_contentSource;
@@ -43,6 +41,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id <HUAccessorySceneListContentViewControllerDelegate> delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) HUAccessorySceneListContentItemManager *itemManager; // @dynamic itemManager;

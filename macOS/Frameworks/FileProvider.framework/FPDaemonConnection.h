@@ -16,6 +16,7 @@
     NSMutableDictionary *_getAttributeConnections;
     NSObject<OS_dispatch_source> *_getAttributeConnectionsIdleCleanupTimer;
     unsigned int _user;
+    NSXPCConnection<FPDDaemon> *_connection;
 }
 
 + (id)newXPCConnection;
@@ -24,9 +25,9 @@
 + (id)remoteObjectProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 + (id)sharedConnection;
 @property(nonatomic) unsigned int user; // @synthesize user=_user;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *connectionQueue; // @synthesize connectionQueue=_connectionQueue;
-@property(retain, nonatomic) NSXPCConnection<FPDDaemon> *connectionQueueConnection; // @synthesize connectionQueueConnection=_connectionQueueConnection;
 - (void).cxx_destruct;
+- (void)restoreUserURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)backUpUserURL:(id)arg1 outputUserURL:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getURLForContainerWithItemID:(id)arg1 inDataScopeDomainWithIdentifier:(id)arg2 documentsScopeDomainIdentifier:(id)arg3 documentsFolderItemIdentifier:(id)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)_test_callFileProviderManagerAPIs:(CDUnknownBlockType)arg1;
 - (void)_test_retrieveItemWithName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -55,7 +56,7 @@
 - (void)extendSandboxAndCreatePlaceholderForFileURL:(id)arg1 fromProviderID:(id)arg2 toConsumerID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)extendSandboxForFileURL:(id)arg1 fromProviderID:(id)arg2 toConsumerID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)wakeUpForURL:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-@property(readonly, nonatomic) NSXPCConnection<FPDDaemon> *connection;
+@property(readonly, nonatomic) NSXPCConnection<FPDDaemon> *connection; // @synthesize connection=_connection;
 - (id)initWithUser:(unsigned int)arg1;
 
 @end

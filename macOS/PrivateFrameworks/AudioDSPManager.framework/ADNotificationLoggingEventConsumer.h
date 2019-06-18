@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface ADNotificationLoggingEventConsumer : NSObject <ADNotificationHandler>
 {
     NSString *_topic;

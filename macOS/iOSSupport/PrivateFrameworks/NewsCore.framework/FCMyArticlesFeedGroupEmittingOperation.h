@@ -23,6 +23,7 @@
 - (id)_sortClusteredHeadlinesForDisplay:(id)arg1 withAdditionalData:(id)arg2 scoresByArticleID:(id)arg3 topicsByID:(id)arg4 translationProvider:(id)arg5;
 - (id)_joinedFeedTransformation;
 - (id)_nonEditorialFeedTransformationWithFeedContext:(id)arg1 feedItemScores:(id)arg2 showStoriesOnlyFromFavorites:(BOOL)arg3;
+- (void)_performOperation;
 - (void)performOperation;
 - (id)interleaveHeadlines:(id)arg1 withPublisherDiversificationPenalty:(double)arg2;
 

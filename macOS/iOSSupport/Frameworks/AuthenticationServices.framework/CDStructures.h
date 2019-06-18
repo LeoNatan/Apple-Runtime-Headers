@@ -25,3 +25,15 @@ struct CGSize {
     double _field2;
 };
 
+struct UIColor {
+    Class _field1;
+};
+
+struct UIFont {
+    Class _field1;
+};
+
+struct UILabel {
+    Class _field1;
+};
+

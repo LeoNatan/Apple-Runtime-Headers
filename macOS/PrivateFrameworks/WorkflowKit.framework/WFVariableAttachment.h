@@ -9,7 +9,7 @@
 #import <WorkflowKit/NSCopying-Protocol.h>
 #import <WorkflowKit/WFVariableDelegate-Protocol.h>
 
-@class NSImage, WFVariable;
+@class WFVariable;
 
 @interface WFVariableAttachment : NSTextAttachment <WFVariableDelegate, NSCopying>
 {
@@ -17,17 +17,14 @@
     BOOL _selected;
     BOOL _highlighted;
     WFVariable *_variable;
-    NSImage *_cachedImage;
 }
 
-@property(retain, nonatomic) NSImage *cachedImage; // @synthesize cachedImage=_cachedImage;
 @property(nonatomic, getter=isHighlighted) BOOL highlighted; // @synthesize highlighted=_highlighted;
 @property(nonatomic, getter=isSelected) BOOL selected; // @synthesize selected=_selected;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
 @property(readonly, nonatomic) WFVariable *variable; // @synthesize variable=_variable;
 - (void).cxx_destruct;
 - (id)accessibilityLabel;
-- (unsigned long long)controlState;
 - (void)variableDidChange:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)description;

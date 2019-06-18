@@ -6,7 +6,7 @@
 
 #import <CoreBluetooth/CBManager.h>
 
-@class NSCondition, NSMapTable, NSMutableArray;
+@class NSMapTable, NSMutableArray;
 @protocol CBCentralManagerDelegate;
 
 @interface CBCentralManager : CBManager
@@ -27,19 +27,16 @@
         unsigned int didReceiveDataFromPeripheral:1;
         unsigned int didDiscoverMultiplePeripherals:1;
         unsigned int didUpdateANCSAuthorizationForPeripheral:1;
+        unsigned int canSendDataToPeripheral:1;
     } _delegateFlags;
     BOOL _isScanning;
-    BOOL _TCCDone;
     id <CBCentralManagerDelegate> _delegate;
     NSMapTable *_peripherals;
-    NSCondition *_TCCLock;
     NSMutableArray *_discoveredPeripherals;
 }
 
 + (BOOL)supportsFeatures:(unsigned long long)arg1;
 @property(retain) NSMutableArray *discoveredPeripherals; // @synthesize discoveredPeripherals=_discoveredPeripherals;
-@property(nonatomic) BOOL TCCDone; // @synthesize TCCDone=_TCCDone;
-@property(retain, nonatomic) NSCondition *TCCLock; // @synthesize TCCLock=_TCCLock;
 @property(readonly, retain, nonatomic) NSMapTable *peripherals; // @synthesize peripherals=_peripherals;
 @property(nonatomic) BOOL isScanning; // @synthesize isScanning=_isScanning;
 @property(nonatomic) __weak id <CBCentralManagerDelegate> delegate; // @synthesize delegate=_delegate;
@@ -61,6 +58,7 @@
 - (void)handlePeripheralConnectionStateUpdated:(id)arg1;
 - (void)handleApplicationConnectionEventDidOccur:(id)arg1;
 - (void)handlePeripheralDisconnectionCompleted:(id)arg1;
+- (void)handlePeripheralCLReady:(id)arg1;
 - (void)handlePeripheralConnectionCompleted:(id)arg1;
 - (void)handlePeripheralDiscovered:(id)arg1;
 - (void)handleRestoringState:(id)arg1;

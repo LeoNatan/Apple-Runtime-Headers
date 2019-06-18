@@ -143,7 +143,7 @@
 - (void)_setListeningForCaptionsAppearanceSettingsChanged:(BOOL)arg1;
 - (void)_setNeedsPersistedLikedStateUpdate;
 - (long long)_persistedLikedState;
-- (void)_handleUpdatedLikedState:(long long)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_handleUpdatedLikedState:(long long)arg1 forUserIdentity:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (double)_expectedStopTimeWithPlaybackInfo:(id)arg1;
 - (double)_expectedStartTimeWithPlaybackInfo:(id)arg1;
 - (void)_applyLoudnessInfo;
@@ -221,6 +221,7 @@
 @property(readonly, nonatomic) BOOL supportsRewindAndFastForward15Seconds;
 @property(readonly, nonatomic) NSString *storeItemID;
 - (void)setSelectedAlternateTextTrack:(id)arg1;
+- (void)setLikedState:(long long)arg1 forUserIdentity:(id)arg2;
 @property(nonatomic) long long likedState;
 @property(nonatomic) BOOL limitReadAhead;
 - (void)setOverrideDuration:(double)arg1;

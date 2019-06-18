@@ -20,10 +20,11 @@
 - (unsigned long long)writingOptionsForType:(id)arg1 pasteboard:(id)arg2;
 - (id)writableTypesForPasteboard:(id)arg1;
 - (BOOL)fetchThumbnailImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceInfo:(id)arg3 cache:(id)arg4 cacheKey:(id)arg5 processingBlock:(CDUnknownBlockType)arg6 completionBlock:(CDUnknownBlockType)arg7 fallbackBlock:(CDUnknownBlockType)arg8 aboutToLoadHandler:(CDUnknownBlockType)arg9;
-- (BOOL)thumbnailImage:(struct NSImage **)arg1 minSize:(struct CGSize)arg2 scale:(double)arg3 appearanceType:(unsigned long long)arg4 imageScaling:(unsigned long long *)arg5 showAsFileIcon:(char *)arg6 isMovie:(char *)arg7 movieDuration:(CDStruct_1b6d18a9 *)arg8;
+- (BOOL)thumbnailImage:(struct NSImage **)arg1 minSize:(struct CGSize)arg2 scale:(double)arg3 appearanceType:(unsigned long long)arg4 requireAppearance:(BOOL)arg5 imageScaling:(unsigned long long *)arg6 showAsFileIcon:(char *)arg7 isMovie:(char *)arg8 movieDuration:(CDStruct_1b6d18a9 *)arg9;
 - (BOOL)thumbnailImage:(struct NSImage **)arg1 minSize:(struct CGSize)arg2 scale:(double)arg3 imageScaling:(unsigned long long *)arg4 showAsFileIcon:(char *)arg5 isMovie:(char *)arg6 movieDuration:(CDStruct_1b6d18a9 *)arg7;
 - (id)updateAttachmentPreviewImageWithImage:(struct NSImage *)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 scaleWhenDrawing:(BOOL)arg4 metadata:(id)arg5 sendNotification:(BOOL)arg6;
 - (id)updateAttachmentPreviewImageWithImage:(struct NSImage *)arg1 scale:(double)arg2 scaleWhenDrawing:(BOOL)arg3 metadata:(id)arg4 sendNotification:(BOOL)arg5;
+- (id)deviceInfosWithoutPreviewImagesFromDeviceInfos:(id)arg1;
 @property(readonly, nonatomic) NSString *movieDurationForSpeaking;
 @property(readonly, nonatomic) NSString *modificationDateForSpeaking;
 - (id)activityItems;

@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ActivityRingsUI/ARUIRenderState.h>
+#import <ActivityRingsUI/ARUIPrecompiledRenderState.h>
 
 __attribute__((visibility("hidden")))
-@interface ARUISpriteRenderState : ARUIRenderState
+@interface ARUISpriteRenderState : ARUIPrecompiledRenderState
 {
 }
 
 - (BOOL)shouldRunStateForIcon:(id)arg1;
+- (id)name;
 - (id)renderPipelineDescriptorFromLibrary:(id)arg1;
 
 @end

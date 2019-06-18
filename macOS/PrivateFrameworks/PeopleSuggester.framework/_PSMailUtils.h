@@ -10,8 +10,8 @@
 {
 }
 
-+ (id)recipientsForRecipientString:(id)arg1 usingContactStore:(id)arg2;
-+ (id)recipientsForMailLabel:(id)arg1 usingContactStore:(id)arg2;
++ (id)recipientsForRecipientString:(id)arg1 contactResolver:(id)arg2;
++ (id)recipientsForMailLabel:(id)arg1 contactResolver:(id)arg2;
 
 @end
 

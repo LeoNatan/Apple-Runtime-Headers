@@ -15,6 +15,7 @@
 - (id)_init;
 
 // Remaining properties
+@property(readonly, nonatomic) BOOL defaultShellShouldTerminateClientsOnDisconnect; // @dynamic defaultShellShouldTerminateClientsOnDisconnect;
 @property(readonly, nonatomic) BOOL disableXPCServicesEndpointHack; // @dynamic disableXPCServicesEndpointHack;
 
 @end

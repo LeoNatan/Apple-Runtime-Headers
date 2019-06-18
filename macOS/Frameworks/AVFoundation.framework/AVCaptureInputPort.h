@@ -13,7 +13,7 @@
     AVCaptureInputPortInternal *_internal;
 }
 
-+ (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(BOOL)arg4;
++ (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(BOOL)arg4 sourceDeviceType:(id)arg5 sourceDevicePosition:(long long)arg6;
 + (void)initialize;
 - (void)detachFromAudioMixerNode;
 - (void)attachToAudioMixerNode:(int)arg1 element:(unsigned int)arg2 scope:(unsigned int)arg3 isReadOnly:(BOOL)arg4;
@@ -21,6 +21,8 @@
 - (void)setGraph:(struct OpaqueCMIOGraph *)arg1 node:(int)arg2 element:(unsigned int)arg3 scope:(unsigned int)arg4;
 - (void)_removeFormatDescriptionPropertyListenerForGraph:(struct OpaqueCMIOGraph *)arg1 node:(int)arg2 element:(unsigned int)arg3 scope:(unsigned int)arg4 callbackContextToken:(void *)arg5;
 - (id)valueForUndefinedKey:(id)arg1;
+@property(readonly, nonatomic) long long sourceDevicePosition;
+@property(readonly, nonatomic) NSString *sourceDeviceType;
 - (void)_setClock:(struct OpaqueCMClock *)arg1;
 @property(readonly, nonatomic) struct OpaqueCMClock *clock;
 @property(nonatomic, getter=isEnabled) BOOL enabled;
@@ -30,7 +32,7 @@
 @property(readonly, nonatomic) AVCaptureInput *input;
 - (id)description;
 - (void)dealloc;
-- (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(BOOL)arg4;
+- (id)initWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription *)arg3 enabled:(BOOL)arg4 sourceDeviceType:(id)arg5 sourceDevicePosition:(long long)arg6;
 
 @end
 

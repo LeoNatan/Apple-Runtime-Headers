@@ -11,6 +11,7 @@
 }
 
 + (id)eligibleShareSheetTargets;
++ (id)mobileMessagesComposeBundleId;
 + (id)shareSheetTargetBundleIdMail;
 + (id)shareSheetTargetBundleIdMessages;
 + (id)mobilePhoneOrFacetimeBundleId;

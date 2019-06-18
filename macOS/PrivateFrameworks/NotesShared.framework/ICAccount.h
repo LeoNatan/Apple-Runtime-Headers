@@ -123,6 +123,7 @@
 - (id)standardFolderIdentifierWithPrefix:(id)arg1;
 - (id)trashFolderIdentifier;
 - (id)defaultFolderIdentifier;
+- (id)containerIdentifier;
 - (void)createTrashFolder;
 - (void)createDefaultFolder;
 - (void)createStandardFolders;

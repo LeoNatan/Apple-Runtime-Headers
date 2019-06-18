@@ -47,6 +47,7 @@
 @property(readonly) BOOL canBoostBackgroundOperations;
 @property(readonly) BOOL canBoostOperations;
 @property(readonly) BOOL isOnCellularOrUnknown;
+@property(readonly) BOOL isNetworkConstrained;
 @property(readonly) BOOL isNetworkConnected;
 - (void)getStatusWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly) unsigned long long freeDiskSpaceSize;

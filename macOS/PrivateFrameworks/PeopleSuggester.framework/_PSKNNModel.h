@@ -6,12 +6,30 @@
 
 #import <objc/NSObject.h>
 
+@class NSArray, _CDInteractionCache, _CDInteractionStore, _PSContactResolver;
+@protocol _DKKnowledgeQuerying;
+
 @interface _PSKNNModel : NSObject
 {
     unsigned long long _k;
+    id <_DKKnowledgeQuerying> _knowledgeStore;
+    _CDInteractionStore *_interactionStore;
+    _PSContactResolver *_contactResolver;
+    NSArray *_filterBundleIds;
+    _CDInteractionCache *_messageInteractionCache;
+    _CDInteractionCache *_shareInteractionCache;
 }
 
-@property(nonatomic) unsigned long long k; // @synthesize k=_k;
+@property(retain, nonatomic) _CDInteractionCache *shareInteractionCache; // @synthesize shareInteractionCache=_shareInteractionCache;
+@property(retain, nonatomic) _CDInteractionCache *messageInteractionCache; // @synthesize messageInteractionCache=_messageInteractionCache;
+@property(readonly, nonatomic) NSArray *filterBundleIds; // @synthesize filterBundleIds=_filterBundleIds;
+@property(readonly, nonatomic) _PSContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
+@property(readonly, nonatomic) _CDInteractionStore *interactionStore; // @synthesize interactionStore=_interactionStore;
+@property(readonly, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
+@property(readonly, nonatomic) unsigned long long k; // @synthesize k=_k;
+- (void).cxx_destruct;
+- (unsigned long long)indexToInsertNeighbor:(id)arg1 array:(id)arg2;
+- (id)neighborsFromTrainingData:(id)arg1 k:(unsigned long long)arg2 queryPoint:(id)arg3;
 - (id)sliceStart:(unsigned long long)arg1 end:(unsigned long long)arg2 ofArray:(id)arg3;
 - (id)featuresFromInteractionsSplitRecipients:(id)arg1;
 - (id)featuresFromInteractions:(id)arg1;
@@ -21,21 +39,22 @@
 - (id)mergedSuggestionsFromShares:(id)arg1 andInteractions:(id)arg2;
 - (id)featureVectorFromPredictionDate:(id)arg1 bundleId:(id)arg2;
 - (id)targetBundleIdsForFilterBundlesIds:(id)arg1;
+- (id)filterShareInteractions:(id)arg1 minimumOccurences:(unsigned long long)arg2;
 - (id)interactionLabelsForQueryResult:(id)arg1 queryPoint:(id)arg2 rankerType:(long long)arg3 frequencyOnly:(BOOL)arg4 contactsOnly:(BOOL)arg5;
-- (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 filterByBundleIds:(id)arg3 databaseDirectory:(id)arg4 knowledgeStore:(id)arg5;
-- (id)suggestUsingPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 filterByBundleIds:(id)arg3;
-- (id)rankedGlobalSuggestionsWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 contactsOnly:(BOOL)arg3 databaseDirectory:(id)arg4 interactions:(id)arg5;
+- (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2;
+- (id)rankedGlobalSuggestionsWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 contactsOnly:(BOOL)arg3 interactions:(id)arg4;
 - (id)normalizedStringFromString:(id)arg1;
-- (id)rankedNameSuggestionsWithPredictionContext:(id)arg1 forName:(id)arg2 databaseDirectory:(id)arg3;
-- (id)rankedMessagesZkwSuggestionsWithPredictionContext:(id)arg1 bundleId:(id)arg2 maxSuggestions:(unsigned long long)arg3 databaseDirectory:(id)arg4 frequencyOnly:(BOOL)arg5 interactions:(id)arg6;
-- (id)rankedZkwSuggestionsWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 databaseDirectory:(id)arg3;
+- (id)rankedNameSuggestionsWithPredictionContext:(id)arg1 forName:(id)arg2;
+- (id)rankedMessagesZkwSuggestionsWithPredictionContext:(id)arg1 bundleId:(id)arg2 maxSuggestions:(unsigned long long)arg3 frequencyOnly:(BOOL)arg4 interactions:(id)arg5;
+- (id)rankedZkwSuggestionsWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2;
 - (id)candidatePropertyFromCandidates:(id)arg1;
 - (id)indexesOfObjectsWithKey:(id)arg1 withValues:(id)arg2 inArray:(id)arg3;
 - (long long)suggestionExists:(id)arg1 withValue:(id)arg2 inArray:(id)arg3;
 - (id)filterSuggestionsFrom:(id)arg1 byFilteringOutSeedRecipients:(id)arg2;
-- (id)rankedMessagesAutocompleteSuggestionsWithPredictionContext:(id)arg1 bundleId:(id)arg2 candidates:(id)arg3 databaseDirectory:(id)arg4;
-- (id)rankedAutocompleteSuggestionsWithPredictionContext:(id)arg1 candidates:(id)arg2 databaseDirectory:(id)arg3;
-- (id)initWithK:(unsigned long long)arg1;
+- (id)rankedMessagesAutocompleteSuggestionsWithPredictionContext:(id)arg1 bundleId:(id)arg2 candidates:(id)arg3;
+- (id)rankedAutocompleteSuggestionsWithPredictionContext:(id)arg1 candidates:(id)arg2;
+- (void)populateInteractionCaches;
+- (id)initWithK:(unsigned long long)arg1 interactionStore:(id)arg2 filterByBundleIds:(id)arg3 knowledgeStore:(id)arg4 contactResolver:(id)arg5;
 
 @end
 

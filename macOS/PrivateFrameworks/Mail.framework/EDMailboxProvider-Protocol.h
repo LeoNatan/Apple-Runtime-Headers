@@ -6,12 +6,13 @@
 
 #import <Mail/EMMailboxTypeResolver-Protocol.h>
 
-@class EMObjectID, NSArray;
+@class EMMailbox, EMObjectID, NSArray;
 @protocol ECMailbox, EDMailboxProviderDelegate;
 
 @protocol EDMailboxProvider <EMMailboxTypeResolver>
 @property(nonatomic) __weak id <EDMailboxProviderDelegate> delegate;
 - (id <ECMailbox>)legacyMailboxForObjectID:(EMObjectID *)arg1;
+- (EMMailbox *)mailboxForObjectID:(EMObjectID *)arg1;
 - (void)fetchMailboxes;
 - (NSArray *)allMailboxes;
 @end

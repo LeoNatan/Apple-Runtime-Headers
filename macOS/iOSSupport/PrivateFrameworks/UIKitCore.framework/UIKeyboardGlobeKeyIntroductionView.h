@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (void)continueButtonTapped;
 - (long long)backdropStyleForRenderConfig:(id)arg1;
 - (void)layoutSubviews;
+- (id)iconImage;
 - (id)initWithFrame:(struct CGRect)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end

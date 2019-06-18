@@ -12,20 +12,20 @@ __attribute__((visibility("hidden")))
 @interface TestDriveMigrationBannerViewController : NSViewController
 {
     BOOL _isPreparedForPresentation;
-    NSButton *_keepButton;
-    NSButton *_discardButton;
+    NSButton *_importButton;
+    NSButton *_doNotImportButton;
     NSTextField *_descriptionField;
 }
 
 @property(nonatomic) __weak NSTextField *descriptionField; // @synthesize descriptionField=_descriptionField;
-@property(nonatomic) __weak NSButton *discardButton; // @synthesize discardButton=_discardButton;
-@property(nonatomic) __weak NSButton *keepButton; // @synthesize keepButton=_keepButton;
+@property(nonatomic) __weak NSButton *doNotImportButton; // @synthesize doNotImportButton=_doNotImportButton;
+@property(nonatomic) __weak NSButton *importButton; // @synthesize importButton=_importButton;
 - (void).cxx_destruct;
 - (void)_updateDescription;
 - (BOOL)prepareForPresentation;
 - (void)viewDidAppear;
-- (void)discardData:(id)arg1;
-- (void)keepData:(id)arg1;
+- (void)doNotImportData:(id)arg1;
+- (void)importData:(id)arg1;
 - (id)nibName;
 
 @end

@@ -20,6 +20,7 @@
     NSMutableArray *_participants;
     NSMutableArray *_potentialMatchs;
     int _publicAccess;
+    int _publisherModelType;
     CKDPProtectionInfo *_selfAddedPcs;
     CKDPShareIdentifier *_shareId;
     NSData *_shortTokenHash;
@@ -28,6 +29,7 @@
     BOOL _publisherModel;
     struct {
         unsigned int publicAccess:1;
+        unsigned int publisherModelType:1;
         unsigned int anonymousPublicAccess:1;
         unsigned int publisherModel:1;
     } _has;
@@ -59,6 +61,10 @@
 - (id)description;
 @property(readonly, nonatomic) BOOL hasOrigin;
 @property(readonly, nonatomic) BOOL hasShortTokenHash;
+- (int)StringAsPublisherModelType:(id)arg1;
+- (id)publisherModelTypeAsString:(int)arg1;
+@property(nonatomic) BOOL hasPublisherModelType;
+@property(nonatomic) int publisherModelType; // @synthesize publisherModelType=_publisherModelType;
 @property(readonly, nonatomic) BOOL hasDisplayedHostname;
 @property(nonatomic) BOOL hasAnonymousPublicAccess;
 @property(nonatomic) BOOL anonymousPublicAccess; // @synthesize anonymousPublicAccess=_anonymousPublicAccess;

@@ -15,10 +15,10 @@
 {
     HKHealthStore *_healthStore;
     NSUUID *_currentSessionUUID;
+    _HKFitnessMachine *_fitnessMachine;
     HKDevice *_deviceForFinalWorkout;
     NSLock *_lock;
     NSUUID *_uuid;
-    _HKFitnessMachine *_fitnessMachine;
     unsigned long long _machineState;
     unsigned long long _connectionState;
     id <_HKFitnessMachineConnectionDelegate> _delegate;
@@ -28,7 +28,6 @@
 @property(nonatomic) __weak id <_HKFitnessMachineConnectionDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) unsigned long long connectionState; // @synthesize connectionState=_connectionState;
 @property(readonly, nonatomic) unsigned long long machineState; // @synthesize machineState=_machineState;
-@property(readonly, nonatomic) _HKFitnessMachine *fitnessMachine; // @synthesize fitnessMachine=_fitnessMachine;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (void)_simulateDisconnect;
@@ -43,7 +42,8 @@
 - (void)clientRemote_deliverMachineChangedToState:(unsigned long long)arg1 fromState:(unsigned long long)arg2 fitnessMachineSessionUUID:(id)arg3 date:(id)arg4;
 - (void)clientRemote_deliverMachineInformationUpdated:(id)arg1;
 - (void)clientRemote_deliverDetectedNFC:(id)arg1;
-@property(readonly, nonatomic) HKDevice *deviceForFinalWorkout;
+@property(readonly, copy) _HKFitnessMachine *fitnessMachine;
+@property(readonly, copy) HKDevice *deviceForFinalWorkout;
 - (id)currentSessionConfiguration;
 - (void)endWithFitnessMachineSessionUUID:(id)arg1;
 - (void)end;

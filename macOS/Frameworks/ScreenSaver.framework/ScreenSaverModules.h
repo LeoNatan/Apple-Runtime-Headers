@@ -16,6 +16,7 @@
 }
 
 + (id)homeFolder;
++ (id)findNewModuleForPath:(id)arg1;
 + (id)sharedInstance;
 @property BOOL isPreview; // @synthesize isPreview=_isPreview;
 - (void)_dropCrashReporterBreadCrumbForModule:(id)arg1;

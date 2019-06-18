@@ -11,6 +11,7 @@
 @class ADNotificationBus, ADNotificationDarwinNotificationToken, NSString;
 @protocol ADNotificationRegistrationToken;
 
+__attribute__((visibility("hidden")))
 @interface ADNotificationDarwinNotificationEventSource : NSObject <ADNotificationBusDelegate>
 {
     NSString *_notificationName;

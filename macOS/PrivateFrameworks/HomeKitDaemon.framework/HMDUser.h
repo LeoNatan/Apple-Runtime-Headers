@@ -15,7 +15,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class AVOutputDeviceAuthorizedPeer, HAPPairingIdentity, HMDAccountHandle, HMDAccountIdentifier, HMDAssistantAccessControl, HMDHome, HMDSettingsControllerDependency, HMDUserDataController, HMDUserSettingsBackingStoreController, HMUserPresenceAuthorization, NSMutableArray, NSNumber, NSObject, NSSet, NSString, NSUUID;
+@class AVOutputDeviceAuthorizedPeer, HAPPairingIdentity, HMDAccountHandle, HMDAccountIdentifier, HMDAssistantAccessControl, HMDCloudShareMessenger, HMDHome, HMDSettingsControllerDependency, HMDUserDataController, HMDUserSettingsBackingStoreController, HMUserPresenceAuthorization, NSMutableArray, NSNumber, NSObject, NSSet, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDUser : HMFObject <HMFLogging, HMDSettingsControllerDelegate, HMDUserSettingsBackingStoreControllerDelegate, HMDUserDataControllerDelegate, HMFDumpState, HMDBackingStoreObjectProtocol, HMDHomeMessageReceiver, NSSecureCoding>
@@ -38,6 +38,7 @@
     NSObject<OS_dispatch_queue> *_propertyQueue;
     HMDSettingsControllerDependency *_sharedSettingsControllerDependency;
     HMDUserSettingsBackingStoreController *_sharedBackingStoreController;
+    HMDCloudShareMessenger *_shareMessenger;
     HMDSettingsControllerDependency *_privateSettingsControllerDependency;
     HMDUserSettingsBackingStoreController *_privateBackingStoreController;
     HMDUserDataController *_userDataController;
@@ -54,13 +55,14 @@
 @property(retain) HMDUserDataController *userDataController; // @synthesize userDataController=_userDataController;
 @property(retain) HMDUserSettingsBackingStoreController *privateBackingStoreController; // @synthesize privateBackingStoreController=_privateBackingStoreController;
 @property(retain) HMDSettingsControllerDependency *privateSettingsControllerDependency; // @synthesize privateSettingsControllerDependency=_privateSettingsControllerDependency;
+@property(retain) HMDCloudShareMessenger *shareMessenger; // @synthesize shareMessenger=_shareMessenger;
 @property(retain) HMDUserSettingsBackingStoreController *sharedBackingStoreController; // @synthesize sharedBackingStoreController=_sharedBackingStoreController;
 @property(retain) HMDSettingsControllerDependency *sharedSettingsControllerDependency; // @synthesize sharedSettingsControllerDependency=_sharedSettingsControllerDependency;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *clientQueue; // @synthesize clientQueue=_clientQueue;
 @property(copy, setter=setUUID:) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
-@property(readonly) BOOL isMultiUserPreferenceEnabled;
+@property(readonly) BOOL isUserSettingsPrefEnabled;
 - (id)privateZoneControllerForUserDataController:(id)arg1;
 - (id)sharedZoneControllerForUserDataController:(id)arg1;
 - (id)userDataController:(id)arg1 participantManagerForCloudZone:(id)arg2;
@@ -74,7 +76,7 @@
 @property(readonly) BOOL isRunningOnHomeOwnersDevice;
 - (void)settingsController:(id)arg1 didUpdateWithCompletion:(CDUnknownBlockType)arg2;
 - (id)dictionaryEncoding;
-- (void)removeUserDataFromCloud;
+- (void)removeUserData;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1 version:(long long)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
 - (id)backingStoreObjects:(long long)arg1;

@@ -6,18 +6,34 @@
 
 #import <objc/NSObject.h>
 
-@class UINavigationController;
+@class IMCloudKitSyncState, UINavigationController;
 @protocol CKOnboardingControllerDelegate;
 
 @interface CKOnboardingController : NSObject
 {
+    int _micLayout;
     id <CKOnboardingControllerDelegate> _delegate;
+    IMCloudKitSyncState *_syncState;
     UINavigationController *_navigationController;
 }
 
 @property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
+@property(nonatomic) int micLayout; // @synthesize micLayout=_micLayout;
+@property(retain, nonatomic) IMCloudKitSyncState *syncState; // @synthesize syncState=_syncState;
 @property(nonatomic) __weak id <CKOnboardingControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)reportMoCLayoutShown:(int)arg1;
+- (void)_tryToEnableHSA2;
+- (void)_tryToEnableMOC;
+- (void)_onClickMiCNotNow;
+- (void)_onClickMiCOnboard;
+- (void)_beginMOCFlowForState:(id)arg1 rampState:(id)arg2;
+- (void)_beginMiCWelcomeScreen;
+- (id)_micController;
+- (void)_writeDefaultMiCWelcome;
+- (BOOL)_readyToShowNextScreenWithTimeout:(unsigned long long)arg1;
+- (BOOL)readyToShowNextScreen;
+- (BOOL)_shouldPresentMiCWelcome;
 - (unsigned long long)_meCardSharingAudience;
 - (unsigned long long)_meCardSharingNameFormat;
 - (BOOL)_meCardSharingEnabled;
@@ -35,6 +51,7 @@
 - (void)prepareForOnboarding;
 - (void)prepareForSuspend;
 - (BOOL)presentNicknameSharingSetupFlow;
+- (BOOL)_shouldShowNicknameOnboardingFlow;
 - (BOOL)presentOnboardingIfNeeded;
 
 @end

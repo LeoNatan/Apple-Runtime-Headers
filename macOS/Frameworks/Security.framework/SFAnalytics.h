@@ -46,6 +46,8 @@
 - (void)logSoftFailureForEventNamed:(id)arg1 withAttributes:(id)arg2;
 - (void)logHardFailureForEventNamed:(id)arg1 withAttributes:(id)arg2;
 - (void)logSuccessForEventNamed:(id)arg1;
+- (void)dailyCoreAnalyticsMetrics:(id)arg1;
+- (id)coreAnalyticsKeyFilter:(id)arg1;
 - (id)init;
 - (id)datePropertyForKey:(id)arg1;
 - (void)setDateProperty:(id)arg1 forKey:(id)arg2;

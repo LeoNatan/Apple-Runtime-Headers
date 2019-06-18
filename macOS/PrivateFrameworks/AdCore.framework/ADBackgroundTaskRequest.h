@@ -6,15 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSDate, NSString;
 @protocol OS_xpc_object;
 
 @interface ADBackgroundTaskRequest : NSObject
 {
-    NSObject<OS_xpc_object> *_criteria;
+    BOOL _performDeferralCheck;
     NSString *_requestIdentifier;
+    NSObject<OS_xpc_object> *_activity;
+    NSObject<OS_xpc_object> *_criteria;
+    NSDate *_startDate;
 }
 
+@property(retain, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(nonatomic) BOOL performDeferralCheck; // @synthesize performDeferralCheck=_performDeferralCheck;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *criteria; // @synthesize criteria=_criteria;
+@property(retain, nonatomic) NSObject<OS_xpc_object> *activity; // @synthesize activity=_activity;
 @property(readonly, copy, nonatomic) NSString *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 - (void).cxx_destruct;
 - (id)getPropertyAsDate:(id)arg1;
@@ -27,16 +34,26 @@
 - (void)setPropertyAsString:(id)arg1 value:(id)arg2;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (void)endBackgroundDeferralCheck;
+- (void)startBackgroundDeferralCheck:(CDUnknownBlockType)arg1;
+- (void)_backgroundDeferralCheck:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)taskIsDeferred;
+- (BOOL)deferTask;
+@property(readonly, nonatomic) BOOL shouldDefer;
+- (BOOL)finishTask;
+- (BOOL)taskIsContinuing;
+- (BOOL)continueTask;
 - (id)copyBackgroundTaskAgentCriteria;
 @property(nonatomic) long long delay;
 @property(retain, nonatomic) NSString *priority;
 @property(nonatomic) long long gracePeriod;
 @property(nonatomic) long long backgroundTaskRetryCount;
 @property(nonatomic) BOOL requiresNetworkConnectivity;
+@property(nonatomic) BOOL isCPUIntensive;
 @property(nonatomic) BOOL isRepeating;
 @property(nonatomic) BOOL requireSleep;
 @property(nonatomic) BOOL allowBattery;
-- (id)initWithCriteria:(id)arg1 andID:(id)arg2;
+- (id)initWithCriteria:(id)arg1 ID:(id)arg2 activity:(id)arg3;
 - (id)initWithID:(id)arg1;
 
 @end

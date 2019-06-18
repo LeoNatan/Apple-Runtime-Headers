@@ -27,6 +27,7 @@
 - (void)infoCardThemeChanged;
 - (void)viewDidLoad;
 - (id)initWithIncidents:(id)arg1;
+- (BOOL)_canShowWhileLocked;
 
 @end
 

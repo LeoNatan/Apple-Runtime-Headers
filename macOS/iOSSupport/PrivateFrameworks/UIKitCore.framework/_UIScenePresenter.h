@@ -9,7 +9,7 @@
 #import <UIKitCore/BSDescriptionProviding-Protocol.h>
 #import <UIKitCore/UIScenePresenter-Protocol.h>
 
-@class BSMonotonicReferenceTime, NSString, UIScenePresentationContext, UIView, _UIScenePresentationView, _UIScenePresenterOwner;
+@class BSMonotonicReferenceTime, FBScene, NSString, UIScenePresentationContext, UIView, _UIScenePresentationView, _UIScenePresenterOwner;
 @protocol NSCopying, NSCopying><_UIComparable, UIScenePresentation;
 
 __attribute__((visibility("hidden")))
@@ -41,9 +41,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) UIView<UIScenePresentation> *presentationView;
 - (id)newSnapshotPresentationView;
+- (id)newSnapshotContext;
+- (id)newSnapshot;
 - (void)modifyPresentationContext:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=isActive) BOOL active;
 @property(readonly, copy, nonatomic) NSString *identifier;
+@property(readonly, nonatomic) __weak FBScene *scene;
 - (void)invalidate;
 - (void)deactivate;
 - (void)activate;

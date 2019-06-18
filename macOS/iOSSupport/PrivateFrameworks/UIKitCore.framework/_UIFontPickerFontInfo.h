@@ -17,7 +17,7 @@
     double _lineHeight;
     UIFontDescriptor *_fontDescriptor;
     NSAttributedString *_attributedString;
-    double _attributuedStringSize;
+    NSString *_attributedStringContentSize;
     unsigned long long _hasMultipleFaces;
     NSArray *_subInfos;
     NSString *_postscriptName;
@@ -36,8 +36,14 @@
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) _UIFontPickerFontInfo *familyInfo;
-- (id)attributedStringOfSize:(double)arg1;
-- (id)_fontStringOfSize:(double)arg1;
+@property(readonly) double lineHeight;
+- (BOOL)matchesConfiguration:(id)arg1;
+- (BOOL)matchesTraits:(unsigned int)arg1;
+- (BOOL)matchesLanguages:(id)arg1;
+@property(readonly) NSAttributedString *attributedString;
+- (void)_updateAttributedStringIfNeeded;
+- (id)_fontStringForTraitCollection:(id)arg1;
+@property(readonly) NSString *localizedFamilyName;
 @property(readonly) NSString *localizedName;
 - (BOOL)matchesCTFontDescriptor:(struct __CTFontDescriptor *)arg1;
 - (BOOL)matchesFamilyForCTFontDescriptor:(struct __CTFontDescriptor *)arg1;
@@ -46,7 +52,6 @@
 @property(readonly) NSArray *faces;
 - (id)_sortedFacesByWeight;
 @property(readonly) BOOL hasMultipleFaces;
-@property(readonly) double lineHeight;
 - (id)initWithFontDescriptor:(id)arg1;
 - (id)initWithFamilyName:(id)arg1;
 

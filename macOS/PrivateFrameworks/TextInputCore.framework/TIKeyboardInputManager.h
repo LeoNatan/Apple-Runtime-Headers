@@ -142,7 +142,7 @@
 - (id)autocorrectionCandidateForInput:(id)arg1 withCandidate:(const struct Candidate *)arg2 insertingSpace:(BOOL)arg3 sharedPrefixLength:(unsigned long long)arg4;
 - (id)autocorrectionCandidateForInput:(id)arg1 withCandidate:(const struct Candidate *)arg2;
 - (BOOL)isEditingExistingWord;
-- (id)phraseCandidateCompletedByWord:(const struct String *)arg1 allowNoSuggest:(BOOL)arg2 forAutocorrection:(BOOL)arg3;
+- (id)phraseCandidateCompletedByWord:(const struct String *)arg1 allowNoSuggest:(BOOL)arg2 forAutocorrection:(BOOL)arg3 shiftContext:(int)arg4;
 - (unsigned long long)prefixLengthOfInput:(id)arg1 sharedWithCandidates:(const struct CandidateCollection *)arg2;
 - (unsigned long long)prefixLengthOfInput:(id)arg1 sharedWithCandidate:(const struct Candidate *)arg2;
 - (void)checkAutocorrectionDictionaries;

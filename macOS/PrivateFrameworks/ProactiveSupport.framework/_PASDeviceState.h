@@ -11,7 +11,6 @@
 }
 
 + (id)currentOsBuild;
-+ (BOOL)isConstrainedDevice;
 + (void)blockUntilFirstUnlock;
 + (BOOL)isDeviceFormattedForProtection;
 + (void)unregisterForLockStateChangeNotifications:(id)arg1;

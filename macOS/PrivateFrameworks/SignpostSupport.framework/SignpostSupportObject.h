@@ -46,8 +46,9 @@
 @property(readonly, nonatomic) int tv_usec;
 @property(readonly, nonatomic) long long tv_sec;
 - (id)initWithSubsystem:(id)arg1 category:(id)arg2 timebaseRatio:(double)arg3;
-- (id)descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2;
+- (id)_descriptionStringForColumn:(unsigned long long)arg1 timeFormat:(unsigned long long)arg2 asBegin:(BOOL)arg3;
 - (id)descriptionWithTimeFormat:(unsigned long long)arg1 verbosity:(unsigned char)arg2;
+- (id)_descriptionWithTimeFormat:(unsigned long long)arg1 verbosity:(unsigned char)arg2 asBegin:(BOOL)arg3;
 @property(readonly, nonatomic) NSDate *endDate;
 @property(readonly, nonatomic) NSDate *beginDate;
 - (BOOL)endTimeval:(struct timeval *)arg1;

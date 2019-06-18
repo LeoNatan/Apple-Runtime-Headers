@@ -31,6 +31,7 @@
     int _restartAction;
     NSString *_appPlaceholderPath;
     NSArray *_lockApplicationsDuringInstall;
+    NSString *_blacklistPropertyListPath;
     NSFileHandle *_translocationFileHandle;
     BOOL _bypassSystemVolumeEnforcementChecker;
     BOOL _isOSInstall;
@@ -81,6 +82,8 @@
 - (BOOL)_bypassReadOnlyEnforcementChecker;
 - (void)_setBypassReadOnlyEnforcementChecker:(BOOL)arg1;
 - (void)_setTranslocationFileHandle:(id)arg1;
+- (void)_setInstallBlacklistPlistPath:(id)arg1;
+- (id)_installBlacklistPlistPath;
 - (void)_setLockApplicationsDuringInstall:(id)arg1;
 - (id)_lockApplicationsDuringInstall;
 - (void)_setIsRecursive:(BOOL)arg1;

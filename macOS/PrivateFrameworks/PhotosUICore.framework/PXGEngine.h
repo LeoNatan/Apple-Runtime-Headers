@@ -101,6 +101,7 @@
 - (void)_ensureUpdatedLayout;
 - (void)__setNeedsUpdate;
 - (void)_forceInvalidate:(unsigned long long)arg1;
+- (void)_deferredInvalidate:(unsigned long long)arg1;
 - (void)_invalidateOrDefer:(unsigned long long)arg1;
 - (void)_updateDisplayLink;
 - (void)handleDisplayLink:(id)arg1;

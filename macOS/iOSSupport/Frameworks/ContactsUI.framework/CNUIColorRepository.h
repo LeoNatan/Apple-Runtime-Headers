@@ -46,6 +46,7 @@
 + (id)carPlayTableViewCellBackgroundHighlightedColor;
 + (id)carPlayTableViewCellBackgroundColor;
 + (id)carPlayTableViewBackgroundColor;
++ (id)faceTimeGroupedBackgroundColor;
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
 + (id)faceTimeLightSeparatorColor;
 + (id)monogrammerBackgroundFlatDarkColor;
@@ -57,6 +58,7 @@
 + (id)monogrammerBackgroundWhiteColor;
 + (id)monogrammerTextStandardGrayColor;
 + (id)monogrammerBackgroundStandardGrayColor;
++ (id)contactStyleDefaultGroupedBackgroundColor;
 + (id)contactStyleDefaultSectionBackgroundColor;
 + (id)contactStyleDefaultSelectedCellBackgroundColor;
 + (id)contactStyleDefaultSeparatorColor;
@@ -99,6 +101,7 @@
 + (id)photoPickerSymbolImageColor;
 + (id)photoPickerAvatarBackgroundDefaultColor;
 + (id)photoPickerCropOverlayColor;
++ (id)photoPickerCapturePromptLabelTextColor;
 + (id)photoPickerCaptureCancelButtonTextColor;
 + (id)photoPickerCaptureBackgroundColor;
 + (id)photoPickerSelectionBorderColor;

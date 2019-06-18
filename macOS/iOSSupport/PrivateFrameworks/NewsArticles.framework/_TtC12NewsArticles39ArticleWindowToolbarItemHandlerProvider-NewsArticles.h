@@ -6,7 +6,9 @@
 
 #import <NewsArticles/_TtC12NewsArticles39ArticleWindowToolbarItemHandlerProvider.h>
 
-@interface _TtC12NewsArticles39ArticleWindowToolbarItemHandlerProvider (NewsArticles)
+#import <NewsArticles/FCReadingHistoryObserving-Protocol.h>
+
+@interface _TtC12NewsArticles39ArticleWindowToolbarItemHandlerProvider (NewsArticles) <FCReadingHistoryObserving>
 - (void)readingHistory:(id)arg1 didChangeFeaturesForArticles:(id)arg2;
 @end
 

@@ -22,7 +22,9 @@
 - (void).cxx_destruct;
 - (id)compactDescriptionWithPasswordColumnWidth:(unsigned long long)arg1 includePatternMatches:(BOOL)arg2;
 @property(readonly, nonatomic) NSString *userFeedbackString;
-- (id)_firstPatternMatchOfType:(unsigned long long)arg1;
+- (id)_passwordFeedbackStrings;
+- (BOOL)_shouldShowUserFeedbackStringsForWordListPatternMatch:(id)arg1;
+- (id)_bestPatternMatchOfType:(unsigned long long)arg1;
 @property(readonly, nonatomic) double guessesRequired; // @synthesize guessesRequired=_guessesRequired;
 @property(readonly, nonatomic) BOOL userShouldBeShownActiveWarning;
 @property(readonly, nonatomic) BOOL userShouldBeShownPassiveWarning;

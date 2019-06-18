@@ -13,10 +13,12 @@
 + (id)_errorWithCode:(long long)arg1 possiblyCoreDataError:(id)arg2;
 + (id)xpcPerformerUnavailableErrorWithDescription:(id)arg1;
 + (id)invalidParameterErrorWithDescription:(id)arg1;
++ (id)constraintConflictWithIdentifier:(id)arg1 constraint:(id)arg2;
 + (id)validationErrorSubtaskAndParentNotOnSameList:(id)arg1 parentReminderID:(id)arg2;
 + (id)validationErrorNestedSubtask:(id)arg1 parentReminderID:(id)arg2;
 + (id)validationErrorMoveReminderFromList:(id)arg1 toList:(id)arg2 inAccount:(id)arg3;
 + (id)validationErrorMoveFromAccount:(id)arg1 toAccout:(id)arg2;
++ (id)saveErrorWithREMErrorNeedingSanitization:(id)arg1;
 + (id)saveErrorWithCoreDataError:(id)arg1;
 + (id)noSuchObjectErrorWithDACalendarItemUniqueIdentifier:(id)arg1;
 + (id)noSuchObjectErrorWithExternalIdentifier:(id)arg1;

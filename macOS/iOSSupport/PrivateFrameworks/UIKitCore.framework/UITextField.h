@@ -745,10 +745,12 @@
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) BOOL enablesReturnKeyAutomatically; // @dynamic enablesReturnKeyAutomatically;
 @property(nonatomic) BOOL enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) BOOL forceDefaultDictationInfo;
 @property(nonatomic) long long forceDictationKeyboardType;
 @property(nonatomic) BOOL forceDisableDictation;
 @property(nonatomic) BOOL forceEnableDictation;
+@property(nonatomic) BOOL forceFloatingKeyboard;
 @property(nonatomic) BOOL hasDefaultContents;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) BOOL hidePrediction;

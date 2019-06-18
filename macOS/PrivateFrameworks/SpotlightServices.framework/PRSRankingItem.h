@@ -87,6 +87,7 @@
 - (id)dataCollectionBundle;
 @property(readonly, copy) NSString *description;
 - (id)likelyDisplayTitle;
+- (id)displayName;
 - (long long)compare:(id)arg1;
 - (long long)compareWithDates:(id)arg1;
 - (id)moreRecentDateFromDate1:(id)arg1 date2:(id)arg2;

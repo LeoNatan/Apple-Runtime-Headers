@@ -22,7 +22,6 @@
     unsigned long long _maxDistanceBetweenAdjacentPoints;
     double _minSpeedToFilter;
     unsigned long long _movingWindowSizeForSpeed;
-    unsigned long long _batchSizeInference;
     unsigned long long _completeVisitMargin;
     double _decoderEntryCost;
     double _decoderExitCost;
@@ -46,6 +45,7 @@
     unsigned long long _numOfTimeStepForDwellness;
     unsigned long long _numOfTimeStepForRadius;
     unsigned long long _numTargetClass;
+    unsigned long long _onDeviceInferenceBatchSize;
     unsigned long long _partialVisitMargin;
     unsigned long long _referenceSize;
     unsigned long long _stride;
@@ -53,8 +53,12 @@
     unsigned long long _visitInferenceResolution;
     unsigned long long _windowInterval;
     unsigned long long _windowSize;
+    unsigned long long _binSize;
+    unsigned long long _maxNumOfBins;
 }
 
+@property(readonly, nonatomic) unsigned long long maxNumOfBins; // @synthesize maxNumOfBins=_maxNumOfBins;
+@property(readonly, nonatomic) unsigned long long binSize; // @synthesize binSize=_binSize;
 @property(readonly, nonatomic) unsigned long long windowSize; // @synthesize windowSize=_windowSize;
 @property(readonly, nonatomic) unsigned long long windowInterval; // @synthesize windowInterval=_windowInterval;
 @property(readonly, nonatomic) unsigned long long visitInferenceResolution; // @synthesize visitInferenceResolution=_visitInferenceResolution;
@@ -62,6 +66,7 @@
 @property(readonly, nonatomic) unsigned long long stride; // @synthesize stride=_stride;
 @property(readonly, nonatomic) unsigned long long referenceSize; // @synthesize referenceSize=_referenceSize;
 @property(readonly, nonatomic) unsigned long long partialVisitMargin; // @synthesize partialVisitMargin=_partialVisitMargin;
+@property(readonly, nonatomic) unsigned long long onDeviceInferenceBatchSize; // @synthesize onDeviceInferenceBatchSize=_onDeviceInferenceBatchSize;
 @property(readonly, nonatomic) unsigned long long numTargetClass; // @synthesize numTargetClass=_numTargetClass;
 @property(readonly, nonatomic) unsigned long long numOfTimeStepForRadius; // @synthesize numOfTimeStepForRadius=_numOfTimeStepForRadius;
 @property(readonly, nonatomic) unsigned long long numOfTimeStepForDwellness; // @synthesize numOfTimeStepForDwellness=_numOfTimeStepForDwellness;
@@ -85,7 +90,6 @@
 @property(readonly, nonatomic) double decoderExitCost; // @synthesize decoderExitCost=_decoderExitCost;
 @property(readonly, nonatomic) double decoderEntryCost; // @synthesize decoderEntryCost=_decoderEntryCost;
 @property(readonly, nonatomic) unsigned long long completeVisitMargin; // @synthesize completeVisitMargin=_completeVisitMargin;
-@property(readonly, nonatomic) unsigned long long batchSizeInference; // @synthesize batchSizeInference=_batchSizeInference;
 @property(readonly, nonatomic) unsigned long long movingWindowSizeForSpeed; // @synthesize movingWindowSizeForSpeed=_movingWindowSizeForSpeed;
 @property(readonly, nonatomic) double minSpeedToFilter; // @synthesize minSpeedToFilter=_minSpeedToFilter;
 @property(readonly, nonatomic) unsigned long long maxDistanceBetweenAdjacentPoints; // @synthesize maxDistanceBetweenAdjacentPoints=_maxDistanceBetweenAdjacentPoints;

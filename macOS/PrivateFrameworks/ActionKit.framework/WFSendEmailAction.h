@@ -4,32 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WorkflowKit/WFAction.h>
+#import <WorkflowKit/WFHandleCustomIntentAction.h>
 
-@class MCOOperation, NSString;
-
-@interface WFSendEmailAction : WFAction
+@interface WFSendEmailAction : WFHandleCustomIntentAction
 {
-    NSString *_prefix;
-    MCOOperation *_operation;
 }
 
-@property(nonatomic) __weak MCOOperation *operation; // @synthesize operation=_operation;
-@property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) BOOL showComposeSheet;
+- (id)serializedParametersForDonatedIntent:(id)arg1;
+- (void)sendTextViaMailtoURL:(id)arg1 withUserInterface:(id)arg2;
 - (void)generateBodyFromCollection:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)generateEmailFromInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)generateEmailHeaderFromParameters:(CDUnknownBlockType)arg1;
-- (void)sendTextViaMailtoURL:(id)arg1 withUserInterface:(id)arg2;
-- (id)emailAccountWithAddress:(id)arg1;
-- (id)emailResource;
-- (BOOL)supportsUserInterfaceType:(id)arg1;
-- (void)sendEmailWithAccount:(id)arg1 bodyCollection:(id)arg2 attachmentCollection:(id)arg3 to:(id)arg4 cc:(id)arg5 bcc:(id)arg6 subject:(id)arg7;
-- (void)cancel;
-- (void)runWithNoUserInterface:(id)arg1;
-- (void)runWithAppKitUserInterface:(id)arg1 input:(id)arg2;
-- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)generateFilesFromCollection:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)generateContentForIntents:(CDUnknownBlockType)arg1;
+- (void)getRecipientsFromParameterKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)runAsynchronouslyWithInput:(id)arg1;
+- (BOOL)populatesInputFromInputParameter;
 
 @end
 

@@ -9,7 +9,7 @@
 #import <CFNetwork/NSCopying-Protocol.h>
 #import <CFNetwork/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage, NSURLSessionConfiguration;
+@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSNumber, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage, NSURLSessionConfiguration;
 @protocol NSURLSessionAppleIDContext;
 
 @interface __NSURLSessionEffectiveConfiguration_Base : NSObject <NSSecureCoding, NSCopying>
@@ -61,6 +61,7 @@
 @property(readonly) long long _expiredDNSBehavior; // @dynamic _expiredDNSBehavior;
 @property(readonly) unsigned long long _forcedNetworkServiceType; // @dynamic _forcedNetworkServiceType;
 @property(readonly) BOOL _forcesNewConnections; // @dynamic _forcesNewConnections;
+@property(readonly, copy) NSNumber *_maximumWatchCellularTransferSize; // @dynamic _maximumWatchCellularTransferSize;
 @property(readonly) unsigned long long _multipathAlternatePort; // @dynamic _multipathAlternatePort;
 @property(readonly) BOOL _onBehalfOfPairedDevice; // @dynamic _onBehalfOfPairedDevice;
 @property(readonly) BOOL _preventsAppSSO; // @dynamic _preventsAppSSO;

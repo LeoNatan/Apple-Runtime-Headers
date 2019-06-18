@@ -6,10 +6,10 @@
 
 #import <Silex/NSObject-Protocol.h>
 
-@class SXDOM;
+@class SXMutableDOM;
 @protocol SXDOMModificationContext;
 
 @protocol SXDOMModifying <NSObject>
-- (SXDOM *)modifyDOM:(SXDOM *)arg1 context:(id <SXDOMModificationContext>)arg2;
+- (void)modifyDOM:(SXMutableDOM *)arg1 context:(id <SXDOMModificationContext>)arg2;
 @end
 

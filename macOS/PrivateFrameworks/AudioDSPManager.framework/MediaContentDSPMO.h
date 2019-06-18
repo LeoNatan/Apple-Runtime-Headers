@@ -8,6 +8,7 @@
 
 @class PolarPatternMO;
 
+__attribute__((visibility("hidden")))
 @interface MediaContentDSPMO : ContentDSPMO
 {
 }

@@ -30,6 +30,13 @@
 - (void)addElement:(id)arg1;
 - (void)addElementWithRecipe:(id)arg1 resources:(id)arg2;
 - (id)init;
+- (void)configureDecorationsWithResourceProvider:(id)arg1 backgroundStyle:(unsigned long long)arg2 template:(BOOL)arg3 selected:(BOOL)arg4;
+- (void)configureBaseWithResourceProvider:(id)arg1 backgroundStyle:(unsigned long long)arg2 template:(BOOL)arg3 selected:(BOOL)arg4;
+- (id)resourceWithResource:(id)arg1 backgroundStyle:(unsigned long long)arg2 template:(BOOL)arg3 selected:(BOOL)arg4;
+- (id)_resourceWithLSIconResource:(id)arg1;
+- (id)variantResourceLocatorForType:(id)arg1 extension:(id)arg2;
+- (void)configureWithDecorations:(id)arg1 backgroundStyle:(unsigned long long)arg2;
+- (id)_decorationRecipeKeyFromType:(id)arg1;
 - (void)clearResources;
 - (void)addResourcesFromDictionary:(id)arg1;
 - (void)setResource:(id)arg1 named:(id)arg2;

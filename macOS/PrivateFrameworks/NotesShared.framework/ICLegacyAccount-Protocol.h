@@ -10,6 +10,7 @@
 @protocol ICLegacyFolder;
 
 @protocol ICLegacyAccount <NSObject>
+- (NSString *)localizedAttachmentsNotSupportedReason;
 - (BOOL)supportsAttachments;
 - (NSManagedObjectID *)objectID;
 - (NSManagedObjectContext *)managedObjectContext;

@@ -7,16 +7,16 @@
 #import <objc/NSObject.h>
 
 #import <EmailDaemon/CSSearchableIndexDelegate-Protocol.h>
-#import <EmailDaemon/ECSignpostable-Protocol.h>
 #import <EmailDaemon/EDSearchableIndexSchedulable-Protocol.h>
 #import <EmailDaemon/EDSearchableIndexVerifierDataSource-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
+#import <EmailDaemon/EFSignpostable-Protocol.h>
 #import <EmailDaemon/EMSearchableIndexInterface-Protocol.h>
 
 @class CSSearchableIndex, EFCancelationToken, EFLazyCache, EFObservable, NSMutableArray, NSMutableSet, NSString, _EMSearchableIndexPendingRemovals;
 @protocol EDSearchableIndexDataSource, EDSearchableIndexReasonProvider, EDSearchableIndexSchedulableDelegate, EFScheduler, OS_dispatch_queue, OS_dispatch_source, OS_os_activity;
 
-@interface EDSearchableIndex : NSObject <CSSearchableIndexDelegate, EDSearchableIndexVerifierDataSource, EFLoggable, ECSignpostable, EDSearchableIndexSchedulable, EMSearchableIndexInterface>
+@interface EDSearchableIndex : NSObject <CSSearchableIndexDelegate, EDSearchableIndexVerifierDataSource, EFLoggable, EFSignpostable, EDSearchableIndexSchedulable, EMSearchableIndexInterface>
 {
     NSString *_indexName;
     EFCancelationToken *_cancelationToken;

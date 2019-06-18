@@ -18,6 +18,9 @@
 
 @interface EMMessage : EMRepositoryObject <EFLoggable, EMMessageBuilder, EMExtendedContentItem, EMMutableMessageListItem, EMMessageListItem, EMContentItem>
 {
+    NSArray *_mailboxes;
+    NSArray *_mailboxObjectIDs;
+    struct os_unfair_lock_s _mailboxesLock;
     BOOL _isVIP;
     BOOL _isBlocked;
     BOOL _hasAttachments;
@@ -30,7 +33,6 @@
     ECMessageFlags *_flags;
     long long _conversationNotificationLevel;
     long long _conversationID;
-    NSArray *_mailboxObjectIDs;
     NSArray *_toList;
     NSArray *_ccList;
     long long _dataTransferByteCount;
@@ -39,7 +41,6 @@
     CDUnknownBlockType _loaderBlock;
     id <ECEmailAddressConvertible> _senderAddress;
     NSArray *_bccList;
-    NSString *_mailbox;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -56,7 +57,6 @@
 + (id)predicateForMessagesWithObjectIDs:(id)arg1;
 + (id)predicateForMessageWithObjectID:(id)arg1;
 + (id)predicateForMessageWithItemID:(id)arg1 mailboxPredicate:(id)arg2 mailboxTypeResolver:(id)arg3;
-@property(copy, nonatomic) NSString *mailbox; // @synthesize mailbox=_mailbox;
 @property(copy, nonatomic) NSArray *bccList; // @synthesize bccList=_bccList;
 @property(retain, nonatomic) id <ECEmailAddressConvertible> senderAddress; // @synthesize senderAddress=_senderAddress;
 @property(copy, nonatomic) CDUnknownBlockType loaderBlock; // @synthesize loaderBlock=_loaderBlock;
@@ -76,8 +76,6 @@
 @property(readonly, copy) NSArray *ccList;
 - (void)setToList:(id)arg1;
 @property(readonly, copy) NSArray *toList;
-- (void)setMailboxObjectIDs:(id)arg1;
-@property(readonly, copy) NSArray *mailboxObjectIDs;
 - (void)setConversationID:(long long)arg1;
 @property(readonly) long long conversationID;
 - (void)setConversationNotificationLevel:(long long)arg1;
@@ -120,8 +118,11 @@
 @property(readonly, copy) NSIndexSet *flagColors;
 - (void)setHasUnflagged:(BOOL)arg1;
 @property(readonly) BOOL hasUnflagged;
-- (void)setCount:(unsigned long long)arg1;
+- (void)setMailboxes:(id)arg1;
 @property(readonly, copy) NSArray *mailboxes;
+- (void)setMailboxObjectIDs:(id)arg1;
+@property(readonly, copy) NSArray *mailboxObjectIDs;
+- (void)setCount:(unsigned long long)arg1;
 @property(readonly) unsigned long long count;
 @property(readonly, nonatomic) id <EMCollectionItemID> itemID;
 - (void)encodeWithCoder:(id)arg1;
@@ -129,9 +130,12 @@
 @property(readonly, copy, nonatomic) NSString *ef_publicDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly, copy) NSString *debugDescription;
+- (id)cachedMetadataOfClass:(Class)arg1 forKey:(id)arg2;
+- (void)setCachedMetadata:(id)arg1 forKey:(id)arg2;
 - (void)_commonInitWithBuilder:(CDUnknownBlockType)arg1;
 - (id)initWithObjectID:(id)arg1 builder:(CDUnknownBlockType)arg2;
 - (id)initWithObjectID:(id)arg1;
+@property(nonatomic) BOOL isSinglePagePDF; // @dynamic isSinglePagePDF;
 - (void)setRepository:(id)arg1;
 @property(readonly, nonatomic) EMMessageRepository *repository;
 - (BOOL)isInManagedAccountWithSourceMailboxScope:(id)arg1;

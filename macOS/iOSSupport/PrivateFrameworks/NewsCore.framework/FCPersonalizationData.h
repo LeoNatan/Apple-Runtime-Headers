@@ -64,14 +64,14 @@
 - (id)_instanceIdentifier;
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (BOOL)canHelpRestoreZoneName:(id)arg1;
-- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
+- (id)allKnownRecordNames;
+- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
 - (void)loadLocalCachesFromStore;
 - (void)syncWithCompletion:(CDUnknownBlockType)arg1;
 - (void)generateDerivedDataWithQualityOfService:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)d_allGlobalAggregates;
 - (void)clearPersonalizationData;
 - (id)modifyLocalAggregatesForFeatureKeys:(id)arg1 withAction:(unsigned long long)arg2 actionCount:(unsigned long long)arg3 defaultClicks:(double)arg4 defaultImpressions:(double)arg5 impressionBias:(double)arg6;
-- (id)featureKeysWithNoAggregates:(id)arg1;
 @property(readonly, nonatomic) FCPersonalizationTreatment *personalizationTreatment;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;

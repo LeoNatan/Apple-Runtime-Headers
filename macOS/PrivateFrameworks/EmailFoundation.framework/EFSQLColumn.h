@@ -20,9 +20,6 @@
 - (void)_checkValue:(id)arg1 matchesClass:(Class)arg2;
 - (void)_checkColumnType:(int)arg1 matchesType:(int)arg2;
 - (void)_throwMismatchedTypeExpected:(id)arg1 got:(id)arg2;
-- (BOOL)_isNull;
-- (int)_index;
-- (int)_type;
 @property(readonly, nonatomic) NSDate *dateValue;
 @property(readonly, nonatomic) double doubleValue;
 @property(readonly, nonatomic) long long int64Value;

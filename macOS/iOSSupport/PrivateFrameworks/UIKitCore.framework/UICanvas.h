@@ -13,25 +13,8 @@
     struct CGSize _contentMinSize;
 }
 
-+ (id)canvasForScene:(id)arg1 create:(BOOL)arg2;
-+ (id)canvasForScene:(id)arg1;
-+ (id)canvases;
 @property(nonatomic) struct CGSize contentMinSize; // @synthesize contentMinSize=_contentMinSize;
 - (id)canvasToolbar;
-- (void)_setDisplayConfigurationRequest:(id)arg1;
-- (id)_displayConfigurationRequest;
-- (void)_setAVKitRequestedRefreshRate:(double)arg1 HDRMode:(long long)arg2 overscanCompensation:(long long)arg3;
-- (void)setScreenRequestedOverscanCompensation:(long long)arg1;
-- (long long)_resolvedOverscanCompensation;
-- (long long)screenRequestedOverscanCompensation;
-- (void)_setScreenRequestedDisplayNativePixelSize:(struct CGSize)arg1;
-- (struct CGSize)_screenRequestedDisplayNativePixelSize;
-- (void)setKeepContextAssociationInBackground:(BOOL)arg1;
-- (BOOL)keepContextAssociationInBackground;
-- (id)scene;
-- (void)detachWindow:(id)arg1;
-- (void)attachWindow:(id)arg1;
-- (id)initWithScene:(id)arg1;
 
 // Remaining properties
 @property(readonly, nonatomic) _UICanvasDefinition *_definition; // @dynamic _definition;

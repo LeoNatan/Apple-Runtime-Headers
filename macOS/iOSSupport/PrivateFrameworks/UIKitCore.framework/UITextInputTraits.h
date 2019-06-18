@@ -50,6 +50,8 @@
     BOOL forceDefaultDictationInfo;
     BOOL returnKeyGoesToNextResponder;
     BOOL acceptsFloatingKeyboard;
+    BOOL forceFloatingKeyboard;
+    struct UIEdgeInsets floatingKeyboardEdgeInsets;
     BOOL acceptsSplitKeyboard;
     BOOL displaySecureTextUsingPlainText;
     BOOL learnsCorrections;
@@ -110,6 +112,8 @@
 @property(nonatomic) BOOL displaySecureEditsUsingPlainText; // @synthesize displaySecureEditsUsingPlainText;
 @property(nonatomic) BOOL displaySecureTextUsingPlainText; // @synthesize displaySecureTextUsingPlainText;
 @property(nonatomic) BOOL acceptsSplitKeyboard; // @synthesize acceptsSplitKeyboard;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets; // @synthesize floatingKeyboardEdgeInsets;
+@property(nonatomic) BOOL forceFloatingKeyboard; // @synthesize forceFloatingKeyboard;
 @property(nonatomic) BOOL acceptsFloatingKeyboard; // @synthesize acceptsFloatingKeyboard;
 @property(nonatomic) BOOL returnKeyGoesToNextResponder; // @synthesize returnKeyGoesToNextResponder;
 @property(nonatomic) int emptyContentReturnKeyType; // @synthesize emptyContentReturnKeyType;

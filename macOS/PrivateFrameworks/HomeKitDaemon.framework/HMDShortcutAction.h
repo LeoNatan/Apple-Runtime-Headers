@@ -18,6 +18,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)logCategory;
 + (id)actionWithDictionaryRepresentation:(id)arg1 home:(id)arg2 actionSet:(id)arg3;
++ (id)actionWithDictionaryRepresentation:(id)arg1 home:(id)arg2;
 + (void)initialize;
 @property(readonly) WFHomeWorkflowController *controller; // @synthesize controller=_controller;
 @property(readonly) WFHomeWorkflow *shortcut; // @synthesize shortcut=_shortcut;

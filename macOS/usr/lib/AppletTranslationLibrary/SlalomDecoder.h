@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <AppletTranslationLibrary/ATLDecoder-Protocol.h>
+#import <AppletTranslationLibrary/ATLStatefulDecoder-Protocol.h>
 
 @class NSMutableArray, NSNumber;
 
 __attribute__((visibility("hidden")))
-@interface SlalomDecoder : NSObject <ATLDecoder>
+@interface SlalomDecoder : NSObject <ATLStatefulDecoder>
 {
     _Bool _eotInProgress;
     NSMutableArray *_hciArray;
@@ -29,7 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)parseEndEvent:(id)arg1 withApplet:(id)arg2 withTransceiver:(id)arg3 error:(id *)arg4;
 - (id)parseStartEvent:(id)arg1 withApplet:(id)arg2 error:(id *)arg3;
 - (id)parseHCIEvent:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withTransceiver:(id)arg5 withError:(id *)arg6;
-- (void)flush;
+- (void)cleanup;
 - (id)init;
 - (void)dealloc;
 

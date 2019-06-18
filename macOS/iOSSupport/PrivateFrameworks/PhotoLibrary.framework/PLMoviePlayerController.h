@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVPlayer, AVPlayerItem, NSString, PLMoviePlayerView, PLTVOutWindow;
+@class AVPlayer, AVPlayerItem, NSString, PLMoviePlayerView;
 @protocol PLMoviePlayerControllerDelegate;
 
 @interface PLMoviePlayerController : NSObject
@@ -14,7 +14,6 @@
     AVPlayerItem *_playerItem;
     AVPlayer *_player;
     PLMoviePlayerView *_view;
-    PLTVOutWindow *_tvOutWindow;
     BOOL _hasPendingTime;
     double _pendingTime;
     unsigned long long _pendingTimeSnapOption;
@@ -26,8 +25,6 @@
     unsigned long long _backgroundTaskId;
     BOOL _audioSessionActive;
     NSString *_originalAudioCategory;
-    BOOL _TVOutEnabled;
-    BOOL _forceDisableTVOut;
     BOOL _isPreparedForPlayback;
     BOOL _isActiveController;
     id <PLMoviePlayerControllerDelegate> _delegate;
@@ -40,8 +37,6 @@
 + (id)AVAssetURLWithPath:(id)arg1;
 @property(nonatomic) BOOL isActiveController; // @synthesize isActiveController=_isActiveController;
 @property(readonly, nonatomic) BOOL isPreparedForPlayback; // @synthesize isPreparedForPlayback=_isPreparedForPlayback;
-@property(nonatomic, setter=_setForceDisableTVOut:) BOOL forceDisableTVOut; // @synthesize forceDisableTVOut=_forceDisableTVOut;
-@property(nonatomic) BOOL TVOutEnabled; // @synthesize TVOutEnabled=_TVOutEnabled;
 @property(readonly, nonatomic) unsigned long long playbackState; // @synthesize playbackState=_playbackState;
 @property(readonly, nonatomic) unsigned long long bufferingState; // @synthesize bufferingState=_bufferingState;
 @property(readonly, retain, nonatomic) AVPlayer *player; // @synthesize player=_player;
@@ -62,21 +57,8 @@
 - (BOOL)isExternalPlayback;
 - (void)_updateDisableAirPlayMirroringDuringPlayback;
 - (BOOL)_allowsExternalPlayback;
-- (void)_tearDownTVOutWindow;
 - (void)tearDownTVOutWindow;
-- (void)_setupTVOutWindow;
-- (void)_displayVideoView;
-- (void)_restoreTVOutVideoIfNecessary;
-- (void)_updateTVOutEnabled;
 - (BOOL)videoOutActive;
-- (void)_screenDidDisconnect:(id)arg1;
-- (void)_screenDidConnect:(id)arg1;
-- (void)_willEnterForegroundNotification:(id)arg1;
-- (void)_didEnterBackgroundNotification:(id)arg1;
-- (void)_willResignNotification:(id)arg1;
-- (void)_willBeginSuspendAnimationNotification:(id)arg1;
-- (void)_willSuspendNotification:(id)arg1;
-- (void)_pausePlaybackForNotification;
 - (void)_simpleRemoteNotification:(id)arg1;
 - (void)_setPlaybackState:(unsigned long long)arg1;
 - (void)_setBufferingState:(unsigned long long)arg1;

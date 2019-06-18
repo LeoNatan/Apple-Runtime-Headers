@@ -6,7 +6,7 @@
 
 #import <CloudKit/CKDatabaseOperation.h>
 
-@class CKRecordID, CKRecordZoneID, NSString;
+@class CKRecordID, CKUploadRequestConfiguration, NSString;
 
 @interface CKMarkAssetBrokenOperation : CKDatabaseOperation
 {
@@ -14,22 +14,18 @@
     BOOL _simulateCorruptAsset;
     BOOL _writeRepairRecord;
     CDUnknownBlockType _markAssetBrokenCompletionBlock;
-    NSString *_repairContainerIdentifier;
-    NSString *_repairSourceApplicationBundleIdentifier;
-    CKRecordZoneID *_repairZoneID;
     CKRecordID *_recordID;
     NSString *_field;
     long long _listIndex;
     CKRecordID *_repairRecordID;
+    CKUploadRequestConfiguration *_uploadRequestConfiguration;
 }
 
+@property(copy, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 @property(retain, nonatomic) CKRecordID *repairRecordID; // @synthesize repairRecordID=_repairRecordID;
 @property(nonatomic) long long listIndex; // @synthesize listIndex=_listIndex;
 @property(retain, nonatomic) NSString *field; // @synthesize field=_field;
 @property(retain, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
-@property(retain, nonatomic) CKRecordZoneID *repairZoneID; // @synthesize repairZoneID=_repairZoneID;
-@property(retain, nonatomic) NSString *repairSourceApplicationBundleIdentifier; // @synthesize repairSourceApplicationBundleIdentifier=_repairSourceApplicationBundleIdentifier;
-@property(retain, nonatomic) NSString *repairContainerIdentifier; // @synthesize repairContainerIdentifier=_repairContainerIdentifier;
 @property(nonatomic) BOOL writeRepairRecord; // @synthesize writeRepairRecord=_writeRepairRecord;
 @property(nonatomic) BOOL simulateCorruptAsset; // @synthesize simulateCorruptAsset=_simulateCorruptAsset;
 @property(nonatomic) BOOL touchRepairZone; // @synthesize touchRepairZone=_touchRepairZone;
@@ -43,6 +39,7 @@
 - (void)fillOutOperationInfo:(id)arg1;
 @property(copy, nonatomic) CDUnknownBlockType markAssetBrokenCompletionBlock; // @synthesize markAssetBrokenCompletionBlock=_markAssetBrokenCompletionBlock;
 - (id)activityCreate;
+@property(readonly, copy, nonatomic) CKUploadRequestConfiguration *resolvedUploadRequestConfiguration;
 - (id)initWithRecordID:(id)arg1 field:(id)arg2 listIndex:(long long)arg3;
 - (id)initWithRecordID:(id)arg1 field:(id)arg2;
 - (id)initWithNoRecord;

@@ -4,54 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <OnBoardingKit/OBTableWelcomeController.h>
+#import <HomeUI/HUItemTableOBWelcomeController.h>
 
-#import <HomeUI/HFItemManagerDelegate-Protocol.h>
 #import <HomeUI/HUConfigurationViewController-Protocol.h>
-#import <HomeUI/HUItemTableModuleControllerHosting-Protocol.h>
 #import <HomeUI/HUPreloadableViewController-Protocol.h>
-#import <HomeUI/HUSwitchCellDelegate-Protocol.h>
-#import <HomeUI/UITableViewDataSource-Protocol.h>
-#import <HomeUI/UITableViewDelegate-Protocol.h>
 
-@class HUPersonalRequestsDevicesModuleController, HUPersonalRequestsEditorItemManager, NSLayoutConstraint, NSMutableArray, NSString, OBLinkTrayButton, OBTrayButton;
+@class NSString, OBLinkTrayButton, OBTrayButton;
 @protocol HUConfigurationViewControllerDelegate;
 
-@interface HUPersonalRequestsCustomizeViewController : OBTableWelcomeController <HFItemManagerDelegate, HUItemTableModuleControllerHosting, UITableViewDelegate, UITableViewDataSource, HUSwitchCellDelegate, HUConfigurationViewController, HUPreloadableViewController>
+@interface HUPersonalRequestsCustomizeViewController : HUItemTableOBWelcomeController <HUConfigurationViewController, HUPreloadableViewController>
 {
     id <HUConfigurationViewControllerDelegate> _delegate;
     OBTrayButton *_usePRButton;
     OBLinkTrayButton *_customizeButton;
-    HUPersonalRequestsEditorItemManager *_prEditorItemManager;
-    HUPersonalRequestsDevicesModuleController *_prDevicesModuleController;
-    NSMutableArray *_targetPersonalRequestsDevices;
-    NSLayoutConstraint *_heightAnchor;
 }
 
-@property(retain, nonatomic) NSLayoutConstraint *heightAnchor; // @synthesize heightAnchor=_heightAnchor;
-@property(retain, nonatomic) NSMutableArray *targetPersonalRequestsDevices; // @synthesize targetPersonalRequestsDevices=_targetPersonalRequestsDevices;
-@property(retain, nonatomic) HUPersonalRequestsDevicesModuleController *prDevicesModuleController; // @synthesize prDevicesModuleController=_prDevicesModuleController;
-@property(retain, nonatomic) HUPersonalRequestsEditorItemManager *prEditorItemManager; // @synthesize prEditorItemManager=_prEditorItemManager;
 @property(retain, nonatomic) OBLinkTrayButton *customizeButton; // @synthesize customizeButton=_customizeButton;
 @property(retain, nonatomic) OBTrayButton *usePRButton; // @synthesize usePRButton=_usePRButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)switchCell:(id)arg1 didTurnOn:(BOOL)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (id)_itemForTableIndexPath:(id)arg1;
-- (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
-- (double)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
-- (void)viewDidLayoutSubviews;
-- (void)loadView;
-- (id)moduleController:(id)arg1 textFieldForVisibleItem:(id)arg2;
-- (id)moduleController:(id)arg1 dismissViewControllerForRequest:(id)arg2;
-- (id)moduleController:(id)arg1 presentViewControllerForRequest:(id)arg2;
-- (id)hu_preloadContent;
+- (void)viewDidLoad;
 - (void)_setupPersonalRequests:(id)arg1;
 - (void)_dontSetupPersonalRequests:(id)arg1;
-- (void)_setupPersonalRequestsItemInfrastructure;
+- (id)hu_preloadContent;
 - (id)initWithLocationDevice:(id)arg1;
-- (id)initWithTitle:(id)arg1 detailText:(id)arg2 icon:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

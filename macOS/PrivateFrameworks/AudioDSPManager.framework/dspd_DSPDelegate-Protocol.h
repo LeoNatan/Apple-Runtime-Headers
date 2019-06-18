@@ -26,8 +26,8 @@
 - (expected_af0f637c)simulateConfigurationChanges:(const vector_d47d98e2 *)arg1;
 - (expected_af0f637c)simulateConfigurationChange:(id <dspd_ConfigurationChangeRequest>)arg1;
 - (expected_025c1a52)configurationChangeComplete:(int)arg1 dspMutation:(function_71b6729b)arg2;
-- (expected_a78876cb)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
-- (expected_a78876cb)adaptToConfigurationChange:(id <dspd_ConfigurationChangeRequest>)arg1;
+- (expected_6c7599df)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
+- (expected_6c7599df)adaptToConfigurationChange:(id <dspd_ConfigurationChangeRequest>)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChanges:(const vector_d47d98e2 *)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChange:(id <dspd_ConfigurationChangeRequest>)arg1;
 - (id <dspd_SupportedPublicStreamFormatRequest>)supportedPublicStreamFormatRequest;

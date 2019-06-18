@@ -25,7 +25,6 @@ __attribute__((visibility("hidden")))
     MKButtonWithTargetArgument *_button;
 }
 
-+ (double)defaultHeight;
 + (id)_buttonFont:(unsigned long long)arg1;
 + (id)_font:(unsigned long long)arg1;
 @property(readonly, nonatomic) MKButtonWithTargetArgument *button; // @synthesize button=_button;

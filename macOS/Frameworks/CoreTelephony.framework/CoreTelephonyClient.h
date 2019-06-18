@@ -263,6 +263,8 @@
 - (void)copyNormalEmergencyMode:(CDUnknownBlockType)arg1;
 - (id)copyEmergencyModeWithError:(id *)arg1;
 - (void)copyEmergencyMode:(CDUnknownBlockType)arg1;
+- (id)context:(id)arg1 getPhoneNumberSignature:(id *)arg2;
+- (void)context:(id)arg1 getPhoneNumberSignatureWithCompletion:(CDUnknownBlockType)arg2;
 - (BOOL)isPhoneNumberCredentialValid:(id)arg1 outError:(id *)arg2;
 - (id)getPNRContext:(id)arg1 outError:(id *)arg2;
 - (void)getPNRContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -276,6 +278,7 @@
 - (void)getCurrentIMessageIccidsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)transferPlans:(id)arg1 fromDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)transferPlan:(id)arg1 fromDevice:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)getTransferPlansWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getTransferPlanListWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getCameraScanInfoForCardData:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)supportsPlanProvisioning:(id)arg1 carrierDescriptors:(id)arg2 smdpUrl:(id)arg3 iccidPrefix:(id)arg4;
@@ -301,7 +304,6 @@
 - (id)userEnteredMonthlyBudget:(id)arg1 error:(id *)arg2;
 - (void)userEnteredMonthlyBudget:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)billingCycleEndDatesForLastPeriods:(unsigned long long)arg1 error:(id *)arg2;
-- (id)dataUsageForLastPeriods:(unsigned long long)arg1 error:(id *)arg2;
 - (void)dataUsageForLastPeriods:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)setWiFiCallingSettingPreferences:(id)arg1 key:(id)arg2 value:(id)arg3;
 - (id)getWiFiCallingSettingPreferences:(id)arg1 key:(id)arg2 error:(id *)arg3;
@@ -348,6 +350,7 @@
 - (void)getSupportDynamicDataSimSwitchOnBBCall:(CDUnknownBlockType)arg1;
 - (id)setSupportDynamicDataSimSwitch:(BOOL)arg1;
 - (id)setSupportDynamicDataSimSwitchOnBBCall:(BOOL)arg1;
+- (void)setSupportDynamicDataSimSwitch:(BOOL)arg1 forIccid:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setSupportDynamicDataSimSwitch:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setSupportDynamicDataSimSwitchOnBBCall:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)getInternationalDataAccessStatusSync:(id *)arg1;

@@ -11,15 +11,14 @@
 #import <ActivityRingsUI/CALayerDelegate-Protocol.h>
 
 @class ARUICelebrationsRenderer, ARUIRingGroupController, ARUIRingsRenderPipelineFactory, ARUIRingsRenderer, ARUISpritesRenderPipelineFactory, ARUISpritesRenderer, CADisplayLink, CAMetalLayer, NSArray, NSString, UIImage;
-@protocol MTLCommandQueue, MTLDevice, MTLLibrary;
+@protocol MTLCommandQueue, MTLDeviceSPI;
 
 @interface ARUIRingsView : UIView <ARUIRingGroupControllerDelegate, CALayerDelegate, ARUIRingsRendering>
 {
     NSArray *_ringGroupControllers;
     BOOL _viewWillMoveToWindow;
     CAMetalLayer *_metalLayer;
-    id <MTLDevice> _device;
-    id <MTLLibrary> _library;
+    id <MTLDeviceSPI> _device;
     // Error parsing type: , name: _drawableSize
     BOOL _canPremultiplyAlpha;
     ARUIRingsRenderPipelineFactory *_ringsRenderPipelineFactory;
@@ -31,6 +30,7 @@
     CADisplayLink *_displayLink;
     double _lastTickTime;
     BOOL _shouldBypassApplicationStateChecking;
+    BOOL _discardBackBuffers;
     BOOL _viewIsVisible;
     BOOL _paused;
     BOOL _synchronizesWithCA;
@@ -56,6 +56,7 @@
 @property(nonatomic, getter=isPaused) BOOL paused; // @synthesize paused=_paused;
 @property(readonly, nonatomic) BOOL viewIsVisible; // @synthesize viewIsVisible=_viewIsVisible;
 @property(nonatomic) long long preferredFramesPerSecond; // @synthesize preferredFramesPerSecond=_preferredFramesPerSecond;
+@property(nonatomic) BOOL discardBackBuffers; // @synthesize discardBackBuffers=_discardBackBuffers;
 @property(nonatomic) BOOL shouldBypassApplicationStateChecking; // @synthesize shouldBypassApplicationStateChecking=_shouldBypassApplicationStateChecking;
 @property(nonatomic) unsigned long long iconTextureColumns; // @synthesize iconTextureColumns=_iconTextureColumns;
 @property(nonatomic) unsigned long long iconTextureRows; // @synthesize iconTextureRows=_iconTextureRows;
@@ -66,6 +67,7 @@
 - (unsigned long long)supportedInterfaceOrientations;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(long long)arg1;
 - (id)snapshot;
+- (id)displayLink;
 - (void)_tick:(id)arg1;
 - (void)updateDisplayLink;
 - (BOOL)_needsDisplayLink;
@@ -75,7 +77,7 @@
 - (void)ringGroupControllerWillAddCelebrationOfType:(unsigned long long)arg1;
 - (void)ringGroupControllerNeedsUpdate:(id)arg1;
 - (id)ringTextureWithCommandBuffer:(id)arg1 rings:(id)arg2 andSize: /* Error: Ran out of types for this method. */;
-- (void)_commandBufferCompleted:(id)arg1;
+- (void)_discardBackBuffersIfNoDisplayLink;
 - (void)drawIntoTexture:(id)arg1 withDrawable:(id)arg2 waitUntilCompleted:(BOOL)arg3;
 - (id)spriteRenderPipelineConfigurationForRingGroupController:(id)arg1;
 - (id)ringsRenderPipelineConfigurationForRingGroupController:(id)arg1;
@@ -103,6 +105,7 @@
 - (id)ringGroupControllers;
 - (id)ringGroups;
 - (id)renderPipelineFactoryWithDevice:(id)arg1 library:(id)arg2;
+- (id)renderPipelineFactoryWithDeviceSPI:(id)arg1 librarySPI:(id)arg2;
 - (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

@@ -17,7 +17,7 @@
 
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1 traitCollection:(id)arg2;
 - (long long)adaptivePresentationStyleForPresentationController:(id)arg1;
-- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)chooseImageControllerDidCancel:(id)arg1;
 - (void)chooseImageController:(id)arg1 didSelectItems:(id)arg2;
 - (BOOL)shouldBeSuggestedAfterAction:(id)arg1 inWorkflow:(id)arg2;

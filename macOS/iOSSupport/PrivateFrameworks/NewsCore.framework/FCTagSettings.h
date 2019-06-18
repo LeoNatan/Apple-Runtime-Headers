@@ -22,6 +22,8 @@
 @property(retain, nonatomic) NSMutableDictionary *tagSettingsEntriesByTagID; // @synthesize tagSettingsEntriesByTagID=_tagSettingsEntriesByTagID;
 - (void).cxx_destruct;
 - (id)allTagSettingsRecords;
+- (id)allTagSettingsRecordNames;
+- (void)handleSyncWithDeletedTagSettingsRecordName:(id)arg1;
 - (void)handleSyncWithTagSettingsRecord:(id)arg1;
 - (id)webAccessOptedInTagIDs;
 - (void)setWebAccessOptInForTagID:(id)arg1 webAccessOptIn:(BOOL)arg2;

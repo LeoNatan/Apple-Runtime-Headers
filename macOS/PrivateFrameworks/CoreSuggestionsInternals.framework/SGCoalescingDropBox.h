@@ -30,6 +30,7 @@
 - (void)wait;
 - (void)updateBox:(CDUnknownBlockType)arg1 delay:(double)arg2;
 - (void)updateBox:(CDUnknownBlockType)arg1;
+- (void)typeCheckingSink:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)initWithName:(const char *)arg1 boxMaker:(CDUnknownBlockType)arg2 handler:(CDUnknownBlockType)arg3 qos:(unsigned int)arg4;

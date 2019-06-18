@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSData, NSDictionary, NSMutableDictionary, VCPAsset;
+@class NSDictionary, NSMutableDictionary, VCPAsset;
 
 @interface VCPPhotoAnalyzer : NSObject
 {
@@ -14,8 +14,6 @@
     NSMutableDictionary *_analysis;
     NSMutableDictionary *_results;
     unsigned long long _irisAnalyses;
-    NSData *_featureData;
-    NSData *_sceneprintData;
     NSDictionary *_phFaceResults;
     unsigned long long _phFaceFlags;
     VCPAsset *_asset;
@@ -24,7 +22,7 @@
     long long _status;
 }
 
-+ (id)analyzerWithTypes:(unsigned long long)arg1 forAsset:(id)arg2;
++ (id)analyzerWithVCPAsset:(id)arg1 forAnalysisTypes:(unsigned long long)arg2;
 + (BOOL)canAnalyzeUndegraded:(id)arg1 withResources:(id)arg2;
 + (id)resourceForAsset:(id)arg1 withResources:(id)arg2;
 @property(readonly) long long status; // @synthesize status=_status;
@@ -34,8 +32,10 @@
 - (int)analyzeImage:(unsigned long long *)arg1 performedAnalyses:(unsigned long long *)arg2 movingObjectResults:(id)arg3 cancel:(CDUnknownBlockType)arg4;
 - (int)downscaleImage:(struct __CVBuffer *)arg1 scaledImage:(struct __CVBuffer **)arg2 majorDimension:(int)arg3;
 - (void)updateDegradedFlagForMajorDimension:(unsigned long long)arg1;
-- (id)initWithPHAsset:(id)arg1 forAnalysisTypes:(unsigned long long)arg2;
-- (id)initWithTypes:(unsigned long long)arg1 forAsset:(id)arg2;
+- (id)existingAnalysisForMovieAnalzyer;
+- (void)processExistingAnalyses:(id)arg1;
+- (id)initWithPHAsset:(id)arg1 withExistingAnalysis:(id)arg2 forAnalysisTypes:(unsigned long long)arg3;
+- (id)initWithVCPAsset:(id)arg1 withExistingAnalysis:(id)arg2 forAnalysisTypes:(unsigned long long)arg3;
 
 @end
 

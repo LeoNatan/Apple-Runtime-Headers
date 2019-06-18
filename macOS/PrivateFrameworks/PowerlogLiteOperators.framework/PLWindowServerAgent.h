@@ -10,25 +10,21 @@
 
 @interface PLWindowServerAgent : PLAgent
 {
-    int _currentFocusAppPid;
     NSMutableString *_report;
     SLDataTimelineConfig *_config;
 }
 
-+ (id)entryEventForwardDefinitionFocusAppInfo;
 + (id)entryEventForwardDefinitionTimelineInfo;
 + (id)entryEventForwardDefinitions;
 + (void)load;
-@property int currentFocusAppPid; // @synthesize currentFocusAppPid=_currentFocusAppPid;
 @property(retain) SLDataTimelineConfig *config; // @synthesize config=_config;
 @property(retain) NSMutableString *report; // @synthesize report=_report;
 - (void).cxx_destruct;
 - (void)installTimelineConnection;
-- (void)logEventForwardFocusAppInfo:(int)arg1;
 - (void)logEventForwardTimelineInfo:(id)arg1 withPID:(int)arg2 withnewProcess:(id)arg3;
 - (void)log;
 - (void)addChangedPID:(id)arg1 windowsOrderedOut:(unsigned long long)arg2 windowsOffScreen:(unsigned long long)arg3 windowsOccluded:(unsigned long long)arg4 windowsVisible:(unsigned long long)arg5;
-- (void)reportWithSessionID:(id)arg1 timestamp:(double)arg2 sessionSequenceIndex:(unsigned long long)arg3 focusApp:(int)arg4;
+- (void)reportWithSessionID:(id)arg1 timestamp:(double)arg2 sessionSequenceIndex:(unsigned long long)arg3;
 - (void)initOperatorDependancies;
 - (id)init;
 

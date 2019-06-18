@@ -69,6 +69,7 @@
 - (void)dismissDialogWithExitCode:(long long)arg1;
 - (void)_runModalWithSettings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)performAction:(long long)arg1;
+- (void)_gotoFollowUpURL:(id)arg1;
 - (void)beginSheetModalForWindow:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (long long)_kindForString:(id)arg1;
 - (id)valueForUserInfoKey:(id)arg1;

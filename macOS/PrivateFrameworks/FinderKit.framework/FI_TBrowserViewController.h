@@ -109,7 +109,7 @@ __attribute__((visibility("hidden")))
 - (_Bool)showingDelayedPopulation;
 - (void)configureForDelayedPopulation:(_Bool)arg1;
 - (unsigned long long)itemCountForDelayedPopulation;
-- (id)viewToCoverForDelayedPopulation;
+- (id)viewToOverlayForDelayedPopulation;
 - (void)configureForAuthenticationUI;
 - (void)configureForAuthenticationUI:(_Bool)arg1;
 - (_Bool)shouldShowAuthenticationUI;
@@ -159,7 +159,7 @@ __attribute__((visibility("hidden")))
 - (duration_3c68f186)previewPaneDisplayDelay;
 - (_Bool)shouldDelayNextPreviewPaneRetargetForCurrentKey:(unsigned short)arg1;
 - (void)openPreviewPanelInFullScreen:(_Bool)arg1;
-- (id)iconImageForNode:(const struct TFENode *)arg1;
+- (id)iconImageForNode:(const struct TFENode *)arg1 includeBadge:(_Bool)arg2;
 - (struct TFENode)thumbnailTargetNodeForNode:(const struct TFENode *)arg1;
 - (void)updateQueryHitPreviewForNode:(const struct TFENode *)arg1;
 - (void)invalidateThumbnailForKeyNodes:(const struct TFENodeVector *)arg1;

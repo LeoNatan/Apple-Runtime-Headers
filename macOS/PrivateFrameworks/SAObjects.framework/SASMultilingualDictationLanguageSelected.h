@@ -8,7 +8,7 @@
 
 #import <SAObjects/SAServerBoundCommand-Protocol.h>
 
-@class NSString;
+@class NSDictionary, NSString;
 
 @interface SASMultilingualDictationLanguageSelected : SABaseCommand <SAServerBoundCommand>
 {
@@ -18,6 +18,7 @@
 + (id)multilingualDictationLanguageSelected;
 - (BOOL)requiresResponse;
 @property(copy, nonatomic) NSString *languageDetected;
+@property(copy, nonatomic) NSDictionary *confidenceScoresByLanguage;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

@@ -84,7 +84,7 @@
 - (void)forwardFillMonotonicallyIncreasingData;
 - (void)fixupThreadSuspension;
 @property(readonly, copy) NSString *debugDescription;
-- (void)addImageInfos:(id)arg1;
+- (_Bool)addImageInfos:(id)arg1;
 - (BOOL)correspondsToPid:(int)arg1 name:(const char *)arg2 loadInfos:(const struct dyld_uuid_info_64 *)arg3 numLoadInfos:(unsigned int)arg4 machineArchitecture:(struct _CSArchitecture)arg5 sharedCache:(id)arg6;
 - (BOOL)correspondsToUniquePid:(unsigned long long)arg1 name:(const char *)arg2 loadInfos:(const struct dyld_uuid_info_64 *)arg3 numLoadInfos:(unsigned int)arg4 machineArchitecture:(struct _CSArchitecture)arg5 sharedCache:(id)arg6;
 - (BOOL)correspondsToName:(const char *)arg1 loadInfos:(const struct dyld_uuid_info_64 *)arg2 numLoadInfos:(unsigned int)arg3 machineArchitecture:(struct _CSArchitecture)arg4 sharedCache:(id)arg5;

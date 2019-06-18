@@ -48,6 +48,7 @@
 - (void)checkSecurityUpgradeEligibilityForContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)configurationInfoWithIdentifiers:(id)arg1 forAltDSID:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setConfigurationInfo:(id)arg1 forIdentifier:(id)arg2 forAltDSID:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)warmUpVerificationSessionWithCompletion:(CDUnknownBlockType)arg1;
 - (BOOL)revokeAuthorizationForTeamWithTeamID:(id)arg1 error:(id *)arg2;
 - (BOOL)deleteAuthorizationDatabase:(id *)arg1;
 - (id)fetchAuthorizedAppListWithContext:(id)arg1 error:(id *)arg2;

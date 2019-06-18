@@ -54,6 +54,7 @@
 - (shared_ptr_b08b739b)findOrCreateClientProcess:(struct ProcessToken)arg1 auditToken:(CDStruct_6ad76789)arg2 sessionToken:(unsigned int)arg3;
 - (id)createPlayerSessionWithSessionToken:(unsigned int)arg1 withProcessToken:(struct ProcessToken)arg2 withAuditToken:(CDStruct_6ad76789)arg3 withInterruptionHandler:(CDUnknownBlockType)arg4;
 - (void)setAURA:(id)arg1 processManager:(shared_ptr_075de5b0)arg2;
+- (void)updateHWConfigForAllPlayerSessions;
 
 @end
 

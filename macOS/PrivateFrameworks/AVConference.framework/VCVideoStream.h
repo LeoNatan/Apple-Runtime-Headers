@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     VCVideoReceiverBase *_videoReceiver;
     VCVideoRule *_videoRule;
     int _reportingModuleID;
+    unsigned int _reportingDefaultRealtimePeriod;
     NSObject<OS_dispatch_semaphore> *_bufferQueueSemaphore;
     struct opaqueCMBufferQueue *_bufferQueue;
     VCVideoCaptureConverter *_captureConverter;

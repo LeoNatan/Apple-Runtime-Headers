@@ -237,6 +237,7 @@
 @property(readonly, nonatomic) double dividerHeight;
 @property(readonly, nonatomic) BOOL detailsSeperatorsFollowLayoutMargins;
 @property(readonly, nonatomic) BOOL shouldAnimateGifsInPhotoGrid;
+@property(readonly, nonatomic) NSString *entryViewAppButtonName;
 @property(readonly, nonatomic) NSString *entryViewPhotoButtonName;
 @property(readonly, nonatomic) NSString *entryViewArrowButtonName;
 @property(readonly, nonatomic) NSString *entryViewAudioButtonName;
@@ -551,6 +552,7 @@
 @property(readonly, nonatomic) double conversationListCellRightMargin;
 @property(readonly, nonatomic) double conversationListCellLargeTextLeftMargin;
 @property(readonly, nonatomic) double conversationListCellLeftMargin;
+@property(readonly, nonatomic) double conversationListComposeButtonSpacing;
 @property(readonly, nonatomic) struct UIEdgeInsets conversationListFilterSegmentInset;
 @property(readonly, nonatomic) double conversationListEditingTableMarginWidth;
 @property(readonly, nonatomic) double conversationListTableMarginWidth;

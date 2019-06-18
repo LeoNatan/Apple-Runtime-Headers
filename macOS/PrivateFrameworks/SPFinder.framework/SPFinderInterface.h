@@ -6,14 +6,18 @@
 
 #import <objc/NSObject.h>
 
+@class SPAdvertisementCache;
+
 @interface SPFinderInterface : NSObject
 {
+    SPAdvertisementCache *_advertisementCache;
 }
 
+@property(retain, nonatomic) SPAdvertisementCache *advertisementCache; // @synthesize advertisementCache=_advertisementCache;
+- (void).cxx_destruct;
 - (id)stateManager;
 - (id)finderStateManager;
 - (id)beaconPayloadCache;
-- (id)advertisementCache;
 
 @end
 

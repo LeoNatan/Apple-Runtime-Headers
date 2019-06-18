@@ -35,6 +35,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isInTestMode;
 - (int)role;
 - (id)initWithRole:(int)arg1 testMode:(BOOL)arg2;
+- (void)handleSimulateTimerSynchronizeForTesting;
 - (void)handleUserDeletedMessage:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)handleMultiMessage:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;
 - (void)handleFlushSourceForDomainMessage:(id)arg1 replyHandler:(CDUnknownBlockType)arg2;

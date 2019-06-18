@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) NSDate *endDate;
 @property(readonly, nonatomic) NSDate *startDate;
 @property(readonly, nonatomic) NSString *localizedSmartDescription;
+- (id)localizedDateDescriptionWithOptions:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSString *localizedDateDescription;
 @property(readonly, nonatomic) NSArray *localizedLocationNames;
 @property(readonly, nonatomic) NSString *localizedDebugDescription;

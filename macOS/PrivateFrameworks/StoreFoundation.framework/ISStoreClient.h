@@ -69,6 +69,7 @@
 @property(copy) NSString *identifier; // @synthesize identifier=_identifier;
 @property unsigned long long frameworkVersion; // @synthesize frameworkVersion=_frameworkVersion;
 - (void).cxx_destruct;
+@property(readonly) NSString *mediaType;
 - (id)callerIdentity;
 - (BOOL)isEqualToStoreClient:(id)arg1;
 - (void)_cacheKnownClient:(id)arg1;

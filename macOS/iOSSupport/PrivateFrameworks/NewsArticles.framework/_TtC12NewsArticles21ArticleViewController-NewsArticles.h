@@ -14,7 +14,6 @@
 @property(nonatomic, readonly) NSArray *keyCommands;
 - (void)viewWillLayoutSubviews;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;

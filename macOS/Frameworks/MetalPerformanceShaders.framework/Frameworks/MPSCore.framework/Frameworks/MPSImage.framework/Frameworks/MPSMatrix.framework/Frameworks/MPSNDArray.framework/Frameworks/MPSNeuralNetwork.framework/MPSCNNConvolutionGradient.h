@@ -19,6 +19,7 @@
     BOOL _fullyConnected;
     BOOL _convolutionTranspose;
     unsigned int _weightsDataType;
+    unsigned int _weightsLayout;
     id <MPSCNNConvolutionDataSource> _dataSource;
     struct _opaque_pthread_mutex_t {
         long long __sig;
@@ -53,10 +54,11 @@
 - (id)initWithDevice:(id)arg1 weights:(id)arg2 convolutionTranspose:(BOOL)arg3;
 - (id)initWithDevice:(id)arg1 weights:(id)arg2 fullyConnected:(BOOL)arg3;
 - (void)initialize:(id)arg1 weights:(id)arg2 fullyConnected:(BOOL)arg3 convolutionTranspose:(BOOL)arg4;
-- (void)initialize:(id)arg1 convDesc:(id)arg2 weights:(void *)arg3 dataType:(unsigned int)arg4 fullyConnected:(BOOL)arg5 convolutionTranspose:(BOOL)arg6;
+- (void)initialize:(id)arg1 convDesc:(id)arg2 weights:(void *)arg3 dataType:(unsigned int)arg4 weightsLayout:(unsigned int)arg5 fullyConnected:(BOOL)arg6 convolutionTranspose:(BOOL)arg7;
 - (BOOL)filterHandlesPlugin;
 - (unsigned long long)maxBatchSize;
 - (id)initWithDevice:(id)arg1;
+- (unsigned int)weightsLayout;
 - (BOOL)convolutionTranspose;
 
 @end

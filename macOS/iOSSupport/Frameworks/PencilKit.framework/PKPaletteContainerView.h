@@ -17,6 +17,7 @@
     double _scalingFactor;
     UIView *_contentView;
     UIStackView *_stackView;
+    NSLayoutConstraint *_stackViewBottomConstraint;
     PKAccessoryView *_firstAccessoryView;
     PKAccessoryView *_secondAccessoryView;
     NSLayoutConstraint *_contentViewHeightConstraint;
@@ -37,13 +38,16 @@
 @property(retain, nonatomic) NSLayoutConstraint *contentViewHeightConstraint; // @synthesize contentViewHeightConstraint=_contentViewHeightConstraint;
 @property(retain, nonatomic) PKAccessoryView *secondAccessoryView; // @synthesize secondAccessoryView=_secondAccessoryView;
 @property(retain, nonatomic) PKAccessoryView *firstAccessoryView; // @synthesize firstAccessoryView=_firstAccessoryView;
+@property(retain, nonatomic) NSLayoutConstraint *stackViewBottomConstraint; // @synthesize stackViewBottomConstraint=_stackViewBottomConstraint;
 @property(retain, nonatomic) UIStackView *stackView; // @synthesize stackView=_stackView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
 - (void).cxx_destruct;
+- (void)_updateUI;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)layoutSubviews;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_installSecondAccessoryView;
 - (void)_installContentView;
 - (void)_installIFirstAccessoryView;

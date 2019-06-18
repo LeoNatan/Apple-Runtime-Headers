@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFAlarmTrigger.h>
 
 @interface WFAlarmTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

@@ -8,6 +8,7 @@
 
 @class IOControllerSemanticMO;
 
+__attribute__((visibility("hidden")))
 @interface IOControllerConfigurationMO : NSManagedObject
 {
 }

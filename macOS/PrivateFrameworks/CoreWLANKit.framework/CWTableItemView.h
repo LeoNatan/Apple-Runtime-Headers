@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)drawRect:(struct CGRect)arg1;
 - (void)__drawLTRRect:(struct CGRect)arg1;
 - (void)__drawRTLRect:(struct CGRect)arg1;
+- (id)__flipImage:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 title:(id)arg2 images:(id)arg3 row:(unsigned long long)arg4 tableView:(id)arg5;
 

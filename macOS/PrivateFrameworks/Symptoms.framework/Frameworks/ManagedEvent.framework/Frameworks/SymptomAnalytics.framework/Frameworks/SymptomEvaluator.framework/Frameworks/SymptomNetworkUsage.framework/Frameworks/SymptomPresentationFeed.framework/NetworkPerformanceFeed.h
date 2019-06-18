@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AnalyticsWorkspace, NetworkInterfaceUtils;
+@class AnalyticsWorkspace;
 @protocol OS_dispatch_queue;
 
 @interface NetworkPerformanceFeed : NSObject
@@ -14,8 +14,6 @@
     AnalyticsWorkspace *workspace;
     NSObject<OS_dispatch_queue> *internalQueue;
     NSObject<OS_dispatch_queue> *callerQueue;
-    NetworkInterfaceUtils *networkInterfaceUtils;
-    BOOL activeDaemonRegardlessPrimaryInterface;
     id _delegate;
 }
 

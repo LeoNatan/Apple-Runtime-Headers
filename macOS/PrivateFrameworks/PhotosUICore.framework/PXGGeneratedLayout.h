@@ -47,7 +47,7 @@
 - (void)_updateGenerator;
 - (void)update;
 @property(readonly, nonatomic) PXLayoutGenerator *generator;
-- (void)applySpriteChangeDetails:(id)arg1 countAfterChanges:(unsigned int)arg2 initialState:(CDUnknownBlockType)arg3 modifyState:(CDUnknownBlockType)arg4;
+- (void)didApplySpriteChangeDetails:(id)arg1;
 - (void)metricsDidChange;
 - (void)screenScaleDidChange;
 - (void)referenceSizeDidChange;

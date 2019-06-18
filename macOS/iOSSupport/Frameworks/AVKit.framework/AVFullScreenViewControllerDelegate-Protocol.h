@@ -14,6 +14,7 @@
 - (long long)preferredStatusStyleForFullScreenViewController:(AVFullScreenViewController *)arg1;
 - (BOOL)prefersStatusBarHiddenForFullScreenViewController:(AVFullScreenViewController *)arg1;
 - (void)fullScreenViewController:(AVFullScreenViewController *)arg1 viewWillTransitionToSize:(struct CGSize)arg2 coordinator:(id <UIViewControllerTransitionCoordinator>)arg3;
+- (UIView *)playbackContainerViewForFullScreenViewController:(AVFullScreenViewController *)arg1;
 - (UIView *)viewForFullScreenViewController:(AVFullScreenViewController *)arg1;
 - (void)fullScreenViewControllerWillEndFullScreenPresentation:(AVFullScreenViewController *)arg1;
 - (void)fullScreenViewControllerWillBeginFullScreenPresentation:(AVFullScreenViewController *)arg1;

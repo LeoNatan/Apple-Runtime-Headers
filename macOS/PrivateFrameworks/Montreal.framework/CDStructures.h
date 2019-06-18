@@ -39,6 +39,11 @@ struct map<unsigned int, std::__1::map<unsigned int, unsigned int, std::__1::les
 
 struct map<unsigned int, std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, std::__1::vector<unsigned int, std::__1::allocator<unsigned int>>>>>;
 
+struct mersenne_twister_engine<unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253> {
+    unsigned int __x_[624];
+    unsigned long long __i_;
+};
+
 struct vector<float, std::__1::allocator<float>> {
     float *__begin_;
     float *__end_;

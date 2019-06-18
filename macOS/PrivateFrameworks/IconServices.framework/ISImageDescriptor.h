@@ -9,6 +9,8 @@
 #import <IconServices/NSCopying-Protocol.h>
 #import <IconServices/NSSecureCoding-Protocol.h>
 
+@protocol NSCopying;
+
 @interface ISImageDescriptor : NSObject <NSSecureCoding, NSCopying>
 {
     struct CGSize _size;
@@ -27,6 +29,7 @@
 @property(nonatomic) double scale; // @synthesize scale=_scale;
 @property(nonatomic) struct CGSize size; // @synthesize size=_size;
 - (id)description;
+@property(retain) id <NSCopying> imageCacheKey; // @dynamic imageCacheKey;
 @property(readonly) double sanitizedScale;
 @property(readonly) struct CGSize sanitizedSize;
 @property(nonatomic) BOOL drawBadge;

@@ -28,8 +28,8 @@
 - (void)contentServiceDidReceiveChangesInDomain:(id)arg1;
 - (id)_obtainAccessFromContentServiceForURL:(id)arg1;
 - (id)_obtainAccessInProcessForURL:(id)arg1;
-- (id)readAccessForFileURL:(id)arg1;
-- (void)obtainReadAccessToFileURL:(id)arg1 response:(CDUnknownBlockType)arg2;
+- (id)fullAccessForFileURL:(id)arg1;
+- (void)obtainAccessToFileURL:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)requestITunesManagedLibraryLocation:(CDUnknownBlockType)arg1;
 - (void)requestContentImportStateForDomain:(id)arg1 response:(CDUnknownBlockType)arg2;
 - (void)discardChangesUpToAnchor:(id)arg1 completion:(CDUnknownBlockType)arg2;

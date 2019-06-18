@@ -27,6 +27,7 @@
     double _columnIndex;
     double _targetColumnIndex;
     double _presentationColumnIndex;
+    long long _maxColumnsForAspectFit;
     double _autoFadeAmount;
     double _presentationAutoFadeAmount;
     double _autoFadeColumnIndex;
@@ -37,6 +38,7 @@
 @property(readonly, nonatomic) BOOL isBeingMutated; // @synthesize isBeingMutated=_isBeingMutated;
 @property(nonatomic) BOOL isAnimating; // @synthesize isAnimating=_isAnimating;
 @property(readonly, nonatomic) double autoFadeAmount; // @synthesize autoFadeAmount=_autoFadeAmount;
+@property(readonly, nonatomic) long long maxColumnsForAspectFit; // @synthesize maxColumnsForAspectFit=_maxColumnsForAspectFit;
 @property(nonatomic) double presentationColumnIndex; // @synthesize presentationColumnIndex=_presentationColumnIndex;
 @property(readonly, nonatomic) double targetColumnIndex; // @synthesize targetColumnIndex=_targetColumnIndex;
 @property(readonly, nonatomic) double columnIndex; // @synthesize columnIndex=_columnIndex;
@@ -52,6 +54,7 @@
 - (void)setAutoFadeAmount:(double)arg1;
 - (void)setTargetColumnIndex:(double)arg1;
 - (void)setColumnIndex:(double)arg1;
+- (void)setMaxColumnsForAspectFit:(long long)arg1;
 - (void)setAllowedColumns:(id)arg1;
 - (void)_resetAnimatedValues;
 - (void)performChangesWithAnimation:(BOOL)arg1 changeBlock:(CDUnknownBlockType)arg2;

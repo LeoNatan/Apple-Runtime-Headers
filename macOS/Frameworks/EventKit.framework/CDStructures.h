@@ -84,8 +84,9 @@ typedef struct {
     unsigned int prohibitsSlicingEventsWithAttendees:1;
     unsigned int supportsSubscribedCalendars:1;
     unsigned int supportsAttachments:1;
+    unsigned int requiresOpeningAttachmentAsLink:1;
     unsigned int supportsDelegation:1;
     unsigned int supportsDelegateEnumeration:1;
     unsigned int supportsRecurrenceSplit:1;
-} CDStruct_4df63007;
+} CDStruct_a60c0deb;
 

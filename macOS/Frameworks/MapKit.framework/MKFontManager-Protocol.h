@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) NSFont *bodyFont;
 @property(readonly, nonatomic) NSFont *subtitleFont;
 @property(readonly, nonatomic) NSFont *brandTitleFont;
+@property(readonly, nonatomic) NSFont *mediumTitleFont;
 @property(readonly, nonatomic) NSFont *largeTitleFont;
 @property(readonly, nonatomic) NSFont *largeTitleFontStatic;
 - (NSFont *)iconFontToMatch:(NSFont *)arg1;

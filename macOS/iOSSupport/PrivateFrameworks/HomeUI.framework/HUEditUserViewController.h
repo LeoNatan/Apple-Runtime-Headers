@@ -29,6 +29,7 @@
 @property(readonly, nonatomic) HUEditUserItemManager *editUserItemManager; // @synthesize editUserItemManager=_editUserItemManager;
 @property(readonly, copy, nonatomic) HFUserItem *userItem; // @synthesize userItem=_userItem;
 - (void).cxx_destruct;
+- (void)itemManager:(id)arg1 didUpdateResultsForItem:(id)arg2 atIndexPath:(id)arg3;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (id)_lazyAboutResidentDeviceFooterView;
 - (void)_removeUser;

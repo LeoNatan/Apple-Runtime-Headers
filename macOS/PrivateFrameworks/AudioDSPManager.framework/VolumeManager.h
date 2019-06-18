@@ -8,14 +8,17 @@
 
 #import <AudioDSPManager/NSSecureCoding-Protocol.h>
 
-@protocol SoftwareVolumeDelegate, dspd_HardwareVolumeDelegate, dspd_VolumeNotificationDelegate;
+@protocol SoftwareVolumeDelegate, dspd_GraphVolumeDelegate, dspd_HardwareVolumeDelegate, dspd_VolumeNotificationDelegate;
 
+__attribute__((visibility("hidden")))
 @interface VolumeManager : NSObject <NSSecureCoding>
 {
     struct unordered_map<unsigned long long, adm::vm::Port, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, adm::vm::Port>>> mPorts;
+    struct unordered_map<unsigned long long, IOControllerState, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, IOControllerState>>> mIOControllers;
     id <dspd_HardwareVolumeDelegate> mHardwareVolumeDelegate;
     id <SoftwareVolumeDelegate> mSoftwareVolumeDelegate;
     id <dspd_VolumeNotificationDelegate> mVolumeNotificationDelegate;
+    id <dspd_GraphVolumeDelegate> mGraphVolumeDelegate;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -50,12 +53,15 @@
 - (expected_60ac6007)virtualMasterStereoPan:(unsigned long long)arg1;
 - (struct error_code)setVirtualMasterVolume:(unsigned long long)arg1 scalarVolume:(float)arg2;
 - (expected_60ac6007)virtualMasterVolume:(unsigned long long)arg1;
+- (vector_7984f87c)getIOControllerIDs;
 - (expected_336b2855)volumeCapabilities:(unsigned long long)arg1;
 - (vector_7984f87c)getPortDescriptionIDs;
 - (struct error_code)configureWithPortDescriptions:(const vector_66ffd461 *)arg1 swVolumeCatalog:(const struct SoftwareVolumeCatalog *)arg2 volumePolicies:(const map_2bb803d6 *)arg3;
 - (struct Port *)getOrCreatePort:(const struct PortDescription *)arg1 volumePolicies:(const map_2bb803d6 *)arg2;
 - (struct error_code)removePort:(unsigned long long)arg1;
 - (struct error_code)addPort:(const struct PortDescription *)arg1;
+- (id)getGraphVolumeDelegate;
+- (struct error_code)setGraphVolumeDelegate:(id)arg1;
 - (struct error_code)setVolumeNotificationDelegate:(id)arg1;
 - (struct error_code)setSoftwareVolumeDelegate:(id)arg1;
 - (struct error_code)setHardwareVolumeDelegate:(id)arg1;

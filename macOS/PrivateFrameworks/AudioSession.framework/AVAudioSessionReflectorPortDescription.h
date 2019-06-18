@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVAudioSessionPortDescription_New, NSSet, NSString;
+@class AVAudioSessionPortDescription_New, NSArray, NSString;
 
 @interface AVAudioSessionReflectorPortDescription : NSObject
 {
@@ -14,10 +14,10 @@
 
 @property(readonly) unsigned long long dspLocation;
 @property(readonly) NSString *behavior;
-@property(readonly) NSSet *sessionTokens;
+@property(readonly) NSArray *sessionTokens;
 @property(readonly) __weak AVAudioSessionPortDescription_New *referencePortDescription;
 @property(readonly) NSString *audioStreamTagsPolicyType;
-@property(readonly) NSSet *audioStreamTags;
+@property(readonly) NSArray *audioStreamTags;
 
 @end
 

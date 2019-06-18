@@ -8,6 +8,9 @@
 @protocol NSSecureCoding;
 
 @protocol TIPropertyProvider
+- (BOOL)isSecureMode;
+- (long long)spellCheckerDocumentTag;
+- (int)processIdentifier;
 - (NSObject *)getApplicationPropertyValue:(unsigned long long)arg1;
 - (void)setApplicationProperty:(unsigned long long)arg1 withValue:(NSObject<NSSecureCoding> *)arg2 waitUntilDone:(BOOL)arg3;
 @end

@@ -25,9 +25,9 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *resourceLoaderQueue; // @synthesize resourceLoaderQueue=_resourceLoaderQueue;
 @property(readonly, nonatomic) HMCameraClip *clip; // @synthesize clip=_clip;
 - (void).cxx_destruct;
+- (void)dealloc;
 - (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 @property(readonly, nonatomic, getter=isPlayable) BOOL playable;
-- (void)_setupObservation;
 - (id)initWithClip:(id)arg1;
 - (id)initWithAsset:(id)arg1 automaticallyLoadedAssetKeys:(id)arg2;
 

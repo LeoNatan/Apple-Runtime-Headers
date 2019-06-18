@@ -15,6 +15,7 @@
 + (void)showBluetoothError;
 + (void)dismissUSBAlerts;
 + (void)removeNotificationForDevice:(id)arg1;
++ (void)handleInsecuredDevice:(id)arg1;
 + (void)usbPairingComplete:(id)arg1 forDeviceAddressString:(id)arg2;
 + (void)usbPairingConfirmation:(id)arg1;
 + (void)proximityTriggerCancel:(id)arg1;

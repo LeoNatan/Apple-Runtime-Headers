@@ -29,8 +29,10 @@
 + (id)reuseIdentifier;
 + (id)sectionIdentifier;
 + (id)sectionTitle;
++ (unsigned long long)recencyRankedTargetResultCount;
 + (BOOL)supportsMenuInteraction;
 + (BOOL)supportsQuicklook;
++ (BOOL)useRecencyRankedSearchForMode:(unsigned long long)arg1;
 + (id)rankingQueriesWithText:(id)arg1;
 @property(nonatomic) BOOL queryRunning; // @synthesize queryRunning=_queryRunning;
 @property(nonatomic) BOOL suppressAvatars; // @synthesize suppressAvatars=_suppressAvatars;

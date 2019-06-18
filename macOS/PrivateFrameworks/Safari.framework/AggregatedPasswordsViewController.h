@@ -46,12 +46,12 @@ __attribute__((visibility("hidden")))
     NSButton *_removeButton;
     NSButton *_detailsButton;
     NSButton *_autoFillUserNamesAndPasswordsCheckbox;
-    NSImageView *_duplicatedPasswordsWarningIcon;
-    NSTextField *_duplicatedPasswordsWarningLabel;
+    NSImageView *_passwordWarningLegendIcon;
+    NSTextField *_passwordWarningLegendLabel;
 }
 
-@property(nonatomic) __weak NSTextField *duplicatedPasswordsWarningLabel; // @synthesize duplicatedPasswordsWarningLabel=_duplicatedPasswordsWarningLabel;
-@property(nonatomic) __weak NSImageView *duplicatedPasswordsWarningIcon; // @synthesize duplicatedPasswordsWarningIcon=_duplicatedPasswordsWarningIcon;
+@property(nonatomic) __weak NSTextField *passwordWarningLegendLabel; // @synthesize passwordWarningLegendLabel=_passwordWarningLegendLabel;
+@property(nonatomic) __weak NSImageView *passwordWarningLegendIcon; // @synthesize passwordWarningLegendIcon=_passwordWarningLegendIcon;
 @property(nonatomic) __weak NSButton *autoFillUserNamesAndPasswordsCheckbox; // @synthesize autoFillUserNamesAndPasswordsCheckbox=_autoFillUserNamesAndPasswordsCheckbox;
 @property(nonatomic) __weak NSButton *detailsButton; // @synthesize detailsButton=_detailsButton;
 @property(nonatomic) __weak NSButton *removeButton; // @synthesize removeButton=_removeButton;
@@ -96,7 +96,8 @@ __attribute__((visibility("hidden")))
 - (void)changePasswordForSavedPassword:(id)arg1;
 - (id)_warningTextForSavedPassword:(id)arg1;
 - (id)warningStringForSavedPassword:(id)arg1;
-- (void)_updateDuplicatedPasswordsWarningVisibility:(BOOL)arg1;
+- (BOOL)_anyPasswordIsWeak;
+- (void)_updatePasswordWarningsLegend;
 - (void)aggregatedPasswordsAuditingTableCellViewAuditingButtonWasClicked:(id)arg1;
 - (void)passwordsDetailSheetControllerDoesNotWantLockPolicyDeferral:(id)arg1;
 - (void)passwordsDetailSheetControllerWantsLockPolicyDeferral:(id)arg1;

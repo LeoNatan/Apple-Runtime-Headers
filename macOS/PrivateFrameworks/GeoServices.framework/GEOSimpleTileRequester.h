@@ -29,6 +29,9 @@
     GEOTileKeyMap *_signpostIDs;
     unsigned int _highestRunningOperationPriority;
     geo_isolater *_highestRunningOperationPriorityIsolation;
+    BOOL _includeReasonHeader;
+    BOOL _allowTLSSessionTicketUse;
+    BOOL _allowTCPFastOpen;
 }
 
 @property(readonly, nonatomic) GEOTileRequestBalancer *balancer; // @synthesize balancer=_balancer;

@@ -89,6 +89,7 @@
 + (id)spIdSiriDebugVoiceProfileStoreRootDirectory;
 + (id)spIdDataRootDirectory;
 + (id)spIdSiriDebugVTDataDirectory;
++ (long long)getNumberOfAudioFilesInDirectory:(id)arg1;
 + (id)getImplicitUtterenceCacheDirectory;
 + (BOOL)isCurrentDeviceCompatibleWithVoiceProfileAt:(id)arg1;
 + (BOOL)isCurrentDeviceCompatibleWithNewerVoiceProfileAt:(id)arg1;
@@ -110,6 +111,7 @@
 + (id)spIdAudioLogsDir;
 + (void)createDirectoryIfDoesNotExist:(id)arg1;
 + (id)spIdVoiceProfileImportRootDir;
++ (id)spIdTDSRModelDirForLocale:(id)arg1;
 + (id)spIdSATModelDirForLocale:(id)arg1 spidType:(unsigned long long)arg2;
 + (id)spIdSATModelDirForLocale:(id)arg1 profileId:(id)arg2 spidType:(unsigned long long)arg3;
 + (id)spIdSATAudioDirForLocale:(id)arg1 spidType:(unsigned long long)arg2;

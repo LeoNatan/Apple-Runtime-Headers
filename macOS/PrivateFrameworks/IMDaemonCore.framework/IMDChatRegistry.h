@@ -142,6 +142,7 @@
 - (id)_allChatInfo;
 - (id)_chatInfoForConnection;
 - (void)_fixUpChatParticipantsIfNeeded:(id)arg1;
+- (void)_fixSMSGroupChatAndStoreIfNeeded:(id)arg1 iMessageChat:(id)arg2;
 - (id)stringForChatStyle:(unsigned char)arg1;
 - (void)removeMessage:(id)arg1 fromChat:(id)arg2;
 - (void)addMessage:(id)arg1 toChat:(id)arg2 deferSpotlightIndexing:(BOOL)arg3;

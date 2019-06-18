@@ -56,6 +56,7 @@
 - (void)set_motion:(id)arg1;
 - (id)_motion;
 - (void).cxx_destruct;
+- (BOOL)isBluetoothAndUSBMirrored;
 - (void)setStateFromExtendedGamepad:(id)arg1;
 - (void)setHapticMotor:(int)arg1 frequency:(float)arg2;
 - (void)setLightbarColorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
@@ -78,6 +79,7 @@
 - (id)button2;
 - (id)button1;
 - (id)button0;
+- (void)setControllerForElements;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithController:(id)arg1 initInfo:(const struct GCExtendedGamepadInitWithControllerInitInfo *)arg2;

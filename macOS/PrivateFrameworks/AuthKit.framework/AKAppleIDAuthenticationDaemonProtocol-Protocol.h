@@ -28,6 +28,7 @@
 - (void)checkInWithAuthenticationServerForAppleID:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (void)configurationInfoWithIdentifiers:(NSArray *)arg1 forAltDSID:(NSString *)arg2 completion:(void (^)(NSDictionary *, NSError *))arg3;
 - (void)setConfigurationInfo:(id <NSSecureCoding>)arg1 forIdentifier:(NSString *)arg2 forAltDSID:(NSString *)arg3 completion:(void (^)(BOOL, NSError *))arg4;
+- (void)warmUpVerificationSessionWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)revokeAuthorizationForTeamWithTeamID:(NSString *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (void)deleteAuthorizationDatabaseWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)fetchAppListWithAltDSID:(NSString *)arg1 completion:(void (^)(AKApplicationMetadataInfo *, NSError *))arg2;

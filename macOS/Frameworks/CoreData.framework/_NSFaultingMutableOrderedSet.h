@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     NSMutableDictionary *_forcedKeys;
 }
 
++ (Class)classForKeyedUnarchiver;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)alloc;
 + (BOOL)accessInstanceVariablesDirectly;
@@ -43,8 +44,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)_isIdenticalFault:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToOrderedSet:(id)arg1;
-- (Class)classForArchiver;
 - (id)replacementObjectForCoder:(id)arg1;
+- (Class)classForArchiver;
 - (Class)classForCoder;
 - (id)valueForKeyPath:(id)arg1;
 - (id)valueForKey:(id)arg1;

@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSString;
 
+__attribute__((visibility("hidden")))
 @interface RemoteProcessingBlockHostBase : NSObject <RemoteProcessingBlockHost>
 {
     unsigned int _blockID;

@@ -9,7 +9,7 @@
 #import <NewsCore/FCPrivateDataContext-Protocol.h>
 
 @class FCIssueReadingHistory, FCNetworkBehaviorMonitor, FCPersonalizationData, FCPrivateChannelMembershipController, FCReadingHistory, FCReadingList, FCSubscriptionList, FCTagSettings, FCUserInfo, NSString;
-@protocol FCClearableReadingHistory, FCContentContext, FCPrivateDataContextInternal, FCPushNotificationHandling;
+@protocol FCContentContext, FCPrivateDataContextInternal, FCPushNotificationHandling;
 
 @interface FCPrivateDataContext : NSObject <FCPrivateDataContext>
 {
@@ -25,14 +25,12 @@
     FCTagSettings *_tagSettings;
     id <FCPushNotificationHandling> _privatePushNotificationHandler;
     FCNetworkBehaviorMonitor *_networkBehaviorMonitor;
-    id <FCClearableReadingHistory> _clearReadingHistoryManager;
     id <FCPrivateDataContextInternal> _internalPrivateDataContext;
     id <FCContentContext> _contentContext;
 }
 
 @property(retain, nonatomic) id <FCContentContext> contentContext; // @synthesize contentContext=_contentContext;
 @property(retain, nonatomic) id <FCPrivateDataContextInternal> internalPrivateDataContext; // @synthesize internalPrivateDataContext=_internalPrivateDataContext;
-@property(readonly, nonatomic) id <FCClearableReadingHistory> clearReadingHistoryManager; // @synthesize clearReadingHistoryManager=_clearReadingHistoryManager;
 @property(readonly, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor; // @synthesize networkBehaviorMonitor=_networkBehaviorMonitor;
 @property(readonly, nonatomic, getter=isPrivateDataSyncingEnabled) BOOL privateDataSyncingEnabled; // @synthesize privateDataSyncingEnabled=_privateDataSyncingEnabled;
 @property(readonly, nonatomic) FCTagSettings *tagSettings; // @synthesize tagSettings=_tagSettings;
@@ -47,6 +45,8 @@
 @property(readonly, nonatomic) FCPrivateChannelMembershipController *privateChannelMembershipController; // @synthesize privateChannelMembershipController=_privateChannelMembershipController;
 @property(readonly, nonatomic) FCPersonalizationData *personalizationData; // @synthesize personalizationData=_personalizationData;
 @property(readonly, nonatomic) FCIssueReadingHistory *issueReadingHistory; // @synthesize issueReadingHistory=_issueReadingHistory;
+- (id)_privateDataControllers;
+- (void)preparePrivateDataControllersForUse;
 - (id)initWithConfiguration:(id)arg1 context:(id)arg2 privateDatabase:(id)arg3 privateDataDirectory:(id)arg4 privateDataActionProvider:(id)arg5 encryptionDelegate:(id)arg6 networkBehaviorMonitor:(id)arg7 privateDataSyncingEnabled:(BOOL)arg8;
 - (id)initWithConfiguration:(id)arg1 context:(id)arg2 privateDataHostDirectory:(id)arg3 privateDataActionProvider:(id)arg4 encryptionDelegate:(id)arg5 networkBehaviorMonitor:(id)arg6 privateDataSyncingEnabled:(BOOL)arg7;
 - (id)init;

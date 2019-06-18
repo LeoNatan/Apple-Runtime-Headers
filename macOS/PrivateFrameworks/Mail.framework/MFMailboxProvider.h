@@ -25,6 +25,7 @@
 - (long long)mailboxTypeForMailboxObjectID:(id)arg1;
 - (id)mailboxObjectIDsForMailboxType:(long long)arg1;
 - (id)legacyMailboxForObjectID:(id)arg1;
+- (id)mailboxForObjectID:(id)arg1;
 - (void)_mailboxInvalidated:(id)arg1;
 - (void)fetchMailboxes;
 - (id)allMailboxes;

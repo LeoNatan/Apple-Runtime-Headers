@@ -12,9 +12,8 @@ __attribute__((visibility("hidden")))
 @interface PDFSelectionPrivate : NSObject
 {
     PDFDocument *document;
+    NSColor *color;
     NSMutableArray *pageRanges;
-    NSColor *activeColor;
-    NSColor *inactiveColor;
     _Bool forceBreaks;
     struct __CFArray *cgSelections;
     NSMutableArray *pages;

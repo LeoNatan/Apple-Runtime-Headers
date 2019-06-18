@@ -6,12 +6,13 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
+#import <GeoServices/GEOCompanionCompatibility-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOInstructionSet, GEOLatLng, GEOTransitArrivalInfo, GEOTransitBaseFare, GEOTransitSurcharge, GEOTransitVehiclePositionInfo, NSData, NSMutableArray, PBDataReader, PBUnknownFields;
+@class GEOInstructionSet, GEOLatLng, GEOTransitArrivalInfo, GEOTransitBaseFare, GEOTransitSurcharge, GEOTransitVehiclePositionInfo, NSData, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 @protocol GEOTransitVehicleEntries;
 
-@interface GEOTransitStep : PBCodable <NSCopying>
+@interface GEOTransitStep : PBCodable <GEOCompanionCompatibility, NSCopying>
 {
     PBDataReader *_reader;
     CDStruct_158f0f88 _readerMark;
@@ -111,7 +112,7 @@
 - (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
@@ -119,7 +120,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, copy) NSString *description;
 @property(retain, nonatomic) GEOTransitVehiclePositionInfo *vehiclePositionInfo;
 @property(readonly, nonatomic) BOOL hasVehiclePositionInfo;
 - (void)_readVehiclePositionInfo;
@@ -213,8 +214,14 @@
 @property(nonatomic) BOOL hasManeuverType;
 @property(nonatomic) int maneuverType;
 - (void)dealloc;
+- (id)instanceCompatibleWithProtocolVersion:(unsigned long long)arg1;
 @property(readonly, nonatomic) id <GEOTransitVehicleEntries> vehicleEntries;
 - (long long)legTypeForManeuver;
+- (void)updateTransitStep:(id)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

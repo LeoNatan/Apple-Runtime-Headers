@@ -17,6 +17,7 @@
 - (void)addLocation;
 - (id)MKMapItem;
 - (BOOL)hasPreviews;
+- (BOOL)preferLocalPreviewImages;
 - (BOOL)previewsSupportMultipleAppearances;
 
 @end

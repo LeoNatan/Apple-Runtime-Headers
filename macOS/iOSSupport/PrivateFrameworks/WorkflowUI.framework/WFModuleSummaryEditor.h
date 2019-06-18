@@ -58,7 +58,7 @@
 - (BOOL)canTypeAlongsideVariables;
 - (unsigned long long)variableResultType;
 - (void)beginEditingTextAttachment:(id)arg1 inSlotWithIdentifier:(id)arg2 sourceView:(id)arg3;
-- (void)presentVariablePickerWithCurrentVariable:(id)arg1 fromViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)presentVariablePickerWithCurrentState:(id)arg1 fromViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect)arg4 completionHandler:(CDUnknownBlockType)arg5;
 - (void)textEntryDidFinish;
 - (void)textEntryTextDidChange:(id)arg1;
 - (BOOL)textEntryShouldChangeText:(id)arg1;

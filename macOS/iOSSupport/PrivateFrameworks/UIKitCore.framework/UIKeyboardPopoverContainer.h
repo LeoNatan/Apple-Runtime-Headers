@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 
 + (void)resetGlobalProperties;
 + (id)propertiesForSpecificKeyboardFrame:(struct CGRect)arg1 onScreenSize:(struct CGSize)arg2 headerHeight:(double)arg3;
++ (struct CGRect)frameAtOffset:(struct CGPoint)arg1 keyboardSize:(struct CGSize)arg2 screenSize:(struct CGSize)arg3;
 + (id)propertiesForTargetRect:(struct CGRect)arg1 withHeight:(double)arg2 onScreenSize:(struct CGSize)arg3 headerHeight:(double)arg4;
 + (struct UIEdgeInsets)contentInsets;
 + (double)dragAreaHeight;

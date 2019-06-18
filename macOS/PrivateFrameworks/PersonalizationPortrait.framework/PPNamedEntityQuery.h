@@ -13,7 +13,6 @@
 
 @interface PPNamedEntityQuery : NSObject <NSCopying, NSSecureCoding>
 {
-    BOOL _overrideDecayRate;
     BOOL _matchCategory;
     BOOL _excludeWithoutSentiment;
     BOOL _isMapsSearchQuery;
@@ -45,7 +44,6 @@
 @property(nonatomic) BOOL matchCategory; // @synthesize matchCategory=_matchCategory;
 @property(copy, nonatomic) NSString *matchingName; // @synthesize matchingName=_matchingName;
 @property(nonatomic) double decayRate; // @synthesize decayRate=_decayRate;
-@property(nonatomic) BOOL overrideDecayRate; // @synthesize overrideDecayRate=_overrideDecayRate;
 @property(nonatomic) unsigned long long deviceFilter; // @synthesize deviceFilter=_deviceFilter;
 @property(retain, nonatomic) NSSet *excludingSourceBundleIds; // @synthesize excludingSourceBundleIds=_excludingSourceBundleIds;
 @property(retain, nonatomic) NSSet *matchingSourceBundleIds; // @synthesize matchingSourceBundleIds=_matchingSourceBundleIds;
@@ -63,6 +61,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
+@property(nonatomic) BOOL overrideDecayRate;
 
 @end
 

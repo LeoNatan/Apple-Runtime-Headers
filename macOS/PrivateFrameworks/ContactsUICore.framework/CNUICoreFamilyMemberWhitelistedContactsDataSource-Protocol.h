@@ -11,6 +11,7 @@
 
 @protocol CNUICoreFamilyMemberWhitelistedContactsDataSource <NSObject>
 @property(readonly, nonatomic) NSArray *familyMemberContactItems;
+@property(readonly, nonatomic) long long fetchStatus;
 @property(retain, nonatomic) id <CNUICoreFamilyMemberContactsObserver> observer;
 - (void)finishWhitelistedContactsTasks;
 - (CNContact *)contactRepresentingItem:(CNUICoreFamilyMemberContactItem *)arg1;

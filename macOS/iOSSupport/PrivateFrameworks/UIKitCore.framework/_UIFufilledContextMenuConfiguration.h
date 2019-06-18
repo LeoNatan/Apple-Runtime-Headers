@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIViewController *previewViewController; // @synthesize previewViewController=_previewViewController;
 @property(copy, nonatomic) id <NSCopying> identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+- (BOOL)isPresentable;
 
 @end
 

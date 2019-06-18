@@ -6,7 +6,13 @@
 
 #import <WiFiPolicy/NSObject-Protocol.h>
 
+@class NSDate, NSString;
+
 @protocol TBTile <NSObject>
 @property(readonly, nonatomic) unsigned long long key;
+
+@optional
+@property(retain, nonatomic) NSString *etag;
+@property(readonly, copy, nonatomic) NSDate *created;
 @end
 

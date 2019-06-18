@@ -25,7 +25,6 @@ struct _PASDeviceStateSystemCallbacks {
     CDUnknownFunctionPointerType _field5;
     CDUnknownFunctionPointerType _field6;
     CDUnknownFunctionPointerType _field7;
-    CDUnknownFunctionPointerType _field8;
 };
 
 struct _PASLPHeader {
@@ -90,6 +89,14 @@ struct _opaque_pthread_mutex_t {
 };
 
 struct malloc_introspection_t;
+
+struct vector<float, std::__1::allocator<float>> {
+    float *_field1;
+    float *_field2;
+    struct __compressed_pair<float *, std::__1::allocator<float>> {
+        float *_field1;
+    } _field3;
+};
 
 #pragma mark Typedef'd Structures
 

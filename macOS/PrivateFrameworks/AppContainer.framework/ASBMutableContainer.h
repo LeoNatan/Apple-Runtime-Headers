@@ -41,6 +41,7 @@
 @property(readonly) NSString *containerIdentifier;
 - (id)initWithApplicationAtURL:(id)arg1 andHomeDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
 - (id)initWithCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 options:(unsigned long long)arg3 error:(id *)arg4;
+- (id)initWithFakeContainerForCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 error:(id *)arg3;
 - (id)initWithNewContainerForCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 ignoringMigrationFailures:(BOOL)arg3 error:(id *)arg4;
 - (id)initWithCodeIdentity:(id)arg1 andHomeDirectory:(id)arg2 error:(id *)arg3;
 - (id)initWithHomeDirectory:(id)arg1 andContainerPath:(id)arg2 codeIdentity:(id)arg3 error:(id *)arg4;

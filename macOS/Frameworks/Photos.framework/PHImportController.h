@@ -17,7 +17,7 @@
     BOOL _importInProgress;
     ICDeviceBrowser *_deviceBrowser;
     NSMutableDictionary *_importDeviceSources;
-    NSHashTable *_importSourceObservers;
+    NSHashTable *_observers;
     id _processInfoActivityToken;
 }
 
@@ -25,7 +25,7 @@
 + (id)sharedInstance;
 @property(retain, nonatomic) id processInfoActivityToken; // @synthesize processInfoActivityToken=_processInfoActivityToken;
 @property(nonatomic) BOOL importInProgress; // @synthesize importInProgress=_importInProgress;
-@property(retain, nonatomic) NSHashTable *importSourceObservers; // @synthesize importSourceObservers=_importSourceObservers;
+@property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSMutableDictionary *importDeviceSources; // @synthesize importDeviceSources=_importDeviceSources;
 @property(retain, nonatomic) ICDeviceBrowser *deviceBrowser; // @synthesize deviceBrowser=_deviceBrowser;
 - (void).cxx_destruct;
@@ -41,7 +41,7 @@
 - (id)importAssets:(id)arg1 fromImportSource:(id)arg2 intoLibraryAtURL:(id)arg3 withOptions:(id)arg4 delegate:(id)arg5 performanceDelegate:(id)arg6 atEnd:(CDUnknownBlockType)arg7;
 - (id)importUrls:(id)arg1 withOptions:(id)arg2 delegate:(id)arg3 atEnd:(CDUnknownBlockType)arg4;
 - (BOOL)sourceIsConnected:(id)arg1;
-- (void)addImportSourceObserver:(id)arg1;
+- (void)addImportControllerObserver:(id)arg1;
 - (id)init;
 
 // Remaining properties

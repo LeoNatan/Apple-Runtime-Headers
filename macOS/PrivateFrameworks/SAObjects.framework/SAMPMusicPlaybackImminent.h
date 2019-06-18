@@ -6,6 +6,8 @@
 
 #import <SAObjects/SADomainCommand.h>
 
+@class NSString;
+
 @interface SAMPMusicPlaybackImminent : SADomainCommand
 {
 }
@@ -14,6 +16,7 @@
 + (id)musicPlaybackImminent;
 - (BOOL)mutatingCommand;
 - (BOOL)requiresResponse;
+@property(copy, nonatomic) NSString *preloadedUserSharedUserId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

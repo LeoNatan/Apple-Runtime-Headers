@@ -213,6 +213,7 @@
 - (void)didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 attempts:(long long)arg3 useMessageSuppression:(BOOL)arg4 completionBlock:(CDUnknownBlockType)arg5;
 - (BOOL)_hasSuppressedMessageID:(id)arg1 chatGUID:(id)arg2;
+- (void)updateChatGUID:(id)arg1 withLastReadTimeStamp:(long long)arg2 withLastSeenMessageGUID:(id)arg3 fromMe:(BOOL)arg4;
 - (BOOL)_didReceiveMessageDeliveryReceiptForMessageID:(id)arg1 attempts:(long long)arg2 date:(id)arg3 account:(id)arg4;
 - (BOOL)didReceiveMessageDeliveryReceiptForMessageID:(id)arg1 date:(id)arg2 account:(id)arg3;
 - (BOOL)didReceiveMessageDeliveryReceiptForMessageID:(id)arg1 date:(id)arg2;
@@ -284,7 +285,7 @@
 - (id)pictureKeyForBuddy:(id)arg1;
 - (id)pictureOfBuddy:(id)arg1;
 @property(readonly, retain, nonatomic) NSDictionary *buddyPictures;
-- (void)sendNicknameUpdatesToPeerDevices:(id)arg1;
+- (void)sendNicknameUpdatesToPeerDevices:(id)arg1 toDestinations:(id)arg2;
 - (void)closeSessionChatID:(id)arg1 identifier:(id)arg2 style:(unsigned char)arg3;
 - (void)setProperties:(id)arg1 ofParticipant:(id)arg2 inChatID:(id)arg3 identifier:(id)arg4 style:(unsigned char)arg5;
 - (void)sendLogDumpMessageAtFilePath:(id)arg1 toRecipient:(id)arg2 shouldDeleteFile:(BOOL)arg3 withCompletion:(CDUnknownBlockType)arg4;

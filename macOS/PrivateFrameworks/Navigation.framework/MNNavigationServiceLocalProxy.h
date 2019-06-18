@@ -58,7 +58,7 @@ __attribute__((visibility("hidden")))
 - (void)navigationSessionManager:(id)arg1 currentStepIndex:(unsigned long long)arg2 didUpdateDistanceUntilSign:(double)arg3 timeUntilSign:(double)arg4;
 - (void)navigationSessionManager:(id)arg1 proceedToRouteDistance:(double)arg2 displayString:(id)arg3 closestStepIndex:(unsigned long long)arg4;
 - (void)navigationSessionManager:(id)arg1 didUpdateAlternateRoutes:(id)arg2;
-- (void)navigationSessionManager:(id)arg1 failedRerouteWithErrorCode:(long long)arg2;
+- (void)navigationSessionManager:(id)arg1 didFailRerouteWithError:(id)arg2;
 - (void)navigationSessionManager:(id)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(id)arg3;
 - (void)navigationSessionManager:(id)arg1 didUpdateRouteWithNewRideSelection:(id)arg2;
 - (void)navigationSessionManagerDidCancelReroute:(id)arg1;
@@ -120,6 +120,7 @@ __attribute__((visibility("hidden")))
 - (void)setRoutesForPreview:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
 - (void)cancelDirectionsRequestWithIdentifier:(id)arg1;
 - (void)requestDirections:(id)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)reset;
 - (void)start;
 - (void)dealloc;
 - (id)init;

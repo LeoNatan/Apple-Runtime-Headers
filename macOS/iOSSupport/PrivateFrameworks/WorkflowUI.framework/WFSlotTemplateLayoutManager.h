@@ -7,17 +7,23 @@
 #import <UIKit/NSLayoutManager.h>
 
 #import <WorkflowUI/NSLayoutManagerDelegate-Protocol.h>
+#import <WorkflowUI/WFTextAttachmentSizeProvider-Protocol.h>
 
 @class NSString, WFSlotTemplateTextStorage;
 
-@interface WFSlotTemplateLayoutManager : NSLayoutManager <NSLayoutManagerDelegate>
+@interface WFSlotTemplateLayoutManager : NSLayoutManager <NSLayoutManagerDelegate, WFTextAttachmentSizeProvider>
 {
+    BOOL _isLayoutManagerForTextView;
 }
 
+@property(nonatomic) BOOL isLayoutManagerForTextView; // @synthesize isLayoutManagerForTextView=_isLayoutManagerForTextView;
 - (struct CGRect)layoutManager:(id)arg1 boundingBoxForControlGlyphAtIndex:(unsigned long long)arg2 forTextContainer:(id)arg3 proposedLineFragment:(struct CGRect)arg4 glyphPosition:(struct CGPoint)arg5 characterIndex:(unsigned long long)arg6;
 - (long long)layoutManager:(id)arg1 shouldUseAction:(long long)arg2 forControlCharacterAtIndex:(unsigned long long)arg3;
 - (BOOL)layoutManager:(id)arg1 shouldSetLineFragmentRect:(inout struct CGRect *)arg2 lineFragmentUsedRect:(inout struct CGRect *)arg3 baselineOffset:(inout double *)arg4 inTextContainer:(id)arg5 forGlyphRange:(struct _NSRange)arg6;
 - (BOOL)layoutManager:(id)arg1 shouldBreakLineByWordBeforeCharacterAtIndex:(unsigned long long)arg2;
+- (void)getCalculatedLineHeight:(double *)arg1 originalFontLineHeight:(double *)arg2 atCharacterIndex:(unsigned long long)arg3;
+- (double)preferredHeightForDrawingTextAttachment:(id)arg1 atCharacterIndex:(unsigned long long)arg2 withProposedHeight:(double)arg3;
+- (BOOL)shouldDrawTextAttachment:(id)arg1 atCharacterIndex:(unsigned long long)arg2;
 - (void)drawBackgroundForGlyphRange:(struct _NSRange)arg1 atPoint:(struct CGPoint)arg2;
 @property(readonly, nonatomic) unsigned long long numberOfLaidLines;
 - (id)init;

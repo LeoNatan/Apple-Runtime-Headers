@@ -6,15 +6,15 @@
 
 #import <AudioSession/AVAudioHardwareObject.h>
 
-@class NSSet, NSString;
+@class NSArray, NSString;
 
 @interface AVAudioHardwareBox : AVAudioHardwareObject
 {
 }
 
-@property(readonly, nonatomic) NSSet *controls;
-@property(readonly, nonatomic) NSSet *clocks;
-@property(readonly, nonatomic) NSSet *devices;
+@property(readonly, nonatomic) NSArray *controls;
+@property(readonly, nonatomic) NSArray *clocks;
+@property(readonly, nonatomic) NSArray *devices;
 @property(readonly, nonatomic) unsigned long long acquistionStatus;
 @property(readonly, nonatomic, getter=isAcquired) BOOL acquired;
 @property(readonly, nonatomic) BOOL requiresAuthentication;

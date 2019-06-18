@@ -17,6 +17,7 @@
     unsigned long long _limit;
 }
 
++ (id)groupEmitterIdentifier;
 + (BOOL)greatStoriesMayEmit:(id)arg1;
 + (void)setShouldEmitOverride:(BOOL)arg1;
 @property(nonatomic) unsigned long long limit; // @synthesize limit=_limit;
@@ -24,9 +25,8 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 @property(readonly, nonatomic) BOOL emitsSingletonGroups;
-@property(readonly, copy, nonatomic) NSString *groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
-- (BOOL)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
+- (BOOL)wantsToInsertGroupInContext:(id)arg1;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (BOOL)wantsToEmitGroupInContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 

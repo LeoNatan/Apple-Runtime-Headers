@@ -50,6 +50,7 @@
 + (id)folderWithIdentifier:(id)arg1 context:(id)arg2;
 + (id)defaultFolderInContext:(id)arg1;
 + (void)purgeFolder:(id)arg1;
++ (id)purgableFoldersFetchRequest;
 + (void)deleteFolder:(id)arg1;
 + (id)newFolderWithIdentifier:(id)arg1 parentFolder:(id)arg2;
 + (id)newFolderInParentFolder:(id)arg1;
@@ -116,6 +117,7 @@
 - (unsigned long long)visibleChildrenCount;
 - (id)visibleNoteContainerChildren;
 - (id)visibleNoteContainerChildrenUnsorted;
+- (id)containerIdentifier;
 - (BOOL)isTrashFolder;
 - (BOOL)canMoveAddOrDeleteContents;
 - (BOOL)isMovable;

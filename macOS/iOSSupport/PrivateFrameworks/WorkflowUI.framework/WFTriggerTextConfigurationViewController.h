@@ -20,6 +20,7 @@
 - (void).cxx_destruct;
 - (void)done:(id)arg1;
 - (void)cancel:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)init;
 

@@ -23,10 +23,6 @@
     unsigned long long _changeTag;
 }
 
-+ (id)predicateUsingSearchSpecification:(id)arg1 withLocationIDs:(id)arg2;
-+ (id)predicateUsingSearchSpecification:(id)arg1;
-+ (id)predicateForPersonsUsingSearchSpecification:(id)arg1 withPersonIDs:(id)arg2;
-+ (id)predicateForPersonsUsingSearchSpecification:(id)arg1;
 + (id)predicateForObjectsWithParentObjectID:(id)arg1 andRole:(unsigned long long)arg2;
 + (id)predicateForObjectsWithPersonID:(id)arg1 andRole:(unsigned long long)arg2;
 + (id)predicateForObjectsWithIdentifier:(id)arg1;

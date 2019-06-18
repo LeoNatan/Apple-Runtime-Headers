@@ -57,6 +57,7 @@
 - (void)outputContextImplDidChangeProvidesControlForAllVolumeFeatures:(id)arg1;
 - (BOOL)providesControlForAllVolumeFeatures;
 - (void)removeOutputDevice:(id)arg1;
+- (void)removeOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)addOutputDevice:(id)arg1;
 - (void)addOutputDevice:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)setOutputDevices:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

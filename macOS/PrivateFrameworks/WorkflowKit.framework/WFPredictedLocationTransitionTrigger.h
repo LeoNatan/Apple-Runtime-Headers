@@ -23,7 +23,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)localizedTitleWithConfigurationSummary;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)hasValidConfiguration;
 
 @end

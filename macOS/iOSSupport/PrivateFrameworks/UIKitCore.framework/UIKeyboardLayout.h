@@ -75,6 +75,7 @@
 @property(nonatomic) unsigned long long cursorLocation; // @synthesize cursorLocation=_cursorLocation;
 @property(retain, nonatomic) NSUUID *shiftKeyTouchUUID; // @synthesize shiftKeyTouchUUID=_shiftKeyTouchUUID;
 @property(retain, nonatomic) NSUUID *activeTouchUUID; // @synthesize activeTouchUUID=_activeTouchUUID;
+- (BOOL)isHandwritingPlane;
 - (BOOL)hasActiveContinuousPathInput;
 - (id)simulateTouchForCharacter:(id)arg1 errorVector:(struct CGPoint)arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
 - (id)simulateTouch:(struct CGPoint)arg1;
@@ -99,6 +100,7 @@
 - (BOOL)keyplaneContainsEmojiKey;
 - (BOOL)keyplaneContainsDismissKey;
 - (void)triggerSpaceKeyplaneSwitchIfNecessary;
+- (BOOL)_allowContinuousPathUI;
 - (id)currentKeyplane;
 - (void)traitCollectionDidChange:(id)arg1;
 - (double)biasedKeyboardWidthRatio;

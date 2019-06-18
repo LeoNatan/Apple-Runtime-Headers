@@ -54,6 +54,7 @@
 @property(readonly, nonatomic) BOOL canBeShared;
 - (id)ekColor;
 @property(readonly, nonatomic) NSOrderedSet *reminderIDsOrdering;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
@@ -77,7 +78,6 @@
 @property(readonly, nonatomic) BOOL daIsReadOnly; // @dynamic daIsReadOnly;
 @property(readonly, nonatomic) NSString *daPushKey; // @dynamic daPushKey;
 @property(readonly, nonatomic) NSString *daSyncToken; // @dynamic daSyncToken;
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly, nonatomic) NSString *externalIdentifier; // @dynamic externalIdentifier;
 @property(readonly, nonatomic) NSString *externalModificationTag; // @dynamic externalModificationTag;
 @property(readonly, nonatomic) BOOL isGroup; // @dynamic isGroup;

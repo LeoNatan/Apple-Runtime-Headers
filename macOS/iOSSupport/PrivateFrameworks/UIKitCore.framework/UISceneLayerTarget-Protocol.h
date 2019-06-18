@@ -7,6 +7,9 @@
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSObject-Protocol.h>
 
+@class FBSceneLayer;
+
 @protocol UISceneLayerTarget <NSObject, NSCopying>
+- (BOOL)matchesLayer:(FBSceneLayer *)arg1;
 @end
 

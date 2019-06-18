@@ -14,7 +14,7 @@
 + (id)_mapkit_hyperlinksAndPhoneNumbersByAutoDetectingFromString:(id)arg1;
 + (id)hyperlinkFromString:(id)arg1 withURL:(id)arg2;
 + (id)hyperlinkFromString:(id)arg1 font:(id)arg2 withURL:(id)arg3 lineBreakMode:(unsigned long long)arg4;
-+ (id)_mapkit_attributedTransitStringForServerFormattedString:(id)arg1 defaultAttributes:(id)arg2 options:(CDStruct_b58c56ea)arg3;
++ (id)_mapkit_attributedTransitStringForServerFormattedString:(id)arg1 defaultAttributes:(id)arg2 options:(CDStruct_aecaa75c)arg3;
 + (id)_mapkit_attributedTransitStringForServerFormattedString:(id)arg1 defaultAttributes:(id)arg2;
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1;
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 defaultReplacementAttributes:(id)arg2;

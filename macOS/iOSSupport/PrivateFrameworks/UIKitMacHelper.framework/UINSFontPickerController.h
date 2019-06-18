@@ -9,30 +9,29 @@
 #import <UIKitMacHelper/UINSFontPickerController-Protocol.h>
 
 @class NSArray, NSMenu, NSString;
-@protocol UINSFontPickerControllerDelegate, UINSFontPickerInfo;
+@protocol UINSFontPickerControllerConfiguration, UINSFontPickerControllerDelegate, UINSFontPickerInfo;
 
 __attribute__((visibility("hidden")))
 @interface UINSFontPickerController : NSObject <UINSFontPickerController>
 {
     NSArray *_recentFamilies;
     Class _infoClass;
+    id <UINSFontPickerControllerConfiguration> _configuration;
     id <UINSFontPickerInfo> _selectedFontInfo;
     NSMenu *_menu;
-    BOOL _includesFaces;
     id <UINSFontPickerControllerDelegate> _delegate;
 }
 
 @property(nonatomic) __weak id <UINSFontPickerControllerDelegate> delegate; // @synthesize delegate=_delegate;
-@property(nonatomic) BOOL includesFaces; // @synthesize includesFaces=_includesFaces;
 - (void).cxx_destruct;
 - (void)setSelectedFont:(struct __CTFontDescriptor *)arg1;
 - (void)presentAtLocation:(struct CGPoint)arg1 inWindow:(id)arg2;
 - (void)_selectFont:(id)arg1;
 - (void)presentAtLocation:(struct CGPoint)arg1 inView:(id)arg2;
-- (id)initWithInfoClass:(Class)arg1;
+- (id)initWithInfoClass:(Class)arg1 configuration:(id)arg2;
 - (void)_loadFonts;
 - (id)_menuInfoForFamily:(id)arg1;
-- (void)_updateMenuItem:(id)arg1 includeFaces:(BOOL)arg2;
+- (void)_populateFacesForMenuItem:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -7,17 +7,19 @@
 #import <WorkflowKit/WFControlFlowAction.h>
 
 #import <WorkflowKit/WFDynamicEnumerationAsynchronousDataSource-Protocol.h>
+#import <WorkflowKit/WFVariableDelegate-Protocol.h>
 
 @class NSString;
 @protocol WFVariableProvider;
 
-@interface WFConditionalAction : WFControlFlowAction <WFDynamicEnumerationAsynchronousDataSource>
+@interface WFConditionalAction : WFControlFlowAction <WFDynamicEnumerationAsynchronousDataSource, WFVariableDelegate>
 {
     id <WFVariableProvider> _parentVariableProvider;
 }
 
 @property(nonatomic) __weak id <WFVariableProvider> parentVariableProvider; // @synthesize parentVariableProvider=_parentVariableProvider;
 - (void).cxx_destruct;
+- (void)variableDidChange:(id)arg1;
 - (void)clearLegacyComparisonBehaviorFlag;
 - (BOOL)useLegacyComparisonBehavior;
 - (id)enumeration:(id)arg1 localizedLabelForPossibleState:(id)arg2;
@@ -28,7 +30,7 @@
 - (id)subjectState;
 - (BOOL)setParameterState:(id)arg1 forKey:(id)arg2;
 - (void)initializeParameters;
-- (unsigned long long)minimumSupportedClientVersion;
+- (id)minimumSupportedClientVersion;
 - (void)reloadOpenActionInWorkflow:(id)arg1;
 - (void)wasRemovedFromWorkflow:(id)arg1;
 - (void)wasAddedToWorkflow:(id)arg1;

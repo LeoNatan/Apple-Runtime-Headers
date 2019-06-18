@@ -490,6 +490,7 @@
 - (BOOL)_animationParametersForHidingNavigationBar:(BOOL)arg1 lastOperation:(long long)arg2 edge:(unsigned long long *)arg3 duration:(double *)arg4;
 - (BOOL)_clipUnderlapWhileTransitioning;
 - (void)_setClipUnderlapWhileTransitioning:(BOOL)arg1;
+- (BOOL)_navigationBarLayoutIsInInteractiveScroll;
 - (BOOL)_navigationBarShouldUpdateProgress;
 @property(nonatomic, getter=isNavigationBarHidden) BOOL navigationBarHidden;
 - (void)setNavigationBar:(id)arg1;

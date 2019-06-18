@@ -23,7 +23,6 @@
     BOOL _didSendEndOrCancel;
     BOOL _didSendFindBox;
     BOOL _configUseJPEGForColor;
-    BOOL _configExperimentalMode;
     BOOL _configUseFastScanning;
     BOOL _previousIdleState;
     BOOL _sessionIsStopping;
@@ -142,7 +141,6 @@
 @property(retain) NSObject<OS_dispatch_semaphore> *processingImage; // @synthesize processingImage=_processingImage;
 @property struct opaqueCMSampleBuffer *lastBuffer; // @synthesize lastBuffer=_lastBuffer;
 @property BOOL configUseFastScanning; // @synthesize configUseFastScanning=_configUseFastScanning;
-@property BOOL configExperimentalMode; // @synthesize configExperimentalMode=_configExperimentalMode;
 @property(retain) CRPollingTimer *boxLayerHideTimer; // @synthesize boxLayerHideTimer=_boxLayerHideTimer;
 @property(retain) NSPointerArray *captureBuffer; // @synthesize captureBuffer=_captureBuffer;
 @property BOOL configUseJPEGForColor; // @synthesize configUseJPEGForColor=_configUseJPEGForColor;

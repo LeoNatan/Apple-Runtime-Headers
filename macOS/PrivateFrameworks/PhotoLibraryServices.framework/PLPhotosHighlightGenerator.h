@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSDateInterval, NSMutableSet, PLFrequentLocationManager, PLLocalCreationDateCreator, PLPhotosHighlightClusterGenerator;
+@class NSDateInterval, NSMutableSet, PLFrequentLocationManager, PLHighlightHierarchy, PLLocalCreationDateCreator, PLPhotosHighlightClusterGenerator;
 @protocol PLMomentGenerationDataManagement><PLHighlightItemModelReader;
 
 @interface PLPhotosHighlightGenerator : NSObject
@@ -15,7 +15,7 @@
     NSDateInterval *_recentHighlightsDateInterval;
     PLFrequentLocationManager *_frequentLocationManager;
     PLLocalCreationDateCreator *_localCreationDateCreator;
-    NSMutableSet *_highlightsToUpdateOrDelete;
+    PLHighlightHierarchy *_entitiesToUpdate;
     NSMutableSet *_highlightsWithDeletedAssets;
     NSMutableSet *_upsertedHighlights;
     NSMutableSet *_highlightsToDelete;
@@ -42,13 +42,12 @@
 @property(retain, nonatomic) NSMutableSet *highlightsToDelete; // @synthesize highlightsToDelete=_highlightsToDelete;
 @property(retain, nonatomic) NSMutableSet *upsertedHighlights; // @synthesize upsertedHighlights=_upsertedHighlights;
 @property(retain, nonatomic) NSMutableSet *highlightsWithDeletedAssets; // @synthesize highlightsWithDeletedAssets=_highlightsWithDeletedAssets;
-@property(retain, nonatomic) NSMutableSet *highlightsToUpdateOrDelete; // @synthesize highlightsToUpdateOrDelete=_highlightsToUpdateOrDelete;
+@property(retain, nonatomic) PLHighlightHierarchy *entitiesToUpdate; // @synthesize entitiesToUpdate=_entitiesToUpdate;
 @property(readonly, nonatomic) PLLocalCreationDateCreator *localCreationDateCreator; // @synthesize localCreationDateCreator=_localCreationDateCreator;
 @property(readonly, nonatomic) PLFrequentLocationManager *frequentLocationManager; // @synthesize frequentLocationManager=_frequentLocationManager;
 - (void).cxx_destruct;
 - (id)_collectMomentsRequiringReprocessingFromMoments:(id)arg1 withAllMoments:(id)arg2;
 - (id)_highlightMomentClustersForMoments:(id)arg1 excludingMomentIds:(id)arg2;
-- (id)_existingHighlightMomentsForUpdatedMoments:(id)arg1;
 - (void)_setLastHighlightTitlesUpdateDay:(id)arg1;
 - (id)_lastHighlightTitlesUpdateDay;
 - (id)_fetchMomentsRequiringLocationProcessingWhenFrequentLocationsChanged;
@@ -60,18 +59,21 @@
 - (void)processUnprocessedMomentLocations;
 - (void)processRecentHighlights;
 - (void)finishGeneration;
+- (id)_titleForAggregationDayGroupHighlight:(id)arg1;
+- (BOOL)_updateHighlightProperties:(id)arg1 fromHighlightCluster:(id)arg2;
 - (id)_insertDayGroupPhotosHighlightCluster:(id)arg1;
-- (id)_insertPhotosHighlightCluster:(id)arg1 previousHighlightMoments:(id *)arg2 previousHighlights:(id *)arg3;
-- (id)_highlightToReuseForMoments:(id)arg1 previousHighlights:(id *)arg2;
-- (void)_insertPhotosHighlightClusters:(id)arg1 previousHighlightMoments:(id *)arg2 affectedHighlights:(id *)arg3;
+- (void)_insertDayPhotosHighlightCluster:(id)arg1;
+- (id)_highlightToReuseForMoments:(id)arg1;
 - (void)generateHighlightsForUpsertedMoments:(id)arg1 frequentLocationsDidChange:(BOOL)arg2;
 @property(readonly, nonatomic) PLPhotosHighlightClusterGenerator *highlightClusterGeneratorForAllMoments;
 - (void)registerHighlightsWithDeletedMoments:(id)arg1;
 - (void)beginGenerationWithAssets:(id)arg1 hiddenAssets:(id)arg2;
 - (void)_resetProperties;
 - (id)initWithDataManager:(id)arg1 frequentLocationManager:(id)arg2 localCreationDateCreator:(id)arg3;
+- (void)_updateDayGroupHighlight:(id)arg1 withNewAssets:(id)arg2;
+- (void)_updateDayHighlight:(id)arg1 withNewAssets:(id)arg2;
 - (void)updateHighlightNeedingNewKeyAssetsWithAsset:(id)arg1;
-- (void)setDefaultVisibilityStateForHighlight:(id)arg1 withHighlightCluster:(id)arg2;
+- (BOOL)setDefaultVisibilityStateForHighlight:(id)arg1 withHighlightCluster:(id)arg2;
 - (void)resetDayGroupCurationForAsset:(id)arg1;
 - (void)updateCurationForHighlight:(id)arg1 withAssetsBelongingToCuration:(id)arg2;
 - (void)resetPreviousRecentHighlightCurationForHighlight:(id)arg1;

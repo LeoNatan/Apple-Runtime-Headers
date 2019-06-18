@@ -30,6 +30,7 @@ struct CXCallUpdateHasSet {
     unsigned int audioInterruptionProvider:1;
     unsigned int audioInterruptionOperationMode:1;
     unsigned int verificationStatus:1;
+    unsigned int priority:1;
     unsigned int requiresInCallSounds:1;
     unsigned int inCallSoundRegion:1;
     unsigned int supportsHolding:1;

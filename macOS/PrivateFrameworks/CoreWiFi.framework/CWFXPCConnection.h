@@ -56,6 +56,7 @@
 - (void)queryIPv6AddressesWithXPCParams:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)queryIPv4ServiceIDWithXPCParams:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)queryIPv4ServiceNameWithXPCParams:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)queryIsNetworkServiceEnabledWithXPCParams:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)queryNetworkServiceIDWithXPCParams:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)queryNetworkServiceNameWithXPCParams:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)queryIPv4InterfaceNameWithXPCParams:(id)arg1 reply:(CDUnknownBlockType)arg2;

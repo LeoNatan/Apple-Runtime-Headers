@@ -42,7 +42,7 @@
 - (void)recacheDisk:(NSDictionary *)arg1 withCallbackBlock:(void (^)(void))arg2;
 - (void)enclosingDiskAtLevel:(unsigned long long)arg1 withCallbackBlock:(void (^)(NSDictionary *))arg2;
 - (void)enclosingVolumeCount:(void (^)(unsigned long long))arg1;
-- (void)getFDEUsersFromDisk:(NSDictionary *)arg1 withCompletionBlock:(void (^)(NSArray *, NSError *))arg2;
+- (void)getFDEUsersFromDisk:(NSDictionary *)arg1 retrieveImageData:(BOOL)arg2 withCompletionBlock:(void (^)(NSArray *, NSError *))arg3;
 - (void)decryptVolume:(NSDictionary *)arg1 withPassword:(NSString *)arg2 forUser:(NSString *)arg3 withCompletionBlock:(void (^)(NSError *))arg4;
 - (void)unlockEncryptedDisk:(NSDictionary *)arg1 withiCloudUser:(NSString *)arg2 iCloudHandle:(id)arg3 withCompletionBlock:(void (^)(NSError *))arg4;
 - (void)unlockEncryptedDisk:(NSDictionary *)arg1 diskUnlockPassword:(NSString *)arg2 forUser:(NSString *)arg3 withCompletionBlock:(void (^)(NSError *))arg4;

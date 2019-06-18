@@ -34,6 +34,7 @@
     _MKKVOProxy *_annotationObserver;
     _MKAnnotationViewCustomFeatureAnnotation *_customFeatureAnnotation;
     BOOL _subclassImplementsAlignmentRectInsets;
+    unsigned long long _allowedCalloutEdges;
     id <MKAnnotation> _annotation;
     float _displayPriority;
     struct CGRect _collisionFrame;
@@ -102,6 +103,7 @@
 @property(nonatomic, getter=_mapPitchRadians, setter=_setMapPitchRadians:) double mapPitchRadians; // @synthesize mapPitchRadians=_mapPitchRadians;
 @property(nonatomic, getter=_mapRotationRadians, setter=_setMapRotationRadians:) double mapRotationRadians; // @synthesize mapRotationRadians=_mapRotationRadians;
 @property(retain, nonatomic, setter=_setRouteMatch:) GEORouteMatch *_routeMatch; // @synthesize _routeMatch;
+@property(nonatomic, getter=_allowedCalloutEdges, setter=_setAllowedCalloutEdges:) unsigned long long allowedCalloutEdges; // @synthesize allowedCalloutEdges=_allowedCalloutEdges;
 @property(retain, nonatomic) UIView *detailCalloutAccessoryView; // @synthesize detailCalloutAccessoryView=_detailCalloutAccessoryView;
 @property(retain, nonatomic) UIView *rightCalloutAccessoryView; // @synthesize rightCalloutAccessoryView=_rightCalloutAccessoryView;
 @property(retain, nonatomic) UIView *leftCalloutAccessoryView; // @synthesize leftCalloutAccessoryView=_leftCalloutAccessoryView;

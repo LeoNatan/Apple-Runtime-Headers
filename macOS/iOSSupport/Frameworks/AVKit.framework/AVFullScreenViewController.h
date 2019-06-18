@@ -13,12 +13,17 @@ __attribute__((visibility("hidden")))
 @interface AVFullScreenViewController : UIViewController
 {
     id <AVFullScreenViewControllerDelegate> _delegate;
+    AVFullScreenViewController *_associatedFullScreenViewController;
+    AVFullScreenViewController *_sourceFullScreenViewController;
     UIView *_contentView;
 }
 
 @property(nonatomic) __weak UIView *contentView; // @synthesize contentView=_contentView;
+@property(nonatomic) __weak AVFullScreenViewController *sourceFullScreenViewController; // @synthesize sourceFullScreenViewController=_sourceFullScreenViewController;
+@property(nonatomic) __weak AVFullScreenViewController *associatedFullScreenViewController; // @synthesize associatedFullScreenViewController=_associatedFullScreenViewController;
 @property(nonatomic) __weak id <AVFullScreenViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (BOOL)avkit_isEffectivelyFullScreen;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (BOOL)_requiresCustomPresentationController;
 - (long long)preferredWhitePointAdaptivityStyle;
@@ -28,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)prefersStatusBarHidden;
 - (BOOL)modalPresentationCapturesStatusBarAppearance;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)attachContentView;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (void)viewWillMoveToWindow:(id)arg1;
 - (void)loadView;

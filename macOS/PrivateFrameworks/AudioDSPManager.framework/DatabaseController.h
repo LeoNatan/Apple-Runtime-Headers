@@ -10,6 +10,7 @@
 
 @class ADMPersistentContainer, DSPFlavorMOFetchUtil, DeviceConfigurationMOFetchUtil, DeviceFormatMOFetchUtil, HWDSPMOFetchUtil, IOControllerConfigurationMOFetchUtil, IOControllerSemanticMOFetchUtil, IOStreamFormatMOFetchUtil, MediaContentDSPMOFetchUtil, MicrophoneConfigurationMOFetchUtil, NSManagedObjectContext, NSString, PolarPatternMOFetchUtil, PortMOFetchUtil, VPContentDSPMOFetchUtil, VoiceProcessorInfoMOFetchUtil, VolumePolicyMOFetchUtil;
 
+__attribute__((visibility("hidden")))
 @interface DatabaseController : NSObject <NSSecureCoding>
 {
     NSString *_productID;

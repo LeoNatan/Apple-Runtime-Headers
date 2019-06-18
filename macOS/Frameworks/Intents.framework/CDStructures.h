@@ -102,6 +102,10 @@ typedef struct {
 } CDStruct_b1e20226;
 
 typedef struct {
+    unsigned int score:1;
+} CDStruct_4b1634df;
+
+typedef struct {
     unsigned int searchResultsCount:1;
 } CDStruct_a60b8694;
 

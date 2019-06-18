@@ -40,7 +40,6 @@
 @property(readonly) BOOL isP2P; // @dynamic isP2P;
 @property(readonly) BOOL ibss; // @dynamic ibss;
 @property(readonly) unsigned long long physicalLayerMode; // @dynamic physicalLayerMode;
-@property(readonly) BOOL supportsWPA2EnterpriseMFPEnabledAndRequired; // @dynamic supportsWPA2EnterpriseMFPEnabledAndRequired;
 @property(readonly) unsigned long long securityType; // @dynamic securityType;
 @property(readonly) CWChannel *wlanChannel; // @dynamic wlanChannel;
 @property(readonly) unsigned long long channelNumber; // @dynamic channelNumber;

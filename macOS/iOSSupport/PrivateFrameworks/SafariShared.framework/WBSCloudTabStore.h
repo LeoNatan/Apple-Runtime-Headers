@@ -8,7 +8,7 @@
 
 #import <SafariShared/WBSCloudTabDeviceProvider-Protocol.h>
 
-@class NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, WBSCloudTabDevice;
+@class NSArray, NSDate, NSDictionary, NSError, NSMutableArray, NSMutableDictionary, NSString, WBSCloudTabDevice;
 @protocol OS_dispatch_queue, WBSCloudTabStoreDelegate;
 
 @interface WBSCloudTabStore : NSObject <WBSCloudTabDeviceProvider>
@@ -22,6 +22,7 @@
     NSMutableArray *_syncedCloudTabDevicesFromCloudKit;
     WBSCloudTabDevice *_currentDevice;
     NSMutableDictionary *_deviceUUIDsToCloseRequestsFromCloudKit;
+    NSError *_lastFetchError;
     BOOL _syncAgentIsAvailable;
     id <WBSCloudTabStoreDelegate> _wbsDelegate;
 }
@@ -59,7 +60,8 @@
 - (void)pruneExpiredDevicesFromCloudKit;
 @property(readonly, copy, nonatomic) NSDictionary *dictionaryRepresentationOfCurrentDeviceInCloudKit;
 @property(readonly, nonatomic) BOOL currentDeviceIsRegisteredInCloudKit;
-@property(readonly, nonatomic) BOOL atLeastOneOtherActiveDeviceIsRegisteredInCloudKit;
+@property(readonly, nonatomic) NSError *lastFetchError;
+@property(readonly, nonatomic) long long uniqueDeviceMultiplicity;
 - (void)saveCurrentCloudTabDeviceDictionaryToCloudKit:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)resetSyncedCloudTabDevicesAndCloseRequestsFromCloudKit;
 - (void)handleCloseTabRequestsFromKVS;

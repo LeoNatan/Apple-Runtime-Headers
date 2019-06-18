@@ -8,6 +8,7 @@
 
 @interface UIColor (WorkflowUI)
 + (id)wf_dynamicColorWithLightColor:(id)arg1 darkColor:(id)arg2;
++ (id)wf_usableColorWithPaletteColor:(unsigned long long)arg1;
 + (id)wf_libraryCellSelectionColor;
 + (id)wf_tableCellDefaultSelectionTintColor;
 + (id)wf_groupTableViewBackgroundColor;
@@ -40,6 +41,12 @@
 + (id)settingsCellDetailTextColor;
 + (id)settingsCellColor;
 + (id)settingsBackgroundColor;
++ (id)wf_moduleSummarySlotErrorSelectedBackgroundColor;
++ (id)wf_moduleSummarySlotErrorHighlightedBackgroundColor;
++ (id)wf_moduleSummarySlotErrorBackgroundColor;
++ (id)wf_moduleSummarySlotErrorSelectedTitleColor;
++ (id)wf_moduleSummarySlotErrorHighlightedTitleColor;
++ (id)wf_moduleSummarySlotErrorTitleColor;
 + (id)wf_moduleSummarySlotUnpopulatedBorderColor;
 + (id)wf_moduleSummarySlotTypingBackgroundColor;
 + (id)wf_moduleSummarySlotDisabledBackgroundColor;
@@ -62,7 +69,6 @@
 + (id)wf_moduleCommentParametersSeparatorColor;
 + (id)wf_moduleCommentCellColor;
 + (id)moduleCellShadowColor;
-+ (id)wf_moduleCellParametersBackgroundColor;
 + (id)wf_moduleCellTitleColor;
 + (id)moduleCellBorderColor;
 + (id)moduleCellHighlightedColor;

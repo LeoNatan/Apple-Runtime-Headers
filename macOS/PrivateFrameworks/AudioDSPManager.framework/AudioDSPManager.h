@@ -9,28 +9,34 @@
 #import <AudioDSPManager/NSSecureCoding-Protocol.h>
 #import <AudioDSPManager/dspd_DSPDelegate-Protocol.h>
 
-@class ADMNotificationManager, ConfigurationChangeRequestParser, DatabaseController, GraphManager, NSString, SystemStateManager, VolumeManager;
+@class ADMNotificationManager, ConfigurationChangeRequestParser, ConfigurationChangeRequestTransaction, DatabaseController, GraphManager, NSString, SystemStateManager, VolumeManager;
 
+__attribute__((visibility("hidden")))
 @interface AudioDSPManager : NSObject <dspd_DSPDelegate, NSSecureCoding>
 {
+    set_6185be97 _hwStreamsCurrentlyCaptured;
     GraphManager *_graphManager;
     SystemStateManager *_systemStateManager;
     VolumeManager *_volumeManager;
     DatabaseController *_databaseController;
     ADMNotificationManager *_notificationManager;
     ConfigurationChangeRequestParser *_configChangeRequestParser;
+    ConfigurationChangeRequestTransaction *_pendingConfigRequestTransaction;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) ConfigurationChangeRequestTransaction *pendingConfigRequestTransaction; // @synthesize pendingConfigRequestTransaction=_pendingConfigRequestTransaction;
 @property(readonly, nonatomic) ConfigurationChangeRequestParser *configChangeRequestParser; // @synthesize configChangeRequestParser=_configChangeRequestParser;
 @property(readonly, nonatomic) ADMNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;
 @property(readonly, nonatomic) DatabaseController *databaseController; // @synthesize databaseController=_databaseController;
 @property(readonly, nonatomic) VolumeManager *volumeManager; // @synthesize volumeManager=_volumeManager;
 @property(readonly, nonatomic) SystemStateManager *systemStateManager; // @synthesize systemStateManager=_systemStateManager;
 @property(readonly, nonatomic) GraphManager *graphManager; // @synthesize graphManager=_graphManager;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (struct error_code)setGraphVolumeDelegate:(id)arg1;
 - (struct error_code)setVolumeNotificationDelegate:(id)arg1;
 - (struct error_code)setHardwareVolumeDelegate:(id)arg1;
 - (expected_ea5d568f)stereoPanChannels:(unsigned long long)arg1 element:(unsigned int)arg2;
@@ -68,8 +74,8 @@
 - (expected_af0f637c)simulateConfigurationChange:(id)arg1;
 - (expected_025c1a52)configurationChangeComplete:(int)arg1 dspMutation:(function_71b6729b)arg2;
 - (expected_025c1a52)configurationChangeComplete:(int)arg1;
-- (expected_a78876cb)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
-- (expected_a78876cb)adaptToConfigurationChange:(id)arg1;
+- (expected_6c7599df)adaptToConfigurationChanges:(const vector_d47d98e2 *)arg1;
+- (expected_6c7599df)adaptToConfigurationChange:(id)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChanges:(const vector_d47d98e2 *)arg1;
 - (expected_2b9a0a05)negotiateConfigurationChange:(id)arg1;
 - (id)supportedPublicStreamFormatRequest;

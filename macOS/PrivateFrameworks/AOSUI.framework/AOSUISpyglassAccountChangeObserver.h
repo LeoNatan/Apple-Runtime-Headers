@@ -11,7 +11,7 @@
 
 @interface AOSUISpyglassAccountChangeObserver : NSObject
 {
-    CDUnknownBlockType _accountChangeObserver;
+    CDUnknownBlockType _accountChangeHandler;
     id <AIDAServiceOwnerProtocol> _serviceOwnersManager;
     ACAccountStore *_store;
     ACAccount *_currentAccount;
@@ -25,7 +25,8 @@
 @property(retain) ACAccountStore *store; // @synthesize store=_store;
 @property(retain) id <AIDAServiceOwnerProtocol> serviceOwnersManager; // @synthesize serviceOwnersManager=_serviceOwnersManager;
 - (void).cxx_destruct;
-- (BOOL)shouldUpdateUI;
+- (BOOL)_accountPropertiesDidChange:(id)arg1 newAccount:(id)arg2;
+- (BOOL)_activeAccountDidChange:(id)arg1 newAccount:(id)arg2;
 - (void)_accountStoreDidChange:(id)arg1;
 - (id)_activeService;
 - (id)_activeAccount;

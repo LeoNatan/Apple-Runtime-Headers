@@ -52,6 +52,7 @@
     BOOL _shareButtonHidden;
     BOOL _translucent;
     BOOL _contentsHidden;
+    BOOL _wantsClearBackgroundColorInCompactSize;
     AKController *_annotationController;
     id <AKToolbarViewOpacityEditingDelegate> _opacityEditingDelegate;
 }
@@ -60,6 +61,7 @@
 + (id)undoButtonImage;
 + (id)redoButtonImageWithStyle:(unsigned long long)arg1;
 + (id)undoButtonImageWithStyle:(unsigned long long)arg1;
+@property(nonatomic) BOOL wantsClearBackgroundColorInCompactSize; // @synthesize wantsClearBackgroundColorInCompactSize=_wantsClearBackgroundColorInCompactSize;
 @property(nonatomic) __weak id <AKToolbarViewOpacityEditingDelegate> opacityEditingDelegate; // @synthesize opacityEditingDelegate=_opacityEditingDelegate;
 @property(nonatomic) BOOL contentsHidden; // @synthesize contentsHidden=_contentsHidden;
 @property(nonatomic, getter=isTranslucent) BOOL translucent; // @synthesize translucent=_translucent;

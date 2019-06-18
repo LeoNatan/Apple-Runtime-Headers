@@ -28,14 +28,10 @@
 + (id)startNotifyWhenFound:(id)arg1;
 + (id)disableNotifyWhenFound:(id)arg1;
 + (id)enableNotifyWhenFound:(id)arg1;
-+ (id)disableLostModeForBeaconUUID:(id)arg1;
-+ (id)enableLostModeForBeaconUUID:(id)arg1 message:(id)arg2 phoneNumber:(id)arg3;
 + (id)declineShareWithBeaconUUID:(id)arg1;
 + (id)acceptShareWithBeaconUUID:(id)arg1;
 + (id)stopSharingWithBeaconUUID:(id)arg1 handle:(id)arg2;
 + (id)startSharingWithBeaconUUID:(id)arg1 handle:(id)arg2 expiration:(id)arg3;
-+ (id)stopSoundWithBeaconUUID:(id)arg1;
-+ (id)playSoundWithBeaconUUID:(id)arg1 duration:(double)arg2;
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL enableLostMode; // @synthesize enableLostMode=_enableLostMode;
 @property(copy, nonatomic) NSString *lostModePhoneNumber; // @synthesize lostModePhoneNumber=_lostModePhoneNumber;

@@ -26,6 +26,7 @@
     NSObject<OS_dispatch_queue> *_setupQueue;
     NSObject<OS_dispatch_queue> *_cancellationQueue;
     NSObject<OS_dispatch_queue> *_statusQueue;
+    NSOperationQueue *_cloudKitSupportOperationThrottleQueue;
     NSOperationQueue *_backgroundOperationThrottleQueue;
     NSArray *_cachedSandboxExtensions;
     NSMutableArray *_pendingContexts;
@@ -63,6 +64,7 @@
 @property(retain, nonatomic) NSMutableArray *pendingContexts; // @synthesize pendingContexts=_pendingContexts;
 @property(retain, nonatomic) NSArray *cachedSandboxExtensions; // @synthesize cachedSandboxExtensions=_cachedSandboxExtensions;
 @property(retain, nonatomic) NSOperationQueue *backgroundOperationThrottleQueue; // @synthesize backgroundOperationThrottleQueue=_backgroundOperationThrottleQueue;
+@property(retain, nonatomic) NSOperationQueue *cloudKitSupportOperationThrottleQueue; // @synthesize cloudKitSupportOperationThrottleQueue=_cloudKitSupportOperationThrottleQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *statusQueue; // @synthesize statusQueue=_statusQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cancellationQueue; // @synthesize cancellationQueue=_cancellationQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *setupQueue; // @synthesize setupQueue=_setupQueue;
@@ -196,6 +198,7 @@
 - (id)applicationBundleID;
 - (id)applicationIdentifier;
 - (id)serviceNameForContainerMapEntitlement;
+- (BOOL)hasCloudKitSupportServiceEntitlement;
 - (BOOL)hasAllowUnverifiedAccountEntitlement;
 - (BOOL)hasNonLegacyShareURLEntitlement;
 - (BOOL)hasDisplaysSystemAcceptPromptEntitlement;

@@ -36,7 +36,8 @@
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)referenceToMembershipForMembershipID:(id)arg1;
-- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
+- (id)allKnownRecordNames;
+- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
 - (void)_refreshPublicMembershipsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)refreshPublicMemberships;
 - (void)fetchMembershipsWithIDs:(id)arg1 queue:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;

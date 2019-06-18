@@ -13,6 +13,7 @@
 
 @interface WiFi3BarsNetwork : NSObject <WiFiCandidateNetwork>
 {
+    BOOL matched;
     NSString *_SSID;
     NSString *password;
     NSSet *_attributes;
@@ -24,6 +25,7 @@
 
 @property(retain, nonatomic) id <TBNetwork> network; // @synthesize network=_network;
 @property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property(nonatomic) BOOL matched; // @synthesize matched;
 @property(readonly, nonatomic) id <TBScore> popularityScore; // @synthesize popularityScore=_popularityScore;
 @property(readonly, nonatomic) id <TBScore> qualityScore; // @synthesize qualityScore=_qualityScore;
 @property(readonly, nonatomic) NSSet *attributes; // @synthesize attributes=_attributes;

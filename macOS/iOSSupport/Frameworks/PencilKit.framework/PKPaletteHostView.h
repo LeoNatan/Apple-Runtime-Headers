@@ -7,21 +7,24 @@
 #import <UIKit/UIView.h>
 
 #import <PencilKit/PKPaletteViewInternalDelegate-Protocol.h>
+#import <PencilKit/PKPaletteWindowSceneListening-Protocol.h>
 #import <PencilKit/UIGestureRecognizerDelegate-Protocol.h>
 
 @class NSLayoutConstraint, NSString, PKPaletteView, UIPanGestureRecognizer, UITapGestureRecognizer, UIViewFloatAnimatableProperty;
-@protocol PKPaletteHostViewDelegate;
+@protocol PKPaletteHostViewDelegate, PKPaletteHostingWindowScene;
 
-@interface PKPaletteHostView : UIView <UIGestureRecognizerDelegate, PKPaletteViewInternalDelegate>
+@interface PKPaletteHostView : UIView <UIGestureRecognizerDelegate, PKPaletteViewInternalDelegate, PKPaletteWindowSceneListening>
 {
+    BOOL _paletteVisible;
+    BOOL _effectivePaletteVisible;
     BOOL _waitingForPaletteToMinimize;
+    BOOL _waitingForPaletteToRotate;
     PKPaletteView *_paletteView;
     id <PKPaletteHostViewDelegate> _delegate;
     NSLayoutConstraint *_paletteWidthConstraint;
     NSLayoutConstraint *_paletteHeightConstraint;
     NSLayoutConstraint *_paletteTopConstraint;
     NSLayoutConstraint *_paletteBottomConstraint;
-    NSLayoutConstraint *_paletteBottomSafeAreaLayoutConstraint;
     NSLayoutConstraint *_paletteLeftConstraint;
     NSLayoutConstraint *_paletteRightConstraint;
     NSLayoutConstraint *_paletteCenterXConstraint;
@@ -37,9 +40,14 @@
     unsigned long long _paletteEdgeLocation;
     double _paletteSizeScaleFactor;
     UIViewFloatAnimatableProperty *_regularToMinimizedAnimatableProperty;
+    UIViewFloatAnimatableProperty *_staticToRotatingAnimatableProperty;
+    id <PKPaletteHostingWindowScene> _hostingWindowScene;
     struct CGPoint _lastPaletteCenterInSelf;
 }
 
+@property(readonly, nonatomic) __weak id <PKPaletteHostingWindowScene> hostingWindowScene; // @synthesize hostingWindowScene=_hostingWindowScene;
+@property(nonatomic) BOOL waitingForPaletteToRotate; // @synthesize waitingForPaletteToRotate=_waitingForPaletteToRotate;
+@property(retain, nonatomic) UIViewFloatAnimatableProperty *staticToRotatingAnimatableProperty; // @synthesize staticToRotatingAnimatableProperty=_staticToRotatingAnimatableProperty;
 @property(nonatomic) BOOL waitingForPaletteToMinimize; // @synthesize waitingForPaletteToMinimize=_waitingForPaletteToMinimize;
 @property(retain, nonatomic) UIViewFloatAnimatableProperty *regularToMinimizedAnimatableProperty; // @synthesize regularToMinimizedAnimatableProperty=_regularToMinimizedAnimatableProperty;
 @property(nonatomic) double paletteSizeScaleFactor; // @synthesize paletteSizeScaleFactor=_paletteSizeScaleFactor;
@@ -57,14 +65,17 @@
 @property(retain, nonatomic) NSLayoutConstraint *paletteCenterXConstraint; // @synthesize paletteCenterXConstraint=_paletteCenterXConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *paletteRightConstraint; // @synthesize paletteRightConstraint=_paletteRightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *paletteLeftConstraint; // @synthesize paletteLeftConstraint=_paletteLeftConstraint;
-@property(retain, nonatomic) NSLayoutConstraint *paletteBottomSafeAreaLayoutConstraint; // @synthesize paletteBottomSafeAreaLayoutConstraint=_paletteBottomSafeAreaLayoutConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *paletteBottomConstraint; // @synthesize paletteBottomConstraint=_paletteBottomConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *paletteTopConstraint; // @synthesize paletteTopConstraint=_paletteTopConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *paletteHeightConstraint; // @synthesize paletteHeightConstraint=_paletteHeightConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *paletteWidthConstraint; // @synthesize paletteWidthConstraint=_paletteWidthConstraint;
+@property(nonatomic, getter=isEffectivePaletteVisible) BOOL effectivePaletteVisible; // @synthesize effectivePaletteVisible=_effectivePaletteVisible;
 @property(nonatomic) __weak id <PKPaletteHostViewDelegate> delegate; // @synthesize delegate=_delegate;
+@property(nonatomic, getter=isPaletteVisible) BOOL paletteVisible; // @synthesize paletteVisible=_paletteVisible;
 @property(readonly, nonatomic) PKPaletteView *paletteView; // @synthesize paletteView=_paletteView;
 - (void).cxx_destruct;
+- (void)paletteView:(id)arg1 didChangeAnnotationSupport:(BOOL)arg2;
+- (struct CGSize)regularPaletteSize;
 - (void)paletteView:(id)arg1 didToggleAutoHideOption:(BOOL)arg2;
 - (BOOL)isDraggingPalette;
 @property(readonly, nonatomic) UIView *hostingView;
@@ -72,15 +83,16 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_paletteDidSettle;
 - (void)_paletteDidChangeSizeForVisualState:(long long)arg1;
-- (void)_runPaletteAnimationAlongsideSizeChangeForVisualState:(long long)arg1;
 - (void)_paletteWillChangeSizeForVisualState:(long long)arg1;
+- (BOOL)_isPaletteAlmostFinishedRotating;
+- (BOOL)_isPaletteRotating;
+- (BOOL)_isPaletteAlmostFinishedMinimizing;
 - (BOOL)_isPaletteAlmostMinimized;
-- (BOOL)_isPaletteAnimatingToMinimizedVisualState;
+- (BOOL)_isPaletteMinimizing;
 - (BOOL)_isPaletteAnimating;
 - (struct CGSize)_paletteSizeForVisualState:(long long)arg1;
 - (struct CGSize)_minimizedPaletteSize;
-- (struct CGSize)_paletteSize;
-- (void)_animatePaletteSizeForVisualState:(long long)arg1 alongsideAnimation:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
+- (struct CGSize)_regularPaletteSize;
 - (void)_animatePaletteSizeForVisualState:(long long)arg1;
 - (void)_performAnimated:(BOOL)arg1 tracking:(BOOL)arg2 animations:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_panGestureHandler:(id)arg1;
@@ -99,15 +111,23 @@
 - (void)_paletteWillDockToEdge:(unsigned long long)arg1;
 - (void)_updateConstraintsToDockPaletteToEdge:(unsigned long long)arg1;
 - (void)_dockPaletteToEdge:(unsigned long long)arg1 animated:(BOOL)arg2;
+- (void)_updateConstraintsToFixToBottomEdge;
 - (void)fixToEdge:(unsigned long long)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)safeAreaInsetsDidChange;
+- (void)updateConstraints;
 - (void)layoutSubviews;
+- (void)_upatePaletteViewSizeConstraints;
 - (void)setCommonPaletteViewProperties;
 - (void)adaptAppearanceToExpandFromAnyCorner;
 - (void)adaptAppearanceToDockToAnyCorner;
 - (void)adaptAppearanceToDockToAnyEdge;
 - (void)adaptAppearanceToHorizontalCompactSize;
+- (void)_updatePaletteScaleFactor;
+- (void)windowSceneDidChangeBounds:(id)arg1;
+- (void)animatePaletteToVisible:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)_cancelPanGestureIfNecessary;
 - (void)didMoveToWindow;
-- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithHostingWindowScene:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

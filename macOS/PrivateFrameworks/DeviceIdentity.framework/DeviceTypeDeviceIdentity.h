@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
     BOOL _is_fpga;
     BOOL _is_ipod;
     BOOL _is_ipad;
+    BOOL _is_audio_accessory;
     BOOL _has_telephony;
     BOOL _should_hactivate;
     BOOL _is_internal_build;
@@ -29,6 +30,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL is_internal_build; // @synthesize is_internal_build=_is_internal_build;
 @property(readonly, nonatomic) BOOL should_hactivate; // @synthesize should_hactivate=_should_hactivate;
 @property(readonly, nonatomic) BOOL has_telephony; // @synthesize has_telephony=_has_telephony;
+@property(readonly, nonatomic) BOOL is_audio_accessory; // @synthesize is_audio_accessory=_is_audio_accessory;
 @property(readonly, nonatomic) BOOL is_ipad; // @synthesize is_ipad=_is_ipad;
 @property(readonly, nonatomic) BOOL is_ipod; // @synthesize is_ipod=_is_ipod;
 @property(readonly, nonatomic) BOOL is_fpga; // @synthesize is_fpga=_is_fpga;

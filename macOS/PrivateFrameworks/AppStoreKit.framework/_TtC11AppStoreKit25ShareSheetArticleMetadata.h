@@ -9,6 +9,7 @@
 @interface _TtC11AppStoreKit25ShareSheetArticleMetadata : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: text
+    // Error parsing type: , name: subtitle
     // Error parsing type: , name: artwork
 }
 

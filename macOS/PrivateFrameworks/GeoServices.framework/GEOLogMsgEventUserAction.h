@@ -16,13 +16,16 @@
     CDStruct_158f0f88 _readerMark;
     NSString *_userActionEventKey;
     NSString *_userActionEventValue;
+    int _userActionEventAction;
     int _userActionEventTarget;
     struct {
+        unsigned int has_userActionEventAction:1;
         unsigned int has_userActionEventTarget:1;
         unsigned int read_userActionEventKey:1;
         unsigned int read_userActionEventValue:1;
         unsigned int wrote_userActionEventKey:1;
         unsigned int wrote_userActionEventValue:1;
+        unsigned int wrote_userActionEventAction:1;
         unsigned int wrote_userActionEventTarget:1;
     } _flags;
 }
@@ -39,6 +42,10 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsUserActionEventAction:(id)arg1;
+- (id)userActionEventActionAsString:(int)arg1;
+@property(nonatomic) BOOL hasUserActionEventAction;
+@property(nonatomic) int userActionEventAction;
 - (int)StringAsUserActionEventTarget:(id)arg1;
 - (id)userActionEventTargetAsString:(int)arg1;
 @property(nonatomic) BOOL hasUserActionEventTarget;

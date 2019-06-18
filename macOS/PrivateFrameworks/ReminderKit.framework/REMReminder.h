@@ -53,6 +53,7 @@
 @property(readonly, copy, nonatomic) NSAttributedString *notes;
 @property(readonly, nonatomic) NSString *titleAsString;
 @property(readonly, copy, nonatomic) NSAttributedString *title;
+@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
@@ -74,7 +75,6 @@
 @property(readonly, nonatomic) NSString *daCalendarItemUniqueIdentifier; // @dynamic daCalendarItemUniqueIdentifier;
 @property(readonly, nonatomic) NSString *daPushKey; // @dynamic daPushKey;
 @property(readonly, nonatomic) NSString *daSyncToken; // @dynamic daSyncToken;
-@property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy, nonatomic) REMDisplayDate *displayDate; // @dynamic displayDate;
 @property(readonly, copy, nonatomic) NSDateComponents *dueDateComponents; // @dynamic dueDateComponents;
 @property(readonly, nonatomic) NSString *externalIdentifier; // @dynamic externalIdentifier;

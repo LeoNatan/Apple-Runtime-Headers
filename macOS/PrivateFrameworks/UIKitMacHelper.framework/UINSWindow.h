@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSDictionary *_windowNotificationState;
     NSObject<UINSTouchBarCoordinator> *_touchBarCoordinator;
     id <UINSToolbar> _uins_toolbar;
+    long long _windowAppearance;
     BOOL _lastChangedAppearsKey;
     id <NSObject> _startLiveResizeObserver;
     id <NSObject> _endLiveResizeObserver;
@@ -39,6 +40,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) id <NSObject> endLiveResizeObserver; // @synthesize endLiveResizeObserver=_endLiveResizeObserver;
 @property(retain, nonatomic) id <NSObject> startLiveResizeObserver; // @synthesize startLiveResizeObserver=_startLiveResizeObserver;
 @property(nonatomic) BOOL lastChangedAppearsKey; // @synthesize lastChangedAppearsKey=_lastChangedAppearsKey;
+@property(nonatomic) long long windowAppearance; // @synthesize windowAppearance=_windowAppearance;
 @property(retain, nonatomic) id <UINSToolbar> uins_toolbar; // @synthesize uins_toolbar=_uins_toolbar;
 @property(retain, nonatomic) NSObject<UINSTouchBarCoordinator> *touchBarCoordinator; // @synthesize touchBarCoordinator=_touchBarCoordinator;
 - (void).cxx_destruct;
@@ -79,6 +81,7 @@ __attribute__((visibility("hidden")))
 - (void)sendInitialFrontmostOrVisibilityChangedNotifications;
 - (void)_notifyIfAppearsKeyChanged;
 - (void)notifyIfAppearsKeyChanged;
+@property(readonly, nonatomic) BOOL appearsKeyIncludingSheets;
 @property(readonly, nonatomic) BOOL appearsKey;
 @property(nonatomic) struct CGSize contentMinSize;
 @property(retain, nonatomic) NSToolbar *toolbar;
@@ -93,7 +96,7 @@ __attribute__((visibility("hidden")))
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
 
 // Remaining properties
-@property(readonly) NSISEngine *_layoutEngine;
+@property(readonly) NSISEngine *_layoutEngine; // @dynamic _layoutEngine;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;

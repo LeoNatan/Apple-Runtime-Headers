@@ -6,18 +6,19 @@
 
 #import <AppKit/NSViewController.h>
 
-@class NSString, NSView, STCoreUser;
+@class CNFamilyMemberWhitelistedContactsViewController, NSString, NSView, STCoreUser;
 
 __attribute__((visibility("hidden")))
 @interface STCommunicationContactEditingViewController : NSViewController
 {
-    NSViewController *_contactEditingViewController;
+    CNFamilyMemberWhitelistedContactsViewController *_contactEditingViewController;
     NSView *_contactViewContainer;
 }
 
 @property(retain) NSView *contactViewContainer; // @synthesize contactViewContainer=_contactViewContainer;
-@property(retain) NSViewController *contactEditingViewController; // @synthesize contactEditingViewController=_contactEditingViewController;
+@property(retain) CNFamilyMemberWhitelistedContactsViewController *contactEditingViewController; // @synthesize contactEditingViewController=_contactEditingViewController;
 - (void).cxx_destruct;
+- (void)clickDoneButton:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *bottomDescription;
 @property(readonly, copy, nonatomic) NSString *topDescription;
 @property(retain) STCoreUser *representedObject;

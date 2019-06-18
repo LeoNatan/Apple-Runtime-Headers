@@ -78,6 +78,7 @@
 - (BOOL)shouldAllowWithTouchTypes:(id)arg1 atPoint:(struct CGPoint)arg2 toBegin:(BOOL)arg3;
 @property(nonatomic, setter=setInGesture:) BOOL inGesture; // @synthesize inGesture=_inGesture;
 @property(readonly, nonatomic) long long textInteractionMode; // @synthesize textInteractionMode=_textInteractionMode;
+- (void)_cancelRecognizerWithName:(id)arg1;
 - (id)recognizerForName:(id)arg1;
 - (void)removeGestureRecognizerWithName:(id)arg1;
 - (void)addGestureRecognizer:(id)arg1 withName:(id)arg2;

@@ -128,6 +128,7 @@
 - (void)printHistograms;
 - (void)reset;
 - (void)callEnd;
+- (void)callEndSecondDisplay;
 - (void)callEndHomeKitIPCamera;
 - (int)sendHomeKitIPCameraNetworkStatistics;
 - (void)callEndFaceTime;
@@ -158,6 +159,8 @@
 - (void)updateHomeKitSessionPLICount;
 - (void)updateHomeKitIPCameraRealtimeStats:(double)arg1 minFrameRate:(double)arg2 maxFrameRate:(double)arg3 videoStallDuration:(unsigned int)arg4 PLRSample:(unsigned int)arg5 RTTSample:(unsigned int)arg6 NOWRDSample:(unsigned int)arg7 RecommendedRxBitrateSample:(unsigned int)arg8 ActualRxBitrateSample:(unsigned int)arg9;
 - (void)updateMomentsStats:(id)arg1;
+- (void)generateSecondDisplayAggregatedCallStats:(id)arg1;
+- (void)processSecondDisplayLogTransportInfoStats;
 - (void)generateAggregatedCallStats:(id)arg1;
 - (void)mergeAggregatedSegmentStats:(id)arg1;
 - (void)setModeRoleTransport:(unsigned int)arg1 deviceRole:(unsigned int)arg2 transportType:(unsigned int)arg3;

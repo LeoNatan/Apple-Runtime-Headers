@@ -69,7 +69,7 @@
 + (void)setMobileOwnerForFile:(id)arg1;
 + (BOOL)createAndChownDirectoryIfDirectoryDoesNotExist:(id)arg1;
 + (BOOL)createAndChownDirectory:(id)arg1;
-+ (BOOL)moveItemAtPath:(id)arg1 toPath:(id)arg2 error:(id *)arg3;
++ (BOOL)moveItemAtPath:(id)arg1 toPath:(id)arg2 withName:(id)arg3 error:(id *)arg4;
 + (id)containerPath;
 
 @end

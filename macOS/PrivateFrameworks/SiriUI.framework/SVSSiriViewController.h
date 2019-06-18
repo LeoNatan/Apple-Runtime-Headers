@@ -83,7 +83,7 @@ __attribute__((visibility("hidden")))
 - (id)_punchoutMetricsAceCommandIdForItemWithIdentifier:(id)arg1;
 - (void)_listenAfterSpeakingWithResult:(long long)arg1 recordedRequestCount:(unsigned long long)arg2;
 - (void)_audioSessionRouteDidChange:(id)arg1;
-- (void)_addErrorUtterance:(id)arg1;
+- (void)_addErrorUtterance:(id)arg1 dialogIdentifier:(id)arg2;
 - (void)_displayNotReadyError;
 - (void)_clearConnectionErrorDismissalTimer;
 - (void)_handleRequestError:(id)arg1;

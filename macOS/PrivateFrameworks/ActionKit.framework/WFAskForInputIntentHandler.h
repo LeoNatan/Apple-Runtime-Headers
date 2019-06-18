@@ -21,6 +21,8 @@
 - (void)resolveUrlAnswerForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveNumberAnswerForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveStringAnswerForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)resolveTypeForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)resolveQuestionForAskForInput:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

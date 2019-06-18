@@ -11,6 +11,8 @@
 }
 
 - (void)main;
+- (BOOL)__removeBlacklistedPathsFromSandboxWithBlacklistPath:(id)arg1 withError:(id *)arg2;
+- (BOOL)_removeBlacklistedPathsFromSandboxReturningError:(id *)arg1;
 - (BOOL)_removeAppPlaceholderReturningError:(id *)arg1;
 - (BOOL)_deleteObsoletePathsReturningError:(id *)arg1;
 - (BOOL)_trashAtomicallyObsoleteBundlesReturningError:(id *)arg1;

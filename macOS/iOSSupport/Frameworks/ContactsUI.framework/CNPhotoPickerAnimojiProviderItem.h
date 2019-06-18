@@ -6,7 +6,7 @@
 
 #import <ContactsUI/CNPhotoPickerProviderItem.h>
 
-@class AVTAvatarRecordImageProvider, AVTRenderingScope, AVTStickerConfiguration, CNAvatarStickerGeneratorProvider, CNPhotoPickerColorVariant, NSData;
+@class AVTAvatarRecordImageProvider, AVTRenderingScope, AVTStickerConfiguration, CNAvatarStickerGeneratorProvider, CNPhotoPickerColorVariant, NSData, UIImage;
 @protocol AVTAvatarRecord;
 
 __attribute__((visibility("hidden")))
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     AVTStickerConfiguration *_poseConfiguration;
     NSData *_originalImageData;
     NSData *__generatedImageData;
+    UIImage *_loadingPlaceholderImage;
     CNPhotoPickerColorVariant *_backgroundColorVariant;
     CNAvatarStickerGeneratorProvider *_stickerGeneratorProvider;
     AVTRenderingScope *_renderingScope;
@@ -26,6 +27,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) AVTRenderingScope *renderingScope; // @synthesize renderingScope=_renderingScope;
 @property(retain, nonatomic) CNAvatarStickerGeneratorProvider *stickerGeneratorProvider; // @synthesize stickerGeneratorProvider=_stickerGeneratorProvider;
 @property(retain, nonatomic) CNPhotoPickerColorVariant *backgroundColorVariant; // @synthesize backgroundColorVariant=_backgroundColorVariant;
+@property(retain, nonatomic) UIImage *loadingPlaceholderImage; // @synthesize loadingPlaceholderImage=_loadingPlaceholderImage;
 @property(retain, nonatomic) NSData *_generatedImageData; // @synthesize _generatedImageData=__generatedImageData;
 @property(retain, nonatomic) NSData *originalImageData; // @synthesize originalImageData=_originalImageData;
 @property(retain, nonatomic) AVTStickerConfiguration *poseConfiguration; // @synthesize poseConfiguration=_poseConfiguration;
@@ -40,7 +42,7 @@ __attribute__((visibility("hidden")))
 - (id)generateImageDataIfNeeded;
 - (id)renderAvatarWithBackgroundWithImage:(id)arg1;
 - (id)renderAvatarWithBackgroundWithImageData:(id)arg1;
-- (id)renderAvatarWithPose;
+- (id)renderAvatarWithPoseWithSize:(double)arg1;
 - (id)renderDefaultAvatarImage;
 - (id)copyWithPoseConfiguration:(id)arg1 generatorProvider:(id)arg2;
 - (id)copyWithColor:(id)arg1;

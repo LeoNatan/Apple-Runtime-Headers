@@ -7,6 +7,7 @@
 #import <UIKit/UIImage.h>
 
 @interface UIImage (Bridge)
++ (id)ts_systemCloseButton;
 + (id)ts_xmarkForHUD;
 + (id)ts_xmark;
 + (id)ts_trash;
@@ -15,15 +16,21 @@
 + (id)ts_sidebarLeft;
 + (id)ts_safari;
 + (id)ts_rightArrow;
++ (id)ts_plusCirclePinkOnTertiaryFill;
 + (id)ts_plusCircleFill;
++ (id)ts_plusCircleWhite;
 + (id)ts_plusCircle;
 + (id)ts_plus;
 + (id)ts_noSign;
 + (id)ts_navigationVerticalColumnShadow;
++ (id)ts_minusCircleTertiaryFillOnPink;
++ (id)ts_minusCircleFillWhite;
 + (id)ts_minusCircleFill;
 + (id)ts_minusCircle;
 + (id)ts_heartFill;
++ (id)ts_heartCircleTertiaryFillOnPink;
 + (id)ts_heartCircleFill;
++ (id)ts_heartCirclePinkOnTertiaryFill;
 + (id)ts_heartCircle;
 + (id)ts_handThumbsUpFillForHUD;
 + (id)ts_handThumbsUpFill;
@@ -37,13 +44,20 @@
 + (id)ts_handRaisedFill;
 + (id)ts_handRaised;
 + (id)ts_exclamationMarkCircle;
++ (id)ts_ellipsisCircleTertiaryFillOnPink;
++ (id)ts_ellipsisCircleFillWhite;
 + (id)ts_ellipsisCircleFill;
++ (id)ts_ellipsisCirclePinkOnTertiaryFill;
++ (id)ts_ellipsisCircleWhite;
 + (id)ts_ellipsisCircle;
 + (id)ts_ellipsis;
 + (id)ts_disclosureIndicator;
 + (id)ts_circleFill;
 + (id)ts_chevronRight;
 + (id)ts_checkmarkForHUD;
++ (id)ts_checkmarkCircleTertiaryFillOnPink;
++ (id)ts_checkmarkCircleFillWhite;
++ (id)ts_checkmarkCircleFill;
 + (id)ts_checkmark;
 + (id)ts_bookmarkFillForHUD;
 + (id)ts_bookmarkFill;

@@ -21,7 +21,6 @@
 + (id)deviceCapabilitiesModelIdentifierWithParentIdentifier:(id)arg1;
 + (BOOL)supportsSecureCoding;
 + (id)deviceCapabilities;
-+ (BOOL)supportsRouterManagement;
 + (BOOL)isCompanionCapable;
 + (BOOL)supportsBackboard;
 + (BOOL)supportsSyncingToSharedUsers;
@@ -53,6 +52,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, nonatomic) BOOL supportsRouterManagement;
 @property(readonly, nonatomic) BOOL supportsCameraRecording;
 @property(readonly, nonatomic) BOOL supportsMultiUser;
 @property(readonly, nonatomic) BOOL supportsTargetControl;

@@ -39,12 +39,14 @@
 + (id)resourcesInfoFromMoc:(id)arg1;
 + (void)_getResourceData:(id)arg1 originalsSizeOut:(unsigned long long *)arg2 derivativesSizeOut:(unsigned long long *)arg3 fileBackedThumbnailsSizeOut:(float *)arg4 tableThumbnailsSizeOut:(float *)arg5;
 + (int)priorityForFileExtension:(id)arg1;
++ (BOOL)isAdjustmentEnvelopeExtension:(id)arg1;
 + (BOOL)isAudioFileExtension:(id)arg1;
 + (BOOL)isVideoFileExtension:(id)arg1;
 + (BOOL)isNonRawImageFileExtension:(id)arg1;
 + (BOOL)isRawImageFileExtension:(id)arg1;
 + (BOOL)isImageFileExtension:(id)arg1;
 + (void)_loadFileExtensionInformation;
++ (id)masterURLFromSidecarURLs:(id)arg1;
 + (id)photoOutboundSharingTmpDirectoryURL;
 + (void)exitToRelocatePhotoLibrary;
 + (id)_getLibraryPathFromTriggerFile;
@@ -119,7 +121,6 @@
 @property(readonly) PLKeywordManager *keywordManager;
 - (id)assetsdClient;
 - (id)simpleDCIMDirectory;
-- (id)masterURLFromSidecarURLs:(id)arg1;
 - (void)_processPhotoIrisSidecarIfNecessary:(id)arg1 forAsset:(id)arg2;
 - (void)_applyAdjustmentFileInfo:(id)arg1 renderedContentFileInfo:(id)arg2 renderedVideoComplementFileInfo:(id)arg3 toAsset:(id)arg4 withMainFileURL:(id)arg5;
 - (void)_applySideCarFiles:(id)arg1 toAsset:(id)arg2 withMainFileURL:(id)arg3;

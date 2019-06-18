@@ -8,7 +8,7 @@
 
 #import <PhotosUICore/PXGViewDiagnosticsSource-Protocol.h>
 
-@class NSString, PHPhotoLibrary, PXCuratedLibraryAssetsDataSourceManager, PXCuratedLibraryLayout, PXCuratedLibraryVideoPlaybackController, PXCuratedLibraryViewModel, PXExtendedTraitCollection, PXGView, PXPhotoKitUIMediaProvider;
+@class NSString, PHPhotoLibrary, PXAssetReference, PXCuratedLibraryAssetsDataSourceManager, PXCuratedLibraryLayout, PXCuratedLibraryVideoPlaybackController, PXCuratedLibraryViewModel, PXExtendedTraitCollection, PXGView, PXPhotoKitUIMediaProvider;
 
 @interface PXCuratedLibraryViewProvider : NSObject <PXGViewDiagnosticsSource>
 {
@@ -33,6 +33,7 @@
 - (void).cxx_destruct;
 - (void)scrollLibraryViewToAssetReference:(id)arg1 scrollPosition:(unsigned long long)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_stopLibraryViewScrolling;
+@property(readonly, nonatomic) PXAssetReference *preferredAnchorAssetReference;
 - (id)additionalRectDiagnosticsProvidersForView:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1 extendedTraitCollection:(id)arg2;
 - (id)init;

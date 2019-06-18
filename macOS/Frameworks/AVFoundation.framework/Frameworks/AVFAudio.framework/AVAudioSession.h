@@ -43,6 +43,7 @@
 @property(readonly) unsigned long long categoryOptions;
 @property(readonly) NSString *mode;
 @property(readonly) NSString *category;
+- (BOOL)canActivate:(id *)arg1;
 - (BOOL)setActive:(BOOL)arg1 withOptions:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)setActive:(BOOL)arg1 error:(id *)arg2;
 - (BOOL)hasPhoneCallBehaviour;
@@ -68,6 +69,9 @@
 - (int)setAggregateDeviceAsCurrentHALDevice;
 - (int)setupAUIO;
 - (sync_guard_edae64bb)privateGetGuardOfImplementation;
+- (void)handleAppStateResumeFinal:(id)arg1;
+- (void)handleAppStatePauseFinal:(id)arg1;
+- (void)registerForFakeInterruptionNotifications;
 - (id)initForMacOS;
 - (BOOL)setAggregatedIOPreference:(unsigned long long)arg1 error:(id *)arg2;
 @property(readonly) double inputLatency;

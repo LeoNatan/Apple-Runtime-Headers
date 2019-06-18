@@ -11,7 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (void)didPerformQuery;
+- (void)didRun;
 - (void)configureResult:(id)arg1 forTransactions:(id)arg2;
 
 @end

@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
 - (void)updateDraggingItemsForDrag:(id)arg1 dropTargetView:(id)arg2;
 - (unsigned long long)draggingUpdated:(id)arg1 dropTargetView:(id)arg2;
 - (unsigned long long)draggingEntered:(id)arg1 dropTargetView:(id)arg2;
+- (void)invalidateThumbnailForKeyNodes:(const struct TFENodeVector *)arg1;
 - (struct TFENode)thumbnailTargetNodeFromContainerNode:(const struct TFENode *)arg1;
 - (struct TFENode)thumbnailTargetNode;
 - (struct TFENode)thumbnailTargetNodeForNode:(const struct TFENode *)arg1;

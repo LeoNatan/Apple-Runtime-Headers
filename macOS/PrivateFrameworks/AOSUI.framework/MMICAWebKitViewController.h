@@ -77,6 +77,8 @@
 - (void)generateNewRecoveryKeyWithType:(long long)arg1 andCompletion:(CDUnknownBlockType)arg2;
 - (void)deleteRecoveryKey:(CDUnknownBlockType)arg1;
 - (void)_setRecoveryKeyState:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)refreshFamilyCircle;
+- (void)refreshPage;
 - (void)getIcon:(id)arg1 bundleIconName:(id)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 callback:(id)arg5;
 - (void)selectFile:(id)arg1 inFolder:(id)arg2;
 - (void)openPrefPane:(id)arg1 userInfo:(id)arg2;

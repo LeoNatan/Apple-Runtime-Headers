@@ -210,6 +210,7 @@
 - (id)children;
 @property(readonly) BOOL canDeletePeople;
 @property(readonly) NSString *displayName;
+- (BOOL)setLastSyncDateWithAddressBook:(id)arg1;
 - (id)persistentStoreURL;
 - (id)imagesFolderURL;
 - (id)managedAddressBooks;

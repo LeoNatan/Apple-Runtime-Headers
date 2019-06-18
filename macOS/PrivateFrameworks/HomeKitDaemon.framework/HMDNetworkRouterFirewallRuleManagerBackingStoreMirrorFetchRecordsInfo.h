@@ -21,7 +21,7 @@
 @property(readonly, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(readonly, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
 - (void).cxx_destruct;
-- (id)initWithActivity:(id)arg1 options:(id)arg2 promise:(id)arg3 database:(id)arg4 zoneID:(id)arg5 recordID:(id)arg6 desiredKeys:(id)arg7;
+- (id)initWithActivity:(id)arg1 options:(id)arg2 promise:(id)arg3 database:(id)arg4 useAnonymousRequests:(BOOL)arg5 zoneID:(id)arg6 recordID:(id)arg7 desiredKeys:(id)arg8;
 
 @end
 

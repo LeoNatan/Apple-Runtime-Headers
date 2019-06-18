@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSData, NSError, NSString;
-@protocol OS_dispatch_group, OS_dispatch_queue, OS_dispatch_semaphore, OS_nw_connection, OS_nw_endpoint;
+#import <EmailCore/ECNWConnectionWrapper-Protocol.h>
 
-@interface ECNWConnectionWrapper : NSObject
+@class NSArray, NSConditionLock, NSData, NSError, NSString;
+@protocol OS_dispatch_group, OS_dispatch_queue, OS_dispatch_semaphore, OS_nw_connection, OS_nw_endpoint, OS_nw_error;
+
+@interface ECNWConnectionWrapper : NSObject <ECNWConnectionWrapper>
 {
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_nw_connection> *_connection;
@@ -17,9 +19,10 @@
     NSObject<OS_dispatch_semaphore> *_eventSemaphore;
     struct os_unfair_lock_s _lock;
     NSObject<OS_nw_endpoint> *_endpoint;
-    NSObject<OS_dispatch_group> *_readGroup;
+    NSConditionLock *_readBufferLock;
     NSObject<OS_dispatch_group> *_writeGroup;
     BOOL _readScheduled;
+    NSObject<OS_nw_error> *_readError;
     NSData *_buffer;
     unsigned long long _bufferOffset;
     NSString *_securityProtocol;
@@ -28,39 +31,39 @@
     BOOL _writable;
     double _connectTime;
     BOOL _allowsTrustPrompt;
-    BOOL _usesOpportunisticSockets;
     BOOL _disableEphemeralDiffieHellmanCiphers;
+    BOOL _usesOpportunisticSockets;
     unsigned int _timeout;
-    NSArray *_clientCertificates;
-    NSString *_sourceApplicationBundleIdentifier;
     NSString *_accountIdentifier;
-    NSString *_networkAccountIdentifier;
+    NSArray *_clientCertificates;
     NSString *_connectionServiceType;
-    NSArray *_serverCertificates;
     NSError *_error;
+    NSString *_networkAccountIdentifier;
     CDUnknownBlockType _networkActivityChangeBlock;
+    NSArray *_serverCertificates;
     CDUnknownBlockType _serverTrustHandler;
+    NSString *_sourceApplicationBundleIdentifier;
     CDUnknownBlockType _bytesAvailableHandler;
 }
 
 + (id)log;
 @property(copy) CDUnknownBlockType bytesAvailableHandler; // @synthesize bytesAvailableHandler=_bytesAvailableHandler;
-@property(copy, nonatomic) CDUnknownBlockType serverTrustHandler; // @synthesize serverTrustHandler=_serverTrustHandler;
-@property(copy, nonatomic) CDUnknownBlockType networkActivityChangeBlock; // @synthesize networkActivityChangeBlock=_networkActivityChangeBlock;
-@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
-@property(readonly, copy, nonatomic) NSString *service; // @synthesize service=_service;
-@property(readonly, copy, nonatomic) NSArray *serverCertificates; // @synthesize serverCertificates=_serverCertificates;
-@property(copy, nonatomic) NSString *connectionServiceType; // @synthesize connectionServiceType=_connectionServiceType;
-@property(copy, nonatomic) NSString *networkAccountIdentifier; // @synthesize networkAccountIdentifier=_networkAccountIdentifier;
-@property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
-@property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
-@property(retain, nonatomic) NSArray *clientCertificates; // @synthesize clientCertificates=_clientCertificates;
-@property(nonatomic) BOOL disableEphemeralDiffieHellmanCiphers; // @synthesize disableEphemeralDiffieHellmanCiphers=_disableEphemeralDiffieHellmanCiphers;
 @property(nonatomic) BOOL usesOpportunisticSockets; // @synthesize usesOpportunisticSockets=_usesOpportunisticSockets;
-@property(nonatomic) BOOL allowsTrustPrompt; // @synthesize allowsTrustPrompt=_allowsTrustPrompt;
 @property(nonatomic) unsigned int timeout; // @synthesize timeout=_timeout;
+@property(copy, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;
+@property(readonly, copy, nonatomic) NSString *service; // @synthesize service=_service;
+@property(copy, nonatomic) CDUnknownBlockType serverTrustHandler; // @synthesize serverTrustHandler=_serverTrustHandler;
+@property(readonly, copy, nonatomic) NSArray *serverCertificates; // @synthesize serverCertificates=_serverCertificates;
+@property(copy, nonatomic) CDUnknownBlockType networkActivityChangeBlock; // @synthesize networkActivityChangeBlock=_networkActivityChangeBlock;
+@property(copy, nonatomic) NSString *networkAccountIdentifier; // @synthesize networkAccountIdentifier=_networkAccountIdentifier;
+@property(readonly, nonatomic) NSError *error; // @synthesize error=_error;
+@property(nonatomic) BOOL disableEphemeralDiffieHellmanCiphers; // @synthesize disableEphemeralDiffieHellmanCiphers=_disableEphemeralDiffieHellmanCiphers;
+@property(copy, nonatomic) NSString *connectionServiceType; // @synthesize connectionServiceType=_connectionServiceType;
+@property(retain, nonatomic) NSArray *clientCertificates; // @synthesize clientCertificates=_clientCertificates;
+@property(nonatomic) BOOL allowsTrustPrompt; // @synthesize allowsTrustPrompt=_allowsTrustPrompt;
+@property(copy, nonatomic) NSString *accountIdentifier; // @synthesize accountIdentifier=_accountIdentifier;
 - (void).cxx_destruct;
-- (id)description;
+@property(readonly, copy) NSString *description;
 @property(readonly, nonatomic) BOOL isCellularConnection;
 @property(readonly, nonatomic) BOOL isValid;
 @property(readonly, nonatomic) BOOL isWritable;
@@ -77,7 +80,7 @@
 - (void)_closeWithErrorDomain:(id)arg1 code:(long long)arg2;
 - (void)_closeWithError:(id)arg1;
 - (void)_scheduleNextRead;
-- (long long)readBytes:(char *)arg1 length:(unsigned int)arg2;
+- (long long)readBytesIntoBuffer:(char *)arg1 maxLength:(unsigned long long)arg2;
 - (long long)writeBytes:(const char *)arg1 length:(unsigned long long)arg2;
 - (void)_networkActivityEnded;
 - (void)_networkActivityStarted;
@@ -87,8 +90,14 @@
 - (void)_handleConnectionReady;
 - (id)_createConnectionWithEndpoint:(id)arg1 error:(int *)arg2;
 - (BOOL)connectToHost:(id)arg1 withPort:(unsigned int)arg2 service:(id)arg3;
+- (void)cancel;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

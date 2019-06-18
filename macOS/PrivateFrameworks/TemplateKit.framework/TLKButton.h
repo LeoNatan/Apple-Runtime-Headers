@@ -6,17 +6,16 @@
 
 #import <AppKit/NSView.h>
 
-@class CAShapeLayer, NSImage, TLKImageView, TLKSButton;
+@class CAShapeLayer, NSImage, TLKImageView, TLKTapContainerButton;
 
 @interface TLKButton : NSView
 {
     BOOL _toggled;
     BOOL _indeterminate;
-    NSView *_containerView;
     NSImage *_untoggledImage;
     NSImage *_toggledImage;
     NSImage *_overlayImage;
-    TLKSButton *_button;
+    TLKTapContainerButton *_button;
     CAShapeLayer *_outerProgressLayer;
     CAShapeLayer *_innerProgressLayer;
     double _progress;
@@ -31,15 +30,15 @@
 @property(nonatomic) double progress; // @synthesize progress=_progress;
 @property(retain, nonatomic) CAShapeLayer *innerProgressLayer; // @synthesize innerProgressLayer=_innerProgressLayer;
 @property(retain, nonatomic) CAShapeLayer *outerProgressLayer; // @synthesize outerProgressLayer=_outerProgressLayer;
-@property(retain, nonatomic) TLKSButton *button; // @synthesize button=_button;
+@property(retain, nonatomic) TLKTapContainerButton *button; // @synthesize button=_button;
 @property(readonly, nonatomic, getter=isIndeterminate) BOOL indeterminate; // @synthesize indeterminate=_indeterminate;
 @property(nonatomic) struct CGSize forcedSize; // @synthesize forcedSize=_forcedSize;
 @property(retain, nonatomic) NSImage *overlayImage; // @synthesize overlayImage=_overlayImage;
 @property(retain, nonatomic) NSImage *toggledImage; // @synthesize toggledImage=_toggledImage;
 @property(retain, nonatomic) NSImage *untoggledImage; // @synthesize untoggledImage=_untoggledImage;
-@property(nonatomic) __weak NSView *containerView; // @synthesize containerView=_containerView;
 @property(nonatomic, getter=isToggled) BOOL toggled; // @synthesize toggled=_toggled;
 - (void).cxx_destruct;
+@property(readonly) NSView *hitView;
 - (void)addTarget:(id)arg1 forAction:(SEL)arg2;
 - (id)_newShapeViewWithBounds:(struct CGRect)arg1 lineWidth:(double)arg2;
 - (id)iconColor;
@@ -57,6 +56,7 @@
 - (void)layout;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;
+@property(nonatomic) __weak NSView *containerView;
 - (void)tlk_updateForAppearance:(id)arg1;
 - (void)viewDidMoveToWindow;
 - (void)viewDidChangeEffectiveAppearance;

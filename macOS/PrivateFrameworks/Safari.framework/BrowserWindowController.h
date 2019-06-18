@@ -215,7 +215,7 @@ __attribute__((visibility("hidden")))
 - (void)handleCommand1Through9ActionForIndex:(unsigned long long)arg1;
 - (BOOL)canHandleCommand1Through9ActionForIndex:(unsigned long long)arg1;
 - (void)formTextStatusWasVerified:(id)arg1;
-- (void)_notifyVoiceOverIfNeededThatTab:(id)arg1 isPlayingMutableMedia:(BOOL)arg2 isMuted:(BOOL)arg3;
+- (void)_notifyVoiceOverIfNeededThatMediaStateChangedInTabViewItem:(id)arg1 notificationPayload:(id)arg2;
 - (void)_audioMenuTabMenuItemClicked:(id)arg1;
 - (void)_unmuteAllTabs:(id)arg1;
 - (void)_unmuteAllTabsExcludingTabWithBrowserViewController:(id)arg1;

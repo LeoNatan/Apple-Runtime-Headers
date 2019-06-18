@@ -8,7 +8,7 @@
 
 #import <OSUpdate/SUOSUServiceClientProtocol-Protocol.h>
 
-@class NSLock, NSXPCConnection, SUOSUScheduler;
+@class NSLock, NSXPCConnection, SUOSUScheduler, SUPowerAssertionManager;
 @protocol SUOSULaterDelegate;
 
 @interface SUOSUUpdateController : NSObject <SUOSUServiceClientProtocol>
@@ -21,9 +21,11 @@
     NSXPCConnection *_serviceConnection;
     NSLock *_serviceConnectionLock;
     SUOSUScheduler *_scheduler;
+    SUPowerAssertionManager *_powerAssertionManager;
 }
 
 + (id)sharedInstance;
+@property(retain) SUPowerAssertionManager *powerAssertionManager; // @synthesize powerAssertionManager=_powerAssertionManager;
 @property(retain) SUOSUScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) NSLock *serviceConnectionLock; // @synthesize serviceConnectionLock=_serviceConnectionLock;
 @property BOOL authorizedForSoftwareInstall; // @synthesize authorizedForSoftwareInstall=_authorizedForSoftwareInstall;
@@ -56,6 +58,8 @@
 - (void)combinedStatusForUpdatesWithProductKeys:(id)arg1 reply:(CDUnknownBlockType)arg2;
 - (void)takeInstallNotificationsOfType:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (BOOL)_authorizeForSoftwareInstall;
+- (void)_cancelPowerAssertion;
+- (void)_setIdleSleepPowerAssertion;
 - (id)_legacyServiceConnection;
 - (id)legacyProxy;
 - (id)_serviceConnection;

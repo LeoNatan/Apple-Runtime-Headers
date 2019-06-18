@@ -10,6 +10,7 @@
 
 @interface CNContactCardViewControlContext : NSObject
 {
+    BOOL _editingRestricted;
     unsigned long long _mode;
     CNPublishingSubject *_cardStateObservable;
     NSMutableArray *_observers;
@@ -20,6 +21,7 @@
 @property(retain, nonatomic) NSMutableArray *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) CNPublishingSubject *cardStateObservable; // @synthesize cardStateObservable=_cardStateObservable;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
+@property(nonatomic) BOOL editingRestricted; // @synthesize editingRestricted=_editingRestricted;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) CNObservable *contactCardStateObservable;
 @property(readonly, nonatomic) BOOL canEditContact;

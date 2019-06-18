@@ -7,10 +7,11 @@
 #import <SceneKit/MTLResource-Protocol.h>
 
 @class MTLSharedTextureHandle;
-@protocol MTLBuffer, MTLResource, MTLTexture;
+@protocol MTLBuffer, MTLDevice, MTLResource, MTLTexture;
 
 @protocol MTLTexture <MTLResource>
 @property(readonly, nonatomic) CDStruct_a06f635e swizzle;
+@property(readonly) id <MTLTexture> remoteStorageTexture;
 @property(readonly) BOOL allowGPUOptimizedContents;
 @property(readonly, getter=isFramebufferOnly) BOOL framebufferOnly;
 @property(readonly, getter=isShareable) BOOL shareable;
@@ -33,6 +34,7 @@
 @property(readonly) id <MTLTexture> parentTexture;
 @property(readonly) id <MTLResource> rootResource;
 - (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned long long)arg1 textureType:(unsigned long long)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4 swizzle:(CDStruct_a06f635e)arg5;
+- (id <MTLTexture>)newRemoteTextureViewForDevice:(id <MTLDevice>)arg1;
 - (MTLSharedTextureHandle *)newSharedTextureHandle;
 - (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned long long)arg1 textureType:(unsigned long long)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4;
 - (id <MTLTexture>)newTextureViewWithPixelFormat:(unsigned long long)arg1;

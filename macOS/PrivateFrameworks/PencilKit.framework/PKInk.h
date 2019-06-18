@@ -22,6 +22,7 @@
     NSString *_variant;
 }
 
++ (id)colorForLassoStroke;
 + (double)defaultOpacityForIdentifier:(id)arg1;
 + (double)defaultWeightForIdentifier:(id)arg1;
 + (id)inkFromInk:(id)arg1 withBehavior:(id)arg2;

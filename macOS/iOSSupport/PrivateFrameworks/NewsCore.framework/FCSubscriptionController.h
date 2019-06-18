@@ -47,6 +47,7 @@
 - (void)_purchaseListDidRemoveTagIDs:(id)arg1;
 - (void)_purchaseListDidAddTagIDs:(id)arg1;
 - (void)activityObservingApplicationDidEnterBackground;
+- (void)subscriptionListDidResetToEmpty:(id)arg1;
 - (void)subscriptionList:(id)arg1 didAddSubscriptions:(id)arg2 changeSubscriptions:(id)arg3 moveSubscriptions:(id)arg4 removeSubscriptions:(id)arg5 eventInitiationLevel:(long long)arg6;
 - (BOOL)addGroupableSubscriptionForTagID:(id)arg1 origin:(unsigned long long)arg2 eventInitiationLevel:(long long)arg3;
 - (void)addAutoFavoriteSubscriptionForTagIDs:(id)arg1 groupableSubscriptionForTagIDs:(id)arg2 originProvider:(CDUnknownBlockType)arg3 eventInitiationLevelProvider:(CDUnknownBlockType)arg4 completion:(CDUnknownBlockType)arg5;

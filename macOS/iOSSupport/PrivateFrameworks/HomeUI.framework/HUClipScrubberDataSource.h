@@ -9,22 +9,22 @@
 #import <HomeUI/HFCameraPlaybackEngineObserver-Protocol.h>
 #import <HomeUI/UICollectionViewDataSource-Protocol.h>
 
-@class HFCameraPlaybackEngine, HMCameraClip, HMCameraClipCollection, HUClipScrubberSelectionView, HUClipScrubberTimeController, NSArray, NSDate, NSString, UICollectionView;
+@class HFCameraPlaybackEngine, HMCameraClip, HUClipScrubberSelectionView, HUClipScrubberTimeController, NSArray, NSDate, NSString, UICollectionView;
 
 @interface HUClipScrubberDataSource : NSObject <HFCameraPlaybackEngineObserver, UICollectionViewDataSource>
 {
-    BOOL _isEditing;
+    BOOL _editing;
     BOOL _selectionViewHidden;
+    NSArray *_clips;
     HUClipScrubberTimeController *_timeController;
     HMCameraClip *_currentClip;
     UICollectionView *_clipCollectionView;
     unsigned long long _currentTimelineState;
-    unsigned long long _currentDisplayMode;
+    unsigned long long _displayMode;
     NSDate *_currentDate;
     HFCameraPlaybackEngine *_playbackEngine;
     unsigned long long _mostRecentClipIndex;
     long long _lastSelectedClipIndex;
-    HMCameraClipCollection *_clipCollection;
     double _startingPinchDeltaX;
     HUClipScrubberSelectionView *_selectionView;
     double _lastGestureScale;
@@ -33,23 +33,21 @@
 @property(nonatomic) double lastGestureScale; // @synthesize lastGestureScale=_lastGestureScale;
 @property(retain, nonatomic) HUClipScrubberSelectionView *selectionView; // @synthesize selectionView=_selectionView;
 @property(nonatomic) double startingPinchDeltaX; // @synthesize startingPinchDeltaX=_startingPinchDeltaX;
-@property(retain, nonatomic) HMCameraClipCollection *clipCollection; // @synthesize clipCollection=_clipCollection;
 @property(nonatomic) BOOL selectionViewHidden; // @synthesize selectionViewHidden=_selectionViewHidden;
 @property(nonatomic) long long lastSelectedClipIndex; // @synthesize lastSelectedClipIndex=_lastSelectedClipIndex;
 @property(readonly, nonatomic) unsigned long long mostRecentClipIndex; // @synthesize mostRecentClipIndex=_mostRecentClipIndex;
 @property(nonatomic) __weak HFCameraPlaybackEngine *playbackEngine; // @synthesize playbackEngine=_playbackEngine;
 @property(retain, nonatomic) NSDate *currentDate; // @synthesize currentDate=_currentDate;
-@property(nonatomic) BOOL isEditing; // @synthesize isEditing=_isEditing;
-@property(nonatomic) unsigned long long currentDisplayMode; // @synthesize currentDisplayMode=_currentDisplayMode;
+@property(nonatomic, getter=isEditing) BOOL editing; // @synthesize editing=_editing;
+@property(nonatomic) unsigned long long displayMode; // @synthesize displayMode=_displayMode;
 @property(nonatomic) unsigned long long currentTimelineState; // @synthesize currentTimelineState=_currentTimelineState;
 @property(nonatomic) __weak UICollectionView *clipCollectionView; // @synthesize clipCollectionView=_clipCollectionView;
 @property(nonatomic) __weak HMCameraClip *currentClip; // @synthesize currentClip=_currentClip;
 @property(retain, nonatomic) HUClipScrubberTimeController *timeController; // @synthesize timeController=_timeController;
+@property(readonly, nonatomic) NSArray *clips; // @synthesize clips=_clips;
 - (void).cxx_destruct;
 - (void)updateSelectionViewIfNeeded;
 - (void)updateMostRecentClipIndex;
-- (void)deleteCurrentClip;
-- (void)deleteClip:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_indexPathsForClip:(id)arg1;
 - (void)playbackEngine:(id)arg1 clipCollection:(id)arg2 addedClips:(id)arg3 removedClips:(id)arg4 updatedClips:(id)arg5;
 - (double)scrubbingResolutionForClip:(id)arg1;
@@ -65,11 +63,10 @@
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)numberOfSectionsInCollectionView:(id)arg1;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
-@property(readonly, nonatomic) NSArray *clips;
 - (void)updateToClipAtIndexPath:(id)arg1;
 - (void)toggleSelectionStateForItemAtIndexPath:(id)arg1;
-- (void)reloadClipCollection:(id)arg1;
-- (id)initWithClipCollection:(id)arg1;
+- (void)reloadClips:(id)arg1;
+- (id)initWithClips:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -13,29 +13,21 @@
 __attribute__((visibility("hidden")))
 @interface aura_ResourceArbitratorPrivImpl : NSObject <aura_ResourceArbitratorPriv>
 {
-    struct synchronized<(anonymous namespace)::Data, caulk::mach::unfair_lock, caulk::empty_atomic_interface<(anonymous namespace)::Data>> data_;
-    shared_ptr_940c565d hardware_;
-    struct shared_ptr<caulk::reactor<aura::hw::HardwareSnapshotAssembler *>> hardwareSnapshotAssembler_;
-    struct shared_ptr<caulk::reactor<aura::itf::RouteNegotiator *>> routeNegotiator_;
-    struct shared_ptr<caulk::reactor<aura::itf::HardwareObjectAssembler *>> itfHardwareObjectAssembler_;
-    struct shared_ptr<caulk::reactor<aura::itf::NotificationDispatcher *>> itfNotificationDispatcher_;
+    shared_ptr_5ae3ef2e reactor_;
 }
 
-+ (id)resourceArbitratorWithHardware:(shared_ptr_940c565d)arg1;
-+ (id)resourceArbitratorWithDependencyInjection:(struct ResourceArbitratorDependencyInjection)arg1;
++ (id)resourceArbitratorWithHardware:(shared_ptr_043aa51d)arg1;
++ (id)resourceArbitratorWithReactor:(shared_ptr_5ae3ef2e)arg1;
 + (id)resourceArbitrator;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (struct error_code)setSupplementalIOControllerTopology:(const struct IOControllerTopology *)arg1 masterVirtualPort:(optional_2c7815ee)arg2 completionHandler:(function_f5b89e9d)arg3;
+- (struct error_code)setConfigurations:(const struct vector<const aura_ConfigurationChangeRequest *, std::__1::allocator<const aura_ConfigurationChangeRequest *>> *)arg1 completionHandler:(function_f5b89e9d)arg2;
+- (struct error_code)setInternalUpdateHandler:(function_eb4797c5)arg1;
 - (vector_29aefa88)setMuteRecords:(const vector_5bce929e *)arg1;
 @property(readonly, nonatomic) vector_5bce929e muteRecords;
 - (vector_29aefa88)setScalarVolumeRecords:(const vector_149db60c *)arg1;
 @property(readonly, nonatomic) vector_149db60c scalarVolumeRecords;
-- (struct error_code)setSupplementalIOControllerTopology:(const struct IOControllerTopology *)arg1 masterVirtualPort:(optional_2c7815ee)arg2 completionHandler:(function_c0dd97ef)arg3;
-- (struct error_code)setConfigurations:(const vector_1ccd10a7 *)arg1 completionHandler:(function_c0dd97ef)arg2;
-- (struct error_code)setInternalUpdateHandler:(function_622822b1)arg1;
-- (void)refreshIOControllers:(map_9344a8ab)arg1;
-- (struct error_code)refreshConfigurationsWithOrdinal:(int)arg1;
-- (void)hardwareUpdate:(const struct ConfigurationChangeDescription *)arg1;
 - (struct error_code)setPortDiscoveryState:(unsigned char)arg1;
 @property(readonly, nonatomic) unsigned char portDiscoveryState;
 - (vector_bd26d536)supportedModes:(struct StringRef)arg1;
@@ -50,20 +42,19 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) vector_7bfbc159 boxes;
 - (expected_cf04bbb0)simulateMicrophoneConfiguration:(id)arg1 virtualPort:(id)arg2;
 - (expected_01e6cd2c)simulatePortEligibility:(id)arg1;
-- (expected_73a2de47)simulateManualConfiguration:(id)arg1;
 - (expected_73a2de47)simulateConfiguration:(id)arg1;
-- (struct error_code)setSupplementalIOControllerTopology:(const struct IOControllerTopology *)arg1 masterVirtualPort:(optional_2c7815ee)arg2 configChangeHandler:(function_00b26d85)arg3;
-- (struct error_code)setConfigurations:(const vector_1ccd10a7 *)arg1 configChangeHandler:(function_00b26d85)arg2;
+- (struct error_code)setSupplementalIOControllerTopology:(const struct IOControllerTopology *)arg1 masterVirtualPort:(optional_2c7815ee)arg2 configChangeHandler:(function_2fcae77d)arg3;
+- (struct error_code)setConfigurations:(const struct vector<const aura_ConfigurationChangeRequest *, std::__1::allocator<const aura_ConfigurationChangeRequest *>> *)arg1 configChangeHandler:(function_2fcae77d)arg2;
 - (expected_0085864a)createReflectorPorts:(unsigned int)arg1 reflectorType:(unsigned char)arg2 dspOrder:(unsigned char)arg3 audioDirection:(unsigned char)arg4;
 - (id)createReflectorPort:(unsigned int)arg1 reflectorType:(unsigned char)arg2 dspOrder:(unsigned char)arg3 virtualPort:(id)arg4;
-- (struct error_code)registerAudioStatisticsReporters:(const vector_d87a6415 *)arg1 sessionToken:(unsigned int)arg2;
+- (struct error_code)registerAudioStatisticsReporters:(const struct vector<long long, std::__1::allocator<long long>> *)arg1 sessionToken:(unsigned int)arg2;
 - (struct error_code)unregisterSession:(unsigned int)arg1;
 - (struct error_code)registerSession:(unsigned int)arg1;
-- (struct error_code)setConfigurationChangeNotifier:(function_439a5227)arg1;
+- (struct error_code)setConfigurationChangeNotifier:(function_eeef26d1)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithHardware:(shared_ptr_940c565d)arg1;
-- (id)initWithDependencyInjection:(struct ResourceArbitratorDependencyInjection)arg1;
+- (id)initWithHardware:(shared_ptr_043aa51d)arg1;
+- (id)initWithReactor:(shared_ptr_5ae3ef2e)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

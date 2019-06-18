@@ -70,6 +70,8 @@
 - (void)updateManager:(id)arg1 didReceiveTransitError:(id)arg2;
 - (void)updateManager:(id)arg1 didReceiveTransitUpdates:(id)arg2;
 - (void)updateManager:(id)arg1 willSendTransitUpdateRequestForRouteIDs:(id)arg2;
+- (void)updateManager:(id)arg1 didReceiveTransitUpdateResponse:(id)arg2;
+- (void)updateManager:(id)arg1 willSendTransitUpdateRequests:(id)arg2;
 - (void)voiceController:(id)arg1 didStartSpeakingPrompt:(id)arg2;
 - (void)voiceController:(id)arg1 didActivateAudioSession:(BOOL)arg2;
 - (void)tracePlayer:(id)arg1 didUpdateVehicleSpeed:(double)arg2 timestamp:(id)arg3;
@@ -128,7 +130,7 @@
 - (void)locationTracker:(id)arg1 receivedTrafficIncidentAlert:(id)arg2 responseCallback:(CDUnknownBlockType)arg3;
 - (void)locationTracker:(id)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(id)arg3 request:(id)arg4 response:(id)arg5;
 - (void)locationTracker:(id)arg1 didUpdateAlternateRoutes:(id)arg2;
-- (void)locationTracker:(id)arg1 failedRerouteWithErrorCode:(long long)arg2;
+- (void)locationTracker:(id)arg1 didFailRerouteWithError:(id)arg2;
 - (void)locationTracker:(id)arg1 didReroute:(id)arg2 newAlternateRoutes:(id)arg3 rerouteReason:(unsigned long long)arg4 request:(id)arg5 response:(id)arg6;
 - (void)locationTrackerDidCancelReroute:(id)arg1;
 - (void)locationTrackerWillReroute:(id)arg1;

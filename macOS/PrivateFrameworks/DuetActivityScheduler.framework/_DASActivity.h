@@ -129,7 +129,7 @@
 @property(retain, nonatomic) NSDate *submitDate; // @synthesize submitDate=_submitDate;
 @property(retain) NSDate *lastScored; // @synthesize lastScored=_lastScored;
 @property(nonatomic) double lastComputedScore; // @synthesize lastComputedScore=_lastComputedScore;
-@property(retain, nonatomic) NSDate *predictedOptimalStartDate; // @synthesize predictedOptimalStartDate=_predictedOptimalStartDate;
+@property(retain) NSDate *predictedOptimalStartDate; // @synthesize predictedOptimalStartDate=_predictedOptimalStartDate;
 @property(nonatomic) double predictedOptimalScore; // @synthesize predictedOptimalScore=_predictedOptimalScore;
 @property(nonatomic) BOOL deferred; // @synthesize deferred=_deferred;
 @property(nonatomic) BOOL isMLBackgroundActivity; // @synthesize isMLBackgroundActivity=_isMLBackgroundActivity;

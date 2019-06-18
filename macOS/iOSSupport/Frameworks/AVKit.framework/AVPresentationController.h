@@ -16,20 +16,15 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) AVPresentationContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
-- (unsigned long long)_interfaceOrientationMaskForAutorotation;
-- (BOOL)_viewController:(id)arg1 supportsOrientation:(long long)arg2;
-- (BOOL)_viewControllerSupportsAutorotation:(id)arg1;
 - (void)dismissalTransitionDidEnd:(BOOL)arg1;
 - (void)_prepareDismissingTransitionContext;
 - (void)dismissalTransitionWillBegin;
-- (void)_ensureOrientation:(long long)arg1 duration:(double)arg2;
-- (void)_ensureOrientation:(long long)arg1;
+- (void)_ensureOrientation:(long long)arg1 enablingMixedOrientations:(BOOL)arg2;
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;
 - (void)containerViewWillLayoutSubviews;
 - (BOOL)shouldPresentInFullscreen;
 - (BOOL)shouldRemovePresentersView;
-- (double)_rotationAnimationDuration;
 - (void)dealloc;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 

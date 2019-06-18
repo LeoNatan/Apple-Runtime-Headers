@@ -8,6 +8,7 @@
 
 @class NSObject, PortMO;
 
+__attribute__((visibility("hidden")))
 @interface DeviceConfigurationMO : NSManagedObject
 {
 }

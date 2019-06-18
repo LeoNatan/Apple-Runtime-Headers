@@ -20,7 +20,6 @@ __attribute__((visibility("hidden")))
     NSMutableArray *_transactionActionNameStack;
 }
 
-+ (void)_presentTestDriveTerminationPromptWhenPermitted;
 + (BOOL)canPerformUserInitiatedBookmarkOperations;
 + (id)frontmostUndoController;
 @property(nonatomic) __weak NSUndoManager *undoManager; // @synthesize undoManager=_undoManager;

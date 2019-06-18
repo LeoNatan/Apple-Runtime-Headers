@@ -27,6 +27,7 @@
 - (id)initWithCoder:(id)arg1;
 @property(readonly, nonatomic) unsigned long long numElements;
 @property(readonly, nonatomic) struct GEOJunctionElement *elements;
+- (id)initWithJunctionInfo:(id)arg1;
 - (id)initWithManeuverType:(int)arg1 drivingSide:(int)arg2;
 - (id)initWithStep:(id)arg1;
 

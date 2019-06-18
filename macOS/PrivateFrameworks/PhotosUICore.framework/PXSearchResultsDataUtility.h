@@ -22,8 +22,6 @@
 + (id)recentSearchFromActiveSearch:(id)arg1;
 + (id)_macOSImageNameForSearchUserCategory:(unsigned long long)arg1 useSearchFieldStyle:(BOOL)arg2;
 + (struct NSImage *)imageForSearchUserCategory:(unsigned long long)arg1 useSearchFieldStyle:(BOOL)arg2;
-+ (id)noResultsSearchedStringFromActiveSearch:(id)arg1;
-+ (id)tokenStringsFromActiveSearch:(id)arg1;
 + (void)suggestionsDisplayDataFromToken:(id)arg1 searchText:(id)arg2 matchedColor:(struct NSColor *)arg3 remainingColor:(struct NSColor *)arg4 isTextCompletion:(BOOL)arg5 completion:(CDUnknownBlockType)arg6;
 + (id)searchTokenFromWordEmbedding:(id)arg1;
 + (id)searchTokenFromQueryToken:(id)arg1;

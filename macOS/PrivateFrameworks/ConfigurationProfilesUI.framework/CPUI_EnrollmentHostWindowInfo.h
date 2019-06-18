@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
 @property(retain) NSProgressIndicator *progressSpinner; // @synthesize progressSpinner=_progressSpinner;
 @property(retain) NSWindow *window; // @synthesize window=_window;
 - (void).cxx_destruct;
+- (void)showProgress;
+- (void)hideProgress;
 
 @end
 

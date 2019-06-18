@@ -21,6 +21,8 @@
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (id)_handlesForRecipients:(id)arg1;
 - (BOOL)_updateBackfillForNewRecipients;
+- (id)autocompleteResultIdentifier:(id)arg1;
+- (id)conversationGUIDForRecipient:(id)arg1;
 - (BOOL)shouldInvalidateIDSRequests;
 - (BOOL)_hasExistingConversationWithAddedRecipient:(id)arg1;
 - (id)conversationList;

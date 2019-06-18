@@ -32,6 +32,7 @@
     NSMutableDictionary *_initialParentLayoutAttributes;
     NSMutableDictionary *_finalParentVerticalOffsets;
     struct CGPoint _targetContentOffset;
+    struct CGSize _sizeForRotation;
     struct CGSize _contentSize;
     struct CGRect _visibleBounds;
 }
@@ -57,6 +58,7 @@
 @property(copy, nonatomic) NSArray *layoutAttributes; // @synthesize layoutAttributes=_layoutAttributes;
 @property(retain, nonatomic) NSIndexSet *indicesOfChatItemsToBeInsertedWithoutFading; // @synthesize indicesOfChatItemsToBeInsertedWithoutFading=_indicesOfChatItemsToBeInsertedWithoutFading;
 @property(retain, nonatomic) NSIndexSet *indicesOfChatItemsToBeRemovedWithoutFading; // @synthesize indicesOfChatItemsToBeRemovedWithoutFading=_indicesOfChatItemsToBeRemovedWithoutFading;
+@property(nonatomic) struct CGSize sizeForRotation; // @synthesize sizeForRotation=_sizeForRotation;
 @property(nonatomic) BOOL isResting; // @synthesize isResting=_isResting;
 @property(nonatomic, getter=isUsingInitialLayoutAttributesForRotation) BOOL useInitialLayoutAttributesForRotation; // @synthesize useInitialLayoutAttributesForRotation=_useInitialLayoutAttributesForRotation;
 @property(nonatomic, getter=isHoldingBoundsInvalidation) BOOL holdingBoundsInvalidation; // @synthesize holdingBoundsInvalidation=_holdingBoundsInvalidation;

@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class CenterConstraints, FrameConstraints, NSMutableArray, NSMutableSet, NSString, NSTrackingArea, UINSCursor, UINSInputView, USSLayerHost;
+@class NSMutableArray, NSMutableSet, NSString, NSTrackingArea, UINSCursor, UINSInputView, USSLayerHost;
 
 __attribute__((visibility("hidden")))
 @interface UINSSceneView : NSView
@@ -16,8 +16,6 @@ __attribute__((visibility("hidden")))
     double _lastSentScale;
     struct NSEdgeInsets _lastSendSceneContentInsets;
     long long _sceneResizeSuppressionCount;
-    CenterConstraints *_digitizerCenterConstraints;
-    FrameConstraints *_digitizerFrameConstraints;
     UINSCursor *_currentCursor;
     NSTrackingArea *_cursorTrackingArea;
     BOOL _preventSceneResize;

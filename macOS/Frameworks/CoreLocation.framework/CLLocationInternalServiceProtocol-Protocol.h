@@ -34,7 +34,7 @@
 - (void)shutdownDaemonWithReplyBlock:(void (^)(NSError *))arg1;
 - (void)performMigrationWithReplyBlock:(void (^)(NSError *))arg1;
 - (void)setGestureServiceEnabled:(BOOL)arg1 replyBlock:(void (^)(NSError *))arg2;
-- (void)timeZoneForLocation:(CDStruct_0a5906de)arg1 replyBlock:(void (^)(NSError *, NSString *))arg2;
+- (void)timeZoneForLocation:(CDStruct_4d1fbe9a)arg1 replyBlock:(void (^)(NSError *, NSString *))arg2;
 - (void)getLocationDefaultForKey:(NSString *)arg1 replyBlock:(void (^)(NSError *, NSData *))arg2;
 - (void)setLocationDefaultForKey:(NSString *)arg1 andValue:(NSData *)arg2 replyBlock:(void (^)(NSError *))arg3;
 - (void)getAppsUsingLocationWithReplyBlock:(void (^)(NSError *, NSDictionary *))arg1;

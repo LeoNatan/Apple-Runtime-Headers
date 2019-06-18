@@ -41,6 +41,7 @@
 + (id)icaxHueNameForValue:(double)arg1;
 - (id)ic_colorString;
 - (struct NSColor *)ic_searchResultSelectedCellHighlightTextColor;
+@property(readonly, nonatomic) BOOL ic_isWhite;
 @property(readonly, nonatomic) BOOL ic_isBlack;
 - (id)_icaxLightnessSaturationHueFormatString;
 - (id)_icaxSaturationHueFormatString;

@@ -15,7 +15,6 @@
 {
     BOOL _isMissing;
     BOOL _isDiscontinued;
-    BOOL _isDonated;
     BOOL _hideConfiguration;
     BOOL _hideHeader;
     BOOL _isDimmed;
@@ -93,7 +92,6 @@
 @property(readonly, nonatomic) BOOL hideHeader; // @synthesize hideHeader=_hideHeader;
 @property(readonly, nonatomic) BOOL hideConfiguration; // @synthesize hideConfiguration=_hideConfiguration;
 @property(readonly, nonatomic) WFModuleAppearance *appearance; // @synthesize appearance=_appearance;
-@property(readonly, nonatomic) BOOL isDonated; // @synthesize isDonated=_isDonated;
 @property(readonly, nonatomic) BOOL isDiscontinued; // @synthesize isDiscontinued=_isDiscontinued;
 @property(readonly, nonatomic) BOOL isMissing; // @synthesize isMissing=_isMissing;
 @property(readonly, copy, nonatomic) NSString *localizedParameterSummaryFormatString; // @synthesize localizedParameterSummaryFormatString=_localizedParameterSummaryFormatString;

@@ -47,12 +47,15 @@
 - (void)childViewController:(id)arg1 didEndQuickControlsPresentation:(id)arg2;
 - (void)childViewController:(id)arg1 willBeginQuickControlsPresentation:(id)arg2;
 - (id)_ancestorQuickControlPresentationHost;
+- (void)presentationCoordinatorDidCancelDismissalTransition:(id)arg1;
+- (void)presentationCoordinatorWillBeginDismissalTransition:(id)arg1;
 - (void)presentationCoordinator:(id)arg1 didEndPresentationWithContext:(id)arg2;
 - (void)presentationCoordinator:(id)arg1 willBeginPresentationWithContext:(id)arg2;
 - (void)presentationCoordinator:(id)arg1 didRecognizeTapForItem:(id)arg2;
 - (void)presentationCoordinator:(id)arg1 clearOverrideAttributesForItem:(id)arg2;
 - (void)presentationCoordinator:(id)arg1 applyOverrideAttributes:(id)arg2 toItem:(id)arg3;
 - (id)presentationCoordinator:(id)arg1 contextForPresentationAtPoint:(struct CGPoint)arg2;
+- (BOOL)presentationCoordinator:(id)arg1 shouldBeginPresentationWithContext:(id)arg2;
 - (BOOL)presentationCoordinator:(id)arg1 shouldBeginInteractivePresentationWithTouchLocation:(struct CGPoint)arg2;
 - (id)traitCollectionForPresentationCoordinator:(id)arg1;
 - (id)quickControlPresentationContextForItem:(id)arg1 atIndexPath:(id)arg2;

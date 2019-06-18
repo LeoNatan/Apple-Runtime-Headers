@@ -386,7 +386,8 @@ __attribute__((visibility("hidden")))
 - (void)setTextColor:(id)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setAttributedStringValue:(id)arg1;
-- (id)accessibilityRoleDescription;
+- (id)_accessibilityLabel;
+- (void)_updateAccessibilityLabel;
 - (BOOL)isAccessibilityAlternateUIVisible;
 - (BOOL)accessibilityPerformShowDefaultUI;
 - (BOOL)accessibilityPerformShowAlternateUI;

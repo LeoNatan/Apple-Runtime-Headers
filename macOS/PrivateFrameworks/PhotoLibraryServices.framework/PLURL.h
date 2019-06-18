@@ -11,6 +11,7 @@
     // Error parsing type: AS, name: _ssbCounter
 }
 
+- (id)replacementObjectForCoder:(id)arg1;
 - (void)stopAccessingSecurityScopedResource;
 - (BOOL)startAccessingSecurityScopedResource;
 - (void)dealloc;

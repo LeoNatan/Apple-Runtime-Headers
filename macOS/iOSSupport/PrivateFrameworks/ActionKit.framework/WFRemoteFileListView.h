@@ -40,7 +40,7 @@
 - (struct CGRect)frameOfCellAtPoint:(struct CGPoint)arg1;
 - (void)updateCheckmarkForFile:(id)arg1;
 - (void)setFiles:(id)arg1;
-@property(nonatomic) struct UIEdgeInsets scrollIndicatorInsets;
+@property(nonatomic) struct UIEdgeInsets verticalScrollIndicatorInsets;
 @property(nonatomic) struct UIEdgeInsets contentInset;
 - (id)initWithFrame:(struct CGRect)arg1 collation:(id)arg2;
 

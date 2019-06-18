@@ -46,10 +46,12 @@
 - (BOOL)_calculateCurrentStatementIsLastMonthsStatement;
 - (id)_filterSuggestions:(id)arg1 belowThreshold:(id)arg2;
 - (id)_remainingStatementBalanceGapDescriptionText;
+- (id)_remainingStatementBalanceGapTitleText;
 - (id)_remainingStatementBalanceMessageString;
 - (id)_remainingStatementBalanceTitleString;
 - (id)_messageForSuggestion:(id)arg1;
 - (id)_titleForSuggestion:(id)arg1;
+- (BOOL)_categoryIsCurrentBalanceType:(unsigned long long)arg1;
 - (BOOL)_categoryIsPaymentPlan:(unsigned long long)arg1;
 - (BOOL)_suggestedAmountListIsValidAfterPurgeIfNecessary:(id)arg1;
 - (id)_calculateThresholdForLastPaymentCategory:(unsigned long long)arg1 statementBalance:(id)arg2 suggestedAmountWithSameCategory:(id)arg3;

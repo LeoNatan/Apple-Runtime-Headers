@@ -7,24 +7,19 @@
 #import <AppKit/NSViewController.h>
 
 #import <ContactsUI/CNFamilyMemberEditControlsViewControllerDelegate-Protocol.h>
+#import <ContactsUI/CNUICoreFamilyMemberContactsObserver-Protocol.h>
 
-@class CNContactPickerInProccessViewController, CNContactStore, CNFuture, FAFamilyMember, NSButton, NSSegmentedControl;
-@protocol CNCancelable, CNFamilyMemberContactsViewControllerDelegate, CNSchedulerProvider, CNUICoreFamilyMemberContactsModelFetching, CNUICoreFamilyMemberContactsUpdating;
+@class CNContactPickerInProccessViewController, CNContactStore, FAFamilyMember, NSButton, NSSegmentedControl, NSString;
+@protocol CNFamilyMemberContactsViewControllerDelegate, CNSchedulerProvider, CNUICoreFamilyMemberContactsDataSource;
 
-@interface CNFamilyMemberContactsViewController : NSViewController <CNFamilyMemberEditControlsViewControllerDelegate>
+@interface CNFamilyMemberContactsViewController : NSViewController <CNFamilyMemberEditControlsViewControllerDelegate, CNUICoreFamilyMemberContactsObserver>
 {
-    long long _countOfFamilyMemberContacts;
     FAFamilyMember *_familyMember;
-    id <CNFamilyMemberContactsViewControllerDelegate> _delegate;
     CNContactStore *_localContactStore;
     CNContactStore *_familyMemberScopedContactStore;
-    id <CNUICoreFamilyMemberContactsModelFetching> _modelFetcher;
-    id <CNUICoreFamilyMemberContactsUpdating> _familyMemberContactsUpdator;
     id <CNSchedulerProvider> _schedulerProvider;
-    id <CNCancelable> _contactStoreDidChangeToken;
-    CNFuture *_updateContactListByAddingContactsFuture;
-    CNFuture *_updateContactListByRemovingContactsFuture;
-    CNFuture *_countOfFamilyMemberContactsFuture;
+    id <CNFamilyMemberContactsViewControllerDelegate> _delegate;
+    id <CNUICoreFamilyMemberContactsDataSource> _dataSource;
     CNContactPickerInProccessViewController *_familyScopedContactPicker;
     NSButton *_doneButton;
     NSButton *_editButton;
@@ -35,16 +30,11 @@
 @property(readonly, nonatomic) NSButton *editButton; // @synthesize editButton=_editButton;
 @property(readonly, nonatomic) NSButton *doneButton; // @synthesize doneButton=_doneButton;
 @property(readonly, nonatomic) CNContactPickerInProccessViewController *familyScopedContactPicker; // @synthesize familyScopedContactPicker=_familyScopedContactPicker;
-@property(retain, nonatomic) CNFuture *countOfFamilyMemberContactsFuture; // @synthesize countOfFamilyMemberContactsFuture=_countOfFamilyMemberContactsFuture;
-@property(retain, nonatomic) CNFuture *updateContactListByRemovingContactsFuture; // @synthesize updateContactListByRemovingContactsFuture=_updateContactListByRemovingContactsFuture;
-@property(retain, nonatomic) CNFuture *updateContactListByAddingContactsFuture; // @synthesize updateContactListByAddingContactsFuture=_updateContactListByAddingContactsFuture;
-@property(readonly, nonatomic) id <CNCancelable> contactStoreDidChangeToken; // @synthesize contactStoreDidChangeToken=_contactStoreDidChangeToken;
+@property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsDataSource> dataSource; // @synthesize dataSource=_dataSource;
+@property(readonly, nonatomic) id <CNFamilyMemberContactsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
-@property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsUpdating> familyMemberContactsUpdator; // @synthesize familyMemberContactsUpdator=_familyMemberContactsUpdator;
-@property(readonly, nonatomic) id <CNUICoreFamilyMemberContactsModelFetching> modelFetcher; // @synthesize modelFetcher=_modelFetcher;
 @property(readonly, nonatomic) CNContactStore *familyMemberScopedContactStore; // @synthesize familyMemberScopedContactStore=_familyMemberScopedContactStore;
 @property(readonly, nonatomic) CNContactStore *localContactStore; // @synthesize localContactStore=_localContactStore;
-@property(readonly, nonatomic) id <CNFamilyMemberContactsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) FAFamilyMember *familyMember; // @synthesize familyMember=_familyMember;
 - (void).cxx_destruct;
 - (void)didPressCancelFamilyMemberEditControlsViewController:(id)arg1;
@@ -59,9 +49,8 @@
 - (void)removeSelectedContactFromFamilyMemberContacts;
 - (void)showAddToContactsDropdown;
 - (void)segmentedControlChanged:(id)arg1;
-- (id)contactItemFutureFromFetcher;
-- (void)triggerCountOfFamilyMemberContactsFetch;
-@property(nonatomic) long long countOfFamilyMemberContacts; // @synthesize countOfFamilyMemberContacts=_countOfFamilyMemberContacts;
+- (void)familyMemberContactItemsDidChange;
+@property(readonly, nonatomic) long long countOfFamilyMemberContacts;
 @property(readonly, nonatomic) long long fetchStatus;
 - (void)setupConstraints;
 - (void)setupViewHierarchy;
@@ -71,11 +60,15 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (struct CGSize)preferredMinimumSize;
-- (void)dealloc;
-- (void)setupChangeNotificationResponse;
 - (id)initWithFamilyMember:(id)arg1 delegate:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

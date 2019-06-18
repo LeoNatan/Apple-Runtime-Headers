@@ -19,6 +19,7 @@
 
 + (id)binaryLoadInfoForLiveProcessWithPid:(int)arg1 dataGatheringOptions:(unsigned long long)arg2;
 + (id)binaryLoadInfoForLiveProcessWithPid:(int)arg1;
++ (id)binaryLoadInfoForAddress:(unsigned long long)arg1 inBinaryLoadInfos:(id)arg2 libraryCache:(id)arg3;
 + (id)binaryLoadInfoForAddress:(unsigned long long)arg1 inBinaryLoadInfos:(id)arg2;
 + (id)binaryLoadInfoWithBinary:(id)arg1 textSegmentLoadAddress:(unsigned long long)arg2 isInKernelAddressSpace:(BOOL)arg3;
 + (id)binaryLoadInfoWithoutReferencesFromPAStyleSerializedImageInfo:(const CDStruct_14f26992 *)arg1;

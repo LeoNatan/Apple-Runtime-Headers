@@ -23,6 +23,7 @@
     float _retrainThresholdTDSR;
     int _pruningNumRetentionUtterance;
     int _maximumSpeakerVectors;
+    int _maxAllowedImplicitUtterance;
     NSString *_profileID;
     NSString *_sysConfigFilepath;
     unsigned long long _satImplicitBaseProfileThreshold;
@@ -32,6 +33,7 @@
 }
 
 @property(readonly, nonatomic) NSString *voiceProfilePruningCookie; // @synthesize voiceProfilePruningCookie=_voiceProfilePruningCookie;
+@property(readonly, nonatomic) int maxAllowedImplicitUtterance; // @synthesize maxAllowedImplicitUtterance=_maxAllowedImplicitUtterance;
 @property(readonly, nonatomic) int maximumSpeakerVectors; // @synthesize maximumSpeakerVectors=_maximumSpeakerVectors;
 @property(readonly, nonatomic) int pruningNumRetentionUtterance; // @synthesize pruningNumRetentionUtterance=_pruningNumRetentionUtterance;
 @property(readonly, nonatomic) float retrainThresholdTDSR; // @synthesize retrainThresholdTDSR=_retrainThresholdTDSR;

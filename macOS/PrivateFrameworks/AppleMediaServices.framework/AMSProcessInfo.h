@@ -55,6 +55,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (id)description;
 @property(retain) NSString *partnerHeader;
 - (id)initWithBundleIdentifier:(id)arg1;

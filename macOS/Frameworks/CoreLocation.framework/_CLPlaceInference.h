@@ -9,7 +9,7 @@
 #import <CoreLocation/NSCopying-Protocol.h>
 #import <CoreLocation/NSSecureCoding-Protocol.h>
 
-@class CLLocation, CLPlacemark;
+@class CLLocation, CLPlacemark, NSString;
 
 @interface _CLPlaceInference : NSObject <NSSecureCoding, NSCopying>
 {
@@ -18,19 +18,22 @@
     CLPlacemark *_placemark;
     CLLocation *_referenceLocation;
     double _confidence;
+    NSString *_preferredName;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) NSString *preferredName; // @synthesize preferredName=_preferredName;
 @property(readonly, nonatomic) double confidence; // @synthesize confidence=_confidence;
 @property(readonly, nonatomic) CLLocation *referenceLocation; // @synthesize referenceLocation=_referenceLocation;
 @property(readonly, nonatomic) CLPlacemark *placemark; // @synthesize placemark=_placemark;
 @property(readonly, nonatomic) unsigned long long placeType; // @synthesize placeType=_placeType;
 @property(readonly, nonatomic) unsigned long long userType; // @synthesize userType=_userType;
+- (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)dealloc;
-- (id)initWithUserType:(unsigned long long)arg1 placeType:(unsigned long long)arg2 placemark:(id)arg3 referenceLocation:(id)arg4 confidence:(double)arg5;
+- (id)initWithUserType:(unsigned long long)arg1 placeType:(unsigned long long)arg2 placemark:(id)arg3 referenceLocation:(id)arg4 confidence:(double)arg5 preferredName:(id)arg6;
 
 @end
 

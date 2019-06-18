@@ -25,9 +25,14 @@
 + (id)icnsWithIconFamilyHandle:(struct IconFamilyResource **)arg1;
 + (id)icnsWithContentsOfURL:(id)arg1;
 + (id)icnsWithResourceFile:(id)arg1;
-+ (id)systemIconNamed:(id)arg1;
 + (id)icnsWithIcon:(id)arg1 imageDescriptors:(id)arg2;
 + (id)icnsWithType:(unsigned int)arg1 images:(id)arg2;
++ (id)genericAppIconResource;
++ (id)genericFolderIconResource;
++ (id)genericDocumentIconResource;
++ (id)placeholderIconResource;
++ (id)notLoadedIconResource;
++ (id)systemIconNamed:(id)arg1;
 @property(retain) NSURL *url; // @synthesize url=_url;
 @property BOOL dirty; // @synthesize dirty=_dirty;
 @property(readonly) NSMutableDictionary *elements; // @synthesize elements=_elements;
@@ -52,6 +57,7 @@
 - (struct CGSize)sizeAtIndex:(int)arg1;
 - (id)dataAtIndex:(int)arg1;
 - (id)variantNamed:(id)arg1;
+@property(readonly) BOOL containsTemplateVariant;
 - (unsigned int)typeForVariantName:(id)arg1;
 @property(retain) NSString *name; // @dynamic name;
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;

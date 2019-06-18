@@ -11,7 +11,7 @@
 }
 
 + (id)migrationClassDependencies;
-+ (BOOL)workflowNeedsMigration:(id)arg1 fromClientVersion:(long long)arg2;
++ (BOOL)workflowNeedsMigration:(id)arg1 fromClientVersion:(id)arg2;
 - (void)migrateWorkflow;
 
 @end

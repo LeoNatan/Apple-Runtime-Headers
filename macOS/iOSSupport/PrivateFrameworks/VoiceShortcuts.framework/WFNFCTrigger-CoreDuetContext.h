@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFNFCTrigger.h>
 
 @interface WFNFCTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

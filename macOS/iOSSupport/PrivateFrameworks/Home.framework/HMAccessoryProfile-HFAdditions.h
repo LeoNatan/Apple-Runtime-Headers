@@ -13,6 +13,8 @@
 @protocol HFIconDescriptor;
 
 @interface HMAccessoryProfile (HFAdditions) <HFStateDumpBuildable, HFFavoritable>
++ (id)_profilesWithNonStandardTileUI;
+@property(readonly, nonatomic) BOOL hf_hasNonStandardTileUI;
 @property(readonly, nonatomic) id <HFIconDescriptor> hf_iconDescriptor;
 - (id)hf_stateDumpBuilderWithContext:(id)arg1;
 - (id)hf_updateIsFavorite:(BOOL)arg1;

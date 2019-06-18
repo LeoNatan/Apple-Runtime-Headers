@@ -91,6 +91,9 @@
 - (id)currentInputSourceBundleID;
 - (void)selectInputMode:(id)arg1;
 - (id)bundleIdentifier;
+- (BOOL)isSecureMode;
+- (long long)spellCheckerDocumentTag;
+- (int)processIdentifier;
 - (id)getApplicationPropertyValue:(unsigned long long)arg1;
 - (void)setApplicationProperty:(unsigned long long)arg1 withValue:(id)arg2 waitUntilDone:(BOOL)arg3;
 - (BOOL)_TIPropertyValueIsValid:(unsigned long long)arg1;

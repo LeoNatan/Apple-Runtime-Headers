@@ -22,8 +22,6 @@
 - (void)forecast:(unsigned long long)arg1 forLocation:(WFLocation *)arg2 locale:(NSLocale *)arg3 taskIdentifier:(WFTaskIdentifier *)arg4;
 - (void)dailyForecastForLocation:(WFLocation *)arg1 locale:(NSLocale *)arg2 taskIdentifier:(WFTaskIdentifier *)arg3;
 - (void)hourlyForecastForLocation:(WFLocation *)arg1 locale:(NSLocale *)arg2 taskIdentifier:(WFTaskIdentifier *)arg3;
-- (void)historicalForecastForLocation:(WFLocation *)arg1 locale:(NSLocale *)arg2 atDate:(NSDateComponents *)arg3 options:(NSDictionary *)arg4 taskIdentifier:(WFTaskIdentifier *)arg5;
-- (void)almanacForecastForLocation:(WFLocation *)arg1 locale:(NSLocale *)arg2 atDate:(NSDateComponents *)arg3 options:(NSDictionary *)arg4 taskIdentifier:(WFTaskIdentifier *)arg5;
 - (void)forecastForLocation:(WFLocation *)arg1 locale:(NSLocale *)arg2 atDate:(NSDateComponents *)arg3 options:(NSDictionary *)arg4 taskIdentifier:(WFTaskIdentifier *)arg5;
 @end
 

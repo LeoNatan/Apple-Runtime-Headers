@@ -73,6 +73,7 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)initWithMapItem:(id)arg1 mode:(unsigned long long)arg2 options:(unsigned long long)arg3;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

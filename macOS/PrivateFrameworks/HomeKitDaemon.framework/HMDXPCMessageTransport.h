@@ -11,7 +11,7 @@
 #import <HomeKitDaemon/HMFMessageTransportDelegate-Protocol.h>
 #import <HomeKitDaemon/NSXPCListenerDelegate-Protocol.h>
 
-@class HMDApplicationMonitor, HMDApplicationRegistry, NSMutableSet, NSObject, NSString, NSXPCListener;
+@class HMDApplicationRegistry, NSMutableSet, NSObject, NSString, NSXPCListener;
 @protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface HMDXPCMessageTransport : HMFMessageTransport <NSXPCListenerDelegate, HMDApplicationMonitorDelegate, HMFLogging, HMFMessageTransportDelegate>
@@ -20,16 +20,12 @@
     HMDApplicationRegistry *_applicationRegistry;
     NSXPCListener *_listener;
     NSMutableSet *_xpcClients;
-    HMDApplicationRegistry *_appRegistry;
-    HMDApplicationMonitor *_appMonitor;
     NSObject<OS_dispatch_group> *_activeMessageTracker;
 }
 
 + (id)logCategory;
 + (id)defaultTransport;
 @property(retain, nonatomic) NSObject<OS_dispatch_group> *activeMessageTracker; // @synthesize activeMessageTracker=_activeMessageTracker;
-@property(nonatomic) __weak HMDApplicationMonitor *appMonitor; // @synthesize appMonitor=_appMonitor;
-@property(retain, nonatomic) HMDApplicationRegistry *appRegistry; // @synthesize appRegistry=_appRegistry;
 @property(retain, nonatomic) NSMutableSet *xpcClients; // @synthesize xpcClients=_xpcClients;
 @property(readonly) NSXPCListener *listener; // @synthesize listener=_listener;
 @property(readonly) HMDApplicationRegistry *applicationRegistry; // @synthesize applicationRegistry=_applicationRegistry;

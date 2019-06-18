@@ -287,7 +287,13 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly) BOOL hasUnifiedMemory;
 @property(readonly) unsigned long long hash;
+@property(readonly) unsigned long long location;
+@property(readonly) unsigned long long locationNumber;
 @property(readonly) unsigned long long maxComputeAttributes;
+@property(readonly) unsigned long long maxTransferRate;
+@property(readonly) unsigned int peerCount;
+@property(readonly) unsigned long long peerGroupID;
+@property(readonly) unsigned int peerIndex;
 @property(readonly) Class superclass;
 @property(readonly, nonatomic) BOOL supports2DLinearTexArraySPI;
 @property(readonly, nonatomic) BOOL supports32bpcMSAATextures;
@@ -373,7 +379,7 @@
 @property(readonly, nonatomic) BOOL supportsSamplerReductionMode;
 @property(readonly, nonatomic) BOOL supportsSeparateDepthStencil;
 @property(readonly, nonatomic) BOOL supportsSeparateVisibilityAndShadingRate;
-@property(readonly, nonatomic) BOOL supportsShaderBarycentricCoordinates;
+@property(readonly) BOOL supportsShaderBarycentricCoordinates;
 @property(readonly, nonatomic) BOOL supportsShaderLODAverage;
 @property(readonly, nonatomic) BOOL supportsShaderMinLODClamp;
 @property(readonly, nonatomic) BOOL supportsStencilFeedback;

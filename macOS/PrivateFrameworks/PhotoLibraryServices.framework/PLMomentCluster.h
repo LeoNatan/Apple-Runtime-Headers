@@ -13,8 +13,12 @@
     NSArray *_moments;
     NSDate *_startDate;
     NSDate *_endDate;
+    NSDate *_localStartDate;
+    NSDate *_localEndDate;
 }
 
+@property(readonly, nonatomic) NSDate *localEndDate; // @synthesize localEndDate=_localEndDate;
+@property(readonly, nonatomic) NSDate *localStartDate; // @synthesize localStartDate=_localStartDate;
 @property(readonly, nonatomic) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(readonly, nonatomic) NSDate *startDate; // @synthesize startDate=_startDate;
 @property(readonly, copy, nonatomic) NSArray *moments; // @synthesize moments=_moments;

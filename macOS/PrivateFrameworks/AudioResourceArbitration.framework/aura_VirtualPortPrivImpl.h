@@ -38,6 +38,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool canSetRoutable;
 @property(readonly, nonatomic) _Bool routable;
 @property(readonly, nonatomic) __weak id <aura_Port> port;
+@property(readonly, nonatomic) weak_ptr_754246e0 reactor;
 - (id)initWithReactor:(shared_ptr_bb316d66)arg1;
 
 // Remaining properties

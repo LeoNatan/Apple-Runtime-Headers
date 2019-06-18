@@ -21,9 +21,11 @@
     unsigned long long _inputHeight;
     unsigned long long _inputChannels;
     unsigned long long _batchSize;
+    unsigned long long _lossBatchSize;
 }
 
-+ (id)networkWithLayers:(id)arg1 inputLength:(unsigned long long)arg2 inputHeight:(unsigned long long)arg3 inputChannels:(unsigned long long)arg4 batchSize:(unsigned long long)arg5 options:(id)arg6 deviceHandler:(id)arg7 optimizerParams:(id)arg8;
++ (id)networkWithLayers:(id)arg1 inputLength:(unsigned long long)arg2 inputHeight:(unsigned long long)arg3 inputChannels:(unsigned long long)arg4 batchSize:(unsigned long long)arg5 lossBatchSize:(unsigned long long)arg6 options:(id)arg7 deviceHandler:(id)arg8 optimizerParams:(id)arg9;
+@property unsigned long long lossBatchSize; // @synthesize lossBatchSize=_lossBatchSize;
 @property unsigned long long batchSize; // @synthesize batchSize=_batchSize;
 @property unsigned long long inputChannels; // @synthesize inputChannels=_inputChannels;
 @property unsigned long long inputHeight; // @synthesize inputHeight=_inputHeight;
@@ -38,7 +40,7 @@
 - (void).cxx_destruct;
 - (void)createLayerKernels;
 - (id)computeInference:(id)arg1;
-- (unsigned long long)runInference:(id)arg1 databatch:(id)arg2 inferredResult:(id)arg3;
+- (unsigned long long)runInference:(id)arg1 databatch:(id)arg2 inferredResult:(id)arg3 semaphore:(id)arg4;
 - (void)runTraining:(id)arg1 databatch:(id)arg2 iteration:(unsigned long long)arg3 lossCallback:(CDUnknownBlockType)arg4 semaphore:(id)arg5;
 - (void *)generateModelContainer;
 - (id)initWithNetworkType:(unsigned long long)arg1 layers:(id)arg2;

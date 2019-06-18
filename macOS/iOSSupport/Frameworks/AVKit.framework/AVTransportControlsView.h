@@ -8,7 +8,7 @@
 
 #import <AVKit/AVScrubberDelegate-Protocol.h>
 
-@class AVBackdropView, AVButton, AVLabel, AVPlaybackControlsRoutePickerView, AVScrubber, AVStyleSheet, AVTouchIgnoringView, NSArray, NSLayoutConstraint, NSString, NSTimer, UILabel, UIView, _UIVisualEffectBackdropView;
+@class AVBackdropView, AVButton, AVLabel, AVPlaybackControlsRoutePickerView, AVScrubber, AVStyleSheet, AVTouchIgnoringView, NSArray, NSLayoutConstraint, NSString, NSTimer, UILabel, UIView;
 @protocol AVTransportControlsViewDelegate;
 
 __attribute__((visibility("hidden")))
@@ -50,12 +50,10 @@ __attribute__((visibility("hidden")))
     UILabel *_scrubInstructionsLabel;
     UILabel *_scrubInstructionsBackdropLabel;
     NSTimer *_scrubInstructionsTimer;
-    _UIVisualEffectBackdropView *_captureView;
     struct CGSize _extrinsicContentSize;
 }
 
 + (BOOL)requiresConstraintBasedLayout;
-@property(readonly, nonatomic) _UIVisualEffectBackdropView *captureView; // @synthesize captureView=_captureView;
 @property(nonatomic) BOOL backdropViewNeedsLayout; // @synthesize backdropViewNeedsLayout=_backdropViewNeedsLayout;
 @property(nonatomic) BOOL hasFullScreenAppearance; // @synthesize hasFullScreenAppearance=_hasFullScreenAppearance;
 @property(nonatomic) BOOL hasAlternateAppearance; // @synthesize hasAlternateAppearance=_hasAlternateAppearance;
@@ -111,7 +109,7 @@ __attribute__((visibility("hidden")))
 - (void)updateConstraints;
 - (void)traitCollectionDidChange:(id)arg1;
 - (struct CGSize)intrinsicContentSize;
-- (id)initWithFrame:(struct CGRect)arg1 styleSheet:(id)arg2 captureView:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 styleSheet:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -28,7 +28,7 @@
 @property(readonly) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(copy) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
-- (id)_perform;
+- (id)_handleAskPermissionRequestWithURL:(id)arg1 account:(id)arg2;
 - (id)perform;
 - (id)initWithRequest:(id)arg1 result:(id)arg2 error:(id)arg3 bag:(id)arg4;
 

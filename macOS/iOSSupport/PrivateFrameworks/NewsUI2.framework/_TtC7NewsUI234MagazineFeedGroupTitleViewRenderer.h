@@ -10,6 +10,8 @@
 {
     // Error parsing type: , name: styler
     // Error parsing type: , name: shineImageFactory
+    // Error parsing type: , name: blueprintProvider
+    // Error parsing type: , name: debugEnabled
 }
 
 @end

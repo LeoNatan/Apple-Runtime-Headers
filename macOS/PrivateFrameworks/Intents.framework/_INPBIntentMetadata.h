@@ -22,12 +22,14 @@
         unsigned int backgroundLaunch:1;
         unsigned int confirmed:1;
         unsigned int idiom:1;
+        unsigned int isOwnedByCurrentUser:1;
         unsigned int isPrimaryDisplayDisabled:1;
         unsigned int triggerMethod:1;
         unsigned int userConfirmationRequired:1;
     } _has;
     BOOL _backgroundLaunch;
     BOOL _confirmed;
+    BOOL _isOwnedByCurrentUser;
     BOOL _isPrimaryDisplayDisabled;
     BOOL _userConfirmationRequired;
     int _executionContext;
@@ -61,6 +63,7 @@
 @property(copy, nonatomic) NSString *originatingDeviceRapportEffectiveId; // @synthesize originatingDeviceRapportEffectiveId=_originatingDeviceRapportEffectiveId;
 @property(copy, nonatomic) NSString *originatingDeviceIdsIdentifier; // @synthesize originatingDeviceIdsIdentifier=_originatingDeviceIdsIdentifier;
 @property(nonatomic) BOOL isPrimaryDisplayDisabled; // @synthesize isPrimaryDisplayDisabled=_isPrimaryDisplayDisabled;
+@property(nonatomic) BOOL isOwnedByCurrentUser; // @synthesize isOwnedByCurrentUser=_isOwnedByCurrentUser;
 @property(copy, nonatomic) NSString *intentId; // @synthesize intentId=_intentId;
 @property(copy, nonatomic) NSString *intentDescription; // @synthesize intentDescription=_intentDescription;
 @property(nonatomic) int idiom; // @synthesize idiom=_idiom;
@@ -98,6 +101,7 @@
 @property(readonly, nonatomic) BOOL hasOriginatingDeviceRapportEffectiveId;
 @property(readonly, nonatomic) BOOL hasOriginatingDeviceIdsIdentifier;
 @property(nonatomic) BOOL hasIsPrimaryDisplayDisabled;
+@property(nonatomic) BOOL hasIsOwnedByCurrentUser;
 @property(readonly, nonatomic) BOOL hasIntentId;
 @property(readonly, nonatomic) BOOL hasIntentDescription;
 - (int)StringAsIdiom:(id)arg1;

@@ -23,7 +23,8 @@
     id <MTLTexture> _offscreenTexture;
     BOOL _isCreatingOffscreenTexture;
     NSObject<OS_dispatch_queue> *_workQueue;
-    id <MTLSamplerState> _sampler;
+    id <MTLSamplerState> _mirrorRepeatSampler;
+    id <MTLSamplerState> _clampToZeroSampler;
     id <MTLDepthStencilState> _depthStencil;
     CDStruct_acc9a335 *_pipelines;
     long long _pipelinesCount;
@@ -49,7 +50,7 @@
 @property(copy, nonatomic) CDUnknownBlockType test_renderSnapshotHandler; // @synthesize test_renderSnapshotHandler=_test_renderSnapshotHandler;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 - (void).cxx_destruct;
-- (long long)_drawRenderTexture:(CDStruct_af6398b0 *)arg1 withCommandEncoder:(id)arg2;
+- (long long)_drawRenderTexture:(CDStruct_dcc83465 *)arg1 withCommandEncoder:(id)arg2;
 - (void)_drawSpriteTextures:(id)arg1 renderState:(id)arg2 withCommandEncoder:(id)arg3 passingTest:(CDUnknownBlockType)arg4;
 - (void)drawInMTKView:(id)arg1;
 - (void)mtkView:(id)arg1 drawableSizeWillChange:(struct CGSize)arg2;
@@ -69,7 +70,7 @@
 - (void)_resizePipelinesStorageIfNeeded;
 - (id)_createPipelineStateForColorProgram:(id)arg1 shaderFlags:(int)arg2;
 - (void)_handleCompiledRenderPipelineSate:(id)arg1 forPipeline:(CDStruct_acc9a335 *)arg2;
-- (CDStruct_acc9a335 *)_pipelineForRenderTexture:(CDStruct_af6398b0 *)arg1;
+- (CDStruct_acc9a335 *)_pipelineForRenderTexture:(CDStruct_dcc83465 *)arg1;
 - (void)_checkinRenderState:(id)arg1;
 - (id)_checkoutRenderState;
 - (void)_setupBuffers;

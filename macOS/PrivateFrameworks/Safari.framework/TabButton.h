@@ -9,7 +9,7 @@
 #import <Safari/NSAccessibilityRadioButton-Protocol.h>
 #import <Safari/RolloverTrackingButtonDelegate-Protocol.h>
 
-@class BackgroundColorView, CALayer, NSArray, NSImage, NSImageView, NSMutableArray, NSString, NSTextField, NSView, NSVisualEffectView, RolloverImageButton;
+@class BackgroundColorView, CALayer, NSArray, NSImage, NSImageView, NSLayoutConstraint, NSMutableArray, NSStackView, NSString, NSTextField, NSView, NSVisualEffectView, RolloverImageButton;
 @protocol TabBarViewItem, TabButtonDelegate;
 
 __attribute__((visibility("hidden")))
@@ -17,15 +17,22 @@ __attribute__((visibility("hidden")))
 {
     BOOL _didEstablishTabBarViewItemBindings;
     NSMutableArray *_accessoryViews;
-    NSView *_mainContentContainer;
-    NSView *_titleContainerView;
+    NSView *_mainContentClippingContainer;
+    NSStackView *_mainContentContainer;
+    NSStackView *_titleContainerView;
     NSTextField *_titleTextField;
     NSView *_focusRingView;
     RolloverImageButton *_closeButton;
+    NSView *_iconViewContainer;
     NSImageView *_iconView;
     NSVisualEffectView *_iconFullScreenVisualEffectView;
     BackgroundColorView *_iconFullScreenBackgroundView;
     CALayer *_iconFullScreenBackgroundHighlightLayer;
+    NSLayoutConstraint *_mainContentContainerWidthConstraint;
+    NSLayoutConstraint *_mainContentContainerLeftConstraint;
+    NSLayoutConstraint *_mainContentContainerRightConstraint;
+    NSLayoutConstraint *_mainContentContainerHorizontalCenteringConstraint;
+    NSLayoutConstraint *_titleContainerViewHorizontalCenteringConstraint;
     BOOL _canShowCloseButton;
     BOOL _pinned;
     BOOL _showIcon;
@@ -69,11 +76,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)resignFirstResponder;
 - (BOOL)becomeFirstResponder;
 - (BOOL)acceptsFirstResponder;
-- (void)_layOutFocusRingWithTitleContainerContentFrame:(struct CGRect)arg1;
-- (void)_layOutTitleContainerViewInBounds:(struct CGRect)arg1 availableBounds:(struct CGRect)arg2;
-- (struct CGRect)_layOutAccessoryViewsInBounds:(struct CGRect)arg1;
-- (struct CGRect)_mainContentContainerRectForBounds:(struct CGRect)arg1;
-- (void)layout;
 - (void)updateLayer;
 - (id)_titleAttributedStringForDragAndDrop;
 - (id)pinnedTabDragImageOfSize:(struct CGSize)arg1;
@@ -84,12 +86,15 @@ __attribute__((visibility("hidden")))
 - (void)setHasMouseOverHighlight:(BOOL)arg1 shouldAnimateCloseButton:(BOOL)arg2;
 - (void)_closeButtonClicked:(id)arg1;
 - (BOOL)_shouldShowCloseButton;
-- (void)_updateIconView;
+- (BOOL)_canShowCloseButton;
 - (BOOL)_shouldShowIconView;
 - (void)_reconfigureFullScreenViewsUsingVisualEffectViews:(BOOL)arg1;
 - (void)_removeIconVisualEffectViewForFullScreenToolbarWindow;
 - (void)_addIconVisualEffectViewForFullScreenToolbarWindow;
 - (void)_updateIconFullScreenBackgroundColor;
+- (void)_setUpTabButtonConstraints;
+- (void)_setUpIconViewConstraints;
+- (void)_updateConstraints;
 - (void)setForcesActiveWindowState:(BOOL)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)dealloc;

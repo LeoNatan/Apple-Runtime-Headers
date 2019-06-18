@@ -28,7 +28,7 @@
 - (struct error_code)setClock:(id <aura_Clock>)arg1;
 - (struct error_code)setBufferFrameSize:(unsigned int)arg1;
 - (struct error_code)setWorkIntervalMachPort:(void *)arg1;
-- (struct error_code)registerIOProc:(const function_b157c3ea *)arg1;
-- (struct error_code)setIOEventNotifier:(function_64fbd6ee)arg1;
+- (struct error_code)registerIOProc:(const function_e45cec34 *)arg1;
+- (struct error_code)setIOEventNotifier:(function_012e5ebb)arg1;
 @end
 

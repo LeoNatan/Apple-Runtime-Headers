@@ -24,6 +24,7 @@
 - (void)layoutSubviews;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithText:(id)arg1 activityIndicatorStyle:(long long)arg2;
 - (id)initWithActivityIndicatorStyle:(long long)arg1;
 
 // Remaining properties

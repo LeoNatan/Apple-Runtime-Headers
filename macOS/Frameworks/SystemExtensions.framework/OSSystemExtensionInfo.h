@@ -14,6 +14,8 @@
 @interface OSSystemExtensionInfo : NSObject <NSSecureCoding, OSSystemExtensionPolicyItem>
 {
     BOOL _enabled;
+    NSDictionary *_localizedInfo;
+    NSDictionary *_unlocalizedInfo;
     BOOL _teamIDPlatformBinary;
     BOOL _teamIDNone;
     BOOL _active;
@@ -50,6 +52,9 @@
 @property(retain) NSString *developerName; // @synthesize developerName=_developerName;
 @property(retain) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
+@property(readonly) NSString *usageDescription;
+@property(readonly) NSString *extensionDisplayName;
+- (id)getLocalizedStringForKey:(id)arg1;
 @property(readonly) NSString *applicationName;
 @property BOOL enabled;
 - (void)encodeWithCoder:(id)arg1;

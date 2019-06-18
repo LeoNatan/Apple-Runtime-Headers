@@ -14,6 +14,8 @@
 + (void)enumerateAppearanceTypesUsingBlock:(CDUnknownBlockType)arg1;
 + (id)appearanceInfoWithType:(unsigned long long)arg1;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
+- (BOOL)isEqual:(id)arg1;
+- (unsigned long long)hash;
 - (id)description;
 @property(readonly, nonatomic) BOOL isDark;
 

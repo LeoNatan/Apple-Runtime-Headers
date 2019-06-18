@@ -19,6 +19,7 @@
 - (void)icaWebKitViewSwitchToLocation:(NSString *)arg1 toSection:(NSString *)arg2;
 
 @optional
+- (void)refreshPage;
 - (void)skipAndContinueSignIn;
 - (void)runAppleIDOptOut:(JSValue *)arg1;
 - (NSWindow *)webViewWindow;

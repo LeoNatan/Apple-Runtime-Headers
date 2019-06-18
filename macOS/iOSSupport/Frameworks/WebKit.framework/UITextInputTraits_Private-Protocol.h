@@ -33,6 +33,8 @@
 @property(nonatomic) BOOL displaySecureEditsUsingPlainText;
 @property(nonatomic) BOOL displaySecureTextUsingPlainText;
 @property(nonatomic) BOOL acceptsSplitKeyboard;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
+@property(nonatomic) BOOL forceFloatingKeyboard;
 @property(nonatomic) BOOL acceptsFloatingKeyboard;
 @property(nonatomic) BOOL returnKeyGoesToNextResponder;
 @property(nonatomic) int emptyContentReturnKeyType;

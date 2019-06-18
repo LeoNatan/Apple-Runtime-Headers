@@ -57,8 +57,8 @@
 - (void)createKernel;
 - (id)generateNode:(id)arg1 model:(id)arg2 weightIter:(unsigned long long *)arg3 params:(CDStruct_96916c69 *)arg4 inputChunks:(id)arg5 outputChunks:(id)arg6;
 - (id)generateNode:(id)arg1 model:(id)arg2 weightIter:(unsigned long long *)arg3;
-- (struct NSArray *)seqBackward:(id)arg1 inputGradient:(struct NSArray *)arg2;
-- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 lossLabels:(id)arg3 runInference:(BOOL)arg4;
+- (struct NSArray *)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(struct NSArray *)arg3;
+- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
 - (struct NSArray *)backward:(id)arg1 inputGradient:(struct NSArray *)arg2;
 - (struct NSArray *)forward:(id)arg1 input:(struct NSArray *)arg2 labels:(id)arg3 runInference:(BOOL)arg4;
 - (id)initWithName:(id)arg1 parameters:(CDStruct_96916c69 *)arg2;

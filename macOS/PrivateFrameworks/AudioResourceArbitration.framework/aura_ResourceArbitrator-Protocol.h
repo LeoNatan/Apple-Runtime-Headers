@@ -20,9 +20,9 @@
 @property(readonly, nonatomic) vector_999014c4 devices;
 @property(readonly, nonatomic) vector_496cc06a clocks;
 @property(readonly, nonatomic) vector_7bfbc159 boxes;
-- (struct error_code)setSupplementalIOControllerTopology:(const struct IOControllerTopology *)arg1 masterVirtualPort:(optional_2c7815ee)arg2 completionHandler:(function_c0dd97ef)arg3;
-- (struct error_code)setConfigurations:(const vector_1ccd10a7 *)arg1 completionHandler:(function_c0dd97ef)arg2;
-- (struct error_code)setInternalUpdateHandler:(function_622822b1)arg1;
+- (struct error_code)setSupplementalIOControllerTopology:(const struct IOControllerTopology *)arg1 masterVirtualPort:(optional_2c7815ee)arg2 completionHandler:(function_f5b89e9d)arg3;
+- (struct error_code)setConfigurations:(const struct vector<const aura_ConfigurationChangeRequest *, std::__1::allocator<const aura_ConfigurationChangeRequest *>> *)arg1 completionHandler:(function_f5b89e9d)arg2;
+- (struct error_code)setInternalUpdateHandler:(function_eb4797c5)arg1;
 - (vector_29aefa88)setMuteRecords:(const vector_5bce929e *)arg1;
 - (vector_29aefa88)setScalarVolumeRecords:(const vector_149db60c *)arg1;
 - (struct error_code)setPortDiscoveryState:(unsigned char)arg1;
@@ -32,13 +32,13 @@
 - (expected_cf04bbb0)simulateMicrophoneConfiguration:(aura_ConfigurationChangeRequest *)arg1 virtualPort:(id <aura_VirtualPort>)arg2;
 - (expected_01e6cd2c)simulatePortEligibility:(aura_ConfigurationChangeRequest *)arg1;
 - (expected_73a2de47)simulateConfiguration:(aura_ConfigurationChangeRequest *)arg1;
-- (struct error_code)setSupplementalIOControllerTopology:(const struct IOControllerTopology *)arg1 masterVirtualPort:(optional_2c7815ee)arg2 configChangeHandler:(function_00b26d85)arg3;
-- (struct error_code)setConfigurations:(const vector_1ccd10a7 *)arg1 configChangeHandler:(function_00b26d85)arg2;
+- (struct error_code)setSupplementalIOControllerTopology:(const struct IOControllerTopology *)arg1 masterVirtualPort:(optional_2c7815ee)arg2 configChangeHandler:(function_2fcae77d)arg3;
+- (struct error_code)setConfigurations:(const struct vector<const aura_ConfigurationChangeRequest *, std::__1::allocator<const aura_ConfigurationChangeRequest *>> *)arg1 configChangeHandler:(function_2fcae77d)arg2;
 - (expected_0085864a)createReflectorPorts:(unsigned int)arg1 reflectorType:(unsigned char)arg2 dspOrder:(unsigned char)arg3 audioDirection:(unsigned char)arg4;
 - (id <aura_VirtualPort>)createReflectorPort:(unsigned int)arg1 reflectorType:(unsigned char)arg2 dspOrder:(unsigned char)arg3 virtualPort:(id <aura_VirtualPort>)arg4;
-- (struct error_code)registerAudioStatisticsReporters:(const vector_d87a6415 *)arg1 sessionToken:(unsigned int)arg2;
+- (struct error_code)registerAudioStatisticsReporters:(const struct vector<long long, std::__1::allocator<long long>> *)arg1 sessionToken:(unsigned int)arg2;
 - (struct error_code)unregisterSession:(unsigned int)arg1;
 - (struct error_code)registerSession:(unsigned int)arg1;
-- (struct error_code)setConfigurationChangeNotifier:(function_439a5227)arg1;
+- (struct error_code)setConfigurationChangeNotifier:(function_eeef26d1)arg1;
 @end
 

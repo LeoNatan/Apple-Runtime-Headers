@@ -23,6 +23,7 @@
 + (BOOL)isImageUTI:(id)arg1;
 + (BOOL)isMovieUTI:(id)arg1;
 + (BOOL)isAudioUTI:(id)arg1;
++ (long long)defaultRasterizationDPI;
 + (BOOL)UTIRequiresRasterizationDPI:(id)arg1;
 + (BOOL)isValidExtension:(id)arg1 forUTI:(id)arg2;
 + (id)UTIForURL:(id)arg1;

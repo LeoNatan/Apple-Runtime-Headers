@@ -6,6 +6,7 @@
 
 #import <AudioDSPManager/RemoteProcessingBlockHostItemBase.h>
 
+__attribute__((visibility("hidden")))
 @interface RemoteProcessingBlockADMItem : RemoteProcessingBlockHostItemBase
 {
 }

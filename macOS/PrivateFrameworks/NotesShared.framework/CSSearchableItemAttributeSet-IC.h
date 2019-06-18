@@ -9,15 +9,19 @@
 @class NSString;
 
 @interface CSSearchableItemAttributeSet (IC)
-+ (id)ic_hasAttachmentsCustomKey;
-+ (id)ic_hasChecklistsCustomKey;
-+ (id)ic_isSharedCustomKey;
-+ (id)ic_isLockedCustomKey;
++ (id)ic_itemHasScannedDocumentsCustomKey;
++ (id)ic_itemHasDrawingsCustomKey;
++ (id)ic_itemHasAttachmentsCustomKey;
++ (id)ic_itemHasChecklistsCustomKey;
++ (id)ic_itemIsSharedCustomKey;
++ (id)ic_itemIsLockedCustomKey;
 + (id)ic_searchResultTypeCustomKey;
 + (id)ic_dataSourceIdentifierCustomKey;
 + (id)ic_specializedIndexFieldAttributeKeyForStringField:(id)arg1;
 + (id)ic_customAttributeKeyWithName:(id)arg1 searchable:(BOOL)arg2 searchableByDefault:(BOOL)arg3 unique:(BOOL)arg4 multiValued:(BOOL)arg5;
 + (id)ic_customAttributeKeyDictionary;
+@property(nonatomic) BOOL ic_hasScannedDocuments;
+@property(nonatomic) BOOL ic_hasDrawings;
 @property(nonatomic) BOOL ic_hasAttachments;
 @property(nonatomic) BOOL ic_hasChecklists;
 @property(nonatomic) BOOL ic_isShared;

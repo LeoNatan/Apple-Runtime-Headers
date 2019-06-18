@@ -12,7 +12,7 @@
 @protocol dspd_DSPDelegate <dspd_HardwareVolumeDelegate, dspd_VolumeNotificationDelegate>
 @property(readonly, nonatomic) vector_a93e9522 muteRecords;
 @property(readonly, nonatomic) vector_df89e1f1 scalarVolumeRecords;
-- (struct error_code)fadeVolumeLevel:(float)arg1 ioControllerID:(unsigned long long)arg2 direction:(unsigned char)arg3 portID:(struct optional<unsigned long long>)arg4 duration:(duration_34584d68)arg5 completionHandler:(function_c0dd97ef)arg6;
+- (struct error_code)fadeVolumeLevel:(float)arg1 ioControllerID:(unsigned long long)arg2 direction:(unsigned char)arg3 portID:(struct optional<unsigned long long>)arg4 duration:(duration_34584d68)arg5 completionHandler:(function_f5b89e9d)arg6;
 - (struct vector<dspd::VolumeUpdateResult, std::__1::allocator<dspd::VolumeUpdateResult>>)setMuteRecords:(const vector_a93e9522 *)arg1;
 - (struct vector<dspd::VolumeUpdateResult, std::__1::allocator<dspd::VolumeUpdateResult>>)setScalarVolumeRecords:(const vector_df89e1f1 *)arg1;
 - (struct error_code)setVirtualMasterStereoPan:(unsigned long long)arg1 stereoPan:(float)arg2;

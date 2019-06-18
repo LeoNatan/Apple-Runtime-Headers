@@ -6,22 +6,16 @@
 
 #import <UIKitCore/_UIKeyboardBasedTextSelectionInteraction.h>
 
-@class UITextGestureTuning;
-
 __attribute__((visibility("hidden")))
 @interface _UIKeyboardBasedNonEditableTextSelectionInteraction : _UIKeyboardBasedTextSelectionInteraction
 {
     BOOL _isShiftKeyBeingHeld;
-    UITextGestureTuning *_gestureTuning;
 }
 
 - (void)oneFingerForcePress:(id)arg1;
 - (void)oneFingerForcePan:(id)arg1;
 - (void)transitionFromBlockMagnifyToBlockSelectWithLocation:(struct CGPoint)arg1 viaDrag:(BOOL)arg2;
 - (void)_synchronousGranularityExpandingGestureWithTimeInterval:(double)arg1 timeGranularity:(double)arg2 isMidPan:(BOOL)arg3;
-- (void)_processGestureForCustomHighlighter:(id)arg1;
-- (void)_createGestureTuningIfNecessary;
-- (void)dealloc;
 
 @end
 

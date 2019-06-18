@@ -13,6 +13,7 @@
 
 @interface WiFiWalletPass : NSObject <WiFiCandidateNetwork>
 {
+    BOOL matched;
     NSString *SSID;
     NSString *password;
     NSSet *attributes;
@@ -29,6 +30,7 @@
 @property(copy, nonatomic) NSDate *relevantDate; // @synthesize relevantDate=_relevantDate;
 @property(copy, nonatomic) NSString *serialNumber; // @synthesize serialNumber=_serialNumber;
 @property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property(nonatomic) BOOL matched; // @synthesize matched;
 @property(readonly, nonatomic) id <TBScore> popularityScore; // @synthesize popularityScore;
 @property(readonly, nonatomic) id <TBScore> qualityScore; // @synthesize qualityScore;
 @property(readonly, nonatomic) NSSet *accessPoints; // @synthesize accessPoints;

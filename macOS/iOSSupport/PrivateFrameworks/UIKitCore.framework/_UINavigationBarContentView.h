@@ -107,10 +107,13 @@ __attribute__((visibility("hidden")))
 - (long long)barType;
 - (double)defaultEdgeSpacing;
 - (unsigned long long)edgesPaddingBarButtonItem:(id)arg1;
+- (void)updateAugmentedTitleViewNavigationBarTraitsTo:(id)arg1 from:(id)arg2;
 - (void)tintColorDidChange;
-- (void)adoptFinalStateFromTransition:(id)arg1 transitionCompleted:(BOOL)arg2;
+- (void)adoptLayout:(id)arg1;
+- (void)adoptFinalStateFromTransition:(id)arg1;
 - (void)ensureBackButtonTruncationOccursWithContext:(id)arg1;
 - (void)recordToStateForTransition:(id)arg1;
+- (void)prepareToRecordToState:(id)arg1;
 - (void)recordFromStateForTransition:(id)arg1;
 - (void)updateContent;
 - (void)updateContentAnimated:(BOOL)arg1;

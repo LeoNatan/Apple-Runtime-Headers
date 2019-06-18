@@ -51,6 +51,7 @@
 - (BOOL)supportsPHYMode:(int)arg1;
 - (BOOL)supportsSecurity:(long long)arg1;
 - (long long)strongestSupportedSecurity;
+- (BOOL)__supportsWPA3Enterprise;
 - (BOOL)__supportsWPA3Personal;
 - (BOOL)__supportsWPA2Enterprise;
 - (BOOL)__supportsWPAEnterprise;

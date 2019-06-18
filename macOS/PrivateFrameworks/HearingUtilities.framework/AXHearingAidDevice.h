@@ -227,6 +227,7 @@
 - (void)mateWithDevice:(id)arg1;
 - (BOOL)didLoadRequiredProperties;
 - (BOOL)didLoadBasicProperties;
+- (BOOL)didLoadOptionalBasicProperties;
 - (BOOL)didLoadPersistentProperties;
 - (BOOL)peripheral:(id)arg1 didLoadProperty:(unsigned long long)arg2;
 @property(readonly, retain, nonatomic) NSString *deviceUUID;

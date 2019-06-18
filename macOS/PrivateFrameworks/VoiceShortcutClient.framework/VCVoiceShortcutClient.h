@@ -47,7 +47,6 @@
 - (void)subscribeToVoiceShortcutDataUpdateNotifications;
 - (void)generateSingleUseTokenForWorkflowReference:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)shareSheetWorkflowsForExtensionMatchingDictionaries:(id)arg1 hostBundleIdentifier:(id)arg2 error:(id *)arg3;
-- (id)shareSheetWorkflowsForTypeIdentifiers:(id)arg1 error:(id *)arg2;
 - (void)getShortcutSuggestionsForAllAppsWithLimit:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getShortcutSuggestionsForAppWithBundleIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)setShortcutSuggestions:(id)arg1 forAppWithBundleIdentifier:(id)arg2;

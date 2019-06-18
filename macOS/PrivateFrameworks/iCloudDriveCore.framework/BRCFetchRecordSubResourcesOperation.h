@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
     BOOL _isDeltaSync;
     BOOL _canSaveDirectly;
     BOOL _canSaveDirectlyWithDeletes;
+    BOOL _contentRecordsFetchedInline;
     CDUnknownBlockType _queryFinishedServerTruthCallback;
     CDUnknownBlockType _queryFinishedClientTruthCallback;
 }
@@ -59,6 +60,7 @@ __attribute__((visibility("hidden")))
 - (void)stopWithError:(id)arg1;
 - (void)_startWithParentOperation:(struct _BRCOperation *)arg1;
 - (void)notifyWhenRecordsAreFetchedAndFinish:(CDUnknownBlockType)arg1;
+- (void)notifyWhenCaughtUp:(BOOL)arg1 whenRecordsAreFetchedAndFinish:(CDUnknownBlockType)arg2;
 - (void)_notifyWhenRecordsAreFetched:(CDUnknownBlockType)arg1;
 - (void)shareIDWasDeleted:(id)arg1;
 - (void)recordIDWasDeleted:(id)arg1;
@@ -66,7 +68,7 @@ __attribute__((visibility("hidden")))
 - (void)addRecord:(id)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)createActivity;
-- (id)initAndScheduleWithServerZone:(id)arg1 parentOperation:(struct _BRCOperation *)arg2 pendingChangesStream:(id)arg3;
+- (id)initAndScheduleWithServerZone:(id)arg1 parentOperation:(struct _BRCOperation *)arg2 pendingChangesStream:(id)arg3 contentRecordsFetchedInline:(BOOL)arg4;
 - (id)movedZoneNames;
 - (id)records;
 

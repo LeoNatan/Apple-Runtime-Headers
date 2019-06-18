@@ -18,6 +18,7 @@
     SASourceInfo *_sourceInfo;
 }
 
++ (id)invalidInstruction;
 + (id)instructionWithBinary:(id)arg1 offsetIntoTextSegment:(unsigned long long)arg2;
 + (id)newInstanceWithoutReferencesFromSerializedBuffer:(const CDStruct_0ce2a4d3 *)arg1 bufferLength:(unsigned long long)arg2;
 + (id)classDictionaryKey;

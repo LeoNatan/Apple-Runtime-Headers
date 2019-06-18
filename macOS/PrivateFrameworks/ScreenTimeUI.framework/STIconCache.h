@@ -23,6 +23,10 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSURLSession *urlSession; // @synthesize urlSession=_urlSession;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *lookupQueue; // @synthesize lookupQueue=_lookupQueue;
 - (void).cxx_destruct;
+- (void)_fetchFamilyPhotoWithDSID:(id)arg1 fullName:(id)arg2 appleID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)_personImageWithDSID:(id)arg1 fullName:(id)arg2 appleID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)fetchPersonImageWithDSID:(id)arg1 fullName:(id)arg2 appleID:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)personImageWithDSID:(id)arg1 fullName:(id)arg2;
 - (void)_updateCacheWithImage:(id)arg1 bundleIdentifier:(id)arg2;
 - (void)_updateCacheWithImage:(id)arg1 dsid:(id)arg2;
 - (id)blankSpaceImageWithSize:(struct CGSize)arg1;

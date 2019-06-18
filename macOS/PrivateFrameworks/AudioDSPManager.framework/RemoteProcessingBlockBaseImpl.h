@@ -6,6 +6,7 @@
 
 #import <AudioDSPManager/RemoteProcessingBlockHostBase.h>
 
+__attribute__((visibility("hidden")))
 @interface RemoteProcessingBlockBaseImpl : RemoteProcessingBlockHostBase
 {
     struct RemoteProcessingBlockBase *_rpbBase;

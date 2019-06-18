@@ -10,7 +10,7 @@
 #import <UIKitCore/_UIDataTransferMonitorDelegate-Protocol.h>
 #import <UIKitCore/_UIDraggingInfo-Protocol.h>
 
-@class NSArray, NSMutableSet, NSProgress, NSString, PBItemCollection, UIDragEvent, UIView, UIWindow, _DUIPotentialDrop, _UIApplicationModalProgressController, _UIDataTransferMonitor, _UIDragSetDownAnimation, _UIDropSessionImpl, _UIInternalDraggingSessionSource;
+@class NSArray, NSMutableSet, NSProgress, NSString, PBItemCollection, UIDragEvent, UIView, UIWindow, UIWindowScene, _DUIPotentialDrop, _UIApplicationModalProgressController, _UIDataTransferMonitor, _UIDragSetDownAnimation, _UIDropSessionImpl, _UIInternalDraggingSessionSource;
 @protocol _UIDruidDestinationConnection;
 
 __attribute__((visibility("hidden")))
@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     BOOL _dragInteractionDidEnd;
     NSMutableSet *_enteredDestinations;
     UIView *_dropDestinationView;
+    UIWindowScene *_dropDestinationWindowScene;
     CDUnknownBlockType _dropPerformBlock;
     CDUnknownBlockType _dropCompletionBlock;
     CDUnknownBlockType _postDropAnimationCompletionBlock;

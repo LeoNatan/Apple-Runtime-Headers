@@ -26,6 +26,7 @@
 - (id)_cdpStateControllerWithContext:(id)arg1;
 - (id)_cdpContextForPrimaryAccountWithAuthenticationResults:(id)arg1;
 - (id)_cdpStateControllerWithAuthResults:(id)arg1;
+- (void)_configurePresentingViewControllerForModalPresentation;
 - (id)_encryptionErrorFromError:(id)arg1;
 - (BOOL)_hasPasscode;
 - (void)_validatePasscodeWithCompletion:(CDUnknownBlockType)arg1;

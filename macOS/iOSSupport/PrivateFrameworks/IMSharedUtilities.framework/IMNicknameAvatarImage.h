@@ -14,11 +14,9 @@
 {
     NSString *_imageName;
     NSString *_imageFilePath;
-    NSString *_syncedContactImageHash;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(copy, nonatomic) NSString *syncedContactImageHash; // @synthesize syncedContactImageHash=_syncedContactImageHash;
 @property(copy, nonatomic) NSString *imageFilePath; // @synthesize imageFilePath=_imageFilePath;
 @property(copy, nonatomic) NSString *imageName; // @synthesize imageName=_imageName;
 - (id)description;
@@ -26,7 +24,6 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property(readonly, nonatomic) NSString *imageMD5Hash;
 @property(readonly, copy, nonatomic) NSData *imageData;
 - (id)loadAndReturnImageData;
 - (id)publicDictionaryMetadataRepresentation;
@@ -34,7 +31,7 @@
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithpublicDictionaryMetadataRepresentation:(id)arg1;
-- (id)initWithImageName:(id)arg1 imageFilePath:(id)arg2 syncedContactImageHash:(id)arg3;
+- (id)initWithImageName:(id)arg1 imageFilePath:(id)arg2;
 
 @end
 

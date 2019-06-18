@@ -6,9 +6,9 @@
 
 #import <AudioSession/AVAudioDSPControlling-Protocol.h>
 
-@class NSSet;
+@class NSArray;
 
 @protocol AVAudioOutputSpatializing <AVAudioDSPControlling>
-@property(readonly, nonatomic) NSSet *availableVirtualFormats;
+@property(readonly, nonatomic) NSArray *availableVirtualFormats;
 @end
 

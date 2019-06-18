@@ -11,7 +11,7 @@
 #import <UIKitCore/_UIFallbackEnvironment-Protocol.h>
 #import <UIKitCore/_UISceneUIWindowHosting-Protocol.h>
 
-@class FBSDisplayConfigurationRequest, FBSScene, NSArray, NSPointerArray, NSString, UIAlertControllerStackManager, UIInputResponderController, UIScreen, UIScreenshotService, UIStatusBarManager, UIStatusBarWindow, UITitlebar, UITraitCollection, UIWindow, _UIBannerManager, _UICanvasDefinition, _UIContextBinder, _UISystemAppearanceManager, _UIWindowSceneTouchBarCoordinator;
+@class FBSDisplayConfigurationRequest, FBSScene, NSArray, NSPointerArray, NSString, UIAlertControllerStackManager, UIInputResponderController, UIScreen, UIScreenshotService, UIStatusBarManager, UITitlebar, UITraitCollection, UIWindow, _UIBannerManager, _UICanvasDefinition, _UIContextBinder, _UISystemAppearanceManager, _UIWindowSceneTouchBarCoordinator;
 @protocol UICoordinateSpace, _UIDisplayInfoProviding, _UISceneMetricsCalculating;
 
 @interface UIWindowScene : UIScene <_UIFallbackEnvironment, UICoordinateSpace, _UISceneUIWindowHosting, _UIContextBinderContextCreationPolicyHolding>
@@ -46,6 +46,7 @@
 @property(nonatomic, getter=_avkitRequestedOverscanCompensation, setter=_setAVKitRequestedOverscanCompensation:) long long _avkitRequestedOverscanCompensation; // @synthesize _avkitRequestedOverscanCompensation;
 @property(nonatomic, getter=_screenRequestedOverscanCompensation, setter=_setScreenRequestedOverscanCompensation:) long long _screenRequestedOverscanCompensation; // @synthesize _screenRequestedOverscanCompensation;
 - (void).cxx_destruct;
+- (void)_showProgressWhenFetchingUserActivityForTypes:(id)arg1;
 - (id)_inheritingWindowsIncludingInvisible:(BOOL)arg1;
 - (id)_windowSceneDelegate;
 @property(readonly, copy) NSString *description;
@@ -58,6 +59,7 @@
 - (long long)_resolvedOverscanCompensation;
 - (long long)screenRequestedOverscanCompensation;
 @property(nonatomic, getter=_screenRequestedDisplayNativePixelSize, setter=_setScreenRequestedDisplayNativePixelSize:) struct CGSize _screenRequestedDisplayNativePixelSize; // @dynamic _screenRequestedDisplayNativePixelSize;
+- (BOOL)_windowsIgnoreSceneClientOrientation;
 - (void)_updateClientSettingsToInterfaceOrientation:(long long)arg1 withAnimationDuration:(double)arg2;
 - (unsigned long long)_currentlySupportedInterfaceOrientations;
 @property(readonly, nonatomic) id <_UIDisplayInfoProviding> _displayInfoProvider;
@@ -76,7 +78,6 @@
 - (void)_enumerateWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 asCopy:(BOOL)arg3 stopped:(char *)arg4 withBlock:(CDUnknownBlockType)arg5;
 - (void)_enumerateWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2 asCopy:(BOOL)arg3 withBlock:(CDUnknownBlockType)arg4;
 @property(readonly, nonatomic) BOOL _canReceiveDeviceOrientationEvents;
-@property(readonly, nonatomic) UIStatusBarWindow *_statusBarWindow;
 - (id)_allWindows;
 - (id)_visibleWindows;
 @property(readonly, nonatomic) UIWindow *_keyWindow;
@@ -122,7 +123,6 @@
 @property(readonly, nonatomic) _UICanvasDefinition *_definition;
 @property(readonly, nonatomic, getter=isKeyCanvas) BOOL keyCanvas;
 @property(readonly, nonatomic) long long state;
-- (void)openURL:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) UIStatusBarManager *statusBarManager;
 @property(readonly, nonatomic) _UISystemAppearanceManager *_systemAppearanceManager;
 @property(readonly, nonatomic) UIInputResponderController *inputResponderController;

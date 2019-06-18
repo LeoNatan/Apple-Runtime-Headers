@@ -127,7 +127,7 @@
 - (id)sortLocalResults:(id)arg1;
 - (id)URLRepresentedByBookmarkResult:(id)arg1;
 - (void)deDuplicateResultSetWithSections:(id)arg1 duplicatedDictResults:(id *)arg2 originalDictResults:(id *)arg3;
-- (long long)addResultsForGroup:(id)arg1 title:(id)arg2 toArray:(id)arg3 resultIdSet:(id)arg4 focusString:(id)arg5 currentLocale:(id)arg6;
+- (long long)addResultsForGroup:(id)arg1 toArray:(id)arg2 resultIdSet:(id)arg3 focusString:(id)arg4 currentLocale:(id)arg5;
 
 @end
 

@@ -15,9 +15,8 @@
 
 @property(nonatomic, readonly) double padding;
 @property(nonatomic, readonly) double cornerRadius;
-- (id)topicColorFor:(id)arg1;
-@property(nonatomic, readonly) UIFont *topicTitleFont;
-@property(nonatomic, readonly) UIFont *channelTitleFont;
+- (id)tagColorFor:(id)arg1;
+@property(nonatomic, readonly) UIFont *tagTitleFont;
 
 @end
 

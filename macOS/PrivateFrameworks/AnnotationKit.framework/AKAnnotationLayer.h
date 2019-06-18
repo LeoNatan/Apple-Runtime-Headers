@@ -13,12 +13,14 @@
     BOOL _isObservingAnnotation;
     BOOL _wasLastDrawingClipped;
     BOOL _lastRedrawWasForDrawingBounds;
+    BOOL _shouldRecalculateLoupeImage;
     AKAnnotation *_annotation;
     AKPageController *_pageController;
     CALayer *_fastPathLayer;
 }
 
 + (id)newAnnotationLayerForAnnotation:(id)arg1 withPageController:(id)arg2;
+@property BOOL shouldRecalculateLoupeImage; // @synthesize shouldRecalculateLoupeImage=_shouldRecalculateLoupeImage;
 @property BOOL lastRedrawWasForDrawingBounds; // @synthesize lastRedrawWasForDrawingBounds=_lastRedrawWasForDrawingBounds;
 @property BOOL wasLastDrawingClipped; // @synthesize wasLastDrawingClipped=_wasLastDrawingClipped;
 @property BOOL isObservingAnnotation; // @synthesize isObservingAnnotation=_isObservingAnnotation;

@@ -49,8 +49,8 @@
         unsigned int delegateMainFooterHeight;
         unsigned int dataSourceCanMoveItemsAtIndexPaths:1;
         unsigned int dataSourceMoveItemsAtIndexPathsToIndexPaths:1;
-        unsigned int dataSourceMoveItemsInRangeToIndex:1;
         unsigned int dataSourceAllowedDropPositionsForItemsAtIndexPathsMovedToIndexPath:1;
+        unsigned int dataSourceDragOperationForItemsAtIndexPathsMovedOntoItemAtIndexPath:1;
         unsigned int delegateInitialIndexPath:1;
         unsigned int delegateWillChangeToStyle:1;
         unsigned int delegateDidChangeFromStyle:1;
@@ -202,6 +202,7 @@
 - (BOOL)assetsMediaView:(id)arg1 shouldShowFooterAtIndexPath:(id)arg2;
 - (BOOL)assetsMediaView:(id)arg1 shouldShowHeaderAtIndexPath:(id)arg2;
 - (void)mediaView:(id)arg1 moveItemsAtIndexPaths:(id)arg2 toIndexPath:(id)arg3 dropPosition:(long long)arg4;
+- (unsigned long long)mediaView:(id)arg1 dragOperationForItemsAtIndexPaths:(id)arg2 movedOntoIndexPath:(id)arg3;
 - (long long)mediaView:(id)arg1 allowedDropPositionsForItemsAtIndexPaths:(id)arg2 movedToIndexPath:(id)arg3;
 - (BOOL)mediaView:(id)arg1 canMoveItemsAtIndexPaths:(id)arg2;
 - (id)mediaView:(id)arg1 supplementaryViewReuseIdentifierOfKind:(id)arg2 atIndexPath:(id)arg3;
@@ -300,6 +301,7 @@
 - (void)scrollToBeginningOfDocument:(id)arg1;
 - (void)scrollPageUp:(id)arg1;
 - (void)scrollPageDown:(id)arg1;
+@property(readonly, nonatomic, getter=isPositionedAtBottom) BOOL positionedAtBottom;
 - (id)mediaView;
 @property(readonly, nonatomic) NSResponder *preferredFirstResponder;
 - (void)assetsViewRegisterForDraggedTypes:(id)arg1;

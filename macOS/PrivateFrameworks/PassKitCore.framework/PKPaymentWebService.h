@@ -16,6 +16,8 @@
     NSURLSession *_backgroundSession;
     PKPaymentDevice *_paymentDevice;
     NSMutableDictionary *_passesByLocalURL;
+    int _paymentSupportInRegion;
+    struct os_unfair_lock_s _supportInRegionLock;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     NSObject<OS_dispatch_queue> *_backgroundDownloadQueue;
     NSHashTable *_delegates;
@@ -35,7 +37,7 @@
 @property id <PKPaymentWebServiceBackgroundDelegate> backgroundDelegate; // @synthesize backgroundDelegate=_backgroundDelegate;
 @property(retain) id <PKPaymentWebServiceArchiver> archiver; // @synthesize archiver=_archiver;
 @property(retain) PKPaymentWebServiceBackgroundContext *backgroundContext; // @synthesize backgroundContext=_backgroundContext;
-@property(retain) PKPaymentWebServiceContext *context; // @synthesize context=_context;
+@property(retain, nonatomic) PKPaymentWebServiceContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;
 - (void)_archiveBackgroundContext;
 - (void)_archiveContext;
@@ -85,7 +87,8 @@
 - (unsigned long long)rewrapInAppPaymentWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned long long)rewrapInAppPayment:(id)arg1 merchantIdentifier:(id)arg2 hostApplicationIdentifier:(id)arg3 applicationData:(id)arg4 pass:(id)arg5 completion:(CDUnknownBlockType)arg6;
 - (unsigned long long)rewrapInAppPayment:(id)arg1 merchantIdentifier:(id)arg2 merchantSession:(id)arg3 hostApplicationIdentifier:(id)arg4 applicationData:(id)arg5 pass:(id)arg6 paymentApplication:(id)arg7 completion:(CDUnknownBlockType)arg8;
-- (unsigned long long)_nonceForPass:(id)arg1 serviceURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (unsigned long long)_nonceWithRequest:(id)arg1 serviceURL:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (unsigned long long)inAppPaymentNonceWithRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned long long)inAppPaymentNonceForPass:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned long long)cardInfoForMerchantIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (unsigned long long)moreInfoItemAtURL:(id)arg1 withMetadata:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -141,6 +144,7 @@
 - (unsigned long long)registerDeviceAtBrokerURL:(id)arg1 consistencyData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (unsigned long long)registerDeviceWithCompletion:(CDUnknownBlockType)arg1;
 - (unsigned long long)configurePaymentServiceWithCompletion:(CDUnknownBlockType)arg1;
+- (BOOL)isChinaRegionIdentifier:(id)arg1;
 - (void)handleWillPerformHTTPRedirectionWithResponse:(id)arg1 redirectHandler:(CDUnknownBlockType)arg2;
 - (void)processRetryRequest:(id)arg1 responseData:(id)arg2 orginalRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)_renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -162,6 +166,8 @@
 - (BOOL)_needsRegistrationShouldCheckSecureElementOwnership:(BOOL)arg1;
 @property(readonly) BOOL needsRegistration;
 @property(readonly) int paymentSetupSupportedInRegion;
+- (void)_resetSupportInRegionCache;
+- (void)sharedPaymentServiceAccountChanged:(id)arg1;
 - (void)sharedPaymentServiceChanged:(id)arg1;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1;

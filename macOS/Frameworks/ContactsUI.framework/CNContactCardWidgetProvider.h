@@ -22,9 +22,12 @@
 - (void)prepareTabControllerWithCardMode:(unsigned long long)arg1 isMe:(BOOL)arg2;
 - (id)widgetsForContactCardViewMode:(unsigned long long)arg1 isMe:(BOOL)arg2;
 - (id)cardWidgetsFromWidgetClasses:(id)arg1;
+- (BOOL)shouldIncludeViewController:(id)arg1;
 - (void)tellDelegateWillCreateViewController:(id)arg1;
 - (id)controllerOfClass:(Class)arg1;
 - (id)avatarViewController;
+- (id)editAutorizationViewController;
+- (id)sharingEnabledWarningViewController;
 - (id)detailsViewController;
 - (id)nameViewController;
 - (id)tabSwitcherViewController;

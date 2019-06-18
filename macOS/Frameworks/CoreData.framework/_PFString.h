@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
     id _sourceData;
 }
 
++ (Class)classForKeyedUnarchiver;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)alloc;
 + (BOOL)accessInstanceVariablesDirectly;
@@ -38,7 +39,8 @@ __attribute__((visibility("hidden")))
 - (id)mutableCopyWithZone:(struct _NSZone *)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)copy;
-- (void)encodeWithCoder:(id)arg1;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (BOOL)_isDeallocating;
 - (BOOL)_tryRetain;
 - (unsigned long long)retainCount;

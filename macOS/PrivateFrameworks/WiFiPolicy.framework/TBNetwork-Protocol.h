@@ -10,7 +10,6 @@
 @class NSDictionary, NSSet, NSString;
 
 @protocol TBNetwork <NSObject, TBScorable>
-@property(readonly, nonatomic) unsigned long long tileKey;
 @property(readonly, nonatomic, getter=isPublic) BOOL public;
 @property(readonly, nonatomic, getter=isSuspicious) BOOL suspicious;
 @property(readonly, nonatomic, getter=isMoving) BOOL moving;
@@ -22,5 +21,8 @@
 @property(readonly, nonatomic) NSString *SSID;
 @property(readonly, nonatomic) NSString *identifier;
 - (NSDictionary *)dictionaryRepresentation;
+
+@optional
+@property(readonly, nonatomic) unsigned long long tileKey;
 @end
 

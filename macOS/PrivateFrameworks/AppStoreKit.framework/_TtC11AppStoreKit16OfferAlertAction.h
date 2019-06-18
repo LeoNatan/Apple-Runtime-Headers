@@ -11,6 +11,7 @@
     // Error parsing type: , name: message
     // Error parsing type: , name: footerMessage
     // Error parsing type: , name: isCancelable
+    // Error parsing type: , name: checkRestrictionsForContentRating
     // Error parsing type: , name: shouldCheckForAvailableDiskSpace
     // Error parsing type: , name: shouldCheckForGameController
     // Error parsing type: , name: shouldIncludeActiveAccountInFooterMessage

@@ -9,7 +9,7 @@
 #import <ChatKit/CKInvisibleInkEffectHostView-Protocol.h>
 #import <ChatKit/UIGestureRecognizerDelegate-Protocol.h>
 
-@class CABackdropLayer, CKInvisibleInkEffectController, CKManualUpdater, NSMutableArray, NSString, UIColor, UIImage, UIImageView, UILongPressGestureRecognizer, UITapGestureRecognizer, UITraitCollection;
+@class CABackdropLayer, CKInvisibleInkEffectController, CKManualUpdater, NSMutableArray, NSString, UIColor, UIImage, UIImageView, UILongPressGestureRecognizer, UITapGestureRecognizer;
 @protocol CKBalloonViewDelegate;
 
 @interface CKBalloonView : CKBalloonImageView <CKInvisibleInkEffectHostView, UIGestureRecognizerDelegate>
@@ -27,10 +27,11 @@
     BOOL _invisibleInkEffectPaused;
     BOOL _animationPaused;
     id <CKBalloonViewDelegate> _delegate;
-    UITraitCollection *_transcriptTraitCollection;
     UITapGestureRecognizer *_tapGestureRecognizer;
     UITapGestureRecognizer *_doubleTapGestureRecognizer;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
+    long long _userInterfaceStyle;
+    long long _userInterfaceLevel;
     NSMutableArray *_filters;
     unsigned long long _balloonCorners;
     CABackdropLayer *_backdropFilterLayer;
@@ -50,6 +51,8 @@
 @property(nonatomic) BOOL balloonTailShape; // @synthesize balloonTailShape=_balloonTailShape;
 @property(nonatomic) BOOL balloonShape; // @synthesize balloonShape=_balloonShape;
 @property(retain, nonatomic) NSMutableArray *filters; // @synthesize filters=_filters;
+@property(nonatomic) long long userInterfaceLevel; // @synthesize userInterfaceLevel=_userInterfaceLevel;
+@property(nonatomic) long long userInterfaceStyle; // @synthesize userInterfaceStyle=_userInterfaceStyle;
 @property(nonatomic) BOOL useLargeAsset; // @synthesize useLargeAsset=_useLargeAsset;
 @property(nonatomic) BOOL wantsSkinnyMask; // @synthesize wantsSkinnyMask=_wantsSkinnyMask;
 @property(nonatomic) BOOL hasOverlay; // @synthesize hasOverlay=_hasOverlay;
@@ -61,7 +64,6 @@
 @property(nonatomic) struct UIEdgeInsets textAlignmentInsets; // @synthesize textAlignmentInsets=_textAlignmentInsets;
 @property(nonatomic, getter=isFilled) BOOL filled; // @synthesize filled=_filled;
 @property(nonatomic) BOOL hasTail; // @synthesize hasTail=_hasTail;
-@property(retain, nonatomic) UITraitCollection *transcriptTraitCollection; // @synthesize transcriptTraitCollection=_transcriptTraitCollection;
 @property(nonatomic) BOOL orientation; // @synthesize orientation=_orientation;
 @property(nonatomic) __weak id <CKBalloonViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
@@ -87,6 +89,7 @@
 - (void)_dismissOverlay;
 @property(readonly, nonatomic) UIColor *overlayColor;
 - (void)prepareForReuse;
+- (void)updateBalloonForTraitCollection:(id)arg1;
 - (void)prepareForDisplay;
 - (void)prepareForDisplayIfNeeded;
 - (void)setNeedsPrepareForDisplay;

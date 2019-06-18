@@ -4,39 +4,23 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <Realm/RLMObject.h>
+#import <WorkflowKit/WFRecord.h>
 
-#import <WorkflowKit/WFRecordStorage-Protocol.h>
+@class NSDate, NSString;
 
-@class NSDate, NSString, WFRealmWorkflow;
-
-@interface WFWorkflowRunEvent : RLMObject <WFRecordStorage>
+@interface WFWorkflowRunEvent : WFRecord
 {
-    NSString *_identifier;
-    WFRealmWorkflow *_workflow;
-    NSDate *_date;
     NSString *_source;
+    NSDate *_date;
     NSString *_triggerID;
     long long _outcome;
 }
 
-+ (id)requiredProperties;
-+ (id)defaultPropertyValues;
-+ (id)primaryKey;
-@property long long outcome; // @synthesize outcome=_outcome;
-@property(copy) NSString *triggerID; // @synthesize triggerID=_triggerID;
-@property NSString *source; // @synthesize source=_source;
-@property(retain) NSDate *date; // @synthesize date=_date;
-@property(retain) WFRealmWorkflow *workflow; // @synthesize workflow=_workflow;
-@property(retain) NSString *identifier; // @synthesize identifier=_identifier;
+@property(readonly, nonatomic) long long outcome; // @synthesize outcome=_outcome;
+@property(readonly, copy, nonatomic) NSString *triggerID; // @synthesize triggerID=_triggerID;
+@property(readonly, nonatomic) NSDate *date; // @synthesize date=_date;
+@property(readonly, nonatomic) NSString *source; // @synthesize source=_source;
 - (void).cxx_destruct;
-- (id)descriptor;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

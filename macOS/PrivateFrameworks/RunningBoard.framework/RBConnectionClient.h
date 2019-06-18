@@ -38,6 +38,8 @@ __attribute__((visibility("hidden")))
     RBSAssertionIdentifier *_expirationBoostAssertionIdentifier;
 }
 
++ (id)sharedLaunchWorkloop;
++ (id)sharedTerminationWorkloop;
 @property(readonly, copy, nonatomic) RBSProcessIdentity *processIdentity; // @synthesize processIdentity=_processIdentity;
 @property(readonly, copy, nonatomic) RBSProcessIdentifier *processIdentifier; // @synthesize processIdentifier=_processIdentifier;
 @property(readonly, nonatomic) RBProcess *process; // @synthesize process=_process;
@@ -57,7 +59,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 - (id)busyExtensionInstancesFromSet:(id)arg1 error:(out id *)arg2;
 - (id)identifiersForStateCaptureSubsystemsWithError:(out id *)arg1;
-- (id)captureStateForSubsystem:(id)arg1 error:(out id *)arg2;
+- (void)captureStateForSubsystem:(id)arg1 withReply:(id)arg2;
 - (id)infoPlistResultForInstance:(id)arg1 forKeys:(id)arg2 error:(out id *)arg3;
 - (id)hostProcessForInstance:(id)arg1 error:(out id *)arg2;
 - (id)limitationsForInstance:(id)arg1 error:(out id *)arg2;
@@ -81,7 +83,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasEntitlement:(id)arg1;
 - (void)invalidate;
 - (void)handleMessage:(id)arg1;
-- (id)initWithContext:(id)arg1 process:(id)arg2;
+- (id)initWithContext:(id)arg1 process:(id)arg2 connection:(id)arg3;
 - (id)init;
 
 // Remaining properties

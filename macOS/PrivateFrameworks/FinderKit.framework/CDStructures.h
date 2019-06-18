@@ -1568,10 +1568,10 @@ struct TThumbnailExtractor {
     struct shared_ptr<TThumbnailExtractorThread> _field2;
     int _field3;
     unsigned int _field4;
-    _Bool _field5;
-    struct function<bool (const TFENode &, unsigned int)> _field6;
-    struct function<void (const std::__1::vector<TThumbnailExtractorData, std::__1::allocator<TThumbnailExtractorData>>&)> _field7;
-    function_b1fce659 _field8;
+    duration_34584d68 _field5;
+    _Bool _field6;
+    struct function<bool (const TFENode &, unsigned int)> _field7;
+    struct function<void (const std::__1::vector<TThumbnailExtractorData, std::__1::allocator<TThumbnailExtractorData>>&)> _field8;
 };
 
 struct TThumbnailExtractorController {
@@ -2104,6 +2104,14 @@ struct optional<std::__1::pair<TFENode, TDropOperation::TDragContentCharacterist
     union {
         char _field1;
         struct pair<TFENode, TDropOperation::TDragContentCharacteristics> _field2;
+    } _field1;
+    _Bool _field2;
+};
+
+struct optional<std::__1::unordered_set<TFENode, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<TFENode>>> {
+    union {
+        char _field1;
+        unordered_set_931aff12 _field2;
     } _field1;
     _Bool _field2;
 };
@@ -3602,6 +3610,14 @@ typedef struct map<long, TFENode, std::__1::less<long>, std::__1::allocator<std:
         } _field3;
     } _field1;
 } map_a2752b13;
+
+typedef struct optional<std::__1::unordered_set<TFENode, std::__1::hash<TFENode>, std::__1::equal_to<TFENode>, std::__1::allocator<TFENode>>> {
+    union {
+        char _field1;
+        unordered_set_931aff12 _field2;
+    } _field1;
+    _Bool _field2;
+} optional_256c1242;
 
 typedef struct pair<CGRect, bool> {
     struct CGRect _field1;

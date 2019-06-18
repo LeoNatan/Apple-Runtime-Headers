@@ -45,30 +45,10 @@ struct AudioStreamBasicDescription {
     unsigned int mReserved;
 };
 
-struct ChangedObject;
-
 struct ChannelLayout {
     unsigned int mLayoutTag;
     struct optional<std::__1::bitset<32>> mBitmap;
     struct optional<std::__1::vector<AudioChannelDescription, std::__1::allocator<AudioChannelDescription>>> mChannelDescriptions;
-};
-
-struct ConfigurationChangeDescription {
-    unsigned char _field1;
-    struct ConfigurationChangeRecord _field2;
-    struct map<unsigned int, aura::ConfigurationChangeRecord, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, aura::ConfigurationChangeRecord>>> _field3;
-};
-
-struct ConfigurationChangeRecord {
-    struct vector<aura::ObjectReference, std::__1::allocator<aura::ObjectReference>> _field1;
-    struct vector<aura::ObjectReference, std::__1::allocator<aura::ObjectReference>> _field2;
-    struct vector<aura::ChangedObject, std::__1::allocator<aura::ChangedObject>> _field3;
-};
-
-struct Data {
-    struct map<unsigned int, (anonymous namespace)::SessionData, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, (anonymous namespace)::SessionData>>> sessionData_;
-    function_439a5227 configurationChangeNotifier_;
-    struct vector<id<aura_Clock>, std::__1::allocator<id<aura_Clock>>> clocks_;
 };
 
 struct DeviceConfiguration;
@@ -113,8 +93,6 @@ struct ObjectRef<const __CFString *> {
     struct __CFString *mCFObject;
 };
 
-struct ObjectReference;
-
 struct PortDescription;
 
 struct PortRecord<bool>;
@@ -122,14 +100,6 @@ struct PortRecord<bool>;
 struct PortRecord<double>;
 
 struct PortRecord<float>;
-
-struct ResourceArbitratorDependencyInjection {
-    shared_ptr_940c565d _field1;
-    struct shared_ptr<caulk::reactor<aura::hw::HardwareSnapshotAssembler *>> _field2;
-    struct shared_ptr<caulk::reactor<aura::itf::RouteNegotiator *>> _field3;
-    struct shared_ptr<caulk::reactor<aura::itf::HardwareObjectAssembler *>> _field4;
-    struct shared_ptr<caulk::reactor<aura::itf::NotificationDispatcher *>> _field5;
-};
 
 struct SMPTETime {
     short _field1;
@@ -143,6 +113,8 @@ struct SMPTETime {
     short _field9;
 };
 
+struct SelectorControlItem;
+
 struct SimulatedConfigurationChangeDescription {
     struct map<unsigned int, bool, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, bool>>> _field1;
     struct map<unsigned int, std::__1::vector<aura::SimulatedIOController, std::__1::allocator<aura::SimulatedIOController>>, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, std::__1::vector<aura::SimulatedIOController, std::__1::allocator<aura::SimulatedIOController>>>>> _field2;
@@ -153,6 +125,11 @@ struct SimulatedConfigurationChangeDescription {
 struct SimulatedMicrophoneConfigurationDescription {
     struct MicrophoneConfiguration _field1;
     struct vector<aura::MicrophoneConfiguration, std::__1::allocator<aura::MicrophoneConfiguration>> _field2;
+};
+
+struct StereoPanControlChannels {
+    unsigned int _field1;
+    unsigned int _field2;
 };
 
 struct StreamDescription;
@@ -242,6 +219,13 @@ struct expected<wrid<id, void>, std::__1::error_code> {
     _Bool _field2;
 };
 
+struct function<void ()> {
+    struct __value_func<void ()> {
+        struct type _field1;
+        struct __base<void ()> *_field2;
+    } _field1;
+};
+
 struct function<void (aura::ConfigurationChangeCause)> {
     struct __value_func<void (aura::ConfigurationChangeCause)> {
         struct type _field1;
@@ -251,9 +235,9 @@ struct function<void (aura::ConfigurationChangeCause)> {
 
 struct function<void (aura::ConfigurationChangeDescription)> {
     struct __value_func<void (aura::ConfigurationChangeDescription)> {
-        struct type __buf_;
-        struct __base<void (aura::ConfigurationChangeDescription)> *__f_;
-    } __f_;
+        struct type _field1;
+        struct __base<void (aura::ConfigurationChangeDescription)> *_field2;
+    } _field1;
 };
 
 struct function<void (aura::IOEvent)> {
@@ -320,30 +304,6 @@ struct map<aura::PortType, aura::PortTypeRoutingPolicy, std::__1::less<aura::Por
     } __tree_;
 };
 
-struct map<unsigned int, (anonymous namespace)::SessionData, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, (anonymous namespace)::SessionData>>> {
-    struct __tree<std::__1::__value_type<unsigned int, (anonymous namespace)::SessionData>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, (anonymous namespace)::SessionData>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, (anonymous namespace)::SessionData>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, (anonymous namespace)::SessionData>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
-        } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, (anonymous namespace)::SessionData>, std::__1::less<unsigned int>, true>> {
-            unsigned long long __value_;
-        } __pair3_;
-    } __tree_;
-};
-
-struct map<unsigned int, aura::ConfigurationChangeRecord, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, aura::ConfigurationChangeRecord>>> {
-    struct __tree<std::__1::__value_type<unsigned int, aura::ConfigurationChangeRecord>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, aura::ConfigurationChangeRecord>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, aura::ConfigurationChangeRecord>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, aura::ConfigurationChangeRecord>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, aura::ConfigurationChangeRecord>, std::__1::less<unsigned int>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
 struct map<unsigned int, bool, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, bool>>> {
     struct __tree<std::__1::__value_type<unsigned int, bool>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, bool>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, bool>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
@@ -387,18 +347,6 @@ struct map<unsigned int, std::__1::vector<aura::SimulatedIOController, std::__1:
             struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
         } _field2;
         struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::vector<aura::SimulatedIOController, std::__1::allocator<aura::SimulatedIOController>>>, std::__1::less<unsigned int>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-};
-
-struct map<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>>> {
-    struct __tree<std::__1::__value_type<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>, std::__1::less<unsigned int>, true>> {
             unsigned long long _field1;
         } _field3;
     } _field1;
@@ -630,35 +578,37 @@ struct optional<wrop<aura_ConfigurationHints *, void>> {
     _Bool __engaged_;
 };
 
-struct os_unfair_lock_s {
-    unsigned int _os_unfair_lock_opaque;
-};
-
 struct pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>;
-
-struct reactor<aura::hw::Device *>;
 
 struct reactor<aura::hw::Hardware *>;
 
-struct reactor<aura::hw::HardwareSnapshotAssembler *>;
+struct reactor<aura::itf::BooleanControl *>;
 
-struct reactor<aura::hw::Port *>;
+struct reactor<aura::itf::Box *>;
 
-struct reactor<aura::hw::Stream *>;
+struct reactor<aura::itf::Clock *>;
+
+struct reactor<aura::itf::Control *>;
 
 struct reactor<aura::itf::Device *>;
 
-struct reactor<aura::itf::HardwareObjectAssembler *>;
+struct reactor<aura::itf::Driver *>;
 
 struct reactor<aura::itf::IOController *>;
 
 struct reactor<aura::itf::IOStream *>;
 
-struct reactor<aura::itf::NotificationDispatcher *>;
+struct reactor<aura::itf::LevelControl *>;
 
 struct reactor<aura::itf::Port *>;
 
-struct reactor<aura::itf::RouteNegotiator *>;
+struct reactor<aura::itf::ResourceArbitrator *>;
+
+struct reactor<aura::itf::SelectorControl *>;
+
+struct reactor<aura::itf::SliderControl *>;
+
+struct reactor<aura::itf::StereoPanControl *>;
 
 struct reactor<aura::itf::Stream *>;
 
@@ -724,18 +674,6 @@ struct set<dspd::NodeConfiguration, std::__1::less<dspd::NodeConfiguration>, std
     } _field1;
 };
 
-struct set<id<aura_IOStreamPriv>, std::__1::less<id<aura_IOStreamPriv>>, std::__1::allocator<id<aura_IOStreamPriv>>> {
-    struct __tree<id<aura_IOStreamPriv>, std::__1::less<id<aura_IOStreamPriv>>, std::__1::allocator<id<aura_IOStreamPriv>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *__begin_node_;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<id<aura_IOStreamPriv>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> __value_;
-        } __pair1_;
-        struct __compressed_pair<unsigned long, std::__1::less<id<aura_IOStreamPriv>>> {
-            unsigned long long __value_;
-        } __pair3_;
-    } __tree_;
-};
-
 struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> {
     struct __tree<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<char>>, std::__1::allocator<std::__1::basic_string<char>>> {
         struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
@@ -749,12 +687,27 @@ struct set<std::__1::basic_string<char>, std::__1::less<std::__1::basic_string<c
 };
 
 struct shared_ptr<caulk::reactor<aura::hw::Hardware *>> {
-    struct reactor<aura::hw::Hardware *> *__ptr_;
+    struct reactor<aura::hw::Hardware *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct shared_ptr<caulk::reactor<aura::itf::BooleanControl *>> {
+    struct reactor<aura::itf::BooleanControl *> *__ptr_;
     struct __shared_weak_count *__cntrl_;
 };
 
-struct shared_ptr<caulk::reactor<aura::hw::HardwareSnapshotAssembler *>> {
-    struct reactor<aura::hw::HardwareSnapshotAssembler *> *__ptr_;
+struct shared_ptr<caulk::reactor<aura::itf::Box *>> {
+    struct reactor<aura::itf::Box *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<caulk::reactor<aura::itf::Clock *>> {
+    struct reactor<aura::itf::Clock *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<caulk::reactor<aura::itf::Control *>> {
+    struct reactor<aura::itf::Control *> *__ptr_;
     struct __shared_weak_count *__cntrl_;
 };
 
@@ -763,8 +716,8 @@ struct shared_ptr<caulk::reactor<aura::itf::Device *>> {
     struct __shared_weak_count *__cntrl_;
 };
 
-struct shared_ptr<caulk::reactor<aura::itf::HardwareObjectAssembler *>> {
-    struct reactor<aura::itf::HardwareObjectAssembler *> *__ptr_;
+struct shared_ptr<caulk::reactor<aura::itf::Driver *>> {
+    struct reactor<aura::itf::Driver *> *__ptr_;
     struct __shared_weak_count *__cntrl_;
 };
 
@@ -778,8 +731,8 @@ struct shared_ptr<caulk::reactor<aura::itf::IOStream *>> {
     struct __shared_weak_count *__cntrl_;
 };
 
-struct shared_ptr<caulk::reactor<aura::itf::NotificationDispatcher *>> {
-    struct reactor<aura::itf::NotificationDispatcher *> *__ptr_;
+struct shared_ptr<caulk::reactor<aura::itf::LevelControl *>> {
+    struct reactor<aura::itf::LevelControl *> *__ptr_;
     struct __shared_weak_count *__cntrl_;
 };
 
@@ -788,8 +741,23 @@ struct shared_ptr<caulk::reactor<aura::itf::Port *>> {
     struct __shared_weak_count *__cntrl_;
 };
 
-struct shared_ptr<caulk::reactor<aura::itf::RouteNegotiator *>> {
-    struct reactor<aura::itf::RouteNegotiator *> *__ptr_;
+struct shared_ptr<caulk::reactor<aura::itf::ResourceArbitrator *>> {
+    struct reactor<aura::itf::ResourceArbitrator *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<caulk::reactor<aura::itf::SelectorControl *>> {
+    struct reactor<aura::itf::SelectorControl *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<caulk::reactor<aura::itf::SliderControl *>> {
+    struct reactor<aura::itf::SliderControl *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+};
+
+struct shared_ptr<caulk::reactor<aura::itf::StereoPanControl *>> {
+    struct reactor<aura::itf::StereoPanControl *> *__ptr_;
     struct __shared_weak_count *__cntrl_;
 };
 
@@ -801,11 +769,6 @@ struct shared_ptr<caulk::reactor<aura::itf::Stream *>> {
 struct shared_ptr<caulk::reactor<aura::itf::VirtualPort *>> {
     struct reactor<aura::itf::VirtualPort *> *__ptr_;
     struct __shared_weak_count *__cntrl_;
-};
-
-struct synchronized<(anonymous namespace)::Data, caulk::mach::unfair_lock, caulk::empty_atomic_interface<(anonymous namespace)::Data>> {
-    struct unfair_lock mMutex;
-    struct Data mObject;
 };
 
 struct tuple<__weak id<aura_Box>, bool> {
@@ -824,14 +787,22 @@ struct tuple<__weak id<aura_VirtualPort>, bool> {
 
 struct tuple<aura::AudioFormat, std::__1::set<std::__1::tuple<double, double>, std::__1::less<std::__1::tuple<double, double>>, std::__1::allocator<std::__1::tuple<double, double>>>>;
 
-struct tuple<double, double>;
-
-struct type {
-    unsigned char __lx[32];
+struct tuple<double, double> {
+    struct __tuple_impl<std::__1::__tuple_indices<0, 1>, double, double> {
+        double _field1;
+        double _field2;
+    } _field1;
 };
 
-struct unfair_lock {
-    struct os_unfair_lock_s m_lock;
+struct tuple<unsigned int, unsigned int> {
+    struct __tuple_impl<std::__1::__tuple_indices<0, 1>, unsigned int, unsigned int> {
+        unsigned int _field1;
+        unsigned int _field2;
+    } _field1;
+};
+
+struct type {
+    unsigned char _field1[32];
 };
 
 struct vector<AudioChannelDescription, std::__1::allocator<AudioChannelDescription>> {
@@ -906,14 +877,6 @@ struct vector<__weak id<aura_Port>, std::__1::allocator<__weak id<aura_Port>>> {
     } _field3;
 };
 
-struct vector<__weak id<aura_PortPriv>, std::__1::allocator<__weak id<aura_PortPriv>>> {
-    id *_field1;
-    id *_field2;
-    struct __compressed_pair<__weak id<aura_PortPriv>*, std::__1::allocator<__weak id<aura_PortPriv>>> {
-        id *_field1;
-    } _field3;
-};
-
 struct vector<__weak id<aura_Stream>, std::__1::allocator<__weak id<aura_Stream>>> {
     id *_field1;
     id *_field2;
@@ -946,14 +909,6 @@ struct vector<applesauce::CF::StringRef, std::__1::allocator<applesauce::CF::Str
     } _field3;
 };
 
-struct vector<aura::ChangedObject, std::__1::allocator<aura::ChangedObject>> {
-    struct ChangedObject *_field1;
-    struct ChangedObject *_field2;
-    struct __compressed_pair<aura::ChangedObject *, std::__1::allocator<aura::ChangedObject>> {
-        struct ChangedObject *_field1;
-    } _field3;
-};
-
 struct vector<aura::MicrophoneConfiguration, std::__1::allocator<aura::MicrophoneConfiguration>> {
     struct MicrophoneConfiguration *_field1;
     struct MicrophoneConfiguration *_field2;
@@ -978,14 +933,6 @@ struct vector<aura::MicrophonePreference, std::__1::allocator<aura::MicrophonePr
     } __end_cap_;
 };
 
-struct vector<aura::ObjectReference, std::__1::allocator<aura::ObjectReference>> {
-    struct ObjectReference *_field1;
-    struct ObjectReference *_field2;
-    struct __compressed_pair<aura::ObjectReference *, std::__1::allocator<aura::ObjectReference>> {
-        struct ObjectReference *_field1;
-    } _field3;
-};
-
 struct vector<aura::PortRecord<bool>, std::__1::allocator<aura::PortRecord<bool>>> {
     struct PortRecord<bool> *_field1;
     struct PortRecord<bool> *_field2;
@@ -999,6 +946,14 @@ struct vector<aura::PortRecord<double>, std::__1::allocator<aura::PortRecord<dou
     struct PortRecord<double> *_field2;
     struct __compressed_pair<aura::PortRecord<double>*, std::__1::allocator<aura::PortRecord<double>>> {
         struct PortRecord<double> *_field1;
+    } _field3;
+};
+
+struct vector<aura::SelectorControlItem, std::__1::allocator<aura::SelectorControlItem>> {
+    struct SelectorControlItem *_field1;
+    struct SelectorControlItem *_field2;
+    struct __compressed_pair<aura::SelectorControlItem *, std::__1::allocator<aura::SelectorControlItem>> {
+        struct SelectorControlItem *_field1;
     } _field3;
 };
 
@@ -1056,14 +1011,6 @@ struct vector<aura_VirtualPortHints *, std::__1::allocator<aura_VirtualPortHints
     struct __compressed_pair<aura_VirtualPortHints *__strong *, std::__1::allocator<aura_VirtualPortHints *>> {
         id *__value_;
     } __end_cap_;
-};
-
-struct vector<const aura_ConfigurationChangeRequest *, std::__1::allocator<const aura_ConfigurationChangeRequest *>> {
-    id *_field1;
-    id *_field2;
-    struct __compressed_pair<const aura_ConfigurationChangeRequest *__strong *, std::__1::allocator<const aura_ConfigurationChangeRequest *>> {
-        id *_field1;
-    } _field3;
 };
 
 struct vector<dspd::DeviceConfiguration, std::__1::allocator<dspd::DeviceConfiguration>> {
@@ -1138,22 +1085,6 @@ struct vector<dspd::StreamDescription, std::__1::allocator<dspd::StreamDescripti
     } __end_cap_;
 };
 
-struct vector<id<aura_Clock>, std::__1::allocator<id<aura_Clock>>> {
-    id *__begin_;
-    id *__end_;
-    struct __compressed_pair<__strong id<aura_Clock>*, std::__1::allocator<id<aura_Clock>>> {
-        id *__value_;
-    } __end_cap_;
-};
-
-struct vector<long long, std::__1::allocator<long long>> {
-    long long *_field1;
-    long long *_field2;
-    struct __compressed_pair<long long *, std::__1::allocator<long long>> {
-        long long *_field1;
-    } _field3;
-};
-
 struct vector<std::__1::pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>, std::__1::allocator<std::__1::pair<unsigned long long, dspd::AdaptResponse::CaptureStatus>>> {
     struct pair<unsigned long long, dspd::AdaptResponse::CaptureStatus> *_field1;
     struct pair<unsigned long long, dspd::AdaptResponse::CaptureStatus> *_field2;
@@ -1171,30 +1102,93 @@ struct vector<std::__1::tuple<aura::AudioFormat, std::__1::set<std::__1::tuple<d
 };
 
 struct vector<std::__1::tuple<double, double>, std::__1::allocator<std::__1::tuple<double, double>>> {
-    struct tuple<double, double> *_field1;
-    struct tuple<double, double> *_field2;
+    tuple_83a731a2 *_field1;
+    tuple_83a731a2 *_field2;
     struct __compressed_pair<std::__1::tuple<double, double>*, std::__1::allocator<std::__1::tuple<double, double>>> {
-        struct tuple<double, double> *_field1;
+        tuple_83a731a2 *_field1;
     } _field3;
 };
 
-struct weak_ptr<caulk::reactor<aura::hw::Device *>> {
-    struct reactor<aura::hw::Device *> *_field1;
+struct vector<unsigned int, std::__1::allocator<unsigned int>> {
+    unsigned int *_field1;
+    unsigned int *_field2;
+    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
+        unsigned int *_field1;
+    } _field3;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::BooleanControl *>> {
+    struct reactor<aura::itf::BooleanControl *> *_field1;
     struct __shared_weak_count *_field2;
 };
 
-struct weak_ptr<caulk::reactor<aura::hw::Port *>> {
-    struct reactor<aura::hw::Port *> *_field1;
+struct weak_ptr<caulk::reactor<aura::itf::Box *>> {
+    struct reactor<aura::itf::Box *> *_field1;
     struct __shared_weak_count *_field2;
 };
 
-struct weak_ptr<caulk::reactor<aura::hw::Stream *>> {
-    struct reactor<aura::hw::Stream *> *_field1;
+struct weak_ptr<caulk::reactor<aura::itf::Clock *>> {
+    struct reactor<aura::itf::Clock *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::Control *>> {
+    struct reactor<aura::itf::Control *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::Device *>> {
+    struct reactor<aura::itf::Device *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::Driver *>> {
+    struct reactor<aura::itf::Driver *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::IOController *>> {
+    struct reactor<aura::itf::IOController *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::IOStream *>> {
+    struct reactor<aura::itf::IOStream *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::LevelControl *>> {
+    struct reactor<aura::itf::LevelControl *> *_field1;
     struct __shared_weak_count *_field2;
 };
 
 struct weak_ptr<caulk::reactor<aura::itf::Port *>> {
     struct reactor<aura::itf::Port *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::SelectorControl *>> {
+    struct reactor<aura::itf::SelectorControl *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::SliderControl *>> {
+    struct reactor<aura::itf::SliderControl *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::StereoPanControl *>> {
+    struct reactor<aura::itf::StereoPanControl *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::Stream *>> {
+    struct reactor<aura::itf::Stream *> *_field1;
+    struct __shared_weak_count *_field2;
+};
+
+struct weak_ptr<caulk::reactor<aura::itf::VirtualPort *>> {
+    struct reactor<aura::itf::VirtualPort *> *_field1;
     struct __shared_weak_count *_field2;
 };
 
@@ -1274,47 +1268,54 @@ typedef struct expected<wrid<id, void>, std::__1::error_code> {
     _Bool _field2;
 } expected_24591dba;
 
+typedef struct function<void ()> {
+    struct __value_func<void ()> {
+        struct type _field1;
+        struct __base<void ()> *_field2;
+    } _field1;
+} function_5dd9ccd6;
+
 typedef struct function<void (aura::ConfigurationChangeCause)> {
     struct __value_func<void (aura::ConfigurationChangeCause)> {
         struct type _field1;
         struct __base<void (aura::ConfigurationChangeCause)> *_field2;
     } _field1;
-} function_622822b1;
+} function_eb4797c5;
 
 typedef struct function<void (aura::ConfigurationChangeDescription)> {
     struct __value_func<void (aura::ConfigurationChangeDescription)> {
-        struct type __buf_;
-        struct __base<void (aura::ConfigurationChangeDescription)> *__f_;
-    } __f_;
-} function_439a5227;
+        struct type _field1;
+        struct __base<void (aura::ConfigurationChangeDescription)> *_field2;
+    } _field1;
+} function_eeef26d1;
 
 typedef struct function<void (aura::IOEvent)> {
     struct __value_func<void (aura::IOEvent)> {
         struct type _field1;
         struct __base<void (aura::IOEvent)> *_field2;
     } _field1;
-} function_64fbd6ee;
+} function_012e5ebb;
 
 typedef struct function<void (caulk::expected<aura::ConfigurationChangeDescription, std::__1::error_code>)> {
     struct __value_func<void (caulk::expected<aura::ConfigurationChangeDescription, std::__1::error_code>)> {
         struct type _field1;
         struct __base<void (caulk::expected<aura::ConfigurationChangeDescription, std::__1::error_code>)> *_field2;
     } _field1;
-} function_00b26d85;
+} function_2fcae77d;
 
 typedef struct function<void (std::__1::error_code)> {
     struct __value_func<void (std::__1::error_code)> {
         struct type _field1;
         struct __base<void (std::__1::error_code)> *_field2;
     } _field1;
-} function_c0dd97ef;
+} function_f5b89e9d;
 
 typedef struct function<void (unsigned int, const AMCP::Proc_Cycle_Info &, unsigned long, AMCP::Proc_Stream *, unsigned long, AMCP::Proc_Stream *)> {
     struct __value_func<void (unsigned int, const AMCP::Proc_Cycle_Info &, unsigned long, AMCP::Proc_Stream *, unsigned long, AMCP::Proc_Stream *)> {
         struct type _field1;
         struct __base<void (unsigned int, const AMCP::Proc_Cycle_Info &, unsigned long, AMCP::Proc_Stream *, unsigned long, AMCP::Proc_Stream *)> *_field2;
     } _field1;
-} function_b157c3ea;
+} function_e45cec34;
 
 typedef struct map<unsigned int, std::__1::vector<__weak id<aura_IOController>, std::__1::allocator<__weak id<aura_IOController>>>, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, std::__1::vector<__weak id<aura_IOController>, std::__1::allocator<__weak id<aura_IOController>>>>>> {
     struct __tree<std::__1::__value_type<unsigned int, std::__1::vector<__weak id<aura_IOController>, std::__1::allocator<__weak id<aura_IOController>>>>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::vector<__weak id<aura_IOController>, std::__1::allocator<__weak id<aura_IOController>>>>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, std::__1::vector<__weak id<aura_IOController>, std::__1::allocator<__weak id<aura_IOController>>>>>> {
@@ -1339,18 +1340,6 @@ typedef struct map<unsigned int, std::__1::vector<__weak id<aura_VirtualPort>, s
         } _field3;
     } _field1;
 } map_83406001;
-
-typedef struct map<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>, std::__1::less<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>>> {
-    struct __tree<std::__1::__value_type<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>, std::__1::less<unsigned int>, true>, std::__1::allocator<std::__1::__value_type<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>>> {
-        struct __tree_end_node<std::__1::__tree_node_base<void *>*> *_field1;
-        struct __compressed_pair<std::__1::__tree_end_node<std::__1::__tree_node_base<void *>*>, std::__1::allocator<std::__1::__tree_node<std::__1::__value_type<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>, void *>>> {
-            struct __tree_end_node<std::__1::__tree_node_base<void *>*> _field1;
-        } _field2;
-        struct __compressed_pair<unsigned long, std::__1::__map_value_compare<unsigned int, std::__1::__value_type<unsigned int, std::__1::vector<id<aura_IOControllerPriv>, std::__1::allocator<id<aura_IOControllerPriv>>>>, std::__1::less<unsigned int>, true>> {
-            unsigned long long _field1;
-        } _field3;
-    } _field1;
-} map_9344a8ab;
 
 typedef struct optional<AVAudioDSPFlavor> {
     CDUnion_bdf8cba2 ;
@@ -1541,14 +1530,39 @@ typedef struct optional<wrop<aura_ConfigurationHints *, void>> {
 } optional_f9b20518;
 
 typedef struct shared_ptr<caulk::reactor<aura::hw::Hardware *>> {
-    struct reactor<aura::hw::Hardware *> *__ptr_;
+    struct reactor<aura::hw::Hardware *> *_field1;
+    struct __shared_weak_count *_field2;
+} shared_ptr_043aa51d;
+
+typedef struct shared_ptr<caulk::reactor<aura::itf::BooleanControl *>> {
+    struct reactor<aura::itf::BooleanControl *> *__ptr_;
     struct __shared_weak_count *__cntrl_;
-} shared_ptr_940c565d;
+} shared_ptr_d7117daa;
+
+typedef struct shared_ptr<caulk::reactor<aura::itf::Box *>> {
+    struct reactor<aura::itf::Box *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_215ea830;
+
+typedef struct shared_ptr<caulk::reactor<aura::itf::Clock *>> {
+    struct reactor<aura::itf::Clock *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_08b6f5b5;
+
+typedef struct shared_ptr<caulk::reactor<aura::itf::Control *>> {
+    struct reactor<aura::itf::Control *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_e543a3dd;
 
 typedef struct shared_ptr<caulk::reactor<aura::itf::Device *>> {
     struct reactor<aura::itf::Device *> *__ptr_;
     struct __shared_weak_count *__cntrl_;
 } shared_ptr_cc2337fb;
+
+typedef struct shared_ptr<caulk::reactor<aura::itf::Driver *>> {
+    struct reactor<aura::itf::Driver *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_649b04c1;
 
 typedef struct shared_ptr<caulk::reactor<aura::itf::IOController *>> {
     struct reactor<aura::itf::IOController *> *__ptr_;
@@ -1560,10 +1574,35 @@ typedef struct shared_ptr<caulk::reactor<aura::itf::IOStream *>> {
     struct __shared_weak_count *__cntrl_;
 } shared_ptr_7cd8687d;
 
+typedef struct shared_ptr<caulk::reactor<aura::itf::LevelControl *>> {
+    struct reactor<aura::itf::LevelControl *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_a7e32b6f;
+
 typedef struct shared_ptr<caulk::reactor<aura::itf::Port *>> {
     struct reactor<aura::itf::Port *> *__ptr_;
     struct __shared_weak_count *__cntrl_;
 } shared_ptr_c3639ab0;
+
+typedef struct shared_ptr<caulk::reactor<aura::itf::ResourceArbitrator *>> {
+    struct reactor<aura::itf::ResourceArbitrator *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_5ae3ef2e;
+
+typedef struct shared_ptr<caulk::reactor<aura::itf::SelectorControl *>> {
+    struct reactor<aura::itf::SelectorControl *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_2ba40e3d;
+
+typedef struct shared_ptr<caulk::reactor<aura::itf::SliderControl *>> {
+    struct reactor<aura::itf::SliderControl *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_7305d1ef;
+
+typedef struct shared_ptr<caulk::reactor<aura::itf::StereoPanControl *>> {
+    struct reactor<aura::itf::StereoPanControl *> *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_401c0113;
 
 typedef struct shared_ptr<caulk::reactor<aura::itf::Stream *>> {
     struct reactor<aura::itf::Stream *> *__ptr_;
@@ -1574,6 +1613,20 @@ typedef struct shared_ptr<caulk::reactor<aura::itf::VirtualPort *>> {
     struct reactor<aura::itf::VirtualPort *> *__ptr_;
     struct __shared_weak_count *__cntrl_;
 } shared_ptr_bb316d66;
+
+typedef struct tuple<double, double> {
+    struct __tuple_impl<std::__1::__tuple_indices<0, 1>, double, double> {
+        double _field1;
+        double _field2;
+    } _field1;
+} tuple_83a731a2;
+
+typedef struct tuple<unsigned int, unsigned int> {
+    struct __tuple_impl<std::__1::__tuple_indices<0, 1>, unsigned int, unsigned int> {
+        unsigned int _field1;
+        unsigned int _field2;
+    } _field1;
+} tuple_d3a1b75d;
 
 typedef struct vector<__weak id<aura_Box>, std::__1::allocator<__weak id<aura_Box>>> {
     id *_field1;
@@ -1639,14 +1692,6 @@ typedef struct vector<__weak id<aura_Port>, std::__1::allocator<__weak id<aura_P
     } _field3;
 } vector_a7f3f6e7;
 
-typedef struct vector<__weak id<aura_PortPriv>, std::__1::allocator<__weak id<aura_PortPriv>>> {
-    id *_field1;
-    id *_field2;
-    struct __compressed_pair<__weak id<aura_PortPriv>*, std::__1::allocator<__weak id<aura_PortPriv>>> {
-        id *_field1;
-    } _field3;
-} vector_5de72575;
-
 typedef struct vector<__weak id<aura_Stream>, std::__1::allocator<__weak id<aura_Stream>>> {
     id *_field1;
     id *_field2;
@@ -1695,6 +1740,14 @@ typedef struct vector<aura::PortRecord<double>, std::__1::allocator<aura::PortRe
     } _field3;
 } vector_149db60c;
 
+typedef struct vector<aura::SelectorControlItem, std::__1::allocator<aura::SelectorControlItem>> {
+    struct SelectorControlItem *_field1;
+    struct SelectorControlItem *_field2;
+    struct __compressed_pair<aura::SelectorControlItem *, std::__1::allocator<aura::SelectorControlItem>> {
+        struct SelectorControlItem *_field1;
+    } _field3;
+} vector_b895a2a1;
+
 typedef struct vector<aura::VolumeUpdateResult, std::__1::allocator<aura::VolumeUpdateResult>> {
     int *_field1;
     int *_field2;
@@ -1726,14 +1779,6 @@ typedef struct vector<aura_VirtualPortHints *, std::__1::allocator<aura_VirtualP
         id *__value_;
     } __end_cap_;
 } vector_df3b7805;
-
-typedef struct vector<const aura_ConfigurationChangeRequest *, std::__1::allocator<const aura_ConfigurationChangeRequest *>> {
-    id *_field1;
-    id *_field2;
-    struct __compressed_pair<const aura_ConfigurationChangeRequest *__strong *, std::__1::allocator<const aura_ConfigurationChangeRequest *>> {
-        id *_field1;
-    } _field3;
-} vector_1ccd10a7;
 
 typedef struct vector<dspd::DeviceDescription, std::__1::allocator<dspd::DeviceDescription>> {
     struct DeviceDescription *__begin_;
@@ -1783,14 +1828,6 @@ typedef struct vector<dspd::StreamDescription, std::__1::allocator<dspd::StreamD
     } __end_cap_;
 } vector_d1b3d51b;
 
-typedef struct vector<long long, std::__1::allocator<long long>> {
-    long long *_field1;
-    long long *_field2;
-    struct __compressed_pair<long long *, std::__1::allocator<long long>> {
-        long long *_field1;
-    } _field3;
-} vector_d87a6415;
-
 typedef struct vector<std::__1::tuple<aura::AudioFormat, std::__1::set<std::__1::tuple<double, double>, std::__1::less<std::__1::tuple<double, double>>, std::__1::allocator<std::__1::tuple<double, double>>>>, std::__1::allocator<std::__1::tuple<aura::AudioFormat, std::__1::set<std::__1::tuple<double, double>, std::__1::less<std::__1::tuple<double, double>>, std::__1::allocator<std::__1::tuple<double, double>>>>>> {
     struct tuple<aura::AudioFormat, std::__1::set<std::__1::tuple<double, double>, std::__1::less<std::__1::tuple<double, double>>, std::__1::allocator<std::__1::tuple<double, double>>>> *_field1;
     struct tuple<aura::AudioFormat, std::__1::set<std::__1::tuple<double, double>, std::__1::less<std::__1::tuple<double, double>>, std::__1::allocator<std::__1::tuple<double, double>>>> *_field2;
@@ -1800,32 +1837,95 @@ typedef struct vector<std::__1::tuple<aura::AudioFormat, std::__1::set<std::__1:
 } vector_fefeec75;
 
 typedef struct vector<std::__1::tuple<double, double>, std::__1::allocator<std::__1::tuple<double, double>>> {
-    struct tuple<double, double> *_field1;
-    struct tuple<double, double> *_field2;
+    tuple_83a731a2 *_field1;
+    tuple_83a731a2 *_field2;
     struct __compressed_pair<std::__1::tuple<double, double>*, std::__1::allocator<std::__1::tuple<double, double>>> {
-        struct tuple<double, double> *_field1;
+        tuple_83a731a2 *_field1;
     } _field3;
 } vector_a2bd2a87;
 
-typedef struct weak_ptr<caulk::reactor<aura::hw::Device *>> {
-    struct reactor<aura::hw::Device *> *_field1;
-    struct __shared_weak_count *_field2;
-} weak_ptr_6b0f00f0;
+typedef struct vector<unsigned int, std::__1::allocator<unsigned int>> {
+    unsigned int *_field1;
+    unsigned int *_field2;
+    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
+        unsigned int *_field1;
+    } _field3;
+} vector_f672cb0f;
 
-typedef struct weak_ptr<caulk::reactor<aura::hw::Port *>> {
-    struct reactor<aura::hw::Port *> *_field1;
+typedef struct weak_ptr<caulk::reactor<aura::itf::BooleanControl *>> {
+    struct reactor<aura::itf::BooleanControl *> *_field1;
     struct __shared_weak_count *_field2;
-} weak_ptr_abb6b8f5;
+} weak_ptr_ca442d31;
 
-typedef struct weak_ptr<caulk::reactor<aura::hw::Stream *>> {
-    struct reactor<aura::hw::Stream *> *_field1;
+typedef struct weak_ptr<caulk::reactor<aura::itf::Box *>> {
+    struct reactor<aura::itf::Box *> *_field1;
     struct __shared_weak_count *_field2;
-} weak_ptr_53ad1f34;
+} weak_ptr_ff187ab1;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::Clock *>> {
+    struct reactor<aura::itf::Clock *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_ba40a07e;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::Control *>> {
+    struct reactor<aura::itf::Control *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_b5f163dd;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::Device *>> {
+    struct reactor<aura::itf::Device *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_47880f8f;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::Driver *>> {
+    struct reactor<aura::itf::Driver *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_d99c7dd7;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::IOController *>> {
+    struct reactor<aura::itf::IOController *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_87c2748f;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::IOStream *>> {
+    struct reactor<aura::itf::IOStream *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_21a21d9c;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::LevelControl *>> {
+    struct reactor<aura::itf::LevelControl *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_323300f7;
 
 typedef struct weak_ptr<caulk::reactor<aura::itf::Port *>> {
     struct reactor<aura::itf::Port *> *_field1;
     struct __shared_weak_count *_field2;
 } weak_ptr_cf97627c;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::SelectorControl *>> {
+    struct reactor<aura::itf::SelectorControl *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_b9b1738a;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::SliderControl *>> {
+    struct reactor<aura::itf::SliderControl *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_150bc6a2;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::StereoPanControl *>> {
+    struct reactor<aura::itf::StereoPanControl *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_4d5683a6;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::Stream *>> {
+    struct reactor<aura::itf::Stream *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_f7fee0cb;
+
+typedef struct weak_ptr<caulk::reactor<aura::itf::VirtualPort *>> {
+    struct reactor<aura::itf::VirtualPort *> *_field1;
+    struct __shared_weak_count *_field2;
+} weak_ptr_754246e0;
 
 #pragma mark Named Unions
 

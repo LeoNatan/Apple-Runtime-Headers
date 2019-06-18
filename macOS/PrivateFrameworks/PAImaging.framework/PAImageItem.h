@@ -28,6 +28,7 @@
 - (void)_endChange;
 - (void)_beginChange;
 - (void)_forwardChangeToAllAdjustmentObservers:(CDUnknownBlockType)arg1;
+- (void)compositionReplaced:(id)arg1;
 - (void)compositionChanged:(id)arg1 key:(id)arg2;
 - (void)composition:(id)arg1 endInteractiveForKey:(id)arg2;
 - (void)composition:(id)arg1 beginInteractiveForKey:(id)arg2;

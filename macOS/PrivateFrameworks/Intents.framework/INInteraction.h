@@ -41,7 +41,7 @@
 @property(copy, setter=_setIntentResponse:) INIntentResponse *intentResponse; // @synthesize intentResponse=_intentResponse;
 @property(copy, setter=_setIntent:) INIntent *intent; // @synthesize intent=_intent;
 @property(copy, setter=_setContextExtensionUUID:) NSUUID *_contextExtensionUUID; // @synthesize _contextExtensionUUID;
-@property(readonly) BOOL _donatedBySiri; // @synthesize _donatedBySiri;
+@property(nonatomic, setter=_setDonatedBySiri:) BOOL _donatedBySiri; // @synthesize _donatedBySiri;
 @property(retain, setter=_setSnippet:) SAUISnippet *_snippet; // @synthesize _snippet;
 - (void).cxx_destruct;
 - (id)parameterValueForParameter:(id)arg1;
@@ -59,7 +59,6 @@
 - (void)_injectProxiesForImages:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_donateInteractionWithBundleId:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)donateInteractionWithCompletion:(CDUnknownBlockType)arg1;
-- (void)_setDonatedBySiri:(BOOL)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIntent:(id)arg1 response:(id)arg2;

@@ -9,14 +9,17 @@
 #import <MetalTools/MTLBuffer-Protocol.h>
 
 @class MTLToolsPointerArray, NSString;
-@protocol MTLDevice, MTLHeap;
+@protocol MTLBuffer, MTLDevice, MTLHeap;
 
 @interface MTLToolsBuffer : MTLToolsResource <MTLBuffer>
 {
     MTLToolsPointerArray *_textures;
+    id <MTLBuffer> _remoteStorageBuffer;
 }
 
+@property(retain) id <MTLBuffer> remoteStorageBuffer; // @synthesize remoteStorageBuffer=_remoteStorageBuffer;
 @property(readonly, nonatomic) MTLToolsPointerArray *textures; // @synthesize textures=_textures;
+- (id)newRemoteBufferViewForDevice:(id)arg1;
 - (struct __IOSurface *)iosurface;
 - (id)newTiledTextureWithDescriptor:(id)arg1 offset:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3;
 - (id)newTextureWithDescriptor:(id)arg1 offset:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3;

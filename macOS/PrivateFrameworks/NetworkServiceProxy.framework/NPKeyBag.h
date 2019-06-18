@@ -35,6 +35,7 @@
 @property unsigned int index; // @synthesize index=_index;
 @property(retain, nonatomic) NSArray *keys; // @synthesize keys=_keys;
 - (void).cxx_destruct;
+- (void)removeIPv6Keys;
 - (void)moveToOnRamp:(id)arg1;
 - (id)getOnRampForEndpoint:(id)arg1;
 - (BOOL)updateHashMatchesEdgeSet:(id)arg1;

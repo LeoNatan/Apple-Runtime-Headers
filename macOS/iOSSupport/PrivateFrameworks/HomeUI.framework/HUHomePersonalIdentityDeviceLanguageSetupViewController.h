@@ -27,6 +27,7 @@
 @property(retain, nonatomic) OBTrayButton *continueButton; // @synthesize continueButton=_continueButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewDidLoad;
 - (id)hu_preloadContent;
 - (void)_changeSiriLanguage;
 - (void)_completeLanguageSetup;

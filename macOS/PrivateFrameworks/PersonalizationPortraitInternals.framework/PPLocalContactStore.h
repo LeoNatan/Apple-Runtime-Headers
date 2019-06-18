@@ -6,20 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class PPContactStorage;
+#import <PersonalizationPortraitInternals/PPFeedbackAccepting-Protocol.h>
 
-@interface PPLocalContactStore : NSObject
+@class PPContactStorage, PPM2FeedbackPortraitRegistered, PPMFeedbackRegistered;
+
+@interface PPLocalContactStore : NSObject <PPFeedbackAccepting>
 {
     PPContactStorage *_contactStorage;
+    PPMFeedbackRegistered *_feedbackTracker;
+    PPM2FeedbackPortraitRegistered *_feedbackTracker2;
 }
 
 + (id)defaultStore;
 - (void).cxx_destruct;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)contactNameRecordChangesForClient:(id)arg1 error:(id *)arg2;
 - (id)contactNameRecordsForClient:(id)arg1 error:(id *)arg2;
 - (BOOL)iterContactNameRecordsForClient:(id)arg1 error:(id *)arg2 block:(CDUnknownBlockType)arg3;
 - (void)feedbackDisambiguationResultWithChoicesIdentifiers:(id)arg1 chosenContactIdentifier:(id)arg2;
-- (BOOL)registerFeedback:(id)arg1 error:(id *)arg2;
 - (id)scoredContactsWithContacts:(id)arg1;
 - (id)contactsWithQuery:(id)arg1 explanationSet:(id)arg2 timeoutSeconds:(double)arg3 error:(id *)arg4;
 - (id)contactsWithQuery:(id)arg1 error:(id *)arg2;

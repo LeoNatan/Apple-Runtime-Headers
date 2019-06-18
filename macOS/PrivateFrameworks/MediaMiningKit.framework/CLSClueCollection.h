@@ -29,7 +29,7 @@
 - (void)_mergeInputClue:(id)arg1;
 - (void)prepareWithProgressBlock:(CDUnknownBlockType)arg1;
 - (id)mePerson;
-- (unsigned long long)numberOfPeoples;
+- (unsigned long long)numberOfPersons;
 - (id)peopleNames;
 - (void)enumeratePeopleClues:(CDUnknownBlockType)arg1;
 - (unsigned long long)numberOfLocations;

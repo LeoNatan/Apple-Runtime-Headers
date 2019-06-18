@@ -52,6 +52,7 @@
 - (BOOL)isStickerPackOnly;
 @property(readonly, nonatomic) BOOL shouldHideAppSwitcher;
 @property(readonly, nonatomic) BOOL isEnabled;
+@property(readonly, nonatomic) BOOL showableInBrowser;
 @property(readonly, nonatomic) BOOL showInBrowser;
 @property(readonly, nonatomic, getter=isBetaPlugin) BOOL betaPlugin;
 @property(readonly, nonatomic) NSString *version;

@@ -14,9 +14,7 @@
 
 @interface _INPBScoredValue : PBCodable <_INPBScoredValue, NSSecureCoding, NSCopying>
 {
-    struct {
-        unsigned int score:1;
-    } _has;
+    CDStruct_4b1634df _has;
     long long _score;
     NSString *_value;
 }

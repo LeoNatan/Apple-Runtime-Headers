@@ -17,6 +17,7 @@
     BOOL _shouldSkipAuthorizationUI;
     BOOL _shouldForcePrivateEmail;
     BOOL _requirePassword;
+    BOOL _isWebLogin;
     BOOL _isFirstPartyLogin;
     BOOL _isRapportLogin;
     NSString *_informativeText;
@@ -39,6 +40,7 @@
 @property(readonly, copy, nonatomic) NSUUID *requestIdentifier; // @synthesize requestIdentifier=_requestIdentifier;
 @property BOOL _isRapportLogin; // @synthesize _isRapportLogin;
 @property BOOL _isFirstPartyLogin; // @synthesize _isFirstPartyLogin;
+@property BOOL _isWebLogin; // @synthesize _isWebLogin;
 @property BOOL _requirePassword; // @synthesize _requirePassword;
 @property(retain) NSArray *_proxiedAssociatedDomains; // @synthesize _proxiedAssociatedDomains;
 @property(retain) NSString *_proxiedClientTeamID; // @synthesize _proxiedClientTeamID;

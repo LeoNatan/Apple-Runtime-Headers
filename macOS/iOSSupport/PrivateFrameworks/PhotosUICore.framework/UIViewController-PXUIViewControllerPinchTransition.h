@@ -78,6 +78,7 @@
 @property(readonly, nonatomic) BOOL px_photosUICategoriesAvailable;
 - (BOOL)px_canPerformSwipeDownTransitionWithMasterViewController:(id)arg1;
 - (BOOL)px_canPerformSwipeDownTransitionWithDetailViewController:(id)arg1;
+@property(readonly, nonatomic) struct CGSize px_referenceSize;
 - (void)_pxswizzled_oneUpPresentation_viewDidDisappear:(BOOL)arg1;
 - (void)_pxswizzled_oneUpPresentation_viewWillDisappear:(BOOL)arg1;
 - (void)_pxswizzled_oneUpPresentation_viewDidAppear:(BOOL)arg1;

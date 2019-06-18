@@ -8,20 +8,27 @@
 
 #import <ContactsUI/CNContactCardWidgetProviderDelegate-Protocol.h>
 
-@class CNUIUserActionListDataSource, NSString;
+@class CNContact, CNContainer, CNUIEditingPolicy, CNUIUserActionListDataSource, NSString;
 @protocol CNSchedulerProvider;
 
 @interface CNContactCardViewControllerWidgetProviderDelegate : NSObject <CNContactCardWidgetProviderDelegate>
 {
     CNUIUserActionListDataSource *_userActionListDataSource;
+    CNContact *_displayedContact;
+    CNContainer *_containerOfDisplayedContact;
     id <CNSchedulerProvider> _schedulerProvider;
+    CNUIEditingPolicy *_editingPolicy;
 }
 
+@property(readonly, nonatomic) CNUIEditingPolicy *editingPolicy; // @synthesize editingPolicy=_editingPolicy;
 @property(readonly, nonatomic) id <CNSchedulerProvider> schedulerProvider; // @synthesize schedulerProvider=_schedulerProvider;
+@property(retain, nonatomic) CNContainer *containerOfDisplayedContact; // @synthesize containerOfDisplayedContact=_containerOfDisplayedContact;
+@property(retain, nonatomic) CNContact *displayedContact; // @synthesize displayedContact=_displayedContact;
 @property(readonly, nonatomic) CNUIUserActionListDataSource *userActionListDataSource; // @synthesize userActionListDataSource=_userActionListDataSource;
 - (void).cxx_destruct;
+- (BOOL)widgetProvider:(id)arg1 shouldIncludeSharingEnabledWarningViewController:(id)arg2;
 - (void)widgetProvider:(id)arg1 willCreateActionsViewController:(id)arg2;
-- (id)initWithActionListDataSource:(id)arg1 schedulerProvider:(id)arg2;
+- (id)initWithActionListDataSource:(id)arg1 schedulerProvider:(id)arg2 editingPolicy:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -27,10 +27,11 @@
     struct {
         unsigned int isStarkAssetManager:1;
         unsigned int isStandaloneAssetManager:1;
+        unsigned int isUIKitAssetsManager:1;
+        unsigned int isCoreGlyphsManager:1;
         unsigned int gotHasMacAppearanceNames:1;
         unsigned int hasMacAppearanceNames:1;
     } _assetManagerFlags;
-    BOOL _managingUIKitAssets;
     _UIAssetManager *_nextAssetManager;
 }
 
@@ -51,7 +52,6 @@
 + (void)_saveAssetManager:(id)arg1 forBundle:(id)arg2 lock:(BOOL)arg3;
 + (void)_executeUnitTestWithAssetManagerCache:(CDUnknownBlockType)arg1;
 + (id)_assetManagerCache;
-@property(readonly, nonatomic, getter=_managingUIKitAssets) BOOL managingUIKitAssets; // @synthesize managingUIKitAssets=_managingUIKitAssets;
 @property(retain, nonatomic) UITraitCollection *preferredTraitCollection; // @synthesize preferredTraitCollection=_preferredTraitCollection;
 @property(nonatomic) double preferredScale; // @synthesize preferredScale=_preferredScale;
 @property(retain, nonatomic) _UIAssetManager *nextAssetManager; // @synthesize nextAssetManager=_nextAssetManager;
@@ -91,6 +91,9 @@
 - (id)imageNamed:(id)arg1 idiom:(long long)arg2 subtype:(unsigned long long)arg3;
 - (id)imageNamed:(id)arg1 scale:(double)arg2 idiom:(long long)arg3 subtype:(unsigned long long)arg4;
 - (id)imageNamed:(id)arg1 configuration:(id)arg2 cachingOptions:(unsigned long long)arg3 attachCatalogImage:(BOOL)arg4;
+- (BOOL)_isSystemAssetManager;
+@property(readonly, nonatomic, getter=_managingCoreGlyphs) BOOL managingCoreGlyphs;
+@property(readonly, nonatomic, getter=_managingUIKitAssets) BOOL managingUIKitAssets;
 - (id)_starkAssetManager;
 - (void)dealloc;
 - (id)initManagerWithoutCatalogWithName:(id)arg1;

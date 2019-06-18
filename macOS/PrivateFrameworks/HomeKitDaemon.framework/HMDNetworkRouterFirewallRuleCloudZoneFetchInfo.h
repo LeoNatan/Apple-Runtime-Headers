@@ -6,19 +6,23 @@
 
 #import <HomeKitDaemon/HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper.h>
 
-@class HMBMirrorInput, NSSet;
+@class CKServerChangeToken, HMBMirrorInput, NSSet;
 
 @interface HMDNetworkRouterFirewallRuleCloudZoneFetchInfo : HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper
 {
     NSSet *_recordIDs;
+    CKServerChangeToken *_changeToken;
+    CKServerChangeToken *_originalChangeToken;
     HMBMirrorInput *_mirrorInput;
 }
 
 @property(retain, nonatomic) HMBMirrorInput *mirrorInput; // @synthesize mirrorInput=_mirrorInput;
+@property(readonly, nonatomic) CKServerChangeToken *originalChangeToken; // @synthesize originalChangeToken=_originalChangeToken;
+@property(retain, nonatomic) CKServerChangeToken *changeToken; // @synthesize changeToken=_changeToken;
 @property(readonly, nonatomic) NSSet *recordIDs; // @synthesize recordIDs=_recordIDs;
 - (void).cxx_destruct;
 - (void)finishWithError:(id)arg1;
-- (id)initWithOptions:(id)arg1 changeToken:(id)arg2 promise:(id)arg3 database:(id)arg4 recordIDs:(id)arg5 mirrorInput:(id)arg6;
+- (id)initWithOptions:(id)arg1 changeToken:(id)arg2 promise:(id)arg3 database:(id)arg4 useAnonymousRequests:(BOOL)arg5 recordIDs:(id)arg6 mirrorInput:(id)arg7;
 
 @end
 

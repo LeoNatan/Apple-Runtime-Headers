@@ -27,12 +27,13 @@
 @property(retain) NSURL *consistencyProofURI; // @synthesize consistencyProofURI=_consistencyProofURI;
 @property(retain) NSURL *queryURI; // @synthesize queryURI=_queryURI;
 - (void).cxx_destruct;
-- (BOOL)downloadConsistencyProof:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)downloadQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (BOOL)fetchQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)downloadConsistencyProof:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)downloadQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)downloadPublicKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetchQuery:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)handleQueryResponseData:(id)arg1 fetchError:(id)arg2 application:(id)arg3 error:(id *)arg4 completionHandler:(CDUnknownBlockType)arg5;
-- (id)fetchPublicKeys:(id)arg1 error:(id *)arg2;
-- (BOOL)configure:(id *)arg1;
+- (void)fetchPublicKeys:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)configure:(CDUnknownBlockType)arg1;
 - (BOOL)configurationExpired;
 - (BOOL)configureFromBag:(id)arg1 error:(id *)arg2;
 - (BOOL)validateConfigBagEntries:(id)arg1 error:(id *)arg2;

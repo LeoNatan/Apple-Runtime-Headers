@@ -21,6 +21,7 @@
 - (id)_feedItemsTransformationWithOptions:(long long)arg1;
 - (id)_additionalFeedItemsTransformationLimitedToNumberOfFeedItems:(unsigned long long)arg1 withOptions:(long long)arg2;
 - (void)_constructGroupForChannelWithIdentifier:(id)arg1 usingFeedItems:(id)arg2 feedFilterOptions:(long long)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)_performOperation;
 - (void)performOperation;
 
 // Remaining properties

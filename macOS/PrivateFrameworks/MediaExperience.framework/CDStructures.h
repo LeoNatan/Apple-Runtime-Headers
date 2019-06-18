@@ -12,6 +12,21 @@ typedef void (^CDUnknownBlockType)(void); // return type and parameters are unkn
 
 #pragma mark Named Structures
 
+struct Address {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+};
+
+struct ChangedObject {
+    struct ObjectReference _field1;
+    vector_bfad48d9 _field2;
+    vector_cc4db96f _field3;
+    vector_d60b2a1f _field4;
+    vector_d60b2a1f _field5;
+    vector_e9f4e6a1 _field6;
+};
+
 struct DerivedBehaviors {
     _Bool _field1;
     _Bool _field2;
@@ -42,6 +57,12 @@ struct MicrophoneConfiguration {
 
 struct ObjectRef<const __CFString *> {
     struct __CFString *mCFObject;
+};
+
+struct ObjectReference {
+    id _field1;
+    unsigned long long _field2;
+    unsigned int _field3;
 };
 
 struct ProcessToken {
@@ -186,6 +207,22 @@ struct shared_ptr<caulk::reactor<mx::IProcessManager *>> {
     struct __shared_weak_count *__cntrl_;
 };
 
+struct vector<AMCP::Address, std::__1::allocator<AMCP::Address>> {
+    struct Address *_field1;
+    struct Address *_field2;
+    struct __compressed_pair<AMCP::Address *, std::__1::allocator<AMCP::Address>> {
+        struct Address *_field1;
+    } _field3;
+};
+
+struct vector<NSString *, std::__1::allocator<NSString *>> {
+    id *_field1;
+    id *_field2;
+    struct __compressed_pair<NSString **, std::__1::allocator<NSString *>> {
+        id *_field1;
+    } _field3;
+};
+
 struct vector<__weak id<aura_Clock>, std::__1::allocator<__weak id<aura_Clock>>> {
     id *_field1;
     id *_field2;
@@ -218,6 +255,14 @@ struct vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id<aura_Vi
     } __end_cap_;
 };
 
+struct vector<aura::ChangedObject, std::__1::allocator<aura::ChangedObject>> {
+    struct ChangedObject *_field1;
+    struct ChangedObject *_field2;
+    struct __compressed_pair<aura::ChangedObject *, std::__1::allocator<aura::ChangedObject>> {
+        struct ChangedObject *_field1;
+    } _field3;
+};
+
 struct vector<aura::MicrophoneConfiguration, std::__1::allocator<aura::MicrophoneConfiguration>> {
     struct MicrophoneConfiguration *_field1;
     struct MicrophoneConfiguration *_field2;
@@ -231,6 +276,14 @@ struct vector<aura::MicrophonePolarPattern, std::__1::allocator<aura::Microphone
     unsigned int *_field2;
     struct __compressed_pair<aura::MicrophonePolarPattern *, std::__1::allocator<aura::MicrophonePolarPattern>> {
         unsigned int *_field1;
+    } _field3;
+};
+
+struct vector<aura::ObjectReference, std::__1::allocator<aura::ObjectReference>> {
+    struct ObjectReference *_field1;
+    struct ObjectReference *_field2;
+    struct __compressed_pair<aura::ObjectReference *, std::__1::allocator<aura::ObjectReference>> {
+        struct ObjectReference *_field1;
     } _field3;
 };
 
@@ -319,6 +372,22 @@ typedef struct shared_ptr<caulk::reactor<mx::IProcessManager *>> {
     struct __shared_weak_count *__cntrl_;
 } shared_ptr_075de5b0;
 
+typedef struct vector<AMCP::Address, std::__1::allocator<AMCP::Address>> {
+    struct Address *_field1;
+    struct Address *_field2;
+    struct __compressed_pair<AMCP::Address *, std::__1::allocator<AMCP::Address>> {
+        struct Address *_field1;
+    } _field3;
+} vector_cc4db96f;
+
+typedef struct vector<NSString *, std::__1::allocator<NSString *>> {
+    id *_field1;
+    id *_field2;
+    struct __compressed_pair<NSString **, std::__1::allocator<NSString *>> {
+        id *_field1;
+    } _field3;
+} vector_bfad48d9;
+
 typedef struct vector<__weak id<aura_Clock>, std::__1::allocator<__weak id<aura_Clock>>> {
     id *_field1;
     id *_field2;
@@ -350,6 +419,22 @@ typedef struct vector<__weak id<aura_VirtualPort>, std::__1::allocator<__weak id
         id *__value_;
     } __end_cap_;
 } vector_c6bb1d04;
+
+typedef struct vector<aura::ChangedObject, std::__1::allocator<aura::ChangedObject>> {
+    struct ChangedObject *_field1;
+    struct ChangedObject *_field2;
+    struct __compressed_pair<aura::ChangedObject *, std::__1::allocator<aura::ChangedObject>> {
+        struct ChangedObject *_field1;
+    } _field3;
+} vector_e9f4e6a1;
+
+typedef struct vector<aura::ObjectReference, std::__1::allocator<aura::ObjectReference>> {
+    struct ObjectReference *_field1;
+    struct ObjectReference *_field2;
+    struct __compressed_pair<aura::ObjectReference *, std::__1::allocator<aura::ObjectReference>> {
+        struct ObjectReference *_field1;
+    } _field3;
+} vector_d60b2a1f;
 
 typedef struct vector<const MXPlayerSessionState, std::__1::allocator<const MXPlayerSessionState>> {
     CDStruct_183601bc *_field1;

@@ -14,6 +14,7 @@
     id <PXNavigationListItem> _listItem;
 }
 
++ (id)_symbolConfigurationForFont:(id)arg1;
 + (id)cellFont;
 @property(nonatomic) BOOL enabled; // @synthesize enabled=_enabled;
 @property(retain, nonatomic) id <PXNavigationListItem> listItem; // @synthesize listItem=_listItem;

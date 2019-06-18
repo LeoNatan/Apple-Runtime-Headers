@@ -18,7 +18,7 @@
 {
     NSString *_name;
     struct CGSize _size;
-    struct __imageFlags {
+    struct {
         unsigned int scalable:1;
         unsigned int dataRetained:1;
         unsigned int uniqueWindow:1;
@@ -83,6 +83,28 @@
 + (id)_emblemForCount:(long long)arg1;
 @property(retain, setter=_setReps:) id _reps; // @synthesize _reps;
 - (void).cxx_destruct;
+- (void)lockFocusOnRepresentation:(id)arg1;
+- (BOOL)_composite:(long long)arg1 delta:(double)arg2 fromRect:(struct CGRect)arg3 toPoint:(struct CGPoint)arg4;
+- (void)_compositeFlipped:(BOOL)arg1 atPoint:(struct CGPoint)arg2 fromRect:(struct CGRect)arg3 operation:(unsigned long long)arg4 fraction:(double)arg5;
+- (void)_compositeFlipped:(BOOL)arg1 inRect:(struct CGRect)arg2 fromRect:(struct CGRect)arg3 operation:(unsigned long long)arg4 fraction:(double)arg5;
+- (void)_compositeToPoint:(struct CGPoint)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4;
+- (void)_compositeToPoint:(struct CGPoint)arg1 operation:(unsigned long long)arg2 fraction:(double)arg3;
+- (void)compositeToPoint:(struct CGPoint)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4;
+- (void)compositeToPoint:(struct CGPoint)arg1 operation:(unsigned long long)arg2 fraction:(double)arg3;
+- (void)dissolveToPoint:(struct CGPoint)arg1 fromRect:(struct CGRect)arg2 fraction:(double)arg3;
+- (void)compositeToPoint:(struct CGPoint)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3;
+- (void)dissolveToPoint:(struct CGPoint)arg1 fraction:(double)arg2;
+- (void)compositeToPoint:(struct CGPoint)arg1 operation:(unsigned long long)arg2;
+- (BOOL)cacheDepthMatchesImageDepth;
+- (void)setCacheDepthMatchesImageDepth:(BOOL)arg1;
+- (BOOL)isCachedSeparately;
+- (void)setCachedSeparately:(BOOL)arg1;
+- (BOOL)isDataRetained;
+- (void)setDataRetained:(BOOL)arg1;
+- (BOOL)scalesWhenResized;
+- (void)setScalesWhenResized:(BOOL)arg1;
+- (BOOL)isFlipped;
+- (void)setFlipped:(BOOL)arg1;
 - (id)layerContentsForContentsScale:(double)arg1;
 - (double)recommendedLayerContentsScale:(double)arg1;
 - (id)pasteboardPropertyListForType:(id)arg1;
@@ -202,28 +224,6 @@
 - (BOOL)_isCachedToRep:(id)arg1;
 - (void)_usingCacheRepPerformBlock:(CDUnknownBlockType)arg1;
 - (void)_setCacheRep:(id)arg1;
-- (void)lockFocusOnRepresentation:(id)arg1;
-- (BOOL)_composite:(long long)arg1 delta:(double)arg2 fromRect:(struct CGRect)arg3 toPoint:(struct CGPoint)arg4;
-- (void)_compositeFlipped:(BOOL)arg1 atPoint:(struct CGPoint)arg2 fromRect:(struct CGRect)arg3 operation:(unsigned long long)arg4 fraction:(double)arg5;
-- (void)_compositeFlipped:(BOOL)arg1 inRect:(struct CGRect)arg2 fromRect:(struct CGRect)arg3 operation:(unsigned long long)arg4 fraction:(double)arg5;
-- (void)_compositeToPoint:(struct CGPoint)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4;
-- (void)_compositeToPoint:(struct CGPoint)arg1 operation:(unsigned long long)arg2 fraction:(double)arg3;
-- (void)compositeToPoint:(struct CGPoint)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3 fraction:(double)arg4;
-- (void)compositeToPoint:(struct CGPoint)arg1 operation:(unsigned long long)arg2 fraction:(double)arg3;
-- (void)dissolveToPoint:(struct CGPoint)arg1 fromRect:(struct CGRect)arg2 fraction:(double)arg3;
-- (void)compositeToPoint:(struct CGPoint)arg1 fromRect:(struct CGRect)arg2 operation:(unsigned long long)arg3;
-- (void)dissolveToPoint:(struct CGPoint)arg1 fraction:(double)arg2;
-- (void)compositeToPoint:(struct CGPoint)arg1 operation:(unsigned long long)arg2;
-- (BOOL)cacheDepthMatchesImageDepth;
-- (void)setCacheDepthMatchesImageDepth:(BOOL)arg1;
-- (BOOL)isCachedSeparately;
-- (void)setCachedSeparately:(BOOL)arg1;
-- (BOOL)isDataRetained;
-- (void)setDataRetained:(BOOL)arg1;
-- (BOOL)scalesWhenResized;
-- (void)setScalesWhenResized:(BOOL)arg1;
-- (BOOL)isFlipped;
-- (void)setFlipped:(BOOL)arg1;
 - (BOOL)NS_needsRecommitOnDefaultContentsScaleChange;
 - (void *)CA_copyRenderValue;
 - (void)CA_prepareRenderValue;

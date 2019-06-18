@@ -10,15 +10,14 @@
 
 @interface _TtC7NewsUI228TopicColorFeedNavImageStyler : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: topicColor
+    // Error parsing type: , name: tagColor
     // Error parsing type: , name: feedNavImageStyler
 }
 
 @property(nonatomic, readonly) double padding;
 @property(nonatomic, readonly) double cornerRadius;
-- (id)topicColorFor:(id)arg1;
-@property(nonatomic, readonly) UIFont *topicTitleFont;
-@property(nonatomic, readonly) UIFont *channelTitleFont;
+- (id)tagColorFor:(id)arg1;
+@property(nonatomic, readonly) UIFont *tagTitleFont;
 
 @end
 

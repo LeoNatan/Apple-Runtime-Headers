@@ -10,7 +10,7 @@
 #import <FrontBoard/FBSProcessInternal-Protocol.h>
 #import <FrontBoard/RBSProcessMatching-Protocol.h>
 
-@class BSMachPortTaskNameRight, BSProcessHandle, FBProcessCPUStatistics, FBProcessExecutionContext, FBProcessExitContext, FBProcessState, FBSApplicationInfo, FBWorkspace, NSError, NSHashTable, NSMutableArray, NSString, RBSAssertion, RBSProcessHandle, RBSProcessIdentity, RBSProcessState;
+@class BSMachPortTaskNameRight, BSProcessHandle, FBProcessCPUStatistics, FBProcessExecutionContext, FBProcessExitContext, FBProcessState, FBSApplicationInfo, FBWorkspace, NSError, NSHashTable, NSMutableArray, NSString, RBSAssertion, RBSProcessHandle, RBSProcessIdentity, RBSProcessState, RBSTarget;
 @protocol FBProcessDelegate, OS_dispatch_queue;
 
 @interface FBProcess : NSObject <FBSProcessInternal, RBSProcessMatching, FBSProcess>
@@ -47,12 +47,14 @@
     long long _executableLivesOnSystemPartition;
     int _pendingExit;
     double _execTime;
+    RBSTarget *_target;
 }
 
 + (id)calloutQueue;
 @property(readonly, nonatomic) FBWorkspace *workspace; // @synthesize workspace=_workspace;
 @property(readonly, nonatomic) RBSProcessIdentity *identity; // @synthesize identity=_identity;
 @property(readonly, nonatomic) BSProcessHandle *handle; // @synthesize handle=_handle;
+@property(readonly, nonatomic) RBSTarget *target; // @synthesize target=_target;
 @property(readonly, nonatomic) long long backgroundingPolicy; // @synthesize backgroundingPolicy=_backgroundingPolicy;
 @property(readonly, nonatomic) double execTime; // @synthesize execTime=_execTime;
 @property(readonly, nonatomic) BOOL finishedLaunching; // @synthesize finishedLaunching=_launchSuccess;
@@ -94,7 +96,7 @@
 - (void)_queue_setTaskState:(int)arg1;
 - (void)_queue_setPid:(int)arg1;
 - (void)_queue_updateStateWithBlock:(CDUnknownBlockType)arg1;
-- (void)_notePendingExit;
+- (void)_notePendingExitForReason:(id)arg1;
 - (void)_executeBlockAfterLaunchCompletes:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) BOOL executableLivesOnSystemPartition;
 @property(readonly, nonatomic) FBSApplicationInfo *applicationInfo; // @synthesize applicationInfo=_applicationInfo;

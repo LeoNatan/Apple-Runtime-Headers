@@ -26,6 +26,7 @@
 - (void)setWorkflow:(id)arg1;
 @property(readonly, copy) INSpeakableString *workflow;
 - (id)initWithWorkflow:(id)arg1;
+- (id)_categoryVerb;
 - (long long)_intentCategory;
 - (void)_setMetadata:(id)arg1;
 - (id)_metadata;

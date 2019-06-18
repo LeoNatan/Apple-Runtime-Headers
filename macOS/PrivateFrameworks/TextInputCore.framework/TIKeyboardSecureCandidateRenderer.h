@@ -17,7 +17,7 @@
 }
 
 + (id)allRenderers;
-@property(readonly, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
+@property(retain, nonatomic) NSString *localeIdentifier; // @synthesize localeIdentifier=_localeIdentifier;
 @property(retain, nonatomic) NSMutableDictionary *secureCandidateCache; // @synthesize secureCandidateCache=_secureCandidateCache;
 @property(readonly, nonatomic) CAContext *context; // @synthesize context=_context;
 - (void).cxx_destruct;

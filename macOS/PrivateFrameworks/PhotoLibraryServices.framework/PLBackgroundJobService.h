@@ -17,13 +17,14 @@
     unsigned long long _state;
     PLBackgroundJobLibraryCoordinator *_libraryCoordinator;
     PFCoalescer *_registrationCoalescer;
+    double _registrationCoalescerPushBackTimeInterval;
     NSDictionary *_bundlesToProcessByPriority;
     struct os_unfair_lock_s _stateLock;
     struct os_unfair_lock_s _bundlesToProcessByPriorityLock;
     NSObject<OS_dispatch_queue> *_isolationQueue;
-    NSObject<OS_dispatch_source> *_timer;
-    BOOL _XPCInstructedToDefer;
-    BOOL _simulateXPCDeferring;
+    NSObject<OS_dispatch_source> *_xpcDeferTimer;
+    BOOL _xpcInstructedToDefer;
+    BOOL _simulateXpcDeferring;
     id <PLBackgroundJobServiceDelegate> _delegate;
 }
 
@@ -31,8 +32,8 @@
 + (id)_criteriaForActivityPriority:(unsigned long long)arg1;
 @property(nonatomic) __weak id <PLBackgroundJobServiceDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
-- (void)libraryCoordinatorFinishedJobsOnAllBundles;
-- (void)libraryCoordinatorFinishedJobOnBundle:(id)arg1 priority:(unsigned long long)arg2;
+- (void)libraryCoordinatorFinishedJobsOnAllSubmittedBundles;
+- (void)libraryCoordinatorFinishedJobsOnSubmittedBundle:(id)arg1 priority:(unsigned long long)arg2;
 - (void)_stopRunningBackgroundJobs;
 - (void)_startRunningBackgroundJobsWithPriority:(unsigned long long)arg1;
 - (id)_getBundleRecordsFromProcessingSetForAllPriorites;
@@ -45,17 +46,19 @@
 - (id)_bundlesToProcessByPriorityAsPathStrings;
 - (void)_stopPollingForActivityStatus;
 - (void)_startPollingForActivityStatus;
-- (void)_unregisterActivityIfNeeded;
+- (void)_unregisterActivityIfNeededShouldConsiderDeferring:(BOOL)arg1;
 - (void)_registerActivityForBundles:(id)arg1 priority:(unsigned long long)arg2;
 - (void)_registerActivityIfNecessaryOnBundles:(id)arg1;
+- (BOOL)_serviceReadyForRegistration;
 - (void)_registerActivityWithoutCoalescingIfNecessaryOnBundle:(id)arg1;
 - (void)registerActivityIfNecessaryOnBundle:(id)arg1;
 - (void)signalBackgroundProcessingNeededOnLibrary:(id)arg1;
-- (void)shutdown;
-- (void)_simulateXPCShouldDefer;
+- (void)_verifyStateTransitionFromState:(unsigned long long)arg1 toState:(unsigned long long)arg2;
 - (void)_setState:(unsigned long long)arg1;
-- (id)_getBundlePathsToProcess;
 - (unsigned long long)_serviceState;
+- (void)_shutdown;
+- (void)_simulateXPCShouldDefer;
+- (id)_getBundlePathsToProcess;
 - (id)initWithLibraryCoordinator:(id)arg1;
 - (id)init;
 

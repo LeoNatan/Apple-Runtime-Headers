@@ -66,6 +66,7 @@
 @property(copy) NSString *videoGravity;
 - (id)subLayer;
 - (void)layoutSublayers;
+@property(readonly, nonatomic, getter=isPreviewing) BOOL previewing;
 - (void)setBounds:(struct CGRect)arg1;
 - (void)setSessionWithNoConnection:(id)arg1;
 @property(retain, nonatomic) AVCaptureSession *session;

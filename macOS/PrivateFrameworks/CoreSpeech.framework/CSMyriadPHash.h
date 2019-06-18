@@ -6,11 +6,7 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreSpeech/CSVoiceTriggerDelegate-Protocol.h>
-
-@class NSString;
-
-@interface CSMyriadPHash : NSObject <CSVoiceTriggerDelegate>
+@interface CSMyriadPHash : NSObject
 {
     float *_hammingWindow;
     struct OpaqueFFTSetup *_setup;
@@ -21,10 +17,12 @@
 }
 
 + (id)lastHash;
++ (void)setLastHash:(id)arg1;
 + (void)notifyAudioHashlessNotification;
 + (void)notifyAudioHashNotification;
 + (BOOL)writeHashResultIntoFile:(id)arg1;
 + (BOOL)writeHashlessResult:(unsigned long long)arg1;
++ (id)generateEmptyPHash:(unsigned long long)arg1;
 + (id)createHashResult:(unsigned short)arg1 goodness:(unsigned char)arg2 confidence:(unsigned char)arg3 absTime:(unsigned long long)arg4 frac:(unsigned char)arg5;
 + (void)notifyHashlessTrigger:(unsigned long long)arg1;
 + (id)currentMyriadPHash;
@@ -32,19 +30,13 @@
 @property(nonatomic) short signalEstimate; // @synthesize signalEstimate=_signalEstimate;
 - (void)voiceTriggerDidDetectSpeakerReject:(id)arg1;
 - (void)voiceTriggerDidDetectNearMiss:(id)arg1;
-- (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
+- (id)generatePHashFromVoiceTriggerInfo:(id)arg1;
 - (id)_audioLogDirectory;
 - (id)_generateMyriadInfo:(unsigned long long)arg1 score:(float)arg2 triggerSource:(id)arg3 channel:(unsigned long long)arg4 audioProviderUUID:(id)arg5 absoluteTime:(unsigned long long)arg6;
 - (id)cachedHash;
 - (unsigned short)pHash:(float *)arg1 length:(int)arg2;
 - (void)dealloc;
 - (id)init;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

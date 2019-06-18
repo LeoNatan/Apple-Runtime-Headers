@@ -14,19 +14,26 @@ __attribute__((visibility("hidden")))
 @interface CNHandleStringsContactPredicate : CNPredicate <CNCDContactPredicate>
 {
     NSArray *_handleStrings;
+    NSArray *_containerIdentifiers;
 }
 
 + (BOOL)supportsSecureCoding;
++ (id)phoneNumberSubpredicateWithHandles:(id)arg1;
++ (id)emailAddressSubpredicateWithHandles:(id)arg1;
++ (id)subpredicatesWithClassification:(id)arg1;
+@property(readonly, copy, nonatomic) NSArray *containerIdentifiers; // @synthesize containerIdentifiers=_containerIdentifiers;
 @property(readonly, copy, nonatomic) NSArray *handleStrings; // @synthesize handleStrings=_handleStrings;
 - (void).cxx_destruct;
-- (CDUnknownBlockType)cn_resultTransform;
+- (CDUnknownBlockType)cn_resultTransformWithMatchInfos:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)shortDebugDescription;
 @property(readonly, copy) NSString *description;
+- (id)initWithHandleStrings:(id)arg1 containerIdentifiers:(id)arg2;
 - (id)initWithHandleStrings:(id)arg1;
+- (id)init;
 - (id)cn_coreDataPredicate;
 
 // Remaining properties

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 + (id)alloc;
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)initialize;
++ (Class)classForKeyedUnarchiver;
 - (id)_pinnedObjectAtIndex:(unsigned long long)arg1;
 - (id)objectAtIndex:(unsigned long long)arg1;
 - (id)retainedObjectAtIndex:(unsigned long long)arg1;
@@ -74,6 +75,8 @@ __attribute__((visibility("hidden")))
 - (id)_newSubArrayInRange:(struct _NSRange)arg1 asMutable:(BOOL)arg2;
 - (BOOL)isEqualToArray:(id)arg1;
 - (id)initWithPFArray:(id)arg1 andRequest:(id)arg2 andContext:(id)arg3;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 
 @end
 

@@ -12,7 +12,6 @@
 {
     unsigned int _task;
     struct _CSTypeRef _symbolicator;
-    BOOL _targetUsesObjc2runtime;
     BOOL _needToValidateAddressRange;
     CDUnknownBlockType _memoryReader;
     VMUTaskMemoryScanner *_scanner;
@@ -121,7 +120,8 @@
 - (unsigned long long)addressOfSymbol:(const char *)arg1 inLibrary:(const char *)arg2;
 - (struct _VMURange)vmRegionRangeForAddress:(unsigned long long)arg1;
 - (unsigned long long)translateIsaPointer:(unsigned long long)arg1;
-- (void)findObjCclasses;
+- (void)setupIsaTranslator;
+- (void)findObjCAndSwiftClasses;
 - (void)findCFTypes;
 - (void)_faultClass:(unsigned long long)arg1 ofType:(unsigned int)arg2;
 - (id)_returnFaultedClass:(unsigned long long)arg1 ofType:(unsigned int)arg2;

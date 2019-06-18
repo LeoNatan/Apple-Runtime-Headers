@@ -8,19 +8,17 @@
 
 #import <LaunchServices/_CSVisualizationUnarchiverDelegate-Protocol.h>
 
-@class NSDictionary, NSMutableDictionary, NSPredicate, NSString;
+@class NSDictionary, NSMutableDictionary, NSString;
 
 __attribute__((visibility("hidden")))
 @interface _LSMachineReadableVisualizationUnarchiverDelegate : NSObject <_CSVisualizationUnarchiverDelegate>
 {
-    NSString *_tableNameToMatch;
-    NSPredicate *_queryPredicate;
     unsigned int _catalogID;
     NSMutableDictionary *_tableNames;
     NSMutableDictionary *_unitDescs;
+    NSString *_tableNameToMatch;
 }
 
-@property(copy) NSPredicate *queryPredicate; // @synthesize queryPredicate=_queryPredicate;
 @property(copy) NSString *tableNameToMatch; // @synthesize tableNameToMatch=_tableNameToMatch;
 - (void).cxx_destruct;
 @property(readonly) NSDictionary *loadedUnitDescriptions;

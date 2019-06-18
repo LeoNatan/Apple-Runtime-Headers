@@ -13,6 +13,7 @@
 @interface _UIMenuBarMenu : NSObject <UINSMenu>
 {
     NSArray *_items;
+    BOOL _menuChangeShouldRebuildMenu;
     long long type;
     NSString *_title;
 }
@@ -23,6 +24,7 @@
 + (BOOL)menuBarBuilt;
 + (void)setMenuBarBuilt:(BOOL)arg1;
 + (id)mainMenu;
+@property(nonatomic) BOOL menuChangeShouldRebuildMenu; // @synthesize menuChangeShouldRebuildMenu=_menuChangeShouldRebuildMenu;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) long long type; // @synthesize type;
 - (void).cxx_destruct;
@@ -35,6 +37,7 @@
 - (void)insertItems:(id)arg1 afterStandardItem:(id)arg2;
 - (void)insertItems:(id)arg1 atBeginningOfMenu:(id)arg2;
 - (void)insertMenu:(id)arg1 afterStandardMenu:(id)arg2;
+- (void)_recursivelySetMenuChangeShouldRebuildMenu;
 - (double)forwardingInterposableRunLoopTimeOut;
 
 // Remaining properties

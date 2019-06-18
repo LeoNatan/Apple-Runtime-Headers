@@ -34,6 +34,8 @@
 @property(copy, nonatomic) NSString *livePhotoVideoCodecType;
 @property(copy, nonatomic) NSURL *livePhotoMovieFileURL;
 @property(copy, nonatomic) NSDictionary *metadata;
+@property(nonatomic) BOOL embedsSemanticSegmentationMattesInPhoto;
+@property(copy, nonatomic) NSArray *enabledSemanticSegmentationMatteTypes;
 @property(nonatomic) BOOL embedsPortraitEffectsMatteInPhoto;
 @property(nonatomic, getter=isPortraitEffectsMatteDeliveryEnabled) BOOL portraitEffectsMatteDeliveryEnabled;
 @property(nonatomic, getter=isCameraCalibrationDataDeliveryEnabled) BOOL cameraCalibrationDataDeliveryEnabled;

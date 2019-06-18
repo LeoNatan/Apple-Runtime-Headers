@@ -11,12 +11,13 @@
 #import <PencilKit/PKPaletteViewSizeScaling-Protocol.h>
 #import <PencilKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString, PKInk, PKPaletteToolPickerOverlayView, PKPaletteToolView, UIScrollView, UIStackView, UIViewController;
+@class NSArray, NSMutableArray, NSString, NSTimer, PKInk, PKPaletteToolPickerOverlayView, PKPaletteToolView, UIScrollView, UIStackView, UIViewController;
 @protocol PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate;
 
 @interface PKPaletteToolPickerView : UIView <UIPopoverPresentationControllerDelegate, PKEdgeLocatable, PKPalettePopoverDismissing, PKPaletteViewSizeScaling>
 {
     BOOL _isRulerActive;
+    BOOL _presentingErasingToolAttributesPopover;
     unsigned long long _edgeLocation;
     double _scalingFactor;
     id <PKPalettePopoverPresenting><PKPaletteToolPickerViewDelegate> _delegate;
@@ -29,9 +30,12 @@
     NSMutableArray *_toolsWidthCompactConstraints;
     PKPaletteToolView *_lastSelectedTool;
     UIViewController *_presentedAttributePickerPopover;
+    NSTimer *_autodismissEraserAttributesPopoverTimer;
 }
 
 + (id)defaultToolIdentifiers;
+@property(nonatomic, getter=isPresentingErasingToolAttributesPopover) BOOL presentingErasingToolAttributesPopover; // @synthesize presentingErasingToolAttributesPopover=_presentingErasingToolAttributesPopover;
+@property(retain, nonatomic) NSTimer *autodismissEraserAttributesPopoverTimer; // @synthesize autodismissEraserAttributesPopoverTimer=_autodismissEraserAttributesPopoverTimer;
 @property(retain, nonatomic) UIViewController *presentedAttributePickerPopover; // @synthesize presentedAttributePickerPopover=_presentedAttributePickerPopover;
 @property(retain, nonatomic) PKPaletteToolView *lastSelectedTool; // @synthesize lastSelectedTool=_lastSelectedTool;
 @property(retain, nonatomic) NSMutableArray *toolsWidthCompactConstraints; // @synthesize toolsWidthCompactConstraints=_toolsWidthCompactConstraints;
@@ -49,6 +53,7 @@
 - (void)toggleBetweenLastSelectedToolAndCurrentlySelectedTool;
 - (void)toggleBetweenLastSelectedToolAndEraser;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
+- (void)_updateToolsScaleFactor;
 - (void)_updateUI;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)_toolAttributesDidChange:(id)arg1;
@@ -63,6 +68,7 @@
 - (void)setSelectedToolInkColor:(id)arg1;
 @property(retain, nonatomic) PKInk *selectedToolInk;
 - (void)setSelectedToolIdentifier:(id)arg1;
+- (id)_selectedToolView;
 - (void)_toolTapGestureRecognizer:(id)arg1;
 - (void)layoutSubviews;
 - (void)updateConstraints;

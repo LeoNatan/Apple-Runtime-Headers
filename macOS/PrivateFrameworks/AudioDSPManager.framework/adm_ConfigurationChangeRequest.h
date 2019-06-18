@@ -12,6 +12,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface adm_ConfigurationChangeRequest : NSObject <adm_JSONSerializable, NSSecureCoding, dspd_ConfigurationChangeRequest>
 {
     unsigned int session;

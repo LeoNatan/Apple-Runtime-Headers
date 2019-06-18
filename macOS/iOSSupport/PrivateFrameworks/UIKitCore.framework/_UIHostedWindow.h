@@ -33,7 +33,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic) __weak CAContext *layerContext;
 - (void)setFrame:(struct CGRect)arg1;
-- (id)_traitCollectionForSize:(struct CGSize)arg1 screenCollection:(id)arg2;
+- (id)_traitCollectionForSize:(struct CGSize)arg1 parentCollection:(id)arg2;
 - (void)_updateWindowTraitsAndNotify:(BOOL)arg1;
 - (BOOL)_shouldPropagateTraitCollectionChanges;
 - (BOOL)_allowsLinkPreviewInteractionInViewServices;

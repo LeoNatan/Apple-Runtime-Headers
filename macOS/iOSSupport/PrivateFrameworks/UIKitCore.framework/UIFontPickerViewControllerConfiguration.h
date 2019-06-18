@@ -8,25 +8,39 @@
 
 #import <UIKitCore/NSCopying-Protocol.h>
 #import <UIKitCore/NSSecureCoding-Protocol.h>
+#import <UIKitCore/UINSFontPickerControllerConfiguration-Protocol.h>
 
-@class UIColor;
+@class NSPredicate, NSString, UIColor;
 
-@interface UIFontPickerViewControllerConfiguration : NSObject <NSSecureCoding, NSCopying>
+@interface UIFontPickerViewControllerConfiguration : NSObject <NSSecureCoding, UINSFontPickerControllerConfiguration, NSCopying>
 {
     BOOL _includeFaces;
+    BOOL _displayUsingSystemFont;
     BOOL __hideSearchBar;
+    unsigned int _filteredTraits;
+    NSPredicate *_filteredLanguagesPredicate;
     UIColor *__tintColor;
 }
 
++ (id)filterPredicateForFilteredLanguages:(id)arg1;
 + (BOOL)supportsSecureCoding;
 @property(retain, nonatomic, setter=_setTintColor:) UIColor *_tintColor; // @synthesize _tintColor=__tintColor;
 @property(nonatomic, setter=_setHideSearchBar:) BOOL _hideSearchBar; // @synthesize _hideSearchBar=__hideSearchBar;
+@property(copy, nonatomic) NSPredicate *filteredLanguagesPredicate; // @synthesize filteredLanguagesPredicate=_filteredLanguagesPredicate;
+@property(nonatomic) unsigned int filteredTraits; // @synthesize filteredTraits=_filteredTraits;
+@property(nonatomic) BOOL displayUsingSystemFont; // @synthesize displayUsingSystemFont=_displayUsingSystemFont;
 @property(nonatomic) BOOL includeFaces; // @synthesize includeFaces=_includeFaces;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

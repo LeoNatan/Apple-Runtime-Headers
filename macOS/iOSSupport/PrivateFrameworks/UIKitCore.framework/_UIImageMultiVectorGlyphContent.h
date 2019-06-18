@@ -30,7 +30,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)canProvideFullResCGImage;
 - (BOOL)canProvideCGImage;
 - (BOOL)isCGImage;
-- (void)dealloc;
 - (id)initWithScale:(double)arg1;
 - (id)initWithSize:(struct CGSize)arg1 glyphs:(id)arg2 colors:(id)arg3 offsets:(id)arg4 scaleFactors:(id)arg5 anchorPoint:(struct CGPoint)arg6;
 

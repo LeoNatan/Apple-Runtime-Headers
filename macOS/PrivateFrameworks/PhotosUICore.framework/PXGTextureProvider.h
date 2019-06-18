@@ -54,7 +54,7 @@
 - (void)cancelTextureRequestDeferred:(int)arg1;
 - (void)didFinishRequestingTextures;
 - (void)cancelTextureRequests:(id)arg1;
-- (struct _NSRange)requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 geometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_3bc3b9c1 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4 inLayout:(id)arg5;
+- (struct _NSRange)requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 geometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_506f5052 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4 inLayout:(id)arg5;
 - (void)viewEnvironmentDidChange:(id)arg1;
 - (void)dealloc;
 - (id)init;

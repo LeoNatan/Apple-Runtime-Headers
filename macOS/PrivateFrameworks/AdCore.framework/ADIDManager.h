@@ -13,13 +13,13 @@
 @interface ADIDManager : ADSingleton <ADIDManager_XPC>
 {
     DSIDRecord *_activeDSIDRecord;
-    NSDictionary *_usageVectors;
     NSArray *_monthlyResetArray;
+    NSDictionary *_usageVectors;
 }
 
 + (id)sharedInstance;
-@property(retain) NSArray *monthlyResetArray; // @synthesize monthlyResetArray=_monthlyResetArray;
 @property(retain, nonatomic) NSDictionary *usageVectors; // @synthesize usageVectors=_usageVectors;
+@property(retain) NSArray *monthlyResetArray; // @synthesize monthlyResetArray=_monthlyResetArray;
 @property(retain) DSIDRecord *activeDSIDRecord; // @synthesize activeDSIDRecord=_activeDSIDRecord;
 - (void).cxx_destruct;
 - (id)retrieveDeviceIDs;
@@ -27,7 +27,6 @@
 - (id)deviceIdentifiers;
 - (void)reloadRecords:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)reloadRecords:(id)arg1;
-- (id)readUsageVectors:(id)arg1;
 - (id)dsidRecord:(id)arg1 fromDict:(id)arg2;
 @property(readonly, nonatomic) long long IDFAMonthResetCount;
 @property(readonly, nonatomic) NSString *IDFA;

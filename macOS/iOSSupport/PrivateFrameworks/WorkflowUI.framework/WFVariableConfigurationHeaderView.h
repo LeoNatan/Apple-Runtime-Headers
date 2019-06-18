@@ -16,6 +16,7 @@
     UIButton *_typeButton;
 }
 
++ (id)disclosureImage;
 @property(nonatomic) __weak UIButton *typeButton; // @synthesize typeButton=_typeButton;
 @property(nonatomic) __weak UIButton *titleButton; // @synthesize titleButton=_titleButton;
 @property(nonatomic) __weak id <WFVariableConfigurationHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;

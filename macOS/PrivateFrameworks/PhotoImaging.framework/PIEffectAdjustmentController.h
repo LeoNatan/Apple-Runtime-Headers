@@ -18,6 +18,7 @@
 @property(nonatomic) double intensity;
 @property(nonatomic) long long version;
 @property(copy, nonatomic) NSString *kind;
+- (BOOL)isSettingEqual:(id)arg1 forKey:(id)arg2;
 
 @end
 

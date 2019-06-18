@@ -51,6 +51,7 @@
 - (void)visibleIndicesChanged:(id)arg1 sender:(id)arg2;
 - (void)setCandidateGroups:(id)arg1;
 - (void)updateVisualElements;
+- (void)loadWindow;
 - (void)updateSortingBarView;
 - (void)updateListView;
 - (struct CGSize)proposedWindowSize;

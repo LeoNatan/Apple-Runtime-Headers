@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     UIView *_disclosureButton;
     NSLayoutConstraint *_imageToLabelConstraint;
     NSLayoutConstraint *_systemLabelToTopConstraint;
+    NSLayoutConstraint *_systemLabelToBottomConstraint;
     BOOL _showDisclosureButton;
     BOOL _expanded;
 }

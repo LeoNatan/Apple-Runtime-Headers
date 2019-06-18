@@ -16,13 +16,12 @@
 @property unsigned long long templateFileCount; // @synthesize templateFileCount=_templateFileCount;
 - (void)_updateFilesCopiedCount:(long long)arg1;
 - (BOOL)_symlinkSystemApplications:(id)arg1 toApplications:(id)arg2 linkedPaths:(id)arg3 error:(id *)arg4;
-- (BOOL)_moveBackJustUsersWithError:(id *)arg1;
-- (BOOL)_moveBackJustDeviceWithError:(id *)arg1;
+- (BOOL)_moveBackJustDataWithError:(id *)arg1;
 - (double)estimatedTimeToComplete;
 - (id)operationName;
 - (BOOL)_createFirmlinksWithError:(id *)arg1;
 - (BOOL)_operation:(unsigned int)arg1 withSource:(id)arg2 destination:(id)arg3 destinationFolderName:(id)arg4 error:(id *)arg5;
-- (BOOL)_installDeviceTemplateWithError:(id *)arg1;
+- (BOOL)_installDataTemplateWithError:(id *)arg1;
 - (BOOL)runReturningError:(id *)arg1;
 - (id)initWithOptions:(id)arg1;
 

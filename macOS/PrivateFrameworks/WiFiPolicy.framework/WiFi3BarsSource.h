@@ -8,7 +8,7 @@
 
 #import <WiFiPolicy/WiFiAvailabilitySource-Protocol.h>
 
-@class NSMutableDictionary, NSString, NSURL, TBDataSourceMediator;
+@class NSMutableDictionary, NSString, NSURL, TBDataSourceMediator, WiFi3BarsTileFetcher;
 @protocol OS_dispatch_queue;
 
 @interface WiFi3BarsSource : NSObject <WiFiAvailabilitySource>
@@ -19,8 +19,10 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSURL *_storeURL;
     TBDataSourceMediator *_sourceMediator;
+    WiFi3BarsTileFetcher *_tileFetcher;
 }
 
+@property(retain, nonatomic) WiFi3BarsTileFetcher *tileFetcher; // @synthesize tileFetcher=_tileFetcher;
 @property(retain, nonatomic) TBDataSourceMediator *sourceMediator; // @synthesize sourceMediator=_sourceMediator;
 @property(copy, nonatomic) NSURL *storeURL; // @synthesize storeURL=_storeURL;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
@@ -33,9 +35,10 @@
 - (void)forceFetch3BarsNetworkMatchingBSSID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)_matchSearchBSSIDs:(id)arg1 toResults:(id)arg2;
 - (void)fetchCandidateNetworksMatchingBSSIDs:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)fetch3BarsNetworksPredictedForLocation:(id)arg1 duration:(double)arg2 maxLocations:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)fetch3BarsNetworksPredictedFor:(id)arg1 duration:(double)arg2 maxLocations:(unsigned long long)arg3;
 - (void)_handleRemoteFetchResponse:(id)arg1;
-- (void)fetch3BarsNetworksForLocation:(id)arg1 forceRemote:(BOOL)arg2 trigger:(unsigned long long)arg3;
+- (void)fetch3BarsNetworksForLocation:(id)arg1 forceRemote:(BOOL)arg2 trigger:(unsigned long long)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)fetch3BarsNetworksFor:(id)arg1;
 - (id)initWithChangeHandler:(CDUnknownBlockType)arg1 localStoreType:(unsigned long long)arg2;
 

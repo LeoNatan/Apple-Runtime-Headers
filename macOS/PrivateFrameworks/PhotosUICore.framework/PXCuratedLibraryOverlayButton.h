@@ -6,11 +6,12 @@
 
 #import <UXKit/UXControl.h>
 
+#import <PhotosUICore/PXAccessibilityView-Protocol.h>
 #import <PhotosUICore/PXGReusableView-Protocol.h>
 
-@class NSVisualEffectView, PXCuratedLibraryOverlayButtonConfiguration, UXImageView, UXLabel, UXView;
+@class NSString, NSVisualEffectView, PXCuratedLibraryOverlayButtonConfiguration, UXImageView, UXLabel, UXView;
 
-@interface PXCuratedLibraryOverlayButton : UXControl <PXGReusableView>
+@interface PXCuratedLibraryOverlayButton : UXControl <PXGReusableView, PXAccessibilityView>
 {
     PXCuratedLibraryOverlayButtonConfiguration *_userData;
     NSVisualEffectView *_effectView;
@@ -32,6 +33,9 @@
 @property(nonatomic) struct CGRect clippingRect; // @synthesize clippingRect=_clippingRect;
 @property(copy, nonatomic) PXCuratedLibraryOverlayButtonConfiguration *userData; // @synthesize userData=_userData;
 - (void).cxx_destruct;
+- (id)accessibilityHitTest:(struct CGPoint)arg1;
+- (id)hitTest:(struct CGPoint)arg1;
+- (BOOL)isAccessibilityElement;
 - (void)viewDidChangeEffectiveAppearance;
 - (void)_updateEffectView;
 - (void)_updateEffectViewBackgroundStyle;
@@ -40,12 +44,21 @@
 - (void)_performAction:(id)arg1;
 - (void)_updateButtonWithConfiguration:(id)arg1;
 - (void)_setupViews;
+@property(readonly, copy, nonatomic) NSString *accessibilityRole;
+@property(readonly, copy, nonatomic) NSString *accessibilityLabel;
+@property(readonly, nonatomic) BOOL isContainedInAsset;
+@property(readonly, nonatomic) BOOL isAccessible;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)layoutSubviews;
-- (id)description;
+@property(readonly, copy) NSString *description;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

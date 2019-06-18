@@ -6,9 +6,10 @@
 
 #import <LinkPresentation/NSObject-Protocol.h>
 
-@class LPLinkMetadataPresentationTransformer, LPWebLinkPresentationProperties;
+@class LPLinkMetadataPresentationTransformer, LPWebLinkPresentationProperties, NSURL;
 
 @protocol LPLinkMetadataPresentationTransformer <NSObject>
+- (BOOL)canGeneratePresentationPropertiesForURL:(NSURL *)arg1;
 - (LPWebLinkPresentationProperties *)presentationPropertiesForTransformer:(LPLinkMetadataPresentationTransformer *)arg1;
 @end
 

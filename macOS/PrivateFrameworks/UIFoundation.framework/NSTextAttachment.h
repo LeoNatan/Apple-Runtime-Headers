@@ -23,6 +23,7 @@
         unsigned int _allowsTextAttachmentView:1;
         unsigned int _embeddingType:4;
         unsigned int _standaloneAlignment:3;
+        unsigned int _allocatesTextContainer:1;
     } _taFlags;
     NSImage *_image;
     NSTextAttachmentView *_wrapperView;
@@ -79,6 +80,8 @@
 - (id)initWithFileWrapper:(id)arg1;
 - (id)init;
 - (id)initWithData:(id)arg1 ofType:(id)arg2;
+- (void)_setAllocatesTextContainer:(BOOL)arg1;
+- (BOOL)_allocatesTextContainer;
 - (id)_image;
 - (id)_cacheKey;
 - (id)_imageForUTI_iOS:(id)arg1;

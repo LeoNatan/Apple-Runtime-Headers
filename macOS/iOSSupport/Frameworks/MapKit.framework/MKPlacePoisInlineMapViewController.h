@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)visibleMapItems;
 - (void)viewDidLoad;
 - (void)loadView;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

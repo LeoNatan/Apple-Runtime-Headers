@@ -17,15 +17,15 @@
     id <FCHeadlineClusterOrdering> _headlineClusterOrderer;
 }
 
++ (id)groupEmitterIdentifier;
 @property(retain, nonatomic) id <FCHeadlineClusterOrdering> headlineClusterOrderer; // @synthesize headlineClusterOrderer=_headlineClusterOrderer;
 @property(retain, nonatomic) id <FCHeadlineClustering> headlineClusterer; // @synthesize headlineClusterer=_headlineClusterer;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) long long requiredForYouContentTypes;
 - (BOOL)canMergeHeadlinesFromGroup:(id)arg1 intoGroup:(id)arg2;
 - (BOOL)supportsPagination;
-@property(readonly, copy, nonatomic) NSString *groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
-- (BOOL)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
+- (BOOL)wantsToInsertGroupInContext:(id)arg1;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (BOOL)wantsToEmitGroupInContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (id)initWithHeadlineClusterer:(id)arg1 headlineClusterOrderer:(id)arg2;

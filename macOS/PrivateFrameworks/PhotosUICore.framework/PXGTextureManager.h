@@ -17,7 +17,7 @@
     NSObject<OS_dispatch_queue> *_processQueue;
     NSObject<OS_dispatch_queue> *_deallocationsQueue;
     struct os_unfair_lock_s _lookupLock;
-    NSMapTable *_lookupLock_textureByKeyByPresentationType[2];
+    NSMapTable *_lookupLock_textureByKeyByPresentationType[3];
     struct unordered_map<int, PXGRequestDetails, std::__1::hash<int>, std::__1::equal_to<int>, std::__1::allocator<std::__1::pair<const int, PXGRequestDetails>>> _lookupLock_requestDetailsByRequestID;
     NSHashTable *_spriteTexturesInUse;
     NSDictionary *_textureConverterByPresentationType;

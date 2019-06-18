@@ -13,7 +13,6 @@
 }
 
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (id)initWithSceneLayer:(id)arg1;
 
 // Remaining properties
 @property(nonatomic) double alpha; // @dynamic alpha;

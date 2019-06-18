@@ -30,10 +30,9 @@
 + (id)notificationDeliveryQueue;
 + (Class)itemClass;
 + (unsigned short)_videoComplementVisibilityForAsset:(id)arg1;
-+ (long long)videoComplementEnableStatusForAsset:(id)arg1;
 + (BOOL)shouldShowVideoComplementForAsset:(id)arg1;
++ (long long)videoComplementEnableStatusForAsset:(id)arg1;
 + (long long)videoComplementEnableStatusForVisibilityState:(unsigned short)arg1 asset:(id)arg2;
-+ (BOOL)showVideoComplementForVisibilityState:(unsigned short)arg1;
 @property(retain) id <NUImageProperties> imageProperties; // @synthesize imageProperties=_imageProperties;
 @property(retain) id <PAAdjustmentFactory> adjustmentFactory; // @synthesize adjustmentFactory=_adjustmentFactory;
 - (void).cxx_destruct;
@@ -49,8 +48,10 @@
 - (void)_finishCommitNoAdjustmentsSwitchSource:(id)arg1 contentEditingInput:(id)arg2 originalChoice:(unsigned long long)arg3 renderDescription:(id)arg4 composition:(id)arg5 workQueue:(id)arg6 error:(id)arg7 queue:(id)arg8 completion:(CDUnknownBlockType)arg9;
 - (void)_commitEditingToAsset:(id)arg1 contentEditingInput:(id)arg2 renderDescription:(id)arg3 composition:(id)arg4 workQueue:(id)arg5 queue:(id)arg6 completion:(CDUnknownBlockType)arg7;
 - (void)commitEditingToAsset:(id)arg1 contentEditingInput:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_didResetEditing;
 - (void)resetEditingWithContentEditingInput:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)beginEditingWithContentEditingInput:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_beginEditing:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)beginEditing:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)unadjustedComposition:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)assetComposition;
@@ -74,7 +75,6 @@
 - (void)descriptionEditController:(id)arg1 compositionEndInteractive:(id)arg2 key:(id)arg3;
 - (void)descriptionEditController:(id)arg1 compositionBeginInteractive:(id)arg2 key:(id)arg3;
 - (void)descriptionEditController:(id)arg1 compositionChanged:(id)arg2 key:(id)arg3;
-- (long long)videoComplementEnableStatus;
 - (BOOL)shouldShowVideoComplement;
 @property BOOL hideVideoComplement;
 - (BOOL)_editingInputHasVideoComplement;

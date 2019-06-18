@@ -8,6 +8,7 @@
 
 @interface MPSMatrix (Utils)
 - (void)resetReadCount;
+- (void)decrementReadCount;
 - (void)incrementReadCount;
 @end
 

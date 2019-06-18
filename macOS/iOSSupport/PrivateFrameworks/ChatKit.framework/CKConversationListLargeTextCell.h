@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     UIColor *_unreadIndicatorColor;
 }
 
++ (double)cellHeight;
 + (id)hyphenationParagraphStyle;
 + (id)identifierForConversation:(id)arg1;
 @property(retain, nonatomic) UIColor *unreadIndicatorColor; // @synthesize unreadIndicatorColor=_unreadIndicatorColor;
@@ -32,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (void)updateUnreadIndicatorWithImage:(id)arg1 tintColor:(id)arg2;
 - (void)updateFromLabelWithText:(id)arg1;
 - (void)contentSizeCategoryDidChange;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithStyle:(long long)arg1 reuseIdentifier:(id)arg2;
 
 @end

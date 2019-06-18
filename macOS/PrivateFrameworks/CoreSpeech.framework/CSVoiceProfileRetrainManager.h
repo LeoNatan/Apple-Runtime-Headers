@@ -8,9 +8,13 @@
 
 @interface CSVoiceProfileRetrainManager : NSObject
 {
+    unsigned long long _maxAllowedImplicitUtterances;
+    unsigned long long _satVectorCount;
 }
 
 + (id)sharedInstance;
+@property(nonatomic) unsigned long long satVectorCount; // @synthesize satVectorCount=_satVectorCount;
+@property(nonatomic) unsigned long long maxAllowedImplicitUtterances; // @synthesize maxAllowedImplicitUtterances=_maxAllowedImplicitUtterances;
 - (BOOL)isRetrainerRunning;
 
 @end

@@ -60,6 +60,7 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_gestureRecognizerFailed:(id)arg1;
+- (BOOL)_isControlledByCC;
 - (void)_endInteractionEffectIfNeeded;
 - (id)_clickDriverTouch;
 - (void)_prepareInteractionEffect;
@@ -81,6 +82,7 @@
 - (void)_attemptDragLiftAtLocation:(struct CGPoint)arg1 useDefaultLiftAnimation:(BOOL)arg2;
 - (id)_clickDragDriver;
 - (void)_associateWithActiveDragInteraction;
+- (unsigned long long)_clickInteractionDefaultDriverType:(id)arg1;
 - (void)clickInteractionDidClickUp:(id)arg1;
 - (void)clickInteractionDidClickDown:(id)arg1;
 - (id)highlightEffectForClickInteraction:(id)arg1;

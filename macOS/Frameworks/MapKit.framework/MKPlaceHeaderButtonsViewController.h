@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidLoad;
 - (void)_commonInit;
 - (id)init;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

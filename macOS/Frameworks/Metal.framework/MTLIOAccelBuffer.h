@@ -6,6 +6,8 @@
 
 #import <Metal/MTLIOAccelResource.h>
 
+@protocol MTLBuffer;
+
 @interface MTLIOAccelBuffer : MTLIOAccelResource
 {
     void *_pointer;
@@ -20,6 +22,8 @@
 
 @property(readonly) struct __IOSurface *iosurface; // @synthesize iosurface=_iosurface;
 @property(readonly) unsigned long long length;
+- (id)newRemoteBufferViewForDevice:(id)arg1;
+@property(readonly) id <MTLBuffer> remoteStorageBuffer;
 - (id)initStandinWithDevice:(id)arg1 bytesNoCopy:(void *)arg2 length:(unsigned long long)arg3 deallocator:(CDUnknownBlockType)arg4;
 - (struct __CFArray *)copyAnnotations;
 - (void)didModifyRange:(struct _NSRange)arg1;
@@ -27,6 +31,7 @@
 - (void)addDebugMarker:(id)arg1 range:(struct _NSRange)arg2;
 @property(readonly, nonatomic) void *contents;
 - (void)dealloc;
+- (id)initWithDevice:(id)arg1 remoteStorageBuffer:(id)arg2 args:(struct IOAccelNewResourceArgs *)arg3 argsSize:(unsigned int)arg4;
 - (id)initWithDevice:(id)arg1 iosurface:(struct __IOSurface *)arg2 args:(struct IOAccelNewResourceArgs *)arg3 argsSize:(unsigned int)arg4;
 - (id)initWithMasterBuffer:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(unsigned long long)arg4 length:(unsigned long long)arg5 args:(struct IOAccelNewResourceArgs *)arg6 argsSize:(unsigned int)arg7;
 - (id)initWithHeap:(id)arg1 resource:(id)arg2 offset:(unsigned long long)arg3 length:(unsigned long long)arg4;

@@ -55,7 +55,6 @@
 @property(readonly, getter=isEncrypted) BOOL encrypted;
 - (unsigned long long)filesystemType;
 - (BOOL)isCaseSensitive;
-- (id)pairedDataVolume;
 - (id)primaryIdentifier;
 - (void)determineDiskType;
 - (void)initPrimaryIdentifier;

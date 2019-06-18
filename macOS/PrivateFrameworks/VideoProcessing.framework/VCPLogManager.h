@@ -11,6 +11,7 @@
     int _logLevel;
 }
 
++ (id)dateFormatter;
 + (id)sharedLogManager;
 @property(readonly) int logLevel; // @synthesize logLevel=_logLevel;
 - (id)init;

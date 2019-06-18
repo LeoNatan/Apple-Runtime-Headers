@@ -53,6 +53,7 @@
 - (id)getLogBlacklist;
 - (void)onceConfig;
 - (void)saveToPath:(id)arg1;
+- (void)plumbEmail:(id)arg1;
 - (id)internalKey;
 - (id)currentTaskingIDByRouting;
 - (id)seedGroup;

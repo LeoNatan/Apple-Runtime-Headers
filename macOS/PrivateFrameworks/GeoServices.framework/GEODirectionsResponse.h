@@ -6,11 +6,12 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
+#import <GeoServices/GEOCompanionCompatibility-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
 @class GEOAlert, GEOClientMetrics, GEOETAServiceResponseSummary, GEOPBTransitRoutingIncidentMessage, GEOPDDatasetABStatus, GEORouteDisplayHints, GEOSnapScoreMetadata, GEOStyleAttributes, GEOTransitDecoderData, GEOTransitRouteUpdateConfiguration, NSData, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
-@interface GEODirectionsResponse : PBCodable <NSCopying>
+@interface GEODirectionsResponse : PBCodable <GEOCompanionCompatibility, NSCopying>
 {
     PBDataReader *_reader;
     CDStruct_158f0f88 _readerMark;
@@ -161,7 +162,7 @@
 - (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
@@ -169,7 +170,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, copy) NSString *description;
 @property(retain, nonatomic) NSString *transitDataVersion;
 @property(readonly, nonatomic) BOOL hasTransitDataVersion;
 - (void)_readTransitDataVersion;
@@ -324,7 +325,12 @@
 - (void)dealloc;
 - (id)_destinationMapItem;
 - (id)initWithDictionaryRepresentation:(id)arg1;
+- (id)instanceCompatibleWithProtocolVersion:(unsigned long long)arg1;
 - (void)clearLocations;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

@@ -65,6 +65,7 @@ __attribute__((visibility("hidden")))
 - (struct CGRect)caretRectAtEndOfDocument;
 - (struct CGRect)caretRect;
 - (id)selectionRects;
+@property(readonly, nonatomic) BOOL willSelectionChange;
 - (void)commit;
 - (void)selectionChanged;
 - (void)dealloc;

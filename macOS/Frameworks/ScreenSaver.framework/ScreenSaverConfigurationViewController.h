@@ -17,6 +17,7 @@
 - (void)configureSheetWillPresent;
 - (void)configureSheetDidEnd;
 - (unsigned long long)awakeFromRemoteView;
+- (void)dealloc;
 
 @end
 

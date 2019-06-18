@@ -44,6 +44,7 @@
     CLLocation *_lastLocation;
     BOOL _forcesConeIndicator;
     long long _headingIndicatorStyle;
+    double _headingOffset;
 }
 
 + (double)outerRingWidth;
@@ -51,6 +52,7 @@
 + (double)baseDiameter;
 + (unsigned long long)_selectedZIndex;
 + (unsigned long long)_zIndex;
+@property(nonatomic) double headingOffset; // @synthesize headingOffset=_headingOffset;
 @property(nonatomic) BOOL rotateInnerImageToMatchCourse; // @synthesize rotateInnerImageToMatchCourse=_rotateInnerImageToMatchCourse;
 @property(retain, nonatomic) UIImage *innerImageMask; // @synthesize innerImageMask=_innerImageMask;
 @property(nonatomic) BOOL shouldShowOuterRing; // @synthesize shouldShowOuterRing=_shouldShowOuterRing;
@@ -81,6 +83,7 @@
 - (void)_setTracking:(BOOL)arg1;
 - (id)_vkNavigationPuckMarker;
 - (void)_setVKNavigationPuckMarker:(id)arg1;
+- (void)_setHeading:(double)arg1 headingOffset:(double)arg2;
 - (void)_updateShowHeadingLayer:(BOOL)arg1 animatedIfPossible:(BOOL)arg2;
 - (void)_updateShowHeadingLayerAnimatedIfPossible:(BOOL)arg1;
 - (void)_updateShowHeadingLayer;

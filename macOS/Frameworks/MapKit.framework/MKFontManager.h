@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) NSFont *sectionHeaderButtonFont;
 @property(readonly, nonatomic) NSFont *sectionHeaderFont;
 @property(readonly, nonatomic) NSFont *mediumBodyFont;
+@property(readonly, nonatomic) NSFont *mediumTitleFont;
 @property(readonly, nonatomic) NSFont *boldBodyFont;
 @property(readonly, nonatomic) NSFont *bodyFont;
 @property(readonly, nonatomic) NSFont *subtitleFont;

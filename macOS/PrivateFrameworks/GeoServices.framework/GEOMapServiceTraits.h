@@ -65,6 +65,7 @@
     BOOL _deviceInVehicle;
     BOOL _isAPICall;
     BOOL _isRedoSearch;
+    BOOL _isRefund;
     BOOL _isSettlement;
     BOOL _navigating;
     BOOL _supportChildItems;
@@ -100,6 +101,7 @@
         unsigned int has_deviceInVehicle:1;
         unsigned int has_isAPICall:1;
         unsigned int has_isRedoSearch:1;
+        unsigned int has_isRefund:1;
         unsigned int has_isSettlement:1;
         unsigned int has_navigating:1;
         unsigned int has_supportChildItems:1;
@@ -190,6 +192,7 @@
         unsigned int wrote_deviceInVehicle:1;
         unsigned int wrote_isAPICall:1;
         unsigned int wrote_isRedoSearch:1;
+        unsigned int wrote_isRefund:1;
         unsigned int wrote_isSettlement:1;
         unsigned int wrote_navigating:1;
         unsigned int wrote_supportChildItems:1;
@@ -222,6 +225,8 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIsRefund;
+@property(nonatomic) BOOL isRefund;
 @property(nonatomic) BOOL hasSupportChildItems;
 @property(nonatomic) BOOL supportChildItems;
 - (int)StringAsSupportedChildActions:(id)arg1;

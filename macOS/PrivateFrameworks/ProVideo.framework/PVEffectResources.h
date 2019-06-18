@@ -12,6 +12,7 @@
 
 + (id)utObserver;
 + (void)setUTObserver:(id)arg1;
++ (void)shutdownEngine;
 + (void)flushEngine;
 + (void)clearAllCachesAndPools;
 + (void)applicationWillTerminate;

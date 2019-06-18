@@ -139,11 +139,13 @@
 @property(nonatomic) short imageFilterType; // @dynamic imageFilterType;
 @property(retain, nonatomic) ICNote *note; // @dynamic note;
 - (id)defaultTitle;
+- (BOOL)preferLocalPreviewImages;
 - (BOOL)previewsSupportMultipleAppearances;
 - (BOOL)supportsRenaming;
 - (BOOL)isTable;
 - (BOOL)isChildOfDocumentGallery;
 - (BOOL)isNews;
+- (BOOL)isDrawing;
 - (BOOL)isAppStore;
 - (BOOL)isiTunes;
 - (BOOL)isMap;
@@ -160,7 +162,6 @@
 - (void)dealloc;
 - (void)resetUniqueIdentifier;
 - (void)updatePreviewsFromRecord:(id)arg1;
-- (BOOL)preferLocalPreviewImages;
 - (void)objectWasFetchedFromCloudWithRecord:(id)arg1 accountID:(id)arg2;
 - (void)updateParentReferenceIfNecessary;
 - (BOOL)supportsDeletionByTTL;
@@ -205,7 +206,8 @@
 - (id)inlineDrawingModel;
 - (id)galleryModel;
 - (id)drawingModel;
-- (id)attachmentPreviewImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 matchScaleAndAppearance:(BOOL)arg4;
+- (id)attachmentPreviewImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 matchScale:(BOOL)arg4 matchAppearance:(BOOL)arg5;
+- (id)attachmentPreviewImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3 requireAppearance:(BOOL)arg4;
 - (id)attachmentPreviewImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2 appearanceType:(unsigned long long)arg3;
 - (id)attachmentPreviewImageWithMinSize:(struct CGSize)arg1 scale:(double)arg2;
 - (id)attachmentPreviewImageCreatingIfNecessaryWithWidth:(double)arg1 height:(double)arg2 scale:(double)arg3 appearanceType:(unsigned long long)arg4 scaleWhenDrawing:(BOOL)arg5 metadata:(id)arg6;

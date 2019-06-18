@@ -28,6 +28,8 @@
 @property(copy, nonatomic) NSString *originatingDeviceIdsIdentifier;
 @property(nonatomic) BOOL hasIsPrimaryDisplayDisabled;
 @property(nonatomic) BOOL isPrimaryDisplayDisabled;
+@property(nonatomic) BOOL hasIsOwnedByCurrentUser;
+@property(nonatomic) BOOL isOwnedByCurrentUser;
 @property(readonly, nonatomic) BOOL hasIntentId;
 @property(copy, nonatomic) NSString *intentId;
 @property(readonly, nonatomic) BOOL hasIntentDescription;

@@ -6,11 +6,12 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
+#import <GeoServices/GEOServerConditionalString-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOCondition, GEOFormattedString, PBDataReader, PBUnknownFields;
+@class GEOCondition, GEOFormattedString, NSString, PBDataReader, PBUnknownFields;
 
-@interface GEOConditionalFormattedString : PBCodable <NSCopying>
+@interface GEOConditionalFormattedString : PBCodable <GEOServerConditionalString, NSCopying>
 {
     PBDataReader *_reader;
     CDStruct_158f0f88 _readerMark;
@@ -32,7 +33,7 @@
 - (void)clearUnknownFields:(BOOL)arg1;
 @property(readonly, nonatomic) PBUnknownFields *unknownFields;
 - (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
@@ -40,13 +41,17 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, copy) NSString *description;
 @property(retain, nonatomic) GEOCondition *condition;
 @property(readonly, nonatomic) BOOL hasCondition;
 - (void)_readCondition;
 @property(retain, nonatomic) GEOFormattedString *formattedString;
 @property(readonly, nonatomic) BOOL hasFormattedString;
 - (void)_readFormattedString;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

@@ -43,6 +43,7 @@
 - (void).cxx_destruct;
 - (void)filloutPayloads;
 - (void)gatherPayloads;
+- (id)validateEAPOnlyAuthentication:(id)arg1;
 - (id)validateAuthPart2AsResponderCopyErrorForIKESA:(id)arg1 childSA:(id)arg2;
 - (id)validateAuthPart1AsResponderCopyErrorForIKESA:(id)arg1;
 - (BOOL)validateAuthAsInitiator:(id)arg1 childSA:(id)arg2;

@@ -4,10 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSFileHandle, NSProgress, NSString;
+@class CKRecordID, NSFileHandle, NSProgress, NSString;
 @protocol ICDBRItemNotificationReceiving;
 
 @protocol BRFrameworkServiceV1
+- (void)copyCurrentUserNameAndDisplayHandleWithReply:(void (^)(NSPersonNameComponents *, NSString *, NSError *))arg1;
+- (void)fetchURLForRecordID:(CKRecordID *)arg1 completion:(void (^)(FPSandboxingURLWrapper *, NSError *))arg2;
 - (void)resolveCrossDeviceBookmarkData:(NSString *)arg1 completion:(void (^)(FPSandboxingURLWrapper *, NSError *))arg2;
 - (void)printStatus:(NSFileHandle *)arg1 containerID:(NSString *)arg2 reply:(void (^)(BOOL, NSError *))arg3;
 - (void)forceSyncContainerID:(NSString *)arg1 reply:(void (^)(NSError *))arg2;

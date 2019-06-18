@@ -11,7 +11,7 @@
 #import <ReplayKit/UINavigationControllerDelegate-Protocol.h>
 #import <ReplayKit/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSDate, NSString, NSURL, RPAppAudioCaptureManager, RPBroadcastController, RPPipViewController, UIView, UIWindow;
+@class NSString, NSURL, RPAppAudioCaptureManager, RPBroadcastController, RPPipViewController, UIView, UIWindow;
 @protocol RPScreenRecorderDelegate, RPScreenRecorderPrivateDelegate, ReplayKitMacHelper;
 
 @interface RPScreenRecorder : NSObject <RPPreviewViewControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate, ReplayKitMacHelperDelegate>
@@ -34,10 +34,6 @@
     UIWindow *_windowToRecord;
     RPPipViewController *_pipViewController;
     CDUnknownBlockType _saveVideoToCameraRollCompletionBlock;
-    NSDate *_systemRecordingControlCenterStartClipStartTime;
-    NSDate *_systemRecordingControlCenterStartClipEndTime;
-    NSDate *_systemRecordingControlCenterEndClipStartTime;
-    NSDate *_systemRecordingControlCenterEndClipEndTime;
     CDUnknownBlockType _captureHandler;
     RPAppAudioCaptureManager *_appAudioCaptureManager;
     id <ReplayKitMacHelper> _replayKitMacHelper;
@@ -58,10 +54,6 @@
 @property(copy, nonatomic) CDUnknownBlockType captureHandler; // @synthesize captureHandler=_captureHandler;
 @property(nonatomic) BOOL hasUserConsentForMicrophone; // @synthesize hasUserConsentForMicrophone=_hasUserConsentForMicrophone;
 @property(nonatomic) BOOL hasUserConsentForCamera; // @synthesize hasUserConsentForCamera=_hasUserConsentForCamera;
-@property(retain, nonatomic) NSDate *systemRecordingControlCenterEndClipEndTime; // @synthesize systemRecordingControlCenterEndClipEndTime=_systemRecordingControlCenterEndClipEndTime;
-@property(retain, nonatomic) NSDate *systemRecordingControlCenterEndClipStartTime; // @synthesize systemRecordingControlCenterEndClipStartTime=_systemRecordingControlCenterEndClipStartTime;
-@property(retain, nonatomic) NSDate *systemRecordingControlCenterStartClipEndTime; // @synthesize systemRecordingControlCenterStartClipEndTime=_systemRecordingControlCenterStartClipEndTime;
-@property(retain, nonatomic) NSDate *systemRecordingControlCenterStartClipStartTime; // @synthesize systemRecordingControlCenterStartClipStartTime=_systemRecordingControlCenterStartClipStartTime;
 @property(copy, nonatomic) CDUnknownBlockType saveVideoToCameraRollCompletionBlock; // @synthesize saveVideoToCameraRollCompletionBlock=_saveVideoToCameraRollCompletionBlock;
 @property(retain, nonatomic) RPPipViewController *pipViewController; // @synthesize pipViewController=_pipViewController;
 @property(retain, nonatomic) UIWindow *windowToRecord; // @synthesize windowToRecord=_windowToRecord;
@@ -88,7 +80,8 @@
 - (void)controlCenterDidDismiss;
 - (void)controlCenterWillPresent;
 - (BOOL)screenRecordingSupportedOnDevice;
-- (void)updateRecordingAvailability;
+- (void)updateRecordingAvailabilityWithHandler:(CDUnknownBlockType)arg1;
+- (void)updateRecordingAvailability:(id)arg1;
 - (void)notifyDelegateOfUpdatedState;
 - (void)notifyDelegateOfRecorderAvailability;
 - (void)resumeRecording;
@@ -119,6 +112,7 @@
 - (struct CGSize)currentWindowSize;
 - (id)applicationWindow;
 - (void)dealloc;
+- (id)processQueue;
 - (id)videoQueue;
 - (id)audioQueue;
 - (void)setMicrophoneEnabledPersistent:(BOOL)arg1;

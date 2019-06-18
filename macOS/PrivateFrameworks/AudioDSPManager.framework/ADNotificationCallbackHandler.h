@@ -10,6 +10,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface ADNotificationCallbackHandler : NSObject <ADNotificationHandler>
 {
     CDUnknownBlockType _callback;

@@ -54,6 +54,7 @@ __attribute__((visibility("hidden")))
 - (void)fullCloudSynchronizeForAppIdentifier:(struct __CFString *)arg1 container:(struct __CFString *)arg2 configurationURL:(struct __CFURL *)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)addSuitePreferences:(struct __CFString *)arg1 toAppIdentifier:(struct __CFString *)arg2 container:(struct __CFString *)arg3;
 - (void)setAccessRestricted:(BOOL)arg1 forAppIdentifier:(struct __CFString *)arg2;
+- (void)simulateTimerSynchronizeForTestingForUser:(struct __CFString *)arg1;
 - (void)flushCachesForAppIdentifier:(struct __CFString *)arg1 user:(struct __CFString *)arg2;
 - (void)notifyOfImpendingDeletionOfUser:(struct __CFString *)arg1;
 - (void)setDaemonCacheEnabled:(BOOL)arg1 identifier:(struct __CFString *)arg2 user:(struct __CFString *)arg3 host:(struct __CFString *)arg4 container:(struct __CFString *)arg5;

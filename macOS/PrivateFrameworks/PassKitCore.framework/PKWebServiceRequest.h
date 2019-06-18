@@ -6,14 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@interface PKWebServiceRequest : NSObject
+#import <PassKitCore/NSSecureCoding-Protocol.h>
+
+@class NSString;
+
+@interface PKWebServiceRequest : NSObject <NSSecureCoding>
 {
+    NSString *_boundInterfaceIdentifier;
 }
 
 + (id)_HTTPBodyWithDictionary:(id)arg1;
++ (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSString *boundInterfaceIdentifier; // @synthesize boundInterfaceIdentifier=_boundInterfaceIdentifier;
+- (void).cxx_destruct;
 - (id)_murlRequestWithServiceURL:(id)arg1 endpointComponents:(id)arg2 queryParameters:(id)arg3 appleAccountInformation:(id)arg4;
 - (id)_murlRequestWithURL:(id)arg1 appleAccountInformation:(id)arg2;
 - (id)_murlRequestWithURL:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end
 

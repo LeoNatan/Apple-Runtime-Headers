@@ -6,7 +6,7 @@
 
 #import <Metal/_MTLDevice.h>
 
-@class MTLIOAccelDeviceShmemPool, MTLIOAccelService, MTLIOMemoryInfo, MTLResourceListPool, NSObject;
+@class MTLIOAccelDeviceShmemPool, MTLIOAccelService, MTLIOMemoryInfo, MTLResourceListPool, NSLock, NSObject;
 @protocol MTLDeviceSPI, OS_dispatch_queue, OS_dispatch_source;
 
 @interface MTLIOAccelDevice : _MTLDevice
@@ -32,6 +32,15 @@
     unsigned int _accelID;
     int _numCommandBuffers;
     unsigned long long _segmentByteThreshold;
+    unsigned long long _peerGroupID;
+    unsigned int _peerIndex;
+    unsigned int _peerCount;
+    unsigned int _peerMask;
+    NSLock *_peerConnectionsLock;
+    struct {
+        MTLIOAccelDevice *device;
+        int refCount;
+    } _peerConnections[4];
     struct MTLIOAccelBufferHeap _bufferHeaps[16];
     NSObject<OS_dispatch_queue> *_device_dispatch_queue;
     NSObject<OS_dispatch_queue> *_device_pool_cleanup_queue;
@@ -44,11 +53,20 @@
     unsigned long long *_fenceAllocationBitmap;
     Class _bufferClass;
     unsigned long long _registryID;
+    unsigned long long _location;
+    unsigned long long _locationNumber;
+    unsigned long long _maxTransferRate;
     id <MTLDeviceSPI> _deviceWrapper;
 }
 
 + (void)registerDevices;
 + (void)registerAcceleratorService:(id)arg1;
+@property(readonly) unsigned long long maxTransferRate; // @synthesize maxTransferRate=_maxTransferRate;
+@property(readonly) unsigned long long locationNumber; // @synthesize locationNumber=_locationNumber;
+@property(readonly) unsigned long long location; // @synthesize location=_location;
+@property(readonly) unsigned int peerCount; // @synthesize peerCount=_peerCount;
+@property(readonly) unsigned int peerIndex; // @synthesize peerIndex=_peerIndex;
+@property(readonly) unsigned long long peerGroupID; // @synthesize peerGroupID=_peerGroupID;
 @property(readonly) unsigned int acceleratorPort; // @synthesize acceleratorPort=_acceleratorPort;
 @property(readonly) int numCommandBuffers; // @synthesize numCommandBuffers=_numCommandBuffers;
 - (void).cxx_destruct;
@@ -58,6 +76,8 @@
 - (void)_setDeviceWrapper:(id)arg1;
 - (void)updateResourcePoolPurgeability;
 - (void)kickCleanupQueue;
+- (void)releasePeerConnection:(id)arg1;
+- (BOOL)retainPeerConnection:(id)arg1;
 - (unsigned long long)maxBufferLength;
 - (id)newEvent;
 - (void)_removeResource:(id)arg1;
@@ -80,6 +100,12 @@
 - (id)allocBufferSubDataWithLength:(unsigned long long)arg1 options:(unsigned long long)arg2 alignment:(unsigned long long)arg3 heapIndex:(short *)arg4 bufferIndex:(short *)arg5 bufferOffset:(unsigned long long *)arg6;
 - (short)heapIndexWithOptions:(unsigned long long)arg1;
 @property(readonly, getter=areProgrammableSamplePositionsSupported) BOOL programmableSamplePositionsSupported;
+- (void)updateGPUSelectionProperties;
+- (void)getBuiltInGPUProperties:(unsigned long long *)arg1 transferRate:(unsigned long long *)arg2;
+- (void)getExternalGPUProperties:(unsigned long long *)arg1 transferRate:(unsigned long long *)arg2;
+- (void)getSlottedGPUProperties:(unsigned long long *)arg1 transferRate:(unsigned long long *)arg2;
+- (BOOL)isSlotted;
+- (BOOL)isBuiltIn;
 @property(readonly) BOOL hasUnifiedMemory;
 @property(readonly, getter=isRemovable) BOOL removable;
 @property(readonly, getter=isHeadless) BOOL headless;

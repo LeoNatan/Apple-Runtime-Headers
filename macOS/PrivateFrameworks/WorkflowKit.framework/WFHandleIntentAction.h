@@ -53,10 +53,12 @@
 - (void)generatePopulatedIntentFromInput:(id)arg1 processedParameters:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)generatedIntentWithInput:(id)arg1 error:(id *)arg2;
 - (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
-- (long long)intentCategory;
+@property(readonly, nonatomic) long long intentCategory;
 - (BOOL)opensInApp;
 - (BOOL)showsWhenRun;
+- (BOOL)requiresShowsWhenRun;
 - (void)wasAddedToWorkflowByUser:(id)arg1;
+- (id)parameterKeysIgnoredForParameterSummary;
 - (BOOL)skipsProcessingHiddenParameters;
 - (void)cancel;
 - (void)finishRunningWithError:(id)arg1;

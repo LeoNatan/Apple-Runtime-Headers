@@ -10,8 +10,10 @@
 @protocol OS_dispatch_queue, UINSAlert, UINSCursor, UINSDocumentBrowserViewController, UINSDocumentPickerViewController, UINSDragSessionHandler, UINSToolbar, UINSTouchBarCoordinator;
 
 @protocol UINSWindow <NSObject>
+@property(readonly, nonatomic) BOOL appearsKeyIncludingSheets;
 @property(readonly, nonatomic) BOOL appearsKey;
 @property(readonly) NSISEngine *_layoutEngine;
+@property(nonatomic) long long windowAppearance;
 @property(readonly, copy, nonatomic) NSString *sceneIdentifier;
 @property(nonatomic, getter=isTitlebarTransparent) BOOL titlebarTransparent;
 @property(nonatomic, getter=isTitlebarHidden) BOOL titlebarHidden;
@@ -43,6 +45,5 @@
 - (void)markTouchBarAsDirty;
 - (void)toolbarCreatingIfNeeded:(BOOL)arg1 completionQueue:(NSObject<OS_dispatch_queue> *)arg2 completionHandler:(void (^)(id <UINSToolbar>, NSError *))arg3;
 - (void)acceptKeyViewHandoff:(BOOL)arg1 completionQueue:(NSObject<OS_dispatch_queue> *)arg2 completionHandler:(void (^)(BOOL))arg3;
-- (void)noteFocusRingMaskChanged;
 @end
 

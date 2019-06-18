@@ -121,7 +121,6 @@
 - (void)getSizeClass:(out long long *)arg1 sizeSubclass:(out long long *)arg2;
 - (void)getLayoutDirection:(out long long *)arg1;
 - (struct NSObject *)createTraitCollection;
-- (struct CGSize)viewSize;
 
 @end
 

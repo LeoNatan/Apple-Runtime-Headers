@@ -43,7 +43,6 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (void)_updateTopSpace;
 - (void)_applyHeaderFontStyling;
-- (id)_showMoreOrLessMenuItemTitle;
 - (void)setContentHeight:(double)arg1 animated:(BOOL)arg2;
 - (void)_updateExpandButtonTitle;
 - (void)_toggleExpansion:(id)arg1;

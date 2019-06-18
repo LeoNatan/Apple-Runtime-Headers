@@ -27,6 +27,7 @@
 - (id)printableTextContent;
 - (id)attachmentAsNSTextAttachment;
 - (id)contents;
+- (void)updatePaletteVisibility;
 - (void)detachView;
 - (void)saveIfNeeded;
 - (BOOL)canDragWithoutSelecting;

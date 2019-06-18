@@ -50,6 +50,7 @@
 - (id)_accessibilityActiveKeyboard;
 - (id)_remoteElementWithAttribute:(long long)arg1 limitToRemoteSubviews:(BOOL)arg2;
 - (void)getLeafElementsFromRemoteSide:(CDUnknownBlockType)arg1;
+- (void)_getRemoteValuesOffMainThread:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) unsigned long long uuidHash;
 - (void)dealloc;
 - (id)_accessibilityTextViewTextOperationResponder;

@@ -432,7 +432,6 @@
 - (long long)cellFillMode;
 - (struct CGSize)imageRequestItemPixelSize;
 - (struct CGSize)imageRequestItemSize;
-- (struct CGSize)_maximumThumbnailSize;
 - (id)assetAtIndexPathIfSafe:(id)arg1;
 - (id)assetAtIndexPath:(id)arg1;
 - (id)assetsInAssetCollection:(id)arg1;

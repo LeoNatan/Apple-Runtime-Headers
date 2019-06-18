@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MNNavigationAudioSession, NSBundle, NSCache, NSHashTable, NSLocale, NSString;
+@class MNNavigationAudioSession, NSBundle, NSHashTable, NSLocale, NSString;
 
 @interface MNVoiceController : NSObject
 {
@@ -18,7 +18,6 @@
     BOOL _isPersistentConnectionOpen;
     long long _audioSessionState;
     NSHashTable *_observers;
-    NSCache *_speechDuration;
     double _lastSpeechStartTime;
     NSString *_lastSpeech;
     unsigned long long _charactersSpokenCount;
@@ -30,11 +29,11 @@
 + (id)localizedStringForKey:(id)arg1;
 + (id)sharedInstance;
 @property(readonly, nonatomic) BOOL deviceMuted; // @synthesize deviceMuted=_deviceMuted;
-@property(retain, nonatomic) MNNavigationAudioSession *activeNavigationSession; // @synthesize activeNavigationSession=_activeNavigationSession;
 - (void).cxx_destruct;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (void)_setMaintainInactivePersistentConnection:(BOOL)arg1;
+@property(retain) MNNavigationAudioSession *activeNavigationSession; // @synthesize activeNavigationSession=_activeNavigationSession;
 - (void)setAudioSessionProperties;
 - (void)setVolume:(double)arg1;
 - (void)endAnnounce;
@@ -47,7 +46,7 @@
 - (void)stop;
 - (void)speak:(id)arg1 fallbackPrompt:(unsigned long long)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)exactDurationToSpeak:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (double)estimateDurationToSpeak:(id)arg1;
+- (double)_estimateDurationToSpeak:(id)arg1;
 - (double)durationToSpeak:(id)arg1;
 - (void)_setGender;
 - (void)_defaultsDidChange;

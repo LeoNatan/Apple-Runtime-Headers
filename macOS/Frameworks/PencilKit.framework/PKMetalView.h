@@ -6,7 +6,7 @@
 
 #import <AppKit/NSView.h>
 
-@class CAMetalLayer, PKDisplayLink, PKInternalDrawingView;
+@class CAMetalLayer, PKDisplayLink;
 
 @interface PKMetalView : NSView
 {
@@ -14,7 +14,6 @@
     BOOL _isFixedPixelSize;
     BOOL _doubleBuffered;
     PKDisplayLink *_displayLink;
-    PKInternalDrawingView *_drawingView;
     struct CGSize _fixedPixelSize;
 }
 
@@ -23,7 +22,6 @@
 @property(readonly, nonatomic) struct CGSize fixedPixelSize; // @synthesize fixedPixelSize=_fixedPixelSize;
 @property(readonly, nonatomic) BOOL isFixedPixelSize; // @synthesize isFixedPixelSize=_isFixedPixelSize;
 @property(readonly, nonatomic) BOOL isWideGamut; // @synthesize isWideGamut=_isWideGamut;
-@property(nonatomic) __weak PKInternalDrawingView *drawingView; // @synthesize drawingView=_drawingView;
 @property(nonatomic) __weak PKDisplayLink *displayLink; // @synthesize displayLink=_displayLink;
 - (void).cxx_destruct;
 - (void)flushDrawables;

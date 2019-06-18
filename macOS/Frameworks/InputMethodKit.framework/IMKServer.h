@@ -131,6 +131,7 @@
 - (void)performDelayedEndpointCheckin:(id)arg1;
 - (void)registerIMKXPCEndpointWithLaunchAgent;
 - (BOOL)_createConnection;
+- (struct __CFString *)privateRunLoopMode;
 - (oneway void)ironwoodPlaceholderWasInvalidated:(id)arg1;
 - (oneway void)ironwoodTextWasCorrected:(id)arg1;
 - (oneway void)sendInputSessionSessAction:(unsigned int)arg1 timestamp:(double)arg2 withInfo:(id)arg3;

@@ -21,12 +21,14 @@ __attribute__((visibility("hidden")))
     NSString *_markedInput;
     long long _modifierFlags;
     NSString *_privateInput;
+    long long _privateModifierFlags;
     NSString *_hint;
 }
 
 + (id)_eventWithInput:(id)arg1 inputFlags:(int)arg2;
 @property(nonatomic, getter=_isExternalEvent) BOOL _externalEvent; // @synthesize _externalEvent=__externalEvent;
 @property(retain, nonatomic) NSString *_hint; // @synthesize _hint;
+@property(nonatomic) long long _privateModifierFlags; // @synthesize _privateModifierFlags;
 @property(retain, nonatomic) NSString *_privateInput; // @synthesize _privateInput;
 @property(nonatomic) int _inputFlags; // @synthesize _inputFlags;
 @property(nonatomic) long long _modifierFlags; // @synthesize _modifierFlags;

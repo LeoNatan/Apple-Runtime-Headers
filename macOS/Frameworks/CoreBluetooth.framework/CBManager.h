@@ -15,6 +15,7 @@
 {
     CBXpcConnection *_connection;
     CBPairingAgent *_pairingAgent;
+    BOOL _tccComplete;
     long long _state;
     long long _authorization;
     NSData *_advertisingAddress;
@@ -25,6 +26,7 @@
 @property(readonly) NSString *localName; // @synthesize localName=_localName;
 @property(readonly) NSString *localAddressString; // @synthesize localAddressString=_localAddressString;
 @property(copy, nonatomic) NSData *advertisingAddress; // @synthesize advertisingAddress=_advertisingAddress;
+@property(nonatomic) BOOL tccComplete; // @synthesize tccComplete=_tccComplete;
 @property(nonatomic) long long authorization; // @synthesize authorization=_authorization;
 @property(nonatomic) long long state; // @synthesize state=_state;
 - (void).cxx_destruct;
@@ -39,6 +41,7 @@
 - (BOOL)isMsgAllowedWhenOff:(unsigned short)arg1;
 - (void)handlePairingAgentMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)handleStateUpdatedMsg:(id)arg1;
+- (void)doneWithTCC;
 - (id)sendSyncMsg:(unsigned short)arg1 args:(id)arg2;
 - (void)_handleAdvertisingAddressChanged:(id)arg1;
 - (void)closeL2CAPChannelForPeerUUID:(id)arg1 withPsm:(unsigned short)arg2;

@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)setHidden:(BOOL)arg1;
 
 @end
 

@@ -8,21 +8,18 @@
 
 #import <EmailDaemon/NSCopying-Protocol.h>
 
-@class EDPETQuotaReachedEvent, EDPETSubmittedEvent, NSData, NSMutableArray;
+@class EDPETQuotaReachedEvent, EDPETSubmittedEvent, NSData;
 
 @interface EDPETBatchedWrapper : PBCodable <NSCopying>
 {
-    NSData *_eventData;
-    NSMutableArray *_interactionEvents;
     EDPETQuotaReachedEvent *_quotaEvent;
+    NSData *_rawData;
     EDPETSubmittedEvent *_submittedEvent;
 }
 
-+ (Class)interactionEventsType;
-@property(retain, nonatomic) NSData *eventData; // @synthesize eventData=_eventData;
+@property(retain, nonatomic) NSData *rawData; // @synthesize rawData=_rawData;
 @property(retain, nonatomic) EDPETSubmittedEvent *submittedEvent; // @synthesize submittedEvent=_submittedEvent;
 @property(retain, nonatomic) EDPETQuotaReachedEvent *quotaEvent; // @synthesize quotaEvent=_quotaEvent;
-@property(retain, nonatomic) NSMutableArray *interactionEvents; // @synthesize interactionEvents=_interactionEvents;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
 - (unsigned long long)hash;
@@ -33,13 +30,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
-@property(readonly, nonatomic) BOOL hasEventData;
+@property(readonly, nonatomic) BOOL hasRawData;
 @property(readonly, nonatomic) BOOL hasSubmittedEvent;
 @property(readonly, nonatomic) BOOL hasQuotaEvent;
-- (id)interactionEventsAtIndex:(unsigned long long)arg1;
-- (unsigned long long)interactionEventsCount;
-- (void)addInteractionEvents:(id)arg1;
-- (void)clearInteractionEvents;
 
 @end
 

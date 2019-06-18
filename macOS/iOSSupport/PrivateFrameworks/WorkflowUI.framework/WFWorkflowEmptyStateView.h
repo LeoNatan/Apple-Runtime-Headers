@@ -19,8 +19,12 @@
     UIButton *_faqButton;
     UIButton *_addButton;
     NSLayoutConstraint *_addButtonHeightConstraint;
+    NSLayoutConstraint *_faqToAddButtonConstraint;
+    NSLayoutConstraint *_faqToInstructionLabelConstraint;
 }
 
+@property(readonly, nonatomic) NSLayoutConstraint *faqToInstructionLabelConstraint; // @synthesize faqToInstructionLabelConstraint=_faqToInstructionLabelConstraint;
+@property(readonly, nonatomic) NSLayoutConstraint *faqToAddButtonConstraint; // @synthesize faqToAddButtonConstraint=_faqToAddButtonConstraint;
 @property(readonly, nonatomic) NSLayoutConstraint *addButtonHeightConstraint; // @synthesize addButtonHeightConstraint=_addButtonHeightConstraint;
 @property(readonly, nonatomic) UIButton *addButton; // @synthesize addButton=_addButton;
 @property(readonly, nonatomic) UIButton *faqButton; // @synthesize faqButton=_faqButton;
@@ -34,6 +38,7 @@
 - (void)showDrawer;
 - (void)showHelp;
 - (void)showTutorial;
+- (void)adoptTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateFontSizes;
 - (id)initWithWorkflow:(id)arg1 forNewWorkflow:(BOOL)arg2;

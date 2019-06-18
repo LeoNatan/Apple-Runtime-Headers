@@ -55,7 +55,6 @@
     BOOL _showsTravelTime;
     BOOL _reduceLayoutProcessingForAnimation;
     BOOL _touchesAreBeingTracked;
-    BOOL _originalEventLocationIsPrediction;
     NSObject<EKDayOccurrenceViewDelegate> *_delegate;
     EKDayOccurrenceView *_selectedCopy;
     EKEvent *_occurrence;
@@ -65,7 +64,6 @@
     long long _occurrenceBackgroundStyle;
     double _bottomPinningProximity;
     double _topYBoundaryForText;
-    NSString *_originalEventLocation;
     struct UIEdgeInsets _margin;
     struct CGRect _contentRect;
 }
@@ -79,10 +77,6 @@
 + (double)minNaturalTextHeightForEvent:(id)arg1 usingSmallText:(BOOL)arg2 sizeClass:(long long)arg3;
 + (id)_color:(id)arg1 darkenedToPercentage:(double)arg2 withFinalAlpha:(double)arg3;
 + (id)_color:(id)arg1 lightenedToPercentage:(double)arg2 withFinalAlpha:(double)arg3;
-+ (id)_cachedLocationForEventID:(id)arg1;
-+ (void)_clearCacheForEventID:(id)arg1;
-+ (void)_cacheLocation:(id)arg1 forEventID:(id)arg2;
-+ (id)_recentlyDisplayedLocations;
 + (id)imageForExternalDragOperationFromEvent:(id)arg1;
 + (id)framePathForExternalDragOperationWithSize:(struct CGSize)arg1;
 + (struct CGRect)contentStretchRectForFrame:(struct CGRect)arg1;
@@ -94,8 +88,6 @@
 + (void)clearCaches;
 + (void)_clearViewCache;
 + (id)_viewCache;
-@property(copy, nonatomic) NSString *originalEventLocation; // @synthesize originalEventLocation=_originalEventLocation;
-@property(nonatomic) BOOL originalEventLocationIsPrediction; // @synthesize originalEventLocationIsPrediction=_originalEventLocationIsPrediction;
 @property(nonatomic) BOOL touchesAreBeingTracked; // @synthesize touchesAreBeingTracked=_touchesAreBeingTracked;
 @property(readonly, nonatomic) EKDayOccurrenceState *currentImageState; // @synthesize currentImageState=_currentImageState;
 @property(nonatomic) double topYBoundaryForText; // @synthesize topYBoundaryForText=_topYBoundaryForText;
@@ -179,7 +171,6 @@
 - (void)setAllDayDrawingStyle:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)hasIcon;
 - (void)_invalidateContentBounds;
-- (id)combineLocationStringWithProposeNewTimeString:(id)arg1;
 @property(nonatomic) long long routingMode;
 @property(nonatomic) struct UIEdgeInsets padding;
 - (void)_removeTravelTimeSubviews;

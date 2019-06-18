@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <PencilKit/PKPaletteViewAutoHideActionDelegate-Protocol.h>
+@class PKPaletteView, UIView;
 
-@class UIView;
-
-@protocol PKPaletteViewInternalDelegate <PKPaletteViewAutoHideActionDelegate>
+@protocol PKPaletteViewInternalDelegate
 @property(readonly, nonatomic) UIView *hostingView;
+- (struct CGSize)regularPaletteSize;
 - (BOOL)isDraggingPalette;
+- (void)paletteView:(PKPaletteView *)arg1 didChangeAnnotationSupport:(BOOL)arg2;
+- (void)paletteView:(PKPaletteView *)arg1 didToggleAutoHideOption:(BOOL)arg2;
 @end
 

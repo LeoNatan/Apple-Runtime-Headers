@@ -62,6 +62,10 @@
 @property BOOL networkAvailable; // @synthesize networkAvailable=_networkAvailable;
 @property(retain, nonatomic) NSObject<OS_os_log> *log; // @synthesize log=_log;
 - (void).cxx_destruct;
+- (void)logServerCallOfType:(id)arg1 withPublicIdentifier:(id)arg2 withPrivateIdentifier:(id)arg3 withResponse:(id)arg4;
+- (void)logServerCallOfType:(id)arg1 withPrivateIdentifier:(id)arg2 withResponse:(id)arg3;
+- (void)logServerCallOfType:(id)arg1 withPublicIdentifier:(id)arg2 withResponse:(id)arg3;
+- (void)logServerCallOfType:(id)arg1 withResponse:(id)arg2;
 - (id)sendEWSRequest:(id)arg1 error:(id *)arg2;
 - (id)createChangeItemForDeleteFolder:(id)arg1 itemType:(long long)arg2;
 - (id)createChangeItemForDeleteFolderType:(id)arg1 itemType:(long long)arg2;

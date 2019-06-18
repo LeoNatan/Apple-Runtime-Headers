@@ -16,9 +16,6 @@
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (id)logMsgEventForClientACKeypressWithQuery:(id)arg1 queryTokens:(id)arg2 acSuggestionEntries:(id)arg3 keyPressStatus:(int)arg4;
-- (id)logMsgEventForClientACResponseWithQuery:(id)arg1 queryTokens:(id)arg2 acSuggestionEntries:(id)arg3;
-- (id)logMsgEventForClientACSuggestionsWithQuery:(id)arg1 queryTokens:(id)arg2 acSuggestionEntries:(id)arg3 selectedIndex:(int)arg4;
 - (id)logMsgEventForTelemetricWithEntities:(id)arg1;
 - (id)logMsgEventForTelemetricWithEventKey:(int)arg1 eventValue:(unsigned long long)arg2 eventDetail:(id)arg3;
 - (id)logMsgEventForFullNavTraceWithData:(id)arg1;
@@ -30,13 +27,11 @@
 - (id)logMsgEventForCommuteDoomWindow:(id)arg1 exitTime:(id)arg2 destinations:(id)arg3 reason:(long long)arg4 networkRequests:(unsigned long long)arg5 alerts:(unsigned long long)arg6;
 - (id)logMsgEventForProactiveSuggestionInteractionForType:(int)arg1 items:(id)arg2 interactedWithItemIndex:(int)arg3 forDuration:(double)arg4;
 - (id)logMsgsEventForMapsWidgetsInteractionForType:(int)arg1 endState:(int)arg2 widgetSpecificObject:(id)arg3 wasLocked:(BOOL)arg4 startDate:(id)arg5 forDuration:(double)arg6;
-- (id)logMsgEventForRefineSearchSessionOfType:(int)arg1 refineSearchType:(int)arg2 suggestionItems:(id)arg3 searchString:(id)arg4;
 - (id)logMsgEventForLogFrameworkMetricType:(int)arg1 metricState:(int)arg2 purgeReason:(int)arg3 logMessageType:(int)arg4;
 - (id)logMsgEventForLogFrameworkMetricType:(int)arg1 metricState:(int)arg2 purgeReason:(int)arg3 logCollectionRequest:(id)arg4;
 - (id)logMsgEventForTimeToLeaveIntialTravelTime:(double)arg1;
 - (id)logMsgEventForTimeToLeaveHypothesisWithEarlyDepartureDelta:(double)arg1 lateDepartureDelta:(double)arg2 earlyArrivalDelta:(double)arg3 lateArrivalDelta:(double)arg4 rerouteCount:(unsigned long long)arg5 uiNotification:(int)arg6;
 - (id)logMsgEventForTransitAppLaunchWithBundleId:(id)arg1 sourceLocation:(id)arg2 destinationLocation:(id)arg3 userSessionSnapshot:(id)arg4;
-- (id)logMsgEventForCacheHitWithCacheType:(int)arg1 cacheHitCount:(unsigned int)arg2 cacheMissCount:(unsigned int)arg3;
 - (id)logMsgEventForGenericAppErrorDomain:(id)arg1 appErrorCode:(long long)arg2;
 - (id)logMsgEventForTileSetState:(int)arg1 newCoverage:(double)arg2 oldCoverage:(double)arg3 seconds:(double)arg4;
 - (id)logMsgEventForStateTransition:(id)arg1 generateOnlyIfStateChanged:(BOOL)arg2 userSessionSnapshot:(id)arg3;

@@ -16,8 +16,8 @@
 - (void)addTag:(id)arg1;
 - (void)setMaxCPUUsageLimits:(id)arg1 forRole:(unsigned char)arg2;
 - (void)removeAllInheritances;
-- (void)removeInheritance:(id)arg1 fromEnvironment:(id)arg2;
-- (void)addInheritance:(id)arg1 forEnvironment:(id)arg2;
+- (void)removeInheritance:(id)arg1;
+- (void)addInheritance:(id)arg1;
 - (void)setThrottleBestEffortNetworking:(BOOL)arg1;
 - (void)setRole:(unsigned char)arg1;
 - (void)setPreventLaunch:(BOOL)arg1;

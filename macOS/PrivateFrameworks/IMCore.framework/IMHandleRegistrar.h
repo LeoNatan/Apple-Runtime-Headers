@@ -38,7 +38,7 @@
 - (void)registerIMHandle:(id)arg1;
 - (id)CNIDToHandlesMap;
 - (void)clearCNIDToHandlesMap;
-- (void)removeHandleFromCNIDMap:(id)arg1;
+- (void)removeHandleFromCNIDMap:(id)arg1 withCNID:(id)arg2;
 - (id)handlesForCNIdentifier:(id)arg1;
 - (void)addHandleToCNIDMap:(id)arg1 CNContact:(id)arg2;
 - (void)_clearSiblingsCacheForIMHandle:(id)arg1 rebuildAfter:(BOOL)arg2;

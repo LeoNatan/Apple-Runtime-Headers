@@ -19,6 +19,7 @@
 @property(readonly, retain, nonatomic) MTLDebugInstrumentationData *debugInstrumentationData;
 @property(readonly) unsigned long long uniqueIdentifier;
 @property(nonatomic) unsigned long long resourceIndex;
+- (unsigned int)getComputeKernelTelemetryID;
 @property(readonly) unsigned long long staticThreadgroupMemoryLength;
 @property(readonly) unsigned long long threadExecutionWidth;
 @property(readonly) unsigned long long maxTotalThreadsPerThreadgroup;

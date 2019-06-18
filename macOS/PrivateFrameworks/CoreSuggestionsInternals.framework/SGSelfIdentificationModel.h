@@ -10,7 +10,6 @@
 {
 }
 
-+ (id)temporaryKeyMap;
 + (id)newTransformerInstanceForLanguage:(id)arg1;
 
 @end

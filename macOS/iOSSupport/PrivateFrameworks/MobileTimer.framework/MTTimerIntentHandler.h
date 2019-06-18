@@ -6,13 +6,15 @@
 
 #import <objc/NSObject.h>
 
-@protocol MTTimerManagerProviding;
+@protocol MTTimerManagerIntentSupport, MTTimerManagerProviding;
 
 @interface MTTimerIntentHandler : NSObject
 {
     id <MTTimerManagerProviding> _timerManagerProvider;
+    id <MTTimerManagerIntentSupport> _timerManager;
 }
 
+@property(retain, nonatomic) id <MTTimerManagerIntentSupport> timerManager; // @synthesize timerManager=_timerManager;
 @property(nonatomic) __weak id <MTTimerManagerProviding> timerManagerProvider; // @synthesize timerManagerProvider=_timerManagerProvider;
 - (void).cxx_destruct;
 - (BOOL)_isDefaultTimer:(id)arg1;

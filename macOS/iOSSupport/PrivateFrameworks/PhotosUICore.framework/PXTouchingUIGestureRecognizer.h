@@ -10,6 +10,7 @@
 
 @interface PXTouchingUIGestureRecognizer : UIGestureRecognizer
 {
+    BOOL __willBegin;
     BOOL __didBegin;
     double _minimumTouchDuration;
     double _maximumTouchMovement;
@@ -21,6 +22,7 @@
 
 @property(nonatomic, setter=_setInitialPointInView:) struct CGPoint _initialPointInView; // @synthesize _initialPointInView=__initialPointInView;
 @property(nonatomic, setter=_setDidBegin:) BOOL _didBegin; // @synthesize _didBegin=__didBegin;
+@property(nonatomic, setter=_setWillBegin:) BOOL _willBegin; // @synthesize _willBegin=__willBegin;
 @property(nonatomic, setter=_setBeginRequestID:) unsigned long long _beginRequestID; // @synthesize _beginRequestID=__beginRequestID;
 @property(nonatomic, setter=_setTouchCount:) unsigned long long _touchCount; // @synthesize _touchCount=__touchCount;
 @property(nonatomic) __weak id <PXTouchingUIGestureRecognizerDelegate> touchDelegate; // @synthesize touchDelegate=_touchDelegate;

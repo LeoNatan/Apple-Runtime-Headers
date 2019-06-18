@@ -22,7 +22,6 @@
 - (id)placeholderName;
 - (id)preferredSendingAddress;
 - (id)recentContact;
-- (BOOL)isRemovableFromSearchResults;
 - (id)initWithRecentContact:(id)arg1;
 
 @end

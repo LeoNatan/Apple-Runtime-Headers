@@ -10,7 +10,7 @@
 #import <AOSUI/MMServicePreflightProtocol-Protocol.h>
 #import <AOSUI/MMWebKitViewControllerDelegate-Protocol.h>
 
-@class CPSConfigurationClient, MMLinkTextField, MMPromptForLocalSecret, MMWebKitViewController, NSButton, NSImageView, NSLayoutConstraint, NSMutableDictionary, NSProgressIndicator, NSString, NSTextField, NSWindow;
+@class CPSConfigurationClient, MMPromptForLocalSecret, MMWebKitViewController, NSMutableDictionary, NSString;
 
 @interface MMMediaStreamService : MMService <MMWebKitViewControllerDelegate, MMLinkTextFieldDelegate, MMServicePreflightProtocol>
 {
@@ -18,20 +18,6 @@
     BOOL _hasCheckedQuota;
     BOOL _hasCheckedRampedState;
     BOOL _didEncounterLoadError;
-    NSWindow *_photoStreamOptionsSheet;
-    NSImageView *_photoStreamOptionsIcon;
-    NSButton *_icloudPhotosCheckbox;
-    MMLinkTextField *_icloudPhotosMessage;
-    NSLayoutConstraint *_icloudPhotosMessageLeftCheckboxConstraint;
-    NSLayoutConstraint *_icloudPhotosMessageLeftIconConstraint;
-    NSButton *_classicPhotoStreamCheckbox;
-    NSTextField *_classicPhotoStreamMessage;
-    NSButton *_sharedPhotoStreamCheckbox;
-    NSTextField *_sharedPhotoStreamMessage;
-    NSImageView *_iCloudPhotosWarningIcon;
-    NSTextField *_iCloudPhotosProgressMessage;
-    NSProgressIndicator *_iCloudPhotosProgressIndicator;
-    NSButton *_sharedPhotoStreamConfirmButton;
     long long _enableOverride;
     NSString *_infoButtonURLString;
     NSMutableDictionary *_cachedExitingStatus;
@@ -47,20 +33,6 @@
 @property long long enableOverride; // @synthesize enableOverride=_enableOverride;
 @property BOOL hasCheckedRampedState; // @synthesize hasCheckedRampedState=_hasCheckedRampedState;
 @property(retain) MMWebKitViewController *webKitViewController; // @synthesize webKitViewController=_webKitViewController;
-@property __weak NSButton *sharedPhotoStreamConfirmButton; // @synthesize sharedPhotoStreamConfirmButton=_sharedPhotoStreamConfirmButton;
-@property __weak NSProgressIndicator *iCloudPhotosProgressIndicator; // @synthesize iCloudPhotosProgressIndicator=_iCloudPhotosProgressIndicator;
-@property __weak NSTextField *iCloudPhotosProgressMessage; // @synthesize iCloudPhotosProgressMessage=_iCloudPhotosProgressMessage;
-@property __weak NSImageView *iCloudPhotosWarningIcon; // @synthesize iCloudPhotosWarningIcon=_iCloudPhotosWarningIcon;
-@property __weak NSTextField *sharedPhotoStreamMessage; // @synthesize sharedPhotoStreamMessage=_sharedPhotoStreamMessage;
-@property __weak NSButton *sharedPhotoStreamCheckbox; // @synthesize sharedPhotoStreamCheckbox=_sharedPhotoStreamCheckbox;
-@property __weak NSTextField *classicPhotoStreamMessage; // @synthesize classicPhotoStreamMessage=_classicPhotoStreamMessage;
-@property __weak NSButton *classicPhotoStreamCheckbox; // @synthesize classicPhotoStreamCheckbox=_classicPhotoStreamCheckbox;
-@property __weak NSLayoutConstraint *icloudPhotosMessageLeftIconConstraint; // @synthesize icloudPhotosMessageLeftIconConstraint=_icloudPhotosMessageLeftIconConstraint;
-@property __weak NSLayoutConstraint *icloudPhotosMessageLeftCheckboxConstraint; // @synthesize icloudPhotosMessageLeftCheckboxConstraint=_icloudPhotosMessageLeftCheckboxConstraint;
-@property __weak MMLinkTextField *icloudPhotosMessage; // @synthesize icloudPhotosMessage=_icloudPhotosMessage;
-@property __weak NSButton *icloudPhotosCheckbox; // @synthesize icloudPhotosCheckbox=_icloudPhotosCheckbox;
-@property __weak NSImageView *photoStreamOptionsIcon; // @synthesize photoStreamOptionsIcon=_photoStreamOptionsIcon;
-@property(retain) NSWindow *photoStreamOptionsSheet; // @synthesize photoStreamOptionsSheet=_photoStreamOptionsSheet;
 - (void).cxx_destruct;
 - (id)_simulateHasReferencedFiles;
 - (id)_simulateMediaServiceExitType;
@@ -89,7 +61,6 @@
 - (id)rampedStateString;
 - (id)sharedLocalSecretPrompt;
 - (id)sharedConfigurationClient;
-- (void)loadNibsIfNeeded;
 - (id)_photoLibraryReferencedFilesCount;
 - (id)_isExiting;
 - (id)_rampedState;
@@ -97,23 +68,13 @@
 - (BOOL)_isQuotaExceeded;
 - (long long)_willLibraryExceedQuota:(id)arg1 storageAvailable:(id *)arg2;
 - (id)iCloudPhotoLibraryStorage:(id)arg1;
-- (BOOL)_isiCloudStoredAvailable;
 - (id)_photoLibraryStatusInformation;
 - (id)_photoLibraryCountOfUndownloadedAssets:(id *)arg1;
 - (id)_photoLibraryExitInterval;
 - (BOOL)_photoLibraryNotConnected;
 - (BOOL)_photoLibraryHasThumbnailsOnly;
 - (BOOL)_isPhotoLibraryOnHFSVolume;
-- (BOOL)_isSharedPhotoStreamEnabled;
-- (BOOL)_isiCloudPhotoLibraryEnabled;
-- (BOOL)_isClassicPhotoSteamEnabled;
 - (BOOL)_hasUnimportedPhotos;
-- (void)setProgressEnabled:(BOOL)arg1;
-- (void)setiCloudPhotosCheckboxEnabled:(BOOL)arg1 includeMessage:(BOOL)arg2;
-- (void)setiCloudPhotosEnabled;
-- (void)SharedStreamsSelected:(id)arg1;
-- (void)MyPhotoStreamSelected:(id)arg1;
-- (void)iCloudPhotosSelected:(id)arg1;
 - (void)showEnableExceedsVolumeSizeSheet:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)showDisableConfirmationSheet:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)showInsufficentDownloadSpaceSheet:(unsigned long long)arg1;
@@ -129,26 +90,13 @@
 - (void)showiCloudPhotoLibraryReferencedFilesSheet:(id)arg1;
 - (void)showiCloudPhotoLibraryHFSWarning;
 - (void)showiCloudPhotoLibraryRampStateDialog;
-- (void)endPhotoSteamOptionsSheet:(id)arg1;
-- (void)showStreamOptionsSheet:(id)arg1;
-- (void)removeMyPhotoStreamCheckbox;
-- (void)removeiCloudPhotoLibraryCheckbox;
-- (void)showWarningIcon:(BOOL)arg1;
-- (void)_updatePhotoStreamOptionsUI;
-- (void)_updateUI;
 - (void)_servicePropertiesChanged:(id)arg1;
 - (void)_serviceEnableChanged:(id)arg1;
-- (void)willGainFocus;
-- (void)willSelect;
 - (BOOL)hasDataToMerge;
 - (BOOL)isDataService;
 - (void)_handleWillExceedCloudStorage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)showMoreInfo:(id)arg1;
 - (void)setEnabled:(BOOL)arg1 creating:(BOOL)arg2 withWindow:(id)arg3;
 - (_Bool)needsPassword;
-- (long long)_isEnabledForMixedDisplay;
-- (BOOL)determiningStatus;
-- (BOOL)_supportsMixedEnableState;
 - (BOOL)_isEnabledForDisplay;
 - (void)_setEnabled:(BOOL)arg1 withOptions:(int)arg2;
 - (void)_setEnabled:(BOOL)arg1;

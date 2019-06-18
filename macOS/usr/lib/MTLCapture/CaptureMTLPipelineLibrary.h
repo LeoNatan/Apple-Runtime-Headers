@@ -40,7 +40,7 @@
 - (id)newComputePipelineDescriptorWithName:(id)arg1 error:(id *)arg2;
 - (void)dealloc;
 @property(readonly) id <MTLPipelineLibrary> baseObject;
-- (id)initWithBaseObject:(id)arg1 captureDevice:(id)arg2;
+- (id)initWithBaseObject:(id)arg1 captureContext:(struct GTTraceContext *)arg2 captureDevice:(id)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

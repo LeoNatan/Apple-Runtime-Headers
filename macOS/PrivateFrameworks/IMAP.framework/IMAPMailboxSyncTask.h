@@ -6,7 +6,7 @@
 
 #import <IMAP/IMAPTask.h>
 
-#import <IMAP/ECSignpostable-Protocol.h>
+#import <IMAP/EFSignpostable-Protocol.h>
 #import <IMAP/IMAPPersistDeletedMessagesOperationDelegate-Protocol.h>
 #import <IMAP/IMAPPersistFlagChangesOperationDelegate-Protocol.h>
 #import <IMAP/IMAPPersistLabelChangesOperationDelegate-Protocol.h>
@@ -19,7 +19,7 @@
 @class IMAPTaskManager, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSProgress, NSString;
 @protocol IMAPMessageDataSource;
 
-@interface IMAPMailboxSyncTask : IMAPTask <ECSignpostable, IMAPPersistDeletedMessagesOperationDelegate, IMAPPersistFlagChangesOperationDelegate, IMAPPersistLabelChangesOperationDelegate, IMAPPersistMessagesOperationDelegate, IMAPSelectMailboxOperationDelegate, IMAPSyncSkeletonsOperationDelegate, IMAPSyncUIDsFlagsAndLabelsOperationDelegate, IMAPVerifyMailboxOperationDelegate>
+@interface IMAPMailboxSyncTask : IMAPTask <EFSignpostable, IMAPPersistDeletedMessagesOperationDelegate, IMAPPersistFlagChangesOperationDelegate, IMAPPersistLabelChangesOperationDelegate, IMAPPersistMessagesOperationDelegate, IMAPSelectMailboxOperationDelegate, IMAPSyncSkeletonsOperationDelegate, IMAPSyncUIDsFlagsAndLabelsOperationDelegate, IMAPVerifyMailboxOperationDelegate>
 {
     NSMutableIndexSet *_messageNumbersNeedingUIDs;
     NSMutableIndexSet *_messageNumbersNeedingSkeletons;

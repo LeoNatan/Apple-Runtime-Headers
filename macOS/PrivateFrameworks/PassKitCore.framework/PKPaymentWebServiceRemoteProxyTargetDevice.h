@@ -27,8 +27,11 @@
 - (void)invalidateRemoteProxyTargetDevice;
 - (void)archiveBackgroundContext:(id)arg1;
 - (void)archiveContext:(id)arg1;
+- (void)noteProvisioningDidEndRequiringUpgradedPasscode;
+- (void)noteProvisioningDidStartRequiringUpgradedPasscode;
+- (void)enforceUpgradedPasscodePolicyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)appleAccountInformationWithCompletion:(CDUnknownBlockType)arg1;
-- (void)renewAppleAccountWithCompletion:(CDUnknownBlockType)arg1;
+- (void)renewAppleAccountWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setDefaultPaymentPassUniqueIdentifier:(id)arg1;
 - (void)updateAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)deviceMetadataWithFields:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
@@ -60,7 +63,6 @@
 - (void)getProvisioningDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)signData:(id)arg1 signatureEntanglementMode:(unsigned long long)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (void)getTrustedDeviceEnrollmentInfoWithCompletion:(CDUnknownBlockType)arg1;
-- (void)getRegistrationDataWithAuthToken:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)getRegistrationDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)getConfigurationDataWithCompletion:(CDUnknownBlockType)arg1;
 - (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

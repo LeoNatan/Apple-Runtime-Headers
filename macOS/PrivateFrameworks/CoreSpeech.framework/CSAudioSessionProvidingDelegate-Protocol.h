@@ -12,6 +12,7 @@
 @protocol CSAudioSessionProvidingDelegate <NSObject>
 
 @optional
+- (void)audioSessionProvider:(id <CSAudioSessionProviding>)arg1 didChangeContext:(BOOL)arg2;
 - (void)audioSessionProvider:(id <CSAudioSessionProviding>)arg1 providerInvalidated:(BOOL)arg2;
 - (void)audioSessionProvider:(id <CSAudioSessionProviding>)arg1 didSetAudioSessionActive:(BOOL)arg2;
 - (void)audioSessionProvider:(id <CSAudioSessionProviding>)arg1 willSetAudioSessionActive:(BOOL)arg2;

@@ -8,10 +8,11 @@
 
 #import <Memories/NSCopying-Protocol.h>
 #import <Memories/NSSecureCoding-Protocol.h>
+#import <Memories/PosterDataProtocol-Protocol.h>
 
 @class NSDate, NSSet, NSString, PHAsset, PHAssetCollection, VEKBlueprint, VEKProduction_MiroMemory_Bridge;
 
-@interface VEKProduction : VEKPipeline <NSSecureCoding, NSCopying>
+@interface VEKProduction : VEKPipeline <PosterDataProtocol, NSSecureCoding, NSCopying>
 {
     PHAssetCollection *_collection;
     double _requestedDuration;
@@ -43,10 +44,16 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)initWithAssetCollection:(id)arg1;
 - (id)init;
+@property(readonly, nonatomic) NSString *fontName;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) Class superclass;
 
 @end
 

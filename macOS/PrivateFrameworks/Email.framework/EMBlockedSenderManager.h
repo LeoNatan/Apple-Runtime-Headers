@@ -16,6 +16,8 @@
     NSObject<OS_dispatch_queue> *_cacheQueue;
 }
 
++ (void)setPromptForBlockedSender:(BOOL)arg1;
++ (BOOL)shouldPromptForBlockedSender;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *cacheQueue; // @synthesize cacheQueue=_cacheQueue;
 @property(retain, nonatomic) id <EFScheduler> resetScheduler; // @synthesize resetScheduler=_resetScheduler;
 @property(retain, nonatomic) NSSet *blockedSenderCache; // @synthesize blockedSenderCache=_blockedSenderCache;

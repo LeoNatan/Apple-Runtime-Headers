@@ -10,6 +10,7 @@
 {
     // Error parsing type: , name: notificationQueue
     // Error parsing type: , name: coalesceUpdateNotifications
+    // Error parsing type: , name: notificationWorkItem
 }
 
 - (void).cxx_destruct;

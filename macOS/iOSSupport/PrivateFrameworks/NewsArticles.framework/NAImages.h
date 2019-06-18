@@ -20,7 +20,6 @@
 + (id)saveSelectedActivityImage;
 + (id)saveActivityImage;
 + (id)reportActivityImage;
-+ (id)macShareImage;
 + (id)nextArrow;
 + (id)sharrowCompact;
 + (id)sharrow;

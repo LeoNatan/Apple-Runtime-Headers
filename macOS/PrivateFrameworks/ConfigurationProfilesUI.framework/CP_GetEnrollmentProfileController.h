@@ -11,7 +11,7 @@
 #import <ConfigurationProfilesUI/_WKDiagnosticLoggingDelegate-Protocol.h>
 #import <ConfigurationProfilesUI/_WKDownloadDelegate-Protocol.h>
 
-@class NSArray, NSBox, NSButton, NSData, NSError, NSString, NSTextField, NSURL, NSView, WKWebView;
+@class NSArray, NSBox, NSButton, NSData, NSError, NSProgressIndicator, NSString, NSTextField, NSURL, NSView, WKWebView;
 
 __attribute__((visibility("hidden")))
 @interface CP_GetEnrollmentProfileController : NSWindowController <WKNavigationDelegate, _WKDownloadDelegate, WKUIDelegate, _WKDiagnosticLoggingDelegate>
@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
     NSButton *_cancelButton;
     NSTextField *_statusLabel;
     WKWebView *_webView;
+    NSProgressIndicator *_webViewSpinner;
     NSURL *_initialURL;
     NSString *_orgName;
     NSArray *_anchorCerts;
@@ -43,6 +44,7 @@ __attribute__((visibility("hidden")))
 @property(retain) NSArray *anchorCerts; // @synthesize anchorCerts=_anchorCerts;
 @property(retain) NSString *orgName; // @synthesize orgName=_orgName;
 @property(retain) NSURL *initialURL; // @synthesize initialURL=_initialURL;
+@property(retain) NSProgressIndicator *webViewSpinner; // @synthesize webViewSpinner=_webViewSpinner;
 @property(retain) WKWebView *webView; // @synthesize webView=_webView;
 @property NSTextField *statusLabel; // @synthesize statusLabel=_statusLabel;
 @property NSButton *cancelButton; // @synthesize cancelButton=_cancelButton;
@@ -74,6 +76,7 @@ __attribute__((visibility("hidden")))
 - (void)setStatusToErrorText:(id)arg1;
 - (void)setStatus:(id)arg1;
 - (void)windowDidLoad;
+- (void)addSpinnerToWebView;
 - (void)dealloc;
 - (id)initWithWindow:(id)arg1;
 

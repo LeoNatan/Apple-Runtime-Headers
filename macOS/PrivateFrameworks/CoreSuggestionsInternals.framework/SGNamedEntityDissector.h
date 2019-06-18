@@ -21,6 +21,7 @@
 - (id)_entitiesInPlainText:(id)arg1 withEligibleRegions:(id)arg2 dataDetections:(id)arg3 source:(id)arg4 cloudSync:(BOOL)arg5 algorithms:(id)arg6;
 - (void)_collectCustomTaggerResultsWithText:(id)arg1 eligibleRegions:(id)arg2 isMessagesSource:(BOOL)arg3 addNamedEntity:(CDUnknownBlockType)arg4;
 - (void)_collectNLPTaggerResultsWithText:(id)arg1 ddMatches:(id)arg2 eligibleRegions:(id)arg3 isMessagesSource:(BOOL)arg4 addNamedEntity:(CDUnknownBlockType)arg5;
+- (void)_harvestLocationFromEntity:(id)arg1 category:(unsigned long long)arg2 enrichment:(id)arg3 algorithm:(unsigned short)arg4;
 - (id)_collectDataDetectorsWithText:(id)arg1 algorithms:(id)arg2 dataDetections:(id)arg3 isMessagesSource:(BOOL)arg4 lookupQids:(id)arg5 addNamedEntity:(CDUnknownBlockType)arg6;
 - (void)_registerForNotifications;
 - (void)dealloc;

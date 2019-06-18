@@ -13,7 +13,6 @@
     MLModel *model;
     int _modelHeight;
     int _modelWidth;
-    BOOL _disableCoreML;
     int _classCount;
     const int *_codeMap;
     NSArray *_modelShape;
@@ -23,7 +22,6 @@
 
 @property long long cpuBatchSize; // @synthesize cpuBatchSize=_cpuBatchSize;
 @property long long gpuBatchSize; // @synthesize gpuBatchSize=_gpuBatchSize;
-@property BOOL disableCoreML; // @synthesize disableCoreML=_disableCoreML;
 @property(retain) NSArray *modelShape; // @synthesize modelShape=_modelShape;
 @property(readonly) int classCount; // @synthesize classCount=_classCount;
 @property(readonly) const int *codeMap; // @synthesize codeMap=_codeMap;

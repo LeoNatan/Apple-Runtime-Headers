@@ -41,6 +41,8 @@
 @property(copy, nonatomic) CDUnknownBlockType functionInvokeCompletionBlock; // @synthesize functionInvokeCompletionBlock=_functionInvokeCompletionBlock;
 - (id)initWithServiceName:(id)arg1 functionName:(id)arg2 serializedParameters:(id)arg3;
 - (id)initWithServiceName:(id)arg1 functionName:(id)arg2 serializedParameters:(id)arg3 local:(BOOL)arg4;
+- (id)initWithServiceName:(id)arg1 functionName:(id)arg2 serializedRequest:(id)arg3;
+- (id)initWithServiceName:(id)arg1 functionName:(id)arg2 serializedRequest:(id)arg3 local:(BOOL)arg4;
 
 @end
 

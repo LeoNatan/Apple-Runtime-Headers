@@ -123,6 +123,8 @@
 - (void)_menuItem:(id)arg1 didChangeEnabledStateFrom:(BOOL)arg2 to:(BOOL)arg3;
 - (void)_notifySupermenuOfSubmenuChange;
 - (void)_limitedViewWantsRedisplayForItem:(id)arg1 inRect:(struct CGRect)arg2;
+- (id)_lastInputSourceIdentifierForKeyboardAdjustedShortcuts;
+- (void)_setLastInputSourceIdentifierForKeyboardAdjustedShortcuts:(id)arg1;
 - (const struct AEDesc *)_contextMenuPluginAEDesc;
 - (void)_setContextMenuPluginAEDesc:(const struct AEDesc *)arg1;
 @property BOOL showsStateColumn;

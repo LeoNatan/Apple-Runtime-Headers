@@ -25,6 +25,7 @@
 - (BOOL)moveToState:(id)arg1 animated:(BOOL)arg2;
 @property(readonly, nonatomic) WFActionDrawerState *state;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (void)siriSuggestionsTableViewCell:(id)arg1 infoButtonTappedForSuggestion:(id)arg2;
 - (void)siriSuggestionsTableViewCell:(id)arg1 didSelectAction:(id)arg2;
 - (double)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;

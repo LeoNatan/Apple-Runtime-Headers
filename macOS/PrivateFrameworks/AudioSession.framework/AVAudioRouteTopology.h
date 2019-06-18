@@ -12,11 +12,9 @@
 {
 }
 
+@property(readonly, nonatomic) AVAudioHardwareClock *masterClock;
 @property(readonly, nonatomic) unsigned long long policy;
 @property(readonly, nonatomic) NSString *name;
-- (unsigned long long)devicesCount;
-- (id)connectedDevices;
-- (unsigned long long)connectedDevicesCount;
 - (id)streams:(unsigned long long)arg1 IOBufferChannel:(unsigned long long)arg2 direction:(unsigned int)arg3;
 - (id)streams:(unsigned long long)arg1 direction:(unsigned int)arg2;
 - (id)streams:(unsigned int)arg1;
@@ -25,7 +23,6 @@
 @property(readonly, nonatomic) NSArray *streamTopologies;
 @property(readonly, nonatomic) NSString *UID;
 - (id)initWithStreamTopologies:(id)arg1 name:(id)arg2 masterClock:(id)arg3 policy:(unsigned long long)arg4;
-@property(readonly, nonatomic) AVAudioHardwareClock *masterClock;
 
 @end
 

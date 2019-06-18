@@ -36,6 +36,9 @@
 - (BOOL)addOutputUnitsForConnection:(id)arg1 toGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3 error:(id *)arg4;
 - (BOOL)canAddConnectionForMediaType:(id)arg1;
 - (id)connectionMediaTypes;
+- (void)setEnabledSemanticSegmentationMatteTypes:(id)arg1;
+- (id)enabledSemanticSegmentationMatteTypes;
+- (id)availableSemanticSegmentationMatteTypes;
 - (void)setPortraitEffectsMatteDeliveryEnabled:(BOOL)arg1;
 - (BOOL)isPortraitEffectsMatteDeliveryEnabled;
 - (BOOL)isPortraitEffectsMatteDeliverySupported;

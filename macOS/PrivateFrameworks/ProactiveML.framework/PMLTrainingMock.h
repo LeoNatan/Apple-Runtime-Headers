@@ -8,11 +8,12 @@
 
 #import <ProactiveML/PMLTrainingProtocol-Protocol.h>
 
-@class NSArray, NSMutableArray, NSString;
+@class NSArray, NSMutableArray, NSMutableDictionary, NSString;
 
 @interface PMLTrainingMock : NSObject <PMLTrainingProtocol>
 {
     NSMutableArray *_internalCollectedSessions;
+    NSMutableDictionary *_lastTrainingFeaturizations;
     NSArray *_collectedSessions;
 }
 

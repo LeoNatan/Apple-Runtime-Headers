@@ -40,6 +40,8 @@
 - (void)setProgress:(float)arg1;
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setState:(long long)arg1;
+- (long long)_analyzingStateForDataSource:(id)arg1;
+- (float)_enrichmentProgressForDataSource:(id)arg1;
 - (void)_updateStatusProperties;
 - (id)initWithDataSourceManager:(id)arg1;
 

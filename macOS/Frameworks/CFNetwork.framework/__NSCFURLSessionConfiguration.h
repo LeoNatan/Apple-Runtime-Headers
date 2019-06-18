@@ -9,7 +9,7 @@
 #import <CFNetwork/NSCopying-Protocol.h>
 #import <CFNetwork/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
+@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSNumber, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
 @protocol NSURLSessionAppleIDContext;
 
 @interface __NSCFURLSessionConfiguration : NSURLSessionConfiguration <NSCopying, NSSecureCoding>
@@ -88,6 +88,7 @@
     BOOL _requiresSustainedDataDelivery;
     BOOL _ignoreDidReceiveResponseDisposition;
     BOOL _alwaysPerformDefaultTrustEvaluation;
+    NSNumber *_maximumWatchCellularTransferSize;
     unsigned long long _multipathAlternatePort;
     NSString *_disposition;
     NSURLCredentialStorage *_phskip_credStorage;
@@ -203,6 +204,8 @@
 - (BOOL)isBackgroundSession;
 - (void)set_multipathAlternatePort:(unsigned long long)arg1;
 - (unsigned long long)_multipathAlternatePort;
+- (void)set_maximumWatchCellularTransferSize:(id)arg1;
+- (id)_maximumWatchCellularTransferSize;
 - (void)set_alwaysPerformDefaultTrustEvaluation:(BOOL)arg1;
 - (BOOL)_alwaysPerformDefaultTrustEvaluation;
 - (void)set_ignoreDidReceiveResponseDisposition:(BOOL)arg1;

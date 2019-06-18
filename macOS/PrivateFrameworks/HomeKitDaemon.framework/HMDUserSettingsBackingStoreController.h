@@ -53,6 +53,7 @@
 - (void)database:(id)arg1 didCreateZoneWithName:(id)arg2;
 - (void)runTransaction:(id)arg1 waitForCloudPush:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)settingTransactionWithName:(id)arg1;
+- (void)runSettingTransaction:(id)arg1 waitForCloudPush:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)runSettingTransaction:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)registerForSettingsTransactions:(id)arg1;
 - (void)_localZone:(id)arg1 updatedModel:(id)arg2 previousModel:(id)arg3 options:(id)arg4 result:(id)arg5;
@@ -68,6 +69,7 @@
 - (void)_startWithSharedZone;
 - (void)_startWithOwnedZone;
 - (void)destroyZone;
+- (void)_invalidate;
 - (void)registerForMediaContentAccessControlModelUpdates:(id)arg1 modelID:(id)arg2;
 - (id)loadMediaContentAccessControlModelWithModelID:(id)arg1 error:(id *)arg2;
 - (void)registerForAssistantAccessControlModelUpdates:(id)arg1 modelID:(id)arg2;

@@ -14,13 +14,9 @@ __attribute__((visibility("hidden")))
 @interface aura_IOControllerPrivImpl : NSObject <aura_IOControllerPriv>
 {
     shared_ptr_90e9ee19 reactor_;
-    unsigned int sessionToken_;
-    unsigned long long admIOControllerID_;
-    struct set<id<aura_IOStreamPriv>, std::__1::less<id<aura_IOStreamPriv>>, std::__1::allocator<id<aura_IOStreamPriv>>> inputIOStreams_;
-    struct set<id<aura_IOStreamPriv>, std::__1::less<id<aura_IOStreamPriv>>, std::__1::allocator<id<aura_IOStreamPriv>>> outputIOStreams_;
 }
 
-+ (id)ioControllerWithReactor:(shared_ptr_90e9ee19)arg1 sessionToken:(unsigned int)arg2 admIOControllerID:(unsigned long long)arg3;
++ (id)ioControllerWithReactor:(shared_ptr_90e9ee19)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (expected_b2b3f2ff)controlForClassID:(unsigned int)arg1 scope:(const unsigned int *)arg2 element:(unsigned int)arg3;
@@ -37,8 +33,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasProperty:(const struct Address *)arg1;
 @property(readonly, nonatomic) unsigned int classID;
 @property(readonly, nonatomic) unsigned long long objectID;
-- (_Bool)connectIOStream:(id)arg1 direction:(unsigned char)arg2;
-- (struct error_code)setIOEventNotifier:(function_64fbd6ee)arg1;
+- (struct error_code)setIOEventNotifier:(function_012e5ebb)arg1;
 - (expected_11f03402)translateTime:(const struct TimeStamp *)arg1;
 @property(readonly, nonatomic) expected_11f03402 currentTime;
 - (struct error_code)stopPrewarming;
@@ -48,7 +43,7 @@ __attribute__((visibility("hidden")))
 - (struct error_code)setClock:(id)arg1;
 - (struct error_code)setBufferFrameSize:(unsigned int)arg1;
 - (struct error_code)setWorkIntervalMachPort:(void *)arg1;
-- (struct error_code)registerIOProc:(const function_b157c3ea *)arg1;
+- (struct error_code)registerIOProc:(const function_e45cec34 *)arg1;
 @property(readonly, nonatomic) optional_ce918c5b clock;
 @property(readonly, nonatomic) vector_67aaf020 outputIOStreams;
 @property(readonly, nonatomic) vector_67aaf020 inputIOStreams;
@@ -59,9 +54,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _Bool running;
 @property(readonly, nonatomic) void *workIntervalMachPort;
 @property(readonly, nonatomic) unsigned char ioControllerType;
-@property(readonly, nonatomic) unsigned int sessionToken;
-@property(readonly, nonatomic) unsigned long long admIOControllerID;
-- (id)init:(shared_ptr_90e9ee19)arg1 sessionToken:(unsigned int)arg2 admIOControllerID:(unsigned long long)arg3;
+@property(readonly, nonatomic) weak_ptr_87c2748f reactor;
+- (id)init:(shared_ptr_90e9ee19)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

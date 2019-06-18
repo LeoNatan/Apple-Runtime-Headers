@@ -258,7 +258,6 @@ __attribute__((visibility("hidden")))
 - (_Bool)_goIntoSelectedFolder;
 - (_Bool)_goUpToParentFolder;
 @property(copy, nonatomic) NSArray *selectedURLs; // @dynamic selectedURLs;
-- (_Bool)_canSelectURL:(id)arg1 itemIsContainer:(_Bool)arg2 itemIsPackage:(_Bool)arg3;
 - (_Bool)_canSelectURL:(id)arg1;
 @property(readonly, nonatomic) NSArray *selectedRawURLs; // @dynamic selectedRawURLs;
 - (void)ubiquityIdentityChanged;

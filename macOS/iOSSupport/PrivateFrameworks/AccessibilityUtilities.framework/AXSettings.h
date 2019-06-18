@@ -18,6 +18,7 @@
     BOOL _voiceOverVerbositySpeakCustomActionsHint;
     BOOL _touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass;
     float _reduceWhitePointLevel;
+    double _voiceOverHapticIntensity;
     double _lastPlatformSwitchTimeResetCount;
     double _lastGuidedAccessTimeLimitResetCount;
     double _lastGuidedAccessTimeResetCount;
@@ -29,7 +30,6 @@
 }
 
 + (id)sharedInstance;
-+ (void)initialize;
 @property(retain, nonatomic) NSMutableDictionary *updateBlocks; // @synthesize updateBlocks=_updateBlocks;
 @property(retain, nonatomic) NSMutableDictionary *synchronizeDomains; // @synthesize synchronizeDomains=_synchronizeDomains;
 @property(retain, nonatomic) NSMutableSet *registeredNotifications; // @synthesize registeredNotifications=_registeredNotifications;
@@ -41,6 +41,7 @@
 @property(nonatomic) float reduceWhitePointLevel; // @synthesize reduceWhitePointLevel=_reduceWhitePointLevel;
 @property(nonatomic) BOOL touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass; // @synthesize touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass=_touchAccommodationsHoldDurationAllowsSwipeGesturesToBypass;
 @property(nonatomic) BOOL voiceOverVerbositySpeakCustomActionsHint; // @synthesize voiceOverVerbositySpeakCustomActionsHint=_voiceOverVerbositySpeakCustomActionsHint;
+@property(nonatomic) double voiceOverHapticIntensity; // @synthesize voiceOverHapticIntensity=_voiceOverHapticIntensity;
 @property(nonatomic) BOOL writeAXLogsToFile; // @synthesize writeAXLogsToFile=_writeAXLogsToFile;
 @property(nonatomic) BOOL assistiveTouchInternalOnlyHiddenNubbitModeEnabled; // @synthesize assistiveTouchInternalOnlyHiddenNubbitModeEnabled=_assistiveTouchInternalOnlyHiddenNubbitModeEnabled;
 - (void).cxx_destruct;
@@ -134,7 +135,7 @@
 @property(nonatomic) BOOL voiceOverTouchBrailleShowTextStyleStatus;
 @property(nonatomic) BOOL voiceOverTouchBrailleShouldReverseDots;
 @property(nonatomic) long long voiceOverTapticChimesFrequencyEncoding;
-@property(nonatomic) long long voiceOverTapticChimesStyleEncoding;
+@property(nonatomic) long long voiceOverTapticChimesAvailability;
 @property(nonatomic) BOOL tapticTimeInternalFlashScreenEnabled;
 @property(nonatomic) BOOL voiceOverTapticChimesEnabled;
 @property(nonatomic) float voiceOverTapticTimeSpeed;
@@ -185,9 +186,12 @@
 @property(nonatomic) BOOL voiceOverSpeakNotificationsEnabled;
 @property(nonatomic) BOOL voiceOverSpeakingRateInRotorEnabled;
 @property(nonatomic) BOOL voiceOverHapticsEnabled;
-@property(nonatomic) BOOL voiceOverSoundEffectsEnabled;
+@property(nonatomic) BOOL voiceOverAdjustSoundVolumeIndependently;
+@property(nonatomic) double voiceOverSoundVolume;
 @property(nonatomic) BOOL voiceOverVerbosityEmojiSuffixEnabled;
 @property(nonatomic) BOOL voiceOverVerbosityEmojisEnabled;
+@property(nonatomic) BOOL voiceOverLanguageDetectionEnabled;
+@property(nonatomic) BOOL voiceOverSoundEffectsEnabled;
 @property(nonatomic) BOOL voiceOverPitchChangeEnabled;
 @property(nonatomic) double voiceOverPitch;
 @property(nonatomic) BOOL voiceOverAudioFollowsHDMIAudio;

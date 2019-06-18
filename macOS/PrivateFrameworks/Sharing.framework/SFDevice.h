@@ -38,9 +38,12 @@
     long long _distance;
     NSUUID *_identifier;
     NSString *_idsIdentifier;
+    NSString *_mediaRemoteID;
+    NSString *_mediaRouteID;
     NSString *_model;
     NSString *_name;
     unsigned long long _problemFlags;
+    NSString *_rapportIdentifier;
     NSString *_requestSSID;
 }
 
@@ -53,12 +56,15 @@
 @property(nonatomic) BOOL wakeDevice; // @synthesize wakeDevice=_wakeDevice;
 @property(nonatomic) unsigned int systemPairState; // @synthesize systemPairState=_systemPairState;
 @property(copy, nonatomic) NSString *requestSSID; // @synthesize requestSSID=_requestSSID;
+@property(readonly, nonatomic) NSString *rapportIdentifier; // @synthesize rapportIdentifier=_rapportIdentifier;
 @property(readonly, nonatomic) unsigned long long problemFlags; // @synthesize problemFlags=_problemFlags;
 @property(nonatomic) BOOL needsSetup; // @synthesize needsSetup=_needsSetup;
 @property(readonly, nonatomic) BOOL needsKeyboard; // @synthesize needsKeyboard=_needsKeyboard;
 @property(readonly, nonatomic) BOOL needsAWDL; // @synthesize needsAWDL=_needsAWDL;
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(copy, nonatomic) NSString *model; // @synthesize model=_model;
+@property(readonly, copy, nonatomic) NSString *mediaRouteID; // @synthesize mediaRouteID=_mediaRouteID;
+@property(readonly, copy, nonatomic) NSString *mediaRemoteID; // @synthesize mediaRemoteID=_mediaRemoteID;
 @property(copy, nonatomic) NSString *idsIdentifier; // @synthesize idsIdentifier=_idsIdentifier;
 @property(copy, nonatomic) NSUUID *identifier; // @synthesize identifier=_identifier;
 @property(nonatomic) BOOL hasProblem; // @synthesize hasProblem=_hasProblem;

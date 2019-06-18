@@ -44,6 +44,7 @@
 - (id)_finalizeSourceOptions:(id)arg1 subsampleFactor:(long long)arg2;
 - (void)_addDefaultFinalizedSourceOptions:(id)arg1;
 - (CDStruct_912cb5d2)pixelSizeWithSourceOptions:(id)arg1;
+- (id)debugQuickLookObject;
 - (BOOL)load:(out id *)arg1;
 - (BOOL)_load:(out id *)arg1;
 - (BOOL)_setAuxiliaryImagePropertiesFromCGProperties:(id)arg1 error:(out id *)arg2;

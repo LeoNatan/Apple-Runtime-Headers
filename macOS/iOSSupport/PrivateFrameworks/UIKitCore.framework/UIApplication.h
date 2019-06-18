@@ -523,7 +523,6 @@
 - (void)prepareSnapshotsWithAction:(id)arg1 forScene:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (BOOL)_saveSnapshotWithName:(id)arg1;
 - (void)_performSnapshotsWithAction:(id)arg1 forScene:(id)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_handleSnapshotAction:(id)arg1 forScene:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_beginSnapshotSessionForScene:(id)arg1 withSnapshotBlock:(CDUnknownBlockType)arg2;
 - (id)_createSnapshotContextForSceneRemoval:(id)arg1 withName:(id)arg2;
 - (id)_createSnapshotContextForScene:(id)arg1 withName:(id)arg2 performLayoutWithSettings:(id)arg3;
@@ -535,7 +534,7 @@
 - (BOOL)_updateDefaultImage;
 - (id)pathToDefaultImageNamed:(id)arg1 forScreen:(id)arg2;
 - (id)nameOfDefaultImageToUpdateAtSuspension;
-- (void)_configureSnapshotContext:(id)arg1 forScreen:(id)arg2 sceneSettings:(id)arg3;
+- (void)_configureSnapshotContext:(id)arg1 forScreen:(id)arg2 scene:(id)arg3;
 - (void)_performWithUICACommitStateSnapshotting:(CDUnknownBlockType)arg1;
 - (id)_localCachesDirectory;
 - (id)userCachesDirectory;
@@ -567,7 +566,6 @@
 - (void)_pipStateDidChange;
 - (void)_handleTaskCompletionBackgroundingEvents:(id)arg1;
 - (void)_handleTaskCompletionSuspensionEvents:(id)arg1;
-- (void)_handleSnapshotAction:(id)arg1 forScene:(id)arg2 deactivationCompletion:(CDUnknownBlockType)arg3;
 - (void)_handleSuspensionActions;
 - (void)_updateAppPriorityForSuspendedState;
 - (void)_applicationDidEnterBackground;
@@ -668,8 +666,6 @@
 - (BOOL)_isOrientationVerticallyCompact:(long long)arg1;
 - (BOOL)_wantsCompactStatusBarHiding;
 - (BOOL)_supportsCompactStatusBarHiding;
-- (BOOL)_isInStatusBarFadeAnimation;
-- (void)_statusBarDidChangeHidden:(BOOL)arg1 withAnimationParameters:(id)arg2;
 - (void)setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2 changeApplicationFlag:(BOOL)arg3;
 @property(readonly, nonatomic) long long statusBarStyle;
 - (void)setStatusBarStyle:(long long)arg1;
@@ -691,9 +687,12 @@
 - (id)_findWindowForControllingOverallAppearanceInWindowScene:(id)arg1;
 - (id)_findWindowForControllingOverallAppearanceInCanvas:(id)arg1;
 - (id)_findWindowForControllingOverallAppearance;
+- (id)_statusBarWindowIfExists;
 - (id)statusBarWindow;
 - (id)statusBar;
+- (void)_setupStatusBarWithRequestedStyle:(long long)arg1 orientation:(long long)arg2 hidden:(BOOL)arg3;
 - (void)_createStatusBarWithRequestedStyle:(long long)arg1 orientation:(long long)arg2 hidden:(BOOL)arg3;
+- (void)_createStatusBarIfNeededWithOrientation:(long long)arg1;
 - (BOOL)handleDoubleHeightStatusBarTapWithStyleOverride:(int)arg1;
 @property(nonatomic, getter=isNetworkActivityIndicatorVisible) BOOL networkActivityIndicatorVisible;
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2 from:(id)arg3 forEvent:(id)arg4;
@@ -752,6 +751,7 @@
 - (void)activityContinuationManager:(id)arg1 displayProgressUI:(id)arg2 dismissalHandler:(CDUnknownBlockType)arg3;
 - (void)__completeAndRunAsPlugin;
 - (void)_run;
+- (void)_compellApplicationLaunchToCompleteUnconditionally;
 - (void)_performBlockAfterCATransactionCommitSynchronizes:(CDUnknownBlockType)arg1;
 - (void)_performBlockAfterCATransactionCommits:(CDUnknownBlockType)arg1;
 - (void)_addAfterCACommitBlockForViewController:(id)arg1;

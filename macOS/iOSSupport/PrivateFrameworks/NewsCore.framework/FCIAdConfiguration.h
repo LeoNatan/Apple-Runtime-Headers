@@ -18,8 +18,10 @@
     long long _segmentsHistoryWindowInterval;
     long long _segmentsMinimumArticleCount;
     NSArray *_iAdSegmentIDs;
+    NSDictionary *_adStatusConditionsByType;
 }
 
+@property(readonly, nonatomic) NSDictionary *adStatusConditionsByType; // @synthesize adStatusConditionsByType=_adStatusConditionsByType;
 @property(readonly, nonatomic) NSArray *iAdSegmentIDs; // @synthesize iAdSegmentIDs=_iAdSegmentIDs;
 @property(readonly, nonatomic) long long segmentsMinimumArticleCount; // @synthesize segmentsMinimumArticleCount=_segmentsMinimumArticleCount;
 @property(readonly, nonatomic) long long segmentsHistoryWindowInterval; // @synthesize segmentsHistoryWindowInterval=_segmentsHistoryWindowInterval;

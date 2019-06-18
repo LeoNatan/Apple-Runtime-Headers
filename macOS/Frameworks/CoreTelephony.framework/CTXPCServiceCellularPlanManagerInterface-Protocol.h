@@ -21,6 +21,7 @@
 - (void)deleteTransferPlansForEid:(NSString *)arg1 completion:(void (^)(BOOL))arg2;
 - (void)transferPlans:(CTRemotePlanIdentifierList *)arg1 fromDevice:(CTDeviceIdentifier *)arg2 completionHandler:(void (^)(BOOL, NSString *, NSDictionary *, NSError *))arg3;
 - (void)transferPlan:(CTRemotePlanIdentifier *)arg1 fromDevice:(CTDeviceIdentifier *)arg2 completionHandler:(void (^)(BOOL, NSString *, NSDictionary *, NSError *))arg3;
+- (void)getTransferPlansWithCompletion:(void (^)(CTRemoteDeviceList *, BOOL, NSError *))arg1;
 - (void)getTransferPlanListWithCompletion:(void (^)(CTRemoteDeviceList *, NSError *))arg1;
 - (void)getCameraScanInfoForCardData:(NSString *)arg1 completionHandler:(void (^)(CTCellularPlanManagerCameraScanAction *, NSError *))arg2;
 - (void)addPlanWith:(CTXPCServiceSubscriptionContext *)arg1 request:(CTCellularPlanProvisioningRequest *)arg2 appName:(NSString *)arg3 completionHandler:(void (^)(unsigned long long, NSError *))arg4;

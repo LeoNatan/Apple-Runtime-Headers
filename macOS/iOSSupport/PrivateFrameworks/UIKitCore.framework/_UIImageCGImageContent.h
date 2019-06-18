@@ -9,26 +9,21 @@
 __attribute__((visibility("hidden")))
 @interface _UIImageCGImageContent : _UIImageContent
 {
-    struct {
-        unsigned int isDecompressor:1;
-    } _contentFlags;
+    // Error parsing type: A^{CGImage}, name: _imageRef
 }
 
 - (id)contentWithCGImage:(struct CGImage *)arg1;
 - (void)_drawWithoutEffectInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2;
 - (void)_prepareforDrawingInRect:(struct CGRect)arg1 context:(struct CGContext *)arg2;
 - (id)renditionApplyingEffect:(id)arg1;
-- (id)_decompressor;
-- (BOOL)_isDecompressing;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (struct CGSize)sizeInPixels;
 - (struct CGImage *)CGImage;
+- (BOOL)hasCGImage;
 - (BOOL)isCGImage;
 - (void)dealloc;
-- (id)initWithScale:(double)arg1;
-- (id)initWithDecompressor:(id)arg1 scale:(double)arg2;
 - (id)initWithCGImage:(struct CGImage *)arg1 scale:(double)arg2;
 
 @end

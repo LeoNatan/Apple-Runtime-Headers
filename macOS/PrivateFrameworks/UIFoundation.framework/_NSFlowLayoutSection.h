@@ -96,7 +96,7 @@
 - (void)logInvalidSizesForHorizontalDirection:(BOOL)arg1 warnAboutDelegateValues:(BOOL)arg2;
 - (void)logInvalidSizes;
 - (long long)estimatedIndexOfItemAtPoint:(struct CGPoint)arg1;
-- (void)_computeLayoutForSectionIndex:(long long)arg1;
+- (void)_computeLayoutForSectionIndex:(long long)arg1 rightToLeft:(BOOL)arg2 minimumWidth:(double)arg3;
 - (void)sizeChangedForItem:(id)arg1 atIndexPath:(id)arg2 inRow:(id)arg3;
 - (void)invalidate;
 - (struct CGRect)frameForItemAtIndexPath:(id)arg1;

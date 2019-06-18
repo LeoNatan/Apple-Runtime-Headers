@@ -105,7 +105,7 @@
 - (void)_verifyZonesExist:(id)arg1 zoneIndex:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_resetHomeDataRecordState;
 - (id)_changeTokenFromData:(id)arg1;
-- (void)_handleAccountStatus:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2 error:(id)arg3;
+- (void)_handleAccountStatus:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)updateAccountStatusChanged:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_processFetchCompletedWithError:(id)arg1 serverToken:(id)arg2 fetchTransaction:(id)arg3 migrationOptions:(long long)arg4 completionHandler:(CDUnknownBlockType)arg5 moreRecordsComing:(BOOL)arg6 emptyRecord:(BOOL)arg7;
 - (BOOL)_processFetchedTransaction:(id)arg1;

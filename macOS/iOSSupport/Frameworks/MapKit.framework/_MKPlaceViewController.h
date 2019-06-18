@@ -164,6 +164,7 @@
 - (double)placeCardHeaderViewControllerTrailingConstantForTitle:(id)arg1;
 - (id)_traits;
 - (void)updateHeaderTitle;
+- (void)_presentViewControllerWithInterfaceStyleCheck:(id)arg1;
 - (void)_showShareSheetNoDeviceLockCheck:(id)arg1;
 - (void)_showShareSheet:(id)arg1;
 - (void)_showEditSheet:(id)arg1;
@@ -278,6 +279,7 @@
 - (id)initWithMapItem:(id)arg1 options:(unsigned long long)arg2;
 - (id)initWithPlaceItem:(id)arg1 options:(unsigned long long)arg2;
 - (id)init;
+- (BOOL)_canShowWhileLocked;
 - (void)setUseCompactPhotosView:(BOOL)arg1;
 - (BOOL)useCompactPhotosView;
 - (void)setShowFavoriteButtons:(BOOL)arg1;

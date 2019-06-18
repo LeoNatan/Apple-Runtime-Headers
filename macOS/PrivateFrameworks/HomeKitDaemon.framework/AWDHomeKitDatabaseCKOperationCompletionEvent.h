@@ -10,19 +10,19 @@
 
 @interface AWDHomeKitDatabaseCKOperationCompletionEvent : PBCodable <NSCopying>
 {
-    long long _error;
+    long long _errorCode;
     unsigned long long _timestamp;
     int _containerType;
     BOOL _didSucceed;
     struct {
-        unsigned int error:1;
+        unsigned int errorCode:1;
         unsigned int timestamp:1;
         unsigned int containerType:1;
         unsigned int didSucceed:1;
     } _has;
 }
 
-@property(nonatomic) long long error; // @synthesize error=_error;
+@property(nonatomic) long long errorCode; // @synthesize errorCode=_errorCode;
 @property(nonatomic) BOOL didSucceed; // @synthesize didSucceed=_didSucceed;
 @property(nonatomic) unsigned long long timestamp; // @synthesize timestamp=_timestamp;
 - (void)mergeFrom:(id)arg1;
@@ -38,7 +38,7 @@
 - (id)containerTypeAsString:(int)arg1;
 @property(nonatomic) BOOL hasContainerType;
 @property(nonatomic) int containerType; // @synthesize containerType=_containerType;
-@property(nonatomic) BOOL hasError;
+@property(nonatomic) BOOL hasErrorCode;
 @property(nonatomic) BOOL hasDidSucceed;
 @property(nonatomic) BOOL hasTimestamp;
 

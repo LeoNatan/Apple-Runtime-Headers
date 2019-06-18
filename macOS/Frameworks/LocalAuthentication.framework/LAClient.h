@@ -9,15 +9,13 @@
 #import <LocalAuthentication/LAContextCallbackXPC-Protocol.h>
 #import <LocalAuthentication/LAContextXPC-Protocol.h>
 
-@class LACachedExternalizedContext, NSData, NSError, NSMutableArray, NSString, NSUUID, NSXPCConnection;
+@class LACachedExternalizedContext, NSData, NSError, NSMutableArray, NSNumber, NSString, NSUUID, NSXPCConnection;
 @protocol LAContextXPC, LAUIDelegate;
 
 __attribute__((visibility("hidden")))
 @interface LAClient : NSObject <LAContextXPC, LAContextCallbackXPC>
 {
-    NSData *_existingContext;
     BOOL _shouldRecoverConnection;
-    LACachedExternalizedContext *_cachedExternalizedContext;
     BOOL _synchronous;
     id <LAUIDelegate> _uiDelegate;
     NSUUID *_uuid;
@@ -25,20 +23,26 @@ __attribute__((visibility("hidden")))
     NSObject<LAContextXPC> *_remoteContext;
     NSObject<LAContextXPC> *_synchronousRemoteContext;
     NSMutableArray *_invalidations;
+    LACachedExternalizedContext *_cachedExternalizedContext;
     NSError *_permanentError;
+    NSNumber *_userSession;
+    NSData *_existingContext;
 }
 
 + (void)_performInvalidationBlocks:(id)arg1;
 + (id)createConnection:(const unsigned int *)arg1 legacyService:(BOOL)arg2;
 + (id)_recoveryQueue;
 + (id)_queue;
+@property(retain, nonatomic) NSData *existingContext; // @synthesize existingContext=_existingContext;
+@property(readonly, nonatomic) NSNumber *userSession; // @synthesize userSession=_userSession;
 @property(retain) NSError *permanentError; // @synthesize permanentError=_permanentError;
+@property(retain) LACachedExternalizedContext *cachedExternalizedContext; // @synthesize cachedExternalizedContext=_cachedExternalizedContext;
 @property(readonly, nonatomic) NSMutableArray *invalidations; // @synthesize invalidations=_invalidations;
 @property(readonly, nonatomic) NSObject<LAContextXPC> *synchronousRemoteContext; // @synthesize synchronousRemoteContext=_synchronousRemoteContext;
 @property(retain, nonatomic) NSObject<LAContextXPC> *remoteContext; // @synthesize remoteContext=_remoteContext;
 @property(readonly, nonatomic) NSXPCConnection *serverConnection; // @synthesize serverConnection=_serverConnection;
 @property(nonatomic) BOOL synchronous; // @synthesize synchronous=_synchronous;
-@property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
+@property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(nonatomic) __weak id <LAUIDelegate> uiDelegate; // @synthesize uiDelegate=_uiDelegate;
 - (void).cxx_destruct;
 - (void)setShowingCoachingHint:(BOOL)arg1 event:(long long)arg2 reply:(CDUnknownBlockType)arg3;

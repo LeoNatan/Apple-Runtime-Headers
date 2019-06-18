@@ -25,6 +25,7 @@
 @property(readonly) AVCaptureResolvedPhotoSettings *resolvedSettings;
 @property(readonly) AVCameraCalibrationData *cameraCalibrationData;
 @property(readonly) NSDictionary *metadata;
+- (id)semanticSegmentationMatteForType:(id)arg1;
 @property(readonly) AVPortraitEffectsMatte *portraitEffectsMatte;
 @property(readonly) AVDepthData *depthData;
 @property(readonly) NSDictionary *embeddedThumbnailPhotoFormat;

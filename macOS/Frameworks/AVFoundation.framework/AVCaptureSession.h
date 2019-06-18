@@ -70,6 +70,7 @@
 - (id)_connectionsForNewInputPort:(id)arg1;
 - (BOOL)canAddConnection:(id)arg1;
 - (BOOL)_canAddConnection:(id)arg1 failureReason:(id *)arg2;
+@property(readonly, nonatomic) NSArray *connections;
 - (void)removeVideoPreviewLayer:(id)arg1;
 - (void)addVideoPreviewLayerWithNoConnection:(id)arg1;
 - (void)addVideoPreviewLayer:(id)arg1;

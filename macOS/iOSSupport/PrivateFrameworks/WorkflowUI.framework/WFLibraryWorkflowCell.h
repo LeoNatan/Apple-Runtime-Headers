@@ -6,7 +6,7 @@
 
 #import <WorkflowUI/WFBaseLibraryWorkflowCell.h>
 
-@class UIBezierPath, UIButton, UIImageView, UILabel, UIView, WFLibraryLayoutMetrics;
+@class UIBezierPath, UIButton, UILabel, WFLibraryLayoutMetrics, WFLibraryWorkflowCellSelectionView;
 @protocol WFLibraryWorkflowCellDelegate;
 
 @interface WFLibraryWorkflowCell : WFBaseLibraryWorkflowCell
@@ -16,8 +16,7 @@
     UIButton *_editButton;
     UILabel *_titleLabel;
     UILabel *_subtitleLabel;
-    UIView *_selectionView;
-    UIImageView *_checkmarkImageView;
+    WFLibraryWorkflowCellSelectionView *_selectionView;
     long long _dragState;
 }
 
@@ -25,8 +24,7 @@
 + (id)jitterYTranslationAnimation;
 + (id)jitterXTranslationAnimation;
 @property(nonatomic) long long dragState; // @synthesize dragState=_dragState;
-@property(readonly, nonatomic) __weak UIImageView *checkmarkImageView; // @synthesize checkmarkImageView=_checkmarkImageView;
-@property(readonly, nonatomic) __weak UIView *selectionView; // @synthesize selectionView=_selectionView;
+@property(readonly, nonatomic) __weak WFLibraryWorkflowCellSelectionView *selectionView; // @synthesize selectionView=_selectionView;
 @property(readonly, nonatomic) UILabel *subtitleLabel; // @synthesize subtitleLabel=_subtitleLabel;
 @property(readonly, nonatomic) UILabel *titleLabel; // @synthesize titleLabel=_titleLabel;
 @property(nonatomic) BOOL hideEditButton; // @synthesize hideEditButton=_hideEditButton;
@@ -48,6 +46,7 @@
 - (void)dragStateDidChange:(long long)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)updateEditButtonVisibility;
 - (void)updateSelectionState;
 @property(copy, nonatomic) WFLibraryLayoutMetrics *layoutMetrics; // @dynamic layoutMetrics;
 - (void)setWorkflowDescription:(id)arg1;
@@ -58,12 +57,10 @@
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (long long)lineCountForLabel:(id)arg1 labelType:(unsigned long long)arg2;
 - (id)textAttributesForLabelType:(unsigned long long)arg1 shouldTruncate:(BOOL)arg2;
-- (long long)subtitleLineHeight;
-- (double)subtitleWeight;
-- (id)subtitleStyle;
-- (long long)titleLineHeight;
-- (double)titleWeight;
-- (id)titleStyle;
+- (double)subtitleLineHeightMultiple;
+- (double)titleLineHeightMultiple;
+- (id)subtitleFont;
+- (id)titleFont;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

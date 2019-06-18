@@ -483,6 +483,7 @@
 - (double)_pageScale;
 - (void)_setPageScale:(double)arg1 withOrigin:(struct CGPoint)arg2;
 - (void)_requestActiveNowPlayingSessionInfo:(CDUnknownBlockType)arg1;
+- (void)_doAfterReceivingEditDragSnapshotForTesting:(CDUnknownBlockType)arg1;
 - (id)_propertiesOfLayerWithID:(unsigned long long)arg1;
 - (void)_firePresentationUpdateForPendingStableStatePresentationCallbacks;
 - (void)_doAfterNextStablePresentationUpdate:(CDUnknownBlockType)arg1;

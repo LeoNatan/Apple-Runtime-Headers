@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     struct BundleNodeHandle _node;
 }
 
++ (long long)formAutoFillButtonTypeFromWKButtonType:(unsigned char)arg1;
 + (id)autoFillNodeWithBundleNodeHandle:(const struct BundleNodeHandle *)arg1;
 - (id).cxx_construct;
 - (void).cxx_destruct;

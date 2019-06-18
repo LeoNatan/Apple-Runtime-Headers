@@ -6,20 +6,21 @@
 
 #import <UIKit/UITableViewController.h>
 
-@class NSString, WFWorkflowTypeManagerResultsController;
+@class NSString, UIView, WFWorkflowTypeManagerResultsController;
 
 @interface WFWorkflowTypeManagerViewController : UITableViewController
 {
     WFWorkflowTypeManagerResultsController *_resultsController;
     CDUnknownBlockType _doneHandler;
     NSString *_workflowType;
+    UIView *_headerView;
 }
 
 + (void)registerRequestHandler;
+@property(readonly, nonatomic) UIView *headerView; // @synthesize headerView=_headerView;
 @property(copy, nonatomic) NSString *workflowType; // @synthesize workflowType=_workflowType;
 @property(copy, nonatomic) CDUnknownBlockType doneHandler; // @synthesize doneHandler=_doneHandler;
 - (void).cxx_destruct;
-- (double)tableView:(id)arg1 heightForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;

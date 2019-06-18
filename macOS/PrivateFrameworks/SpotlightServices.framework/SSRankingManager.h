@@ -28,8 +28,8 @@
 @property(retain, nonatomic) NSDictionary *groupedResults; // @synthesize groupedResults=_groupedResults;
 @property(retain, nonatomic) PRSRankingConfiguration *rankingConfiguration; // @synthesize rankingConfiguration=_rankingConfiguration;
 - (void).cxx_destruct;
-- (void)updateServerScoresUsingBlockOrder:(id)arg1;
-- (id)applyTopSectionPolicy:(id)arg1 withTopHitSection:(id)arg2 isPeopleSearch:(BOOL)arg3 triggerEvent:(unsigned long long)arg4;
+- (void)updateServerScoresUsingBlockOrder:(id)arg1 bundleFeatures:(id)arg2;
+- (id)applyTopSectionPolicy:(id)arg1 withTopHitSection:(id)arg2 isPeopleSearch:(BOOL)arg3 triggerEvent:(unsigned long long)arg4 correction:(id)arg5;
 - (void)refineSectionShowingVisibleResultsWithBetterTextMatches:(id)arg1;
 - (id)rankSectionsUsingBundleIDToSectionMapping:(id)arg1 withRanker:(id)arg2 isPeopleSearch:(BOOL)arg3 isScopedAppSearch:(BOOL)arg4 queryId:(unsigned long long)arg5 isCJK:(BOOL)arg6;
 - (id)removeBlackListedSectionsForMapping:(id)arg1;

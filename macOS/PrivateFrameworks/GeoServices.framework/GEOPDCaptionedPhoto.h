@@ -22,9 +22,13 @@ __attribute__((visibility("hidden")))
     NSString *_licenseUrl;
     GEOPDPhoto *_photo;
     BOOL _displayFullPhotoInline;
+    BOOL _highQuality;
+    BOOL _isBusinessOwned;
     BOOL _useGallery;
     struct {
         unsigned int has_displayFullPhotoInline:1;
+        unsigned int has_highQuality:1;
+        unsigned int has_isBusinessOwned:1;
         unsigned int has_useGallery:1;
         unsigned int read_unknownFields:1;
         unsigned int read_author:1;
@@ -39,6 +43,8 @@ __attribute__((visibility("hidden")))
         unsigned int wrote_licenseUrl:1;
         unsigned int wrote_photo:1;
         unsigned int wrote_displayFullPhotoInline:1;
+        unsigned int wrote_highQuality:1;
+        unsigned int wrote_isBusinessOwned:1;
         unsigned int wrote_useGallery:1;
     } _flags;
 }
@@ -58,6 +64,10 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasIsBusinessOwned;
+@property(nonatomic) BOOL isBusinessOwned;
+@property(nonatomic) BOOL hasHighQuality;
+@property(nonatomic) BOOL highQuality;
 @property(nonatomic) BOOL hasUseGallery;
 @property(nonatomic) BOOL useGallery;
 @property(nonatomic) BOOL hasDisplayFullPhotoInline;

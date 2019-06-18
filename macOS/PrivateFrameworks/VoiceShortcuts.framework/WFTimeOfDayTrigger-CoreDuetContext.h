@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFTimeOfDayTrigger.h>
 
 @interface WFTimeOfDayTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

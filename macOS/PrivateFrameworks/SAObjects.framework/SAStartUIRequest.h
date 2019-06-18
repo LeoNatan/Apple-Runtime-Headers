@@ -8,7 +8,7 @@
 
 #import <SAObjects/SAClientBoundCommand-Protocol.h>
 
-@class NSArray, NSString, SAStartRequest;
+@class NSArray, NSString, SAStartLocalRequest, SAStartRequest;
 
 @interface SAStartUIRequest : SABaseClientBoundCommand <SAClientBoundCommand>
 {
@@ -17,6 +17,7 @@
 + (id)startUIRequestWithDictionary:(id)arg1 context:(id)arg2;
 + (id)startUIRequest;
 - (BOOL)requiresResponse;
+@property(retain, nonatomic) SAStartLocalRequest *startLocalRequest;
 @property(retain, nonatomic) SAStartRequest *startRequest;
 - (id)encodedClassName;
 - (id)groupIdentifier;

@@ -6,16 +6,16 @@
 
 #import <WiFiPolicy/NSObject-Protocol.h>
 
-@class PBCodable;
-@protocol TBLocalFetchRequestDescriptor;
+@class NSSet, PBCodable, TBLocalFetchRequestDescriptor;
 
 @protocol TBFetchRequestDescriptor <NSObject>
-@property(readonly, nonatomic) id <TBLocalFetchRequestDescriptor> localFetchDescriptor;
+@property(readonly, nonatomic) TBLocalFetchRequestDescriptor *localFetchDescriptor;
 @property(readonly, nonatomic) unsigned long long type;
 @property(readonly, nonatomic) Class remoteRequestClass;
 @property(readonly, nonatomic) PBCodable *remoteRequest;
 
 @optional
-@property(readonly, nonatomic) id <TBLocalFetchRequestDescriptor> preferLocalFetchDescriptor;
+@property(readonly, nonatomic) NSSet *tileItems;
+@property(readonly, nonatomic) TBLocalFetchRequestDescriptor *preferLocalFetchDescriptor;
 @end
 

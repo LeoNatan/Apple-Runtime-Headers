@@ -6,9 +6,11 @@
 
 #import <AppKit/NSViewController.h>
 
+#import <ScreenTimeUI/STProtectedControlDelegate-Protocol.h>
+
 @class NSButton, NSString, STCoreUser;
 
-@interface STScreenTimeCommunicationViewController : NSViewController
+@interface STScreenTimeCommunicationViewController : NSViewController <STProtectedControlDelegate>
 {
     BOOL _allowIntroductionInGroups;
     NSButton *_everyoneRadioButton;
@@ -22,6 +24,7 @@
 @property(retain) NSButton *contactsOnlyRadioButton; // @synthesize contactsOnlyRadioButton=_contactsOnlyRadioButton;
 @property(retain) NSButton *everyoneRadioButton; // @synthesize everyoneRadioButton=_everyoneRadioButton;
 - (void).cxx_destruct;
+- (void)actionCancelledForControl:(id)arg1;
 - (void)_validateRadioButtonState;
 - (void)chooseRadioButton:(id)arg1;
 @property(readonly, nonatomic) NSString *introductionDescriptionString;
@@ -30,6 +33,12 @@
 @property(readonly, nonatomic) NSString *descriptionString;
 @property(retain) STCoreUser *representedObject;
 - (void)viewWillAppear;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

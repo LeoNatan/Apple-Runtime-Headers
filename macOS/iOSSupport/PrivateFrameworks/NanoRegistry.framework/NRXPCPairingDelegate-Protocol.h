@@ -7,6 +7,8 @@
 @class NSData, NSDictionary, NSNumber, NSString, NSUUID;
 
 @protocol NRXPCPairingDelegate
+- (void)xpcIsAssertionActive:(NSString *)arg1 withCompletion:(void (^)(BOOL, NSError *))arg2;
+- (void)xpcIsPhoneReadyToMigrateDevice:(NSUUID *)arg1 withCompletion:(void (^)(unsigned long long, NSError *))arg2;
 - (void)xpcGetMigrationCountForPairingID:(NSUUID *)arg1 completion:(void (^)(unsigned long long, NSError *))arg2;
 - (void)xpcGetLastSwitchIndex:(void (^)(unsigned long long, NSError *))arg1;
 - (void)xpcFakePairedSyncIsCompleteWithCompletion:(void (^)(NSError *))arg1;

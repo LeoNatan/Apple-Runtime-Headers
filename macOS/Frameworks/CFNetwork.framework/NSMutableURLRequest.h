@@ -17,8 +17,8 @@
 @property BOOL allowsCellularAccess; // @dynamic allowsCellularAccess;
 @property unsigned long long networkServiceType; // @dynamic networkServiceType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-@property BOOL allowsExpensiveNetworkAccess;
-@property BOOL allowsConstrainedNetworkAccess;
+@property BOOL allowsExpensiveNetworkAccess; // @dynamic allowsExpensiveNetworkAccess;
+@property BOOL allowsConstrainedNetworkAccess; // @dynamic allowsConstrainedNetworkAccess;
 @property(copy) NSURL *mainDocumentURL; // @dynamic mainDocumentURL;
 @property double timeoutInterval; // @dynamic timeoutInterval;
 @property unsigned long long cachePolicy; // @dynamic cachePolicy;

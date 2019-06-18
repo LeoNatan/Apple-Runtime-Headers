@@ -18,6 +18,7 @@
 + (id)_effectForBlurEffect:(id)arg1 vibrancyStyle:(long long)arg2;
 + (id)_effectWithStyle:(long long)arg1 ignoreSimpleVibrancy:(BOOL)arg2;
 + (id)_vibrantEffectForLightMaterial:(id)arg1 darkMaterial:(id)arg2 vibrancyStyle:(long long)arg3;
++ (id)_vibrantShadowEffect;
 + (id)_vibrantEffectWithCAColorMatrix:(struct CAColorMatrix)arg1 alpha:(double)arg2;
 + (id)_lightVibrantEffectWithDarkenColor:(id)arg1 burnColor:(id)arg2 compositingColor:(id)arg3;
 + (id)_darkVibrantEffectWithLightenColor:(id)arg1 dodgeColor:(id)arg2 compositingColor:(id)arg3;

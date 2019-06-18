@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class MPDisplayMode, NSArray, NSImage, NSMutableArray, NSMutableDictionary, NSString, NSUUID;
+@class MPDisplayMode, MPDisplayPreset, NSArray, NSImage, NSMutableArray, NSMutableDictionary, NSString, NSUUID;
 
 @interface MPDisplay : NSObject
 {
@@ -54,8 +54,14 @@
     BOOL _uiProjectorOverride;
     BOOL _needsUpdate;
     struct os_unfair_lock_s _accessLock;
+    NSMutableArray *_presetsArray;
+    unsigned int _numberOfPresets;
+    BOOL _hasRotationSensor;
+    BOOL _usePreciseRefreshRate;
+    BOOL _loadingPresets;
 }
 
+@property(readonly) BOOL hasRotationSensor; // @synthesize hasRotationSensor=_hasRotationSensor;
 @property(retain) MPDisplayMode *defaultMode; // @synthesize defaultMode=_defaultMode;
 @property(retain) MPDisplayMode *nativeMode; // @synthesize nativeMode=_nativeMode;
 @property(retain) MPDisplayMode *currentMode; // @synthesize currentMode=_currentMode;
@@ -78,6 +84,12 @@
 @property unsigned int userFlags; // @synthesize userFlags=_userFlags;
 @property(readonly) int aliasID; // @synthesize aliasID=_aliasID;
 @property(readonly) int displayID; // @synthesize displayID=_displayID;
+- (BOOL)setActivePreset:(id)arg1;
+@property(readonly) NSArray *presets;
+@property(readonly) BOOL hasPresets;
+@property(readonly) MPDisplayPreset *defaultPreset;
+- (void)buildPresetsList;
+@property(readonly) MPDisplayPreset *activePreset;
 - (void)_loadPreviewIconFromServiceDictionary:(id)arg1;
 - (id)_imageAndRect:(struct CGRect *)arg1 fromDictionary:(id)arg2 forOrientation:(long long)arg3;
 - (id)_iconAtPath:(id)arg1;

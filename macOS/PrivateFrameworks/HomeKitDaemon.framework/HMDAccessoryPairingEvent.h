@@ -8,14 +8,16 @@
 
 #import <HomeKitDaemon/HMDAWDLogEvent-Protocol.h>
 
-@class AWDHomeKitVendorInformation, NSString;
+@class HMDAccessory, NSString;
 
 @interface HMDAccessoryPairingEvent : HMDLogEvent <HMDAWDLogEvent>
 {
     BOOL _addOperation;
     BOOL _addViaWAC;
     BOOL _wacLegacy;
-    AWDHomeKitVendorInformation *_vendorInfo;
+    BOOL _usedWiFiPPSK;
+    BOOL _usedOwnershipProof;
+    HMDAccessory *_pairedAccessory;
     long long _linkType;
     long long _certificationStatus;
     unsigned long long _authMethod;
@@ -28,17 +30,18 @@
 + (id)uuid;
 + (void)initialize;
 @property(retain, nonatomic) NSString *identifier; // @synthesize identifier=_identifier;
+@property(nonatomic, getter=isUsedOwnershipProof) BOOL usedOwnershipProof; // @synthesize usedOwnershipProof=_usedOwnershipProof;
+@property(nonatomic, getter=isUsedWiFiPPSK) BOOL usedWiFiPPSK; // @synthesize usedWiFiPPSK=_usedWiFiPPSK;
 @property(nonatomic) unsigned long long authMethod; // @synthesize authMethod=_authMethod;
 @property(nonatomic) long long certificationStatus; // @synthesize certificationStatus=_certificationStatus;
 @property(nonatomic, getter=isWacLegacy) BOOL wacLegacy; // @synthesize wacLegacy=_wacLegacy;
 @property(nonatomic, getter=isAddViaWAC) BOOL addViaWAC; // @synthesize addViaWAC=_addViaWAC;
 @property(readonly, nonatomic, getter=isAddOperation) BOOL addOperation; // @synthesize addOperation=_addOperation;
 @property(nonatomic) long long linkType; // @synthesize linkType=_linkType;
-@property(retain, nonatomic) AWDHomeKitVendorInformation *vendorInfo; // @synthesize vendorInfo=_vendorInfo;
+@property(retain, nonatomic) HMDAccessory *pairedAccessory; // @synthesize pairedAccessory=_pairedAccessory;
 - (void).cxx_destruct;
 - (void)pairedAccessory:(id)arg1;
 - (void)pairedToServer:(id)arg1 certificationStatus:(long long)arg2;
-- (void)setcertificationStatus:(long long)arg1;
 - (void)setAuthenticationMethod:(unsigned long long)arg1;
 - (void)setAddedViaWAC:(BOOL)arg1;
 - (id)initWithAccessoryDescription:(id)arg1;

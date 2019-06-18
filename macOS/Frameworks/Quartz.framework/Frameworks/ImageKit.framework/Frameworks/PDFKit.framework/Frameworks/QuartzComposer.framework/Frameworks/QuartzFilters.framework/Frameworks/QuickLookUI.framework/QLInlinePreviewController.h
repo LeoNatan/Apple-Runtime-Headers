@@ -58,6 +58,7 @@
 - (void)sharedPreviewView:(id)arg1 willStartSharingWithPreviewPanel:(id)arg2;
 - (BOOL)shouldAlwaysHandleMultiClicksForPreviewView:(id)arg1;
 - (BOOL)previewView:(id)arg1 shouldBypassLoadingOfPreviewItem:(id)arg2;
+- (void)previewView:(id)arg1 didFailDuringPreviewOfItem:(id)arg2;
 - (void)previewView:(id)arg1 didFailLoadingPreviewItem:(id)arg2;
 - (void)previewView:(id)arg1 didShowPreviewItem:(id)arg2;
 - (void)previewView:(id)arg1 willShowPreviewItem:(id)arg2;

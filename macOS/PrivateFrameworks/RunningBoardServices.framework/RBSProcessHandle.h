@@ -59,7 +59,6 @@
 - (id)processPredicate;
 - (BOOL)matchesProcess:(id)arg1;
 - (int)rbs_pid;
-- (id)observeForImminentAssertionsExpiration:(CDUnknownBlockType)arg1;
 - (void)plugInHandshakeComplete;
 - (id)legacyHandle;
 @property(readonly, copy, nonatomic) BSAuditToken *auditToken;

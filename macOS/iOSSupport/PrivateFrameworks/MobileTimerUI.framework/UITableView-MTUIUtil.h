@@ -7,6 +7,7 @@
 #import <UIKit/UITableView.h>
 
 @interface UITableView (MTUIUtil)
-+ (double)mtui_groupedTableHeaderFontHeight;
++ (id)wordWrapParagraphStyle;
+- (double)mtui_sectionHeaderHeightWithString:(id)arg1;
 @end
 

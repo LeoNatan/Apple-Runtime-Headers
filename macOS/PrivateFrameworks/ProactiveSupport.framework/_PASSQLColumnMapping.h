@@ -18,6 +18,7 @@
 - (int)indexForColumnName:(const char *)arg1 table:(const char *)arg2;
 - (void)dealloc;
 - (void)_ensureColumnMappingExists;
+- (void)resetSearchHint;
 - (id)initWithStatementPtr:(struct sqlite3_stmt *)arg1;
 
 @end

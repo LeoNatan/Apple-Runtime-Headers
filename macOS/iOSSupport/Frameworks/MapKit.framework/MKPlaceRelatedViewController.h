@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)_reloadRelatedMapItems:(id)arg1;
 - (void)fetchPOIs;
 - (void)viewDidLoad;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

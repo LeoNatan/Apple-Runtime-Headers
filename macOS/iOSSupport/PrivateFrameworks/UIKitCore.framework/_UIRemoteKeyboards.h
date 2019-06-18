@@ -40,6 +40,7 @@
     BOOL _updatingHeight;
     BOOL _handlingRemoteEvent;
     BOOL _shouldFence;
+    long long _lastEventSource;
     NSXPCConnection *_connection;
     _UIKeyboardChangedInformation *_currentState;
 }
@@ -56,12 +57,15 @@
 @property(retain) _UIKeyboardChangedInformation *currentState; // @synthesize currentState=_currentState;
 @property(retain) NSXPCConnection *connection; // @synthesize connection=_connection;
 @property(nonatomic) BOOL enableMultiscreenHack; // @synthesize enableMultiscreenHack=_enableMultiscreenHack;
+@property(readonly, nonatomic) long long lastEventSource; // @synthesize lastEventSource=_lastEventSource;
 @property(copy, nonatomic) NSString *focusedSceneIdentifier; // @synthesize focusedSceneIdentifier=_focusedSceneIdentifier;
 - (void)didRemoveDeactivationReason:(id)arg1;
 - (void)willAddDeactivationReason:(id)arg1;
 - (BOOL)shouldAllowInputViewsRestoredForId:(id)arg1;
 - (void)restorePreservedInputViewsIfNecessary;
 - (void)peekApplicationEvent:(id)arg1;
+- (void)queue_setLastEventSource:(long long)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (void)updateLastEventSource:(long long)arg1;
 - (void)userSelectedSceneWithToken:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (void)userSelectedApp:(id)arg1 onCompletion:(CDUnknownBlockType)arg2;
 - (void)forceKeyboardAway;
@@ -80,7 +84,7 @@
 @property(readonly) double intersectionHeight;
 @property(readonly) BOOL keyboardVisible;
 - (void)finishWithHostedWindow;
-- (id)prepareForHostedWindow;
+- (id)prepareForHostedWindowWithScene:(id)arg1;
 - (id)_activeScreen;
 - (void)performOnDistributedControllers:(CDUnknownBlockType)arg1;
 - (void)_performOnDistributedControllersExceptSelf:(CDUnknownBlockType)arg1;

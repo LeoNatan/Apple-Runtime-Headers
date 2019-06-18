@@ -10,6 +10,7 @@
 
 @class ADNotificationBus, NSString;
 
+__attribute__((visibility("hidden")))
 @interface AUNotificationBusConcreteHandlerRegistration : NSObject <ADNotificationRegistrationToken>
 {
     unsigned int _token;

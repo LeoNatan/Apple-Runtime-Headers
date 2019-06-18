@@ -33,6 +33,7 @@ __attribute__((visibility("hidden")))
 - (void)_viewEncyclopedicContent;
 - (void)_updateViews;
 - (void)viewDidLoad;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

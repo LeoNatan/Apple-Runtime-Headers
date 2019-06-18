@@ -79,13 +79,13 @@ __attribute__((visibility("hidden")))
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleArrowZoom:(id)arg1;
-- (void)handleZoomArrowMask:(long long)arg1 speed:(double)arg2;
 - (void)cancelZoomInOrOut;
 - (void)zoomOut;
 - (void)zoomIn;
 - (void)_handleZoomPan:(id)arg1;
 - (void)_handleCompassRotation:(id)arg1;
 - (void)_handleRotationPan:(id)arg1;
+- (void)handleZoomArrowMask:(long long)arg1 speed:(double)arg2;
 - (double)variableDelayTapRecognizer:(id)arg1 shouldWaitForNextTapForDuration:(double)arg2 afterTouch:(id)arg3;
 - (void)gestureRecognizerTouchesCanceled:(id)arg1;
 - (void)gestureRecognizerTouchesEnded:(id)arg1;

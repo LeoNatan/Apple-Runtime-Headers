@@ -10,6 +10,7 @@
 
 @class ADNotificationBus, NSString;
 
+__attribute__((visibility("hidden")))
 @interface ADNotificationManualNotificationEventSource : NSObject <ADNotificationBusDelegate>
 {
     ADNotificationBus *_eventBus;

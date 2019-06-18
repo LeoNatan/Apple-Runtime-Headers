@@ -19,6 +19,7 @@
 }
 
 + (long long)handleTypeForValue:(id)arg1;
++ (id)normalizedPhoneNumberHandleForValue:(id)arg1 isoCountryCode:(id)arg2;
 + (BOOL)supportsSecureCoding;
 @property(readonly, copy, nonatomic) NSString *normalizedValue; // @synthesize normalizedValue=_normalizedValue;
 @property(readonly, copy, nonatomic) NSString *value; // @synthesize value=_value;

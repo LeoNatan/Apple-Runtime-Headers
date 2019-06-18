@@ -379,9 +379,7 @@ struct vector<unsigned int, std::__1::allocator<unsigned int>> {
 
 typedef struct {
     float _field1;
-    unsigned long long _field2;
-    float _field3;
-} CDStruct_cd80b3f2;
+} CDStruct_37a3040a;
 
 typedef struct CDStruct_183601bc;
 

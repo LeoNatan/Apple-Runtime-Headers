@@ -10,7 +10,6 @@
 
 @protocol MSPSharedTripXPCClient <NSObject>
 - (void)destinationReachedDidUpdateForSharedTrip:(GEOSharedNavState *)arg1;
-- (void)mutedDidUpateForSharedTrip:(GEOSharedNavState *)arg1;
 - (void)routeDidUpdateForSharedTrip:(GEOSharedNavState *)arg1;
 - (void)etaDidUpdateForSharedTrip:(GEOSharedNavState *)arg1;
 - (void)destinationDidUpdateForSharedTrip:(GEOSharedNavState *)arg1;

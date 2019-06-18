@@ -8,6 +8,7 @@
 
 @class DeviceConfigurationMO, HWDSPMO, NSSet, NSString, VolumePolicyMO;
 
+__attribute__((visibility("hidden")))
 @interface PortMO : NSManagedObject
 {
 }

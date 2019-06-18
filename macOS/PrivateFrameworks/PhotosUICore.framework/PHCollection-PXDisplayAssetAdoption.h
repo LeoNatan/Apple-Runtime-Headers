@@ -53,7 +53,6 @@
 @property(readonly, nonatomic) BOOL px_isStandInAlbum;
 @property(readonly, nonatomic) BOOL px_isRegularAlbum;
 @property(readonly, nonatomic) BOOL px_isUserCreated;
-- (id)pasteboardReference;
 @property(readonly, nonatomic) NSDictionary *px_debugDictionary;
 - (BOOL)px_fetchContainsAnyAssets;
 - (BOOL)px_fetchIsEmpty;

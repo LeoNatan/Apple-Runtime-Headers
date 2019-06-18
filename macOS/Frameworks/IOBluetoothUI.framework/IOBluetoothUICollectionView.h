@@ -9,14 +9,13 @@
 #import <IOBluetoothUI/CBCentralManagerDelegate-Protocol.h>
 #import <IOBluetoothUI/CBPeripheralDelegate-Protocol.h>
 #import <IOBluetoothUI/IOBluetoothDevicePairDelegate-Protocol.h>
-#import <IOBluetoothUI/IOBluetoothProximityPairDelegate-Protocol.h>
 #import <IOBluetoothUI/NSMenuDelegate-Protocol.h>
 #import <IOBluetoothUI/NSTableViewDelegate-Protocol.h>
 #import <IOBluetoothUI/NSWindowDelegate-Protocol.h>
 
-@class BluetoothHIDDeviceController, CBCentralManager, CBPeripheral, IOBluetoothDevice, IOBluetoothDeviceInquiry, IOBluetoothDevicePairViewController, IOBluetoothProximityPair, IOBluetoothUISortedArrayController, NSAlert, NSArray, NSButton, NSImage, NSImageView, NSMutableArray, NSMutableDictionary, NSPanel, NSProgressIndicator, NSString, NSTableView, NSTextField, NSTimer, NSTrackingArea, NSView, NSWindowController;
+@class BluetoothHIDDeviceController, CBCentralManager, CBPeripheral, IOBluetoothDevice, IOBluetoothDeviceInquiry, IOBluetoothDevicePairViewController, IOBluetoothUISortedArrayController, NSAlert, NSArray, NSButton, NSImage, NSImageView, NSMutableArray, NSMutableDictionary, NSPanel, NSProgressIndicator, NSString, NSTableView, NSTextField, NSTimer, NSTrackingArea, NSView, NSWindowController;
 
-@interface IOBluetoothUICollectionView : NSViewController <NSMenuDelegate, NSTableViewDelegate, IOBluetoothDevicePairDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, NSWindowDelegate, IOBluetoothProximityPairDelegate>
+@interface IOBluetoothUICollectionView : NSViewController <NSMenuDelegate, NSTableViewDelegate, IOBluetoothDevicePairDelegate, CBCentralManagerDelegate, CBPeripheralDelegate, NSWindowDelegate>
 {
     BOOL mAutoAdjustButtonSize;
     BOOL mUserPasscode;
@@ -83,7 +82,6 @@
     NSMutableArray *mDeviceArrayTmp;
     BOOL windowLoaded;
     NSWindowController *audioOptionsController;
-    IOBluetoothProximityPair *proxPairing;
     BOOL _mShowPairButton;
     NSTimer *_mLETimer;
     IOBluetoothDevice *_mAppleDevice;

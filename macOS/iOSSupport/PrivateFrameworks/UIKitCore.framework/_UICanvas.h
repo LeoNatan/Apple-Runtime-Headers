@@ -6,38 +6,9 @@
 
 #import <UIKitCore/UICanvas.h>
 
-@class FBSScene, NSArray, NSString, UIScreen;
-@protocol UICoordinateSpace, _UICanvasDelegate;
-
 @interface _UICanvas : UICanvas
 {
-    struct CGSize _contentMinSize;
 }
-
-+ (id)canvasForScene:(id)arg1 create:(BOOL)arg2;
-+ (id)canvasForScene:(id)arg1;
-+ (id)canvases;
-+ (id)_actionsHandlers;
-+ (id)_settingsDiffActions;
-@property(nonatomic) struct CGSize contentMinSize; // @synthesize contentMinSize=_contentMinSize;
-- (void)_setAVKitRequestedRefreshRate:(double)arg1 HDRMode:(long long)arg2 overscanCompensation:(long long)arg3;
-@property(nonatomic) long long screenRequestedOverscanCompensation; // @dynamic screenRequestedOverscanCompensation;
-- (id)initWithScene:(id)arg1;
-- (void)_invalidate;
-- (void)attachWindow:(id)arg1;
-- (void)detachWindow:(id)arg1;
-- (void)_willResignActive;
-- (void)_didBecomeActive;
-- (void)_willAttach;
-
-// Remaining properties
-@property(readonly, nonatomic) id <UICoordinateSpace> coordinateSpace; // @dynamic coordinateSpace;
-@property(retain, nonatomic) id <_UICanvasDelegate> delegate; // @dynamic delegate;
-@property(nonatomic) BOOL keepContextAssociationInBackground; // @dynamic keepContextAssociationInBackground;
-@property(readonly, nonatomic) FBSScene *scene; // @dynamic scene;
-@property(readonly, nonatomic) UIScreen *screen; // @dynamic screen;
-@property(copy, nonatomic) NSString *title;
-@property(readonly, nonatomic) NSArray *windows; // @dynamic windows;
 
 @end
 

@@ -14,10 +14,12 @@ __attribute__((visibility("hidden")))
     UIView *_anchorView;
     _UITargetedPreview *_targetedPreview;
     _UIPortalView *_portalView;
+    UIView *_platterBackgroundView;
     _UIPlatterSoftShadowView *_shadowView;
 }
 
 @property(retain, nonatomic) _UIPlatterSoftShadowView *shadowView; // @synthesize shadowView=_shadowView;
+@property(retain, nonatomic) UIView *platterBackgroundView; // @synthesize platterBackgroundView=_platterBackgroundView;
 @property(retain, nonatomic) _UIPortalView *portalView; // @synthesize portalView=_portalView;
 @property(retain, nonatomic) _UITargetedPreview *targetedPreview; // @synthesize targetedPreview=_targetedPreview;
 @property(nonatomic) __weak UIView *anchorView; // @synthesize anchorView=_anchorView;

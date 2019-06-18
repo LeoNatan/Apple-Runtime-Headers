@@ -7,6 +7,7 @@
 #import <Foundation/NSSet.h>
 
 @interface NSSet (ThreeBars)
+- (id)tilePredicate;
 - (id)bssidPredicate;
 @end
 

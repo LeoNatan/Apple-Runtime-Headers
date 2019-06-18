@@ -81,7 +81,7 @@
 - (void)slotTemplateView:(id)arg1 willBeginTypingInSlotWithIdentifier:(id)arg2 usingTextEntry:(id)arg3 allowMultipleLines:(char *)arg4;
 - (void)slotTemplateView:(id)arg1 didTapTextAttachment:(id)arg2 inSlotWithIdentifier:(id)arg3;
 - (BOOL)slotTemplateView:(id)arg1 shouldTapTextAttachment:(id)arg2 inSlotWithIdentifier:(id)arg3;
-- (void)slotTemplateView:(id)arg1 didLongPressSlotWithIdentifier:(id)arg2 sourceRect:(struct CGRect)arg3;
+- (void)slotTemplateView:(id)arg1 didLongPressSlotWithIdentifier:(id)arg2 sourceRect:(struct CGRect)arg3 textAttachmentToSelect:(id)arg4;
 - (BOOL)slotTemplateView:(id)arg1 shouldLongPressSlotWithIdentifier:(id)arg2;
 - (void)slotTemplateView:(id)arg1 didDeselectSlotWithIdentifier:(id)arg2;
 - (void)slotTemplateView:(id)arg1 didSelectSlotWithIdentifier:(id)arg2 sourceRect:(struct CGRect)arg3;

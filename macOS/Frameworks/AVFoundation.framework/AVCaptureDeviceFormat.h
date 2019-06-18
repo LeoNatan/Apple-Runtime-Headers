@@ -18,6 +18,8 @@
 + (id)deviceFormatWithFormatDescription:(struct opaqueCMFormatDescription *)arg1 supportedFrameRateRanges:(id)arg2 autoFocusSystem:(long long)arg3;
 + (id)_stringForFormatDescription:(struct opaqueCMFormatDescription *)arg1 frameRateRanges:(id)arg2;
 @property(readonly, nonatomic, getter=isVideoStabilizationSupported) BOOL videoStabilizationSupported; // @synthesize videoStabilizationSupported=_videoStabilizationSupported;
+- (BOOL)isMultiCamSupported;
+@property(readonly, nonatomic, getter=isHighestPhotoQualitySupported) BOOL highestPhotoQualitySupported;
 - (BOOL)isPortraitEffectsMatteStillImageDeliverySupported;
 @property(readonly, nonatomic) NSArray *unsupportedCaptureOutputClasses;
 @property(readonly, nonatomic) NSArray *supportedDepthDataFormats;

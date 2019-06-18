@@ -6,11 +6,12 @@
 
 #import <UXKit/UXView.h>
 
+#import <PhotosUICore/PXAccessibilityView-Protocol.h>
 #import <PhotosUICore/PXGReusableView-Protocol.h>
 
-@class NSVisualEffectView, PXCuratedLibraryInlineHeaderViewConfiguration, UXLabel;
+@class NSString, NSVisualEffectView, PXCuratedLibraryInlineHeaderViewConfiguration, UXLabel;
 
-@interface PXCuratedLibraryInlineHeaderView : UXView <PXGReusableView>
+@interface PXCuratedLibraryInlineHeaderView : UXView <PXGReusableView, PXAccessibilityView>
 {
     PXCuratedLibraryInlineHeaderViewConfiguration *_configuration;
     NSVisualEffectView *_effectView;
@@ -37,6 +38,10 @@
 - (id)_tintViewBackgroundColor;
 - (void)_setEffectViewCornerRadius:(double)arg1;
 - (void)_setupBackgroundView;
+@property(readonly, copy, nonatomic) NSString *accessibilityRole;
+@property(readonly, copy, nonatomic) NSString *accessibilityLabel;
+@property(readonly, nonatomic) BOOL isContainedInAsset;
+@property(readonly, nonatomic) BOOL isAccessible;
 - (void)prepareForReuse;
 - (void)becomeReusable;
 - (void)layoutSubviews;
@@ -46,6 +51,12 @@
 - (void)setHidden:(BOOL)arg1;
 - (void)_updateConfiguration;
 - (id)initWithFrame:(struct CGRect)arg1;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

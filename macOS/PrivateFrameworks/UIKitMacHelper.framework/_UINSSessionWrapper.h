@@ -6,20 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSDraggingSession, UINSDragSession, UINSDragSessionHandler;
-@protocol UINSDragOperationMasks;
+@class NSDraggingSession, UINSDragSession;
+@protocol UINSDragOperationMasks, UINSDragSessionHandler;
 
 __attribute__((visibility("hidden")))
 @interface _UINSSessionWrapper : NSObject
 {
     NSDraggingSession *_internalDragSession;
     UINSDragSession *_externalDragSession;
-    UINSDragSessionHandler *_sessionHandler;
+    id <UINSDragSessionHandler> _sessionHandler;
     id <UINSDragOperationMasks> _operationMasks;
 }
 
 @property(retain) id <UINSDragOperationMasks> operationMasks; // @synthesize operationMasks=_operationMasks;
-@property(retain) UINSDragSessionHandler *sessionHandler; // @synthesize sessionHandler=_sessionHandler;
+@property(retain) id <UINSDragSessionHandler> sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 @property(retain) UINSDragSession *externalDragSession; // @synthesize externalDragSession=_externalDragSession;
 @property(retain) NSDraggingSession *internalDragSession; // @synthesize internalDragSession=_internalDragSession;
 - (void).cxx_destruct;

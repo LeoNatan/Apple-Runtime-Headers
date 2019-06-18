@@ -143,7 +143,9 @@
 - (void)stoppedTrackingPeer:(id)arg1 ofType:(unsigned char)arg2;
 - (void)stopTrackingPeerWithRequest:(id)arg1;
 - (void)startTrackingPeerWithRequest:(id)arg1;
+- (void)stopScanning_async:(id)arg1;
 - (void)stopScanning:(id)arg1;
+- (void)startScanning_async:(id)arg1;
 - (void)startScanning:(id)arg1;
 - (void)registerForAnyScanResults:(BOOL)arg1;
 - (void)resetConnection;
@@ -155,10 +157,13 @@
 - (void)advertisingPendingOfType:(unsigned char)arg1;
 - (void)advertisingFailedToStart:(id)arg1 ofType:(unsigned char)arg2;
 - (void)advertisingStartedOfType:(unsigned char)arg1;
+- (void)stopAdvertising_async:(id)arg1;
 - (void)stopAdvertising:(id)arg1;
+- (void)startAdvertising_async:(id)arg1;
 - (void)startAdvertising:(id)arg1;
 - (void)addCharacteristic:(id)arg1 forService:(id)arg2;
 - (void)queueBlock:(CDUnknownBlockType)arg1;
+- (void)destroy_async;
 - (void)destroy;
 - (void)setupConnection;
 - (void)endTestMode;

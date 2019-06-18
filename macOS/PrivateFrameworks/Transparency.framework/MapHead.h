@@ -22,6 +22,7 @@
 @property(copy, nonatomic) NSData *mapHeadHash; // @dynamic mapHeadHash;
 @property(nonatomic) int mapType; // @dynamic mapType;
 @property(nonatomic) unsigned long long revision; // @dynamic revision;
+@property(nonatomic) unsigned long long treeId; // @dynamic treeId;
 
 @end
 

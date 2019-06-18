@@ -20,7 +20,7 @@ __attribute__((visibility("hidden")))
     BOOL _isPersistent;
     NSObject<OS_dispatch_source> *_timeoutTimer;
     NSObject<OS_dispatch_queue> *_timeoutTimerQueue;
-    struct OpaqueFigCFWeakReference *_timeoutTimerContext;
+    struct OpaqueFigCFWeakReferenceHolder *_timeoutTimerContext;
     BOOL _timeoutTimerStarted;
 }
 

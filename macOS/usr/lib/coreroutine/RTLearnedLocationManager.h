@@ -15,6 +15,7 @@
 @interface RTLearnedLocationManager : RTService <RTLearnedLocationEngineProtocol, RTPurgable, RTDiagnosticProvider>
 {
     BOOL _available;
+    BOOL _migrationComplete;
     RTAccountManager *_accountManager;
     RTLearnedLocationAlgorithmMetricCalculator *_algorithmMetricCalculator;
     RTContactsManager *_contactsManager;
@@ -41,6 +42,7 @@
 + (double)distanceThresholdFromUncertainty:(double)arg1 otherUncertainty:(double)arg2;
 + (id)migrateLegacyMapItemWithGeoMapItem:(id)arg1 geoMapItemHandle:(id)arg2 source:(unsigned long long)arg3 mapServiceManager:(id)arg4 error:(id *)arg5;
 + (id)modeToString:(long long)arg1;
+@property(readonly, nonatomic) BOOL migrationComplete; // @synthesize migrationComplete=_migrationComplete;
 @property(nonatomic) BOOL available; // @synthesize available=_available;
 @property(readonly, nonatomic) RTPlatform *platform; // @synthesize platform=_platform;
 @property(readonly, nonatomic) RTMapServiceManager *mapServiceManager; // @synthesize mapServiceManager=_mapServiceManager;
@@ -67,7 +69,7 @@
 - (void)reconstructTransitionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)_reconstructTransitionsWithHandler:(CDUnknownBlockType)arg1;
 - (void)updateTransitionWithIdentifier:(id)arg1 motionActivityType:(unsigned long long)arg2 handler:(CDUnknownBlockType)arg3;
-- (void)logLocationsOfInterestWithHandler:(CDUnknownBlockType)arg1;
+- (void)logDatabasesWithHandler:(CDUnknownBlockType)arg1;
 - (void)performPurgeOfType:(long long)arg1 referenceDate:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)onLearnedLocationStoreNotification:(id)arg1;
 - (void)_onLearnedLocationStoreNotification:(id)arg1;

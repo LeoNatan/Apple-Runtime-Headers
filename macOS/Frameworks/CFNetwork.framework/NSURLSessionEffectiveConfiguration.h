@@ -6,7 +6,7 @@
 
 #import <CFNetwork/__NSURLSessionEffectiveConfiguration_Base.h>
 
-@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
+@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSNumber, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
 @protocol NSURLSessionAppleIDContext;
 
 @interface NSURLSessionEffectiveConfiguration : __NSURLSessionEffectiveConfiguration_Base
@@ -50,6 +50,7 @@
 @property long long _expiredDNSBehavior; // @dynamic _expiredDNSBehavior;
 @property unsigned long long _forcedNetworkServiceType; // @dynamic _forcedNetworkServiceType;
 @property BOOL _forcesNewConnections; // @dynamic _forcesNewConnections;
+@property(copy) NSNumber *_maximumWatchCellularTransferSize; // @dynamic _maximumWatchCellularTransferSize;
 @property unsigned long long _multipathAlternatePort; // @dynamic _multipathAlternatePort;
 @property BOOL _onBehalfOfPairedDevice; // @dynamic _onBehalfOfPairedDevice;
 @property BOOL _preventsAppSSO; // @dynamic _preventsAppSSO;

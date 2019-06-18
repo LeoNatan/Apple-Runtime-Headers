@@ -29,6 +29,8 @@
 - (void)addPurgedResource:(id)arg1;
 - (void)setProtectionOptions:(unsigned long long)arg1;
 - (unsigned long long)protectionOptions;
+- (void)setSegmentListLockedPeerIndex:(unsigned int)arg1;
+- (BOOL)getSegmentListLockedPeerIndex:(unsigned int *)arg1;
 - (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2 timeout:(unsigned int)arg3;
 - (void)encodeWaitForEvent:(id)arg1 value:(unsigned long long)arg2;
 - (void)encodeSignalEvent:(id)arg1 value:(unsigned long long)arg2;

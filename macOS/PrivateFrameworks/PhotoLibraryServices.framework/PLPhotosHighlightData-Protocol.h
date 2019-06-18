@@ -14,11 +14,9 @@
 + (NSArray *)sortByTimeSortDescriptors;
 @property(retain, nonatomic) NSSet *dayGroupSummaryAssets;
 @property(retain, nonatomic) NSSet *dayGroupExtendedAssets;
-@property(retain, nonatomic) NSSet *dayGroupOverviewAssets;
 @property(retain, nonatomic) NSSet *dayGroupAssets;
 @property(retain, nonatomic) NSSet *extendedAssets;
 @property(retain, nonatomic) NSSet *summaryAssets;
-@property(retain, nonatomic) NSSet *overviewAssets;
 @property(retain, nonatomic) NSSet *assets;
 @property(retain, nonatomic) id <PLMomentAssetData> monthFirstAsset;
 @property(retain, nonatomic) id <PLMomentAssetData> keyAssetForKind;

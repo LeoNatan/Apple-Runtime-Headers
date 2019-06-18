@@ -6,10 +6,10 @@
 
 #import <WiFiPolicy/NSObject-Protocol.h>
 
-@class NSArray, NSDictionary, NSError;
+@class NSArray, NSError, NSSet;
 
 @protocol TBFetchResponse <NSObject>
-@property(readonly, nonatomic) NSDictionary *tiledResults;
+@property(readonly, nonatomic) NSSet *tiles;
 @property(readonly, copy, nonatomic) NSError *error;
 @property(readonly, nonatomic) NSArray *results;
 @end

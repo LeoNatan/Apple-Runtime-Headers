@@ -52,6 +52,7 @@
         unsigned int noRepeatKEs:1;
         unsigned int blockedByScreenTime:1;
         unsigned int submenuParentUnchoosable:1;
+        unsigned int allowedForLimitedAppMode:1;
     } _miFlags;
 }
 
@@ -114,6 +115,8 @@
 @property long long indentationLevel;
 - (void)_setNextItemIsAlternate:(BOOL)arg1;
 - (BOOL)_nextItemIsAlternate;
+- (BOOL)_allowedForLimitedAppMode;
+- (void)_setAllowedForLimitedAppMode:(BOOL)arg1;
 - (BOOL)_submenuParentItemUnchoosable;
 - (void)_setSubmenuParentItemUnchoosable:(BOOL)arg1;
 - (BOOL)_showsBlockedByScreenTime;
@@ -179,6 +182,8 @@
 - (void)_cacheUserKeyEquivalentInfo:(struct NSMenuUserKeyEquivalentInfo_t)arg1;
 - (struct NSMenuUserKeyEquivalentInfo_t)_fetchFreshUserKeyEquivalentInfo;
 - (void)_setKeyboardAwareEquivalent:(id)arg1 modifiers:(unsigned long long)arg2;
+- (void)_setKeyEquivalentInputSourceIdentifier:(id)arg1;
+- (id)_keyEquivalentInputSourceIdentifier;
 @property(readonly, getter=isSeparatorItem) BOOL separatorItem;
 - (struct CGSize)_cachedAttributedTitleSizeForMeasuring:(BOOL)arg1 hasAttachment:(char *)arg2;
 - (struct CGSize)_computeBoundingRectSizeForTitle:(id)arg1 hasAttachment:(char *)arg2;
@@ -210,6 +215,7 @@
 - (long long)backgroundStyle;
 - (id)init;
 - (id)copyNormalizedTitle:(id)arg1;
+- (BOOL)_isSelectorAllowedForLimitedAppMode:(SEL)arg1;
 - (id)initWithTitle:(id)arg1 action:(SEL)arg2 keyEquivalent:(id)arg3;
 - (BOOL)accessibilityPerformShowMenu;
 - (BOOL)accessibilityPerformShowDefaultUI;

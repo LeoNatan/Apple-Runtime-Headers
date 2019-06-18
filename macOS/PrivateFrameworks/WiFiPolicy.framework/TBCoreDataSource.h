@@ -23,10 +23,11 @@
 - (void).cxx_destruct;
 - (void)_createNewNetworkFromDictionary:(id)arg1 withMOC:(id)arg2;
 - (void)importObjectsWithArray:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)_createNewNetwork:(id)arg1 tileKey:(unsigned long long)arg2 timestamp:(double)arg3 withMOC:(id)arg4;
+- (void)_createNewNetwork:(id)arg1 tile:(id)arg2 withMOC:(id)arg3;
 - (void)removeWithFetchRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeAllWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)cacheFetchResponse:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)_canSupportRequest:(id)arg1;
 - (void)_executeFetchRequest:(id)arg1;
 - (void)executeFetchRequest:(id)arg1;
 - (unsigned long long)type;

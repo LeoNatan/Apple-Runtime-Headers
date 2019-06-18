@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class NSSet;
+@class NSArray;
 
 @interface AVAudioSessionGroup : NSObject
 {
 }
 
-@property(retain, nonatomic) NSSet *sessions;
+@property(retain, nonatomic) NSArray *sessions;
 @property(nonatomic) unsigned long long behaviors;
 
 @end

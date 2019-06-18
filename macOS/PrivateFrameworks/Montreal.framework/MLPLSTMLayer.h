@@ -57,8 +57,12 @@
 - (void)exportWeightsWithWeightMatrix:(id)arg1 weightID:(unsigned long long)arg2 destination:(float *)arg3 recurrent:(BOOL)arg4;
 - (id)generateNode:(id)arg1 model:(id)arg2 weightIter:(unsigned long long *)arg3;
 - (void)updateSourceMatrix:(struct NSArray *)arg1 inference:(BOOL)arg2;
-- (struct NSArray *)seqBackward:(id)arg1 inputGradient:(struct NSArray *)arg2;
-- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 lossLabels:(id)arg3 runInference:(BOOL)arg4;
+- (struct NSArray *)seqBackwardCombinedMatrix:(id)arg1 inputGradient:(struct NSArray *)arg2;
+- (struct NSArray *)seqBackwardDifferentMatrices:(id)arg1 inputGradient:(struct NSArray *)arg2;
+- (struct NSArray *)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(struct NSArray *)arg3;
+- (struct NSArray *)seqForwardCombinedMatrix:(id)arg1 input:(struct NSArray *)arg2;
+- (struct NSArray *)seqForwardDifferentMatrices:(id)arg1 input:(struct NSArray *)arg2;
+- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
 - (void)createKernel;
 @property(readonly) NSArray *mlpOptimizers;
 - (void)populateActivation:(int *)arg1 montrealActivationType:(long long)arg2;

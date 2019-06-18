@@ -18,9 +18,13 @@
     unsigned char _currentStatus;
     BOOL _initialStateChangeSent;
     CDUnknownBlockType _stateChangedBlock;
+    CDUnknownBlockType _stateChangedBlockWithCompletion;
     CDUnknownBlockType _statusChangedBlock;
+    CDUnknownBlockType _statusChangedBlockWithCompletion;
     CDUnknownBlockType _beaconingKeyChangedBlock;
+    CDUnknownBlockType _beaconingKeyChangedBlockWithCompletion;
     CDUnknownBlockType _nearbyTokensChangedBlock;
+    CDUnknownBlockType _nearbyTokensChangedBlockWithCompletion;
     FMXPCServiceDescription *_serviceDescription;
     FMXPCSession *_session;
     FMXPCServiceDescription *_userAgentServiceDescription;
@@ -49,9 +53,13 @@
 @property(retain, nonatomic) FMXPCServiceDescription *userAgentServiceDescription; // @synthesize userAgentServiceDescription=_userAgentServiceDescription;
 @property(retain, nonatomic) FMXPCSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) FMXPCServiceDescription *serviceDescription; // @synthesize serviceDescription=_serviceDescription;
+@property(copy, nonatomic) CDUnknownBlockType nearbyTokensChangedBlockWithCompletion; // @synthesize nearbyTokensChangedBlockWithCompletion=_nearbyTokensChangedBlockWithCompletion;
 @property(copy, nonatomic) CDUnknownBlockType nearbyTokensChangedBlock; // @synthesize nearbyTokensChangedBlock=_nearbyTokensChangedBlock;
+@property(copy, nonatomic) CDUnknownBlockType beaconingKeyChangedBlockWithCompletion; // @synthesize beaconingKeyChangedBlockWithCompletion=_beaconingKeyChangedBlockWithCompletion;
 @property(copy, nonatomic) CDUnknownBlockType beaconingKeyChangedBlock; // @synthesize beaconingKeyChangedBlock=_beaconingKeyChangedBlock;
+@property(copy, nonatomic) CDUnknownBlockType statusChangedBlockWithCompletion; // @synthesize statusChangedBlockWithCompletion=_statusChangedBlockWithCompletion;
 @property(copy, nonatomic) CDUnknownBlockType statusChangedBlock; // @synthesize statusChangedBlock=_statusChangedBlock;
+@property(copy, nonatomic) CDUnknownBlockType stateChangedBlockWithCompletion; // @synthesize stateChangedBlockWithCompletion=_stateChangedBlockWithCompletion;
 @property(copy, nonatomic) CDUnknownBlockType stateChangedBlock; // @synthesize stateChangedBlock=_stateChangedBlock;
 - (void).cxx_destruct;
 - (void)stateDidChange:(BOOL)arg1 powerState:(unsigned long long)arg2;
@@ -69,6 +77,8 @@
 - (void)checkInPeriodicActionTimer;
 - (void)invalidate;
 - (void)_invalidate;
+- (void)notifyStatusChange:(unsigned char)arg1;
+- (void)notifyStateChange:(BOOL)arg1;
 - (void)beaconingStateChanged:(long long)arg1;
 - (void)beaconsChanged:(id)arg1;
 - (void)beaconingStateChangedNotification:(id)arg1;

@@ -17,6 +17,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (id)_loadDemoSuggestions;
+- (void)updatedRecommendationsForTopics:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)fetchImageForRecommendation:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadLinkPresentationMetadataForMessageWithGUID:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (BOOL)ignoreMinimumNumberOfRecommendationsPerTopic;

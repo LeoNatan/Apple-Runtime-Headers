@@ -27,7 +27,7 @@
     id <CNCancelable> _contactStoreDidChangeToken;
 }
 
-+ (id)controllerEditingInMemoryWithFamilyMember:(id)arg1 mainContactStore:(id)arg2;
++ (id)controllerWithFamilyMember:(id)arg1 options:(id)arg2 schedulerProvider:(id)arg3;
 @property(readonly, nonatomic) id <CNCancelable> contactStoreDidChangeToken; // @synthesize contactStoreDidChangeToken=_contactStoreDidChangeToken;
 @property(retain, nonatomic) CNFuture *deleteContactsFromWhitelistFuture; // @synthesize deleteContactsFromWhitelistFuture=_deleteContactsFromWhitelistFuture;
 @property(retain, nonatomic) CNFuture *updateContactsInWhitelistFuture; // @synthesize updateContactsInWhitelistFuture=_updateContactsInWhitelistFuture;
@@ -49,10 +49,12 @@
 - (void)cancelContactItemsFetch;
 - (void)triggerContactItemsFetch;
 @property(retain, nonatomic) NSArray *familyMemberContactItems; // @synthesize familyMemberContactItems=_familyMemberContactItems;
+@property(readonly, nonatomic) long long fetchStatus;
 - (void)dealloc;
 - (void)setupChangeNotificationResponse;
 - (id)initWithModelFetcher:(id)arg1 familyMemberContactsUpdator:(id)arg2 schedulerProvider:(id)arg3 familyMemberScopedContactStoreFacade:(id)arg4 mainContactStoreFacade:(id)arg5;
-- (id)initWithFamilyMember:(id)arg1;
+- (id)initWithFamilyMember:(id)arg1 options:(id)arg2 schedulerProvider:(id)arg3;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

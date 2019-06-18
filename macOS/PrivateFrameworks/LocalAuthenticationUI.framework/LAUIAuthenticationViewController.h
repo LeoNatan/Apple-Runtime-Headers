@@ -11,7 +11,7 @@
 #import <LocalAuthenticationUI/LAUIPlaceHolderTextFieldDelegate-Protocol.h>
 #import <LocalAuthenticationUI/LAUIUserPasswordFieldRemoteProtocol-Protocol.h>
 
-@class LAContext, LAUIAuthenticationViewControllerUIDelegate, LAUIPasswordField, LAUIPlaceholderTextField, LAUIShakeAnimation, NSColor, NSImageView, NSLayoutConstraint, NSObject, NSString, NSTextField, NSTextView, NSView;
+@class LAContext, LAUIAuthenticationViewControllerUIDelegate, LAUIPasswordField, LAUIPlaceholderTextField, LAUIShakeAnimation, NSColor, NSImageView, NSLayoutConstraint, NSObject, NSRemoteViewController, NSString, NSTextField, NSTextView, NSView;
 @protocol LAUIAuthenticationViewControllerDelegate, OS_dispatch_queue;
 
 @interface LAUIAuthenticationViewController : NSViewController <LAUIUserPasswordFieldRemoteProtocol, LAUIPasswordFieldDelegate, LAUIDelegate, LAUIPlaceHolderTextFieldDelegate>
@@ -42,6 +42,7 @@
     NSTextView *_hintTextView;
     NSLayoutConstraint *_lockImageCenterX;
     LAUIPasswordField *_appPasswordField;
+    NSRemoteViewController *_remoteViewController;
     unsigned long long _enabledMechanisms;
     unsigned long long _activeMechanisms;
 }
@@ -49,6 +50,7 @@
 + (id)_legacyModeMapping;
 @property(nonatomic) unsigned long long activeMechanisms; // @synthesize activeMechanisms=_activeMechanisms;
 @property(nonatomic) unsigned long long enabledMechanisms; // @synthesize enabledMechanisms=_enabledMechanisms;
+@property(nonatomic) __weak NSRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak LAUIPasswordField *appPasswordField; // @synthesize appPasswordField=_appPasswordField;
 @property(nonatomic) __weak NSLayoutConstraint *lockImageCenterX; // @synthesize lockImageCenterX=_lockImageCenterX;
 @property(nonatomic) __weak NSTextView *hintTextView; // @synthesize hintTextView=_hintTextView;

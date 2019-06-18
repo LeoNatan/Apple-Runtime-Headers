@@ -36,7 +36,6 @@ __attribute__((visibility("hidden")))
     struct CGPoint _lastGestureCenter;
 }
 
-+ (id)sharedInstance;
 + (BOOL)isPointWithinDockingRegion:(struct CGPoint)arg1;
 + (double)magneticEdgeMargin;
 @property(retain) UIViewSpringAnimationBehavior *animationBehavior; // @synthesize animationBehavior=_animationBehavior;

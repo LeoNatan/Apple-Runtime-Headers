@@ -14,6 +14,7 @@
     NSURL *_fileURL;
     BOOL _shouldStopAccessingURL;
     NSObservation *_observation;
+    BOOL _didSetupParentProgress;
     BOOL _updateFileCount;
     NSString *_publisherKey;
 }

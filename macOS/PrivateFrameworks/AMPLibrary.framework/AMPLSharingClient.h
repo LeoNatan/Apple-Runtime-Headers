@@ -6,7 +6,9 @@
 
 #import <AMPLibrary/AMPLClient.h>
 
-@interface AMPLSharingClient : AMPLClient
+#import <AMPLibrary/AMPLClientProtocol-Protocol.h>
+
+@interface AMPLSharingClient : AMPLClient <AMPLClientProtocol>
 {
 }
 
@@ -31,6 +33,9 @@
 - (id)newClientConnection:(int)arg1 clientIPAddress:(id)arg2;
 - (BOOL)synchronousOpenMediaDomainsSharingConnections:(id *)arg1;
 - (id)initWithClientInfo:(id)arg1 withClientID:(unsigned int)arg2 error:(id *)arg3;
+- (BOOL)handleReconnectionToLibrary:(id)arg1;
+- (BOOL)handleSynchronousOpenMediaDomains:(id)arg1 error:(id *)arg2;
+- (BOOL)handleRegisterSharingClientID:(unsigned int)arg1 withConnection:(id)arg2 error:(id *)arg3;
 
 @end
 

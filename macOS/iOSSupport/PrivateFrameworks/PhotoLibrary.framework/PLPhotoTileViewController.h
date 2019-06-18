@@ -149,6 +149,7 @@
 - (void)resetZoom;
 - (void)updateViewConstraints;
 - (void)didMoveToParentViewController:(id)arg1;
+- (void)viewSafeAreaInsetsDidChange;
 - (void)viewDidLayoutSubviews;
 - (void)_viewWillMoveToSuperView:(id)arg1;
 - (void)_resetZoomCommon;

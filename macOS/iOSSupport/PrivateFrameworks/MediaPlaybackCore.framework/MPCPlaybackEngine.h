@@ -13,7 +13,6 @@
 
 @interface MPCPlaybackEngine : NSObject <MPCExplicitContentAuthorizationDelegate>
 {
-    BOOL _shouldConnectToAVPlayer;
     MPCAudioSpectrumAnalyzer *_audioAnalyzer;
     BOOL _pictureInPictureSupported;
     BOOL _videoSupported;
@@ -29,6 +28,7 @@
     _MPCReportingController *_reportingController;
     _MPCPlaybackEngineSessionManager *_sessionManager;
     _MPCLeaseManager *_leaseManager;
+    unsigned long long _options;
     NSString *_audioSessionCategory;
     unsigned long long _audioSessionOptions;
 }
@@ -38,6 +38,7 @@
 @property(nonatomic) unsigned long long audioSessionOptions; // @synthesize audioSessionOptions=_audioSessionOptions;
 @property(copy, nonatomic) NSString *audioSessionCategory; // @synthesize audioSessionCategory=_audioSessionCategory;
 @property(nonatomic, getter=isSystemMusicApplication) BOOL systemMusicApplication; // @synthesize systemMusicApplication=_systemMusicApplication;
+@property(readonly, nonatomic) unsigned long long options; // @synthesize options=_options;
 @property(readonly, nonatomic) _MPCLeaseManager *leaseManager; // @synthesize leaseManager=_leaseManager;
 @property(readonly, nonatomic) _MPCPlaybackEngineSessionManager *sessionManager; // @synthesize sessionManager=_sessionManager;
 @property(readonly, nonatomic) _MPCReportingController *reportingController; // @synthesize reportingController=_reportingController;
@@ -53,6 +54,7 @@
 @property(readonly, copy, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 - (void).cxx_destruct;
 - (void)requestAuthorizationForExplicitItem:(id)arg1 reason:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)_shouldIgnorePlaybackSessionError:(id)arg1;
 - (void)_initializePlaybackStack;
 - (void)schedulePlaybackStatePreservation;
 @property(readonly, nonatomic) UIView *videoView;

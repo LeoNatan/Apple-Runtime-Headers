@@ -10,15 +10,16 @@
 {
     int _maxAlarmsAllowed;
     int _maxRecurrencesAllowed;
-    CDStruct_4df63007 _flags;
+    CDStruct_a60c0deb _flags;
 }
 
-@property CDStruct_4df63007 flags; // @synthesize flags=_flags;
+@property CDStruct_a60c0deb flags; // @synthesize flags=_flags;
 @property(nonatomic) int maxRecurrencesAllowed; // @synthesize maxRecurrencesAllowed=_maxRecurrencesAllowed;
 @property(nonatomic) int maxAlarmsAllowed; // @synthesize maxAlarmsAllowed=_maxAlarmsAllowed;
 @property(nonatomic) BOOL supportsRecurrenceSplit;
 @property(nonatomic) BOOL supportsDelegateEnumeration;
 @property(nonatomic) BOOL supportsDelegation;
+@property(nonatomic) BOOL requiresOpeningAttachmentAsLink;
 @property(nonatomic) BOOL supportsAttachments;
 @property(nonatomic) BOOL supportsSubscribedCalendars;
 @property(nonatomic) BOOL prohibitsSlicingEventsWithAttendees;

@@ -12,6 +12,7 @@
 __attribute__((visibility("hidden")))
 @interface AMSFinanceDialogResponse : NSObject
 {
+    BOOL _containsCommerceUIURL;
     NSDictionary *_dialogDictionary;
     AMSDialogRequest *_dialogRequest;
     ACAccount *_account;
@@ -20,18 +21,22 @@ __attribute__((visibility("hidden")))
     NSString *_proxyBundleId;
 }
 
-+ (id)_createRequestFromDialogDictionary:(id)arg1 account:(id)arg2;
-+ (id)_createRequestButtonsFromDialogDictionary:(id)arg1;
-+ (id)_createActionFromButtonDictionary:(id)arg1 title:(id)arg2;
++ (BOOL)_isCommerceUIURL:(id)arg1 actionType:(long long)arg2 URLType:(long long)arg3 bag:(id)arg4;
++ (id)_createRequestFromDialogDictionary:(id)arg1 account:(id)arg2 bag:(id)arg3;
++ (id)_createRequestButtonsFromDialogDictionary:(id)arg1 account:(id)arg2 bag:(id)arg3;
++ (id)_createActionFromButtonDictionary:(id)arg1 title:(id)arg2 account:(id)arg3 bag:(id)arg4;
 + (long long)_actionTypeFromButtonDictionary:(id)arg1;
++ (id)_URLForCommerceUIFromURL:(id)arg1 account:(id)arg2;
 @property(copy) NSString *proxyBundleId; // @synthesize proxyBundleId=_proxyBundleId;
+@property(readonly) BOOL containsCommerceUIURL; // @synthesize containsCommerceUIURL=_containsCommerceUIURL;
 @property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(copy) ACAccount *account; // @synthesize account=_account;
 @property(readonly) AMSDialogRequest *dialogRequest; // @synthesize dialogRequest=_dialogRequest;
 @property(readonly, copy) NSDictionary *dialogDictionary; // @synthesize dialogDictionary=_dialogDictionary;
 - (void).cxx_destruct;
-- (id)handleDialogResult:(id)arg1 error:(id)arg2;
+- (id)_sendDialogOverIDSIfNeeded:(id)arg1 taskInfo:(id)arg2 didSend:(char *)arg3;
+- (id)performWithTaskInfo:(id)arg1;
 - (id)initWithDialogRequest:(id)arg1 account:(id)arg2 clientInfo:(id)arg3 bag:(id)arg4;
 - (id)initWithDialogDictionary:(id)arg1 account:(id)arg2 clientInfo:(id)arg3 bag:(id)arg4;
 

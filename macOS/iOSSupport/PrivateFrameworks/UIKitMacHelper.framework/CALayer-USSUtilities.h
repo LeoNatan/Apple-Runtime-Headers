@@ -8,7 +8,5 @@
 
 @interface CALayer (USSUtilities)
 - (unsigned int)hitTestContextAtPoint:(struct CGPoint)arg1;
-- (void)setAndConsumeFencePort:(unsigned int)arg1;
-- (unsigned int)createFencePort;
 @end
 

@@ -22,7 +22,7 @@
 - (void)removeAll;
 - (BOOL)removeValueForKey:(unsigned long long)arg1 passingTest:(CDUnknownBlockType)arg2;
 - (BOOL)removeValuePassingTest:(CDUnknownBlockType)arg1;
-- (BOOL)addValue:(CDStruct_1a8ce9d4 *)arg1 forKey:(unsigned long long)arg2;
+- (BOOL)addValue:(CDStruct_be136439 *)arg1 forKey:(unsigned long long)arg2;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 - (id)data;
 - (id)initWithStoreFileURL:(id)arg1 capacity:(unsigned long long)arg2;

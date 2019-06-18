@@ -6,20 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSTimer;
+@class NSDate;
 
 __attribute__((visibility("hidden")))
 @interface TestDriveController : NSObject
 {
-    NSTimer *_timeoutTimer;
     long long _currentState;
-    CDUnknownBlockType _testDriveTimeoutHandler;
 }
 
 + (id)sharedController;
-@property(copy, nonatomic) CDUnknownBlockType testDriveTimeoutHandler; // @synthesize testDriveTimeoutHandler=_testDriveTimeoutHandler;
 @property(nonatomic) long long currentState; // @synthesize currentState=_currentState;
-- (void).cxx_destruct;
 - (long long)_originBrowserForBundleIdentifier:(id)arg1;
 - (long long)_originBrowserForBundle:(id)arg1;
 - (void)_browserDataImportingDidCancel:(id)arg1;
@@ -32,18 +28,16 @@ __attribute__((visibility("hidden")))
 - (void)_resetTestDrive;
 - (void)_prepareForTestDrive;
 - (void)_revealTestDriveMigrationUISoon;
-- (void)_timeoutTimerFired:(id)arg1;
-- (void)_rescheduleTimeoutTimerIfNeeded;
 - (void)_discardImportedDataRegardlessOfState;
 - (void)_discardImportedData;
 - (void)_keepImportedData;
-- (void)_resumeTestDrive;
-- (BOOL)_canResumeTestDrive;
+- (void)_resumeTestDriveImport;
+- (BOOL)_canResumeTestDriveImport;
 - (void)_resetTestDriveToHandleDefaultBrowserChangeDuringImportWithCurrentDefaultBrowserBundle:(id)arg1;
 - (BOOL)_shouldStartTestDriveDueToDefaultBrowserChangeWithCurrentDefaultBrowserBundle:(id)arg1;
 - (BOOL)_didDefaultBrowserChangeDuringTestDriveWithCurrentDefaultBrowserBundle:(id)arg1;
 - (void)finishTestDriveKeepingImportedData:(BOOL)arg1 defaultBrowserPromptingBehavior:(long long)arg2;
-- (BOOL)tryResumingTestDrive;
+- (BOOL)tryResumingTestDriveImport;
 - (void)startTestDriveIfNeeded;
 - (BOOL)_shouldStartTestDriveWithCurrentDefaultBrowserBundle:(id)arg1;
 - (void)_determineWhetherToStartTestDriveWithCompletionHandler:(CDUnknownBlockType)arg1;

@@ -8,7 +8,7 @@
 
 @interface NSFileManager (FPAdditions)
 - (id)fp_trashURLForItemAtURL:(id)arg1 error:(id *)arg2;
-- (void)fp_createPathIfNeeded:(id)arg1 protectParent:(BOOL)arg2;
+- (void)fp_createPathIfNeeded:(id)arg1;
 - (BOOL)fp_trashItemAtURL:(id)arg1 resultingItemURL:(id *)arg2 error:(id *)arg3;
 @end
 

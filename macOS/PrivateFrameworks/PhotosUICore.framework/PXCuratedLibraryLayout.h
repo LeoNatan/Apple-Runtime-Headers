@@ -24,6 +24,7 @@
     NSMutableDictionary *_lastVisibleAreaAnchorsByZoomLevels;
     NSMutableDictionary *_preferredVisibleAreaAnchorsByZoomLevels;
     PXGDiagnosticsSpriteProbe *_spriteProbe;
+    BOOL _wantsStatusBarGradient;
     PXNumberAnimator *_statusBarGradientAnimator;
     unsigned short _statusBarGradientResizableCapInsetsIndex;
     unsigned int _statusBarGradientSpriteIndex;
@@ -50,6 +51,11 @@
 @property(readonly, nonatomic) PXCuratedLibraryAllPhotosLayout *allPhotosLayout; // @synthesize allPhotosLayout=_allPhotosBodyLayout;
 @property(readonly, nonatomic) PXCuratedLibrarySectionedLayout *libraryBodyLayout; // @synthesize libraryBodyLayout=_libraryBodyLayout;
 - (void).cxx_destruct;
+- (id)accessibilityLabel;
+- (BOOL)canSelectAccessibilityGroupElementsChildren;
+- (BOOL)canSelectAccessibilityGroupElements;
+- (BOOL)canCreateAccessibilityGroupElement;
+- (BOOL)hasBodyContent;
 - (long long)viewModel:(id)arg1 transitionTypeFromZoomLevel:(long long)arg2 toZoomLevel:(long long)arg3;
 - (id)viewModel:(id)arg1 dominantAssetCollectionReferenceForZoomLevel:(long long)arg2;
 @property(readonly, nonatomic) id <PXBrowserVisibleContentSnapshot> visibleContentSnapshot;
@@ -59,6 +65,7 @@
 - (id)_currentFloatingHeaderSpec;
 - (void)_updateLibraryBodyLayoutLastVisibleDominantObjectReference;
 - (struct CGRect)sectionBoundariesForAssetCollectionReference:(id)arg1;
+- (void)enumerateVisibleAssetReferencesUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateVisibleAssetsSectionSublayoutsUsingBlock:(CDUnknownBlockType)arg1;
 - (id)topMostAssetCollectionInRect:(struct CGRect)arg1;
 - (id)_currentBodyLayout;
@@ -69,6 +76,7 @@
 - (id)_createAnchorForTransitionToZoomLevel:(long long)arg1;
 - (id)createCuratedLibraryLayoutTransitionIfNeededWithContext:(long long)arg1;
 - (id)createCuratedLibraryLayoutAnimationIfNeededWithContext:(long long)arg1 userData:(id)arg2;
+- (long long)curatedLibraryLayoutAnimationContextForTransitionToZoomLevel:(long long)arg1;
 - (void)animationDidComplete:(id)arg1;
 - (void)_noteAnimationWithContext:(long long)arg1 isRunning:(BOOL)arg2;
 - (struct CGPoint)_adjustInitialVisibleRect:(struct CGRect)arg1 inLayout:(id)arg2 forRecentSection:(long long)arg3;
@@ -88,6 +96,7 @@
 - (void)_updateDistanceBetweenSafeAreaBottomAndSolidContent;
 - (void)_updateStatusBarGradientAlphaValue;
 - (void)_updateStatusBarGradientVisibility;
+- (void)_updateLocalSprites;
 - (void)_updateStatusBarStyle;
 - (long long)_statusBarVisibility;
 - (void)_updateFloatingHeaderTitleOpacity;

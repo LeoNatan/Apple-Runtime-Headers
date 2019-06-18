@@ -6,7 +6,7 @@
 
 #import <ContactsPersistence/ABCDRecord.h>
 
-@class ABCDContact, NSArray, NSString;
+@class ABCDContact, NSArray, NSDate, NSString;
 
 @interface ABCDAddressBookSource : ABCDRecord
 {
@@ -19,6 +19,7 @@
 - (id)parentGroups;
 
 // Remaining properties
+@property(copy, nonatomic) NSDate *lastSyncDate; // @dynamic lastSyncDate;
 @property(readonly, nonatomic) ABCDContact *me; // @dynamic me;
 @property(readonly, nonatomic) NSArray *remoteLocations; // @dynamic remoteLocations;
 @property(retain, nonatomic) NSString *serialNumber; // @dynamic serialNumber;

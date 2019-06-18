@@ -4,7 +4,7 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSMutableDictionary, NSMutableSet, _UISelectorDictionary;
+@class NSMutableDictionary, NSMutableSet, _UICommandIdentifierDictionary;
 
 #pragma mark Blocks
 
@@ -283,10 +283,10 @@ struct work_interval_instance {
 typedef struct {
     NSMutableSet *keyCommands;
     NSMutableSet *commandMenus;
-    _UISelectorDictionary *actionCommands;
-    NSMutableDictionary *actionPropertyListCommands;
+    _UICommandIdentifierDictionary *commands;
     NSMutableDictionary *parentMenuIdentifiers;
-} CDStruct_3b3a7b20;
+    _UICommandIdentifierDictionary *commandParentMenuIdentifiers;
+} CDStruct_1628dbfe;
 
 typedef struct {
     id _field1;

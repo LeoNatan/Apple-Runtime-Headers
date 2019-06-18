@@ -11,6 +11,7 @@
     // Error parsing type: , name: identifier
     // Error parsing type: , name: image
     // Error parsing type: , name: style
+    // Error parsing type: , name: optionsBlock
     // Error parsing type: , name: actionBlock
     // Error parsing type: , name: titleBlock
 }

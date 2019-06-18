@@ -4,9 +4,10 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSBundle, NSData, NSImage, NSString;
+@class CIImage, NSBundle, NSData, NSImage, NSString;
 
 @protocol DCImage
++ (NSImage *)imageWithCIImage:(CIImage *)arg1;
 + (NSImage *)imageNamed:(NSString *)arg1 inBundle:(NSBundle *)arg2 compatibleWithTraitCollection:(id)arg3;
 + (NSImage *)imageWithData:(NSData *)arg1 scale:(double)arg2;
 + (NSImage *)imageWithData:(NSData *)arg1;

@@ -66,6 +66,7 @@
     double _rearrangingInitialDelay;
     double _rearrangingPreviewDelay;
     UXCollectionViewCell *_dropTargetCell;
+    unsigned long long _dropOperation;
     NSString *_dragSourceIdentifier;
     struct _NSRange _initialIndexRange;
     struct _NSRange _targetIndexRange;
@@ -74,6 +75,7 @@
 }
 
 @property(readonly, nonatomic) NSString *dragSourceIdentifier; // @synthesize dragSourceIdentifier=_dragSourceIdentifier;
+@property(nonatomic) unsigned long long dropOperation; // @synthesize dropOperation=_dropOperation;
 @property(retain, nonatomic) UXCollectionViewCell *dropTargetCell; // @synthesize dropTargetCell=_dropTargetCell;
 @property(nonatomic) BOOL shouldExchange; // @synthesize shouldExchange=_shouldExchange;
 @property(nonatomic) struct _NSRange exchangedIndexRange; // @synthesize exchangedIndexRange=_exchangedIndexRange;

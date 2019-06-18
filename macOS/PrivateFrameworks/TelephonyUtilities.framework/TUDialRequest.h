@@ -40,6 +40,8 @@
     CDUnknownBlockType _isEmergencyNumberOrIsWhitelistedBlock;
     NSDate *_dateDialed;
     NSString *_endpointIDSDestinationURI;
+    NSString *_endpointRapportMediaSystemIdentifier;
+    NSString *_endpointRapportEffectiveIdentifier;
     NSUUID *_localSenderIdentityUUID;
     NSUUID *_localSenderIdentityAccountUUID;
     long long _originatingUIType;
@@ -63,6 +65,7 @@
 + (id)stringForTTYType:(long long)arg1;
 + (long long)handleTypeForQueryItem:(id)arg1;
 + (id)stringForDialType:(long long)arg1;
++ (long long)dialRequestTTYTypeForCHRecentCallTTYType:(long long)arg1;
 @property(copy, nonatomic) NSString *failureNotification; // @synthesize failureNotification=_failureNotification;
 @property(copy, nonatomic) NSString *successNotification; // @synthesize successNotification=_successNotification;
 @property(nonatomic) BOOL shouldSuppressInCallUI; // @synthesize shouldSuppressInCallUI=_shouldSuppressInCallUI;
@@ -71,6 +74,8 @@
 @property(nonatomic) long long originatingUIType; // @synthesize originatingUIType=_originatingUIType;
 @property(copy, nonatomic) NSUUID *localSenderIdentityAccountUUID; // @synthesize localSenderIdentityAccountUUID=_localSenderIdentityAccountUUID;
 @property(copy, nonatomic) NSUUID *localSenderIdentityUUID; // @synthesize localSenderIdentityUUID=_localSenderIdentityUUID;
+@property(copy, nonatomic) NSString *endpointRapportEffectiveIdentifier; // @synthesize endpointRapportEffectiveIdentifier=_endpointRapportEffectiveIdentifier;
+@property(copy, nonatomic) NSString *endpointRapportMediaSystemIdentifier; // @synthesize endpointRapportMediaSystemIdentifier=_endpointRapportMediaSystemIdentifier;
 @property(copy, nonatomic) NSString *endpointIDSDestinationURI; // @synthesize endpointIDSDestinationURI=_endpointIDSDestinationURI;
 @property(nonatomic) BOOL endpointOnCurrentDevice; // @synthesize endpointOnCurrentDevice=_endpointOnCurrentDevice;
 @property(nonatomic) BOOL hostOnCurrentDevice; // @synthesize hostOnCurrentDevice=_hostOnCurrentDevice;
@@ -113,10 +118,13 @@
 - (id)validityErrorForUnspecifiedProvider;
 @property(readonly, copy, nonatomic) NSArray *validityErrors;
 @property(readonly, nonatomic, getter=isValid) BOOL valid;
+- (id)userActivityUsingDeprecatedCallingIntents:(BOOL)arg1;
 @property(readonly, nonatomic) NSUserActivity *userActivity;
 - (id)failureNotificationQueryItem;
 - (id)successNotificationQueryItem;
 - (id)shouldSuppressInCallUIQueryItem;
+- (id)endpointRapportEffectiveIdentifierQueryItem;
+- (id)endpointRapportMediaSystemIdentifierQueryItem;
 - (id)endpointIDSDestinationURIQueryItem;
 - (id)redialURLQueryItem;
 - (id)sosURLQueryItem;

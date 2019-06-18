@@ -4,11 +4,11 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class NSData, NSError, QLTBitmapFormat;
+@class NSData, NSError, NSUUID, QLTBitmapFormat;
 
 @protocol QLIncrementalThumbnailGenerationHandler
-- (void)failedToGenerateThumbnailOfType:(long long)arg1 forRequestWithSequenceNumber:(long long)arg2 error:(NSError *)arg3;
-- (void)didGenerateThumbnailForRequestWithSequenceNumber:(long long)arg1 data:(NSData *)arg2 bitmapFormat:(QLTBitmapFormat *)arg3 metadata:(NSData *)arg4 contentRect:(struct CGRect)arg5 iconFlavor:(int)arg6 thumbnailType:(long long)arg7 clientShouldTakeOwnership:(BOOL)arg8;
-- (void)didUpdateStatus:(long long)arg1 ofThumbnailGenerationWithSequenceNumber:(long long)arg2;
+- (void)failedToGenerateThumbnailOfType:(long long)arg1 forRequestWithUUID:(NSUUID *)arg2 error:(NSError *)arg3;
+- (void)didGenerateThumbnailForRequestWithUUID:(NSUUID *)arg1 data:(NSData *)arg2 bitmapFormat:(QLTBitmapFormat *)arg3 metadata:(NSData *)arg4 contentRect:(struct CGRect)arg5 iconFlavor:(int)arg6 thumbnailType:(long long)arg7 clientShouldTakeOwnership:(BOOL)arg8;
+- (void)didUpdateStatus:(long long)arg1 ofThumbnailGenerationWithUUID:(NSUUID *)arg2;
 @end
 

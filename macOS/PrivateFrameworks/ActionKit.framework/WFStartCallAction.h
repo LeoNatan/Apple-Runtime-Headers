@@ -21,6 +21,7 @@
 - (id)contactNotSupportedByAppErrorForContacts:(id)arg1;
 - (id)callingServiceNotAvailableError;
 - (id)appConfigurationRequiredError;
+- (id)localizedKeyParameterDisplayName;
 - (id)localizedCallServiceName;
 - (long long)preferredCallProvider;
 - (long long)callCapability;

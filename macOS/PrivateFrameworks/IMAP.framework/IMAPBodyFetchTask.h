@@ -6,7 +6,7 @@
 
 #import <IMAP/IMAPTask.h>
 
-#import <IMAP/ECSignpostable-Protocol.h>
+#import <IMAP/EFSignpostable-Protocol.h>
 #import <IMAP/IMAPGetAttachmentsDownloadsOperationDelegate-Protocol.h>
 #import <IMAP/IMAPGetMessagesOperationDelegate-Protocol.h>
 #import <IMAP/IMAPPersistBodiesOperationDelegate-Protocol.h>
@@ -16,7 +16,7 @@
 @class IMAPDownloadCache, IMAPSyncBodiesOperation, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSMutableSet, NSString;
 @protocol IMAPMessageDataSource;
 
-@interface IMAPBodyFetchTask : IMAPTask <ECSignpostable, IMAPGetMessagesOperationDelegate, IMAPSyncBodiesOperationDelegate, IMAPPersistBodiesOperationDelegate, IMAPGetAttachmentsDownloadsOperationDelegate, IMAPSyncAttachmentsOperationDelegate>
+@interface IMAPBodyFetchTask : IMAPTask <EFSignpostable, IMAPGetMessagesOperationDelegate, IMAPSyncBodiesOperationDelegate, IMAPPersistBodiesOperationDelegate, IMAPGetAttachmentsDownloadsOperationDelegate, IMAPSyncAttachmentsOperationDelegate>
 {
     NSMutableIndexSet *_mandatoryUIDsToFetch;
     NSMutableIndexSet *_discretionaryUIDsToFetch;

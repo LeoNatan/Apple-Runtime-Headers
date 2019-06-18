@@ -6,11 +6,10 @@
 
 #import <objc/NSObject.h>
 
-@protocol UINSApplication, UINSAuthKit, UINSHidManager, UINSTextInput;
+@protocol UINSApplication, UINSHidManager, UINSTextInput;
 
 @interface UINSWorkspace : NSObject
 {
-    id <UINSAuthKit> _authKit;
     id <UINSHidManager> _hidManager;
     id <UINSTextInput> _textInput;
 }
@@ -18,7 +17,6 @@
 + (id)sharedInstance;
 @property(readonly, nonatomic) id <UINSTextInput> textInput; // @synthesize textInput=_textInput;
 @property(readonly, nonatomic) id <UINSHidManager> hidManager; // @synthesize hidManager=_hidManager;
-@property(readonly, nonatomic) id <UINSAuthKit> authKit; // @synthesize authKit=_authKit;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) id <UINSApplication> application;
 - (id)init;

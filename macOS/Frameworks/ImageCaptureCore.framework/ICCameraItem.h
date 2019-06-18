@@ -48,7 +48,7 @@
 @property(nonatomic, getter=isLocked) BOOL locked; // @synthesize locked=_locked;
 @property(nonatomic) NSString *UTI; // @synthesize UTI=_UTI;
 @property(retain, nonatomic) NSString *name; // @synthesize name=_name;
-@property(nonatomic) ICCameraFolder *parentFolder; // @synthesize parentFolder=_parentFolder;
+@property(retain, nonatomic) ICCameraFolder *parentFolder; // @synthesize parentFolder=_parentFolder;
 @property(nonatomic) ICCameraDevice *device; // @synthesize device=_device;
 @property(readonly) NSString *relativeFileSystemPath;
 @property(readonly, nonatomic) NSString *fileSystemPath;

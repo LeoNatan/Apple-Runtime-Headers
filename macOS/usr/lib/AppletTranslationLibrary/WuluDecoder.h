@@ -6,16 +6,17 @@
 
 #import <objc/NSObject.h>
 
-#import <AppletTranslationLibrary/ATLDecoder-Protocol.h>
+#import <AppletTranslationLibrary/ATLStatefulDecoder-Protocol.h>
 
 __attribute__((visibility("hidden")))
-@interface WuluDecoder : NSObject <ATLDecoder>
+@interface WuluDecoder : NSObject <ATLStatefulDecoder>
 {
     unsigned long long decoderState;
     BOOL debug;
 }
 
 + (id)getInstance;
+- (void)cleanup;
 - (id)processEndOfTransaction:(id)arg1 withApplet:(id)arg2 withPackage:(id)arg3 withModule:(id)arg4 withError:(id *)arg5;
 - (id)parseEndEvent:(id)arg1 withApplet:(id)arg2 withError:(id *)arg3;
 - (id)parseStartEvent:(id)arg1 withApplet:(id)arg2 withError:(id *)arg3;

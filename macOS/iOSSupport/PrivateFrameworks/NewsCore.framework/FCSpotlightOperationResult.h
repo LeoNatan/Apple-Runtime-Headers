@@ -26,27 +26,23 @@
     FCColorGradient *_sauceGradient;
     FCColorGradient *_darkStyleSauceGradient;
     NSDate *_publishDate;
-    NSString *_subtitleText;
-    NSString *_spotlightArticleID;
 }
 
-@property(copy, nonatomic) NSString *spotlightArticleID; // @synthesize spotlightArticleID=_spotlightArticleID;
-@property(copy, nonatomic) NSString *subtitleText; // @synthesize subtitleText=_subtitleText;
-@property(copy, nonatomic) NSDate *publishDate; // @synthesize publishDate=_publishDate;
-@property(copy, nonatomic) FCColorGradient *darkStyleSauceGradient; // @synthesize darkStyleSauceGradient=_darkStyleSauceGradient;
-@property(copy, nonatomic) FCColorGradient *sauceGradient; // @synthesize sauceGradient=_sauceGradient;
-@property(copy, nonatomic) FCColorGradient *darkStyleBackgroundColorGradient; // @synthesize darkStyleBackgroundColorGradient=_darkStyleBackgroundColorGradient;
-@property(copy, nonatomic) FCColorGradient *backgroundColorGradient; // @synthesize backgroundColorGradient=_backgroundColorGradient;
-@property(copy, nonatomic) FCColor *darkStyleCardBackgroundColor; // @synthesize darkStyleCardBackgroundColor=_darkStyleCardBackgroundColor;
-@property(copy, nonatomic) FCColor *cardBackgroundColor; // @synthesize cardBackgroundColor=_cardBackgroundColor;
-@property(copy, nonatomic) FCColor *darkStyleTitleColor; // @synthesize darkStyleTitleColor=_darkStyleTitleColor;
-@property(copy, nonatomic) FCColor *titleColor; // @synthesize titleColor=_titleColor;
-@property(copy, nonatomic) NSString *ctaText; // @synthesize ctaText=_ctaText;
+@property(readonly, copy, nonatomic) NSDate *publishDate; // @synthesize publishDate=_publishDate;
+@property(readonly, copy, nonatomic) FCColorGradient *darkStyleSauceGradient; // @synthesize darkStyleSauceGradient=_darkStyleSauceGradient;
+@property(readonly, copy, nonatomic) FCColorGradient *sauceGradient; // @synthesize sauceGradient=_sauceGradient;
+@property(readonly, copy, nonatomic) FCColorGradient *darkStyleBackgroundColorGradient; // @synthesize darkStyleBackgroundColorGradient=_darkStyleBackgroundColorGradient;
+@property(readonly, copy, nonatomic) FCColorGradient *backgroundColorGradient; // @synthesize backgroundColorGradient=_backgroundColorGradient;
+@property(readonly, copy, nonatomic) FCColor *darkStyleCardBackgroundColor; // @synthesize darkStyleCardBackgroundColor=_darkStyleCardBackgroundColor;
+@property(readonly, copy, nonatomic) FCColor *cardBackgroundColor; // @synthesize cardBackgroundColor=_cardBackgroundColor;
+@property(readonly, copy, nonatomic) FCColor *darkStyleTitleColor; // @synthesize darkStyleTitleColor=_darkStyleTitleColor;
+@property(readonly, copy, nonatomic) FCColor *titleColor; // @synthesize titleColor=_titleColor;
+@property(readonly, copy, nonatomic) NSString *ctaText; // @synthesize ctaText=_ctaText;
 @property(readonly, copy, nonatomic) NSString *subTitleText; // @synthesize subTitleText=_subTitleText;
-@property(copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
-@property(copy, nonatomic) NSString *eyebrowTitle; // @synthesize eyebrowTitle=_eyebrowTitle;
-@property(copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
-@property(retain, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
+@property(readonly, copy, nonatomic) NSString *titleText; // @synthesize titleText=_titleText;
+@property(readonly, copy, nonatomic) NSString *eyebrowTitle; // @synthesize eyebrowTitle=_eyebrowTitle;
+@property(readonly, copy, nonatomic) NSString *channelID; // @synthesize channelID=_channelID;
+@property(readonly, nonatomic) id <FCHeadlineProviding> headline; // @synthesize headline=_headline;
 - (void).cxx_destruct;
 - (id)initWithSpotlightGroupConfig:(id)arg1 headline:(id)arg2;
 

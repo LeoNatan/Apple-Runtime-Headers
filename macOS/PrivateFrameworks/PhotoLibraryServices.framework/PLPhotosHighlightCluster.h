@@ -21,7 +21,6 @@
     NSSet *_assets;
     NSDate *_startDate;
     NSDate *_endDate;
-    NSString *_subtitle;
     NSString *_title;
     NSObject<NSCopying> *_objectID;
 }
@@ -30,7 +29,6 @@
 @property(retain, nonatomic) NSString *title; // @synthesize title=_title;
 @property(nonatomic) int endTimeZoneOffset; // @synthesize endTimeZoneOffset=_endTimeZoneOffset;
 @property(nonatomic) int startTimeZoneOffset; // @synthesize startTimeZoneOffset=_startTimeZoneOffset;
-@property(retain, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(nonatomic) unsigned short kind; // @synthesize kind=_kind;
 @property(nonatomic) unsigned short category; // @synthesize category=_category;
 @property(nonatomic) unsigned short type; // @synthesize type=_type;

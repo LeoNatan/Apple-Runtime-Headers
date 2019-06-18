@@ -6,24 +6,26 @@
 
 #import <objc/NSObject.h>
 
-@class DeviceTask, NSMutableArray, NSMutableDictionary, NSXPCConnection;
+@class NSMutableArray, NSMutableDictionary, NSXPCConnection;
 @protocol DeviceCollectionDelegate, DeviceUIViewControllerFactory;
 
 @interface DeviceCollection : NSObject
 {
     BOOL _shouldReconnectToService;
+    unsigned int _clientID;
+    int _serviceProcessID;
     id <DeviceCollectionDelegate> _delegate;
     NSMutableDictionary *_devices;
     NSMutableArray *_connections;
-    NSXPCConnection *_connectionToService;
-    DeviceTask *_deferredTask;
     id <DeviceUIViewControllerFactory> _viewControllerFactory;
+    NSXPCConnection *_connectionToService;
 }
 
-@property(nonatomic) __weak id <DeviceUIViewControllerFactory> viewControllerFactory; // @synthesize viewControllerFactory=_viewControllerFactory;
-@property(retain, nonatomic) DeviceTask *deferredTask; // @synthesize deferredTask=_deferredTask;
 @property(nonatomic) BOOL shouldReconnectToService; // @synthesize shouldReconnectToService=_shouldReconnectToService;
+@property(nonatomic) int serviceProcessID; // @synthesize serviceProcessID=_serviceProcessID;
+@property(nonatomic) unsigned int clientID; // @synthesize clientID=_clientID;
 @property(retain, nonatomic) NSXPCConnection *connectionToService; // @synthesize connectionToService=_connectionToService;
+@property(nonatomic) __weak id <DeviceUIViewControllerFactory> viewControllerFactory; // @synthesize viewControllerFactory=_viewControllerFactory;
 @property(retain, nonatomic) NSMutableArray *connections; // @synthesize connections=_connections;
 @property(retain, nonatomic) NSMutableDictionary *devices; // @synthesize devices=_devices;
 @property(nonatomic) __weak id <DeviceCollectionDelegate> delegate; // @synthesize delegate=_delegate;
@@ -33,20 +35,18 @@
 - (void)connectToView:(id)arg1 forDevice:(id)arg2;
 - (void)connectToView:(id)arg1 forDevice:(id)arg2 andMode:(id)arg3;
 - (id)currentViewForDevice:(id)arg1;
-- (void)ejectDeviceByID:(id)arg1;
 - (void)ejectDevice:(id)arg1;
 - (void)cancelOperationForDevice:(id)arg1;
 - (id)registerForOperationProgressForDeviceWithIdentifier:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)completedOperationForDeviceID:(id)arg1;
-- (void)startedOperationForDeviceID:(id)arg1 allowCancel:(BOOL)arg2;
-- (void)nameChangedTo:(id)arg1 forDeviceID:(id)arg2;
+- (void)discoveryServiceWillTerminate;
+- (void)completedOperationForDeviceIdentifier:(id)arg1;
+- (void)startedOperationForDeviceIdentifier:(id)arg1 allowCancel:(BOOL)arg2;
+- (void)nameChangedTo:(id)arg1 forDeviceIdentifier:(id)arg2;
 - (void)allDevicesDetached;
 - (void)allDevicesDetachedOnMainThread;
 - (void)deviceChanged:(id)arg1;
-- (void)changedDeviceOnMainThreadWithId:(id)arg1;
 - (void)deviceDisconnected:(id)arg1;
-- (void)disconnectDeviceOnMainThreadWithId:(id)arg1;
-- (void)discoveryServiceWillTerminate;
+- (void)deviceConnected:(id)arg1;
 - (void)serviceConnectionInvalidated;
 - (void)serviceConnectionInterrupted;
 - (void)connect;

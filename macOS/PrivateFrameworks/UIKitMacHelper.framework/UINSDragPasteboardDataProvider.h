@@ -9,18 +9,19 @@
 #import <UIKitMacHelper/NSFilePromiseProviderDelegate-Protocol.h>
 #import <UIKitMacHelper/NSPasteboardItemDataProvider-Protocol.h>
 
-@class NSString, UINSDragItem, UINSDragSessionHandler;
+@class NSString, UINSDragItem;
+@protocol UINSDragSessionHandler;
 
 __attribute__((visibility("hidden")))
 @interface UINSDragPasteboardDataProvider : NSObject <NSFilePromiseProviderDelegate, NSPasteboardItemDataProvider>
 {
     UINSDragItem *_item;
     long long _index;
-    UINSDragSessionHandler *_handler;
+    id <UINSDragSessionHandler> _handler;
 }
 
 + (id)pasteboardWriterForItem:(id)arg1 index:(long long)arg2 handler:(id)arg3;
-@property(retain) UINSDragSessionHandler *handler; // @synthesize handler=_handler;
+@property(retain) id <UINSDragSessionHandler> handler; // @synthesize handler=_handler;
 @property long long index; // @synthesize index=_index;
 @property(retain) UINSDragItem *item; // @synthesize item=_item;
 - (void).cxx_destruct;

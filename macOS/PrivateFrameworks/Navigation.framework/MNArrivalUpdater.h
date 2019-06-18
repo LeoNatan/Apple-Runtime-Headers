@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_legacyCheckDrivingArrivalForLocation:(id)arg1;
 - (BOOL)_legacyCheckArrivalForLocation:(id)arg1;
 - (BOOL)_checkArrivalForLocation:(id)arg1 remainingDistanceAlongRoute:(double)arg2;
-- (BOOL)_isInPreArrivalRegionForLocation:(id)arg1;
+- (BOOL)_isInPreArrivalRegionForLocation:(id)arg1 remainingDistanceAlongRoute:(double)arg2;
 - (BOOL)_shouldUseNewArrivalLogic;
 @property(readonly, nonatomic) BOOL isInPreArrivalRegion;
 - (void)updateForRoute:(id)arg1;

@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
     BOOL _isShiftKeyBeingHeld;
     UITextGestureTuning *_gestureTuning;
     BOOL _hasPerformedInteraction;
+    BOOL _didChangeSelection;
     struct CGPoint _initialPointFromPreviousInteraction;
     _UITextLoupeResponderProxy *_responderProxy;
 }
@@ -33,9 +34,10 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)touchAlignedPointForPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
 - (void)updateVisibilityOffsetForGesture:(id)arg1;
 @property(nonatomic) BOOL shouldUseLineThreshold;
-- (void)assertInitialVerticalOffset:(double)arg1;
+- (void)assertInitialVerticalOffset:(double)arg1 fromTopOfCaret:(double)arg2;
 - (void)_createGestureTuningIfNecessary;
 - (struct CGPoint)pointIfPlacedCarefully:(struct CGPoint)arg1;
+- (void)willBeginExternalGesture;
 - (void)loupeGestureWithState:(long long)arg1 location:(CDUnknownBlockType)arg2 translation:(CDUnknownBlockType)arg3 velocity:(CDUnknownBlockType)arg4 modifierFlags:(long long)arg5 shouldCancel:(char *)arg6;
 - (void)_processGestureForCustomHighlighter:(id)arg1;
 - (void)loupeGesture:(id)arg1;

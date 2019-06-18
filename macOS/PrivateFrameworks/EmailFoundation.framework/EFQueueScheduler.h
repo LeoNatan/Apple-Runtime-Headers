@@ -20,6 +20,7 @@
 - (id)performWithObject:(id)arg1;
 - (id)afterDelay:(double)arg1 performBlock:(CDUnknownBlockType)arg2;
 - (id)performCancelableBlock:(CDUnknownBlockType)arg1;
+- (void)performVoucherPreservingBlock:(CDUnknownBlockType)arg1;
 - (void)performSyncBlock:(CDUnknownBlockType)arg1;
 - (void)performBlock:(CDUnknownBlockType)arg1;
 @property(readonly) BOOL prefersImmediateExecution;

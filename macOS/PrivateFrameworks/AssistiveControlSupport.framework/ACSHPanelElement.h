@@ -85,6 +85,7 @@
 @property(readonly, nonatomic) NSArray *hoverTextGroups;
 - (id)_recursivelyFindElementsOfClass:(Class)arg1;
 @property(copy, nonatomic) NSArray *panelElements; // @dynamic panelElements;
+@property(readonly, nonatomic) BOOL shouldSkipWhenScanning; // @dynamic shouldSkipWhenScanning;
 - (void)sizeToFitPanelElementsAndAncestors;
 - (struct CGRect)rectThatFitsPanelElements:(struct CGPoint *)arg1;
 - (void)sizeToFitPanelElementsAndNotify:(BOOL)arg1;

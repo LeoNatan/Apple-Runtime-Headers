@@ -10,7 +10,6 @@
 {
 }
 
-+ (void)load;
 - (void)dealloc;
 
 @end

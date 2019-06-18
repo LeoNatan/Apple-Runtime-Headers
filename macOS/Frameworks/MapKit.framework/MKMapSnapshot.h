@@ -15,6 +15,7 @@
     NSAppearance *_appearance;
 }
 
++ (id)createSnapshotWithOptions:(id)arg1 timeoutInSeconds:(long long)arg2;
 @property(readonly, nonatomic) NSAppearance *appearance; // @synthesize appearance=_appearance;
 @property(readonly, nonatomic) NSImage *image; // @synthesize image=_image;
 - (void).cxx_destruct;

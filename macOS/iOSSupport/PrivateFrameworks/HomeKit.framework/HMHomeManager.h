@@ -10,7 +10,7 @@
 #import <HomeKit/HMFMessageReceiver-Protocol.h>
 #import <HomeKit/HMMutableApplicationData-Protocol.h>
 
-@class HMAccessory, HMApplicationData, HMFMessageDispatcher, HMFUnfairLock, HMHome, HMHomeManagerConfiguration, HMMutableArray, HMNetworkRouterFirewallRuleManager, HMUserCloudShareManager, NSArray, NSNumber, NSOperationQueue, NSString, NSUUID, _HMContext;
+@class HMAccessory, HMApplicationData, HMFUnfairLock, HMHome, HMHomeManagerConfiguration, HMMutableArray, HMNetworkRouterFirewallRuleManager, HMUserCloudShareManager, NSArray, NSNumber, NSOperationQueue, NSSet, NSString, NSUUID, _HMContext;
 @protocol HMHomeManagerDelegate, OS_dispatch_queue;
 
 @interface HMHomeManager : NSObject <HMFMessageReceiver, HMMutableApplicationData, HMApplicationData>
@@ -34,6 +34,7 @@
     unsigned long long _residentProvisioningStatus;
     HMHomeManagerConfiguration *_configuration;
     unsigned long long _options;
+    NSSet *_addAccessoryRequests;
     HMUserCloudShareManager *_userCloudShareManager;
     HMMutableArray *_currentHomes;
     HMMutableArray *_homeInvitations;
@@ -46,13 +47,11 @@
     NSString *_metadataCache;
     NSUUID *_uuid;
     _HMContext *_context;
-    HMFMessageDispatcher *_msgDispatcher;
     HMNetworkRouterFirewallRuleManager *_firewallRuleManager;
 }
 
 + (BOOL)dataSyncInProgressFromDataSyncState:(unsigned long long)arg1;
 @property(readonly, nonatomic) HMNetworkRouterFirewallRuleManager *firewallRuleManager; // @synthesize firewallRuleManager=_firewallRuleManager;
-@property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 @property(nonatomic, getter=isViewServiceActive) BOOL viewServiceActive; // @synthesize viewServiceActive=_viewServiceActive;
 @property(readonly, nonatomic) _HMContext *context; // @synthesize context=_context;
 @property(readonly, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
@@ -100,6 +99,9 @@
 - (void)_notifyDelegateOfAppDataUpdate;
 - (void)_updateHomes:(id)arg1;
 - (void)_updateCurrentHome:(id)arg1;
+- (void)_updateAddAccessoryRequestsAndNotify:(id)arg1;
+- (void)_notifyPendingAddRequests:(id)arg1;
+- (void)_handleCheckForAddAccessoryRequests;
 - (void)_handleRuntimeStateUpdateNotification:(id)arg1;
 - (void)_requestRuntimeUpdate:(id)arg1;
 - (void)_handleRuntimeStateUpdatePayload:(id)arg1;
@@ -110,6 +112,7 @@
 - (void)_removeCacheFiles:(BOOL)arg1;
 - (void)_determineCacheFiles;
 - (void)_processHomeConfigurationRequest:(id)arg1 refreshRequested:(BOOL)arg2;
+- (id)_addAccessoryRequestsFromArray:(id)arg1;
 - (void)__handleHomeManagerState:(id)arg1;
 - (void)__start;
 - (void)_requestFetchHomeConfigurationWithGenerationCounter:(id)arg1 cachedHomeConfiguration:(id)arg2 metadataVersion:(id)arg3 cachedMetadataConfiguration:(id)arg4 refreshRequested:(BOOL)arg5 qualityOfService:(long long)arg6 activity:(id)arg7;
@@ -163,8 +166,6 @@
 - (void)eraseHomeDataAndDeleteMetadata:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)eraseHomeDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)resetConfiguration:(BOOL)arg1 withoutPopup:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)_retrieveActivityInformationForUserActivity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)retrieveActivityInformationForUserActivity:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_removeHome:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)removeHome:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_addHomeWithName:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -173,6 +174,7 @@
 - (void)updatePrimaryHome:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
+@property(retain, nonatomic) NSSet *addAccessoryRequests; // @synthesize addAccessoryRequests=_addAccessoryRequests;
 @property(nonatomic) BOOL mediaAccessoryControlRequested; // @synthesize mediaAccessoryControlRequested=_mediaAccessoryControlRequested;
 - (void)_notifyResidentProvisioningStatus:(unsigned long long)arg1;
 - (void)setResidentProvisioningStatus:(unsigned long long)arg1;

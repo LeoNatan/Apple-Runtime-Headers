@@ -8,14 +8,12 @@
 
 #import <ContactsUI/CNPhotoLikenessEditorCameraViewDelegate-Protocol.h>
 
-@class AVCaptureConnection, AVCaptureDeviceInput, AVCaptureSession, AVCaptureStillImageOutput, AVCaptureVideoPreviewLayer, CNCameraChangeWatcher, NSImageView, NSString;
+@class AVCaptureConnection, AVCaptureDeviceInput, AVCaptureStillImageOutput, AVCaptureVideoPreviewLayer, CNCameraChangeWatcher, NSImageView, NSString, _CNCameraSessionState;
 
 @interface CNPhotoLikenessEditorCameraViewController : NSViewController <CNPhotoLikenessEditorCameraViewDelegate>
 {
-    BOOL _sessionActive;
-    BOOL _sessionInited;
     double _viewFinderCornerRadius;
-    AVCaptureSession *_session;
+    _CNCameraSessionState *_sessionState;
     AVCaptureDeviceInput *_videoDeviceInput;
     AVCaptureStillImageOutput *_stillImageOutput;
     AVCaptureConnection *_videoConnection;
@@ -28,20 +26,18 @@
 + (id)os_log;
 @property(retain) NSImageView *cameraOff; // @synthesize cameraOff=_cameraOff;
 @property(retain, nonatomic) CNCameraChangeWatcher *cameraWatcher; // @synthesize cameraWatcher=_cameraWatcher;
-@property BOOL sessionInited; // @synthesize sessionInited=_sessionInited;
-@property BOOL sessionActive; // @synthesize sessionActive=_sessionActive;
 @property(nonatomic) long long setupResult; // @synthesize setupResult=_setupResult;
 @property(retain, nonatomic) AVCaptureVideoPreviewLayer *videoPreviewLayer; // @synthesize videoPreviewLayer=_videoPreviewLayer;
 @property(retain) AVCaptureConnection *videoConnection; // @synthesize videoConnection=_videoConnection;
 @property(retain, nonatomic) AVCaptureStillImageOutput *stillImageOutput; // @synthesize stillImageOutput=_stillImageOutput;
 @property(retain, nonatomic) AVCaptureDeviceInput *videoDeviceInput; // @synthesize videoDeviceInput=_videoDeviceInput;
-@property(retain, nonatomic) AVCaptureSession *session; // @synthesize session=_session;
+@property(retain, nonatomic) _CNCameraSessionState *sessionState; // @synthesize sessionState=_sessionState;
 - (void).cxx_destruct;
-- (BOOL)updateVideoInputForDevice:(id)arg1;
+- (BOOL)nts_updateVideoInputForDevice:(id)arg1;
 - (void)captureDeviceDidChange:(id)arg1;
 - (void)takePhotoWithCompletionBlock:(CDUnknownBlockType)arg1;
 @property double viewFinderCornerRadius; // @synthesize viewFinderCornerRadius=_viewFinderCornerRadius;
-- (void)initCaptureSession;
+- (void)nts_initCaptureSession;
 - (void)teardownCaptureSession;
 - (void)cameraView:(id)arg1 didHide:(BOOL)arg2;
 - (void)cameraView:(id)arg1 willMoveToWindow:(id)arg2;

@@ -11,7 +11,9 @@
 @interface VCPVideoSaliencyAnalyzer : VCPVideoAnalyzer
 {
     NSMutableArray *_detections;
-    CDStruct_1b6d18a9 _timeLastProcess;
+    NSMutableArray *_latestRegions;
+    CDStruct_1b6d18a9 _timeLastDetection;
+    CDStruct_1b6d18a9 _timeLastTracking;
     CDStruct_1b6d18a9 _start;
     VCPImageSaliencyAnalyzer *_saliencyAnalyer;
     NSMutableDictionary *_trackers;

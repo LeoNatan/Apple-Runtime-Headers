@@ -13,7 +13,7 @@
 __attribute__((visibility("hidden")))
 @interface _UIClickHighlightInteractionEffect : NSObject <UIInteractionEffect>
 {
-    BOOL _lifted;
+    long long _phase;
     _UIClickHighlightEffectPlatter *_highlightPlatter;
     _UITargetedPreview *_targetedPreview;
 }

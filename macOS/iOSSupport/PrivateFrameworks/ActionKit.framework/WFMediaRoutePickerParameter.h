@@ -24,6 +24,7 @@
 - (BOOL)parameterStateIsValid:(id)arg1;
 - (id)sortedStatesForAvailableRoutes:(id)arg1;
 - (id)enumeration:(id)arg1 localizedLabelForPossibleState:(id)arg2;
+- (BOOL)shouldDefaultToLocalDeviceEndpoint;
 - (BOOL)preferItemPickerSheet;
 - (void)loadPossibleStatesForEnumeration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)loadDefaultSerializedRepresentationForEnumeration:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

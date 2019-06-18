@@ -4,36 +4,30 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <WorkflowKit/WFAction.h>
+#import <WorkflowKit/WFHandleCustomIntentAction.h>
 
 #import <ActionKit/MFMailComposeViewControllerDelegate-Protocol.h>
 
-@class MCOOperation, NSString;
+@class NSString;
 
-@interface WFSendEmailAction : WFAction <MFMailComposeViewControllerDelegate>
+@interface WFSendEmailAction : WFHandleCustomIntentAction <MFMailComposeViewControllerDelegate>
 {
-    NSString *_prefix;
-    MCOOperation *_operation;
 }
 
-@property(nonatomic) __weak MCOOperation *operation; // @synthesize operation=_operation;
-@property(copy, nonatomic) NSString *prefix; // @synthesize prefix=_prefix;
-- (void).cxx_destruct;
-@property(readonly, nonatomic) BOOL showComposeSheet;
+- (id)serializedParametersForDonatedIntent:(id)arg1;
+- (void)sendTextViaMailtoURL:(id)arg1 withUserInterface:(id)arg2;
+- (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
 - (void)generateBodyFromCollection:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)generateEmailFromInput:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)generateEmailHeaderFromParameters:(CDUnknownBlockType)arg1;
-- (void)sendTextViaMailtoURL:(id)arg1 withUserInterface:(id)arg2;
-- (id)emailAccountWithAddress:(id)arg1;
-- (id)emailResource;
-- (void)mailComposeController:(id)arg1 didFinishWithResult:(long long)arg2 error:(id)arg3;
-- (BOOL)supportsUserInterfaceType:(id)arg1;
-- (void)sendEmailWithAccount:(id)arg1 bodyCollection:(id)arg2 attachmentCollection:(id)arg3 to:(id)arg4 cc:(id)arg5 bcc:(id)arg6 subject:(id)arg7;
-- (void)cancel;
-- (void)runWithNoUserInterface:(id)arg1;
+- (void)generateFilesFromCollection:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)generateContentForIntents:(CDUnknownBlockType)arg1;
+- (void)getRecipientsFromParameterKey:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)resolveSlot:(id)arg1 withProcessedValue:(id)arg2 parameter:(id)arg3 input:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)runWithUIKitWidgetUserInterface:(id)arg1 input:(id)arg2;
 - (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
-- (id)copyWithZone:(struct _NSZone *)arg1;
+- (void)runAsynchronouslyWithInput:(id)arg1;
+- (BOOL)populatesInputFromInputParameter;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

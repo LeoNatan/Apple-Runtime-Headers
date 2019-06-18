@@ -23,8 +23,8 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_setImage:(id)arg1;
 - (void)_setTitle:(id)arg1;
-- (BOOL)_acceptBoolMenuVisit:(CDUnknownBlockType)arg1 itemVisit:(CDUnknownBlockType)arg2;
-- (void)_acceptMenuVisit:(CDUnknownBlockType)arg1 itemVisit:(CDUnknownBlockType)arg2;
+- (BOOL)_acceptBoolMenuVisit:(CDUnknownBlockType)arg1 commandVisit:(CDUnknownBlockType)arg2 actionVisit:(CDUnknownBlockType)arg3;
+- (void)_acceptMenuVisit:(CDUnknownBlockType)arg1 commandVisit:(CDUnknownBlockType)arg2 actionVisit:(CDUnknownBlockType)arg3;
 - (id)_initWithTitle:(id)arg1 image:(id)arg2;
 
 @end

@@ -24,6 +24,8 @@
 @property(readonly, nonatomic) UILabel *dateLabel; // @synthesize dateLabel=_dateLabel;
 @property(copy, nonatomic) NSDate *date; // @synthesize date=_date;
 - (void).cxx_destruct;
+- (id)viewForLastBaselineLayout;
+- (id)viewForFirstBaselineLayout;
 - (void)layoutSubviews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (struct CGSize)intrinsicContentSize;

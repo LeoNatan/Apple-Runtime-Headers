@@ -18,6 +18,7 @@
     // Error parsing type: , name: delegate
     // Error parsing type: , name: purchasingSpinnerViewControllerFactory
     // Error parsing type: , name: $__lazy_storage_$_spinnerViewController
+    // Error parsing type: , name: $__lazy_storage_$_verifyingSpinnerViewController
 }
 
 - (void).cxx_destruct;

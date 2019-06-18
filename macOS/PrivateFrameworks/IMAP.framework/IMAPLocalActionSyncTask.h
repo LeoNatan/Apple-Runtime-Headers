@@ -6,7 +6,7 @@
 
 #import <IMAP/IMAPTask.h>
 
-#import <IMAP/ECSignpostable-Protocol.h>
+#import <IMAP/EFSignpostable-Protocol.h>
 #import <IMAP/IMAPGetNewLocalActionsOperationDelegate-Protocol.h>
 #import <IMAP/IMAPMessageActionPersistResultsOperationDelegate-Protocol.h>
 #import <IMAP/IMAPMessageActionSyncOperationDelegate-Protocol.h>
@@ -14,7 +14,7 @@
 @class ECLocalMessageActionResults, IMAPTaskManager, NSMutableArray, NSMutableDictionary, NSString, NSURL;
 @protocol IMAPMessageDataSource;
 
-@interface IMAPLocalActionSyncTask : IMAPTask <ECSignpostable, IMAPMessageActionSyncOperationDelegate, IMAPMessageActionPersistResultsOperationDelegate, IMAPGetNewLocalActionsOperationDelegate>
+@interface IMAPLocalActionSyncTask : IMAPTask <EFSignpostable, IMAPMessageActionSyncOperationDelegate, IMAPMessageActionPersistResultsOperationDelegate, IMAPGetNewLocalActionsOperationDelegate>
 {
     NSMutableArray *_messageActions;
     NSMutableDictionary *_progressesByActionIDs;

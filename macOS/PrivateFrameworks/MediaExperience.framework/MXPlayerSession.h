@@ -50,6 +50,8 @@
 - (basic_string_23d93216)clientProcessName;
 - (void)dealloc;
 - (id)initWithSessionToken:(unsigned int)arg1 withProcessToken:(struct ProcessToken)arg2 withAuditToken:(CDStruct_6ad76789)arg3 withInterruptionHandler:(CDUnknownBlockType)arg4 sessionManager:(id)arg5;
+- (void)updateVirtualPorts:(id *)arg1 withSessionID:(const unsigned int *)arg2;
+- (void)updateIOControllers:(id *)arg1 withSessionID:(const unsigned int *)arg2;
 
 @end
 

@@ -15,6 +15,7 @@
 @interface _EMAttachmentContentItem : EMObject <EFPubliclyDescribable, EMMutableContentItem, NSSecureCoding>
 {
     BOOL _isAvailableLocally;
+    BOOL _isSinglePagePDF;
     NSArray *_availableRepresentations;
     NSString *_contentID;
     long long _dataTransferByteCount;
@@ -28,6 +29,7 @@
 + (BOOL)supportsSecureCoding;
 - (void)setExpiryDate:(id)arg1;
 @property(readonly, nonatomic) NSDate *expiryDate;
+@property(nonatomic) BOOL isSinglePagePDF; // @synthesize isSinglePagePDF=_isSinglePagePDF;
 - (void)setUTType:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *UTType;
 - (void)setStorageByteCount:(long long)arg1;

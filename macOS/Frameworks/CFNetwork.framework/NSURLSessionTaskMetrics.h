@@ -15,6 +15,7 @@
     __CFN_TaskMetrics *__metrics;
 }
 
++ (id)new;
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) __CFN_TaskMetrics *_metrics; // @synthesize _metrics=__metrics;
 - (void).cxx_destruct;

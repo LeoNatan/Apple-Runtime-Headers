@@ -56,6 +56,7 @@
 - (void)_internalCancelRequestWithToken:(id)arg1;
 - (void)_sendResponse:(id)arg1 toResponseHandlersForRequest:(id)arg2 didReceiveNewData:(BOOL)arg3;
 - (void)_sendRequiresDownloadResponse:(id)arg1 toResponseHandlersForRequest:(id)arg2;
+- (void)preloadRequests:(id)arg1 withPriority:(long long)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (void)preloadRequest:(id)arg1 withPriority:(long long)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (id)registerOneTimeRequest:(id)arg1 priority:(long long)arg2 responseHandler:(CDUnknownBlockType)arg3;
 - (id)registerRequest:(id)arg1 priority:(long long)arg2 responseHandler:(CDUnknownBlockType)arg3;

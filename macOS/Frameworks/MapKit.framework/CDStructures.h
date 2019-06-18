@@ -302,7 +302,8 @@ typedef struct {
     char spoken;
     char dropTimestampAMPM;
     char rightToLeft;
-} CDStruct_b58c56ea;
+    double referenceDate;
+} CDStruct_aecaa75c;
 
 typedef struct {
     char _field1;

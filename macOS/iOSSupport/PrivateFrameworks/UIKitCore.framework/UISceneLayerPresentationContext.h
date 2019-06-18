@@ -34,6 +34,7 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
+- (BOOL)_isEqualToDefaultContext;
 - (id)_initWithSceneLayerPresentationContext:(id)arg1;
 - (id)init;
 

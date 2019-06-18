@@ -32,6 +32,7 @@
 + (id)_sharedSessionForConnection;
 + (id)sharedSession;
 + (BOOL)_backgroundServiceAvailable;
++ (id)new;
 + (void)_setHTTPRewriter:(id)arg1;
 + (void)_setEventDelegate:(id)arg1 queue:(id)arg2;
 @property BOOL _isSharedSession; // @synthesize _isSharedSession=_isSharedSession_ivar;
@@ -178,6 +179,7 @@
 - (void)_useTLSSessionCacheFromSession:(id)arg1;
 @property(readonly) BOOL _isProxySession; // @dynamic _isProxySession;
 @property(readonly) BOOL isBackgroundSession; // @dynamic isBackgroundSession;
+- (id)init;
 
 // Remaining properties
 @property(retain) NSMutableDictionary *_altSvc; // @dynamic _altSvc;

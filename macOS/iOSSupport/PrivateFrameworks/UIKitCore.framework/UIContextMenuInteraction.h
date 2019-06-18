@@ -55,7 +55,6 @@
 - (id)_actionsOnlyViewController;
 - (void)_cleanUpPlatterContainerView;
 - (void)_presentationInteractionDidEnd;
-- (BOOL)_shouldPresentInCompactMode;
 @property(readonly, nonatomic, getter=_gestureRecognizerForExclusionRelationship) UIGestureRecognizer *gestureRecognizerForExclusionRelationship;
 - (void)_delegate_contextMenuInteractionDidEnd;
 - (void)_delegate_contextMenuInteractionWillPresent;

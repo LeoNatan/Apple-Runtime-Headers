@@ -62,7 +62,7 @@
 @property(readonly, nonatomic) CNMeCardSharingSettingsNameDataSource *nameDataSource; // @synthesize nameDataSource=_nameDataSource;
 @property(retain, nonatomic) CNContactImage *editingContactImage; // @synthesize editingContactImage=_editingContactImage;
 @property(retain, nonatomic) CNMutableContact *editingContact; // @synthesize editingContact=_editingContact;
-@property(readonly, nonatomic) CNContact *contact; // @synthesize contact=_contact;
+@property(retain, nonatomic) CNContact *contact; // @synthesize contact=_contact;
 @property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
 @property(nonatomic) BOOL delegateDoesRespondToOnboardingResultSelector; // @synthesize delegateDoesRespondToOnboardingResultSelector=_delegateDoesRespondToOnboardingResultSelector;
 @property(nonatomic) BOOL sharingEnabled; // @synthesize sharingEnabled=_sharingEnabled;

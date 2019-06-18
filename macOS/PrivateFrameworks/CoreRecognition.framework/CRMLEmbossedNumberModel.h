@@ -11,7 +11,6 @@
 }
 
 - (id)decodeActivations:(vector_00ef371e *)arg1;
-- (id)embossedResultsFromImage:(id)arg1;
 - (int)classCount;
 - (const int *)codeMap;
 - (id)modelName;

@@ -14,6 +14,7 @@
 @interface HMDCameraRecordingSettingsControl : HMFObject <HMFLogging>
 {
     BOOL _configureCameraInProgress;
+    BOOL _canConfigureCameraForRecording;
     NSString *_logIdentifier;
     id <HMDCameraRecordingSettingsControlDelegate> _delegate;
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -39,6 +40,7 @@
 + (id)videoConfigurationsByPreferenceOrder;
 + (id)clientIdentifier;
 @property(retain) HMDCameraRecordingSelectedConfiguration *currentSelectedConfiguration; // @synthesize currentSelectedConfiguration=_currentSelectedConfiguration;
+@property BOOL canConfigureCameraForRecording; // @synthesize canConfigureCameraForRecording=_canConfigureCameraForRecording;
 @property BOOL configureCameraInProgress; // @synthesize configureCameraInProgress=_configureCameraInProgress;
 @property(retain) HMDCharacteristic *activeCharacteristic; // @synthesize activeCharacteristic=_activeCharacteristic;
 @property(retain) HMDCameraRecordingSupportedAudioConfiguration *supportedAudioConfiguration; // @synthesize supportedAudioConfiguration=_supportedAudioConfiguration;
@@ -61,7 +63,7 @@
 - (void)_handleSupportedConfigurationCharacteristicsReadResponse:(id)arg1;
 - (void)_readSupportedCameraRecordingConfiguration;
 - (void)configureCameraRecordingSettings;
-- (BOOL)_canConfigureAccessoryForRecording;
+- (void)updateCanConfigureCameraForRecording;
 - (id)_recordingAudioConfiguration;
 - (id)_recordingVideoConfiguration;
 - (id)_preferredAudioConfigurationOverride;

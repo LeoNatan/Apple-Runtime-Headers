@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOMapItemInitialRequestData, GEOPDMapsIdentifier, NSMutableArray, PBDataReader, PBUnknownFields;
+@class GEOMapItemInitialRequestData, GEOPDMapsIdentifier, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOPDPlace : PBCodable <NSCopying>
 {
@@ -19,6 +19,7 @@
     unsigned long long _createdTime;
     GEOPDMapsIdentifier *_mapsId;
     unsigned long long _muid;
+    NSString *_placeCacheKey;
     unsigned long long _preferredMuid;
     GEOMapItemInitialRequestData *_requestData;
     unsigned long long _updateVersion;
@@ -36,12 +37,14 @@
         unsigned int read_unknownFields:1;
         unsigned int read_components:1;
         unsigned int read_mapsId:1;
+        unsigned int read_placeCacheKey:1;
         unsigned int read_requestData:1;
         unsigned int wrote_unknownFields:1;
         unsigned int wrote_components:1;
         unsigned int wrote_createdTime:1;
         unsigned int wrote_mapsId:1;
         unsigned int wrote_muid:1;
+        unsigned int wrote_placeCacheKey:1;
         unsigned int wrote_preferredMuid:1;
         unsigned int wrote_requestData:1;
         unsigned int wrote_updateVersion:1;
@@ -58,6 +61,9 @@
 + (id)failedPlaceDataForMuid:(unsigned long long)arg1;
 + (id)failedPlaceData;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSString *placeCacheKey;
+@property(readonly, nonatomic) BOOL hasPlaceCacheKey;
+- (void)_readPlaceCacheKey;
 @property(retain, nonatomic) GEOMapItemInitialRequestData *requestData;
 @property(readonly, nonatomic) BOOL hasRequestData;
 - (void)_readRequestData;

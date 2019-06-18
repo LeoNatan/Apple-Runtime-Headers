@@ -107,17 +107,17 @@
 - (void)_scrollByPage:(BOOL)arg1;
 - (void)_scrollHorizontalBy:(double)arg1;
 - (void)_scrollVerticalBy:(double)arg1;
-- (void)_constrainedScrollToPoint:(struct CGPoint)arg1;
+- (void)constrainedScrollToPoint:(struct CGPoint)arg1;
 - (_Bool)focusOnColumnAtPoint:(struct CGPoint)arg1;
 - (struct CGRect)visibleRectForPageView:(id)arg1;
 - (void)positionInternalViews:(id)arg1;
 - (void)_resizeDisplayView:(id)arg1;
 - (struct CGSize)pageViewSizeForPage:(id)arg1;
 - (void)_updateCurrentPageUsingViewCenter;
+- (void)windowDidResignKey:(id)arg1;
+- (void)windowDidBecomeKey:(id)arg1;
 - (void)pdfViewDidChangePage:(id)arg1;
 - (void)pdfViewDidChangeScale:(id)arg1;
-- (void)documentDidEndWrite:(id)arg1;
-- (void)documentDidBeginWrite:(id)arg1;
 - (void)scrollViewSaysPageMayHaveChanged:(id)arg1;
 - (id)determineCurrentPage;
 - (void)_syncPageIndexToScrollView;
@@ -143,6 +143,7 @@
 - (id)dragInteraction:(id)arg1 itemsForBeginningSession:(id)arg2;
 - (id)_dragItemsAtLocationInView:(struct CGPoint)arg1;
 - (BOOL)_shouldHandleAnnotationAtLocation:(struct CGPoint)arg1 forGestureType:(unsigned long long)arg2;
+- (id)hitTestForSubviewsOfView:(id)arg1 atLocation:(struct CGPoint)arg2 withEvent:(id)arg3;
 - (unsigned long long)typeForGestureRecognizer:(id)arg1;
 - (void)handleGesture:(unsigned long long)arg1 state:(long long)arg2 location:(struct CGPoint)arg3;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;

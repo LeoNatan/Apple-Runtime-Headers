@@ -10,6 +10,7 @@
 
 @interface DMFCommunicationPolicyMonitor : NSObject
 {
+    BOOL _didFetchInitialPolicies;
     NSDictionary *_policiesByBundleIdentifier;
     DMFApplicationPolicyMonitor *_applicationPolicyMonitor;
     DMFCategoryPolicyMonitor *_categoryPolicyMonitor;
@@ -18,6 +19,7 @@
 + (id)_bundleIdentifiers;
 @property(readonly, nonatomic) DMFCategoryPolicyMonitor *categoryPolicyMonitor; // @synthesize categoryPolicyMonitor=_categoryPolicyMonitor;
 @property(readonly, nonatomic) DMFApplicationPolicyMonitor *applicationPolicyMonitor; // @synthesize applicationPolicyMonitor=_applicationPolicyMonitor;
+@property(nonatomic) BOOL didFetchInitialPolicies; // @synthesize didFetchInitialPolicies=_didFetchInitialPolicies;
 @property(copy, nonatomic) NSDictionary *policiesByBundleIdentifier; // @synthesize policiesByBundleIdentifier=_policiesByBundleIdentifier;
 - (void).cxx_destruct;
 - (void)_updateWithPoliciesByBundleIdentifier:(id)arg1 policiesByCategoryIdentifier:(id)arg2;

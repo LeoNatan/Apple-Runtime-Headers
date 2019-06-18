@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)__getIPv4ServiceName:(id)arg1;
 - (void)__getIPv6ServiceID:(id)arg1;
 - (void)__getIPv4ServiceID:(id)arg1;
+- (void)__getNetServiceEnabled:(id)arg1;
 - (void)__getNetServiceName:(id)arg1;
 - (void)__getNetServiceID:(id)arg1;
 - (void)__getIPv6InterfaceName:(id)arg1;

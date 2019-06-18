@@ -7,6 +7,7 @@
 #import <HomeKit/HMAccessoryProfile.h>
 
 @class HMCameraAudioControl, HMCameraSettingsControl, HMCameraSnapshotControl, HMCameraStreamControl, HMCameraUserSettings, _HMCameraProfile;
+@protocol HMCameraProfileUserSettingsDelegate;
 
 @interface HMCameraProfile : HMAccessoryProfile
 {
@@ -15,10 +16,10 @@
     HMCameraSettingsControl *_settingsControl;
     HMCameraAudioControl *_speakerControl;
     HMCameraAudioControl *_microphoneControl;
-    HMCameraUserSettings *_userSettings;
+    id <HMCameraProfileUserSettingsDelegate> _userSettingsDelegate;
 }
 
-@property(readonly) HMCameraUserSettings *userSettings; // @synthesize userSettings=_userSettings;
+@property __weak id <HMCameraProfileUserSettingsDelegate> userSettingsDelegate; // @synthesize userSettingsDelegate=_userSettingsDelegate;
 @property(retain, nonatomic) HMCameraAudioControl *microphoneControl; // @synthesize microphoneControl=_microphoneControl;
 @property(retain, nonatomic) HMCameraAudioControl *speakerControl; // @synthesize speakerControl=_speakerControl;
 @property(retain, nonatomic) HMCameraSettingsControl *settingsControl; // @synthesize settingsControl=_settingsControl;
@@ -28,6 +29,7 @@
 - (void)deleteAllClipsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)services;
+@property(readonly) HMCameraUserSettings *userSettings;
 @property(readonly, nonatomic) _HMCameraProfile *cameraProfile;
 - (id)initWithCameraProfile:(id)arg1;
 

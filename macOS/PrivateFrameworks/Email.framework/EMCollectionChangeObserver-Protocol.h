@@ -18,6 +18,7 @@
 - (void)collection:(EMCollection *)arg1 addedItemIDs:(NSArray *)arg2 before:(id <EMCollectionItemID>)arg3;
 
 @optional
+- (void)didFinishRemoteSearchForCollection:(EMCollection *)arg1;
 - (void)didFinishRecoveryForCollection:(EMCollection *)arg1;
 - (void)collectionDidFinishInitialLoad:(EMCollection *)arg1;
 @end

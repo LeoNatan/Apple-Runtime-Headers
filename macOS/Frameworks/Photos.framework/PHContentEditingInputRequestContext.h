@@ -6,7 +6,7 @@
 
 #import <Photos/PHMediaRequestContext.h>
 
-@class NSArray, NSMutableIndexSet, NSProgress, PHAdjustmentDataRequest, PHContentEditingInputRequestOptions, PHContentEditingInputResult, PHImageRequest, PHImageResourceChooser, PHVideoRequest;
+@class NSArray, NSMutableIndexSet, NSProgress, PAImageConversionServiceClient, PHAdjustmentDataRequest, PHContentEditingInputRequestOptions, PHContentEditingInputResult, PHImageRequest, PHImageResourceChooser, PHVideoRequest;
 
 @interface PHContentEditingInputRequestContext : PHMediaRequestContext
 {
@@ -24,6 +24,7 @@
     PHImageResourceChooser *_backupChooser;
     NSArray *_assetResources;
     NSMutableIndexSet *_requestIndexesOfAssetResourceRequests;
+    PAImageConversionServiceClient *_imageConversionClient;
     PHContentEditingInputRequestOptions *_options;
 }
 
@@ -38,7 +39,7 @@
 - (id)initialRequests;
 - (void)cancel;
 - (BOOL)isNetworkAccessAllowed;
-- (void)_setResourceURLsForFlippingRendersIfNeeded;
+- (void)_setVideoResourceURLsForFlippingRendersIfNeeded;
 - (void)_prepareAndAddFlippingRenderURLRequestsToChildRequestsIfNeeded:(id)arg1 forBaseVersion:(long long)arg2;
 - (id)_resourceRequestForAssetResource:(id)arg1 wantsURLOnly:(BOOL)arg2 progress:(id)arg3;
 - (BOOL)_hasAnyPenultimateResource;

@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (void)createActions;
 - (id)initWithStyle:(unsigned long long)arg1;
 - (void)loadView;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

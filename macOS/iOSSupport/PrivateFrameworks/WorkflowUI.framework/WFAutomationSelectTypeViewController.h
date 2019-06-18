@@ -9,19 +9,18 @@
 #import <WorkflowUI/UITableViewDataSource-Protocol.h>
 #import <WorkflowUI/UITableViewDelegate-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, WFTriggerManager;
+@class NSArray, NSString, WFTriggerManager;
 @protocol WFAutomationSelectTypeViewControllerDelegate;
 
 @interface WFAutomationSelectTypeViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 {
     id <WFAutomationSelectTypeViewControllerDelegate> _delegate;
     WFTriggerManager *_triggerManager;
-    NSArray *_groupIdentifiers;
-    NSDictionary *_sectionInfoByGroupIdentifier;
+    NSArray *_tableContent;
 }
 
-@property(readonly, nonatomic) NSDictionary *sectionInfoByGroupIdentifier; // @synthesize sectionInfoByGroupIdentifier=_sectionInfoByGroupIdentifier;
-@property(readonly, nonatomic) NSArray *groupIdentifiers; // @synthesize groupIdentifiers=_groupIdentifiers;
++ (id)buildTableContent;
+@property(readonly, nonatomic) NSArray *tableContent; // @synthesize tableContent=_tableContent;
 @property(readonly, nonatomic) WFTriggerManager *triggerManager; // @synthesize triggerManager=_triggerManager;
 @property(nonatomic) __weak id <WFAutomationSelectTypeViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;

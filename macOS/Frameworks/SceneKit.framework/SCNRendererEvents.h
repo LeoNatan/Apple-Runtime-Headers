@@ -22,6 +22,7 @@
 @property(retain, nonatomic) id <MTLEvent> waitEvent; // @synthesize waitEvent=_waitEvent;
 - (void)signalAfterSubmittingRender:(id)arg1;
 - (void)waitBeforeSubmittingRender:(id)arg1;
+- (void)dealloc;
 
 @end
 

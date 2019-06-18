@@ -31,9 +31,6 @@
 @property(retain, nonatomic) WFAggregateDictionary *aggDictionary; // @synthesize aggDictionary=_aggDictionary;
 @property(retain, nonatomic) NSURLSession *session; // @synthesize session=_session;
 - (void).cxx_destruct;
-- (BOOL)usesRemoteAppSettings;
-- (void)reactToRequestFailure:(id)arg1;
-- (void)reactToRequestSuccess;
 - (id)parseForecast:(unsigned long long)arg1 data:(id)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 apiVersion:(id)arg6 error:(id *)arg7;
 - (id)parseForecast:(unsigned long long)arg1 data:(id)arg2 location:(id)arg3 locale:(id)arg4 date:(id)arg5 error:(id *)arg6;
 - (id)forecastRequestForTypes:(unsigned long long)arg1 location:(id)arg2 date:(id)arg3 apiVersion:(id)arg4 error:(id *)arg5;

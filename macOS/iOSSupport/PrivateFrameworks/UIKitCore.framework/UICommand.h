@@ -50,9 +50,10 @@
 - (unsigned long long)hash;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)_identifier;
 - (id)_alternateForModifierFlags:(long long)arg1;
-- (BOOL)_acceptBoolMenuVisit:(CDUnknownBlockType)arg1 itemVisit:(CDUnknownBlockType)arg2;
-- (void)_acceptMenuVisit:(CDUnknownBlockType)arg1 itemVisit:(CDUnknownBlockType)arg2;
+- (BOOL)_acceptBoolMenuVisit:(CDUnknownBlockType)arg1 commandVisit:(CDUnknownBlockType)arg2 actionVisit:(CDUnknownBlockType)arg3;
+- (void)_acceptMenuVisit:(CDUnknownBlockType)arg1 commandVisit:(CDUnknownBlockType)arg2 actionVisit:(CDUnknownBlockType)arg3;
 - (id)initWithCommand:(id)arg1;
 - (id)initWithTitle:(id)arg1 action:(SEL)arg2 propertyList:(id)arg3 alternates:(id)arg4 image:(id)arg5 discoverabilityTitle:(id)arg6 enabled:(BOOL)arg7 state:(long long)arg8;
 - (id)initWithCoder:(id)arg1;

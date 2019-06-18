@@ -55,6 +55,8 @@ __attribute__((visibility("hidden")))
 - (id)_currentlyFocusedCell;
 - (void)_selectEntryForTitleIndex:(long long)arg1;
 - (void)_updateWithEntries:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)_flipIfRightToLeft;
 - (void)commonInit;
 - (id)init;
 

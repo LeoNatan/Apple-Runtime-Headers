@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 #import <UIKitCore/BSDescriptionProviding-Protocol.h>
+#import <UIKitCore/FBSceneObserver-Protocol.h>
 #import <UIKitCore/_UIScenePresenterOwnerDelegate-Protocol.h>
 
 @class FBScene, NSMapTable, NSString, UIScenePresentationContext, _UIScenePresenterOwner;
 @protocol UIScenePresentationManagerDelegate;
 
-@interface UIScenePresentationManager : NSObject <BSDescriptionProviding, _UIScenePresenterOwnerDelegate>
+@interface UIScenePresentationManager : NSObject <BSDescriptionProviding, _UIScenePresenterOwnerDelegate, FBSceneObserver>
 {
     FBScene *_scene;
     _UIScenePresenterOwner *_scenePresenterOwner;
@@ -41,12 +42,15 @@
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
+- (id)snapshotPresentationForSnapshot:(id)arg1;
+- (id)snapshotContext;
 - (id)createPresenterForLayerTarget:(id)arg1 identifier:(id)arg2 priority:(long long)arg3;
 - (id)createPresenterForLayerTarget:(id)arg1 identifier:(id)arg2;
 - (id)createPresenterWithIdentifier:(id)arg1 priority:(long long)arg2;
 - (id)createPresenterWithIdentifier:(id)arg1;
 @property(readonly, nonatomic, getter=isInvalidated) BOOL invalidated;
 - (void)modifyDefaultPresentationContext:(CDUnknownBlockType)arg1;
+- (id)_initWithScene:(id)arg1;
 - (id)init;
 
 // Remaining properties

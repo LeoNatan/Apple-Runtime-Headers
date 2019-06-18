@@ -4,10 +4,16 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class PHImportSource;
+@class NSArray, PHImportAsset, PHImportSource;
 
 @protocol PHImportSourceObserver
-- (void)removedImportSource:(PHImportSource *)arg1;
-- (void)addedImportSource:(PHImportSource *)arg1;
+- (void)capabilitiesDidChangeForImportSource:(PHImportSource *)arg1;
+- (void)nameDidChangeForImportSource:(PHImportSource *)arg1;
+- (void)userHasTrustedHostForImportSource:(PHImportSource *)arg1;
+- (void)userRequiredToTrustHostForImportSource:(PHImportSource *)arg1;
+- (void)importSource:(PHImportSource *)arg1 didDeleteAsset:(PHImportAsset *)arg2;
+- (void)importSource:(PHImportSource *)arg1 didUpdateAsset:(PHImportAsset *)arg2 propertyMask:(unsigned short)arg3;
+- (void)importSource:(PHImportSource *)arg1 didRemoveAssets:(NSArray *)arg2;
+- (void)importSource:(PHImportSource *)arg1 didAddAssets:(NSArray *)arg2;
 @end
 

@@ -8,14 +8,18 @@
 
 #import <ReminderKit/REMChangeTrackingProvider-Protocol.h>
 
-@class REMStoreContainerToken;
+@class REMStoreContainerToken, _REMInProgressSaveRequestsContainer;
 @protocol REMDaemonController;
 
 @interface REMStore : NSObject <REMChangeTrackingProvider>
 {
+    BOOL _assertOnMainThreadFetches;
+    struct os_unfair_lock_s _lock;
     REMStoreContainerToken *_storeContainerToken;
+    _REMInProgressSaveRequestsContainer *_l_inProgressSaveRequestsContainer;
     id <REMDaemonController> _daemonController;
     unsigned long long _mode;
+    REMStore *_nonUserInteractiveStore;
 }
 
 + (BOOL)siriShouldRouteIntentsToNewRemindersApp;
@@ -29,10 +33,18 @@
 + (BOOL)isEventKitSyncEnabledForReminderKit;
 + (BOOL)dataaccessDaemonStopSyncingReminders;
 + (BOOL)notificationsEnabled;
+@property(readonly, nonatomic) REMStore *nonUserInteractiveStore; // @synthesize nonUserInteractiveStore=_nonUserInteractiveStore;
+@property(nonatomic) BOOL assertOnMainThreadFetches; // @synthesize assertOnMainThreadFetches=_assertOnMainThreadFetches;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) id <REMDaemonController> daemonController; // @synthesize daemonController=_daemonController;
+@property(readonly, nonatomic) struct os_unfair_lock_s lock; // @synthesize lock=_lock;
+@property(readonly, nonatomic) _REMInProgressSaveRequestsContainer *l_inProgressSaveRequestsContainer; // @synthesize l_inProgressSaveRequestsContainer=_l_inProgressSaveRequestsContainer;
 @property(readonly, nonatomic) REMStoreContainerToken *storeContainerToken; // @synthesize storeContainerToken=_storeContainerToken;
 - (void).cxx_destruct;
+- (BOOL)_isUserInteractiveStore;
+- (void)_incrementStoreGeneration;
+- (id)_withInProgressSaveRequestContainer:(CDUnknownBlockType)arg1;
+- (id)fetchDefaultAccountWithError:(id *)arg1;
 - (id)fetchDefaultListWithError:(id *)arg1;
 - (id)fetchEligibleDefaultListsWithError:(id *)arg1;
 - (BOOL)everConnectedToCar;
@@ -53,8 +65,8 @@
 - (unsigned long long)countForFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)resultsIndexedByObjectIDFromExecutingFetchRequest:(id)arg1 error:(id *)arg2;
 - (id)executeFetchRequest:(id)arg1 error:(id *)arg2;
-- (void)saveAccountChangeItems:(id)arg1 listChangeItems:(id)arg2 reminderChangeItems:(id)arg3 author:(id)arg4 replicaManagerProvider:(id)arg5 queue:(id)arg6 completion:(CDUnknownBlockType)arg7;
-- (BOOL)saveAccountChangeItems:(id)arg1 listChangeItems:(id)arg2 reminderChangeItems:(id)arg3 author:(id)arg4 replicaManagerProvider:(id)arg5 error:(id *)arg6;
+- (void)saveSaveRequest:(id)arg1 accountChangeItems:(id)arg2 listChangeItems:(id)arg3 reminderChangeItems:(id)arg4 author:(id)arg5 replicaManagerProvider:(id)arg6 queue:(id)arg7 completion:(CDUnknownBlockType)arg8;
+- (BOOL)saveSaveRequest:(id)arg1 accountChangeItems:(id)arg2 listChangeItems:(id)arg3 reminderChangeItems:(id)arg4 author:(id)arg5 replicaManagerProvider:(id)arg6 error:(id *)arg7;
 - (id)fetchReplicaManagersForAccountID:(id)arg1 bundleID:(id)arg2 error:(id *)arg3;
 - (id)fetchReplicaManagerForAccountID:(id)arg1 error:(id *)arg2;
 - (id)fetchReminderWithObjectID:(id)arg1 error:(id *)arg2;
@@ -64,16 +76,23 @@
 - (id)fetchListWithObjectID:(id)arg1 error:(id *)arg2;
 - (id)fetchAccountsWithObjectIDs:(id)arg1 error:(id *)arg2;
 - (id)fetchAccountWithObjectID:(id)arg1 error:(id *)arg2;
+- (id)optimisticallyMaterializeReminderChangeItem:(id)arg1;
+- (id)refreshReminder:(id)arg1;
+- (id)refreshList:(id)arg1;
+- (id)refreshAccount:(id)arg1;
 - (id)fetchSiriFoundInAppsListWithError:(id *)arg1;
 - (id)fetchAccountsForDumpingWithError:(id *)arg1;
 - (id)fetchAccountsIncludingInactive:(BOOL)arg1 error:(id *)arg2;
 - (id)fetchAccountsWithError:(id *)arg1;
 - (void)nukeDatabase;
 - (void)invalidate;
+- (unsigned long long)storeGeneration;
+- (id)debugDescription;
 - (id)description;
 - (id)initWithDaemonController:(id)arg1 storeContainerToken:(id)arg2;
 - (id)initWithDaemonController:(id)arg1;
 - (id)init;
+- (id)initUserInteractive:(BOOL)arg1;
 - (id)initWithStoreContainerToken:(id)arg1;
 - (void)_respondToCalDAVSharedList:(id)arg1 withResponse:(long long)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)rejectCalDAVSharedList:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
@@ -99,6 +118,9 @@
 - (id)fetchListsIncludingSpecialContainersInAccount:(id)arg1 error:(id *)arg2;
 - (id)fetchAccountsWithExternalIdentifiers:(id)arg1 error:(id *)arg2;
 - (id)fetchAccountWithExternalIdentifier:(id)arg1 error:(id *)arg2;
+- (void)requestToDeleteLocalDataWithCompletion:(CDUnknownBlockType)arg1;
+- (void)requestToDeleteSyncDataWithAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)requestToMergeLocalDataIntoSyncDataWithAccountIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_triggerSyncForcingCloudKitReload:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)removeOrphanedAccountsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)deleteAccountWithAccountID:(id)arg1 completion:(CDUnknownBlockType)arg2;

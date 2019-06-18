@@ -8,6 +8,7 @@
 
 @class NSArray;
 
+__attribute__((visibility("hidden")))
 @interface SystemStateNegotiateTransaction : NSObject
 {
     struct unordered_map<unsigned int, id<dspd_ConfigurationChangeRequest>, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, id<dspd_ConfigurationChangeRequest>>>> negotiatingRequests;

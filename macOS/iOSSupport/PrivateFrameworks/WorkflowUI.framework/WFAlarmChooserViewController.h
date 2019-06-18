@@ -36,7 +36,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 - (void)dataSourceDidReload:(id)arg1;
-- (BOOL)isModalInPopover;
+- (BOOL)isModalInPresentation;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithAlarmManager:(id)arg1 alarmDataSource:(id)arg2 checkedAlarmIDs:(id)arg3;

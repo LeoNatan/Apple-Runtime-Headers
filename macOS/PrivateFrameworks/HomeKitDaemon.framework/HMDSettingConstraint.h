@@ -13,6 +13,7 @@
 @interface HMDSettingConstraint : NSObject <HMDSettingConstraintProtocol>
 {
     NSUUID *_identifier;
+    NSUUID *_parentIdentifier;
     NSNumber *_type;
     NSNumber *_numberValue;
     NSData *_dataValue;
@@ -22,12 +23,14 @@
 @property(readonly) NSData *dataValue; // @synthesize dataValue=_dataValue;
 @property(readonly) NSNumber *numberValue; // @synthesize numberValue=_numberValue;
 @property(readonly, copy) NSNumber *type; // @synthesize type=_type;
+@property(readonly) NSUUID *parentIdentifier; // @synthesize parentIdentifier=_parentIdentifier;
 @property(readonly) NSUUID *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+@property(readonly) NSString *name;
 @property(readonly, copy) id value;
-- (id)initWithIdentifier:(id)arg1 type:(id)arg2 numberValue:(id)arg3 dataValue:(id)arg4;
+- (id)initWithIdentifier:(id)arg1 parentIdentifier:(id)arg2 type:(id)arg3 numberValue:(id)arg4 dataValue:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

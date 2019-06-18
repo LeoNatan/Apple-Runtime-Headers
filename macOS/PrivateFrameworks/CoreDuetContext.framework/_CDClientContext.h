@@ -6,13 +6,14 @@
 
 #import <objc/NSObject.h>
 
-#import <CoreDuetContext/_CDUserContext-Protocol.h>
+#import <CoreDuetContext/_CDAsyncLocalContext-Protocol.h>
+#import <CoreDuetContext/_CDAsyncUserContext-Protocol.h>
 #import <CoreDuetContext/_CDUserContextServerMonitoring-Protocol.h>
 
 @class NSCountedSet, NSMutableDictionary, NSString, NSXPCConnection, NSXPCListenerEndpoint;
 @protocol OS_dispatch_queue, OS_os_log, _CDRemoteUserContextServer;
 
-@interface _CDClientContext : NSObject <_CDUserContext, _CDUserContextServerMonitoring>
+@interface _CDClientContext : NSObject <_CDAsyncUserContext, _CDAsyncLocalContext, _CDUserContextServerMonitoring>
 {
     BOOL _interrupted;
     NSObject<OS_dispatch_queue> *_queue;
@@ -48,14 +49,24 @@
 - (void)deactivateDevices:(id)arg1 remoteUserContextProxySourceDeviceUUID:(id)arg2;
 - (void)activateDevices:(id)arg1 remoteUserContextProxySourceDeviceUUID:(id)arg2;
 - (BOOL)setObject:(id)arg1 lastModifiedDate:(id)arg2 forContextualKeyPath:(id)arg3;
+- (struct NSDictionary *)valuesForKeyPaths:(id)arg1 synchronous:(BOOL)arg2 responseQueue:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)valuesForKeyPaths:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (struct NSDictionary *)valuesForKeyPaths:(id)arg1;
 - (id)valuesForKeyPaths:(id)arg1 inContextsMatchingPredicate:(id)arg2;
 - (id)localContext;
+- (BOOL)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3 synchronous:(BOOL)arg4 responseQueue:(id)arg5 withCompletion:(CDUnknownBlockType)arg6;
+- (void)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3 responseQueue:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
 - (BOOL)addObjects:(id)arg1 andRemoveObjects:(id)arg2 fromArrayAtKeyPath:(id)arg3;
+- (BOOL)removeObjects:(id)arg1 fromArrayAtKeyPath:(id)arg2 synchronous:(BOOL)arg3 responseQueue:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
+- (void)removeObjects:(id)arg1 fromArrayAtKeyPath:(id)arg2 responseQueue:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (BOOL)removeObjects:(id)arg1 fromArrayAtKeyPath:(id)arg2;
+- (BOOL)addObjects:(id)arg1 toArrayAtKeyPath:(id)arg2 synchronous:(BOOL)arg3 responseQueue:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
+- (void)addObjects:(id)arg1 toArrayAtKeyPath:(id)arg2 responseQueue:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (BOOL)addObjects:(id)arg1 toArrayAtKeyPath:(id)arg2;
-- (BOOL)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (BOOL)setObject:(id)arg1 forContextualKeyPath:(id)arg2 synchronous:(BOOL)arg3 responseQueue:(id)arg4 withCompletion:(CDUnknownBlockType)arg5;
+- (void)setObject:(id)arg1 forContextualKeyPath:(id)arg2 responseQueue:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
 - (BOOL)setObject:(id)arg1 forContextualKeyPath:(id)arg2;
+- (BOOL)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)handleRegistrationCompleted:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)handleContextualChange:(id)arg1 info:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (BOOL)evaluatePredicate:(id)arg1;
@@ -66,8 +77,12 @@
 - (void)clearCacheForKeyPathsWithFireOnChangeRegistrations:(id)arg1;
 - (void)removeKeyPathsWithRegistrationsForAnyChangeFromRegistration:(id)arg1;
 - (void)addKeyPathsWithRegistrationsForAnyChangeFromRegistration:(id)arg1;
+- (id)lastModifiedDateForContextualKeyPath:(id)arg1 synchronous:(BOOL)arg2 responseQueue:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)lastModifiedDateForContextualKeyPath:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)lastModifiedDateForContextualKeyPath:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
+- (id)objectForContextualKeyPath:(id)arg1 synchronous:(BOOL)arg2 responseQueue:(id)arg3 withCompletion:(CDUnknownBlockType)arg4;
+- (void)objectForContextualKeyPath:(id)arg1 responseQueue:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
 - (id)objectForContextualKeyPath:(id)arg1;
 - (void)setCachedValueIfClientHasRegistrations:(id)arg1 forKeyPath:(id)arg2;
 - (id)cachedValueIfClientHasRegistrationsForKeyPath:(id)arg1;
@@ -82,6 +97,7 @@
 - (void)subscribeToEventStreams;
 - (void)dealloc;
 - (id)initWithEndpoint:(id)arg1;
+- (id)defaultCallbackQueue;
 - (id)currentConnection;
 - (void)unprotectedSetUpXPCConnectionWithEndpoint:(id)arg1;
 

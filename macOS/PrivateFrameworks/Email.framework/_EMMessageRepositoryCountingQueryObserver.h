@@ -9,7 +9,7 @@
 #import <Email/EMMessageRepositoryCountQueryObserver_xpc-Protocol.h>
 #import <Email/EMRecoverableObserver-Protocol.h>
 
-@class EFCancelationToken, EFQuery, EMMailboxScope, EMMessageRepository, NSString;
+@class EFCancelationToken, EFPair, EFQuery, EMMailboxScope, EMMessageRepository, NSString;
 @protocol EMMessageRepositoryCountQueryObserver;
 
 __attribute__((visibility("hidden")))
@@ -20,8 +20,10 @@ __attribute__((visibility("hidden")))
     EMMailboxScope *_serverCountMailboxScope;
     id <EMMessageRepositoryCountQueryObserver> _observer;
     EFCancelationToken *_token;
+    EFPair *_queryIdentifier;
 }
 
+@property(readonly) EFPair *queryIdentifier; // @synthesize queryIdentifier=_queryIdentifier;
 - (void).cxx_destruct;
 - (void)countDidChange:(long long)arg1 acknowledgementToken:(id)arg2;
 - (void)_performQueryWithRemoteConnection:(id)arg1 forRecovery:(BOOL)arg2;
@@ -29,7 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)performQueryWithRemoteConnection:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithRepository:(id)arg1 query:(id)arg2 includingServerCountsForMailboxScope:(id)arg3 observer:(id)arg4;
+- (id)initWithRepository:(id)arg1 queryIdentifier:(id)arg2 includingServerCountsForMailboxScope:(id)arg3 observer:(id)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

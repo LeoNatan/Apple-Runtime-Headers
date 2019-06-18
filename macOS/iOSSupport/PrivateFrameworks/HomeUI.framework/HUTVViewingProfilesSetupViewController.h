@@ -27,6 +27,7 @@
 @property(retain, nonatomic) OBTrayButton *useTVVPButton; // @synthesize useTVVPButton=_useTVVPButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewDidLoad;
 - (id)moduleController:(id)arg1 textFieldForVisibleItem:(id)arg2;
 - (id)moduleController:(id)arg1 dismissViewControllerForRequest:(id)arg2;
 - (id)moduleController:(id)arg1 presentViewControllerForRequest:(id)arg2;

@@ -56,6 +56,7 @@
 @property(nonatomic) long long originalOrientation; // @dynamic originalOrientation;
 @property(nonatomic) struct CGAffineTransform originalTransform; // @dynamic originalTransform;
 @property(nonatomic) struct CGSize originalSize; // @dynamic originalSize;
+- (void)setOriginalSizeHoldingScaleEquivalent:(struct CGSize)arg1 orientation:(long long)arg2;
 @property(copy, nonatomic) PAItemViewConfiguration *configuration;
 - (BOOL)canRescaleLayerDuringLiveResize;
 - (void)viewDidEndLiveResize;

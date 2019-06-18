@@ -4,14 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <FinderKit/FI_TView.h>
+#import <FinderKit/FI_TUpdateLayerView.h>
 
 __attribute__((visibility("hidden")))
-@interface FI_TDelayedPopulationView : FI_TView
+@interface FI_TDelayedPopulationView : FI_TUpdateLayerView
 {
 }
 
-- (void)drawRect:(struct CGRect)arg1;
 - (void)initCommon;
 
 @end

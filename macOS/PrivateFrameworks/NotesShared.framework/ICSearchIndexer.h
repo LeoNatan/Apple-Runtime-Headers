@@ -37,6 +37,7 @@
 @property(nonatomic) BOOL retryOnErrors; // @synthesize retryOnErrors=_retryOnErrors;
 @property(nonatomic, getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
 - (void).cxx_destruct;
+- (void)clearObjectIDsToProcess;
 - (void)clearRetryForSelector:(SEL)arg1;
 - (void)retrySelector:(SEL)arg1;
 - (id)objectForManagedObjectIDURI:(id)arg1 inContexts:(id)arg2;

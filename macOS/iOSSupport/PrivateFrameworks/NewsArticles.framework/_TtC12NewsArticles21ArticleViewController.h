@@ -6,7 +6,6 @@
 
 #import <UIKit/UIViewController.h>
 
-__attribute__((visibility("hidden")))
 @interface _TtC12NewsArticles21ArticleViewController : UIViewController
 {
     // Error parsing type: , name: styler

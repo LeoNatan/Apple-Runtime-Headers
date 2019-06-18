@@ -9,14 +9,14 @@
 #import <HomeUI/HUDetailsPresentationDelegateHost-Protocol.h>
 #import <HomeUI/HUIconPickerViewControllerDelegate-Protocol.h>
 #import <HomeUI/HUNameAndIconEditorCellDelegate-Protocol.h>
-#import <HomeUI/HUSceneActionGridViewControllerDelegate-Protocol.h>
 #import <HomeUI/HUSceneServicePickerViewControllerDelegate-Protocol.h>
+#import <HomeUI/HUServiceGridViewControllerDelegate-Protocol.h>
 #import <HomeUI/HUSwitchCellDelegate-Protocol.h>
 
 @class HUSceneActionEditorItemManager, NSMutableDictionary, NSSet, NSString;
 @protocol HUPresentationDelegate, HUSceneEditorDelegate;
 
-@interface HUSceneActionEditorViewController : HUItemTableViewController <HUSwitchCellDelegate, HUSceneServicePickerViewControllerDelegate, HUNameAndIconEditorCellDelegate, HUIconPickerViewControllerDelegate, HUSceneActionGridViewControllerDelegate, HUDetailsPresentationDelegateHost>
+@interface HUSceneActionEditorViewController : HUItemTableViewController <HUSwitchCellDelegate, HUSceneServicePickerViewControllerDelegate, HUNameAndIconEditorCellDelegate, HUIconPickerViewControllerDelegate, HUServiceGridViewControllerDelegate, HUDetailsPresentationDelegateHost>
 {
     BOOL _requiresPresentingViewControllerDismissal;
     BOOL _showCancelButton;
@@ -38,7 +38,7 @@
 @property(nonatomic) BOOL requiresPresentingViewControllerDismissal; // @synthesize requiresPresentingViewControllerDismissal=_requiresPresentingViewControllerDismissal;
 @property(nonatomic) __weak id <HUPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 - (void).cxx_destruct;
-- (void)sceneActionGridViewController:(id)arg1 didTapItem:(id)arg2;
+- (void)serviceGridViewController:(id)arg1 didTapItem:(id)arg2;
 - (void)_presentMediaSelection;
 - (void)iconPicker:(id)arg1 didPickIconDescriptor:(id)arg2;
 - (void)iconPickerDidCancel:(id)arg1;

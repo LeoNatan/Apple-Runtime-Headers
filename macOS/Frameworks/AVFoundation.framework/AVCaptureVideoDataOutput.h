@@ -37,6 +37,8 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (BOOL)appliesMirroringWithPhysicalFlipForConnection:(id)arg1;
 - (BOOL)appliesOrientationWithPhysicalRotationForConnection:(id)arg1;
+@property(nonatomic) BOOL deliversPreviewSizedOutputBuffers;
+@property(nonatomic) BOOL automaticallyConfiguresOutputBufferDimensions;
 - (id)recommendedVideoSettingsForVideoCodecType:(id)arg1 assetWriterOutputFileType:(id)arg2;
 - (id)availableVideoCodecTypesForAssetWriterWithOutputFileType:(id)arg1;
 - (id)recommendedVideoSettingsForAssetWriterWithOutputFileType:(id)arg1;

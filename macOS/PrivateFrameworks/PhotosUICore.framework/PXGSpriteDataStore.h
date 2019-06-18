@@ -15,13 +15,13 @@
     unsigned int _capacity;
     unsigned int _count;
     CDStruct_ac168a83 *_geometries;
-    CDStruct_3bc3b9c1 *_styles;
+    CDStruct_506f5052 *_styles;
     CDStruct_9d1ebe49 *_infos;
 }
 
 + (id)newSpriteDataStore;
 @property(readonly, nonatomic) CDStruct_9d1ebe49 *infos; // @synthesize infos=_infos;
-@property(readonly, nonatomic) CDStruct_3bc3b9c1 *styles; // @synthesize styles=_styles;
+@property(readonly, nonatomic) CDStruct_506f5052 *styles; // @synthesize styles=_styles;
 @property(readonly, nonatomic) CDStruct_ac168a83 *geometries; // @synthesize geometries=_geometries;
 @property(nonatomic) unsigned int count; // @synthesize count=_count;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;

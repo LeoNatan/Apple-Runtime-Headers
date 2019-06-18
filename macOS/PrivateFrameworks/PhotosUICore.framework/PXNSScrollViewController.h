@@ -8,15 +8,23 @@
 
 #import <PhotosUICore/NSScrollViewDelegate-Protocol.h>
 #import <PhotosUICore/PXNSScrollViewDelegate-Protocol.h>
+#import <PhotosUICore/_PXScrollDocumentViewAccessibilityDelegate-Protocol.h>
 
-@class NSScrollView, NSString, PXNSScrollView;
+@class NSArray, NSScrollView, NSString, PXNSScrollView;
+@protocol PXNSScrollViewControllerAccessibilityDelegate;
 
-@interface PXNSScrollViewController : PXScrollViewController <PXNSScrollViewDelegate, NSScrollViewDelegate>
+@interface PXNSScrollViewController : PXScrollViewController <PXNSScrollViewDelegate, NSScrollViewDelegate, _PXScrollDocumentViewAccessibilityDelegate>
 {
     PXNSScrollView *_scrollView;
+    id <PXNSScrollViewControllerAccessibilityDelegate> _accessibilityDelegate;
 }
 
+@property(nonatomic) __weak id <PXNSScrollViewControllerAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
 - (void).cxx_destruct;
+@property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedChildren;
+@property(readonly, nonatomic) NSArray *axDelegateAccessibilityVisibleChildren;
+@property(readonly, nonatomic) NSArray *axDelegateAccessibilityChildren;
+- (void)updateAccessibilitySelectedChildren;
 - (id)contentCoordinateSpace;
 - (void)didEndScrollInScrollView:(id)arg1;
 - (void)scrollViewBeganMomentum:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;

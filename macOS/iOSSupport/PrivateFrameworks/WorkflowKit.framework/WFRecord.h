@@ -26,7 +26,6 @@
 + (id)propertiesForClass:(Class)arg1;
 + (id)propertiesForClass:(Class)arg1 walkingSuperclassesUntilReaching:(Class)arg2;
 + (id)defaultPropertyValues;
-+ (void)initialize;
 @property(readonly, nonatomic) NSMutableDictionary *lastSavedOrFetchedValues; // @synthesize lastSavedOrFetchedValues=_lastSavedOrFetchedValues;
 @property(readonly, nonatomic) NSMutableSet *modifiedPropertyNamesSinceLastSave; // @synthesize modifiedPropertyNamesSinceLastSave=_modifiedPropertyNamesSinceLastSave;
 @property(readonly, nonatomic) NSMutableDictionary *lastFetchedValues; // @synthesize lastFetchedValues=_lastFetchedValues;

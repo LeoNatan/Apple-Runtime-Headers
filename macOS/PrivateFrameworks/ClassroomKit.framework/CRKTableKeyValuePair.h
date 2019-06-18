@@ -4,19 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <ClassroomKit/CRKKeyValuePair.h>
 
-@interface CRKTableKeyValuePair : NSObject
+@interface CRKTableKeyValuePair : CRKKeyValuePair
 {
-    id _key;
-    id _value;
 }
 
 + (id)pairWithKey:(id)arg1 value:(id)arg2;
-@property(readonly, nonatomic) id value; // @synthesize value=_value;
-@property(readonly, nonatomic) id key; // @synthesize key=_key;
-- (void).cxx_destruct;
-- (id)initWithKey:(id)arg1 value:(id)arg2;
 
 @end
 

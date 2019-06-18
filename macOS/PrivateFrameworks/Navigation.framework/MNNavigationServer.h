@@ -38,7 +38,7 @@
 - (void)navigationServiceProxy:(id)arg1 didUpdateTrafficIncidentAlert:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didReceiveTrafficIncidentAlert:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didUpdateAlternateRoutes:(id)arg2;
-- (void)navigationServiceProxy:(id)arg1 failedRerouteWithErrorCode:(long long)arg2;
+- (void)navigationServiceProxy:(id)arg1 didFailRerouteWithError:(id)arg2;
 - (void)navigationServiceProxy:(id)arg1 didSwitchToNewTransportType:(int)arg2 newRoute:(id)arg3;
 - (void)navigationServiceProxy:(id)arg1 didUpdateRouteWithNewRideSelection:(id)arg2;
 - (void)navigationServiceProxyDidCancelReroute:(id)arg1;

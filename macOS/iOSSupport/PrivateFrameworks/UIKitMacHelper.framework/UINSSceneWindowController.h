@@ -16,10 +16,12 @@ __attribute__((visibility("hidden")))
     BOOL _autoHidesToolbarInFullScreen;
     BOOL _windowIsInFullScreen;
     NSString *_sceneIdentifier;
+    NSString *_persistentIdentifier;
 }
 
 @property(nonatomic) BOOL windowIsInFullScreen; // @synthesize windowIsInFullScreen=_windowIsInFullScreen;
 @property(nonatomic) BOOL autoHidesToolbarInFullScreen; // @synthesize autoHidesToolbarInFullScreen=_autoHidesToolbarInFullScreen;
+@property(copy, nonatomic) NSString *persistentIdentifier; // @synthesize persistentIdentifier=_persistentIdentifier;
 @property(copy, nonatomic) NSString *sceneIdentifier; // @synthesize sceneIdentifier=_sceneIdentifier;
 - (void).cxx_destruct;
 - (BOOL)acceptKeyViewHandoff:(BOOL)arg1;
@@ -37,6 +39,7 @@ __attribute__((visibility("hidden")))
 - (id)sceneWindow;
 @property(readonly, nonatomic) UINSSceneViewController *sceneViewController;
 - (void)loadWindow;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

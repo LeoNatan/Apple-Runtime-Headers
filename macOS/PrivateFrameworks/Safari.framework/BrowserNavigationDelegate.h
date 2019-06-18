@@ -9,7 +9,7 @@
 #import <Safari/ExternalURLNavigationDelegate-Protocol.h>
 #import <Safari/WKNavigationDelegatePrivate-Protocol.h>
 
-@class BrowserViewController, ExternalURLNavigationHandler, NSDate, NSString, NSTimer, NSURL, WBSAppLink;
+@class BrowserViewController, ExternalURLNavigationHandler, NSString, NSTimer, NSURL, WBSAppLink, _WKUserInitiatedAction;
 
 __attribute__((visibility("hidden")))
 @interface BrowserNavigationDelegate : NSObject <ExternalURLNavigationDelegate, WKNavigationDelegatePrivate>
@@ -21,8 +21,8 @@ __attribute__((visibility("hidden")))
     NSTimer *_resetCrashCountTimer;
     BOOL _progressIsForInitialMainFrameLoad;
     unsigned long long _recentWebProcessCrashCount;
-    NSDate *_dateOfStartOfLastProvisionalLoad;
-    unsigned long long _numberOfRecentlyInterruptedLoads;
+    BOOL _wasBrowserInitiatedLoad;
+    _WKUserInitiatedAction *_lastUserInitiatedAction;
     ExternalURLNavigationHandler *_externalURLNavigationHandler;
     BOOL _isExternalSchemeRedirectScheduled;
     CDUnknownBlockType _pendingNavigationActionDueToExternalSchemePromptHandler;
@@ -89,8 +89,6 @@ __attribute__((visibility("hidden")))
 - (void)endProgressFeedback;
 - (void)_didStartProgressForURL:(id)arg1;
 - (id)_provisionalURLFromMainFrameInWebView:(id)arg1;
-- (void)_stopTrackingInterruptedProvisionalLoads;
-- (void)_determineIfPageIsTryingToSpoofAddressFieldWhenInterruptingProvisionalLoad;
 - (void)_handleUseWithWebsitePoliciesForURL:(id)arg1 isMainFrame:(BOOL)arg2 decisionHandlerWillUseWebsitePoliciesForReload:(BOOL)arg3 preferredUsePolicy:(long long)arg4 decisionHandler:(CDUnknownBlockType)arg5;
 - (void)_loadWebsitePoliciesForURL:(id)arg1 isForMainFrameNavigation:(BOOL)arg2 isForReload:(BOOL)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)overrideEnableContentBlockersOnNextReload:(BOOL)arg1;

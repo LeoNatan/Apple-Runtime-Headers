@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)didChangePreferredContentSize:(struct CGSize)arg1;
 - (void)isPresentingEditingController:(BOOL)arg1;
 - (void)isPresentingFullscreen:(BOOL)arg1;
-- (void)dimnjnjnDeleteContact:(id)arg1;
+- (void)didDeleteContact:(id)arg1;
 - (void)didCompleteWithContact:(id)arg1;
 - (void)updateEditing:(BOOL)arg1 doneButtonEnabled:(BOOL)arg2 doneButtonText:(id)arg3;
 - (BOOL)shouldPerformDefaultActionForContact:(id)arg1 propertyKey:(id)arg2 propertyIdentifier:(id)arg3;

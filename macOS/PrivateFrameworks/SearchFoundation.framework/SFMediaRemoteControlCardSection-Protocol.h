@@ -11,6 +11,7 @@
 @protocol SFMediaRemoteControlCardSection <SFCardSection>
 @property(readonly, nonatomic) NSData *jsonData;
 @property(readonly, nonatomic) NSDictionary *dictionaryRepresentation;
+@property(copy, nonatomic) NSString *playbackBundleIdentifier;
 @property(nonatomic) BOOL playbackRouteUniqueIdentifierIsEncrypted;
 @property(copy, nonatomic) NSString *playbackRouteUniqueIdentifier;
 @property(retain, nonatomic) SFColor *backgroundColor;

@@ -6,7 +6,7 @@
 
 #import <ScreenReader/SCROutputTextDisplayComponent.h>
 
-@class NSMutableArray, NSMutableAttributedString, NSMutableSet, NSMutableString, SCRCProcessIdentifier, SCROBrailleClient, SCROBrailleDisplayInputManager, _SCRStatus;
+@class NSMutableArray, NSMutableAttributedString, NSMutableSet, NSMutableString, SCRCProcessIdentifier, SCROBrailleClient, SCROBrailleDisplayInputManager;
 
 __attribute__((visibility("hidden")))
 @interface SCROutputBrailleComponent : SCROutputTextDisplayComponent
@@ -34,11 +34,18 @@ __attribute__((visibility("hidden")))
     int _primaryDisplayToken;
     int _inputAccessMode;
     int _lineFocus;
+    unsigned char _generalStatusCell;
+    unsigned char _textStatusCell;
+    unsigned char _extendedTextStatusCell;
+    BOOL __showGeneralStatus;
+    BOOL __showTextStatus;
+    BOOL __showExtendedTextStatus;
     unsigned int _toggledBrailleModifierKeys;
-    _SCRStatus *__status;
 }
 
-@property(retain, nonatomic, setter=_setStatus:) _SCRStatus *_status; // @synthesize _status=__status;
+@property(nonatomic) BOOL _showExtendedTextStatus; // @synthesize _showExtendedTextStatus=__showExtendedTextStatus;
+@property(nonatomic) BOOL _showTextStatus; // @synthesize _showTextStatus=__showTextStatus;
+@property(nonatomic) BOOL _showGeneralStatus; // @synthesize _showGeneralStatus=__showGeneralStatus;
 @property(nonatomic) unsigned int toggledBrailleModifierKeys; // @synthesize toggledBrailleModifierKeys=_toggledBrailleModifierKeys;
 - (void).cxx_destruct;
 - (void)_dispatchBrailleDidPanWithSuccess:(id)arg1 token:(id)arg2 appToken:(id)arg3 direction:(int)arg4;
@@ -68,10 +75,9 @@ __attribute__((visibility("hidden")))
 - (void)_filterUnacceptableBrailleStrings:(id)arg1;
 - (int)preflightSequentialSteps:(id)arg1 runnerName:(id)arg2;
 - (void)_showExpandedStatusForStatusCellIndex:(long long)arg1;
-- (void)_setTextCellsWithTextAttributes:(id)arg1;
+- (void)_setTextStatusCellsWithTextAttributes:(id)arg1;
 - (void)_updateStatusCells;
 - (void)_updateStatusCellPrefs;
-- (void)_initializeExpandedStatusCellDictionaries;
 - (void)_releaseLineWithApplicationPSN:(id)arg1 elementIDs:(id)arg2;
 - (void)_releaseLineWithApplicationPSN:(id)arg1 elementID:(id)arg2;
 - (void)_cacheLineWithApplicationPSN:(id)arg1 elementIDs:(id)arg2;

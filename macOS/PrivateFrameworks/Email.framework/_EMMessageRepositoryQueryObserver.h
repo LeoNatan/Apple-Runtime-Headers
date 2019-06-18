@@ -23,7 +23,9 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (void)observerWillRestart:(id)arg1;
 - (void)observer:(id)arg1 matchedAlternateIDChangedForObjectID:(id)arg2 alternateID:(id)arg3;
+- (void)observerDidFinishRemoteSearch:(id)arg1;
 - (void)observerDidFinishInitialLoad:(id)arg1;
 - (void)observer:(id)arg1 matchedDeletedObjectIDs:(id)arg2;
 - (void)observer:(id)arg1 matchedChangesForObjectIDs:(id)arg2;

@@ -15,6 +15,8 @@
 
 @interface REMReminderStorage : NSObject <NSCopying, NSSecureCoding, REMObjectIDProviding, REMExternalSyncMetadataWritableProviding>
 {
+    unsigned long long _storeGeneration;
+    unsigned long long _copyGeneration;
     BOOL _completed;
     BOOL _allDay;
     NSString *externalIdentifier;
@@ -97,6 +99,8 @@
 @property(readonly, nonatomic) REMObjectID *remObjectID;
 @property(readonly, nonatomic, getter=isOverdue) BOOL overdue;
 @property(readonly, copy, nonatomic) REMDisplayDate *displayDate;
+- (void)setStoreGenerationIfNeeded:(unsigned long long)arg1;
+- (unsigned long long)storeGeneration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)debugDescription;
 - (id)description;

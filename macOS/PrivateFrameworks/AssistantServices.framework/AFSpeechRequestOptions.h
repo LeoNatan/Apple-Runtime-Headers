@@ -51,11 +51,13 @@
     NSDictionary *_startContext;
     NSDictionary *_stopContext;
     AFLanguageDetectionUserContext *_languageDetectionUserContext;
+    long long _dictationInputOrigin;
     struct NSUUID *_turnIdentifier;
 }
 
 + (BOOL)supportsSecureCoding;
 @property(copy, nonatomic) NSUUID *turnIdentifier; // @synthesize turnIdentifier=_turnIdentifier;
+@property(nonatomic) long long dictationInputOrigin; // @synthesize dictationInputOrigin=_dictationInputOrigin;
 @property(copy, nonatomic) AFLanguageDetectionUserContext *languageDetectionUserContext; // @synthesize languageDetectionUserContext=_languageDetectionUserContext;
 @property(nonatomic) BOOL isOnPhoneCall; // @synthesize isOnPhoneCall=_isOnPhoneCall;
 @property(copy, nonatomic) NSDictionary *stopContext; // @synthesize stopContext=_stopContext;

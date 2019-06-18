@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 @interface CDRemoveEventsConsumer : NSObject
 {
     _Bool _historyDone;
+    BOOL _haveSeenEvent;
     NSString *_identifier;
     CDUnknownBlockType _consumer;
     struct __FSEventStream *_stream;
@@ -23,6 +24,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _since;
 }
 
+@property BOOL haveSeenEvent; // @synthesize haveSeenEvent=_haveSeenEvent;
 @property unsigned long long since; // @synthesize since=_since;
 @property struct fsid fsid; // @synthesize fsid=_fsid;
 @property _Bool historyDone; // @synthesize historyDone=_historyDone;

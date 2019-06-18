@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFArriveLocationTrigger.h>
 
 @interface WFArriveLocationTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

@@ -27,7 +27,7 @@
 - (void)deleteCloudTabCloseRequestsWithUUIDStrings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)deleteDevicesWithUUIDStrings:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)saveCloudTabCloseRequestWithDictionaryRepresentation:(id)arg1 closeRequestUUIDString:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-- (void)saveTabsForCurrentDeviceWithDictionaryRepresentation:(id)arg1 deviceUUIDString:(id)arg2 comnpletionHandler:(CDUnknownBlockType)arg3;
+- (void)saveTabsForCurrentDeviceWithDictionaryRepresentation:(id)arg1 deviceUUIDString:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)collectDiagnosticsDataWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)beginMigrationFromDAV;
 - (void)observeRemoteMigrationStateForSecondaryMigration;

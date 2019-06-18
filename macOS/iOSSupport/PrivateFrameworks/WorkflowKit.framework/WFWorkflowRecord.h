@@ -26,8 +26,8 @@
     NSArray *_inputClasses;
     NSArray *_actions;
     NSArray *_importQuestions;
-    long long _minimumClientVersion;
-    long long _lastMigratedClientVersion;
+    NSString *_minimumClientVersion;
+    NSString *_lastMigratedClientVersion;
     long long _lastSyncedHash;
     NSString *_lastSavedOnDeviceName;
     unsigned long long _cachedSyncHash;
@@ -37,11 +37,11 @@
 @property(nonatomic) unsigned long long cachedSyncHash; // @synthesize cachedSyncHash=_cachedSyncHash;
 @property(copy, nonatomic) NSString *lastSavedOnDeviceName; // @synthesize lastSavedOnDeviceName=_lastSavedOnDeviceName;
 @property(nonatomic) long long lastSyncedHash; // @synthesize lastSyncedHash=_lastSyncedHash;
-@property(nonatomic) long long lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
+@property(copy, nonatomic) NSString *lastMigratedClientVersion; // @synthesize lastMigratedClientVersion=_lastMigratedClientVersion;
 @property(readonly, nonatomic) BOOL isDeleted; // @synthesize isDeleted=_isDeleted;
 @property(nonatomic) BOOL hiddenFromLibraryAndSync; // @synthesize hiddenFromLibraryAndSync=_hiddenFromLibraryAndSync;
 @property(nonatomic) BOOL hiddenInComplication; // @synthesize hiddenInComplication=_hiddenInComplication;
-@property(nonatomic) long long minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
+@property(copy, nonatomic) NSString *minimumClientVersion; // @synthesize minimumClientVersion=_minimumClientVersion;
 @property(copy, nonatomic) NSArray *importQuestions; // @synthesize importQuestions=_importQuestions;
 @property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(copy, nonatomic) NSArray *inputClasses; // @synthesize inputClasses=_inputClasses;

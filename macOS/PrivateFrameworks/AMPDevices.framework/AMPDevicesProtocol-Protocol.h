@@ -7,14 +7,12 @@
 @class AMPDevice, AMPDeviceAccessibilityPrefs, AMPDeviceAutoFillPrefs, AMPDeviceSyncPrefs, NSArray, NSData, NSDictionary, NSProgress, NSString, NSURL;
 
 @protocol AMPDevicesProtocol
-- (void)renameFileOrFolder:(NSURL *)arg1 to:(NSString *)arg2 using:(AMPDevice *)arg3 withReply:(void (^)(NSError *))arg4;
-- (void)moveFile:(NSURL *)arg1 to:(NSURL *)arg2 using:(AMPDevice *)arg3 withReply:(void (^)(NSError *))arg4;
-- (void)copyFolder:(NSURL *)arg1 to:(NSURL *)arg2 using:(AMPDevice *)arg3 withReply:(void (^)(NSError *))arg4;
-- (void)copyFile:(NSURL *)arg1 to:(NSURL *)arg2 using:(AMPDevice *)arg3 withReply:(void (^)(NSError *))arg4;
-- (void)deleteDirectory:(NSURL *)arg1 from:(AMPDevice *)arg2 withReply:(void (^)(NSError *))arg3;
-- (void)deleteFile:(NSURL *)arg1 from:(AMPDevice *)arg2 withReply:(void (^)(NSError *))arg3;
-- (void)fetchInstalledFileSharingAppFiles:(NSString *)arg1 from:(AMPDevice *)arg2 withReply:(void (^)(NSDictionary *, NSError *))arg3;
-- (void)fetchInstalledFileSharingApps:(AMPDevice *)arg1 withReply:(void (^)(NSDictionary *, NSError *))arg2;
+- (void)deleteItemAtURL:(NSURL *)arg1 withReply:(void (^)(NSError *))arg2;
+- (void)renameItemAtURL:(NSURL *)arg1 to:(NSString *)arg2 withReply:(void (^)(NSError *))arg3;
+- (NSProgress *)moveItemAtURL:(NSURL *)arg1 toURL:(NSURL *)arg2 withReply:(void (^)(NSError *))arg3;
+- (NSProgress *)copyItemAtURL:(NSURL *)arg1 toURL:(NSURL *)arg2 withReply:(void (^)(NSError *))arg3;
+- (void)fetchFileSharingItemsForApp:(NSString *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSArray *, NSError *))arg3;
+- (void)fetchFileSharingAppsForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSArray *, NSError *))arg2;
 - (void)ejectDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)revealDeviceInFinder:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)resetWarningsForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
@@ -37,11 +35,11 @@
 - (void)cancelBackupForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (NSProgress *)backupDevice:(AMPDevice *)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)setKeychainBackupPassword:(NSString *)arg1 forDevice:(AMPDevice *)arg2 withReply:(void (^)(NSError *))arg3;
+- (void)fetchPasswordFromKeychainForBackup:(NSDictionary *)arg1 withReply:(void (^)(NSString *, NSError *))arg2;
 - (void)fetchBackupPasswordFromKeychainForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSString *, NSError *))arg2;
 - (void)changeBackupPasswordForDevice:(AMPDevice *)arg1 oldPassword:(NSString *)arg2 newPassword:(NSString *)arg3 withReply:(void (^)(NSError *))arg4;
 - (void)fetchAllBackupsWithReply:(void (^)(NSArray *, NSError *))arg1;
-- (void)fetchBackupsForProductType:(NSString *)arg1 withReply:(void (^)(NSArray *, NSError *))arg2;
-- (void)fetchBackupsForDevice:(AMPDevice *)arg1 includingAllCompatibleBackups:(BOOL)arg2 withReply:(void (^)(NSArray *, long long, NSError *))arg3;
+- (void)fetchBackupsForDevice:(AMPDevice *)arg1 includingIncompatibleBackups:(BOOL)arg2 includingAllCompatibleBackups:(BOOL)arg3 withReply:(void (^)(NSArray *, long long, NSError *))arg4;
 - (void)fetchLastBackupDatesForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSDate *, NSDate *, NSError *))arg2;
 - (void)fetchSyncErrorsForDevice:(AMPDevice *)arg1 withReply:(void (^)(NSArray *, NSError *))arg2;
 - (void)hasSyncErrorsForDevice:(AMPDevice *)arg1 withReply:(void (^)(BOOL, NSError *))arg2;

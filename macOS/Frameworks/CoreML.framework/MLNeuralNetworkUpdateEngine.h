@@ -34,7 +34,7 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *progressHandlersDispatchQueue; // @synthesize progressHandlersDispatchQueue=_progressHandlersDispatchQueue;
 @property(retain, nonatomic) MLUpdateProgressHandlers *progressHandlers; // @synthesize progressHandlers=_progressHandlers;
 @property(readonly, nonatomic) NSDictionary *classLabelToIndexMap; // @synthesize classLabelToIndexMap=_classLabelToIndexMap;
-@property(readonly, nonatomic) NSString *lossTargetName; // @synthesize lossTargetName=_lossTargetName;
+@property(retain, nonatomic) NSString *lossTargetName; // @synthesize lossTargetName=_lossTargetName;
 @property(retain, nonatomic) ETTaskDefinition *task; // @synthesize task=_task;
 @property(retain, nonatomic) ETTaskState *snapshot; // @synthesize snapshot=_snapshot;
 - (void).cxx_destruct;

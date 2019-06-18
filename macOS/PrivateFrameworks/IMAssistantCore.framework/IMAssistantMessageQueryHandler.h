@@ -27,8 +27,8 @@
 - (void)SPIQueryUnreadMessages:(long long)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)SPIQueryMessagesForSenders:(id)arg1 limit:(long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)handlesAndServicesForPersons:(id)arg1 services:(id *)arg2;
-- (void)SPIQueryMessagesForChatsWithIdentifiers:(id)arg1 services:(id)arg2 limit:(long long)arg3 completion:(CDUnknownBlockType)arg4;
-- (void)SPIQueryMessagesForChats:(id)arg1 limit:(long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)SPIQueryMessagesForChatsWithIdentifiers:(id)arg1 services:(id)arg2 onlyUnread:(BOOL)arg3 limit:(long long)arg4 completion:(CDUnknownBlockType)arg5;
+- (void)SPIQueryMessagesForChats:(id)arg1 onlyUnread:(BOOL)arg2 limit:(long long)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)allIMHandlesForHandle:(id)arg1;
 - (id)resolveDateTimeRange:(id)arg1;
 - (BOOL)resolvePersons:(id)arg1 forIntent:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;

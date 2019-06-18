@@ -111,6 +111,7 @@
 + (void)endDiscoveringMediaLibraries;
 + (void)beginDiscoveringMediaLibraries;
 + (BOOL)supportsSecureCoding;
++ (id)deviceMediaLibraryWithUserIdentity:(id)arg1;
 + (id)deviceMediaLibrary;
 + (void)setDefaultMediaLibrary:(id)arg1;
 + (id)defaultMediaLibrary;
@@ -279,6 +280,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (void)dealloc;
+- (id)initWithUserIdentity:(id)arg1;
 - (id)init;
 @property(readonly, nonatomic) NSURL *protectedContentSupportStorageURL;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

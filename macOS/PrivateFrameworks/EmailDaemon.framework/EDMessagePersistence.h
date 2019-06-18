@@ -8,13 +8,18 @@
 
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDConversationPersistence, EDMailboxPersistence, EDPersistenceDatabase, EDVIPManager, NSString;
+@class EDConversationPersistence, EDMailboxPersistence, EDPersistenceDatabase, EDVIPManager, NSNumber, NSString;
+@protocol EDRemoteSearchProvider, OS_dispatch_queue;
 
 @interface EDMessagePersistence : NSObject <EFLoggable>
 {
+    int _cachedMetadataUpdatesSinceLastCheck;
     EDMailboxPersistence *_mailboxPersistence;
     EDVIPManager *_vipManager;
+    id <EDRemoteSearchProvider> _remoteSearchProvider;
     EDConversationPersistence *_conversationPersistence;
+    NSObject<OS_dispatch_queue> *_cachedMetadataIsolation;
+    NSNumber *_cachedMetadataEstimatedRowCount;
     EDPersistenceDatabase *_database;
 }
 
@@ -24,6 +29,7 @@
 + (id)addressesTableSchema;
 + (id)protectedTablesAndForeignKeysToResolve:(id *)arg1;
 + (id)attachmentsTableSchemaAndForeignKeysToResolve:(id *)arg1;
++ (id)_cachedMetadataTableSchema;
 + (id)_messageReferencesTableSchema;
 + (id)recipientsTableSchemaAndForeignKeysToResolve:(id *)arg1 associationsToResolve:(id *)arg2;
 + (id)partialMessagesTableSchemaAndAssociationsToResolve:(id *)arg1;
@@ -36,18 +42,30 @@
 + (id)messagesTableName;
 + (id)log;
 @property(readonly, nonatomic) EDPersistenceDatabase *database; // @synthesize database=_database;
-@property(retain, nonatomic) EDConversationPersistence *conversationPersistence; // @synthesize conversationPersistence=_conversationPersistence;
+@property(nonatomic) int cachedMetadataUpdatesSinceLastCheck; // @synthesize cachedMetadataUpdatesSinceLastCheck=_cachedMetadataUpdatesSinceLastCheck;
+@property(retain, nonatomic) NSNumber *cachedMetadataEstimatedRowCount; // @synthesize cachedMetadataEstimatedRowCount=_cachedMetadataEstimatedRowCount;
+@property(readonly, nonatomic) NSObject<OS_dispatch_queue> *cachedMetadataIsolation; // @synthesize cachedMetadataIsolation=_cachedMetadataIsolation;
+@property(readonly, nonatomic) EDConversationPersistence *conversationPersistence; // @synthesize conversationPersistence=_conversationPersistence;
+@property(readonly, nonatomic) __weak id <EDRemoteSearchProvider> remoteSearchProvider; // @synthesize remoteSearchProvider=_remoteSearchProvider;
 @property(readonly, nonatomic) EDVIPManager *vipManager; // @synthesize vipManager=_vipManager;
 @property(readonly, nonatomic) __weak EDMailboxPersistence *mailboxPersistence; // @synthesize mailboxPersistence=_mailboxPersistence;
 - (void).cxx_destruct;
-- (void)requestSummaryForMessageObjectID:(id)arg1;
+- (id)requestSummaryForMessageObjectID:(id)arg1;
 - (id)requestContentForMessageObjectID:(id)arg1 options:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)groupedMessagesCountByMailboxMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;
+- (void)_checkCachedMetadataRowLimitWithConnection:(id)arg1;
+- (void)_setCachedMetadataJSON:(id)arg1 forKey:(id)arg2 messageIDHash:(id)arg3;
+- (void)setCachedMetadataJSON:(id)arg1 forKey:(id)arg2 messageID:(id)arg3;
+- (id)_cachedMetadataJSONForKey:(id)arg1 messageIDHash:(id)arg2;
+- (id)cachedMetadataJSONForKey:(id)arg1 messageID:(id)arg2;
 - (void)updateConversationNotificationLevel:(long long)arg1 forConversationWithID:(long long)arg2;
 - (id)_groupMessageObjectIDsByMailboxScope:(id)arg1;
 - (id)messagesForMessageObjectIDs:(id)arg1 missedMessageObjectIDs:(id *)arg2;
 - (id)messagesForPersistedMessages:(id)arg1 mailboxScope:(id)arg2;
 - (id)persistedMessagesForDatabaseIDs:(id)arg1;
 - (id)persistedMessagesForMessageObjectIDs:(id)arg1;
+- (id)_threadQueryForThreadObjectID:(id)arg1;
+- (id)persistedMessagesForObjectIDs:(id)arg1;
 - (id)_databaseIDsForMessageIDHashes:(id)arg1 mailboxScope:(id)arg2;
 - (id)databaseIDsForMessageObjectIDs:(id)arg1;
 - (id)persistedMessageForOutgoingMessage:(id)arg1 isDraft:(BOOL)arg2;
@@ -61,7 +79,7 @@
 - (BOOL)messagesExistWithMessageIDHeaderHash:(id)arg1 matchingQuery:(id)arg2;
 - (id)messageObjectIDCriterionExpressionForPredicateValue:(id)arg1;
 - (void)performDatabaseWorkInBlockWithHighPriority:(CDUnknownBlockType)arg1;
-- (id)initWithConversationPersistence:(id)arg1 mailboxPersistence:(id)arg2 database:(id)arg3 vipManager:(id)arg4;
+- (id)initWithConversationPersistence:(id)arg1 mailboxPersistence:(id)arg2 database:(id)arg3 vipManager:(id)arg4 remoteSearchProvider:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

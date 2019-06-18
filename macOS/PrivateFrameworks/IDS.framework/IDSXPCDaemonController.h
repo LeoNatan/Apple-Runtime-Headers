@@ -24,8 +24,8 @@
 @property(retain, nonatomic) IDSXPCConnection *connection; // @synthesize connection=_connection;
 - (void).cxx_destruct;
 - (id)_sync_collaboratorErrorHandler:(CDUnknownBlockType)arg1 resolverBlock:(CDUnknownBlockType)arg2;
-- (id)_collaboratorWithIdentifier:(id)arg1 interface:(id)arg2 errorHandler:(CDUnknownBlockType)arg3 resolverBlock:(CDUnknownBlockType)arg4;
-- (id)_timingOutDaemonProxyWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)_collaboratorWithIdentifier:(id)arg1 interface:(id)arg2 timeout:(double)arg3 errorHandler:(CDUnknownBlockType)arg4 resolverBlock:(CDUnknownBlockType)arg5;
+- (id)_timingOutDaemonProxyWithTimeout:(double)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (id)_daemonProxyWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)performTask:(CDUnknownBlockType)arg1;
 - (id)interalTestingCollaboratorWithErrorHandler:(CDUnknownBlockType)arg1;
@@ -33,6 +33,7 @@
 - (id)opportunisticCollaboratorWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)reunionSyncCollaboratorWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)pairedDeviceManagerCollaboratorWithErrorHandler:(CDUnknownBlockType)arg1;
+- (id)pairingCollaboratorWithTimeout:(double)arg1 errorHandler:(CDUnknownBlockType)arg2;
 - (id)pairingCollaboratorWithErrorHandler:(CDUnknownBlockType)arg1;
 - (void)activateWithCompletion:(CDUnknownBlockType)arg1;
 - (void)dealloc;

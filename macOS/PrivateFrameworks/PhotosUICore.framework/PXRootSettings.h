@@ -6,13 +6,14 @@
 
 #import <PhotosUICore/PXSettings.h>
 
-@class PXAlbumsDebugUISettings, PXApplicationSettings, PXAssetVariationsSettings, PXAssetsSceneSettings, PXCompleteMyMomentSettings, PXCuratedLibrarySettings, PXDiagnosticsSettings, PXDragAndDropSettings, PXForYouSettings, PXGPPTSettings, PXGridKitSettings, PXGridSettings, PXImportSettings, PXKitSettings, PXMemoriesFeedSettings, PXMemoriesRelatedSettings, PXModelSettings, PXPeopleDetailSettings, PXPeopleUISettings, PXPhotoPickerSettings, PXPhotosDataSourceSettings, PXPhotosDetailsHeaderTileSettings, PXPhotosDetailsSettings, PXRelatedSettings, PXSearchSettings, PXSharingSettings, PXSnapBackSettings, PXTilingSettings, PXViewControllerTransitionSettings;
+@class PXAlbumsDebugUISettings, PXApplicationSettings, PXAssetVariationsSettings, PXAssetsSceneSettings, PXCompleteMyMomentSettings, PXCuratedLibrarySettings, PXDiagnosticsSettings, PXDragAndDropSettings, PXForYouSettings, PXGPPTSettings, PXGridKitSettings, PXGridSettings, PXImageModulationSettings, PXImportSettings, PXKitSettings, PXMemoriesFeedSettings, PXMemoriesRelatedSettings, PXModelSettings, PXPeopleDetailSettings, PXPeopleUISettings, PXPhotoPickerSettings, PXPhotosDataSourceSettings, PXPhotosDetailsHeaderTileSettings, PXPhotosDetailsSettings, PXRelatedSettings, PXSearchSettings, PXSharingSettings, PXSnapBackSettings, PXTilingSettings, PXViewControllerTransitionSettings;
 
 @interface PXRootSettings : PXSettings
 {
     BOOL _showTapToRadar;
     BOOL _showWIPAlertRadar;
     PXDiagnosticsSettings *_diagnostics;
+    PXImageModulationSettings *_imageModulationSettings;
     PXCuratedLibrarySettings *_curatedLibrarySettings;
     PXPhotoPickerSettings *_photoPickerSettings;
     PXPhotosDetailsSettings *_photosDetails;
@@ -75,6 +76,7 @@
 @property(retain, nonatomic) PXPhotosDetailsSettings *photosDetails; // @synthesize photosDetails=_photosDetails;
 @property(retain, nonatomic) PXPhotoPickerSettings *photoPickerSettings; // @synthesize photoPickerSettings=_photoPickerSettings;
 @property(retain, nonatomic) PXCuratedLibrarySettings *curatedLibrarySettings; // @synthesize curatedLibrarySettings=_curatedLibrarySettings;
+@property(retain, nonatomic) PXImageModulationSettings *imageModulationSettings; // @synthesize imageModulationSettings=_imageModulationSettings;
 @property(retain, nonatomic) PXDiagnosticsSettings *diagnostics; // @synthesize diagnostics=_diagnostics;
 - (void).cxx_destruct;
 @property(nonatomic) BOOL hideWIPAlerts;

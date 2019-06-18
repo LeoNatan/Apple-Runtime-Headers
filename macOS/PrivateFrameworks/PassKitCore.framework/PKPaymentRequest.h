@@ -39,6 +39,7 @@
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
     NSString *_CTDataConnectionServiceType;
+    NSString *_boundInterfaceIdentifier;
     PKApplePayTrustSignatureRequest *_applePayTrustSignatureRequest;
     NSArray *_bankAccounts;
     long long _paymentFrequency;
@@ -103,6 +104,7 @@
 @property(nonatomic) BOOL accountPaymentSupportsPeerPayment; // @synthesize accountPaymentSupportsPeerPayment=_accountPaymentSupportsPeerPayment;
 @property(retain, nonatomic) NSArray *bankAccounts; // @synthesize bankAccounts=_bankAccounts;
 @property(retain, nonatomic) PKApplePayTrustSignatureRequest *applePayTrustSignatureRequest; // @synthesize applePayTrustSignatureRequest=_applePayTrustSignatureRequest;
+@property(copy, nonatomic) NSString *boundInterfaceIdentifier; // @synthesize boundInterfaceIdentifier=_boundInterfaceIdentifier;
 @property(retain, nonatomic) NSString *CTDataConnectionServiceType; // @synthesize CTDataConnectionServiceType=_CTDataConnectionServiceType;
 @property(retain, nonatomic) NSString *sourceApplicationSecondaryIdentifier; // @synthesize sourceApplicationSecondaryIdentifier=_sourceApplicationSecondaryIdentifier;
 @property(retain, nonatomic) NSString *sourceApplicationBundleIdentifier; // @synthesize sourceApplicationBundleIdentifier=_sourceApplicationBundleIdentifier;

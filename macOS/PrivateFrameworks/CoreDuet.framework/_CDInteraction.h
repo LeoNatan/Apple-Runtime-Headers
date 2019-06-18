@@ -56,6 +56,8 @@
 @property(retain) NSDate *endDate; // @synthesize endDate=_endDate;
 @property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
 - (void).cxx_destruct;
+- (BOOL)isEqual:(id)arg1;
+@property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *description;
 - (id)descriptionOfArray:(id)arg1;
 - (id)init;
@@ -70,7 +72,6 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 
 @end

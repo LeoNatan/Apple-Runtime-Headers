@@ -201,6 +201,7 @@
 - (void)_runAsyncOnIsolationQueueWithTransaction:(id)arg1 afterDelay:(double)arg2 block:(CDUnknownBlockType)arg3;
 - (void)_runAsyncOnIsolationQueueWithTransaction:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (void)_runSyncOnIsolationQueueWithBlock:(CDUnknownBlockType)arg1;
+- (void)_handleModeTransistionAfterDisableiCPL;
 - (void)disableiCPL;
 - (void)_handleSystemLibraryURLChange;
 - (void)_pause;

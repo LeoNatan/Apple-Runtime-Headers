@@ -15,6 +15,7 @@
     BOOL _forceDeadKeyDrawing;
     BOOL _toggleOn;
     BOOL __hasExtraRect;
+    BOOL __liveResizing;
     ACSHPanelButton *_button;
     NSColor *_displayColor;
     unsigned long long _textDisplayPosition;
@@ -34,7 +35,9 @@
 }
 
 + (id)_descriptionForPanelButtonViewState:(unsigned long long)arg1;
++ (id)_resizingFontSizesInDescendingOrder;
 + (void)initialize;
+@property(nonatomic) BOOL _liveResizing; // @synthesize _liveResizing=__liveResizing;
 @property(nonatomic) double _currentBackgroundScaleFactor; // @synthesize _currentBackgroundScaleFactor=__currentBackgroundScaleFactor;
 @property(nonatomic) struct CGRect _currentBackgroundExtraRect; // @synthesize _currentBackgroundExtraRect=__currentBackgroundExtraRect;
 @property(nonatomic) struct CGRect _currentBackgroundRect; // @synthesize _currentBackgroundRect=__currentBackgroundRect;
@@ -57,6 +60,8 @@
 @property(nonatomic) BOOL depressed; // @synthesize depressed=_depressed;
 @property(nonatomic) __weak ACSHPanelButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
+- (void)viewDidEndLiveResize;
+- (void)viewWillStartLiveResize;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (void)accessibilitySetValue:(id)arg1 forAttribute:(id)arg2;
 - (BOOL)accessibilityIsAttributeSettable:(id)arg1;
@@ -97,10 +102,10 @@
 - (void)_updateButtonBackground;
 - (id)_validateDisplayText:(id)arg1;
 - (struct CGSize)sizeForFittingDisplayText;
+- (void)_resizeTextToFit:(id)arg1;
 - (void)_updateDisplayText;
 - (id)_foregroundColorForColorAttribute:(unsigned long long)arg1 textNotImage:(BOOL)arg2;
 - (BOOL)_shouldDisplaySecondaryKeyText:(id)arg1;
-- (double)_baseFontSizeForSecondaryKeyText:(id)arg1;
 - (id)_textFontForText:(id)arg1 baseFontSize:(double)arg2 frame:(struct CGRect)arg3;
 @property(retain, nonatomic) NSImage *displayImage; // @dynamic displayImage;
 - (id)imageIdentifierToDisplayReturningFunctionKey:(char *)arg1;

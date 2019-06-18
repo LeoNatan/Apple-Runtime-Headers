@@ -8,7 +8,7 @@
 
 #import <AssistantServices/WPHeySiriProtocol-Protocol.h>
 
-@class AFMyriadEmergencyCallPunchout, AFMyriadRecord, AFPowerAssertionManager, NSData, NSDate, NSDateFormatter, NSMutableDictionary, NSString, NSUUID, WPHeySiri, _DKKnowledgeStore;
+@class AFMyriadEmergencyCallPunchout, AFMyriadRecord, AFPowerAssertionManager, AFWatchdogTimer, NSData, NSDate, NSDateFormatter, NSMutableDictionary, NSString, NSUUID, WPHeySiri, _DKKnowledgeStore;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore, OS_dispatch_source;
 
 @interface AFMyriadCoordinator : NSObject <WPHeySiriProtocol>
@@ -20,6 +20,7 @@
     NSData *_previousAdvertisedData;
     NSMutableDictionary *_replies;
     NSMutableDictionary *_replyCounts;
+    NSMutableDictionary *_repliesBeforeDecision;
     NSMutableDictionary *_previousTrumps;
     NSMutableDictionary *_incomingTrumps;
     NSMutableDictionary *_multipleContinuations;
@@ -38,6 +39,7 @@
     NSObject<OS_dispatch_queue> *_myriadReadinessQueue;
     NSString *_timerLabel;
     NSObject<OS_dispatch_source> *_timer;
+    AFWatchdogTimer *_overallTimeout;
     NSObject<OS_dispatch_semaphore> *_wiproxReadinessSemaphore;
     AFPowerAssertionManager *_powerAssertionManager;
     struct __CFNotificationCenter *_center;
@@ -106,6 +108,7 @@
 - (void)_ageWedgeFilter;
 - (BOOL)_testAndUpdateWedgeFilter:(id)arg1;
 - (BOOL)_inTaskTriggerWasTooSoon;
+- (id)_sortedReplies:(id)arg1;
 - (id)_sortedReplies;
 - (BOOL)_isAPhone:(unsigned char)arg1;
 - (BOOL)_shouldHandleEmergency;
@@ -147,6 +150,8 @@
 - (id)_stateAsString;
 - (void)enterState:(unsigned long long)arg1;
 - (void)_enterState:(unsigned long long)arg1;
+- (void)_cancelOverallTimeout;
+- (void)_setOverallTimeout;
 - (void)_startTimer:(id)arg1 for:(float)arg2 thenEnterState:(unsigned long long)arg3;
 - (void)_startTimer:(id)arg1 until:(id)arg2 thenExecute:(CDUnknownBlockType)arg3;
 - (void)_startTimer:(id)arg1 for:(float)arg2 thenExecute:(CDUnknownBlockType)arg3;

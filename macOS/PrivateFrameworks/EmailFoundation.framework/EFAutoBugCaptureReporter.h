@@ -6,9 +6,11 @@
 
 #import <objc/NSObject.h>
 
-@class SDRDiagnosticReporter;
+#import <EmailFoundation/EFLoggable-Protocol.h>
 
-@interface EFAutoBugCaptureReporter : NSObject
+@class NSString, SDRDiagnosticReporter;
+
+@interface EFAutoBugCaptureReporter : NSObject <EFLoggable>
 {
     SDRDiagnosticReporter *_diagnosticReporter;
 }
@@ -19,6 +21,12 @@
 - (void).cxx_destruct;
 - (void)reportIssueType:(id)arg1 description:(id)arg2;
 - (id)init;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

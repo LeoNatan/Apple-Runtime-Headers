@@ -10,35 +10,36 @@
 
 @interface ISImage : NSObject
 {
-    struct CGImage *_CGImage;
-    NSUUID *_uuid;
-    struct CGSize _size;
-    double _scale;
-    BOOL _placeholder;
 }
 
-+ (struct CGColorSpace *)srgbColorSpace;
++ (id)allocWithZone:(struct _NSZone *)arg1;
 + (struct CGColorSpace *)defaultCGColorSpace;
 + (id)imageDestinationPropertiesForScale:(unsigned int)arg1;
 + (BOOL)writeCGImage:(struct CGImage *)arg1 toURL:(id)arg2;
 + (struct CGImage *)newCGImageWithDataSource:(id)arg1;
 + (struct CGImage *)newCGImageWithCacheFileURL:(id)arg1;
 + (struct CGImage *)newCGImageWithContentsOfURL:(id)arg1;
-@property(readonly) BOOL placeholder; // @synthesize placeholder=_placeholder;
-@property(readonly) double scale; // @synthesize scale=_scale;
-@property(readonly) struct CGSize size; // @synthesize size=_size;
-@property(readonly) struct CGImage *CGImage; // @synthesize CGImage=_CGImage;
-@property(retain) NSUUID *uuid; // @synthesize uuid=_uuid;
-- (void).cxx_destruct;
-- (void)dealloc;
-- (id)initWithContentsOfURL:(id)arg1 scale:(double)arg2;
-- (id)initWithCGImage:(struct CGImage *)arg1 scale:(double)arg2;
-- (id)initWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 placeholder:(BOOL)arg3;
++ (struct CGColorSpace *)srgbColorSpace;
+@property(retain) NSUUID *uuid; // @dynamic uuid;
+- (id)debugDescription;
+@property(readonly) struct CGImage *CGImage; // @dynamic CGImage;
 @property(readonly) NSData *bitmapData;
-- (id)initWithData:(id)arg1 uuid:(id)arg2;
 @property(readonly) struct CGSize pixelSize;
-@property(readonly) NSUUID *digest;
+- (id)_init;
+- (id)initWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 placeholder:(BOOL)arg3;
+- (id)initWithCGImage:(struct CGImage *)arg1 scale:(double)arg2;
+- (id)initWithContentsOfURL:(id)arg1 scale:(double)arg2;
+- (id)initWithData:(id)arg1 uuid:(id)arg2;
+- (id)initWithCGImage:(struct CGImage *)arg1 scale:(double)arg2 minimumSize:(struct CGSize)arg3 placeholder:(BOOL)arg4;
+- (id)digest;
 - (BOOL)writeToURL:(id)arg1;
+
+// Remaining properties
+@property(readonly) struct CGImage *cgImage; // @dynamic cgImage;
+@property struct CGSize minimumSize; // @dynamic minimumSize;
+@property(readonly) BOOL placeholder; // @dynamic placeholder;
+@property(readonly) double scale; // @dynamic scale;
+@property(readonly) struct CGSize size; // @dynamic size;
 
 @end
 

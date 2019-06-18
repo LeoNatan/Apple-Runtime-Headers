@@ -41,7 +41,6 @@
 + (id)descriptorForRequiredKeysIncludingAvatarViewDescriptors:(BOOL)arg1;
 + (id)descriptorForRequiredKeys;
 + (BOOL)avatarCardEnabledForTraitCollection:(id)arg1;
-+ (BOOL)showsWithTapAndHold;
 @property(nonatomic) BOOL bypassActionValidation; // @synthesize bypassActionValidation=_bypassActionValidation;
 @property(nonatomic) BOOL actionsNeedRefresh; // @synthesize actionsNeedRefresh=_actionsNeedRefresh;
 @property(retain, nonatomic) UIGestureRecognizer *rolloverGestureRecognizer; // @synthesize rolloverGestureRecognizer=_rolloverGestureRecognizer;

@@ -6,7 +6,7 @@
 
 #import <NetworkExtension/NEPacketTunnelProvider.h>
 
-@class NEIKEv2MOBIKE, NEIKEv2Rekey, NEIKEv2Server, NEIKEv2Session, NSArray, NSDictionary, NSObject, NWPathEvaluator, NWResolver;
+@class NEIKEv2MOBIKE, NEIKEv2Rekey, NEIKEv2Server, NEIKEv2Session, NSArray, NSDictionary, NSObject, NWPath, NWPathEvaluator, NWResolver;
 @protocol OS_dispatch_queue, OS_dispatch_semaphore;
 
 @interface NEIKEv2PacketTunnelProvider : NEPacketTunnelProvider
@@ -30,6 +30,7 @@
     CDUnknownBlockType _startTunnelCompletionHandler;
     CDUnknownBlockType _dnsResolverCompletionHandler;
     long long _tunnelKind;
+    NWPath *_path;
     NEIKEv2Session *_session;
     unsigned long long _ifIndex;
     long long _pathStatus;
@@ -43,6 +44,7 @@
 @property long long pathStatus; // @synthesize pathStatus=_pathStatus;
 @property unsigned long long ifIndex; // @synthesize ifIndex=_ifIndex;
 @property(retain) NEIKEv2Session *session; // @synthesize session=_session;
+@property(retain) NWPath *path; // @synthesize path=_path;
 @property BOOL mobikeCapable; // @synthesize mobikeCapable=_mobikeCapable;
 @property BOOL sessionDidConnect; // @synthesize sessionDidConnect=_sessionDidConnect;
 @property long long tunnelKind; // @synthesize tunnelKind=_tunnelKind;
@@ -75,12 +77,12 @@
 - (void)handleInterfaceChange:(BOOL)arg1;
 - (void)handleInterfaceDown;
 - (void)handleAdditionalServerAddressesNotification:(id)arg1;
-- (long long)handleRedirectNotification:(id)arg1;
-- (void)invokeCancelTunnel:(long long)arg1;
+- (int)handleRedirectNotification:(id)arg1;
+- (void)invokeCancelTunnel:(int)arg1;
 - (BOOL)invokeStartTunnelCompletionHandler:(id)arg1;
 - (id)createPacketTunnelNetworkSettings;
 - (long long)tunnelTeardown;
-- (long long)tunnelBringup;
+- (int)tunnelBringup;
 - (void)setupIKEv2CallbackBlocks;
 - (void)resolveServerAddressIfNeeded:(CDUnknownBlockType)arg1;
 - (void)wake;

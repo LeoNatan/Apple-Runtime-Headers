@@ -8,6 +8,7 @@
 
 @class DSPModuleMO, NSSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface DSPModuleControlMO : NSManagedObject
 {
 }

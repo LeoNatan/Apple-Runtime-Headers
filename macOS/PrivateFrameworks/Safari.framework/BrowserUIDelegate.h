@@ -47,7 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)_webView:(id)arg1 requestUserMediaAuthorizationForDevices:(unsigned long long)arg2 url:(id)arg3 mainFrameURL:(id)arg4 decisionHandler:(CDUnknownBlockType)arg5;
 - (void)_webView:(id)arg1 requestNotificationPermissionForSecurityOrigin:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
 - (void)_webView:(id)arg1 requestGeolocationPermissionForFrame:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
-- (void)_webView:(id)arg1 decideDatabaseQuotaForSecurityOrigin:(id)arg2 databaseName:(id)arg3 displayName:(id)arg4 currentQuota:(unsigned long long)arg5 currentOriginUsage:(unsigned long long)arg6 currentDatabaseUsage:(unsigned long long)arg7 expectedUsage:(unsigned long long)arg8 decisionHandler:(CDUnknownBlockType)arg9;
+- (void)_webView:(id)arg1 decideDatabaseQuotaForSecurityOrigin:(id)arg2 currentQuota:(unsigned long long)arg3 currentOriginUsage:(unsigned long long)arg4 currentDatabaseUsage:(unsigned long long)arg5 expectedUsage:(unsigned long long)arg6 decisionHandler:(CDUnknownBlockType)arg7;
 - (void)_webViewRunModal:(id)arg1;
 - (void)_webViewDidScroll:(id)arg1;
 - (void)_webViewDidClickGoBackFromSafeBrowsingWarning:(id)arg1;

@@ -19,7 +19,7 @@ __attribute__((visibility("hidden")))
 
 @property __weak AMSPurchaseQueue *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
-- (BOOL)_handleFailureForResponse:(id)arg1 task:(id)arg2 decodedObject:(id)arg3 responseDictionary:(id)arg4 error:(id *)arg5;
+- (BOOL)_handleFailureForAction:(id)arg1 response:(id)arg2 task:(id)arg3 decodedObject:(id)arg4 responseDictionary:(id)arg5;
 - (void)AMSURLSession:(id)arg1 task:(id)arg2 handleAuthenticateRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)AMSURLSession:(id)arg1 task:(id)arg2 handleDialogRequest:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)reconfigureNewRequest:(id)arg1 originalTask:(id)arg2 redirect:(BOOL)arg3 error:(id *)arg4;

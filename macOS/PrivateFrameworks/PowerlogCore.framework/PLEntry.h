@@ -44,7 +44,9 @@
 - (void).cxx_destruct;
 - (id)serializedForJSON;
 - (id)serialized;
+- (id)debugDescription;
 - (id)description;
+- (id)descriptionRespectingWhitelist:(BOOL)arg1;
 - (long long)compare:(id)arg1 options:(short)arg2;
 - (long long)compare:(id)arg1;
 - (BOOL)filterEntryLogging;

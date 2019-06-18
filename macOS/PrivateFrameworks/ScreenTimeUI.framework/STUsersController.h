@@ -6,18 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSIndexSet, STCoreUser;
+@class NSArray, NSImage, NSManagedObjectContext, STCoreUser;
 
 @interface STUsersController : NSObject
 {
     NSArray *_users;
-    NSIndexSet *_selectionIndexes;
+    unsigned long long _selectedIndex;
+    NSImage *_selectedUserImage;
+    NSManagedObjectContext *_managedObjectContext;
 }
 
 + (id)keyPathsForValuesAffectingSelectedUser;
-@property(copy, nonatomic) NSIndexSet *selectionIndexes; // @synthesize selectionIndexes=_selectionIndexes;
-@property(copy) NSArray *users; // @synthesize users=_users;
+@property(readonly) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
+@property(copy) NSImage *selectedUserImage; // @synthesize selectedUserImage=_selectedUserImage;
+@property(nonatomic) unsigned long long selectedIndex; // @synthesize selectedIndex=_selectedIndex;
+@property(copy, nonatomic) NSArray *users; // @synthesize users=_users;
 - (void).cxx_destruct;
+- (void)notifyServerOfScreenTimeEnabled:(BOOL)arg1 forUser:(id)arg2;
 @property(readonly, nonatomic) STCoreUser *selectedUser;
 @property(readonly) STCoreUser *localUser;
 - (void)_updateUsersWithLocalUser:(id)arg1;

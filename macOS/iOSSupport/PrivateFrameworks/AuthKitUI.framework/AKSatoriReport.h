@@ -10,6 +10,8 @@
 {
 }
 
+- (void)didCompleteVerificationWithSuccess:(BOOL)arg1 duration:(unsigned long long)arg2;
+- (void)didPerformVerificationWithSuccess:(BOOL)arg1 duration:(unsigned long long)arg2;
 - (void)didCompleteWithSuccess:(BOOL)arg1 authorizationAlreadyComplete:(BOOL)arg2;
 - (id)initWithRequestID:(id)arg1;
 

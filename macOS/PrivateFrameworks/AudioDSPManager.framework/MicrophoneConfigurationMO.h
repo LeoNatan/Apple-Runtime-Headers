@@ -8,6 +8,7 @@
 
 @class NSSet, NSString, PolarPatternMO, PortMO;
 
+__attribute__((visibility("hidden")))
 @interface MicrophoneConfigurationMO : NSManagedObject
 {
 }

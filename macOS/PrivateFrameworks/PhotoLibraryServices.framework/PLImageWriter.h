@@ -57,6 +57,7 @@
 - (void)_handleCameraAdjustments:(id)arg1 fullsizeRenders:(id)arg2;
 - (void)_handlePhotoIrisCrashRecoveryForVideos:(id)arg1;
 - (id)_fetchPhotoAssetForUUID:(id)arg1 moc:(id)arg2;
+- (void)_handleCameraMetadataCrashRecovery:(id)arg1;
 - (void)_handleAvalancheCrashRecovery:(id)arg1;
 - (void)_processSavePhotoStreamImageToCameraRollJob:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_processReenqueueAssetUUIDsToPhotoStreamJob:(id)arg1 completion:(CDUnknownBlockType)arg2;

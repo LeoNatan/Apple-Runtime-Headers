@@ -7,6 +7,7 @@
 #import <UIKit/UIWindowScene.h>
 
 @interface UIWindowScene (AVSecondScreenAdditions)
+- (void)_avkit_setPreferredRefreshRate:(double)arg1 HDRMode:(long long)arg2 overscanCompensation:(long long)arg3;
 - (BOOL)avkit_screenHasWindowsExcludingWindow:(id)arg1;
 - (long long)avkit_screenType;
 - (id)avkit_asWindowScene;

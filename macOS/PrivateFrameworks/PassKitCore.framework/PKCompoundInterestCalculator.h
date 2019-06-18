@@ -20,7 +20,7 @@
 - (BOOL)_date:(id)arg1 isApplicableForProcessingDate:(id)arg2;
 - (id)_creditsForProcessingDate:(id)arg1;
 - (id)_additionalBalanceForProcessingDate:(id)arg1;
-- (id)_rawUnpostedInterestCalculationForPaymentOfAmount:(id)arg1 onDate:(id)arg2;
+- (id)_rawUnpostedInterestCalculationForPaymentOfAmount:(id)arg1 onDate:(id)arg2 includeNewPurchases:(BOOL)arg3;
 - (id)_rawCompoundInterestForPaymentOfAmount:(id)arg1 onDate:(id)arg2 includeNewBalance:(BOOL)arg3;
 - (id)compoundInterestForPaymentOfAmount:(id)arg1 onDate:(id)arg2;
 - (BOOL)_interestCanBeCalculated;

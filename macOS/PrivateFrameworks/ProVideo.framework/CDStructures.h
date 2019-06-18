@@ -212,7 +212,7 @@ struct FxImagePriv {
     int _field14;
 };
 
-struct FxKeyframeInfo_V2 {
+struct FxKeyframeInfo {
     unsigned long long _field1;
     CDUnion_baaf6063 _field2;
     unsigned long long _field3;

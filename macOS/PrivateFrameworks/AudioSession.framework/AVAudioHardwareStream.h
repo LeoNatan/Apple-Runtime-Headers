@@ -6,7 +6,7 @@
 
 #import <AudioSession/AVAudioHardwareObject.h>
 
-@class AVAudioFormat, AVAudioHardwareDevice, NSSet;
+@class AVAudioFormat, AVAudioHardwareDevice, NSArray;
 
 @interface AVAudioHardwareStream : AVAudioHardwareObject
 {
@@ -14,12 +14,12 @@
 
 - (BOOL)overrideChannelLayout:(id)arg1 controller:(id)arg2 error:(id *)arg3;
 - (void)setFormat:(id)arg1 controller:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
-@property(readonly, nonatomic) NSSet *availableFormats;
+@property(readonly, nonatomic) NSArray *availableFormats;
 @property(readonly, nonatomic) AVAudioFormat *format;
 @property(readonly, nonatomic) long long latency;
 @property(readonly, nonatomic) unsigned long long startingChannel;
 @property(readonly, nonatomic) unsigned int direction;
-@property(readonly, nonatomic) NSSet *ports;
+@property(readonly, nonatomic) NSArray *ports;
 @property(readonly, nonatomic) __weak AVAudioHardwareDevice *owningDevice;
 - (id)init;
 - (id)availableRawDriverFormats;

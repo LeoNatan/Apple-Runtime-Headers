@@ -18,13 +18,13 @@
 
 @property(retain, nonatomic) NSSet *verifiedPersonLocalIdentifiers; // @synthesize verifiedPersonLocalIdentifiers=_verifiedPersonLocalIdentifiers;
 - (void).cxx_destruct;
-- (id)requiredItemsInItems:(id)arg1;
+- (id)requiredItemsInItems:(id)arg1 options:(id)arg2;
 - (id)itemsSortedByScoreWithItems:(id)arg1 options:(id)arg2;
 - (id)featureWithItem:(id)arg1;
 - (id)faceprintByPersonLocalIdentifierByItemIdentifierWithItems:(id)arg1;
 - (id)debugPersonStringForItem:(id)arg1;
 - (BOOL)isJunkForItem:(id)arg1;
-- (id)bestItemInItems:(id)arg1 bestItemsIfNotUnique:(id *)arg2 options:(id)arg3;
+- (id)bestItemsInItems:(id)arg1 options:(id)arg2;
 - (id)bestItemInItems:(id)arg1 options:(id)arg2;
 - (void)_buildCachesWithItems:(id)arg1 options:(id)arg2;
 - (id)dejunkedDedupedItemIdentifiersWithItems:(id)arg1 options:(id)arg2 debugInfo:(out id *)arg3;

@@ -31,7 +31,7 @@
 + (id)dateFromDateString:(id)arg1;
 + (id)dateStringFromDate:(id)arg1;
 + (int)_liveEventStores;
-+ (BOOL)_skipTCCAccessCheck;
++ (BOOL)_skipTCCAccessCheckForEntityType:(unsigned long long)arg1 accessGranted:(char *)arg2;
 + (void)_noteGlobalAccessRequestedForEntityType:(unsigned long long)arg1;
 + (BOOL)accessGrantedForSource:(id)arg1;
 + (BOOL)accessGrantedForCalendar:(id)arg1;
@@ -206,6 +206,11 @@
 - (BOOL)acknowledgeNotification:(id)arg1 commit:(BOOL)arg2 error:(id *)arg3;
 - (id)filteredNotificationsForEntityType:(unsigned long long)arg1 notifications:(id)arg2;
 - (id)notificationsForEntityType:(unsigned long long)arg1 includingPast:(BOOL)arg2;
+- (id)displayableNotificationsInCalendarIdentifier:(id)arg1;
+- (id)displayableNotifications;
+- (unsigned long long)displayedSuggestedEventCount;
+- (unsigned long long)displayedNotificationCountInCalendar:(id)arg1;
+- (unsigned long long)displayedNotificationCount;
 - (id)notificationsForEntityType:(unsigned long long)arg1;
 - (id)allNotificationsIncludingPast:(BOOL)arg1;
 - (id)allNotifications;

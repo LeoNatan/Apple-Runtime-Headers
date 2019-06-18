@@ -15,7 +15,7 @@
 
 @property(retain, nonatomic) NSMutableDictionary *entityTranslatorByEntityName; // @synthesize entityTranslatorByEntityName=_entityTranslatorByEntityName;
 - (void).cxx_destruct;
-- (id)graphChangesWithPhotoChange:(id)arg1;
+- (id)graphChangesWithPhotoChange:(id)arg1 progressBlock:(CDUnknownBlockType)arg2;
 - (void)_registerTranslatorsWithPhotoLibrary:(id)arg1;
 - (id)initWithPhotoLibrary:(id)arg1;
 

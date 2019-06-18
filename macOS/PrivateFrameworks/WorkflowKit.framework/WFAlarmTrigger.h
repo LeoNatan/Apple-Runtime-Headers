@@ -29,8 +29,8 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)localizedTitleWithConfigurationSummary;
-- (id)init;
 - (BOOL)hasValidConfiguration;
+- (id)init;
 
 @end
 

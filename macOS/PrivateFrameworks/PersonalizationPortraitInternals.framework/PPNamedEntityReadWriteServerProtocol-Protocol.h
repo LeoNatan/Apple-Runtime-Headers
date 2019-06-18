@@ -18,6 +18,6 @@
 - (void)deleteAllNamedEntitiesFromSourcesWithBundleId:(NSString *)arg1 documentIds:(NSArray *)arg2 completion:(void (^)(BOOL, unsigned long long, NSError *))arg3;
 - (void)deleteAllNamedEntitiesFromSourcesWithBundleId:(NSString *)arg1 completion:(void (^)(BOOL, unsigned long long, NSError *))arg2;
 - (void)flushDonationsWithCompletion:(void (^)(void))arg1;
-- (void)donateNamedEntities:(NSArray *)arg1 source:(PPSource *)arg2 algorithm:(unsigned long long)arg3 cloudSync:(BOOL)arg4 decayRate:(double)arg5 sentimentScore:(double)arg6 completion:(void (^)(BOOL, NSError *))arg7;
+- (void)donateNamedEntities:(NSArray *)arg1 source:(PPSource *)arg2 algorithm:(unsigned long long)arg3 cloudSync:(BOOL)arg4 sentimentScore:(double)arg5 completion:(void (^)(BOOL, NSError *))arg6;
 @end
 

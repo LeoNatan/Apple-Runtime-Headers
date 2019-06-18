@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     CKDPCSIdentityManager *_identityManager;
     NSDate *_lastMissingManateeIdentityErrorDateForCurrentService;
     NSMutableSet *_missingIdentityPublicKeys;
+    NSMutableSet *_servicesWithMissingIdentities;
     NSMutableSet *_undecryptablePCSDataHashes;
     NSData *_boundaryKeyData;
     NSObject<OS_dispatch_source> *_pcsUpdateSource;
@@ -41,6 +42,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSObject<OS_dispatch_source> *pcsUpdateSource; // @synthesize pcsUpdateSource=_pcsUpdateSource;
 @property(retain, nonatomic) NSData *boundaryKeyData; // @synthesize boundaryKeyData=_boundaryKeyData;
 @property(retain, nonatomic) NSMutableSet *undecryptablePCSDataHashes; // @synthesize undecryptablePCSDataHashes=_undecryptablePCSDataHashes;
+@property(retain, nonatomic) NSMutableSet *servicesWithMissingIdentities; // @synthesize servicesWithMissingIdentities=_servicesWithMissingIdentities;
 @property(retain, nonatomic) NSMutableSet *missingIdentityPublicKeys; // @synthesize missingIdentityPublicKeys=_missingIdentityPublicKeys;
 @property(retain, nonatomic) NSDate *lastMissingManateeIdentityErrorDateForCurrentService; // @synthesize lastMissingManateeIdentityErrorDateForCurrentService=_lastMissingManateeIdentityErrorDateForCurrentService;
 @property(readonly, nonatomic) CKDPCSIdentityManager *identityManager; // @synthesize identityManager=_identityManager;
@@ -114,6 +116,7 @@ __attribute__((visibility("hidden")))
 - (struct _OpaquePCSShareProtection *)createRecordPCSWithEncryptedZonePCS:(struct __CFData *)arg1 sharePCS:(struct _OpaquePCSShareProtection *)arg2 createLite:(BOOL)arg3 error:(id *)arg4;
 - (struct _OpaquePCSShareProtection *)createRecordPCSWithZonePCS:(struct _OpaquePCSShareProtection *)arg1 sharePCS:(struct _OpaquePCSShareProtection *)arg2 createLite:(BOOL)arg3 error:(id *)arg4;
 - (id)keyRollForZoneWideShareWithZonePCS:(id)arg1 sharePCS:(id)arg2;
+- (BOOL)canRollShareKeys;
 - (id)updateIdentityAndRollKeyForZonePCS:(struct _OpaquePCSShareProtection *)arg1 usingServiceIdentityWithType:(unsigned long long)arg2;
 - (id)rollIdentityForSharePCS:(struct _OpaquePCSShareProtection *)arg1 removeAllExistingPrivateKeys:(BOOL)arg2 error:(id *)arg3;
 - (id)removePrivateKeysForKeyIDs:(id)arg1 fromPCS:(struct _OpaquePCSShareProtection *)arg2;
@@ -142,7 +145,7 @@ __attribute__((visibility("hidden")))
 - (void)createZonePCSWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)createZonePCSWithSyncKeyRegistryRetry:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_locked_createZonePCSWithSyncKeyRegistryRetry:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)markMissingIdentitiesFromFailedDecryptError:(struct __CFError *)arg1;
+- (void)markMissingIdentitiesFromFailedDecryptError:(struct __CFError *)arg1 serviceName:(id)arg2;
 - (BOOL)sharingFingerprintsContainPublicKeyWithData:(id)arg1 error:(id *)arg2;
 - (id)addIdentityForService:(unsigned long long)arg1 toPCS:(struct _OpaquePCSShareProtection *)arg2;
 - (id)_addIdentity:(struct _PCSIdentitySetData *)arg1 withService:(unsigned long long)arg2 toPCS:(struct _OpaquePCSShareProtection *)arg3;
@@ -159,6 +162,7 @@ __attribute__((visibility("hidden")))
 - (id)copyAllPublicKeysForService:(unsigned long long)arg1 withError:(id *)arg2;
 - (id)copyPublicKeyForService:(unsigned long long)arg1 withError:(id *)arg2;
 @property(readonly, nonatomic) BOOL currentServiceIsManatee;
+@property(readonly, nonatomic) NSString *pcsServiceName;
 - (unsigned long long)publicKeyVersionForServiceType:(unsigned long long)arg1;
 - (struct _PCSIdentityData *)debugSharingIdentity;
 - (id)_pcsObjectKindForCKDPCSBlobType:(unsigned long long)arg1;

@@ -37,6 +37,7 @@
 @property(readonly) long long destinationType;
 - (void)setAudioRoute:(long long)arg1;
 @property(readonly) long long audioRoute;
+- (id)_emptyCopy;
 - (id)initWithAudioRoute:(long long)arg1 destinationType:(long long)arg2 preferredCallProvider:(long long)arg3 contacts:(id)arg4 recordTypeForRedialing:(long long)arg5 ttyType:(long long)arg6 callCapability:(long long)arg7;
 - (id)initWithAudioRoute:(long long)arg1 destinationType:(long long)arg2 contacts:(id)arg3 callCapability:(long long)arg4;
 - (id)_categoryVerb;

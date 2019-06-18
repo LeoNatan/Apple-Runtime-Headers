@@ -4,14 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HomeKitDaemon/NSObject-Protocol.h>
-#import <HomeKitDaemon/NSSecureCoding-Protocol.h>
+#import <HomeKitDaemon/HMDSettingBaseProtocol-Protocol.h>
 
-@class NSNumber, NSUUID;
+@class NSNumber;
 
-@protocol HMDSettingConstraintProtocol <NSObject, NSSecureCoding>
+@protocol HMDSettingConstraintProtocol <HMDSettingBaseProtocol>
 @property(readonly, copy) id value;
 @property(readonly, copy) NSNumber *type;
-@property(readonly) NSUUID *identifier;
 @end
 

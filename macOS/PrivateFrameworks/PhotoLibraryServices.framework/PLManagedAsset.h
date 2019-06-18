@@ -282,6 +282,7 @@
 - (id)allFileExtensions;
 - (void)getFileURL:(id *)arg1 originalFilename:(id *)arg2 uti:(id *)arg3 fileSize:(unsigned long long *)arg4 forSidecarMatchingUTI:(id)arg5 requireExactMatch:(BOOL)arg6;
 @property(readonly, copy, nonatomic) NSString *pathForOriginalFile;
+@property(readonly, copy, nonatomic) NSURL *persistedFileSystemAttributesFileURL;
 @property(readonly, copy, nonatomic) NSURL *mainFileURL;
 - (id)pathForAdjustedSmallVideoFile;
 - (id)pathForNonAdjustedSmallVideoFile;
@@ -734,7 +735,6 @@
 - (id)cplMasterChangeInLibrary:(id)arg1 shouldGenerateDerivatives:(BOOL)arg2;
 - (id)createResourcesForMaster:(id)arg1 shouldGenerateDerivatives:(BOOL)arg2 inPhotoLibrary:(id)arg3;
 - (void)_copyResourceFileFrom:(id)arg1 to:(id)arg2;
-- (id)_insertResource:(id)arg1 forOtherDuplicatedAssetInMaster:(id)arg2 inPhotoLibrary:(id)arg3;
 - (id)_videoComplementDerivativeResourcesForMaster:(id)arg1;
 - (void)_createVideoResourcesForMaster:(id)arg1 intoMasterResources:(id)arg2 shouldGenerateDerivatives:(BOOL)arg3;
 - (void)_createPhotoResourcesForMaster:(id)arg1 withOriginalResource:(id)arg2 intoMasterResources:(id)arg3 shouldGenerateDerivatives:(BOOL)arg4;
@@ -888,7 +888,6 @@
 @property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingAssets; // @dynamic dayGroupHighlightBeingAssets;
 @property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingExtendedAssets; // @dynamic dayGroupHighlightBeingExtendedAssets;
 @property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingKeyAsset; // @dynamic dayGroupHighlightBeingKeyAsset;
-@property(nonatomic) id <PLPhotosHighlightData> dayGroupHighlightBeingOverviewAssets; // @dynamic dayGroupHighlightBeingOverviewAssets;
 @property(readonly, copy) NSString *debugDescription;
 @property(nonatomic) unsigned short deferredProcessingNeeded; // @dynamic deferredProcessingNeeded;
 @property(nonatomic) unsigned short depthStates; // @dynamic depthStates;
@@ -911,7 +910,6 @@
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingAssets; // @dynamic highlightBeingAssets;
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingExtendedAssets; // @dynamic highlightBeingExtendedAssets;
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingKeyAsset; // @dynamic highlightBeingKeyAsset;
-@property(nonatomic) id <PLPhotosHighlightData> highlightBeingOverviewAssets; // @dynamic highlightBeingOverviewAssets;
 @property(nonatomic) id <PLPhotosHighlightData> highlightBeingSummaryAssets; // @dynamic highlightBeingSummaryAssets;
 @property(nonatomic) double highlightPromotionScore; // @dynamic highlightPromotionScore;
 @property(nonatomic) double highlightVisibilityScore; // @dynamic highlightVisibilityScore;

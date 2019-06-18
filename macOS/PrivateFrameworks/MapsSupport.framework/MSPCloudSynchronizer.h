@@ -9,7 +9,7 @@
 #import <MapsSupport/MSPCloudNotificationReceiver-Protocol.h>
 #import <MapsSupport/MSPCloudSynchronizerRunConditionsDelegate-Protocol.h>
 
-@class MSPCloudClientRegistration, MSPCloudKitAccountAccess, MSPCloudSynchronizerRunConditions, MSPJournal, NSArray, NSString, NSUUID;
+@class MSPCloudClientRegistration, MSPCloudKitAccountAccess, MSPCloudMigrator, MSPCloudSynchronizerRunConditions, MSPJournal, NSArray, NSString, NSUUID;
 @protocol MSPCloudSynchronizerDelegate, OS_dispatch_queue, OS_dispatch_source;
 
 @interface MSPCloudSynchronizer : NSObject <MSPCloudSynchronizerRunConditionsDelegate, MSPCloudNotificationReceiver>
@@ -24,6 +24,7 @@
     MSPCloudClientRegistration *_clientRegistration;
     MSPJournal *_journal;
     NSObject<OS_dispatch_queue> *_mergeQueue;
+    MSPCloudMigrator *_migrator;
     NSArray *_containers;
     id <MSPCloudSynchronizerDelegate> _delegate;
     MSPCloudKitAccountAccess *_cloudAccess;
@@ -32,6 +33,7 @@
 @property(retain, nonatomic) MSPCloudKitAccountAccess *cloudAccess; // @synthesize cloudAccess=_cloudAccess;
 @property(nonatomic) __weak id <MSPCloudSynchronizerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSArray *containers; // @synthesize containers=_containers;
+@property(retain, nonatomic) MSPCloudMigrator *migrator; // @synthesize migrator=_migrator;
 @property(nonatomic) BOOL hasMigrated; // @synthesize hasMigrated=_hasMigrated;
 @property(nonatomic) BOOL hasMigratedPreSync; // @synthesize hasMigratedPreSync=_hasMigratedPreSync;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *mergeQueue; // @synthesize mergeQueue=_mergeQueue;

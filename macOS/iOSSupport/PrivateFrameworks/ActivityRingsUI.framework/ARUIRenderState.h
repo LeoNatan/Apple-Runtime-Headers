@@ -6,18 +6,27 @@
 
 #import <objc/NSObject.h>
 
+#import <ActivityRingsUI/ARUIRendering-Protocol.h>
+
+@class NSString;
 @protocol MTLRenderPipelineState;
 
 __attribute__((visibility("hidden")))
-@interface ARUIRenderState : NSObject
+@interface ARUIRenderState : NSObject <ARUIRendering>
 {
     id <MTLRenderPipelineState> _renderPipelineState;
 }
 
-@property(retain, nonatomic) id <MTLRenderPipelineState> renderPipelineState; // @synthesize renderPipelineState=_renderPipelineState;
 - (void).cxx_destruct;
 - (id)renderPipelineDescriptorFromLibrary:(id)arg1;
+@property(retain, nonatomic) id <MTLRenderPipelineState> renderPipelineState;
 - (id)initWithDevice:(id)arg1 library:(id)arg2;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

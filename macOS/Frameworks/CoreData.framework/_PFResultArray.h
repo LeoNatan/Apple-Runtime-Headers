@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)accessInstanceVariablesDirectly;
++ (Class)classForKeyedUnarchiver;
 + (void)initialize;
 - (unsigned long long)retainCount;
 - (oneway void)release;
@@ -41,6 +42,8 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)indexOfObject:(id)arg1 inRange:(struct _NSRange)arg2;
 - (unsigned long long)indexOfObject:(id)arg1;
 - (id)initWithObjects:(CDStruct_6cdbdfa1 *)arg1 count:(unsigned int)arg2 store:(id)arg3 metadata:(id)arg4;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 
 @end
 

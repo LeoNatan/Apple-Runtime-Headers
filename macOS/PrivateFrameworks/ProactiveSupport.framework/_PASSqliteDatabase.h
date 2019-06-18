@@ -45,7 +45,7 @@
         long long _field20;
     } *_explainedQueriesLogFile;
     BOOL _isInMemory;
-    unsigned long long _queryCacheSize;
+    long long _contentProtectionType;
 }
 
 + (id)corruptionMarkerPathForPath:(id)arg1;
@@ -68,7 +68,9 @@
 + (id)initializeDatabase:(id)arg1 withProtection:(BOOL)arg2 newDatabaseCreated:(char *)arg3;
 + (id)initializeDatabase:(id)arg1 withContentProtection:(long long)arg2 newDatabaseCreated:(char *)arg3;
 + (id)initializeDatabase:(id)arg1 withContentProtection:(long long)arg2 newDatabaseCreated:(char *)arg3 errorHandler:(id)arg4;
-@property(nonatomic) unsigned long long queryCacheSize; // @synthesize queryCacheSize=_queryCacheSize;
++ (BOOL)contentProtectionTypeRequiresDeviceToHaveBeenUnlockedOnce:(long long)arg1;
++ (BOOL)contentProtectionTypeRequiresDeviceToBeUnlocked:(long long)arg1;
+@property(readonly, nonatomic) long long contentProtectionType; // @synthesize contentProtectionType=_contentProtectionType;
 @property(readonly, nonatomic) BOOL isInMemory; // @synthesize isInMemory=_isInMemory;
 @property(readonly, nonatomic) NSString *filename; // @synthesize filename=_filename;
 - (void).cxx_destruct;

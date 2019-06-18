@@ -135,6 +135,7 @@
 - (void)cropDidChange;
 - (void)descriptionEditController:(id)arg1 renderDescription:(id)arg2 operationDidChangeAtIndex:(unsigned long long)arg3 invalidMasterRect:(struct CGRect)arg4;
 - (void)operationsChangedForDescriptionController:(id)arg1 renderDescription:(id)arg2;
+- (void)descriptionEditController:(id)arg1 compositionChanged:(id)arg2 key:(id)arg3;
 - (id)multicaster:(id)arg1 queueForSelector:(SEL)arg2;
 - (id)_cropMode;
 @property(readonly, nonatomic) PACanvasItemView *canvasView;

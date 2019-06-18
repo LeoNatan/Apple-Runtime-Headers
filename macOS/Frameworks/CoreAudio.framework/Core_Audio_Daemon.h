@@ -12,6 +12,7 @@
 
 @class NSMutableSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface Core_Audio_Daemon : NSObject <Core_Audio_Hardware, XPC_IO_Gateway, NSXPCListenerDelegate>
 {
     _Bool _is_alive;

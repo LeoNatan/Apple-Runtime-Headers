@@ -13,16 +13,13 @@
     id <NSCopying> _identifier;
     CDUnknownBlockType _previewProvider;
     CDUnknownBlockType _actionProvider;
-    long long _presentationStyle;
 }
 
 + (id)configurationWithIdentifier:(id)arg1 previewProvider:(CDUnknownBlockType)arg2 actionProvider:(CDUnknownBlockType)arg3;
-@property(readonly, nonatomic) long long presentationStyle; // @synthesize presentationStyle=_presentationStyle;
 @property(copy, nonatomic) CDUnknownBlockType actionProvider; // @synthesize actionProvider=_actionProvider;
 @property(copy, nonatomic) CDUnknownBlockType previewProvider; // @synthesize previewProvider=_previewProvider;
 @property(copy, nonatomic) id <NSCopying> identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
-- (void)setPresentationStyle:(long long)arg1;
 
 @end
 

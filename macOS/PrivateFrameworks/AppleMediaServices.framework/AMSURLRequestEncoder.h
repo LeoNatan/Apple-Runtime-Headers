@@ -10,7 +10,7 @@
 #import <AppleMediaServices/AMSBagConsumer_Project-Protocol.h>
 #import <AppleMediaServices/AMSRequestEncoding-Protocol.h>
 
-@class ACAccount, AMSKeychainOptions, AMSProcessInfo, NSDictionary, NSString;
+@class ACAccount, AMSKeychainOptions, AMSProcessInfo, NSDictionary, NSString, NSURLSessionTask;
 @protocol AMSBagProtocol, AMSResponseDecoding, AMSURLBagContract, OS_dispatch_queue;
 
 @interface AMSURLRequestEncoder : NSObject <AMSBagConsumer_Project, AMSBagConsumer, AMSRequestEncoding>
@@ -35,12 +35,14 @@
     id <AMSURLBagContract> _bagContract;
     NSObject<OS_dispatch_queue> *_internalQueue;
     long long _encodeCount;
+    NSURLSessionTask *_parentTask;
 }
 
 + (void)addRequiredBagKeysToAggregator:(id)arg1;
 + (id)bagSubProfileVersion;
 + (id)bagSubProfile;
 + (id)bagKeySet;
+@property(retain) NSURLSessionTask *parentTask; // @synthesize parentTask=_parentTask;
 @property long long encodeCount; // @synthesize encodeCount=_encodeCount;
 @property(retain) NSObject<OS_dispatch_queue> *internalQueue; // @synthesize internalQueue=_internalQueue;
 @property(retain) id <AMSURLBagContract> bagContract; // @synthesize bagContract=_bagContract;

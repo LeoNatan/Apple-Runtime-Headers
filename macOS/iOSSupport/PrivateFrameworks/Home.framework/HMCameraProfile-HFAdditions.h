@@ -17,6 +17,7 @@
 + (unsigned long long)hf_cameraAccessModeSelectedOptionForCameraProfiles:(id)arg1 presenceType:(unsigned long long)arg2;
 + (unsigned long long)hf_cameraRecordingSelectedIntervalForCameraProfiles:(id)arg1;
 @property(readonly, nonatomic) BOOL hf_cameraIsNotSetToRecord;
+@property(readonly, nonatomic) BOOL hf_shouldDisableLiveStream;
 @property(readonly, nonatomic) BOOL hf_cameraSupportsRecording;
 @property(readonly, nonatomic) BOOL hf_cameraSupportsBidirectionalAudio;
 @property(readonly, nonatomic) HFCameraManager *hf_cameraManager;

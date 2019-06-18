@@ -28,6 +28,7 @@
 - (void)setArtwork:(id)arg1 forInfo:(id)arg2 forDatabase:(unsigned long long)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)synchronousFetchArtwork:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)fetchArtwork:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)lookupArtworkForInfo:(id)arg1 forDatabase:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)closeDatabase:(unsigned long long)arg1;
 - (BOOL)openDatabase:(unsigned long long)arg1 forKind:(unsigned long long)arg2 error:(id *)arg3;
 - (id)currentConnection;

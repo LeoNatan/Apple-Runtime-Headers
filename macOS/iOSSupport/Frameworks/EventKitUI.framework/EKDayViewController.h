@@ -42,7 +42,7 @@
     NSDateComponents *_originalDisplayDate;
     double _dayStart;
     double _dayEnd;
-    BOOL _initialLoadHasOccurred;
+    BOOL _needsReload;
     BOOL _shouldScrollToNowOnViewWillAppear;
     BOOL _instigatedDateChange;
     BOOL _viewAppeared;
@@ -68,7 +68,9 @@
     BOOL _shouldAutoscrollAfterAppearance;
     BOOL _notifyWhenTapOtherEventDuringDragging;
     BOOL _preloadExtraDays;
+    BOOL _hasStartingFirstVisibleSecond;
     BOOL _transitionedToSameDay;
+    int _startingFirstVisibleSecond;
     id <EKDayViewControllerDelegate> _delegate;
     id <EKDayViewControllerDataSource> _dataSource;
     NSDateComponents *_displayDate;
@@ -86,6 +88,8 @@
 @property(copy, nonatomic) NSDateComponents *pendingPreviousDate; // @synthesize pendingPreviousDate=_pendingPreviousDate;
 @property(copy, nonatomic) NSDateComponents *pendingNextDate; // @synthesize pendingNextDate=_pendingNextDate;
 @property(nonatomic) struct CGPoint normalizedContentOffset; // @synthesize normalizedContentOffset=_normalizedContentOffset;
+@property(nonatomic) BOOL hasStartingFirstVisibleSecond; // @synthesize hasStartingFirstVisibleSecond=_hasStartingFirstVisibleSecond;
+@property(nonatomic) int startingFirstVisibleSecond; // @synthesize startingFirstVisibleSecond=_startingFirstVisibleSecond;
 @property(retain, nonatomic) EKEventEditViewController *currentEditor; // @synthesize currentEditor=_currentEditor;
 @property(retain, nonatomic) UIView *gestureOccurrenceSuperview; // @synthesize gestureOccurrenceSuperview=_gestureOccurrenceSuperview;
 @property(nonatomic) double gutterWidth; // @synthesize gutterWidth=_gutterWidth;
@@ -192,6 +196,8 @@
 - (void)loadDataBetweenStart:(id)arg1 end:(id)arg2 completionForCurrentDayReload:(CDUnknownBlockType)arg3;
 - (void)loadData:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)reloadData;
+- (void)reloadDataIfNeeded;
+- (void)setNeedsReload;
 - (id)_eventsForDay:(id)arg1;
 - (id)eventsForStartDate:(id)arg1 endDate:(id)arg2;
 - (void)editorDidCancelEditingEvent:(id)arg1;

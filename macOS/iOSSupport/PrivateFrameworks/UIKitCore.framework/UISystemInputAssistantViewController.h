@@ -8,7 +8,7 @@
 
 #import <UIKitCore/UIPopoverPresentationControllerDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSString, TUISystemInputAssistantView, UIView, UIViewController;
+@class NSMutableDictionary, NSString, TUISystemInputAssistantView, UITextInputAssistantItem, UIView, UIViewController;
 @protocol UIPredictiveViewController;
 
 __attribute__((visibility("hidden")))
@@ -16,12 +16,14 @@ __attribute__((visibility("hidden")))
 {
     UIViewController<UIPredictiveViewController> *_centerViewController;
     UIView *_popoverSourceView;
+    UITextInputAssistantItem *_observedInputAssistantItem;
     NSMutableDictionary *_cachedPredictiveViewControllers;
 }
 
 + (double)preferredHeightForTraitCollection:(id)arg1;
 + (BOOL)_requiresProxyInterface;
 @property(retain, nonatomic) NSMutableDictionary *cachedPredictiveViewControllers; // @synthesize cachedPredictiveViewControllers=_cachedPredictiveViewControllers;
+@property(nonatomic) __weak UITextInputAssistantItem *observedInputAssistantItem; // @synthesize observedInputAssistantItem=_observedInputAssistantItem;
 @property(nonatomic) __weak UIView *popoverSourceView; // @synthesize popoverSourceView=_popoverSourceView;
 @property(retain, nonatomic) UIViewController<UIPredictiveViewController> *centerViewController; // @synthesize centerViewController=_centerViewController;
 - (void).cxx_destruct;
@@ -38,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_assistantItemsVisibleForResponder:(id)arg1;
 - (id)_applicationKeyboardResponder;
 - (BOOL)_canShowWhileLocked;
+- (void)dealloc;
 - (id)init;
 
 // Remaining properties

@@ -35,6 +35,8 @@
 @property(readonly, copy) NSString *description;
 - (void)_lock_sendPendingStateUpdates;
 - (void)_lock_rebuildConfiguration;
+- (id)captureState;
+@property(readonly, copy, nonatomic) NSString *stateCaptureTitle;
 - (void)processMonitor:(id)arg1 didChangeProcessStates:(id)arg2;
 - (void)removeConfigurationWithIdentifier:(unsigned long long)arg1;
 - (void)_lock_addAllConfiguredStatesToPending;

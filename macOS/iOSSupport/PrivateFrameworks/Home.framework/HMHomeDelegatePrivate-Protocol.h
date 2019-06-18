@@ -14,6 +14,7 @@
 - (void)homeDidSetHasAnyUserAcknowledgedCameraRecordingOnboarding:(HMHome *)arg1;
 - (void)homeDidEnableMultiUser:(HMHome *)arg1;
 - (void)homeDidUpdateHomeLocationStatus:(HMHome *)arg1;
+- (void)homeDidUpdateSupportNetworkProtection:(HMHome *)arg1;
 - (void)homeDidUpdateProtectionMode:(HMHome *)arg1;
 - (void)home:(HMHome *)arg1 didUpdateReprovisionStateForAccessory:(HMAccessory *)arg2;
 - (void)home:(HMHome *)arg1 didRemoveMediaSystem:(HMMediaSystem *)arg2;

@@ -22,6 +22,8 @@ __attribute__((visibility("hidden")))
     AVCaptureVideoSettings *videoSettings;
     BOOL alwaysDiscardsLateVideoFrames;
     NSArray *availableVideoCVPixelFormatTypes;
+    BOOL automaticallyConfiguresOutputBufferDimensions;
+    BOOL deliversPreviewSizedOutputBuffers;
     struct os_unfair_lock_s internalLock;
 }
 

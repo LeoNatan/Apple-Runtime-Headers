@@ -17,9 +17,11 @@
     Class _targetClass;
     NSPredicate *_predicate;
     NSArray *_sortDescriptors;
+    unsigned long long _searchType;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(readonly, nonatomic) unsigned long long searchType; // @synthesize searchType=_searchType;
 @property(readonly, copy, nonatomic) NSArray *sortDescriptors; // @synthesize sortDescriptors=_sortDescriptors;
 @property(readonly, copy, nonatomic) NSPredicate *predicate; // @synthesize predicate=_predicate;
 @property(readonly, nonatomic) Class targetClass; // @synthesize targetClass=_targetClass;
@@ -31,6 +33,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithTargetClass:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3 searchType:(unsigned long long)arg4;
 - (id)initWithTargetClass:(Class)arg1 predicate:(id)arg2 sortDescriptors:(id)arg3;
 - (id)cachedSelf;
 

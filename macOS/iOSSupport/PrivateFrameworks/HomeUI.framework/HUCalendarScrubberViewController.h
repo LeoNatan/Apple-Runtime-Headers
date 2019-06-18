@@ -17,8 +17,10 @@
     id <HUCalendarScrubberViewDelegate> _scrubberDelegate;
     long long _currentSection;
     CDUnknownBlockType _scrollCompletionBlock;
+    double _lastBoundsWidth;
 }
 
+@property(nonatomic) double lastBoundsWidth; // @synthesize lastBoundsWidth=_lastBoundsWidth;
 @property(copy, nonatomic) CDUnknownBlockType scrollCompletionBlock; // @synthesize scrollCompletionBlock=_scrollCompletionBlock;
 @property(nonatomic) long long currentSection; // @synthesize currentSection=_currentSection;
 @property(nonatomic) __weak id <HUCalendarScrubberViewDelegate> scrubberDelegate; // @synthesize scrubberDelegate=_scrubberDelegate;
@@ -37,6 +39,7 @@
 @property(readonly, nonatomic) unsigned long long previousSection;
 @property(readonly, nonatomic) unsigned long long nextSection;
 - (void)didReceiveMemoryWarning;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (id)initWithCollectionViewLayout:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

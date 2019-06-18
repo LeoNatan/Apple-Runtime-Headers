@@ -16,6 +16,7 @@
 + (id)discoverySessionWithDeviceTypes:(id)arg1 mediaType:(id)arg2 position:(long long)arg3 allowIOSMacEnvironment:(BOOL)arg4;
 + (id)discoverySessionWithDeviceTypes:(id)arg1 mediaType:(id)arg2 position:(long long)arg3;
 - (id)description;
+@property(readonly, nonatomic) NSArray *supportedMultiCamDeviceSets;
 @property(readonly, nonatomic) NSArray *devices;
 - (void)dealloc;
 - (id)init;

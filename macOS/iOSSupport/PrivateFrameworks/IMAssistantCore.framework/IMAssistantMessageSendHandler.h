@@ -32,12 +32,14 @@
 - (id)recipientDisambiguationResultsFromMultipleRelevantChats:(id)arg1;
 - (id)resolveMessageContentWithString:(id)arg1;
 - (long long)sendMessageWithText:(id)arg1 currentLocation:(BOOL)arg2 expressiveSendStyleID:(id)arg3 idsIdentifier:(id)arg4 executionContext:(long long)arg5 toChat:(id)arg6;
+- (BOOL)canSendLocationMessageWithLocationManager:(id)arg1 withError:(long long *)arg2;
 - (BOOL)isMemberOfChat:(id)arg1;
 - (void)resolveSpeakableGroupNameForSendMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveContentForSendMessage:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveRecipientsForSendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)updateSenderIdentityForChat:(id)arg1 recipients:(id)arg2;
 - (void)handleSendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)confirmSendMessage:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)initWithDataSource:(id)arg1 delegate:(id)arg2 intentIdentifier:(id)arg3;
 
 // Remaining properties

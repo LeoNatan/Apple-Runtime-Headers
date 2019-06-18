@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     BOOL _isMonitoringEvents;
     NSString *_serviceID;
     NSString *_serviceName;
+    BOOL _isServiceEnabled;
     CDUnknownBlockType _eventHandler;
     NSString *_interfaceName;
 }
@@ -29,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (id)DHCPLeaseExpirationTimestamp;
 - (id)DHCPLeaseStartTimestamp;
 - (id)__DHCPInfo;
+- (BOOL)isServiceEnabled;
 - (id)serviceName;
 @property(readonly, copy, nonatomic) NSString *serviceID;
 - (id)DNSServerAddresses;
@@ -39,7 +41,6 @@ __attribute__((visibility("hidden")))
 - (id)IPv6Router;
 - (id)IPv4Addresses;
 - (id)IPv4Router;
-- (void)refreshNetworkServiceID;
 - (id)__proxiesSetupConfig;
 - (id)__DNSSetupConfig;
 - (id)__DNSStateConfig;

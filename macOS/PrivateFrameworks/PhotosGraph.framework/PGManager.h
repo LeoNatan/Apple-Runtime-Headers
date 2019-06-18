@@ -27,7 +27,6 @@
     NSObject<OS_dispatch_queue> *_notificationQueue;
     PGGraph *_graph;
     NSString *_graphName;
-    NSObject<OS_os_log> *_loggingConnection;
     BOOL _shouldPostGraphAvailableNotification;
     BOOL _photoLibraryIsReadonly;
     PHPhotoLibrary *_photoLibrary;
@@ -36,6 +35,7 @@
     NSURL *_metadataSnapshotOutputPathURL;
     NSMutableDictionary *_curationScoreByAsset;
     NSMutableDictionary *_interactionScoreByAsset;
+    NSObject<OS_os_log> *_loggingConnection;
     NSObject<OS_os_log> *_memoriesLoggingConnection;
     NSObject<OS_os_log> *_curationLoggingConnection;
     NSObject<OS_os_log> *_relatedLoggingConnection;
@@ -52,9 +52,12 @@
 + (id)stringFromPGRelatedType:(unsigned long long)arg1;
 + (id)stringFromPGDuration:(unsigned long long)arg1;
 + (id)stringFromPGPrecision:(unsigned long long)arg1;
-+ (BOOL)shouldInvalidatePersistentGraph:(id)arg1 logger:(id)arg2;
++ (BOOL)shouldInvalidateConstructionGraph:(id)arg1;
++ (BOOL)shouldInvalidatePersistentGraph:(id)arg1;
 + (void)initialize;
 + (id)_locationsByDateIntervalForAssetsMetadata:(id)arg1;
++ (unsigned long long)numberOfExistingMemoriesToKeepForOverlapCheckWithBeta:(double)arg1;
++ (double)durationForExistingMemoriesOverlapCheckWithBeta:(double)arg1;
 + (id)meaningsForSurvey;
 + (BOOL)memoriesAreWorthNotifying:(id)arg1;
 + (double)contentScoreForAssets:(id)arg1;
@@ -79,6 +82,7 @@
 @property(readonly, nonatomic) NSObject<OS_os_log> *relatedLoggingConnection; // @synthesize relatedLoggingConnection=_relatedLoggingConnection;
 @property(readonly, nonatomic) NSObject<OS_os_log> *curationLoggingConnection; // @synthesize curationLoggingConnection=_curationLoggingConnection;
 @property(readonly, nonatomic) NSObject<OS_os_log> *memoriesLoggingConnection; // @synthesize memoriesLoggingConnection=_memoriesLoggingConnection;
+@property(readonly, nonatomic) NSObject<OS_os_log> *loggingConnection; // @synthesize loggingConnection=_loggingConnection;
 @property(readonly) NSMutableDictionary *interactionScoreByAsset; // @synthesize interactionScoreByAsset=_interactionScoreByAsset;
 @property(readonly) NSMutableDictionary *curationScoreByAsset; // @synthesize curationScoreByAsset=_curationScoreByAsset;
 @property(readonly) BOOL photoLibraryIsReadonly; // @synthesize photoLibraryIsReadonly=_photoLibraryIsReadonly;
@@ -137,8 +141,7 @@
 - (BOOL)isPGMemoryTriggered:(id)arg1;
 - (BOOL)isPHMemoryTriggered:(id)arg1;
 - (id)createMemoriesWithOptions:(id)arg1 progress:(CDUnknownBlockType)arg2;
-@property(readonly) unsigned long long numberOfExistingMemoriesToKeepForOverlapCheck;
-@property(readonly) double durationForExistingMemoriesOverlapCheck;
+- (double)durationForExistingMemoriesOverlapCheck:(unsigned long long *)arg1;
 - (id)_featuresFromOptions:(id)arg1;
 - (id)_allFeatureVectorBasedMemoriesWithOptions:(id)arg1;
 - (id)_memoriesWithOptions:(id)arg1 isFinalOne:(BOOL)arg2;

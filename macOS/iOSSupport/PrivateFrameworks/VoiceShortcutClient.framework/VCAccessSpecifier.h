@@ -14,7 +14,7 @@
 {
     BOOL _hasSuggestionReadEntitlement;
     BOOL _hasShortcutsLibraryReadEntitlement;
-    BOOL _hasBackgroundRunEntitlement;
+    BOOL _hasHomeResidentEntitlement;
     unsigned long long _accessLevel;
     NSString *_associatedAppBundleIdentifier;
     NSString *_bundleIdentifier;
@@ -30,13 +30,14 @@
 + (id)accessSpecifierUnrestrictedWithAssociatedAppBundleIdentifier:(id)arg1 bundleIdentifier:(id)arg2;
 + (id)accessSpecifierUnrestricted;
 + (void)initialize;
-@property(nonatomic) BOOL hasBackgroundRunEntitlement; // @synthesize hasBackgroundRunEntitlement=_hasBackgroundRunEntitlement;
+@property(nonatomic) BOOL hasHomeResidentEntitlement; // @synthesize hasHomeResidentEntitlement=_hasHomeResidentEntitlement;
 @property(nonatomic) BOOL hasShortcutsLibraryReadEntitlement; // @synthesize hasShortcutsLibraryReadEntitlement=_hasShortcutsLibraryReadEntitlement;
 @property(nonatomic) BOOL hasSuggestionReadEntitlement; // @synthesize hasSuggestionReadEntitlement=_hasSuggestionReadEntitlement;
 @property(readonly, copy, nonatomic) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(readonly, copy, nonatomic) NSString *associatedAppBundleIdentifier; // @synthesize associatedAppBundleIdentifier=_associatedAppBundleIdentifier;
 @property(readonly, nonatomic) unsigned long long accessLevel; // @synthesize accessLevel=_accessLevel;
 - (void).cxx_destruct;
+- (BOOL)allowHomeResidentShortcutRunning;
 - (BOOL)allowBackgroundShortcutRunning;
 - (BOOL)allowReadAccessToPodcastsDatabase;
 - (BOOL)allowReadAccessToShortcutsLibrary;

@@ -6,7 +6,7 @@
 
 #import <CoreBluetooth/CBManager.h>
 
-@class NSCondition, NSHashTable, NSLock, NSMapTable, NSMutableArray, NSMutableDictionary, NSNumber;
+@class NSHashTable, NSLock, NSMapTable, NSMutableArray, NSMutableDictionary, NSNumber;
 @protocol CBPeripheralManagerDelegate;
 
 @interface CBPeripheralManager : CBManager
@@ -31,7 +31,6 @@
     BOOL _isAdvertising;
     BOOL _readyForUpdates;
     BOOL _waitingForReady;
-    BOOL _TCCDone;
     id <CBPeripheralManagerDelegate> _delegate;
     NSMapTable *_centrals;
     NSMutableArray *_services;
@@ -40,13 +39,10 @@
     NSNumber *_multipleAdvertisingSupported;
     NSHashTable *_l2capChannels;
     unsigned long long _attributeIDGenerator;
-    NSCondition *_TCCLock;
 }
 
 + (BOOL)supportsFeatures:(unsigned long long)arg1;
 + (long long)authorizationStatus;
-@property(nonatomic) BOOL TCCDone; // @synthesize TCCDone=_TCCDone;
-@property(retain, nonatomic) NSCondition *TCCLock; // @synthesize TCCLock=_TCCLock;
 @property unsigned long long attributeIDGenerator; // @synthesize attributeIDGenerator=_attributeIDGenerator;
 @property(readonly, retain, nonatomic) NSHashTable *l2capChannels; // @synthesize l2capChannels=_l2capChannels;
 @property(retain, nonatomic) NSNumber *multipleAdvertisingSupported; // @synthesize multipleAdvertisingSupported=_multipleAdvertisingSupported;

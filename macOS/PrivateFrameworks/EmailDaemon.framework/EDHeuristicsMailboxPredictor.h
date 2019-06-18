@@ -20,7 +20,6 @@
     NSMutableString *_debugLog;
 }
 
-+ (id)log;
 @property(retain, nonatomic) NSMutableString *debugLog; // @synthesize debugLog=_debugLog;
 @property(retain, nonatomic) NSCache *mailboxIDCache; // @synthesize mailboxIDCache=_mailboxIDCache;
 @property(retain, nonatomic) NSDictionary *parameters; // @synthesize parameters=_parameters;

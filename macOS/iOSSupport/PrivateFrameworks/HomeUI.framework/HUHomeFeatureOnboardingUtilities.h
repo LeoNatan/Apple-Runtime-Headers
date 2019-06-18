@@ -10,14 +10,19 @@
 {
 }
 
++ (id)checkCurrentLanguageVoiceProfileAvailabiltyIniCloud;
 + (id)processLanguageAndMediaProfileInfo:(id)arg1;
 + (id)createPersonalIdentityDeviceLanguageMismatchList:(id)arg1;
 + (id)createMultiUserLanguageToHomePodsMapping:(id)arg1;
 + (id)analyzeHomeAssistantDevicesForSupportedMultiUserLanguages:(id)arg1;
 + (id)fetchSupportedMultiUserLanguages:(id *)arg1;
 + (id)groupedFeaturesForOnboardingFlowKeyPaths:(id)arg1;
-+ (BOOL)isOwnerUpgradeHomePodScreenRequiredByResults:(id)arg1;
++ (unsigned long long)checkForMultiUserDeviceUpgradeRequirements:(id)arg1;
++ (unsigned long long)checkForOwnerUpgradeRequirementsFromResults:(id)arg1;
++ (BOOL)userHasSaidYesToVoiceIdentificationIn:(id)arg1;
++ (BOOL)_userHasSaidYesToShowTVViewingProfilesIn:(id)arg1;
 + (id)_checkIdentifyVoicePrerequisites;
++ (BOOL)_checkIdentifyVoicePrerequisitesSimple;
 + (id)processHomeFeatureOnboarderResults:(id)arg1;
 + (BOOL)shouldShowIdentifyVoiceOnboardingWithUsageOptions:(id)arg1;
 + (BOOL)currentUserHasUnfinishedFeatureOnboarding;

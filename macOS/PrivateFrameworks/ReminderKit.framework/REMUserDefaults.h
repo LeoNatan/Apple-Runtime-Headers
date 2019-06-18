@@ -15,6 +15,7 @@
     NSMutableDictionary *_observers;
 }
 
++ (void)migrateUserDefaults;
 + (id)appGroupUserDefaults;
 + (id)daemonUserDefaults;
 @property(readonly, nonatomic) NSMutableDictionary *observers; // @synthesize observers=_observers;

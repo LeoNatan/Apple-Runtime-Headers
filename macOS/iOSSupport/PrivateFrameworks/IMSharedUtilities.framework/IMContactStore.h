@@ -31,6 +31,7 @@
 + (id)keysForNicknameHandling;
 + (id)keysForMeContact;
 + (id)keysForCNContact;
++ (id)mePredicate;
 + (id)predicateForID:(id)arg1;
 + (id)createMutableContactWithID:(id)arg1;
 + (BOOL)shouldShowAbbreviatedNames;

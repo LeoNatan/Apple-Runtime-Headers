@@ -32,6 +32,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)helpAnchor;
+- (BOOL)_isSafariAutoFillEnabledAndTouchIDOnDevice;
 - (void)_removeTouchIDPreferenceIfNecessary;
 - (void)_addTouchIDPreferenceIfNecessary;
 - (void)_updateTouchIDPreferenceVisibility;

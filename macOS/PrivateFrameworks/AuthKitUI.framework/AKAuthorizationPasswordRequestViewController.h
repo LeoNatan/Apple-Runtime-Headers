@@ -44,6 +44,7 @@
 - (void)_performAuthorization;
 @property(readonly) BOOL _canPerformAuthorization;
 - (void)_addAuthorizationButtonToPaneContext:(id)arg1;
+- (id)_buttonText;
 - (id)_infoLabelText;
 @property(readonly) AKAuthorizationLoginChoice *_firstLoginChoice;
 @property(readonly) BOOL _hasOneLoginChoice;

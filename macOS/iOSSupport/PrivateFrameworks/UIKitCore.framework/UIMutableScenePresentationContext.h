@@ -27,6 +27,7 @@
 @property(copy, nonatomic) UITransformer *hostTransformer; // @dynamic hostTransformer;
 @property(copy, nonatomic) UIColor *backgroundColorWhileNotHosting; // @dynamic backgroundColorWhileNotHosting;
 @property(copy, nonatomic) UIColor *backgroundColorWhileHosting; // @dynamic backgroundColorWhileHosting;
+@property(nonatomic) unsigned long long presentedLayerTypes; // @dynamic presentedLayerTypes;
 @property(nonatomic) unsigned long long appearanceStyle; // @dynamic appearanceStyle;
 @property(nonatomic, getter=isClippingDisabled) BOOL clippingDisabled; // @dynamic clippingDisabled;
 

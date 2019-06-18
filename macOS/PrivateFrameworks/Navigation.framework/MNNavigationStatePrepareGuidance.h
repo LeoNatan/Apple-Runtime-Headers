@@ -6,16 +6,19 @@
 
 #import <Navigation/MNNavigationState.h>
 
-@class MNNavigationSessionManager, NSArray;
+@class MNDirectionsRequestManager, MNNavigationSessionManager, NSArray;
 
 @interface MNNavigationStatePrepareGuidance : MNNavigationState
 {
     NSArray *_previewRoutes;
     unsigned long long _selectedRouteIndex;
     MNNavigationSessionManager *_navigationSessionManager;
+    MNDirectionsRequestManager *_directionsRequestManager;
 }
 
 - (void).cxx_destruct;
+- (void)cancelDirectionsRequestWithIdentifier:(id)arg1;
+- (void)requestDirections:(id)arg1 withIdentifier:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)resumeRealtimeUpdatesForSubscriber:(id)arg1;
 - (void)pauseRealtimeUpdatesForSubscriber:(id)arg1;
 - (void)stopNavigation;
@@ -28,6 +31,7 @@
 - (unsigned long long)desiredLocationProviderType;
 - (BOOL)requiresHighMemoryThreshold;
 - (unsigned long long)type;
+@property(readonly, nonatomic) MNDirectionsRequestManager *directionsRequestManager; // @synthesize directionsRequestManager=_directionsRequestManager;
 
 @end
 

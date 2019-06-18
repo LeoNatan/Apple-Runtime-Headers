@@ -123,24 +123,6 @@
 - (id)addTableAttachmentWithNSTextTable:(id)arg1 attributedString:(id)arg2 filterPastedAttributes:(BOOL)arg3 isReadingSelectionFromPasteboard:(BOOL)arg4;
 - (void)workAroundSageTables:(id)arg1;
 - (void)convertNSTablesToICTables:(id)arg1 pasteboardTypes:(id)arg2 filterPastedAttributes:(BOOL)arg3 isReadingSelectionFromPasteboard:(BOOL)arg4;
-- (id)analyticsInfoForChecklistAtIndex:(unsigned long long)arg1 textView:(struct NSTextView *)arg2;
-- (id)paragraphInfoForCharacterAtIndex:(unsigned long long)arg1 includeChildren:(BOOL)arg2 textStorage:(id)arg3;
-- (BOOL)containsAnyTodoItemMarkedCompleted:(BOOL)arg1 inRange:(struct _NSRange)arg2 textStorage:(id)arg3;
-- (id)rangeForChecklistItemInRange:(struct _NSRange)arg1 textStorage:(id)arg2;
-- (id)trackedParagraphsForTodosInRange:(struct _NSRange)arg1 textStorage:(id)arg2;
-- (id)rangesForTodosInRange:(struct _NSRange)arg1 markedCompleted:(BOOL)arg2 textStorage:(id)arg3;
-- (struct _NSRange)expandedRangeForContiguousTodosForRange:(struct _NSRange)arg1 textView:(struct NSTextView *)arg2;
-- (id)sortTrackedParagraphsMovingCheckedItemsToBottom:(id)arg1;
-- (id)createTreeFromTrackedParagraphs:(id)arg1;
-- (BOOL)moveCheckedChecklistsToBottomInTextView:(struct NSTextView *)arg1 forRange:(struct _NSRange)arg2;
-- (BOOL)canMoveCheckedChecklistsToBottomInTextView:(struct NSTextView *)arg1 forRange:(struct _NSRange)arg2;
-- (id)validAdjacentParagraphInfoFromParagraphInfo:(id)arg1 inDirection:(unsigned long long)arg2 inTextView:(struct NSTextView *)arg3;
-- (id)adjacentTrackedParagraphFromTrackedParagraph:(id)arg1 inDirection:(unsigned long long)arg2 inTextView:(struct NSTextView *)arg3;
-- (BOOL)canMoveListItemInDirection:(unsigned long long)arg1 inTextView:(struct NSTextView *)arg2 forRange:(struct _NSRange)arg3;
-- (BOOL)moveListItemInDirection:(unsigned long long)arg1 inTextView:(struct NSTextView *)arg2 forRange:(struct _NSRange)arg3;
-- (void)removeChecklistItemsMarkedCompleted:(BOOL)arg1 inTextView:(struct NSTextView *)arg2 forRanges:(id)arg3;
-- (BOOL)checklistItemExistsMarkedCompleted:(BOOL)arg1 inTextView:(struct NSTextView *)arg2 forRanges:(id)arg3;
-- (void)markAllChecklistItemsCompleted:(BOOL)arg1 inTextview:(struct NSTextView *)arg2 forSelectedRanges:(id)arg3;
 
 @end
 

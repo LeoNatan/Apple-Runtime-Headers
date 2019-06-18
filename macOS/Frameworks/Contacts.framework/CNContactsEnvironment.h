@@ -9,7 +9,7 @@
 #import <Contacts/NSCopying-Protocol.h>
 
 @class NSArray, NSPersistentStoreCoordinator, NSURL;
-@protocol CNAccountCollection, CNContactsLoggerProvider, CNSchedulerProvider, SGSuggestionsServiceContactsProtocol;
+@protocol CNAccountCollection, CNContactsLoggerProvider, CNSchedulerProvider, CNSiriIntelligenceSettingsProtocol, SGSuggestionsServiceContactsProtocol;
 
 @interface CNContactsEnvironment : NSObject <NSCopying>
 {
@@ -18,6 +18,7 @@
     id <CNAccountCollection> _accountCollection;
     NSPersistentStoreCoordinator *_existingPersistentStoreCoordinator;
     id <SGSuggestionsServiceContactsProtocol> _suggestionsService;
+    id <CNSiriIntelligenceSettingsProtocol> _siriIntelligenceSettings;
     NSArray *_delegateInfos;
     id <CNContactsLoggerProvider> _loggerProvider;
 }
@@ -34,6 +35,7 @@
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) id <CNContactsLoggerProvider> loggerProvider; // @synthesize loggerProvider=_loggerProvider;
 @property(retain, nonatomic) NSArray *delegateInfos; // @synthesize delegateInfos=_delegateInfos;
+@property(retain) id <CNSiriIntelligenceSettingsProtocol> siriIntelligenceSettings; // @synthesize siriIntelligenceSettings=_siriIntelligenceSettings;
 @property(retain) id <SGSuggestionsServiceContactsProtocol> suggestionsService; // @synthesize suggestionsService=_suggestionsService;
 @property(nonatomic, setter=setUseNativeStack:) BOOL shouldUseNativeStack; // @synthesize shouldUseNativeStack=_shouldUseNativeStack;
 @property(retain) NSPersistentStoreCoordinator *existingPersistentStoreCoordinator; // @synthesize existingPersistentStoreCoordinator=_existingPersistentStoreCoordinator;

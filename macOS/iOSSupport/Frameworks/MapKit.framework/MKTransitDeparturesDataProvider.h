@@ -47,6 +47,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) __weak id <MKTransitDeparturesDataProviderDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSDate *lastCutoffDateWithValidSchedule; // @synthesize lastCutoffDateWithValidSchedule=_lastCutoffDateWithValidSchedule;
 - (void).cxx_destruct;
+- (id)possibleActions;
 - (void)transitMapItemUpdater:(id)arg1 updatedMapItem:(id)arg2 errorCode:(long long)arg3;
 - (void)transitMapItemUpdater:(id)arg1 willUpdateMapItem:(id)arg2;
 - (id)ticketForTransitMapItemUpdater:(id)arg1;

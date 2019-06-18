@@ -56,6 +56,7 @@
 - (void).cxx_destruct;
 - (id)localizedStorefrontID;
 - (id)jsonEncodableObject;
+@property(readonly, nonatomic) unsigned long long bestOfBundleFeedGroupKind;
 @property(readonly, nonatomic) unsigned long long likeDislikeBehavior;
 @property(readonly, nonatomic) long long maximumTrendingGroupSizeiPhone;
 @property(readonly, nonatomic) long long maximumTrendingGroupSizeiPad;

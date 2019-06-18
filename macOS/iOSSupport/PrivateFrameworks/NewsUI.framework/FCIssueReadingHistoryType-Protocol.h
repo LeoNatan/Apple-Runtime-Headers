@@ -4,10 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class FCIssueBookmark, NSDate, NSString;
+@class FCIssueBookmark, NSArray, NSDate, NSString;
 @protocol FCIssueReadingHistoryObserving;
 
 @protocol FCIssueReadingHistoryType
+@property(readonly, nonatomic) NSArray *allVisitedIssueIDs;
+@property(readonly, nonatomic) NSArray *recentlyVisitedIssueIDs;
 @property(readonly, nonatomic) NSString *mostRecentlyVisitedIssueID;
 - (void)removeObserver:(id <FCIssueReadingHistoryObserving>)arg1;
 - (void)addObserver:(id <FCIssueReadingHistoryObserving>)arg1;

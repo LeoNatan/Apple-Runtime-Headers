@@ -190,6 +190,8 @@
 - (id)initWithIOSurface:(struct __IOSurface *)arg1 options:(id)arg2;
 - (id)initWithIOSurface:(struct __IOSurface *)arg1;
 - (id)_initWithIOSurface:(struct __IOSurface *)arg1 options:(id)arg2 owner:(void *)arg3;
+- (id)autoPerspectiveResultWithOptions:(id)arg1;
+- (id)autoPerspectiveFilterWithOptions:(id)arg1;
 - (id)initWithDepthData:(id)arg1;
 - (id)initWithDepthData:(id)arg1 options:(id)arg2;
 - (id)initWithPortraitEffectsMatte:(id)arg1;
@@ -224,7 +226,6 @@
 - (id)localLightStatisticsNoProxy;
 - (id)localLightStatistics;
 - (id)localLightStatisticsWithProxy:(BOOL)arg1;
-- (id)autoPerspectiveFilterWithOptions:(id)arg1;
 - (id)smartBlackAndWhiteAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;
 - (id)smartBlackAndWhiteStatistics;
 - (id)smartColorAdjustmentsForValue:(double)arg1 andStatistics:(id)arg2;

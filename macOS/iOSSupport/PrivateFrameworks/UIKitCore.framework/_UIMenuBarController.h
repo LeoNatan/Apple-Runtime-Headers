@@ -6,16 +6,16 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, RVItem, UIView, _UIMenuBarMenu;
+@class NSArray, NSDictionary, RVItem, UIView, _UIMenuBarMenu;
 
 __attribute__((visibility("hidden")))
 @interface _UIMenuBarController : NSObject
 {
-    BOOL _menuChangeShouldRebuildMenu;
     NSArray *__objectsForSharing;
     UIView *_contextMenuView;
     RVItem *_contextMenuRVItem;
     CDUnknownBlockType _contextMenuDidClose;
+    NSDictionary *_keyEquivalentForKeyInput;
     _UIMenuBarMenu *__mainMenu;
     struct CGPoint _contextMenuLocation;
 }
@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 + (id)_selectorSearchScopes;
 + (id)sharedInstance;
 @property(retain, nonatomic) _UIMenuBarMenu *_mainMenu; // @synthesize _mainMenu=__mainMenu;
-@property(nonatomic) BOOL menuChangeShouldRebuildMenu; // @synthesize menuChangeShouldRebuildMenu=_menuChangeShouldRebuildMenu;
+@property(copy, nonatomic) NSDictionary *keyEquivalentForKeyInput; // @synthesize keyEquivalentForKeyInput=_keyEquivalentForKeyInput;
 @property(copy, nonatomic) CDUnknownBlockType contextMenuDidClose; // @synthesize contextMenuDidClose=_contextMenuDidClose;
 @property(retain, nonatomic) RVItem *contextMenuRVItem; // @synthesize contextMenuRVItem=_contextMenuRVItem;
 @property(nonatomic) struct CGPoint contextMenuLocation; // @synthesize contextMenuLocation=_contextMenuLocation;

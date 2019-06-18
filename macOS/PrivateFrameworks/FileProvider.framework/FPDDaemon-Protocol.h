@@ -31,6 +31,8 @@
 - (void)removeAllDomainsForProviderIdentifier:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (void)removeDomain:(NSFileProviderDomain *)arg1 forProviderIdentifier:(NSString *)arg2 options:(unsigned long long)arg3 completionHandler:(void (^)(NSError *))arg4;
 - (void)addDomain:(NSFileProviderDomain *)arg1 forProviderIdentifier:(NSString *)arg2 byImportingDirectoryAtURL:(FPSandboxingURLWrapper *)arg3 completionHandler:(void (^)(NSError *))arg4;
+- (void)restoreUserURL:(NSURL *)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
+- (void)backUpUserURL:(NSURL *)arg1 outputUserURL:(NSURL *)arg2 completionHandler:(void (^)(NSURL *, NSError *))arg3;
 - (void)reindexAllSearchableItemsForBundleIDs:(NSArray *)arg1 acknowledgementHandler:(void (^)(void))arg2;
 - (void)reindexAllSearchableItemsWithAcknowledgementHandler:(void (^)(void))arg1;
 - (void)providerDomainForURL:(NSURL *)arg1 completionHandler:(void (^)(FPProviderDomain *, NSError *))arg2;

@@ -51,6 +51,7 @@
 
 + (BOOL)hasMessageReceiverChildren;
 + (BOOL)supportsSecureCoding;
++ (BOOL)processUpdateForCharacteristicType:(id)arg1 value:(id)arg2 serviceType:(id)arg3 service:(id)arg4 serviceTransactionGetter:(CDUnknownBlockType)arg5 accessory:(id)arg6 accessoryTransaction:(id)arg7 accInfoChanged:(char *)arg8;
 + (BOOL)validateProvidedName:(id)arg1;
 + (id)logCategory;
 + (id)generateUUIDWithAccessoryUUID:(id)arg1 serviceID:(id)arg2;
@@ -87,7 +88,9 @@
 - (void)_writeConfiguredNameToAccessory:(id)arg1;
 - (void)_saveCurrentNameAsExpectedAndLastSeen:(id)arg1;
 - (id)backingStoreObjects:(long long)arg1;
+- (void)populateModelObjectWithChangeType:(id)arg1 version:(long long)arg2;
 - (id)modelObjectWithChangeType:(unsigned long long)arg1;
+- (id)transactionWithObjectChangeType:(unsigned long long)arg1;
 - (void)_registerForMessages;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property(readonly, nonatomic) NSUUID *messageTargetUUID;
@@ -97,7 +100,6 @@
 - (void)persistLastKnownDiscoveryMode;
 - (BOOL)_validateAndUpdateLastKnownDiscoveryMode:(id)arg1;
 - (BOOL)_validateLastKnownDiscoveryMode:(id)arg1;
-- (BOOL)shouldUpdateLastKnownDiscoveryMode:(id)arg1;
 - (BOOL)_updateLastKnownDiscoveryMode:(id)arg1;
 - (BOOL)isEmptyConfiguredNameAllowed;
 - (BOOL)updateCharacteristics:(id)arg1;
@@ -133,7 +135,6 @@
 - (id)findCharacteristicWithType:(id)arg1;
 - (id)findCharacteristic:(id)arg1;
 - (void)_readRequiredBTLECharacteristicValuesForceReadFWVersion:(BOOL)arg1;
-- (BOOL)processInitialUpdate:(id)arg1 forCharacteristicType:(id)arg2 serviceTransaction:(id)arg3 changed:(char *)arg4;
 - (id)gatherRequiredReadRequestsForceReadFWVersion:(BOOL)arg1;
 - (BOOL)isReadingRequiredForBTLEServiceCharacteristic:(id)arg1;
 - (id)_updateProvidedName:(id)arg1;
@@ -142,6 +143,7 @@
 - (BOOL)_supportsBulletinNotification;
 - (void)_createNotification;
 - (id)configureWithService:(id)arg1 accessory:(id)arg2 shouldRead:(BOOL)arg3 added:(BOOL)arg4;
+- (id)_sanitizeNameToWriteToAccessory:(id)arg1;
 - (id)configureWithService:(id)arg1 accessory:(id)arg2;
 - (void)_handleSetAppData:(id)arg1;
 @property(retain, nonatomic) HMDApplicationData *appData; // @synthesize appData=_appData;

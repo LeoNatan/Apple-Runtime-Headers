@@ -22,14 +22,13 @@
 @property(readonly, nonatomic) BOOL forceExecutionOnPhone; // @synthesize forceExecutionOnPhone=_forceExecutionOnPhone;
 @property(retain, nonatomic) INIntent *intent; // @synthesize intent=_intent;
 - (void).cxx_destruct;
-- (BOOL)requiresShowsWhenRun;
 - (id)generatedIntentWithInput:(id)arg1 error:(id *)arg2;
 - (id)slots;
 - (id)intentDescription;
 - (id)localizedDescriptionSummary;
 - (id)appIdentifier;
 - (long long)intentCategory;
-- (BOOL)showsWhenRun;
+- (id)localizedKeyParameterDisplayName;
 - (id)localizedSubtitle;
 - (id)localizedName;
 - (id)name;

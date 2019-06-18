@@ -333,11 +333,13 @@ struct ToneCurve_Control {
     struct __CFString *targetColorPrimaries;
     unsigned int outputPixelFormat;
     int hdr10_tm_mode;
+    unsigned int operationFromDict;
     float forwardDM_tMaxPq;
     float forwardDM_tMinPq;
     float mid;
     float crush;
     float clip;
+    _Bool passThroughTM;
     struct _HDR10AuxData auxData;
     struct _HDR10TMParam tmParam;
     struct _HDR10AmbAdaptationParam ambAdaptationParam;
@@ -354,19 +356,22 @@ struct _HDR10AmbAdaptationParam {
 
 struct _HDR10AuxData {
     unsigned int processingType;
-    float target_display_contrast_ratio;
-    float target_display_reflection_ratio;
+    unsigned int tm_preset;
+    unsigned int tm_mode;
+    unsigned int tm_curve_type;
+    float EDRFactor;
+    float maxEDRValue;
     unsigned int amb_adaptation_mode;
     float amb_adaptation_lux2nits_ratio;
+    float ambientNits;
+    float target_display_contrast_ratio;
+    float target_display_reflection_ratio;
     unsigned int dpc_mode;
     float dpc_gain;
     float Smin_nits;
     float Smax_nits;
     float Tmin_nits;
     float targetMaxLinear;
-    float EDRFactor;
-    float maxEDRValue;
-    float ambientNits;
 };
 
 struct _HDR10DpcParam {
@@ -384,10 +389,16 @@ struct _HDR10TMParam {
     float tm_Smax_C;
     float tm_Tmin_C;
     float tm_Tmax_C;
+    int tm_curve_type;
     unsigned short numPs;
     float AsC[3];
     float PsC[3];
     float MsC[3];
+    unsigned short n;
+    float XsC[3];
+    float YsC[3];
+    unsigned short ms[2];
+    float arrPsC[2][14];
 };
 
 struct __CFString;
@@ -754,8 +765,8 @@ typedef struct {
     float sat2_p4;
     float sat2_p5;
     float brightAdjBySat2;
+    float tonemap_target_brightness;
     float gamma;
-    float target_brightness;
     float ambientNits;
     _Bool apply_macos_gamma;
     float macos_gamma;
@@ -772,7 +783,8 @@ typedef struct {
     _Bool hdr10_applyDPCompensationS;
     struct _HDR10DpcParam preRGBtoRGB_coef0__preRGBtoRGB_coef1__preRGBtoRGB_coef2__RGBtoY_coefs__postRGBtoRGB_coef0__postRGBtoRGB_coef1__postRGBtoRGB_coef2__dpcParam;
     _Bool llUseDM31;
-} CDStruct_9def633c;
+    _Bool forceReCreateLUT;
+} CDStruct_5b04813a;
 
 typedef struct {
     float _field1;
@@ -819,7 +831,7 @@ typedef struct {
     struct ToneCurve_Control tcControl;
     CDStruct_d76a58a8 hdrControl;
     CDStruct_52986d3b infoFrameData;
-} CDStruct_37b44a95;
+} CDStruct_2f89d71e;
 
 typedef struct {
     int version;

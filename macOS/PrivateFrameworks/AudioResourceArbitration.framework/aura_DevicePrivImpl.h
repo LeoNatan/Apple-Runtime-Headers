@@ -54,8 +54,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int inputSafetyOffset;
 @property(readonly, nonatomic) vector_69ed651e streams;
 @property(readonly, nonatomic) vector_a7f3f6e7 ports;
-- (_Bool)usesHardwareReactor:(weak_ptr_6b0f00f0)arg1;
-- (void)refreshPorts:(vector_5de72575)arg1;
+@property(readonly, nonatomic) weak_ptr_47880f8f reactor;
 - (id)init:(shared_ptr_cc2337fb)arg1;
 
 // Remaining properties

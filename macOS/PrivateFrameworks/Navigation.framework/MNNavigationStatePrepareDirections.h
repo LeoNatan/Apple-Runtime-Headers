@@ -6,10 +6,11 @@
 
 #import <Navigation/MNNavigationState.h>
 
-@class MNDirectionsRequestDetails, NSUUID;
+@class MNDirectionsRequestDetails, MNDirectionsRequestManager, NSUUID;
 
 @interface MNNavigationStatePrepareDirections : MNNavigationState
 {
+    MNDirectionsRequestManager *_directionsRequestManager;
     MNDirectionsRequestDetails *_initialRequest;
     NSUUID *_initialIdentifier;
     CDUnknownBlockType _initialHandler;
@@ -27,6 +28,7 @@
 - (void)enterState;
 - (BOOL)requiresHighMemoryThreshold;
 - (unsigned long long)type;
+@property(readonly, nonatomic) MNDirectionsRequestManager *directionsRequestManager; // @synthesize directionsRequestManager=_directionsRequestManager;
 - (id)initWithStateManager:(id)arg1 request:(id)arg2 identifier:(id)arg3 handler:(CDUnknownBlockType)arg4;
 
 @end

@@ -25,10 +25,12 @@
     BOOL _presentingOverOneUpDidChange;
     BOOL _reviewScreenBarsModelDidChange;
     BOOL _videoOverlayPlayStateDidChange;
+    BOOL _isAttemptingToPlayVideoOverlayDidChange;
     BOOL _isScrubbingActivationDidChange;
 }
 
 @property(nonatomic, setter=_setIsScrubbingActivationDidChange:) BOOL isScrubbingActivationDidChange; // @synthesize isScrubbingActivationDidChange=_isScrubbingActivationDidChange;
+@property(nonatomic, setter=_setIsAttemptingToPlayVideoOverlayDidChange:) BOOL isAttemptingToPlayVideoOverlayDidChange; // @synthesize isAttemptingToPlayVideoOverlayDidChange=_isAttemptingToPlayVideoOverlayDidChange;
 @property(nonatomic, setter=_setVideoOverlayPlayStateDidChange:) BOOL videoOverlayPlayStateDidChange; // @synthesize videoOverlayPlayStateDidChange=_videoOverlayPlayStateDidChange;
 @property(nonatomic, setter=_setReviewScreenBarsModelDidChange:) BOOL reviewScreenBarsModelDidChange; // @synthesize reviewScreenBarsModelDidChange=_reviewScreenBarsModelDidChange;
 @property(nonatomic, setter=_setPresentingOverOneUpDidChange:) BOOL presentingOverOneUpDidChange; // @synthesize presentingOverOneUpDidChange=_presentingOverOneUpDidChange;

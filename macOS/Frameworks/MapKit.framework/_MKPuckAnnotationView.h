@@ -40,6 +40,7 @@
     double _presentationCourse;
     double _locationAccuracy;
     CLLocation *_lastLocation;
+    double _headingOffset;
 }
 
 + (double)outerRingWidth;
@@ -47,6 +48,7 @@
 + (double)baseDiameter;
 + (unsigned long long)_selectedZIndex;
 + (unsigned long long)_zIndex;
+@property(nonatomic) double headingOffset; // @synthesize headingOffset=_headingOffset;
 @property(nonatomic) BOOL rotateInnerImageToMatchCourse; // @synthesize rotateInnerImageToMatchCourse=_rotateInnerImageToMatchCourse;
 @property(retain, nonatomic) NSImage *innerImageMask; // @synthesize innerImageMask=_innerImageMask;
 @property(nonatomic) BOOL shouldShowOuterRing; // @synthesize shouldShowOuterRing=_shouldShowOuterRing;
@@ -75,6 +77,7 @@
 - (void)_setTracking:(BOOL)arg1;
 - (id)_vkNavigationPuckMarker;
 - (void)_setVKNavigationPuckMarker:(id)arg1;
+- (void)_setHeading:(double)arg1 headingOffset:(double)arg2;
 - (void)_updateShowHeadingLayer;
 - (BOOL)_shouldPulseForLocation:(id)arg1;
 - (void)_updatePulse;

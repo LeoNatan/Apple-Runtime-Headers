@@ -46,12 +46,14 @@ __attribute__((visibility("hidden")))
 - (void)_updateSelectionOverlayTint;
 - (void)_setUpSelectionOverlayLayer;
 - (void)_createShadowLayerIfNeededUsingDebugColors:(BOOL)arg1;
+- (void)_applyImageShadowToLayer:(id)arg1 useShadowDebugColors:(BOOL)arg2;
 - (void)_createAdjustedImageShadowIfNeededUsingDebugColors:(BOOL)arg1;
 - (void)_setUpBackgroundLayer;
 - (void)_setUpImageLayer;
 - (void)updateLayer;
 - (BOOL)wantsUpdateLayer;
 - (void)_updateBackgroundColor;
+- (void)_updateImageLayerMasksToBounds;
 - (void)_applyImageToLayer;
 - (id)initWithFrame:(struct CGRect)arg1;
 

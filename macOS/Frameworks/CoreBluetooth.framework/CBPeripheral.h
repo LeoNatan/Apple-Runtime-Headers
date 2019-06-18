@@ -32,6 +32,7 @@
     BOOL _canSendWriteWithoutResponse;
     BOOL _ancsAuthorized;
     BOOL _isConnectedToSystem;
+    BOOL _visibleInSettings;
     BOOL _connectedToSystem;
     unsigned int _writesPending;
     id <CBPeripheralDelegate> _delegate;
@@ -46,6 +47,7 @@
 }
 
 @property(readonly, nonatomic, getter=isConnectedToSystem) BOOL connectedToSystem; // @synthesize connectedToSystem=_connectedToSystem;
+@property(readonly) BOOL visibleInSettings; // @synthesize visibleInSettings=_visibleInSettings;
 @property long long VID; // @synthesize VID=_VID;
 @property long long PID; // @synthesize PID=_PID;
 @property(retain) NSString *BDAddress; // @synthesize BDAddress=_BDAddress;
@@ -75,6 +77,7 @@
 - (void)handleL2CAPChannelOpened:(id)arg1;
 - (void)handleServicesDiscovered:(id)arg1;
 - (void)handleTimeSyncResponse:(id)arg1;
+- (void)handleVisibilityChanged:(id)arg1;
 - (void)handleRSSIUpdated:(id)arg1;
 - (void)handleServicesChanged:(id)arg1;
 - (void)handleNameUpdated:(id)arg1;

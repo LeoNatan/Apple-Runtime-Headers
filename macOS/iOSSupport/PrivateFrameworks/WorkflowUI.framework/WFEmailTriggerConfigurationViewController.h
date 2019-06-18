@@ -40,6 +40,7 @@
 - (void).cxx_destruct;
 - (id)accountFromUsername:(id)arg1;
 - (void)didSelectContacts:(id)arg1 ofType:(unsigned long long)arg2;
+- (void)triggerTextConfigurationViewControllerDidCancel:(id)arg1;
 - (void)triggerTextConfigurationViewController:(id)arg1 didSelectText:(id)arg2;
 - (void)presentNavControllerWithRootViewController:(id)arg1;
 - (id)displayForSelectedContacts:(id)arg1;

@@ -72,6 +72,7 @@
 - (void)resetContent;
 - (void)removeContent;
 - (void)getContent;
+- (void)requestSendPTPCommand:(id)arg1 outData:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)requestSendPTPCommand:(id)arg1 outData:(id)arg2 sendCommandDelegate:(id)arg3 didSendCommandSelector:(SEL)arg4 contextInfo:(void *)arg5;
 - (void)requestReadDataFromFile:(id)arg1 atOffset:(long long)arg2 length:(long long)arg3 readDelegate:(id)arg4 didReadDataSelector:(SEL)arg5 contextInfo:(void *)arg6;
 - (void)requestUploadFile:(id)arg1 options:(id)arg2 uploadDelegate:(id)arg3 didUploadSelector:(SEL)arg4 contextInfo:(void *)arg5;

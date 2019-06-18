@@ -10,12 +10,11 @@
 #import <ChatKit/CKRecipientSearchListControllerDelegate-Protocol.h>
 #import <ChatKit/CNComposeRecipientTextViewDelegate-Protocol.h>
 #import <ChatKit/CNContactPickerDelegate-Protocol.h>
-#import <ChatKit/IDSBatchIDQueryControllerDelegate-Protocol.h>
 
 @class CKComposeRecipientView, CKManualUpdater, CKPendingConversation, CKRecipientSearchListController, CNComposeRecipient, CNContactPickerViewController, CNContactStore, NSMutableDictionary, NSString, UILabel, UIScrollView, UIView;
 @protocol CKRecipientSelectionControllerDelegate;
 
-@interface CKRecipientSelectionController : CKViewController <CNComposeRecipientTextViewDelegate, CKComposeRecipientViewDelegate, CKRecipientSearchListControllerDelegate, CNContactPickerDelegate, IDSBatchIDQueryControllerDelegate>
+@interface CKRecipientSelectionController : CKViewController <CNComposeRecipientTextViewDelegate, CKComposeRecipientViewDelegate, CKRecipientSearchListControllerDelegate, CNContactPickerDelegate>
 {
     double _keyboardHeightWithAccessoryView;
     CNContactStore *_contactStore;
@@ -132,7 +131,7 @@
 - (id)chatForIMHandle:(id)arg1;
 - (id)handleForRecipientNormalizedAddress:(id)arg1;
 - (id)preferredRecipientForExistingConversationOfRecipients:(id)arg1;
-- (id)preferredColorTypeForExistingConversationAndRecipient:(id)arg1;
+- (id)preferredColorTypeForExistingConversation:(id)arg1;
 - (void)colorTypeForRecipient:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)hasEmailRecipientsInAddresses:(id)arg1;
 - (BOOL)lastSentMessageWasNotDeliveredForConversation:(id)arg1;
@@ -142,9 +141,9 @@
 - (BOOL)serviceTypeForRecipient:(id)arg1;
 - (id)preferredRecipientForPendingUnifiedContact:(id)arg1;
 - (void)handlePendingRecipient:(id)arg1;
+- (void)_handleIDSResultsWhenSearchTableIsHidden:(id)arg1;
 - (void)autocompleteResultsController:(id)arg1 didSelectRecipient:(id)arg2 atIndex:(unsigned long long)arg3;
 - (struct UIEdgeInsets)layoutMarginsForComposeRecipientView:(id)arg1;
-- (void)batchQueryController:(id)arg1 updatedDestinationsStatus:(id)arg2 onService:(id)arg3 error:(id)arg4;
 - (BOOL)recipientViewShouldIgnoreFirstResponderChanges:(id)arg1;
 - (void)recipientViewDidResignFirstResponder:(id)arg1;
 - (void)recipientViewDidBecomeFirstResponder:(id)arg1;

@@ -25,7 +25,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _color;
 }
 
-+ (id)colorForSliceColor:(unsigned long long)arg1;
++ (id)colorForSliceColor:(unsigned long long)arg1 dimmed:(BOOL)arg2;
 + (void)setSecondaryColor:(id)arg1;
 + (id)secondaryColor;
 + (void)setPrimaryColor:(id)arg1;
@@ -40,6 +40,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 @property(nonatomic) double visualAmplitudeHeight;
 - (void)setFrame:(struct CGRect)arg1;
+@property(readonly, nonatomic) UIColor *uiColorDimmed;
 @property(readonly, nonatomic) UIColor *uiColor;
 @property(readonly, nonatomic) BOOL hasVisualAmplitudeInterpolatingFramesLeft;
 - (id)init;

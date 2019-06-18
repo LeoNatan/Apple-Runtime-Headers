@@ -6,7 +6,7 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-@class NSString;
+@class NSArray, NSString;
 
 @interface _TtC7NewsUI229StubFCIssueReadingHistoryType : _TtCs12_SwiftObject
 {
@@ -14,6 +14,8 @@
 
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+@property(nonatomic, readonly) NSArray *allVisitedIssueIDs;
+@property(nonatomic, readonly) NSArray *recentlyVisitedIssueIDs;
 @property(nonatomic, readonly) NSString *mostRecentlyVisitedIssueID;
 - (id)lastVisitedDateForIssueWithID:(id)arg1;
 - (id)bookmarkForLastVisitToIssueWithID:(id)arg1;

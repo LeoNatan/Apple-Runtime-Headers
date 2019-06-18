@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (void)saveChangesImmediately:(BOOL)arg1;
 - (BOOL)canRemove;
 - (BOOL)isReadonly;
 

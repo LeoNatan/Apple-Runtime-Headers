@@ -6,11 +6,12 @@
 
 #import <CoreData/NSIncrementalStore.h>
 
+#import <CoreData/NSCoreDataKeyedArchivingDelegate-Protocol.h>
 #import <CoreData/NSSQLModelProvider-Protocol.h>
 
 @class NSDictionary, NSGenerationalRowCache, NSSQLCore, NSSQLModel, NSString, NSXPCStoreConnectionManager, NSXPCStoreNotificationObserver;
 
-@interface NSXPCStore : NSIncrementalStore <NSSQLModelProvider>
+@interface NSXPCStore : NSIncrementalStore <NSSQLModelProvider, NSCoreDataKeyedArchivingDelegate>
 {
     NSDictionary *_metadata;
     NSGenerationalRowCache *_cache;
@@ -26,6 +27,7 @@
 
 + (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
 + (id)archiver:(id)arg1 willEncodeObject:(id)arg2;
++ (BOOL)_allowCoreDataFutures;
 + (void)initialize;
 + (void)setDebugDefault:(int)arg1;
 + (int)debugDefault;
@@ -76,6 +78,7 @@
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
 - (id)unarchiver:(id)arg1 didDecodeObject:(id)arg2;
 - (id)replacementObjectForXPCConnection:(id)arg1 encoder:(id)arg2 object:(id)arg3;
+- (BOOL)_allowCoreDataFutures;
 - (id)fileBackedFuturesDirectory;
 - (id)connectionManager;
 - (struct _NSScalarObjectID *)newForeignKeyID:(long long)arg1 entity:(id)arg2;

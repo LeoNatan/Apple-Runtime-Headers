@@ -6,28 +6,30 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSArray, UIInterfaceActionGroupView;
+@class UIInterfaceActionGroupView, UIMenu;
 @protocol _UIPreviewPlatterActionsViewDelegate;
 
 __attribute__((visibility("hidden")))
 @interface _UIPreviewPlatterActionsView : UIView
 {
     BOOL _surfacesActionRadius;
+    BOOL _showsTitle;
     id <_UIPreviewPlatterActionsViewDelegate> _delegate;
-    NSArray *_actions;
     UIInterfaceActionGroupView *_currentActionGroupView;
+    UIMenu *_actions;
 }
 
+@property(copy, nonatomic) UIMenu *actions; // @synthesize actions=_actions;
 @property(retain, nonatomic) UIInterfaceActionGroupView *currentActionGroupView; // @synthesize currentActionGroupView=_currentActionGroupView;
+@property(nonatomic) BOOL showsTitle; // @synthesize showsTitle=_showsTitle;
 @property(nonatomic) BOOL surfacesActionRadius; // @synthesize surfacesActionRadius=_surfacesActionRadius;
-@property(copy, nonatomic) NSArray *actions; // @synthesize actions=_actions;
 @property(nonatomic) __weak id <_UIPreviewPlatterActionsViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_performActionForPreviewAction:(id)arg1;
-- (struct CGSize)sizeThatFits:(struct CGSize)arg1;
+- (struct CGSize)systemLayoutSizeFittingSize:(struct CGSize)arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
 - (id)_interfaceActionGroupForDisplayedActions;
 - (id)_interfaceActionGroupForDisplayedActions:(id)arg1;
-- (void)_updateVisibleActions;
+- (void)setActions:(id)arg1 animated:(BOOL)arg2 alongsideAnimations:(CDUnknownBlockType)arg3;
 - (id)initWithActions:(id)arg1;
 
 @end

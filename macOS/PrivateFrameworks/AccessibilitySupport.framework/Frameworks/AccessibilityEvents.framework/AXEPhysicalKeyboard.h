@@ -26,6 +26,7 @@
 @property(readonly, nonatomic) BOOL isFnDown; // @synthesize isFnDown=_isFnDown;
 - (void).cxx_destruct;
 - (void)_signalKey:(unsigned long long)arg1 stateChanged:(BOOL)arg2 serviceClient:(id)arg3;
+- (id)attachedKeyboardIDs;
 - (void)_handleHIDEvent:(id)arg1;
 - (BOOL)isKeyDown:(unsigned long long)arg1;
 - (void)unregisterListener:(id)arg1;

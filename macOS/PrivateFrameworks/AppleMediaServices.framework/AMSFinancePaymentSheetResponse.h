@@ -26,7 +26,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) AMSFinanceAuthenticateResponse *authenticateResponse; // @synthesize authenticateResponse=_authenticateResponse;
 @property(readonly) AMSPaymentSheetRequest *paymentSheetRequest; // @synthesize paymentSheetRequest=_paymentSheetRequest;
 - (void).cxx_destruct;
-- (id)handlePaymentSheetResult:(id)arg1 error:(id)arg2;
+- (id)performWithTaskInfo:(id)arg1;
 - (id)initWithDialogDictionary:(id)arg1 confirmationOnly:(BOOL)arg2 taskInfo:(id)arg3;
 
 @end

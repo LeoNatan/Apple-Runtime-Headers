@@ -19,7 +19,7 @@
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMDApplicationData, HMDBackingStore, HMDHAPAccessory, HMDHomeAdministratorHandler, HMDHomeKitVersion, HMDHomeLocationHandler, HMDHomeManager, HMDHomeMediaSystemHandler, HMDHomeObjectChangeHandler, HMDHomeObjectLookup, HMDHomePeriodicReader, HMDHomePresenceMonitor, HMDHomeRemoteNotificationHandler, HMDHomeRemoteUserAuthenticationMessageFilter, HMDHomeReprovisionHandler, HMDLegacyRemoteMessageFilter, HMDMediaActionRouter, HMDNetworkRouterClientManager, HMDNotificationRegistry, HMDPredicateUtilities, HMDRelayManager, HMDRemoteAdminEnforcementMessageFilter, HMDResidentDevice, HMDResidentDeviceManager, HMDRoom, HMDSharedHomeUpdateHandler, HMDUser, HMDUserPresenceFeeder, HMFMessageDispatcher, HMFTimer, HMUserPresenceAuthorization, HMUserPresenceCompute, NSArray, NSDate, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSSet, NSString, NSUUID;
+@class HMDApplicationData, HMDBackingStore, HMDHAPAccessory, HMDHomeAdministratorHandler, HMDHomeKitVersion, HMDHomeLocationHandler, HMDHomeManager, HMDHomeMediaSystemHandler, HMDHomeObjectChangeHandler, HMDHomeObjectLookup, HMDHomePeriodicReader, HMDHomePresenceMonitor, HMDHomeRemoteNotificationHandler, HMDHomeReprovisionHandler, HMDMediaActionRouter, HMDNetworkRouterClientManager, HMDNotificationRegistry, HMDPredicateUtilities, HMDRelayManager, HMDResidentDevice, HMDResidentDeviceManager, HMDRoom, HMDSharedHomeUpdateHandler, HMDUser, HMDUserPresenceFeeder, HMFMessageDispatcher, HMFTimer, HMUserPresenceAuthorization, HMUserPresenceCompute, NSArray, NSDate, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSSet, NSString, NSUUID;
 @protocol HMDAccessoryBrowserProtocol, OS_dispatch_queue;
 
 @interface HMDHome : HMFObject <HMDBulletinIdentifiers, HMDResidentDeviceManagerDelegate, HMFLogging, HMDAccessoryBrowserDelegate, HMDHomeMessageReceiver, HMDRelayManagerDelegate, HMFTimerDelegate, HMFDumpState, HMDUserManagementOperationDelegate, HMDMediaActionRouterDataSource, NSSecureCoding, HMDBackingStoreObjectProtocol>
@@ -36,6 +36,7 @@
     NSString *_mediaPassword;
     BOOL _ownerUser;
     BOOL _anyBTLEAccessoryReachable;
+    BOOL _supportsNetworkProtection;
     BOOL _multiUserEnabled;
     BOOL _hasAnyUserAcknowledgedCameraRecordingOnboarding;
     BOOL _remoteAccessIsEnabled;
@@ -76,12 +77,11 @@
     NSMutableDictionary *_addPendingAccessorySetupCodeHandlers;
     NSMutableDictionary *_addPendingAccessorySetupCodes;
     NSMapTable *_addPendingAccessories;
-    NSMutableDictionary *_userActivityInformationMap;
+    NSMutableDictionary *_addAccessoryRequestMap;
     NSMapTable *_retrievalCompletionTuplesForAccessories;
     NSMutableDictionary *_notificationHandlerMap;
     HMDHomeReprovisionHandler *_homeReprovisionHandler;
     unsigned long long _stateHandle;
-    HMDHomeRemoteUserAuthenticationMessageFilter *_remoteUserFilter;
     NSHashTable *_connectionsDiscoveringSymptomsForNearbyDevices;
     HMDHomeObjectChangeHandler *_homeObjectChangeHandler;
     NSObject<OS_dispatch_queue> *_workQueue;
@@ -125,8 +125,6 @@
     HMFTimer *_disableNotificationTimer;
     NSMutableDictionary *_pendingResponses;
     HMFTimer *_pendingResponsesTimer;
-    HMDLegacyRemoteMessageFilter *_remoteMessageFilter;
-    HMDRemoteAdminEnforcementMessageFilter *_remoteAdminEnforcementMessageFilter;
     NSMutableArray *_ownedTriggers;
     NSMapTable *_uuidToHAPAccessoryConfigTable;
     HMDPredicateUtilities *_predicateUtility;
@@ -153,8 +151,6 @@
 @property(readonly, nonatomic) HMDPredicateUtilities *predicateUtility; // @synthesize predicateUtility=_predicateUtility;
 @property(retain, nonatomic) NSMapTable *uuidToHAPAccessoryConfigTable; // @synthesize uuidToHAPAccessoryConfigTable=_uuidToHAPAccessoryConfigTable;
 @property(retain, nonatomic) NSMutableArray *ownedTriggers; // @synthesize ownedTriggers=_ownedTriggers;
-@property(readonly, nonatomic) HMDRemoteAdminEnforcementMessageFilter *remoteAdminEnforcementMessageFilter; // @synthesize remoteAdminEnforcementMessageFilter=_remoteAdminEnforcementMessageFilter;
-@property(readonly, nonatomic) HMDLegacyRemoteMessageFilter *remoteMessageFilter; // @synthesize remoteMessageFilter=_remoteMessageFilter;
 @property(retain, nonatomic) HMFTimer *pendingResponsesTimer; // @synthesize pendingResponsesTimer=_pendingResponsesTimer;
 @property(retain, nonatomic) NSMutableDictionary *pendingResponses; // @synthesize pendingResponses=_pendingResponses;
 @property(retain, nonatomic) HMFTimer *disableNotificationTimer; // @synthesize disableNotificationTimer=_disableNotificationTimer;
@@ -206,12 +202,11 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(readonly, nonatomic) HMDHomeObjectChangeHandler *homeObjectChangeHandler; // @synthesize homeObjectChangeHandler=_homeObjectChangeHandler;
 @property(readonly, nonatomic) NSHashTable *connectionsDiscoveringSymptomsForNearbyDevices; // @synthesize connectionsDiscoveringSymptomsForNearbyDevices=_connectionsDiscoveringSymptomsForNearbyDevices;
-@property(readonly, nonatomic) HMDHomeRemoteUserAuthenticationMessageFilter *remoteUserFilter; // @synthesize remoteUserFilter=_remoteUserFilter;
 @property(nonatomic) unsigned long long stateHandle; // @synthesize stateHandle=_stateHandle;
 @property(retain, nonatomic) HMDHomeReprovisionHandler *homeReprovisionHandler; // @synthesize homeReprovisionHandler=_homeReprovisionHandler;
 @property(retain, nonatomic) NSMutableDictionary *notificationHandlerMap; // @synthesize notificationHandlerMap=_notificationHandlerMap;
 @property(retain, nonatomic) NSMapTable *retrievalCompletionTuplesForAccessories; // @synthesize retrievalCompletionTuplesForAccessories=_retrievalCompletionTuplesForAccessories;
-@property(retain, nonatomic) NSMutableDictionary *userActivityInformationMap; // @synthesize userActivityInformationMap=_userActivityInformationMap;
+@property(retain, nonatomic) NSMutableDictionary *addAccessoryRequestMap; // @synthesize addAccessoryRequestMap=_addAccessoryRequestMap;
 @property(retain, nonatomic) NSMapTable *addPendingAccessories; // @synthesize addPendingAccessories=_addPendingAccessories;
 @property(retain, nonatomic) NSMutableDictionary *addPendingAccessorySetupCodes; // @synthesize addPendingAccessorySetupCodes=_addPendingAccessorySetupCodes;
 @property(retain, nonatomic) NSMutableDictionary *addPendingAccessorySetupCodeHandlers; // @synthesize addPendingAccessorySetupCodeHandlers=_addPendingAccessorySetupCodeHandlers;
@@ -290,6 +285,7 @@
 - (void)updateHomeConfigurationWithModel:(id)arg1 message:(id)arg2;
 - (id)updateHomeWithModel:(id)arg1 message:(id)arg2;
 - (BOOL)_handleUpdateActiveNetworkRouterAccessoryWithHomeModel:(id)arg1 message:(id)arg2;
+- (BOOL)_handleUpdateSupportsNetworkProtectionWithHomeModel:(id)arg1 message:(id)arg2;
 - (BOOL)_handleUpdateNetworkProtectionWithHomeModel:(id)arg1 message:(id)arg2;
 - (BOOL)awdPrimaryReportingDevice;
 - (id)getHomeConfigurationForAWD;
@@ -307,6 +303,7 @@
 - (void)_handleDidReceiveIDSMessageWithNoListenerFromAddress:(id)arg1;
 - (void)handleDidReceiveIDSMessageWithNoListener:(id)arg1;
 - (void)handleActiveAccountChanged:(id)arg1;
+- (void)handleAccountHandlesUpdated:(id)arg1;
 - (void)removeUnconfiguredResidentDeviceWithUserID:(id)arg1;
 - (void)addUnconfiguredResidentDevice:(id)arg1;
 - (void)timerDidFire:(id)arg1;
@@ -319,7 +316,7 @@
 - (void)_configurePairedAccessoriesForServer:(id)arg1 reAddServices:(BOOL)arg2;
 - (void)_unconfigurePairedAccessoriesForServer:(id)arg1 updateReachability:(BOOL)arg2;
 - (void)_processUpdatedAccessoryServer:(id)arg1 reAddServices:(BOOL)arg2;
-- (BOOL)getUpdateTransactionForAccessory:(id)arg1 hapAccessory:(id)arg2 accessoryTransaction:(id *)arg3 addSvcTransactions:(id *)arg4 updateSvcTransactions:(id *)arg5 removeSvcTransactions:(id *)arg6;
+- (BOOL)getUpdateTransactionForAccessory:(id)arg1 hapAccessory:(id)arg2 accessoryTransaction:(id)arg3 addSvcTransactions:(id *)arg4 updateSvcTransactions:(id *)arg5 removeSvcTransactions:(id *)arg6;
 - (void)_handleRemovedPairedAccessories:(id)arg1 bridgeAccessory:(id)arg2;
 - (id)_getTunnelAccessoryUpdate:(id)arg1;
 - (void)accessoryBrowser:(id)arg1 didUpdateReachability:(BOOL)arg2 forBTLEAccessoriesWithServerIdentifier:(id)arg3;
@@ -327,6 +324,7 @@
 - (void)accessoryBrowser:(id)arg1 accessoryServer:(id)arg2 didUpdateCategory:(id)arg3;
 - (void)accessoryBrowser:(id)arg1 accessoryServer:(id)arg2 didUpdateHasPairings:(BOOL)arg3;
 - (BOOL)_isSecureClassTriggeredByCharactersitics:(id)arg1;
+- (void)_handleUpdatedCharacteristics:(id)arg1 accessoryServer:(id)arg2 stateNumber:(id)arg3 broadcast:(BOOL)arg4;
 - (void)accessoryBrowser:(id)arg1 accessoryServer:(id)arg2 didUpdateValuesForCharacteristics:(id)arg3 stateNumber:(id)arg4 broadcast:(BOOL)arg5;
 - (id)_changedHMDCharacteristicsForHAPCharacteristics:(id)arg1 stateNumber:(id)arg2 broadcast:(BOOL)arg3 accessoryServer:(id)arg4;
 - (id)_hmdCharacteristicsForUpdatedHAPcharacteristics:(id)arg1 accessoryServer:(id)arg2;
@@ -413,6 +411,7 @@
 @property(readonly, copy, nonatomic) NSArray *enabledResidents;
 @property(readonly, copy, nonatomic) NSArray *residentEnabledDevices;
 @property(readonly, copy, nonatomic) NSArray *residentCapableDevices;
+@property(readonly, getter=isCurrentDevicePrimaryResident) BOOL currentDevicePrimaryResident;
 @property(readonly, nonatomic, getter=isResidentSupported) BOOL residentSupported;
 - (void)_handleCharacteristicEnableNotification:(id)arg1;
 - (void)_handlePendingResponserTimerFired:(BOOL)arg1;
@@ -432,6 +431,7 @@
 - (void)_writeCharacteristicValues:(id)arg1 requestMessage:(id)arg2 source:(unsigned long long)arg3 withCompletionHandler:(CDUnknownBlockType)arg4;
 - (void)_redispatchWriteForAccessories:(id)arg1 dispatchGroup:(id)arg2 requestMap:(id)arg3 requestMessage:(id)arg4 source:(unsigned long long)arg5 responseTuples:(id)arg6;
 - (void)_loadBalancedRedispatchForAccessories:(id)arg1 source:(unsigned long long)arg2 dispatchGroup:(id)arg3 writeRequestMap:(id)arg4 requestMessage:(id)arg5 responseTuples:(id)arg6;
+- (void)_addAccessoryToBalancedResidentMap:(id)arg1 residentDevice:(id)arg2 balancedResidentMap:(id)arg3;
 - (id)__residentDeviceForAccesory:(id)arg1 fromMap:(id)arg2;
 - (void)_writeCharacteristicValuesForAccessories:(id)arg1 writeRequestMap:(id)arg2 responseTuples:(id)arg3 requestMessage:(id)arg4 viaDevice:(id)arg5 source:(unsigned long long)arg6 completionHandler:(CDUnknownBlockType)arg7;
 - (id)_applyDeviceLockCheck:(id)arg1 forSource:(unsigned long long)arg2;
@@ -564,6 +564,7 @@
 - (void)_registerDeviceForReachabilityNotification:(id)arg1 accessoryList:(id)arg2;
 - (void)_handleAccessoryReachabilityRegistration:(id)arg1;
 - (void)_handleAccessoryReachabilityRegistrationAndEnable:(id)arg1;
+- (void)accessoryServer:(id)arg1 didUpdateValuesForCharacteristics:(id)arg2 stateNumber:(id)arg3 broadcast:(BOOL)arg4;
 - (void)btleAccessoryReachabilityProbeTimer:(BOOL)arg1;
 - (BOOL)evaluatePredicate:(id)arg1;
 - (void)handleEvaluatePredicateMessage:(id)arg1;
@@ -621,12 +622,13 @@
 - (void)_pairAccessoryWithAccessoryDescription:(id)arg1 unpairedAccessory:(id)arg2 configuration:(id)arg3 networkClientIdentifier:(id)arg4 pairingEvent:(id)arg5 requestMessage:(id)arg6;
 - (void)_continuePairingAfterUserConsentWithAccessoryUUID:(id)arg1 message:(id)arg2;
 - (void)_handleLegacyAddAccessory:(id)arg1;
-- (id)getActivityInformationForActivityIdentifier:(id)arg1;
-- (void)saveUserActivityInformation:(id)arg1;
-- (void)removeUserActivityInformationWithActivityID:(id)arg1;
+- (id)addAccessoryRequestsForMessage:(id)arg1;
+- (void)saveAddAccessoryRequest:(id)arg1;
+- (void)removeAddAccessoryRequestWithIdentifier:(id)arg1;
+- (void)_handleAddActivityRequestTimerFiredForInfo:(id)arg1;
 - (BOOL)_shouldAllowAddingAccessoryWithDescription:(id)arg1 requestMessage:(id)arg2 error:(id *)arg3;
 - (BOOL)_shouldAllowAddingAccessoryOfCategory:(id)arg1 requestMessage:(id)arg2 error:(id *)arg3;
-- (id)_unarchiveSetupDescriptionFromData:(id)arg1 error:(id *)arg2;
+- (id)_setupDescriptionFromData:(id)arg1 error:(id *)arg2;
 - (BOOL)__shouldAllowAddingWiFiRouterAccessoryWithRequestMessage:(id)arg1 error:(id *)arg2;
 - (void)_handleAddAccessory:(id)arg1;
 - (void)handleRemovedAccessory:(id)arg1;
@@ -771,6 +773,7 @@
 - (void)_cleanAddAccessoryOperations;
 - (void)handleAccessoryReachabilityChangeNotification:(id)arg1;
 @property(retain, nonatomic) HMDNetworkRouterClientManager *routerClientManager; // @synthesize routerClientManager=_routerClientManager;
+@property BOOL supportsNetworkProtection; // @synthesize supportsNetworkProtection=_supportsNetworkProtection;
 @property long long protectionMode; // @synthesize protectionMode=_protectionMode;
 - (id)retrieveAndResetNewlyConfiguredAccessories;
 - (void)addNewlyConfiguredAccessories:(id)arg1;
@@ -794,6 +797,8 @@
 - (id)assistantUniqueIdentifier;
 @property(readonly) NSArray *wiFiRouterAccessories;
 @property(readonly) BOOL supportsRouterManagement;
+- (id)_currentDeviceCapabilities;
+- (void)_evaluateNetworkProtectionSupport;
 - (void)_requestUniquePSKClientConfigurationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_createUniquePSKClientConfigurationWithRequestMessage:(id)arg1 pairingEvent:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_evaluateNetworkRouterManagement;

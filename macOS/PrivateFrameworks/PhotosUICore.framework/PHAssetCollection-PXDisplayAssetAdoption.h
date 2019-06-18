@@ -53,6 +53,7 @@
 @property(readonly, nonatomic) BOOL px_isStandInAlbum;
 @property(readonly, nonatomic) NSString *localizedDebugDescription;
 @property(readonly, nonatomic) NSString *localizedSmartDescription;
+- (id)localizedDateDescriptionWithOptions:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSString *localizedDateDescription;
 @property(readonly, nonatomic) BOOL isRecent;
 @property(readonly, nonatomic) BOOL isAggregation;
@@ -61,7 +62,6 @@
 @property(readonly, nonatomic) unsigned short px_highlightEnrichmentState;
 @property(readonly, nonatomic) BOOL isEnrichmentComplete;
 @property(readonly, nonatomic) BOOL isEnriched;
-- (id)pasteboardReference;
 @property(readonly, nonatomic) long long aggregateMediaType;
 @property(readonly, nonatomic) unsigned long long px_estimatedCuratedAssetsCount;
 @property(readonly, nonatomic) unsigned short px_curationType;

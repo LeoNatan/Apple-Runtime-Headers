@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class AVAudioSessionManager, NSSet;
+@class AVAudioSessionManager, NSArray;
 
 @interface AVAudioPlatform : NSObject
 {
@@ -15,8 +15,8 @@
 
 + (id)defaultInstance;
 - (void).cxx_destruct;
-@property(readonly, nonatomic) NSSet *availableModes;
-@property(readonly, nonatomic) NSSet *availableCategories;
+@property(readonly, nonatomic) NSArray *availableModes;
+@property(readonly, nonatomic) NSArray *availableCategories;
 @property(readonly, nonatomic, getter=isInputAvailable) BOOL inputAvailable;
 - (id)initWithSessionMgr:(id)arg1;
 - (BOOL)isModeValid:(id)arg1;

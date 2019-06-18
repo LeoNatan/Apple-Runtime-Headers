@@ -50,12 +50,12 @@
 @property(readonly, nonatomic) SignpostEvent *animationBeginEvent; // @synthesize animationBeginEvent=_animationBeginEvent;
 - (void).cxx_destruct;
 - (void)addCompositorInterval:(id)arg1;
-- (void)_handleFrameLifetime:(id)arg1 isLong:(BOOL)arg2;
-- (void)_handleFrameLatency:(id)arg1 isLong:(BOOL)arg2;
-- (void)_handleRenderServerRender:(id)arg1 isLong:(BOOL)arg2;
-- (void)_handleHIDLatency:(id)arg1 isLong:(BOOL)arg2;
-- (void)_handleTransactionLifetimeInterval:(id)arg1 isLong:(BOOL)arg2;
-- (void)_handleCommitInterval:(id)arg1 isLong:(BOOL)arg2;
+- (void)_handleFrameLifetime:(id)arg1 isLong:(BOOL)arg2 isConcise:(BOOL)arg3;
+- (void)_handleFrameLatency:(id)arg1 isLong:(BOOL)arg2 isConcise:(BOOL)arg3;
+- (void)_handleRenderServerRender:(id)arg1 isLong:(BOOL)arg2 isConcise:(BOOL)arg3;
+- (void)_handleHIDLatency:(id)arg1 isLong:(BOOL)arg2 isConcise:(BOOL)arg3;
+- (void)_handleTransactionLifetimeInterval:(id)arg1 isLong:(BOOL)arg2 isConcise:(BOOL)arg3;
+- (void)_handleCommitInterval:(id)arg1 isLong:(BOOL)arg2 isConcise:(BOOL)arg3;
 - (id)initWithAnimationBeginEvent:(id)arg1 shouldTrackComposites:(BOOL)arg2 shouldTrackInMemoryEvents:(BOOL)arg3;
 
 @end

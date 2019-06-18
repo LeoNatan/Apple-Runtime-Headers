@@ -17,9 +17,8 @@
     NSArray *_actionResults;
     NSArray *_voiceResults;
     NSArray *_featureResults;
-    NSArray *_humanPoseResults;
     NSArray *_humanActionResults;
-    NSArray *_humanTrackResults;
+    NSArray *_humanPoseResults;
     NSArray *_cameraMotionResults;
     NSArray *_keyFrameResults;
     NSMutableArray *_expressionSegments;
@@ -28,6 +27,7 @@
     struct CGSize _frameSize;
     BOOL _isLivePhoto;
     BOOL _verbose;
+    BOOL _hadFlash;
 }
 
 - (void).cxx_destruct;
@@ -62,8 +62,8 @@
 - (struct CGRect)computeBestPlaybackCrop:(CDStruct_e83c9415)arg1;
 - (id)movieSummary;
 - (int)generateHighlights;
-- (int)prepareRequiredQualityResult:(id)arg1 junkDetectionResult:(id)arg2 descriptorResult:(id)arg3 faceResult:(id)arg4 saliencyResult:(id)arg5 actionResult:(id)arg6 voiceResult:(id)arg7 keyFrameResult:(id)arg8 humanPoseResults:(id)arg9 humanActionResults:(id)arg10 humanTrackResults:(id)arg11 cameraMotionResults:(id)arg12 frameSize:(struct CGSize)arg13;
-- (id)initWithAnalysisType:(unsigned long long)arg1 isLivePhoto:(BOOL)arg2;
+- (int)prepareRequiredQualityResult:(id)arg1 junkDetectionResult:(id)arg2 descriptorResult:(id)arg3 faceResult:(id)arg4 saliencyResult:(id)arg5 actionResult:(id)arg6 voiceResult:(id)arg7 keyFrameResult:(id)arg8 humanActionResults:(id)arg9 humanPoseResults:(id)arg10 cameraMotionResults:(id)arg11 frameSize:(struct CGSize)arg12;
+- (id)initWithAnalysisType:(unsigned long long)arg1 isLivePhoto:(BOOL)arg2 hadFlash:(BOOL)arg3;
 
 @end
 

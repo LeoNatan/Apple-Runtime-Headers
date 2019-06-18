@@ -38,6 +38,7 @@
 @property(readonly, copy, nonatomic) UITransformer *hostTransformer;
 @property(readonly, copy, nonatomic) UIColor *backgroundColorWhileNotHosting;
 @property(readonly, copy, nonatomic) UIColor *backgroundColorWhileHosting;
+@property(readonly, nonatomic) unsigned long long presentedLayerTypes;
 @property(readonly, nonatomic) unsigned long long appearanceStyle;
 @property(readonly, nonatomic, getter=isClippingDisabled) BOOL clippingDisabled;
 @property(readonly, copy, nonatomic) NSDictionary *layerPresentationOverrides;

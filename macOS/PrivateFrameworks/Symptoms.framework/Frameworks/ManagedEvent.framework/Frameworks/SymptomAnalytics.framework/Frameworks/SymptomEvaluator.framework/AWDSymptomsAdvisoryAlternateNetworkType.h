@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _timestamp;
     int _advice;
     int _bailOutOf;
+    unsigned int _cellularDataUsage;
     unsigned int _comingFromState;
     int _egressMobilityCode;
     int _egressTrigger;
@@ -30,6 +31,7 @@ __attribute__((visibility("hidden")))
     int _ingressTriggerOn;
     unsigned int _ingressTriggerPercentagex100;
     NSMutableArray *_ingressTriggerSignatures;
+    int _policy;
     unsigned int _transitionsSuppressedByMobility;
     BOOL _kernelProbingActivated;
     struct {
@@ -37,6 +39,7 @@ __attribute__((visibility("hidden")))
         unsigned int timestamp:1;
         unsigned int advice:1;
         unsigned int bailOutOf:1;
+        unsigned int cellularDataUsage:1;
         unsigned int comingFromState:1;
         unsigned int egressMobilityCode:1;
         unsigned int egressTrigger:1;
@@ -48,6 +51,7 @@ __attribute__((visibility("hidden")))
         unsigned int ingressTriggerMultiplier:1;
         unsigned int ingressTriggerOn:1;
         unsigned int ingressTriggerPercentagex100:1;
+        unsigned int policy:1;
         unsigned int transitionsSuppressedByMobility:1;
         unsigned int kernelProbingActivated:1;
     } _has;
@@ -55,6 +59,7 @@ __attribute__((visibility("hidden")))
 
 + (Class)egressTriggerSignatureType;
 + (Class)ingressTriggerSignatureType;
+@property(nonatomic) unsigned int cellularDataUsage; // @synthesize cellularDataUsage=_cellularDataUsage;
 @property(nonatomic) unsigned int transitionsSuppressedByMobility; // @synthesize transitionsSuppressedByMobility=_transitionsSuppressedByMobility;
 @property(nonatomic) unsigned int comingFromState; // @synthesize comingFromState=_comingFromState;
 @property(retain, nonatomic) NSMutableArray *egressTriggerSignatures; // @synthesize egressTriggerSignatures=_egressTriggerSignatures;
@@ -76,6 +81,11 @@ __attribute__((visibility("hidden")))
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+- (int)StringAsPolicy:(id)arg1;
+- (id)policyAsString:(int)arg1;
+@property(nonatomic) BOOL hasPolicy;
+@property(nonatomic) int policy; // @synthesize policy=_policy;
+@property(nonatomic) BOOL hasCellularDataUsage;
 @property(nonatomic) BOOL hasTransitionsSuppressedByMobility;
 - (int)StringAsEgressMobilityCode:(id)arg1;
 - (id)egressMobilityCodeAsString:(int)arg1;

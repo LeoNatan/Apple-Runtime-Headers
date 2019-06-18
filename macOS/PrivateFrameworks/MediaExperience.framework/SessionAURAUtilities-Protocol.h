@@ -15,8 +15,8 @@
 - (expected_cf04bbb0)simulateMicrophoneConfiguration:(const CDStruct_b957a072 *)arg1 virtualPort:(id <aura_VirtualPort>)arg2;
 - (expected_01e6cd2c)simulatePortEligibility:(const CDStruct_b957a072 *)arg1;
 - (expected_73a2de47)simulateConfiguration:(const CDStruct_b957a072 *)arg1;
-- (struct error_code)deactivateVictimSessions:(vector_017a7f34)arg1 completionHandler:(void (^)(struct error_code))arg2;
-- (struct error_code)applyConfiguration:(const CDStruct_b957a072 *)arg1 activate:(_Bool)arg2 completionHandler:(void (^)(struct error_code))arg3;
+- (struct error_code)deactivateVictimSessions:(vector_017a7f34)arg1 completionHandler:(void (^)(struct expected<aura::ConfigurationChangeDescription, std::__1::error_code>))arg2;
+- (struct error_code)applyConfiguration:(const CDStruct_b957a072 *)arg1 activate:(_Bool)arg2 completionHandler:(void (^)(struct expected<aura::ConfigurationChangeDescription, std::__1::error_code>))arg3;
 - (struct error_code)registerAudioStatisticsReporter:(unsigned int)arg1 reporterID:(long long)arg2;
 - (struct error_code)unregisterSession:(unsigned int)arg1;
 - (struct error_code)registerSession:(unsigned int)arg1;

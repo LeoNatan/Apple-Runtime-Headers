@@ -117,7 +117,8 @@ struct IOAccelNewResourceData {
 struct IOAccelResourceInfo {
     struct __IOSurface *iosurface;
     unsigned int resourceSize:56;
-    unsigned int iosurfaceField:8;
+    unsigned int iosurfaceField:7;
+    unsigned int isRemote:1;
     unsigned int resourceID;
 };
 
@@ -318,6 +319,7 @@ struct MTLIOAccelCommandBufferStorage {
     unsigned int _field31;
     struct IOAccelSegmentResourceListHeader *_field32;
     struct IOAccelSegmentResourceDescriptorGroup *_field33;
+    unsigned int _field34;
 };
 
 struct MTLIOAccelCommandBufferStoragePool {
@@ -775,6 +777,7 @@ struct _MTLIOAccelResource {
     unsigned long long length;
     char pinned;
     struct os_unfair_lock_s labelLock;
+    MTLIOAccelResource *remoteStorageResource;
 };
 
 struct _MTLIOAccelResourcePoolPrivate {

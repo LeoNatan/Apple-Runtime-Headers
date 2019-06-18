@@ -9,9 +9,12 @@
 __attribute__((visibility("hidden")))
 @interface MZSessionManager : NSObject
 {
+    id _sharedApplication;
 }
 
 + (id)instance;
+- (void).cxx_destruct;
+- (unsigned char)sessionCanActivate;
 - (void)handleEnteredForeground:(id)arg1;
 - (void)handleEnteredBackground:(id)arg1;
 - (id)init;

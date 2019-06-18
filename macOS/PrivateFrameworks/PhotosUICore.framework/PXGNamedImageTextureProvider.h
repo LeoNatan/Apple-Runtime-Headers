@@ -16,7 +16,7 @@
 @property(retain, nonatomic) NSBundle *bundle; // @synthesize bundle=_bundle;
 - (void).cxx_destruct;
 - (void)_requestTextureForImageWithName:(id)arg1 inBundle:(id)arg2 userInterfaceDirection:(unsigned long long)arg3 screenScale:(double)arg4 requestID:(int)arg5;
-- (struct _NSRange)requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 geometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_3bc3b9c1 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4 inLayout:(id)arg5;
+- (struct _NSRange)requestTexturesForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 geometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_506f5052 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4 inLayout:(id)arg5;
 
 @end
 

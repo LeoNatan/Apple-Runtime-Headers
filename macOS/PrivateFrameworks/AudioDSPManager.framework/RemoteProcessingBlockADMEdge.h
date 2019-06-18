@@ -6,6 +6,7 @@
 
 #import <AudioDSPManager/RemoteProcessingBlockADMItem.h>
 
+__attribute__((visibility("hidden")))
 @interface RemoteProcessingBlockADMEdge : RemoteProcessingBlockADMItem
 {
     struct WireDescription _wireDescription;

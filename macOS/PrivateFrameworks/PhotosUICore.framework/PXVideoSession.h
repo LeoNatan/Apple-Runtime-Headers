@@ -117,7 +117,7 @@
 - (BOOL)_isAVPlayerPlayStateOutOfSync;
 - (void)_updateDuration;
 - (void)_updateDisplayLinkState;
-- (void)_videoWorkQueue_updateCurrentPixelBuffer;
+- (void)_videoWorkQueue_updateCurrentPixelBufferWithVideoOutput:(id)arg1 outputTime:(double)arg2;
 - (void)_updateCurrentPixelBuffer;
 - (void)_updateVideoOutput;
 - (void)_handleDisplayLink:(id)arg1;

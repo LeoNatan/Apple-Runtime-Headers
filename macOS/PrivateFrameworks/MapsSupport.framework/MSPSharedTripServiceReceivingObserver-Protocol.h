@@ -14,7 +14,6 @@
 - (void)sharedTripService:(MSPSharedTripService *)arg1 sendMessage:(NSString *)arg2 toGroup:(NSString *)arg3;
 - (void)sharedTripService:(MSPSharedTripService *)arg1 sendMessage:(NSString *)arg2 toParticipant:(NSString *)arg3;
 - (void)sharedTripService:(MSPSharedTripService *)arg1 didRemoveSharedTrip:(GEOSharedNavState *)arg2;
-- (void)sharedTripService:(MSPSharedTripService *)arg1 didUpdateMutedForSharedTrip:(GEOSharedNavState *)arg2;
 - (void)sharedTripService:(MSPSharedTripService *)arg1 didUpdateReachedDestinationForSharedTrip:(GEOSharedNavState *)arg2;
 - (void)sharedTripService:(MSPSharedTripService *)arg1 didUpdateRouteForSharedTrip:(GEOSharedNavState *)arg2;
 - (void)sharedTripService:(MSPSharedTripService *)arg1 didUpdateETAForSharedTrip:(GEOSharedNavState *)arg2;

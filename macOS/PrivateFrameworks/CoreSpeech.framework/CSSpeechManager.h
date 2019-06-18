@@ -71,6 +71,7 @@
 @property(readonly, nonatomic) CSSmartSiriVolume *smartSiriVolume; // @synthesize smartSiriVolume=_smartSiriVolume;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
+- (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
 - (void)_teardownForBluetoothDevice;
 - (void)_prepareForBluetoothDeviceWithDeviceType:(unsigned long long)arg1 asset:(id)arg2;
 - (void)_setupForBluetoothDeviceIfNeededWithDeviceType:(unsigned long long)arg1 completion:(CDUnknownBlockType)arg2;
@@ -95,7 +96,6 @@
 - (void)_startVoiceTrigger;
 - (void)_setupVoiceTriggerWithCompletion:(CDUnknownBlockType)arg1;
 - (id)_myriadSelfTriggerCoordinatorIfNeeded:(BOOL)arg1;
-- (id)_myriadCreateIfNeeded:(BOOL)arg1;
 - (id)_voiceTriggerEventNotifierCreateIfNeeded:(BOOL)arg1;
 - (void)_getVoiceTriggerAssetIfNeeded:(CDUnknownBlockType)arg1;
 - (void)startManager;

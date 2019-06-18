@@ -27,10 +27,10 @@
     NSString *_homeName;
     NSString *_setupCode;
     NSString *_setupID;
-    NSData *_ownershipProof;
+    NSData *_ownershipToken;
 }
 
-@property(retain, nonatomic) NSData *ownershipProof; // @synthesize ownershipProof=_ownershipProof;
+@property(retain, nonatomic) NSData *ownershipToken; // @synthesize ownershipToken=_ownershipToken;
 @property(retain, nonatomic) NSString *setupID; // @synthesize setupID=_setupID;
 @property(retain, nonatomic) NSString *setupCode; // @synthesize setupCode=_setupCode;
 @property(retain, nonatomic) NSString *homeName; // @synthesize homeName=_homeName;

@@ -81,6 +81,7 @@
 @property(readonly, nonatomic) unsigned long long currentStateType;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (void)reset;
 - (void)start;
 - (void)dealloc;
 - (id)init;

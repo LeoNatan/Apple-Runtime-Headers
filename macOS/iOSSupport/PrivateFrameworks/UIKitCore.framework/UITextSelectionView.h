@@ -72,6 +72,7 @@ __attribute__((visibility("hidden")))
 - (void)updateFloatingCursorAtPoint:(struct CGPoint)arg1;
 - (struct CGPoint)floatingCursorPositionForPoint:(struct CGPoint)arg1;
 - (void)beginFloatingCursorAtPoint:(struct CGPoint)arg1;
+- (BOOL)_shouldUseIndirectFloatingCaret;
 - (void)willBeginFloatingCursor:(BOOL)arg1;
 - (void)animatePulsingDirectCaret:(id)arg1;
 - (void)animatePulsingIndirectCaret:(id)arg1;
@@ -104,7 +105,6 @@ __attribute__((visibility("hidden")))
 - (void)showReplacementsWithGenerator:(id)arg1 forDictation:(BOOL)arg2 afterDelay:(double)arg3;
 - (void)calculateAndShowReplacements:(id)arg1;
 - (void)_showSelectionCommandsForContextMenu:(BOOL)arg1;
-- (void)buildCommandsWithBuilder:(id)arg1;
 - (void)showSelectionCommandsForContextMenuWithRVItem:(id)arg1 atLocationInView:(struct CGPoint)arg2;
 - (void)showSelectionCommands;
 - (void)showSelectionCommandsAfterDelay:(double)arg1;

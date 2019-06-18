@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     id <CNPhotoPickerProviderItemDelegate> _delegate;
     UIImage *_fullSizeImage;
     UIImage *_thumbnailImage;
+    UIImage *_loadingPlaceholderImage;
     NSData *_imageData;
     NSData *_fullscreenImageData;
     NSData *_filteredImageData;
@@ -32,6 +33,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) NSData *filteredImageData; // @synthesize filteredImageData=_filteredImageData;
 @property(retain, nonatomic) NSData *fullscreenImageData; // @synthesize fullscreenImageData=_fullscreenImageData;
 @property(retain, nonatomic) NSData *imageData; // @synthesize imageData=_imageData;
+@property(retain, nonatomic) UIImage *loadingPlaceholderImage; // @synthesize loadingPlaceholderImage=_loadingPlaceholderImage;
 @property(retain, nonatomic) UIImage *thumbnailImage; // @synthesize thumbnailImage=_thumbnailImage;
 @property(retain, nonatomic) UIImage *fullSizeImage; // @synthesize fullSizeImage=_fullSizeImage;
 @property(nonatomic) __weak id <CNPhotoPickerProviderItemDelegate> delegate; // @synthesize delegate=_delegate;
@@ -51,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)updateContact:(id)arg1;
 - (void)applyVariantEffectToFullsizeImage;
 - (void)thumbnailViewWithCompletion:(CDUnknownBlockType)arg1;
+- (void)thumbnailViewWithPlaceholderProvider:(CDUnknownBlockType)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)clearThumbnailImage;
 - (id)generateThumbnailImageDataWithData:(id)arg1;
 - (id)generateThumbnailImageDataIfNeeded;

@@ -14,8 +14,8 @@
 }
 
 - (void).cxx_destruct;
+- (void)invalidateWithHandler:(CDUnknownBlockType)arg1;
 - (void)invalidate;
-@property(readonly) id lazyObjectValue;
 @property(readonly) id objectValue;
 - (id)initWithBlock:(CDUnknownBlockType)arg1;
 - (id)initWithObject:(id)arg1;

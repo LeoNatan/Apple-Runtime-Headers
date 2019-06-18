@@ -433,6 +433,7 @@
 - (void)_clearOpaqueViewState:(id)arg1;
 - (void)_saveOpaqueViewState:(id)arg1;
 - (void)prepareForReuse;
+- (void)_willEnterReusePool;
 @property(readonly, copy, nonatomic) NSString *reuseIdentifier;
 - (void)setReuseIdentifier:(id)arg1;
 - (void)setSectionBorderColor:(id)arg1;

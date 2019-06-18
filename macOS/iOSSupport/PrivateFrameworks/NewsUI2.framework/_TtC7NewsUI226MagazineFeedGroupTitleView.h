@@ -12,6 +12,7 @@ __attribute__((visibility("hidden")))
     // Error parsing type: , name: titleLabel
     // Error parsing type: , name: titleContainerView
     // Error parsing type: , name: subtitleLabel
+    // Error parsing type: , name: tripleTapGestureRecognizer
 }
 
 - (void).cxx_destruct;

@@ -42,6 +42,10 @@ struct PPMPortraitComponent_ {
     unsigned long long _field1;
 };
 
+struct PPMPortraitFeedbackType_ {
+    unsigned long long _field1;
+};
+
 struct PPMTopicAlgorithm_ {
     unsigned long long _field1;
 };
@@ -78,7 +82,30 @@ struct header_s {
     unsigned int payloadLen;
 };
 
+struct pair<unsigned short, unsigned short>;
+
+struct type {
+    unsigned char __lx[32];
+};
+
+struct vector<std::__1::pair<unsigned short, unsigned short>, std::__1::allocator<std::__1::pair<unsigned short, unsigned short>>> {
+    struct pair<unsigned short, unsigned short> *_field1;
+    struct pair<unsigned short, unsigned short> *_field2;
+    struct __compressed_pair<std::__1::pair<unsigned short, unsigned short>*, std::__1::allocator<std::__1::pair<unsigned short, unsigned short>>> {
+        struct pair<unsigned short, unsigned short> *_field1;
+    } _field3;
+};
+
 #pragma mark Typedef'd Structures
+
+typedef struct {
+    unsigned int resultSizeLog10:1;
+    unsigned int error:1;
+    unsigned int exclusionSpec:1;
+    unsigned int limitHit:1;
+    unsigned int timeLimited:1;
+    unsigned int timeSpec:1;
+} CDStruct_68ee747f;
 
 typedef struct {
     double _field1;

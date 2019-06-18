@@ -226,6 +226,7 @@
 + (BOOL)_tintColorUpdating;
 + (id)_defaultInteractionTintColorForIdiom:(long long)arg1;
 + (void)_setAnimatedPropertiesEnabled:(BOOL)arg1;
++ (void)initialize;
 + (BOOL)_wantsDeepColorByDefault;
 + (Class)layerClass;
 + (BOOL)_preventsAppearanceProxyCustomization;
@@ -612,7 +613,6 @@
 - (void)_effectiveThemeTraitCollectionDidChangeOnSubtreeInternal;
 - (BOOL)_definesDynamicTintColor;
 - (void)_effectiveThemeTraitCollectionDidChangeInternal;
-@property(readonly, nonatomic, getter=_effectiveThemeTraitCollection) UITraitCollection *_effectiveThemeTraitCollection;
 - (void)_traitCollectionDidChangeOnSubtreeInternal:(const struct _UITraitCollectionChangeDescription *)arg1;
 - (void)_traitCollectionDidChangeInternal:(const struct _UITraitCollectionChangeDescription *)arg1;
 - (void)_noteTraitsDidChangeRecursivelyFrom:(id)arg1;
@@ -948,6 +948,7 @@
 - (void)_calculateSubviewAlignmentFrame:(struct CGRect *)arg1 superviewAlignmentBounds:(struct CGRect *)arg2 forAutoresizingMask:(unsigned long long)arg3 preservingNonzeroSuperviewAlignmentBoundsOriginForCompatibility:(BOOL)arg4;
 - (unsigned long long)_effectiveAutoresizingMask;
 - (BOOL)_isManuallyResizedBySuperview;
+- (float)_priorityForEngineHostConstraints;
 - (void)_invalidateEngineHostConstraints;
 - (void)_updateLayoutEngineHostConstraints;
 - (id)_engineHostingWidthConstraint;

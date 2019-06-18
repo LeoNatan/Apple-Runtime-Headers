@@ -25,6 +25,8 @@
     NSString *_machServiceName;
     BOOL _queuesRequestsIfBusy;
     _PASLock *_cacheLock;
+    double _syncTimeout;
+    struct _opaque_pthread_mutex_t _syncTimeoutLock;
 }
 
 + (id)wantedSearchableItemsFromItems:(id)arg1;
@@ -220,6 +222,8 @@
 - (BOOL)isEnabledWithError:(id *)arg1;
 - (void)setManagerForTesting:(id)arg1;
 - (id)_remoteSuggestionManager;
+- (void)setSyncTimeout:(double)arg1;
+- (double)syncTimeout;
 - (id)initWithMachServiceName:(id)arg1 protocol:(id)arg2 useCache:(BOOL)arg3;
 - (id)initWithMachServiceName:(id)arg1 protocol:(id)arg2;
 

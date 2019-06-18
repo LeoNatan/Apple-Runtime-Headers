@@ -168,7 +168,7 @@
 - (void)registerChangeObserver:(id)arg1;
 - (id)_sectionCache;
 - (unsigned long long)_cachedSectionForAssetCollection:(id)arg1;
-@property(readonly, nonatomic) long long numberOfEnrichedSections;
+- (long long)numberOfSectionsWithEnrichmentState:(unsigned short)arg1;
 @property(readonly, nonatomic) long long estimatedOtherCount;
 @property(readonly, nonatomic) long long estimatedVideosCount;
 @property(readonly, nonatomic) long long estimatedPhotosCount;

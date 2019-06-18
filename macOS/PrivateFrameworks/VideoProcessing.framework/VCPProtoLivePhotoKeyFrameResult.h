@@ -13,8 +13,10 @@
 
 @interface VCPProtoLivePhotoKeyFrameResult : PBCodable <VCPProtoResultLegacyConversionProtocol, NSCopying>
 {
+    float _contentScore;
     float _exposureScore;
     NSMutableArray *_faceResults;
+    float _globalQualityScore;
     float _overallFaceQualityScore;
     float _penaltyScore;
     float _qualityScoreForLivePhoto;
@@ -22,10 +24,16 @@
     float _textureScore;
     float _timestamp;
     float _visualPleasingScore;
+    struct {
+        unsigned int contentScore:1;
+        unsigned int globalQualityScore:1;
+    } _has;
 }
 
 + (Class)faceResultsType;
 + (id)resultFromLegacyDictionary:(id)arg1;
+@property(nonatomic) float contentScore; // @synthesize contentScore=_contentScore;
+@property(nonatomic) float globalQualityScore; // @synthesize globalQualityScore=_globalQualityScore;
 @property(retain, nonatomic) NSMutableArray *faceResults; // @synthesize faceResults=_faceResults;
 @property(nonatomic) float sharpness; // @synthesize sharpness=_sharpness;
 @property(nonatomic) float textureScore; // @synthesize textureScore=_textureScore;
@@ -45,6 +53,8 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasContentScore;
+@property(nonatomic) BOOL hasGlobalQualityScore;
 - (id)faceResultsAtIndex:(unsigned long long)arg1;
 - (unsigned long long)faceResultsCount;
 - (void)addFaceResults:(id)arg1;

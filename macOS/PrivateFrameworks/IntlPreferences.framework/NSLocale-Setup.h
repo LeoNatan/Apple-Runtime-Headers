@@ -49,7 +49,9 @@
 - (id)_inputSourceIDsForKeyboardID:(id)arg1;
 - (id)defaultLanguagesForMultilingualSetup;
 - (id)languagesForMultilingualSetup;
+- (id)_languagesForMultilingualSetupWithKeyboardsIDs:(id)arg1;
 @property(readonly, copy) NSString *explanationTextForSelectableScripts;
+@property(readonly, copy) NSString *optionNameWithColonForSelectableScripts;
 @property(readonly, copy) NSString *optionNameForSelectableScripts;
 @property(readonly, copy) NSArray *selectableScriptCodes;
 @property(readonly, nonatomic) NSString *languageIdentifier;

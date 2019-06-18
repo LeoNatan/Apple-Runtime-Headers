@@ -234,6 +234,8 @@
 - (void)didUnregisterFromRegistry:(id)arg1;
 - (void)clear;
 @property(nonatomic) BOOL hasHadSuccessfulQuery;
+- (long long)numberOfTimesRespondedToThread;
+- (BOOL)containsMessageFromContactOrMe;
 - (void)_updateLastSeenMessageGuid:(id)arg1;
 @property(readonly, nonatomic) NSString *lastSeenMessageGuid;
 - (void)verifyChatShouldBeSpamWithService:(id)arg1;
@@ -243,6 +245,7 @@
 - (void)updateWasDetectedAsSMSSpam:(BOOL)arg1;
 - (void)updateShouldForceToSMS:(BOOL)arg1;
 - (BOOL)shouldForceToSMS;
+- (BOOL)isSMS;
 - (BOOL)allParticipantsAreContacts;
 - (BOOL)hasKnownParticipants;
 - (void)loadParticipantContactsIfNecessary;

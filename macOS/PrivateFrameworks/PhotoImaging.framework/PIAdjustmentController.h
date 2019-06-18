@@ -11,14 +11,12 @@
 @interface PIAdjustmentController : NSObject
 {
     NSMutableDictionary *_changes;
-    BOOL _canBeEnabled;
     NUIdentifier *_identifier;
     NUAdjustment *_adjustment;
 }
 
 + (id)enabledKey;
 + (id)autoKey;
-@property(readonly, nonatomic) BOOL canBeEnabled; // @synthesize canBeEnabled=_canBeEnabled;
 @property(readonly, nonatomic) NUAdjustment *adjustment; // @synthesize adjustment=_adjustment;
 @property(retain, nonatomic) NUIdentifier *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
@@ -39,7 +37,9 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)setIsAuto:(BOOL)arg1;
 - (BOOL)isAuto;
+- (BOOL)hasAutoKeyInSchema;
 - (BOOL)canHaveAuto;
+@property(readonly, nonatomic) BOOL canBeEnabled;
 @property(nonatomic) BOOL enabled;
 - (BOOL)hasInputKey:(id)arg1;
 - (id)settingForKey:(id)arg1;

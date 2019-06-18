@@ -22,6 +22,7 @@
     BOOL _detectedIncomingNAT;
     BOOL _isRekeying;
     BOOL _eapInProgress;
+    BOOL _peerAuthenticated;
     BOOL _reportShortDPD;
     BOOL _usesPacketDelegate;
     unsigned short _shortDPDCounter;
@@ -154,6 +155,7 @@
 @property(retain) NEIKEv2IKESAConfiguration *configuration; // @synthesize configuration=_configuration;
 @property(retain) NWAddressEndpoint *remoteAddress; // @synthesize remoteAddress=_remoteAddress;
 @property(retain) NWAddressEndpoint *localAddress; // @synthesize localAddress=_localAddress;
+@property BOOL peerAuthenticated; // @synthesize peerAuthenticated=_peerAuthenticated;
 @property BOOL eapInProgress; // @synthesize eapInProgress=_eapInProgress;
 @property BOOL isRekeying; // @synthesize isRekeying=_isRekeying;
 @property BOOL detectedIncomingNAT; // @synthesize detectedIncomingNAT=_detectedIncomingNAT;

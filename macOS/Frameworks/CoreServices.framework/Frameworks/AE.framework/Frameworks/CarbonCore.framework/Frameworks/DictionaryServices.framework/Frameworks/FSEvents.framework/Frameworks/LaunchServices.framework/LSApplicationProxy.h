@@ -111,6 +111,7 @@
 @property(readonly, nonatomic) NSString *companionApplicationIdentifier; // @synthesize companionApplicationIdentifier=_companionApplicationIdentifier;
 - (void).cxx_destruct;
 - (id)description;
+@property(readonly, nonatomic) NSArray *carPlayInstrumentClusterURLSchemes;
 @property(readonly, nonatomic, getter=isArcadeApp) BOOL arcadeApp;
 @property(readonly, nonatomic) NSNumber *platform;
 @property(readonly, nonatomic) BOOL supportsMultiwindow;

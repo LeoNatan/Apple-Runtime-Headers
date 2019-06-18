@@ -36,5 +36,6 @@
 - (void)didChangeDeviceName:(NSString *)arg1 forDeviceWithIdentifier:(NSString *)arg2;
 - (void)didChangeBatteryInfo:(AMPDeviceBatteryInfo *)arg1 forDeviceWithIdentifier:(NSString *)arg2;
 - (void)requestCompleteWithActivationInfo:(NSDictionary *)arg1 forDeviceWithIdentifier:(NSString *)arg2 withError:(NSError *)arg3;
+- (void)didChangeDevicesClientConnectionState:(unsigned long long)arg1;
 @end
 

@@ -110,8 +110,8 @@ __attribute__((visibility("hidden")))
 - (_Bool)validateRemoveTag:(id)arg1;
 - (void)handleMoveToTrashCommand:(const struct TFENodeVector *)arg1 immediately:(_Bool)arg2;
 - (void)handleMoveToTrashOrPutBackCommand:(const struct TFENodeVector *)arg1;
-- (void)cmdPinFolders:(id)arg1;
-- (_Bool)validatePinFolders:(id)arg1;
+- (void)cmdPinItems:(id)arg1;
+- (_Bool)validatePinItems:(id)arg1;
 - (void)cmdRemoveDownload:(id)arg1;
 - (_Bool)validateRemoveDownload:(id)arg1;
 - (void)cmdDownloadNow:(id)arg1;
@@ -170,6 +170,7 @@ __attribute__((visibility("hidden")))
 - (id)dragFlockingImageComponentsForNode:(const struct TFENode *)arg1 dropTargetView:(id)arg2;
 - (unsigned long long)dragOperationWhenMovingInsideTargetAndCheckingModifiers;
 - (struct TFENode)nodeForDraggingItem:(id)arg1;
+- (void)updateDraggingItemsForDrag:(id)arg1 dropTargetView:(id)arg2 nodesToUpdate:(const optional_256c1242 *)arg3;
 - (void)updateDraggingItemsForDrag:(id)arg1 dropTargetView:(id)arg2;
 - (_Bool)waitingForThumbnailForNode:(const struct TFENode *)arg1;
 - (_Bool)performDragOperation:(id)arg1 dropTargetView:(id)arg2;

@@ -6,12 +6,17 @@
 
 #import <UIKitCore/UIKBTutorialModalDisplay.h>
 
+@class NSLayoutConstraint;
+
 __attribute__((visibility("hidden")))
 @interface UIKBEditingGesturesIntroduction : UIKBTutorialModalDisplay
 {
+    NSLayoutConstraint *_topPaddingConstraint;
 }
 
 + (BOOL)shouldShowEditingIntroduction;
+@property(retain, nonatomic) NSLayoutConstraint *topPaddingConstraint; // @synthesize topPaddingConstraint=_topPaddingConstraint;
+- (void).cxx_destruct;
 - (BOOL)presentsFullScreen;
 - (id)framedViewWithEmbeddedImageNamed:(id)arg1 ofType:(id)arg2;
 - (id)mediaContents;
@@ -21,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (id)textTitleDescriptions;
 - (id)buttonTitle;
 - (void)extraButtonTapAction;
+- (void)updateConstraints;
 
 // Remaining properties
 @property(readonly, nonatomic) long long appearance; // @dynamic appearance;

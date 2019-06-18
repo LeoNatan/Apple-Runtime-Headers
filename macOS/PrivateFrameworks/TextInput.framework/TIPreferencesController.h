@@ -21,7 +21,6 @@
     BOOL _ignoreNextSyncNotification;
 }
 
-+ (id)inputModesByFilteringOutMultilingualOnlyInputModes:(id)arg1;
 + (void)registerPreferredLanguagesForInputModes:(id)arg1 replacingInputModes:(id)arg2;
 + (id)sharedPreferencesController;
 @property(nonatomic) BOOL ignoreNextSyncNotification; // @synthesize ignoreNextSyncNotification=_ignoreNextSyncNotification;

@@ -14,7 +14,7 @@
 #import <HomeKitDaemon/HMDTimeInformationMonitorDelegate-Protocol.h>
 #import <HomeKitDaemon/HMFTimerDelegate-Protocol.h>
 
-@class HMDAccessorySymptomHandler, HMDCameraUserSettings, HMDCharacteristic, HMDDataStreamController, HMDNetworkRouterController, HMDNetworkRouterProfile, HMDService, HMDTargetControllerManager, HMFPairingIdentity, HMFTimer, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSNumber, NSSet, NSString;
+@class HMDAccessorySymptomHandler, HMDCharacteristic, HMDDataStreamController, HMDNetworkRouterController, HMDNetworkRouterProfile, HMDPendingCharacteristic, HMDService, HMDTargetControllerManager, HMFConnectivityInfo, HMFPairingIdentity, HMFTimer, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSNumber, NSSet, NSString;
 
 @interface HMDHAPAccessory : HMDAccessory <HMDAccessoryMinimumUserPrivilegeCapable, HMDServiceOwner, HAPRelayAccessoryDelegate, HMDTimeInformationMonitorDelegate, HMFTimerDelegate, HMDAccessoryIdentify, HMDAccessoryUserManagement>
 {
@@ -43,7 +43,10 @@
     HMDAccessorySymptomHandler *_symptomsHandler;
     NSSet *_identifiersForBridgedAccessories;
     HMDService *_primaryService;
+    HMDPendingCharacteristic *_pendingPowerOn;
     HMDNetworkRouterController *_networkRouterController;
+    HMFConnectivityInfo *_connectivityInfo;
+    NSMutableArray *_powerOnCompletionRoutines;
     NSString *_uniqueIdentifier;
     long long _certificationStatus;
     unsigned long long _activationAttempts;
@@ -61,14 +64,14 @@
     NSSet *_cameraProfiles;
     HMDDataStreamController *_dataStreamController;
     NSMapTable *_serverIDToHAPAccessoryTable;
-    HMDCameraUserSettings *_cameraUserSettings;
+    NSMutableArray *_pendingReads;
 }
 
 + (BOOL)hasMessageReceiverChildren;
 + (BOOL)supportsSecureCoding;
 + (unsigned long long)getAWDTransportTypeWithLinkType:(long long)arg1;
 + (Class)transactionClass;
-@property(retain, nonatomic) HMDCameraUserSettings *cameraUserSettings; // @synthesize cameraUserSettings=_cameraUserSettings;
+@property(retain) NSMutableArray *pendingReads; // @synthesize pendingReads=_pendingReads;
 @property(retain, nonatomic) NSMapTable *serverIDToHAPAccessoryTable; // @synthesize serverIDToHAPAccessoryTable=_serverIDToHAPAccessoryTable;
 @property(retain, nonatomic) HMDDataStreamController *dataStreamController; // @synthesize dataStreamController=_dataStreamController;
 @property(retain, nonatomic) NSSet *cameraProfiles; // @synthesize cameraProfiles=_cameraProfiles;
@@ -89,6 +92,8 @@
 @property(nonatomic) BOOL supportsRelay; // @synthesize supportsRelay=_supportsRelay;
 @property(nonatomic) long long certificationStatus; // @synthesize certificationStatus=_certificationStatus;
 @property(copy, nonatomic) NSString *uniqueIdentifier; // @synthesize uniqueIdentifier=_uniqueIdentifier;
+@property(retain, nonatomic) NSMutableArray *powerOnCompletionRoutines; // @synthesize powerOnCompletionRoutines=_powerOnCompletionRoutines;
+@property(retain, nonatomic) HMDPendingCharacteristic *pendingPowerOn; // @synthesize pendingPowerOn=_pendingPowerOn;
 @property BOOL keyGenerationInProgress; // @synthesize keyGenerationInProgress=_keyGenerationInProgress;
 @property(copy, nonatomic) NSDate *keyUpdatedTime; // @synthesize keyUpdatedTime=_keyUpdatedTime;
 @property(copy, nonatomic) NSNumber *keyUpdatedStateNumber; // @synthesize keyUpdatedStateNumber=_keyUpdatedStateNumber;
@@ -198,8 +203,10 @@
 - (id)hapCharacteristicWriteRequests:(id)arg1 hapAccessory:(id)arg2 hmdResponses:(id *)arg3 mapping:(id *)arg4;
 - (void)notifyValue:(id)arg1 previousValue:(id)arg2 error:(id)arg3 forCharacteristic:(id)arg4 requestMessage:(id)arg5;
 - (void)encodeWithCoder:(id)arg1;
+- (id)getBluetoothAddress;
 - (BOOL)_shouldFilterAccessoryProfile:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (void)saveBluetoothAddress:(id)arg1;
 - (id)_getSymptomHandler;
 - (BOOL)shouldConfigureTargetController;
 - (id)hmdCharacteristicForInstanceId:(id)arg1;
@@ -207,8 +214,11 @@
 - (void)_readCharacteristicValues:(id)arg1 localOperationRequired:(BOOL)arg2 source:(unsigned long long)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5 errorBlock:(CDUnknownBlockType)arg6;
 - (void)autoUpdateCachedCountDownCharacteristics:(id)arg1;
 - (void)readCharacteristicValues:(id)arg1 source:(unsigned long long)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)_getResponseTuple:(id)arg1 error:(id)arg2 source:(unsigned long long)arg3 suspended:(BOOL)arg4;
+- (id)getFullError:(id)arg1 source:(unsigned long long)arg2 suspended:(BOOL)arg3;
 - (void)_writeCharacteristicValues:(id)arg1 localOperationRequired:(BOOL)arg2 source:(unsigned long long)arg3 queue:(id)arg4 completionHandler:(CDUnknownBlockType)arg5 errorBlock:(CDUnknownBlockType)arg6;
 - (void)writeCharacteristicValues:(id)arg1 source:(unsigned long long)arg2 queue:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (BOOL)canWakeBasedOnCharacteristic:(id)arg1;
 @property(readonly) BOOL supportsUserManagement;
 - (void)_performOperation:(long long)arg1 linkType:(long long)arg2 operationBlock:(CDUnknownBlockType)arg3 errorBlock:(CDUnknownBlockType)arg4;
 - (void)performOperation:(long long)arg1 linkType:(long long)arg2 operationBlock:(CDUnknownBlockType)arg3 errorBlock:(CDUnknownBlockType)arg4;
@@ -314,7 +324,7 @@
 - (void)_stopWriteTimeInformationTimer;
 - (id)updateAccessoryFlagsAndNotifyClients:(id)arg1;
 - (id)namesOfServicesShowingTilesInHomeApp;
-- (BOOL)updateAccessoryInformation:(id)arg1;
+- (BOOL)updateAccessoryInformationWithCharacteristicType:(id)arg1 value:(id)arg2 accessoryTransaction:(id)arg3;
 - (BOOL)isReadingRequiredForBTLEAccessoryCharacteristic:(id)arg1 forceReadFWVersion:(BOOL)arg2;
 - (void)_handleCharacteristicsChangedNotification:(id)arg1;
 - (void)_setSystemTimeNeedsUpdate:(BOOL)arg1;
@@ -339,6 +349,7 @@
 - (void)handleUpdatedPassword:(id)arg1;
 - (void)handleUpdatedMinimumUserPrivilege:(long long)arg1;
 - (BOOL)supportsMinimumUserPrivilege;
+- (void)didUpdateCurrentNetworkProtection;
 - (void)_handleWiFiReconfiguration:(id)arg1;
 - (BOOL)supportsNetworkProtection;
 @property(retain, nonatomic) HMDAccessorySymptomHandler *symptomsHandler; // @synthesize symptomsHandler=_symptomsHandler;
@@ -354,6 +365,7 @@
 @property(retain, nonatomic) NSArray *targetUUIDs; // @synthesize targetUUIDs=_targetUUIDs;
 - (void)evaluateSymptomHandler;
 @property(copy, nonatomic) NSData *setupHash; // @synthesize setupHash=_setupHash;
+@property(retain, nonatomic) HMFConnectivityInfo *connectivityInfo; // @synthesize connectivityInfo=_connectivityInfo;
 - (void)setBroadcastKey:(id)arg1 keyUpdatedStateNumber:(id)arg2 keyUpdatedTime:(id)arg3;
 - (void)_updateBroadcastKey:(id)arg1 keyUpdatedStateNumber:(id)arg2 keyUpdatedTime:(double)arg3;
 @property(copy, nonatomic) NSNumber *accessoryFlags; // @synthesize accessoryFlags=_accessoryFlags;
@@ -368,8 +380,12 @@
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (void)dealloc;
+- (void)_setWakeType;
 - (id)initWithTransaction:(id)arg1 home:(id)arg2;
 - (id)init;
+- (void)stopScan;
+- (void)scanningCompleteWithAccessoryFound:(BOOL)arg1 suspended:(BOOL)arg2;
+- (BOOL)initiateScan:(CDUnknownBlockType)arg1;
 - (BOOL)_handleUpdatedServicesForNetworkRouterProfileAndController:(id)arg1;
 - (BOOL)__removeNetworkRouterProfile;
 - (BOOL)__createNetworkRouterProfileAndController:(id)arg1;
@@ -380,8 +396,6 @@
 - (void)writeValue:(id)arg1 toCharacteristic:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (id)assistantObject;
 - (id)url;
-- (void)_configureCameraUserSettings;
-- (void)_initCameraUserSettings;
 - (BOOL)_handleUpdatedServicesForCameraProfiles:(id)arg1;
 - (void)_updateSiriAudioFormat:(id)arg1;
 - (void)setSelectedSiriAudioConfiguration:(id)arg1;
@@ -397,6 +411,10 @@
 - (void)removeDataStreamBulkSendListener:(id)arg1;
 - (void)addDataStreamBulkSendListener:(id)arg1 fileType:(id)arg2;
 - (void)_handleUpdatedServicesForDataStreamController:(id)arg1;
+- (void)cancelPowerOn;
+- (void)wirelessPowerOn:(CDUnknownBlockType)arg1;
+- (void)powerOnComplete:(id)arg1;
+- (void)wirelessResumeInit;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

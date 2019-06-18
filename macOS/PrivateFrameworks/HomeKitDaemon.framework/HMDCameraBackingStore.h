@@ -76,6 +76,7 @@
 - (void)_notifySubscribersOfAddedClipModel:(id)arg1 removedClipModel:(id)arg2 updatedClipModel:(id)arg3;
 - (void)_tearDownState;
 @property(readonly, getter=isOwnerUser) BOOL ownerUser;
+- (id)significantEventNotificationsWithUUIDs:(id)arg1;
 - (void)handleDeleteAllClipsMessage:(id)arg1;
 - (void)handleDeleteClipMessage:(id)arg1;
 - (void)handleFetchVideoSegmentsAssetContextMessage:(id)arg1;

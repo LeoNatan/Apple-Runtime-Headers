@@ -27,7 +27,7 @@ __attribute__((visibility("hidden")))
 - (void)destroyDatabase;
 - (BOOL)hasBeenCreated;
 - (BOOL)_finishedFetchingRecordMetadata:(id)arg1;
-- (void)handleUnknownRecordIDForDeserialize:(id)arg1;
+- (void)unblockRecordSavesWaitingOnRecordID:(id)arg1;
 - (void)finishedFetchingXattrSignatures:(id)arg1;
 - (BOOL)_saveSubResourceRecord:(id)arg1;
 - (BOOL)hasRecordDeletes;

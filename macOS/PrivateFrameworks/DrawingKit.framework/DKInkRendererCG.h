@@ -53,6 +53,8 @@ __attribute__((visibility("hidden")))
 - (void)beginStroke;
 - (void)dealloc;
 - (void)_commonInit;
+- (void)_updateAppearance;
+- (void)viewDidChangeEffectiveAppearance;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

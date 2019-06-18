@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class CNContact, NSArray, NSDictionary, NSImage, NSMutableArray, NSMutableDictionary, NSString, NSWindow;
+@class AOSUIProfilePictureStore, CNContact, NSArray, NSDictionary, NSImage, NSMutableArray, NSMutableDictionary, NSString, NSWindow;
 
 @interface MM_Account : NSObject
 {
@@ -19,6 +19,7 @@
     NSImage *_cachedImage;
     NSImage *_croppedImage;
     struct CGRect _imageCropRect;
+    AOSUIProfilePictureStore *_profilePictureStore;
 }
 
 + (id)accountWithID:(id)arg1 fetchAccountImage:(BOOL)arg2;
@@ -37,7 +38,6 @@
 - (void)_handleBeginMigrationNotification:(id)arg1;
 - (void)_handleServiceFailureNotification:(id)arg1;
 - (void)_handleServiceFailureForServiceID:(id)arg1 notification:(id)arg2;
-- (void)_fetchImageForAccount;
 - (BOOL)hasMailConfigured;
 - (id)appleAccount;
 - (void)handleAEEvents:(id)arg1;

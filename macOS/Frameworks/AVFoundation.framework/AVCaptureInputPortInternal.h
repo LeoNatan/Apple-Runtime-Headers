@@ -15,6 +15,8 @@ __attribute__((visibility("hidden")))
     NSString *mediaType;
     struct opaqueCMFormatDescription *formatDescription;
     BOOL enabled;
+    NSString *sourceDeviceType;
+    long long sourceDevicePosition;
     struct OpaqueCMIOGraph *graph;
     int node;
     unsigned int element;

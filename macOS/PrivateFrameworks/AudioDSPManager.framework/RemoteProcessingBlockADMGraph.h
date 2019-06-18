@@ -8,6 +8,7 @@
 
 @class VolumeManager;
 
+__attribute__((visibility("hidden")))
 @interface RemoteProcessingBlockADMGraph : RemoteProcessingBlockHostBase
 {
     struct GraphDescription mGraphDescription;

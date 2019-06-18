@@ -68,9 +68,11 @@
 - (void)_handleAlternateAssetURLWithFileURLs:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_handleLivePhotoBundleWithFileURLs:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_handleAssetURLWithFileURLs:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)_handleVideoAssetURL:(id)arg1 error:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_exportAlternateAssetWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_exportLivePhotoWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_exportAssetWithCompletionHandler:(CDUnknownBlockType)arg1;
+- (id)_exportVideoAssetWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (id)_defaultExportRequestOptions;
 - (void)_exportWithCompletionHandler:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSImage *placeholderImage;

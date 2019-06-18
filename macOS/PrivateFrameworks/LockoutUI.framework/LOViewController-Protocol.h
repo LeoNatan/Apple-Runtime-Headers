@@ -15,5 +15,7 @@
 @property(copy, nonatomic) NSString *bundleIdentifier;
 @property(nonatomic, getter=isForSnapshot) BOOL forSnapshot;
 - (void)_showRestrictionsPINControllerWithMainCompletion:(void (^)(BOOL, NSError *))arg1;
+- (void)setForSnapshot:(BOOL)arg1 withCompletionHandler:(void (^)(NSError *))arg2;
+- (void)setBundleIdentifier:(NSString *)arg1 withCompletionHandler:(void (^)(NSError *))arg2;
 @end
 

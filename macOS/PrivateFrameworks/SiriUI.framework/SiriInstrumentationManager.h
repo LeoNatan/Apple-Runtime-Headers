@@ -12,16 +12,16 @@
 @interface SiriInstrumentationManager : NSObject
 {
     NSObject<OS_dispatch_queue> *_queue;
+    int _currentInvocationSource;
     int _lastSiriUIStateSnapShot;
     AFAnalyticsTurnBasedInstrumentationContext *_currentInstrumentationTurnContext;
-    long long _eventSourceSnapShot;
     SAUIAssistantUtteranceView *_assistantUtteranceViewSnapShot;
 }
 
 + (id)sharedManager;
 @property int lastSiriUIStateSnapShot; // @synthesize lastSiriUIStateSnapShot=_lastSiriUIStateSnapShot;
 @property(retain) SAUIAssistantUtteranceView *assistantUtteranceViewSnapShot; // @synthesize assistantUtteranceViewSnapShot=_assistantUtteranceViewSnapShot;
-@property long long eventSourceSnapShot; // @synthesize eventSourceSnapShot=_eventSourceSnapShot;
+@property int currentInvocationSource; // @synthesize currentInvocationSource=_currentInvocationSource;
 @property(retain) AFAnalyticsTurnBasedInstrumentationContext *currentInstrumentationTurnContext; // @synthesize currentInstrumentationTurnContext=_currentInstrumentationTurnContext;
 - (void).cxx_destruct;
 - (unsigned int)audioDevice:(unsigned int)arg1 propertyUInt32:(unsigned int)arg2;
@@ -29,16 +29,19 @@
 - (void)emitTextToSpeechBeginEvent;
 - (void)emitPunchOutEventWithURL:(id)arg1 appID:(id)arg2 previousTurnIdentifier:(struct NSUUID *)arg3;
 - (void)emitPunchOutInvocationWithSiriViewController:(id)arg1;
+- (void)emitUUFRPresentedEventWith:(id)arg1 dialogIdentifier:(id)arg2 dialogPhase:(id)arg3;
 - (void)emitUUFRPresentedEventWith:(id)arg1 dialogPhase:(id)arg2;
 - (void)emitFinalSpeechTranscriptionEventWith:(id)arg1;
 - (void)emitPartialSpeechTranscriptionEventWith:(id)arg1;
 - (void)emitUIStateTransitionFromLastStateToDismissedState;
 - (void)emitUIStateTransitionEventWithFromState:(int)arg1 toState:(int)arg2;
-- (int)_determineInvocationActionFromRequestOptions:(id)arg1;
-- (int)_determineInvocationSourceFromRequestOptions:(id)arg1;
-- (void)emitInvocationEventUsingRequestOptions:(id)arg1 connection:(id)arg2;
+- (void)emitInvocationEventForTapToEdit:(id)arg1;
+- (void)setInvocationSourceForWaveformGlyphButtonPressed;
+- (void)emitInvocationEventForVoiceTriggerEnrollment;
+- (void)emitInvocationEventForGuideButtonPressed;
+- (void)emitInvocationEventUsingRequestOptions:(id)arg1;
+- (void)clearCurrentInstrumentationTurnContext;
 - (void)snapshotCurrentAssistantUtteranceView:(id)arg1;
-- (void)snapshotSiriEventSource:(long long)arg1;
 - (id)_startNewTurnWithLastTurn:(id)arg1;
 - (void)_emitInstrumentation:(id)arg1;
 - (id)_init;

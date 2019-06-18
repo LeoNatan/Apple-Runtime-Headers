@@ -29,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (id)_imageForApplePay;
 @property(retain, nonatomic) MKMapItem *mapItem;
 - (void)viewDidLoad;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

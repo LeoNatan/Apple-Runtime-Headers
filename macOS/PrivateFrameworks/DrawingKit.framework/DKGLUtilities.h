@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (void)setCurrentClearColor;
 + (BOOL)gpuAvailable;
 + (void)_postGLInactiveNotification;
 + (void)_postGLActiveNotification;

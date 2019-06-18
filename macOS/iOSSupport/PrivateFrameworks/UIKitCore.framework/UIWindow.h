@@ -160,6 +160,7 @@
 + (id)keyWindow;
 + (struct CGRect)constrainFrameToScreen:(struct CGRect)arg1;
 + (long long)_preferredStatusBarStyleInWindow:(id)arg1 withPartStyles:(id *)arg2 animationProvider:(id *)arg3;
++ (BOOL)_prefersStatusBarHiddenInWindow:(id)arg1 targetOrientation:(long long)arg2 animationProvider:(id *)arg3;
 + (BOOL)_prefersStatusBarHiddenInWindow:(id)arg1 animationProvider:(id *)arg2;
 @property(nonatomic, setter=_setContainedGestureRecognizersShouldRespectGestureServerInstructions:) BOOL _containedGestureRecognizersShouldRespectGestureServerInstructions; // @synthesize _containedGestureRecognizersShouldRespectGestureServerInstructions=__containedGestureRecognizersShouldRespectGestureServerInstructions;
 @property(readonly, nonatomic, getter=_focusEventRecognizer) _UIFocusEventRecognizer *focusEventRecognizer; // @synthesize focusEventRecognizer=_focusEventRecognizer;
@@ -314,7 +315,7 @@
 - (void)_setStateRestorationVerticalSizeClass:(long long)arg1 horizontalSizeClass:(long long)arg2;
 - (void)_propagateTraitCollectionChangedForStateRestoration;
 - (void)_willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
-- (void)_screenWillTransitionToTraitCollection:(id)arg1;
+- (void)_parentWillTransitionToTraitCollection:(id)arg1;
 - (BOOL)_shouldPropagateTraitCollectionChanges;
 - (id)_boundingPath;
 - (void)_setNeedsBoundingPathUpdate;
@@ -323,8 +324,8 @@
 - (void)_updateWindowTraitsAndNotify:(BOOL)arg1;
 - (void)_localOverrideTraitCollectionDidChangeWithPreviousTraitCollection:(id)arg1;
 - (void)_localOverrideTraitCollectionWillChange:(id)arg1;
-- (id)_traitCollectionForSize:(struct CGSize)arg1 screenCollection:(id)arg2 localOverrideCollection:(id)arg3;
-- (id)_traitCollectionForSize:(struct CGSize)arg1 screenCollection:(id)arg2;
+- (id)_traitCollectionForSize:(struct CGSize)arg1 parentCollection:(id)arg2 localOverrideCollection:(id)arg3;
+- (id)_traitCollectionForSize:(struct CGSize)arg1 parentCollection:(id)arg2;
 - (id)_traitCollectionForSize:(struct CGSize)arg1 screen:(id)arg2;
 - (id)_traitCollectionWhenRotated;
 - (void)_updateWindowTraits;

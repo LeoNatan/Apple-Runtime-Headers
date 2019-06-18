@@ -92,6 +92,7 @@
 - (void)cancel;
 - (void)runWithResultsHandler:(CDUnknownBlockType)arg1;
 - (id)initWithQueryTokens:(id)arg1 searchText:(id)arg2 useWildcardText:(BOOL)arg3 delegate:(id)arg4;
+@property(readonly, nonatomic) BOOL implicitTokenizationIncludeBaseParseResults;
 - (id)implicitlyTokenizedParsesWithBaseParse:(id)arg1;
 - (BOOL)_enumerateImplicitlyTokenizedParsesWithBaseParse:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
 

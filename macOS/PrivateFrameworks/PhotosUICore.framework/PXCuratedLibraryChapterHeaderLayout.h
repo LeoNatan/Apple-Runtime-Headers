@@ -6,30 +6,42 @@
 
 #import <PhotosUICore/PXGLayout.h>
 
+#import <PhotosUICore/PXChangeObserver-Protocol.h>
 #import <PhotosUICore/PXGNamedImageSource-Protocol.h>
 #import <PhotosUICore/PXGStringSource-Protocol.h>
 
-@class NSArray, NSDictionary, NSString, PXAssetCollectionReference, PXCuratedLibraryChapterHeaderLayoutSpec;
+@class NSArray, NSDictionary, NSString, PXAssetCollectionReference, PXCuratedLibraryChapterHeaderLayoutSpec, PXNumberAnimator;
 
-@interface PXCuratedLibraryChapterHeaderLayout : PXGLayout <PXGStringSource, PXGNamedImageSource>
+@interface PXCuratedLibraryChapterHeaderLayout : PXGLayout <PXChangeObserver, PXGStringSource, PXGNamedImageSource>
 {
     CDStruct_5f1286c4 _updateFlags;
-    unsigned short _textVersion;
-    struct CGRect _titleFramingRect;
-    struct CGRect _subtitleFramingRect;
+    unsigned short _titleVersion;
+    unsigned short _subtitleVersion;
     struct CGSize _chevronSize;
+    long long _alternateAppearanceFadeDirection;
+    double _alternateAppearanceFadeStartThresholdDistance;
     NSArray *_itemIdentifierBySpriteIndex;
+    BOOL _presentedAlternateAppearance;
     PXAssetCollectionReference *_assetCollectionReference;
     PXCuratedLibraryChapterHeaderLayoutSpec *_spec;
     NSString *_title;
     NSString *_subtitle;
     NSDictionary *_titleAttributes;
+    NSDictionary *_floatingTitleAttributes;
     NSDictionary *_subtitleAttributes;
+    NSDictionary *_floatingSubtitleAttributes;
+    PXNumberAnimator *_alternateAppearanceMixAnimator;
+    struct CGSize _titleSize;
+    struct CGSize _subtitleSize;
     struct PXSimpleIndexPath _sectionIndexPath;
     struct NSEdgeInsets _padding;
 }
 
+@property(nonatomic) BOOL presentedAlternateAppearance; // @synthesize presentedAlternateAppearance=_presentedAlternateAppearance;
+@property(readonly, nonatomic) PXNumberAnimator *alternateAppearanceMixAnimator; // @synthesize alternateAppearanceMixAnimator=_alternateAppearanceMixAnimator;
+@property(copy, nonatomic) NSDictionary *floatingSubtitleAttributes; // @synthesize floatingSubtitleAttributes=_floatingSubtitleAttributes;
 @property(copy, nonatomic) NSDictionary *subtitleAttributes; // @synthesize subtitleAttributes=_subtitleAttributes;
+@property(copy, nonatomic) NSDictionary *floatingTitleAttributes; // @synthesize floatingTitleAttributes=_floatingTitleAttributes;
 @property(copy, nonatomic) NSDictionary *titleAttributes; // @synthesize titleAttributes=_titleAttributes;
 @property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
 @property(copy, nonatomic) NSString *title; // @synthesize title=_title;
@@ -42,13 +54,17 @@
 - (long long)verticalAlignmentForStringAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (id)stringAttributesAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
 - (id)stringAtIndex:(unsigned int)arg1 inLayout:(id)arg2;
+- (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (id)hitTestResultForSpriteIndex:(unsigned int)arg1;
+- (void)referenceOptionsDidChange;
 - (void)screenScaleDidChange;
 - (void)referenceSizeDidChange;
 - (void)visibleRectDidChange;
-- (void)contentSizeDidChange;
+@property(readonly, nonatomic) struct CGSize subtitleSize; // @synthesize subtitleSize=_subtitleSize;
+@property(readonly, nonatomic) struct CGSize titleSize; // @synthesize titleSize=_titleSize;
 - (void)_updateTitleAndSubtitle;
-- (void)_updateLastBaseline;
+- (void)_invalidateAttributedSubtitle;
+- (void)_invalidateAttributedTitle;
 - (void)_updateSprites;
 - (void)update;
 - (id)init;

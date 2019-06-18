@@ -26,6 +26,7 @@
 - (void)finderViewSelectionDidChange:(FIFinderView *)arg1;
 - (void)finderView:(FIFinderView *)arg1 didChangeToDirectoryURL:(NSURL *)arg2;
 - (BOOL)finderView:(FIFinderView *)arg1 showAsPackageForURL:(NSURL *)arg2;
+- (BOOL)finderView:(FIFinderView *)arg1 canSelectURL:(NSURL *)arg2 itemIsContainer:(BOOL)arg3 itemIsPackage:(BOOL)arg4 pathExtension:(NSString *)arg5 itemHFSType:(unsigned int)arg6 typeIdentifier:(NSString *)arg7;
 - (BOOL)finderView:(FIFinderView *)arg1 canSelectURL:(NSURL *)arg2 itemIsContainer:(BOOL)arg3 itemIsPackage:(BOOL)arg4;
 - (BOOL)finderView:(FIFinderView *)arg1 canSelectURL:(NSURL *)arg2;
 - (BOOL)finderView:(FIFinderView *)arg1 shouldEnableURL:(NSURL *)arg2;

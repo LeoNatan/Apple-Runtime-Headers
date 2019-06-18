@@ -101,11 +101,12 @@
 - (id)_physicalURLForURL:(id)arg1;
 - (id)_providedItemsOperationQueue;
 - (id)_fileReactorID;
-- (void)extensionIndexer:(id)arg1 didIndexOneBatchWithError:(id)arg2 updatedItems:(id)arg3 deletedIDs:(id)arg4 anchor:(id)arg5;
+- (void)extensionIndexer:(id)arg1 didIndexOneBatchWithError:(id)arg2 updatedItems:(id)arg3 deletedIDs:(id)arg4 anchor:(id)arg5 anchorPersisted:(CDUnknownBlockType)arg6;
 - (void)extensionIndexer:(id)arg1 didChangeNeedsAuthentification:(BOOL)arg2;
 - (BOOL)checkFPFSRootReachable;
 - (id)resolveFPFSRootURL;
 - (BOOL)saveBookmarkDataForFPFSRoot;
+- (void)clearFPFSRootBookmark;
 - (BOOL)saveBookmarkDataForURL:(id)arg1;
 - (void)cleanupDomainKeepingArchiveFolder:(BOOL)arg1;
 - (void)invalidateSession;

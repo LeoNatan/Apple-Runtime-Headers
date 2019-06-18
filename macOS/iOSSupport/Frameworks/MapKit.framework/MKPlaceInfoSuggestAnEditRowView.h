@@ -6,16 +6,14 @@
 
 #import <MapKit/MKPlaceInfoContactRowView.h>
 
-@class MKVibrantLabel, NSLayoutConstraint, _MKRightImageButton;
+@class NSLayoutConstraint, _MKRightImageButton;
 
 __attribute__((visibility("hidden")))
 @interface MKPlaceInfoSuggestAnEditRowView : MKPlaceInfoContactRowView
 {
-    MKVibrantLabel *_titleLabel;
     _MKRightImageButton *_suggestAnEditButton;
     NSLayoutConstraint *_topToTitleVerticalConstraint;
-    NSLayoutConstraint *_titleToSubtitleVerticalConstraint;
-    NSLayoutConstraint *_subtitleToBottomVerticalConstraint;
+    NSLayoutConstraint *_titleToBottomVerticalConstraint;
     CDUnknownBlockType _selectionBlock;
 }
 

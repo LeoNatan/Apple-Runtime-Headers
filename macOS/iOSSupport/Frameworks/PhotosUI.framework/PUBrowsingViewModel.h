@@ -29,6 +29,7 @@
     BOOL _isScrubbing;
     BOOL _isScrolling;
     BOOL _isAnimatingAnyTransition;
+    BOOL _isAttemptingToPlayVideoOverlay;
     BOOL _accessoryViewsDefaultVisibility;
     BOOL _isChromeVisible;
     BOOL _presentingOverOneUp;
@@ -69,6 +70,7 @@
 @property(nonatomic, setter=_setLastChromeVisibilityChangeReason:) long long lastChromeVisibilityChangeReason; // @synthesize lastChromeVisibilityChangeReason=_lastChromeVisibilityChangeReason;
 @property(nonatomic, setter=setChromeVisible:) BOOL isChromeVisible; // @synthesize isChromeVisible=_isChromeVisible;
 @property(nonatomic) BOOL accessoryViewsDefaultVisibility; // @synthesize accessoryViewsDefaultVisibility=_accessoryViewsDefaultVisibility;
+@property(nonatomic) BOOL isAttemptingToPlayVideoOverlay; // @synthesize isAttemptingToPlayVideoOverlay=_isAttemptingToPlayVideoOverlay;
 @property(nonatomic) long long videoOverlayPlayState; // @synthesize videoOverlayPlayState=_videoOverlayPlayState;
 @property(nonatomic, setter=_setAnimatingAnyTransition:) BOOL isAnimatingAnyTransition; // @synthesize isAnimatingAnyTransition=_isAnimatingAnyTransition;
 @property(nonatomic) BOOL isScrolling; // @synthesize isScrolling=_isScrolling;

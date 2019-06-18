@@ -17,8 +17,8 @@
     PKInk *_ink;
     UIImageView *_colorIndicatorImageView;
     UIImage *_colorIndicatorImageUp;
-    UIImage *_colorIndicatorRight;
-    UIImage *_colorIndicatorLeft;
+    UIImage *_colorIndicatorImageRight;
+    UIImage *_colorIndicatorImageLeft;
     UIImageView *_tipIndicatorImageView;
     UIImage *_toolTipImageUp;
     UIImage *_toolTipImageRight;
@@ -42,8 +42,8 @@
 @property(retain, nonatomic) UIImage *toolTipImageRight; // @synthesize toolTipImageRight=_toolTipImageRight;
 @property(retain, nonatomic) UIImage *toolTipImageUp; // @synthesize toolTipImageUp=_toolTipImageUp;
 @property(retain, nonatomic) UIImageView *tipIndicatorImageView; // @synthesize tipIndicatorImageView=_tipIndicatorImageView;
-@property(retain, nonatomic) UIImage *colorIndicatorLeft; // @synthesize colorIndicatorLeft=_colorIndicatorLeft;
-@property(retain, nonatomic) UIImage *colorIndicatorRight; // @synthesize colorIndicatorRight=_colorIndicatorRight;
+@property(retain, nonatomic) UIImage *colorIndicatorImageLeft; // @synthesize colorIndicatorImageLeft=_colorIndicatorImageLeft;
+@property(retain, nonatomic) UIImage *colorIndicatorImageRight; // @synthesize colorIndicatorImageRight=_colorIndicatorImageRight;
 @property(retain, nonatomic) UIImage *colorIndicatorImageUp; // @synthesize colorIndicatorImageUp=_colorIndicatorImageUp;
 @property(retain, nonatomic) UIImageView *colorIndicatorImageView; // @synthesize colorIndicatorImageView=_colorIndicatorImageView;
 @property(retain, nonatomic) PKInk *ink; // @synthesize ink=_ink;
@@ -55,6 +55,8 @@
 - (void)setInkWeight:(double)arg1;
 - (void)_updateOpacityLabel;
 - (void)setInkColor:(id)arg1;
+- (void)_reloadToolImage;
+- (void)_updateToolColorBandAndTipImageViews;
 - (void)setEdgeLocation:(unsigned long long)arg1;
 - (void)updateConstraints;
 - (double)_bandVerticalOffset;

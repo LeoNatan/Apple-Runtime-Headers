@@ -10,9 +10,9 @@
 
 @protocol NFCTagReaderSessionDelegate <NSObject>
 - (void)tagReaderSession:(NFCTagReaderSession *)arg1 didInvalidateWithError:(NSError *)arg2;
-- (void)tagReaderSessionDidBecomeActive:(NFCTagReaderSession *)arg1;
 
 @optional
 - (void)tagReaderSession:(NFCTagReaderSession *)arg1 didDetectTags:(NSArray *)arg2;
+- (void)tagReaderSessionDidBecomeActive:(NFCTagReaderSession *)arg1;
 @end
 

@@ -6,7 +6,9 @@
 
 #import <Foundation/NSArray.h>
 
-@interface NSArray (CRKGenericAdditions)
+#import <ClassroomKit/CRKJSONRepresentable-Protocol.h>
+
+@interface NSArray (CRKGenericAdditions) <CRKJSONRepresentable>
 - (BOOL)crk_startsWith:(id)arg1;
 - (id)crk_partitionUsingKeyGenerator:(CDUnknownBlockType)arg1 valueGenerator:(CDUnknownBlockType)arg2;
 - (id)crk_sortedSubarrayWithRange:(struct _NSRange)arg1 comparator:(CDUnknownBlockType)arg2;
@@ -16,5 +18,6 @@
 - (id)crk_arrayByRemovingObject:(id)arg1;
 - (id)crk_mapUsingBlock:(CDUnknownBlockType)arg1;
 - (id)crk_filterUsingBlock:(CDUnknownBlockType)arg1;
+- (id)crk_JSONRepresentationWithPrettyPrinting:(BOOL)arg1 sortKeys:(BOOL)arg2;
 @end
 

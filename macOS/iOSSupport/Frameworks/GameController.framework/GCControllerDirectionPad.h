@@ -11,6 +11,8 @@
 @interface GCControllerDirectionPad : GCControllerElement
 {
     NSString *_descriptionName;
+    _Bool _wasZeroed;
+    int _timesPressed;
     BOOL _nonAnalog;
     CDUnknownBlockType _valueChangedHandler;
     GCControllerAxisInput *_xAxis;
@@ -22,6 +24,7 @@
 @property(retain, nonatomic) GCControllerAxisInput *xAxis; // @synthesize xAxis=_xAxis;
 @property(copy, nonatomic) CDUnknownBlockType valueChangedHandler; // @synthesize valueChangedHandler=_valueChangedHandler;
 - (void).cxx_destruct;
+- (int)getAndResetTimesPressed;
 - (void)setValueForXAxis:(float)arg1 yAxis:(float)arg2;
 @property(readonly, nonatomic) GCControllerButtonInput *right;
 @property(readonly, nonatomic) GCControllerButtonInput *left;

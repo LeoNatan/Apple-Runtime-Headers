@@ -6,17 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class MPSNDArray, NSArray;
+@class NSArray, NSMutableArray;
 
 @interface MLPNDArrayLossLabels : NSObject
 {
-    MPSNDArray *_reductionSumResult;
+    NSMutableArray *_largeReductionSumResult;
+    NSMutableArray *_smallReductionSumResult;
     NSArray *_labels;
 }
 
 @property(retain) NSArray *labels; // @synthesize labels=_labels;
-@property(retain) MPSNDArray *reductionSumResult; // @synthesize reductionSumResult=_reductionSumResult;
+@property(retain) NSMutableArray *smallReductionSumResult; // @synthesize smallReductionSumResult=_smallReductionSumResult;
+@property(retain) NSMutableArray *largeReductionSumResult; // @synthesize largeReductionSumResult=_largeReductionSumResult;
 - (void).cxx_destruct;
+- (id)init;
 
 @end
 

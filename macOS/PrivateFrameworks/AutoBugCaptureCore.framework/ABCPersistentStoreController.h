@@ -27,11 +27,13 @@ __attribute__((visibility("hidden")))
 - (void)removeCaseStoragesWithUUIDs:(id)arg1;
 - (void)caseAttachmentsForDiagnosticCaseIDs:(id)arg1 queue:(id)arg2 reply:(CDUnknownBlockType)arg3;
 - (void)caseAttachmentsForAllDiagnosticCasesWithQueue:(id)arg1 reply:(CDUnknownBlockType)arg2;
+- (void)cleanupUploadRecord;
 - (void)cleanupDiagnosticCaseStorage;
 - (void)cleanupDiagnosticCaseUsage;
 - (void)shutdown;
 - (void)save:(BOOL)arg1;
 - (void)save;
+- (id)uploadRecordAnalytics;
 - (id)caseUsageAnalytics;
 - (id)caseStorageAnalytics;
 - (BOOL)prepareWorkspaceWithDirectoryPath:(id)arg1;

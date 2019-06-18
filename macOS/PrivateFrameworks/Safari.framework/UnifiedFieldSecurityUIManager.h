@@ -15,17 +15,19 @@ __attribute__((visibility("hidden")))
     NSArray *_certificateChain;
     NSString *_evCertificateOrganizationName;
     NSString *_hostName;
+    RetainPtr_e78bdbf8 _serverTrust;
     id <UnifiedFieldSecurityUIManagerDelegate> _delegate;
 }
 
 + (BOOL)shouldShowSecurityUIInUnifiedFieldForBrowserContentViewController:(id)arg1;
 @property __weak id <UnifiedFieldSecurityUIManagerDelegate> delegate; // @synthesize delegate=_delegate;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_certificateTrustSheetDidEnd:(id)arg1 returnCode:(long long)arg2 contextInfo:(void *)arg3;
 - (void)_showCertificateSheetWithHostname:(id)arg1 cerficiateChain:(id)arg2 evCertificateOrganizationName:(id)arg3 inWindow:(id)arg4;
 - (void)showCertificateSheetInWindow:(id)arg1;
 - (id)init;
-- (id)initWithCertificateChain:(id)arg1 evCertificateOrganizationName:(id)arg2 hostName:(id)arg3;
+- (id)initWithCertificateChain:(id)arg1 evCertificateOrganizationName:(id)arg2 hostName:(id)arg3 serverTrust:(struct __SecTrust *)arg4;
 - (id)initWithBrowserViewController:(id)arg1;
 
 @end

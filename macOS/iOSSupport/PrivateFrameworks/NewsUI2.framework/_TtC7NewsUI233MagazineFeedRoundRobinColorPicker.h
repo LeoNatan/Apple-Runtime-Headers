@@ -9,6 +9,7 @@
 @interface _TtC7NewsUI233MagazineFeedRoundRobinColorPicker : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: colors
+    // Error parsing type: , name: darkStyleColors
     // Error parsing type: , name: currentColorIndex
 }
 

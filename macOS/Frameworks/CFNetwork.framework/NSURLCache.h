@@ -33,7 +33,7 @@
 - (id)cachedResponseForRequest:(id)arg1;
 - (void)flushWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithMemoryCapacity:(unsigned long long)arg1 diskCapacity:(unsigned long long)arg2 diskPath:(id)arg3;
-- (id)_initWithMemoryCapacity:(unsigned long long)arg1 diskCapacity:(unsigned long long)arg2 directoryURL:(id)arg3;
+- (id)initWithMemoryCapacity:(unsigned long long)arg1 diskCapacity:(unsigned long long)arg2 directoryURL:(id)arg3;
 -     // Error parsing type: @24@0:8^{_CFURLCache={__CFRuntimeBase=QAQ}{shared_ptr<__CFURLCache>=^{__CFURLCache}^{__shared_weak_count}}}16, name: _initWithExistingCFURLCache:
 -     // Error parsing type: @24@0:8^{_CFURLCache={__CFRuntimeBase=QAQ}{shared_ptr<__CFURLCache>=^{__CFURLCache}^{__shared_weak_count}}}16, name: initWithExistingSharedCFURLCache:
 - (id)_initVaryHeaderEnabledWithPath:(id)arg1;

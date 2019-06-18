@@ -17,8 +17,10 @@
 @property(readonly) BOOL teamIDNone;
 @property(readonly) BOOL teamIDPlatformBinary;
 @property(readonly) NSString *teamID;
+@property(readonly) NSString *usageDescription;
 @property(readonly) NSString *developerName;
 @property(readonly) NSString *applicationName;
+@property(readonly) NSString *extensionDisplayName;
 @property(readonly) NSString *identifier;
 @end
 

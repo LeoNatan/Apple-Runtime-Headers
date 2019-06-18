@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
     BOOL _needsContainerMetadataSyncDown;
     BOOL _needsSharedDBSyncDown;
+    BOOL _hasCaughtUpAtLeastOnce;
     CKServerChangeToken *_serverChangeToken;
     NSDate *_lastSyncDate;
     CKOperationGroup *_ckGroup;
@@ -21,6 +22,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)supportsSecureCoding;
 + (id)loadFromClientStateInSession:(id)arg1 options:(id)arg2;
 @property(retain, nonatomic) CKOperationGroup *ckGroup; // @synthesize ckGroup=_ckGroup;
+@property(nonatomic) BOOL hasCaughtUpAtLeastOnce; // @synthesize hasCaughtUpAtLeastOnce=_hasCaughtUpAtLeastOnce;
 @property(nonatomic) BOOL needsSharedDBSyncDown; // @synthesize needsSharedDBSyncDown=_needsSharedDBSyncDown;
 @property(nonatomic) BOOL needsContainerMetadataSyncDown; // @synthesize needsContainerMetadataSyncDown=_needsContainerMetadataSyncDown;
 @property(retain) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;

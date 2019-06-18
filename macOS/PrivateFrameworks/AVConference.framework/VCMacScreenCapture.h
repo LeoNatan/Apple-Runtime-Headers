@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     struct __CFAllocator *_dirtyRectsArrayAllocator;
 }
 
+@property(retain) struct opaqueCMSampleBuffer *previousCompleteFrame;
 - (int)frameBecameAvailableCount:(int *)arg1 figBufferQueueEmptyCount:(int *)arg2 figBufferQueueErrorCount:(int *)arg3;
 - (BOOL)cameraSupportsFormatWidth:(int)arg1 height:(int)arg2;
 - (BOOL)isFrontCamera;

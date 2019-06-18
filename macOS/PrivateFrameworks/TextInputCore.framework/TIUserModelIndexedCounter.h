@@ -20,6 +20,7 @@
 - (void)updateWithLoadedValue:(int)arg1 forIndex:(int)arg2;
 - (void)update:(int)arg1 forIndex:(int)arg2;
 @property(readonly, nonatomic) NSNumber *count;
+@property(readonly, nonatomic) NSArray *currentCounts;
 @property(readonly, nonatomic) NSArray *counts;
 - (void)doPersist:(id)arg1 forDate:(id)arg2 forInputMode:(id)arg3 forContext:(id)arg4;
 - (void)setupBuckets;

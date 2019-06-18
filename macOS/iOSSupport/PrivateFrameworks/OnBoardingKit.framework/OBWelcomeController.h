@@ -9,7 +9,7 @@
 #import <OnBoardingKit/OBNavigationBarTitleTransistor-Protocol.h>
 #import <OnBoardingKit/UIScrollViewDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, OBBulletedList, OBButtonTray, OBHeaderView, OBNavigationBarDisplayState, UINavigationController, UIScrollView, UIView;
+@class NSLayoutConstraint, NSString, OBBulletedList, OBButtonTray, OBContentView, OBHeaderView, OBNavigationBarDisplayState, UINavigationController, UIScrollView, UIView;
 
 @interface OBWelcomeController : OBBaseWelcomeController <UIScrollViewDelegate, OBNavigationBarTitleTransistor>
 {
@@ -17,7 +17,7 @@
     BOOL _scrollingDisabled;
     BOOL __shouldInlineButtontray;
     OBHeaderView *_headerView;
-    UIView *_contentView;
+    OBContentView *_contentView;
     OBButtonTray *_buttonTray;
     long long _contentViewLayout;
     UIView *_bleedView;
@@ -49,7 +49,7 @@
 @property(nonatomic, getter=isScrollingDisabled) BOOL scrollingDisabled; // @synthesize scrollingDisabled=_scrollingDisabled;
 @property(nonatomic) BOOL darkMode; // @synthesize darkMode=_darkMode;
 @property(retain, nonatomic) OBButtonTray *buttonTray; // @synthesize buttonTray=_buttonTray;
-@property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
+@property(retain, nonatomic) OBContentView *contentView; // @synthesize contentView=_contentView;
 @property(retain, nonatomic) OBHeaderView *headerView; // @synthesize headerView=_headerView;
 - (void).cxx_destruct;
 - (void)restoreNavigationBarAppearance;
@@ -65,6 +65,7 @@
 - (double)_headerTopOffset;
 - (void)_updateHeaderTopOffsetConstraint;
 - (double)_contentViewHeight;
+- (double)contentViewsTopPaddingFromBottomOfHeader;
 - (void)setupBulletedListIfNeeded;
 - (BOOL)shouldInlineButtonTray;
 - (long long)preferredUserInterfaceStyle;

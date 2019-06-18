@@ -30,6 +30,7 @@
     BOOL _usesSocketMonitoring;
     unsigned char _manageFlags;
     NSObject<OS_dispatch_source> *_deathSource;
+    NSObject<OS_dispatch_source> *_execSource;
     BOOL _systemShell;
     BOOL _terminating;
     BOOL _suspended;
@@ -40,8 +41,10 @@
     RBSProcessExitStatus *_intendedExitStatus;
     id <RBBundleProperties> _bundleProperties;
     BSAuditToken *_auditToken;
+    NSString *_underlyingAssertion;
 }
 
+@property(readonly, nonatomic) NSString *underlyingAssertion; // @synthesize underlyingAssertion=_underlyingAssertion;
 @property(readonly, nonatomic, getter=isSuspended) BOOL suspended; // @synthesize suspended=_suspended;
 @property(nonatomic, getter=isTerminating) BOOL terminating; // @synthesize terminating=_terminating;
 @property(readonly, nonatomic, getter=isSystemShell) BOOL systemShell; // @synthesize systemShell=_systemShell;
@@ -70,6 +73,9 @@
 - (id)_lock_allowedLockedFilePaths;
 - (id)_lock_lockedFilePathsIgnoringAllowed;
 - (void)_lock_applyCPULimits;
+- (void)_lock_restoreCPULimitDefaults;
+- (void)_lock_disableCPULimits;
+- (void)_lock_setCPULimits:(CDStruct_1ef3fb1f *)arg1 violationPolicy:(unsigned long long)arg2;
 - (void)_lock_applyJetsamPriority;
 - (void)_lock_applyGPU;
 - (void)_lock_applyRole;

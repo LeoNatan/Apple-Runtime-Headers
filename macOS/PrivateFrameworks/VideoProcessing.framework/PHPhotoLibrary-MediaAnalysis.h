@@ -13,6 +13,7 @@
 - (long long)vcp_isCPLDownloadComplete;
 - (long long)vcp_isCPLSyncComplete;
 - (long long)vcp_isCPLEnabled;
+- (unsigned long long)vcp_assetCountWithInternalPredicate:(id)arg1;
 - (unsigned long long)vcp_assetCountWithMediaType:(long long)arg1;
 - (unsigned long long)vcp_assetCount;
 - (id)vcp_mediaAnalysisDatabaseFilepath;

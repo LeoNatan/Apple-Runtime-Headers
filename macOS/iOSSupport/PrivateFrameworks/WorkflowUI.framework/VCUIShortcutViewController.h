@@ -10,74 +10,73 @@
 #import <WorkflowUI/UITableViewDataSource-Protocol.h>
 #import <WorkflowUI/UITableViewDelegate-Protocol.h>
 #import <WorkflowUI/UITextFieldDelegate-Protocol.h>
+#import <WorkflowUI/WFWorkflowViewControllerDelegate-Protocol.h>
 
-@class NSLayoutConstraint, NSString, OBLinkTrayButton, OBTableWelcomeController, OBTrayButton, UIBarButtonItem, UIColor, UIImage, UINavigationController, UITableView, UIView, WFDatabase, WFWorkflow;
+@class NSLayoutConstraint, NSString, OBLinkTrayButton, OBTrayButton, OBWelcomeController, UIBarButtonItem, UINavigationController, UITableView, UIView, WFDatabase, WFWorkflow, WFWorkflowIcon, WFWorkflowViewController;
 @protocol VCUIShortcutViewControllerDelegate;
 
-@interface VCUIShortcutViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UINavigationControllerDelegate>
+@interface VCUIShortcutViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, UINavigationControllerDelegate, WFWorkflowViewControllerDelegate>
 {
-    BOOL _shouldShowDontAddButton;
     BOOL _hasAppeared;
     id <VCUIShortcutViewControllerDelegate> _delegate;
-    OBTableWelcomeController *_welcomeController;
+    OBWelcomeController *_welcomeController;
     UINavigationController *_navigationController;
-    UIView *_customView;
-    UIColor *_buttonColor;
     UIBarButtonItem *_rightBarButtonItem;
-    NSString *_shortcutName;
-    NSLayoutConstraint *_tableViewHeightAnchor;
-    UITableView *_tableView;
-    OBTrayButton *_addButton;
-    OBLinkTrayButton *_deleteButton;
-    NSString *_customTitle;
-    NSString *_customSubtitle;
-    NSString *_customButtonTitle;
-    NSString *_customNameSectionTitle;
-    UIImage *_customIcon;
-    NSString *_buttonCaptionTextToAdd;
     WFWorkflow *_workflow;
+    NSString *_shortcutName;
+    NSString *_shortcutDescription;
+    WFWorkflowIcon *_shortcutIcon;
+    unsigned long long _mode;
+    NSLayoutConstraint *_tableViewHeightConstraint;
+    UITableView *_tableView;
+    NSLayoutConstraint *_customViewContainerHeightConstraint;
+    UIView *_customViewContainer;
+    UIView *_customView;
+    OBTrayButton *_primaryButton;
+    OBLinkTrayButton *_secondaryButton;
     WFDatabase *_database;
-    NSString *_actionTitle;
+    WFWorkflowViewController *_inlineWorkflowViewController;
 }
 
 @property(nonatomic) BOOL hasAppeared; // @synthesize hasAppeared=_hasAppeared;
-@property(copy, nonatomic) NSString *actionTitle; // @synthesize actionTitle=_actionTitle;
+@property(retain, nonatomic) WFWorkflowViewController *inlineWorkflowViewController; // @synthesize inlineWorkflowViewController=_inlineWorkflowViewController;
 @property(readonly, nonatomic) WFDatabase *database; // @synthesize database=_database;
-@property(readonly, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
-@property(copy, nonatomic) NSString *buttonCaptionTextToAdd; // @synthesize buttonCaptionTextToAdd=_buttonCaptionTextToAdd;
-@property(retain, nonatomic) UIImage *customIcon; // @synthesize customIcon=_customIcon;
-@property(copy, nonatomic) NSString *customNameSectionTitle; // @synthesize customNameSectionTitle=_customNameSectionTitle;
-@property(copy, nonatomic) NSString *customButtonTitle; // @synthesize customButtonTitle=_customButtonTitle;
-@property(copy, nonatomic) NSString *customSubtitle; // @synthesize customSubtitle=_customSubtitle;
-@property(copy, nonatomic) NSString *customTitle; // @synthesize customTitle=_customTitle;
-@property(retain, nonatomic) OBLinkTrayButton *deleteButton; // @synthesize deleteButton=_deleteButton;
-@property(retain, nonatomic) OBTrayButton *addButton; // @synthesize addButton=_addButton;
-@property(retain, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
-@property(retain, nonatomic) NSLayoutConstraint *tableViewHeightAnchor; // @synthesize tableViewHeightAnchor=_tableViewHeightAnchor;
-@property(copy, nonatomic) NSString *shortcutName; // @synthesize shortcutName=_shortcutName;
-@property(retain, nonatomic) UIBarButtonItem *rightBarButtonItem; // @synthesize rightBarButtonItem=_rightBarButtonItem;
-@property(nonatomic) BOOL shouldShowDontAddButton; // @synthesize shouldShowDontAddButton=_shouldShowDontAddButton;
-@property(retain, nonatomic) UIColor *buttonColor; // @synthesize buttonColor=_buttonColor;
+@property(retain, nonatomic) OBLinkTrayButton *secondaryButton; // @synthesize secondaryButton=_secondaryButton;
+@property(retain, nonatomic) OBTrayButton *primaryButton; // @synthesize primaryButton=_primaryButton;
 @property(retain, nonatomic) UIView *customView; // @synthesize customView=_customView;
-@property(retain, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
-@property(retain, nonatomic) OBTableWelcomeController *welcomeController; // @synthesize welcomeController=_welcomeController;
+@property(readonly, nonatomic) UIView *customViewContainer; // @synthesize customViewContainer=_customViewContainer;
+@property(readonly, nonatomic) NSLayoutConstraint *customViewContainerHeightConstraint; // @synthesize customViewContainerHeightConstraint=_customViewContainerHeightConstraint;
+@property(readonly, nonatomic) UITableView *tableView; // @synthesize tableView=_tableView;
+@property(readonly, nonatomic) NSLayoutConstraint *tableViewHeightConstraint; // @synthesize tableViewHeightConstraint=_tableViewHeightConstraint;
+@property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
+@property(copy, nonatomic) WFWorkflowIcon *shortcutIcon; // @synthesize shortcutIcon=_shortcutIcon;
+@property(copy, nonatomic) NSString *shortcutDescription; // @synthesize shortcutDescription=_shortcutDescription;
+@property(copy, nonatomic) NSString *shortcutName; // @synthesize shortcutName=_shortcutName;
+@property(retain, nonatomic) WFWorkflow *workflow; // @synthesize workflow=_workflow;
+@property(retain, nonatomic) UIBarButtonItem *rightBarButtonItem; // @synthesize rightBarButtonItem=_rightBarButtonItem;
+@property(readonly, nonatomic) UINavigationController *navigationController; // @synthesize navigationController=_navigationController;
+@property(readonly, nonatomic) OBWelcomeController *welcomeController; // @synthesize welcomeController=_welcomeController;
 @property(nonatomic) __weak id <VCUIShortcutViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)keyboardWillChange:(id)arg1;
-- (void)updateAddButton;
-- (BOOL)shouldAllowEditingAction;
+- (void)updatePrimaryButton;
 - (void)didTapCancel;
-- (void)didTapDeleteButton;
-- (void)didTapDontAddButton;
-- (void)didTapAddButton;
+- (void)didTapSecondaryButton;
+- (void)didTapPrimaryButton;
 - (id)nameCell;
 - (id)applicationBundleIdentifier;
-- (id)headerImage;
-- (id)headerSubtitle;
-- (id)headerTitle;
+- (BOOL)shouldShowActionCell;
 - (id)nameSectionTitle;
-- (id)addButtonTitle;
-- (id)appIconImage;
+- (id)headerImage;
+- (id)captionText;
+- (id)secondaryButtonTintColor;
+- (id)secondaryButtonTitle;
+- (id)primaryButtonTintColor;
+- (id)primaryButtonTitle;
+- (id)shortcutPreview;
+- (id)shortcutPreviewImage;
+- (id)subtitle;
+- (id)title;
 - (void)textFieldDidChange:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -86,16 +85,18 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)numberOfSectionsInTableView:(id)arg1;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
+- (void)workflowViewController:(id)arg1 didChangeContentSize:(struct CGSize)arg2;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
-- (void)addButtonCaptionText:(id)arg1;
+- (void)setCustomView:(id)arg1 withHeight:(double)arg2;
+- (void)updateCustomView;
+- (unsigned long long)currentPreviewMode;
 - (void)dealloc;
-- (id)initWithCustomTitle:(id)arg1 customSubtitle:(id)arg2 customButtonTitle:(id)arg3 customNameSectionTitle:(id)arg4 customIcon:(id)arg5;
-- (id)initWithWorkflow:(id)arg1 database:(id)arg2;
+- (id)initWithWorkflow:(id)arg1 database:(id)arg2 mode:(unsigned long long)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

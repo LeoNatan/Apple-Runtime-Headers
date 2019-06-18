@@ -6,30 +6,31 @@
 
 #import <objc/NSObject.h>
 
+#import <WiFiPolicy/NSCopying-Protocol.h>
 #import <WiFiPolicy/TBFetchRequestDescriptor-Protocol.h>
 
-@class GEOWiFiQualityNetworkSearch, NSDate, NSPredicate, NSSet, NSString;
-@protocol TBLocalFetchRequestDescriptor;
+@class GEOWiFiQualityNetworkSearch, NSDate, NSPredicate, NSSet, NSString, TBLocalFetchRequestDescriptor;
 
-@interface TBNetworkFetchRequestDescriptor : NSObject <TBFetchRequestDescriptor>
+@interface TBNetworkFetchRequestDescriptor : NSObject <TBFetchRequestDescriptor, NSCopying>
 {
     NSPredicate *_localFetchPredicate;
     GEOWiFiQualityNetworkSearch *_remoteRequest;
     unsigned long long _type;
     NSDate *_maxCacheAge;
-    id <TBLocalFetchRequestDescriptor> _localFetchDescriptor;
-    id <TBLocalFetchRequestDescriptor> _preferLocalFetchDescriptor;
+    TBLocalFetchRequestDescriptor *_localFetchDescriptor;
+    TBLocalFetchRequestDescriptor *_preferLocalFetchDescriptor;
     NSSet *_bssids;
 }
 
 @property(retain, nonatomic) NSSet *bssids; // @synthesize bssids=_bssids;
-@property(readonly, nonatomic) id <TBLocalFetchRequestDescriptor> preferLocalFetchDescriptor; // @synthesize preferLocalFetchDescriptor=_preferLocalFetchDescriptor;
-@property(readonly, nonatomic) id <TBLocalFetchRequestDescriptor> localFetchDescriptor; // @synthesize localFetchDescriptor=_localFetchDescriptor;
+@property(retain, nonatomic) TBLocalFetchRequestDescriptor *preferLocalFetchDescriptor; // @synthesize preferLocalFetchDescriptor=_preferLocalFetchDescriptor;
+@property(retain, nonatomic) TBLocalFetchRequestDescriptor *localFetchDescriptor; // @synthesize localFetchDescriptor=_localFetchDescriptor;
 @property(retain, nonatomic) NSDate *maxCacheAge; // @synthesize maxCacheAge=_maxCacheAge;
 @property(nonatomic) unsigned long long type; // @synthesize type=_type;
 @property(retain, nonatomic) GEOWiFiQualityNetworkSearch *remoteRequest; // @synthesize remoteRequest=_remoteRequest;
 @property(retain, nonatomic) NSPredicate *localFetchPredicate; // @synthesize localFetchPredicate=_localFetchPredicate;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 @property(readonly, nonatomic) Class remoteRequestClass;
 - (id)initWithBSSIDs:(id)arg1 maxCacheAge:(id)arg2;
 - (id)initWithBSSIDs:(id)arg1;
@@ -40,6 +41,7 @@
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) NSSet *tileItems;
 
 @end
 

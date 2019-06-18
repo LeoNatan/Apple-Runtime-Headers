@@ -19,6 +19,8 @@
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_performAction;
+- (BOOL)_acceptBoolMenuVisit:(CDUnknownBlockType)arg1 commandVisit:(CDUnknownBlockType)arg2 actionVisit:(CDUnknownBlockType)arg3;
+- (void)_acceptMenuVisit:(CDUnknownBlockType)arg1 commandVisit:(CDUnknownBlockType)arg2 actionVisit:(CDUnknownBlockType)arg3;
 - (id)_initWithTitle:(id)arg1 image:(id)arg2 options:(unsigned long long)arg3 handler:(CDUnknownBlockType)arg4;
 - (id)_spiRepresentation;
 

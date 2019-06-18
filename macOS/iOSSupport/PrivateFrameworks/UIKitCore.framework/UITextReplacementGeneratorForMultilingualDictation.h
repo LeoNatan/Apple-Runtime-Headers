@@ -6,18 +6,10 @@
 
 #import <UIKitCore/UITextReplacementGenerator.h>
 
-@class NSArray;
-
 __attribute__((visibility("hidden")))
 @interface UITextReplacementGeneratorForMultilingualDictation : UITextReplacementGenerator
 {
-    NSArray *_multilingualAlternatives;
 }
-
-@property(readonly, nonatomic) NSArray *multilingualAlternatives; // @synthesize multilingualAlternatives=_multilingualAlternatives;
-- (void).cxx_destruct;
-- (id)replacements;
-- (id)initWithMultilingualAlternatives:(id)arg1 stringToReplace:(id)arg2 replacementRange:(id)arg3;
 
 @end
 

@@ -28,6 +28,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *mediaView; // @synthesize mediaView=_mediaView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) long long textBodyMaxLines;
+@property(readonly, nonatomic) double mediaLayoutWidthAdjustment;
 @property(readonly, nonatomic) double pagingInterval;
 @property(readonly, nonatomic) NSArray *mediaContents;
 @property(readonly, nonatomic) BOOL presentsFullScreen;
@@ -45,6 +47,7 @@ __attribute__((visibility("hidden")))
 - (void)containerForAlertPresentation;
 - (void)containerForFullScreenView;
 - (void)containerForKeyboardView;
+- (struct UIEdgeInsets)safeAreaInsets;
 - (void)configContainerView;
 - (void)configBackgroundBlur;
 - (double)containerBottomPadding;

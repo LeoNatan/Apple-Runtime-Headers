@@ -25,6 +25,7 @@
 + (id)contextForBTLE;
 + (id)contextForJarvisWithDeviceId:(id)arg1;
 + (id)contextForBuiltInVoiceTrigger;
++ (id)contextForOpportuneSpeakerListener;
 + (id)contextForHearstVoiceTriggerWithDeviceId:(id)arg1;
 @property(nonatomic) BOOL alwaysUseRemoteBuiltInMic; // @synthesize alwaysUseRemoteBuiltInMic=_alwaysUseRemoteBuiltInMic;
 @property(retain, nonatomic) NSString *deviceId; // @synthesize deviceId=_deviceId;

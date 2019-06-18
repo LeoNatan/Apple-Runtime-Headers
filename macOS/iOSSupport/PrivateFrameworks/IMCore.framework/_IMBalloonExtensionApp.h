@@ -21,6 +21,7 @@
 - (id)plugin;
 - (void)setIsEnabled:(BOOL)arg1;
 - (BOOL)isEnabled;
+- (BOOL)showableInBrowser;
 - (BOOL)showInBrowser;
 - (id)applicationType;
 - (BOOL)isBetaPlugin;

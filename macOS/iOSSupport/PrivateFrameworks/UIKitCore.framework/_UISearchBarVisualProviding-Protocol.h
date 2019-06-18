@@ -119,6 +119,8 @@
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (double)defaultHeightForOrientation:(long long)arg1;
 - (void)updateEffectiveContentInset;
+- (void)getOverrideContentInsets:(struct UIEdgeInsets *)arg1 overriddenEdges:(unsigned long long *)arg2;
+- (void)setOverrideContentInsets:(struct UIEdgeInsets)arg1 forRectEdges:(unsigned long long)arg2;
 - (void)updatePlaceholderColor;
 - (UIColor *)effectiveBarTintColor;
 - (void)setBarTintColor:(UIColor *)arg1 forceUpdate:(BOOL)arg2;

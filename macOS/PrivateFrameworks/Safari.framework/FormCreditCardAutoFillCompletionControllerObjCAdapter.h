@@ -6,11 +6,15 @@
 
 #import <Safari/FormCompletionControllerObjCAdapter.h>
 
+@class AutoFillLocalAuthenticationManager;
+
 __attribute__((visibility("hidden")))
 @interface FormCreditCardAutoFillCompletionControllerObjCAdapter : FormCompletionControllerObjCAdapter
 {
+    AutoFillLocalAuthenticationManager *_autoFillLocalAuthenticationManager;
 }
 
+- (void).cxx_destruct;
 - (id)_itemNameForAutoFillAuthorizationSheetWithItem:(const struct CompletionListItem *)arg1;
 - (void)didRefreshCompletionListItems:(const Vector_9c080eda *)arg1;
 - (void)_registerCreditCardAutoFillTableViewCellClasses;

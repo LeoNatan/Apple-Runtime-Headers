@@ -12,8 +12,8 @@
 
 @interface HMDSettingGroup : NSObject <HMDSettingGroupOwnerProtocol>
 {
-    NSUUID *_parentIdentifier;
     NSUUID *_identifier;
+    NSUUID *_parentIdentifier;
     NSString *_name;
     NSMutableSet *_settingsInternal;
     NSMutableSet *_groupsInternal;
@@ -22,9 +22,9 @@
 + (BOOL)supportsSecureCoding;
 @property(retain) NSMutableSet *groupsInternal; // @synthesize groupsInternal=_groupsInternal;
 @property(retain) NSMutableSet *settingsInternal; // @synthesize settingsInternal=_settingsInternal;
-@property(readonly, copy) NSString *name; // @synthesize name=_name;
-@property(readonly, copy) NSUUID *identifier; // @synthesize identifier=_identifier;
-@property(readonly, copy) NSUUID *parentIdentifier; // @synthesize parentIdentifier=_parentIdentifier;
+- (id)name;
+- (id)parentIdentifier;
+- (id)identifier;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

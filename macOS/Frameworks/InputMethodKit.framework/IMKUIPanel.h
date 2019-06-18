@@ -19,6 +19,8 @@
 @property(retain, nonatomic) NSView *clipView; // @synthesize clipView=_clipView;
 @property(nonatomic) __weak NSView *accessibilityHitTestView; // @synthesize accessibilityHitTestView=_accessibilityHitTestView;
 - (void).cxx_destruct;
+- (void)logViewHierarchy;
+- (void)logViewsWithNumberOfTabs:(unsigned long long)arg1 view:(id)arg2;
 - (id)accessibilityTitle;
 - (id)accessibilitySubroleAttribute;
 - (void)setFrame:(struct CGRect)arg1 display:(BOOL)arg2;

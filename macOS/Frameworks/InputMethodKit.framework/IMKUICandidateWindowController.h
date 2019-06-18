@@ -14,7 +14,7 @@
 #import <InputMethodKit/IMKUICandidateListViewState-Protocol.h>
 #import <InputMethodKit/IMKUICandidateSortingBarDelegate-Protocol.h>
 
-@class IMKCandidate, IMKCandidateListDictionary, IMKUICandidateItemLayout, IMKUICandidateLayoutTraits, IMKUICandidateSortingBarView, IMKUIPanelMask, NSAppearance, NSArray, NSMutableDictionary, NSString, NSView;
+@class IMKCandidate, IMKCandidateListDictionary, IMKUICandidateItemLayout, IMKUICandidateLayoutTraits, IMKUICandidateSortingBarView, IMKUIPanel, IMKUIPanelMask, NSAppearance, NSArray, NSMutableDictionary, NSString, NSView;
 @protocol IMKUICandidateControllerDelegate;
 
 @interface IMKUICandidateWindowController : NSWindowController <IMKUIAbstractCandidateController, IMKUICandidateItemViewHandling, IMKUICandidateLayoutDelegate, IMKUICandidateListViewState, IMKUICandidateSortingBarDelegate, IMKUICandidateAccessibilityDelegate, IMKUICandidateAccessibilityTarget>
@@ -164,6 +164,9 @@
 - (void)willShowCandidates;
 - (void)dealloc;
 - (id)init;
+
+// Remaining properties
+@property(readonly, nonatomic) IMKUIPanel *window;
 
 @end
 

@@ -34,7 +34,7 @@ __attribute__((visibility("hidden")))
 - (void)reportWarning:(int)arg1;
 - (id)newFormulaToCleanFromSharedFormula:(id)arg1;
 - (BOOL)doesNameIndexContainCircularReferences:(unsigned int)arg1 sheetIndex:(unsigned long long)arg2 previousNameIndexes:(set_531c353a *)arg3;
-- (BOOL)isArrayedFormulaSupported:(id)arg1 allowSimpleRanges:(BOOL)arg2;
+- (BOOL)isArrayedFormulaSupported:(id)arg1 allowSimpleRanges:(BOOL)arg2 formulasBeingEvaluated:(id)arg3;
 - (id)useEvaluationStackToGetParameter:(unsigned int)arg1 tokenIndex:(unsigned int)arg2 allReferencesAllowed:(_Bool)arg3 success:(_Bool *)arg4;
 - (unsigned int)useEvaluationStackToGetParameter:(unsigned int)arg1 tokenIndex:(unsigned int)arg2;
 - (int)useEvaluationStackToGetParameterTokenType:(unsigned int)arg1 tokenIndex:(unsigned int)arg2 success:(_Bool *)arg3;

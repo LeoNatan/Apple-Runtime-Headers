@@ -13,12 +13,15 @@
 - (void)sbsyncWithDuration:(NSNumber *)arg1 completionBlock:(void (^)(BOOL, NSError *))arg2;
 - (void)sbsyncWithCompletionBlock:(void (^)(BOOL, NSError *))arg1;
 - (void)sbsyncIfSubscribedWithAccount:(ACAccount *)arg1 completionBlock:(void (^)(BOOL, NSError *))arg2;
-- (void)sendMetricsWithCompletionBlock:(void (^)(BOOL, NSError *))arg1;
+- (void)sendSummaryMetricsWithCompletionBlock:(void (^)(BOOL, NSError *))arg1;
+- (void)sendPayoutMetricsWithCompletionBlock:(void (^)(BOOL, NSError *))arg1;
+- (void)resetPayoutWithCompletionBlock:(void (^)(BOOL, NSError *))arg1;
 - (void)resetMetricsWithCompletionBlock:(void (^)(BOOL, NSError *))arg1;
 - (void)reportAppEvent:(ASDAppEvent *)arg1 completionBlock:(void (^)(BOOL, NSError *))arg2;
 - (void)recordMetricsWithCompletionBlock:(void (^)(BOOL, NSError *))arg1;
 - (void)recordLaunchesWithCompletionBlock:(void (^)(BOOL, NSError *))arg1;
-- (void)getAppEventsWithCompletionBlock:(void (^)(NSArray *, NSError *))arg1;
+- (void)getAppSummaryEventsWithCompletionBlock:(void (^)(NSArray *, NSError *))arg1;
+- (void)getAppPayoutEventsWithCompletionBlock:(void (^)(NSArray *, NSError *))arg1;
 - (void)flushMetricsWithCompletionBlock:(void (^)(BOOL, NSError *))arg1;
 @end
 

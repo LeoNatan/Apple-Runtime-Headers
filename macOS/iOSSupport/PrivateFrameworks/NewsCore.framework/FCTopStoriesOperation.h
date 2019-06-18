@@ -6,7 +6,7 @@
 
 #import <NewsCore/FCOperation.h>
 
-@class FCCloudContext, FCTopStoriesOperationResult, NSError;
+@class FCCloudContext, FCForYouConfig, FCTopStoriesOperationResult, NSError;
 @protocol FCChannelProviding, FCCoreConfiguration;
 
 @interface FCTopStoriesOperation : FCOperation
@@ -15,12 +15,14 @@
     FCCloudContext *_context;
     id <FCChannelProviding> _topStoriesChannel;
     FCTopStoriesOperationResult *_topStoriesResult;
+    FCForYouConfig *_forYouConfig;
     NSError *_error;
     CDUnknownBlockType _catchUpCompletionHandler;
 }
 
 @property(copy) CDUnknownBlockType catchUpCompletionHandler; // @synthesize catchUpCompletionHandler=_catchUpCompletionHandler;
 @property(retain) NSError *error; // @synthesize error=_error;
+@property(retain) FCForYouConfig *forYouConfig; // @synthesize forYouConfig=_forYouConfig;
 @property(retain) FCTopStoriesOperationResult *topStoriesResult; // @synthesize topStoriesResult=_topStoriesResult;
 @property(copy) id <FCChannelProviding> topStoriesChannel; // @synthesize topStoriesChannel=_topStoriesChannel;
 @property(retain, nonatomic) FCCloudContext *context; // @synthesize context=_context;

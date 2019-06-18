@@ -8,6 +8,7 @@
 
 @interface PXExploreParsingState : NSObject
 {
+    BOOL _canIgnoreNextHeroSide;
     long long _parseLocation;
     double _buildingBlockAspectRatio;
     long long _nextRowType;
@@ -15,11 +16,14 @@
     long long _numberOfConsecutiveMediumHeroRows;
     long long _effectiveLargeHeroDensity;
     long long _numberOfColumnsOverride;
+    long long _lastHeroRowTag;
 }
 
+@property(nonatomic) long long lastHeroRowTag; // @synthesize lastHeroRowTag=_lastHeroRowTag;
 @property(nonatomic) long long numberOfColumnsOverride; // @synthesize numberOfColumnsOverride=_numberOfColumnsOverride;
 @property(nonatomic) long long effectiveLargeHeroDensity; // @synthesize effectiveLargeHeroDensity=_effectiveLargeHeroDensity;
 @property(nonatomic) long long numberOfConsecutiveMediumHeroRows; // @synthesize numberOfConsecutiveMediumHeroRows=_numberOfConsecutiveMediumHeroRows;
+@property(readonly, nonatomic) BOOL canIgnoreNextHeroSide; // @synthesize canIgnoreNextHeroSide=_canIgnoreNextHeroSide;
 @property(nonatomic) long long nextHeroSide; // @synthesize nextHeroSide=_nextHeroSide;
 @property(nonatomic) long long nextRowType; // @synthesize nextRowType=_nextRowType;
 @property(nonatomic) double buildingBlockAspectRatio; // @synthesize buildingBlockAspectRatio=_buildingBlockAspectRatio;

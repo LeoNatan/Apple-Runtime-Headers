@@ -10,7 +10,7 @@
 #import <AppleMediaServices/AMSBagConsumer_Project-Protocol.h>
 #import <AppleMediaServices/AMSMediaTokenServiceProtocol-Protocol.h>
 
-@class ACAccount, AMSMediaToken, AMSMediaTokenServiceStore, AMSMediaTokenServiceThrottler, AMSURLSession, NSString;
+@class ACAccount, AMSMediaToken, AMSMediaTokenServiceStore, AMSMediaTokenServiceThrottler, AMSProcessInfo, AMSURLSession, NSString;
 @protocol AMSBagProtocol, OS_dispatch_queue;
 
 @interface AMSMediaTokenService : NSObject <AMSBagConsumer_Project, AMSBagConsumer, AMSMediaTokenServiceProtocol>
@@ -21,6 +21,7 @@
     ACAccount *_account;
     id <AMSBagProtocol> _bag;
     NSString *_clientIdentifier;
+    AMSProcessInfo *_clientInfo;
     NSString *_clientVersion;
     AMSMediaTokenServiceThrottler *_throttler;
     NSObject<OS_dispatch_queue> *_tokenFetchQueue;
@@ -41,6 +42,7 @@
 @property(readonly) NSObject<OS_dispatch_queue> *tokenFetchQueue; // @synthesize tokenFetchQueue=_tokenFetchQueue;
 @property(readonly) AMSMediaTokenServiceThrottler *throttler; // @synthesize throttler=_throttler;
 @property(readonly) NSString *clientVersion; // @synthesize clientVersion=_clientVersion;
+@property(retain) AMSProcessInfo *clientInfo; // @synthesize clientInfo=_clientInfo;
 @property(readonly) NSString *clientIdentifier; // @synthesize clientIdentifier=_clientIdentifier;
 @property(retain) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
 @property(retain) ACAccount *account; // @synthesize account=_account;

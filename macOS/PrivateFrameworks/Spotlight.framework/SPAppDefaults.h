@@ -10,6 +10,7 @@
 {
 }
 
++ (id)dockApps;
 + (id)localizedGroupName:(id)arg1;
 + (id)localizedGroupNameDictionary;
 + (id)topHitGroupPreferences;

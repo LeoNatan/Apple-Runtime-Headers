@@ -21,6 +21,8 @@
 
 @property(nonatomic) __weak id <SGSuggestionDelegate> suggestionDelegate; // @synthesize suggestionDelegate=_suggestionDelegate;
 - (void).cxx_destruct;
+- (id)suggestionsSecondTitle;
+- (id)suggestionAttributedSubtitle;
 - (id)suggestionSubtitle;
 - (id)suggestionDismissAction;
 - (id)primaryActionTitle;

@@ -9,7 +9,7 @@
 #import <QuickLookThumbnailing/NSCopying-Protocol.h>
 #import <QuickLookThumbnailing/NSSecureCoding-Protocol.h>
 
-@class FPItem, FPSandboxingURLWrapper, NSDate, NSError, NSString, NSURL, QLCacheBasicVersionedFileIdentifier, QLCacheFileProviderVersionedFileIdentifier, QLThumbnailRepresentation;
+@class FPItem, FPSandboxingURLWrapper, NSDate, NSError, NSString, NSURL, NSUUID, QLCacheBasicVersionedFileIdentifier, QLCacheFileProviderVersionedFileIdentifier, QLThumbnailRepresentation;
 
 @interface QLThumbnailGenerationRequest : NSObject <NSCopying, NSSecureCoding>
 {
@@ -27,7 +27,7 @@
     FPSandboxingURLWrapper *_genericSandboxWrapper;
     NSURL *_fileURL;
     FPItem *_item;
-    long long _sequenceNumber;
+    NSUUID *_uuid;
     QLCacheBasicVersionedFileIdentifier *_basicFileIdentifier;
     QLCacheFileProviderVersionedFileIdentifier *_fileProviderFileIdentifier;
     unsigned long long _badgeType;
@@ -49,7 +49,6 @@
 + (BOOL)supportsSecureCoding;
 + (id)_basicFileIdentifierForURL:(id)arg1 error:(id *)arg2;
 + (id)_fileProviderFileIdentifierForFPItem:(id)arg1;
-+ (long long)_newSequenceNumber;
 + (id)requestWithThumbnailRequest:(id)arg1;
 @property(retain, nonatomic) NSString *overriddenContentType; // @synthesize overriddenContentType=_overriddenContentType;
 @property(nonatomic) unsigned long long typesForWhichUpdateBlockHasBeenCalled; // @synthesize typesForWhichUpdateBlockHasBeenCalled=_typesForWhichUpdateBlockHasBeenCalled;
@@ -71,7 +70,7 @@
 @property(nonatomic) unsigned long long badgeType; // @synthesize badgeType=_badgeType;
 @property(retain, nonatomic) QLCacheFileProviderVersionedFileIdentifier *fileProviderFileIdentifier; // @synthesize fileProviderFileIdentifier=_fileProviderFileIdentifier;
 @property(retain, nonatomic) QLCacheBasicVersionedFileIdentifier *basicFileIdentifier; // @synthesize basicFileIdentifier=_basicFileIdentifier;
-@property(nonatomic) long long sequenceNumber; // @synthesize sequenceNumber=_sequenceNumber;
+@property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(retain, nonatomic) FPItem *item; // @synthesize item=_item;
 @property(retain, nonatomic) NSURL *fileURL; // @synthesize fileURL=_fileURL;
 @property(retain, nonatomic) FPSandboxingURLWrapper *genericSandboxWrapper; // @synthesize genericSandboxWrapper=_genericSandboxWrapper;

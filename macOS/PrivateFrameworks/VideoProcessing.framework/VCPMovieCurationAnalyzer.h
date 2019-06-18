@@ -18,15 +18,15 @@
     NSArray *_faceResults;
     NSArray *_actionResults;
     NSArray *_voiceResults;
-    NSArray *_humanPoseResults;
     NSArray *_humanActionResults;
-    NSArray *_humanTrackResults;
+    NSArray *_humanPoseResults;
     NSArray *_cameraMotionResults;
     NSArray *_saliencyResults;
     NSDictionary *_faceRanges;
     CDStruct_e83c9415 _timeRange;
     struct CGSize _frameSize;
     BOOL _isLivePhoto;
+    BOOL _hadFlash;
 }
 
 - (void).cxx_destruct;
@@ -36,9 +36,9 @@
 - (void)addHighlight:(id)arg1 to:(id)arg2;
 - (int)generateMovieCurations;
 - (int)postProcessKeyFrames;
-- (void)loadVideoAnalysisResults:(id)arg1 privateResults:(id)arg2 audioAnalysisResults:(id)arg3 andFaceRanges:(id)arg4 frameSize:(struct CGSize)arg5;
+- (void)loadVideoAnalysisResults:(id)arg1 audioAnalysisResults:(id)arg2 andFaceRanges:(id)arg3 frameSize:(struct CGSize)arg4;
 - (int)analyzeKeyFrame:(struct __CVBuffer *)arg1 withTimestamp:(CDStruct_1b6d18a9)arg2 andDuration:(CDStruct_1b6d18a9)arg3 flags:(unsigned long long *)arg4;
-- (id)initWithAnalysisTypes:(unsigned long long)arg1 transform:(struct CGAffineTransform)arg2 timeRange:(CDStruct_e83c9415)arg3 isLivePhoto:(BOOL)arg4 frameStats:(id)arg5;
+- (id)initWithAnalysisTypes:(unsigned long long)arg1 transform:(struct CGAffineTransform)arg2 timeRange:(CDStruct_e83c9415)arg3 isLivePhoto:(BOOL)arg4 frameStats:(id)arg5 hadFlash:(BOOL)arg6 keyFrameResults:(id)arg7;
 
 @end
 

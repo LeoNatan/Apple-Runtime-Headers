@@ -13,11 +13,11 @@
 
 @interface PPTopicQuery : NSObject <NSCopying, NSSecureCoding>
 {
-    BOOL _overrideDecayRate;
     BOOL _scoreWithBiases;
     BOOL _scoreWithStrictFiltering;
     BOOL _excludeWithoutSentiment;
     BOOL _scoreWithCalibration;
+    BOOL _orderByIdentifier;
     unsigned long long _limit;
     NSDate *_fromDate;
     NSDate *_toDate;
@@ -35,6 +35,7 @@
 
 + (id)_algorithmsDescription:(id)arg1;
 + (BOOL)supportsSecureCoding;
+@property(nonatomic) BOOL orderByIdentifier; // @synthesize orderByIdentifier=_orderByIdentifier;
 @property(retain, nonatomic) NSString *matchingTopicTrie; // @synthesize matchingTopicTrie=_matchingTopicTrie;
 @property(retain, nonatomic) NSSet *excludingAlgorithms; // @synthesize excludingAlgorithms=_excludingAlgorithms;
 @property(retain, nonatomic) NSSet *matchingAlgorithms; // @synthesize matchingAlgorithms=_matchingAlgorithms;
@@ -45,7 +46,6 @@
 @property(retain, nonatomic) NSSet *matchingTopicIds; // @synthesize matchingTopicIds=_matchingTopicIds;
 @property(nonatomic) BOOL scoreWithBiases; // @synthesize scoreWithBiases=_scoreWithBiases;
 @property(nonatomic) double decayRate; // @synthesize decayRate=_decayRate;
-@property(nonatomic) BOOL overrideDecayRate; // @synthesize overrideDecayRate=_overrideDecayRate;
 @property(nonatomic) unsigned long long deviceFilter; // @synthesize deviceFilter=_deviceFilter;
 @property(retain, nonatomic) NSSet *excludingSourceBundleIds; // @synthesize excludingSourceBundleIds=_excludingSourceBundleIds;
 @property(retain, nonatomic) NSSet *matchingSourceBundleIds; // @synthesize matchingSourceBundleIds=_matchingSourceBundleIds;
@@ -60,6 +60,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
+@property(nonatomic) BOOL overrideDecayRate;
 
 @end
 

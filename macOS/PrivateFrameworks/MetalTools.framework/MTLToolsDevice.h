@@ -69,7 +69,7 @@
 @property(readonly, nonatomic) BOOL supportsSIMDReduction;
 @property(readonly, nonatomic) BOOL supportsMirrorClampToEdgeSamplerMode;
 @property(readonly, nonatomic) BOOL supportsBlackOrWhiteSamplerBorderColors;
-@property(readonly, nonatomic) BOOL supportsShaderBarycentricCoordinates;
+@property(readonly) BOOL supportsShaderBarycentricCoordinates;
 @property(readonly, nonatomic) BOOL supportsSIMDShufflesAndBroadcast;
 @property(readonly, nonatomic) BOOL supportsShaderMinLODClamp;
 @property(readonly, nonatomic) BOOL supportsSIMDGroup;
@@ -165,6 +165,11 @@
 @property(readonly) NSArray *counterSets;
 - (BOOL)setResourcesPurgeableState:(id *)arg1 newState:(unsigned long long)arg2 oldState:(unsigned long long *)arg3 count:(int)arg4;
 @property(readonly) unsigned long long samplerReductionModeSupport;
+- (id)newRemoteTextureView:(id)arg1 parentTexture:(id)arg2;
+- (id)newRemoteBufferView:(id)arg1 parentBuffer:(id)arg2;
+@property(readonly) unsigned int peerCount;
+@property(readonly) unsigned int peerIndex;
+@property(readonly) unsigned long long peerGroupID;
 - (void)allowLibrariesFromOtherPlatforms;
 - (id)newMotionEstimationPipelineWithDescriptor:(id)arg1;
 - (id)motionEstimatorCapabilities;
@@ -327,6 +332,9 @@
 - (CDStruct_c0454aff)libraryCacheStats;
 - (void)unloadShaderCaches;
 @property(readonly, getter=isDepth24Stencil8PixelFormatSupported) BOOL depth24Stencil8PixelFormatSupported;
+@property(readonly) unsigned long long maxTransferRate;
+@property(readonly) unsigned long long locationNumber;
+@property(readonly) unsigned long long location;
 @property(readonly) unsigned long long dedicatedMemorySize;
 @property(readonly) unsigned long long sharedMemorySize;
 @property(readonly) unsigned long long recommendedMaxWorkingSetSize;

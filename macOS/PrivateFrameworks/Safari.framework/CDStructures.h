@@ -1059,7 +1059,7 @@ struct RetainPtr<__SecPolicy *> {
 };
 
 struct RetainPtr<__SecTrust *> {
-    void *_field1;
+    void *m_ptr;
 };
 
 struct RetainPtr<const __SecCode *> {
@@ -1671,8 +1671,8 @@ typedef struct RetainPtr<__SecPolicy *> {
 } RetainPtr_9f6ce05b;
 
 typedef struct RetainPtr<__SecTrust *> {
-    void *_field1;
-} RetainPtr_b11cdf8e;
+    void *m_ptr;
+} RetainPtr_e78bdbf8;
 
 typedef struct RetainPtr<const __SecCode *> {
     void *m_ptr;

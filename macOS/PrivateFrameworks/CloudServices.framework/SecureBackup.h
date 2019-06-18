@@ -26,6 +26,7 @@
     BOOL _usesMultipleiCSC;
     BOOL _usesRandomPassphrase;
     BOOL _usesRecoveryKey;
+    BOOL _suppressServerFiltering;
     NSString *_appleID;
     NSString *_authToken;
     NSDate *_backOffDate;
@@ -63,10 +64,11 @@
 + (unsigned int)daemonPasscodeRequestOpinion:(id *)arg1;
 + (unsigned int)needPasscodeForHSA2EscrowRecordUpdate:(id *)arg1;
 + (BOOL)supportsSecureCoding;
-+ (id)_ClassCreateSecureBackupConnection;
++ (id)_ClassCreateSecureBackupConcurrentConnection;
 @property(retain, nonatomic) SESWrapper *ses; // @synthesize ses=_ses;
 @property(retain, nonatomic) EscrowPrerecord *prerecord; // @synthesize prerecord=_prerecord;
 @property(copy, nonatomic) NSString *hsa2CachedPrerecordUUID; // @synthesize hsa2CachedPrerecordUUID=_hsa2CachedPrerecordUUID;
+@property(nonatomic) BOOL suppressServerFiltering; // @synthesize suppressServerFiltering=_suppressServerFiltering;
 @property(copy, nonatomic) NSString *activityUUID; // @synthesize activityUUID=_activityUUID;
 @property(copy, nonatomic) NSString *activityLabel; // @synthesize activityLabel=_activityLabel;
 @property(retain, nonatomic) NSError *error; // @synthesize error=_error;

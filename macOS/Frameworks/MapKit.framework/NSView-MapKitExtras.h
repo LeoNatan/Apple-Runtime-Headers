@@ -53,7 +53,6 @@
 - (struct NSEdgeInsets)_mapkit_layoutMargins;
 - (void)set_mapkit_preservesSuperviewLayoutMargins:(BOOL)arg1;
 - (BOOL)_mapkit_preservesSuperviewLayoutMargins;
-- (void)_mapkit_tintColorDidChange;
 - (void)_mapkit_layoutBelowIfNeeded;
 - (void)_mapkit_layoutIfNeeded;
 - (void)_mapkit_updateConstraintsIfNeeded;

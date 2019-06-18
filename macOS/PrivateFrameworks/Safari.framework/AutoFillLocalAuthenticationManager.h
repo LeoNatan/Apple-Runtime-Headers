@@ -6,16 +6,22 @@
 
 #import <objc/NSObject.h>
 
-@class NSOperationQueue;
+@class LAContext, NSOperationQueue;
+@protocol OS_dispatch_queue;
 
 @interface AutoFillLocalAuthenticationManager : NSObject
 {
     NSOperationQueue *_authenticationQueue;
-    BOOL _isBiometricAuthenticationAvailable;
+    LAContext *_laContext;
+    NSObject<OS_dispatch_queue> *_laContextQueue;
+    long long _currentTouchIDStatus;
 }
 
-@property(nonatomic) BOOL isBiometricAuthenticationAvailable; // @synthesize isBiometricAuthenticationAvailable=_isBiometricAuthenticationAvailable;
++ (long long)_touchIDStatusForError:(long long)arg1;
+@property long long currentTouchIDStatus; // @synthesize currentTouchIDStatus=_currentTouchIDStatus;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL isBiometricAuthenticationAvailable;
+- (void)updateTouchIDSupportAndAvailability;
 - (id)authenticateWithReason:(id)arg1 delegate:(id)arg2;
 - (id)init;
 

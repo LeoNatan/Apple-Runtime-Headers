@@ -9,7 +9,7 @@
 #import <Contacts/NSCopying-Protocol.h>
 #import <Contacts/NSSecureCoding-Protocol.h>
 
-@class CNContainerPermissions, NSData, NSString;
+@class CNContainerPermissions, NSData, NSDate, NSString;
 
 @interface CNContainer : NSObject <NSCopying, NSSecureCoding>
 {
@@ -29,6 +29,7 @@
     CNContainer *_snapshot;
     BOOL _guardianRestricted;
     BOOL _guardianStateDirty;
+    NSDate *_lastSyncDate;
 }
 
 + (BOOL)supportsSecureCoding;
@@ -46,6 +47,7 @@
 + (id)predicateForContainersIncludingDisabled:(BOOL)arg1;
 + (id)predicateForLocalContainerIncludingDisabled:(BOOL)arg1;
 + (id)predicateForAllContainers;
+@property(readonly) NSDate *lastSyncDate; // @synthesize lastSyncDate=_lastSyncDate;
 @property(readonly, getter=isGuardianRestricted) BOOL guardianRestricted; // @synthesize guardianRestricted=_guardianRestricted;
 @property(readonly, copy) CNContainerPermissions *permissions; // @synthesize permissions=_permissions;
 @property(readonly, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
@@ -73,7 +75,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithContainer:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 name:(id)arg2 type:(long long)arg3 iOSLegacyIdentifier:(int)arg4 accountIdentifier:(id)arg5 enabled:(BOOL)arg6 permissions:(id)arg7 externalIdentifier:(id)arg8 externalModificationTag:(id)arg9 externalSyncTag:(id)arg10 externalSyncData:(id)arg11 constraintsPath:(id)arg12 meIdentifier:(id)arg13 restrictions:(unsigned long long)arg14 guardianRestricted:(BOOL)arg15;
+- (id)initWithIdentifier:(id)arg1 name:(id)arg2 type:(long long)arg3 iOSLegacyIdentifier:(int)arg4 accountIdentifier:(id)arg5 enabled:(BOOL)arg6 permissions:(id)arg7 externalIdentifier:(id)arg8 externalModificationTag:(id)arg9 externalSyncTag:(id)arg10 externalSyncData:(id)arg11 constraintsPath:(id)arg12 meIdentifier:(id)arg13 restrictions:(unsigned long long)arg14 guardianRestricted:(BOOL)arg15 lastSyncDate:(id)arg16;
 - (id)initWithIdentifier:(id)arg1 accountIdentifier:(id)arg2 name:(id)arg3 type:(long long)arg4 permissions:(id)arg5;
 - (id)initWithIdentifier:(id)arg1 name:(id)arg2 type:(long long)arg3;
 - (id)initWithName:(id)arg1 type:(long long)arg2;

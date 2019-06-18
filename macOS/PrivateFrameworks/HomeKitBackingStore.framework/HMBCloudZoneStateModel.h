@@ -6,7 +6,7 @@
 
 #import <HomeKitBackingStore/HMBCloudStateModel.h>
 
-@class HMBCloudZone, HMBCloudZoneID, HMBLocalCloudZoneID, NSNumber;
+@class HMBCloudZone, HMBCloudZoneID, NSNumber;
 
 @interface HMBCloudZoneStateModel : HMBCloudStateModel
 {
@@ -19,7 +19,6 @@
 - (id)initWithModelID:(id)arg1 parentModelID:(id)arg2 dataVersion:(id)arg3;
 
 // Remaining properties
-@property(retain, nonatomic) HMBLocalCloudZoneID *localZoneID; // @dynamic localZoneID;
 @property(retain, nonatomic) NSNumber *needsZoneCreation; // @dynamic needsZoneCreation;
 @property(retain, nonatomic) HMBCloudZoneID *zoneID; // @dynamic zoneID;
 

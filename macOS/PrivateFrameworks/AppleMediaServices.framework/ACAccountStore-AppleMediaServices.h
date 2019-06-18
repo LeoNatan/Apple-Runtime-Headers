@@ -31,7 +31,9 @@
 - (BOOL)ams_setSecureToken:(id)arg1 forAccount:(id)arg2 error:(id *)arg3;
 - (id)ams_setiTunesAccount:(id)arg1 forHomeWithIdentifier:(id)arg2;
 - (id)ams_secureTokenForAccount:(id)arg1;
+- (id)ams_saveAccount:(id)arg1 withOptions:(long long)arg2;
 - (id)ams_saveAccount:(id)arg1 verifyCredentials:(BOOL)arg2;
+- (id)ams_saveAccount:(id)arg1;
 - (id)ams_iTunesAccountWithUsername:(id)arg1;
 - (id)ams_iTunesAccountWithDSID:(id)arg1;
 - (id)ams_iTunesAccountWithAltDSID:(id)arg1 DSID:(id)arg2 username:(id)arg3;

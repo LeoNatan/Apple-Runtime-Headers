@@ -8,6 +8,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface RemoteProcessingBlockHostItemBase : NSObject
 {
     NSString *_itemName;

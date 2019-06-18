@@ -39,6 +39,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)currentMetadataVersionHashesMatchCachedMetadataVersionHashes:(id)arg1;
 + (BOOL)migrateBatchOfObjects:(id)arg1 forStore:(id)arg2 inContext:(id)arg3 error:(id *)arg4;
 + (BOOL)migrateMetadataForObjectsInStore:(id)arg1 toNSCKRecordMetadataUsingContext:(id)arg2 error:(id *)arg3;
++ (BOOL)checkForRecordMetadataZoneCorruptionInStore:(id)arg1 error:(id *)arg2;
 + (BOOL)checkAndRepairSchemaOfStore:(id)arg1 withManagedObjectContext:(id)arg2 error:(id *)arg3;
 + (id)newMetadataModelForFrameworkVersion:(id)arg1;
 + (void)initialize;

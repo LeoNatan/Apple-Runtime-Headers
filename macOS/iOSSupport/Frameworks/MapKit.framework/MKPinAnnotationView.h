@@ -25,9 +25,9 @@
 + (struct CGPoint)_perceivedAnchorPoint;
 + (id)_shadowImage;
 + (id)_reuseIdentifier;
-+ (id)_pinsWithMapType:(unsigned long long)arg1 mapDisplayStyle:(CDStruct_51745937)arg2 pinColor:(id)arg3 traits:(id)arg4;
++ (id)_pinsWithMapType:(unsigned long long)arg1 pinColor:(id)arg2 traits:(id)arg3;
 + (id)_imageCache;
-+ (id)_imageForState:(long long)arg1 mapType:(unsigned long long)arg2 displayStyle:(unsigned long long)arg3 pinColor:(id)arg4 traits:(id)arg5;
++ (id)_imageForState:(long long)arg1 mapType:(unsigned long long)arg2 pinColor:(id)arg3 traits:(id)arg4;
 + (id)_imageForLayer:(long long)arg1 state:(long long)arg2 mapType:(unsigned long long)arg3 traits:(id)arg4;
 + (id)_dropBounceAnimation;
 + (id)_bounceAnimation;
@@ -72,7 +72,6 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)_pins;
 - (id)description;
-- (void)_setMapDisplayStyle:(CDStruct_51745937)arg1;
 - (void)_setMapType:(unsigned long long)arg1;
 - (struct UIEdgeInsets)_defaultCollisionAlignmentRectInsets;
 - (struct CGRect)_significantBounds;

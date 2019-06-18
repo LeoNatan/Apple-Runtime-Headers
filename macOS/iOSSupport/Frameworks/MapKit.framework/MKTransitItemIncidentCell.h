@@ -6,35 +6,32 @@
 
 #import <MapKit/MKCustomSeparatorTableViewCell.h>
 
-@class MKTransitIncidentItemCellBackgroundView, NSLayoutConstraint, UIButton, UIImageView, _MKUILabel;
+@class MKTransitIncidentItemCellBackgroundView, NSArray, NSLayoutConstraint, UIImageView, _MKUILabel;
 
 @interface MKTransitItemIncidentCell : MKCustomSeparatorTableViewCell
 {
     UIImageView *_incidentIconImageView;
+    BOOL _needsConstraintsRebuild;
+    NSArray *_constraints;
     _MKUILabel *_titleLabel;
-    _MKUILabel *_summaryLabel;
     _MKUILabel *_lastUpdatedLabel;
     MKTransitIncidentItemCellBackgroundView *_backgroundView;
     BOOL _incidentIsBlocking;
+    BOOL _usingAccessibilityConstraints;
     NSLayoutConstraint *_titleLabelToTopConstraint;
-    NSLayoutConstraint *_summaryToTitleConstraint;
-    NSLayoutConstraint *_lastUpdatedToSummaryConstraint;
-    NSLayoutConstraint *_titleViewToButtonConstraint;
-    NSLayoutConstraint *_titleViewToTrailingConstraint;
+    NSLayoutConstraint *_bottomToLabelConstraint;
+    NSLayoutConstraint *_lastUpdatedToTitleBaselineConstraint;
+    NSLayoutConstraint *_titleToLastUpdatedLabelConstraint;
     NSLayoutConstraint *_bottomToBackgroundConstraint;
-    NSLayoutConstraint *_bottomToIconImageConstraint;
-    NSLayoutConstraint *_bottomToUpdatedLabelConstraint;
-    NSLayoutConstraint *_bottomToSummaryLabelConstraint;
-    NSLayoutConstraint *_bottomToTitleLabelConstraint;
-    BOOL _showMoreDetailsButton;
     BOOL _padBottom;
-    UIButton *_moreDetailsButton;
 }
 
 @property(nonatomic) BOOL padBottom; // @synthesize padBottom=_padBottom;
-@property(readonly, nonatomic) UIButton *moreDetailsButton; // @synthesize moreDetailsButton=_moreDetailsButton;
-@property(nonatomic, getter=isShowingMoreDetailsButton) BOOL showMoreDetailsButton; // @synthesize showMoreDetailsButton=_showMoreDetailsButton;
 - (void).cxx_destruct;
+- (double)_trailingMargin;
+- (double)_leadingMargin;
+- (void)rebuildConstraints;
+- (void)updateConstraints;
 - (void)didMoveToWindow;
 - (void)_updateConstraintValues;
 - (void)_contentSizeCategoryDidChange;

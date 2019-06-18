@@ -45,6 +45,8 @@
 - (void)postProcessAndUpdateResults:(id)arg1;
 - (id)queryResultsForItems:(id)arg1;
 - (double)interGroupSpacing;
+- (unsigned long long)zkwMaxResultCount;
+- (unsigned long long)maxResultsForMode:(unsigned long long)arg1;
 - (id)detailsFilterQueriesForChatGUIDs:(id)arg1;
 - (id)queryAttributesForText:(id)arg1;
 - (id)fetchAttributes;

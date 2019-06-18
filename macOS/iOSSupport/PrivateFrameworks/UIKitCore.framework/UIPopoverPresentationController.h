@@ -33,6 +33,7 @@
     long long _popoverControllerStyle;
     BOOL _ignoresKeyboardNotifications;
     BOOL _canOverlapSourceViewRect;
+    BOOL _backgroundBlurDisabled;
     unsigned int draggingChildScrollViewCount;
     id _target;
     SEL _didEndSelector;
@@ -205,6 +206,8 @@
 - (Class)_popoverLayoutInfoForChromeClass:(Class)arg1;
 @property(copy, nonatomic) NSArray *passthroughViews;
 - (id)_passthroughViews;
+- (BOOL)_backgroundBlurDisabled;
+- (void)_setBackgroundBlurDisabled:(BOOL)arg1;
 @property(copy, nonatomic) UIColor *backgroundColor;
 @property(readonly, nonatomic) unsigned long long arrowDirection;
 - (BOOL)isPopoverVisible;

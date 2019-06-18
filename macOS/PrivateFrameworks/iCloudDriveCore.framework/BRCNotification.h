@@ -32,6 +32,7 @@
 @property(readonly, nonatomic) BRCItemGlobalID *parentGlobalID; // @synthesize parentGlobalID=_parentGlobalID;
 @property(readonly, nonatomic) BRCItemGlobalID *itemGlobalID; // @synthesize itemGlobalID=_itemGlobalID;
 - (void).cxx_destruct;
+- (void)markAsRemapItem;
 @property(readonly, nonatomic) BOOL isInTrashScope;
 @property(readonly, nonatomic) BOOL isDocumentsFolder;
 - (void)generateLogicalExtension:(id)arg1 physicalExtension:(id)arg2;

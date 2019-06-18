@@ -18,7 +18,6 @@
     RBSAssertion *_inactiveFGAssertion;
     unsigned char _lifecycleState;
     unsigned char _assertionState;
-    int _pid;
     BOOL _createResponseReceived;
 }
 
@@ -29,6 +28,7 @@
 - (id)_workspaceQueue_createWatchdogForSceneAction:(unsigned char)arg1 transitionContext:(id)arg2;
 - (void)_workspaceQueue_decrementInFlightUpdates;
 - (void)_workspaceQueue_incrementInFlightUpdates;
+- (id)_workspaceQueue_acquireAssertionWithAttributes:(id)arg1;
 - (void)_workspaceQueue_updateAssertion;
 - (void)_handleInvalidationWithTransitionContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_handleDidUpdateSettings:(id)arg1 withDiff:(id)arg2 transitionContext:(id)arg3 completion:(CDUnknownBlockType)arg4;

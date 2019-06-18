@@ -50,6 +50,7 @@
 - (void)updateLocation:(id)arg1;
 - (void)stopTracking;
 - (void)startTracking;
+- (BOOL)isRerouting;
 - (BOOL)_shouldThrottleRerouteForLocation:(id)arg1 lastRerouteLocation:(id)arg2;
 - (void)_failedToRecalculateRouteWithError:(id)arg1;
 - (void)_recalculationRetryTimerFired:(id)arg1;
@@ -62,7 +63,6 @@
 - (id)_rerouteTicketForLocation:(id)arg1 transportType:(int)arg2 stepIndex:(unsigned long long)arg3;
 - (void)_sendRouteHintForLocation:(id)arg1;
 - (BOOL)_isCameraTestMode;
-- (BOOL)_isRerouting;
 - (BOOL)_isRoadFeatureInOppositeDirection:(CDStruct_4ff0d47c *)arg1 ofCoordinate:(CDStruct_c3b9c2ee)arg2 course:(double)arg3;
 - (id)_matchedLocationForMatchResult:(id)arg1 originalLocation:(id)arg2;
 - (BOOL)_shouldAdvanceGuidanceToRouteMatch:(id)arg1;

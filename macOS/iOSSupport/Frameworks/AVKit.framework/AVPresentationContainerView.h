@@ -6,10 +6,13 @@
 
 #import <UIKit/UIView.h>
 
+@class AVPresentationContainerViewAppearanceProxy, AVPresentationContainerViewLayer;
+
 __attribute__((visibility("hidden")))
 @interface AVPresentationContainerView : UIView
 {
     BOOL _counterRotatingContentView;
+    BOOL _wantsAppearanceConfigValues;
     BOOL _beingPresented;
     BOOL _beingDismissed;
     BOOL _isBeingTransitionedToADifferentOrientation;
@@ -19,16 +22,20 @@ __attribute__((visibility("hidden")))
     long long _toOrientation;
 }
 
++ (Class)layerClass;
 @property(nonatomic) BOOL willBeginOrientationChange; // @synthesize willBeginOrientationChange=_willBeginOrientationChange;
 @property(nonatomic) long long toOrientation; // @synthesize toOrientation=_toOrientation;
 @property(nonatomic) long long fromOrientation; // @synthesize fromOrientation=_fromOrientation;
 @property(readonly, nonatomic) BOOL isBeingTransitionedToADifferentOrientation; // @synthesize isBeingTransitionedToADifferentOrientation=_isBeingTransitionedToADifferentOrientation;
 @property(nonatomic, getter=isBeingDismissed) BOOL beingDismissed; // @synthesize beingDismissed=_beingDismissed;
 @property(nonatomic, getter=isBeingPresented) BOOL beingPresented; // @synthesize beingPresented=_beingPresented;
+@property(nonatomic) BOOL wantsAppearanceConfigValues; // @synthesize wantsAppearanceConfigValues=_wantsAppearanceConfigValues;
 @property(nonatomic) __weak UIView *presentationContainerContentView; // @synthesize presentationContainerContentView=_presentationContainerContentView;
 @property(nonatomic, getter=isCounterRotatingContentView) BOOL counterRotatingContentView; // @synthesize counterRotatingContentView=_counterRotatingContentView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
+- (void)setClipsToBounds:(BOOL)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (double)_radiansForCounterRotation;
 - (struct CGAffineTransform)_contentTransform;
 - (void)didStopTransition;
@@ -38,6 +45,14 @@ __attribute__((visibility("hidden")))
 - (struct UIEdgeInsets)avkit_overrideLayoutMarginsForInterfaceOrientation:(long long)arg1;
 - (BOOL)avkit_isVideoGravityFrozen;
 - (void)willBeginAdjustingOrientation;
+- (void)_setCornerRadius:(double)arg1;
+- (double)_cornerRadius;
+- (void)_setContinuousCornerRadius:(double)arg1;
+- (double)_continuousCornerRadius;
+@property(readonly, nonatomic) AVPresentationContainerViewAppearanceProxy *appearanceProxy;
+
+// Remaining properties
+@property(readonly, nonatomic) AVPresentationContainerViewLayer *layer; // @dynamic layer;
 
 @end
 

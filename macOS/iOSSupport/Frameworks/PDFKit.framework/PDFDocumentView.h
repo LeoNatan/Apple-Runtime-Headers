@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 - (void).cxx_destruct;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (id)pdfView;
 - (void)recieveBackgroundImage:(id)arg1 atBackgroundQuality:(int)arg2 forPage:(id)arg3;
 - (id)backgroundImageForPage:(id)arg1 withQuality:(int *)arg2;

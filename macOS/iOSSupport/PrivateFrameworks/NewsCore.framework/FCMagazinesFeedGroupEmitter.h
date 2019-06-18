@@ -16,14 +16,15 @@
     id <FCFeedGroupInsertionDescriptor> _insertionDescriptor;
 }
 
++ (id)groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) id <FCFeedGroupInsertionDescriptor> insertionDescriptor; // @synthesize insertionDescriptor=_insertionDescriptor;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL requiresHeavyweightContent;
-@property(readonly, copy, nonatomic) NSString *groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
-- (BOOL)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
+- (BOOL)wantsToInsertGroupInContext:(id)arg1;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (BOOL)wantsToEmitGroupInContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
+- (BOOL)canDeferEmittingGroupInContext:(id)arg1;
 - (id)initWithInsertionDescriptor:(id)arg1;
 
 // Remaining properties

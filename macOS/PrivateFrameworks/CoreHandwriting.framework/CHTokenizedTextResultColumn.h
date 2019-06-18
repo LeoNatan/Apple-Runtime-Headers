@@ -10,7 +10,7 @@
 #import <CoreHandwriting/NSMutableCopying-Protocol.h>
 #import <CoreHandwriting/NSSecureCoding-Protocol.h>
 
-@class NSArray;
+@class NSArray, NSIndexSet;
 
 @interface CHTokenizedTextResultColumn : NSObject <NSCopying, NSMutableCopying, NSSecureCoding>
 {
@@ -22,6 +22,7 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToTokenizedTextResultColumn:(id)arg1;
+@property(readonly, nonatomic) NSIndexSet *strokeIndexes;
 - (long long)indexOfEquivalentTokenRow:(id)arg1 tokenRange:(struct _NSRange)arg2;
 - (id)description;
 - (void)dealloc;

@@ -10,7 +10,7 @@
 #import <WiFiPolicy/NSSecureCoding-Protocol.h>
 #import <WiFiPolicy/TBNetwork-Protocol.h>
 
-@class NSDate, NSSet, NSString;
+@class NSDate, NSSet, NSString, TBTileMO;
 @protocol TBScore;
 
 @interface TBNetworkMO : NSManagedObject <TBNetwork, NSSecureCoding, NSCoding>
@@ -48,6 +48,7 @@
 @property(nonatomic) int popularityScoreValue; // @dynamic popularityScoreValue;
 @property(nonatomic) int qualityScoreValue; // @dynamic qualityScoreValue;
 @property(readonly) Class superclass;
+@property(retain, nonatomic) TBTileMO *tile; // @dynamic tile;
 @property(nonatomic) long long tileKey; // @dynamic tileKey;
 @property(nonatomic) long long timestamp; // @dynamic timestamp;
 

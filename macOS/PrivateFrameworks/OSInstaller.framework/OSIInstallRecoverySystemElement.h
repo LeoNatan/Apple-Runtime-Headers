@@ -8,13 +8,15 @@
 
 @interface OSIInstallRecoverySystemElement : OSIInstallQueueElement
 {
+    BOOL _installRecoveryDMGs;
 }
 
+@property BOOL installRecoveryDMGs; // @synthesize installRecoveryDMGs=_installRecoveryDMGs;
 - (double)estimatedTimeToComplete;
 - (id)localizedStatusString;
 - (id)operationName;
 - (BOOL)runReturningError:(id *)arg1;
-- (id)initWithOptions:(id)arg1;
+- (id)initWithOptions:(id)arg1 installRecoveryDMGs:(BOOL)arg2;
 
 @end
 

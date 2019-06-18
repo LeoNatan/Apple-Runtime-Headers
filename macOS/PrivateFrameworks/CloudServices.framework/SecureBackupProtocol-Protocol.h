@@ -9,7 +9,6 @@
 @class NSDictionary, NSString, SecureBackup;
 
 @protocol SecureBackupProtocol <NSObject>
-- (void)daemonPasscodeRequestOpinion:(void (^)(unsigned int, NSError *))arg1;
 - (void)beginHSA2PasscodeRequest:(SecureBackup *)arg1 desirePasscodeImmediately:(_Bool)arg2 uuid:(NSString *)arg3 reply:(void (^)(SecureBackupBeginPasscodeRequestResults *, NSError *))arg4;
 - (void)prepareHSA2EscrowRecordContents:(SecureBackup *)arg1 usesComplexPassphrase:(_Bool)arg2 reply:(void (^)(NSError *))arg3;
 - (void)stateCaptureWithReply:(void (^)(NSDictionary *, NSError *))arg1;

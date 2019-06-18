@@ -66,7 +66,6 @@
 - (_Bool)_request:(id)arg1 isCacheEquivalentTo:(id)arg2;
 - (id)_createCanonicalRequestForTask:(id)arg1;
 - (id)_createCanonicalRequest:(id)arg1 task:(id)arg2;
-- (id)_createCanonicalRequest_GOOD:(id)arg1 task:(id)arg2;
 - (Class)_protocolClassForRequest:(id)arg1;
 - (Class)_protocolClassForTask:(id)arg1 skipAppSSO:(BOOL)arg2;
 - (Class)_protocolClassForTask:(id)arg1;

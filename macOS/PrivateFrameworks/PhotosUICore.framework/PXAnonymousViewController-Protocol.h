@@ -7,6 +7,7 @@
 #import <PhotosUICore/NSObject-Protocol.h>
 
 @protocol PXAnonymousViewController <NSObject>
+@property(readonly, nonatomic) struct CGSize px_referenceSize;
 @property(readonly, nonatomic) struct NSEdgeInsets px_layoutMargins;
 @property(readonly, nonatomic) struct NSEdgeInsets px_safeAreaInsets;
 @end

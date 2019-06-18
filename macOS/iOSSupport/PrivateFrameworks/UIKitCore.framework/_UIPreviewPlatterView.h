@@ -6,16 +6,16 @@
 
 #import <UIKitCore/UIView.h>
 
-@class UIVisualEffectView, _UIPlatterContentWrapperView, _UIPlatterSoftShadowView, _UITargetedPreview;
+@class UITargetedPreview, UIVisualEffectView, _UIPlatterContentWrapperView, _UIPlatterSoftShadowView;
 
 __attribute__((visibility("hidden")))
 @interface _UIPreviewPlatterView : UIView
 {
     BOOL _expanded;
-    BOOL _dragShadowVisible;
+    BOOL _hideCollapsedShadow;
     BOOL _alwaysCompact;
-    _UITargetedPreview *_collapsedPreview;
-    _UITargetedPreview *_expandedPreview;
+    UITargetedPreview *_collapsedPreview;
+    UITargetedPreview *_expandedPreview;
     UIView *_contentView;
     _UIPlatterSoftShadowView *_collapsedShadowView;
     UIVisualEffectView *_expandedShadowView;
@@ -33,12 +33,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UIPlatterSoftShadowView *collapsedShadowView; // @synthesize collapsedShadowView=_collapsedShadowView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) BOOL alwaysCompact; // @synthesize alwaysCompact=_alwaysCompact;
-@property(nonatomic) BOOL dragShadowVisible; // @synthesize dragShadowVisible=_dragShadowVisible;
+@property(nonatomic) BOOL hideCollapsedShadow; // @synthesize hideCollapsedShadow=_hideCollapsedShadow;
 @property(nonatomic) BOOL expanded; // @synthesize expanded=_expanded;
-@property(retain, nonatomic) _UITargetedPreview *expandedPreview; // @synthesize expandedPreview=_expandedPreview;
-@property(retain, nonatomic) _UITargetedPreview *collapsedPreview; // @synthesize collapsedPreview=_collapsedPreview;
+@property(retain, nonatomic) UITargetedPreview *expandedPreview; // @synthesize expandedPreview=_expandedPreview;
+@property(retain, nonatomic) UITargetedPreview *collapsedPreview; // @synthesize collapsedPreview=_collapsedPreview;
 - (void).cxx_destruct;
 - (void)updateContentSize;
+- (BOOL)_previewIsLikelyOpaque:(id)arg1;
 - (void)_updateCollapsedShadow;
 - (void)didTearOffForDrag;
 - (void)layoutSubviews;

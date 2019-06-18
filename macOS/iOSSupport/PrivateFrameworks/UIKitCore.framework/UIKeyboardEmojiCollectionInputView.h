@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     BOOL _inputDelegateCanSupportAnimoji;
     BOOL _hasShownAnimojiFirstTimeExperience;
     BOOL _shouldRetryFetchingAnimojiRecents;
+    BOOL _useWideAnimojiCell;
     CDUnknownBlockType _completionBlock;
     UIResponder<UIKBEmojiHitTestResponder> *_hitTestResponder;
 }

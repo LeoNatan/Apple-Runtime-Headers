@@ -6,52 +6,44 @@
 
 #import <objc/NSObject.h>
 
-@class MADownloadOptions, NSDictionary, NSMutableArray, NSMutableSet, NSString, _HKMobileAssetDownloadManagerV2;
+@class MADownloadOptions, NSMutableArray, NSMutableSet, NSString;
 @protocol OS_dispatch_queue;
 
 @interface _HKMobileAssetDownloadManager : NSObject
 {
     NSMutableArray *_pendingOperations;
-    NSMutableSet *_downloadingPredicateFormats;
+    NSMutableSet *_downloadingQueryParams;
     NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_queue> *_queue_v2;
     _HKMobileAssetDownloadManager *_retainedSelf;
-    _HKMobileAssetDownloadManagerV2 *_mobileAssetDownloadManagerV2;
     BOOL _shouldQueryLocalAssetsFirst;
     BOOL _shouldAutoDownloadRemoteAssets;
     NSString *_mobileAssetTypeName;
-    NSDictionary *_downloadOptions;
-    CDUnknownBlockType _downloadCompletionHandler;
     CDUnknownBlockType _errorHandler;
+    MADownloadOptions *_mobileAssetDownloadOptions;
+    CDUnknownBlockType _mobileAssetDownloadCompletionHandler;
 }
 
+@property(copy, nonatomic) CDUnknownBlockType mobileAssetDownloadCompletionHandler; // @synthesize mobileAssetDownloadCompletionHandler=_mobileAssetDownloadCompletionHandler;
+@property(copy, nonatomic) MADownloadOptions *mobileAssetDownloadOptions; // @synthesize mobileAssetDownloadOptions=_mobileAssetDownloadOptions;
 @property(copy, nonatomic) CDUnknownBlockType errorHandler; // @synthesize errorHandler=_errorHandler;
-@property(copy, nonatomic) CDUnknownBlockType downloadCompletionHandler; // @synthesize downloadCompletionHandler=_downloadCompletionHandler;
-@property(copy, nonatomic) NSDictionary *downloadOptions; // @synthesize downloadOptions=_downloadOptions;
 @property(readonly, copy, nonatomic) NSString *mobileAssetTypeName; // @synthesize mobileAssetTypeName=_mobileAssetTypeName;
 @property(nonatomic) BOOL shouldAutoDownloadRemoteAssets; // @synthesize shouldAutoDownloadRemoteAssets=_shouldAutoDownloadRemoteAssets;
 @property(nonatomic) BOOL shouldQueryLocalAssetsFirst; // @synthesize shouldQueryLocalAssetsFirst=_shouldQueryLocalAssetsFirst;
 - (void).cxx_destruct;
-- (void)removeAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_queue_downloadAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)_queue_fetchAssetsWithPredicate:(id)arg1 onlyLocal:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)_queue_fetchAssetsWithLocalInformation:(BOOL)arg1 shouldRequery:(BOOL)arg2 predicate:(id)arg3;
+- (id)_errorWithDomain:(id)arg1 code:(long long)arg2;
 - (void)_callErrorHandlerWithError:(id)arg1;
-- (void)_callDownloadCompletionHandlerWithAssets:(id)arg1 predicate:(id)arg2;
-- (void)downloadAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)fetchAssetsWithPredicate:(id)arg1 onlyLocal:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
-- (void)downloadAssetsWithPredicate:(id)arg1;
 - (void)_callDownloadCompletionHandlerWithAssets:(id)arg1 queryParams:(id)arg2;
+- (id)_generateAssetQueryFromQueryParams:(id)arg1;
+- (void)_queue_downloadAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_queue_fetchAssetsWithLocalInformation:(BOOL)arg1 shouldRequery:(BOOL)arg2 queryParams:(id)arg3;
+- (void)_queue_fetchAssetsWithQuery:(id)arg1 onlyLocal:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)removeMobileAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)downloadMobileAssets:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)fetchAssetsWithQueryParams:(id)arg1 onlyLocal:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)downloadAssetsWithQueryParams:(id)arg1;
-@property(copy, nonatomic) CDUnknownBlockType mobileAssetDownloadCompletionHandler;
-@property(copy, nonatomic) MADownloadOptions *mobileAssetDownloadOptions;
 - (id)description;
 - (void)dealloc;
 - (id)initWithMobileAssetTypeName:(id)arg1 queue:(id)arg2;
-- (id)initWithMobileAssetTypeName:(id)arg1;
 
 @end
 

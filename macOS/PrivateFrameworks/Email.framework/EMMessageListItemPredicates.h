@@ -12,6 +12,8 @@
 
 + (id)_keyPathsForFlagChange:(id)arg1;
 + (BOOL)predicate:(id)arg1 appliesToFlagChange:(id)arg2;
++ (id)spotlightPredicateForPredicate:(id)arg1;
++ (id)mailboxURLsForPredicate:(id)arg1;
 + (id)threadScopeForPredicate:(id)arg1;
 + (id)mailboxScopeForPredicate:(id)arg1 withMailboxTypeResolver:(id)arg2;
 + (id)sortDescriptorForDateAscending:(BOOL)arg1;

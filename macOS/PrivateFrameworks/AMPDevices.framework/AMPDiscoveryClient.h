@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <AMPDevices/AMPDiscoveryClientProtocol-Protocol.h>
+#import <AMPDevices/AMPDeviceDiscoveryEventsProtocol-Protocol.h>
 
 @class DeviceCollection;
 
-@interface AMPDiscoveryClient : NSObject <AMPDiscoveryClientProtocol>
+@interface AMPDiscoveryClient : NSObject <AMPDeviceDiscoveryEventsProtocol>
 {
     DeviceCollection *_deviceCollection;
 }
@@ -20,14 +20,10 @@
 - (void)discoveryServiceWillTerminate;
 - (void)completedOperationForDeviceWithIdentifier:(id)arg1;
 - (void)startedOperationForDeviceWithIdentifier:(id)arg1 allowCancel:(BOOL)arg2;
-- (void)deviceChanged:(id)arg1;
-- (void)deviceChanged_MainThread:(id)arg1;
 - (void)nameChangedTo:(id)arg1 forDeviceWithIdentifier:(id)arg2;
-- (void)nameChangedTo_MainThread:(id)arg1;
 - (void)deviceDisconnected:(id)arg1;
-- (void)deviceDisconnected_MainThread:(id)arg1;
+- (void)deviceChanged:(id)arg1;
 - (void)deviceConnected:(id)arg1;
-- (void)deviceConnected_MainThread:(id)arg1;
 - (id)initWithDeviceCollection:(id)arg1;
 
 @end

@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
     id <SiriSuggestionsStartPageExploreViewItemDelegate> _delegate;
 }
 
++ (id)_handoffIconForDeviceType:(id)arg1;
 @property(nonatomic) __weak id <SiriSuggestionsStartPageExploreViewItemDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) WBSForYouLinkRecommendation *recommendation; // @synthesize recommendation=_recommendation;
 @property(retain, nonatomic) NSImage *image; // @synthesize image=_image;
@@ -36,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)mouseUp:(id)arg1;
 - (void)mouseDown:(id)arg1;
 - (void)_createContactImageViewIfNecessary;
+- (void)_updateContactImage;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)prepareForReuse;

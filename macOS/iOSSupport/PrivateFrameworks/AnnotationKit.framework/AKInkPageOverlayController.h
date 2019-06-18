@@ -43,7 +43,7 @@
 - (void)_controllerWillSave:(id)arg1;
 - (void)_toolStatusUpdated:(id)arg1;
 - (void)_enclosingScrollViewDidScroll:(id)arg1;
-- (void)_didToggleRulerNotification:(id)arg1;
+- (void)didToggleRuler;
 - (void)_inkDidChangeNotification:(id)arg1;
 - (BOOL)shapeDetectionController:(id)arg1 shouldSelectCandidateAnnotation:(id)arg2;
 - (BOOL)isWaitingToCoalesceStrokes;

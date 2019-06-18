@@ -6,10 +6,12 @@
 
 #import <HealthKit/NSObject-Protocol.h>
 
-@class HKConcept, HKConceptIdentifier, HKMedicalCodingContext, HKSample, NSNumber, NSString;
+@class HKConcept, HKConceptIdentifier, HKMedicalCodingContext, HKSample, NSNumber, NSString, NSURL;
 
 @protocol HKConceptStoreServerInterface <NSObject>
-- (void)remote_resetOntologyDatabaseWithCompletion:(void (^)(BOOL, NSError *))arg1;
+- (void)remote_resetOntologyUsingAssetAtLocation:(NSURL *)arg1 rememberLocation:(BOOL)arg2 completion:(void (^)(BOOL, NSError *))arg3;
+- (void)remote_queryConceptsAssociatedToUserRecordsWithCompletion:(void (^)(NSArray *, NSError *))arg1;
+- (void)remote_queryCountOfConceptsAssociatedToUserRecordsWithCompletion:(void (^)(long long, NSError *))arg1;
 - (void)remote_cleanUpAfterUnitTestWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)remote_queryNodeNameForAttributeWithKeyID:(NSNumber *)arg1 value:(NSString *)arg2 completion:(void (^)(NSString *, NSError *))arg3;
 - (void)remote_removeAllAssociationsToSamplesWithCompletion:(void (^)(BOOL, NSError *))arg1;

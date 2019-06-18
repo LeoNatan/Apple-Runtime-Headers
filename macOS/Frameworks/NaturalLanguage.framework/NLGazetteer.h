@@ -25,6 +25,7 @@
 - (BOOL)writeMLModelToURL:(id)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)modelDescription;
 @property(readonly, copy) NSData *data;
+- (id)labels;
 - (id)labelForString:(id)arg1;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1 language:(id)arg2 error:(id *)arg3;

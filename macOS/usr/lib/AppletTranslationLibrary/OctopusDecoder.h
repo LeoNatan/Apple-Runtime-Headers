@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (unsigned int)isBlackListed:(id)arg1;
 + (id)getTransactionTypeStringFromCode:(unsigned char)arg1;
 + (BOOL)isTopUpTransaction:(unsigned char)arg1;
 + (id)getAAVSAmount:(id)arg1;
@@ -18,6 +19,7 @@ __attribute__((visibility("hidden")))
 + (id)getBaseDate:(id)arg1;
 + (id)getNegativeValueLimit:(id)arg1;
 + (id)getLoyaltyBalance:(id)arg1;
++ (id)injectTLOGAAVS:(id)arg1 withAAVSAmount:(id)arg2 andBalance:(id)arg3;
 + (id)parseTLOGBlock:(id)arg1 withBaseDate:(id)arg2;
 + (id)getPurseBalance:(id)arg1;
 

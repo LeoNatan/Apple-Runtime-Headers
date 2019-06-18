@@ -27,6 +27,7 @@
     BOOL _isInstalledForUser;
     BOOL _shouldHaveFullSSLTrust;
     BOOL _isManagedByProfileService;
+    BOOL _isManagedByMDM;
     int _trustLevel;
     NSString *_profileDescription;
     NSString *_displayName;
@@ -56,6 +57,7 @@
     NSString *_localizedConsentText;
 }
 
+@property(readonly, nonatomic) BOOL isManagedByMDM; // @synthesize isManagedByMDM=_isManagedByMDM;
 @property(readonly, nonatomic) NSString *localizedConsentText; // @synthesize localizedConsentText=_localizedConsentText;
 @property(readonly, retain, nonatomic) NSArray *installationWarnings; // @synthesize installationWarnings=_installationWarnings;
 @property(readonly, nonatomic) BOOL isManagedByProfileService; // @synthesize isManagedByProfileService=_isManagedByProfileService;

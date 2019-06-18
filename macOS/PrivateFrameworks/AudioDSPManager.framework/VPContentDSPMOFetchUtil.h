@@ -8,6 +8,7 @@
 
 @class NSManagedObjectContext;
 
+__attribute__((visibility("hidden")))
 @interface VPContentDSPMOFetchUtil : NSObject
 {
     NSManagedObjectContext *mManagedObjectContext;

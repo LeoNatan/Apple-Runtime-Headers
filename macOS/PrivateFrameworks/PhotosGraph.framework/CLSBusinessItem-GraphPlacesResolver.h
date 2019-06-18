@@ -8,10 +8,10 @@
 
 #import <PhotosGraph/PGGraphPlaceItem-Protocol.h>
 
-@class CLCircularRegion, NSString;
+@class CLCircularRegion, NSArray, NSString;
 
 @interface CLSBusinessItem (GraphPlacesResolver) <PGGraphPlaceItem>
-@property(readonly, nonatomic) NSString *category;
+@property(readonly, nonatomic) NSArray *categoryNames;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,7 +6,7 @@
 
 #import <Home/NSObject-Protocol.h>
 
-@class AVPlayer, HFCameraClipPosition, HMCameraClipCollection, NSError;
+@class AVPlayer, HFCameraClipPosition, NSError;
 @protocol HFCameraClipPlayerDelegate, HFCameraClipScrubbing;
 
 @protocol HFCameraClipPlaying <NSObject>
@@ -15,7 +15,6 @@
 @property(readonly, nonatomic) NSError *error;
 @property(readonly, nonatomic) long long timeControlStatus;
 @property(copy, nonatomic) HFCameraClipPosition *currentPosition;
-@property(readonly, nonatomic) HMCameraClipCollection *clipCollection;
 @property(nonatomic) __weak id <HFCameraClipScrubbing> scrubber;
 @property(nonatomic) __weak id <HFCameraClipPlayerDelegate> delegate;
 @property(readonly, nonatomic) AVPlayer *player;

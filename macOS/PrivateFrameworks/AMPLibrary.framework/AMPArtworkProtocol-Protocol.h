@@ -12,6 +12,7 @@
 - (void)setRemoteArtworkForInfo:(NSArray *)arg1 forDatabase:(unsigned long long)arg2 withReply:(void (^)(NSArray *, NSError *))arg3;
 - (void)setArtwork:(NSData *)arg1 forInfo:(AMPArtworkSourceInfo *)arg2 forDatabase:(unsigned long long)arg3 withReply:(void (^)(AMPSetArtworkResponse *, NSError *))arg4;
 - (void)fetchArtwork:(NSArray *)arg1 withReply:(void (^)(NSArray *, NSError *))arg2;
+- (void)lookupArtworkForInfo:(NSArray *)arg1 forDatabase:(unsigned long long)arg2 withReply:(void (^)(NSArray *, NSError *))arg3;
 - (void)closeDatabase:(unsigned long long)arg1 withReply:(void (^)(NSError *))arg2;
 - (void)openDatabase:(unsigned long long)arg1 forKind:(unsigned long long)arg2 withReply:(void (^)(NSError *))arg3;
 @end

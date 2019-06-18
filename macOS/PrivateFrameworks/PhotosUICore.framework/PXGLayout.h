@@ -10,7 +10,7 @@
 #import <PhotosUICore/PXGDiagnosticsProvider-Protocol.h>
 #import <PhotosUICore/PXGSpriteIndexReferencing-Protocol.h>
 
-@class NSArray, NSIndexSet, NSMutableArray, NSString, PXGAnchor, PXGItemsLayout, PXGSpriteDataStore, PXGSpriteMetadataStore, PXGSublayoutDataStore, PXGViewEnvironment;
+@class NSArray, NSIndexSet, NSMutableArray, NSString, PXGAnchor, PXGItemsLayout, PXGReusableAccessibilityContentInfo, PXGSpriteDataStore, PXGSpriteMetadataStore, PXGSublayoutDataStore, PXGViewEnvironment;
 @protocol PXGLayoutContentSource, PXGLayoutUpdateDelegate, PXGLayoutVisibleRectDelegate;
 
 @interface PXGLayout : NSObject <PXGDataSourceDrivenLayout, PXGSpriteIndexReferencing, PXGDiagnosticsProvider>
@@ -46,8 +46,10 @@
     long long _updateCount;
     PXGAnchor *_activeAnchor;
     PXGAnchor *_lastVisibleAreaAnchor;
+    PXGReusableAccessibilityContentInfo *_accessibilityGroupElement;
     long long _numberOfDescendantAnchors;
     struct CGSize _referenceSize;
+    struct CGPoint _lastScrollDirection;
     struct CGSize _contentSize;
     struct CGSize _estimatedContentSize;
     struct CGRect _visibleRect;
@@ -55,6 +57,7 @@
 }
 
 @property(readonly, nonatomic) long long numberOfDescendantAnchors; // @synthesize numberOfDescendantAnchors=_numberOfDescendantAnchors;
+@property(retain, nonatomic) PXGReusableAccessibilityContentInfo *accessibilityGroupElement; // @synthesize accessibilityGroupElement=_accessibilityGroupElement;
 @property(retain, nonatomic) PXGAnchor *lastVisibleAreaAnchor; // @synthesize lastVisibleAreaAnchor=_lastVisibleAreaAnchor;
 @property(nonatomic) struct CGSize estimatedContentSize; // @synthesize estimatedContentSize=_estimatedContentSize;
 @property(readonly, nonatomic) PXGAnchor *activeAnchor; // @synthesize activeAnchor=_activeAnchor;
@@ -71,6 +74,7 @@
 @property(readonly, nonatomic) BOOL needsUpdate; // @synthesize needsUpdate=_needsUpdate;
 @property(nonatomic) unsigned long long userInterfaceDirection; // @synthesize userInterfaceDirection=_userInterfaceDirection;
 @property(nonatomic) double alpha; // @synthesize alpha=_alpha;
+@property(nonatomic) struct CGPoint lastScrollDirection; // @synthesize lastScrollDirection=_lastScrollDirection;
 @property(nonatomic) double screenScale; // @synthesize screenScale=_screenScale;
 @property(nonatomic) struct NSEdgeInsets safeAreaInsets; // @synthesize safeAreaInsets=_safeAreaInsets;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
@@ -83,10 +87,16 @@
 - (void).cxx_destruct;
 - (void)enumerateDescendantsLayoutsBreadthFirstReverseUsingBlock:(CDUnknownBlockType)arg1;
 - (void)enumerateDescendantsLayoutsUsingBlock:(CDUnknownBlockType)arg1;
+@property(readonly, copy, nonatomic) NSString *accessibilityLabel;
+@property(readonly, nonatomic) BOOL canSelectAccessibilityGroupElementsChildren;
+@property(readonly, nonatomic) BOOL canSelectAccessibilityGroupElements;
+@property(readonly, nonatomic) BOOL hasBodyContent;
+@property(readonly, nonatomic) BOOL canCreateAccessibilityGroupElement;
 - (void)_appendDescription:(id)arg1 atLevel:(long long)arg2;
 - (id)_paddingForLevel:(long long)arg1;
 - (id)recursiveDescription;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
+@property(readonly, nonatomic) unsigned long long fullyVisibleEdgesWithDefaultTolerance;
 - (unsigned long long)fullyVisibleEdgesWithTolerance:(double)arg1;
 - (struct _PXGSpriteIndexRange)spriteIndexRangeCoveringRect:(struct CGRect)arg1;
 - (void)_enumerateSpritesInRect:(struct CGRect)arg1 transform:(CDStruct_3fe57b01)arg2 usingBlock:(CDUnknownBlockType)arg3;
@@ -97,9 +107,10 @@
 - (id)hitTestResultForSpriteIndex:(unsigned int)arg1;
 - (void)_enumerateSpritesInRange:(struct _PXGSpriteIndexRange)arg1 transform:(CDStruct_3fe57b01)arg2 spriteOffset:(unsigned int)arg3 stop:(char *)arg4 usingBlock:(CDUnknownBlockType)arg5;
 - (void)enumerateSpritesInRange:(struct _PXGSpriteIndexRange)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (void)copyLayoutForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 applySpriteTransforms:(BOOL)arg2 parentTransform:(CDStruct_3fe57b01)arg3 parentSublayoutOrigin:(struct CGPoint)arg4 geometries:(CDStruct_ac168a83 *)arg5 styles:(CDStruct_3bc3b9c1 *)arg6 infos:(CDStruct_9d1ebe49 *)arg7;
-- (void)copyLayoutForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 applySpriteTransforms:(BOOL)arg2 geometries:(CDStruct_ac168a83 *)arg3 styles:(CDStruct_3bc3b9c1 *)arg4 infos:(CDStruct_9d1ebe49 *)arg5;
-- (void)copyLayoutForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 geometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_3bc3b9c1 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4;
+- (void)copyLayoutForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 applySpriteTransforms:(BOOL)arg2 parentTransform:(CDStruct_3fe57b01)arg3 parentSublayoutOrigin:(struct CGPoint)arg4 geometries:(CDStruct_ac168a83 *)arg5 styles:(CDStruct_506f5052 *)arg6 infos:(CDStruct_9d1ebe49 *)arg7;
+- (void)copyLayoutForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 applySpriteTransforms:(BOOL)arg2 geometries:(CDStruct_ac168a83 *)arg3 styles:(CDStruct_506f5052 *)arg4 infos:(CDStruct_9d1ebe49 *)arg5;
+- (void)copyLayoutForSpritesInRange:(struct _PXGSpriteIndexRange)arg1 geometries:(CDStruct_ac168a83 *)arg2 styles:(CDStruct_506f5052 *)arg3 infos:(CDStruct_9d1ebe49 *)arg4;
+- (CDStruct_506f5052)styleForSpriteAtIndex:(unsigned int)arg1;
 - (CDStruct_ac168a83)geometryForSpriteAtIndex:(unsigned int)arg1;
 - (void)contentSizeDidChange;
 @property(readonly, copy, nonatomic) NSArray *fences;
@@ -138,6 +149,7 @@
 - (id)convertChangeDetails:(id)arg1 fromSublayout:(id)arg2;
 - (struct _PXGSpriteIndexRange)convertRange:(struct _PXGSpriteIndexRange)arg1 fromSublayout:(id)arg2;
 - (void)sublayout:(id)arg1 didApplySpriteChangeDetails:(id)arg2;
+- (void)didApplySpriteChangeDetails:(id)arg1;
 - (unsigned short)addResizableCapInsets:(CDStruct_0054b44d)arg1;
 - (void)applySpriteChangeDetails:(id)arg1 countAfterChanges:(unsigned int)arg2 initialState:(CDUnknownBlockType)arg3 modifyState:(CDUnknownBlockType)arg4;
 - (void)modifySpritesAtIndexes:(id)arg1 state:(CDUnknownBlockType)arg2;
@@ -176,6 +188,7 @@
 @property(copy, nonatomic) NSIndexSet *hiddenSpriteIndexes;
 - (void)userInterfaceDirectionDidChange;
 - (void)alphaDidChange;
+- (void)lastScrollDirectionDidChange;
 - (void)screenScaleDidChange;
 - (void)safeAreaInsetsDidChange;
 - (void)visibleRectDidChange;
@@ -205,6 +218,7 @@
 @property(readonly, nonatomic) unsigned long long zoomBehavior;
 @property(readonly, nonatomic) BOOL isAnimating;
 @property(readonly, nonatomic) NSMutableArray *changeDetails;
+@property(readonly, nonatomic) struct CGRect frame;
 @property(readonly, nonatomic) unsigned int childrenNumberOfSprites;
 @property(readonly, nonatomic) unsigned int localNumberOfSprites;
 - (void)_recycleSpriteDataStore;

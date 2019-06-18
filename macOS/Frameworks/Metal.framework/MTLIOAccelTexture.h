@@ -7,6 +7,7 @@
 #import <Metal/MTLIOAccelResource.h>
 
 @class MTLIOAccelBuffer;
+@protocol MTLTexture;
 
 @interface MTLIOAccelTexture : MTLIOAccelResource
 {
@@ -86,6 +87,9 @@
 - (id)initWithDevice:(id)arg1 descriptor:(id)arg2 iosurface:(struct __IOSurface *)arg3 plane:(unsigned int)arg4 field:(unsigned int)arg5 args:(struct IOAccelNewResourceArgs *)arg6 argsSize:(unsigned int)arg7;
 - (id)initWithDevice:(id)arg1 descriptor:(id)arg2 sysMemSize:(unsigned long long)arg3 sysMemRowBytes:(unsigned long long)arg4 vidMemSize:(unsigned long long)arg5 vidMemRowBytes:(unsigned long long)arg6 args:(struct IOAccelNewResourceArgs *)arg7 argsSize:(unsigned int)arg8;
 - (void)dealloc;
+- (id)newRemoteTextureViewForDevice:(id)arg1;
+@property(readonly) id <MTLTexture> remoteStorageTexture;
+- (id)initWithDevice:(id)arg1 remoteStorageTexture:(id)arg2 args:(struct IOAccelNewResourceArgs *)arg3 argsSize:(unsigned int)arg4;
 @property(readonly, getter=isShareable) BOOL shareable; // @synthesize shareable=_shareable;
 @property(readonly) struct __IOSurface *iosurface; // @synthesize iosurface=_iosurface;
 - (id)newSharedTextureHandle;

@@ -6,7 +6,8 @@
 
 #import <AudioToolboxCore/_AURemoteParameterSynchronization-Protocol.h>
 
-@class AUAudioUnitPreset, AUAudioUnitProperty, AUAudioUnitViewConfiguration, AVAudioFormat, CAXPCObject, MIDICIProfile, NSArray, NSData, NSDictionary, NSString;
+@class AUAudioUnitPreset, AUAudioUnitProperty, AUAudioUnitViewConfiguration, AVAudioFormat, CAXPCObject, MIDICIProfile, NSArray, NSData, NSDictionary, NSObject, NSString;
+@protocol OS_xpc_object;
 
 @protocol AUAudioUnitXPCProtocol <_AURemoteParameterSynchronization>
 - (void)presetStateFor:(AUAudioUnitPreset *)arg1 reply:(void (^)(NSError *, NSDictionary *))arg2;
@@ -34,7 +35,7 @@
 - (void)setBusFormat:(unsigned int)arg1 scope:(unsigned int)arg2 format:(AVAudioFormat *)arg3 reply:(void (^)(NSError *, NSArray *))arg4;
 - (void)reset:(void (^)(NSError *))arg1;
 - (void)uninitialize:(void (^)(NSError *))arg1;
-- (void)setWorkIntervalPort:(CAXPCObject *)arg1 reply:(void (^)(NSError *))arg2;
+- (void)setWorkIntervalPort:(NSObject<OS_xpc_object> *)arg1 reply:(void (^)(NSError *))arg2;
 - (void)initialize2:(int)arg1 formats:(NSData *)arg2 maxFrames:(unsigned long long)arg3 buffer:(CAXPCObject *)arg4 bufferSize:(unsigned int)arg5 beginSem:(CAXPCObject *)arg6 endSem:(CAXPCObject *)arg7 reply:(void (^)(NSError *))arg8;
 - (void)initialize:(unsigned long long)arg1 reply:(void (^)(NSError *, unsigned long long, unsigned long long, unsigned long long, NSData *, BOOL))arg2;
 - (void)getBusses:(unsigned int)arg1 reply:(void (^)(NSError *, NSArray *))arg2;

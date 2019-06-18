@@ -21,8 +21,7 @@
 - (void)pasteAsPlainText:(id)arg1;
 - (void)paste:(id)arg1;
 - (void)strikethrough:(id)arg1;
-- (BOOL)resignFirstResponder;
-- (BOOL)canResignFirstResponder;
+- (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 
 @end

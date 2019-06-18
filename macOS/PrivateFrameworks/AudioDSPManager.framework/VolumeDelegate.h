@@ -10,11 +10,13 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface VolumeDelegate : NSObject <SoftwareVolumeDelegate>
 {
     struct KnobController *_knobController;
 }
 
+- (struct error_code)setFade:(unsigned int)arg1 targetScaleFactor:(float)arg2 duration:(duration_34584d68)arg3 completionHandler:(function_f5b89e9d)arg4;
 - (struct error_code)setStereoPan:(unsigned int)arg1 value:(float)arg2;
 - (struct error_code)setMute:(unsigned int)arg1 value:(_Bool)arg2;
 - (struct error_code)setVolume:(unsigned int)arg1 decibelVolume:(float)arg2 scalarVolume:(float)arg3;

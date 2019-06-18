@@ -13,6 +13,7 @@
 @interface UIStatusBarManager : NSObject <_UISceneComponentProviding>
 {
     BOOL _statusBarHidden;
+    BOOL _inStatusBarFadeAnimation;
     long long _statusBarStyle;
     UIWindowScene *_windowScene;
     NSMutableSet *_localStatusBars;
@@ -24,6 +25,7 @@
 + (id)_implicitStatusBarAnimationParametersWithClass:(Class)arg1;
 @property(copy, nonatomic) CDUnknownBlockType debugMenuHandler; // @synthesize debugMenuHandler=_debugMenuHandler;
 @property(readonly, nonatomic) double statusBarAlpha; // @synthesize statusBarAlpha=_statusBarAlpha;
+@property(readonly, nonatomic, getter=isInStatusBarFadeAnimation) BOOL inStatusBarFadeAnimation; // @synthesize inStatusBarFadeAnimation=_inStatusBarFadeAnimation;
 @property(readonly, nonatomic) NSDictionary *statusBarPartStyles; // @synthesize statusBarPartStyles=_statusBarPartStyles;
 @property(retain, nonatomic) NSMutableSet *localStatusBars; // @synthesize localStatusBars=_localStatusBars;
 @property(retain, nonatomic) UIWindowScene *windowScene; // @synthesize windowScene=_windowScene;
@@ -39,14 +41,19 @@
 - (id)createLocalStatusBar;
 - (void)deactivateLocalStatusBar:(id)arg1;
 - (void)activateLocalStatusBar:(id)arg1;
+- (void)setupForSingleLocalStatusBar;
 - (BOOL)_updateAlpha;
 - (BOOL)_updateStyleForWindow:(id)arg1 animationParameters:(id *)arg2;
-- (BOOL)_updateVisibilityForWindow:(id)arg1 animationParameters:(id *)arg2;
+- (BOOL)_updateVisibilityForWindow:(id)arg1 targetOrientation:(long long)arg2 animationParameters:(id *)arg3;
+- (void)_visibilityChangedWithTargetOrientation:(long long)arg1 animationParameters:(id)arg2;
+- (void)_updateStatusBarAppearanceWithClientSettings:(id)arg1 animationParameters:(id)arg2;
+- (void)updateStatusBarAppearanceWithClientSettings:(id)arg1 animationDuration:(double)arg2;
 - (void)updateStatusBarAppearanceWithAnimationParameters:(id)arg1;
 - (void)updateStatusBarAppearance;
 - (double)defaultStatusBarHeightInOrientation:(long long)arg1;
 @property(readonly, nonatomic) double statusBarHeight;
 @property(readonly, nonatomic) struct CGRect statusBarFrame;
+- (struct CGRect)statusBarFrameForStatusBarHeight:(double)arg1;
 - (id)_settingsDiffActionsForScene:(id)arg1;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene;
 - (id)initWithScene:(id)arg1;

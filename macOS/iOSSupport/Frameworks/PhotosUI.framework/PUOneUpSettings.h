@@ -25,6 +25,8 @@
     BOOL _allowToggleOriginalBarItem;
     BOOL _showSaliencyRects;
     BOOL _showFacesRect;
+    BOOL _showPaddedFacesRect;
+    BOOL _showBestSquareRect;
     BOOL _hideToolbarWhenShowingAccessoryView;
     BOOL _useGlobalDetailsVisibility;
     BOOL _useGlobalCommentsVisibility;
@@ -194,6 +196,8 @@
 @property(nonatomic) double minimumVisibleCommentedContentHeight; // @synthesize minimumVisibleCommentedContentHeight=_minimumVisibleCommentedContentHeight;
 @property(nonatomic) double minimumVisibleContentHeight; // @synthesize minimumVisibleContentHeight=_minimumVisibleContentHeight;
 @property(nonatomic) double accessoryInitialTopPosition; // @synthesize accessoryInitialTopPosition=_accessoryInitialTopPosition;
+@property(nonatomic) BOOL showBestSquareRect; // @synthesize showBestSquareRect=_showBestSquareRect;
+@property(nonatomic) BOOL showPaddedFacesRect; // @synthesize showPaddedFacesRect=_showPaddedFacesRect;
 @property(nonatomic) BOOL showFacesRect; // @synthesize showFacesRect=_showFacesRect;
 @property(nonatomic) BOOL showSaliencyRects; // @synthesize showSaliencyRects=_showSaliencyRects;
 @property(nonatomic) long long userNavigationMaximumDistance; // @synthesize userNavigationMaximumDistance=_userNavigationMaximumDistance;

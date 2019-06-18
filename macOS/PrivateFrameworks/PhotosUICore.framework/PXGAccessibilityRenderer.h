@@ -6,26 +6,41 @@
 
 #import <objc/NSObject.h>
 
+#import <PhotosUICore/PXGAccessibilityContentInfoDelegate-Protocol.h>
 #import <PhotosUICore/PXGRenderer-Protocol.h>
 
-@class NSIndexSet, NSMutableArray, NSMutableDictionary, NSString, PXGAccessibilityContentInfoManager;
-@protocol PXGRendererDelegate, PXGTextureConverter;
+@class NSIndexSet, NSMutableArray, NSMutableDictionary, NSString, PXGAccessibilityContentInfoManager, PXScrollViewController;
+@protocol PXGAccessibilityRendererDelegate, PXGRendererDelegate, PXGTextureConverter;
 
-@interface PXGAccessibilityRenderer : NSObject <PXGRenderer>
+@interface PXGAccessibilityRenderer : NSObject <PXGAccessibilityContentInfoDelegate, PXGRenderer>
 {
     PXGAccessibilityContentInfoManager *_contentInfoManager;
     NSMutableArray *_reusableContentInfoQueue;
     NSMutableDictionary *_contentInfosBySpriteIndex;
-    NSIndexSet *_previousVisibleIndexes;
+    NSMutableDictionary *_viewContentInfosByParentSpriteIndex;
+    NSIndexSet *_previousExtendedIndexes;
     id <PXGRendererDelegate> _delegate;
     id <PXGTextureConverter> _textureConverter;
+    PXScrollViewController *_scrollViewController;
+    id <PXGAccessibilityRendererDelegate> _accessibilityDelegate;
     struct CGRect _visibleRect;
 }
 
+@property(nonatomic) __weak id <PXGAccessibilityRendererDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
+@property(retain, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 @property(readonly, nonatomic) id <PXGTextureConverter> textureConverter; // @synthesize textureConverter=_textureConverter;
 @property(nonatomic) __weak id <PXGRendererDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (id)accessibilityViewForSpriteIndex:(unsigned int)arg1;
+- (void)_selectAsset:(id)arg1;
+- (id)accessibilityContentsWithMode:(int)arg1;
+- (void)handleAccessibilitySelectedChildren:(id)arg1;
+- (struct CGPoint)_locationForElement:(id)arg1 inView:(id)arg2;
+- (BOOL)accessibilityPerformShowDefaultUIWithElement:(id)arg1;
+- (BOOL)accessibilityPerformShowAlternateUIWithElement:(id)arg1;
+- (BOOL)accessibilityPerformShowMenuWithElement:(id)arg1;
+- (BOOL)accessibilityPerformPressWithElement:(id)arg1;
 - (void)setNeedsRender;
 - (void)renderSpritesWithTextures:(id)arg1 dataStore:(id)arg2 presentationDataStore:(id)arg3 presentationMetadataStore:(id)arg4 layout:(id)arg5;
 - (void)updateWithChangeDetails:(id)arg1;

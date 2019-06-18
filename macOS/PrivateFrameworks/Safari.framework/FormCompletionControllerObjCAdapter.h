@@ -9,7 +9,7 @@
 #import <Safari/AutoFillLocalAuthenticationOperationDelegate-Protocol.h>
 #import <Safari/WBSOneTimeCodeMonitorObserver-Protocol.h>
 
-@class AutoFillAuthorizationController, AutoFillLocalAuthenticationOperation, NSString, WBSOneTimeCodeMonitor;
+@class AutoFillAuthorizationController, AutoFillLocalAuthenticationManager, AutoFillLocalAuthenticationOperation, NSString, WBSOneTimeCodeMonitor;
 
 __attribute__((visibility("hidden")))
 @interface FormCompletionControllerObjCAdapter : FormAutoFillCompletionControllerObjCAdapter <AutoFillLocalAuthenticationOperationDelegate, WBSOneTimeCodeMonitorObserver>
@@ -18,22 +18,19 @@ __attribute__((visibility("hidden")))
     AutoFillAuthorizationController *_autoFillAuthorizationController;
     BOOL _hasUserInteractedWithTouchID;
     AutoFillLocalAuthenticationOperation *_currentLocalAuthenticationOperation;
-    BOOL _isBiometricAuthenticationAvailable;
+    AutoFillLocalAuthenticationManager *_autoFillLocalAuthenticationManager;
     BOOL __biometricAuthenticationStillInUse;
 }
 
 @property(nonatomic) BOOL _biometricAuthenticationStillInUse; // @synthesize _biometricAuthenticationStillInUse=__biometricAuthenticationStillInUse;
-@property(nonatomic, getter=isBiometricAuthenticationAvailable, setter=setIsBiometricAuthenticationAvailable:) BOOL _isBiometricAuthenticationAvailable; // @synthesize _isBiometricAuthenticationAvailable;
 - (void).cxx_destruct;
 - (void)_updateTouchIDAvailabilityIfNecessary:(id)arg1;
 - (void)_didToggleTouchIDToAutoFill:(id)arg1;
 - (void)_updateCellAtIndex:(long long)arg1 inTableView:(id)arg2 withBlock:(CDUnknownBlockType)arg3;
 - (id)_tableView;
 - (void)_selectFirstCompletionItem;
-- (void)setIsBiometricAuthenticationAvailable:(BOOL)arg1 performingUIUpdate:(BOOL)arg2;
+- (void)updateBiometricAvailabilityInCompletionList:(BOOL)arg1;
 - (void)_showBiometricMatchFailureFeedback;
-- (BOOL)_isBiometricAuthenticationAvailableWithError:(long long)arg1;
-- (BOOL)_isLockedOutDueToAuthenticationAttemptWithError:(long long)arg1;
 - (void)_presentAuthenticationSheetWithCompletionListItem:(const struct CompletionListItem *)arg1;
 - (id)_itemNameForAutoFillAuthorizationSheetWithItem:(const struct CompletionListItem *)arg1;
 - (id)currentExternalizedContext;

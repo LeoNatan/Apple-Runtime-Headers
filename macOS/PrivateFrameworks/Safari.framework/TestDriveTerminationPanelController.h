@@ -17,16 +17,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (void)runModalTerminationPromptForImportingFromOtherBrowserWithBundleIdentifier:(id)arg1;
-+ (void)runModalTerminationPromptForBookmarkMutation;
-+ (void)runModalTerminationPromptForTestDriveTimeout;
 - (void).cxx_destruct;
 - (id)_keepButtonTitleString;
 - (id)_informativeTextString;
 - (void)_configureAlertToAskToMakeSafariTheDefaultBrowser:(id)arg1;
-- (void)_configureAlertForThreeButtonConfiguration:(id)arg1;
 - (void)_configureAlertForManualImportTrigger:(id)arg1;
-- (void)_configureAlertForBookmarkMutationTrigger:(id)arg1;
-- (void)_configureAlertForTimeOutTrigger:(id)arg1;
 - (void)_cancel:(id)arg1;
 - (void)_endTestDriveKeepingImportedData:(BOOL)arg1;
 - (void)_discardImportedData:(id)arg1;

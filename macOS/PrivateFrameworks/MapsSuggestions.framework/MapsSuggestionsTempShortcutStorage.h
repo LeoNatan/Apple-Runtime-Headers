@@ -19,6 +19,7 @@
 + (id)path;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)setChangeHandler:(CDUnknownBlockType)arg1;
 - (BOOL)moveShortcut:(id)arg1 toIndex:(long long)arg2 handler:(CDUnknownBlockType)arg3;
 - (BOOL)removeShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;
 - (BOOL)addOrUpdateShortcuts:(struct NSArray *)arg1 handler:(CDUnknownBlockType)arg2;

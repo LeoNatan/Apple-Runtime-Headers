@@ -48,9 +48,10 @@
 - (id)familyMemberContactItemsFromDataSource;
 - (id)familyMemberContactItemsFromDataSourceAugmentedWithInMemoryEdits;
 @property(readonly, nonatomic) NSArray *familyMemberContactItems;
+@property(readonly, nonatomic) long long fetchStatus;
+- (void)flushEditingSession;
 - (void)startEditingSessionIfNecessaryWithSnapshotOfItems:(id)arg1;
 - (void)startEditingSessionIfNecessary;
-- (void)flushEditingSession;
 - (void)executeBlockIfEditingSessionNotInProgress:(CDUnknownBlockType)arg1;
 - (void)notifyObserverContactItemsChange;
 - (void)familyMemberContactItemsDidChange;

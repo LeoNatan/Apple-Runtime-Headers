@@ -16,7 +16,8 @@
 {
     BOOL _searchingTier1;
     BOOL _searchingTier2;
-    NSString *_currentQuery;
+    NSString *_currentSearchQuery;
+    NSString *_redactedCurrentQuery;
     CalUILocationSuggestionResult *_currentLocation;
     unsigned long long _options;
     NSMutableArray *_meCardResults;
@@ -72,7 +73,8 @@
 @property(retain) NSMutableArray *meCardResults; // @synthesize meCardResults=_meCardResults;
 @property unsigned long long options; // @synthesize options=_options;
 @property(retain) CalUILocationSuggestionResult *currentLocation; // @synthesize currentLocation=_currentLocation;
-@property(retain) NSString *currentQuery; // @synthesize currentQuery=_currentQuery;
+@property(retain, nonatomic) NSString *redactedCurrentQuery; // @synthesize redactedCurrentQuery=_redactedCurrentQuery;
+@property(retain, nonatomic) NSString *currentSearchQuery; // @synthesize currentSearchQuery=_currentSearchQuery;
 - (void).cxx_destruct;
 - (void)completerDidFail:(id)arg1 error:(id)arg2;
 - (void)geocodeNextLocationSuggestion;
@@ -92,7 +94,7 @@
 - (void)_addArray:(id)arg1 toSet:(id)arg2 withKeySet:(id)arg3 withMaxElements:(long long)arg4;
 - (void)_addArray:(id)arg1 toArray:(id)arg2 withMaxElements:(long long)arg3;
 - (void)resultsUpdated;
-- (void)finishSearchType:(id)arg1;
+- (void)finishSearchType:(id)arg1 withResultCount:(unsigned long long)arg2;
 - (id)pendingSearchTypesCopy;
 - (void)startSearchType:(id)arg1;
 - (BOOL)isFinished;

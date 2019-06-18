@@ -6,15 +6,17 @@
 
 #import <IconServices/ISIcon.h>
 
-@class NSArray;
+@class ISImageCache, NSArray;
 
 __attribute__((visibility("hidden")))
 @interface ISImageBagIcon : ISIcon
 {
     NSArray *_images;
     NSArray *_decorations;
+    ISImageCache *_imageCache;
 }
 
+@property(retain) ISImageCache *imageCache; // @synthesize imageCache=_imageCache;
 - (id)decorations;
 @property(readonly) NSArray *images; // @synthesize images=_images;
 - (void).cxx_destruct;

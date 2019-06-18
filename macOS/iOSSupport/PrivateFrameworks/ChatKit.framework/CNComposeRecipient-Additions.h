@@ -13,6 +13,8 @@
 - (void)setCanonicalAddress:(id)arg1;
 - (id)rawAddress;
 - (struct __CFPhoneNumber *)copyPhoneNumber;
+- (BOOL)isDuetPredictionForNonGroup;
+- (BOOL)isNamedGroup;
 - (BOOL)isPhone;
 - (BOOL)isEmail;
 @end

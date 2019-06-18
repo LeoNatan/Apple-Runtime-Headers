@@ -118,6 +118,7 @@
 @property(readonly, nonatomic) BOOL isMirror;
 @property(readonly, nonatomic) BOOL isAutoloop;
 @property(readonly, nonatomic) BOOL hasCustomRendered;
+@property(readonly, nonatomic) NSString *deferredPhotoProcessingIdentifer;
 @property(readonly, nonatomic) NSString *mediaGroupUUID;
 @property(readonly, nonatomic) NSString *groupingUuid;
 @property(readonly, nonatomic) NSString *burstUuid;

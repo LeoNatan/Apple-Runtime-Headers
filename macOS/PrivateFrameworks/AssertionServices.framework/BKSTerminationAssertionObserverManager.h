@@ -19,6 +19,7 @@
 }
 
 - (void).cxx_destruct;
+- (void)dealloc;
 - (void)_createMonitor;
 - (BOOL)hasTerminationAssertionForBundleID:(id)arg1;
 - (unsigned long long)efficacyForBundleID:(id)arg1;

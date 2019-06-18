@@ -241,6 +241,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(readonly, nonatomic) BOOL isFeatured;
 @property(readonly, copy, nonatomic) NSArray *linkedArticleIDs;
 @property(readonly, copy, nonatomic) NSArray *linkedIssueIDs;
 @property(readonly) Class superclass;

@@ -31,11 +31,13 @@
 @property(retain, nonatomic) OBTrayButton *usePRButton; // @synthesize usePRButton=_usePRButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewDidLoad;
 - (id)moduleController:(id)arg1 textFieldForVisibleItem:(id)arg2;
 - (id)moduleController:(id)arg1 dismissViewControllerForRequest:(id)arg2;
 - (id)moduleController:(id)arg1 presentViewControllerForRequest:(id)arg2;
 - (id)hu_preloadContent;
 - (void)_turnOnAllPersonalRequests:(id)arg1;
+- (void)_dontUsePersonalRequests:(id)arg1;
 - (void)_customizePersonalRequests:(id)arg1;
 - (void)_setupPersonalRequestsItemInfrastructure;
 - (id)init;

@@ -24,6 +24,7 @@
 - (BOOL)shouldSyncPreviewImageToCloud:(id)arg1;
 - (struct CGAffineTransform)previewImageOrientationTransform;
 - (void)drawingPreviewIsUpToDate;
+- (BOOL)preferLocalPreviewImages;
 - (BOOL)showThumbnailInNoteList;
 - (BOOL)supportsQuickLook;
 - (BOOL)canSaveURL;

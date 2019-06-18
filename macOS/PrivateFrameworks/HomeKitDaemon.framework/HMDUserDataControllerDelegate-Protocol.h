@@ -9,7 +9,7 @@
 @class HMDUserDataController, HMDUserSettingsBackingStoreController, NSUUID;
 
 @protocol HMDUserDataControllerDelegate <NSObject>
-@property(readonly) BOOL isMultiUserPreferenceEnabled;
+@property(readonly) BOOL isUserSettingsPrefEnabled;
 - (HMDUserSettingsBackingStoreController *)privateZoneControllerForUserDataController:(HMDUserDataController *)arg1;
 - (HMDUserSettingsBackingStoreController *)sharedZoneControllerForUserDataController:(HMDUserDataController *)arg1;
 - (void)userDataControllerDidUpdateMediaContentProfile:(HMDUserDataController *)arg1;

@@ -37,11 +37,11 @@
 @property(retain, nonatomic) WFCoreDataWorkflowIcon *icon; // @dynamic icon;
 @property(retain, nonatomic) NSArray *importQuestions; // @dynamic importQuestions;
 @property(retain, nonatomic) NSArray *inputClasses; // @dynamic inputClasses;
-@property(nonatomic) long long lastMigratedClientVersion; // @dynamic lastMigratedClientVersion;
+@property(copy, nonatomic) NSString *lastMigratedClientVersion; // @dynamic lastMigratedClientVersion;
 @property(copy, nonatomic) NSString *lastSavedOnDeviceName; // @dynamic lastSavedOnDeviceName;
 @property(nonatomic) long long lastSyncedHash; // @dynamic lastSyncedHash;
 @property(retain, nonatomic) WFCoreDataWorkflowLayout *layout; // @dynamic layout;
-@property(nonatomic) long long minimumClientVersion; // @dynamic minimumClientVersion;
+@property(copy, nonatomic) NSString *minimumClientVersion; // @dynamic minimumClientVersion;
 @property(copy, nonatomic) NSDate *modificationDate; // @dynamic modificationDate;
 @property(copy, nonatomic) NSString *name; // @dynamic name;
 @property(copy, nonatomic) NSString *phrase; // @dynamic phrase;

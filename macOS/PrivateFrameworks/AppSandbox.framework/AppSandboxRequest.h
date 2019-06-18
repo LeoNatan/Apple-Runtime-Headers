@@ -12,6 +12,8 @@
 {
     CodeIdentity *_codeIdentity;
     AppSandboxEntitlements *_entitlements;
+    unsigned int _userId;
+    unsigned int _groupId;
     NSString *_userAccountName;
     NSString *_userAccountHomeDirectoryPath;
     NSString *_userAccountHomeDirectoryRealPath;
@@ -41,15 +43,19 @@
 @property(copy, nonatomic) NSString *userAccountHomeDirectoryRealPath; // @synthesize userAccountHomeDirectoryRealPath=_userAccountHomeDirectoryRealPath;
 @property(copy, nonatomic) NSString *userAccountHomeDirectoryPath; // @synthesize userAccountHomeDirectoryPath=_userAccountHomeDirectoryPath;
 @property(copy, nonatomic) NSString *userAccountName; // @synthesize userAccountName=_userAccountName;
+@property(nonatomic) unsigned int groupId; // @synthesize groupId=_groupId;
+@property(nonatomic) unsigned int userId; // @synthesize userId=_userId;
 - (void).cxx_destruct;
 - (id)compileSandboxProfileAndReturnError:(id *)arg1;
 - (id)_doCompileSandboxProfileAndReturnError:(id *)arg1;
+- (BOOL)_setupFakeContainer:(id)arg1 results:(id)arg2 error:(id *)arg3;
 - (BOOL)_setupContainer:(id)arg1 results:(id)arg2 error:(id *)arg3;
 - (BOOL)_profileTimestampsAreValid;
 - (id)_makeSandboxProfileWithValidationInfo:(id)arg1 error:(id *)arg2;
 - (id)_makeSandboxProfileValidationInfoWithContainerId:(id)arg1 containerRootPath:(id)arg2 error:(id *)arg3;
 - (id)initWithCodeIdentity:(id)arg1;
 - (id)initWithCodeIdentity:(id)arg1 entitlements:(id)arg2;
+- (BOOL)screenSaverRequest;
 
 @end
 

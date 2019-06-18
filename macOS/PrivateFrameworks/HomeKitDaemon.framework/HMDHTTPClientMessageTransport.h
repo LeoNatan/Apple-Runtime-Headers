@@ -7,12 +7,13 @@
 #import <HMFoundation/HMFObject.h>
 
 #import <HomeKitDaemon/HMFHTTPClientDelegate-Protocol.h>
+#import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/HMFNetServiceDelegate-Protocol.h>
 
 @class HMDHTTPDevice, HMFHTTPClient, HMFNetService, NSString, NSUUID;
 @protocol HMDHTTPClientMessageTransportDelegate, HMFLocking;
 
-@interface HMDHTTPClientMessageTransport : HMFObject <HMFHTTPClientDelegate, HMFNetServiceDelegate>
+@interface HMDHTTPClientMessageTransport : HMFObject <HMFHTTPClientDelegate, HMFLogging, HMFNetServiceDelegate>
 {
     id <HMFLocking> _lock;
     BOOL _running;

@@ -14,6 +14,9 @@
     unsigned long long _MaxDepthOfRelatedJumps;
     NSDictionary *_messageTracerFieldStringLookupForMainStates;
     NSDictionary *_messageTracerFieldStringLookupForSubStates;
+    NSDictionary *_messageTracerFieldStringLookupForSubSubStates;
+    NSDictionary *_messageTracerFieldStringLookupPerSubStatesForViewCount;
+    NSDictionary *_messageTracerFieldStringLookupPerSubSubStatesForViewCount;
     NSHashTable *__relatedLookupTable;
 }
 
@@ -28,6 +31,9 @@
 - (void)_logMessageTracerRelatedJumpStatistics:(unsigned long long)arg1 totalJumpCount:(unsigned long long)arg2;
 - (void)_logMessageTracerDurationCounterForLogState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)_logMessageTracerDurationCounterForLogSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)_logMessageTracerDurationCounterForLogSubSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)_logMessageTracerViewCountCounterForLogSubState:(unsigned long long)arg1;
+- (void)_logMessageTracerViewCountCounterForLogSubSubState:(unsigned long long)arg1;
 - (void)logInterestingMemoryNotificationRespondedCount;
 - (void)logInterestingMemoryNotificationSeenCount;
 - (void)logNavigationListViewTapWithKey:(struct __CFString *)arg1;
@@ -76,6 +82,9 @@
 - (void)logPeopleHomeCount;
 - (void)logCounterValuesForLogState:(unsigned long long)arg1 duration:(double)arg2;
 - (void)logCounterValuesForLogSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)logCounterValuesForLogSubSubState:(unsigned long long)arg1 duration:(double)arg2;
+- (void)logViewCountForLogSubSubState:(unsigned long long)arg1;
+- (void)logViewCountForLogSubState:(unsigned long long)arg1;
 - (void)_resetDetailViewTraversalStatistics;
 - (void)eventSourceWillAppear:(unsigned long long)arg1 sender:(id)arg2;
 - (void)eventSourceDidDisappear:(unsigned long long)arg1 sender:(id)arg2;

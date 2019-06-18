@@ -6,11 +6,12 @@
 
 #import <PhotosUICore/PXObservable.h>
 
+#import <PhotosUICore/PHImportControllerObserver-Protocol.h>
 #import <PhotosUICore/PHImportSourceObserver-Protocol.h>
 
 @class NSArray, NSMutableArray, PHImportController, PHImportSource;
 
-@interface PXImportSourcesManager : PXObservable <PHImportSourceObserver>
+@interface PXImportSourcesManager : PXObservable <PHImportControllerObserver, PHImportSourceObserver>
 {
     NSMutableArray *_importSources;
     PHImportSource *_URLImportSource;
@@ -20,11 +21,20 @@
 + (id)sharedController;
 @property(readonly, nonatomic) PHImportController *importController; // @synthesize importController=_importController;
 - (void).cxx_destruct;
-- (void)removedImportSource:(id)arg1;
-- (void)addedImportSource:(id)arg1;
+- (void)capabilitiesDidChangeForImportSource:(id)arg1;
+- (void)nameDidChangeForImportSource:(id)arg1;
+- (void)userHasTrustedHostForImportSource:(id)arg1;
+- (void)userRequiredToTrustHostForImportSource:(id)arg1;
+- (void)importSource:(id)arg1 didDeleteAsset:(id)arg2;
+- (void)importSource:(id)arg1 didUpdateAsset:(id)arg2 propertyMask:(unsigned short)arg3;
+- (void)importSource:(id)arg1 didRemoveAssets:(id)arg2;
+- (void)importSource:(id)arg1 didAddAssets:(id)arg2;
+- (void)importController:(id)arg1 removedImportSource:(id)arg2;
+- (void)importController:(id)arg1 addedImportSource:(id)arg2;
 - (id)updateImportSourceForURLs:(id)arg1;
 @property(readonly, nonatomic) NSArray *importSources;
 - (void)_notifyObserversDidRemoveImportSource:(id)arg1;
+- (void)_notifyObserversDidUpdateImportSource:(id)arg1;
 - (void)_notifyObserversDidAddImportSource:(id)arg1;
 - (id)init;
 

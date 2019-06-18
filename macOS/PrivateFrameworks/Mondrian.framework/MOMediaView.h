@@ -75,11 +75,10 @@
         unsigned int dataSourceSupplementaryViewReuseIdentifierOfKindAtIndexPath:1;
         unsigned int dataSourceCanMoveItemsAtIndexPaths:1;
         unsigned int dataSourceAllowedDropPositionsForItemsAtIndexPathsMovedToIndexPath:1;
+        unsigned int dataSourceDragOperationForItemsAtIndexPathsMovedOntoItemAtIndexPath:1;
         unsigned int dataSourceMoveItemsAtIndexPathsToIndexPathsDropPosition:1;
         unsigned int dataSourceShouldExchangeItemsAtIndexPathsWithProposedIndexPaths:1;
         unsigned int dataSourceExchangeItemsAtIndexPathsWithIndexPaths:1;
-        unsigned int dataSourceMoveItemsInRangeToIndex:1;
-        unsigned int dataSourceExchangeItemsInRangeWithRange:1;
         unsigned int delegateTargetContentOffsetForProposedContentOffset;
         unsigned int delegateWillUpdateCell:1;
         unsigned int delegateDidUpdateCell:1;
@@ -315,10 +314,9 @@
 - (id)visibleMediaItems;
 - (long long)numberOfItemsInSection:(long long)arg1;
 - (long long)numberOfSections;
-- (void)collectionView:(id)arg1 exchangeItemsInRange:(struct _NSRange)arg2 withRange:(struct _NSRange)arg3;
-- (void)collectionView:(id)arg1 moveItemsInRange:(struct _NSRange)arg2 toIndex:(unsigned long long)arg3;
 - (void)collectionView:(id)arg1 exchangeItemsAtIndexPaths:(id)arg2 withIndexPaths:(id)arg3;
 - (void)collectionView:(id)arg1 moveItemsAtIndexPaths:(id)arg2 toIndexPath:(id)arg3 dropPosition:(long long)arg4;
+- (unsigned long long)collectionView:(id)arg1 dragOperationForItemsAtIndexPaths:(id)arg2 movedOntoItemAtIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 allowedDropPositionsForItemsAtIndexPaths:(id)arg2 movedToIndexPath:(id)arg3;
 - (BOOL)collectionView:(id)arg1 canMoveItemsAtIndexPaths:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;

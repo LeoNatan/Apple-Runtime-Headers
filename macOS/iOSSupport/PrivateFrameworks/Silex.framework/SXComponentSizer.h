@@ -29,10 +29,12 @@
 @property(readonly, nonatomic) id <SXComponent> component; // @synthesize component=_component;
 - (void).cxx_destruct;
 - (void)saveInfo:(id)arg1 forRenderingPhaseWithIdentifier:(id)arg2;
+- (struct UIEdgeInsets)bordersInsetsWithUnitConverter:(id)arg1;
 - (struct UIEdgeInsets)layoutMarginsWithUnitConverter:(id)arg1;
 - (struct UIEdgeInsets)contentInsetsWithUnitConverter:(id)arg1;
 - (long long)minimumColumnLength;
 - (struct _NSRange)overrideColumnLayoutForColumnRange:(struct _NSRange)arg1 inColumnLayout:(id)arg2;
+- (unsigned long long)shouldIgnoreViewportPaddingForColumnLayout:(id)arg1;
 - (unsigned long long)shouldIgnoreMarginsForColumnLayout:(id)arg1;
 - (BOOL)allowComponentIntersection;
 - (id)snapLines;

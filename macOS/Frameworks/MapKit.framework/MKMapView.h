@@ -54,6 +54,7 @@
     MKScaleView *_scaleView;
     MKCompassView *_compassView;
     BOOL _scaleVisible;
+    BOOL _compassVisible;
     BOOL _showsScale;
     BOOL _showsCompass;
     BOOL _showsScaleDuringZoom;
@@ -87,6 +88,7 @@
     VKMapView *_mapLayer;
     BOOL _hidesAllUIOnMap;
     BOOL _showsZoomControls;
+    BOOL _zoomVisible;
     NSView *_zoomButtons;
     NSObject<OS_dispatch_queue> *_lastEffectiveAppearanceIsolationQueue;
     NSAppearance *_lastEffectiveAppearance;
@@ -214,7 +216,6 @@
 - (BOOL)restoreViewportFromDictionary:(id)arg1;
 - (id)viewportDictionary;
 - (void)deselectAllMarkersAndAnnotationViews;
-- (void)stopZoomingWithInertia;
 - (void)setCenterCoordinate:(struct CLLocationCoordinate2D)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)setRegion:(CDStruct_b7cb895d)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)compass;
@@ -226,6 +227,8 @@
 - (void)_clearGesturesAndAnimations;
 - (void)setVehicleState:(CDStruct_2920cfb7)arg1;
 - (void)rotationFilter:(id)arg1 didChangeSnapping:(BOOL)arg2;
+- (void)stopZoomingWithInertia;
+- (void)startLinearZoomIn:(BOOL)arg1;
 - (void)setCameraBoundary:(id)arg1 animated:(BOOL)arg2;
 - (void)setCameraZoomRange:(id)arg1 animated:(BOOL)arg2;
 - (void)setCamera:(id)arg1 springMass:(float)arg2 springStiffness:(float)arg3 springDamping:(float)arg4 springVelocity:(float)arg5;
@@ -429,6 +432,12 @@
 @property(nonatomic, getter=_automaticallySnapsToNorth, setter=_setAutomaticallySnapsToNorth:) BOOL automaticallySnapsToNorth;
 - (void)_snapToTrueNorthAndCallBack:(BOOL)arg1;
 - (void)snapToNorth:(id)arg1;
+- (id)zoomVisibilityAnimation;
+- (void)_updateZoomControlsVisiblility:(BOOL)arg1;
+- (void)_updateZoomControlsVisiblility;
+- (id)compassVisibilityAnimation;
+- (BOOL)compassVisible;
+- (void)_setCompassVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_handleCompassTap:(id)arg1;
 - (void)_updateCompassViewPitch;
 - (void)_updateCompassVisibility;
@@ -438,6 +447,7 @@
 - (double)presentationYaw;
 - (void)_showOrHideScaleIfNecessary:(BOOL)arg1;
 - (void)_updateScale;
+@property(readonly, nonatomic, getter=_canShowControls) BOOL canShowControls;
 - (id)scaleView;
 @property(nonatomic, getter=_showsScaleDuringZoom, setter=_setShowsScaleDuringZoom:) BOOL showsScaleDuringZoom;
 @property(nonatomic) BOOL showsScale;
@@ -690,6 +700,7 @@
 - (void)keyUp:(id)arg1;
 - (void)keyDown:(id)arg1;
 - (void)cancelOperation:(id)arg1;
+- (void)startLinearZoomIn:(BOOL)arg1 withSpeed:(double)arg2;
 - (void)startLinearZoomIn:(BOOL)arg1 withEvent:(id)arg2;
 - (void)updateTrackingAreas;
 - (BOOL)shouldRecognizeMouseOverSelectablePartsOnly;
@@ -706,7 +717,6 @@
 - (id)_lastKeyViewInSubtree;
 - (BOOL)showsSettingsView;
 - (void)_setSettingsView:(id)arg1;
-- (void)_updateZoomControlsVisiblility;
 - (void)zoomControlSegmentPressed:(id)arg1;
 - (void)makeZoomButtonsIfNeeded;
 - (void)viewDidChangeEffectiveAppearance;

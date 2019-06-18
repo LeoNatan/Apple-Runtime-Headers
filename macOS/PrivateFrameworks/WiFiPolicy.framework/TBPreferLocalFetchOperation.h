@@ -6,7 +6,7 @@
 
 #import <Foundation/NSOperation.h>
 
-@class NSDate, TBPreferLocalFetchDataSource;
+@class NSDate, NSOperationQueue, TBPreferLocalFetchDataSource;
 @protocol TBFetchRequest, TBFetchResponse;
 
 @interface TBPreferLocalFetchOperation : NSOperation
@@ -14,26 +14,28 @@
     BOOL _finished;
     NSDate *_start;
     id <TBFetchRequest> _fetchRequest;
+    id <TBFetchRequest> _fetchRequestCopy;
     id <TBFetchResponse> _response;
     TBPreferLocalFetchDataSource *_dataSource;
-    CDUnknownBlockType _fetchRequestCompletionHandler;
+    NSOperationQueue *_fetchQueue;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType fetchRequestCompletionHandler; // @synthesize fetchRequestCompletionHandler=_fetchRequestCompletionHandler;
+@property(retain, nonatomic) NSOperationQueue *fetchQueue; // @synthesize fetchQueue=_fetchQueue;
 @property(retain, nonatomic) TBPreferLocalFetchDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) id <TBFetchResponse> response; // @synthesize response=_response;
+@property(retain, nonatomic) id <TBFetchRequest> fetchRequestCopy; // @synthesize fetchRequestCopy=_fetchRequestCopy;
 @property(retain, nonatomic) id <TBFetchRequest> fetchRequest; // @synthesize fetchRequest=_fetchRequest;
 - (void).cxx_destruct;
 - (void)_captureCacheEventWithStatus:(unsigned long long)arg1 userInfo:(id)arg2 error:(id)arg3 type:(unsigned long long)arg4;
 - (id)name;
 - (void)finish;
-- (void)_cacheResponse:(id)arg1;
+- (void)finishAndCallCompletionWithResponse:(id)arg1;
 - (void)_fetchRemote;
 - (void)_fetchLocal;
 - (void)start;
 - (BOOL)isReady;
 - (BOOL)isFinished;
-- (id)initWithFetchRequest:(id)arg1 dataSource:(id)arg2;
+- (id)initWithFetchRequest:(id)arg1 dataSource:(id)arg2 fetchQueue:(id)arg3;
 
 @end
 

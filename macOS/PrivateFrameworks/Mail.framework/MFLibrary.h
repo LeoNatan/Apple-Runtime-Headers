@@ -6,13 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <Mail/EDMailboxPredictionQueryAdapter-Protocol.h>
 #import <Mail/EDSearchableIndexReasonProvider-Protocol.h>
 #import <Mail/MCActivityTarget-Protocol.h>
 
 @class EDConversationPersistence, EDPersistence, EDPersistenceDatabase, EFLazyCache, MFMailbox, MFMessageChangeManager_macOS, NSArray, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSSet, NSString, NSTimer;
 
-@interface MFLibrary : NSObject <EDSearchableIndexReasonProvider, EDMailboxPredictionQueryAdapter, MCActivityTarget>
+@interface MFLibrary : NSObject <EDSearchableIndexReasonProvider, MCActivityTarget>
 {
     // Error parsing type: AB, name: _libraryInitialized
     id _libraryLock;
@@ -138,8 +137,7 @@
 - (BOOL)_importMailbox:(id)arg1;
 - (BOOL)rebuildMailbox:(id)arg1;
 - (id)_mailboxPredictionQueryWithWhereClause:(id)arg1 limitedToRecents:(BOOL)arg2;
-- (id)validMailboxesForPrediction;
-- (id)countMessagesByMailboxMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;
+- (id)groupedMessagesCountByMailboxMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;
 - (void)setLastSpotlightCheckDate:(id)arg1 forMessageIDs:(id)arg2;
 - (id)messagesInMailbox:(id)arg1 sinceLastSpotlightCheck:(id)arg2;
 - (id)_searchableItemWithUpdateForLibraryID:(long long)arg1 messageIDHashString:(id)arg2;

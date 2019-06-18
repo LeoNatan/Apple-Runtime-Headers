@@ -33,6 +33,7 @@
 
 + (vector_ea45b3ba)_boundingBoxesOfStrokesInGroup:(id)arg1 rotatedAroundPoint:(struct CGPoint)arg2 byAngle:(double)arg3;
 @property(readonly, nonatomic) BOOL isInlineContinuousMode; // @synthesize isInlineContinuousMode=_isInlineContinuousMode;
+- (id)tryRegroupingStrokesInGroup:(id)arg1 substrokePlacementsByStrokeIdentifier:(id)arg2 cancellationBlock:(CDUnknownBlockType)arg3;
 - (double)_strokeGroupConfidenceForSortedSubstrokes:(id)arg1 writingDirectionSortedStrokeIdentifiers:(id)arg2 localStrokeWritingOrientations:(const vector_5071ab7f *)arg3 averageWritingOrientation:(struct CGVector)arg4 averageStrokeDeviation:(struct CGVector)arg5;
 - (id)_averageAngleAndReliabilityForStrokeGroup:(id)arg1;
 - (void)mergeGroupsPostProcessing:(id)arg1 createdGroups:(id)arg2 deletedGroups:(id)arg3;
@@ -57,8 +58,12 @@
 - (id)_lastSubstrokeCoalescedWithOverlappingSubstrokes:(id)arg1 strokeDeviation:(struct CGVector)arg2;
 - (struct CGRect)_normalizedBoundsForWritingDirectionSortedStrokes:(id)arg1 strokeWritingOrientations:(const vector_5071ab7f *)arg2 firstStrokeDeviation:(struct CGVector)arg3 originalDrawing:(id *)arg4 rotatedSortedStrokes:(vector_15a5c7bd *)arg5;
 - (id)recognizableDrawingForStrokeGroup:(id)arg1 translationVector:(struct CGVector)arg2 originalDrawing:(id *)arg3 orderedStrokesIDs:(id *)arg4 rescalingFactor:(double *)arg5;
-- (void)_updateGroups:(id)arg1 createdGroups:(id)arg2 deletedGroups:(id)arg3 forAddedStroke:(id)arg4 withSubstrokePlacements:(id)arg5 reusableIDRemovedGroups:(id)arg6 cancellationBlock:(CDUnknownBlockType)arg7;
+- (id)_newTextLineStrokeGroupWithStroke:(id)arg1 withSubstrokePlacements:(id)arg2 reusableIDRemovedGroups:(id)arg3;
+- (id)_textLineStrokeGroupByAddingStroke:(id)arg1 withSubstrokePlacements:(id)arg2 intoStrokeGroup:(id)arg3 mergingEndSubgroup:(BOOL)arg4 bestStrokeMergeEnd:(id)arg5;
+- (void)_updateGroups:(id)arg1 createdGroups:(id)arg2 deletedGroups:(id)arg3 forAddedStroke:(id)arg4 substrokePlacementsByStrokeIdentifier:(id)arg5 reusableIDRemovedGroups:(id)arg6 trySplit:(BOOL)arg7 cancellationBlock:(CDUnknownBlockType)arg8;
 - (id)updatedGroupingResult:(id)arg1 byAddingStrokes:(id)arg2 removingStrokeIdentifiers:(id)arg3 stableStrokeIdentifiers:(id)arg4 allSubstrokesByStrokeIdentifier:(id)arg5 withCancellationBlock:(CDUnknownBlockType)arg6;
+- (void)_applyStrictGroupingParameters;
+- (void)_applyDefaultGroupingParameters;
 - (id)strategyIdentifier;
 - (void)dealloc;
 - (id)initWithStrokeProvider:(id)arg1 defaultWritingOrientation:(long long)arg2 locales:(id)arg3 isInlineContinuousMode:(BOOL)arg4 inlineContinuousModeTargets:(id)arg5;

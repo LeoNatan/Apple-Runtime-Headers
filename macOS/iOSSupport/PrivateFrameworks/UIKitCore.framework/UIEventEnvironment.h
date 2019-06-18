@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSCountedSet, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, UIApplication, UIEvent, UIMotionEvent, UIPhysicalKeyboardEvent, UIPressesEvent, UIRemoteControlEvent, UIWheelEvent;
+@class NSCountedSet, NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, UIApplication, UIEvent, UIMotionEvent, UIPhysicalKeyboardEvent, UIPressesEvent, UIRemoteControlEvent, UIWheelEvent;
 
 __attribute__((visibility("hidden")))
 @interface UIEventEnvironment : NSObject
@@ -27,6 +27,7 @@ __attribute__((visibility("hidden")))
     UIPhysicalKeyboardEvent *_fallbackPhysicalKeyboardEvent;
     UIWheelEvent *_fallbackWheelEvent;
     NSMapTable *_eventRegistryByScene;
+    NSHashTable *_invalidatedAndDisconnectedScenes;
     NSMapTable *_pressesMapByScene;
     NSMapTable *_currentNudgePressTypeByScene;
     NSMutableDictionary *_physicalButtonPressesMap;

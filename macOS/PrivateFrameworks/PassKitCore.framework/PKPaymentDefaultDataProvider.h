@@ -9,7 +9,7 @@
 #import <PassKitCore/PKPaymentDataProvider-Protocol.h>
 #import <PassKitCore/PKPaymentServiceDelegate-Protocol.h>
 
-@class NSHashTable, NSLock, NSString, PKOSVersionRequirement, PKPaymentService, PKSecureElement;
+@class NSHashTable, NSLock, NSString, PKOSVersionRequirement, PKPaymentService, PKPaymentWebService, PKSecureElement;
 @protocol OS_dispatch_queue, PKPaymentDataProviderDelegate;
 
 @interface PKPaymentDefaultDataProvider : NSObject <PKPaymentServiceDelegate, PKPaymentDataProvider>
@@ -20,8 +20,10 @@
     NSLock *_delegateLock;
     NSObject<OS_dispatch_queue> *_replyQueue;
     id <PKPaymentDataProviderDelegate> _delegate;
+    PKPaymentWebService *_paymentWebService;
 }
 
+@property(readonly, nonatomic) PKPaymentWebService *paymentWebService; // @synthesize paymentWebService=_paymentWebService;
 @property(nonatomic) __weak id <PKPaymentDataProviderDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveBalanceUpdate:(id)arg2;

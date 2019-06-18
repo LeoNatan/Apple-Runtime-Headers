@@ -9,6 +9,7 @@
 @class NSDate;
 @protocol NSObject;
 
+__attribute__((visibility("hidden")))
 @interface ADNotificationEvent : NSObject
 {
     NSDate *_timestamp;

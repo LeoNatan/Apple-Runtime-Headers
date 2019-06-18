@@ -10,6 +10,7 @@
 {
 }
 
+@property(readonly, nonatomic) BOOL canConvertTime;
 - (void)resetFilter;
 - (unsigned long long)domainBIntervalFromDomainAInterval:(unsigned long long)arg1;
 - (unsigned long long)domainBTimeFromDomainATime:(unsigned long long)arg1;

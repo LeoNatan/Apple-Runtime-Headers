@@ -8,38 +8,32 @@
 
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDTaskScheduler, NSCloudKitMirroringDelegateOptions, NSPersistentContainer, NSString;
-@protocol OS_dispatch_queue;
+@class EDTaskScheduler, NSManagedObjectContext, NSPersistentContainer, NSString;
 
 @interface EDCloudMirroringPersistentStore : NSObject <EFLoggable>
 {
-    NSCloudKitMirroringDelegateOptions *_mirroringOptions;
     NSPersistentContainer *_persistentContainer;
     EDTaskScheduler *_importScheduler;
     EDTaskScheduler *_exportScheduler;
-    NSObject<OS_dispatch_queue> *_privateQueue;
+    NSManagedObjectContext *_managedObjectContext;
 }
 
 + (id)log;
-@property(retain, nonatomic) NSObject<OS_dispatch_queue> *privateQueue; // @synthesize privateQueue=_privateQueue;
+@property(readonly, nonatomic) NSManagedObjectContext *managedObjectContext; // @synthesize managedObjectContext=_managedObjectContext;
 @property(retain, nonatomic) EDTaskScheduler *exportScheduler; // @synthesize exportScheduler=_exportScheduler;
 @property(retain, nonatomic) EDTaskScheduler *importScheduler; // @synthesize importScheduler=_importScheduler;
 @property(readonly, nonatomic) NSPersistentContainer *persistentContainer; // @synthesize persistentContainer=_persistentContainer;
-@property(readonly, nonatomic) NSCloudKitMirroringDelegateOptions *mirroringOptions; // @synthesize mirroringOptions=_mirroringOptions;
 - (void).cxx_destruct;
-- (BOOL)shouldRetryForResult:(id)arg1;
-- (void)_handleRequestFailure:(id)arg1 scheduler:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void)_requestExport:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)_requestImport:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)_executeRequestExport:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)_executeRequestImport:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)requestExport:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (void)requestImport:(id)arg1 completionBlock:(CDUnknownBlockType)arg2;
-- (id)newBackgroundContext;
-- (id)persistentStoreCoordinator;
-- (id)viewContext;
-- (void)_setupCoreDataStackWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (id)initWithPersistentStoreCompletionHandler:(CDUnknownBlockType)arg1;
+- (CDUnknownBlockType)_wrapCompletion:(CDUnknownBlockType)arg1 forRequestKind:(int)arg2;
+- (void)_executeRequestWithKind:(int)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (id)_schedulerForKind:(int)arg1;
+- (void)_requestWithKind:(int)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (void)requestExportWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)requestImportWithCompletionBlock:(CDUnknownBlockType)arg1;
+- (void)performBlockAndWait:(CDUnknownBlockType)arg1;
+- (void)performBlock:(CDUnknownBlockType)arg1;
+- (void)_setupCoreDataStack;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

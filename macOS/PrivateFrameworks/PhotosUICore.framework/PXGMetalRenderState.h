@@ -15,6 +15,8 @@
     // Error parsing type: {?="viewMatrix"{?="columns"[4]}"projectionMatrix"{?="columns"[4]}"viewProjectionMatrix"{?="columns"[4]}"billboardMatrix"{?="columns"[4]}"renderOrigin""screenScale"f}, name: _uniforms
     long long _shaderFlagsByEffectIdCount;
     long long _shaderFlagsByEffectIdCapacity;
+    const CDStruct_9d1ebe49 *_spriteInfos;
+    const CDStruct_ac168a83 *_originalSpriteGeometries;
     int *_shaderFlagsByEffectId;
     PXGMetalRenderPassState *_currentRenderPassState;
     NSArray *_textures;
@@ -33,20 +35,22 @@
 @property(retain, nonatomic) NSArray *textures; // @synthesize textures=_textures;
 @property(readonly, nonatomic) PXGMetalRenderPassState *currentRenderPassState; // @synthesize currentRenderPassState=_currentRenderPassState;
 @property(readonly, nonatomic) int *shaderFlagsByEffectId; // @synthesize shaderFlagsByEffectId=_shaderFlagsByEffectId;
+@property(nonatomic) const CDStruct_ac168a83 *originalSpriteGeometries; // @synthesize originalSpriteGeometries=_originalSpriteGeometries;
+@property(nonatomic) const CDStruct_9d1ebe49 *spriteInfos; // @synthesize spriteInfos=_spriteInfos;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)prepareForCommit;
 // Error parsing type for property uniforms:
 // Property attributes: T^{?={?=[4]}{?=[4]}{?=[4]}{?=[4]}f},R,N
 
-@property(readonly, nonatomic) const CDStruct_3bc3b9c1 *spriteStyles;
+@property(readonly, nonatomic) const CDStruct_506f5052 *spriteStyles;
 @property(readonly, nonatomic) const CDStruct_869f9c67 *spriteGeometries;
 - (void)_setShaderFlagsByEffectId:(const int *)arg1 withCount:(long long)arg2;
 - (void)setEffectData:(const CDStruct_ee569e91 *)arg1 shaderFlags:(const int *)arg2 withCount:(long long)arg3;
 - (CDStruct_ee569e91 *)effectDataBufferWithCount:(long long)arg1;
 - (CDStruct_0054b44d *)resizableCapInsetsBufferWithCount:(long long)arg1;
 - (id)renderPassStateForSpriteCount:(long long)arg1;
-- (CDStruct_3bc3b9c1 *)spriteStylesBufferWithCount:(long long)arg1;
+- (CDStruct_506f5052 *)spriteStylesBufferWithCount:(long long)arg1;
 - (CDStruct_869f9c67 *)spriteGeometriesBufferWithCount:(long long)arg1;
 - (id)_resizedBufferIfNeeded:(id)arg1 neededLength:(long long)arg2;
 - (id)description;

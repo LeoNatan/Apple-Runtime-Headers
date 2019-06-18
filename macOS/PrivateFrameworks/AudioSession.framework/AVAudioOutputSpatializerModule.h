@@ -8,7 +8,7 @@
 
 #import <AudioSession/AVAudioOutputSpatializing-Protocol.h>
 
-@class NSSet, NSString;
+@class NSArray, NSString;
 
 @interface AVAudioOutputSpatializerModule : NSObject <AVAudioOutputSpatializing>
 {
@@ -16,7 +16,7 @@
 
 - (BOOL)setFormat:(id)arg1 error:(id *)arg2;
 - (id)format;
-@property(readonly, nonatomic) NSSet *availableVirtualFormats;
+@property(readonly, nonatomic) NSArray *availableVirtualFormats;
 - (BOOL)enable:(BOOL)arg1 error:(id *)arg2;
 @property(readonly, nonatomic, getter=isEnabled) BOOL enabled;
 - (id)init;

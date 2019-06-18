@@ -9,7 +9,7 @@
 @interface GKLocalPlayer (AuthenticationExtras)
 - (void)showWelcomeBannerWithTitle:(id)arg1 message:(id)arg2;
 - (id)deleteAvatarAlertControllerWithHandler:(CDUnknownBlockType)arg1;
-- (void)deleteCachedMonogramsWithHandler:(CDUnknownBlockType)arg1;
+- (void)deleteMonogramsWithHandler:(CDUnknownBlockType)arg1;
 - (void)setPhotoFromCNContactImage:(id)arg1 pendingContact:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setPhoto:(id)arg1 avatarType:(long long)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)deletePhotoWithCompletionHandler:(CDUnknownBlockType)arg1;

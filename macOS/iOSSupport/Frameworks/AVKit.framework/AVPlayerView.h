@@ -19,7 +19,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) AVPlayerViewControllerContentView *contentView; // @synthesize contentView=_contentView;
 - (void).cxx_destruct;
 - (void)layoutSubviews;
-- (void)setClipsToBounds:(BOOL)arg1;
 - (void)beginManagingContentView;
 - (id)initWithFrame:(struct CGRect)arg1 contentView:(id)arg2;
 

@@ -8,29 +8,29 @@
 
 #import <HomeUI/HUAccessoryViewCellProtocol-Protocol.h>
 
-@class HFItem, HUGridSceneCellLayoutOptions, HUIconView, HUPieProgressView, NAFuture, NSArray, NSString, UIView, _HUGridActionSetTitleAndDescriptionView;
+@class HFItem, HUGridActionSetTitleAndDescriptionView, HUGridSceneCellLayoutOptions, HUIconView, HUPieProgressView, NAFuture, NSArray, NSString, UIView;
 
 @interface HUGridActionSetCell : HUGridCell <HUAccessoryViewCellProtocol>
 {
     HFItem *_item;
     NAFuture *_executeActionSetFuture;
     UIView *_accessoryView;
+    HUGridActionSetTitleAndDescriptionView *_titleAndDescriptionView;
+    HUGridSceneCellLayoutOptions *_sceneCellLayoutOptions;
     HUIconView *_iconView;
-    _HUGridActionSetTitleAndDescriptionView *_titleAndDescriptionView;
     HUPieProgressView *_progressView;
     NSArray *_actionSetCellConstraints;
     NAFuture *_internalExecuteActionSetFuture;
-    HUGridSceneCellLayoutOptions *_sceneCellLayoutOptions;
 }
 
 + (Class)layoutOptionsClass;
 + (BOOL)requiresConstraintBasedLayout;
-@property(nonatomic) __weak HUGridSceneCellLayoutOptions *sceneCellLayoutOptions; // @synthesize sceneCellLayoutOptions=_sceneCellLayoutOptions;
 @property(retain, nonatomic) NAFuture *internalExecuteActionSetFuture; // @synthesize internalExecuteActionSetFuture=_internalExecuteActionSetFuture;
 @property(retain, nonatomic) NSArray *actionSetCellConstraints; // @synthesize actionSetCellConstraints=_actionSetCellConstraints;
 @property(retain, nonatomic) HUPieProgressView *progressView; // @synthesize progressView=_progressView;
-@property(retain, nonatomic) _HUGridActionSetTitleAndDescriptionView *titleAndDescriptionView; // @synthesize titleAndDescriptionView=_titleAndDescriptionView;
 @property(retain, nonatomic) HUIconView *iconView; // @synthesize iconView=_iconView;
+@property(nonatomic) __weak HUGridSceneCellLayoutOptions *sceneCellLayoutOptions; // @synthesize sceneCellLayoutOptions=_sceneCellLayoutOptions;
+@property(retain, nonatomic) HUGridActionSetTitleAndDescriptionView *titleAndDescriptionView; // @synthesize titleAndDescriptionView=_titleAndDescriptionView;
 @property(retain, nonatomic) UIView *accessoryView; // @synthesize accessoryView=_accessoryView;
 @property(retain, nonatomic) NAFuture *executeActionSetFuture; // @synthesize executeActionSetFuture=_executeActionSetFuture;
 - (void)setItem:(id)arg1;

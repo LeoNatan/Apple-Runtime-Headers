@@ -16,6 +16,7 @@
 + (BOOL)_containsKey:(int)arg1 inQuery:(id)arg2;
 + (id)_predicateForQuery:(id)arg1 inLibrary:(id)arg2;
 + (id)predicateForQuery:(id)arg1 inLibrary:(id)arg2;
++ (id)_smartAlbumAssetTypeFilter;
 + (id)_predicateForSingleQuery:(id)arg1 inLibrary:(id)arg2;
 + (id)_predicateForNotAbleToUploadQuery;
 + (id)_predicateForTaggedWithGPSQuery:(id)arg1 inLibrary:(id)arg2;

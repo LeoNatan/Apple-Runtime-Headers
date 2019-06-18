@@ -9,16 +9,29 @@
 __attribute__((visibility("hidden")))
 @interface _UIStaticBatteryView : _UIBatteryView
 {
+    long long _inflightBoltAnimationCount;
 }
 
++ (id)_batteryFillImageWithSize:(struct CGSize)arg1 forScale:(double)arg2 cornerRadius:(double)arg3 withBoltCutOutOfSize:(struct CGSize)arg4 inRect:(struct CGRect)arg5;
++ (id)_batteryFillImageWithSize:(struct CGSize)arg1 forScale:(double)arg2 cornerRadius:(double)arg3;
 + (id)_batteryBoltMaskImageWithSize:(struct CGSize)arg1 forScale:(double)arg2;
 + (id)_batteryBoltImageWithSize:(struct CGSize)arg1 forScale:(double)arg2;
 + (id)_batteryPinImageWithSize:(struct CGSize)arg1 forScale:(double)arg2 complexPinPath:(BOOL)arg3;
++ (id)_batteryBodyImageWithSize:(struct CGSize)arg1 forScale:(double)arg2 batteryRect:(struct CGRect)arg3 cornerRadius:(double)arg4 lineWidth:(double)arg5 withBoltCutOutOfSize:(struct CGSize)arg6 inRect:(struct CGRect)arg7;
 + (id)_batteryBodyImageWithSize:(struct CGSize)arg1 forScale:(double)arg2 batteryRect:(struct CGRect)arg3 cornerRadius:(double)arg4 lineWidth:(double)arg5;
++ (id)_renderedImageOfSize:(struct CGSize)arg1 scale:(double)arg2 withActions:(CDUnknownBlockType)arg3;
++ (id)_imageByPunchingImage:(id)arg1 inRect:(struct CGRect)arg2 outOfImage:(id)arg3 inRect:(struct CGRect)arg4 size:(struct CGSize)arg5 scale:(double)arg6;
 + (id)_imageWithRenderedBezierPath:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 stroke:(BOOL)arg4;
+- (void)_didFinishAnimatingBoltToVisible:(BOOL)arg1;
+- (void)_willBeginAnimatingBoltToVisible:(BOOL)arg1;
+- (BOOL)_useImagesWithCutoutsForBolt;
+- (void)_updateBatteryFillColor;
 - (void)_updateBodyColors;
+- (void)_updateFillLayer;
 - (struct CGRect)_updateBodyLayers;
+- (struct CGRect)_boltRectForTraitCollection:(id)arg1 boltSize:(struct CGSize)arg2;
 - (void)_createBoltLayersWithSize:(struct CGSize)arg1;
+- (void)_createFillLayer;
 - (void)_createBodyLayers;
 
 @end

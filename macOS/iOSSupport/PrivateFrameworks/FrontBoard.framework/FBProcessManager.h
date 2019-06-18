@@ -43,11 +43,12 @@
 - (id)watchdogPolicyForProcess:(id)arg1 eventContext:(id)arg2;
 - (id)_serviceClientAddedWithProcessHandle:(id)arg1;
 - (id)_processForHandle:(id)arg1;
+- (oneway void)launchProcessWithContext:(id)arg1;
 - (id)registerProcessForHandle:(id)arg1;
 - (id)registerProcessForAuditToken:(CDStruct_6ad76789)arg1;
 - (void)setKeyboardFocusDelegate:(id)arg1;
 - (id)keyboardFocusDelegate;
-- (id)_createProcessForIdentity:(id)arg1 withExecutionContext:(id)arg2;
+- (id)_createProcessWithExecutionContext:(id)arg1;
 - (void)_setPreferredForegroundApplicationProcess:(id)arg1 deferringToken:(id)arg2;
 - (id)applicationProcessesForBundleIdentifier:(id)arg1;
 - (id)processesForBundleIdentifier:(id)arg1;

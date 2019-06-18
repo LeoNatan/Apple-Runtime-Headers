@@ -27,6 +27,6 @@
 - (BOOL)prepareAudioStreamSync:(CSAudioStream *)arg1 request:(CSAudioStreamRequest *)arg2 error:(id *)arg3;
 - (void)audioStreamWithRequest:(CSAudioStreamRequest *)arg1 streamName:(NSString *)arg2 completion:(void (^)(CSAudioStream *, NSError *))arg3;
 - (CSAudioStream *)audioStreamWithRequest:(CSAudioStreamRequest *)arg1 streamName:(NSString *)arg2 error:(id *)arg3;
-- (void)setCurrentContext:(CSAudioRecordContext *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
+- (BOOL)setCurrentContext:(CSAudioRecordContext *)arg1 error:(id *)arg2;
 @end
 

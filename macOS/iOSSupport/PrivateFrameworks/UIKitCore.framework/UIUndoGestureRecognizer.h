@@ -9,9 +9,14 @@
 __attribute__((visibility("hidden")))
 @interface UIUndoGestureRecognizer : UIPanGestureRecognizer
 {
+    id _transformAnalyzer;
 }
 
+- (void).cxx_destruct;
 - (BOOL)shouldBeRequiredToFailByGestureRecognizer:(id)arg1;
+- (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 
 @end
 

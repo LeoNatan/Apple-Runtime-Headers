@@ -4,12 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <HomeUI/HUServiceGridViewControllerDelegate-Protocol.h>
 #import <HomeUI/NSObject-Protocol.h>
 
 @class HFItem, HUContainedServicesGridViewController, UIViewController;
 @protocol HUDetailsPresentationDelegateHost;
 
-@protocol HUContainedServiceGridViewControllerDelegate <NSObject>
+@protocol HUContainedServiceGridViewControllerDelegate <NSObject, HUServiceGridViewControllerDelegate>
 
 @optional
 - (UIViewController<HUDetailsPresentationDelegateHost> *)detailsViewControllerForContainedServiceGridViewController:(HUContainedServicesGridViewController *)arg1 item:(HFItem *)arg2;

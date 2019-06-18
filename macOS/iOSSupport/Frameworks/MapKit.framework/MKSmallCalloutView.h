@@ -24,7 +24,6 @@ __attribute__((visibility("hidden")))
     BOOL _shouldPositionTitleForMapsTransitionMovingSideways;
     _MKSmallCalloutPassthroughButton *_maskedContainerView;
     UIView *_unmaskedContainerView;
-    CDStruct_51745937 _mapDisplayStyle;
     BOOL _needsPreferredContentSizeUpdate;
     NSLayoutConstraint *_minWidthConstraint;
     NSLayoutConstraint *_maxWidthConstraint;
@@ -42,7 +41,6 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_leftViewCenterContentMarginConstraint;
     UILayoutGuide *_leftViewTopSpacer;
     UILayoutGuide *_leftViewLeftSpacer;
-    NSLayoutConstraint *_rightViewMinCalloutWidthConstraint;
     NSLayoutConstraint *_rightViewHorizontalPositionConstraint;
     NSLayoutConstraint *_rightViewTopSpacerBottomConstraint;
     NSLayoutConstraint *_rightViewCenterContentMarginConstraint;
@@ -57,9 +55,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) BOOL parallaxEnabled; // @synthesize parallaxEnabled=_parallaxEnabled;
 @property(readonly, nonatomic) UIView *titlesContainerView; // @synthesize titlesContainerView=_titlesContainerView;
-@property(nonatomic) CDStruct_51745937 mapDisplayStyle; // @synthesize mapDisplayStyle=_mapDisplayStyle;
 - (void).cxx_destruct;
-- (void)_updateAccessoryViewStyles;
 - (BOOL)canDisplayCompleteTitleWhenExpanded;
 - (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
 @property(retain, nonatomic) UIView *detailView;

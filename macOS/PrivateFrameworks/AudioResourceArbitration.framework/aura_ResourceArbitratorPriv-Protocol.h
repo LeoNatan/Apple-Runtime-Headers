@@ -7,8 +7,5 @@
 #import <AudioResourceArbitration/aura_ResourceArbitrator-Protocol.h>
 
 @protocol aura_ResourceArbitratorPriv <aura_ResourceArbitrator>
-- (void)refreshIOControllers:(map_9344a8ab)arg1;
-- (struct error_code)refreshConfigurationsWithOrdinal:(int)arg1;
-- (void)hardwareUpdate:(const struct ConfigurationChangeDescription *)arg1;
 @end
 

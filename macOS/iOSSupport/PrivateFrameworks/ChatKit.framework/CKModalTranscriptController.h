@@ -21,7 +21,7 @@
     NSMutableArray *_deferredInsertMediaObjectBlocks;
 }
 
-@property(copy, nonatomic) NSMutableArray *deferredInsertMediaObjectBlocks; // @synthesize deferredInsertMediaObjectBlocks=_deferredInsertMediaObjectBlocks;
+@property(retain, nonatomic) NSMutableArray *deferredInsertMediaObjectBlocks; // @synthesize deferredInsertMediaObjectBlocks=_deferredInsertMediaObjectBlocks;
 @property(retain, nonatomic) CKChatEagerUploadController *eagerUploadController; // @synthesize eagerUploadController=_eagerUploadController;
 @property(nonatomic) BOOL forceMMS; // @synthesize forceMMS=_forceMMS;
 @property(nonatomic) BOOL mimeType; // @synthesize mimeType=_mimeType;
@@ -43,6 +43,7 @@
 - (void)sendComposition:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
+- (double)_offsetForScreenWidth:(double)arg1 containerWidth:(double)arg2 windowOffset:(struct CGPoint)arg3;
 - (BOOL)getContainerWidth:(double *)arg1 offset:(double *)arg2;
 - (void)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
 - (void)insertFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3 fullyRealizedPreview:(id)arg4 rawPreview:(id)arg5 appendedVideoURL:(id)arg6 completion:(CDUnknownBlockType)arg7;

@@ -6,19 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class GEODirectionService, NSMutableDictionary;
 
 @interface MNDirectionsRequestManager : NSObject
 {
     NSMutableDictionary *_pendingRequests;
+    GEODirectionService *_directionsService;
 }
 
-+ (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)_requestDirectionsFromTraceWithPath:(id)arg1 feedback:(id)arg2 auditToken:(id)arg3 finishedHandler:(CDUnknownBlockType)arg4;
 - (void)_requestServerDirections:(id)arg1 withIdentifier:(id)arg2 auditToken:(id)arg3 finishedHandler:(CDUnknownBlockType)arg4;
 - (void)cancelDirectionsRequestWithIdentifier:(id)arg1;
 - (void)requestDirections:(id)arg1 withIdentifier:(id)arg2 auditToken:(id)arg3 finishedHandler:(CDUnknownBlockType)arg4;
+- (id)init;
 
 @end
 

@@ -44,6 +44,7 @@
     CDUnknownBlockType _listenerBlock;
     BOOL _pictureInPictureInterrupted;
     BOOL _handlesAudioSessionInterruptions;
+    BOOL _isDeallocating;
     CDUnknownBlockType _retryPlayingImmediatelyBlock;
     BOOL _shouldPlayImmediately;
     BOOL _looping;
@@ -82,6 +83,7 @@
     BOOL _allowsPictureInPicturePlayback;
     BOOL _pictureInPictureActive;
     BOOL _canTogglePictureInPicture;
+    BOOL _hasBegunInspection;
     BOOL _touchBarRequiresLinearPlayback;
     AVPlayer *_player;
     long long _status;
@@ -171,6 +173,7 @@
 @property BOOL touchBarRequiresLinearPlayback; // @synthesize touchBarRequiresLinearPlayback=_touchBarRequiresLinearPlayback;
 @property double defaultPlaybackRate; // @synthesize defaultPlaybackRate=_defaultPlaybackRate;
 @property(readonly) AVOutputContextController *outputContextController; // @synthesize outputContextController=_outputContextController;
+@property(nonatomic) BOOL hasBegunInspection; // @synthesize hasBegunInspection=_hasBegunInspection;
 @property(nonatomic) BOOL canTogglePictureInPicture; // @synthesize canTogglePictureInPicture=_canTogglePictureInPicture;
 @property(nonatomic, getter=isPictureInPictureActive) BOOL pictureInPictureActive; // @synthesize pictureInPictureActive=_pictureInPictureActive;
 @property(nonatomic) BOOL allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
@@ -341,6 +344,7 @@
 - (void *)observationInfo;
 - (void)startKVO;
 - (void)dealloc;
+- (void)startInspectionIfNeeded;
 - (id)initWithPlayer:(id)arg1;
 - (id)init;
 @property(retain) AVFunctionBarMediaSelectionOption *currentLegibleFunctionBarMediaSelectionOption;

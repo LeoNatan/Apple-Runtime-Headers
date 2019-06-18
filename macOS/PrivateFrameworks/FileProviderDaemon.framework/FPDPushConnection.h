@@ -49,9 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)performWithConnection:(id)arg1 block:(CDUnknownBlockType)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)start;
-- (id)developmentConnection;
-- (id)productionConnection;
-- (id)_pushConnectionWithEnvironmentName:(id)arg1 port:(id)arg2;
+- (id)_pushConnectionWithEnvironmentName:(id)arg1;
 - (id)initWithExtensionManager:(id)arg1;
 - (id)init;
 

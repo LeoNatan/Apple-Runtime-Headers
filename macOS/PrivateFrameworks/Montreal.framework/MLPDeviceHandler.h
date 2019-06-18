@@ -10,6 +10,7 @@
 
 @interface MLPDeviceHandler : NSObject
 {
+    struct mersenne_twister_engine<unsigned int, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253> weightSeed;
     id <MTLDevice> _device;
     id <MTLCommandQueue> _commandQueue;
     unsigned long long _dataLayout;
@@ -18,6 +19,7 @@
 @property(readonly) unsigned long long dataLayout; // @synthesize dataLayout=_dataLayout;
 @property(readonly) id <MTLCommandQueue> commandQueue; // @synthesize commandQueue=_commandQueue;
 @property(readonly) id <MTLDevice> device; // @synthesize device=_device;
+- (id).cxx_construct;
 - (void).cxx_destruct;
 - (float)uniformRandWithParamA:(float)arg1 paramB:(float)arg2;
 - (id)matrixToVector:(id)arg1;

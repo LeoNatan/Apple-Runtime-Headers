@@ -25,5 +25,6 @@
 @property(readonly, nonatomic) double promotionScore;
 @property(readonly, nonatomic) BOOL isEnrichmentComplete;
 @property(readonly, nonatomic) BOOL isEnriched;
+- (NSString *)localizedDateDescriptionWithOptions:(unsigned long long)arg1;
 @end
 

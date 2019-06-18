@@ -13,6 +13,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (void)ApplyHackFor50863616:(id)arg1 historyRecords:(id)arg2 transceiver:(id)arg3;
 + (BOOL)IsIncompatibleApplet:(unsigned int)arg1 sw:(unsigned short)arg2;
 + (void)RemoveMatchedTapIns:(id)arg1 transactionsInProgress:(id)arg2;
 + (id)DecodeE456TLV:(const CDStruct_b9c9288f *)arg1 currencyExponent:(id)arg2 error:(id *)arg3;

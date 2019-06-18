@@ -32,6 +32,8 @@
 @property(readonly) NSString *label; // @synthesize label=_label;
 @property(readonly) unsigned long long uniqueIdentifier;
 @property(readonly) BOOL supportIndirectCommandBuffers;
+- (unsigned int)getFragmentShaderTelemetryID;
+- (unsigned int)getVertexShaderTelemetryID;
 - (void)dealloc;
 - (id)initWithDevice:(id)arg1 pipelineStateDescriptor:(id)arg2;
 

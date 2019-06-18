@@ -7,13 +7,12 @@
 #import <UIKit/UIViewController.h>
 
 #import <WorkflowUI/VCUIShortcutViewControllerDelegate-Protocol.h>
-#import <WorkflowUI/WFGalleryWorkflowViewDelegate-Protocol.h>
 #import <WorkflowUI/WFImportQuestionContainerViewControllerDelegate-Protocol.h>
 
-@class NSString, UIActivityIndicatorView, UIBarButtonItem, VCUIShortcutViewController, WFGalleryWorkflow, WFImportQuestionContainerViewController, WFSharedShortcut, WFWorkflow;
+@class NSString, UIActivityIndicatorView, UIBarButtonItem, VCUIShortcutViewController, WFGalleryWorkflow, WFImportQuestionContainerViewController, WFSharedShortcut, WFWorkflow, WFWorkflowIcon, WFWorkflowRecord;
 @protocol WFGalleryImportViewControllerDelegate;
 
-@interface WFGalleryImportViewController : UIViewController <WFGalleryWorkflowViewDelegate, WFImportQuestionContainerViewControllerDelegate, VCUIShortcutViewControllerDelegate>
+@interface WFGalleryImportViewController : UIViewController <WFImportQuestionContainerViewControllerDelegate, VCUIShortcutViewControllerDelegate>
 {
     BOOL _previewingFor3DTouch;
     BOOL _importingSharedShortcut;
@@ -24,6 +23,9 @@
     WFSharedShortcut *_sharedShortcut;
     WFWorkflow *_workflow;
     NSString *_loggingContext;
+    WFWorkflowRecord *_workflowRecord;
+    NSString *_name;
+    WFWorkflowIcon *_icon;
     unsigned long long _currentImportQuestionIndex;
     VCUIShortcutViewController *_shortcutViewController;
     WFImportQuestionContainerViewController *_importQuestionViewController;
@@ -38,6 +40,9 @@
 @property(nonatomic) __weak VCUIShortcutViewController *shortcutViewController; // @synthesize shortcutViewController=_shortcutViewController;
 @property(readonly, nonatomic) BOOL skipServicesConfirmation; // @synthesize skipServicesConfirmation=_skipServicesConfirmation;
 @property(nonatomic) unsigned long long currentImportQuestionIndex; // @synthesize currentImportQuestionIndex=_currentImportQuestionIndex;
+@property(readonly, nonatomic) WFWorkflowIcon *icon; // @synthesize icon=_icon;
+@property(readonly, nonatomic) NSString *name; // @synthesize name=_name;
+@property(readonly, nonatomic) WFWorkflowRecord *workflowRecord; // @synthesize workflowRecord=_workflowRecord;
 @property(nonatomic) BOOL importingSharedShortcut; // @synthesize importingSharedShortcut=_importingSharedShortcut;
 @property(nonatomic) BOOL previewingFor3DTouch; // @synthesize previewingFor3DTouch=_previewingFor3DTouch;
 @property(readonly, nonatomic) NSString *loggingContext; // @synthesize loggingContext=_loggingContext;
@@ -52,7 +57,6 @@
 - (void)importQuestionViewControllerDidSelectSkip:(id)arg1;
 - (void)importQuestionViewControllerDidSelectBack:(id)arg1;
 - (void)importQuestionViewControllerDidSelectCancel:(id)arg1;
-- (void)galleryWorkflowViewDidUpdateContentSize:(id)arg1;
 - (void)logEvent:(id)arg1 withObjects:(id)arg2;
 - (void)showNextImportQuestionAnimated:(BOOL)arg1 backButtonHidden:(BOOL)arg2;
 - (void)showNextImportQuestion;
@@ -62,13 +66,13 @@
 - (id)localizedStopSharingString;
 - (void)didTapShare;
 - (void)didTapCancel;
+- (void)loadWorkflowIfNeeded;
+- (void)loadWorkflowRecordForGalleryWorkflow:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
 - (void)updateBarButtonItems;
 - (void)updateView;
-- (id)icon;
-- (id)name;
-- (id)initWithWorkflow:(id)arg1 loggingContext:(id)arg2 skipServicesConfirmation:(BOOL)arg3;
+- (id)initWithWorkflowRecord:(id)arg1 loggingContext:(id)arg2 skipServicesConfirmation:(BOOL)arg3;
 - (id)initWithSharedShortcut:(id)arg1 loggingContext:(id)arg2;
 - (id)initWithGalleryWorkflow:(id)arg1 loggingContext:(id)arg2;
 

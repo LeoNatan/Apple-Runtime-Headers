@@ -10,7 +10,7 @@
 {
     // Error parsing type: , name: identifier
     // Error parsing type: , name: store
-    // Error parsing type: , name: displayMode
+    // Error parsing type: , name: offlineProvider
 }
 
 @end

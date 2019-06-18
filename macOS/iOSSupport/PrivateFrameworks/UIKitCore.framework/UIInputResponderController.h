@@ -58,8 +58,8 @@
 @property(retain, nonatomic) UIKBRenderConfig *restorableRenderConfig; // @synthesize restorableRenderConfig=_restorableRenderConfig;
 @property(readonly, nonatomic) long long currentState; // @synthesize currentState=_currentState;
 @property(nonatomic) BOOL hideSystemInputAssistantView; // @synthesize hideSystemInputAssistantView=_hideSystemInputAssistantView;
-@property(nonatomic) BOOL automaticAppearanceEnabled; // @synthesize automaticAppearanceEnabled=_automaticAppearanceEnabled;
 @property(readonly, nonatomic) UIResponder *responder; // @synthesize responder=_responder;
+@property(nonatomic) BOOL automaticAppearanceEnabled; // @synthesize automaticAppearanceEnabled=_automaticAppearanceEnabled;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) UITextFormattingCoordinator *textFormattingCoordinator;
@@ -151,6 +151,7 @@
 @property(nonatomic) BOOL useHostedInstance;
 @property(readonly, nonatomic) UIWindowScene *scene;
 @property(readonly, nonatomic) BOOL deactivated;
+- (void)inputResponderControllerWillResume:(id)arg1;
 - (void)dealloc;
 - (void)_scene:(id)arg1 willTransitionToActivationState:(long long)arg2 withReasonsMask:(unsigned long long)arg3;
 - (id)initWithScene:(id)arg1;

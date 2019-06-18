@@ -41,12 +41,12 @@ __attribute__((visibility("hidden")))
 - (void)didMoveToState:(long long)arg1;
 - (void)willMoveToState:(long long)arg1;
 - (BOOL)_readyToSignClientData;
-- (void)setCachedCertificateData:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
-- (void)cachedCertificateDataWithCompletion:(CDUnknownBlockType)arg1;
+- (void)setCachedCertificateData:(id)arg1 endpoint:(id)arg2 withCompletion:(CDUnknownBlockType)arg3;
+- (void)getCachedCertificateDataWithEndpoint:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (id)_prefixIdentifierWithOsprey:(id)arg1;
 - (void)dealloc;
 - (id)initWithQueue:(id)arg1 endpoint:(id)arg2 keychainStorage:(id)arg3;
 - (id)initWithQueue:(id)arg1 endpoint:(id)arg2;
-- (id)initWithQueue:(id)arg1;
 
 @end
 

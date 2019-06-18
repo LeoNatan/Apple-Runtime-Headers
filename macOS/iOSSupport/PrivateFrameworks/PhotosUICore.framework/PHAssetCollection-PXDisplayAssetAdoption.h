@@ -53,6 +53,7 @@
 @property(readonly, nonatomic) BOOL px_isStandInAlbum;
 @property(readonly, nonatomic) NSString *localizedDebugDescription;
 @property(readonly, nonatomic) NSString *localizedSmartDescription;
+- (id)localizedDateDescriptionWithOptions:(unsigned long long)arg1;
 @property(readonly, nonatomic) NSString *localizedDateDescription;
 @property(readonly, nonatomic) BOOL isRecent;
 @property(readonly, nonatomic) BOOL isAggregation;

@@ -55,7 +55,6 @@
 - (void)_updateMetadataOnExistingSong:(id)arg1 usingAsset:(id)arg2 metadataAsset:(id)arg3;
 - (id)_assetIDForMobileAsset:(id)arg1;
 - (id)_metadataMappingForUUIDSet:(id)arg1;
-- (BOOL)_isCompatible:(id)arg1;
 - (void)fetchAllSongsWithCompletion:(CDUnknownBlockType)arg1;
 - (id)loadCachedSongs;
 - (id)_newestContentSetFromAssets:(id)arg1 metadataMapping:(id)arg2;

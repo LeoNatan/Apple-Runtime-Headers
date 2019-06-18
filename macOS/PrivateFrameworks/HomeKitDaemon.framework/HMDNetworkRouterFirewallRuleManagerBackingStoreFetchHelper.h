@@ -6,7 +6,7 @@
 
 #import <HMFoundation/HMFObject.h>
 
-@class CKOperationGroup, CKServerChangeToken, HMBProcessingOptions, HMFActivity, NAPromise, NSDate;
+@class CKOperationGroup, HMBProcessingOptions, HMFActivity, NAPromise, NSDate;
 
 @interface HMDNetworkRouterFirewallRuleManagerBackingStoreFetchHelper : HMFObject
 {
@@ -14,9 +14,7 @@
     BOOL _finished;
     HMFActivity *_activity;
     HMBProcessingOptions *_options;
-    CKServerChangeToken *_originalChangeToken;
     CKOperationGroup *_operationGroup;
-    CKServerChangeToken *_changeToken;
     double _retryIntervalSeconds;
     unsigned long long _retryCount;
     NSDate *_operationStartTime;
@@ -29,9 +27,7 @@
 @property(retain, nonatomic) NSDate *operationStartTime; // @synthesize operationStartTime=_operationStartTime;
 @property(nonatomic) unsigned long long retryCount; // @synthesize retryCount=_retryCount;
 @property(nonatomic) double retryIntervalSeconds; // @synthesize retryIntervalSeconds=_retryIntervalSeconds;
-@property(retain, nonatomic) CKServerChangeToken *changeToken; // @synthesize changeToken=_changeToken;
 @property(readonly, nonatomic) CKOperationGroup *operationGroup; // @synthesize operationGroup=_operationGroup;
-@property(readonly, nonatomic) CKServerChangeToken *originalChangeToken; // @synthesize originalChangeToken=_originalChangeToken;
 @property(readonly, nonatomic) HMBProcessingOptions *options; // @synthesize options=_options;
 @property(readonly, nonatomic) HMFActivity *activity; // @synthesize activity=_activity;
 - (void).cxx_destruct;
@@ -40,7 +36,7 @@
 - (void)finishWithResult:(id)arg1;
 @property(nonatomic) BOOL shouldRetry;
 - (void)dealloc;
-- (id)initWithActivity:(id)arg1 options:(id)arg2 container:(id)arg3 changeToken:(id)arg4 promise:(id)arg5;
+- (id)initWithActivity:(id)arg1 options:(id)arg2 container:(id)arg3 useAnonymousRequests:(BOOL)arg4 promise:(id)arg5;
 
 @end
 

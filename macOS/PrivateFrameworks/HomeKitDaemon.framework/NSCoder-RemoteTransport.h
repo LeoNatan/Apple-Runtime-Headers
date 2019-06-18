@@ -22,6 +22,7 @@
 - (void)encodeSetOfConditionalObjects:(id)arg1 forKey:(id)arg2;
 - (id)decodeArrayOfConditionalObjects:(Class)arg1 forKey:(id)arg2;
 - (void)encodeArrayOfConditionalObjects:(id)arg1 forKey:(id)arg2;
+- (BOOL)isEntitledToProvideAccessorySetupPayload;
 - (BOOL)isEntitledForHomeLocationAccess;
 - (BOOL)isAuthorizedForLocationAccess;
 - (BOOL)isEntitledForSPIAccess;

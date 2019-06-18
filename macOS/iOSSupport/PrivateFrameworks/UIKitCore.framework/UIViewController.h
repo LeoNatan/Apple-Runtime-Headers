@@ -452,7 +452,6 @@
 - (void)_showViewController:(id)arg1 withAction:(SEL)arg2 sender:(id)arg3;
 - (double)durationForTransition:(int)arg1;
 - (id)_backgroundColorForModalFormSheet;
-- (BOOL)_shouldIgnoreTouchesForModalFormSheet;
 @property(readonly, nonatomic) BOOL disablesAutomaticKeyboardDismissal;
 - (void)setDisablesAutomaticKeyboardDismissal:(BOOL)arg1;
 - (BOOL)_shouldAutoPinInputViewsForModalFormSheet;
@@ -518,6 +517,8 @@
 - (id)_customInteractionControllerForPresentation:(id)arg1;
 - (id)_customAnimatorForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)_customPresentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
+- (void)_presentationControllerDidDismiss:(id)arg1;
+- (void)_presentationControllerWillDismiss:(id)arg1;
 - (void)_presentationController:(id)arg1 prepareAdaptivePresentationController:(id)arg2;
 - (id)_presentationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)_endDelayingPresentation;

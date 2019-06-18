@@ -9,5 +9,6 @@
 @interface NSView (Constraints)
 - (void)constrainToSuperviewWithAspectRatio:(double)arg1 andFill:(BOOL)arg2;
 - (void)constrainToSuperview;
+- (void)removeConstraintsWithSubView:(id)arg1;
 @end
 

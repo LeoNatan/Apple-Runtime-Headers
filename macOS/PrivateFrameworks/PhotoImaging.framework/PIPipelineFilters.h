@@ -18,6 +18,8 @@
 + (id)preGeometryFilter;
 + (id)perspectiveStraightenWithoutCropFilter;
 + (id)noGeometryFilter;
++ (id)stripAllTimeAdjustmentsFilter;
++ (id)iosCropToolFilter;
 + (id)noCropFilter;
 + (id)noMuteFilter;
 + (id)noTrimFilter;

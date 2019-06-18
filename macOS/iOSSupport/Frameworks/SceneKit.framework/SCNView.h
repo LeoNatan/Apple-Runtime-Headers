@@ -157,7 +157,7 @@
 - (id)navigationCameraController;
 - (id)eventHandler;
 - (void)setEventHandler:(id)arg1;
-@property(nonatomic) id <SCNSceneRendererDelegate> delegate;
+@property(nonatomic) __weak id <SCNSceneRendererDelegate> delegate;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (struct SCNVector3)unprojectPoint:(struct SCNVector3)arg1;
 - (struct SCNVector3)projectPoint:(struct SCNVector3)arg1;

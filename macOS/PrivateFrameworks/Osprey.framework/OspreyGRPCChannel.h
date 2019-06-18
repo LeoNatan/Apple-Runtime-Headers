@@ -37,11 +37,11 @@ __attribute__((visibility("hidden")))
 - (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 needNewBodyStream:(CDUnknownBlockType)arg3;
-- (void)performBidirectionalStreamingCallWithMethodName:(id)arg1 data:(id)arg2 context:(id)arg3;
-- (void)performStreamingCallForMethodName:(id)arg1 data:(id)arg2 handler:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)performBidirectionalStreamingRequest:(id)arg1 context:(id)arg2;
+- (void)performStreamingRequest:(id)arg1 handler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)_lengthPrefixedData:(id)arg1 error:(id *)arg2;
-- (void)performCallForMethodName:(id)arg1 data:(id)arg2 handler:(CDUnknownBlockType)arg3;
-- (id)_mutableRequestWithMethodName:(id)arg1;
+- (void)performRequest:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (BOOL)_entitledForMPTCP;
 - (id)initWithURL:(id)arg1 configuration:(id)arg2 queue:(id)arg3;
 - (id)initWithURL:(id)arg1 configuration:(id)arg2;
 

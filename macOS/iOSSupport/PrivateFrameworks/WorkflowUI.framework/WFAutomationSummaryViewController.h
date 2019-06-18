@@ -34,6 +34,7 @@
 - (void)didTapDone:(id)arg1;
 - (void)promptSwitchChanged:(id)arg1;
 - (void)enabledSwitchChanged:(id)arg1;
+- (void)testAutomation;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(long long)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
@@ -42,7 +43,7 @@
 - (id)infoForSection:(long long)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)loadView;
-- (BOOL)isModalInPopover;
+- (BOOL)isModalInPresentation;
 - (void)updateUI;
 - (id)initWithTrigger:(id)arg1 workflow:(id)arg2 mode:(unsigned long long)arg3;
 

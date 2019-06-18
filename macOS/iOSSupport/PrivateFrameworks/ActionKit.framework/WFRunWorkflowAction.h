@@ -35,9 +35,7 @@
 - (void)finishRunningWithError:(id)arg1;
 - (void)cancel;
 - (void)runWorkflowWithInput:(id)arg1;
-- (void)runWithUIKitWidgetUserInterface:(id)arg1 input:(id)arg2;
-- (void)runWithSiriUserInterface:(id)arg1 input:(id)arg2;
-- (void)runWithUIKitUserInterface:(id)arg1 input:(id)arg2;
+- (void)runAsynchronouslyWithInput:(id)arg1;
 - (void)getHandoffWorkflowControllerState:(CDUnknownBlockType)arg1;
 - (void)setHandoffWorkflowControllerState:(id)arg1;
 - (id)getWorkflowWithError:(id *)arg1;

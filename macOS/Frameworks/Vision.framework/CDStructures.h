@@ -541,8 +541,8 @@ struct shared_ptr<vision::mod::FaceprintAndAttributes> {
 };
 
 struct shared_ptr<vision::mod::ImageAnalyzer_CustomClassifier> {
-    struct ImageAnalyzer_CustomClassifier *_field1;
-    struct __shared_weak_count *_field2;
+    struct ImageAnalyzer_CustomClassifier *__ptr_;
+    struct __shared_weak_count *__cntrl_;
 };
 
 struct shared_ptr<vision::mod::ImageClassifierAbstract> {
@@ -922,9 +922,9 @@ typedef struct shared_ptr<vision::mod::FaceIDModel> {
 } shared_ptr_8c39738b;
 
 typedef struct shared_ptr<vision::mod::ImageAnalyzer_CustomClassifier> {
-    struct ImageAnalyzer_CustomClassifier *_field1;
-    struct __shared_weak_count *_field2;
-} shared_ptr_74bdb789;
+    struct ImageAnalyzer_CustomClassifier *__ptr_;
+    struct __shared_weak_count *__cntrl_;
+} shared_ptr_53937872;
 
 typedef struct shared_ptr<vision::mod::ImageClassifierAbstract> {
     struct ImageClassifierAbstract *__ptr_;

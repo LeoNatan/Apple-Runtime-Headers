@@ -10,7 +10,7 @@
 #import <Intents/NSSecureCoding-Protocol.h>
 #import <Intents/_INPBValueMetadata-Protocol.h>
 
-@class NSString;
+@class NSString, _INPBConfidenceScore;
 
 @interface _INPBValueMetadata : PBCodable <_INPBValueMetadata, NSSecureCoding, NSCopying>
 {
@@ -20,6 +20,7 @@
     } _has;
     BOOL _confirmed;
     NSString *_canonicalValue;
+    _INPBConfidenceScore *_confidenceScore;
     NSString *_input;
     NSString *_source;
     NSString *_sourceAppBundleIdentifier;
@@ -32,6 +33,7 @@
 @property(copy, nonatomic) NSString *source; // @synthesize source=_source;
 @property(copy, nonatomic) NSString *input; // @synthesize input=_input;
 @property(nonatomic) BOOL confirmed; // @synthesize confirmed=_confirmed;
+@property(retain, nonatomic) _INPBConfidenceScore *confidenceScore; // @synthesize confidenceScore=_confidenceScore;
 @property(copy, nonatomic) NSString *canonicalValue; // @synthesize canonicalValue=_canonicalValue;
 - (void).cxx_destruct;
 - (id)dictionaryRepresentation;
@@ -56,6 +58,7 @@
 - (void)setRequiredEntitlements:(int *)arg1 count:(unsigned long long)arg2;
 @property(readonly, nonatomic) BOOL hasInput;
 @property(nonatomic) BOOL hasConfirmed;
+@property(readonly, nonatomic) BOOL hasConfidenceScore;
 @property(readonly, nonatomic) BOOL hasCanonicalValue;
 
 // Remaining properties

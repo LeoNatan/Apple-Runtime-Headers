@@ -10,10 +10,11 @@
 #import <HomeKitDaemon/HMBLocalDatabaseDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDDatabase-Protocol.h>
 #import <HomeKitDaemon/HMDDatabaseZoneDelegate-Protocol.h>
+#import <HomeKitDaemon/HMFLogging-Protocol.h>
 
 @class HMBCloudDatabase, HMBLocalDatabase, HMFUnfairLock, NAFuture, NSHashTable, NSMapTable, NSString;
 
-@interface HMDDatabase : HMFObject <HMBLocalDatabaseDelegate, HMBCloudDatabaseDelegate, HMDDatabaseZoneDelegate, HMDDatabase>
+@interface HMDDatabase : HMFObject <HMBLocalDatabaseDelegate, HMBCloudDatabaseDelegate, HMDDatabaseZoneDelegate, HMFLogging, HMDDatabase>
 {
     NSHashTable *_delegates;
     NSMapTable *_zoneDelegatesByLocalZone;
@@ -23,6 +24,7 @@
     HMBCloudDatabase *_cloudDatabase;
 }
 
++ (id)logCategory;
 + (id)cameraClipsDatabase;
 + (id)defaultDatabase;
 @property(readonly) HMBCloudDatabase *cloudDatabase; // @synthesize cloudDatabase=_cloudDatabase;
@@ -30,6 +32,7 @@
 @property(readonly) HMBLocalDatabase *localDatabase; // @synthesize localDatabase=_localDatabase;
 @property(retain) NAFuture *startFuture; // @synthesize startFuture=_startFuture;
 - (void).cxx_destruct;
+- (id)logIdentifier;
 - (void)localZone:(id)arg1 processingDidComplete:(id)arg2 mirrorOutputFuture:(id)arg3 actions:(id)arg4;
 - (id)localZone:(id)arg1 deletedModel:(id)arg2 options:(id)arg3;
 - (id)localZone:(id)arg1 updatedModel:(id)arg2 previousModel:(id)arg3 options:(id)arg4;

@@ -27,6 +27,7 @@
 }
 
 + (id)elementWithData:(id)arg1;
++ (id)applicationAtCoordinate:(struct CGPoint)arg1;
 + (id)systemWideElement;
 + (id)elementAtCoordinate:(struct CGPoint)arg1 withVisualPadding:(BOOL)arg2;
 + (void)registerNotifications:(id)arg1 withIdentifier:(id)arg2 withHandler:(CDUnknownBlockType)arg3;

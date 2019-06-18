@@ -7,6 +7,9 @@
 #import <UIKit/UIWindow.h>
 
 @interface UIWindow (AVAdditions)
+- (void)avkit_ensureOrientation:(long long)arg1;
+- (BOOL)avkit_supportsAutorotationForInterfaceOrientationMask:(unsigned long long)arg1;
+- (BOOL)avkit_canAttemptSecondWindowForRotability;
 - (BOOL)avkit_canAttemptRotation;
 - (long long)avkit_preferredInterfaceOrientationFromDeviceOrientation;
 - (BOOL)avkit_isHostedInAnotherProcess;

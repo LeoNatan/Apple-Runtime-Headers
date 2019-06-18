@@ -29,6 +29,7 @@
 - (id)analytics:(id)arg1 contextDictionaryForError:(id)arg2;
 - (id)analytics:(id)arg1 contextDictionaryForCommand:(id)arg2;
 - (void)analytics:(id)arg1 needsToLogEventWithType:(long long)arg2 context:(id)arg3 contextNoCopy:(BOOL)arg4;
+- (BOOL)_shouldPrepareAudioSessionForCommand:(id)arg1 intent:(id)arg2;
 - (void)_requiresHandlingCommand:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)_shouldLoadNativeMessagesExtensionAsBundle;
 - (id)_siriLanguageCode;
@@ -38,6 +39,8 @@
 - (id)_connectionForIntent:(id)arg1;
 - (id)_updatedEventContextWithExtensionLoadType:(id)arg1 wasPrewarmed:(BOOL)arg2;
 - (id)_extensionInputItems;
+- (void)_extensionRequestDidFinishForIntent:(id)arg1 error:(id)arg2;
+- (void)_extensionRequestWillStartForIntent:(id)arg1;
 @property(copy, nonatomic) NSArray *airPlayRouteIdentifiers;
 @property(readonly, nonatomic) INExtensionContext *extensionContext; // @synthesize extensionContext=_extensionContext;
 - (void)resetExternalResources;

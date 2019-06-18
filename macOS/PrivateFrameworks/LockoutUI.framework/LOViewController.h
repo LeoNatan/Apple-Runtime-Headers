@@ -13,6 +13,7 @@
 + (id)messageForWebsiteURL:(id)arg1;
 + (id)messageForBundleIdentifier:(id)arg1 style:(unsigned long long)arg2;
 + (id)messageForApplicationName:(id)arg1 style:(unsigned long long)arg2;
++ (void)requestLockoutViewControllerWithCompletionHandler:(CDUnknownBlockType)arg1;
 + (id)lockoutViewControllerWithBundleIdentifier:(id)arg1;
 - (id)initWithBundleIdentifier:(id)arg1;
 - (id)initWithWebsiteURL:(id)arg1;

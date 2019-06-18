@@ -20,8 +20,8 @@
 + (id)defaultCPUDevice;
 + (id)defaultDevice;
 + (id)allDevices;
-+ (void)_unlockOnceTokensLock;
-+ (void)_lockOnceTokensLock;
++ (void)_unlockStaticObjectsAccessLock;
++ (void)_lockStaticObjectsAccessLock;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (int)espressoStorageType;
 - (int)espressoEngine;

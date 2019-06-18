@@ -26,6 +26,7 @@
 - (void)enumerateTopicCohortsWithBlock:(void (^)(NSString *, COMAPPLEFELDSPARPROTOCOLLIVERPOOLCohortList *))arg1;
 
 @optional
+@property(readonly, nonatomic) BOOL isFeatured;
 @property(readonly, nonatomic) long long bodyTextLength;
 @property(readonly, nonatomic, getter=isBundlePaid) BOOL bundlePaid;
 @end

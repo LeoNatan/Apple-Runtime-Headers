@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isExpired;
 - (id)userInfoForError;
 - (double)expiresAt;
+- (unsigned int)maxReqCount;
 - (double)timeUntilReset;
 - (unsigned long long)remainingEntries;
 - (BOOL)addRequestTimestamp;

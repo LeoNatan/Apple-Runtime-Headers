@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface _UIDefinitionDictionary : NSObject
 {
+    struct __DCSDictionary *_dictionary;
     BOOL _activated;
     ASAsset *_rawAsset;
     NSString *_definitionLanguage;
@@ -27,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (id)_attributedDefinitionForTerm:(id)arg1;
 - (id)_fullHTMLDefinitionForTerm:(id)arg1;
 - (id)_shortHTMLDefinitionForTerm:(id)arg1;
+- (id)_HTMLDefinitionForTerm:(id)arg1 type:(long long)arg2;
 - (BOOL)_hasDefinitionForTerm:(id)arg1;
 @property(readonly) NSString *localizedDictionaryName;
 @property(readonly) NSString *localizedLanguageName;

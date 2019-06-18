@@ -6,15 +6,28 @@
 
 #import <objc/NSObject.h>
 
+@class NSMutableDictionary;
+
 @interface AssetHelper : NSObject
 {
+    NSMutableDictionary *mDictCache;
 }
 
 + (id)findLocalizedStringForKey:(id)arg1 default:(id)arg2;
 + (id)findLocalizedStringForKey:(id)arg1;
-+ (id)getAssetDictForAppleProductID:(unsigned short)arg1;
-+ (id)getAssetDictForAppleProductIDStr:(id)arg1;
-+ (id)getAssetDictForAppleProductIDStr:(id)arg1 fromFile:(id)arg2;
++ (id)strFromColorID:(unsigned char)arg1;
++ (id)strFromProductID:(unsigned short)arg1;
++ (id)getAssetPathsFilenames;
++ (id)loadImageFromBundle:(id)arg1 withResourceNamed:(id)arg2;
++ (id)resourcePathFromBundle:(id)arg1 withResourceNamed:(id)arg2;
++ (id)loadAssetsFromFile:(id)arg1;
++ (id)loadAllAssets;
++ (id)sharedAssetHelper;
+- (id)getImageForAppleProductID:(unsigned short)arg1 andColor:(unsigned char)arg2;
+- (id)getImageURLForAppleProductID:(unsigned short)arg1 andColor:(unsigned char)arg2;
+- (id)getDeviceNameForAppleProductID:(unsigned short)arg1;
+- (id)getAssetDictForAppleProductID:(unsigned short)arg1;
+- (id)init;
 
 @end
 

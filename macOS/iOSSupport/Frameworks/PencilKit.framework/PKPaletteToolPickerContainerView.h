@@ -30,7 +30,9 @@
 @property(nonatomic) double scalingFactor; // @synthesize scalingFactor=_scalingFactor;
 @property(nonatomic) unsigned long long edgeLocation; // @synthesize edgeLocation=_edgeLocation;
 - (void).cxx_destruct;
-- (double)_toolPickerViewEdgeOverflow;
+- (void)traitCollectionDidChange:(id)arg1;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)updateConstraints;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

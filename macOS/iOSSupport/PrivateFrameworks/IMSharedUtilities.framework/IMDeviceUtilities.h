@@ -11,6 +11,7 @@
 }
 
 + (BOOL)IMDeviceIsGreenTea;
++ (BOOL)IMDeviceIsChinaRegion;
 + (BOOL)IMSupportsASTC;
 
 @end

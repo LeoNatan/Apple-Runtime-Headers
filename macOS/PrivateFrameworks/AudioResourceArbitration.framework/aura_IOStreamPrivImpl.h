@@ -9,13 +9,11 @@
 #import <AudioResourceArbitration/aura_IOStreamPriv-Protocol.h>
 
 @class NSString;
-@protocol aura_IOControllerPriv;
 
 __attribute__((visibility("hidden")))
 @interface aura_IOStreamPrivImpl : NSObject <aura_IOStreamPriv>
 {
     shared_ptr_7cd8687d reactor_;
-    id <aura_IOControllerPriv> ioController_;
 }
 
 + (id)ioStreamWithReactor:(shared_ptr_7cd8687d)arg1;
@@ -35,7 +33,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasProperty:(const struct Address *)arg1;
 @property(readonly, nonatomic) unsigned int classID;
 @property(readonly, nonatomic) unsigned long long objectID;
-- (_Bool)connectIOController:(id)arg1;
 - (struct error_code)setFormat:(const struct AudioFormat *)arg1;
 @property(readonly, nonatomic) vector_ea850296 dspModules;
 @property(readonly, nonatomic) vector_c6bb1d04 virtualPorts;
@@ -43,6 +40,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) vector_fefeec75 supportedFormats;
 @property(readonly, nonatomic) struct AudioFormat format;
 @property(readonly, nonatomic) unsigned int dspFlavor;
+@property(readonly, nonatomic) weak_ptr_21a21d9c reactor;
 - (id)init:(shared_ptr_7cd8687d)arg1;
 
 // Remaining properties

@@ -9,17 +9,21 @@
 #import <HomeUI/UICollectionViewDelegateFlowLayout-Protocol.h>
 
 @class HUGridLayoutOptions, NSString;
+@protocol HUServiceGridViewControllerDelegate;
 
 @interface HUServiceGridViewController : HUControllableItemCollectionViewController <UICollectionViewDelegateFlowLayout>
 {
     BOOL _shouldShowLoadingState;
     unsigned long long _contentMargins;
     long long _scrollDirection;
+    id <HUServiceGridViewControllerDelegate> _delegate;
 }
 
+@property(nonatomic) __weak id <HUServiceGridViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL shouldShowLoadingState; // @synthesize shouldShowLoadingState=_shouldShowLoadingState;
 @property(nonatomic) long long scrollDirection; // @synthesize scrollDirection=_scrollDirection;
 @property(nonatomic) unsigned long long contentMargins; // @synthesize contentMargins=_contentMargins;
+- (void).cxx_destruct;
 - (void)_layoutSectionHeaders;
 - (void)layoutOptionsDidChange;
 - (id)layoutOptionsForSection:(long long)arg1;
@@ -33,6 +37,7 @@
 - (void)itemManager:(id)arg1 performUpdateRequest:(id)arg2;
 - (void)configureCell:(id)arg1 forItem:(id)arg2;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
+- (id)_performTapActionForItem:(id)arg1;
 - (unsigned long long)itemTypeForItem:(id)arg1;
 - (struct CGSize)preferredContentSizeForCollectionViewContentSize:(struct CGSize)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;

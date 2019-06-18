@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString;
+@class NSArray, NSString;
 @protocol OS_dispatch_queue;
 
 @interface FKTextDetector : NSObject
@@ -37,8 +37,9 @@
     int _minimumCharacterHeight;
     int _binarizerLimit;
     int _contrastLimit;
-    long long _thresholdingAlgorithm;
     NSString *_recognitionLanguage;
+    NSArray *_recognitionLanguages;
+    long long _thresholdingAlgorithm;
     NSObject<OS_dispatch_queue> *_multiThreadingQueue;
     CDStruct_74dcf1ab _mergeSettings;
 }
@@ -51,7 +52,6 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *multiThreadingQueue; // @synthesize multiThreadingQueue=_multiThreadingQueue;
 @property(nonatomic) BOOL minimizeFalseDetections; // @synthesize minimizeFalseDetections=_minimizeFalseDetections;
 @property(nonatomic) BOOL returnSubFeatures; // @synthesize returnSubFeatures=_returnSubFeatures;
-@property(copy, nonatomic) NSString *recognitionLanguage; // @synthesize recognitionLanguage=_recognitionLanguage;
 @property(nonatomic) int binarizerLimit; // @synthesize binarizerLimit=_binarizerLimit;
 @property(nonatomic) long long thresholdingAlgorithm; // @synthesize thresholdingAlgorithm=_thresholdingAlgorithm;
 @property(nonatomic) int minimumCharacterHeight; // @synthesize minimumCharacterHeight=_minimumCharacterHeight;
@@ -70,6 +70,8 @@
 - (void)dealloc;
 - (void)resetOptions;
 - (id)initWithDimensions:(struct CGSize)arg1;
+@property(copy, nonatomic) NSArray *recognitionLanguages; // @synthesize recognitionLanguages=_recognitionLanguages;
+@property(copy, nonatomic) NSString *recognitionLanguage; // @synthesize recognitionLanguage=_recognitionLanguage;
 - (BOOL)disableMultithreading;
 
 @end

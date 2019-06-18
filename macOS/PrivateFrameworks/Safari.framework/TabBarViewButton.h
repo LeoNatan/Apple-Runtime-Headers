@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (void)_reconfigureFullScreenViewsIfNeeded;
 - (id)_makeViewInVibrantContentView;
 - (id)_makeTopBorderView;
+- (void)_setUpTabBarViewButtonConstraints;
 - (void)_setUpBackgroundViews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -9,7 +9,7 @@
 #import <PreferencePanesSupport/NSTableViewDataSource-Protocol.h>
 #import <PreferencePanesSupport/NSTableViewDelegate-Protocol.h>
 
-@class NSArray, NSColor, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, NSTableView, NSView, PPFlexibleSpaceSpecifier, PPSpecifier, PPSpecifierExtensionItem, PPSpecifierTableCellView;
+@class NSArray, NSColor, NSDictionary, NSLayoutConstraint, NSMutableArray, NSMutableDictionary, NSString, NSTableView, NSView, PPFlexibleSpaceSpecifier, PPSpecifier, PPSpecifierExtensionItem, PPSpecifierTableCellView;
 @protocol PPSpecifierTableViewControllerDelegate;
 
 @interface PPSpecifierTableViewController : NSViewController <NSTableViewDelegate, NSTableViewDataSource>
@@ -17,6 +17,7 @@
     NSMutableArray *_specifiers;
     NSColor *_backgroundColor;
     id <PPSpecifierTableViewControllerDelegate> _delegate;
+    NSLayoutConstraint *_tableViewWidthConstraint;
     NSView *_detailsViewPlaceholder;
     PPSpecifierTableCellView *_selectedCellView;
     PPSpecifierExtensionItem *_selectedExtensionItem;
@@ -33,6 +34,7 @@
 @property __weak PPSpecifierExtensionItem *selectedExtensionItem; // @synthesize selectedExtensionItem=_selectedExtensionItem;
 @property __weak PPSpecifierTableCellView *selectedCellView; // @synthesize selectedCellView=_selectedCellView;
 @property(retain) NSView *detailsViewPlaceholder; // @synthesize detailsViewPlaceholder=_detailsViewPlaceholder;
+@property(retain) NSLayoutConstraint *tableViewWidthConstraint; // @synthesize tableViewWidthConstraint=_tableViewWidthConstraint;
 @property __weak id <PPSpecifierTableViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
@@ -42,6 +44,7 @@
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
 @property(readonly) PPSpecifier *selectedSpecifier; // @dynamic selectedSpecifier;
+- (void)sizeTableToFit;
 - (BOOL)revealElementForKey:(id)arg1;
 - (void)removeSpecifiers:(id)arg1 withAnimation:(unsigned long long)arg2;
 - (void)removeSpecifiers:(id)arg1;

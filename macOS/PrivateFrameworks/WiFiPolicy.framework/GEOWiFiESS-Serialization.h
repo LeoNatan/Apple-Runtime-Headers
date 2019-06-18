@@ -14,7 +14,6 @@
 
 @interface GEOWiFiESS (Serialization) <TBNetwork, NSSecureCoding>
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) unsigned long long tileKey;
 - (BOOL)_hasAttribute:(int)arg1;
 @property(readonly, nonatomic, getter=isPublic) BOOL public;
 @property(readonly, nonatomic, getter=isSuspicious) BOOL suspicious;
@@ -36,5 +35,6 @@
 @property(readonly) unsigned long long hash;
 @property(readonly, nonatomic) NSString *identifier;
 @property(readonly) Class superclass;
+@property(readonly, nonatomic) unsigned long long tileKey;
 @end
 

@@ -60,6 +60,7 @@
 - (void)addDrawInputWithSyllableCount:(unsigned long long)arg1 keyboardState:(id)arg2;
 - (void)addKeyInput:(id)arg1 keyboardState:(id)arg2;
 - (BOOL)testForRapidDeleteContextChange:(id)arg1;
+- (BOOL)isCurrentWordEmpty;
 - (double)calibratedCurrentTimestamp;
 @property(readonly, copy) NSString *description;
 - (void)encodeWithCoder:(id)arg1;

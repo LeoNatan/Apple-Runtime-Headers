@@ -26,8 +26,6 @@ __attribute__((visibility("hidden")))
     AMSURLSession *_URLSession;
 }
 
-+ (id)_OSVersionString;
-+ (id)_OSString;
 + (id)_OSBuildTypeString;
 + (id)_deviceString;
 + (BOOL)_shouldReloadDataForSetStorefront:(id)arg1 bagData:(id)arg2;

@@ -6,18 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class GraphManagerState;
+@class GraphState;
 
+__attribute__((visibility("hidden")))
 @interface GraphManagerAdaptTransaction : NSObject
 {
     struct unique_ptr<adm::MutateGraph, std::__1::default_delete<adm::MutateGraph>> mMutateGraph;
     unsigned long long _transactionNumber;
-    GraphManagerState *_originalState;
-    GraphManagerState *_adaptedState;
+    GraphState *_originalState;
+    GraphState *_adaptedState;
 }
 
-@property(retain, nonatomic) GraphManagerState *adaptedState; // @synthesize adaptedState=_adaptedState;
-@property(retain, nonatomic) GraphManagerState *originalState; // @synthesize originalState=_originalState;
+@property(retain, nonatomic) GraphState *adaptedState; // @synthesize adaptedState=_adaptedState;
+@property(retain, nonatomic) GraphState *originalState; // @synthesize originalState=_originalState;
 @property(readonly, nonatomic) unsigned long long transactionNumber; // @synthesize transactionNumber=_transactionNumber;
 - (id).cxx_construct;
 - (void).cxx_destruct;

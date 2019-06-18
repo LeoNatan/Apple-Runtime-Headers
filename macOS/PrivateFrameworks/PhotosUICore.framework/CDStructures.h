@@ -273,6 +273,7 @@ struct _PXGEngineScrollState {
     struct CGSize referenceSize;
     struct NSEdgeInsets contentInsets;
     struct CGRect visibleRect;
+    struct CGPoint lastScrollDirection;
 };
 
 struct _PXGSpriteIndexRange {
@@ -549,7 +550,8 @@ typedef struct {
     struct _NSRange _field2;
     float _field3;
     int _field4;
-} CDStruct_af6398b0;
+    unsigned char _field5;
+} CDStruct_dcc83465;
 
 typedef struct {
     unsigned int _field1;
@@ -622,10 +624,10 @@ typedef struct {
     char isInteractive;
     long long fromColumnIndex;
     long long toColumnIndex;
-    long long desiredColumnIndex;
-    double progress;
+    double interactiveProgress;
+    double animatedProgress;
     double stickyHeaderOpacity;
-} CDStruct_a760eae4;
+} CDStruct_9b94aa0b;
 
 typedef struct {
     struct CGPoint normalizedInitialPosition;
@@ -691,13 +693,14 @@ typedef struct {
     float _field3;
     unsigned short _field4;
     unsigned short _field5;
-} CDStruct_3bc3b9c1;
+    unsigned char _field6;
+} CDStruct_506f5052;
 
 typedef struct {
     CDStruct_ac168a83 _field1;
-    CDStruct_3bc3b9c1 _field2;
+    CDStruct_506f5052 _field2;
     CDStruct_9d1ebe49 _field3;
-} CDStruct_c7f1798e;
+} CDStruct_e9e8c9fc;
 
 // Ambiguous groups
 typedef struct {

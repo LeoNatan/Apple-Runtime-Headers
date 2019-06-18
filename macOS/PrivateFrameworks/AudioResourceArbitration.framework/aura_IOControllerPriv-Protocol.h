@@ -6,11 +6,7 @@
 
 #import <AudioResourceArbitration/aura_IOController-Protocol.h>
 
-@protocol aura_IOStreamPriv;
-
 @protocol aura_IOControllerPriv <aura_IOController>
-@property(readonly, nonatomic) unsigned long long admIOControllerID;
-@property(readonly, nonatomic) unsigned int sessionToken;
-- (_Bool)connectIOStream:(id <aura_IOStreamPriv>)arg1 direction:(unsigned char)arg2;
+@property(readonly, nonatomic) weak_ptr_87c2748f reactor;
 @end
 

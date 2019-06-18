@@ -6,9 +6,7 @@
 
 #import <NewsUI2/_TtC7NewsUI234PersonalizationDebugViewController.h>
 
-#import <NewsUI2/UITableViewDataSource-Protocol.h>
-
-@interface _TtC7NewsUI234PersonalizationDebugViewController (NewsUI2) <UITableViewDataSource>
+@interface _TtC7NewsUI234PersonalizationDebugViewController (NewsUI2)
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (long long)tableView:(id)arg1 numberOfRowsInSection:(long long)arg2;
 @end

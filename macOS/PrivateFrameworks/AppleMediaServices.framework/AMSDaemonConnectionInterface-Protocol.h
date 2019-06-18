@@ -6,10 +6,10 @@
 
 #import <AppleMediaServices/NSObject-Protocol.h>
 
-@protocol AMSDeviceMessengerClientInterface;
+@protocol AMSDeviceMessengerClientInterface, AMSSecurityClientInterface;
 
 @protocol AMSDaemonConnectionInterface <NSObject>
-- (void)getSecurityServiceProxyWithReplyHandler:(void (^)(id <AMSSecurityServiceInterface>, NSError *))arg1;
+- (void)getSecurityServiceProxyWithDelegate:(id <AMSSecurityClientInterface>)arg1 replyHandler:(void (^)(id <AMSSecurityServiceInterface>, NSError *))arg2;
 - (void)getDeviceMessengerServiceProxyWithDelegate:(id <AMSDeviceMessengerClientInterface>)arg1 replyHandler:(void (^)(id <AMSDeviceMessengerServiceInterface>, NSError *))arg2;
 @end
 

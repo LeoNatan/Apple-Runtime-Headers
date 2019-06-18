@@ -70,7 +70,6 @@
 @property(readonly) BOOL isCarPlayNetwork; // @dynamic isCarPlayNetwork;
 @property(readonly) NSData *bssidData; // @dynamic bssidData;
 @property(readonly) unsigned long long physicalLayerMode; // @dynamic physicalLayerMode;
-@property(readonly) BOOL supportsWPA2EnterpriseMFPEnabledAndRequired; // @dynamic supportsWPA2EnterpriseMFPEnabledAndRequired;
 @property(readonly) unsigned long long securityType; // @dynamic securityType;
 @property(readonly) BOOL supportsWPS; // @dynamic supportsWPS;
 @property(readonly) BOOL supportsEasyConnect; // @dynamic supportsEasyConnect;

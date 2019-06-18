@@ -28,6 +28,7 @@
 - (BOOL)isContent;
 - (BOOL)canGenerateRepresentationForType:(id)arg1;
 - (id)generateFileRepresentationForType:(id)arg1 options:(id)arg2 error:(id *)arg3;
+- (void)generateObjectRepresentations:(CDUnknownBlockType)arg1 options:(id)arg2 forClass:(Class)arg3;
 - (id)generateObjectRepresentationsForClass:(Class)arg1 options:(id)arg2 error:(id *)arg3;
 - (id)generateObjectsForClass:(Class)arg1 error:(id *)arg2;
 @property(readonly, nonatomic) NSString *string;

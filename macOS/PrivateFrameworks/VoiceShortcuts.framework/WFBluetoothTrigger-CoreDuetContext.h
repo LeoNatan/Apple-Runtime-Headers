@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFBluetoothTrigger.h>
 
 @interface WFBluetoothTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

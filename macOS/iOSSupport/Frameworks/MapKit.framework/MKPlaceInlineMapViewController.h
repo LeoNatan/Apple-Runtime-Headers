@@ -43,6 +43,7 @@ __attribute__((visibility("hidden")))
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithMKMapItem:(id)arg1;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

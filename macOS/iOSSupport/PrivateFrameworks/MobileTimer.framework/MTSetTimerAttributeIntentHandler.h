@@ -14,7 +14,7 @@
 {
 }
 
-- (void)_updateTimer:(id)arg1 toDuration:(double)arg2 dryRun:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)_updateTimer:(id)arg1 toDuration:(double)arg2 toLabel:(id)arg3 dryRun:(BOOL)arg4 completion:(CDUnknownBlockType)arg5;
 - (id)_responseToSetTimerAttributeIntent:(id)arg1 withUpdatedTimer:(id)arg2 error:(id)arg3 dryRun:(BOOL)arg4;
 - (void)resolveTargetTimerForSetTimerAttribute:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)resolveToDurationForSetTimerAttribute:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

@@ -99,6 +99,7 @@
 - (BOOL)supportsAction:(unsigned long long)arg1;
 - (unsigned long long)supportedActions;
 - (long long)_ekTypeForNotificationType:(id)arg1;
+- (id)notificationTypeString;
 @property(readonly) long long type;
 - (BOOL)isProposedNewTime;
 - (BOOL)isSuggestion;
@@ -107,7 +108,8 @@
 - (BOOL)isSharedCalendarInvitation;
 - (BOOL)isInvitation;
 - (BOOL)shouldDisplayInNobo;
-- (BOOL)proposedStartDateIsInFuture;
+- (id)proposedEndDate;
+- (BOOL)proposedEndDateIsInFuture;
 - (id)calendar;
 - (void)setOccurrence:(id)arg1;
 @property(readonly, nonatomic) id <EventOccurrenceModelProtocol> occurrence;

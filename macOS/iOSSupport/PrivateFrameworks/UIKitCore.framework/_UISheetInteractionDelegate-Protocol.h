@@ -12,6 +12,7 @@
 
 @optional
 - (BOOL)sheetInteraction:(_UISheetInteraction *)arg1 shouldBeginHorizontalRubberBandingAtPoint:(struct CGPoint)arg2;
+- (struct CGPoint)offsetForInterruptedAnimationInSheetInteraction:(_UISheetInteraction *)arg1;
 - (void)sheetInteraction:(_UISheetInteraction *)arg1 didChangeOffset:(struct CGPoint)arg2;
 @end
 

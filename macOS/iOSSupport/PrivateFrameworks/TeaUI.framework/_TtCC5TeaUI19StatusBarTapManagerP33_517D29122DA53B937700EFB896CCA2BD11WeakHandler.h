@@ -6,7 +6,9 @@
 
 #import <swiftCore/_TtCs12_SwiftObject.h>
 
-@interface _TtCC5TeaUI19StatusBarTapManagerP33_517D29122DA53B937700EFB896CCA2BD11WeakHandler : _TtCs12_SwiftObject
+#import <TeaUI/TUStatusBarTapHandlerType-Protocol.h>
+
+@interface _TtCC5TeaUI19StatusBarTapManagerP33_517D29122DA53B937700EFB896CCA2BD11WeakHandler : _TtCs12_SwiftObject <TUStatusBarTapHandlerType>
 {
     // Error parsing type: , name: handler
 }

@@ -6,7 +6,7 @@
 
 #import <AppKit/NSTableCellView.h>
 
-@class IPLanguage, NSTextField;
+@class IPLanguage, NSButton, NSTextField;
 
 @interface IPLanguageCellView : NSTableCellView
 {
@@ -16,6 +16,7 @@
     BOOL _truncateLanguageNames;
     NSTextField *_localizedLanguageTextField;
     NSTextField *_primaryLanguageLabel;
+    NSButton *_infoButton;
     IPLanguage *_language;
 }
 
@@ -24,6 +25,7 @@
 @property BOOL canDrag; // @synthesize canDrag=_canDrag;
 @property(getter=isPrimary) BOOL primary; // @synthesize primary=_primary;
 @property(retain) IPLanguage *language; // @synthesize language=_language;
+@property __weak NSButton *infoButton; // @synthesize infoButton=_infoButton;
 @property __weak NSTextField *primaryLanguageLabel; // @synthesize primaryLanguageLabel=_primaryLanguageLabel;
 @property __weak NSTextField *localizedLanguageTextField; // @synthesize localizedLanguageTextField=_localizedLanguageTextField;
 - (void).cxx_destruct;

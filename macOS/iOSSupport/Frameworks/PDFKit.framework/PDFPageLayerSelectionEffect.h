@@ -11,8 +11,8 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (id)_activeColorForSelection:(id)arg1;
 - (void)_generateRects;
+- (void)updateColor:(unsigned long long)arg1;
 - (void)addSelection:(id)arg1;
 - (void)setSelections:(id)arg1;
 - (void)update;

@@ -9,6 +9,7 @@
 @class ADNotificationBusStation, NSMutableArray;
 @protocol OS_dispatch_queue;
 
+__attribute__((visibility("hidden")))
 @interface ADMNotificationManager : NSObject
 {
     struct queue _notificationQueue;

@@ -83,6 +83,7 @@
     id _topLayoutGuide;
     id _bottomLayoutGuide;
     BOOL _showsZoomControls;
+    BOOL _zoomVisible;
     UIView *_zoomButtons;
     NSObject<OS_dispatch_queue> *_lastEffectiveTraitCollectionIsolationQueue;
     UITraitCollection *_lastTraitCollection;
@@ -237,6 +238,8 @@
 - (void)_zoomIn;
 - (void)_zoomWithAmount:(double)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)_zoomWithAmount:(double)arg1;
+- (void)stopZoomingWithInertia;
+- (void)startLinearZoomIn:(BOOL)arg1;
 - (void)setCameraBoundary:(id)arg1 animated:(BOOL)arg2;
 - (void)setCameraZoomRange:(id)arg1 animated:(BOOL)arg2;
 - (void)setCamera:(id)arg1 springMass:(float)arg2 springStiffness:(float)arg3 springDamping:(float)arg4 springVelocity:(float)arg5;
@@ -456,6 +459,9 @@
 @property(nonatomic, getter=_automaticallySnapsToNorth, setter=_setAutomaticallySnapsToNorth:) BOOL automaticallySnapsToNorth;
 - (void)_snapToTrueNorthAndCallBack:(BOOL)arg1;
 - (void)snapToNorth:(id)arg1;
+- (id)zoomVisibilityAnimation;
+- (void)_updateZoomControlsVisiblility:(BOOL)arg1;
+- (void)_updateZoomControlsVisiblility;
 - (id)compassVisibilityAnimation;
 - (BOOL)compassVisible;
 - (void)_setCompassVisible:(BOOL)arg1 animated:(BOOL)arg2;
@@ -472,6 +478,7 @@
 - (void)_updateScalePosition;
 - (void)_showOrHideScaleIfNecessary:(BOOL)arg1;
 - (void)_updateScale;
+@property(readonly, nonatomic, getter=_canShowControls) BOOL canShowControls;
 - (BOOL)_shouldDisplayScaleForCurrentRegion;
 - (id)scaleView;
 @property(nonatomic, getter=_showsScaleDuringZoom, setter=_setShowsScaleDuringZoom:) BOOL showsScaleDuringZoom;
@@ -775,14 +782,11 @@
 - (void)_setRouteContextInspectedLegIndex:(unsigned long long)arg1 inspectedStepIndex:(unsigned long long)arg2;
 - (void)_setRouteContextForRoutes:(id)arg1 selectedRouteIndex:(unsigned long long)arg2;
 - (void)_setRouteContextForRoute:(id)arg1;
-- (void)stopZoomingWithInertia;
-- (void)startLinearZoomIn:(BOOL)arg1;
 - (void)zoomControlPlusReleased:(id)arg1;
 - (void)zoomControlMinusReleased:(id)arg1;
 - (void)zoomControlPlusPressed:(id)arg1;
 - (void)zoomControlMinusPressed:(id)arg1;
 - (void)makeZoomButtonsIfNeeded;
-- (void)_updateZoomControlsVisiblility;
 - (id)_flattenedAnnotationsForAnnotationViews:(id)arg1 maxdisplayPriority:(float *)arg2;
 @property(nonatomic) __weak id <MKMapViewDelegate> delegate; // @dynamic delegate;
 - (double)_distanceFromPoint:(struct CGPoint)arg1 toPoint:(struct CGPoint)arg2 fromView:(id)arg3 withPrecision:(long long)arg4;

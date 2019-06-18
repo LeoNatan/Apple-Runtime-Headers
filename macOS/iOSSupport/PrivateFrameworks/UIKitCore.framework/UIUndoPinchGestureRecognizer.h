@@ -12,6 +12,9 @@ __attribute__((visibility("hidden")))
 @interface UIUndoPinchGestureRecognizer : UIGestureRecognizer
 {
     BOOL _recognized;
+    struct CGAffineTransform _transform;
+    id _transformAnalyzer;
+    BOOL _hasFailedOnOtherDominantMotion;
     double _beginPinchTimestamp;
     double _beforeReductionTimeInterval;
     double _beginPerimeter;
@@ -34,11 +37,16 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)centroidOfTouches:(id)arg1;
 - (double)perimeterOfTouches:(id)arg1;
 - (long long)pinchDirectionWithCurrentTime:(double)arg1 perimeter:(double)arg2;
+- (double)scale;
+- (void)_updateTransformAnalyzerWeights;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (void)reset;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (BOOL)sufficientMotionInDirection:(long long)arg1 withLocation:(struct CGPoint)arg2 withScale:(double)arg3 withAngle:(double)arg4;
 
 @end
 

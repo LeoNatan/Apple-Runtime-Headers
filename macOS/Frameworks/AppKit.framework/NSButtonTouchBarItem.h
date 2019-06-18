@@ -29,6 +29,7 @@
 @property(copy) NSString *title;
 - (id)view;
 - (void)_performAction;
+- (void)_updateTitleAndImageConfiguration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;

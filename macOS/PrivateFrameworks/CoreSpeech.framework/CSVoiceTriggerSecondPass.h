@@ -29,6 +29,7 @@
     BOOL _hasPendingNearMiss;
     BOOL _isRunningRecognizer;
     BOOL _recognizerResultPending;
+    BOOL _didWakeAP;
     BOOL _hasTriggerCandidate;
     BOOL _isStartSampleCountMarked;
     BOOL _secondPassHasMadeDecision;
@@ -115,6 +116,7 @@
 @property(nonatomic) unsigned long long secondPassAnalyzerStartSampleCount; // @synthesize secondPassAnalyzerStartSampleCount=_secondPassAnalyzerStartSampleCount;
 @property(nonatomic) BOOL isStartSampleCountMarked; // @synthesize isStartSampleCountMarked=_isStartSampleCountMarked;
 @property(nonatomic) BOOL hasTriggerCandidate; // @synthesize hasTriggerCandidate=_hasTriggerCandidate;
+@property(nonatomic) BOOL didWakeAP; // @synthesize didWakeAP=_didWakeAP;
 @property(nonatomic) unsigned long long firstPassOnsetChannel; // @synthesize firstPassOnsetChannel=_firstPassOnsetChannel;
 @property(nonatomic) float firstPassOnsetScore; // @synthesize firstPassOnsetScore=_firstPassOnsetScore;
 @property(nonatomic) float firstPassMasterChannelScoreBoost; // @synthesize firstPassMasterChannelScoreBoost=_firstPassMasterChannelScoreBoost;
@@ -174,6 +176,9 @@
 - (void)CSMediaPlayingMonitor:(id)arg1 didReceiveMediaPlayingChanged:(long long)arg2;
 - (void)selfTriggerDetector:(id)arg1 didDetectSelfTrigger:(id)arg2;
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
+- (void)_getDidWakeAP:(id)arg1;
+- (void)_addDeviceStatusInfoToDict:(id)arg1;
+- (void)_addRejectStatsToDict:(id)arg1;
 - (void)_addTdsrInfoToDict:(id)arg1 combinedScore:(float)arg2;
 - (void)_addSatAnalyzerInfoToDict:(id)arg1 satScore:(float)arg2 satThreshold:(float)arg3;
 - (void)_implicitTrainingIfNeeded:(id)arg1;

@@ -76,7 +76,7 @@ struct CKBalloonDescriptor_t {
     unsigned long long _field5;
     char _field6;
     long long _field7;
-    char _field8;
+    long long _field8;
     char _field9;
     char _field10;
     char _field11;
@@ -147,6 +147,13 @@ typedef struct {
     double _field6;
     int _field7;
 } CDStruct_86ec5795;
+
+typedef struct {
+    long long value;
+    int timescale;
+    unsigned int flags;
+    long long epoch;
+} CDStruct_1b6d18a9;
 
 typedef struct {
     long long index;

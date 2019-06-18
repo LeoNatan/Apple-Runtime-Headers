@@ -6,18 +6,20 @@
 
 #import <UIKit/UIView.h>
 
-@class UIButton, UIColor, UIVisualEffectView;
+@class UIButton, UIVisualEffectView;
 
 @interface CKEntryViewButton : UIView
 {
+    BOOL _ckTintColor;
     BOOL _wantsVibrancy;
     UIButton *_button;
-    UIColor *_ckTintColor;
     long long _entryViewButtonType;
     UIVisualEffectView *_vibrancyView;
 }
 
-+ (id)entryViewButtonImageForType:(long long)arg1 color:(id)arg2;
++ (id)overlayImageForImageNamed:(id)arg1 tintColor:(BOOL)arg2;
++ (id)entryViewButtonImageWithName:(id)arg1 tintColor:(BOOL)arg2 shouldSuppressHairline:(BOOL)arg3;
++ (id)entryViewButtonImageForType:(long long)arg1 color:(BOOL)arg2;
 + (id)entryViewButtonImageForType:(long long)arg1;
 + (void)prewarmEntryViewButtons;
 + (id)imageNameForEntryViewButtonType:(long long)arg1;
@@ -25,10 +27,10 @@
 @property(retain, nonatomic) UIVisualEffectView *vibrancyView; // @synthesize vibrancyView=_vibrancyView;
 @property(nonatomic) long long entryViewButtonType; // @synthesize entryViewButtonType=_entryViewButtonType;
 @property(nonatomic) BOOL wantsVibrancy; // @synthesize wantsVibrancy=_wantsVibrancy;
-@property(retain, nonatomic) UIColor *ckTintColor; // @synthesize ckTintColor=_ckTintColor;
+@property(nonatomic) BOOL ckTintColor; // @synthesize ckTintColor=_ckTintColor;
 @property(retain, nonatomic) UIButton *button; // @synthesize button=_button;
 - (void).cxx_destruct;
-- (void)setTintedImageForButtonType:(long long)arg1 tintColor:(id)arg2;
+- (void)setTintedImageForButtonType:(long long)arg1 tintColor:(BOOL)arg2;
 - (void)setDefaultImage;
 - (BOOL)isEnabled;
 - (void)setEnabled:(BOOL)arg1;

@@ -155,7 +155,11 @@
 - (id)initWithSearchQuery:(id)arg1 entryMetadata:(id)arg2 metadata:(id)arg3 autocompleteEntry:(id)arg4 retainedSearch:(id)arg5 maxResults:(unsigned int)arg6 filters:(id)arg7 suppressResultsRequiringAttribution:(BOOL)arg8 traits:(id)arg9 error:(id *)arg10;
 - (id)initWithCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
 - (id)initWithTripIds:(id)arg1 traits:(id)arg2;
-- (id)initWithTransitScheduleStationIdentifier:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripId:(unsigned long long)arg3 traits:(id)arg4;
+- (id)initWithTransitDeparturesAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripId:(unsigned long long)arg3 traits:(id)arg4;
+- (id)initWithTransitTripDetailsAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripId:(unsigned long long)arg3 traits:(id)arg4;
+- (id)initWithUpdatedTransitScheduleDetailsAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripId:(unsigned long long)arg3 traits:(id)arg4;
+- (id)initWithTransitScheduleAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripId:(unsigned long long)arg3 traits:(id)arg4;
+- (id)_initWithTransitScheduleRequestForStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripId:(unsigned long long)arg3 traits:(id)arg4;
 - (id)initWithCollectionIdentifier:(id)arg1 traits:(id)arg2;
 - (id)initWithBrandMUID:(unsigned long long)arg1 traits:(id)arg2;
 - (id)initWithVendorSpecificPlaceRefinementParameters:(id)arg1 traits:(id)arg2;

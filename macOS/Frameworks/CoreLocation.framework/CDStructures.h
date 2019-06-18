@@ -146,7 +146,8 @@ typedef struct {
     unsigned int integrity;
     int referenceFrame;
     int rawReferenceFrame;
-} CDStruct_0a5906de;
+    int signalEnvironmentType;
+} CDStruct_4d1fbe9a;
 
 typedef struct {
     char identifier[512];

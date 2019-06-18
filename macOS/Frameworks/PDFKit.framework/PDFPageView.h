@@ -44,6 +44,8 @@ __attribute__((visibility("hidden")))
 - (void)_setupBookmarkLayer;
 - (void)setHidden:(BOOL)arg1;
 - (void)setFrame:(struct CGRect)arg1;
+- (void)updateCurrentSelectionColor:(unsigned long long)arg1;
+- (void)_updateSelectionColor:(id)arg1;
 - (void)setSelection:(id)arg1;
 - (_Bool)isDetachedView;
 - (void)setDetachedView:(_Bool)arg1;

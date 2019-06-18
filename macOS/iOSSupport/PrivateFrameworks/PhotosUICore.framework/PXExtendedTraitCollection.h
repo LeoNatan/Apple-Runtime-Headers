@@ -118,7 +118,6 @@
 - (void)getLayoutDirection:(out long long *)arg1;
 - (void)getUserInterfaceIdiom:(out long long *)arg1;
 - (struct NSObject *)createTraitCollection;
-- (struct CGSize)viewSize;
 
 @end
 

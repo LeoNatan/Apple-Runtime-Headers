@@ -23,6 +23,7 @@
     HMFUnfairLock *_lock;
     BOOL _primary;
     BOOL _notificationsEnabled;
+    BOOL _supportsNetworkProtection;
     BOOL _multiUserEnabled;
     BOOL _hasAnyUserAcknowledgedCameraRecordingOnboarding;
     BOOL _ownerUser;
@@ -90,6 +91,7 @@
 @property(nonatomic) __weak HMHomeManager *homeManager; // @synthesize homeManager=_homeManager;
 @property(readonly, nonatomic) unsigned long long homeHubState; // @synthesize homeHubState=_homeHubState;
 @property(nonatomic) BOOL multiUserEnabled; // @synthesize multiUserEnabled=_multiUserEnabled;
+@property BOOL supportsNetworkProtection; // @synthesize supportsNetworkProtection=_supportsNetworkProtection;
 @property long long protectionMode; // @synthesize protectionMode=_protectionMode;
 - (void).cxx_destruct;
 - (void)_updateApplicationData:(id)arg1 forAppDataContainerWithUUID:(id)arg2 appDataContainerUUIDKeyName:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
@@ -286,7 +288,7 @@
 - (void)startPairingWithAccessoryDescription:(id)arg1 setupRemoteViewController:(id)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)stopDiscoveringSymptomsForNearbyDevices;
 - (void)startDiscoveringSymptomsForNearbyDevices;
-- (void)_addAndSetupAccessoriesWithSetupPayloadURL:(id)arg1 browseRequest:(id)arg2 suggestedRoomName:(id)arg3 ownershipProof:(id)arg4 userActivityID:(id)arg5 legacyAPI:(BOOL)arg6 trustedOrigin:(BOOL)arg7 completionHandler:(CDUnknownBlockType)arg8;
+- (void)_addAndSetupAccessoriesWithSetupPayloadURL:(id)arg1 browseRequest:(id)arg2 suggestedRoomName:(id)arg3 ownershipToken:(id)arg4 addRequest:(id)arg5 legacyAPI:(BOOL)arg6 trustedOrigin:(BOOL)arg7 completionHandler:(CDUnknownBlockType)arg8;
 - (void)addAndSetupAccessoriesWithSetupPayload:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addAccessoryWithSetupPayload:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)addAccessoryWithPayload:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -376,6 +378,8 @@
 @property(getter=isMediaPeerToPeerEnabled) BOOL mediaPeerToPeerEnabled; // @dynamic mediaPeerToPeerEnabled;
 - (void)updateMinimumMediaUserPrivilege:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property long long minimumMediaUserPrivilege; // @dynamic minimumMediaUserPrivilege;
+- (void)_didUpdateSupportsNetworkProtection;
+- (void)_handleHomeSupportsNetworkProtectionUpdated:(id)arg1;
 - (void)_handleHomeNetworkProtectionModeUpdatedNotification:(id)arg1;
 - (void)updateNetworkProtection:(long long)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)executeActions:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;

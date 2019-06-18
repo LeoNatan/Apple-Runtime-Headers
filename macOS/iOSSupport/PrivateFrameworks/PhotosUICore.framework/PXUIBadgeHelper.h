@@ -28,7 +28,6 @@
 + (id)gradientImage;
 + (id)livePhotoBadgeShadowedImage;
 + (id)stackBadgeImage;
-+ (id)themeForBadgeInfo:(struct PXAssetBadgeInfo)arg1 style:(long long)arg2 wantsImage:(BOOL)arg3 wantsLabel:(BOOL)arg4 interactive:(BOOL)arg5 customTintColor:(id)arg6;
 + (struct PXAssetBadgeInfo)topRightBadgeInfoForBadgeInfo:(struct PXAssetBadgeInfo)arg1;
 + (struct PXAssetBadgeInfo)topLeftSecondaryBadgeInfoForBadgeInfo:(struct PXAssetBadgeInfo)arg1;
 + (struct PXAssetBadgeInfo)topLeftPrimaryBadgeInfoForBadgeInfo:(struct PXAssetBadgeInfo)arg1;

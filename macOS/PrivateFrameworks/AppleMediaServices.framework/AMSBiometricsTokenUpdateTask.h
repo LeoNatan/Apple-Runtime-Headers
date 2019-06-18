@@ -7,15 +7,18 @@
 #import <AppleMediaServices/AMSTask.h>
 
 #import <AppleMediaServices/AMSBagConsumer-Protocol.h>
+#import <AppleMediaServices/AMSSecurityClientInterface-Protocol.h>
 
 @class ACAccount, AMSURLSession, NSDictionary, NSString;
-@protocol AMSBagProtocol;
+@protocol AMSBagProtocol, AMSRequestPresentationDelegate;
 
-@interface AMSBiometricsTokenUpdateTask : AMSTask <AMSBagConsumer>
+@interface AMSBiometricsTokenUpdateTask : AMSTask <AMSSecurityClientInterface, AMSBagConsumer>
 {
+    BOOL _shouldRequestConfirmation;
     BOOL _shouldPromptUser;
     ACAccount *_account;
     NSDictionary *_additionalDialogMetrics;
+    id <AMSRequestPresentationDelegate> _presentationDelegate;
     id <AMSBagProtocol> _bag;
     AMSURLSession *_session;
 }
@@ -26,18 +29,17 @@
 @property BOOL shouldPromptUser; // @synthesize shouldPromptUser=_shouldPromptUser;
 @property(retain) AMSURLSession *session; // @synthesize session=_session;
 @property(readonly) id <AMSBagProtocol> bag; // @synthesize bag=_bag;
+@property BOOL shouldRequestConfirmation; // @synthesize shouldRequestConfirmation=_shouldRequestConfirmation;
+@property __weak id <AMSRequestPresentationDelegate> presentationDelegate; // @synthesize presentationDelegate=_presentationDelegate;
 @property(retain) NSDictionary *additionalDialogMetrics; // @synthesize additionalDialogMetrics=_additionalDialogMetrics;
 @property(readonly) ACAccount *account; // @synthesize account=_account;
 - (void).cxx_destruct;
-- (BOOL)_takeTimeLock;
-- (BOOL)_sendRequestToDaemonWithError:(id *)arg1;
-- (void)_sendMetricsForUpdate;
-- (void)_sendMetricsForDialog;
-- (long long)_runUpdateRequestWithStyle:(unsigned long long)arg1 primaryCerts:(id)arg2 extendedCerts:(id)arg3 error:(id *)arg4;
-- (BOOL)_runConfirmationDialogWithError:(id *)arg1;
-- (void)_releaseTimeLock;
-- (id)performUpdate;
 - (id)initWithAccount:(id)arg1 bag:(id)arg2;
+- (void)handleDialogRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)handleAuthenticateRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)_sendRequestToDaemon;
+- (id)performUpdate;
+- (id)initWithAccount:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

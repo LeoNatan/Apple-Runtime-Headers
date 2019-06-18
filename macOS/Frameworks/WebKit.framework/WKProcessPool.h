@@ -49,7 +49,6 @@
 - (unsigned long long)_processCacheCapacity;
 - (unsigned long long)_maximumSuspendedPageCount;
 - (unsigned long long)_pluginProcessCount;
-- (void)_removeCredential:(id)arg1 forProtectionSpace:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_preconnectToServer:(id)arg1;
 - (unsigned long long)_webPageContentProcessCount;
 - (unsigned long long)_webProcessCountIgnoringPrewarmedAndCached;

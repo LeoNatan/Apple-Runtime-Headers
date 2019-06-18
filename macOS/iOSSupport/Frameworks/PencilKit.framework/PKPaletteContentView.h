@@ -55,6 +55,7 @@
 - (void)_updateUI;
 - (void)traitCollectionDidChange:(id)arg1;
 @property(readonly, nonatomic) PKPaletteToolPickerView *toolPickerView;
+- (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
 - (void)_installAdditionalOptionsView;
 - (void)_installColorPickerView;
 - (void)_installToolPickerView;

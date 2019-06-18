@@ -23,6 +23,7 @@
     BOOL _hasFinishedInitialLoad;
     BOOL _automaticallyUpdatesViewControllerTitle;
     BOOL _visibilityUpdatesEnabled;
+    BOOL _shouldUseAlternateCellColor;
     unsigned long long _appearState;
     HUItemTableViewScrollDestination *_pendingScrollDestination;
     HFItemManager *_itemManager;
@@ -36,6 +37,7 @@
 
 + (unsigned long long)updateMode;
 + (BOOL)adoptsDefaultGridLayoutMargins;
+@property(nonatomic) BOOL shouldUseAlternateCellColor; // @synthesize shouldUseAlternateCellColor=_shouldUseAlternateCellColor;
 @property(retain, nonatomic) HUGridLayoutOptions *gridLayoutOptions; // @synthesize gridLayoutOptions=_gridLayoutOptions;
 @property(readonly, nonatomic) NSMapTable *textFieldToCellMap; // @synthesize textFieldToCellMap=_textFieldToCellMap;
 @property(retain, nonatomic) id <NACancelable> deferredVisibilityUpdate; // @synthesize deferredVisibilityUpdate=_deferredVisibilityUpdate;

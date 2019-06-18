@@ -6,10 +6,10 @@
 
 #import <PhotosGraph/NSObject-Protocol.h>
 
-@class CLCircularRegion, NSString;
+@class CLCircularRegion, NSArray;
 
 @protocol PGGraphPlaceItem <NSObject>
-@property(readonly, nonatomic) NSString *category;
+@property(readonly, nonatomic) NSArray *categoryNames;
 @property(readonly, nonatomic) CLCircularRegion *region;
 @end
 

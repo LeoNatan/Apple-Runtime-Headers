@@ -8,6 +8,7 @@
 
 @class NSObject, NSString, PortMO;
 
+__attribute__((visibility("hidden")))
 @interface VolumePolicyMO : NSManagedObject
 {
 }

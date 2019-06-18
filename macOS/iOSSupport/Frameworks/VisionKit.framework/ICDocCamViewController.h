@@ -461,6 +461,7 @@
 - (void)setupCaptureSession;
 - (void)setAutoMode:(BOOL)arg1;
 - (BOOL)autoMode;
+- (void)retakeButtonWasPressed;
 - (void)disableRetakeMode;
 @property(readonly, nonatomic) BOOL isInRetakeMode;
 - (void)killFeedbackDisplayInternalIncludingUserPrompts:(BOOL)arg1;

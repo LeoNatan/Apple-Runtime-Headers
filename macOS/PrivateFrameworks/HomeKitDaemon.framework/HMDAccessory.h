@@ -13,7 +13,7 @@
 #import <HomeKitDaemon/HMFLogging-Protocol.h>
 #import <HomeKitDaemon/NSSecureCoding-Protocol.h>
 
-@class HMAccessoryCategory, HMDAccessoryNetworkAccessViolation, HMDAccessoryTransaction, HMDAccessoryVersion, HMDApplicationData, HMDApplicationRegistry, HMDHome, HMDRoom, HMDVendorModelEntry, HMFMessageDispatcher, NSArray, NSData, NSMutableSet, NSNumber, NSObject, NSSet, NSString, NSUUID;
+@class HMAccessoryCategory, HMDAccessoryNetworkAccessViolation, HMDAccessoryVersion, HMDApplicationData, HMDHome, HMDRoom, HMDVendorModelEntry, HMFMessageDispatcher, NSArray, NSData, NSMutableSet, NSNumber, NSObject, NSSet, NSString, NSUUID;
 @protocol OS_dispatch_queue;
 
 @interface HMDAccessory : HMFObject <HMDBulletinIdentifiers, NSSecureCoding, HMDHomeMessageReceiver, HMDBackingStoreObjectProtocol, HMFDumpState, HMFLogging>
@@ -22,8 +22,12 @@
     BOOL _reachable;
     BOOL _remotelyReachable;
     NSMutableSet *_accessoryProfiles;
+    BOOL _suspended;
     BOOL _supportsMediaContentProfile;
+    BOOL _suspendCapable;
     BOOL _remoteAccessEnabled;
+    BOOL _custom1WoBLE;
+    BOOL _custom1WoWLAN;
     NSString *_identifier;
     HMDRoom *_room;
     NSString *_model;
@@ -36,6 +40,7 @@
     NSNumber *_networkClientIdentifier;
     long long _targetNetworkProtectionMode;
     long long _currentNetworkProtectionMode;
+    long long _networkClientLAN;
     long long _wiFiCredentialType;
     NSArray *_allowedHosts;
     NSData *_wiFiUniquePreSharedKey;
@@ -50,8 +55,6 @@
     HMFMessageDispatcher *_msgDispatcher;
     NSNumber *_categoryIdentifier;
     NSString *_configuredName;
-    HMDApplicationRegistry *_appRegistry;
-    HMDAccessoryTransaction *_transaction;
     unsigned long long _accessoryReprovisionState;
 }
 
@@ -59,9 +62,9 @@
 + (BOOL)hasMessageReceiverChildren;
 + (id)logCategory;
 + (BOOL)splitProductDataIntoProductGroupAndProductNumber:(id)arg1 productGroup:(id *)arg2 productNumber:(id *)arg3;
+@property(nonatomic) BOOL custom1WoWLAN; // @synthesize custom1WoWLAN=_custom1WoWLAN;
+@property(nonatomic) BOOL custom1WoBLE; // @synthesize custom1WoBLE=_custom1WoBLE;
 @property(nonatomic) unsigned long long accessoryReprovisionState; // @synthesize accessoryReprovisionState=_accessoryReprovisionState;
-@property(retain, nonatomic) HMDAccessoryTransaction *transaction; // @synthesize transaction=_transaction;
-@property(retain, nonatomic) HMDApplicationRegistry *appRegistry; // @synthesize appRegistry=_appRegistry;
 @property(retain, nonatomic) NSString *configuredName; // @synthesize configuredName=_configuredName;
 @property(retain, nonatomic) NSNumber *categoryIdentifier; // @synthesize categoryIdentifier=_categoryIdentifier;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
@@ -69,9 +72,11 @@
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
 @property(retain, nonatomic) HMDAccessoryNetworkAccessViolation *networkAccessViolation; // @synthesize networkAccessViolation=_networkAccessViolation;
+@property(nonatomic, getter=isSuspendCapable) BOOL suspendCapable; // @synthesize suspendCapable=_suspendCapable;
 @property(nonatomic, getter=isPrimary) BOOL primary; // @synthesize primary=_primary;
 @property(copy, nonatomic) NSString *configurationAppIdentifier; // @synthesize configurationAppIdentifier=_configurationAppIdentifier;
 @property(nonatomic) BOOL supportsMediaContentProfile; // @synthesize supportsMediaContentProfile=_supportsMediaContentProfile;
+@property(nonatomic, getter=isSuspended) BOOL suspended; // @synthesize suspended=_suspended;
 @property(copy, nonatomic) NSString *providedName; // @synthesize providedName=_providedName;
 @property(nonatomic) __weak HMDHome *home; // @synthesize home=_home;
 @property(retain, nonatomic) HMAccessoryCategory *category; // @synthesize category=_category;
@@ -97,6 +102,7 @@
 - (id)logIdentifier;
 - (id)dumpSimpleState;
 - (id)dumpState;
+- (void)didUpdateCurrentNetworkProtection;
 - (void)transactionObjectRemoved:(id)arg1 message:(id)arg2;
 - (void)transactionObjectUpdated:(id)arg1 newValues:(id)arg2 message:(id)arg3;
 @property(readonly) BOOL supportsUserManagement;
@@ -110,7 +116,8 @@
 - (void)setWifiCredentialType:(long long)arg1;
 - (BOOL)supportsWiFiReconfiguration;
 - (void)_handleUpdateNetworkProtection:(id)arg1;
-- (void)saveCurrentNetworkProtectionMode:(long long)arg1 appliedFirewallWANRules:(id)arg2;
+- (void)saveCurrentNetworkProtectionMode:(long long)arg1 assignedLAN:(long long)arg2 appliedFirewallWANRules:(id)arg3;
+@property(nonatomic) long long networkClientLAN; // @synthesize networkClientLAN=_networkClientLAN;
 @property(nonatomic) long long currentNetworkProtectionMode; // @synthesize currentNetworkProtectionMode=_currentNetworkProtectionMode;
 @property(nonatomic) long long targetNetworkProtectionMode; // @synthesize targetNetworkProtectionMode=_targetNetworkProtectionMode;
 - (void)saveNetworkClientIdentifier:(id)arg1;
@@ -137,6 +144,7 @@
 @property(nonatomic, getter=isRemotelyReachable) BOOL remotelyReachable; // @synthesize remotelyReachable=_remotelyReachable;
 - (void)handleReachabilityChange:(BOOL)arg1;
 @property(nonatomic, getter=isReachable) BOOL reachable; // @synthesize reachable=_reachable;
+- (void)setSuspendedCapable:(BOOL)arg1;
 @property(readonly) BOOL requiresHomeAppForManagement;
 - (void)removeAdvertisement:(id)arg1;
 - (void)addAdvertisement:(id)arg1;

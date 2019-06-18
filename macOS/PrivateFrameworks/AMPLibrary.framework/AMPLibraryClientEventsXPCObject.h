@@ -37,7 +37,8 @@
 - (void)notifyCloudClientRemoteLoadStateEventForClientID:(unsigned int)arg1 newState:(unsigned int)arg2;
 - (void)notifyCloudClientStateChangeEventForClientID:(unsigned int)arg1 newState:(unsigned int)arg2;
 - (void)notifyLibraryCommandComplete:(id)arg1 forClientID:(unsigned int)arg2 forCommandID:(unsigned int)arg3;
-- (void)notifyLibraryLoadComplete:(id)arg1 forClientID:(unsigned int)arg2 atRevision:(unsigned int)arg3 withData:(id)arg4;
+- (void)notifyLibraryOpenStartedForClientID:(unsigned int)arg1 withData:(id)arg2;
+- (void)notifyLibraryProgressForMediaDomain:(unsigned long long)arg1 withLoadState:(unsigned char)arg2 andProgress:(unsigned char)arg3;
 
 @end
 

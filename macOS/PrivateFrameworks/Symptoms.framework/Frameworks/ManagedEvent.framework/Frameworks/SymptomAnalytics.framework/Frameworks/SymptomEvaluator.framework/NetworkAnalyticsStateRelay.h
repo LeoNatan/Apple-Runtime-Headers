@@ -17,7 +17,6 @@
     BOOL _rxSignalThresholded;
     BOOL _rxSignalFullBars;
     BOOL _txThresholded;
-    BOOL _congestionThresholded;
     BOOL _arpOut;
     BOOL _dnsOut;
     BOOL _internetDnsOut;
@@ -75,7 +74,6 @@
 @property BOOL internetDnsOut; // @synthesize internetDnsOut=_internetDnsOut;
 @property BOOL dnsOut; // @synthesize dnsOut=_dnsOut;
 @property BOOL arpOut; // @synthesize arpOut=_arpOut;
-@property BOOL congestionThresholded; // @synthesize congestionThresholded=_congestionThresholded;
 @property BOOL txThresholded; // @synthesize txThresholded=_txThresholded;
 @property BOOL rxSignalFullBars; // @synthesize rxSignalFullBars=_rxSignalFullBars;
 @property BOOL rxSignalThresholded; // @synthesize rxSignalThresholded=_rxSignalThresholded;

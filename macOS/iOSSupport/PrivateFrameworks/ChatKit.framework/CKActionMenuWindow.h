@@ -10,7 +10,6 @@
 
 @class CKActionMenuView, CKDismissView, NSArray, NSString;
 
-__attribute__((visibility("hidden")))
 @interface CKActionMenuWindow : UIAutoRotatingWindow <CKDismissViewDelegate>
 {
     CKActionMenuView *_actionMenuView;

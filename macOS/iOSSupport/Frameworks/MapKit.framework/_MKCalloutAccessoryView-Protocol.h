@@ -6,12 +6,11 @@
 
 #import <MapKit/NSObject-Protocol.h>
 
-@class UIColor, UIControl;
+@class UIControl;
 
 @protocol _MKCalloutAccessoryView <NSObject>
 
 @optional
 - (UIControl *)_mapkit_accessoryControlToExtendWithCallout;
-- (void)_mapkit_setCalloutTextColor:(UIColor *)arg1;
 @end
 

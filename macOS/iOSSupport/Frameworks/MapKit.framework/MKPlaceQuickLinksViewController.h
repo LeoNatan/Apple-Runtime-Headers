@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (void)createActionViews;
 - (unsigned long long)maxButtonsPerRow;
 - (void)viewDidLoad;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

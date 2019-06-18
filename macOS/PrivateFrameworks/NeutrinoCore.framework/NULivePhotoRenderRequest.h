@@ -6,11 +6,12 @@
 
 #import <NeutrinoCore/NURenderRequest.h>
 
-@class NUColorSpace;
+@class NUColorSpace, NURenderContext;
 @protocol NUScalePolicy;
 
 @interface NULivePhotoRenderRequest : NURenderRequest
 {
+    NURenderContext *_stillBufferRenderContext;
     id <NUScalePolicy> _scalePolicy;
     NUColorSpace *_colorSpace;
 }

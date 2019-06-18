@@ -6,26 +6,20 @@
 
 #import <objc/NSObject.h>
 
-@class GEOUserSessionSnapshot, NSArray, NSString;
-@protocol GEOUsageKeypressEventProtocol;
+@class NSArray, NSString;
 
 @interface MKLocalSearchKeypressMetrics : NSObject
 {
     NSString *_query;
     NSArray *_queryTokens;
     NSArray *_suggestionEntries;
-    GEOUserSessionSnapshot *_userSessionSnapshot;
-    id <GEOUsageKeypressEventProtocol> _customUsageCapturer;
 }
 
-@property(retain, nonatomic) id <GEOUsageKeypressEventProtocol> customUsageCapturer; // @synthesize customUsageCapturer=_customUsageCapturer;
-@property(readonly, nonatomic) GEOUserSessionSnapshot *userSessionSnapshot; // @synthesize userSessionSnapshot=_userSessionSnapshot;
 @property(readonly, nonatomic) NSArray *suggestionEntries; // @synthesize suggestionEntries=_suggestionEntries;
 @property(readonly, copy, nonatomic) NSArray *queryTokens; // @synthesize queryTokens=_queryTokens;
 @property(readonly, copy, nonatomic) NSString *query; // @synthesize query=_query;
 - (void).cxx_destruct;
 - (void)submitWithStatus:(unsigned long long)arg1;
-- (id)initWithQuery:(id)arg1 queryTokens:(id)arg2 suggestionEntries:(id)arg3 usageCapturer:(id)arg4;
 - (id)initWithQuery:(id)arg1 queryTokens:(id)arg2 suggestionEntries:(id)arg3;
 
 @end

@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
+- (id)name;
 - (id)renderPipelineDescriptorFromLibrary:(id)arg1;
 
 @end

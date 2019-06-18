@@ -18,6 +18,7 @@
 
 @property(retain) SearchUIMapsViewController *mapViewController; // @synthesize mapViewController=_mapViewController;
 - (void).cxx_destruct;
+- (id)embeddedViewController;
 - (void)placeViewControllerDidUpdateHeight:(id)arg1;
 - (struct CGSize)containerView:(id)arg1 systemLayoutSizeFittingSize:(struct CGSize)arg2 forArrangedSubview:(id)arg3;
 - (void)containerView:(id)arg1 willMeasureArrangedSubviewsFittingSize:(struct CGSize)arg2 forReason:(long long)arg3;

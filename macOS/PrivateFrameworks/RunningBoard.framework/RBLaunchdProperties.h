@@ -22,9 +22,11 @@ __attribute__((visibility("hidden")))
     NSString *_bundleID;
     NSString *_jobLabel;
     NSString *_executablePath;
+    NSString *_underlyingAssertion;
 }
 
 + (id)propertiesForPid:(int)arg1;
+@property(readonly, nonatomic) NSString *underlyingAssertion; // @synthesize underlyingAssertion=_underlyingAssertion;
 @property(readonly, nonatomic) BOOL doesOverrideManagement; // @synthesize doesOverrideManagement=_doesOverrideManagement;
 @property(readonly, nonatomic) int requestedJetsamPriority; // @synthesize requestedJetsamPriority=_requestedJetsamPriority;
 @property(readonly, nonatomic) NSString *executablePath; // @synthesize executablePath=_executablePath;

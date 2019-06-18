@@ -7,7 +7,10 @@
 #import <AppKit/NSTextView.h>
 
 @interface NSTextView (IC)
+- (id)ic_imageForRange:(struct _NSRange)arg1;
+- (struct CGRect)ic_rectForRange:(struct _NSRange)arg1;
 - (void)setIc_SelectedRanges:(id)arg1;
 - (id)ic_selectedRanges;
+@property(readonly, nonatomic) struct CGPoint ic_textContainerOrigin;
 @end
 

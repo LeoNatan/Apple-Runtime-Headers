@@ -45,6 +45,7 @@
 - (void)queryIPv6AddressesWithXPCParams:(CWFXPCParameters *)arg1 reply:(void (^)(NSError *, NSArray *))arg2;
 - (void)queryIPv4ServiceIDWithXPCParams:(CWFXPCParameters *)arg1 reply:(void (^)(NSError *, NSString *))arg2;
 - (void)queryIPv4ServiceNameWithXPCParams:(CWFXPCParameters *)arg1 reply:(void (^)(NSError *, NSString *))arg2;
+- (void)queryIsNetworkServiceEnabledWithXPCParams:(CWFXPCParameters *)arg1 reply:(void (^)(NSError *, NSNumber *))arg2;
 - (void)queryNetworkServiceIDWithXPCParams:(CWFXPCParameters *)arg1 reply:(void (^)(NSError *, NSString *))arg2;
 - (void)queryNetworkServiceNameWithXPCParams:(CWFXPCParameters *)arg1 reply:(void (^)(NSError *, NSString *))arg2;
 - (void)queryIPv4InterfaceNameWithXPCParams:(CWFXPCParameters *)arg1 reply:(void (^)(NSError *, NSString *))arg2;

@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFMessageTrigger.h>
 
 @interface WFMessageTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

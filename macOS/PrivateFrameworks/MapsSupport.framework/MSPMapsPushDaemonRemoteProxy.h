@@ -32,11 +32,11 @@
 - (void)testByNotingHistoryChangedOnDisk;
 - (void)fetchUserRoutingPreferencesWithCompletion:(CDUnknownBlockType)arg1;
 - (void)eraseHistorySerializedRepresentationWithCompletion:(CDUnknownBlockType)arg1;
-- (void)commitHistorySerializedRepresentation:(id)arg1 earliestKnownSyncDate:(id)arg2 operationIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)commitHistorySerializedRepresentation:(id)arg1 reapingTombstones:(BOOL)arg2 earliestKnownSyncDate:(id)arg3 operationIdentifier:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (void)fetchHistorySerializedRepresentationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchLastKnownHistoryOperationIdentifier:(CDUnknownBlockType)arg1;
 - (void)eraseFavoritesSerializedRepresentationWithCompletion:(CDUnknownBlockType)arg1;
-- (void)commitFavoritesSerializedRepresentation:(id)arg1 operationIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)commitFavoritesSerializedRepresentation:(id)arg1 reapingTombstones:(BOOL)arg2 operationIdentifier:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)fetchFavoritesSerializedRepresentationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)fetchLastKnownFavoritesOperationIdentifier:(CDUnknownBlockType)arg1;
 - (void)eraseCollectionsSerializedRepresentationWithCompletion:(CDUnknownBlockType)arg1;

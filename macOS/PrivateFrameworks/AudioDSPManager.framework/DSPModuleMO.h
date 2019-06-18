@@ -8,6 +8,7 @@
 
 @class DSPFlavorMO, IOControllerSemanticMO, NSSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface DSPModuleMO : NSManagedObject
 {
 }

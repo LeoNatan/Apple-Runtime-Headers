@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 + (BOOL)supportsSecureCoding;
 @property(nonatomic) BOOL observeUnfrozenSeries; // @synthesize observeUnfrozenSeries=_observeUnfrozenSeries;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

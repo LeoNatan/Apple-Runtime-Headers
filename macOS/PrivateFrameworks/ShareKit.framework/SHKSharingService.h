@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDate, NSDictionary, NSExtension, NSImage, NSProgress, NSRemoteViewController, NSSharingService, NSSharingServiceDescription, NSString, NSURL, NSUUID, NSWindow, SHKHostExtensionContext, SHKRemoteWindowController;
+@class NSArray, NSDictionary, NSExtension, NSImage, NSProgress, NSRemoteViewController, NSSharingService, NSSharingServiceDescription, NSString, NSURL, NSUUID, NSWindow, SHKHostExtensionContext, SHKRemoteWindowController, SHKUIServiceLatencyMetric;
 @protocol PKPlugIn, SHKSharingServiceDelegate;
 
 @interface SHKSharingService : NSObject
@@ -40,14 +40,13 @@
     SHKHostExtensionContext *_extensionContext;
     NSUUID *_uuid;
     NSArray *_sharedItems;
+    unsigned long long _finalSharedItemsCount;
     CDUnknownBlockType _restoreWindowStateBlock;
     CDUnknownBlockType _cancelExtensionKillTimer;
     CDUnknownBlockType _cancelRestoreWindowStateTimer;
     CDUnknownBlockType _cancelPotentialUnregisterTimer;
     NSWindow *_sourceWindow;
-    NSDate *_startDate;
-    NSDate *_beginExtensionCompletionDate;
-    unsigned long long _sharedItemsCount;
+    SHKUIServiceLatencyMetric *_uiServiceLatencyMetric;
 }
 
 + (void)addRecentEmailServiceToDefaultsWithSubject:(id)arg1 recipients:(id)arg2;
@@ -98,9 +97,7 @@
 + (id)sharingServiceWithIdentifier:(id)arg1 title:(id)arg2 image:(id)arg3 alternateImage:(id)arg4 type:(long long)arg5 handler:(CDUnknownBlockType)arg6;
 + (id)sharingServiceNamed:(id)arg1;
 + (id)sharingServiceNamed:(id)arg1 allowInactive:(BOOL)arg2;
-@property unsigned long long sharedItemsCount; // @synthesize sharedItemsCount=_sharedItemsCount;
-@property(retain) NSDate *beginExtensionCompletionDate; // @synthesize beginExtensionCompletionDate=_beginExtensionCompletionDate;
-@property(retain) NSDate *startDate; // @synthesize startDate=_startDate;
+@property(retain) SHKUIServiceLatencyMetric *uiServiceLatencyMetric; // @synthesize uiServiceLatencyMetric=_uiServiceLatencyMetric;
 @property __weak NSWindow *sourceWindow; // @synthesize sourceWindow=_sourceWindow;
 @property(copy, nonatomic) CDUnknownBlockType cancelPotentialUnregisterTimer; // @synthesize cancelPotentialUnregisterTimer=_cancelPotentialUnregisterTimer;
 @property(copy, nonatomic) CDUnknownBlockType cancelRestoreWindowStateTimer; // @synthesize cancelRestoreWindowStateTimer=_cancelRestoreWindowStateTimer;
@@ -108,6 +105,7 @@
 @property(copy, nonatomic) CDUnknownBlockType restoreWindowStateBlock; // @synthesize restoreWindowStateBlock=_restoreWindowStateBlock;
 @property BOOL sourceWindowProvided; // @synthesize sourceWindowProvided=_sourceWindowProvided;
 @property BOOL disableDragging; // @synthesize disableDragging=_disableDragging;
+@property unsigned long long finalSharedItemsCount; // @synthesize finalSharedItemsCount=_finalSharedItemsCount;
 @property(retain) NSArray *sharedItems; // @synthesize sharedItems=_sharedItems;
 @property(copy) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property unsigned int remoteCID; // @synthesize remoteCID=_remoteCID;
@@ -131,6 +129,7 @@
 @property(nonatomic) __weak id <SHKSharingServiceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain) NSSharingServiceDescription *serviceDescription; // @synthesize serviceDescription=_serviceDescription;
 - (void).cxx_destruct;
+- (BOOL)isMessagesServiceInvokedFromMaps;
 - (void)dealloc;
 - (id)bundle;
 - (id)description;

@@ -6,13 +6,15 @@
 
 #import <Photos/PHImportExceptionRecorder.h>
 
-@class NSDateFormatter, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSProgress, NSString, NSURL, PHImportDuplicateChecker, PHImportOptions;
-@protocol OS_dispatch_queue, PHImportSourceDelegate;
+@class NSDateFormatter, NSHashTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject, NSProgress, NSString, NSURL, PHImportDuplicateChecker, PHImportOptions;
+@protocol OS_dispatch_queue;
 
 @interface PHImportSource : PHImportExceptionRecorder
 {
     NSMutableDictionary *_assetsByImportIdentifier;
     NSMutableDictionary *_representationsByImportIdentifier;
+    NSHashTable *_observers;
+    struct os_unfair_lock_s _observersLock;
     BOOL _ejecting;
     BOOL _canAutolaunch;
     unsigned char _sourceAccessState;
@@ -23,7 +25,6 @@
     NSString *_uuid;
     unsigned long long _batchSize;
     double _batchInterval;
-    id <PHImportSourceDelegate> _delegate;
     NSURL *_autolaunchApplicationURL;
     unsigned long long _currentItemIndex;
     unsigned long long _nextItemIndex;
@@ -91,7 +92,6 @@
 @property(nonatomic) unsigned char sourceAccessState; // @synthesize sourceAccessState=_sourceAccessState;
 @property(readonly, nonatomic) BOOL canAutolaunch; // @synthesize canAutolaunch=_canAutolaunch;
 @property(readonly, nonatomic, getter=isEjecting) BOOL ejecting; // @synthesize ejecting=_ejecting;
-@property(nonatomic) __weak id <PHImportSourceDelegate> delegate; // @synthesize delegate=_delegate;
 @property(retain, nonatomic) NSString *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 - (id)assetsDescription;
@@ -115,7 +115,6 @@
 - (id)processAssets:(id)arg1;
 - (BOOL)processPotentialJpegAsset:(id)arg1 plusRawAsset:(id)arg2;
 - (BOOL)date:(id)arg1 matchesDate:(id)arg2;
-- (BOOL)pathForAsset:(id)arg1 matchesAsset:(id)arg2;
 - (id)deleteImportAssets:(id)arg1 isConfirmed:(BOOL)arg2 isCancelable:(BOOL)arg3 atEnd:(CDUnknownBlockType)arg4;
 - (void)removeAssets:(id)arg1;
 - (void)addSourceFileIdentifiersForRemovedFiles:(id)arg1;
@@ -149,6 +148,10 @@
 @property(readonly, nonatomic) NSString *path;
 @property(readonly, nonatomic) NSString *productKind;
 @property(readonly, nonatomic) NSString *name;
+- (void)notifyObserversUsingBlock:(CDUnknownBlockType)arg1;
+- (void)removeImportSourceObserver:(id)arg1;
+- (void)addImportSourceObserver:(id)arg1;
+- (id)description;
 - (id)init;
 
 @end

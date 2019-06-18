@@ -21,9 +21,12 @@
 - (void)supportedFeatureIdentifiersWithCompletion:(void (^)(NSSet *))arg1;
 - (void)supportsAccountsWithCompletion:(void (^)(BOOL))arg1;
 - (void)updateAccountWithIdentifier:(NSString *)arg1 completion:(void (^)(PKAccount *, NSError *))arg2;
+- (void)noteProvisioningDidEndRequiringUpgradedPasscode;
+- (void)noteProvisioningDidStartRequiringUpgradedPasscode;
+- (void)enforceUpgradedPasscodePolicyWithCompletion:(void (^)(BOOL, NSError *))arg1;
 - (void)setDefaultPaymentPassUniqueIdentifier:(NSString *)arg1;
 - (void)appleAccountInformationWithCompletion:(void (^)(PKAppleAccountInformation *))arg1;
-- (void)renewAppleAccountWithCompletion:(void (^)(long long, PKAppleAccountInformation *))arg1;
+- (void)renewAppleAccountWithCompletionHandler:(void (^)(long long, PKAppleAccountInformation *))arg1;
 - (void)supportsPeerPaymentRegistrationWithCompletion:(void (^)(BOOL))arg1;
 - (void)removePass:(PKPass *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
 - (void)addPassData:(NSData *)arg1 completion:(void (^)(BOOL, NSError *))arg2;
@@ -49,7 +52,6 @@
 - (void)signData:(NSData *)arg1 signatureEntanglementMode:(unsigned long long)arg2 withCompletion:(void (^)(NSData *, PKSecureElementSignatureInfo *, NSError *))arg3;
 - (void)getTrustedDeviceEnrollmentInfoWithCompletion:(void (^)(PKTrustedDeviceEnrollmentInfo *))arg1;
 - (void)getRegistrationDataWithCompletion:(void (^)(PKPaymentDeviceRegistrationData *, NSError *))arg1;
-- (void)getRegistrationDataWithAuthToken:(NSString *)arg1 completion:(void (^)(PKPaymentDeviceRegistrationData *, NSError *))arg2;
 - (void)getConfigurationDataWithCompletion:(void (^)(PKPaymentDeviceConfigurationData *, NSError *))arg1;
 - (void)queueConnectionToTrustedServiceManagerForPushTopic:(NSString *)arg1 withCompletion:(void (^)(BOOL, NSError *))arg2;
 - (void)getContextWithCompletion:(void (^)(PKPaymentWebServiceContext *))arg1;

@@ -128,7 +128,7 @@
 - (id)invalidationContextForInteractivelyMovingItems:(id)arg1 withTargetPosition:(struct CGPoint)arg2 previousIndexPaths:(id)arg3 previousPosition:(struct CGPoint)arg4;
 - (id)invalidationContextForBoundsChange:(struct CGRect)arg1;
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
-- (BOOL)_shouldInvalidateLayoutForBoundsChange:(struct CGRect)arg1;
+- (BOOL)_shouldInvalidateLayoutForBoundsSizeChange:(struct CGRect)arg1;
 - (id)_updatePinnedSectionSupplementaryItemsForCurrentVisibleBounds;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_prepareForPreferredAttributesQueryForView:(id)arg1 withLayoutAttributes:(id)arg2;
@@ -147,6 +147,7 @@
 - (long long)_numberOfSections;
 - (double)_sectionSpacingForAppearanceStyle;
 - (struct UIEdgeInsets)_globalInsetsForAppearanceStyle;
+- (BOOL)_wantsUntrackedAnimationCleanupForAuxillaryItems;
 - (void)_traitCollectionDidChangeFromPreviousCollection:(id)arg1 newTraitCollection:(id)arg2;
 - (BOOL)_cellsShouldConferWithAutolayoutEngineForSizingInfo;
 - (BOOL)_estimatesSupplementaryItems;

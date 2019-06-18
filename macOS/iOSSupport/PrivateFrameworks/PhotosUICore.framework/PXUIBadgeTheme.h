@@ -11,23 +11,18 @@
 @interface PXUIBadgeTheme : NSObject
 {
     BOOL _usesBackground;
-    BOOL _usesBorder;
-    BOOL _interactive;
-    UIColor *_customTintColor;
+    BOOL _isInteractive;
+    UIColor *_tintColor;
 }
 
-@property(readonly, nonatomic) UIColor *customTintColor; // @synthesize customTintColor=_customTintColor;
-@property(readonly, nonatomic, getter=isInteractive) BOOL interactive; // @synthesize interactive=_interactive;
-@property(readonly, nonatomic) BOOL usesBorder; // @synthesize usesBorder=_usesBorder;
+@property(readonly, nonatomic) UIColor *tintColor; // @synthesize tintColor=_tintColor;
+@property(readonly, nonatomic) BOOL isInteractive; // @synthesize isInteractive=_isInteractive;
 @property(readonly, nonatomic) BOOL usesBackground; // @synthesize usesBackground=_usesBackground;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) double backgroundAlpha;
 @property(readonly, nonatomic) CAFilter *backgroundCompositeFilter;
 @property(readonly, nonatomic) double backgroundCornerRadius;
-@property(readonly, nonatomic) double backgroundBorderWidth;
-@property(readonly, nonatomic) UIColor *backgroundBorderColor;
 @property(readonly, nonatomic) UIColor *backgroundColor;
-- (id)backgroundViewIdentifier;
 @property(readonly, nonatomic) Class backgroundViewClass;
 - (id)createBackgroundView;
 @property(readonly, nonatomic) CAFilter *labelCompositingFilter;
@@ -38,7 +33,7 @@
 @property(readonly, nonatomic) UIColor *imageTintColor;
 @property(readonly, nonatomic) double imageAlpha;
 - (id)init;
-- (id)initWithUsesBackground:(BOOL)arg1 usesBorder:(BOOL)arg2 interactive:(BOOL)arg3 customTintColor:(id)arg4;
+- (id)initWithUsesBackground:(BOOL)arg1 isInteractive:(BOOL)arg2 tintColor:(id)arg3;
 
 @end
 

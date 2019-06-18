@@ -16,6 +16,7 @@
     unsigned int _totalAPNReceived;
     unsigned int _totalAccessTransaction;
     unsigned int _totalAuthECommerce;
+    unsigned int _totalBurnoutTimerCounter;
     unsigned int _totalCEEnable;
     unsigned int _totalCEEnabledWithMissingTransactionEndEvent;
     unsigned int _totalCEEnabledWithNoFieldDetected;
@@ -55,6 +56,7 @@
         unsigned int totalAPNReceived:1;
         unsigned int totalAccessTransaction:1;
         unsigned int totalAuthECommerce:1;
+        unsigned int totalBurnoutTimerCounter:1;
         unsigned int totalCEEnable:1;
         unsigned int totalCEEnabledWithMissingTransactionEndEvent:1;
         unsigned int totalCEEnabledWithNoFieldDetected:1;
@@ -90,6 +92,7 @@
     } _has;
 }
 
+@property(nonatomic) unsigned int totalBurnoutTimerCounter; // @synthesize totalBurnoutTimerCounter=_totalBurnoutTimerCounter;
 @property(nonatomic) unsigned int seCounterMeasureLevel; // @synthesize seCounterMeasureLevel=_seCounterMeasureLevel;
 @property(nonatomic) unsigned int totalLPEMCounter; // @synthesize totalLPEMCounter=_totalLPEMCounter;
 @property(nonatomic) unsigned int totalPTKeyDeletionFailed; // @synthesize totalPTKeyDeletionFailed=_totalPTKeyDeletionFailed;
@@ -137,6 +140,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(nonatomic) BOOL hasTotalBurnoutTimerCounter;
 @property(nonatomic) BOOL hasSeCounterMeasureLevel;
 @property(nonatomic) BOOL hasTotalLPEMCounter;
 @property(nonatomic) BOOL hasTotalPTKeyDeletionFailed;

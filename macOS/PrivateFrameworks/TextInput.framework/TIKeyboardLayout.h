@@ -25,6 +25,7 @@
 @property(nonatomic) BOOL usesTwoHands; // @synthesize usesTwoHands=_usesTwoHands;
 - (id)description;
 - (long long)keyContainingPoint:(struct CGPoint)arg1;
+- (const char *)firstKeyString;
 - (void)enumerateKeysUsingBlock:(CDUnknownBlockType)arg1;
 - (void)addKeyWithString:(id)arg1 frame:(struct CGRect)arg2;
 - (void)ensureStringCapacity:(unsigned long long)arg1;

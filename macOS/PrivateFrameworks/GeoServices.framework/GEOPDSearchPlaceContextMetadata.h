@@ -8,16 +8,29 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class NSString, PBUnknownFields;
+@class NSString, PBDataReader, PBUnknownFields;
 
 __attribute__((visibility("hidden")))
 @interface GEOPDSearchPlaceContextMetadata : PBCodable <NSCopying>
 {
+    PBDataReader *_reader;
+    CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
+    NSString *_interpretedCategory;
     NSString *_matchedDisplayName;
+    NSString *_normalizedQuery;
     BOOL _isDefaultName;
     struct {
         unsigned int has_isDefaultName:1;
+        unsigned int read_unknownFields:1;
+        unsigned int read_interpretedCategory:1;
+        unsigned int read_matchedDisplayName:1;
+        unsigned int read_normalizedQuery:1;
+        unsigned int wrote_unknownFields:1;
+        unsigned int wrote_interpretedCategory:1;
+        unsigned int wrote_matchedDisplayName:1;
+        unsigned int wrote_normalizedQuery:1;
+        unsigned int wrote_isDefaultName:1;
     } _flags;
 }
 
@@ -35,10 +48,17 @@ __attribute__((visibility("hidden")))
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *interpretedCategory;
+@property(readonly, nonatomic) BOOL hasInterpretedCategory;
+- (void)_readInterpretedCategory;
+@property(retain, nonatomic) NSString *normalizedQuery;
+@property(readonly, nonatomic) BOOL hasNormalizedQuery;
+- (void)_readNormalizedQuery;
 @property(nonatomic) BOOL hasIsDefaultName;
 @property(nonatomic) BOOL isDefaultName;
 @property(retain, nonatomic) NSString *matchedDisplayName;
 @property(readonly, nonatomic) BOOL hasMatchedDisplayName;
+- (void)_readMatchedDisplayName;
 
 @end
 

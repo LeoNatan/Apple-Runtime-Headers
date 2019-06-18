@@ -11,7 +11,7 @@
 #import <UIKitCore/_UINavigationControllerRefreshControlHostDelegate-Protocol.h>
 #import <UIKitCore/_UINavigationItemChangeObserver-Protocol.h>
 
-@class NSString, UIFont, UILabel, UIView, _UIBarBackground, _UINavigationBarContentView, _UINavigationBarLargeTitleView, _UINavigationBarModernPromptView, _UINavigationBarTransitionContext, _UINavigationControllerRefreshControlHost;
+@class NSString, UILabel, UIView, _UIBarBackground, _UINavigationBarContentView, _UINavigationBarLargeTitleView, _UINavigationBarModernPromptView, _UINavigationBarTransitionContext, _UINavigationControllerRefreshControlHost;
 
 __attribute__((visibility("hidden")))
 @interface _UINavigationBarVisualProviderModernIOS : _UINavigationBarVisualProvider <_UINavigationBarContentViewDelegate, _UINavigationItemChangeObserver, _UINavigationControllerRefreshControlHostDelegate, _UIBasicAnimationFactory>
@@ -21,7 +21,6 @@ __attribute__((visibility("hidden")))
     UIView *_canvasView;
     _UINavigationBarLargeTitleView *_largeTitleView;
     _UINavigationBarModernPromptView *_promptView;
-    UIFont *_cachedLargeTitleFont;
     UILabel *_weeTitleLabel;
     _UINavigationBarTransitionContext *_transitionContext;
     struct CGSize _previousBarSize;
@@ -79,10 +78,7 @@ __attribute__((visibility("hidden")))
 - (void)_computeProvidesExtraSpaceForExcessiveLineHeightsForTopItem:(id)arg1;
 - (void)_didEncounterFirstTitleWithExcessiveHeightChanged:(id)arg1;
 - (void)navigationBarInvalidatedResolvedLayoutMargins;
-- (void)setupTopNavigationItem;
 - (void)_setupTopNavigationItemAnimated:(BOOL)arg1;
-- (void)updateTopNavigationItemTitleView;
-- (void)updateTopNavigationItemAnimated:(BOOL)arg1;
 - (id)restingHeights;
 - (CDStruct_39925896)layoutHeightsFittingWidth:(double)arg1;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
@@ -116,6 +112,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateModernLayout:(id)arg1 forNavigationItem:(id)arg2 compact:(BOOL)arg3;
 - (void)_updateCanvasView;
 - (void)_layoutInBounds:(struct CGRect)arg1 wantsExtendedContentView:(BOOL)arg2 wantsLargeTitle:(BOOL)arg3;
+- (id)emptyLayout;
 - (void)_ensureLayoutsConfiguredForEntry:(id)arg1;
 - (void)_enforceLayoutOrdering;
 - (void)_updateContentForTopItem:(id)arg1 backItem:(id)arg2;
@@ -145,6 +142,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)wantsExtendedContentView;
 - (void)_updateContentPriorities;
 - (void)_updateTitleViewWithLargeTitle:(BOOL)arg1;
+- (BOOL)_isInInteractiveScroll;
 - (void)_updatePromptViewAndActuallyHide:(BOOL)arg1;
 - (void)updateArchivedSubviews:(id)arg1;
 - (void)provideViewsForContents:(id)arg1 topItem:(id)arg2 backItem:(id)arg3;

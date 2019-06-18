@@ -6,12 +6,7 @@
 
 #import <HealthKit/NSObject-Protocol.h>
 
-@class HKConcept, NSArray;
-
 @protocol HKConceptStoreClientInterface <NSObject>
 - (void)clientRemote_conceptIndexManagerDidChangeState:(unsigned long long)arg1;
-- (void)clientRemote_conceptAssociationsRemovedFromUserRecords:(NSArray *)arg1;
-- (void)clientRemote_conceptRecordAssociationCountChanged:(HKConcept *)arg1;
-- (void)clientRemote_newConceptsAssociatedWithUserRecords:(NSArray *)arg1;
 @end
 

@@ -11,6 +11,7 @@
 }
 
 - (id)serializedParametersForDonatedIntent:(id)arg1;
+- (id)localizedKeyParameterDisplayName;
 - (id)errorPlayingPodcast:(unsigned int)arg1;
 - (id)genericPlayPodcastFailedError;
 - (id)contentNotFoundError;

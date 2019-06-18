@@ -33,7 +33,11 @@
 - (id)_pdfArchiveURLForIssue:(id)arg1;
 - (void)_updateProgress:(double)arg1;
 - (id)_resourceIDsFromMetadataJSONData:(id)arg1;
+- (id)_itemIdentifiersForKey:(id)arg1 fromMetadataJSONData:(id)arg2;
 - (id)_promisePDFPagesForIssue:(id)arg1;
+- (id)_promiseReplicaAdPagesForIssue:(id)arg1 withDownloadProgressMin:(double)arg2 downloadProgressMax:(double)arg3;
+- (id)_promiseANFArticlesForArticleIDs:(id)arg1 withDownloadProgressMin:(double)arg2 downloadProgressMax:(double)arg3;
+- (id)_promiseANFPagesForIssue:(id)arg1;
 - (id)_promiseANFArticlesForIssue:(id)arg1;
 - (id)_promiseCoverImageForIssue:(id)arg1;
 - (id)_promiseMetadataForIssue:(id)arg1;

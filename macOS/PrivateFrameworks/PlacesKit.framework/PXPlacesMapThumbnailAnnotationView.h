@@ -13,6 +13,7 @@
 @interface PXPlacesMapThumbnailAnnotationView : MKAnnotationView <PXPlacesMapAnnotationViewFadable>
 {
     long long _geotaggablesCount;
+    BOOL _imageIsPlaceholder;
     CDUnknownBlockType _displayCompletion;
     PKExtendedTraitCollection *_extendedTraitCollection;
     id _extendedTraitObserver;
@@ -23,6 +24,7 @@
 
 + (id)_thumbnailCreationOperationQueue;
 + (id)_thumbnailFetchOperationQueue;
+@property(nonatomic) BOOL imageIsPlaceholder; // @synthesize imageIsPlaceholder=_imageIsPlaceholder;
 @property(retain, nonatomic) PXPlacesImageCache *imageCache; // @synthesize imageCache=_imageCache;
 @property(retain, nonatomic) UXImageView *countLabelBackgroundImageView; // @synthesize countLabelBackgroundImageView=_countLabelBackgroundImageView;
 @property(retain, nonatomic) UXLabel *countLabel; // @synthesize countLabel=_countLabel;
@@ -37,6 +39,7 @@
 - (void)setImage:(id)arg1;
 - (void)_processPostImage;
 - (void)_processGeotaggable:(id)arg1 withImage:(struct CGImage *)arg2 popoverImageType:(unsigned long long)arg3 shouldCache:(BOOL)arg4;
+- (void)_updatePlaceholderImageIfNeeded;
 - (void)_processPlaceHolderForGeotaggable:(id)arg1;
 - (void)_fetchImageWithNetworkAccessAllowed:(BOOL)arg1;
 - (void)_reloadData:(BOOL)arg1;

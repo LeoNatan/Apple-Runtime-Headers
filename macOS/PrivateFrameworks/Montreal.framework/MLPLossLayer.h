@@ -6,7 +6,7 @@
 
 #import <Montreal/MLPImageLayer.h>
 
-@class MPSMatrixLogSoftMax, MPSMatrixNeuron, MPSMatrixSoftMax, MPSNDArrayMultiplication, MPSNDArrayReductionSum, MPSVector;
+@class MPSMatrixCopy, MPSMatrixLogSoftMax, MPSMatrixNeuron, MPSMatrixSoftMax, MPSNDArrayMultiplication, MPSNDArrayReductionSum, MPSVector;
 
 @interface MLPLossLayer : MLPImageLayer
 {
@@ -16,8 +16,12 @@
     MPSMatrixLogSoftMax *_matrixLogSoftMax;
     MPSMatrixNeuron *_negativeNeuron;
     MPSVector *_alphaVec;
+    MPSMatrixCopy *_matrixLargeCopyFilter;
+    MPSMatrixCopy *_matrixSingleCopyFilter;
 }
 
+@property(retain) MPSMatrixCopy *matrixSingleCopyFilter; // @synthesize matrixSingleCopyFilter=_matrixSingleCopyFilter;
+@property(retain) MPSMatrixCopy *matrixLargeCopyFilter; // @synthesize matrixLargeCopyFilter=_matrixLargeCopyFilter;
 @property(retain) MPSVector *alphaVec; // @synthesize alphaVec=_alphaVec;
 @property(retain) MPSMatrixNeuron *negativeNeuron; // @synthesize negativeNeuron=_negativeNeuron;
 @property(retain) MPSMatrixLogSoftMax *matrixLogSoftMax; // @synthesize matrixLogSoftMax=_matrixLogSoftMax;
@@ -26,16 +30,18 @@
 @property(retain) MPSNDArrayMultiplication *multiplication; // @synthesize multiplication=_multiplication;
 - (void).cxx_destruct;
 - (id)generateNode:(id)arg1 model:(id)arg2 weightIter:(unsigned long long *)arg3;
-- (struct NSArray *)seqBackward:(id)arg1 inputGradient:(struct NSArray *)arg2;
+- (struct NSArray *)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(struct NSArray *)arg3;
 - (struct NSArray *)backward:(id)arg1 inputGradient:(struct NSArray *)arg2;
-- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 lossLabels:(id)arg3 runInference:(BOOL)arg4;
+- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
 - (id)seqInferenceForward:(id)arg1 inputMatrix:(id)arg2 lossLabels:(id)arg3;
+- (id)seqTrainingForward:(id)arg1 subMatrix:(id)arg2 reductionSumResults:(id)arg3 labels:(id)arg4 rowOffset:(unsigned long long)arg5 computeNRows:(unsigned long long)arg6;
 - (id)seqTrainingForward:(id)arg1 inputMatrix:(id)arg2 lossLabels:(id)arg3;
-- (id)seqForward:(id)arg1 inputMatrix:(id)arg2 lossLabels:(id)arg3 runInference:(BOOL)arg4;
+- (id)seqForward:(id)arg1 inputMatrix:(id)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
 - (struct NSArray *)imageInferenceForward:(id)arg1 input:(struct NSArray *)arg2 lossLabels:(id)arg3;
 - (struct NSArray *)imageTrainingForward:(id)arg1 input:(struct NSArray *)arg2 lossLabels:(id)arg3;
 - (struct NSArray *)forward:(id)arg1 input:(struct NSArray *)arg2 labels:(id)arg3 runInference:(BOOL)arg4;
 - (void)createKernel;
+- (void)updatePreviousLayer:(id)arg1 nextLayer:(id)arg2 network:(id)arg3;
 - (id)initWithName:(id)arg1 parameters:(CDStruct_96916c69 *)arg2;
 - (id)initWithName:(id)arg1 inputLength:(unsigned long long)arg2 inputChannels:(unsigned long long)arg3 neuronType:(int)arg4 neuronParams:(id)arg5;
 - (id)initWithName:(id)arg1 previousLayer:(id)arg2 neuronType:(int)arg3 neuronParams:(id)arg4;

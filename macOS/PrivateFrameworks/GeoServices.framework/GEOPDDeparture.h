@@ -70,6 +70,7 @@ __attribute__((visibility("hidden")))
 - (void)_readVehicleNumber;
 @property(nonatomic) BOOL hasAbsDepartureTime;
 @property(nonatomic) double absDepartureTime;
+- (BOOL)isPastDepartureUsingGracePeriod:(BOOL)arg1;
 @property(readonly, nonatomic) BOOL isPastDeparture;
 @property(readonly, nonatomic) unsigned long long tripIdentifier;
 @property(readonly, nonatomic) id <GEOServerFormattedString> liveStatusString;

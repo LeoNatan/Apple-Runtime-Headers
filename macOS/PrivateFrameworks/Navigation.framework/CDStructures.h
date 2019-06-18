@@ -55,7 +55,8 @@ typedef struct {
     char _field3;
     char _field4;
     char _field5;
-} CDStruct_03e639ae;
+    double _field6;
+} CDStruct_5b8a7f88;
 
 typedef struct {
     double _field1;
@@ -105,7 +106,8 @@ typedef struct {
     unsigned int _field17;
     int _field18;
     int _field19;
-} CDStruct_b863a861;
+    int _field20;
+} CDStruct_88736aa7;
 
 typedef struct {
     struct {

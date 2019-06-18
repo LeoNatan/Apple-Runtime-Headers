@@ -8,20 +8,20 @@
 
 #import <HealthKit/NSCopying-Protocol.h>
 
-@class HKMedicalCoding, HKUnit, NSArray, NSDate;
+@class HKUnit, NSArray, NSDate;
 
 @interface HKChartableCodedQuantitySet : NSObject <NSCopying>
 {
-    HKMedicalCoding *_coding;
+    NSArray *_codings;
     NSDate *_date;
     NSArray *_quantities;
 }
 
 + (id)setWithChartableQuantity:(id)arg1 date:(id)arg2;
-+ (id)setWithMedicalCoding:(id)arg1 quantities:(id)arg2 date:(id)arg3 error:(id *)arg4;
++ (id)setWithMedicalCodings:(id)arg1 quantities:(id)arg2 date:(id)arg3 error:(id *)arg4;
 @property(readonly, copy, nonatomic) NSArray *quantities; // @synthesize quantities=_quantities;
 @property(readonly, copy, nonatomic) NSDate *date; // @synthesize date=_date;
-@property(readonly, copy, nonatomic) HKMedicalCoding *coding; // @synthesize coding=_coding;
+@property(readonly, copy, nonatomic) NSArray *codings; // @synthesize codings=_codings;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -34,7 +34,7 @@
 - (id)chartableCodedQuantitySetConvertedToUnit:(id)arg1 error:(id *)arg2;
 - (void)addChartableCodedQuantities:(id)arg1;
 - (id)chartableCodedQuantitySetByChangingDate:(id)arg1;
-- (id)_initWithMedicalCoding:(id)arg1 date:(id)arg2 quantities:(id)arg3;
+- (id)_initWithMedicalCodings:(id)arg1 date:(id)arg2 quantities:(id)arg3;
 - (id)init;
 
 @end

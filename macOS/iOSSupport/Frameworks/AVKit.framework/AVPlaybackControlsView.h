@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class AVBackdropView, AVButton, AVObservationController, AVPlaybackControlsRoutePickerView, AVPlayerViewControllerCustomControlsView, AVScrubber, AVStyleSheet, AVTransportControlsView, AVView, AVVolumeButtonControl, AVVolumeSlider, NSArray, NSLayoutConstraint, NSUUID, NSValue, UIViewPropertyAnimator, _UIVisualEffectBackdropView;
+@class AVBackdropView, AVButton, AVObservationController, AVPlaybackControlsRoutePickerView, AVPlayerViewControllerCustomControlsView, AVScrubber, AVStyleSheet, AVTransportControlsView, AVView, AVVolumeButtonControl, AVVolumeSlider, NSArray, NSLayoutConstraint, NSUUID, NSValue, UIViewPropertyAnimator;
 
 __attribute__((visibility("hidden")))
 @interface AVPlaybackControlsView : UIView
@@ -59,11 +59,9 @@ __attribute__((visibility("hidden")))
     NSLayoutConstraint *_screenModeControlsToVolumeControlsSpacingConstraint;
     UIViewPropertyAnimator *_playbackControlsVisibilityAnimator;
     NSUUID *_mostRecentAnimationCompletionsID;
-    _UIVisualEffectBackdropView *_captureView;
     struct CGAffineTransform _overrideTransformForProminentPlayButton;
 }
 
-@property(readonly, nonatomic) _UIVisualEffectBackdropView *captureView; // @synthesize captureView=_captureView;
 @property(nonatomic, getter=isTopAreaLayoutGuideExpanded) BOOL topAreaLayoutGuideExpanded; // @synthesize topAreaLayoutGuideExpanded=_topAreaLayoutGuideExpanded;
 @property(retain, nonatomic) NSUUID *mostRecentAnimationCompletionsID; // @synthesize mostRecentAnimationCompletionsID=_mostRecentAnimationCompletionsID;
 @property(retain, nonatomic) UIViewPropertyAnimator *playbackControlsVisibilityAnimator; // @synthesize playbackControlsVisibilityAnimator=_playbackControlsVisibilityAnimator;
@@ -116,7 +114,6 @@ __attribute__((visibility("hidden")))
 - (id)_customControlsViewIfLoaded;
 - (id)_playbackControlsViewsForControlItems:(id)arg1 withType:(long long)arg2;
 - (id)_playbackControlsViewItems;
-- (BOOL)_isDescendantOfNonPagingScrollView;
 - (void)_animateKeyboardAvoidance:(long long)arg1 duration:(double)arg2;
 - (void)_updateLayoutMargins;
 - (void)_setupInitialLayout;
@@ -149,7 +146,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) AVPlayerViewControllerCustomControlsView *customControlsView; // @synthesize customControlsView=_customControlsView;
 - (void)setupInitialLayout;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect)arg1 styleSheet:(id)arg2 captureView:(id)arg3;
+- (id)initWithFrame:(struct CGRect)arg1 styleSheet:(id)arg2;
 
 @end
 

@@ -31,6 +31,9 @@
 @property long long stagingEntryCacheSize; // @synthesize stagingEntryCacheSize=_stagingEntryCacheSize;
 @property long long lastEntryCacheSize; // @synthesize lastEntryCacheSize=_lastEntryCacheSize;
 - (void).cxx_destruct;
+- (id)matchingPairs:(id)arg1;
+- (id)getEntryFromDBForEntryKey:(id)arg1 withMatchingKeyToValue:(id)arg2;
+- (id)getQueryForAggregateEntryKey:(id)arg1 withMatchingKeyToValue:(id)arg2;
 - (void)addToStagingAggregateEntryCache:(id)arg1;
 - (void)flushStagingAggregateEntryCacheToDatabase;
 - (void)enumerateStagingEntryCacheWithBlock:(CDUnknownBlockType)arg1;

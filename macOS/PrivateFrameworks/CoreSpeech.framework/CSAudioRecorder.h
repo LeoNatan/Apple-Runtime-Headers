@@ -31,6 +31,7 @@
     NSHashTable *_observers;
 }
 
++ (void)createSharedAudioSession;
 @property(retain, nonatomic) NSHashTable *observers; // @synthesize observers=_observers;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 - (void).cxx_destruct;
@@ -55,8 +56,8 @@
 - (void)voiceControllerDidStopRecording:(id)arg1 forStream:(unsigned long long)arg2 forReason:(long long)arg3;
 - (void)voiceControllerAudioCallback:(id)arg1 forStream:(unsigned long long)arg2 buffer:(id)arg3;
 - (void)voiceControllerDidStartRecording:(id)arg1 forStream:(unsigned long long)arg2 successfully:(BOOL)arg3 error:(id)arg4;
-- (void)_audioRecorderDidStopRecordingForReason:(long long)arg1;
-- (void)_audioRecorderDidStartRecordingSuccessfully:(BOOL)arg1 error:(id)arg2;
+- (void)_audioRecorderDidStopRecordingForReason:(long long)arg1 streamHandleID:(unsigned long long)arg2;
+- (void)_audioRecorderDidStartRecordingSuccessfully:(BOOL)arg1 streamHandleID:(unsigned long long)arg2 error:(id)arg3;
 - (id)metrics;
 - (float)averagePowerForChannel:(unsigned long long)arg1;
 - (float)peakPowerForChannel:(unsigned long long)arg1;
@@ -92,7 +93,7 @@
 - (BOOL)_startAudioStreamForAudioInjection;
 - (BOOL)_shouldInjectAudio;
 - (BOOL)prepareAudioStreamRecord:(id)arg1 streamHandleId:(unsigned long long)arg2 error:(id *)arg3;
-- (void)setCurrentContext:(id)arg1 streamHandleId:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
+- (BOOL)setCurrentContext:(id)arg1 streamHandleId:(unsigned long long)arg2 error:(id *)arg3;
 - (unsigned long long)setContext:(id)arg1 error:(id *)arg2;
 - (id)_voiceControllerWithError:(id *)arg1;
 - (void)_destroyVoiceController;

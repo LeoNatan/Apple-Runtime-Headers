@@ -10,11 +10,14 @@
 
 @interface USSAccessibilityService : NSObject
 {
+    BOOL __isAccessibilityEnabled;
     id <USSAccessibilityEnvironmentDelegate> _delegate;
 }
 
+@property(nonatomic) BOOL _isAccessibilityEnabled; // @synthesize _isAccessibilityEnabled=__isAccessibilityEnabled;
 @property(nonatomic) __weak id <USSAccessibilityEnvironmentDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)handleApplicationAccessibilityChangedNotification:(id)arg1;
 - (void)handleAccessibilityInterfaceChangedNotification:(id)arg1;
 - (void)applySystemSettings;
 - (void)dealloc;

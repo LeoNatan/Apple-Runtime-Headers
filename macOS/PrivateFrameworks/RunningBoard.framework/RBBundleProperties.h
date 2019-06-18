@@ -41,6 +41,7 @@
 @property(readonly, nonatomic, getter=isBackgroundRefreshEnabled) BOOL backgroundRefreshEnabled;
 @property(readonly, nonatomic) BOOL usesSocketMonitoring;
 @property(readonly, nonatomic) BOOL supportsUnboundedTaskCompletion;
+@property(readonly, nonatomic) BOOL supportsBackgroundAudio;
 @property(readonly, nonatomic) BOOL supportsBackgroundNetworkAuthentication;
 @property(readonly, nonatomic) BOOL supportsBackgroundContentFetching;
 @property(readonly, copy, nonatomic) NSString *extensionPointIdentifier;

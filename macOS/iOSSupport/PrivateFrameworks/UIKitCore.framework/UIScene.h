@@ -8,7 +8,7 @@
 
 #import <UIKitCore/FBSSceneDelegate-Protocol.h>
 
-@class FBSScene, FBSSceneSettings, NSArray, NSDictionary, NSNumber, NSPointerArray, NSString, UIApplicationSceneClientSettings, UIApplicationSceneSettings, UISceneActivationConditions, UISceneSession, _UISceneLifecycleMonitor;
+@class FBSScene, FBSSceneSettings, NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSPointerArray, NSString, UIApplicationSceneClientSettings, UIApplicationSceneSettings, UISceneActivationConditions, UISceneSession, _UISceneLifecycleMonitor;
 @protocol UISceneDelegate;
 
 @interface UIScene : UIResponder <FBSSceneDelegate>
@@ -30,7 +30,7 @@
     NSDictionary *_registeredComponents;
     _UISceneLifecycleMonitor *_lifecycleMonitor;
     FBSSceneSettings *_overrideSettings;
-    NSArray *_postSettingsUpdateResponseBlocks;
+    NSMutableDictionary *_postSettingsUpdateResponseBlocks;
     UIScene *_settingsScene;
     NSPointerArray *_inheritingScenes;
     NSString *_identifier;
@@ -49,6 +49,7 @@
         unsigned int _hasInvalidated:1;
         unsigned int _allowOverrideSettings:1;
         unsigned int _isProcessingUpdateResponseBlocks:1;
+        unsigned int _readyForSuspend:1;
     } _sceneFlags;
     BOOL _respondingToLifecycleEvent;
     NSNumber *__cachedInterfaceOrientation;
@@ -67,6 +68,7 @@
 + (id)_sceneForFBSScene:(id)arg1 create:(BOOL)arg2 withSession:(id)arg3 connectionOptions:(id)arg4;
 + (BOOL)_hostsWindows;
 + (void)_registerSceneComponentClass:(Class)arg1 withKey:(id)arg2 predicate:(id)arg3;
++ (id)_sceneForFBSScene:(id)arg1 usingPredicate:(id)arg2;
 + (id)_sceneForFBSScene:(id)arg1;
 @property(retain, nonatomic, getter=_cachedInterfaceOrientation, setter=_setCachedInterfaceOrientation:) NSNumber *_cachedInterfaceOrientation; // @synthesize _cachedInterfaceOrientation=__cachedInterfaceOrientation;
 @property(nonatomic, setter=_setIsRespondingToLifecycleEvent:) BOOL _respondingToLifecycleEvent; // @synthesize _respondingToLifecycleEvent;
@@ -101,9 +103,11 @@
 - (id)_fixupEffectiveSettings:(id)arg1;
 - (id)_fixupInheritedSettings:(id)arg1;
 - (void)_emitSceneSettingsUpdateResponseForCompletion:(CDUnknownBlockType)arg1 afterSceneUpdateWork:(CDUnknownBlockType)arg2;
-- (void)_enqueuePostSettingsUpdateResponseBlock:(CDUnknownBlockType)arg1;
+- (void)_enqueuePostSettingsUpdateResponseBlock:(CDUnknownBlockType)arg1 inPhase:(id)arg2;
 @property(readonly, nonatomic) NSArray *_interitingScenes;
 @property(nonatomic, setter=_setSettingsScene:) __weak UIScene *_settingsScene;
+@property(readonly, nonatomic) BOOL _eligableForSuspend;
+@property(readonly, nonatomic) BOOL _readyForSuspend;
 - (void)_prepareForSuspend;
 - (void)_prepareForResume;
 - (void)_initializeSceneComponents;
@@ -145,6 +149,7 @@
 - (id)nextResponder;
 @property(copy, nonatomic) NSString *title;
 - (void)_openURL:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)openURL:(id)arg1 options:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (id)_currentOpenApplicationEndpoint;
 @property(readonly, nonatomic) long long activationState;
 @property(retain, nonatomic) id <UISceneDelegate> delegate;

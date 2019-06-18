@@ -16,6 +16,8 @@ __attribute__((visibility("hidden")))
 
 // Remaining properties
 @property(nonatomic) BOOL attachmentsIncomplete; // @dynamic attachmentsIncomplete;
+@property(retain, nonatomic) NSString *buildVariant; // @dynamic buildVariant;
+@property(retain, nonatomic) NSString *buildVersion; // @dynamic buildVersion;
 @property(retain, nonatomic) NSString *caseAttachments; // @dynamic caseAttachments;
 @property(retain, nonatomic) NSDate *caseClosedTime; // @dynamic caseClosedTime;
 @property(nonatomic) short caseClosureType; // @dynamic caseClosureType;

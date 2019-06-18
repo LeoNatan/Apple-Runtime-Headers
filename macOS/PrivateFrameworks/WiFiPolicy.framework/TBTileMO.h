@@ -6,9 +6,11 @@
 
 #import <CoreData/NSManagedObject.h>
 
-@class NSDate;
+#import <WiFiPolicy/TBTile-Protocol.h>
 
-@interface TBTileMO : NSManagedObject
+@class NSDate, NSSet, NSString;
+
+@interface TBTileMO : NSManagedObject <TBTile>
 {
 }
 
@@ -20,7 +22,13 @@
 
 // Remaining properties
 @property(copy, nonatomic) NSDate *created; // @dynamic created;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(copy, nonatomic) NSString *etag; // @dynamic etag;
+@property(readonly) unsigned long long hash;
 @property(nonatomic) long long key; // @dynamic key;
+@property(retain, nonatomic) NSSet *networks; // @dynamic networks;
+@property(readonly) Class superclass;
 
 @end
 

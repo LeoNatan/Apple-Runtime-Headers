@@ -20,7 +20,6 @@
     BOOL _hasAttachments;
     BOOL _editable;
     BOOL _editing;
-    BOOL _startEditingWhenViewLoads;
     BOOL _updatingContent;
     unsigned short _listStyle;
     id <NoteHTMLEditorViewDelegate> _delegate;
@@ -43,7 +42,6 @@
 @property(retain, nonatomic) ICSelectorDelayer *updateContentDelayer; // @synthesize updateContentDelayer=_updateContentDelayer;
 @property(copy, nonatomic) NSArray *attachmentsToLoad; // @synthesize attachmentsToLoad=_attachmentsToLoad;
 @property(copy, nonatomic) NSString *htmlStringToLoad; // @synthesize htmlStringToLoad=_htmlStringToLoad;
-@property(nonatomic) BOOL startEditingWhenViewLoads; // @synthesize startEditingWhenViewLoads=_startEditingWhenViewLoads;
 @property(nonatomic) unsigned short listStyle; // @synthesize listStyle=_listStyle;
 @property(nonatomic) long long selectionLength; // @synthesize selectionLength=_selectionLength;
 @property(nonatomic, getter=isEditing) BOOL editing; // @synthesize editing=_editing;
@@ -63,16 +61,11 @@
 - (void)webView:(id)arg1 stopURLSchemeTask:(id)arg2;
 - (void)webView:(id)arg1 startURLSchemeTask:(id)arg2;
 - (void)userContentController:(id)arg1 didReceiveScriptMessage:(id)arg2;
+- (void)webViewWebContentProcessDidTerminate:(id)arg1;
 - (void)webView:(id)arg1 didFinishNavigation:(id)arg2;
 - (void)webView:(id)arg1 decidePolicyForNavigationAction:(id)arg2 decisionHandler:(CDUnknownBlockType)arg3;
-- (void)_webView:(id)arg1 dataInteractionOperationWasHandled:(BOOL)arg2 forSession:(id)arg3 itemProviders:(id)arg4;
 - (void)_webView:(id)arg1 didStartInputSession:(id)arg2;
 - (BOOL)_webView:(id)arg1 focusShouldStartInputSession:(id)arg2;
-- (BOOL)resignFirstResponder;
-- (BOOL)canResignFirstResponder;
-- (BOOL)becomeFirstResponder;
-- (BOOL)canBecomeFirstResponder;
-- (void)setSelectedRange:(struct _NSRange)arg1;
 - (void)setSelectionToEnd;
 - (void)setSelectionToStart;
 - (struct CGRect)rectForSelection;

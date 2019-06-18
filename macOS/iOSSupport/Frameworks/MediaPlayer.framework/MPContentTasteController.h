@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSMutableDictionary;
+@class ICUserIdentity, NSMutableDictionary;
 @protocol OS_dispatch_queue;
 
 @interface MPContentTasteController : NSObject
@@ -14,9 +14,10 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableDictionary *_pendingUpdateRecordByPlaylistGlobalID;
     NSMutableDictionary *_pendingUpdateRecordByStoreAdamID;
+    ICUserIdentity *_userIdentity;
 }
 
-+ (id)_mediaLibrary;
++ (id)controllerWithUserIdentity:(id)arg1;
 + (id)sharedController;
 - (void).cxx_destruct;
 - (id)_pendingUpdateRecordForPlaylistGlobalID:(id)arg1;
@@ -30,6 +31,7 @@
 - (id)_libraryEntityWithStoreID:(long long)arg1 contentType:(long long)arg2;
 - (id)_libraryPlaylistWithGlobalID:(id)arg1;
 - (id)_libraryEntityForModel:(id)arg1;
+- (id)_mediaLibrary;
 - (void)_deviceMediaLibraryDidChangeNotification:(id)arg1;
 - (long long)tasteTypeForStoreAdamID:(long long)arg1;
 - (long long)tasteTypeForPlaylistGlobalID:(id)arg1;
@@ -40,6 +42,7 @@
 - (void)setTasteType:(long long)arg1 forMediaEntity:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)setTasteType:(long long)arg1 forModel:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (void)dealloc;
+- (id)initWithUserIdentity:(id)arg1;
 - (id)init;
 
 @end

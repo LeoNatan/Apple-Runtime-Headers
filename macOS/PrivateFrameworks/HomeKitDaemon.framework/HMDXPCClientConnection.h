@@ -45,8 +45,7 @@
 - (void).cxx_destruct;
 - (id)logIdentifier;
 - (void)sendMessage:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-- (void)recheckinWithName:(id)arg1;
-- (void)checkinWithName:(id)arg1 handleMessageWithName:(id)arg2 messageIdentifier:(id)arg3 messagePayload:(id)arg4 target:(id)arg5 responseHandler:(CDUnknownBlockType)arg6;
+- (void)checkinWithName:(id)arg1;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4 responseHandler:(CDUnknownBlockType)arg5;
 - (void)handleMessageWithName:(id)arg1 messageIdentifier:(id)arg2 messagePayload:(id)arg3 target:(id)arg4;
 - (BOOL)canSendMessage:(id)arg1;

@@ -7,17 +7,19 @@
 #import <objc/NSObject.h>
 
 #import <PhotosUICore/PXGRenderer-Protocol.h>
+#import <PhotosUICore/PXScrollViewControllerObserver-Protocol.h>
 
 @class NSMutableDictionary, NSString, PXScrollViewController;
 @protocol PXGRendererDelegate, PXGTextureConverter;
 
-@interface PXGViewRenderer : NSObject <PXGRenderer>
+@interface PXGViewRenderer : NSObject <PXScrollViewControllerObserver, PXGRenderer>
 {
     NSMutableDictionary *_reusableViewsByClass;
     NSMutableDictionary *_viewBySpriteIndex;
     long long _spriteBufferCapacity;
     unsigned int *_spriteIndexes;
     CDStruct_183601bc *_textureInfos;
+    struct CGPoint _renderedVisibleOrigin;
     CDUnknownBlockType _test_renderSnapshotHandler;
     id <PXGRendererDelegate> _delegate;
     id <PXGTextureConverter> _textureConverter;
@@ -32,12 +34,16 @@
 @property(nonatomic) struct CGRect visibleRect; // @synthesize visibleRect=_visibleRect;
 - (void).cxx_destruct;
 - (void)setNeedsRender;
+- (id)viewForSpriteIndex:(unsigned int)arg1;
 - (void)renderSpritesWithTextures:(id)arg1 dataStore:(id)arg2 presentationDataStore:(id)arg3 presentationMetadataStore:(id)arg4 layout:(id)arg5;
 - (void)updateWithChangeDetails:(id)arg1;
 @property(readonly, nonatomic) int presentationType;
 - (id)_dequeueViewWithClass:(Class)arg1;
 - (void)_makeViewReusable:(id)arg1;
 - (void)_resizeBuffersForSpriteCount:(long long)arg1;
+- (double)_screenScale;
+- (void)scrollViewControllerDidScroll:(id)arg1;
+- (void)_shiftViewsToCompensateForDeferredVisibleOrigin;
 - (void)dealloc;
 - (id)init;
 

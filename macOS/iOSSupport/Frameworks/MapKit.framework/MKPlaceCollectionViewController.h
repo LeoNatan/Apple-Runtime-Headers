@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)reloadCollections;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

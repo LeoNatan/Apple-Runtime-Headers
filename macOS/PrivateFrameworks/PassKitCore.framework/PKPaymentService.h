@@ -29,6 +29,7 @@
 - (void)noteAccountDeleted;
 - (void)recomputeCategoryVisualizationMangitudesForPassUniqueID:(id)arg1 style:(long long)arg2;
 - (void)categoryVisualizationMagnitudesForPassUniqueID:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (id)categoryVisualizationMagnitudesForPassUniqueID:(id)arg1;
 - (void)transactionsRequiringReviewForAccountWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)submitTransactionAnswerForTransaction:(id)arg1 questionType:(unsigned long long)arg2 answer:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)submitDeleteRequest:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -42,6 +43,7 @@
 - (void)_defaultPaymentPassUniqueIdentifier:(CDUnknownBlockType)arg1;
 - (void)_messagesAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_transactionsAppLaunchTokenForPassWithUniqueIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)enforceUpgradedPasscodePolicyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)disbursementVoucherWithDisbursementSource:(unsigned long long)arg1 disbursementTarget:(unsigned long long)arg2 bundleIdentifier:(id)arg3 teamIdentifier:(id)arg4 completion:(CDUnknownBlockType)arg5;
 - (BOOL)supportsDisbursements;
 - (void)sharedPaymentWebServiceContextWithCompletion:(CDUnknownBlockType)arg1;

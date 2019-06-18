@@ -8,17 +8,19 @@
 
 #import <TextInputCore/TISKEventProtocol-Protocol.h>
 
-@class CollapsedTap;
+@class TISKTap;
 
 @interface TISKEvent : NSObject <TISKEventProtocol>
 {
+    BOOL _hasTimestamp;
     int _type;
-    CollapsedTap *_tap;
-    long long _order;
+    TISKTap *_tap;
+    unsigned long long _order;
 }
 
-@property(nonatomic) long long order; // @synthesize order=_order;
-@property(retain, nonatomic) CollapsedTap *tap; // @synthesize tap=_tap;
+@property(nonatomic) BOOL hasTimestamp; // @synthesize hasTimestamp=_hasTimestamp;
+@property(nonatomic) unsigned long long order; // @synthesize order=_order;
+@property(retain, nonatomic) TISKTap *tap; // @synthesize tap=_tap;
 @property(nonatomic) int type; // @synthesize type=_type;
 - (void).cxx_destruct;
 - (void)reportInterKeyTiming:(id)arg1 previousEvent:(id)arg2;

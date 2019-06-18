@@ -13,6 +13,9 @@
     BOOL _includesCursorEdits;
     BOOL _includesOrientationChange;
     BOOL _isRetrocorrection;
+    BOOL _isMultilingual;
+    BOOL _isOOV;
+    BOOL _isContinuousPathCompletion;
     BOOL _isPunctuationEntryFollowingAWord;
     int _wordEntryType;
     int _wordAlignmentConf;
@@ -59,6 +62,9 @@
 @property(nonatomic) int touchAlignmentConf; // @synthesize touchAlignmentConf=_touchAlignmentConf;
 @property(nonatomic) int wordAlignmentConf; // @synthesize wordAlignmentConf=_wordAlignmentConf;
 @property(retain, nonatomic) TIKeyboardInput *inputTriggeredTextAccepted; // @synthesize inputTriggeredTextAccepted=_inputTriggeredTextAccepted;
+@property(nonatomic) BOOL isContinuousPathCompletion; // @synthesize isContinuousPathCompletion=_isContinuousPathCompletion;
+@property(nonatomic) BOOL isOOV; // @synthesize isOOV=_isOOV;
+@property(nonatomic) BOOL isMultilingual; // @synthesize isMultilingual=_isMultilingual;
 @property(nonatomic) BOOL isRetrocorrection; // @synthesize isRetrocorrection=_isRetrocorrection;
 @property(nonatomic) BOOL includesOrientationChange; // @synthesize includesOrientationChange=_includesOrientationChange;
 @property(nonatomic) BOOL includesCursorEdits; // @synthesize includesCursorEdits=_includesCursorEdits;

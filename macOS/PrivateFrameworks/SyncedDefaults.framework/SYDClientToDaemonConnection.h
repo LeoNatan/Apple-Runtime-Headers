@@ -8,7 +8,7 @@
 
 #import <SyncedDefaults/SYDClientProtocol-Protocol.h>
 
-@class NSData, NSObject, NSString, NSURL, NSXPCConnection;
+@class NSObject, NSString, NSURL, NSXPCConnection;
 @protocol OS_dispatch_queue, SYDDaemonProtocol;
 
 @interface SYDClientToDaemonConnection : SYDRemotePreferencesSource <SYDClientProtocol>
@@ -51,7 +51,8 @@
 - (void)processChangeDictionary:(id)arg1;
 - (unsigned char)synchronizeForced:(unsigned char)arg1;
 - (unsigned char)synchronize;
-@property(copy, nonatomic) NSData *changeToken;
+- (id)changeToken;
+- (void)setChangeToken:(id)arg1;
 - (struct __CFDictionary *)copyDictionary;
 - (id)dictionaryRepresentation;
 - (void *)getValueForKey:(struct __CFString *)arg1;

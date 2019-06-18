@@ -21,7 +21,9 @@
     BOOL _scrubbing;
     HMCameraProfile *_cameraProfile;
     HMCameraClipCollection *_clipCollection;
+    NSArray *_clips;
     HMCameraSource *_liveCameraSource;
+    NSDate *_currentEngineDate;
     unsigned long long _timeControlStatus;
     NSError *_playbackError;
     CDUnknownBlockType _clipPlayerBuilder;
@@ -30,6 +32,7 @@
     NSMapTable *_observerStates;
     NADelegateDispatcher *_observerDispatcher;
     unsigned long long _playbackContentType;
+    unsigned long long _engineMode;
     NSDate *_lastRequestedClipPlaybackDate;
     unsigned long long _scrubbingInProgressCount;
     id <HFCameraClipPlaying> _clipPlayer;
@@ -40,6 +43,7 @@
 @property(nonatomic) unsigned long long scrubbingInProgressCount; // @synthesize scrubbingInProgressCount=_scrubbingInProgressCount;
 @property(nonatomic) BOOL wantsToPlay; // @synthesize wantsToPlay=_wantsToPlay;
 @property(copy, nonatomic) NSDate *lastRequestedClipPlaybackDate; // @synthesize lastRequestedClipPlaybackDate=_lastRequestedClipPlaybackDate;
+@property(nonatomic) unsigned long long engineMode; // @synthesize engineMode=_engineMode;
 @property(nonatomic) unsigned long long playbackContentType; // @synthesize playbackContentType=_playbackContentType;
 @property(readonly, nonatomic) NADelegateDispatcher *observerDispatcher; // @synthesize observerDispatcher=_observerDispatcher;
 @property(readonly, nonatomic) NSMapTable *observerStates; // @synthesize observerStates=_observerStates;
@@ -48,9 +52,11 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType clipPlayerBuilder; // @synthesize clipPlayerBuilder=_clipPlayerBuilder;
 @property(retain, nonatomic) NSError *playbackError; // @synthesize playbackError=_playbackError;
 @property(nonatomic) unsigned long long timeControlStatus; // @synthesize timeControlStatus=_timeControlStatus;
+@property(retain, nonatomic) NSDate *currentEngineDate; // @synthesize currentEngineDate=_currentEngineDate;
 @property(nonatomic, getter=isStreamAudioEnabled) BOOL streamAudioEnabled; // @synthesize streamAudioEnabled=_streamAudioEnabled;
 @property(nonatomic, getter=isMicrophoneEnabled) BOOL microphoneEnabled; // @synthesize microphoneEnabled=_microphoneEnabled;
 @property(retain, nonatomic) HMCameraSource *liveCameraSource; // @synthesize liveCameraSource=_liveCameraSource;
+@property(retain, nonatomic) NSArray *clips; // @synthesize clips=_clips;
 @property(retain, nonatomic) HMCameraClipCollection *clipCollection; // @synthesize clipCollection=_clipCollection;
 @property(readonly, nonatomic) HMCameraProfile *cameraProfile; // @synthesize cameraProfile=_cameraProfile;
 - (void).cxx_destruct;

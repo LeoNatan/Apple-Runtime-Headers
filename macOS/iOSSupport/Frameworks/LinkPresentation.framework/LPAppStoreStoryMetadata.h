@@ -13,10 +13,13 @@
 
 @interface LPAppStoreStoryMetadata : LPSpecializationMetadata <LPLinkMetadataPresentationTransformer, LPLinkMetadataPreviewTransformer>
 {
+    NSString *_subtitle;
 }
 
 + (id)keyPathsForValuesAffecting_dummyPropertyForObservation;
 + (BOOL)supportsSecureCoding;
+@property(copy, nonatomic) NSString *subtitle; // @synthesize subtitle=_subtitle;
+- (void).cxx_destruct;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -24,6 +27,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)previewImageForTransformer:(id)arg1;
 - (id)previewSummaryForTransformer:(id)arg1;
+- (BOOL)canGeneratePresentationPropertiesForURL:(id)arg1;
 - (id)presentationPropertiesForTransformer:(id)arg1;
 
 // Remaining properties

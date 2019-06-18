@@ -9,7 +9,7 @@
 #import <VoiceShortcuts/VCUserNotificationManagerDelegate-Protocol.h>
 #import <VoiceShortcuts/WFOutOfProcessWorkflowControllerDelegate-Protocol.h>
 
-@class NSMutableDictionary, NSString, VCUserNotificationManager, WFDatabase, WFOutOfProcessWorkflowController, WFTriggerManager, WFWorkflowRunEventReference;
+@class NSMutableDictionary, NSString, VCUserNotificationManager, WFDatabase, WFOutOfProcessWorkflowController, WFTriggerManager, WFWorkflowRunEvent;
 @protocol OS_dispatch_queue, _CDUserContext;
 
 @interface VCCoreDuetListener : NSObject <VCUserNotificationManagerDelegate, WFOutOfProcessWorkflowControllerDelegate>
@@ -22,10 +22,10 @@
     VCUserNotificationManager *_notificationManager;
     NSMutableDictionary *_pendingEventInfoByTriggerID;
     WFOutOfProcessWorkflowController *_outOfProcessWorkflowController;
-    WFWorkflowRunEventReference *_inProgressRunEvent;
+    WFWorkflowRunEvent *_inProgressRunEvent;
 }
 
-@property(retain, nonatomic) WFWorkflowRunEventReference *inProgressRunEvent; // @synthesize inProgressRunEvent=_inProgressRunEvent;
+@property(retain, nonatomic) WFWorkflowRunEvent *inProgressRunEvent; // @synthesize inProgressRunEvent=_inProgressRunEvent;
 @property(retain, nonatomic) WFOutOfProcessWorkflowController *outOfProcessWorkflowController; // @synthesize outOfProcessWorkflowController=_outOfProcessWorkflowController;
 @property(readonly, nonatomic) NSMutableDictionary *pendingEventInfoByTriggerID; // @synthesize pendingEventInfoByTriggerID=_pendingEventInfoByTriggerID;
 @property(readonly, nonatomic) VCUserNotificationManager *notificationManager; // @synthesize notificationManager=_notificationManager;

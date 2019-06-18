@@ -9,7 +9,7 @@
 #import <Memories/PMEditProviderDelegate-Protocol.h>
 #import <Memories/PMMovieProviderDelegate-Protocol.h>
 
-@class AVPlayer, AVPlayerView, NSString, PHAssetCollection, PMAVSynchronizedView, PMDurationProvider, PMMoodProvider, PMMovieProvider, PMPlayerContainerView, PMSaveProvider, PMTitleSubtitleView, PMmacOSProgressIndicatorView, VEKProduction;
+@class AVPlayer, AVPlayerView, NSString, PHAssetCollection, PMAVSynchronizedView, PMDurationProvider, PMMoodProvider, PMMovieProvider, PMPlayerContainerView, PMPosterViewController, PMSaveProvider, PMTitleSubtitleView, PMmacOSProgressIndicatorView, VEKProduction;
 
 @interface PMmacOSPlayerViewController : NSViewController <PMMovieProviderDelegate, PMEditProviderDelegate>
 {
@@ -20,6 +20,7 @@
     PMmacOSProgressIndicatorView *_progressIndicatorView;
     PMTitleSubtitleView *_titleView;
     PMAVSynchronizedView *_synchronizedView;
+    PMPosterViewController *_posterViewController;
     PMMovieProvider *_movieProvider;
     PMSaveProvider *_saveProvider;
     PMDurationProvider *_durationProvider;
@@ -34,6 +35,7 @@
 @property(retain, nonatomic) PMDurationProvider *durationProvider; // @synthesize durationProvider=_durationProvider;
 @property(retain, nonatomic) PMSaveProvider *saveProvider; // @synthesize saveProvider=_saveProvider;
 @property(retain, nonatomic) PMMovieProvider *movieProvider; // @synthesize movieProvider=_movieProvider;
+@property(retain, nonatomic) PMPosterViewController *posterViewController; // @synthesize posterViewController=_posterViewController;
 @property(retain, nonatomic) PMAVSynchronizedView *synchronizedView; // @synthesize synchronizedView=_synchronizedView;
 @property(retain, nonatomic) PMTitleSubtitleView *titleView; // @synthesize titleView=_titleView;
 @property(retain, nonatomic) PMmacOSProgressIndicatorView *progressIndicatorView; // @synthesize progressIndicatorView=_progressIndicatorView;
@@ -44,6 +46,7 @@
 - (void).cxx_destruct;
 - (void)playerItemDidReachEnd:(id)arg1;
 - (void)signalScheduling:(CDStruct_1b6d18a9)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)addObserversWithPlayer:(id)arg1;
 - (void)removeObservers;
 - (void)editProvider:(id)arg1 didChange:(BOOL)arg2;
@@ -57,6 +60,7 @@
 - (void)viewDidLayout;
 - (void)setupTitleView;
 - (void)viewDidAppear;
+- (void)viewDidDisappear;
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;

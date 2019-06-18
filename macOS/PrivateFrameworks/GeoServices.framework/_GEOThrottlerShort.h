@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy) NSString *description;
 - (BOOL)isExpired;
 - (id)userInfoForError;
+- (unsigned int)maxReqCount;
 - (double)timeUntilReset;
 - (unsigned long long)remainingEntries;
 - (BOOL)addRequestTimestamp;

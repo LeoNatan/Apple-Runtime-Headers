@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_hasCloudTabsEntitlementForKVS;
 - (void)_clearTabsForFirstDuplicateDevice;
 - (BOOL)_atLeastOneOtherActiveDeviceIsRegistered;
+- (double)_delayForSavingCurrentCloudTabDevice;
 - (BOOL)_currentDeviceIsRegistered;
 - (void)_cancelPendingSaveTabsForCurrentDevice;
 - (id)_dictionaryForCurrentDeviceWithBrowserTabs:(id)arg1;

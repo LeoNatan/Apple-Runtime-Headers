@@ -6,7 +6,7 @@
 
 #import <CloudKitDaemon/CKDDatabaseOperation.h>
 
-@class CKDFetchRecordsOperation, CKDMarkAssetBrokenURLRequestWrapperOperation, CKDModifyRecordZonesOperation, CKDModifyRecordsOperation, CKRecord, CKRecordID, CKRecordZoneID, NSError, NSString;
+@class CKDFetchRecordsOperation, CKDMarkAssetBrokenURLRequestWrapperOperation, CKDModifyRecordZonesOperation, CKDModifyRecordsOperation, CKRecord, CKRecordID, CKUploadRequestConfiguration, NSError, NSString;
 
 __attribute__((visibility("hidden")))
 @interface CKDMarkAssetBrokenOperation : CKDDatabaseOperation
@@ -15,12 +15,10 @@ __attribute__((visibility("hidden")))
     BOOL _simulateCorruptAsset;
     BOOL _writeRepairRecord;
     CDUnknownBlockType _assetOrPackageMarkedBrokenBlock;
+    CKUploadRequestConfiguration *_uploadRequestConfiguration;
     CKRecordID *_recordID;
     NSString *_field;
     long long _listIndex;
-    NSString *_repairContainerIdentifier;
-    NSString *_repairSourceApplicationBundleIdentifier;
-    CKRecordZoneID *_repairZoneID;
     CKDFetchRecordsOperation *_fetchOperation;
     CKDModifyRecordZonesOperation *_zoneOperation;
     CKDModifyRecordsOperation *_corruptOperation;
@@ -37,15 +35,13 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) CKDModifyRecordsOperation *corruptOperation; // @synthesize corruptOperation=_corruptOperation;
 @property(retain, nonatomic) CKDModifyRecordZonesOperation *zoneOperation; // @synthesize zoneOperation=_zoneOperation;
 @property(retain, nonatomic) CKDFetchRecordsOperation *fetchOperation; // @synthesize fetchOperation=_fetchOperation;
-@property(retain, nonatomic) CKRecordZoneID *repairZoneID; // @synthesize repairZoneID=_repairZoneID;
-@property(retain, nonatomic) NSString *repairSourceApplicationBundleIdentifier; // @synthesize repairSourceApplicationBundleIdentifier=_repairSourceApplicationBundleIdentifier;
-@property(retain, nonatomic) NSString *repairContainerIdentifier; // @synthesize repairContainerIdentifier=_repairContainerIdentifier;
 @property(nonatomic) long long listIndex; // @synthesize listIndex=_listIndex;
 @property(retain, nonatomic) NSString *field; // @synthesize field=_field;
 @property(retain, nonatomic) CKRecordID *recordID; // @synthesize recordID=_recordID;
 @property(nonatomic) BOOL writeRepairRecord; // @synthesize writeRepairRecord=_writeRepairRecord;
 @property(nonatomic) BOOL simulateCorruptAsset; // @synthesize simulateCorruptAsset=_simulateCorruptAsset;
 @property(nonatomic) BOOL touchRepairZone; // @synthesize touchRepairZone=_touchRepairZone;
+@property(retain, nonatomic) CKUploadRequestConfiguration *uploadRequestConfiguration; // @synthesize uploadRequestConfiguration=_uploadRequestConfiguration;
 @property(copy, nonatomic) CDUnknownBlockType assetOrPackageMarkedBrokenBlock; // @synthesize assetOrPackageMarkedBrokenBlock=_assetOrPackageMarkedBrokenBlock;
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;

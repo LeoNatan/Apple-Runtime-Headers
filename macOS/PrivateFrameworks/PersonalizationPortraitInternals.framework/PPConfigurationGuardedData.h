@@ -43,6 +43,9 @@
     double analyticsTopicsSamplingRate;
     int analyticsMaximumNumberOfRecords;
     int analyticsGeohashLength;
+    double topicDecayHalfLifeSeconds;
+    double namedEntityDecayHalfLifeSeconds;
+    double locationDecayHalfLifeSeconds;
 }
 
 - (void).cxx_destruct;

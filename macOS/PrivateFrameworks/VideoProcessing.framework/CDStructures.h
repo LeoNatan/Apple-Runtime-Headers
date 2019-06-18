@@ -842,6 +842,10 @@ struct __sbuf {
     int _field2;
 };
 
+struct future<CF<const __CFData *>> {
+    struct __assoc_state<CF<const __CFData *>> *_field1;
+};
+
 struct future<unsigned int> {
     struct __assoc_state<unsigned int> *_field1;
 };
@@ -952,6 +956,10 @@ typedef struct {
 } CDStruct_e83c9415;
 
 // Template types
+typedef struct future<CF<const __CFData *>> {
+    struct __assoc_state<CF<const __CFData *>> *_field1;
+} future_82df37ac;
+
 typedef struct future<unsigned int> {
     struct __assoc_state<unsigned int> *_field1;
 } future_dee8b545;

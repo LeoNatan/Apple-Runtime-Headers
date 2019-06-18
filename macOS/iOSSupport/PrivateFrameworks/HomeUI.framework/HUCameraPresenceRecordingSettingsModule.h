@@ -8,7 +8,7 @@
 
 #import <HomeUI/HUCameraSettingsModule-Protocol.h>
 
-@class HFItem, HFStaticItemProvider, HUCameraUsageOptionItemProvider, NSArray, NSMutableArray, NSSet, NSString, UIViewController;
+@class HFItem, HFStaticItemProvider, HUCameraUsageOptionItemProvider, NSArray, NSSet, NSString, UIViewController;
 
 @interface HUCameraPresenceRecordingSettingsModule : HUExpandableItemModule <HUCameraSettingsModule>
 {
@@ -22,11 +22,9 @@
     HFStaticItemProvider *_itemProvider;
     UIViewController *_viewController;
     NSArray *_optionItems;
-    NSMutableArray *_failedProfilesForRecordingSetting;
 }
 
 @property(nonatomic) BOOL didCompleteCloudUpgradeOffer; // @synthesize didCompleteCloudUpgradeOffer=_didCompleteCloudUpgradeOffer;
-@property(retain, nonatomic) NSMutableArray *failedProfilesForRecordingSetting; // @synthesize failedProfilesForRecordingSetting=_failedProfilesForRecordingSetting;
 @property(retain, nonatomic) NSArray *optionItems; // @synthesize optionItems=_optionItems;
 @property(nonatomic) __weak UIViewController *viewController; // @synthesize viewController=_viewController;
 @property(retain, nonatomic) HFStaticItemProvider *itemProvider; // @synthesize itemProvider=_itemProvider;

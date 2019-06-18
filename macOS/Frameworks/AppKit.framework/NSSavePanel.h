@@ -165,6 +165,7 @@
 - (id)remoteView;
 - (void *)_sheetEffect;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
+- (id)init;
 - (unsigned long long)styleMaskForHostWindow;
 - (id)valueforUndefinedKey:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;

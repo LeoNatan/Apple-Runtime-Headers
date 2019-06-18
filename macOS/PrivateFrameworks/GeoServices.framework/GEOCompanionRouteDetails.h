@@ -6,11 +6,12 @@
 
 #import <ProtocolBuffer/PBCodable.h>
 
+#import <GeoServices/GEOCompanionCompatibility-Protocol.h>
 #import <GeoServices/NSCopying-Protocol.h>
 
 @class GEODirectionsRequest, GEODirectionsResponse, GEOMapItemStorage, GEOTransitDecoderData, GEOTransitSuggestedRoute, NSData, NSMutableArray, NSString, PBDataReader;
 
-@interface GEOCompanionRouteDetails : PBCodable <NSCopying>
+@interface GEOCompanionRouteDetails : PBCodable <GEOCompanionCompatibility, NSCopying>
 {
     PBDataReader *_reader;
     CDStruct_158f0f88 _readerMark;
@@ -96,7 +97,7 @@
 + (id)syntheticRouteDetailsWithOrigin:(id)arg1 destination:(id)arg2 transportType:(int)arg3 destinationName:(id)arg4;
 - (void).cxx_destruct;
 - (void)mergeFrom:(id)arg1;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)copyTo:(id)arg1;
@@ -104,7 +105,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
-- (id)description;
+@property(readonly, copy) NSString *description;
 @property(retain, nonatomic) NSData *revisionID;
 @property(readonly, nonatomic) BOOL hasRevisionID;
 - (void)_readRevisionID;
@@ -196,12 +197,16 @@
 @property(readonly, nonatomic) BOOL hasDestinationName;
 - (void)_readDestinationName;
 - (void)dealloc;
+- (id)instanceCompatibleWithProtocolVersion:(unsigned long long)arg1;
 - (id)stepWithID:(unsigned long long)arg1;
 - (unsigned long long)stepIndexWithID:(unsigned long long)arg1;
 - (BOOL)isSyntheticRoute;
 @property(readonly, nonatomic) NSString *shortDescription;
 - (id)initWithRoute:(id)arg1 destinationName:(id)arg2 stringFormatter:(id)arg3 traffic:(id)arg4;
-- (id)initWithRoute:(id)arg1 fallbackDestinationName:(id)arg2 stringFormatter:(id)arg3 traffic:(id)arg4;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly) Class superclass;
 
 @end
 

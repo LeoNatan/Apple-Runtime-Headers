@@ -7,9 +7,8 @@
 @class NSString, UIColor, UIFont;
 
 @protocol NEFeedNavImageStylerType
-- (UIColor *)topicColorFor:(NSString *)arg1;
-@property(nonatomic, readonly) UIFont *topicTitleFont;
-@property(nonatomic, readonly) UIFont *channelTitleFont;
+- (UIColor *)tagColorFor:(NSString *)arg1;
+@property(nonatomic, readonly) UIFont *tagTitleFont;
 @property(nonatomic, readonly) double cornerRadius;
 @property(nonatomic, readonly) double padding;
 @end

@@ -8,11 +8,13 @@
 
 #import <AudioDSPManager/NSSecureCoding-Protocol.h>
 
-@class ADNotificationBusStation, DatabaseController, GraphManagerState, RemoteProcessingBlockADMGraph, VolumeManager;
+@class ADNotificationBusStation, DatabaseController, GraphState, RemoteProcessingBlockADMGraph, VolumeManager;
 
+__attribute__((visibility("hidden")))
 @interface GraphManager : NSObject <NSSecureCoding>
 {
-    GraphManagerState *_state;
+    GraphState *_activeState;
+    struct list<GraphState *, std::__1::allocator<GraphState *>> _todelete;
     struct unique_ptr<adm::graph::GraphBuilder, std::__1::default_delete<adm::graph::GraphBuilder>> _graphBuilder;
     struct shared_ptr<adm::graph::ParameterStorageInterface> _graphParameterStorage;
     struct shared_ptr<adm::graph::PropertyStorageInterface> _graphPropertyStorage;
@@ -31,7 +33,9 @@
 - (id)initWithCoder:(id)arg1;
 - (void)registerInternalComponents;
 - (expected_24968c28)getActiveMicrophoneConfigurationIDForPort:(unsigned long long)arg1 ioController:(unsigned long long)arg2;
-- (void)applyAdaptTransaction:(id)arg1;
+- (void)cleanupObsoleteGraphs;
+- (void)applyAdaptTransaction:(id)arg1 withConfigRequests:(id)arg2;
+- (void)applyGraphStatesTransition:(id)arg1 withOriginalGraph:(id)arg2;
 - (void)updateVolumeManager:(id)arg1 graph:(struct Graph *)arg2;
 - (id)createAdaptTransactionWithRequests:(id)arg1 notificationBusStation:(id)arg2 error:(id *)arg3;
 - (id)initWithDatabaseController:(id)arg1 volumeManager:(id)arg2;

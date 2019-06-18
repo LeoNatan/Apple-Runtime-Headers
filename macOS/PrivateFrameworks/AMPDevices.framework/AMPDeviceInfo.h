@@ -35,6 +35,7 @@
     BOOL _supportsVoiceOverLanguageMenu;
     BOOL _supportsPhotos;
     BOOL _supportsPhotoVideos;
+    BOOL _supportsCameraRoll;
     BOOL _supportsMusicVideos;
     BOOL _supportsDigitalBooklets;
     BOOL _supportsVoiceMemos;
@@ -118,6 +119,7 @@
 @property(nonatomic) BOOL supportsVoiceMemos; // @synthesize supportsVoiceMemos=_supportsVoiceMemos;
 @property(nonatomic) BOOL supportsDigitalBooklets; // @synthesize supportsDigitalBooklets=_supportsDigitalBooklets;
 @property(nonatomic) BOOL supportsMusicVideos; // @synthesize supportsMusicVideos=_supportsMusicVideos;
+@property(nonatomic) BOOL supportsCameraRoll; // @synthesize supportsCameraRoll=_supportsCameraRoll;
 @property(nonatomic) BOOL supportsPhotoVideos; // @synthesize supportsPhotoVideos=_supportsPhotoVideos;
 @property(nonatomic) BOOL supportsPhotos; // @synthesize supportsPhotos=_supportsPhotos;
 @property(nonatomic) BOOL supportsVoiceOverLanguageMenu; // @synthesize supportsVoiceOverLanguageMenu=_supportsVoiceOverLanguageMenu;

@@ -45,7 +45,7 @@
 @property(readonly, nonatomic) BOOL hf_needsSoftwareUpdateToSupportBeingAddedToMediaSystem;
 @property(readonly, nonatomic) unsigned long long hf_mediaAccessControlCapabilities;
 @property(readonly, nonatomic) BOOL hf_isDumbSpeaker;
-@property(readonly, nonatomic) BOOL hf_isAirPortExtremeSpeaker;
+@property(readonly, nonatomic) BOOL hf_isAirPortExpressSpeaker;
 @property(readonly, nonatomic) BOOL hf_isAppleTV;
 @property(readonly, nonatomic) BOOL hf_isHomePod;
 @property(readonly, nonatomic) BOOL hf_isMediaAccessory;

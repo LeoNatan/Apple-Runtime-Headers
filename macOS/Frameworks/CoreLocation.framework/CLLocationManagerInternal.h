@@ -16,7 +16,7 @@
     CLLocationManager *fManager;
     CLLocationManagerStateTracker *fState;
     double fDesiredAccuracy;
-    CDStruct_0a5906de fLocation;
+    CDStruct_4d1fbe9a fLocation;
     NSString *fLocationEventType;
     CLTimer *fLocationRequestTimer;
     double fLocationRequestTimeout;
@@ -25,12 +25,14 @@
     unsigned long long fLastRangingRequestMachTime;
     int fHeadingOrientation;
     NSMutableSet *fRangedRegions;
+    NSMutableSet *fRangedConstraints;
     CDUnknownBlockType fPlaceInferenceHandler;
     unsigned long long fFidelityPolicy;
 }
 
 @property(nonatomic) __weak CLLocationManager *manager; // @synthesize manager=fManager;
 @property(nonatomic) __weak id <CLLocationManagerDelegate> delegate; // @synthesize delegate=fDelegate;
+@property(readonly, nonatomic) NSMutableSet *rangedConstraints; // @synthesize rangedConstraints=fRangedConstraints;
 @property(readonly, nonatomic) NSMutableSet *rangedRegions; // @synthesize rangedRegions=fRangedRegions;
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -41,6 +43,10 @@
 - (void)cancelRangingRequest;
 - (void)cancelLocationRequest;
 - (void)stopUpdatingLocationAutoPaused;
+- (BOOL)showsBackgroundLocationIndicator;
+- (void)setShowsBackgroundLocationIndicator:(BOOL)arg1;
+- (BOOL)allowsBackgroundLocationUpdates;
+- (void)setAllowsBackgroundLocationUpdates:(BOOL)arg1;
 - (int)PausesLocationUpdatesAutomatically;
 - (void)setPausesLocationUpdatesAutomatically:(int)arg1;
 - (id)initWithInfo:(id)arg1 bundleIdentifier:(id)arg2 bundle:(id)arg3 delegate:(id)arg4 silo:(id)arg5;

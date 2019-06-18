@@ -37,6 +37,7 @@
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 didTapPluginStatusButtonForChatItem:(CKMessageStatusChatItem *)arg2;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 didTapAttributionButtonForChatItem:(CKMessageStatusChatItem *)arg2;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonView:(CKBalloonView *)arg2 doubleTappedItemAtIndexPath:(NSIndexPath *)arg3;
+- (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonView:(CKBalloonView *)arg2 tappedItemAtIndexPath:(NSIndexPath *)arg3;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonView:(CKBalloonView *)arg2 longPressedForItemWithIndexPath:(NSIndexPath *)arg3;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 balloonView:(CKBalloonView *)arg2 tappedForChatItem:(CKChatItem *)arg3;
 - (void)transcriptCollectionViewController:(CKTranscriptCollectionViewController *)arg1 didDeselectItemAtIndexPath:(NSIndexPath *)arg2;

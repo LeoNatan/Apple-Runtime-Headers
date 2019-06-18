@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     BOOL _disablesHighlightWhenLongPressed;
     BOOL _clampsHitRectInsetsWhenContainedInScrollableView;
     BOOL _wasForcePressTriggered;
+    long long _tintEffectStyle;
     double _forceThreshold;
     double _force;
     double _maximumForceSinceTrackingBegan;
@@ -34,6 +35,7 @@ __attribute__((visibility("hidden")))
     NSString *_fullScreenAlternateImageName;
     NSString *_inlineAlternateImageName;
     AVMicaPackage *_micaPackage;
+    double _micaSnapshotAlpha;
     UIViewPropertyAnimator *_highlightAnimator;
     double _trackingStartTime;
     double _horizontalTranslationOfLongPress;
@@ -57,6 +59,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL clampsHitRectInsetsWhenContainedInScrollableView; // @synthesize clampsHitRectInsetsWhenContainedInScrollableView=_clampsHitRectInsetsWhenContainedInScrollableView;
 @property(nonatomic) struct NSDirectionalEdgeInsets hitRectInsets; // @synthesize hitRectInsets=_hitRectInsets;
 @property(nonatomic) BOOL disablesHighlightWhenLongPressed; // @synthesize disablesHighlightWhenLongPressed=_disablesHighlightWhenLongPressed;
+@property(nonatomic) double micaSnapshotAlpha; // @synthesize micaSnapshotAlpha=_micaSnapshotAlpha;
 @property(retain, nonatomic) AVMicaPackage *micaPackage; // @synthesize micaPackage=_micaPackage;
 @property(copy, nonatomic) NSString *inlineAlternateImageName; // @synthesize inlineAlternateImageName=_inlineAlternateImageName;
 @property(copy, nonatomic) NSString *fullScreenAlternateImageName; // @synthesize fullScreenAlternateImageName=_fullScreenAlternateImageName;
@@ -68,6 +71,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) double force; // @synthesize force=_force;
 @property(nonatomic) double forceThreshold; // @synthesize forceThreshold=_forceThreshold;
 @property(nonatomic) BOOL usesBackgroundEffectViewForTextOnlyButtons; // @synthesize usesBackgroundEffectViewForTextOnlyButtons=_usesBackgroundEffectViewForTextOnlyButtons;
+@property(nonatomic) long long tintEffectStyle; // @synthesize tintEffectStyle=_tintEffectStyle;
 @property(nonatomic) BOOL treatsForcePressAsLongPress; // @synthesize treatsForcePressAsLongPress=_treatsForcePressAsLongPress;
 @property(nonatomic) BOOL wasLongPressed; // @synthesize wasLongPressed=_wasLongPressed;
 @property(nonatomic) BOOL hasAlternateAppearance; // @synthesize hasAlternateAppearance=_hasAlternateAppearance;
@@ -77,6 +81,7 @@ __attribute__((visibility("hidden")))
 @property(nonatomic, getter=isCollapsed) BOOL collapsed; // @synthesize collapsed=_collapsed;
 @property(nonatomic) struct CGSize extrinsicContentSize; // @synthesize extrinsicContentSize=_extrinsicContentSize;
 - (void).cxx_destruct;
+- (double)_imageViewAlpha;
 - (id)_preferredImageName;
 - (void)_updateBackgroundEffectViewIsHidden;
 - (void)_updateEdgeInsets;

@@ -17,10 +17,8 @@
     unsigned long long _mode;
     unsigned long long _source;
     UINavigationItem *_effectiveNavigationItem;
-    id <HUTriggerEditorDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <HUTriggerEditorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UINavigationItem *effectiveNavigationItem; // @synthesize effectiveNavigationItem=_effectiveNavigationItem;
 @property(readonly, nonatomic) unsigned long long source; // @synthesize source=_source;
 @property(readonly, nonatomic) unsigned long long mode; // @synthesize mode=_mode;
@@ -45,6 +43,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id <HUTriggerEditorDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

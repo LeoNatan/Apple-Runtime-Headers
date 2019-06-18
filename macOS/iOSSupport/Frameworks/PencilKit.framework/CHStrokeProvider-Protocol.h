@@ -17,5 +17,6 @@
 
 @optional
 - (long long)compareOrderOfStroke:(id <CHStroke>)arg1 toStroke:(id <CHStroke>)arg2;
+- (BOOL)isStroke:(id <CHStroke>)arg1 versionOfStrokeWithIdentifier:(id <CHStrokeIdentifier>)arg2;
 @end
 

@@ -125,6 +125,7 @@
     long long _lastDirection;
     id <MPAVQueueController> _queueController;
     MPAVPolicyEnforcer *_policyEnforcer;
+    long long _actionAfterQueueLoadOverride;
     MPQueuePlayer *_queuePlayer;
     id <MPAVQueueCoordinating> _queueCoordinator;
     NSString *_identifier;
@@ -153,6 +154,7 @@
 @property(nonatomic) double nextFadeOutDuration; // @synthesize nextFadeOutDuration=_nextFadeOutDuration;
 @property(retain, nonatomic) id <MPAVQueueCoordinating> queueCoordinator; // @synthesize queueCoordinator=_queueCoordinator;
 @property(retain, nonatomic) MPQueuePlayer *queuePlayer; // @synthesize queuePlayer=_queuePlayer;
+@property(nonatomic) long long actionAfterQueueLoadOverride; // @synthesize actionAfterQueueLoadOverride=_actionAfterQueueLoadOverride;
 @property(retain, nonatomic) MPAVPolicyEnforcer *policyEnforcer; // @synthesize policyEnforcer=_policyEnforcer;
 @property(retain, nonatomic) id <MPAVQueueController> queueController; // @synthesize queueController=_queueController;
 @property(nonatomic) long long state; // @synthesize state=_state;

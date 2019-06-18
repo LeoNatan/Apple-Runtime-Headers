@@ -21,7 +21,6 @@
 - (void)clearPendingNicknameUpdatesForHandleIDs:(NSArray *)arg1;
 - (void)fetchHandleSharingState;
 - (void)fetchNicknames;
-- (void)currentSelfNicknameForChat:(NSString *)arg1 requestID:(NSString *)arg2;
 - (void)simulateOneTimeCodeArriving:(NSDictionary *)arg1;
 - (void)consumeCodeWithMessageGUID:(NSString *)arg1;
 - (void)requestOneTimeCodeStatus;
@@ -35,7 +34,6 @@
 - (void)reportMetricToCK:(NSString *)arg1 withDict:(NSDictionary *)arg2;
 - (void)writeCloudKitSyncCounts:(NSDictionary *)arg1;
 - (void)fetchSyncStateStatistics;
-- (void)fetchSyncStateStats;
 - (void)updateAttachmentFileSizes;
 - (void)metricAttachments:(long long)arg1;
 - (void)purgeAttachments:(long long)arg1;

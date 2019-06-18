@@ -37,15 +37,15 @@
 @property(nonatomic) __weak UIViewController *containingViewController; // @synthesize containingViewController=_containingViewController;
 @property(readonly, nonatomic) WFDragController *dragController; // @synthesize dragController=_dragController;
 @property(nonatomic) __weak WFDragGestureRecognizer *dragRecognizer; // @synthesize dragRecognizer=_dragRecognizer;
-@property(readonly, nonatomic) __weak id <VCActionDonation> donation; // @synthesize donation=_donation;
-@property(readonly, nonatomic) long long cellType; // @synthesize cellType=_cellType;
+@property(readonly, nonatomic) id <VCActionDonation> donation; // @synthesize donation=_donation;
+@property(nonatomic, setter=_setCellType:) long long cellType; // @synthesize cellType=_cellType;
 @property(readonly, nonatomic) UIImage *keyImage; // @synthesize keyImage=_keyImage;
 @property(readonly, copy, nonatomic) NSString *title; // @synthesize title=_title;
 - (void).cxx_destruct;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)prepareForReuse;
-- (void)configureWithCellType:(long long)arg1 title:(id)arg2 keyImage:(id)arg3 appIconImage:(id)arg4 donation:(id)arg5;
+- (void)configureWithCellType:(long long)arg1 title:(id)arg2 keyImage:(id)arg3 appIconImage:(id)arg4 donation:(id)arg5 genericAction:(id)arg6 forDailyRoutines:(BOOL)arg7;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

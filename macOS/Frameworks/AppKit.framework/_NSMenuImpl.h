@@ -21,6 +21,7 @@ __attribute__((visibility("hidden")))
     struct NSMenuUpdaterInfo_t *sidebandUpdaters;
     const void *_contextMenuPluginAEDesc;
     NSStoryboard *_storyboard;
+    NSString *_lastShortcutInputSourceIdentifier;
     unsigned long long _indentationWidth;
     BOOL _disablesKeyboardAdjustedShortcuts;
 }

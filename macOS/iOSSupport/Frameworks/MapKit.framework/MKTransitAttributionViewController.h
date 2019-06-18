@@ -45,6 +45,7 @@
 - (void)_commonInit;
 - (id)initWithTransitLineItem:(id)arg1;
 - (id)initWithMapItem:(id)arg1;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

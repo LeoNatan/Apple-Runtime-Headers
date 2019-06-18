@@ -8,7 +8,7 @@
 
 #import <AudioSession/AVAudioSpatialMicrophoneSelecting-Protocol.h>
 
-@class NSSet, NSString;
+@class NSArray, NSString;
 
 @interface AVAudioSpatialMicrophoneSelectorModule : NSObject <AVAudioSpatialMicrophoneSelecting>
 {
@@ -16,7 +16,7 @@
 
 @property(readonly, nonatomic) NSString *focusOrientation;
 - (BOOL)setFocusOrientation:(id)arg1 error:(id *)arg2;
-@property(readonly, nonatomic) NSSet *availableVirtualFormats;
+@property(readonly, nonatomic) NSArray *availableVirtualFormats;
 - (BOOL)enable:(BOOL)arg1 error:(id *)arg2;
 @property(readonly, nonatomic, getter=isEnabled) BOOL enabled;
 - (id)init;

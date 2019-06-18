@@ -11,6 +11,7 @@
 
 @interface REMSaveRequest : NSObject
 {
+    BOOL _saved;
     BOOL _updateLastModifiedDates;
     BOOL _cloneCompletedRecurrentRemindersAtSave;
     BOOL _applyCRDTsWithoutMerging;
@@ -31,11 +32,14 @@
 @property(readonly, nonatomic) NSMutableDictionary *trackedReminderChangeItems; // @synthesize trackedReminderChangeItems=_trackedReminderChangeItems;
 @property(readonly, nonatomic) NSMutableDictionary *trackedListChangeItems; // @synthesize trackedListChangeItems=_trackedListChangeItems;
 @property(readonly, nonatomic) NSMutableDictionary *trackedAccountChangeItems; // @synthesize trackedAccountChangeItems=_trackedAccountChangeItems;
+@property(nonatomic, getter=isSaved) BOOL saved; // @synthesize saved=_saved;
 @property(copy, nonatomic) NSString *author; // @synthesize author=_author;
 @property(readonly, nonatomic) REMStore *store; // @synthesize store=_store;
 - (void).cxx_destruct;
 - (id)_copyReminderChangeItem:(id)arg1 toReminderSubtaskContextChangeItem:(id)arg2;
 - (id)_copyReminderChangeItem:(id)arg1 toListChangeItem:(id)arg2;
+- (id)_copyReminder:(id)arg1 toReminderSubtaskContextChangeItem:(id)arg2;
+- (id)_copyReminder:(id)arg1 toListChangeItem:(id)arg2;
 - (id)_trackedAccountCapabilitiesForObjectID:(id)arg1;
 - (void)_trackAccountCapabilities:(id)arg1 forObjectID:(id)arg2;
 - (void)_updateTrackedReminderChangeItem:(id)arg1 withObjectID:(id)arg2;

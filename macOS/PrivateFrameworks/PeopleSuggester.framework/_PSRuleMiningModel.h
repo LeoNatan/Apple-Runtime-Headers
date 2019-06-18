@@ -8,15 +8,24 @@
 
 #import <PeopleSuggester/_PSModel-Protocol.h>
 
+@class _PSContactResolver;
+@protocol _DKKnowledgeQuerying;
+
 @interface _PSRuleMiningModel : NSObject <_PSModel>
 {
+    id <_DKKnowledgeQuerying> _knowledgeStore;
+    _PSContactResolver *_contactResolver;
 }
 
+@property(readonly, nonatomic) _PSContactResolver *contactResolver; // @synthesize contactResolver=_contactResolver;
+@property(readonly, nonatomic) id <_DKKnowledgeQuerying> knowledgeStore; // @synthesize knowledgeStore=_knowledgeStore;
+- (void).cxx_destruct;
 - (id)suggestionArrayWithArray:(id)arg1 appendingUniqueElementsByBundleIdFromArray:(id)arg2;
-- (id)peopleFromPhotosWithAttachments:(id)arg1;
 - (id)scenesFromPhotosWithAttachments:(id)arg1;
 - (id)shareExtensionSuggestionsFromContext:(id)arg1;
-- (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 filterByBundleIds:(id)arg3;
+- (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2 photoSuggestedPeople:(id)arg3;
+- (id)predictWithPredictionContext:(id)arg1 maxSuggestions:(unsigned long long)arg2;
+- (id)initWithKnowledgeStore:(id)arg1 contactresolver:(id)arg2;
 
 @end
 

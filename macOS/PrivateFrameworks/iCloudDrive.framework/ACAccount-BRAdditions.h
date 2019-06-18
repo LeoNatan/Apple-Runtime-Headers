@@ -7,6 +7,7 @@
 #import <Accounts/ACAccount.h>
 
 @interface ACAccount (BRAdditions)
+- (id)icd_primaryEmail;
 - (BOOL)icd_hasPersonaIdentifier;
 - (id)icd_personaIdentifier;
 - (BOOL)icd_isiCloudAccount;

@@ -15,7 +15,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
-- (BOOL)shouldCloseHostWindowForSceneIdentifier:(id)arg1;
+- (BOOL)shouldCloseHostWindowForSceneIdentifier:(id)arg1 persistentIdentifier:(id)arg2;
 - (BOOL)shouldHideHostWindowForSceneIdentifier:(id)arg1;
 
 // Remaining properties

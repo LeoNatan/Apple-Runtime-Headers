@@ -26,8 +26,10 @@
     float _textureScore;
     float _overallFaceQualityScore;
     float _qualityScoreForLivePhoto;
+    float _globalQualityScore;
     float _visualPleasingScore;
     float _penaltyScore;
+    float _contentScore;
     float _humanPoseScore;
     float _humanActionScore;
     unsigned long long _statsFlags;
@@ -39,8 +41,10 @@
 
 @property(nonatomic) float humanActionScore; // @synthesize humanActionScore=_humanActionScore;
 @property(nonatomic) float humanPoseScore; // @synthesize humanPoseScore=_humanPoseScore;
+@property(nonatomic) float contentScore; // @synthesize contentScore=_contentScore;
 @property(nonatomic) float penaltyScore; // @synthesize penaltyScore=_penaltyScore;
 @property(nonatomic) float visualPleasingScore; // @synthesize visualPleasingScore=_visualPleasingScore;
+@property(nonatomic) float globalQualityScore; // @synthesize globalQualityScore=_globalQualityScore;
 @property(nonatomic) float qualityScoreForLivePhoto; // @synthesize qualityScoreForLivePhoto=_qualityScoreForLivePhoto;
 @property(nonatomic) float overallFaceQualityScore; // @synthesize overallFaceQualityScore=_overallFaceQualityScore;
 @property(retain, nonatomic) NSMutableDictionary *frameResults; // @synthesize frameResults=_frameResults;
@@ -63,16 +67,17 @@
 - (float)computeExpressionScore;
 - (float)computeScoreFromAction;
 - (void)computeCurationScore;
+- (void)computeCurationScoreComponents;
 - (void)storeFrameResults;
 - (float)computePenaltyScore;
 - (float)computeContentScore;
 - (float)computeVisualPleasingScore;
 - (float)computeGlobalQuality;
 - (void)computeGlobalQualityForLivePhoto;
-- (void)setExposure:(float)arg1;
-- (void)setMotionStatsFlag:(BOOL)arg1 cameraMotion:(float)arg2 subjectAction:(float)arg3 interestingness:(float)arg4 obstruction:(float)arg5 colorfulness:(float)arg6 humanPoseScore:(float)arg7 humanActionScore:(float)arg8 subMb:(BOOL)arg9;
+- (void)setMotionStatsFlag:(BOOL)arg1 cameraMotion:(float)arg2 subjectAction:(float)arg3 interestingness:(float)arg4 obstruction:(float)arg5 colorfulness:(float)arg6 exposureScore:(float)arg7 humanActionStatsFlag:(BOOL)arg8 humanPoseScore:(float)arg9 humanActionScore:(float)arg10 subMb:(BOOL)arg11;
 - (void)setFaceStatsFlag:(BOOL)arg1 detectedFaces:(id)arg2;
 - (void)resetStatsFlag;
+- (int)loadKeyFrameResult:(id)arg1 timestamp:(CDStruct_1b6d18a9)arg2;
 - (id)initWithLivePhoto:(BOOL)arg1;
 
 @end

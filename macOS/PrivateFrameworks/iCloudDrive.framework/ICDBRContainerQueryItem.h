@@ -37,7 +37,7 @@
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithQueryItem:(id)arg1 container:(id)arg2 zoneRowID:(id)arg3 isDataScope:(BOOL)arg4;
+- (id)initWithQueryItem:(id)arg1 container:(id)arg2 zoneRowID:(id)arg3 ubiquityTokenSalt:(id)arg4 isDataScope:(BOOL)arg5;
 
 @end
 

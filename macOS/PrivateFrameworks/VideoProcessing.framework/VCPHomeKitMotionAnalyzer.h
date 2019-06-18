@@ -20,7 +20,7 @@
     int _frameHeight;
     int _width;
     int _height;
-    unsigned long long _stride;
+    int _stride;
     int _blockSize;
     int _widthBlockNum;
     int _heightBlockNum;

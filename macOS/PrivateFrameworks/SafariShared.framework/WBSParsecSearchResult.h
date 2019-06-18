@@ -23,6 +23,7 @@
     WBSParsecLegacySearchResult *_legacySearchResult;
 }
 
++ (long long)typeForSFSearchResult:(id)arg1 isOneLine:(BOOL)arg2;
 + (long long)typeForSFSearchResult:(id)arg1;
 @property(readonly, nonatomic) WBSParsecLegacySearchResult *legacySearchResult; // @synthesize legacySearchResult=_legacySearchResult;
 - (void).cxx_destruct;

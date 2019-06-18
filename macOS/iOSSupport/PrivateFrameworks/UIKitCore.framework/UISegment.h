@@ -42,7 +42,7 @@ __attribute__((visibility("hidden")))
     double _requestedScaleFactor;
 }
 
-+ (id)_backgroundImageWithStorage:(id)arg1 mini:(BOOL)arg2 state:(unsigned long long)arg3 position:(unsigned int)arg4 drawMode:(int *)arg5 isCustom:(char *)arg6 defaultBlock:(CDUnknownBlockType)arg7;
++ (id)_backgroundImageWithStorage:(id)arg1 mini:(BOOL)arg2 state:(unsigned long long)arg3 position:(unsigned int)arg4 drawMode:(unsigned int *)arg5 isCustom:(char *)arg6 defaultBlock:(CDUnknownBlockType)arg7;
 @property(nonatomic) double requestedScaleFactor; // @synthesize requestedScaleFactor=_requestedScaleFactor;
 @property(copy, nonatomic, setter=_setInfoConstraints:) NSArray *_infoConstraints; // @synthesize _infoConstraints;
 - (void).cxx_destruct;

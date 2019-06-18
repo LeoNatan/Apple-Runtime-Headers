@@ -10,6 +10,7 @@
 {
 }
 
+- (BOOL)requiresOpeningAttachmentAsLink;
 - (id)supportedCalendarComponentSets;
 - (id)type;
 - (id)init;

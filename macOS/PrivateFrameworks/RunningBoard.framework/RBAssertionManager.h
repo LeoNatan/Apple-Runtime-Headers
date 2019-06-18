@@ -93,6 +93,7 @@
 - (id)stateForIdentity:(id)arg1;
 - (void)processDidTerminate:(id)arg1;
 - (void)processDidLaunch:(id)arg1;
+- (void)_acquireUnderlyingAssertionForProcess:(id)arg1;
 - (BOOL)hasAssertionWithIdentifier:(id)arg1;
 - (id)assertionsForOriginator:(id)arg1;
 - (id)limitationsForInstance:(id)arg1;

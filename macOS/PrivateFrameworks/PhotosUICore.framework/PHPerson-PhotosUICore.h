@@ -19,7 +19,6 @@
 @property(readonly) NSString *px_localIdentifier;
 @property(readonly) unsigned long long numberOfAssets;
 - (void)requestFaceTileImageWithTargetSize:(struct CGSize)arg1 cropFactor:(unsigned long long)arg2 style:(unsigned long long)arg3 cacheResult:(BOOL)arg4 boundFaceRect:(BOOL)arg5 completionBlock:(CDUnknownBlockType)arg6;
-- (id)pasteboardReference;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -6,7 +6,7 @@
 
 #import <ProVideo/PVHeliumEffect.h>
 
-@protocol EffectTimeNotificationDelegate;
+@protocol PVEffectTimeNotificationDelegate;
 
 @interface PVOrientationEffect : PVHeliumEffect
 {
@@ -17,11 +17,11 @@
     double _animationTime;
     double _switchTime;
     double _switchSetTime;
-    id <EffectTimeNotificationDelegate> _timeNotificationDelegate;
+    id <PVEffectTimeNotificationDelegate> _timeNotificationDelegate;
 }
 
 + (void)registerEffectWithID:(id)arg1 displayName:(id)arg2;
-@property __weak id <EffectTimeNotificationDelegate> timeNotificationDelegate; // @synthesize timeNotificationDelegate=_timeNotificationDelegate;
+@property __weak id <PVEffectTimeNotificationDelegate> timeNotificationDelegate; // @synthesize timeNotificationDelegate=_timeNotificationDelegate;
 @property(nonatomic) int oldInputID; // @synthesize oldInputID=_oldInputID;
 @property(nonatomic) BOOL oldShowAlt; // @synthesize oldShowAlt=_oldShowAlt;
 @property(nonatomic) double switchSetTime; // @synthesize switchSetTime=_switchSetTime;

@@ -24,7 +24,7 @@ __attribute__((visibility("hidden")))
 - (void)_storeIdentifiers;
 - (void)clearList;
 - (void)unblockIdentifiers:(id)arg1;
-- (void)blockIdentifiers:(id)arg1;
+- (void)blockIdentifier:(id)arg1;
 - (BOOL)containsIdentifier:(id)arg1;
 - (BOOL)containsAnyIdentifiersInArray:(id)arg1;
 - (id)init;

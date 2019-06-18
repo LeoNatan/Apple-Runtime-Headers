@@ -10,12 +10,14 @@
 
 @interface WFContentItemRegistry : NSObject
 {
+    struct os_unfair_lock_s _discoveryLock;
     NSMutableDictionary *_contentItemClassesByType;
     NSMutableSet *_allItemClasses;
 }
 
 + (id)sharedRegistry;
 + (id)allContentItemClassesInContentKit;
+@property(readonly, nonatomic) struct os_unfair_lock_s discoveryLock; // @synthesize discoveryLock=_discoveryLock;
 @property(readonly, nonatomic) NSMutableSet *allItemClasses; // @synthesize allItemClasses=_allItemClasses;
 @property(readonly, nonatomic) NSMutableDictionary *contentItemClassesByType; // @synthesize contentItemClassesByType=_contentItemClassesByType;
 - (void).cxx_destruct;

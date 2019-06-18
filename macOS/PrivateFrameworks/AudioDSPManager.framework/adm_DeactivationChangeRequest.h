@@ -12,6 +12,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface adm_DeactivationChangeRequest : adm_ConfigurationChangeRequest <adm_JSONSerializable, NSSecureCoding, dspd_DeactivationChangeRequest>
 {
 }

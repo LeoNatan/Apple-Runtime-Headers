@@ -12,9 +12,7 @@
 
 @interface PKTextAttachmentDrawingView : NSView <PKTextAttachmentView>
 {
-    struct CGColor *_paperTextureColor;
     BOOL _currentModeIsDarkMode;
-    BOOL _isAnimatingDarkMode;
     NSTextAttachment *_textAttachment;
     PKLinedPaper *_linedPaper;
     NSOperationQueue *_renderTileQueue;
@@ -27,7 +25,6 @@
     struct CGRect _liveResizeImageDrawingFrame;
 }
 
-@property(nonatomic) BOOL isAnimatingDarkMode; // @synthesize isAnimatingDarkMode=_isAnimatingDarkMode;
 @property(nonatomic) BOOL currentModeIsDarkMode; // @synthesize currentModeIsDarkMode=_currentModeIsDarkMode;
 @property(nonatomic) struct CGRect liveResizeImageDrawingFrame; // @synthesize liveResizeImageDrawingFrame=_liveResizeImageDrawingFrame;
 @property(retain, nonatomic) NSImage *liveResizeImage; // @synthesize liveResizeImage=_liveResizeImage;
@@ -50,8 +47,6 @@
 - (void)viewDidMoveToSuperview;
 - (void)_triggerRedraw;
 - (void)_scheduleRenderingForTile:(id)arg1;
-- (id)generateImageForTile:(id)arg1 size:(struct CGSize)arg2 scale:(double)arg3 drawingImage:(id)arg4 parentFrame:(struct CGRect)arg5 tileBounds:(struct CGRect)arg6 linedPaperRenderBlock:(CDUnknownBlockType)arg7;
-- (id)generateImageForTile:(id)arg1 drawingImage:(id)arg2;
 - (CDUnknownBlockType)linedPaperRenderBlockForTile:(id)arg1;
 - (void)_scheduleTilesForRect:(struct CGRect)arg1;
 - (void)_purgeTilesOutsideRect:(struct CGRect)arg1;
@@ -77,7 +72,6 @@
 - (BOOL)isFlipped;
 - (void)drawingDataDidChange:(id)arg1;
 - (id)dataForTextAttachment:(id)arg1;
-- (struct CGColor *)paperTextureColor;
 - (void)viewDidChangeEffectiveAppearance;
 - (BOOL)isDarkModeEnabled;
 - (void)dealloc;

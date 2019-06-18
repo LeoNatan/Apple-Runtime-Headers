@@ -18,7 +18,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)locationByReductivelyFilteringLocations:(id)arg1;
-- (id)initWithClientLocation:(CDStruct_0a5906de)arg1 matchInfo:(id)arg2 trustedTimestamp:(double)arg3 groundAltitude:(id)arg4;
+- (id)initWithClientLocation:(CDStruct_4d1fbe9a)arg1 matchInfo:(id)arg2 trustedTimestamp:(double)arg3 groundAltitude:(id)arg4;
 - (void)setHorizontalAccuracy:(double)arg1;
 @property(readonly, nonatomic) NSString *iso6709Notation;
 - (id)propagateLocationToTime:(double)arg1;
@@ -26,6 +26,7 @@
 - (double)distanceFromLocation:(id)arg1;
 - (double)getDistanceFrom:(id)arg1;
 @property(readonly, copy, nonatomic) CLFloor *floor;
+- (int)signalEnvironmentType;
 @property(readonly, nonatomic) int type;
 @property(readonly) double trustedTimestamp;
 @property(readonly) unsigned int integrity;
@@ -33,7 +34,7 @@
 @property(readonly, nonatomic) double course;
 @property(readonly, nonatomic) double speedAccuracy;
 @property(readonly, nonatomic) double speed;
-@property(readonly, nonatomic) CDStruct_0a5906de clientLocation;
+@property(readonly, nonatomic) CDStruct_4d1fbe9a clientLocation;
 @property(readonly, copy, nonatomic) NSDate *timestamp;
 @property(readonly, nonatomic) double verticalAccuracy;
 @property(readonly, nonatomic) double horizontalAccuracy;
@@ -48,8 +49,8 @@
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithClientLocation:(CDStruct_0a5906de)arg1 clientLocationPrivate:(CDStruct_44e85285)arg2;
-- (id)initWithClientLocation:(CDStruct_0a5906de)arg1;
+- (id)initWithClientLocation:(CDStruct_4d1fbe9a)arg1 clientLocationPrivate:(CDStruct_44e85285)arg2;
+- (id)initWithClientLocation:(CDStruct_4d1fbe9a)arg1;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7;
 - (id)initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 timestamp:(id)arg5;
 - (id)_initWithCoordinate:(struct CLLocationCoordinate2D)arg1 altitude:(double)arg2 horizontalAccuracy:(double)arg3 verticalAccuracy:(double)arg4 course:(double)arg5 speed:(double)arg6 timestamp:(id)arg7 floor:(int)arg8;
@@ -57,8 +58,8 @@
 - (id)init;
 - (void)unmatch;
 @property(readonly, nonatomic) CLLocationMatchInfo *matchInfo;
-- (id)initWithClientLocation:(CDStruct_0a5906de)arg1 matchInfo:(id)arg2 trustedTimestamp:(double)arg3;
-- (id)initWithClientLocation:(CDStruct_0a5906de)arg1 matchInfo:(id)arg2;
+- (id)initWithClientLocation:(CDStruct_4d1fbe9a)arg1 matchInfo:(id)arg2 trustedTimestamp:(double)arg3;
+- (id)initWithClientLocation:(CDStruct_4d1fbe9a)arg1 matchInfo:(id)arg2;
 @property(readonly, nonatomic) _CLLocationGroundAltitude *_groundAltitude;
 
 @end

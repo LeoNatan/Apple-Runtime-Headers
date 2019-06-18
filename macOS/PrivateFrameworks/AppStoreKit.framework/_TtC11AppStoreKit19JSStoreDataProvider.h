@@ -9,6 +9,7 @@
 @interface _TtC11AppStoreKit19JSStoreDataProvider : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: stack
+    // Error parsing type: , name: garbageCollector
     // Error parsing type: , name: appStateController
     // Error parsing type: , name: networkActivity
     // Error parsing type: , name: accountStore

@@ -6,10 +6,10 @@
 
 #import <AudioSession/AVAudioDSPControlling-Protocol.h>
 
-@class NSSet, NSString;
+@class NSArray, NSString;
 
 @protocol AVAudioSpatialMicrophoneSelecting <AVAudioDSPControlling>
-@property(readonly, nonatomic) NSSet *availableVirtualFormats;
+@property(readonly, nonatomic) NSArray *availableVirtualFormats;
 @property(readonly, nonatomic) NSString *focusOrientation;
 - (BOOL)setFocusOrientation:(NSString *)arg1 error:(id *)arg2;
 @end

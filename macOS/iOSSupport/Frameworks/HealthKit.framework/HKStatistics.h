@@ -9,11 +9,11 @@
 #import <HealthKit/NSCopying-Protocol.h>
 #import <HealthKit/NSSecureCoding-Protocol.h>
 
-@class HKQuantity, HKQuantityType, NSArray, NSDate, NSDateInterval, NSDictionary;
+@class HKObjectType, HKQuantity, HKQuantityType, NSArray, NSDate, NSDateInterval, NSDictionary;
 
 @interface HKStatistics : NSObject <NSSecureCoding, NSCopying>
 {
-    HKQuantityType *_quantityType;
+    HKObjectType *_dataType;
     NSDate *_startDate;
     NSDate *_endDate;
     NSArray *_sources;
@@ -56,6 +56,7 @@
 @property(copy, nonatomic) HKQuantity *averageQuantity; // @synthesize averageQuantity=_averageQuantity;
 @property(nonatomic) unsigned long long dataCount; // @synthesize dataCount=_dataCount;
 - (void).cxx_destruct;
+- (id)_copyOverwritingObjectType:(id)arg1;
 - (id)description;
 - (void)_setSources:(id)arg1;
 @property(readonly) NSArray *sources;

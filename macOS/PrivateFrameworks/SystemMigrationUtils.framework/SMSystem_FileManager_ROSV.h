@@ -9,11 +9,19 @@
 @interface SMSystem_FileManager_ROSV : SMSystem_FileManager_DiskBased
 {
     BOOL _pointedAtDataVolume;
+    BOOL _pointedAtLegacyDataVolume;
+    BOOL _pointedAtMountedROSVVolume;
+    BOOL _pointedAtMountedLegacyROSVVolume;
 }
 
 + (BOOL)pointedAtMountedROSVVolume:(id)arg1;
++ (BOOL)pointedAtMountedLegacyROSVVolume:(id)arg1;
 + (BOOL)pointedAtDataVolume:(id)arg1;
++ (BOOL)pointedAtLegacyDataVolume:(id)arg1;
 + (BOOL)isRootROSV:(id)arg1;
+@property BOOL pointedAtMountedLegacyROSVVolume; // @synthesize pointedAtMountedLegacyROSVVolume=_pointedAtMountedLegacyROSVVolume;
+@property BOOL pointedAtMountedROSVVolume; // @synthesize pointedAtMountedROSVVolume=_pointedAtMountedROSVVolume;
+@property BOOL pointedAtLegacyDataVolume; // @synthesize pointedAtLegacyDataVolume=_pointedAtLegacyDataVolume;
 @property BOOL pointedAtDataVolume; // @synthesize pointedAtDataVolume=_pointedAtDataVolume;
 - (id)bundleInformationAtPaths:(id)arg1;
 - (id)resourceValuesForKeys:(id)arg1 onPaths:(id)arg2 error:(id *)arg3;

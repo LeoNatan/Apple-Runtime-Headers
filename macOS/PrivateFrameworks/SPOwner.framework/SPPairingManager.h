@@ -7,7 +7,7 @@
 #import <objc/NSObject.h>
 
 @class FMXPCServiceDescription, FMXPCSession;
-@protocol SPPairingManagerXPCProtocol;
+@protocol OS_dispatch_queue, SPPairingManagerXPCProtocol;
 
 @interface SPPairingManager : NSObject
 {
@@ -16,8 +16,10 @@
     FMXPCServiceDescription *_userAgentServiceDescription;
     FMXPCSession *_userAgentSession;
     id <SPPairingManagerXPCProtocol> _proxy;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <SPPairingManagerXPCProtocol> proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) FMXPCSession *userAgentSession; // @synthesize userAgentSession=_userAgentSession;
 @property(retain, nonatomic) FMXPCServiceDescription *userAgentServiceDescription; // @synthesize userAgentServiceDescription=_userAgentServiceDescription;

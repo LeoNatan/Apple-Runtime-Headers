@@ -23,6 +23,7 @@
     BOOL _whitelistedRichLinkSender;
 }
 
++ (BOOL)isSiriEnabled;
 + (id)_messageItemWithPartsDeleted:(id)arg1 fromMessageItem:(id)arg2;
 + (BOOL)_shouldAggregateForTransferType:(id)arg1;
 + (id)_newMessagePartsForMessageItem:(id)arg1 shouldDisplayLink:(BOOL)arg2 isBusiness:(BOOL)arg3 parentChatIsSpam:(BOOL)arg4 hasKnownParticipants:(BOOL)arg5;

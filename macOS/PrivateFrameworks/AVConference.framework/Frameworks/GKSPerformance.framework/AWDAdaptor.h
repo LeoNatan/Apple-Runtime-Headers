@@ -36,6 +36,8 @@
 - (void)updateHomeKitIPCameraPLISentReport;
 - (void)parseHomeKitIPCameraRealtimeStatsReport:(id)arg1;
 - (void)updateMomentsStats:(id)arg1;
+- (void)processSecondDisplayLogTransportInfoStats;
+- (void)generateSecondDisplayAggregatedCallStats:(id)arg1;
 - (void)generateFaceTimeAggregatedCallStats:(id)arg1;
 - (void)parseFaceTimeAggregatedSegmentStats:(id)arg1;
 - (void)parseModeRoleTransportReport:(unsigned short)arg1 dict:(id)arg2;

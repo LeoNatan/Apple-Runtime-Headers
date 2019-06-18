@@ -10,6 +10,7 @@
 
 @interface WFHomeAccessoryConditionalSubjectState : WFConditionalSubjectParameterState
 {
+    BOOL _negatesValue;
     HMHome *_home;
     HMService *_service;
     HMCharacteristic *_characteristic;
@@ -26,6 +27,7 @@
 @property(retain, nonatomic) WFHMServiceParameterState *serviceParameterState; // @synthesize serviceParameterState=_serviceParameterState;
 @property(retain, nonatomic) NSDictionary *serializedWFHMCharacteristicSubstitutableState; // @synthesize serializedWFHMCharacteristicSubstitutableState=_serializedWFHMCharacteristicSubstitutableState;
 @property(retain, nonatomic) NSDictionary *serializedWFHMServiceParameter; // @synthesize serializedWFHMServiceParameter=_serializedWFHMServiceParameter;
+@property(readonly, nonatomic) BOOL negatesValue; // @synthesize negatesValue=_negatesValue;
 - (void).cxx_destruct;
 - (id)localizedLabelForEnumerationPossibleState:(id)arg1;
 - (void)getEnumerationPossibleStatesWithCompletionHandler:(CDUnknownBlockType)arg1;
@@ -43,9 +45,9 @@
 @property(readonly, nonatomic) HMService *service; // @synthesize service=_service;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
 - (id)serializedRepresentation;
-- (id)initWithService:(id)arg1 characteristic:(id)arg2 homeIdentifier:(id)arg3;
+- (id)initWithService:(id)arg1 characteristic:(id)arg2 homeIdentifier:(id)arg3 negatesValue:(BOOL)arg4;
 - (id)initWithSerializedRepresentation:(id)arg1 variableProvider:(id)arg2 parameter:(id)arg3;
-- (id)initWithSerializedWFHMServiceParameter:(id)arg1 serializedWFHMCharacteristicSubstitutableState:(id)arg2;
+- (id)initWithSerializedWFHMServiceParameter:(id)arg1 serializedWFHMCharacteristicSubstitutableState:(id)arg2 negatesValue:(BOOL)arg3;
 
 @end
 

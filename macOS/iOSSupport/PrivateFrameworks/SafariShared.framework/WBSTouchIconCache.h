@@ -16,12 +16,14 @@
 @interface WBSTouchIconCache : NSObject <WBSSiteMetadataImageCacheDelegate, WBSWebViewMetadataFetchOperationDelegate, WBSSiteMetadataProvider>
 {
     NSObject<OS_dispatch_queue> *_internalQueue;
-    BOOL _didLoadSettings;
+    // Error parsing type: {atomic<bool>="__a_"AB}, name: _didLoadSettings
     WBSSiteMetadataImageCache *_imageCache;
     NSMutableDictionary *_hostsToRequestSets;
     NSMutableDictionary *_touchIconsDataForHosts;
     NSCache *_requestsToResponses;
     NSMutableDictionary *_requestsToDelayedResponses;
+    NSObject<OS_dispatch_queue> *_hostsWithCacheSettingEntriesQueue;
+    NSMutableSet *_hostsWithCacheSettingEntries;
     NSMutableArray *_pendingSaveTouchIconToDiskBlocks;
     NSMutableSet *_pendingTouchIconRequestHosts;
     WBSTouchIconCacheSettingsSQLiteStore *_cacheSettingsStore;
@@ -64,7 +66,6 @@
 - (void)_updateTouchIconsDataForHost:(id)arg1 image:(id)arg2 requestDidSucceed:(BOOL)arg3 isUserLoadedWebpageRequest:(BOOL)arg4 higherPriorityIconDownloadFailedDueToNetworkError:(BOOL)arg5 UUIDString:(id)arg6;
 - (void)_saveTouchIconToDiskWithResult:(id)arg1 forRequest:(id)arg2 knownImageState:(long long)arg3;
 - (void)_enumerateRequestsForHost:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (void)_registerRequest:(id)arg1;
 - (id)_resizedImage:(id)arg1 forHost:(id)arg2;
 - (double)_maximumScreenScale;
 - (void)savePendingChangesBeforeTermination;
@@ -81,6 +82,7 @@
 - (BOOL)_shouldRequestTouchIconForURL:(id)arg1 inUserLoadedWebpage:(BOOL)arg2 initiatedFromBookmarkInteraction:(BOOL)arg3 knownImageState:(long long)arg4;
 - (BOOL)_shouldRequestTouchIconForURL:(id)arg1 inUserLoadedWebpage:(BOOL)arg2 initiatedFromBookmarkInteraction:(BOOL)arg3;
 - (BOOL)_shouldRequestTouchIconForURL:(id)arg1 inUserLoadedWebpage:(BOOL)arg2 initiatedFromBookmarkInteraction:(BOOL)arg3 shouldCheckImageState:(char *)arg4;
+- (BOOL)_canFetchTouchIconForURL:(id)arg1 inUserLoadedWebpage:(BOOL)arg2;
 - (BOOL)_shouldRequestTouchIconWithTimeoutForURL:(id)arg1 inUserLoadedWebpage:(BOOL)arg2 initiatedFromBookmarkInteraction:(BOOL)arg3;
 - (BOOL)shouldRequestTouchIconForURL:(id)arg1 inUserLoadedWebpage:(BOOL)arg2;
 - (BOOL)shouldRequestTouchIconForWebPageNavigationFromBookmarkInteractionForURL:(id)arg1;

@@ -46,9 +46,6 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned char direction;
 @property(readonly, nonatomic) unsigned int portType;
 @property(readonly, nonatomic) optional_8c74af2e device;
-- (_Bool)usesHardwareReactor:(weak_ptr_abb6b8f5)arg1;
-@property(readonly, nonatomic) _Bool canSetRoutable;
-@property(readonly, nonatomic) _Bool isDefaultRoutable;
 @property(readonly, nonatomic) weak_ptr_cf97627c reactor;
 - (id)initWithReactor:(shared_ptr_c3639ab0)arg1;
 

@@ -133,6 +133,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)isBetterConnection:(id)arg1 asPrimary:(BOOL)arg2;
 - (void)promoteSecondaryConnectionToPrimary:(id)arg1;
 - (void)primaryConnectionChanged:(id)arg1 oldPrimaryConnection:(id)arg2;
+- (void)checkpointPrimaryConnection:(id)arg1;
 - (void)updateSessionStats:(unsigned short)arg1;
 - (unsigned int)getByteCountWithIndex:(unsigned char)arg1 isOutgoing:(BOOL)arg2;
 - (unsigned int)getPacketCountWithIndex:(unsigned char)arg1 isOutgoing:(BOOL)arg2;

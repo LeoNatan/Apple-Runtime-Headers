@@ -35,7 +35,6 @@
 - (struct CGRect)startRectForSheet:(id)arg1;
 - (id)initWithContentRect:(struct CGRect)arg1 styleMask:(unsigned long long)arg2 backing:(unsigned long long)arg3 defer:(BOOL)arg4;
 - (unsigned long long)styleMaskForHostWindow;
-- (id)init;
 - (void)commonPrep:(CDUnknownBlockType)arg1 runningAsASheet:(BOOL)arg2 hostWindow_runningAsASheet:(BOOL)arg3;
 - (void)_setDefaultBridgeValues;
 - (void)configureContentView:(id)arg1;

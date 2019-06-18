@@ -8,6 +8,7 @@
 
 @class DatabaseController;
 
+__attribute__((visibility("hidden")))
 @interface ConfigurationChangeRequestParser : NSObject
 {
     DatabaseController *_databaseController;
@@ -16,6 +17,7 @@
 - (void).cxx_destruct;
 - (struct MicrophoneConfiguration)getMicrophoneConfiguration:(unsigned int)arg1;
 - (vector_28162c3a)getAvailableMicrophoneConfigurations:(unsigned long long)arg1 configRequest:(id)arg2;
+- (set_6185be97)getAllActiveHWStreamIDs:(id)arg1;
 - (vector_fefeec75)getSupportedIOStreamFormats:(id)arg1 forIOController:(const struct IOControllerDescription *)arg2 forIOStream:(unsigned int)arg3 isInput:(BOOL)arg4;
 - (unsigned int)getDSPFlavor:(id)arg1 ioControllerDescription:(const struct IOControllerDescription *)arg2 forIOStream:(unsigned int)arg3 isInput:(BOOL)arg4;
 - (expected_27549f77)getSupportedPublicStreamFormats:(id)arg1;

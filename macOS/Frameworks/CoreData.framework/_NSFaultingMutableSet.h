@@ -17,11 +17,12 @@ __attribute__((visibility("hidden")))
     NSManagedObject *_source;
 }
 
++ (Class)classForKeyedUnarchiver;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)alloc;
 + (BOOL)accessInstanceVariablesDirectly;
-- (Class)classForArchiver;
 - (id)replacementObjectForCoder:(id)arg1;
+- (Class)classForArchiver;
 - (Class)classForCoder;
 - (id)valueForKeyPath:(id)arg1;
 - (id)valueForKey:(id)arg1;

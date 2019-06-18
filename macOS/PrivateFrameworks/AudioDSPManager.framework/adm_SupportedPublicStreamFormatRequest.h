@@ -11,6 +11,7 @@
 
 @class NSString;
 
+__attribute__((visibility("hidden")))
 @interface adm_SupportedPublicStreamFormatRequest : NSObject <NSSecureCoding, dspd_SupportedPublicStreamFormatRequest>
 {
     struct unique_ptr<dspd::StreamDescription, std::__1::default_delete<dspd::StreamDescription>> _streamDescriptionPtr;

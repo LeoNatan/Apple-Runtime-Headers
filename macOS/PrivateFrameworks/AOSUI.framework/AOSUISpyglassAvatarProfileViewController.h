@@ -32,6 +32,8 @@
 @property(copy, nonatomic) NSString *mediaDescriptionString; // @synthesize mediaDescriptionString=_mediaDescriptionString;
 - (void).cxx_destruct;
 - (void)avatarViewController:(id)arg1 contactAvatarDidChange:(id)arg2;
+- (void)_loadProfilePictureFromAccount;
+- (void)_accountProfilePictureDidChange:(id)arg1;
 - (void)_setupProfileView;
 - (id)_displayName;
 - (void)_setupNames;
@@ -39,6 +41,7 @@
 - (id)_appleAccount;
 - (void)viewDidLoad;
 - (id)nibBundle;
+- (void)dealloc;
 - (id)initWithAccountManager:(id)arg1;
 
 // Remaining properties

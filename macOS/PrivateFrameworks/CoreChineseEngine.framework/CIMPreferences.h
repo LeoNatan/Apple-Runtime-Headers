@@ -92,6 +92,7 @@
 - (void)toSynchronize;
 - (void)synchronize;
 - (void)enableUbiquity;
+- (void)migratePreferences_10_15;
 - (void)migratePreferences_10_13;
 - (void)migratePreferences;
 - (void)dealloc;

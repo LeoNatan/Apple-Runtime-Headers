@@ -14,11 +14,11 @@
     CDUnknownBlockType _eventHandler;
 }
 
-+ (void)_recordEventIfNeededWithType:(long long)arg1 layout:(id)arg2 oldState:(const CDStruct_c7f1798e *)arg3 newState:(const CDStruct_c7f1798e *)arg4 userInfo:(id)arg5;
++ (void)_recordEventIfNeededWithType:(long long)arg1 layout:(id)arg2 oldState:(const CDStruct_e9e8c9fc *)arg3 newState:(const CDStruct_e9e8c9fc *)arg4 userInfo:(id)arg5;
 + (void)shouldUseDoubleSidedAnimationForSprites:(CDStruct_92550dd7)arg1 indexes:(id)arg2 animation:(id)arg3;
 + (void)didAdjustSprites:(CDStruct_92550dd7)arg1 forAnimation:(id)arg2 appearing:(BOOL)arg3;
 + (void)willAdjustSprites:(CDStruct_92550dd7)arg1 forAnimation:(id)arg2 appearing:(BOOL)arg3;
-+ (void)willRequestTextureForSpriteWithGeometry:(const CDStruct_ac168a83 *)arg1 style:(const CDStruct_3bc3b9c1 *)arg2 info:(const CDStruct_9d1ebe49 *)arg3 inLayout:(id)arg4 textureInfo:(id)arg5;
++ (void)willRequestTextureForSpriteWithGeometry:(const CDStruct_ac168a83 *)arg1 style:(const CDStruct_506f5052 *)arg2 info:(const CDStruct_9d1ebe49 *)arg3 inLayout:(id)arg4 textureInfo:(id)arg5;
 + (void)layout:(id)arg1 didChangeSprites:(CDStruct_92550dd7)arg2;
 + (void)layout:(id)arg1 willChangeSprites:(CDStruct_92550dd7)arg2;
 + (void)layout:(id)arg1 didInsertSprites:(CDStruct_92550dd7)arg2;
@@ -30,9 +30,9 @@
 @property(copy, nonatomic) CDUnknownBlockType predicate; // @synthesize predicate=_predicate;
 @property(nonatomic, getter=isActive) BOOL active; // @synthesize active=_active;
 - (void).cxx_destruct;
-- (void)_recordEventIfNeededWithType:(long long)arg1 layout:(id)arg2 oldState:(const CDStruct_c7f1798e *)arg3 newState:(const CDStruct_c7f1798e *)arg4 userInfo:(id)arg5;
-- (id)descriptionForSpriteState:(const CDStruct_c7f1798e *)arg1;
-- (void)_recordEventWithType:(long long)arg1 oldState:(const CDStruct_c7f1798e *)arg2 newState:(const CDStruct_c7f1798e *)arg3 userInfo:(id)arg4;
+- (void)_recordEventIfNeededWithType:(long long)arg1 layout:(id)arg2 oldState:(const CDStruct_e9e8c9fc *)arg3 newState:(const CDStruct_e9e8c9fc *)arg4 userInfo:(id)arg5;
+- (id)descriptionForSpriteState:(const CDStruct_e9e8c9fc *)arg1;
+- (void)_recordEventWithType:(long long)arg1 oldState:(const CDStruct_e9e8c9fc *)arg2 newState:(const CDStruct_e9e8c9fc *)arg3 userInfo:(id)arg4;
 - (id)init;
 
 @end

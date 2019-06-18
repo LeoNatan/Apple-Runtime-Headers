@@ -26,6 +26,7 @@ __attribute__((visibility("hidden")))
 - (void)_performPreSyncMigrationsForFavoritesContainerWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performMigrationsWithCompletion:(CDUnknownBlockType)arg1;
 - (void)performPreSyncMigrationsWithCompletion:(CDUnknownBlockType)arg1;
+- (id)initWithCloudContainers:(id)arg1;
 - (id)initWithContainers:(id)arg1;
 
 @end

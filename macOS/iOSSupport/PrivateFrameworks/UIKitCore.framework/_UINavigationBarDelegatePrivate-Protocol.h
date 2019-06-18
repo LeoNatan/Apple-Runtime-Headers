@@ -12,6 +12,7 @@
 @protocol _UINavigationBarDelegatePrivate <UINavigationBarDelegate>
 
 @optional
+- (BOOL)_navigationBarLayoutIsInInteractiveScroll;
 - (BOOL)_navigationBarShouldUpdateProgress;
 - (struct CGRect)_incomingNavigationBarFrame;
 - (void)_navigationItemDidUpdateSearchController:(UINavigationItem *)arg1 oldSearchController:(UISearchController *)arg2;

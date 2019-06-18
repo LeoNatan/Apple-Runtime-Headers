@@ -7,12 +7,13 @@
 #import <objc/NSObject.h>
 
 @class NSMutableDictionary, NSXPCConnection;
-@protocol OS_dispatch_queue;
+@protocol OS_dispatch_group, OS_dispatch_queue;
 
 @interface VCPMediaAnalyzer : NSObject
 {
     NSObject<OS_dispatch_queue> *_analysisQueue;
     NSObject<OS_dispatch_queue> *_storageQueue;
+    NSObject<OS_dispatch_group> *_storageGroup;
     BOOL _standalone;
     BOOL _noResultStrip;
     NSXPCConnection *_connection;
@@ -23,6 +24,7 @@
 + (Class)_getDistanceDescriptorClass;
 + (id)sharedMediaAnalyzer;
 - (void).cxx_destruct;
+- (void)completeStorage;
 - (id)requestLivePhotoEffectsForAssets:(id)arg1 allowOnDemand:(BOOL)arg2 flags:(unsigned long long)arg3;
 - (id)requestMovieHighlightsForAssets:(id)arg1;
 - (id)requestCallerIdentificationForFaces:(id)arg1;
@@ -40,7 +42,7 @@
 - (BOOL)cancelAnalysisWithRequestID:(int)arg1;
 - (int)requestAnalysisForAsset:(id)arg1 analysisTypes:(unsigned long long)arg2 progressHandler:(CDUnknownBlockType)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)requestAnalysisForAsset:(id)arg1 withExistingAnalysis:(id)arg2 andDatabase:(id)arg3 analysisTypes:(unsigned long long)arg4 allowOndemand:(BOOL)arg5;
-- (id)_analyzeOndemand:(id)arg1 forAnalysisTypes:(unsigned long long)arg2 storeAnalysis:(BOOL)arg3;
+- (id)_analyzeOndemand:(id)arg1 forAnalysisTypes:(unsigned long long)arg2 withExistingAnalysis:(id)arg3 storeAnalysis:(BOOL)arg4;
 - (unsigned long long)_typesToRemove:(unsigned long long)arg1 requested:(unsigned long long)arg2;
 - (unsigned long long)_metaAnalysisTypesForAsset:(id)arg1;
 - (id)_addClassificationResults:(id)arg1 analysis:(id)arg2;

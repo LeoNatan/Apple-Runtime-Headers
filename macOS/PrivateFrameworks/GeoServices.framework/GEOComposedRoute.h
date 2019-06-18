@@ -235,7 +235,7 @@
 - (BOOL)_MapsCarPlay_isArray:(id)arg1 equalTo:(id)arg2;
 @property(readonly, copy) NSString *description;
 - (void)dealloc;
-- (id)_composedStepWithIdentifier:(id)arg1;
+- (void)_enumerateAllStepsWithBlock:(CDUnknownBlockType)arg1;
 - (void)_populateArtworkForSuggestedRoute:(id)arg1 decoderData:(id)arg2;
 - (id)initWithSuggestedRoute:(id)arg1 initializerData:(id)arg2 uniqueRouteID:(id)arg3;
 - (id)initWithSuggestedRoute:(id)arg1 initializerData:(id)arg2 updateRequest:(id)arg3;

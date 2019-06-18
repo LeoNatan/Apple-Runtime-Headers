@@ -11,6 +11,7 @@
 
 @class NSString, NSXPCListener;
 
+__attribute__((visibility("hidden")))
 @interface AudioHistoryAPIProxy : NSObject <NSXPCListenerDelegate, AudioHistoryAPIProxyProtocol>
 {
     struct optional<caulk::synchronized<std::__1::shared_ptr<AudioHistory::API>, caulk::shared_ptr_mutex<std::__1::recursive_mutex>, caulk::empty_atomic_interface<std::__1::shared_ptr<AudioHistory::API>>>> _api;

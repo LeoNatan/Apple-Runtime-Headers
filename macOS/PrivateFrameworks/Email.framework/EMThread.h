@@ -19,8 +19,11 @@
 {
     EMMailboxScope *_mailboxScope;
     id <EMMailboxTypeResolver> _mailboxTypeResolver;
+    NSArray *_mailboxes;
+    NSArray *_mailboxObjectIDs;
     struct os_unfair_lock_s _mailboxScopeLock;
     struct os_unfair_lock_s _mailboxTypeResolverLock;
+    struct os_unfair_lock_s _mailboxesLock;
     BOOL _hasUnflagged;
     BOOL _isVIP;
     BOOL _isBocked;
@@ -37,7 +40,6 @@
     NSIndexSet *_flagColors;
     long long _conversationNotificationLevel;
     unsigned long long _count;
-    NSArray *_mailboxObjectIDs;
     id <EMCollectionItemID> _displayMessageItemID;
     EFQuery *_originatingQuery;
 }
@@ -51,8 +53,6 @@
 @property(readonly) BOOL isToMe;
 - (void)setDisplayMessageItemID:(id)arg1;
 @property(readonly) id <EMCollectionItemID> displayMessageItemID;
-- (void)setMailboxObjectIDs:(id)arg1;
-@property(readonly, copy) NSArray *mailboxObjectIDs;
 - (void)setCount:(unsigned long long)arg1;
 @property(readonly) unsigned long long count;
 - (void)setConversationNotificationLevel:(long long)arg1;
@@ -87,7 +87,10 @@
 @property(readonly) BOOL deleteMovesToTrash;
 @property(readonly) EMMessage *displayMessage;
 @property(readonly) EMObjectID *displayMessageObjectID;
+- (void)setMailboxes:(id)arg1;
 @property(readonly, copy) NSArray *mailboxes;
+- (void)setMailboxObjectIDs:(id)arg1;
+@property(readonly, copy) NSArray *mailboxObjectIDs;
 - (void)setConversationID:(long long)arg1;
 @property(readonly) long long conversationID;
 @property(readonly, nonatomic) id <EMCollectionItemID> itemID;

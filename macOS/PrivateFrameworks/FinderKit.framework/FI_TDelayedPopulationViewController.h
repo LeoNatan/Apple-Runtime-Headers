@@ -6,19 +6,12 @@
 
 #import <FinderKit/FI_TViewController.h>
 
-@class NSProgressIndicator;
-
 __attribute__((visibility("hidden")))
 @interface FI_TDelayedPopulationViewController : FI_TViewController
 {
-    NSProgressIndicator *_busyIndicator;
-    _Bool _browserIsBusy;
 }
 
-@property(nonatomic) _Bool browserIsBusy; // @synthesize browserIsBusy=_browserIsBusy;
-- (void).cxx_destruct;
 - (id)nibName;
-- (void)viewLoaded;
 
 @end
 

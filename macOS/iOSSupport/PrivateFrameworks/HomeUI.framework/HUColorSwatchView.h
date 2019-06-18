@@ -32,6 +32,7 @@
 - (void).cxx_destruct;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)layoutSubviews;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_updateTextColor;
 - (void)_updateLayout;
 @property(retain, nonatomic) UIColor *color;

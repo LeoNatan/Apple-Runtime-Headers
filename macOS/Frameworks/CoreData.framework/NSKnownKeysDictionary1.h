@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     id _values[0];
 }
 
++ (Class)classForKeyedUnarchiver;
 + (BOOL)accessInstanceVariablesDirectly;
 + (id)initWithDictionary:(id)arg1;
 + (id)initWithDictionary:(id)arg1 copyItems:(BOOL)arg2;

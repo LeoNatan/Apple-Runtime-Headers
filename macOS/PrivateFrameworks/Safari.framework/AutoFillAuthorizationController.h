@@ -16,6 +16,7 @@
 }
 
 - (void).cxx_destruct;
+- (BOOL)_isSafariAutoFillEnabledAndTouchIDOnDevice;
 - (void)_didToggleTouchIDToAutoFill:(id)arg1;
 - (void)dealloc;
 - (void)endSheet;

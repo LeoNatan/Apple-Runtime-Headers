@@ -19,10 +19,12 @@
 + (id)contentCategories;
 + (id)outputTypes;
 + (id)ownedTypes;
++ (id)itemWithPrintFormatters:(id)arg1 names:(id)arg2;
 - (void)generateObjectRepresentations:(CDUnknownBlockType)arg1 options:(id)arg2 forClass:(Class)arg3;
 - (void)getPageTextsWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)getPageTextsWithPDFKit:(CDUnknownBlockType)arg1;
 - (void)generateFileRepresentations:(CDUnknownBlockType)arg1 options:(id)arg2 forType:(id)arg3;
+- (void)getPDF:(CDUnknownBlockType)arg1 matchingInputSize:(BOOL)arg2 withMargin:(BOOL)arg3 startingAtPage:(long long)arg4 endingAtPage:(long long)arg5;
 
 @end
 

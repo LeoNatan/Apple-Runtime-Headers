@@ -9,6 +9,7 @@
 @class _UIClickInteraction;
 
 @protocol _UIClickInteractionDelegateInternal <_UIClickInteractionDelegate>
+- (unsigned long long)_clickInteractionDefaultDriverType:(_UIClickInteraction *)arg1;
 - (void)clickInteraction:(_UIClickInteraction *)arg1 didObserveForce:(double)arg2;
 @end
 

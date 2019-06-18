@@ -9,12 +9,12 @@
 @class NSString, UIColor;
 
 @protocol MKInfoCardTheme <NSObject>
+@property(readonly, nonatomic) UIColor *buttonHighlightedColor;
+@property(readonly, nonatomic) UIColor *buttonNormalColor;
 @property(readonly, nonatomic) UIColor *normalBackgroundColor;
 @property(readonly, nonatomic) UIColor *transitChevronBackgroundColor;
 @property(readonly, nonatomic) UIColor *transitDelayedTextColor;
 @property(readonly, nonatomic) UIColor *transitOntimeTextColor;
-@property(readonly, nonatomic) UIColor *headerSecondaryButtonHighlightedColor;
-@property(readonly, nonatomic) UIColor *headerSecondaryButtonNormalColor;
 @property(readonly, nonatomic) UIColor *headerPrimaryButtonHighlightedColor;
 @property(readonly, nonatomic) UIColor *headerPrimaryButtonNormalColor;
 @property(readonly, nonatomic) UIColor *normalActionRowBackgroundPressedColor;

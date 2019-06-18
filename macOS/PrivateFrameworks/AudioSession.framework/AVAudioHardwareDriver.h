@@ -6,16 +6,18 @@
 
 #import <AudioSession/AVAudioHardwareObject.h>
 
-@class NSSet, NSString;
+@class NSArray, NSString;
 
 @interface AVAudioHardwareDriver : AVAudioHardwareObject
 {
 }
 
-@property(readonly, nonatomic) NSSet *boxes;
-@property(readonly, nonatomic) NSSet *clocks;
-@property(readonly, nonatomic) NSSet *devices;
+@property(readonly, nonatomic) NSArray *boxes;
+@property(readonly, nonatomic) NSArray *clocks;
+@property(readonly, nonatomic) NSArray *devices;
 @property(readonly, nonatomic) NSString *bundleID;
+- (id)description;
+- (id)init;
 
 @end
 

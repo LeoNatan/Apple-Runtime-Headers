@@ -20,6 +20,7 @@
 @property(retain) PACropModeDrawingDelegate *drawingDelegate; // @synthesize drawingDelegate=_drawingDelegate;
 - (void).cxx_destruct;
 - (void)compositionForAssetType:(id)arg1 imageItemController:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
+- (CDUnknownBlockType)compositionReplacedFilter;
 - (void)deactivateWithView:(id)arg1;
 - (BOOL)cropImageReady:(CDUnknownBlockType)arg1;
 - (void)updateImageView:(id)arg1 withImage:(id)arg2 forKey:(id)arg3;

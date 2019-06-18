@@ -36,6 +36,7 @@
     // Error parsing type: , name: hasUserReadyTime
     // Error parsing type: , name: hasNetworkQualityReports
     // Error parsing type: , name: errors
+    // Error parsing type: , name: sourcesProvider
     // Error parsing type: , name: didPost
 }
 

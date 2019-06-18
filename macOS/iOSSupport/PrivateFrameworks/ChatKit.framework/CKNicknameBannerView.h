@@ -51,7 +51,10 @@
 - (id)_avatarContactForUpdate:(id)arg1;
 - (void)_updateAvatarView;
 - (void)layoutSubviews;
+@property(readonly, nonatomic) double titleLabelAlignmentX;
+- (double)maxLabelWidthForSize:(struct CGSize)arg1;
 - (struct UIEdgeInsets)layoutMargins;
+- (id)cancelGlyph;
 - (void)setupViews;
 - (struct CGSize)sizeThatFits:(struct CGSize)arg1;
 - (id)initWithFrame:(struct CGRect)arg1 style:(unsigned long long)arg2 updates:(id)arg3 useNamedTitles:(BOOL)arg4 inUpdatesMode:(BOOL)arg5;

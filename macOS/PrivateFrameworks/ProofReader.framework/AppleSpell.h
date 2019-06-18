@@ -206,7 +206,7 @@
 - (id)spellServer:(id)arg1 suggestGuessDictionariesForWordRange:(struct _NSRange)arg2 inString:(id)arg3 inLanguage:(id)arg4 options:(id)arg5 errorModel:(id)arg6;
 - (id)spellServer:(id)arg1 suggestGuessesForWordRange:(struct _NSRange)arg2 inString:(id)arg3 inLanguage:(id)arg4 options:(id)arg5;
 - (id)_spellServer:(id)arg1 suggestGuessesForWordRange:(struct _NSRange)arg2 inString:(id)arg3 inLanguage:(id)arg4 options:(id)arg5 tagger:(id)arg6 taggerIndex:(unsigned long long)arg7 errorModel:(id)arg8 guessesDictionaries:(id)arg9;
-- (void)addLexiconGuessesForWord:(id)arg1 buffer:(char *)arg2 length:(unsigned long long)arg3 language:(id)arg4 minCorrectionLength:(unsigned long long)arg5 minExtendedCorrectionLength:(unsigned long long)arg6 stopAfterFreeInsertions:(BOOL)arg7 toGuesses:(id)arg8;
+- (void)addLexiconGuessesForWord:(id)arg1 buffer:(char *)arg2 length:(unsigned long long)arg3 language:(id)arg4 minCorrectionLength:(unsigned long long)arg5 minExtendedCorrectionLength:(unsigned long long)arg6 isCapitalized:(BOOL)arg7 stopAfterFreeInsertions:(BOOL)arg8 toGuesses:(id)arg9;
 - (BOOL)_checkEnglishGrammarInString:(id)arg1 range:(struct _NSRange)arg2 indexIntoBuffer:(unsigned long long)arg3 bufferLength:(unsigned long long)arg4 language:(id)arg5 connection:(struct _PR_DB_IO *)arg6 sender:(id)arg7 bufIO:(struct _PR_BUF_IO *)arg8 retval:(int *)arg9 errorRange:(struct _NSRange *)arg10 details:(id *)arg11;
 - (id)_detailWithRange:(struct _NSRange)arg1 description:(id)arg2 corrections:(id)arg3;
 - (id)_correctionForSuggestedPhrase:(const char *)arg1 originalBuffer:(const char *)arg2 length:(unsigned long long)arg3;

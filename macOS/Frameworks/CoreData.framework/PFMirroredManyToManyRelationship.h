@@ -20,6 +20,7 @@ __attribute__((visibility("hidden")))
     CKRecordID *_relatedCKRecordID;
 }
 
++ (BOOL)_isValidMirroredRelationshipRecord:(id)arg1 values:(id)arg2;
 + (id)ckRecordNameForOrderedRecordNames:(id)arg1;
 + (id)recordNamesFromManyToManyCKRecordName:(id)arg1;
 + (id)orderedRelationshipsForRecordType:(id)arg1 andManagedObjectModel:(id)arg2;

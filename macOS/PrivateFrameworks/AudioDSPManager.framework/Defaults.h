@@ -10,6 +10,7 @@
 
 @class NSMutableDictionary, NSUserDefaults;
 
+__attribute__((visibility("hidden")))
 @interface Defaults : NSObject <NSCoding>
 {
     NSUserDefaults *_userDefaults;

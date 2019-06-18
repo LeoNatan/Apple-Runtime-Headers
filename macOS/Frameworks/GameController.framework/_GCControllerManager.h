@@ -55,6 +55,7 @@
 - (void)open;
 - (id)controllers;
 - (void)microControllerWithDigitizerX:(float)arg1 withY:(float)arg2 withTimeStamp:(unsigned long long)arg3 touchDown:(BOOL)arg4;
+- (void)removeController:(id)arg1 registryID:(id)arg2;
 - (void)removeController:(id)arg1;
 - (void)removeCoalescedControllerComponent:(id)arg1;
 - (void)controllerWithUDID:(unsigned long long)arg1 setValue0:(float)arg2 setValue1:(float)arg3 setValue2:(float)arg4 setValue3:(float)arg5 forElement:(int)arg6;
@@ -64,6 +65,7 @@
 - (void)controllerWithUDID:(unsigned long long)arg1 setData:(id)arg2;
 - (void)addControllerForAppStoreRemote:(id)arg1;
 - (void)addController:(id)arg1;
+- (BOOL)shouldStoreController:(id)arg1;
 - (void)storeController:(id)arg1;
 - (BOOL)combineSiriRemoteHIDDevicesWithNewController:(id)arg1 existingController:(id)arg2;
 - (void)logController:(id)arg1;

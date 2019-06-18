@@ -114,6 +114,7 @@
 - (double)_pointWidthForFractionalNumberOfColumns:(double)arg1;
 - (double)pointWidthForNumberOfColumns:(long long)arg1;
 @property(readonly, nonatomic) double pointWidthForFullWidthCell;
+@property(readonly, nonatomic) double pointWidthForCurrentViewSizeSubclass;
 @property(readonly, nonatomic) long long numberOfColumns;
 @property(readonly, nonatomic) long long cellSizeSubclass;
 @property(readonly, nonatomic) long long viewSizeSubclass;

@@ -95,6 +95,7 @@
 - (id)initWithPlaceItem:(id)arg1 layout:(unsigned long long)arg2;
 - (id)secondaryNameTimingFunction;
 - (id)titleFont;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

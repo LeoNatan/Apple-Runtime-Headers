@@ -22,9 +22,9 @@
     _Bool _hadSymbolOwnerWhenLastSymbolicated;
     _Bool _symbolOwnerWasDsymWhenLastSymbolicated;
     unsigned long long _numInstructionsWhenLastBulkSymbolicated;
+    unsigned long long _textSegmentLength;
     BOOL _hasTextExecSegment;
     NSUUID *_uuid;
-    unsigned long long _textSegmentLength;
     NSString *_path;
     NSString *_bundleIdentifier;
     NSString *_bundleVersion;
@@ -42,7 +42,6 @@
 + (void)_doDsymPathsWork:(CDUnknownBlockType)arg1;
 + (id)binaryWithCSSymbolOwner:(struct _CSTypeRef)arg1;
 + (id)binaryWithCSSymbolOwner:(struct _CSTypeRef)arg1 isSparse:(BOOL)arg2;
-+ (id)binaryWithUUID:(id)arg1 pid:(int)arg2;
 + (id)binaryWithUUID:(id)arg1;
 + (void)enableImmediateCleanupOfCSSymbolOwners;
 + (void)clearCoreSymbolicationCaches;
@@ -59,12 +58,12 @@
 @property(retain) NSString *bundleIdentifier; // @synthesize bundleIdentifier=_bundleIdentifier;
 @property(retain) NSString *path; // @synthesize path=_path;
 @property BOOL hasTextExecSegment; // @synthesize hasTextExecSegment=_hasTextExecSegment;
-@property unsigned long long textSegmentLength; // @synthesize textSegmentLength=_textSegmentLength;
 @property(readonly) NSUUID *uuid; // @synthesize uuid=_uuid;
 - (void).cxx_destruct;
 @property(readonly, copy) NSString *debugDescription;
 - (void)clearSymbolCache;
 - (void)clearCoreSymbolicationCache;
+@property unsigned long long textSegmentLength;
 - (void)symbolicateAllInstructionsWithOptions:(unsigned long long)arg1 pid:(int)arg2;
 - (id)addSymbolWithOffsetIntoTextSegment:(unsigned long long)arg1 length:(unsigned long long)arg2 name:(id)arg3;
 - (void)gatherInfoWithDataGatheringOptions:(unsigned long long)arg1 pid:(int)arg2;

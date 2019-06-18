@@ -15,10 +15,18 @@
     long long _estimatedPhotosCount;
     long long _estimatedVideosCount;
     long long _estimatedOtherCount;
-    long long _numberOfEnrichedAssetCollections;
+    long long _numberOfEnrichmentStateNotEnrichedAssetCollections;
+    long long _numberOfEnrichmentStateAssetMetadataOnlyAssetCollections;
+    long long _numberOfEnrichmentStateAssetMetadataAndScoreAssetCollections;
+    long long _numberOfEnrichmentStateAssetMetadataAndScenesProcessedAssetCollections;
+    long long _numberOfEnrichmentStateCompleteAssetCollections;
 }
 
-@property(readonly, nonatomic) long long numberOfEnrichedAssetCollections; // @synthesize numberOfEnrichedAssetCollections=_numberOfEnrichedAssetCollections;
+@property(readonly, nonatomic) long long numberOfEnrichmentStateCompleteAssetCollections; // @synthesize numberOfEnrichmentStateCompleteAssetCollections=_numberOfEnrichmentStateCompleteAssetCollections;
+@property(readonly, nonatomic) long long numberOfEnrichmentStateAssetMetadataAndScenesProcessedAssetCollections; // @synthesize numberOfEnrichmentStateAssetMetadataAndScenesProcessedAssetCollections=_numberOfEnrichmentStateAssetMetadataAndScenesProcessedAssetCollections;
+@property(readonly, nonatomic) long long numberOfEnrichmentStateAssetMetadataAndScoreAssetCollections; // @synthesize numberOfEnrichmentStateAssetMetadataAndScoreAssetCollections=_numberOfEnrichmentStateAssetMetadataAndScoreAssetCollections;
+@property(readonly, nonatomic) long long numberOfEnrichmentStateAssetMetadataOnlyAssetCollections; // @synthesize numberOfEnrichmentStateAssetMetadataOnlyAssetCollections=_numberOfEnrichmentStateAssetMetadataOnlyAssetCollections;
+@property(readonly, nonatomic) long long numberOfEnrichmentStateNotEnrichedAssetCollections; // @synthesize numberOfEnrichmentStateNotEnrichedAssetCollections=_numberOfEnrichmentStateNotEnrichedAssetCollections;
 @property(readonly, nonatomic) long long estimatedOtherCount; // @synthesize estimatedOtherCount=_estimatedOtherCount;
 @property(readonly, nonatomic) long long estimatedVideosCount; // @synthesize estimatedVideosCount=_estimatedVideosCount;
 @property(readonly, nonatomic) long long estimatedPhotosCount; // @synthesize estimatedPhotosCount=_estimatedPhotosCount;

@@ -13,6 +13,7 @@
 
 @interface AMPDevice : NSObject <NSCopying, NSSecureCoding>
 {
+    BOOL _ejectable;
     BOOL _needsPairing;
     BOOL _needsUnlock;
     BOOL _wifiConnected;
@@ -50,6 +51,7 @@
 @property(nonatomic, getter=isWiFiConnected) BOOL wifiConnected; // @synthesize wifiConnected=_wifiConnected;
 @property(nonatomic) BOOL needsUnlock; // @synthesize needsUnlock=_needsUnlock;
 @property(nonatomic) BOOL needsPairing; // @synthesize needsPairing=_needsPairing;
+@property(nonatomic, getter=isEjectable) BOOL ejectable; // @synthesize ejectable=_ejectable;
 @property(nonatomic) unsigned long long deviceMode; // @synthesize deviceMode=_deviceMode;
 @property(nonatomic) unsigned long long deviceType; // @synthesize deviceType=_deviceType;
 @property(retain, nonatomic) NSNumber *ecid; // @synthesize ecid=_ecid;

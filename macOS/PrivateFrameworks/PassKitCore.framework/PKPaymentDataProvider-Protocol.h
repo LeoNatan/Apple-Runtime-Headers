@@ -6,10 +6,11 @@
 
 #import <PassKitCore/NSObject-Protocol.h>
 
-@class NSCalendar, NSData, NSDate, NSSet, NSString, PKCommutePlan, PKExpressPassInformation, PKOSVersionRequirement, PKPass, PKPassUpgradeRequest, PKPaymentApplication, PKPaymentBalance, PKPaymentBalanceReminder, PKPaymentPass;
+@class NSCalendar, NSData, NSDate, NSSet, NSString, PKCommutePlan, PKExpressPassInformation, PKOSVersionRequirement, PKPass, PKPassUpgradeRequest, PKPaymentApplication, PKPaymentBalance, PKPaymentBalanceReminder, PKPaymentPass, PKPaymentWebService;
 @protocol PKPaymentDataProviderDelegate;
 
 @protocol PKPaymentDataProvider <NSObject>
+@property(readonly, nonatomic) PKPaymentWebService *paymentWebService;
 @property(readonly, nonatomic) PKOSVersionRequirement *deviceVersion;
 @property(readonly, nonatomic) NSString *deviceClass;
 @property(readonly, nonatomic) NSString *deviceName;

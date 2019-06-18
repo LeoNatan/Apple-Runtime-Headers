@@ -7,10 +7,12 @@
 #import <MetalTools/MTLResource-Protocol.h>
 
 @class MTLTextureDescriptor, NSString;
-@protocol MTLTexture;
+@protocol MTLBuffer, MTLDevice, MTLTexture;
 
 @protocol MTLBuffer <MTLResource>
+@property(readonly) id <MTLBuffer> remoteStorageBuffer;
 @property(readonly) unsigned long long length;
+- (id <MTLBuffer>)newRemoteBufferViewForDevice:(id <MTLDevice>)arg1;
 - (void)removeAllDebugMarkers;
 - (void)addDebugMarker:(NSString *)arg1 range:(struct _NSRange)arg2;
 - (id <MTLTexture>)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1 offset:(unsigned long long)arg2 bytesPerRow:(unsigned long long)arg3;

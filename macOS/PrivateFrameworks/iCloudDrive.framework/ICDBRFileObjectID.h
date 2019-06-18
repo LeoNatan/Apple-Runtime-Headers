@@ -16,12 +16,14 @@
 {
     unsigned long long _rowID;
     unsigned char _type;
+    BOOL _isRemapItem;
 }
 
 + (BOOL)supportsSecureCoding;
 + (id)newFromSqliteStatement:(struct sqlite3_stmt *)arg1 atIndex:(int)arg2;
 + (id)newFromSqliteValue:(struct sqlite3_value *)arg1;
 + (id)fileObjectIDWithString:(id)arg1;
+@property(nonatomic) BOOL isRemapItem; // @synthesize isRemapItem=_isRemapItem;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToFileObjectID:(id)arg1;

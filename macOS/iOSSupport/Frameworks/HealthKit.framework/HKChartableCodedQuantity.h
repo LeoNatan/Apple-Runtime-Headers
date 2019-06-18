@@ -8,11 +8,11 @@
 
 #import <HealthKit/NSCopying-Protocol.h>
 
-@class HKCodedQuantity, HKMedicalCoding, HKQuantity, NSNumber;
+@class HKCodedQuantity, HKQuantity, NSArray, NSNumber;
 
 @interface HKChartableCodedQuantity : NSObject <NSCopying>
 {
-    HKMedicalCoding *_coding;
+    NSArray *_codings;
     HKQuantity *_quantity;
     NSNumber *_rangeLow;
     NSNumber *_rangeHigh;
@@ -23,14 +23,14 @@
 
 + (id)converter;
 + (id)_valueFromCodedQuantity:(id)arg1 inUnit:(id)arg2 error:(id *)arg3;
-+ (id)chartableCodedQuantityWithCoding:(id)arg1 originalCodedQuantity:(id)arg2 originalRangeLowCodedQuantity:(id)arg3 originalRangeHighCodedQuantity:(id)arg4 error:(id *)arg5;
++ (id)chartableCodedQuantityWithCodings:(id)arg1 originalCodedQuantity:(id)arg2 originalRangeLowCodedQuantity:(id)arg3 originalRangeHighCodedQuantity:(id)arg4 error:(id *)arg5;
 @property(copy, nonatomic) HKCodedQuantity *originalRangeHighCodedQuantity; // @synthesize originalRangeHighCodedQuantity=_originalRangeHighCodedQuantity;
 @property(copy, nonatomic) HKCodedQuantity *originalRangeLowCodedQuantity; // @synthesize originalRangeLowCodedQuantity=_originalRangeLowCodedQuantity;
 @property(copy, nonatomic) HKCodedQuantity *originalCodedQuantity; // @synthesize originalCodedQuantity=_originalCodedQuantity;
 @property(readonly, copy, nonatomic) NSNumber *rangeHigh; // @synthesize rangeHigh=_rangeHigh;
 @property(readonly, copy, nonatomic) NSNumber *rangeLow; // @synthesize rangeLow=_rangeLow;
 @property(readonly, copy, nonatomic) HKQuantity *quantity; // @synthesize quantity=_quantity;
-@property(readonly, copy, nonatomic) HKMedicalCoding *coding; // @synthesize coding=_coding;
+@property(readonly, copy, nonatomic) NSArray *codings; // @synthesize codings=_codings;
 - (void).cxx_destruct;
 - (id)description;
 - (id)copyWithZone:(struct _NSZone *)arg1;
@@ -40,7 +40,7 @@
 @property(readonly, nonatomic) BOOL hasRange;
 - (BOOL)isCompatibleWithUnit:(id)arg1;
 - (id)chartableCodedQuantityInUnit:(id)arg1 error:(id *)arg2;
-- (id)initWithCoding:(id)arg1 quantity:(id)arg2 rangeLow:(id)arg3 rangeHigh:(id)arg4;
+- (id)initWithCodings:(id)arg1 quantity:(id)arg2 rangeLow:(id)arg3 rangeHigh:(id)arg4;
 - (id)init;
 
 @end

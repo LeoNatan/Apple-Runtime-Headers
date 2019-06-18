@@ -17,7 +17,7 @@
 @property(readonly) BOOL is64bit;
 @property(readonly) unsigned int task;
 - (NSString *)symbolicatedBacktraceForFrames:(unsigned long long *)arg1 frameCount:(long long)arg2 options:(unsigned long long)arg3;
-- (NSString *)symbolicatedBacktraceForStackID:(unsigned long long)arg1 isLiteZone:(BOOL)arg2 options:(unsigned long long)arg3;
+- (NSString *)symbolicatedBacktraceForStackID:(unsigned long long)arg1 options:(unsigned long long)arg2;
 - (NSString *)symbolicatedBacktraceForNode:(unsigned int)arg1 nodeDetails:(CDStruct_599faf0f)arg2 isLiteZone:(BOOL)arg3 options:(unsigned long long)arg4;
 - (VMUVMRegion *)vmuVMRegionForAddress:(unsigned long long)arg1;
 - (NSString *)sourceFileNameAndLineNumberForPCaddress:(unsigned long long)arg1 fullPath:(BOOL)arg2;
@@ -41,5 +41,6 @@
 - (CDStruct_69d7cc99)liteMSLPayloadforMallocAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
 - (unsigned long long)liteModeStackIDforVMregionAddress:(unsigned long long)arg1;
 - (unsigned long long)liteModeStackIDforAddress:(unsigned long long)arg1 size:(unsigned long long)arg2;
+- (unsigned long long)stackIDForNode:(unsigned int)arg1;
 @end
 

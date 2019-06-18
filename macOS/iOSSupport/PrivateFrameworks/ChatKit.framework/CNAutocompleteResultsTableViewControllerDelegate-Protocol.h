@@ -6,13 +6,13 @@
 
 #import <ChatKit/NSObject-Protocol.h>
 
-@class CNAutocompleteResultsTableViewController, CNComposeRecipient, NSArray, UIColor;
+@class CNAutocompleteResultsTableViewController, CNComposeRecipient, NSArray;
 
 @protocol CNAutocompleteResultsTableViewControllerDelegate <NSObject>
 
 @optional
+- (void)autocompleteResultsController:(CNAutocompleteResultsTableViewController *)arg1 didAskToRemoveRecipient:(CNComposeRecipient *)arg2;
 - (void)autocompleteResultsController:(CNAutocompleteResultsTableViewController *)arg1 tintColorForRecipient:(CNComposeRecipient *)arg2 completion:(void (^)(UIColor *))arg3;
-- (UIColor *)autocompleteResultsController:(CNAutocompleteResultsTableViewController *)arg1 tintColorForRecipient:(CNComposeRecipient *)arg2;
 - (CNComposeRecipient *)autocompleteResultsController:(CNAutocompleteResultsTableViewController *)arg1 preferredRecipientForRecipients:(NSArray *)arg2;
 - (void)autocompleteResultsController:(CNAutocompleteResultsTableViewController *)arg1 didRequestInfoAboutRecipient:(CNComposeRecipient *)arg2;
 - (void)autocompleteResultsController:(CNAutocompleteResultsTableViewController *)arg1 didSelectRecipient:(CNComposeRecipient *)arg2 atIndex:(unsigned long long)arg3;

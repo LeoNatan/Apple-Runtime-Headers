@@ -27,7 +27,7 @@
 - (void)userNotificationCenter:(id)arg1 didReceiveNotificationResponse:(id)arg2 withCompletionHandler:(CDUnknownBlockType)arg3;
 - (id)insertRequestWithTitle:(id)arg1 snapshotData:(id)arg2 message:(id)arg3 requestIdentifier:(id)arg4 bulletinType:(unsigned long long)arg5 actionURL:(id)arg6 bulletinContext:(struct NSDictionary *)arg7 actionContext:(struct NSDictionary *)arg8;
 - (id)createNotificationAttachmentWithIdentifier:(id)arg1 forFileAtPath:(id)arg2;
-- (id)showNotificationWithTitle:(id)arg1 body:(id)arg2 threadIdentifier:(id)arg3 categoryIdentifier:(id)arg4 requestIdentifier:(id)arg5 attachments:(id)arg6 userInfo:(id)arg7 shouldIgnoreDoNotDisturb:(BOOL)arg8;
+- (id)showNotificationWithTitle:(id)arg1 body:(id)arg2 threadIdentifier:(id)arg3 categoryIdentifier:(id)arg4 requestIdentifier:(id)arg5 date:(id)arg6 attachments:(id)arg7 userInfo:(id)arg8 shouldIgnoreDoNotDisturb:(BOOL)arg9;
 - (void)registerNotificationCategories;
 - (id)sortedRequestsByDate;
 - (void)_removeRequestWithIdentifiersFromNotificationCenter:(id)arg1;

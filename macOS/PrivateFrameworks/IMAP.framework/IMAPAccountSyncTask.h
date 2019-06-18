@@ -6,13 +6,13 @@
 
 #import <IMAP/IMAPTask.h>
 
-#import <IMAP/ECSignpostable-Protocol.h>
+#import <IMAP/EFSignpostable-Protocol.h>
 #import <IMAP/IMAPFetchMailboxStatusOperationDelegate-Protocol.h>
 
 @class IMAPTaskManager, NSMutableArray, NSMutableSet, NSProgress, NSString;
 @protocol IMAPAccount;
 
-@interface IMAPAccountSyncTask : IMAPTask <ECSignpostable, IMAPFetchMailboxStatusOperationDelegate>
+@interface IMAPAccountSyncTask : IMAPTask <EFSignpostable, IMAPFetchMailboxStatusOperationDelegate>
 {
     NSMutableArray *_mailboxesNeedingStatus;
     NSMutableSet *_missedMailboxes;

@@ -8,6 +8,7 @@
 
 @class NSManagedObjectContext;
 
+__attribute__((visibility("hidden")))
 @interface IOStreamFormatMOFetchUtil : NSObject
 {
     NSManagedObjectContext *mManagedObjectContext;

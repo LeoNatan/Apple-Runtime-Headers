@@ -53,7 +53,8 @@
 - (id)localizedDetailedGeoDescriptionForRTL:(BOOL)arg1;
 @property(readonly, nonatomic) NSString *localizedGeoDescription;
 @property(readonly, nonatomic) BOOL isInCloud;
-- (id)pasteboardReference;
+- (id)_faceNamesStringForAsset;
+- (id)px_accessibilityLabelForStyles:(unsigned long long)arg1;
 @property(readonly, nonatomic) BOOL requiresConfidentiality;
 - (BOOL)px_isConfidentialAdjustmentsVersion:(id)arg1;
 - (BOOL)px_isSupportedApp:(id)arg1;

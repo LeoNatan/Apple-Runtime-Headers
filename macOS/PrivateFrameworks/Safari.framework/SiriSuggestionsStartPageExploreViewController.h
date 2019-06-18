@@ -53,6 +53,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)_shouldShowWelcomeView;
 - (void)_didSelectWelcomeViewCloseButton:(id)arg1;
 - (void)_uninstallWelcomeView;
+- (id)_welcomeString;
 - (void)_installWelcomeView;
 - (void)_fetchHandoffResult;
 - (unsigned long long)_existingHandoffRecommendationIndex;

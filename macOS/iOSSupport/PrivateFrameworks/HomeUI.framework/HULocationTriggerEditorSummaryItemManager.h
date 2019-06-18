@@ -36,6 +36,7 @@
 - (id)_buildItemProvidersForHome:(id)arg1;
 - (id)_userPickerOptions;
 - (void)updateLocationEventWithRegion:(id)arg1;
+- (BOOL)canChangeLocation;
 - (BOOL)canAddRegionToTriggerBuilder;
 - (id)locationEventRegion;
 - (BOOL)isInstructionsItem:(id)arg1;

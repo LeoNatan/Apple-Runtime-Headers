@@ -15,6 +15,7 @@
 }
 
 + (id)keyPathsForValuesAffectingEditMode;
++ (id)keyPathsForValuesAffectingCurrentPreviewItemIndex;
 + (BOOL)sharedPreviewPanelIsControlledByApplication;
 + (BOOL)sharedPreviewPanelExists;
 + (id)newPreviewPanel;

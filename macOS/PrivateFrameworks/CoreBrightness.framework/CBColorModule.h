@@ -46,6 +46,7 @@ __attribute__((visibility("hidden")))
         _Bool whitepointAvailable;
         float harmonyStrength;
         float harmonyFixedStrength;
+        _Bool presetDisableHarmony;
     } _colorStruct;
     _Bool _fadeInProgress;
     _Bool _endRamp;
@@ -72,8 +73,8 @@ __attribute__((visibility("hidden")))
 - (id)newArrayFromIntegers:(int *)arg1 size:(int)arg2;
 - (id)newArrayFromDoubles:(double *)arg1 size:(int)arg2;
 - (BOOL)isDFR;
-- (void)reportToAggd:(CDStruct_b1cf45a1 *)arg1;
-- (void)commitPowerLogReport:(CDStruct_b1cf45a1 *)arg1;
+- (void)reportToAggd:(CDStruct_97eeab40 *)arg1;
+- (void)commitPowerLogReport:(CDStruct_97eeab40 *)arg1;
 - (void)reportCommitWithStop:(BOOL)arg1;
 - (void)reportInitialize;
 - (void)reportResetTimerWithStop:(BOOL)arg1;
@@ -112,6 +113,7 @@ __attribute__((visibility("hidden")))
 - (void)handleHIDEventInternal:(struct __IOHIDEvent *)arg1 from:(struct __IOHIDServiceClient *)arg2;
 - (void)processColorSample:(id)arg1;
 - (_Bool)setPropertyInternal:(id)arg1 forKey:(id)arg2;
+- (_Bool)displayPresetHarmonyHandler:(id)arg1;
 - (BOOL)colorFilterModeHandler:(id)arg1;
 - (BOOL)CoreDisplayInitialisedPropertyHandler:(id)arg1;
 - (BOOL)CAModeMapping:(id)arg1;

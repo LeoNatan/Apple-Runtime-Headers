@@ -6,24 +6,28 @@
 
 #import <objc/NSObject.h>
 
+#import <Contacts/NSCopying-Protocol.h>
 #import <Contacts/NSSecureCoding-Protocol.h>
 
-@class CNPromise, NSDictionary, NSNumber;
+@class CNPromise, NSDictionary, NSNumber, NSSet;
 
-@interface CNContactMatchInfo : NSObject <NSSecureCoding>
+@interface CNContactMatchInfo : NSObject <NSSecureCoding, NSCopying>
 {
     BOOL _matchedNameProperty;
     NSNumber *_relevanceScore;
     NSDictionary *_matchedProperties;
+    NSSet *_matchedTerms;
     CNPromise *_excerpt;
 }
 
 + (BOOL)supportsSecureCoding;
 @property BOOL matchedNameProperty; // @synthesize matchedNameProperty=_matchedNameProperty;
 @property(retain) CNPromise *excerpt; // @synthesize excerpt=_excerpt;
+@property(retain) NSSet *matchedTerms; // @synthesize matchedTerms=_matchedTerms;
 @property(copy) NSDictionary *matchedProperties; // @synthesize matchedProperties=_matchedProperties;
 @property(copy) NSNumber *relevanceScore; // @synthesize relevanceScore=_relevanceScore;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 

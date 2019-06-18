@@ -40,6 +40,7 @@
 - (BOOL)_canCommitTriggerBuilder;
 - (id)_durationEventBuilder;
 - (void)_updateTableHeaderConfiguration;
+- (void)serviceGridViewController:(id)arg1 didTapItem:(id)arg2;
 - (void)triggerSummaryActionGridViewController:(id)arg1 didUpdateTriggerBuilder:(id)arg2;
 - (BOOL)textView:(id)arg1 shouldInteractWithURL:(id)arg2 inRange:(struct _NSRange)arg3 interaction:(long long)arg4;
 - (void)durationPicker:(id)arg1 didSelectDuration:(id)arg2;

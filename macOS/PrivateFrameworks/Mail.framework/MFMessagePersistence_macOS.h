@@ -21,6 +21,7 @@
 @property(retain, nonatomic) id <EFScheduler> contentLoadScheduler; // @synthesize contentLoadScheduler=_contentLoadScheduler;
 @property(retain, nonatomic) MFMessageTransformer *libraryMessageTransformer; // @synthesize libraryMessageTransformer=_libraryMessageTransformer;
 - (void).cxx_destruct;
+- (id)groupedMessagesCountByMailboxMatchingQuery:(unsigned long long)arg1 variable:(id)arg2;
 - (unsigned int)_optionsForQuery:(id)arg1;
 - (unsigned int)_loadOptions;
 - (id)_criterionForMailbox:(id)arg1;
@@ -31,8 +32,9 @@
 - (id)_messageCriterionFromPredicate:(id)arg1;
 - (id)_criterionForQuery:(id)arg1;
 - (id)_libraryMessageForMessageObjectID:(id)arg1;
-- (void)requestSummaryForMessageObjectID:(id)arg1;
+- (id)requestSummaryForMessageObjectID:(id)arg1;
 - (id)requestContentForMessageObjectID:(id)arg1 options:(id)arg2 delegate:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (id)mailboxDatabaseIDsForMailboxObjectIDs:(id)arg1;
 - (id)persistedMessageForOutgoingMessage:(id)arg1 isDraft:(BOOL)arg2;
 - (id)persistedMessagesForDatabaseIDs:(id)arg1;
 - (id)messagesForPersistedMessages:(id)arg1 mailboxScope:(id)arg2;

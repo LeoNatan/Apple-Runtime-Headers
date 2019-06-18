@@ -11,35 +11,23 @@ __attribute__((visibility("hidden")))
 {
     unsigned int _localSwitches;
     unsigned int _remoteSwitches;
+    unsigned int _negotiatedSwitches;
 }
 
+@property unsigned int negotiatedSwitches; // @synthesize negotiatedSwitches=_negotiatedSwitches;
 @property unsigned int remoteSwitches; // @synthesize remoteSwitches=_remoteSwitches;
 @property unsigned int localSwitches; // @synthesize localSwitches=_localSwitches;
-- (BOOL)lowNetworkModeEnabled;
-- (BOOL)wifiAssistStatusBarEnabled;
-- (BOOL)wifiAssistBudgetStatusEnabled;
-- (BOOL)wifiAssistDuplicationEnabled;
-- (BOOL)disableSIPEnabled;
-- (BOOL)secureMessagingEnabled;
-- (BOOL)updatedAFRCHeaderEnabled;
-- (BOOL)fecHeaderV1Enabled;
-- (BOOL)iRATMetricsEnabled;
-- (BOOL)cellularLowTierRedundancyEnabled;
-- (BOOL)wifiLowTierRedundancyEnabled;
-- (BOOL)heifHevcLivePhotosEnabled;
-- (BOOL)viewpointCorrectionEnabled;
-- (BOOL)hevcWifiTiersEnabled;
-- (BOOL)allowBurstyLossRampDownEnabled;
-- (BOOL)duplicateImportantPktsEnabled;
-- (BOOL)preWarmCellEnabled;
-- (BOOL)iRATRtpEnabled;
-- (BOOL)fastMediaDuplicationEnabled;
-- (BOOL)rampDownBWDropEnabled;
-- (BOOL)vplrFecEnabled;
-- (BOOL)lowFpsVideoEnabled;
-- (BOOL)highFecEnabled;
-- (BOOL)alwaysOnAudioRedundancyEnabled;
-- (BOOL)preferRelayOverP2P;
+- (id)description;
+- (BOOL)isLocalSwitchEnabled:(unsigned int)arg1;
+- (BOOL)isSwitchEnabled:(unsigned int)arg1;
+- (void)negotiateSwitches;
+- (void)setupLocalDuplicationTestGroupSwitches;
+- (void)setupLocalRateControlTestGroupSwitches;
+- (void)setupLocalNetworkTestGroupSwitches;
+- (void)setupLocalVideoTestGroupSwitches;
+- (void)setupLocalAudioTestGroupSwitches;
+- (void)setupLocalABTestSwitches;
+- (void)setupLocalOnOffSwitches;
 - (unsigned int)initializeLocalSwitches;
 
 @end

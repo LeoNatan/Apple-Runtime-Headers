@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
     _UISearchBarPromptContainerView *_promptContainerView;
     _UISearchBarScopeContainerView *_scopeBarContainerView;
     struct UIEdgeInsets _effectiveContentInset;
+    unsigned long long _overriddenContentInsetEdges;
     _UISearchBarAppearanceStorage *_appearanceStorage;
     UIBarButtonItem *_animatedAppearanceBarButtonItem;
     UINavigationItem *_searchNavigationItem;
@@ -76,7 +77,7 @@ __attribute__((visibility("hidden")))
     _UISearchBarLayout *_currentLayout;
     _UISearchBarLayout *_prospectiveLayout;
     _UISearchBarTransitionerBase *_transitioner;
-    struct UIEdgeInsets _minimumContentInsetPrivate;
+    struct UIEdgeInsets _contentInsetPrivateMinOrOverride;
 }
 
 @property(retain, nonatomic) _UISearchBarTransitionerBase *transitioner; // @synthesize transitioner=_transitioner;
@@ -90,7 +91,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) _UINavigationBarTitleViewOverlayRects *navBarTitleViewOverlayRects; // @synthesize navBarTitleViewOverlayRects=_navBarTitleViewOverlayRects;
 @property(nonatomic) long long navBarTitleViewLocation; // @synthesize navBarTitleViewLocation=_navBarTitleViewLocation;
 @property(nonatomic) double tableViewIndexWidth; // @synthesize tableViewIndexWidth=_tableViewIndexWidth;
-@property(nonatomic) struct UIEdgeInsets minimumContentInset; // @synthesize minimumContentInset=_minimumContentInsetPrivate;
+@property(nonatomic) struct UIEdgeInsets minimumContentInset; // @synthesize minimumContentInset=_contentInsetPrivateMinOrOverride;
 @property(readonly, nonatomic) struct UIEdgeInsets effectiveContentInset; // @synthesize effectiveContentInset=_effectiveContentInset;
 @property(nonatomic) unsigned long long scopeBarPosition; // @synthesize scopeBarPosition=_scopeBarPosition;
 @property(retain, nonatomic) UIColor *barTintColor; // @synthesize barTintColor=_barTintColor;
@@ -150,6 +151,8 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) double scopeBarHeight;
 @property(readonly, nonatomic) struct UIEdgeInsets scopeBarInsets;
 - (struct UIEdgeInsets)recalculatedEffectiveContentInsetForLayoutState:(long long)arg1;
+- (void)getOverrideContentInsets:(struct UIEdgeInsets *)arg1 overriddenEdges:(unsigned long long *)arg2;
+- (void)setOverrideContentInsets:(struct UIEdgeInsets)arg1 forRectEdges:(unsigned long long)arg2;
 - (void)updateEffectiveContentInset;
 @property(readonly, nonatomic) BOOL alwaysUsesLayoutMarginsForHorizontalContentInset;
 - (void)getTopInset:(double *)arg1 bottomInset:(double *)arg2 forBarMetrics:(long long)arg3 barPosition:(long long)arg4 layoutState:(long long)arg5;

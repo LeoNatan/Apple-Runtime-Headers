@@ -13,15 +13,23 @@ __attribute__((visibility("hidden")))
 {
     NSDictionary *_responseDictionary;
     AMSURLTaskInfo *_taskInfo;
+    long long _verifyType;
 }
 
-+ (id)_dialogRequestFromPayload:(id)arg1;
++ (long long)_verifyTypeFromPayload:(id)arg1;
++ (id)_dialogRequestForCVVFromPayload:(id)arg1 verifyType:(long long)arg2;
++ (id)_dialogRequestForCarrierFromPayload:(id)arg1 verifyType:(long long)arg2;
 + (BOOL)isVerifyPurchasePayload:(id)arg1;
+@property long long verifyType; // @synthesize verifyType=_verifyType;
 @property(retain) AMSURLTaskInfo *taskInfo; // @synthesize taskInfo=_taskInfo;
 @property(retain) NSDictionary *responseDictionary; // @synthesize responseDictionary=_responseDictionary;
 - (void).cxx_destruct;
-- (void)_runRequestForCode:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (id)handleDialogResult:(id)arg1 error:(id)arg2;
+- (id)_runCVVRequestForCode:(id)arg1 error:(id *)arg2;
+- (id)_runCarrierVerifyCode:(id)arg1 error:(id *)arg2;
+- (id)_runCarrierNewCodeWithError:(id *)arg1;
+- (id)_handleCVVDialogResult:(id)arg1 shouldReattempt:(char *)arg2;
+- (id)_handleCarrierDialogResult:(id)arg1 shouldReattempt:(char *)arg2;
+- (id)performWithTaskInfo:(id)arg1;
 - (id)initWithPayload:(id)arg1 taskInfo:(id)arg2;
 
 @end

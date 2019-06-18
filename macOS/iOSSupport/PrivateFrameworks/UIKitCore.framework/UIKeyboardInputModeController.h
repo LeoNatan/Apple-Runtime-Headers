@@ -40,6 +40,8 @@
     UIKeyboardInputMode *_lastUsedInputMode;
     NSString *_inputModeContextIdentifier;
     id <UIKeyboardInputModeControllerDelegate> _delegate;
+    NSArray *_userSelectableKeyboardInputModes;
+    NSArray *_userSelectableKeyboardInputModeIdentifiers;
     UIKeyboardInputMode *_nextInputModeToUse;
     UIKeyboardInputMode *_currentUsedInputMode;
     id _extensionMatchingContext;
@@ -51,6 +53,8 @@
 @property(retain, nonatomic) id extensionMatchingContext; // @synthesize extensionMatchingContext=_extensionMatchingContext;
 @property(retain, nonatomic) UIKeyboardInputMode *currentUsedInputMode; // @synthesize currentUsedInputMode=_currentUsedInputMode;
 @property(retain, nonatomic) UIKeyboardInputMode *nextInputModeToUse; // @synthesize nextInputModeToUse=_nextInputModeToUse;
+@property(retain) NSArray *userSelectableKeyboardInputModeIdentifiers; // @synthesize userSelectableKeyboardInputModeIdentifiers=_userSelectableKeyboardInputModeIdentifiers;
+@property(retain) NSArray *userSelectableKeyboardInputModes; // @synthesize userSelectableKeyboardInputModes=_userSelectableKeyboardInputModes;
 @property(nonatomic) id <UIKeyboardInputModeControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(nonatomic) BOOL shouldRunContinuousDiscovery; // @synthesize shouldRunContinuousDiscovery=_shouldRunContinuousDiscovery;
 @property(copy, nonatomic) NSString *inputModeContextIdentifier; // @synthesize inputModeContextIdentifier=_inputModeContextIdentifier;
@@ -145,6 +149,8 @@
 - (id)_systemInputModePassingLanguageTest:(CDUnknownBlockType)arg1;
 - (id)_systemInputModePassingTest:(CDUnknownBlockType)arg1;
 @property(nonatomic) UIKeyboardInputMode *currentInputModeInPreference;
+@property(readonly) NSArray *activeUserSelectableInputModeIdentifiers;
+- (id)activeUserSelectableInputModes;
 @property(readonly) NSArray *activeInputModeIdentifiers;
 - (id)activeInputModes;
 - (id)inputModeWithIdentifier:(id)arg1;
@@ -156,6 +162,9 @@
 @property(readonly) NSArray *enabledInputModeLanguages;
 @property(readonly) NSArray *normalizedEnabledInputModeIdentifiers;
 @property(readonly) NSArray *enabledInputModeIdentifiers;
+- (void)updateUserSelectableInputModes;
+- (id)userSelectableInputModeIdentifiersFromInputModeIdentifiers:(id)arg1;
+- (id)userSelectableInputModesFromInputModes:(id)arg1;
 - (id)enabledInputModeIdentifiers:(BOOL)arg1;
 - (void)saveDeviceUnlockPasscodeInputModes;
 @property(readonly) NSArray *inputModesWithoutHardwareSupport;

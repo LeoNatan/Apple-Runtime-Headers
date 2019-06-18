@@ -7,5 +7,6 @@
 #import <AudioResourceArbitration/aura_VirtualPort-Protocol.h>
 
 @protocol aura_VirtualPortPriv <aura_VirtualPort>
+@property(readonly, nonatomic) weak_ptr_754246e0 reactor;
 @end
 

@@ -8,7 +8,7 @@
 
 #import <Safari/BrowserBookmarkImporterDelegate-Protocol.h>
 
-@class BrowserBookmarkImporter, BrowserCredentialImporter, BrowserHistoryImporter, NSString, NSURL, NSXPCConnection;
+@class BrowserBookmarkImporter, BrowserCredentialImporter, BrowserHistoryImporter, NSBundle, NSString, NSURL, NSXPCConnection;
 @protocol OS_dispatch_queue;
 
 __attribute__((visibility("hidden")))
@@ -21,6 +21,8 @@ __attribute__((visibility("hidden")))
     BOOL _importHasBeenCanceled;
     unsigned long long _numberOfResumptionAttempts;
     NSString *_sourceBrowserBundleIdentifier;
+    unsigned long long _cachedDataTypes;
+    NSBundle *_cachedBundle;
     NSXPCConnection *_browserDataImporterServiceConnection;
     BrowserBookmarkImporter *_bookmarkImporter;
     BrowserHistoryImporter *_historyImporter;
@@ -59,7 +61,9 @@ __attribute__((visibility("hidden")))
 - (void)_resumeInterruptedImportForTestDrive:(BOOL)arg1;
 - (void)resumeInterruptedImportForTestDrive:(BOOL)arg1;
 - (void)resumeInterruptedImport;
-- (void)_importDataTypes:(unsigned long long)arg1 fromBrowserWithApplicationBundle:(id)arg2 forTestDriveImport:(BOOL)arg3;
+- (void)_importDataTypes:(unsigned long long)arg1 fromBrowserWithApplicationBundle:(id)arg2;
+- (void)performTestDriveImport;
+- (void)cacheTestDriveImportOfDataTypes:(unsigned long long)arg1 fromBrowserWithApplicationBundle:(id)arg2;
 - (void)performTestDriveImportOfDataTypes:(unsigned long long)arg1 fromBrowserWithApplicationBundle:(id)arg2;
 - (void)importDataTypes:(unsigned long long)arg1 fromBrowserWithApplicationBundle:(id)arg2;
 - (void)importDataTypesFromFirefox:(unsigned long long)arg1;

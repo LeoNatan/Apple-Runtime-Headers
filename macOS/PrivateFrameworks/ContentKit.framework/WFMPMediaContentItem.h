@@ -4,13 +4,13 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <ContentKit/WFRemoteContentItem.h>
+#import <ContentKit/WFGenericFileContentItem.h>
 
 #import <ContentKit/WFContentItemClass-Protocol.h>
 
-@class NSString;
+@class MPMediaItem, NSString;
 
-@interface WFMPMediaContentItem : WFRemoteContentItem <WFContentItemClass>
+@interface WFMPMediaContentItem : WFGenericFileContentItem <WFContentItemClass>
 {
 }
 
@@ -23,11 +23,17 @@
 + (id)contentCategories;
 + (id)outputTypes;
 + (id)ownedTypes;
++ (void)runQuery:(id)arg1 withItems:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 + (id)propertyBuilders;
+- (id)generateObjectRepresentationForClass:(Class)arg1 options:(id)arg2 error:(id *)arg3;
+- (id)preferredFileType;
+- (void)getPreferredFileSize:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic) NSString *albumTitle;
 @property(readonly, nonatomic) NSString *artist;
 @property(readonly, nonatomic) NSString *title;
-- (id)outputTypes;
+- (id)additionalRepresentationsForSerialization;
+- (id)assetURL;
+@property(readonly, nonatomic) MPMediaItem *mediaItem;
 
 @end
 

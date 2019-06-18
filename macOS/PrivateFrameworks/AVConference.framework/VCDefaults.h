@@ -95,7 +95,7 @@ __attribute__((visibility("hidden")))
 @property(readonly) int videoStreamRateControlAlgorithm;
 @property(readonly) BOOL videoStreamRateControlDumpEnabled;
 @property(readonly) BOOL enableHEIFAndHEVCForMoments;
-@property(readonly) int encodingTilesPerVideoFrame;
+@property(readonly) int tilesPerVideoFrame;
 @property(readonly) BOOL forceVideoStreamLowLatency;
 @property(readonly) int forceVideoStreamPayload;
 @property(readonly) BOOL forceVideoStreamDisableBitrateCap;

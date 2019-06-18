@@ -18,8 +18,10 @@
     id <HFHomeKitSettingsVendor> _homeKitSettingsVendor;
     id <HFCharacteristicValueSource> _valueSource;
     id <HFMediaProfileContainer> _mediaProfileContainer;
+    long long _mediaAccessoryItemType;
 }
 
+@property(readonly, nonatomic) long long mediaAccessoryItemType; // @synthesize mediaAccessoryItemType=_mediaAccessoryItemType;
 @property(readonly, nonatomic) id <HFMediaProfileContainer> mediaProfileContainer; // @synthesize mediaProfileContainer=_mediaProfileContainer;
 @property(readonly, nonatomic) id <HFCharacteristicValueSource> valueSource; // @synthesize valueSource=_valueSource;
 @property(readonly, nonatomic) id <HFHomeKitSettingsVendor> homeKitSettingsVendor; // @synthesize homeKitSettingsVendor=_homeKitSettingsVendor;
@@ -45,8 +47,11 @@
 - (BOOL)isAppleTV;
 - (BOOL)isContainedWithinMediaSystem;
 - (BOOL)isHomePodAndIsInMediaSystem;
+- (BOOL)isSingleHomePod;
 - (BOOL)isHomePod;
 - (BOOL)isHomePodMediaSystem;
+@property(readonly, nonatomic) BOOL supportsMediaAction;
+@property(readonly, nonatomic) BOOL allowsAppleMusicAccount;
 @property(readonly, nonatomic) NSSet *availableSoftwareUpdates;
 @property(readonly, nonatomic) NSSet *accessoriesSupportingSoftwareUpdate;
 @property(readonly, nonatomic) BOOL isContainedWithinItemGroup;

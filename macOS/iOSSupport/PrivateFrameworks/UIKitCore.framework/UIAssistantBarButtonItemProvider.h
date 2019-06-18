@@ -10,8 +10,11 @@
 {
 }
 
++ (id)unmodifiableSystemAssistantItem;
 + (id)systemDefaultAssistantItem;
 + (id)barButtonItemForAssistantItemStyle:(long long)arg1 target:(id)arg2;
++ (BOOL)_isShowKeyboardButtonVisible;
++ (BOOL)_isDismissButtonVisible;
 
 @end
 

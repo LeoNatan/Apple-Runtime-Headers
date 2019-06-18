@@ -21,7 +21,6 @@
     BOOL _isVibrant;
     EKEvent *_occurrence;
     UIColor *_displayColor;
-    NSString *_location;
     UITraitCollection *_traitCollection;
     long long _birthdayCount;
     double _travelTime;
@@ -36,6 +35,7 @@
 
 + (struct UIEdgeInsets)defaultPadding;
 + (BOOL)shouldShowTimeStringForOccurrence:(id)arg1;
++ (id)languageAwareInsetsCache;
 + (id)locationCache;
 @property(nonatomic) struct UIEdgeInsets padding; // @synthesize padding=_padding;
 @property(nonatomic) struct CGRect textRect; // @synthesize textRect=_textRect;
@@ -80,7 +80,7 @@
 @property(readonly, nonatomic) UIColor *titleTextColor;
 @property(readonly, nonatomic) NSString *status;
 @property(readonly, nonatomic) NSString *time;
-@property(readonly, nonatomic) NSString *location; // @synthesize location=_location;
+@property(readonly, nonatomic) NSString *location;
 @property(readonly, nonatomic) NSString *title;
 @property(readonly, nonatomic) double colorBarThickness;
 @property(readonly, nonatomic) BOOL hasNewTimeProposed;

@@ -14,6 +14,8 @@ __attribute__((visibility("hidden")))
     BOOL _didBreakLineThresholdBelow;
     BOOL _didBreakLineThresholdAbove;
     double _visibilityOffset;
+    double _initialOffset;
+    double _initialOffsetFromTopOfCaret;
     UITextSelectionWindowAveragedValue *_averagedRadius;
     UITextMagnifierTimeWeightedPoint *_weightedPoint;
     long long _lastTouchType;
@@ -34,7 +36,7 @@ __attribute__((visibility("hidden")))
 - (struct CGPoint)touchAlignedPointForPoint:(struct CGPoint)arg1 translation:(struct CGPoint)arg2;
 - (void)updateVisibilityOffsetForTouch:(id)arg1 state:(long long)arg2;
 - (void)updateWithTouches:(id)arg1 gestureState:(long long)arg2;
-- (void)assertInitialVerticalOffset:(double)arg1;
+- (void)assertInitialVerticalOffset:(double)arg1 fromTopOfCaret:(double)arg2;
 - (struct CGPoint)pointForGestureState:(long long)arg1 point:(struct CGPoint)arg2 translation:(struct CGPoint)arg3;
 - (id)init;
 

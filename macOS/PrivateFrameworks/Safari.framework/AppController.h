@@ -18,7 +18,7 @@
 #import <Safari/NSUserInterfaceValidations-Protocol.h>
 #import <Safari/WBSDigitalHealthManagerDelegate-Protocol.h>
 
-@class AutoplayPreferenceManager, AutoplayQuirkWhitelistManager, BookmarksMenuController, BrowserSessionPersistentState, BrowserTabViewItem, BrowserViewController, BrowserViewControllerNavigationManager, CKContextClient, ClosedTabOrWindowStateManager, CombinedFavoritesController, ContentBlockersPreferenceManager, DownloadAlertsManager, DownloadsManager, DownloadsPreferenceManager, ExternalJavaScriptEvaluationPolicyController, FaviconProvider, ForYouRecommendationMediator, FormTextStatusWatcher, LaunchTimePerformanceMonitor, ManagedPlugInsController, ManagedPlugInsControllerHistoryListener, MutableMediaStateTracker, NSAlert, NSArray, NSMenu, NSMenuItem, NSMutableArray, NSMutableSet, NSStatusItem, NSString, NSTimer, NSUserActivity, PopUpWindowPreferenceManager, ResourcePreferencesController, SFAuthorization, SafariAutomationController, SandboxFileExtensionController, SandboxRuntimeExtensionController, SecureDefaultsMigrator, TabSnapshotSensitiveDataPurger, TemplateIconCache, WBSAutomaticReaderActivationManager, WBSCoalescedAsynchronousWriter, WBSCyclerConnectionManager, WBSDigitalHealthManager, WBSForYouRecentParsecResultsManager, WBSFormAutoFillCorrectionsHistoryObserver, WBSLeadImageCache, WBSOneTimeCodeMonitor, WBSPeriodicActivityScheduler, WBSQuickWebsiteSearchController, WBSSiteMetadataManager, WBSTabDialogManager, WKProcessPool, ZoomPreferenceManager, _WKVisitedLinkStore;
+@class AutoFillLocalAuthenticationManager, AutoplayPreferenceManager, AutoplayQuirkWhitelistManager, BookmarksMenuController, BrowserSessionPersistentState, BrowserTabViewItem, BrowserViewController, BrowserViewControllerNavigationManager, CKContextClient, ClosedTabOrWindowStateManager, CombinedFavoritesController, ContentBlockersPreferenceManager, DownloadAlertsManager, DownloadsManager, DownloadsPreferenceManager, ExternalJavaScriptEvaluationPolicyController, FaviconProvider, ForYouRecommendationMediator, FormTextStatusWatcher, LaunchTimePerformanceMonitor, ManagedPlugInsController, ManagedPlugInsControllerHistoryListener, MutableMediaStateTracker, NSAlert, NSArray, NSMenu, NSMenuItem, NSMutableArray, NSMutableSet, NSStatusItem, NSString, NSTimer, NSUserActivity, PopUpWindowPreferenceManager, ResourcePreferencesController, SFAuthorization, SafariAutomationController, SandboxFileExtensionController, SandboxRuntimeExtensionController, SecureDefaultsMigrator, TabSnapshotSensitiveDataPurger, TemplateIconCache, WBSAutomaticReaderActivationManager, WBSCoalescedAsynchronousWriter, WBSCyclerConnectionManager, WBSDigitalHealthManager, WBSForYouRecentParsecResultsManager, WBSFormAutoFillCorrectionsHistoryObserver, WBSLeadImageCache, WBSOneTimeCodeMonitor, WBSPeriodicActivityScheduler, WBSQuickWebsiteSearchController, WBSSiteMetadataManager, WBSTabDialogManager, WKProcessPool, ZoomPreferenceManager, _WKVisitedLinkStore;
 @protocol EncryptionProvider, OS_dispatch_queue, TabSnapshotSensitiveDataPurging, TabSnapshotVending;
 
 __attribute__((visibility("hidden")))
@@ -109,6 +109,7 @@ __attribute__((visibility("hidden")))
     TabSnapshotSensitiveDataPurger *_tabSnapshotSensitiveDataPurger;
     WBSPeriodicActivityScheduler *_sandboxFileExtensionMaintenanceScheduler;
     SecureDefaultsMigrator *_secureDefaultsMigrator;
+    AutoFillLocalAuthenticationManager *_autoFillLocalAuthenticationManager;
     BrowserViewControllerNavigationManager *_navigationManager;
     AutoplayPreferenceManager *_autoplayPreferenceManager;
     AutoplayQuirkWhitelistManager *_autoplayQuirksWhitelistManager;
@@ -170,6 +171,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MutableMediaStateTracker *mutableMediaStateTracker; // @synthesize mutableMediaStateTracker=_mutableMediaStateTracker;
 @property(nonatomic) __weak BrowserTabViewItem *mostRecentlyMutedTab; // @synthesize mostRecentlyMutedTab=_mostRecentlyMutedTab;
 @property(readonly, nonatomic) ClosedTabOrWindowStateManager *closedTabOrWindowStateManager; // @synthesize closedTabOrWindowStateManager=_closedTabOrWindowStateManager;
+@property(readonly, nonatomic) AutoFillLocalAuthenticationManager *autoFillLocalAuthenticationManager; // @synthesize autoFillLocalAuthenticationManager=_autoFillLocalAuthenticationManager;
 @property(nonatomic) __weak NSMenuItem *newWindowMenuItem; // @synthesize newWindowMenuItem=_newWindowMenuItem;
 @property(retain, nonatomic) NSMenuItem *bookmarksMenuItem; // @synthesize bookmarksMenuItem=_bookmarksMenuItem;
 @property(readonly, nonatomic) LaunchTimePerformanceMonitor *launchTimePerformanceMonitor; // @synthesize launchTimePerformanceMonitor=_launchTimePerformanceMonitor;

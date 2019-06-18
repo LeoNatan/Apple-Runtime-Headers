@@ -8,6 +8,7 @@
 
 @class DSPFlavorMO, NSObject, NSString, PortMO;
 
+__attribute__((visibility("hidden")))
 @interface HWDSPMO : DSPConfigurationMO
 {
 }

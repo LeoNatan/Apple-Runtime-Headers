@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
 - (void)_collectionSelectionDidChange;
 - (void)selectionDidChange;
 - (BOOL)_moveToContentSibling:(id)arg1;
+- (unsigned long long)indexOfElement:(id)arg1;
 - (void)dealloc;
 - (void)itemPreFeedbackHandler:(id)arg1;
 

@@ -72,6 +72,7 @@
 - (id)_processStoreResults:(id)arg1 forRequest:(id)arg2;
 - (id)importStoreWithIdentifier:(id)arg1 fromExternalRecordsDirectory:(id)arg2 toURL:(id)arg3 options:(id)arg4 withType:(id)arg5 error:(id *)arg6;
 - (id)managedObjectIDForURIRepresentation:(id)arg1;
+- (id)currentPersistentHistoryTokenFromStores:(id)arg1;
 - (BOOL)replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 storeType:(id)arg5 error:(id *)arg6;
 - (BOOL)destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 options:(id)arg3 error:(id *)arg4;
 - (id)migratePersistentStore:(id)arg1 toURL:(id)arg2 options:(id)arg3 withType:(id)arg4 error:(id *)arg5;
@@ -146,7 +147,6 @@
 - (id)managedObjectIDFromUTF8String:(const char *)arg1 length:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)_removePersistentStore:(id)arg1;
 - (id)_lastOpenError;
-- (id)currentPersistentHistoryTokenFromStores:(id)arg1;
 - (id)persistentStoreForIdentifier:(id)arg1;
 - (BOOL)_rekeyPersistentStoreAtURL:(id)arg1 type:(id)arg2 options:(id)arg3 withKey:(id)arg4 error:(id *)arg5;
 - (BOOL)_destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 error:(id *)arg3;

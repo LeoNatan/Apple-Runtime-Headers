@@ -133,7 +133,7 @@ __attribute__((visibility("hidden")))
 - (void)__hostViewDidDisappear:(BOOL)arg1;
 - (void)__hostViewWillDisappear:(BOOL)arg1;
 - (void)__hostViewDidAppear:(BOOL)arg1;
-- (void)__hostViewWillAppear:(BOOL)arg1 inInterfaceOrientation:(long long)arg2 traitCollection:(id)arg3 statusBarHeight:(double)arg4 underlapsStatusBar:(BOOL)arg5 sheetConfiguration:(id)arg6 completionHandler:(CDUnknownBlockType)arg7;
+- (void)__hostViewWillAppear:(BOOL)arg1 inInterfaceOrientation:(long long)arg2 traitCollection:(id)arg3 statusBarHeight:(double)arg4 underlapsStatusBar:(BOOL)arg5 completionHandler:(CDUnknownBlockType)arg6;
 - (void)__hostReadyToReceiveMessagesFromServiceViewController;
 - (id)invalidate;
 - (void)dummyPopoverController:(id)arg1 popoverViewDidSetUseToolbarShine:(BOOL)arg2;

@@ -70,6 +70,7 @@
 @property(copy) NSString *uniqueDeviceIdentifier; // @synthesize uniqueDeviceIdentifier=_uniqueDeviceIdentifier;
 @property(copy) NSString *serverFriendlyDescription; // @synthesize serverFriendlyDescription=_serverFriendlyDescription;
 - (void).cxx_destruct;
+- (id)_volumeGroupUUID;
 @property(readonly) NSString *phoneNumber;
 @property(readonly) BOOL isMultiUserMode;
 @property(readonly) BOOL isInternalBuild;

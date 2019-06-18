@@ -12,7 +12,7 @@
 #import <ChatKit/UISearchResultsUpdating-Protocol.h>
 #import <ChatKit/_UIContextMenuInteractionDelegate-Protocol.h>
 
-@class CKSearchCollectionView, NSArray, NSMutableSet, NSString, _UICollectionViewCompositionalLayout, _UICollectionViewDiffableDataSource, _UIContextMenuInteraction;
+@class CKSearchCollectionView, NSArray, NSMutableSet, NSString, UICollectionViewDiffableDataSource, _UICollectionViewCompositionalLayout, _UIContextMenuInteraction;
 @protocol CKContainerSearchControllerDelegate;
 
 @interface CKSearchViewController : CKScrollViewController <CKSearchControllerDelegate, CKSearchResultsTitleHeaderCellDelegate, _UIContextMenuInteractionDelegate, UISearchResultsUpdating, UICollectionViewDelegate>
@@ -23,7 +23,7 @@
     NSArray *_searchControllers;
     NSString *_searchText;
     CKSearchCollectionView *_collectionView;
-    _UICollectionViewDiffableDataSource *_dataSource;
+    UICollectionViewDiffableDataSource *_dataSource;
     _UICollectionViewCompositionalLayout *_collectionViewLayout;
     CDUnknownBlockType _performAfterInitialLoadBlock;
     NSMutableSet *_searchCompleteControllerSet;
@@ -35,7 +35,7 @@
 @property(copy, nonatomic) CDUnknownBlockType performAfterInitialLoadBlock; // @synthesize performAfterInitialLoadBlock=_performAfterInitialLoadBlock;
 @property(nonatomic) BOOL isInitialLoad; // @synthesize isInitialLoad=_isInitialLoad;
 @property(retain, nonatomic) _UICollectionViewCompositionalLayout *collectionViewLayout; // @synthesize collectionViewLayout=_collectionViewLayout;
-@property(retain, nonatomic) _UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
+@property(retain, nonatomic) UICollectionViewDiffableDataSource *dataSource; // @synthesize dataSource=_dataSource;
 @property(retain, nonatomic) CKSearchCollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(copy, nonatomic) NSString *searchText; // @synthesize searchText=_searchText;
 @property(retain, nonatomic) NSArray *searchControllers; // @synthesize searchControllers=_searchControllers;
@@ -65,13 +65,13 @@
 - (id)scrollView;
 - (void)searchResultsTitleCellShowAllButtonTapped:(id)arg1;
 - (void)collectionView:(id)arg1 willDisplaySupplementaryView:(id)arg2 forElementKind:(id)arg3 atIndexPath:(id)arg4;
-- (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (id)cellForSupplementryItemInCollectionView:(id)arg1 atIndexPath:(id)arg2 forSupplementryViewKind:(id)arg3;
 - (id)cellForItemInCollectionView:(id)arg1 atIndexPath:(id)arg2 withIdentifier:(id)arg3;
 - (id)layoutSectionForSection:(long long)arg1 withEnvironment:(id)arg2;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDissapeaer:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;

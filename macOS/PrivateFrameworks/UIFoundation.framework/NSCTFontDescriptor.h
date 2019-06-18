@@ -12,6 +12,7 @@
 
 + (id)fontDescriptorWithName:(id)arg1 matrix:(id)arg2;
 + (id)fontDescriptorWithName:(id)arg1 size:(double)arg2;
++ (id)fontDescriptorWithFontAttributes:(id)arg1 options:(unsigned long long)arg2;
 + (id)fontDescriptorWithFontAttributes:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)matchingFontDescriptorWithMandatoryKeys:(id)arg1;

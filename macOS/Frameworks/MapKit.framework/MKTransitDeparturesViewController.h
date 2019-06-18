@@ -8,12 +8,13 @@
 
 #import <MapKit/MKModuleViewControllerProtocol-Protocol.h>
 #import <MapKit/MKTransitDeparturesDataSourceHosting-Protocol.h>
+#import <MapKit/_MKInfoCardChildViewControllerAnalyticsDelegate-Protocol.h>
 
 @class MKMapItem, MKTransitDeparturesDataSource, NSString;
 @protocol MKTransitDepaturesViewControllerDelegate;
 
 __attribute__((visibility("hidden")))
-@interface MKTransitDeparturesViewController : _MKClickableTableViewController <MKTransitDeparturesDataSourceHosting, MKModuleViewControllerProtocol>
+@interface MKTransitDeparturesViewController : _MKClickableTableViewController <MKTransitDeparturesDataSourceHosting, MKModuleViewControllerProtocol, _MKInfoCardChildViewControllerAnalyticsDelegate>
 {
     BOOL _allowTransitLineSelection;
     struct CGRect _lastMaxWidthBounds;
@@ -29,6 +30,8 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) MKMapItem *mapItem; // @synthesize mapItem=_mapItem;
 - (void).cxx_destruct;
 - (int)currentTransitCategory;
+- (id)infoCardChildUnactionableUIElements;
+- (id)infoCardChildPossibleActions;
 - (BOOL)requiresPreferredContentSizeInStackingView;
 - (void)transitDeparturesDataSource:(id)arg1 didSelectAttributionController:(id)arg2;
 - (void)transitDeparturesDataSource:(id)arg1 didUpdateHeightsForRows:(id)arg2;
@@ -46,6 +49,7 @@ __attribute__((visibility("hidden")))
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (id)initWithMapItem:(id)arg1 allowTransitLineSelection:(BOOL)arg2;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

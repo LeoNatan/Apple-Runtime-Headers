@@ -58,6 +58,7 @@
 - (void)moreOptionsViewController:(id)arg1 didSelectShapeWithType:(long long)arg2;
 - (void)moreOptionsViewControllerDidTapOpacityOption:(id)arg1;
 - (void)moreOptionsViewControllerDidToggleAutoHide:(id)arg1;
+- (double)_contentSizeWidth;
 - (struct CGSize)intrinsicContentSize;
 - (void)_didSelectEllipsisButton:(id)arg1;
 - (void)_didSelectPlusButton:(id)arg1;

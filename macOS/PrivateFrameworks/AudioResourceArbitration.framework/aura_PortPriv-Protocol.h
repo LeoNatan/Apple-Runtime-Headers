@@ -7,9 +7,6 @@
 #import <AudioResourceArbitration/aura_Port-Protocol.h>
 
 @protocol aura_PortPriv <aura_Port>
-@property(readonly, nonatomic) _Bool canSetRoutable;
-@property(readonly, nonatomic) _Bool isDefaultRoutable;
 @property(readonly, nonatomic) weak_ptr_cf97627c reactor;
-- (_Bool)usesHardwareReactor:(weak_ptr_abb6b8f5)arg1;
 @end
 

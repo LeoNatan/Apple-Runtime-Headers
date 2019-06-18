@@ -25,6 +25,7 @@ __attribute__((visibility("hidden")))
     NSNumber *_customWidth;
 }
 
++ (id)storageQuotaIncreasePromptConfigurationWithURL:(id)arg1 originDisplayName:(id)arg2 newQuota:(unsigned long long)arg3;
 + (id)plugInPromptConfigurationWithTitle:(id)arg1 message:(id)arg2 confirmButtonLabel:(id)arg3;
 + (id)openApplicationPromptConfigurationWithApplicationName:(id)arg1 originStringForAccessibility:(id)arg2;
 + (id)passDownloadBlockedPromptConfiguration;

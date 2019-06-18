@@ -33,6 +33,7 @@
     BOOL _supportsTargetController;
     BOOL _targetControllerHardwareSupport;
     BOOL _supportsMultiUser;
+    BOOL _suspendCapable;
     BOOL _paired;
     NSUUID *_uniqueIdentifier;
     id <HMAccessoryDelegate> _delegate;
@@ -88,6 +89,7 @@
 @property(nonatomic) BOOL paired; // @synthesize paired=_paired;
 @property(nonatomic) long long reachableTransports; // @synthesize reachableTransports=_reachableTransports;
 @property(retain, nonatomic) _HMContext *context; // @synthesize context=_context;
+@property(readonly, nonatomic) BOOL suspendCapable; // @synthesize suspendCapable=_suspendCapable;
 @property(nonatomic) long long associationOptions; // @synthesize associationOptions=_associationOptions;
 @property(retain, nonatomic) NSNumber *accessoryFlags; // @synthesize accessoryFlags=_accessoryFlags;
 @property(nonatomic) unsigned long long additionalSetupStatus; // @synthesize additionalSetupStatus=_additionalSetupStatus;
@@ -175,6 +177,8 @@
 @property(nonatomic) long long certificationStatus; // @synthesize certificationStatus=_certificationStatus;
 - (void)setApplicationData:(id)arg1;
 @property(readonly, nonatomic) HMApplicationData *applicationData;
+- (void)setSuspendCapable:(BOOL)arg1;
+- (BOOL)isSuspendCapable;
 @property(readonly, nonatomic, getter=isBlocked) BOOL blocked;
 @property(readonly, copy, nonatomic) NSArray *services;
 - (void)queryAdvertisementInformationWithCompletionHandler:(CDUnknownBlockType)arg1;

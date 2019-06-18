@@ -13,7 +13,6 @@
 + (id)bs_secureDecodedFromData:(id)arg1 withAdditionalClasses:(id)arg2;
 + (id)bs_secureDecodedFromData:(id)arg1;
 + (BOOL)bs_isPlistableType;
-+ (BOOL)bs_synchronousWrapper:(CDUnknownBlockType)arg1 timeout:(double)arg2;
 + (id)bs_decodedFromData:(id)arg1;
 + (id)bs_objectFromData:(id)arg1;
 + (id)bs_dataFromObject:(id)arg1;
@@ -21,8 +20,6 @@
 - (BOOL)bs_isXPCObject;
 - (id)bs_secureEncoded;
 - (BOOL)bs_isPlistableType;
-- (BOOL)bs_performSynchronously:(CDUnknownBlockType)arg1 timeout:(double)arg2;
-- (BOOL)bs_performSynchronously:(CDUnknownBlockType)arg1;
 - (id)bs_encoded;
 - (BOOL)supportsBSXPCSecureCoding;
 @end

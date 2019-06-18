@@ -10,7 +10,7 @@
 {
 }
 
-+ (id)createTransformerForInstance:(id)arg1 andLanuage:(id)arg2 andTargetMapping:(id)arg3;
++ (id)createTransformerForLanuage:(id)arg1 modelClass:(Class)arg2 modelId:(id)arg3 featureVersion:(id)arg4 targetMapping:(id)arg5;
 
 @end
 

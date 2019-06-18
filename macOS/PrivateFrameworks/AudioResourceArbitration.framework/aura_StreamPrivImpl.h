@@ -34,7 +34,6 @@ __attribute__((visibility("hidden")))
 - (BOOL)hasProperty:(const struct Address *)arg1;
 @property(readonly, nonatomic) unsigned int classID;
 @property(readonly, nonatomic) unsigned long long objectID;
-- (_Bool)usesHardwareReactor:(weak_ptr_53ad1f34)arg1;
 - (struct error_code)setPublicFormat:(struct AudioFormat)arg1;
 @property(readonly, nonatomic) int latency;
 @property(readonly, nonatomic) vector_fefeec75 supportedPublicFormats;
@@ -44,6 +43,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) unsigned int startingChannel;
 @property(readonly, nonatomic) unsigned char direction;
 @property(readonly, nonatomic) __weak id <aura_Device> device;
+@property(readonly, nonatomic) weak_ptr_f7fee0cb reactor;
 - (id)initWithReactor:(shared_ptr_25d7547e)arg1;
 
 // Remaining properties

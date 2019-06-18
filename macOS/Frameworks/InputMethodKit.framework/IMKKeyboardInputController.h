@@ -11,11 +11,13 @@
 @interface IMKKeyboardInputController : IMKInputController
 {
     IMKTextDocumentTextInputAdaptor *_textDocument;
+    BOOL _deactivating;
     BOOL _useMarkedText;
 }
 
 @property(nonatomic) BOOL useMarkedText; // @synthesize useMarkedText=_useMarkedText;
 @property(retain, nonatomic) IMKTextDocumentTextInputAdaptor *textDocument; // @synthesize textDocument=_textDocument;
+@property(nonatomic, getter=isDeactivating) BOOL deactivating; // @synthesize deactivating=_deactivating;
 - (void).cxx_destruct;
 - (id)candidateControllerForTouchBar;
 - (void)handleIMKCandidateSelection:(id)arg1;
@@ -26,6 +28,7 @@
 - (id)functionRowItemTextInputViewController;
 - (void)deactivateServer:(id)arg1;
 - (void)activateServer:(id)arg1;
+- (void)setupForSender:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 @property(readonly, nonatomic) IMKKeyboard *keyboard;

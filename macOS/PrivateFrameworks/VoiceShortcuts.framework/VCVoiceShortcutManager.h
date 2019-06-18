@@ -50,7 +50,6 @@
 - (void)getVoiceShortcutWithPhrase:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getVoiceShortcutWithIdentifier:(id)arg1 accessSpecifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)getNumberOfVoiceShortcutsWithAccessSpecifier:(id)arg1 completion:(CDUnknownBlockType)arg2;
-- (void)migrateCoreDataVoiceShortcut:(id)arg1 intoDatabase:(id)arg2 error:(id *)arg3;
 - (void)migrateVoiceShortcutsToBeShortcuts;
 @property(readonly, nonatomic) VCCoreDataStore *coreDataStore; // @synthesize coreDataStore=_coreDataStore;
 - (id)coreDataStoreWithError:(id *)arg1;

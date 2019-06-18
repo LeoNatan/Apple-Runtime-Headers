@@ -37,7 +37,7 @@
 - (id)assetCollectionReferenceNearestToObjectReference:(id)arg1;
 - (id)objectReferenceNearestToObjectReference:(id)arg1;
 - (id)_fastKeyCuratedAssetForAssetCollection:(id)arg1;
-- (long long)numberOfEnrichedSections;
+- (long long)numberOfSectionsWithEnrichmentState:(unsigned short)arg1;
 - (BOOL)hasCurationForAssetCollection:(id)arg1;
 - (long long)numberOfCuratedItemsInAssetCollection:(id)arg1;
 - (long long)numberOfUncuratedItemsInAssetCollection:(id)arg1;

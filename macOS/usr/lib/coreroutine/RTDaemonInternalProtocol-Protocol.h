@@ -6,12 +6,13 @@
 
 #import <coreroutine/NSObject-Protocol.h>
 
-@class CLLocation, NSArray, NSDate, NSString, NSURL, NSUUID, RTFetchFingerprintsOptions, RTFingerprint, RTLocationOfInterest, RTLocationOfInterestVisit, RTPlaceInferenceOptions, RTScenarioTrigger, RTSignalGeneratorOptions, RTVisit;
+@class CLLocation, NSArray, NSDate, NSDictionary, NSString, NSURL, NSUUID, RTFetchFingerprintsOptions, RTFingerprint, RTLocationOfInterest, RTLocationOfInterestVisit, RTPlaceInferenceOptions, RTScenarioTrigger, RTSignalGeneratorOptions, RTVisit;
 
 @protocol RTDaemonInternalProtocol <NSObject>
+- (void)submitMetrics:(NSDictionary *)arg1 metricName:(NSString *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)fetchMotionActivitiesFromStartDate:(NSDate *)arg1 endDate:(NSDate *)arg2 reply:(void (^)(NSArray *, NSError *))arg3;
 - (void)fetchFMCEnabledWithReply:(void (^)(BOOL, NSError *))arg1;
-- (void)logLocationsOfInterestWithReply:(void (^)(NSError *))arg1;
+- (void)logDatabasesWithReply:(void (^)(NSError *))arg1;
 - (void)injectWiFiAccessPointWithMac:(NSString *)arg1 rssi:(long long)arg2 channel:(long long)arg3 age:(double)arg4 date:(NSDate *)arg5 reply:(void (^)(NSError *))arg6;
 - (void)injectFingerprintWithSettledState:(BOOL)arg1 start:(NSDate *)arg2 reply:(void (^)(NSError *))arg3;
 - (void)injectFingerprintWithIdentifier:(NSUUID *)arg1 settledState:(unsigned long long)arg2 start:(NSDate *)arg3 reply:(void (^)(NSError *))arg4;

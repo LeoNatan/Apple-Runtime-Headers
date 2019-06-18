@@ -19,7 +19,7 @@
 - (void).cxx_destruct;
 - (id)dominantEntityName;
 - (unsigned long long)dominantCategory;
-- (id)initWithRecords:(id)arg1 calendar:(id)arg2 overrideDecayRate:(BOOL)arg3 globalDecayRate:(double)arg4;
+- (id)initWithRecords:(id)arg1 scoringDate:(id)arg2 perRecordDecayRate:(float)arg3 decayRate:(float)arg4;
 
 @end
 

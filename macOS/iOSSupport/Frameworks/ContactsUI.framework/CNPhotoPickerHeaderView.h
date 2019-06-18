@@ -6,7 +6,7 @@
 
 #import <UIKit/UIView.h>
 
-@class CNContactPhotoView, NSArray;
+@class CNContactPhotoView, NSArray, UIButton;
 @protocol CNPhotoPickerHeaderViewDelegate;
 
 __attribute__((visibility("hidden")))
@@ -16,8 +16,10 @@ __attribute__((visibility("hidden")))
     id <CNPhotoPickerHeaderViewDelegate> _delegate;
     UIView *_headerDropShadowView;
     NSArray *_subviewsConstraints;
+    UIButton *_editButton;
 }
 
+@property(retain, nonatomic) UIButton *editButton; // @synthesize editButton=_editButton;
 @property(retain, nonatomic) NSArray *subviewsConstraints; // @synthesize subviewsConstraints=_subviewsConstraints;
 @property(retain, nonatomic) UIView *headerDropShadowView; // @synthesize headerDropShadowView=_headerDropShadowView;
 @property(nonatomic) __weak id <CNPhotoPickerHeaderViewDelegate> delegate; // @synthesize delegate=_delegate;

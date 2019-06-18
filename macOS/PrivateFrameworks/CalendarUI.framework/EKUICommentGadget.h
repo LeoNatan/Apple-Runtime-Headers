@@ -22,6 +22,7 @@
 - (void)controlTextDidChange:(id)arg1;
 - (id)placeholderString;
 - (id)labelString;
+- (double)baselineOffset;
 - (id)initWithViewController:(id)arg1;
 
 // Remaining properties

@@ -9,7 +9,7 @@
 #import <CFNetwork/NSCopying-Protocol.h>
 #import <CFNetwork/NSSecureCoding-Protocol.h>
 
-@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
+@class NSArray, NSData, NSDictionary, NSHTTPCookieStorage, NSNumber, NSSet, NSString, NSURL, NSURLCache, NSURLCredentialStorage;
 @protocol NSURLSessionAppleIDContext;
 
 @interface NSURLSessionConfiguration : NSObject <NSSecureCoding, NSCopying>
@@ -29,6 +29,7 @@
 + (id)sessionConfigurationForSharedSession;
 + (id)defaultSessionConfiguration;
 + (id)_defaultProtocolClasses;
++ (id)new;
 @property long long _companionProxyPreference; // @synthesize _companionProxyPreference=__companionProxyPreference;
 @property BOOL _allowsWCA; // @synthesize _allowsWCA=__allowsWCA;
 @property BOOL _collectsTimingData; // @synthesize _collectsTimingData=__collectsTimingData;
@@ -40,6 +41,7 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyImmutableVariant:(CDUnknownBlockType)arg1;
+- (id)init;
 - (id)initWithDisposition:(id)arg1;
 
 // Remaining properties
@@ -94,6 +96,7 @@
 @property BOOL _infersDiscretionaryFromOriginatingClient; // @dynamic _infersDiscretionaryFromOriginatingClient;
 @property double _longLivedConnectionCacheCellPurgeTimeout; // @dynamic _longLivedConnectionCacheCellPurgeTimeout;
 @property double _longLivedConnectionCachePurgeTimeout; // @dynamic _longLivedConnectionCachePurgeTimeout;
+@property(copy) NSNumber *_maximumWatchCellularTransferSize; // @dynamic _maximumWatchCellularTransferSize;
 @property unsigned long long _multipathAlternatePort; // @dynamic _multipathAlternatePort;
 @property BOOL _onBehalfOfPairedDevice; // @dynamic _onBehalfOfPairedDevice;
 @property(copy) NSDictionary *_overriddenDelegateOptions; // @dynamic _overriddenDelegateOptions;

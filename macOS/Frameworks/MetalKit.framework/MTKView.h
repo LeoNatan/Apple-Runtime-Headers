@@ -29,6 +29,8 @@
     id <MTLTexture> _depthStencilTexture;
     id <MTLTexture> _multisampleColorTexture;
     BOOL _framebufferOnly;
+    unsigned long long _depthStencilTextureUsage;
+    unsigned long long _multisampleColorTextureUsage;
     unsigned long long _drawableAttachmentIndex;
     long long _nominalFramesPerSecond;
     long long _maxValidAttachmentIndex;
@@ -85,6 +87,8 @@
 - (struct CGPoint)convertPointFromBacking:(struct CGPoint)arg1;
 @property(nonatomic) BOOL presentsWithTransaction;
 @property(nonatomic) BOOL framebufferOnly;
+@property(nonatomic) unsigned long long multisampleColorAttachmentTextureUsage;
+@property(nonatomic) unsigned long long depthStencilAttachmentTextureUsage;
 - (void)viewDidChangeBackingProperties;
 - (void)setBoundsSize:(struct CGSize)arg1;
 - (void)setFrameSize:(struct CGSize)arg1;
@@ -111,9 +115,12 @@
 - (long long)nominalFramesPerSecond;
 @property(readonly, nonatomic) id <CAMetalDrawable> currentDrawable; // @synthesize currentDrawable=_currentDrawable;
 @property(readonly, nonatomic) id <MTLTexture> multisampleColorTexture;
+- (const id *)colorTexturesForceUpdate:(BOOL)arg1;
 - (const id *)colorTextures;
+- (const id *)multisampleColorTexturesForceUpdate:(BOOL)arg1;
 - (const id *)multisampleColorTextures;
 @property(readonly, nonatomic) id <MTLTexture> depthStencilTexture;
+- (void)createDepthStencilTexture;
 - (void)_windowWillClose:(id)arg1;
 - (unsigned long long)drawableAttachmentIndex;
 - (void)setDrawableAttachmentIndex:(unsigned long long)arg1;

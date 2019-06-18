@@ -19,6 +19,8 @@
     BOOL _provisioningAssertionActive;
     PKAssertion *_verificationAssertion;
     BOOL _verificationAssertionActive;
+    PKAssertion *_passcodeUpgradeAssertion;
+    BOOL _passcodeUpgradeAssertionActive;
     PKPassUpgradeController *_passUpgradeController;
 }
 
@@ -26,6 +28,9 @@
 - (void).cxx_destruct;
 - (void)paymentWebService:(id)arg1 requestPassUpgrade:(id)arg2 pass:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (void)paymentWebService:(id)arg1 setDefaultPaymentPassUniqueIdentifier:(id)arg2;
+- (void)noteProvisioningDidEndRequiringUpgradedPasscode;
+- (void)noteProvisioningDidStartRequiringUpgradedPasscode;
+- (void)enforceUpgradedPasscodePolicyWithCompletion:(CDUnknownBlockType)arg1;
 - (void)paymentWebService:(id)arg1 updateAccountWithIdentifier:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)paymentWebService:(id)arg1 deviceMetadataWithFields:(unsigned long long)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)deleteApplePayTrustKeyWithIdentifier:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -17,6 +17,9 @@
 @property(readonly, nonatomic) NSArray *items;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)identifierAtIndex:(unsigned long long)arg1;
+- (long long)indexForItemID:(id)arg1;
+- (id)itemIDAtIndex:(long long)arg1;
+- (id)itemForItemID:(id)arg1;
 - (unsigned long long)indexOfItemWithIdentifier:(id)arg1;
 - (id)playbackInfoForIdentifier:(id)arg1;
 - (id)pathAtIndex:(unsigned long long)arg1;

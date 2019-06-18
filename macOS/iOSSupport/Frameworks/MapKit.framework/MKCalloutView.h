@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)motionEffectDidUpdate:(id)arg1;
 @property(readonly, nonatomic) long long anchorPosition;
+@property(readonly, nonatomic) BOOL hasPendingVisibility;
 @property(readonly, nonatomic, getter=isVisible) BOOL visible;
 - (void)dismissAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)showAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;

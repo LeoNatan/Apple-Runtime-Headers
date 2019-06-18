@@ -6,47 +6,21 @@
 
 #import <EmailDaemon/EDSearchableIndexManager.h>
 
-#import <Mail/EDSearchableIndexSchedulableDelegate-Protocol.h>
-#import <Mail/EFLoggable-Protocol.h>
+@class EDSearchableIndex, EDSearchableIndexPersistence, EDSearchableIndexScheduler;
 
-@class EDSearchableIndex, EDSearchableIndexPersistence, EDSearchableIndexScheduler, EFPromise, NSString;
-
-@interface MFSearchableIndexManager_macOS : EDSearchableIndexManager <EDSearchableIndexSchedulableDelegate, EFLoggable>
+@interface MFSearchableIndexManager_macOS : EDSearchableIndexManager
 {
-    BOOL _dataSourceIndexingPermitted;
     EDSearchableIndex *_index;
     EDSearchableIndexPersistence *_persistence;
     EDSearchableIndexScheduler *_scheduler;
-    EFPromise *_firstLaunchIndexingPromise;
-    long long _countOfFirstLaunchItemsIndexed;
 }
 
-+ (id)log;
-@property(nonatomic) BOOL dataSourceIndexingPermitted; // @synthesize dataSourceIndexingPermitted=_dataSourceIndexingPermitted;
-@property long long countOfFirstLaunchItemsIndexed; // @synthesize countOfFirstLaunchItemsIndexed=_countOfFirstLaunchItemsIndexed;
-@property(retain, nonatomic) EFPromise *firstLaunchIndexingPromise; // @synthesize firstLaunchIndexingPromise=_firstLaunchIndexingPromise;
 @property(retain, nonatomic) EDSearchableIndexScheduler *scheduler; // @synthesize scheduler=_scheduler;
 @property(retain, nonatomic) EDSearchableIndexPersistence *persistence; // @synthesize persistence=_persistence;
 @property(retain, nonatomic) EDSearchableIndex *index; // @synthesize index=_index;
 - (void).cxx_destruct;
-- (void)searchableIndexSchedulable:(id)arg1 didIndexForTime:(double)arg2;
-- (void)searchableIndexSchedulable:(id)arg1 didGeneratePowerEventWithIdentifier:(id)arg2 eventData:(id)arg3;
-- (void)searchableIndexSchedulable:(id)arg1 didGenerateImportantPowerEventWithIdentifier:(id)arg2 eventData:(id)arg3;
-- (void)indexingDidResumeForSearchableIndexSchedulable:(id)arg1;
-- (void)searchableIndexSchedulable:(id)arg1 didIndexItemCount:(long long)arg2;
-- (BOOL)hasAvailableIndexingBudgetForSearchableIndexSchedulable:(id)arg1;
-- (void)didFinishIndexingBacklogForSearchableIndexSchedulable:(id)arg1;
-- (double)budgetedTimeRemainingForSearchableIndexSchedulable:(id)arg1;
-- (long long)budgetedItemCountRemainingForSearchableIndexSchedulable:(id)arg1;
-- (void)performFirstLaunchOptimizationIndexing;
 - (void)enableIndexingAndBeginScheduling:(BOOL)arg1;
 - (id)initWithDatabase:(id)arg1 hookResponder:(id)arg2;
-
-// Remaining properties
-@property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
-@property(readonly) Class superclass;
 
 @end
 

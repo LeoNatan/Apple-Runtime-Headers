@@ -8,7 +8,7 @@
 
 #import <MapKit/CALayerDelegate-Protocol.h>
 
-@class MKCalloutLayer, MKCalloutShadowView, MKSmallCalloutView, NSColor, NSLayoutConstraint, NSString, NSView, NSVisualEffectView, _MKCalloutContentView;
+@class MKCalloutLayer, MKCalloutShadowView, MKSmallCalloutView, NSColor, NSLayoutConstraint, NSString, NSView, NSVisualEffectView;
 
 __attribute__((visibility("hidden")))
 @interface MKStandardCalloutView : MKCalloutView <CALayerDelegate>
@@ -29,9 +29,11 @@ __attribute__((visibility("hidden")))
         unsigned int isObserving:1;
         unsigned int reserved:26;
     } _flags;
+    BOOL _animatingMapToShow;
+    BOOL _dismissed;
     NSColor *_leftViewColor;
     NSView *_leftViewBackground;
-    _MKCalloutContentView *_contentView;
+    NSView *_contentView;
     MKSmallCalloutView *_calloutView;
     NSVisualEffectView *_backdropView;
     MKCalloutLayer *_maskLayer;
@@ -53,6 +55,7 @@ __attribute__((visibility("hidden")))
 - (void)_updateCallout;
 - (void)dismissAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)showAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
+- (BOOL)hasPendingVisibility;
 - (id)accessibilityAttributeValue:(id)arg1;
 - (id)accessibilityAttributeNames;
 - (BOOL)isFlipped;

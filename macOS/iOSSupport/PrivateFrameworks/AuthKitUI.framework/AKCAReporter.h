@@ -6,16 +6,18 @@
 
 #import <objc/NSObject.h>
 
-@class NSDate, NSMutableDictionary, NSString;
+@class NSMutableDictionary, NSString;
 
 @interface AKCAReporter : NSObject
 {
     NSString *_eventName;
     NSMutableDictionary *_reportData;
-    NSDate *_initTime;
+    unsigned long long _initTime;
+    struct mach_timebase_info _clock_timebase;
 }
 
 - (void).cxx_destruct;
+- (double)_machAbsoluteTimeToTimeInterval:(unsigned long long)arg1;
 - (void)sendReport;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;

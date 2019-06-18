@@ -111,6 +111,7 @@
 - (id)debugDescription;
 - (void)defaultValueDidChangeForKey:(id)arg1;
 - (void)setDefaultValues;
+- (id)parentSettings;
 
 @end
 

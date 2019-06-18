@@ -30,6 +30,8 @@
     unsigned long long _aggregatedWordThreshold;
     BOOL _isLoaded;
     TIUserModelDataStore *_userModelDataStore;
+    BOOL _accentedLanguage;
+    NSMutableArray *_accentedLayoutsMap;
     unsigned long long _wordAccumulationThreshold;
     id <TISensorWriterWrapper> _dataWriter;
     NSMutableArray *_savedSessionSamplesArray;
@@ -55,6 +57,7 @@
 - (id)eventsDescription:(BOOL)arg1;
 - (id)eventsDescription;
 - (void)_coalesceTaps;
+- (id)_mapIDToLayout:(unsigned long long)arg1;
 - (void)_mapTapsToEvents;
 - (void)_metricWalk;
 - (void)_haltSessionTypingTimer:(id)arg1 event:(id)arg2;
@@ -68,6 +71,7 @@
 - (void)_resetConsumeState;
 - (id)consumeTypingSession:(id)arg1;
 - (void)_setup;
+- (id)init:(id)arg1 separator:(id)arg2 wordsThreshold:(unsigned long long)arg3 accentedLanguage:(BOOL)arg4;
 - (id)init:(id)arg1 separator:(id)arg2 wordsThreshold:(unsigned long long)arg3;
 - (id)init:(id)arg1;
 

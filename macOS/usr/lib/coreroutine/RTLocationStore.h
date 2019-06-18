@@ -10,11 +10,13 @@
 
 @interface RTLocationStore : RTStore
 {
-    RTTimer *_flushTimer;
     RTTimerManager *_timerManager;
     NSMutableArray *_locations;
+    RTTimer *_flushTimer;
 }
 
+@property(readonly, nonatomic) RTTimer *flushTimer; // @synthesize flushTimer=_flushTimer;
+@property(readonly, nonatomic) NSMutableArray *locations; // @synthesize locations=_locations;
 - (void).cxx_destruct;
 - (void)fetchMetricsWithOptions:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)_fetchMetricsWithOptions:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -31,6 +33,7 @@
 - (void)_flushCachedLocationsWithHandler:(CDUnknownBlockType)arg1;
 - (void)_invalidateFlushTimer;
 - (void)_startFlushTimer;
+- (void)_shutdownWithHandler:(CDUnknownBlockType)arg1;
 - (void)_shutdown;
 - (id)initWithPersistenceManager:(id)arg1 timerManager:(id)arg2;
 - (id)initWithPersistenceManager:(id)arg1;

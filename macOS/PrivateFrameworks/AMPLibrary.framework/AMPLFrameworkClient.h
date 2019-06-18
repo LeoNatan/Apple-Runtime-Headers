@@ -6,9 +6,11 @@
 
 #import <AMPLibrary/AMPLClient.h>
 
+#import <AMPLibrary/AMPLClientProtocol-Protocol.h>
+
 @class NSString;
 
-@interface AMPLFrameworkClient : AMPLClient
+@interface AMPLFrameworkClient : AMPLClient <AMPLClientProtocol>
 {
     NSString *_deviceID;
 }
@@ -35,9 +37,13 @@
 - (void)playlistsForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withItems:(BOOL)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)synchronousMediaItemsForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)mediaItemsForDomains:(unsigned long long)arg1 withMediaKinds:(unsigned long long)arg2 withReply:(CDUnknownBlockType)arg3;
+- (BOOL)synchronousOpenMediaDomains:(id *)arg1 withResponseDict:(id *)arg2;
 - (BOOL)synchronousOpenMediaDomains:(id *)arg1;
 - (id)initWithClientInfo:(id)arg1 withDeviceId:(id)arg2;
 - (id)initWithClientInfo:(id)arg1 withMediaDomains:(unsigned long long)arg2 error:(id *)arg3;
+- (BOOL)handleReconnectionToLibrary:(id)arg1;
+- (BOOL)handleSynchronousOpenMediaDomains:(id)arg1 error:(id *)arg2 withResponseDict:(id *)arg3;
+- (BOOL)handleRegisterClientName:(id)arg1 withConnection:(id)arg2 error:(id *)arg3;
 
 @end
 

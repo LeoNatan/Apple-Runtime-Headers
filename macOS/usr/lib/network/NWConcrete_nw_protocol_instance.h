@@ -55,6 +55,7 @@ __attribute__((visibility("hidden")))
     unsigned int should_destroy:1;
     unsigned int input_acknowledged:1;
     unsigned int needs_output_available:1;
+    unsigned int needs_finalize_output:1;
     char log_str[84];
 }
 

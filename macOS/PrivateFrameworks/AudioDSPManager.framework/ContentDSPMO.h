@@ -8,6 +8,7 @@
 
 @class DSPFlavorMO, DSPModuleControlMO, NSSet;
 
+__attribute__((visibility("hidden")))
 @interface ContentDSPMO : DSPConfigurationMO
 {
 }

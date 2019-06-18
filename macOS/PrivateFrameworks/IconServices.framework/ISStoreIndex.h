@@ -25,7 +25,7 @@
 @property(readonly) struct os_unfair_lock_s *dataLock;
 - (void)invalidate;
 - (id)initWithStoreFileURL:(id)arg1;
-- (BOOL)queryStoreIndexWithUUID:(id)arg1 size:(double)arg2 scale:(unsigned int)arg3 options:(unsigned long long)arg4 match:(CDStruct_1a8ce9d4 *)arg5;
+- (BOOL)queryStoreIndexWithUUID:(id)arg1 size:(double)arg2 scale:(unsigned int)arg3 options:(unsigned long long)arg4 match:(CDStruct_be136439 *)arg5;
 
 @end
 

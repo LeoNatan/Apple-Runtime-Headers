@@ -8,13 +8,12 @@
 
 #import <SceneKit/SCNCaptureDeviceOutputConsumer-Protocol.h>
 
-@class AVCaptureDevice, NSString;
+@class NSString;
 @protocol MTLTexture;
 
 __attribute__((visibility("hidden")))
 @interface SCNCaptureDeviceOutputConsumerSource : SCNTextureSource <SCNCaptureDeviceOutputConsumer>
 {
-    AVCaptureDevice *_captureDevice;
     struct __CVMetalTextureCache *_textureCache;
     struct __CVBuffer *_pixelBuffer;
     id <MTLTexture> _mtlTexture;
@@ -27,7 +26,6 @@ __attribute__((visibility("hidden")))
 - (void)setSampleBuffer:(struct opaqueCMSampleBuffer *)arg1;
 -     // Error parsing type: @40@0:8^{__C3DEngineContext=}16^{__C3DTextureSampler={__CFRuntimeBase=QAQ}iiiiii{C3DColor4=(?=[4f]{?=ffff})}fCiQ}24^d32, name: metalTextureWithEngineContext:textureSampler:nextFrameTime:
 - (void)connectToProxy:(struct __C3DImageProxy *)arg1;
-@property(retain, nonatomic) AVCaptureDevice *captureDevice;
 - (void)dealloc;
 - (void)discardVideoData;
 

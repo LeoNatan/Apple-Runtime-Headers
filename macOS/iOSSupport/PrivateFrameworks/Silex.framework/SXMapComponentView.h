@@ -7,19 +7,20 @@
 #import <Silex/SXMediaComponentView.h>
 
 #import <Silex/MKMapViewDelegate-Protocol.h>
+#import <Silex/SXFullscreenCanvasViewControllerDelegate-Protocol.h>
 #import <Silex/UIGestureRecognizerDelegate-Protocol.h>
 
-@class MKMapView, NSArray, NSMutableDictionary, NSString, SXMapSnapShotter, SXMediaEngageEvent, UIBarButtonItem, UIImageView, UISegmentedControl, UITapGestureRecognizer, UIViewController;
+@class MKMapView, NSArray, NSMutableDictionary, NSString, SXFullscreenCanvasViewController, SXMapSnapShotter, SXMediaEngageEvent, UIBarButtonItem, UIImageView, UISegmentedControl, UITapGestureRecognizer;
 @protocol SXDocumentTitleProviding;
 
-@interface SXMapComponentView : SXMediaComponentView <UIGestureRecognizerDelegate, MKMapViewDelegate>
+@interface SXMapComponentView : SXMediaComponentView <UIGestureRecognizerDelegate, MKMapViewDelegate, SXFullscreenCanvasViewControllerDelegate>
 {
     MKMapView *_mapView;
     UITapGestureRecognizer *_tapGesture;
     NSArray *_annotations;
     id <SXDocumentTitleProviding> _documentTitleProvider;
     UIBarButtonItem *_doneBarButtonItem;
-    UIViewController *_fullScreenCanvasViewController;
+    SXFullscreenCanvasViewController *_fullScreenCanvasViewController;
     UISegmentedControl *_segmentedControl;
     NSArray *_toolbarItems;
     NSMutableDictionary *_cachedSnapshots;
@@ -42,13 +43,14 @@
 @property(retain, nonatomic) NSMutableDictionary *cachedSnapshots; // @synthesize cachedSnapshots=_cachedSnapshots;
 @property(retain, nonatomic) NSArray *toolbarItems; // @synthesize toolbarItems=_toolbarItems;
 @property(retain, nonatomic) UISegmentedControl *segmentedControl; // @synthesize segmentedControl=_segmentedControl;
-@property(retain, nonatomic) UIViewController *fullScreenCanvasViewController; // @synthesize fullScreenCanvasViewController=_fullScreenCanvasViewController;
+@property(retain, nonatomic) SXFullscreenCanvasViewController *fullScreenCanvasViewController; // @synthesize fullScreenCanvasViewController=_fullScreenCanvasViewController;
 @property(retain, nonatomic) UIBarButtonItem *doneBarButtonItem; // @synthesize doneBarButtonItem=_doneBarButtonItem;
 @property(readonly, nonatomic) id <SXDocumentTitleProviding> documentTitleProvider; // @synthesize documentTitleProvider=_documentTitleProvider;
 @property(retain, nonatomic) NSArray *annotations; // @synthesize annotations=_annotations;
 @property(retain, nonatomic) UITapGestureRecognizer *tapGesture; // @synthesize tapGesture=_tapGesture;
 @property(retain, nonatomic) MKMapView *mapView; // @synthesize mapView=_mapView;
 - (void).cxx_destruct;
+- (void)fullScreenCanvasViewControllerWantsToDismiss:(id)arg1;
 - (void)submitMediaEngageCompleteEvent;
 - (void)finishMediaEngageEvent;
 - (void)createMediaEngageEvent;

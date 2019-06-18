@@ -86,6 +86,7 @@
 @property(readonly) NSDate *universalStartDate;
 @property(readonly) NSDate *localEndDate;
 @property(readonly) NSDate *localStartDate;
+@property(readonly) BOOL hasOnlyMomentsAtWork;
 @property(readonly) BOOL happensPartiallyAtMyWork;
 @property(readonly) BOOL happensPartiallyAtMyHome;
 @property(readonly) unsigned long long numberOfShinyGemAssets;

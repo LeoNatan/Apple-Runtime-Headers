@@ -6,11 +6,11 @@
 
 #import <objc/NSObject.h>
 
-#import <MapsSupport/MSPReplicaMergeOptions-Protocol.h>
+#import <MapsSupport/MSPHistoryReplicaMergeOptions-Protocol.h>
 
 @class NSDate, NSString;
 
-@interface MSPHistoryReplicaMergeOptions : NSObject <MSPReplicaMergeOptions>
+@interface MSPHistoryReplicaMergeOptions : NSObject <MSPHistoryReplicaMergeOptions>
 {
     NSDate *_earliestKnownSyncDate;
     long long _modificationDatePolicy;

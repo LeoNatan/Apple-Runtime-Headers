@@ -6,7 +6,7 @@
 
 #import <HomeKitBackingStore/HMBCloudStateModel.h>
 
-@class CKDatabase, CKRecord, HMBCloudID, NSDate;
+@class CKDatabase, HMBCloudID, NSDate;
 
 @interface HMBCloudDatabaseStateModel : HMBCloudStateModel
 {
@@ -20,7 +20,6 @@
 
 // Remaining properties
 @property(retain, nonatomic) HMBCloudID *cloudID; // @dynamic cloudID;
-@property(retain, nonatomic) CKRecord *currentUserRecord; // @dynamic currentUserRecord;
 @property(retain, nonatomic) NSDate *lastAdministrativeFetch; // @dynamic lastAdministrativeFetch;
 @property(retain, nonatomic) NSDate *lastSubscriptionPush; // @dynamic lastSubscriptionPush;
 

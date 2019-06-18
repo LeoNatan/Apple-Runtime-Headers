@@ -8,7 +8,7 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOAbAssignInfo, GEOFormattedStringClientCapabilities, GEOLocalTime, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
+@class GEOAbAssignInfo, GEOFormattedStringClientCapabilities, GEOLocalTime, GEOLocalizationCapabilities, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOClientCapabilities : PBCodable <NSCopying>
 {
@@ -24,6 +24,7 @@
     NSString *_displayRegion;
     GEOFormattedStringClientCapabilities *_formattedStringClientCapabilities;
     NSString *_hardwareModel;
+    GEOLocalizationCapabilities *_localizationCapabilities;
     GEOLocalTime *_requestTime;
     NSString *_userCurrentTimezone;
     int _maxFormatterSupported;
@@ -73,6 +74,7 @@
         unsigned int read_displayRegion:1;
         unsigned int read_formattedStringClientCapabilities:1;
         unsigned int read_hardwareModel:1;
+        unsigned int read_localizationCapabilities:1;
         unsigned int read_requestTime:1;
         unsigned int read_userCurrentTimezone:1;
         unsigned int wrote_unknownFields:1;
@@ -85,6 +87,7 @@
         unsigned int wrote_displayRegion:1;
         unsigned int wrote_formattedStringClientCapabilities:1;
         unsigned int wrote_hardwareModel:1;
+        unsigned int wrote_localizationCapabilities:1;
         unsigned int wrote_requestTime:1;
         unsigned int wrote_userCurrentTimezone:1;
         unsigned int wrote_maxFormatterSupported:1;
@@ -123,6 +126,9 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) GEOLocalizationCapabilities *localizationCapabilities;
+@property(readonly, nonatomic) BOOL hasLocalizationCapabilities;
+- (void)_readLocalizationCapabilities;
 @property(nonatomic) BOOL hasSupportsJunctionView;
 @property(nonatomic) BOOL supportsJunctionView;
 @property(nonatomic) BOOL hasSupportsNaturalGuidance;

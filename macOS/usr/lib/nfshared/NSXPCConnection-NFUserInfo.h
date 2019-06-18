@@ -8,5 +8,6 @@
 
 @interface NSXPCConnection (NFUserInfo)
 - (id)NF_userInfo;
+- (id)NF_whitelistChecker;
 @end
 

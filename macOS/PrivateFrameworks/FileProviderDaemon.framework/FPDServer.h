@@ -30,6 +30,8 @@
     FPDExtensionManager *_extensionManager;
     FPDPresenterManager *_presenterManager;
     Class _fpfsClass;
+    Class _fpfsSQLBackupManagerClass;
+    Class _fpfsSQLRestoreManagerClass;
     NSXPCListener *_listener;
 }
 
@@ -37,6 +39,8 @@
 + (id)cloudStoragePath;
 + (id)homeDirectory;
 @property(retain, nonatomic) NSXPCListener *listener; // @synthesize listener=_listener;
+@property(retain, nonatomic) Class fpfsSQLRestoreManagerClass; // @synthesize fpfsSQLRestoreManagerClass=_fpfsSQLRestoreManagerClass;
+@property(retain, nonatomic) Class fpfsSQLBackupManagerClass; // @synthesize fpfsSQLBackupManagerClass=_fpfsSQLBackupManagerClass;
 @property(retain, nonatomic) Class fpfsClass; // @synthesize fpfsClass=_fpfsClass;
 @property(readonly, nonatomic) FPDPresenterManager *presenterManager; // @synthesize presenterManager=_presenterManager;
 @property(readonly, nonatomic) FPDExtensionManager *extensionManager; // @synthesize extensionManager=_extensionManager;

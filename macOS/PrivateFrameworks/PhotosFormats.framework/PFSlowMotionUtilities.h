@@ -29,6 +29,7 @@
 + (BOOL)_isValidSlowMotionTimeRange:(CDStruct_e83c9415)arg1;
 + (BOOL)_isValidSlowMotionRate:(float)arg1;
 + (id)assetFromVideoAsset:(id)arg1 slowMotionRate:(float)arg2 slowMotionTimeRange:(CDStruct_e83c9415)arg3 forExport:(BOOL)arg4 outAudioMix:(id *)arg5 outTimeRangeMapper:(id *)arg6;
++ (id)slowMotionSourceAssetPropertyKeys;
 + (int)preferredTimeScale;
 + (id)sharedConfiguration;
 

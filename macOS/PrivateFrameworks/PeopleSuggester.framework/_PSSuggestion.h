@@ -23,7 +23,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)suggestionForBundleID:(id)arg1 derivedIntentIdentifier:(id)arg2 knowledgeStore:(id)arg3 contactStore:(id)arg4 reason:(id)arg5 reasonType:(id)arg6;
++ (id)suggestionForBundleID:(id)arg1 derivedIntentIdentifier:(id)arg2 knowledgeStore:(id)arg3 contactResolver:(id)arg4 reason:(id)arg5 reasonType:(id)arg6;
 @property(copy, nonatomic) NSString *reasonType; // @synthesize reasonType=_reasonType;
 @property(copy, nonatomic) NSString *reason; // @synthesize reason=_reason;
 @property(readonly, copy, nonatomic) NSString *derivedIntentIdentifier; // @synthesize derivedIntentIdentifier=_derivedIntentIdentifier;

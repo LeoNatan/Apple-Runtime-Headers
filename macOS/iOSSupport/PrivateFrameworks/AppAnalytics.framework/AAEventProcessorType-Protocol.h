@@ -4,16 +4,14 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-@class AAGroup, AAProcessEvent, AASession, NSDate, NSString, OS_dispatch_queue;
+@class AAGroup, AAProcessEvent, AASession, NSDate;
 
 @protocol AAEventProcessorType
 - (void)processEvent:(AAProcessEvent *)arg1;
-- (void)registerAccessQueue:(OS_dispatch_queue *)arg1;
 
 @optional
-- (BOOL)resumeBackgroundProcessingForIdentifier:(NSString *)arg1 completion:(void (^)(void))arg2;
 - (void)didEndSession:(AASession *)arg1 endDate:(NSDate *)arg2;
-- (void)didUpdateSession:(AASession *)arg1 submitEventQueues:(BOOL)arg2;
+- (void)didUpdateSession:(AASession *)arg1;
 - (void)didStartSession:(AASession *)arg1;
 - (void)didLeaveGroup:(AAGroup *)arg1;
 - (void)didEnterGroup:(AAGroup *)arg1;

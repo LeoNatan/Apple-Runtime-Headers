@@ -20,7 +20,6 @@
 + (id)checkForConflictsBetweenIncomingChanges:(id)arg1 incomingDeletes:(id)arg2 andOutgoingChanges:(id)arg3 outgoingDeletes:(id)arg4 detectingDuplicateWorkflowsInDatabase:(id)arg5 outWorkflowIDsToRename:(id *)arg6 outLocalWorkflowsToDelete:(id *)arg7;
 + (BOOL)isSyncOrderingEnabled;
 + (BOOL)isSyncEnabled;
-+ (id)cloudContainerIdentifier;
 + (void)initialize;
 @property(readonly, nonatomic) CKRecordID *userRecordID; // @synthesize userRecordID=_userRecordID;
 @property(readonly, nonatomic) CKRecordZoneID *recordZoneID; // @synthesize recordZoneID=_recordZoneID;

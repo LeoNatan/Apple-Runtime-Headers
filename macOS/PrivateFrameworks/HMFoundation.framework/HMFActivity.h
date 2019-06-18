@@ -14,8 +14,8 @@
 
 @interface HMFActivity : HMFObject <HMFLogging, HMFObject>
 {
-    NSObject<OS_os_activity> *_internal;
     HMFUnfairLock *_lock;
+    NSObject<OS_os_activity> *_internal;
     struct os_activity_scope_state_s *_state;
     NSObject<OS_voucher> *_voucher;
     NSMutableSet *_threadContexts;
@@ -56,6 +56,7 @@
 @property(readonly, copy) NSString *shortDescription;
 - (void)invalidate;
 @property(readonly, getter=isValid) BOOL valid; // @synthesize valid=_valid;
+@property(readonly) unsigned long long hash;
 - (void)dealloc;
 - (id)initWithName:(id)arg1 parent:(id)arg2 options:(unsigned long long)arg3;
 - (id)initWithName:(id)arg1 parent:(id)arg2 assertions:(unsigned long long)arg3;
@@ -66,7 +67,6 @@
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
-@property(readonly) unsigned long long hash;
 @property(readonly, copy) NSString *privateDescription;
 @property(readonly, copy) NSString *propertyDescription;
 @property(readonly) Class superclass;

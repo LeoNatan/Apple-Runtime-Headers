@@ -569,6 +569,7 @@ struct Server {
     struct Bounds _field19;
     double _field20;
     double _field21;
+    unsigned int _field22;
     unsigned int :1;
     unsigned int :1;
     unsigned int :1;

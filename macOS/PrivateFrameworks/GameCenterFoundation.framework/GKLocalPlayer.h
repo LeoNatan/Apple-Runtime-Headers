@@ -115,6 +115,7 @@
 @property(nonatomic, getter=isShowingInGameUI) BOOL showingInGameUI; // @synthesize showingInGameUI=_showingInGameUI;
 @property(nonatomic) BOOL appIsInBackground;
 - (void)dealloc;
+- (BOOL)scopedIDsArePersistent;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)unregisterAllListeners;

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
     id *_keys;
 }
 
++ (Class)classForKeyedUnarchiver;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)alloc;
 + (BOOL)accessInstanceVariablesDirectly;

@@ -27,11 +27,13 @@
 - (void).cxx_destruct;
 - (id)appBundleIdsFromSections:(id)arg1;
 - (void)_configureCell:(id)arg1 withAppBundleIdentifier:(id)arg2;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint)arg2 targetContentOffset:(inout struct CGPoint *)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
-- (id)initWithCollectionView:(id)arg1 sections:(id)arg2;
+- (void)updateWithSections:(id)arg1;
+- (id)initWithCollectionView:(id)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

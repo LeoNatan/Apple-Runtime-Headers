@@ -11,6 +11,7 @@
 @interface DeviceViewConnection : NSObject
 {
     BOOL _enabled;
+    unsigned int _clientID;
     NSView *_targetView;
     DeviceRemoteViewController *_remoteViewController;
     AMPDevice *_device;
@@ -26,11 +27,12 @@
 @property(retain, nonatomic) AMPDevice *device; // @synthesize device=_device;
 @property(retain, nonatomic) DeviceRemoteViewController *remoteViewController; // @synthesize remoteViewController=_remoteViewController;
 @property(nonatomic) __weak NSView *targetView; // @synthesize targetView=_targetView;
+@property(readonly, nonatomic) unsigned int clientID; // @synthesize clientID=_clientID;
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)willBeDisposed;
 - (void)establishSideConnection;
-- (id)initWithView:(id)arg1 forDevice:(id)arg2 andConnectionToDiscoveryService:(id)arg3 withViewControllerfactory:(id)arg4 andMode:(id)arg5 enabled:(BOOL)arg6;
+- (id)initWithView:(id)arg1 forDevice:(id)arg2 andConnectionToDiscoveryService:(id)arg3 withViewControllerfactory:(id)arg4 andMode:(id)arg5 enabled:(BOOL)arg6 clientID:(unsigned int)arg7;
 - (void)setDevice:(id)arg1 andMode:(id)arg2;
 - (void)setMode:(id)arg1;
 

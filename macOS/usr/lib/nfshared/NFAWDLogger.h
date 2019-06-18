@@ -19,6 +19,8 @@
     NSUserDefaults *_userDefault;
     NSData *_tsmUuid;
     unsigned long long _tsmUuidRefTimestamp;
+    NSData *_rmpUuid;
+    unsigned long long _rmpUuidRefTimestamp;
     NFAWDVersionInfo *_versionInfo;
     NSData *_deviceExceptionUuid;
     unsigned long long _previousVASTransactionState;
@@ -43,6 +45,8 @@
 - (void)postAWDPurpleTrustOperationWithParameters:(id)arg1;
 - (void)postAWDPeerPaymentRequestWithParameters:(id)arg1;
 - (void)postAWDPeerPaymentEnrollmentWithParameters:(id)arg1;
+- (void)postReaderModeIngestionSessionEnded:(id)arg1 startTime:(unsigned long long)arg2;
+- (void)postReaderModeIngestionSessionStarted:(id)arg1;
 - (void)_postReaderSessionTagReadWithType:(unsigned int)arg1 uuid:(id)arg2 startTime:(id)arg3 params:(id)arg4;
 - (void)_postReaderSessionTagFoundWithType:(unsigned int)arg1 uuid:(id)arg2 startTime:(id)arg3 params:(id)arg4;
 - (void)_postReaderSessionPollingStartedWithType:(unsigned int)arg1 uuid:(id)arg2 startTime:(id)arg3;

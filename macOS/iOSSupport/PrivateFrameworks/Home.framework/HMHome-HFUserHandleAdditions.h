@@ -38,7 +38,7 @@
 - (void)hf_startReprovisioningAccessory:(id)arg1;
 - (BOOL)hf_hasCameraRecordingResident;
 - (BOOL)hf_hasAppleTVs;
-- (BOOL)hf_numberOfHomePods;
+- (unsigned long long)hf_numberOfHomePods;
 - (BOOL)hf_hasHomePods;
 - (BOOL)hf_hasMediaAccessories;
 - (BOOL)hf_canCreateAutomations;
@@ -70,6 +70,7 @@
 - (id)hf_allHomePodProfiles;
 - (id)hf_allMediaProfiles;
 - (BOOL)hf_hasSecureRecordingCameras;
+- (id)hf_unitaryCameraProfile;
 - (id)hf_allCameraProfiles;
 - (id)hf_cameraProfileWithIdentifier:(id)arg1;
 - (id)hf_allNetworkRouterProfiles;
@@ -96,6 +97,7 @@
 - (id)hf_accessoryWithDeviceIdentifier:(id)arg1;
 - (id)hf_accessoryWithIdentifier:(id)arg1;
 - (id)hf_allNonEmptyActionSets;
+- (id)hf_updateNetworkProtection:(long long)arg1;
 - (BOOL)hf_isNetworkProtectionEnabled;
 - (id)hf_zoneWithIdentifier:(id)arg1;
 - (void)hf_setSelectedRoom:(id)arg1;

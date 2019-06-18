@@ -20,7 +20,7 @@
 + (id)deviceFromIdentifier:(id)arg1;
 + (id)allPairedDevices;
 + (id)activePairedDevices;
-@property(readonly) long long type; // @synthesize type=_type;
+@property long long type; // @synthesize type=_type;
 @property(readonly) NSString *identifier; // @synthesize identifier=_identifier;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

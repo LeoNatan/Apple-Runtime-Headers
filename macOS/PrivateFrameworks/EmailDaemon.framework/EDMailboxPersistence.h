@@ -14,6 +14,7 @@
 
 @interface EDMailboxPersistence : NSObject <EDMailboxProviderDelegate, EMMailboxTypeResolver>
 {
+    struct os_unfair_lock_s _changeObserversByIdentifierLock;
     NSMutableDictionary *_changeObserversByIdentifier;
     id <EDMailboxProvider> _mailboxProvider;
 }

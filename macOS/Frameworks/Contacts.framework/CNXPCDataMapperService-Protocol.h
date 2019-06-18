@@ -36,7 +36,7 @@
 - (void)executeSaveRequest:(CNSaveRequest *)arg1 withReply:(void (^)(BOOL, CNSaveResponse *, NSError *))arg2;
 - (void)meContactIdentifiersWithReply:(void (^)(NSArray *, NSError *))arg1;
 - (void)progressiveContactsForFetchRequest:(CNContactFetchRequest *)arg1 progressHandler:(id <ProgressiveResultsHandlerProtocol>)arg2 reply:(void (^)(id <CNCancelable>))arg3;
-- (void)encodedContactsAndCursorForFetchRequest:(CNContactFetchRequest *)arg1 withReply:(void (^)(NSData *, id <CNEncodedFetchCursor>, NSError *))arg2;
+- (void)encodedContactsAndCursorForFetchRequest:(CNContactFetchRequest *)arg1 withReply:(void (^)(NSData *, NSDictionary *, id <CNEncodedFetchCursor>, NSError *))arg2;
 - (void)contactsForFetchRequest:(CNContactFetchRequest *)arg1 withMatchInfoReply:(void (^)(NSArray *, NSDictionary *, NSError *))arg2;
 - (void)sectionListOffsetsForSortOrder:(long long)arg1 reply:(void (^)(NSArray *, NSError *))arg2;
 - (void)contactCountForFetchRequest:(CNContactFetchRequest *)arg1 withReply:(void (^)(NSNumber *, NSError *))arg2;

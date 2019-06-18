@@ -74,7 +74,7 @@
 - (void)recacheDisk:(id)arg1 withCallbackBlock:(CDUnknownBlockType)arg2;
 - (void)enclosingDiskAtLevel:(unsigned long long)arg1 withCallbackBlock:(CDUnknownBlockType)arg2;
 - (void)enclosingVolumeCount:(CDUnknownBlockType)arg1;
-- (void)getFDEUsersFromDisk:(id)arg1 withCompletionBlock:(CDUnknownBlockType)arg2;
+- (void)getFDEUsersFromDisk:(id)arg1 retrieveImageData:(BOOL)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;
 - (void)changePasswordForDisk:(id)arg1 oldPassword:(id)arg2 newPassword:(id)arg3 passwordHint:(id)arg4 withCompletionBlock:(CDUnknownBlockType)arg5;
 - (void)convertDiskToFDE:(id)arg1 withRecipe:(id)arg2 handlingProgress:(CDUnknownBlockType)arg3 withCompletionBlock:(CDUnknownBlockType)arg4;
 - (void)establishReserveKEKForDisk:(id)arg1 diskUnlockPassword:(id)arg2 withCompletionBlock:(CDUnknownBlockType)arg3;

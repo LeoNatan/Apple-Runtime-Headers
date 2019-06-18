@@ -9,7 +9,8 @@
 @class NSManagedObjectContext, NSString;
 
 @protocol STPersistenceControllerProtocol <NSObject>
-@property(readonly) NSManagedObjectContext *viewContext;
+@property(readonly, nonatomic) BOOL hasStoreLoaded;
+@property(readonly, nonatomic) NSManagedObjectContext *viewContext;
 - (void)setLocalPersistentStoreValue:(id)arg1 forKey:(NSString *)arg2;
 - (id)localPersistentStoreMetadataValueForKey:(NSString *)arg1;
 - (NSManagedObjectContext *)newBackgroundContext;

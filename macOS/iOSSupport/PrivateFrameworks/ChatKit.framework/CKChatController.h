@@ -38,7 +38,7 @@
 #import <ChatKit/_UIClickInteractionDelegate-Protocol.h>
 #import <ChatKit/_UIClickPresentationInteractionDelegate-Protocol.h>
 
-@class CADisplayLink, CKAudioTrimViewController, CKChatInputController, CKComposition, CKEffectPickerViewController, CKFunCameraViewController, CKInvisibleInkEffectController, CKMessageEntryView, CKMessageEntryViewController, CKNavbarCanvasViewController, CKNicknameBannerView, CKNicknameUpdatesViewController, CKOnboardingController, CKRaiseGesture, CKScheduledUpdater, CKThrowAnimationManager, CKUnexpectedlyLoggedOutNotificationView, CKUnreadBannerView, CKVideoMessageRecordingViewController, CKVideoTrimController, CNContactPickerViewController, IMNickname, IMPluginPayload, IMScheduledUpdater, NSIndexPath, NSObject, NSString, UIImagePickerController, UIToolbar, UIView, UIWindow, _UIClickPresentationInteraction;
+@class CADisplayLink, CKAudioTrimViewController, CKChatInputController, CKComposition, CKEffectPickerViewController, CKFunCameraViewController, CKInvisibleInkEffectController, CKMessageEntryView, CKMessageEntryViewController, CKNavbarCanvasViewController, CKNicknameBannerView, CKNicknameUpdatesViewController, CKOnboardingController, CKRaiseGesture, CKScheduledUpdater, CKThrowAnimationManager, CKUnexpectedlyLoggedOutNotificationView, CKUnreadBannerView, CKVideoMessageRecordingViewController, CKVideoTrimController, CNContactPickerViewController, IMNickname, IMPluginPayload, IMScheduledUpdater, NSIndexPath, NSNumber, NSObject, NSString, UIImagePickerController, UIToolbar, UIView, UIWindow, _UIClickPresentationInteraction;
 @protocol CKChatControllerDelegate, OS_dispatch_group, UIDragSession, UIDropSession;
 
 @interface CKChatController : CKCoreChatController <CKEffectPickerViewControllerDelegate, CKThrowAnimationManagerDelegate, CKSendAnimationManagerDelegate, CKSendAnimationBalloonProvider, CKVideoMessageRecordingViewControllerDelegate, CKActionMenuGestureRecognizerButtonDelegate, CNContactPickerDelegate, CKMessageEntryViewDelegate, CKReaderViewControllerDelegate, CKTrimControllerDelegate, AFContextProvider, UIGestureRecognizerDelegate, CKChatInputControllerDelegate, CKFullScreenBalloonViewControllerDelegate, CKBrowserDragControllerTranscriptDelegate, CKDetailsControllerDelegate, _UIClickInteractionDelegate, CKUnexpectedlyLoggedOutNotificationViewDelegate, UIPopoverPresentationControllerDelegate, UIDragInteractionDelegate, UIDropInteractionDelegate, UITextDropDelegate, UITextPasteDelegate, CKExtensionConsumer, CKFunCameraViewControllerDelegate, ILClassificationUIExtensionHostViewControllerDelegate, CKNicknameBannerViewDelegate, CKOnboardingControllerDelegate, CKNicknameUpdatesViewControllerDelegate, _UIClickPresentationInteractionDelegate, CKNavbarCanvasViewControllerDelegate>
@@ -51,6 +51,7 @@
     BOOL _shouldShowDoneButton;
     BOOL _transitioningSize;
     BOOL _needToScrollToBottom;
+    BOOL _firstLayoutAfterResume;
     BOOL _suppressEntryViewKeyboardNotifications;
     BOOL _entryViewWasActiveBeforePresentingDataDetector;
     BOOL _primeTranscriptWithInitialScrollGeometries;
@@ -64,6 +65,7 @@
     BOOL _isShowingCamera;
     double _lastLaidOutWidth;
     long long _lastKnownDeviceOrientation;
+    NSNumber *_transcriptBottomContentOffsetAtSuspend;
     long long _targetFirstResponder;
     CKMessageEntryViewController *_entryViewController;
     CKChatInputController *_inputController;
@@ -88,7 +90,7 @@
     CKInvisibleInkEffectController *_previewInvisibleInkEffectController;
     UIView *_previewRevealView;
     _UIClickPresentationInteraction *_tapbackInteraction;
-    NSIndexPath *_doubleTappedItemIndexPath;
+    NSIndexPath *_indexPathForTapbackInteraction;
     CKEffectPickerViewController *_effectPickerViewController;
     UIWindow *_effectPickerWindow;
     CKUnexpectedlyLoggedOutNotificationView *_unexpectedlyLoggedOutNotificationView;
@@ -129,7 +131,7 @@
 @property(nonatomic) BOOL effectPickerIsPresented; // @synthesize effectPickerIsPresented=_effectPickerIsPresented;
 @property(retain, nonatomic) UIWindow *effectPickerWindow; // @synthesize effectPickerWindow=_effectPickerWindow;
 @property(retain, nonatomic) CKEffectPickerViewController *effectPickerViewController; // @synthesize effectPickerViewController=_effectPickerViewController;
-@property(retain, nonatomic) NSIndexPath *doubleTappedItemIndexPath; // @synthesize doubleTappedItemIndexPath=_doubleTappedItemIndexPath;
+@property(retain, nonatomic) NSIndexPath *indexPathForTapbackInteraction; // @synthesize indexPathForTapbackInteraction=_indexPathForTapbackInteraction;
 @property(retain, nonatomic) _UIClickPresentationInteraction *tapbackInteraction; // @synthesize tapbackInteraction=_tapbackInteraction;
 @property(nonatomic) BOOL isShowingAcknowledgmentPicker; // @synthesize isShowingAcknowledgmentPicker=_isShowingAcknowledgmentPicker;
 @property(retain, nonatomic) UIView *previewRevealView; // @synthesize previewRevealView=_previewRevealView;
@@ -163,6 +165,8 @@
 @property(retain, nonatomic) CKChatInputController *inputController; // @synthesize inputController=_inputController;
 @property(retain, nonatomic) CKMessageEntryViewController *entryViewController; // @synthesize entryViewController=_entryViewController;
 @property(nonatomic) long long targetFirstResponder; // @synthesize targetFirstResponder=_targetFirstResponder;
+@property(nonatomic) BOOL firstLayoutAfterResume; // @synthesize firstLayoutAfterResume=_firstLayoutAfterResume;
+@property(retain, nonatomic) NSNumber *transcriptBottomContentOffsetAtSuspend; // @synthesize transcriptBottomContentOffsetAtSuspend=_transcriptBottomContentOffsetAtSuspend;
 @property(nonatomic) long long lastKnownDeviceOrientation; // @synthesize lastKnownDeviceOrientation=_lastKnownDeviceOrientation;
 @property(nonatomic) BOOL needToScrollToBottom; // @synthesize needToScrollToBottom=_needToScrollToBottom;
 @property(nonatomic) double lastLaidOutWidth; // @synthesize lastLaidOutWidth=_lastLaidOutWidth;
@@ -170,6 +174,7 @@
 @property(nonatomic) BOOL shouldShowDoneButton; // @synthesize shouldShowDoneButton=_shouldShowDoneButton;
 @property(nonatomic) BOOL isAnimatingMessageSend; // @synthesize isAnimatingMessageSend=_isAnimatingMessageSend;
 - (void).cxx_destruct;
+- (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 tappedItemAtIndexPath:(id)arg3;
 - (void)transcriptCollectionViewController:(id)arg1 balloonView:(id)arg2 doubleTappedItemAtIndexPath:(id)arg3;
 - (id)parentBalloonIndexPathForIndexPath:(id)arg1;
 - (void)_dismissFullScreenBubbleViewControllerWithSendAnimation:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
@@ -211,6 +216,7 @@
 - (id)textDroppableView:(id)arg1 proposalForDrop:(id)arg2;
 - (id)_meContact;
 - (BOOL)showNicknameSharingOnboardingIfNeeded;
+- (BOOL)_shouldShowNicknameOnboardingFlow;
 - (void)onboardingControllerDidFinish:(id)arg1;
 - (id)presentingViewControllerForOnboardingController:(id)arg1;
 - (void)checkSuggestionsForBanner;
@@ -488,7 +494,7 @@
 - (void)prepareForSuspend;
 - (void)_performResume;
 - (void)parentControllerDidBecomeActive;
-- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+- (void)invalidateChatItemLayoutForTraitCollectionChangeIfNeeded:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)_markMessagesAsReadOnPushIfNeeded;
@@ -499,12 +505,12 @@
 - (void)setUnreadBannerHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
-- (id)_handleIDsForCurrentConversation;
 - (void)insertInitialCompositionIfNeeded;
 - (BOOL)_chatShowsUnexpectedlyLoggedOutNotification;
 - (void)_updateTranscriptInlineNotification;
 - (void)transcriptCollectionViewControllerDidInset:(id)arg1;
 - (void)loadView;
+- (BOOL)isHandwritingLandscape;
 - (void)forciblyUnloadChatInputController;
 - (void)setConversation:(id)arg1;
 - (void)windowDidResignKey:(id)arg1;

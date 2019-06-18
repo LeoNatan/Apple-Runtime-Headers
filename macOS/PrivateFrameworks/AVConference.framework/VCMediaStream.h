@@ -143,7 +143,8 @@ __attribute__((visibility("hidden")))
 - (BOOL)setupNWConnectionWithClientID:(unsigned char [16])arg1;
 - (id)setupRTPWithNWConnectionID:(id)arg1 error:(id *)arg2;
 - (void)cleanupNWInfo:(CDStruct_cb9f2fd6 *)arg1;
-- (id)setupRTPWithSockets:(id)arg1 error:(id *)arg2;
+- (void)setupRTPWithRTPSocket:(int)arg1 RTCPSocket:(int)arg2;
+- (id)setupRTPWithSocketDictionary:(id)arg1 error:(id *)arg2;
 - (void)decryptionStatusChanged:(_Bool)arg1;
 @property(readonly, nonatomic) BOOL isSendingMedia;
 @property(readonly, nonatomic) VCMediaStreamConfig *defaultStreamConfig;

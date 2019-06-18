@@ -37,6 +37,8 @@
 - (void)updateManager:(id)arg1 didReceiveTransitError:(id)arg2;
 - (void)updateManager:(id)arg1 didReceiveTransitUpdates:(id)arg2;
 - (void)updateManager:(id)arg1 willSendTransitUpdateRequestForRouteIDs:(id)arg2;
+- (void)updateManager:(id)arg1 didReceiveTransitUpdateResponse:(id)arg2;
+- (void)updateManager:(id)arg1 willSendTransitUpdateRequests:(id)arg2;
 - (void)_defaultsDidChange;
 - (void)_updateShouldLocalizeRoadNames;
 - (void)_roadFeaturesForFeature:(CDStruct_4ff0d47c *)arg1 outRoadName:(id *)arg2 outShieldText:(id *)arg3 outShieldType:(long long *)arg4;
@@ -59,6 +61,7 @@
 - (void)setDelegate:(id)arg1;
 @property(readonly, nonatomic) BOOL shouldProjectAlongRoute;
 @property(readonly, nonatomic) BOOL hasArrived;
+@property(readonly, nonatomic) BOOL isRerouting;
 @property(readonly, nonatomic) int transportType;
 - (void)dealloc;
 - (id)initWithNavigationSession:(id)arg1;

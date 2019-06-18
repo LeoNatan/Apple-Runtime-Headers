@@ -55,8 +55,10 @@ __attribute__((visibility("hidden")))
 - (BOOL)_canAnimateItemViewHeightChange:(id)arg1 withItem:(id)arg2;
 - (void)siriSuggestionsStartPageItem:(id)arg1 didChangeContentAvailability:(BOOL)arg2;
 - (BOOL)_shouldShowSectionForItem:(id)arg1;
+- (void)_updateItemHeaderAppearance;
 - (void)_didUpdateSiriSuggestionsVisibility:(id)arg1;
 - (void)_didUpdateFrequentlyVisitedSitesVisibility:(id)arg1;
+- (void)_didUpdateFavoritesVisibility:(id)arg1;
 - (void)_hideSectionForItem:(id)arg1;
 - (void)_updateHeightOfView:(id)arg1 forItem:(id)arg2 animated:(BOOL)arg3 forcingLayoutIfNeeded:(BOOL)arg4;
 - (void)_revealSectionForItem:(id)arg1;
@@ -75,6 +77,9 @@ __attribute__((visibility("hidden")))
 - (void)_stackViewFrameDidChange:(id)arg1;
 - (void)resetChildViewControllerLevels;
 - (void)_updateSpacingForScrollbar;
+- (void)_presentContextMenuForEvent:(id)arg1;
+- (void)rightMouseDown:(id)arg1;
+- (void)mouseDown:(id)arg1;
 - (void)viewDidLoad;
 - (void)loadView;
 - (id)initWithCompactAppearance:(BOOL)arg1;

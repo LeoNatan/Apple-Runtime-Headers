@@ -33,8 +33,8 @@
 - (BOOL)read:(char *)arg1 inputLength:(unsigned long long)arg2 internal:(BOOL)arg3;
 - (BOOL)read:(char *)arg1 inputLength:(unsigned long long)arg2;
 - (BOOL)verifyMessageIntegrityWithKey:(id)arg1 inputBuffer:(char *)arg2 inputLength:(int)arg3;
-- (BOOL)write:(char *)arg1 outputLength:(int *)arg2 internal:(BOOL)arg3;
-- (BOOL)write:(char *)arg1 outputLength:(int *)arg2;
+- (BOOL)write:(char *)arg1 outputLength:(int *)arg2 remainingLength:(unsigned long long)arg3 internal:(BOOL)arg4;
+- (BOOL)write:(char *)arg1 outputLength:(int *)arg2 remainingLength:(unsigned long long)arg3;
 - (void)setTransactionID:(id)arg1 attributes:(id)arg2;
 - (void)setAttributes:(id)arg1;
 - (void)setTransactionID:(id)arg1;
@@ -45,9 +45,9 @@
 - (void)_addUInt32Attribute:(long long)arg1 value:(unsigned int)arg2;
 - (void)_addUInt16Attribute:(long long)arg1 value:(unsigned short)arg2;
 - (void)_addUInt8Attribute:(long long)arg1 value:(unsigned char)arg2;
-- (BOOL)dataIndicationToBuffer:(char *)arg1 outputLength:(int *)arg2 data:(char *)arg3 dataLen:(int)arg4 keyData:(id)arg5;
-- (BOOL)stunResponseToBuffer:(char *)arg1 outputLength:(int *)arg2 transactionID:(id)arg3 reqCount:(int)arg4 echoTime:(unsigned short)arg5 delay:(unsigned short)arg6 keyData:(id)arg7;
-- (BOOL)stunRequestToBuffer:(char *)arg1 outputLength:(int *)arg2 transactionID:(char *)arg3 reqCount:(int)arg4 userName:(char *)arg5 usernameLen:(int)arg6 sendTime:(unsigned short)arg7 keyData:(id)arg8;
+- (BOOL)dataIndicationToBuffer:(char *)arg1 outputLength:(int *)arg2 data:(char *)arg3 dataLen:(int)arg4 keyData:(id)arg5 remainingLength:(unsigned long long)arg6;
+- (BOOL)stunResponseToBuffer:(char *)arg1 outputLength:(int *)arg2 transactionID:(id)arg3 reqCount:(int)arg4 echoTime:(unsigned short)arg5 delay:(unsigned short)arg6 keyData:(id)arg7 remainingLength:(unsigned long long)arg8;
+- (BOOL)stunRequestToBuffer:(char *)arg1 outputLength:(int *)arg2 transactionID:(char *)arg3 reqCount:(int)arg4 userName:(char *)arg5 usernameLen:(int)arg6 sendTime:(unsigned short)arg7 keyData:(id)arg8 remainingLength:(unsigned long long)arg9;
 - (BOOL)getAttribute:(long long)arg1 attribute:(struct IDSStunAttribute *)arg2;
 - (BOOL)hasAttribute:(unsigned short)arg1;
 - (BOOL)addAttribute:(struct IDSStunAttribute *)arg1;

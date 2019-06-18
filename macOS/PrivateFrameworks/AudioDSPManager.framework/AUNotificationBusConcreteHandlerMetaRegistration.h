@@ -6,6 +6,7 @@
 
 #import <AudioDSPManager/AUNotificationBusConcreteHandlerRegistration.h>
 
+__attribute__((visibility("hidden")))
 @interface AUNotificationBusConcreteHandlerMetaRegistration : AUNotificationBusConcreteHandlerRegistration
 {
 }

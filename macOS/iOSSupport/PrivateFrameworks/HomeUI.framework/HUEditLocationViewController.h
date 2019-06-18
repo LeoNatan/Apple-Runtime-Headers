@@ -78,6 +78,7 @@
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
 - (id)buildItemModuleControllerForModule:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)doneButtonPressed:(id)arg1;
 - (void)addButtonPressed:(id)arg1;
 - (id)showNotificationSettingsForHomeKitObject:(id)arg1 animated:(BOOL)arg2;

@@ -25,7 +25,9 @@
 + (BOOL)_yearIsNeededForDisplayingDate:(id)arg1;
 + (id)numberOfYearsAgoWithEventNodes:(id)arg1 relativeToDateComponents:(id)arg2 useOrdinal:(BOOL)arg3;
 + (id)_numberOfYearsAgoWithEventNodes:(id)arg1 relativeToDateComponents:(id)arg2;
++ (id)babyGrowingUpTimeTitleWithEventNodes:(id)arg1;
 + (id)peopleTimeTitleWithEventNodes:(id)arg1;
++ (id)peopleTimeTitleWithEventNodes:(id)arg1 requireMultipleYears:(BOOL)arg2;
 + (id)_splitTimeTitleWithLocalStartDate:(id)arg1 endDate:(id)arg2 startDateNode:(id)arg3 endDateNode:(id)arg4 allowedFormats:(unsigned long long)arg5 locale:(id)arg6;
 + (id)splitTimeTitleWithDateInterval:(id)arg1 allowedFormats:(unsigned long long)arg2;
 + (id)splitTimeTitleWithOptions:(id)arg1;

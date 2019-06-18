@@ -9,11 +9,12 @@
 @interface _TtC12AppAnalytics13UploadManager : _TtCs12_SwiftObject
 {
     // Error parsing type: , name: service
-    // Error parsing type: , name: deferredStore
     // Error parsing type: , name: dropbox
-    // Error parsing type: , name: queue
-    // Error parsing type: , name: retriedIncompleteRequests
+    // Error parsing type: , name: batchIdentifiers
+    // Error parsing type: , name: flushQueue
 }
+
+- (void)flushWithCallbackQueue:(id)arg1 completion:(CDUnknownBlockType)arg2;
 
 @end
 

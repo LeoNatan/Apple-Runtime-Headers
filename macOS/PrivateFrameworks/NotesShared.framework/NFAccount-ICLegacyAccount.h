@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface NFAccount (ICLegacyAccount) <ICLegacyAccount>
+- (id)localizedAttachmentsNotSupportedReason;
 - (BOOL)supportsAttachments;
 - (id)folders;
 - (id)accountIdentifier;

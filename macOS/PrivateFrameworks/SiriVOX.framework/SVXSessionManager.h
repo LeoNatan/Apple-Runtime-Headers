@@ -53,6 +53,7 @@
     AFClockTimerSnapshot *_clockTimerSnapshot;
     NSObject<OS_dispatch_queue> *_coreDuetQueue;
     double _nowPlayingPlaybackStateRecordTime;
+    BOOL _needsClearContext;
 }
 
 - (void).cxx_destruct;

@@ -11,6 +11,7 @@
 __attribute__((visibility("hidden")))
 @interface MSPSharedTripNotificationRules : NSObject
 {
+    BOOL _hasMadeFinalPush;
     unsigned long long _maxPostedNotifications;
     unsigned long long _postedNotifcations;
     double _minimumETADifference;
@@ -21,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSDate *_currentETADate;
 }
 
+@property(nonatomic) BOOL hasMadeFinalPush; // @synthesize hasMadeFinalPush=_hasMadeFinalPush;
 @property(retain, nonatomic) NSDate *currentETADate; // @synthesize currentETADate=_currentETADate;
 @property(retain, nonatomic) NSDate *lastUpdatedDate; // @synthesize lastUpdatedDate=_lastUpdatedDate;
 @property(retain, nonatomic) NSDate *lastPostedNotificationDate; // @synthesize lastPostedNotificationDate=_lastPostedNotificationDate;
@@ -33,7 +35,7 @@ __attribute__((visibility("hidden")))
 - (double)minimumETADifferenceIncrement;
 - (void)incrementMinimumETADiffernce;
 - (void)didReceiveUpdateWithETA:(double)arg1 lastUpdated:(double)arg2;
-@property(readonly, nonatomic) BOOL shouldPostNotification;
+@property(readonly, nonatomic) unsigned long long currentlyNecessaryNotificationType;
 - (void)didPostNotification;
 - (id)initWithMaximumNumberOfNotifications:(unsigned long long)arg1 minimumNotificationInterval:(double)arg2;
 - (id)initWithMaximumNumberOfNotifications:(unsigned long long)arg1;

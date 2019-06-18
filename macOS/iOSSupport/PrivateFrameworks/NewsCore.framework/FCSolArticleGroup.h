@@ -20,7 +20,7 @@
     double _heuristicScore;
 }
 
-+ (id)formGroup:(id)arg1 withMinClusterSize:(long long)arg2 maxClusterSize:(long long)arg3 maxPublisherOccurrences:(long long)arg4 maxUnpaidArticles:(long long)arg5;
++ (id)formGroup:(id)arg1 withMinClusterSize:(long long)arg2 maxClusterSize:(long long)arg3 maxPublisherOccurrences:(long long)arg4 maxUnpaidArticles:(long long)arg5 enforcePublisherCap:(BOOL)arg6;
 + (id)predictBestGroup:(id)arg1 ungroupedArticles:(id)arg2 ungroupedTags:(id)arg3 articlesByTag:(id)arg4 heuristic:(id)arg5 autoFavoriteHeuristic:(id)arg6;
 @property(nonatomic) double heuristicScore; // @synthesize heuristicScore=_heuristicScore;
 @property(readonly, nonatomic) double score; // @synthesize score=_score;

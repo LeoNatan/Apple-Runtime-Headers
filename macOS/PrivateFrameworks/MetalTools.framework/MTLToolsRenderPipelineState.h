@@ -19,6 +19,8 @@
 @property(readonly, retain, nonatomic) MTLDebugInstrumentationData *vertexDebugInstrumentationData;
 @property(readonly) unsigned long long uniqueIdentifier;
 @property(nonatomic) unsigned long long resourceIndex;
+- (unsigned int)getFragmentShaderTelemetryID;
+- (unsigned int)getVertexShaderTelemetryID;
 - (id)newFragmentShaderDebugInfo;
 - (id)newVertexShaderDebugInfo;
 @property(readonly) BOOL supportIndirectCommandBuffers;

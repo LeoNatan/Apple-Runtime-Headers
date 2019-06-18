@@ -55,6 +55,7 @@
 - (double)tableView:(id)arg1 heightOfRow:(long long)arg2;
 - (id)tableView:(id)arg1 viewForTableColumn:(id)arg2 row:(long long)arg3;
 - (long long)numberOfRowsInTableView:(id)arg1;
+@property(readonly, nonatomic) long long fetchStatus;
 - (void)removeSelectedContactFromWhitelist;
 - (void)addNewContact:(id)arg1;
 - (void)addContactFromLocalContacts:(id)arg1;

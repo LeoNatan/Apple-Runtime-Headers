@@ -43,6 +43,7 @@
 - (void)accessedByGPU;
 @property(readonly, nonatomic) BOOL resourceTrackingEnabled; // @dynamic resourceTrackingEnabled;
 - (unsigned long long)setPurgeableState:(unsigned long long)arg1;
+- (id)newRemoteTextureViewForDevice:(id)arg1;
 - (id)newTextureViewWithPixelFormat:(unsigned long long)arg1 textureType:(unsigned long long)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4 swizzle:(CDStruct_a06f635e)arg5;
 - (id)newTextureViewWithPixelFormat:(unsigned long long)arg1 textureType:(unsigned long long)arg2 levels:(struct _NSRange)arg3 slices:(struct _NSRange)arg4;
 - (id)newTextureViewWithPixelFormat:(unsigned long long)arg1;

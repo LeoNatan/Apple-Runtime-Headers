@@ -14,6 +14,9 @@ __attribute__((visibility("hidden")))
     NSPersistentHistoryTransaction *_transaction;
 }
 
++ (Class)classForKeyedUnarchiver;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (void)_setTransaction:(id)arg1;
 - (id)transaction;
 - (id)initWithPFBatchFaultingArray:(id)arg1;

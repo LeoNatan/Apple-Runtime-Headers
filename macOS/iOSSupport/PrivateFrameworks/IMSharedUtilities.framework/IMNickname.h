@@ -30,6 +30,7 @@
 @property(copy, nonatomic) NSString *firstName; // @synthesize firstName=_firstName;
 - (BOOL)isDifferentFromNickname:(id)arg1 withOptions:(unsigned long long)arg2;
 - (id)_sharingState;
+- (id)_imageHashCreatedInChunks;
 @property(readonly, nonatomic) NSString *imageHash;
 @property(readonly, nonatomic) NSString *nameHash;
 - (id)dataRepresentation;

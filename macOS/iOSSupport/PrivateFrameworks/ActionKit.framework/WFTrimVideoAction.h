@@ -18,7 +18,7 @@
 }
 
 @property(nonatomic) BOOL hasSaved; // @synthesize hasSaved=_hasSaved;
-- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (void)presentationControllerDidDismiss:(id)arg1;
 - (void)videoEditorControllerDidCancel:(id)arg1;
 - (void)videoEditorController:(id)arg1 didFailWithError:(id)arg2;
 - (void)videoEditorController:(id)arg1 didSaveEditedVideoToPath:(id)arg2;

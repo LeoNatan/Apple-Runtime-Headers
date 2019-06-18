@@ -43,6 +43,7 @@
 @property(nonatomic) __weak id <NULoadingDelegate> loadingDelegate; // @synthesize loadingDelegate=_loadingDelegate;
 @property(readonly, copy, nonatomic) NSString *pageIdentifier; // @synthesize pageIdentifier=_pageIdentifier;
 - (void).cxx_destruct;
+- (id)loadingTextForArticle:(id)arg1;
 - (void)loadArticleAndEmbedArticleViewController;
 - (void)reportEvent:(id)arg1;
 @property(readonly, nonatomic) UIScrollView *scrollView;

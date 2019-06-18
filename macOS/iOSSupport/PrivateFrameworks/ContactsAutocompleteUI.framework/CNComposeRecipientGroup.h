@@ -20,7 +20,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)commentedAddress;
 - (id)address;
-- (BOOL)isRemovableFromSearchResults;
 - (BOOL)showsChevronButton;
 - (BOOL)isGroup;
 - (id)sortedChildren;

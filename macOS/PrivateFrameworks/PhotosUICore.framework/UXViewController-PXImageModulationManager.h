@@ -9,11 +9,21 @@
 @class PXImageModulationManager;
 
 @interface UXViewController (PXImageModulationManager)
+- (void)_px_viewAppearanceDidChange;
+- (void)_pxswizzled_imageModulation_prepareForTransitionWithContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_pxswizzled_imageModulation_viewDidDisappear:(BOOL)arg1;
+- (void)_pxswizzled_imageModulation_viewWillDisappear:(BOOL)arg1;
+- (void)_pxswizzled_imageModulation_viewWillAppear:(BOOL)arg1;
 - (void)px_setNeedsImageModulationIntensityUpdate;
 @property(readonly, nonatomic) double px_imageModulationIntensity;
 - (void)px_setNeedsHDRFocusUpdate;
 @property(readonly, nonatomic) double px_HDRFocus;
+- (BOOL)_px_windowMatchesImageModulationManager:(id)arg1;
 @property(readonly, nonatomic) PXImageModulationManager *px_imageModulationManager;
 - (void)px_enableImageModulation;
+- (double)_px_imageModulationMixFactorWithPresentedViewController:(id)arg1;
+@property(readonly, nonatomic) double px_effectiveImageModulationIntensity;
+@property(readonly, nonatomic) double px_effectiveHDRFocus;
+@property(nonatomic, getter=px_isImageModulationEnabled, setter=px_setImageModulationEnabled:) BOOL px_imageModulationEnabled;
 @end
 

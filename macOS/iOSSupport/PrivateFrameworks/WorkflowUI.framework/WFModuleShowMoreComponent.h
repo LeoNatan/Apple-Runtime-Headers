@@ -10,8 +10,7 @@
 {
 }
 
-+ (id)newWithShowingMore:(BOOL)arg1 backgroundColor:(id)arg2 highlightedBackgroundColor:(id)arg3 toggleAction:(CKTypedComponentAction_32b09354)arg4;
-+ (id)disclosureImage;
++ (id)newWithShowingMore:(BOOL)arg1 highlightedBackgroundColor:(id)arg2 toggleAction:(CKTypedComponentAction_32b09354)arg3;
 
 @end
 

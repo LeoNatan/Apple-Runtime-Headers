@@ -140,6 +140,7 @@
 + (id)predicateForContactsMatchingCoreDataPredicate:(id)arg1;
 + (id)predicateForContactsLinkedToContact:(id)arg1;
 + (id)predicateForContactsMatchingPostalAddress:(id)arg1;
++ (id)predicateForContactsMatchingHandleStrings:(id)arg1 inContainersWithIdentifiers:(id)arg2;
 + (id)predicateForContactsMatchingHandleStrings:(id)arg1;
 + (id)predicateForContactMatchingPhoneNumberWithDigits:(id)arg1 countryCode:(id)arg2;
 + (id)predicateForContactMatchingPhoneNumber:(id)arg1;

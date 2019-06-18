@@ -29,7 +29,6 @@
 }
 
 + (id)_imageNamed:(id)arg1 compatibleWithTraitCollection:(id)arg2;
-+ (id)systemLightGrayColor;
 + (id)controlTitleFontForControlStatusType:(long long)arg1;
 + (id)_newControlTitleLabel;
 + (struct CGSize)_expectedSizeForControlStatusType:(long long)arg1 controlTitle:(id)arg2 hasControlImage:(BOOL)arg3 displayScale:(double)arg4 preferredHeight:(double)arg5;

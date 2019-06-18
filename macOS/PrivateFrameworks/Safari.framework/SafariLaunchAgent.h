@@ -9,17 +9,19 @@
 #import <Safari/SafariLaunchAgentProtocol-Protocol.h>
 #import <Safari/_ASWebAuthenticationSessionRequestServerDelegate-Protocol.h>
 
-@class NSString, _ASWebAuthenticationSessionRequestServer;
+@class NSString, NSURL, _ASWebAuthenticationSessionRequestServer;
 
 __attribute__((visibility("hidden")))
 @interface SafariLaunchAgent : NSObject <_ASWebAuthenticationSessionRequestServerDelegate, SafariLaunchAgentProtocol>
 {
     _ASWebAuthenticationSessionRequestServer *_authenticationSessionRequestServer;
     unsigned long long _requestsWaitingToBeEnqueued;
+    NSURL *_cachedBrowserURL;
 }
 
 - (void).cxx_destruct;
-- (void)_tellBrowserAuthenticationSessionRequestsAreAvailable;
+- (id)_iconURLForBrowserAtURL:(id)arg1;
+- (void)_sendAlertForPendingAuthenticationRequestsToBrowserAtURL:(id)arg1;
 - (void)authenticationSessionRequestServerDidFinishAllRequests:(id)arg1;
 - (void)authenticationSessionRequestServerNeedsClientToReconnect:(id)arg1;
 - (void)didFulfillAuthenticationSessionRequest:(id)arg1 withCallbackURL:(id)arg2 error:(id)arg3;

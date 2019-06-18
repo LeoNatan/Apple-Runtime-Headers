@@ -38,6 +38,7 @@
         unsigned int delegateRespondsToTextInputWillChangeSelectionFromCharacterRangeToCharacterRange:1;
         unsigned int delegateRespondsToTextInputEditorDidChangeSelection:1;
         unsigned int delegateRespondsToTextInputPrepareAttributedTextForInsertion:1;
+        unsigned int delegateRespondsToIsSingleLine:1;
         unsigned int textOrSelectionChangeOriginatesWithKeyboard:1;
         unsigned int showingTextStyleOptions:1;
         unsigned int undoRedoInProgress:1;
@@ -64,6 +65,7 @@
 }
 
 + (BOOL)_pasteboardHasStrings;
++ (id)whitelistedDictationDictionaryFromMetadata:(id)arg1;
 @property(nonatomic) BOOL shouldStartUndoGroup; // @synthesize shouldStartUndoGroup=_shouldStartUndoGroup;
 @property(nonatomic) int currentUndoGroupType; // @synthesize currentUndoGroupType=_currentUndoGroupType;
 @property(nonatomic) struct _NSRange previousSelectedRange; // @synthesize previousSelectedRange=_previousSelectedRange;
@@ -407,10 +409,12 @@
 @property(nonatomic) int emptyContentReturnKeyType;
 @property(nonatomic) BOOL enablesReturnKeyAutomatically;
 @property(nonatomic) BOOL enablesReturnKeyOnNonWhiteSpaceContent;
+@property(nonatomic) struct UIEdgeInsets floatingKeyboardEdgeInsets;
 @property(nonatomic) BOOL forceDefaultDictationInfo;
 @property(nonatomic) long long forceDictationKeyboardType;
 @property(nonatomic) BOOL forceDisableDictation;
 @property(nonatomic) BOOL forceEnableDictation;
+@property(nonatomic) BOOL forceFloatingKeyboard;
 @property(nonatomic) BOOL hasDefaultContents;
 @property(readonly) unsigned long long hash;
 @property(nonatomic) BOOL hidePrediction;

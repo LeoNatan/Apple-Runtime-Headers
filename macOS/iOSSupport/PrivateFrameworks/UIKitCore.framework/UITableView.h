@@ -336,6 +336,7 @@
         unsigned int dataSourceIsDiffableDataSource:1;
         unsigned int isApplyingDiffableUpdate:1;
         unsigned int isUpdatingVisibleCells:1;
+        unsigned int ignoreCopyFilterForTableAnimations:1;
     } _tableFlags;
     id <UITableViewDragDelegate> _dragDelegate;
     id <UITableViewDropDelegate> _dropDelegate;
@@ -1116,6 +1117,9 @@
 - (void)_resignFirstResponderInDeletedSectionOrRow:(BOOL)arg1;
 - (void)_endAnimatingCells;
 - (void)_beginAnimatingCells;
+- (void)_setClearBlendingViewCompositingFilter;
+- (void)_setIgnoreCopyFilterForTableAnimations:(BOOL)arg1;
+- (BOOL)_ignoreCopyFilterForTableAnimations;
 - (void)_setGestureRecognizerRequiresTableGestureRecognizersToFail:(id)arg1;
 - (void)_purgeReuseQueues;
 - (void)_reuseHeaderFooterView:(id)arg1 isHeader:(BOOL)arg2 forSection:(long long)arg3;
@@ -1161,7 +1165,7 @@
 - (void)_setNeedsVisibleCellsUpdate:(BOOL)arg1 withFrames:(BOOL)arg2 updateImmediatelyIfPossible:(BOOL)arg3;
 - (void)_setNeedsVisibleCellsUpdate:(BOOL)arg1 withFrames:(BOOL)arg2;
 - (void)_updateFocusedCellIndexPathIfNecessaryWithLastFocusedRect:(struct CGRect)arg1;
-- (void)_rebaseExistingShadowUpdatesIfNecessaryWithItems:(id)arg1 insertItems:(id)arg2 deleteItems:(id)arg3 sortedInsertItems:(id)arg4 sortedDeleteItems:(id)arg5 sortedMoveItems:(id)arg6;
+- (void)_rebaseExistingShadowUpdatesIfNecessaryWithSortedInsertItems:(id)arg1 sortedDeleteItems:(id)arg2 sortedMoveItems:(id)arg3;
 - (void)_Bug_Detected_In_Client_Of_UITableView_Invalid_Number_Of_Rows_In_Section:(id)arg1;
 - (void)_Bug_Detected_In_Client_Of_UITableView_Invalid_Number_Of_Sections:(id)arg1;
 - (void)_endCellAnimationsWithContext:(id)arg1;

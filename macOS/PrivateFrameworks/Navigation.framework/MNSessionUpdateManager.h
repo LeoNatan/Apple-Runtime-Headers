@@ -41,6 +41,8 @@
 - (void)transitRouteUpdater:(id)arg1 didFailUpdateForRouteIDs:(id)arg2 withError:(id)arg3;
 - (void)transitRouteUpdater:(id)arg1 didUpdateTransitRoutes:(id)arg2;
 - (void)transitRouteUpdater:(id)arg1 willUpdateTransitForRouteIDs:(id)arg2;
+- (void)transitRouteUpdater:(id)arg1 didReceiveResponse:(id)arg2;
+- (void)transitRouteUpdater:(id)arg1 willSendRequests:(id)arg2;
 - (void)_updateETAResponse:(id)arg1 withRemainingDistanceFromRequest:(id)arg2;
 - (void)_handleETAResponse:(id)arg1 forRouteInfo:(id)arg2 request:(id)arg3 error:(id)arg4;
 - (BOOL)_updateETARequest:(id)arg1 withRouteInfo:(id)arg2 andUserLocation:(id)arg3;

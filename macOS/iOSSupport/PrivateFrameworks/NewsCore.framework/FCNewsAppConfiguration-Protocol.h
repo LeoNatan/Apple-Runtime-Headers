@@ -52,6 +52,7 @@
 @property(readonly, nonatomic) NSArray *onboardingFeedIDs;
 
 @optional
+@property(readonly, nonatomic) unsigned long long bestOfBundleFeedGroupKind;
 @property(readonly, nonatomic) unsigned long long likeDislikeBehavior;
 @property(readonly, nonatomic) long long maximumTrendingGroupSizeiPhone;
 @property(readonly, nonatomic) long long maximumTrendingGroupSizeiPad;

@@ -20,12 +20,10 @@
     NSMutableArray *_mutableAllVisibleItems;
     NSMutableArray *_mutableAlwaysAllowedItems;
     NSMutableArray *_mutableAvailableItems;
-    NSArray *_alwaysAllowedIdentifiers;
     CDUnknownBlockType _deduplication_block;
 }
 
 @property(copy, nonatomic) CDUnknownBlockType deduplication_block; // @synthesize deduplication_block=_deduplication_block;
-@property(copy, nonatomic) NSArray *alwaysAllowedIdentifiers; // @synthesize alwaysAllowedIdentifiers=_alwaysAllowedIdentifiers;
 @property(retain, nonatomic) NSMutableArray *mutableAvailableItems; // @synthesize mutableAvailableItems=_mutableAvailableItems;
 @property(retain, nonatomic) NSMutableArray *mutableAlwaysAllowedItems; // @synthesize mutableAlwaysAllowedItems=_mutableAlwaysAllowedItems;
 @property(retain, nonatomic) NSMutableArray *mutableAllVisibleItems; // @synthesize mutableAllVisibleItems=_mutableAllVisibleItems;
@@ -37,7 +35,6 @@
 - (void).cxx_destruct;
 - (void)_updateUsage;
 - (void)_updateAlwaysAllowedItems;
-- (void)_updateAlwaysAllowedStateForItem:(id)arg1;
 - (void)_updateAllVisibleItems;
 - (void)controllerDidChangeContent:(id)arg1;
 - (void)controller:(id)arg1 didChangeObject:(id)arg2 atIndexPath:(id)arg3 forChangeType:(unsigned long long)arg4 newIndexPath:(id)arg5;

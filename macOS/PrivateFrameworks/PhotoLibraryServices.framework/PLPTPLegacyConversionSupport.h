@@ -20,6 +20,7 @@
 @property(readonly, nonatomic) BOOL peerSupportsAdjustmentBaseResources;
 - (id)conversionResultForAsset:(id)arg1 isVideo:(BOOL)arg2 isRender:(BOOL)arg3 forceLegacyConversion:(BOOL)arg4;
 @property(readonly, nonatomic) BOOL peerSupportsTranscodeChoice;
+@property(readonly, nonatomic) BOOL penultimateIsPublic;
 - (id)init;
 
 // Remaining properties

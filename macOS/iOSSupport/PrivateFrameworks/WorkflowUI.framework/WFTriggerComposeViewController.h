@@ -20,7 +20,7 @@
 - (void)dismissForTutorial:(BOOL)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (id)emptyStateString;
 - (void)viewDidLoad;
-- (BOOL)isModalInPopover;
+- (BOOL)isModalInPresentation;
 - (id)initWithWorkflow:(id)arg1 database:(id)arg2;
 
 @end

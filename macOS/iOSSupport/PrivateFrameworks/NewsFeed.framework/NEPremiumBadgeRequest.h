@@ -17,8 +17,8 @@
 
 - (void).cxx_destruct;
 - (id)init;
-- (id)initWithStyle:(long long)arg1 color:(id)arg2 bounds:(struct CGRect)arg3 mask:(id)arg4 offset:(struct CGPoint)arg5;
-- (id)initWithStyle:(long long)arg1 color:(id)arg2 bounds:(struct CGRect)arg3 mask:(id)arg4;
+- (id)initWithStyle:(long long)arg1 color:(id)arg2 bounds:(struct CGRect)arg3 mask:(id)arg4 offset:(struct CGPoint)arg5 traitCollection:(id)arg6;
+- (id)initWithStyle:(long long)arg1 color:(id)arg2 bounds:(struct CGRect)arg3 mask:(id)arg4 traitCollection:(id)arg5;
 @property(nonatomic, readonly) NEPremiumBadgeMask *mask; // @synthesize mask;
 @property(nonatomic, readonly) TUShineImageRequest *shineImageRequest; // @synthesize shineImageRequest;
 @property(nonatomic, readonly) long long style; // @synthesize style;

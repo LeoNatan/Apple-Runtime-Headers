@@ -32,6 +32,7 @@
     PKColorPicker *_colorPickerPopover;
 }
 
++ (id)collectionViewFlowLayoutWithItemSize:(struct CGSize)arg1 minimumLineSpacing:(double)arg2 minimumInteritemSpacing:(double)arg3;
 @property(retain, nonatomic) PKColorPicker *colorPickerPopover; // @synthesize colorPickerPopover=_colorPickerPopover;
 @property(retain, nonatomic) UIColor *lastSelectedColor; // @synthesize lastSelectedColor=_lastSelectedColor;
 @property(retain, nonatomic) NSArray *swatchColors; // @synthesize swatchColors=_swatchColors;
@@ -43,7 +44,7 @@
 - (void).cxx_destruct;
 - (void)reloadColorsForMode:(long long)arg1;
 - (void)toggleColorSelectionPopover;
-- (void)_reloadSwatchColorForTraitCollection:(id)arg1;
+- (void)_reloadSwatchColorsForTraitCollection:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)dismissPalettePopoverWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_showColorSelectionPopover;
@@ -55,7 +56,6 @@
 - (id)swatchWithColor:(id)arg1;
 - (id)_selectedSwatch;
 @property(retain, nonatomic) UIColor *selectedColor;
-- (struct CGSize)collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (long long)collectionView:(id)arg1 numberOfItemsInSection:(long long)arg2;

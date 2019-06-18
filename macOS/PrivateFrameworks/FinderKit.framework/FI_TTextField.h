@@ -29,9 +29,11 @@ __attribute__((visibility("hidden")))
     _Bool _stringSelectorUpdateTextWithAttributedString;
     struct shared_ptr<FI_TBestFitStringSelector> _bestFitStringSelector;
     shared_ptr_2ccd00e6 _bestFitFormatterSelector;
+    _Bool _disableIntegralFrames;
 }
 
 + (Class)cellClass;
+@property(nonatomic) _Bool disableIntegralFrames; // @synthesize disableIntegralFrames=_disableIntegralFrames;
 @property(nonatomic) _Bool delayWindowOrderingOnClickThrough; // @synthesize delayWindowOrderingOnClickThrough=_delayWindowOrderingOnClickThrough;
 @property(nonatomic) _Bool drawGrayTextWhenDisabled; // @synthesize drawGrayTextWhenDisabled=_drawGrayTextWhenDisabled;
 @property(nonatomic) _Bool autoAdjustHeightToFit; // @synthesize autoAdjustHeightToFit=_autoAdjustHeightToFit;

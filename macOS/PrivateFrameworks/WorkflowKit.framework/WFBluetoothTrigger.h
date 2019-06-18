@@ -22,6 +22,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (BOOL)hasValidConfiguration;
+- (id)init;
 - (id)localizedTitleWithConfigurationSummary;
 
 @end

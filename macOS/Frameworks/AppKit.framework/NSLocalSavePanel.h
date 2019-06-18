@@ -127,6 +127,7 @@
 + (id)_NSNavRecentPlacesFromDefaults;
 + (unsigned long long)_NSNavMaxRecentPlacesFromDefaults;
 @property(copy) NSArray *customActions; // @synthesize customActions;
+- (void)_reallyDoOrderWindow:(long long)arg1 relativeTo:(long long)arg2 findKey:(BOOL)arg3 forCounter:(BOOL)arg4 force:(BOOL)arg5 isModal:(BOOL)arg6;
 - (void)_setTagsIfNecessary;
 - (void)_registerTagsWithFinder;
 - (void)_commitPendingTags;

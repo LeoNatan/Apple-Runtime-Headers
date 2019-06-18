@@ -11,22 +11,27 @@
 __attribute__((visibility("hidden")))
 @interface CIPerspectiveRotate : CIFilter
 {
-    // Error parsing type: {double3x3="columns"[3]}, name: K
-    // Error parsing type: {double3x3="columns"[3]}, name: invK
+    // Error parsing type: {float3x3="columns"[3]}, name: K
+    // Error parsing type: {float3x3="columns"[3]}, name: invK
     CIImage *inputImage;
+    NSNumber *inputFocalLength;
     NSNumber *inputPitch;
     NSNumber *inputYaw;
     NSNumber *inputRoll;
 }
 
 + (id)customAttributes;
-@property(retain, nonatomic) NSNumber *inputRoll; // @synthesize inputRoll;
-@property(retain, nonatomic) NSNumber *inputYaw; // @synthesize inputYaw;
-@property(retain, nonatomic) NSNumber *inputPitch; // @synthesize inputPitch;
+@property(copy, nonatomic) NSNumber *inputRoll; // @synthesize inputRoll;
+@property(copy, nonatomic) NSNumber *inputYaw; // @synthesize inputYaw;
+@property(copy, nonatomic) NSNumber *inputPitch; // @synthesize inputPitch;
+@property(copy, nonatomic) NSNumber *inputFocalLength; // @synthesize inputFocalLength;
 @property(retain, nonatomic) CIImage *inputImage; // @synthesize inputImage;
 - (id).cxx_construct;
 - (id)outputImage;
-- (id)perspectiveWarpKernel;
+// Error parsing type for property outputTransform:
+// Property attributes: T{?=[3]},R,N
+
+- (void)computeCameraIntrinsics;
 
 @end
 

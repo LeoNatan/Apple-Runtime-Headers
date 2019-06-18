@@ -32,6 +32,7 @@
 @property(readonly, nonatomic) BOOL conformsToAudio;
 @property(readonly, copy, nonatomic) NSString *preferredExtension;
 - (BOOL)supportsCloudUpload;
+- (BOOL)validateForDelete:(id *)arg1;
 
 // Remaining properties
 @property(nonatomic) BOOL conformsToImage; // @dynamic conformsToImage;

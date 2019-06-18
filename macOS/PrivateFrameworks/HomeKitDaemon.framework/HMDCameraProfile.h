@@ -7,12 +7,12 @@
 #import <HomeKitDaemon/HMDAccessoryProfile.h>
 
 #import <HomeKitDaemon/HMDCameraBackingStoreDelegate-Protocol.h>
+#import <HomeKitDaemon/HMDCameraProfileSettingsManagerDelegate-Protocol.h>
 #import <HomeKitDaemon/HMDCameraSettingProactiveReaderDelegate-Protocol.h>
-#import <HomeKitDaemon/HMDCameraUserSettingsDelegate-Protocol.h>
 
-@class HMDCameraBackingStore, HMDCameraClipUserNotificationCenter, HMDCameraResidentMessageHandler, HMDCameraSnapshotManager, HMDCameraStreamSnapshotHandler, HMDCameraUserSettings, HMDHAPAccessory, HMDPredicateUtilities, HMDService, HMFNetMonitor, NSMutableArray, NSSet, NSString, NSUUID;
+@class HMDCameraBackingStore, HMDCameraClipUserNotificationCenter, HMDCameraProfileSettingsManager, HMDCameraProfileSettingsModel, HMDCameraResidentMessageHandler, HMDCameraSnapshotManager, HMDCameraStreamSnapshotHandler, HMDHAPAccessory, HMDPredicateUtilities, HMDService, HMFNetMonitor, NSMutableArray, NSSet, NSString, NSUUID;
 
-@interface HMDCameraProfile : HMDAccessoryProfile <HMDCameraSettingProactiveReaderDelegate, HMDCameraBackingStoreDelegate, HMDCameraUserSettingsDelegate>
+@interface HMDCameraProfile : HMDAccessoryProfile <HMDCameraSettingProactiveReaderDelegate, HMDCameraProfileSettingsManagerDelegate, HMDCameraBackingStoreDelegate>
 {
     BOOL _microphonePresent;
     BOOL _speakerPresent;
@@ -26,6 +26,7 @@
     NSMutableArray *_settingProactiveReaders;
     HMFNetMonitor *_networkMonitor;
     HMDCameraResidentMessageHandler *_residentMessageHandler;
+    HMDCameraProfileSettingsManager *_cameraSettingsManager;
     HMDCameraClipUserNotificationCenter *_clipUserNotificationCenter;
     HMDPredicateUtilities *_predicateUtilities;
 }
@@ -35,6 +36,7 @@
 + (id)logCategory;
 @property(retain) HMDPredicateUtilities *predicateUtilities; // @synthesize predicateUtilities=_predicateUtilities;
 @property(retain) HMDCameraClipUserNotificationCenter *clipUserNotificationCenter; // @synthesize clipUserNotificationCenter=_clipUserNotificationCenter;
+@property(readonly) HMDCameraProfileSettingsManager *cameraSettingsManager; // @synthesize cameraSettingsManager=_cameraSettingsManager;
 @property(readonly) HMDCameraResidentMessageHandler *residentMessageHandler; // @synthesize residentMessageHandler=_residentMessageHandler;
 @property(readonly) HMFNetMonitor *networkMonitor; // @synthesize networkMonitor=_networkMonitor;
 @property(readonly) NSMutableArray *settingProactiveReaders; // @synthesize settingProactiveReaders=_settingProactiveReaders;
@@ -48,8 +50,8 @@
 @property(readonly, nonatomic, getter=isSpeakerPresent) BOOL speakerPresent; // @synthesize speakerPresent=_speakerPresent;
 @property(readonly, nonatomic, getter=isMicrophonePresent) BOOL microphonePresent; // @synthesize microphonePresent=_microphonePresent;
 - (void).cxx_destruct;
-- (void)cameraUserSettings:(id)arg1 canDisableRecordingWithCompletion:(CDUnknownBlockType)arg2;
-- (void)cameraUserSettings:(id)arg1 canEnableRecordingWithCompletion:(CDUnknownBlockType)arg2;
+- (void)cameraProfileSettingsManager:(id)arg1 canDisableRecordingWithCompletion:(CDUnknownBlockType)arg2;
+- (void)cameraProfileSettingsManager:(id)arg1 canEnableRecordingWithCompletion:(CDUnknownBlockType)arg2;
 - (void)cameraBackingStoreDidDisableCloudStorage:(id)arg1;
 - (void)cameraBackingStoreDidStop:(id)arg1;
 - (void)cameraBackingStoreDidStart:(id)arg1;
@@ -58,6 +60,7 @@
 - (BOOL)canPostSignificantEventNotification:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)messageReceiverChildren;
+@property(readonly, nonatomic) HMDCameraProfileSettingsModel *currentSettingsModel;
 @property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)cameraSettingProactiveReaderDidCompleteRead:(id)arg1 negotiateStreamMessageWasHandled:(BOOL)arg2;
@@ -66,7 +69,6 @@
 - (void)registerForMessages;
 - (void)_setControlSupport;
 - (id)_createCameraManagers:(id)arg1;
-@property(readonly, nonatomic) HMDCameraUserSettings *userSettings;
 - (id)dumpState;
 - (void)dealloc;
 - (void)unconfigure;
@@ -75,6 +77,7 @@
 - (void)createCameraClipUserNotificationCenter;
 - (void)setUp;
 @property(readonly, nonatomic, getter=isCameraRecordingFeatureSupported) BOOL supportsCameraRecordingFeature;
+- (id)initWithAccessory:(id)arg1 services:(id)arg2 msgDispatcher:(id)arg3 settingsManager:(id)arg4 workQueue:(id)arg5;
 - (id)initWithAccessory:(id)arg1 services:(id)arg2 msgDispatcher:(id)arg3;
 - (id)assistantObject;
 - (id)url;

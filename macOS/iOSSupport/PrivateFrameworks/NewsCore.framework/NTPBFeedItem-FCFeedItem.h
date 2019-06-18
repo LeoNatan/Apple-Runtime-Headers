@@ -52,6 +52,7 @@
 @property(readonly, nonatomic) double globalUserFeedback;
 @property(readonly, nonatomic) BOOL hasVideo;
 @property(readonly, nonatomic, getter=isHiddenFromAutoFavorites) BOOL hiddenFromAutoFavorites;
+@property(readonly, nonatomic) BOOL isFeatured;
 @property(readonly, nonatomic) long long minimumNewsVersion;
 @property(readonly, nonatomic) unsigned long long order;
 @property(readonly, nonatomic, getter=isPaid) BOOL paid;

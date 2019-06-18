@@ -10,12 +10,13 @@
 #import <UIKitCore/_UIPreviewPlatterActionsViewDelegate-Protocol.h>
 #import <UIKitCore/_UIPreviewPlatterPanControllerDelegate-Protocol.h>
 
-@class NSString, UITapGestureRecognizer, UITargetedPreview, UIView, UIVisualEffectView, _UIFufilledContextMenuConfiguration, _UIPreviewPlatterActionsView, _UIPreviewPlatterPanController, _UIPreviewPlatterView;
+@class NSString, UITapGestureRecognizer, UITargetedPreview, UIView, UIVisualEffectView, _UIFufilledContextMenuConfiguration, _UIPreviewPlatterActionsView, _UIPreviewPlatterLayoutArbiter, _UIPreviewPlatterPanController, _UIPreviewPlatterView;
 @protocol _UIPreviewPlatterPresentationControllerDelegate;
 
 __attribute__((visibility("hidden")))
 @interface _UIPreviewPlatterPresentationController : UIPresentationController <_UIPreviewPlatterActionsViewDelegate, UIGestureRecognizerDelegate, _UIPreviewPlatterPanControllerDelegate>
 {
+    BOOL _platterContentSizeDidChange;
     UIView *_platterContainerView;
     UIView *_platterTransitionView;
     UIVisualEffectView *_backgroundEffectView;
@@ -26,12 +27,15 @@ __attribute__((visibility("hidden")))
     _UIFufilledContextMenuConfiguration *_displayedConfiguration;
     UITargetedPreview *_sourcePreview;
     _UIPreviewPlatterPanController *_platterPanController;
+    _UIPreviewPlatterLayoutArbiter *_layoutArbiter;
     unsigned long long _currentLayout;
     struct CGSize _platterContentSize;
 }
 
+@property(nonatomic) BOOL platterContentSizeDidChange; // @synthesize platterContentSizeDidChange=_platterContentSizeDidChange;
 @property(nonatomic) struct CGSize platterContentSize; // @synthesize platterContentSize=_platterContentSize;
 @property(nonatomic) unsigned long long currentLayout; // @synthesize currentLayout=_currentLayout;
+@property(retain, nonatomic) _UIPreviewPlatterLayoutArbiter *layoutArbiter; // @synthesize layoutArbiter=_layoutArbiter;
 @property(retain, nonatomic) _UIPreviewPlatterPanController *platterPanController; // @synthesize platterPanController=_platterPanController;
 @property(retain, nonatomic) UITargetedPreview *sourcePreview; // @synthesize sourcePreview=_sourcePreview;
 @property(retain, nonatomic) _UIFufilledContextMenuConfiguration *displayedConfiguration; // @synthesize displayedConfiguration=_displayedConfiguration;
@@ -45,15 +49,14 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) _UIPreviewPlatterView *contentPlatterView; // @synthesize contentPlatterView=_contentPlatterView;
 - (void)previewActionsView:(id)arg1 didSelectAction:(id)arg2;
 - (void)_createActionsViewIfNecessary;
-- (struct CGRect)_computedActionsBoundsForContentBounds:(struct CGRect)arg1 platterBounds:(struct CGRect)arg2;
-- (struct CGRect)_computedPlatterBoundsForContentBounds:(struct CGRect)arg1;
-- (void)_updatePreferredContentSize:(struct CGSize)arg1 force:(BOOL)arg2;
-- (void)_positionPlatterFrame:(inout struct CGRect *)arg1 andActionViewFrame:(inout struct CGRect *)arg2 inBounds:(struct CGRect)arg3;
+- (void)_updatePlatterAndActionViewLayoutForce:(BOOL)arg1;
+- (void)_updatePresentedViewFrame;
+- (void)_updatePlatterContentSizeWithPreferredContentSize:(struct CGSize)arg1;
 - (void)initialPlatterFrame:(inout struct CGRect *)arg1 actionViewFrame:(inout struct CGRect *)arg2;
 - (void)viewWillTransitionToSize:(struct CGSize)arg1 withTransitionCoordinator:(id)arg2;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
-- (struct CGSize)preferredContentSize;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)_handlePlatterActionTapGesture:(id)arg1;
 - (void)_handleDismissalTapGesture:(id)arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;

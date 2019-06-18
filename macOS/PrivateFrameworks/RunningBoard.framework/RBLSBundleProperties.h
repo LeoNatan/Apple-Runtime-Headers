@@ -16,6 +16,7 @@
     BOOL _hasPreferredJetsamBand;
     BOOL _supportsBackgroundContentFetching;
     BOOL _supportsBackgroundNetworkAuthentication;
+    BOOL _supportsBackgroundAudio;
     BOOL _supportsUnboundedTaskCompletion;
     BOOL _usesSocketMonitoring;
     BOOL _isExtension;
@@ -31,6 +32,7 @@
 @property(readonly, nonatomic) BOOL isExtension; // @synthesize isExtension=_isExtension;
 @property(readonly, nonatomic) BOOL usesSocketMonitoring; // @synthesize usesSocketMonitoring=_usesSocketMonitoring;
 @property(readonly, nonatomic) BOOL supportsUnboundedTaskCompletion; // @synthesize supportsUnboundedTaskCompletion=_supportsUnboundedTaskCompletion;
+@property(readonly, nonatomic) BOOL supportsBackgroundAudio; // @synthesize supportsBackgroundAudio=_supportsBackgroundAudio;
 @property(readonly, nonatomic) BOOL supportsBackgroundNetworkAuthentication; // @synthesize supportsBackgroundNetworkAuthentication=_supportsBackgroundNetworkAuthentication;
 @property(readonly, nonatomic) BOOL supportsBackgroundContentFetching; // @synthesize supportsBackgroundContentFetching=_supportsBackgroundContentFetching;
 @property(readonly, nonatomic) int preferredJetsamBand; // @synthesize preferredJetsamBand=_preferredJetsamBand;

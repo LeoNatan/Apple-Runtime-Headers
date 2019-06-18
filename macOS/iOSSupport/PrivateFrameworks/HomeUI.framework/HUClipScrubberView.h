@@ -41,7 +41,7 @@
 - (void)updateMode:(unsigned long long)arg1;
 - (void)navigateToOffset:(double)arg1;
 - (void)navigateToLivePosition;
-- (void)updateTimeControlStatus:(unsigned long long)arg1;
+- (void)updateTimeControlStatus:(unsigned long long)arg1 forEngineMode:(unsigned long long)arg2;
 - (id)playOrPauseImage;
 - (void)layoutSubviews;
 - (void)_addConstraints;

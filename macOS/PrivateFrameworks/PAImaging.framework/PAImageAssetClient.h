@@ -53,6 +53,7 @@
 @property(readonly) NSString *name; // @synthesize name=_name;
 @property __weak id <PAImageAssetClientDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)setCompositionReplacedFilter:(CDUnknownBlockType)arg1;
 - (void)setCompositionOnAsset:(id)arg1;
 - (void)_notifyDidUpdateImage:(id)arg1 type:(id)arg2 region:(id)arg3 updateNumber:(unsigned long long)arg4 isCurrent:(BOOL)arg5;
 - (void)didUpdateImage:(id)arg1 type:(id)arg2 region:(id)arg3 updateNumber:(unsigned long long)arg4 isCurrent:(BOOL)arg5;

@@ -31,7 +31,6 @@
     NSArray *_availableDisplayModes;
     double _pointsPerInch;
     _UIScreenFixedCoordinateSpace *_fixedCoordinateSpace;
-    UITraitCollection *_contentSizeCategoryTraits;
     id <_UIDisplayInfoProviding> _displayInfoProvider;
     FBSDisplayConfiguration *__displayConfiguration;
     long long _lastUpdatedCanvasUserInterfaceStyle;
@@ -140,6 +139,7 @@
 @property(readonly, nonatomic) __weak id <UIFocusItem> focusedItem;
 - (void)setFocusEnabled:(BOOL)arg1;
 - (void)_ensureFocusSystemIsLoaded;
+- (BOOL)_isFocusSystemLoaded;
 @property(readonly, nonatomic, getter=_focusSystem) UIFocusSystem *focusSystem; // @synthesize focusSystem=_focusSystem;
 @property(readonly, nonatomic, getter=_focusSystemManager) _UIScreenFocusSystemManager *focusSystemManager; // @synthesize focusSystemManager=_focusSystemManager;
 @property(readonly, nonatomic, getter=_focusMovementPerformer) _UIFocusMovementPerformer *focusMovementPerformer; // @synthesize focusMovementPerformer=_focusMovementPerformer;

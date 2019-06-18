@@ -13,20 +13,17 @@
 {
     BOOL _finished;
     NSDate *_start;
-    id <TBFetchRequest> _fetchRequest;
     id <TBFetchResponse> _response;
+    id <TBFetchRequest> _fetchRequest;
     TBRemoteFetchAndCacheDataSource *_dataSource;
-    CDUnknownBlockType _fetchRequestCompletionHandler;
 }
 
-@property(copy, nonatomic) CDUnknownBlockType fetchRequestCompletionHandler; // @synthesize fetchRequestCompletionHandler=_fetchRequestCompletionHandler;
 @property(retain, nonatomic) TBRemoteFetchAndCacheDataSource *dataSource; // @synthesize dataSource=_dataSource;
-@property(retain, nonatomic) id <TBFetchResponse> response; // @synthesize response=_response;
 @property(retain, nonatomic) id <TBFetchRequest> fetchRequest; // @synthesize fetchRequest=_fetchRequest;
+@property(retain, nonatomic) id <TBFetchResponse> response; // @synthesize response=_response;
 - (void).cxx_destruct;
 - (id)name;
 - (void)finish;
-- (void)_cacheResponse:(id)arg1;
 - (void)start;
 - (BOOL)isReady;
 - (BOOL)isFinished;

@@ -19,6 +19,7 @@
     UIColor *_borderColorDarkMode;
     UIColor *_borderColorSatellite;
     NSMutableArray *_segments;
+    NSMutableArray *_blurredSegments;
     _MKScaleUnitsView *_unitsView;
     long long _oldNumberOfSegments;
     UIView *_outlineViewA;
@@ -57,9 +58,8 @@
 - (id)_formattedStringForFloat:(double)arg1;
 - (void)layoutSubviews;
 - (void)_calculateSegments;
-- (void)_updateSegmentStrokes;
-- (void)didMoveToWindow;
 @property(nonatomic) BOOL useLightText; // @dynamic useLightText;
+- (id)_setupSegmentView:(BOOL)arg1;
 @property(nonatomic) double distanceInMeters; // @dynamic distanceInMeters;
 - (void)setFrame:(struct CGRect)arg1;
 - (void)memoryWarning:(id)arg1;

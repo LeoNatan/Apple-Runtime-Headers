@@ -78,6 +78,8 @@
 + (id)getLocationForCallerId:(id)arg1 andIsoCountryCode:(id)arg2;
 + (id)unarchivedObjectFromData:(id)arg1 error:(id *)arg2;
 + (id)unarchivedObjectClasses;
++ (id)predicateForCallsWithAnyUniqueIDs:(id)arg1;
++ (id)predicateForCallsWithUniqueID:(id)arg1;
 + (id)predicateForCallsWithAnyTTYTypes:(id)arg1;
 + (id)predicateForCallsWithTTYType:(long long)arg1;
 + (id)predicateForCallsWithStatusRead:(BOOL)arg1;
@@ -86,11 +88,13 @@
 + (id)predicateForCallsWithStatus:(unsigned int)arg1;
 + (id)predicateForCallsWithAnyServiceProviders:(id)arg1;
 + (id)predicateForCallsWithServiceProvider:(id)arg1;
-+ (id)predicateForCallsWithRemoteParticipantCount:(long long)arg1;
++ (id)predicateForCallsWithRemoteParticipantHandleNormalizedValue:(id)arg1;
++ (id)predicateForCallsWithRemoteParticipantHandleValue:(id)arg1;
 + (id)predicateForCallsWithRemoteParticipantHandleType:(long long)arg1;
++ (id)predicateForCallsWithRemoteParticipantHandle:(id)arg1;
++ (id)predicateForCallsWithRemoteParticipantCount:(long long)arg1;
 + (id)predicateForCallsWithAnyMediaTypes:(id)arg1;
 + (id)predicateForCallsWithMediaType:(long long)arg1;
-+ (id)predicateForCallsWithAnyCategories:(id)arg1;
 + (id)predicateForCallsWithCategory:(unsigned int)arg1;
 + (id)predicateForCallsBetweenStartDate:(id)arg1 endDate:(id)arg2;
 @property BOOL mobileOriginated; // @synthesize mobileOriginated=_mobileOriginated;

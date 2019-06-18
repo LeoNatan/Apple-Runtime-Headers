@@ -6,20 +6,24 @@
 
 #import <objc/NSObject.h>
 
-@class PPQuickTypeConnectionsServant, PPQuickTypeContactsServant, PPQuickTypeEventsServant, PPQuickTypeNavigationServant, _PASLock;
+#import <PersonalizationPortraitInternals/PPFeedbackAccepting-Protocol.h>
 
-@interface PPLocalQuickTypeBroker : NSObject
+@class PPM2FeedbackPortraitRegistered, PPMFeedbackRegistered, PPQuickTypeConnectionsServant, PPQuickTypeContactsServant, PPQuickTypeEventsServant, PPQuickTypeNavigationServant, _PASLock;
+
+@interface PPLocalQuickTypeBroker : NSObject <PPFeedbackAccepting>
 {
     PPQuickTypeNavigationServant *_navigationServant;
     PPQuickTypeContactsServant *_contactsServant;
     PPQuickTypeEventsServant *_eventsServant;
     PPQuickTypeConnectionsServant *_connectionsServant;
     _PASLock *_cacheLock;
+    PPMFeedbackRegistered *_feedbackTracker;
+    PPM2FeedbackPortraitRegistered *_feedbackTracker2;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
-- (BOOL)registerFeedback:(id)arg1 error:(id *)arg2;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)_cacheEntryWithRecipients:(id)arg1;
 - (id)_cachedQuickTypeItemsWithRecipients:(id)arg1;
 - (id)_cachedQuickTypeItemsWithQuery:(id)arg1;

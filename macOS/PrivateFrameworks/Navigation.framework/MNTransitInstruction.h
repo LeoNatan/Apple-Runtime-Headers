@@ -11,6 +11,7 @@
 
 @interface MNTransitInstruction : NSObject
 {
+    BOOL _hideTimeInstructionsWhenCollapsed;
     long long _context;
     NSArray *_majorFormattedInstruction;
     NSArray *_minorFormattedInstruction;
@@ -24,6 +25,7 @@
 }
 
 + (id)instructionForUncertainArrivalToStationStep:(id)arg1 context:(long long)arg2;
+@property(nonatomic) BOOL hideTimeInstructionsWhenCollapsed; // @synthesize hideTimeInstructionsWhenCollapsed=_hideTimeInstructionsWhenCollapsed;
 @property(retain, nonatomic) id <GEOServerFormattedString> secondaryTimeinstruction; // @synthesize secondaryTimeinstruction=_secondaryTimeinstruction;
 @property(retain, nonatomic) id <GEOServerFormattedString> primaryTimeInstruction; // @synthesize primaryTimeInstruction=_primaryTimeInstruction;
 @property(retain, nonatomic) id <GEOServerFormattedString> expandableListFormattedString; // @synthesize expandableListFormattedString=_expandableListFormattedString;

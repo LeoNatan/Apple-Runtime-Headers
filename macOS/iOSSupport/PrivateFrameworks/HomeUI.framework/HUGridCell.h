@@ -17,28 +17,29 @@
     BOOL _rearranging;
     HUGridCellLayoutOptions *_layoutOptions;
     long long _primaryState;
-    UIVisualEffectView *_gridForegroundView;
     UIVisualEffect *_contentEffect;
     UIVisualEffect *_secondaryContentEffect;
     double _secondaryContentDimmingFactor;
-    HFItem *_item;
     HUGridCellBackgroundView *_gridBackgroundView;
+    HFItem *_item;
+    UIVisualEffectView *_gridForegroundView;
 }
 
 + (id)_jitterTransformAnimationWithAspectRatio:(double)arg1;
 + (id)_jitterPositionAnimation;
 + (Class)layoutOptionsClass;
-@property(retain, nonatomic) HUGridCellBackgroundView *gridBackgroundView; // @synthesize gridBackgroundView=_gridBackgroundView;
+@property(retain, nonatomic) UIVisualEffectView *gridForegroundView; // @synthesize gridForegroundView=_gridForegroundView;
 @property(retain, nonatomic) HFItem *item; // @synthesize item=_item;
-@property(readonly, nonatomic) double secondaryContentDimmingFactor; // @synthesize secondaryContentDimmingFactor=_secondaryContentDimmingFactor;
+@property(retain, nonatomic) HUGridCellBackgroundView *gridBackgroundView; // @synthesize gridBackgroundView=_gridBackgroundView;
+@property(nonatomic) double secondaryContentDimmingFactor; // @synthesize secondaryContentDimmingFactor=_secondaryContentDimmingFactor;
 @property(retain, nonatomic) UIVisualEffect *secondaryContentEffect; // @synthesize secondaryContentEffect=_secondaryContentEffect;
 @property(retain, nonatomic) UIVisualEffect *contentEffect; // @synthesize contentEffect=_contentEffect;
-@property(retain, nonatomic) UIVisualEffectView *gridForegroundView; // @synthesize gridForegroundView=_gridForegroundView;
 @property(nonatomic) long long primaryState; // @synthesize primaryState=_primaryState;
 @property(nonatomic, getter=isRearranging) BOOL rearranging; // @synthesize rearranging=_rearranging;
 @property(retain, nonatomic) HUGridCellLayoutOptions *layoutOptions; // @synthesize layoutOptions=_layoutOptions;
 @property(nonatomic, getter=areCellContentsHidden) BOOL cellContentsHidden; // @synthesize cellContentsHidden=_cellContentsHidden;
 - (void).cxx_destruct;
+- (void)_updateTintColorSettingsForSubviewsOfView:(id)arg1 desiredDisplayStyle:(unsigned long long)arg2;
 - (void)updateUIWithAnimation:(BOOL)arg1;
 @property(readonly, nonatomic) unsigned long long iconDisplayStyle;
 - (void)_updateForegroundStyle;

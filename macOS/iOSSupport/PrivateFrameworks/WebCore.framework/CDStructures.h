@@ -393,9 +393,9 @@ struct HTMLVideoElement {
     struct Node *_field7;
     struct Node *_field8;
     union DataUnion _field9;
-    struct Node *_field10;
+    struct WeakPtrFactory<WebCore::ContainerNode> _field10;
     struct Node *_field11;
-    struct WeakPtrFactory<WebCore::Element> _field12;
+    struct Node *_field12;
     struct QualifiedName _field13;
     struct RefPtr<WebCore::ElementData, WTF::DumbPtrTraits<WebCore::ElementData>> _field14;
     CDUnknownFunctionPointerType *_field15;
@@ -544,10 +544,11 @@ struct HTMLVideoElement {
     _Bool _field123;
     _Bool _field124;
     _Bool _field125;
-    struct unique_ptr<WebCore::HTMLImageLoader, std::__1::default_delete<WebCore::HTMLImageLoader>> _field126;
-    struct AtomicString _field127;
-    unsigned int _field128;
+    _Bool _field126;
+    struct unique_ptr<WebCore::HTMLImageLoader, std::__1::default_delete<WebCore::HTMLImageLoader>> _field127;
+    struct AtomicString _field128;
     unsigned int _field129;
+    unsigned int _field130;
 };
 
 struct HashCountedSet<JSC::JSObject *, WTF::PtrHash<JSC::JSObject *>, WTF::HashTraits<JSC::JSObject *>> {
@@ -844,6 +845,8 @@ struct HashTable<unsigned int, unsigned int, WTF::IdentityExtractor, WTF::IntHas
     unsigned int _field5;
 };
 
+struct HistoricalVelocityData;
+
 struct IOSurface;
 
 struct Image;
@@ -977,14 +980,14 @@ struct MediaSessionManageriOS {
     CDUnknownFunctionPointerType *_field3;
     CDUnknownFunctionPointerType *_field4;
     unsigned int _field5[6];
-    struct Vector<WebCore::PlatformMediaSession *, 0, WTF::CrashOnOverflow, 16> _field6;
+    struct Vector<WTF::WeakPtr<WebCore::PlatformMediaSession>, 0, WTF::CrashOnOverflow, 16> _field6;
     struct unique_ptr<WebCore::RemoteCommandListener, std::__1::default_delete<WebCore::RemoteCommandListener>> _field7;
     struct unique_ptr<PAL::SystemSleepListener, std::__1::default_delete<PAL::SystemSleepListener>> _field8;
     struct RefPtr<WebCore::AudioHardwareListener, WTF::DumbPtrTraits<WebCore::AudioHardwareListener>> _field9;
     _Bool _field10;
     _Bool _field11;
     _Bool _field12;
-    int _field13;
+    _Bool _field13;
     _Bool _field14;
     _Bool _field15;
     struct Ref<WTF::AggregateLogger, WTF::DumbPtrTraits<WTF::AggregateLogger>> _field16;
@@ -1077,8 +1080,6 @@ struct PlatformMediaResource;
 
 struct PlatformMediaResourceLoader;
 
-struct PlatformMediaSession;
-
 struct PlaybackSessionInterfaceAVKit {
     CDUnknownFunctionPointerType *_field1;
     CDUnknownFunctionPointerType *_field2;
@@ -1156,44 +1157,8 @@ struct RefPtr<WTF::StringImpl, WTF::DumbPtrTraits<WTF::StringImpl>> {
     struct StringImpl *_field1;
 };
 
-struct RefPtr<WTF::WeakReference<WebCore::AccessibilityRenderObject>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::AccessibilityRenderObject>>> {
-    struct WeakReference<WebCore::AccessibilityRenderObject> *_field1;
-};
-
-struct RefPtr<WTF::WeakReference<WebCore::DeferrableTask<WebCore::Timer>>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::DeferrableTask<WebCore::Timer>>>> {
-    struct WeakReference<WebCore::DeferrableTask<WebCore::Timer>> *_field1;
-};
-
-struct RefPtr<WTF::WeakReference<WebCore::Element>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::Element>>> {
-    struct WeakReference<WebCore::Element> *_field1;
-};
-
-struct RefPtr<WTF::WeakReference<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>>>> {
-    struct WeakReference<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>> *_field1;
-};
-
-struct RefPtr<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>>> {
-    struct WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC> *m_ptr;
-};
-
-struct RefPtr<WTF::WeakReference<WebCore::MediaProducer>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::MediaProducer>>> {
-    struct WeakReference<WebCore::MediaProducer> *_field1;
-};
-
-struct RefPtr<WTF::WeakReference<WebCore::PlaybackSessionModel>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::PlaybackSessionModel>>> {
-    struct WeakReference<WebCore::PlaybackSessionModel> *_field1;
-};
-
-struct RefPtr<WTF::WeakReference<WebCore::RenderObject>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::RenderObject>>> {
-    struct WeakReference<WebCore::RenderObject> *_field1;
-};
-
-struct RefPtr<WTF::WeakReference<WebCore::TaskDispatcher<WebCore::Timer>>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::TaskDispatcher<WebCore::Timer>>>> {
-    struct WeakReference<WebCore::TaskDispatcher<WebCore::Timer>> *_field1;
-};
-
-struct RefPtr<WTF::WeakReference<const WebCore::MediaResourceLoader>, WTF::DumbPtrTraits<WTF::WeakReference<const WebCore::MediaResourceLoader>>> {
-    struct WeakReference<const WebCore::MediaResourceLoader> *_field1;
+struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> {
+    struct WeakReference *m_ptr;
 };
 
 struct RefPtr<WebCore::AccessibilityObject, WTF::DumbPtrTraits<WebCore::AccessibilityObject>> {
@@ -1588,18 +1553,18 @@ struct TileController {
     struct unique_ptr<WebCore::TileCoverageMap, std::__1::default_delete<WebCore::TileCoverageMap>> _field5;
     struct unique_ptr<WebCore::TileGrid, std::__1::default_delete<WebCore::TileGrid>> _field6;
     struct unique_ptr<WebCore::TileGrid, std::__1::default_delete<WebCore::TileGrid>> _field7;
-    struct FloatRect _field8;
-    struct Optional<WebCore::FloatRect> _field9;
-    struct FloatRect _field10;
-    struct IntRect _field11;
-    struct Timer _field12;
-    struct DeferrableOneShotTimer _field13;
-    unsigned int _field14;
-    struct VelocityData _field15;
-    int _field16;
-    unsigned int _field17;
-    struct RectEdges<bool> _field18;
-    _Bool _field19;
+    struct unique_ptr<WebCore::HistoricalVelocityData, std::__1::default_delete<WebCore::HistoricalVelocityData>> _field8;
+    struct FloatRect _field9;
+    struct Optional<WebCore::FloatRect> _field10;
+    struct FloatRect _field11;
+    struct IntRect _field12;
+    struct Timer _field13;
+    struct DeferrableOneShotTimer _field14;
+    unsigned int _field15;
+    struct VelocityData _field16;
+    int _field17;
+    unsigned int _field18;
+    struct RectEdges<bool> _field19;
     _Bool _field20;
     _Bool _field21;
     _Bool _field22;
@@ -1609,10 +1574,12 @@ struct TileController {
     _Bool _field26;
     _Bool _field27;
     _Bool _field28;
-    struct Color _field29;
-    float _field30;
-    int _field31;
+    _Bool _field29;
+    _Bool _field30;
+    struct Color _field31;
     float _field32;
+    int _field33;
+    float _field34;
 };
 
 struct TileCoverageMap;
@@ -1692,6 +1659,12 @@ struct Vector<WTF::Vector<float, 0, WTF::CrashOnOverflow, 16>, 0, WTF::CrashOnOv
     unsigned int _field3;
 };
 
+struct Vector<WTF::WeakPtr<WebCore::PlatformMediaSession>, 0, WTF::CrashOnOverflow, 16> {
+    struct WeakPtr<WebCore::PlatformMediaSession> *_field1;
+    unsigned int _field2;
+    unsigned int _field3;
+};
+
 struct Vector<WebCore::DOMPromiseDeferred<void>, 0, WTF::CrashOnOverflow, 16> {
     struct DOMPromiseDeferred<void> *_field1;
     unsigned int _field2;
@@ -1700,12 +1673,6 @@ struct Vector<WebCore::DOMPromiseDeferred<void>, 0, WTF::CrashOnOverflow, 16> {
 
 struct Vector<WebCore::PODInterval<WTF::MediaTime, WebCore::TextTrackCue *>, 0, WTF::CrashOnOverflow, 16> {
     struct PODInterval<WTF::MediaTime, WebCore::TextTrackCue *> *_field1;
-    unsigned int _field2;
-    unsigned int _field3;
-};
-
-struct Vector<WebCore::PlatformMediaSession *, 0, WTF::CrashOnOverflow, 16> {
-    struct PlatformMediaSession **_field1;
     unsigned int _field2;
     unsigned int _field3;
 };
@@ -1743,9 +1710,9 @@ struct VectorBuffer<WTF::RefPtr<WebCore::Event, WTF::DumbPtrTraits<WebCore::Even
 };
 
 struct VelocityData {
-    double _field1;
-    double _field2;
-    double _field3;
+    float _field1;
+    float _field2;
+    float _field3;
     struct MonotonicTime _field4;
 };
 
@@ -1767,68 +1734,52 @@ struct Weak<WebCore::JSDOMObject> {
 struct WeakImpl;
 
 struct WeakPtr<WebCore::MediaPlayerPrivateAVFoundationObjC> {
-    struct RefPtr<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>>> m_ref;
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> m_ref;
 };
 
+struct WeakPtr<WebCore::PlatformMediaSession>;
+
 struct WeakPtr<WebCore::PlaybackSessionModel> {
-    struct RefPtr<WTF::WeakReference<WebCore::PlaybackSessionModel>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::PlaybackSessionModel>>> _field1;
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
 };
 
 struct WeakPtr<WebCore::RenderObject> {
-    struct RefPtr<WTF::WeakReference<WebCore::RenderObject>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::RenderObject>>> _field1;
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
 };
 
 struct WeakPtr<const WebCore::MediaResourceLoader> {
-    struct RefPtr<WTF::WeakReference<const WebCore::MediaResourceLoader>, WTF::DumbPtrTraits<WTF::WeakReference<const WebCore::MediaResourceLoader>>> _field1;
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::AccessibilityRenderObject> {
-    struct RefPtr<WTF::WeakReference<WebCore::AccessibilityRenderObject>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::AccessibilityRenderObject>>> _field1;
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
+};
+
+struct WeakPtrFactory<WebCore::ContainerNode> {
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::DeferrableTask<WebCore::Timer>> {
-    struct RefPtr<WTF::WeakReference<WebCore::DeferrableTask<WebCore::Timer>>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::DeferrableTask<WebCore::Timer>>>> _field1;
-};
-
-struct WeakPtrFactory<WebCore::Element> {
-    struct RefPtr<WTF::WeakReference<WebCore::Element>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::Element>>> _field1;
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>> {
-    struct RefPtr<WTF::WeakReference<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>>>> _field1;
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::MediaProducer> {
-    struct RefPtr<WTF::WeakReference<WebCore::MediaProducer>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::MediaProducer>>> _field1;
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::PlaybackSessionModel> {
-    struct RefPtr<WTF::WeakReference<WebCore::PlaybackSessionModel>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::PlaybackSessionModel>>> _field1;
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
 };
 
 struct WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer>> {
-    struct RefPtr<WTF::WeakReference<WebCore::TaskDispatcher<WebCore::Timer>>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::TaskDispatcher<WebCore::Timer>>>> _field1;
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> _field1;
 };
 
-struct WeakReference<WebCore::AccessibilityRenderObject>;
-
-struct WeakReference<WebCore::DeferrableTask<WebCore::Timer>>;
-
-struct WeakReference<WebCore::Element>;
-
-struct WeakReference<WebCore::GenericTaskQueue<WebCore::Timer, unsigned int>>;
-
-struct WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>;
-
-struct WeakReference<WebCore::MediaProducer>;
-
-struct WeakReference<WebCore::PlaybackSessionModel>;
-
-struct WeakReference<WebCore::RenderObject>;
-
-struct WeakReference<WebCore::TaskDispatcher<WebCore::Timer>>;
-
-struct WeakReference<const WebCore::MediaResourceLoader>;
+struct WeakReference;
 
 struct WebAccessibilityObjectWrapper {
     Class _field1;
@@ -1950,6 +1901,12 @@ struct unique_ptr<WebCore::HTMLMediaElement::PendingSeek, std::__1::default_dele
     } _field1;
 };
 
+struct unique_ptr<WebCore::HistoricalVelocityData, std::__1::default_delete<WebCore::HistoricalVelocityData>> {
+    struct __compressed_pair<WebCore::HistoricalVelocityData *, std::__1::default_delete<WebCore::HistoricalVelocityData>> {
+        struct HistoricalVelocityData *_field1;
+    } _field1;
+};
+
 struct unique_ptr<WebCore::IOSurface, std::__1::default_delete<WebCore::IOSurface>> {
     struct __compressed_pair<WebCore::IOSurface *, std::__1::default_delete<WebCore::IOSurface>> {
         struct IOSurface *__value_;
@@ -2029,8 +1986,8 @@ typedef struct Vector<WebCore::SelectionRect, 0, WTF::CrashOnOverflow, 16> {
 } Vector_2a2f4e8a;
 
 typedef struct WeakPtr<WebCore::MediaPlayerPrivateAVFoundationObjC> {
-    struct RefPtr<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::MediaPlayerPrivateAVFoundationObjC>>> m_ref;
-} WeakPtr_db8b46a6;
+    struct RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference>> m_ref;
+} WeakPtr_09470f09;
 
 #pragma mark Named Unions
 

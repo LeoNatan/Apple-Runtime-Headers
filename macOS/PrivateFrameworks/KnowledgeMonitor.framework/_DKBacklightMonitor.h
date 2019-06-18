@@ -21,6 +21,7 @@
 - (void)deactivate;
 - (void)stop;
 - (void)start;
+- (void)obtainCurrentValue;
 - (void)dealloc;
 
 @end

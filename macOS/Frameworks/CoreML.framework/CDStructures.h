@@ -177,8 +177,8 @@ struct ModelDescription {
 struct MultiArrayBuffer {
     CDUnknownFunctionPointerType *_field1;
     struct shared_ptr<unsigned char> _field2;
-    vector_eb9481f9 _field3;
-    vector_eb9481f9 _field4;
+    vector_06e666a8 _field3;
+    vector_06e666a8 _field4;
     int _field5;
     unsigned long long _field6;
     unsigned short _field7;
@@ -267,7 +267,7 @@ struct _IArchiveImpl;
 
 struct _KDBoundingBox {
     struct vector<_KDInterval, std::__1::allocator<_KDInterval>> _intervals;
-    unsigned int _numDimensions;
+    unsigned long long _numDimensions;
 };
 
 struct _KDInterval;
@@ -685,14 +685,6 @@ struct vector<unsigned char, std::__1::allocator<unsigned char>> {
     } __end_cap_;
 };
 
-struct vector<unsigned int, std::__1::allocator<unsigned int>> {
-    unsigned int *__begin_;
-    unsigned int *__end_;
-    struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int>> {
-        unsigned int *__value_;
-    } __end_cap_;
-};
-
 struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
     unsigned long long *__begin_;
     unsigned long long *__end_;
@@ -702,11 +694,11 @@ struct vector<unsigned long long, std::__1::allocator<unsigned long long>> {
 };
 
 struct vector<unsigned long, std::__1::allocator<unsigned long>> {
-    unsigned long long *_field1;
-    unsigned long long *_field2;
+    unsigned long long *__begin_;
+    unsigned long long *__end_;
     struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long>> {
-        unsigned long long *_field1;
-    } _field3;
+        unsigned long long *__value_;
+    } __end_cap_;
 };
 
 #pragma mark Typedef'd Structures
@@ -935,12 +927,12 @@ typedef struct vector<unsigned long long, std::__1::allocator<unsigned long long
 } vector_7984f87c;
 
 typedef struct vector<unsigned long, std::__1::allocator<unsigned long>> {
-    unsigned long long *_field1;
-    unsigned long long *_field2;
+    unsigned long long *__begin_;
+    unsigned long long *__end_;
     struct __compressed_pair<unsigned long *, std::__1::allocator<unsigned long>> {
-        unsigned long long *_field1;
-    } _field3;
-} vector_eb9481f9;
+        unsigned long long *__value_;
+    } __end_cap_;
+} vector_06e666a8;
 
 #pragma mark Named Unions
 

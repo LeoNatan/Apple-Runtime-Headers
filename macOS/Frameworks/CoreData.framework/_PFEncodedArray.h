@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     unsigned int _count;
 }
 
++ (Class)classForKeyedUnarchiver;
 - (const id *)_values;
 - (void)_replaceObject:(id)arg1 atIndex:(unsigned long long)arg2;
 - (id)objectAtIndex:(unsigned long long)arg1;

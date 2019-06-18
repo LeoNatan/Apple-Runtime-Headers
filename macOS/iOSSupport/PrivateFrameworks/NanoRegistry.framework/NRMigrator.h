@@ -19,6 +19,7 @@
 + (id)sharedMigrator;
 @property(readonly, retain, nonatomic) NRDevice *migratingDevice; // @synthesize migratingDevice=_migratingDevice;
 - (void).cxx_destruct;
+- (void)isPhoneReadyToMigrateDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)enterPreMigrationMode;
 - (id)lastMigrationRequestPhoneName;
 - (void)beginMigrationWithDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;

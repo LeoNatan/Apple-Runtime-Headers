@@ -14,6 +14,7 @@
 
 + (id)managedObjectWithCloudManagedObjects:(id)arg1 context:(id)arg2;
 + (id)fetchRequest;
+- (void)mergeEntriesFromDictionary:(id)arg1 intoDictionary:(id)arg2;
 - (id)identifiersByTypeInSubgraphOfEntity:(id)arg1 shouldTombstone:(BOOL)arg2;
 - (void)buildDeleteRequestFromCloudManagedObjects:(id)arg1 context:(id)arg2;
 - (void)buildDeleteRequestFromCloudManagedObject:(id)arg1 context:(id)arg2;

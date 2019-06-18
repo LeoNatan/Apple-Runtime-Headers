@@ -32,7 +32,9 @@
 - (void).cxx_destruct;
 - (void)changeTrackingCacheSource:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (long long)getLastInsertedRowID:(id)arg1;
+- (void)auditLogInsertResyncFolderItemsForAccountID:(long long)arg1 folderID:(long long)arg2 initiatedBy:(id)arg3 result:(id)arg4;
 - (void)auditLogInsertSyncFolderItemsForAccountID:(long long)arg1 folderID:(long long)arg2 initiatedBy:(id)arg3 result:(id)arg4;
+- (void)auditLogInsertResyncFolderHierarchyForAccountID:(long long)arg1 initiatedBy:(id)arg2 result:(id)arg3;
 - (void)auditLogInsertSyncFolderHierarchyForAccountID:(long long)arg1 initiatedBy:(id)arg2 result:(id)arg3;
 - (void)auditLogInsertError:(id)arg1 description:(id)arg2 forAccountID:(long long)arg3 changeSourceID:(id)arg4 itemID:(long long)arg5;
 - (void)fillAuditCacheFromDBUsingConnection:(id)arg1;

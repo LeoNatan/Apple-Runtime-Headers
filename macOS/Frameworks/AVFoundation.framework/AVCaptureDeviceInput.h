@@ -25,6 +25,8 @@
 - (int)graphNodeForInputPort:(id)arg1;
 - (void)removeInputUnitsForInputPort:(id)arg1 fromGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3;
 - (BOOL)addInputUnitsForInputPort:(id)arg1 toGraph:(struct OpaqueCMIOGraph *)arg2 ofCaptureSession:(id)arg3 error:(id *)arg4;
+@property(nonatomic) CDStruct_1b6d18a9 videoMinFrameDurationOverride;
+- (id)portsWithMediaType:(id)arg1 sourceDeviceType:(id)arg2 sourceDevicePosition:(long long)arg3;
 - (id)ports;
 - (id)notReadyError;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;

@@ -102,6 +102,7 @@
 - (void)_unregisterAssetClientForKey:(id)arg1 assetType:(id)arg2;
 - (void)_unregisterAssetClients;
 - (id)_registerAssetClientForKey:(id)arg1 assetType:(id)arg2;
+- (CDUnknownBlockType)compositionReplacedFilter;
 - (void)compositionForAssetType:(id)arg1 imageItemController:(id)arg2 queue:(id)arg3 completion:(CDUnknownBlockType)arg4;
 - (BOOL)_originalOperationFilter:(id)arg1 keepGeometry:(BOOL)arg2;
 - (void)_registerAssetClients;

@@ -35,6 +35,8 @@
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *legacyDevicesQueue; // @synthesize legacyDevicesQueue=_legacyDevicesQueue;
 @property(retain, nonatomic) NSMutableDictionary *legacyDevices; // @synthesize legacyDevices=_legacyDevices;
 - (void).cxx_destruct;
+- (void)isPhoneReadyToMigrateDevice:(id)arg1 withCompletion:(CDUnknownBlockType)arg2;
+- (BOOL)isAssertionActive:(id)arg1;
 - (unsigned long long)migrationCountForPairingID:(id)arg1;
 - (unsigned long long)lastSyncSwitchIndex;
 - (void)clearRecoveryFlagWithCompletion:(CDUnknownBlockType)arg1;
@@ -63,7 +65,10 @@
 - (id)deviceIDForIDSDevice:(id)arg1;
 - (id)deviceIDForNRDevice:(id)arg1;
 - (id)deviceForNRDevice:(id)arg1 fromIDSDevices:(id)arg2;
+- (id)nonActiveDeviceForIDSDevice:(id)arg1;
 - (id)deviceForIDSDevice:(id)arg1;
+- (id)nonActiveDeviceForBluetoothID:(id)arg1;
+- (id)nonActiveDeviceForBTDeviceID:(id)arg1;
 - (id)deviceForBluetoothID:(id)arg1;
 - (id)deviceForBTDeviceID:(id)arg1;
 - (id)deviceForPairingID:(id)arg1;
@@ -92,11 +97,8 @@
 - (void)abortPairingWithReason:(id)arg1;
 - (void)abortPairing;
 - (void)_fireWaitingForUpdateBlocksWithCollection:(id)arg1;
-- (id)waitForActivePairedOrAltAccountDevice;
 - (id)waitForActivePairedDevice;
-- (void)waitForAltAccountPairingStorePathPairingID:(CDUnknownBlockType)arg1;
 - (void)waitForPairingStorePathPairingID:(CDUnknownBlockType)arg1;
-- (void)altAccountPairingStorePathPairingID:(CDUnknownBlockType)arg1;
 - (void)pairingStorePathPairingID:(CDUnknownBlockType)arg1;
 - (void)enterCompatibilityState:(unsigned short)arg1 forDevice:(id)arg2;
 - (void)fakePairedSyncIsCompleteWithCompletion:(CDUnknownBlockType)arg1;
@@ -112,7 +114,6 @@
 - (void)gizmoOOBAdvertiseAndPairWithName:(id)arg1 operationHasBegun:(CDUnknownBlockType)arg2;
 - (void)companionPasscodePairWithDevice:(id)arg1 withOptions:(id)arg2 operationHasBegun:(CDUnknownBlockType)arg3;
 - (void)companionOOBDiscoverAndPairWithName:(id)arg1 withOutOfBandPairingKey:(id)arg2 withOptions:(id)arg3 operationHasBegun:(CDUnknownBlockType)arg4;
-- (id)getAllDevicesWithArchivedAltAccountDevicesMatching:(CDUnknownBlockType)arg1;
 - (id)getAllDevicesWithArchivedDevicesMatching:(CDUnknownBlockType)arg1;
 - (id)getDevicesMatching:(CDUnknownBlockType)arg1;
 - (id)getAllDevicesWithArchivedDevices;
@@ -145,6 +146,7 @@
 - (void)setActivePairedDevice:(id)arg1 operationHasCompleted:(CDUnknownBlockType)arg2;
 - (BOOL)pairedDeviceSupportQuickSwitch;
 - (BOOL)pairedDeviceCountIsLessThanMaxPairedDevices;
+- (id)_mostlyPairedDevices;
 - (long long)maxPairedDeviceCount;
 - (void)threadIsBlockedWaitingOn_nanoregistryd_syncGrabLegacyRegistryWithBlock:(CDUnknownBlockType)arg1;
 - (id)_getLocalDeviceCollection;

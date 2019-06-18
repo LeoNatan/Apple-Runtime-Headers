@@ -53,7 +53,7 @@
 - (void)applyStylingOnTextTangierStorage:(id)arg1;
 - (struct _NSRange)rangeForRange:(struct _NSRange)arg1;
 - (id)cleanString:(id)arg1;
-- (id)initWithString:(id)arg1 defaults:(id)arg2 smartFieldFactory:(id)arg3 dataSource:(id)arg4 documentLanguageProvider:(id)arg5 fontAttributesConstructor:(id)arg6;
+- (id)initWithString:(id)arg1 smartFieldFactory:(id)arg2 dataSource:(id)arg3 documentLanguageProvider:(id)arg4 fontAttributesConstructor:(id)arg5;
 
 @end
 

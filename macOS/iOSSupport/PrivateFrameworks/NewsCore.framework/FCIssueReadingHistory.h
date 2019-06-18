@@ -9,7 +9,7 @@
 #import <NewsCore/FCClearableReadingHistory-Protocol.h>
 #import <NewsCore/FCIssueReadingHistoryType-Protocol.h>
 
-@class FCMTWriterLock, NSMutableDictionary, NSString;
+@class FCMTWriterLock, NSArray, NSMutableDictionary, NSString;
 
 @interface FCIssueReadingHistory : FCPrivateDataController <FCIssueReadingHistoryType, FCClearableReadingHistory>
 {
@@ -40,11 +40,14 @@
 - (id)_historyItemForIssueID:(id)arg1;
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (BOOL)canHelpRestoreZoneName:(id)arg1;
-- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
+- (id)allKnownRecordNames;
+- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
 - (void)loadLocalCachesFromStore;
 - (void)clearHistory;
 - (void)removeObserver:(id)arg1;
 - (void)addObserver:(id)arg1;
+@property(readonly, nonatomic) NSArray *allVisitedIssueIDs;
+@property(readonly, nonatomic) NSArray *recentlyVisitedIssueIDs;
 @property(readonly, nonatomic) NSString *mostRecentlyVisitedIssueID;
 - (id)lastVisitedDateForIssueWithID:(id)arg1;
 - (id)bookmarkForLastVisitToIssueWithID:(id)arg1;

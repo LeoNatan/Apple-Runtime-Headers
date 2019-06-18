@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 + (Class)layerClass;
 @property(nonatomic) unsigned long long renderingMode;
 - (id)layer;
+- (id)initWithSceneLayer:(id)arg1;
 
 @end
 

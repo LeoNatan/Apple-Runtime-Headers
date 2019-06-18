@@ -36,6 +36,7 @@
     long long _visibilityState;
     long long _presentationState;
     UIView *_contentView;
+    UIView *_backgroundView;
     SXFillView *_fillView;
     SXColumnLayout *_documentColumnLayout;
     SXUnitConverter *_unitConverter;
@@ -47,8 +48,9 @@
     unsigned long long _componentIndex;
     struct CGRect _absoluteFrame;
     struct UIEdgeInsets _componentLayoutMargins;
+    struct UIEdgeInsets _borderInsets;
     struct CGRect _contentFrame;
-    struct CGRect _backgroundFrame;
+    struct CGRect _backgroundViewFrame;
     struct CGRect _originalFrame;
     struct CGRect _presentationFrame;
 }
@@ -72,11 +74,13 @@
 @property(nonatomic) BOOL animationsAndBehaviorsEnabled; // @synthesize animationsAndBehaviorsEnabled=_animationsAndBehaviorsEnabled;
 @property(readonly, nonatomic) BOOL isDraggable; // @synthesize isDraggable=_isDraggable;
 @property(nonatomic) BOOL requiresThoroughFrameCalculations; // @synthesize requiresThoroughFrameCalculations=_requiresThoroughFrameCalculations;
-@property(nonatomic) struct CGRect backgroundFrame; // @synthesize backgroundFrame=_backgroundFrame;
+@property(nonatomic) struct CGRect backgroundViewFrame; // @synthesize backgroundViewFrame=_backgroundViewFrame;
 @property(nonatomic) struct CGRect contentFrame; // @synthesize contentFrame=_contentFrame;
+@property(nonatomic) struct UIEdgeInsets borderInsets; // @synthesize borderInsets=_borderInsets;
 @property(nonatomic) struct UIEdgeInsets componentLayoutMargins; // @synthesize componentLayoutMargins=_componentLayoutMargins;
 @property(readonly, nonatomic) BOOL hasRenderedContents; // @synthesize hasRenderedContents=_hasRenderedContents;
 @property(nonatomic) __weak SXFillView *fillView; // @synthesize fillView=_fillView;
+@property(readonly, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
 @property(nonatomic) long long presentationState; // @synthesize presentationState=_presentationState;
 @property(nonatomic) long long visibilityState; // @synthesize visibilityState=_visibilityState;

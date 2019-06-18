@@ -32,6 +32,9 @@
 + (id)__jsonFromDeclarations:(struct NSDictionary *)arg1 rawOutput:(BOOL)arg2 error:(id *)arg3;
 + (id)__jsonStringFromDictionary:(struct NSDictionary *)arg1 rawOutput:(BOOL)arg2 error:(id *)arg3;
 + (id)__jsonValueForCKRecordValue:(id)arg1;
++ (BOOL)ckUseAnonymousAccount;
++ (long long)ckContainerEnvironment;
++ (id)ckContainerIdentifier;
 + (id)logCategory;
 @property(retain, nonatomic) HMBLocalZone *mirroredLocalZone; // @synthesize mirroredLocalZone=_mirroredLocalZone;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *ownerQueue; // @synthesize ownerQueue=_ownerQueue;

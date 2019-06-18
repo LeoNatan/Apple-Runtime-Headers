@@ -48,6 +48,10 @@ struct _WFContentSlice {
     unsigned long long endIndex;
 };
 
+struct os_unfair_lock_s {
+    unsigned int _os_unfair_lock_opaque;
+};
+
 #pragma mark Typedef'd Structures
 
 typedef struct {
@@ -59,12 +63,6 @@ typedef struct {
     double _field1;
     double _field2;
 } CDStruct_c3b9c2ee;
-
-typedef struct {
-    long long _field1;
-    long long _field2;
-    long long _field3;
-} CDStruct_2ec95fd7;
 
 typedef struct {
     struct CLLocationCoordinate2D _field1;

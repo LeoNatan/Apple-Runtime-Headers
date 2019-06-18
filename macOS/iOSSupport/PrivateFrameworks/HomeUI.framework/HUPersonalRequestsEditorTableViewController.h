@@ -12,10 +12,12 @@
 
 @interface HUPersonalRequestsEditorTableViewController : HUItemTableViewController <HUAccessorySettingsDetailsViewControllerProtocol>
 {
+    BOOL _onlyShowDeviceSwitches;
     HUPersonalRequestsEditorItemManager *_prEditorItemManager;
     HUPersonalRequestsDevicesModuleController *_prDevicesModuleController;
 }
 
+@property(nonatomic) BOOL onlyShowDeviceSwitches; // @synthesize onlyShowDeviceSwitches=_onlyShowDeviceSwitches;
 @property(readonly, nonatomic) HUPersonalRequestsDevicesModuleController *prDevicesModuleController; // @synthesize prDevicesModuleController=_prDevicesModuleController;
 @property(retain, nonatomic) HUPersonalRequestsEditorItemManager *prEditorItemManager; // @synthesize prEditorItemManager=_prEditorItemManager;
 - (void).cxx_destruct;
@@ -23,10 +25,12 @@
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)setupCell:(id)arg1 forItem:(id)arg2 indexPath:(id)arg3;
 - (Class)cellClassForItem:(id)arg1 indexPath:(id)arg2;
+- (BOOL)shouldHideFooterBelowSection:(long long)arg1;
+- (BOOL)shouldHideHeaderAboveSection:(long long)arg1;
 - (id)itemModuleControllers;
 - (BOOL)automaticallyUpdatesViewControllerTitle;
-- (id)initWithUserItem:(id)arg1 sourceMediaProfileContainer:(id)arg2;
-- (id)initWithUserItem:(id)arg1;
+- (id)initWithUserItem:(id)arg1 sourceMediaProfileContainer:(id)arg2 onlyShowDeviceSwitches:(BOOL)arg3;
+- (id)initWithUserItem:(id)arg1 onlyShowDeviceSwitches:(BOOL)arg2;
 - (id)initWithAccessoryGroupItem:(id)arg1;
 
 // Remaining properties

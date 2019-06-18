@@ -13,8 +13,8 @@
 @interface STContentAndPrivacyController : NSObject <NSFetchedResultsControllerDelegate>
 {
     BOOL _screenTimeEnabled;
-    BOOL _volumeLimitChangesAllowed;
     BOOL _contentAndPrivacyEnabled;
+    BOOL _volumeLimitChangesAllowed;
     STCoreUser *_user;
     NSFetchedResultsController *_userFetchedResultsController;
     NSFetchedResultsController *_localUserFetchedResultsController;
@@ -89,7 +89,6 @@
 + (id)keyPathsForValuesAffectingDisplayingChildAccount;
 + (id)keyPathsForValuesAffectingStatusLabelText;
 + (id)keyPathsForValuesAffectingEnableRestrictionsButtonTitle;
-+ (id)keyPathsForValuesAffectingContentAndPrivacyEnabled;
 @property(retain, nonatomic) CEMApplicationSettingsDeclaration *applicationSettingsRestrictions; // @synthesize applicationSettingsRestrictions=_applicationSettingsRestrictions;
 @property(retain, nonatomic) CEMSystemTVProviderDeclaration *tvProviderRestrictions; // @synthesize tvProviderRestrictions=_tvProviderRestrictions;
 @property(retain, nonatomic) CEMSystemDoNotDisturbDeclaration *doNotDisturbRestrictions; // @synthesize doNotDisturbRestrictions=_doNotDisturbRestrictions;
@@ -114,8 +113,8 @@
 @property(retain, nonatomic) NSFetchedResultsController *blueprintFetchedResultsController; // @synthesize blueprintFetchedResultsController=_blueprintFetchedResultsController;
 @property(retain, nonatomic) NSFetchedResultsController *localUserFetchedResultsController; // @synthesize localUserFetchedResultsController=_localUserFetchedResultsController;
 @property(retain, nonatomic) NSFetchedResultsController *userFetchedResultsController; // @synthesize userFetchedResultsController=_userFetchedResultsController;
-@property(nonatomic) BOOL contentAndPrivacyEnabled; // @synthesize contentAndPrivacyEnabled=_contentAndPrivacyEnabled;
 @property(nonatomic) BOOL volumeLimitChangesAllowed; // @synthesize volumeLimitChangesAllowed=_volumeLimitChangesAllowed;
+@property(nonatomic) BOOL contentAndPrivacyEnabled; // @synthesize contentAndPrivacyEnabled=_contentAndPrivacyEnabled;
 @property(nonatomic) BOOL screenTimeEnabled; // @synthesize screenTimeEnabled=_screenTimeEnabled;
 @property(retain, nonatomic) STCoreUser *user; // @synthesize user=_user;
 - (void).cxx_destruct;
@@ -131,6 +130,7 @@
 - (id)fetchOrCreateDeclarationForType:(id)arg1;
 - (id)fetchBlueprintConfigurationForType:(id)arg1;
 @property(readonly, nonatomic) NSString *localUseriTunesUsername;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 @property(readonly) NSManagedObjectContext *context;
 @property(nonatomic) BOOL backgroundAppActivityChangesAllowed;
 @property(nonatomic) BOOL tvProviderChangesAllowed;

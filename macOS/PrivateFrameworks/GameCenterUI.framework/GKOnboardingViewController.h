@@ -58,6 +58,7 @@
 - (BOOL)shouldPresentPersonalizationScreen;
 - (void)nextPressed:(id)arg1;
 - (void)signOutPressed:(id)arg1;
+- (void)addPrivacyLink;
 - (void)viewDidLoad;
 
 // Remaining properties

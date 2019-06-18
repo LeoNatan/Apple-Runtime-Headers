@@ -10,7 +10,7 @@
 #import <IconServices/ISScalableCompositorResource-Protocol.h>
 
 @class ISIconManager, NSArray, NSString;
-@protocol ISIconIdentity;
+@protocol ISGlyph, ISIconIdentity;
 
 @interface ISIcon : NSObject <ISScalableCompositorResource, CALayerDelegate>
 {
@@ -25,6 +25,7 @@
 + (id)sizesFromSet:(unsigned long long)arg1;
 + (int)findVariantFromSet:(unsigned long long)arg1 deviceIdiom:(unsigned long long)arg2 size:(struct CGSize)arg3 scale:(double)arg4;
 + (struct _LIIconVariantInfo *)variantInfoForSet:(unsigned long long)arg1 count:(unsigned long long *)arg2;
+@property(readonly) id <ISGlyph> glyph;
 - (id)iconWithDecorations:(id)arg1;
 @property(readonly, nonatomic) NSArray *decorations;
 - (unsigned long long)badgeOptions;

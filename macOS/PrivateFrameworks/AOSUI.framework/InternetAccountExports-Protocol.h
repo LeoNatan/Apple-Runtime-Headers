@@ -14,6 +14,8 @@
 @property(readonly, nonatomic) NSDictionary *account;
 @property(readonly, nonatomic) NSDictionary *environment;
 @property(readonly, nonatomic) unsigned long long protocolVersion;
+- (void)refreshFamilyCircle;
+- (void)refreshPage;
 - (void)getIcon:(NSString *)arg1 bundleIconName:(NSString *)arg2 width:(unsigned long long)arg3 height:(unsigned long long)arg4 callback:(JSValue *)arg5;
 - (void)selectFile:(NSString *)arg1 inFolder:(NSString *)arg2;
 - (void)openPrefPane:(NSString *)arg1 userInfo:(NSDictionary *)arg2;

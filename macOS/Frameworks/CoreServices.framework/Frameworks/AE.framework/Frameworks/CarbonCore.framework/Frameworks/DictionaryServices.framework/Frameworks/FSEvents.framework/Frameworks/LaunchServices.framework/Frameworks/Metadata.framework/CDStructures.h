@@ -54,29 +54,10 @@ typedef struct {
 } CDStruct_bd2f613f;
 
 typedef struct {
-    unsigned long long _field1;
-    unsigned long long _field2;
-    unsigned short _field3;
-    unsigned short _field4;
-    unsigned short _field5;
-    unsigned short _field6;
-    unsigned short _field7;
-    unsigned short _field8;
-} CDStruct_b7969f8e;
-
-typedef struct {
     long long version;
     CDUnknownFunctionPointerType retain;
     CDUnknownFunctionPointerType release;
     CDUnknownFunctionPointerType copyDescription;
     CDUnknownFunctionPointerType equal;
 } CDStruct_b3b3fc87;
-
-typedef struct {
-    char *containerBytes;
-    struct {
-        unsigned int embeddedReference;
-        unsigned char type;
-    } reference;
-} CDStruct_b7fac349;
 

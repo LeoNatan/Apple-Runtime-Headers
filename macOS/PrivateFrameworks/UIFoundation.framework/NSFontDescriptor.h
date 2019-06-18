@@ -24,6 +24,7 @@
 + (BOOL)supportsSecureCoding;
 + (id)fontDescriptorWithName:(id)arg1 matrix:(id)arg2;
 + (id)fontDescriptorWithName:(id)arg1 size:(double)arg2;
++ (id)fontDescriptorWithFontAttributes:(id)arg1 options:(unsigned long long)arg2;
 + (id)fontDescriptorWithFontAttributes:(id)arg1;
 + (id)_createMungledDictionary:(id)arg1;
 - (id)description;

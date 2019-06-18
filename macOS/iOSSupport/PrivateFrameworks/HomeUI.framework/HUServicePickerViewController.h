@@ -12,13 +12,11 @@
 @interface HUServicePickerViewController : HUSelectableServiceGridViewController
 {
     BOOL _isPresentedModally;
-    id <HUServicePickerViewControllerDelegate> _delegate;
     NSSet *_preselectedServices;
 }
 
 @property(retain, nonatomic) NSSet *preselectedServices; // @synthesize preselectedServices=_preselectedServices;
 @property(nonatomic) BOOL isPresentedModally; // @synthesize isPresentedModally=_isPresentedModally;
-@property(nonatomic) __weak id <HUServicePickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (BOOL)serviceGridItemManager:(id)arg1 shouldHideItem:(id)arg2;
 - (BOOL)_preselectedServicesContainsService:(id)arg1;
@@ -32,6 +30,9 @@
 - (void)viewDidLoad;
 - (id)initWithHome:(id)arg1 selectedServices:(id)arg2 isPresentedModally:(BOOL)arg3 delegate:(id)arg4;
 - (id)initWithHome:(id)arg1 isPresentedModally:(BOOL)arg2 delegate:(id)arg3;
+
+// Remaining properties
+@property(nonatomic) __weak id <HUServicePickerViewControllerDelegate> delegate; // @dynamic delegate;
 
 @end
 

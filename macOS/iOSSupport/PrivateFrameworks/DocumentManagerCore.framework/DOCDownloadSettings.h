@@ -30,6 +30,8 @@
 - (void)resetDefaultDownloadsLocationItem;
 - (void)setDefaultDownloadsItemForProviderDomain:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)setDefaultDownloadsLocationItem:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (BOOL)saveDownloadFolderItem:(id)arg1 error:(id *)arg2;
+- (void)removeCurrentDownloadsLocationFromFavorites;
 - (void)fetchDefaultDownloadsLocationItem:(CDUnknownBlockType)arg1;
 - (id)init;
 

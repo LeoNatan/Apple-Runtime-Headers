@@ -63,6 +63,7 @@
 @property(retain, nonatomic) Class dataSourceClass; // @synthesize dataSourceClass=_dataSourceClass;
 @property(retain, nonatomic) Class browserClass; // @synthesize browserClass=_browserClass;
 - (void).cxx_destruct;
+@property(readonly, nonatomic) BOOL showableInBrowser;
 @property(nonatomic) BOOL isEnabledUnremovableApp;
 @property(nonatomic) BOOL isEnabled;
 - (void)_loadBundle;

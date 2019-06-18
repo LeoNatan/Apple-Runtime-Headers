@@ -11,6 +11,7 @@
 @class NSString;
 
 @interface NSTextAttachment (UIAccessibilityContentSizeCategoryImageAdjusting) <UIAccessibilityContentSizeCategoryImageAdjusting>
++ (id)textAttachmentWithImage:(id)arg1;
 + (id)_imageFromAttachment:(id)arg1;
 + (BOOL)_attachmentHasImage:(id)arg1;
 @property(nonatomic) BOOL adjustsImageSizeForAccessibilityContentSizeCategory;

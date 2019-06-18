@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSString, VCHistogram, VCVideoFECStatsHolder;
+@class NSMutableDictionary, NSString, VCHistogram;
 @protocol VCAdaptiveLearningDelegate;
 
 @interface CallSegment : NSObject
@@ -97,13 +97,11 @@
     unsigned int _totalCellDupRxDataBytes;
     unsigned int _totalUsedCellBudgetTxDataBytes;
     unsigned int _totalUsedCellBudgetRxDataBytes;
-    VCVideoFECStatsHolder *_videoFECStatsLevel1;
-    VCVideoFECStatsHolder *_videoFECStatsLevel2;
-    VCVideoFECStatsHolder *_videoFECStatsLevel3;
     double _duplicationMaxNoRemotePacketTime;
     double _duplicationMaxRemoteNoRemotePacketTime;
     NSString *_duplicationConnectionConfig;
     NSString *_duplicationConnectionFamily;
+    NSMutableDictionary *_fecStatsDict;
     int _interval;
     int _frequency;
     NSString *_segmentName;
@@ -114,12 +112,10 @@
 }
 
 + (id)newSegmentNameWithComponents:(id)arg1 remoteInterface:(id)arg2 connectionType:(id)arg3 duplicationIndicator:(id)arg4;
+@property(readonly) NSMutableDictionary *fecStatsDict; // @synthesize fecStatsDict=_fecStatsDict;
 @property double duplicationMaxRemoteNoRemotePacketTime; // @synthesize duplicationMaxRemoteNoRemotePacketTime=_duplicationMaxRemoteNoRemotePacketTime;
 @property double duplicationMaxNoRemotePacketTime; // @synthesize duplicationMaxNoRemotePacketTime=_duplicationMaxNoRemotePacketTime;
 @property double averageSpeechErasuresRate; // @synthesize averageSpeechErasuresRate=_averageSpeechErasuresRate;
-@property(retain) VCVideoFECStatsHolder *videoFECStatsLevel3; // @synthesize videoFECStatsLevel3=_videoFECStatsLevel3;
-@property(retain) VCVideoFECStatsHolder *videoFECStatsLevel2; // @synthesize videoFECStatsLevel2=_videoFECStatsLevel2;
-@property(retain) VCVideoFECStatsHolder *videoFECStatsLevel1; // @synthesize videoFECStatsLevel1=_videoFECStatsLevel1;
 @property unsigned int totalUsedCellBudgetRxDataBytes; // @synthesize totalUsedCellBudgetRxDataBytes=_totalUsedCellBudgetRxDataBytes;
 @property unsigned int totalUsedCellBudgetTxDataBytes; // @synthesize totalUsedCellBudgetTxDataBytes=_totalUsedCellBudgetTxDataBytes;
 @property unsigned int totalCellDupRxDataBytes; // @synthesize totalCellDupRxDataBytes=_totalCellDupRxDataBytes;
@@ -206,6 +202,7 @@
 @property(readonly) VCHistogram *RTT; // @synthesize RTT=_RTT;
 - (void)changeDuplicationWithType:(unsigned short)arg1 payload:(id)arg2;
 - (id)segmentQRReport;
+- (id)segmentFECReport;
 - (id)segmentReport;
 - (unsigned int)RTPeriod;
 - (void)merge:(id)arg1;

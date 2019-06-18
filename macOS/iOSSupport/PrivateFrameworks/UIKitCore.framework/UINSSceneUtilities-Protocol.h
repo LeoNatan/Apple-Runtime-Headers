@@ -9,7 +9,7 @@
 @class NSString;
 
 @protocol UINSSceneUtilities <NSObject>
-- (BOOL)shouldCloseHostWindowForSceneIdentifier:(NSString *)arg1;
+- (BOOL)shouldCloseHostWindowForSceneIdentifier:(NSString *)arg1 persistentIdentifier:(NSString *)arg2;
 - (BOOL)shouldHideHostWindowForSceneIdentifier:(NSString *)arg1;
 @end
 

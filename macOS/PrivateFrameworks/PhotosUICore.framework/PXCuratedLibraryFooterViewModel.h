@@ -42,7 +42,7 @@
 - (void)serviceUI:(id)arg1 statusDidChange:(id)arg2;
 - (void)observable:(id)arg1 didChange:(unsigned long long)arg2 context:(void *)arg3;
 - (BOOL)_hasiCplStatusForServiceUIStatus:(id)arg1;
-- (BOOL)_hasAnalysisProgressForServiceStatus:(id)arg1 outProgress:(float *)arg2 outDescription:(id *)arg3;
+- (BOOL)_hasAnalysisProgressForAnalysisStatus:(id)arg1 serviceStatus:(id)arg2 cloudQuotaController:(id)arg3 isCPLEnabled:(BOOL)arg4 outProgress:(float *)arg5 outDescription:(id *)arg6;
 - (BOOL)_hasSyncProgressStatusForSyncAlbums:(id)arg1 outImportOperations:(int *)arg2;
 - (void)_updateExposedProperties;
 @property(readonly, nonatomic) BOOL hasPendingSyncProgressAlbums;

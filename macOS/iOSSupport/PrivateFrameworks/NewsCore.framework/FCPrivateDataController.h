@@ -80,9 +80,12 @@
 - (id)recordsForRestoringZoneName:(id)arg1;
 - (BOOL)canHelpRestoreZoneName:(id)arg1;
 - (void)loadLocalCachesFromStore;
-- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordIDs:(id)arg2;
+- (id)allKnownRecordNames;
+- (void)handleSyncWithChangedRecords:(id)arg1 deletedRecordNames:(id)arg2;
+- (void)handleResetWithReplacementRecords:(id)arg1;
+- (void)handleSyncDidResetLocalData;
 - (void)handleSyncCompletion;
-- (void)manualDirty;
+- (void)markAsDirty;
 @property(readonly, nonatomic, getter=isDirty) BOOL dirty;
 - (void)addCommandToCommandQueue:(id)arg1;
 - (void)removeObserver:(id)arg1;

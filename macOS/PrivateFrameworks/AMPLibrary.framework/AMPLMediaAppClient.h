@@ -6,21 +6,26 @@
 
 #import <AMPLibrary/AMPLClient.h>
 
-@interface AMPLMediaAppClient : AMPLClient
+#import <AMPLibrary/AMPLClientProtocol-Protocol.h>
+
+@interface AMPLMediaAppClient : AMPLClient <AMPLClientProtocol>
 {
 }
 
 - (void)synchronousAddToCloudMusicLibrary:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)synchronousRefreshSubscribedPlaylist:(unsigned long long)arg1 withCloudID:(unsigned long long)arg2 withReason:(unsigned char)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)synchronousCloudClientCommand:(unsigned int)arg1 withData:(unsigned long long)arg2 forClient:(unsigned int)arg3 withReply:(CDUnknownBlockType)arg4;
-- (void)fetchArtwork:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)sendDBChangesToLibrary:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)sendDBChangesToLibrary:(id)arg1 fromRevision:(unsigned int)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)addTrackToLibrary:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)synchronousLibraryCommand:(unsigned int)arg1 commandData:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)libraryCommand:(unsigned int)arg1 commandData:(id)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)fetchLibraryChangesFromRevision:(unsigned int)arg1 withInitialLoad:(_Bool)arg2 withReply:(CDUnknownBlockType)arg3;
 - (void)openMediaDomains:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)getDomainInfo:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)initWithClientInfo:(id)arg1 withClientID:(unsigned int)arg2 withMediaDomains:(unsigned long long)arg3 withEventsDelegate:(id)arg4 error:(id *)arg5;
+- (BOOL)handleReconnectionToLibrary:(id)arg1;
+- (void)handleOpenMediaDomains:(id)arg1 withConnection:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (BOOL)handleRegisterLibraryClient:(unsigned int)arg1 withConnection:(id)arg2 error:(id *)arg3;
 
 @end
 

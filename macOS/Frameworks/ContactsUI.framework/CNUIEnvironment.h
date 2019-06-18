@@ -6,13 +6,32 @@
 
 #import <objc/NSObject.h>
 
-@interface CNUIEnvironment : NSObject
+#import <ContactsUI/NSMutableCopying-Protocol.h>
+
+@class CNContactStore, CNUIEditingPolicy;
+
+@interface CNUIEnvironment : NSObject <NSMutableCopying>
 {
+    CNContactStore *_defaultContactStore;
+    CNContactStore *_contactStoreWithAllContacts;
+    CNContactStore *_contactStoreWithLocalAndDonatedContacts;
+    CNUIEditingPolicy *_editingPolicy;
 }
 
-+ (id)contactStoreWithLocalAndDonatedContacts;
-+ (id)contactStoreWithAllContacts;
-+ (id)defaultContactStore;
++ (id)environmentWithEnvironment:(id)arg1;
++ (id)defaultEnvironment;
+@property(readonly, nonatomic) CNUIEditingPolicy *editingPolicy; // @synthesize editingPolicy=_editingPolicy;
+@property(readonly, nonatomic) CNContactStore *contactStoreWithLocalAndDonatedContacts; // @synthesize contactStoreWithLocalAndDonatedContacts=_contactStoreWithLocalAndDonatedContacts;
+@property(readonly, nonatomic) CNContactStore *contactStoreWithAllContacts; // @synthesize contactStoreWithAllContacts=_contactStoreWithAllContacts;
+@property(readonly, nonatomic) CNContactStore *defaultContactStore; // @synthesize defaultContactStore=_defaultContactStore;
+- (void).cxx_destruct;
+- (id)copyWithEditingPolicy:(id)arg1;
+- (id)copyWithContactStore:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone *)arg1;
+- (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithDefaultContactStore:(id)arg1 contactStoreWithAllContacts:(id)arg2 contactStoreWithLocalAndDonatedContacts:(id)arg3 editingPolicy:(id)arg4;
+- (id)initWithDefaultValues;
+- (id)init;
 
 @end
 

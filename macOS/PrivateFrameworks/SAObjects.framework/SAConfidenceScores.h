@@ -21,6 +21,7 @@
 @property(copy, nonatomic) NSNumber *scoringSchemeVersion;
 @property(copy, nonatomic) NSArray *scores;
 @property(nonatomic) long long processedAudioDurationMilliseconds;
+@property(copy, nonatomic) NSString *assetVersion;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 

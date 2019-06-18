@@ -8,7 +8,7 @@
 
 @interface _TtC12NewsArticles21TableOfContentsStyler : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: baseStyler
+    // Error parsing type: , name: colorPaletteProvider
 }
 
 @end

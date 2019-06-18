@@ -10,6 +10,7 @@
 #import <ContactsUI/CNPhotoPickerHeaderViewDelegate-Protocol.h>
 #import <ContactsUI/CNPhotoPickerProviderGroupDelegate-Protocol.h>
 #import <ContactsUI/CNPhotoPickerVariantListControllerDelegate-Protocol.h>
+#import <ContactsUI/UIAdaptivePresentationControllerDelegate-Protocol.h>
 #import <ContactsUI/UICollectionViewDataSource-Protocol.h>
 #import <ContactsUI/UICollectionViewDelegate-Protocol.h>
 #import <ContactsUI/UICollectionViewDelegateFlowLayout-Protocol.h>
@@ -19,7 +20,7 @@
 @class CNAvatarPosePickerManager, CNContactStyle, CNMutableContact, CNPhotoPickerDataSource, CNPhotoPickerHeaderView, CNPhotoPickerProviderItem, NSString, UICollectionView;
 @protocol CNPhotoPickerViewControllerDelegate;
 
-@interface CNPhotoPickerViewController : UIViewController <UINavigationControllerDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, CNPhotoPickerHeaderViewDelegate, CNContactPhotoViewDelegate, CNPhotoPickerVariantListControllerDelegate, CNPhotoPickerProviderGroupDelegate>
+@interface CNPhotoPickerViewController : UIViewController <UINavigationControllerDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate, UIImagePickerControllerDelegate, CNPhotoPickerHeaderViewDelegate, CNContactPhotoViewDelegate, CNPhotoPickerVariantListControllerDelegate, UIAdaptivePresentationControllerDelegate, CNPhotoPickerProviderGroupDelegate>
 {
     id <CNPhotoPickerViewControllerDelegate> _delegate;
     UICollectionView *_collectionView;
@@ -44,6 +45,8 @@
 @property(retain, nonatomic) UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 @property(nonatomic) __weak id <CNPhotoPickerViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)presentationControllerDidAttemptToDismiss:(id)arg1;
+- (BOOL)isModalInPresentation;
 - (void)photoPickerVariantListController:(id)arg1 didSelectProviderItem:(id)arg2;
 - (void)photoPickerVariantListControllerDidCancel:(id)arg1;
 - (void)imagePickerControllerDidCancel:(id)arg1;

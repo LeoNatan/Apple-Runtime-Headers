@@ -28,7 +28,7 @@
 - (id)utiInContext:(id)arg1;
 - (id)initWithRecipeID:(unsigned int)arg1;
 - (void)_generateAndStoreUsingMediaConversionServicesForAsset:(id)arg1 version:(unsigned int)arg2 conversionClient:(id)arg3 progress:(id *)arg4 completion:(CDUnknownBlockType)arg5;
-- (id)_mediaConversionServiceOptionsForAsset:(id)arg1;
+- (id)_mediaConversionServiceOptionsForAsset:(id)arg1 adjustmentData:(id)arg2;
 - (id)_resourceGenerationAffectsRecipesForLibraryID:(id)arg1;
 
 @end

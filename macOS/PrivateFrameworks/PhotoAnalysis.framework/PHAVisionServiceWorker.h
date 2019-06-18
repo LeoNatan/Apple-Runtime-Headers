@@ -41,8 +41,6 @@
 - (void)coalesceResultsDictionary:(id)arg1 forAssetLocalIdentifier:(id)arg2;
 - (void)coalesceJobResult:(unsigned long long)arg1 forAssetLocalIdentifier:(id)arg2;
 - (BOOL)supportsCoalescingResults;
-- (BOOL)stopAcknowledgeDeletionsJob:(id)arg1 error:(id *)arg2;
-- (BOOL)startAcknowledgeDeletionsJob:(id)arg1 error:(id *)arg2;
 - (BOOL)stopAnalysisJob:(id)arg1 error:(id *)arg2;
 - (BOOL)startAnalysisJob:(id)arg1 error:(id *)arg2;
 - (void)shutdown;

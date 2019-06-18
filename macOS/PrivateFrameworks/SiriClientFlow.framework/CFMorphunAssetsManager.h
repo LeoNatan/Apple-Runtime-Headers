@@ -16,6 +16,7 @@
 + (void)registerPath:(id)arg1 withLanguage:(id)arg2;
 - (void).cxx_destruct;
 - (id)replaceLanguageCodeFormat:(id)arg1;
+- (void)cancelDownload:(id)arg1;
 - (void)downloadAsset:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)downloadAssets:(id)arg1 language:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)downloadedLocalAsset:(id)arg1 forLanguage:(id)arg2 error:(id *)arg3;

@@ -6,24 +6,31 @@
 
 #import <AppKit/NSView.h>
 
+#import <PhotosUICore/PXGAccessibilityRendererDelegate-Protocol.h>
 #import <PhotosUICore/PXGDiagnosticsProvider-Protocol.h>
 #import <PhotosUICore/PXGEngineDelegate-Protocol.h>
+#import <PhotosUICore/PXNSScrollViewControllerAccessibilityDelegate-Protocol.h>
 #import <PhotosUICore/PXScrollViewControllerObserver-Protocol.h>
 
-@class MTKView, NSColor, NSDictionary, NSResponder, NSString, PXGAnchor, PXGDebugHUDLayer, PXGEngine, PXGLayout, PXGRectDiagnosticsLayer, PXScrollViewController, PXScrollViewSpeedometer;
-@protocol NSDraggingDestination, PXGViewDiagnosticsSource;
+@class MTKView, NSArray, NSColor, NSDictionary, NSResponder, NSString, PXGAnchor, PXGDebugHUDLayer, PXGEngine, PXGLayout, PXGRectDiagnosticsLayer, PXScrollViewController, PXScrollViewSpeedometer;
+@protocol NSDraggingDestination, PXGViewAccessibilityDelegate, PXGViewDiagnosticsSource;
 
-@interface PXGView : NSView <PXScrollViewControllerObserver, PXGEngineDelegate, PXGDiagnosticsProvider>
+@interface PXGView : NSView <PXScrollViewControllerObserver, PXGEngineDelegate, PXGAccessibilityRendererDelegate, PXNSScrollViewControllerAccessibilityDelegate, PXGDiagnosticsProvider>
 {
     PXGDebugHUDLayer *_debugHUDLayer;
     PXGRectDiagnosticsLayer *_rectDiagnosticsLayer;
     NSColor *_backgroundColor;
     BOOL _performingHitTest;
+    BOOL canSelectAccessibilityGroupElements;
+    BOOL canSelectAccessibilityGroupElementsChildren;
     BOOL _isScrolling;
     BOOL _isAnimatingScroll;
     BOOL _showDebugHUD;
     BOOL _showPerspectiveDebug;
     BOOL _ignoreBoundsChanges;
+    PXGLayout *accessibilityRootLayout;
+    NSArray *axDelegateAccessibilitySelectedChildren;
+    id <PXGViewAccessibilityDelegate> _accessibilityDelegate;
     PXScrollViewController *_scrollViewController;
     PXScrollViewSpeedometer *_scrollingSpeedometer;
     NSResponder *_preferredFirstResponder;
@@ -53,11 +60,27 @@
 @property(readonly, nonatomic) NSResponder *preferredFirstResponder; // @synthesize preferredFirstResponder=_preferredFirstResponder;
 @property(readonly, nonatomic) PXScrollViewSpeedometer *scrollingSpeedometer; // @synthesize scrollingSpeedometer=_scrollingSpeedometer;
 @property(readonly, nonatomic) PXScrollViewController *scrollViewController; // @synthesize scrollViewController=_scrollViewController;
+@property(nonatomic) __weak id <PXGViewAccessibilityDelegate> accessibilityDelegate; // @synthesize accessibilityDelegate=_accessibilityDelegate;
+@property(retain, nonatomic) NSArray *axDelegateAccessibilitySelectedChildren; // @synthesize axDelegateAccessibilitySelectedChildren;
 - (void).cxx_destruct;
+- (id)viewForSpriteIndex:(unsigned int)arg1;
 @property(readonly, nonatomic) NSDictionary *ppt_extraResults;
 - (void)ppt_cleanUpAfterTest:(id)arg1 isScrollTest:(BOOL)arg2;
 - (void)ppt_prepareForTest:(id)arg1 withOptions:(id)arg2 isScrollTest:(BOOL)arg3;
 - (void)test_installRenderSnapshotHandler:(CDUnknownBlockType)arg1;
+- (void)setAxDelegateAccessibilityChildren:(id)arg1;
+@property(readonly, nonatomic) NSArray *axDelegateAccessibilityVisibleChildren;
+@property(readonly, nonatomic) NSArray *axDelegateAccessibilityChildren;
+@property(readonly, nonatomic) BOOL canSelectAccessibilityGroupElementsChildren; // @synthesize canSelectAccessibilityGroupElementsChildren;
+@property(readonly, nonatomic) BOOL canSelectAccessibilityGroupElements; // @synthesize canSelectAccessibilityGroupElements;
+@property(readonly, nonatomic) PXGLayout *accessibilityRootLayout; // @synthesize accessibilityRootLayout;
+- (id)accessibilityViewForSpriteIndex:(unsigned int)arg1;
+- (id)accessibilityHitTestResultAtPoint:(struct CGPoint)arg1;
+- (void)selectAssets:(id)arg1;
+- (BOOL)itemDidShowDefaultUIAtLocation:(struct CGPoint)arg1;
+- (BOOL)itemDidShowAlternateUIAtLocation:(struct CGPoint)arg1;
+- (BOOL)itemWasRightClickedWithHitTestResult:(id)arg1 location:(struct CGPoint)arg2;
+- (BOOL)itemWasDoubleClickedWithHitTestResult:(id)arg1;
 @property(readonly, copy, nonatomic) NSString *diagnosticDescription;
 - (void)_ensureEndAnimatedScroll;
 - (void)scrollViewControllerDidEndScrollingAnimation:(id)arg1;
@@ -102,6 +125,7 @@
 - (unsigned long long)draggingEntered:(id)arg1;
 - (void)_windowChangedKeyState;
 - (void)viewDidMoveToWindow;
+- (void)viewWillMoveToWindow:(id)arg1;
 - (void)viewDidChangeEffectiveAppearance;
 - (void)viewDidChangeBackingProperties;
 - (void)layout;

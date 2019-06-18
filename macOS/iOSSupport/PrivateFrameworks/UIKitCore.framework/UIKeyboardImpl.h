@@ -225,6 +225,8 @@
 + (void)setFloating:(BOOL)arg1 positionedAtDefaultOffsetAnimated:(BOOL)arg2;
 + (void)setFloating:(BOOL)arg1;
 + (BOOL)isFloating;
++ (BOOL)isFloatingForced;
++ (struct UIEdgeInsets)requestedFloatingInsets;
 + (BOOL)supportsFloating;
 + (BOOL)supportsSplit;
 + (BOOL)isSplit;
@@ -269,8 +271,6 @@
 + (void)sendPerformanceNotification:(id)arg1;
 + (void)setParentTestForProfiling:(id)arg1;
 + (void)_clearHardwareKeyboardMinimizationPreference;
-+ (BOOL)isHardwareCommandKeyBeingHeld;
-+ (BOOL)isHardwareShiftKeyBeingHeld;
 + (BOOL)overrideNativeScreen;
 + (id)keyboardScreen;
 + (id)keyboardWindow;
@@ -581,7 +581,6 @@
 - (BOOL)handleKeyTextCommandForCurrentEvent;
 - (BOOL)handleKeyInputMethodCommandForCurrentEvent;
 - (BOOL)isCallingInputDelegate;
-- (BOOL)handleKeyCommandForCurrentEvent;
 - (void)deleteBackward;
 - (BOOL)deleteForwardAndNotify:(BOOL)arg1;
 - (void)updateKeyboardStateForDeletion;
@@ -682,6 +681,7 @@
 - (void)cancelCandidateRequests;
 - (void)generateCandidatesAsynchronouslyWithRange:(struct _NSRange)arg1 selectedCandidate:(id)arg2;
 - (void)generateCandidatesAsynchronously;
+- (void)_performKeyboardOutput:(id)arg1 shouldCheckDelegate:(BOOL)arg2;
 - (void)performKeyboardOutput:(id)arg1;
 - (void)performKeyboardOutputInfo:(id)arg1;
 - (BOOL)dontPushOneTimeCode;
@@ -720,7 +720,6 @@
 - (void)_setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 inputString:(id)arg3 searchString:(id)arg4 compareAttributes:(BOOL)arg5;
 - (void)setAttributedMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 inputString:(id)arg3 searchString:(id)arg4;
 - (void)setMarkedText:(id)arg1 selectedRange:(struct _NSRange)arg2 inputString:(id)arg3 searchString:(id)arg4;
-- (void)_deactiveActiveKeys;
 - (struct CGSize)stretchFactor;
 - (unsigned long long)_clipCornersOfView:(id)arg1;
 - (void)_didChangeKeyplaneWithContext:(id)arg1;
@@ -745,6 +744,8 @@
 - (BOOL)handleKeyCommand:(id)arg1 repeatOkay:(char *)arg2 beforePublicKeyCommands:(BOOL)arg3;
 - (BOOL)handleKeyCommand:(id)arg1 repeatOkay:(char *)arg2 testOnly:(BOOL)arg3;
 - (BOOL)handleKeyCommand:(id)arg1 repeatOkay:(char *)arg2;
+- (BOOL)_cancelOperation:(BOOL)arg1 testOnly:(BOOL)arg2;
+- (BOOL)_canHandleResponderCommand:(SEL)arg1;
 - (BOOL)shouldAllowRepeatEvent:(id)arg1;
 - (void)handleObserverCallback;
 - (void)updateObserverState;
@@ -754,6 +755,7 @@
 - (void)textFrameChanged:(id)arg1;
 - (void)callChanged;
 - (void)callChangedSelection;
+- (BOOL)callShouldDeleteForward;
 - (BOOL)callShouldDeleteWithWordCountForRapidDelete:(int)arg1 characterCountForRapidDelete:(int)arg2;
 - (BOOL)shouldRapidDeleteWithDelegate;
 - (BOOL)shouldRapidDelete;
@@ -774,6 +776,7 @@
 - (void)_updateRTIObjectsIfNecessary;
 - (void)_performTextOperationActionSelector:(SEL)arg1;
 - (void)_performTextCheckingAnnotationOperations:(id)arg1;
+- (void)_performKeyboardOutputOperations:(id)arg1;
 - (void)_queued_performTextOperations:(id)arg1;
 - (void)performTextOperations:(id)arg1;
 - (void)_completePerformInputViewControllerOutput:(id)arg1 executionContext:(id)arg2;
@@ -835,7 +838,7 @@
 - (void)setInputModeToNextInPreferredListWithExecutionContext:(id)arg1;
 - (void)hideInternationalKeyIntroductionIfNeeded;
 - (void)showInternationalKeyIntroductionIfNeededWithPreviousInputMode:(id)arg1;
-- (id)_stagingTIUIKeyboardDidShowInternationalInfoIntroductionPreference;
+- (BOOL)shouldShowInternationalKeyIntroduction;
 - (void)updateInputModeIndicatorOnSingleKeyOnly:(BOOL)arg1;
 - (void)updateInputModeIndicatorOnSingleKeyOnly:(BOOL)arg1 preserveIfPossible:(BOOL)arg2;
 - (void)setKeyboardInputModeFromPreferences:(id)arg1;
@@ -881,6 +884,8 @@
 - (BOOL)disableInputBars;
 - (BOOL)isPredictionViewControllerVisible;
 - (BOOL)autocorrectionPreferenceForTraits;
+- (void)_updateTextInputKeyboardSourceForDelegate:(id)arg1;
+- (long long)_textInputSourceForDelegate:(id)arg1;
 - (BOOL)keyboardIsKeyPad;
 - (BOOL)autocorrectionPreference;
 - (void)cancelSplitTransition;
@@ -888,6 +893,7 @@
 - (void)setSplitProgress:(double)arg1;
 - (void)setInSplitKeyboardMode:(BOOL)arg1;
 - (BOOL)shouldAllowTwoFingerSelectionGesture;
+- (void)beginFloatingTransitionFromPanGestureRecognizer:(id)arg1;
 @property(readonly, nonatomic) BOOL splitTransitionInProgress;
 @property(readonly) unsigned long long minimumTouchesForTranslation;
 @property BOOL rivenSplitLock;
@@ -972,9 +978,9 @@
 - (BOOL)isShiftKeyBeingHeld;
 - (void)endAllowingRemoteTextInput:(id)arg1;
 - (void)beginAllowingRemoteTextInput:(id)arg1;
-- (long long)undoOptionFromDelegate;
 - (void)_createRTIClientIfNecessary;
 - (void)_updateRTIAllowedAndNotify:(BOOL)arg1 withReason:(id)arg2;
+- (void)_deactiveActiveKeys;
 - (void)_showAutofillExtras;
 - (BOOL)shouldLoadAutofillSignUpInputViewController;
 - (id)_passwordRules;
@@ -1001,7 +1007,8 @@
 @property(readonly, nonatomic) UITextSelectionView *selectionView;
 - (void)setInitialDirection;
 - (void)changeWritingDirectionIfNeededWithInputString:(id)arg1;
-- (void)_suppressSoftwareKeyboardStateChanged;
+- (void)_suppressSoftwareKeyboardStateChangedIgnoringPolicyDelegate:(BOOL)arg1;
+- (BOOL)_shouldSuppressSoftwareKeyboardIgnoringPolicyDelegate:(BOOL)arg1;
 - (BOOL)_shouldSuppressSoftwareKeyboard;
 - (BOOL)_shouldMinimizeForHardwareKeyboard;
 - (void)updateKeyboardConfigurations;

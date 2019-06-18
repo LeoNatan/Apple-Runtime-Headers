@@ -19,11 +19,13 @@
     long long _geometryStatus;
     PHAsset *_asset;
     PAImageAssetType *_assetType;
+    CDUnknownBlockType _compositionReplacedFilter;
     NSArray *_assetClients;
 }
 
 + (id)imageAssetWithType:(id)arg1 asset:(id)arg2;
 @property(retain) NSArray *assetClients; // @synthesize assetClients=_assetClients;
+@property(copy) CDUnknownBlockType compositionReplacedFilter; // @synthesize compositionReplacedFilter=_compositionReplacedFilter;
 @property(readonly, nonatomic) PAImageAssetType *assetType; // @synthesize assetType=_assetType;
 @property(retain) PHAsset *asset; // @synthesize asset=_asset;
 - (void).cxx_destruct;
@@ -38,6 +40,7 @@
 @property(readonly, copy) NSString *description;
 - (void)assetDidChange:(id)arg1;
 - (id)initWithType:(id)arg1 asset:(id)arg2;
+- (void)compositionReplaced:(id)arg1;
 - (void)composition:(id)arg1 endInteractiveForKey:(id)arg2;
 - (void)composition:(id)arg1 beginInteractiveForKey:(id)arg2;
 - (void)compositionChanged:(id)arg1 key:(id)arg2;

@@ -66,11 +66,11 @@
 - (id)_previewFileURLForTransferURL:(id)arg1 utiType:(id)arg2;
 - (BOOL)_shouldUseOriginalURLForUTIType:(id)arg1;
 - (id)_previewFileURLForTransferURL:(id)arg1;
-- (BOOL)_isMostActiveDevice;
+- (void)_isMostActiveDeviceWithCompletionBlock:(CDUnknownBlockType)arg1;
 - (id)_messageReceivedSoundIdentifier;
 - (BOOL)_isPlaySoundEnabled;
 - (void)_populateIgnoreDownTime:(id)arg1 messageDictionary:(id)arg2 downtimeEnabled:(BOOL)arg3;
-- (void)_populateSpokenMessage:(id)arg1 messageDictionary:(id)arg2 chatDictionary:(id)arg3 isMostActive:(BOOL)arg4;
+- (BOOL)_messageShouldBeSpoken:(id)arg1 chatDictionary:(id)arg2 isMostActive:(BOOL)arg3;
 -     // Error parsing type: v40@0:8@16@24^{_IMDMessageRecordStruct={__CFRuntimeBase=QAQ}q^{__CFArray}^{_IMDHandleRecordStruct}^{_IMDHandleRecordStruct}^{__CFArray}}32, name: _populateAttachmentsForNotificationContent:messageDictionary:messageRecord:
 - (void)_populateNotificationCategoryContent:(id)arg1 messageDictionary:(id)arg2;
 - (void)_populateUserInfoForMessageContent:(id)arg1 messageDictionary:(id)arg2 messageIsAddressedToMe:(BOOL)arg3;
@@ -90,9 +90,9 @@
 - (void)retractNotificationsForReadMessages:(id)arg1;
 - (void)postNotifications:(BOOL)arg1;
 - (void)_postNotifications:(id)arg1;
-- (void)__postNotifications:(BOOL)arg1;
+- (void)__postNotifications:(BOOL)arg1 isMostActiveDevice:(BOOL)arg2;
 - (void)_registerUserNotificationsForFailedDeliveryMessageRecords:(id)arg1 isCarouselUITriggered:(BOOL)arg2;
-- (void)_registerUserNotificationsForMessageRecords:(id)arg1 newerThanDate:(long long)arg2 areUrgentMessages:(BOOL)arg3 downTimeEnabled:(BOOL)arg4 isCarouselUITriggered:(BOOL)arg5;
+- (void)_registerUserNotificationsForMessageRecords:(id)arg1 newerThanDate:(long long)arg2 areUrgentMessages:(BOOL)arg3 downTimeEnabled:(BOOL)arg4 isCarouselUITriggered:(BOOL)arg5 isMostActiveDevice:(BOOL)arg6;
 - (id)_messages:(id)arg1 newerThanDate:(long long)arg2;
 - (id)_messagesSortedByDate:(id)arg1;
 - (BOOL)_overrideDNDForMessagesAddressingMe;

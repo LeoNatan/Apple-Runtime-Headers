@@ -63,6 +63,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)allowBuildChildren;
 - (void)setKeyboardFocus:(BOOL)arg1;
 - (BOOL)_shouldUseCollectionSpecificFocusBehavior;
+- (void)_postNavigationProcessingForCommand:(id)arg1 request:(id)arg2 soundIdentifier:(id)arg3;
 - (void)_updateChildIndexFromFocusedChild;
 - (BOOL)_moveToContentSiblingBelow;
 - (BOOL)_moveToContentSiblingAbove;

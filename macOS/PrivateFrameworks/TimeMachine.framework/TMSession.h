@@ -28,15 +28,23 @@
 + (id)dataVolumeUUIDForURL:(id)arg1 error:(id *)arg2;
 + (long long)indexTypeForMountPoint:(id)arg1;
 + (BOOL)volumeTypeSupportsStoringSpotlightIndex:(long long)arg1;
++ (id)migrationSessionForTMVolumeMountPoint:(id)arg1 error:(id *)arg2;
++ (void)setNextVolumeStoreVolumeUUID:(id)arg1;
++ (void)setCurrentROSPDataVolumeMountPoint:(id)arg1;
++ (void)setCurrentROSPDataVolumeUUID:(id)arg1;
 + (id)_synthesizedDirectoryPathForBackupPath:(id)arg1 backupMountPoint:(id)arg2;
 + (id)_originalLocationForBackedUpItem:(id)arg1 error:(id *)arg2;
-+ (id)_pathRelativeToBackupForPath:(id)arg1;
-+ (struct _NSRange)_relativePathRangeInPath:(id)arg1;
++ (struct TMBackupPathRanges)_backupPathRangesInPath:(id)arg1;
++ (BOOL)checkAndSetIsInCurrentSystemDataVolumeForPath:(id)arg1 ranges:(struct TMBackupPathRanges)arg2;
 + (id)_inferBackupRootPathFromBackedUpItemPath:(id)arg1;
 + (id)_inferOriginalPathFromBackedUpItemPath:(id)arg1;
 + (id)_mountDestinationForDestinationID:(id)arg1 error:(id *)arg2;
 + (id)_browsingSessionForDestinationID:(id)arg1 error:(id *)arg2;
-+ (id)migrationSessionForTMVolumeMountPoint:(id)arg1 error:(id *)arg2;
++ (id)currentDataVolumeMountPoint;
++ (id)currentDataVolumeUUID;
++ (id)currentDataVolume;
++ (void)clearROSPCache;
++ (id)ROSPVolumeStoreInfoCache;
 @property(copy) NSArray *backups; // @synthesize backups=_backups;
 @property(retain) NSURL *sidecarMountPoint; // @synthesize sidecarMountPoint=_sidecarMountPoint;
 @property(retain) id sessionRunLoop; // @synthesize sessionRunLoop=_sessionRunLoop;
@@ -58,10 +66,10 @@
 - (BOOL)_prepareBackupsForTMVolumeMountPoint:(id)arg1 error:(id *)arg2;
 - (id)firstPathInBackupsWithFileID:(unsigned long long)arg1 error:(id *)arg2;
 @property(readonly) NSURL *spotlightIndexLocation;
-- (id)_synthesizeLegacyBackupDB:(id *)arg1;
 - (id)latestVolumeStoreInfoEnumeratorForMachineStoreInfo:(id)arg1 error:(id *)arg2;
 - (id)_urlOfLatestBackupForMachineStoreInfo:(id)arg1;
 - (id)machineStoreInfoEnumerator:(id *)arg1;
+- (id)_synthesizeLegacyBackupDB:(id *)arg1;
 
 @end
 

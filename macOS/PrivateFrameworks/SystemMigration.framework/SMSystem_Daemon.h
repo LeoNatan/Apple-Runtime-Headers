@@ -43,6 +43,7 @@
 + (id)keyPathsForValuesAffectingDisplayIcon;
 + (Class)daemonClassFromSystemClass:(Class)arg1;
 + (id)daemonInterestedKeys;
++ (id)keyPathsForValuesAffectingSelectableSystem;
 + (unsigned long long)requiredScannerState;
 + (id)keyPathsForValuesAffectingIsFilevault;
 + (id)proxyFromDict:(id)arg1;

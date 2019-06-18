@@ -124,6 +124,7 @@
 - (id)_resolvedStrokeIndexes:(id)arg1 segmentGroup:(id)arg2 segmentOffset:(long long)arg3 substrokeCount:(long long *)arg4;
 - (id)_contextTokenIDsFromHistory:(id)arg1 maxCharacterLength:(unsigned long long)arg2 maxTokenCount:(unsigned long long)arg3;
 - (void)_calculateBestTranscriptionPaths:(id *)arg1 scores:(id *)arg2 fromTokenizedResult:(id)arg3 pathCount:(long long)arg4 history:(id)arg5 skipLMRescoring:(BOOL)arg6;
+- (id)bestTranscriptionPathsForTokenizedResult:(id)arg1 scores:(id *)arg2 history:(id)arg3;
 - (double)_lmRescoringWeightForPath:(id)arg1;
 - (id)_tokenFromLegacyResult:(id)arg1 wordIndex:(unsigned long long)arg2 strokeSet:(id)arg3 substrokeCount:(long long)arg4;
 - (unsigned long long)_mininmumPathCount;

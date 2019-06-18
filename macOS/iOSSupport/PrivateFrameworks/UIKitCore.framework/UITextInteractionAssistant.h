@@ -81,6 +81,7 @@
 - (void)rangeSelectionStarted:(struct CGPoint)arg1;
 - (void)selectionAnimationDidStop;
 - (void)updateWithMagnifierTerminalPoint:(BOOL)arg1;
+- (void)_updateSelectionWithPoint:(struct CGPoint)arg1 granularity:(long long)arg2 forceGranularity:(BOOL)arg3;
 - (void)updateSelectionWithPoint:(struct CGPoint)arg1;
 - (void)notifyKeyboardSelectionChanged;
 - (void)clearSelection;

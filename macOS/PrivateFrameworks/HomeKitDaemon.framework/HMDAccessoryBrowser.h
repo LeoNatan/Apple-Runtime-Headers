@@ -30,6 +30,7 @@
     NSMutableSet *_unassociatedWACAccessories;
     NSMutableSet *_mediaAccessoryControlConnections;
     NSMutableSet *_browsingConnections;
+    BOOL _btlePowerState;
     BOOL _appIsInForeground;
     BOOL _activeSiriCommand;
     HMDUnassociatedWACAccessory *_accessoryPerformingWAC;
@@ -99,6 +100,7 @@
 @property(retain, nonatomic) NSUUID *uuid; // @synthesize uuid=_uuid;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *propertyQueue; // @synthesize propertyQueue=_propertyQueue;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *workQueue; // @synthesize workQueue=_workQueue;
+@property(nonatomic) BOOL btlePowerState; // @synthesize btlePowerState=_btlePowerState;
 @property(readonly, nonatomic) HAPAccessoryServerBrowserRelay *relayAccessoryServerBrowser; // @synthesize relayAccessoryServerBrowser=_relayAccessoryServerBrowser;
 - (void).cxx_destruct;
 - (id)dumpRegisteredPairedAccessories;
@@ -114,7 +116,7 @@
 - (void)accessoryServer:(id)arg1 authenticateUUID:(id)arg2 token:(id)arg3;
 - (void)accessoryServer:(id)arg1 validateCert:(id)arg2 model:(id)arg3;
 - (void)accessoryServer:(id)arg1 validateUUID:(id)arg2 token:(id)arg3 model:(id)arg4;
-- (void)accessoryServerNeedsOwnershipProof:(id)arg1;
+- (void)accessoryServerNeedsOwnershipToken:(id)arg1;
 - (void)accessoryServer:(id)arg1 didFinishAuth:(id)arg2;
 - (void)accessoryServer:(id)arg1 didUpdateName:(id)arg2;
 - (void)_notifyDelegatesOfAccessoryServer:(id)arg1 didUpdateName:(id)arg2;
@@ -197,6 +199,7 @@
 - (void)_registerForMessages;
 - (void)removeDelegate:(id)arg1;
 - (void)addDelegate:(id)arg1 queue:(id)arg2;
+- (void)tearDownSessionForAccesoryServer:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)resurrectAccessoryServer:(id)arg1;
 - (void)tombstoneAccessoryServer:(id)arg1;
 - (void)discoverAccessories:(id)arg1;
@@ -310,6 +313,7 @@
 - (void)setQOS:(long long)arg1;
 - (void)configureAccessory:(id)arg1 trackState:(BOOL)arg2 connectionPriority:(BOOL)arg3;
 - (void)configureWithHomeManager:(id)arg1;
+- (void)configureDemoBrowserWithTestAccessories:(id)arg1;
 - (void)configureDemoBrowserWithDemoAccessories:(id)arg1 finalized:(BOOL)arg2;
 - (id)initWithMessageDispatcher:(id)arg1 workQueue:(id)arg2 injectedSettings:(id)arg3;
 - (id)initWithMessageDispatcher:(id)arg1;

@@ -7,17 +7,17 @@
 #import <objc/NSObject.h>
 
 #import <EmailDaemon/EDMessageChangeHookResponder-Protocol.h>
+#import <EmailDaemon/EDRemoteSearchDelegate-Protocol.h>
 #import <EmailDaemon/EFCancelable-Protocol.h>
 #import <EmailDaemon/EFLoggable-Protocol.h>
 
-@class EDMessagePersistence, EDMessageQueryEvaluator, EDPersistenceHookRegistry, EFCancelationToken, EFQuery, NSString;
+@class EDMessagePersistence, EDMessageQueryEvaluator, EFCancelationToken, EFQuery, NSString;
 @protocol EDMessageQueryHelperDelegate, EFScheduler;
 
-@interface EDMessageQueryHelper : NSObject <EDMessageChangeHookResponder, EFLoggable, EFCancelable>
+@interface EDMessageQueryHelper : NSObject <EDMessageChangeHookResponder, EDRemoteSearchDelegate, EFLoggable, EFCancelable>
 {
     EFQuery *_query;
     EDMessagePersistence *_messagePersistence;
-    EDPersistenceHookRegistry *_hookRegistry;
     id <EDMessageQueryHelperDelegate> _delegate;
     id <EFScheduler> _scheduler;
     EDMessageQueryEvaluator *_queryEvaluator;
@@ -35,10 +35,10 @@
 @property(retain, nonatomic) EDMessageQueryEvaluator *queryEvaluator; // @synthesize queryEvaluator=_queryEvaluator;
 @property(readonly, nonatomic) id <EFScheduler> scheduler; // @synthesize scheduler=_scheduler;
 @property(readonly, nonatomic) __weak id <EDMessageQueryHelperDelegate> delegate; // @synthesize delegate=_delegate;
-@property(readonly, nonatomic) __weak EDPersistenceHookRegistry *hookRegistry; // @synthesize hookRegistry=_hookRegistry;
 @property(readonly, nonatomic) EDMessagePersistence *messagePersistence; // @synthesize messagePersistence=_messagePersistence;
 @property(readonly, nonatomic) EFQuery *query; // @synthesize query=_query;
 - (void).cxx_destruct;
+- (void)remoteSearchDidFinish;
 - (void)persistenceDidUpdateProperties:(id)arg1 message:(id)arg2;
 - (void)persistenceDidChangeMessageIDHeaderHash:(id)arg1 message:(id)arg2;
 - (void)persistenceIsChangingConversationID:(long long)arg1 messages:(id)arg2;

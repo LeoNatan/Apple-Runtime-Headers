@@ -42,8 +42,8 @@
 - (unsigned int)dataType;
 - (id)copyWithZone:(struct _NSZone *)arg1 device:(id)arg2;
 - (id)copyWithZone:(struct _NSZone *)arg1;
-- (void)initializeWeightsAndBiases;
-- (id)initWithColumns:(unsigned long long)arg1 rows:(unsigned long long)arg2 lstmInputSize:(unsigned long long)arg3 lstmOutputSize:(unsigned long long)arg4 weightID:(unsigned long long)arg5 neuronType:(int)arg6 neuronA:(float)arg7 neuronB:(float)arg8 initialWeights_0:(float *)arg9 initialWeights_1:(float *)arg10 bias_0:(float *)arg11 bias_1:(float *)arg12 weightAttributes:(unsigned long long)arg13;
+- (void)initializeWeightsAndBiases:(id)arg1;
+- (id)initWithColumns:(unsigned long long)arg1 rows:(unsigned long long)arg2 lstmInputSize:(unsigned long long)arg3 lstmOutputSize:(unsigned long long)arg4 weightID:(unsigned long long)arg5 neuronType:(int)arg6 neuronA:(float)arg7 neuronB:(float)arg8 initialWeights_0:(float *)arg9 initialWeights_1:(float *)arg10 bias_0:(float *)arg11 bias_1:(float *)arg12 weightAttributes:(unsigned long long)arg13 deviceHandler:(id)arg14;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

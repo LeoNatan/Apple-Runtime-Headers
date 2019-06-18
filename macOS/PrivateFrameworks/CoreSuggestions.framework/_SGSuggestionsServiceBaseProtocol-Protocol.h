@@ -12,5 +12,7 @@
 - (BOOL)isEnabledWithError:(id *)arg1;
 - (void)setQueuesRequestsIfBusy:(BOOL)arg1;
 - (BOOL)queuesRequestsIfBusy;
+- (void)setSyncTimeout:(double)arg1;
+- (double)syncTimeout;
 @end
 

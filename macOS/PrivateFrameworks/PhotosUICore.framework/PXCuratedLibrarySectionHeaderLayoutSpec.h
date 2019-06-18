@@ -14,9 +14,11 @@
     BOOL _showAspectFitButtons;
     BOOL _wantsTitle;
     BOOL _wantsSubtitle;
+    BOOL _shouldOmitYear;
     BOOL _shouldAvoidOverlapWithSecondaryToolbar;
     BOOL _wantsInlineHeader;
     BOOL _swapTitleWithSubtitle;
+    BOOL _shouldFadeOutWhenReachingTop;
     BOOL _shouldAccomdateAccessibilityButtonLayout;
     BOOL _gradientRespectsSafeArea;
     BOOL _gradientAlwaysSticksToTop;
@@ -27,6 +29,9 @@
     PXTitleSubtitleLabelSpec *_debugInterestingTitleSubtitleLabelSpec;
     PXTitleSubtitleLabelSpec *_debugNonInterestingTitleSubtitleLabelSpec;
     unsigned long long _inlineHeaderStyle;
+    double _fadeOutDistanceFromSafeAreaTop;
+    double _fadeOutDistance;
+    double _fadeOutMinimumAlpha;
     double _gradientHeight;
     double _minimumSpacingBetweenTopSafeAreaAndContentTop;
     double _minimumSpacingBetweenTopSafeAreaAndTitleTop;
@@ -46,6 +51,10 @@
 @property(nonatomic) BOOL gradientRespectsSafeArea; // @synthesize gradientRespectsSafeArea=_gradientRespectsSafeArea;
 @property(nonatomic) double gradientHeight; // @synthesize gradientHeight=_gradientHeight;
 @property(nonatomic) BOOL shouldAccomdateAccessibilityButtonLayout; // @synthesize shouldAccomdateAccessibilityButtonLayout=_shouldAccomdateAccessibilityButtonLayout;
+@property(nonatomic) double fadeOutMinimumAlpha; // @synthesize fadeOutMinimumAlpha=_fadeOutMinimumAlpha;
+@property(nonatomic) double fadeOutDistance; // @synthesize fadeOutDistance=_fadeOutDistance;
+@property(nonatomic) double fadeOutDistanceFromSafeAreaTop; // @synthesize fadeOutDistanceFromSafeAreaTop=_fadeOutDistanceFromSafeAreaTop;
+@property(nonatomic) BOOL shouldFadeOutWhenReachingTop; // @synthesize shouldFadeOutWhenReachingTop=_shouldFadeOutWhenReachingTop;
 @property(nonatomic) BOOL swapTitleWithSubtitle; // @synthesize swapTitleWithSubtitle=_swapTitleWithSubtitle;
 @property(nonatomic) unsigned long long inlineHeaderStyle; // @synthesize inlineHeaderStyle=_inlineHeaderStyle;
 @property(nonatomic) BOOL wantsInlineHeader; // @synthesize wantsInlineHeader=_wantsInlineHeader;
@@ -55,6 +64,7 @@
 @property(nonatomic) BOOL shouldAvoidOverlapWithSecondaryToolbar; // @synthesize shouldAvoidOverlapWithSecondaryToolbar=_shouldAvoidOverlapWithSecondaryToolbar;
 @property(nonatomic) struct NSEdgeInsets titlePadding; // @synthesize titlePadding=_titlePadding;
 @property(nonatomic) struct NSEdgeInsets contentPadding; // @synthesize contentPadding=_contentPadding;
+@property(nonatomic) BOOL shouldOmitYear; // @synthesize shouldOmitYear=_shouldOmitYear;
 @property(nonatomic) BOOL wantsSubtitle; // @synthesize wantsSubtitle=_wantsSubtitle;
 @property(nonatomic) BOOL wantsTitle; // @synthesize wantsTitle=_wantsTitle;
 @property(nonatomic) BOOL showAspectFitButtons; // @synthesize showAspectFitButtons=_showAspectFitButtons;

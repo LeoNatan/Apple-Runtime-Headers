@@ -21,6 +21,7 @@
 - (void)encodeUsingCoder:(id)arg1 contact:(id)arg2;
 - (BOOL)isEqualForContact:(id)arg1 other:(id)arg2;
 - (id)init;
+- (void)copyFromCoreDataContact:(id)arg1 toContact:(id)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -20,11 +20,12 @@
     VCPFrameAnalysisStats *_frameStats;
     BOOL _isLivePhoto;
     NSMutableArray *_keyFrameScores;
+    NSArray *_inputKeyFrameResults;
 }
 
 - (void).cxx_destruct;
 - (float)computeMinDistanceBetween:(id)arg1 withSet:(id)arg2;
-- (void)prepareFrameStats;
+- (void)prepareFrameStats:(CDStruct_1b6d18a9)arg1;
 - (void)setKeyFrameTime:(CDStruct_1b6d18a9)arg1 isHeadingFrame:(BOOL)arg2;
 - (void)modulateByJunk;
 - (void)modulateByExposure;
@@ -37,9 +38,10 @@
 - (id)keyFrames;
 - (int)postProcess;
 - (void)preparePostProcessingStatsFromFaceRange:(id)arg1 junkResults:(id)arg2;
+- (int)loadKeyFrameResults:(CDStruct_1b6d18a9)arg1;
 - (int)analyzeFrame:(struct __CVBuffer *)arg1 withTimestamp:(CDStruct_1b6d18a9)arg2;
 - (id)keyFrameScores;
-- (id)initWithTransform:(struct CGAffineTransform)arg1 timeRange:(CDStruct_e83c9415)arg2 isLivePhoto:(BOOL)arg3 frameStats:(id)arg4;
+- (id)initWithTransform:(struct CGAffineTransform)arg1 timeRange:(CDStruct_e83c9415)arg2 isLivePhoto:(BOOL)arg3 frameStats:(id)arg4 keyFrameResults:(id)arg5;
 
 @end
 

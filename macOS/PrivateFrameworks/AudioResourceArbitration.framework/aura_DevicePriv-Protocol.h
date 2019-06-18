@@ -7,7 +7,6 @@
 #import <AudioResourceArbitration/aura_Device-Protocol.h>
 
 @protocol aura_DevicePriv <aura_Device>
-- (_Bool)usesHardwareReactor:(weak_ptr_6b0f00f0)arg1;
-- (void)refreshPorts:(vector_5de72575)arg1;
+@property(readonly, nonatomic) weak_ptr_47880f8f reactor;
 @end
 

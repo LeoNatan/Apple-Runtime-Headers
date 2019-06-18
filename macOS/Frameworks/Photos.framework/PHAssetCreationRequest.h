@@ -34,6 +34,7 @@
     CDStruct_1b6d18a9 _duplicateStillSourceTime;
 }
 
++ (BOOL)supportsImportAssetResourceTypes:(id)arg1;
 + (BOOL)supportsAssetResourceTypes:(id)arg1;
 + (id)creationRequestForAssetCopyFromAsset:(id)arg1;
 + (id)creationRequestForAssetCopyFromAsset:(id)arg1 options:(id)arg2;
@@ -93,11 +94,16 @@
 - (id)_managedAssetFromPrimaryResourceData:(id)arg1 withUUID:(id)arg2 photoLibrary:(id)arg3 getImageSource:(struct CGImageSource **)arg4 imageData:(id *)arg5;
 - (short)_savedAssetTypeForAsset;
 - (id)_exifPropertiesFromSourceImageDataExifProperties:(id)arg1;
+- (BOOL)_createOriginalResourceForAsset:(id)arg1 fromValidatedResource:(id)arg2 resourceType:(unsigned int)arg3 photoLibrary:(id)arg4 destinationURL:(id)arg5 error:(id *)arg6;
+- (BOOL)_createAudioResourceForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
+- (BOOL)_createXmpResourceForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
 - (BOOL)_createRAWSidecarForAsset:(id)arg1 fromValidatedResources:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
 - (BOOL)_createAssetAsPhotoIris:(id)arg1 fromValidatedResources:(id)arg2 error:(id *)arg3;
 - (id)_ingestOriginalFromSrcURL:(id)arg1 toDstURL:(id)arg2 useSecureMove:(BOOL)arg3 resource:(id)arg4 resourceType:(unsigned int)arg5 asset:(id)arg6 error:(id *)arg7;
 - (BOOL)_ingestOriginalInPlaceSrcURL:(id)arg1 dstURL:(id)arg2 asset:(id)arg3 error:(id *)arg4;
 - (BOOL)_createAssetAsAdjusted:(id)arg1 fromValidatedResources:(id)arg2 error:(id *)arg3;
+- (id)makeSubstitueRenderVideoFileFromPath:(id)arg1 primaryResource:(id)arg2 fileSuffix:(id)arg3 error:(id *)arg4;
+- (id)makeSubstitueRenderImageFileFromPath:(id)arg1 primaryResource:(id)arg2 fileSuffix:(id)arg3 error:(id *)arg4;
 - (void)updateOriginalResourceOptionsWithResource:(id)arg1 sourceUrl:(id)arg2;
 - (id)_secureMove:(BOOL)arg1 assetResource:(id)arg2 photoLibrary:(id)arg3 error:(id *)arg4;
 - (id)_secureMove:(BOOL)arg1 fileAtURL:(id)arg2 toURL:(id)arg3 error:(id *)arg4;

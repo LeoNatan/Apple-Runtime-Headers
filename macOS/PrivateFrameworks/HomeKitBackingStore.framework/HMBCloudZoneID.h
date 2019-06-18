@@ -6,28 +6,34 @@
 
 #import <HomeKitBackingStore/HMBCloudID.h>
 
-#import <HomeKitBackingStore/NSCopying-Protocol.h>
-#import <HomeKitBackingStore/NSSecureCoding-Protocol.h>
+#import <HomeKitBackingStore/HMBLocalZoneID-Protocol.h>
 
-@class CKRecordZoneID, HMBLocalCloudZoneID;
+@class CKRecordZoneID, NSArray, NSData, NSString;
 
-@interface HMBCloudZoneID : HMBCloudID <NSSecureCoding, NSCopying>
+@interface HMBCloudZoneID : HMBCloudID <HMBLocalZoneID>
 {
+    NSData *_token;
     CKRecordZoneID *_zoneID;
 }
 
 + (BOOL)supportsSecureCoding;
-@property(readonly, nonatomic) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
+@property(readonly, copy) CKRecordZoneID *zoneID; // @synthesize zoneID=_zoneID;
+@property(readonly, nonatomic) NSData *token; // @synthesize token=_token;
 - (void).cxx_destruct;
-- (unsigned long long)hash;
+@property(readonly) unsigned long long hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)attributeDescriptions;
-@property(readonly, nonatomic) HMBLocalCloudZoneID *localCloudZoneID;
+@property(readonly, nonatomic) NSArray *labels;
+- (id)initWithContainerID:(id)arg1 scope:(long long)arg2 zoneID:(id)arg3;
 - (id)initWithContainerID:(id)arg1 scope:(long long)arg2 zoneID:(id)arg3 name:(id)arg4 modelID:(id)arg5;
-- (id)initWithCloudDatabase:(id)arg1 scope:(long long)arg2 zoneID:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly, nonatomic) NSString *name;
+@property(readonly) Class superclass;
 
 @end
 

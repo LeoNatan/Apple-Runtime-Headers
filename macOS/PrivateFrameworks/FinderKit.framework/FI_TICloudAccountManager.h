@@ -51,7 +51,7 @@ __attribute__((visibility("hidden")))
 + (void)checkForFileProviderChanges;
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)sharedFolderImage;
+- (id)copySharedFolderImage;
 - (void)setSharedFolderImageIfNonNil:(id)arg1;
 - (_Bool)appIsSyncingDocuments;
 - (_Bool)documentsInTheCloud;

@@ -16,12 +16,10 @@
     HFTriggerBuilder *_triggerBuilder;
     unsigned long long _mode;
     UINavigationItem *_effectiveNavigationItem;
-    id <HUTriggerEditorDelegate> _delegate;
     unsigned long long _forceDisableReasonsForSecureCharacteristicControl;
 }
 
 @property(nonatomic) unsigned long long forceDisableReasonsForSecureCharacteristicControl; // @synthesize forceDisableReasonsForSecureCharacteristicControl=_forceDisableReasonsForSecureCharacteristicControl;
-@property(nonatomic) __weak id <HUTriggerEditorDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) UINavigationItem *effectiveNavigationItem; // @synthesize effectiveNavigationItem=_effectiveNavigationItem;
 @property(nonatomic) unsigned long long mode; // @synthesize mode=_mode;
 @property(retain, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
@@ -35,7 +33,10 @@
 - (void)_removeDeletedActionSetsItems:(id)arg1 fromTriggerBuilder:(id)arg2;
 - (id)_updateTriggerBuilderActionSets;
 - (void)_updateSelectedServicesAndActionSets;
+- (BOOL)_canSelectMediaAccessoryItem:(id)arg1;
 - (id)_triggerBuilderFuture;
+- (void)_popAlertWithLocalizedTitle:(id)arg1 localizedMessage:(id)arg2 actions:(id)arg3;
+- (void)_presentUnsupportedAlertWithTitle:(id)arg1 message:(id)arg2;
 - (id)triggerBuilderFutureWithLatestUIChanges;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (BOOL)serviceGridItemManager:(id)arg1 shouldHideItem:(id)arg2;
@@ -56,6 +57,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id <HUTriggerEditorDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

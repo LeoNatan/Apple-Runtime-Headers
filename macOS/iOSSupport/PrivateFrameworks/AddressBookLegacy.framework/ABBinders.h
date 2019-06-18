@@ -11,8 +11,10 @@
     CDUnknownBlockType _intBinder;
     CDUnknownBlockType _stringBinder;
     CDUnknownBlockType _blobBinder;
+    CDUnknownBlockType _pointerBinder;
 }
 
+@property CDUnknownBlockType pointerBinder; // @synthesize pointerBinder=_pointerBinder;
 @property CDUnknownBlockType blobBinder; // @synthesize blobBinder=_blobBinder;
 @property CDUnknownBlockType stringBinder; // @synthesize stringBinder=_stringBinder;
 @property CDUnknownBlockType intBinder; // @synthesize intBinder=_intBinder;

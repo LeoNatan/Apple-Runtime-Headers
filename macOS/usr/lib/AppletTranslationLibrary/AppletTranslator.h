@@ -10,6 +10,9 @@
 {
 }
 
++ (void)deregisterForCleanup:(id)arg1;
++ (void)registerForCleanup:(id)arg1;
++ (void)cleanup;
 + (_Bool)isDebugLoggingEnabled;
 + (id)getNFCSettings;
 + (BOOL)isLegacyApplet:(id)arg1 withPackage:(id)arg2 withModule:(id)arg3;

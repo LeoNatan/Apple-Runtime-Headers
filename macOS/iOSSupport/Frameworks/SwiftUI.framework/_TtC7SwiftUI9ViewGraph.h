@@ -12,6 +12,7 @@
     // Error parsing type: , name: rootSubgraph
     // Error parsing type: , name: rootViewType
     // Error parsing type: , name: makeRootView
+    // Error parsing type: , name: viewRendererHost
     // Error parsing type: , name: inputs
     // Error parsing type: , name: rootView
     // Error parsing type: , name: time

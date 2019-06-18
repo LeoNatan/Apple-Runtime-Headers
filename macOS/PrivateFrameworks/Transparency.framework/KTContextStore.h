@@ -7,7 +7,6 @@
 #import <objc/NSObject.h>
 
 @class KTLogClient, KTPublicKeyStore, NSMutableDictionary, TransparencyManagedDataStore;
-@protocol OS_dispatch_workloop;
 
 @interface KTContextStore : NSObject
 {
@@ -15,10 +14,8 @@
     TransparencyManagedDataStore *_dataStore;
     KTPublicKeyStore *_keyStore;
     KTLogClient *_configClient;
-    NSObject<OS_dispatch_workloop> *_configWorkloop;
 }
 
-@property(retain) NSObject<OS_dispatch_workloop> *configWorkloop; // @synthesize configWorkloop=_configWorkloop;
 @property(retain) KTLogClient *configClient; // @synthesize configClient=_configClient;
 @property(retain) KTPublicKeyStore *keyStore; // @synthesize keyStore=_keyStore;
 @property(readonly, retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;
@@ -26,18 +23,19 @@
 - (void).cxx_destruct;
 - (BOOL)runDutyCycleForActivity:(id)arg1 logClient:(id)arg2 resumptionWorkloop:(id)arg3;
 - (void)runDutyCycleConfigurationStepForActivity:(id)arg1 logClient:(id)arg2 resumptionWorkloop:(id)arg3;
-- (void)runDutyCycleProcessingStepForActivity:(id)arg1 logClient:(id)arg2;
+- (void)runDutyCycleProcessingStepForActivity:(id)arg1 context:(id)arg2 logClient:(id)arg3;
 - (BOOL)logSharedMetrics;
 - (void)clearApplicationState:(id)arg1 logClient:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)updateRequest:(id)arg1 serverDatas:(id)arg2 syncedDatas:(id)arg3 queryResponse:(id)arg4 error:(id *)arg5;
-- (unsigned long long)validateEnrollment:(id)arg1 application:(id)arg2 logClient:(id)arg3 transparentData:(id *)arg4 error:(id *)arg5;
-- (unsigned long long)validateSelf:(id)arg1 application:(id)arg2 logClient:(id)arg3 transparentData:(id *)arg4 error:(id *)arg5;
-- (unsigned long long)validatePeer:(id)arg1 application:(id)arg2 logClient:(id)arg3 transparentData:(id *)arg4 error:(id *)arg5;
-- (id)contextForApplication:(id)arg1 logClient:(id)arg2 error:(id *)arg3;
-- (BOOL)configureWithClient:(id)arg1 error:(id *)arg2;
-- (BOOL)configure:(id *)arg1;
-- (BOOL)forcedConfigure:(BOOL)arg1 logClient:(id)arg2 error:(id *)arg3;
-- (id)initWithDataStore:(id)arg1 keyStore:(id)arg2 configClient:(id)arg3 configWorkloop:(id)arg4;
+- (void)validateEnrollment:(id)arg1 application:(id)arg2 logClient:(id)arg3 transparentData:(id *)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)validateSelf:(id)arg1 application:(id)arg2 logClient:(id)arg3 transparentData:(id *)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)validatePeer:(id)arg1 application:(id)arg2 logClient:(id)arg3 transparentData:(id *)arg4 completionHandler:(CDUnknownBlockType)arg5;
+- (void)contextForApplication:(id)arg1 logClient:(id)arg2 fetchState:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)createKeyStoreForApplication:(id)arg1 dataStore:(id)arg2 logClient:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
+- (void)configureWithClient:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)configure:(CDUnknownBlockType)arg1;
+- (void)forcedConfigure:(BOOL)arg1 logClient:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)initWithDataStore:(id)arg1 keyStore:(id)arg2 configClient:(id)arg3;
 
 @end
 

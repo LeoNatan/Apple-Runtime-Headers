@@ -63,8 +63,8 @@
 - (id)imageConfiguration;
 @property(readonly, nonatomic, getter=_imageConfiguration) UIImageConfiguration *_imageConfiguration;
 - (id)_traitCollectionRelevantForImageConfiguration;
-- (id)_traitCollectionWithFallbacksForUnspecifiedThemeTraits;
-- (id)_appearanceName;
+@property(readonly, nonatomic) NSString *_styleEffectAppearanceName;
+@property(readonly, nonatomic) NSString *_appearanceName;
 - (void)_enumerateThemeAppearanceNamesForLookup:(CDUnknownBlockType)arg1;
 - (void)_enumerateThemeKeysForLookup:(CDUnknownBlockType)arg1;
 @property(readonly, nonatomic, getter=_themeKey) id <_UIThemeKey> _themeKey;

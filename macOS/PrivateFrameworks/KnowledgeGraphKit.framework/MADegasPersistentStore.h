@@ -32,6 +32,7 @@
 + (void)deleteMarkerAtURL:(id)arg1;
 + (id)_markerFilePathForPersistentStoreFileURL:(id)arg1;
 + (void)deleteClosedDatabaseFilesAtBaseURL:(id)arg1;
++ (void)deleteClosedDatabaseFilesAtStoreURL:(id)arg1;
 + (BOOL)destroyAtURL:(id)arg1 error:(id *)arg2;
 + (BOOL)migrateFromURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;
 + (BOOL)copyFromURL:(id)arg1 toURL:(id)arg2 error:(id *)arg3;

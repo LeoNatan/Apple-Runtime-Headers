@@ -10,19 +10,20 @@
 
 @interface KTContext : NSObject
 {
+    NSString *_applicationID;
     KTApplicationPublicKeyStore *_applicationKeyStore;
     TransparencyManagedDataStore *_dataStore;
     KTLogClient *_logClient;
-    NSString *_applicationID;
     KTContextVerifier *_verifier;
 }
 
 @property(retain) KTContextVerifier *verifier; // @synthesize verifier=_verifier;
-@property(retain) NSString *applicationID; // @synthesize applicationID=_applicationID;
 @property(retain) KTLogClient *logClient; // @synthesize logClient=_logClient;
 @property(retain) TransparencyManagedDataStore *dataStore; // @synthesize dataStore=_dataStore;
 @property(retain) KTApplicationPublicKeyStore *applicationKeyStore; // @synthesize applicationKeyStore=_applicationKeyStore;
+@property(readonly) NSString *applicationID; // @synthesize applicationID=_applicationID;
 - (void).cxx_destruct;
+- (id)copyState;
 - (BOOL)runDutyCycleForActivity:(id)arg1;
 - (BOOL)checkDeferActivity:(id)arg1;
 - (void)handleGarbageCollection:(id)arg1 error:(id *)arg2;
@@ -45,7 +46,7 @@
 - (unsigned long long)validatePeerWithAnalytics:(id)arg1 transparentData:(id *)arg2 error:(id *)arg3;
 - (unsigned long long)validatePeer:(id)arg1 transparentData:(id *)arg2 error:(id *)arg3;
 - (unsigned long long)validatePeer:(id)arg1 queryResponse:(id)arg2 transparentData:(id *)arg3 error:(id *)arg4;
-- (BOOL)fetchQueryForKTRequest:(id)arg1 error:(id *)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)fetchQueryForKTRequest:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (unsigned long long)handleVerifyPeerResponse:(id)arg1 request:(id)arg2 transparentData:(id *)arg3 error:(id *)arg4;
 - (unsigned long long)verifyDeviceWitnesses:(id)arg1 request:(id)arg2 loggableDatas:(id)arg3 error:(id *)arg4;
 - (BOOL)ready:(id *)arg1;

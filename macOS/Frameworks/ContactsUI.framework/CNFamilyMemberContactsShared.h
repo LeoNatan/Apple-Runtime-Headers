@@ -10,6 +10,7 @@
 {
 }
 
++ (long long)contactsUIFetchStatusFromContactsUICoreFetchStatus:(long long)arg1;
 + (id)contactStoreDidChangeObservableWithSchedudlerProvider:(id)arg1;
 + (id)contactWithIdentifier:(id)arg1 keysToFetch:(id)arg2 fromContactStore:(id)arg3 schedulerProvider:(id)arg4;
 + (id)addToWhitelistOptionsMenuWithTarget:(id)arg1 addFromFamilyMemberContactsAction:(SEL)arg2 addFromLocalContactsItemAction:(SEL)arg3 newContactItemAction:(SEL)arg4 familyMember:(id)arg5 addFromFamilyMemberContactsEnabled:(BOOL)arg6;

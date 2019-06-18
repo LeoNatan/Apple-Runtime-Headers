@@ -11,6 +11,7 @@
 @interface FCSolHeuristic : NSObject
 {
     BOOL _alternate;
+    BOOL _enforcePublisherCap;
     NSArray *_groupSizes;
     long long _iterations;
     long long _maxPublisherOccurrences;
@@ -22,6 +23,7 @@
 @property(readonly, copy, nonatomic) CDUnknownBlockType utilityBlock; // @synthesize utilityBlock=_utilityBlock;
 @property(readonly, nonatomic) long long heuristicSampleSize; // @synthesize heuristicSampleSize=_heuristicSampleSize;
 @property(readonly, nonatomic) long long maxUnpaidArticles; // @synthesize maxUnpaidArticles=_maxUnpaidArticles;
+@property(readonly, nonatomic) BOOL enforcePublisherCap; // @synthesize enforcePublisherCap=_enforcePublisherCap;
 @property(readonly, nonatomic) long long maxPublisherOccurrences; // @synthesize maxPublisherOccurrences=_maxPublisherOccurrences;
 @property(readonly, nonatomic) long long iterations; // @synthesize iterations=_iterations;
 @property(readonly, nonatomic) BOOL alternate; // @synthesize alternate=_alternate;
@@ -29,7 +31,7 @@
 - (void).cxx_destruct;
 - (double)computeScoreWithSelectedGroup:(id)arg1 remainingArticles:(id)arg2 remainingTags:(id)arg3 articlesByTag:(id)arg4;
 - (id)fillGroupsWithSelectedGroup:(id)arg1 remainingArticles:(id)arg2 remainingTags:(id)arg3 articlesByTag:(id)arg4;
-- (id)initWithOption:(long long)arg1 minClusterSize:(long long)arg2 maxClusterSize:(long long)arg3 minIdealClusterSize:(long long)arg4 maxIdealClusterSize:(long long)arg5 maxPublisherOccurrences:(long long)arg6 maxUnpaidArticles:(long long)arg7 heuristicSampleSize:(long long)arg8 utilityBlock:(CDUnknownBlockType)arg9;
+- (id)initWithOption:(long long)arg1 minClusterSize:(long long)arg2 maxClusterSize:(long long)arg3 minIdealClusterSize:(long long)arg4 maxIdealClusterSize:(long long)arg5 maxPublisherOccurrences:(long long)arg6 enforcePublisherCap:(BOOL)arg7 maxUnpaidArticles:(long long)arg8 heuristicSampleSize:(long long)arg9 utilityBlock:(CDUnknownBlockType)arg10;
 
 @end
 

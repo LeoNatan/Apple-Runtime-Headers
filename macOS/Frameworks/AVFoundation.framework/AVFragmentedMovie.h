@@ -14,6 +14,7 @@
 {
 }
 
++ (BOOL)expectsPropertyRevisedNotifications;
 - (void)_setIsAssociatedWithFragmentMinder:(BOOL)arg1;
 @property(readonly, nonatomic, getter=isAssociatedWithFragmentMinder) BOOL associatedWithFragmentMinder;
 - (id)tracksWithMediaCharacteristic:(id)arg1;

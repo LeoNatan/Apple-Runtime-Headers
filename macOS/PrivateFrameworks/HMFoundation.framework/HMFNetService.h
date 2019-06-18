@@ -22,6 +22,7 @@
     unsigned long long _port;
     NSArray *_addresses;
     NSMutableDictionary *_TXTRecord;
+    BOOL _resolved;
     BOOL _publishing;
     HMFNetAddress *_hostName;
     long long _state;
@@ -63,6 +64,8 @@
 @property(readonly, copy) HMFNetAddress *hostName; // @synthesize hostName=_hostName;
 @property(nonatomic) long long state; // @synthesize state=_state;
 @property(getter=isPublishing) BOOL publishing; // @synthesize publishing=_publishing;
+- (void)setResolved:(BOOL)arg1;
+@property(readonly, getter=isResolved) BOOL resolved; // @synthesize resolved=_resolved;
 @property(readonly) unsigned long long port;
 - (void)startMonitoring;
 - (BOOL)isEqual:(id)arg1;

@@ -36,9 +36,9 @@
 @property(retain, nonatomic) NSString *longDescription;
 @property(retain, nonatomic) NSData *mediaMetadataData;
 - (void)resetCloudRecoveryState;
-- (BOOL)hasCloudRecoveryStateFlagSet:(long long)arg1;
-- (void)removeCloudRecoveryStateFlag:(long long)arg1;
-- (void)setCloudRecoveryStateFlag:(long long)arg1;
+- (BOOL)hasCloudRecoveryStateFlagSet:(unsigned long long)arg1;
+- (void)removeCloudRecoveryStateFlag:(unsigned long long)arg1;
+- (void)setCloudRecoveryStateFlag:(unsigned long long)arg1;
 - (BOOL)hasConsistentCloudState;
 - (void)setSceneprintWithData:(id)arg1;
 
@@ -52,7 +52,7 @@
 @property(nonatomic) int cloudAvalanchePickType; // @dynamic cloudAvalanchePickType;
 @property(nonatomic) long long cloudGroupingState; // @dynamic cloudGroupingState;
 @property(nonatomic) short cloudKindSubtype; // @dynamic cloudKindSubtype;
-@property(nonatomic) long long cloudRecoveryState; // @dynamic cloudRecoveryState;
+@property(nonatomic) unsigned long long cloudRecoveryState; // @dynamic cloudRecoveryState;
 @property(nonatomic) short cloudStateRecoveryAttemptsCount; // @dynamic cloudStateRecoveryAttemptsCount;
 @property(retain, nonatomic) NSString *creatorBundleID; // @dynamic creatorBundleID;
 @property(readonly, copy) NSString *debugDescription;

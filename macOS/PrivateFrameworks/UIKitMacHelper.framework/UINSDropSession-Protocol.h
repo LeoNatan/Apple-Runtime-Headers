@@ -11,6 +11,7 @@
 @property(readonly, nonatomic) unsigned long long operationMask;
 @property(readonly, nonatomic) unsigned int sessionID;
 @property(readonly, copy, nonatomic) NSArray *items;
+- (void)sawDragEndEvent;
 - (void)takePotentialDropOperation:(unsigned long long)arg1;
 - (void)setHandler:(id <UINSDropSessionHandler>)arg1;
 - (void)takeHandler:(id <UINSDropSessionHandler>)arg1;

@@ -213,7 +213,7 @@ __attribute__((visibility("hidden")))
 - (id)browserViewState;
 - (_Bool)makeBrowserViewFirstResponder;
 - (unsigned long long)itemCountForDelayedPopulation;
-- (id)viewToCoverForDelayedPopulation;
+- (id)viewToOverlayForDelayedPopulation;
 - (id)nibName;
 - (void)aboutToTearDown;
 - (void)killDelayedContainerSynchingTimer;

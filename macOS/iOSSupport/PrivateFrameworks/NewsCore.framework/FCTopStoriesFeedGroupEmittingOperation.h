@@ -20,6 +20,7 @@
 - (id)_personalizedFeedTransformationWithLimit:(unsigned long long)arg1 otherArticleIDs:(id)arg2 preselectedArticles:(id)arg3;
 - (id)_feedTransformationWithOtherArticleIDs:(id)arg1;
 - (void)_selectHeadlinesFromMandatory:(id)arg1 optional:(id)arg2 publishDate:(id)arg3 articleMetadataByArticleID:(id)arg4 cursor:(id)arg5 isAllowedToCollapse:(BOOL)arg6 completion:(CDUnknownBlockType)arg7;
+- (void)_performOperation;
 - (void)performOperation;
 - (void)_buildGroupWithCatchUpOperation:(id)arg1;
 

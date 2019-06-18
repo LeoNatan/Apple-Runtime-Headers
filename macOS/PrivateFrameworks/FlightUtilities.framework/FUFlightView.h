@@ -111,6 +111,9 @@
 - (id)currentLeg;
 - (id)currentFlight;
 - (void)setupStyles;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
+- (void)dealloc;
+- (void)updateMapAppearance;
 - (void)awakeFromNib;
 
 // Remaining properties

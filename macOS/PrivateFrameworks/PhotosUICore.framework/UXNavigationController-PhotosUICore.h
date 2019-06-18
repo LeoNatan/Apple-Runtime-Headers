@@ -8,5 +8,9 @@
 
 @interface UXNavigationController (PhotosUICore)
 - (void)px_pushViewController:(id)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (double)px_imageModulationIntensity;
+- (double)px_HDRFocus;
+- (BOOL)px_isImageModulationEnabled;
+- (id)px_topViewController;
 @end
 

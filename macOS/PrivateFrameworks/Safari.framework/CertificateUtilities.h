@@ -17,7 +17,7 @@ __attribute__((visibility("hidden")))
 + (BOOL)hasClientCertificateIdentityForProtectionSpace:(id)arg1;
 + (_Bool)trustIncludesRevokedCertificate:(struct __SecTrust *)arg1;
 + (BOOL)isCertificateChain:(id)arg1 trustedForHost:(id)arg2;
-+ (RetainPtr_b11cdf8e)trustReferenceWithCertificates:(id)arg1 forPolicy:(struct __SecPolicy *)arg2;
++ (RetainPtr_e78bdbf8)trustReferenceWithCertificates:(id)arg1 forPolicy:(struct __SecPolicy *)arg2;
 + (RetainPtr_9f6ce05b)sslPolicyForHost:(id)arg1 client:(BOOL)arg2;
 + (id)labelForCertificates:(id)arg1;
 + (id)subjectFullLocationForCertificate:(struct __SecCertificate *)arg1;

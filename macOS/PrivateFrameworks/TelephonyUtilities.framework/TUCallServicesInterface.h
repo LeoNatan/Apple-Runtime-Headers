@@ -14,7 +14,7 @@
 #import <TelephonyUtilities/TURouteControllerActions-Protocol.h>
 
 @class NSArray, NSMapTable, NSString, NSXPCConnection, TUCallCenter, TUCallNotificationManager, TUCallServicesClientCapabilities, TURouteController;
-@protocol OS_dispatch_queue, OS_dispatch_semaphore, TUCallContainerPrivate, TUCallServicesXPCServer;
+@protocol OS_dispatch_queue, TUCallContainerPrivate, TUCallServicesXPCServer;
 
 @interface TUCallServicesInterface : NSObject <TUCallServicesXPCClient, TUCallServicesProxyCallActions, TUCallServicesClientCapabilitiesActions, TUAudioDeviceControllerActions, TURouteControllerActions, TUCallFilterControllerActions>
 {
@@ -28,7 +28,6 @@
     TURouteController *_pairedHostDeviceRouteController;
     NSObject<OS_dispatch_queue> *_queue;
     NSXPCConnection *_xpcConnection;
-    NSObject<OS_dispatch_semaphore> *_initialStateSemaphore;
     NSArray *_currentCalls;
     NSMapTable *_uniqueProxyIdentifierToProxyCall;
     TUCallNotificationManager *_callNotificationManager;
@@ -40,7 +39,6 @@
 @property(readonly, nonatomic) TUCallNotificationManager *callNotificationManager; // @synthesize callNotificationManager=_callNotificationManager;
 @property(readonly, nonatomic) NSMapTable *uniqueProxyIdentifierToProxyCall; // @synthesize uniqueProxyIdentifierToProxyCall=_uniqueProxyIdentifierToProxyCall;
 @property(copy, nonatomic) NSArray *currentCalls; // @synthesize currentCalls=_currentCalls;
-@property(readonly, nonatomic) NSObject<OS_dispatch_semaphore> *initialStateSemaphore; // @synthesize initialStateSemaphore=_initialStateSemaphore;
 @property(nonatomic) BOOL hasRequestedInitialState; // @synthesize hasRequestedInitialState=_hasRequestedInitialState;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
 @property(readonly, nonatomic) int connectionRequestNotificationToken; // @synthesize connectionRequestNotificationToken=_connectionRequestNotificationToken;

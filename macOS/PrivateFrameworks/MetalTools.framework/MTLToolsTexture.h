@@ -16,11 +16,14 @@
     MTLToolsPointerArray *_views;
     id <MTLTexture> _parentTexture;
     id <MTLBuffer> _buffer;
+    id <MTLTexture> _remoteStorageTexture;
 }
 
+@property(retain) id <MTLTexture> remoteStorageTexture; // @synthesize remoteStorageTexture=_remoteStorageTexture;
 @property(readonly) id <MTLBuffer> buffer; // @synthesize buffer=_buffer;
 @property(readonly) id <MTLTexture> parentTexture; // @synthesize parentTexture=_parentTexture;
 @property(readonly, nonatomic) MTLToolsPointerArray *views; // @synthesize views=_views;
+- (id)newRemoteTextureViewForDevice:(id)arg1;
 @property(readonly) unsigned long long uniqueIdentifier;
 @property(readonly) BOOL isDrawable;
 @property(readonly) unsigned long long numFaces;

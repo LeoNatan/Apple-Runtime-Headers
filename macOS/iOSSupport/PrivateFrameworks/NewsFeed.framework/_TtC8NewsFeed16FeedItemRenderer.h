@@ -16,6 +16,7 @@
     // Error parsing type: , name: orderedHeadlineViewRenderer
     // Error parsing type: , name: issueViewRenderer
     // Error parsing type: , name: coverIssueViewRenderer
+    // Error parsing type: , name: coverChannelViewRenderer
 }
 
 @end

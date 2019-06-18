@@ -78,6 +78,7 @@
 - (void)CSAudioServerCrashMonitorDidReceiveServerCrash:(id)arg1;
 - (void)audioRecorderDisconnected:(id)arg1;
 - (void)audioRecorderBuiltInAudioStreamInvalidated:(id)arg1 error:(id)arg2;
+- (void)notifyProviderContextChanged;
 - (void)audioRecorderDidFinishAlertPlayback:(id)arg1 ofType:(long long)arg2 error:(id)arg3;
 - (void)_didReceiveFinishStartAlertPlaybackAt:(unsigned long long)arg1;
 - (void)_scheduleAlertFinishTimeout:(double)arg1;
@@ -105,6 +106,7 @@
 - (BOOL)playAlertSoundForType:(long long)arg1;
 - (BOOL)setAlertSoundFromURL:(id)arg1 forType:(long long)arg2;
 - (void)setAudioAlertDelegate:(id)arg1;
+- (void)duckAudioDevice:(unsigned int)arg1 duckedLevel:(float)arg2 rampDuration:(float)arg3;
 - (void)enableMiniDucking:(BOOL)arg1;
 - (void)setDuckOthersOption:(BOOL)arg1;
 - (BOOL)duckOthersOption;
@@ -141,7 +143,7 @@
 - (void)audioStreamWithRequest:(id)arg1 streamName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)audioStreamWithRequest:(id)arg1 streamName:(id)arg2 error:(id *)arg3;
 - (id)_audioStreamWithRequest:(id)arg1 streamName:(id)arg2 error:(id *)arg3;
-- (void)setCurrentContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)setCurrentContext:(id)arg1 error:(id *)arg2;
 - (void)start;
 - (id)initWithAudioStreamHandleId:(unsigned long long)arg1 audioRecorder:(id)arg2;
 

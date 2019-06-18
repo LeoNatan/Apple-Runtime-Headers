@@ -32,15 +32,15 @@
 - (BOOL)_canUnderstandAdjustmentForAsset:(id)arg1;
 - (BOOL)_fixIrisWithZeroVideoComplementDuration:(id)arg1 usingExistingVideoComplementAtPath:(id)arg2 error:(id *)arg3;
 - (void)_fixIrisWithZeroVideoComplementDuration:(id)arg1 cloudPhotoLibraryManager:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void)_fixAdjustedAssetWithMissingDerivatives:(id)arg1 cloudPhotoLibraryManager:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
+- (void)_fixFullSizeAdjustedResource:(id)arg1 cloudPhotoLibraryManager:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)_fixRawUTIForAsset:(id)arg1 error:(id *)arg2;
 - (void)_fixOriginalAssetDimensionsForAsset:(id)arg1 cloudPhotoLibraryManager:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (void)_fixDimensionsForAsset:(id)arg1 cloudPhotoLibraryManager:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (id)_assetKindsAllowedForDownloading;
 - (void)_downloadResources:(id)arg1 forAsset:(id)arg2 usingCloudPhotoLibraryManager:(id)arg3 completionHandler:(CDUnknownBlockType)arg4;
-- (void)_performAssetRecoveryTaskForInconsistentState:(id)arg1 state:(long long)arg2 usingCloudPhotoLibraryManager:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
+- (void)_performAssetRecoveryTaskForInconsistentState:(id)arg1 state:(unsigned long long)arg2 usingCloudPhotoLibraryManager:(id)arg3 completionBlock:(CDUnknownBlockType)arg4;
 - (void)_recoverAsset:(id)arg1 usingCloudPhotoLibraryManager:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
-- (void)_setCloudRecoveryState:(long long)arg1 forAssetsWithFetchRequestPredicate:(id)arg2 resultsFilterPredicate:(id)arg3;
+- (void)_setCloudRecoveryState:(unsigned long long)arg1 forAssetsWithFetchRequestPredicate:(id)arg2 resultsFilterPredicate:(id)arg3;
 - (void)startRecoveryOfAssetsInInconsistentCloudStateUsingCloudPhotoLibraryManager:(id)arg1;
 - (void)identifyAssetsInInconsistentCloudState;
 - (id)initWithPhotoLibrary:(id)arg1;

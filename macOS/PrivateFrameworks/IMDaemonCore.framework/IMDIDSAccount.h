@@ -14,6 +14,7 @@
 }
 
 @property(readonly, retain, nonatomic) IDSAccount *idsAccount; // @synthesize idsAccount=_idsAccount;
+- (BOOL)multiplePhoneNumbersTiedToAccount;
 - (id)description;
 - (BOOL)canMakeDowngradeRoutingChecks;
 - (id)accountDefaults;

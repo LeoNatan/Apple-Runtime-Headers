@@ -6,10 +6,12 @@
 
 #import <objc/NSObject.h>
 
-@class EKEventStore, NSArray, PPEventCache, _PASNotificationToken;
+#import <PersonalizationPortraitInternals/PPFeedbackAccepting-Protocol.h>
+
+@class EKEventStore, NSArray, PPEventCache, PPM2FeedbackPortraitRegistered, PPMFeedbackRegistered, _PASNotificationToken;
 @protocol OS_dispatch_queue;
 
-@interface PPLocalEventStore : NSObject
+@interface PPLocalEventStore : NSObject <PPFeedbackAccepting>
 {
     EKEventStore *_store;
     BOOL _accessGranted;
@@ -17,11 +19,13 @@
     PPEventCache *_eventCache;
     NSObject<OS_dispatch_queue> *_eventLoadingQueue;
     _PASNotificationToken *_assetUpdateNotificationToken;
+    PPMFeedbackRegistered *_feedbackTracker;
+    PPM2FeedbackPortraitRegistered *_feedbackTracker2;
 }
 
 + (id)defaultStore;
 - (void).cxx_destruct;
-- (BOOL)registerFeedback:(id)arg1 error:(id *)arg2;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)refreshCacheWithChanges:(id)arg1;
 - (BOOL)shouldIngestEvent:(id)arg1;
 - (void)dealloc;

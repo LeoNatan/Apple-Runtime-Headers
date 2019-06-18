@@ -8,6 +8,7 @@
 
 @class VoiceProcessorInfoMO;
 
+__attribute__((visibility("hidden")))
 @interface VPContentDSPMO : ContentDSPMO
 {
 }

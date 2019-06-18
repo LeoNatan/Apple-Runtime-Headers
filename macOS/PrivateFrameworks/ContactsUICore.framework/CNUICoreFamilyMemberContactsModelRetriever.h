@@ -32,10 +32,8 @@
 - (id)allContactsModel;
 - (id)whitelistedContactsModel;
 @property(readonly, nonatomic) id <CNScheduler> backgroundOrImmediateScheduler;
-- (void)commonInitWithFamilyMemberScopedContactStoreFacade:(id)arg1 mainContactStoreFacade:(id)arg2 familyInfoFetcher:(id)arg3 familyMember:(id)arg4 schedulerProvider:(id)arg5;
 - (id)initWithFamilyMemberScopedContactStoreFacade:(id)arg1 mainContactStoreFacade:(id)arg2 familyInfoFetcher:(id)arg3 familyMember:(id)arg4 schedulerProvider:(id)arg5;
-- (id)initWithFamilyMemberScopedContactStore:(id)arg1 mainContactStore:(id)arg2 familyMember:(id)arg3 schedulerProvider:(id)arg4;
-- (id)initWithFamilyMemberScopedContactStore:(id)arg1 familyMember:(id)arg2 schedulerProvider:(id)arg3;
+- (id)initWithFamilyMember:(id)arg1 schedulerProvider:(id)arg2;
 - (id)init;
 
 // Remaining properties

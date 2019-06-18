@@ -50,7 +50,7 @@
 - (BOOL)canContinueIndexing;
 - (void)indexOneBatchWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)registerAnchor:(id)arg1;
-- (void)_indexOneBatchIfPossible;
+- (void)_indexOneBatchIfPossibleClearingNeedsIndexing:(BOOL)arg1;
 - (void)_handleOneBatchCompletionWithError:(id)arg1 hasMoreChanges:(BOOL)arg2;
 - (BOOL)readNeedsAuthFromDisk;
 - (void)persistsNeedsAuthOnDisk;

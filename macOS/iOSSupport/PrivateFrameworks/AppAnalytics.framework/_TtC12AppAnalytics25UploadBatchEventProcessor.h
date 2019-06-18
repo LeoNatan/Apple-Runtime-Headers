@@ -8,12 +8,8 @@
 
 @interface _TtC12AppAnalytics25UploadBatchEventProcessor : _TtCs12_SwiftObject
 {
-    // Error parsing type: , name: client
     // Error parsing type: , name: uploadManager
-    // Error parsing type: , name: batchQueues
-    // Error parsing type: , name: deferredStore
     // Error parsing type: , name: currentSession
-    // Error parsing type: , name: config
 }
 
 @end

@@ -26,9 +26,5 @@
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 
-// Remaining properties
-@property(readonly, nonatomic) NSString *identifier; // @dynamic identifier;
-@property(readonly, nonatomic) unsigned long long options; // @dynamic options;
-
 @end
 

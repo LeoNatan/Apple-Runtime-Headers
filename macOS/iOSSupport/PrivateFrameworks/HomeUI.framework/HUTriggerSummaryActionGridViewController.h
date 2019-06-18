@@ -18,7 +18,6 @@
 @interface HUTriggerSummaryActionGridViewController : HUServiceGridViewController <HFActionSetValueSourceDelegate, HUServiceActionControlsViewControllerDelegate, HUSceneEditorDelegate, HUServiceGridItemManagerDelegate, HUContainedServiceGridViewControllerDelegate>
 {
     HFTriggerBuilder *_triggerBuilder;
-    id <HUTriggerSummaryActionGridViewControllerDelegate> _delegate;
     unsigned long long _style;
     HUServiceGridItemManager *_serviceGridItemManager;
     HUContainedServicesGridViewController *_presentedServiceGroupDetailsViewController;
@@ -28,10 +27,10 @@
 @property(nonatomic) __weak HUContainedServicesGridViewController *presentedServiceGroupDetailsViewController; // @synthesize presentedServiceGroupDetailsViewController=_presentedServiceGroupDetailsViewController;
 @property(nonatomic) __weak HUServiceGridItemManager *serviceGridItemManager; // @synthesize serviceGridItemManager=_serviceGridItemManager;
 @property(readonly, nonatomic) unsigned long long style; // @synthesize style=_style;
-@property(nonatomic) __weak id <HUTriggerSummaryActionGridViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HFTriggerBuilder *triggerBuilder; // @synthesize triggerBuilder=_triggerBuilder;
 - (void).cxx_destruct;
 - (void)_removeActionsInServiceActionItem:(id)arg1;
+- (BOOL)presentationCoordinator:(id)arg1 shouldBeginPresentationWithContext:(id)arg2;
 - (BOOL)presentationCoordinator:(id)arg1 shouldBeginInteractivePresentationWithTouchLocation:(struct CGPoint)arg2;
 - (void)sceneEditor:(id)arg1 removeActionSetBuilderFromTrigger:(id)arg2;
 - (id)detailsViewControllerForContainedServiceGridViewController:(id)arg1 item:(id)arg2;
@@ -49,6 +48,7 @@
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
+@property(nonatomic) __weak id <HUTriggerSummaryActionGridViewControllerDelegate> delegate; // @dynamic delegate;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;

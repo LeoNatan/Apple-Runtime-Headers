@@ -12,7 +12,6 @@
     // Error parsing type: , name: model
     // Error parsing type: , name: url
     // Error parsing type: , name: sidepack
-    // Error parsing type: , name: askToBuyHeader
 }
 
 @end

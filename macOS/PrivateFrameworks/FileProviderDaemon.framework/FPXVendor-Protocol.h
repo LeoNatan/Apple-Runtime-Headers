@@ -19,6 +19,7 @@
 - (void)acknowledgeUserVisibleRootDidChangeForDomain:(NSString *)arg1 urlWrapper:(FPSandboxingURLWrapper *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)dumpIndexStateForDomain:(NSString *)arg1 toFileHandler:(NSFileHandle *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)dropIndexForDomain:(NSString *)arg1 completionHandler:(void (^)(NSError *))arg2;
+- (void)fetchCurrentIndexingAnchorForDomain:(NSString *)arg1 completionHandler:(void (^)(NSData *, NSError *))arg2;
 - (void)indexOneBatchInDomain:(NSString *)arg1 fromAnchor:(NSData *)arg2 toAnchor:(NSData *)arg3 updatedItems:(NSArray *)arg4 deletedItems:(NSArray *)arg5 completionHandler:(void (^)(NSError *))arg6;
 - (void)indexOneBatchInDomain:(NSString *)arg1 completionHandler:(void (^)(BOOL, NSError *))arg2;
 - (void)dumpInternalStateToTermDumper:(FPCTLTermDumper *)arg1 domainIdentifier:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;

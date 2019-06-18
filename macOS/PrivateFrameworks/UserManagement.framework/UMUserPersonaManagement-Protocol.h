@@ -9,6 +9,7 @@
 
 @protocol UMUserPersonaManagement
 @property(readonly, copy, nonatomic) UMUserPersona *currentPersona;
+- (void)registerPersonaListUpdateObserver:(id <UMUserPersonaUpdateObserver>)arg1 withMachService:(NSString *)arg2 completionHandler:(void (^)(NSError *))arg3;
 - (void)registerPersonaListUpdateObserver:(id <UMUserPersonaUpdateObserver>)arg1 completionHandler:(void (^)(NSError *))arg2;
 - (_Bool)haveValidPersonaContextForPersonaUniqueString:(NSString *)arg1;
 - (_Bool)haveValidPersonaContextForIDString:(NSString *)arg1;

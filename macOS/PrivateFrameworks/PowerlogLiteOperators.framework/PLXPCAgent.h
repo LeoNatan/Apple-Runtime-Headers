@@ -80,6 +80,8 @@
     PLEntryNotificationOperatorComposition *_SBCXPCListener;
     PLXPCListenerOperatorComposition *_sensitiveUISettingXPCListener;
     PLEntry *_lastSensitiveUISettingEntry;
+    PLXPCListenerOperatorComposition *_DosimetryXPCListener;
+    PLEntry *_lastDosimetryEntry;
 }
 
 + (id)entryAggregateDefinitions;
@@ -101,6 +103,7 @@
 + (id)entryEventBackwardDefinitionPeekPop;
 + (id)entryEventBackwardDefinitionSiriFalseAlarm;
 + (id)entryEventBackwardDefinitions;
++ (id)entryEventForwardDefinitionsDosimetry;
 + (id)entryEventForwardDefinitionsSensitiveUISetting;
 + (BOOL)shouldLogSensitiveUISetting;
 + (id)entryEventForwardDefinitionAppleBacklightBrightness;
@@ -157,6 +160,8 @@
 + (BOOL)shouldLogiOSWatchOSOnly;
 + (id)defaults;
 + (void)load;
+@property(retain) PLEntry *lastDosimetryEntry; // @synthesize lastDosimetryEntry=_lastDosimetryEntry;
+@property(retain) PLXPCListenerOperatorComposition *DosimetryXPCListener; // @synthesize DosimetryXPCListener=_DosimetryXPCListener;
 @property(retain) PLEntry *lastSensitiveUISettingEntry; // @synthesize lastSensitiveUISettingEntry=_lastSensitiveUISettingEntry;
 @property(retain) PLXPCListenerOperatorComposition *sensitiveUISettingXPCListener; // @synthesize sensitiveUISettingXPCListener=_sensitiveUISettingXPCListener;
 @property(retain) PLEntryNotificationOperatorComposition *SBCXPCListener; // @synthesize SBCXPCListener=_SBCXPCListener;
@@ -248,6 +253,7 @@
 - (void)logEventBackwardNameSpotlightQos:(id)arg1;
 - (void)logEventBackwardNameSpotlight:(id)arg1;
 - (void)logEventBackwardNameMediaServerdRTC:(id)arg1;
+- (void)logEventForwardDosimetry:(id)arg1;
 - (void)logEventForwardSensitiveUISetting:(id)arg1;
 - (void)logEventForwardThermalLevel:(id)arg1;
 - (void)logEventForwardWebApp:(id)arg1;

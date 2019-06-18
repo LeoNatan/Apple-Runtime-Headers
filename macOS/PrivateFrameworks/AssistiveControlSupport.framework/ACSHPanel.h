@@ -20,6 +20,7 @@
     BOOL _hidesTitlebar;
     BOOL _usesPinnedResizing;
     BOOL _hasTransientPosition;
+    BOOL __didRegisterForDisplayTheme;
     NSString *_name;
     NSArray *_associatedApplications;
     NSArray *_postContextButtons;
@@ -44,6 +45,7 @@
 + (struct CGSize)windowPaddingForZoomScale:(double)arg1 nonProportionalScaleFactor:(double)arg2 isHorizontal:(BOOL)arg3;
 + (double)windowPaddingZoomScaleFactor;
 + (Class)classForDict:(id)arg1;
+@property(nonatomic) BOOL _didRegisterForDisplayTheme; // @synthesize _didRegisterForDisplayTheme=__didRegisterForDisplayTheme;
 @property(nonatomic) struct CGRect postContextButtonRect; // @synthesize postContextButtonRect=_postContextButtonRect;
 @property(nonatomic) unsigned long long productSupportType; // @synthesize productSupportType=_productSupportType;
 @property(copy, nonatomic) NSString *currentInputSourceName; // @synthesize currentInputSourceName=_currentInputSourceName;
@@ -106,6 +108,8 @@
 @property(readonly, nonatomic) struct CGSize windowPadding;
 - (void)dealloc;
 - (id)initWithUndoManager:(id)arg1;
+- (id)init;
+- (void)_initialSetup;
 
 @end
 

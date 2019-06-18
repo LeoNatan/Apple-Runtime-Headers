@@ -8,11 +8,12 @@
 
 #import <Rapport/RPAuthenticatable-Protocol.h>
 
-@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUHomeKitManager, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSError, NSString, NSUUID, RPCloudDaemon, RPCloudSession, RPCompanionLinkDevice, RPIdentity, RPIdentityDaemon, RPMetrics;
+@class CUBLEConnection, CUBluetoothScalablePipe, CUBonjourDevice, CUHomeKitManager, CUNetLinkManager, CUPairingSession, CUPairingStream, CUTCPConnection, NSData, NSDictionary, NSError, NSString, NSUUID, RPCloudDaemon, RPCloudSession, RPCompanionLinkDevice, RPIdentity, RPIdentityDaemon, RPMetrics;
 @protocol CUReadWriteRequestable, OS_dispatch_queue, OS_dispatch_source;
 
 @interface RPConnection : NSObject <RPAuthenticatable>
 {
+    BOOL _activateCalled;
     NSString *_peerAddrString;
     NSString *_selfAddrString;
     BOOL _invalidateCalled;
@@ -66,6 +67,8 @@
     CDUnknownBlockType _hidePasswordHandler;
     CDUnknownBlockType _promptForPasswordHandler;
     NSString *_appID;
+    NSDictionary *_appInfoPeer;
+    NSDictionary *_appInfoSelf;
     CUBLEConnection *_bleConnection;
     NSUUID *_blePeerIdentifier;
     CUBonjourDevice *_bonjourPeerDevice;
@@ -149,6 +152,8 @@
 @property(retain, nonatomic) CUBonjourDevice *bonjourPeerDevice; // @synthesize bonjourPeerDevice=_bonjourPeerDevice;
 @property(copy, nonatomic) NSUUID *blePeerIdentifier; // @synthesize blePeerIdentifier=_blePeerIdentifier;
 @property(retain, nonatomic) CUBLEConnection *bleConnection; // @synthesize bleConnection=_bleConnection;
+@property(copy, nonatomic) NSDictionary *appInfoSelf; // @synthesize appInfoSelf=_appInfoSelf;
+@property(readonly, copy, nonatomic) NSDictionary *appInfoPeer; // @synthesize appInfoPeer=_appInfoPeer;
 @property(copy, nonatomic) NSString *appID; // @synthesize appID=_appID;
 @property(copy, nonatomic) CDUnknownBlockType promptForPasswordHandler; // @synthesize promptForPasswordHandler=_promptForPasswordHandler;
 @property(copy, nonatomic) CDUnknownBlockType hidePasswordHandler; // @synthesize hidePasswordHandler=_hidePasswordHandler;
@@ -238,6 +243,7 @@
 - (void)_invalidated;
 - (void)_invalidateCore:(id)arg1;
 - (void)_invalidate;
+- (void)_invalidateWithError:(id)arg1;
 - (void)invalidateWithError:(id)arg1;
 - (void)invalidate;
 - (void)activate;

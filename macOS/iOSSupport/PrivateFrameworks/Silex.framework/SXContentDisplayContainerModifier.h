@@ -18,7 +18,7 @@
 @property(readonly, nonatomic) NSMutableDictionary *containers; // @synthesize containers=_containers;
 - (void).cxx_destruct;
 - (void)ensureWrappingContainerComponentForComponents:(id)arg1 parentComponent:(id)arg2;
-- (id)modifyDOM:(id)arg1 context:(id)arg2;
+- (void)modifyDOM:(id)arg1 context:(id)arg2;
 - (id)init;
 
 // Remaining properties

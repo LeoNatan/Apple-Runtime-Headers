@@ -141,6 +141,7 @@
 - (struct CGSize)advancementForCGGlyph:(unsigned short)arg1;
 - (struct CGRect)boundingRectForGlyph:(unsigned int)arg1;
 - (struct CGRect)boundingRectForCGGlyph:(unsigned short)arg1;
+- (id)_externalFontName;
 - (unsigned long long)traits;
 @property(readonly, getter=isFixedPitch) BOOL fixedPitch;
 @property(readonly) double xHeight;

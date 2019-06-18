@@ -12,6 +12,7 @@
 
 + (void)_indexItemsForMetadata:(id)arg1 withItem:(id)arg2 withChat:(id)arg3;
 + (BOOL)_isMacSupportedBalloonBundleID:(id)arg1;
++ (BOOL)_isTapbackMessage:(long long)arg1;
 + (id)chatStyleCustomKey;
 + (id)sharedInstance;
 - (unsigned long long)_lastIndexedRowID;

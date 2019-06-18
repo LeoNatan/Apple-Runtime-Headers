@@ -13,7 +13,7 @@
 #import <GameCenterUICore/WebResourceLoadDelegate-Protocol.h>
 #import <GameCenterUICore/WebUIDelegate-Protocol.h>
 
-@class GKMTextFieldPlus, GKServerWebViewJSRoot, GKWebView, NSArray, NSButton, NSData, NSDictionary, NSLayoutConstraint, NSScrollView, NSString, NSTextField, NSURL, NSURLRequest;
+@class GKAppearanceWebViewWrapper, GKMTextFieldPlus, GKServerWebViewJSRoot, NSArray, NSButton, NSData, NSDictionary, NSLayoutConstraint, NSScrollView, NSString, NSTextField, NSURL, NSURLRequest, WebView;
 
 @interface GKServerWebViewController : UXViewController <WebResourceLoadDelegate, WebDownloadDelegate, WebFrameLoadDelegate, WebUIDelegate, WebPolicyDelegate, GKServerWebViewJSRootDelegate>
 {
@@ -21,7 +21,7 @@
     BOOL _showSpinner;
     BOOL _waitForLoad;
     BOOL _navbarSetupCompleted;
-    GKWebView *_webView;
+    WebView *_webView;
     NSString *_okCallback;
     NSString *_cancelCallback;
     NSString *_playerID;
@@ -43,6 +43,7 @@
     NSButton *_outerRightButton;
     NSString *_urlTypeRequested;
     NSScrollView *_scrollView;
+    GKAppearanceWebViewWrapper *_webViewWrapper;
     double _contentWidth;
     GKServerWebViewJSRoot *_jsRoot;
 }
@@ -51,6 +52,7 @@
 + (id)keyPathsForValuesAffectingScrollView;
 @property(retain) GKServerWebViewJSRoot *jsRoot; // @synthesize jsRoot=_jsRoot;
 @property(nonatomic) double contentWidth; // @synthesize contentWidth=_contentWidth;
+@property(retain, nonatomic) GKAppearanceWebViewWrapper *webViewWrapper; // @synthesize webViewWrapper=_webViewWrapper;
 @property(nonatomic) __weak NSScrollView *scrollView; // @synthesize scrollView=_scrollView;
 @property BOOL navbarSetupCompleted; // @synthesize navbarSetupCompleted=_navbarSetupCompleted;
 @property(retain, nonatomic) NSString *urlTypeRequested; // @synthesize urlTypeRequested=_urlTypeRequested;
@@ -76,7 +78,7 @@
 @property(retain, nonatomic) NSString *playerID; // @synthesize playerID=_playerID;
 @property(retain, nonatomic) NSString *cancelCallback; // @synthesize cancelCallback=_cancelCallback;
 @property(retain, nonatomic) NSString *okCallback; // @synthesize okCallback=_okCallback;
-@property(retain, nonatomic) GKWebView *webView; // @synthesize webView=_webView;
+@property(retain, nonatomic) WebView *webView; // @synthesize webView=_webView;
 - (void).cxx_destruct;
 - (void)uploadContacts;
 - (void)changePhoto;

@@ -8,7 +8,7 @@
 @protocol SCKZoneStore;
 
 @protocol SCKDatabaseStore
-@property(nonatomic, getter=isBackupEnabled) BOOL backupEnabled;
+@property(nonatomic, getter=isCloudBackupEnabled) BOOL cloudBackupEnabled;
 @property(copy, nonatomic) CKServerChangeToken *serverChangeToken;
 @property(copy, nonatomic) NSDate *lastDirtyDate;
 @property(copy, nonatomic) NSDate *lastSyncDate;

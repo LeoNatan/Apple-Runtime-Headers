@@ -14,14 +14,16 @@
 #import <WorkflowUI/WFActionDrawerStateConfigurable-Protocol.h>
 #import <WorkflowUI/WFActionDrawerStateRepresentable-Protocol.h>
 
-@class NSString, WFActionDrawerState;
+@class NSArray, NSString, WFActionDrawerState;
 @protocol WFActionDrawerSearchResultsViewControllerDelegate;
 
 @interface WFActionDrawerSearchResultsViewController : WFActionDrawerCompositeResultsViewController <WFActionDrawerSiriSuggestionsTableViewCellDelegate, WFActionDrawerAppsTableViewCellDelegate, WFActionDrawerActionTableViewCellDelegate, UITableViewDelegate, UITableViewDataSource, WFActionDrawerStateRepresentable, WFActionDrawerStateConfigurable>
 {
     id <WFActionDrawerSearchResultsViewControllerDelegate> _delegate;
+    NSArray *_combinedActionActivitySections;
 }
 
+@property(retain, nonatomic) NSArray *combinedActionActivitySections; // @synthesize combinedActionActivitySections=_combinedActionActivitySections;
 @property(nonatomic) __weak id <WFActionDrawerSearchResultsViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)appsTableViewCell:(id)arg1 didSelectSection:(id)arg2;

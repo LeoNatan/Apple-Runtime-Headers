@@ -23,6 +23,7 @@
 + (id)mailSenderAddressPickerUnsafeDomainColorTextColor;
 + (id)mailSenderAddressPickerColorHighlightedTextColor;
 + (id)mailSenderAddressPickerColorNormalTextColor;
++ (id)mailSubtitleGrayColor;
 + (id)mailModernLabelledAddressAtomDefaultTextColor;
 + (id)mailModernLabelledAtomDefaultTextColor;
 + (id)mailAutoCompleteTableViewCellBackgroundColorForPopoverDisplay;

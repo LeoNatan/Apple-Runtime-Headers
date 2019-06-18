@@ -31,6 +31,7 @@
 @property(retain, nonatomic) NSString *primaryNetworkRouterManagingDeviceUUID; // @dynamic primaryNetworkRouterManagingDeviceUUID;
 @property(retain, nonatomic) NSString *primaryResidentUUID; // @dynamic primaryResidentUUID;
 @property(copy, nonatomic) HMDHomeKitVersion *sharedHomeSourceVersion; // @dynamic sharedHomeSourceVersion;
+@property(retain, nonatomic) NSNumber *supportsNetworkProtection; // @dynamic supportsNetworkProtection;
 
 @end
 

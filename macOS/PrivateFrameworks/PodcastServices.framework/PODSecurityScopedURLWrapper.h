@@ -16,7 +16,7 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (id)readonlySecurityScopeForURL:(id)arg1;
++ (id)fullAccessSecurityScopeForURL:(id)arg1;
 @property(retain) NSSecurityScopedURLWrapper *nsWrapper; // @synthesize nsWrapper=_nsWrapper;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;

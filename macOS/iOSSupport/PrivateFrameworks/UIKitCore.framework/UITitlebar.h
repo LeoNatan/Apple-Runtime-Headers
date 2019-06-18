@@ -19,11 +19,15 @@ __attribute__((visibility("hidden")))
     long long _titleVisibility;
     BOOL _autoHidesToolbarInFullScreen;
     NSToolbar *_toolbar;
+    long long _userInterfaceStyle;
 }
 
 + (void)initializeConnections;
 @property(nonatomic, getter=_scene, setter=_setScene:) __weak UIScene *_scene; // @synthesize _scene;
 - (void).cxx_destruct;
+- (void)_updateHostWindowUserInterfaceStyle;
+- (void)setUserInterfaceStyle:(long long)arg1;
+- (long long)userInterfaceStyle;
 - (void)_updateTitleVisibilityBehavior;
 @property long long titleVisibility;
 - (void)_updateToolbar;

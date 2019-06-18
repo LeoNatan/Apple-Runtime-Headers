@@ -126,7 +126,7 @@
 - (BOOL)updateUndecoratedTitle:(id)arg1;
 - (id)departingAirportCode;
 - (id)fullFlightCode;
-- (BOOL)hasFullFlightInfo;
+- (BOOL)hasFullFlightInfoAndGate;
 - (BOOL)hasEssentialFlightInfo;
 @property(readonly, nonatomic) NSString *shortcutIdentifier;
 @property(readonly, nonatomic) BOOL isShortcutForSetup;

@@ -426,6 +426,7 @@ struct nw_data_transfer_snapshot {
     unsigned long long _field10;
     unsigned long long _field11;
     unsigned long long _field12;
+    unsigned long long _field13;
 };
 
 struct nw_endpoint_handler_event_s {

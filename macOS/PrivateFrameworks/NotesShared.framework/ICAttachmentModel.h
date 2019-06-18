@@ -87,6 +87,7 @@
 @property(readonly, nonatomic) BOOL supportsOCR;
 @property(readonly, nonatomic) BOOL requiresPostProcessing;
 @property(readonly, nonatomic) BOOL needsFullSizePreview;
+@property(readonly, nonatomic) BOOL preferLocalPreviewImages;
 @property(readonly, nonatomic) BOOL previewsSupportMultipleAppearances;
 @property(readonly, nonatomic) BOOL hasPreviews;
 - (void)writeMergeableData;

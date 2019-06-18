@@ -31,8 +31,11 @@
 @property(nonatomic) BOOL useAbsinthe; // @synthesize useAbsinthe=_useAbsinthe;
 - (void).cxx_destruct;
 - (void)setUseCompression:(BOOL)arg1;
+- (id)performBidirectionalStreamingRequest:(id)arg1 handler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)performBidirectionalStreamingCallContextWithMethodName:(id)arg1 data:(id)arg2 handler:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)performStreamingRequest:(id)arg1 handler:(CDUnknownBlockType)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)performStreamingCallForMethodName:(id)arg1 data:(id)arg2 handler:(CDUnknownBlockType)arg3 completion:(CDUnknownBlockType)arg4;
+- (void)performRequest:(id)arg1 handler:(CDUnknownBlockType)arg2;
 - (void)performCallForMethodName:(id)arg1 data:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_on_queue_getChannelWithHandler:(CDUnknownBlockType)arg1;
 - (id)initWithURL:(id)arg1 configuration:(id)arg2;

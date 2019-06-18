@@ -50,6 +50,7 @@
 - (id)_interactionCountStatWithActivation:(BOOL)arg1;
 - (id)_backgroundEffectsWithBrightness:(double)arg1;
 - (void)layoutIfNeededAnimated;
+- (unsigned long long)_clickInteractionDefaultDriverType:(id)arg1;
 - (void)clickInteractionDidEnd:(id)arg1;
 - (void)clickInteraction:(id)arg1 didObserveForce:(double)arg2;
 - (void)clickInteractionDidClickUp:(id)arg1;

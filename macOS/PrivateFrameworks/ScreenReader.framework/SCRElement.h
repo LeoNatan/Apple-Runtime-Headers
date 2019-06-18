@@ -644,6 +644,7 @@
 - (id)urlDescription;
 - (id)defaultDescription;
 - (id)fullItemDescriptionForMenu;
+- (id)fullItemDescriptionIncludingAssociatedTitle:(BOOL)arg1;
 - (id)fullItemDescription;
 - (id)typeDescription;
 - (id)statusDescription;

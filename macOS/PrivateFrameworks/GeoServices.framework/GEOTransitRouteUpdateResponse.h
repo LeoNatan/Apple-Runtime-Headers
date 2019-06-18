@@ -8,30 +8,36 @@
 
 #import <GeoServices/NSCopying-Protocol.h>
 
-@class GEOPDDatasetABStatus, GEOTransitRouteUpdateConfiguration, NSData, NSMutableArray, PBDataReader, PBUnknownFields;
+@class GEOPDDatasetABStatus, GEOTransitRouteUpdateConfiguration, NSData, NSMutableArray, NSString, PBDataReader, PBUnknownFields;
 
 @interface GEOTransitRouteUpdateResponse : PBCodable <NSCopying>
 {
     PBDataReader *_reader;
     CDStruct_158f0f88 _readerMark;
     PBUnknownFields *_unknownFields;
+    struct GEOTimepoint _timepointUsed;
     GEOPDDatasetABStatus *_datasetAbStatus;
     NSData *_responseId;
     GEOTransitRouteUpdateConfiguration *_routeUpdateConfiguration;
     NSMutableArray *_routeUpdates;
+    NSString *_transitDataVersion;
     int _status;
     struct {
+        unsigned int has_timepointUsed:1;
         unsigned int has_status:1;
         unsigned int read_unknownFields:1;
         unsigned int read_datasetAbStatus:1;
         unsigned int read_responseId:1;
         unsigned int read_routeUpdateConfiguration:1;
         unsigned int read_routeUpdates:1;
+        unsigned int read_transitDataVersion:1;
         unsigned int wrote_unknownFields:1;
+        unsigned int wrote_timepointUsed:1;
         unsigned int wrote_datasetAbStatus:1;
         unsigned int wrote_responseId:1;
         unsigned int wrote_routeUpdateConfiguration:1;
         unsigned int wrote_routeUpdates:1;
+        unsigned int wrote_transitDataVersion:1;
         unsigned int wrote_status:1;
     } _flags;
 }
@@ -51,6 +57,11 @@
 - (void)readAll:(BOOL)arg1;
 - (id)dictionaryRepresentation;
 - (id)description;
+@property(retain, nonatomic) NSString *transitDataVersion;
+@property(readonly, nonatomic) BOOL hasTransitDataVersion;
+- (void)_readTransitDataVersion;
+@property(nonatomic) BOOL hasTimepointUsed;
+@property(nonatomic) struct GEOTimepoint timepointUsed;
 @property(retain, nonatomic) GEOTransitRouteUpdateConfiguration *routeUpdateConfiguration;
 @property(readonly, nonatomic) BOOL hasRouteUpdateConfiguration;
 - (void)_readRouteUpdateConfiguration;

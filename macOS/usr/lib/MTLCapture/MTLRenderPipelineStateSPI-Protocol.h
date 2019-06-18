@@ -12,6 +12,8 @@
 @property(readonly, retain, nonatomic) MTLDebugInstrumentationData *fragmentDebugInstrumentationData;
 @property(readonly, retain, nonatomic) MTLDebugInstrumentationData *vertexDebugInstrumentationData;
 @property(readonly) unsigned long long uniqueIdentifier;
+- (unsigned int)getFragmentShaderTelemetryID;
+- (unsigned int)getVertexShaderTelemetryID;
 - (NSData *)newFragmentShaderDebugInfo;
 - (NSData *)newVertexShaderDebugInfo;
 

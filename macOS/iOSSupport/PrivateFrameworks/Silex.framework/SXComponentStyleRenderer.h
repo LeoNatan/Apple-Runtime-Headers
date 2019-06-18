@@ -9,7 +9,7 @@
 #import <Silex/SXComponentStyleRenderer-Protocol.h>
 #import <Silex/SXViewportChangeListener-Protocol.h>
 
-@class NSString, SXComponentView, SXGradientFillView, SXImageFillView, SXRepeatableImageFillView, SXVideoFillView, SXViewport, UIView;
+@class CALayer, CAShapeLayer, NSString, SXComponentView, SXGradientFillView, SXImageFillView, SXRepeatableImageFillView, SXVideoFillView, SXViewport;
 @protocol SXComponentStyle, SXGradientFactory, SXImageFillViewFactory, SXRepeatableImageFillViewFactory, SXVideoFillViewFactory;
 
 @interface SXComponentStyleRenderer : NSObject <SXViewportChangeListener, SXComponentStyleRenderer>
@@ -22,23 +22,21 @@
     id <SXGradientFactory> _gradientFactory;
     id <SXRepeatableImageFillViewFactory> _repeatableImageFillViewFactory;
     SXComponentView *_componentView;
-    UIView *_backgroundView;
     SXGradientFillView *_gradientFillView;
     SXImageFillView *_imageFillView;
     SXVideoFillView *_videoFillView;
     SXRepeatableImageFillView *_repeatableImageFillView;
-    UIView *_borderContainerView;
-    UIView *_shadowView;
+    CALayer *_shadowLayer;
+    CAShapeLayer *_borderLayer;
 }
 
-@property(retain, nonatomic) UIView *shadowView; // @synthesize shadowView=_shadowView;
+@property(retain, nonatomic) CAShapeLayer *borderLayer; // @synthesize borderLayer=_borderLayer;
+@property(retain, nonatomic) CALayer *shadowLayer; // @synthesize shadowLayer=_shadowLayer;
 @property(nonatomic) BOOL didRegisterForDynamicBounds; // @synthesize didRegisterForDynamicBounds=_didRegisterForDynamicBounds;
-@property(retain, nonatomic) UIView *borderContainerView; // @synthesize borderContainerView=_borderContainerView;
 @property(retain, nonatomic) SXRepeatableImageFillView *repeatableImageFillView; // @synthesize repeatableImageFillView=_repeatableImageFillView;
 @property(retain, nonatomic) SXVideoFillView *videoFillView; // @synthesize videoFillView=_videoFillView;
 @property(retain, nonatomic) SXImageFillView *imageFillView; // @synthesize imageFillView=_imageFillView;
 @property(retain, nonatomic) SXGradientFillView *gradientFillView; // @synthesize gradientFillView=_gradientFillView;
-@property(retain, nonatomic) UIView *backgroundView; // @synthesize backgroundView=_backgroundView;
 @property(readonly, nonatomic) __weak SXComponentView *componentView; // @synthesize componentView=_componentView;
 @property(readonly, nonatomic) id <SXRepeatableImageFillViewFactory> repeatableImageFillViewFactory; // @synthesize repeatableImageFillViewFactory=_repeatableImageFillViewFactory;
 @property(readonly, nonatomic) id <SXGradientFactory> gradientFactory; // @synthesize gradientFactory=_gradientFactory;
@@ -62,10 +60,9 @@
 - (void)applyOpacity:(double)arg1;
 - (void)applyFill:(id)arg1;
 - (void)applyBackgroundColor:(id)arg1;
-- (void)prepareShadow:(id)arg1 mask:(id)arg2;
+- (void)prepareShadow:(id)arg1;
 - (void)prepareBorder:(id)arg1;
 - (void)prepareFill:(id)arg1;
-- (void)prepareBackgroundColor:(id)arg1;
 - (void)applyComponentStyle;
 - (void)prepareForComponentView:(id)arg1;
 - (void)dealloc;

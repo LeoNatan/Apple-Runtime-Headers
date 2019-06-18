@@ -28,10 +28,10 @@
 @property(retain) MPSMatrix *weights; // @synthesize weights=_weights;
 - (void).cxx_destruct;
 - (id)generateNode:(id)arg1 model:(id)arg2 weightIter:(unsigned long long *)arg3;
-- (struct NSArray *)seqBackward:(id)arg1 inputGradient:(struct NSArray *)arg2;
+- (struct NSArray *)seqBackward:(id)arg1 dataBatch:(id)arg2 inputGradient:(struct NSArray *)arg3;
 - (struct NSArray *)backward:(id)arg1 inputGradient:(struct NSArray *)arg2;
 - (id)backward:(id)arg1 index:(id)arg2 inputGradientMatrix:(id)arg3;
-- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 lossLabels:(id)arg3 runInference:(BOOL)arg4;
+- (struct NSArray *)seqForward:(id)arg1 input:(struct NSArray *)arg2 dataBatch:(id)arg3 runInference:(BOOL)arg4;
 - (struct NSArray *)forward:(id)arg1 input:(struct NSArray *)arg2 labels:(id)arg3 runInference:(BOOL)arg4;
 - (id)forward:(id)arg1 inputMatrix:(id)arg2 index:(id)arg3 runInference:(BOOL)arg4;
 - (void)createKernel;

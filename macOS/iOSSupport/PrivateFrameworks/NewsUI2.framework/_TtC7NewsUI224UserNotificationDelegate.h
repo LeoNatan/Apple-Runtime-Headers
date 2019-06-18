@@ -10,6 +10,7 @@ __attribute__((visibility("hidden")))
 @interface _TtC7NewsUI224UserNotificationDelegate : NSObject
 {
     // Error parsing type: , name: notificationResponseHandlerManager
+    // Error parsing type: , name: notificationOpenSettingsHandler
     // Error parsing type: , name: navigator
 }
 

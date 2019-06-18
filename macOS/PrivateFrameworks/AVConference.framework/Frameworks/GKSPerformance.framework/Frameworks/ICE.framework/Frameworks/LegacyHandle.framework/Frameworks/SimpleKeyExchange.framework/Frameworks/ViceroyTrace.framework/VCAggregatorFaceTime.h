@@ -85,13 +85,14 @@ __attribute__((visibility("hidden")))
     unsigned int _videoFrameNonFECCompleteCounter;
     unsigned int _encodedVideoFrameCounter;
     unsigned int _captureVideoFrameCounter;
-    unsigned int _localSwitches;
+    unsigned int _negotiatedSwitches;
     unsigned int _remoteSwitches;
     unsigned int _callTotalCellDupTxDataBytes;
     unsigned int _callTotalCellDupRxDataBytes;
     unsigned int _callTotalUsedCellBudgetTxDataBytes;
     unsigned int _callTotalUsedCellBudgetRxDataBytes;
     BOOL _isDuplicationEnabled;
+    BOOL _remoteFaceTimeSwitchesAvailable;
     VCHistogram *_callVideoSwitchPeriodHistogram;
     VCAdaptiveLearning *_adaptiveLearning;
 }

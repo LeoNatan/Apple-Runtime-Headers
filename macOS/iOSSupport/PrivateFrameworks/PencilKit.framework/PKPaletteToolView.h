@@ -9,7 +9,7 @@
 #import <PencilKit/PKEdgeLocatable-Protocol.h>
 #import <PencilKit/PKPaletteViewSizeScaling-Protocol.h>
 
-@class NSDictionary, NSLayoutConstraint, NSString, UIImageView, UIViewController;
+@class NSDictionary, NSLayoutConstraint, NSString, UIImageView, UIView, UIViewController;
 
 @interface PKPaletteToolView : UIControl <PKEdgeLocatable, PKPaletteViewSizeScaling>
 {
@@ -18,6 +18,7 @@
     NSString *_toolIdentifier;
     UIViewController *_attributeViewController;
     NSDictionary *_toolProperties;
+    UIView *_toolLargeShadowView;
     NSLayoutConstraint *_imageViewTopAnchorConstraint;
     NSLayoutConstraint *_imageViewBottomAnchorConstraint;
     NSLayoutConstraint *_imageViewLeftAnchorConstraint;
@@ -35,6 +36,7 @@
 @property(retain, nonatomic) NSLayoutConstraint *imageViewLeftAnchorConstraint; // @synthesize imageViewLeftAnchorConstraint=_imageViewLeftAnchorConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *imageViewBottomAnchorConstraint; // @synthesize imageViewBottomAnchorConstraint=_imageViewBottomAnchorConstraint;
 @property(retain, nonatomic) NSLayoutConstraint *imageViewTopAnchorConstraint; // @synthesize imageViewTopAnchorConstraint=_imageViewTopAnchorConstraint;
+@property(retain, nonatomic) UIView *toolLargeShadowView; // @synthesize toolLargeShadowView=_toolLargeShadowView;
 @property(copy, nonatomic) NSDictionary *toolProperties; // @synthesize toolProperties=_toolProperties;
 @property(readonly, nonatomic) UIViewController *attributeViewController; // @synthesize attributeViewController=_attributeViewController;
 @property(readonly, nonatomic) NSString *toolIdentifier; // @synthesize toolIdentifier=_toolIdentifier;
@@ -48,7 +50,9 @@
 - (void)updateConstraints;
 - (void)_reloadToolImage;
 - (void)_reloadToolImageSizeConstraints;
+- (void)_updateToolImageShadows;
 @property(readonly, nonatomic) NSString *toolName;
+- (void)layoutSubviews;
 - (id)initWithToolIdentifier:(id)arg1;
 - (id)initWithToolIdentifier:(id)arg1 toolProperties:(id)arg2;
 

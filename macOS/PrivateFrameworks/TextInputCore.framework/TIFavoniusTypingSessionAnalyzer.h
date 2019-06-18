@@ -13,7 +13,6 @@
 
 @interface TIFavoniusTypingSessionAnalyzer : NSObject <TITypingSessionAnalyzing>
 {
-    BOOL _success;
     TITypingSession *_lastSessionAnalyzed;
     TITypingSessionAligned *_lastAlignmentAnalyzed;
     id <TIUserModeling> _userModel;
@@ -24,15 +23,15 @@
 @property(retain, nonatomic) TITypingSession *lastSessionAnalyzed; // @synthesize lastSessionAnalyzed=_lastSessionAnalyzed;
 - (void).cxx_destruct;
 - (BOOL)analyze:(id)arg1 alignedSession:(id)arg2;
-- (void)analyzeSession:(id)arg1 alignedSession:(id)arg2;
 - (BOOL)handlePath:(id)arg1;
-- (BOOL)handleDeleteWord:(id)arg1 nextAction:(id)arg2;
-- (BOOL)handleWordEntry:(id)arg1;
+- (BOOL)handleDeleteWord:(id)arg1 nextAction:(id)arg2 withConfidence:(unsigned long long)arg3;
+- (BOOL)handleWordEntry:(id)arg1 withConfidence:(unsigned long long)arg2;
+- (void)logPathedCandidate:(id)arg1 forKey:(id)arg2 withConfidence:(unsigned long long)arg3 isCompletion:(BOOL)arg4;
 - (void)updateDurationCounterForWord:(id)arg1 forTypingContext:(id)arg2;
 - (BOOL)isPathable:(id)arg1 context:(id)arg2;
 - (void)incrementTransientCounterForKey:(id)arg1 andContext:(id)arg2 andCandidateString:(id)arg3;
 - (void)addToTransientCounter:(int)arg1 forKey:(id)arg2 andContext:(id)arg3 andCandidateString:(id)arg4;
-- (BOOL)canAnalyze:(id)arg1 alignedSession:(id)arg2;
+- (unsigned long long)canAnalyze:(id)arg1 alignedSession:(id)arg2;
 - (id)initWithUserModel:(id)arg1;
 
 // Remaining properties

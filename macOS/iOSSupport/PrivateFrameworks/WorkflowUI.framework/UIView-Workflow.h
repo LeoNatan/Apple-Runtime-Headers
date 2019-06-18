@@ -9,6 +9,8 @@
 @interface UIView (Workflow)
 - (void)wf_addConstraintsToFillLayoutGuide:(id)arg1 insets:(struct NSDirectionalEdgeInsets)arg2;
 - (void)wf_addConstraintsToFillLayoutGuide:(id)arg1;
+- (void)wf_addConstraintsToFillSuperview:(id)arg1 insets:(struct NSDirectionalEdgeInsets)arg2;
+- (void)wf_addConstraintsToFillSuperview:(id)arg1;
 - (BOOL)wf_containsFirstResponder;
 @end
 

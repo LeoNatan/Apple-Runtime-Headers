@@ -73,7 +73,6 @@
         unsigned int _drawsOwnDescendants:1;
         unsigned int _drawnByAncestor:1;
         unsigned int _setFrameWillAutoInvalidate:1;
-        unsigned int _drawingByHIView:1;
         unsigned int _revealoverComputationEnabled:1;
         unsigned int _revealoverComputationNeeded:1;
         unsigned int _revealoversWanted:1;
@@ -87,7 +86,7 @@
         unsigned int _canDrawConcurrently:1;
         unsigned int _displayingForWindowDisplay:1;
         unsigned int _implementsViewWillDraw:1;
-        unsigned int _UNUSED_ATOMIC_BITS:6;
+        unsigned int _UNUSED_ATOMIC_BITS:7;
     } _atomicFlags;
     struct os_unfair_lock_s _atomicFlagsLock;
     unsigned int _appkitManagesLayer:1;
@@ -1054,9 +1053,6 @@
 - (id)_focusRingBleedRegion;
 - (void)_clipViewAncestorDidScroll:(id)arg1;
 - (void)_clipViewAncestorWillScroll:(id)arg1;
-- (void)_setHIViewIsDrawing:(BOOL)arg1;
-- (BOOL)_drawingByHIView;
-- (BOOL)_boundToHIView;
 @property(retain, setter=_setSurfaceColorSpace:) NSColorSpace *_surfaceColorSpace;
 - (void)showDefinitionForAttributedString:(id)arg1 atPoint:(struct CGPoint)arg2;
 - (void)showDefinitionForAttributedString:(id)arg1 range:(struct _NSRange)arg2 options:(id)arg3 baselineOriginProvider:(CDUnknownBlockType)arg4;

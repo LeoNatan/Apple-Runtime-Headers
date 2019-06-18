@@ -170,17 +170,22 @@ typedef struct {
     CDStruct_c688133d _field1;
     CDStruct_c688133d _field2;
     struct {
+        double _field1[46];
+        int _field2;
+        unsigned long long _field3;
+    } _field3;
+    struct {
         double _field1;
         double _field2;
         double _field3;
         _Bool _field4;
         float _field5;
-    } _field3;
+    } _field4;
     struct {
         double _field1[10];
         int _field2;
         double _field3;
-    } _field4;
+    } _field5;
     struct {
         double _field1;
         double _field2;
@@ -188,9 +193,9 @@ typedef struct {
         double _field4;
         float _field5;
         float _field6;
-    } _field5;
-    int _field6;
-} CDStruct_b1cf45a1;
+    } _field6;
+    int _field7;
+} CDStruct_97eeab40;
 
 typedef struct {
     CDStruct_46614362 minPoint;

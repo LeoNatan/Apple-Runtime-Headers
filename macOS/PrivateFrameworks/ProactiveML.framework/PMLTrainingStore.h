@@ -21,6 +21,9 @@
 + (void)setLastUsedTimestampLimit:(double)arg1;
 + (double)lastUsedTimestampLimit;
 + (id)getSchema:(unsigned long long *)arg1;
++ (BOOL)_runQueries:(id)arg1 andUpdateVersionTo:(unsigned int)arg2 inTransactionOnDb:(id)arg3 forStore:(id)arg4;
++ (long long)migrate:(id)arg1 to:(id)arg2 forStore:(id)arg3;
++ (long long)_migrate:(id)arg1 forStore:(id)arg2;
 - (void).cxx_destruct;
 - (void)closeDbForTesting;
 - (unsigned long long)numberOfRowsInTable:(id)arg1;
@@ -37,9 +40,7 @@
 - (void)updateLastTrainingFeaturizationForModel:(id)arg1 andData:(id)arg2;
 - (id)lastTrainingFeaturizationForModelName:(id)arg1 andLocale:(id)arg2;
 - (void)updateSessionsAndLabelForModel:(id)arg1 block:(CDUnknownBlockType)arg2;
-- (BOOL)_runQueries:(id)arg1 andUpdateVersionTo:(unsigned int)arg2 inTransactionOnDb:(id)arg3;
 - (long long)migrateTo:(id)arg1;
-- (long long)_migrate;
 - (void)vacuumDb;
 - (void)dealloc;
 - (BOOL)_truncateDbIfCorrupted;

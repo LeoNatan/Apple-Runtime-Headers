@@ -22,6 +22,7 @@
 - (void).cxx_destruct;
 - (id)sliceForIdentifier:(id)arg1;
 - (id)strokeForIdentifier:(id)arg1;
+- (BOOL)isStroke:(id)arg1 versionOfStrokeWithIdentifier:(id)arg2;
 - (long long)compareOrderOfStroke:(id)arg1 toStroke:(id)arg2;
 - (long long)compareOrderOfStrokeWithIdentifier:(id)arg1 toStrokeWithIdentifier:(id)arg2;
 - (BOOL)enumerateChangesSinceVersion:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;

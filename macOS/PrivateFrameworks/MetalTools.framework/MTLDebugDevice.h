@@ -26,6 +26,8 @@
 @property(readonly, nonatomic) BOOL resourceTrackingEnabled; // @synthesize resourceTrackingEnabled=_resourceTrackingEnabled;
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (id)newRemoteTextureView:(id)arg1 parentTexture:(id)arg2;
+- (id)newRemoteBufferView:(id)arg1 parentBuffer:(id)arg2;
 - (void)eventSignaled:(id)arg1 value:(unsigned long long)arg2;
 - (id)newSharedEventWithHandle:(id)arg1;
 - (id)newSharedEventWithMachPort:(unsigned int)arg1;

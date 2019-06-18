@@ -31,7 +31,8 @@
     PKAccountEvent *_billPaymentSuggestedAmountDataEvent;
     NSDate *_scheduledDate;
     NSString *_peerPaymentPassUniqueId;
-    BOOL _apcPaymentSupported;
+    BOOL _accountPaymentSupportsPeerPaymentBalance;
+    BOOL _peerPaymentAccountSupportsAccountPayments;
     BOOL _performingAction;
     BOOL _completedBillPayment;
     BOOL _fetchingData;

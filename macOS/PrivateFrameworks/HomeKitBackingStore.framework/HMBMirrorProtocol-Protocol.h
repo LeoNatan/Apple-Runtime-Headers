@@ -11,7 +11,7 @@
 
 @protocol HMBMirrorProtocol <NSObject>
 @property(readonly, nonatomic) NAFuture *startUp;
-@property(readonly, nonatomic) id <HMBLocalZoneID> localZoneID;
+@property(readonly, nonatomic) id <HMBLocalZoneID> zoneID;
 - (NAFuture *)shutdown;
 - (NAFuture *)flush;
 - (NAFuture *)triggerOutputForOutputRow:(unsigned long long)arg1 options:(HMBProcessingOptions *)arg2;

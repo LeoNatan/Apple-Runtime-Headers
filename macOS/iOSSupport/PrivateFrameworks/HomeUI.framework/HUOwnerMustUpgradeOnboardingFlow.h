@@ -24,7 +24,7 @@
 - (void).cxx_destruct;
 - (id)processUserInput:(id)arg1;
 @property(readonly, copy) NSString *description;
-- (id)init;
+- (id)initWithUpgradeRequirements:(unsigned long long)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -59,6 +59,7 @@
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
+@property(readonly, nonatomic) BOOL isFeatured;
 @property(readonly, copy, nonatomic) id <FCChannelProviding> sourceChannel;
 @property(readonly) Class superclass;
 

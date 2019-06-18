@@ -32,6 +32,7 @@
     id _timecodePeriodicObserverToken;
     BOOL _pictureInPictureInterrupted;
     BOOL _handlesAudioSessionInterruptions;
+    BOOL _isDeallocating;
     NSNumber *_rateToRestoreAfterAudioSessionInterruptionEnds;
     CDUnknownBlockType _retryPlayingImmediatelyBlock;
     BOOL _shouldPlayImmediately;
@@ -69,6 +70,7 @@
     BOOL _allowsPictureInPicturePlayback;
     BOOL _pictureInPictureActive;
     BOOL _canTogglePictureInPicture;
+    BOOL _hasBegunInspection;
     BOOL _touchBarRequiresLinearPlayback;
     AVPlayer *_player;
     long long _status;
@@ -145,6 +147,7 @@
 + (id)keyPathsForValuesAffectingUsesExternalPlaybackWhileExternalScreenIsActive;
 @property(nonatomic) BOOL touchBarRequiresLinearPlayback; // @synthesize touchBarRequiresLinearPlayback=_touchBarRequiresLinearPlayback;
 @property(nonatomic) double defaultPlaybackRate; // @synthesize defaultPlaybackRate=_defaultPlaybackRate;
+@property(nonatomic) BOOL hasBegunInspection; // @synthesize hasBegunInspection=_hasBegunInspection;
 @property(nonatomic) BOOL canTogglePictureInPicture; // @synthesize canTogglePictureInPicture=_canTogglePictureInPicture;
 @property(nonatomic, getter=isPictureInPictureActive) BOOL pictureInPictureActive; // @synthesize pictureInPictureActive=_pictureInPictureActive;
 @property(nonatomic) BOOL allowsPictureInPicturePlayback; // @synthesize allowsPictureInPicturePlayback=_allowsPictureInPicturePlayback;
@@ -314,6 +317,7 @@
 - (void *)observationInfo;
 - (void)startKVO;
 - (void)dealloc;
+- (void)startInspectionIfNeeded;
 - (id)initWithPlayer:(id)arg1;
 - (id)init;
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;

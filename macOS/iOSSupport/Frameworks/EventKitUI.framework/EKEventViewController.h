@@ -137,7 +137,7 @@
 - (unsigned long long)supportedInterfaceOrientations;
 - (void)eventStatusButtonsView:(id)arg1 calculatedFontSizeToFit:(double)arg2;
 - (double)eventStatusButtonsViewButtonFontSize:(id)arg1;
-- (void)eventStatusButtonsView:(id)arg1 didSelectAction:(long long)arg2;
+- (void)eventStatusButtonsView:(id)arg1 didSelectAction:(long long)arg2 ifCancelled:(CDUnknownBlockType)arg3;
 - (id)previewActionsWithPresentationController:(id)arg1;
 - (id)_statusButtonsForOrb:(BOOL)arg1;
 - (id)_statusButtons;
@@ -208,7 +208,6 @@
 - (void)_setNeedsReloadIncludingItems:(BOOL)arg1;
 - (void)setNeedsReload;
 - (void)setNeedsReloadWithNotification:(id)arg1;
-- (void)reloadedData;
 - (void)openAttendeesDetailItem;
 - (void)_pop;
 - (BOOL)_shouldPopSelf;

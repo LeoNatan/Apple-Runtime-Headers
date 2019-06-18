@@ -6,12 +6,12 @@
 
 #import <CoreData/NSPersistentContainer.h>
 
+__attribute__((visibility("hidden")))
 @interface ADMPersistentContainer : NSPersistentContainer
 {
 }
 
 + (id)defaultDirectoryURL;
-- (id)persistentStoreDescriptions;
 - (id)initWithName:(id)arg1 productSubDirectory:(id)arg2;
 
 @end

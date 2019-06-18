@@ -22,6 +22,7 @@ __attribute__((visibility("hidden")))
     NSData *_bytes;
 }
 
++ (Class)classForKeyedUnarchiver;
 + (BOOL)supportsSecureCoding;
 @property(retain) NSURL *originalFileURL; // @synthesize originalFileURL=_originalFileURL;
 @property(readonly) NSUUID *UUID; // @synthesize UUID=_uuid;

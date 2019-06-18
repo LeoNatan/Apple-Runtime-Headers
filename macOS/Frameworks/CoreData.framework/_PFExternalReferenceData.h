@@ -30,6 +30,7 @@ __attribute__((visibility("hidden")))
     } _externalDataFlags;
 }
 
++ (Class)classForKeyedUnarchiver;
 + (BOOL)_releaseReservedMapFileDescriptor;
 + (BOOL)_reserveMapFileDescriptor;
 + (BOOL)_updateFileDescriptorsInUseReserveNew:(BOOL)arg1;

@@ -78,6 +78,10 @@
 - (BOOL)hasDebitPaymentPass;
 - (BOOL)hasCreditPaymentPass;
 - (BOOL)hasPaymentPass;
+- (void)performPasscodeUpgradeWithVisibleViewController:(id)arg1 isBuddy:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)noteProvisioningDidEndRequiringUpgradedPasscode;
+- (void)noteProvisioningDidStartRequiringUpgradedPasscode;
+- (void)enforceUpgradedPasscodePolicyIfNeededWithCompletion:(CDUnknownBlockType)arg1;
 @property(readonly, copy, nonatomic) NSArray *allCredentials;
 - (id)associatedCredentialsForDefaultBehaviour;
 - (void)removeDelegate:(id)arg1;
@@ -103,6 +107,7 @@
 - (unsigned long long)_noteProvisioningDidBegin;
 - (void)requestProvisioning:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)resolveProvisioningForCredential:(id)arg1;
+- (void)passcodeUpgradeCompleted:(BOOL)arg1;
 - (void)declineTerms;
 - (void)acceptTerms;
 - (void)_requestEligibility:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
@@ -134,7 +139,7 @@
 - (void)_associateCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)associateCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
 - (void)updateRemoteCredentials:(id)arg1 withCompletionHandler:(CDUnknownBlockType)arg2;
-- (void)retrieveAllAvaialbleCredentials:(CDUnknownBlockType)arg1;
+- (void)retrieveAllAvailableCredentials:(CDUnknownBlockType)arg1;
 - (id)_newSetupProductForFeatureIdentifier:(unsigned long long)arg1;
 - (void)setupFeatures:(CDUnknownBlockType)arg1;
 - (void)_addAccountToProductMatchingFeatureIdentifier:(unsigned long long)arg1;

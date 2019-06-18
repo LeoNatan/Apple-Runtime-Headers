@@ -19,6 +19,7 @@
     NSString *_routeUID;
 }
 
++ (BOOL)routeUID:(id)arg1 isEqualToRouteUID:(id)arg2;
 + (id)JSONKeyPathsByPropertyKey;
 + (BOOL)supportsSecureCoding;
 @property(readonly, nonatomic) BOOL isLocalDevice; // @synthesize isLocalDevice=_isLocalDevice;
@@ -26,6 +27,8 @@
 @property(readonly, copy, nonatomic) NSString *groupUID; // @synthesize groupUID=_groupUID;
 @property(readonly, copy, nonatomic) NSString *routeName; // @synthesize routeName=_routeName;
 - (void).cxx_destruct;
+- (id)findMatchingRoute:(id)arg1;
+- (BOOL)isEqualInRouteUIDs:(id)arg1;
 @property(readonly, nonatomic) NSString *displayName;
 - (id)initWithRouteUID:(id)arg1 groupUID:(id)arg2 routeName:(id)arg3 isLocalDevice:(BOOL)arg4;
 

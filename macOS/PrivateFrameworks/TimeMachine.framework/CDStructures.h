@@ -16,6 +16,15 @@ struct NodeCacheEntry {
     unsigned int :16;
 };
 
+struct TMBackupPathRanges {
+    struct _NSRange _field1;
+    struct _NSRange _field2;
+    struct _NSRange _field3;
+    struct _NSRange _field4;
+    struct _NSRange _field5;
+    char _field6;
+};
+
 struct _NSRange {
     unsigned long long _field1;
     unsigned long long _field2;
@@ -78,7 +87,8 @@ struct statfs {
     char f_fstypename[16];
     char f_mntonname[1024];
     char f_mntfromname[1024];
-    unsigned int f_reserved[8];
+    unsigned int f_flags_ext;
+    unsigned int f_reserved[7];
 };
 
 struct vector<NodeCacheEntry, std::__1::allocator<NodeCacheEntry>> {
@@ -90,11 +100,6 @@ struct vector<NodeCacheEntry, std::__1::allocator<NodeCacheEntry>> {
 };
 
 #pragma mark Typedef'd Structures
-
-typedef struct {
-    unsigned int _field1;
-    unsigned char _field2;
-} CDStruct_51293ebd;
 
 typedef struct {
     unsigned int _field1;
@@ -119,11 +124,6 @@ typedef struct {
     unsigned short _field7;
     unsigned short _field8;
 } CDStruct_b7969f8e;
-
-typedef struct {
-    unsigned long long _field1[32];
-    id _field2;
-} CDStruct_bcaf8faf;
 
 // Template types
 typedef struct vector<NodeCacheEntry, std::__1::allocator<NodeCacheEntry>> {

@@ -17,6 +17,7 @@ __attribute__((visibility("hidden")))
 
 - (id)_stringForLocationType:(unsigned long long)arg1;
 - (void)navigationSession:(id)arg1 didUpdateDestination:(id)arg2;
+- (void)navigationSession:(id)arg1 didFailRerouteWithError:(id)arg2;
 - (void)navigationSession:(id)arg1 didReroute:(id)arg2 withLocation:(id)arg3 withAlternateRoutes:(id)arg4;
 - (void)navigationSessionWillReroute:(id)arg1;
 - (void)navigationSession:(id)arg1 didUpdateDisplayETA:(id)arg2 displayRemainingMinutes:(unsigned long long)arg3 forRoute:(id)arg4;

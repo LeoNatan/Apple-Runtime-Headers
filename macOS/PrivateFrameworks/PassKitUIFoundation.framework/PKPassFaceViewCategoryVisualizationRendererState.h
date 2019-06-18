@@ -8,13 +8,14 @@
 
 @interface PKPassFaceViewCategoryVisualizationRendererState : PKPassFaceViewRendererState
 {
-    // Error parsing type: {?="startTime"d"bucketCount"Q"magnitudeForBucket"^f"colorForBucket"^"uniforms"{?="projectionMatrix"{?="columns"[4]}"motionMatrix"{?="columns"[4]}"data"}"singleCircle"{?="position""velocity""radius"f"scale"f"scaleTarget"f"created"f"color""matrix"{?="columns"[4]}}"circleCount"Q"circles"[80{?="position""velocity""radius"f"scale"f"scaleTarget"f"created"f"color""matrix"{?="columns"[4]}}]"categoryCount"Q"gravity""isEmptying"B"isAnimating"B}, name: _state
+    // Error parsing type: {?="startTime"d"bucketCount"Q"magnitudeForBucket"^d"colorForBucket"^"uniforms"{?="projectionMatrix"{?="columns"[4]}"motionMatrix"{?="columns"[4]}"data"}"singleCircle"{?="position""velocity""radius"f"scale"f"scaleTarget"f"created"f"color""matrix"{?="columns"[4]}}"circleCount"Q"circles"[88{?="position""velocity""radius"f"scale"f"scaleTarget"f"created"f"color""matrix"{?="columns"[4]}}]"categoryCount"Q"gravity""framesToRender"I"isAnimating"B}, name: _state
 }
 
 // Error parsing type for property state:
-// Property attributes: T{?=dQ^f^{?={?=[4]}{?=[4]}}{?=ffff{?=[4]}}Q[80{?=ffff{?=[4]}}]QBB},R,N,V_state
+// Property attributes: T{?=dQ^d^{?={?=[4]}{?=[4]}}{?=ffff{?=[4]}}Q[88{?=ffff{?=[4]}}]QIB},R,N,V_state
 
--     // Error parsing type: @9312@0:8{?=dQ^f^{?={?=[4]}{?=[4]}}{?=ffff{?=[4]}}Q[80{?=ffff{?=[4]}}]QBB}16, name: initWithCurrentRendererState:
+- (void)dealloc;
+-     // Error parsing type: @10208@0:8{?=dQ^d^{?={?=[4]}{?=[4]}}{?=ffff{?=[4]}}Q[88{?=ffff{?=[4]}}]QIB}16, name: initWithCurrentRendererState:
 
 @end
 

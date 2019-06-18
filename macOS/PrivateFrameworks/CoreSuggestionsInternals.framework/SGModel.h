@@ -8,11 +8,13 @@
 
 #import <CoreSuggestionsInternals/PMLPlistAndChunksSerializableProtocol-Protocol.h>
 
-@class NSString;
-@protocol PMLRegressionModelProtocol><PMLPlistAndChunksSerializableProtocol;
+@class NSString, SGModelSource;
+@protocol PMLRegressionModelProtocol><PMLPlistAndChunksSerializableProtocol, PMLTransformerProtocol;
 
 @interface SGModel : NSObject <PMLPlistAndChunksSerializableProtocol>
 {
+    id <PMLTransformerProtocol> _featurizer;
+    SGModelSource *_modelSource;
     id <PMLRegressionModelProtocol><PMLPlistAndChunksSerializableProtocol> _model;
     double _threshold;
     NSString *_locale;
@@ -21,10 +23,9 @@
 + (id)featurize:(id)arg1;
 + (id)modelForName:(id)arg1 language:(id)arg2 mode:(unsigned long long)arg3;
 + (id)modelForEntity:(id)arg1 type:(id)arg2 mode:(unsigned long long)arg3 language:(id)arg4 class:(Class)arg5;
-+ (id)temporaryKeyMap;
 + (id)newTransformerInstanceForLanguage:(id)arg1;
-+ (id)featuresOf:(id)arg1 inLanguage:(id)arg2 withObjective:(unsigned long long)arg3;
-+ (id)featuresOf:(id)arg1 inLanguage:(id)arg2;
++ (id)trainingFeaturesOf:(id)arg1 inLanguage:(id)arg2 withObjective:(unsigned long long)arg3;
++ (id)trainingFeaturesOf:(id)arg1 inLanguage:(id)arg2;
 + (Class)modelClassForObjective:(unsigned long long)arg1;
 + (id)transformerInstanceForLanguage:(id)arg1 withObjective:(unsigned long long)arg2;
 + (id)transformerInstanceForLanguage:(id)arg1;
@@ -35,11 +36,12 @@
 - (id)serialize;
 - (struct SGMSelfIdModelType_)metricsSelfIdModelType;
 - (struct SGMFoundInMailModelType_)metricsFoundInMailModelType;
-- (id)featuresOf:(id)arg1;
-- (id)predict:(id)arg1;
+- (id)trainingFeaturesOf:(id)arg1;
+- (id)predictForInput:(id)arg1;
+- (id)_predict:(id)arg1;
 - (id)toPlistWithChunks:(id)arg1;
 - (id)initWithPlist:(id)arg1 chunks:(id)arg2 context:(id)arg3;
-- (id)initWithModel:(id)arg1 decisionThreshold:(double)arg2 locale:(id)arg3;
+- (id)initWithModel:(id)arg1 decisionThreshold:(double)arg2 locale:(id)arg3 featurizer:(id)arg4 modelSource:(id)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

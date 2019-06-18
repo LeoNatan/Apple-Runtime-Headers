@@ -5,11 +5,12 @@
 //
 
 #import <RunningBoard/NSObject-Protocol.h>
+#import <RunningBoard/RBStateCapturing-Protocol.h>
 
 @class NSArray;
 @protocol RBProcessMonitoring;
 
-@protocol RBProcessMonitorObserving <NSObject>
+@protocol RBProcessMonitorObserving <NSObject, RBStateCapturing>
 - (void)processMonitor:(id <RBProcessMonitoring>)arg1 didChangeProcessStates:(NSArray *)arg2;
 @end
 

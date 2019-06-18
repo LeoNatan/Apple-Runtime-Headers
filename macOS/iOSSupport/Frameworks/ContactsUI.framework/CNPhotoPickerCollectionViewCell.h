@@ -17,11 +17,13 @@ __attribute__((visibility("hidden")))
     CAShapeLayer *_selectionLayer;
     UILabel *_captionLabel;
     UIView *_containerView;
+    UIView *_containerContentView;
 }
 
 + (struct CGPath *)selectionPathInBounds:(struct CGRect)arg1 forCellStyle:(unsigned long long)arg2;
 + (double)cornerRadiusForBounds:(struct CGRect)arg1 forCellStyle:(unsigned long long)arg2;
 + (id)cellIdentifier;
+@property(retain, nonatomic) UIView *containerContentView; // @synthesize containerContentView=_containerContentView;
 @property(retain, nonatomic) UIView *containerView; // @synthesize containerView=_containerView;
 @property(retain, nonatomic) UILabel *captionLabel; // @synthesize captionLabel=_captionLabel;
 @property(retain, nonatomic) CAShapeLayer *selectionLayer; // @synthesize selectionLayer=_selectionLayer;
@@ -30,10 +32,10 @@ __attribute__((visibility("hidden")))
 @property(nonatomic) BOOL displaySelection; // @synthesize displaySelection=_displaySelection;
 - (void).cxx_destruct;
 - (void)prepareForReuse;
-- (void)clearContainerView;
+- (void)clearContainerViewAnimated:(BOOL)arg1 withCompletion:(CDUnknownBlockType)arg2;
 - (void)setSelected:(BOOL)arg1;
 - (void)updateWithCaption:(id)arg1;
-- (void)updateWithView:(id)arg1;
+- (void)updateWithView:(id)arg1 animated:(BOOL)arg2;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

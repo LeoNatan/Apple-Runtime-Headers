@@ -11,6 +11,8 @@
 @interface NSDate (IC)
 - (BOOL)ic_isLaterThanDate:(id)arg1;
 - (BOOL)ic_isEarlierThanDate:(id)arg1;
+- (id)ic_briefFormattedDate:(BOOL)arg1;
+@property(readonly, nonatomic) NSString *ic_briefFormattedDateForAccessibility;
 @property(readonly, nonatomic) NSString *ic_briefFormattedDate;
 @property(readonly, nonatomic) NSString *ic_shortFormattedDate;
 @property(readonly, nonatomic) NSString *ic_localDateWithSeconds;

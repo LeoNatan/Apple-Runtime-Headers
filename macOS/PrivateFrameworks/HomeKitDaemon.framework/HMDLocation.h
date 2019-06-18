@@ -25,6 +25,7 @@
     NSMapTable *_regionStateDelegatesByRegionIdentifier;
     NSMapTable *_pendingRegionMonitoringRequests;
     NSMapTable *_pendingRegionCallbacks;
+    NSMapTable *_regionStates;
     NSMutableArray *_batchLocationTuples;
     HMFTimer *_extractBatchLocationsTimer;
     NSDate *_lastFetchBatchLocationsTime;
@@ -47,6 +48,7 @@
 @property(retain, nonatomic) HMFTimer *extractBatchLocationsTimer; // @synthesize extractBatchLocationsTimer=_extractBatchLocationsTimer;
 @property(readonly, nonatomic) NSMutableArray *batchLocationTuples; // @synthesize batchLocationTuples=_batchLocationTuples;
 @property(nonatomic) BOOL beingConfigured; // @synthesize beingConfigured=_beingConfigured;
+@property(readonly, nonatomic) NSMapTable *regionStates; // @synthesize regionStates=_regionStates;
 @property(readonly, nonatomic) NSMapTable *pendingRegionCallbacks; // @synthesize pendingRegionCallbacks=_pendingRegionCallbacks;
 @property(readonly, nonatomic) NSMapTable *pendingRegionMonitoringRequests; // @synthesize pendingRegionMonitoringRequests=_pendingRegionMonitoringRequests;
 @property(readonly, nonatomic) NSMapTable *regionStateDelegatesByRegionIdentifier; // @synthesize regionStateDelegatesByRegionIdentifier=_regionStateDelegatesByRegionIdentifier;
@@ -58,8 +60,7 @@
 @property(nonatomic) int locationAuthorized; // @synthesize locationAuthorized=_locationAuthorized;
 @property(retain, nonatomic) HMFMessageDispatcher *msgDispatcher; // @synthesize msgDispatcher=_msgDispatcher;
 - (void).cxx_destruct;
-- (void)locationManager:(id)arg1 didExitRegion:(id)arg2;
-- (void)locationManager:(id)arg1 didEnterRegion:(id)arg2;
+- (void)locationManager:(id)arg1 didDetermineState:(long long)arg2 forRegion:(id)arg3;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;

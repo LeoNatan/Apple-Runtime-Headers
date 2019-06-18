@@ -99,7 +99,7 @@
 - (BOOL)_startVideoCapture;
 - (void)_setCameraFlashMode:(long long)arg1;
 - (long long)_cameraFlashMode;
-- (void)_updateShutterButtonForCurrentState;
+- (void)_updateCaptureButtonForCurrentState;
 - (void)_setCameraCaptureMode:(long long)arg1;
 - (long long)_cameraCaptureMode;
 - (void)_setCameraDevice:(long long)arg1;

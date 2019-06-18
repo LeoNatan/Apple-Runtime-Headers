@@ -6,28 +6,32 @@
 
 #import <UIKitCore/UIView.h>
 
-@class FBScene, NSSet, UIScenePresentationContext;
+#import <UIKitCore/FBSceneLayerManagerObserver-Protocol.h>
+
+@class FBSSceneSettings, FBScene, NSMutableOrderedSet, NSMutableSet, NSSet, NSString, UIScenePresentationContext;
 @protocol _UISceneLayerHostContainerViewDataSource;
 
 __attribute__((visibility("hidden")))
-@interface _UISceneLayerHostContainerView : UIView
+@interface _UISceneLayerHostContainerView : UIView <FBSceneLayerManagerObserver>
 {
-    UIScenePresentationContext *_presentationContext;
-    id <_UISceneLayerHostContainerViewDataSource> _dataSource;
     FBScene *_scene;
-    NSSet *_hostedLayers;
-    NSSet *_nonHostedLayers;
+    id <_UISceneLayerHostContainerViewDataSource> _dataSource;
+    NSMutableOrderedSet *_hostViews;
+    NSMutableOrderedSet *_hostedLayers;
+    NSMutableSet *_hiddenLayers;
+    FBSSceneSettings *_effectiveSceneSettings;
+    UIScenePresentationContext *_presentationContext;
 }
 
-@property(readonly, nonatomic) NSSet *nonHostedLayers; // @synthesize nonHostedLayers=_nonHostedLayers;
-@property(readonly, nonatomic) NSSet *hostedLayers; // @synthesize hostedLayers=_hostedLayers;
 @property(readonly, nonatomic) __weak FBScene *scene; // @synthesize scene=_scene;
 @property(readonly, nonatomic) __weak id <_UISceneLayerHostContainerViewDataSource> dataSource; // @synthesize dataSource=_dataSource;
 - (void).cxx_destruct;
 - (id)_presentationContextForLayer:(id)arg1;
 - (void)_updateRenderingMode;
 - (void)_rebuildLayersForReason:(id)arg1;
+- (id)_filteredLayersToPresent;
 - (void)_adjustHostViewFrameAlignment:(id)arg1;
+- (id)_createHostViewForLayer:(id)arg1;
 - (void)_toggleClippingDisabledWithNewContext:(id)arg1;
 - (void)_presentationContextChangedFrom:(id)arg1 toContext:(id)arg2 force:(BOOL)arg3;
 - (void)_setPresentationContext:(id)arg1;
@@ -37,17 +41,27 @@ __attribute__((visibility("hidden")))
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
-- (id)debugDescription;
-- (id)description;
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+- (void)sceneLayerManager:(id)arg1 didRepositionLayer:(id)arg2 fromIndex:(unsigned long long)arg3 toIndex:(unsigned long long)arg4;
 - (id)window;
 - (id)_hitTest:(struct CGPoint)arg1 withEvent:(id)arg2 windowServerHitTestWindow:(id)arg3;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (void)updateForGeometrySettingsChanges:(id)arg1;
 - (void)refreshDataSource:(id)arg1;
 - (void)popDataSource:(id)arg1;
 - (void)pushDataSource:(id)arg1;
+@property(readonly, nonatomic) NSSet *nonHostedLayers;
+@property(readonly, nonatomic) NSSet *hostedLayers;
+- (void)dealloc;
+- (id)initWithScene:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)init;
+
+// Remaining properties
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

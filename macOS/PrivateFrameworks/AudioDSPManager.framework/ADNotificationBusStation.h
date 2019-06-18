@@ -6,6 +6,7 @@
 
 #import <objc/NSObject.h>
 
+__attribute__((visibility("hidden")))
 @interface ADNotificationBusStation : NSObject
 {
     shared_ptr_ea97fd03 _station;

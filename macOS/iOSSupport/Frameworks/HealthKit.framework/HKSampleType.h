@@ -13,7 +13,10 @@
 + (id)medicalRecordTypes;
 - (id)_earliestAllowedStartDateForSampleOverlappingDate:(id)arg1;
 - (BOOL)_validateMetadata:(id)arg1 sample:(id)arg2 error:(id *)arg3;
-@property(readonly, nonatomic) BOOL isDurationRestricted;
+@property(readonly, nonatomic) BOOL isMaximumDurationRestricted;
+@property(readonly, nonatomic) BOOL isMinimumDurationRestricted;
+- (double)_minimumAllowedDuration;
+@property(readonly, nonatomic) double minimumAllowedDuration;
 - (double)_maximumAllowedDuration;
 @property(readonly, nonatomic) double maximumAllowedDuration;
 

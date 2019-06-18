@@ -40,6 +40,7 @@
 @property(readonly, nonatomic) double visualOriginYOffset;
 @property(nonatomic) BOOL showsHairlineSeperator;
 @property(nonatomic) BOOL showsGrabberPill;
+- (void)updateIconImageView:(id)arg1;
 - (void)layoutSubviews;
 - (id)initWithFrame:(struct CGRect)arg1;
 

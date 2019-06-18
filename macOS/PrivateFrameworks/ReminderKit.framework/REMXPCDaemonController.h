@@ -18,6 +18,7 @@
     REMStoreContainerToken *_storeContainerToken;
 }
 
++ (id)userInteractiveDaemonController;
 + (id)weakSharedInstance;
 @property(retain, nonatomic) REMStoreContainerToken *storeContainerToken; // @synthesize storeContainerToken=_storeContainerToken;
 @property(retain, nonatomic) NSXPCConnection *xpcConnection; // @synthesize xpcConnection=_xpcConnection;
@@ -39,12 +40,14 @@
 - (id)syncStorePerformerWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)syncDebugPerformerWithErrorHandler:(CDUnknownBlockType)arg1;
 - (id)syncChangeTrackingPerformerWithErrorHandler:(CDUnknownBlockType)arg1;
+@property(readonly, copy) NSString *description;
+- (void)dealloc;
 - (id)init;
 - (id)initWithStoreContainerToken:(id)arg1;
+- (id)initWithStoreContainerToken:(id)arg1 userInteractive:(BOOL)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;
-@property(readonly, copy) NSString *description;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

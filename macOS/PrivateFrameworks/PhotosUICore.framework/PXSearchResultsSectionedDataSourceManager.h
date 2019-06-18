@@ -46,9 +46,8 @@
 @property(readonly, nonatomic) BOOL resultsReady;
 - (void)mergePendingChanges;
 - (void)verifySearchDataSourceDidLoad;
-- (void)_prepareDataSource;
+- (void)prepareDataSourceWithCompletion:(CDUnknownBlockType)arg1;
 - (id)initWithSearchSectionedDataSource:(id)arg1;
-- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

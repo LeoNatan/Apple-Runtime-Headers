@@ -6,21 +6,25 @@
 
 #import <UIKit/UIControl.h>
 
-@class UILabel;
-
 @interface ASAuthorizationAppleIDButton : UIControl
 {
-    UILabel *_titleLabel;
+    struct UILabel *_titleLabel;
     long long _type;
     long long _style;
-    double _cornerRadius;
 }
 
 + (id)buttonWithType:(long long)arg1 style:(long long)arg2;
-@property(nonatomic) double cornerRadius; // @synthesize cornerRadius=_cornerRadius;
 - (void).cxx_destruct;
+- (struct UIColor *)_borderColorForButton;
+- (struct UIColor *)_highlightedBackgroundColorForButton;
+- (struct UIColor *)_defaultBackgroundColorForButton;
+- (struct UIColor *)_textColorForButton;
+- (id)_attributedTitleForButton;
+- (id)_titleForButton;
+- (struct UIFont *)_fontForButtonLogo;
+- (struct UIFont *)_fontForButton;
 - (void)setHighlighted:(BOOL)arg1;
-- (id)titleForButton;
+@property(nonatomic) double cornerRadius;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

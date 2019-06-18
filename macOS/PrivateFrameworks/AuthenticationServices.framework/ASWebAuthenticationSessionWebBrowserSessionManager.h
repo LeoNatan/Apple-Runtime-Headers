@@ -19,6 +19,7 @@
 @property(retain, nonatomic) id <ASWebAuthenticationSessionWebBrowserSessionHandling> sessionHandler; // @synthesize sessionHandler=_sessionHandler;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL wasLaunchedByAuthenticationServices;
+- (void)_fetchNextAvailableRequest;
 - (void)_handleAuthenticationSessionsAvailableEvent:(id)arg1 withReplyEvent:(id)arg2;
 - (void)_beginListeningForAuthenticationSessionRequests;
 

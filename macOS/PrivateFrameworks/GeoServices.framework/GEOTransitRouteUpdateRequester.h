@@ -27,7 +27,7 @@
 @property(readonly, nonatomic) NSHashTable *updaters; // @synthesize updaters=_updaters;
 - (void).cxx_destruct;
 - (void)_removeRequestsIfApplicable:(id)arg1;
-- (void)_handleUpdates:(id)arg1 error:(id)arg2 forRequest:(id)arg3;
+- (void)_handleResponse:(id)arg1 andError:(id)arg2 forRequest:(id)arg3;
 - (id)_uuidsForRequests:(id)arg1;
 - (void)_sendRequestForRequests:(id)arg1;
 - (id)_requestsForUpdaters:(id)arg1;

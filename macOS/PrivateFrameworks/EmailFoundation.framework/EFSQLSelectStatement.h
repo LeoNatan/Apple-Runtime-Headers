@@ -7,12 +7,12 @@
 #import <objc/NSObject.h>
 
 #import <EmailFoundation/EFSQLExpressable-Protocol.h>
-#import <EmailFoundation/EFSQLJoinable-Protocol.h>
+#import <EmailFoundation/EFSQLSelectComponent-Protocol.h>
 
 @class NSArray, NSMutableArray, NSString;
 @protocol EFSQLExpressable;
 
-@interface EFSQLSelectStatement : NSObject <EFSQLExpressable, EFSQLJoinable>
+@interface EFSQLSelectStatement : NSObject <EFSQLExpressable, EFSQLSelectComponent>
 {
     BOOL _distinct;
     id <EFSQLExpressable> _where;
@@ -41,8 +41,12 @@
 - (void)groupByColumn:(id)arg1 fromTable:(id)arg2;
 - (void)groupByColumn:(id)arg1;
 - (void)groupBy:(id)arg1;
+- (id)leftOuterJoin:(id)arg1 alias:(id)arg2 sourceColumn:(id)arg3 targetColumn:(id)arg4;
+- (id)join:(id)arg1 alias:(id)arg2 sourceColumn:(id)arg3 targetColumn:(id)arg4;
 - (id)leftOuterJoin:(id)arg1 sourceColumn:(id)arg2 targetColumn:(id)arg3;
 - (id)join:(id)arg1 sourceColumn:(id)arg2 targetColumn:(id)arg3;
+- (id)leftOuterJoin:(id)arg1 alias:(id)arg2 on:(id)arg3;
+- (id)join:(id)arg1 alias:(id)arg2 on:(id)arg3;
 - (id)leftOuterJoin:(id)arg1 on:(id)arg2;
 - (id)join:(id)arg1 on:(id)arg2;
 - (void)addResultColumn:(id)arg1 fromTable:(id)arg2;

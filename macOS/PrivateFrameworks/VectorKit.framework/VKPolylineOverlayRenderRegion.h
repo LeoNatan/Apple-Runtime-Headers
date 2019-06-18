@@ -11,7 +11,6 @@ __attribute__((visibility("hidden")))
 {
     set_8caf8a88 _routeLineDatas;
     Box_3d7e3c2c _visibleRect;
-    struct vector<geo::MercatorTile, std::__1::allocator<geo::MercatorTile>> _snappedTileKeys;
     struct MultiRectRegion _snappingRegion;
 }
 
@@ -21,7 +20,7 @@ __attribute__((visibility("hidden")))
 - (void).cxx_destruct;
 - (BOOL)isEquivalentToNewRegion:(id)arg1;
 - (const struct MultiRectRegion *)snappingRegion;
-- (id)initForKeysInView:(const unordered_set_1129f115 *)arg1 layerDatas:(const set_e712f9e3 *)arg2 allowsSnapping:(BOOL)arg3;
+- (id)initForVisibleRect:(const Box_3d7e3c2c *)arg1 snappingRegion:(const struct MultiRectRegion *)arg2 routeLineDatas:(const set_8caf8a88 *)arg3;
 
 @end
 

@@ -20,6 +20,7 @@
 - (void)main;
 - (void)_finishedDownloadingLocator:(id)arg1 withError:(id)arg2;
 - (void)_setupCreatedItemForRoot:(id)arg1;
+- (void)sendPastUpdatesToClient:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithActionInfo:(id)arg1 request:(id)arg2 server:(id)arg3;
 - (id)downloadInfo;

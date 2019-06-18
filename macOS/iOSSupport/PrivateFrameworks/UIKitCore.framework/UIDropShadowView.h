@@ -6,25 +6,29 @@
 
 #import <UIKitCore/UIView.h>
 
-@class NSArray;
+@class NSArray, UIImageView, _UIGrabber;
 
 __attribute__((visibility("hidden")))
 @interface UIDropShadowView : UIView
 {
     BOOL _masksTopCornersOnly;
-    BOOL _supportsShadow;
+    BOOL _supportsShadowAndGrabber;
     UIView *_contentView;
     UIView *_overlayView;
     long long _independentCorners;
     UIView *_firstCornerClippingDescendant;
     NSArray *_cornerClippingDescendants;
+    _UIGrabber *_grabber;
+    UIImageView *__rimTreatment;
     struct UIRectCornerRadii _environmentMatchingCornerRadii;
 }
 
+@property(retain, nonatomic) UIImageView *_rimTreatment; // @synthesize _rimTreatment=__rimTreatment;
+@property(readonly, nonatomic) _UIGrabber *grabber; // @synthesize grabber=_grabber;
 @property(readonly, nonatomic) NSArray *cornerClippingDescendants; // @synthesize cornerClippingDescendants=_cornerClippingDescendants;
 @property(readonly, nonatomic) __weak UIView *firstCornerClippingDescendant; // @synthesize firstCornerClippingDescendant=_firstCornerClippingDescendant;
 @property(readonly, nonatomic) long long independentCorners; // @synthesize independentCorners=_independentCorners;
-@property(readonly, nonatomic) BOOL supportsShadow; // @synthesize supportsShadow=_supportsShadow;
+@property(readonly, nonatomic) BOOL supportsShadowAndGrabber; // @synthesize supportsShadowAndGrabber=_supportsShadowAndGrabber;
 @property(nonatomic) BOOL masksTopCornersOnly; // @synthesize masksTopCornersOnly=_masksTopCornersOnly;
 @property(retain, nonatomic) UIView *overlayView; // @synthesize overlayView=_overlayView;
 @property(retain, nonatomic) UIView *contentView; // @synthesize contentView=_contentView;
@@ -33,8 +37,11 @@ __attribute__((visibility("hidden")))
 - (void)didFinishRotation;
 - (void)willBeginRotationWithOriginalBounds:(struct CGRect)arg1 newBounds:(struct CGRect)arg2;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)setGrabberAlpha:(double)arg1;
 @property(readonly, nonatomic) UIView *deepestClippingView;
-- (id)initWithFrame:(struct CGRect)arg1 independentCorners:(long long)arg2 supportsShadow:(BOOL)arg3;
+- (void)_updateRimTreatment;
+- (void)traitCollectionDidChange:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1 independentCorners:(long long)arg2 supportsShadowAndGrabber:(BOOL)arg3;
 
 @end
 

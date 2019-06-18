@@ -47,7 +47,7 @@
     char *_sr_rqsigp;
     unsigned long long _sr_rspasyncid;
     unsigned long long _sr_rspsessionid;
-    // Error parsing type: ^{smb_session={_opaque_pthread_mutex_t=q[56c]}ISSSIIII[16C]SI^{gss_ctx_id_t_desc_struct}^{gss_cred_id_t_desc_struct}{gss_buffer_desc_struct=Q^v}{gss_buffer_desc_struct=Q^v}II[16C]SS[8S]*I*IQQQQQQ*{_opaque_pthread_mutex_t=q[56c]}AQAIAIAIAi{_opaque_pthread_cond_t=q[40c]}IQ}, name: _sr_sessionp
+    // Error parsing type: ^{smb_session={_opaque_pthread_mutex_t=q[56c]}ISSSIIII[16C]SI^{gss_ctx_id_t_desc_struct}^{gss_cred_id_t_desc_struct}{gss_buffer_desc_struct=Q^v}{gss_buffer_desc_struct=Q^v}II[16C]SS[8S]*I*I[16C]I[16C]IQQQQQQQQ*{_opaque_pthread_mutex_t=q[56c]}AQAIAIAIAi{_opaque_pthread_cond_t=q[40c]}IQ}, name: _sr_sessionp
     SMB_rq *_sr_next_rqp;
     CDUnknownBlockType _sr_callback;
     NSData *_writeData;
@@ -62,7 +62,7 @@
 @property(retain) SMB_rq *sr_next_rqp; // @synthesize sr_next_rqp=_sr_next_rqp;
 @property unsigned int sr_ntstatus; // @synthesize sr_ntstatus=_sr_ntstatus;
 // Error parsing type for property sr_sessionp:
-// Property attributes: T^{smb_session={_opaque_pthread_mutex_t=q[56c]}ISSSIIII[16C]SI^{gss_ctx_id_t_desc_struct}^{gss_cred_id_t_desc_struct}{gss_buffer_desc_struct=Q^v}{gss_buffer_desc_struct=Q^v}II[16C]SS[8S]*I*IQQQQQQ*{_opaque_pthread_mutex_t=q[56c]}AQAIAIAIAi{_opaque_pthread_cond_t=q[40c]}IQ},V_sr_sessionp
+// Property attributes: T^{smb_session={_opaque_pthread_mutex_t=q[56c]}ISSSIIII[16C]SI^{gss_ctx_id_t_desc_struct}^{gss_cred_id_t_desc_struct}{gss_buffer_desc_struct=Q^v}{gss_buffer_desc_struct=Q^v}II[16C]SS[8S]*I*I[16C]I[16C]IQQQQQQQQ*{_opaque_pthread_mutex_t=q[56c]}AQAIAIAIAi{_opaque_pthread_cond_t=q[40c]}IQ},V_sr_sessionp
 
 @property int replyError; // @synthesize replyError=_replyError;
 @property unsigned long long sr_rspsessionid; // @synthesize sr_rspsessionid=_sr_rspsessionid;

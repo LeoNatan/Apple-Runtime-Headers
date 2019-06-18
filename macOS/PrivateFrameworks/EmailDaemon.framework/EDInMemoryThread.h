@@ -31,7 +31,7 @@
 - (void).cxx_destruct;
 - (id)_dateSortedMessages;
 - (void)_recalculateDisplayMessage;
-- (id)_combinedMailboxObjectIDs;
+- (id)_combinedMailboxes;
 - (BOOL)_combinedHasAttachments;
 - (BOOL)_combinedIsBlocked;
 - (BOOL)_combinedIsVIP;

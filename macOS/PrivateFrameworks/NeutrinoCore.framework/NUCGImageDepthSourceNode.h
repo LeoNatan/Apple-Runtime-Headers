@@ -25,6 +25,7 @@
 - (long long)sourceOrientation;
 - (CDStruct_912cb5d2)pixelSizeWithSourceOptions:(id)arg1;
 - (id)pipelineOptionsForPipelineState:(id)arg1 error:(out id *)arg2;
+- (id)_evaluateAuxiliaryImageForType:(long long)arg1 error:(out id *)arg2;
 - (id)initWithSourceNode:(id)arg1 auxiliaryImageProperties:(id)arg2;
 - (id)initWithSettings:(id)arg1;
 

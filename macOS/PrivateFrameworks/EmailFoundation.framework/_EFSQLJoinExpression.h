@@ -7,30 +7,39 @@
 #import <objc/NSObject.h>
 
 #import <EmailFoundation/EFSQLExpressable-Protocol.h>
-#import <EmailFoundation/EFSQLJoinable-Protocol.h>
+#import <EmailFoundation/EFSQLSelectComponent-Protocol.h>
 
 @class EFSQLSelectStatement, NSString;
 @protocol EFSQLExpressable;
 
-@interface _EFSQLJoinExpression : NSObject <EFSQLExpressable, EFSQLJoinable>
+@interface _EFSQLJoinExpression : NSObject <EFSQLExpressable, EFSQLSelectComponent>
 {
     BOOL _isLeftOuter;
     EFSQLSelectStatement *_select;
     NSString *_tableName;
+    NSString *_tableAlias;
     id <EFSQLExpressable> _joinConstraint;
 }
 
 @property(readonly, nonatomic) BOOL isLeftOuter; // @synthesize isLeftOuter=_isLeftOuter;
 @property(readonly, nonatomic) id <EFSQLExpressable> joinConstraint; // @synthesize joinConstraint=_joinConstraint;
+@property(readonly, copy, nonatomic) NSString *tableAlias; // @synthesize tableAlias=_tableAlias;
 @property(readonly, copy, nonatomic) NSString *tableName; // @synthesize tableName=_tableName;
 @property(readonly, nonatomic) __weak EFSQLSelectStatement *select; // @synthesize select=_select;
 - (void).cxx_destruct;
+- (void)orderByColumn:(id)arg1 ascending:(BOOL)arg2;
+- (void)groupByColumn:(id)arg1;
+- (void)addResultColumn:(id)arg1;
+- (id)leftOuterJoin:(id)arg1 alias:(id)arg2 sourceColumn:(id)arg3 targetColumn:(id)arg4;
+- (id)join:(id)arg1 alias:(id)arg2 sourceColumn:(id)arg3 targetColumn:(id)arg4;
 - (id)leftOuterJoin:(id)arg1 sourceColumn:(id)arg2 targetColumn:(id)arg3;
 - (id)join:(id)arg1 sourceColumn:(id)arg2 targetColumn:(id)arg3;
+- (id)leftOuterJoin:(id)arg1 alias:(id)arg2 on:(id)arg3;
+- (id)join:(id)arg1 alias:(id)arg2 on:(id)arg3;
 - (id)leftOuterJoin:(id)arg1 on:(id)arg2;
 - (id)join:(id)arg1 on:(id)arg2;
 @property(readonly, copy, nonatomic) NSString *ef_SQLExpression;
-- (id)initWithSelect:(id)arg1 tableName:(id)arg2 joinConstraint:(id)arg3 isLeftOuter:(BOOL)arg4;
+- (id)initWithSelect:(id)arg1 tableName:(id)arg2 tableAlias:(id)arg3 joinConstraint:(id)arg4 isLeftOuter:(BOOL)arg5;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

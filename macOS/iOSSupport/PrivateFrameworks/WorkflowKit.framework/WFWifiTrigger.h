@@ -18,11 +18,12 @@
 + (id)localizedDisplayName;
 @property(retain, nonatomic) NSArray *selectedNetworks; // @synthesize selectedNetworks=_selectedNetworks;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)localizedTitleWithConfigurationSummary;
 - (BOOL)hasValidConfiguration;
+- (id)init;
 
 @end
 

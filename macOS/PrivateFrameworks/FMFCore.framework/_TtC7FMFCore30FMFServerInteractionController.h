@@ -11,6 +11,7 @@
     // Error parsing type: , name: udpatesHandler
     // Error parsing type: , name: authenticationProvider
     // Error parsing type: , name: serverInteractionQueue
+    // Error parsing type: , name: networkInitializationCompleted
     // Error parsing type: , name: delegate
     // Error parsing type: , name: alertDelegate
     // Error parsing type: , name: serverContext

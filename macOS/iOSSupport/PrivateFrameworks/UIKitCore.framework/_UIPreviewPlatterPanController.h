@@ -23,19 +23,23 @@ __attribute__((visibility("hidden")))
     unsigned long long _initialDetentIndex;
     unsigned long long _attachmentEdge;
     unsigned long long _rubberbandingEdges;
+    double _spacing;
     UIView *_containerView;
     UIView *_platterView;
     UIView *_actionsView;
     _UIVelocityIntegrator *_velocityIntegrator;
     struct CGPoint _originalPlatterCenter;
+    struct CGPoint _originalActionsCenter;
 }
 
 @property(retain, nonatomic) _UIVelocityIntegrator *velocityIntegrator; // @synthesize velocityIntegrator=_velocityIntegrator;
 @property(nonatomic) __weak UIView *actionsView; // @synthesize actionsView=_actionsView;
 @property(nonatomic) __weak UIView *platterView; // @synthesize platterView=_platterView;
 @property(nonatomic) __weak UIView *containerView; // @synthesize containerView=_containerView;
+@property(nonatomic) double spacing; // @synthesize spacing=_spacing;
 @property(nonatomic) unsigned long long rubberbandingEdges; // @synthesize rubberbandingEdges=_rubberbandingEdges;
 @property(nonatomic) unsigned long long attachmentEdge; // @synthesize attachmentEdge=_attachmentEdge;
+@property(nonatomic) struct CGPoint originalActionsCenter; // @synthesize originalActionsCenter=_originalActionsCenter;
 @property(nonatomic) struct CGPoint originalPlatterCenter; // @synthesize originalPlatterCenter=_originalPlatterCenter;
 @property(nonatomic) unsigned long long initialDetentIndex; // @synthesize initialDetentIndex=_initialDetentIndex;
 @property(retain, nonatomic) NSArray *detents; // @synthesize detents=_detents;

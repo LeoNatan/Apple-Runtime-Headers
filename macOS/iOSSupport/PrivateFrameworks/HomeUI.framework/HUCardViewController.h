@@ -11,7 +11,7 @@
 #import <HomeUI/UIGestureRecognizerDelegate-Protocol.h>
 #import <HomeUI/UIScrollViewDelegate-Protocol.h>
 
-@class HFItem, HUQuickControlContainerViewController, HUQuickControlSummaryNavigationBarTitleView, HUQuickControlViewControllerCoordinator, NSMutableArray, NSString, UILayoutGuide, UIPanGestureRecognizer, UIScrollView;
+@class HFItem, HUQuickControlContainerViewController, HUQuickControlSummaryNavigationBarTitleView, HUQuickControlViewControllerCoordinator, NSMutableArray, NSString, UIColor, UILayoutGuide, UIPanGestureRecognizer, UIScrollView;
 @protocol HUCardViewControllerDelegate;
 
 @interface HUCardViewController : UIViewController <HFItemManagerDelegate, UIGestureRecognizerDelegate, HUQuickControlViewControllerCoordinatorDelegate, UIScrollViewDelegate>
@@ -24,10 +24,11 @@
     UIViewController *_settingsViewController;
     HFItem *_sourceItem;
     id <HUCardViewControllerDelegate> _delegate;
+    UIColor *_backgroundColor;
     UIScrollView *_scrollView;
-    NSMutableArray *_constraints;
     HUQuickControlSummaryNavigationBarTitleView *_navigationBarTitleView;
     HUQuickControlViewControllerCoordinator *_viewControllerCoordinator;
+    NSMutableArray *_constraints;
     UIPanGestureRecognizer *_panGestureRecognizer;
     UILayoutGuide *_quickControlLayoutGuide;
 }
@@ -35,10 +36,11 @@
 @property(nonatomic) BOOL reachable; // @synthesize reachable=_reachable;
 @property(retain, nonatomic) UILayoutGuide *quickControlLayoutGuide; // @synthesize quickControlLayoutGuide=_quickControlLayoutGuide;
 @property(retain, nonatomic) UIPanGestureRecognizer *panGestureRecognizer; // @synthesize panGestureRecognizer=_panGestureRecognizer;
+@property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) HUQuickControlViewControllerCoordinator *viewControllerCoordinator; // @synthesize viewControllerCoordinator=_viewControllerCoordinator;
 @property(retain, nonatomic) HUQuickControlSummaryNavigationBarTitleView *navigationBarTitleView; // @synthesize navigationBarTitleView=_navigationBarTitleView;
-@property(retain, nonatomic) NSMutableArray *constraints; // @synthesize constraints=_constraints;
 @property(retain, nonatomic) UIScrollView *scrollView; // @synthesize scrollView=_scrollView;
+@property(retain, nonatomic) UIColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;
 @property(nonatomic) BOOL disablePullToUnlockSettings; // @synthesize disablePullToUnlockSettings=_disablePullToUnlockSettings;
 @property(nonatomic) BOOL hideSettings; // @synthesize hideSettings=_hideSettings;
 @property(nonatomic) BOOL hideControls; // @synthesize hideControls=_hideControls;

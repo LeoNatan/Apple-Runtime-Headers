@@ -20,8 +20,6 @@
     // Error parsing type: , name: sections
     // Error parsing type: , name: expandedUpdates
     // Error parsing type: , name: appStateControllerReady
-    // Error parsing type: , name: viewUpdateQueue
-    // Error parsing type: , name: refreshUpdatesWorkItem
     // Error parsing type: , name: transitionQueue
     // Error parsing type: , name: currentTransitionContext
     // Error parsing type: , name: numberFormatter

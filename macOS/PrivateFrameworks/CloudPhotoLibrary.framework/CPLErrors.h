@@ -11,6 +11,7 @@
 }
 
 + (id)errorsForIdentifiers:(id)arg1 error:(id)arg2;
++ (id)unsafeResources:(id)arg1 withError:(id)arg2 realPrune:(BOOL)arg3 resourceStorage:(id)arg4;
 + (id)unsafeResources:(id)arg1 withError:(id)arg2 resourceStorage:(id)arg3;
 + (id)sessionHasBeenDeferredError;
 + (id)missingError;

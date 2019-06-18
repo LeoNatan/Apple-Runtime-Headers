@@ -8,12 +8,14 @@
 
 #import <PhotosUI/NSCopying-Protocol.h>
 
-@class NSString;
+@class NSCountedSet, NSString;
 
 __attribute__((visibility("hidden")))
 @interface PUPhotoPickerResizeTaskDescriptor : NSObject <NSCopying>
 {
     NSString *_formatString;
+    NSCountedSet *_cachedAssetsIdentifiersForEstimation;
+    unsigned long long _cachedSizeEstimate;
     struct CGSize _targetSize;
 }
 
@@ -27,6 +29,7 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)appliesToAsset:(id)arg1;
+- (unsigned long long)estimatedSizeForAssets:(id)arg1;
 - (id)localizedDescriptionForAssets:(id)arg1;
 - (id)initWithLocalizedDescriptionFormatString:(id)arg1 targetSize:(struct CGSize)arg2;
 

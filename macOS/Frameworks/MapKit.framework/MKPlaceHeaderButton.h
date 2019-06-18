@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)applyButtonDefaultConfiguration;
 - (void)infoCardThemeChanged;
 - (void)_contentSizeDidChange;
+- (void)_setVibrantView;
 - (id)initWithPrimaryType:(unsigned long long)arg1;
 - (id)init;
 

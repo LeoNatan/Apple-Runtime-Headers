@@ -11,12 +11,13 @@
 #import <ContactsUI/CNAvatarViewDelegate-Protocol.h>
 #import <ContactsUI/CNContactDetailsViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNContactNameViewControllerDelegate-Protocol.h>
+#import <ContactsUI/CNEditAutorizationViewControllerDelegate-Protocol.h>
 #import <ContactsUI/CNUIShareKitTransitionProvider-Protocol.h>
 
-@class ABAddressBook, ABCardViewSaveHelper, ABCardViewStyleProvider, ABCardViewUndoableDataSource, ABCommandExecutor, ABPerson, AKCardViewDataSource, AKCardViewDataSourceFactory, CNContact, CNContactCardViewControlContext, CNContactCardViewControllerABPersonViewMediator, CNContactCardViewControllerDataSourceDelegate, CNContactCardViewControllerWidgetProviderDelegate, CNContactCardWidgetProvider, CNContactPersistenceHelper, CNContactStore, CNUIMeContactMonitor, CNUIUserActionListDataSource, NSArray, NSColor, NSMutableDictionary, NSSet, NSStackView, NSString, NSTextField, NSUndoManager;
+@class ABAddressBook, ABCardViewSaveHelper, ABCardViewStyleProvider, ABCardViewUndoableDataSource, ABCommandExecutor, ABPerson, AKCardViewDataSource, AKCardViewDataSourceFactory, CNContact, CNContactCardViewControlContext, CNContactCardViewControllerABPersonViewMediator, CNContactCardViewControllerDataSourceDelegate, CNContactCardViewControllerWidgetProviderDelegate, CNContactCardWidgetProvider, CNContactPersistenceHelper, CNContainer, CNUIEnvironment, CNUIMeContactMonitor, CNUIUserActionListDataSource, NSArray, NSColor, NSMutableDictionary, NSSet, NSStackView, NSString, NSTextField, NSUndoManager;
 @protocol CNCancelable, CNContactCardViewControllerDelegate, CNContactCardViewControllerLogger, CNContactCardViewRefreshStrategy, CNInhibitor, CNSchedulerProvider;
 
-@interface CNContactCardViewController : NSViewController <CNContactDetailsViewControllerDelegate, CNContactNameViewControllerDelegate, AKCardViewDataSourceSupport, ABCardViewDelegate, CNAvatarViewDelegate, CNUIShareKitTransitionProvider>
+@interface CNContactCardViewController : NSViewController <CNContactDetailsViewControllerDelegate, CNContactNameViewControllerDelegate, AKCardViewDataSourceSupport, ABCardViewDelegate, CNAvatarViewDelegate, CNEditAutorizationViewControllerDelegate, CNUIShareKitTransitionProvider>
 {
     BOOL _editable;
     BOOL _selectable;
@@ -43,7 +44,8 @@
     id <CNInhibitor> _editModeSuddenTerminationInhibitor;
     ABCommandExecutor *_commandExecutor;
     ABCommandExecutor *_dataSourceCommandExecutor;
-    CNContactStore *_contactStore;
+    CNUIEnvironment *_environment;
+    CNContainer *_containerOfContact;
     CNContactCardWidgetProvider *_widgetProvider;
     CNContactCardViewControllerWidgetProviderDelegate *_widgetProviderDelegate;
     CNContactCardViewControlContext *_controlContext;
@@ -100,7 +102,8 @@
 @property(retain, nonatomic) CNContactCardViewControlContext *controlContext; // @synthesize controlContext=_controlContext;
 @property(retain, nonatomic) CNContactCardViewControllerWidgetProviderDelegate *widgetProviderDelegate; // @synthesize widgetProviderDelegate=_widgetProviderDelegate;
 @property(retain, nonatomic) CNContactCardWidgetProvider *widgetProvider; // @synthesize widgetProvider=_widgetProvider;
-@property(retain, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
+@property(retain, nonatomic) CNContainer *containerOfContact; // @synthesize containerOfContact=_containerOfContact;
+@property(retain, nonatomic) CNUIEnvironment *environment; // @synthesize environment=_environment;
 @property(retain, nonatomic) ABCommandExecutor *dataSourceCommandExecutor; // @synthesize dataSourceCommandExecutor=_dataSourceCommandExecutor;
 @property(retain, nonatomic) ABCommandExecutor *commandExecutor; // @synthesize commandExecutor=_commandExecutor;
 @property(retain, nonatomic) id <CNInhibitor> editModeSuddenTerminationInhibitor; // @synthesize editModeSuddenTerminationInhibitor=_editModeSuddenTerminationInhibitor;
@@ -191,8 +194,8 @@
 - (void)updateDataSourceWithContact:(id)arg1;
 - (void)handeNewContact:(id)arg1;
 - (void)handleNilContact;
-- (void)updateToContact:(id)arg1;
-- (void)didReceveRefreshedContact:(id)arg1;
+- (void)updateToContact:(id)arg1 containerOfContact:(id)arg2;
+- (void)didReceveContactFetchResult:(id)arg1;
 - (BOOL)shouldRefetchContact:(id)arg1;
 - (id)generateFetchDescriptionForContact:(id)arg1;
 - (void)fetchContact;
@@ -200,6 +203,10 @@
 @property(readonly, nonatomic) CNContact *editedContact;
 - (void)finishSwichingToDefaultModeFromMode:(unsigned long long)arg1;
 - (void)finishSwichingToEditModeAndRefocusOnNameView:(BOOL)arg1;
+- (void)authorizedSwitchModeFromMode:(unsigned long long)arg1 toMode:(unsigned long long)arg2 refocusOnNameView:(BOOL)arg3;
+- (void)editAuthorizationViewController:(id)arg1 authorizationDidFinishWithResult:(long long)arg2;
+- (void)presentEditAutorizationUI;
+- (BOOL)shouldPresentEditAutorizationUIWhenSwitchingFromMode:(unsigned long long)arg1 toMode:(unsigned long long)arg2;
 - (void)switchModeFromMode:(unsigned long long)arg1 toMode:(unsigned long long)arg2 refocusOnNameView:(BOOL)arg3;
 @property(readonly, nonatomic) BOOL hasChanges;
 - (BOOL)editLikenessMode;
@@ -211,9 +218,9 @@
 - (void)viewDidLoad;
 - (void)loadView;
 - (void)dealloc;
-- (void)commonInitWithContactStore:(id)arg1;
+- (void)commonInitWithEnvironment:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContactStore:(id)arg1;
+- (id)initWithEnvironment:(id)arg1;
 - (id)init;
 
 // Remaining properties

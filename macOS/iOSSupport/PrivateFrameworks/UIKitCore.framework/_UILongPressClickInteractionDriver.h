@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (void)_handleGestureRecognizer:(id)arg1;
+@property(readonly, nonatomic) double clickTimeoutDuration;
 - (struct CGPoint)locationInCoordinateSpace:(id)arg1;
 - (void)cancelInteraction;
 @property(readonly, nonatomic) UIGestureRecognizer *primaryGestureRecognizer;

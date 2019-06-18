@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIMultiSelectInteraction *multiSelectInteraction; // @synthesize multiSelectInteraction=_multiSelectInteraction;
 @property(nonatomic) __weak UICollectionView *collectionView; // @synthesize collectionView=_collectionView;
 - (void).cxx_destruct;
+- (BOOL)multiSelectInteractionGestureShouldPreventDragLiftGesture:(id)arg1;
 - (void)multiSelectInteraction:(id)arg1 appendSelectionAtPoint:(struct CGPoint)arg2;
 - (void)multiSelectInteraction:(id)arg1 toggleSelectionStateUpToPoint:(struct CGPoint)arg2;
 - (BOOL)shouldAllowSelectionExtensionAtPoint:(struct CGPoint)arg1;

@@ -11,6 +11,16 @@
 @class NSLayoutDimension, NSLayoutXAxisAnchor, NSLayoutYAxisAnchor, NSString;
 
 @interface UIView (AVAdditions) <AVKitLayoutItem>
+- (BOOL)avkit_hasFullScreenLayoutClass;
+- (void)avkit_makeSubtreeDisallowGroupBlending;
+- (BOOL)avkit_isDescendantOfNonPagingScrollView;
+- (BOOL)avkit_wantsAnimatedViewTransitions;
+- (BOOL)avkit_isInAScrollView;
+- (BOOL)avkit_isBeingScrolledQuickly;
+- (BOOL)avkit_isBeingScrolled;
+- (BOOL)avkit_isBeingScrollTested;
+- (id)avkit_backdropGroupLeader;
+- (void)avkit_needsUpdateBackdropCaptureViewHidden;
 - (BOOL)avkit_isVideoGravityFrozen;
 - (struct UIEdgeInsets)avkit_overrideLayoutMarginsForCounterRotation;
 - (BOOL)avkit_isCompletelyTransparent;

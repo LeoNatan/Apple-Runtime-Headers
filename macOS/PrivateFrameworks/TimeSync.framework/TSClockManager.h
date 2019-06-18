@@ -32,6 +32,8 @@
 - (unsigned long long)addUserFilteredClockWithMachInterval:(unsigned long long)arg1 domainInterval:(unsigned long long)arg2 usingFilterShift:(unsigned char)arg3 isAdaptive:(BOOL)arg4 error:(id *)arg5;
 - (id)clockWithClockIdentifier:(unsigned long long)arg1;
 - (id)availableClockIdentifiers;
+- (BOOL)removeTSNCaptureServicesWithError:(id *)arg1;
+- (BOOL)addTSNCaptureServicesWithError:(id *)arg1;
 - (BOOL)removegPTPServicesWithError:(id *)arg1;
 - (BOOL)addgPTPServicesWithError:(id *)arg1;
 - (BOOL)removeMappingFromClockIDToCoreAudioClockDomainForClockID:(unsigned long long)arg1 error:(id *)arg2;

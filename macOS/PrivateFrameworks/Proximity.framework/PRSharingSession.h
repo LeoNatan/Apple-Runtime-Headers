@@ -45,7 +45,8 @@
 - (void)estimator:(id)arg1 didEstimateProximity:(long long)arg2 toPeer:(id)arg3;
 - (void)logScores:(id)arg1;
 - (void)updateScoresWithNewMeasurement:(const struct NeighborMeasurements *)arg1;
-- (id)convertStringToNSData:(basic_string_a1f69cfb)arg1;
+- (id)convertMacStringToReverseBTMac:(basic_string_a1f69cfb)arg1;
+- (id)convertMacStringToNSData:(basic_string_a1f69cfb)arg1;
 - (void)stopProx;
 - (BOOL)trackNewBTPeer:(id)arg1 withDviceModel:(id)arg2 error:(id *)arg3;
 - (BOOL)addRssiSample:(double)arg1 channel:(unsigned int)arg2 forPeer:(id)arg3 peerDeviceModel:(id)arg4 withError:(id *)arg5;

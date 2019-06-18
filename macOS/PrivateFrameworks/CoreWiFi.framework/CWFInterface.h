@@ -53,6 +53,7 @@
 - (id)IPv6RouterAddress;
 - (id)IPv4Addresses;
 - (id)IPv4RouterAddress;
+- (BOOL)isNetworkServiceEnabled;
 - (id)networkServiceName;
 - (id)networkServiceID;
 - (id)linkDownStatus;

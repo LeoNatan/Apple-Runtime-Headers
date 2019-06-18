@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)prepareForReuse;
 - (void)layoutSubviews;
+- (void)didMoveToWindow;
 - (void)refreshForSearchTextIfNeeded:(id)arg1;
 - (void)configureWithQueryResult:(id)arg1 searchText:(id)arg2 mode:(unsigned long long)arg3;
 

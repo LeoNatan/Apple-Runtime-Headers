@@ -7,6 +7,6 @@
 #import <AudioResourceArbitration/aura_Stream-Protocol.h>
 
 @protocol aura_StreamPriv <aura_Stream>
-- (_Bool)usesHardwareReactor:(weak_ptr_53ad1f34)arg1;
+@property(readonly, nonatomic) weak_ptr_f7fee0cb reactor;
 @end
 

@@ -9,6 +9,7 @@
 @class NSArray, NSString, NSURL;
 
 @protocol PLAssetsdCloudServiceProtocol <NSObject>
+- (void)computeFingerPrintsOfAssetWithObjectURI:(NSURL *)arg1 reply:(void (^)(NSString *, NSString *, NSError *))arg2;
 - (void)asynchronousStopPreheatingCPLDownloadForAssetsWithTaskIdentifiers:(NSArray *)arg1 reply:(void (^)(NSArray *))arg2;
 - (void)asynchronousStartPreheatingCPLDownloadForAssets:(NSArray *)arg1 doneTokens:(NSArray *)arg2 format:(unsigned long long)arg3 reply:(void (^)(BOOL, NSArray *, NSError *))arg4;
 - (void)downloadCloudPhotoLibraryAssetWithObjectURI:(NSURL *)arg1 taskIdentifier:(NSString *)arg2 resourceType:(unsigned long long)arg3 HighPriority:(BOOL)arg4 trackCPLDownload:(BOOL)arg5 downloadIsTransient:(BOOL)arg6 reply:(void (^)(BOOL, NSString *, NSString *, NSError *))arg7;

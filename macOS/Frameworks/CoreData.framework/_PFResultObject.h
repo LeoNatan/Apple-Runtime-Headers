@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _primary_key;
 }
 
-+ (id)initWithObjects:(id *)arg1 forKeys:(id *)arg2 count:(unsigned long long)arg3;
++ (Class)classForKeyedUnarchiver;
 - (id)keyEnumerator;
 - (unsigned long long)_valueCountByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
 - (unsigned long long)countByEnumeratingWithState:(CDStruct_70511ce9 *)arg1 objects:(id *)arg2 count:(unsigned long long)arg3;
@@ -39,6 +39,9 @@ __attribute__((visibility("hidden")))
 - (unsigned long long)count;
 - (id)objectForKey:(id)arg1;
 - (id)valueAtIndex:(unsigned long long)arg1;
+- (Class)classForArchiver;
+- (Class)classForCoder;
+- (id)initWithObjects:(const id *)arg1 forKeys:(const id *)arg2 count:(unsigned long long)arg3;
 
 @end
 

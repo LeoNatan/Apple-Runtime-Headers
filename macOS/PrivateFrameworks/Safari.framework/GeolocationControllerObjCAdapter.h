@@ -14,10 +14,6 @@ __attribute__((visibility("hidden")))
 
 @property(readonly, nonatomic) struct GeolocationController *geolocationController; // @synthesize geolocationController=_geolocationController;
 - (BOOL)_isDateLessThanOneDayAgo:(id)arg1;
-- (id)preferenceValueToSelectWhenAttemptingToSelectPreference:(id)arg1 inWindow:(id)arg2;
-- (id)defaultPreferenceValueForPreferenceIfNotCustomized:(id)arg1;
-- (void)getAllDomainsConfiguredForPreference:(id)arg1 usingBlock:(CDUnknownBlockType)arg2;
-- (void)getValueOfPreference:(id)arg1 forDomain:(id)arg2 withTimeout:(id)arg3 usingBlock:(CDUnknownBlockType)arg4;
 - (void)migrateGeolocationPermissionsIfNecessary;
 - (id)initWithGeolocationController:(struct GeolocationController *)arg1 perSitePreferencesStore:(id)arg2;
 

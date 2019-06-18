@@ -25,6 +25,7 @@
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isTemporal;
+- (BOOL)isContentEqual:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)_deepCopy;
 - (id)initWithCoder:(id)arg1;

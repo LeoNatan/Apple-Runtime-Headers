@@ -24,6 +24,8 @@
 - (void).cxx_destruct;
 - (void)manager:(id)arg1 didUpdateImage:(id)arg2 withPosterFrame:(id)arg3 fromClip:(id)arg4;
 - (void)updateWithClip:(id)arg1 mode:(unsigned long long)arg2;
+- (id)_badgeImageForEvents:(id)arg1;
+- (void)_updateBadgeLayerWithImage:(id)arg1 inRect:(struct CGRect)arg2;
 - (void)drawRect:(struct CGRect)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
 

@@ -71,7 +71,7 @@
 - (void)_notifyObserverWithLogMessage:(id)arg1;
 - (void)_decrementLocalCount:(long long)arg1;
 - (void)_incrementLocalCount:(long long)arg1;
-- (void)_scheduleCountCalculationWithQualityOfService:(unsigned int)arg1;
+- (void)_scheduleCountCalculation;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithQuery:(id)arg1 serverCountMailboxScope:(id)arg2 messagePersistence:(id)arg3 hookRegistry:(id)arg4 observer:(id)arg5;

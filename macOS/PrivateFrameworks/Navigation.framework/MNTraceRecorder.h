@@ -41,6 +41,9 @@
     struct sqlite3_stmt *_etaTrafficUpdateRequestInsert;
     struct sqlite3_stmt *_etaTrafficUpdateResponseInsert;
     struct sqlite3_stmt *_etaTrafficUpdateResponseErrorInsert;
+    struct sqlite3_stmt *_realtimeTransitUpdateRequestInsert;
+    struct sqlite3_stmt *_realtimeTransitUpdateResponseInsert;
+    struct sqlite3_stmt *_realtimeTransitUpdateResponseErrorInsert;
     struct sqlite3_stmt *_vehicleSpeedInsert;
     struct sqlite3_stmt *_vehicleHeadingInsert;
     struct sqlite3_stmt *_motionDataInsert;
@@ -89,6 +92,9 @@
 - (void)recordMotionUpdate:(unsigned long long)arg1 exitType:(unsigned long long)arg2 confidence:(unsigned long long)arg3;
 - (void)recordVehicleHeading:(double)arg1 timestamp:(id)arg2;
 - (void)recordVehicleSpeed:(double)arg1 timestamp:(id)arg2;
+- (void)recordTransitUpdateError:(id)arg1;
+- (void)recordTransitUpdateResponse:(id)arg1;
+- (void)recordTransitUpdateRequest:(id)arg1 withTimestamp:(double)arg2;
 - (void)recordETATrafficUpdateError:(id)arg1;
 - (void)recordETATrafficUpdateResponse:(id)arg1;
 - (void)recordETATrafficUpdateRequest:(id)arg1;

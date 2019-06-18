@@ -6,7 +6,7 @@
 
 #import <AskPermission/NSObject-Protocol.h>
 
-@class NSDictionary, NSString, NSURL;
+@class ACAccount, NSDictionary, NSString, NSURL;
 
 @protocol ConnectionProtocol <NSObject>
 - (void)didReceiveStorePushNotificationWithPayload:(NSDictionary *)arg1;
@@ -15,6 +15,6 @@
 - (void)updateRequestWithIdentifier:(NSString *)arg1 action:(long long)arg2 completion:(void (^)(NSError *))arg3;
 - (void)localApproveRequestWithItemIdentifier:(NSString *)arg1 completion:(void (^)(NSError *))arg2;
 - (void)resetAccountWithType:(long long)arg1;
-- (void)addRequestWithURL:(NSURL *)arg1;
+- (void)addRequestWithURL:(NSURL *)arg1 account:(ACAccount *)arg2 completion:(void (^)(NSError *))arg3;
 @end
 

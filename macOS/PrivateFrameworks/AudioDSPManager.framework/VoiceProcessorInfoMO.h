@@ -8,6 +8,7 @@
 
 @class NSSet, NSString;
 
+__attribute__((visibility("hidden")))
 @interface VoiceProcessorInfoMO : NSManagedObject
 {
 }

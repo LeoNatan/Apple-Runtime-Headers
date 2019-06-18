@@ -28,9 +28,10 @@
 - (id)descriptionForPersistentStore:(id)arg1;
 - (void)savePersistentHistoryToken:(id)arg1 forStore:(id)arg2;
 - (id)persistentHistoryTokenForStore:(id)arg1;
+@property(readonly, nonatomic) BOOL hasStoreLoaded;
 - (void)setLocalPersistentStoreValue:(id)arg1 forKey:(id)arg2;
 - (id)localPersistentStoreMetadataValueForKey:(id)arg1;
-@property(readonly) NSManagedObjectContext *viewContext;
+@property(readonly, nonatomic) NSManagedObjectContext *viewContext;
 - (id)newBackgroundContext;
 - (void)performBackgroundTaskAndWait:(CDUnknownBlockType)arg1;
 - (void)performBackgroundTask:(CDUnknownBlockType)arg1;

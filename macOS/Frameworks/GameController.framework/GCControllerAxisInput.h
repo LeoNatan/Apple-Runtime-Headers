@@ -12,7 +12,6 @@
 {
     BOOL _flipped;
     float _value;
-    GCControllerElement *_collection;
     CDUnknownBlockType _valueChangedHandler;
     GCControllerButtonInput *_positive;
     GCControllerButtonInput *_negative;
@@ -23,8 +22,8 @@
 @property(retain, nonatomic) GCControllerButtonInput *positive; // @synthesize positive=_positive;
 @property(nonatomic) float value; // @synthesize value=_value;
 @property(copy, nonatomic) CDUnknownBlockType valueChangedHandler; // @synthesize valueChangedHandler=_valueChangedHandler;
-@property(nonatomic) __weak GCControllerElement *collection; // @synthesize collection=_collection;
 - (void).cxx_destruct;
+- (int)getAndResetTimesPressed;
 - (BOOL)_setValue:(float)arg1 queue:(id)arg2;
 - (BOOL)_setValue:(float)arg1;
 - (BOOL)isAnalog;

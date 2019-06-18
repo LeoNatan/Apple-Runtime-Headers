@@ -15,11 +15,17 @@
 {
     unsigned long long _triggerCount;
     NSObject<OS_dispatch_queue> *_queue;
+    unsigned long long _consecutivePHSRejects;
+    double _lastPHSReject;
 }
 
 + (id)sharedInstance;
 - (void).cxx_destruct;
 - (void)voiceTriggerDidDetectKeyword:(id)arg1 deviceId:(id)arg2;
+- (void)incrementPHSRejectCount;
+- (unsigned long long)getPHSRejectCount;
+- (double)getLastPHSRejectTime;
+- (void)resetPHSRejectCount;
 - (unsigned long long)triggerCount;
 - (void)clearTriggerCount;
 - (void)increaseTriggerCount;

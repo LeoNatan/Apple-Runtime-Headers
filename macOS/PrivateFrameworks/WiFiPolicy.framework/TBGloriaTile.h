@@ -8,7 +8,7 @@
 
 #import <WiFiPolicy/TBTile-Protocol.h>
 
-@class NSString;
+@class NSDate, NSString;
 
 @interface TBGloriaTile : NSObject <TBTile>
 {
@@ -16,6 +16,8 @@
     unsigned long long _key;
     double _lat;
     double _lng;
+    NSString *_WKTString;
+    double _tileSize;
     double _north;
     double _south;
     double _east;
@@ -28,16 +30,24 @@
 @property(nonatomic) double east; // @synthesize east=_east;
 @property(nonatomic) double south; // @synthesize south=_south;
 @property(nonatomic) double north; // @synthesize north=_north;
+@property(nonatomic) double tileSize; // @synthesize tileSize=_tileSize;
+@property(copy, nonatomic) NSString *WKTString; // @synthesize WKTString=_WKTString;
 @property(nonatomic) unsigned char zoom; // @synthesize zoom=_zoom;
 @property(nonatomic) double lng; // @synthesize lng=_lng;
 @property(nonatomic) double lat; // @synthesize lat=_lat;
 @property(nonatomic) unsigned long long key; // @synthesize key=_key;
+- (void).cxx_destruct;
+- (id)neighborTileKeysWithRadius:(double)arg1;
+- (id)adjacentTileKeysWithLevel:(unsigned int)arg1;
 - (id)initWithLat:(double)arg1 lng:(double)arg2 zoom:(unsigned char)arg3;
+- (id)initWithLat:(double)arg1 lng:(double)arg2;
 - (id)initWithEncodedKey:(unsigned long long)arg1 zoom:(unsigned char)arg2;
 
 // Remaining properties
+@property(readonly, copy, nonatomic) NSDate *created;
 @property(readonly, copy) NSString *debugDescription;
 @property(readonly, copy) NSString *description;
+@property(retain, nonatomic) NSString *etag;
 @property(readonly) unsigned long long hash;
 @property(readonly) Class superclass;
 

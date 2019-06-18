@@ -11,7 +11,7 @@
 
 @interface MKMapItemView : UIView
 {
-    NSObject<OS_dispatch_group> *_muninSnapshotDispatchGroup;
+    NSObject<OS_dispatch_group> *_renderDispatchGroup;
     MKMapSnapshotView *_snapshotView;
     CDStruct_951efa70 _coordinateSpan;
     CDUnknownBlockType _mapItemloadedCompletionHandler;
@@ -21,6 +21,8 @@
     NSTimer *_loadTimeoutTimer;
     struct CGSize _sizeWhenLastLoaded;
     BOOL _loadCalledOnce;
+    unsigned long long _signpostID;
+    BOOL _loadingMuninView;
     BOOL _shouldResolveMapItem;
     MKMapItem *_mapItem;
 }

@@ -53,7 +53,7 @@
 - (void)localWasUpdated;
 - (void)accessibilityDisplayOptionsDidChange:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;
-- (void)_setVisible:(BOOL)arg1 animated:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
+- (void)_setVisible:(BOOL)arg1 animated:(BOOL)arg2 quickly:(BOOL)arg3 completion:(CDUnknownBlockType)arg4;
 
 @end
 

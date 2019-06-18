@@ -24,6 +24,7 @@ __attribute__((visibility("hidden")))
     EKUIRecurrenceAlertController *_recurrenceAlertController;
     EKCalendarItemEditItem *_currentEditItem;
     BOOL _giveTitleCellKeyboardFocus;
+    BOOL _needsFirstResponderSet;
     int _editItemVisibility;
     BOOL _isIgnoringCellHeightChange;
     BOOL _needsCellHeightChange;
@@ -155,6 +156,7 @@ __attribute__((visibility("hidden")))
 - (void)applicationDidResume;
 - (void)viewDidLoad;
 - (void)updateNavButtonsWithSpacing;
+- (void)_setupFirstResponder;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

@@ -12,6 +12,7 @@
 @interface PPSpecifier : NSObject
 {
     NSUUID *_uuid;
+    BOOL _allowsTruncation;
     BOOL _enabled;
     NSArray *searchKeywords;
     id <PPSpecifierDelegate> delegate;
@@ -47,6 +48,7 @@
 @property __weak id <PPSpecifierDelegate> delegate; // @synthesize delegate;
 @property(retain) NSArray *searchKeywords; // @synthesize searchKeywords;
 - (void).cxx_destruct;
+@property BOOL allowsTruncation; // @dynamic allowsTruncation;
 - (void)revealElementForKey:(id)arg1;
 - (BOOL)hasElementForKey:(id)arg1;
 @property(readonly) NSView *view; // @dynamic view;

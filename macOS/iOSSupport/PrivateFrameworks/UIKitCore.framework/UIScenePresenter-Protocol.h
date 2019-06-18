@@ -6,7 +6,7 @@
 
 #import <UIKitCore/BSInvalidatable-Protocol.h>
 
-@class FBSceneSnapshot, FBSceneSnapshotContext, NSString, UIScenePresentationContext, UIView;
+@class FBScene, FBSceneSnapshot, FBSceneSnapshotContext, NSString, UIScenePresentationContext, UIView;
 @protocol UIScenePresentation, UISceneSnapshotPresentation;
 
 @protocol UIScenePresenter <BSInvalidatable>
@@ -14,6 +14,7 @@
 @property(readonly, nonatomic, getter=isActive) BOOL active;
 @property(readonly, nonatomic) UIView<UIScenePresentation> *presentationView;
 @property(readonly, copy, nonatomic) UIScenePresentationContext *presentationContext;
+@property(readonly, nonatomic) __weak FBScene *scene;
 @property(readonly, copy, nonatomic) NSString *identifier;
 - (UIView<UISceneSnapshotPresentation> *)newSnapshotPresentationView;
 - (FBSceneSnapshotContext *)newSnapshotContext;

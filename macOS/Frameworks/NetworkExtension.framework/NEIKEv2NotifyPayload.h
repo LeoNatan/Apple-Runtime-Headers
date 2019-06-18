@@ -29,6 +29,7 @@
 - (BOOL)parsePayloadData;
 - (BOOL)generatePayloadData;
 - (id)copyError;
+@property(readonly) BOOL isPrivateError;
 @property(readonly) BOOL isError;
 - (BOOL)hasRequiredFields;
 - (id)description;

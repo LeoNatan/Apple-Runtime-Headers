@@ -13,10 +13,10 @@
 
 @interface _UIVisualEffectSubview : UIView <_UIVisualEffectViewParticipating>
 {
+    NSArray *_filters;
     _UIVisualEffectViewBackdropCaptureGroup *_primaryCaptureGroup;
     UIView<_UIVisualEffectViewParticipating> *_containedView;
     NSArray *_viewEffects;
-    NSArray *_filters;
     id <_UIVisualEffectViewSubviewMonitoring> _subviewMonitor;
 }
 
@@ -33,6 +33,7 @@
 - (void)applyRequestedFilterEffects;
 - (void)applyIdentityViewEffects;
 - (void)applyRequestedViewEffects;
+@property(nonatomic) BOOL disableGroupFiltering;
 - (void)_monitoredView:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)willMoveToWindow:(id)arg1;
 - (id)initWithFrame:(struct CGRect)arg1;

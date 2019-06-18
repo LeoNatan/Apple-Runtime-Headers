@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class HKActiveWatchFeatureAvailabilityDataSource, HKHealthStore, HKKeyValueDomain, HKMobileCountryCodeManager, HKObserverSet, NSDate, NSNumber, NSUserDefaults;
+@class HKActiveWatchFeatureAvailabilityDataSource, HKHealthStore, HKKeyValueDomain, HKMobileCountryCodeManager, HKObserverSet, HKWatchAppAvailability, NSDate, NSNumber, NSUserDefaults;
 
 @interface HKHeartRhythmAvailability : NSObject
 {
@@ -22,6 +22,7 @@
     HKObserverSet *_heartRhythmAvailabilityObservers;
     HKActiveWatchFeatureAvailabilityDataSource *_availabilityDataSource;
     HKMobileCountryCodeManager *_mobileCountryCodeManager;
+    HKWatchAppAvailability *_ecgAppAvailability;
 }
 
 + (long long)currentAtrialFibrillationDetectionOnboardingVersion;
@@ -30,9 +31,11 @@
 + (BOOL)isAtrialFibrillationDetectionSettingEnabled;
 + (long long)currentElectrocardiogramOnboardingVersion;
 + (BOOL)_isElectrocardiogramDisabledWithDataSource:(id)arg1;
++ (id)electrocardiogramAppBundleID;
 + (BOOL)shouldInstallWatchApp;
 + (BOOL)_isRunningSeed;
 + (BOOL)isHeartRateEnabledInPrivacy;
+@property(retain, nonatomic) HKWatchAppAvailability *ecgAppAvailability; // @synthesize ecgAppAvailability=_ecgAppAvailability;
 @property(retain, nonatomic) HKMobileCountryCodeManager *mobileCountryCodeManager; // @synthesize mobileCountryCodeManager=_mobileCountryCodeManager;
 @property(nonatomic) int userCharacteristicsDidChangeNotificationToken; // @synthesize userCharacteristicsDidChangeNotificationToken=_userCharacteristicsDidChangeNotificationToken;
 @property(nonatomic) int featureAvailabilityConditionsDidUpdateNotificationToken; // @synthesize featureAvailabilityConditionsDidUpdateNotificationToken=_featureAvailabilityConditionsDidUpdateNotificationToken;

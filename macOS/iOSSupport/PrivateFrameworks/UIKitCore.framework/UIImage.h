@@ -18,8 +18,14 @@
 
 @interface UIImage : NSObject <NSItemProviderReading, NSItemProviderWriting, UIItemProviderPresentationSizeProviding, UIItemProviderReading, UIItemProviderWriting, NSUIImage, NSSecureCoding>
 {
+    NSMapTable *_siblingImages;
+    UIImageConfiguration *_configuration;
+    struct UIEdgeInsets _contentInsets;
+    struct CGSize _sizeInPixels;
+    double _baselineOffsetFromBottom;
     struct {
         unsigned int named:1;
+        unsigned int asksContentForImageOrientation:1;
         unsigned int imageOrientation:3;
         unsigned int cached:1;
         unsigned int hasPattern:1;
@@ -33,11 +39,6 @@
         unsigned int areAlignmentRectInsetsExplicit:1;
         unsigned int flipsForRightToLeftLayoutDirection:1;
     } _imageFlags;
-    NSMapTable *_siblingImages;
-    struct UIEdgeInsets _contentInsets;
-    struct CGSize _sizeInPixels;
-    double _baselineOffsetFromBottom;
-    UIImageConfiguration *_configuration;
     UIImageAsset *_imageAsset;
     _UIImageContent *_content;
     struct UIEdgeInsets _alignmentRectInsets;
@@ -85,6 +86,7 @@
 + (id)imageWithData:(id)arg1;
 + (id)imageWithContentsOfFile:(id)arg1;
 + (id)_generateCompositedSymbolImageForAsset:(id)arg1 usingLayers:(id)arg2 configuration:(id)arg3;
++ (id)_systemImageNamed:(id)arg1 fallback:(id)arg2 withConfiguration:(id)arg3;
 + (id)_systemImageNamed:(id)arg1 fallback:(id)arg2;
 + (id)systemImageNamed:(id)arg1 withConfiguration:(id)arg2;
 + (id)systemImageNamed:(id)arg1 compatibleWithTraitCollection:(id)arg2;
@@ -195,10 +197,11 @@
 - (id)_imageWithContentInsets:(struct UIEdgeInsets)arg1;
 - (void)_setColorForFlattening:(id)arg1;
 - (id)_colorForFlattening;
-- (id)_imageTintedWithColor:(id)arg1 flatten:(BOOL)arg2 withUpdatedCGImage:(BOOL)arg3;
+- (id)_imageTintedWithColor:(id)arg1 flatten:(BOOL)arg2 renderingMode:(long long)arg3 withUpdatedCGImage:(BOOL)arg4;
 - (id)flattenedImageWithColor:(id)arg1;
 - (id)_flattenedImageWithTintColor:(id)arg1;
 - (id)imageWithTintColor:(id)arg1;
+- (id)imageWithTintColor:(id)arg1 renderingMode:(long long)arg2;
 - (void)_setConfiguration:(id)arg1;
 - (id)imageWithConfiguration:(id)arg1;
 @property(readonly, copy, nonatomic) UIImageConfiguration *configuration;
@@ -300,8 +303,8 @@
 - (id)_initWithFilledSystemImageNamed:(id)arg1 fillColor:(id)arg2;
 - (id)_defaultConfiguration;
 - (BOOL)_isDecompressing;
-- (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 scale:(double)arg3 renderingIntent:(int)arg4 cache:(BOOL)arg5;
-- (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 scale:(double)arg3 renderingIntent:(int)arg4;
+- (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 scale:(double)arg3 renderingIntent:(unsigned long long)arg4 cache:(BOOL)arg5;
+- (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize)arg2 scale:(double)arg3 renderingIntent:(unsigned long long)arg4;
 @property(readonly, nonatomic) long long topCapHeight;
 @property(readonly, nonatomic) long long leftCapWidth;
 - (id)stretchableImageWithLeftCapWidth:(long long)arg1 topCapHeight:(long long)arg2;

@@ -11,13 +11,13 @@
 }
 
 + (void)performLibraryStatisticsLoggingForLibrary:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
-+ (void)performCMMSummaryLogging:(id)arg1;
++ (void)performCMMSummaryLogging:(id)arg1 cloudPhotoLibraryEnabled:(BOOL)arg2;
 + (void)performPersistentHistorySummaryLogging:(id)arg1;
-+ (void)performLibrarySummaryLogging:(id)arg1;
++ (void)performLibrarySummaryLogging:(id)arg1 cloudPhotoLibraryEnabled:(BOOL)arg2;
 + (id)_performMedianCalculation:(id)arg1;
 + (double)_getDateMedian:(id)arg1 fromStartDate:(id)arg2 forCameraCapture:(BOOL)arg3;
 + (id)_addPrefix:(id)arg1 toKeysInDictionary:(id)arg2;
-+ (void)performHyperionLocalResourcesLogging:(CDUnknownBlockType)arg1 photoLibrary:(id)arg2;
++ (void)performHyperionLocalResourcesLogging:(CDUnknownBlockType)arg1 inManagedObjectContext:(id)arg2 cloudPhotoLibraryEnabled:(BOOL)arg3;
 + (void)performHyperionLocalResourcesLoggingForLibrary:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 + (void)performAnalysisStateLogging:(id)arg1 library:(id)arg2;
 + (void)performYearsStaticsLogging:(id)arg1;

@@ -11,6 +11,7 @@
 }
 
 - (id)fr_description;
+- (BOOL)shouldBeBoosted;
 - (id)initWithPersonalizationIdentifier:(id)arg1;
 - (id)initWithTagID:(id)arg1;
 - (id)init;

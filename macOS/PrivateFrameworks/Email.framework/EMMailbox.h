@@ -71,8 +71,8 @@
 @property(readonly, nonatomic) EMMailboxRepository *repository;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)_commonInitName:(id)arg1 accountIdentifier:(id)arg2 type:(long long)arg3 canContainMessages:(BOOL)arg4 canArchive:(BOOL)arg5 children:(id)arg6 parentID:(id)arg7 builder:(CDUnknownBlockType)arg8;
-- (id)initWithObjectID:(id)arg1 name:(id)arg2 account:(id)arg3 type:(long long)arg4 builder:(CDUnknownBlockType)arg5;
-- (id)initWithObjectID:(id)arg1 repository:(id)arg2 name:(id)arg3 account:(id)arg4 type:(long long)arg5 builder:(CDUnknownBlockType)arg6;
+- (id)initWithObjectID:(id)arg1 name:(id)arg2 accountIdentifier:(id)arg3 type:(long long)arg4 builder:(CDUnknownBlockType)arg5;
+- (id)initWithObjectID:(id)arg1 repository:(id)arg2 name:(id)arg3 accountIdentifier:(id)arg4 type:(long long)arg5 builder:(CDUnknownBlockType)arg6;
 - (id)initWithObjectID:(id)arg1;
 
 // Remaining properties

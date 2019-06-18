@@ -18,6 +18,7 @@ __attribute__((visibility("hidden")))
 
 - (void).cxx_destruct;
 - (id)pipelineForConfiguration:(id)arg1;
+- (id)initWithDeviceSPI:(id)arg1 librarySPI:(id)arg2;
 - (id)initWithDevice:(id)arg1 library:(id)arg2;
 
 @end

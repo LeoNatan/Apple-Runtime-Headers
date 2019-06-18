@@ -28,6 +28,7 @@
 - (void)discoverAccessoryServerWithIdentifier:(id)arg1;
 - (BOOL)isDemoAccessoryIdentifier:(id)arg1;
 - (void)resetDemoAccessory:(id)arg1;
+- (void)appendDemoData:(id)arg1;
 - (void)loadDemoData:(id)arg1 finalized:(BOOL)arg2;
 - (void)discoverServer;
 - (void)stopDiscoveringAccessoryServers;

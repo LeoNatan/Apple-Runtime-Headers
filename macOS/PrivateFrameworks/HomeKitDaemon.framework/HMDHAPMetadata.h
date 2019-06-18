@@ -19,6 +19,7 @@
     HAPMetadata *_hapMetadata;
     NSSet *_hmRequiresDeviceUnlockTuples;
     NSDictionary *_hmAllowableSecuringWrites;
+    NSDictionary *_hmPowerOnWriteFilter;
     NSDictionary *_hmAccessoryCategories;
     NSSet *_hmBlacklistedServices;
     NSSet *_hmBlacklistedCharacteristics;
@@ -60,6 +61,7 @@
 @property(retain, nonatomic) NSSet *hmBlacklistedCharacteristics; // @synthesize hmBlacklistedCharacteristics=_hmBlacklistedCharacteristics;
 @property(retain, nonatomic) NSSet *hmBlacklistedServices; // @synthesize hmBlacklistedServices=_hmBlacklistedServices;
 @property(retain, nonatomic) NSDictionary *hmAccessoryCategories; // @synthesize hmAccessoryCategories=_hmAccessoryCategories;
+@property(retain, nonatomic) NSDictionary *hmPowerOnWriteFilter; // @synthesize hmPowerOnWriteFilter=_hmPowerOnWriteFilter;
 @property(retain, nonatomic) NSDictionary *hmAllowableSecuringWrites; // @synthesize hmAllowableSecuringWrites=_hmAllowableSecuringWrites;
 @property(retain, nonatomic) NSSet *hmRequiresDeviceUnlockTuples; // @synthesize hmRequiresDeviceUnlockTuples=_hmRequiresDeviceUnlockTuples;
 @property(retain, nonatomic) HAPMetadata *hapMetadata; // @synthesize hapMetadata=_hapMetadata;
@@ -79,6 +81,7 @@
 - (id)parseCharacteristicArray:(id)arg1;
 - (id)parseServiceArray:(id)arg1;
 - (void)parseAndSetHMCategories:(id)arg1;
+- (void)parseAndSetPowerOnWriteFilter:(id)arg1;
 - (void)parseAndSetAllowableSecuringWrites:(id)arg1;
 - (id)parseMetadataTupleSetFromPlist:(id)arg1;
 - (BOOL)parseAndSetAssistantMetadataWithAssistantPlist:(id)arg1;
@@ -114,6 +117,7 @@
 - (BOOL)shouldAllowHomeNotificationForCharacteristicType:(id)arg1 serviceType:(id)arg2;
 - (BOOL)shouldAutoEnableNotificationForCharacteristic:(id)arg1 ofService:(id)arg2;
 - (BOOL)isSecondsDownCounterCharacteristicType:(id)arg1;
+- (BOOL)generateNotificationOnConfigurationForCharacteristicType:(id)arg1 serviceType:(id)arg2;
 - (BOOL)shouldNotCacheCharacteristicOfType:(id)arg1;
 - (BOOL)shouldFilterCharacteristicOfTypeFromApp:(id)arg1;
 - (BOOL)shouldFilterServiceOfTypeFromApp:(id)arg1;
@@ -123,6 +127,7 @@
 - (BOOL)isTargetCharacteristic:(id)arg1;
 - (BOOL)requiresTimedWrite:(id)arg1 forService:(id)arg2;
 - (BOOL)requiresDeviceUnlock:(id)arg1 forService:(id)arg2;
+- (BOOL)shouldAllowWriteToWakeSuspendedAccessory:(id)arg1 withCharacteristic:(id)arg2 withValue:(id)arg3;
 - (BOOL)allowsSecuringWriteFor:(id)arg1 withValue:(id)arg2;
 - (id)descriptionForCharacteristicType:(id)arg1;
 - (id)descriptionForServiceType:(id)arg1;

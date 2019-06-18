@@ -10,6 +10,7 @@
 {
 }
 
++ (id)synchronousRenderDescriptionForAsset:(id)arg1 disposition:(long long *)arg2;
 + (id)renderDescriptionForAssetIfLoaded:(id)arg1 disposition:(long long *)arg2;
 + (void)requestRenderDescriptionForAsset:(id)arg1 queue:(id)arg2 completion:(CDUnknownBlockType)arg3;
 + (void)initialize;

@@ -51,7 +51,6 @@
 - (id)init;
 - (BOOL)supportsCapability:(id)arg1;
 @property(readonly, nonatomic) BOOL migratable;
-@property(readonly, nonatomic) BOOL isAltAccount;
 @property(readonly, nonatomic) BOOL isArchived;
 @property(readonly, nonatomic) BOOL isActive;
 @property(readonly, nonatomic) BOOL isPaired;

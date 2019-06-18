@@ -37,6 +37,7 @@
 - (void)updateDarkFrame;
 - (void)updateSpecIfNeeded;
 - (void)layout;
+@property(readonly, nonatomic) double heightOfTitleArea;
 - (id)initWithFrame:(struct CGRect)arg1;
 
 // Remaining properties

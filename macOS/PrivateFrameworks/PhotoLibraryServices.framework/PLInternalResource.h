@@ -29,6 +29,7 @@
 + (long long)cloudDeletionTypeForTombstone:(id)arg1;
 + (id)listOfSyncedProperties;
 + (id)entityName;
++ (id)purgeablePushedPredicateForCPLResourceTypes:(id)arg1 urgency:(long long)arg2;
 + (id)predicateForPurgeableOriginalResources;
 + (id)predicateForAvailableResources;
 + (id)predicateForOriginalsToDownload;
@@ -111,7 +112,6 @@
 @property(readonly, nonatomic) long long height;
 @property(readonly, nonatomic) long long width;
 @property(readonly, nonatomic) BOOL isLocallyAvailable;
-@property(readonly, retain, nonatomic) NSString *itemIdentifier;
 @property(readonly, retain, nonatomic) NSString *filePath;
 @property(readonly, nonatomic) unsigned long long fileSize;
 @property(readonly, retain, nonatomic) NSString *assetUuid;

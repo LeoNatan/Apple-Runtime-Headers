@@ -413,6 +413,7 @@
 - (id)titleBarViewsForMouseHitTest;
 - (void)_setButtonsShown:(BOOL)arg1;
 - (void)addFileButton:(id)arg1;
+- (void)removeFromSuperview;
 - (void)addSubview:(id)arg1;
 - (void)addSubview:(id)arg1 positioned:(long long)arg2 relativeTo:(id)arg3;
 - (void)_replaceKnownSubview:(id)arg1 with:(id)arg2;

@@ -19,8 +19,9 @@ __attribute__((visibility("hidden")))
 @property(readonly) AMSFinanceDialogResponse *dialogResponse; // @synthesize dialogResponse=_dialogResponse;
 @property(readonly) AMSAuthenticateRequest *authenticateRequest; // @synthesize authenticateRequest=_authenticateRequest;
 - (void).cxx_destruct;
+- (id)_handleAuthenticateResult:(id)arg1 error:(id)arg2;
 - (id)_findActionableButton;
-- (id)handleAuthenticateResult:(id)arg1 error:(id)arg2;
+- (id)performWithTaskInfo:(id)arg1;
 - (id)initWithDialogDictionary:(id)arg1 taskInfo:(id)arg2;
 
 @end

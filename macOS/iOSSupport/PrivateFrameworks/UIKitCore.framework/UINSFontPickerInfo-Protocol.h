@@ -7,17 +7,19 @@
 #import <UIKitCore/NSObject-Protocol.h>
 
 @class NSArray, NSAttributedString, NSString;
+@protocol UINSFontPickerControllerConfiguration;
 
 @protocol UINSFontPickerInfo <NSObject>
 + (id)infoWithFamilyName:(NSString *)arg1;
 @property(readonly) NSArray *faces;
 @property(readonly) const struct __CTFontDescriptor *ctFontDescriptor;
 @property(readonly) NSString *localizedName;
+@property(readonly) NSAttributedString *attributedString;
 @property(readonly) NSString *styleName;
 @property(readonly) NSString *postscriptName;
 @property(readonly) NSString *familyName;
+- (BOOL)matchesConfiguration:(id <UINSFontPickerControllerConfiguration>)arg1;
 - (BOOL)matchesCTFontDescriptor:(const struct __CTFontDescriptor *)arg1;
 - (BOOL)matchesFamilyForCTFontDescriptor:(const struct __CTFontDescriptor *)arg1;
-- (NSAttributedString *)attributedStringOfSize:(double)arg1;
 @end
 

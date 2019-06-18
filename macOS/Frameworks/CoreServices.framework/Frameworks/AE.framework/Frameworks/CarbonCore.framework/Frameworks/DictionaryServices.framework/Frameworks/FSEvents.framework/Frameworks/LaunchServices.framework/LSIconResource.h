@@ -44,7 +44,7 @@
 - (void).cxx_destruct;
 - (id)init;
 - (void)updateFromUTType:(id)arg1;
-- (void)updateFromBinding:(struct LSBinding *)arg1 context:(struct LSContext *)arg2;
+- (void)updateFromType:(id)arg1 binding:(struct LSBinding *)arg2 context:(struct LSContext *)arg3;
 - (void)updateFromBundle:(unsigned int)arg1 bundleData:(const struct LSBundleData *)arg2 context:(struct LSContext *)arg3;
 
 // Remaining properties

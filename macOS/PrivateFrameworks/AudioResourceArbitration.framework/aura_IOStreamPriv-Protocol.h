@@ -6,9 +6,7 @@
 
 #import <AudioResourceArbitration/aura_IOStream-Protocol.h>
 
-@protocol aura_IOControllerPriv;
-
 @protocol aura_IOStreamPriv <aura_IOStream>
-- (_Bool)connectIOController:(id <aura_IOControllerPriv>)arg1;
+@property(readonly, nonatomic) weak_ptr_21a21d9c reactor;
 @end
 

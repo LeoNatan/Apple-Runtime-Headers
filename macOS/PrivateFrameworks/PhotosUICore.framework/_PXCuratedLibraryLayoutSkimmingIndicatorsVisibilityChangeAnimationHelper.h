@@ -10,7 +10,7 @@
 {
 }
 
-- (id)animation:(id)arg1 doubleSidedAnimatedSpriteIndexesForModifiedSpriteIndexes:(id)arg2 rootLayout:(id)arg3 presentedGeometries:(const CDStruct_ac168a83 *)arg4 styles:(const CDStruct_3bc3b9c1 *)arg5 infos:(const CDStruct_9d1ebe49 *)arg6;
+- (id)animation:(id)arg1 doubleSidedAnimatedSpriteIndexesForModifiedSpriteIndexes:(id)arg2 rootLayout:(id)arg3 presentedGeometries:(const CDStruct_ac168a83 *)arg4 styles:(const CDStruct_506f5052 *)arg5 infos:(const CDStruct_9d1ebe49 *)arg6;
 - (BOOL)wantsDoubleSidedAnimations;
 
 @end

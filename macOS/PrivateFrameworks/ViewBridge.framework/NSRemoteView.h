@@ -92,7 +92,6 @@
 - (void)_addPotentialKeyFocusThief:(int)arg1;
 - (void)_serviceWindowHasDragRegion:(id)arg1;
 - (struct CGSRegionObject *)_regionForOpaqueDescendants:(struct CGRect)arg1 forMove:(BOOL)arg2 forUnderTitlebar:(BOOL)arg3;
-- (BOOL)_shouldActOnServiceWindowDragRegion;
 - (void)_lastCallImpliedByAdvancingToPhase:(unsigned char)arg1;
 - (id)_associateMouseAndMouseCursorPosition:(BOOL)arg1;
 - (id)_addChildWindow:(id)arg1 remoteView:(id *)arg2;

@@ -21,7 +21,7 @@
 - (void)showPrintOrExportPanelWithPrintInfo:(UIPrintInfo *)arg1 andPDFDocumentGenerator:(void (^)(NSDictionary *, void (^)(id <UINSPDFDocument>)))arg2;
 - (void)uiKitWantsToExitProcessWithStatus:(int)arg1;
 - (void)didCompleteAllBackgroundTasksAfterBackgrounding;
-- (BOOL)shouldCloseWindowWithSceneIdentifier:(NSString *)arg1;
+- (BOOL)shouldCloseWindowWithSceneIdentifier:(NSString *)arg1 persistentIdentifier:(NSString *)arg2;
 - (void)didDestroySceneWithSceneIdentifier:(NSString *)arg1;
 - (void)didCreateSceneWithSceneIdentifier:(NSString *)arg1 persistentIdentifier:(NSString *)arg2;
 - (id <UINSUserInterfaceTheme>)aquaTheme;

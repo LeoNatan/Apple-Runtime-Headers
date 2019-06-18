@@ -27,6 +27,7 @@
 + (id)colorTypeKey;
 + (id)stringForColorType:(long long)arg1;
 + (long long)colorTypeForString:(id)arg1;
+- (BOOL)canHaveAuto;
 @property(nonatomic) BOOL warmFace;
 @property(nonatomic) double warmTint;
 @property(nonatomic) double warmTemp;

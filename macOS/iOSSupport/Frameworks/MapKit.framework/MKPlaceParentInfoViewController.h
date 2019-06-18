@@ -51,6 +51,7 @@ __attribute__((visibility("hidden")))
 - (id)font;
 - (void)viewDidLoad;
 - (id)initWithChild:(id)arg1;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

@@ -129,7 +129,7 @@
 - (BOOL)_repairSingletonObjectsInDatabaseForOfflineStore:(id)arg1;
 - (BOOL)_deletePhotoCloudSharingMetadataInManagedObjectContext:(id)arg1 error:(id *)arg2;
 - (BOOL)_deletePhotoStreamAssetReferencesInStore:(id)arg1;
-- (BOOL)_deleteCloudSharedAndSyncedAssetReferencesInStore:(id)arg1;
+- (BOOL)_deleteCloudSharedAndSynced:(BOOL)arg1 assetReferencesInStore:(id)arg2;
 - (BOOL)_batchOfflineDeleteFromDatabaseOnlyAssets:(id)arg1 inManagedObjectContext:(id)arg2 error:(id *)arg3;
 - (BOOL)_deleteOrphanedExtendedAttributes:(id)arg1;
 - (BOOL)_updateSuggestionStartAndEndDatesInStore:(id)arg1;
@@ -325,6 +325,7 @@
 - (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(CDUnknownBlockType)arg3;
 - (BOOL)didImportFileSystemAssets;
 - (BOOL)didImportFileSystemAssetsWithMOC:(id)arg1;
+- (BOOL)restartingAfterDeviceToDeviceRestoreFromBackup;
 - (BOOL)restartingAfterNonCloudRestoreFromBackup;
 - (BOOL)restartingAfterOTAMigration;
 - (BOOL)restartingAfterRestoreFromBackup;
@@ -336,6 +337,8 @@
 - (id)_migrationInfoWithMigrationType:(long long)arg1 forced:(BOOL)arg2 sourceModelVersion:(id)arg3 updateMigrationState:(BOOL)arg4;
 - (id)_libraryUpgradeTypeDescriptionWithMigrationType:(long long)arg1 forced:(BOOL)arg2;
 - (long long)createNewDatabaseWithMigrationType:(long long)arg1 forced:(BOOL)arg2;
+- (void)_performRebuildPreventionSafetyCheckForInternalBuilds;
+- (void)_fatal_cannotProceedRebuildPreventionSafetyCheckTriggered;
 - (BOOL)_createPhotoDataDirectoryIfNecessary;
 - (void)_writeToPhotoDataDirectoryFailedWithNoPermission:(id)arg1;
 - (void)_createPhotoDataDirectoryFailedWithNoPermission:(id)arg1;

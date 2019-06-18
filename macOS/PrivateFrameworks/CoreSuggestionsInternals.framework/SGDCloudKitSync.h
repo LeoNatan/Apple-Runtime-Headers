@@ -8,11 +8,12 @@
 
 #import <CoreSuggestionsInternals/APSConnectionDelegate-Protocol.h>
 
-@class APSConnection, CKContainer, CKDatabase, NSError, NSMutableArray, NSOperation, NSOperationQueue, NSString, SGFuture, _SGDCloudKitSyncPersistedState;
+@class APSConnection, CKContainer, CKDatabase, NSError, NSMutableArray, NSOperation, NSOperationQueue, NSString, SGFuture, _PASKVOHandler, _SGDCloudKitSyncPersistedState;
 @protocol OS_dispatch_queue;
 
 @interface SGDCloudKitSync : NSObject <APSConnectionDelegate>
 {
+    _PASKVOHandler *_kvoHandler;
     CKDatabase *_database;
     CDUnknownBlockType _callback;
     CDUnknownBlockType _deleteAllSyncedItemsCallback;
@@ -67,7 +68,6 @@
 - (id)accountInfo;
 - (void)accountChanged:(id)arg1;
 - (void)processStateChanges;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void *)arg4;
 - (void)dealloc;
 - (id)init;
 - (id)addOperation;

@@ -15,6 +15,8 @@
     VCPCNNPoseEstimator *_poseEstimator;
     NSArray *_existingFaceprints;
     VCPFrameAnalysisStats *_frameStats;
+    float _latestFrameArea;
+    CDStruct_1b6d18a9 _timeLastTracking;
     NSMutableDictionary *_faceTrackers;
     NSMutableDictionary *_keyFaces;
     NSMutableArray *_reservedIDs;

@@ -6,7 +6,9 @@
 
 #import <CloudKit/CKRecordZoneID.h>
 
+@class NSString;
+
 @interface CKRecordZoneID (HMB)
-- (id)hmbDescription;
+@property(readonly, copy) NSString *hmbDescription;
 @end
 

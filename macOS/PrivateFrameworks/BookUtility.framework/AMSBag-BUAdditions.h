@@ -42,7 +42,6 @@
 @property(readonly, nonatomic) AMSBagValue *bu_ixStoreSheetBooks;
 @property(readonly, nonatomic) AMSBagValue *bu_ixStoreSheet;
 @property(readonly, nonatomic) AMSBagValue *bu_isBooksStoreEnabled;
-@property(readonly, nonatomic) AMSBagValue *bu_inlineRateURL;
 @property(readonly, nonatomic) AMSBagValue *bu_forgottenPassword;
 @property(readonly, nonatomic) AMSBagValue *bu_dtPurchasesPages;
 @property(readonly, nonatomic) AMSBagValue *bu_currencyCode;

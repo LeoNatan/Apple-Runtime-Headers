@@ -100,6 +100,7 @@
 + (id)posterImageForAssetCollection:(id)arg1;
 + (id)pl_PHAssetCollectionForAssetContainer:(id)arg1 photoLibrary:(id)arg2 includeTrash:(BOOL)arg3;
 + (id)pl_PHAssetCollectionForAssetContainer:(id)arg1 photoLibrary:(id)arg2;
++ (id)fetchAssetCollectionsForReferences:(id)arg1 photoLibrary:(id)arg2;
 @property(readonly, nonatomic) NSString *transientIdentifier; // @synthesize transientIdentifier=_transientIdentifier;
 @property(readonly, nonatomic) BOOL canContributeToCloudSharedAlbum; // @synthesize canContributeToCloudSharedAlbum=_canContributeToCloudSharedAlbum;
 @property(readonly, nonatomic) BOOL hasUnseenContentBoolValue; // @synthesize hasUnseenContentBoolValue=_hasUnseenContentBoolValue;
@@ -175,6 +176,7 @@
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (Class)changeRequestClass;
 - (id)pl_assetContainer;
+- (id)objectReference;
 
 @end
 

@@ -8,7 +8,7 @@
 
 #import <MapKit/_MKPlaceActionButtonControllerProtocol-Protocol.h>
 
-@class NSLayoutConstraint, NSString, _MKPlaceActionButtonController;
+@class MKVibrantView, NSLayoutConstraint, NSString, _MKPlaceActionButtonController;
 
 __attribute__((visibility("hidden")))
 @interface MKPlaceHeaderButton : UIButton <_MKPlaceActionButtonControllerProtocol>
@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     unsigned long long _buttonType;
     BOOL _primary;
     NSLayoutConstraint *_heightConstraint;
+    MKVibrantView *_vibrantView;
     BOOL _highlighted;
     _MKPlaceActionButtonController *_buttonController;
 }
@@ -35,6 +36,7 @@ __attribute__((visibility("hidden")))
 - (void)applyButtonDefaultConfiguration;
 - (void)infoCardThemeChanged;
 - (void)_contentSizeDidChange;
+- (void)_setVibrantView;
 - (id)initWithPrimaryType:(unsigned long long)arg1;
 - (id)init;
 - (struct CGRect)titleRectForContentRect:(struct CGRect)arg1;

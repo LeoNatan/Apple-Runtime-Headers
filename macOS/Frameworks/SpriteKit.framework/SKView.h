@@ -175,6 +175,7 @@
 - (void)renderForTime:(double)arg1 shouldBlock:(BOOL)arg2;
 - (void)_commonInit;
 - (void)_ensureRenderer;
+- (void)syncMetalLayerPixelFormat;
 - (void)remakeFramebuffer;
 - (void)debugPrint;
 - (id)captureToFile:(id)arg1;

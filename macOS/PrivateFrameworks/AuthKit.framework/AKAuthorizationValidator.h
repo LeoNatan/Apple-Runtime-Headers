@@ -11,7 +11,6 @@
 }
 
 + (BOOL)shouldContinueWithResponse:(id)arg1 error:(id *)arg2;
-+ (BOOL)canPerformRapportClientAuthorizationWithError:(id *)arg1;
 + (BOOL)canPerformPasswordRequest:(id)arg1 error:(id *)arg2;
 + (BOOL)canPerformAuthorizationRequest:(id)arg1 error:(id *)arg2;
 + (BOOL)canPerformCredentialRequest:(id)arg1 error:(id *)arg2;

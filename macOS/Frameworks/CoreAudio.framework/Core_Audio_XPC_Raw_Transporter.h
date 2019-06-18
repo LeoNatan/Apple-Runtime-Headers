@@ -10,6 +10,7 @@
 
 @protocol OS_xpc_object;
 
+__attribute__((visibility("hidden")))
 @interface Core_Audio_XPC_Raw_Transporter : NSObject <NSSecureCoding>
 {
     NSObject<OS_xpc_object> *_object;

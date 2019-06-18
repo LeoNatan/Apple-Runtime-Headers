@@ -6,7 +6,7 @@
 
 #import <AudioSession/AVAudioHardwareObject.h>
 
-@class NSSet;
+@class NSArray;
 
 @interface AVAudioHardwareSystem : AVAudioHardwareObject
 {
@@ -21,13 +21,13 @@
 - (BOOL)publishRouteTopology:(id)arg1 controller:(id)arg2 error:(id *)arg3;
 - (BOOL)setUserRoutePreference:(unsigned long long)arg1 routeTopology:(id)arg2 controller:(id)arg3 error:(id *)arg4;
 - (id)getUserRoutePreference:(unsigned long long)arg1;
-@property(readonly, nonatomic) NSSet *routeTopologies;
-@property(readonly, nonatomic) NSSet *outputPorts;
-@property(readonly, nonatomic) NSSet *inputPorts;
-@property(readonly, nonatomic) NSSet *drivers;
-@property(readonly, nonatomic) NSSet *boxes;
-@property(readonly, nonatomic) NSSet *clockDevices;
-@property(readonly, nonatomic) NSSet *audioDevices;
+@property(readonly, nonatomic) NSArray *routeTopologies;
+@property(readonly, nonatomic) NSArray *outputPorts;
+@property(readonly, nonatomic) NSArray *inputPorts;
+@property(readonly, nonatomic) NSArray *drivers;
+@property(readonly, nonatomic) NSArray *boxes;
+@property(readonly, nonatomic) NSArray *clockDevices;
+@property(readonly, nonatomic) NSArray *audioDevices;
 
 @end
 

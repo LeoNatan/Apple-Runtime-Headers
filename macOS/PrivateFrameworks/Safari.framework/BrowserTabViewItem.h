@@ -99,6 +99,7 @@ __attribute__((visibility("hidden")))
 - (void)_internalSetPinned:(BOOL)arg1;
 - (void)formTextStatusWasVerified:(id)arg1;
 - (id)menuForDelayedPopUpRolloverImageButton:(id)arg1;
+- (void)stopAllMediaPlayback;
 - (void)_muteButtonClicked:(id)arg1;
 - (void)_resumeScreenCapture;
 - (void)_pauseScreenCapture;

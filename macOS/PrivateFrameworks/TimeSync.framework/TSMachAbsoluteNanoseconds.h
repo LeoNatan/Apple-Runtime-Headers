@@ -4,14 +4,25 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <TimeSync/TSKernelClock.h>
+#import <TimeSync/TSClock.h>
 
-@interface TSMachAbsoluteNanoseconds : TSKernelClock
+@interface TSMachAbsoluteNanoseconds : TSClock
 {
+    struct mach_timebase_info _timebaseInfo;
 }
 
 + (id)machAbsoluteNanosecondsClock;
+- (BOOL)getRateRatioNumerator:(unsigned long long *)arg1 denominator:(unsigned long long *)arg2 machAnchor:(unsigned long long *)arg3 andDomainAnchor:(unsigned long long *)arg4 withError:(id *)arg5;
+- (unsigned long long)convertFromDomainIntervalToMachAbsoluteInterval:(unsigned long long)arg1;
+- (unsigned long long)convertFromMachAbsoluteIntervalToDomainInterval:(unsigned long long)arg1;
+- (BOOL)convertFromDomainTime:(unsigned long long *)arg1 toMachAbsoluteTime:(unsigned long long *)arg2 withCount:(unsigned int)arg3;
+- (BOOL)convertFromMachAbsoluteTime:(unsigned long long *)arg1 toDomainTime:(unsigned long long *)arg2 withCount:(unsigned int)arg3;
+- (unsigned long long)convertFromDomainToMachAbsoluteTime:(unsigned long long)arg1 withFlags:(unsigned int *)arg2;
+- (unsigned long long)convertFromMachAbsoluteToDomainTime:(unsigned long long)arg1 withFlags:(unsigned int *)arg2;
+- (unsigned long long)nanosecondsToMachAbsolute:(unsigned long long)arg1;
+- (unsigned long long)machAbsoluteToNanoseconds:(unsigned long long)arg1;
 - (id)clockName;
+- (id)initWithClockIdentifier:(unsigned long long)arg1;
 
 @end
 

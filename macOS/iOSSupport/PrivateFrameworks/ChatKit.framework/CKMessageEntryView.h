@@ -97,7 +97,6 @@
 + (struct UIEdgeInsets)coverViewInsetsForMarginInsets:(struct UIEdgeInsets)arg1 shouldShowPluginButtons:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3;
 + (struct UIEdgeInsets)coverViewInsetsForMarginInsets:(struct UIEdgeInsets)arg1 shouldShowPluginButtons:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3 shouldCenterCharacterCount:(char *)arg4;
 + (id)sharedAppStripDatasource;
-+ (id)_imageNamesForPrecaching;
 @property(retain, nonatomic) UISwipeGestureRecognizer *swipeGestureRecognizer; // @synthesize swipeGestureRecognizer=_swipeGestureRecognizer;
 @property(nonatomic) BOOL entryFieldUpdaterAnimatedValue; // @synthesize entryFieldUpdaterAnimatedValue=_entryFieldUpdaterAnimatedValue;
 @property(nonatomic) BOOL entryFieldUpdaterCollapsedValue; // @synthesize entryFieldUpdaterCollapsedValue=_entryFieldUpdaterCollapsedValue;

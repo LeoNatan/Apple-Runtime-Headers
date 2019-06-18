@@ -15,6 +15,7 @@ __attribute__((visibility("hidden")))
 {
     id _context;
     unsigned long long _equalityType;
+    CDUnknownBlockType _block;
 }
 
 - (void).cxx_destruct;
@@ -23,9 +24,11 @@ __attribute__((visibility("hidden")))
 - (id)succinctDescriptionBuilder;
 - (id)succinctDescription;
 @property(readonly, copy) NSString *description;
+- (BOOL)matchesLayer:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 @property(readonly) unsigned long long hash;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+- (id)initWithContext:(id)arg1 equalityType:(unsigned long long)arg2 matchingBlock:(CDUnknownBlockType)arg3;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

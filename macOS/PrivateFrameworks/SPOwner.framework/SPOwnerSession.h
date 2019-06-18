@@ -9,11 +9,12 @@
 #import <SPOwner/SPOwnerSessionPrivateProtocol-Protocol.h>
 #import <SPOwner/SPTrackingAvoidanceServiceProtocol-Protocol.h>
 
-@class FMXPCServiceDescription, FMXPCSession, NSDate, NSOperationQueue, NSSet, NSString;
+@class FMXPCServiceDescription, FMXPCSession, NSDate, NSDictionary, NSOperationQueue, NSSet, NSString;
 @protocol OS_dispatch_queue, SPOwnerSessionXPCProtocol;
 
 @interface SPOwnerSession : NSObject <SPTrackingAvoidanceServiceProtocol, SPOwnerSessionPrivateProtocol>
 {
+    BOOL _cacheFetchInProgress;
     CDUnknownBlockType beaconAddedBlock;
     CDUnknownBlockType beaconRemovedBlock;
     CDUnknownBlockType beaconsChangedBlock;
@@ -32,8 +33,13 @@
     id _beaconEphemeralLocationChangedNotificationToken;
     id _beaconEstimatedLocationChangedNotificationToken;
     NSDate *_ephemeralLocationLastUpdatedDate;
+    NSDictionary *_locationCache;
+    NSDate *_lastCacheUpdate;
 }
 
+@property(nonatomic) BOOL cacheFetchInProgress; // @synthesize cacheFetchInProgress=_cacheFetchInProgress;
+@property(retain, nonatomic) NSDate *lastCacheUpdate; // @synthesize lastCacheUpdate=_lastCacheUpdate;
+@property(retain, nonatomic) NSDictionary *locationCache; // @synthesize locationCache=_locationCache;
 @property(copy, nonatomic) NSDate *ephemeralLocationLastUpdatedDate; // @synthesize ephemeralLocationLastUpdatedDate=_ephemeralLocationLastUpdatedDate;
 @property(nonatomic) __weak id beaconEstimatedLocationChangedNotificationToken; // @synthesize beaconEstimatedLocationChangedNotificationToken=_beaconEstimatedLocationChangedNotificationToken;
 @property(nonatomic) __weak id beaconEphemeralLocationChangedNotificationToken; // @synthesize beaconEphemeralLocationChangedNotificationToken=_beaconEphemeralLocationChangedNotificationToken;

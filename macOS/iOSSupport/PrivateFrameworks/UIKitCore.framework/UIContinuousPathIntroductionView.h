@@ -6,23 +6,36 @@
 
 #import <UIKitCore/UIKBTutorialModalDisplay.h>
 
-@class UITextView;
+@class NSArray, UIButton, UIImageView, UILabel, UIView;
 
 __attribute__((visibility("hidden")))
 @interface UIContinuousPathIntroductionView : UIKBTutorialModalDisplay
 {
-    UITextView *_textBody;
+    struct CGSize _imageSize;
     double _imageWidth;
     double _textMargin;
     double _paddingAdjust;
+    UIView *_textImageContainer;
+    UILabel *_landscapeTextBody;
+    UIImageView *_keyboardView;
+    UIButton *_landscapeButton;
+    NSArray *_portraitConstraints;
+    NSArray *_landscapeConstraints;
 }
 
+@property(retain, nonatomic) NSArray *landscapeConstraints; // @synthesize landscapeConstraints=_landscapeConstraints;
+@property(retain, nonatomic) NSArray *portraitConstraints; // @synthesize portraitConstraints=_portraitConstraints;
+@property(retain, nonatomic) UIButton *landscapeButton; // @synthesize landscapeButton=_landscapeButton;
+@property(retain, nonatomic) UIImageView *keyboardView; // @synthesize keyboardView=_keyboardView;
+@property(retain, nonatomic) UILabel *landscapeTextBody; // @synthesize landscapeTextBody=_landscapeTextBody;
+@property(retain, nonatomic) UIView *textImageContainer; // @synthesize textImageContainer=_textImageContainer;
 - (void).cxx_destruct;
 - (void)extraButtonTapAction;
-- (id)textBodyDescription;
-- (void)configContainerView;
-- (id)constructMediaView;
-- (id)scaleImage:(id)arg1 toRect:(struct CGRect)arg2;
+- (long long)textBodyMaxLines;
+- (double)mediaLayoutWidthAdjustment;
+- (id)textBodyDescriptions;
+- (id)textTitleDescriptions;
+- (id)mediaContents;
 - (void)setupConstraintData;
 - (id)initWithKeyboardAppearance:(long long)arg1;
 

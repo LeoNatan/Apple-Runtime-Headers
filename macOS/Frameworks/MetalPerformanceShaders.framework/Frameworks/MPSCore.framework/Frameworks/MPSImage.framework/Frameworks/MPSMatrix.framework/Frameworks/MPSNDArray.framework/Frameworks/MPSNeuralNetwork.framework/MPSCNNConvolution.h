@@ -27,6 +27,7 @@
     unsigned long long _scaleFactor;
     unsigned long long _channelMultiplier;
     unsigned int _weightsDataType;
+    unsigned int _weightsLayout;
     NSData *_biasOriginal;
     id <MTLBuffer> _neuronABuffer;
     unsigned long long _accumulatorPrecisionOption;
@@ -75,13 +76,14 @@
 - (id)initWithDevice:(id)arg1 convolutionDescriptor:(id)arg2 kernelWeights:(const float *)arg3 biasTerms:(const float *)arg4 flags:(unsigned long long)arg5;
 - (id)initWithDevice:(id)arg1 convolutionDescriptor:(id)arg2 kernelWeights:(const float *)arg3 biasTerms:(const float *)arg4 flags:(unsigned long long)arg5 fullyConnected:(_Bool)arg6;
 - (id)initWithDevice:(id)arg1 convolutionDescriptor:(id)arg2 kernelWeights:(const float *)arg3 biasTerms:(const float *)arg4 flags:(unsigned long long)arg5 fullyConnected:(_Bool)arg6 convolutionTranspose:(_Bool)arg7;
--     // Error parsing type: B88@0:8@16@24r^v32I40r^44r^f52i60r^f64Q72B80B84, name: initialize:convolutionDescriptor:kernelWeights:dataType:range:lookUpTable:qType:biasTerms:flags:fullyConnected:convolutionTranspose:
--     // Error parsing type: c64@0:8@16I24r^v28r^f36i44r^48r^f56, name: PrepareAndLoadData:dataType:weights:biases:quantizationType:ranges:lookUpTable:
+-     // Error parsing type: B92@0:8@16@24r^v32I40I44r^48r^f56i64r^f68Q76B84B88, name: initialize:convolutionDescriptor:kernelWeights:dataType:weightsLayout:range:lookUpTable:qType:biasTerms:flags:fullyConnected:convolutionTranspose:
+-     // Error parsing type: c68@0:8@16I24I28r^v32r^f40i48r^52r^f60, name: PrepareAndLoadData:dataType:weightsLayout:weights:biases:quantizationType:ranges:lookUpTable:
 - (id)initWithDevice:(id)arg1;
 @property(readonly, nonatomic) unsigned long long weightsBufferLength;
 - (struct NeuronInfo)neuronInfo;
 - (BOOL)convolutionTranspose;
 - (int)quantizationType;
+- (unsigned int)weightsLayout;
 - (id)quantizationBuffer;
 - (id)neuronABuffer;
 - (id)biases;

@@ -92,6 +92,7 @@
 @property(retain, nonatomic) GEOTransitSignInstruction *transitSignInstruction;
 @property(readonly, nonatomic) BOOL hasTransitSignInstruction;
 - (void)_readTransitSignInstruction;
+@property(readonly, nonatomic) BOOL hideTimeInstructionsIfCollapsed;
 @property(readonly, nonatomic) id <GEOServerFormattedString> secondaryTimeFormattedString;
 @property(readonly, nonatomic) id <GEOServerFormattedString> primaryTimeFormattedString;
 @property(readonly, nonatomic) id <GEOServerFormattedString> expandableListFormattedString;

@@ -8,7 +8,6 @@
 
 @interface UIImage (WorkflowUI)
 + (id)wf_workflowUIImageNamed:(id)arg1;
-+ (id)wf_disclosureImageWithColor:(id)arg1 strokeWidth:(double)arg2 size:(struct CGSize)arg3;
 + (id)workflowMinusImage;
 + (id)workflowPlusImage;
 - (id)wf_insetImageWithInsets:(struct UIEdgeInsets)arg1;

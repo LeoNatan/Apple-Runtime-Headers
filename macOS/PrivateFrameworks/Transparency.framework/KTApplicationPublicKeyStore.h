@@ -10,10 +10,12 @@
 
 @interface KTApplicationPublicKeyStore : NSObject
 {
+    int _vrfType;
     NSData *_vrfKey;
     NSDictionary *_trustedAppSigningKeys;
     NSDictionary *_trustedTltSigningKeys;
     NSString *_application;
+    NSData *_vrfPublicKeyBytes;
     NSData *_vrfSignature;
     NSData *_vrfSignatureKeySPKI;
     struct __CFString *_vrfSignatureAlgorithm;
@@ -28,6 +30,8 @@
 @property struct __CFString *vrfSignatureAlgorithm; // @synthesize vrfSignatureAlgorithm=_vrfSignatureAlgorithm;
 @property(retain) NSData *vrfSignatureKeySPKI; // @synthesize vrfSignatureKeySPKI=_vrfSignatureKeySPKI;
 @property(retain) NSData *vrfSignature; // @synthesize vrfSignature=_vrfSignature;
+@property int vrfType; // @synthesize vrfType=_vrfType;
+@property(retain) NSData *vrfPublicKeyBytes; // @synthesize vrfPublicKeyBytes=_vrfPublicKeyBytes;
 @property(retain) NSString *application; // @synthesize application=_application;
 @property(retain) NSDictionary *trustedTltSigningKeys; // @synthesize trustedTltSigningKeys=_trustedTltSigningKeys;
 @property(retain) NSDictionary *trustedAppSigningKeys; // @synthesize trustedAppSigningKeys=_trustedAppSigningKeys;
@@ -37,12 +41,12 @@
 - (BOOL)processDiskState:(id)arg1 error:(id *)arg2;
 - (id)initWithApplication:(id)arg1 response:(id)arg2 error:(id *)arg3;
 - (BOOL)processPublicKeysResponse:(id)arg1 error:(id *)arg2;
-- (BOOL)processKeyData:(id)arg1 tltLeafs:(id)arg2 intermediates:(id)arg3 vrfKey:(id)arg4 vrfSignatureBytes:(id)arg5 vrfSPKIHash:(id)arg6 vrfSignatureAlgorithm:(struct __CFString *)arg7 error:(id *)arg8;
+- (BOOL)processKeyData:(id)arg1 tltLeafs:(id)arg2 intermediates:(id)arg3 vrfPublicKeyBytes:(id)arg4 vrfSignatureBytes:(id)arg5 vrfSPKIHash:(id)arg6 vrfSignatureAlgorithm:(struct __CFString *)arg7 error:(id *)arg8;
 - (id)copyVRFKeyFromResponse:(id)arg1 error:(id *)arg2;
 - (id)copyVRFKeySigningKeySPKIFromResponse:(id)arg1 error:(id *)arg2;
 - (id)copyVRFKeySignatureFromResponse:(id)arg1 error:(id *)arg2;
 - (BOOL)verifyCertificates:(id)arg1 intermediates:(id)arg2 application:(id)arg3 error:(id *)arg4;
-- (id)contentMap;
+- (id)copyKeyStoreState;
 - (void)clearState:(id *)arg1;
 @property(readonly) BOOL ready;
 

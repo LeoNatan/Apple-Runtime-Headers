@@ -6,21 +6,19 @@
 
 #import <UIKit/UIView.h>
 
-#import <AVKit/AVCaptureViewConfiguring-Protocol.h>
+#import <AVKit/AVScrollViewObserverContentView-Protocol.h>
 
-@class AVExternalPlaybackIndicatorView, AVPlaybackControlsView, AVStyleSheet, AVTurboModePlaybackControlsPlaceholderView, NSMutableDictionary, NSString, UIImageView, _UIVisualEffectBackdropView, __AVPlayerLayerView;
+@class AVCABackdropLayerView, AVExternalPlaybackIndicatorView, AVPlaybackControlsView, AVScrollViewObserver, AVStyleSheet, AVTurboModePlaybackControlsPlaceholderView, NSMutableDictionary, NSNumber, NSString, UIImageView, __AVPlayerLayerView;
 @protocol AVPlaybackContentContainer, AVPlayerViewControllerContentViewDelegate;
 
 __attribute__((visibility("hidden")))
-@interface AVPlayerViewControllerContentView : UIView <AVCaptureViewConfiguring>
+@interface AVPlayerViewControllerContentView : UIView <AVScrollViewObserverContentView>
 {
+    BOOL _shouldLoadPlaybackControlsHint;
     BOOL _canAutomaticallyZoomLetterboxVideos;
     BOOL _styleSheetShouldUseCompactFullScreenItemSize;
     BOOL _needsInitialLayout;
-    BOOL _backdropCaptureViewHidden;
     NSString *_automaticVideoGravity;
-    NSString *_captureGroupName;
-    _UIVisualEffectBackdropView *_captureView;
     AVExternalPlaybackIndicatorView *_externalPlaybackIndicatorView;
     UIImageView *_unsupportedContentIndicatorView;
     UIImageView *_audioOnlyIndicatorView;
@@ -32,17 +30,20 @@ __attribute__((visibility("hidden")))
     AVTurboModePlaybackControlsPlaceholderView *_turboModePlaybackControlsPlaceholderView;
     __AVPlayerLayerView *_playerLayerView;
     NSMutableDictionary *_targetVideoGravities;
+    AVCABackdropLayerView *_backdropLayerView;
     NSString *_externalPlaybackIndicatorTitle;
     NSString *_externalPlaybackIndicatorSubtitle;
     AVStyleSheet *_styleSheet;
+    AVScrollViewObserver *_scrollingObserver;
     struct UIEdgeInsets _edgeInsetsForLetterboxedContent;
     struct UIEdgeInsets _videoContentInset;
 }
 
-@property(nonatomic) BOOL backdropCaptureViewHidden; // @synthesize backdropCaptureViewHidden=_backdropCaptureViewHidden;
+@property(readonly, nonatomic) AVScrollViewObserver *scrollingObserver; // @synthesize scrollingObserver=_scrollingObserver;
 @property(retain, nonatomic) AVStyleSheet *styleSheet; // @synthesize styleSheet=_styleSheet;
 @property(copy, nonatomic) NSString *externalPlaybackIndicatorSubtitle; // @synthesize externalPlaybackIndicatorSubtitle=_externalPlaybackIndicatorSubtitle;
 @property(copy, nonatomic) NSString *externalPlaybackIndicatorTitle; // @synthesize externalPlaybackIndicatorTitle=_externalPlaybackIndicatorTitle;
+@property(readonly, nonatomic) AVCABackdropLayerView *backdropLayerView; // @synthesize backdropLayerView=_backdropLayerView;
 @property(readonly, nonatomic) NSMutableDictionary *targetVideoGravities; // @synthesize targetVideoGravities=_targetVideoGravities;
 @property(nonatomic) BOOL needsInitialLayout; // @synthesize needsInitialLayout=_needsInitialLayout;
 @property(retain, nonatomic) __AVPlayerLayerView *playerLayerView; // @synthesize playerLayerView=_playerLayerView;
@@ -53,25 +54,30 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) UIView *interactiveContentOverlayView; // @synthesize interactiveContentOverlayView=_interactiveContentOverlayView;
 @property(nonatomic) struct UIEdgeInsets edgeInsetsForLetterboxedContent; // @synthesize edgeInsetsForLetterboxedContent=_edgeInsetsForLetterboxedContent;
 @property(nonatomic) BOOL canAutomaticallyZoomLetterboxVideos; // @synthesize canAutomaticallyZoomLetterboxVideos=_canAutomaticallyZoomLetterboxVideos;
+@property(nonatomic) BOOL shouldLoadPlaybackControlsHint; // @synthesize shouldLoadPlaybackControlsHint=_shouldLoadPlaybackControlsHint;
 @property(retain, nonatomic) UIView<AVPlaybackContentContainer> *playbackContentContainerView; // @synthesize playbackContentContainerView=_playbackContentContainerView;
 @property(nonatomic) __weak id <AVPlayerViewControllerContentViewDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (void)_updateStyleSheet;
 - (void)_loadTurboModePlaybackControlsPlaceholderViewIfNeeded;
+- (void)_loadTurboOrFullPlaybackControlsIfNeeded;
 - (void)_insertPlaybackControlsOrPlaceholderView:(id)arg1;
 - (id)_mediaTimingFunctionForCurrentAnimationCurve;
 - (void)_applyVideoGravityIfNeeded:(long long)arg1;
 - (void)_updateVideoContentInsetForVideoGravity:(long long)arg1;
 - (void)_updateVideoGravityDuringLayoutSubviewsAndAssertThatIfYouBreakThisMethodYouOwnThisMethod;
 - (BOOL)_isBeingTransitionedToOrFromFullScreen;
+@property(readonly, nonatomic, getter=isScrollingQuickly) BOOL scrollingQuickly;
+@property(readonly, nonatomic, getter=isScrolling) BOOL scrolling;
+@property(readonly, nonatomic, getter=isInAWindowAndNotScrolling) BOOL inAWindowAndNotScrolling;
 - (void)layoutSubviews;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
-- (void)configureBackdropView:(id)arg1;
+- (BOOL)avkit_hasFullScreenLayoutClass;
+- (id)avkit_backdropGroupLeader;
+- (void)removeTurboModePlaybackControlsPlaceholderViewIfNeeded;
 - (void)loadPlaybackControlsViewIfNeeded;
-@property(readonly, nonatomic) unsigned long long layoutClass;
-@property(readonly, nonatomic) BOOL isDescendantOfNonPagingScrollView;
+@property(readonly, nonatomic) NSNumber *layoutClass;
 @property(readonly, nonatomic) BOOL isCoveringWindow;
 - (void)setTargetVideoGravity:(id)arg1 forLayoutClass:(unsigned long long)arg2;
 - (void)setExternalPlaybackIndicatorTitle:(id)arg1 subtitle:(id)arg2;
@@ -80,7 +86,8 @@ __attribute__((visibility("hidden")))
 - (void)setShowsUnsupportedContentIndicator:(BOOL)arg1;
 - (BOOL)isViewDescendantOfPlaybackControlsSubview:(id)arg1;
 - (void)addPlaybackContentContainerViewIfNeeded;
-- (void)updateBackdropCaptureViewHidden;
+- (void)scrollViewObserverValuesDidChange:(id)arg1;
+- (void)avkit_needsUpdateBackdropCaptureViewHidden;
 @property(readonly, nonatomic) UIView *iAdPreRollViewIfLoaded;
 @property(readonly, nonatomic) UIView *iAdPreRollView; // @synthesize iAdPreRollView=_iAdPreRollView;
 @property(readonly, nonatomic) UIImageView *audioOnlyIndicatorViewIfLoaded;
@@ -89,11 +96,15 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) UIImageView *unsupportedContentIndicatorView; // @synthesize unsupportedContentIndicatorView=_unsupportedContentIndicatorView;
 @property(readonly, nonatomic) AVExternalPlaybackIndicatorView *externalPlaybackIndicatorViewIfLoaded;
 @property(readonly, nonatomic) AVExternalPlaybackIndicatorView *externalPlaybackIndicatorView; // @synthesize externalPlaybackIndicatorView=_externalPlaybackIndicatorView;
-@property(readonly, nonatomic) _UIVisualEffectBackdropView *captureView; // @synthesize captureView=_captureView;
-@property(readonly, nonatomic) NSString *captureGroupName; // @synthesize captureGroupName=_captureGroupName;
 @property(copy, nonatomic) NSString *automaticVideoGravity; // @synthesize automaticVideoGravity=_automaticVideoGravity;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect)arg1 playbackContentContainerView:(id)arg2 targetVideoGravities:(id)arg3;
+
+// Remaining properties
+@property(readonly, copy) NSString *debugDescription;
+@property(readonly, copy) NSString *description;
+@property(readonly) unsigned long long hash;
+@property(readonly) Class superclass;
 
 @end
 

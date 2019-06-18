@@ -14,6 +14,7 @@
     GEODirectionsFeedbackLogMessage *_currentFeedbackLogMessage;
     double _currentDirectionsModeStartTime;
     NSMutableArray *_navigationModes;
+    double _originalExpectedTime;
 }
 
 @property(retain, nonatomic) GEODirectionsFeedback *currentDirectionsFeedback; // @synthesize currentDirectionsFeedback=_currentDirectionsFeedback;
@@ -29,6 +30,7 @@
 - (void)addRouteID:(id)arg1 routeIndex:(unsigned int)arg2 stepID:(unsigned int)arg3 completeStep:(BOOL)arg4;
 - (void)addStepFeedback:(id)arg1;
 - (void)addGuidanceEventFeedback:(id)arg1;
+- (void)setOriginalExpectedTime:(double)arg1;
 - (void)setupFeedbackSessionWithResponseID:(id)arg1;
 - (void)startFeedbackSessionForResponseID:(id)arg1 withNavigationType:(int)arg2;
 - (void)_updateFeedbackSessionWithResponseID:(id)arg1;

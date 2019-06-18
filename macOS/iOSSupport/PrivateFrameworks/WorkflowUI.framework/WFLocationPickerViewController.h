@@ -89,6 +89,7 @@
 - (id)circularRegion;
 - (void)showMapRegionForCoordinate:(struct CLLocationCoordinate2D)arg1 radius:(double)arg2;
 - (id)locationFromRecentContact:(id)arg1;
+- (void)getPlacemarkFromLocation:(id)arg1 streetAddress:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)getMapItemFromRecentContact:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 - (void)displayLocationCoordinate:(struct CLLocationCoordinate2D)arg1;
 - (unsigned long long)proximityType;

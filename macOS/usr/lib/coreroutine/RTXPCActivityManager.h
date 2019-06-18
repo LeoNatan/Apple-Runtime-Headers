@@ -6,17 +6,19 @@
 
 #import <coreroutine/RTService.h>
 
-@class NSMutableArray, NSMutableDictionary, RTDefaultsManager, RTDiagnostics;
+@class NSMutableArray, NSMutableDictionary, RTDefaultsManager, RTTimer, RTTimerManager, RTXPCActivityTask;
 
 @interface RTXPCActivityManager : RTService
 {
-    BOOL _runningTask;
     RTDefaultsManager *_defaultsManager;
-    RTDiagnostics *_diagnosgtics;
+    RTTimerManager *_timerManager;
+    RTTimer *_timer;
     NSMutableDictionary *_registrants;
+    RTXPCActivityTask *_runningTask;
     NSMutableArray *_pendingTasks;
 }
 
++ (_Bool)xpcActivityShouldDeferActivity:(id)arg1;
 + (void)xpcActivitySetCriteriaActivity:(id)arg1 criteria:(id)arg2;
 + (id)xpcActivityCopyCriteriaActivity:(id)arg1;
 + (_Bool)xpcActivitySetStateActivity:(id)arg1 state:(long long)arg2;
@@ -27,9 +29,10 @@
 + (id)lastCompleteDateKeyForIdentifier:(id)arg1;
 + (id)lastAttemptDateKeyForIdentifier:(id)arg1;
 @property(retain, nonatomic) NSMutableArray *pendingTasks; // @synthesize pendingTasks=_pendingTasks;
-@property(nonatomic) BOOL runningTask; // @synthesize runningTask=_runningTask;
+@property(retain, nonatomic) RTXPCActivityTask *runningTask; // @synthesize runningTask=_runningTask;
 @property(retain, nonatomic) NSMutableDictionary *registrants; // @synthesize registrants=_registrants;
-@property(retain, nonatomic) RTDiagnostics *diagnosgtics; // @synthesize diagnosgtics=_diagnosgtics;
+@property(retain, nonatomic) RTTimer *timer; // @synthesize timer=_timer;
+@property(retain, nonatomic) RTTimerManager *timerManager; // @synthesize timerManager=_timerManager;
 @property(retain, nonatomic) RTDefaultsManager *defaultsManager; // @synthesize defaultsManager=_defaultsManager;
 - (void).cxx_destruct;
 - (void)unregisterActivityWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
@@ -37,16 +40,20 @@
 - (void)registerActivityWithIdentifier:(id)arg1 criteria:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (id)_registerRegistrant:(id)arg1;
 - (void)_scheduleNextTask;
-- (BOOL)_takeSnapshotSinceDate:(id)arg1 description:(id)arg2 error:(id *)arg3;
-- (void)runRegistrantWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
-- (void)_runRegistrantWithIdentifier:(id)arg1 handler:(CDUnknownBlockType)arg2;
+- (void)_onDeferCheckTimer;
+- (void)_stopDeferCheckTimer;
+- (void)_startDeferCheckTimer;
+- (void)runRegistrantWithIdentifier:(id)arg1 activity:(id)arg2 handler:(CDUnknownBlockType)arg3;
+- (void)_runRegistrantWithIdentifier:(id)arg1 activity:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_registerActivityWithIdentifier:(id)arg1 criteria:(id)arg2 handler:(CDUnknownBlockType)arg3;
 - (void)_updateLastCompleteDateForIdentifier:(id)arg1;
 - (id)_lastCompleteDateForIdentifier:(id)arg1;
 - (void)_updateLastAttemptDateForIdentifier:(id)arg1;
 - (id)_lastAttemptDateForIdentifier:(id)arg1;
+- (void)_shutdown;
 - (void)_setup;
-- (id)initWithDefaultsManager:(id)arg1 diagnostics:(id)arg2;
+- (id)initWithDefaultsManager:(id)arg1 timerManager:(id)arg2;
+- (id)initWithDefaultsManager:(id)arg1;
 - (id)init;
 
 @end

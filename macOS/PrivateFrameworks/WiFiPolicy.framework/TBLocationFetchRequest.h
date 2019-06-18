@@ -6,27 +6,29 @@
 
 #import <objc/NSObject.h>
 
+#import <WiFiPolicy/NSCopying-Protocol.h>
 #import <WiFiPolicy/TBFetchRequest-Protocol.h>
 
 @class NSDictionary, NSString, TBLocationFetchRequestDescriptor;
 
-@interface TBLocationFetchRequest : NSObject <TBFetchRequest>
+@interface TBLocationFetchRequest : NSObject <TBFetchRequest, NSCopying>
 {
     BOOL _cacheable;
-    CDUnknownBlockType completionHandler;
     unsigned long long _sourcePolicy;
     NSDictionary *userInfo;
+    CDUnknownBlockType resultsHandler;
     TBLocationFetchRequestDescriptor *_descriptor;
 }
 
 + (id)fetchRequestWithDescriptor:(id)arg1 sourcePolicy:(unsigned long long)arg2 cacheable:(BOOL)arg3;
 + (id)fetchRequestWithDescriptor:(id)arg1 sourcePolicy:(unsigned long long)arg2;
 @property(retain, nonatomic) TBLocationFetchRequestDescriptor *descriptor; // @synthesize descriptor=_descriptor;
+@property(copy, nonatomic) CDUnknownBlockType resultsHandler; // @synthesize resultsHandler;
 @property(retain, nonatomic) NSDictionary *userInfo; // @synthesize userInfo;
-@property(readonly, nonatomic) BOOL cacheable; // @synthesize cacheable=_cacheable;
+@property(nonatomic) BOOL cacheable; // @synthesize cacheable=_cacheable;
 @property(nonatomic) unsigned long long sourcePolicy; // @synthesize sourcePolicy=_sourcePolicy;
-@property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler;
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone *)arg1;
 - (void)handlePreferLocalResponse:(id)arg1;
 - (void)handleResponse:(id)arg1;
 - (id)initWithDescriptor:(id)arg1 sourcePolicy:(unsigned long long)arg2 cacheable:(BOOL)arg3;

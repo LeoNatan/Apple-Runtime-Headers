@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class HFCameraClipPosition, HFUniqueArrayDiff, HMCameraClipCollection, NSArray, NSDictionary;
+@class HFCameraClipPosition, HFUniqueArrayDiff, NSArray, NSDictionary;
 
 @interface HFCameraClipPlayerQueueUpdate : NSObject
 {
     BOOL _hasQueueChanges;
     BOOL _queueChangesRequireRebuild;
-    HMCameraClipCollection *_clipCollection;
+    NSArray *_clips;
     HFCameraClipPosition *_targetPosition;
     NSArray *_initialQueuedItems;
     unsigned long long _queueLimit;
@@ -29,12 +29,12 @@
 @property(readonly, nonatomic) unsigned long long queueLimit; // @synthesize queueLimit=_queueLimit;
 @property(readonly, nonatomic) NSArray *initialQueuedItems; // @synthesize initialQueuedItems=_initialQueuedItems;
 @property(readonly, nonatomic) HFCameraClipPosition *targetPosition; // @synthesize targetPosition=_targetPosition;
-@property(readonly, nonatomic) HMCameraClipCollection *clipCollection; // @synthesize clipCollection=_clipCollection;
+@property(readonly, nonatomic) NSArray *clips; // @synthesize clips=_clips;
 - (void).cxx_destruct;
 - (id)_buildNewClipQueueForPosition:(id)arg1;
 - (void)_computeQueueDiff;
 - (void)performUpdatesOnQueue:(id)arg1;
-- (id)initWithClipCollection:(id)arg1 targetPosition:(id)arg2 queuedItems:(id)arg3 queueLimit:(unsigned long long)arg4;
+- (id)initWithClips:(id)arg1 targetPosition:(id)arg2 queuedItems:(id)arg3 queueLimit:(unsigned long long)arg4;
 
 @end
 

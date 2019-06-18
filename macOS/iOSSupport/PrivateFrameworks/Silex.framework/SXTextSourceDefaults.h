@@ -9,11 +9,9 @@
 @interface SXTextSourceDefaults : NSObject
 {
     double _fontSize;
-    long long _textAlignment;
 }
 
 + (id)defaults;
-@property(nonatomic) long long textAlignment; // @synthesize textAlignment=_textAlignment;
 @property(nonatomic) double fontSize; // @synthesize fontSize=_fontSize;
 - (id)init;
 

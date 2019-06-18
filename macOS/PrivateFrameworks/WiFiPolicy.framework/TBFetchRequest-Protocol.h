@@ -4,14 +4,15 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
+#import <WiFiPolicy/NSCopying-Protocol.h>
 #import <WiFiPolicy/NSObject-Protocol.h>
 
 @class NSArray, NSDictionary;
 @protocol TBFetchRequestDescriptor, TBFetchResponse;
 
-@protocol TBFetchRequest <NSObject>
+@protocol TBFetchRequest <NSObject, NSCopying>
 @property(readonly, nonatomic) BOOL cacheable;
-@property(copy, nonatomic) CDUnknownBlockType completionHandler;
+@property(copy, nonatomic) CDUnknownBlockType resultsHandler;
 @property(nonatomic) unsigned long long sourcePolicy;
 @property(readonly, nonatomic) id <TBFetchRequestDescriptor> descriptor;
 - (void)handleResponse:(id <TBFetchResponse>)arg1;

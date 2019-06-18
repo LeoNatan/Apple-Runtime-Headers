@@ -105,6 +105,7 @@
         unsigned int delegateTargetContentOffsetForProposedContentOffset:1;
         unsigned int delegateTargetContentOffsetOnResizeForProposedContentOffset:1;
         unsigned int delegateAllowedDropPositionsForItemsAtIndexPathsMovedToIndexPath:1;
+        unsigned int delegateDragOperationForItemsAtIndexPathsMovedOntoItemAtIndexPath:1;
         unsigned int dataSourceNumberOfSections:1;
         unsigned int dataSourceViewForSupplementaryElement:1;
         unsigned int reloadSkippedDuringSuspension:1;
@@ -387,6 +388,7 @@
 - (void)draggingSession:(id)arg1 movedToPoint:(struct CGPoint)arg2;
 - (void)draggingSession:(id)arg1 willBeginAtPoint:(struct CGPoint)arg2;
 - (unsigned long long)draggingSession:(id)arg1 sourceOperationMaskForDraggingContext:(long long)arg2;
+- (unsigned long long)dragOperationForItemsAtIndexPaths:(id)arg1 movedOntoItemAtIndexPath:(id)arg2;
 - (long long)allowedDropPositionsForItemsAtIndexPaths:(id)arg1 movedToIndexPath:(id)arg2;
 - (void)rearrangingCoordinatorReloadLayout_;
 @property(readonly, nonatomic) BOOL isRearranging_;

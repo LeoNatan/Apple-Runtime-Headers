@@ -6,15 +6,19 @@
 
 #import <objc/NSObject.h>
 
-@class PPLocationStorage, PPMLocationDonation, PPMObjectsDeletion;
+#import <PersonalizationPortraitInternals/PPFeedbackAccepting-Protocol.h>
 
-@interface PPLocalLocationStore : NSObject
+@class PPLocationStorage, PPMFeedbackRegistered, PPMLocationDonation, PPMObjectsDeletion;
+
+@interface PPLocalLocationStore : NSObject <PPFeedbackAccepting>
 {
     PPLocationStorage *_storage;
     PPMLocationDonation *_donationTracker;
     PPMObjectsDeletion *_deletionTracker;
+    PPMFeedbackRegistered *_feedbackTracker;
 }
 
++ (float)resolvedPerRecordDecayRateForRecord:(id)arg1 perRecordDecayRate:(float)arg2;
 + (void)sortAndTruncate:(id)arg1 queryLimit:(unsigned long long)arg2;
 + (id)scoredLocationFromName:(id)arg1 category:(unsigned short)arg2 score:(double)arg3 sentimentScore:(double)arg4;
 + (unsigned short)namedEntityCategoryToLocationCategory:(unsigned long long)arg1;
@@ -23,15 +27,15 @@
 + (id)locationFromMapItem:(id)arg1;
 + (id)locationNamedEntityToPPScoredLocation:(id)arg1;
 + (id)locationFromMapItemDictionary:(id)arg1;
-+ (id)scoreLocations:(id)arg1 scoringDate:(id)arg2 overrideDecayRate:(BOOL)arg3 decayRate:(double)arg4;
++ (id)scoreLocations:(id)arg1 scoringDate:(id)arg2 perRecordDecayRate:(float)arg3 decayRate:(float)arg4;
 + (id)defaultStore;
 - (void).cxx_destruct;
+- (void)registerFeedback:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (BOOL)deleteAllLocationsOlderThanDate:(id)arg1 deletedCount:(unsigned long long *)arg2 error:(id *)arg3;
 - (BOOL)deleteAllLocationsFromSourcesWithBundleId:(id)arg1 groupId:(id)arg2 olderThan:(id)arg3 deletedCount:(unsigned long long *)arg4 error:(id *)arg5;
 - (BOOL)deleteAllLocationsFromSourcesWithBundleId:(id)arg1 groupIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
 - (BOOL)deleteAllLocationsFromSourcesWithBundleId:(id)arg1 documentIds:(id)arg2 deletedCount:(unsigned long long *)arg3 error:(id *)arg4;
 - (BOOL)deleteAllLocationsFromSourcesWithBundleId:(id)arg1 deletedCount:(unsigned long long *)arg2 error:(id *)arg3;
-- (BOOL)registerFeedback:(id)arg1 error:(id *)arg2;
 - (BOOL)clearWithError:(id *)arg1 deletedCount:(unsigned long long *)arg2;
 - (id)_unlimitedLocationRecordsWithQuery:(id)arg1 error:(id *)arg2;
 - (id)locationRecordsWithQuery:(id)arg1 error:(id *)arg2;

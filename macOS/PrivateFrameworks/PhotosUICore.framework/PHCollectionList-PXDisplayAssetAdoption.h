@@ -11,9 +11,6 @@
 @class NSString;
 
 @interface PHCollectionList (PXDisplayAssetAdoption) <PXDisplayCollectionList>
-+ (id)px_testingCollectionListWithCollectionTitles:(id)arg1 title:(id)arg2;
-+ (id)px_testingCollectionListWithCollections:(id)arg1 title:(id)arg2;
-+ (id)px_testingTransientIdentifier;
 + (id)_assetCollectionsWithAlbumSubtypes:(id)arg1;
 + (id)px_otherAlbumsWithoutDeletedCollectionList;
 + (id)px_otherAlbumsCollectionList;
@@ -29,7 +26,6 @@
 @property(readonly, nonatomic) BOOL px_isRegularFolder;
 @property(readonly, nonatomic) BOOL px_isSmartFolder;
 @property(readonly, nonatomic) BOOL px_isFolder;
-- (id)pasteboardReference;
 @property(readonly, nonatomic) BOOL px_isProjectsFolder;
 @property(readonly, nonatomic) BOOL px_isMediaTypesFolder;
 @property(readonly, nonatomic) BOOL px_isSharedAlbumsFolder;

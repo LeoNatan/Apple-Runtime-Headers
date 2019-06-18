@@ -18,10 +18,12 @@ __attribute__((visibility("hidden")))
     int _mapRefCount;
 }
 
++ (Class)classForKeyedUnarchiver;
 - (id)subdataWithRange:(struct _NSRange)arg1;
 - (void)getBytes:(void *)arg1 range:(struct _NSRange)arg2;
 - (void)getBytes:(void *)arg1 length:(unsigned long long)arg2;
 - (void)getBytes:(void *)arg1;
+- (Class)classForArchiver;
 - (Class)classForCoder;
 - (const void *)bytes;
 - (id)copyWithZone:(struct _NSZone *)arg1;

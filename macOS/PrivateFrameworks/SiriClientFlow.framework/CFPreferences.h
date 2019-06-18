@@ -16,7 +16,7 @@
 + (id)warmupModularScriptIdentifiers;
 + (id)warmupScriptIdentifiers;
 + (id)_clientFlowUserDefaults;
-+ (BOOL)shouldRunUpdateScriptsOnBoot;
++ (BOOL)shouldSkipUpdateScriptsOnBoot;
 + (BOOL)shouldRunNodeFlow:(BOOL)arg1;
 + (BOOL)shouldOverrideScripts;
 

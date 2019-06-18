@@ -103,6 +103,7 @@
 - (void)confirmContactDetailRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)rejectRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)confirmRecord:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (void)_performAction:(id)arg1 onRecord:(id)arg2 completion:(CDUnknownBlockType)arg3 withParentConfirmation:(BOOL)arg4;
 - (void)_performAction:(id)arg1 onRecord:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)_performAction:(id)arg1 onContactDetailRecord:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)confirmContact:(id)arg1 completion:(CDUnknownBlockType)arg2;

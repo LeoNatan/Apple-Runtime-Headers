@@ -85,6 +85,7 @@
 @property(readonly, nonatomic) NSArray *events; // @synthesize events=_events;
 - (void)_stepDidChange;
 - (void)updateGuidanceForLocation:(id)arg1 navigatorState:(int)arg2;
+- (void)_handleDuration:(double)arg1 forEventID:(id)arg2 index:(unsigned long long)arg3;
 - (void)_precalcuateDurations;
 - (double)durationOfEvent:(id)arg1 announcementIndex:(unsigned long long)arg2 distance:(double)arg3;
 - (double)timeUntilNextAnnouncement;
@@ -100,7 +101,7 @@
 - (void)reset;
 - (void)_initSpecialGuidanceEvents;
 - (void)dealloc;
-- (id)initWithNavigationSession:(id)arg1;
+- (id)initWithNavigationSession:(id)arg1 isReconnecting:(BOOL)arg2;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

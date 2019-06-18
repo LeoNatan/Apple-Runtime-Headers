@@ -6,9 +6,7 @@
 
 #import <NewsUI2/_TtC7NewsUI234PersonalizationDebugViewController.h>
 
-#import <NewsUI2/UITableViewDelegate-Protocol.h>
-
-@interface _TtC7NewsUI234PersonalizationDebugViewController (NewsUI21) <UITableViewDelegate>
+@interface _TtC7NewsUI234PersonalizationDebugViewController (NewsUI21)
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 @end
 

@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 @property(readonly, nonatomic, getter=isLeftAnchored) BOOL leftAnchored;
 @property(readonly, nonatomic) long long anchorPosition;
+@property(readonly, nonatomic) BOOL hasPendingVisibility;
 @property(readonly, nonatomic, getter=isVisible) BOOL visible;
 - (void)dismissAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;
 - (void)showAnimated:(BOOL)arg1 completionBlock:(CDUnknownBlockType)arg2;

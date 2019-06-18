@@ -6,12 +6,13 @@
 
 #import <AVFoundation/AVPlayerItem.h>
 
-@class AVEditBehaviorContext, AVMusicAppBehaviorContext, NSArray;
+@class AVEditBehaviorContext, AVMusicAppBehaviorContext;
 
 @interface AVPlayerItem (AVKitAdditionsPrivate)
 - (id)avkit_data;
 - (id)avkit_dataOrNil;
-@property(copy, nonatomic) NSArray *externalMetadata;
+- (void)setExternalMetadata:(id)arg1;
+- (id)externalMetadata;
 - (id)avkit_valueForAVKitProperty:(id)arg1;
 - (void)avkit_setValue:(id)arg1 forAVKitProperty:(id)arg2;
 - (void)avkit_setMusicBehaviorData:(id)arg1;

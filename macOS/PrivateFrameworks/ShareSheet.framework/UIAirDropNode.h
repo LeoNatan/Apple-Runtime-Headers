@@ -14,6 +14,7 @@
 {
     BOOL _wantsTwoLines;
     BOOL _disabled;
+    BOOL _restricted;
     NSNumber *_imageSlot;
     NSNumber *_labelSlot;
     NSNumber *_secondLabelSlot;
@@ -23,6 +24,7 @@
 
 + (BOOL)supportsSecureCoding;
 + (id)nodeWithImageSlot:(id)arg1 labelSlot:(id)arg2 transportSlot:(id)arg3;
+@property(nonatomic, getter=isRestricted) BOOL restricted; // @synthesize restricted=_restricted;
 @property(nonatomic, getter=isDisabled) BOOL disabled; // @synthesize disabled=_disabled;
 @property(nonatomic) BOOL wantsTwoLines; // @synthesize wantsTwoLines=_wantsTwoLines;
 @property(retain) NSUUID *nodeIdentifier; // @synthesize nodeIdentifier=_nodeIdentifier;

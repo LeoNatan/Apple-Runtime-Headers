@@ -14,6 +14,7 @@
 @interface SFSearchResult_SpotlightExtras : SFSearchResult <QLSeamlessOpenerDelegate>
 {
     unsigned long long _matchBits;
+    BOOL _lastRestrictionStatus;
     BOOL _autoLaunch;
     BOOL _isFirstTopHit;
     BOOL _isAnyTopHit;

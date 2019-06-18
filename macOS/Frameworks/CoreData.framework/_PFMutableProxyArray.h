@@ -20,6 +20,9 @@ __attribute__((visibility("hidden")))
     struct __CFArray *_indicesVeneer;
 }
 
++ (Class)classForKeyedUnarchiver;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 - (void)replaceObjectAtIndex:(unsigned long long)arg1 withObject:(id)arg2;
 - (void)removeObjectAtIndex:(unsigned long long)arg1;
 - (void)insertObject:(id)arg1 atIndex:(unsigned long long)arg2;

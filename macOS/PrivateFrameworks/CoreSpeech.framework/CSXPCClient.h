@@ -47,6 +47,7 @@
 - (void)_handleSessionInfoProvidingDelegateRouteChangeNotification:(id)arg1;
 - (void)_handleSessionInfoProvidingDelegateInterruptionNotification:(id)arg1;
 - (void)_handleSessionInfoProvidingDelegateMessageBody:(id)arg1;
+- (void)_handleSessionProvidingDelegateDidChangeContext:(id)arg1;
 - (void)_handleSessionProvidingDelegateStreamHandleIdInvalidation:(id)arg1;
 - (void)_handleSessionProvidingDelegateDidSetAudioSession:(id)arg1;
 - (void)_handleSessionProvidingDelegateWillSetAudioSession:(id)arg1;
@@ -85,7 +86,7 @@
 - (BOOL)prepareAudioStreamSync:(id)arg1 request:(id)arg2 error:(id *)arg3;
 - (void)audioStreamWithRequest:(id)arg1 streamName:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)audioStreamWithRequest:(id)arg1 streamName:(id)arg2 error:(id *)arg3;
-- (void)setCurrentContext:(id)arg1 completion:(CDUnknownBlockType)arg2;
+- (BOOL)setCurrentContext:(id)arg1 error:(id *)arg2;
 - (id)audioMetric;
 - (float)averagePowerForChannel:(unsigned long long)arg1;
 - (float)peakPowerForChannel:(unsigned long long)arg1;
@@ -99,13 +100,14 @@
 - (void)setAudioAlertDelegate:(id)arg1;
 - (void)setAudioSessionDelegate:(id)arg1;
 - (void)enableMiniDucking:(BOOL)arg1;
+- (void)duckAudioDevice:(unsigned int)arg1 duckedLevel:(float)arg2 rampDuration:(float)arg3;
 - (void)setDuckOthersOption:(BOOL)arg1;
 - (BOOL)duckOthersOption;
 - (BOOL)deactivateAudioSession:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)activateAudioSessionWithReason:(unsigned long long)arg1 error:(id *)arg2;
 - (BOOL)prewarmAudioSessionWithError:(id *)arg1;
 - (void)pingpong:(CDUnknownBlockType)arg1;
-- (BOOL)prepareAudioProviderWithContext:(id)arg1 error:(id *)arg2;
+- (BOOL)prepareAudioProviderWithContext:(id)arg1 clientType:(unsigned long long)arg2 error:(id *)arg3;
 - (void)dealloc;
 - (void)disconnect;
 - (void)connect;

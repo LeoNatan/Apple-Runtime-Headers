@@ -89,6 +89,7 @@
 + (id)fetchFirstAssetInEachMonthHighlightWithOptions:(id)arg1;
 + (id)fetchReferencedAssetsWithOptions:(id)arg1;
 + (id)fetchAssetsForKeywords:(id)arg1 options:(id)arg2;
++ (id)fetchAssetsInAssetCollections:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsWithObjectIDs:(id)arg1 options:(id)arg2;
 + (id)fetchAssetsAllowedForSceneProcessingWithOptions:(id)arg1;
 + (id)fetchAssetsNeedingSceneProcessingWithOptions:(id)arg1;
@@ -150,7 +151,6 @@
 + (id)fetchMovieCuratedAssetsInMemory:(id)arg1;
 + (id)fetchCuratedAssetsInAssetCollection:(id)arg1 referencePersons:(id)arg2;
 + (id)fetchExtendedCuratedAssetsInAssetCollection:(id)arg1;
-+ (id)fetchOverviewCuratedAssetsInAssetCollection:(id)arg1;
 + (id)fetchCuratedAssetsInAssetCollection:(id)arg1;
 + (id)fetchKeyCuratedAssetInAssetCollection:(id)arg1 referencePersons:(id)arg2;
 + (id)fetchKeyCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2 options:(id)arg3;
@@ -158,6 +158,7 @@
 + (id)_fetchRepresentativeAssetInAssetCollection:(id)arg1;
 + (id)_fetchCuratedAssetInAssetCollection:(id)arg1 referenceAsset:(id)arg2 referencePersons:(id)arg3 fetchOptions:(id)arg4 onlyKey:(BOOL)arg5;
 + (id)_requestResultInfoForImageInfo:(id)arg1 videoInfo:(id)arg2 adjustmentInfo:(id)arg3 renderingError:(id)arg4;
++ (id)fetchAssetsForReferences:(id)arg1 photoLibrary:(id)arg2;
 + (void)_inq_trimToMostRecentImageManagerMessages;
 + (id)_currentTimestampString;
 + (void)_inq_recordRequestID:(long long)arg1;
@@ -230,6 +231,7 @@
 - (id)descriptionForMediaAnalysisWithManagedAsset:(id)arg1;
 - (id)detailedDebugDescriptionInLibrary:(id)arg1;
 - (id)adjustmentsDebugMetadata;
+- (id)evaluationDebugMetadata;
 - (id)gatingDebugMetadata;
 - (id)__dictionaryWithContentsOfData:(id)arg1;
 @property(readonly, copy) NSString *description;
@@ -377,6 +379,7 @@
 - (BOOL)shouldUseRAWResourceWithOriginalResourceChoice:(unsigned long long)arg1;
 - (BOOL)shouldUseRAWResourceAsUnadjustedEditBase;
 - (unsigned long long)originalChoiceToFallbackForUnsupportRAW;
+- (id)objectReference;
 - (id)messagesForRecentImageManagerRequests;
 - (void)recordImageManagerMessageForRequestID:(int)arg1 message:(id)arg2;
 

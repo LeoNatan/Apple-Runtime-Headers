@@ -6,14 +6,14 @@
 
 #import <objc/NSObject.h>
 
-@class AVAudioHardwareObject, NSSet;
+@class AVAudioHardwareObject, NSArray;
 
 @interface AVAudioHardwareObjectChangeEvent : NSObject
 {
 }
 
-@property(readonly, nonatomic) NSSet *customProperties;
-@property(readonly, nonatomic) NSSet *namedProperties;
+@property(readonly, nonatomic) NSArray *customProperties;
+@property(readonly, nonatomic) NSArray *namedProperties;
 @property(readonly, nonatomic) AVAudioHardwareObject *changedObject;
 
 @end

@@ -20,6 +20,7 @@
     NSObject<OS_os_transaction> *_transaction;
     struct LogCategory *_ucat;
     WPClient *_wpClient;
+    BOOL _connectOnly;
     BOOL _guestMode;
     CDUnknownBlockType _completionHandler;
     NSString *_deviceAddress;
@@ -35,6 +36,7 @@
 @property(copy, nonatomic) NSString *guestAddress; // @synthesize guestAddress=_guestAddress;
 @property(retain, nonatomic) NSObject<OS_dispatch_queue> *dispatchQueue; // @synthesize dispatchQueue=_dispatchQueue;
 @property(copy, nonatomic) NSString *deviceAddress; // @synthesize deviceAddress=_deviceAddress;
+@property(nonatomic) BOOL connectOnly; // @synthesize connectOnly=_connectOnly;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 - (void).cxx_destruct;
 - (void)_completed:(int)arg1;

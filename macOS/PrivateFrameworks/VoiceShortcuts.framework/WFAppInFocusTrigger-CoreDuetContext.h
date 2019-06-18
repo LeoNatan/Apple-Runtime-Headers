@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFAppInFocusTrigger.h>
 
 @interface WFAppInFocusTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

@@ -19,6 +19,7 @@ __attribute__((visibility("hidden")))
 }
 
 + (BOOL)accessInstanceVariablesDirectly;
++ (Class)classForKeyedUnarchiver;
 + (void)initialize;
 - (void)_setShouldUseExtendedRelease:(BOOL)arg1;
 - (void)_setShouldRelease:(BOOL)arg1;
@@ -49,6 +50,8 @@ __attribute__((visibility("hidden")))
 - (id)initWithObjects:(id *)arg1 count:(unsigned int)arg2 andFlags:(unsigned int)arg3 andContext:(id)arg4;
 - (id)initWithObjects:(id *)arg1 count:(unsigned int)arg2 andFlags:(unsigned int)arg3;
 - (id)initWithObjects:(const id *)arg1 count:(unsigned long long)arg2;
+- (Class)classForArchiver;
+- (Class)classForCoder;
 
 @end
 

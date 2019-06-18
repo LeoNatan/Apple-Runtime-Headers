@@ -7,15 +7,17 @@
 #import <objc/NSObject.h>
 
 @class FMXPCServiceDescription, FMXPCSession;
-@protocol SPSchedulerXPCProtocol;
+@protocol OS_dispatch_queue, SPSchedulerXPCProtocol;
 
 @interface SPScheduler : NSObject
 {
     FMXPCServiceDescription *_serviceDescription;
     FMXPCSession *_session;
     id <SPSchedulerXPCProtocol> _proxy;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(retain, nonatomic) id <SPSchedulerXPCProtocol> proxy; // @synthesize proxy=_proxy;
 @property(retain, nonatomic) FMXPCSession *session; // @synthesize session=_session;
 @property(retain, nonatomic) FMXPCServiceDescription *serviceDescription; // @synthesize serviceDescription=_serviceDescription;

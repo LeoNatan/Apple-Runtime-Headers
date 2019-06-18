@@ -18,7 +18,7 @@ __attribute__((visibility("hidden")))
 - (void)endAccessing;
 - (BOOL)beginAccessing;
 - (BOOL)validatePlist;
-- (void *)copyPropertyListWithMutability:(unsigned long long)arg1;
+- (void *)copyPropertyListWithMutability:(unsigned long long)arg1 error:(struct __CFError **)arg2;
 - (id)copyXPCData;
 - (struct __CFData *)copyCFData;
 - (unsigned long long)length;

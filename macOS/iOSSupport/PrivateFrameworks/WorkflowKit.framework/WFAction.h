@@ -64,7 +64,7 @@
 @property(retain, nonatomic) NSProgress *progress; // @synthesize progress=_progress;
 - (void).cxx_destruct;
 - (void)configureRuntimeResourcesWithCompletionHandler:(CDUnknownBlockType)arg1;
-- (unsigned long long)minimumSupportedClientVersion;
+- (id)minimumSupportedClientVersion;
 @property(readonly, nonatomic) BOOL isRelevantToUser;
 - (BOOL)requiresUserInteractionWhenRunWithInput:(id)arg1;
 - (BOOL)showsImplicitChooseFromListWhenRunWithInput:(id)arg1;
@@ -120,6 +120,7 @@
 - (id)createAccompanyingActions;
 - (void)removeEventObserver:(id)arg1;
 - (void)addEventObserver:(id)arg1;
+- (void)outputContentClassesUpdated;
 - (void)nameUpdated;
 @property(readonly, nonatomic) NSArray *keyCommands;
 - (void)setOutput:(id)arg1 onVariableSource:(id)arg2;
@@ -142,8 +143,9 @@
 - (void)askForValuesOfParameters:(id)arg1 withDefaultStates:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)_processParameterStates:(id)arg1 withInput:(id)arg2 skippingHiddenParameters:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (void)processParametersWithInput:(id)arg1 askForInputIfNecessary:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)processParameterStates:(id)arg1 withInput:(id)arg2 askForInputIfNecessary:(BOOL)arg3 completionHandler:(CDUnknownBlockType)arg4;
 - (id)copyParameterStates;
-- (void)populateInputWithProcessedParameterValues:(id)arg1;
+- (id)populatedInputWithProcessedParameterValues:(id)arg1;
 - (void)populateInputFromVariablesWithParameterStates:(id)arg1 legacyInput:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 @property(readonly, nonatomic) BOOL populatesInputFromInputParameter;
 - (void)getInputContentFromVariablesInParameterState:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
@@ -158,6 +160,7 @@
 - (void)setSupplementalParameterValue:(id)arg1 forKey:(id)arg2;
 - (id)serializedParametersForDonatedIntent:(id)arg1;
 - (id)serializedParameters;
+- (id)parameterKeysIgnoredForParameterSummary;
 - (id)createStateForParameter:(id)arg1 fromSerializedRepresentation:(id)arg2;
 - (BOOL)setParameterState:(id)arg1 forKey:(id)arg2;
 - (id)parameterStateForKey:(id)arg1 fallingBackToDefaultValue:(BOOL)arg2;
@@ -168,6 +171,7 @@
 - (id)copyWithDefinition:(id)arg1 serializedParameters:(id)arg2;
 - (id)copyWithSerializedParameters:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
+@property(readonly, copy, nonatomic) NSString *localizedKeyParameterDisplayName;
 - (id)initWithIdentifier:(id)arg1 definition:(id)arg2 serializedParameters:(id)arg3;
 - (BOOL)containsVariableOfType:(id)arg1;
 - (id)containedVariablesOfClass:(Class)arg1;
@@ -204,7 +208,9 @@
 @property(readonly, nonatomic) NSDictionary *settingsUIDefinition;
 @property(readonly, nonatomic) NSArray *requiredResources;
 @property(readonly, nonatomic) NSArray *userInterfaceTypes;
+@property(readonly, nonatomic, getter=isBuiltInAction) BOOL builtInAction;
 @property(readonly, nonatomic, getter=isConstructorAction) BOOL constructorAction;
+@property(readonly, nonatomic, getter=isWatchCompatible) BOOL watchCompatible;
 @property(readonly, nonatomic, getter=isResidentCompatible) BOOL residentCompatible;
 @property(readonly, nonatomic, getter=isDiscoverable) BOOL discoverable;
 @property(readonly, nonatomic, getter=isDiscoverableInSearch) BOOL discoverableInSearch;

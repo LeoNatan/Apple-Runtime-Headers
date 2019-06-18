@@ -12,6 +12,7 @@
 
 @interface FCPaidBundleConfiguration : NSObject <NSCopying>
 {
+    int _minimumReadIssuesInMyMagazines;
     NSDictionary *_configDict;
     NSString *_storefrontID;
     NSString *_localizedStorefrontID;
@@ -37,10 +38,12 @@
 @property(readonly, copy, nonatomic) NSString *localizedStorefrontID; // @synthesize localizedStorefrontID=_localizedStorefrontID;
 @property(readonly, copy, nonatomic) NSString *storefrontID; // @synthesize storefrontID=_storefrontID;
 @property(retain, nonatomic) NSDictionary *configDict; // @synthesize configDict=_configDict;
+@property(readonly, nonatomic) int minimumReadIssuesInMyMagazines; // @synthesize minimumReadIssuesInMyMagazines=_minimumReadIssuesInMyMagazines;
 - (void).cxx_destruct;
 - (id)defaultMagazineGenres;
 - (id)defaultSubscriptionButtonConfigs;
 - (id)defaultPaywallConfigs;
+@property(readonly, nonatomic) long long recentIssuesMaxAge;
 @property(readonly, nonatomic, getter=isCategoriesDownloadButtonEnabled) BOOL categoriesDownloadButtonEnabled;
 @property(readonly, nonatomic) long long entitlementsGracePeriodInSeconds;
 @property(readonly, nonatomic) NSArray *groupWhitelistedTagIds;
@@ -82,6 +85,7 @@
 @property(readonly, nonatomic, getter=isTemporaryAccessEnabled) BOOL temporaryAccessEnabled;
 @property(readonly, nonatomic, getter=isPaidBundleVisible) BOOL paidBundleVisible;
 @property(readonly, nonatomic, getter=areMagazinesEnabled) BOOL magazinesEnabled;
+@property(readonly, nonatomic) long long deferredHardPaywallMinimumBodyTextLength;
 @property(readonly, nonatomic) unsigned long long articleHardPaywallType;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (unsigned long long)hash;

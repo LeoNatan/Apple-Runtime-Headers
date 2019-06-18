@@ -25,6 +25,7 @@
 - (void)didLoadResource:(id)arg1 error:(id)arg2;
 - (id)makeLoadOperation;
 - (unsigned long long)cacheOptions;
+- (BOOL)isSystemImageRequest;
 @property(readonly, nonatomic) BOOL isResourceRequest;
 - (id)description;
 - (id)init;

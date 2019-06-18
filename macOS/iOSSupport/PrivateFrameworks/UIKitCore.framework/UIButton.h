@@ -63,16 +63,7 @@
 + (id)_defaultTitleColorForState:(unsigned long long)arg1 button:(id)arg2;
 + (id)_defaultBackgroundImageForType:(long long)arg1 andState:(unsigned long long)arg2;
 + (id)_defaultSymbolConfigurationForType:(long long)arg1 andState:(unsigned long long)arg2;
-+ (id)_defaultImageForType:(long long)arg1 andState:(unsigned long long)arg2;
-+ (id)_xImage;
-+ (id)_minusImage;
-+ (id)_checkmarkImage;
-+ (id)_questionMarkImage;
-+ (id)_exclamationMarkImage;
-+ (id)_plusImage;
-+ (id)_infoDarkImage;
-+ (id)_infoLightImage;
-+ (id)_detailDisclosureImage;
++ (id)_defaultImageForType:(long long)arg1 andState:(unsigned long long)arg2 withConfiguration:(id)arg3;
 + (id)_selectedIndicatorImage;
 + (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3;
 + (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3 baseAlpha:(double)arg4;
@@ -209,7 +200,7 @@
 - (void)_setContentHuggingPriorities:(struct CGSize)arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
-- (void)deriveTitleRect:(struct CGRect *)arg1 imageRect:(struct CGRect *)arg2 fromContentRect:(struct CGRect)arg3 calculatePositionForEmptyTitle:(BOOL)arg4;
+- (void)_deriveTitleRect:(struct CGRect *)arg1 imageRect:(struct CGRect *)arg2 fromContentRect:(struct CGRect)arg3 calculatePositionForEmptyTitle:(BOOL)arg4;
 - (struct CGRect)imageRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)titleRectForContentRect:(struct CGRect)arg1;
 - (struct CGRect)_titleRectForContentRect:(struct CGRect)arg1 calculatePositionForEmptyTitle:(BOOL)arg2;

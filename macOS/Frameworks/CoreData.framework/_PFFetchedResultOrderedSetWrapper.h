@@ -16,6 +16,7 @@ __attribute__((visibility("hidden")))
     _PFWeakReference *_weakmoc;
 }
 
++ (Class)classForKeyedUnarchiver;
 + (id)allocWithZone:(struct _NSZone *)arg1;
 + (id)alloc;
 + (BOOL)accessInstanceVariablesDirectly;

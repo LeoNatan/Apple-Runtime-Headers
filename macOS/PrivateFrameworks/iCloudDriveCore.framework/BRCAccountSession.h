@@ -59,6 +59,7 @@
     BOOL _isDBOpened;
     BRCVersionsFileProvider *_versionsProvider;
     NSMutableArray *_xpcClients;
+    NSString *_migrationPath;
     BOOL _isCancelled;
     NSString *_sessionDirPath;
     NSString *_cacheDirPath;
@@ -163,7 +164,7 @@
 @property(readonly, nonatomic) unsigned int greedinessPreference;
 - (void)startDownloadsForGreediness;
 - (unsigned long long)computeTotalLiveDocumentSizeWithDb:(id)arg1;
-- (void)setOptimizeStorageEnabled:(BOOL)arg1;
+- (void)setOptimizeStorageEnabled:(BOOL)arg1 completion:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) BOOL hasOptimizeStorageEnabled;
 - (void)availableDiskSpaceDidChange;
 - (unsigned long long)availableDiskSpaceUsingCache:(BOOL)arg1 schedulingPendingDiskItemsIfNeeded:(BOOL)arg2;

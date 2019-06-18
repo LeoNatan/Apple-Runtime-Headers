@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
 - (void)setConnection:(id)arg1;
 - (id)getConnection;
 - (void)dealloc;
+- (void)runBlock:(CDUnknownBlockType)arg1;
 - (void)sendCommand:(id)arg1 from:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (id)makeCommand:(id)arg1;
 - (void)requestScannerOpenSessionWithOptions:(id)arg1 completion:(CDUnknownBlockType)arg2;

@@ -16,13 +16,10 @@
 }
 
 + (void)getErrorDescription:(out id *)arg1 detailedErrorDescription:(out id *)arg2 forCameraStreamError:(id)arg3;
-+ (id)cameraDemoURLWithName:(id)arg1 extension:(id)arg2;
 @property(readonly, nonatomic) id <HFHomeKitObject> primaryHomeKitObject;
 @property(readonly, nonatomic) unsigned long long numberOfCompoundItems;
 @property(readonly, nonatomic) BOOL isCompoundItem;
 - (id)_subclass_updateWithOptions:(id)arg1;
-- (id)demoMovieURL;
-- (id)demoSnapshotURL;
 @property(readonly, copy) NSString *description;
 
 // Remaining properties

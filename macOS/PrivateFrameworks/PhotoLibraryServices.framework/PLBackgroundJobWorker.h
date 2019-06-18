@@ -6,12 +6,12 @@
 
 #import <objc/NSObject.h>
 
-#import <PhotoLibraryServices/PLbackgroundJobWorkerProtocol-Protocol.h>
+#import <PhotoLibraryServices/PLBackgroundJobWorkerProtocol-Protocol.h>
 
 @class NSMutableArray, NSString, PLPhotoLibrary;
 @protocol OS_dispatch_queue;
 
-@interface PLBackgroundJobWorker : NSObject <PLbackgroundJobWorkerProtocol>
+@interface PLBackgroundJobWorker : NSObject <PLBackgroundJobWorkerProtocol>
 {
     NSMutableArray *_pendingJobs;
     unsigned long long _totalJobsCount;
@@ -31,9 +31,11 @@
 @property(readonly, nonatomic) NSString *workerName; // @synthesize workerName=_workerName;
 @property(readonly, nonatomic) unsigned long long workerPriority; // @synthesize workerPriority=_workerPriority;
 - (void).cxx_destruct;
+- (void)stopWorkingOnManagedObjectID:(id)arg1;
 - (void)performWorkOnManagedObjectID:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (id)managedObjectIDsNeedingProcessing;
 - (BOOL)hasPendingJobs;
+- (BOOL)isInterruptible;
 - (void)stopAllWork;
 - (void)startWorkWithCompletion:(CDUnknownBlockType)arg1;
 - (void)_handleAllJobsComplete;

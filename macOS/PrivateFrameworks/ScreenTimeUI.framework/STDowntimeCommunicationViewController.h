@@ -8,15 +8,17 @@
 
 #import <ScreenTimeUI/CNFamilyMemberContactsViewControllerDelegate-Protocol.h>
 #import <ScreenTimeUI/CNFamilyMemberWhitelistedContactsViewControllerDelegate-Protocol.h>
+#import <ScreenTimeUI/STProtectedControlDelegate-Protocol.h>
 
-@class CNFamilyMemberContactsViewController, CNFamilyMemberWhitelistedContactsViewController, NSButton, NSLayoutConstraint, NSString, NSView, STCoreUser;
+@class CNFamilyMemberContactsViewController, CNFamilyMemberWhitelistedContactsViewController, NSButton, NSLayoutConstraint, NSString, NSView, STCommunicationContactEditingViewController, STCoreUser;
 
-@interface STDowntimeCommunicationViewController : NSViewController <CNFamilyMemberContactsViewControllerDelegate, CNFamilyMemberWhitelistedContactsViewControllerDelegate>
+@interface STDowntimeCommunicationViewController : NSViewController <CNFamilyMemberContactsViewControllerDelegate, CNFamilyMemberWhitelistedContactsViewControllerDelegate, STProtectedControlDelegate>
 {
     BOOL _showContactsManagingControls;
     NSString *_descriptionString;
     CNFamilyMemberContactsViewController *_familyMemberContactsViewController;
     CNFamilyMemberWhitelistedContactsViewController *_familyMemberWhitelistedContactsViewController;
+    STCommunicationContactEditingViewController *_editListViewController;
     NSButton *_everyoneRadioButton;
     NSButton *_specificContactsRadioButton;
     NSView *_contactManagementContainerView;
@@ -39,11 +41,13 @@
 @property(retain) NSView *contactManagementContainerView; // @synthesize contactManagementContainerView=_contactManagementContainerView;
 @property(retain) NSButton *specificContactsRadioButton; // @synthesize specificContactsRadioButton=_specificContactsRadioButton;
 @property(retain) NSButton *everyoneRadioButton; // @synthesize everyoneRadioButton=_everyoneRadioButton;
+@property(nonatomic) __weak STCommunicationContactEditingViewController *editListViewController; // @synthesize editListViewController=_editListViewController;
 @property(retain, nonatomic) CNFamilyMemberWhitelistedContactsViewController *familyMemberWhitelistedContactsViewController; // @synthesize familyMemberWhitelistedContactsViewController=_familyMemberWhitelistedContactsViewController;
 @property(retain, nonatomic) CNFamilyMemberContactsViewController *familyMemberContactsViewController; // @synthesize familyMemberContactsViewController=_familyMemberContactsViewController;
 @property(nonatomic) BOOL showContactsManagingControls; // @synthesize showContactsManagingControls=_showContactsManagingControls;
 @property(copy, nonatomic) NSString *descriptionString; // @synthesize descriptionString=_descriptionString;
 - (void).cxx_destruct;
+- (void)actionCancelledForControl:(id)arg1;
 - (void)dismissFamilyMemberContactsViewController:(id)arg1;
 - (void)familyMemberContactsDidChangeFamilyMemberContactsViewController:(id)arg1;
 - (void)whitelistedContactsViewController:(id)arg1 dismissViewController:(id)arg2;

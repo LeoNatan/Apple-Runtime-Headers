@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <HomeKitBackingStore/HMBCloudZoneRecordModel.h>
+#import <HomeKitBackingStore/HMBModel.h>
 
 @class HMBShareParticipant;
 
 __attribute__((visibility("hidden")))
-@interface HMBCloudZoneShareParticipantModel : HMBCloudZoneRecordModel
+@interface HMBCloudZoneShareParticipantModel : HMBModel
 {
 }
 

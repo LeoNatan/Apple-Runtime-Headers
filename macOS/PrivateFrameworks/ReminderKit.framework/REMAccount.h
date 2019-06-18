@@ -38,9 +38,12 @@
 - (id)valueForUndefinedKey:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)fetchListsIncludingSpecialContainersWithError:(id *)arg1;
+- (BOOL)isConsideredEmptyWithResultPtr:(char *)arg1 withError:(id *)arg2;
+- (BOOL)canCopyReminderLosslesslyToAccount:(id)arg1;
 - (id)fetchListsWithError:(id *)arg1;
 @property(readonly, nonatomic) REMAccountGroupContext *groupContext;
 @property(readonly, nonatomic) BOOL supportsSharingLists;
+- (id)debugDescription;
 - (id)description;
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;

@@ -32,8 +32,8 @@
 @property(readonly) struct CGSize size; // @synthesize size=_size;
 - (void).cxx_destruct;
 - (id)description;
-- (BOOL)checkValidationToken:(CDStruct_cbacfc36 *)arg1;
-- (CDStruct_cbacfc36)validationToken;
+- (BOOL)checkValidationToken:(CDStruct_32a7f38a *)arg1;
+- (CDStruct_32a7f38a)validationToken;
 - (void)enumerateIconResourceInfoWithOptions:(id)arg1 block:(CDUnknownBlockType)arg2;
 @property(readonly) NSUUID *resourceUUID; // @synthesize resourceUUID=_resourceUUID;
 @property(readonly) NSString *fallbackType;

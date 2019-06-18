@@ -16,6 +16,8 @@
     BOOL _hasUpdatedManifestForHTTP410;
 }
 
++ (CDStruct_e4886f83 *)newExpiringTilesets;
++ (unsigned long long)expiringTilesetsCount;
 - (void)failedLoadingTileForKey:(struct _GEOTileKey)arg1 baseOperation:(id)arg2 error:(id)arg3;
 - (BOOL)needsLocalizationForKey:(const struct _GEOTileKey *)arg1;
 - (id)localizationURLForTileKey:(const struct _GEOTileKey *)arg1;

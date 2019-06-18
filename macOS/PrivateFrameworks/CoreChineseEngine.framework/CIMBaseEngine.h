@@ -82,7 +82,6 @@
 @property(readonly, nonatomic) TIMecabraEnvironment *mecabraEnvironment; // @synthesize mecabraEnvironment=_mecabraEnvironment;
 - (void).cxx_destruct;
 - (id)environmentDebuggingInformation;
-- (void)showSubstitutionCandidatesInTouchBar;
 @property(readonly, nonatomic) BOOL shouldShowSubstitutionCandidatesInTouchBar;
 @property(readonly, nonatomic) BOOL selectionShouldBeReflectedInTouchBar;
 - (void)didHandleSecondaryCandidateSelected:(id)arg1;
@@ -182,7 +181,7 @@
 @property(readonly, nonatomic) CIMPreferences *preferences;
 @property(readonly, nonatomic) NSString *selectedText;
 - (void)convertByApplyingTransform:(id)arg1;
-- (void)showSubstitutionCandidatesForSelectedTextWithOnScreenWindow:(BOOL)arg1;
+- (void)showSubstitutionCandidatesForSelectedTextWithOnScreenWindow;
 - (void)showPunctationCandidates;
 - (void)doCommandBySelector:(SEL)arg1 withUserInfo:(id)arg2;
 @property(readonly, nonatomic) IMKCandidates *candidateController;

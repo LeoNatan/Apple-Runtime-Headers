@@ -10,7 +10,6 @@
 
 @class CNAvatarImageRenderer, CNContact, NSString;
 
-__attribute__((visibility("hidden")))
 @interface CNMeCardSharingContactAvatarProvider : NSObject <CNMeCardSharingAvatarProvider>
 {
     CNContact *_contact;

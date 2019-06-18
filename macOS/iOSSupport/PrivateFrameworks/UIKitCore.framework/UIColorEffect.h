@@ -17,7 +17,6 @@
 }
 
 + (BOOL)supportsSecureCoding;
-+ (struct CAColorMatrix)_defaultShadowMatrix;
 + (id)colorEffectForAverageColor;
 + (id)colorEffectLuminanceCurvePoint1:(double)arg1 point2:(double)arg2 point3:(double)arg3 point4:(double)arg4 blendingAmount:(double)arg5;
 + (id)colorEffectLuminanceMap:(id)arg1 blendingAmount:(double)arg2;

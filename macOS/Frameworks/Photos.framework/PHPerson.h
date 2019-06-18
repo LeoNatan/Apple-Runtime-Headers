@@ -65,6 +65,7 @@
 + (BOOL)managedObjectSupportsPersonFilters;
 + (id)fetchType;
 + (id)managedEntityName;
++ (id)fetchPersonsForReferences:(id)arg1 photoLibrary:(id)arg2;
 + (long long)updateKeyFacesOfPersons:(id)arg1 forceUpdate:(BOOL)arg2 completion:(CDUnknownBlockType)arg3;
 + (long long)suggestVerifiedPersonForPerson:(id)arg1 completion:(CDUnknownBlockType)arg2;
 + (long long)suggestVerifiedPersonForFace:(id)arg1 completion:(CDUnknownBlockType)arg2;
@@ -96,6 +97,7 @@
 @property(readonly, nonatomic, getter=isVerified) BOOL verified;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned long long)arg2 photoLibrary:(id)arg3;
 - (Class)changeRequestClass;
+- (id)objectReference;
 
 @end
 

@@ -14,10 +14,12 @@
 
 @interface ASDSystemAppMetadata : NSObject <ASDAppMetadata, NSCopying, NSSecureCoding>
 {
+    BOOL _userInitiated;
     NSString *_bundleID;
 }
 
 + (BOOL)supportsSecureCoding;
+@property(getter=isUserInitiated) BOOL userInitiated; // @synthesize userInitiated=_userInitiated;
 @property(copy) NSString *bundleID; // @synthesize bundleID=_bundleID;
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;

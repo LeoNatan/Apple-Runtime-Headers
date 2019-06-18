@@ -11,7 +11,7 @@
 @interface VCPVideoFaceDetector : VCPVideoAnalyzer
 {
     int _angle;
-    CDStruct_1b6d18a9 _timeLastProcess;
+    CDStruct_1b6d18a9 _timeLastDetection;
     NSMutableDictionary *_activeFaces;
     NSDictionary *_results;
 }

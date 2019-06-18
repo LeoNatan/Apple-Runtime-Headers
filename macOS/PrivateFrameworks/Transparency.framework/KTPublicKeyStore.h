@@ -21,9 +21,10 @@
 - (void)clearApplicationState:(id)arg1 error:(id *)arg2;
 - (id)init;
 - (BOOL)configureWithDisk:(id *)arg1;
-- (BOOL)configureWithClient:(id)arg1 error:(id *)arg2;
-- (BOOL)configureWithClient:(id)arg1 ignoreCachedKeys:(BOOL)arg2 error:(id *)arg3;
-- (BOOL)configureApplicationKeyStore:(id)arg1 keyStoreRespose:(id)arg2 error:(id *)arg3;
+- (void)configureWithClient:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
+- (void)configureWithClient:(id)arg1 ignoreCachedKeys:(BOOL)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (void)configureWithClient:(id)arg1 application:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
+- (id)createApplicationKeyStore:(id)arg1 keyStoreResponse:(id)arg2 error:(id *)arg3;
 - (BOOL)configureApplicationKeyStore:(id)arg1 keyStoreData:(id)arg2 error:(id *)arg3;
 - (BOOL)saveApplicationKeyStore:(id)arg1 error:(id *)arg2;
 - (BOOL)hasApplicationPublicKeyStoreOnDisk:(id)arg1 error:(id *)arg2;

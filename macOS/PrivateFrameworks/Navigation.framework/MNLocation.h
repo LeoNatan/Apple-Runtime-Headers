@@ -69,7 +69,7 @@
 - (id)initWithRawLocation:(id)arg1 locationMatchType:(unsigned long long)arg2;
 - (id)initWithRoadMatch:(id)arg1 rawLocation:(id)arg2 locationMatchType:(unsigned long long)arg3;
 - (id)initWithRouteMatch:(id)arg1 rawLocation:(id)arg2 locationMatchType:(unsigned long long)arg3;
-- (id)initWithClientLocation:(CDStruct_b863a861)arg1;
+- (id)initWithClientLocation:(CDStruct_88736aa7)arg1;
 @property(readonly, nonatomic) int _nav_source;
 @property(nonatomic) unsigned long long traceIndex;
 - (id)initWithGEOLocation:(id)arg1;

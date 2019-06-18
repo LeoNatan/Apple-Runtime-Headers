@@ -15,12 +15,12 @@
     NSString *_articleList;
 }
 
++ (id)groupEmitterIdentifier;
 @property(readonly, nonatomic) NSString *articleList; // @synthesize articleList=_articleList;
 - (void).cxx_destruct;
 @property(readonly, nonatomic) BOOL emitsSingletonGroups;
-@property(readonly, copy, nonatomic) NSString *groupEmitterIdentifier;
 @property(readonly, copy, nonatomic) NSSet *emittableGroupTypes;
-- (BOOL)wantsToInsertGroup:(id)arg1 withContext:(id)arg2;
+- (BOOL)wantsToInsertGroupInContext:(id)arg1;
 - (id)operationToEmitGroupWithContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (BOOL)wantsToEmitGroupInContext:(id)arg1 fromCursor:(id)arg2 toCursor:(id)arg3;
 - (id)initWithArticleList:(id)arg1;

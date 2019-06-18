@@ -37,7 +37,8 @@
 - (id)loadDataWithTypeIdentifier:(id)arg1 forItemProviderCompletionHandler:(CDUnknownBlockType)arg2;
 - (id)fileDataWithError:(id *)arg1;
 - (id)writeToDiskWithError:(id *)arg1;
-@property(nonatomic) long long minimumClientVersion;
+@property(copy, nonatomic) NSString *minimumClientVersion;
+@property(copy, nonatomic) NSString *lastMigratedClientVersion;
 @property(copy, nonatomic) NSArray *importQuestions;
 @property(copy, nonatomic) NSArray *actions;
 @property(copy, nonatomic) NSArray *inputClasses;

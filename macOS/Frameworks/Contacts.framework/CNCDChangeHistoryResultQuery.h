@@ -4,12 +4,12 @@
 //     class-dump is Copyright (C) 1997-1998, 2000-2001, 2004-2015 by Steve Nygard.
 //
 
-#import <objc/NSObject.h>
+#import <ContactsFoundation/CNTask.h>
 
 @class CNCDChangeHistoryClient, CNChangeHistoryAnchor, NSManagedObjectContext;
 
 __attribute__((visibility("hidden")))
-@interface CNCDChangeHistoryResultQuery : NSObject
+@interface CNCDChangeHistoryResultQuery : CNTask
 {
     BOOL _shouldUnifyResults;
     CNCDChangeHistoryClient *_client;
@@ -18,8 +18,11 @@ __attribute__((visibility("hidden")))
 }
 
 + (id)currentHistoryAnchorInContext:(id)arg1 error:(id *)arg2;
-+ (id)anchorWithMostRecentTransaction:(id)arg1;
-+ (id)queryForClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
++ (id)deltaSyncTaskWithClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
++ (id)fullSyncTaskWithClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
++ (BOOL)isAnchorValid:(id)arg1;
++ (id)deltaSyncValidationTaskWithClient:(id)arg1 anchor:(id)arg2;
++ (id)taskForClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
 + (id)changeHistoryResultForClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 sinceAnchor:(id)arg3 context:(id)arg4 error:(id *)arg5;
 + (id)os_log;
 @property(readonly, nonatomic) NSManagedObjectContext *context; // @synthesize context=_context;
@@ -27,12 +30,12 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) BOOL shouldUnifyResults; // @synthesize shouldUnifyResults=_shouldUnifyResults;
 @property(readonly, nonatomic) CNCDChangeHistoryClient *client; // @synthesize client=_client;
 - (void).cxx_destruct;
-- (void)didPerformQuery;
+- (void)didRun;
 - (void)configureResult:(id)arg1 forTransactions:(id)arg2;
 - (id)requestForToken:(id)arg1;
 - (id)lastTokenForClient;
 - (id)transactions:(id *)arg1;
-- (id)performQuery:(id *)arg1;
+- (id)run:(id *)arg1;
 - (id)initWithClient:(id)arg1 shouldUnifyResults:(BOOL)arg2 startingAnchor:(id)arg3 context:(id)arg4;
 
 @end

@@ -23,6 +23,7 @@
 - (BOOL)_anyContextHasMismatchedVersionWithContexts:(id)arg1;
 - (BOOL)_anyContextHasFutureVersionWithContexts:(id)arg1;
 - (unsigned char)_skipFromZeroSchemaWithContexts:(id)arg1;
+- (BOOL)_canContinueMigratingWithContexts:(id)arg1;
 - (BOOL)_migrationNeededWithContexts:(id)arg1 toVersion:(unsigned int)arg2;
 - (unsigned char)_unmigrateDatabasesWithContexts:(id)arg1;
 - (unsigned char)_migrateDatabasesWithContexts:(id)arg1 toVersion:(unsigned int)arg2;

@@ -7,14 +7,13 @@
 #import <NewsCore/NSObject-Protocol.h>
 
 @class FCIssueReadingHistory, FCKeyValueStore, FCNetworkBehaviorMonitor, FCPersonalizationData, FCPrivateChannelMembershipController, FCReadingHistory, FCReadingList, FCSubscriptionList, FCTagSettings, FCUserInfo, NSString;
-@protocol FCClearableReadingHistory, FCPrivateDataContextInternal, FCPushNotificationHandling;
+@protocol FCPrivateDataContextInternal, FCPushNotificationHandling;
 
 @protocol FCPrivateDataContext <NSObject>
 @property(readonly, nonatomic) id <FCPrivateDataContextInternal> internalPrivateDataContext;
 @property(readonly, copy, nonatomic) NSString *privateDataDirectory;
 @property(readonly, nonatomic, getter=isPrivateDataSyncingEnabled) BOOL privateDataSyncingEnabled;
 @property(readonly, nonatomic) id <FCPushNotificationHandling> privatePushNotificationHandler;
-@property(readonly, nonatomic) id <FCClearableReadingHistory> clearReadingHistoryManager;
 @property(readonly, nonatomic) FCNetworkBehaviorMonitor *networkBehaviorMonitor;
 @property(readonly, nonatomic) FCTagSettings *tagSettings;
 @property(readonly, nonatomic) FCUserInfo *userInfo;

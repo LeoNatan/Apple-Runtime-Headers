@@ -23,6 +23,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) struct CGRect bounds; // @synthesize bounds=_bounds;
 - (id)_renditionForSource:(id)arg1 withCGImageProvider:(CDUnknownBlockType)arg2 lazy:(BOOL)arg3;
 - (id)_effectForRenderingSource:(id)arg1;
+@property(readonly, nonatomic) BOOL _hasContentGravity;
 @property(readonly, nonatomic) long long contentMode;
 @property(readonly, nonatomic) long long semanticContentAttribute;
 @property(readonly, nonatomic) BOOL _layoutShouldFlipHorizontalOrientations;

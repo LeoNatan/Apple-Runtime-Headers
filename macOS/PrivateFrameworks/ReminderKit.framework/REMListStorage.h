@@ -16,6 +16,8 @@
 @interface REMListStorage : NSObject <NSCopying, NSSecureCoding, REMObjectIDProviding, REMExternalSyncMetadataWritableProviding>
 {
     BOOL _hasDeserializedReminderIDsMergeableOrdering;
+    unsigned long long _storeGeneration;
+    unsigned long long _copyGeneration;
     BOOL _isGroup;
     BOOL _showingLargeAttachments;
     BOOL _remindersICSDisplayOrderChanged;
@@ -95,6 +97,8 @@
 - (unsigned long long)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)setStoreGenerationIfNeeded:(unsigned long long)arg1;
+- (unsigned long long)storeGeneration;
 - (id)initWithCoder:(id)arg1;
 - (id)copyWithZone:(struct _NSZone *)arg1;
 - (id)initWithObjectID:(id)arg1 accountID:(id)arg2 name:(id)arg3 isGroup:(BOOL)arg4 reminderIDsMergeableOrderingData:(id)arg5;

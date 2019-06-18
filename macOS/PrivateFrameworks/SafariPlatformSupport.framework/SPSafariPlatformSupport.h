@@ -8,13 +8,14 @@
 
 #import <SafariPlatformSupport/NSPopoverDelegate-Protocol.h>
 
-@class NSPopover, NSString, NSWindow;
+@class NSPopover, NSString, NSWindow, SPCompletionListRemoteViewController;
 
 __attribute__((visibility("hidden")))
 @interface SPSafariPlatformSupport : NSObject <NSPopoverDelegate>
 {
     CDUnknownBlockType _completionListCompletionHandler;
     NSPopover *_popover;
+    SPCompletionListRemoteViewController *_completionListViewController;
     NSWindow *_currentSheetWindow;
 }
 

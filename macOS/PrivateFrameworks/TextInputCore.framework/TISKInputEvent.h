@@ -17,7 +17,7 @@
     TIKeyboardInput *_input;
 }
 
-+ (id)makeInputEvent:(id)arg1 order:(long long)arg2 wordSeparator:(id)arg3;
++ (id)makeInputEvent:(id)arg1 order:(long long)arg2 wordSeparator:(id)arg3 accentedLanguage:(BOOL)arg4;
 @property(nonatomic) BOOL ignoreTapData; // @synthesize ignoreTapData=_ignoreTapData;
 @property(retain, nonatomic) TIKeyboardInput *input; // @synthesize input=_input;
 - (void).cxx_destruct;

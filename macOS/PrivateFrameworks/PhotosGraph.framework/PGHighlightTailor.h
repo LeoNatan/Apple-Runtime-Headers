@@ -7,9 +7,11 @@
 #import <objc/NSObject.h>
 
 @class NSArray, NSSet, PGManager;
+@protocol OS_dispatch_group;
 
 @interface PGHighlightTailor : NSObject
 {
+    NSObject<OS_dispatch_group> *_enrichmentCommitGroup;
     PGManager *_manager;
     NSArray *_enrichmentProfiles;
     NSSet *_verifiedPersonLocalIdentifiers;
@@ -22,7 +24,8 @@
 - (BOOL)enrichAllHighlightsWithOptions:(unsigned long long)arg1 progressBlock:(CDUnknownBlockType)arg2;
 - (BOOL)enrichHighlights:(id)arg1 options:(unsigned long long)arg2 progressBlock:(CDUnknownBlockType)arg3;
 - (id)allHighlightModelsNeedingEnrichmentForHighlightSubtype:(long long)arg1 options:(unsigned long long)arg2;
-- (void)enrichHighlight:(id)arg1 usingEnrichmentProfile:(id)arg2 options:(unsigned long long)arg3 progressBlock:(CDUnknownBlockType)arg4;
+- (void)writeHighlightEnrichmentValues:(id)arg1 toChangeRequest:(id)arg2;
+- (id)enrichmentValuesForHighlight:(id)arg1 usingEnrichmentProfile:(id)arg2 options:(unsigned long long)arg3 progressBlock:(CDUnknownBlockType)arg4;
 - (id)computeChangedVisibilityScoresForItems:(id)arg1;
 - (double)highlightVisibilityWeightForItem:(id)arg1;
 @property(readonly) NSSet *verifiedPersonLocalIdentifiers; // @synthesize verifiedPersonLocalIdentifiers=_verifiedPersonLocalIdentifiers;

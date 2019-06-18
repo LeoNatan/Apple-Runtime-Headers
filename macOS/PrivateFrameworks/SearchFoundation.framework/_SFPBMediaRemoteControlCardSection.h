@@ -24,8 +24,10 @@
     NSString *_type;
     _SFPBColor *_backgroundColor;
     NSString *_playbackRouteUniqueIdentifier;
+    NSString *_playbackBundleIdentifier;
 }
 
+@property(copy, nonatomic) NSString *playbackBundleIdentifier; // @synthesize playbackBundleIdentifier=_playbackBundleIdentifier;
 @property(nonatomic) BOOL playbackRouteUniqueIdentifierIsEncrypted; // @synthesize playbackRouteUniqueIdentifierIsEncrypted=_playbackRouteUniqueIdentifierIsEncrypted;
 @property(copy, nonatomic) NSString *playbackRouteUniqueIdentifier; // @synthesize playbackRouteUniqueIdentifier=_playbackRouteUniqueIdentifier;
 @property(retain, nonatomic) _SFPBColor *backgroundColor; // @synthesize backgroundColor=_backgroundColor;

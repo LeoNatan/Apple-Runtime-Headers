@@ -6,14 +6,23 @@
 
 #import <objc/NSObject.h>
 
+@class CNContactStore, NSArray;
+
 @interface _PSContactResolver : NSObject
 {
+    CNContactStore *_contactStore;
+    NSArray *_keysToFetch;
 }
 
-+ (id)resolveContactFromINPerson:(id)arg1 usingStore:(id)arg2;
-+ (id)resolveContactIfPossibleFromContactIdentifierString:(id)arg1 usingStore:(id)arg2;
-+ (id)resolveContact:(id)arg1 usingStore:(id)arg2;
-+ (id)resolveContactIdentifier:(id)arg1 usingStore:(id)arg2;
+@property(readonly, nonatomic) NSArray *keysToFetch; // @synthesize keysToFetch=_keysToFetch;
+@property(readonly, nonatomic) CNContactStore *contactStore; // @synthesize contactStore=_contactStore;
+- (void).cxx_destruct;
+- (id)resolveContactIfPossibleFromContactIdentifierString:(id)arg1;
+- (id)resolveContact:(id)arg1;
+- (id)resolveContactIdentifier:(id)arg1;
+- (id)resolveContactFromINPerson:(id)arg1;
+- (id)contactWithIdentifier:(id)arg1;
+- (id)initWithContactStore:(id)arg1 keysToFetch:(id)arg2;
 
 @end
 

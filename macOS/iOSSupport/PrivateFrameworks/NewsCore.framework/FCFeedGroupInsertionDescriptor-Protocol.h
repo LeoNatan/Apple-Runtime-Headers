@@ -7,9 +7,8 @@
 #import <NewsCore/NFCopying-Protocol.h>
 
 @class FCFeedGroupEmittingContext;
-@protocol FCFeedGroupOutlining;
 
 @protocol FCFeedGroupInsertionDescriptor <NFCopying>
-- (BOOL)wantsToInsertGroup:(id <FCFeedGroupOutlining>)arg1 withContext:(FCFeedGroupEmittingContext *)arg2;
+- (BOOL)wantsToInsertGroupInContext:(FCFeedGroupEmittingContext *)arg1;
 @end
 

@@ -207,6 +207,8 @@ __attribute__((visibility("hidden")))
 - (void)replaceUnresolvedTarget:(const struct TFENode *)arg1 withTarget:(const struct TFENode *)arg2;
 - (void)backForwardCommon:(_Bool)arg1;
 - (void)gotoHistoryEntry:(id)arg1;
+- (_Bool)isBrowsingSystemFolder;
+- (_Bool)isBrowsingFirmlinkTargetVolume;
 - (const struct TFENodeVector *)targetPath;
 - (const struct TFENode *)initialTarget;
 - (struct TFENode)target;

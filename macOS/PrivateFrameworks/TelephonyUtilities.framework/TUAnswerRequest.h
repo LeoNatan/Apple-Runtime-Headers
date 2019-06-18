@@ -20,6 +20,8 @@
     NSString *_uniqueProxyIdentifier;
     NSString *_sourceIdentifier;
     IDSDestination *_endpointIDSDestination;
+    NSString *_endpointRapportMediaSystemIdentifier;
+    NSString *_endpointRapportEffectiveIdentifier;
     long long _behavior;
     NSDate *_dateAnswered;
     struct CGSize _localLandscapeAspectRatio;
@@ -32,6 +34,8 @@
 @property(nonatomic) BOOL downgradeToAudio; // @synthesize downgradeToAudio=_downgradeToAudio;
 @property(nonatomic) BOOL pauseVideoToStart; // @synthesize pauseVideoToStart=_pauseVideoToStart;
 @property(nonatomic) BOOL wantsHoldMusic; // @synthesize wantsHoldMusic=_wantsHoldMusic;
+@property(retain, nonatomic) NSString *endpointRapportEffectiveIdentifier; // @synthesize endpointRapportEffectiveIdentifier=_endpointRapportEffectiveIdentifier;
+@property(retain, nonatomic) NSString *endpointRapportMediaSystemIdentifier; // @synthesize endpointRapportMediaSystemIdentifier=_endpointRapportMediaSystemIdentifier;
 @property(retain, nonatomic) IDSDestination *endpointIDSDestination; // @synthesize endpointIDSDestination=_endpointIDSDestination;
 @property(copy, nonatomic) NSString *sourceIdentifier; // @synthesize sourceIdentifier=_sourceIdentifier;
 @property(nonatomic) struct CGSize localPortraitAspectRatio; // @synthesize localPortraitAspectRatio=_localPortraitAspectRatio;

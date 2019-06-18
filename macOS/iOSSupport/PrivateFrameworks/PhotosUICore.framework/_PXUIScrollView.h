@@ -13,16 +13,13 @@
     BOOL _deferContentOffsetUpdates;
     id <PXUIScrollViewDelegate> _px_delegate;
     struct CGPoint _pagingOriginOffset;
-    struct CGPoint _deferredContentOffset;
 }
 
-@property(nonatomic) struct CGPoint deferredContentOffset; // @synthesize deferredContentOffset=_deferredContentOffset;
 @property(nonatomic) BOOL deferContentOffsetUpdates; // @synthesize deferContentOffsetUpdates=_deferContentOffsetUpdates;
 @property(nonatomic) struct CGPoint pagingOriginOffset; // @synthesize pagingOriginOffset=_pagingOriginOffset;
 @property(nonatomic, setter=px_setDelegate:) __weak id <PXUIScrollViewDelegate> px_delegate; // @synthesize px_delegate=_px_delegate;
 - (void).cxx_destruct;
 - (void)setContentOffset:(struct CGPoint)arg1 animated:(BOOL)arg2;
-- (void)setContentOffset:(struct CGPoint)arg1;
 - (void)_updatePagingOrigin;
 - (void)scrollRectToVisible:(struct CGRect)arg1 animated:(BOOL)arg2;
 - (void)layoutSubviews;

@@ -116,6 +116,7 @@ __attribute__((visibility("hidden")))
     double _touchDownTimeSpan;
     NSDate *_prevTouchMoreKeyTime;
     NSDate *_prevProgressiveCandidateRequestTime;
+    NSTimer *_progressiveCandidateUpdateTimer;
     NSString *_lastInputMode;
     BOOL _pendingDictationReload;
     BOOL _hasPeekedGestureKey;
@@ -284,6 +285,7 @@ __attribute__((visibility("hidden")))
 - (void)finishSplitWithCompletion:(CDUnknownBlockType)arg1;
 - (void)showSplitTransitionView:(BOOL)arg1;
 - (void)prepareForSplitTransition;
+- (void)beginFloatingTransitionFromPanGestureRecognizer:(id)arg1;
 - (BOOL)shouldBeginTransitionForController:(id)arg1;
 - (void)didEndTransitionWithController:(id)arg1;
 - (void)willBeginTransitionWithController:(id)arg1;
@@ -457,7 +459,7 @@ __attribute__((visibility("hidden")))
 - (BOOL)shouldShowDictationKey;
 - (void)updateBackgroundIfNeeded;
 - (void)updateBackgroundCorners;
-- (BOOL)handwritingPlane;
+- (BOOL)isHandwritingPlane;
 - (void)didEndIndirectSelectionGesture:(BOOL)arg1;
 - (BOOL)isDeveloperGestureKeybaord;
 - (void)didEndIndirectSelectionGesture;

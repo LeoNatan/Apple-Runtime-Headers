@@ -35,9 +35,9 @@ __attribute__((visibility("hidden")))
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)print;
-- (void)assignSplitsForData:(float *)arg1 indices:(unsigned int *)arg2 dimensionality:(unsigned long long)arg3;
-- (void)reorderIndices:(unsigned int *)arg1 forData:(float *)arg2 dimensionality:(unsigned long long)arg3;
-- (void)findMin:(float *)arg1 andMax:(float *)arg2 alongDimension:(unsigned long long)arg3 data:(float *)arg4 indices:(unsigned int *)arg5 dimensionality:(unsigned long long)arg6;
+- (void)assignSplitsForData:(const float *)arg1 indices:(unsigned long long *)arg2 numDimensions:(unsigned long long)arg3;
+- (void)partitionDataPoints:(const float *)arg1 indices:(unsigned long long *)arg2 numDimensions:(unsigned long long)arg3;
+- (void)findMin:(float *)arg1 andMax:(float *)arg2 alongDimension:(unsigned long long)arg3 data:(const float *)arg4 indices:(const unsigned long long *)arg5 numDimensions:(unsigned long long)arg6;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 

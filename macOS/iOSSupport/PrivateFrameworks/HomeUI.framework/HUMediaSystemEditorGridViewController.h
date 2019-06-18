@@ -12,10 +12,8 @@
 @interface HUMediaSystemEditorGridViewController : HUSelectableServiceGridViewController
 {
     HFMediaSystemBuilder *_mediaSystemBuilder;
-    id <HUMediaSystemEditorGridViewControllerDelegate> _delegate;
 }
 
-@property(nonatomic) __weak id <HUMediaSystemEditorGridViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 @property(readonly, nonatomic) HFMediaSystemBuilder *mediaSystemBuilder; // @synthesize mediaSystemBuilder=_mediaSystemBuilder;
 - (void).cxx_destruct;
 - (void)_resetBuilder;
@@ -34,6 +32,7 @@
 - (id)initWithServiceGridItemManager:(id)arg1;
 
 // Remaining properties
+@property(nonatomic) __weak id <HUMediaSystemEditorGridViewControllerDelegate> delegate;
 @property(retain, nonatomic) HUMediaSystemEditorGridItemManager *itemManager; // @dynamic itemManager;
 
 @end

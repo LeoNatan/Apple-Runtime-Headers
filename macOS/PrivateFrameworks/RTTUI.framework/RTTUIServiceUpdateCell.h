@@ -15,7 +15,7 @@
     id <RTTUIServiceCellDelegate> _delegate;
 }
 
-+ (double)heightForWidth:(double)arg1;
++ (double)heightForWidth:(double)arg1 withDelegate:(id)arg2;
 @property(nonatomic) __weak id <RTTUIServiceCellDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
 - (id)accessibilityLabel;

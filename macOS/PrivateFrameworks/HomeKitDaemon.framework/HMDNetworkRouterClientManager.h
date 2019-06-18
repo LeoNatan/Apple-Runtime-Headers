@@ -44,11 +44,14 @@
 - (void)_updateClientConfigurationForAccessory:(id)arg1 protectionMode:(long long)arg2 clientIdentifier:(id)arg3;
 - (void)_updateExistingClientConfigurationForAccessory:(id)arg1 protectionMode:(long long)arg2;
 - (void)_updateExistingClientConfigurationForAccessory:(id)arg1;
+- (void)_createClientConfigurationForAccessory:(id)arg1 credential:(id)arg2;
+- (void)_createClientConfigurationWithSavedPSKForAccessory:(id)arg1;
 - (void)_createClientConfigurationForAccessory:(id)arg1 clientStatus:(id)arg2;
 - (void)_replaceClientConfigurationForAccessory:(id)arg1 clientStatus:(id)arg2;
 - (void)_replaceNetworkClientIdentifierForAccessory:(id)arg1 networkClientIdentifier:(id)arg2;
 - (void)_reconcileClientConfigurationForAccessory:(id)arg1 clientStatusList:(id)arg2;
 - (void)_handleAccessoryLocallyReachable:(id)arg1;
+- (void)_handleUnreachableAccessory:(id)arg1;
 - (void)_stopManagingAccessory:(id)arg1;
 - (void)_startManagingAccessory:(id)arg1;
 - (void)handleFirewallRulesUpdated:(id)arg1;
@@ -68,7 +71,6 @@
 @property(readonly) NSHashTable *accessories; // @synthesize accessories=_accessories;
 @property(nonatomic) BOOL started; // @synthesize started=_started;
 @property(readonly) HMDNetworkRouterController *routerController;
-- (void)createUniquePSKClientConfigurationWithCompletion:(CDUnknownBlockType)arg1;
 - (void)stop;
 - (void)start;
 @property(readonly) NSArray *networkRouterAccessories;

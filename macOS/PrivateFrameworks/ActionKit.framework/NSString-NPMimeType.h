@@ -9,9 +9,6 @@
 @interface NSString (NPMimeType)
 + (id)uniqueString;
 + (id)stringWithData:(id)arg1 encoding:(unsigned long long)arg2;
-+ (id)mco_stringWithMCObject:(struct Object *)arg1;
-+ (id)mco_stringWithMCString:(struct String *)arg1;
-+ (id)mco_objectWithMCObject:(struct Object *)arg1;
 - (id)mimeType;
 - (id)stringByStrippingTags;
 - (id)stringByLinkifyingURLs;
@@ -24,12 +21,5 @@
 - (id)IFUnicodeURL_splitBeforeCharactersInSet:(id)arg1;
 - (id)IFUnicodeURL_splitAfterString:(id)arg1;
 - (id)ik_URLEncodedString;
-- (id)mco_strippedWhitespace;
-- (id)mco_cleanedHTMLString;
-- (id)mco_htmlEncodedString;
-- (id)mco_flattenHTMLAndShowBlockquote:(BOOL)arg1 showLink:(BOOL)arg2;
-- (id)mco_flattenHTMLAndShowBlockquote:(BOOL)arg1;
-- (id)mco_flattenHTML;
-- (struct String *)mco_mcString;
 @end
 

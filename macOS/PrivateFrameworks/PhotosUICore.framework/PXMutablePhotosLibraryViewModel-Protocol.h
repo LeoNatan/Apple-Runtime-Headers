@@ -20,6 +20,7 @@
 @property(retain, nonatomic) PXCuratedLibraryAssetCollectionSkimmingInfo *skimmingInfo;
 @property(nonatomic) BOOL allPhotosLayoutIsAnimating;
 @property(nonatomic) BOOL allPhotosAspectFit;
+@property(nonatomic) BOOL isInteractiveZooming;
 @property(nonatomic) BOOL isPinching;
 @property(nonatomic) BOOL isSelecting;
 @property(nonatomic) BOOL viewBasedDecorationsEnabled;
@@ -34,6 +35,7 @@
 - (void)resetAllPhotosColumns;
 - (void)zoomInAllPhotosToLastRememberedWithAnchorAssetReference:(PXAssetReference *)arg1 animated:(BOOL)arg2;
 - (void)zoomAllPhotosToColumnIndex:(long long)arg1 withAnchorAssetReference:(PXAssetReference *)arg2 animated:(BOOL)arg3;
+- (void)setInteractiveZoomColumnIndex:(double)arg1 withAnchorAssetReference:(PXAssetReference *)arg2;
 - (void)setPinchState:(CDStruct_7c4e768e)arg1 withAnchorAssetReference:(PXAssetReference *)arg2;
 - (void)removeView:(PXGView *)arg1;
 - (void)addView:(PXGView *)arg1;

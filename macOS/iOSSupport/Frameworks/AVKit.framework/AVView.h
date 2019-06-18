@@ -14,6 +14,7 @@ __attribute__((visibility("hidden")))
 
 @property(nonatomic) BOOL ignoresTouches; // @synthesize ignoresTouches=_ignoresTouches;
 - (id)hitTest:(struct CGPoint)arg1 withEvent:(id)arg2;
+- (void)setHidden:(BOOL)arg1;
 
 @end
 

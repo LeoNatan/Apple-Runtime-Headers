@@ -7,7 +7,8 @@
 #import <WorkflowKit/WFDNDTrigger.h>
 
 @interface WFDNDTrigger (CoreDuetContext)
-- (id)predicateForContextStore;
+- (unsigned int)contextStoreQualityOfService;
+- (id)contextStorePredicate;
 - (id)contextStoreKeyPathForCurrentState;
 @end
 

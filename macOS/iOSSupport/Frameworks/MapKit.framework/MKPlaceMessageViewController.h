@@ -28,6 +28,7 @@ __attribute__((visibility("hidden")))
 - (void)loadRow;
 - (void)viewDidLoad;
 - (id)initWithPlaceItem:(id)arg1;
+- (BOOL)_canShowWhileLocked;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

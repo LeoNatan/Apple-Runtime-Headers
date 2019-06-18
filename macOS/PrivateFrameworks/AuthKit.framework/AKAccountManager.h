@@ -31,7 +31,6 @@
 - (id)_altDSIDForiCloudAccount:(id)arg1;
 - (id)_aliasesForiCloudAccount:(id)arg1;
 - (id)transportableAuthKitAccount:(id)arg1;
-- (id)altDSIDforActiveiTunesAccount;
 - (id)altDSIDforPrimaryiCloudAccount;
 - (id)primaryiCloudAccount;
 - (BOOL)isPrimaryiCloudAccountEmailVerified:(id)arg1;
@@ -71,6 +70,8 @@
 - (void)setRepairState:(unsigned long long)arg1 forAccount:(id)arg2;
 - (unsigned long long)repairStateForAccount:(id)arg1;
 - (BOOL)needsRepairForAccount:(id)arg1;
+- (void)updateSatoriWarmUpTimestampForAccount:(id)arg1;
+- (BOOL)shouldPerformSatoriWarmupVerificationForAccount:(id)arg1;
 - (void)setAuthenticationMode:(unsigned long long)arg1 forAccount:(id)arg2;
 - (unsigned long long)authenticationModeForAccount:(id)arg1;
 - (void)setSecurityLevel:(unsigned long long)arg1 forAccount:(id)arg2;
@@ -100,6 +101,7 @@
 - (BOOL)verifiedPrimaryEmailForAccount:(id)arg1;
 - (BOOL)_setUsername:(id)arg1 forAccount:(id)arg2;
 - (void)updateUsername:(id)arg1 forAccountsWithAltDSID:(id)arg2;
+- (id)formattedUsernameForAccount:(id)arg1;
 - (void)setAliases:(id)arg1 forAccount:(id)arg2;
 - (id)aliasesForAccount:(id)arg1;
 - (void)setDSID:(id)arg1 forAccount:(id)arg2;

@@ -27,6 +27,9 @@
 - (BOOL)sendAction;
 - (BOOL)sendAction:(SEL)arg1 to:(id)arg2;
 - (void)setBordered:(BOOL)arg1;
+- (void)_updateTitleAndLabelConfiguration;
+- (void)setTitle:(id)arg1;
+- (void)setImage:(id)arg1;
 - (id)_item;
 - (void)dealloc;
 - (id)initWithItem:(id)arg1;

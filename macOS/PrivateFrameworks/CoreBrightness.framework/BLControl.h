@@ -31,6 +31,7 @@ __attribute__((visibility("hidden")))
     BOOL _userActive;
 }
 
+- (_Bool)updatePresetConfiguration;
 - (void)keyboardBacklightHIDDeviceRemoved:(id)arg1;
 - (void)keyboardBacklightHIDDeviceArrived:(id)arg1;
 - (_Bool)initKeyboardBacklightHIDManager;

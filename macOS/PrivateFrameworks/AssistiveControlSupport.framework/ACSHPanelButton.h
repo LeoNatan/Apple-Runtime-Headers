@@ -13,10 +13,12 @@
     double _fontSize;
     BOOL _isKeyboardKey;
     BOOL _shouldExecuteSystemFunction;
+    BOOL _shouldPreserveLegacyImageTintColor;
     BOOL _keyIsDeadKey;
     BOOL _displayImageIdentifierIsTemplate;
     NSArray *_actions;
     NSColor *_fontColor;
+    NSColor *_legacyIconTintColor;
     NSString *_localizedDisplayTextKey;
     NSString *_displayText;
     NSString *_keyDisplayText;
@@ -64,6 +66,8 @@
 @property(retain, nonatomic) NSString *keyDisplayText; // @synthesize keyDisplayText=_keyDisplayText;
 @property(retain, nonatomic) NSString *displayText; // @synthesize displayText=_displayText;
 @property(retain, nonatomic) NSString *localizedDisplayTextKey; // @synthesize localizedDisplayTextKey=_localizedDisplayTextKey;
+@property(nonatomic) BOOL shouldPreserveLegacyImageTintColor; // @synthesize shouldPreserveLegacyImageTintColor=_shouldPreserveLegacyImageTintColor;
+@property(retain, nonatomic) NSColor *legacyIconTintColor; // @synthesize legacyIconTintColor=_legacyIconTintColor;
 @property(retain, nonatomic) NSColor *fontColor; // @synthesize fontColor=_fontColor;
 @property(nonatomic) BOOL shouldExecuteSystemFunction; // @synthesize shouldExecuteSystemFunction=_shouldExecuteSystemFunction;
 @property(nonatomic) BOOL isKeyboardKey; // @synthesize isKeyboardKey=_isKeyboardKey;

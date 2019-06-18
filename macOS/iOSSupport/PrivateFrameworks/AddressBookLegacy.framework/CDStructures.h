@@ -45,3 +45,16 @@ struct sqlite3;
 
 struct sqlite3_stmt;
 
+#pragma mark Typedef'd Structures
+
+typedef struct {
+    char *internationalCallingCode;
+    char *nationalPrefix;
+    char *carrierCode;
+    unsigned int carrierCodeLen;
+    char *areaCode;
+    unsigned int areaCodeLen;
+    char *number;
+    unsigned int numberLen;
+} CDStruct_a759635d;
+

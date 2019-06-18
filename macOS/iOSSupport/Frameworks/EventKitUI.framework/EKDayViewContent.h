@@ -10,7 +10,7 @@
 #import <EventKitUI/EKDayOccurrenceViewDelegate-Protocol.h>
 #import <EventKitUI/UIGestureRecognizerDelegate-Protocol.h>
 
-@class EKCalendarDate, EKDayGridView, EKDayViewContentGeometryDelegate, EKEvent, NSCalendar, NSMutableArray, NSString, NSTimeZone, UIColor, UITraitCollection;
+@class EKCalendarDate, EKDayGridView, EKDayViewContentGeometryDelegate, EKEvent, NSCalendar, NSMutableArray, NSMutableDictionary, NSString, NSTimeZone, UIColor, UITraitCollection;
 @protocol EKDayViewContentDelegate;
 
 @interface EKDayViewContent : UIView <CUIKSingleDayTimelineLayoutScreenUtils, EKDayOccurrenceViewDelegate, UIGestureRecognizerDelegate>
@@ -39,6 +39,7 @@
     BOOL _shouldLayoutInReverse;
     BOOL _shouldAnimateLayout;
     NSMutableArray *_temporaryViewCacheByDay;
+    NSMutableDictionary *_cachedLayoutsByDay;
     long long _saveTemporaryViewsEntryCount;
     BOOL _offscreenOccurrencePinningEnabled;
     BOOL _allowsOccurrenceSelection;

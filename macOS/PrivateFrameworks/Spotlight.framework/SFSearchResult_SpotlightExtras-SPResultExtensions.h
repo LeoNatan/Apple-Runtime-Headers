@@ -75,6 +75,7 @@
 - (id)pathForApplicationToOpen;
 @property(readonly) NSImage *secondaryIconImage;
 - (BOOL)willLaunchScreenTimeRestrictedApp;
+- (BOOL)needsPreviewUpdate;
 - (BOOL)isApplicationManaged;
 - (id)subjectForEmailAttachment;
 - (BOOL)isBoundEmailAttachment;

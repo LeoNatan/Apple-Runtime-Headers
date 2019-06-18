@@ -27,6 +27,8 @@
     CDUnknownBlockType _filter;
     long long _references;
     NSObject<OS_dispatch_queue> *_queue;
+    unsigned long long _machTimeAtLastClockChange;
+    NSDate *_dateAtLastClockChange;
     NSObject<OS_dispatch_queue> *_eventQueue;
 }
 
@@ -34,6 +36,8 @@
 + (id)entitlements;
 + (id)eventStream;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *eventQueue; // @synthesize eventQueue=_eventQueue;
+@property(retain) NSDate *dateAtLastClockChange; // @synthesize dateAtLastClockChange=_dateAtLastClockChange;
+@property unsigned long long machTimeAtLastClockChange; // @synthesize machTimeAtLastClockChange=_machTimeAtLastClockChange;
 @property(readonly, nonatomic) NSObject<OS_dispatch_queue> *queue; // @synthesize queue=_queue;
 @property(readonly, nonatomic) long long references; // @synthesize references=_references;
 @property(copy, nonatomic) CDUnknownBlockType filter; // @synthesize filter=_filter;

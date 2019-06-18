@@ -16,6 +16,7 @@
 {
     BOOL _maxNumberOfVoicesReached;
     BOOL _shouldSetMultiUserIsEnabled;
+    BOOL _hasPresentedTurnOffPersonalRequestsAlert;
     id <HUConfigurationViewControllerDelegate> _delegate;
     OBTrayButton *_continueButton;
     OBLinkTrayButton *_customizeButton;
@@ -24,6 +25,7 @@
     NSArray *_homeAssistantDevicesHavingLanguageMismatch;
 }
 
+@property(nonatomic) BOOL hasPresentedTurnOffPersonalRequestsAlert; // @synthesize hasPresentedTurnOffPersonalRequestsAlert=_hasPresentedTurnOffPersonalRequestsAlert;
 @property(nonatomic) BOOL shouldSetMultiUserIsEnabled; // @synthesize shouldSetMultiUserIsEnabled=_shouldSetMultiUserIsEnabled;
 @property(nonatomic) BOOL maxNumberOfVoicesReached; // @synthesize maxNumberOfVoicesReached=_maxNumberOfVoicesReached;
 @property(retain, nonatomic) NSArray *homeAssistantDevicesHavingLanguageMismatch; // @synthesize homeAssistantDevicesHavingLanguageMismatch=_homeAssistantDevicesHavingLanguageMismatch;
@@ -33,6 +35,7 @@
 @property(retain, nonatomic) OBTrayButton *continueButton; // @synthesize continueButton=_continueButton;
 @property(nonatomic) __weak id <HUConfigurationViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
 - (void).cxx_destruct;
+- (void)viewDidLoad;
 - (void)_turnOffPersonalRequests;
 - (void)_presentAlertConfirmingTurningOffPersonalRequests;
 - (void)_setupPersonalRequestsItemInfrastructure;

@@ -9,7 +9,7 @@
 #import <UIKitCore/UIActivityContinuationManagerApplicationContext-Protocol.h>
 #import <UIKitCore/_UICanvasComponentProviding-Protocol.h>
 
-@class NSDictionary, NSString, NSUserActivity, UIActivityContinuationManager, UICanvas;
+@class NSDictionary, NSSet, NSString, NSUserActivity, UIActivityContinuationManager, UICanvas;
 
 __attribute__((visibility("hidden")))
 @interface _UICanvasUserActivityManager : NSObject <UIActivityContinuationManagerApplicationContext, _UICanvasComponentProviding>
@@ -18,6 +18,8 @@ __attribute__((visibility("hidden")))
     NSUserActivity *_restorationActivity;
     NSDictionary *_connectionOptionsRestorationActivityDictionary;
     UIActivityContinuationManager *_activityContinuationManager;
+    NSSet *_activityTypesForDefaultProgressUI;
+    BOOL _isDisplayingActivityContinuationUI;
 }
 
 + (id)_activityContinuationDictionaryWithAction:(id)arg1;
@@ -30,8 +32,10 @@ __attribute__((visibility("hidden")))
 + (void)_updatePersistedSceneSession:(id)arg1;
 + (void)_queue_scheduleUpdateAndSaveForPersistedSceneSessions;
 + (void)_deleteRestorationUserActivityForCanvasWithIdentifier:(id)arg1;
++ (void)_showProgressForScene:(id)arg1 whenFetchingUserActivityForTypes:(id)arg2;
 + (id)_userActivityManagerForCanvas:(id)arg1;
 + (void)_initializeUserActivityManager;
+@property(nonatomic, getter=_isDisplayingActivityContinuationUI, setter=_setIsDisplayingActivityContinuationUI:) BOOL isDisplayingActivityContinuationUI; // @synthesize isDisplayingActivityContinuationUI=_isDisplayingActivityContinuationUI;
 - (void).cxx_destruct;
 - (id)_updateCanvasConnectionOptionsDictionary:(id)arg1;
 - (void)_performCanvasRestorationIfNecessary;

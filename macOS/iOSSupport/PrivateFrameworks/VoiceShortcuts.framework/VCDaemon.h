@@ -6,21 +6,23 @@
 
 #import <objc/NSObject.h>
 
-@class VCDaemonDatabaseProvider, VCDaemonSyncDataEndpoint, VCDaemonXPCEventHandler, VCWatchSyncCoordinator, VCXPCServer;
+@class VCCKNotificationCenter, VCDaemonDatabaseProvider, VCDaemonSyncDataEndpoint, VCDaemonXPCEventHandler, VCWatchSyncCoordinator, VCXPCServer;
 
 @interface VCDaemon : NSObject
 {
     VCXPCServer *_xpcServer;
     VCDaemonDatabaseProvider *_databaseProvider;
     VCDaemonSyncDataEndpoint *_syncDataEndpoint;
-    VCDaemonXPCEventHandler *_eventHandler;
+    VCDaemonXPCEventHandler *_xpcEventHandler;
     VCWatchSyncCoordinator *_watchSyncCoordinator;
+    VCCKNotificationCenter *_cloudKitNotificationCenter;
 }
 
 + (id)sharedDaemon;
 + (void)initialize;
+@property(retain, nonatomic) VCCKNotificationCenter *cloudKitNotificationCenter; // @synthesize cloudKitNotificationCenter=_cloudKitNotificationCenter;
 @property(readonly, nonatomic) VCWatchSyncCoordinator *watchSyncCoordinator; // @synthesize watchSyncCoordinator=_watchSyncCoordinator;
-@property(readonly, nonatomic) VCDaemonXPCEventHandler *eventHandler; // @synthesize eventHandler=_eventHandler;
+@property(readonly, nonatomic) VCDaemonXPCEventHandler *xpcEventHandler; // @synthesize xpcEventHandler=_xpcEventHandler;
 @property(readonly, nonatomic) VCDaemonSyncDataEndpoint *syncDataEndpoint; // @synthesize syncDataEndpoint=_syncDataEndpoint;
 @property(readonly, nonatomic) VCDaemonDatabaseProvider *databaseProvider; // @synthesize databaseProvider=_databaseProvider;
 @property(readonly, nonatomic) VCXPCServer *xpcServer; // @synthesize xpcServer=_xpcServer;

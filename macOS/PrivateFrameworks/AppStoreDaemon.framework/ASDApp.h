@@ -9,11 +9,12 @@
 #import <AppStoreDaemon/NSCopying-Protocol.h>
 #import <AppStoreDaemon/NSSecureCoding-Protocol.h>
 
-@class ASDProgress, NSError, NSProgress, NSString, NSUUID;
+@class ASDProgress, NSError, NSNumber, NSProgress, NSString, NSUUID;
 
 @interface ASDApp : NSObject <NSCopying, NSSecureCoding>
 {
     BOOL _familyShared;
+    NSString *_artistName;
     NSString *_bundleID;
     NSString *_bundlePath;
     NSString *_bundleShortVersion;
@@ -21,6 +22,7 @@
     NSString *_localizedName;
     long long _storeExternalVersionID;
     NSString *_storeCohort;
+    NSNumber *_storeFront;
     long long _storeItemID;
     long long _downloaderDSID;
     long long _familyID;
@@ -49,6 +51,7 @@
 @property long long familyID; // @synthesize familyID=_familyID;
 @property long long downloaderDSID; // @synthesize downloaderDSID=_downloaderDSID;
 @property long long storeItemID; // @synthesize storeItemID=_storeItemID;
+@property(retain) NSNumber *storeFront; // @synthesize storeFront=_storeFront;
 @property(retain) NSString *storeCohort; // @synthesize storeCohort=_storeCohort;
 @property long long storeExternalVersionID; // @synthesize storeExternalVersionID=_storeExternalVersionID;
 @property(retain) NSString *localizedName; // @synthesize localizedName=_localizedName;
@@ -56,6 +59,7 @@
 @property(retain) NSString *bundleShortVersion; // @synthesize bundleShortVersion=_bundleShortVersion;
 @property(retain) NSString *bundlePath; // @synthesize bundlePath=_bundlePath;
 @property(readonly) NSString *bundleID; // @synthesize bundleID=_bundleID;
+@property(retain) NSString *artistName; // @synthesize artistName=_artistName;
 - (void).cxx_destruct;
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

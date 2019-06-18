@@ -14,7 +14,7 @@ __attribute__((visibility("hidden")))
     id _parentObject;
 }
 
-+ (Class)classForCoder;
++ (Class)classForKeyedUnarchiver;
 - (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
 - (BOOL)writeToURL:(id)arg1 options:(unsigned long long)arg2 error:(id *)arg3;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
@@ -37,6 +37,7 @@ __attribute__((visibility("hidden")))
 - (oneway void)release;
 - (id)retain;
 - (Class)classForArchiver;
+- (Class)classForCoder;
 - (id)initWithCoder:(id)arg1;
 - (id)init;
 

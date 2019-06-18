@@ -50,6 +50,8 @@
 @property(readonly, copy, nonatomic) NSString *inputSourceID; // @synthesize inputSourceID=_inputSourceID;
 @property(readonly, copy, nonatomic) NSString *bundleID; // @synthesize bundleID=_bundleID;
 @property(nonatomic, getter=isEnabled) BOOL enabled; // @synthesize enabled=_enabled;
+- (unsigned long long)hash;
+- (BOOL)isEqual:(id)arg1;
 - (void)dealloc;
 - (id)initWithHandwritingLanguage:(id)arg1;
 - (id)initWithInputSource:(struct __TISInputSource *)arg1 parentInputSource:(struct __TISInputSource *)arg2;

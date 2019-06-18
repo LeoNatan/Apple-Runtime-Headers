@@ -63,6 +63,7 @@
 - (id)initWithObjectID:(id)arg1 name:(id)arg2 insertIntoAccountChangeItem:(id)arg3;
 - (id)initWithSaveRequest:(id)arg1 storage:(id)arg2 accountCapabilities:(id)arg3 observeInitialValues:(BOOL)arg4;
 - (id)initWithSaveRequest:(id)arg1 storage:(id)arg2 accountCapabilities:(id)arg3 changedKeysObserver:(id)arg4;
+- (void)copyListDataFrom:(id)arg1;
 
 // Remaining properties
 @property(retain, nonatomic) REMObjectID *accountID; // @dynamic accountID;

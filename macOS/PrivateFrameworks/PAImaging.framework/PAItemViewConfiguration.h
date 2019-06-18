@@ -12,6 +12,7 @@
 
 @interface PAItemViewConfiguration : NSObject <NSCopying>
 {
+    double _scaleCoverage;
     PAContentTransform *_itemToContentTransform;
     PAContentTransform *_contentToViewTransform;
     long long _itemOrientation;
@@ -77,6 +78,9 @@
 - (id)_itemToContentTransform;
 - (void)_invalidateItemToContentTransform;
 @property(nonatomic) struct CGSize itemSize;
+- (void)updateContentScaleWithCoverage:(double)arg1;
+- (double)contentScaleAsCoverage;
+- (void)_computeScaleCoverage;
 - (id)debugDescription;
 - (BOOL)isEqualToViewConfiguration:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

@@ -17,7 +17,7 @@
     CDUnknownBlockType _completionHandler;
 }
 
-+ (BOOL)workflowNeedsMigration:(id)arg1 fromClientVersion:(long long)arg2;
++ (BOOL)workflowNeedsMigration:(id)arg1 fromClientVersion:(id)arg2;
 + (id)migrationClassDependencies;
 @property(copy, nonatomic) CDUnknownBlockType completionHandler; // @synthesize completionHandler=_completionHandler;
 @property(readonly, nonatomic) NSMutableDictionary *workflow; // @synthesize workflow=_workflow;

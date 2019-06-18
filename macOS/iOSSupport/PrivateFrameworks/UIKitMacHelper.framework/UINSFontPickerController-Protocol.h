@@ -9,7 +9,6 @@
 @protocol UINSFontPickerControllerDelegate, UINSWindow;
 
 @protocol UINSFontPickerController <NSObject>
-@property(nonatomic) BOOL includesFaces;
 @property(nonatomic) __weak id <UINSFontPickerControllerDelegate> delegate;
 - (void)presentAtLocation:(struct CGPoint)arg1 inWindow:(id <UINSWindow>)arg2;
 - (void)setSelectedFont:(const struct __CTFontDescriptor *)arg1;

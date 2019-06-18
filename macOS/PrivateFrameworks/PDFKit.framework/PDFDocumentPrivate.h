@@ -6,7 +6,7 @@
 
 #import <objc/NSObject.h>
 
-@class NSArray, NSDate, NSDictionary, NSIndexSet, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSString, NSTimer, NSURL, NSWindow, PDFAKDocumentAdaptor, PDFForm, PDFOutline, PDFRenderingProperties, PDFSelection;
+@class NSArray, NSDictionary, NSIndexSet, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSString, NSURL, PDFAKDocumentAdaptor, PDFForm, PDFOutline, PDFRenderingProperties, PDFSelection;
 @protocol OS_dispatch_queue, PDFAKControllerDelegateProtocol, PDFDocumentAsyncFindDelegate, PDFDocumentPageChangeDelegate;
 
 __attribute__((visibility("hidden")))
@@ -78,9 +78,6 @@ __attribute__((visibility("hidden")))
     struct os_unfair_lock_s asyncSearchLock;
     id <PDFDocumentAsyncFindDelegate> asyncSearchDelegate;
     NSMutableArray *asyncSearchResults;
-    NSDate *saveDate;
-    NSTimer *saveTimer;
-    NSWindow *saveWindow;
 }
 
 - (void).cxx_destruct;

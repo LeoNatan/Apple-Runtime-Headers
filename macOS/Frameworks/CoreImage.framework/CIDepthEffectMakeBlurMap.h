@@ -52,7 +52,7 @@ __attribute__((visibility("hidden")))
 - (id)smoothShiftMapV2:(id)arg1;
 - (id)faceMaskDelta:(id)arg1 blurMap:(id)arg2 parameters:(id)arg3;
 - (id)faceMaskApply:(id)arg1 blurMap:(id)arg2;
-- (id)faceMaskParams:(id)arg1;
+- (id)faceMaskParams:(id)arg1 useNormalizedCoords:(BOOL)arg2;
 - (_Bool)needToRunFaceMask;
 - (id)lensModelApply:(id)arg1 shiftMap:(id)arg2;
 - (id)lensModelParams:(id)arg1;

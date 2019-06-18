@@ -11,6 +11,7 @@ __attribute__((visibility("hidden")))
 {
 }
 
++ (Class)classForKeyedUnarchiver;
 - (void)dealloc;
 - (BOOL)_tryRetain;
 - (BOOL)_isDeallocating;

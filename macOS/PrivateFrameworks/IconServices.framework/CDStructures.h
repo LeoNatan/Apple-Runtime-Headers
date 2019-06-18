@@ -29,6 +29,10 @@ struct FSRef {
     unsigned char _field1[80];
 };
 
+struct NSData {
+    Class _field1;
+};
+
 struct _LIIconVariantInfo {
     int _field1;
     struct CGSize _field2;
@@ -57,10 +61,10 @@ typedef struct {
 } CDStruct_7956d949;
 
 typedef struct {
-    unsigned int lsDatabaseGeneration;
-    unsigned int bindableKey;
-    unsigned int bindableGeneration;
-} CDStruct_cbacfc36;
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+} CDStruct_32a7f38a;
 
 typedef struct {
     unsigned int _field1;
@@ -68,7 +72,9 @@ typedef struct {
     float _field3;
     unsigned int _field4;
     unsigned int _field5;
-} CDStruct_9d4bab76;
+    float _field6;
+    float _field7;
+} CDStruct_601877e8;
 
 typedef struct {
     int _field1;
@@ -95,10 +101,13 @@ typedef struct {
     double _field4;
     unsigned int _field5;
     unsigned long long _field6;
-    CDStruct_cbacfc36 _field7;
-    unsigned long long _field8;
-    unsigned char _field9[16];
-} CDStruct_1a8ce9d4;
+    unsigned char _field7[16];
+    struct {
+        unsigned char _field1[16];
+        unsigned long long _field2;
+        unsigned char _field3[16];
+    } _field8;
+} CDStruct_be136439;
 
 typedef struct {
     CDUnion_698d0922 _field1;
@@ -111,9 +120,9 @@ typedef struct {
     unsigned long long _field2;
     unsigned int _field3;
     _Bool _field4;
-    CDStruct_1a8ce9d4 _field5;
+    CDStruct_be136439 _field5;
     CDUnion_698d0922 _field6;
-} CDStruct_92a6f89f;
+} CDStruct_155cdb8f;
 
 #pragma mark Typedef'd Unions
 

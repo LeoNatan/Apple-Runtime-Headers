@@ -242,6 +242,7 @@
 - (void)setEventTag:(long long)arg1 withCancelString:(id)arg2;
 - (void)setEventTag:(long long)arg1;
 - (void)_wst_setEventTag:(id)arg1;
+- (void)restoreLastSessionState;
 - (BOOL)shouldGenerateBraille;
 - (BOOL)hasActiveBrailleDevice;
 - (void)setHasActiveBrailleDevice:(BOOL)arg1;

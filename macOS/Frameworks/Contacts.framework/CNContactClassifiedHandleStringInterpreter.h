@@ -6,13 +6,13 @@
 
 #import <objc/NSObject.h>
 
-@class CNHandleStringClassifier, NSArray, NSMutableArray;
+@class CNHandleStringClassification, NSArray, NSMutableArray;
 
 __attribute__((visibility("hidden")))
 @interface CNContactClassifiedHandleStringInterpreter : NSObject
 {
     BOOL _hasBeenInterpreted;
-    CNHandleStringClassifier *_classifier;
+    CNHandleStringClassification *_classification;
     NSMutableArray *_emailAddressesImpl;
     NSMutableArray *_phoneNumbersImpl;
     NSMutableArray *_postalAddressesImpl;
@@ -24,18 +24,18 @@ __attribute__((visibility("hidden")))
 @property(readonly, nonatomic) NSMutableArray *postalAddressesImpl; // @synthesize postalAddressesImpl=_postalAddressesImpl;
 @property(readonly, nonatomic) NSMutableArray *phoneNumbersImpl; // @synthesize phoneNumbersImpl=_phoneNumbersImpl;
 @property(readonly, nonatomic) NSMutableArray *emailAddressesImpl; // @synthesize emailAddressesImpl=_emailAddressesImpl;
-@property(readonly, nonatomic) CNHandleStringClassifier *classifier; // @synthesize classifier=_classifier;
+@property(readonly, nonatomic) CNHandleStringClassification *classification; // @synthesize classification=_classification;
 - (void).cxx_destruct;
 @property(readonly) NSArray *postalAddresses;
 @property(readonly) NSArray *phoneNumbers;
 @property(readonly) NSArray *emailAddresses;
-- (void)interpretUnknowns;
+- (void)interpretUnknownsAsEmailAddresses;
 - (void)interpretPostalAddresses;
 - (void)interpretPhoneNumbers;
 - (void)interpretEmailAddresses;
 - (void)interpretValues;
 - (id)description;
-- (id)initWithHandleStringClassifier:(id)arg1;
+- (id)initWithHandleStringClassification:(id)arg1;
 - (id)init;
 
 @end

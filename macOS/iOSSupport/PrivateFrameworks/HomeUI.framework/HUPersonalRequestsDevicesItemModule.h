@@ -13,6 +13,7 @@
 
 @interface HUPersonalRequestsDevicesItemModule : HFItemModule <HULocationDeviceManagerObserver>
 {
+    BOOL _onlyShowDeviceSwitches;
     NSSet *_itemProviders;
     id <HFMediaProfileContainer> _sourceMediaProfileContainer;
     HMHome *_home;
@@ -29,6 +30,7 @@
 @property(retain, nonatomic) HFItemProvider *personalRequestsDevicesProvider; // @synthesize personalRequestsDevicesProvider=_personalRequestsDevicesProvider;
 @property(readonly, nonatomic) HFUserItem *sourceItem; // @synthesize sourceItem=_sourceItem;
 @property(readonly, nonatomic) HMHome *home; // @synthesize home=_home;
+@property(nonatomic) BOOL onlyShowDeviceSwitches; // @synthesize onlyShowDeviceSwitches=_onlyShowDeviceSwitches;
 @property(retain, nonatomic) id <HFMediaProfileContainer> sourceMediaProfileContainer; // @synthesize sourceMediaProfileContainer=_sourceMediaProfileContainer;
 @property(readonly, nonatomic) NSSet *itemProviders; // @synthesize itemProviders=_itemProviders;
 - (void).cxx_destruct;
@@ -36,7 +38,7 @@
 - (id)_commitUpdateToAccessControl:(id)arg1;
 - (id)updateLocationDeviceToThisDevice;
 @property(readonly, nonatomic) NAFuture *activeLocationDeviceFuture;
-@property(copy, nonatomic) NSArray *personalRequestsHomePods;
+@property(copy, nonatomic) NSArray *personalRequestsDevices;
 - (void)turnOnAllPersonalRequestsDevices;
 - (void)toggleAllPersonalRequestsDevices;
 - (BOOL)isItemPersonalRequestsFooter:(id)arg1;
@@ -48,7 +50,7 @@
 @property(readonly, nonatomic) HMAssistantAccessControl *accessControl;
 - (void)unregisterForExternalUpdates;
 - (void)registerForExternalUpdates;
-- (id)initWithItemUpdater:(id)arg1 userItem:(id)arg2 home:(id)arg3;
+- (id)initWithItemUpdater:(id)arg1 userItem:(id)arg2 home:(id)arg3 onlyShowDeviceSwitches:(BOOL)arg4;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

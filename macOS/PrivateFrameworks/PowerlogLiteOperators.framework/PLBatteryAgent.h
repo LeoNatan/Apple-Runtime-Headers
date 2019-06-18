@@ -46,6 +46,7 @@
     PLTimer *_periodicAggdTimer;
     PLTimer *_xFlagsRetryTimer;
     PLEntry *_lastBatteryConfigEntry;
+    NSNumber *_lastDOD0;
     PLXPCResponderOperatorComposition *_batteryInfoResponder;
     PLXPCResponderOperatorComposition *_batteryTemperatureResponder;
     PLXPCResponderOperatorComposition *_batteryDischargeCurrentResponder;
@@ -78,6 +79,7 @@
 + (id)defaults;
 + (id)entryAggregateDefinitionUILevel;
 + (id)entryAggregateDefinitions;
++ (id)entryEventBackwardDefinitionKioskMode;
 + (id)entryEventBackwardDefinitionDischargingHeatMap;
 + (id)entryEventBackwardDefinitionChargingHeatMapB;
 + (id)entryEventBackwardDefinitionChargingHeatMapA;
@@ -104,6 +106,7 @@
 + (id)entryEventPointDefinitionPPMDebug;
 + (id)entryEventForwardDefinitionIOPMUBootLPMLog;
 + (BOOL)shouldLogPPMDebugDetail;
++ (BOOL)shouldLogCPMS;
 + (id)entryEventPointDefinitions;
 + (id)entryEventNoneDefinitionBatteryConfig;
 + (id)entryEventNoneDefinitions;
@@ -151,6 +154,7 @@
 @property(retain) PLXPCResponderOperatorComposition *batteryDischargeCurrentResponder; // @synthesize batteryDischargeCurrentResponder=_batteryDischargeCurrentResponder;
 @property(retain) PLXPCResponderOperatorComposition *batteryTemperatureResponder; // @synthesize batteryTemperatureResponder=_batteryTemperatureResponder;
 @property(retain) PLXPCResponderOperatorComposition *batteryInfoResponder; // @synthesize batteryInfoResponder=_batteryInfoResponder;
+@property(retain) NSNumber *lastDOD0; // @synthesize lastDOD0=_lastDOD0;
 @property(retain) PLEntry *lastBatteryConfigEntry; // @synthesize lastBatteryConfigEntry=_lastBatteryConfigEntry;
 @property(retain) PLTimer *xFlagsRetryTimer; // @synthesize xFlagsRetryTimer=_xFlagsRetryTimer;
 @property(retain) PLTimer *periodicAggdTimer; // @synthesize periodicAggdTimer=_periodicAggdTimer;
@@ -197,6 +201,7 @@
 - (void)logEventNoneBatteryConfigCycleCountData;
 - (void)logEventNoneBatteryConfigWithRawData:(id)arg1;
 - (void)logEventPointBatteryShutdown;
+- (void)logKioskModeEntryToAggd:(id)arg1;
 - (void)logBatteryConfigToAggd:(id)arg1;
 - (void)aggdTimerFired;
 - (void)logBatteryShutdownToAggd:(id)arg1;
@@ -217,6 +222,8 @@
 - (int)batteryLifetimeUPOCount;
 - (id)logEventBackwardBatteryWithRawData:(id)arg1;
 - (void)logEventBackwardBattery;
+- (void)logEventBackwardKioskModeCallback:(id)arg1;
+- (void)logEventBackwardKioskMode;
 - (void)logEventBackwardHeatMapCallback:(id)arg1 andHeatMapType:(long long)arg2;
 - (void)logEventBackwardHeatMap;
 - (void)logEventForwardSmartChargingWithPayload:(id)arg1;
@@ -238,6 +245,8 @@
 - (void)logEventPointUPOStepper;
 - (void)fakeLogEntry:(id)arg1;
 - (void)log;
+- (void)handlePPMCallback;
+- (void)handleSBC;
 - (void)initOperatorDependancies;
 - (void)detectEAPencilConnectionWithNotification:(id)arg1;
 - (BOOL)isUPOEntry:(id)arg1;

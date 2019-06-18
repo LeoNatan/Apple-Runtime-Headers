@@ -9,13 +9,14 @@
 #import <UIKitMacHelper/UINSDropSession-Protocol.h>
 
 @class NSArray;
-@protocol UINSDropSessionHandler;
+@protocol OS_dispatch_queue, UINSDropSessionHandler;
 
 __attribute__((visibility("hidden")))
 @interface UINSDropSession : NSObject <UINSDropSession>
 {
     id <UINSDropSessionHandler> _handler;
     unsigned long long _lastDropOperation;
+    NSObject<OS_dispatch_queue> *_dropQueueTargetingMainQueue;
     unsigned int _sessionID;
     NSArray *_items;
     unsigned long long _operationMask;
@@ -25,6 +26,7 @@ __attribute__((visibility("hidden")))
 @property(readonly, copy, nonatomic) NSArray *items; // @synthesize items=_items;
 @property(readonly, nonatomic) unsigned int sessionID; // @synthesize sessionID=_sessionID;
 - (void).cxx_destruct;
+- (void)sawDragEndEvent;
 - (void)setHandler:(id)arg1;
 - (void)takePotentialDropOperation:(unsigned long long)arg1;
 - (void)takeHandler:(id)arg1;

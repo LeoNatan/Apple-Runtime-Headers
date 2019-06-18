@@ -14,8 +14,8 @@
 #import <CoreSpeech/CSSiriClientBehaviorMonitorDelegate-Protocol.h>
 #import <CoreSpeech/CSStateMachineDelegate-Protocol.h>
 
-@class CSAsset, CSAudioProvider, CSAudioStream, CSAudioStreamHolding, CSOSTransaction, CSPolicy, CSVoiceTriggerSecondPass, NSDictionary, NSMutableArray, NSString;
-@protocol CSVoiceTriggerDelegate, OS_dispatch_queue;
+@class CSAsset, CSAudioProvider, CSAudioStream, CSOSTransaction, CSPolicy, CSVoiceTriggerSecondPass, NSDictionary, NSMutableArray, NSString;
+@protocol CSVoiceTriggerDelegate, OS_dispatch_group, OS_dispatch_queue;
 
 @interface CSBuiltInVoiceTrigger : NSObject <CSKeywordAnalyzerNDAPIScoreDelegate, CSActivationEventNotifierDelegate, CSStateMachineDelegate, CSAudioStreamProvidingDelegate, CSSiriClientBehaviorMonitorDelegate, CSAudioServerCrashMonitorDelegate, CSSelfTriggerDetectorDelegate>
 {
@@ -43,12 +43,14 @@
     unsigned long long _processingChannelsBitset;
     CSVoiceTriggerSecondPass *_voiceTriggerSecondPass;
     CSAudioProvider *_audioProvider;
-    CSAudioStreamHolding *_audioStreamHolding;
+    NSMutableArray *_audioStreamHoldings;
     CSOSTransaction *_secondPassTransaction;
+    NSObject<OS_dispatch_group> *_recordingWillStartGroup;
 }
 
+@property(retain, nonatomic) NSObject<OS_dispatch_group> *recordingWillStartGroup; // @synthesize recordingWillStartGroup=_recordingWillStartGroup;
 @property(retain, nonatomic) CSOSTransaction *secondPassTransaction; // @synthesize secondPassTransaction=_secondPassTransaction;
-@property(retain, nonatomic) CSAudioStreamHolding *audioStreamHolding; // @synthesize audioStreamHolding=_audioStreamHolding;
+@property(retain, nonatomic) NSMutableArray *audioStreamHoldings; // @synthesize audioStreamHoldings=_audioStreamHoldings;
 @property(retain, nonatomic) CSAudioProvider *audioProvider; // @synthesize audioProvider=_audioProvider;
 @property(nonatomic) BOOL isListenPollingStarting; // @synthesize isListenPollingStarting=_isListenPollingStarting;
 @property(nonatomic) BOOL isSiriClientListening; // @synthesize isSiriClientListening=_isSiriClientListening;
@@ -77,7 +79,9 @@
 - (void)_teardownSecondPassIfNeeded;
 - (void)_createSecondPassIfNeededWithFirstPassSource:(unsigned long long)arg1;
 - (BOOL)_shouldSecondPassKeepAlive;
-- (void)_cancelAudioStreamHold;
+- (void)_cancelAllAudioStreamHold;
+- (void)_cancelLastAudioStreamHold;
+- (void)_addAudioStreamHold:(id)arg1;
 - (void)activationEventNotifier:(id)arg1 event:(id)arg2 completion:(CDUnknownBlockType)arg3;
 - (void)CSAudioServerCrashMonitorDidReceiveServerRestart:(id)arg1;
 - (void)CSAudioServerCrashMonitorDidReceiveServerCrash:(id)arg1;

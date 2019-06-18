@@ -18,6 +18,7 @@
 
 @property long long disposition; // @synthesize disposition=_disposition;
 @property(retain) DGDescription *renderDescription; // @synthesize renderDescription=_renderDescription;
+@property(retain) NSObject<OS_dispatch_group> *group; // @synthesize group=_group;
 - (void).cxx_destruct;
 - (void)deliverOn:(id)arg1 completion:(CDUnknownBlockType)arg2;
 - (void)_load:(id)arg1;

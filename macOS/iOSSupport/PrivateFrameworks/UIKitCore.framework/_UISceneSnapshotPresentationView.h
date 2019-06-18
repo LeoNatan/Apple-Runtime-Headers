@@ -19,6 +19,9 @@ __attribute__((visibility("hidden")))
 @property(retain, nonatomic) FBSceneSnapshot *sceneSnapshot; // @synthesize sceneSnapshot=_snapshot;
 - (void).cxx_destruct;
 - (id)initWithSnapshot:(id)arg1;
+- (id)initWithFrame:(struct CGRect)arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)init;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

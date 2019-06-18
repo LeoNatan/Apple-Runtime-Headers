@@ -6,18 +6,18 @@
 
 #import <AppKit/NSView.h>
 
-@class NSColor, PKLinedPaper;
+@class PKLinedPaper;
 
 @interface PKMacLinedPaperView : NSView
 {
+    BOOL _darkMode;
     PKLinedPaper *_linedPaper;
-    NSColor *_lineColor;
     double _yOrigin;
 }
 
 + (void)renderLinedPaper:(id)arg1 color:(id)arg2 backingScale:(double)arg3 context:(struct CGContext *)arg4 frame:(struct CGRect)arg5 dirtyRect:(struct CGRect)arg6 yOrigin:(double)arg7;
+@property(nonatomic) BOOL darkMode; // @synthesize darkMode=_darkMode;
 @property(nonatomic) double yOrigin; // @synthesize yOrigin=_yOrigin;
-@property(retain, nonatomic) NSColor *lineColor; // @synthesize lineColor=_lineColor;
 @property(retain, nonatomic) PKLinedPaper *linedPaper; // @synthesize linedPaper=_linedPaper;
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect)arg1;

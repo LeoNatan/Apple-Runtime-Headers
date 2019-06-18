@@ -18,6 +18,7 @@
 
 + (id)localizedDisplayExplanation;
 + (id)localizedDisplayName;
++ (BOOL)isSupportedOnThisDevice;
 + (BOOL)isAllowedToRunAutomatically;
 + (BOOL)supportsSecureCoding;
 + (id)triggerWithSerializedData:(id)arg1;
@@ -29,7 +30,6 @@
 - (id)initWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)serializedData;
-- (BOOL)isEqual:(id)arg1;
 - (id)description;
 - (id)init;
 - (void)configureWithConfiguration:(id)arg1;

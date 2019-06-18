@@ -10,6 +10,8 @@
 {
 }
 
++ (id)dateByStrippingTime:(id)arg1;
++ (id)dateAtMidnight:(id)arg1;
 + (id)exsGregorianCalendar;
 + (id)dateComponentsFromDictionary:(id)arg1;
 + (id)dictionaryFromDateComponents:(id)arg1;

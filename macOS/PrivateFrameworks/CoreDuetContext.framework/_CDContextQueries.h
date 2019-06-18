@@ -10,6 +10,8 @@
 {
 }
 
++ (id)keyPathForDefaultPairedDeviceCellQuality;
++ (id)keyPathForDefaultPairedDeviceWiFiWiredQuality;
 + (id)keyPathForActiveComplications;
 + (id)keyPathForDefaultPairedDeviceForegroundApp;
 + (id)keyPathForWatchForegroundApp;

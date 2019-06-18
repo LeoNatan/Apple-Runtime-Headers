@@ -16,6 +16,7 @@
 @property unsigned long long kernelStride; // @synthesize kernelStride=_kernelStride;
 @property unsigned long long kernelHeight; // @synthesize kernelHeight=_kernelHeight;
 @property unsigned long long kernelWidth; // @synthesize kernelWidth=_kernelWidth;
+- (unsigned long long)computeOutputLengthWithInputLength:(long long)arg1 kernelWidth:(long long)arg2 kernelStride:(long long)arg3;
 
 @end
 

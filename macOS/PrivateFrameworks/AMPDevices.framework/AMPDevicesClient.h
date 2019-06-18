@@ -47,15 +47,13 @@
 - (void)didChangeDeviceName:(id)arg1 forDeviceWithIdentifier:(id)arg2;
 - (void)didChangeBatteryInfo:(id)arg1 forDeviceWithIdentifier:(id)arg2;
 - (void)requestCompleteWithActivationInfo:(id)arg1 forDeviceWithIdentifier:(id)arg2 withError:(id)arg3;
-- (void)renameFileOrFolder:(id)arg1 to:(id)arg2 using:(id)arg3 withReply:(CDUnknownBlockType)arg4;
-- (void)copyFolder:(id)arg1 to:(id)arg2 using:(id)arg3 withReply:(CDUnknownBlockType)arg4;
-- (void)moveFile:(id)arg1 to:(id)arg2 using:(id)arg3 withReply:(CDUnknownBlockType)arg4;
-- (void)copyFile:(id)arg1 to:(id)arg2 using:(id)arg3 withReply:(CDUnknownBlockType)arg4;
-- (void)addFile:(id)arg1 to:(id)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)deleteDirectory:(id)arg1 from:(id)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)deleteFile:(id)arg1 from:(id)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)fetchInstalledFileSharingAppFiles:(id)arg1 from:(id)arg2 withReply:(CDUnknownBlockType)arg3;
-- (void)fetchInstalledFileSharingApps:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)didChangeDevicesClientConnectionState:(unsigned long long)arg1;
+- (void)deleteItemAtURL:(id)arg1 withReply:(CDUnknownBlockType)arg2;
+- (void)renameItemAtURL:(id)arg1 to:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (id)moveItemAtURL:(id)arg1 toURL:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (id)copyItemAtURL:(id)arg1 toURL:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)fetchFileSharingItemsForApp:(id)arg1 forDevice:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)fetchFileSharingAppsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)ejectDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)revealDeviceInFinder:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)resetWarningsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
@@ -78,11 +76,11 @@
 - (void)cancelBackupForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (id)backupDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)setKeychainBackupPassword:(id)arg1 forDevice:(id)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)fetchPasswordFromKeychainForBackup:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)fetchBackupPasswordFromKeychainForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)changeBackupPasswordForDevice:(id)arg1 oldPassword:(id)arg2 newPassword:(id)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)fetchAllBackupsWithReply:(CDUnknownBlockType)arg1;
-- (void)fetchBackupsForProductType:(id)arg1 withReply:(CDUnknownBlockType)arg2;
-- (void)fetchBackupsForDevice:(id)arg1 includingAllCompatibleBackups:(BOOL)arg2 withReply:(CDUnknownBlockType)arg3;
+- (void)fetchBackupsForDevice:(id)arg1 includingIncompatibleBackups:(BOOL)arg2 includingAllCompatibleBackups:(BOOL)arg3 withReply:(CDUnknownBlockType)arg4;
 - (void)fetchLastBackupDatesForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)fetchSyncErrorsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
 - (void)hasSyncErrorsForDevice:(id)arg1 withReply:(CDUnknownBlockType)arg2;
@@ -112,6 +110,7 @@
 - (id)currentConnection;
 - (void)connect;
 - (void)connectionInvalidated;
+- (void)connectionInterrupted;
 - (void)dealloc;
 
 @end

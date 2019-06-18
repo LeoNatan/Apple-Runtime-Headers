@@ -6,17 +6,18 @@
 
 #import <EmailDaemon/NSObject-Protocol.h>
 
-@class EMMessage, EMMessageObjectID, NSArray;
+@class EDMessageQueryHelper, EMMessage, EMMessageObjectID, NSArray;
 
 @protocol EDMessageQueryHelperDelegate <NSObject>
-- (void)messagesWereDeleted:(NSArray *)arg1;
-- (void)messagesWereUpdated:(NSArray *)arg1 forKeyPaths:(NSArray *)arg2;
-- (void)objectIDChangedForMessage:(EMMessage *)arg1 oldObjectID:(EMMessageObjectID *)arg2;
-- (void)conversationNotificationLevelWasChangedForConversation:(long long)arg1 conversationID:(long long)arg2;
-- (void)conversationIDWasChangedForMessages:(NSArray *)arg1 fromConversationID:(long long)arg2;
-- (void)messageFlagsWereChangedForMessages:(NSArray *)arg1;
-- (void)messagesWereAdded:(NSArray *)arg1;
-- (void)allMessagesWereFound;
-- (void)messagesWereFound:(NSArray *)arg1;
+- (void)queryHelperDidFinishRemoteSearch:(EDMessageQueryHelper *)arg1;
+- (void)queryHelper:(EDMessageQueryHelper *)arg1 didDeleteMessages:(NSArray *)arg2;
+- (void)queryHelper:(EDMessageQueryHelper *)arg1 didUpdateMessages:(NSArray *)arg2 forKeyPaths:(NSArray *)arg3;
+- (void)queryHelper:(EDMessageQueryHelper *)arg1 objectIDDidChangeForMessage:(EMMessage *)arg2 oldObjectID:(EMMessageObjectID *)arg3;
+- (void)queryHelper:(EDMessageQueryHelper *)arg1 conversationNotificationLevelDidChangeForConversation:(long long)arg2 conversationID:(long long)arg3;
+- (void)queryHelper:(EDMessageQueryHelper *)arg1 conversationIDDidChangeForMessages:(NSArray *)arg2 fromConversationID:(long long)arg3;
+- (void)queryHelper:(EDMessageQueryHelper *)arg1 messageFlagsDidChangeForMessages:(NSArray *)arg2;
+- (void)queryHelper:(EDMessageQueryHelper *)arg1 didAddMessages:(NSArray *)arg2;
+- (void)queryHelperDidFindAllMessages:(EDMessageQueryHelper *)arg1;
+- (void)queryHelper:(EDMessageQueryHelper *)arg1 didFindMessages:(NSArray *)arg2;
 @end
 

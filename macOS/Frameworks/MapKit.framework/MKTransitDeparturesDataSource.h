@@ -12,7 +12,7 @@
 #import <MapKit/NSTableViewDelegate-Protocol.h>
 #import <MapKit/_MKTransitConnectionCellDelegate-Protocol.h>
 
-@class MKArtworkDataSourceCache, MKMapItem, MKTransitDeparturesDataProvider, NSMapTable, NSMutableArray, NSMutableDictionary, NSString, NSTableView;
+@class MKArtworkDataSourceCache, MKMapItem, MKTransitDeparturesDataProvider, NSMapTable, NSMutableDictionary, NSString, NSTableView;
 @protocol MKTransitDeparturesDataSourceHosting, _MKInfoCardAnalyticsDelegate;
 
 @interface MKTransitDeparturesDataSource : NSObject <_MKTransitConnectionCellDelegate, MKTransitDeparturesCellDelegate, MKTransitDeparturesDataProviderDelegate, NSTableViewDelegate, NSTableViewDataSource>
@@ -23,7 +23,7 @@
     NSMutableDictionary *_cachedMaxImageWidths;
     NSMutableDictionary *_cachedColumnCenteringWidths;
     struct CGRect _lastMaxWidthBounds;
-    NSMutableArray *_shownIncidentTitles;
+    BOOL _showingIncidents;
     BOOL _limitInteraction;
     BOOL _allowTransitLineSelection;
     MKMapItem *_mapItem;
@@ -45,7 +45,8 @@
 - (int)transitCategoryForFrequencyType:(long long)arg1;
 - (int)_transitCategoryForSection:(long long)arg1;
 - (int)currentTransitCategory;
-- (void)recordIncidentShown:(id)arg1 system:(id)arg2;
+- (id)possibleActions;
+- (void)recordIncidentsShowing:(BOOL)arg1;
 - (void)tableView:(id)arg1 mouseUpOutsideRow:(long long)arg2;
 - (void)tableView:(id)arg1 mouseUpOnRow:(long long)arg2;
 - (void)tableView:(id)arg1 mouseDownOnRow:(long long)arg2;
@@ -69,7 +70,7 @@
 - (id)_departureSequenceForIndexPath:(id)arg1;
 - (id)_indexPathWithHeader:(id)arg1;
 - (id)_indexPathWithoutHeader:(id)arg1;
-- (void)_incidentDetailsButtonSelected;
+- (void)_showIncidentDetails;
 - (id)_incidentCellForRow:(long long)arg1 inSection:(long long)arg2;
 - (void)infoButtonSelectedInConnectionCell:(id)arg1;
 - (id)_connectionCellForRow:(long long)arg1;

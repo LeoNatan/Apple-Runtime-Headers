@@ -40,7 +40,10 @@
 - (id)ticketForSearchAlongRouteWithCategory:(id)arg1 zilchData:(id)arg2 sessionState:(id)arg3 routeId:(id)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
 - (id)ticketForCategory:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)ticketForRelatedPlaceList:(id)arg1 traits:(id)arg2;
-- (id)ticketForTransitScheduleStationIdentifier:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripID:(unsigned long long)arg3 traits:(id)arg4;
+- (id)ticketForUpdatedTransitScheduleDetailsAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripID:(unsigned long long)arg3 traits:(id)arg4;
+- (id)ticketForTransitDeparturesAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripID:(unsigned long long)arg3 traits:(id)arg4;
+- (id)ticketForTransitTripDetailsAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripID:(unsigned long long)arg3 traits:(id)arg4;
+- (id)ticketForTransitScheduleAtStation:(unsigned long long)arg1 line:(unsigned long long)arg2 referenceTripID:(unsigned long long)arg3 traits:(id)arg4;
 - (id)ticketForSearchPoisForCollectionMUID:(unsigned long long)arg1 traits:(id)arg2;
 - (id)ticketForCategoryListWithTraits:(id)arg1 isFromNoQueryState:(BOOL)arg2;
 - (id)ticketForSearchPoisForBrandMUID:(unsigned long long)arg1 traits:(id)arg2;
@@ -75,11 +78,8 @@
 - (id)defaultTraitsWithTraits:(id)arg1;
 - (id)defaultTraitsWithTransportType:(unsigned long long)arg1;
 - (id)defaultTraits;
-- (void)_applicationDidChangeStatusBar:(id)arg1;
-- (id)init;
 - (void)incrementAGGDInteractedWithPlaceCardKeyWithType:(unsigned long long)arg1 incrementValue:(long long)arg2;
 - (void)incrementAGGDOpenPlaceCardKeyWithType:(unsigned long long)arg1 incrementValue:(long long)arg2;
-- (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 selectedReportAnIssueIndex:(unsigned int)arg4;
 - (void)capturePlaceCardUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 mapItem:(id)arg4 timestamp:(double)arg5 placeCardType:(int)arg6 categoriesDisplayed:(id)arg7 categorySelected:(id)arg8;
 - (void)captureUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 categoriesDisplayed:(id)arg4 categorySelected:(id)arg5;
 - (void)captureTransitPlaceCardUserAction:(int)arg1 onTarget:(int)arg2 eventValue:(id)arg3 mapItem:(id)arg4 timestamp:(double)arg5 resultIndex:(int)arg6 targetID:(unsigned long long)arg7 providerID:(id)arg8 animationID:(unsigned long long)arg9 transitCardCategory:(int)arg10 transitSystem:(id)arg11 transitDepartureSequence:(id)arg12 transitIncident:(id)arg13;

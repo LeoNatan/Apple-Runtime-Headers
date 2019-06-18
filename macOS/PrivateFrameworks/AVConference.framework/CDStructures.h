@@ -1335,6 +1335,7 @@ struct tagVPKTFLAG {
     struct tagPKT_TAG _field20;
     unsigned int _field21;
     unsigned char _field22[16];
+    _Bool _field23;
 };
 
 struct tagVideoDecoderConfig {

@@ -30,13 +30,11 @@
 @property(nonatomic) BOOL useDarkerPlaceholder; // @synthesize useDarkerPlaceholder=_useDarkerPlaceholder;
 @property(retain, nonatomic) GKPlayer *player; // @synthesize player=_player;
 - (void).cxx_destruct;
-- (void)invalidateIntrinsicContentSize;
 - (void)invalidatePhoto;
 - (void)refreshImageWithCompletionHandler:(CDUnknownBlockType)arg1;
 - (void)setContactOnAvatarViewController:(id)arg1;
 - (void)setPlayer:(id)arg1 completionHandler:(CDUnknownBlockType)arg2;
 @property(readonly, nonatomic) BOOL hasImage;
-- (void)layout;
 - (id)initWithFrame:(struct CGRect)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)commonInit;

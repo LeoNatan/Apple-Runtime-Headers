@@ -13,6 +13,8 @@ __attribute__((visibility("hidden")))
 }
 
 - (BOOL)performDefaultActionWithRequest:(id)arg1 allowClick:(BOOL)arg2;
+- (id)_columnViewTextElementChild;
+- (void)prepareBrailleItemDescriptionForRequest:(id)arg1 hasBrailleFocus:(BOOL)arg2;
 - (void)addItemDescriptionToRequest:(id)arg1;
 - (id)typeDescription;
 - (void)handleSelectionChange:(id)arg1;

@@ -46,6 +46,7 @@
 + (id)hexagonalPixellateFilter;
 + (id)heightFieldFromMaskFilter;
 + (id)gloomFilter;
++ (id)gaborGradientsFilter;
 + (id)edgeWorkFilter;
 + (id)edgesFilter;
 + (id)depthOfFieldFilter;
@@ -180,8 +181,12 @@
 + (id)straightenFilter;
 + (id)perspectiveTransformWithExtentFilter;
 + (id)perspectiveTransformFilter;
++ (id)perspectiveRotateFilter;
 + (id)perspectiveCorrectionFilter;
 + (id)lanczosScaleTransformFilter;
++ (id)keystoneCorrectionVerticalFilter;
++ (id)keystoneCorrectionHorizontalFilter;
++ (id)keystoneCorrectionCombinedFilter;
 + (id)edgePreserveUpsampleFilter;
 + (id)bicubicScaleTransformFilter;
 + (id)lineScreenFilter;

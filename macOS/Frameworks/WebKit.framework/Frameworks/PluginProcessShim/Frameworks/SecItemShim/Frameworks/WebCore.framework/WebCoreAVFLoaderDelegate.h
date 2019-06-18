@@ -13,8 +13,8 @@
 __attribute__((visibility("hidden")))
 @interface WebCoreAVFLoaderDelegate : NSObject <AVAssetResourceLoaderDelegate>
 {
-    WeakPtr_db8b46a6 m_player;
-    // Error parsing type: {GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> >="m_weakFactory"{WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> > >="m_ref"{RefPtr<WTF::WeakReference<WebCore::GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> > >, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> > > > >="m_ptr"^{WeakReference<WebCore::GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> > >}}}"m_dispatcher"{TaskDispatcher<WebCore::Timer>="m_weakFactory"{WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer> >="m_ref"{RefPtr<WTF::WeakReference<WebCore::TaskDispatcher<WebCore::Timer> >, WTF::DumbPtrTraits<WTF::WeakReference<WebCore::TaskDispatcher<WebCore::Timer> > > >="m_ptr"^{WeakReference<WebCore::TaskDispatcher<WebCore::Timer> >}}}"m_pendingTasks"{Deque<WTF::Function<void ()>, 0>="m_start"Q"m_end"Q"m_buffer"{VectorBuffer<WTF::Function<void ()>, 0>="m_buffer"^{Function<void ()>}"m_capacity"I"m_size"I}}}"m_pendingTasks"{atomic<unsigned int>="__a_"AI}"m_isClosed"B}, name: m_taskQueue
+    WeakPtr_09470f09 m_player;
+    // Error parsing type: {GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> >="m_weakFactory"{WeakPtrFactory<WebCore::GenericTaskQueue<WebCore::Timer, std::__1::atomic<unsigned int> > >="m_ref"{RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference> >="m_ptr"^{WeakReference}}}"m_dispatcher"{TaskDispatcher<WebCore::Timer>="m_weakFactory"{WeakPtrFactory<WebCore::TaskDispatcher<WebCore::Timer> >="m_ref"{RefPtr<WTF::WeakReference, WTF::DumbPtrTraits<WTF::WeakReference> >="m_ptr"^{WeakReference}}}"m_pendingTasks"{Deque<WTF::Function<void ()>, 0>="m_start"Q"m_end"Q"m_buffer"{VectorBuffer<WTF::Function<void ()>, 0>="m_buffer"^{Function<void ()>}"m_capacity"I"m_size"I}}}"m_pendingTasks"{atomic<unsigned int>="__a_"AI}"m_isClosed"B}, name: m_taskQueue
 }
 
 - (id).cxx_construct;
@@ -22,7 +22,7 @@ __attribute__((visibility("hidden")))
 - (void)resourceLoader:(id)arg1 didCancelLoadingRequest:(id)arg2;
 - (BOOL)resourceLoader:(id)arg1 shouldWaitForResponseToAuthenticationChallenge:(id)arg2;
 - (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
-- (id)initWithPlayer:(WeakPtr_db8b46a6 *)arg1;
+- (id)initWithPlayer:(WeakPtr_09470f09 *)arg1;
 
 // Remaining properties
 @property(readonly, copy) NSString *debugDescription;

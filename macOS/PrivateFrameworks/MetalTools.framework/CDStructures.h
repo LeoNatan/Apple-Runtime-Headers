@@ -107,6 +107,167 @@ struct MTLTargetDeviceArch {
     char *_field3;
 };
 
+struct MTLTelemetryAnisoClippedCountsRec {
+    unsigned int _field1[4];
+};
+
+struct MTLTelemetryBufferDistributionRec {
+    struct MTLTelemetryBufferStatRec _field1;
+};
+
+struct MTLTelemetryBufferStatRec {
+    struct MTLTelemetryStatisticUIRec _field1;
+};
+
+struct MTLTelemetryCommandBufferCounttRec {
+    unsigned int _field1;
+    unsigned int _field2;
+};
+
+struct MTLTelemetryComputePipelineDistributionRec {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    unsigned int _field5;
+};
+
+struct MTLTelemetryDepthStateDistributionRec {
+    unsigned int _field1;
+    unsigned int _field2[8];
+};
+
+struct MTLTelemetryDispatchDistributionRec {
+    unsigned int _field1;
+    struct MTLTelemetryStatisticUIRec _field2;
+    struct MTLTelemetryStatisticUIRec _field3;
+    struct MTLTelemetryStatisticUIRec _field4;
+    struct MTLTelemetryStatisticUIRec _field5;
+    struct MTLTelemetryStatisticUIRec _field6;
+    struct MTLTelemetryStatisticUIRec _field7;
+    struct MTLTelemetryStatisticUIRec _field8;
+    struct MTLTelemetryStatisticUIRec _field9;
+    struct MTLTelemetryStatisticUIRec _field10;
+    struct MTLTelemetryStatisticUIRec _field11;
+};
+
+struct MTLTelemetryDrawDistributionRec {
+    struct MTLTelemetryDrawStatRec _field1[5][3][3];
+};
+
+struct MTLTelemetryDrawStatRec {
+    unsigned int _field1;
+    struct MTLTelemetryStatisticUIRec _field2;
+    struct MTLTelemetryStatisticUIRec _field3;
+};
+
+struct MTLTelemetryEncoderCountRec {
+    unsigned int _field1;
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+};
+
+struct MTLTelemetryEncoderDistributionRec {
+    struct MTLTelemetryStatisticUIRec _field1;
+    struct MTLTelemetryStatisticUIRec _field2;
+    struct MTLTelemetryStatisticUIRec _field3;
+    struct MTLTelemetryStatisticUIRec _field4;
+    struct MTLTelemetryStatisticUIRec _field5;
+};
+
+struct MTLTelemetryKernelDistributionRec {
+    struct MTLTelemetryStatisticIRec _field1;
+    struct MTLTelemetryStatisticIRec _field2;
+    struct MTLTelemetryStatisticIRec _field3;
+    struct MTLTelemetryStatisticIRec _field4;
+};
+
+struct MTLTelemetryKernelStateRec {
+    int pbAlloc;
+    int spmRenderCount;
+    int tiledSceneBytes;
+    int renderCount;
+};
+
+struct MTLTelemetryRenderPipelineDistributionRec {
+    unsigned int _field1[8];
+    unsigned int _field2;
+    unsigned int _field3;
+    unsigned int _field4;
+    struct MTLTelemetryStatisticUIRec _field5;
+    struct MTLTelemetryStatisticUIRec _field6;
+    unsigned int _field7;
+    unsigned int _field8;
+    unsigned int _field9;
+    unsigned int _field10;
+    unsigned int _field11;
+    unsigned int _field12;
+    unsigned int _field13;
+};
+
+struct MTLTelemetrySamplerDistributionRec {
+    unsigned int _field1;
+    struct MTLTelemetrySamplerStatRec _field2[5][8];
+};
+
+struct MTLTelemetrySamplerStatRec {
+    unsigned int _field1;
+    struct MTLTelemetryStatisticUIRec _field2;
+    struct MTLTelemetryStatisticUIRec _field3;
+    struct MTLTelemetryStatisticUIRec _field4;
+    struct MTLTelemetryStatisticUIRec _field5;
+    struct MTLTelemetryStatisticFRec _field6;
+    struct MTLTelemetryStatisticFRec _field7;
+    struct MTLTelemetryStatisticUIRec _field8;
+};
+
+struct MTLTelemetryScissorRectDistributionRec {
+    struct MTLTelemetryStatisticUIRec _field1;
+    struct MTLTelemetryStatisticFRec _field2;
+    struct MTLTelemetryStatisticFRec _field3;
+};
+
+struct MTLTelemetryStatisticFRec {
+    float _field1;
+    float _field2;
+    float _field3;
+    unsigned int _field4;
+};
+
+struct MTLTelemetryStatisticIRec {
+    int _field1;
+    int _field2;
+    long long _field3;
+    int _field4;
+};
+
+struct MTLTelemetryStatisticUIRec {
+    unsigned int min;
+    unsigned int max;
+    unsigned long long total;
+    unsigned int count;
+};
+
+struct MTLTelemetryStencilStateDistributionRec {
+    unsigned int _field1[8][8];
+    unsigned int _field2[8][8];
+    unsigned int _field3[8][8];
+};
+
+struct MTLTelemetrySupportQueryStatRec {
+    struct unordered_map<std::__1::basic_string<char>, unsigned int, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned int>>> featureSetCount;
+    struct MTLTelemetryStatisticUIRec texSampleCount;
+};
+
+struct MTLTelemetryViewportDistributionRec {
+    struct MTLTelemetryStatisticUIRec _field1;
+    struct MTLTelemetryStatisticFRec _field2;
+    struct MTLTelemetryStatisticFRec _field3;
+    struct MTLTelemetryStatisticFRec _field4;
+    struct MTLTelemetryStatisticFRec _field5;
+};
+
 struct MemberRef;
 
 struct MetalBuffer {
@@ -152,8 +313,44 @@ struct _NSRange {
     unsigned long long length;
 };
 
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*> *__next_;
+};
+
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*> {
     struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*> *__next_;
+};
+
+struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*> {
+    struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*> *__next_;
 };
 
 struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, unsigned long long>, void *>*> {
@@ -181,6 +378,11 @@ struct deque<id, std::__1::allocator<id>> {
     struct __compressed_pair<unsigned long, std::__1::allocator<id>> {
         unsigned long long __value_;
     } __size_;
+};
+
+struct mach_timebase_info {
+    unsigned int numer;
+    unsigned int denom;
 };
 
 struct mutex {
@@ -219,11 +421,110 @@ struct unique_ptr<ILayerLockingPolicy, std::__1::default_delete<ILayerLockingPol
     } __ptr_;
 };
 
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
 struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*>*>>> {
     struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*>*>>> {
         struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*> **__value_;
         struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*>*>> {
             struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*>*>> {
+                unsigned long long __value_;
+            } __data_;
+        } __value_;
+    } __ptr_;
+};
+
+struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*>*>>> {
+    struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*>**, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*>*>>> {
+        struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*> **__value_;
+        struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*>*>> {
+            struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*>*>> {
                 unsigned long long __value_;
             } __data_;
         } __value_;
@@ -252,6 +553,51 @@ struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<void *, void 
     } __ptr_;
 };
 
+struct unordered_map<MTLPixelFormat, MTLTelemetryBlitDistribution, std::__1::hash<unsigned long long>, std::__1::equal_to<MTLPixelFormat>, std::__1::allocator<std::__1::pair<const MTLPixelFormat, MTLTelemetryBlitDistribution>>> {
+    struct __hash_table<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, std::__1::__unordered_map_hasher<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, std::__1::equal_to<MTLPixelFormat>, true>, std::__1::allocator<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, std::__1::hash<unsigned long long>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryBlitDistribution>, std::__1::equal_to<MTLPixelFormat>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<MTLPixelFormat, MTLTelemetryRenderTargetDistribution, std::__1::hash<unsigned long long>, std::__1::equal_to<MTLPixelFormat>, std::__1::allocator<std::__1::pair<const MTLPixelFormat, MTLTelemetryRenderTargetDistribution>>> {
+    struct __hash_table<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, std::__1::__unordered_map_hasher<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, std::__1::equal_to<MTLPixelFormat>, true>, std::__1::allocator<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, std::__1::hash<unsigned long long>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryRenderTargetDistribution>, std::__1::equal_to<MTLPixelFormat>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<MTLPixelFormat, MTLTelemetryTextureDistribution, std::__1::hash<unsigned long long>, std::__1::equal_to<MTLPixelFormat>, std::__1::allocator<std::__1::pair<const MTLPixelFormat, MTLTelemetryTextureDistribution>>> {
+    struct __hash_table<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, std::__1::__unordered_map_hasher<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, std::__1::equal_to<MTLPixelFormat>, true>, std::__1::allocator<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, std::__1::hash<unsigned long long>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<MTLPixelFormat, std::__1::__hash_value_type<MTLPixelFormat, MTLTelemetryTextureDistribution>, std::__1::equal_to<MTLPixelFormat>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
 struct unordered_map<std::__1::array<unsigned long long, 3>, unsigned int, MTLSamplerDescriptorHashMap::hash_t, MTLSamplerDescriptorHashMap::equal_t, std::__1::allocator<std::__1::pair<const std::__1::array<unsigned long long, 3>, unsigned int>>> {
     struct __hash_table<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, std::__1::__unordered_map_hasher<std::__1::array<unsigned long long, 3>, std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, MTLSamplerDescriptorHashMap::hash_t, true>, std::__1::__unordered_map_equal<std::__1::array<unsigned long long, 3>, std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, MTLSamplerDescriptorHashMap::equal_t, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>>> {
         struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, void *>*>*>>> __bucket_list_;
@@ -262,6 +608,96 @@ struct unordered_map<std::__1::array<unsigned long long, 3>, unsigned int, MTLSa
             unsigned long long __value_;
         } __p2_;
         struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::array<unsigned long long, 3>, std::__1::__hash_value_type<std::__1::array<unsigned long long, 3>, unsigned int>, MTLSamplerDescriptorHashMap::equal_t, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>>> {
+    struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, std::__1::hash<std::__1::basic_string<char>>, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, std::__1::equal_to<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, std::__1::hash<std::__1::basic_string<char>>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, MTLTelemetryStatisticUIRec>, std::__1::equal_to<std::__1::basic_string<char>>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<std::__1::basic_string<char>, unsigned int, std::__1::hash<std::__1::basic_string<char>>, std::__1::equal_to<std::__1::basic_string<char>>, std::__1::allocator<std::__1::pair<const std::__1::basic_string<char>, unsigned int>>> {
+    struct __hash_table<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, std::__1::hash<std::__1::basic_string<char>>, true>, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, std::__1::equal_to<std::__1::basic_string<char>>, true>, std::__1::allocator<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, std::__1::hash<std::__1::basic_string<char>>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<std::__1::basic_string<char>, std::__1::__hash_value_type<std::__1::basic_string<char>, unsigned int>, std::__1::equal_to<std::__1::basic_string<char>>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<unsigned int, MTLTelemetryComputePipelineUsageRec, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, MTLTelemetryComputePipelineUsageRec>>> {
+    struct __hash_table<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, std::__1::hash<unsigned int>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryComputePipelineUsageRec>, std::__1::equal_to<unsigned int>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<unsigned int, MTLTelemetryKernelUsageRec, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, MTLTelemetryKernelUsageRec>>> {
+    struct __hash_table<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, std::__1::hash<unsigned int>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryKernelUsageRec>, std::__1::equal_to<unsigned int>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<unsigned int, MTLTelemetryRenderFuncUsageRec, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, MTLTelemetryRenderFuncUsageRec>>> {
+    struct __hash_table<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, std::__1::hash<unsigned int>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderFuncUsageRec>, std::__1::equal_to<unsigned int>, true>> {
+            float __value_;
+        } __p3_;
+    } __table_;
+};
+
+struct unordered_map<unsigned int, MTLTelemetryRenderPipelineUsageRec, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, MTLTelemetryRenderPipelineUsageRec>>> {
+    struct __hash_table<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>>> {
+        struct unique_ptr<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*>*[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*>*>>> __bucket_list_;
+        struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>>> {
+            struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, void *>*> __value_;
+        } __p1_;
+        struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, std::__1::hash<unsigned int>, true>> {
+            unsigned long long __value_;
+        } __p2_;
+        struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, MTLTelemetryRenderPipelineUsageRec>, std::__1::equal_to<unsigned int>, true>> {
             float __value_;
         } __p3_;
     } __table_;

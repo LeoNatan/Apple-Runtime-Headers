@@ -351,6 +351,7 @@
 - (BOOL)_forwardActionToParent:(SEL)arg1;
 - (BOOL)validateMenuItem:(id)arg1;
 - (BOOL)validateUserInterfaceItem:(id)arg1;
+- (BOOL)_validateTile;
 - (BOOL)_validateZoom;
 - (BOOL)_userInterfaceItemIsTemporarilyDisabled:(id)arg1;
 - (BOOL)_runningDocModalOrFauxModal;

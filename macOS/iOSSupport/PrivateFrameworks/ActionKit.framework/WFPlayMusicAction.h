@@ -11,6 +11,7 @@
 }
 
 - (id)serializedParametersForDonatedIntent:(id)arg1;
+- (id)localizedKeyParameterDisplayName;
 - (void)tryRunningWithMusicPlayer:(id)arg1 input:(id)arg2 completionHandler:(CDUnknownBlockType)arg3;
 - (void)runAsynchronouslyWithInput:(id)arg1;
 

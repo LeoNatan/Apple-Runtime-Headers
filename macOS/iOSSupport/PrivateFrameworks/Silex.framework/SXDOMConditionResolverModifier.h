@@ -55,7 +55,7 @@
 - (BOOL)resolveComponentLayouts:(id)arg1 validationContext:(id)arg2;
 - (BOOL)resolveTextStyles:(id)arg1 validationContext:(id)arg2;
 - (BOOL)resolveComponents:(id)arg1 validationContext:(id)arg2;
-- (id)modifyDOM:(id)arg1 context:(id)arg2;
+- (void)modifyDOM:(id)arg1 context:(id)arg2;
 - (id)initWithValidationContextFactory:(id)arg1 componentResolver:(id)arg2 textStyleResolver:(id)arg3 componentStyleResolver:(id)arg4 componentLayoutResolver:(id)arg5 componentTextStyleResolver:(id)arg6 advertisementAutoPlacementResolver:(id)arg7 suggestedArticlesAutoPlacementResolver:(id)arg8 documentStyleResolver:(id)arg9;
 
 // Remaining properties

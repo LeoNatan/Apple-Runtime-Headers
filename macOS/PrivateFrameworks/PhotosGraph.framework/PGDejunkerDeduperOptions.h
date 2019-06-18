@@ -6,6 +6,8 @@
 
 #import <objc/NSObject.h>
 
+@class NSSet;
+
 @interface PGDejunkerDeduperOptions : NSObject
 {
     BOOL _doIdenticalDeduping;
@@ -42,8 +44,10 @@
     double _finalPassTimeInterval;
     double _finalPassMaximumTimeGroupExtension;
     double _finalPassDedupingThreshold;
+    NSSet *_identifiersOfRequiredItems;
 }
 
+@property(retain, nonatomic) NSSet *identifiersOfRequiredItems; // @synthesize identifiersOfRequiredItems=_identifiersOfRequiredItems;
 @property(nonatomic) double finalPassDedupingThreshold; // @synthesize finalPassDedupingThreshold=_finalPassDedupingThreshold;
 @property(nonatomic) double finalPassMaximumTimeGroupExtension; // @synthesize finalPassMaximumTimeGroupExtension=_finalPassMaximumTimeGroupExtension;
 @property(nonatomic) double finalPassTimeInterval; // @synthesize finalPassTimeInterval=_finalPassTimeInterval;
@@ -78,8 +82,9 @@
 @property(nonatomic) double identicalDedupingTimeIntervalForPeople; // @synthesize identicalDedupingTimeIntervalForPeople=_identicalDedupingTimeIntervalForPeople;
 @property(nonatomic) double identicalDedupingTimeInterval; // @synthesize identicalDedupingTimeInterval=_identicalDedupingTimeInterval;
 @property(nonatomic) BOOL doIdenticalDeduping; // @synthesize doIdenticalDeduping=_doIdenticalDeduping;
+- (void).cxx_destruct;
 - (id)description;
-- (id)dictionaryRepresentation;
+- (id)dictionaryRepresentationRestrictingToGlobalOptions:(BOOL)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)init;
 
